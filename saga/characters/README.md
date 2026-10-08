@@ -48,6 +48,9 @@ One JSON file per character who has **appeared or been named on the page** in `s
 ```
 
 - `reckoning` is **null** for the fallen (the script does not read the dead). Darrow's file has no `reckoning` key at all.
+- `quote` is **null** when the character has not spoken a line on the page (the site then says so). Never invent one.
+- Titles and roles count as facts, not appearance: an epithet must use words the page has used ("Captain of the Ninth Lance", not a title from the character bible).
+- `status: fallen` may rest on what the page showed and the reader is meant to understand (a knight who went under in the river and was not among those who came back), but the file's own sentences still describe only what was seen; they never add "he drowned" if no sentence says so.
 - Companion approval is **not** stored here; the build reads it from `saga/state/world.json` and shows words and a bar, never a number.
 - Grace-sworn strength is borrowed (`fire.kind = "grace"`): the build colors it icy blue and labels it borrowed. Earned strength (`ember`) is brass and ember. `none` means nothing is kindled and the Grace is gone.
 - What Darrow can read of another's Reckoning is gated by his Warden's Eye rank in `darrow.json`: I shows level and rank; II the attributes; III the Arts; IV and up the deeper lines. Everything else renders as ⟦ unread ⟧.
