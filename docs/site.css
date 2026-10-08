@@ -131,6 +131,7 @@ details[open]>summary::after{content:"\2212"}
 .chron li{display:grid;gap:2px;border-left:2px solid var(--rule);padding-left:12px}
 .chron li.now{border-left-color:var(--brass)}
 .chron li.book{border-left-color:transparent;padding-left:0}
+.chron li.named{border-left-style:dotted}
 .chron li.book b{font-family:var(--label);letter-spacing:.1em;color:var(--brass);font-weight:700}
 .chron b{font-weight:700}
 .chron .m{font-size:.86rem;color:var(--dim)}

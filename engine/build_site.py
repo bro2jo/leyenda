@@ -739,7 +739,7 @@ class Site:
             lab = f'<span class="scene-n">{esc(s["label"])}</span>' if s["label"] else ""
             title = esc(s["title"]) if s["title"] else ""
             body.append(f'<section class="scene" id="{s["anchor"]}"><h2 class="scene-h">{lab}{title}</h2>{self.render_blocks(ch, s, rel, seen)}</section>')
-        cast = [c for c in self.chars.values() if any(str(a.get("chapter")) == ch["code"] for a in c.get("appearances") or [])]
+        cast = [c for c in self.chars.values() if any(str(a.get("chapter")) == ch["code"] and not a.get("mention") for a in c.get("appearances") or [])]
         cast_html = ""
         if cast:
             cast_html = '<div class="cast"><span class="lbl">On the page in this chapter</span><div class="chips">' + "".join(
@@ -790,7 +790,7 @@ class Site:
             lvl = rk.get("level")
             head = (f'Level {lvl} · {esc(rk.get("rank"))}' if lvl is not None else esc(rk.get("rank") or "")) + (
                 ' <span class="chip blue">borrowed</span>' if kind == "grace" else "")
-            rows.append(f'<p class="rk-line {kcls}">{head}</p>')
+            rows.append(f'<p class="rk-line {kcls if kind == "grace" else ""}">{head}</p>')
         else:
             rows.append(f'<p class="rk-line">{unread}</p>')
         if eye >= 2:
@@ -869,12 +869,17 @@ class Site:
         facts = c.get("known_facts") or []
         fl = "".join(f'<li><span>{esc(f["fact"])}</span><span class="src">{self.scene_ref(f, rel)}</span></li>' for f in facts)
         parts.append(sec("Known facts", f"{len(facts)}", details(f"What the page has shown ({len(facts)})", f'<ul class="facts">{fl}</ul>') if facts else '<p class="empty">Nothing yet.</p>'))
-        apps = []
+        apps, n_present, n_named = [], 0, 0
         for a in c.get("appearances") or []:
             r = self.registry.get((str(a.get("chapter")), str(a.get("scene"))))
             if r:
-                apps.append(f'<li><a href="{rel}{r["href"]}"><b>{esc(r["chapter"]["label"])}</b><span class="m">{esc((r["scene"]["label"] + " — " if r["scene"]["label"] else "") + r["scene"]["title"])}</span></a></li>')
-        parts.append(sec("Appearances", f"{len(apps)} scene{'s' if len(apps) != 1 else ''}", f'<ul class="chron">{"".join(apps)}</ul>'))
+                named = bool(a.get("mention"))
+                n_named += named
+                n_present += not named
+                tag = ' <span class="state dim">named</span>' if named else ""
+                apps.append(f'<li class="{"named" if named else ""}"><a href="{rel}{r["href"]}"><b>{esc(r["chapter"]["label"])}</b><span class="m">{esc((r["scene"]["label"] + " — " if r["scene"]["label"] else "") + r["scene"]["title"])}{tag}</span></a></li>')
+        label = f"{n_present} scene{'s' if n_present != 1 else ''}" + (f" · named in {n_named}" if n_named else "")
+        parts.append(sec("Appearances", label, f'<ul class="chron">{"".join(apps)}</ul>'))
         return "".join(parts)
 
     def render_character(self, c):
@@ -1412,6 +1417,7 @@ details[open]>summary::after{content:"\2212"}
 .chron li{display:grid;gap:2px;border-left:2px solid var(--rule);padding-left:12px}
 .chron li.now{border-left-color:var(--brass)}
 .chron li.book{border-left-color:transparent;padding-left:0}
+.chron li.named{border-left-style:dotted}
 .chron li.book b{font-family:var(--label);letter-spacing:.1em;color:var(--brass);font-weight:700}
 .chron b{font-weight:700}
 .chron .m{font-size:.86rem;color:var(--dim)}

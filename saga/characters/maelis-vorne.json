@@ -6,7 +6,7 @@
     "Mender Vorne",
     "the Mender"
   ],
-  "epithet": "Senior Mender of Saint Ysolde's",
+  "epithet": "Mender of Saint Ysolde's",
   "tier": "major",
   "faction": "menders",
   "status": "alive",
@@ -14,7 +14,7 @@
     "faction": "menders",
     "mark": "needle"
   },
-  "appearance": "Small and somewhere in her fifties, grey hair in a braid, scarred forearms, ink on her fingers. A clay pipe of bitterleaf stays clamped in her teeth, never lit, and shifts from one side of her mouth to the other while she decides on an answer. She was first seen standing in the gate at the top of the Steps with her arms folded, looking at a knight's leg as if it had said something rude. She speaks in short sentences and offers no comfort she can't back up; sitting on the end of a cot with two fingers on a joint and her eyes shut, she can stay still for a long time, and when she opens them and looks at a man properly, it is worse than the Reading.",
+  "appearance": "Small and somewhere in her fifties, grey hair in a braid, scarred forearms, ink on her fingers. A clay pipe of bitterleaf stays clamped in her teeth, unlit; it shifted from one side of her mouth to the other when Darrow asked how many Bindings she had done. She was first seen standing in the gate at the top of the Steps with her arms folded, looking at a knight's leg as if it had said something rude. She speaks in short sentences and offers no comfort she can't back up; sitting on the end of a cot with two fingers on a joint and her eyes shut, she can stay still for a long time, and when she opens them and looks at a man properly, it is worse than the Reading.",
   "first_seen": {
     "chapter": "00",
     "scene": "II",
@@ -29,7 +29,7 @@
   },
   "last_seen_doing": "Standing in the doorway of the infirmary hall, come back for the pipe she had left on the windowsill, telling Darrow to close the door.",
   "now": "In the infirmary hall of Saint Ysolde's, where she has just found Darrow at the window reading a script of light that hangs above his own palms. She did not look surprised; she said \"So it's begun,\" told him to close the door, and seemed, for the first time since he has known her, to be deciding how much of the truth to tell him. Below the mountain, six grey cloaks and a cart with a smoking censer are on the Holloway, expected at the foot of the Steps by tomorrow night if the snow holds off.",
-  "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then riders in grey cloaks appeared on the Holloway with a list of names, and the first name on it was his.",
+  "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow.",
   "quote": {
     "text": "The quiet is a liar.",
     "chapter": "01",
@@ -37,7 +37,7 @@
   },
   "known_facts": [
     {
-      "fact": "She was waiting in the gate at the top of the Thousand Steps, small and grey-braided with her arms folded, when the litter carrying Darrow reached the House.",
+      "fact": "She was standing in the gate at the top of the Thousand Steps, small and grey-braided with her arms folded, when the litter carrying Darrow reached the top.",
       "chapter": "00",
       "scene": "II"
     },
@@ -47,7 +47,7 @@
       "scene": "III"
     },
     {
-      "fact": "She told him the knee had held for thirty-two years with help for twelve of them, watched his face while she said it, and did not explain what she meant.",
+      "fact": "When Darrow said the knee had held fine for thirty-two years, she answered that it had help for twelve of them, watched his face while she said it, and did not explain what she meant.",
       "chapter": "00",
       "scene": "III"
     },
@@ -72,7 +72,7 @@
       "scene": "III"
     },
     {
-      "fact": "Fourteen times the captain of the Ninth has asked whether he may go down the Steps, and fourteen times she has said no.",
+      "fact": "By Wren Ashdown's ledger at the head of the chapter, the captain of the Ninth has asked fourteen times whether he may go down the Steps, and Mender Vorne has said no fourteen times.",
       "chapter": "01",
       "scene": "1"
     },
@@ -95,13 +95,13 @@
     },
     {
       "to": "wren-ashdown",
-      "label": "the House's runner",
+      "label": "keeper of the House's ledgers",
       "note": "Wren told Darrow that Maelis says her words in her sleep; Maelis says she doesn't sleep and Wren lies, and when Wren brought news of the list her eyes flicked to Maelis and away."
     },
     {
       "to": "hollis-garrow",
       "label": "the other captain in her hall",
-      "note": "He lies on the cot beside Darrow's and watched the weeks before the Binding from there; when the script appeared she looked down the hall at him before she spoke."
+      "note": "He lies on the cot beside Darrow's and watched the weeks before the Binding from there; when Darrow asked what had begun, she looked down the hall at Hollis, then out at the snow, before she answered."
     }
   ],
   "reckoning": {
@@ -123,23 +123,15 @@
         "rank": 4
       },
       {
-        "name": "Warden's Eye",
-        "rank": 4
-      },
-      {
         "name": "Stillwater Stance",
         "rank": 2
       }
     ],
     "deeper": [
-      "Something in the script is older than the House she serves."
+      "She was not surprised by the script of light, and she has not said why."
     ]
   },
   "appearances": [
-    {
-      "chapter": "00",
-      "scene": "I"
-    },
     {
       "chapter": "00",
       "scene": "II"

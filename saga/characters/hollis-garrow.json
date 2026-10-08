@@ -3,10 +3,9 @@
   "name": "Ser Hollis Garrow",
   "aliases": [
     "Hollis",
-    "Hollis Garrow",
-    "the Old Captain"
+    "Hollis Garrow"
   ],
-  "epithet": "Knight-Captain of the Sixth Lance",
+  "epithet": "Captain of the Sixth Lance",
   "tier": "major",
   "faction": "sixth-lance",
   "status": "alive",
@@ -14,7 +13,7 @@
     "faction": "sixth-lance",
     "mark": "horn"
   },
-  "appearance": "Sixty-one, broad, white-bearded and red in the face, with a voice that carries over the Wend in flood. His right leg is gone above the knee, lost at Harrow Ford. He talks in a sergeant's rhythm, profane and warm, insults doing the work of affection, and calls Darrow \"Captain\" as if it were a joke between them.",
+  "appearance": "Sixty-one, broad, white-bearded and red in the face, with a voice that carries over the Wend in flood. His right leg is gone above the knee, lost at Harrow Ford. He talks in a sergeant's rhythm, profane and warm, insults doing the work of affection, and calls Darrow \"Captain\" with the rank turned into a jibe.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",
@@ -29,7 +28,7 @@
   },
   "last_seen_doing": "Flat on his back on the cot beside Darrow's, staring at the infirmary ceiling and swearing with great precision, having just heard that his name stands second on the Confessors' list.",
   "now": "He lies in the infirmary hall of Saint Ysolde's, in the cot to Darrow's right, second on the list of the Faithless that the Confessors read out at the inn in Coldmere. Six grey cloaks and a cart are on the Holloway below, and if the snow holds off they will reach the foot of the Steps by tomorrow night.",
-  "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came out of the Wend without his right leg. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has held the cot next to Darrow's at Saint Ysolde's since, mostly drunk, and now the Confessors have come up the Holloway with his name second on their list.",
+  "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list.",
   "quote": {
     "text": "Kneel to that.",
     "chapter": "00",
@@ -37,7 +36,7 @@
   },
   "known_facts": [
     {
-      "fact": "He is Knight-Captain of the Sixth Lance, which was dressing its line a hundred yards downstream of the Ninth at Harrow Ford.",
+      "fact": "He commands the Sixth Lance, which was dressing its line a hundred yards downstream of the Ninth at Harrow Ford.",
       "chapter": "00",
       "scene": "I"
     },
@@ -57,7 +56,7 @@
       "scene": "II"
     },
     {
-      "fact": "On the road back he cursed for five days without repeating himself, working through the surgeon, the river, the Crown, the clans, the oxen, the weather, the carter and Darrow before he came to himself, and then he went quiet.",
+      "fact": "On the road back he cursed for five days without repeating himself once: the surgeon, the river, the Crown, the clans, the oxen, the weather, the carter, Darrow, and finally himself, which was when he went quiet.",
       "chapter": "00",
       "scene": "II"
     },
@@ -77,7 +76,7 @@
       "scene": "1"
     },
     {
-      "fact": "His name is second on the list of the Faithless at Saint Ysolde's that the Confessors read out at the inn in Coldmere; Darrow's is first.",
+      "fact": "His name is second on the list of the Faithless at Saint Ysolde's that was read out at the inn in Coldmere; asked who was first, Wren did not answer and looked at Darrow.",
       "chapter": "01",
       "scene": "1"
     }
@@ -86,18 +85,18 @@
     {
       "to": "darrow",
       "label": "the captain on the next cot",
-      "note": "He brought Darrow the writ at Harrow Ford and told him to mount up, has held the cot beside him since the river, and now shares a list with him on which Darrow is first and Hollis second."
+      "note": "He brought Darrow the writ at Harrow Ford and told him to mount up, rode the next cart over on the road back, has had the next cot at Saint Ysolde's since, and now stands second on a list on which Wren, asked who was first, only looked at Darrow."
     },
     {
       "to": "wren-ashdown",
-      "label": "the runner who brought the list",
-      "note": "She was the one who told him the Confessors were on the Holloway and that his name stood second."
+      "label": "the girl with the ledger who brought word of the list",
+      "note": "She was the one who brought word of the grey cloaks and the censer on the Holloway, and who told him his name stood second on the list."
     }
   ],
   "reckoning": {
     "fire": {
       "kind": "none",
-      "state": "the Grace is gone; nothing kindled in its place yet"
+      "state": "the Grace is gone; nothing kindled in its place"
     },
     "level": 2,
     "rank": "Bound",
@@ -109,17 +108,11 @@
     },
     "arts": [
       {
-        "name": "The Seated Blade",
-        "rank": 1
-      },
-      {
         "name": "Iron Grip",
         "rank": 2
       }
     ],
-    "deeper": [
-      "The script finds more in his right arm than he has been using."
-    ]
+    "deeper": []
   },
   "appearances": [
     {

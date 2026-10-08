@@ -6,7 +6,7 @@
     "Vane",
     "Aldric Vane"
   ],
-  "epithet": "Knight-Captain of the Second Lance",
+  "epithet": "Captain of the Second Lance",
   "tier": "major",
   "faction": "second-lance",
   "status": "alive",
@@ -14,7 +14,7 @@
     "faction": "second-lance",
     "mark": "stone"
   },
-  "appearance": "Thirty-four, beautiful in a severe way. Of the two boys who once held other men's horses together he is the one with the better seat and the better manners, and at Harrow Ford he sat his horse at Darrow's left hand, close enough to touch, with his eyes on the far bank; told he looked like a man at his own wedding, he didn't smile. He spends few words, and those courtly, patient and sincere. The last Darrow saw of him was his back, bent low over his horse's neck as it climbed the west bank out of the Wend.",
+  "appearance": "Thirty-four, beautiful in a severe way. Of the two boys who once held other men's horses together he is the one with the better seat and the better manners, and at Harrow Ford he sat his horse at Darrow's left hand, close enough to touch, with his eyes on the far bank; told he looked like a man at his own wedding, he didn't smile. He spends few words, and those courtly, patient and sincere. The last Darrow saw of him, he was bent low over his horse's neck as it climbed out on the west bank of the Wend, already turned away.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",
@@ -28,7 +28,7 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen_doing": "Bent low over his horse's neck on the west bank of the Wend, the horse already turned and already climbing out, as Darrow went under midriver; by Darrow's count, one heartbeat early.",
-  "now": "Offstage since Harrow Ford. He was last known on the west bank of the Wend with the Second Lance, which sat its horses in perfect order, untouched, watching the river carry the Ninth downstream. Seven weeks after the Binding, with six grey cloaks and a censer on the Holloway and Darrow's name first on their list, Darrow believes that a man who has ridden knee to knee with him since they were boys sat in a warm room in Calden and wrote that name; Wren said only that there was a list, and that Darrow was first on it.",
+  "now": "Offstage since Harrow Ford. He was last seen on the west bank of the Wend, bent low over his horse's neck, the horse already turned and climbing out, as Darrow went under; when Darrow next looked from the far shore, the Second Lance sat its horses on the west bank in perfect order, untouched, watching. Seven weeks after the Binding, with six grey cloaks and a censer on the Holloway, Darrow believes that a man who has ridden knee to knee with him since they were boys sat in a warm room in Calden and wrote Darrow's name first on their list; Wren said only that there was a list, read out at the inn in Coldmere, and that Hollis was second on it, and when asked who was first she did not answer and looked at Darrow.",
   "story_so_far": "He and Darrow were squires together, holding other men's horses, and were knighted on the same morning in the same cold chapel with their palms on the same warming stone. At Harrow Ford he had the Second Lance, held in reserve by the writ from command, and sat at Darrow's left hand on the west bank watching the far shore, telling him to ride wide, and then wider, with some other word left unsaid in his open mouth when the chaplain's bell cut him off. When the Grace went out of the Ninth midriver and Darrow went under, the last thing Darrow saw through the spray was Aldric's horse on the west bank, already turned, already climbing out, Aldric bent low over its neck; when the red-handed woman turned his head back to the water, the Second sat its horses in perfect order, untouched, watching. Seven weeks after the Binding, with grey cloaks on the Holloway and his own name first on their list, Darrow thought of a man who had ridden knee to knee with him since they were boys, in a warm room in Calden, writing that name, and heard again: Ride wide today.",
   "quote": {
     "text": "Ride wide today.",
@@ -37,7 +37,7 @@
   },
   "known_facts": [
     {
-      "fact": "He has the Second Lance, which the writ from command held in reserve while the Sixth and the Ninth cleared the ford, and he sat his horse at Darrow's left hand, close enough to touch, on the west bank of Harrow Ford.",
+      "fact": "He has the Second Lance, which the writ from command held in reserve while the Sixth and the Ninth were sent to clear the ford, and he sat his horse at Darrow's left hand, close enough to touch, on the west bank of Harrow Ford.",
       "chapter": "00",
       "scene": "I"
     },
@@ -80,7 +80,7 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "sworn brother",
+      "label": "knighted the same morning",
       "note": "They were squires together holding other men's horses and were knighted the same morning in the same cold chapel, kneeling shoulder to shoulder with their palms on the Oathstone; at the ford he sat at Darrow's left hand and told him to ride wide, and the last thing Darrow saw before the river took him was Aldric's horse on the west bank, already turned."
     }
   ],
@@ -98,9 +98,7 @@
       "resolve": 14
     },
     "arts": [],
-    "deeper": [
-      "The Grace in him is full, and it is not his."
-    ]
+    "deeper": []
   },
   "appearances": [
     {
@@ -109,11 +107,8 @@
     },
     {
       "chapter": "00",
-      "scene": "III"
-    },
-    {
-      "chapter": "01",
-      "scene": "1"
+      "scene": "III",
+      "mention": true
     }
   ]
 }

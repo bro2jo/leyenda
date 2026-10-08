@@ -13,11 +13,11 @@ NPC numbers are set by the GM for canon consistency; they are never derived from
 
 | Character | Fire | Level · rank | Mi · Vi · Fi · Re | Arts | Why |
 |---|---|---|---|---|---|
-| Maelis Vorne | ember, steady | 12 · Tempered | 9 · 10 · 12 · 17 | Mender's Patience IV, Warden's Eye IV, Stillwater II | Thirty years of Warden practice (T8). High Warden's Eye = she sees Darrow's Reckoning begin before he says a word |
-| Hollis Garrow | none (Grace gone, nothing kindled yet) | 2 · Bound | 13 · 7 · 5 · 10 | Seated Blade I, Iron Grip II | Still strong in the arm; the leg and the drink have the rest. Seated Blade learned "recently and badly" |
+| Maelis Vorne | ember, steady | 12 · Tempered | 9 · 10 · 12 · 17 | Mender's Patience IV, Warden's Eye IV (hidden from the public sheet until she reads the Reckoning on the page), Stillwater II | Thirty years of Warden practice (T8). High Warden's Eye = she sees Darrow's Reckoning begin before he says a word |
+| Hollis Garrow | none (Grace gone, nothing kindled yet) | 2 · Bound | 13 · 7 · 5 · 10 | Seated Blade I (public sheet gets it when he teaches it on the page), Iron Grip II | Still strong in the arm; the leg and the drink have the rest. Seated Blade learned "recently and badly" |
 | Wren Ashdown | ember, faint | 3 · Bound | 6 · 13 · 12 · 11 | Long Breath II; **hidden:** she can read Warden script (T6) | Runs the 1,117 Steps daily; the deeper line must not mention the script until Book III |
 | Aldric Vane | grace, full (borrowed) | — · Oathsworn | 16 · 15 · 16 · 14 borrowed | none of his own | Grace-sworn: nothing of his own to count. His true Ember is near zero |
-| Red-handed woman (Ilse) | ember, banked | 7 · Kindled | 12 · 13 · 12 · 15 | Stillwater III, Iron Grip II | Clan war-leader who has fought the Hollow Tides for years (T4) |
+| Red-handed woman (Ilse) | ember, banked | 7 · Kindled (public sheet shows 4 · Bound until Book III) | 12 · 13 · 12 · 15 | Stillwater III, Iron Grip II (public sheet: Iron Grip only) | Clan war-leader who has fought the Hollow Tides for years (T4) |
 | Sister Pell | ember, low | 4 · Bound | 6 · 7 · 8 · 14 | Warden's Eye II (reads lips) | Fifty years of bells |
 | Mother Ione | ember, steady and old | 9 · Kindled | 5 · 7 · 7 · 18 | Mender's Patience III | Iron underneath; possibly knows about Elspeth Ashdown (T6) |
 | Tobin Marsh | — | fallen | — | — | Dead at the ford; the site shows a memorial line instead of a sheet |

@@ -49,6 +49,9 @@ One JSON file per character who has **appeared or been named on the page** in `s
 
 - `reckoning` is **null** for the fallen (the script does not read the dead). Darrow's file has no `reckoning` key at all.
 - `quote` is **null** when the character has not spoken a line on the page (the site then says so). Never invent one.
+- `appearances` lists the scenes the character is **present in**. A scene where they are only named gets `"mention": true`; a character who has only been named (not yet seen) has only mentions, and `first_seen`/`last_seen` point at those. `last_seen` is the latest presence, or the latest mention if there is no presence.
+- Grace-sworn characters carry the rank word `Oathsworn` (a game term for borrowed strength, with `level: null`); everyone else uses the Ember ranks from `engine/rules.json`.
+- Keep NPC sheets conservative: no Art or deeper line that would hint at a hidden link or a future turn. The GM's true numbers live in `saga/bible/_gm/characters.md`; the public sheet may be lower than the truth.
 - Titles and roles count as facts, not appearance: an epithet must use words the page has used ("Captain of the Ninth Lance", not a title from the character bible).
 - `status: fallen` may rest on what the page showed and the reader is meant to understand (a knight who went under in the river and was not among those who came back), but the file's own sentences still describe only what was seen; they never add "he drowned" if no sentence says so.
 - Companion approval is **not** stored here; the build reads it from `saga/state/world.json` and shows words and a bar, never a number.

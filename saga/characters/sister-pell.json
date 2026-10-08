@@ -4,7 +4,7 @@
   "aliases": [
     "Pell"
   ],
-  "epithet": "Keeper of the bells",
+  "epithet": "A Sister of Saint Ysolde's; her glass is in the bell tower",
   "tier": "minor",
   "faction": "menders",
   "status": "alive",
@@ -44,7 +44,7 @@
   "relationships": [
     {
       "to": "wren-ashdown",
-      "label": "Wren watches through her glass",
+      "label": "Wren used her glass",
       "note": "Wren watched the Holloway through Sister Pell's glass from the bell tower and carried the news of the riders down to the hall."
     }
   ],
@@ -61,12 +61,7 @@
       "finesse": 8,
       "resolve": 14
     },
-    "arts": [
-      {
-        "name": "Warden's Eye",
-        "rank": 2
-      }
-    ],
+    "arts": [],
     "deeper": [
       "Fifty years of bells are written in her."
     ]
@@ -74,7 +69,8 @@
   "appearances": [
     {
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "mention": true
     }
   ]
 }

@@ -3,8 +3,7 @@
   "name": "Mother Ione",
   "aliases": [
     "Ione",
-    "the Prior",
-    "Mother Prior"
+    "the Prior"
   ],
   "epithet": "Prior of Saint Ysolde's",
   "tier": "minor",
@@ -63,12 +62,7 @@
       "finesse": 7,
       "resolve": 18
     },
-    "arts": [
-      {
-        "name": "The Mender's Patience",
-        "rank": 3
-      }
-    ],
+    "arts": [],
     "deeper": [
       "The script reads her the way it reads a wall: there is a lot of it, and none of it moves."
     ]
@@ -76,7 +70,8 @@
   "appearances": [
     {
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "mention": true
     }
   ]
 }
