@@ -1,0 +1,104 @@
+{
+  "id": "red-handed-woman",
+  "name": "The red-handed woman",
+  "aliases": [
+    "the red-handed woman",
+    "the woman with red hands"
+  ],
+  "epithet": "A clan warrior of the Thornwild",
+  "tier": "minor",
+  "faction": "thornwild-clans",
+  "status": "unknown",
+  "sigil": {
+    "faction": "thornwild-clans",
+    "mark": "knife"
+  },
+  "appearance": "Forty or more, which was older than she looked from across the water, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time. Her hands were painted red to the wrist. The page gives her no clothing and no weapon, only the river: knee-deep in the shallows at the front of the clan line, then waist-deep and breathing hard over Darrow on the far bank, having hauled a man in mail through the water by the collar of his gambeson.",
+  "first_seen": {
+    "chapter": "00",
+    "scene": "I",
+    "place": "harrow-ford",
+    "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
+  },
+  "last_seen": {
+    "chapter": "00",
+    "scene": "I",
+    "place": "harrow-ford",
+    "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
+  },
+  "last_seen_doing": "Standing waist-deep in the water over Darrow on the gravel of the far bank, her hand on his jaw, turning his head toward the Wend and telling him to look and remember.",
+  "now": "Gone from the far bank of the Wend between one look and the next. Darrow turned back from the river and she was not there, and he has not seen her since.",
+  "story_so_far": "She stood at the front of the clan line at Harrow Ford, knee-deep in the shallows with her hands painted red, and looked at Darrow and no one else before calling something across the water in her own tongue that the river took. Darrow read the line she stood in as drawn up wrong, carts and old people and children where reserves should have been, warriors looking over their shoulders into the trees, and believed the clans were not coming at the lances but through them. When the Grace went out of the Ninth midstream and the knee went, a hand closed in Darrow's collar and hauled him east, away from his own bank, onto the gravel among the standing stones; it was her. She turned his head toward the river and told him in rough Vaelish to look and remember, and when he turned back from what he had seen, she was gone.",
+  "quote": {
+    "text": "Look at it. Look. Remember it.",
+    "chapter": "00",
+    "scene": "I"
+  },
+  "known_facts": [
+    {
+      "fact": "She stood at the front of the clan line at Harrow Ford, knee-deep in the shallows, with her hands painted red to the wrist.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "Before the lances charged she looked straight at Darrow, not at the banners or the lances, and called something across the water in her own tongue that the river took.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "When the Ninth fell midstream she hauled Darrow out by the collar of his gambeson and dragged him east, away from his own bank, onto the gravel among the standing stones of the far shore.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "She speaks rough Vaelish as well as her own tongue; the only words she said to Darrow in it were to look at the river and remember it.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "What she turned his head toward: the Wend carrying knights downstream, the Second Lance sitting its horses untouched on the west bank, and a line of still grey figures in armor under the trees of the Thornwild.",
+      "chapter": "00",
+      "scene": "I"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "pulled him from the Wend",
+      "note": "She looked at him and no one else across the water before the charge, dragged him to the far bank when the Ninth fell, and made him look at the river before she was gone."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "ember",
+      "state": "banked"
+    },
+    "level": 7,
+    "rank": "Kindled",
+    "attributes": {
+      "might": 12,
+      "vigor": 13,
+      "finesse": 12,
+      "resolve": 15
+    },
+    "arts": [
+      {
+        "name": "Stillwater Stance",
+        "rank": 3
+      },
+      {
+        "name": "Iron Grip",
+        "rank": 2
+      }
+    ],
+    "deeper": [
+      "She was looking for him before the river took him."
+    ]
+  },
+  "appearances": [
+    {
+      "chapter": "00",
+      "scene": "I"
+    }
+  ]
+}

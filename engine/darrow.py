@@ -1026,7 +1026,7 @@ def cmd_chapter_close(args, cfg, rules):
 
 def cmd_knot(args, cfg, rules):
     knots = cfg["rehab"].setdefault("knots", [])
-    names = {1: "Straightening", 2: "Walking", 3: "Standing", 4: "the Road", 5: "Lightning", 6: "Turning", 7: "the Field"}
+    names = {k["n"]: k["short"] for k in rules.get("knots", [])} or {1: "Straightening", 2: "Walking", 3: "Standing", 4: "the Road", 5: "Lightning", 6: "Turning", 7: "the Field"}
     if any(k["knot"] == args.n for k in knots):
         sys.exit(f"Knot {args.n} is already tied")
     if args.n != len(knots) + 1:

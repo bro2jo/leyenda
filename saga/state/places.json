@@ -1,0 +1,245 @@
+{
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), draw:false (no marker). route is a list of place ids or [x, y] waypoints.",
+  "places": [
+    {
+      "id": "saint-ysoldes",
+      "name": "Saint Ysolde's",
+      "subtitle": "the House of Menders",
+      "region": "greywater-peaks",
+      "kind": "house",
+      "x": 200,
+      "y": 64,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "A hospice at the top of the Thousand Steps, where bells ring the hours and the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots; the far ones hold the ones who no longer speak."
+    },
+    {
+      "id": "thousand-steps",
+      "name": "The Thousand Steps",
+      "subtitle": "",
+      "region": "greywater-peaks",
+      "kind": "stair",
+      "x": 207,
+      "y": 90,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
+    },
+    {
+      "id": "coldmere",
+      "name": "Coldmere",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "village",
+      "x": 214,
+      "y": 118,
+      "on_page": true,
+      "visited": false,
+      "first_seen": {
+        "chapter": "01",
+        "scene": "1"
+      },
+      "description": "A village with an inn where the Confessors' list of the Faithless was read aloud, and from which the news climbed to the House by carter, lay brother and kitchen."
+    },
+    {
+      "id": "holloway",
+      "name": "The Holloway",
+      "subtitle": "the road",
+      "region": "the-lowmarch",
+      "kind": "road",
+      "x": 204,
+      "y": 236,
+      "on_page": true,
+      "visited": false,
+      "first_seen": {
+        "chapter": "01",
+        "scene": "1"
+      },
+      "description": "The road below the Steps, a brown thread across a white field from the infirmary window. Six grey riders and a cart were on it, with a smudge of smoke above them.",
+      "anchor": "end"
+    },
+    {
+      "id": "the-lowmarch",
+      "name": "The Lowmarch",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "region",
+      "x": 124,
+      "y": 148,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "I"
+      },
+      "description": "The river country below the mountains. Darrow had the fastest feet in it. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north."
+    },
+    {
+      "id": "the-wend",
+      "name": "The river Wend",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "river",
+      "x": 150,
+      "y": 213,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "I"
+      },
+      "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It carried the Ninth downstream like driftwood.",
+      "label": "The Wend"
+    },
+    {
+      "id": "harrow-ford",
+      "name": "Harrow Ford",
+      "subtitle": "",
+      "region": "the-wend",
+      "kind": "ford",
+      "x": 302,
+      "y": 190,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "I"
+      },
+      "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here the Grace went out of every knight for three heartbeats, and Darrow's knee gave way with no blade near it."
+    },
+    {
+      "id": "the-thornwild",
+      "name": "The Thornwild",
+      "subtitle": "",
+      "region": "the-thornwild",
+      "kind": "forest",
+      "x": 352,
+      "y": 150,
+      "on_page": true,
+      "visited": false,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "I"
+      },
+      "description": "The old forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed."
+    },
+    {
+      "id": "calden",
+      "name": "Calden",
+      "subtitle": "the capital",
+      "region": "the-lowmarch",
+      "kind": "city",
+      "x": 214,
+      "y": 258,
+      "on_page": true,
+      "visited": false,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "The capital, where the Oathspire stands and where the Faithless are told they may kneel anew. Somewhere in a warm room there, Darrow believes, his name was written first on a list."
+    },
+    {
+      "id": "oathspire",
+      "name": "The Oathspire",
+      "subtitle": "in Calden",
+      "region": "calden",
+      "kind": "tower",
+      "x": 214,
+      "y": 258,
+      "on_page": true,
+      "visited": false,
+      "draw": false,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "The Crown's seat in Calden. The heralds say the Faithless will be received there with mercy and permitted to kneel anew; Maelis calls that the Crown's way, and fast."
+    },
+    {
+      "id": "edgemoor",
+      "name": "Edgemoor",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "hills",
+      "x": 72,
+      "y": 98,
+      "on_page": true,
+      "visited": false,
+      "first_seen": {
+        "chapter": "01",
+        "scene": "1"
+      },
+      "description": "The place Darrow's name is sworn to: Ser Darrow of Edgemoor."
+    },
+    {
+      "id": "greywater-peaks",
+      "name": "Greywater Peaks",
+      "subtitle": "",
+      "region": "greywater-peaks",
+      "kind": "mountains",
+      "x": 200,
+      "y": 30,
+      "on_page": false,
+      "visited": false,
+      "first_seen": null,
+      "description": ""
+    },
+    {
+      "id": "saltreach",
+      "name": "Saltreach",
+      "subtitle": "",
+      "region": "saltreach",
+      "kind": "city",
+      "x": 36,
+      "y": 176,
+      "on_page": false,
+      "visited": false,
+      "first_seen": null,
+      "description": ""
+    },
+    {
+      "id": "ashen-fields",
+      "name": "The Ashen Fields",
+      "subtitle": "",
+      "region": "ashen-fields",
+      "kind": "waste",
+      "x": 322,
+      "y": 252,
+      "on_page": false,
+      "visited": false,
+      "first_seen": null,
+      "description": ""
+    }
+  ],
+  "route": [
+    "harrow-ford",
+    [
+      238,
+      194
+    ],
+    [
+      196,
+      196
+    ],
+    [
+      160,
+      186
+    ],
+    [
+      150,
+      160
+    ],
+    "coldmere",
+    "thousand-steps",
+    "saint-ysoldes"
+  ]
+}

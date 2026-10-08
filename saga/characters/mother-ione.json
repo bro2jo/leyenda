@@ -1,0 +1,82 @@
+{
+  "id": "mother-ione",
+  "name": "Mother Ione",
+  "aliases": [
+    "Ione",
+    "the Prior",
+    "Mother Prior"
+  ],
+  "epithet": "Prior of Saint Ysolde's",
+  "tier": "minor",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "key"
+  },
+  "appearance": "She has not yet been seen on the page, only named: the Prior of Saint Ysolde's, a woman in her seventies, gentle. Whatever else there is to her face and her bearing, the Chronicle has not yet shown it.",
+  "first_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen_doing": "Not on the page herself: named by Wren Ashdown, who told the infirmary hall that Mother Ione had been told of the riders on the Holloway, and once more when Maelis Vorne went to the Prior afterward.",
+  "now": "Told of the riders, as far as the reader knows: six grey cloaks and a cart on the Holloway road, a censer smoking in the snow, expected at the foot of the Steps by tomorrow night if the snow holds off. Maelis Vorne went to the Prior once Wren had finished speaking. What Mother Ione means to do is not yet on the page.",
+  "story_so_far": "Mother Ione has not yet appeared in the Chronicle. On the morning the first snow came to Saint Ysolde's, Wren Ashdown came into the infirmary hall out of breath with news from the bell tower: six riders and a cart on the Holloway, grey cloaks, a censer smoking in the snow, and Mother Ione had been told. There is a list, read out at the inn in Coldmere and passed from a carter to the lay brothers to the kitchen, so that now everyone knows: the names of the Faithless at Saint Ysolde's, the ones the riders have come to bring down to kneel. When Wren had said her piece, Maelis Vorne went to the Prior.",
+  "quote": null,
+  "known_facts": [
+    {
+      "fact": "By the time Wren Ashdown reached the infirmary hall with word of the grey cloaks on the Holloway, Mother Ione had been told.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "After Wren's news, Maelis Vorne left the hall and went to the Prior.",
+      "chapter": "01",
+      "scene": "1"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "maelis-vorne",
+      "label": "Maelis went to her",
+      "note": "When Wren brought word of the riders and the list, Maelis Vorne went to the Prior."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "ember",
+      "state": "steady and old"
+    },
+    "level": 9,
+    "rank": "Kindled",
+    "attributes": {
+      "might": 5,
+      "vigor": 7,
+      "finesse": 7,
+      "resolve": 18
+    },
+    "arts": [
+      {
+        "name": "The Mender's Patience",
+        "rank": 3
+      }
+    ],
+    "deeper": [
+      "The script reads her the way it reads a wall: there is a lot of it, and none of it moves."
+    ]
+  },
+  "appearances": [
+    {
+      "chapter": "01",
+      "scene": "1"
+    }
+  ]
+}

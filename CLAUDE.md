@@ -16,7 +16,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 1. **Real world outranks the realm.** Source priority for anything physical: latest PT/surgeon instruction → `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` → the newest `real/state/ACL_Recovery_State_*.md` → `real/plan/Whole_Athlete_AddOn.md` → sport plan → logs → general knowledge. The story never sets targets, never suggests exercises, loads or progressions, and never advances past what the PT has cleared.
 2. **Red flags stop everything.** Fever, calf pain or swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling or loss of extension: answer in plain language, out of story voice. No training; contact the surgical team / PT. No story that day unless the user asks.
 3. **Weight-loss flag.** If the weekly average weight is falling or appetite is poor (nutrition guide), say so plainly and suggest telling the surgeon/PCP.
-4. **The wall.** Real numbers, foods, exercise names, PT, ACL and rehab never appear in the Chronicle's prose (`saga/bible/style.md` §1). Story never appears in the Ledger.
+4. **The wall.** Real numbers, foods, exercise names, PT, ACL and rehab never appear in the Chronicle's prose (`saga/bible/style.md` §1). Story never appears in the Ledger. **The site (`docs/`) is public**: it is built from `saga/` only, never from `real/`, and it must never show a name, place or fact the chronicle has not put on the page.
 5. **Never invent data.** No estimated weights, no assumed sessions. If something wasn't reported, it wasn't done; ask, or leave it blank. Food estimates are fine and expected (mark `source=estimate`).
 6. **No shame, no penalties.** Missed days are plot turns, not lessons. Overshooting targets earns nothing extra. Doing more rehab than prescribed earns nothing; running it **as written** earns Resolve. A plan-directed rest (red light) is excused.
 7. **Knots tie only on real evidence.** Book transitions happen only when a gate in `real/config.json → rehab.knot_gates` is passed with PT/surgeon clearance or measured criteria, recorded with `python3 engine/darrow.py knot tie N --date … --evidence "…"`.
@@ -28,7 +28,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 1. `git pull --rebase origin main` (cloud sessions may start on a fresh branch; you want the latest logs).
 2. Read `real/NOW.md` and `saga/NOW.md`. They are the fastest way to know where things stand.
 3. `python3 engine/darrow.py sync` if anything might have changed.
-4. **After every change**, run `sync`, then commit and push straight to `main`, so the next session (often from the phone) starts with everything:
+4. **After every change**, run `sync`; if anything in `saga/` changed, also `python3 engine/build_site.py` (it must pass; see "The site" below). Then commit and push straight to `main`, so the next session (often from the phone) starts with everything:
    `git add -A && git commit -m "<what was logged/written>" && git push origin HEAD:main`
    If the push is rejected, `git pull --rebase origin main` and push again. Never force-push.
 
@@ -84,8 +84,9 @@ When a day is closed (he says so, or a new day's first log arrives and yesterday
 1. `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`.
 2. Ledger: a day summary: totals vs targets, sessions done vs planned, what's still open for tomorrow, any flag.
 3. Chronicle: write **one scene** (150–400 words) for that day, appended to the current chapter file, following `saga/bible/style.md`. Before writing, read `saga/state/world.json` (`chapter_plan`), `saga/state/threads.md`, and the last scene. The day's real deeds set the scene's color; the plot always moves forward. Use the engine's Reckoning changes, if any, as the closing box.
-4. Update `saga/state/world.json` (scenes list, location, last_beat, quest, struggle, approval if a choice moved it), `threads.md`, `codex.md` (new names), and the narrative part of `saga/NOW.md`.
-5. Commit and push.
+4. Update `saga/state/world.json` (scenes list, `location.place` (a `places.json` id), last_beat, quest (`summary` for you, `on_the_page` for the site), struggle, approval if a choice moved it), `threads.md`, `codex.md` (new names; GM-only asides go in `⟪gm: … ⟫`), and the narrative part of `saga/NOW.md`.
+5. **The cast and the site** (see "The site" below): a file in `saga/characters/` for anyone new on the page; `last_seen`, `last_seen_doing`, `now`, `appearances`, new `known_facts` (and `appearance`/`status` if the story changed them) for everyone in the scene; `saga/state/places.json` for a new place; then `python3 engine/build_site.py`, which must pass.
+6. Commit and push (`docs/` goes with everything else).
 
 If several days are open, write one scene per day, oldest first (or one combined scene if he asks to catch up quickly).
 
@@ -143,7 +144,28 @@ CLAUDE.md                  this file
 README.md                  for the human
 real/   NOW.md · config.json · plan/ · state/ · logs/ · checkpoints/
 engine/ darrow.py · rules.json · deeds.csv (audit trail: every XP award, regenerated)
-saga/   NOW.md · bible/ (world, characters, style, mechanics, _gm/arc) · state/ · chronicle/
+saga/   NOW.md · bible/ (world, characters, style, mechanics, _gm/arc, _gm/characters) · state/ (world, places, factions, threads, codex, darrow) · characters/ (one JSON per character on the page) · chronicle/
+docs/   the public site, generated by engine/build_site.py; never hand-edited
 archive/the-reforging/     the old nutrition-only game; retired, kept for reference
 .claude/skills/            /log /today /week /saga /sheet /checkpoint /choose /ingest /sport
 ```
+
+---
+
+## The site (`docs/`)
+
+A reader-facing, static site, built by `python3 engine/build_site.py` into `docs/` and served by GitHub Pages. **Assume it is public.** It reads only `saga/chronicle/`, `saga/characters/`, `saga/state/{world,places,factions,darrow}.json`, `codex.md`, `chapters.csv`, `rolls.csv` and `engine/rules.json`. It never reads `real/`, `engine/deeds.csv` or `saga/bible/` (the checks open `_gm/` and `characters.md` only to build blocklists; nothing from them is rendered).
+
+**Rules for everything the site shows** (the build enforces what it can, you enforce the rest):
+- Story only. No foods, numbers or dates from logs, exercises, PT, rehab terms. Game numbers are fine.
+- No spoilers. Every sentence about a character, place or event must be supported by text already in `saga/chronicle/`. Appearance and voice may also draw on `saga/bible/characters.md`, never its wants, fears, secrets or arc notes. A name the page has not spoken does not appear; secrets go in `saga/bible/_gm/characters.md`.
+- Darrow's numbers are engine-owned (`darrow.json`); other characters' Reckonings are yours to assign, consistent with canon, gated on the site by Darrow's Warden's Eye rank.
+
+**Whenever a scene, climax or choice is written** (the `/log` close, `/checkpoint`, `/choose`):
+1. `saga/characters/<id>.json` for anyone new on the page (contract: `saga/characters/README.md`).
+2. For everyone in the scene: `last_seen`, `last_seen_doing`, `now`, `appearances`, new `known_facts` (with chapter and scene), `appearance` or `status` if the story changed them, `story_so_far` at chapter end, a better `quote` if one landed.
+3. `saga/state/places.json` for a new place (map x/y, `on_page`, `visited`, description); `world.json → location.place`, `current_quest.on_the_page`, `recaps` for a new chapter.
+4. `python3 engine/build_site.py`. It fails loudly on real-world terms, GM sentences, unrevealed names, a known fact without a source, or a broken link, and leaves `docs/` untouched until it passes. Never commit a `--force` build.
+5. Commit `docs/` with everything else.
+
+View it locally with `python3 -m http.server -d docs 8000` (then http://localhost:8000/), or open `docs/index.html` directly. GitHub Pages: Settings → Pages → Deploy from a branch → `main`, folder `/docs`.

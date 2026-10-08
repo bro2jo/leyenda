@@ -3,7 +3,7 @@
 > *What is given can be taken. What is built is yours.*
 > — the First Precept of the Emberwardens, carved over a door no one uses anymore
 
-This file is canon. Anything invented during play that recurs goes into `saga/state/codex.md`, and wins over memory. Spoilers live in `_gm/arc.md`; nothing in this file gives the twists away.
+This file is canon. Anything invented during play that recurs goes into `saga/state/codex.md`, and wins over memory. Spoilers live in `_gm/arc.md`, and this file is **GM reference, not reader content**: it names things the reader has not met yet, so the site build never renders it. The only exception is the map in §4, which the site draws from.
 
 ---
 
@@ -112,15 +112,9 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 
 ---
 
-## 7. What the common folk believe vs. what is true
+## 7. (moved)
 
-| Belief | Status |
-|---|---|
-| The Grace is the king's gift, flowing from his own sanctity | *see GM arc* |
-| The Three Heartbeats were the Grace abandoning faithless knights | false |
-| The clans brought the Hollowing | false |
-| The Emberwardens were murderers and blasphemers | Crown propaganda; partly true of a few |
-| King Aurel is three hundred years old because he is holy | he is three hundred years old |
+The table of what the common folk believe against what is true gave the twists away. It now lives in `_gm/arc.md` §9. Reader-facing material never comes from this file except the map in §4.
 
 ---
 

@@ -1,0 +1,142 @@
+{
+  "id": "hollis-garrow",
+  "name": "Ser Hollis Garrow",
+  "aliases": [
+    "Hollis",
+    "Hollis Garrow",
+    "the Old Captain"
+  ],
+  "epithet": "Knight-Captain of the Sixth Lance",
+  "tier": "major",
+  "faction": "sixth-lance",
+  "status": "alive",
+  "sigil": {
+    "faction": "sixth-lance",
+    "mark": "horn"
+  },
+  "appearance": "Sixty-one, broad, white-bearded and red in the face, with a voice that carries over the Wend in flood. His right leg is gone above the knee, lost at Harrow Ford. He talks in a sergeant's rhythm, profane and warm, insults doing the work of affection, and calls Darrow \"Captain\" as if it were a joke between them.",
+  "first_seen": {
+    "chapter": "00",
+    "scene": "I",
+    "place": "harrow-ford",
+    "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen_doing": "Flat on his back on the cot beside Darrow's, staring at the infirmary ceiling and swearing with great precision, having just heard that his name stands second on the Confessors' list.",
+  "now": "He lies in the infirmary hall of Saint Ysolde's, in the cot to Darrow's right, second on the list of the Faithless that the Confessors read out at the inn in Coldmere. Six grey cloaks and a cart are on the Holloway below, and if the snow holds off they will reach the foot of the Steps by tomorrow night.",
+  "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came out of the Wend without his right leg. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has held the cot next to Darrow's at Saint Ysolde's since, mostly drunk, and now the Confessors have come up the Holloway with his name second on their list.",
+  "quote": {
+    "text": "Kneel to that.",
+    "chapter": "00",
+    "scene": "II"
+  },
+  "known_facts": [
+    {
+      "fact": "He is Knight-Captain of the Sixth Lance, which was dressing its line a hundred yards downstream of the Ninth at Harrow Ford.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "He carried the sealed writ from command ordering the Sixth and the Ninth to clear the ford with the Second in reserve, and broke its wax with his thumb without looking at it.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "When Darrow pointed at the carts, old people and children behind the clan line and suggested the clans were coming through rather than at them, Hollis said they were stupid, that the writ said clear the ford, and that Darrow's head was not as fast as his feet.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "He lost his right leg above the knee at Harrow Ford.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "On the road back he cursed for five days without repeating himself, working through the surgeon, the river, the Crown, the clans, the oxen, the weather, the carter and Darrow before he came to himself, and then he went quiet.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "His answer to the Crown's proclamation, which offered the Faithless mercy at the Oathspire and leave to kneel anew, was \"Kneel to that,\" and nobody on either cart laughed.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "He kept the cot next to Darrow's through the six weeks before the Binding, mostly drunk, and offered commentary.",
+      "chapter": "00",
+      "scene": "III"
+    },
+    {
+      "fact": "He knew the grey cloaks and the smoking censer on the Holloway for Confessors before anyone else said the word, and his face went the color of the window.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "His name is second on the list of the Faithless at Saint Ysolde's that the Confessors read out at the inn in Coldmere; Darrow's is first.",
+      "chapter": "01",
+      "scene": "1"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "the captain on the next cot",
+      "note": "He brought Darrow the writ at Harrow Ford and told him to mount up, has held the cot beside him since the river, and now shares a list with him on which Darrow is first and Hollis second."
+    },
+    {
+      "to": "wren-ashdown",
+      "label": "the runner who brought the list",
+      "note": "She was the one who told him the Confessors were on the Holloway and that his name stood second."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "none",
+      "state": "the Grace is gone; nothing kindled in its place yet"
+    },
+    "level": 2,
+    "rank": "Bound",
+    "attributes": {
+      "might": 13,
+      "vigor": 7,
+      "finesse": 5,
+      "resolve": 10
+    },
+    "arts": [
+      {
+        "name": "The Seated Blade",
+        "rank": 1
+      },
+      {
+        "name": "Iron Grip",
+        "rank": 2
+      }
+    ],
+    "deeper": [
+      "The script finds more in his right arm than he has been using."
+    ]
+  },
+  "appearances": [
+    {
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "chapter": "00",
+      "scene": "III"
+    },
+    {
+      "chapter": "01",
+      "scene": "1"
+    }
+  ]
+}

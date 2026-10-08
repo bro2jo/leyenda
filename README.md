@@ -60,13 +60,21 @@ The **Seven Knots** are your real phase gates. Book I lasts until Phase 4; Darro
 
 ---
 
+## The site
+
+`docs/` is a reader-facing site: what's going on now (with a map), the Chronicle by book, chapter and scene, a character sheet for everyone on the page, Darrow's full Reckoning, and a Codex. Claude rebuilds it (`python3 engine/build_site.py`) whenever a scene is written, and the build refuses to run if anything real-world or unrevealed would leak onto it.
+
+- **Locally:** `python3 -m http.server -d docs 8000`, then open http://localhost:8000/ (or open `docs/index.html` straight from the folder).
+- **GitHub Pages:** in the repo, Settings → Pages → Source "Deploy from a branch" → branch `main`, folder `/docs`. The site is public even from a private repo, which is why it shows story only.
+
 ## What's where
 
 ```
 real/      the Ledger: NOW.md (today/this week), plans, recovery state, logs (CSV)
 engine/    darrow.py (the math) + rules.json (the exchange rates; tweak freely)
-saga/      the Chronicle: NOW.md (story right now), bible/, state/, chronicle/ (the chapters)
-           saga/bible/_gm/arc.md holds the plot twists. Don't open it unless you want spoilers.
+saga/      the Chronicle: NOW.md (story right now), bible/, state/, characters/ (the cast), chronicle/ (the chapters)
+           saga/bible/_gm/ holds the plot twists and character secrets. Don't open it unless you want spoilers.
+docs/      the site, generated; never edited by hand
 archive/   the old nutrition-only game (retired)
 ```
 

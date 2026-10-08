@@ -121,3 +121,15 @@ The sword's full inscription, revealed when he kneels: *PATIENCE IS A BLADE THAT
 - **Frost** marks a tithe-draw; **warmth** marks the Ember.
 - **Bells** mean law; silence means danger.
 - **Turning.** Every Book contains one moment where Darrow chooses not to turn, until Book V, when he does.
+
+---
+
+## 9. What the common folk believe vs. what is true (moved from world.md §7)
+
+| Belief | Status |
+|---|---|
+| The Grace is the king's gift, flowing from his own sanctity | *see GM arc* |
+| The Three Heartbeats were the Grace abandoning faithless knights | false |
+| The clans brought the Hollowing | false |
+| The Emberwardens were murderers and blasphemers | Crown propaganda; partly true of a few |
+| King Aurel is three hundred years old because he is holy | he is three hundred years old |

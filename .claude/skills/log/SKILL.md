@@ -49,7 +49,8 @@ For each item:
 - Ledger: the day's totals vs targets, sessions vs plan, anything open for tomorrow, flags.
 - Chronicle: write that day's **scene** (CLAUDE.md "Closing a day"; `saga/bible/style.md`). Append it to the current chapter file, update `saga/state/world.json`, `threads.md`, `codex.md`, and the narrative top of `saga/NOW.md`.
 - If the day was red-light, the scene cuts away from Darrow (another POV) or shows him made to rest. No setback framing.
+- **The cast and the site:** a file in `saga/characters/` for anyone new on the page (contract: `saga/characters/README.md`); update `last_seen`, `last_seen_doing`, `now`, `appearances`, `known_facts` (and `appearance`/`status` if changed) for everyone in the scene; `saga/state/places.json` for a new place; `world.json → location.place`. Then `python3 engine/build_site.py`: it must pass before you commit.
 
 ## 7. Save
-`git add -A && git commit -m "log DATE: <short summary>" && git push origin HEAD:main`.
+`git add -A && git commit -m "log DATE: <short summary>" && git push origin HEAD:main` (the rebuilt `docs/` goes in the same commit).
 If the push is rejected: `git pull --rebase origin main`, then push again.

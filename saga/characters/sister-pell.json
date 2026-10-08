@@ -1,0 +1,80 @@
+{
+  "id": "sister-pell",
+  "name": "Sister Pell",
+  "aliases": [
+    "Pell"
+  ],
+  "epithet": "Keeper of the bells",
+  "tier": "minor",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "spyglass"
+  },
+  "appearance": "She has not yet been seen on the page, only named: a Sister of the House whose glass stands in the bell tower. Fifty years of bells have left her nearly deaf.",
+  "first_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen_doing": "Not on the page herself: named by Wren Ashdown, who came down from the bell tower with news of riders seen through Sister Pell's glass.",
+  "now": "In the bell tower, as far as the reader knows, where her glass is. Wren went back up to it after she brought the news; nothing on the page says what Sister Pell made of six grey cloaks and a censer on the Holloway.",
+  "story_so_far": "Sister Pell has not yet appeared in the Chronicle. She was named once, on the morning the first snow came to Saint Ysolde's, when Wren Ashdown came into the infirmary hall out of breath with her ledger held to her chest: from the bell tower, through Sister Pell's glass, Wren had seen six riders and a cart on the Holloway road, grey cloaks, and a censer smoking in the snow. Hollis Garrow named them Confessors. Afterward Wren went back up to the bell tower.",
+  "quote": null,
+  "known_facts": [
+    {
+      "fact": "Her glass is in the bell tower of Saint Ysolde's; it was through Sister Pell's glass that Wren saw the riders on the Holloway.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "What the glass showed: six riders and a cart on the Holloway, grey cloaks, and a censer smoking in the snow, which Hollis named Confessors.",
+      "chapter": "01",
+      "scene": "1"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "wren-ashdown",
+      "label": "Wren watches through her glass",
+      "note": "Wren watched the Holloway through Sister Pell's glass from the bell tower and carried the news of the riders down to the hall."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "ember",
+      "state": "low"
+    },
+    "level": 4,
+    "rank": "Bound",
+    "attributes": {
+      "might": 6,
+      "vigor": 7,
+      "finesse": 8,
+      "resolve": 14
+    },
+    "arts": [
+      {
+        "name": "Warden's Eye",
+        "rank": 2
+      }
+    ],
+    "deeper": [
+      "Fifty years of bells are written in her."
+    ]
+  },
+  "appearances": [
+    {
+      "chapter": "01",
+      "scene": "1"
+    }
+  ]
+}

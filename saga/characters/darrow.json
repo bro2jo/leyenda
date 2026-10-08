@@ -1,0 +1,150 @@
+{
+  "id": "darrow",
+  "name": "Ser Darrow of Edgemoor",
+  "aliases": [
+    "Darrow",
+    "the Captain",
+    "Captain"
+  ],
+  "epithet": "Knight-Captain of the Ninth Lance",
+  "tier": "major",
+  "faction": "ninth-lance",
+  "status": "alive",
+  "sigil": {
+    "faction": "ninth-lance",
+    "mark": "knot"
+  },
+  "appearance": "Tall and rangy, thirty-two years old, with dark hair kept short, a nose that was broken and reset, and a laugh that carries. At Harrow Ford he wore mail over a gambeson and sat a grey mare at the point of sixty knights; at Saint Ysolde's he has lain for weeks on a cot with his heel on a rolled blanket, under a window that goes from black to the grey of old pewter. He gets up the way he does everything now: weight on the good leg first, then the bad one, then the slow transfer, as if crossing a frozen pond. This week he walks the length of the hall without the stick, and he does not limp.",
+  "first_seen": {
+    "chapter": "00",
+    "scene": "I",
+    "place": "harrow-ford",
+    "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen_doing": "Standing at the window at the end of the infirmary hall with a pale gold script hanging over his open palms, while Maelis Vorne, back for her pipe, tells him to close the door.",
+  "now": "Seven weeks past the Binding, in the season Maelis says is the softest and will feel like the best weeks he has had since the river; he has asked fourteen times to go down the Steps and been told no fourteen times. Six grey cloaks, a cart and a smoking censer are on the Holloway road below Saint Ysolde's, carrying a list of the Faithless with his name first on it, and Darrow believes it was written in a warm room in Calden by the man who rode knee to knee with him since they were boys. The Reckoning has just shown itself to him for the first time, Maelis did not look surprised to see it, and she has told him to close the door.",
+  "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward a drowning boy. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Second Lance sitting untouched on the far shore, Aldric Vane's horse already turned, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that Confessors are climbing toward the House with a list, and that his name is first.",
+  "quote": {
+    "text": "I was never much good at it anyway.",
+    "chapter": "00",
+    "scene": "III"
+  },
+  "known_facts": [
+    {
+      "fact": "He captains the Ninth Lance, sixty knights and sixty squires, and has the fastest feet in the Lowmarch, having never once cared whose father mattered.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "He and Aldric Vane rode knee to knee from the time they were squires and were knighted the same morning in the same cold chapel, palms on the warming Oathstone.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "Before the charge he read the clan line as fleeing something in the trees behind them, coming through the ford rather than at it, and Hollis Garrow answered that the writ said clear the ford.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "Halfway across the Wend the Grace went out of him in a single heartbeat, frost bloomed on his mail in midsummer, and when he planted his left foot and turned toward Tobin Marsh the knee gave with no blade and nothing touching it.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "As he went under he saw Aldric's horse on the west bank already turned and climbing out, one heartbeat early.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "The red-handed woman dragged him by the collar of his gambeson to the east bank among the standing stones, turned his head to the river, and told him in rough Vaelish to look and remember it.",
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "fact": "Nineteen of the Ninth came back from Harrow Ford; he made himself count them, and he knows the names of the other forty-one and does not say them.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "The surgeons of the Lowmarch pressed the knee, watched it slide, and sent him north, and four lay brothers carried him up the Thousand Steps on a litter, feverish, while Wren Ashdown counted every one of the eleven hundred and seventeen.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "Maelis Vorne found the cord in the middle of the knee snapped rather than broken, and when he said it had held for thirty-two years she answered that it had help for twelve of them, and would not explain.",
+      "chapter": "00",
+      "scene": "III"
+    },
+    {
+      "fact": "Offered the Crown's way or the Binding, he chose the Binding, an art the Crown burned the knowers of three hundred years ago, and was told he may not kneel for a long time, perhaps not ever.",
+      "chapter": "00",
+      "scene": "III"
+    },
+    {
+      "fact": "His name stands first on the list of the Faithless at Saint Ysolde's that the Confessors read out at the inn in Coldmere; Hollis Garrow's is second.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "At the infirmary window the Reckoning showed itself to him for the first time: Level 4, Bound, Might 11, Vigor 8, Finesse 9, Resolve 9, Ember Steady, two Knots tied of seven, and the Arts Stillwater Stance II, The Mender's Patience I and Warden's Eye I, with fainter numbers standing behind them whose owner he did not need to be told.",
+      "chapter": "01",
+      "scene": "1"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "maelis-vorne",
+      "label": "his Mender",
+      "note": "She tied the Binding with a strand of his own sinew and emberthread, reads the Knots with two fingers and her eyes shut, has told him fourteen times he may not go down the Steps, and it is she who will make him be honest, later, about how much he loved the charge."
+    },
+    {
+      "to": "hollis-garrow",
+      "label": "the old captain on the next cot",
+      "note": "Captain of the Sixth, who waved the writ at him on the west bank and told him his head was not as fast as his feet; lost his right leg above the knee at the ford, cursed Darrow among many others on the carts north, and snores on his right at Saint Ysolde's, second on the list where Darrow is first."
+    },
+    {
+      "to": "wren-ashdown",
+      "label": "the runner who counted him up the Steps",
+      "note": "She counted all eleven hundred and seventeen steps aloud beside his litter and would not let him say she missed one; it was she who brought word of the grey cloaks, and who looked at him when Hollis asked whose name was first."
+    },
+    {
+      "to": "aldric-vane",
+      "label": "sworn brother",
+      "note": "Squires together, knighted the same morning; at the ford Aldric told him to ride wider and seemed about to say more, and Darrow saw his horse already turned on the west bank; Darrow believes it was Aldric's hand that wrote his name first on the Confessors' list."
+    },
+    {
+      "to": "tobin-marsh",
+      "label": "the youngest of the Ninth",
+      "note": "Nineteen, who sang badly and constantly; when Tobin went under his own horse in the current, Darrow came off his mare and turned toward him, and that turn is where the knee went."
+    },
+    {
+      "to": "the-red-handed-woman",
+      "label": "the woman who pulled him out",
+      "note": "She looked at him alone across the water before the charge and called something the river took; afterward she hauled him to the east bank, made him look at what the Wend was carrying, and was gone when he turned back; he did not see her again for a long time."
+    }
+  ],
+  "appearances": [
+    {
+      "chapter": "00",
+      "scene": "I"
+    },
+    {
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "chapter": "00",
+      "scene": "III"
+    },
+    {
+      "chapter": "01",
+      "scene": "1"
+    }
+  ]
+}

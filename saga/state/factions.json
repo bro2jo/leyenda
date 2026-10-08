@@ -1,0 +1,21 @@
+{
+  "_about": "Reader-facing factions. Claude-owned. Descriptions must be supported by saga/chronicle/. device: lance|bell|censer|crown|redhand|knee; numeral only for lances.",
+  "factions": [
+    {"id": "ninth-lance", "name": "The Ninth Lance", "device": "lance", "numeral": "IX", "on_page": true,
+     "description": "Darrow's company: sixty knights and sixty squires on the west bank of Harrow Ford. Nineteen came home. He knows the other forty-one names and does not say them."},
+    {"id": "sixth-lance", "name": "The Sixth Lance", "device": "lance", "numeral": "VI", "on_page": true,
+     "description": "Hollis Garrow's company, ordered with the Ninth to clear the ford."},
+    {"id": "second-lance", "name": "The Second Lance", "device": "lance", "numeral": "II", "on_page": true,
+     "description": "Aldric Vane's company, held in reserve. When the Grace failed it sat its horses on the west bank in perfect order, untouched, and watched."},
+    {"id": "crown", "name": "The Crown", "device": "crown", "numeral": "", "on_page": true,
+     "description": "The power in Calden whose Oathstones fill a kneeling knight with the Grace, and whose heralds proclaim that the Grace left the knights of Harrow Ford for the faithlessness of their oaths."},
+    {"id": "confessors", "name": "The Confessors", "device": "censer", "numeral": "", "on_page": true,
+     "description": "Grey cloaks who climb for names, with a writ and a smoking censer. They have come to bring the Faithless of Saint Ysolde's down to kneel."},
+    {"id": "menders", "name": "The Menders of Saint Ysolde's", "device": "bell", "numeral": "", "on_page": true,
+     "description": "The House above the Thousand Steps that takes the ones the lowland surgeons cannot fix and do not want to watch. Its senior Mender did the Binding with an art the Crown burned people for."},
+    {"id": "faithless", "name": "The Faithless", "device": "knee", "numeral": "", "on_page": true,
+     "description": "What the heralds call the knights who came back from Harrow Ford. Among themselves they say: kneel to that."},
+    {"id": "thornwild-clans", "name": "The clans of the Thornwild", "device": "redhand", "numeral": "", "on_page": true,
+     "description": "Fighters with long knives and boar spears, drawn up at the ford in a ragged screen in front of carts, old people, children and a goat, and looking behind them into the trees."}
+  ]
+}
