@@ -2,12 +2,14 @@
   "_about": "Real-world facts the engine needs. Claude updates this when a plan, target, phase or gate changes, and cites the source in 'evidence'.",
   "timezone": "America/New_York",
   "athlete": {
-    "sex": "M", "age": 32, "height": "6'0\"",
-    "pre_injury_weight_lb": 164, "goal_weight_lb": 170
+    "sex": "M",
+    "age": 32,
+    "height": "6'0\"",
+    "pre_injury_weight_lb": 164,
+    "goal_weight_lb": 170
   },
   "injury_date": "2026-07-14",
   "surgery_date": "2026-08-24",
-  "_surgery_date_note": "From ACL_Recovery_State_2026-10-04.md (POD 41 = Sun 10/4). nutrition_guide.md says ~Aug 31 and nutrition_log.csv wk_post_op used that basis through 10/7. Confirm with the user; the engine uses this field.",
   "procedure": "Left isolated ACL reconstruction, patellar-tendon autograft",
   "chronicle_start": "2026-10-04",
   "week_starts": "Sun",
@@ -15,8 +17,14 @@
     "kcal": 3000,
     "protein_g": 150,
     "protein_g_max": 160,
-    "carbs_g": [350, 400],
-    "fat_g": [85, 100],
+    "carbs_g": [
+      350,
+      400
+    ],
+    "fat_g": [
+      85,
+      100
+    ],
     "weighins_per_week": 3,
     "creatine_daily": true,
     "shake_is_target": false,
@@ -24,14 +32,31 @@
   },
   "weekly_template": {
     "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: kneeA, kneeB, pt, upperA, upperB, accessory, power, cond. Session B may run Tue or Wed.",
-    "Sun": ["kneeA", "upperA"],
-    "Mon": ["cond"],
-    "Tue": ["kneeB", "upperB"],
+    "Sun": [
+      "kneeA",
+      "upperA"
+    ],
+    "Mon": [
+      "cond"
+    ],
+    "Tue": [
+      "kneeB",
+      "upperB"
+    ],
     "Wed": [],
-    "Thu": ["cond"],
-    "Fri": ["pt"],
-    "Sat": ["cond"],
-    "optional": ["accessory", "power"],
+    "Thu": [
+      "cond"
+    ],
+    "Fri": [
+      "pt"
+    ],
+    "Sat": [
+      "cond"
+    ],
+    "optional": [
+      "accessory",
+      "power"
+    ],
     "source": "Whole_Athlete_AddOn.md section 3 and ACL_Recovery_State_2026-10-04.md section 6"
   },
   "rehab": {
@@ -39,8 +64,18 @@
     "phase_entered": "2026-09-27",
     "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. Earliest by calendar Tue 2026-10-20.",
     "knots": [
-      {"knot": 1, "name": "Straightening", "date": "2026-09-08", "evidence": "Phase 1 exit criteria met (extension 0, SLR without lag) before Phase 2 work; exact date approximate"},
-      {"knot": 2, "name": "Walking", "date": "2026-09-27", "evidence": "Phase 3 entered POD 34 per ACL_Recovery_State_2026-10-04.md"}
+      {
+        "knot": 1,
+        "name": "Straightening",
+        "date": "2026-09-08",
+        "evidence": "Phase 1 exit criteria met (extension 0, SLR without lag) before Phase 2 work; exact date approximate"
+      },
+      {
+        "knot": 2,
+        "name": "Walking",
+        "date": "2026-09-27",
+        "evidence": "Phase 3 entered POD 34 per ACL_Recovery_State_2026-10-04.md"
+      }
     ],
     "knot_gates": {
       "3": "Before Phase 4 checklist (master plan): full/symmetric ROM, normal gait, minimal/no effusion, quad LSI ~>=70%, good single-leg control; PT agrees",

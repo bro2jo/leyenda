@@ -7,8 +7,10 @@
 - Current weight: 154 lb (measured 8:30 am, Sep 28, 2026)
 - Pre-ACL weight: 164 lb
 - Goal: lean ~170 lb
-- Surgery: Left ACL reconstruction, patellar-tendon autograft (~Aug 31, 2026)
-- Current stage: ~4 weeks post-op as of Sep 28, 2026
+- Surgery: Left ACL reconstruction, patellar-tendon autograft (Aug 24, 2026)
+- Current stage: 5 weeks post-op as of Sep 28, 2026 (POD 35)
+
+> **Corrected Oct 8, 2026.** This guide originally gave the surgery date as ~Aug 31 and the stage as ~4 weeks post-op. The surgery was Aug 24 (confirmed by the user), so Sep 28 was POD 35, post-op week 5. The `wk_post_op` column of `nutrition_log.csv` and the `pod`/`post_op_week` columns of `daily_log.csv` were recomputed on that basis the same day; `real/config.json → surgery_date` is the single source for it.
 - Goals: ACL recovery, regain muscle, rebuild full-body strength, cardio, stamina
 ## Main issue
  

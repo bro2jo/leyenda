@@ -26,7 +26,6 @@ Bring this list (from the recovery state §5 and the add-on §12):
 ## Open items
 
 - **Sun 10/4 – Wed 10/7 training isn't in these files.** Your rehab thread logged it separately (Session A on 10/4, etc.). Send it with `/log` so this week's numbers, and Chapter 1's outcome, are right.
-- **Surgery date:** the recovery state says 8/24 (POD 41 = 10/4); the nutrition guide says ~8/31. The engine uses **8/24**. Confirm.
 - **Not here yet:** `ACL_Dashboard_Working_Rules.md`, `ACL_Daily_Log.csv`, `24-week-offseason-program-v4.md`, `ACL_Prehab_and_Posture_Plan.md`, your nutrition project's instructions, and your sport. Bring each in with `/ingest`; the sport with `/sport`.
 
 <!-- engine:start -->

@@ -34,6 +34,8 @@ For each item:
 
 ## 4. Status, sessions, details
 - `python3 engine/darrow.py set daily DATE key=value …` (and `set nutrition DATE weight_lb=… creatine=Y`).
+- To see what a day already holds, `python3 engine/darrow.py show daily DATE` (or `show nutrition|food|ex|sport DATE`): key: value lines, nothing to count. Never open a CSV and read it by column position.
+- Keep `notes` short. A weekly recap or any paragraph goes to `real/checkpoints/<Sunday>.md`; the cell gets a pointer.
 - `knee_as_planned=Y` only when he says or clearly implies the session ran as written (one change per exercise at most, per the Working Rules).
 - Exercise detail: `python3 engine/darrow.py ex add '[…]'`. Use the existing CSV's style (see recent rows). If he just says "Session A as written", one row is enough: `{"date":…, "session":"home", "block":"knee", "exercise":"Session A as written", "side":"L"}`.
 - Upper body: `session` = `upperA`/`upperB`/`accessory`/`power`/`arms`; log main lifts with sets × reps × load.

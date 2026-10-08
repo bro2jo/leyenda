@@ -116,8 +116,11 @@ python3 engine/darrow.py roll ch01-gate-insight --stat resolve --dc 13 --prof [-
 python3 engine/darrow.py inspire --reason "…"       # spend Inspiration on a bold option
 python3 engine/darrow.py chapter-close --date 2026-10-10   # Sundays: freezes the week containing that date (pass last Saturday). Without --date: the most recent completed, unclosed week; an in-progress week needs --force
 python3 engine/darrow.py knot tie 3 --date 2026-10-20 --evidence "PT: quad LSI 72% on dynamometer; Phase 4 cleared"
+python3 engine/darrow.py show daily 2026-10-05      # one date's row(s) as key: value lines; also show nutrition|food|ex|sport DATE
 python3 engine/darrow.py check                      # validate logs
 ```
+
+**Reading the logs:** never read a CSV raw and count columns; use `show <log> DATE` (one record as key: value lines), `food list DATE`, `today`, `week`. The CSVs are storage; the engine is the interface. **Long prose never goes in a CSV cell:** a weekly recap goes to `real/checkpoints/<Sunday>.md` and the row's `notes` keeps a short pointer to it.
 
 **Logs** (`real/logs/`):
 - `food_entries.csv`: one row per food item. Fill **every** nutrient column you can estimate, not only kcal and protein, or the micro totals undercount. Reuse `foods.csv` values for known items; add new items to `foods.csv` once their numbers are known (label > estimate).

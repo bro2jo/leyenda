@@ -18,6 +18,7 @@ Commands (run from the repo root):
   inspire --reason TEXT        spend one Inspiration on a story action
   chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
   knot tie N --date D --evidence TEXT   record a Knot of the Binding
+  show daily|nutrition|food|ex|sport DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
   check                        validate the logs
 """
 import argparse
@@ -1071,6 +1072,27 @@ def cmd_knot(args, cfg, rules):
     print(f"Knot {roman(args.n)} ({names[args.n]}) tied {args.date}. Run sync.")
 
 
+def cmd_show(args, cfg, rules):
+    """Record view: print the rows for one date as key: value lines, blank fields omitted. Reads only; never writes."""
+    key = {"daily": "daily", "nutrition": "nutrition", "food": "food", "ex": "exercise", "exercise": "exercise", "sport": "sport"}[args.log]
+    date = d(args.date).isoformat()
+    rows = rollup(cfg) if key == "nutrition" else read_csv(key)  # nutrition as sync would roll it up, in memory
+    rows = [r for r in rows if r.get("date") == date]
+    if getattr(args, "session", None):
+        rows = [r for r in rows if str(r.get("session", "")).lower() == args.session.lower()]
+    if not rows:
+        print(f"{P[key].name}: no rows for {date}")
+        return
+    for i, r in enumerate(rows):
+        if i:
+            print()
+        for k in list(COLS[key]) + [c for c in r if c not in COLS[key]]:
+            v = r.get(k)
+            if v not in (None, ""):
+                print(f"{k}: {v}")
+    print(f"\n({len(rows)} row{'s' if len(rows) != 1 else ''} in {P[key].name})")
+
+
 def cmd_check(args, cfg, rules):
     problems = []
     for key in ("nutrition", "daily", "exercise", "sport", "food"):
@@ -1111,13 +1133,14 @@ def main():
     s = sub.add_parser("inspire"); s.add_argument("--reason", required=True)
     s = sub.add_parser("chapter-close"); s.add_argument("--date"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
+    s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport"]); s.add_argument("date"); s.add_argument("--session")
     sub.add_parser("check")
     args = ap.parse_args()
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
     {
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set,
         "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
-        "knot": cmd_knot, "check": cmd_check,
+        "knot": cmd_knot, "check": cmd_check, "show": cmd_show,
         "ex": lambda a, c, r: cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)
