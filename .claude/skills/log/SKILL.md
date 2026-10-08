@@ -26,7 +26,7 @@ Input: $ARGUMENTS (plus any attached photo).
 
 ## 3. Food
 For each item:
-1. `python3 engine/darrow.py food lib "<words>"`. If it's in the library, use those numbers × quantity.
+1. `python3 engine/darrow.py food lib "<words>"`. If it's in the library, use those numbers × quantity. **If a library row has blank fields** (e.g. kcal or protein missing), estimate the blanks at log time, set `source=library+estimate`, and in the Ledger reply ask him **once** for the label numbers for that item. When he gives them, update that row in `real/logs/foods.csv` (and note `label` as the source). Never invent label values; leave the existing partial rows as they are until he supplies the numbers.
 2. Otherwise estimate from the label (if shown), the photo, or typical values. **Fill every nutrient column you reasonably can** (kcal, protein, carbs, fat, fiber, sat fat, sugar, sodium, potassium, calcium, iron, magnesium, zinc, vit C, vit D, omega-3); blank only what's truly unknowable. Set `source` = `label`, `library`, `photo` or `estimate`.
 3. State your assumption when a quantity is guessed ("assumed ~1.5 cups rice"). Ask only if the guess could swing >200 kcal, and then still log your best estimate.
 4. Add all items in one call: `python3 engine/darrow.py food add '[{...},{...}]'`.
@@ -44,7 +44,9 @@ For each item:
 - Reply in the CLAUDE.md "Reply shape for a log" format: Ledger first (items, running totals vs targets, what's done, what's still open today), then **one** bracketed Reckoning line only if something changed. Keep it short enough to read on a phone.
 - If today's remaining plan changed, update the top section of `real/NOW.md`.
 
-## 6. Close day (when he says so, or when a new day's first log arrives and the previous day isn't closed)
+## 6. Close day (when he says so, or when a new day's first log arrives and the previous day's `closed` column in `daily_log.csv` isn't `Y`)
+- **`daily_log.csv → closed` is the single source of truth.** Check it first (`python3 engine/darrow.py today --date DATE` shows "day closed"). If it is already `Y`, do not write another scene for that day.
+- **A log for an already-closed day:** record it (steps 1–5), `sync`, reply with the Ledger. The engine's totals, XP and the week's tier update (the tier keeps moving until `chapter-close` freezes it). No new scene unless he asks for one.
 - `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`.
 - Ledger: the day's totals vs targets, sessions vs plan, anything open for tomorrow, flags.
 - Chronicle: write that day's **scene** (CLAUDE.md "Closing a day"; `saga/bible/style.md`). Append it to the current chapter file, update `saga/state/world.json`, `threads.md`, `codex.md`, and the narrative top of `saga/NOW.md`.

@@ -16,7 +16,7 @@ Commands (run from the repo root):
   sport add 'JSON'             append sport-log rows
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--chapter N | --tier] [--reroll]
   inspire --reason TEXT        spend one Inspiration on a story action
-  chapter-close [--date D]     freeze the finished week's score/tier for the chapter
+  chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
   knot tie N --date D --evidence TEXT   record a Knot of the Binding
   check                        validate the logs
 """
@@ -25,6 +25,7 @@ import csv
 import datetime as dt
 import json
 import math
+import os
 import re
 import secrets
 import sys
@@ -93,10 +94,19 @@ def save_json(path, obj):
         f.write("\n")
 
 
+LOG_FILES = ("nutrition", "food", "foods", "daily", "exercise", "sport", "deeds", "rolls", "spends", "chapters")
+
+
+def ensure_files():
+    """Create any missing log file with its header. Only sync calls this; views never create files."""
+    for key in LOG_FILES:
+        if not P[key].exists():
+            write_csv(key, [])
+
+
 def read_csv(key):
     path = P[key]
     if not path.exists():
-        write_csv(key, [])
         return []
     with open(path, newline="", encoding="utf-8") as f:
         rows = [dict(r) for r in csv.DictReader(f)]
@@ -141,6 +151,8 @@ def d(s):
 
 
 def today_local(cfg):
+    if os.environ.get("DARROW_TODAY"):  # test hook only: pretend it is this date
+        return d(os.environ["DARROW_TODAY"])
     try:
         from zoneinfo import ZoneInfo
         return dt.datetime.now(ZoneInfo(cfg.get("timezone", "America/New_York"))).date()
@@ -177,8 +189,9 @@ def fmt(n, dec=0):
 
 
 # ---------------------------------------------------------------- nutrition rollup
-def rollup(cfg):
-    """Sum food_entries per date into nutrition_log totals. Days without item rows are left alone."""
+def rollup(cfg, write=False):
+    """Sum food_entries per date into nutrition_log totals and return the rows. Days without item rows are left alone.
+    Only sync passes write=True; every view computes the rollup in memory and never touches the file."""
     food = read_csv("food")
     by_date = defaultdict(list)
     for r in food:
@@ -206,20 +219,21 @@ def rollup(cfg):
             t = sum(vals)
             row[k] = f"{t:.1f}" if k in ONE_DECIMAL else str(int(round(t)))
     nut.sort(key=lambda r: r["date"])
-    write_csv("nutrition", nut)
+    if write:
+        write_csv("nutrition", nut)
     return nut
 
 
 # ---------------------------------------------------------------- facts per day
-def gather(cfg, rules):
-    """Merge every log into one record of facts per date."""
+def gather(cfg, rules, nutrition=None):
+    """Merge every log into one record of facts per date. nutrition: rolled-up rows (in memory or as written)."""
     facts = defaultdict(lambda: {
         "kcal": None, "protein": None, "weight": None, "creatine": False,
         "floor": None, "check": False, "knee": None, "as_planned": False, "pt": False,
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(),
         "light": "", "closed": False, "logged": False, "tags": set(),
     })
-    for r in read_csv("nutrition"):
+    for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
             continue
         f = facts[r["date"]]
@@ -489,8 +503,9 @@ def rank_of(level, rules):
 
 
 # ---------------------------------------------------------------- sync
-def compute(cfg, rules, asof=None):
-    facts = gather(cfg, rules)
+def compute(cfg, rules, asof=None, write=False):
+    """Everything the sheet needs. write=True (sync only) also rewrites nutrition_log.csv from the food entries."""
+    facts = gather(cfg, rules, rollup(cfg, write=write))
     asof = asof or today_local(cfg)
     deeds = []
     for date in sorted(facts):
@@ -603,8 +618,8 @@ def chapter_no(cfg, ws):
 
 
 def cmd_sync(args, cfg, rules):
-    rollup(cfg)
-    st = compute(cfg, rules, d(args.date) if getattr(args, "date", None) else None)
+    ensure_files()
+    st = compute(cfg, rules, d(args.date) if getattr(args, "date", None) else None, write=True)
     write_csv("deeds", st["deeds"])
     old = load_json(P["sheet"]) if P["sheet"].exists() else None
     save_json(P["sheet"], st["sheet"])
@@ -701,7 +716,6 @@ def real_week_table(st, cfg, rules, ws):
 
 
 def cmd_today(args, cfg, rules):
-    rollup(cfg)
     st = compute(cfg, rules)
     day = d(args.date) if args.date else st["asof"]
     f = st["facts"].get(day.isoformat())
@@ -737,6 +751,8 @@ def cmd_today(args, cfg, rules):
             done.append(f"weigh-in {f['weight']:.1f}")
         if f["creatine"]:
             done.append("creatine")
+        if f["closed"]:
+            done.append("day closed")
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
         missing = [x for x, ok in [("morning check (grade swelling)", f["check"]),
                                    ("floor minimum AM+PM", f["floor"] == "full"),
@@ -748,7 +764,6 @@ def cmd_today(args, cfg, rules):
 
 
 def cmd_week(args, cfg, rules):
-    rollup(cfg)
     st = compute(cfg, rules)
     day = d(args.date) if args.date else st["asof"]
     ws = week_start(day)
@@ -793,7 +808,6 @@ def progress_bar(have, need, width=10):
 
 
 def cmd_sheet(args, cfg, rules):
-    rollup(cfg)
     st = compute(cfg, rules)
     print(sheet_text(st["sheet"]))
     if args.json:
@@ -1002,18 +1016,39 @@ def cmd_inspire(args, cfg, rules):
 
 
 def cmd_chapter_close(args, cfg, rules):
+    """Freeze a finished week's score and tier as a chapter.
+
+    Without --date: the most recent fully completed Sun–Sat week that is not already in chapters.csv.
+    With --date D: the week containing D. A week still in progress is refused unless --force is given.
+    """
     st = compute(cfg, rules)
-    day = d(args.date) if args.date else st["asof"]
-    ws = week_start(day)
-    if day.weekday() == 6 and not args.date:  # on Sunday, close the week that just ended
-        ws -= dt.timedelta(7)
-    sc = week_score(ws, ws + dt.timedelta(6), st["facts"], cfg, rules)
-    n = chapter_no(cfg, ws)
+    today = st["asof"]
     rows = read_csv("chapters")
-    if any(r["chapter"] == str(n) for r in rows) and not args.force:
+    closed = {r["chapter"] for r in rows}
+    first_ws = week_start(d(cfg["chronicle_start"]))
+    if args.date:
+        ws = week_start(d(args.date))
+    else:
+        ws = week_start(today) - dt.timedelta(7)  # the week that ended last Saturday
+        while ws >= first_ws and str(chapter_no(cfg, ws)) in closed:
+            ws -= dt.timedelta(7)
+        if ws < first_ws:
+            cur = week_start(today)
+            sys.exit(f"nothing to close: every completed week since the chronicle began is already in chapters.csv. "
+                     f"The week of Sun {cur} – Sat {cur + dt.timedelta(6)} is still in progress; "
+                     f"use --date {cur + dt.timedelta(6)} --force to close it anyway.")
+    week_end = ws + dt.timedelta(6)
+    if ws < first_ws:
+        sys.exit(f"the week of Sun {ws} is before the chronicle began ({cfg['chronicle_start']})")
+    if week_end >= today and not args.force:
+        sys.exit(f"the week of Sun {ws} – Sat {week_end} is still in progress (today is {today}); use --force to close it anyway")
+    sc = week_score(ws, week_end, st["facts"], cfg, rules)
+    n = chapter_no(cfg, ws)
+    if str(n) in closed and not args.force:
         r = next(r for r in rows if r["chapter"] == str(n))
-        print(f"Chapter {n} already closed: score {r['score']} · {r['tier']} (roll mod {r['roll_mod']}). Use --force to redo.")
+        print(f"Chapter {n} (Sun {ws} – Sat {week_end}) already closed: score {r['score']} · {r['tier']} (roll mod {r['roll_mod']}). Use --force to redo.")
         return
+    print(f"closing chapter {n}: Sun {ws} – Sat {week_end}")
     week_xp = sum(int(x["xp"]) for x in st["deeds"] if ws.isoformat() <= x["date"] <= (ws + dt.timedelta(6)).isoformat())
     rows = [r for r in rows if r["chapter"] != str(n)]
     rows.append({"chapter": n, "week_start": ws.isoformat(), "week_end": (ws + dt.timedelta(6)).isoformat(),

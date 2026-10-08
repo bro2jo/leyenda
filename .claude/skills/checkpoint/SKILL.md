@@ -12,7 +12,7 @@ Do the Ledger fully before writing any story.
 ## A. Close out the week
 1. `git pull --rebase origin main`.
 2. If Saturday (or any earlier day this week) isn't closed, close it now (the `/log` close procedure, including its scene).
-3. `python3 engine/darrow.py chapter-close`. This freezes last week's score and tier as `chapter N` and prints the breakdown. Note **N** and the **tier**.
+3. `python3 engine/darrow.py chapter-close --date <last Saturday>` (always pass the Saturday that just ended, e.g. `--date 2026-10-10`). This freezes that week's score and tier as `chapter N` and prints the breakdown. Note **N** and the **tier**. Without `--date` the engine picks the most recent completed week that isn't closed yet and refuses a week still in progress unless `--force` is given; `--force` is also needed to redo a closed week.
 4. `python3 engine/darrow.py week --date <last Saturday>` for the table.
 
 ## B. The Ledger recap (real only)

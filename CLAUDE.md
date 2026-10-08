@@ -47,7 +47,8 @@ Default behavior: **anything that reads like a log is a log.** He shouldn't need
 | "floor done AM", "heel prop PM" | `/log` → floor |
 | "did session A", "PT today: …", "upper B", "bike 20" | `/log` → sessions + exercise rows |
 | "weighed 156.2", "creatine ✓" | `/log` |
-| "close day", or the first log of a new day when yesterday wasn't closed | close the day → **write that day's scene** |
+| "close day", or the first log of a new day when yesterday's `closed` column in `daily_log.csv` isn't `Y` | close the day → **write that day's scene** |
+| a log for a day that is already closed (`closed=Y`) | `/log` → Ledger and engine update only; **no new scene** unless he asks for one |
 | "what's today", "what's the plan" | `/today` (real only) |
 | "how's my week" | `/week` (real only) |
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
@@ -80,7 +81,11 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 
 ## Closing a day → writing the scene
 
-When a day is closed (he says so, or a new day's first log arrives and yesterday is still open):
+**`daily_log.csv`'s `closed` column is the single source of truth for whether a day is closed.** `world.json → scenes[].covers` only records which days a scene drew on. Before writing a scene for yesterday, check the column (`python3 engine/darrow.py today --date YYYY-MM-DD` lists "day closed" when it is `Y`); if it is already `Y`, the day has its scene and gets no second one.
+
+**Logging into a closed day** (he sends Sunday's training on Wednesday, say): record it, `sync`, reply with the Ledger. Totals, XP, Arts and the week's tier all update, and the tier keeps updating until `chapter-close` freezes it. No new scene unless he asks for one.
+
+When a day is closed (he says so, or a new day's first log arrives and yesterday's `closed` isn't `Y`):
 1. `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`.
 2. Ledger: a day summary: totals vs targets, sessions done vs planned, what's still open for tomorrow, any flag.
 3. Chronicle: write **one scene** (150–400 words) for that day, appended to the current chapter file, following `saga/bible/style.md`. Before writing, read `saga/state/world.json` (`chapter_plan`), `saga/state/threads.md`, and the last scene. The day's real deeds set the scene's color; the plot always moves forward. Use the engine's Reckoning changes, if any, as the closing box.
@@ -109,7 +114,7 @@ python3 engine/darrow.py ex add '<json rows for ACL_Exercise_Log.csv>'
 python3 engine/darrow.py sport add '<json rows for sport_log.csv>'
 python3 engine/darrow.py roll ch01-gate-insight --stat resolve --dc 13 --prof [--chapter 1 | --tier] [--adv|--dis]
 python3 engine/darrow.py inspire --reason "…"       # spend Inspiration on a bold option
-python3 engine/darrow.py chapter-close              # Sundays: freezes last week's tier
+python3 engine/darrow.py chapter-close --date 2026-10-10   # Sundays: freezes the week containing that date (pass last Saturday). Without --date: the most recent completed, unclosed week; an in-progress week needs --force
 python3 engine/darrow.py knot tie 3 --date 2026-10-20 --evidence "PT: quad LSI 72% on dynamometer; Phase 4 cleared"
 python3 engine/darrow.py check                      # validate logs
 ```

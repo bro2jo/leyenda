@@ -17,7 +17,7 @@ Companion **approval** (−100 to +100) lives in `saga/state/world.json` and mov
 - **Signature:** in the Ninth, a raised fist with two fingers out meant "hold." He used to hate giving that signal.
 
 ### The Knight Who Fell (the benchmark)
-The Reckoning sometimes shows Darrow, faintly, the measure he had at Harrow Ford: **Might 15 · Vigor 15 · Finesse 18 · Resolve 9**. Surpassing each of these is a story moment. Resolve is the first he will pass, and he will not notice when he does.
+The Reckoning sometimes shows Darrow, faintly, the measure he had at Harrow Ford: **Might 15 · Vigor 15 · Finesse 18 · Resolve 12**. Surpassing each of these is a story moment. Resolve is the first he will pass, and he will not notice when he does.
 
 ---
 

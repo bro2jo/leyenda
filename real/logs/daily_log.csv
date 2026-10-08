@@ -20,4 +20,7 @@ date,dow,pod,post_op_week,dash_week_start,light,am_swelling,am_pain,am_extension
 2026-10-01,Thu,38,6,2026-09-27,,,0,2 hyperext gonio after weighted stretch,great state (not graded),Y,,,,,,Y,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; PT 8 rescheduled to Thu; back-to-back with 9/30
 2026-10-02,Fri,39,6,2026-09-27,,,0,,same (not graded); back-to-back verdict clean,,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
 2026-10-03,Sat,40,6,2026-09-27,,,,,,,,,,,,,,,,,,,3,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
-2026-10-04,Sun,41,6,2026-10-04,,,0,,clean (not graded); pre-check passes,,,,,,,,,,,,,,,,,,"backfilled 10/8 from ACL_Exercise_Log + recovery state; Session A + Upper A planned, not yet logged here"
+2026-10-04,Sun,41,6,2026-10-04,,,0,,clean (not graded); pre-check passes,,,,,,,,,,,,,,,,,Y,"backfilled 10/8 from ACL_Exercise_Log + recovery state; Session A + Upper A planned, not yet logged here"
+2026-10-05,Mon,42,6,2026-10-04,,,,,,,,,,,,,,,,,,,,,,Y,
+2026-10-06,Tue,43,7,2026-10-04,,,,,,,,,,,,,,,,,,,,,,Y,
+2026-10-07,Wed,44,7,2026-10-04,,,,,,,,,,,,,,,,,,,,,,Y,
