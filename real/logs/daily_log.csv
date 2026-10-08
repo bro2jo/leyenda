@@ -1,0 +1,23 @@
+date,dow,pod,post_op_week,dash_week_start,light,am_swelling,am_pain,am_extension,am_notes,floor_am,floor_pm,knee_session,knee_min,knee_rpe,knee_as_planned,pt,addon_session,addon_min,addon_rpe,conditioning_type,conditioning_min,sport_min,hours_on_feet,gym_min_on_feet,sleep_h,closed,notes
+2026-09-10,Thu,17,3,2026-09-06,,,,,,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-11,Fri,18,3,2026-09-06,,,2,,PM pain 3-4; flare after back-to-back 9/10-11,,,,,,,Y,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-12,Sat,19,3,2026-09-06,,,,,,Y,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-13,Sun,20,3,2026-09-13,,,,,,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-14,Mon,21,3,2026-09-13,,,,,,Y,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-15,Tue,22,4,2026-09-13,,,,,,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-18,Fri,25,4,2026-09-13,,,,,,Y,,,,,,Y,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-19,Sat,26,4,2026-09-13,,,,,,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-20,Sun,27,4,2026-09-20,,1+,0,,first graded swelling; painless catch,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-22,Tue,29,5,2026-09-20,,1+,0,,session ended early (time),Y,,min,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-23,Wed,30,5,2026-09-20,,1+,0,full at rest (self),,Y,,home,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-24,Thu,31,5,2026-09-20,,1+,0,,,Y,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; Upper B not done
+2026-09-25,Fri,32,5,2026-09-20,,,0,-3 gonio (likely 3 short); flex 146 A,,,,,,,,Y,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; PT + surgeon visit
+2026-09-26,Sat,33,5,2026-09-20,,,,,,Y,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-09-27,Sun,34,5,2026-09-27,,1+,0,,1+ very close to trace; no stiffness,,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; Session A moved; lots of walking; sauna 20 min
+2026-09-28,Mon,35,5,2026-09-27,,,0,,no unusual swelling (not graded),Y,Y,A,,,N,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; 5-change batch
+2026-09-29,Tue,36,6,2026-09-27,,,0,,no additional swelling (not graded); extension going well,,,,,,,,,,,,,,,,,,"backfilled 10/8 from ACL_Exercise_Log + recovery state; floor, Upper A, bike missed"
+2026-09-30,Wed,37,6,2026-09-27,,,0,,quiet (not graded); slight posterior tightness,Y,Y,B,,,N,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; 7-change batch; sauna
+2026-10-01,Thu,38,6,2026-09-27,,,0,2 hyperext gonio after weighted stretch,great state (not graded),Y,,,,,,Y,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state; PT 8 rescheduled to Thu; back-to-back with 9/30
+2026-10-02,Fri,39,6,2026-09-27,,,0,,same (not graded); back-to-back verdict clean,,,,,,,,,,,,,,,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-10-03,Sat,40,6,2026-09-27,,,,,,,,,,,,,,,,,,,3,,,,backfilled 10/8 from ACL_Exercise_Log + recovery state
+2026-10-04,Sun,41,6,2026-10-04,,,0,,clean (not graded); pre-check passes,,,,,,,,,,,,,,,,,,"backfilled 10/8 from ACL_Exercise_Log + recovery state; Session A + Upper A planned, not yet logged here"

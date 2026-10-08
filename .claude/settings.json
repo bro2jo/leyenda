@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 engine/darrow.py *)",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git pull *)",
+      "Bash(git push origin HEAD:main)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Edit(/real/**)",
+      "Edit(/saga/**)"
+    ]
+  }
+}

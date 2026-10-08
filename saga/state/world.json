@@ -1,0 +1,53 @@
+{
+  "_about": "Story state. Claude-owned. Update after every scene and climax. Never put real-world numbers here.",
+  "book": 1,
+  "book_title": "The House of Menders",
+  "chapter": 1,
+  "chapter_title": "The Confessor at the Steps",
+  "chapter_file": "saga/chronicle/01-the-confessor-at-the-steps.md",
+  "scenes": [
+    {"scene": 1, "title": "The Reading of the Knots", "covers": ["2026-10-04", "2026-10-07"], "written": "2026-10-08", "note": "launch scene; covers the days logged before the saga went live"}
+  ],
+  "days_closed_into_scenes": ["2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07"],
+  "location": "Saint Ysolde's, the House of Menders: the infirmary hall",
+  "season": "late autumn; first snow on the Steps",
+  "current_quest": {
+    "name": "The List",
+    "summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second."
+  },
+  "current_struggle": "The soft season: the knee feels well, and Maelis says the quiet is a liar. Darrow can walk without a stick but can't run, can't kneel, and going down stairs is still a negotiation.",
+  "last_beat": "Darrow saw the Reckoning for the first time. Maelis wasn't surprised: 'So it's begun.' She told him to close the door.",
+  "chapter_plan": {
+    "_gm": "Planned shape of Chapter 1. Adjust to the real week; keep the climax.",
+    "next_scene": "Scene 2 continues straight from 'Close the door': Maelis explains the Reckoning and the Ember in as few words as she can get away with, and forbids him to tell anyone, especially Hollis. Plant: the Wardens were burned for it. She does NOT explain her own past.",
+    "later_scenes": [
+      "The Seated Blade: Hollis drags Darrow into the cloister for two-chairs swordplay (use on a day with upper-body work logged)",
+      "Mother Ione's council: sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old",
+      "The Reading of the Knots proper (use on PT day)",
+      "The grey cloaks reach the foot of the Steps; the censer smoke rising through the cloud"
+    ],
+    "climax": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp."
+  },
+  "companions": {
+    "maelis": {"approval": 15, "present": true, "note": "has decided, against her judgment, to trust him"},
+    "hollis": {"approval": 30, "present": true, "note": "on the list, second; drinking less this week"},
+    "wren": {"approval": 10, "present": true, "note": "afraid; hides it with numbers"},
+    "ash": {"bond": 5, "present": false, "note": "in the kennel; snarls at everyone else"}
+  },
+  "factions": {"crown": -10, "confessors": -25, "menders": 30, "faithless": 15, "thornwild": 0, "lantern_market": 0},
+  "flags": {
+    "reckoning_awakened": true,
+    "knows_wardens_exist": false,
+    "anselm_suspected": false,
+    "anselm_spared": null,
+    "benedek_hollowed": false,
+    "vane_unbound": null
+  },
+  "choices": [],
+  "inventory": ["infirmary shirt and breeches", "a borrowed stick he refuses to use", "the Ninth's two-finger signal (habit, not an item)"],
+  "core_beats": {
+    "done": ["prologue"],
+    "next": "Book I core beat 1: The Confessor at the Steps (climax of Chapter 1)"
+  },
+  "last_updated": "2026-10-08"
+}

@@ -1,0 +1,111 @@
+{
+  "_about": "Translation rules: real deeds -> XP and temper (attribute growth). Edit numbers here, never in code. After any change run: python3 engine/darrow.py sync",
+  "levels": {
+    "_formula": "XP to reach level L = 50 * L * (L - 1)",
+    "ranks": [
+      {"from": 1,  "name": "Bound"},
+      {"from": 5,  "name": "Kindled"},
+      {"from": 10, "name": "Tempered"},
+      {"from": 15, "name": "Warden-Errant"},
+      {"from": 20, "name": "Emberknight"},
+      {"from": 25, "name": "Unbowed"},
+      {"from": 30, "name": "Warden of the Ember"}
+    ]
+  },
+  "attributes": {
+    "_formula": "score = base + floor(sqrt(temper / divisor)), then capped by the Knots of the Binding",
+    "might":   {"base": 9, "divisor": 3, "fell": 15},
+    "vigor":   {"base": 8, "divisor": 2, "fell": 15},
+    "finesse": {"base": 7, "divisor": 2, "fell": 18},
+    "resolve": {"base": 8, "divisor": 4, "fell": 12}
+  },
+  "caps_by_knots": {
+    "_about": "Highest score an attribute can show for a given number of Knots tied. Temper earned above the cap is banked and released when the next Knot ties.",
+    "vigor":   {"0": 12, "1": 12, "2": 12, "3": 14, "4": 18, "5": 30, "6": 30, "7": 30},
+    "finesse": {"0": 10, "1": 10, "2": 10, "3": 12, "4": 14, "5": 18, "6": 22, "7": 30}
+  },
+  "daily": {
+    "floor_full":        {"xp": 10, "temper": {"resolve": 1}, "label": "Floor minimum, AM and PM"},
+    "floor_half":        {"xp": 5,  "temper": {},              "label": "Floor minimum, one round"},
+    "morning_check":     {"xp": 5,  "temper": {"resolve": 1}, "label": "Morning knee check, swelling graded"},
+    "knee_session":      {"xp": 30, "temper": {"might": 2, "finesse": 1}, "label": "Knee session"},
+    "knee_as_planned":   {"xp": 0,  "temper": {"resolve": 1}, "label": "Knee session run as written"},
+    "pt_visit":          {"xp": 30, "temper": {"might": 1, "finesse": 1}, "label": "PT visit"},
+    "upper_session":     {"xp": 25, "temper": {"might": 2}, "label": "Upper-body session"},
+    "accessory_session": {"xp": 15, "temper": {"might": 1}, "label": "Accessory day"},
+    "power_session":     {"xp": 20, "temper": {"might": 1, "finesse": 1}, "label": "Power & mobility"},
+    "conditioning":      {"xp_per_min": 0.5, "xp_cap": 30, "min_minutes": 10, "temper_per_10_min": {"vigor": 1}, "temper_cap": 4, "label": "Conditioning"},
+    "sport_session":     {"xp": 25, "temper": {"finesse": 2, "vigor": 1}, "per_day_cap": 2, "label": "Sport skill session"},
+    "weigh_in":          {"xp": 10, "temper": {}, "label": "Morning weigh-in"},
+    "creatine":          {"xp": 5,  "temper": {}, "label": "Creatine"},
+    "kcal_hit":          {"xp": 20, "temper": {}, "label": "Calorie target reached"},
+    "kcal_near":         {"xp": 10, "threshold": 0.92, "temper": {}, "label": "Calories within 8% of target"},
+    "protein_hit":       {"xp": 20, "temper": {}, "label": "Protein target reached"},
+    "protein_near":      {"xp": 10, "threshold": 0.90, "temper": {}, "label": "Protein within 10% of target"},
+    "day_closed":        {"xp": 5,  "temper": {}, "label": "Day closed"}
+  },
+  "weekly": {
+    "floor_7_of_7":      {"xp": 40, "temper": {"resolve": 2}, "inspiration": 1, "label": "Floor minimum every day of the week"},
+    "scouted":           {"xp": 25, "min_weighins": 3, "label": "3+ weigh-ins this week"},
+    "all_sessions":      {"xp": 50, "temper": {"resolve": 1}, "label": "Every planned session done"},
+    "tier_bonus":        {"Triumph": 60, "Hard-won": 30, "Costly": 0, "Setback": 0},
+    "triumph_inspiration": 1
+  },
+  "week_score": {
+    "_about": "0-100. Sets the chapter's outcome tier. Red-light days (plan says rest) are excused, not counted against.",
+    "weights": {"floor": 20, "sessions": 25, "fuel": 30, "checks": 10, "weighins": 5, "ledger": 10},
+    "tiers": [
+      {"min": 85, "name": "Triumph",  "roll_mod": 3},
+      {"min": 70, "name": "Hard-won", "roll_mod": 1},
+      {"min": 50, "name": "Costly",   "roll_mod": 0},
+      {"min": 0,  "name": "Setback",  "roll_mod": -2}
+    ]
+  },
+  "ember": {
+    "_about": "Rolling 7-day fuel score, 0-100, from logged days only. Day fuel = kcal_weight*(kcal/target)^exp + protein_weight*(protein/target)^exp, each ratio capped at 1.",
+    "kcal_weight": 0.55, "protein_weight": 0.45, "exponent": 2,
+    "tiers": [
+      {"min": 95, "name": "Blazing",   "effect": "+1 to every check"},
+      {"min": 85, "name": "Bright",    "effect": "+1 to Vigor checks"},
+      {"min": 70, "name": "Steady",    "effect": "none"},
+      {"min": 50, "name": "Low",       "effect": "none; the cold gets in"},
+      {"min": 0,  "name": "Guttering", "effect": "-1 to Might and Vigor checks"}
+    ]
+  },
+  "inspiration": {"cap": 4},
+  "hp": {"_formula": "20 + 4*level + 2*(vigor - 10), minimum 10"},
+  "tags": {
+    "_about": "Which real practice feeds which Art. Exercise-log 'block' and 'session' values map to tags here.",
+    "block_tags": {
+      "balance": "balance", "landing": "landing", "run": "run", "running": "run",
+      "plyo": "plyo", "plyometric": "plyo", "sprint": "sprint", "decel": "decel",
+      "deceleration": "decel", "cut": "cut", "cutting": "cut", "agility": "cut",
+      "reactive": "reactive"
+    },
+    "session_tags": {
+      "upperA": "upper", "upperB": "upper", "accessory": "accessory", "arms": "accessory", "power": "power"
+    }
+  },
+  "arts": [
+    {"id": "seated_blade",    "name": "The Seated Blade",     "tree": "Blade",   "tag": "upper",        "knot": 0, "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."},
+    {"id": "iron_grip",       "name": "Iron Grip",            "tree": "Blade",   "tag": "accessory",    "knot": 0, "effect": "Cannot be disarmed; advantage to bind and hold a blade."},
+    {"id": "hammerfall",      "name": "Hammerfall",           "tree": "Blade",   "tag": "power",        "knot": 0, "effect": "One blow per fight that staggers whatever it lands on."},
+    {"id": "stillwater",      "name": "Stillwater Stance",    "tree": "Footing", "tag": "balance",      "knot": 0, "effect": "Advantage to keep footing; cannot be knocked down while braced."},
+    {"id": "long_breath",     "name": "The Long Breath",      "tree": "Breath",  "tag": "conditioning", "knot": 0, "effect": "Recover once per fight; endure where others tire."},
+    {"id": "menders_patience","name": "The Mender's Patience","tree": "Binding", "tag": "floor",        "knot": 0, "effect": "+Rank to Resolve checks against fear, haste and temptation."},
+    {"id": "wardens_eye",     "name": "Warden's Eye",         "tree": "Insight", "tag": "check",        "knot": 0, "effect": "Read a weakness or a lie; +Rank to Insight."},
+    {"id": "groundbreaker",   "name": "Groundbreaker",        "tree": "Footing", "tag": "lower",        "knot": 3, "effect": "Drive through a line; Might checks on foot gain +Rank."},
+    {"id": "soft_landing",    "name": "Soft Landing",         "tree": "Footing", "tag": "landing",      "knot": 3, "effect": "Take falls and drops without harm."},
+    {"id": "long_road",       "name": "The Long Road",        "tree": "Breath",  "tag": "run",          "knot": 4, "effect": "Travel and pursue without exhaustion."},
+    {"id": "thunderstep",     "name": "Thunderstep",          "tree": "Footing", "tag": "plyo",         "knot": 5, "effect": "Leap gaps, walls and horses."},
+    {"id": "hawks_stoop",     "name": "Hawk's Stoop",         "tree": "Footing", "tag": "sprint",       "knot": 5, "effect": "Close any distance before a bow can be drawn twice."},
+    {"id": "anchor",          "name": "Anchor",               "tree": "Footing", "tag": "decel",        "knot": 5, "effect": "Stop dead at full speed; break a charge."},
+    {"id": "turning_blade",   "name": "The Turning Blade",    "tree": "Blade",   "tag": "cut",          "knot": 6, "effect": "The Warden's master form: turn at speed and strike from the turn."},
+    {"id": "quickening",      "name": "The Quickening",       "tree": "Insight", "tag": "reactive",     "knot": 6, "effect": "Act before the enemy finishes deciding."}
+  ],
+  "sport_arts": {
+    "_about": "Filled in by /sport. Maps a sport_log 'skill' value to an Art. Example: {\"skill\": \"shooting\", \"id\": \"...\", \"name\": \"...\", \"tree\": \"Sport\", \"knot\": 4, \"effect\": \"...\"}",
+    "arts": []
+  },
+  "art_ranks": [1, 6, 15, 30, 50]
+}

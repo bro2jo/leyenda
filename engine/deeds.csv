@@ -1,0 +1,55 @@
+date,kind,deed,xp,might,vigor,finesse,resolve,note
+2026-09-10,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-10,daily,Knee session,30,2,0,1,0,home
+2026-09-11,daily,PT visit,30,1,0,1,0,
+2026-09-12,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-13,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-13,daily,Knee session,30,2,0,1,0,home
+2026-09-14,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-15,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-15,daily,Knee session,30,2,0,1,0,home
+2026-09-18,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-18,daily,PT visit,30,1,0,1,0,
+2026-09-19,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-19,daily,Knee session,30,2,0,1,0,home
+2026-09-20,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-20,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-09-20,daily,Knee session,30,2,0,1,0,home
+2026-09-22,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-22,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-09-22,daily,Knee session,30,2,0,1,0,min
+2026-09-23,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-23,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-09-23,daily,Knee session,30,2,0,1,0,home
+2026-09-24,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-24,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-09-25,daily,PT visit,30,1,0,1,0,
+2026-09-26,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-09-27,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-09-28,daily,"Floor minimum, AM and PM",10,0,0,0,1,
+2026-09-28,daily,Knee session,30,2,0,1,0,A
+2026-09-28,daily,Morning weigh-in,10,0,0,0,0,
+2026-09-28,daily,Creatine,5,0,0,0,0,
+2026-09-28,daily,Protein within 10% of target,10,0,0,0,0,
+2026-09-29,daily,Creatine,5,0,0,0,0,
+2026-09-29,daily,Protein target reached,20,0,0,0,0,
+2026-09-30,daily,"Floor minimum, AM and PM",10,0,0,0,1,
+2026-09-30,daily,Knee session,30,2,0,1,0,B
+2026-09-30,daily,Creatine,5,0,0,0,0,
+2026-09-30,daily,Protein target reached,20,0,0,0,0,
+2026-10-01,daily,"Floor minimum, one round",5,0,0,0,0,
+2026-10-01,daily,PT visit,30,1,0,1,0,
+2026-10-02,daily,Creatine,5,0,0,0,0,
+2026-10-02,daily,Calorie target reached,20,0,0,0,0,
+2026-10-02,daily,Protein target reached,20,0,0,0,0,
+2026-10-03,daily,Morning weigh-in,10,0,0,0,0,
+2026-10-03,daily,Creatine,5,0,0,0,0,
+2026-10-04,daily,Creatine,5,0,0,0,0,
+2026-10-05,daily,Morning weigh-in,10,0,0,0,0,
+2026-10-05,daily,Creatine,5,0,0,0,0,
+2026-10-05,daily,Calorie target reached,20,0,0,0,0,
+2026-10-05,daily,Protein target reached,20,0,0,0,0,
+2026-10-06,daily,Creatine,5,0,0,0,0,
+2026-10-06,daily,Calories within 8% of target,10,0,0,0,0,
+2026-10-06,daily,Protein target reached,20,0,0,0,0,
+2026-10-07,daily,Creatine,5,0,0,0,0,
