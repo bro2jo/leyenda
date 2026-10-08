@@ -10,7 +10,7 @@ You log real life. Claude keeps the real numbers on one side (**the Ledger**), t
 
 ## Get it running (one time)
 
-1. **Make a private GitHub repo** (e.g. `darrow-saga`) and upload this folder's contents to it: GitHub's web uploader works, or `git init && git add -A && git commit -m init && git push`.
+1. **Make a private GitHub repo** (e.g. `darrow-saga`) and get this folder into it. Easiest: create the repo empty and ask Claude to attach it and push everything. Or from your computer: unzip, `cd darrow-saga`, `git remote add origin <repo url>`, `git push -u origin main` (it's already a git repo with one commit). Avoid GitHub's drag-and-drop uploader: it can skip the hidden `.claude/` folder, which holds all the commands.
 2. **Open it in Claude Code**: on the web at claude.ai/code, in the **Code** tab of the Claude mobile app, in the Desktop app, or with `claude` in a terminal. Connect GitHub when it asks.
 3. **First message** (paste this once):
 
