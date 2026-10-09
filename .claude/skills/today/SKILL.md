@@ -8,7 +8,12 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
 # /today: the Ledger, one day
 
 1. `git pull --rebase origin main`, then `python3 engine/darrow.py today` (add `--date` if $ARGUMENTS names a day).
-2. Read the newest `real/state/ACL_Recovery_State_*.md` §6 (current program, ladders, minimum sessions) and `real/plan/Whole_Athlete_AddOn.md` (upper, accessory, conditioning, power). Check `real/NOW.md` for open items and the PT question list.
+2. Read only the sections today needs, never the whole files:
+   - a knee session day: `python3 engine/darrow.py doc state "session a"` (or `"session b"`), plus `doc state "progression rules"` if a change is due;
+   - every day: the floor and conditioning lines in `real/NOW.md` → Plan in force (`doc state "daily floor"` for the full floor);
+   - an upper, accessory or power day: `doc addon 5` (sessions);
+   - a PT day: the question list in `real/NOW.md` → Next PT visit, and the newest `real/visits/` file if the last visit changed anything.
+   The newest visit file outranks the state file until a checkpoint folds it in (`real/NOW.md` says when).
 3. Answer, real numbers only, compact enough for a phone:
    - **Planned today:** each session with today's doses (e.g., Session A: SL sit-to-stand 24" 2 × 12 L …), the floor minimum, conditioning, and the minimum version if he's short on time (the plan's "short on time" cut order).
    - **Done so far** (from the engine).

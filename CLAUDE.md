@@ -13,7 +13,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 
 ## Golden rules (in priority order)
 
-1. **Real world outranks the realm.** Source priority for anything physical: latest PT/surgeon instruction → `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` → the newest `real/state/ACL_Recovery_State_*.md` → `real/plan/Whole_Athlete_AddOn.md` → sport plan → logs → general knowledge. The story never sets targets, never suggests exercises, loads or progressions, and never advances past what the PT has cleared.
+1. **Real world outranks the realm.** Source priority for anything physical: latest PT/surgeon instruction (`real/visits/`) → `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` → the newest `real/state/ACL_Recovery_State_*.md` → `real/plan/Whole_Athlete_AddOn.md` → sport plan → logs → general knowledge. The story never sets targets, never suggests exercises, loads or progressions, and never advances past what the PT has cleared.
 2. **Red flags stop everything.** Fever, calf pain or swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling or loss of extension: answer in plain language, out of story voice. No training; contact the surgical team / PT. No story that day unless the user asks.
 3. **Weight-loss flag.** If the weekly average weight is falling or appetite is poor (nutrition guide), say so plainly and suggest telling the surgeon/PCP.
 4. **The wall.** Real numbers, foods, exercise names, PT, ACL and rehab never appear in the Chronicle's prose (`saga/bible/style.md` §1). Story never appears in the Ledger. **The site (`docs/`) is public**: it is built from `saga/` only, never from `real/`, and it must never show a name, place or fact the chronicle has not put on the page.
@@ -46,7 +46,7 @@ Default behavior: **anything that reads like a log is a log.** He shouldn't need
 | foods, a meal, a photo of a label or plate | `/log` → food entries → Ledger reply |
 | "swelling trace, pain 0, ext good" | `/log` → morning check |
 | "floor done AM", "heel prop PM" | `/log` → floor |
-| "did session A", "PT today: …", "upper B", "bike 20" | `/log` → sessions + exercise rows |
+| "did session A", "PT today: …", "upper B", "bike 20" | `/log` → sessions + exercise rows (a PT or surgeon visit also gets its `real/visits/` file and `measurements.csv` rows) |
 | "weighed 156.2", "creatine ✓" | `/log` |
 | "close day", or the first log of a new day when yesterday has something logged (a `daily_log.csv`, `nutrition_log.csv` or `food_entries.csv` row) and its `closed` column in `daily_log.csv` isn't `Y` | close the day → **write that day's scene** |
 | a new day's first log when yesterday has **nothing logged at all** | the day is missed: no row, no scene; `python3 engine/saga.py plan done N --skipped`; the next scene opens on the world move `plan next` and `now` print as owed |
@@ -114,7 +114,7 @@ If several days are open, write one scene per day, oldest first (or one combined
 
 ## Sunday checkpoint → the chapter climax
 
-See `.claude/skills/checkpoint/SKILL.md`. In short: close Saturday (a Saturday with nothing logged is skipped and its spine content folds into the climax); resolve any open micro-choice by its default; `chapter-close`; the **real** weekly recap (the style of the recovery-state checkpoint: nutrition averages vs targets, weigh-in average, sessions vs plan, floor, swelling grades, flags, next week's plan); then `saga.py plan set stage=climax` **before** `saga.py now` (read the ARMED and near rules and every DUE NOW / OVERDUE item before writing; `saga.py due` lists everything owed) and `saga.py plan climax` (the chapter's question, climax plan, checks, options, default, world moves left); the **climax** (900–1,800 words, dice via `roll --chapter N`, the tier setting the shape), ending with a choice; then `plan beat bN.K status=done` (the climax answered the chapter's beat). If a Knot tied: `saga.py route decide --book N`, write the matching transition shape (`saga.py arc tN.<road>`), `plan beat tN status=done`, and `saga.py plan book open N+1` before the next chapter. Open the next chapter file and `saga.py plan chapter open --number N+1 '<json>'` (it refuses while a micro is open).
+See `.claude/skills/checkpoint/SKILL.md`. In short: close Saturday (a Saturday with nothing logged is skipped and its spine content folds into the climax); resolve any open micro-choice by its default; `chapter-close`; the **real** weekly recap (`darrow.py recap --write` fills `real/checkpoints/<Sunday>.md` with the numbers; Claude writes their meaning under its headings, reviews the state file (a new one only if the program changed) and refreshes NOW's top); then `saga.py plan set stage=climax` **before** `saga.py now` (read the ARMED and near rules and every DUE NOW / OVERDUE item before writing; `saga.py due` lists everything owed) and `saga.py plan climax` (the chapter's question, climax plan, checks, options, default, world moves left); the **climax** (900–1,800 words, dice via `roll --chapter N`, the tier setting the shape), ending with a choice; then `plan beat bN.K status=done` (the climax answered the chapter's beat). If a Knot tied: `saga.py route decide --book N`, write the matching transition shape (`saga.py arc tN.<road>`), `plan beat tN status=done`, and `saga.py plan book open N+1` before the next chapter. Open the next chapter file and `saga.py plan chapter open --number N+1 '<json>'` (it refuses while a micro is open).
 
 ## Answering a choice → `/choose`
 
@@ -137,7 +137,11 @@ python3 engine/darrow.py roll ch01-gate-insight --stat resolve --dc 13 --prof [-
 python3 engine/darrow.py inspire --reason "…"       # spend Inspiration on a bold option
 python3 engine/darrow.py chapter-close --date 2026-10-10   # Sundays: freezes the week containing that date (pass last Saturday). Without --date: the most recent completed, unclosed week; an in-progress week needs --force
 python3 engine/darrow.py knot tie 3 --date 2026-10-20 --evidence "PT: quad LSI 72% on dynamometer; Phase 4 cleared"
-python3 engine/darrow.py show daily 2026-10-05      # one date's row(s) as key: value lines; also show nutrition|food|ex|sport DATE
+python3 engine/darrow.py show daily 2026-10-05      # one date's row(s) as key: value lines; also show nutrition|food|ex|sport|measurements DATE
+python3 engine/darrow.py measure add '<json rows: date, source, metric, side, value, method, visit, notes>'   # one row per side; metrics in config.json → measurement_metrics
+python3 engine/darrow.py measures [--metric quad_lb] # latest per metric and side with LSI; --metric: its full history
+python3 engine/darrow.py recap --date 2026-10-04 [--write]   # the week's checkpoint numbers (macros, micros vs reference, weight vs last week, loaded days → next mornings, sessions vs plan, measured, flags); --write fills real/checkpoints/<the Sunday after>.md
+python3 engine/darrow.py doc state program | doc addon 3 | doc guide calories | doc master "phase 3"   # one section of a document; no section: its outline
 python3 engine/darrow.py check                      # validate logs
 
 python3 engine/saga.py now                          # the GM digest: position, next slot, open micro, Bearing, due consequences, armed rules (≤ 30 lines)
@@ -149,7 +153,7 @@ python3 engine/saga.py route decide --book N | bearing show | arc q1.letters | d
 python3 engine/saga.py check                        # before every commit that touched saga/; `fmt` rewrites the state JSON canonically
 ```
 
-**Reading the logs:** never read a CSV raw and count columns; use `show <log> DATE` (one record as key: value lines), `food list DATE`, `today`, `week`. The CSVs are storage; the engine is the interface. **Long prose never goes in a CSV cell:** a weekly recap goes to `real/checkpoints/<Sunday>.md` and the row's `notes` keeps a short pointer to it.
+**Reading the logs:** never read a CSV raw and count columns; use `show <log> DATE` (one record as key: value lines), `food list DATE`, `today`, `week`, `recap`, `measures`. The CSVs are storage; the engine is the interface. **Reading the plans:** the state file, the add-on, the nutrition guide and the master plan are read a section at a time with `doc` (the outline first if you don't know the section), never whole unless a skill says so. **Long prose never goes in a CSV cell:** a weekly recap goes to `real/checkpoints/<Sunday>.md` and the row's `notes` keeps a short pointer to it.
 
 **Logs** (`real/logs/`):
 - `food_entries.csv`: one row per food item. Fill **every** nutrient column you can estimate, not only kcal and protein, or the micro totals undercount. Reuse `foods.csv` values for known items; add new items to `foods.csv` once their numbers are known (label > estimate).
@@ -157,8 +161,14 @@ python3 engine/saga.py check                        # before every commit that t
 - `daily_log.csv`: one row per day for knee status and sessions. `am_swelling` must be a grade (`0`, `trace`, `1+`, `2+`, `3+`) to count as a check. `knee_session`: `A`, `B`, `min` (minimum session), or a short label. `addon_session`: `upperA`, `upperB`, `accessory`, `power`, `arms` (join with `+`). `light`: `green` / `yellow` / `red` (red = plan says stop; the day is excused).
 - `ACL_Exercise_Log.csv`: per-exercise detail, the user's original schema. Main lifts in full; accessories may be one "as written" row (add-on §11). Upper sessions use `session=upperA/upperB/accessory/power/arms`. Right-leg mirrored sets go in knee-session rows with `side=R`.
 - `sport_log.csv`: per sport drill (see `/sport`).
+- `measurements.csv`: every measured number (ROM, dynamometer, leg-press max, hop tests later), one row per side: `date` (or `pre-op`), `source` (PT, surgeon, clinic, self), `metric`, `side`, `value`, `unit`, `method`, `visit`, `notes`. Metrics must be listed in `config.json → measurement_metrics` (add one there first); the engine computes LSI. Self-checks of extension stay in `daily_log.csv → am_extension`.
 
-**Checkpoint files** (`real/state/`): each Sunday, if the rehab plan changed, write a new `ACL_Recovery_State_YYYY-MM-DD.md` in the same structure as the latest one (it replaces it as the current state). Weekly nutrition and rehab recaps go to `real/checkpoints/YYYY-MM-DD.md`.
+**Current vs history.** Each kind of real-world record has one home:
+- **Now** (read every session, kept short): `real/NOW.md`. Its top is what stands until something changes (plan in force, next PT visit and its questions, the gate, flags, open items); the engine block below owns every count.
+- **The program** (present tense only): exactly one `real/state/ACL_Recovery_State_<Sunday>.md`, in markdown `##` sections (fixed facts, phase status, instructions in force, current program, add-on, patterns, milestones). It never holds a week's review or a growing log. At each checkpoint it is reviewed: if the program changed, write a new file for that Sunday in the same structure and move the old one to `real/state/archive/`; if not, update its "Last reviewed" line and any status that moved.
+- **The week's history**: `real/checkpoints/<Sunday>.md`, named for the Sunday after the week it covers (Sun–Sat), with fixed headings. `recap --write` creates it from the template and fills its numbers block; Claude writes the meaning under each heading. Once written it is an archive: only its numbers block changes (rerun `recap --write` when a late log lands), plus corrections of fact.
+- **Visits**: `real/visits/YYYY-MM-DD_PTn.md` (or `_surgeon.md`) per PT or surgeon visit: measured, session, instructions, questions asked and carried. The newest one outranks the state file until a checkpoint folds it in.
+- **Measurements**: `real/logs/measurements.csv`.
 
 ---
 
@@ -180,7 +190,7 @@ Quality bar: a stranger should want the next chapter. Specific, funny where peop
 ```
 CLAUDE.md                  this file
 README.md                  for the human
-real/   NOW.md · config.json · plan/ · state/ · logs/ · checkpoints/
+real/   NOW.md · config.json · plan/ · state/ (the one current program; archive/) · logs/ (incl. measurements.csv) · checkpoints/ (one per week) · visits/ (one per PT/surgeon visit)
 engine/ darrow.py (the real math) · saga.py (the story's bookkeeping) · rules.json · deeds.csv (audit trail: every XP award, regenerated) · build_site.py
 saga/   NOW.md · bible/ (style, cast, mechanics; _gm/: arc, world, characters, design) · state/ (world, bearing, places, factions, codex, darrow, glimpses; _gm/: plan, consequences, threads) · characters/ (one JSON per character on the page) · chronicle/
 docs/   the public site, generated by engine/build_site.py; never hand-edited

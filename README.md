@@ -73,7 +73,8 @@ Real effort sets the **tone** of each day's scene and the **outcome** of each we
 ## What's where
 
 ```
-real/      the Ledger: NOW.md (today/this week), plans, recovery state, logs (CSV)
+real/      the Ledger: NOW.md (what stands now), plan/ (the source documents), state/ (the one current program; archive/ for old ones),
+           checkpoints/ (one archive file per week), visits/ (one per PT or surgeon visit), logs/ (CSVs, incl. measurements.csv)
 engine/    darrow.py (the real math) + rules.json (the exchange rates; tweak freely) + saga.py (the story's bookkeeping) + build_site.py (the site)
 saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechanics), state/ (world, bearing, places, factions, codex), characters/ (the cast), chronicle/ (the chapters)
            saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger and the character secrets: everything the page

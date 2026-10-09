@@ -17,12 +17,14 @@ Input: $ARGUMENTS (plus any attached photo).
   - **day status and sessions** → `daily_log.csv` (`am_swelling`, `am_pain`, `am_extension`, `am_notes`, `floor_am`, `floor_pm`, `knee_session`, `knee_min`, `knee_rpe`, `knee_as_planned`, `pt`, `addon_session`, `addon_min`, `addon_rpe`, `conditioning_type`, `conditioning_min`, `sport_min`, `hours_on_feet`, `gym_min_on_feet`, `sleep_h`, `light`, `notes`)
   - **exercise detail** → `ACL_Exercise_Log.csv`
   - **sport drills** → `sport_log.csv`
+  - **a PT or surgeon visit** → exercise rows (`session=PT`) as usual, plus `real/visits/YYYY-MM-DD_PTn.md` and `measurements.csv` rows (the `/ingest` visit procedure); `daily_log` `notes` keeps a one-line pointer, never the visit itself
+  - **a measured number** (goniometer, dynamometer, leg-press max, hop test) → `measurements.csv` via `python3 engine/darrow.py measure add`
   - **"close day"** → step 6
   - **an answer to an open story choice** ("2", "go the long way", "tell her the truth") → handled **first**, through `/choose`, before anything else in the message. A bare number is an answer only while a choice is open (`python3 engine/saga.py now` prints the open micro-choice; a climax choice is in `saga/NOW.md`); otherwise it is a quantity or a number from the day.
 
 ## 2. Safety screen (before anything else)
 - **Red flags** (fever, calf pain/swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling, loss of extension, inability to walk normally): reply in plain language and tell him to contact the surgical team/PT. Still log what he said. Set `light=red`. No story today.
-- **Yellow** (pain 3–4, mild new swelling, stiffer than usual, pre-check fails): note the plan's response (last clean doses, 2 sets, no changes; Working Rules / recovery state §6). `light=yellow`.
+- **Yellow** (pain 3–4, mild new swelling, stiffer than usual, pre-check fails): note the plan's response (last clean doses, 2 sets, no changes; `python3 engine/darrow.py doc state "pre-session check"`). `light=yellow`.
 - **Off-plan work** (something not yet cleared: impact, running, jumping, pivoting; several changes at once; a load jump bigger than one DB step or 10%): log it truthfully, set `knee_as_planned=N` if it was a knee session, and name the plan's rule in one plain sentence. No scolding. No story reward.
 
 ## 3. Food
@@ -36,7 +38,7 @@ For each item:
 ## 4. Status, sessions, details
 - `python3 engine/darrow.py set daily DATE key=value …` (and `set nutrition DATE weight_lb=… creatine=Y`).
 - To see what a day already holds, `python3 engine/darrow.py show daily DATE` (or `show nutrition|food|ex|sport DATE`): key: value lines, nothing to count. Never open a CSV and read it by column position.
-- Keep `notes` short. A weekly recap or any paragraph goes to `real/checkpoints/<Sunday>.md`; the cell gets a pointer.
+- Keep `notes` short. A visit goes to `real/visits/`, a weekly recap or any paragraph to `real/checkpoints/<Sunday>.md`; the cell gets a pointer.
 - `knee_as_planned=Y` only when he says or clearly implies the session ran as written (one change per exercise at most, per the Working Rules).
 - Exercise detail: `python3 engine/darrow.py ex add '[…]'`. Use the existing CSV's style (see recent rows). If he just says "Session A as written", one row is enough: `{"date":…, "session":"home", "block":"knee", "exercise":"Session A as written", "side":"L"}`.
 - Upper body: `session` = `upperA`/`upperB`/`accessory`/`power`/`arms`; log main lifts with sets × reps × load.
@@ -45,7 +47,7 @@ For each item:
 ## 5. Sync and reply
 - `python3 engine/darrow.py sync`. Read the **RECKONING CHANGES** lines.
 - Reply in the CLAUDE.md "Reply shape for a log" format: Ledger first (items, running totals vs targets, what's done, what's still open today), then **one** bracketed Reckoning line only if something changed, then **the glimpse**: one or two italic sentences of life at the House, drawn from how the day has gone, the sheet and his choices, never plot, never the log mirrored, never a mechanic explained (CLAUDE.md "The glimpse"; read the tail of `saga/state/glimpses.md` first, append the new line after). No glimpse in a day-close reply or a red-flag reply. Keep it short enough to read on a phone.
-- If today's remaining plan changed, update the top section of `real/NOW.md`.
+- If the plan in force, the next PT visit, the gate or a flag changed, update the top section of `real/NOW.md`. Never write counts there (the engine block has them).
 
 ## 6. Close day (when he says so, or when a new day's first log arrives and the previous day has something logged and its `closed` column in `daily_log.csv` isn't `Y`)
 - If the previous week's chapter is unclosed (`python3 engine/saga.py route show`), run `/checkpoint` before closing any day of the new week; `plan next --date` has no slot for a new-week day until the next chapter is open.

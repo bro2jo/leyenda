@@ -1,4 +1,4 @@
-Whole-Athlete Add-On — from POD 27 (Phase 2)
+# Whole-Athlete Add-On — from POD 27 (Phase 2)
 
 Written Sun 2026-09-20; revised 9/20 evening, 9/27, and Sun 2026-10-04 — redesigned after 0 of 2 upper sessions ran for the second straight week (the Working Rules trigger). What changed: calibration runs are dropped; upper body becomes a 20–25-minute core block after each knee session (default placement — the user may choose its own ~30-minute day instead); off days shrink to the floor minimum plus bike; the right-leg block becomes mirroring inside the knee sessions; the block calendar restarts from the first session that actually runs.
 
@@ -8,13 +8,13 @@ Source priority: latest PT/surgeon instruction → rehab plan → state file →
 
 Equipment (home): rack and barbell, DBs, benches including incline, bands, air bike, BOSU. No leg press, leg curl, knee-extension machine, or cable stack. Band and corner-landmine substitutes are named per exercise. With gym access, swap like for like.
 
-1. What changes and what doesn't
+## 1. What changes and what doesn't
 
 Unchanged: the floor comes first (now the minimum: weighted heel prop AM + PM) · the home knee sessions and their progression rules (Working Rules load rule 4) · pre-session check · no back-to-back loaded days by design · Sunday checkpoint · weekly PT.
 
 Added: an upper core block after each knee session · an optional accessory day · the right leg mirroring the left's single-leg work · off-day bike × 3 · Saturday power & mobility later.
 
-2. Operating rules
+## 2. Operating rules
 Floor first. The floor minimum is done every day before any add-on work. It carries the PT's extension goal (10/1). A week with a missed floor day costs the following week its optional items (accessory day, Saturday session).
 Left leg up between upper sets. Heel on a bench, knee unsupported, quad relaxed — rest periods are extra heel-prop minutes.
 Seated or lying for the first two upper sessions (re-entry). From the third: pull-ups with a box (step on and off with hands on the bar — a drop is a landing), half-kneeling with the right knee down, standing landmine press, standing Pallof. No kneeling of any kind on the left — the harvest site.
@@ -27,7 +27,7 @@ Plan red light (new swelling, extension loss, giving way): contact the PT first;
 Post-op red flags (fever, calf pain or swelling, chest pain, shortness of breath, wound changes): no training of any kind; call the surgical team.
 Three weeks up, one down on upper volume. Deload = sets −30–40%, loads held.
 Short on time — cut in this order: the C pair of the upper core → the whole upper core → the accessory day. Never the floor minimum, never the knee session's minimum.
-3. Week layout (Sun → Sat)
+## 3. Week layout (Sun → Sat)
 Day	Left knee	Add-on
 Sun	Checkpoint → Session A	Upper A core after; right leg mirrors inside the session
 Mon	Floor minimum	Bike 15
@@ -39,14 +39,14 @@ Sat	Floor minimum	Bike 15 · power & mobility from 10/17 at the earliest
 
 Alternative placement (user's choice): upper on Mon and Thu as its own ~30-minute day (bike 10 + upper core), with knee days ending after the knee session. Use whichever actually happens.
 
-4. Rollout
+## 4. Rollout
 Week of	Added	Judged by
 9/20, 9/27	0 of 2 each week. Redesigned 10/4	—
 10/4	Upper A and B cores: 3 sets main lifts, RPE 6 the first time each, then 7. Seated. Off-day bike × 3. Right leg mirrors	Upper runs 2 of 2
 10/11	Standing options from upper session 3. Seated med-ball chest pass from session 3. Accessory day optional	2 of 2 again
 10/18	Block 1 if 2 of 2 ran in both weeks; otherwise Block 0 continues	—
 10/17 earliest	Saturday power & mobility after two weeks of 2 of 2; seated rotational throws only with the PT's OK	—
-5. Sessions
+## 5. Sessions
 Warm-up — 3 min, straight after the knee session
 
 Band pull-apart 20 · thoracic extension over a roller 45 s · arms-only air bike 1–2 min if cooled down. Quad sets and SLR are already done.
@@ -92,7 +92,7 @@ Posture
 
 Chin nod and the 90/90 hip lift are floor extras (separate drills). Neck and scapular work lives on the accessory day.
 
-6. Upper-body blocks
+## 6. Upper-body blocks
 
 Follows the off-season plan's upper sequence. Dates restarted 10/4.
 
@@ -108,13 +108,13 @@ Load goes up when: all reps clean, bar speed steady, 2+ in reserve, nothing abou
 
 Posture and neck work progresses by hold time and position quality, never load.
 
-7. Conditioning
+## 7. Conditioning
 Stage	What
 Now (Phase 3)	Plan: bike / elliptical / pool, 15–30 min, 3–5 days. Bike 15 min easy Mon, Thu, Sat after the heel prop; build minutes first, one dial, toward 30–40. Hard intervals stay arms-only (accessory day)
 Phase 4	After two weeks of 30 min easy bike with clean mornings and a PT OK: the off-season 4 × 4 min on the bike at RPE 7–8
 Phase 5	The walk-jog progression is the running. Tempo runs only once continuous easy running is established
 Phase 7	Running intervals and repeat sprints. The 30-15 IFT has 180° turns — it sits behind the hard-cutting gate
-8. Out for now
+## 8. Out for now
 Carries, push press, standing landmine rotation (Phase 4–6, section 10)
 Kneeling on the left, tall-kneeling, push-ups from the knees
 Pull-up drops or jumps down
@@ -124,7 +124,7 @@ Left open-chain knee extension beyond the PT's 90° isometric (10/1); moving rep
 Loaded bridge or hip thrust, loaded seated left calf, Spanish squat, BFR, tempo eccentrics on other lifts — section 9
 Nordics
 Any out-of-plan left-knee addition without the PT. In-plan progressions follow the Working Rules
-9. PT candidates — items from the other two plans that touch the left knee
+## 9. PT candidates — items from the other two plans that touch the left knee
 
 For the PT, one at a time. None is in the rehab plan, so the PT's general approval of in-plan progressions (9/20, 9/30) does not cover them.
 
@@ -134,7 +134,7 @@ Seated calf raise, left, loaded — soleus; off-season tissue block.
 Spanish squat isometric — off-season tendon block and the prehab plan's main quad tool. The PT has started a 90° open-chain isometric (10/1); the Spanish squat is a different, closed-chain isometric that loads the harvest site directly. The PT decides.
 Reverse sled drag — Phase 3–4.
 Slow-eccentric tempo (3–4 s lowering) on the other Phase 3 lifts. The PT already uses slow eccentrics on the heel tap and step-down; layering tempo onto the squat, split squat, and RDL is the question.
-10. When the rest of the off-season plan comes back
+## 10. When the rest of the off-season plan comes back
 
 The PT's response-driven approach governs dosing inside the current phase. It does not move anything in this table: swelling and pain report joint irritation, not graft strength, so a quiet knee is not evidence that impact, rotation, or pivoting can come forward.
 
@@ -155,13 +155,13 @@ Planned → reactive cuts · intensive and reactive plyos · pivoting throws	Pha
 Max-velocity sprinting (≥95%)	Phase 7–8	The rehab plan sets no gate — get one from the PT. Minimum: stage C clean plus the hard-cutting gate
 Game speed, game simulation	Phase 8	Return-to-sport battery
 The 24-week program as written	After clearance	First pass advances by gates, not weeks. Asymmetry flag tightened from 10–15% to ≤5%
-11. Tracking and fueling
+## 11. Tracking and fueling
 
 Dashboard columns (ACL_Daily_Log.csv): hours_on_feet plus gym_min_on_feet · knee_session_min / knee_session_rpe for every knee session, PT included · addon_session / addon_min / addon_rpe · floor_done · body_mass_lb weekly (Sunday morning, same time). Session load = RPE × minutes, computed from the columns. In ACL_Exercise_Log.csv the add-on uses session = upperA / upperB / accessory / power / arms; main lifts logged in full, accessories as one "as written" row unless something changed. Right-leg mirrored sets go in the knee-session rows with side R.
 
 Fueling (off-season section 13, adjusted): protein toward the top of the range, 1.6–2.0 g/kg/day across 3–5 feedings · no deliberate calorie deficit while tissue is rebuilding · sleep 8–9 h. A body-mass baseline is still missing.
 
-12. Additions to the PT messages
+## 12. Additions to the PT messages
 
 Next visit (Fri 10/9): "I've restarted upper-body lifting, seated with the left leg up, right after my knee sessions; standing upper work comes in from the third session. The right leg is doing the same single-leg work as the left. Any objection or limits?" Stop and ask if the PT objects.
 

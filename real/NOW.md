@@ -1,30 +1,40 @@
 # NOW — the Ledger
 
-*Real numbers only. Nothing from the story appears on this page. Claude maintains the top section; the engine regenerates the block at the bottom on every `sync`.*
+*Real numbers only. Nothing from the story appears on this page. Claude keeps the top section to what stands until something changes: the plan in force, the next PT visit, the gate, flags, open items. The engine owns every count and date in the block at the bottom, regenerated on every `sync`. History: `real/checkpoints/`. Visits: `real/visits/`. Measurements: `python3 engine/darrow.py measures`.*
 
-## Today — Fri 10/9 · POD 46 · post-op week 7 · Phase 3 (strength foundation)
+## Plan in force · Phase 3 (strength foundation)
 
-Source: `real/state/ACL_Recovery_State_2026-10-04.md` §6, `real/plan/Whole_Athlete_AddOn.md` §3, PT 9 (Thu 10/8).
+Program: `real/state/ACL_Recovery_State_2026-10-04.md` (`python3 engine/darrow.py doc state program`). PT 9 (Thu 10/8) outranks it until the 10/11 checkpoint folds its items in.
 
-- **Morning check first:** grade swelling (0 / trace / 1+ / 2+ / 3+), pain, extension. Thursday was the hardest PT session so far; today's grade is its verdict. Trace or better = green.
 - **Floor minimum (every day):** weighted heel prop **8 lb** on the lower thigh, 5–10 min, **AM and PM**. Quad sets + NMES 14 × 10 s during the AM round. (Tue and Wed ran at 10 lb; the plan holds 8 until the PT changes it. Ask Nick.)
-- **Conditioning:** bike 15 min easy, after the heel prop. Thursday's planned ride did not happen; today is open for it.
-- **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine. Thursday landed 2,550 / 150: protein on target, calories and carbs short, fat high.
+- **Knee sessions:** Session A (Sun) and Session B (Tue or Wed) at the doses in the state file; one change per exercise per session, one load step at a time.
+- **Conditioning:** bike 15 min easy Mon, Thu, Sat, after the heel prop.
+- **Upper:** Upper A core after Session A, Upper B core after Session B (add-on Block 0).
+- **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily.
 
-## PT 9 — Thu 10/8 (Nick)
+## Next PT visit · date not logged yet (usually Fri; 10/1 and 10/8 were Thu)
 
-- **Measured:** extension 2° hyperextension · flexion 146° · single-leg leg press max R 14 plates, L 9 plates (**64%**) · gait good, equal weight bearing, no device, no brace.
-- **Session:** upright bike 6′ · leg press L 6 plates · standing heel raise 2 × 15 @ 35 lb DBs · standing bird dog 2 × 15 @ 8 lb KB · step-up 12″ with opposite knee drive L 2 × 15 · multi-hip abduction / extension / flexion 4 plates 2 × 15 each side · two-leg stance eyes closed 1′ each way. Hardest session to date, not hard on the knee; knee feels great. Sauna 20′ after.
-- **Instruction:** keep progressing; add Thursday's items alongside the master plan; keep sessions balanced and challenging. → Fold into Sessions A/B at Sunday's checkpoint (new recovery state).
-- **Phase 4 gate (earliest 10/20):** ROM met, gait met, swelling trace on graded days. Quad LSI ≥70% is still unmeasured on a dynamometer; the leg-press ratio (64%) is the only stand-in and sits below it. Ask for the dynamometer, both sides, next visit.
-- **Carried over, not asked Thu:** heel-prop weight (8 vs 10 lb) · isometric progression (60°, frequency, moving reps) · NMES still needed? BFR? · right-knee hyperextension reference · seated throws from ~10/17 · add-on §9 order · have him watch the RDL.
+- **Dynamometer, quad and hamstring, both sides.** It decides the Phase 4 gate.
+- Heel-prop weight (8 vs 10 lb).
+- Isometric progression (60°, frequency, moving reps).
+- NMES still needed? BFR?
+- Right-knee hyperextension reference.
+- Seated throws from ~10/17.
+- Add-on §9 order.
+- Have him watch the RDL.
 
-## This week so far (Sun 10/4 – Thu 10/8)
+## Gate · Phase 3 → 4 (review week of 10/18; earliest Tue 10/20)
 
-- Loaded days: Tue (Session A), Thu (PT 9). Clean mornings after loading: Wed trace, Thu trace.
-- Floor: one AM round Tue (7′ @ 10 lb) and Wed (10′ @ 10 lb + quad sets/NMES); no PM round any day; none Sun, Mon, Thu. Full floor 0/5.
-- Tue Session A was not quite as written: banded sit-to-stand skipped, step-up DBs 15 → 25 lb within the session, heel tap 5″ against the PT's 4″. The plan's rule is one change per exercise, one load step at a time.
-- Bike 0/2 · upper 0/2 · graded morning checks 3/5 · weigh-ins 1/3 (156.0 Mon).
+- **ROM:** met. PT 9: extension 2° hyperextension, flexion 146°.
+- **Gait:** met. PT 9: good, equal weight bearing, no device, no brace.
+- **Effusion:** trace on every graded morning since Tue 10/6, including the mornings after Session A (Tue) and PT 9 (Thu). Needs to hold.
+- **Quad LSI ≥70%:** unmeasured since pre-op (70.4%). The single-leg leg press ratio (64%, 10/8) is the only stand-in and sits below it.
+- **Single-leg control, balance:** progressing.
+
+## Flags and notes for Sunday
+
+- Tue Session A ran off the written plan: banded sit-to-stand skipped, step-up DBs 15 → 25 lb within the session, heel tap 5″ against the PT's 4″. The rule is one change per exercise, one load step at a time.
+- PT 9's items (leg press, standing heel raise, standing bird dog, step-up with knee drive, multi-hip, eyes-closed stance) fold into Sessions A/B at the 10/11 checkpoint.
 
 ## Open items
 
@@ -46,6 +56,9 @@ _Engine block, regenerated by `sync` · as of Fri 2026-10-09 · POD 46 · post-o
 | Sat 10/10 | cond | | | | | | | | | | | |
 
 **Nutrition:** avg 2,412 kcal (target 3,000) · avg 120 g protein (target 150-160) · at kcal target 1/6 days · at protein target 3/6 days
-**Weigh-ins:** 2/3 · avg 155.5 lb
+**Weigh-ins:** 2/3 · avg 155.5 lb · last week 155.2 (2 readings) · +0.3 lb
+**Morning swelling grades:** Tue trace · Wed trace · Thu trace · Fri trace
 **Sessions (through Fri):** knee 1/2 · upper 0/2 · cond 1/2 · pt 1/1 · floor full 0/6 · graded morning checks 4/6
+
+**Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 70.4% (pre-op) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8)
 <!-- engine:end -->

@@ -1,0 +1,19 @@
+date,source,metric,side,value,unit,method,visit,notes
+pre-op,clinic,ext_deg,L,-1,deg,,,pre-op; exact date not recorded
+pre-op,clinic,ext_deg,R,0,deg,AROM,,hyperextension on a heel prop never measured
+pre-op,clinic,flex_deg,L,144,deg,,,
+pre-op,clinic,flex_deg,R,144,deg,,,
+pre-op,clinic,quad_lb,L,58.9,lb,dynamometer,,
+pre-op,clinic,quad_lb,R,83.7,lb,dynamometer,,the strength target
+pre-op,clinic,ham_lb,L,55.8,lb,dynamometer,,
+pre-op,clinic,ham_lb,R,79,lb,dynamometer,,the strength target
+2026-09-11,PT,ext_deg,L,2,deg,gonio,,
+2026-09-11,PT,flex_deg,L,130,deg,"gonio, active",,
+2026-09-11,PT,flex_deg,L,135,deg,"gonio, passive",,
+2026-09-25,clinic,ext_deg,L,-3,deg,gonio,,PT + surgeon visit day; read as 3 deg short; direction to confirm
+2026-09-25,clinic,flex_deg,L,146,deg,"gonio, active",,PT + surgeon visit day
+2026-10-01,PT,ext_deg,L,2,deg,gonio,2026-10-01_PT8,after a weighted stretch
+2026-10-08,PT,ext_deg,L,2,deg,gonio,2026-10-08_PT9,
+2026-10-08,PT,flex_deg,L,146,deg,gonio,2026-10-08_PT9,
+2026-10-08,PT,sl_leg_press_plates,L,9,plates,max,2026-10-08_PT9,stands in for quad LSI until a dynamometer test
+2026-10-08,PT,sl_leg_press_plates,R,14,plates,max,2026-10-08_PT9,

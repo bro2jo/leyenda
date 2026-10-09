@@ -18,7 +18,12 @@ Commands (run from the repo root):
   inspire --reason TEXT        spend one Inspiration on a story action
   chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
   knot tie N --date D --evidence TEXT   record a Knot of the Binding
-  show daily|nutrition|food|ex|sport DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
+  show daily|nutrition|food|ex|sport|measurements DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
+  recap [--date D] [--write]   the weekly checkpoint numbers for the week containing D (default: the last completed week);
+                               --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
+  measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
+  measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
+  doc state|addon|guide|master|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
 """
 import argparse
@@ -43,6 +48,13 @@ P = {
     "daily": ROOT / "real/logs/daily_log.csv",
     "exercise": ROOT / "real/logs/ACL_Exercise_Log.csv",
     "sport": ROOT / "real/logs/sport_log.csv",
+    "measurements": ROOT / "real/logs/measurements.csv",
+    "state_dir": ROOT / "real/state",
+    "checkpoints": ROOT / "real/checkpoints",
+    "visits": ROOT / "real/visits",
+    "addon": ROOT / "real/plan/Whole_Athlete_AddOn.md",
+    "guide": ROOT / "real/plan/nutrition_guide.md",
+    "master": ROOT / "real/plan/ACL_Reconstruction_Rehab_Master_Plan.md",
     "deeds": ROOT / "engine/deeds.csv",
     "sheet": ROOT / "saga/state/darrow.json",
     "rolls": ROOT / "saga/state/rolls.csv",
@@ -71,6 +83,7 @@ COLS = {
                  "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
               "metric", "value", "notes"],
+    "measurements": ["date", "source", "metric", "side", "value", "unit", "method", "visit", "notes"],
     "deeds": ["date", "kind", "deed", "xp", "might", "vigor", "finesse", "resolve", "note"],
     "rolls": ["when", "label", "stat", "dc", "d20", "d20_b", "mode", "mods", "total", "result", "note"],
     "spends": ["date", "what", "reason"],
@@ -95,7 +108,7 @@ def save_json(path, obj):
         f.write("\n")
 
 
-LOG_FILES = ("nutrition", "food", "foods", "daily", "exercise", "sport", "deeds", "rolls", "spends", "chapters")
+LOG_FILES = ("nutrition", "food", "foods", "daily", "exercise", "sport", "measurements", "deeds", "rolls", "spends", "chapters")
 
 
 def ensure_files():
@@ -670,12 +683,60 @@ def roman(n):
 
 
 # ---------------------------------------------------------------- views
-def real_week_table(st, cfg, rules, ws):
+def week_weights(facts, ws, upto=None):
+    """Morning weigh-ins in the week starting ws (through upto, if given): list of (day, lb)."""
+    out = []
+    for i in range(7):
+        day = ws + dt.timedelta(i)
+        if upto and day > upto:
+            break
+        f = facts.get(day.isoformat())
+        if f and f["weight"]:
+            out.append((day, f["weight"]))
+    return out
+
+
+def weight_compare(facts, ws, upto=None):
+    cur, prev = week_weights(facts, ws, upto), week_weights(facts, ws - dt.timedelta(7))
+    avg = sum(w for _, w in cur) / len(cur) if cur else None
+    pavg = sum(w for _, w in prev) / len(prev) if prev else None
+    return {"cur": cur, "prev": prev, "avg": avg, "prev_avg": pavg,
+            "delta": (avg - pavg) if avg is not None and pavg is not None else None}
+
+
+def weight_line(wc, need):
+    s = f"{len(wc['cur'])}/{need}"
+    if wc["avg"] is not None:
+        s += f" · avg {wc['avg']:.1f} lb"
+    if wc["prev_avg"] is not None:
+        s += f" · last week {wc['prev_avg']:.1f} ({len(wc['prev'])} reading{'s' if len(wc['prev']) != 1 else ''})"
+    if wc["delta"] is not None:
+        s += f" · {wc['delta']:+.1f} lb" + (" · ⚠ falling" if wc["delta"] < 0 else "")
+    return s
+
+
+def daily_rows():
+    return {r["date"]: r for r in read_csv("daily") if r.get("date")}
+
+
+def grades_line(ws, upto, rows):
+    out = []
+    for i in range(7):
+        day = ws + dt.timedelta(i)
+        if day > upto:
+            break
+        g = str(rows.get(day.isoformat(), {}).get("am_swelling", "")).strip()
+        if VALID_SWELLING.match(g):
+            out.append(f"{dow(day)} {g}")
+    return " · ".join(out) or "none graded"
+
+
+def real_week_table(st, cfg, rules, ws, summary=True):
     facts = st["facts"]
     t = cfg["nutrition_targets"]
     lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport |",
              "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
-    kc, pr, wts = [], [], []
+    kc, pr = [], []
     for i in range(7):
         day = ws + dt.timedelta(i)
         f = facts.get(day.isoformat())
@@ -688,8 +749,6 @@ def real_week_table(st, cfg, rules, ws):
             kc.append(f["kcal"])
         if f["protein"] is not None:
             pr.append(f["protein"])
-        if f["weight"]:
-            wts.append(f["weight"])
         flo = {"full": "✔✔", "half": "✔"}.get(f["floor"], "")
         lines.append("| " + " | ".join([
             label + (" 🔴" if f["light"] == "red" else " 🟡" if f["light"] == "yellow" else ""), plan,
@@ -697,7 +756,10 @@ def real_week_table(st, cfg, rules, ws):
             "✔" if f["creatine"] else "", flo, "✔" if f["check"] else "",
             f["knee"] or "", "✔" if f["pt"] else "", "+".join(sorted(f["addons"])),
             f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or "")]) + " |")
-    sc = week_score(ws, min(ws + dt.timedelta(6), st["asof"]), facts, cfg, rules)
+    upto = min(ws + dt.timedelta(6), st["asof"])
+    sc = week_score(ws, upto, facts, cfg, rules)
+    if not summary:
+        return "\n".join(lines)
     out = ["\n".join(lines), ""]
     if kc:
         hit_k = sum(1 for x in kc if x >= t["kcal"])
@@ -705,8 +767,8 @@ def real_week_table(st, cfg, rules, ws):
         out.append(f"**Nutrition:** avg {fmt(sum(kc)/len(kc))} kcal (target {fmt(t['kcal'])}) · "
                    f"avg {fmt(sum(pr)/len(pr)) if pr else '-'} g protein (target {t['protein_g']}-{t['protein_g_max']}) · "
                    f"at kcal target {hit_k}/{len(kc)} days · at protein target {hit_p}/{len(pr)} days")
-    w_need = t["weighins_per_week"]
-    out.append(f"**Weigh-ins:** {len(wts)}/{w_need}" + (f" · avg {sum(wts)/len(wts):.1f} lb" if wts else ""))
+    out.append("**Weigh-ins:** " + weight_line(weight_compare(facts, ws, upto), t["weighins_per_week"]))
+    out.append("**Morning swelling grades:** " + grades_line(ws, upto, daily_rows()))
     if sc:
         pl, dn = sc["planned"], sc["done"]
         sess = " · ".join(f"{k} {dn.get(k, 0)}/{v}" for k, v in pl.items())
@@ -831,12 +893,483 @@ def write_dashboards(st, cfg, rules):
     real_block = (f"_Engine block, regenerated by `sync` · as of {dow(asof)} {asof.isoformat()} · "
                   f"POD {pod(cfg, asof)} · post-op week {post_op_week(cfg, asof)} · Phase {cfg['rehab']['current_phase']}_\n\n"
                   f"### This week (Sun {md(ws)} – Sat {md(ws + dt.timedelta(6))})\n\n"
-                  + real_week_table(st, cfg, rules, ws))
+                  + real_week_table(st, cfg, rules, ws)
+                  + "\n\n**Latest measured:** " + latest_measured_line(cfg))
     replace_block(P["real_now"], real_block, "NOW — the Ledger")
     s = st["sheet"]
     saga_block = ("_Engine block, regenerated by `sync`._\n\n```\n" + sheet_text(s) + "\n```\n\n"
                   f"**Chapter {s['chapter_now']['chapter']}, so far (on what's logged):** {s['chapter_now']['tier_so_far']}")
     replace_block(P["saga_now"], saga_block, "NOW — the Chronicle")
+
+
+# ---------------------------------------------------------------- measurements
+def mkey(r):
+    """Sort key: 'pre-op' rows come before every dated row."""
+    s = str(r.get("date", "")).strip()
+    return "0000-00-00" if s == "pre-op" else s
+
+
+def mdate(s):
+    return s if s == "pre-op" else md(d(s))
+
+
+def metric_specs(cfg):
+    return {k: v for k, v in cfg.get("measurement_metrics", {}).items() if not k.startswith("_")}
+
+
+def mval(metric, v, unit):
+    x = num(v)
+    if x is None:
+        return str(v)
+    if unit == "deg":
+        return f"{x:+g}°" if metric == "ext_deg" and x else f"{x:g}°"
+    return f"{x:g} {unit}"
+
+
+def measurement_sets(cfg):
+    """One record per (date, metric, method) with the L and R values and the LSI where the metric has one."""
+    specs = metric_specs(cfg)
+    groups = {}
+    for r in sorted(read_csv("measurements"), key=mkey):
+        m = r.get("metric", "")
+        g = groups.setdefault((r.get("date", ""), m, r.get("method", "")), {
+            "date": r.get("date", ""), "metric": m, "method": r.get("method", ""), "source": r.get("source", ""),
+            "visit": r.get("visit", ""), "unit": r.get("unit") or specs.get(m, {}).get("unit", ""), "L": None, "R": None})
+        side = str(r.get("side", "")).strip().upper()
+        if side in ("L", "R"):
+            g[side] = num(r.get("value"))
+    out = sorted(groups.values(), key=mkey)
+    for g in out:
+        kind, left, right = specs.get(g["metric"], {}).get("lsi"), g["L"], g["R"]
+        g["lsi"] = None
+        if kind == "lower" and left and right is not None:  # timed tests: the faster right side is the reference
+            g["lsi"] = 100 * right / left
+        elif kind and kind != "lower" and right and left is not None:
+            g["lsi"] = 100 * left / right
+    return out
+
+
+def set_text(g):
+    bits = [f"{s} {mval(g['metric'], g[s], g['unit'])}" for s in ("L", "R") if g[s] is not None]
+    if g["lsi"] is not None:
+        bits.append(f"LSI {g['lsi']:.1f}%")
+    return " · ".join(bits)
+
+
+def metric_label(m, spec):
+    return spec.get("label") or m.rsplit("_", 1)[0].replace("_", " ")
+
+
+def latest_measured_line(cfg):
+    """The gate numbers for NOW: the latest left value, or the latest LSI for strength metrics."""
+    sets, parts = measurement_sets(cfg), []
+    for m, spec in metric_specs(cfg).items():
+        ms = [g for g in sets if g["metric"] == m]
+        if not spec.get("now") or not ms:
+            continue
+        name = metric_label(m, spec)
+        paired = [g for g in ms if g["lsi"] is not None]
+        lefts = [g for g in ms if g["L"] is not None]
+        if spec.get("lsi") and paired:
+            g = paired[-1]
+            txt = f"{name} LSI {g['lsi']:.1f}% ({mdate(g['date'])})"
+            if lefts and mkey(lefts[-1]) > mkey(g):
+                txt += f", L {mval(m, lefts[-1]['L'], lefts[-1]['unit'])} ({mdate(lefts[-1]['date'])})"
+            parts.append(txt)
+        elif lefts:
+            g = lefts[-1]
+            parts.append(f"{name} L {mval(m, g['L'], g['unit'])} ({mdate(g['date'])})")
+    return " · ".join(parts) or "nothing yet"
+
+
+def measures_in(cfg, ws, we):
+    return [g for g in measurement_sets(cfg) if g["date"] != "pre-op" and ws.isoformat() <= g["date"] <= we.isoformat()]
+
+
+def cmd_measures(args, cfg, rules):
+    specs, sets = metric_specs(cfg), measurement_sets(cfg)
+    if args.metric:
+        if args.metric not in specs:
+            sys.exit(f"unknown metric '{args.metric}'. Known: {', '.join(specs)}")
+        print(f"# {args.metric} ({specs[args.metric].get('unit', '')}): {specs[args.metric].get('about', '')}")
+        for g in (g for g in sets if g["metric"] == args.metric):
+            print(f"{mdate(g['date']):<7} {g['source']:<8} {set_text(g)}" + (f"  [{g['method']}]" if g["method"] else "")
+                  + (f"  ({g['visit']})" if g["visit"] else ""))
+        return
+    for m, spec in specs.items():
+        ms = [g for g in sets if g["metric"] == m]
+        bits = []
+        for s in ("L", "R"):
+            last = [g for g in ms if g[s] is not None]
+            if last:
+                g = last[-1]
+                bits.append(f"{s} {mval(m, g[s], g['unit'])} ({mdate(g['date'])}" + (f", {g['method']}" if g["method"] else "") + ")")
+        paired = [g for g in ms if g["lsi"] is not None]
+        if paired:
+            bits.append(f"LSI {paired[-1]['lsi']:.1f}% ({mdate(paired[-1]['date'])})")
+        print(f"{m:<20} " + (" · ".join(bits) or "not measured"))
+
+
+def cmd_measure(args, cfg, rules):
+    specs = metric_specs(cfg)
+    rows = read_csv("measurements")
+    added = 0
+    for item in as_list(args.payload):
+        if not item.get("date"):
+            sys.exit("each row needs a date (ISO, or 'pre-op')")
+        m, side = item.get("metric", ""), str(item.get("side", "")).strip().upper()
+        if m not in specs:
+            sys.exit(f"unknown metric '{m}'. Add it to config.json -> measurement_metrics first. Known: {', '.join(specs)}")
+        if side not in ("L", "R"):
+            sys.exit("side must be L or R (one row per side)")
+        if num(item.get("value")) is None:
+            sys.exit(f"value must be a number, got '{item.get('value')}'")
+        date = "pre-op" if str(item.get("date", "")).strip() == "pre-op" else d(item["date"]).isoformat()
+        row = {k: item.get(k, "") for k in COLS["measurements"]}
+        row.update({"date": date, "side": side, "unit": item.get("unit") or specs[m].get("unit", "")})
+        rows.append(row)
+        added += 1
+    rows.sort(key=mkey)
+    write_csv("measurements", rows)
+    print(f"measurements: appended {added} row(s)")
+
+
+# ---------------------------------------------------------------- weekly recap (the checkpoint's numbers)
+NUT_LABEL = {"kcal": "kcal", "protein_g": "protein g", "carbs_g": "carbs g", "fat_g": "fat g", "fiber_g": "fiber g",
+             "sat_fat_g": "sat fat g", "sugar_g": "sugar g", "sodium_mg": "sodium mg", "potassium_mg": "potassium mg",
+             "calcium_mg": "calcium mg", "iron_mg": "iron mg", "magnesium_mg": "magnesium mg", "zinc_mg": "zinc mg",
+             "vit_c_mg": "vit C mg", "vit_d_mcg": "vit D mcg", "omega3_mg": "omega-3 mg"}
+
+
+def nutrient_bounds(cfg):
+    """Per nutrient: min/max and how to print it. Targets from nutrition_targets, references from nutrition_reference."""
+    t = cfg["nutrition_targets"]
+    b = {"kcal": {"min": t["kcal"], "show": fmt(t["kcal"]), "ref": False},
+         "protein_g": {"min": t["protein_g"], "show": f"{t['protein_g']}–{t['protein_g_max']}", "ref": False}}
+    for k in ("carbs_g", "fat_g"):
+        v = t.get(k)
+        if isinstance(v, list) and len(v) == 2:
+            b[k] = {"min": v[0], "max": v[1], "show": f"{v[0]}–{v[1]}", "ref": False}
+    for k, r in cfg.get("nutrition_reference", {}).items():
+        if not k.startswith("_"):
+            b[k] = {"min": r.get("min"), "max": r.get("max"), "show": r.get("show", ""), "ref": True}
+    return b
+
+
+def in_bounds(v, bd):
+    return (bd.get("min") is None or v >= bd["min"]) and (bd.get("max") is None or v <= bd["max"])
+
+
+def morning_text(row):
+    """A next-morning response: grade, pain, light, and the note when ungraded."""
+    if not row:
+        return "nothing logged"
+    g = str(row.get("am_swelling", "")).strip()
+    graded = bool(VALID_SWELLING.match(g))
+    parts = [g if graded else "not graded"]
+    if str(row.get("am_pain", "")).strip():
+        parts.append(f"pain {row['am_pain'].strip()}")
+    if str(row.get("light", "")).strip().lower() in ("yellow", "red"):
+        parts.append(row["light"].strip().lower())
+    note = str(row.get("am_notes", "")).strip()
+    if note and not graded:
+        parts.append(f'"{note[:60]}{"…" if len(note) > 60 else ""}"')
+    return ", ".join(parts)
+
+
+def recap_text(st, cfg, rules, ws):
+    facts, asof = st["facts"], st["asof"]
+    we = ws + dt.timedelta(6)
+    upto = min(we, asof)
+    days = [ws + dt.timedelta(i) for i in range(7) if ws + dt.timedelta(i) <= upto]
+    t = cfg["nutrition_targets"]
+
+    def fx(day):  # facts is a defaultdict; .get never creates an entry
+        return facts.get(day.isoformat()) or {}
+
+    out = [f"_Engine numbers: `python3 engine/darrow.py recap --date {ws.isoformat()} --write` regenerates this block · "
+           f"post-op weeks {post_op_week(cfg, ws)}–{post_op_week(cfg, we)} · POD {pod(cfg, ws)}–{pod(cfg, we)} · "
+           f"computed {dow(asof)} {asof.isoformat()}"
+           + (f" · **week in progress, through {dow(upto)} {md(upto)}**" if upto < we else "") + "_",
+           "", real_week_table(st, cfg, rules, ws, summary=False), ""]
+    flags = []
+
+    # nutrition
+    nut = {r["date"]: r for r in rollup(cfg) if r.get("date")}
+    nrows = [nut[x.isoformat()] for x in days if num(nut.get(x.isoformat(), {}).get("kcal")) is not None]
+    partial_today = upto == asof and asof.isoformat() in nut
+    out += [f"**Nutrition** · {len(nrows)} of {len(days)} days with totals" + (" (today's is partial)" if partial_today else ""),
+            "", "| Nutrient | Avg | Target / ref | Days in range | |", "|---|---|---|---|---|"]
+    bounds = nutrient_bounds(cfg)
+    off, low, high = [], [], []
+    for k in NUTRIENTS:
+        vals = [v for v in (num(r.get(k)) for r in nrows) if v is not None]
+        bd = bounds.get(k, {})
+        if not vals:
+            out.append(f"| {NUT_LABEL[k]} | – | {bd.get('show', '')} | | not logged |")
+            continue
+        avg = sum(vals) / len(vals)
+        shown = (fmt(avg, 1) if k in ONE_DECIMAL else fmt(avg)) + (f" ({len(vals)} d)" if len(vals) < len(nrows) else "")
+        if not bd:
+            out.append(f"| {NUT_LABEL[k]} | {shown} | | | |")
+            continue
+        status = "ok"
+        if bd.get("min") is not None and avg < bd["min"]:
+            status = "low" if bd["ref"] else "below"
+        elif bd.get("max") is not None and avg > bd["max"]:
+            status = "high" if bd["ref"] else "above"
+        if status in ("below", "above"):
+            off.append(f"{NUT_LABEL[k]} {status}")
+        elif status == "low":
+            low.append(NUT_LABEL[k])
+        elif status == "high":
+            high.append(NUT_LABEL[k])
+        hits = sum(1 for v in vals if in_bounds(v, bd))
+        out.append(f"| {NUT_LABEL[k]} | {shown} | {bd['show']} | {hits}/{len(vals)} | {status} |")
+    cr = sum(1 for x in days if fx(x).get("creatine"))
+    out += ["", f"Creatine {cr}/{len(days)} days. Omega-3 days in range stand in for fish days."]
+    if off:
+        flags.append("off target: " + ", ".join(off))
+    if low:
+        flags.append("low vs reference: " + ", ".join(low))
+    if high:
+        flags.append("high vs reference: " + ", ".join(high))
+
+    # weight
+    wc = weight_compare(facts, ws, upto)
+    wr = cfg.get("weight_rule", {})
+    need = wr.get("min_readings", t["weighins_per_week"])
+    out += ["", "**Weight** · " + weight_line(wc, t["weighins_per_week"])]
+    if wc["cur"]:
+        out.append("Readings: " + " · ".join(f"{dow(x)} {w:.1f}" for x, w in wc["cur"]))
+    if wc["delta"] is not None and wc["delta"] < 0:
+        out.append("⚠ The weekly average is falling: say so plainly and suggest telling the surgeon/PCP (Golden rule 3).")
+        flags.append(f"weight falling ({wc['delta']:+.1f} lb)")
+    if wr and len(wc["cur"]) >= need and len(wc["prev"]) >= need:
+        dl = wc["delta"]
+        if dl < wr["gain_low_lb"]:
+            rule = "losing/flat → add 150–250 kcal/day"
+        elif dl <= wr["gain_high_lb"]:
+            rule = "gaining ~0.25–0.75 lb/week → stay"
+        elif dl <= wr["reduce_above_lb"]:
+            rule = "between the guide's bands (0.75–1 lb/week) → stay and watch"
+        else:
+            rule = ">1 lb/week → reduce ~150–200 kcal if it persists after the initial rebound"
+        out.append(f"Guide's rule (two weeks of ≥{need} readings): {dl:+.2f} lb/week → {rule}.")
+    else:
+        out.append(f"Guide's rule: not yet; it needs two weeks of ≥{need} readings (this week {len(wc['cur'])}, last week {len(wc['prev'])}).")
+
+    # rehab
+    rows = daily_rows()
+    out += ["", "**Rehab**"]
+    off_plan = []
+    for x in days:
+        f = fx(x)
+        if not (f.get("knee") or f.get("pt")):
+            continue
+        what = []
+        if f.get("knee"):
+            kap = str(rows.get(x.isoformat(), {}).get("knee_as_planned", "")).strip().upper()
+            what.append(f"knee {f['knee']}" + {"Y": " (as written)", "N": " (not as written)"}.get(kap, ""))
+            if kap == "N":
+                off_plan.append(dow(x))
+        if f.get("pt"):
+            what.append("PT")
+        nxt = x + dt.timedelta(1)
+        resp = "not yet" if nxt > asof else morning_text(rows.get(nxt.isoformat()))
+        out.append(f"- {dow(x)} {md(x)} · {' + '.join(what)}" + (" · 🔴 red day" if f.get("light") == "red" else "")
+                   + f" → {dow(nxt)}: {resp}")
+    if not any(fx(x).get("knee") or fx(x).get("pt") for x in days):
+        out.append("- no loaded days")
+    if off_plan:
+        flags.append("knee sessions not as written: " + ", ".join(off_plan))
+    floors = [fx(x).get("floor") for x in days]
+    n_graded = sum(1 for x in days if fx(x).get("check"))
+    out.append(f"Floor: full {floors.count('full')}/{len(days)} · half {floors.count('half')} · "
+               f"none {len(days) - floors.count('full') - floors.count('half')}")
+    out.append(f"Morning swelling graded {n_graded}/{len(days)}: {grades_line(ws, upto, rows)}")
+    lights = {c: [f"{dow(x)}" for x in days if fx(x).get("light") == c] for c in ("yellow", "red")}
+    if lights["yellow"] or lights["red"]:
+        out.append("Lights: " + " · ".join(f"{c} {', '.join(v)}" for c, v in lights.items() if v))
+        if lights["red"]:
+            flags.append("red-light days " + ", ".join(lights["red"]))
+
+    # sessions and add-on
+    sc = week_score(ws, upto, facts, cfg, rules) or {"planned": {}}
+    pl = sc["planned"]
+    cond_min = sum(fx(x).get("cond_min") or 0 for x in days)
+    tag = rules["tags"]["session_tags"]
+    did = {
+        "knee": sum(1 for x in days if fx(x).get("knee")),
+        "pt": sum(1 for x in days if fx(x).get("pt")),
+        "upper": sum(1 for x in days if "upper" in {tag.get(a) for a in fx(x).get("addons", ())}),
+        "cond": sum(1 for x in days if (fx(x).get("cond_min") or 0) >= rules["daily"]["conditioning"]["min_minutes"]),
+        "accessory": sum(1 for x in days if "accessory" in {tag.get(a) for a in fx(x).get("addons", ())}),
+        "power": sum(1 for x in days if "power" in {tag.get(a) for a in fx(x).get("addons", ())}),
+        "sport": sum(fx(x).get("sport") or 0 for x in days),
+    }
+    names = {"knee": "knee sessions", "pt": "PT", "upper": "upper", "cond": "conditioning", "accessory": "accessory",
+             "power": "power", "sport": "sport drills"}
+    parts = []
+    for k, label in names.items():
+        if k in pl:
+            parts.append(f"{label} {did[k]} of {pl[k]}" + (f" ({int(cond_min)} min)" if k == "cond" and cond_min else ""))
+        elif did[k]:
+            parts.append(f"{label} {did[k]}")
+    out += ["", "**Sessions vs plan:** " + " · ".join(parts)]
+    if sc.get("excused"):
+        out.append("Excused (red light): " + ", ".join(sc["excused"]))
+
+    # measurements
+    ms = measures_in(cfg, ws, we)
+    specs = metric_specs(cfg)
+    out += ["", "**Measured this week:** " + ("; ".join(
+        f"{mdate(g['date'])} {g['source']} {metric_label(g['metric'], specs.get(g['metric'], {}))} {set_text(g)}"
+        for g in ms) or "nothing")]
+    out += ["", "**Flags:** " + (" · ".join(flags) or "none")]
+    return "\n".join(out)
+
+
+CHECKPOINT_SKELETON = """# Checkpoint — Sun {sun} · week Sun {ws} – Sat {we}
+
+*Post-op weeks {w1}–{w2} · Phase {phase}. The archive of this week: what happened and what was decided. The program in force: `{state}`.*
+
+## Numbers (engine)
+
+<!-- engine:start -->
+<!-- engine:end -->
+
+## Nutrition
+
+<!-- What the numbers mean: days at target, each flagged micro and the foods behind it, fish, one or two fixes for next week. -->
+
+## Weight
+
+<!-- The trend and the guide's rule. A target change goes to config.json -> nutrition_targets with its source and date. -->
+
+## Rehab
+
+<!-- Loaded days and their mornings, floor, the swelling trend, sessions vs plan, progressions made and whether each kept the one-change rule. -->
+
+## Add-on and conditioning
+
+<!-- Upper 2 of 2? (decides the block), bike, accessory/power. -->
+
+## PT and measurements
+
+<!-- Each visit this week with its real/visits/ file; what was measured; which questions were answered. -->
+
+## Gates
+
+<!-- The next phase gate, criterion by criterion, with evidence. A Knot tied this week: its evidence. -->
+
+## Program — changes and decisions
+
+<!-- What changed in the program or the targets, and why. A changed program means a new state file; an unchanged one gets its "Last reviewed" line updated. -->
+
+## Next week
+
+<!-- Day by day with doses, or a pointer to the state file's program section if nothing changed. -->
+"""
+
+
+def newest(paths):
+    paths = sorted(paths)
+    return paths[-1] if paths else None
+
+
+def cmd_recap(args, cfg, rules):
+    st = compute(cfg, rules)
+    ws = week_start(d(args.date)) if args.date else week_start(st["asof"]) - dt.timedelta(7)
+    we = ws + dt.timedelta(6)
+    if ws > st["asof"]:
+        sys.exit(f"the week of Sun {ws} hasn't started yet (today is {st['asof']})")
+    text = recap_text(st, cfg, rules, ws)
+    if not args.write:
+        print(text)
+        return
+    if we >= st["asof"] and not args.force:
+        sys.exit(f"the week of Sun {ws} – Sat {we} is still in progress; the checkpoint is written after it ends (use --force anyway)")
+    sun = ws + dt.timedelta(7)
+    path = P["checkpoints"] / f"{sun.isoformat()}.md"
+    if not path.exists():
+        state = newest(P["state_dir"].glob("ACL_Recovery_State_*.md"))
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(CHECKPOINT_SKELETON.format(
+            sun=sun.isoformat(), ws=md(ws), we=md(we), w1=post_op_week(cfg, ws), w2=post_op_week(cfg, we),
+            phase=cfg["rehab"]["current_phase"], state=state.relative_to(ROOT) if state else "real/state/"), encoding="utf-8")
+        print(f"created {path.relative_to(ROOT)} from the checkpoint template")
+    replace_block(path, text, "")
+    print(f"numbers written to {path.relative_to(ROOT)}\n")
+    print(text)
+
+
+# ---------------------------------------------------------------- documents, one section at a time
+HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+
+
+def doc_path(name):
+    fixed = {"addon": P["addon"], "guide": P["guide"], "master": P["master"], "now": P["real_now"]}
+    if name in fixed:
+        return fixed[name]
+    globs = {"state": (P["state_dir"], "ACL_Recovery_State_*.md"), "checkpoint": (P["checkpoints"], "20*.md"),
+             "visit": (P["visits"], "20*.md")}
+    if name in globs:
+        found = newest(globs[name][0].glob(globs[name][1]))
+        if not found:
+            sys.exit(f"no {name} file yet")
+        return found
+    p = Path(name) if Path(name).is_absolute() else ROOT / name
+    if not p.exists():
+        sys.exit(f"no document '{name}'. Use state, addon, guide, master, checkpoint, visit, now, or a path")
+    return p
+
+
+def doc_headings(lines):
+    out, fence = [], False
+    for i, ln in enumerate(lines):
+        if ln.lstrip().startswith("```"):
+            fence = not fence
+            continue
+        m = None if fence else HEADING.match(ln)
+        if m:
+            out.append((i, len(m.group(1)), m.group(2)))
+    return out
+
+
+def find_section(hs, q):
+    q = q.lower().strip()
+    if re.fullmatch(r"\d+(\.\d+)*", q):
+        return next((k for k, (_, _, t) in enumerate(hs) if re.match(rf"{re.escape(q)}[.):\s]", t + " ")), None)
+    phrase = next((k for k, (_, _, t) in enumerate(hs) if q in t.lower()), None)  # the exact phrase first
+    if phrase is not None:
+        return phrase
+    words = q.split()
+    return next((k for k, (_, _, t) in enumerate(hs) if all(w in t.lower() for w in words)), None)
+
+
+def cmd_doc(args, cfg, rules):
+    path = doc_path(args.name)
+    lines = path.read_text(encoding="utf-8").split("\n")
+    hs = doc_headings(lines)
+    rel = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
+
+    def end_of(k):
+        lvl = hs[k][1]
+        return next((i for i, l2, _ in hs[k + 1:] if l2 <= lvl), len(lines))
+
+    if not args.section:
+        print(f"{rel} · {len(lines)} lines")
+        for k, (i, lvl, title) in enumerate(hs):
+            print(f"{'  ' * (lvl - 1)}{title}  ({end_of(k) - i} lines)")
+        return
+    for q in args.section:
+        k = find_section(hs, q)
+        if k is None:
+            print(f"{rel}: no section matches '{q}'. Outline: python3 engine/darrow.py doc {args.name}\n")
+            continue
+        print(f"<!-- {rel} · lines {hs[k][0] + 1}–{end_of(k)} -->")
+        print("\n".join(lines[hs[k][0]:end_of(k)]).rstrip() + "\n")
 
 
 # ---------------------------------------------------------------- editing commands
@@ -1078,8 +1611,9 @@ def cmd_knot(args, cfg, rules):
 
 def cmd_show(args, cfg, rules):
     """Record view: print the rows for one date as key: value lines, blank fields omitted. Reads only; never writes."""
-    key = {"daily": "daily", "nutrition": "nutrition", "food": "food", "ex": "exercise", "exercise": "exercise", "sport": "sport"}[args.log]
-    date = d(args.date).isoformat()
+    key = {"daily": "daily", "nutrition": "nutrition", "food": "food", "ex": "exercise", "exercise": "exercise", "sport": "sport",
+           "measurements": "measurements"}[args.log]
+    date = "pre-op" if key == "measurements" and args.date == "pre-op" else d(args.date).isoformat()
     rows = rollup(cfg) if key == "nutrition" else read_csv(key)  # nutrition as sync would roll it up, in memory
     rows = [r for r in rows if r.get("date") == date]
     if getattr(args, "session", None):
@@ -1115,6 +1649,20 @@ def cmd_check(args, cfg, rules):
         s = str(r.get("am_swelling", "")).strip()
         if s and not VALID_SWELLING.match(s):
             problems.append(f"daily_log {r['date']}: am_swelling '{s}' is not a grade (0/trace/1+/2+/3+); no check credit")
+    specs = metric_specs(cfg)
+    for i, r in enumerate(read_csv("measurements"), 2):
+        where = f"measurements.csv line {i}"
+        if r.get("date") != "pre-op":
+            try:
+                d(r.get("date", ""))
+            except Exception:
+                problems.append(f"{where}: bad date '{r.get('date')}' (ISO date or 'pre-op')")
+        if r.get("metric") not in specs:
+            problems.append(f"{where}: metric '{r.get('metric')}' is not in config.json -> measurement_metrics")
+        if str(r.get("side", "")).strip().upper() not in ("L", "R"):
+            problems.append(f"{where}: side '{r.get('side')}' must be L or R")
+        if num(r.get("value")) is None:
+            problems.append(f"{where}: value '{r.get('value')}' is not a number")
     print("\n".join(problems) if problems else "all logs look clean")
 
 
@@ -1137,14 +1685,19 @@ def main():
     s = sub.add_parser("inspire"); s.add_argument("--reason", required=True)
     s = sub.add_parser("chapter-close"); s.add_argument("--date"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
-    s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport"]); s.add_argument("date"); s.add_argument("--session")
+    s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport", "measurements"]); s.add_argument("date"); s.add_argument("--session")
+    s = sub.add_parser("recap"); s.add_argument("--date"); s.add_argument("--write", action="store_true"); s.add_argument("--force", action="store_true")
+    s = sub.add_parser("measure"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
+    s = sub.add_parser("measures"); s.add_argument("--metric")
+    s = sub.add_parser("doc"); s.add_argument("name"); s.add_argument("section", nargs="*")
     sub.add_parser("check")
     args = ap.parse_args()
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
     {
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set,
         "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
-        "knot": cmd_knot, "check": cmd_check, "show": cmd_show,
+        "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap,
+        "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc,
         "ex": lambda a, c, r: cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)

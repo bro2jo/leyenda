@@ -30,6 +30,65 @@
     "shake_is_target": false,
     "source": "nutrition_guide.md; shake dropped as a target 10/8"
   },
+  "nutrition_reference": {
+    "_about": "Daily reference values for the weekly recap, from nutrition_guide.md 'Micronutrient Reference' (added 2026-10-08): standard adult-male DRI / FDA DV. Not targets; judged week to week at the checkpoint. min = at least, max = at most; show = how the recap prints it.",
+    "fiber_g": {
+      "min": 25,
+      "max": 35,
+      "show": "25–35"
+    },
+    "sat_fat_g": {
+      "max": 33,
+      "show": "<33"
+    },
+    "sugar_g": {
+      "max": 75,
+      "show": "<75"
+    },
+    "sodium_mg": {
+      "max": 2300,
+      "show": "<2,300"
+    },
+    "potassium_mg": {
+      "min": 3400,
+      "show": "3,400"
+    },
+    "calcium_mg": {
+      "min": 1000,
+      "show": "1,000"
+    },
+    "iron_mg": {
+      "min": 8,
+      "show": "8"
+    },
+    "magnesium_mg": {
+      "min": 420,
+      "show": "420"
+    },
+    "zinc_mg": {
+      "min": 11,
+      "show": "11"
+    },
+    "vit_c_mg": {
+      "min": 90,
+      "show": "90"
+    },
+    "vit_d_mcg": {
+      "min": 15,
+      "show": "15–20"
+    },
+    "omega3_mg": {
+      "min": 250,
+      "show": "250–500"
+    }
+  },
+  "weight_rule": {
+    "_about": "nutrition_guide.md 'Calories': after 2 consistent weeks, still losing/flat -> add 150-250 kcal/day; gaining ~0.25-0.75 lb/week -> stay; consistently >1 lb/week after the initial rebound -> reduce ~150-200 kcal. A consistent week = at least min_readings morning weigh-ins. Golden rule 3: a falling weekly average is always flagged.",
+    "min_readings": 3,
+    "gain_low_lb": 0.25,
+    "gain_high_lb": 0.75,
+    "reduce_above_lb": 1.0
+  },
   "weekly_template": {
     "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: kneeA, kneeB, pt, upperA, upperB, accessory, power, cond. Session B may run Tue or Wed.",
     "Sun": [
@@ -83,6 +142,42 @@
       "5": "Before Higher Plyometrics/Agility: running tolerated, quad ~>=85%, hop ~>=85%, no meaningful effusion, good landing and SL force absorption",
       "6": "Before Hard Cutting/Pivoting: quad >=90%, hop >=90%, effusion <= trace, full ROM, running and sprint progressions complete, good high-speed decel, no apprehension",
       "7": "Before Full Return to Sport: full battery ~>=95%, KOOS/IKDC/ACL-RSI, full practice tolerated, surgeon/PT clearance"
+    }
+  },
+  "measurement_metrics": {
+    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. Add a metric here before logging it.",
+    "ext_deg": {
+      "label": "extension",
+      "unit": "deg",
+      "about": "knee extension; 0 = straight, + = hyperextension, - = short of straight",
+      "now": true
+    },
+    "flex_deg": {
+      "label": "flexion",
+      "unit": "deg",
+      "about": "knee flexion",
+      "now": true
+    },
+    "quad_lb": {
+      "label": "quad",
+      "unit": "lb",
+      "about": "isometric quad strength, dynamometer",
+      "lsi": "higher",
+      "now": true
+    },
+    "ham_lb": {
+      "label": "hamstring",
+      "unit": "lb",
+      "about": "isometric hamstring strength, dynamometer",
+      "lsi": "higher",
+      "now": true
+    },
+    "sl_leg_press_plates": {
+      "label": "SL leg press",
+      "unit": "plates",
+      "about": "single-leg leg press max; a stand-in for quad LSI until a dynamometer test",
+      "lsi": "higher",
+      "now": true
     }
   },
   "milestones": {
