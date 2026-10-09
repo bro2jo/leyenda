@@ -32,6 +32,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **Inspiration** (max 4) | moments of clarity; spend to reroll a die or take a bold option | a week with the floor minimum every day; a Triumph week |
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
+| **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs |
 
 **Attribute growth:** each attribute = base + ⌊√(temper ÷ divisor)⌋. Growth is fast early and slower later, the way real strength returns.
 
@@ -88,6 +89,12 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Shadow-Step** | Sport | defensive footwork | Knot III |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
+
+---
+
+## The Tether
+
+A second thread, read on his palms beside the first. The real side drives it the way it drives Ember: the days logged as **time together on purpose** (`daily_log.csv → together=Y`, and nothing else about them is recorded or asked) are staged like an Art's ranks, at 1 / 4 / 10 / 20 / 35 days: *a name · a hand · a road · a door · a home*. It only climbs; a quiet month is a thread at rest, never a thread frayed. It buys no XP and no tier, and it never moves anyone's regard: Rae Thorne's approval is a story matter, moved by Darrow's choices like Maelis's or Wren's. What a stage buys is one scene: a planned moment between them, written when the stage is reached, wherever the road has them by then. The sheet shows the Tether from stage I, and the scene that pays a stage closes with its line in the Reckoning box.
 
 ---
 

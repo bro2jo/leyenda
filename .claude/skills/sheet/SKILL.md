@@ -12,4 +12,5 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - XP to the next level.
    - Any attribute within a few temper points of its next point (`next_at` vs `temper`), and any attribute capped by the Binding (`banked: true`). Say what's held back: "Finesse is straining against the Binding."
    - Any Art within 2 days of practice of its next rank, and sealed Arts with banked practice.
+   - The Tether, once it is tied: days together to its next stage (`tether.next_at` vs `tether.days`), said as days, nothing more.
    Say these in game terms (practice days, temper), never in real-world terms (no foods, no exercises).

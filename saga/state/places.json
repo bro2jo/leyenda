@@ -37,6 +37,23 @@
       "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind that comes round the shoulder of the mountain with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
     },
     {
+      "id": "winch-house",
+      "name": "The winch-house",
+      "subtitle": "at the foot of the Steps",
+      "region": "greywater-peaks",
+      "kind": "house",
+      "x": 214,
+      "y": 118,
+      "on_page": true,
+      "visited": true,
+      "draw": false,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "At the foot of the Thousand Steps, where the stair comes out of the cloud at the valley floor: a grey block with a thread of smoke of its own, and the cage the House's loads come up by. Rae Thorne's cart stands beside it with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter."
+    },
+    {
       "id": "coldmere",
       "name": "Coldmere",
       "subtitle": "",
@@ -226,6 +243,7 @@
       208,
       122
     ],
+    "winch-house",
     "thousand-steps",
     "saint-ysoldes"
   ]

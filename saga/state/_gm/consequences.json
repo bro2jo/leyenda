@@ -123,6 +123,18 @@
       "if": "true",
       "then": "An 'arrives a chapter early' effect fires at most once per Book, whichever source armed it",
       "where": "any"
+    },
+    {
+      "id": "r.rae.form",
+      "if": "tether.stage >= 5 && approval.rae >= 50",
+      "then": "The epilogue's last image after the final kneel is the form they made: a vow with no knee bent (arc rae.tether stage 5, rae.road)",
+      "where": "finale"
+    },
+    {
+      "id": "r.rae.parts",
+      "if": "approval.rae <= -25",
+      "then": "Rae drives home at the next transition (a cost on company, never a death); the Tether's scenes wait until she is back a Book later; the stages never fall",
+      "where": "any"
     }
   ]
 }

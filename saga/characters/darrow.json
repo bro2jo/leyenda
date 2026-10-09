@@ -79,6 +79,11 @@
       "scene": "II"
     },
     {
+      "fact": "The last of the road to the foot of the Steps was in a salt-cart driven by a woman the lay brothers called Rae, who talked to her oxen and not to her passengers, looked at his leg once the way a carter looks at a cracked wheel, and told him as they lifted him that they would count him up and he should not help.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
       "fact": "Maelis Vorne found the cord in the middle of the knee snapped rather than broken, and when he said it had held for thirty-two years she answered that it had help for twelve of them, and would not explain.",
       "chapter": "00",
       "scene": "III"
@@ -90,6 +95,11 @@
     },
     {
       "fact": "A list of the Faithless at Saint Ysolde's was read out at the inn in Coldmere; Hollis Garrow is second on it, and when Hollis asked who was first, Wren did not answer and looked at Darrow.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "From the infirmary window he knew the cart standing at the winch-house at the foot of the Steps, shafts up and two oxen in the snow, as the one he had ridden the last of the Holloway in, and he had not forgotten the one thing its driver said to him.",
       "chapter": "01",
       "scene": "1"
     },
@@ -144,6 +154,11 @@
       "to": "red-handed-woman",
       "label": "the woman who pulled him out",
       "note": "She looked at him alone across the water before the charge and called something the river took; afterward she hauled him to the east bank, made him look at what the Wend was carrying, and was gone when he turned back; he did not see her again for a long time."
+    },
+    {
+      "to": "rae-thorne",
+      "label": "the carter who drove him the last of the road",
+      "note": "She talked to her oxen and not to him, looked at his leg once like a cracked wheel, and said one thing to him all day; seven weeks on he knew her cart at the winch-house from the window, and Wren says it was she who heard the list read and climbed through the night to bring it up."
     }
   ],
   "appearances": [

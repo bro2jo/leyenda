@@ -23,6 +23,7 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 | Upper-body work | the Seated Blade; grip, shoulders, a sword that feels lighter |
 | Conditioning | the Long Breath; the Steps; wind on the ridge; endurance in a fight |
 | Sport-skill work | the Arts tied to them (see `mechanics.md`) |
+| Time together on purpose (the Tether) | how far the second thread has been drawn, in the five words the Reckoning gives it (a name, a hand, a road, a door, a home): one planned scene with Rae Thorne per stage, written when the stage is reached, wherever the road has them. Rae is on the page by her own road and the chapter's plan, warmer or more careful by approval. **Never** a scene because an evening was logged, and a logged evening is never Rae on the page. |
 | A strong week | the chapter's climax goes his way; allies arrive; the plan works |
 | A thin week | the climax is costly; the enemy advances; a plan fails. **This is a plot turn, never a punishment and never a lecture.** |
 | A red-light/rest day (plan says stop) | a **cutaway** scene: the world moves without him, in another POV (Wren, Hollis, the House, an enemy) or with Darrow made to rest by others. Never a setback frame; resting is never failure. |
@@ -66,7 +67,7 @@ Rare in prose, always at a scene's end, never more than 6 lines:
 > Might 11 → 12
 > Level 5 · Kindled
 ```
-The first Reckoning (Chapter 1, Scene 1) is the only time it's described in prose: pale, angular script of light that only Darrow sees, which reads the same with his eyes closed.
+The first Reckoning (Chapter 1, Scene 1) is the only time it's described in prose: pale, angular script of light that only Darrow sees, which reads the same with his eyes closed. The Tether's line, when a stage is paid, reads `> The Tether: **a hand**.`; the first of them is the only place the page says what it is.
 
 ### Dice (Baldur's Gate style)
 Show the check on its own line, before the outcome is narrated:

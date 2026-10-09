@@ -41,7 +41,7 @@
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.",
+    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard the list read and climbed through the night to bring it up; her cart and two oxen stand at the winch-house at the foot of the Steps, where the grey cloaks will come first.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",

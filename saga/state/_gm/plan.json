@@ -74,7 +74,7 @@
         "day": "2026-10-09",
         "kind": "spine",
         "beat": "b1.1",
-        "plan": "Mother Ione's council: sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old",
+        "plan": "Mother Ione's council: sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old; Rae Thorne at the council as the one who heard the list read (her cart and oxen stand at the winch-house, in the grey cloaks' path); afterwards she asks Darrow, flat, whether he rode a grey at the ford, and does not say why",
         "micro": {
           "ask": "What does Darrow say?",
           "axis": "candor_guile",
@@ -103,7 +103,7 @@
         "day": "2026-10-10",
         "kind": "spine",
         "beat": "b1.1",
-        "plan": "The grey cloaks reach the foot of the Steps; censer smoke rising through the cloud; the House counts what it has",
+        "plan": "The grey cloaks reach the foot of the Steps; censer smoke rising through the cloud; the House counts what it has; Rae on the gate wall beside Darrow as the grey cloaks reach the winch-house and put a man on her cart; she could go down past them and does not, yet",
         "micro": null,
         "float": false,
         "status": "planned",
@@ -125,10 +125,11 @@
     "world_moves": [
       "the Confessors a day closer",
       "the kitchen has started counting loaves",
-      "Sister Pell rang the dusk bell late, and someone noticed"
+      "Sister Pell rang the dusk bell late, and someone noticed",
+      "a grey cloak has put his boots up on Rae Thorne's cart at the winch-house"
     ],
     "climax": {
-      "plan": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp.",
+      "plan": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp. A grey cloak stays at the winch-house with his boots on Rae Thorne's cart: the cage, the House's larder and letter-box, is in the Order's hand (q1.cart).",
       "checks": [
         "resolve DC 13 (Mender's Patience)",
         "insight DC 13 (Warden's Eye)"
@@ -178,6 +179,11 @@
       "stage": 0,
       "priority": "required"
     },
+    "q1.cart": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
     "q1.wager": {
       "status": "available",
       "stage": 0,
@@ -213,6 +219,12 @@
       "status": "available",
       "stage": 0,
       "priority": "floating"
+    },
+    "rae.tether": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating",
+      "standing": true
     }
   },
   "route": {
@@ -246,7 +258,10 @@
     "elspeth_named": false,
     "hollis_fell": false,
     "vane_spared": false,
-    "first_kneel_private": false
+    "first_kneel_private": false,
+    "thistle_found": false,
+    "rae_market_told": null,
+    "rae_vow": false
   },
   "factions": {
     "crown": -10,
@@ -281,9 +296,17 @@
       "note": "the hound in the kennels; snarls at everyone else; appears in q1.kennel or in t1",
       "bond": 5,
       "approval_pending": 0
+    },
+    "rae": {
+      "note": "the carter of the last cart (Prologue, revised 10/9) and named in Chapter 1; arrives as a companion when q1.cart stage 3 is written (she stays past the dusk bell); --pending until then",
+      "prefers": [
+        "banner",
+        "candor"
+      ],
+      "approval_pending": 0
     }
   },
-  "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second.",
+  "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where the Confessors will camp first.",
   "open_micro": null,
   "temptation": {
     "planted": []

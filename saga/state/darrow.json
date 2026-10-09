@@ -307,6 +307,16 @@
       "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
     }
   ],
+  "tether": {
+    "days": 0,
+    "stage": 0,
+    "of": 5,
+    "name": null,
+    "next_at": 1,
+    "first": null,
+    "last": null,
+    "with": "rae-thorne"
+  },
   "chapter_now": {
     "week_start": "2026-10-04",
     "through": "2026-10-09",

@@ -79,7 +79,7 @@ COLS = {
               "floor_am", "floor_pm", "knee_session", "knee_min", "knee_rpe", "knee_as_planned",
               "pain_session", "pain_pm", "pt", "addon_session", "addon_min", "addon_rpe",
               "conditioning_type", "conditioning_min", "sport_min",
-              "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "closed", "notes"],
+              "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "together", "closed", "notes"],
     "exercise": ["date", "dash_week_start", "pod", "session", "block", "exercise", "side",
                  "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
@@ -256,6 +256,7 @@ def gather(cfg, rules, nutrition=None):
         "floor": None, "check": False, "knee": None, "as_planned": False, "pt": False,
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(),
         "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
+        "together": False,
     })
     for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
@@ -294,6 +295,8 @@ def gather(cfg, rules, nutrition=None):
             f["cond_type"] = str(r.get("conditioning_type", "")).strip().lower()
         f["light"] = str(r.get("light", "")).strip().lower()
         f["closed"] = yes(r.get("closed"))
+        if yes(r.get("together")):  # time together on purpose: the Tether's practice (never XP, never scored)
+            f["together"] = True
 
     block_tags = rules["tags"]["block_tags"]
     session_tags = rules["tags"]["session_tags"]
@@ -515,6 +518,24 @@ def ember_at(day, facts, cfg, rules):
     return max(10, round(100 * sum(vals) / len(vals)))
 
 
+def tether_at(asof, facts, rules):
+    """The Tether: days logged as time together on purpose (daily_log.csv -> together=Y), staged like an Art's
+    ranks by rules.json -> tether.stages. It only ever climbs. Nothing else about those days is read."""
+    t = rules.get("tether")
+    if not t:
+        return None
+    days = sorted(x for x, f in facts.items() if f.get("together") and d(x) <= asof)
+    n = len(days)
+    stages = t["stages"]
+    stage = sum(1 for k in stages if n >= k)
+    names = t.get("names") or []
+    return {"days": n, "stage": stage, "of": len(stages),
+            "name": names[stage - 1] if stage and stage <= len(names) else None,
+            "next_at": next((k for k in stages if n < k), None),
+            "first": days[0] if days else None, "last": days[-1] if days else None,
+            "with": t.get("with")}
+
+
 def tier_of(value, tiers):
     return next(t for t in tiers if value >= t["min"])
 
@@ -620,6 +641,8 @@ def compute(cfg, rules, asof=None, write=False):
                      "banked_rank": rank if sealed else 0, "practice": n, "next_at": nxt,
                      "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"]})
 
+    tether = tether_at(asof, facts, rules)
+
     ember = ember_at(asof, facts, cfg, rules)
     ember_t = tier_of(ember, rules["ember"]["tiers"]) if ember is not None else None
     vig = attrs["vigor"]["score"]
@@ -638,6 +661,7 @@ def compute(cfg, rules, asof=None, write=False):
         "knots_tied": knots, "knots_count": n_knots,
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
+        "tether": tether,
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},
         "fell": {a: rules["attributes"][a]["fell"] for a in ATTRS},
@@ -693,6 +717,11 @@ def diff_sheets(old, new):
     oe = (old.get("ember") or {}).get("tier")
     if oe and new["ember"]["tier"] != oe:
         notes.append(f"EMBER {oe} -> {new['ember']['tier']}")
+    ot, nt = (old.get("tether") or {}).get("stage", 0), (new.get("tether") or {}).get("stage", 0)
+    if nt > ot:
+        nm = (new.get("tether") or {}).get("name") or ""
+        notes.append(f"TETHER {'TIED' if ot == 0 else 'DRAWN'}: {roman(nt)} of {roman((new.get('tether') or {}).get('of', 5))} · {nm}"
+                     + ("" if ot == 0 else f" (was {roman(ot)})"))
     return notes
 
 
@@ -752,8 +781,8 @@ def grades_line(ws, upto, rows):
 def real_week_table(st, cfg, rules, ws, summary=True):
     facts = st["facts"]
     t = cfg["nutrition_targets"]
-    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     kc, pr = [], []
     for i in range(7):
         day = ws + dt.timedelta(i)
@@ -761,7 +790,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         plan = ", ".join(planned_for(cfg, day)) or "floor"
         label = f"{dow(day)} {md(day)}"
         if not f:
-            lines.append(f"| {label} | {plan} |" + " |" * 11)
+            lines.append(f"| {label} | {plan} |" + " |" * 12)
             continue
         if f["kcal"] is not None:
             kc.append(f["kcal"])
@@ -773,7 +802,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
             fmt(f["kcal"]), fmt(f["protein"]), fmt(f["weight"], 1) if f["weight"] else "",
             "✔" if f["creatine"] else "", flo, "✔" if f["check"] else "",
             f["knee"] or "", "✔" if f["pt"] else "", "+".join(sorted(f["addons"])),
-            f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or "")]) + " |")
+            f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or ""), "✔" if f["together"] else ""]) + " |")
     upto = min(ws + dt.timedelta(6), st["asof"])
     sc = week_score(ws, upto, facts, cfg, rules)
     if not summary:
@@ -832,6 +861,8 @@ def cmd_today(args, cfg, rules):
             done.append(f"weigh-in {f['weight']:.1f}")
         if f["creatine"]:
             done.append("creatine")
+        if f["together"]:
+            done.append("together")
         if f["closed"]:
             done.append("day closed")
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
@@ -875,6 +906,9 @@ def sheet_text(s):
         lines.append(f"{k.upper():<8} {x['score']:>2} ({x['mod']:+d})   the Knight Who Fell: {x['fell']}{cap}")
     knots = s["knots_count"]
     lines += ["", f"THE BINDING · Knots tied {roman(knots)} of VII" + (" · the soft season (do not trust the quiet)" if s.get("soft_season") else "")]
+    t = s.get("tether")
+    if t and t.get("stage"):  # shown only once it is tied; the stage names are the page's words, never the Ledger's
+        lines.append(f"THE TETHER · {roman(t['stage'])} of {roman(t['of'])} · {t['name']}")
     learned = [x for x in s["arts"] if x["rank"] > 0]
     sealed = [x for x in s["arts"] if x["sealed_until_knot"] and x["practice"] > 0]
     lines.append("ARTS · " + (" · ".join(f"{x['name']} {roman(x['rank'])}" for x in learned) or "none yet"))
@@ -1238,6 +1272,8 @@ def recap_text(st, cfg, rules, ws):
     out += ["", "**Sessions vs plan:** " + " · ".join(parts)]
     if sc.get("excused"):
         out.append("Excused (red light): " + ", ".join(sc["excused"]))
+    tog = [dow(x) for x in days if fx(x).get("together")]
+    out.append(f"**Together:** {len(tog)} day{'s' if len(tog) != 1 else ''}" + (" (" + ", ".join(tog) + ")" if tog else ""))
 
     # measurements
     ms = measures_in(cfg, ws, we)

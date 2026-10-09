@@ -53,7 +53,7 @@ Commands (run from the repo root):
 
 `if` grammar (ledger rules):
   operators  && || ! ( )  >= <= > < == !=   numbers  "strings"  true false
-  terms      approval.<id>  bearing.<pole>  flags.<name>  route.bookN  factions.<id>
+  terms      approval.<id>  bearing.<pole>  flags.<name>  route.bookN  factions.<id>  tether.stage
              temptation.count  quests.<id>.status
   bearing.<pole> reads the axis value if the pole is the axis's right word, negated if left.
   Missing or null terms read as 0/false; comparisons between unlike types are false.
@@ -82,6 +82,7 @@ P = {
     "daily": ROOT / "real/logs/daily_log.csv",
     "nutrition": ROOT / "real/logs/nutrition_log.csv",
     "food": ROOT / "real/logs/food_entries.csv",
+    "sheet": ROOT / "saga/state/darrow.json",
 }
 STATE_FILES = ("world", "bearing", "plan", "ledger")
 
@@ -374,10 +375,19 @@ def pending_items(ledger):
 
 
 # ---------------------------------------------------------------- rule evaluator
-RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.Compare,
+RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.USub, ast.Compare,
               ast.Attribute, ast.Name, ast.Constant, ast.Load,
               ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Eq, ast.NotEq)
-KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests")
+KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether")
+
+
+def tether_stage():
+    """The Tether's stage from the engine's sheet (darrow.py owns it; saga.py only reads it). 0 if untied or unknown."""
+    try:
+        t = load_json(P["sheet"]).get("tether") or {}
+        return int(t.get("stage") or 0)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return 0
 
 
 def rule_source(expr):
@@ -439,6 +449,8 @@ def term_lookup(parts, st):
         qid = ".".join(parts[1:-1])
         q = plan.get("quests", {})
         return qid in q, (q.get(qid, {}).get("status") or "")
+    if root == "tether" and parts[1:] == ["stage"]:
+        return True, tether_stage()
     return False, 0
 
 
@@ -473,6 +485,9 @@ def eval_node(node, st):
     if isinstance(node, ast.Name):
         return 0
     if isinstance(node, ast.UnaryOp):
+        if isinstance(node.op, ast.USub):  # a negative number, e.g. approval.rae <= -25
+            v = eval_node(node.operand, st)
+            return -v if isinstance(v, (int, float)) and not isinstance(v, bool) else 0
         return not bool(eval_node(node.operand, st))
     if isinstance(node, ast.BoolOp):
         vals = [bool(eval_node(v, st)) for v in node.values]
@@ -515,8 +530,10 @@ def rule_near(rule, st, within=15):
         if not isinstance(node, ast.Compare) or len(node.comparators) != 1:
             continue
         a, b = node.left, node.comparators[0]
-        if isinstance(a, ast.Constant):
+        if isinstance(a, (ast.Constant, ast.UnaryOp)):
             a, b = b, a
+        if isinstance(b, ast.UnaryOp) and isinstance(b.op, ast.USub) and isinstance(b.operand, ast.Constant) and isinstance(b.operand.value, (int, float)) and not isinstance(b.operand.value, bool):
+            b = ast.Constant(value=-b.operand.value)  # a negative threshold
         if isinstance(a, ast.Attribute) and isinstance(b, ast.Constant) and isinstance(b.value, (int, float)) and not isinstance(b.value, bool):
             parts = dotted(a)
             if not parts:
@@ -576,7 +593,7 @@ def road_line(st):
 
 # ---------------------------------------------------------------- arc sections
 HEAD_RE = re.compile(r"^(#{1,4})\s+(.*?)\s*$")
-ID_RE = re.compile(r"^(b\d\.\d+|q\d\.[a-z0-9_]+|t\d(\.(high|main|low))?|book\d\.question|pacing|truths|motifs|beliefs|temptation|flags)\b")
+ID_RE = re.compile(r"^(b\d\.\d+|q\d\.[a-z0-9_]+|t\d(\.(high|main|low))?|book\d\.question|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
 
 
 def arc_sections():
@@ -1632,9 +1649,9 @@ def cmd_check(args):
             probs.append(f"quest {qid} status {q.get('status')!r}")
         if q.get("priority") not in ("required", "optional", "floating"):
             probs.append(f"quest {qid} priority {q.get('priority')!r}")
-    live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live"]
+    live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live" and not q.get("standing")]
     if len(live) > 2:
-        probs.append(f"{len(live)} quests live; never more than two")
+        probs.append(f"{len(live)} quests live; never more than two (a `standing` quest, the Tether, is not counted)")
     for key, r in plan.get("route", {}).items():
         if not re.match(r"^book[1-6]$", key):
             probs.append(f"route key {key!r}")
@@ -1679,6 +1696,11 @@ def cmd_check(args):
             probs.append(f"slot {n} spine beat {s.get('beat')!r} not in core_beats")
         if s.get("kind") == "quest" and s.get("quest") not in plan.get("quests", {}):
             probs.append(f"slot {n} quest {s.get('quest')!r} not in quests")
+        if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("standing") and s.get("status") in ("planned", "next"):
+            need = int(s.get("stage") or 0)
+            have = tether_stage()
+            if need > have:
+                probs.append(f"slot {n} plans {s.get('quest')} stage {need}, but the engine's Tether stands at {have}; a stage is written only once the Ledger has unlocked it")
         if s.get("float") and s.get("kind") != "quest":
             probs.append(f"slot {n} float is only for quest slots")
         if s.get("status") == "written" and not s.get("wrote"):

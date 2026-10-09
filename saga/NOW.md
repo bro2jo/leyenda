@@ -5,11 +5,12 @@
 **BOOK I — THE HOUSE OF MENDERS · Chapter 1 — The Confessor at the Steps**
 
 - **Where:** Saint Ysolde's, the House of Menders, high in the Greywater. First snow on the Thousand Steps.
-- **The quest:** *The List.* Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.
+- **The quest:** *The List.* Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.
 - **What Darrow is fighting right now:** the soft season. The knee feels well, and Maelis says that's exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he can't kneel; and he has asked fourteen times to go down the Steps and been told no fourteen times.
 - **Just happened:** behind the cell door, Maelis named the two fires: one poured in, one built, and the script on his hands counts only what is his. An order once lived by the built fire; the Crown burned them. *"Not in the hall. Not to Hollis, most of all."* Then she lifted the latch.
 - **Meanwhile (Interlude):** down the hall, Hollis told Benedek Orrin of his own Sixth that nobody is taking anyone up eleven hundred steps in the snow, and hid the writ from Harrow Ford, still unread, in the cup of his wooden leg. Then the cell door opened.
 - **With him:** Maelis Vorne (has told him what she dared, not where she learned it) · Hollis Garrow (second on the list, drinking less) · Wren Ashdown (frightened, hiding it in numbers).
+- **Also in the House:** Rae Thorne, the carter of the last cart, who said one thing to him on the whole of that road and whom he has not forgotten; her cart and two oxen stand at the winch-house below, in the grey cloaks' path.
 - **Next:** the grey cloaks reach the foot of the Steps by tomorrow night, if the snow holds off.
 - **Open choice:** none yet. The first comes at the chapter's climax.
 

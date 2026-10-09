@@ -63,6 +63,11 @@
       "scene": "II"
     },
     {
+      "fact": "On the last cart to the foot of the Steps he started on the carter, Rae, somewhere past the second milestone, and she said 'Aye' as if he had remarked on the weather.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
       "fact": "His answer to the Crown's proclamation, which offered the Faithless mercy at the Oathspire and leave to kneel anew, was \"Kneel to that,\" and nobody on either cart laughed.",
       "chapter": "00",
       "scene": "II"
@@ -128,6 +133,11 @@
       "to": "benedek-orrin",
       "label": "the lad on the next cot, of his own Sixth",
       "note": "Not yet thirty, a boar spear through the shoulder at the ford and a fever after it; he asked Hollis what second on the list meant, offered to carry him down the Steps himself, and was told he couldn't carry a bucket, which made him smile, which was what the words were for."
+    },
+    {
+      "to": "rae-thorne",
+      "label": "the carter of the last cart",
+      "note": "He cursed her from her own cart on the last day of the road north, and she answered 'Aye' as if he had remarked on the weather; it was she who heard the list with his name second on it read out at Coldmere."
     }
   ],
   "reckoning": {

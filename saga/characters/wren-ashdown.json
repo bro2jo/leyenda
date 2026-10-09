@@ -80,6 +80,16 @@
       "fact": "She knows who stands second on the list of the Faithless at Saint Ysolde's that was read out at the inn in Coldmere: Hollis. When he asked who was first, she answered only by looking at Darrow.",
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "fact": "She brought word that Rae Thorne had heard the list read in the taproom at Coldmere, driven the Holloway in the dark ahead of the grey cloaks, and climbed the Steps before the bell to tell the winch-brothers.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "Her ledger at the head of Chapter 1 also counts one cart at the winch-house, Thorne's, and one load waiting on the cage.",
+      "chapter": "01",
+      "scene": "1"
     }
   ],
   "relationships": [
@@ -97,6 +107,11 @@
       "to": "hollis-garrow",
       "label": "the second name on the list",
       "note": "She was the one who told him he was second on the list the Confessors read out in Coldmere."
+    },
+    {
+      "to": "rae-thorne",
+      "label": "the carter whose news she ran down to the hall",
+      "note": "It was Rae who heard the list read at Coldmere and climbed through the night with it; Wren carried it the last of the way, from the winch-brothers and the kitchen to the infirmary hall."
     }
   ],
   "reckoning": {

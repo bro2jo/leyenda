@@ -1,0 +1,144 @@
+{
+  "id": "rae-thorne",
+  "name": "Rae Thorne",
+  "aliases": [
+    "Rae",
+    "Thorne"
+  ],
+  "epithet": "Carter of the last cart to the foot of the Steps",
+  "tier": "major",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "wheel"
+  },
+  "appearance": "Thirty, or near it, and strong through the shoulders and back in the way that comes from hauling rather than from Grace. She has a square, wind-browned face under a felt cap that has been sat on, dark-copper hair cut off blunt at the jaw, dark brown eyes, and a chipped front tooth that shows when she swears at the ruts in the road. A small brass bell hangs on a cord at her belt and rings whenever the cart jolts, and she never seems to hear it. She drives the last cart up the Holloway to the foot of the Thousand Steps, talks to her oxen in whole sentences and to knights hardly at all, and looked at Darrow's hurt leg once, the way a carter looks at a cracked wheel.",
+  "first_seen": {
+    "chapter": "00",
+    "scene": "II",
+    "place": "thousand-steps",
+    "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+  },
+  "last_seen_doing": "Not on the page herself in Chapter 1 but named by Wren, who told the hall that Rae had heard the list read at the inn in Coldmere, driven the Holloway in the dark ahead of the grey cloaks, and climbed the Steps before the bell to tell the winch-brothers.",
+  "now": "Somewhere in the House, as far as the page knows: she came up the Steps before the dawn bell with the news of the Confessors' list and told the winch-brothers, who told the kitchen. Her cart stands at the winch-house at the foot of the Steps with its shafts up and two oxen waiting in the snow, which Darrow knew from the infirmary window, and six grey cloaks with a cart and a censer are expected at the foot of the Steps by tomorrow night if the snow holds off.",
+  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks later she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, in the grey cloaks' path.",
+  "quote": {
+    "text": "They'll count you up. Don't help.",
+    "chapter": "00",
+    "scene": "II"
+  },
+  "known_facts": [
+    {
+      "fact": "She drove the last cart of the road north, a salt-cart off the Holloway, its load left at the landing to make room for two knights and a leg that was not there.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "She talked to her oxen the whole of the last day and to her passengers not at all, and when Hollis started on her past the second milestone she said 'Aye' as if he had remarked on the weather.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "A small brass bell hangs on a cord at her belt and rings when the cart jolts; at the foot of the Steps she rang it three times, hard, and after a while a bell answered from the cloud.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "She looked at Darrow's leg once, the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "The first of the lay brothers coming down with the litter called her Rae, as if her name were a thing you could lean on.",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "The one thing she said to Darrow in the whole of that day, as they lifted him: 'They'll count you up. Don't help.'",
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "fact": "By Wren's account she was in the taproom at the inn in Coldmere with the House's salt on her cart when the Confessors' list was read out, and heard every name.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "She drove the Holloway in the dark ahead of the grey cloaks, came up the Steps before the bell, and told the winch-brothers, who told the kitchen.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "Her cart stands at the winch-house at the foot of the Steps with its shafts up and two oxen in the snow; Darrow knew it from the infirmary window as the cart he had ridden the last of the Holloway in.",
+      "chapter": "01",
+      "scene": "1"
+    },
+    {
+      "fact": "Wren's ledger counts one cart at the winch-house, Thorne's, and one load waiting on the cage.",
+      "chapter": "01",
+      "scene": "1"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "the knight she drove to the foot of the Steps",
+      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks later he knew her cart from the infirmary window and had not forgotten it."
+    },
+    {
+      "to": "hollis-garrow",
+      "label": "the old knight who cursed her from her own cart",
+      "note": "When he started on her past the second milestone she said 'Aye' as if he had remarked on the weather, and the cart went on."
+    },
+    {
+      "to": "wren-ashdown",
+      "label": "the runner who carried her news into the hall",
+      "note": "Wren told the infirmary hall that Rae had heard the list read at Coldmere, driven through the dark ahead of the grey cloaks and climbed the Steps before the bell."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "ember",
+      "state": "banked"
+    },
+    "level": 3,
+    "rank": "Bound",
+    "attributes": {
+      "might": 10,
+      "vigor": 12,
+      "finesse": 8,
+      "resolve": 13
+    },
+    "arts": [
+      {
+        "name": "Iron Grip",
+        "rank": 1
+      },
+      {
+        "name": "The Long Breath",
+        "rank": 1
+      }
+    ],
+    "deeper": [
+      "The rope has her measure, and she has its."
+    ]
+  },
+  "appearances": [
+    {
+      "chapter": "00",
+      "scene": "II"
+    },
+    {
+      "chapter": "01",
+      "scene": "1",
+      "mention": true
+    }
+  ]
+}

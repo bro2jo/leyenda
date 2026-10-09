@@ -299,6 +299,25 @@
   "inspiration": {
     "cap": 4
   },
+  "tether": {
+    "_about": "The Tether: time together on purpose, logged as daily_log.csv -> together=Y (nothing else about it is recorded, and it is never scored). Its stage is the count of such days against `stages`, like an Art's ranks, and it only ever climbs: a quiet week is a thread at rest, never a thread frayed. No XP, no temper. The sheet shows it from stage I; each stage unlocks one planned scene (saga/bible/_gm/arc.md -> rae.tether). Her regard is story-only and moves by choices alone.",
+    "column": "together",
+    "stages": [
+      1,
+      4,
+      10,
+      20,
+      35
+    ],
+    "names": [
+      "a name",
+      "a hand",
+      "a road",
+      "a door",
+      "a home"
+    ],
+    "with": "rae-thorne"
+  },
   "hp": {
     "_formula": "20 + 4*level + 2*(vigor - 10), minimum 10"
   },

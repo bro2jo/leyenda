@@ -2,7 +2,7 @@
 
 # Chapter 1 — The Confessor at the Steps
 
-*Steps: 1,117. Cots: 40, of which 31 full. Bells today: 9. Times the captain of the Ninth has asked whether he may go down the Steps: 14. Times Mender Vorne has said no: 14.*
+*Steps: 1,117. Cots: 40, of which 31 full. Bells today: 9. Carts at the winch-house: 1, Thorne's. Loads waiting on the cage: 1. Times the captain of the Ninth has asked whether he may go down the Steps: 14. Times Mender Vorne has said no: 14.*
 
 — from the ledgers of Wren Ashdown
 
@@ -56,7 +56,7 @@ The hall went quiet. Even Hollis had stopped snoring. Darrow couldn't have said 
 
 "Confessors," Hollis said.
 
-"They'll be at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere, and the carter heard it and told the lay brothers, and the lay brothers told the kitchen, so now everyone knows. It's the names of the Faithless at Saint Ysolde's. The ones they've come to bring down to kneel."
+"They'll be at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere last night, and Rae Thorne was in the taproom with the House's salt on her cart and heard every name. She drove the Holloway in the dark ahead of them and came up the Steps before the bell, and she told the winch-brothers, and the winch-brothers told the kitchen, so now everyone knows. It's the names of the Faithless at Saint Ysolde's. The ones they've come to bring down to kneel."
 
 "Am I on it?" said Hollis.
 
@@ -73,6 +73,8 @@ Afterward, when Maelis had gone to the Prior and Wren to the bell tower and Holl
 He did it carefully, the way he did everything now: weight on the good leg first, then the bad one, then the slow transfer, as if he were crossing a frozen pond. He walked to the window at the end of the hall without the stick, and he didn't limp. That was new this week, and he was prouder of it than he would ever admit to anyone.
 
 Below the window the world fell away. Cloud filled the valley like milk in a bowl, and through gaps in it he could see the Thousand Steps switchbacking down the cliff, white with new snow, and far below that, a brown thread across a white field, the Holloway road. If he squinted he could see the riders: six grey specks and a darker one, and a smudge of smoke above them.
+
+Nearer, where the stair came out of the cloud at the valley floor, the winch-house was a grey block with a thread of smoke of its own, and beside it, small as a seed, stood a cart with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. He knew that cart. He had ridden the last of the Holloway in it with a fever and a leg that belonged to someone else, and the woman driving it had said one thing to him all that day, and he had not forgotten it.
 
 He knew how this went. Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
 

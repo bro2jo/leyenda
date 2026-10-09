@@ -436,7 +436,7 @@ def load_characters(registry, factions, places):
 
 
 # ============================================================ svg
-MARKS = {"none", "knot", "horn", "needle", "pencil", "spyglass", "key", "stone", "note", "knife", "quill", "cup", "candle", "star"}
+MARKS = {"none", "knot", "horn", "needle", "pencil", "spyglass", "key", "stone", "note", "knife", "quill", "cup", "candle", "star", "wheel"}
 DEVICES = {"lance", "bell", "censer", "crown", "redhand", "knee"}
 
 
@@ -494,6 +494,9 @@ def svg_mark(mark):
         return '<path d="M44 76 L56 76 L56 98 L44 98 Z" class="sg-l"/><path d="M50 76 L50 70 C46 66 50 62 50 60 C50 62 54 66 50 70" class="sg-l"/>'
     if mark == "star":
         return '<path d="M50 66 L54 78 L66 78 L56 85 L60 97 L50 90 L40 97 L44 85 L34 78 L46 78 Z" class="sg-l"/>'
+    if mark == "wheel":
+        return ('<circle cx="50" cy="82" r="14" class="sg-l"/><circle cx="50" cy="82" r="3" class="sg-l"/>'
+                '<path d="M50 68 L50 96 M36 82 L64 82 M40 72 L60 92 M60 72 L40 92" class="sg-s"/>')
     return ""
 
 
@@ -1328,7 +1331,7 @@ class Site:
         xp_show = f"{xp_into:,} / {xp_span:,}"
         plate = (f'<section class="plate"><div class="hero">{crest(d["level"])}<div class="who"><h2>The Reckoning</h2>'
                  f'<p class="sub">{esc(d["name"])} · Level {d["level"]} · {esc(d["rank"])} · XP {d["xp"]:,}</p>'
-                 f'<div class="chips">{chip("HP " + str(d["hp_max"]), "")}{chip("Proficiency +" + str(d["proficiency"]))}{chip("Knots " + roman(d["knots_count"]) + " of " + roman(n_knots), "brass")}</div></div></div>'
+                 f'<div class="chips">{chip("HP " + str(d["hp_max"]), "")}{chip("Proficiency +" + str(d["proficiency"]))}{chip("Knots " + roman(d["knots_count"]) + " of " + roman(n_knots), "brass")}{self.tether_chip()}</div></div></div>'
                  f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
                  f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
                  f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div></section>')
@@ -1379,6 +1382,13 @@ class Site:
             chap_rows.append(f'<li><b>{t}</b><span class="m">{esc(TIER_DONE.get(r["tier"], r["tier"]))}</span></li>')
         chaps = sec("Chapters", "how each one ended", f'<ul class="chron">{"".join(chap_rows)}</ul>' if chap_rows else '<p class="empty">No chapter has closed yet.</p>')
         return plate + attrs + arts_sec + knots + chaps
+
+    def tether_chip(self):
+        """The Tether, once tied: its stage and the page's word for it. Nothing before stage I."""
+        t = self.darrow.get("tether") or {}
+        if not t.get("stage"):
+            return ""
+        return chip(f"The Tether {roman(t['stage'])} of {roman(t.get('of', 5))} · {t.get('name', '')}", "ember")
 
     def knots_html(self, d, rel):
         tied = set(d.get("knots_tied") or [])
@@ -1516,7 +1526,7 @@ class Site:
         a = d["attributes"]
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
-        bchip = self.bearing_chip()
+        bchip = (self.bearing_chip() or "") + self.tether_chip()
         card = (f'<div class="rk-mini"><div class="hero">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
@@ -1718,6 +1728,9 @@ def run_checks(site, out_dir):
         allowed.update(r["name"].split())
     for t in site.rules["ember"]["tiers"]:
         allowed.add(t["name"])
+    for nm in (site.rules.get("tether") or {}).get("names", []):  # the Tether's stage words are game rules too
+        allowed.update(re.findall(r"[A-Za-z']+", nm))
+    allowed.add("Tether")
     for p in site.places:
         allowed.update(re.findall(r"[A-Za-z']+", p["name"] + " " + p.get("subtitle", "")))
     for f in site.factions.values():
@@ -1733,6 +1746,7 @@ def run_checks(site, out_dir):
         allowed_text.append(str(r.get("name", "")))
     for t in site.rules["ember"]["tiers"]:
         allowed_text += [str(t.get("name", "")), str(t.get("effect", ""))]
+    allowed_text += [str(nm) for nm in (site.rules.get("tether") or {}).get("names", [])]
     if site.bearing:
         # only what the Bearing renders: the section's own label, the pole words always, the current epithet
         # (load_bearing has already required it to be on the page). The names table is never allow-listed:

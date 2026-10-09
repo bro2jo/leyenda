@@ -107,6 +107,14 @@ Hollis Garrow rode the next cart over, missing his right leg above the knee, and
 
 The surgeons in the Lowmarch looked at Darrow's knee, pressed it, watched it slide, and sent him north, into the Greywater. *Saint Ysolde's*, they said, the way you would say *the sea*. The House of Menders took the ones the lowland surgeons couldn't fix and didn't want to watch.
 
+The last cart was a salt-cart off the Holloway, its load left at the landing to make room for two knights and a leg that was not there, and the woman who drove it talked to her oxen the whole of the last day and to her passengers not at all. Darrow watched her because the fever had taken away his choice of what to watch. Thirty, or near it. Strong through the shoulders and back, in the way that comes from hauling and not from Grace. A square brown face under a felt cap that had been sat on, dark-copper hair cut off blunt at the jaw, a chipped front tooth that showed when she swore at the ruts, and a small brass bell on a cord at her belt that rang whenever the cart jolted and that she never once seemed to hear. When Hollis started on her, somewhere past the second milestone, she said "Aye," as if he had remarked on the weather, and the oxen leaned into the collar and the cart went on.
+
+At the foot of the Steps she got down and looked at his leg once, the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her. Then she looked up the cliff, where the stair went into the cloud, took the bell off her belt and rang it three times, hard. Somewhere up in the cloud, after a while, a bell answered.
+
+"Rae," said the first of the lay brothers coming down with the litter, as if her name were a thing you could lean on.
+
+She said one thing to Darrow in the whole of that day, as they lifted him. "They'll count you up. Don't help."
+
 They carried him up the Thousand Steps on a litter. Four lay brothers, two at each end, switching every hundred steps, while the cliff fell away on one side into cloud and the wind came round the shoulder of the mountain with a knife in it. Beside the litter walked a girl of about twenty with ink on her fingers and a pencil behind her ear, and she was counting the steps out loud.
 
 "Four hundred and eleven. Four hundred and twelve."
