@@ -97,7 +97,7 @@ ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"]
 NOW_CAP = 30
 
 WHEN_RE = re.compile(r"^(next|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
-WHERE_RE = re.compile(r"^(ch\d{2}(:(s\d+|climax|interlude(-\d+)?|choice|transition))?|book\d(:climax|:beat\d+)?)$")
+WHERE_RE = re.compile(r"^(ch\d{2}(:(s\d+|climax|interlude(-\d+)?|choice|transition|between-\d+))?|book\d(:climax|:beat\d+)?)$")
 ENTRY_ID_RE = re.compile(r"^c(\d{2})\.(\d+)$")
 DUE_ID_RE = re.compile(r"^c(\d{2})\.(\d+)([a-z])$")
 WROTE_RE = re.compile(r"^ch(\d{2}):(s(\d+)|interlude(-\d+)?|climax|transition)$")
@@ -865,6 +865,11 @@ def cmd_now(args):
     live = [f"{k} (stage {v.get('stage')})" for k, v in q.items() if v.get("status") == "live"]
     avail = [f"{k} ({v.get('priority')})" for k, v in q.items() if v.get("status") == "available"]
     lines.append("Quests live: " + (", ".join(live) or "none"))
+    lw = str(pos.get("last_written") or "")
+    lw_key = (WROTE_RE.match(lw).group(3) or WROTE_RE.match(lw).group(2)) if WROTE_RE.match(lw) else ""
+    betweens = [x for x in st.world.get("scenes", []) if str(x.get("scene", "")).startswith("between-") and str(x.get("after", "")) == lw_key]
+    if betweens:
+        lines.append(f"Between pieces after the last scene: {len(betweens)} of 2 (" + ", ".join(str(x.get("scene")) for x in betweens) + ")")
     lines.append("Quests available: " + short(", ".join(avail) or "none", 160))
     if int(pos["chapter"]) >= 2 and not live:
         first_req = next((k for k, v in q.items() if v.get("status") == "available" and v.get("priority") == "required"), None)

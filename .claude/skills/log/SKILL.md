@@ -21,7 +21,8 @@ Input: $ARGUMENTS (plus any attached photo).
   - **a PT or surgeon visit** → exercise rows (`session=PT`) as usual, plus `real/visits/YYYY-MM-DD_PTn.md` and `measurements.csv` rows (the `/ingest` visit procedure); `daily_log` `notes` keeps a one-line pointer, never the visit itself
   - **a measured number** (goniometer, dynamometer, leg-press max, hop test) → `measurements.csv` via `python3 engine/darrow.py measure add`
   - **"close day"** → step 6
-  - **an answer to an open story choice** ("2", "go the long way", "tell her the truth") → handled **first**, through `/choose`, before anything else in the message. A bare number is an answer only while a choice is open (`python3 engine/saga.py now` prints the open micro-choice; a climax choice is in `saga/NOW.md`); otherwise it is a quantity or a number from the day.
+  - **an answer to an open story choice** ("2", "go the long way", "tell her the truth") → handled **first**, through `/choose`, before anything else in the message.
+  - **a Darrow action in the story's present** that answers no open choice ("Darrow goes down to the kitchen", "RP: …") → `/play` (a Between), after the Ledger reply and instead of the glimpse. A bare number is an answer only while a choice is open (`python3 engine/saga.py now` prints the open micro-choice; a climax choice is in `saga/NOW.md`); otherwise it is a quantity or a number from the day.
 
 ## 2. Safety screen (before anything else)
 - **Red flags** (fever, calf pain/swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling, loss of extension, inability to walk normally): reply in plain language and tell him to contact the surgical team/PT. Still log what he said. Set `light=red`. No story today.

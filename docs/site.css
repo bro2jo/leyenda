@@ -337,6 +337,9 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .epigraph p{font-style:italic;color:var(--dim);font-size:17px;max-width:60ch}
 .epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px}
 .scene-h{font-family:var(--display);font-weight:700;font-size:1.55rem;line-height:1.15;border-bottom:1px solid var(--rule);padding-bottom:6px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.scene.between{margin-left:14px;padding-left:14px;border-left:2px solid var(--rule)}
+.scene.between .scene-h{font-size:1.15rem;border-bottom:0;padding-bottom:0}
+.scene.between .scene-n{color:var(--dim)}
 .scene-n{font-family:var(--label);font-size:.85rem;letter-spacing:.1em;color:var(--brass)}
 .reader h3{font-family:var(--display);font-weight:700;font-size:1.3rem}
 hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}

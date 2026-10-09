@@ -135,6 +135,18 @@
       "if": "approval.rae <= -25",
       "then": "Rae drives home at the next transition (a cost on company, never a death); the Tether's scenes wait until she is back a Book later; the stages never fall",
       "where": "any"
+    },
+    {
+      "id": "r.rae.ledger",
+      "if": "approval.rae >= 40",
+      "then": "The Confessor's seized ledger comes whole into Wren's hands, Rae's doing (b3.4); otherwise the page is half burned",
+      "where": "book3:beat4"
+    },
+    {
+      "id": "r.b2.wren_reads",
+      "if": "approval.wren >= 40",
+      "then": "At the Stonewright ring Wren finishes the line for him openly and says she will tell him why when it is hers to tell (b2.5); otherwise she is caught at it",
+      "where": "book2:beat5"
     }
   ]
 }

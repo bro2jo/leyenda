@@ -19,6 +19,9 @@ Conventions the parser and the checks rely on:
   Scenes      '## I. Title' (prologue parts), '### Scene N — Title', '## Climax — Title', '### Choice — Title'.
   Interlude   '### Interlude — Title': another POV, not tied to a day. Scene key and anchor 'interlude'
               (a second one in the same chapter: 'interlude-2'), label "Interlude".
+  Between     '### Between — Title': a role-play piece between two scenes (the /play skill): the scene extended by
+              Darrow's own action, 120–300 words, no choice list. Scene key and anchor 'between-K' (K counts up
+              within the chapter), label "Between". Rendered smaller, listed with the scenes, never counted as one.
   Choices     a heading line '**What does Darrow do?**' (the chapter's climax choice) or
               '**What does Darrow say?**' (a small choice inside a scene) followed by a numbered list.
               world.json → choices[] records answers as {chapter, scene, kind, option, text, date, ledger, by}:
@@ -176,6 +179,7 @@ OL_RE = re.compile(r"^(\d+)\.\s+(.*)$")
 PART_RE = re.compile(r"^##\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+(.+)$")
 SCENE_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
 INTERLUDE_RE = re.compile(r"^###\s+Interlude\s*[—–-]\s*(.+)$")
+BETWEEN_RE = re.compile(r"^###\s+Between\s*[—–-]\s*(.+)$")
 CLIMAX_RE = re.compile(r"^##\s+Climax\s*[—–-]\s*(.+)$")
 CHOICE_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
 HEAD_RE = re.compile(r"^(#{2,3})\s+(.+)$")
@@ -224,17 +228,18 @@ def parse_chapter(path):
     anchors_seen = set()
     cur = None
 
-    def scene(key, label, title, anchor):
+    def scene(key, label, title, anchor, between=False):
         if anchor in anchors_seen:
             problem(f"{path.name}: two scenes share the anchor '{anchor}'")
         anchors_seen.add(anchor)
-        s = {"key": key, "label": label, "title": title, "anchor": anchor, "blocks": []}
+        s = {"key": key, "label": label, "title": title, "anchor": anchor, "blocks": [], "between": between}
         ch["scenes"].append(s)
         return s
 
     para = []
     pending_choice = None  # None, or "do" / "say": which choice heading the next numbered list answers
     n_interludes = 0
+    n_between = 0
 
     def flush():
         nonlocal para, pending_choice
@@ -268,6 +273,14 @@ def parse_chapter(path):
             cur = scene(key, "Interlude", m.group(1).strip(), key)
             i += 1
             continue
+        m = BETWEEN_RE.match(s)
+        if m:
+            flush()
+            n_between += 1
+            key = f"between-{n_between}"
+            cur = scene(key, "Between", m.group(1).strip(), key, between=True)
+            i += 1
+            continue
         m = CLIMAX_RE.match(s)
         if m:
             flush()
@@ -285,8 +298,8 @@ def parse_chapter(path):
             flush()
             pending_choice = None
             head = m.group(2).strip()
-            if re.match(r"^(Scene\b|Interlude\b|Climax\b|Choice\b)", head, re.I):
-                problem(f"{path.name}: heading '{s}' must be '### Scene N — Title', '### Interlude — Title', '## Climax — Title' or '### Choice — Title'")
+            if re.match(r"^(Scene\b|Interlude\b|Climax\b|Choice\b|Between\b)", head, re.I):
+                problem(f"{path.name}: heading '{s}' must be '### Scene N — Title', '### Interlude — Title', '### Between — Title', '## Climax — Title' or '### Choice — Title'")
             if cur is None:
                 cur = scene(slug(head), "", head, slug(head))
             else:
@@ -343,6 +356,8 @@ def parse_chapter(path):
             while i < n and OL_RE.match(lines[i].strip()):
                 items.append(OL_RE.match(lines[i].strip()).group(2))
                 i += 1
+            if pending_choice and cur.get("between"):
+                problem(f"{path.name}: a Between ('{cur['title']}') carries a choice list; choices belong to scenes and climaxes (style.md §3)")
             cur["blocks"].append(("ol", items, pending_choice))
             pending_choice = None
             continue
@@ -1225,7 +1240,8 @@ class Site:
             seen = set()
             lab = f'<span class="scene-n">{esc(s["label"])}</span>' if s["label"] else ""
             title = esc(s["title"]) if s["title"] else ""
-            body.append(f'<section class="scene" id="{s["anchor"]}"><h2 class="scene-h">{lab}{title}</h2>{self.render_blocks(ch, s, rel, seen)}</section>')
+            cls = "scene between" if s.get("between") else "scene"
+            body.append(f'<section class="{cls}" id="{s["anchor"]}"><h2 class="scene-h">{lab}{title}</h2>{self.render_blocks(ch, s, rel, seen)}</section>')
         cast = [c for c in self.chars.values() if any(str(a.get("chapter")) == ch["code"] and not a.get("mention") for a in c.get("appearances") or [])]
         cast_html = ""
         if cast:
@@ -1252,8 +1268,9 @@ class Site:
             scenes = "".join(
                 f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a></li>'
                 for s in ch["scenes"] if s["title"] or s["label"])
-            n_sc = len(ch["scenes"])
-            count = "no scene yet" if ch["empty"] else f'{n_sc} scene{"s" if n_sc != 1 else ""} · about {ch["words"]:,} words'
+            n_bt = sum(1 for s in ch["scenes"] if s.get("between"))
+            n_sc = len(ch["scenes"]) - n_bt
+            count = "no scene yet" if ch["empty"] else (f'{n_sc} scene{"s" if n_sc != 1 else ""}' + (f' · {n_bt} between' if n_bt else "") + f' · about {ch["words"]:,} words')
             items.append(f'<li class="{"now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
                          f'<span class="m num">{count}{" · now" if now else ""}</span>'
                          f'<ul class="scenes">{scenes}</ul></li>')
@@ -1584,11 +1601,14 @@ class Site:
         w, d = self.world, self.darrow
         cur_slug = w.get("chapter_file", "").split("/")[-1].replace(".md", "")
         ch = next((c for c in self.chapters if c["slug"] == cur_slug), None)
-        latest = ch["scenes"][-1] if ch and ch["scenes"] else None
+        latest = next((s for s in reversed(ch["scenes"]) if not s.get("between")), None) if ch and ch["scenes"] else None
+        after = [s for s in ch["scenes"][ch["scenes"].index(latest) + 1:] if s.get("between")] if latest else []
         place = self.place_by_id.get(self.current_place, {})
         loc = w.get("location") or {}
         where = place.get("name", "") + (f", {loc.get('detail')}" if isinstance(loc, dict) and loc.get("detail") else "")
         latest_html = (f'<a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">{esc((latest["label"] + " — " if latest["label"] else "") + latest["title"])}</a>' if latest else "—")
+        if after:
+            latest_html += " · then " + ", ".join(f'<a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc("Between — " + s["title"])}</a>' for s in after)
         book_line = f"Book {roman(w.get('book', 1))} — {w['book_title']}" if w.get("book_title") else ""
         plate = (f'<section class="plate now-plate"><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>'
@@ -2251,6 +2271,9 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .epigraph p{font-style:italic;color:var(--dim);font-size:17px;max-width:60ch}
 .epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px}
 .scene-h{font-family:var(--display);font-weight:700;font-size:1.55rem;line-height:1.15;border-bottom:1px solid var(--rule);padding-bottom:6px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.scene.between{margin-left:14px;padding-left:14px;border-left:2px solid var(--rule)}
+.scene.between .scene-h{font-size:1.15rem;border-bottom:0;padding-bottom:0}
+.scene.between .scene-n{color:var(--dim)}
 .scene-n{font-family:var(--label);font-size:.85rem;letter-spacing:.1em;color:var(--brass)}
 .reader h3{font-family:var(--display);font-weight:700;font-size:1.3rem}
 hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}

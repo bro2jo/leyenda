@@ -261,7 +261,11 @@
     "first_kneel_private": false,
     "thistle_found": false,
     "rae_market_told": null,
-    "rae_vow": false
+    "rae_vow": false,
+    "hollis_told_shard": false,
+    "stair_watched": false,
+    "marrant_told": false,
+    "wren_blooded": false
   },
   "factions": {
     "crown": -10,

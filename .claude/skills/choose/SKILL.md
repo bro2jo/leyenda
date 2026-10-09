@@ -1,13 +1,13 @@
 ---
 name: choose
-description: Record Darrow's answer to an open story choice and play out its immediate consequence. Use when the user answers a choice ("2", "open it", "go the long way") or tells Darrow what to do in the story.
+description: Record Darrow's answer to an open story choice and play out its immediate consequence. Use when the user answers an open choice ("2", "open it", "go the long way"); a Darrow action while no choice is open is /play, not this.
 argument-hint: "[option number or what Darrow does]"
 allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) Bash(python3 engine/build_site.py *) Bash(git *) Read Edit Write
 ---
 
 # /choose
 
-1. `git pull --rebase origin main`, then `python3 engine/saga.py now`. Find the open choice: a **micro-choice** (the `Micro:` line; the numbered list at the end of a daily scene, "What does Darrow say/do?") or the chapter's **climax choice** (`saga/NOW.md`; the list under the climax). If nothing is open, say so; a bare number then is not a choice.
+1. `git pull --rebase origin main`, then `python3 engine/saga.py now`. Find the open choice: a **micro-choice** (the `Micro:` line; the numbered list at the end of a daily scene, "What does Darrow say/do?") or the chapter's **climax choice** (`saga/NOW.md`; the list under the climax). If nothing is open, say so; a bare number then is not a choice, and a Darrow action is `/play` (a Between).
 2. Match $ARGUMENTS to an option. If he invents his own option, accept it if it fits the world and his sheet. A free-form action may need a roll (`python3 engine/darrow.py roll ch<NN>-<slug> --stat … --dc … [--prof]`).
 3. Gated options: a stat gate (`*[Resolve 10]*`) is checked against `python3 engine/darrow.py sheet --json`; a Bearing gate (`*[Guile 1]*`, `*[Guile 4]*`) against `python3 engine/saga.py bearing show` (the number is the axis value toward that pole; a lean is ≥ 4). If he doesn't meet it, say so in-world and offer the alternatives, or offer to spend Inspiration if the option allows (`python3 engine/darrow.py inspire --reason "…"`).
 4. **The ledger entry** (one, terse; schema in `saga/bible/_gm/design.md` §2): `id` `c<NN>.<n>`, `made {chapter, scene, date}`, `chose`, `now` (what changes today: `approval` ±5 to ±15 for a climax, ±1 to ±3 for a micro, bigger only for a betrayal or a sacrifice; `bearing` on the option's one axis, ±1 micro / ±2–3 climax / ±4 betrayal or sacrifice; `flags` **by the names in `saga/state/_gm/plan.json → flags`** (a new flag must be listed in the arc's `## flags`); `factions`), and `due[]` (what falls due later: `when`, `weight`, `what`). Then `python3 engine/saga.py add '<json>' --witnessed <ids of the companions who saw it or will hear of it>`: it applies approval, Bearing, flags and factions and adds the witnesses' ±2 for a landing on their preferred pole. **Never edit approval or Bearing by hand.** Use `--dry-run` first if unsure.

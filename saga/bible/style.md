@@ -103,6 +103,11 @@ One stage of a quest or a beat may end on a choice smaller than the climax's. Fo
 - It carries across one scene. If it is still open at the following close, Darrow answers for himself with the planned default, and the Ledger says so in one line.
 - Its consequence is folded into the opening of the next scene. No separate block, no `### Choice` heading.
 
+### A Between (role-play; between two scenes)
+- Darrow's own action in the story's present, played out: `### Between — Title`, **120–300 words**, close third, past tense, appended to the chapter after the last block. It extends the moment; it never does the plan's work: nothing from the next slot, no truth ahead of schedule, no new name or place, nothing with the knee the plan has not cleared.
+- People answer in voice and may refuse, deflect or lie. Zero or one die, only with stakes or a game, never with the chapter's tier. A failure costs a copper, a laugh or a line.
+- At most two between two scenes; a third is two lines and the moment passes. It ends on a line that hands the moment back, **never on a choice list**. No Reckoning box. The next scene opens on it in a clause, then does its own slot. Consequences, when there are any, go through the ledger (`design.md` §9).
+
 ### A glimpse (after a log; not a scene)
 One or two italic sentences, about 40 words at most, closing a log reply: the House in the story's present moment, between the last scene and the next. Rotate the kind: a moment in the House, a line overheard, a tally from Wren's ledgers, a saying or verse of the realm, the body, weather on the Steps. Tone comes from how the day has gone, the sheet and the choices already made; content is texture only. A glimpse carries no plot, plants nothing, reveals nothing, names nothing the page has not named, binds no later scene, and never mirrors the log it follows. All of §1 applies. It never goes in a chapter file; it lives in `saga/state/glimpses.md`, which the site does not read. Full rules: `CLAUDE.md`, "The glimpse".
 
@@ -110,7 +115,7 @@ One or two italic sentences, about 40 words at most, closing a log reply: the Ho
 Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Mender's maxim, a Confessor's writ, a lancers' marching song, a letter from an old friend, a children's counting rhyme. Original text only.
 
 ### File layout
-- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`, with at most one `### Interlude — Title` among them), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A small choice sits at the end of its scene under `**What does Darrow do?**` or `**What does Darrow say?**`. A consequence written by `/choose` for a climax choice goes under `### Choice — Title`; a small choice's consequence is folded into the next scene. The site build parses exactly these forms.
+- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`, with at most one `### Interlude — Title` among them, and any `### Between — Title` pieces where they were played), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A small choice sits at the end of its scene under `**What does Darrow do?**` or `**What does Darrow say?**`. A consequence written by `/choose` for a climax choice goes under `### Choice — Title`; a small choice's consequence is folded into the next scene. The site build parses exactly these forms.
 - Book openings get a title page line: `# BOOK II — <TITLE>`.
 
 ---
