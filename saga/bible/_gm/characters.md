@@ -28,7 +28,7 @@ Appearance and voice: `cast.md`.
 Appearance and voice: `cast.md`.
 - Knight-Captain of the Sixth Lance. He will teach Darrow **the Seated Blade**, the art of fighting without footwork, from a chair across a practice ring; he learned it in his own chair, recently and badly. The Art is not named on the page until he teaches it there.
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
-- **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, folded where he can feel it and never read (T3: the seal is Vane's). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
+- **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, its words known by heart, its seal never once looked at; since the Interlude it lies folded in the cup of the beech leg (T3: the seal is Vane's; b2.4 is where he finally looks). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
 
 ### Wren Ashdown — the Runner
 Appearance and voice: `cast.md`.
@@ -49,11 +49,13 @@ Appearance and voice: `cast.md`.
 
 ### Mother Ione — Prior of Saint Ysolde's
 Appearance and voice: `cast.md`.
+- Appearance and voice (not yet on the page; move to `cast.md` the day she is seen): the Prior of Saint Ysolde's, in her seventies, gentle in face and manner, with iron under the gentleness. She speaks in questions, and the questions are never idle.
 - Holds the sanctuary right and will die before she yields it. **Wants:** every name under her roof kept. **Fears:** the bell falling silent at a dusk when it must ring.
 - **Hides:** possibly what happened to Elspeth Ashdown (T6). In the low road of Book I she is left answerable to a Confessor's writ for every name in the House.
 
 ### Sister Pell — keeper of the bells
 Appearance and voice: `cast.md`.
+- Appearance and voice (not yet on the page; move to `cast.md` the day she is seen): keeper of the House's bells, old, and nearly deaf from fifty years of them. She reads lips, has no patience for fools, and says what the bells have left her breath for and not a word more.
 - Sanctuary is renewed by ringing at every dawn and dusk, and Sister Pell is old: that is the hinge of Book I's climax (Old Mercy, b1.5), where she is hurt and the bell falls silent until Wren climbs to ring it. Her glass in the bell tower saw the grey cloaks first.
 
 ### The red-handed woman
@@ -81,6 +83,7 @@ Appearance and voice: `cast.md` (unnamed there, as on the page).
 ### Ser Benedek Orrin — a knight of the Sixth
 - On the cot next to Hollis. Grace-sworn, devout, kind, terrified of the Confessors and more terrified of being Faithless. Asks what "second on the list" means and watches Hollis for the answer.
 - **Voice:** earnest and formal, prays half-aloud, apologises for being afraid.
+- **Standing:** he knelt again at a bell-house on the road up to the Steps, so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
 - **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. Nothing of this reaches the page before then. The Chapter 1 interlude puts him on the page; his `cast.md` entry and `saga/characters/benedek-orrin.json` are written from that prose, and from nothing here.
 
 ### Ash — the hound
@@ -131,6 +134,7 @@ NPC numbers are set by the GM for canon consistency; they are never derived from
 | Wren Ashdown | ember, faint | 3 · Bound | 6 · 13 · 12 · 11 | Long Breath II; **hidden:** she can read Warden script (T6) | Runs the 1,117 Steps daily; the deeper line must not mention the script until Book III |
 | Aldric Vane | grace, full (borrowed) | — · Oathsworn | 16 · 15 · 16 · 14 borrowed | none of his own | Grace-sworn: nothing of his own to count. His true Ember is near zero |
 | Ivo Marrant | grace, full (borrowed) | — · Oathsworn | 12 · 12 · 11 · 15 borrowed | none of his own | Never touches a weapon in front of witnesses; the Resolve is real and the rest is the Crown's. Public sheet when he is named on the page |
+| Benedek Orrin | grace, thin (borrowed) | — · Oathsworn | 9 · 6 · 8 · 11 borrowed | none of his own | Re-knelt on the road; not Faithless, so still tithed (b1.2); the public sheet shows borrowed, thin |
 | Red-handed woman (Ilse) | ember, banked | 7 · Kindled (public sheet shows 4 · Bound until Book III) | 12 · 13 · 12 · 15 | Stillwater III, Iron Grip II (public sheet: Iron Grip only) | Clan war-leader who has fought the Hollow Tides for years (T4) |
 | Sister Pell | ember, low | 4 · Bound | 6 · 7 · 8 · 14 | Warden's Eye II (reads lips) | Fifty years of bells |
 | Mother Ione | ember, steady and old | 9 · Kindled | 5 · 7 · 7 · 18 | Mender's Patience III | Iron underneath; possibly knows about Elspeth Ashdown (T6) |

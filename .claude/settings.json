@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(python3 engine/darrow.py *)",
+      "Bash(python3 engine/saga.py *)",
       "Bash(python3 engine/build_site.py *)",
       "Bash(python3 engine/build_site.py)",
       "Bash(git status *)",

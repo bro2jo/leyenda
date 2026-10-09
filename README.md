@@ -2,7 +2,7 @@
 
 *What is given can be taken. What is built is yours.*
 
-A real ACL comeback, logged honestly, driving an original fantasy saga about **Ser Darrow**: a knight whose knee gave way at the Battle of Harrow Ford, who can no longer kneel, and who for the first time in his life cannot be bound.
+A real ACL comeback, logged honestly, driving an original fantasy saga about **Ser Darrow**: a knight whose knee gave way at Harrow Ford, who can no longer kneel, and who for the first time in his life cannot be bound.
 
 You log real life. Claude keeps the real numbers on one side (**the Ledger**), turns your effort into XP, attributes and outcomes (**the engine**), and writes the story on the other side (**the Chronicle**). The story never mentions food, reps or rehab. It reads like a novel, with the stats of a LitRPG and the dice of Baldur's Gate.
 

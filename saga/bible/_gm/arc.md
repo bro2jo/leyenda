@@ -28,7 +28,7 @@ Days inside a chapter are **colour, never content**: the slot's content is plann
 |---|---|---|---|---|
 | T1 | **The Oathstones don't give, they take.** Each sworn knight tithes life upward through the stones to the First Stone. The Grace is the knights' own strength, harvested, pooled and lent back. The king keeps the interest, and it keeps him alive. | Aurel; Vane (partly); Maelis suspects | End of Book II, at the Stonewright ruin (b2.5) | b1.3 (the shard drawing on the wounded above) · q1.steam ("the Crown counts what it is owed") · q1.farcots (heads turn toward the shard) |
 | T2 | **The Three Heartbeats** were the First Stone drawing everything at once. The king was failing and fed. Two hundred knights paid. | Aurel; Vane knew it was coming | Hinted in Book I (the shard), confirmed with T1 (b2.5) | b1.3 (frost on the shard's stone) · b2.2 (Ysra: "the Second was told to hold the bank that morning") |
-| T3 | **Vane knew.** He was warned the night before and reined back one heartbeat early. The order to charge reached Hollis under Vane's seal. | Vane; Hollis has the writ but doesn't understand it | Hollis's writ, Book II (b2.4) | opening interlude (the writ hidden in the leg, wax unlooked-at) · q1.letters stage 1 (Hollis sees Aldric's seal and goes quiet) · b1.1 (Marrant's writ at the gate; Hollis stares at the wax) |
+| T3 | **Vane knew.** He was warned the night before and reined back one heartbeat early. The order to charge reached Hollis under Vane's seal. | Vane; Hollis has the writ but doesn't understand it | Hollis's writ, Book II (b2.4) | opening interlude (the writ hidden in the leg, wax unlooked-at) · q1.letters stage 1 (Hollis watches the blue wax curl in the brazier and leaves the hall: he has wax of his own he has not looked at) · b1.1 (Marrant's writ at the gate; Hollis stares at the wax) |
 | T4 | **The Hollowed are the drained.** Tithed knights eventually burn out into husks. The Crown discards them into the Ashen Fields; they drift east. The Thornwild clans have been fighting the Vaelmark's dead for generations. | the clans; the Confessors | Book III (b3.3) | prologue (grey figures under the trees) · b1.2 (frost and black glass on a devout man) · q1.hollownight (a knight hollowed on the road, this side of the Wend) |
 | T5 | **Harrow Ford was no battle.** The clans were fleeing a Hollow Tide across the ford. The Lances were sent to cut them down at the water. | Ilse of Corrach | Book III (b3.3, Ilse) | prologue (the carts; "Look. Remember it.") · b2.3 (the refugees at the mill drawn up the same wrong way) |
 | T6 | **Wren's mother** (Dame Elspeth Ashdown) was a secret Ember initiate who refused to re-kneel. The Confessors Hollowed her on purpose, and she taught Wren the script before it took her. | nobody living except, possibly, Mother Ione | Book III, Wren's quest (b3.4) | q1.ledger (Wren reads a lintel and lies) · q1.farcots (she stands too long at one cot) · q1.door (she stands at the frame as if she has read it) · b2.5 (she finishes the line Darrow cannot; the why waits) |
@@ -85,12 +85,12 @@ Already on the page (Chapter 1; slots 1–4 of the week are covered by Scene 1).
 ## b1.1 — The Confessor at the Steps
 Chapter 1. **Question:** will the House stand between him and the list? Scene 2: behind the cell door Maelis explains the Reckoning and the Ember in as few words as she can; the Wardens were burned for it; she forbids him to tell anyone, Hollis most of all; she does not explain her own past (`knows_wardens_exist`). Then Mother Ione's council (sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old); the grey cloaks reach the foot of the Steps, censer smoke rising through the cloud; the House counts what it has.
 **Climax — Marrant at the gate.** Confessor Ivo Marrant climbs with six men and a writ listing the Faithless at Saint Ysolde's, Darrow first; he reads it; Mother Ione has Old Mercy rung; sanctuary holds. He smiles and camps in the lower court "until the bell grows tired." Checks: Resolve DC 13 (Mender's Patience), Insight DC 13 (Warden's Eye: Darrow reads him and finds nothing of his own in him). Marrant is named on the page here (`saga/characters/` file due).
-**Plants:** Hollis stares at the wax on the writ Marrant reads and looks away (T3); Marrant's eyes go to Maelis and stay a beat too long (T8); Benedek, listening, is not on the list and is relieved (b1.2). Threads 8, 2.
+**Plants:** Hollis stares at the wax on the writ Marrant reads and looks away (T3); Marrant's eyes go to Maelis and stay a beat too long (T8); Benedek, listening, is not on the list and is relieved (b1.2). Threads 8, 2. The list names the Faithless of Harrow Ford who have not re-knelt and are fit to be moved, captains first; Benedek says his oath at every bell and the Confessors count him as kneeling already, so he is not on it, which is why Marrant can Hollow him with no name on paper (b1.2).
 - *Triumph:* Old Mercy rings before Marrant reaches the third name; he reads the rest to a shut gate in the snow, and the House laughs that night for the first time since the cart came.
 - *Hard-won:* the bell rings on the last name; Marrant camps smiling; Darrow holds his face through the reading and loses it once, after, where only Wren sees.
 - *Costly:* Sister Pell's hands are slow and two grey cloaks are inside the gate before the bell; a lay brother is knocked down; Marrant goes back down with a face he did not have before: Maelis's.
 - *Setback:* the bell rings only because Mother Ione climbs and rings it herself; Marrant leaves one man inside the gate "as a guest under the law of bells," and the House has a Confessor at its table.
-**Choice:** 1. Step forward and answer to his name (candor +2; Maelis approves, Wren does not; `named_himself`). 2. Stay hidden among the wounded and let the Prior answer for the House (guile +2; Wren approves). 3. Send Wren to spy on the camp *[Guile 2]* (guile +3; Wren approves; risky).
+**Choice:** 1. Step forward and answer to his name (candor +2; Maelis approves, Wren does not; `named_himself`). 2. Stay hidden among the wounded and let the Prior answer for the House (guile +2; Wren approves). 3. Send Wren to spy on the camp *[Guile 1]* (guile +3; Wren approves; risky).
 
 ## b1.2 — The Grey Cot
 Chapter 2. **Question:** who did this, and from where? Ser Benedek Orrin is found Hollowed at dawn: breathing, empty, frost on his lips, a chip of black glass under his tongue (`benedek_hollowed`). Marrant, from the lower court, names it "Ember witchcraft" and asks for the Mender by title: he is fishing for Maelis. The House is frightened; the kitchen counts loaves. Darrow investigates from his cot with Wren as his legs: who passed the far cots in the night, which doors were barred, what the novices heard. Hollis will not leave Benedek's side and sits the first watch with the boy's hand in his.
@@ -99,10 +99,10 @@ Chapter 2. **Question:** who did this, and from where? Ser Benedek Orrin is foun
 - *Hard-won:* the stair is found; half the House still believes Marrant, and Maelis is asked, politely, to stop treating the far cots.
 - *Costly:* a lay brother swears to Marrant he saw the Mender at Benedek's cot in the night; Mother Ione must put her own word against his at the gate.
 - *Setback:* the Prior forbids the undercroft outright and Marrant's camp raises a priest's tent; the lower court is becoming a chapel, and the House begins to split.
-**Choice:** 1. Go down the undercroft stair himself (sworn +2: his rank, his hall; Maelis forbids). 2. Send Wren down with a lamp (guile +2; Hollis disapproves). 3. Ask Mother Ione for the key and wait (mercy +2; Hollis approves).
+**Choice:** 1. Go down the undercroft stair himself, on Maelis's word and at her count (sworn +2: his rank, his hall; she sets the terms: one step at a time, a hand on Wren's shoulder, and her right to say stop). 2. Send Wren down with a lamp (guile +2; Hollis disapproves). 3. Ask Mother Ione for the key and wait (mercy +2; Hollis approves).
 
 ## b1.3 — The Undercroft
-Chapter 3. **Question:** what is under the House? Darrow insists on going down himself; the undercroft stair is the hardest thing the leg has faced ("every step down is a negotiation"), one hand on Wren's shoulder, Hollis's voice from the top telling him to look at the wall and not the floor. Below: a Warden hall, the First Precept over the door, murals of the Reckoning, and in an alcove beneath the infirmary floor a **tithe-shard**, a sliver of Oathstone set in fresh mortar, frost spreading from it across the stone, drawing on the Grace-sworn wounded above (`shard_found`). Maelis, when she comes down after them, walks the dark without a lamp.
+Chapter 3. **Question:** what is under the House? The stair is taken the way the b1.2 choice set it: (1) with Maelis's leave, at her count, one hand on Wren's shoulder, Hollis's voice from the top telling him to look at the wall and not the floor; (2) Wren goes down first with the lamp and he follows at dawn the same way, on what she reported; (3) the Prior's key opens the door and Maelis walks him down herself. In no shape does he go down against the Mender's word, and the stair never costs the knee: "every step down is a negotiation" is texture, not stake. Below: a Warden hall, the First Precept over the door, murals of the Reckoning, and in an alcove beneath the infirmary floor a **tithe-shard**, a sliver of Oathstone set in fresh mortar, frost spreading from it across the stone, drawing on the Grace-sworn wounded above (`shard_found`). Maelis, when she comes down after them, walks the dark without a lamp.
 **Plants:** T1 and T2 (the shard, the frost); T7 (the mural: a kneeling knight, light running *up* out of him along a thread); T8 (Maelis knows the way); the mortar is a week old and the alcove is the width of a letter-satchel (b1.4); Ash, if met, growls at the floor above it (q1.kennel). Threads 6, 10.
 - *Triumph:* Darrow reads the murals aloud as the Reckoning lets him, and brings the shard up wrapped in oilcloth; the frost burns through to his hands and the Hollowed on the far cots turn their heads to follow it.
 - *Hard-won:* the shard is too cold to lift and stays; he has seen it and the fresh mortar, and that is enough to know it was carried.
@@ -126,7 +126,7 @@ Chapter 5 (or the last chapter before the Knot). **Question:** can a knight who 
 - *Hard-won:* it rings on the last of the light; one of the six goes over the stair rail and lives; Marrant leaves with his writ and a limp.
 - *Costly:* it rings a breath after dusk, and only Mother Ione's reading of the law ("the sun is down when the Prior says it is") holds; Marrant's writ gains a line against her.
 - *Setback:* it rings, but Marrant is inside the tower with the bell when it does; the law is argued, not won; he goes down leaving a man and a paper, and the Prior signs it to keep her roof (sets up `t1.low`).
-**Choice:** 1. Go down to the lower court at dawn and tell Marrant, before his men, what the Reckoning showed him (candor +2; Maelis disapproves). 2. Let him go and ring the bell for him as he leaves, as the law says (sworn +2; Mother Ione's road). 3. Have Wren follow his camp down with a lamp and a knife *[Guile 4]* (guile +3; risky).
+**Choice:** 1. Go down to the lower court at dawn and tell Marrant, before his men, what the Reckoning showed him (banner +2: he spends his own name in front of the camp so the House is not the story; Maelis disapproves). 2. Let him go and ring the bell for him as he leaves, as the law says (sworn +2; Mother Ione's road). 3. Have Wren follow his camp down with a lamp and a knife *[Guile 4]* (guile +3; risky).
 
 ## q1.kennel — The Kennel
 - **priority:** required (sets `ash_met`; Ash's bond then moves to `world.json` with `plan companion arrive ash`)
@@ -162,7 +162,7 @@ The third: *"Answer me, or I will come myself."* Ends on the micro; whatever he 
 - **at:** stage 3 · **ask:** What does Darrow do with his brother's letter? · **axis:** sworn_unsworn
 - **options:** 1. Write back as a brother: he will not kneel, and why (sworn +1; `vane_answered`) · 2. Burn it unread (unsworn +1) · 3. Keep it sealed, with the second (0)
 - **default:** 1
-- **payoff:** Aldric's voice on the page (quoted letters); thread 1 kept warm; `flags.vane_answered` (Book V: Vane quotes the answer on the ford); T3 plants (Hollis has now seen the seal twice).
+- **payoff:** Aldric's voice on the page (quoted letters); thread 1 kept warm; `flags.vane_answered` (Book V: Vane quotes the answer on the ford); T3 plants (wax in front of Hollis twice on the page, his own still unlooked-at; he recognises nothing until b2.4).
 - **spine link:** b1.1 (Marrant as courier), b1.5 ("I will come myself": Vane is on the road), b2.4.
 - **can run when:** stage 1 from Chapter 2; stage 2 after Marrant camps (b1.1 done); stage 3 any chapter before t1. If t1 comes first, the third letter is read on the Steps going down.
 
@@ -172,7 +172,7 @@ The third: *"Answer me, or I will come myself."* Ends on the micro; whatever he 
 ### stage 1
 The terms, argued across two cots with Wren as notary: distance (the cloister gallery), sticks (one each), witnesses, a clause about falling. The kitchen runs a book. Benedek blesses the bet if he is still himself. Ends: Mother Ione hears of it and, instead of forbidding it, lays a coin on Hollis.
 ### stage 2
-The race: wet flagstones, spring-steam, the whole House on the gallery. Darrow does not run (he cannot, and will not in the soft season); he walks it like a knight. Ten yards from the door Hollis goes down hard and the leg comes off. Ends on the micro; the bottle is opened either way, and shared.
+The race: dry flagstones swept for it, spring-steam at the far end, the whole House on the gallery; Maelis marshals it: a walk is what she says a walk is, and she walks one step behind Darrow with her hand up. Darrow does not run (he cannot, and will not in the soft season); he walks it like a knight. Ten yards from the door Hollis goes down hard and the leg comes off. Ends on the micro; the bottle is opened either way, and shared.
 ### compressed
 1. Terms and race in one scene; the fall and the micro at its end.
 ### micro
@@ -181,7 +181,7 @@ The race: wet flagstones, spring-steam, the whole House on the gallery. Darrow d
 - **default:** 1
 - **payoff:** Hollis's approval (through the ledger); the beech leg in motion on the page; the seed of the Seated Blade lessons ("You'll never win on your feet, Captain. Sit down and I'll teach you to win sitting.").
 - **spine link:** b1.5 (the Seated Blade on the tower stair).
-- **can run when:** Chapters 2–4, before b1.5; a dry day; Hollis present.
+- **can run when:** Chapters 2–4, before b1.5; a dry day; Hollis and Maelis present.
 
 ## q1.steam — Steam and Iron
 - **priority:** optional (parley)
@@ -301,7 +301,7 @@ Sanctuary spent. The House is left under a **Confessor's writ**, Mother Ione ans
 # Book II — The Tempering Road
 
 ## book2.question
-*What is the Grace, really?* **State:** Darrow fights on his feet but cannot run; every fight must be **held**, not chased: choose the ground and refuse the pursuit. Knot III tied; IV ends the Book. Low road: Hollis absent until b2.3.
+*What is the Grace, really?* **State:** Darrow fights on his feet but cannot run; every fight must be **held**, not chased: choose the ground and refuse the pursuit. Knot III tied; IV ends the Book. Low road: Hollis absent until b2.3. Vane's column, seen from the Steps, turns back at Coldmere on a summons to Calden (the king failing; T2 under the surface) and sends Ysra in his place, which is why the Second is not met before Book V; b2.1 may show the turned column's tracks.
 
 ## b2.1 — The Lowmarch in Fear
 Levies on the Holloway, villages empty or barred, a Hollowed knight walking east through a turnip field at noon: the Hollowing is on this side of the Wend now. The inn at Coldmere where the list was read. Darrow learns to lead four people and a dog who all walk faster than he does. **Plants:** T4 (the Hollowed drift east); the Confessors' writs now name "the Mender Vorne" (T8). Threads 4, 8.
@@ -618,7 +618,7 @@ The epilogue with fewer of his own around him and all of them alive; the realm s
 
 ## temptation
 From Book II on, one beat per Book where the fast, borrowed way visibly works for someone, and its bill comes due a Book later. Record each with `saga.py plan temptation add "…"`; `temptation.count` feeds `r.finale.take.tempting`.
-- **Book II (q2.inn):** the Grace-burned knight re-kneels at a roadside stone and lifts a cart off a child. Bill, Book III: they find him at the edge of the Ashen Fields, Hollowed, walking east.
+- **Book II (q2.inn):** the Grace-burned knight re-kneels at a roadside stone and lifts a cart off a child. Bill, Book III: they find him at the edge of the Ashen Fields, Hollowed, walking east. If q2.inn is not run, the same knight appears for one paragraph at the Coldmere inn in b2.1 and is recorded then (`plan temptation add`).
 - **Book III (b3.3 / b3.5):** Ilse's rival swears at a captured field-stone and holds a palisade alone. Bill, Book IV: he is the first Hollowed of the Thornwild, and the clans blame the Vaelmark captain who brought the stone's war to them.
 - **Book IV (b4.2):** a captain of the Unkneeling kneels in secret and wins a field for the host. Bill, Book V: Vane turns him, and he leads the Confessors' van at the ford.
 - **Book V (b5.3 / q5.second):** Vane offers the Grace back to the whole host for one knee on the stone; one of Darrow's captains takes it for his men and they stand like gods for a day. Bill, Book VI: they are the ones who fall first when the Stone is shattered, or who hold it for him if he takes it.

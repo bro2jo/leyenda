@@ -171,11 +171,12 @@
       "name": "Edgemoor",
       "subtitle": "",
       "region": "the-lowmarch",
-      "kind": "hills",
+      "kind": "region",
       "x": 72,
       "y": 98,
       "on_page": true,
       "visited": false,
+      "draw": false,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
@@ -184,7 +185,7 @@
     },
     {
       "id": "greywater-peaks",
-      "name": "Greywater Peaks",
+      "name": "The Greywater",
       "subtitle": "",
       "region": "greywater-peaks",
       "kind": "mountains",
@@ -196,7 +197,8 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The mountains north of the Lowmarch, into which the surgeons sent him; Saint Ysolde's stands on a shoulder of them above the cloud."
+      "description": "The mountains north of the Lowmarch into which the surgeons sent him; Saint Ysolde's stands above the cloud on a shoulder of them.",
+      "label": "The Greywater"
     }
   ],
   "route": [

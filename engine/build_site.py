@@ -6,9 +6,8 @@ Reads (and nothing else):
   saga/characters/*.json                   the cast, as the page has shown it
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
-Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md,
-saga/state/_gm/*.md and, while they still exist, saga/bible/characters.md and world.md only to build
-blocklists; nothing from them is ever rendered).
+Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
+saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
 Conventions the parser and the checks rely on:
   Scenes      '## I. Title' (prologue parts), '### Scene N — Title', '## Climax — Title', '### Choice — Title'.
@@ -21,10 +20,12 @@ Conventions the parser and the checks rely on:
               as ints, kind is 'climax' or 'micro', by is 'darrow' or 'bearing' (the latter renders
               "answered for himself"). The Now page titles a micro "A small choice" and a climax "The choice".
   Bearing     saga/state/bearing.json (optional): four axes, each {value, left, right}, plus names and epithet.
-              Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the epithet as a chip.
+              Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the current epithet as a
+              chip. The pole words are always allowed on the site; the current epithet only once the chronicle has
+              spoken it (the build fails otherwise); the names table is never rendered and never allow-listed.
   GM wall     world.json must not carry chapter_plan, core_beats, flags, factions or current_quest.summary;
               those live under saga/state/_gm/. Every sentence in a _gm/*.md file is blocked from the site
-              unless the chronicle, engine/rules.json or bearing.json already carries it.
+              unless the chronicle, engine/rules.json or the Bearing's pole words / current epithet already carry it.
 
 Usage: python3 engine/build_site.py [--verbose] [--force]
   Builds into a temporary directory, runs the checks, and replaces docs/ only when every check passes.
@@ -474,9 +475,9 @@ def crest(level, big=False):
 
 
 def svg_map(places, route, current_id, rel):
-    """An original map of the Vaelmark. Regions are drawn here; points come from places.json."""
+    """An original map of the story's country. Regions are drawn here; points come from places.json."""
     P = {p["id"]: p for p in places}
-    out = ['<svg class="map" viewBox="0 0 400 300" role="img" aria-label="Map of the Vaelmark">',
+    out = ['<svg class="map" viewBox="0 0 400 300" role="img" aria-label="Map of Darrow\'s country">',
            '<defs><pattern id="ash" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" class="mp-hatch"/></pattern>'
            '<pattern id="wood" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M7 2 L11 10 L3 10 Z" class="mp-tree"/></pattern></defs>',
            '<rect x="0" y="0" width="400" height="300" class="mp-bg"/>',
@@ -490,7 +491,7 @@ def svg_map(places, route, current_id, rel):
            '<path d="M54 104 C62 92 76 92 84 104 M72 112 C80 100 94 100 102 112" class="mp-hills"/>',
            # the Thornwild, east
            '<path d="M318 96 C340 90 372 96 392 106 L396 232 C370 226 344 236 320 226 C312 190 310 140 318 96 Z" class="mp-wood"/>',
-           # the Ashen Fields
+           # a grey waste in the south-east: drawn as terrain, never labelled, until the page names it
            '<path d="M272 218 C300 212 340 236 372 240 L368 282 C334 278 300 286 272 272 Z" class="mp-ash"/>',
            # the Wend
            '<path d="M98 186 C130 180 160 204 196 196 C230 188 262 200 300 190 C330 182 356 190 396 176" class="mp-river"/>',
@@ -587,6 +588,9 @@ def bar(have, need, label, cls="", show=None, text=None):
 def pips(have, need, cls=""):
     s = "".join(f'<span class="pip{" on" if i < have else ""}"></span>' for i in range(need))
     return f'<span class="pips {cls}" role="img" aria-label="{have} of {need}">{s}</span>'
+
+
+BEARING_LABEL = "who his choices are making him"  # the site's own label for the Bearing section (exempt from the GM-sentence check)
 
 
 def sec(title, label, inner, cls="", hid=""):
@@ -706,7 +710,8 @@ class Site:
     CHOICE_KEYS = ("chapter", "scene", "kind", "option", "ledger")
 
     def load_bearing(self):
-        """saga/state/bearing.json, if it exists: four axes {value, left, right}, names, epithet. Missing file → no Bearing on the site."""
+        """saga/state/bearing.json, if it exists: four axes {value, left, right}, names, epithet. Missing file → no Bearing on the site.
+        The epithet is rendered, so it must already be spoken in the chronicle; the names table is never rendered."""
         path = STATE / "bearing.json"
         if not path.exists():
             note("bearing.json not found: the Bearing section is skipped")
@@ -734,16 +739,30 @@ class Site:
         if not isinstance(names, dict):
             problem("bearing.json: 'names' must be an object of pole → epithet")
         ep = b.get("epithet")
-        if ep is not None and ep not in names.values():
-            problem(f"bearing.json: epithet {ep!r} is not one of the names")
+        if ep is not None and not isinstance(ep, str):
+            problem(f"bearing.json: epithet must be a string or null (got {ep!r})")
+        elif ep is not None:
+            if ep not in names.values():
+                problem(f"bearing.json: epithet {ep!r} is not one of the names")
+            chron_text = "\n".join(read(p) for p in sorted(CHRON.glob("*.md")))
+            if ep.strip().lower() not in chron_text.lower():
+                problem(f"bearing.json: epithet {ep!r} has not been spoken in the chronicle yet; "
+                        "write it into the scene that earns it before it can show on the site (or set epithet to null)")
         return b
 
     def check_world(self):
-        """The reader-safe world.json: no GM keys, well-formed choices that point at scenes the chronicle has."""
+        """The reader-safe world.json: no GM keys, a chapter_file the chronicle has, well-formed choices that point at scenes the chronicle has."""
         w = self.world
         for k in self.WORLD_GM_KEYS:
             if k in w:
                 problem(f"world.json: GM key '{k}' does not belong in the reader-safe file (it lives in saga/state/_gm/plan.json)")
+        cf = w.get("chapter_file")
+        cur_slug = str(cf or "").split("/")[-1].replace(".md", "")
+        if not cur_slug:
+            problem("world.json: chapter_file is missing (the Now page needs the current chapter)")
+        elif not any(ch["slug"] == cur_slug for ch in self.chapters):
+            problem(f"world.json: chapter_file {cf!r} is not a chronicle file (have: "
+                    f"{', '.join(ch['slug'] + '.md' for ch in self.chapters) or 'none'})")
         if isinstance(w.get("current_quest"), dict) and "summary" in w["current_quest"]:
             problem("world.json: current_quest.summary is GM text; keep only name and on_the_page (the summary lives in _gm/plan.json)")
         choices = w.get("choices")
@@ -793,12 +812,15 @@ class Site:
 
     @staticmethod
     def choice_title(block_kind, rec=None, scene_key=None):
-        """'A small choice' for a micro (a 'say' heading, a recorded micro, or a list inside a daily scene); 'The choice' for the climax."""
+        """'The choice' for the chapter's climax (the climax/choice scene keys, whatever the heading word says, or a recorded
+        climax); 'A small choice' for a micro (a 'say' heading, a recorded micro, or a list inside a daily scene)."""
+        if scene_key is not None and str(scene_key) in ("climax", "choice"):
+            return "The choice"
         if block_kind == "say" or (rec and rec.get("kind") == "micro"):
             return "A small choice"
         if rec and rec.get("kind") == "climax":
             return "The choice"
-        if scene_key is not None and scene_key not in ("climax", "choice"):
+        if scene_key is not None:
             return "A small choice"
         return "The choice"
 
@@ -1173,7 +1195,7 @@ class Site:
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         attrs = sec("Attributes", "against the fainter numbers behind his own", f'<div class="streaks">{"".join(tiles)}</div>')
         if self.bearing:
-            attrs += sec("Bearing", "who his choices are making him", self.bearing_html())
+            attrs += sec("Bearing", BEARING_LABEL, self.bearing_html())
         trees = defaultdict(list)
         for art in d["arts"]:
             trees[art["tree"]].append(art)
@@ -1305,7 +1327,7 @@ class Site:
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>'
                  f'<dl class="kv"><dt>Latest scene</dt><dd>{latest_html}</dd><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd></dl>'
                  f'<p class="beat">{esc(w.get("last_beat", ""))}</p></section>')
-        map_html = sec("The Vaelmark", "where Darrow is", svg_map(self.places, self.route, self.current_place, rel)
+        map_html = sec("The map", "where Darrow is", svg_map(self.places, self.route, self.current_place, rel)
                        + '<p class="legend"><span class="lg ember">●</span> Darrow <span class="lg brass">●</span> visited <span class="lg faint">●</span> not yet <span class="lg route">—</span> the road so far</p>')
         q = w.get("current_quest") or {}
         quest = sec("The quest", esc(q.get("name", "")), f'<p class="prose">{esc(q.get("on_the_page", ""))}</p><h3 class="sub-h">What he is fighting</h3><p class="prose">{esc(w.get("current_struggle", ""))}</p>')
@@ -1450,7 +1472,7 @@ FORBIDDEN = [r"kcal", r"calori\w*", r"protein\w*", r"creatin\w*", r"macros?", r"
 FORBIDDEN_CS = ["ACL", "PT", "RPE"]
 UI_WORDS = """Faction Factions Status Roster Previously Appearance Quote Relationships Known Facts Appearances Timeline Places Sayings Things
 Attributes Chapters Legend Season Latest Where Skip Content Level Inspiration Proficiency Regard Toward Borrowed Unread Deeper Start Reading
-Characters Codex Chronicle Now Darrow Vaelmark Unkneeling Books Chapter Scene Scenes Climax Choice Previous Next Back Map Quest Fighting
+Characters Codex Chronicle Now Darrow Unkneeling Books Chapter Scene Scenes Climax Choice Previous Next Back Map Quest Fighting
 Visited Arts Learned Sealed Banked Tied Untied Opens Book Knots Binding Reckoning Dice Latest Rolls Cast Page Site Memorial Fallen Alive
 Hollowed Missing Unknown Major Minor Earned Grace Ember Unlit Fire Might Vigor Finesse Resolve Rank Ranks Temper Days Days Keeper Prior
 Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers
@@ -1468,7 +1490,7 @@ Might's Dice Checks Check Approval Inspiration Eye Tier Tiers Climax Expandables
 Mender Hound Runner Captain Captains Old Young Prior Lance Lances Boss Interlude Scenes Pages Page Table Entry Entries Format Formats Files File Notes Note
 Secrets Secret Identity Identities Reckoning Reckonings Grace Oath Oaths Bound Kindled Tempered Unbowed Emberknight Warden Wardens Oathsworn Oathstone
 Oathstones Stone Stones Field Road Lightning Turning Standing Walking Straightening Steps Step Harrow Ford River Peaks House Hall Gate Tower Bell Bells
-Hollowed Faithless Vaelmark Vaelish Codex Chronicle Ledger Engine Script Clan Clans Lowmarch Thornwild Calden Coldmere Holloway Fields
+Hollowed Faithless Vaelish Codex Chronicle Ledger Engine Script Clan Clans Lowmarch Thornwild Calden Coldmere Holloway Fields
 Greywater Edgemoor Thousand Saint Ysolde's Ysolde Wend Patience Stillwater Stance Groundbreaker Hammerfall Grip Iron Seated Long Soft Landing Thunderstep
 Hawk's Stoop Anchor Quickening Mender's Warden's Knight's Reading North South East West Dawn Dusk Winter Summer Autumn Spring Midsummer Midwinter
 Yes No Maybe Also Thus Whatever Whoever Whenever Wherever Please Thank Thanks Hello Dear Sincerely Best Regards Ever Even Almost Enough Rather Quite
@@ -1494,32 +1516,16 @@ def text_of(h):
 GM_DIRS = [SAGA / "bible" / "_gm", SAGA / "state" / "_gm"]
 
 
-def strings_of(obj):
-    """Every string inside a JSON value, recursively (for the sentence exemption and the name allow-list)."""
-    if isinstance(obj, str):
-        return [obj]
-    if isinstance(obj, dict):
-        return [s for v in obj.values() for s in strings_of(v)]
-    if isinstance(obj, list):
-        return [s for v in obj for s in strings_of(v)]
-    return []
-
-
 def gm_blocklists(chron_text, allowed_words, extra_gm="", allowed_text=""):
     """Sentences and unrevealed names from the GM files. Nothing from here is rendered; it only builds the checks.
     GM files: every .md under saga/bible/_gm/ and saga/state/_gm/ (JSON there is not scanned: every name it carries is
-    also in a GM .md), plus, while they still exist, the secret lines of saga/bible/characters.md and all of world.md.
-    A GM sentence is exempt when the chronicle or allowed_text (engine/rules.json and bearing.json strings) already carries it."""
+    also in a GM .md). A GM sentence is exempt when the chronicle or allowed_text (engine/rules.json strings and the
+    Bearing's pole words / current epithet) already carries it."""
     gm_text = "\n".join(p.read_text(encoding="utf-8") for d in GM_DIRS if d.exists() for p in sorted(d.glob("*.md")))
-    cpath = SAGA / "bible" / "characters.md"
-    ctext = cpath.read_text(encoding="utf-8") if cpath.exists() else ""
-    secret_lines = [ln for ln in ctext.splitlines() if re.match(r"\s*-\s*\*\*(Wants|Fears|Hides|Carries|Flaw|Arc|Rule of the saga|Signature)", ln)]
-    wpath = SAGA / "bible" / "world.md"
-    wtext = wpath.read_text(encoding="utf-8") if wpath.exists() else ""
     chron_norm = norm(chron_text)
     allowed_norm = norm(allowed_text)
     sentences = set()
-    for chunk in re.split(r"[\n|]", gm_text + "\n" + "\n".join(secret_lines) + "\n" + extra_gm):
+    for chunk in re.split(r"[\n|]", gm_text + "\n" + extra_gm):
         for s in re.split(r"(?<=[.!?;:])\s+", chunk):
             s2 = norm(s)
             if len(s2) >= 28 and s2 not in chron_norm and s2 not in allowed_norm:
@@ -1527,7 +1533,7 @@ def gm_blocklists(chron_text, allowed_words, extra_gm="", allowed_text=""):
     # names: capitalised words in GM-side files that the page has never spoken
     chron_words = {w.lower() for w in re.findall(r"[A-Za-z]+", chron_text)}
     allowed = {w.lower() for w in allowed_words} | {w.lower() for w in UI_WORDS}
-    src = gm_text + "\n" + ctext + "\n" + wtext
+    src = gm_text
     lower_words = set(re.findall(r"\b[a-z]{3,}\b", src))
     names = set()
     for w in re.findall(r"\b[A-Z][a-z]{2,}\b", src):
@@ -1563,8 +1569,8 @@ def run_checks(site, out_dir):
         allowed.update(re.findall(r"[A-Za-z']+", p["name"] + " " + p.get("subtitle", "")))
     for f in site.factions.values():
         allowed.update(re.findall(r"[A-Za-z']+", f["name"]))
-    allowed.update(["Vaelmark", "Unkneeling", "Previously", "Codex", "Chronicle", "Now", "Characters", "Appearance", "Relationships", "Known", "Appearances", "Timeline", "Roster"])
-    # the sentence exemption: what the chronicle, the game's own rules, or the Bearing file already say is not a GM secret
+    allowed.update(["Unkneeling", "Previously", "Codex", "Chronicle", "Now", "Characters", "Appearance", "Relationships", "Known", "Appearances", "Timeline", "Roster"])
+    # the sentence exemption: what the chronicle, the game's own rules, or the Bearing's rendered words already say is not a GM secret
     allowed_text = []
     for k in site.rules.get("knots", []):
         allowed_text += [str(k.get("name", "")), str(k.get("proves", ""))]
@@ -1575,13 +1581,19 @@ def run_checks(site, out_dir):
     for t in site.rules["ember"]["tiers"]:
         allowed_text += [str(t.get("name", "")), str(t.get("effect", ""))]
     if site.bearing:
-        bstrings = strings_of(site.bearing)
-        allowed_text += bstrings
+        # only what the Bearing renders: the section's own label, the pole words always, the current epithet
+        # (load_bearing has already required it to be on the page). The names table is never allow-listed:
+        # a future name stays blocked until the chronicle speaks it.
+        allowed_text.append(BEARING_LABEL)
         for ax in (site.bearing.get("axes") or {}).values():
             if isinstance(ax, dict):
-                allowed.update(re.findall(r"[A-Za-z']+", f"{ax.get('left', '')} {ax.get('right', '')}"))
-        for v in (site.bearing.get("names") or {}).values():
-            allowed.update(re.findall(r"[A-Za-z']+", str(v)))
+                poles = f"{ax.get('left', '')} {ax.get('right', '')}"
+                allowed.update(re.findall(r"[A-Za-z']+", poles))
+                allowed_text.append(poles)
+        ep = site.bearing.get("epithet")
+        if isinstance(ep, str) and ep:
+            allowed.update(re.findall(r"[A-Za-z']+", ep))
+            allowed_text.append(ep)
     # GM text that may still sit in world.json (the checks above already report the keys); blocked from the site all the same
     extra_gm = json.dumps(site.world.get("chapter_plan") or {}) + "\n" + str((site.world.get("current_quest") or {}).get("summary", ""))
     sentences, names = gm_blocklists(chron_text, allowed, extra_gm, "\n".join(allowed_text))

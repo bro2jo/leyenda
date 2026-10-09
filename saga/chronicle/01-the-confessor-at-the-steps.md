@@ -30,7 +30,7 @@ She sat on the end of the cot without a word, put her pipe between her teeth, la
 
 "I feel *fine*."
 
-"That's what frightens me." She took her fingers away and looked at him properly, which was worse than the Reading. "Listen, because I'm going to say this once more and then start charging you for it. The thread is softest now. Not in the first weeks. *Now.* It's changing from what I put in to what you'll keep, and while it changes it is weaker than the day I tied it. The next six weeks are the ones that kill Bindings, and they'll feel like the best weeks you've had since the river. The knee will be quiet." She tapped the joint, once, lightly. "The quiet is a liar."
+"That's what frightens me." She took her fingers away and looked at him properly, and that was worse than the Reading. "Listen, because I'm going to say this once more and then start charging you for it. The thread is softest now. Not in the first weeks. *Now.* It's changing from what I put in to what you'll keep, and while it changes it is weaker than the day I tied it. The next six weeks are the ones that kill Bindings, and they'll feel like the best weeks you've had since the river. The knee will be quiet." She tapped the joint, once, lightly. "The quiet is a liar."
 
 "How many of these have you done?"
 
@@ -117,7 +117,7 @@ He got as far as two fingers inside his shirt.
 
 "Ser Hollis."
 
-Benedek Orrin, on the next cot. His own Sixth, not yet thirty, a boar spear through the shoulder at the ford and a fever after it. He said his oath at every bell, and he was watching Hollis with his hands folded on the blanket.
+Ser Benedek Orrin, on the next cot. A knight of his own Sixth, not yet thirty, a boar spear through the shoulder at the ford and a fever after it. He said his oath at every bell, and he was watching Hollis with his hands folded on the blanket.
 
 "What does it mean? Second."
 
@@ -125,7 +125,7 @@ Benedek Orrin, on the next cot. His own Sixth, not yet thirty, a boar spear thro
 
 "Will they take you down?"
 
-Under the cot lay the leg the lay brothers had made him, beech and a leather cup, and it fit the way a boot fits someone else. Nine steps yesterday, and he had sworn at every one. He had not had a drink in two days, which he had meant to tell somebody and couldn't think who.
+Under the cot was the leg the lay brothers had made him, beech and a leather cup, and it fit the way a boot fits someone else. Nine steps yesterday, Stone and Crown, and he had sworn at every one. He had not had a drink in two days, which he had meant to tell somebody and couldn't think who.
 
 "Nobody's taking anyone," he said. "Not up eleven hundred steps in the snow. They'll read their list at the bottom and freeze."
 
@@ -139,6 +139,6 @@ Hollis looked at him: the shoulder wrapped like a parcel, the eyes of a man who 
 
 Benedek shut them. His lips began to move.
 
-Hollis took the paper out of his shirt, still folded, and pushed it into the cup of the leg, where what was left of him went and no Confessor would think to look. The lad's eyes were shut and it made no difference. He would look at the wax later. He had been saying that since midsummer.
+Hollis took the paper out of his shirt, still folded, and pushed it into the cup of the leg, where what was left of him went and no Confessor would think to look. The lad's eyes stayed shut. Orrin saw what he was told to see; he always had. He would look at the wax later. He had been saying that since midsummer.
 
 Down the hall, a latch lifted, and the cell door opened.

@@ -54,7 +54,7 @@ While a Knot is untied, the Binding **caps** some attributes. Temper earned abov
 | VI | — | 22 | Book V |
 | VII | — | — | Book VI |
 
-**The soft season:** post-op weeks 6–12. The sheet flags it. In story: Maelis's warnings, the thread loose under the skin, the danger of feeling strong. The story must never reward Darrow for testing the leg early. If he does something reckless with it, it costs him.
+**The soft season:** the weeks after the Binding when the thread is weakest; the sheet flags it. In story: Maelis's warnings, the thread loose under the skin, the danger of feeling strong. The story must never reward Darrow for testing the leg early. If he does something reckless with it, it costs him.
 
 ---
 

@@ -48,14 +48,15 @@ Default behavior: **anything that reads like a log is a log.** He shouldn't need
 | "floor done AM", "heel prop PM" | `/log` → floor |
 | "did session A", "PT today: …", "upper B", "bike 20" | `/log` → sessions + exercise rows |
 | "weighed 156.2", "creatine ✓" | `/log` |
-| "close day", or the first log of a new day when yesterday's `closed` column in `daily_log.csv` isn't `Y` | close the day → **write that day's scene** |
+| "close day", or the first log of a new day when yesterday has something logged (a `daily_log.csv`, `nutrition_log.csv` or `food_entries.csv` row) and its `closed` column in `daily_log.csv` isn't `Y` | close the day → **write that day's scene** |
+| a new day's first log when yesterday has **nothing logged at all** | the day is missed: no row, no scene; `python3 engine/saga.py plan done N --skipped`; the next scene opens on the world move `plan next` and `now` print as owed |
 | a log for a day that is already closed (`closed=Y`) | `/log` → Ledger and engine update only; **no new scene** unless he asks for one |
 | "what's today", "what's the plan" | `/today` (real only) |
 | "how's my week" | `/week` (real only) |
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
 | "sheet", "stats" | `/sheet` |
 | "checkpoint" (Sundays), or the first message on a Sunday | `/checkpoint` |
-| answering a story choice ("2", "expose him") | `/choose` |
+| answering a story choice ("2", "open it", "go the long way") | `/choose` |
 | a new plan file, PT note, program, or nutrition instructions | `/ingest` |
 | anything about his sport | `/sport` |
 
@@ -86,11 +87,13 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 
 **Logging into a closed day** (he sends Sunday's training on Wednesday, say): record it, `sync`, reply with the Ledger. Totals, XP, Arts and the week's tier all update, and the tier keeps updating until `chapter-close` freezes it. No new scene unless he asks for one.
 
-When a day is closed (he says so, or a new day's first log arrives and yesterday's `closed` isn't `Y`):
+**Missed day** (nothing logged at all: `python3 engine/darrow.py show daily DATE`, `show nutrition DATE` and `food list DATE` all print nothing): never create a row or a scene; run `saga.py plan done N --skipped` and carry its world move into the next scene (`plan next` and `now` print it as owed until a scene uses it). A day with any row at all is open and gets its scene.
+
+When a day is closed (he says so, or a new day's first log arrives and yesterday has something logged and its `closed` isn't `Y`):
 1. `python3 engine/darrow.py set daily DATE closed=Y` → `sync` → `python3 engine/saga.py now` → `python3 engine/saga.py plan next --date DATE --full` (the day's slot: its kind, planned content, beat or quest stage, any micro-choice, and the day's colour).
 2. Ledger: a day summary: totals vs targets, sessions done vs planned, what's still open for tomorrow, any flag. While a story choice is open, end with "Still waiting on Darrow: 1 … / 2 … / 3 …".
 3. Chronicle: read the last scene and `saga/state/_gm/threads.md`, then write **one scene** (150–400 words) in the slot's kind, appended to the current chapter file, following `saga/bible/style.md`. The content is the slot's; the day's real deeds set only the tone; the outcome waits for the climax. Fold in the open micro-choice's answer (or its planned default, recorded `by: bearing`) and the DUE NOW items you use; the engine's Reckoning changes, if any, are the closing box.
-4. `saga.py plan done N --wrote chNN:sK` (a missed day: `plan done N --skipped`, and the next scene opens on its world move) → `saga.py fire ID --where chNN:sK` for each due item used (`void ID --why "…"` for what the story made impossible) → `saga.py plan micro open N` if the slot carried a micro-choice.
+4. `saga.py plan done N --wrote chNN:sK` (a missed day: `plan done N --skipped`, and the next scene opens on the world move `plan next` prints as owed; `--force` to redo a slot; a quest slot marked `"last": true` or reaching the arc's stage count marks its quest done, otherwise `plan quest <id> status=done` by hand) → `saga.py fire ID --where chNN:sK` for each due item used (`void ID --why "…"` for what the story made impossible) → `saga.py plan micro open N` if the slot carried a micro-choice.
 5. Update `saga/state/world.json` by Edit (`scenes[]`, `location.place` (a `places.json` id), `last_beat`, `current_quest.on_the_page`, `current_struggle`; never approval), `saga/state/_gm/threads.md`, `codex.md` (new names only; anything GM-only goes under `_gm/`), and the narrative part of `saga/NOW.md`.
 6. **The cast and the site** (see "The site" below): a file in `saga/characters/` for anyone new on the page; `last_seen`, `last_seen_doing`, `now`, `appearances`, new `known_facts` (and `appearance`/`status` if the story changed them) for everyone in the scene; `saga/state/places.json` for a new place; then `python3 engine/saga.py check` and `python3 engine/build_site.py`, which must pass.
 7. Commit and push (`docs/` goes with everything else).
@@ -99,11 +102,11 @@ If several days are open, write one scene per day, oldest first (or one combined
 
 ## Sunday checkpoint → the chapter climax
 
-See `.claude/skills/checkpoint/SKILL.md`. In short: close Saturday; `chapter-close`; `saga.py now` (read the ARMED and near rules before writing); the **real** weekly recap (the style of the recovery-state checkpoint: nutrition averages vs targets, weigh-in average, sessions vs plan, floor, swelling grades, flags, next week's plan); then `saga.py plan set stage=climax` and the **climax** (900–1,800 words, dice via `roll --chapter N`, the tier setting the shape), ending with a choice. If a Knot tied: `saga.py route decide --book N`, then write the matching transition shape (`saga.py arc tN.<road>`). Open the next chapter file and `saga.py plan chapter open --number N+1 '<json>'`.
+See `.claude/skills/checkpoint/SKILL.md`. In short: close Saturday (a Saturday with nothing logged is skipped and its spine content folds into the climax); resolve any open micro-choice by its default; `chapter-close`; the **real** weekly recap (the style of the recovery-state checkpoint: nutrition averages vs targets, weigh-in average, sessions vs plan, floor, swelling grades, flags, next week's plan); then `saga.py plan set stage=climax` **before** `saga.py now` (read the ARMED and near rules and every DUE NOW / OVERDUE item before writing; `saga.py due` lists everything owed) and `saga.py plan climax` (the chapter's question, climax plan, checks, options, default, world moves left); the **climax** (900–1,800 words, dice via `roll --chapter N`, the tier setting the shape), ending with a choice; then `plan beat bN.K status=done` (the climax answered the chapter's beat). If a Knot tied: `saga.py route decide --book N`, write the matching transition shape (`saga.py arc tN.<road>`), `plan beat tN status=done`, and `saga.py plan book open N+1` before the next chapter. Open the next chapter file and `saga.py plan chapter open --number N+1 '<json>'` (it refuses while a micro is open).
 
 ## Answering a choice → `/choose`
 
-A message that answers an open choice (climax or micro-choice: "2", "stay hidden") is handled **before** anything else in it; a bare number is an answer only while a choice is open. Record the choice as a ledger entry (what it changes now: approval, Bearing, flags by their `_gm/plan.json` names, factions; what falls due later) → `python3 engine/saga.py add '<json>' --witnessed a,b` → only then hand-edit `world.json → choices[]` with Edit, never Write. A micro-choice: `saga.py plan micro close --option K [--by bearing]`; its consequence is folded into the next scene's opening. A climax choice: `saga.py plan set stage=choice` and its consequence as a `### Choice — Title` block. Approval and Bearing are never edited by hand; only `saga.py add` and `saga.py bearing` move them.
+A message that answers an open choice (climax or micro-choice: "2", "go the long way") is handled **before** anything else in it; a bare number is an answer only while a choice is open. Record the choice as a ledger entry (what it changes now: approval, Bearing, flags by their `_gm/plan.json` names, factions; what falls due later) → `python3 engine/saga.py add '<json>' --witnessed a,b` → only then hand-edit `world.json → choices[]` with Edit, never Write. A micro-choice: `saga.py plan micro close --option K [--by bearing]`; its consequence is folded into the next scene's opening. A climax choice: if `saga.py now` still shows the climax's chapter at stage `climax`, `saga.py plan set stage=choice` (the engine refuses it at any other stage); if the next chapter is already open (the normal case after a checkpoint), do not touch the stage; then write its consequence as a `### Choice — Title` block (`fire ID --where chNN:climax` for what it pays off). A climax choice still open at the second close of the next chapter resolves to the planned `default`, `by: bearing`. Approval and Bearing are never edited by hand; only `saga.py add` and `saga.py bearing` move them.
 
 ---
 
@@ -128,9 +131,9 @@ python3 engine/darrow.py check                      # validate logs
 python3 engine/saga.py now                          # the GM digest: position, next slot, open micro, Bearing, due consequences, armed rules (≤ 30 lines)
 python3 engine/saga.py plan next --date D --full    # the day's slot + its arc section + colour; then plan done N --wrote ch01:s3 | --skipped
 python3 engine/saga.py add '<ledger entry json>' --witnessed maelis,wren   # a choice: applies approval/Bearing/flags; fire ID --where ch02:s1 | void ID --why "…"
-python3 engine/saga.py plan micro open N | plan micro close --option K [--by bearing]
-python3 engine/saga.py plan chapter open --number N '<json>' | plan set stage=climax | plan beat ID status=done | plan flag k=v | plan companion arrive ID
-python3 engine/saga.py route decide --book N | bearing show | arc q1.letters | due --all   # arc <id> prints one section of _gm/arc.md
+python3 engine/saga.py plan micro open N | plan micro close --option K [--by bearing]   # --by bearing alone takes the planned default
+python3 engine/saga.py plan chapter open --number N '<json>' | plan book open N | plan climax | plan set stage=climax | plan beat ID status=done | plan quest ID status=done | plan flag k=v | plan companion arrive ID
+python3 engine/saga.py route decide --book N | bearing show | arc q1.letters | due [--all | --at ch02:climax]   # due alone: everything due or overdue now; --at: exact lookup; arc <id> prints one section of _gm/arc.md
 python3 engine/saga.py check                        # before every commit that touched saga/; `fmt` rewrites the state JSON canonically
 ```
 
@@ -152,7 +155,7 @@ python3 engine/saga.py check                        # before every commit that t
 Read before writing anything in `saga/`:
 - `saga/bible/style.md`: the wall, voice, formats (scene kinds, interlude, micro-choices, the Bearing in prose). **Mandatory.**
 - `saga/bible/cast.md` (appearance and voice of everyone on the page), `mechanics.md`: reader-safe canon.
-- `saga/bible/_gm/arc.md` (one section at a time: `saga.py arc <id>`), `_gm/world.md`, `_gm/characters.md`: the hidden plot, reveal schedule, Book beats, secrets. Never reveal a truth ahead of its schedule; plant at least twice before any reveal.
+- `saga/bible/_gm/arc.md` (one section at a time: `saga.py arc <id>`) for the beat or quest you are writing; `_gm/characters.md` only the entries of the people in the scene (grep the `###` heading); `_gm/world.md` on demand for a place or custom. Never whole. Never reveal a truth ahead of its schedule; plant at least twice before any reveal.
 - `saga/bible/_gm/design.md`: the systems in full (ledger, Bearing, roads, slots, quests, micro-choices); read on demand, not every session.
 - `saga/state/world.json`, `bearing.json`, `_gm/plan.json`, `_gm/consequences.json`, `_gm/threads.md`, `codex.md`: continuity. The JSON state moves through `saga.py`; where you must Edit it by hand, keep it canonical (`saga.py fmt`).
 

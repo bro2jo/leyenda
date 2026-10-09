@@ -107,6 +107,8 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 | **The Lantern Market** (Saltreach) | profit; information | sells to everyone |
 | **The Stonewrights** | — | long gone; they made the Oathstones; their ruins remain |
 
+**The Confessors' list.** The list names the Faithless of Harrow Ford who have not re-knelt and are fit to be moved, captains first; Benedek says his oath at every bell and the Confessors count him as kneeling already, so he is not on it, which is why Marrant can Hollow him with no name on paper (b1.2).
+
 ---
 
 ## 6. Customs and texture
@@ -123,7 +125,7 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 
 ## 7. (moved)
 
-The table of what the common folk believe against what is true gave the twists away. It now lives in `arc.md` §9. Reader-facing material never comes from this file.
+The table of what the common folk believe against what is true gave the twists away. It now lives in `arc.md` under `## beliefs`. Reader-facing material never comes from this file.
 
 ---
 

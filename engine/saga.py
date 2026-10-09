@@ -8,21 +8,29 @@ roads per Book, and sections of the GM arc (saga/bible/_gm/arc.md). Standard lib
 Real numbers never move anything here; only choices and chapter tiers do.
 
 Commands (run from the repo root):
-  now                                   the digest: position, road, next slot, quests, micro, bearing, due items, rules (<= 30 lines)
-  due [--at ch02:s1|book2|...] [--all]  pending ledger items that match a target (--all: every pending item)
-  check                                 validate ledger, plan, bearing, world.json choices, arc ids, formatting; exit 1 on problems
+  now                                   the digest: position, road, next slot, owed world moves, quests, micro, bearing, due items, rules (<= 30 lines)
+  due [--at ch02:s1|book2|...] [--all]  pending ledger items: due or overdue now; --at X adds the items aimed exactly at X (labelled); --all: every pending item
+  check                                 validate ledger, plan, bearing, world.json choices, arc ids, formatting; exit 1 on problems (an unreadable state file is named, never a traceback)
   fmt                                   rewrite the four state JSON files canonically
   add 'JSON' [--witnessed a,b] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas
   fire ID --where ch03:s2               mark a due item fired there
   void ID --why TEXT                    mark a due item void
-  bearing POLE N --why ID | bearing show
+  bearing POLE N --why ID [--force]     move the Bearing: |N| <= 4 unless --force; --why is a ledger id (c01.3) or gm:<reason>
+  bearing show
   route decide --book N [--road low|main|high --why TEXT] | route show
-  plan next [--date D] [--full]         the slot for a day (default: the first next/planned slot); --full adds the arc section
-  plan done N --wrote ch01:s3 | --skipped
-  plan micro open N | plan micro close [--option K --by darrow|bearing]
-  plan chapter open --number N 'JSON'
+                                        a Book already decided is only re-decided with --road … --why …
+  plan next [--date D] [--full]         the slot for a day (default: the first next/planned slot) and any world move owed; --full adds the arc section
+  plan done N --wrote ch01:s3 [--force] | --skipped
+                                        a written/skipped slot is refused without --force; --wrote restores stage=scene, pays off owed world moves,
+                                        and closes the slot's quest when its arc stages are used up or the slot carries "last": true
+  plan micro open N                     open the slot's micro; records the scene key of the slot just written (from slot.wrote or last_written)
+  plan micro close [--option K] [--by darrow|bearing]   --by bearing with no --option takes the slot's default
+  plan climax                           the chapter's question, climax plan, checks, options, default and the world moves left
+  plan chapter open --number N 'JSON'   refused while a micro is open; keeps climax.default
+  plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded and its unrun quests dropped
   plan quest ID k=v ... | plan beat ID status=... | plan flag k=v | plan temptation add TEXT
-  plan companion arrive ID | plan set key=value
+  plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
+  plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
   archive                               move spent entries older than two Books to consequences_archive.json
 
@@ -65,6 +73,7 @@ P = {
     "config": ROOT / "real/config.json",
     "daily": ROOT / "real/logs/daily_log.csv",
     "nutrition": ROOT / "real/logs/nutrition_log.csv",
+    "food": ROOT / "real/logs/food_entries.csv",
 }
 STATE_FILES = ("world", "bearing", "plan", "ledger")
 
@@ -87,8 +96,13 @@ WROTE_RE = re.compile(r"^ch(\d{2}):(s(\d+)|interlude(-\d+)?|climax|transition)$"
 
 # ---------------------------------------------------------------- io
 def load_json(path):
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    """Parse a JSON file; a truncated or malformed file is named and exits 1 instead of a traceback."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"✗ {rel(path)}: invalid JSON ({e}); restore it from git")
+        sys.exit(1)
 
 
 def dumps(obj):
@@ -96,9 +110,14 @@ def dumps(obj):
 
 
 def save_json(path, obj):
+    """Atomic write: the text goes to a .tmp beside the file and is renamed over it, so an interrupted run never leaves a half-written state file."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         f.write(dumps(obj))
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
 
 
 def read_csv(path):
@@ -227,12 +246,21 @@ def recompute_bearing(bearing):
     bearing["epithet"] = bearing["names"].get(tied[0][1], tied[0][1])
 
 
-def move_bearing(st, pole, n, why, quiet=False):
-    """Move toward `pole` by n (n > 0; a negative n moves away). Returns (axis, old, new)."""
+BEARING_MAX_MOVE = 4
+WHY_RE = re.compile(r"^(c\d{2}\.\d+|gm:.+)$")
+
+
+def move_bearing(st, pole, n, why, quiet=False, force=False):
+    """Move toward `pole` by n (n > 0; a negative n moves away). Returns (axis, old, new).
+    A single move is at most ±4 (betrayal or sacrifice) unless force; `why` is a ledger id or gm:<reason>."""
     b = st.bearing
     r = pole_axis(b, pole)
     if not r:
         die(f"unknown pole {pole!r}; poles: " + ", ".join(w for ax in b["axes"].values() for w in (ax["left"], ax["right"])))
+    if not WHY_RE.match(str(why or "")):
+        die(f"--why {why!r} must be a ledger id (c01.3) or start with gm:")
+    if abs(int(n)) > BEARING_MAX_MOVE and not force:
+        die(f"a single move is at most ±{BEARING_MAX_MOVE} (betrayal or sacrifice); split it or pass --force")
     aid, sign = r
     ax = b["axes"][aid]
     old = ax["value"]
@@ -305,7 +333,7 @@ def at_status(at, st):
         if book > b:
             return "overdue"
         if book < b:
-            return "future"
+            return "future"  # a later Book, seeded or not: `plan book open N` seeds its beats when it opens
         sub = m.group(2)
         if not sub:
             return "due"
@@ -465,7 +493,9 @@ def rule_state(rule, st):
 
 
 def rule_near(rule, st, within=15):
-    """Numeric terms within `within` of their threshold, for an unarmed rule."""
+    """Numeric terms within reach of their threshold, for an unarmed rule.
+    A term still at exactly 0 has not moved and is never 'near'; a threshold under 15 uses a relative
+    window of max(2, 30% of the threshold), larger ones the absolute `within`."""
     tree = parse_rule(rule.get("if", ""))
     if tree is None:
         return []
@@ -481,7 +511,10 @@ def rule_near(rule, st, within=15):
             if not parts:
                 continue
             known, val = term_lookup(parts, st)
-            if known and isinstance(val, (int, float)) and not isinstance(val, bool) and abs(val - b.value) <= within:
+            if not (known and isinstance(val, (int, float)) and not isinstance(val, bool)) or val == 0:
+                continue
+            window = max(2, 0.3 * abs(b.value)) if abs(b.value) < 15 else within
+            if abs(val - b.value) <= window:
                 near.append(f"{'.'.join(parts)}={val} vs {b.value}")
     return near
 
@@ -594,17 +627,27 @@ def yes(v):
 
 
 def colour_for(day):
+    """GM colour of a day from the real logs. A day with a daily_log row is read in full; a day with only
+    food (a nutrition_log row with data, or food_entries rows) is open: cold below the fuel band, else mild;
+    only a day with nothing logged anywhere is missed."""
     rows = [r for r in read_csv(P["daily"]) if r.get("date") == day]
-    if not rows:
-        return "missed (no daily row)"
-    r = rows[0]
     nut = next((n for n in read_csv(P["nutrition"]) if n.get("date") == day), {})
+    food = [f for f in read_csv(P["food"]) if f.get("date") == day]
+    nut_logged = any(str(nut.get(k) or "").strip() for k in ("kcal", "protein_g", "weight_lb", "creatine", "shake"))
     try:
-        t = load_json(P["config"])["nutrition_targets"]
         kcal, prot = float(nut.get("kcal") or 0), float(nut.get("protein_g") or 0)
+        if not str(nut.get("kcal") or "").strip() and food:
+            kcal = sum(float(f.get("kcal") or 0) for f in food)
+            prot = sum(float(f.get("protein_g") or 0) for f in food)
+        t = load_json(P["config"])["nutrition_targets"]
         fuel_ok = kcal >= 0.9 * t["kcal"] and prot >= 0.9 * t["protein_g"]
     except Exception:
         fuel_ok = False
+    if not rows:
+        if not nut_logged and not food:
+            return "missed (nothing logged)"
+        return f"{'mild' if fuel_ok else 'cold'} (open; food only, no daily row)"
+    r = rows[0]
     session = any(str(r.get(k) or "").strip() for k in ("knee_session", "addon_session", "conditioning_type", "conditioning_min")) or yes(r.get("pt"))
     fam, fpm = yes(r.get("floor_am")), yes(r.get("floor_pm"))
     if str(r.get("light") or "").strip().lower() == "red":
@@ -625,6 +668,29 @@ def slot_by_n(plan, n):
         if str(s.get("n")) == str(n):
             return s
     die(f"no slot {n} in chapter {plan['chapter'].get('number')}")
+
+
+def owed_moves(plan):
+    """Skipped slots whose off-page world move has not yet opened a scene or the climax."""
+    return [s for s in plan["chapter"].get("slots", []) if s.get("status") == "skipped" and s.get("world_move") and not s.get("world_move_used")]
+
+
+def pay_owed_moves(plan, where):
+    """Mark every owed world move used and say what `where` (the scene or climax) opens on."""
+    owed = owed_moves(plan)
+    for s in owed:
+        s["world_move_used"] = True
+    if owed:
+        print(f"open the {where} on: " + " / ".join(f"{s['world_move']} (slot {s['n']})" for s in owed))
+    return owed
+
+
+def micro_scene_key(plan, s):
+    """The scene key of the slot a micro sits in: from the slot's own `wrote`, else position.last_written ('interlude' allowed), else the scene before next."""
+    m = WROTE_RE.match(str(s.get("wrote") or plan["position"].get("last_written") or ""))
+    if m:
+        return m.group(3) or m.group(2)
+    return str(int(plan["position"]["next_scene"]) - 1)
 
 
 def slot_label(s):
@@ -653,7 +719,7 @@ def next_slot(plan, date=None):
     return None
 
 
-def print_slot(s, full=False):
+def print_slot(s, full=False, plan=None):
     print(slot_label(s) + f" · {s.get('status')}" + (f" · wrote {s['wrote']}" if s.get("wrote") else ""))
     print(f"  plan: {s.get('plan')}")
     m = s.get("micro")
@@ -664,7 +730,10 @@ def print_slot(s, full=False):
             bt = f" [{', '.join(f'{k} {v:+d}' for k, v in b.items())}]" if b else ""
             print(f"    {i}. {opt}{bt}" + ("  (default)" if m.get("default") == i else ""))
     if s.get("world_move"):
-        print(f"  world move owed: {s['world_move']}")
+        print(f"  world move {'paid' if s.get('world_move_used') else 'owed'}: {s['world_move']}")
+    if plan is not None and s.get("status") != "skipped":
+        for o in owed_moves(plan):
+            print(f"  world move owed (from skipped slot {o['n']}): {o['world_move']}")
     if s.get("day"):
         print(f"  colour: {colour_for(s['day'])}")
     if full:
@@ -731,14 +800,19 @@ def cmd_now(args):
     else:
         lines.append("Next: no slot planned; `plan chapter open --number N '<json>'`")
         lines.append("  (every slot written or skipped)")
+    for o in owed_moves(plan):
+        lines.append(f"World move owed (slot {o['n']}): {short(o['world_move'], 120)}")
     q = plan.get("quests", {})
     live = [f"{k} (stage {v.get('stage')})" for k, v in q.items() if v.get("status") == "live"]
     avail = [f"{k} ({v.get('priority')})" for k, v in q.items() if v.get("status") == "available"]
     lines.append("Quests live: " + (", ".join(live) or "none"))
     lines.append("Quests available: " + short(", ".join(avail) or "none", 160))
+    if int(pos["chapter"]) >= 2 and not live:
+        first_req = next((k for k, v in q.items() if v.get("status") == "available" and v.get("priority") == "required"), None)
+        lines.append("⚠ no quest live; plan a stage of " + (first_req or "any available quest") + " (design §5.2)")
     om = plan.get("open_micro")
     if om:
-        lines.append(f"Open micro (slot {om.get('slot')}, {om.get('axis')}): {om.get('ask')}")
+        lines.append(f"Open micro (slot {om.get('slot')}, scene {om.get('scene')}, {om.get('axis')}): {om.get('ask')}")
         lines.append("  " + short(" / ".join(f"{i}. {o}" for i, o in enumerate(om.get("options", []), 1)), 170))
     else:
         lines.append("Micro: none open")
@@ -785,19 +859,31 @@ def cmd_now(args):
 def cmd_due(args):
     st = State()
     items = list(pending_items(st.ledger))
+
+    def show(rows, label=None):
+        for e, it in rows:
+            tag = label or at_status(it.get("at", ""), st).upper()
+            print(f"{it['id']} [{it.get('weight')}] when={it.get('when')} at={it.get('at')} {tag} · from {e['id']} ({e['made'].get('date')}: {short(e.get('chose'), 60)})")
+            print(f"  {it.get('what')}")
+
     if args.all:
-        rows = items
-    elif args.at:
-        rows = [(e, it) for e, it in items if it.get("at") == args.at or it.get("at") == "any"]
-    else:
-        rows = [(e, it) for e, it in items if at_status(it.get("at", ""), st) in ("due", "overdue")]
-    if not rows:
-        print("nothing pending" + (f" at {args.at}" if args.at else ""))
+        if not items:
+            print("nothing pending")
+        show(items)
         return
-    for e, it in rows:
-        tag = at_status(it.get("at", ""), st).upper()
-        print(f"{it['id']} [{it.get('weight')}] when={it.get('when')} at={it.get('at')} {tag} · from {e['id']} ({e['made'].get('date')}: {short(e.get('chose'), 60)})")
-        print(f"  {it.get('what')}")
+    now_rows = [(e, it) for e, it in items if at_status(it.get("at", ""), st) in ("due", "overdue")]
+    if args.at:
+        exact = [(e, it) for e, it in items if it.get("at") == args.at or it.get("at") == "any"]
+        rest = [(e, it) for e, it in now_rows if (e, it) not in exact]
+        print(f"aimed at {args.at}:" + ("" if exact else " nothing pending"))
+        show(exact, label=f"AT {args.at}")
+        print("also due or overdue now:" + ("" if rest else " nothing"))
+        show(rest)
+        return
+    if not now_rows:
+        print("nothing pending")
+        return
+    show(now_rows)
 
 
 # ---------------------------------------------------------------- commands: ledger writes
@@ -986,8 +1072,8 @@ def cmd_bearing(args):
         print(f"epithet: {b['epithet'] or '— (none named yet)'} · leans: {', '.join(b['leans']) or 'none'} · moves: {len(b.get('history', []))}")
         return
     if args.n is None or not args.why:
-        die("usage: bearing <pole> <n> --why <ledger id>")
-    move_bearing(st, args.pole, args.n, args.why)
+        die("usage: bearing <pole> <n> --why <ledger id | gm:reason> [--force]")
+    move_bearing(st, args.pole, args.n, args.why, force=args.force)
     st.save()
 
 
@@ -1009,6 +1095,8 @@ def cmd_route(args):
     r = plan.setdefault("route", {}).setdefault(key, {"chapters": [], "road": None, "override": None, "transition_chapter": None})
     chapters = [int(c) for c in r.get("chapters", [])]
     score, tiers, missing = road_score(chapters, rows)
+    if r.get("road") and not args.road:
+        die(f"{key} already decided ({r['road']}{' by override' if r.get('override') else ''}); pass --road … --why … to change it")
     if args.road:
         if not args.why:
             die("--road needs --why")
@@ -1039,16 +1127,36 @@ def cmd_plan(args):
         s = next_slot(plan, args.date)
         if not s:
             print("no next or planned slot; open the next chapter with `plan chapter open`")
+            for o in owed_moves(plan):
+                print(f"  world move owed (from skipped slot {o['n']}): {o['world_move']}")
             return
-        print_slot(s, full=args.full)
+        print_slot(s, full=args.full, plan=plan)
+        return
+    if a == "climax":
+        ch = plan["chapter"]
+        c = ch.get("climax") or {}
+        print(f"chapter {ch.get('number')} · question: {ch.get('question')}")
+        print(f"  plan: {c.get('plan')}")
+        print("  checks: " + ("; ".join(c.get("checks") or []) or "none"))
+        for i, o in enumerate(c.get("options") or [], 1):
+            print(f"  {i}. {o}" + ("  (default)" if c.get("default") == i else ""))
+        if c.get("default") is not None:
+            print(f"  default: option {c['default']} (taken by the Bearing if the choice is still open at the second close of the next chapter)")
+        print("  world moves left: " + (" / ".join(ch.get("world_moves") or []) or "none"))
+        for o in owed_moves(plan):
+            print(f"  world move owed (from skipped slot {o['n']}): {o['world_move']}")
         return
     if a == "done":
         s = slot_by_n(plan, args.n)
+        if s.get("status") in ("written", "skipped") and not args.force:
+            die(f"slot {s['n']} is already {s['status']}" + (f" ({s.get('wrote')})" if s.get("wrote") else "") + "; pass --force to redo")
         if args.skipped:
             s["status"] = "skipped"
+            s["wrote"] = None
             moves = plan["chapter"].setdefault("world_moves", [])
             if moves:
                 s["world_move"] = moves.pop(0)
+                s["world_move_used"] = False
                 print(f"slot {s['n']} skipped; the next scene opens with one off-page world move: {s['world_move']}")
             else:
                 print(f"slot {s['n']} skipped; no world_moves left in the chapter, invent one off-page move")
@@ -1061,20 +1169,22 @@ def cmd_plan(args):
             s["status"] = "written"
             s["wrote"] = args.wrote
             plan["position"]["last_written"] = args.wrote
+            plan["position"]["stage"] = "scene"
             if m.group(3):
-                plan["position"]["next_scene"] = int(m.group(3)) + 1
+                plan["position"]["next_scene"] = max(int(plan["position"].get("next_scene") or 1), int(m.group(3)) + 1)
             if s.get("kind") == "quest" and s.get("quest"):
                 q = plan.setdefault("quests", {}).setdefault(s["quest"], {"status": "available", "stage": 0, "priority": "optional"})
                 q["stage"] = int(s.get("stage") or q.get("stage", 0) + 1)
                 total = arc_quest_stage_count(s["quest"])
-                q["status"] = "done" if total and q["stage"] >= total else "live"
-                print(f"quest {s['quest']}: stage {q['stage']}" + (f"/{total}" if total else "") + f" · {q['status']}")
+                q["status"] = "done" if (total and q["stage"] >= total) or s.get("last") else "live"
+                print(f"quest {s['quest']}: stage {q['stage']}" + (f"/{total}" if total else "") + f" · {q['status']}" + (" (slot marked last)" if s.get("last") and q["status"] == "done" else ""))
             if s.get("kind") == "spine" and s.get("beat"):
                 b = plan.setdefault("core_beats", {}).setdefault(s["beat"], {"title": s["beat"], "status": "planned"})
                 if b.get("status") == "planned":
                     b["status"] = "in_progress"
                 plan["position"]["beat"] = s["beat"]
-            print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']}")
+            print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']} · stage scene")
+            pay_owed_moves(plan, "scene")
         nxt = next((x for x in sorted(plan["chapter"]["slots"], key=lambda x: float(x.get("n", 0))) if x.get("status") == "planned"), None)
         if nxt and not any(x.get("status") == "next" for x in plan["chapter"]["slots"]):
             nxt["status"] = "next"
@@ -1090,21 +1200,31 @@ def cmd_plan(args):
             if plan.get("open_micro"):
                 die(f"a micro is already open (slot {plan['open_micro'].get('slot')}); close it first (it resolves to its default if unanswered)")
             m = dict(s["micro"])
-            plan["open_micro"] = {"slot": s["n"], "scene": str(plan["position"]["next_scene"]), "opened": today_local().isoformat(), **m}
-            print(f"micro open from slot {s['n']} ({m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
+            scene_key = micro_scene_key(plan, s)
+            plan["open_micro"] = {"slot": s["n"], "chapter": int(plan["chapter"].get("number")), "scene": scene_key, "opened": today_local().isoformat(), **m}
+            print(f"micro open from slot {s['n']} at scene {scene_key} ({m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
+            print(f"  world.json choices[] entry: chapter {plan['chapter'].get('number')}, scene \"{scene_key}\", kind micro")
         else:
             om = plan.get("open_micro")
             if not om:
                 die("no micro is open")
+            opt = args.option if args.option is not None else (om.get("default") if args.by == "bearing" else None)
+            if opt is None:
+                die("pass --option K (or --by bearing to take the slot's default)")
             s = next((x for x in plan["chapter"]["slots"] if str(x.get("n")) == str(om.get("slot"))), None)
             if s is not None and s.get("micro") is not None:
-                s["micro"]["answer"] = {"option": args.option, "by": args.by}
+                if opt not in range(1, len(s["micro"].get("options") or []) + 1):
+                    die(f"option {opt} is not one of slot {s['n']}'s {len(s['micro'].get('options') or [])} options")
+                s["micro"]["answer"] = {"option": opt, "by": args.by}
             plan["open_micro"] = None
-            print(f"micro from slot {om.get('slot')} closed" + (f": option {args.option} by {args.by}" if args.option else ""))
+            print(f"micro from slot {om.get('slot')} (scene {om.get('scene')}) closed: option {opt} by {args.by}" + (" (the slot's default)" if args.option is None else ""))
         st.touch("plan")
         st.save()
         return
     if a == "chapter":
+        if plan.get("open_micro"):
+            om = plan["open_micro"]
+            die(f"a micro is still open (slot {om.get('slot')}, scene {om.get('scene')}); resolve it first: /choose, or `plan micro close --option {om.get('default')} --by bearing`")
         try:
             ch = json.loads(args.json)
         except json.JSONDecodeError as e:
@@ -1132,7 +1252,64 @@ def cmd_plan(args):
         plan["position"].update({"chapter": int(args.number), "next_scene": 1, "stage": "scene"})
         st.touch("plan")
         st.save()
-        print(f"chapter {args.number} opened (week of {ch['week_start']}, {len(ordered['slots'])} slots); run `saga.py check`")
+        print(f"chapter {args.number} opened (week of {ch['week_start']}, {len(ordered['slots'])} slots" + (f", climax default {ordered['climax'].get('default')}" if ordered.get("climax", {}).get("default") is not None else "") + "); run `saga.py check`")
+        return
+    if a == "book":
+        n = int(args.n)
+        pos = plan["position"]
+        cur = int(pos["book"])
+        if n <= cur:
+            die(f"already in Book {cur}; `plan book open` only moves forward")
+        if n > cur + 1:
+            print(f"note: skipping Book {cur + 1}; Books open one at a time as a rule")
+        r = plan.setdefault("route", {}).setdefault(f"book{n}", {"chapters": [], "road": None, "override": None, "transition_chapter": None})
+        beats = plan.setdefault("core_beats", {})
+        seeded = []
+        for k, (lvl, title, _) in arc_sections().items():
+            if re.match(rf"^(b{n}\.\d+|t{n})$", k) and k not in beats:
+                beats[k] = {"title": title.split("—", 1)[1].strip() if "—" in title else k, "status": "planned"}
+                seeded.append(k)
+        if f"t{n}" not in beats and any(f"t{n}.{road}" in arc_sections() for road in ROADS):
+            beats[f"t{n}"] = {"title": f"Book {ROMAN[n]} transition", "status": "planned"}
+            seeded.append(f"t{n}")
+        folded = []
+        for k, b in beats.items():
+            if re.match(rf"^b{cur}\.\d+$", k) and b.get("status") == "planned":
+                b["status"] = "folded"
+                folded.append(k)
+        # quests: seed Book N's from the arc (priority from its `- **priority:**` line); drop the old Book's
+        # untouched required/optional quests (floating ones may still run anywhere)
+        quests = plan.setdefault("quests", {})
+        q_seeded, q_dropped = [], []
+        for k, (lvl, title, body) in arc_sections().items():
+            if re.match(rf"^q{n}\.[a-z0-9_]+$", k) and k not in quests:
+                pr = "optional"
+                for l in body:
+                    mp = re.match(r"^\s*-\s*\*\*priority:\*\*\s*(required|optional|floating)", l, re.I)
+                    if mp:
+                        pr = mp.group(1).lower()
+                        break
+                quests[k] = {"status": "available", "stage": 0, "priority": pr}
+                q_seeded.append(f"{k} ({pr})")
+        for k, q in quests.items():
+            if re.match(rf"^q{cur}\.", k) and q.get("status") == "available" and q.get("priority") != "floating":
+                q["status"] = "dropped"
+                q["why"] = f"Book {ROMAN[cur]} closed before it ran"
+                q_dropped.append(k)
+        pos["book"] = n
+        pos["beat"] = f"b{n}.1"
+        if f"b{n}.1" not in beats:
+            print(f"warning: arc.md has no `## b{n}.1 — …` heading; add it (or Edit core_beats) before `saga.py check`")
+        st.touch("plan")
+        st.save()
+        print(f"Book {ROMAN[n]} opened: position.book {cur} → {n}, beat b{n}.1 · route.book{n} {'seeded' if not r['chapters'] else 'kept'}"
+              + f" · core beats seeded: {', '.join(seeded) or 'none new'}"
+              + (f" · Book {ROMAN[cur]} beats folded: {', '.join(folded)}" if folded else "")
+              + f" · quests seeded: {', '.join(q_seeded) or 'none new'}"
+              + (f" · Book {ROMAN[cur]} quests dropped: {', '.join(q_dropped)}" if q_dropped else ""))
+        if beats.get(f"t{cur}", {}).get("status") not in (None, "done"):
+            print(f"note: t{cur} is {beats[f't{cur}'].get('status')}; `plan beat t{cur} status=done` once the transition is written")
+        print(f"next: set world.json book to {n}, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
         return
     if a == "quest":
         q = plan.setdefault("quests", {}).setdefault(args.id, {"status": "available", "stage": 0, "priority": "optional"})
@@ -1181,7 +1358,7 @@ def cmd_plan(args):
         if args.id in world.get("companions", {}):
             die(f"{args.id} is already a companion in world.json")
         approval = int(c.get("approval_pending", 0))
-        world.setdefault("companions", {})[args.id] = {"approval": approval, "present": True, "note": c.get("note", "")}
+        world.setdefault("companions", {})[args.id] = {"approval": approval, "present": True, "note": c.get("note", ""), **({"bond": c["bond"]} if "bond" in c else {})}
         ledger = st.ledger
         summed = sum(int((e.get("now", {}).get("approval") or {}).get(args.id, 0)) for e in ledger["entries"])
         ledger["baseline"]["approval"][args.id] = approval - summed
@@ -1189,7 +1366,7 @@ def cmd_plan(args):
         del plan["companions_to_come"][args.id]
         st.touch("plan", "world", "ledger")
         st.save()
-        print(f"{args.id} arrived: approval {approval}, present; baseline set to {approval - summed}. Give them a saga/characters file and an Edit to the note.")
+        print(f"{args.id} arrived: approval {approval}, present" + (f", bond {c['bond']}" if "bond" in c else "") + f"; baseline set to {approval - summed}. Give them a saga/characters file and an Edit to the note.")
         return
     if a == "set":
         pos = plan["position"]
@@ -1198,8 +1375,12 @@ def cmd_plan(args):
                 die(f"position has no field {k}; fields: {', '.join(pos)}")
             if k == "stage" and v not in STAGES:
                 die(f"stage must be one of {STAGES}")
+            if k == "stage" and v == "choice" and pos.get("stage") != "climax":
+                die(f"stage=choice only follows climax (stage is {pos.get('stage')}); the next chapter is already open: skip it and fire with --where chNN:choice")
             print(f"position.{k}: {pos[k]} → {v}")
             pos[k] = v
+            if k == "stage" and v == "climax":
+                pay_owed_moves(plan, "climax")
         st.touch("plan")
         st.save()
         return
@@ -1213,13 +1394,13 @@ def cmd_fmt(args):
             obj = load_json(P[k])
             text = dumps(obj)
             if P[k].read_text(encoding="utf-8") != text:
-                P[k].write_text(text, encoding="utf-8")
+                save_json(P[k], obj)
                 print(f"rewrote {rel(P[k])}")
     print("canonical")
 
 
 def cmd_check(args):
-    probs = []
+    probs, notes = [], []
     for k in STATE_FILES:
         if not P[k].exists():
             probs.append(f"missing {rel(P[k])}")
@@ -1422,6 +1603,24 @@ def cmd_check(args):
     om = plan.get("open_micro")
     if om and not any(str(s.get("n")) == str(om.get("slot")) for s in slots):
         probs.append(f"open_micro points at slot {om.get('slot')} which is not in the chapter")
+    if om and ch.get("number") is not None and int(om.get("chapter", ch.get("number"))) != int(ch.get("number")):
+        probs.append(f"open_micro belongs to chapter {om.get('chapter')}, the plan is on chapter {ch.get('number')}; it must be closed before the chapter changes")
+    cl = ch.get("climax") or {}
+    if cl.get("default") is not None and cl.get("default") not in range(1, len(cl.get("options") or []) + 1):
+        probs.append(f"chapter.climax.default {cl.get('default')!r} is not an option number (1–{len(cl.get('options') or [])})")
+    if ws:
+        sat_slot = next((s for s in slots if s.get("day") == (ws + dt.timedelta(6)).isoformat()), None)
+        if sat_slot and sat_slot.get("status") == "skipped":
+            notes.append("Saturday skipped: its spine content folds into the climax")
+    quest_counts = {}
+    for s in slots:
+        if s.get("kind") == "quest" and s.get("quest"):
+            quest_counts[s["quest"]] = quest_counts.get(s["quest"], 0) + 1
+    for qid, n in quest_counts.items():
+        if n > 2:
+            probs.append(f"quest {qid} appears in {n} slots; at most two stages of one quest per chapter")
+    if int(pos.get("chapter") or 0) >= 2 and slots and not quest_counts and any(q.get("status") == "available" for q in plan.get("quests", {}).values()):
+        probs.append("chapter has no quest slot while quests are available (design §5.2)")
 
     # arc ids
     ids_in_arc = arc_ids()
@@ -1459,6 +1658,8 @@ def cmd_check(args):
         if not isinstance(c.get("chapter"), int):
             probs.append(f"world.json choices[{i}] chapter must be an int")
 
+    for n in notes:
+        print(f"note: {n}")
     if probs:
         print("\n".join(f"✗ {p}" for p in probs))
         sys.exit(1)
@@ -1477,13 +1678,15 @@ def main():
     s = sub.add_parser("add"); s.add_argument("entry"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true"); s.add_argument("--dry-run", action="store_true")
     s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True)
     s = sub.add_parser("void"); s.add_argument("id"); s.add_argument("--why", required=True)
-    s = sub.add_parser("bearing"); s.add_argument("pole", help="a pole word, or `show`"); s.add_argument("n", nargs="?", type=int); s.add_argument("--why")
+    s = sub.add_parser("bearing"); s.add_argument("pole", help="a pole word, or `show`"); s.add_argument("n", nargs="?", type=int); s.add_argument("--why"); s.add_argument("--force", action="store_true", help="allow a move beyond ±4")
     s = sub.add_parser("route"); s.add_argument("action", choices=["decide", "show"]); s.add_argument("--book", type=int); s.add_argument("--road", choices=ROADS); s.add_argument("--why")
     s = sub.add_parser("plan"); ps = s.add_subparsers(dest="action", required=True)
     x = ps.add_parser("next"); x.add_argument("--date"); x.add_argument("--full", action="store_true")
-    x = ps.add_parser("done"); x.add_argument("n"); x.add_argument("--wrote"); x.add_argument("--skipped", action="store_true")
+    x = ps.add_parser("done"); x.add_argument("n"); x.add_argument("--wrote"); x.add_argument("--skipped", action="store_true"); x.add_argument("--force", action="store_true", help="redo a slot already written or skipped")
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
+    x = ps.add_parser("climax")
     x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open"]); x.add_argument("--number", required=True, type=int); x.add_argument("json")
+    x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)
     x = ps.add_parser("quest"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("beat"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("flag"); x.add_argument("kv", nargs="+")

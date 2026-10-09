@@ -27,12 +27,12 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** He sang, badly and without stopping. Nothing he said has been written down.
 
 ## Mother Ione
-- **Appearance:** The Prior of Saint Ysolde's, in her seventies, gentle in face and manner, with iron under the gentleness.
-- **Voice:** She speaks in questions, and the questions are never idle.
+- **Appearance:** Named on the page, not yet seen.
+- **Voice:** Not yet heard; Maelis went to her when the news came.
 
 ## Sister Pell
-- **Appearance:** Keeper of the House's bells, old, and nearly deaf from fifty years of them.
-- **Voice:** She reads lips, has no patience for fools, and says what the bells have left her breath for and not a word more.
+- **Appearance:** Named on the page, not yet seen; her glass stands in the bell tower.
+- **Voice:** Not yet heard.
 
 ## Ser Benedek Orrin
 - **Appearance:** Not yet thirty, a knight of Hollis's own Sixth, on the cot next to his. A boar spear went through his shoulder at the ford and a fever came after; the shoulder is wrapped like a parcel. He lies with his hands folded on the blanket and watches, with the eyes of a man who still feels a warmth in his chest, or says he does.

@@ -16,17 +16,17 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 
 | Real side (Ledger) | Story side (Chronicle): show it like this |
 |---|---|
-| Fuel / Ember (nutrition) | warmth vs. cold in Darrow's body; color in his face; how fast cuts close; whether he lasts through a long scene; how loud the Grace-dreams are when Ember is low |
+| Fuel / Ember (nutrition) | warmth vs. cold in Darrow's body; color in his face; how fast cuts close; whether he lasts through a long scene; how far the cold gets in when Ember is low |
 | Floor minimum, morning checks | quiet discipline: the dawn vigil, the Mender's forms, Warden's Eye; Darrow catching his own lies |
 | Knee sessions | Maelis working the Binding: "the forms," slow and exacting, never named as exercises; the leg answering, or not |
 | PT visit | the Reading of the Knots (Maelis's weekly examination) |
-| Upper-body work | the Seated Blade with Hollis; grip, shoulders, a sword that feels lighter |
+| Upper-body work | the Seated Blade; grip, shoulders, a sword that feels lighter |
 | Conditioning | the Long Breath; the Steps; wind on the ridge; endurance in a fight |
 | Sport-skill work | the Arts tied to them (see `mechanics.md`) |
 | A strong week | the chapter's climax goes his way; allies arrive; the plan works |
 | A thin week | the climax is costly; the enemy advances; a plan fails. **This is a plot turn, never a punishment and never a lecture.** |
 | A red-light/rest day (plan says stop) | a **cutaway** scene: the world moves without him, in another POV (Wren, Hollis, the House, an enemy) or with Darrow made to rest by others. Never a setback frame; resting is never failure. |
-| A missed day (nothing logged at all) | no scene for that day. The next scene opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, a kitchen started counting loaves. No guilt, no lesson. |
+| A missed day (nothing logged at all) | A day with nothing logged at all is missed: no scene; the world moves without him. A day with only food logged is still a day, coloured by what was logged. The next scene after a missed day opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, the weather closed a road. No guilt, no lesson. |
 
 **Tone, never the slot's content.** What happens in a scene is fixed when the chapter is planned; the day's real deeds set only its colour: warmth or cold in him, a stage that goes well or costs more, people who are kind or short with him. The **outcome** of the week is set only at the climax, by the tier. A warm day never buys a victory and a cold day never spends one.
 
@@ -66,7 +66,7 @@ Rare in prose, always at a scene's end, never more than 6 lines:
 > Might 11 → 12
 > Level 5 · Kindled
 ```
-The first Reckoning (end of Chapter 1) is the only time it's described in prose: pale, angular script of light that only Darrow sees, which reads the same with his eyes closed.
+The first Reckoning (Chapter 1, Scene 1) is the only time it's described in prose: pale, angular script of light that only Darrow sees, which reads the same with his eyes closed.
 
 ### Dice (Baldur's Gate style)
 Show the check on its own line, before the outcome is narrated:
@@ -83,11 +83,12 @@ Show the check on its own line, before the outcome is narrated:
 - End with **a choice for Darrow** (2–3 options), in this format:
 ```
 **What does Darrow do?**
-1. **Expose the thief to the Mother Prior.** *(Maelis approves.)*
-2. **Use him to feed the Confessor a lie.** *[Resolve 10]* *(Wren approves; risky.)*
+1. **Give the courier his answer.** *(Maelis approves.)*
+2. **Keep him talking and learn who sent him.** *[Resolve 10]* *(Wren approves; risky.)*
 3. **Say nothing — yet.**
 ```
   Gated options show the requirement in brackets, a stat (`*[Resolve 10]*`) or a Bearing lean (`*[Guile 4]*`); if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~. A climax choice may move the Bearing by two or three; only a betrayal or a sacrifice moves it by four, and the epithet it earns must be spoken on the page.
+- A climax choice carries across the first two scenes of the next chapter; if still open at the second close it resolves to the climax's planned default, recorded `by: bearing`, and its `### Choice` block is written then.
 
 ### A small choice (micro-choice, at the end of a daily scene)
 One stage of a quest or a beat may end on a choice smaller than the climax's. Format, the heading `**What does Darrow do?**` or `**What does Darrow say?**`, each option bold:
