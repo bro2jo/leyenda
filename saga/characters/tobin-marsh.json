@@ -12,7 +12,9 @@
     "faction": "ninth-lance",
     "mark": "note"
   },
-  "appearance": "Nineteen years old, the youngest of the Ninth Lance. The chronicle gives him no face and no colors: only his age, his place at Darrow's left in the crossing, and his singing, which was bad and did not stop. He rode his own horse into the Wend at Harrow Ford.",
+  "appearance": "Nineteen, the youngest of the Ninth Lance: shaggy light-brown hair forever falling in his eyes, hazel eyes, wind-reddened cheeks, a patchy young beard, and a wide grin with a gap between his front teeth. He wore a quilted gambeson under a dark hooded cloak, with a leather strap across his chest fastened by an iron buckle. He rode his own horse at Darrow's left in the crossing at Harrow Ford, and he sang, badly and without stopping.",
+  "portrait": "characters/tobin-marsh.jpg",
+  "portrait_alt": "Portrait of Tobin Marsh: a grinning young man of nineteen with shaggy wet light-brown hair, hazel eyes, a patchy young beard and a gap between his front teeth, in a quilted gambeson and dark hooded cloak with a leather strap across his chest, before a misty river.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",

@@ -23,7 +23,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Courtly, patient and sincere, which is the unsettling part. He spends few words and leaves the one that matters unsaid.
 
 ## Tobin Marsh
-- **Appearance:** Nineteen, the youngest of the Ninth Lance. The page gives him no face: only his age, his place at Darrow's left in the crossing, and his horse.
+- **Appearance:** Nineteen, the youngest of the Ninth Lance: shaggy light-brown hair forever falling in his eyes, hazel eyes, wind-reddened cheeks, a patchy young beard, a wide grin with a gap between his front teeth. At the ford he wore a quilted gambeson under a dark hooded cloak, a leather strap across his chest with an iron buckle; he rode at Darrow's left in the crossing. His portrait (`saga/art/characters/tobin-marsh.jpg`) is canon for his face.
 - **Voice:** He sang, badly and without stopping. Nothing he said has been written down.
 
 ## Mother Ione
