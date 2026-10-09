@@ -14,7 +14,9 @@
     "faction": "second-lance",
     "mark": "stone"
   },
-  "appearance": "Thirty-four, beautiful in a severe way and disciplined to the bone. Of the two boys who once held other men's horses together, he is the one with the better seat, the better manners and the better luck with the kind of women whose fathers mattered. He never raises his voice and spends few words; at Harrow Ford he sat his horse at Darrow's left hand, close enough to touch, and left the one word that mattered unsaid.",
+  "appearance": "Thirty-four, beautiful in a severe way and disciplined to the bone: a pale, clean-shaven face, black hair worn loose to the collar, level dark-grey eyes that give nothing away, and a thin old scar above one brow. He dresses with care, in a high-collared dark tunic trimmed in silver under tooled leather. Of the two boys who once held other men's horses together, he is the one with the better seat, the better manners and the better luck with the kind of women whose fathers mattered. He never raises his voice and spends few words; at Harrow Ford he sat his horse at Darrow's left hand, close enough to touch, and left the one word that mattered unsaid.",
+  "portrait": "characters/aldric-vane.jpg",
+  "portrait_alt": "Portrait of Ser Aldric Vane: a severe, handsome man in his thirties with black hair to the collar, a pale clean-shaven face, level dark-grey eyes and a thin scar above one brow, in a high-collared dark tunic trimmed in silver under tooled leather, before a stone arch and misty crags.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",

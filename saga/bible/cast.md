@@ -19,7 +19,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Fast and irreverent, a number in every third sentence, sarcasm worn as armor. Says "technically" whenever she is about to contradict you. She does not cry where anyone can see.
 
 ## Ser Aldric Vane
-- **Appearance:** Thirty-four, beautiful in a severe way, disciplined to the bone; of the two boys who once held other men's horses together, the one with the better seat and the better manners. He never raises his voice.
+- **Appearance:** Thirty-four, beautiful in a severe way, disciplined to the bone: a pale, clean-shaven face, black hair worn loose to the collar, level dark-grey eyes that give nothing away, a thin old scar above one brow. He dresses with care, in a high-collared dark tunic trimmed in silver under tooled leather. Of the two boys who once held other men's horses together, the one with the better seat and the better manners. He never raises his voice. His portrait (`saga/art/characters/aldric-vane.jpg`) is canon for his face.
 - **Voice:** Courtly, patient and sincere, which is the unsettling part. He spends few words and leaves the one that matters unsaid.
 
 ## Tobin Marsh
