@@ -9,3 +9,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-09 · saying · What the lay brothers say on the Steps when the wind gets under a cloak: "The mountain keeps its own count." Nobody can tell you what it means. Everybody says it anyway.
 - 2026-10-09 · overheard · In the kitchen passage: "The Captain's got his colour back." "He's got somebody's colour. Hope he gives it back before the Mender notices."
 - 2026-10-09 · body · The cold that got into his hands this morning has gone out of them. He flexes them on the blanket and they close all the way, without argument.
+- 2026-10-09 · ledger · From Wren's ledgers: Times the Captain was told to sit down today: 1. Times he sat: 1. (Underlined twice.)
