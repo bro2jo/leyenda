@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints.",
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints. Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers) and image_caption; the site shows it in the codex entry, tap to enlarge.",
   "places": [
     {
       "id": "saint-ysoldes",
@@ -15,7 +15,10 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The House of Menders at the top of the Thousand Steps, which takes the ones the lowland surgeons cannot fix and do not want to watch. Bells ring the hours; the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots, and the far ones hold the ones who no longer speak."
+      "description": "The House of Menders at the top of the Thousand Steps, which takes the ones the lowland surgeons cannot fix and do not want to watch. Bells ring the hours; the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots, and the far ones hold the ones who no longer speak.",
+      "image": "places/saint-ysoldes.webp",
+      "image_alt": "Saint Ysolde's: a grey stone house with a bell tower and lit windows on a snowy cliff above a sea of cloud, the Thousand Steps switchbacking down the cliff face, jagged snow peaks behind, and a thin road crossing a white valley far below.",
+      "image_caption": "Saint Ysolde's above the cloud, and the Thousand Steps below it."
     },
     {
       "id": "thousand-steps",

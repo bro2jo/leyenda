@@ -6,6 +6,8 @@ Reads (and nothing else):
   saga/characters/*.json                   the cast, as the page has shown it
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
+  saga/art/                                images the user supplies, published as files when places.json names one
+                                           (image: path under saga/art/, image_alt; only for a place already on the page)
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -48,8 +50,11 @@ DOCS = ROOT / "docs"
 CHRON = SAGA / "chronicle"
 CHARS = SAGA / "characters"
 STATE = SAGA / "state"
+ART = SAGA / "art"
 RULES = ROOT / "engine" / "rules.json"
-READ_ALLOW = [CHRON, CHARS, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
+IMAGE_TYPES = {".webp", ".png", ".jpg", ".jpeg"}
+IMAGE_MAX_BYTES = 3 * 1024 * 1024
+READ_ALLOW = [CHRON, CHARS, ART, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
               STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "chapters.csv", STATE / "rolls.csv", RULES]
 
 VERBOSE = "--verbose" in sys.argv
@@ -72,6 +77,42 @@ def read(path):
     if not any(path == a or a in path.parents for a in READ_ALLOW):
         raise SystemExit(f"build refuses to read {path}")
     return path.read_text(encoding="utf-8")
+
+
+def image_size(path):
+    """(width, height) of a WebP, PNG or JPEG from its header, or None. Standard library only."""
+    path = Path(path)
+    if not any(path == a or a in path.parents for a in READ_ALLOW):
+        raise SystemExit(f"build refuses to read {path}")
+    b = path.read_bytes()
+    le = lambda x: int.from_bytes(x, "little")
+    if b[:4] == b"RIFF" and b[8:12] == b"WEBP":
+        kind = b[12:16]
+        if kind == b"VP8X":
+            return 1 + le(b[24:27]), 1 + le(b[27:30])
+        if kind == b"VP8 " and b[23:26] == b"\x9d\x01\x2a":
+            return le(b[26:28]) & 0x3FFF, le(b[28:30]) & 0x3FFF
+        if kind == b"VP8L" and b[20] == 0x2F:
+            bits = le(b[21:25])
+            return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+        return None
+    if b[:8] == b"\x89PNG\r\n\x1a\n":
+        return int.from_bytes(b[16:20], "big"), int.from_bytes(b[20:24], "big")
+    if b[:2] == b"\xff\xd8":
+        i = 2
+        while i + 9 < len(b):
+            if b[i] != 0xFF:
+                i += 1
+                continue
+            marker = b[i + 1]
+            if marker in (0xD8, 0x01) or 0xD0 <= marker <= 0xD7:
+                i += 2
+                continue
+            seg = int.from_bytes(b[i + 2:i + 4], "big")
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                return int.from_bytes(b[i + 7:i + 9], "big"), int.from_bytes(b[i + 5:i + 7], "big")
+            i += 2 + seg
+    return None
 
 
 def esc(s):
@@ -688,6 +729,7 @@ class Site:
         self.check_world()
         self.chars = load_characters(self.registry, self.factions, self.place_by_id)
         self.pages = {}  # path -> html
+        self.assets = {}  # published path -> source file (binary, copied as is)
         loc = self.world.get("location") or {}
         self.current_place = loc.get("place") if isinstance(loc, dict) else None
         if self.current_place not in self.place_by_id:
@@ -700,6 +742,8 @@ class Site:
                     problem(f"places.json: place {p.get('id', '?')} is missing '{k}'")
             if p.get("on_page") and not p.get("description"):
                 problem(f"places.json: {p.get('id')} is on the page but has no description")
+            if p.get("image"):
+                self.place_image(p)
         for key, comp in (self.world.get("companions") or {}).items():
             if not isinstance(comp, dict):
                 problem(f"world.json: companions.{key} must be an object")
@@ -710,6 +754,49 @@ class Site:
         self.codex = self.parse_codex()
         self.eye = next((a["rank"] for a in self.darrow.get("arts", []) if a["id"] == "wardens_eye"), 0)
         self.linkers = self.build_linkers()
+
+    def place_image(self, p):
+        """Validate a place's image and register it as an asset at art/<path>."""
+        pid, img = p.get("id", "?"), str(p["image"])
+        src = (ART / img).resolve()
+        if ART.resolve() not in src.parents:
+            problem(f"places.json: {pid}.image '{img}' must be a path under saga/art/")
+            return
+        if not p.get("on_page"):
+            problem(f"places.json: {pid} has an image but is not on the page yet (an image would show it early)")
+            return
+        if src.suffix.lower() not in IMAGE_TYPES:
+            problem(f"places.json: {pid}.image '{img}' must be one of {', '.join(sorted(IMAGE_TYPES))}")
+            return
+        if not src.is_file():
+            problem(f"places.json: {pid}.image '{img}' does not exist under saga/art/")
+            return
+        if src.stat().st_size > IMAGE_MAX_BYTES:
+            problem(f"places.json: {pid}.image '{img}' is over {IMAGE_MAX_BYTES // (1024 * 1024)} MB; shrink it before publishing")
+        if not str(p.get("image_alt") or "").strip():
+            problem(f"places.json: {pid} has an image but no image_alt (what the picture shows, for screen readers)")
+        rel_path = src.relative_to(ART.resolve()).as_posix()
+        p["_image_path"] = f"art/{rel_path}"
+        p["_image_size"] = image_size(src)
+        self.assets[p["_image_path"]] = src
+
+    def place_figure(self, p, rel):
+        """The place's picture: shown full width, tap or click to see it whole (a plain link without JavaScript)."""
+        if not p.get("_image_path"):
+            return ""
+        href = rel + p["_image_path"]
+        wh = p.get("_image_size")
+        dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
+        cap = p.get("image_caption") or ""
+        alt = esc(p.get("image_alt", ""))
+        return (f'<figure class="place-art"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
+                f'<img src="{href}" alt="{alt}"{dims} loading="lazy" decoding="async"></a>'
+                f'<figcaption>{esc(cap)}{" · " if cap else ""}<span class="zoom-hint"><span class="t">Tap</span><span class="c">Click</span> to enlarge</span></figcaption></figure>')
+
+    def place_thumb(self, p, rel):
+        if not p.get("_image_path"):
+            return ""
+        return f'<img class="thumb" src="{rel}{p["_image_path"]}" alt="" loading="lazy" decoding="async">'
 
     # ---------------------------------------------------------------- helpers
     WORLD_GM_KEYS = ("chapter_plan", "core_beats", "flags", "factions")
@@ -1419,7 +1506,8 @@ class Site:
             src = self.scene_ref(fs, rel) if fs else ""
             tag = badge("visited", "good") if p.get("visited") else badge("not yet", "dim")
             name = p["name"] + (f" · {p['subtitle']}" if p.get("subtitle") else "")
-            places.append({"name": name, "tag": tag, "html": f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
+            places.append({"name": name, "tag": self.place_thumb(p, rel) + tag,
+                           "html": self.place_figure(p, rel) + f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         extra = f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>' if offmap else ""
         secs.append(sec("Places", f"{len(places)}", rows(places) + extra))
@@ -1649,7 +1737,7 @@ def run_checks(site, out_dir):
                     elif seg and seg != ".":
                         parts.append(seg)
                 target = "/".join(parts)
-            if target not in site.pages:
+            if target not in site.pages and target not in site.assets:
                 problem(f"{k}: broken link '{href}' (no such file {target})")
                 continue
             if frag and frag != "#" and target in ids and frag[1:] not in ids[target]:
@@ -1809,12 +1897,29 @@ details[open]>summary::after{content:"\2212"}
 .archive li{border-bottom:1px solid var(--rule)}
 .archive details{border:0;padding:9px 0}
 .archive summary{color:var(--ink);font-family:var(--body);font-size:.98rem;letter-spacing:0;align-items:center;justify-content:flex-start}
-.archive summary>span:first-child{flex:1 1 auto;min-width:0}
+.archive summary>span:first-child{flex:1 1 auto;min-width:0;display:flex;align-items:baseline}
 .archive summary .state{margin-right:4px}
-.archive summary .rn{font-family:var(--display);color:var(--brass);width:2.2em;display:inline-block;font-size:1.3rem;line-height:1}
+.archive summary .rn{font-family:var(--display);color:var(--brass);width:2.2em;flex:none;display:inline-block;font-size:1.3rem;line-height:1}
 .archive .dt-body{color:var(--dim);max-width:62ch;display:grid;gap:6px}
 .archive .dt-body p{line-height:1.5}
 .archive .m{font-size:.86rem;color:var(--faint)}
+
+/* place pictures: full width in the codex entry, tap to see whole */
+.archive summary .thumb{flex:none;width:56px;height:32px;object-fit:cover;border-radius:3px;border:1px solid var(--rule);margin-right:6px}
+.archive .dt-body:has(>.place-art){max-width:none}
+.archive .dt-body:has(>.place-art)>p{max-width:62ch}
+.place-art{margin:2px 0 6px}
+.place-art a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.place-art img{display:block;width:100%;height:auto}
+.place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
+.zoom-hint .c{display:none}
+@media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
+dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
+dialog.zoom[open]{display:flex;align-items:center;justify-content:center}
+dialog.zoom::backdrop{background:rgba(6,8,11,.92)}
+dialog.zoom img{max-width:100vw;max-height:100vh;max-height:100dvh;width:auto;height:auto;object-fit:contain;cursor:zoom-out}
+dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:rgba(15,18,23,.75);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
 .fac{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
 
 /* sealed */
@@ -2039,6 +2144,27 @@ if (box) {
   });
   apply();
 }
+/* picture zoom: a link with data-zoom opens its picture in a full-screen dialog (without this file the link opens the picture) */
+var zoomLinks = document.querySelectorAll("a[data-zoom]");
+if (zoomLinks.length && typeof HTMLDialogElement === "function") {
+  var dlg = document.createElement("dialog");
+  dlg.className = "zoom";
+  dlg.innerHTML = '<button class="x" type="button" aria-label="Close">×</button><img alt="">';
+  document.body.appendChild(dlg);
+  var big = dlg.querySelector("img");
+  dlg.addEventListener("click", function(){ dlg.close(); });
+  dlg.addEventListener("close", function(){ big.removeAttribute("src"); });
+  Array.prototype.forEach.call(zoomLinks, function(a){
+    a.addEventListener("click", function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) { return; }
+      e.preventDefault();
+      var img = a.querySelector("img");
+      big.src = a.getAttribute("href");
+      big.alt = img ? img.alt : "";
+      dlg.showModal();
+    });
+  });
+}
 if (reduce) { document.documentElement.classList.add("reduce"); }
 })();
 """
@@ -2061,6 +2187,10 @@ def main():
         p = tmp / k
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(v, encoding="utf-8")
+    for k, src in site.assets.items():
+        p = tmp / k
+        p.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, p)
     if PROBLEMS and not FORCE:
         print(f"BUILD FAILED: {len(PROBLEMS)} problem(s). docs/ left untouched.", file=sys.stderr)
         for p in PROBLEMS:
@@ -2072,7 +2202,7 @@ def main():
     shutil.copytree(tmp, DOCS)
     shutil.rmtree(tmp, ignore_errors=True)
     n_pages = sum(1 for k in site.pages if k.endswith(".html"))
-    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters → docs/" + (
+    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {len(site.assets)} image{'' if len(site.assets) == 1 else 's'} → docs/" + (
         f"  (with {len(PROBLEMS)} problem(s), forced)" if PROBLEMS else "  · all checks passed"))
     if PROBLEMS:
         for p in PROBLEMS:

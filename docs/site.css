@@ -150,12 +150,29 @@ details[open]>summary::after{content:"\2212"}
 .archive li{border-bottom:1px solid var(--rule)}
 .archive details{border:0;padding:9px 0}
 .archive summary{color:var(--ink);font-family:var(--body);font-size:.98rem;letter-spacing:0;align-items:center;justify-content:flex-start}
-.archive summary>span:first-child{flex:1 1 auto;min-width:0}
+.archive summary>span:first-child{flex:1 1 auto;min-width:0;display:flex;align-items:baseline}
 .archive summary .state{margin-right:4px}
-.archive summary .rn{font-family:var(--display);color:var(--brass);width:2.2em;display:inline-block;font-size:1.3rem;line-height:1}
+.archive summary .rn{font-family:var(--display);color:var(--brass);width:2.2em;flex:none;display:inline-block;font-size:1.3rem;line-height:1}
 .archive .dt-body{color:var(--dim);max-width:62ch;display:grid;gap:6px}
 .archive .dt-body p{line-height:1.5}
 .archive .m{font-size:.86rem;color:var(--faint)}
+
+/* place pictures: full width in the codex entry, tap to see whole */
+.archive summary .thumb{flex:none;width:56px;height:32px;object-fit:cover;border-radius:3px;border:1px solid var(--rule);margin-right:6px}
+.archive .dt-body:has(>.place-art){max-width:none}
+.archive .dt-body:has(>.place-art)>p{max-width:62ch}
+.place-art{margin:2px 0 6px}
+.place-art a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.place-art img{display:block;width:100%;height:auto}
+.place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
+.zoom-hint .c{display:none}
+@media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
+dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
+dialog.zoom[open]{display:flex;align-items:center;justify-content:center}
+dialog.zoom::backdrop{background:rgba(6,8,11,.92)}
+dialog.zoom img{max-width:100vw;max-height:100vh;max-height:100dvh;width:auto;height:auto;object-fit:contain;cursor:zoom-out}
+dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:rgba(15,18,23,.75);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
 .fac{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
 
 /* sealed */
