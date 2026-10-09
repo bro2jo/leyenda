@@ -137,7 +137,12 @@ When a choice lands on a companion's pole and they witnessed it or learn of it, 
 | Hollis | **Mercy**, **Hearth** | He has seen enough of the beaten and knows which side of the list he is on, and he spends himself for the men he knows by name, never for a banner. |
 | Rae (to come: `companions_to_come`, `--pending` until q1.cart stage 3) | **Banner**, **Candor** | A carter carries for everyone on the road or for no one: she has hauled the far cots' families and the Confessors' oxen alike, and the only lie that ever cost her anything was read from a bell-house step by a herald. The one companion who pulls against Hollis's Hearth, so that choosing her costs him. |
 
-Later companions (Ysra, Ilse, and Ash's bond if it ever counts) get their row here and their `prefers` in `plan.json` the day they arrive (`saga.py plan companion arrive <id>`), not before. Rae's `prefers` already sit in `companions_to_come`.
+| Ysra (to come: Book II) | **Sworn**, **Candor** | A duelist who wants an order she can respect: a man who keeps the oaths he made to men, and says plainly which ones. |
+| Ilse (to come: Book III) | **Flint**, **Banner** | A war-leader who has buried people for mercy's sake and fights for a whole people, not a friend. |
+
+Ysra, Ilse and Rae wait in `companions_to_come` with these `prefers` (so the ledger rules that read their approval are known terms); `saga.py plan companion arrive <id>` moves each to `world.json` the day they step beside him. Ash's bond is its own thing.
+
+**Approval with teeth (every companion, every Book).** `consequences.json → rules`: Maelis `r.t8.early` (≥ 60), `r.b4.maelis_lets_him_teach` (≥ 50), `r.b5.permitted_early` (≥ 70), and the finale's `r.finale.return`; Hollis `r.b1.seated_blade` (≥ 40), `r.b2.hollis_sober` (≥ 45), `r.b4.hollis_lives` (≥ 50 with `hollis_truth`); Wren `r.t1.wren_stays` (≤ −20: a cost on company), `r.b2.wren_reads` (≥ 40), `r.b3.wren_tells` (≥ 55), `r.b6.wren_count` (≥ 60); Rae `r.b2.rae_tells` (≥ 30), `r.rae.ledger` (≥ 40), `r.b5.rae_second` (≥ 50), `r.rae.form`, `r.rae.parts` (≤ −25); Ysra `r.b3.ysra_turns` (≥ 30, spared); Ilse `r.b4.clans_ride` (≥ 40, told). Each decides the shape of a later scene, never a death except where the arc already says so.
 
 ## Hidden Reckonings (what the gating hides, and why the numbers are what they are)
 NPC numbers are set by the GM for canon consistency; they are never derived from the real logs. Scale: Darrow at Level 4 is Might 11 · Vigor 8 · Finesse 9 · Resolve 9; the Knight Who Fell (a veteran captain at full Grace) was 15 · 15 · 18 · 12.

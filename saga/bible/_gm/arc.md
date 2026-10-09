@@ -13,7 +13,7 @@ Every Book has: a **question**; **core beats** in order (`bN.K`), which all happ
 
 Days inside a chapter are **colour, never content**: the slot's content is planned; the day's real deeds set only warmth or cold. Outcome is set only at the climax, by the tier. Missed days get no scene; the next scene opens on one planned off-page world move.
 
-**Book I, compressed (likely).** Phase 4 can arrive as early as the week of 10/18, so Book I may be three chapters, not five. The shape that keeps every reveal and nobody rushed: **Chapter 2** = b1.2 (the Grey Cot) with q1.letters stage 1, q1.cart stage 1 and q1.kennel's first stage; **Chapter 3** = b1.3 and b1.4 folded (the undercroft found and the almoner's satchel named in the same week; its climax is the shard under the far cots and Anselm's choice); **b1.5 becomes the transition's climax** (Old Mercy held on the Knot's week, the bell-tower stair and then the Steps down in one night and one dawn), with `tN.<road>` written straight after it. Quests not run (q1.wager, q1.steam, q1.farcots, q1.ledger) are dropped with one line or re-skinned on the road (q1.ledger → b2.5; q1.steam → a parley at the Coldmere inn). If the gate slips past 10/25, the five-chapter shape stands.
+**Book I, compressed (likely).** Phase 4 can arrive as early as the week of 10/18, so Book I may be three chapters, not five. The shape that keeps every reveal and nobody rushed: **Chapter 2** = b1.2 (the Grey Cot) with q1.letters stage 1, q1.cart stage 1 and q1.kennel's first stage; **Chapter 3** = b1.3 and b1.4 folded (the undercroft found and the almoner's satchel named in the same week; its climax is the shard under the far cots and Anselm's choice); **b1.5 becomes the transition's climax** (Old Mercy held on the Knot's week, the bell-tower stair and then the Steps down in one night and one dawn), with `tN.<road>` written straight after it. Quests not run (q1.wager, q1.steam, q1.farcots, q1.ledger) are dropped with one line or re-skinned on the road (q1.ledger → b2.5; q1.steam → a parley at the Coldmere inn). If the gate slips past 10/25, the five-chapter shape stands. **Every later Book compresses the same way** when its gate comes early: the last core beat becomes the transition's climax, the one before it folds into the chapter before, and the floating quests drop first (re-skinned later on the road). When a gate is **slow**, the floating quests run in any Book (`q1.snow`, `q1.hollownight`, `q1.door`, `q1.blade`, `q1.hand`, `q3.lamps`); if a Book still runs out of planned days, write a new `qN.` quest from that Book's open threads rather than stretching a core beat thin. A story longer than the gates is never a problem; a story that runs ahead of them is.
 
 | Book | Knots tied when it opens | Real-world phase | Rough real window (estimate only) |
 |---|---|---|---|
@@ -78,6 +78,30 @@ Existing (`plan.json`): `reckoning_awakened`, `knows_wardens_exist`, `ash_met`, 
 - `stair_watched` — Darrow told no one and watched the stair (b1.3, option 3): Wren catches Anselm in any tier, and the Prior learns the shard was kept from her (menders −5).
 - `marrant_told` — Darrow told Marrant what the Reckoning showed him (b1.5, option 1): Book II's writs name "the ember-mad captain", and Ysra has been told what to look for.
 - `wren_blooded` — Wren went down after the camp with a knife that was not for show (b1.5, option 3): she comes back changed, and b3.4 she reads alone.
+- `hidden_among_wounded` — Darrow let the Prior answer for the House (b1.1, option 2): Marrant counts the cots, and the House reads Benedek's Hollowing as the price of a captain who hid.
+- `wren_spied` — Wren was sent to the camp (b1.1, option 3): she knows its layout and Marrant's name a day early, and Marrant knows her face.
+- `stair_by_wren` / `stair_by_prior` — how the undercroft stair was taken (b1.2, options 2 and 3; neither set means with Maelis's leave).
+- `anselm_double` — the almoner fed Marrant false word (b1.4, option 3): Marrant moves a night late and a man short.
+- `bell_rung_for_marrant` — Darrow rang Old Mercy for the Confessor as he left (b1.5, option 2): the Prior's writ of sanctuary comes in every road, and a Mender house that rings for him is one Marrant cannot touch.
+- `road_east` — the company took the river road east (b2.1): q2.lantern's mill is on the way, and the mill bridge is reached from among the refugees.
+- `vane_messaged` — Ysra went back to Vane with a message (b2.2, option 3): Vane answers it (q3.needle carries his reply; b5.4 he quotes it).
+- `millers_sent` — the millers were sent to Saint Ysolde's (b2.3): they come to the Gathering with the House's word, or are turned back by a writ.
+- `stones_told` — Darrow told the company what the stones say (b2.5): Ilse hears it from him and tells freely; untold, the host doubts Maelis's teaching in b4.2.
+- `sword_yielded` — the sword was given up at the holdfast door (b3.1): the night hunt is open to him as kin.
+- `ilse_told` — Darrow told Ilse what he saw on the west bank (b3.2): her riders are at the river for the leap in the main road too.
+- `word_carried` — he carried the word, not the wounded (b3.3): a second holdfast fights the Long Night; else the clans' children keep his name in a rhyme.
+- `elspeth_written` — Darrow wrote the far cot's name on the lamp-post in his own hand (b3.4): the Faithless who come to the Gathering have heard of it; the Confessors' ledger-keepers add him to another list.
+- `stayed_thaw` — he stayed with the clans through the thaw (b3.5): the clans ride with him in the main road; the Marches' levies have a month's start.
+- `bell_taken` — the Mender house's bell went with the host (b4.1): the host has a bell of its own for Calden.
+- `taught_openly` — the forms were taught in the open yard (b4.2): more Reckonings, and the Book IV temptation's captain was one of them.
+- `maelis_stood_with` — Darrow stood beside Maelis when she told it (b4.3): Marrant's parley loses its lever and the host takes her Permitted as law.
+- `turned_for_hollis` — the host turned back for Hollis (b4.4): he is carried out by Darrow's hand, and the Confessors' van reaches the bank.
+- `marched_early` — the host marched for the ford without wintering (b4.5): bad roads and shut villages, and a Second Lance not yet full.
+- `old_banner` — the march went under the Ninth's old banner (b5.1): the Ninth's nineteen come to it, and the Second knows it from across the water.
+- `heartbeats_told` — Darrow told the host what he saw from the water (b5.2): it does not break when he falters on the stones.
+- `turn_shown` — Vane's herald saw the turn (b5.3): Vane denies him the stone and must be brought to it.
+- `bells_rung` — Calden's bells rang sanctuary all at once (b6.1): the Oathsworn on the stair have heard it, and the city watches.
+- `sworn_carried` — the Grace-sworn were carried up the Spire (b6.2): they are the first to fall when the Stone is shattered, or the first returned.
 
 # Book I — The House of Menders
 
@@ -99,7 +123,7 @@ Chapter 1. **Question:** will the House stand between him and the list? Scene 2:
 - *Hard-won:* the bell rings on the last name; Marrant camps smiling; Darrow holds his face through the reading and loses it once, after, where only Wren sees.
 - *Costly:* Sister Pell's hands are slow and two grey cloaks are inside the gate before the bell; a lay brother is knocked down; Marrant goes back down with a face he did not have before: Maelis's.
 - *Setback:* the bell rings only because Mother Ione climbs and rings it herself; Marrant leaves one man inside the gate "as a guest under the law of bells," and the House has a Confessor at its table.
-**Choice:** 1. Step forward and answer to his name (candor +2; Maelis approves, Wren does not; `named_himself`). 2. Stay hidden among the wounded and let the Prior answer for the House (guile +2; Wren approves). 3. Send Wren to spy on the camp *[Guile 1]* (guile +3; Wren approves; risky).
+**Choice:** 1. Step forward and answer to his name (candor +2; Maelis approves, Wren does not; `named_himself`). 2. Stay hidden among the wounded and let the Prior answer for the House (guile +2; Wren approves; `hidden_among_wounded`). 3. Send Wren to spy on the camp *[Guile 1]* (guile +3; Wren approves; risky; `wren_spied`). **Downstream (b1.2):** with `named_himself`, Marrant addresses him by rank at the gate and the writ's demand becomes personal (b1.5: the Prior's refusal is of a named man; Book II: the Lowmarch has heard the captain stood up, faithless +5); with `hidden_among_wounded`, Marrant has counted the cots from the court and the House's lay brothers read Benedek's Hollowing as the price of a captain who hid (menders −5, and Hollis says so once); with `wren_spied`, Wren brings up the camp's layout and the Confessor's name a day early, and he has seen her face: in b1.2 he asks for "the runner" as well as the Mender.
 
 ## b1.2 — The Grey Cot
 Chapter 2. **Question:** who did this, and from where? Ser Benedek Orrin is found Hollowed at dawn: breathing, empty, frost on his lips, a chip of black glass under his tongue (`benedek_hollowed`). Marrant, from the lower court, names it "Ember witchcraft" and asks for the Mender by title: he is fishing for Maelis. The House is frightened; the kitchen counts loaves. Darrow investigates from his cot with Wren as his legs: who passed the far cots in the night, which doors were barred, what the novices heard. Hollis will not leave Benedek's side and sits the first watch with the boy's hand in his.
@@ -108,7 +132,7 @@ Chapter 2. **Question:** who did this, and from where? Ser Benedek Orrin is foun
 - *Hard-won:* the stair is found; half the House still believes Marrant, and Maelis is asked, politely, to stop treating the far cots.
 - *Costly:* a lay brother swears to Marrant he saw the Mender at Benedek's cot in the night; Mother Ione must put her own word against his at the gate.
 - *Setback:* the Prior forbids the undercroft outright and Marrant's camp raises a priest's tent; the lower court is becoming a chapel, and the House begins to split.
-**Choice:** 1. Ask Maelis to take him down herself and go on her terms (sworn +2: his rank, his hall, and he puts both under her count: one step at a time, a hand on Wren's shoulder, her right to say stop; she may still say no, and then he waits). 2. Send Wren down with a lamp (guile +2; Hollis disapproves). 3. Ask Mother Ione for the key and wait (mercy +2; Hollis approves).
+**Choice:** 1. Ask Maelis to take him down herself and go on her terms (sworn +2: his rank, his hall, and he puts both under her count: one step at a time, a hand on Wren's shoulder, her right to say stop; she may still say no, and then he waits). 2. Send Wren down with a lamp (guile +2; Hollis disapproves; `stair_by_wren`). 3. Ask Mother Ione for the key and wait (mercy +2; Hollis approves; `stair_by_prior`). The flags carry the shape into b1.3 and beyond: `stair_by_wren` leaves Wren alone with the murals first (T6, and q1.ledger's lie comes easier); `stair_by_prior` binds Darrow to the Prior's condition, so b1.3's third option is a lie to her face and b1.4's Setback lands on her roof.
 
 ## b1.3 — The Undercroft
 Chapter 3. **Question:** what is under the House? The stair is taken the way the b1.2 choice set it: (1) with Maelis's leave, at her count, one hand on Wren's shoulder, Hollis's voice from the top telling him to look at the wall and not the floor; (2) Wren goes down first with the lamp and he follows at dawn the same way, on what she reported; (3) the Prior's key opens the door and Maelis walks him down herself. In no shape does he go down against the Mender's word, and the stair never costs the knee: "every step down is a negotiation" is texture, not stake. Each shape leaves its own mark: (1) costs him a day of asking and buys Maelis's first unforced yes (thread 7 warms: she knows the way down too well); (2) Wren is alone with the murals first and leaves one line out of her report (T6 plant; `wren_script_seen` stays false); (3) the Prior's key comes with her condition that she is told everything found below, so the b1.3 choice's option 2 becomes a lie to her face. Below: a Warden hall, the First Precept over the door, murals of the Reckoning, and in an alcove beneath the infirmary floor a **tithe-shard**, a sliver of Oathstone set in fresh mortar, frost spreading from it across the stone, drawing on the Grace-sworn wounded above (`shard_found`). Maelis walks the dark without a lamp (coming down after them in shapes 1 and 2; leading, in shape 3).
@@ -126,7 +150,7 @@ Chapter 4. **Question:** what do you do with a good man who did a terrible thing
 - *Hard-won:* Wren catches him at the winch-cage at dusk with the satchel; he does not run.
 - *Costly:* a second shard is already under the far cots when he is found, and Darrow chooses with the floor still cold.
 - *Setback:* Marrant has the confession first, read aloud at the gate in Mirren's hand, and calls Anselm down the Steps; Darrow's choice is whether to let him go.
-**Choice (sets `anselm_spared`):** 1. Expose him to the Prior and the House (candor +3; Maelis approves; `anselm_spared=true` if the House keeps him). 2. Shield him and say nothing of the satchel (mercy +3; Hollis approves; `anselm_spared=true`). 3. Use him to feed Marrant false word *[Resolve 10]* (guile +3; Wren approves; risky; `anselm_spared=false` if Marrant learns it). Giving him to Marrant is never an option Darrow is offered; if the Setback hands him over, it is Marrant's doing and `anselm_spared=false`.
+**Choice (sets `anselm_spared`):** 1. Expose him to the Prior and the House (candor +3; Maelis approves; `anselm_spared=true` if the House keeps him). 2. Shield him and say nothing of the satchel (mercy +3; Hollis approves; `anselm_spared=true`). 3. Use him to feed Marrant false word *[Resolve 10]* (guile +3; Wren approves; risky; `anselm_spared=false` if Marrant learns it; `anselm_double` if he does not). Giving him to Marrant is never an option Darrow is offered; if the Setback hands him over, it is Marrant's doing and `anselm_spared=false`. **Downstream (b1.5):** with `anselm_double`, Marrant moves a night later than he meant to and a man short (one rode for Calden with the false word), so Sister Pell is warned and the stair is held against five, not six; with `anselm_spared=false`, the almoner's cell is empty at b1.5 and the House fights with one fewer pair of hands and a grief; exposed (option 1), the Prior's law has a case to try and Marrant's writ gains a line either way.
 
 ## b1.5 — Old Mercy
 Chapter 5 (or the last chapter before the Knot). **Question:** can a knight who cannot stand hold a stair? Marrant moves before Vane arrives: Sister Pell is hurt, the bell falls silent, and sanctuary lapses at dusk unless it rings. Darrow holds the bell-tower stair **seated** (the Seated Blade, taught by Hollis; named on the page here if not before) while Wren climbs to ring; Hollis holds the tower door below from his chair; Ash, if met, holds the lower court's dog. Boss: Marrant and his six. Dice via `roll --chapter N`; the tier sets the modifier.
@@ -135,7 +159,7 @@ Chapter 5 (or the last chapter before the Knot). **Question:** can a knight who 
 - *Hard-won:* it rings on the last of the light; one of the six goes over the stair rail and lives; Marrant leaves with his writ and a limp.
 - *Costly:* it rings a breath after dusk, and only Mother Ione's reading of the law ("the sun is down when the Prior says it is") holds; Marrant's writ gains a line against her.
 - *Setback:* it rings, but Marrant is inside the tower with the bell when it does; the law is argued, not won; he goes down leaving a man and a paper, and the Prior signs it to keep her roof (sets up `t1.low`).
-**Choice:** 1. Go down to the lower court at dawn and tell Marrant, before his men, what the Reckoning showed him (banner +2: he makes himself the Confessors' quarry so the writ stops at his name, and every stranger on every list in the Lowmarch below has a captain standing in front of him for once; Maelis disapproves, because it tells a Confessor what the Reckoning is; `marrant_told`). 2. Let him go and ring the bell for him as he leaves, as the law says (sworn +2; Mother Ione's road). 3. Have Wren follow his camp down with a lamp and a knife, and the knife is not for show *[Guile 4]* (flint +3; risky; `wren_blooded`). **Downstream:** with `marrant_told`, Book II's writs name "the ember-mad captain" and Ysra (b2.2) has been told what to look for: she tests him with a lie on the weir, and the Warden's Eye check decides whether he sees it coming; with `wren_blooded`, Wren comes back from the camp with a knife she has used or has not, and will not say which; her lean to Guile shows in every count after, and in b3.4 she reads the page alone whatever the tier.
+**Choice:** 1. Go down to the lower court at dawn and tell Marrant, before his men, what the Reckoning showed him (banner +2: he makes himself the Confessors' quarry so the writ stops at his name, and every stranger on every list in the Lowmarch below has a captain standing in front of him for once; Maelis disapproves, because it tells a Confessor what the Reckoning is; `marrant_told`). 2. Let him go and ring the bell for him as he leaves, as the law says (sworn +2; Mother Ione's road; `bell_rung_for_marrant`). 3. Have Wren follow his camp down with a lamp and a knife, and the knife is not for show *[Guile 4]* (flint +3; risky; `wren_blooded`). **Downstream:** with `marrant_told`, Book II's writs name "the ember-mad captain" and Ysra (b2.2) has been told what to look for: she tests him with a lie on the weir, and the Warden's Eye check decides whether he sees it coming; with `wren_blooded`, Wren comes back from the camp with a knife she has used or has not, and will not say which; her lean to Guile shows in every count after, and in b3.4 she reads the page alone whatever the tier; with `bell_rung_for_marrant`, Mother Ione gives him the Prior's writ of sanctuary in every road of t1, not only the high one, and Coldmere's chapel rings for the company in b2.1 because a Confessor who was rung down the Steps cannot lawfully touch a house that rings.
 
 ## q1.kennel — The Kennel
 - **priority:** required (sets `ash_met`; Ash's bond then moves to `world.json` with `plan companion arrive ash`)
@@ -311,6 +335,42 @@ The dusk bell catches her at the top: the Steps after dark are for lay brothers 
 - **spine link:** b1.2 (the satchel), b1.4 (Mirren's letter comes up her cage), b1.5 (the rope cut), t1 (the cart at the bottom).
 - **can run when:** Chapter 2 onward, Marrant camped (b1.1 done); stage 1 best in Chapter 2 beside q1.letters stage 1; not in a storm (q1.snow has its own cage night).
 
+## q1.blade — The Seated Blade
+- **priority:** floating (any Book while Hollis is with him, before b4.4; at the House, a cloister; on the road, a cart-tail or a barn)
+- **hook:** "You'll never win on your feet, Captain. Sit down and I'll teach you to win sitting." Two chairs, two wooden swords, and a one-legged man who learned it recently and badly.
+### stage 1
+The first lesson is to stop looking at the floor. Wren as notary, the kitchen watching from the door; Darrow loses to a man with one leg and laughs for the first time since the river. Ends: Hollis, winded, "Again tomorrow. Bring the stick; you'll want something to hit me with."
+### stage 2
+The bind and the hold: a blade held is a blade not swinging. Hollis's chair tips and he saves it with the sword, which is the lesson. Ends on the micro.
+### stage 3
+The first form done right, and Hollis names it on the page: *the Seated Blade*. He does not say where he learned it. Ends: Wren writes the Art's name in her ledger under "things the captain can do," and then, after a moment, under "things Ser Hollis can do."
+### compressed
+1. Stages 1 and 2 in one (the floor, the bind, the micro). 2. The form and the name.
+### micro
+- **at:** stage 2 · **ask:** Hollis wants to be hit properly, "not like a Mender." What does Darrow do? · **axis:** mercy_flint
+- **options:** 1. "No." (mercy +1) · 2. Hit him properly. (flint +1) · 3. Let Wren call it. (0)
+- **default:** 1
+- **payoff:** the Seated Blade named on the page (the sheet already lists it); Hollis's approval; the stair in b1.5 and the ford-house in b4.4 fought with a named Art.
+- **spine link:** b1.5, b4.4, b5.3.
+- **can run when:** Hollis present and sober enough; any chapter from 2; `r.b1.seated_blade` decides whether stage 3 comes before b1.5 or on the stair itself.
+
+## q1.hand — The Measured Hand
+- **priority:** floating (any Book; at the House, the ward and the well; on the road, a camp)
+- **hook:** Hollis sets a post across the ward and hands him three knives: "A thing thrown right is a thing you didn't have to walk to."
+### stage 1
+Knives into the post from a chair; a pebble into the well-bucket; Wren keeps the tally and the lay brothers run a book. Ends: Hollis names it on the page, *the Measured Hand*, and sets a water-butt between Darrow and the post for tomorrow.
+### stage 2
+The coin onto the sill; the throw over the butt that drops behind it (*Overwall*, named when it lands); the kitchen's wager paid in bread. Ends on the micro and the dusk bell.
+### compressed
+1. Both stages in one: the post, the butt, the micro.
+### micro
+- **at:** stage 2 · **ask:** Wren wants the tally in the ledger where the lay brothers can read it. What does Darrow say? · **axis:** hearth_banner
+- **options:** 1. "Let them see it." (banner +1) · 2. "Keep it between us." (hearth +1) · 3. Tear the page out. (0)
+- **default:** 1
+- **payoff:** the Measured Hand and Overwall named on the page; Hollis teaching from a chair (thread 13); a thrown thing on the stair (b1.5) and across the hall in Book II.
+- **spine link:** b1.5, b2.3.
+- **can run when:** Hollis present; any chapter from 2; weather allowing (the ward).
+
 ## rae.tether — The Tether
 - **priority:** floating and **standing** (`plan.json → quests.rae.tether.standing`): it does not count toward the two-live limit and finishes when the Ledger says, not within two chapters. **A stage is planned only once the engine has unlocked it** (`darrow.py sheet` → THE TETHER · N of V; `check` refuses a slot ahead of it). One scene per stage, in the next free quest slot of whichever Book it lands in, re-skinned to wherever the company is. The day's deeds colour it like any scene; approval sets whether she is warm or careful in it. The scene closes with the Reckoning box line `The Tether: **<name>**.`, and the first of them is the only place the page explains it: a second thread, read on his palms beside the first, counting something that is not his alone.
 - **hook:** The script on his hands has begun to count something that is not his alone.
@@ -371,7 +431,7 @@ Levies on the Holloway, villages empty or barred, a Hollowed knight walking east
 - *Hard-won:* they sleep in a barn and leave before the bell; Ash gives them away once and is forgiven.
 - *Costly:* the levy sergeant knows Hollis's name and they leave Coldmere at a walk with the village watching.
 - *Setback:* a Confessor's writ is nailed to the inn door with his epithet on it (if he has earned one; else "the stiff-kneed captain"), and the Lowmarch knows what he is called before he does.
-**Choice:** go east along the river road (banner +2: toward the refugees), or north by the mill tracks (hearth +2: safest for his own).
+**Choice:** go east along the river road (banner +2: toward the refugees; `road_east`), or north by the mill tracks (hearth +2: safest for his own). **Downstream:** east, q2.lantern's river mill lies on the way and the mill bridge (b2.3) is reached from among the refugees, so the company holds the near end and Rae's cart is the barricade from the start; north, the company comes down on the mill from above and holds the far end, q2.inn runs at the mill-track inn, and Hollis's low-road arrival matters less.
 
 ## b2.2 — The Needle
 Ysra Tal finds him on a frozen weir. He cannot match her footwork and does not try: Stillwater Stance, Might, he survives by refusing to move, and she cannot understand a man who will not be moved and will not kneel. She has orders to take him alive and does not know why. **Plants:** T2/T3 ("the Second was told to hold the west bank that morning; everyone knew the Grace would be thin"); her Finesse, which the Reckoning shows him in full. Thread 1.
@@ -379,7 +439,7 @@ Ysra Tal finds him on a frozen weir. He cannot match her footwork and does not t
 - *Hard-won:* he holds; Maelis sews him afterward; Ysra takes a wound she did not expect from a seated man.
 - *Costly:* he holds, but Wren is taken for an hour and talks her way out, and Ysra now knows the girl's face.
 - *Setback:* he holds only because Ash takes Ysra's blade hand; Ysra withdraws with the dog's blood on her and a grudge.
-**Choice (sets `ysra_spared`):** spare her when she is down (mercy +3; `ysra_spared=true`), strike (flint +3; `ysra_spared=false`), or let her go with a message for Vane (candor +2; `ysra_spared=true`).
+**Choice (sets `ysra_spared`):** spare her when she is down (mercy +3; `ysra_spared=true`), strike (flint +3; `ysra_spared=false`), or let her go with a message for Vane (candor +2; `ysra_spared=true`; `vane_messaged`). **Downstream:** spared, q2.needle and q3.needle open and `r.b3.ysra_turns` decides whether she comes over; struck, she is not on the weir again and Vane sends a column instead of a duelist (b2.5's Setback content is available in any tier); messaged, Vane answers in his own hand through her (q3.needle carries the reply; b5.4 he quotes it beside `vane_answered`).
 
 ## b2.3 — The Mill at Coldmere
 Refugees at a mill bridge over a Wend tributary, drawn up the same wrong way as the clans at the ford: carts behind, children shushed, everyone looking back. Something is coming through the fields. Darrow holds the bridge so they can cross: the mirror of Harrow Ford, and this time he holds. Rae's cart is the barricade, and she reads the line before he says it (`rae.road`). On the low road Hollis rides in at the worst moment and holds the far end from the saddle. **Plants:** T5 (the shape of the line); the thing in the fields is Hollowed, many of them (T4). Threads 3, 11 (he says Tobin's name here if ever).
@@ -387,7 +447,7 @@ Refugees at a mill bridge over a Wend tributary, drawn up the same wrong way as 
 - *Hard-won:* every cart crosses; the bridge is held past dark and Darrow is carried off it.
 - *Costly:* every cart crosses; the mill burns, and the millers have nowhere to go but with him.
 - *Setback:* every cart crosses; the Hollowed cross too, and the company runs north for two days with them behind.
-**Choice:** stay with the millers (hearth +2) or send them to Saint Ysolde's (banner +2; on the low road, to a House under a Confessor's writ).
+**Choice:** stay with the millers (hearth +2) or send them to Saint Ysolde's (banner +2; `millers_sent`; on the low road, to a House under a Confessor's writ). **Downstream:** kept, the millers walk with the company to the ruin and Ysra's men find the lamps the easier for it (b2.5), and they are at the Gathering from its first day (b4.1); sent, they reach the Gathering with Mother Ione's word and the House's bread, or, under `sanctuary_writ`, are turned back at the Steps and the news of it comes to the host as a wound.
 
 ## b2.4 — Hollis's Writ
 Hollis takes the paper out of the leg and looks at the wax at last: Vane's seal (T3 revealed). The order to charge, into a river the Second had been told to hold. He asks Darrow what he saw from the water. **Plants:** none new; this is a payoff of the interlude, q1.letters and b1.1. Threads 1, 2 paid off.
@@ -403,7 +463,7 @@ A ring of broken Oathstone in a frozen marsh, older than Calden. Darrow reads wh
 - *Hard-won:* they read enough; Ysra's men find the lamps and the reading ends early.
 - *Costly:* they read it with the Confessors' censer smoke already on the wind.
 - *Setback:* Marrant reaches the ruin first and has broken two stones; the rest must be read in his hearing.
-**Choice:** tell the company what the stones say (candor +2) or carry it alone until he knows what to do with it (guile +2).
+**Choice:** tell the company what the stones say (candor +2; `stones_told`) or carry it alone until he knows what to do with it (guile +2). **Downstream:** told, Ilse hears it from his mouth in b3.2 and tells her own part freely, and Maelis in b4.2 teaches a yard that already believes; carried alone, Ilse makes him earn her part, and in b4.2 the host doubts until Maelis says it for him, so the first Reckonings come slower in any tier.
 
 ## q2.inn — The Holloway Inn
 - **priority:** optional · **hook:** A dice night at an inn, and a Grace-burned knight who re-kneels at every roadside field-stone and lifts a cart off a child with hands going colder each time (the Book II temptation).
@@ -444,31 +504,31 @@ The Knot ties at night, Permitted said at a run. The First Run is a rout, not a 
 Into the Thornwild in deep winter. The clans' watch finds them; a chase through old forest that Darrow can finally run; Rae's few clan words and her grandmother's name buy the first hearing (`rae.road`). **Plants:** the clans' burned Oathstone chips worn as charms against the Hollowed (T4); every clan door has a lamp. Thread 5.
 - *Triumph:* the watch takes them in as guests of the bridge. · *Hard-won:* taken in as prisoners, fed anyway.
 - *Costly:* two days running before a parley. · *Setback:* taken in after Ash is hurt; the clans want the dog, not him.
-**Choice:** give up his sword at the holdfast door (sworn +2) or keep it and stand outside (unsworn +2).
+**Choice:** give up his sword at the holdfast door (sworn +2; `sword_yielded`) or keep it and stand outside (unsworn +2). **Downstream:** yielded, he is a guest and the night hunt (q3.hunt) is open to him as kin; kept, he sleeps outside the wall with Ash and Rae's cart, the hunt costs a duel first, and Ilse tells her story (b3.2) alone rather than by the fire whatever the tier.
 
 ## b3.2 — Ilse of Corrach
 The red-handed woman, named at last (`ilse_named`). Why she saved him: "Someone from the Vaelmark had to see, and you were the one looking." Her Reckoning in full, if his Eye is high enough. **Plants:** T5 (the carts); T4 (what the grey figures were). Thread 5 paid off.
 - *Triumph:* she tells it by the fire with the clan listening. · *Hard-won:* she tells him alone and asks him to carry it.
 - *Costly:* she tells him after a duel he loses with grace. · *Setback:* she tells him because the Tide is a day off and there is no time not to.
-**Choice:** tell her what he saw on the west bank (candor +2) or hold it until he knows her price (guile +2).
+**Choice:** tell her what he saw on the west bank (candor +2; `ilse_told`) or hold it until he knows her price (guile +2). **Downstream:** told, her riders are at the river for the leap in the main road as well as the high (t3), and `r.b4.clans_ride` is reachable; held, she keeps her own price and the Long Night (b3.5) is fought with the clans beside him but not behind him.
 
 ## b3.3 — The Hollow Tide
 T4 and T5 revealed: the Hollowed are the drained, the Vaelmark's own; Harrow Ford was a slaughter of people fleeing them. A night action at the river line: Darrow runs between two palisades and holds neither; he carries. **Plants:** the Tide turns toward anyone Grace-sworn first (b4.2). Thread 3, 4 paid off.
 - *Triumph:* the line holds and the clans see a Vaelmark knight carry their children. · *Hard-won:* the line bends; he runs all night.
 - *Costly:* the outer palisade burns; the holdfast holds. · *Setback:* the river line is lost and the Long Night will be fought at the holdfast wall.
-**Choice:** carry the wounded (hearth +2) or carry the word to the next holdfast (banner +2).
+**Choice:** carry the wounded (hearth +2) or carry the word to the next holdfast (banner +2; `word_carried`). **Downstream:** the word carried, a second holdfast comes to the Long Night and the wall is held by more hands (thornwild +5); the wounded carried, the clans' children keep his name, and q5.rhyme's new verse was made in the Thornwild, not the Lowmarch.
 
 ## b3.4 — The Far Cot's Name
 Wren's quest: a clan elder, or a Confessor's seized ledger, has the name Dame Elspeth Ashdown (`elspeth_named`). The ledger travels by cart like all the Order's paper, and if `r.rae.ledger` is armed it is Rae who knew which crate and had it off the Holloway whole, and says nothing of it until Wren asks; otherwise the page is half burned (the Setback shape in any tier). T6 revealed: an Ember initiate who would not re-kneel, Hollowed on purpose; she taught her daughter the script before it took her. Wren reads the page herself. **Plants:** the Confessors keep ledgers of the Hollowed (b4.5, q4.censer). Thread 10 paid off.
 - *Triumph:* Wren reads it aloud and then counts the holdfast's lamps until she can speak again. · *Hard-won:* she reads it alone and tells Darrow at dawn.
 - *Costly:* Marrant's ledger names Mother Ione as witness. · *Setback:* the page is half burned and the rest she must take on Ilse's word.
-**Choice:** write the name in his own hand on the holdfast's lamp-post (candor +2) or let Wren decide who hears it (hearth +2).
+**Choice:** write the name in his own hand on the holdfast's lamp-post (candor +2; `elspeth_written`) or let Wren decide who hears it (hearth +2). **Downstream:** written, the Faithless who come to the Gathering (b4.1) have heard of the knight who wrote a Hollowed woman's name where the Hollowed could see it, and the Confessors' ledger-keepers add his name to a different list (q4.censer: Marrant carries it); Wren's to decide, she carries it the way she carries everything, and it is hers to say at the finale's count.
 
 ## b3.5 — The Long Night
 Real midwinter. A Hollow Tide against the clan holdfast; Darrow runs the wall all night. Ysra's choice: `r.b3.ysra_fate` (defects if `ysra_spared`; otherwise dies holding a gate she was sent to open). **Plants:** the Tide's frost on the Grace-sworn deserter among the clans (b4.2). Threads 4, 11.
 - *Triumph:* the wall holds to dawn and the Tide breaks on the river. · *Hard-won:* the inner gate holds; the outer yard is lost and retaken.
 - *Costly:* the holdfast holds; the clan's winter stores burn and they must move. · *Setback:* the holdfast is abandoned at dawn in good order, everyone alive, and the Tide has the valley.
-**Choice:** stay with the clans through the thaw (hearth +2) or go west at once to raise the Lowmarch (banner +2).
+**Choice:** stay with the clans through the thaw (hearth +2; `stayed_thaw`) or go west at once to raise the Lowmarch (banner +2). **Downstream:** stayed, the clans ride west with him in the main road as well as the high (t3, b4.1), and the Marches' levies have a month's start on the Holloway; gone at once, the Gathering (b4.1) begins earlier and thinner, and Ilse follows a chapter behind.
 
 ## q3.hunt — The Night Hunt
 - **priority:** optional · **hook:** A clan rite: a boar run through the Thornwild by torchlight; a guest who runs it is kin.
@@ -509,31 +569,31 @@ Knot V ties on the move, the holdfast behind them. Lightning: the leap is made i
 An abandoned Mender house in the Marches: Faithless, clans, deserters, millers, and a Confessor's prisoner who asks to stay. Darrow learns that leading men who can run is harder than leading men who cannot. **Plants:** a deserter's hands warm for the first time in years (T7). Thread 8.
 - *Triumph:* two hundred by the first bell. · *Hard-won:* sixty, and the right sixty.
 - *Costly:* sixty, and a Confessor spy among them who is found kindly. · *Setback:* thirty, and the Marches' levies told to hunt them.
-**Choice:** take the Mender house's bell for the host (sworn +2) or leave the house as it was (unsworn +2).
+**Choice:** take the Mender house's bell for the host (sworn +2; `bell_taken`) or leave the house as it was (unsworn +2). **Downstream:** taken, the host has a bell of its own: it rings the law of guests at every camp, and in b6.1 ringing sanctuary is possible with their own bell when Calden's ringers will not (q6.bells is easier); left, the house's bell rings at dusk behind them on the first night out, because someone stayed, and the Menders of the Marches hear of it (menders +5).
 
 ## b4.2 — The Stolen Fire
 T7 revealed: a sworn knight who stops kneeling sees his first Reckoning, faint as frost; the Grace is Ember taken instead of built. Maelis teaches the first forms to a yard of knights who cannot kneel because they will not. **Plants:** Maelis teaches as one who was taught (T8). Thread 6 paid off.
 - *Triumph:* a dozen Reckonings in a week. · *Hard-won:* three, and the rest patient.
 - *Costly:* one, and a knight who re-kneels in secret and is not punished. · *Setback:* none yet; the host doubts, and holds anyway.
-**Choice:** teach it openly, in the yard (banner +2) or to the few he trusts (hearth +2).
+**Choice:** teach it openly, in the yard (banner +2; `taught_openly`) or to the few he trusts (hearth +2). **Downstream:** open, there are more Reckonings by Book V and the Book IV temptation's captain was one of the yard, so his turning (b5.4) costs the host a company; few, the Unkneeling stays small and sure and the temptation's captain was never inside it, but the host's levies are led by men who cannot see the script.
 
 ## b4.3 — Maelis's Story
 T8 revealed (earlier only if `r.t8.early`): she was a Confessor sent to hunt the last Warden, who mended her; two Bindings before Darrow, both dead. She tells it once. **Plants:** the sword PATIENCE was the Warden's. Thread 7 paid off.
 - *Triumph:* she tells the host. · *Hard-won:* she tells Darrow and Wren.
 - *Costly:* Marrant tells it first, at a parley, and she confirms it. · *Setback:* she tells it because a knight tore his Binding by trusting the quiet, and the host must hear why.
-**Choice:** keep her secret from the host (guile +2) or stand beside her when she tells it (candor +2).
+**Choice:** keep her secret from the host (guile +2) or stand beside her when she tells it (candor +2; `maelis_stood_with`). **Downstream:** stood with, Marrant's parley (q4.censer) has no lever left and the host takes her Permitted as law from then on (b4.5, b5.3); kept, Marrant tells it first wherever he next has a hearing, and she confirms it with Darrow silent beside her.
 
 ## b4.4 — The Last Stand of the Sixth
 Hollis holds a ford-house with the Sixth's survivors so the host can cross. `r.b4.hollis_lives` (approval ≥ 50 and `hollis_truth`) decides whether he comes back; if not, `hollis_fell`. Either way he fights sitting down and nobody is lectured. **Plants:** Marrant leads the Confessors' van with a Hollow leash (q4.censer).
 - *Triumph:* the ford-house holds and the Sixth marches out singing badly. · *Hard-won:* it holds; Hollis is carried out.
 - *Costly:* it holds; the ford-house burns behind them. · *Setback:* it holds until the host is across, and the Sixth is scattered, not lost.
-**Choice:** turn the host back for him (hearth +3) or hold the far bank as he asked (sworn +3).
+**Choice:** turn the host back for him (hearth +3; `turned_for_hollis`) or hold the far bank as he asked (sworn +3). **Downstream:** turned, and `r.b4.hollis_lives` armed, Darrow carries him out himself; turned and not armed, he reaches the ford-house in time to be there; either way the Confessors' van reaches the bank and b4.5 opens with the stop needed at once; held, the stand is Hollis's own and the Sixth's song is his epitaph or his boast, and the host crosses whole.
 
 ## b4.5 — The Turning Blade
 Darrow learns from Ilse, or from a Warden mural, that the master form is the pivot: *turn at speed and strike from the turn*. He is not cleared to do it; Maelis forbids it; he watches Ilse do it and counts. **Plants:** the ford stones (b5.4). Thread: the memory.
 - *Triumph:* he teaches the stop to the host and the Confessors' charge breaks on it. · *Hard-won:* the stop holds the yard; he does not turn.
 - *Costly:* the stop holds; he nearly turns, and Wren says the number of the step aloud. · *Setback:* the host retreats in good order, and he does not turn.
-**Choice:** march for the ford now (banner +2) or winter the host (hearth +2).
+**Choice:** march for the ford now (banner +2; `marched_early`) or winter the host (hearth +2). **Downstream:** marched, b5.1's road is mud and shut doors and the levies are hungry, but the Second Lance at the ford (b5.4) is not yet at full strength; wintered, the road is dry and the villages have had a season to hear of him, and the Second is full.
 
 ## q4.deserters — The Oath Unsaid
 - **priority:** optional · **hook:** A sworn knight asks Darrow to witness him *not* kneeling at a field-stone: there is no form for it, so they make one.
@@ -574,19 +634,19 @@ Knot VI ties in retreat. The turn is made because a Confessor's rider is behind 
 The Holloway reversed, village by village, the counting rhyme sung at him from doorways with the sum changed; it is Rae's road, and the villages that open, open to her first (`rae.road`). Confessors' writs on every bell-house door carry his epithet. **Plants:** the field-stones' iron frames still stand on the west bank (b5.2). Thread 11.
 - *Triumph:* villages open and feed the host. · *Hard-won:* they watch and do not hinder.
 - *Costly:* the Second's outriders burn the bridges ahead. · *Setback:* a Lowmarch levy must be talked out of the road twice, and the host arrives late and tired.
-**Choice:** march under the Ninth's old banner (sworn +2) or under none (unsworn +2).
+**Choice:** march under the Ninth's old banner (sworn +2; `old_banner`) or under none (unsworn +2). **Downstream:** the old banner, the Ninth's nineteen come to it one by one along the Holloway and the Second knows it from across the water (q5.second opens with the Second's captains already arguing); none, the Lowmarch has only the Confessors' word for what he is called, and his epithet, if he has one, does the banner's work.
 
 ## b5.2 — The Memory
 The west bank of Harrow Ford. The frames. The place he knelt. The memory comes for him in daylight: Resolve DC 14 against the Three Heartbeats, and the leg answers or the breath does. Rae, through the Holloway's carters, knows the Second has been moving the field-stones' iron frames and where Vane means to stand on the day (`rae.road`). **Plants:** none; a payoff of the prologue. Thread 11 paid off (he says Tobin's name, if ever, here).
 - *Triumph:* he walks into the shallows and back without anyone seeing what it cost. · *Hard-won:* Wren counts him through it.
 - *Costly:* he cannot cross that day, and says so to the host. · *Setback:* he crosses only because Vane is already on the far bank and the choice is taken from him.
-**Choice:** tell the host about the heartbeats he saw from the water (candor +2) or let them believe he is unafraid (guile +2).
+**Choice:** tell the host about the heartbeats he saw from the water (candor +2; `heartbeats_told`) or let them believe he is unafraid (guile +2). **Downstream:** told, b5.3's drilling is done knowing what the enemy is, and in b5.4 the host does not break when he falters on the stones; untold, a falter in the duel runs through the host like the cold through the Ninth.
 
 ## b5.3 — The Form
 Ysra, if alive, drills the turn with him in the river meadow; else Ilse. The pivot, done a hundred times slow before it is done once fast. Maelis says Permitted for the last form she will ever have to say it for. **Plants:** PATIENCE's full inscription is not yet read (finale).
 - *Triumph:* the turn at speed, clean, and the host cheers. · *Hard-won:* clean, in private, and he keeps it for the ford.
 - *Costly:* he turns on a wet stone and goes down and gets up, and nobody says a word. · *Setback:* the drilling is cut short by Vane's herald, and the turn is untested when it matters.
-**Choice:** show Vane's herald the turn (banner +2) or send him back with nothing (hearth +2).
+**Choice:** show Vane's herald the turn (banner +2; `turn_shown`) or send him back with nothing (hearth +2). **Downstream:** shown, Vane knows the turn is back and denies him the stone, so b5.4 opens with the duel refused and the Second's lances down between them until Darrow brings him to it; unshown, Vane comes to the stones expecting a seated knight, and the first turn is the whole fight.
 
 ## b5.4 — Vane on the Ford Stones
 The duel on the stones where it broke. Vane full of borrowed Grace; Darrow with only what he built. Vane quotes his answer if `vane_answered`. Darrow turns at speed on the same stone and strikes from the turn; the Seventh Knot waits on it. **Plants:** Vane's hands are cold (T1 made personal). Threads 1, 2.
@@ -633,13 +693,13 @@ The Seventh Knot ties in the river meadow with the Second withdrawn unbeaten and
 Calden: white stone, a hundred bells, writs on every door. The Lantern Market's people inside the walls; Saltreach's fog on the river. The Unkneeling enter by the road the Book V road gives them. **Plants:** the bells of Calden ring the hours but have never rung sanctuary (b6.3).
 - *Triumph:* the gates open from inside. · *Hard-won:* a night entry by the river stairs.
 - *Costly:* a fight at the gate, no one lost. · *Setback:* a siege of bells, and the city made to choose.
-**Choice:** silence the bells (guile +2) or ring them all at once for sanctuary (candor +2).
+**Choice:** silence the bells (guile +2) or ring them all at once for sanctuary (candor +2; `bells_rung`). **Downstream:** rung, the Oathsworn on the Spire stair have heard sanctuary for the first time in three hundred years and the stair (b6.2) empties by a floor in any tier, and the city watches what he does with the Stone; silenced, the entry is quiet, the stair is held in the dark, and the finale is chosen with fewer witnesses and fewer to catch the sworn when they fall.
 
 ## b6.2 — The Oathspire Stair
 Black glass and iron; the stair every knight has climbed on his knees. Darrow climbs it on his feet with Maelis, Wren and whoever the roads left him. The green-lit hall; the sound of very slow breathing. **Plants:** every Oathstone's frost runs toward the Spire (T1 made visible).
 - *Triumph:* the stair is empty; the Oathsworn would not hold it. · *Hard-won:* held floor by floor with Anchor and the turn.
 - *Costly:* Marrant on the last landing, unarmed, talking. · *Setback:* the First Stone draws as they climb, and the sworn among the host must be carried.
-**Choice:** carry the Grace-sworn up (hearth +2) or leave them below with the Second (banner +2).
+**Choice:** carry the Grace-sworn up (hearth +2; `sworn_carried`) or leave them below with the Second (banner +2). **Downstream:** carried, they are at the Stone for the finale: the first to fall if it is shattered, the first given back their own if the tithe is returned, and the ones who hold it for him if he takes it; left, the Second holds them below (if `r.route.book5.high`) or the Confessors do, and the finale's cost falls on men he cannot see.
 
 ## b6.3 — The Evergreen
 King Aurel, three hundred years old because the Stone feeds him: pitiable, terrified of dying, certain the realm dies with him. He asks Darrow to kneel, once, as a courtesy. **Plants:** none; everything is paid. The finale follows directly.

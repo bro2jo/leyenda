@@ -147,6 +147,72 @@
       "if": "approval.wren >= 40",
       "then": "At the Stonewright ring Wren finishes the line for him openly and says she will tell him why when it is hers to tell (b2.5); otherwise she is caught at it",
       "where": "book2:beat5"
+    },
+    {
+      "id": "r.b1.seated_blade",
+      "if": "approval.hollis >= 40",
+      "then": "Hollis names the Seated Blade on the page before Old Mercy (q1.blade stage 3 runs before b1.5); otherwise he teaches it on the tower stair itself, in the fight",
+      "where": "book1:beat5"
+    },
+    {
+      "id": "r.t1.wren_stays",
+      "if": "approval.wren <= -20",
+      "then": "Wren stays at the House when he goes down the Steps (a cost on company, never a death) and rejoins at the mill (b2.3)",
+      "where": "transition1"
+    },
+    {
+      "id": "r.b2.hollis_sober",
+      "if": "approval.hollis >= 45",
+      "then": "Hollis hears the writ's truth sober and asks for the second letter to read Aldric's hand himself (b2.4); otherwise the drunk hearing is available in any tier",
+      "where": "book2:beat4"
+    },
+    {
+      "id": "r.b2.rae_tells",
+      "if": "approval.rae >= 30",
+      "then": "Rae tells him she carries for the Lantern Market before the river mill (q2.lantern; sets rae_market_told true by her choice); otherwise he finds the oilcloth under the salt",
+      "where": "book2"
+    },
+    {
+      "id": "r.b3.ysra_turns",
+      "if": "approval.ysra >= 30 && flags.ysra_spared",
+      "then": "Ysra comes over at the Long Night (q3.needle arrives her); spared but not won, she goes back to Vane alive with his words",
+      "where": "book3:beat5"
+    },
+    {
+      "id": "r.b3.wren_tells",
+      "if": "approval.wren >= 55",
+      "then": "Wren tells him her mother's name herself before any ledger is found (b3.4): the reveal is hers, not the paper's",
+      "where": "book3:beat4"
+    },
+    {
+      "id": "r.b4.clans_ride",
+      "if": "approval.ilse >= 40 && flags.ilse_told",
+      "then": "The clans ride west with him in the main road as well as the high (t3, b4.1)",
+      "where": "book4:beat1"
+    },
+    {
+      "id": "r.b4.maelis_lets_him_teach",
+      "if": "approval.maelis >= 50",
+      "then": "Maelis lets Darrow teach the first forms himself in the yard (b4.2) and the host sees a Warden; otherwise she teaches and he watches",
+      "where": "book4:beat2"
+    },
+    {
+      "id": "r.b5.permitted_early",
+      "if": "approval.maelis >= 70",
+      "then": "Maelis says Permitted for the turn before he asks (b5.3), in any road",
+      "where": "book5:beat3"
+    },
+    {
+      "id": "r.b5.rae_second",
+      "if": "approval.rae >= 50",
+      "then": "The Second's carters have turned, and q5.second opens half won in the main road",
+      "where": "book5:beat4"
+    },
+    {
+      "id": "r.b6.wren_count",
+      "if": "approval.wren >= 60",
+      "then": "The last chapter's count is Wren's, said aloud to him",
+      "where": "finale"
     }
   ]
 }

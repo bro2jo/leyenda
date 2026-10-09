@@ -220,6 +220,16 @@
       "stage": 0,
       "priority": "floating"
     },
+    "q1.blade": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating"
+    },
+    "q1.hand": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating"
+    },
     "rae.tether": {
       "status": "available",
       "stage": 0,
@@ -265,7 +275,32 @@
     "hollis_told_shard": false,
     "stair_watched": false,
     "marrant_told": false,
-    "wren_blooded": false
+    "wren_blooded": false,
+    "hidden_among_wounded": false,
+    "wren_spied": false,
+    "stair_by_wren": false,
+    "stair_by_prior": false,
+    "anselm_double": false,
+    "bell_rung_for_marrant": false,
+    "road_east": false,
+    "vane_messaged": false,
+    "millers_sent": false,
+    "stones_told": false,
+    "sword_yielded": false,
+    "ilse_told": false,
+    "word_carried": false,
+    "elspeth_written": false,
+    "stayed_thaw": false,
+    "bell_taken": false,
+    "taught_openly": false,
+    "maelis_stood_with": false,
+    "turned_for_hollis": false,
+    "marched_early": false,
+    "old_banner": false,
+    "heartbeats_told": false,
+    "turn_shown": false,
+    "bells_rung": false,
+    "sworn_carried": false
   },
   "factions": {
     "crown": -10,
@@ -306,6 +341,22 @@
       "prefers": [
         "banner",
         "candor"
+      ],
+      "approval_pending": 0
+    },
+    "ysra": {
+      "note": "the Needle of Calden; Book II; a companion only if spared and if she comes over (q3.needle); approval banks here until then",
+      "prefers": [
+        "sworn",
+        "candor"
+      ],
+      "approval_pending": 0
+    },
+    "ilse": {
+      "note": "the red-handed woman, unnamed on the page until b3.2; Book III; approval banks here until she arrives",
+      "prefers": [
+        "flint",
+        "banner"
       ],
       "approval_pending": 0
     }
