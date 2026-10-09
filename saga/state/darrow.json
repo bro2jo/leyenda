@@ -3,11 +3,11 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 853,
+  "xp": 903,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
-  "hp_max": 32,
+  "hp_max": 34,
   "attributes": {
     "might": {
       "score": 11,
@@ -20,12 +20,12 @@
       "banked": false
     },
     "vigor": {
-      "score": 8,
-      "raw": 8,
+      "score": 9,
+      "raw": 9,
       "cap": 12,
       "mod": -1,
-      "temper": 1,
-      "next_at": 2,
+      "temper": 3,
+      "next_at": 8,
       "fell": 15,
       "banked": false
     },
@@ -34,7 +34,7 @@
       "raw": 9,
       "cap": 10,
       "mod": -1,
-      "temper": 13,
+      "temper": 17,
       "next_at": 18,
       "fell": 18,
       "banked": false
@@ -233,10 +233,10 @@
       "id": "measured_hand",
       "name": "The Measured Hand",
       "tree": "Sport",
-      "rank": 0,
+      "rank": 1,
       "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
     },
@@ -266,10 +266,10 @@
       "id": "overwall",
       "name": "Overwall",
       "tree": "Sport",
-      "rank": 0,
+      "rank": 1,
       "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover."
     },

@@ -5,3 +5,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-09 · body · The knee woke a moment before he did, stiff as a cold hinge, and under it the thread lay warm. Quiet, too. He knows what Maelis says about quiet. He likes it anyway.
 - 2026-10-09 · ledger · From Wren's ledgers: Lengths of the hall walked by the Captain this morning: 2. Times he stopped at the far end for breath: 0. Times he noticed: also 0.
 - 2026-10-09 · weather · Wind off the Greywater has found the gap under the hall door, and the cold comes in along the floor like it pays rent. Darrow tucks his hands into his armpits and lets it.
+- 2026-10-09 · house · Wren's pencil rolled off the sill. Darrow lobbed it back over two cots and a dozing lay brother, and it dropped into the fold of her open ledger as if it lived there. She looked at him and wrote something down.
