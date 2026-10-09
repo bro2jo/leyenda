@@ -73,11 +73,23 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 ⏭️ Still today: floor PM · bike 15 · creatine
 ───
 ⟦ +45 XP · Warden's Eye II ⟧
+*Snow on the sill again. Down the hall, Hollis is swearing at the beech leg one strap at a time, and the leg is winning.*
 ```
 
 - Food lines: item, kcal, protein, plus at most 2–3 micros that matter for that item. The full micro row goes to the CSV.
 - Coaching is one or two lines, specific, and only when useful (e.g., protein pacing for the evening). No lectures.
-- The story part of a normal log is **one line** in Reckoning brackets, only when the engine's `sync` reported a change. Scenes are written only at **day close**.
+- The story part of a normal log is the Reckoning line in brackets (only when the engine's `sync` reported a change), then **a glimpse** (below). Scenes are written only at **day close**.
+- **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking).
+
+### The glimpse (every log reply)
+
+One or two italic sentences, at most ~40 words, after the Reckoning line (or straight after the rule when nothing changed): life at Saint Ysolde's in the story's present moment, between the last scene written and the next. It deepens the world and never moves it.
+
+- **Drawn from** how the day has gone so far, the sheet and his choices. A good day shows as warmth, colour and ease in him; a low Ember lets the cold in, never as blame. An Art or attribute that just moved shows as something he now notices or can do. Choices show as how people address him, a companion warmer or cooler by approval, a Bearing lean, an epithet the page has already spoken. It reacts to what was done, never to what is missing: no guilt, no nudge, no lesson.
+- **Kinds, rotated:** a moment in the House (someone on the page doing something small) · a line overheard (lay brothers, the kitchen) · a tally from Wren's ledgers (in-world counts only) · a saying, rhyme or verse of the realm · the body (the knee, warmth or cold in his hands) · weather on the Steps.
+- **Never** plot: no event the next scene must honour, nothing from the chapter plan, world moves, quests or arc, no plant, no hint, no reveal. Never a name, place or fact the page has not spoken. Never mirroring the log (food logged is not Darrow eating; a session logged is not the forms). Never a mechanic explained, never anything from `real/`. A glimpse is consistent with canon and binds nothing: habitual or interior moments, never where someone is going next.
+- **None** in a day-close reply (the scene is the story), in a red-flag reply, or when the story is off that day. A red-light day's glimpse shows the House, not Darrow.
+- Before writing one, read the tail of `saga/state/glimpses.md` (no kind twice running, no reused image); append the new one as `- YYYY-MM-DD · kind · text` and keep the file to its last 20 lines. The site never reads it. At day close, read that day's glimpses before writing the scene so it doesn't contradict them; the scene may echo one and never has to.
 
 ---
 
@@ -92,7 +104,7 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 When a day is closed (he says so, or a new day's first log arrives and yesterday has something logged and its `closed` isn't `Y`):
 1. `python3 engine/darrow.py set daily DATE closed=Y` → `sync` → `python3 engine/saga.py now` → `python3 engine/saga.py plan next --date DATE --full` (the day's slot: its kind, planned content, beat or quest stage, any micro-choice, and the day's colour).
 2. Ledger: a day summary: totals vs targets, sessions done vs planned, what's still open for tomorrow, any flag. While a story choice is open, end with "Still waiting on Darrow: 1 … / 2 … / 3 …".
-3. Chronicle: read the last scene and `saga/state/_gm/threads.md`, then write **one scene** (150–400 words) in the slot's kind, appended to the current chapter file, following `saga/bible/style.md`. The content is the slot's; the day's real deeds set only the tone; the outcome waits for the climax. Fold in the open micro-choice's answer (or its planned default, recorded `by: bearing`) and the DUE NOW items you use; the engine's Reckoning changes, if any, are the closing box.
+3. Chronicle: read the last scene, `saga/state/_gm/threads.md` and that day's lines in `saga/state/glimpses.md`, then write **one scene** (150–400 words) in the slot's kind, appended to the current chapter file, following `saga/bible/style.md`. The content is the slot's; the day's real deeds set only the tone; the outcome waits for the climax. Fold in the open micro-choice's answer (or its planned default, recorded `by: bearing`) and the DUE NOW items you use; the engine's Reckoning changes, if any, are the closing box.
 4. `saga.py plan done N --wrote chNN:sK` (a missed day: `plan done N --skipped`, and the next scene opens on the world move `plan next` prints as owed; `--force` to redo a slot; a quest slot marked `"last": true` or reaching the arc's stage count marks its quest done, otherwise `plan quest <id> status=done` by hand) → `saga.py fire ID --where chNN:sK` for each due item used (`void ID --why "…"` for what the story made impossible) → `saga.py plan micro open N` if the slot carried a micro-choice.
 5. Update `saga/state/world.json` by Edit (`scenes[]`, `location.place` (a `places.json` id), `last_beat`, `current_quest.on_the_page`, `current_struggle`; never approval), `saga/state/_gm/threads.md`, `codex.md` (new names only; anything GM-only goes under `_gm/`), and the narrative part of `saga/NOW.md`.
 6. **The cast and the site** (see "The site" below): a file in `saga/characters/` for anyone new on the page; `last_seen`, `last_seen_doing`, `now`, `appearances`, new `known_facts` (and `appearance`/`status` if the story changed them) for everyone in the scene; `saga/state/places.json` for a new place; then `python3 engine/saga.py check` and `python3 engine/build_site.py`, which must pass.
@@ -170,7 +182,7 @@ CLAUDE.md                  this file
 README.md                  for the human
 real/   NOW.md · config.json · plan/ · state/ · logs/ · checkpoints/
 engine/ darrow.py (the real math) · saga.py (the story's bookkeeping) · rules.json · deeds.csv (audit trail: every XP award, regenerated) · build_site.py
-saga/   NOW.md · bible/ (style, cast, mechanics; _gm/: arc, world, characters, design) · state/ (world, bearing, places, factions, codex, darrow; _gm/: plan, consequences, threads) · characters/ (one JSON per character on the page) · chronicle/
+saga/   NOW.md · bible/ (style, cast, mechanics; _gm/: arc, world, characters, design) · state/ (world, bearing, places, factions, codex, darrow, glimpses; _gm/: plan, consequences, threads) · characters/ (one JSON per character on the page) · chronicle/
 docs/   the public site, generated by engine/build_site.py; never hand-edited
 archive/the-reforging/     the old nutrition-only game; retired, kept for reference
 .claude/skills/            /log /today /week /saga /sheet /checkpoint /choose /ingest /sport

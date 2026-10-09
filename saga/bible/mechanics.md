@@ -108,3 +108,4 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 | `saga/state/_gm/consequences.json` | `saga.py add / fire / void` (GM only) | the consequence ledger: what each choice changed and what it still owes |
 | `saga/state/_gm/threads.md` | Claude (GM only) | open plot threads and plants |
 | `saga/state/codex.md` | Claude | canon invented in play |
+| `saga/state/glimpses.md` | Claude | the last ~20 glimpses (the line of the House closing a log reply); texture, never plot; the site never reads it |
