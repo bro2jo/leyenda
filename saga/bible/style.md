@@ -26,7 +26,7 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 | A strong week | the chapter's climax goes his way; allies arrive; the plan works |
 | A thin week | the climax is costly; the enemy advances; a plan fails. **This is a plot turn, never a punishment and never a lecture.** |
 | A red-light/rest day (plan says stop) | a **cutaway** scene: the world moves without him, in another POV (Wren, Hollis, the House, an enemy) or with Darrow made to rest by others. Never a setback frame; resting is never failure. |
-| A missed day (nothing logged at all) | A day with nothing logged at all is missed: no scene; the world moves without him. A day with only food logged is still a day, coloured by what was logged. The next scene after a missed day opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, the weather closed a road. No guilt, no lesson. |
+| A missed day (nothing logged at all) | No scene; the world moves without him. A day with only food logged is still a day, coloured by what was logged. The next scene after a missed day opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, the weather closed a road. No guilt, no lesson. |
 
 **Tone, never the slot's content.** What happens in a scene is fixed when the chapter is planned; the day's real deeds set only its colour: warmth or cold in him, a stage that goes well or costs more, people who are kind or short with him. The **outcome** of the week is set only at the climax, by the tier. A warm day never buys a victory and a cold day never spends one.
 
@@ -87,7 +87,7 @@ Show the check on its own line, before the outcome is narrated:
 2. **Keep him talking and learn who sent him.** *[Resolve 10]* *(Wren approves; risky.)*
 3. **Say nothing — yet.**
 ```
-  Gated options show the requirement in brackets, a stat (`*[Resolve 10]*`) or a Bearing lean (`*[Guile 4]*`); if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~. A climax choice may move the Bearing by two or three; only a betrayal or a sacrifice moves it by four, and the epithet it earns must be spoken on the page.
+  Gated options show the requirement in brackets, a stat (`*[Resolve 10]*`) or a Bearing value (`*[Guile 1]*` for a first step, `*[Guile 4]*` for a lean); if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~. A climax choice may move the Bearing by two or three; only a betrayal or a sacrifice moves it by four, and the epithet it earns must be spoken on the page.
 - A climax choice carries across the first two scenes of the next chapter; if still open at the second close it resolves to the climax's planned default, recorded `by: bearing`, and its `### Choice` block is written then.
 
 ### A small choice (micro-choice, at the end of a daily scene)
@@ -103,7 +103,7 @@ One stage of a quest or a beat may end on a choice smaller than the climax's. Fo
 - Its consequence is folded into the opening of the next scene. No separate block, no `### Choice` heading.
 
 ### Chapter epigraphs
-Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Warden precept, a Confessor's writ, a lancers' marching song, a letter from an old friend, a children's counting rhyme. Original text only.
+Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Mender's maxim, a Confessor's writ, a lancers' marching song, a letter from an old friend, a children's counting rhyme. Original text only.
 
 ### File layout
 - `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`, with at most one `### Interlude — Title` among them), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A small choice sits at the end of its scene under `**What does Darrow do?**` or `**What does Darrow say?**`. A consequence written by `/choose` for a climax choice goes under `### Choice — Title`; a small choice's consequence is folded into the next scene. The site build parses exactly these forms.

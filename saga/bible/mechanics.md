@@ -24,9 +24,9 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | Element | In the world | Driven by (real side) |
 |---|---|---|
 | **Level / Rank** | how much Ember he has kindled overall. Ranks: Bound → Kindled → Tempered → Warden-Errant → Emberknight → Unbowed → Warden of the Ember | total XP from every logged deed |
-| **Might** | strength of arm and body | knee sessions, PT, upper-body, accessory and power work |
+| **Might** | strength of arm and body | the real side's leg work, upper-body, accessory and power work |
 | **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions |
-| **Finesse** | footwork, balance, speed, timing | knee sessions (control), PT, sport skills, later agility work |
+| **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
 | **Resolve** | discipline, patience, honesty with oneself | floor minimum AM+PM, graded morning checks, running sessions as written |
 | **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target) |
 | **Inspiration** (max 4) | moments of clarity; spend to reroll a die or take a bold option | a week with the floor minimum every day; a Triumph week |
@@ -41,7 +41,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 
 ## The Binding and its Knots (the real gates)
 
-The Binding has seven Knots (their lore is in `saga/bible/_gm/world.md`, GM only; the reader meets them in the Chronicle). **A Knot is tied only when the matching real-world gate is passed and recorded** (`python3 engine/darrow.py knot tie N --date … --evidence "…"`), and the evidence must be a PT/surgeon clearance or the plan's measured criteria. The calendar never ties a knot.
+The Binding has seven Knots (their lore is in `saga/bible/_gm/world.md`, GM only; the reader meets them in the Chronicle). **A Knot is tied only when the matching real-world gate is passed and recorded** (`python3 engine/darrow.py knot tie N --date … --evidence "…"`), and the evidence must be a real-side clearance or the plan's measured criteria. The calendar never ties a knot.
 
 While a Knot is untied, the Binding **caps** some attributes. Temper earned above a cap is **banked** and released the moment the next Knot ties, so the hard work done while waiting surges out all at once. That surge is a story moment.
 
@@ -67,7 +67,7 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Seated Blade** | Blade | upper-body sessions | now |
 | **Iron Grip** | Blade | accessory days | now |
 | **Hammerfall** | Blade | power & mobility (throws) | now |
-| **Stillwater Stance** | Footing | balance work / knee sessions | now |
+| **Stillwater Stance** | Footing | balance work / the real side's leg work | now |
 | **The Long Breath** | Breath | conditioning ≥10 min | now |
 | **The Mender's Patience** | Binding | floor minimum AM+PM | now |
 | **Warden's Eye** | Insight | graded morning checks | now |
@@ -92,7 +92,7 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 - **Ember** effects: Blazing +1 to everything; Bright +1 Vigor; Guttering −1 Might and Vigor.
 - Results: success, *partial* (within 3: success at a cost), failure. Natural 20 / natural 1 are criticals.
 - **Approval** with companions (−100 to +100) moves only with story choices, never with real numbers.
-- **The Bearing** (`saga/state/bearing.json`) is who Darrow's choices are making him: four story axes (Mercy–Flint, Candor–Guile, Hearth–Banner, Sworn–Unsworn), each −10 to +10, moved only by story choices (a small choice ±1, a climax ±2 or ±3, a betrayal or a sacrifice ±4). He *leans* a way at 4 and is *named* for it at 8; the name is an epithet the page must speak before the site shows it. Options may require a lean (`*[Guile 4]*`), struck through when unmet, like stat gates. Never a number in prose; the site shows words.
+- **The Bearing** (`saga/state/bearing.json`) is who Darrow's choices are making him: four story axes (Mercy–Flint, Candor–Guile, Hearth–Banner, Sworn–Unsworn), each −10 to +10, moved only by story choices (a small choice ±1, a climax ±2 or ±3, a betrayal or a sacrifice ±4). He *leans* a way at 4 and is *named* for it at 8; the name is an epithet the page must speak before the site shows it. Options may require a Bearing value (`*[Guile 1]*`, or `*[Guile 4]*` for a lean), struck through when unmet, like stat gates. Never a number in prose; the site shows words.
 
 ---
 

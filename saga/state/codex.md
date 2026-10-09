@@ -15,7 +15,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The dawn forms** — the slow, dull work Maelis sets him each morning; afterward the leg lies a little straighter on the blanket, which is the point of them (Ch 1).
 - **The Reading of the Knots** — Maelis's reading of the Binding: pipe between her teeth, two fingers either side of the kneecap, eyes shut. Darrow has stopped asking what she feels for; she has stopped answering (Ch 1).
 - **Hollis's leg** — the wooden leg the lay brothers made him: beech and a leather cup, fitting the way a boot fits someone else. The writ from Harrow Ford, folded and unread, now lies in its cup (Ch 1 Interlude).
-- **The writ** — the order from command at Harrow Ford, the Sixth and the Ninth to clear the ford and the Second in reserve; Hollis broke its wax with his thumb without looking and has kept it folded small inside his shirt, wax inward, ever since (Prologue; Ch 1 Interlude).
+- **The writ** — the order from command at Harrow Ford, the Sixth and the Ninth to clear the ford and the Second in reserve; Hollis broke its wax with his thumb without looking kept it folded small inside his shirt, wax inward, until the morning the grey cloaks were seen, and then hid it in the cup of his wooden leg (Prologue; Ch 1 Interlude).
 
 ## Sayings
 - **"Kneel to that."** — Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).

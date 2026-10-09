@@ -55,7 +55,7 @@ Default behavior: **anything that reads like a log is a log.** He shouldn't need
 | "how's my week" | `/week` (real only) |
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
 | "sheet", "stats" | `/sheet` |
-| "checkpoint" (Sundays), or the first message on a Sunday | `/checkpoint` |
+| "checkpoint" (Sundays), the first message on a Sunday, or the first message of a new week while last week's chapter is still unclosed (`python3 engine/saga.py route show` lists it under unclosed) | `/checkpoint` first (it closes last week and opens the new chapter), then the rest of the message |
 | answering a story choice ("2", "open it", "go the long way") | `/choose` |
 | a new plan file, PT note, program, or nutrition instructions | `/ingest` |
 | anything about his sport | `/sport` |
@@ -132,7 +132,7 @@ python3 engine/saga.py now                          # the GM digest: position, n
 python3 engine/saga.py plan next --date D --full    # the day's slot + its arc section + colour; then plan done N --wrote ch01:s3 | --skipped
 python3 engine/saga.py add '<ledger entry json>' --witnessed maelis,wren   # a choice: applies approval/Bearing/flags; fire ID --where ch02:s1 | void ID --why "…"
 python3 engine/saga.py plan micro open N | plan micro close --option K [--by bearing]   # --by bearing alone takes the planned default
-python3 engine/saga.py plan chapter open --number N '<json>' | plan book open N | plan climax | plan set stage=climax | plan beat ID status=done | plan quest ID status=done | plan flag k=v | plan companion arrive ID
+python3 engine/saga.py plan chapter template --week_start D | plan chapter open --number N '<json>' (start from the template) | plan slot N key=value … (edit a planned slot: plan, kind, beat, quest+stage, micro as JSON; --force on a written/skipped one) | plan book open N | plan climax | plan set stage=climax | plan beat ID status=done | plan quest ID status=done | plan flag k=v | plan companion arrive ID
 python3 engine/saga.py route decide --book N | bearing show | arc q1.letters | due [--all | --at ch02:climax]   # due alone: everything due or overdue now; --at: exact lookup; arc <id> prints one section of _gm/arc.md
 python3 engine/saga.py check                        # before every commit that touched saga/; `fmt` rewrites the state JSON canonically
 ```
@@ -154,10 +154,10 @@ python3 engine/saga.py check                        # before every commit that t
 
 Read before writing anything in `saga/`:
 - `saga/bible/style.md`: the wall, voice, formats (scene kinds, interlude, micro-choices, the Bearing in prose). **Mandatory.**
-- `saga/bible/cast.md` (appearance and voice of everyone on the page), `mechanics.md`: reader-safe canon.
+- `saga/bible/cast.md` (appearance and voice of everyone on the page). `mechanics.md` only when a Reckoning box, a Knot or an Art is on the page.
 - `saga/bible/_gm/arc.md` (one section at a time: `saga.py arc <id>`) for the beat or quest you are writing; `_gm/characters.md` only the entries of the people in the scene (grep the `###` heading); `_gm/world.md` on demand for a place or custom. Never whole. Never reveal a truth ahead of its schedule; plant at least twice before any reveal.
 - `saga/bible/_gm/design.md`: the systems in full (ledger, Bearing, roads, slots, quests, micro-choices); read on demand, not every session.
-- `saga/state/world.json`, `bearing.json`, `_gm/plan.json`, `_gm/consequences.json`, `_gm/threads.md`, `codex.md`: continuity. The JSON state moves through `saga.py`; where you must Edit it by hand, keep it canonical (`saga.py fmt`).
+- `saga/state/world.json`, `bearing.json`, `codex.md`, `_gm/threads.md`: continuity, read directly. `_gm/plan.json` and `_gm/consequences.json` are read only through `saga.py now`, `plan next`, `plan climax` and `due`; never open them whole. Where you must Edit JSON by hand, keep it canonical (`saga.py fmt`).
 
 Quality bar: a stranger should want the next chapter. Specific, funny where people are funny, frightening where it's dangerous, never preachy. Dice only from the engine. The story must never reward Darrow for recklessness with the Binding during the soft season.
 

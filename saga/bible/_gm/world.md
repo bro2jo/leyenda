@@ -107,7 +107,7 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 | **The Lantern Market** (Saltreach) | profit; information | sells to everyone |
 | **The Stonewrights** | — | long gone; they made the Oathstones; their ruins remain |
 
-**The Confessors' list.** The list names the Faithless of Harrow Ford who have not re-knelt and are fit to be moved, captains first; Benedek says his oath at every bell and the Confessors count him as kneeling already, so he is not on it, which is why Marrant can Hollow him with no name on paper (b1.2).
+**The Confessors' list.** The list names the Faithless of Harrow Ford who have not knelt anew, captains first whatever their legs (the far cots, who can neither kneel nor answer, are not named); Benedek knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up, the heralds' mercy taken early, and says his oath at every bell, so the Order counts him sworn and he is not on it, which is why Marrant can Hollow him with no name on paper (b1.2).
 
 ---
 

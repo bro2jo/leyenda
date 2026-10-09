@@ -300,8 +300,9 @@ def parse_chapter(path):
         para.append(ln)
         i += 1
     flush()
-    if not ch["scenes"]:
-        problem(f"{path.name}: no scenes found (headings are '## I. Title' for prologue parts or '### Scene N — Title')")
+    # an empty chapter is allowed only while it is world.json's current chapter (the week between the climax
+    # and scene 1); Site.__init__ fails any other chapter without a scene
+    ch["empty"] = not ch["scenes"]
     return ch
 
 
@@ -671,6 +672,11 @@ class Site:
         self.chapters_csv = load_csv(STATE / "chapters.csv") if (STATE / "chapters.csv").exists() else []
         self.rolls = load_csv(STATE / "rolls.csv") if (STATE / "rolls.csv").exists() else []
         self.chapters = [parse_chapter(p) for p in sorted(CHRON.glob("*.md"))]
+        cur = Path(str(self.world.get("chapter_file") or "")).name
+        for c in self.chapters:
+            if c["empty"] and c["file"] != cur:
+                problem(f"{c['file']}: no scenes found (headings are '## I. Title' for prologue parts or '### Scene N — Title'); "
+                        f"only the current chapter ({cur or 'world.json chapter_file'}) may wait for its first scene")
         self.registry = {}
         for ch in self.chapters:
             for s in ch["scenes"]:
@@ -997,8 +1003,10 @@ class Site:
             scenes = "".join(
                 f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a></li>'
                 for s in ch["scenes"] if s["title"] or s["label"])
+            n_sc = len(ch["scenes"])
+            count = "no scene yet" if ch["empty"] else f'{n_sc} scene{"s" if n_sc != 1 else ""} · about {ch["words"]:,} words'
             items.append(f'<li class="{"now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
-                         f'<span class="m num">{len(ch["scenes"])} scene{"s" if len(ch["scenes"]) != 1 else ""} · about {ch["words"]:,} words{" · now" if now else ""}</span>'
+                         f'<span class="m num">{count}{" · now" if now else ""}</span>'
                          f'<ul class="scenes">{scenes}</ul></li>')
         first = self.chapters[0] if self.chapters else None
         start = f'<p><a class="btn" href="{rel}chronicle/{first["slug"]}.html">Start reading</a></p>' if first else ""

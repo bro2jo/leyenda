@@ -28,7 +28,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 
 ## Mother Ione
 - **Appearance:** Named on the page, not yet seen.
-- **Voice:** Not yet heard; Maelis went to her when the news came.
+- **Voice:** Not yet heard; the page has only Wren saying she has been told of the riders.
 
 ## Sister Pell
 - **Appearance:** Named on the page, not yet seen; her glass stands in the bell tower.

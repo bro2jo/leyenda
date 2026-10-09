@@ -25,9 +25,17 @@ Commands (run from the repo root):
                                         and closes the slot's quest when its arc stages are used up or the slot carries "last": true
   plan micro open N                     open the slot's micro; records the scene key of the slot just written (from slot.wrote or last_written)
   plan micro close [--option K] [--by darrow|bearing]   --by bearing with no --option takes the slot's default
+  plan slot N key=value ...             edit a planned slot in place (plan, kind, beat, quest, stage, last, pov, micro, float, day);
+                                        micro is passed as JSON (micro='{"axis":…,"ask":…,"options":[…],"bearing":[…],"default":1}');
+                                        a written/skipped slot is refused without --force
   plan climax                           the chapter's question, climax plan, checks, options, default and the world moves left
-  plan chapter open --number N 'JSON'   refused while a micro is open; keeps climax.default
-  plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded and its unrun quests dropped
+  plan chapter template --week_start YYYY-MM-DD
+                                        print a canonical skeleton for the next chapter (7 dated slots, spine on Sunday and Saturday, two
+                                        float quest placeholders, world_moves, climax); fill it in a scratch file and pass it to `plan chapter open`
+  plan chapter open --number N 'JSON'   refused while a micro is open; keeps climax.default; warns about the outgoing chapter's unwritten slots
+                                        and carries its still-owed world moves to the front of the new chapter's world_moves
+  plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded,
+                                        its unrun optional quests dropped; required ones are kept available and warned (re-skin on the road or drop by hand)
   plan quest ID k=v ... | plan beat ID status=... | plan flag k=v | plan temptation add TEXT
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
@@ -35,7 +43,7 @@ Commands (run from the repo root):
   archive                               move spent entries older than two Books to consequences_archive.json
 
 `when` / `at` grammar (ledger due items):
-  next            the next scene (resolved by `add` to chNN:sN)
+  next            the next scene (resolved by `add` to chNN:sN; at the climax, choice or transition stage: the next chapter's s1)
   chNN            anywhere in chapter NN            chNN:sN      scene N of chapter NN
   chNN:climax     chapter NN's climax or choice     bookN        anywhere in Book N
   bookN:beatK     while core beat bN.K is in_progress
@@ -291,9 +299,12 @@ def book_of_chapter(plan, chapter):
 
 
 def resolve_at(when, plan):
-    """Static target for a `when`: `next` becomes ch<chapter>:s<next_scene>; everything else is itself."""
+    """Static target for a `when`: `next` becomes ch<chapter>:s<next_scene>, or ch<chapter+1>:s1 while the stage is
+    climax/choice/transition (the closed chapter gets no more scenes); everything else is itself."""
     if when == "next":
         pos = plan["position"]
+        if pos.get("stage") in ("climax", "choice", "transition"):
+            return f"{ch2(int(pos['chapter']) + 1)}:s1"
         return f"{ch2(pos['chapter'])}:s{pos['next_scene']}"
     if when == "finale":
         return "book6:climax"
@@ -627,9 +638,10 @@ def yes(v):
 
 
 def colour_for(day):
-    """GM colour of a day from the real logs. A day with a daily_log row is read in full; a day with only
-    food (a nutrition_log row with data, or food_entries rows) is open: cold below the fuel band, else mild;
-    only a day with nothing logged anywhere is missed."""
+    """GM colour of a day from the real logs. A daily_log row that carries a status field is read in full; a daily row
+    that carries only date/closed counts as no status row (the close writes one before the colour is read), so a day
+    with only food (a nutrition_log row with data, or food_entries rows) is cold below the fuel band, else mild, and
+    still reports closed/open from the flag; only a day with nothing logged anywhere is missed."""
     rows = [r for r in read_csv(P["daily"]) if r.get("date") == day]
     nut = next((n for n in read_csv(P["nutrition"]) if n.get("date") == day), {})
     food = [f for f in read_csv(P["food"]) if f.get("date") == day]
@@ -643,11 +655,15 @@ def colour_for(day):
         fuel_ok = kcal >= 0.9 * t["kcal"] and prot >= 0.9 * t["protein_g"]
     except Exception:
         fuel_ok = False
-    if not rows:
+    STATUS_KEYS = ("am_swelling", "am_pain", "am_extension", "floor_am", "floor_pm", "knee_session", "knee_min", "pt", "addon_session",
+                   "addon_min", "conditioning_type", "conditioning_min", "sport_min", "light", "sleep_h", "hours_on_feet")
+    closed = any(yes(r.get("closed")) for r in rows)
+    data_rows = [r for r in rows if any(str(r.get(k) or "").strip() for k in STATUS_KEYS)]
+    if not data_rows:
         if not nut_logged and not food:
             return "missed (nothing logged)"
-        return f"{'mild' if fuel_ok else 'cold'} (open; food only, no daily row)"
-    r = rows[0]
+        return f"{'mild' if fuel_ok else 'cold'} ({'closed' if closed else 'open'}; food only, no status row)"
+    r = data_rows[0]
     session = any(str(r.get(k) or "").strip() for k in ("knee_session", "addon_session", "conditioning_type", "conditioning_min")) or yes(r.get("pt"))
     fam, fpm = yes(r.get("floor_am")), yes(r.get("floor_pm"))
     if str(r.get("light") or "").strip().lower() == "red":
@@ -658,7 +674,7 @@ def colour_for(day):
         c = "cold"
     else:
         c = "mild"
-    state = "closed" if yes(r.get("closed")) else "open"
+    state = "closed" if closed else "open"
     return f"{c} ({state})"
 
 
@@ -717,6 +733,32 @@ def next_slot(plan, date=None):
             if s.get("status") == status:
                 return s
     return None
+
+
+SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "micro", "float", "day")
+
+
+def chapter_template(ws, plan):
+    """A canonical next-chapter skeleton for `plan chapter open`: 7 dated slots from the Sunday `ws`, spine on Sunday
+    and Saturday, two float quest placeholders (slots 3 and 5, non-adjacent so both may carry a micro), empty
+    world moves and climax. The placeholders name the first two quests still available in this Book (falling back
+    to the Book's q<N>.* ids); every "" is for the writer to fill, and `plan chapter open` accepts the result as is."""
+    book = int(plan["position"]["book"])
+    avail = [k for k, q in plan.get("quests", {}).items() if k.startswith(f"q{book}.") and q.get("status") == "available"]
+    avail += [k for k in plan.get("quests", {}) if k.startswith(f"q{book}.") and k not in avail]
+    avail += [f"q{book}.quest_a", f"q{book}.quest_b"]
+    beat = plan["position"].get("beat") or f"b{book}.1"
+    slots = []
+    for n in range(1, 8):
+        s = {"n": n, "day": (ws + dt.timedelta(n - 1)).isoformat()}
+        if n in (3, 5):
+            s.update({"kind": "quest", "quest": avail[0 if n == 3 else 1], "stage": 1, "float": True})
+        else:
+            s.update({"kind": "spine", "beat": beat, "float": False})
+        s.update({"plan": "", "micro": None})
+        slots.append(s)
+    return {"week_start": ws.isoformat(), "question": "", "slots": slots, "world_moves": ["", "", ""],
+            "climax": {"plan": "", "checks": [], "options": ["", "", ""], "default": 1}}
 
 
 def print_slot(s, full=False, plan=None):
@@ -887,7 +929,10 @@ def cmd_due(args):
 
 
 # ---------------------------------------------------------------- commands: ledger writes
-def validate_entry(entry, ledger, plan):
+def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False):
+    """Shape and target checks for a ledger entry. Every refusal is found here, before cmd_add applies or prints
+    anything: ids, made, chose, the `now` keys, Bearing moves (known pole, |n| <= BEARING_MAX_MOVE), approval
+    targets (a world.json companion, or with --pending one in companions_to_come) and the due items."""
     probs = []
     eid = entry.get("id", "")
     if not ENTRY_ID_RE.match(eid):
@@ -906,6 +951,18 @@ def validate_entry(entry, ledger, plan):
     for k in now:
         if k not in ("approval", "bearing", "flags", "factions"):
             probs.append(f"now.{k} is not one of approval/bearing/flags/factions")
+    for pole, n in (now.get("bearing") or {}).items():
+        if not isinstance(n, int) or isinstance(n, bool) or abs(n) > BEARING_MAX_MOVE:
+            probs.append(f"now.bearing.{pole} {n!r}: a choice moves one axis by ±1 (micro), ±2/3 (climax), ±4 (betrayal or sacrifice)")
+        if bearing is not None and pole_axis(bearing, pole) is None:
+            probs.append(f"now.bearing: unknown pole {pole!r}; poles: " + ", ".join(w for ax in bearing["axes"].values() for w in (ax["left"], ax["right"])))
+    if world is not None:
+        for cid, dlt in (now.get("approval") or {}).items():
+            if cid in world.get("companions", {}):
+                continue
+            if pending and cid in plan.get("companions_to_come", {}):
+                continue
+            probs.append(f"now.approval.{cid}: not a companion in world.json (use --pending for companions_to_come)")
     for i, it in enumerate(entry.setdefault("due", [])):
         did = it.get("id", "")
         if not DUE_ID_RE.match(did) or not did.startswith(eid):
@@ -936,22 +993,20 @@ def cmd_add(args):
     except json.JSONDecodeError as e:
         die(f"entry is not valid JSON: {e}")
     ledger, plan, world = st.ledger, st.plan, st.world
-    probs = validate_entry(entry, ledger, plan)
+    # first pass: shape, poles, magnitudes, the entry's own approval targets
+    probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=args.pending)
     if probs:
         die("refusing the entry:\n  " + "\n  ".join(probs))
     now = entry["now"]
     witnessed = [w.strip() for w in (args.witnessed or "").split(",") if w.strip()]
-    # companion-preference approval from bearing deltas
+    # companion-preference approval from bearing deltas (computed quietly; printed only once everything is accepted)
     pref_delta = {}
     for cid in witnessed:
         prefs = [p.lower() for p in plan.get("companions", {}).get(cid, {}).get("prefers", [])]
         if cid not in plan.get("companions", {}):
             die(f"--witnessed {cid}: not in plan.json companions")
         for pole, n in (now.get("bearing") or {}).items():
-            r = pole_axis(st.bearing, pole)
-            if not r:
-                die(f"now.bearing: unknown pole {pole!r}")
-            aid, sign = r
+            aid, sign = pole_axis(st.bearing, pole)
             ax = st.bearing["axes"][aid]
             opposite = ax["left"].lower() if sign > 0 else ax["right"].lower()
             toward = n > 0
@@ -959,11 +1014,18 @@ def cmd_add(args):
                 pref_delta[cid] = pref_delta.get(cid, 0) + (2 if toward else -2)
             elif opposite in prefs:
                 pref_delta[cid] = pref_delta.get(cid, 0) + (-2 if toward else 2)
+    folded = []
     if pref_delta:
         appr = now.setdefault("approval", {})
         for cid, dlt in pref_delta.items():
             appr[cid] = appr.get(cid, 0) + dlt
-            print(f"witnessed {cid}: preference {dlt:+d} folded into now.approval")
+            folded.append(f"witnessed {cid}: preference {dlt:+d} folded into now.approval")
+        # the folded approval targets must be companions too, before anything is printed as applied
+        bad = [cid for cid in pref_delta if cid not in world.get("companions", {}) and not (args.pending and cid in plan.get("companions_to_come", {}))]
+        if bad:
+            die("refusing the entry:\n  " + "\n  ".join(f"now.approval.{cid} (folded from --witnessed): not a companion in world.json (use --pending for companions_to_come)" for cid in bad))
+    for line in folded:
+        print(line)
     # apply approval
     for cid, dlt in (now.get("approval") or {}).items():
         comp = world.get("companions", {})
@@ -972,14 +1034,12 @@ def cmd_add(args):
             comp[cid]["approval"] = clamp(old + int(dlt), -100, 100)
             print(f"approval {cid}: {old} → {comp[cid]['approval']}")
             st.touch("world")
-        elif args.pending and cid in plan.get("companions_to_come", {}):
+        else:  # validate_entry accepted it, so it is in companions_to_come with --pending
             c = plan["companions_to_come"][cid]
             old = c.get("approval_pending", 0)
             c["approval_pending"] = old + int(dlt)
             print(f"approval_pending {cid}: {old} → {c['approval_pending']}")
             st.touch("plan")
-        else:
-            die(f"approval.{cid}: not a companion in world.json (use --pending for companions_to_come)")
     for pole, n in (now.get("bearing") or {}).items():
         move_bearing(st, pole, n, entry["id"])
     for k, v in (now.get("flags") or {}).items():
@@ -1150,6 +1210,13 @@ def cmd_plan(args):
         s = slot_by_n(plan, args.n)
         if s.get("status") in ("written", "skipped") and not args.force:
             die(f"slot {s['n']} is already {s['status']}" + (f" ({s.get('wrote')})" if s.get("wrote") else "") + "; pass --force to redo")
+        if args.force and s.get("world_move") and not s.get("world_move_used"):
+            # redoing a skipped slot: its unused off-page move goes back to the front of the chapter pool
+            plan["chapter"].setdefault("world_moves", []).insert(0, s["world_move"])
+            print(f"world move returned to the chapter: {s['world_move']}")
+        if args.force:
+            s.pop("world_move", None)
+            s.pop("world_move_used", None)
         if args.skipped:
             s["status"] = "skipped"
             s["wrote"] = None
@@ -1192,6 +1259,34 @@ def cmd_plan(args):
         st.touch("plan")
         st.save()
         return
+    if a == "slot":
+        s = slot_by_n(plan, args.n)
+        if s.get("status") in ("written", "skipped") and not args.force:
+            die(f"slot {s['n']} is {s['status']}" + (f" ({s.get('wrote')})" if s.get("wrote") else "") + "; --force to edit it")
+        kv = parse_kv(args.kv)
+        for k in kv:
+            if k not in SLOT_FIELDS:
+                die(f"slot field {k!r} not editable here (fields: {', '.join(SLOT_FIELDS)}); status/wrote move with `plan done`")
+        for k, v in kv.items():
+            if k == "kind" and v not in SLOT_KINDS:
+                die(f"slot kind must be one of {SLOT_KINDS}")
+            if k == "micro" and v is not None and not isinstance(v, dict):
+                die("micro must be JSON (micro='{\"axis\":…,\"ask\":…,\"options\":[…],\"bearing\":[…],\"default\":1}') or null")
+            if k == "day" and v is not None:
+                try:
+                    dt.date.fromisoformat(str(v))
+                except ValueError:
+                    die(f"day {v!r} is not a date")
+                v = str(v)
+            if k == "float" and not isinstance(v, bool):
+                die("float must be true or false")
+            print(f"slot {s['n']}.{k}: {s.get(k)!r} → {v!r}")
+            s[k] = v
+        print_slot(s)
+        st.touch("plan")
+        st.save()
+        print("run `saga.py check`")
+        return
     if a == "micro":
         if args.sub == "open":
             s = slot_by_n(plan, args.n)
@@ -1221,7 +1316,18 @@ def cmd_plan(args):
         st.touch("plan")
         st.save()
         return
+    if a == "chapter" and args.sub == "template":
+        try:
+            ws = dt.date.fromisoformat(args.week_start or "")
+        except ValueError:
+            die("--week_start must be a date (the Sunday), YYYY-MM-DD")
+        if ws.weekday() != 6:
+            die(f"--week_start {ws} is not a Sunday")
+        print(dumps(chapter_template(ws, plan)))
+        return
     if a == "chapter":
+        if not args.number or not args.json:
+            die("plan chapter open needs --number N and the chapter JSON (start from `plan chapter template --week_start <Sunday>`)")
         if plan.get("open_micro"):
             om = plan["open_micro"]
             die(f"a micro is still open (slot {om.get('slot')}, scene {om.get('scene')}); resolve it first: /choose, or `plan micro close --option {om.get('default')} --by bearing`")
@@ -1244,6 +1350,15 @@ def cmd_plan(args):
             s.setdefault("float", False)
         if ordered["slots"] and not any(s.get("status") == "next" for s in ordered["slots"]):
             ordered["slots"][0]["status"] = "next"
+        # what the outgoing chapter leaves behind: unwritten slots are named; owed world moves carry over
+        old = plan.get("chapter", {})
+        left = [s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
+        owed = owed_moves(plan) if old.get("slots") else []
+        if left:
+            print(f"⚠ chapter {old.get('number')} leaves slots {[s['n'] for s in left]} unwritten (their content folds into the climax you have written)")
+        for o in owed:
+            print(f"⚠ world move still owed (slot {o['n']} of chapter {old.get('number')}): {o['world_move']} → carried to chapter {args.number}'s world_moves")
+        ordered["world_moves"] = [o["world_move"] for o in owed] + list(ordered.get("world_moves") or [])
         plan["chapter"] = ordered
         book = plan["position"]["book"]
         r = plan.setdefault("route", {}).setdefault(f"book{book}", {"chapters": [], "road": None, "override": None, "transition_chapter": None})
@@ -1278,9 +1393,9 @@ def cmd_plan(args):
                 b["status"] = "folded"
                 folded.append(k)
         # quests: seed Book N's from the arc (priority from its `- **priority:**` line); drop the old Book's
-        # untouched required/optional quests (floating ones may still run anywhere)
+        # unrun optional quests; required ones stay available and are warned (floating ones may run anywhere)
         quests = plan.setdefault("quests", {})
-        q_seeded, q_dropped = [], []
+        q_seeded, q_dropped, q_required = [], [], []
         for k, (lvl, title, body) in arc_sections().items():
             if re.match(rf"^q{n}\.[a-z0-9_]+$", k) and k not in quests:
                 pr = "optional"
@@ -1292,10 +1407,13 @@ def cmd_plan(args):
                 quests[k] = {"status": "available", "stage": 0, "priority": pr}
                 q_seeded.append(f"{k} ({pr})")
         for k, q in quests.items():
-            if re.match(rf"^q{cur}\.", k) and q.get("status") == "available" and q.get("priority") != "floating":
-                q["status"] = "dropped"
-                q["why"] = f"Book {ROMAN[cur]} closed before it ran"
-                q_dropped.append(k)
+            if re.match(rf"^q{cur}\.", k) and q.get("status") == "available":
+                if q.get("priority") == "optional":
+                    q["status"] = "dropped"
+                    q["why"] = f"Book {ROMAN[cur]} closed before it ran"
+                    q_dropped.append(k)
+                elif q.get("priority") == "required":
+                    q_required.append(k)
         pos["book"] = n
         pos["beat"] = f"b{n}.1"
         if f"b{n}.1" not in beats:
@@ -1306,7 +1424,10 @@ def cmd_plan(args):
               + f" · core beats seeded: {', '.join(seeded) or 'none new'}"
               + (f" · Book {ROMAN[cur]} beats folded: {', '.join(folded)}" if folded else "")
               + f" · quests seeded: {', '.join(q_seeded) or 'none new'}"
-              + (f" · Book {ROMAN[cur]} quests dropped: {', '.join(q_dropped)}" if q_dropped else ""))
+              + (f" · Book {ROMAN[cur]} optional quests dropped: {', '.join(q_dropped)}" if q_dropped else ""))
+        if q_required:
+            print(f"⚠ required quest(s) never ran: {', '.join(q_required)}; re-skin on the road (kept available) or drop by hand: "
+                  f"plan quest {q_required[0]} status=dropped why=\"…\"")
         if beats.get(f"t{cur}", {}).get("status") not in (None, "done"):
             print(f"note: t{cur} is {beats[f't{cur}'].get('status')}; `plan beat t{cur} status=done` once the transition is written")
         print(f"next: set world.json book to {n}, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
@@ -1376,7 +1497,7 @@ def cmd_plan(args):
             if k == "stage" and v not in STAGES:
                 die(f"stage must be one of {STAGES}")
             if k == "stage" and v == "choice" and pos.get("stage") != "climax":
-                die(f"stage=choice only follows climax (stage is {pos.get('stage')}); the next chapter is already open: skip it and fire with --where chNN:choice")
+                die(f"stage=choice only follows climax (stage is {pos.get('stage')}); the next chapter is already open: leave the stage alone and fire what the consequence pays off with --where chNN:climax")
             print(f"position.{k}: {pos[k]} → {v}")
             pos[k] = v
             if k == "stage" and v == "climax":
@@ -1683,9 +1804,10 @@ def main():
     s = sub.add_parser("plan"); ps = s.add_subparsers(dest="action", required=True)
     x = ps.add_parser("next"); x.add_argument("--date"); x.add_argument("--full", action="store_true")
     x = ps.add_parser("done"); x.add_argument("n"); x.add_argument("--wrote"); x.add_argument("--skipped", action="store_true"); x.add_argument("--force", action="store_true", help="redo a slot already written or skipped")
+    x = ps.add_parser("slot"); x.add_argument("n"); x.add_argument("kv", nargs="+", help="key=value; micro as JSON"); x.add_argument("--force", action="store_true", help="edit a slot already written or skipped")
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
     x = ps.add_parser("climax")
-    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open"]); x.add_argument("--number", required=True, type=int); x.add_argument("json")
+    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers")
     x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)
     x = ps.add_parser("quest"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("beat"); x.add_argument("id"); x.add_argument("kv", nargs="+")

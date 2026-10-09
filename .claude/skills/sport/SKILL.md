@@ -27,7 +27,7 @@ When unsure, choose the later Knot and list it as a question for the PT. **Nothi
 - Add one entry per skill to `engine/rules.json → sport_arts.arts`: `{"skill": "<id>", "id": "<art_id>", "name": "<Art name>", "tree": "Sport", "knot": <n>, "effect": "<what it lets Darrow do>"}`.
 - Art names: evocative, grounded, medieval-martial, never cheesy and never the sport's own terms (a passing skill might become "The Long Thread"; a shooting skill "Kingfisher's Strike"). Effects must be things a knight can use in a fight, a chase or a council.
 - Add the new Arts to the table in `saga/bible/mechanics.md`.
-- Plan a slot where whoever the plan names teaches the first of these Arts: a `quest` or `spine` slot in `saga/state/_gm/plan.json → chapter.slots` (by Edit, canonical format, if the current chapter has an unwritten slot that fits; otherwise at the next checkpoint's `python3 engine/saga.py plan chapter open`). The Art is sealed on the site until its Knot ties; that is by design. **Never name the real sport in the prose.**
+- Plan a slot where whoever the plan names teaches the first of these Arts: a `quest` or `spine` slot set with `python3 engine/saga.py plan slot N key=value …` (plan, kind, beat or quest+stage, micro as JSON), then `saga.py check`, if the current chapter has an unwritten slot that fits; otherwise at the next checkpoint's `python3 engine/saga.py plan chapter open`. The Art is sealed on the site until its Knot ties; that is by design. **Never name the real sport in the prose.**
 
 ## 5. Finish
 `python3 engine/darrow.py sync` · `python3 engine/saga.py check` if `plan.json` changed · commit and push · reply with the skill→Art map, the gates, and the PT questions.

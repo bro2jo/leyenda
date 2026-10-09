@@ -83,7 +83,7 @@ Appearance and voice: `cast.md` (unnamed there, as on the page).
 ### Ser Benedek Orrin — a knight of the Sixth
 - On the cot next to Hollis. Grace-sworn, devout, kind, terrified of the Confessors and more terrified of being Faithless. Asks what "second on the list" means and watches Hollis for the answer.
 - **Voice:** earnest and formal, prays half-aloud, apologises for being afraid.
-- **Standing:** he knelt again at a bell-house on the road up to the Steps, so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
+- **Standing:** he knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up (the heralds' mercy, taken early), so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
 - **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. Nothing of this reaches the page before then. The Chapter 1 interlude puts him on the page; his `cast.md` entry and `saga/characters/benedek-orrin.json` are written from that prose, and from nothing here.
 
 ### Ash — the hound
@@ -134,7 +134,7 @@ NPC numbers are set by the GM for canon consistency; they are never derived from
 | Wren Ashdown | ember, faint | 3 · Bound | 6 · 13 · 12 · 11 | Long Breath II; **hidden:** she can read Warden script (T6) | Runs the 1,117 Steps daily; the deeper line must not mention the script until Book III |
 | Aldric Vane | grace, full (borrowed) | — · Oathsworn | 16 · 15 · 16 · 14 borrowed | none of his own | Grace-sworn: nothing of his own to count. His true Ember is near zero |
 | Ivo Marrant | grace, full (borrowed) | — · Oathsworn | 12 · 12 · 11 · 15 borrowed | none of his own | Never touches a weapon in front of witnesses; the Resolve is real and the rest is the Crown's. Public sheet when he is named on the page |
-| Benedek Orrin | grace, thin (borrowed) | — · Oathsworn | 9 · 6 · 8 · 11 borrowed | none of his own | Re-knelt on the road; not Faithless, so still tithed (b1.2); the public sheet shows borrowed, thin |
+| Benedek Orrin | grace, thin (borrowed) | — · Oathsworn | 9 · 6 · 8 · 11 borrowed | none of his own | Knelt anew before a field-stone below the Steps; not Faithless, so still tithed (b1.2); the public sheet shows borrowed, thin |
 | Red-handed woman (Ilse) | ember, banked | 7 · Kindled (public sheet shows 4 · Bound until Book III) | 12 · 13 · 12 · 15 | Stillwater III, Iron Grip II (public sheet: Iron Grip only) | Clan war-leader who has fought the Hollow Tides for years (T4) |
 | Sister Pell | ember, low | 4 · Bound | 6 · 7 · 8 · 14 | Warden's Eye II (reads lips) | Fifty years of bells |
 | Mother Ione | ember, steady and old | 9 · Kindled | 5 · 7 · 7 · 18 | Mender's Patience III | Iron underneath; possibly knows about Elspeth Ashdown (T6) |

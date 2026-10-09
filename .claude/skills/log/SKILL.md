@@ -48,6 +48,7 @@ For each item:
 - If today's remaining plan changed, update the top section of `real/NOW.md`.
 
 ## 6. Close day (when he says so, or when a new day's first log arrives and the previous day has something logged and its `closed` column in `daily_log.csv` isn't `Y`)
+- If the previous week's chapter is unclosed (`python3 engine/saga.py route show`), run `/checkpoint` before closing any day of the new week; `plan next --date` has no slot for a new-week day until the next chapter is open.
 - **`daily_log.csv → closed` is the single source of truth.** Check it first (`python3 engine/darrow.py today --date DATE` shows "day closed"). If it is already `Y`, do not write another scene for that day.
 - **A log for an already-closed day:** record it (steps 1–5), `sync`, reply with the Ledger. The engine's totals, XP and the week's tier update (the tier keeps moving until `chapter-close` freezes it). No new scene unless he asks for one.
 - `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`, then `python3 engine/saga.py now` and `python3 engine/saga.py plan next --date DATE --full`: the day's **slot** (its kind: spine, quest, interlude or cutaway; the planned content; the beat or quest stage from the arc; any micro-choice it carries) and the day's **colour** (`warm` / `mild` / `cold` / `rest`), which is GM-only and never said to him.
