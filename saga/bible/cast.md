@@ -11,7 +11,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Clinical, in short sentences. She offers no comfort she cannot back up, and praise from her is rare enough to land like something heavy dropped on a floor. She answers a question with a sharper question. *"How does it feel?" "Wrong question. What did it do this morning?"*
 
 ## Ser Hollis Garrow
-- **Appearance:** Sixty-one, broad through the chest, white-bearded, red in the face, and loud enough to be heard over a river in flood. His right leg is gone above the knee since Harrow Ford; he is learning a wooden one, and hates it.
+- **Appearance:** Sixty-one, broad through the chest and thick through the neck, a bald crown with close-cropped white hair at the sides, a full white beard, a face gone red and broken-veined from wind and drink, pale grey-blue eyes in a nest of creases, an old nick of scar through one white eyebrow, and loud enough to be heard over a river in flood. His right leg is gone above the knee since Harrow Ford; he is learning a wooden one, and hates it. His portrait (`saga/art/characters/hollis-garrow.jpg`) is canon for his face.
 - **Voice:** Profane and warm, with a sergeant's rhythm; insults are how he says he is fond of you ("your Grace-fed ass"). No patience for self-pity, his own included, at which he fails. He calls Darrow "Captain" and lets the word carry whatever he needs it to.
 
 ## Wren Ashdown

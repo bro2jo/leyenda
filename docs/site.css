@@ -177,6 +177,7 @@ details[open]>summary::after{content:"\2212"}
 .portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
 .avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
+.avatar.sm{width:48px;height:48px}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
 dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
 dialog.zoom[open]{display:flex;align-items:center;justify-content:center}

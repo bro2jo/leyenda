@@ -1505,7 +1505,7 @@ class Site:
             c = self.chars[cid]
             sg = c.get("sigil") or {}
             mood = approval_word(int(comp["approval"])) if "approval" in comp else "at his side"
-            comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 48)}'
+            comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{self.avatar(c, rel, 48, "sm") or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 48)}'
                          f'<div><b>{esc(c["name"])}</b><span class="lbl">{esc(mood)}</span><span class="m">{esc(c.get("now", ""))}</span></div></a>')
         companions = sec("With him", f"{len(comps)}", f'<div class="comps">{"".join(comps)}</div>' if comps else '<p class="empty">No one yet.</p>')
         a = d["attributes"]
@@ -1974,6 +1974,7 @@ details[open]>summary::after{content:"\2212"}
 .portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
 .avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
+.avatar.sm{width:48px;height:48px}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
 dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
 dialog.zoom[open]{display:flex;align-items:center;justify-content:center}

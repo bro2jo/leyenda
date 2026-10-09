@@ -13,7 +13,9 @@
     "faction": "sixth-lance",
     "mark": "horn"
   },
-  "appearance": "Sixty-one, broad through the chest, white-bearded and red in the face, with a voice that carries over the Wend in flood. His right leg is gone above the knee since Harrow Ford; under his cot lies the leg the lay brothers made him, beech and a leather cup, which fits the way a boot fits someone else. He talks in a sergeant's rhythm, profane and warm, with insults doing the work of affection, and he calls Darrow \"Captain\" and lets the word carry whatever he needs it to.",
+  "appearance": "Sixty-one, broad through the chest and thick through the neck, with a bald crown, close-cropped white hair at the sides, a full white beard and a face gone red and broken-veined from wind and drink. Pale grey-blue eyes sit in a nest of creases, an old nick of scar cuts through one white eyebrow, and his voice carries over the Wend in flood. His right leg is gone above the knee since Harrow Ford; under his cot lies the leg the lay brothers made him, beech and a leather cup, which fits the way a boot fits someone else. He talks in a sergeant's rhythm, profane and warm, with insults doing the work of affection, and he calls Darrow \"Captain\" and lets the word carry whatever he needs it to.",
+  "portrait": "characters/hollis-garrow.jpg",
+  "portrait_alt": "Portrait of Hollis Garrow: a broad, ruddy old soldier with a bald crown, close-cropped white hair, a full white beard, creased grey-blue eyes, a scar through one eyebrow and a warm half-grin, a grey wool blanket over a linen shirt, by a stone hearth.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",
