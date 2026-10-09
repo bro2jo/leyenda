@@ -13,7 +13,10 @@
     "faction": "menders",
     "mark": "wheel"
   },
-  "appearance": "Thirty, or near it, and strong through the shoulders and back in the way that comes from hauling rather than from Grace. She has a square, wind-browned face under a felt cap that has been sat on, dark-copper hair cut off blunt at the jaw, dark brown eyes, and a chipped front tooth that shows when she swears at the ruts in the road. A small brass bell hangs on a cord at her belt and rings whenever the cart jolts, and she never seems to hear it. She drives the last cart up the Holloway to the foot of the Thousand Steps, talks to her oxen in whole sentences and to knights hardly at all, and looked at Darrow's hurt leg once, the way a carter looks at a cracked wheel.",
+  "appearance": "Twenty-seven, or near it, and strong through the shoulders in the way that comes from hauling rather than from Grace. She has a fair, open face with the wind's colour in it, grey-green eyes that stay on the road, and honey-brown hair that the hood of her cloak gives up holding, so that it falls loose past her shoulders and curls in the damp; her mouth smiles a little, at oxen more readily than at knights. She wears a dark hooded wool cloak pinned at the throat with a plain iron clasp over a linen shirt the colour of old cream, and a small brass bell hangs on a cord at her belt and rings whenever the cart jolts, which she never seems to hear. She drives the last cart up the Holloway to the foot of the Thousand Steps, talks to her oxen in whole sentences and to knights hardly at all, and looked at Darrow's hurt leg once, the way a carter looks at a cracked wheel.",
+  "portrait": "characters/rae-thorne.jpg",
+  "portrait_alt": "Portrait of Rae Thorne: a young woman of about twenty-seven with honey-brown hair falling loose past her shoulders, grey-green eyes and a small warm smile, in a dark hooded wool cloak pinned with a plain iron clasp over a cream linen shirt, before the stone and timber houses of a mountain village.",
+  "portrait_focus": "50% 35%",
   "first_seen": {
     "chapter": "00",
     "scene": "II",
