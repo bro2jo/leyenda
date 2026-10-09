@@ -13,7 +13,9 @@
     "faction": "thornwild-clans",
     "mark": "none"
   },
-  "appearance": "Forty or more, which was older than she looked from across the water, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time. Her hands were painted red to the wrist. The page gives her no clothing and no weapon, only the river: knee-deep in the shallows at the front of the clan line, then waist-deep and breathing hard over Darrow on the far bank, having hauled a man in mail through the water by the collar of his gambeson.",
+  "appearance": "Forty or more, which was older than she looked from across the water: a weathered, freckled face with high cheekbones and a strong nose, amber-brown eyes under heavy brows, a scar through one eyebrow, and the patient, furious look of a woman who had been right about something for a long time. Her dark hair, gone grey at the temples, was slicked back wet and bound in one long braid with a leather thong, and a small iron ring hung in one ear. Her hands were painted red to the wrist; she wore a dark green wool mantle pinned with a bronze ring brooch over a leather jerkin and a coarse undyed tunic, with the haft of a spear over her shoulder, all of it soaked through. Darrow saw her first knee-deep in the shallows at the front of the clan line, then waist-deep and breathing hard over him on the far bank, having hauled a man in mail through the water by the collar of his gambeson.",
+  "portrait": "characters/red-handed-woman.jpg",
+  "portrait_alt": "Portrait of the red-handed woman: a soaked, weathered clanswoman in her forties with amber-brown eyes, a scar through one eyebrow, grey-streaked hair in a long wet braid and a red-painted hand at her chest, in a green wool mantle and leather jerkin with a spear over her shoulder, before a flooded river and standing stones.",
   "first_seen": {
     "chapter": "00",
     "scene": "I",
