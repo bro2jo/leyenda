@@ -12,7 +12,9 @@
     "faction": "menders",
     "mark": "pencil"
   },
-  "appearance": "About twenty, wiry and sharp-faced, with ink on her hands and a pencil behind her ear. She walked beside Darrow's litter up the Thousand Steps in the cliff wind, counting aloud, and did not stop until the top; on the first snow of the year she stood in the infirmary doorway out of breath, snow on the shoulders of her cloak, her cheeks red from the wind and the rest of her face white, her ledger clutched to her chest like a shield. She talks fast and irreverently, with a number in every third sentence and a 'technically' ready whenever she is about to disagree with you.",
+  "appearance": "About twenty, wiry and sharp-faced, with grey eyes under thick dark brows, a dusting of freckles across her nose and cheeks, and a sly half-smile that usually means she is about to correct you. Her brown hair is twisted up out of the way and keeps coming loose in strands, with a pencil stuck behind her ear; in the cold she buries her chin in a thick dark wool scarf. Ink stains her fingers, she hugs her ledger to her chest like a shield, and more often than not she is out of breath, having just run up something. She talks fast and irreverently, with a number in every third sentence and a 'technically' ready whenever she is about to disagree with you.",
+  "portrait": "characters/wren-ashdown.jpg",
+  "portrait_alt": "Portrait of Wren Ashdown: a freckled young woman with grey eyes, thick dark brows and a sly half-smile, brown hair twisted up and coming loose, a pencil tucked behind her ear and a thick dark wool scarf, against snowy stone towers.",
   "first_seen": {
     "chapter": "00",
     "scene": "II",

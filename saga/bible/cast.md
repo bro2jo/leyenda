@@ -15,7 +15,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Profane and warm, with a sergeant's rhythm; insults are how he says he is fond of you ("your Grace-fed ass"). No patience for self-pity, his own included, at which he fails. He calls Darrow "Captain" and lets the word carry whatever he needs it to.
 
 ## Wren Ashdown
-- **Appearance:** About twenty, wiry and sharp-faced, ink on her fingers, a pencil behind her ear and a ledger hugged to her chest like a shield. More often than not she is out of breath, having just run up something.
+- **Appearance:** About twenty, wiry and sharp-faced, grey eyes under thick dark brows, a dusting of freckles across her nose and cheeks, a sly half-smile, brown hair twisted up out of the way and forever coming loose, ink on her fingers, a pencil behind her ear and a ledger hugged to her chest like a shield. In the cold she buries her chin in a thick dark wool scarf. More often than not she is out of breath, having just run up something. Her portrait (`saga/art/characters/wren-ashdown.jpg`) is canon for her face.
 - **Voice:** Fast and irreverent, a number in every third sentence, sarcasm worn as armor. Says "technically" whenever she is about to contradict you. She does not cry where anyone can see.
 
 ## Ser Aldric Vane
