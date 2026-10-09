@@ -48,6 +48,7 @@ For each item:
 
 ## 5. Sync and reply
 - `python3 engine/darrow.py sync`. Read the **RECKONING CHANGES** lines (a `TETHER TIED` / `TETHER DRAWN` line is one of them: it goes in the bracketed Reckoning line like an Art, unexplained).
+- **Rebuild the site on every log:** `python3 engine/build_site.py` (it must pass; `docs/` goes in the same commit). `sync` rewrites `saga/state/darrow.json`, and the public site shows his XP, level, Ember, Arts and the chapter so far from it, so a log that isn't followed by a build leaves the site showing yesterday's numbers.
 - Reply in the CLAUDE.md "Reply shape for a log" format: Ledger first (items, running totals vs targets, what's done, what's still open today), then **one** bracketed Reckoning line only if something changed, then **the glimpse**: one or two italic sentences of life at the House, drawn from how the day has gone, the sheet and his choices, never plot, never the log mirrored, never a mechanic explained (CLAUDE.md "The glimpse"; read the tail of `saga/state/glimpses.md` first, append the new line after). No glimpse in a day-close reply or a red-flag reply. Keep it short enough to read on a phone.
 - If the plan in force, the next PT visit, the gate or a flag changed, update the top section of `real/NOW.md`. Never write counts there (the engine block has them).
 

@@ -29,7 +29,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 1. `git pull --rebase origin main` (cloud sessions may start on a fresh branch; you want the latest logs).
 2. Read `real/NOW.md` and `saga/NOW.md`. They are the fastest way to know where things stand.
 3. `python3 engine/darrow.py sync` if anything might have changed, then `python3 engine/saga.py now` (≤ 30 lines: position, next slot, open choice, Bearing, due consequences, armed rules). Consult the arc, ledger and plan through `saga.py` sections, never whole.
-4. **After every change**, run `sync`; if anything in `saga/` changed, also `python3 engine/saga.py check` and `python3 engine/build_site.py` (both must pass; see "The site" below). Then commit and push straight to `main`, so the next session (often from the phone) starts with everything:
+4. **After every change**, run `sync`, then `python3 engine/build_site.py` (it must pass): `sync` rewrites `saga/state/darrow.json`, which the public site shows, so every log rebuilds the site. If anything else in `saga/` changed, run `python3 engine/saga.py check` first (both must pass; see "The site" below). Then commit and push straight to `main`, so the next session (often from the phone) starts with everything:
    `git add -A && git commit -m "<what was logged/written>" && git push origin HEAD:main`
    If the push is rejected, `git pull --rebase origin main` and push again. Never force-push.
 
