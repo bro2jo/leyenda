@@ -1,9 +1,12 @@
 {
-  "_about": "Reader-facing factions. Claude-owned. Descriptions must be supported by saga/chronicle/. device: lance|bell|censer|crown|redhand|knee; numeral only for lances. Optional picture (only for a faction already on the page): image (a path under saga/art/, e.g. factions/<id>.jpg), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge.",
+  "_about": "Reader-facing factions. Claude-owned. Descriptions must be supported by saga/chronicle/. device: lance|bell|censer|crown|redhand|knee; numeral only for lances. Optional picture (only for a faction already on the page): image (a path under saga/art/, e.g. factions/<id>.jpg), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the faction (\"Confessors\", \"the Ninth\"); the first mention in a scene links to its Codex entry with a preview.",
   "factions": [
     {
       "id": "ninth-lance",
       "name": "The Ninth Lance",
+      "aliases": [
+        "the Ninth"
+      ],
       "device": "lance",
       "numeral": "IX",
       "on_page": true,
@@ -12,6 +15,9 @@
     {
       "id": "sixth-lance",
       "name": "The Sixth Lance",
+      "aliases": [
+        "the Sixth"
+      ],
       "device": "lance",
       "numeral": "VI",
       "on_page": true,
@@ -20,6 +26,9 @@
     {
       "id": "second-lance",
       "name": "The Second Lance",
+      "aliases": [
+        "the Second"
+      ],
       "device": "lance",
       "numeral": "II",
       "on_page": true,
@@ -36,6 +45,9 @@
     {
       "id": "confessors",
       "name": "The Confessors",
+      "aliases": [
+        "Confessors"
+      ],
       "device": "censer",
       "numeral": "",
       "on_page": true,

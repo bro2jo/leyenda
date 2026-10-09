@@ -25,6 +25,10 @@ Conventions the parser and the checks rely on:
               'scene' is the key of the scene whose list it answers ('climax', '3', 'interlude'), chapters compare
               as ints, kind is 'climax' or 'micro', by is 'darrow' or 'bearing' (the latter renders
               "answered for himself"). The Now page titles a micro "A small choice" and a climax "The choice".
+  Links       in the story's prose the first mention in a scene of a character (to their page), a place or faction on
+              the page, or a codex.md thing (to its Codex entry, #place-<id> / #faction-<id> / #codex-<slug>) is a link
+              carrying a preview: its picture if it has one, a title and one line (characters: name and epithet only).
+              Hover or focus on a desktop; first tap on a touch screen. Places and factions may list `aliases`.
   Bearing     saga/state/bearing.json (optional): four axes, each {value, left, right}, plus names and epithet.
               Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the current epithet as a
               chip. The pole words are always allowed on the site; the current epithet only once the chronicle has
@@ -126,6 +130,21 @@ def esc(s):
 def slug(s):
     s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
     return s or "x"
+
+
+def excerpt(text, limit=150):
+    """One short line for a name's preview card: the first clause (to the first '; ' or '. '), without a trailing
+    source note like "(Ch 1)", capitalised and capped. Only ever fed reader-safe text already shown on the site."""
+    s = re.sub(r"\*\*|\*|`|~~", "", str(text or "")).strip()
+    cut = [i for i in (s.find("; "), s.find(". ")) if i > 0]
+    if cut:
+        s = s[:min(cut)]
+    s = re.sub(r"\s*\((?:Prologue|Ch(?:apter)?\b)[^)]*\)\s*\.?$", "", s).rstrip(" .,:;")
+    if len(s) > limit:
+        s = s[:limit].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    elif s:
+        s += "."
+    return s[:1].upper() + s[1:]
 
 
 ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
@@ -975,8 +994,41 @@ class Site:
     def char_href(self, cid):
         return "darrow/index.html" if cid == "darrow" else f"characters/{cid}.html"
 
+    def codex_things(self):
+        """codex.md entries the Codex renders outside Sayings, each with its anchor id, in order: [(section, bucket, entry, id)].
+        Under Things and Beasts, an entry named for a place or a character is skipped (it has its own entry or page)."""
+        place_names = {p["name"].lower() for p in self.places}
+        char_names = {c["name"].lower() for c in self.chars.values()} | {a.lower() for c in self.chars.values() for a in c.get("aliases") or []}
+        out = []
+        for key, entries in self.codex.items():
+            if key == "Sayings":
+                continue
+            bucket = "things" if key in ("Places and things", "Things") else "beasts" if key in ("People", "Beasts") else key
+            for e in entries:
+                nm = e["name"].lower()
+                if bucket in ("things", "beasts") and (nm in place_names or nm in char_names or nm.replace("the ", "") in char_names):
+                    continue
+                out.append((key, bucket, e, f"codex-{slug(e['name'])}"))
+        return out
+
     def build_linkers(self):
+        """Every name the Chronicle links, longest first: a character (to their page), a place or faction on the page, or a
+        codex thing (to its Codex entry). Each target carries a preview: its picture if it has one, a title, one line."""
         pats = []
+        self.link_targets = {}
+
+        def article_variants(nm):
+            v = {nm}
+            if nm.startswith("The "):
+                v.add("the " + nm[4:])
+            elif nm.startswith("the "):
+                v.add("The " + nm[4:])
+            return v
+
+        def focus_of(style):
+            m = re.search(r"object-position:([^\"]+)", style or "")
+            return m.group(1) if m else ""
+
         for cid, c in self.chars.items():
             name_tokens = {t.lower().strip("'") for t in re.split(r"[\s-]+", c["name"]) if len(t) > 2 and t.lower() not in ("ser", "the", "of")}
             names = [c["name"]]
@@ -986,20 +1038,75 @@ class Site:
                 toks = {t.lower() for t in re.split(r"[\s-]+", a)}
                 if toks & name_tokens:
                     names.append(a)
+            key = "c:" + cid
+            self.link_targets[key] = {"href": self.char_href(cid), "t": c["name"], "s": c.get("epithet", ""), "x": "",
+                                      "i": c.get("_portrait_path"), "k": "portrait", "f": focus_of(c.get("_portrait_focus"))}
             for nm in names:
                 variants = {nm}
                 if nm.lower().startswith("the "):
                     variants.add("The " + nm[4:])
                     variants.add("the " + nm[4:])
                 for v in variants:
-                    pats.append((v, cid))
-        pats.sort(key=lambda t: -len(t[0]))
-        self.alias_to_id = {esc(p): cid for p, cid in pats}
-        if pats:
-            self.name_re = re.compile(r"(?<![\w-])(" + "|".join(re.escape(esc(p)) for p, _ in pats) + r")(?![\w-])")
+                    pats.append((v, key))
+        for p in self.places:
+            if not p.get("on_page"):
+                continue
+            key = "p:" + p["id"]
+            self.link_targets[key] = {"href": f"codex/index.html#place-{p['id']}", "t": p["name"], "s": p.get("subtitle") or "A place",
+                                      "x": excerpt(p.get("description")), "i": p.get("_image_path"), "k": "wide", "f": focus_of(p.get("_image_focus"))}
+            for nm in [p["name"], p.get("label")] + list(p.get("aliases") or []):
+                for v in article_variants(nm or ""):
+                    if v:
+                        pats.append((v, key))
+        for f in self.factions.values():
+            if not f.get("on_page"):
+                continue
+            key = "f:" + f["id"]
+            self.link_targets[key] = {"href": f"codex/index.html#faction-{f['id']}", "t": f["name"], "s": "A faction",
+                                      "x": excerpt(f.get("description")), "i": f.get("_image_path"), "k": "wide", "f": focus_of(f.get("_image_focus"))}
+            for nm in [f["name"]] + list(f.get("aliases") or []):
+                for v in article_variants(nm or ""):
+                    if v:
+                        pats.append((v, key))
+        for _sec, _bucket, e, anchor in self.codex_things():
+            key = "t:" + anchor
+            nm = e["name"]
+            self.link_targets[key] = {"href": f"codex/index.html#{anchor}", "t": nm, "s": "From the Codex", "x": excerpt(e["text"]),
+                                      "i": None, "k": "wide", "f": ""}
+            names = set(article_variants(nm))
+            rest = nm[4:] if nm.startswith("The ") else ""
+            if rest and (len(rest.split()) >= 2 or rest[:1].isupper()):
+                names.add(rest)  # "two fires", "Emberwardens"; never a bare common word like "writ"
+            if "-" in nm.split()[0] or (len(nm.split()) >= 2 and nm.split()[1][:1].islower() and not nm.startswith("The ")):
+                names.add(nm[:1].lower() + nm[1:])  # "field-stones"
+            for n in list(names):
+                last = n.split()[-1]
+                if last.endswith("s") and not last.endswith(("'s", "ss")) and len(last) > 3:
+                    names.add(n[:-1])  # "field-stone", "Emberwarden"
+            for v in names:
+                pats.append((v, key))
+        pats.sort(key=lambda t: -len(t[0]))  # stable: for the same words, a character beats a place beats a faction beats a thing
+        self.alias_to_id = {}
+        for ptn, key in pats:
+            self.alias_to_id.setdefault(esc(ptn), key)
+        if self.alias_to_id:
+            alts = sorted(self.alias_to_id, key=len, reverse=True)
+            self.name_re = re.compile(r"(?<![\w-])(" + "|".join(re.escape(a) for a in alts) + r")(?![\w-])")
         else:
             self.name_re = None
         return pats
+
+    def link_html(self, key, text, rel):
+        """A linked name with its preview card's data (shown on hover, or on a first tap on touch screens)."""
+        t = self.link_targets[key]
+        attrs = f' data-pv-t="{esc(t["t"])}"'
+        if t.get("s"):
+            attrs += f' data-pv-s="{esc(t["s"])}"'
+        if t.get("x"):
+            attrs += f' data-pv-x="{esc(t["x"])}"'
+        if t.get("i"):
+            attrs += f' data-pv-i="{rel}{t["i"]}" data-pv-k="{t["k"]}"' + (f' data-pv-f="{esc(t["f"])}"' if t.get("f") else "")
+        return f'<a class="nm" href="{rel}{t["href"]}"{attrs}>{text}</a>'
 
     def link_names(self, frag, seen, rel, exclude=None):
         if not self.name_re:
@@ -1019,11 +1126,11 @@ class Site:
                 continue
 
             def repl(m):
-                cid = self.alias_to_id.get(m.group(1))
-                if not cid or cid == exclude or cid in seen:
+                key = self.alias_to_id.get(m.group(1))
+                if not key or key == exclude or key in seen:
                     return m.group(1)
-                seen.add(cid)
-                return f'<a class="nm" href="{rel}{self.char_href(cid)}">{m.group(1)}</a>'
+                seen.add(key)
+                return self.link_html(key, m.group(1), rel)
             out.append(self.name_re.sub(repl, part))
         return "".join(out)
 
@@ -1560,7 +1667,7 @@ class Site:
 
         def rows(items):
             return '<ol class="archive">' + "".join(
-                f'<li><details><summary><span><span class="rn">{roman(i)}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
+                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span><span class="rn">{roman(i)}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
                 for i, it in enumerate(items, 1)) + "</ol>"
 
         places = []
@@ -1571,7 +1678,7 @@ class Site:
             src = self.scene_ref(fs, rel) if fs else ""
             tag = badge("visited", "good") if p.get("visited") else badge("not yet", "dim")
             name = p["name"] + (f" · {p['subtitle']}" if p.get("subtitle") else "")
-            places.append({"name": name, "tag": self.codex_thumb(p, rel) + tag,
+            places.append({"name": name, "id": f"place-{p['id']}", "tag": self.codex_thumb(p, rel) + tag,
                            "html": self.codex_figure(p, rel) + f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         extra = f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>' if offmap else ""
@@ -1580,26 +1687,16 @@ class Site:
         for f in self.factions.values():
             if not f.get("on_page"):
                 continue
-            facs.append({"name": f["name"], "tag": self.codex_thumb(f, rel),
+            facs.append({"name": f["name"], "id": f"faction-{f['id']}", "tag": self.codex_thumb(f, rel),
                          "html": self.codex_figure(f, rel) + f'<div class="fac">{sigil(f, None, 44)}<p>{esc(f["description"])}</p></div>'})
         secs.append(sec("Factions", f"{len(facs)}", rows(facs)))
         sayings = [{"name": s["name"].strip('"“”'), "tag": "", "html": f"<p>{inline(s['text'])}</p>"} for s in self.codex.get("Sayings", [])]
         secs.append(sec("Sayings", f"{len(sayings)}", rows(sayings)))
-        place_names = {p["name"].lower() for p in self.places}
-        char_names = {c["name"].lower() for c in self.chars.values()} | {a.lower() for c in self.chars.values() for a in c.get("aliases") or []}
-        things, beasts, extra_secs = [], [], []
-        for key, entries in self.codex.items():
-            if key == "Sayings":
-                continue
-            bucket = things if key in ("Places and things", "Things") else beasts if key in ("People", "Beasts") else None
-            if bucket is None:
-                extra_secs.append((key, [{"name": e["name"], "tag": "", "html": f"<p>{inline(e['text'])}</p>"} for e in entries]))
-                continue
-            for e in entries:
-                nm = e["name"].lower()
-                if nm in place_names or nm in char_names or nm.replace("the ", "") in char_names:
-                    continue
-                bucket.append({"name": e["name"], "tag": "", "html": f"<p>{inline(e['text'])}</p>"})
+        things, beasts, extra = [], [], {}
+        for key, bucket, e, anchor in self.codex_things():
+            item = {"name": e["name"], "id": anchor, "tag": "", "html": f"<p>{inline(e['text'])}</p>"}
+            (things if bucket == "things" else beasts if bucket == "beasts" else extra.setdefault(key, [])).append(item)
+        extra_secs = list(extra.items())
         secs.append(sec("Things", f"{len(things)}", rows(things) if things else '<p class="empty">Nothing yet.</p>'))
         if beasts:
             secs.append(sec("Beasts and others", f"{len(beasts)}", rows(beasts)))
@@ -2172,6 +2269,24 @@ ol.choice li{color:var(--dim)}
 ol.choice li s{color:var(--faint)}
 .reader ul,.reader ol:not(.choice){max-width:65ch;font-size:17px;line-height:1.55}
 .nm{color:var(--ink);border-bottom:1px dotted var(--brass-dim)}
+.nm:hover,.nm.pv-on{border-bottom-color:var(--brass);color:var(--brass)}
+/* name previews: a small card over a linked name (hover, or first tap on a touch screen) */
+.pv{position:absolute;z-index:40;width:min(290px,calc(100vw - 24px));background:var(--plate-hi);border:1px solid var(--brass-dim);border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,.6);overflow:hidden;pointer-events:none;font-family:var(--body);font-size:.9rem;line-height:1.4}
+.pv[hidden]{display:none}
+.pv.touch{pointer-events:auto}
+.pv-img{display:block;background:var(--plate);overflow:hidden}
+.pv-img img{display:block;width:100%;height:100%;object-fit:cover}
+.pv-img.wide{aspect-ratio:16/9;border-bottom:1px solid var(--rule)}
+.pv.portrait{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:center}
+.pv-img.portrait{width:72px;height:72px;margin:10px 0 10px 10px;border-radius:50%;border:2px solid var(--brass-dim)}
+.pv-body{padding:10px 12px;display:grid;gap:3px;min-width:0}
+.pv-t{font-family:var(--display);font-weight:700;font-size:1.15rem;line-height:1.1;color:var(--ink)}
+.pv-s{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--brass)}
+.pv-x{color:var(--dim)}
+.pv-open{display:inline-block;margin-top:4px;color:var(--brass);font-family:var(--label);letter-spacing:.06em;font-size:.82rem}
+.archive li{scroll-margin-top:76px}
+.archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
+.archive li:target>details>summary{color:var(--brass)}
 .nm:hover{text-decoration:none;color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
 .pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid var(--rule);padding-top:14px}
@@ -2246,6 +2361,74 @@ if (zoomLinks.length && typeof HTMLDialogElement === "function") {
     });
   });
 }
+/* name previews: a linked name in the story (data-pv-t) shows a small card with its picture, if it has one, and one
+   line. Hover or keyboard focus on a desktop; on a touch screen the first tap shows the card and the second (or Open)
+   follows the link. Without this file every name is a plain link. */
+var pvLinks = document.querySelectorAll("a[data-pv-t]");
+if (pvLinks.length) {
+  var fine = !!(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  var card = document.createElement("div");
+  card.className = "pv"; card.id = "pv"; card.setAttribute("role", "tooltip"); card.hidden = true;
+  document.body.appendChild(card);
+  var cur = null, timer = null;
+  var el = function(tag, cls, text){ var n = document.createElement(tag); if (cls) { n.className = cls; } if (text) { n.textContent = text; } return n; };
+  var place = function(a){
+    var r = a.getBoundingClientRect(), w = card.offsetWidth, h = card.offsetHeight, vw = document.documentElement.clientWidth;
+    var x = Math.min(Math.max(8, r.left), vw - w - 8), y = r.bottom + 8;
+    if (y + h > window.innerHeight - 8 && r.top - h - 8 > 0) { y = r.top - h - 8; }
+    card.style.left = (x + window.pageXOffset) + "px"; card.style.top = (y + window.pageYOffset) + "px";
+  };
+  var hide = function(){
+    clearTimeout(timer);
+    if (cur) { cur.classList.remove("pv-on"); cur.removeAttribute("aria-describedby"); }
+    cur = null; card.hidden = true;
+  };
+  var show = function(a, touch){
+    clearTimeout(timer);
+    if (cur && cur !== a) { cur.classList.remove("pv-on"); cur.removeAttribute("aria-describedby"); }
+    cur = a; a.classList.add("pv-on"); a.setAttribute("aria-describedby", "pv");
+    while (card.firstChild) { card.removeChild(card.firstChild); }
+    var src = a.getAttribute("data-pv-i"), kind = a.getAttribute("data-pv-k") || "wide";
+    card.className = "pv" + (src && kind === "portrait" ? " portrait" : "") + (touch ? " touch" : "");
+    if (src) {
+      var box = el("span", "pv-img " + kind), img = el("img");
+      img.src = src; img.alt = "";
+      if (a.getAttribute("data-pv-f")) { img.style.objectPosition = a.getAttribute("data-pv-f"); }
+      img.addEventListener("load", function(){ if (cur === a) { place(a); } });
+      box.appendChild(img); card.appendChild(box);
+    }
+    var body = el("span", "pv-body");
+    body.appendChild(el("span", "pv-t", a.getAttribute("data-pv-t")));
+    if (a.getAttribute("data-pv-s")) { body.appendChild(el("span", "pv-s", a.getAttribute("data-pv-s"))); }
+    if (a.getAttribute("data-pv-x")) { body.appendChild(el("span", "pv-x", a.getAttribute("data-pv-x"))); }
+    if (touch) { var go = el("a", "pv-open", "Open →"); go.href = a.href; body.appendChild(go); }
+    card.appendChild(body);
+    card.hidden = false; place(a);
+  };
+  Array.prototype.forEach.call(pvLinks, function(a){
+    if (fine) {
+      a.addEventListener("mouseenter", function(){ clearTimeout(timer); timer = setTimeout(function(){ show(a, false); }, 90); });
+      a.addEventListener("mouseleave", function(){ clearTimeout(timer); timer = setTimeout(hide, 90); });
+      a.addEventListener("focus", function(){ show(a, false); });
+      a.addEventListener("blur", hide);
+    } else {
+      a.addEventListener("click", function(e){ if (cur !== a) { e.preventDefault(); show(a, true); } });
+    }
+  });
+  document.addEventListener("click", function(e){ if (cur && !e.target.closest("a[data-pv-t]") && !e.target.closest(".pv")) { hide(); } });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") { hide(); } });
+  window.addEventListener("resize", hide);
+}
+/* the Codex: a link to an entry (#place-…, #faction-…, #codex-…) opens it */
+var openTarget = function(){
+  var id = decodeURIComponent(location.hash.slice(1)), t = id && document.getElementById(id);
+  if (!t) { return; }
+  var d = t.tagName === "DETAILS" ? t : t.querySelector("details");
+  if (d && !d.open) { d.open = true; }
+  t.scrollIntoView({block: "start"});
+};
+openTarget();
+window.addEventListener("hashchange", openTarget);
 if (reduce) { document.documentElement.classList.add("reduce"); }
 })();
 """
