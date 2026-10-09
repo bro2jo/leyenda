@@ -26,6 +26,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
   "appearance": "2–4 sentences: build, face, clothing, scars, how they carry themselves.",
   "portrait": "characters/maelis-vorne.jpg",   // optional: a picture he supplies, path under saga/art/ (see saga/art/README.md)
   "portrait_alt": "What the portrait shows, for screen readers.",
+  "portrait_focus": "50% 30%",                // optional: the centre of the square crop (default 50% 30%)
   "first_seen": {"chapter": "00", "scene": "II", "place": "saint-ysoldes", "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"},
   "last_seen":  {"chapter": "01", "scene": "1",  "place": "saint-ysoldes", "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"},
   "last_seen_doing": "One sentence: what they were doing the last time they were on the page.",

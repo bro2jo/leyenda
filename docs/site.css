@@ -162,18 +162,19 @@ details[open]>summary::after{content:"\2212"}
 .archive .dt-body:has(>.place-art){max-width:none}
 .archive .dt-body:has(>.place-art)>p{max-width:62ch}
 .place-art{margin:2px 0 6px}
-.place-art a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.place-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
 .place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.place-art img{display:block;width:100%;height:auto}
+.place-art img{display:block;width:100%;height:100%;object-fit:cover}
 .place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
-/* portraits: framed at the head of a character's page; round in cards */
-.pf{display:grid;gap:14px}
-.portrait{margin:0;max-width:420px}
-.portrait a{display:block;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+/* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
+   anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
+.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
+.portrait{margin:0;position:relative;min-width:0}
+.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.portrait img{display:block;width:100%;height:auto}
-@media (min-width:560px){.pf{grid-template-columns:200px minmax(0,1fr);align-items:center}}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
 .avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}

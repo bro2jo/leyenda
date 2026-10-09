@@ -7,8 +7,10 @@ Reads (and nothing else):
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
   saga/art/                                images the user supplies, published as files when places.json names one
-                                           (image, image_alt; only for a place already on the page) or a character file
-                                           does (portrait, portrait_alt)
+                                           (image, image_alt, image_focus; only for a place already on the page) or a
+                                           character file does (portrait, portrait_alt, portrait_focus). Every picture sits
+                                           in a fixed frame (places 16:9, portraits square) and is cropped to fit, never
+                                           stretched; *_focus ("50% 30%") picks the crop's centre; tap shows it whole.
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -779,6 +781,17 @@ class Site:
         self.assets[path] = src
         return path, image_size(src)
 
+    @staticmethod
+    def focus_style(where, focus, default):
+        """An object-position for the crop: "X% Y%" (0-100 each); anything else is a problem and falls back to the default."""
+        if focus is None:
+            return f' style="object-position:{default}"'
+        m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(focus))
+        if not m or int(m.group(1)) > 100 or int(m.group(2)) > 100:
+            problem(f"{where} focus '{focus}' must look like \"50% 30%\" (each 0-100%)")
+            return f' style="object-position:{default}"'
+        return f' style="object-position:{m.group(1)}% {m.group(2)}%"'
+
     def place_image(self, p):
         pid = p.get("id", "?")
         if not p.get("on_page"):
@@ -787,14 +800,17 @@ class Site:
         got = self.register_image(f"places.json: {pid}.image", p["image"], p.get("image_alt"))
         if got:
             p["_image_path"], p["_image_size"] = got
+            p["_image_focus"] = self.focus_style(f"places.json: {pid}.image_focus", p.get("image_focus"), "50% 50%")
 
     def char_portrait(self, c):
         got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
         if got:
             c["_portrait_path"], c["_portrait_size"] = got
+            c["_portrait_focus"] = self.focus_style(f"saga/characters/{c['id']}.json: portrait_focus", c.get("portrait_focus"), "50% 30%")
 
-    def portrait_figure(self, c, rel):
-        """A character's portrait at the head of their page: framed, tap or click to see it whole."""
+    def portrait_figure(self, c, rel, overlay=""):
+        """A character's portrait at the head of their page: a square frame, cropped to fit, tap or click to see it whole.
+        overlay (the level crest) sits on the frame's corner and lets taps through to the picture."""
         if not c.get("_portrait_path"):
             return ""
         href = rel + c["_portrait_path"]
@@ -802,14 +818,14 @@ class Site:
         dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
         alt = esc(c.get("portrait_alt", ""))
         return (f'<figure class="portrait"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
-                f'<img src="{href}" alt="{alt}"{dims} decoding="async"></a></figure>')
+                f'<img src="{href}" alt="{alt}"{dims}{c.get("_portrait_focus", "")} decoding="async"></a>{overlay}</figure>')
 
     def avatar(self, c, rel, size, cls=""):
         """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none."""
         if not c or not c.get("_portrait_path"):
             return ""
         return (f'<img class="avatar{(" " + cls) if cls else ""}" src="{rel}{c["_portrait_path"]}" alt="" '
-                f'width="{size}" height="{size}" loading="lazy" decoding="async">')
+                f'width="{size}" height="{size}"{c.get("_portrait_focus", "")} loading="lazy" decoding="async">')
 
     def place_figure(self, p, rel):
         """The place's picture: shown full width, tap or click to see it whole (a plain link without JavaScript)."""
@@ -821,13 +837,13 @@ class Site:
         cap = p.get("image_caption") or ""
         alt = esc(p.get("image_alt", ""))
         return (f'<figure class="place-art"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
-                f'<img src="{href}" alt="{alt}"{dims} loading="lazy" decoding="async"></a>'
+                f'<img src="{href}" alt="{alt}"{dims}{p.get("_image_focus", "")} loading="lazy" decoding="async"></a>'
                 f'<figcaption>{esc(cap)}{" · " if cap else ""}<span class="zoom-hint"><span class="t">Tap</span><span class="c">Click</span> to enlarge</span></figcaption></figure>')
 
     def place_thumb(self, p, rel):
         if not p.get("_image_path"):
             return ""
-        return f'<img class="thumb" src="{rel}{p["_image_path"]}" alt="" loading="lazy" decoding="async">'
+        return f'<img class="thumb" src="{rel}{p["_image_path"]}" alt=""{p.get("_image_focus", "")} loading="lazy" decoding="async">'
 
     # ---------------------------------------------------------------- helpers
     WORLD_GM_KEYS = ("chapter_plan", "core_beats", "flags", "factions")
@@ -1198,11 +1214,10 @@ class Site:
         else:
             cr = crest(level if level is not None else "?")
             row = f'<div class="sigil-row">{sigil(fac, sg.get("mark"), 44)}<span class="dim">{esc(f.get("name", ""))}</span></div>'
-        hero = (f'<div class="hero">{cr}<div class="who"><h1>{esc(c["name"])}</h1>'
-                f'<p class="sub">{esc(c.get("epithet", ""))}</p><div class="chips">{"".join(chips)}</div></div></div>')
-        fig = self.portrait_figure(c, rel)
-        if fig:
-            hero = f'<div class="pf">{fig}{hero}</div>'
+        who = (f'<div class="who"><h1>{esc(c["name"])}</h1>'
+               f'<p class="sub">{esc(c.get("epithet", ""))}</p><div class="chips">{"".join(chips)}</div></div>')
+        fig = self.portrait_figure(c, rel, "" if c["tier"] == "fallen" else cr)
+        hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
         return f'<section class="plate">{hero}{row}</section>'
 
     def character_sections(self, c, rel):
@@ -1944,18 +1959,19 @@ details[open]>summary::after{content:"\2212"}
 .archive .dt-body:has(>.place-art){max-width:none}
 .archive .dt-body:has(>.place-art)>p{max-width:62ch}
 .place-art{margin:2px 0 6px}
-.place-art a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.place-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
 .place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.place-art img{display:block;width:100%;height:auto}
+.place-art img{display:block;width:100%;height:100%;object-fit:cover}
 .place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
-/* portraits: framed at the head of a character's page; round in cards */
-.pf{display:grid;gap:14px}
-.portrait{margin:0;max-width:420px}
-.portrait a{display:block;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+/* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
+   anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
+.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
+.portrait{margin:0;position:relative;min-width:0}
+.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.portrait img{display:block;width:100%;height:auto}
-@media (min-width:560px){.pf{grid-template-columns:200px minmax(0,1fr);align-items:center}}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
 .avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
