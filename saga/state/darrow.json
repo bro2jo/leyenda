@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 903,
+  "xp": 958,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -14,7 +14,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 21,
+      "temper": 23,
       "next_at": 27,
       "fell": 15,
       "banked": false
@@ -44,16 +44,16 @@
       "raw": 9,
       "cap": null,
       "mod": -1,
-      "temper": 12,
+      "temper": 13,
       "next_at": 16,
       "fell": 12,
       "banked": false
     }
   },
   "ember": {
-    "value": 69,
-    "tier": "Low",
-    "effect": "none; the cold gets in"
+    "value": 76,
+    "tier": "Steady",
+    "effect": "none"
   },
   "inspiration": 0,
   "inspiration_cap": 4,
@@ -68,10 +68,10 @@
       "id": "seated_blade",
       "name": "The Seated Blade",
       "tree": "Blade",
-      "rank": 0,
+      "rank": 1,
       "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
     },
@@ -125,7 +125,7 @@
       "tree": "Binding",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 2,
+      "practice": 3,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."

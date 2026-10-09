@@ -7,3 +7,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-09 · weather · Wind off the Greywater has found the gap under the hall door, and the cold comes in along the floor like it pays rent. Darrow tucks his hands into his armpits and lets it.
 - 2026-10-09 · house · Wren's pencil rolled off the sill. Darrow lobbed it back over two cots and a dozing lay brother, and it dropped into the fold of her open ledger as if it lived there. She looked at him and wrote something down.
 - 2026-10-09 · saying · What the lay brothers say on the Steps when the wind gets under a cloak: "The mountain keeps its own count." Nobody can tell you what it means. Everybody says it anyway.
+- 2026-10-09 · overheard · In the kitchen passage: "The Captain's got his colour back." "He's got somebody's colour. Hope he gives it back before the Mender notices."
