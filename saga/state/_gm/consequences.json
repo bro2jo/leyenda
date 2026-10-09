@@ -1,0 +1,128 @@
+{
+  "_about": "The consequence ledger. One entry per choice; one line per field. Read with `python3 engine/saga.py now|due`; write with `saga.py add|fire|void`. Never rendered.",
+  "baseline": {
+    "approval": {
+      "maelis": 15,
+      "hollis": 30,
+      "wren": 10
+    },
+    "note": "approval before any ledger entry; check verifies baseline + sum(now.approval) == world.json"
+  },
+  "entries": [],
+  "rules": [
+    {
+      "id": "r.finale.shatter",
+      "if": "true",
+      "then": "Finale option 1 (shatter the First Stone) is always offered",
+      "where": "book6:climax"
+    },
+    {
+      "id": "r.finale.take.tempting",
+      "if": "temptation.count >= 3 && (bearing.banner >= 4 || bearing.flint >= 4)",
+      "then": "Finale option 2 (take the Stone) is written as a true temptation; otherwise it is offered flat",
+      "where": "book6:climax"
+    },
+    {
+      "id": "r.finale.return",
+      "if": "approval.maelis >= 50 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound)",
+      "then": "Finale option 3 (return the tithe) is offered",
+      "where": "book6:climax"
+    },
+    {
+      "id": "r.t8.early",
+      "if": "approval.maelis >= 60",
+      "then": "Maelis tells her own story before Book IV",
+      "where": "any"
+    },
+    {
+      "id": "r.b4.hollis_lives",
+      "if": "approval.hollis >= 50 && flags.hollis_truth",
+      "then": "Hollis survives his last stand in Book IV",
+      "where": "book4"
+    },
+    {
+      "id": "r.b3.ysra_fate",
+      "if": "flags.ysra_spared",
+      "then": "The duelist defects in Book III instead of dying",
+      "where": "book3"
+    },
+    {
+      "id": "r.route.book1.low",
+      "if": "route.book1 == \"low\"",
+      "then": "Carry-forward from arc t1.low applies",
+      "where": "book2"
+    },
+    {
+      "id": "r.route.book1.high",
+      "if": "route.book1 == \"high\"",
+      "then": "Carry-forward from arc t1.high applies",
+      "where": "book2"
+    },
+    {
+      "id": "r.route.book2.low",
+      "if": "route.book2 == \"low\"",
+      "then": "Carry-forward from arc t2.low applies",
+      "where": "book3"
+    },
+    {
+      "id": "r.route.book2.high",
+      "if": "route.book2 == \"high\"",
+      "then": "Carry-forward from arc t2.high applies",
+      "where": "book3"
+    },
+    {
+      "id": "r.route.book3.low",
+      "if": "route.book3 == \"low\"",
+      "then": "Carry-forward from arc t3.low applies",
+      "where": "book4"
+    },
+    {
+      "id": "r.route.book3.high",
+      "if": "route.book3 == \"high\"",
+      "then": "Carry-forward from arc t3.high applies",
+      "where": "book4"
+    },
+    {
+      "id": "r.route.book4.low",
+      "if": "route.book4 == \"low\"",
+      "then": "Carry-forward from arc t4.low applies",
+      "where": "book5"
+    },
+    {
+      "id": "r.route.book4.high",
+      "if": "route.book4 == \"high\"",
+      "then": "Carry-forward from arc t4.high applies",
+      "where": "book5"
+    },
+    {
+      "id": "r.route.book5.low",
+      "if": "route.book5 == \"low\"",
+      "then": "Carry-forward from arc t5.low applies",
+      "where": "book6"
+    },
+    {
+      "id": "r.route.book5.high",
+      "if": "route.book5 == \"high\"",
+      "then": "Carry-forward from arc t5.high applies",
+      "where": "book6"
+    },
+    {
+      "id": "r.route.book6.low",
+      "if": "route.book6 == \"low\"",
+      "then": "Carry-forward from arc t6.low applies",
+      "where": "finale"
+    },
+    {
+      "id": "r.route.book6.high",
+      "if": "route.book6 == \"high\"",
+      "then": "Carry-forward from arc t6.high applies",
+      "where": "finale"
+    },
+    {
+      "id": "r.once.early_arrival",
+      "if": "true",
+      "then": "An 'arrives a chapter early' effect fires at most once per Book, whichever source armed it",
+      "where": "any"
+    }
+  ]
+}

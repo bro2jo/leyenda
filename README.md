@@ -55,8 +55,11 @@ You don't need commands; anything that looks like a log gets logged. Commands ex
 | sport skills | **Finesse**, **Vigor**, and sport **Arts** you define |
 | a full week | the chapter's tier: **Triumph · Hard-won · Costly · Setback** sets how the climax goes |
 | a real rehab gate passed (PT-cleared) | a **Knot** of the Binding ties, and a new Book of the saga opens |
+| a choice you make in the story | his **Bearing** (Mercy or Flint, Candor or Guile, Hearth or Banner, Sworn or Unsworn): who his choices are making him, shown in words and, in time, an epithet; and a line in the **consequence ledger**, which the story pays off later, sometimes much later |
 
 The **Seven Knots** are your real phase gates. Book I lasts until Phase 4; Darrow can't run in the story until you're cleared to run; he can't turn at speed until you're cleared to cut. The story can never get ahead of your knee. Training more than prescribed earns nothing extra, and a rest the plan calls for is never held against you.
+
+Real effort sets the **tone** of each day's scene and the **outcome** of each week's climax; it never changes what the scene is about. Your story choices (the small ones at the end of a scene, the big one after a climax) are the only thing that moves the Bearing and the ledger. A missed day is not a punishment: the world simply moves a step without him.
 
 ---
 
@@ -71,9 +74,10 @@ The **Seven Knots** are your real phase gates. Book I lasts until Phase 4; Darro
 
 ```
 real/      the Ledger: NOW.md (today/this week), plans, recovery state, logs (CSV)
-engine/    darrow.py (the math) + rules.json (the exchange rates; tweak freely)
-saga/      the Chronicle: NOW.md (story right now), bible/, state/, characters/ (the cast), chronicle/ (the chapters)
-           saga/bible/_gm/ holds the plot twists and character secrets. Don't open it unless you want spoilers.
+engine/    darrow.py (the real math) + rules.json (the exchange rates; tweak freely) + saga.py (the story's bookkeeping) + build_site.py (the site)
+saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechanics), state/ (world, bearing, places, factions, codex), characters/ (the cast), chronicle/ (the chapters)
+           saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger and the character secrets: everything the page
+           has not said yet. Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
 docs/      the site, generated; never edited by hand
 archive/   the old nutrition-only game (retired)
 ```

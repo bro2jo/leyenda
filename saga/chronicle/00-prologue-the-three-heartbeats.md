@@ -61,7 +61,7 @@ It went the way heat goes out of a room when someone opens the door onto winter.
 
 That was the first heartbeat.
 
-On the second, everything happened at once. Thistle stumbled. Her legs had been running on his Grace as much as her own, and now they were only a horse's legs in a flooded river, and she went down at the shoulder. All around him the Ninth sagged in their saddles like men whose strings had been cut. Lances dipped. A knight to his right simply slid sideways into the water, and his horse kept going without him. To Darrow's left, Tobin Marsh, nineteen years old and the youngest of the Ninth, who sang badly and constantly, went under his own horse in the current.
+On the second, everything happened at once. Thistle stumbled. Her legs had been running on his Grace as much as her own, and now they were only a horse's legs in a flooded river, and she went down at the shoulder. All around him the Ninth sagged in their saddles. Lances dipped. A knight to his right simply slid sideways into the water, and his horse kept going without him. To Darrow's left, Tobin Marsh, nineteen years old and the youngest of the Ninth, who sang badly and constantly, went under his own horse in the current.
 
 Darrow kicked his feet out of the stirrups and came off Thistle as she fell. He landed thigh-deep on the riverbed stones, and every instinct he owned said *turn*: get to Tobin, cover the left. He planted his left foot on a stone and turned on it, the way he had turned ten thousand times, fast and low.
 
@@ -77,13 +77,13 @@ Already. One heartbeat early.
 
 ---
 
-The Grace came back, if you could call it that. A thread of warmth crept into his chest like a candle lit in a barn, too thin to do anything but show him how cold he was. He came up gasping, grabbed a stone, lost it, grabbed another. When he tried to stand, the leg slid out from under him. When he tried again it did the same, sickly and loose. It wasn't pain yet. It was wrongness, and that was worse.
+The Grace came back, if you could call it that. A thread of warmth crept into his chest, too thin to do anything but show him how cold he was. He came up gasping, grabbed a stone, lost it, grabbed another. When he tried to stand, the leg slid out from under him. When he tried again it did the same, sickly and loose. It wasn't pain yet. It was wrongness, and that was worse.
 
 All around him, the river was full of the Ninth.
 
 A hand closed in the collar of his gambeson and hauled.
 
-He was dragged backward through the shallows, not toward his own bank but away from it, east, and dumped on the gravel among the standing stones of the far shore like a sack of meal. He rolled over. The red-handed woman was standing over him, waist-deep in the water, breathing hard. Up close she was older than he'd thought, forty or more, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time.
+He was dragged backward through the shallows, not toward his own bank but away from it, east, and dumped on the gravel among the standing stones of the far shore. He rolled over. The red-handed woman was standing over him, waist-deep in the water, breathing hard. Up close she was older than he'd thought, forty or more, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time.
 
 She grabbed his jaw and turned his head toward the river.
 
@@ -105,7 +105,7 @@ Hollis Garrow rode the next cart over, missing his right leg above the knee, and
 
 "Kneel to that," Hollis said, and nobody on either cart laughed.
 
-The surgeons in the Lowmarch looked at Darrow's knee, pressed it, watched it slide, and sent him north. *Saint Ysolde's*, they said, the way you would say *the sea*. The House of Menders took the ones the lowland surgeons couldn't fix and didn't want to watch.
+The surgeons in the Lowmarch looked at Darrow's knee, pressed it, watched it slide, and sent him north, into the Greywater. *Saint Ysolde's*, they said, the way you would say *the sea*. The House of Menders took the ones the lowland surgeons couldn't fix and didn't want to watch.
 
 They carried him up the Thousand Steps on a litter. Four lay brothers, two at each end, switching every hundred steps, while the cliff fell away on one side into cloud and the wind came round the shoulder of the mountain with a knife in it. Beside the litter walked a girl of about twenty with ink on her fingers and a pencil behind her ear, and she was counting the steps out loud.
 
@@ -119,7 +119,7 @@ They carried him up the Thousand Steps on a litter. Four lay brothers, two at ea
 
 "I did not miss one. Four hundred and sixteen."
 
-He didn't have the strength to argue, and she didn't stop until the top, where bells were ringing and the air smelled of snow and sulphur and boiled linen, and someone very small and grey-braided was standing in the gate with her arms folded, looking at his leg as if it had said something rude.
+He didn't have the strength to argue, and she didn't stop until the top, where bells were ringing and the air smelled of snow and sulphur and boiled linen, and someone small and grey-braided was standing in the gate with her arms folded, looking at his leg as if it had said something rude.
 
 ---
 

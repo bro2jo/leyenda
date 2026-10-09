@@ -5,7 +5,8 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 ## People
 - **Tobin Marsh** — youngest knight of the Ninth Lance, 19, sang badly and constantly; drowned at Harrow Ford (Prologue).
 - **Thistle** — Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue).
-- **The red-handed woman** — clan warrior, forty-odd, scar through one eyebrow, hands painted red to the wrist; pulled Darrow from the Wend. ⟪gm: She is Ilse of Corrach; Darrow doesn't know her name.⟫ (Prologue)
+- **The red-handed woman** — clan warrior, forty-odd, scar through one eyebrow, hands painted red to the wrist; pulled Darrow from the Wend (Prologue).
+- **Benedek Orrin** — knight of Hollis's own Sixth Lance, not yet thirty; a boar spear through the shoulder at the ford and a fever after it; says his oath at every bell; the cot next to Hollis's at Saint Ysolde's (Ch 1 Interlude).
 
 ## Places and things
 - **Field-stones** — slabs of black Oathstone in iron frames, one per lance, hauled on ox-carts; knights kneel and touch them before battle to be filled with Grace (Prologue).
@@ -13,8 +14,11 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Sister Pell's glass** — the spyglass in the bell tower (Ch 1).
 - **The dawn forms** — the slow, dull work Maelis sets him each morning; afterward the leg lies a little straighter on the blanket, which is the point of them (Ch 1).
 - **The Reading of the Knots** — Maelis's reading of the Binding: pipe between her teeth, two fingers either side of the kneecap, eyes shut. Darrow has stopped asking what she feels for; she has stopped answering (Ch 1).
+- **Hollis's leg** — the wooden leg the lay brothers made him: beech and a leather cup, fitting the way a boot fits someone else. The writ from Harrow Ford, folded and unread, now lies in its cup (Ch 1 Interlude).
+- **The writ** — the order from command at Harrow Ford, the Sixth and the Ninth to clear the ford and the Second in reserve; Hollis broke its wax with his thumb without looking and has kept it folded small inside his shirt, wax inward, ever since (Prologue; Ch 1 Interlude).
 
 ## Sayings
 - **"Kneel to that."** — Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).
 - **"Ride wide today."** — what Aldric said at the ford (Prologue).
 - **"The quiet is a liar."** — Maelis, on the soft season (Ch 1).
+- **"Nobody's taking anyone."** — Hollis to Benedek Orrin, of the Confessors: not up eleven hundred steps in the snow (Ch 1 Interlude).

@@ -2,7 +2,7 @@
 name: sport
 description: Set up or update the sport-specific add-on — the sport, its key skills and drills, which are safe in each rehab phase, how to log them — and turn each skill into an Art in the saga. Use when the user mentions his sport, sends a sport program, or wants sport work tracked.
 argument-hint: "[sport, skills, or a program file]"
-allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read Edit Write
+allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) Bash(python3 engine/build_site.py *) Bash(git *) Read Edit Write
 ---
 
 # /sport
@@ -27,7 +27,7 @@ When unsure, choose the later Knot and list it as a question for the PT. **Nothi
 - Add one entry per skill to `engine/rules.json → sport_arts.arts`: `{"skill": "<id>", "id": "<art_id>", "name": "<Art name>", "tree": "Sport", "knot": <n>, "effect": "<what it lets Darrow do>"}`.
 - Art names: evocative, grounded, medieval-martial, never cheesy and never the sport's own terms (a passing skill might become "The Long Thread"; a shooting skill "Kingfisher's Strike"). Effects must be things a knight can use in a fight, a chase or a council.
 - Add the new Arts to the table in `saga/bible/mechanics.md`.
-- Add a planned scene to `saga/state/world.json → chapter_plan.later_scenes` where someone teaches the first of these Arts (Hollis, or later Ysra Tal). **Never name the real sport in the prose.**
+- Plan a slot where whoever the plan names teaches the first of these Arts: a `quest` or `spine` slot in `saga/state/_gm/plan.json → chapter.slots` (by Edit, canonical format, if the current chapter has an unwritten slot that fits; otherwise at the next checkpoint's `python3 engine/saga.py plan chapter open`). The Art is sealed on the site until its Knot ties; that is by design. **Never name the real sport in the prose.**
 
 ## 5. Finish
-`python3 engine/darrow.py sync` · commit and push · reply with the skill→Art map, the gates, and the PT questions.
+`python3 engine/darrow.py sync` · `python3 engine/saga.py check` if `plan.json` changed · commit and push · reply with the skill→Art map, the gates, and the PT questions.

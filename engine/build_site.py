@@ -4,10 +4,27 @@
 Reads (and nothing else):
   saga/chronicle/*.md                      the story, by chapter
   saga/characters/*.json                   the cast, as the page has shown it
-  saga/state/world.json, places.json, factions.json, darrow.json, codex.md, chapters.csv, rolls.csv
+  saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
-Never: real/, engine/deeds.csv, saga/bible/ (the checks open saga/bible/_gm and characters.md only to
-build blocklists; nothing from them is ever rendered).
+Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md,
+saga/state/_gm/*.md and, while they still exist, saga/bible/characters.md and world.md only to build
+blocklists; nothing from them is ever rendered).
+
+Conventions the parser and the checks rely on:
+  Scenes      '## I. Title' (prologue parts), '### Scene N — Title', '## Climax — Title', '### Choice — Title'.
+  Interlude   '### Interlude — Title': another POV, not tied to a day. Scene key and anchor 'interlude'
+              (a second one in the same chapter: 'interlude-2'), label "Interlude".
+  Choices     a heading line '**What does Darrow do?**' (the chapter's climax choice) or
+              '**What does Darrow say?**' (a small choice inside a scene) followed by a numbered list.
+              world.json → choices[] records answers as {chapter, scene, kind, option, text, date, ledger, by}:
+              'scene' is the key of the scene whose list it answers ('climax', '3', 'interlude'), chapters compare
+              as ints, kind is 'climax' or 'micro', by is 'darrow' or 'bearing' (the latter renders
+              "answered for himself"). The Now page titles a micro "A small choice" and a climax "The choice".
+  Bearing     saga/state/bearing.json (optional): four axes, each {value, left, right}, plus names and epithet.
+              Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the epithet as a chip.
+  GM wall     world.json must not carry chapter_plan, core_beats, flags, factions or current_quest.summary;
+              those live under saga/state/_gm/. Every sentence in a _gm/*.md file is blocked from the site
+              unless the chronicle, engine/rules.json or bearing.json already carries it.
 
 Usage: python3 engine/build_site.py [--verbose] [--force]
   Builds into a temporary directory, runs the checks, and replaces docs/ only when every check passes.
@@ -32,7 +49,7 @@ CHARS = SAGA / "characters"
 STATE = SAGA / "state"
 RULES = ROOT / "engine" / "rules.json"
 READ_ALLOW = [CHRON, CHARS, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
-              STATE / "darrow.json", STATE / "codex.md", STATE / "chapters.csv", STATE / "rolls.csv", RULES]
+              STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "chapters.csv", STATE / "rolls.csv", RULES]
 
 VERBOSE = "--verbose" in sys.argv
 FORCE = "--force" in sys.argv
@@ -93,10 +110,12 @@ ROLL_LINE_RE = re.compile(r"^(?:🎲\s*)?(\S+)\s*·\s*([A-Z]+) check DC (\d+):\s
 OL_RE = re.compile(r"^(\d+)\.\s+(.*)$")
 PART_RE = re.compile(r"^##\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+(.+)$")
 SCENE_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
+INTERLUDE_RE = re.compile(r"^###\s+Interlude\s*[—–-]\s*(.+)$")
 CLIMAX_RE = re.compile(r"^##\s+Climax\s*[—–-]\s*(.+)$")
 CHOICE_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
 HEAD_RE = re.compile(r"^(#{2,3})\s+(.+)$")
 CHAPTER_RE = re.compile(r"^(Chapter\s+(\d+)|Prologue)\s*[—–-]\s*(.+)$")
+CHOICE_HEAD_RE = re.compile(r"^\*\*What does Darrow (do|say)\?\*\*$")
 
 
 def parse_chapter(path):
@@ -149,7 +168,8 @@ def parse_chapter(path):
         return s
 
     para = []
-    pending_choice = False
+    pending_choice = None  # None, or "do" / "say": which choice heading the next numbered list answers
+    n_interludes = 0
 
     def flush():
         nonlocal para, pending_choice
@@ -157,7 +177,7 @@ def parse_chapter(path):
             text = " ".join(x.strip() for x in para)
             cur["blocks"].append(("p", text))
             ch["words"] += len(text.split())
-            pending_choice = False
+            pending_choice = None
         para = []
 
     while i < n:
@@ -175,6 +195,14 @@ def parse_chapter(path):
             cur = scene(m.group(1), "Scene " + m.group(1), m.group(2).strip(), "scene-" + m.group(1))
             i += 1
             continue
+        m = INTERLUDE_RE.match(s)
+        if m:
+            flush()
+            n_interludes += 1
+            key = "interlude" if n_interludes == 1 else f"interlude-{n_interludes}"
+            cur = scene(key, "Interlude", m.group(1).strip(), key)
+            i += 1
+            continue
         m = CLIMAX_RE.match(s)
         if m:
             flush()
@@ -190,10 +218,10 @@ def parse_chapter(path):
         m = HEAD_RE.match(s)
         if m:
             flush()
-            pending_choice = False
+            pending_choice = None
             head = m.group(2).strip()
-            if re.match(r"^(Scene\b|Climax\b|Choice\b)", head, re.I):
-                problem(f"{path.name}: heading '{s}' must be '### Scene N — Title', '## Climax — Title' or '### Choice — Title'")
+            if re.match(r"^(Scene\b|Interlude\b|Climax\b|Choice\b)", head, re.I):
+                problem(f"{path.name}: heading '{s}' must be '### Scene N — Title', '### Interlude — Title', '## Climax — Title' or '### Choice — Title'")
             if cur is None:
                 cur = scene(slug(head), "", head, slug(head))
             else:
@@ -251,7 +279,7 @@ def parse_chapter(path):
                 items.append(OL_RE.match(lines[i].strip()).group(2))
                 i += 1
             cur["blocks"].append(("ol", items, pending_choice))
-            pending_choice = False
+            pending_choice = None
             continue
         if s.startswith("- "):
             flush()
@@ -261,10 +289,11 @@ def parse_chapter(path):
                 i += 1
             cur["blocks"].append(("ul", items))
             continue
-        if s == "**What does Darrow do?**":
+        m = CHOICE_HEAD_RE.match(s)
+        if m:
             flush()
-            cur["blocks"].append(("choice-h", "What does Darrow do?"))
-            pending_choice = True
+            cur["blocks"].append(("choice-h", f"What does Darrow {m.group(1)}?", m.group(1)))
+            pending_choice = m.group(1)
             i += 1
             continue
         para.append(ln)
@@ -644,6 +673,9 @@ class Site:
                 self.registry[(ch["code"], s["key"])] = {
                     "href": f"chronicle/{ch['slug']}.html#{s['anchor']}", "chapter": ch, "scene": s,
                     "label": (f"{ch['label']} · {s['label']}" if s["label"] else ch["label"]) + (f" — {s['title']}" if s["title"] else "")}
+        self.chapter_by_number = {ch["number"]: ch for ch in self.chapters}
+        self.bearing = self.load_bearing()
+        self.check_world()
         self.chars = load_characters(self.registry, self.factions, self.place_by_id)
         self.pages = {}  # path -> html
         loc = self.world.get("location") or {}
@@ -670,12 +702,105 @@ class Site:
         self.linkers = self.build_linkers()
 
     # ---------------------------------------------------------------- helpers
-    def choice_for(self, ch):
-        """The recorded choice for a chapter, if any (chapter may be written as 1, '1' or '01')."""
+    WORLD_GM_KEYS = ("chapter_plan", "core_beats", "flags", "factions")
+    CHOICE_KEYS = ("chapter", "scene", "kind", "option", "ledger")
+
+    def load_bearing(self):
+        """saga/state/bearing.json, if it exists: four axes {value, left, right}, names, epithet. Missing file → no Bearing on the site."""
+        path = STATE / "bearing.json"
+        if not path.exists():
+            note("bearing.json not found: the Bearing section is skipped")
+            return None
+        try:
+            b = load_json(path)
+        except json.JSONDecodeError as e:
+            problem(f"bearing.json: invalid JSON ({e})")
+            return None
+        axes = b.get("axes")
+        if not isinstance(axes, dict) or not axes:
+            problem("bearing.json: 'axes' must be a non-empty object")
+            return None
+        rng = b.get("range", 10)
+        if not isinstance(rng, int) or rng <= 0:
+            problem(f"bearing.json: range must be a positive integer (got {rng!r})")
+            return None
+        for aid, ax in axes.items():
+            if not isinstance(ax, dict) or not all(k in ax for k in ("value", "left", "right")):
+                problem(f"bearing.json: axis '{aid}' needs value, left and right")
+                continue
+            if not isinstance(ax["value"], int) or abs(ax["value"]) > rng:
+                problem(f"bearing.json: axis '{aid}' value {ax['value']!r} is not an integer within ±{rng}")
+        names = b.get("names") or {}
+        if not isinstance(names, dict):
+            problem("bearing.json: 'names' must be an object of pole → epithet")
+        ep = b.get("epithet")
+        if ep is not None and ep not in names.values():
+            problem(f"bearing.json: epithet {ep!r} is not one of the names")
+        return b
+
+    def check_world(self):
+        """The reader-safe world.json: no GM keys, well-formed choices that point at scenes the chronicle has."""
+        w = self.world
+        for k in self.WORLD_GM_KEYS:
+            if k in w:
+                problem(f"world.json: GM key '{k}' does not belong in the reader-safe file (it lives in saga/state/_gm/plan.json)")
+        if isinstance(w.get("current_quest"), dict) and "summary" in w["current_quest"]:
+            problem("world.json: current_quest.summary is GM text; keep only name and on_the_page (the summary lives in _gm/plan.json)")
+        choices = w.get("choices")
+        if choices is None:
+            choices = []
+        if not isinstance(choices, list):
+            problem("world.json: choices must be a list")
+            return
+        for i, c in enumerate(choices):
+            if not isinstance(c, dict):
+                problem(f"world.json: choices[{i}] is not an object")
+                continue
+            missing = [k for k in self.CHOICE_KEYS if k not in c]
+            if missing:
+                problem(f"world.json: choices[{i}] is missing {', '.join(missing)} (every choice needs {', '.join(self.CHOICE_KEYS)})")
+                continue
+            chn = as_int(c.get("chapter"))
+            if chn is None:
+                problem(f"world.json: choices[{i}].chapter {c.get('chapter')!r} is not a chapter number")
+                continue
+            if c.get("kind") not in ("climax", "micro"):
+                problem(f"world.json: choices[{i}].kind must be 'climax' or 'micro' (got {c.get('kind')!r})")
+            if c.get("by") not in (None, "darrow", "bearing"):
+                problem(f"world.json: choices[{i}].by must be 'darrow' or 'bearing' (got {c.get('by')!r})")
+            opt = c.get("option")
+            if opt is not None and as_int(opt) is None:
+                problem(f"world.json: choices[{i}].option {opt!r} is neither a list number nor null")
+            if as_int(opt) is None and not (c.get("text") or "").strip():
+                problem(f"world.json: choices[{i}] has no option number and no text; one of them must say what was chosen")
+            ch = self.chapter_by_number.get(chn)
+            if ch is None:
+                problem(f"world.json: choices[{i}] points at chapter {chn}, which is not in the chronicle")
+                continue
+            key = (ch["code"], str(c.get("scene")))
+            if key not in self.registry:
+                problem(f"world.json: choices[{i}].scene {c.get('scene')!r} is not a scene key of {ch['label']} "
+                        f"(keys: {', '.join(s['key'] for s in ch['scenes'])})")
+            elif not any(b[0] == "ol" and b[2] for b in self.registry[key]["scene"]["blocks"]):
+                problem(f"world.json: choices[{i}] answers {ch['label']} scene {c.get('scene')!r}, which has no choice list on the page")
+
+    def choice_for(self, ch, scene_key):
+        """The recorded choice for one choice block: strict match on (chapter as int, scene key)."""
         for c in self.world.get("choices") or []:
-            if as_int(c.get("chapter")) == ch["number"]:
+            if as_int(c.get("chapter")) == ch["number"] and str(c.get("scene")) == str(scene_key):
                 return c
         return None
+
+    @staticmethod
+    def choice_title(block_kind, rec=None, scene_key=None):
+        """'A small choice' for a micro (a 'say' heading, a recorded micro, or a list inside a daily scene); 'The choice' for the climax."""
+        if block_kind == "say" or (rec and rec.get("kind") == "micro"):
+            return "A small choice"
+        if rec and rec.get("kind") == "climax":
+            return "The choice"
+        if scene_key is not None and scene_key not in ("climax", "choice"):
+            return "A small choice"
+        return "The choice"
 
     def char_href(self, cid):
         return "darrow/index.html" if cid == "darrow" else f"characters/{cid}.html"
@@ -783,20 +908,21 @@ class Site:
                 out.append(f'<h3 class="choice-h">{esc(b[1])}</h3>')
             elif kind == "ol":
                 items, is_choice = b[1], b[2]
-                taken, free = None, None
+                taken, free, by_self = None, None, False
                 if is_choice:
-                    rec = self.choice_for(ch)
+                    rec = self.choice_for(ch, scene["key"])
                     if rec:
                         taken = as_int(rec.get("option"))
                         free = rec.get("text") if taken is None else None
+                        by_self = rec.get("by") == "bearing"
+                mark = ' <span class="state good">chosen</span>' + (' <span class="state dim">answered for himself</span>' if by_self else "")
                 lis = []
                 for i, it in enumerate(items, 1):
                     cls = ' class="taken"' if taken == i else ""
-                    mark = ' <span class="state good">chosen</span>' if taken == i else ""
-                    lis.append(f"<li{cls}>{inline(it)}{mark}</li>")
+                    lis.append(f"<li{cls}>{inline(it)}{mark if taken == i else ''}</li>")
                 out.append(f'<ol class="{"choice" if is_choice else ""}">{"".join(lis)}</ol>')
                 if free:
-                    out.append(f'<p class="chosen-free"><span class="state good">chosen</span> {esc(free)}</p>')
+                    out.append(f'<p class="chosen-free">{mark.strip()} {esc(free)}</p>')
             elif kind == "ul":
                 out.append("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in b[1]) + "</ul>")
         return "".join(out)
@@ -913,6 +1039,9 @@ class Site:
         chips = [chip(f.get("name", c["faction"]), "brass")]
         if c["id"] == "darrow":
             chips.append(chip("the Faithless"))
+            ep = (self.bearing or {}).get("epithet")
+            if ep:
+                chips.append(chip(ep, "ember"))
         chips.append(badge(c["status"], STATUS_CLS.get(c["status"], "dim")))
         fac = self.factions.get(sg.get("faction"), {})
         if c["tier"] == "fallen":
@@ -1043,6 +1172,8 @@ class Site:
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         attrs = sec("Attributes", "against the fainter numbers behind his own", f'<div class="streaks">{"".join(tiles)}</div>')
+        if self.bearing:
+            attrs += sec("Bearing", "who his choices are making him", self.bearing_html())
         trees = defaultdict(list)
         for art in d["arts"]:
             trees[art["tree"]].append(art)
@@ -1103,15 +1234,61 @@ class Site:
 
     # ---------------------------------------------------------------- now
     def open_choice(self):
-        """The newest choice block that has no recorded answer, in any chapter (the checkpoint opens the next chapter file before the build runs)."""
+        """The newest choice block (any chapter, newest first) whose (chapter, scene key) has no recorded choice."""
         for ch in reversed(self.chapters):
-            if self.choice_for(ch):
-                continue
-            for s in ch["scenes"]:
-                for b in s["blocks"]:
-                    if b[0] == "ol" and b[2]:
-                        return {"chapter": ch, "scene": s, "items": b[1]}
+            for s in reversed(ch["scenes"]):
+                for b in reversed(s["blocks"]):
+                    if b[0] == "ol" and b[2] and not self.choice_for(ch, s["key"]):
+                        return {"chapter": ch, "scene": s, "items": b[1], "kind": b[2]}
         return None
+
+    def latest_choice(self):
+        """The newest recorded choice whose block the chronicle has (for the Now page when nothing is open)."""
+        for ch in reversed(self.chapters):
+            for s in reversed(ch["scenes"]):
+                for b in reversed(s["blocks"]):
+                    if b[0] == "ol" and b[2]:
+                        rec = self.choice_for(ch, s["key"])
+                        if rec:
+                            return {"chapter": ch, "scene": s, "items": b[1], "kind": b[2], "rec": rec}
+        return None
+
+    def bearing_words(self):
+        """Each axis as words: (left, right, word, position 0..1). Never a number on the page."""
+        b = self.bearing
+        if not b:
+            return []
+        rng = b.get("range", 10)
+        lean_at, name_at = b.get("lean_at", 4), b.get("name_at", 8)
+        rows = []
+        for aid, ax in (b.get("axes") or {}).items():
+            if not isinstance(ax, dict) or not all(k in ax for k in ("value", "left", "right")):
+                continue
+            v = ax["value"] if isinstance(ax["value"], int) else 0
+            pole = ax["right"] if v > 0 else ax["left"]
+            word = "even" if abs(v) < lean_at else (f"named {pole}" if abs(v) >= name_at else f"leans {pole}")
+            rows.append((ax["left"], ax["right"], word, (v + rng) / (2.0 * rng)))
+        return rows
+
+    def bearing_html(self):
+        rows = []
+        for left, right, word, pos in self.bearing_words():
+            rows.append(f'<li class="bearing-row"><span class="pole l">{esc(left)}</span>'
+                        f'<span class="bearing-bar" role="img" aria-label="{esc(left)} to {esc(right)}: {esc(word)}"><i style="--p:{100.0 * pos:.1f}%"></i></span>'
+                        f'<span class="pole r">{esc(right)}</span><span class="word{" on" if word != "even" else ""}">{esc(word)}</span></li>')
+        ep = (self.bearing or {}).get("epithet")
+        ep_html = f'<p class="hint">Named on the page: <span class="brass">{esc(ep)}</span>.</p>' if ep else '<p class="hint">No name has stuck to him yet.</p>'
+        return f'<ul class="bearing">{"".join(rows)}</ul>{ep_html}'
+
+    def bearing_chip(self):
+        """One chip for the Now page's Reckoning card: the epithet if there is one, else the strongest lean, else 'even'."""
+        if not self.bearing:
+            return ""
+        ep = self.bearing.get("epithet")
+        if ep:
+            return chip(f"Bearing · {ep}", "brass")
+        leans = sorted(((abs(p - 0.5), w) for _, _, w, p in self.bearing_words() if w != "even"), reverse=True)
+        return chip("Bearing · " + (leans[0][1] if leans else "even"))
 
     def render_now(self):
         rel = ""
@@ -1135,9 +1312,22 @@ class Site:
         oc = self.open_choice()
         if oc:
             lis = "".join(f"<li>{inline(it)}</li>" for it in oc["items"])
-            choice = sec("The choice", "waiting on Darrow", f'<ol class="choice">{lis}</ol><p class="dim">From <a href="{rel}chronicle/{oc["chapter"]["slug"]}.html#{oc["scene"]["anchor"]}">{esc(oc["chapter"]["label"] + " — " + oc["scene"]["title"])}</a>.</p>')
+            choice = sec(self.choice_title(oc["kind"], None, oc["scene"]["key"]), "waiting on Darrow",
+                         f'<ol class="choice">{lis}</ol><p class="dim">From <a href="{rel}chronicle/{oc["chapter"]["slug"]}.html#{oc["scene"]["anchor"]}">{esc(oc["chapter"]["label"] + " — " + oc["scene"]["title"])}</a>.</p>')
         else:
-            choice = sec("The choice", "", '<p class="empty">No choice waits on Darrow yet.</p>')
+            lc = self.latest_choice()
+            if lc:
+                rec = lc["rec"]
+                taken = as_int(rec.get("option"))
+                by_self = rec.get("by") == "bearing"
+                mark = ' <span class="state good">chosen</span>' + (' <span class="state dim">answered for himself</span>' if by_self else "")
+                lis = "".join(f'<li{" class=\"taken\"" if taken == i else ""}>{inline(it)}{mark if taken == i else ""}</li>'
+                              for i, it in enumerate(lc["items"], 1))
+                free = f'<p class="chosen-free">{mark.strip()} {esc(rec.get("text") or "")}</p>' if taken is None and (rec.get("text") or "").strip() else ""
+                choice = sec(self.choice_title(lc["kind"], rec, lc["scene"]["key"]), "answered",
+                             f'<ol class="choice">{lis}</ol>{free}<p class="dim">From <a href="{rel}chronicle/{lc["chapter"]["slug"]}.html#{lc["scene"]["anchor"]}">{esc(lc["chapter"]["label"] + " — " + lc["scene"]["title"])}</a>.</p>')
+            else:
+                choice = sec("The choice", "", '<p class="empty">No choice waits on Darrow yet.</p>')
         comps = []
         for key, comp in (w.get("companions") or {}).items():
             if not isinstance(comp, dict) or comp.get("present") is False:
@@ -1154,8 +1344,10 @@ class Site:
         a = d["attributes"]
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
+        bchip = self.bearing_chip()
         card = (f'<div class="rk-mini"><div class="hero">{crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
-                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div></div>'
+                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
+                + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
                 f'<div class="mini-attrs">{rk}</div><p class="lbl">the faint numbers are the ones he read behind his own</p>'
                 f'{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}'
                 f'<p><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a></p></div>')
@@ -1261,7 +1453,8 @@ Attributes Chapters Legend Season Latest Where Skip Content Level Inspiration Pr
 Characters Codex Chronicle Now Darrow Vaelmark Unkneeling Books Chapter Scene Scenes Climax Choice Previous Next Back Map Quest Fighting
 Visited Arts Learned Sealed Banked Tied Untied Opens Book Knots Binding Reckoning Dice Latest Rolls Cast Page Site Memorial Fallen Alive
 Hollowed Missing Unknown Major Minor Earned Grace Ember Unlit Fire Might Vigor Finesse Resolve Rank Ranks Temper Days Days Keeper Prior
-Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers""".split()
+Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers
+Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting""".split()
 STOP = set("""Seventh Present Former Scale Mid Magic Violence Tone Praise Speaks Talks Grounded Grants Grew Fights Families Companies Customs Geography Naming Peoples Recurring Reigning Surpassing Unwind Shatter Hinted Bible Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Wits Voices Signature Somber Stiff Steam Kennel Cripples Wager Magic
 About After Again Against Already Always Among Anyone Anything Around Because Before Behind Below Between Beyond
 Book Books Both Chapter Chapters Choice Choices Claude Core Could Darrow Does Each Early Either Ember End Every Everyone Expandable Expandables
@@ -1275,7 +1468,7 @@ Might's Dice Checks Check Approval Inspiration Eye Tier Tiers Climax Expandables
 Mender Hound Runner Captain Captains Old Young Prior Lance Lances Boss Interlude Scenes Pages Page Table Entry Entries Format Formats Files File Notes Note
 Secrets Secret Identity Identities Reckoning Reckonings Grace Oath Oaths Bound Kindled Tempered Unbowed Emberknight Warden Wardens Oathsworn Oathstone
 Oathstones Stone Stones Field Road Lightning Turning Standing Walking Straightening Steps Step Harrow Ford River Peaks House Hall Gate Tower Bell Bells
-Hollowed Faithless Vaelmark Vaelish Codex Chronicle Ledger Engine Script Clan Clans Lowmarch Thornwild Calden Coldmere Holloway Saltreach Ashen Fields
+Hollowed Faithless Vaelmark Vaelish Codex Chronicle Ledger Engine Script Clan Clans Lowmarch Thornwild Calden Coldmere Holloway Fields
 Greywater Edgemoor Thousand Saint Ysolde's Ysolde Wend Patience Stillwater Stance Groundbreaker Hammerfall Grip Iron Seated Long Soft Landing Thunderstep
 Hawk's Stoop Anchor Quickening Mender's Warden's Knight's Reading North South East West Dawn Dusk Winter Summer Autumn Spring Midsummer Midwinter
 Yes No Maybe Also Thus Whatever Whoever Whenever Wherever Please Thank Thanks Hello Dear Sincerely Best Regards Ever Even Almost Enough Rather Quite
@@ -1298,21 +1491,38 @@ def text_of(h):
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
 
 
-def gm_blocklists(chron_text, allowed_words, extra_gm=""):
-    """Sentences and unrevealed names from the GM files. Nothing from here is rendered; it only builds the checks."""
-    gm_dir = SAGA / "bible" / "_gm"
-    gm_text = "\n".join(p.read_text(encoding="utf-8") for p in sorted(gm_dir.glob("*.md"))) if gm_dir.exists() else ""
+GM_DIRS = [SAGA / "bible" / "_gm", SAGA / "state" / "_gm"]
+
+
+def strings_of(obj):
+    """Every string inside a JSON value, recursively (for the sentence exemption and the name allow-list)."""
+    if isinstance(obj, str):
+        return [obj]
+    if isinstance(obj, dict):
+        return [s for v in obj.values() for s in strings_of(v)]
+    if isinstance(obj, list):
+        return [s for v in obj for s in strings_of(v)]
+    return []
+
+
+def gm_blocklists(chron_text, allowed_words, extra_gm="", allowed_text=""):
+    """Sentences and unrevealed names from the GM files. Nothing from here is rendered; it only builds the checks.
+    GM files: every .md under saga/bible/_gm/ and saga/state/_gm/ (JSON there is not scanned: every name it carries is
+    also in a GM .md), plus, while they still exist, the secret lines of saga/bible/characters.md and all of world.md.
+    A GM sentence is exempt when the chronicle or allowed_text (engine/rules.json and bearing.json strings) already carries it."""
+    gm_text = "\n".join(p.read_text(encoding="utf-8") for d in GM_DIRS if d.exists() for p in sorted(d.glob("*.md")))
     cpath = SAGA / "bible" / "characters.md"
     ctext = cpath.read_text(encoding="utf-8") if cpath.exists() else ""
     secret_lines = [ln for ln in ctext.splitlines() if re.match(r"\s*-\s*\*\*(Wants|Fears|Hides|Carries|Flaw|Arc|Rule of the saga|Signature)", ln)]
     wpath = SAGA / "bible" / "world.md"
     wtext = wpath.read_text(encoding="utf-8") if wpath.exists() else ""
     chron_norm = norm(chron_text)
+    allowed_norm = norm(allowed_text)
     sentences = set()
     for chunk in re.split(r"[\n|]", gm_text + "\n" + "\n".join(secret_lines) + "\n" + extra_gm):
         for s in re.split(r"(?<=[.!?;:])\s+", chunk):
             s2 = norm(s)
-            if len(s2) >= 28 and s2 not in chron_norm:
+            if len(s2) >= 28 and s2 not in chron_norm and s2 not in allowed_norm:
                 sentences.add(s2)
     # names: capitalised words in GM-side files that the page has never spoken
     chron_words = {w.lower() for w in re.findall(r"[A-Za-z]+", chron_text)}
@@ -1354,8 +1564,27 @@ def run_checks(site, out_dir):
     for f in site.factions.values():
         allowed.update(re.findall(r"[A-Za-z']+", f["name"]))
     allowed.update(["Vaelmark", "Unkneeling", "Previously", "Codex", "Chronicle", "Now", "Characters", "Appearance", "Relationships", "Known", "Appearances", "Timeline", "Roster"])
+    # the sentence exemption: what the chronicle, the game's own rules, or the Bearing file already say is not a GM secret
+    allowed_text = []
+    for k in site.rules.get("knots", []):
+        allowed_text += [str(k.get("name", "")), str(k.get("proves", ""))]
+    for a in site.rules.get("arts", []):
+        allowed_text += [str(a.get("name", "")), str(a.get("effect", ""))]
+    for r in site.rules["levels"]["ranks"]:
+        allowed_text.append(str(r.get("name", "")))
+    for t in site.rules["ember"]["tiers"]:
+        allowed_text += [str(t.get("name", "")), str(t.get("effect", ""))]
+    if site.bearing:
+        bstrings = strings_of(site.bearing)
+        allowed_text += bstrings
+        for ax in (site.bearing.get("axes") or {}).values():
+            if isinstance(ax, dict):
+                allowed.update(re.findall(r"[A-Za-z']+", f"{ax.get('left', '')} {ax.get('right', '')}"))
+        for v in (site.bearing.get("names") or {}).values():
+            allowed.update(re.findall(r"[A-Za-z']+", str(v)))
+    # GM text that may still sit in world.json (the checks above already report the keys); blocked from the site all the same
     extra_gm = json.dumps(site.world.get("chapter_plan") or {}) + "\n" + str((site.world.get("current_quest") or {}).get("summary", ""))
-    sentences, names = gm_blocklists(chron_text, allowed, extra_gm)
+    sentences, names = gm_blocklists(chron_text, allowed, extra_gm, "\n".join(allowed_text))
     note(f"GM blocklist: {len(sentences)} sentences, {len(names)} unrevealed names (not printed)")
     name_re = re.compile(r"\b(" + "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True)) + r")\b") if names else None
     for k, txt in all_text.items():
@@ -1508,6 +1737,7 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 .chip{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;border:1px solid var(--rule);border-radius:999px;padding:2px 9px;color:var(--dim);background:transparent;line-height:1.4}
 .chip.brass{border-color:var(--brass-dim);color:var(--brass)}
 .chip.blue{border-color:var(--t5);color:var(--t6)}
+.chip.ember{border-color:var(--ember);color:var(--ember)}
 a.chip:hover{text-decoration:none;border-color:var(--brass)}
 button.chip{cursor:pointer;font:inherit;font-family:var(--label);font-size:.78rem}
 button.chip[aria-pressed=true]{background:var(--brass);color:var(--night);border-color:var(--brass)}
@@ -1580,6 +1810,18 @@ details[open]>summary::after{content:"\2212"}
 .stk .s.faint{color:var(--faint)}
 .stk.hot{border-top-color:var(--ember)}
 .stk .bar-row{margin-top:2px} .stk .bar-l{display:none} .stk .bar{height:6px}
+
+/* bearing: four axes in words, a marker on a line */
+.bearing{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bearing-row{display:grid;grid-template-columns:5.5em minmax(0,1fr) 5.5em;grid-template-areas:"l bar r" "w w w";gap:2px 10px;align-items:center}
+.bearing-row .pole{font-family:var(--label);font-size:.85rem;letter-spacing:.06em;color:var(--dim)}
+.bearing-row .pole.l{grid-area:l;text-align:right} .bearing-row .pole.r{grid-area:r}
+.bearing-bar{grid-area:bar;position:relative;height:10px;display:block}
+.bearing-bar::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--rule);transform:translateY(-50%)}
+.bearing-bar::after{content:"";position:absolute;left:50%;top:1px;bottom:1px;border-left:1px dotted var(--faint-stroke)}
+.bearing-bar>i{position:absolute;top:50%;left:var(--p);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 2px var(--night);transition:left .9s cubic-bezier(.2,.7,.2,1)}
+.bearing-row .word{grid-area:w;text-align:center;font-size:.82rem;color:var(--faint);font-style:italic}
+.bearing-row .word.on{color:var(--brass);font-style:normal}
 @media (max-width:440px){.streaks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* arts */

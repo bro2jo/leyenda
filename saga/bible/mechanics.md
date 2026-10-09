@@ -41,18 +41,18 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 
 ## The Binding and its Knots (the real gates)
 
-The Binding has seven Knots (see `world.md`). **A Knot is tied only when the matching real-world gate is passed and recorded** (`python3 engine/darrow.py knot tie N --date … --evidence "…"`), and the evidence must be a PT/surgeon clearance or the plan's measured criteria. The calendar never ties a knot.
+The Binding has seven Knots (their lore is in `saga/bible/_gm/world.md`, GM only; the reader meets them in the Chronicle). **A Knot is tied only when the matching real-world gate is passed and recorded** (`python3 engine/darrow.py knot tie N --date … --evidence "…"`), and the evidence must be a PT/surgeon clearance or the plan's measured criteria. The calendar never ties a knot.
 
 While a Knot is untied, the Binding **caps** some attributes. Temper earned above a cap is **banked** and released the moment the next Knot ties, so the hard work done while waiting surges out all at once. That surge is a story moment.
 
 | Knots tied | Vigor cap | Finesse cap | Opens |
 |---|---|---|---|
-| II (now) | 12 | 10 | Book I: the House of Menders |
-| III | 14 | 12 | Book II: walking out; fighting on foot |
-| IV | 18 | 14 | Book III: running |
-| V | — | 18 | Book IV: leaping, sprinting, stopping |
-| VI | — | 22 | Book V: turning at speed |
-| VII | — | — | Book VI: the field |
+| II (now) | 12 | 10 | Book I |
+| III | 14 | 12 | Book II |
+| IV | 18 | 14 | Book III |
+| V | — | 18 | Book IV |
+| VI | — | 22 | Book V |
+| VII | — | — | Book VI |
 
 **The soft season:** post-op weeks 6–12. The sheet flags it. In story: Maelis's warnings, the thread loose under the skin, the danger of feeling strong. The story must never reward Darrow for testing the leg early. If he does something reckless with it, it costs him.
 
@@ -92,6 +92,7 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 - **Ember** effects: Blazing +1 to everything; Bright +1 Vigor; Guttering −1 Might and Vigor.
 - Results: success, *partial* (within 3: success at a cost), failure. Natural 20 / natural 1 are criticals.
 - **Approval** with companions (−100 to +100) moves only with story choices, never with real numbers.
+- **The Bearing** (`saga/state/bearing.json`) is who Darrow's choices are making him: four story axes (Mercy–Flint, Candor–Guile, Hearth–Banner, Sworn–Unsworn), each −10 to +10, moved only by story choices (a small choice ±1, a climax ±2 or ±3, a betrayal or a sacrifice ±4). He *leans* a way at 4 and is *named* for it at 8; the name is an epithet the page must speak before the site shows it. Options may require a lean (`*[Guile 4]*`), struck through when unmet, like stat gates. Never a number in prose; the site shows words.
 
 ---
 
@@ -101,6 +102,9 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 |---|---|---|
 | `saga/state/darrow.json` | engine (never hand-edit) | the computed sheet |
 | `saga/state/rolls.csv`, `spends.csv`, `chapters.csv` | engine | every die rolled, every Inspiration spent, each chapter's frozen tier |
-| `saga/state/world.json` | Claude | Book, chapter, location, companions and approval, flags, choices, inventory |
-| `saga/state/threads.md` | Claude | open plot threads and plants |
+| `saga/state/world.json` | Claude (approval through `saga.py add` only) | Book, chapter, scenes, location, the quest as the page knows it, companions and approval, choices, inventory, recaps |
+| `saga/state/bearing.json` | `saga.py bearing` | Darrow's Bearing: the four axes, leans and epithet |
+| `saga/state/_gm/plan.json` | `saga.py plan` (GM only) | position, the chapter's slots, flags, factions, quests, roads |
+| `saga/state/_gm/consequences.json` | `saga.py add / fire / void` (GM only) | the consequence ledger: what each choice changed and what it still owes |
+| `saga/state/_gm/threads.md` | Claude (GM only) | open plot threads and plants |
 | `saga/state/codex.md` | Claude | canon invented in play |

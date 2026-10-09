@@ -3,7 +3,7 @@
 > *What is given can be taken. What is built is yours.*
 > — the First Precept of the Emberwardens, carved over a door no one uses anymore
 
-This file is canon. Anything invented during play that recurs goes into `saga/state/codex.md`, and wins over memory. Spoilers live in `_gm/arc.md`, and this file is **GM reference, not reader content**: it names things the reader has not met yet, so the site build never renders it. The only exception is the map in §4, which the site draws from.
+This file is canon. Anything invented during play that recurs goes into `saga/state/codex.md`, and wins over memory. Spoilers live in `arc.md` beside this file. This file is **GM reference, not reader content**: it names things the reader has not met yet, so the site build never renders it and no reader-safe file (`saga/` outside `_gm/`, `docs/`, `CLAUDE.md`, `README.md`, the skills) may repeat a name from it that the Chronicle has not spoken. The site's map is drawn from `saga/state/places.json`, which holds only places the page has named; the rest wait in §4a.
 
 ---
 
@@ -43,7 +43,7 @@ Darrow's knee was not healed by Grace. **Maelis Vorne** took a strand from the s
 
 - *"It is made of you now. It will be exactly as strong as you make it, and not one hair stronger."*
 - The Binding passes through a **soft season**. The thread loosens before it sets, and it is weakest at the very time the knee begins to feel strong. Knights who trusted the quiet have torn their Bindings and never walked right again. Maelis has seen it happen.
-- The Binding is secured by **Seven Knots**. A knot is not tied by time; it is tied when the knee proves it. Each tied knot opens a new part of the world to Darrow (see `mechanics.md`).
+- The Binding is secured by **Seven Knots**. A knot is not tied by time; it is tied when the knee proves it. Each tied knot opens a new part of the world to Darrow (see `saga/bible/mechanics.md`).
 
 | Knot | Name | What it proves |
 |---|---|---|
@@ -84,6 +84,15 @@ When the saga opens, Knots I and II are tied.
 
 The realm's season follows the real one. The saga opens in autumn, with first snow on the Steps.
 
+### 4a. Map to come (places not yet named on the page)
+
+`saga/state/places.json` holds only places the Chronicle has named, because the site draws its map from it. These were removed from it until the page says their names; their map positions (the site's 400×300 map) are kept here so they go back exactly where they were. When the page names one, restore it to `places.json` with `on_page: true`, a `first_seen`, and a description the prose supports.
+
+| id | name | kind | x | y | region |
+|---|---|---|---|---|---|
+| `saltreach` | Saltreach | city | 36 | 176 | `saltreach` |
+| `ashen-fields` | The Ashen Fields | waste | 322 | 252 | `ashen-fields` |
+
 ---
 
 ## 5. Peoples and factions
@@ -114,7 +123,7 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 
 ## 7. (moved)
 
-The table of what the common folk believe against what is true gave the twists away. It now lives in `_gm/arc.md` §9. Reader-facing material never comes from this file except the map in §4.
+The table of what the common folk believe against what is true gave the twists away. It now lives in `arc.md` §9. Reader-facing material never comes from this file.
 
 ---
 

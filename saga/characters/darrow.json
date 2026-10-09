@@ -95,6 +95,11 @@
       "fact": "At the infirmary window the Reckoning showed itself to him for the first time, a pale gold script hanging over his palms that he could read though nobody had learned it in three hundred years, and behind his own numbers stood fainter ones whose owner he did not need to be told.",
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "fact": "While Hollis hid the writ, the Captain was shut in a cell down the hall with Mender Vorne and nothing came through the door; Hollis has thought for a fortnight that a man could fight sitting down, if somebody taught him to stop looking at the floor.",
+      "chapter": "01",
+      "scene": "interlude"
     }
   ],
   "relationships": [
@@ -145,6 +150,11 @@
     {
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "chapter": "01",
+      "scene": "interlude",
+      "mention": true
     }
   ]
 }

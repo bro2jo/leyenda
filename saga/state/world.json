@@ -1,5 +1,5 @@
 {
-  "_about": "Story state. Claude-owned. Update after every scene and climax. Never put real-world numbers here.",
+  "_about": "Story state, reader-safe. Claude-owned. Update after every scene and climax. Never put real-world numbers here; GM-only state (plan, flags, factions, companions to come) lives in saga/state/_gm/plan.json and approval moves only through saga.py add.",
   "book": 1,
   "book_title": "The House of Menders",
   "chapter": 1,
@@ -15,6 +15,13 @@
       ],
       "written": "2026-10-08",
       "note": "launch scene; covers the days logged before the saga went live. Whether a day is closed is recorded only in real/logs/daily_log.csv (closed=Y)."
+    },
+    {
+      "scene": "interlude",
+      "pov": "hollis",
+      "title": "The Wax",
+      "covers": [],
+      "written": "2026-10-08"
     }
   ],
   "location": {
@@ -25,23 +32,11 @@
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second.",
     "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.",
-    "_about": "summary is for the GM; on_the_page is what the site shows and must be supported by the chronicle"
+    "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",
   "last_beat": "Darrow saw the Reckoning for the first time. Maelis wasn't surprised: 'So it's begun.' She told him to close the door.",
-  "chapter_plan": {
-    "_gm": "Planned shape of Chapter 1. Adjust to the real week; keep the climax.",
-    "next_scene": "Scene 2 continues straight from 'Close the door': Maelis explains the Reckoning and the Ember in as few words as she can get away with, and forbids him to tell anyone, especially Hollis. Plant: the Wardens were burned for it. She does NOT explain her own past.",
-    "later_scenes": [
-      "The Seated Blade: Hollis drags Darrow into the cloister for two-chairs swordplay (use on a day with upper-body work logged)",
-      "Mother Ione's council: sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old",
-      "The Reading of the Knots proper (use on PT day)",
-      "The grey cloaks reach the foot of the Steps; the censer smoke rising through the cloud"
-    ],
-    "climax": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp."
-  },
   "companions": {
     "maelis": {
       "approval": 15,
@@ -57,28 +52,7 @@
       "approval": 10,
       "present": true,
       "note": "afraid; hides it with numbers"
-    },
-    "ash": {
-      "bond": 5,
-      "present": false,
-      "note": "in the kennel; snarls at everyone else"
     }
-  },
-  "factions": {
-    "crown": -10,
-    "confessors": -25,
-    "menders": 30,
-    "faithless": 15,
-    "thornwild": 0,
-    "lantern_market": 0
-  },
-  "flags": {
-    "reckoning_awakened": true,
-    "knows_wardens_exist": false,
-    "anselm_suspected": false,
-    "anselm_spared": null,
-    "benedek_hollowed": false,
-    "vane_unbound": null
   },
   "choices": [],
   "inventory": [
@@ -86,12 +60,6 @@
     "a borrowed stick he refuses to use",
     "the Ninth's two-finger signal (habit, not an item)"
   ],
-  "core_beats": {
-    "done": [
-      "prologue"
-    ],
-    "next": "Book I core beat 1: The Confessor at the Steps (climax of Chapter 1)"
-  },
   "recaps": {
     "_about": "One-line 'previously' per chapter file slug, shown at the top of that chapter in the reader. Spoiler-free; only what earlier chapters showed.",
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river and did not come back, and Darrow's knee gave way with no blade near it. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire."

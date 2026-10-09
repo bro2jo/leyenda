@@ -1,0 +1,41 @@
+{
+  "_about": "Darrow's Bearing: who his choices are making him. Story-only; moved by choices (saga.py bearing), never by real numbers. Rendered on the site in words.",
+  "range": 10,
+  "lean_at": 4,
+  "name_at": 8,
+  "axes": {
+    "mercy_flint": {
+      "value": 0,
+      "left": "Mercy",
+      "right": "Flint"
+    },
+    "candor_guile": {
+      "value": 0,
+      "left": "Candor",
+      "right": "Guile"
+    },
+    "hearth_banner": {
+      "value": 0,
+      "left": "Hearth",
+      "right": "Banner"
+    },
+    "sworn_unsworn": {
+      "value": 0,
+      "left": "Sworn",
+      "right": "Unsworn"
+    }
+  },
+  "names": {
+    "Mercy": "Open-hand",
+    "Flint": "Flintheart",
+    "Candor": "Plainspoken",
+    "Guile": "the Fox of Edgemoor",
+    "Hearth": "Hearthkeeper",
+    "Banner": "the Bannerman",
+    "Sworn": "the Faithful",
+    "Unsworn": "the Unsworn"
+  },
+  "epithet": null,
+  "leans": [],
+  "history": []
+}

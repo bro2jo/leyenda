@@ -1,0 +1,290 @@
+{
+  "_about": "GM plan and position. Never rendered. Prose for beats, quests and roads lives in saga/bible/_gm/arc.md (saga.py arc <id>); this file holds state. Edit through saga.py plan where a command exists; otherwise with Edit, keeping the canonical format (saga.py fmt).",
+  "position": {
+    "book": 1,
+    "chapter": 1,
+    "beat": "b1.1",
+    "next_scene": 2,
+    "stage": "scene",
+    "last_written": "ch01:interlude"
+  },
+  "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
+  "chapter": {
+    "number": 1,
+    "week_start": "2026-10-04",
+    "question": "When the Confessor reads his list at the gate, does sanctuary hold, and does Darrow stand up to be counted or stay among the wounded?",
+    "slots": [
+      {
+        "n": 1,
+        "day": "2026-10-04",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Scene 1, The Reading of the Knots: first snow; Maelis reads the two Knots; the soft season named; the Steps forbidden a fourteenth time",
+        "micro": null,
+        "float": false,
+        "status": "written",
+        "wrote": "ch01:s1"
+      },
+      {
+        "n": 2,
+        "day": "2026-10-05",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Scene 1 (continued): Hollis in his chair, the far cots, Wren counting; the House before the news",
+        "micro": null,
+        "float": false,
+        "status": "written",
+        "wrote": "ch01:s1"
+      },
+      {
+        "n": 3,
+        "day": "2026-10-06",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Scene 1 (continued): Wren brings the list from Coldmere: six grey cloaks, a cart, a censer; Hollis second; who is first",
+        "micro": null,
+        "float": false,
+        "status": "written",
+        "wrote": "ch01:s1"
+      },
+      {
+        "n": 4,
+        "day": "2026-10-07",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Scene 1 (end): the Reckoning wakes at the window; Maelis unsurprised: 'So it's begun.' 'Close the door, Captain.'",
+        "micro": null,
+        "float": false,
+        "status": "written",
+        "wrote": "ch01:s1"
+      },
+      {
+        "n": 5,
+        "day": "2026-10-08",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Behind the cell door, straight from 'Close the door': Maelis explains the Reckoning and the Ember in as few words as she can; the Wardens were burned for it; she forbids him to tell anyone, Hollis most of all; she does not explain her own past",
+        "micro": null,
+        "float": false,
+        "status": "next",
+        "wrote": null
+      },
+      {
+        "n": 6,
+        "day": "2026-10-09",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "Mother Ione's council: sanctuary, Old Mercy, the rule of the bell at dawn and dusk; Sister Pell is old",
+        "micro": {
+          "ask": "What does Darrow say?",
+          "axis": "candor_guile",
+          "options": [
+            "\"The first name on that list is mine, Mother. Decide knowing it.\"",
+            "\"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it.\"",
+            "Say nothing."
+          ],
+          "bearing": [
+            {
+              "candor": 1
+            },
+            {
+              "guile": 1
+            },
+            null
+          ],
+          "default": 1
+        },
+        "float": false,
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 7,
+        "day": "2026-10-10",
+        "kind": "spine",
+        "beat": "b1.1",
+        "plan": "The grey cloaks reach the foot of the Steps; censer smoke rising through the cloud; the House counts what it has",
+        "micro": null,
+        "float": false,
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 8,
+        "day": null,
+        "kind": "interlude",
+        "pov": "hollis",
+        "beat": null,
+        "plan": "The Wax: Hollis and the writ he broke without looking; Benedek Orrin on the next cot asks what second on the list means; the paper goes unread into the socket of the wooden leg",
+        "micro": null,
+        "float": false,
+        "status": "written",
+        "wrote": "ch01:interlude"
+      }
+    ],
+    "world_moves": [
+      "the Confessors a day closer",
+      "the kitchen has started counting loaves",
+      "Sister Pell rang the dusk bell late, and someone noticed"
+    ],
+    "climax": {
+      "plan": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp.",
+      "checks": [
+        "resolve DC 13 (Mender's Patience)",
+        "insight DC 13 (Warden's Eye)"
+      ],
+      "options": [
+        "Step forward and answer to his name",
+        "Stay hidden among the wounded",
+        "Send Wren to spy on the camp *[Guile 2]*"
+      ]
+    }
+  },
+  "core_beats": {
+    "b1.1": {
+      "title": "The Confessor at the Steps",
+      "status": "in_progress"
+    },
+    "b1.2": {
+      "title": "The Grey Cot",
+      "status": "planned"
+    },
+    "b1.3": {
+      "title": "The Undercroft",
+      "status": "planned"
+    },
+    "b1.4": {
+      "title": "The Almoner's Sister",
+      "status": "planned"
+    },
+    "b1.5": {
+      "title": "Old Mercy",
+      "status": "planned"
+    },
+    "t1": {
+      "title": "The Descent",
+      "status": "planned"
+    }
+  },
+  "quests": {
+    "q1.kennel": {
+      "status": "available",
+      "stage": 0,
+      "priority": "required"
+    },
+    "q1.letters": {
+      "status": "available",
+      "stage": 0,
+      "priority": "required"
+    },
+    "q1.wager": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q1.steam": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q1.farcots": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q1.ledger": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q1.snow": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating"
+    },
+    "q1.hollownight": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating",
+      "note": "pin to the week of real Halloween if Book I is still open"
+    },
+    "q1.door": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating"
+    }
+  },
+  "route": {
+    "book1": {
+      "chapters": [
+        1
+      ],
+      "road": null,
+      "override": null,
+      "transition_chapter": null
+    }
+  },
+  "flags": {
+    "reckoning_awakened": true,
+    "knows_wardens_exist": false,
+    "ash_met": false,
+    "anselm_suspected": false,
+    "anselm_spared": null,
+    "benedek_hollowed": false,
+    "vane_unbound": null,
+    "hollis_truth": null,
+    "ysra_spared": null,
+    "named_himself": false,
+    "marrant_offer": false,
+    "shard_found": false,
+    "wren_script_seen": false,
+    "vane_answered": false,
+    "sanctuary_writ": false,
+    "elinor_letter": false,
+    "ilse_named": false,
+    "elspeth_named": false,
+    "hollis_fell": false,
+    "vane_spared": false,
+    "first_kneel_private": false
+  },
+  "factions": {
+    "crown": -10,
+    "confessors": -25,
+    "menders": 30,
+    "faithless": 15,
+    "thornwild": 0,
+    "lantern_market": 0
+  },
+  "companions": {
+    "maelis": {
+      "prefers": [
+        "candor",
+        "sworn"
+      ]
+    },
+    "hollis": {
+      "prefers": [
+        "mercy",
+        "hearth"
+      ]
+    },
+    "wren": {
+      "prefers": [
+        "guile",
+        "unsworn"
+      ]
+    }
+  },
+  "companions_to_come": {
+    "ash": {
+      "note": "the hound in the kennels; snarls at everyone else; appears in q1.kennel or in t1",
+      "bond": 5,
+      "approval_pending": 0
+    }
+  },
+  "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second.",
+  "open_micro": null,
+  "temptation": {
+    "planted": []
+  }
+}

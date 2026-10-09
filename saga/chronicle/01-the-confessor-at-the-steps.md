@@ -18,7 +18,7 @@ Seven weeks since the Binding. Some mornings he forgot for whole minutes at a ti
 
 He did the dawn forms because Maelis would know if he didn't. He had no idea how she knew, but she did. They were dull and slow and they hurt in a dull, slow way, and afterward the leg lay a little straighter on the blanket than it had before, which was the point of them. He had done them most mornings this week. Some mornings. He did them now, and by the time the bell rang the window had gone from black to the grey of old pewter.
 
-Maelis came with the bell, which was early for her.
+Maelis came with the bell, early for her.
 
 She sat on the end of the cot without a word, put her pipe between her teeth, laid two fingers on either side of his kneecap, and shut her eyes. This was the Reading of the Knots. Darrow had stopped asking what she was feeling for. She had stopped answering.
 
@@ -30,7 +30,7 @@ She sat on the end of the cot without a word, put her pipe between her teeth, la
 
 "I feel *fine*."
 
-"That's what frightens me." She took her fingers away and looked at him properly, which was worse than the Reading. "Listen, because I am going to say this once more and then I'm going to start charging you for it. The thread is softest now. Not in the first weeks, when you couldn't stand. *Now.* It's changing from what I put in to what you'll keep, and while it changes it is weaker than the day I tied it. The next six weeks are the ones that kill Bindings, and they'll feel like the best weeks you've had since the river. The knee will be quiet. You'll think the quiet means it's ready." She tapped the joint, once, lightly. "The quiet is a liar."
+"That's what frightens me." She took her fingers away and looked at him properly, which was worse than the Reading. "Listen, because I'm going to say this once more and then start charging you for it. The thread is softest now. Not in the first weeks. *Now.* It's changing from what I put in to what you'll keep, and while it changes it is weaker than the day I tied it. The next six weeks are the ones that kill Bindings, and they'll feel like the best weeks you've had since the river. The knee will be quiet." She tapped the joint, once, lightly. "The quiet is a liar."
 
 "How many of these have you done?"
 
@@ -52,7 +52,7 @@ Wren Ashdown stood there in a cloak with snow on the shoulders, out of breath, h
 
 "Bell tower," she said. "Sister Pell's glass. There are riders on the Holloway: six of them, and a cart. Grey cloaks." She swallowed. "And a censer. Smoking. In the snow, which you'd think would be impractical."
 
-The hall got very quiet. Even Hollis had stopped snoring, which Darrow hadn't noticed until now. Hollis was propped on one elbow, and his face had gone the color of the window.
+The hall went quiet. Even Hollis had stopped snoring. Darrow couldn't have said when. Hollis was propped on one elbow, and his face had gone the color of the window.
 
 "Confessors," Hollis said.
 
@@ -82,7 +82,7 @@ He realized his hands were clenched on the stone sill. He made them open, and lo
 
 There was light on them.
 
-It wasn't the dawn. The dawn was grey. This was pale and gold and *angular*, a fine script of strokes and dots hanging in the air just above his palms, the way the shape of the sun hangs in your eye after you've looked at it. He blinked. It stayed. He shut his eyes, and it was still there, sharper, as if it had been waiting for him to stop looking at everything else.
+It wasn't the dawn. The dawn was grey. This was pale and gold and *angular*, a fine script of strokes and dots hanging in the air just above his palms, the way the shape of the sun hangs in your eye after you've looked at it. He blinked. It stayed. He shut his eyes, and it was still there, sharper.
 
 He had never learned to read this script. Nobody had, not for three hundred years. He could read it anyway, and it was reading him.
 
@@ -93,16 +93,52 @@ He had never learned to read this script. Nobody had, not for three hundred year
 > The Binding: two Knots tied of seven. *The soft season.*
 > Arts: Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 
-Behind the numbers, so faint he almost missed them, stood other numbers like ghosts behind a window. *Might 15. Vigor 15. Finesse 18. Resolve 12.* He didn't need anyone to tell him whose they were.
+Behind the numbers, so faint he almost missed them, stood other numbers. *Might 15. Vigor 15. Finesse 18. Resolve 12.* He didn't need anyone to tell him whose they were.
 
 He opened his eyes. Maelis was standing in the doorway of the hall. She had come back for her pipe, which was on the windowsill beside his hand, and she was looking at his face, at the way his eyes were tracking something in the empty air.
 
 She didn't look surprised. That frightened him more than the light had.
 
-"Ah," said Maelis Vorne, very quietly. "So it's begun."
+"Ah," said Maelis Vorne, quietly. "So it's begun."
 
 "What has?"
 
 She looked down the hall at Hollis, then out at the snow, then back at him. For the first time since he'd known her she seemed to be deciding how much of the truth to tell him.
 
 "Close the door, Captain," she said.
+
+### Interlude — The Wax
+
+Hollis Garrow could say the order with his eyes shut. *The Sixth and the Ninth to clear the ford. Second in reserve.* He had broken the wax on the west bank with his thumb, without looking, because a seal was command and the rest was for clerks, and he had not looked since. He kept the paper folded small inside his shirt, wax inward, against his ribs.
+
+Now there were grey cloaks on the Holloway and a list with his name second on it. The Captain was shut in a cell down the hall with Mender Vorne, and nothing came through that door. There would be questions, and he would like to know first whose wax he had broken.
+
+He got as far as two fingers inside his shirt.
+
+"Ser Hollis."
+
+Benedek Orrin, on the next cot. His own Sixth, not yet thirty, a boar spear through the shoulder at the ford and a fever after it. He said his oath at every bell, and he was watching Hollis with his hands folded on the blanket.
+
+"What does it mean? Second."
+
+"It means I'm not first." Hollis took his hand out of his shirt. "Go to sleep."
+
+"Will they take you down?"
+
+Under the cot lay the leg the lay brothers had made him, beech and a leather cup, and it fit the way a boot fits someone else. Nine steps yesterday, and he had sworn at every one. He had not had a drink in two days, which he had meant to tell somebody and couldn't think who.
+
+"Nobody's taking anyone," he said. "Not up eleven hundred steps in the snow. They'll read their list at the bottom and freeze."
+
+Benedek nodded. Then, because he could not leave a thing alone: "If they do come up, Ser, you could kneel. The heralds said. Mercy. It's only kneeling." His voice dropped. "I'd carry you down the Steps myself, if they'd let me."
+
+"You couldn't carry a bucket, Orrin," Hollis said, and the lad smiled, which was what the words were for.
+
+Hollis looked at him: the shoulder wrapped like a parcel, the eyes of a man who still felt a warmth in his chest, or said he did. He thought of the Captain with a sword and a chair under him, as he had for a fortnight now: a man could fight sitting down, if somebody taught him to stop looking at the floor.
+
+"Aye," he said. "They'll let us kneel. Say your oath, lad. Shut your eyes."
+
+Benedek shut them. His lips began to move.
+
+Hollis took the paper out of his shirt, still folded, and pushed it into the cup of the leg, where what was left of him went and no Confessor would think to look. The lad's eyes were shut and it made no difference. He would look at the wax later. He had been saying that since midsummer.
+
+Down the hall, a latch lifted, and the cell door opened.

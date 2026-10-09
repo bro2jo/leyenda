@@ -25,8 +25,10 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 | Sport-skill work | the Arts tied to them (see `mechanics.md`) |
 | A strong week | the chapter's climax goes his way; allies arrive; the plan works |
 | A thin week | the climax is costly; the enemy advances; a plan fails. **This is a plot turn, never a punishment and never a lecture.** |
-| A red-light/rest day (plan says stop) | the story cuts away to another thread (Wren, Vane, the House), or Darrow is made to rest by others. Resting is never failure. |
-| A missed day | the world moves without him. No guilt. |
+| A red-light/rest day (plan says stop) | a **cutaway** scene: the world moves without him, in another POV (Wren, Hollis, the House, an enemy) or with Darrow made to rest by others. Never a setback frame; resting is never failure. |
+| A missed day (nothing logged at all) | no scene for that day. The next scene opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, a kitchen started counting loaves. No guilt, no lesson. |
+
+**Tone, never the slot's content.** What happens in a scene is fixed when the chapter is planned; the day's real deeds set only its colour: warmth or cold in him, a stage that goes well or costs more, people who are kind or short with him. The **outcome** of the week is set only at the climax, by the tier. A warm day never buys a victory and a cold day never spends one.
 
 Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) may appear, but only inside Reckoning boxes and dice lines, never in narration.
 
@@ -34,12 +36,13 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 
 ## 2. Voice and craft
 
-- **POV:** close third person on Darrow, past tense. At most one short **interlude** per chapter from another POV (Wren, Vane, Maelis, Marrant, the king's hall), set off with `* * *`.
+- **POV:** close third person on Darrow, past tense. At most one short **interlude** per chapter from another POV (Wren, Hollis, Maelis, an enemy, a distant hall), under its own heading `### Interlude — Title` (see §3); it is not tied to a day.
 - **Register:** grounded and specific. Concrete nouns, working verbs. Soldiers' humor. Earned emotion. Think *The First Law* dialogue, *Chalion* interiority, *Baldur's Gate 3* companions.
 - **Every scene:** someone wants something, something stops them, something turns. End on movement: a decision, a door, a line of dialogue, a new problem. Never end on a summary.
-- **Dialogue does the heavy lifting.** Use each character's voice line (`characters.md`). Let people interrupt, deflect, lie.
+- **Dialogue does the heavy lifting.** Use each character's voice line (`cast.md`). Let people interrupt, deflect, lie.
 - **The body is real.** Darrow's knee is a presence: stiffness at dawn, the hot ache after the forms, the terror of a stair going down, the moment it holds. Write it the way a wounded soldier would feel it, never the way a clinic would describe it.
-- **Plant and pay off.** Before writing, read `saga/state/threads.md`. Every chapter should touch at least one open thread and plant at most one new one.
+- **Plant and pay off.** Before writing, read `saga/state/_gm/threads.md`. Every chapter should touch at least one open thread and plant at most one new one.
+- **The Bearing in prose.** Who Darrow's choices are making him (`saga/state/bearing.json`) is never a number or an axis name in narration. It shows as how people address him, which options he is offered, and the epithet in writs and talk. **An epithet must be spoken on the page**, in a writ, from an enemy's mouth, in a companion's jibe, in the scene or climax whose choice earns it, before the site may show it.
 - **Variety:** rotate scene types: dialogue-driven, action, investigation, quiet/character, set piece. No two consecutive scenes of the same type.
 
 **Banned (or once a Book at most):** "a testament to", "little did he know", "in that moment", "a dance of", "the weight of the world", "he let out a breath he didn't know he was holding", "something shifted", "steeled himself", eyes that "sparkle", any sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
@@ -50,7 +53,9 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 
 ### A daily scene (written when a day is closed)
 - **150–400 words**, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file.
-- Tone and outcome are coloured by that day's deeds (see the table above), but the plot moves forward every day regardless.
+- Every daily scene is exactly one **kind**, fixed when the chapter is planned: **spine** (advances the chapter's core beat; at least two per chapter, and Saturday's slot is always spine), **quest** (one stage of an active side quest; at most two stages of one quest per chapter), **interlude** (another POV, at most one per chapter, heading `### Interlude — Title`, not tied to a day), or **cutaway** (a red-light day: the world moves without him; never a setback frame).
+- Tone is coloured by that day's deeds (see the table above); the content is the planned slot's, and the outcome is set only at the climax. The plot moves forward every day regardless.
+- A missed day gets no scene. The next scene opens with one off-page world move from the chapter's planned list, then carries on.
 - Reckoning notifications, if the engine reported any, go at the end of the scene in a box.
 
 ### The Reckoning box (LitRPG notifications)
@@ -78,18 +83,30 @@ Show the check on its own line, before the outcome is narrated:
 - End with **a choice for Darrow** (2–3 options), in this format:
 ```
 **What does Darrow do?**
-1. **Expose Anselm to the Mother Prior.** *(Maelis approves.)*
-2. **Use him to feed Marrant a lie.** *[Resolve 10]* *(Wren approves; risky.)*
+1. **Expose the thief to the Mother Prior.** *(Maelis approves.)*
+2. **Use him to feed the Confessor a lie.** *[Resolve 10]* *(Wren approves; risky.)*
 3. **Say nothing — yet.**
 ```
-  Gated options show the requirement in brackets; if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~.
+  Gated options show the requirement in brackets, a stat (`*[Resolve 10]*`) or a Bearing lean (`*[Guile 4]*`); if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~. A climax choice may move the Bearing by two or three; only a betrayal or a sacrifice moves it by four, and the epithet it earns must be spoken on the page.
+
+### A small choice (micro-choice, at the end of a daily scene)
+One stage of a quest or a beat may end on a choice smaller than the climax's. Format, the heading `**What does Darrow do?**` or `**What does Darrow say?**`, each option bold:
+```
+**What does Darrow say?**
+1. **"…"**
+2. **"…"**
+3. **Say nothing.**
+```
+- At most one open at a time, at most one per scene, never in two scenes running. Each names exactly one Bearing axis, ±1 per option; gates as above.
+- It carries across one scene. If it is still open at the following close, Darrow answers for himself with the planned default, and the Ledger says so in one line.
+- Its consequence is folded into the opening of the next scene. No separate block, no `### Choice` heading.
 
 ### Chapter epigraphs
-Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Warden precept, a Confessor's writ, a lancers' marching song, a letter from Aldric Vane, a children's counting rhyme. Original text only.
+Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Warden precept, a Confessor's writ, a lancers' marching song, a letter from an old friend, a children's counting rhyme. Original text only.
 
 ### File layout
-- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A consequence written by `/choose` goes under `### Choice — Title`. The site build parses exactly these forms.
-- Book openings get a title page line: `# BOOK II — THE TEMPERING ROAD`.
+- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`, with at most one `### Interlude — Title` among them), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A small choice sits at the end of its scene under `**What does Darrow do?**` or `**What does Darrow say?**`. A consequence written by `/choose` for a climax choice goes under `### Choice — Title`; a small choice's consequence is folded into the next scene. The site build parses exactly these forms.
+- Book openings get a title page line: `# BOOK II — <TITLE>`.
 
 ---
 

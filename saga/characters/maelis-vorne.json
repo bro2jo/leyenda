@@ -85,6 +85,11 @@
       "fact": "When Darrow saw the script of light above his palms, she did not look surprised; she said \"So it's begun\" and told him to close the door.",
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "fact": "She was shut in a cell down the hall with the Captain while Hollis hid the writ; nothing came through the door, and at the end of the Interlude a latch lifted and it opened.",
+      "chapter": "01",
+      "scene": "interlude"
     }
   ],
   "relationships": [
@@ -148,6 +153,11 @@
     {
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "chapter": "01",
+      "scene": "interlude",
+      "mention": true
     }
   ]
 }

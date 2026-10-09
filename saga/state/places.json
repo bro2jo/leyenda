@@ -31,7 +31,7 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
+      "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind that comes round the shoulder of the mountain with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
     },
     {
       "id": "coldmere",
@@ -190,36 +190,13 @@
       "kind": "mountains",
       "x": 200,
       "y": 30,
-      "on_page": false,
+      "on_page": true,
       "visited": false,
-      "first_seen": null,
-      "description": ""
-    },
-    {
-      "id": "saltreach",
-      "name": "Saltreach",
-      "subtitle": "",
-      "region": "saltreach",
-      "kind": "city",
-      "x": 36,
-      "y": 176,
-      "on_page": false,
-      "visited": false,
-      "first_seen": null,
-      "description": ""
-    },
-    {
-      "id": "ashen-fields",
-      "name": "The Ashen Fields",
-      "subtitle": "",
-      "region": "ashen-fields",
-      "kind": "waste",
-      "x": 322,
-      "y": 252,
-      "on_page": false,
-      "visited": false,
-      "first_seen": null,
-      "description": ""
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "The mountains north of the Lowmarch, into which the surgeons sent him; Saint Ysolde's stands on a shoulder of them above the cloud."
     }
   ],
   "route": [

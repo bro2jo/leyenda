@@ -1,0 +1,99 @@
+{
+  "id": "benedek-orrin",
+  "name": "Ser Benedek Orrin",
+  "aliases": [
+    "Benedek",
+    "Orrin",
+    "Benedek Orrin"
+  ],
+  "epithet": "Of Hollis's Sixth; the next cot",
+  "tier": "minor",
+  "faction": "sixth-lance",
+  "status": "alive",
+  "sigil": {
+    "faction": "sixth-lance",
+    "mark": "none"
+  },
+  "appearance": "Not yet thirty, a knight of Hollis Garrow's own Sixth, on the cot next to his in the infirmary hall. A boar spear went through his shoulder at the ford and a fever came after it; the shoulder is wrapped like a parcel. He lies with his hands folded on the blanket and watches, with the eyes of a man who still feels a warmth in his chest, or says he does.",
+  "first_seen": {
+    "chapter": "01",
+    "scene": "interlude",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#interlude"
+  },
+  "last_seen": {
+    "chapter": "01",
+    "scene": "interlude",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#interlude"
+  },
+  "last_seen_doing": "Lying on the cot next to Hollis's with his eyes shut and his lips moving, saying his oath because Hollis told him to.",
+  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his eyes shut and his oath on his lips. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up.",
+  "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
+  "quote": {
+    "text": "I'd carry you down the Steps myself, if they'd let me.",
+    "chapter": "01",
+    "scene": "interlude"
+  },
+  "known_facts": [
+    {
+      "fact": "He is of Hollis Garrow's own Sixth Lance, not yet thirty, and has the cot next to Hollis's in the infirmary hall of Saint Ysolde's.",
+      "chapter": "01",
+      "scene": "interlude"
+    },
+    {
+      "fact": "A boar spear went through his shoulder at the ford, and a fever followed; the shoulder is wrapped like a parcel.",
+      "chapter": "01",
+      "scene": "interlude"
+    },
+    {
+      "fact": "He says his oath at every bell, and says he still feels a warmth in his chest.",
+      "chapter": "01",
+      "scene": "interlude"
+    },
+    {
+      "fact": "He asked Hollis what it meant to be second on the list and whether they would take him down, and was told that nobody was taking anyone up eleven hundred steps in the snow.",
+      "chapter": "01",
+      "scene": "interlude"
+    },
+    {
+      "fact": "He told Hollis that if the Confessors did come up he could kneel, that the heralds had said it was mercy and only kneeling, and that he would carry Hollis down the Steps himself if they let him.",
+      "chapter": "01",
+      "scene": "interlude"
+    },
+    {
+      "fact": "Told to say his oath and shut his eyes, he shut them and his lips began to move, and he did not see where Hollis put the folded paper from his shirt.",
+      "chapter": "01",
+      "scene": "interlude"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "hollis-garrow",
+      "label": "Ser Hollis, his captain on the next cot",
+      "note": "He calls him Ser, asked him what second on the list meant, offered to carry him down the Steps, and shut his eyes and said his oath when Hollis told him to."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "grace",
+      "state": "a warmth he says he still feels"
+    },
+    "level": null,
+    "rank": "Oathsworn",
+    "attributes": {
+      "might": 9,
+      "vigor": 6,
+      "finesse": 8,
+      "resolve": 11
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "01",
+      "scene": "interlude"
+    }
+  ]
+}

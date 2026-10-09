@@ -2,7 +2,7 @@
 name: log
 description: Record anything from real life (food or a photo of a meal/label, weigh-in, creatine, morning knee check, floor minimum, knee session, PT, upper body, conditioning, sport drills, sleep) or close the day. Use whenever a message contains something to record, even without /log.
 argument-hint: "[what you ate / did / felt]  or  close day"
-allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read Edit Write
+allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) Bash(python3 engine/build_site.py *) Bash(git *) Read Edit Write
 ---
 
 # /log
@@ -18,6 +18,7 @@ Input: $ARGUMENTS (plus any attached photo).
   - **exercise detail** → `ACL_Exercise_Log.csv`
   - **sport drills** → `sport_log.csv`
   - **"close day"** → step 6
+  - **an answer to an open story choice** ("2", "stay hidden", "tell her the truth") → handled **first**, through `/choose`, before anything else in the message. A bare number is an answer only while a choice is open (`python3 engine/saga.py now` prints the open micro-choice; a climax choice is in `saga/NOW.md`); otherwise it is a quantity or a number from the day.
 
 ## 2. Safety screen (before anything else)
 - **Red flags** (fever, calf pain/swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling, loss of extension, inability to walk normally): reply in plain language and tell him to contact the surgical team/PT. Still log what he said. Set `light=red`. No story today.
@@ -49,11 +50,13 @@ For each item:
 ## 6. Close day (when he says so, or when a new day's first log arrives and the previous day's `closed` column in `daily_log.csv` isn't `Y`)
 - **`daily_log.csv → closed` is the single source of truth.** Check it first (`python3 engine/darrow.py today --date DATE` shows "day closed"). If it is already `Y`, do not write another scene for that day.
 - **A log for an already-closed day:** record it (steps 1–5), `sync`, reply with the Ledger. The engine's totals, XP and the week's tier update (the tier keeps moving until `chapter-close` freezes it). No new scene unless he asks for one.
-- `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`.
-- Ledger: the day's totals vs targets, sessions vs plan, anything open for tomorrow, flags.
-- Chronicle: write that day's **scene** (CLAUDE.md "Closing a day"; `saga/bible/style.md`). Append it to the current chapter file, update `saga/state/world.json`, `threads.md`, `codex.md`, and the narrative top of `saga/NOW.md`.
-- If the day was red-light, the scene cuts away from Darrow (another POV) or shows him made to rest. No setback framing.
-- **The cast and the site:** a file in `saga/characters/` for anyone new on the page (contract: `saga/characters/README.md`); update `last_seen`, `last_seen_doing`, `now`, `appearances`, `known_facts` (and `appearance`/`status` if changed) for everyone in the scene; `saga/state/places.json` for a new place; `world.json → location.place`. Then `python3 engine/build_site.py`: it must pass before you commit.
+- `python3 engine/darrow.py set daily DATE closed=Y`, then `sync`, then `python3 engine/saga.py now` and `python3 engine/saga.py plan next --date DATE --full`: the day's **slot** (its kind: spine, quest, interlude or cutaway; the planned content; the beat or quest stage from the arc; any micro-choice it carries) and the day's **colour** (`warm` / `mild` / `cold` / `rest`), which is GM-only and never said to him.
+- Ledger: the day's totals vs targets, sessions vs plan, anything open for tomorrow, flags. **While a story choice is open, the reply ends with** "Still waiting on Darrow: 1 … / 2 … / 3 …".
+- **The open micro-choice:** it carries across one scene. If it is still open when this day closes, Darrow answers for himself with the slot's planned `default`: run `/choose` for that option with `--by bearing`, say so in one Ledger line, and fold the consequence into this scene's opening. If this day's slot carries a new micro-choice while one is still open, the open one resolves by default first.
+- Chronicle: read the last scene and `saga/state/_gm/threads.md`, then write that day's **scene** (CLAUDE.md "Closing a day"; `saga/bible/style.md`) in the slot's kind. The content is the slot's; the day's deeds set only the tone (warm or cold in him, a stage that goes well or costs more); the outcome waits for the climax. Fold in the DUE NOW / OVERDUE items from `saga.py now` that fit. Append it to the current chapter file.
+- If the day was red-light (`rest`), the scene is a **cutaway**: another POV, or Darrow made to rest. No setback framing. A day with no row at all is **missed**: no scene; `python3 engine/saga.py plan done N --skipped`, and the next scene opens with the world move it prints.
+- Then the bookkeeping: `python3 engine/saga.py plan done N --wrote chNN:sK` → `python3 engine/saga.py fire ID --where chNN:sK` for each due item you used (`void ID --why "…"` for one the story made impossible) → `python3 engine/saga.py plan micro open N` if the scene ended on the slot's micro-choice (written in the `style.md` format). Update `saga/state/world.json` by Edit (`scenes[]`, `location.place`, `last_beat`, `current_quest.on_the_page`, `current_struggle`; never approval), `saga/state/_gm/threads.md`, `codex.md`, and the narrative top of `saga/NOW.md`.
+- **The cast and the site:** a file in `saga/characters/` for anyone new on the page (contract: `saga/characters/README.md`); update `last_seen`, `last_seen_doing`, `now`, `appearances`, `known_facts` (and `appearance`/`status` if changed) for everyone in the scene; `saga/state/places.json` for a new place; `world.json → location.place`. Then `python3 engine/saga.py check` and `python3 engine/build_site.py`: both must pass before you commit.
 
 ## 7. Save
 `git add -A && git commit -m "log DATE: <short summary>" && git push origin HEAD:main` (the rebuilt `docs/` goes in the same commit).

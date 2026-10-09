@@ -99,6 +99,7 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 .chip{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;border:1px solid var(--rule);border-radius:999px;padding:2px 9px;color:var(--dim);background:transparent;line-height:1.4}
 .chip.brass{border-color:var(--brass-dim);color:var(--brass)}
 .chip.blue{border-color:var(--t5);color:var(--t6)}
+.chip.ember{border-color:var(--ember);color:var(--ember)}
 a.chip:hover{text-decoration:none;border-color:var(--brass)}
 button.chip{cursor:pointer;font:inherit;font-family:var(--label);font-size:.78rem}
 button.chip[aria-pressed=true]{background:var(--brass);color:var(--night);border-color:var(--brass)}
@@ -171,6 +172,18 @@ details[open]>summary::after{content:"\2212"}
 .stk .s.faint{color:var(--faint)}
 .stk.hot{border-top-color:var(--ember)}
 .stk .bar-row{margin-top:2px} .stk .bar-l{display:none} .stk .bar{height:6px}
+
+/* bearing: four axes in words, a marker on a line */
+.bearing{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bearing-row{display:grid;grid-template-columns:5.5em minmax(0,1fr) 5.5em;grid-template-areas:"l bar r" "w w w";gap:2px 10px;align-items:center}
+.bearing-row .pole{font-family:var(--label);font-size:.85rem;letter-spacing:.06em;color:var(--dim)}
+.bearing-row .pole.l{grid-area:l;text-align:right} .bearing-row .pole.r{grid-area:r}
+.bearing-bar{grid-area:bar;position:relative;height:10px;display:block}
+.bearing-bar::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--rule);transform:translateY(-50%)}
+.bearing-bar::after{content:"";position:absolute;left:50%;top:1px;bottom:1px;border-left:1px dotted var(--faint-stroke)}
+.bearing-bar>i{position:absolute;top:50%;left:var(--p);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 2px var(--night);transition:left .9s cubic-bezier(.2,.7,.2,1)}
+.bearing-row .word{grid-area:w;text-align:center;font-size:.82rem;color:var(--faint);font-style:italic}
+.bearing-row .word.on{color:var(--brass);font-style:normal}
 @media (max-width:440px){.streaks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* arts */
