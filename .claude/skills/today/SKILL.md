@@ -10,7 +10,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
 1. `git pull --rebase origin main`, then `python3 engine/darrow.py today` (add `--date` if $ARGUMENTS names a day).
 2. Read only the sections today needs, never the whole files:
    - a knee session day: `python3 engine/darrow.py doc state "session a"` (or `"session b"`), plus `doc state "progression rules"` if a change is due;
-   - every day: the floor and conditioning lines in `real/NOW.md` → Plan in force (`doc state "daily floor"` for the full floor);
+   - every day: the daily-minimum and bike lines in `real/NOW.md` → Plan in force (`doc state "daily minimum"` for the full text);
    - an upper, accessory or power day: `doc addon 5` (sessions);
    - a PT day: the question list in `real/NOW.md` → Next PT visit, and the newest `real/visits/` file if the last visit changed anything.
    The newest visit file outranks the state file until a checkpoint folds it in (`real/NOW.md` says when).

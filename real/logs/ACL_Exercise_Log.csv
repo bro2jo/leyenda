@@ -198,31 +198,37 @@ date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,
 2026-10-01,2026-09-27,38,PT,mobility,weighted heel prop (extension stretch),L,1,,5 min,8 lb,,new PT item; ext 2 deg hyperext measured after
 2026-10-01,2026-09-27,38,PT,quad,straight-leg raise,L,1,10,,,,
 2026-10-03,2026-09-27,40,home,gait,walking/standing,,,,~3 h (est),,none,felt fine
-2026-10-06,2026-10-04,43,home,floor,weighted heel prop (extension stretch),L,1,,7 min,10 lb,,AM; no NMES; plan 8 lb
-2026-10-06,2026-10-04,43,home,warm-up,"Airdyne, legs only",,,,8 min,,,1.93 mi
+2026-10-04,2026-10-04,41,home,gait,everyday walking/standing,,,,~3 h,,none,nothing else done
+2026-10-05,2026-10-04,42,home,gait,everyday walking/standing,,,,about half the day,,none,Session A skipped
+2026-10-06,2026-10-04,43,floor,mobility,weighted heel prop,L,1,,7 min,10 lb,,no NMES; PT dose 8 lb; time of day not stated
+2026-10-06,2026-10-04,43,home,warmup,air bike (legs only),,1,,8 min,easy,,1.93 mi
 2026-10-06,2026-10-04,43,home,quad,straight-leg raise,L,1,10,,,,no lag
-2026-10-06,2026-10-04,43,home,quad,terminal knee extension (TKE),L,2,15,,,,full lockout
-2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand 18 in,L,2,12,,,slight right-foot assist,
-2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand 18 in,R,2,12,,,,
-2026-10-06,2026-10-04,43,home,single-leg,"heel tap 5 in, slow eccentric",L,2,10,,,,PT dose was 4 in
-2026-10-06,2026-10-04,43,home,single-leg,"step-up 8 in, no band",both,3,10,,set 1: 15 lb DBs; sets 2-3: 25 lb DBs,,each side
-2026-10-06,2026-10-04,43,home,single-leg,"split squat, bodyweight, unassisted",both,2,8,,,,each side; new this session
-2026-10-06,2026-10-04,43,home,quad,wall squat,both,2,10,,,,
-2026-10-06,2026-10-04,43,home,quad,strap isometric knee extension at 90 deg,L,10,1,10 s,,,"maximal effort, no pain"
-2026-10-06,2026-10-04,43,home,calf,"calf raise, left-biased",L,3,12,,25 lb in the left hand,,
-2026-10-06,2026-10-04,43,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,logged at the planned dose (completed)
-2026-10-07,2026-10-04,44,home,floor,weighted heel prop (extension stretch),L,1,,10 min,10 lb,,AM; plan 8 lb
-2026-10-07,2026-10-04,44,home,floor,quad sets + NMES,L,14,1,10 s,,,"~7 min, after the heel prop"
-2026-10-07,2026-10-04,44,home,floor,heel slides,L,,,,,,reps not stated; Game Ready ice compression after
-2026-10-08,2026-10-04,45,PT,measurement,"ROM (gonio): extension 2 deg hyperext, flexion 146 deg",L,,,,,,PT 9
-2026-10-08,2026-10-04,45,PT,measurement,single-leg leg press max,both,,,,"R 14 plates, L 9 plates",,L/R 64%; stands in for quad LSI until a dynamometer test
-2026-10-08,2026-10-04,45,PT,warm-up,upright bike,,,,6 min,level 5,,
-2026-10-08,2026-10-04,45,PT,single-leg,leg press,L,,,,6 plates,,sets/reps not recorded
-2026-10-08,2026-10-04,45,PT,calf,standing heel raise,both,2,15,,35 lb DBs,,
-2026-10-08,2026-10-04,45,PT,hip,standing bird dog,both,2,15,,8 lb kettlebell,,
-2026-10-08,2026-10-04,45,PT,single-leg,step-up 12 in with opposite knee drive,L,2,15,,,,
-2026-10-08,2026-10-04,45,PT,hip,multi-hip abduction,both,2,15,,4 plates,,"each side, alternating"
-2026-10-08,2026-10-04,45,PT,hip,multi-hip extension,both,2,15,,4 plates,,"each side, alternating"
-2026-10-08,2026-10-04,45,PT,hip,"multi-hip flexion, knee straight",both,2,15,,4 plates,,"each side, alternating"
-2026-10-08,2026-10-04,45,PT,balance,"two-leg stance, eyes closed",both,2,,1 min,,,each way
-2026-10-09,2026-10-04,46,home,conditioning,air bike (legs only),,1,,15 min,,,3.47 mi
+2026-10-06,2026-10-04,43,home,knee,standing TKE,L,2,15,,band (color not stated),,full lockout
+2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,L,2,12,,18 in box,slight R-foot assist,BATCH: 24 -> 18 in in one step (planned 24 in)
+2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,R,2,12,,18 in box,,mirrored
+2026-10-06,2026-10-04,43,home,single-leg,"heel tap, slow eccentric",L,2,10,,5 in step,,BATCH: first at home; PT dose 4 in
+2026-10-06,2026-10-04,43,home,single-leg,step-up,L,3,10,,"8 in; set 1 15 lb DBs, sets 2-3 25 lb DBs; no band",,BATCH: DBs added and band off (planned bodyweight + red band)
+2026-10-06,2026-10-04,43,home,single-leg,step-up,R,3,10,,"8 in; set 1 15 lb DBs, sets 2-3 25 lb DBs",,mirrored
+2026-10-06,2026-10-04,43,home,single-leg,split squat,L,2,8,,bodyweight,unassisted,BATCH (new); planned hand support
+2026-10-06,2026-10-04,43,home,single-leg,split squat,R,2,8,,bodyweight,unassisted,
+2026-10-06,2026-10-04,43,home,knee,sit-to-stand w/ TKE band,bil,,,,,,SKIPPED
+2026-10-06,2026-10-04,43,home,knee,wall squat,bil,2,10,,,,BATCH: first at home; depth not recorded
+2026-10-06,2026-10-04,43,home,quad,isometric knee extension at 90 deg (strap),L,10,1,10 s,strap,,BATCH: first at home; maximal effort; no pain
+2026-10-06,2026-10-04,43,home,calf,"calf raise, L-biased",bil,3,12,,25 lb in L hand all sets,,BATCH (load on all sets)
+2026-10-06,2026-10-04,43,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,reported completed; dose as planned
+2026-10-07,2026-10-04,44,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,PT dose 8 lb
+2026-10-07,2026-10-04,44,floor,quad,quad set + NMES,L,1,14,10 s,NMES,,"~7 min; after the heel prop, not during"
+2026-10-07,2026-10-04,44,floor,mobility,heel slide,L,,,,,,dose not stated
+2026-10-08,2026-10-04,45,floor,mobility,heel slide,L,,,,,,AM before PT; dose not stated
+2026-10-08,2026-10-04,45,PT,warmup,upright bike,,1,,6 min,"seat 16, level 5",,up from level 3
+2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM (CLP),R,1,1,,14 plates,,PT functional strength test; plate weight not recorded
+2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM (CLP),L,1,1,,9 plates,,"L/R = 64%; whole-leg test, not the dynamometer"
+2026-10-08,2026-10-04,45,PT,single-leg,single-leg leg press (CLP seat 4),L,,,,6 plates,,sets/reps not recorded; left only
+2026-10-08,2026-10-04,45,PT,calf,standing double-leg heel raise,bil,2,15,,35 lb DBs,,new PT item
+2026-10-08,2026-10-04,45,PT,hip,standing bird dog,,2,15,,8 lb KB,,new PT item; standing (patient clarification); sides not recorded; no kneeling
+2026-10-08,2026-10-04,45,PT,single-leg,step-up w/ opposite knee drive,L,2,15,,12 in step,,new PT item; up from 8 in
+2026-10-08,2026-10-04,45,PT,hip,multi-hip abduction (CMH),bil,2,15,,4 plates,,new PT item; alternating sides
+2026-10-08,2026-10-04,45,PT,hip,multi-hip extension (CMH),bil,2,15,,4 plates,,new PT item; alternating sets
+2026-10-08,2026-10-04,45,PT,hip,"multi-hip flexion, knee straight (CMH)",bil,2,15,,4 plates,,new PT item; alternating sets
+2026-10-08,2026-10-04,45,PT,balance,"double-leg stance, eyes closed",bil,1,,1 min each way,,,new PT item
+2026-10-09,2026-10-04,46,conditioning,conditioning,air bike (legs only),,1,,15 min,easy,,3.47 mi; off-day conditioning (plan Phase 3)

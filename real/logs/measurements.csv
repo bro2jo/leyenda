@@ -10,10 +10,10 @@ pre-op,clinic,ham_lb,R,79,lb,dynamometer,,the strength target
 2026-09-11,PT,ext_deg,L,2,deg,gonio,,
 2026-09-11,PT,flex_deg,L,130,deg,"gonio, active",,
 2026-09-11,PT,flex_deg,L,135,deg,"gonio, passive",,
-2026-09-25,clinic,ext_deg,L,-3,deg,gonio,,PT + surgeon visit day; read as 3 deg short; direction to confirm
+2026-09-25,clinic,ext_deg,L,-3,deg,gonio,,PT + surgeon visit day; read as 3 deg short and treated as the outlier (state 10/9); the 9/25 daily log noted the sign convention as unconfirmed
 2026-09-25,clinic,flex_deg,L,146,deg,"gonio, active",,PT + surgeon visit day
 2026-10-01,PT,ext_deg,L,2,deg,gonio,2026-10-01_PT8,after a weighted stretch
-2026-10-08,PT,ext_deg,L,2,deg,gonio,2026-10-08_PT9,
+2026-10-08,PT,ext_deg,L,2,deg,"gonio, AROM",2026-10-08_PT9,
 2026-10-08,PT,flex_deg,L,146,deg,gonio,2026-10-08_PT9,
 2026-10-08,PT,sl_leg_press_plates,L,9,plates,max,2026-10-08_PT9,stands in for quad LSI until a dynamometer test
 2026-10-08,PT,sl_leg_press_plates,R,14,plates,max,2026-10-08_PT9,

@@ -23,7 +23,7 @@ Commands (run from the repo root):
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
   measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
-  doc state|addon|guide|master|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
+  doc state|addon|rules|guide|master|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
 """
 import argparse
@@ -52,7 +52,8 @@ P = {
     "state_dir": ROOT / "real/state",
     "checkpoints": ROOT / "real/checkpoints",
     "visits": ROOT / "real/visits",
-    "addon": ROOT / "real/plan/Whole_Athlete_AddOn.md",
+    "addon": ROOT / "real/plan/ACL_Whole_Athlete_AddOn.md",
+    "working_rules": ROOT / "real/plan/ACL_Dashboard_Working_Rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
     "master": ROOT / "real/plan/ACL_Reconstruction_Rehab_Master_Plan.md",
     "deeds": ROOT / "engine/deeds.csv",
@@ -74,11 +75,11 @@ COLS = {
     "food": ["id", "date", "time", "meal", "item", "qty"] + NUTRIENTS + ["source", "notes"],
     "foods": ["name", "aliases", "serving"] + NUTRIENTS + ["source", "confidence", "notes"],
     "daily": ["date", "dow", "pod", "post_op_week", "dash_week_start", "light",
-              "am_swelling", "am_pain", "am_extension", "am_notes",
+              "am_swelling", "am_trend", "am_pain", "am_extension", "flexion", "catch", "am_notes",
               "floor_am", "floor_pm", "knee_session", "knee_min", "knee_rpe", "knee_as_planned",
-              "pt", "addon_session", "addon_min", "addon_rpe",
+              "pain_session", "pain_pm", "pt", "addon_session", "addon_min", "addon_rpe",
               "conditioning_type", "conditioning_min", "sport_min",
-              "hours_on_feet", "gym_min_on_feet", "sleep_h", "closed", "notes"],
+              "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "closed", "notes"],
     "exercise": ["date", "dash_week_start", "pod", "session", "block", "exercise", "side",
                  "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
@@ -239,13 +240,22 @@ def rollup(cfg, write=False):
 
 
 # ---------------------------------------------------------------- facts per day
+def floor_rounds(cfg, date):
+    """Weighted heel-prop rounds that make a full daily minimum on this date (config.json -> daily_minimum)."""
+    need = 2
+    for step in sorted(cfg.get("daily_minimum", {}).get("rounds", []), key=lambda x: x["from"]):
+        if step["from"] <= str(date):
+            need = step["rounds"]
+    return need
+
+
 def gather(cfg, rules, nutrition=None):
     """Merge every log into one record of facts per date. nutrition: rolled-up rows (in memory or as written)."""
     facts = defaultdict(lambda: {
         "kcal": None, "protein": None, "weight": None, "creatine": False,
         "floor": None, "check": False, "knee": None, "as_planned": False, "pt": False,
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(),
-        "light": "", "closed": False, "logged": False, "tags": set(),
+        "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
     })
     for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
@@ -263,12 +273,14 @@ def gather(cfg, rules, nutrition=None):
             continue
         f = facts[r["date"]]
         f["logged"] = True
-        am, pm = yes(r.get("floor_am")), yes(r.get("floor_pm"))
-        f["floor"] = "full" if (am and pm) else ("half" if (am or pm) else f["floor"])
+        rounds = int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
+        f["floor"] = "full" if rounds >= floor_rounds(cfg, r["date"]) else ("half" if rounds else f["floor"])
         if VALID_SWELLING.match(str(r.get("am_swelling", "")).strip()):
             f["check"] = True
         ks = str(r.get("knee_session", "")).strip()
-        if ks and ks.lower() not in ("none", "no", "n", "-"):
+        if ks.lower().startswith("partial"):  # below the minimum session: not a loaded day (Working Rules)
+            f["knee_partial"] = True
+        elif ks and ks.lower() not in ("none", "no", "n", "-"):
             f["knee"] = ks
         f["as_planned"] = yes(r.get("knee_as_planned"))
         if yes(r.get("pt")):
@@ -299,7 +311,7 @@ def gather(cfg, rules, nutrition=None):
             f["addons"].add(sess)
         elif sess.lower() in ("floor", "hep") and f["floor"] is None:
             f["floor"] = "half"
-        elif sess.lower() in ("home", "knee", "a", "b") and block in knee_blocks and not f["knee"]:
+        elif sess.lower() in ("home", "knee", "a", "b") and block in knee_blocks and not f["knee"] and not f["knee_partial"]:
             f["knee"] = "home"
         if block in block_tags:
             f["tags"].add(block_tags[block])
@@ -412,6 +424,10 @@ def deeds_for_day(date, f, cfg, rules):
 
 
 def planned_for(cfg, day):
+    """The planned sessions for a date: the template in force then (weekly_template_history), else the current one."""
+    for t in sorted(cfg.get("weekly_template_history", []), key=lambda x: x["until"]):
+        if day.isoformat() <= t["until"]:
+            return list(t.get(dow(day), []))
     return list(cfg["weekly_template"].get(dow(day), []))
 
 
@@ -817,13 +833,14 @@ def cmd_today(args, cfg, rules):
         if f["closed"]:
             done.append("day closed")
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
+        need = floor_rounds(cfg, day.isoformat())
         missing = [x for x, ok in [("morning check (grade swelling)", f["check"]),
-                                   ("floor minimum AM+PM", f["floor"] == "full"),
+                                   ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full"),
                                    ("creatine", f["creatine"])] if not ok]
         if missing:
             print("Still open: " + ", ".join(missing))
     else:
-        print("Logged: nothing yet. Still open: morning check, floor minimum AM+PM, creatine")
+        print("Logged: nothing yet. Still open: morning check, daily minimum (weighted heel prop), creatine")
 
 
 def cmd_week(args, cfg, rules):
@@ -1309,7 +1326,7 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
 
 def doc_path(name):
-    fixed = {"addon": P["addon"], "guide": P["guide"], "master": P["master"], "now": P["real_now"]}
+    fixed = {"addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"], "now": P["real_now"]}
     if name in fixed:
         return fixed[name]
     globs = {"state": (P["state_dir"], "ACL_Recovery_State_*.md"), "checkpoint": (P["checkpoints"], "20*.md"),
@@ -1321,7 +1338,7 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, addon, guide, master, checkpoint, visit, now, or a path")
+        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, checkpoint, visit, now, or a path")
     return p
 
 

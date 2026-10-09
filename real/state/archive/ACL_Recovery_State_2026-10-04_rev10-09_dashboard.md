@@ -1,11 +1,12 @@
-# ACL Recovery State — Sun 2026-10-04 · revised Fri 2026-10-09 (POD 46, post-op week 7)
+# ACL Recovery State — Checkpoint Sun 2026-10-04 · mid-week revision Fri 2026-10-09 (POD 46, post-op week 7)
 
-*The current program and where things stand, present tense only. The dashboard's ten sections are kept, so the Working Rules' references ("ladders live in the Recovery State, section 6") still hold; sections 2, 4 and 8 point to where that history lives in this repo.*
+The 10/4 checkpoint covered dashboard week **Sun 9/27 → Sat 10/3**. It was **revised Fri 10/9 at the user's request** to add:
+- Sun 10/4 → Fri 10/9 AM
+- PT visit 9 (10/8)
+- Nick's 10/9 instruction
 
-- **Program set:** Sun 2026-10-04 checkpoint, revised Fri 10/9: PT 9 (10/8) folded in, Nick's 10/9 instruction, A/B alternation, upper body on its own days, the daily minimum cut to one weighted heel prop.
-- **Last reviewed:** Fri 2026-10-09, ingested from the dashboard. As uploaded: `real/state/archive/ACL_Recovery_State_2026-10-04_rev10-09_dashboard.md`. The 10/4 version: `real/state/archive/ACL_Recovery_State_2026-10-04_v10-04.md`.
-- **Next:** the 10/11 checkpoint writes `ACL_Recovery_State_2026-10-11.md` and moves this file to `real/state/archive/`.
-- **Source priority:** latest PT/surgeon instruction (`real/visits/`) → rehab master plan → this file and the Working Rules (`real/plan/ACL_Dashboard_Working_Rules.md`) → Whole-Athlete Add-On → logs → general ACL knowledge.
+Sunday 10/11's checkpoint replaces this file with `ACL_Recovery_State_2026-10-11.md`.
+Source priority: latest PT/surgeon instruction → uploaded rehab plan → this file → Whole-Athlete Add-On → logs → general ACL knowledge.
 
 ---
 
@@ -29,9 +30,17 @@
 
 ---
 
-## 2. Current reading
+## 2. Current reading — Fri 10/9 (POD 46) AM
 
-*Not kept here. Each morning is in `real/logs/daily_log.csv` (`python3 engine/darrow.py today`); the plan for the next few days is in `real/NOW.md`.*
+**Swelling: trace, barely visible (borderline none).** This is the verdict on Thursday's PT session, the hardest to date: clean on swelling. Extension and pain were not reported.
+
+| When | Plan |
+|---|---|
+| Done this morning | Bike 15 min legs only, 3.47 mi |
+| Rest of today | Weighted heel prop once · **Upper A** (the first upper session since the redesign) |
+| Sat 10/10 | Heel prop · bike 18 → **Upper B** |
+| Sun 10/11, before the session | Graded swelling, first weigh-in, first extension photo, SLR lag, flexion check |
+| Sun 10/11 | Checkpoint → **Session B** (last run 9/30) |
 
 ---
 
@@ -55,7 +64,28 @@
 
 ## 4. Measurements log
 
-*Not kept here. Instrument numbers: `real/logs/measurements.csv` (`python3 engine/darrow.py measures`). Daily self-checks (swelling grade and trend, pain, extension, flexion, catch): `real/logs/daily_log.csv` (`python3 engine/darrow.py show daily DATE`).*
+| Date | POD | Ext L | Flex L | Swelling | Pain | Other |
+|---|---|---|---|---|---|---|
+| pre-op | — | −1° | 144° | — | — | quad 58.9 lb, ham 55.8 lb |
+| 9/11 | 18 | 2° hyperext (gonio) | 130 A / 135 P | — | 2; PM 3–4 | flare after back-to-back 9/10–11 |
+| 9/20 | 27 | sym (self) | good (self) | **1+ (first grade)** | 0 | catch present, painless |
+| 9/22–24 | 29–31 | full at rest (self) | — | 1+, slowly better | 0 | catch absent from 9/23 |
+| 9/25 | 32 | −3° (gonio) — likely 3° short; the outlier | **146° A (gonio)** | — | 0 | PT + surgeon |
+| 9/27 | 34 | good (self) | — | 1+, very close to trace | 0 | no stiffness |
+| 9/28 | 35 | — | heel near thigh (self) | no unusual (not graded) | 0 | Session A, 5-change batch |
+| 9/29 | 36 | going well (self) | — | no additional (not graded) | 0 | zero day |
+| 9/30 | 37 | — | slight post. tightness (self) | quiet (not graded) | 0 | Session B, 7-change batch |
+| 10/1 | 38 | 2° hyperext (gonio, after weighted stretch) | — | "great state" (not graded) | 0 | PT 8; back-to-back with 9/30 |
+| 10/2 | 39 | — | — | same (not graded) | 0 | verdict on back-to-back: clean |
+| 10/3 | 40 | — | — | not reported | — | ~3 h on feet |
+| 10/4 | 41 | — | — | clean (not graded) | 0 | ~3 h on feet; no session |
+| 10/5 | 42 | — | — | very clean, down further (not graded) | — | ~half day on feet; no session |
+| 10/6 | 43 | — | — | **trace** | — | Session A, ~12-change batch; strap iso max effort, no pain; SLR no lag |
+| 10/7 | 44 | — | — | **trace** | — | verdict on 10/6: clean on swelling |
+| **10/8** | **45** | **2° hyperext AROM (gonio)** | **146° (gonio)** | **trace** | — | PT 9 (Nick); SL leg press 1RM R 14 / L 9 plates (64%); gait normal |
+| 10/9 | 46 | — | — | **trace, barely visible** | — | verdict on PT 9: clean on swelling; bike 15 min |
+
+Instrument ROM: 9/11, 9/25, 10/1, 10/8. No post-op dynamometer. Swelling graded 4 of the 6 mornings 10/4–10/9.
 
 ---
 
@@ -88,7 +118,7 @@
   - running (plan: "rehabilitation team agrees")
   - BFR, Spanish squat, seated rotational throws (not in the plan)
 
-*The questions for the next visit are in `real/NOW.md`.*
+**For the next visit:** **book the quad test, both sides, plus hamstrings** · the right knee's hyperextension on a heel prop · BFR / Spanish squat / seated throws if wanted · which PTA treated on 10/1.
 
 ---
 
@@ -205,9 +235,25 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 ---
 
-## 8. Week in review
+## 8. Week in review so far — Sun 10/4 → Fri 10/9 AM
 
-*Not kept here. Each week's review is `real/checkpoints/<Sunday>.md`. The dashboard's review of Sun 10/4 → Fri 10/9 AM is §8 of the archived 10/9 file; the 10/11 checkpoint folds it in.*
+| Date | Loaded? | What | Next-morning response |
+|---|---|---|---|
+| Sun 10/4 | No | ~3 h on feet; Session A not run; no floor | Mon: very clean, swelling down further (not graded) |
+| Mon 10/5 | No | ~half day on feet; Session A skipped; upper moved to own days | Tue: **trace** |
+| Tue 10/6 | **Yes (Session A)** | ~12-change batch: SL sit-to-stand 24→18", heel tap 5", step-up 15→25 lb DBs band off, split squat unassisted (new), wall squat and strap iso at home (first), calf 25 lb all sets; heel prop 7' @ 10 lb | Wed: **trace** (clean on swelling) |
+| Wed 10/7 | No | Heel prop 10' @ 10 lb, NMES 14 × 10 s, heel slides; Game Ready | Thu: **trace** |
+| Thu 10/8 | **Yes (PT 9, Nick)** | Hardest session to date, "not hard on the knee"; measures; 12" step-up, 35 lb heel raise, bird dog, multi-hip, eyes-closed; sauna PM | Fri: **trace, barely visible** |
+| Fri 10/9 | No | Bike 15 min, 3.47 mi; Upper A planned | — |
+
+| Measure | Result |
+|---|---|
+| Loaded days | 2 (Tue, Thu). Session B rolls to Sun 10/11 (next dashboard week), so the week finishes 2 of 3 |
+| Clean mornings after loading | 2 of 2 |
+| Weighted heel prop | 2 home rounds (Tue, Wed) |
+| Bike | 1 (Fri) |
+| Upper | 0 so far (Fri, Sat planned) |
+| Swelling graded | 4 of 6 mornings, all trace |
 
 ---
 

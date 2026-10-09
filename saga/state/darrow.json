@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 898,
+  "xp": 853,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -14,7 +14,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 25,
+      "temper": 21,
       "next_at": 27,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 9,
       "cap": 10,
       "mod": -1,
-      "temper": 15,
+      "temper": 13,
       "next_at": 18,
       "fell": 18,
       "banked": false
@@ -44,7 +44,7 @@
       "raw": 9,
       "cap": null,
       "mod": -1,
-      "temper": 11,
+      "temper": 12,
       "next_at": 16,
       "fell": 12,
       "banked": false
@@ -136,7 +136,7 @@
       "tree": "Insight",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 9,
+      "practice": 10,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
@@ -147,7 +147,7 @@
       "tree": "Footing",
       "rank": 0,
       "banked_rank": 2,
-      "practice": 10,
+      "practice": 8,
       "next_at": 15,
       "sealed_until_knot": 3,
       "effect": "Drive through a line; Might checks on foot gain +Rank."

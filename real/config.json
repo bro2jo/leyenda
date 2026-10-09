@@ -90,21 +90,21 @@
     "reduce_above_lb": 1.0
   },
   "weekly_template": {
-    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: kneeA, kneeB, pt, upperA, upperB, accessory, power, cond. Session B may run Tue or Wed.",
+    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: knee (the next of Session A/B; they alternate A -> B -> A regardless of day), pt, upperA, upperB, accessory, power, cond. The Tue knee session may run Wed. Upper this week (10/4) ran its own placement: Fri 10/9 A, Sat 10/10 B. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
     "Sun": [
-      "kneeA",
-      "upperA"
+      "knee"
     ],
     "Mon": [
-      "cond"
+      "cond",
+      "upperA"
     ],
     "Tue": [
-      "kneeB",
-      "upperB"
+      "knee"
     ],
     "Wed": [],
     "Thu": [
-      "cond"
+      "cond",
+      "upperB"
     ],
     "Fri": [
       "pt"
@@ -116,7 +116,53 @@
       "accessory",
       "power"
     ],
-    "source": "Whole_Athlete_AddOn.md section 3 and ACL_Recovery_State_2026-10-04.md section 6"
+    "source": "ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest"
+  },
+  "weekly_template_history": [
+    {
+      "until": "2026-10-03",
+      "Sun": [
+        "kneeA",
+        "upperA"
+      ],
+      "Mon": [
+        "cond"
+      ],
+      "Tue": [
+        "kneeB",
+        "upperB"
+      ],
+      "Wed": [],
+      "Thu": [
+        "cond"
+      ],
+      "Fri": [
+        "pt"
+      ],
+      "Sat": [
+        "cond"
+      ],
+      "optional": [
+        "accessory",
+        "power"
+      ],
+      "source": "the template before the 10/9 revision: Whole_Athlete_AddOn.md section 3 and ACL_Recovery_State_2026-10-04.md section 6"
+    }
+  ],
+  "daily_minimum": {
+    "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day).",
+    "rounds": [
+      {
+        "from": "2026-07-22",
+        "rounds": 2,
+        "source": "AM + PM rounds, as the floor was scored before 10/9"
+      },
+      {
+        "from": "2026-10-09",
+        "rounds": 1,
+        "source": "ACL_Dashboard_Working_Rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
+      }
+    ]
   },
   "rehab": {
     "current_phase": 3,

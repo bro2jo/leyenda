@@ -2,43 +2,47 @@
 
 *Real numbers only. Nothing from the story appears on this page. Claude keeps the top section to what stands until something changes: the plan in force, the next PT visit, the gate, flags, open items. The engine owns every count and date in the block at the bottom, regenerated on every `sync`. History: `real/checkpoints/`. Visits: `real/visits/`. Measurements: `python3 engine/darrow.py measures`.*
 
-## Plan in force · Phase 3 (strength foundation)
+## Plan in force · Phase 3 (strength foundation) · revised Fri 10/9
 
-Program: `real/state/ACL_Recovery_State_2026-10-04.md` (`python3 engine/darrow.py doc state program`). PT 9 (Thu 10/8) outranks it until the 10/11 checkpoint folds its items in.
+Program: `real/state/ACL_Recovery_State_2026-10-04.md` §6 (`python3 engine/darrow.py doc state program`). Rules: `real/plan/ACL_Dashboard_Working_Rules.md` (`doc rules "load rules"`). Nick (10/9): progression is up to the master plan, no PT approval needed, never push through pain.
 
-- **Floor minimum (every day):** weighted heel prop **8 lb** on the lower thigh, 5–10 min, **AM and PM**. Quad sets + NMES 14 × 10 s during the AM round. (Tue and Wed ran at 10 lb; the plan holds 8 until the PT changes it. Ask Nick.)
-- **Knee sessions:** Session A (Sun) and Session B (Tue or Wed) at the doses in the state file; one change per exercise per session, one load step at a time.
-- **Conditioning:** bike 15 min easy Mon, Thu, Sat, after the heel prop.
-- **Upper:** Upper A core after Session A, Upper B core after Session B (add-on Block 0).
+- **Daily minimum (every day):** morning check (swelling **grade**, extension side by side, pain, catch) + **one weighted heel prop, 10 lb, 10 min**. NMES, quad sets, heel slides, SLR, patellar glides dropped 10/9.
+- **Knee sessions alternate A → B → A**, whichever is next: Sun and Tue/Wed, never back-to-back. Next: **Sun 10/11 Session B** → Tue 10/13 or Wed 10/14 **Session A** (new: seated knee extension 90°→45°; confirm band or ankle weight, and a 12" step).
+- **Upper on its own days:** Upper A Mon, Upper B Thu, after the bike. This week: **Fri 10/9 Upper A, Sat 10/10 Upper B** (Block 0: 3 sets, RPE 6 the first time, seated or lying).
+- **Bike, legs only, easy:** Mon, Thu, Sat and any off day; +3 min per ride: 15 (Fri 10/9) → **18 (Sat)** → 21 → … → 30.
+- **Sunday before the session:** graded swelling, weigh-in, extension photo, SLR lag (one rep), flexion vs the right.
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily.
 
-## Next PT visit · date not logged yet (usually Fri; 10/1 and 10/8 were Thu)
+## Next PT visit · not set (usual slot ~Thu 10/15 or Fri 10/16; confirm)
 
-- **Dynamometer, quad and hamstring, both sides.** It decides the Phase 4 gate.
-- Heel-prop weight (8 vs 10 lb).
-- Isometric progression (60°, frequency, moving reps).
-- NMES still needed? BFR?
-- Right-knee hyperextension reference.
-- Seated throws from ~10/17.
-- Add-on §9 order.
-- Have him watch the RDL.
+- **Book the quad test, both sides, plus hamstrings.** It is the only open Phase 4 gate. 83.7 / 79 lb (right, pre-op) are the targets, so test the right too.
+- The right knee's hyperextension on a heel prop (the remaining extension target).
+- If wanted: BFR · Spanish squat isometric · seated rotational throws from ~10/17 (not in the plan).
+- Which PTA treated on 10/1.
+- Awareness line, no approval needed: upper body runs seated on its own days with the left leg up; the right leg mirrors the left's single-leg work.
 
 ## Gate · Phase 3 → 4 (review week of 10/18; earliest Tue 10/20)
 
-- **ROM:** met. PT 9: extension 2° hyperextension, flexion 146°.
-- **Gait:** met. PT 9: good, equal weight bearing, no device, no brace.
-- **Effusion:** trace on every graded morning since Tue 10/6, including the mornings after Session A (Tue) and PT 9 (Thu). Needs to hold.
-- **Quad LSI ≥70%:** unmeasured since pre-op (70.4%). The single-leg leg press ratio (64%, 10/8) is the only stand-in and sits below it.
-- **Single-leg control, balance:** progressing.
+- **Full/symmetric ROM:** met. Extension 2° hyperext AROM (10/8; third clinic reading at 2°) vs the right's 0° AROM pre-op; flexion 146° vs 144°.
+- **Normal gait:** met (Nick 10/8).
+- **Minimal/no effusion:** met. Trace on every graded morning 10/6–10/9, including after the ~12-change Session A (10/6) and PT 9 (10/8).
+- **No pain flare:** met.
+- **Quad LSI ≥70%:** unmeasured. The SL leg press 1RM (64%) is whole-leg, not the plan's quad test. Target ≈58.6 lb left vs 83.7 right (or vs the right retested).
+- **Step-down / single-leg control:** probably met; Sunday's Session B (forward step-down at home) shows it.
+- **Balance:** met.
+
+Phase 4 waits on one thing: the quad test.
 
 ## Flags and notes for Sunday
 
-- Tue Session A ran off the written plan: banded sit-to-stand skipped, step-up DBs 15 → 25 lb within the session, heel tap 5″ against the PT's 4″. The rule is one change per exercise, one load step at a time.
-- PT 9's items (leg press, standing heel raise, standing bird dog, step-up with knee drive, multi-hip, eyes-closed stance) fold into Sessions A/B at the 10/11 checkpoint.
+- **The week so far, as the dashboard wrote it:** §8 of `real/state/archive/ACL_Recovery_State_2026-10-04_rev10-09_dashboard.md`. Fold it into the 10/11 checkpoint.
+- **Off-day work stays thin:** heel prop 2 rounds in 5 days, the first conditioning ride Friday, upper at zero three weeks running. If upper misses again, ask what the actual barrier is before redesigning (Working Rules).
+- **Batches keep growing:** 5 → 7 → ~12 changes (9/28, 9/30, 10/6), all clean mornings, none attributable. With PT approval no longer a brake, one change per exercise is the main guardrail.
+- **Graft weak window through ~11/16:** a quiet knee is not evidence that impact, running, rotation or pivoting can come forward.
 
 ## Open items
 
-- **Not here yet:** `ACL_Dashboard_Working_Rules.md`, `ACL_Daily_Log.csv`, `24-week-offseason-program-v4.md`, `ACL_Prehab_and_Posture_Plan.md`, your nutrition project's instructions, and your sport. Bring each in with `/ingest`; the sport with `/sport`.
+- **Not here yet:** `ACL_PT_Notes.md` (the dashboard's verbatim PT notes; each visit becomes a `real/visits/` file), `24-week-offseason-program-v4.md`, `ACL_Prehab_and_Posture_Plan.md` (its overhead screen result decides seated DB pressing), your nutrition project's instructions, and your sport. Bring each in with `/ingest`; the sport with `/sport`.
 
 <!-- engine:start -->
 _Engine block, regenerated by `sync` · as of Fri 2026-10-09 · POD 46 · post-op week 7 · Phase 3_
@@ -47,18 +51,18 @@ _Engine block, regenerated by `sync` · as of Fri 2026-10-09 · POD 46 · post-o
 
 | Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Sun 10/4 | kneeA, upperA | 2,425 | 95 |  | ✔ |  |  |  |  |  |  |  |
-| Mon 10/5 | cond | 3,775 | 200 | 156.0 | ✔ |  |  |  |  |  |  |  |
-| Tue 10/6 | kneeB, upperB | 2,925 | 150 |  | ✔ | ✔ | ✔ | A |  |  |  |  |
+| Sun 10/4 | knee | 2,425 | 95 |  | ✔ |  |  |  |  |  |  |  |
+| Mon 10/5 | cond, upperA | 3,775 | 200 | 156.0 | ✔ |  |  |  |  |  |  |  |
+| Tue 10/6 | knee | 2,925 | 150 |  | ✔ | ✔ | ✔ | A |  |  |  |  |
 | Wed 10/7 | floor | 2,100 | 95 |  | ✔ | ✔ | ✔ |  |  |  |  |  |
-| Thu 10/8 | cond | 2,550 | 150 |  | ✔ |  | ✔ |  | ✔ |  |  |  |
+| Thu 10/8 | cond, upperB | 2,550 | 150 |  | ✔ | ✔ | ✔ |  | ✔ |  |  |  |
 | Fri 10/9 | pt | 700 | 30 | 155.0 | ✔ |  | ✔ |  |  |  | 15m |  |
 | Sat 10/10 | cond | | | | | | | | | | | |
 
 **Nutrition:** avg 2,412 kcal (target 3,000) · avg 120 g protein (target 150-160) · at kcal target 1/6 days · at protein target 3/6 days
 **Weigh-ins:** 2/3 · avg 155.5 lb · last week 155.2 (2 readings) · +0.3 lb
 **Morning swelling grades:** Tue trace · Wed trace · Thu trace · Fri trace
-**Sessions (through Fri):** knee 1/2 · upper 0/2 · cond 1/2 · pt 1/1 · floor full 0/6 · graded morning checks 4/6
+**Sessions (through Fri):** knee 1/2 · cond 1/2 · upper 0/2 · pt 1/1 · floor full 0/6 · graded morning checks 4/6
 
 **Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 70.4% (pre-op) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8)
 <!-- engine:end -->

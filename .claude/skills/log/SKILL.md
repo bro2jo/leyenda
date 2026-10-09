@@ -14,7 +14,7 @@ Input: $ARGUMENTS (plus any attached photo).
 - Sort everything into:
   - **food items** → `food_entries.csv`
   - **day nutrition fields** → `nutrition_log.csv` (`weight_lb`, `creatine`, `shake`, `notes`)
-  - **day status and sessions** → `daily_log.csv` (`am_swelling`, `am_pain`, `am_extension`, `am_notes`, `floor_am`, `floor_pm`, `knee_session`, `knee_min`, `knee_rpe`, `knee_as_planned`, `pt`, `addon_session`, `addon_min`, `addon_rpe`, `conditioning_type`, `conditioning_min`, `sport_min`, `hours_on_feet`, `gym_min_on_feet`, `sleep_h`, `light`, `notes`)
+  - **day status and sessions** → `daily_log.csv` (`am_swelling`, `am_trend`, `am_pain`, `am_extension`, `flexion`, `catch`, `am_notes`, `floor_am`, `floor_pm`, `knee_session`, `knee_min`, `knee_rpe`, `knee_as_planned`, `pain_session`, `pain_pm`, `pt`, `addon_session`, `addon_min`, `addon_rpe`, `conditioning_type`, `conditioning_min`, `sport_min`, `hours_on_feet`, `gym_min_on_feet`, `crutches`, `gait_notes`, `adjuncts`, `sleep_h`, `light`, `notes`). What to ask for is the Working Rules' check-in set (`python3 engine/darrow.py doc rules check-in`): a morning **grade**, not a trend ("quiet", "same" go in `am_trend`); the heel prop asked directly on an off day. One weighted heel-prop round = `floor_am=Y` (from 10/9 that is the full daily minimum). A session cut below its minimum is `knee_session=partial`: not a loaded day.
   - **exercise detail** → `ACL_Exercise_Log.csv`
   - **sport drills** → `sport_log.csv`
   - **a PT or surgeon visit** → exercise rows (`session=PT`) as usual, plus `real/visits/YYYY-MM-DD_PTn.md` and `measurements.csv` rows (the `/ingest` visit procedure); `daily_log` `notes` keeps a one-line pointer, never the visit itself

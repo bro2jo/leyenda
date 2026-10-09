@@ -1,6 +1,7 @@
 date,kind,deed,xp,might,vigor,finesse,resolve,note
 2026-09-10,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-10,daily,Knee session,30,2,0,1,0,home
+2026-09-11,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-11,daily,PT visit,30,1,0,1,0,
 2026-09-12,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-13,daily,"Floor minimum, one round",5,0,0,0,0,
@@ -11,13 +12,12 @@ date,kind,deed,xp,might,vigor,finesse,resolve,note
 2026-09-18,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-18,daily,PT visit,30,1,0,1,0,
 2026-09-19,daily,"Floor minimum, one round",5,0,0,0,0,
-2026-09-19,daily,Knee session,30,2,0,1,0,home
 2026-09-20,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-20,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-09-20,daily,Knee session,30,2,0,1,0,home
+2026-09-21,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-09-22,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-22,daily,"Morning knee check, swelling graded",5,0,0,0,1,
-2026-09-22,daily,Knee session,30,2,0,1,0,min
 2026-09-23,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-09-23,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-09-23,daily,Knee session,30,2,0,1,0,home
@@ -62,6 +62,7 @@ date,kind,deed,xp,might,vigor,finesse,resolve,note
 2026-10-07,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-10-07,daily,Creatine,5,0,0,0,0,
 2026-10-07,daily,Day closed,5,0,0,0,0,
+2026-10-08,daily,"Floor minimum, one round",5,0,0,0,0,
 2026-10-08,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-10-08,daily,PT visit,30,1,0,1,0,
 2026-10-08,daily,Creatine,5,0,0,0,0,
