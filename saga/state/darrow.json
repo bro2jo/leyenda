@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 893,
+  "xp": 898,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -51,9 +51,9 @@
     }
   },
   "ember": {
-    "value": 74,
-    "tier": "Steady",
-    "effect": "none"
+    "value": 64,
+    "tier": "Low",
+    "effect": "none; the cold gets in"
   },
   "inspiration": 0,
   "inspiration_cap": 4,
