@@ -142,3 +142,44 @@ Benedek shut them. His lips began to move.
 Hollis took the paper out of his shirt, still folded, and pushed it into the cup of the leg, where what was left of him went and no Confessor would think to look. The lad's eyes stayed shut. Orrin saw what he was told to see; he always had. He would look at the wax later. He had been saying that since midsummer.
 
 Down the hall, a latch lifted, and the cell door opened.
+
+
+### Scene 2 — Two Fires
+
+The cell was hers: a cot, a shelf of stoppered jars, a shutter latched against the snow-light, and the smell of bitterleaf that never got lit. There was nowhere to sit but the cot, so he stood, and she let him.
+
+"Say what you saw."
+
+He said it. The script, the numbers, the fainter numbers standing behind them like men in a second rank.
+
+She listened with the pipe clamped and her eyes on his hands rather than his face, as if the light might come back if nobody looked at it directly. When he finished she said, "Good. You can read it. Most can't, the first time."
+
+"Most of who?"
+
+"Most."
+
+"That's not a number either."
+
+"No." She took the pipe out. "There are two fires a man can carry, Captain. One is poured in. You knelt for it, you know what it feels like, and you know what it feels like when the hand that poured it takes it back."
+
+He said nothing. The river said it for him.
+
+"The other is built. Kindled by your own work, fed by what you put in you, kept by what you do when nobody is watching. It grows the way a tree grows: you'll never catch it at it. It can't be poured. It can't be taken."
+
+"And the writing?"
+
+"Counts it. Only it. The script reads what is yours and nothing else, which is why no one full of Grace has ever seen it." She turned the pipe over in her fingers. "There was an order that lived by the built fire. The Crown burned them three hundred years ago, halls and books and people, and made their name a curse. You've heard it. Ember-mad."
+
+"The Emberwardens."
+
+"Not in the hall." It came fast and flat. "Not to Wren. Not to the Prior. Not to Hollis, most of all. He's second on a list, and when they ask him what he knows, I want the honest answer to be nothing."
+
+"How do you know all this?"
+
+"I'm a Mender. We remember things." She stood, which in that cell put her nearly under his chin. "Your knee had help for twelve years and never knew it. It has none now. What holds it is you, and what you saw on your hands is the count of it. Feed it or it goes out."
+
+She lifted the latch.
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **Warden's Eye** II. *Read a weakness or a lie.*
+> XP 755 → 870

@@ -2,34 +2,36 @@
 
 *Real numbers only. Nothing from the story appears on this page. Claude maintains the top section; the engine regenerates the block at the bottom on every `sync`.*
 
-## Today — Thu 10/8 · POD 45 · post-op week 7 · Phase 3 (strength foundation)
+## Today — Fri 10/9 · POD 46 · post-op week 7 · Phase 3 (strength foundation)
 
-Source: `real/state/ACL_Recovery_State_2026-10-04.md` §6 and `real/plan/Whole_Athlete_AddOn.md` §3.
+Source: `real/state/ACL_Recovery_State_2026-10-04.md` §6, `real/plan/Whole_Athlete_AddOn.md` §3, PT 9 (Thu 10/8).
 
-- **Floor minimum (every day, first):** weighted heel prop, 8 lb on the lower thigh (never on the kneecap), 5–10 min, **AM and PM**. Quad sets + NMES 14 × 10 s, level 4, during the AM round. Compression and elevation PM.
-- **Morning check:** grade swelling (0 / trace / 1+ / 2+ / 3+), pain 0–10, extension side by side.
-- **Conditioning:** bike 15 min easy, after the heel prop. Build minutes first, toward 30.
-- **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine 3–5 g.
+- **Morning check first:** grade swelling (0 / trace / 1+ / 2+ / 3+), pain, extension. Thursday was the hardest PT session so far; today's grade is its verdict. Trace or better = green.
+- **Floor minimum (every day):** weighted heel prop **8 lb** on the lower thigh, 5–10 min, **AM and PM**. Quad sets + NMES 14 × 10 s during the AM round. (Tue and Wed ran at 10 lb; the plan holds 8 until the PT changes it. Ask Nick.)
+- **Conditioning:** bike 15 min easy, after the heel prop. Thursday's planned ride did not happen; today is open for it.
+- **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine. Thursday landed 2,550 / 150: protein on target, calories and carbs short, fat high.
 
-## Tomorrow — Fri 10/9 · PT (confirm the slot)
+## PT 9 — Thu 10/8 (Nick)
 
-Bring this list (from the recovery state §5 and the add-on §12):
-1. Book the dynamometer, **both sides** (targets: R quad 83.7 lb, R ham 79 lb). This decides whether Phase 4 on 10/20 is realistic.
-2. Measure the right knee's hyperextension on a heel prop, the real extension target. Confirm the direction of the 9/25 −3°.
-3. Isometric progression: 60°, frequency, when moving reps 90°→45° start. Wall-squat depth.
-4. NMES still needed? BFR an option for the left quad?
-5. Heads-up: upper body restarted seated after knee sessions, standing from session 3; right leg mirroring single-leg work. Any objection?
-6. Seated rotational med-ball throws from ~10/17?
-7. Hand over add-on §9 (PT candidates) and ask what order he'd take them in.
-8. Tell him the current home doses (RDL 25 lb DBs, SL sit-to-stand, BOSU) and have him watch the RDL.
+- **Measured:** extension 2° hyperextension · flexion 146° · single-leg leg press max R 14 plates, L 9 plates (**64%**) · gait good, equal weight bearing, no device, no brace.
+- **Session:** upright bike 6′ · leg press L 6 plates · standing heel raise 2 × 15 @ 35 lb DBs · standing bird dog 2 × 15 @ 8 lb KB · step-up 12″ with opposite knee drive L 2 × 15 · multi-hip abduction / extension / flexion 4 plates 2 × 15 each side · two-leg stance eyes closed 1′ each way. Hardest session to date, not hard on the knee; knee feels great. Sauna 20′ after.
+- **Instruction:** keep progressing; add Thursday's items alongside the master plan; keep sessions balanced and challenging. → Fold into Sessions A/B at Sunday's checkpoint (new recovery state).
+- **Phase 4 gate (earliest 10/20):** ROM met, gait met, swelling trace on graded days. Quad LSI ≥70% is still unmeasured on a dynamometer; the leg-press ratio (64%) is the only stand-in and sits below it. Ask for the dynamometer, both sides, next visit.
+- **Carried over, not asked Thu:** heel-prop weight (8 vs 10 lb) · isometric progression (60°, frequency, moving reps) · NMES still needed? BFR? · right-knee hyperextension reference · seated throws from ~10/17 · add-on §9 order · have him watch the RDL.
+
+## This week so far (Sun 10/4 – Thu 10/8)
+
+- Loaded days: Tue (Session A), Thu (PT 9). Clean mornings after loading: Wed trace, Thu trace.
+- Floor: one AM round Tue (7′ @ 10 lb) and Wed (10′ @ 10 lb + quad sets/NMES); no PM round any day; none Sun, Mon, Thu. Full floor 0/5.
+- Tue Session A was not quite as written: banded sit-to-stand skipped, step-up DBs 15 → 25 lb within the session, heel tap 5″ against the PT's 4″. The plan's rule is one change per exercise, one load step at a time.
+- Bike 0/2 · upper 0/2 · graded morning checks 3/5 · weigh-ins 1/3 (156.0 Mon).
 
 ## Open items
 
-- **Sun 10/4 – Wed 10/7 training isn't in these files.** Your rehab thread logged it separately (Session A on 10/4, etc.). Send it with `/log` so this week's numbers, and Chapter 1's outcome, are right.
 - **Not here yet:** `ACL_Dashboard_Working_Rules.md`, `ACL_Daily_Log.csv`, `24-week-offseason-program-v4.md`, `ACL_Prehab_and_Posture_Plan.md`, your nutrition project's instructions, and your sport. Bring each in with `/ingest`; the sport with `/sport`.
 
 <!-- engine:start -->
-_Engine block, regenerated by `sync` · as of Thu 2026-10-08 · POD 45 · post-op week 7 · Phase 3_
+_Engine block, regenerated by `sync` · as of Fri 2026-10-09 · POD 46 · post-op week 7 · Phase 3_
 
 ### This week (Sun 10/4 – Sat 10/10)
 
@@ -37,13 +39,13 @@ _Engine block, regenerated by `sync` · as of Thu 2026-10-08 · POD 45 · post-o
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Sun 10/4 | kneeA, upperA | 2,425 | 95 |  | ✔ |  |  |  |  |  |  |  |
 | Mon 10/5 | cond | 3,775 | 200 | 156.0 | ✔ |  |  |  |  |  |  |  |
-| Tue 10/6 | kneeB, upperB | 2,925 | 150 |  | ✔ |  |  |  |  |  |  |  |
-| Wed 10/7 | floor | 2,100 | 95 |  | ✔ |  |  |  |  |  |  |  |
-| Thu 10/8 | cond | | | | | | | | | | | |
+| Tue 10/6 | kneeB, upperB | 2,925 | 150 |  | ✔ | ✔ | ✔ | A |  |  |  |  |
+| Wed 10/7 | floor | 2,100 | 95 |  | ✔ | ✔ | ✔ |  |  |  |  |  |
+| Thu 10/8 | cond | 2,550 | 150 |  | ✔ |  | ✔ |  | ✔ |  |  |  |
 | Fri 10/9 | pt | | | | | | | | | | | |
 | Sat 10/10 | cond | | | | | | | | | | | |
 
-**Nutrition:** avg 2,806 kcal (target 3,000) · avg 135 g protein (target 150-160) · at kcal target 1/4 days · at protein target 2/4 days
+**Nutrition:** avg 2,755 kcal (target 3,000) · avg 138 g protein (target 150-160) · at kcal target 1/5 days · at protein target 3/5 days
 **Weigh-ins:** 1/3 · avg 156.0 lb
-**Sessions (through Thu):** knee 0/2 · upper 0/2 · cond 0/2 · floor full 0/5 · graded morning checks 0/5
+**Sessions (through Fri):** knee 1/2 · upper 0/2 · cond 0/2 · pt 1/1 · floor full 0/6 · graded morning checks 3/6
 <!-- engine:end -->

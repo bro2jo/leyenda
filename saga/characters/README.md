@@ -75,6 +75,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
 | `00` | `III` | The Binding | `chronicle/00-prologue-the-three-heartbeats.html#part-iii` |
 | `01` | `1` | The Reading of the Knots | `chronicle/01-the-confessor-at-the-steps.html#scene-1` |
 | `01` | `interlude` | The Wax | `chronicle/01-the-confessor-at-the-steps.html#interlude` |
+| `01` | `2` | Two Fires | `chronicle/01-the-confessor-at-the-steps.html#scene-2` |
 
 New chapters: scenes are `### Scene N — Title` → anchor `chronicle/<file>.html#scene-N`; an interlude (`### Interlude — Title`, another POV) is `#interlude` (a second in the same chapter: `#interlude-2`), scene key `interlude`; the climax is `#climax`; a climax choice's consequence (`### Choice — Title`) is `#choice`. A small choice at the end of a scene has no anchor of its own. The build fails on an anchor it cannot find.
 

@@ -1,9 +1,9 @@
 {
-  "asof": "2026-10-08",
+  "asof": "2026-10-09",
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 755,
+  "xp": 870,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -14,7 +14,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 22,
+      "temper": 25,
       "next_at": 27,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 9,
       "cap": 10,
       "mod": -1,
-      "temper": 13,
+      "temper": 15,
       "next_at": 18,
       "fell": 18,
       "banked": false
@@ -44,14 +44,14 @@
       "raw": 9,
       "cap": null,
       "mod": -1,
-      "temper": 7,
+      "temper": 10,
       "next_at": 16,
       "fell": 12,
       "banked": false
     }
   },
   "ember": {
-    "value": 76,
+    "value": 74,
     "tier": "Steady",
     "effect": "none"
   },
@@ -103,7 +103,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 9,
+      "practice": 11,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -134,10 +134,10 @@
       "id": "wardens_eye",
       "name": "Warden's Eye",
       "tree": "Insight",
-      "rank": 1,
+      "rank": 2,
       "banked_rank": 0,
-      "practice": 5,
-      "next_at": 6,
+      "practice": 8,
+      "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
     },
@@ -147,7 +147,7 @@
       "tree": "Footing",
       "rank": 0,
       "banked_rank": 2,
-      "practice": 9,
+      "practice": 10,
       "next_at": 15,
       "sealed_until_knot": 3,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
@@ -232,7 +232,7 @@
   ],
   "chapter_now": {
     "week_start": "2026-10-04",
-    "through": "2026-10-08",
+    "through": "2026-10-09",
     "tier_so_far": "Setback",
     "chapter": 1
   },

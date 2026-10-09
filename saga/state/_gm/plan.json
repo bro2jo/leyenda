@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 1,
     "beat": "b1.1",
-    "next_scene": 2,
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch01:interlude"
+    "last_written": "ch01:s2"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
@@ -66,8 +66,8 @@
         "plan": "They go from the hall doorway to a cell down the hall and shut it (Hollis, in the hall, sees them go). Behind the cell door, straight from 'Close the door': Maelis explains the Reckoning and the Ember in as few words as she can; the Wardens were burned for it; she forbids him to tell anyone, Hollis most of all; she does not explain her own past; told from inside the cell, and it ends on the latch lifting, by Darrow's hand or hers: the same instant the Interlude ended on, seen from the other side (the Interlude has already shown the door opening from Hollis's side)",
         "micro": null,
         "float": false,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch01:s2"
       },
       {
         "n": 6,
@@ -95,7 +95,7 @@
           "default": 1
         },
         "float": false,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -227,7 +227,7 @@
   },
   "flags": {
     "reckoning_awakened": true,
-    "knows_wardens_exist": false,
+    "knows_wardens_exist": true,
     "ash_met": false,
     "anselm_suspected": false,
     "anselm_spared": null,
