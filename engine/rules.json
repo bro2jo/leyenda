@@ -155,6 +155,7 @@
       "label": "Conditioning"
     },
     "sport_session": {
+      "_about": "One award per sport_log session a day (the session column: A/B/C/film/test/review), up to per_day_cap; a session's skill rows count once for XP and temper, and each skill's Art practice counts separately.",
       "xp": 25,
       "temper": {
         "finesse": 2,

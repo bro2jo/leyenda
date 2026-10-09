@@ -11,10 +11,13 @@ Commands (run from the repo root):
   week [--date D]              real-side view of the week (Sun-Sat) containing D
   sheet                        saga-side character sheet (no real numbers)
   set nutrition|daily DATE k=v ...   upsert fields on a day's row (notes+=text appends)
+  close DATE [--force]         close a day in one step: closed=Y, sync, then saga.py now and plan next --date DATE --full;
+                               refuses a missed day (nothing logged), a day already closed, and a new week whose last chapter is unclosed
   food add 'JSON' | food list DATE | food rm ID | food lib TEXT
   ex add 'JSON'                append exercise-log rows (list or object)
   sport add 'JSON'             append sport-log rows
-  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--chapter N | --tier] [--reroll]   prints the chapter's dice line (paste line 1 as is)
+  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll]
+                               prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye)
   inspire --reason TEXT        spend one Inspiration on a story action
   chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
   knot tie N --date D --evidence TEXT   record a Knot of the Binding
@@ -34,6 +37,7 @@ import math
 import os
 import re
 import secrets
+import subprocess
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -254,7 +258,7 @@ def gather(cfg, rules, nutrition=None):
     facts = defaultdict(lambda: {
         "kcal": None, "protein": None, "weight": None, "creatine": False,
         "floor": None, "check": False, "knee": None, "as_planned": False, "pt": False,
-        "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(),
+        "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(), "sport_sessions": set(),
         "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
         "together": False,
     })
@@ -330,7 +334,7 @@ def gather(cfg, rules, nutrition=None):
             continue
         f = facts[r["date"]]
         f["logged"] = True
-        f["sport"] += 1
+        f["sport_sessions"].add(str(r.get("session", "")).strip().upper() or "-")  # one session, several skill rows
         sk = str(r.get("skill", "")).strip()
         if sk:
             f["sport_skills"].add(sk)
@@ -338,6 +342,7 @@ def gather(cfg, rules, nutrition=None):
                 f["tags"].add("sport:" + sk)
 
     for date, f in facts.items():  # derived tags
+        f["sport"] = len(f["sport_sessions"])  # XP and temper pay per session a day (per_day_cap), never per skill row
         for a in f["addons"]:
             if a in session_tags:
                 f["tags"].add(session_tags[a])
@@ -569,10 +574,17 @@ def compute(cfg, rules, asof=None, write=False):
     dates = sorted(d(x) for x in facts if d(x) <= asof)
     weeks = []
     insp_events = []
+    tier_notes = []
+    frozen = {r["week_start"]: r for r in read_csv("chapters") if r.get("week_start")}  # chapter-close freezes a week's tier
     if dates:
         ws = week_start(dates[0])
         while ws + dt.timedelta(6) < asof:
             sc = week_score(ws, ws + dt.timedelta(6), facts, cfg, rules)
+            fr = frozen.get(ws.isoformat())
+            tier = fr["tier"] if fr else sc["tier"]
+            sc["frozen_tier"] = fr["tier"] if fr else None
+            if fr and fr["tier"] != sc["tier"]:
+                tier_notes.append(f"chapter {fr['chapter']} stays {fr['tier']} (frozen by chapter-close); the logs now score {sc['tier']} ({sc['score']})")
             weeks.append(sc)
             Wk = rules["weekly"]
             end = (ws + dt.timedelta(6)).isoformat()
@@ -589,10 +601,11 @@ def compute(cfg, rules, asof=None, write=False):
                 wadd(Wk["scouted"]["label"], Wk["scouted"]["xp"])
             if sc["planned"] and all(sc["done"].get(k, 0) >= v for k, v in sc["planned"].items()):
                 wadd(Wk["all_sessions"]["label"], Wk["all_sessions"]["xp"], Wk["all_sessions"]["temper"])
-            bonus = Wk["tier_bonus"].get(sc["tier"], 0)
+            bonus = Wk["tier_bonus"].get(tier, 0)
             if bonus and ws >= d(cfg["chronicle_start"]):
-                wadd(f"Chapter tier: {sc['tier']}", bonus, note=f"week score {sc['score']}")
-            if sc["tier"] == "Triumph" and ws >= d(cfg["chronicle_start"]):
+                wadd(f"Chapter tier: {tier}", bonus,
+                     note=(f"frozen by chapter-close (score {fr['score']})" if fr else f"week score {sc['score']}"))
+            if tier == "Triumph" and ws >= d(cfg["chronicle_start"]):
                 insp_events.append((end, +Wk["triumph_inspiration"], "Triumph week"))
             ws += dt.timedelta(7)
 
@@ -666,7 +679,8 @@ def compute(cfg, rules, asof=None, write=False):
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},
         "fell": {a: rules["attributes"][a]["fell"] for a in ATTRS},
     }
-    return {"facts": facts, "deeds": deeds, "sheet": sheet, "weeks": weeks, "current_week": cur, "asof": asof}
+    return {"facts": facts, "deeds": deeds, "sheet": sheet, "weeks": weeks, "current_week": cur, "asof": asof,
+            "tier_notes": tier_notes}
 
 
 def chapter_no(cfg, ws):
@@ -684,6 +698,8 @@ def cmd_sync(args, cfg, rules):
     s = st["sheet"]
     print(f"synced through {s['asof']}: Level {s['level']} {s['rank']} | XP {s['xp']:,} | "
           f"Ember {s['ember']['value']} {s['ember']['tier']} | Inspiration {s['inspiration']}")
+    for n in st.get("tier_notes", []):
+        print("  note: " + n)
     if old:
         notes = diff_sheets(old, s)
         if notes:
@@ -1448,10 +1464,9 @@ def parse_kv(pairs):
     return out
 
 
-def cmd_set(args, cfg, rules):
-    key = {"nutrition": "nutrition", "daily": "daily"}[args.log]
+def upsert_row(key, date, kv, cfg):
+    """Upsert one day's row in nutrition_log or daily_log. kv maps a column to ("set"|"append", value). Returns the row."""
     rows = read_csv(key)
-    date = d(args.date).isoformat()
     row = next((r for r in rows if r.get("date") == date), None)
     if row is None:
         row = {"date": date}
@@ -1466,7 +1481,7 @@ def cmd_set(args, cfg, rules):
         row["week"] = row.get("week") or str((week_start(day) - week_start(first)).days // 7 + 1)
         row["wk_post_op"] = row.get("wk_post_op") or str(post_op_week(cfg, day))
     allowed = set(COLS[key])
-    for k, (op, v) in parse_kv(args.fields).items():
+    for k, (op, v) in kv.items():
         if k not in allowed:
             sys.exit(f"unknown column '{k}' for {key}. Allowed: {', '.join(COLS[key])}")
         if op == "append" and row.get(k):
@@ -1475,7 +1490,68 @@ def cmd_set(args, cfg, rules):
             row[k] = v
     rows.sort(key=lambda r: r.get("date", ""))
     write_csv(key, rows)
+    return row
+
+
+def cmd_set(args, cfg, rules):
+    key = {"nutrition": "nutrition", "daily": "daily"}[args.log]
+    date = d(args.date).isoformat()
+    row = upsert_row(key, date, parse_kv(args.fields), cfg)
     print(f"{key} {date}: " + ", ".join(f"{k}={row.get(k)}" for k in COLS[key] if row.get(k) not in (None, "") and k != "notes"))
+
+
+def day_has_logs(date):
+    """The Ledger's open-day test: a daily_log row, a nutrition_log row with data, or a food_entries row for the date."""
+    if any(r.get("date") == date for r in read_csv("daily")):
+        return True
+    data = NUTRIENTS + ["weight_lb", "creatine", "shake", "notes"]
+    if any(r.get("date") == date and any(str(r.get(k) or "").strip() for k in data) for r in read_csv("nutrition")):
+        return True
+    return any(r.get("date") == date for r in read_csv("food"))
+
+
+def cmd_close(args, cfg, rules):
+    """The first half of the day-close procedure in one command (CLAUDE.md, "Closing a day"): closed=Y -> sync ->
+    saga.py now -> saga.py plan next --date D --full. It refuses a day that has not happened, a missed day (nothing
+    logged: no row, no scene), a day already closed (it has its scene), and a day in a new week while an earlier
+    week's chapter is still unclosed (the checkpoint comes first)."""
+    day = d(args.date)
+    date = day.isoformat()
+    today = today_local(cfg)
+    if day > today:
+        sys.exit(f"{date} has not happened yet (today is {today})")
+    if not day_has_logs(date):
+        sys.exit(f"{date} has nothing logged: a missed day gets no row and no scene. Record it with "
+                 f"`python3 engine/saga.py plan done N --skipped` (N: its slot) and carry its world move into the next scene.")
+    row = daily_rows().get(date)
+    if row and yes(row.get("closed")):
+        sys.exit(f"{date} is already closed: it has its scene. A late log for it updates the Ledger only; no second scene.")
+    closed = {r["chapter"] for r in read_csv("chapters")}
+    w, ws = week_start(d(cfg["chronicle_start"])), week_start(day)
+    unclosed = []
+    while w < ws:
+        if str(chapter_no(cfg, w)) not in closed:
+            unclosed.append(w)
+        w += dt.timedelta(7)
+    if unclosed and not args.force:
+        sys.exit(f"the week of Sun {unclosed[0]} is not closed as a chapter yet: run /checkpoint first "
+                 f"(its first engine step is `python3 engine/darrow.py chapter-close --date {unclosed[0] + dt.timedelta(6)}`), "
+                 f"then close {date}. --force closes the day anyway.")
+    upsert_row("daily", date, {"closed": ("set", "Y")}, cfg)
+    print(f"daily {date}: closed=Y")
+    cmd_sync(argparse.Namespace(date=None), cfg, rules)
+    saga = ROOT / "engine/saga.py"
+    for cmd in (["now"], ["plan", "next", "--date", date, "--full"]):
+        print(f"\n$ python3 engine/saga.py {' '.join(cmd)}")
+        r = subprocess.run([sys.executable, str(saga)] + cmd, cwd=ROOT, capture_output=True, text=True)
+        sys.stdout.write(r.stdout)
+        if r.returncode:
+            sys.stdout.write(r.stderr)
+            sys.exit(f"saga.py {' '.join(cmd)} failed: the day is closed and synced, but its slot is not known; "
+                     f"fix the plan (a new week needs /checkpoint and `plan chapter open` first), then `saga.py plan next --date {date} --full`")
+    print("\nnext: write the slot's scene (style.md), then `saga.py plan done N --wrote chNN:sK` · `fire`/`void` each due item used · "
+          "`plan micro open N` if the scene ended on its micro · world.json, characters, places, NOW.md, threads.md · "
+          "`saga.py check` · `build_site.py` · commit")
 
 
 def as_list(js):
@@ -1559,6 +1635,15 @@ def cmd_roll(args, cfg, rules):
         mods.append((args.stat, m))
     if args.prof:
         mods.append(("proficiency", s["proficiency"]))
+    for art_id in (args.art or []):  # an Art's rank rides the check: --art wardens_eye (Insight), --art menders_patience
+        art = next((a for a in s["arts"] if a["id"] == art_id), None)
+        if not art:
+            sys.exit(f"unknown Art '{art_id}'; ids: " + ", ".join(a["id"] for a in s["arts"]))
+        if art["rank"] < 1:
+            sys.exit(f"{art['name']} is not learned yet"
+                     + (f" (sealed until Knot {roman(art['sealed_until_knot'])})" if art.get("sealed_until_knot") else "")
+                     + "; roll without --art")
+        mods.append((f"{art['name']} {roman(art['rank'])}", art["rank"]))
     if args.chapter:
         ch = next((r for r in read_csv("chapters") if r["chapter"] == str(args.chapter)), None)
         if not ch:
@@ -1740,11 +1825,13 @@ def main():
     s = sub.add_parser("week"); s.add_argument("--date"); s.add_argument("--score", action="store_true")
     s = sub.add_parser("sheet"); s.add_argument("--json", action="store_true")
     s = sub.add_parser("set"); s.add_argument("log", choices=["nutrition", "daily"]); s.add_argument("date"); s.add_argument("fields", nargs="+")
+    s = sub.add_parser("close"); s.add_argument("date"); s.add_argument("--force", action="store_true", help="close the day even while an earlier week's chapter is unclosed")
     s = sub.add_parser("food"); s.add_argument("action", choices=["add", "list", "rm", "lib"]); s.add_argument("payload")
     s = sub.add_parser("ex"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
     s = sub.add_parser("sport"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
     s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, required=True)
-    s.add_argument("--adv", action="store_true"); s.add_argument("--dis", action="store_true"); s.add_argument("--bonus", type=int, default=0)
+    g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
+    s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append", help="add an Art's rank by its rules.json id, e.g. --art wardens_eye for an Insight check")
     s.add_argument("--prof", action="store_true"); s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int)
     s.add_argument("--reroll", action="store_true"); s.add_argument("--note")
     s = sub.add_parser("inspire"); s.add_argument("--reason", required=True)
@@ -1759,7 +1846,7 @@ def main():
     args = ap.parse_args()
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
     {
-        "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set,
+        "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set, "close": cmd_close,
         "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap,
         "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc,

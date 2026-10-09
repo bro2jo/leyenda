@@ -10,9 +10,11 @@ Real numbers never move anything here; only choices and chapter tiers do.
 Commands (run from the repo root):
   now                                   the digest: position, road, next slot, owed world moves, quests, micro, bearing, due items, rules (<= 30 lines)
   due [--at ch02:s1|book2|...] [--all]  pending ledger items: due or overdue now; --at X adds the items aimed exactly at X (labelled); --all: every pending item
-  check                                 validate ledger, plan, bearing, world.json choices, arc ids, formatting; exit 1 on problems (an unreadable state file is named, never a traceback)
+  check                                 validate ledger, plan, bearing, world.json choices, arc ids, formatting, and reconcile the chapter file with the
+                                        plan's slots, world.json scenes[] and the Ledger's closed days; exit 1 on problems (an unreadable state file is named)
   fmt                                   rewrite the four state JSON files canonically
-  add 'JSON' [--witnessed a,b] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas
+  add 'JSON' [--witnessed a,b] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas; every flag it sets
+                                        gets a due item for the arc's Downstream line (fire where honoured, void with a reason)
   fire ID --where ch03:s2               mark a due item fired there
   void ID --why TEXT                    mark a due item void
   bearing POLE N --why ID [--force]     move the Bearing: |N| <= 4 unless --force; --why is a ledger id (c01.3) or gm:<reason>
@@ -32,11 +34,11 @@ Commands (run from the repo root):
   plan chapter template --week_start YYYY-MM-DD
                                         print a canonical skeleton for the next chapter (7 dated slots, spine on Sunday and Saturday, two
                                         float quest placeholders, world_moves, climax); fill it in a scratch file and pass it to `plan chapter open`
-  plan chapter open --number N 'JSON'   refused while a micro is open; keeps climax.default; warns about the outgoing chapter's unwritten slots
+  plan chapter open --number N 'JSON'   N must follow the current chapter (--force otherwise); refused while a micro is open; keeps climax.default; warns about the outgoing chapter's unwritten slots
                                         and carries its still-owed world moves to the front of the new chapter's world_moves
   plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded,
                                         its unrun optional quests dropped; required ones are kept available and warned (re-skin on the road or drop by hand)
-  plan quest ID k=v ... | plan beat ID status=... | plan flag k=v | plan temptation add TEXT
+  plan quest ID k=v ... | plan beat ID status=... | plan flag [--new] k=v (true/false/null; --new to add a flag) | plan temptation add TEXT
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
@@ -46,7 +48,7 @@ Commands (run from the repo root):
   next            the next scene (resolved by `add` to chNN:sN; at the climax, choice or transition stage: the next chapter's s1)
   chNN            anywhere in chapter NN            chNN:sN      scene N of chapter NN
   chNN:climax     chapter NN's climax or choice     bookN        anywhere in Book N
-  bookN:beatK     while core beat bN.K is in_progress
+  bookN:beatK     while core beat bN.K is in_progress   bookN:climax   Book N's last climax (what `finale` resolves to)
   transitionN     Book N's transition chapter       finale       = book6:climax
   on:<flag>       when plan.json flags.<flag> becomes true
   any             standing: shown until fired or void
@@ -96,7 +98,7 @@ ROADS = ("low", "main", "high")
 ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"]
 NOW_CAP = 30
 
-WHEN_RE = re.compile(r"^(next|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
+WHEN_RE = re.compile(r"^(next|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|book\d:climax|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
 WHERE_RE = re.compile(r"^(ch\d{2}(:(s\d+|climax|interlude(-\d+)?|choice|transition|between-\d+))?|book\d(:climax|:beat\d+)?)$")
 ENTRY_ID_RE = re.compile(r"^c(\d{2})\.(\d+)$")
 DUE_ID_RE = re.compile(r"^c(\d{2})\.(\d+)([a-z])$")
@@ -396,7 +398,7 @@ def rule_source(expr):
     s = re.sub(r"!(?!=)", " not ", s)
     s = re.sub(r"\btrue\b", "True", s)
     s = re.sub(r"\bfalse\b", "False", s)
-    return s
+    return s.strip()  # a leading `!` became " not …", and a leading space reads as an indent
 
 
 def parse_rule(expr):
@@ -455,15 +457,23 @@ def term_lookup(parts, st):
 
 
 def rule_terms(tree):
-    out = []
+    out, rooted = [], set()
     for node in ast.walk(tree):
         if isinstance(node, ast.Attribute):
             parts = dotted(node)
-            if parts and isinstance(node, ast.Attribute):
+            if parts:
                 out.append(parts)
+            inner = node.value
+            while isinstance(inner, ast.Attribute):
+                inner = inner.value
+            if isinstance(inner, ast.Name):
+                rooted.add(id(inner))
     # keep only maximal chains (an Attribute's inner Attribute is also walked)
     chains = {".".join(p) for p in out}
-    return [p for p in out if not any(c != ".".join(p) and c.startswith(".".join(p) + ".") for c in chains)]
+    terms = [p for p in out if not any(c != ".".join(p) and c.startswith(".".join(p) + ".") for c in chains)]
+    # a bare name (`shard_found` without `flags.`) is an unknown term, never a silent 0
+    terms += [[node.id] for node in ast.walk(tree) if isinstance(node, ast.Name) and id(node) not in rooted]
+    return terms
 
 
 def same_kind(a, b):
@@ -804,6 +814,14 @@ def print_slot(s, full=False, plan=None):
                 print_arc(key)
             else:
                 print(f"  (no `{key}` section in arc.md yet)")
+            m = re.match(r"^b(\d)\.(\d+)$", str(key))
+            if s.get("kind") == "spine" and m and int(m.group(2)) > 1:  # the choice that closed the last beat bends this one
+                prev = f"b{m.group(1)}.{int(m.group(2)) - 1}"
+                down = [l for l in secs.get(prev, (0, "", []))[2] if "Downstream" in l]
+                if down:
+                    print(f"  --- arc {prev}: the Downstream line of the choice that closed it (honour it in this beat) ---")
+                    for l in down:
+                        print(l)
 
 
 def parse_value(v):
@@ -978,6 +996,12 @@ def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False)
             probs.append(f"now.bearing.{pole} {n!r}: a choice moves one axis by ±1 (micro), ±2/3 (climax), ±4 (betrayal or sacrifice)")
         if bearing is not None and pole_axis(bearing, pole) is None:
             probs.append(f"now.bearing: unknown pole {pole!r}; poles: " + ", ".join(w for ax in bearing["axes"].values() for w in (ax["left"], ax["right"])))
+    known_flags = plan.get("flags", {})
+    for k, v in (now.get("flags") or {}).items():
+        if k not in known_flags:
+            probs.append(f"now.flags.{k}: not a flag in plan.json (add it first: `plan flag --new {k}=false`, and list it in the arc's ## flags)")
+        if not (v is None or isinstance(v, bool)):
+            probs.append(f"now.flags.{k} {v!r}: a flag is true, false or null")
     if world is not None:
         for cid, dlt in (now.get("approval") or {}).items():
             if cid in world.get("companions", {}):
@@ -993,6 +1017,9 @@ def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False)
             probs.append(f"due id {did} already in the ledger")
         if not WHEN_RE.match(str(it.get("when", ""))):
             probs.append(f"due[{i}].when {it.get('when')!r} not in the grammar (see --help)")
+        mo = re.match(r"^on:(\w+)$", str(it.get("when", "")))
+        if mo and mo.group(1) not in known_flags:
+            probs.append(f"due[{i}].when 'on:{mo.group(1)}': not a flag in plan.json")
         if it.get("weight") not in WEIGHTS:
             probs.append(f"due[{i}].weight must be one of {WEIGHTS}")
         if not it.get("what"):
@@ -1008,6 +1035,37 @@ def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False)
     return probs
 
 
+LETTERS = "abcdefghijklmnopqrstuvwxyz"
+
+
+def downstream_due(entry, plan):
+    """One due item per flag the entry sets, so the arc's Downstream line for this choice is owed to what follows and
+    printed by `now` until fired or void, never left to memory. A flag the entry's own due items already name is skipped.
+    A climax choice aims at the next chapter (the Downstream line bends the next beat); a micro at the next scene."""
+    flags = (entry.get("now") or {}).get("flags") or {}
+    eid = str(entry.get("id", ""))
+    if not flags or not ENTRY_ID_RE.match(eid):
+        return []
+    pos = plan.get("position", {})
+    when = ch2(int(pos.get("chapter", 0)) + 1) if pos.get("stage") in ("climax", "choice", "transition") else "next"
+    beat = pos.get("beat") or "the beat"
+    dues = entry.setdefault("due", [])
+    used = {str(it.get("id", ""))[-1:] for it in dues}
+    made = []
+    for flag in flags:
+        if any(flag in str(it.get("what", "")) for it in dues):
+            continue
+        letter = next((c for c in LETTERS if c not in used), None)
+        if letter is None:
+            break
+        used.add(letter)
+        dues.append({"id": f"{eid}{letter}", "when": when, "weight": "scene",
+                     "what": f"Downstream of `{flag}` ({beat}): open what follows the way the arc's Downstream line for this "
+                             f"choice says (`saga.py arc {beat}`); fire where it is honoured, void with a reason if the story made it moot"})
+        made.append(f"{eid}{letter}")
+    return made
+
+
 def cmd_add(args):
     st = State()
     try:
@@ -1015,6 +1073,7 @@ def cmd_add(args):
     except json.JSONDecodeError as e:
         die(f"entry is not valid JSON: {e}")
     ledger, plan, world = st.ledger, st.plan, st.world
+    auto = downstream_due(entry, plan)  # one due item per flag set: the Downstream line is owed, not remembered
     # first pass: shape, poles, magnitudes, the entry's own approval targets
     probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=args.pending)
     if probs:
@@ -1080,7 +1139,7 @@ def cmd_add(args):
     ledger["entries"].append(ordered)
     st.touch("ledger")
     for it in ordered["due"]:
-        print(f"due {it['id']} when={it['when']} → at={it['at']} [{it['weight']}]")
+        print(f"due {it['id']} when={it['when']} → at={it['at']} [{it['weight']}]" + ("  (auto: the flag's Downstream line)" if it["id"] in auto else ""))
     st.save(dry=args.dry_run)
     print(("(dry run) " if args.dry_run else "") + f"ledger entry {entry['id']} recorded with {len(ordered['due'])} due item(s)")
 
@@ -1239,6 +1298,8 @@ def cmd_plan(args):
         if args.force:
             s.pop("world_move", None)
             s.pop("world_move_used", None)
+        if args.skipped and args.wrote:
+            die("pass --skipped or --wrote, not both")
         if args.skipped:
             s["status"] = "skipped"
             s["wrote"] = None
@@ -1255,6 +1316,15 @@ def cmd_plan(args):
             if not args.wrote or not WROTE_RE.match(args.wrote):
                 die("--wrote must look like ch01:s3 or ch01:interlude")
             m = WROTE_RE.match(args.wrote)
+            if int(m.group(1)) != int(plan["position"]["chapter"]):
+                die(f"--wrote {args.wrote} names chapter {int(m.group(1))}; the plan is on chapter {plan['position']['chapter']}")
+            if m.group(3) and int(m.group(3)) > int(plan["position"].get("next_scene") or 1):
+                die(f"--wrote {args.wrote} skips ahead; the next scene is {plan['position'].get('next_scene')}")
+            heads = chapter_headings(st.world)
+            key = m.group(3) or m.group(2)
+            if heads is not None and key not in {k for k, _ in heads}:
+                want = f"### Scene {key}" if m.group(3) else "### " + key.split("-")[0].capitalize()
+                print(f"⚠ {st.world.get('chapter_file')} has no `{want}` heading yet; write the scene before `saga.py check`")
             s["status"] = "written"
             s["wrote"] = args.wrote
             plan["position"]["last_written"] = args.wrote
@@ -1273,6 +1343,8 @@ def cmd_plan(args):
                     b["status"] = "in_progress"
                 plan["position"]["beat"] = s["beat"]
             print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']} · stage scene")
+            if s.get("micro"):
+                print(f"slot {s['n']} carries a micro: if the scene ended on it, `plan micro open {s['n']}`")
             pay_owed_moves(plan, "scene")
         nxt = next((x for x in sorted(plan["chapter"]["slots"], key=lambda x: float(x.get("n", 0))) if x.get("status") == "planned"), None)
         if nxt and not any(x.get("status") == "next" for x in plan["chapter"]["slots"]):
@@ -1314,6 +1386,8 @@ def cmd_plan(args):
             s = slot_by_n(plan, args.n)
             if not s.get("micro"):
                 die(f"slot {args.n} has no micro planned")
+            if s.get("status") != "written":
+                die(f"slot {args.n} is {s.get('status')}: write its scene and `plan done {args.n} --wrote …` first (the micro takes its scene key from the slot)")
             if plan.get("open_micro"):
                 die(f"a micro is already open (slot {plan['open_micro'].get('slot')}); close it first (it resolves to its default if unanswered)")
             m = dict(s["micro"])
@@ -1358,6 +1432,9 @@ def cmd_plan(args):
         except json.JSONDecodeError as e:
             die(f"chapter JSON invalid: {e}")
         ch["number"] = int(args.number)
+        cur_n = int(plan["position"].get("chapter", 0))
+        if int(args.number) != cur_n + 1 and not args.force:
+            die(f"chapter {args.number} does not follow chapter {cur_n}; chapters open in order, one per calendar week (--force to open it anyway)")
         if not ch.get("week_start"):
             die("chapter JSON needs week_start (the Sunday)")
         ch.setdefault("slots", [])
@@ -1479,9 +1556,14 @@ def cmd_plan(args):
         st.save()
         return
     if a == "flag":
+        flags = plan.setdefault("flags", {})
         for k, v in parse_kv(args.kv).items():
-            old = plan.setdefault("flags", {}).get(k)
-            plan["flags"][k] = v
+            if k not in flags and not args.new:
+                die(f"{k} is not a flag in plan.json; `plan flag --new {k}=false` adds it (list it in the arc's ## flags too)")
+            if not (v is None or isinstance(v, bool)):
+                die(f"flag {k}={v!r}: a flag is true, false or null")
+            old = flags.get(k)
+            flags[k] = v
             print(f"flag {k}: {old} → {v}")
         st.touch("plan")
         st.save()
@@ -1518,6 +1600,8 @@ def cmd_plan(args):
                 die(f"position has no field {k}; fields: {', '.join(pos)}")
             if k == "stage" and v not in STAGES:
                 die(f"stage must be one of {STAGES}")
+            if k in ("book", "chapter", "next_scene") and (not isinstance(v, int) or isinstance(v, bool) or v < 1):
+                die(f"{k} must be a positive integer")
             if k == "stage" and v == "choice" and pos.get("stage") != "climax":
                 die(f"stage=choice only follows climax (stage is {pos.get('stage')}); the next chapter is already open: leave the stage alone and fire what the consequence pays off with --where chNN:climax")
             print(f"position.{k}: {pos[k]} → {v}")
@@ -1528,6 +1612,152 @@ def cmd_plan(args):
         st.save()
         return
     die(f"unknown plan action {a}")
+
+
+# ---------------------------------------------------------------- the chapter file
+SCENE_HEAD_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
+INTERLUDE_HEAD_RE = re.compile(r"^###\s+Interlude\s*[—–-]\s*(.+)$")
+BETWEEN_HEAD_RE = re.compile(r"^###\s+Between\s*[—–-]\s*(.+)$")
+CLIMAX_HEAD_RE = re.compile(r"^##\s+Climax\s*[—–-]\s*(.+)$")
+CHOICE_HEAD_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
+
+
+def chapter_headings(world):
+    """The current chapter file's scene-like headings in order, as [(key, title)] with build_site's keys
+    ('1', 'interlude', 'interlude-2', 'between-1', 'climax', 'choice'). None when the file is missing."""
+    cf = world.get("chapter_file")
+    path = ROOT / cf if cf else None
+    if not path or not path.exists():
+        return None
+    out, n_int, n_btw = [], 0, 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        m = SCENE_HEAD_RE.match(s)
+        if m:
+            out.append((m.group(1), m.group(2).strip()))
+            continue
+        m = INTERLUDE_HEAD_RE.match(s)
+        if m:
+            n_int += 1
+            out.append(("interlude" if n_int == 1 else f"interlude-{n_int}", m.group(1).strip()))
+            continue
+        m = BETWEEN_HEAD_RE.match(s)
+        if m:
+            n_btw += 1
+            out.append((f"between-{n_btw}", m.group(1).strip()))
+            continue
+        m = CLIMAX_HEAD_RE.match(s)
+        if m:
+            out.append(("climax", m.group(1).strip()))
+            continue
+        m = CHOICE_HEAD_RE.match(s)
+        if m:
+            out.append(("choice", m.group(1).strip()))
+    return out
+
+
+def norm_title(t):
+    return re.sub(r"\s+", " ", str(t or "")).strip().lower().strip(" .")
+
+
+def day_logged(date):
+    """The Ledger's open-day test, read here only to reconcile the slots with it: a daily_log row with any status
+    field, a nutrition_log row with data, or a food_entries row. Only a day with none of these is missed."""
+    skip = {"date", "dow", "pod", "post_op_week", "dash_week_start"}
+    for r in read_csv(P["daily"]):
+        if r.get("date") == date and any(str(v or "").strip() for k, v in r.items() if k and k not in skip):
+            return True
+    for r in read_csv(P["nutrition"]):
+        if r.get("date") == date and any(str(v or "").strip() for k, v in r.items() if k and k not in ("date", "day", "week", "wk_post_op")):
+            return True
+    return any(r.get("date") == date for r in read_csv(P["food"]))
+
+
+def reconcile_chapter(st, probs):
+    """The chapter file, the plan's slots, world.json's scenes[] and the Ledger's closed days must tell one story:
+    every written slot has its heading and every heading its slot; next_scene follows the file; scenes[] matches the
+    headings and their titles; at most two Betweens run together; a Climax on the page means the stage has moved;
+    a written slot's day is closed, a skipped slot's day has nothing logged, and a closed day's slot is written."""
+    world, plan = st.world, st.plan
+    ch = plan.get("chapter", {})
+    pos = plan.get("position", {})
+    if ch.get("number") is not None and int(ch.get("number")) != int(pos.get("chapter", -1)):
+        probs.append(f"plan.chapter.number {ch.get('number')} is not position.chapter {pos.get('chapter')}")
+    heads = chapter_headings(world)
+    cf = world.get("chapter_file")
+    if heads is None:
+        probs.append(f"world.json chapter_file {cf!r} is missing")
+        return
+    keys = [k for k, _ in heads]
+    titles = dict(heads)
+    scene_keys = [k for k in keys if k.isdigit()]
+    inter_keys = [k for k in keys if k.startswith("interlude")]
+    between_keys = [k for k in keys if k.startswith("between-")]
+    slots = ch.get("slots", [])
+    chn = ch2(pos.get("chapter", 0))
+    plan_scenes, plan_inter = set(), set()
+    for s in slots:
+        if s.get("status") != "written":
+            continue
+        m = WROTE_RE.match(str(s.get("wrote") or ""))
+        if not m:
+            continue
+        if int(m.group(1)) != int(pos.get("chapter", -1)):
+            probs.append(f"slot {s.get('n')} wrote {s.get('wrote')}: not this chapter")
+            continue
+        key = m.group(3) or m.group(2)
+        (plan_scenes if m.group(3) else plan_inter).add(key)
+        if key not in keys:
+            want = f"### Scene {key}" if m.group(3) else "### " + key.split("-")[0].capitalize()
+            probs.append(f"slot {s.get('n')} is written as {s.get('wrote')} but {cf} has no `{want}` heading")
+    if slots:
+        for k in scene_keys:
+            if k not in plan_scenes:
+                probs.append(f"{cf} has `### Scene {k}` but no written slot records it (`saga.py plan done N --wrote {chn}:s{k}`)")
+        for k in inter_keys:
+            if k not in plan_inter:
+                probs.append(f"{cf} has an interlude ({k}) but no written slot records it (`saga.py plan done N --wrote {chn}:{k}`)")
+    elif scene_keys:
+        probs.append(f"the chapter has no slots (a cutaway chapter: interludes only) but {cf} has numbered scenes")
+    expect_next = (max(int(k) for k in scene_keys) + 1) if scene_keys else 1
+    if str(pos.get("next_scene")) != str(expect_next):
+        probs.append(f"position.next_scene is {pos.get('next_scene')} but {cf}'s last scene is {expect_next - 1}: expected {expect_next}")
+    wkeys = [str(s.get("scene")) for s in world.get("scenes", [])]
+    for k in scene_keys + inter_keys + between_keys:
+        if k not in wkeys:
+            probs.append(f"world.json scenes[] has no entry for {k} ({titles[k]!r}) of {cf}")
+    for s in world.get("scenes", []):
+        k = str(s.get("scene"))
+        if k not in keys:
+            probs.append(f"world.json scenes[] lists {k!r} ({s.get('title')!r}) but {cf} has no such heading")
+            continue
+        if norm_title(s.get("title")) != norm_title(titles.get(k)):
+            probs.append(f"world.json scenes[] titles {k} {s.get('title')!r}; {cf} says {titles.get(k)!r}")
+        if k.startswith("between-"):
+            before = [kk for kk in keys[: keys.index(k)] if not kk.startswith("between-")]
+            if before and str(s.get("after", "")) != before[-1]:
+                probs.append(f"world.json scenes[] {k} says after={s.get('after')!r}; in {cf} it follows {before[-1]!r}")
+    run = 0
+    for k in keys:
+        run = run + 1 if k.startswith("between-") else 0
+        if run == 3:
+            probs.append("three Betweens in a row: at most two between two scenes (a third is two lines and the moment passes)")
+    if "climax" in keys and pos.get("stage") == "scene":
+        probs.append(f"{cf} has a Climax but position.stage is 'scene' (`plan set stage=climax` comes before writing it)")
+    if "choice" in keys and "climax" not in keys:
+        probs.append(f"{cf} has a Choice block but no Climax")
+    daily = {r.get("date"): r for r in read_csv(P["daily"]) if r.get("date")}
+    for s in slots:
+        day = s.get("day")
+        if not day:
+            continue
+        closed = yes(daily.get(day, {}).get("closed"))
+        if s.get("status") == "written" and not closed:
+            probs.append(f"slot {s.get('n')} ({day}) is written but the Ledger has not closed {day} (`darrow.py close {day}`)")
+        if s.get("status") == "skipped" and day_logged(day):
+            probs.append(f"slot {s.get('n')} ({day}) is skipped but {day} has logs: a day with any row is open and gets its scene (`plan done {s.get('n')} --force --wrote …`)")
+        if s.get("status") in ("planned", "next") and closed:
+            probs.append(f"{day} is closed in the Ledger but slot {s.get('n')} is still {s.get('status')}: write its scene, then `plan done {s.get('n')} --wrote {chn}:s{pos.get('next_scene')}`")
 
 
 # ---------------------------------------------------------------- check & fmt
@@ -1591,6 +1821,9 @@ def cmd_check(args):
             at = str(it.get("at", ""))
             if at == "next" or not WHEN_RE.match(at) or (at_status(at, st) == "unknown"):
                 probs.append(f"ledger {did}: at {at!r} not resolvable")
+            mo = re.match(r"^on:(\w+)$", at)
+            if mo and mo.group(1) not in plan.get("flags", {}):
+                probs.append(f"ledger {did}: at 'on:{mo.group(1)}' names a flag plan.json does not have")
             if it.get("weight") not in WEIGHTS:
                 probs.append(f"ledger {did}: weight {it.get('weight')!r}")
             stt = str(it.get("status", ""))
@@ -1609,7 +1842,7 @@ def cmd_check(args):
             probs.append(f"rule {r.get('id')} MALFORMED: {detail}")
         elif state == "UNKNOWN TERM":
             probs.append(f"rule {r.get('id')} UNKNOWN TERM: {detail}")
-        if r.get("where") and not (WHEN_RE.match(str(r["where"])) or r["where"] == "book6:climax"):
+        if r.get("where") and not WHEN_RE.match(str(r["where"])):
             probs.append(f"rule {r.get('id')}: where {r['where']!r} not in the grammar")
     for i, n in rule_ids.items():
         if n > 1:
@@ -1654,6 +1887,9 @@ def cmd_check(args):
             probs.append(f"quest {qid} status {q.get('status')!r}")
         if q.get("priority") not in ("required", "optional", "floating"):
             probs.append(f"quest {qid} priority {q.get('priority')!r}")
+    for k, v in plan.get("flags", {}).items():
+        if not (v is None or isinstance(v, bool)):
+            probs.append(f"flag {k} is {v!r}; a flag is true, false or null")
     live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live" and not q.get("standing")]
     if len(live) > 2:
         probs.append(f"{len(live)} quests live; never more than two (a `standing` quest, the Tether, is not counted)")
@@ -1770,6 +2006,9 @@ def cmd_check(args):
     if int(pos.get("chapter") or 0) >= 2 and slots and not quest_counts and any(q.get("status") == "available" for q in plan.get("quests", {}).values()):
         probs.append("chapter has no quest slot while quests are available (design §5.2)")
 
+    # the chapter file, the slots, world.json's scenes[] and the Ledger's closed days must tell one story
+    reconcile_chapter(st, probs)
+
     # arc ids
     ids_in_arc = arc_ids()
     if ids_in_arc:
@@ -1834,11 +2073,11 @@ def main():
     x = ps.add_parser("slot"); x.add_argument("n"); x.add_argument("kv", nargs="+", help="key=value; micro as JSON"); x.add_argument("--force", action="store_true", help="edit a slot already written or skipped")
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
     x = ps.add_parser("climax")
-    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers")
+    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers"); x.add_argument("--force", action="store_true", help="open a chapter out of sequence")
     x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)
     x = ps.add_parser("quest"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("beat"); x.add_argument("id"); x.add_argument("kv", nargs="+")
-    x = ps.add_parser("flag"); x.add_argument("kv", nargs="+")
+    x = ps.add_parser("flag"); x.add_argument("kv", nargs="+"); x.add_argument("--new", action="store_true", help="add a flag the plan does not have yet")
     x = ps.add_parser("temptation"); x.add_argument("sub", choices=["add"]); x.add_argument("text")
     x = ps.add_parser("companion"); x.add_argument("sub", choices=["arrive"]); x.add_argument("id")
     x = ps.add_parser("set"); x.add_argument("kv", nargs="+")

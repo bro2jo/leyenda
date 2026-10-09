@@ -25,7 +25,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 |---|---|---|
 | **Level / Rank** | how much Ember he has kindled overall. Ranks: Bound → Kindled → Tempered → Warden-Errant → Emberknight → Unbowed → Warden of the Ember | total XP from every logged deed |
 | **Might** | strength of arm and body | the real side's leg work, upper-body, accessory and power work |
-| **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions |
+| **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions (one per session a day, never per skill) |
 | **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
 | **Resolve** | discipline, patience, honesty with oneself | floor minimum AM+PM, graded morning checks, running sessions as written |
 | **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target) |
@@ -100,8 +100,8 @@ A second thread, read on his palms beside the first. The real side drives it the
 
 ## Checks and the chapter tier
 
-- A check is d20 + attribute modifier (+ proficiency if an Art or training applies) + situational bonuses vs. a DC.
-- **The chapter tier** comes from the week's real adherence (floor, planned sessions, fuel, morning checks, weigh-ins, logging): **Triumph** (+3), **Hard-won** (+1), **Costly** (+0), **Setback** (−2). It modifies the climax rolls and sets the shape of the climax (see `style.md`).
+- A check is d20 + attribute modifier (+ proficiency if an Art or training applies) + situational bonuses vs. a DC. An Art's rank is added with `--art <id>` (the ids in `rules.json`): an **Insight** check is Resolve with Warden's Eye (`--stat resolve --prof --art wardens_eye`); The Mender's Patience rides a Resolve check against fear, haste or temptation.
+- **The chapter tier** comes from the week's real adherence (floor, planned sessions, fuel, morning checks, weigh-ins, logging): **Triumph** (+3), **Hard-won** (+1), **Costly** (+0), **Setback** (−2). It modifies the climax rolls and sets the shape of the climax (see `style.md`). `chapter-close` freezes it: the dice, the road and the week's XP bonus read the frozen tier; a late log moves the totals and the live score, never the tier.
 - **Ember** effects: Blazing +1 to everything; Bright +1 Vigor; Guttering −1 Might and Vigor.
 - Results: success, *partial* (within 3: success at a cost), failure. Natural 20 / natural 1 are criticals.
 - **Approval** with companions (−100 to +100) moves only with story choices, never with real numbers.
