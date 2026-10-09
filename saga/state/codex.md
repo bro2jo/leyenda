@@ -23,6 +23,14 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Rae's bell** — the small brass bell on a cord at the carter's belt, which rings when the cart jolts; rung three times at the foot of the Steps, it was answered from the cloud (Prologue).
 - **The Grace** — the warmth a knight takes from an Oathstone when he kneels: every ache goes quiet, the morning sharpens, and he can hear his own heart; old knights call it "the Crown's hand on your back" (Prologue). At Harrow Ford it went out of the knights mid-river, and when it came back to Darrow it was a thread too thin to do anything but show him how cold he was (Prologue). The heralds say it departed for the faithlessness of their oaths; Benedek holds that it forgives, and comes back to those who kneel (Ch 1 Between). Maelis, who has had her fingers on knees that carried it for twenty years: it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know (Ch 1 Between). No one full of Grace has ever seen the script of the Reckoning (Ch 1 Sc 2).
 
+## Songs and verses
+
+(A song or a rhyme the page has sung, the first time: **Title** — the lines sung, and who sang them (first appearance). The rest of it stays in the Annals until the page has it.)
+
+## Histories
+
+(A piece of the realm's past the page has told, the first time: **Name** — what was said and by whom (first appearance). The Annals hold the longer telling.)
+
 ## Sayings
 - **"Kneel to that."** — Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).
 - **"Ride wide today."** — what Aldric said at the ford (Prologue).

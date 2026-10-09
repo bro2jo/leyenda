@@ -40,6 +40,7 @@ You don't need commands; anything that looks like a log gets logged. Commands ex
 | `/choose 2` | Darrow does it; consequences follow |
 | `/ingest` + a file | new PT notes / program / working rules folded into the Ledger |
 | `/sport` | set up your sport; its skills become Darrow's Arts |
+| `/lore` + a question | the world in its own voice: a place, a custom, a song, how something works; never the plot |
 
 ---
 
@@ -77,8 +78,9 @@ real/      the Ledger: NOW.md (what stands now), plan/ (the source documents), s
            checkpoints/ (one archive file per week), visits/ (one per PT or surgeon visit), logs/ (CSVs, incl. measurements.csv)
 engine/    darrow.py (the real math) + rules.json (the exchange rates; tweak freely) + saga.py (the story's bookkeeping) + build_site.py (the site)
 saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechanics), state/ (world, bearing, places, factions, codex), characters/ (the cast), chronicle/ (the chapters)
-           saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger and the character secrets: everything the page
-           has not said yet. Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
+           saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger, the character secrets and the Annals
+           (the realm's history and songs, which the story draws on a line at a time): everything the page has not said yet.
+           Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
 docs/      the site, generated; never edited by hand
 archive/   the old nutrition-only game (retired)
 ```

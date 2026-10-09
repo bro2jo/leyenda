@@ -42,6 +42,10 @@ Commands (run from the repo root):
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
+  lore | lore ID | lore grep WORD | lore pick saying|verse|maxim|rhyme [--all] | lore spoke ID --where chNN:sK
+                                        the Annals (_gm/lore.md): the index, one entry, a search, a line for a glimpse, mark an entry spoken
+  names [--all]                         capitalised names in the current chapter (--all: every chapter) that no registry knows:
+                                        codex, cast, places, factions, the Annals, the game's own words; `check` notes them too
   archive                               move spent entries older than two Books to consequences_archive.json
 
 `when` / `at` grammar (ledger due items):
@@ -66,6 +70,7 @@ import csv
 import datetime as dt
 import json
 import os
+import random
 import re
 import sys
 from pathlib import Path
@@ -79,6 +84,14 @@ P = {
     "archive": ROOT / "saga/state/_gm/consequences_archive.json",
     "arc": ROOT / "saga/bible/_gm/arc.md",
     "threads": ROOT / "saga/state/_gm/threads.md",
+    "lore": ROOT / "saga/bible/_gm/lore.md",
+    "codex": ROOT / "saga/state/codex.md",
+    "cast": ROOT / "saga/bible/cast.md",
+    "characters": ROOT / "saga/characters",
+    "places": ROOT / "saga/state/places.json",
+    "factions": ROOT / "saga/state/factions.json",
+    "rules": ROOT / "engine/rules.json",
+    "chronicle": ROOT / "saga/chronicle",
     "chapters": ROOT / "saga/state/chapters.csv",
     "config": ROOT / "real/config.json",
     "daily": ROOT / "real/logs/daily_log.csv",
@@ -1614,6 +1627,231 @@ def cmd_plan(args):
     die(f"unknown plan action {a}")
 
 
+# ---------------------------------------------------------------- the Annals (lore)
+LORE_ID_RE = re.compile(r"^(age|house|realm|folk|song|rhyme|saying|maxim|craft|calendar|beast)\.[a-z0-9_]+$")
+LORE_HEAD_RE = re.compile(r"^##\s+([a-z]+\.[a-z0-9_]+)\s*[—–-]\s*(.+?)\s*$")
+LORE_TIERS = ("common", "learned")
+LORE_POOLS = {"saying": ("saying.",), "maxim": ("maxim.",), "verse": ("song.", "rhyme."), "rhyme": ("rhyme.",)}
+
+
+def lore_entries():
+    """The Annals as ({id: entry}, [repeated ids]) in file order; an entry has title, lines, tier, spoken, names, use."""
+    out, dupes, cur = {}, [], None
+    if not P["lore"].exists():
+        return out, dupes
+    for line in P["lore"].read_text(encoding="utf-8").splitlines():
+        m = LORE_HEAD_RE.match(line)
+        if m:
+            if m.group(1) in out:
+                dupes.append(m.group(1))
+            cur = {"id": m.group(1), "title": m.group(2), "lines": [], "tier": "", "spoken": "", "names": "", "use": ""}
+            out[m.group(1)] = cur
+            continue
+        if line.startswith("#"):
+            cur = None
+            continue
+        if cur is None:
+            continue
+        cur["lines"].append(line)
+        if line.startswith("- **"):
+            for k, v in re.findall(r"\*\*(\w+):\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", line):
+                if k in ("tier", "spoken", "names", "use"):
+                    cur[k] = v.strip()
+    return out, dupes
+
+
+def lore_pool(entries, kind):
+    """What `lore pick` draws from: sayings and maxims as quoted lines, verse as stanzas (runs of `>` lines)."""
+    items = []
+    for e in entries.values():
+        if not e["id"].startswith(LORE_POOLS[kind]):
+            continue
+        if kind in ("saying", "maxim"):
+            for l in e["lines"]:
+                m = re.match(r'^- "(.+?)"\s*(\(.*\))?\s*$', l)
+                if m:
+                    items.append((e, m.group(1), (m.group(2) or "").strip("()")))
+        else:
+            stanza = []
+            for l in e["lines"] + [""]:
+                if l.startswith(">"):
+                    stanza.append(l[1:].strip())
+                elif stanza:
+                    items.append((e, "\n".join(stanza), ""))
+                    stanza = []
+    return items
+
+
+def cmd_lore(args):
+    entries, dupes = lore_entries()
+    if not entries:
+        die(f"no Annals at {rel(P['lore'])}")
+    what, arg = args.what, args.arg
+    if what is None:
+        print(f"The Annals · {len(entries)} entries · `lore <id>` one entry · `lore grep WORD` · `lore pick saying|verse|maxim|rhyme` · `lore spoke <id> --where chNN:sK`")
+        kinds = ("age", "house", "realm", "folk", "song", "rhyme", "saying", "maxim", "craft", "calendar", "beast")
+        order = sorted(entries.values(), key=lambda e: (kinds.index(e["id"].split(".")[0]) if e["id"].split(".")[0] in kinds else 99, list(entries).index(e["id"])))
+        kind = None
+        for e in order:
+            k = e["id"].split(".")[0]
+            if k != kind:
+                kind = k
+                print(f"[{kind}]")
+            sp = e["spoken"] if e["spoken"] and e["spoken"] != "—" else "unspoken"
+            print(f"  {e['id']:<20} {short(e['title'], 34):<34} {e['tier']:<8} {short(sp, 44)}")
+        return
+    if what == "grep":
+        if not arg:
+            die("lore grep needs a word")
+        q = arg.lower()
+        hits = 0
+        for e in entries.values():
+            lines = [l for l in e["lines"] if q in l.lower() and not l.startswith("- **")]
+            if q in e["title"].lower() or lines:
+                hits += 1
+                print(f"{e['id']} — {e['title']} · {e['tier']} · spoken: {e['spoken'] or '—'}")
+                for l in lines[:2]:
+                    print("   " + short(l.strip(), 140))
+        if not hits:
+            print(f"nothing in the Annals mentions {arg!r}; `/lore` may add a common entry, or leave it unsaid")
+        return
+    if what == "pick":
+        if arg not in LORE_POOLS:
+            die("lore pick saying|verse|maxim|rhyme")
+        pool = lore_pool(entries, arg)
+        if not pool:
+            die(f"the Annals have no {arg} lines yet")
+        for e, text, note in (pool if args.all else [random.choice(pool)]):
+            text, note = (re.sub(r"\s*⟪[^⟫]*⟫", "", x).strip() for x in (text, note))  # a GM aside never reaches a glimpse
+            print(text + (f"  ({note})" if note else ""))
+            print(f"  — {e['id']} · {e['title']} · spoken: {e['spoken'] or '—'}")
+        return
+    if what == "spoke":
+        if not arg or arg not in entries:
+            die(f"lore spoke <id> --where chNN:sK; ids: {', '.join(list(entries)[:8])}…")
+        if not args.where:
+            die("--where is required (chNN:sK, chNN:climax, chNN:between-K, Prologue II, glimpse)")
+        text = P["lore"].read_text(encoding="utf-8")
+        head = next(i for i, l in enumerate(text.splitlines()) if LORE_HEAD_RE.match(l) and LORE_HEAD_RE.match(l).group(1) == arg)
+        lines = text.splitlines()
+        for i in range(head + 1, len(lines)):
+            if lines[i].startswith("#"):
+                die(f"{arg} has no **spoken:** field")
+            if "**spoken:**" in lines[i]:
+                old = re.search(r"\*\*spoken:\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lines[i]).group(1)
+                lines[i] = re.sub(r"(\*\*spoken:\*\*\s*)(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lambda m: m.group(1) + args.where, lines[i], count=1)
+                P["lore"].write_text("\n".join(lines) + ("\n" if text.endswith("\n") else ""), encoding="utf-8")
+                print(f"{arg} spoken: {old or '—'} → {args.where}; give codex.md its reader-safe line")
+                return
+        die(f"{arg} has no **spoken:** field")
+    e = entries.get(what)
+    if not e:
+        hint = ", ".join(k for k in entries if k.startswith(what.split(".")[0])) or ", ".join(list(entries)[:10])
+        die(f"no entry `{what}` in the Annals; try: {hint}")
+    print(f"## {e['id']} — {e['title']}")
+    print("\n".join(e["lines"]).strip())
+
+
+# ---------------------------------------------------------------- names on the page
+NAME_STOP = set("""I Ser Dame Captain Mender Menders Sister Brother Mother Father Prior Saint Lord Lady King Queen Knight Knights
+Confessor Confessors Herald Heralds Grace Ember Reckoning Binding Knot Knots Art Arts Steps Stone Crown Hollowed Faithless
+Lance Lances Oathstone Oathstones Oathsworn Warden Wardens Emberwardens Vaelish Vaelmark First Second Third Fourth Fifth Sixth
+Seventh Eighth Ninth Tenth Eleventh Twelfth Book Chapter Scene Interlude Between Climax Choice Level Might Vigor Finesse Resolve""".split())
+
+
+def registered_names():
+    """Every capitalised word a registry knows, lowercased: codex.md, cast.md, the Annals, character names and aliases,
+    place and faction names and aliases, and the game's own words (Arts, Knots, ranks, Ember tiers, the Tether, the Bearing)."""
+    words = set()
+
+    def add(t):
+        words.update(w.lower() for w in re.findall(r"[A-Z][a-z]+", str(t or "")))
+
+    for key in ("codex", "cast", "lore"):
+        if P[key].exists():
+            add(P[key].read_text(encoding="utf-8"))
+    for f in sorted(P["characters"].glob("*.json")):
+        try:
+            c = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for s in [c.get("name"), c.get("epithet")] + list(c.get("aliases") or []):
+            add(s)
+    for key, field in (("places", "places"), ("factions", "factions")):
+        try:
+            for x in json.loads(P[key].read_text(encoding="utf-8")).get(field, []):
+                for s in [x.get("name"), x.get("subtitle")] + list(x.get("aliases") or []):
+                    add(s)
+        except (OSError, ValueError):
+            pass
+    try:
+        rules = json.loads(P["rules"].read_text(encoding="utf-8"))
+        for a in rules.get("arts", []) + rules.get("sport_arts", {}).get("arts", []):
+            add(a.get("name")); add(a.get("tree"))
+        for k in rules.get("knots", []):
+            add(k.get("name"))
+        for r in rules.get("levels", {}).get("ranks", []):
+            add(r.get("name"))
+        for t in rules.get("ember", {}).get("tiers", []):
+            add(t.get("name"))
+        for nm in rules.get("tether", {}).get("names", []):
+            add(nm)
+    except (OSError, ValueError):
+        pass
+    try:
+        b = json.loads(P["bearing"].read_text(encoding="utf-8"))
+        for ax in b.get("axes", {}).values():
+            add(ax.get("left")); add(ax.get("right"))
+        for v in b.get("names", {}).values():
+            add(v)
+    except (OSError, ValueError):
+        pass
+    return words
+
+
+def names_in(path, registered):
+    """Capitalised words in a chapter file that appear at least once mid-sentence and that no registry knows."""
+    found = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s or s.startswith(("#", ">", "`")):
+            continue
+        for m in re.finditer(r"(?<![\w'’])([A-Z][a-z]{2,})(?![\w])", line):
+            before = line[: m.start()].rstrip()
+            if not before or before[-1] in '.!?"“”‘’*>—–-([:;':
+                continue  # a sentence start proves nothing
+            w = m.group(1)
+            if w in NAME_STOP or w.lower() in registered or w.rstrip("s") in NAME_STOP or w.lower().rstrip("s") in registered:
+                continue
+            found[w] = found.get(w, 0) + 1
+    return found
+
+
+def unregistered_names(world, all_chapters=False):
+    """[(file, {name: count})] for the current chapter, or every chapter with --all."""
+    reg = registered_names()
+    if all_chapters:
+        files = sorted(P["chronicle"].glob("*.md"))
+    else:
+        cf = world.get("chapter_file")
+        files = [ROOT / cf] if cf and (ROOT / cf).exists() else []
+    return [(f, names_in(f, reg)) for f in files]
+
+
+def cmd_names(args):
+    st = State()
+    rows = unregistered_names(st.world, all_chapters=args.all)
+    clean = True
+    for f, found in rows:
+        if found:
+            clean = False
+            print(f"{rel(f)}: " + ", ".join(f"{w} ×{n}" if n > 1 else w for w, n in sorted(found.items())))
+    if clean:
+        print("every capitalised name on the page is registered (codex, cast, places, factions, the Annals)")
+    else:
+        print("register each: codex.md (a thing, a saying, a song), saga/characters/ (a person), places.json, factions.json, or the Annals (`lore`)")
+
+
 # ---------------------------------------------------------------- the chapter file
 SCENE_HEAD_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
 INTERLUDE_HEAD_RE = re.compile(r"^###\s+Interlude\s*[—–-]\s*(.+)$")
@@ -2009,6 +2247,22 @@ def cmd_check(args):
     # the chapter file, the slots, world.json's scenes[] and the Ledger's closed days must tell one story
     reconcile_chapter(st, probs)
 
+    # the Annals: parseable, unique ids, known kinds, tiers, a spoken field
+    entries, dupes = lore_entries()
+    for d_ in dupes:
+        probs.append(f"lore.md: id {d_} appears twice")
+    for e in entries.values():
+        if not LORE_ID_RE.match(e["id"]):
+            probs.append(f"lore.md: id {e['id']} is not kind.name with a known kind ({', '.join(sorted(set(k for k in LORE_ID_RE.pattern[2:].split(')')[0].split('|'))))})")
+        if e["tier"] not in LORE_TIERS:
+            probs.append(f"lore.md: {e['id']} tier {e['tier']!r} must be common or learned")
+        if not e["spoken"]:
+            probs.append(f"lore.md: {e['id']} has no **spoken:** field")
+    # names on the page that no registry knows: a note, so a new coinage gets registered before it drifts
+    for f, found in unregistered_names(world):
+        if found:
+            notes.append(f"names in {rel(f)} that no registry knows: " + ", ".join(sorted(found)) + " · register them (codex, characters, places, factions, the Annals) or `saga.py names`")
+
     # arc ids
     ids_in_arc = arc_ids()
     if ids_in_arc:
@@ -2082,13 +2336,15 @@ def main():
     x = ps.add_parser("companion"); x.add_argument("sub", choices=["arrive"]); x.add_argument("id")
     x = ps.add_parser("set"); x.add_argument("kv", nargs="+")
     s = sub.add_parser("arc"); s.add_argument("id")
+    s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
+    s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
     args = ap.parse_args()
     if args.cmd == "route" and args.action == "decide" and not args.book:
         die("route decide needs --book N")
     {
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
-        "plan": cmd_plan, "arc": lambda a: print_arc(a.id),
+        "plan": cmd_plan, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
     }[args.cmd](args)
 
 

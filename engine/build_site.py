@@ -1755,7 +1755,7 @@ Characters Codex Chronicle Now Darrow Unkneeling Books Chapter Scene Scenes Clim
 Visited Arts Learned Sealed Banked Tied Untied Opens Book Knots Binding Reckoning Dice Latest Rolls Cast Page Site Memorial Fallen Alive
 Hollowed Missing Unknown Major Minor Earned Grace Ember Unlit Fire Might Vigor Finesse Resolve Rank Ranks Temper Days Days Keeper Prior
 Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers
-Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting""".split()
+Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting Songs Verses Histories Annals""".split()
 STOP = set("""Seventh Present Former Scale Mid Magic Violence Tone Praise Speaks Talks Grounded Grants Grew Fights Families Companies Customs Geography Naming Peoples Recurring Reigning Surpassing Unwind Shatter Hinted Bible Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Wits Voices Signature Somber Stiff Steam Kennel Cripples Wager Magic
 About After Again Against Already Always Among Anyone Anything Around Because Before Behind Below Between Beyond
 Book Books Both Chapter Chapters Choice Choices Claude Core Could Darrow Does Each Early Either Ember End Every Everyone Expandable Expandables
