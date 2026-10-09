@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing factions. Claude-owned. Descriptions must be supported by saga/chronicle/. device: lance|bell|censer|crown|redhand|knee; numeral only for lances.",
+  "_about": "Reader-facing factions. Claude-owned. Descriptions must be supported by saga/chronicle/. device: lance|bell|censer|crown|redhand|knee; numeral only for lances. Optional picture (only for a faction already on the page): image (a path under saga/art/, e.g. factions/<id>.jpg), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge.",
   "factions": [
     {
       "id": "ninth-lance",
@@ -39,7 +39,10 @@
       "device": "censer",
       "numeral": "",
       "on_page": true,
-      "description": "Grey cloaks who climb for names, with a list and a smoking censer. They have come to bring the Faithless of Saint Ysolde's down to kneel."
+      "description": "Grey cloaks who climb mountains for names, not for the Hollowed or the dying. Six of them ride the Holloway with a cart and a censer smoking in the snow, carrying a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere: the ones they have come to bring down to kneel. Hollis's name is second. Asked who was first, Wren only looked at Darrow.",
+      "image": "factions/confessors.jpg",
+      "image_alt": "Through a brass spyglass: six riders in hooded grey cloaks, their faces hidden, ride single file along a snowy road under a cliff, one swinging a smoking censer on a chain, with a covered cart drawn by a mule behind them.",
+      "image_caption": "Through Sister Pell's glass: six grey cloaks, a cart and a censer on the Holloway."
     },
     {
       "id": "menders",

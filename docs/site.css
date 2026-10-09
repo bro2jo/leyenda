@@ -159,13 +159,13 @@ details[open]>summary::after{content:"\2212"}
 
 /* place pictures: full width in the codex entry, tap to see whole */
 .archive summary .thumb{flex:none;width:56px;height:32px;object-fit:cover;border-radius:3px;border:1px solid var(--rule);margin-right:6px}
-.archive .dt-body:has(>.place-art){max-width:none}
-.archive .dt-body:has(>.place-art)>p{max-width:62ch}
-.place-art{margin:2px 0 6px}
-.place-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
-.place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.place-art img{display:block;width:100%;height:100%;object-fit:cover}
-.place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
+.archive .dt-body:has(>.codex-art){max-width:none}
+.archive .dt-body:has(>.codex-art)>p,.archive .dt-body:has(>.codex-art)>.fac{max-width:62ch}
+.codex-art{margin:2px 0 6px}
+.codex-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.codex-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.codex-art img{display:block;width:100%;height:100%;object-fit:cover}
+.codex-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
 /* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */

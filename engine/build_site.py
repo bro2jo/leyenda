@@ -7,8 +7,9 @@ Reads (and nothing else):
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
   saga/art/                                images the user supplies, published as files when places.json names one
-                                           (image, image_alt, image_focus; only for a place already on the page) or a
-                                           character file does (portrait, portrait_alt, portrait_focus). Every picture sits
+                                           or factions.json names one (image, image_alt, image_caption, image_focus; only
+                                           for an entry already on the page) or a character file does (portrait,
+                                           portrait_alt, portrait_focus). Every picture sits
                                            in a fixed frame (places 16:9, portraits square) and is cropped to fit, never
                                            stretched; *_focus ("50% 30%") picks the crop's centre; tap shows it whole.
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
@@ -749,7 +750,10 @@ class Site:
             if p.get("on_page") and not p.get("description"):
                 problem(f"places.json: {p.get('id')} is on the page but has no description")
             if p.get("image"):
-                self.place_image(p)
+                self.codex_image("places.json", p)
+        for f in self.factions.values():
+            if f.get("image"):
+                self.codex_image("factions.json", f)
         for key, comp in (self.world.get("companions") or {}).items():
             if not isinstance(comp, dict):
                 problem(f"world.json: companions.{key} must be an object")
@@ -792,15 +796,16 @@ class Site:
             return f' style="object-position:{default}"'
         return f' style="object-position:{m.group(1)}% {m.group(2)}%"'
 
-    def place_image(self, p):
+    def codex_image(self, src, p):
+        """A codex entry's picture (a place in places.json or a faction in factions.json): only once it is on the page."""
         pid = p.get("id", "?")
         if not p.get("on_page"):
-            problem(f"places.json: {pid} has an image but is not on the page yet (an image would show it early)")
+            problem(f"{src}: {pid} has an image but is not on the page yet (an image would show it early)")
             return
-        got = self.register_image(f"places.json: {pid}.image", p["image"], p.get("image_alt"))
+        got = self.register_image(f"{src}: {pid}.image", p["image"], p.get("image_alt"))
         if got:
             p["_image_path"], p["_image_size"] = got
-            p["_image_focus"] = self.focus_style(f"places.json: {pid}.image_focus", p.get("image_focus"), "50% 50%")
+            p["_image_focus"] = self.focus_style(f"{src}: {pid}.image_focus", p.get("image_focus"), "50% 50%")
 
     def char_portrait(self, c):
         got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
@@ -827,7 +832,7 @@ class Site:
         return (f'<img class="avatar{(" " + cls) if cls else ""}" src="{rel}{c["_portrait_path"]}" alt="" '
                 f'width="{size}" height="{size}"{c.get("_portrait_focus", "")} loading="lazy" decoding="async">')
 
-    def place_figure(self, p, rel):
+    def codex_figure(self, p, rel):
         """The place's picture: shown full width, tap or click to see it whole (a plain link without JavaScript)."""
         if not p.get("_image_path"):
             return ""
@@ -836,11 +841,11 @@ class Site:
         dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
         cap = p.get("image_caption") or ""
         alt = esc(p.get("image_alt", ""))
-        return (f'<figure class="place-art"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
+        return (f'<figure class="codex-art"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
                 f'<img src="{href}" alt="{alt}"{dims}{p.get("_image_focus", "")} loading="lazy" decoding="async"></a>'
                 f'<figcaption>{esc(cap)}{" · " if cap else ""}<span class="zoom-hint"><span class="t">Tap</span><span class="c">Click</span> to enlarge</span></figcaption></figure>')
 
-    def place_thumb(self, p, rel):
+    def codex_thumb(self, p, rel):
         if not p.get("_image_path"):
             return ""
         return f'<img class="thumb" src="{rel}{p["_image_path"]}" alt=""{p.get("_image_focus", "")} loading="lazy" decoding="async">'
@@ -1556,8 +1561,8 @@ class Site:
             src = self.scene_ref(fs, rel) if fs else ""
             tag = badge("visited", "good") if p.get("visited") else badge("not yet", "dim")
             name = p["name"] + (f" · {p['subtitle']}" if p.get("subtitle") else "")
-            places.append({"name": name, "tag": self.place_thumb(p, rel) + tag,
-                           "html": self.place_figure(p, rel) + f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
+            places.append({"name": name, "tag": self.codex_thumb(p, rel) + tag,
+                           "html": self.codex_figure(p, rel) + f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         extra = f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>' if offmap else ""
         secs.append(sec("Places", f"{len(places)}", rows(places) + extra))
@@ -1565,7 +1570,8 @@ class Site:
         for f in self.factions.values():
             if not f.get("on_page"):
                 continue
-            facs.append({"name": f["name"], "tag": "", "html": f'<div class="fac">{sigil(f, None, 44)}<p>{esc(f["description"])}</p></div>'})
+            facs.append({"name": f["name"], "tag": self.codex_thumb(f, rel),
+                         "html": self.codex_figure(f, rel) + f'<div class="fac">{sigil(f, None, 44)}<p>{esc(f["description"])}</p></div>'})
         secs.append(sec("Factions", f"{len(facs)}", rows(facs)))
         sayings = [{"name": s["name"].strip('"“”'), "tag": "", "html": f"<p>{inline(s['text'])}</p>"} for s in self.codex.get("Sayings", [])]
         secs.append(sec("Sayings", f"{len(sayings)}", rows(sayings)))
@@ -1956,13 +1962,13 @@ details[open]>summary::after{content:"\2212"}
 
 /* place pictures: full width in the codex entry, tap to see whole */
 .archive summary .thumb{flex:none;width:56px;height:32px;object-fit:cover;border-radius:3px;border:1px solid var(--rule);margin-right:6px}
-.archive .dt-body:has(>.place-art){max-width:none}
-.archive .dt-body:has(>.place-art)>p{max-width:62ch}
-.place-art{margin:2px 0 6px}
-.place-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
-.place-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.place-art img{display:block;width:100%;height:100%;object-fit:cover}
-.place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
+.archive .dt-body:has(>.codex-art){max-width:none}
+.archive .dt-body:has(>.codex-art)>p,.archive .dt-body:has(>.codex-art)>.fac{max-width:62ch}
+.codex-art{margin:2px 0 6px}
+.codex-art a{display:block;aspect-ratio:16/9;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in}
+.codex-art a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.codex-art img{display:block;width:100%;height:100%;object-fit:cover}
+.codex-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
 /* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
