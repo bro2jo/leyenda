@@ -11,10 +11,10 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Field-stones** — slabs of black Oathstone in iron frames, one per lance, hauled on ox-carts; knights kneel and touch them before battle to be filled with Grace (Prologue).
 - **Coldmere** — village at the foot of the Greywater road, with an inn where the Confessors' list was read aloud (Ch 1).
 - **Sister Pell's glass** — the spyglass in the bell tower (Ch 1).
-- **The dawn forms** — the slow, dull work Maelis prescribes for the Binding each morning; never described in detail (Ch 1).
-- **The Reading of the Knots** — Maelis's weekly examination: two fingers either side of the kneecap, eyes shut (Ch 1).
+- **The dawn forms** — the slow, dull work Maelis sets him each morning; afterward the leg lies a little straighter on the blanket, which is the point of them (Ch 1).
+- **The Reading of the Knots** — Maelis's reading of the Binding: pipe between her teeth, two fingers either side of the kneecap, eyes shut. Darrow has stopped asking what she feels for; she has stopped answering (Ch 1).
 
 ## Sayings
-- **"Kneel to that."** — bitter agreement among the Faithless (Prologue).
+- **"Kneel to that."** — Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).
 - **"Ride wide today."** — what Aldric said at the ford (Prologue).
 - **"The quiet is a liar."** — Maelis, on the soft season (Ch 1).

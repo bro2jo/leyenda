@@ -127,7 +127,8 @@
     },
     {
       "chapter": "00",
-      "scene": "III"
+      "scene": "III",
+      "mention": true
     },
     {
       "chapter": "01",

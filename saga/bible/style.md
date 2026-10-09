@@ -88,7 +88,7 @@ Show the check on its own line, before the outcome is narrated:
 Each chapter opens with 1–3 lines from an in-world document, in italics, with a source line: *Wren's ledgers*, a Warden precept, a Confessor's writ, a lancers' marching song, a letter from Aldric Vane, a children's counting rhyme. Original text only.
 
 ### File layout
-- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph, then scenes in order, then `## Climax — Title`, then the choice.
+- `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A consequence written by `/choose` goes under `### Choice — Title`. The site build parses exactly these forms.
 - Book openings get a title page line: `# BOOK II — THE TEMPERING ROAD`.
 
 ---

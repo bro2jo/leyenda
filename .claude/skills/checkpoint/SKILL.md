@@ -36,7 +36,7 @@ Read `saga/bible/style.md`, `saga/bible/_gm/arc.md` (current Book), `saga/state/
 
 **The dice decide the details.** 2–4 checks at the moments of real stakes:
 `python3 engine/darrow.py roll ch<NN>-<slug> --stat <might|vigor|finesse|resolve> --dc <8–20> --prof --chapter <N>`
-(`--prof` when an Art or trained skill applies; `--adv` when an Art grants advantage; `--dis` when the situation is against him.) Write each roll on its own line exactly as returned, then narrate the result. If he has Inspiration and a roll fails at a key moment, you may offer the reroll as part of the choice rather than spending it yourself.
+(`--prof` when an Art or trained skill applies; `--adv` when an Art grants advantage; `--dis` when the situation is against him.) The engine prints the chapter's dice line first, in the style guide's form (`` `[MIGHT · DC 13]` d20 **14** +2 = **16** — *Success* ``); paste that first line into the chapter exactly as printed, on its own line, then narrate the result. The second line is only a note for you. If he has Inspiration and a roll fails at a key moment, you may offer the reroll as part of the choice rather than spending it yourself.
 
 Write **900–1,800 words** under `## Climax — <Title>` in the current chapter file. End with **the choice** (2–3 options, gated options marked per `style.md`).
 

@@ -90,7 +90,7 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "his Mender",
+      "label": "the knight whose knee she bound",
       "note": "She read his knee at the top of the Steps, bound it with emberthread when he chose her way off the mountain, and has said no fourteen times when he asked to go down; he does the dawn forms because she would know if he didn't, though he has no idea how."
     },
     {
@@ -101,7 +101,7 @@
     {
       "to": "hollis-garrow",
       "label": "the other captain in her hall",
-      "note": "He lies on the cot beside Darrow's and watched the weeks before the Binding from there; when Darrow asked what had begun, she looked down the hall at Hollis, then out at the snow, before she answered."
+      "note": "He lies on the cot beside Darrow's and watched the weeks before the Binding from there; when Darrow asked what had begun, she looked down the hall at Hollis, then out at the snow, and told him to close the door instead of answering."
     }
   ],
   "reckoning": {
@@ -132,6 +132,11 @@
     ]
   },
   "appearances": [
+    {
+      "chapter": "00",
+      "scene": "I",
+      "mention": true
+    },
     {
       "chapter": "00",
       "scene": "II"

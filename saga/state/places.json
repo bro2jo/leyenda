@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), draw:false (no marker). route is a list of place ids or [x, y] waypoints.",
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints.",
   "places": [
     {
       "id": "saint-ysoldes",
@@ -15,7 +15,7 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "A hospice at the top of the Thousand Steps, where bells ring the hours and the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots; the far ones hold the ones who no longer speak."
+      "description": "The House of Menders at the top of the Thousand Steps, which takes the ones the lowland surgeons cannot fix and do not want to watch. Bells ring the hours; the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots, and the far ones hold the ones who no longer speak."
     },
     {
       "id": "thousand-steps",
@@ -39,15 +39,16 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "village",
-      "x": 214,
-      "y": 118,
+      "x": 228,
+      "y": 126,
       "on_page": true,
       "visited": false,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
       },
-      "description": "A village with an inn where the Confessors' list of the Faithless was read aloud, and from which the news climbed to the House by carter, lay brother and kitchen."
+      "description": "A place below the mountain with an inn, where the Confessors' list of the Faithless was read aloud; the news climbed to the House by carter, lay brother and kitchen.",
+      "label_below": true
     },
     {
       "id": "holloway",
@@ -80,7 +81,7 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "The river country below the mountains. Darrow had the fastest feet in it. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north."
+      "description": "Darrow's country: he had the fastest feet in it, and its children count the lances in a rhyme. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north."
     },
     {
       "id": "the-wend",
@@ -113,7 +114,8 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here the Grace went out of every knight for three heartbeats, and Darrow's knee gave way with no blade near it."
+      "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here, halfway across, the Grace went out of the Ninth, and Darrow's knee gave way with no blade near it.",
+      "label_below": true
     },
     {
       "id": "the-thornwild",
@@ -129,12 +131,12 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "The old forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed."
+      "description": "The forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed."
     },
     {
       "id": "calden",
       "name": "Calden",
-      "subtitle": "the capital",
+      "subtitle": "",
       "region": "the-lowmarch",
       "kind": "city",
       "x": 214,
@@ -143,9 +145,9 @@
       "visited": false,
       "first_seen": {
         "chapter": "00",
-        "scene": "II"
+        "scene": "III"
       },
-      "description": "The capital, where the Oathspire stands and where the Faithless are told they may kneel anew. Somewhere in a warm room there, Darrow believes, his name was written first on a list."
+      "description": "Where the Oathspire stands, and where the Faithless are told they may kneel anew. Somewhere in a warm room there, Darrow believes, his name was written first on a list."
     },
     {
       "id": "oathspire",
@@ -162,7 +164,7 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The Crown's seat in Calden. The heralds say the Faithless will be received there with mercy and permitted to kneel anew; Maelis calls that the Crown's way, and fast."
+      "description": "In Calden. The heralds say the Faithless will be received there with mercy and permitted to kneel anew; Maelis calls that the Crown's way, and fast."
     },
     {
       "id": "edgemoor",
@@ -178,7 +180,7 @@
         "chapter": "01",
         "scene": "1"
       },
-      "description": "The place Darrow's name is sworn to: Ser Darrow of Edgemoor."
+      "description": "The place in Darrow's name as the Reckoning writes it: Ser Darrow of Edgemoor."
     },
     {
       "id": "greywater-peaks",
@@ -238,7 +240,10 @@
       150,
       160
     ],
-    "coldmere",
+    [
+      208,
+      122
+    ],
     "thousand-steps",
     "saint-ysoldes"
   ]

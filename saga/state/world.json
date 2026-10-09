@@ -22,11 +22,11 @@
     "detail": "the infirmary hall",
     "_about": "place is an id from saga/state/places.json"
   },
-  "season": "late autumn; first snow on the Steps",
+  "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
     "summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second.",
-    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, climbing toward the House with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Darrow's name is first on it. Hollis's is second.",
+    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.",
     "_about": "summary is for the GM; on_the_page is what the site shows and must be supported by the chronicle"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",
@@ -94,7 +94,7 @@
   },
   "recaps": {
     "_about": "One-line 'previously' per chapter file slug, shown at the top of that chapter in the reader. Spoiler-free; only what earlier chapters showed.",
-    "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of every knight for three heartbeats and Darrow's knee gave way with no blade near it. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again."
+    "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river and did not come back, and Darrow's knee gave way with no blade near it. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire."
   },
   "last_updated": "2026-10-08"
 }

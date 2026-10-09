@@ -14,7 +14,7 @@ Commands (run from the repo root):
   food add 'JSON' | food list DATE | food rm ID | food lib TEXT
   ex add 'JSON'                append exercise-log rows (list or object)
   sport add 'JSON'             append sport-log rows
-  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--chapter N | --tier] [--reroll]
+  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--chapter N | --tier] [--reroll]   prints the chapter's dice line (paste line 1 as is)
   inspire --reason TEXT        spend one Inspiration on a story action
   chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
   knot tie N --date D --evidence TEXT   record a Knot of the Binding
@@ -1003,7 +1003,11 @@ def cmd_roll(args, cfg, rules):
                  "result": result, "note": args.note or ""})
     write_csv("rolls", rows)
     shown = f"{a}/{b} ({mode})" if b else f"{a}"
-    print(f"🎲 {label} · {(args.stat or 'flat').upper()} check DC {args.dc}: d20 {shown} {mod_txt} = {total} → {result}")
+    pretty = {"CRITICAL SUCCESS": "Critical success", "CRITICAL FAILURE": "Critical failure", "SUCCESS": "Success",
+              "PARTIAL (success at a cost)": "Partial: success at a cost", "FAILURE": "Failure"}[result]
+    # line 1 is the chapter's dice line, in the style guide's exact form; paste it as it is
+    print(f"`[{(args.stat or 'flat').upper()} · DC {args.dc}]` d20 **{shown}** {mod_txt} = **{total}** — *{pretty}*")
+    print(f"(roll {label}: {result}; recorded in saga/state/rolls.csv)")
 
 
 def cmd_inspire(args, cfg, rules):

@@ -22,7 +22,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
   "tier": "major",                      // major | minor | fallen
   "faction": "menders",                 // id from saga/state/factions.json
   "status": "alive",                    // alive | fallen | hollowed | missing | unknown
-  "sigil": {"faction": "menders", "mark": "needle"},
+  "sigil": {"faction": "menders", "mark": "needle"},     // mark may be "none"
   "appearance": "2–4 sentences: build, face, clothing, scars, how they carry themselves.",
   "first_seen": {"chapter": "00", "scene": "II", "place": "saint-ysoldes", "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"},
   "last_seen":  {"chapter": "01", "scene": "1",  "place": "saint-ysoldes", "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"},
@@ -34,7 +34,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
     {"fact": "One fact, one sentence.", "chapter": "00", "scene": "III"}
   ],
   "relationships": [
-    {"to": "darrow", "label": "his Mender", "note": "One sentence, as seen on the page."}
+    {"to": "darrow", "label": "the knight whose knee she bound", "note": "One sentence, as seen on the page."}
   ],
   "reckoning": {
     "fire": {"kind": "ember", "state": "steady"},     // kind: ember (earned) | grace (borrowed) | none (unlit)
@@ -57,6 +57,14 @@ One JSON file per character who has **appeared or been named on the page** in `s
 - Companion approval is **not** stored here; the build reads it from `saga/state/world.json` and shows words and a bar, never a number.
 - Grace-sworn strength is borrowed (`fire.kind = "grace"`): the build colors it icy blue and labels it borrowed. Earned strength (`ember`) is brass and ember. `none` means nothing is kindled and the Grace is gone.
 - What Darrow can read of another's Reckoning is gated by his Warden's Eye rank in `darrow.json`: I shows level and rank; II the attributes; III the Arts; IV and up the deeper lines. Everything else renders as ⟦ unread ⟧.
+
+## Couplings the build relies on
+
+- **Companions:** `world.json → companions` is keyed by the first hyphen-separated token of the character id (`maelis` ↔ `maelis-vorne`). A companion with `present: false` is left off the Now page. The build fails if a key matches more than one file.
+- **Name links in the reader:** the build links the `name` (with and without "Ser") and every alias that shares a word with the name (`Mender Vorne` yes, `the Mender` no), first mention per scene. Keep aliases to names the page has spoken.
+- **Relationship labels** describe the *linked* person as this character sees them ("the knight whose knee she bound" on Maelis's page, not "his Mender").
+- **Sigil mark `none`** means the faction device alone: use it until the page has put something in the character's hands.
+- `reckoning.level: null` with rank `Oathsworn` draws the crest with a dash in blue (borrowed strength), not the violet unread mark.
 
 ## Scene registry (copy anchors exactly)
 
