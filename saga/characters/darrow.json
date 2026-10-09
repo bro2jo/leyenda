@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "2",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-2"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-1"
   },
-  "last_seen_doing": "Standing in Maelis's cell with the shutter latched, having been told what the script on his hands counts, as she lifts the latch.",
-  "now": "Seven weeks past the Binding, in the season Maelis says is the softest and will feel like the best weeks he has had since the river; he has asked fourteen times to go down the Steps and been told no fourteen times. Six grey cloaks, a cart and a smoking censer are on the Holloway below Saint Ysolde's, riding toward the foot of the Steps with a list of the Faithless that was read out at the inn in Coldmere, his own name first on it by Wren's look. Behind a cell door Maelis has told him of two fires, one poured in and one built, and that the script he saw counts only what is his; she has forbidden him to speak of it to anyone, Hollis most of all, and has just lifted the latch.",
+  "last_seen_doing": "Sitting on the end of his own cot by Hollis's, asking him and Benedek why the Confessors want the Faithless back, and keeping the two fires to himself.",
+  "now": "Seven weeks past the Binding, in the season Maelis says is the softest and will feel like the best weeks he has had since the river; he has asked fourteen times to go down the Steps and been told no fourteen times. Six grey cloaks, a cart and a smoking censer are on the Holloway below Saint Ysolde's, riding toward the foot of the Steps with a list of the Faithless that was read out at the inn in Coldmere, his own name first on it by Wren's look. Behind a cell door Maelis has told him of two fires, one poured in and one built, and that the script he saw counts only what is his; she has forbidden him to speak of it to anyone, Hollis most of all. Back on his own cot, he has asked Hollis and Benedek why the grey cloaks want the Faithless back, and kept the two fires to himself.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -122,6 +122,11 @@
       "fact": "He knew the name of the burned order before she said it, from the curse the lowlands make of it, and she forbade him to say it in the hall, to Wren, to the Prior, or to Hollis most of all.",
       "chapter": "01",
       "scene": "2"
+    },
+    {
+      "fact": "He asked Hollis and Benedek why the Confessors chase the Faithless up a mountain if the Grace left them for faithlessness, and why mercy needs a list with his name first; he kept what Maelis told him behind his teeth.",
+      "chapter": "01",
+      "scene": "between-1"
     }
   ],
   "relationships": [
@@ -186,6 +191,10 @@
     {
       "chapter": "01",
       "scene": "2"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-1"
     }
   ]
 }

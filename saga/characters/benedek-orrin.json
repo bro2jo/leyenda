@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "interlude",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#interlude"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-1"
   },
-  "last_seen_doing": "Lying on the cot next to Hollis's with his eyes shut and his lips moving, saying his oath because Hollis told him to.",
-  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his eyes shut and his oath on his lips. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up.",
+  "last_seen_doing": "On the next cot, telling the Captain that the Grace forgives and comes back to those who kneel, then saying his oath at the bell.",
+  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his eyes shut and his oath on his lips. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up. He has told the Captain that the Grace forgives those who kneel, and had no answer when asked why mercy needs a list.",
   "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
@@ -65,6 +65,11 @@
       "fact": "Told to say his oath and shut his eyes, he shut them and his lips began to move, and he did not see where Hollis put the folded paper from his shirt.",
       "chapter": "01",
       "scene": "interlude"
+    },
+    {
+      "fact": "He told the Captain the Grace forgives: kneel, and it comes back. Asked why mercy needs a list, he had no answer and apologised for not having one.",
+      "chapter": "01",
+      "scene": "between-1"
     }
   ],
   "relationships": [
@@ -94,6 +99,10 @@
     {
       "chapter": "01",
       "scene": "interlude"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-1"
     }
   ]
 }

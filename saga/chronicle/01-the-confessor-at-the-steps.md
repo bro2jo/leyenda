@@ -185,3 +185,31 @@ She lifted the latch.
 > ⟦ THE RECKONING ⟧
 > Art ranked up: **Warden's Eye** II. *Read a weakness or a lie.*
 > XP 755 → 870
+
+### Between — The Paper's the Point
+
+Maelis went back to her rounds. Darrow walked the hall the slow way, good leg, bad leg, transfer, and sat on the end of his own cot, facing Hollis's.
+
+"Well?" said Hollis.
+
+"She charges by the warning now." Darrow nodded at the window. "Tell me about them. Not the list. Them."
+
+"Grey cloaks. They climb for names. You know that."
+
+"I know what they do. I'm asking why. The heralds say the Grace left us because we were faithless. Fine. Then why chase us up a mountain? A faithless man who kneels is still a faithless man."
+
+"Mercy, Captain." Benedek's eyes were open, and earnest. "The Grace forgives. You kneel, and it comes back. That's the whole of it."
+
+"Then why the list?" Darrow asked him, gently. "Mercy doesn't need names in order. Mercy doesn't need me first."
+
+Benedek had no answer, and apologised for not having one.
+
+Hollis did. "Because a captain who won't kneel is a song," he said. "Every taproom from here to Calden. *The Ninth came back and didn't bend.* Some lad hears it and wonders whether he has to. They can't have lads wondering." He scratched his beard. "So they take the song down the mountain and make it kneel where people can see. Mercy's the word on the paper. The paper's the point."
+
+"And if the song won't come down?"
+
+"Then they wait. And they're better at waiting than you, Darrow of the fast feet. Everyone is."
+
+Darrow thought of two fires, one poured and one built, and kept both behind his teeth.
+
+Down the hall the bell began. Benedek shut his eyes and started his oath, and Hollis, for once, let him finish.

@@ -30,3 +30,4 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"Stone and Crown."** — a soldier's oath; Hollis swears it over the nine steps he took on the wooden leg (Ch 1 Interlude).
 - **"Feed it or it goes out."** — Maelis, of the built fire (Ch 1 Sc 2).
 - **"They'll count you up. Don't help."** — Rae Thorne, the one thing she said to Darrow on the last cart, as they lifted him onto the litter (Prologue).
+- **"Mercy's the word on the paper. The paper's the point."** — Hollis to Darrow, of why the Confessors want the Faithless to kneel where people can see (Ch 1 Between).

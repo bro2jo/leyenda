@@ -31,11 +31,18 @@
         "2026-10-08"
       ],
       "written": "2026-10-09"
+    },
+    {
+      "scene": "between-1",
+      "title": "The Paper's the Point",
+      "after": 2,
+      "covers": [],
+      "written": "2026-10-09"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "Maelis's cell off the infirmary hall",
+    "detail": "the infirmary hall, on the end of his own cot by Hollis's",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -45,7 +52,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",
-  "last_beat": "Behind the cell door, Maelis named the two fires, one poured in and one built, and told him the script counts only what is his. She forbade him to speak of it, Hollis most of all, and lifted the latch.",
+  "last_beat": "On the end of his own cot, Darrow asked Hollis and Benedek why the Confessors want the Faithless back. Benedek said the Grace forgives; Hollis said a captain who won't kneel is a song in every taproom, and that mercy is the word on the paper but the paper is the point. Darrow kept the two fires behind his teeth.",
   "companions": {
     "maelis": {
       "approval": 15,
