@@ -167,6 +167,15 @@ details[open]>summary::after{content:"\2212"}
 .place-art img{display:block;width:100%;height:auto}
 .place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
+/* portraits: framed at the head of a character's page; round in cards */
+.pf{display:grid;gap:14px}
+.portrait{margin:0;max-width:420px}
+.portrait a{display:block;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.portrait img{display:block;width:100%;height:auto}
+@media (min-width:560px){.pf{grid-template-columns:200px minmax(0,1fr);align-items:center}}
+.avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
+.avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
 dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
 dialog.zoom[open]{display:flex;align-items:center;justify-content:center}

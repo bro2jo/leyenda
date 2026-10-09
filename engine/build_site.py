@@ -7,7 +7,8 @@ Reads (and nothing else):
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
   saga/art/                                images the user supplies, published as files when places.json names one
-                                           (image: path under saga/art/, image_alt; only for a place already on the page)
+                                           (image, image_alt; only for a place already on the page) or a character file
+                                           does (portrait, portrait_alt)
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -728,8 +729,11 @@ class Site:
         self.bearing = self.load_bearing()
         self.check_world()
         self.chars = load_characters(self.registry, self.factions, self.place_by_id)
-        self.pages = {}  # path -> html
         self.assets = {}  # published path -> source file (binary, copied as is)
+        for c in self.chars.values():
+            if c.get("portrait"):
+                self.char_portrait(c)
+        self.pages = {}  # path -> html
         loc = self.world.get("location") or {}
         self.current_place = loc.get("place") if isinstance(loc, dict) else None
         if self.current_place not in self.place_by_id:
@@ -755,30 +759,57 @@ class Site:
         self.eye = next((a["rank"] for a in self.darrow.get("arts", []) if a["id"] == "wardens_eye"), 0)
         self.linkers = self.build_linkers()
 
-    def place_image(self, p):
-        """Validate a place's image and register it as an asset at art/<path>."""
-        pid, img = p.get("id", "?"), str(p["image"])
-        src = (ART / img).resolve()
+    def register_image(self, where, img, alt):
+        """Validate an image under saga/art/ and register it as an asset at art/<path>. Returns (path, size) or None."""
+        src = (ART / str(img)).resolve()
         if ART.resolve() not in src.parents:
-            problem(f"places.json: {pid}.image '{img}' must be a path under saga/art/")
-            return
+            problem(f"{where} '{img}' must be a path under saga/art/")
+            return None
+        if src.suffix.lower() not in IMAGE_TYPES:
+            problem(f"{where} '{img}' must be one of {', '.join(sorted(IMAGE_TYPES))}")
+            return None
+        if not src.is_file():
+            problem(f"{where} '{img}' does not exist under saga/art/")
+            return None
+        if src.stat().st_size > IMAGE_MAX_BYTES:
+            problem(f"{where} '{img}' is over {IMAGE_MAX_BYTES // (1024 * 1024)} MB; shrink it before publishing")
+        if not str(alt or "").strip():
+            problem(f"{where} has no alt text (what the picture shows, for screen readers)")
+        path = f"art/{src.relative_to(ART.resolve()).as_posix()}"
+        self.assets[path] = src
+        return path, image_size(src)
+
+    def place_image(self, p):
+        pid = p.get("id", "?")
         if not p.get("on_page"):
             problem(f"places.json: {pid} has an image but is not on the page yet (an image would show it early)")
             return
-        if src.suffix.lower() not in IMAGE_TYPES:
-            problem(f"places.json: {pid}.image '{img}' must be one of {', '.join(sorted(IMAGE_TYPES))}")
-            return
-        if not src.is_file():
-            problem(f"places.json: {pid}.image '{img}' does not exist under saga/art/")
-            return
-        if src.stat().st_size > IMAGE_MAX_BYTES:
-            problem(f"places.json: {pid}.image '{img}' is over {IMAGE_MAX_BYTES // (1024 * 1024)} MB; shrink it before publishing")
-        if not str(p.get("image_alt") or "").strip():
-            problem(f"places.json: {pid} has an image but no image_alt (what the picture shows, for screen readers)")
-        rel_path = src.relative_to(ART.resolve()).as_posix()
-        p["_image_path"] = f"art/{rel_path}"
-        p["_image_size"] = image_size(src)
-        self.assets[p["_image_path"]] = src
+        got = self.register_image(f"places.json: {pid}.image", p["image"], p.get("image_alt"))
+        if got:
+            p["_image_path"], p["_image_size"] = got
+
+    def char_portrait(self, c):
+        got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
+        if got:
+            c["_portrait_path"], c["_portrait_size"] = got
+
+    def portrait_figure(self, c, rel):
+        """A character's portrait at the head of their page: framed, tap or click to see it whole."""
+        if not c.get("_portrait_path"):
+            return ""
+        href = rel + c["_portrait_path"]
+        wh = c.get("_portrait_size")
+        dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
+        alt = esc(c.get("portrait_alt", ""))
+        return (f'<figure class="portrait"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
+                f'<img src="{href}" alt="{alt}"{dims} decoding="async"></a></figure>')
+
+    def avatar(self, c, rel, size, cls=""):
+        """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none."""
+        if not c or not c.get("_portrait_path"):
+            return ""
+        return (f'<img class="avatar{(" " + cls) if cls else ""}" src="{rel}{c["_portrait_path"]}" alt="" '
+                f'width="{size}" height="{size}" loading="lazy" decoding="async">')
 
     def place_figure(self, p, rel):
         """The place's picture: shown full width, tap or click to see it whole (a plain link without JavaScript)."""
@@ -1167,8 +1198,12 @@ class Site:
         else:
             cr = crest(level if level is not None else "?")
             row = f'<div class="sigil-row">{sigil(fac, sg.get("mark"), 44)}<span class="dim">{esc(f.get("name", ""))}</span></div>'
-        return (f'<section class="plate"><div class="hero">{cr}<div class="who"><h1>{esc(c["name"])}</h1>'
-                f'<p class="sub">{esc(c.get("epithet", ""))}</p><div class="chips">{"".join(chips)}</div></div></div>{row}</section>')
+        hero = (f'<div class="hero">{cr}<div class="who"><h1>{esc(c["name"])}</h1>'
+                f'<p class="sub">{esc(c.get("epithet", ""))}</p><div class="chips">{"".join(chips)}</div></div></div>')
+        fig = self.portrait_figure(c, rel)
+        if fig:
+            hero = f'<div class="pf">{fig}{hero}</div>'
+        return f'<section class="plate">{hero}{row}</section>'
 
     def character_sections(self, c, rel):
         parts = []
@@ -1241,7 +1276,7 @@ class Site:
         mention_only = bool(c.get("appearances")) and all(a.get("mention") for a in c.get("appearances"))
         seen_lbl = "Named in" if mention_only else "Last seen"
         return (f'<a class="card" href="{rel}{self.char_href(c["id"])}" data-faction="{esc(c["faction"])}" data-status="{esc(c["status"])}">'
-                f'{sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 56)}<div class="card-body"><b>{esc(c["name"])}</b><span class="dim">{esc(c.get("epithet", ""))}</span>'
+                f'{self.avatar(c, rel, 56) or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 56)}<div class="card-body"><b>{esc(c["name"])}</b><span class="dim">{esc(c.get("epithet", ""))}</span>'
                 f'<div class="chips">{badge(c["status"], STATUS_CLS.get(c["status"], "dim"))}{chip(f.get("name", ""))}</div>'
                 f'<span class="m">{seen_lbl}: {last}</span></div></a>')
 
@@ -1462,7 +1497,7 @@ class Site:
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
         bchip = self.bearing_chip()
-        card = (f'<div class="rk-mini"><div class="hero">{crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
+        card = (f'<div class="rk-mini"><div class="hero">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
                 f'<div class="mini-attrs">{rk}</div><p class="lbl">the faint numbers are the ones he read behind his own</p>'
@@ -1914,6 +1949,15 @@ details[open]>summary::after{content:"\2212"}
 .place-art img{display:block;width:100%;height:auto}
 .place-art figcaption{font-size:.82rem;color:var(--faint);margin-top:6px}
 .zoom-hint .c{display:none}
+/* portraits: framed at the head of a character's page; round in cards */
+.pf{display:grid;gap:14px}
+.portrait{margin:0;max-width:420px}
+.portrait a{display:block;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.portrait img{display:block;width:100%;height:auto}
+@media (min-width:560px){.pf{grid-template-columns:200px minmax(0,1fr);align-items:center}}
+.avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
+.avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
 dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
 dialog.zoom[open]{display:flex;align-items:center;justify-content:center}
