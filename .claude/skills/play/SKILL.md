@@ -44,9 +44,9 @@ Append to the current chapter file, after the last block:
 A dice line goes where the roll happens. No Reckoning box (the engine's notifications belong to scenes). No glimpse in this reply: the Between is the glimpse's big brother.
 
 ## 6. Bookkeeping, then the site
-- `saga/state/world.json` by Edit: `scenes[]` gets `{"scene": "between-K", "title": "…", "after": "<key of the scene it follows: 2, interlude, climax>", "covers": [], "written": "YYYY-MM-DD"}`; `last_beat` becomes the Between's last beat; `location.detail` if he moved within the place. Never approval.
+- `saga/state/world.json` by Edit: `scenes[]` gets `{"scene": "between-K", "title": "…", "after": "<key of the scene it follows: 2, interlude, climax>", "covers": [], "written": "YYYY-MM-DD"}`; `last_beat` becomes the Between's last beat; `location.detail` **always** set to where he is at the Between's end (`location.place` too, a `places.json` id, if he left the place). The site's Now page reads both, and lists the Betweens after the latest scene. Never approval.
 - The people in it: `last_seen` `{chapter, scene: "between-K", place, anchor: "chronicle/<file>.html#between-K"}`, `last_seen_doing`, `now`, `appearances` (`{"chapter": "NN", "scene": "between-K"}`), new `known_facts` for anything the page now says; `quote` if a better line landed. `codex.md` for a new saying or thing; `saga/state/_gm/threads.md` only when a later scene must honour something (name the ledger id).
-- The narrative top of `saga/NOW.md`: one line under "Just happened" if it changed anything.
+- **The narrative top of `saga/NOW.md`, every time:** `Where` names the place and where in it he is now (the same as `location.detail`); `Just happened (Between)` is this Between in two or three lines, with its best spoken line; what was there before moves into `Earlier today, in order` (one short clause per scene, interlude or Between, oldest first, each tagged). Refresh `With him` if someone's standing with him changed.
 - `python3 engine/saga.py check` and `python3 engine/build_site.py` (both must pass), then `git add -A && git commit -m "play chNN between-K: <title>" && git push origin HEAD:main`.
 
 ## 7. Reply
