@@ -213,3 +213,31 @@ Hollis did. "Because a captain who won't kneel is a song," he said. "Every tapro
 Darrow thought of two fires, one poured and one built, and kept both behind his teeth.
 
 Down the hall the bell began. Benedek shut his eyes and started his oath, and Hollis, for once, let him finish.
+
+### Between — What It Holds Up
+
+He found Maelis at the linen press by the door, folding boiled linen into squares as if each one had argued with her.
+
+"The Grace," he said, low. "What is it? Not what the heralds say. What is it?"
+
+"Wrong question." She did not look up. "What did it do?"
+
+He thought about it. "Made the river a road. Made every ache go quiet. I could hear my own heart."
+
+"And when it went?"
+
+"Cold. Frost on my mail, in midsummer. Like someone opened a door onto winter."
+
+She folded another square. "I've had my fingers on knees that carried it for twenty years. It holds things up, Captain. It doesn't mend them. A man can run on a torn thing a long while with that under it, and never know it's torn." She laid the square on the pile. "That's what a Mender knows of it. The rest, ask a herald."
+
+"And Faithless?"
+
+"A word for a knight the Grace has left. It says it left because of him." The pipe went from one side of her mouth to the other. "Did you break your oath?"
+
+"No."
+
+"Then you know as much about that word as I do."
+
+"That's not an answer."
+
+"It's the one you came for." She settled the pile on her hip and went off down the hall with it, and said over her shoulder, without turning: "Sit down. You've walked enough today."

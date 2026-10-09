@@ -38,11 +38,18 @@
       "after": 2,
       "covers": [],
       "written": "2026-10-09"
+    },
+    {
+      "scene": "between-2",
+      "title": "What It Holds Up",
+      "after": 2,
+      "covers": [],
+      "written": "2026-10-09"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, on the end of his own cot by Hollis's",
+    "detail": "the infirmary hall, by the linen press at the door",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -52,7 +59,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",
-  "last_beat": "On the end of his own cot, Darrow asked Hollis and Benedek why the Confessors want the Faithless back. Benedek said the Grace forgives; Hollis said a captain who won't kneel is a song in every taproom, and that mercy is the word on the paper but the paper is the point. Darrow kept the two fires behind his teeth.",
+  "last_beat": "At the linen press by the door, Darrow asked Maelis what the Grace is. She asked what it did; it holds things up, she said, it doesn't mend them. Faithless, she said, is a word that says the Grace left because of him; she asked whether he broke his oath, and told him to sit down.",
   "companions": {
     "maelis": {
       "approval": 15,
