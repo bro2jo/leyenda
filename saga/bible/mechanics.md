@@ -79,7 +79,13 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **Anchor** | Footing | deceleration | Knot V |
 | **The Turning Blade** | Blade | cutting | Knot VI |
 | **The Quickening** | Insight | reactive agility | Knot VI |
-| *Sport Arts* | Sport | your sport's skills (set up with `/sport`) | per the sport plan |
+| **The Measured Hand** | Sport | throwing-control sessions | now |
+| **The Wicket Gate** | Sport | break throws | now |
+| **The Liar's Shoulder** | Sport | fakes and deception | now |
+| **Overwall** | Sport | overhead throws | now |
+| **Tell-Reading** | Sport | film and study of defense | now |
+| **The Far Cast** | Sport | long throws | Knot III |
+| **The Shadow-Step** | Sport | defensive footwork | Knot V |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
 

@@ -228,6 +228,83 @@
       "next_at": 1,
       "sealed_until_knot": 6,
       "effect": "Act before the enemy finishes deciding."
+    },
+    {
+      "id": "measured_hand",
+      "name": "The Measured Hand",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
+    },
+    {
+      "id": "wicket_gate",
+      "name": "The Wicket Gate",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "Thread a thrown or passed thing past a man standing in its way; a guard in the line stops it only if he wins a contest for it."
+    },
+    {
+      "id": "liars_shoulder",
+      "name": "The Liar's Shoulder",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "Sell a false intention with the body. Once per scene, a foe who reads him commits the wrong way: advantage on the next check against that foe."
+    },
+    {
+      "id": "overwall",
+      "name": "Overwall",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover."
+    },
+    {
+      "id": "far_cast",
+      "name": "The Far Cast",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": 3,
+      "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be."
+    },
+    {
+      "id": "tell_reading",
+      "name": "Tell-Reading",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "Watch a foe's hips and hands and know his next move before he makes it. Once per scene, ask what an opponent means to do."
+    },
+    {
+      "id": "shadow_step",
+      "name": "The Shadow-Step",
+      "tree": "Sport",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": 5,
+      "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
     }
   ],
   "chapter_now": {

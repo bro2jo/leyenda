@@ -21,6 +21,7 @@ Do the Ledger fully before writing any story.
    - **Weight:** the trend. If the engine printed the ⚠ falling line, say so plainly and suggest telling the surgeon/PCP. If the guide's rule moves the target, update `real/config.json → nutrition_targets` with the source and date.
    - **Rehab:** the loaded days and their mornings, the swelling trend, progressions made and whether each followed the one-change rule (`show ex DATE`).
    - **Add-on and conditioning:** upper 2 of 2? (decides block advancement: `doc addon 6`); bike; accessory/power.
+   - **Sport:** sessions vs plan (3, or the minimum-viable 2 + 1), the stage and any clearance gained this week (update `config.json → sport.stage`, `stage_since`, `stage_evidence` and sport plan §3), the guide's weekly question. Every fourth week (guide Weeks 4, 8, 12, then monthly) the month check: the 1–5 ratings as `review` rows and the guide's seven review questions (`doc sport 9`).
    - **PT and measurements:** each visit with its `real/visits/` file; the numbers measured (`measures`); questions answered and still open.
    - **Gates:** the next phase gate (`real/config.json → rehab.next_gate`), criterion by criterion, with evidence. **If a gate was passed with PT/surgeon clearance or measured criteria this week:** `python3 engine/darrow.py knot tie N --date … --evidence "…"`, update `rehab.current_phase` / `phase_entered` / `next_gate`, and run `sync`.
    - **Program — changes and decisions:** what changed in the program or targets, and why.

@@ -1565,7 +1565,8 @@ def run_checks(site, out_dir):
     # 2. GM sentences and unrevealed names
     chron_text = "\n".join(read(p) for p in sorted(CHRON.glob("*.md")))
     allowed = set()
-    for a in site.rules.get("arts", []):
+    all_arts = site.rules.get("arts", []) + site.rules.get("sport_arts", {}).get("arts", [])  # sport Arts are game rules too
+    for a in all_arts:
         allowed.update(re.findall(r"[A-Za-z']+", a["name"] + " " + a["tree"]))
     for k in site.rules.get("knots", []):
         allowed.update(re.findall(r"[A-Za-z']+", k["name"]))
@@ -1582,7 +1583,7 @@ def run_checks(site, out_dir):
     allowed_text = []
     for k in site.rules.get("knots", []):
         allowed_text += [str(k.get("name", "")), str(k.get("proves", ""))]
-    for a in site.rules.get("arts", []):
+    for a in all_arts:
         allowed_text += [str(a.get("name", "")), str(a.get("effect", ""))]
     for r in site.rules["levels"]["ranks"]:
         allowed_text.append(str(r.get("name", "")))

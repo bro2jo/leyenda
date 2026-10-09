@@ -23,7 +23,7 @@ Commands (run from the repo root):
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
   measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
-  doc state|addon|rules|guide|master|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
+  doc state|addon|rules|guide|master|sport|sportguide|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
 """
 import argparse
@@ -473,6 +473,8 @@ def week_score(ws, upto, facts, cfg, rules):
             done["upper"] += 1
         if f["cond_min"] >= rules["daily"]["conditioning"]["min_minutes"]:
             done["cond"] += 1
+        if f["sport"]:
+            done["sport"] += 1
         if f["weight"]:
             weighins += 1
     for day in days:
@@ -1223,10 +1225,10 @@ def recap_text(st, cfg, rules, ws):
         "cond": sum(1 for x in days if (fx(x).get("cond_min") or 0) >= rules["daily"]["conditioning"]["min_minutes"]),
         "accessory": sum(1 for x in days if "accessory" in {tag.get(a) for a in fx(x).get("addons", ())}),
         "power": sum(1 for x in days if "power" in {tag.get(a) for a in fx(x).get("addons", ())}),
-        "sport": sum(fx(x).get("sport") or 0 for x in days),
+        "sport": sum(1 for x in days if fx(x).get("sport")),
     }
     names = {"knee": "knee sessions", "pt": "PT", "upper": "upper", "cond": "conditioning", "accessory": "accessory",
-             "power": "power", "sport": "sport drills"}
+             "power": "power", "sport": "sport sessions"}
     parts = []
     for k, label in names.items():
         if k in pl:
@@ -1271,6 +1273,10 @@ CHECKPOINT_SKELETON = """# Checkpoint — Sun {sun} · week Sun {ws} – Sat {we
 ## Add-on and conditioning
 
 <!-- Upper 2 of 2? (decides the block), bike, accessory/power. -->
+
+## Sport
+
+<!-- Throwing sessions vs plan, the stage and any clearance, the week's question; every fourth week the month check (ratings, the seven review questions). -->
 
 ## PT and measurements
 
@@ -1326,7 +1332,9 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
 
 def doc_path(name):
-    fixed = {"addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"], "now": P["real_now"]}
+    fixed = {"addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"], "now": P["real_now"],
+             "sport": ROOT / "real/plan/sport/sport_plan.md",
+             "sportguide": ROOT / "real/plan/sport/Ultimate_Offseason_Development_Guide.md"}
     if name in fixed:
         return fixed[name]
     globs = {"state": (P["state_dir"], "ACL_Recovery_State_*.md"), "checkpoint": (P["checkpoints"], "20*.md"),
@@ -1338,7 +1346,7 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, checkpoint, visit, now, or a path")
+        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, sport, sportguide, checkpoint, visit, now, or a path")
     return p
 
 
@@ -1666,6 +1674,10 @@ def cmd_check(args, cfg, rules):
         s = str(r.get("am_swelling", "")).strip()
         if s and not VALID_SWELLING.match(s):
             problems.append(f"daily_log {r['date']}: am_swelling '{s}' is not a grade (0/trace/1+/2+/3+); no check credit")
+    skills = cfg.get("sport", {}).get("skills") or []
+    for i, r in enumerate(read_csv("sport"), 2):
+        if skills and r.get("skill") not in skills:
+            problems.append(f"sport_log.csv line {i}: skill '{r.get('skill')}' is not one of {', '.join(skills)} (config.json -> sport.skills)")
     specs = metric_specs(cfg)
     for i, r in enumerate(read_csv("measurements"), 2):
         where = f"measurements.csv line {i}"

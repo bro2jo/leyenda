@@ -90,7 +90,7 @@
     "reduce_above_lb": 1.0
   },
   "weekly_template": {
-    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: knee (the next of Session A/B; they alternate A -> B -> A regardless of day), pt, upperA, upperB, accessory, power, cond. The Tue knee session may run Wed. Upper this week (10/4) ran its own placement: Fri 10/9 A, Sat 10/10 B. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
+    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: sport (a skill session: A Wed, B Fri, C Sat by default; any day counts), knee (the next of Session A/B; they alternate A -> B -> A regardless of day), pt, upperA, upperB, accessory, power, cond. The Tue knee session may run Wed. Upper this week (10/4) ran its own placement: Fri 10/9 A, Sat 10/10 B. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
     "Sun": [
       "knee"
     ],
@@ -101,22 +101,26 @@
     "Tue": [
       "knee"
     ],
-    "Wed": [],
+    "Wed": [
+      "sport"
+    ],
     "Thu": [
       "cond",
       "upperB"
     ],
     "Fri": [
-      "pt"
+      "pt",
+      "sport"
     ],
     "Sat": [
-      "cond"
+      "cond",
+      "sport"
     ],
     "optional": [
       "accessory",
       "power"
     ],
-    "source": "ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest"
+    "source": "ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest; sport sessions from the week of 10/11: real/plan/sport/sport_plan.md section 5"
   },
   "weekly_template_history": [
     {
@@ -147,6 +151,35 @@
         "power"
       ],
       "source": "the template before the 10/9 revision: Whole_Athlete_AddOn.md section 3 and ACL_Recovery_State_2026-10-04.md section 6"
+    },
+    {
+      "until": "2026-10-10",
+      "Sun": [
+        "knee"
+      ],
+      "Mon": [
+        "cond",
+        "upperA"
+      ],
+      "Tue": [
+        "knee"
+      ],
+      "Wed": [],
+      "Thu": [
+        "cond",
+        "upperB"
+      ],
+      "Fri": [
+        "pt"
+      ],
+      "Sat": [
+        "cond"
+      ],
+      "optional": [
+        "accessory",
+        "power"
+      ],
+      "source": "the 10/9 revision before the sport plan: ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest"
     }
   ],
   "daily_minimum": {
@@ -231,9 +264,24 @@
     "first_kneel": null
   },
   "sport": {
-    "name": null,
-    "position": null,
-    "season": null,
-    "_about": "Filled in by /sport."
+    "_about": "Set by /sport on 10/9. skills = the only valid sport_log.csv 'skill' values; each feeds a Sport Art (engine/rules.json -> sport_arts).",
+    "name": "Ultimate",
+    "position": "handler",
+    "season": "offseason Oct 2026 (week 1 = Sun 10/11) -> late spring 2027",
+    "target_return": "late spring 2027, by the rehab gates; for a cutting and pivoting sport the master plan treats 9 months (2027-05-24) as a minimum reference, after the return-to-sport battery",
+    "plan": "real/plan/sport/sport_plan.md",
+    "guide": "real/plan/sport/Ultimate_Offseason_Development_Guide.md",
+    "skills": [
+      "control",
+      "breaks",
+      "deception",
+      "overheads",
+      "hucks",
+      "defense_iq",
+      "defense_footwork"
+    ],
+    "stage": "S0 (seated)",
+    "stage_since": "2026-10-09",
+    "stage_evidence": "Knot II tied; seated upper-body work is not a knee variable (add-on section 2); standing stages wait on Knot III and the PT (sport_plan.md section 3)"
   }
 }

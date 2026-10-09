@@ -27,6 +27,7 @@ Appearance and voice: `cast.md`.
 ### Ser Hollis Garrow — the Old Captain
 Appearance and voice: `cast.md`.
 - Knight-Captain of the Sixth Lance. He will teach Darrow **the Seated Blade**, the art of fighting without footwork, from a chair across a practice ring; he learned it in his own chair, recently and badly. The Art is not named on the page until he teaches it there.
+- He also teaches throwing from a chair, the first lesson of winning sitting: **The Measured Hand** (a Sport Art, open now), then **Overwall**. Neither is named on the page until he teaches it (threads: Sport Arts).
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
 - **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, its words known by heart, its seal never once looked at; since the Interlude it lies folded in the cup of the beech leg (T3: the seal is Vane's; b2.4 is where he finally looks). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
 
@@ -98,7 +99,7 @@ Appearance and voice: `cast.md` (unnamed there, as on the page).
 - The person Aldric wants kept safe, and what the Crown holds over him. A letter from her is a Book II expandable. If she appears: late twenties, Aldric's face without the severity, braver with words than he is.
 
 ### Ysra Tal, "the Needle of Calden" (Book II companion)
-- Oathsworn duelist, 29, precise and cold, the finest footwork Darrow has ever seen. Sent to bring him in alive; does not understand why he will not kneel. Becomes his Finesse mentor if he earns it.
+- Oathsworn duelist, 29, precise and cold, the finest footwork Darrow has ever seen. Sent to bring him in alive; does not understand why he will not kneel. Becomes his Finesse mentor if he earns it. As his mentor she teaches **The Liar's Shoulder**, **The Wicket Gate** and **The Shadow-Step** (Sport Arts).
 - **Voice:** courteous, clipped, deadly literal. **Wants:** an order she can respect. **Fate:** defects or dies in Book III, set by earlier choices (`flags.ysra_spared`, `r.b3.ysra_fate`).
 
 ### Ilse of Corrach (Book III companion)
