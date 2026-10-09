@@ -4,15 +4,15 @@
 
 **BOOK I — THE HOUSE OF MENDERS · Chapter 1 — The Confessor at the Steps**
 
-- **Where:** Saint Ysolde's, the House of Menders, high in the Greywater; right now in the infirmary hall, by the linen press at the door, where Maelis has just told him to sit down. First snow on the Thousand Steps.
-- **The quest:** *The List.* Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow.
+- **Where:** Saint Ysolde's, the House of Menders, high in the Greywater; right now on the stair up from the warming room off the cloister, where Mother Ione has called him back from the doorway below. First snow on the Thousand Steps.
+- **The quest:** *The List.* Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade climbs the Steps or passes the gate; Mother Ione has not yet said whether it will ring.
 - **What Darrow is fighting right now:** the soft season. The knee feels well, and Maelis says that's exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he can't kneel; and he has asked fourteen times to go down the Steps and been told no fourteen times.
-- **Just happened (Between):** at the linen press, Darrow asked Maelis what the Grace is. She asked what it did, and told him: *"It holds things up. It doesn't mend them."* Faithless, she said, is a word that says the Grace left because of him; asked whether he broke his oath, he said no. *"It's the one you came for."* Then: *"Sit down. You've walked enough today."*
-- **Earlier today, in order:** behind the cell door Maelis named the two fires, one poured in, one built, and forbade him to speak of it, *"Not to Hollis, most of all"* (Scene 2). Down the hall Hollis hid the writ from Harrow Ford, still unread, in the cup of his wooden leg (Interlude). Back on his cot Darrow asked Hollis and Benedek why the grey cloaks want the Faithless back: Benedek said the Grace forgives; Hollis said a captain who won't kneel is a song, *"Mercy's the word on the paper. The paper's the point"*; Darrow kept the two fires to himself (Between).
-- **With him:** Maelis Vorne (has told him what she dared, not where she learned it) · Hollis Garrow (second on the list, drinking less) · Wren Ashdown (frightened, hiding it in numbers).
-- **Also in the House:** Rae Thorne, the carter of the last cart, who said one thing to him on the whole of that road and whom he has not forgotten; her cart and two oxen stand at the winch-house below, in the grey cloaks' path.
+- **Just happened (Scene 3):** Mother Ione's council in the warming room. Rae said the list was read *"Slow. So the room could count."* Maelis gave the law of Old Mercy: miss one ringing and the law lapses till the next. Sister Pell, fifty years on the bells, says it has lapsed twice, both for snow, *"Not on my rope"*, and will ring it as long as it takes; Darrow saw her cup chatter on the hearth, and nobody else looked. On the stair Rae asked, *"Did you ride a grey? At the ford."* He said yes; she went on up without saying why. Then the Prior, from the doorway below: what would he have her know before she decides, and what should the lay brothers tell the valley?
+- **Earlier today, in order:** nothing yet since the council.
+- **With him:** Mother Ione (the Prior, asking questions that are never idle) · Maelis Vorne (has told him what she dared, not where she learned it) · Hollis Garrow (second on the list, drinking less) · Wren Ashdown (frightened, hiding it in numbers).
+- **Also in the House:** Rae Thorne, the carter of the last cart, who has asked whether he rode a grey at the ford and not said why; her cart and two oxen stand at the winch-house below, in the grey cloaks' path. Sister Pell, keeper of the bells, old.
 - **Next:** the grey cloaks reach the foot of the Steps by tomorrow night, if the snow holds off.
-- **Open choice:** none yet. The first comes at the chapter's climax.
+- **Open choice (small):** what Darrow says to Mother Ione. 1. *"If Old Mercy rings, it rings for a man who will never kneel again, not for the House's sake either. Decide knowing it."* 2. *"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it."* 3. Say nothing.
 
 *Open threads and the GM's plan live under `saga/state/_gm/` and never appear on this page.*
 
@@ -22,7 +22,7 @@ _Engine block, regenerated by `sync`._
 ```
 ⟦ THE RECKONING ⟧
 Ser Darrow of Edgemoor · Level 4 · Bound
-XP 943 ▰▰▰▰▰▰▰▰▱▱ 1,000
+XP 948 ▰▰▰▰▰▰▰▰▱▱ 1,000
 HP 34 · Ember 77 (Steady) · Inspiration 0/4 · Proficiency +2
 
 MIGHT    11 (+0)   the Knight Who Fell: 15

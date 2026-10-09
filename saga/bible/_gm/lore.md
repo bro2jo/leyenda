@@ -76,13 +76,13 @@ A lowland bone-setter with a wasting sickness who had herself carried up to the 
 Cut into the cliff over forty years by masons and lay brothers, switchback over switchback, from the winch-house to the gate. Everyone says a thousand. Wren has counted eleven hundred and seventeen and has made a note of everyone who disagrees. The stretches have names the lay brothers use without thinking: the Shins, the first steep run; the Elbow, the turn at the cloud line; the Long Reach; and the Last Hundred under the gate. At the hundredth step from the top there is a niche with a lamp in it, Ysolde's lamp, and the lay brothers will not go below it after dark. The sick are carried up and the dead carried down, and the Steps count everyone twice.
 
 ## house.bells — The bells of the House
-- **tier:** common · **spoken:** Ch 1 Sc 1 (the dawn bell, the bell tower; the names not yet) · **names:** Old Mercy
+- **tier:** common · **spoken:** Ch 1 Sc 1 (the dawn bell, the bell tower); ch01:s3 (Old Mercy named, the sanctuary bell) · **names:** Old Mercy
 - **use:** the hours of any scene; the bell-cant at the cage; a death on the far cots.
 
 Three bells. **Old Mercy**, the sanctuary bell, oldest and heaviest, cracked once in the Quenching's winter and recast with the crack's bronze in it; rung at dawn and dusk while the House claims sanctuary and at no other time, and the valley knows its voice from the others. **The Hour**, Sister Pell's working bell, which tells the day. **The Small**, rung once, flat, when someone dies on the far cots, so that the House knows without being told. The winch-brothers keep a bell-cant besides, on the little bell by the cage: one for a load, two for a letter, three for a litter.
 
 ## house.law_of_bells — Sanctuary and the law of bells
-- **tier:** common · **spoken:** — · **names:** Old Mercy
+- **tier:** common · **spoken:** ch01:s3 · **names:** Old Mercy
 - **use:** Mother Ione; a Confessor's courtesy; the grey of the lower terrace.
 
 By a right older than the Crown's chronicle, while the sanctuary bell is rung at dawn and dusk no blade may climb the Steps or pass the gate, and the Crown has honoured it for three hundred years because bells are the Crown's own law, and it cannot unmake one without loosening the rest. The law covers the Steps and the gate. The lower terrace, where the springs steam outside the gate and inside the wall, is a grey, and everyone knows it. A dawn or a dusk unrung and sanctuary lapses until the next ringing; this has happened twice in the Bell-count, both times for snow. Beside it stands the older **law of guests**: whoever comes up unarmed is warmed and fed one night, whoever sent them.

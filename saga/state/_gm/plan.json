@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 1,
     "beat": "b1.1",
-    "next_scene": 3,
+    "next_scene": 4,
     "stage": "scene",
-    "last_written": "ch01:s2"
+    "last_written": "ch01:s3"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
@@ -95,8 +95,8 @@
           "default": 1
         },
         "float": false,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch01:s3"
       },
       {
         "n": 7,
@@ -106,7 +106,7 @@
         "plan": "The grey cloaks reach the foot of the Steps; censer smoke rising through the cloud; the House counts what it has; Rae on the gate wall beside Darrow as the grey cloaks reach the winch-house and put a man on her cart; she could go down past them and does not, yet",
         "micro": null,
         "float": false,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -362,7 +362,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where the Confessors will camp first.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 6,
+    "chapter": 1,
+    "scene": "3",
+    "opened": "2026-10-09",
+    "ask": "What does Darrow say?",
+    "axis": "candor_guile",
+    "options": [
+      "\"If Old Mercy rings, it rings for a man who will never kneel again, not for the House's sake either. Decide knowing it.\"",
+      "\"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it.\"",
+      "Say nothing."
+    ],
+    "bearing": [
+      {
+        "candor": 1
+      },
+      {
+        "guile": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": []
   }

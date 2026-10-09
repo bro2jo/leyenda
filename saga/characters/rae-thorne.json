@@ -25,17 +25,17 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "1",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
-  "last_seen_doing": "Not on the page herself in Chapter 1 but named by Wren, who told the hall that Rae had heard the list read at the inn in Coldmere, driven the Holloway in the dark ahead of the grey cloaks, and climbed the Steps before the bell to tell the winch-brothers.",
-  "now": "Somewhere in the House, as far as the page knows: she came up the Steps before the dawn bell with the news of the Confessors' list and told the winch-brothers, who told the kitchen. Her cart stands at the winch-house at the foot of the Steps with its shafts up and two oxen waiting in the snow, which Darrow knew from the infirmary window, and six grey cloaks with a cart and a censer are expected at the foot of the Steps by tomorrow night if the snow holds off.",
+  "last_seen_doing": "At Mother Ione's council, telling how the list was read at Coldmere; afterwards, on the stair, asking Darrow whether he rode a grey at the ford, and going on up without saying why.",
+  "now": "In the House, where she stood by the door of the warming room at Mother Ione's council with snow melting on her shoulders. Her cart and two oxen wait at the winch-house below, in the grey cloaks' path. She has asked Darrow whether he rode a grey at the ford and not said why.",
   "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks later she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, in the grey cloaks' path.",
   "quote": {
-    "text": "They'll count you up. Don't help.",
-    "chapter": "00",
-    "scene": "II"
+    "text": "Slow. So the room could count.",
+    "chapter": "01",
+    "scene": "3"
   },
   "known_facts": [
     {
@@ -87,6 +87,16 @@
       "fact": "Wren's ledger counts one cart at the winch-house, Thorne's, and one load waiting on the cage.",
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "fact": "At Mother Ione's council she said the list was read slow, so the room could count; and the room counted.",
+      "chapter": "01",
+      "scene": "3"
+    },
+    {
+      "fact": "On the stair after the council she stopped one step above Darrow, eye to eye, and asked whether he rode a grey at the ford. When he said yes and asked why, she went on up without answering; the bell at her belt rang once at the turn.",
+      "chapter": "01",
+      "scene": "3"
     }
   ],
   "relationships": [
@@ -142,6 +152,10 @@
       "chapter": "01",
       "scene": "1",
       "mention": true
+    },
+    {
+      "chapter": "01",
+      "scene": "3"
     }
   ]
 }

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-2",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-2"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
-  "last_seen_doing": "Folding boiled linen at the press by the door: telling Darrow the Grace holds things up and doesn't mend them, then sending him to sit down.",
-  "now": "In her cell off the infirmary hall of Saint Ysolde's, where she took Darrow after the script of light showed itself at the window. She has told him what the script counts and about the order the Crown burned for living by the built fire, forbidden him to speak of it to anyone, Hollis most of all, and answered the question of how she knows with 'I'm a Mender. We remember things.' She lifted the latch and went back to her rounds; at the linen press she has told Darrow the Grace holds things up and doesn't mend them, and sent him to sit down. Below the mountain, six grey cloaks and a cart with a smoking censer are on the Holloway, expected at the foot of the Steps by tomorrow night if the snow holds off.",
+  "last_seen_doing": "By the fire in the warming room at Mother Ione's council, giving the law of Old Mercy in two sentences when the Prior asked her to.",
+  "now": "At Saint Ysolde's, where she sat in Mother Ione's council over the Confessors' list and gave the law of the sanctuary bell. She has told Darrow what the script of the Reckoning counts and forbidden him to tell anyone, Hollis most of all.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow.",
   "quote": {
     "text": "The quiet is a liar.",
@@ -112,6 +112,11 @@
       "fact": "Of the Grace: she has had her fingers on knees that carried it for twenty years; it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know. Of Faithless: a word for a knight the Grace has left, which says it left because of him.",
       "chapter": "01",
       "scene": "between-2"
+    },
+    {
+      "fact": "At the Prior's council she gave the law: while Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate; miss one ringing and the law lapses till the next.",
+      "chapter": "01",
+      "scene": "3"
     }
   ],
   "relationships": [
@@ -188,6 +193,10 @@
     {
       "chapter": "01",
       "scene": "between-2"
+    },
+    {
+      "chapter": "01",
+      "scene": "3"
     }
   ]
 }

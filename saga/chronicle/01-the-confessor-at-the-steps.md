@@ -241,3 +241,53 @@ She folded another square. "I've had my fingers on knees that carried it for twe
 "That's not an answer."
 
 "It's the one you came for." She settled the pile on her hip and went off down the hall with it, and said over her shoulder, without turning: "Sit down. You've walked enough today."
+
+### Scene 3 — The Law of Bells
+
+He had sat as ordered for an hour when a novice fetched him to the warming room off the cloister. Nine steps down, no rail. He took them with a hand to the wall, and the knee held on every one, which he took as a compliment.
+
+Mother Ione had the one good chair and offered it to nobody: small and upright, white hair under a linen coif, a soft face creased like a winter apple, pale eyes that counted each of them in turn. Maelis stood by the fire. Beside it, in two shawls, sat a woman so old she might have been cut from the hearthstone, watching the Prior's mouth. Rae Thorne stood by the door, snow melting on her shoulders.
+
+"How did they read it, Rae?" said the Prior. "Loud?"
+
+"Slow," said Rae. "So the room could count."
+
+"And did the room count?"
+
+"Aye."
+
+"Then the Captain should hear the law, shouldn't he? Maelis?"
+
+"While Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate," said Maelis. "Miss one ringing and the law lapses till the next."
+
+"And how often has it lapsed, Sister Pell?"
+
+"Twice. Snow, both times." A dry rasp, rationed. "Not on my rope."
+
+"And will you ring it, dawn and dusk, for as long as they care to sit at the bottom?"
+
+"Fifty years I've rung the bells. Ask the bell if it's tired."
+
+She set her cup on the hearth, and Darrow saw the knuckles, swollen like walnuts, and the cup chatter twice before it settled. He read it before he meant to, the way he read a line before a charge. Nobody else looked.
+
+The council broke with nothing decided aloud. On the stair Rae stopped one step above him, so that for once they were eye to eye.
+
+"Did you ride a grey?" she said. "At the ford."
+
+Thistle, going down at the shoulder in the brown water. He had not said her name since.
+
+"Yes. Why?"
+
+She looked at him the way she had once looked at his leg, and went on up without answering. The bell at her belt rang once at the turn.
+
+"Captain?" Mother Ione, from the doorway below. "Before I decide whether Old Mercy rings, is there anything you'd have me know? And what should the lay brothers tell the valley, when it asks who sleeps up here?"
+
+**What does Darrow say?**
+1. **"If Old Mercy rings, it rings for a man who will never kneel again, not for the House's sake either. Decide knowing it."**
+2. **"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it."**
+3. **Say nothing.**
+
+> ⟦ THE RECKONING ⟧
+> Art learned: **The Long Breath** I. *Endure where others tire.*
+> Vigor 8 → 9
+> XP 870 → 948

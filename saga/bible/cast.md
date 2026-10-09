@@ -31,12 +31,12 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** He sang, badly and without stopping. Nothing he said has been written down.
 
 ## Mother Ione
-- **Appearance:** Named on the page, not yet seen.
-- **Voice:** Not yet heard; the page has only Wren saying she has been told of the riders.
+- **Appearance:** The Prior of Saint Ysolde's, in her seventies: small and very upright, white hair cropped close under a plain linen coif, a soft round face creased like a winter apple, and pale eyes that count everyone in a room in turn. Gentle in face and manner, with iron under the gentleness. In the warming room she has the one good chair by the fire and offers it to nobody.
+- **Voice:** She speaks in questions, and the questions are never idle. She gives an order by asking whether someone would like to do it. *"Then the Captain should hear the law, shouldn't he? Maelis?"*
 
 ## Sister Pell
-- **Appearance:** Named on the page, not yet seen; her glass stands in the bell tower.
-- **Voice:** Not yet heard.
+- **Appearance:** Keeper of the House's bells for fifty years, and so old she might have been cut from the hearthstone: small, wrapped in two shawls, knuckles swollen like walnuts. Nearly deaf from the bells, she watches a speaker's mouth rather than their eyes, and a cup chatters in her hand before it settles. Her glass stands in the bell tower.
+- **Voice:** A dry rasp, rationed: she says what the bells have left her breath for and not a word more, and has no patience for fools. *"Fifty years I've rung the bells. Ask the bell if it's tired."*
 
 ## Ser Benedek Orrin
 - **Appearance:** Not yet thirty, a knight of Hollis's own Sixth, on the cot next to his. A boar spear went through his shoulder at the ford and a fever came after; the shoulder is wrapped like a parcel. He lies with his hands folded on the blanket and watches, with the eyes of a man who still feels a warmth in his chest, or says he does.

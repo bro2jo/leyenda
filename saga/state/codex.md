@@ -4,7 +4,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 
 ## People
 - **Tobin Marsh** — youngest knight of the Ninth Lance, 19, sang badly and constantly; went under his own horse in the current at Harrow Ford and was not among the nineteen who came back (Prologue).
-- **Thistle** — Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue).
+- **Thistle** — Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3).
 - **The red-handed woman** — clan warrior, forty-odd, scar through one eyebrow, hands painted red to the wrist; pulled Darrow from the Wend (Prologue).
 - **Benedek Orrin** — knight of Hollis's own Sixth Lance, not yet thirty; a boar spear through the shoulder at the ford and a fever after it; says his oath at every bell; the cot next to Hollis's at Saint Ysolde's (Ch 1 Interlude).
 - **Rae Thorne** — the carter who drives the last cart up the Holloway to the foot of the Steps: talks to her oxen and hardly to knights; twenty-seven or near it, honey-brown hair loose past her shoulders, grey-green eyes, a dark hooded cloak pinned with an iron clasp, a small brass bell on a cord at her belt. She drove Darrow and Hollis the last of the road and said one thing to Darrow all day (Prologue). She heard the Confessors' list read at the inn in Coldmere and climbed the Steps before the bell to bring it up; her cart and two oxen stand at the winch-house (Ch 1).
@@ -21,6 +21,8 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The Emberwardens** — an order that lived by the built fire; the Crown burned them three hundred years ago, halls, books and people, and made their name a curse: ember-mad (Ch 1 Sc 2).
 - **The winch-house** — at the foot of the Thousand Steps, where the stair comes out of the cloud: a grey block with a thread of smoke of its own; the House's loads come up from it by the cage, and the winch-brothers work the rope at the top (Ch 1).
 - **Rae's bell** — the small brass bell on a cord at the carter's belt, which rings when the cart jolts; rung three times at the foot of the Steps, it was answered from the cloud (Prologue).
+- **Old Mercy** — the House's sanctuary bell. While it rings at dawn and at dusk, no blade climbs the Steps or passes the gate; miss one ringing and the law lapses till the next. Sister Pell says it has lapsed twice, both times for snow, and never on her rope (Ch 1 Sc 3).
+- **The warming room** — off the cloister, nine steps down and no rail; Mother Ione has the one good chair by its fire and offers it to nobody; the council over the Confessors' list met there (Ch 1 Sc 3).
 - **The Grace** — the warmth a knight takes from an Oathstone when he kneels: every ache goes quiet, the morning sharpens, and he can hear his own heart; old knights call it "the Crown's hand on your back" (Prologue). At Harrow Ford it went out of the knights mid-river, and when it came back to Darrow it was a thread too thin to do anything but show him how cold he was (Prologue). The heralds say it departed for the faithlessness of their oaths; Benedek holds that it forgives, and comes back to those who kneel (Ch 1 Between). Maelis, who has had her fingers on knees that carried it for twenty years: it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know (Ch 1 Between). No one full of Grace has ever seen the script of the Reckoning (Ch 1 Sc 2).
 
 ## Songs and verses
@@ -41,3 +43,4 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"They'll count you up. Don't help."** — Rae Thorne, the one thing she said to Darrow on the last cart, as they lifted him onto the litter (Prologue).
 - **"Mercy's the word on the paper. The paper's the point."** — Hollis to Darrow, of why the Confessors want the Faithless to kneel where people can see (Ch 1 Between).
 - **"It holds things up. It doesn't mend them."** — Maelis, of the Grace, at the linen press (Ch 1 Between).
+- **"Ask the bell if it's tired."** — Sister Pell, asked whether she will ring Old Mercy dawn and dusk for as long as the grey cloaks care to wait; she has rung the House's bells fifty years (Ch 1 Sc 3).

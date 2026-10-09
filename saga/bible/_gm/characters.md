@@ -63,13 +63,13 @@ Appearance and voice: `cast.md`.
 
 ### Mother Ione — Prior of Saint Ysolde's
 Appearance and voice: `cast.md`.
-- Appearance and voice (not yet on the page; move to `cast.md` the day she is seen): the Prior of Saint Ysolde's, in her seventies, gentle in face and manner, with iron under the gentleness. She speaks in questions, and the questions are never idle.
+- On the page from Ch 1 Sc 3 (the council in the warming room); appearance and voice moved to `cast.md`.
 - Holds the sanctuary right and will die before she yields it. **Wants:** every name under her roof kept. **Fears:** the bell falling silent at a dusk when it must ring.
 - **Hides:** possibly what happened to Elspeth Ashdown (T6). In the low road of Book I she is left answerable to a Confessor's writ for every name in the House.
 
 ### Sister Pell — keeper of the bells
 Appearance and voice: `cast.md`.
-- Appearance and voice (not yet on the page; move to `cast.md` the day she is seen): keeper of the House's bells, old, and nearly deaf from fifty years of them. She reads lips, has no patience for fools, and says what the bells have left her breath for and not a word more.
+- On the page from Ch 1 Sc 3 (the council; "Not on my rope"; the cup that chatters, which Darrow read and nobody else looked at: the plant for b1.5); appearance and voice moved to `cast.md`.
 - Sanctuary is renewed by ringing at every dawn and dusk, and Sister Pell is old: that is the hinge of Book I's climax (Old Mercy, b1.5), where she is hurt and the bell falls silent until Wren climbs to ring it. Her glass in the bell tower saw the grey cloaks first.
 
 ### The red-handed woman

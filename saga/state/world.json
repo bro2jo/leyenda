@@ -45,21 +45,29 @@
       "after": 2,
       "covers": [],
       "written": "2026-10-09"
+    },
+    {
+      "scene": 3,
+      "title": "The Law of Bells",
+      "covers": [
+        "2026-10-09"
+      ],
+      "written": "2026-10-09"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, by the linen press at the door",
+    "detail": "the stair up from the warming room off the cloister, with Mother Ione in the doorway below",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it. Asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard the list read and climbed through the night to bring it up; her cart and two oxen stand at the winch-house at the foot of the Steps, where the grey cloaks will come first.",
+    "on_the_page": "Confessors are on the Holloway: six grey cloaks, a cart and a smoking censer, expected at the foot of the Steps by tomorrow night if the snow holds off, with a list of the Faithless at Saint Ysolde's that was read aloud at the inn in Coldmere. Hollis's name is second on it; asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard the list read and climbed through the night to bring it up; her cart and two oxen stand at the winch-house, where the grey cloaks will come first. Mother Ione has called a council: while Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade may climb the Steps or pass the gate, and Sister Pell says she will ring it for as long as they wait. The Prior has not yet said whether it will ring.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fourteen times to go down the Steps and been told no fourteen times.",
-  "last_beat": "At the linen press by the door, Darrow asked Maelis what the Grace is. She asked what it did; it holds things up, she said, it doesn't mend them. Faithless, she said, is a word that says the Grace left because of him; she asked whether he broke his oath, and told him to sit down.",
+  "last_beat": "Mother Ione's council in the warming room: Rae Thorne told how the list was read (slow, so the room could count); Maelis gave the law of Old Mercy (rung dawn and dusk, no blade climbs the Steps or passes the gate; miss one and the law lapses); Sister Pell, who has rung the bells fifty years, will ring it, and Darrow saw her cup chatter. On the stair Rae asked whether he rode a grey at the ford and did not say why. The Prior has asked him, before she decides whether Old Mercy rings, what he would have her know and what the lay brothers should tell the valley.",
   "companions": {
     "maelis": {
       "approval": 15,
