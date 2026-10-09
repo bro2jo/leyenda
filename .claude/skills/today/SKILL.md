@@ -12,7 +12,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - a knee session day: `python3 engine/darrow.py doc state "session a"` (or `"session b"`), plus `doc state "progression rules"` if a change is due;
    - every day: the daily-minimum and bike lines in `real/NOW.md` → Plan in force (`doc state "daily minimum"` for the full text);
    - an upper, accessory or power day: `doc addon 5` (sessions);
-   - a sport day (template `sport`): this week's row of `doc sport 6` (week 1 = Sun 10/11) and that week in the guide (`doc sportguide "week N"`), only as far as the current stage allows (`config.json → sport.stage`);
+   - a sport day (template `sport`): this week's row of `doc sport "first 12 weeks"` (week 1 = Sun 10/11) and that week in the guide (`doc sportguide "week N"`), only as far as the current stage allows (`config.json → sport.stage`);
    - a PT day: the question list in `real/NOW.md` → Next PT visit, and the newest `real/visits/` file if the last visit changed anything.
    The newest visit file outranks the state file until a checkpoint folds it in (`real/NOW.md` says when).
 3. Answer, real numbers only, compact enough for a phone:

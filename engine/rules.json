@@ -450,7 +450,7 @@
     }
   ],
   "sport_arts": {
-    "_about": "Set by /sport (10/9): maps a sport_log 'skill' (config.json -> sport.skills) to an Art. knot = the Knot from which the skill's first stage is practicable (real/plan/sport/sport_plan.md section 3); practice before it is banked.",
+    "_about": "Set by /sport (10/9): maps a sport_log 'skill' (config.json -> sport.skills) to an Art. knot = the Knot from which the skill's first phase of practice opens (real/plan/sport/sport_plan.md section 3); practice before it is banked.",
     "arts": [
       {
         "skill": "control",
@@ -489,7 +489,7 @@
         "id": "far_cast",
         "name": "The Far Cast",
         "tree": "Sport",
-        "knot": 3,
+        "knot": 2,
         "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be."
       },
       {
@@ -505,7 +505,7 @@
         "id": "shadow_step",
         "name": "The Shadow-Step",
         "tree": "Sport",
-        "knot": 5,
+        "knot": 3,
         "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
       }
     ]

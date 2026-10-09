@@ -42,7 +42,7 @@ For each item:
 - `knee_as_planned=Y` only when he says or clearly implies the session ran as written (one change per exercise at most, per the Working Rules).
 - Exercise detail: `python3 engine/darrow.py ex add '[…]'`. Use the existing CSV's style (see recent rows). If he just says "Session A as written", one row is enough: `{"date":…, "session":"home", "block":"knee", "exercise":"Session A as written", "side":"L"}`.
 - Upper body: `session` = `upperA`/`upperB`/`accessory`/`power`/`arms`; log main lifts with sets × reps × load.
-- Sport (a throwing or film session): `python3 engine/darrow.py sport add '[…]'`, one row per skill worked, in the format of `python3 engine/darrow.py doc sport logging`. The current stage (`config.json → sport.stage`; `doc sport 3`) decides what's allowed: standing, pivoting, max-effort or movement work before it is cleared is logged truthfully, its gate named in one plain sentence, no scolding, no story reward.
+- Sport (a throwing or film session): `python3 engine/darrow.py sport add '[…]'`, one row per skill worked, in the format of `python3 engine/darrow.py doc sport logging`. The current phase decides what's allowed (`config.json → sport.stage`; `doc sport 3`): a pivot before Phase 4, max-intent throws before Phase 5, or movement before the throw before its phase is logged truthfully, its gate named in one plain sentence, no scolding, no story reward. From Phase 4 a pivot bout is knee load: it belongs on a knee-session day (`doc sport "the week"`).
 
 ## 5. Sync and reply
 - `python3 engine/darrow.py sync`. Read the **RECKONING CHANGES** lines.

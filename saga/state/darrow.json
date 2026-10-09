@@ -281,7 +281,7 @@
       "banked_rank": 0,
       "practice": 0,
       "next_at": 1,
-      "sealed_until_knot": 3,
+      "sealed_until_knot": null,
       "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be."
     },
     {
@@ -303,7 +303,7 @@
       "banked_rank": 0,
       "practice": 0,
       "next_at": 1,
-      "sealed_until_knot": 5,
+      "sealed_until_knot": 3,
       "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
     }
   ],

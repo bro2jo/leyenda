@@ -267,6 +267,9 @@
     "_about": "Set by /sport on 10/9. skills = the only valid sport_log.csv 'skill' values; each feeds a Sport Art (engine/rules.json -> sport_arts).",
     "name": "Ultimate",
     "position": "handler",
+    "throwing_hand": "right",
+    "pivot_foot": "left (the graft side)",
+    "setup": "a net through the Ohio winter (indoors or out), the field outdoors when dry; a partner sometimes, never relied on",
     "season": "offseason Oct 2026 (week 1 = Sun 10/11) -> late spring 2027",
     "target_return": "late spring 2027, by the rehab gates; for a cutting and pivoting sport the master plan treats 9 months (2027-05-24) as a minimum reference, after the return-to-sport battery",
     "plan": "real/plan/sport/sport_plan.md",
@@ -280,8 +283,8 @@
       "defense_iq",
       "defense_footwork"
     ],
-    "stage": "S0 (seated)",
+    "stage": "Phase 3: seated or square-stance standing, easy effort, no pivot, no step-out",
     "stage_since": "2026-10-09",
-    "stage_evidence": "Knot II tied; seated upper-body work is not a knee variable (add-on section 2); standing stages wait on Knot III and the PT (sport_plan.md section 3)"
+    "stage_evidence": "his decision 10/9: seated or standing throwing at easy effort now, the pivot from Phase 4, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
   }
 }

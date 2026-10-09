@@ -84,8 +84,8 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Liar's Shoulder** | Sport | fakes and deception | now |
 | **Overwall** | Sport | overhead throws | now |
 | **Tell-Reading** | Sport | film and study of defense | now |
-| **The Far Cast** | Sport | long throws | Knot III |
-| **The Shadow-Step** | Sport | defensive footwork | Knot V |
+| **The Far Cast** | Sport | long throws | now |
+| **The Shadow-Step** | Sport | defensive footwork | Knot III |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
 

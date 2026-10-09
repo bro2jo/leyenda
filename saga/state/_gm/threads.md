@@ -19,11 +19,11 @@
 | 12 | **Benedek Orrin introduced.** Hollis's Sixth, not yet thirty, spear through the shoulder, fever, says his oath at every bell and claims he still feels the warmth; offered Hollis the heralds' mercy | Ch 1 Interlude | b1.2 (the Grey Cot), `flags.benedek_hollowed` | on the page; Hollis lied to him kindly |
 | 13 | Hollis has thought for a fortnight of teaching the Captain to fight from a chair; and he is two days without a drink with nobody to tell | Ch 1 Interlude | Seated Blade, Hollis's arc | planted |
 
-**Set up 10/9 (`/sport`): the Sport Arts.** Seven Arts fed by his real throwing and defensive work (`engine/rules.json → sport_arts`): *The Measured Hand*, *The Wicket Gate*, *The Liar's Shoulder*, *Overwall* and *Tell-Reading* open now; *The Far Cast* at Knot III; *The Shadow-Step* at Knot V. Who teaches them:
+**Set up 10/9 (`/sport`): the Sport Arts.** Seven Arts fed by his real throwing and defensive work (`engine/rules.json → sport_arts`): *The Measured Hand*, *The Wicket Gate*, *The Liar's Shoulder*, *Overwall*, *Tell-Reading* and *The Far Cast* open now; *The Shadow-Step* at Knot III (revised 10/9 with the sport plan's phases). Who teaches them:
 - **Hollis teaches the first, *The Measured Hand*, from a chair**: throwing as the first lesson of "win sitting" (thread 13). Knives into a post across the ward, a pebble into a well-bucket, a coin onto a sill, Wren keeping the tally in the ledger. After the q1.wager seed if that quest ran, otherwise its own slot. **Chapter 2's plan carries a quest or spine slot for it** (set at the 10/11 `plan chapter open`; no unwritten slot in Chapter 1 fits). *Overwall* can follow from him in Book I, before he stays behind.
 - *The Liar's Shoulder*, *The Wicket Gate* and *The Shadow-Step* belong to **Ysra Tal** in Book II, if he earns her (the Finesse mentor).
 - *Tell-Reading* is earned, not taught: the first time Darrow reads a foe's hips and hands on the page and is right.
-- *The Far Cast*: when Knot III ties, whoever is with him.
+- *The Far Cast* is earned, not taught: the first time he puts a long throw into a moving ally's hands on the page.
 Each Art is named on the page only when it is taught or earned (the site's sheet already lists it, as it lists every Art). Never anything real in the prose.
 
 ## Paid off
