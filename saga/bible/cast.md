@@ -7,7 +7,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Dry and quick, deflecting with a joke, and the jokes stop dead the moment something matters. He uses a person's full name when he is angry. He talks to the knee under his breath, and swears at it.
 
 ## Maelis Vorne
-- **Appearance:** Small, somewhere in her fifties, grey hair in a braid, forearms seamed with old scars, fingers stained with ink. A clay pipe of bitterleaf sits clamped in her teeth and is never lit; it travels from one side of her mouth to the other when she is deciding something. She can sit for a long time with two fingers on a joint and her eyes shut.
+- **Appearance:** Small, somewhere in her fifties, a deeply lined, weathered face, steady grey eyes, a few old nicks of scar at the corner of her mouth and chin, grey hair pulled back into a long braid worn over one shoulder, forearms seamed with old scars, fingers stained with ink. She dresses for the cold in a worn dark coat and a frayed wool scarf. A clay pipe of bitterleaf sits clamped in her teeth and is never lit; it travels from one side of her mouth to the other when she is deciding something. She can sit for a long time with two fingers on a joint and her eyes shut. Her portrait (`saga/art/characters/maelis-vorne.jpg`) is canon for her face.
 - **Voice:** Clinical, in short sentences. She offers no comfort she cannot back up, and praise from her is rare enough to land like something heavy dropped on a floor. She answers a question with a sharper question. *"How does it feel?" "Wrong question. What did it do this morning?"*
 
 ## Ser Hollis Garrow

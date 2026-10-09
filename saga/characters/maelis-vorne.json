@@ -14,7 +14,9 @@
     "faction": "menders",
     "mark": "needle"
   },
-  "appearance": "Small and somewhere in her fifties, grey hair in a braid, scarred forearms, ink on her fingers. A clay pipe of bitterleaf stays clamped in her teeth, unlit; it shifted from one side of her mouth to the other when Darrow asked how many Bindings she had done. She was first seen standing in the gate at the top of the Steps with her arms folded, looking at a knight's leg as if it had said something rude. She speaks in short sentences and offers no comfort she can't back up; sitting on the end of a cot with two fingers on a joint and her eyes shut, she can stay still for a long time, and when she opens them and looks at a man properly, it is worse than the Reading.",
+  "appearance": "Small and somewhere in her fifties, with a deeply lined, weathered face, steady grey eyes and a few old nicks of scar at the corner of her mouth and chin. Her grey hair is pulled back and worn in a long braid over one shoulder; she dresses for the cold in a worn dark coat and a frayed wool scarf, and her forearms are seamed with old scars, her fingers stained with ink. A clay pipe of bitterleaf stays clamped in her teeth, unlit, and shifts from one side of her mouth to the other when she is deciding something. She can sit for a long time with two fingers on a joint and her eyes shut, and when she opens them and looks at a man properly, it is worse than the Reading.",
+  "portrait": "characters/maelis-vorne.jpg",
+  "portrait_alt": "Portrait of Maelis Vorne: a lined, weathered woman in her fifties with steady grey eyes, grey hair in a long braid over one shoulder, an unlit clay pipe in her teeth, a worn dark coat and frayed scarf, in a stone room with a snowy mountain window on one side and a fire on the other.",
   "first_seen": {
     "chapter": "00",
     "scene": "II",
