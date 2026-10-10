@@ -144,7 +144,10 @@
         "scene": "I"
       },
       "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here, halfway across, the Grace went out of the Ninth, and Darrow's knee gave way with no blade near it.",
-      "label_below": true
+      "label_below": true,
+      "image": "places/harrow-ford.jpg",
+      "image_alt": "Harrow Ford on a misty morning: a high, fast, mud-brown river churning white over stones. On the near bank, seen from behind, mounted knights in mail and helms hold long lances with sodden pennons, and beside them an ox-cart carries a great slab of black stone in an iron frame. Across the water, tall grey standing stones lean on a gravel shore where a ragged line of fighters with spears waits at the edge, ox-carts piled with bundles and old people behind them, a goat among them, under the dark old trees of a forest.",
+      "image_caption": "The Lances on the west bank, and the clans drawn up among the standing stones."
     },
     {
       "id": "the-thornwild",
