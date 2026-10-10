@@ -115,6 +115,79 @@ if (pvLinks.length) {
   document.addEventListener("keydown", function(e){ if (e.key === "Escape") { hide(); } });
   window.addEventListener("resize", hide);
 }
+/* songs: a link with data-song plays its song in place, one song at a time (the Codex's players included); press it
+   again to pause. While it plays out of sight a small dock keeps a pause button in reach. Without this file the link
+   opens the song. */
+var songLinks = document.querySelectorAll("a[data-song]");
+var players = document.querySelectorAll("audio");
+var hushPlayers = function(except){ Array.prototype.forEach.call(players, function(p){ if (p !== except && !p.paused) { p.pause(); } }); };
+if (songLinks.length && typeof Audio === "function") {
+  var tune = new Audio(), from = null, inView = true;
+  tune.preload = "none";
+  var dock = document.createElement("div");
+  dock.className = "song-dock"; dock.hidden = true;
+  dock.innerHTML = '<a class="song" href="#" role="button" aria-pressed="true"><svg class="sg-i" viewBox="0 0 16 16" aria-hidden="true">' +
+    '<path class="sg-play" d="M4 2.2v11.6L13.4 8z"/><path class="sg-pause" d="M3.5 2.5h3v11h-3zm6 0h3v11h-3z"/></svg><span class="sg-t"></span></a>' +
+    '<button class="x" type="button" aria-label="Stop">×</button>';
+  document.body.appendChild(dock);
+  var dockBtn = dock.querySelector(".song");
+  var watch = typeof IntersectionObserver === "function" ? new IntersectionObserver(function(es){
+    es.forEach(function(en){ if (en.target === from) { inView = en.isIntersecting; } });
+    paint();
+  }) : null;
+  var paint = function(){
+    var on = !!from && !tune.paused;
+    Array.prototype.forEach.call(songLinks, function(a){
+      var me = a === from;
+      a.classList.toggle("on", me && on);
+      a.setAttribute("aria-pressed", String(me && on));
+      if (!me) { a.style.removeProperty("--p"); }
+    });
+    dockBtn.classList.toggle("on", on);
+    dockBtn.setAttribute("aria-pressed", String(on));
+    dockBtn.setAttribute("aria-label", (on ? "Pause " : "Play ") + (from ? from.getAttribute("data-song") : ""));
+    dock.hidden = !from || (inView && !!watch);
+  };
+  var stop = function(){
+    tune.pause();
+    if (from && watch) { watch.unobserve(from); }
+    if (from) { from.style.removeProperty("--p"); }
+    from = null; inView = true; dockBtn.style.removeProperty("--p"); paint();
+  };
+  var toggle = function(){
+    if (!tune.paused) { tune.pause(); return; }
+    hushPlayers(null);
+    var pr = tune.play();
+    if (pr && pr.catch) { pr.catch(paint); }
+  };
+  Array.prototype.forEach.call(songLinks, function(a){
+    a.setAttribute("role", "button");
+    a.setAttribute("aria-pressed", "false");
+    a.addEventListener("click", function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) { return; }
+      e.preventDefault();
+      if (from === a) { toggle(); return; }
+      stop();
+      from = a; tune.src = a.getAttribute("href");
+      dock.querySelector(".sg-t").textContent = a.getAttribute("data-song");
+      if (watch) { watch.observe(a); }
+      toggle();
+    });
+  });
+  dockBtn.addEventListener("click", function(e){ e.preventDefault(); toggle(); });
+  dock.querySelector(".x").addEventListener("click", stop);
+  tune.addEventListener("play", paint);
+  tune.addEventListener("pause", paint);
+  tune.addEventListener("ended", stop);
+  tune.addEventListener("timeupdate", function(){
+    if (!from || !tune.duration) { return; }
+    var p = (100 * tune.currentTime / tune.duration).toFixed(1) + "%";
+    from.style.setProperty("--p", p); dockBtn.style.setProperty("--p", p);
+  });
+  Array.prototype.forEach.call(players, function(p){ p.addEventListener("play", function(){ tune.pause(); hushPlayers(p); }); });
+} else {
+  Array.prototype.forEach.call(players, function(p){ p.addEventListener("play", function(){ hushPlayers(p); }); });
+}
 /* the Codex: a link to an entry (#place-…, #faction-…, #codex-…) opens it */
 var openTarget = function(){
   var id = decodeURIComponent(location.hash.slice(1)), t = id && document.getElementById(id);
