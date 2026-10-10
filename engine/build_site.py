@@ -6,13 +6,15 @@ Reads (and nothing else):
   saga/characters/*.json                   the cast, as the page has shown it
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, codex_art.json, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
-  saga/art/                                images the user supplies, published as files when places.json names one
+  saga/art/                                images and songs the user supplies, published as files when places.json names one
                                            or factions.json names one (image, image_alt, image_caption, image_focus; only
                                            for an entry already on the page), or codex_art.json names one for a codex.md
                                            entry (same keys plus name) or a character file does (portrait,
                                            portrait_alt, portrait_focus). Every picture sits
                                            in a fixed frame (places 16:9, portraits square) and is cropped to fit, never
                                            stretched; *_focus ("50% 30%") picks the crop's centre; tap shows it whole.
+                                           A song (saga/art/songs/, codex_art.json audio + audio_title) plays in its Codex
+                                           entry and from a small button in the story where the page sings it.
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -33,6 +35,11 @@ Conventions the parser and the checks rely on:
               the page, or a codex.md thing (to its Codex entry, #place-<id> / #faction-<id> / #codex-<slug>) is a link
               carrying a preview: its picture if it has one, a title and one line (characters: name and epithet only).
               Hover or focus on a desktop; first tap on a touch screen. Places and factions may list `aliases`.
+  Songs       a codex.md entry with audio in codex_art.json: the Codex shows the browser's player; in the story a small
+              play button follows the first linked mention of its name in a scene, or ends the first block (paragraph,
+              quote, epigraph) that sings one of the lines its entry quotes in italics (four words or more). Once per
+              scene. An MP3's embedded lyrics (ID3 USLT) must all be lines the chronicle already has (the build fails
+              otherwise; the rest of a song stays in the Annals until the page sings it).
   Bearing     saga/state/bearing.json (optional): four axes, each {value, left, right}, plus names and epithet.
               Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the current epithet as a
               chip. The pole words are always allowed on the site; the current epithet only once the chronicle has
@@ -66,6 +73,8 @@ ART = SAGA / "art"
 RULES = ROOT / "engine" / "rules.json"
 IMAGE_TYPES = {".webp", ".png", ".jpg", ".jpeg"}
 IMAGE_MAX_BYTES = 3 * 1024 * 1024
+AUDIO_TYPES = {".mp3", ".m4a", ".ogg", ".opus"}
+AUDIO_MAX_BYTES = 10 * 1024 * 1024
 READ_ALLOW = [CHRON, CHARS, ART, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
               STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "codex_art.json", STATE / "chapters.csv",
               STATE / "rolls.csv", RULES]
@@ -126,6 +135,59 @@ def image_size(path):
                 return int.from_bytes(b[i + 7:i + 9], "big"), int.from_bytes(b[i + 5:i + 7], "big")
             i += 2 + seg
     return None
+
+
+def mp3_lyrics(path):
+    """The lyrics an MP3 carries in its ID3v2 tag (USLT frames), as a list of lines, or None when it carries none.
+    Standard library only; anything it cannot parse reads as no lyrics."""
+    path = Path(path)
+    if not any(path == a or a in path.parents for a in READ_ALLOW):
+        raise SystemExit(f"build refuses to read {path}")
+    b = path.read_bytes()
+    if b[:3] != b"ID3" or b[3] not in (3, 4):
+        return None
+    ver, flags = b[3], b[5]
+    synch = lambda x: (x[0] << 21) | (x[1] << 14) | (x[2] << 7) | x[3]
+    tag = b[10:10 + synch(b[6:10])]
+    if flags & 0x80:  # whole-tag unsynchronisation
+        tag = tag.replace(b"\xff\x00", b"\xff")
+    i = 0
+    if flags & 0x40:  # extended header
+        i = synch(tag[:4]) if ver == 4 else 4 + int.from_bytes(tag[:4], "big")
+    out = []
+    while i + 10 <= len(tag) and tag[i:i + 4].strip(b"\0"):
+        fid, raw = tag[i:i + 4], tag[i + 4:i + 8]
+        size = synch(raw) if ver == 4 else int.from_bytes(raw, "big")
+        fflags = int.from_bytes(tag[i + 8:i + 10], "big")
+        data = tag[i + 10:i + 10 + size]
+        i += 10 + size
+        if fid != b"USLT" or len(data) < 5:
+            continue
+        if ver == 4 and fflags & 0x0002:
+            data = data.replace(b"\xff\x00", b"\xff")
+        if ver == 4 and fflags & 0x0001:
+            data = data[4:]
+        enc, body = data[0], data[4:]
+        codec, nul = {0: ("latin-1", b"\0"), 1: ("utf-16", b"\0\0"), 2: ("utf-16-be", b"\0\0")}.get(enc, ("utf-8", b"\0"))
+        j = 0
+        while True:  # the content descriptor ends at the first null on a character boundary
+            j = body.find(nul, j)
+            if j < 0 or len(nul) == 1 or j % 2 == 0:
+                break
+            j += 1
+        text = body[j + len(nul):] if j >= 0 else body
+        try:
+            text = text.decode(codec)
+        except UnicodeDecodeError:
+            continue
+        out += [ln.strip() for ln in re.split(r"\s+/\s+|[\r\n]+", text.strip("\0")) if ln.strip()]
+    return out or None
+
+
+def words_of(s):
+    """Plain words, for matching sung lines against the page whatever the punctuation, emphasis or line breaks."""
+    s = html.unescape(str(s)).lower().replace("’", "'").replace("‘", "'")
+    return " ".join(re.findall(r"[a-z0-9]+(?:'[a-z0-9]+)*", s))
 
 
 def esc(s):
@@ -849,12 +911,15 @@ class Site:
             p["_image_focus"] = self.focus_style(f"{src}: {pid}.image_focus", p.get("image_focus"), "50% 50%")
 
     def attach_codex_art(self):
-        """saga/state/codex_art.json (optional): pictures for codex.md entries, {"entries": [{name, image, image_alt,
-        image_caption, image_focus}]}. The name must be an entry the Codex renders under Things or Beasts and others."""
+        """saga/state/codex_art.json (optional): pictures and songs for codex.md entries, {"entries": [{name, image,
+        image_alt, image_caption, image_focus, audio, audio_title}]}, each with an image, an audio file or both. The name
+        must be an entry the Codex renders outside Sayings. A song (audio) plays in its Codex entry, and in the story
+        wherever the page sings its lines (the italic lines of its codex.md entry) or links its name."""
+        self.songs = {}  # codex anchor -> {path, title, cues}
         path = STATE / "codex_art.json"
         if not path.exists():
             return
-        by_name = {e["name"]: e for _sec, _bucket, e, _anchor in self.codex_things()}
+        by_name = {e["name"]: (e, anchor) for _sec, _bucket, e, anchor in self.codex_things()}
         seen = set()
         for a in load_json(path).get("entries", []):
             nm = str(a.get("name") or "")
@@ -863,16 +928,58 @@ class Site:
                 problem(f"{where} is listed twice")
                 continue
             seen.add(nm)
-            e = by_name.get(nm)
+            e, anchor = by_name.get(nm) or (None, None)
             if not e:
-                problem(f"{where} is not a codex.md entry the Codex shows (Sayings have no pictures; a person, place or "
+                problem(f"{where} is not a codex.md entry the Codex shows (Sayings take no pictures or songs; a person, place or "
                         f"faction with its own file takes its picture there)")
                 continue
-            got = self.register_image(f"{where}.image", a.get("image"), a.get("image_alt"))
-            if got:
-                e["_image_path"], e["_image_size"] = got
-                e["_image_focus"] = self.focus_style(f"{where}.image_focus", a.get("image_focus"), "50% 50%")
-                e["image_alt"], e["image_caption"] = a.get("image_alt", ""), a.get("image_caption", "")
+            if not a.get("image") and not a.get("audio"):
+                problem(f"{where} has neither an image nor an audio file")
+                continue
+            if a.get("image"):
+                got = self.register_image(f"{where}.image", a.get("image"), a.get("image_alt"))
+                if got:
+                    e["_image_path"], e["_image_size"] = got
+                    e["_image_focus"] = self.focus_style(f"{where}.image_focus", a.get("image_focus"), "50% 50%")
+                    e["image_alt"], e["image_caption"] = a.get("image_alt", ""), a.get("image_caption", "")
+            if a.get("audio"):
+                self.attach_song(where, e, anchor, a.get("audio"), a.get("audio_title"))
+
+    def attach_song(self, where, e, anchor, audio, title):
+        """A codex entry's song: registered as an asset, its cues (the lines its codex.md entry quotes in italics, four
+        words or more) taken for the story, and its embedded lyrics, if any, held to what the page has already sung."""
+        src = (ART / str(audio)).resolve()
+        if ART.resolve() not in src.parents:
+            problem(f"{where}.audio '{audio}' must be a path under saga/art/")
+            return
+        if src.suffix.lower() not in AUDIO_TYPES:
+            problem(f"{where}.audio '{audio}' must be one of {', '.join(sorted(AUDIO_TYPES))}")
+            return
+        if not src.is_file():
+            problem(f"{where}.audio '{audio}' does not exist under saga/art/")
+            return
+        if src.stat().st_size > AUDIO_MAX_BYTES:
+            problem(f"{where}.audio '{audio}' is over {AUDIO_MAX_BYTES // (1024 * 1024)} MB; shrink it before publishing")
+        if title is not None and not str(title).strip():
+            problem(f"{where}.audio_title is empty (leave it out to use the entry's name)")
+        path = f"art/{src.relative_to(ART.resolve()).as_posix()}"
+        self.assets[path] = src
+        cues = []
+        for seg in re.findall(r"(?<!\*)\*(?!\*)([^*]+)\*", e["text"]):
+            cues += [w for w in (words_of(x) for x in seg.split(" / ")) if len(w.split()) >= 4]
+        if not cues:
+            note(f"{where}: its codex.md entry quotes no lines in italics, so the story offers the song only where its name is linked")
+        lyrics = mp3_lyrics(src) if src.suffix.lower() == ".mp3" else None
+        if lyrics is None:
+            note(f"{where}: the audio carries no lyrics the build can read; make sure it sings only what the page has sung")
+        else:
+            page = f' {words_of(chr(10).join(read(p) for p in sorted(CHRON.glob("*.md"))))} '
+            for ln in lyrics:
+                if words_of(ln) and f" {words_of(ln)} " not in page:
+                    problem(f"{where}.audio sings a line the page has not: {ln[:60]!r} (a song may carry only what the "
+                            f"chronicle has already sung; the rest stays in the Annals)")
+        self.songs[anchor] = {"path": path, "title": str(title or e["name"]).strip(), "cues": cues}
+        e["_song"] = self.songs[anchor]
 
     def char_portrait(self, c):
         got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
@@ -913,9 +1020,41 @@ class Site:
                 f'<figcaption>{esc(cap)}{" · " if cap else ""}<span class="zoom-hint"><span class="t">Tap</span><span class="c">Click</span> to enlarge</span></figcaption></figure>')
 
     def codex_thumb(self, p, rel):
+        song = '<span class="song-tag" title="A song">♪</span>' if p.get("_song") else ""
         if not p.get("_image_path"):
+            return song
+        return song + f'<img class="thumb" src="{rel}{p["_image_path"]}" alt=""{p.get("_image_focus", "")} loading="lazy" decoding="async">'
+
+    def codex_song(self, e, rel):
+        """A codex entry's song: the browser's own player (works without JavaScript)."""
+        s = e.get("_song")
+        if not s:
             return ""
-        return f'<img class="thumb" src="{rel}{p["_image_path"]}" alt=""{p.get("_image_focus", "")} loading="lazy" decoding="async">'
+        href = rel + s["path"]
+        return (f'<figure class="codex-song"><figcaption>♪ {esc(s["title"])}</figcaption>'
+                f'<audio controls preload="metadata" src="{href}"><a href="{href}">Listen</a></audio></figure>')
+
+    def song_button(self, s, rel, compact=False):
+        """The small play button in the story: a link to the song that site.js plays in place (without it, the link
+        opens the file). compact: an icon only, after a linked name; otherwise an icon and the song's title."""
+        t = esc(s["title"])
+        label = "" if compact else f'<span class="sg-t">{t}</span>'
+        return (f'<a class="song{" compact" if compact else ""}" href="{rel}{s["path"]}" data-song="{t}" aria-label="Play {t}" title="Play {t}">'
+                f'<svg class="sg-i" viewBox="0 0 16 16" aria-hidden="true"><path class="sg-play" d="M4 2.2v11.6L13.4 8z"/>'
+                f'<path class="sg-pause" d="M3.5 2.5h3v11h-3zm6 0h3v11h-3z"/></svg>{label}</a>')
+
+    def song_cues(self, md, seen, rel):
+        """Play buttons for the songs whose lines this block sings and that have no button yet in this scene."""
+        if not self.songs:
+            return ""
+        w = f" {words_of(md)} "
+        out = []
+        for anchor, s in self.songs.items():
+            key = "song:t:" + anchor
+            if key not in seen and any(f" {c} " in w for c in s["cues"]):
+                seen.add(key)
+                out.append(self.song_button(s, rel))
+        return " ".join(out)
 
     # ---------------------------------------------------------------- helpers
     WORLD_GM_KEYS = ("chapter_plan", "core_beats", "flags", "factions")
@@ -1175,6 +1314,10 @@ class Site:
                 if not key or key == exclude or key in seen:
                     return m.group(1)
                 seen.add(key)
+                song = self.songs.get(key[2:]) if key.startswith("t:") else None
+                if song and "song:" + key not in seen:
+                    seen.add("song:" + key)
+                    return self.link_html(key, m.group(1), rel) + self.song_button(song, rel, compact=True)
                 return self.link_html(key, m.group(1), rel)
             out.append(self.name_re.sub(repl, part))
         return "".join(out)
@@ -1211,7 +1354,8 @@ class Site:
         for b in scene["blocks"]:
             kind = b[0]
             if kind == "p":
-                out.append(f"<p>{self.link_names(inline(b[1]), seen, rel)}</p>")
+                cue = self.song_cues(b[1], seen, rel)
+                out.append(f"<p>{self.link_names(inline(b[1]), seen, rel)}{' ' + cue if cue else ''}</p>")
             elif kind == "h":
                 out.append(f"<h3>{inline(b[1])}</h3>")
             elif kind == "hr":
@@ -1222,7 +1366,10 @@ class Site:
                 lines = "".join(f"<p>{inline(x)}</p>" for x in b[1] if x)
                 out.append(f'<aside class="reckoning"><p class="rk-h">⟦ THE RECKONING ⟧</p>{lines}</aside>')
             elif kind == "quote":
+                cue = self.song_cues(" ".join(b[1]), seen, rel)
                 lines = "".join(f"<p>{self.link_names(inline(x), seen, rel)}</p>" for x in b[1] if x)
+                if cue:
+                    lines += f'<p class="song-cue">{cue}</p>'
                 out.append(f"<blockquote>{lines}</blockquote>")
             elif kind == "dice":
                 out.append(f'<div class="dice"><span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>')
@@ -1263,7 +1410,9 @@ class Site:
         head.append(f'<h1 class="ch-title"><span class="lbl">{esc(ch["label"])}</span>{esc(ch["title"])}</h1>')
         if ch["epigraph"]:
             lines = "".join(f"<p>{inline(x)}</p>" for x in ch["epigraph"]["lines"])
-            src = f'<figcaption>— {inline(ch["epigraph"]["source"])}</figcaption>' if ch["epigraph"]["source"] else ""
+            cue = self.song_cues(" ".join(ch["epigraph"]["lines"]), set(), rel)
+            src = f'— {inline(ch["epigraph"]["source"])}' if ch["epigraph"]["source"] else ""
+            src = f'<figcaption>{src}{" " if src and cue else ""}{cue}</figcaption>' if src or cue else ""
             head.append(f'<figure class="epigraph"><blockquote>{lines}</blockquote>{src}</figure>')
         body = []
         for s in ch["scenes"]:
@@ -1745,7 +1894,7 @@ class Site:
         things, beasts, extra = [], [], {}
         for key, bucket, e, anchor in self.codex_things():
             item = {"name": e["name"], "id": anchor, "tag": self.codex_thumb(e, rel),
-                    "html": self.codex_figure(e, rel) + f"<p>{inline(e['text'])}</p>"}
+                    "html": self.codex_figure(e, rel) + self.codex_song(e, rel) + f"<p>{inline(e['text'])}</p>"}
             (things if bucket == "things" else beasts if bucket == "beasts" else extra.setdefault(key, [])).append(item)
         extra_secs = list(extra.items())
         secs.append(sec("Things", f"{len(things)}", rows(things) if things else '<p class="empty">Nothing yet.</p>'))
@@ -2300,7 +2449,7 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .epigraph{margin:0;padding:0 0 4px}
 .epigraph blockquote{margin:0;border-left:2px solid var(--brass-dim);padding-left:14px}
 .epigraph p{font-style:italic;color:var(--dim);font-size:17px;max-width:60ch}
-.epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px}
+.epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .scene-h{font-family:var(--display);font-weight:700;font-size:1.55rem;line-height:1.15;border-bottom:1px solid var(--rule);padding-bottom:6px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
 .scene.between{margin-left:14px;padding-left:14px;border-left:2px solid var(--rule)}
 .scene.between .scene-h{font-size:1.15rem;border-bottom:0;padding-bottom:0}
@@ -2347,6 +2496,27 @@ ol.choice li s{color:var(--faint)}
 .pager a{display:grid;gap:2px;align-content:start;color:var(--ink)}
 .pager a.next{text-align:right}
 .pager .lbl{font-size:.75rem}
+/* songs: a small play button where the story sings (site.js plays it in place), the browser's player in the Codex */
+.song{display:inline-flex;align-items:center;gap:6px;vertical-align:.1em;min-height:26px;padding:3px 11px 3px 8px;border:1px solid var(--brass-dim);border-radius:999px;
+  font-family:var(--label);font-style:normal;font-size:.8rem;letter-spacing:.06em;line-height:1;color:var(--brass);white-space:nowrap;
+  background:linear-gradient(90deg,rgba(207,166,95,.22) var(--p,0%),transparent var(--p,0%))}
+.song:hover{text-decoration:none;border-color:var(--brass)}
+.song .sg-i{width:11px;height:11px;fill:currentColor;flex:none}
+.song .sg-pause,.song.on .sg-play{display:none}
+.song.on .sg-pause{display:inline}
+.song.on{border-color:var(--brass)}
+.song.compact{width:26px;height:26px;padding:0;justify-content:center;margin-left:4px}
+.reader blockquote p.song-cue{font-size:inherit}
+.song-dock{position:fixed;right:12px;bottom:12px;z-index:30;display:flex;align-items:center;gap:8px;max-width:calc(100vw - 24px);padding:6px 6px 6px 8px;
+  background:var(--plate-hi);border:1px solid var(--brass-dim);border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.5);font-family:var(--label);font-size:.82rem;letter-spacing:.06em;color:var(--ink)}
+.song-dock[hidden]{display:none}
+.song-dock .song{min-height:30px}
+.song-dock .x{width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:var(--dim);font-size:1.2rem;line-height:1;cursor:pointer}
+.song-dock .x:hover{color:var(--ink)}
+.codex-song{margin:2px 0 6px;display:grid;gap:6px}
+.codex-song figcaption{font-family:var(--label);letter-spacing:.06em;font-size:.85rem;color:var(--brass)}
+.codex-song audio{width:100%;max-width:440px;height:40px}
+.archive summary .song-tag{flex:none;color:var(--brass);margin-right:8px;font-size:1rem;line-height:1}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -2473,6 +2643,79 @@ if (pvLinks.length) {
   document.addEventListener("keydown", function(e){ if (e.key === "Escape") { hide(); } });
   window.addEventListener("resize", hide);
 }
+/* songs: a link with data-song plays its song in place, one song at a time (the Codex's players included); press it
+   again to pause. While it plays out of sight a small dock keeps a pause button in reach. Without this file the link
+   opens the song. */
+var songLinks = document.querySelectorAll("a[data-song]");
+var players = document.querySelectorAll("audio");
+var hushPlayers = function(except){ Array.prototype.forEach.call(players, function(p){ if (p !== except && !p.paused) { p.pause(); } }); };
+if (songLinks.length && typeof Audio === "function") {
+  var tune = new Audio(), from = null, inView = true;
+  tune.preload = "none";
+  var dock = document.createElement("div");
+  dock.className = "song-dock"; dock.hidden = true;
+  dock.innerHTML = '<a class="song" href="#" role="button" aria-pressed="true"><svg class="sg-i" viewBox="0 0 16 16" aria-hidden="true">' +
+    '<path class="sg-play" d="M4 2.2v11.6L13.4 8z"/><path class="sg-pause" d="M3.5 2.5h3v11h-3zm6 0h3v11h-3z"/></svg><span class="sg-t"></span></a>' +
+    '<button class="x" type="button" aria-label="Stop">×</button>';
+  document.body.appendChild(dock);
+  var dockBtn = dock.querySelector(".song");
+  var watch = typeof IntersectionObserver === "function" ? new IntersectionObserver(function(es){
+    es.forEach(function(en){ if (en.target === from) { inView = en.isIntersecting; } });
+    paint();
+  }) : null;
+  var paint = function(){
+    var on = !!from && !tune.paused;
+    Array.prototype.forEach.call(songLinks, function(a){
+      var me = a === from;
+      a.classList.toggle("on", me && on);
+      a.setAttribute("aria-pressed", String(me && on));
+      if (!me) { a.style.removeProperty("--p"); }
+    });
+    dockBtn.classList.toggle("on", on);
+    dockBtn.setAttribute("aria-pressed", String(on));
+    dockBtn.setAttribute("aria-label", (on ? "Pause " : "Play ") + (from ? from.getAttribute("data-song") : ""));
+    dock.hidden = !from || (inView && !!watch);
+  };
+  var stop = function(){
+    tune.pause();
+    if (from && watch) { watch.unobserve(from); }
+    if (from) { from.style.removeProperty("--p"); }
+    from = null; inView = true; dockBtn.style.removeProperty("--p"); paint();
+  };
+  var toggle = function(){
+    if (!tune.paused) { tune.pause(); return; }
+    hushPlayers(null);
+    var pr = tune.play();
+    if (pr && pr.catch) { pr.catch(paint); }
+  };
+  Array.prototype.forEach.call(songLinks, function(a){
+    a.setAttribute("role", "button");
+    a.setAttribute("aria-pressed", "false");
+    a.addEventListener("click", function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) { return; }
+      e.preventDefault();
+      if (from === a) { toggle(); return; }
+      stop();
+      from = a; tune.src = a.getAttribute("href");
+      dock.querySelector(".sg-t").textContent = a.getAttribute("data-song");
+      if (watch) { watch.observe(a); }
+      toggle();
+    });
+  });
+  dockBtn.addEventListener("click", function(e){ e.preventDefault(); toggle(); });
+  dock.querySelector(".x").addEventListener("click", stop);
+  tune.addEventListener("play", paint);
+  tune.addEventListener("pause", paint);
+  tune.addEventListener("ended", stop);
+  tune.addEventListener("timeupdate", function(){
+    if (!from || !tune.duration) { return; }
+    var p = (100 * tune.currentTime / tune.duration).toFixed(1) + "%";
+    from.style.setProperty("--p", p); dockBtn.style.setProperty("--p", p);
+  });
+  Array.prototype.forEach.call(players, function(p){ p.addEventListener("play", function(){ tune.pause(); hushPlayers(p); }); });
+} else {
+  Array.prototype.forEach.call(players, function(p){ p.addEventListener("play", function(){ hushPlayers(p); }); });
+}
 /* the Codex: a link to an entry (#place-…, #faction-…, #codex-…) opens it */
 var openTarget = function(){
   var id = decodeURIComponent(location.hash.slice(1)), t = id && document.getElementById(id);
@@ -2520,7 +2763,10 @@ def main():
     shutil.copytree(tmp, DOCS)
     shutil.rmtree(tmp, ignore_errors=True)
     n_pages = sum(1 for k in site.pages if k.endswith(".html"))
-    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {len(site.assets)} image{'' if len(site.assets) == 1 else 's'} → docs/" + (
+    n_songs = sum(1 for k in site.assets if Path(k).suffix.lower() in AUDIO_TYPES)
+    n_img = len(site.assets) - n_songs
+    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {n_img} image{'' if n_img == 1 else 's'}"
+          + (f", {n_songs} song{'' if n_songs == 1 else 's'}" if n_songs else "") + " → docs/" + (
         f"  (with {len(PROBLEMS)} problem(s), forced)" if PROBLEMS else "  · all checks passed"))
     if PROBLEMS:
         for p in PROBLEMS:

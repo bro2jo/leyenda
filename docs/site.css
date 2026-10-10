@@ -335,7 +335,7 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .epigraph{margin:0;padding:0 0 4px}
 .epigraph blockquote{margin:0;border-left:2px solid var(--brass-dim);padding-left:14px}
 .epigraph p{font-style:italic;color:var(--dim);font-size:17px;max-width:60ch}
-.epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px}
+.epigraph figcaption{font-family:var(--label);letter-spacing:.06em;color:var(--faint);font-size:.85rem;margin-top:8px;padding-left:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .scene-h{font-family:var(--display);font-weight:700;font-size:1.55rem;line-height:1.15;border-bottom:1px solid var(--rule);padding-bottom:6px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
 .scene.between{margin-left:14px;padding-left:14px;border-left:2px solid var(--rule)}
 .scene.between .scene-h{font-size:1.15rem;border-bottom:0;padding-bottom:0}
@@ -382,6 +382,27 @@ ol.choice li s{color:var(--faint)}
 .pager a{display:grid;gap:2px;align-content:start;color:var(--ink)}
 .pager a.next{text-align:right}
 .pager .lbl{font-size:.75rem}
+/* songs: a small play button where the story sings (site.js plays it in place), the browser's player in the Codex */
+.song{display:inline-flex;align-items:center;gap:6px;vertical-align:.1em;min-height:26px;padding:3px 11px 3px 8px;border:1px solid var(--brass-dim);border-radius:999px;
+  font-family:var(--label);font-style:normal;font-size:.8rem;letter-spacing:.06em;line-height:1;color:var(--brass);white-space:nowrap;
+  background:linear-gradient(90deg,rgba(207,166,95,.22) var(--p,0%),transparent var(--p,0%))}
+.song:hover{text-decoration:none;border-color:var(--brass)}
+.song .sg-i{width:11px;height:11px;fill:currentColor;flex:none}
+.song .sg-pause,.song.on .sg-play{display:none}
+.song.on .sg-pause{display:inline}
+.song.on{border-color:var(--brass)}
+.song.compact{width:26px;height:26px;padding:0;justify-content:center;margin-left:4px}
+.reader blockquote p.song-cue{font-size:inherit}
+.song-dock{position:fixed;right:12px;bottom:12px;z-index:30;display:flex;align-items:center;gap:8px;max-width:calc(100vw - 24px);padding:6px 6px 6px 8px;
+  background:var(--plate-hi);border:1px solid var(--brass-dim);border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.5);font-family:var(--label);font-size:.82rem;letter-spacing:.06em;color:var(--ink)}
+.song-dock[hidden]{display:none}
+.song-dock .song{min-height:30px}
+.song-dock .x{width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:var(--dim);font-size:1.2rem;line-height:1;cursor:pointer}
+.song-dock .x:hover{color:var(--ink)}
+.codex-song{margin:2px 0 6px;display:grid;gap:6px}
+.codex-song figcaption{font-family:var(--label);letter-spacing:.06em;font-size:.85rem;color:var(--brass)}
+.codex-song audio{width:100%;max-width:440px;height:40px}
+.archive summary .song-tag{flex:none;color:var(--brass);margin-right:8px;font-size:1rem;line-height:1}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

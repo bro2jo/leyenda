@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing pictures for codex.md entries the Codex renders under Things or Beasts and others (not Sayings; a person, place or faction with its own file takes its picture there). Claude-owned. name: the entry's bold name exactly; image: a path under saga/art/ (e.g. codex/thistle.jpg); image_alt: what the picture shows; image_caption (optional) and image_focus (optional, \"X% Y%\"). The picture may show only what the page has put on the page.",
+  "_about": "Reader-facing pictures and songs for codex.md entries the Codex renders outside Sayings (a person, place or faction with its own file takes its picture there). Claude-owned. name: the entry's bold name exactly; then an image, an audio file or both. image: a path under saga/art/ (e.g. codex/thistle.jpg); image_alt: what the picture shows; image_caption (optional) and image_focus (optional, \"X% Y%\"). audio: a song under saga/art/songs/ (.mp3, .m4a, .ogg or .opus, up to 10 MB); audio_title (optional): the title its player shows, else the entry's name. It plays in the Codex entry and in the story wherever the page sings a line its codex.md entry quotes in italics, or links its name. The picture may show only what the page has put on the page; a song may sing only what the page has sung (the build checks an MP3's embedded lyrics).",
   "entries": [
     {
       "name": "Thistle",
@@ -7,6 +7,11 @@
       "image_alt": "Thistle, a dapple-grey mare, at a gallop across a muddy pasture, mouth open, mane and tail flying, with a split-rail fence, haystacks and a farmhouse under a bright sky behind her.",
       "image_caption": "Thistle, laughing in her way.",
       "image_focus": "60% 50%"
+    },
+    {
+      "name": "The Lowmarch counting rhyme",
+      "audio": "songs/count-the-lances.mp3",
+      "audio_title": "Count the Lances"
     }
   ]
 }
