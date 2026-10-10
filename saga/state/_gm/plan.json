@@ -92,7 +92,11 @@
             },
             null
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 2,
+            "by": "darrow"
+          }
         },
         "float": false,
         "status": "written",
@@ -362,29 +366,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where the Confessors will camp first.",
-  "open_micro": {
-    "slot": 6,
-    "chapter": 1,
-    "scene": "3",
-    "opened": "2026-10-09",
-    "ask": "What does Darrow say?",
-    "axis": "candor_guile",
-    "options": [
-      "\"If Old Mercy rings, it rings for a man who will never kneel again, not for the House's sake either. Decide knowing it.\"",
-      "\"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it.\"",
-      "Say nothing."
-    ],
-    "bearing": [
-      {
-        "candor": 1
-      },
-      {
-        "guile": 1
-      },
-      null
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": []
   }

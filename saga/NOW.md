@@ -12,7 +12,8 @@
 - **With him:** Mother Ione (the Prior, asking questions that are never idle) · Maelis Vorne (has told him what she dared, not where she learned it) · Hollis Garrow (second on the list, drinking less) · Wren Ashdown (frightened, hiding it in numbers).
 - **Also in the House:** Rae Thorne, the carter of the last cart, who has asked whether he rode a grey at the ford and not said why; her cart and two oxen stand at the winch-house below, in the grey cloaks' path. Sister Pell, keeper of the bells, old.
 - **Next:** the grey cloaks reach the foot of the Steps by tomorrow night, if the snow holds off.
-- **Open choice (small):** what Darrow says to Mother Ione. 1. *"If Old Mercy rings, it rings for a man who will never kneel again, not for the House's sake either. Decide knowing it."* 2. *"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it."* 3. Say nothing.
+- **Answered:** to the Prior, *"Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it."* Her answer comes in the next scene.
+- **Open choice:** none. The next comes at the chapter's climax.
 
 *Open threads and the GM's plan live under `saga/state/_gm/` and never appear on this page.*
 

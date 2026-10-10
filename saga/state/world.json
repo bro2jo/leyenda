@@ -85,7 +85,18 @@
       "note": "afraid; hides it with numbers"
     }
   },
-  "choices": [],
+  "choices": [
+    {
+      "chapter": 1,
+      "scene": "3",
+      "kind": "micro",
+      "option": 2,
+      "text": "Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it.",
+      "date": "2026-10-09",
+      "ledger": "c01.1",
+      "by": "darrow"
+    }
+  ],
   "inventory": [
     "infirmary shirt and breeches",
     "a borrowed stick he refuses to use"

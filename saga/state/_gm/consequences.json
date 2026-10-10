@@ -8,7 +8,40 @@
     },
     "note": "approval before any ledger entry; check verifies baseline + sum(now.approval) == world.json"
   },
-  "entries": [],
+  "entries": [
+    {
+      "id": "c01.1",
+      "made": {
+        "chapter": 1,
+        "scene": "3",
+        "date": "2026-10-09"
+      },
+      "chose": "Asked the Prior to have the lay brothers tell the valley the Faithless went down the far side a week ago; for the river dead, to keep more blood off the House",
+      "now": {
+        "bearing": {
+          "guile": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c01.1a",
+          "when": "next",
+          "at": "ch01:s4",
+          "weight": "color",
+          "what": "Open on the Prior answering the lie with a question, and the lie going down the Steps with the winch-brothers; he said it remembering the river and the men it kept, to spare the House a fight",
+          "status": "pending"
+        },
+        {
+          "id": "c01.1b",
+          "when": "ch01:climax",
+          "at": "ch01:climax",
+          "weight": "color",
+          "what": "Marrant has heard the valley story and climbs anyway; one line of his about reading to empty beds",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
   "rules": [
     {
       "id": "r.finale.shatter",

@@ -10,7 +10,7 @@
       "right": "Flint"
     },
     "candor_guile": {
-      "value": 0,
+      "value": 1,
       "left": "Candor",
       "right": "Guile"
     },
@@ -37,5 +37,12 @@
   },
   "epithet": null,
   "leans": [],
-  "history": []
+  "history": [
+    {
+      "why": "c01.1",
+      "date": "2026-10-09",
+      "axis": "candor_guile",
+      "delta": 1
+    }
+  ]
 }
