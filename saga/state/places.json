@@ -74,7 +74,10 @@
         "scene": "1"
       },
       "description": "A place below the mountain with an inn, where the Confessors' list of the Faithless was read aloud; the news climbed to the House by carter, lay brother and kitchen.",
-      "label_below": true
+      "label_below": true,
+      "image": "places/coldmere.jpg",
+      "image_alt": "Coldmere at night in falling snow: a snow-roofed inn of stone and dark timber with a blank sign and warm-lit windows, a crowd standing still in the taproom behind the big window while a hooded figure in a grey cloak reads from a long paper. Grey horses stand tied at a rail. In the foreground an ox-cart loaded with sacks, a lantern hanging from it and its cloaked driver seen from behind, pulls away onto the dark road. Below, snowy roofs run down to a black, half-frozen lake under a wall of mountains and cloud.",
+      "image_caption": "The inn at Coldmere, the night the list was read, and a cart going out into the dark ahead of the grey cloaks."
     },
     {
       "id": "holloway",
@@ -144,7 +147,10 @@
         "scene": "I"
       },
       "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here, halfway across, the Grace went out of the Ninth, and Darrow's knee gave way with no blade near it.",
-      "label_below": true
+      "label_below": true,
+      "image": "places/harrow-ford.jpg",
+      "image_alt": "Harrow Ford on a misty morning: a high, fast, mud-brown river churning white over stones. On the near bank, seen from behind, mounted knights in mail and helms hold long lances with sodden pennons, and beside them an ox-cart carries a great slab of black stone in an iron frame. Across the water, tall grey standing stones lean on a gravel shore where a ragged line of fighters with spears waits at the edge, ox-carts piled with bundles and old people behind them, a goat among them, under the dark old trees of a forest.",
+      "image_caption": "The Lances on the west bank, and the clans drawn up among the standing stones."
     },
     {
       "id": "the-thornwild",
