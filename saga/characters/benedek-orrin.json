@@ -14,7 +14,9 @@
     "faction": "sixth-lance",
     "mark": "none"
   },
-  "appearance": "Not yet thirty, a knight of Hollis Garrow's own Sixth, on the cot next to his in the infirmary hall. A boar spear went through his shoulder at the ford and a fever came after it; the shoulder is wrapped like a parcel. He lies with his hands folded on the blanket and watches, with the eyes of a man who still feels a warmth in his chest, or says he does.",
+  "appearance": "Not yet thirty, a knight of Hollis Garrow's own Sixth, on the cot next to his in the infirmary hall. A broad, open face that looks younger than its years: freckles across the nose and cheeks, ears that stand out a little, brown eyes under brows that lift in the middle as if an apology were always ready, thick dark-brown curls gone damp and flattened by the pillow, and a week's brown beard he has not been able to shave. A boar spear went through his shoulder at the ford and a fever came after it; the fever sits red and high on his cheeks, and the shoulder is wrapped like a parcel and tied with cord. He lies with his hands folded on the blanket and watches, with the eyes of a man who still feels a warmth in his chest, or says he does.",
+  "portrait": "characters/benedek-orrin.jpg",
+  "portrait_alt": "Portrait of Ser Benedek Orrin: a young man with thick, damp dark-brown curls, brown eyes, freckles, ears that stand out a little, fever-flushed cheeks with sweat at the temples and a short brown beard, his brows lifted and lips parted, in a sweat-damp linen shirt with one shoulder bound in linen and tied with cord, a grey wool blanket pulled up to his chest, on a cot in a stone hall of cots with candles burning and snow at a high window.",
   "first_seen": {
     "chapter": "01",
     "scene": "interlude",
