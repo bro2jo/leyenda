@@ -53,11 +53,18 @@
         "2026-10-09"
       ],
       "written": "2026-10-09"
+    },
+    {
+      "scene": "between-3",
+      "title": "The Stone",
+      "after": 3,
+      "covers": [],
+      "written": "2026-10-09"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the stair up from the warming room off the cloister, with Mother Ione in the doorway below",
+    "detail": "his own cot in the infirmary hall, Hollis on the next cot with the knucklebones shut in his fist, the hour bell about to ring",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -67,7 +74,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council.",
-  "last_beat": "Mother Ione's council in the warming room: Rae Thorne told how the list was read (slow, so the room could count); Maelis gave the law of Old Mercy (rung dawn and dusk, no blade climbs the Steps or passes the gate; miss one and the law lapses); Sister Pell, who has rung the bells fifty years, will ring it, and Darrow saw her cup chatter. He asked to be sent down on the cage before the grey cloaks came; Maelis said no for the fifteenth time, and Rae said down is where they are. On the stair Rae asked whether he rode a grey at the ford and did not say why. The Prior has asked him, before she decides whether Old Mercy rings, what he would have her know and what the lay brothers should tell the valley.",
+  "last_beat": "Back at his cot after the council, Darrow read Hollis's hands as he had read Sister Pell's cup, asked once and was put off, and played him at knucklebones for a story told true. He caught the stone on the back of his hand; Hollis chanted the loser's lines and paid: two days without a drink, three by the dusk bell, and he had meant to tell somebody and couldn't think who. On Hollis's far side Benedek's lips began to move before either captain had heard the bell.",
   "companions": {
     "maelis": {
       "approval": 15,
@@ -75,7 +82,7 @@
       "note": "has told him what she dared, and not where she learned it"
     },
     "hollis": {
-      "approval": 30,
+      "approval": 32,
       "present": true,
       "note": "on the list, second; drinking less this week"
     },

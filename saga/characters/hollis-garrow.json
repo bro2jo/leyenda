@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-1",
+    "scene": "between-3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-1"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-3"
   },
-  "last_seen_doing": "On his cot, telling the Captain that a captain who won't kneel is a song in every taproom, and that the grey cloaks are better at waiting than he is.",
-  "now": "He lies in the infirmary hall of Saint Ysolde's, second on the list of the Faithless that the Confessors read out at the inn in Coldmere, with Benedek Orrin of his own Sixth on the next cot and the writ from Harrow Ford hidden, still unread, in the cup of the wooden leg under his cot. The Captain is back from Mender Vorne's cell and on the next cot, asking what the grey cloaks want; Hollis's answer is that mercy is the word on the paper, and the paper is the point. Six grey cloaks and a cart are on the Holloway below, and if the snow holds off they will reach the foot of the Steps by tomorrow night.",
+  "last_seen_doing": "On his cot with the knucklebones, losing the stone to the Captain and paying the story told true: two days without a drink, three by the dusk bell.",
+  "now": "He lies in the infirmary hall of Saint Ysolde's, second on the list of the Faithless that the Confessors read out at the inn in Coldmere, with Benedek Orrin of his own Sixth on the next cot and the writ from Harrow Ford hidden, still unread, in the cup of the wooden leg under his cot. He is two days without a drink, three by the dusk bell, and has told the Captain so, over knucklebones, because the Captain won the stone and a story told true was the stake. Six grey cloaks and a cart are on the Holloway below, and if the snow holds off they will reach the foot of the Steps by tomorrow night.",
   "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list.",
   "quote": {
     "text": "Mercy's the word on the paper. The paper's the point.",
@@ -126,6 +126,18 @@
       "chapter": "01",
       "scene": "between-1",
       "evidence": "Mercy's the word on the paper. The paper's the point."
+    },
+    {
+      "fact": "He had the knucklebones out, five sheep's knuckles on the blanket, and played Darrow for a story told true; when Darrow caught the stone he chanted the loser's lines and paid: two days without a drink, three by the dusk bell, and he had meant to tell somebody and couldn't think who.",
+      "chapter": "01",
+      "scene": "between-3",
+      "evidence": "I meant to tell somebody, and I couldn't think who."
+    },
+    {
+      "fact": "His hand under the falling bones was steady the way a thing is steady when it is being held still; when Darrow asked about his hands he called them a wonder of the age and told him to sit down or play.",
+      "chapter": "01",
+      "scene": "between-3",
+      "evidence": "steady the way a thing is steady when it is being held still"
     }
   ],
   "relationships": [
@@ -195,6 +207,10 @@
     {
       "chapter": "01",
       "scene": "between-1"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-3"
     }
   ]
 }

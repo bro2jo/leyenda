@@ -329,7 +329,7 @@ Said, not sung, by whoever rings the sanctuary bell at dusk, one line to each st
 > and the bell says so.
 
 ## rhyme.knucklebones — Knucklebones
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch01:between-3 · **names:** —
 - **use:** a Between with Hollis; a lay brothers' game; stakes in wicks.
 
 Five sheep's knuckles. Throw one up, sweep the rest, catch the one: ones, twos, threes, fours, then "the stone", all five swept and the thrown bone caught on the back of the hand. A miss passes the bones. Stakes are wicks, chores, or a story told true. The rhyme is chanted by whoever is losing.

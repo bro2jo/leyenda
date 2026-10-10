@@ -23,11 +23,11 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-1",
+    "scene": "between-3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-1"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-3"
   },
-  "last_seen_doing": "On the next cot, telling the Captain that the Grace forgives and comes back to those who kneel, then saying his oath at the bell.",
+  "last_seen_doing": "On the cot beyond Hollis's, his lips beginning to move for the bell before either captain had heard it.",
   "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his eyes shut and his oath on his lips. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up. He has told the Captain that the Grace forgives those who kneel, and had no answer when asked why mercy needs a list.",
   "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
   "quote": {
@@ -73,6 +73,12 @@
       "chapter": "01",
       "scene": "between-1",
       "evidence": "Benedek had no answer, and apologised for not having one."
+    },
+    {
+      "fact": "While the two captains played knucklebones he lay on the far side of Hollis's cot, and his lips began to move for his oath before either of them had heard the bell coming.",
+      "chapter": "01",
+      "scene": "between-3",
+      "evidence": "Benedek's lips had begun to move"
     }
   ],
   "relationships": [
@@ -106,6 +112,10 @@
     {
       "chapter": "01",
       "scene": "between-1"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-3"
     }
   ]
 }

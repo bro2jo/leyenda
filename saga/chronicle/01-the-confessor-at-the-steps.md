@@ -311,3 +311,31 @@ She looked at him the way she had once looked at his leg, and went on up without
 > Art learned: **The Long Breath** I. *Endure where others tire.*
 > Vigor 8 → 9
 > XP 870 → 948
+
+### Between — The Stone
+
+Hollis had the knucklebones out when Darrow came back from the stair, five yellow sheep's knuckles on the blanket, and was throwing them the way a man cleans a blade he has no use for.
+
+"She say yes?"
+
+"Fifteen."
+
+"Good." The bones went up and came down. Hollis's hand, going under them, was steady the way a thing is steady when it is being held still. Darrow looked at it once and then looked somewhere else, as the whole warming room had looked somewhere else that morning.
+
+"Your hands, Hollis."
+
+"My hands are a wonder of the age. Sit down or play."
+
+He sat. They played for a story told true, which is what you play for when neither man has a coin. Ones, twos, threes, fours: Hollis's thick fingers quicker than they had any right to be. Then the stone, all five swept and the thrown bone caught on the back of the hand.
+
+`[FINESSE · DC 11]` d20 **19** -1 finesse = **18** — *Success*
+
+The bone sat on Darrow's knuckles like it had been born there. Hollis looked at it for a long moment and then chanted, flat, because the loser chants: "*Three for the knight who won't come down, four for the bell and five for the hand.*"
+
+"Pay."
+
+"Two days." He gathered the bones. "Three, by the dusk bell. I meant to tell somebody, and I couldn't think who."
+
+"You've told the one man on this mountain who can't buy you a drink."
+
+"Aye. That was the thinking." Hollis shut his fist on the bones and lay back. On his far side, Benedek's lips had begun to move, which meant the bell was coming before either of them had heard it.

@@ -40,6 +40,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c01.2",
+      "made": {
+        "chapter": 1,
+        "scene": "between-3",
+        "date": "2026-10-09"
+      },
+      "chose": "Played Hollis at knucklebones for a story told true and won the stone: Hollis is two days dry, three by the dusk bell, and has now told the Captain",
+      "now": {
+        "approval": {
+          "hollis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c01.2a",
+          "when": "next",
+          "at": "ch01:s4",
+          "weight": "color",
+          "what": "Hollis is dry and Darrow knows it; neither says so in front of Benedek, and Darrow does not ask Hollis how he is",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
