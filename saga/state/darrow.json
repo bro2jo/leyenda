@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 948,
+  "xp": 963,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -44,7 +44,7 @@
       "raw": 9,
       "cap": null,
       "mod": -1,
-      "temper": 13,
+      "temper": 14,
       "next_at": 16,
       "fell": 12,
       "banked": false
@@ -125,7 +125,7 @@
       "tree": "Binding",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 3,
+      "practice": 4,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."

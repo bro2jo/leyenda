@@ -11,3 +11,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-09 · body · The cold that got into his hands this morning has gone out of them. He flexes them on the blanket and they close all the way, without argument.
 - 2026-10-09 · ledger · From Wren's ledgers: Times the Captain was told to sit down today: 1. Times he sat: 1. (Underlined twice.)
 - 2026-10-09 · weather · Dusk came up out of the valley before it came down out of the sky, and the lower Steps went blue one flight at a time, like someone walking up them putting out lamps.
+- 2026-10-10 · house · A lay brother bringing the morning kindling stopped at Darrow's cot to tell him he looked like a man who'd slept. He had. It was the first thing said about him in days that wasn't a warning.
