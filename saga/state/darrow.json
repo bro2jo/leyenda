@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-09",
+  "asof": "2026-10-10",
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
@@ -51,7 +51,7 @@
     }
   },
   "ember": {
-    "value": 77,
+    "value": 80,
     "tier": "Steady",
     "effect": "none"
   },
@@ -319,7 +319,7 @@
   },
   "chapter_now": {
     "week_start": "2026-10-04",
-    "through": "2026-10-09",
+    "through": "2026-10-10",
     "tier_so_far": "Costly",
     "chapter": 1
   },
