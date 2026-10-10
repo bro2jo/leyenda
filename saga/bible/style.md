@@ -54,7 +54,7 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 ## 3. Formats
 
 ### A daily scene (written when a day is closed)
-- **150–400 words**, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file.
+- **300–550 words**, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file.
 - Every daily scene is exactly one **kind**, fixed when the chapter is planned: **spine** (advances the chapter's core beat; at least two per chapter, and Saturday's slot is always spine), **quest** (one stage of an active side quest; at most two stages of one quest per chapter), **interlude** (another POV, at most one per chapter, heading `### Interlude — Title`, not tied to a day), or **cutaway** (a red-light day: the world moves without him; never a setback frame).
 - Tone is coloured by that day's deeds (see the table above); the content is the planned slot's, and the outcome is set only at the climax. The plot moves forward every day regardless.
 - A missed day gets no scene. The next scene opens with one off-page world move from the chapter's planned list, then carries on.

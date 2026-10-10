@@ -31,7 +31,7 @@
   },
   "last_seen_doing": "At Mother Ione's council, telling how the list was read at Coldmere; afterwards, on the stair, asking Darrow whether he rode a grey at the ford, and going on up without saying why.",
   "now": "In the House, where she stood by the door of the warming room at Mother Ione's council with snow melting on her shoulders. Her cart and two oxen wait at the winch-house below, in the grey cloaks' path. She has asked Darrow whether he rode a grey at the ford and not said why.",
-  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks later she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, in the grey cloaks' path.",
+  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, in the grey cloaks' path.",
   "quote": {
     "text": "Slow. So the room could count.",
     "chapter": "01",
@@ -103,7 +103,7 @@
     {
       "to": "darrow",
       "label": "the knight she drove to the foot of the Steps",
-      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks later he knew her cart from the infirmary window and had not forgotten it."
+      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks after the Binding he knew her cart from the infirmary window and had not forgotten it."
     },
     {
       "to": "hollis-garrow",
@@ -140,7 +140,7 @@
       }
     ],
     "deeper": [
-      "The rope has her measure, and she has its."
+      "She says a thing once, and \"Aye\" does the work of a paragraph."
     ]
   },
   "appearances": [
