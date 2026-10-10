@@ -7,7 +7,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Thistle** — Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3).
 - **The red-handed woman** — clan warrior, forty-odd, scar through one eyebrow, hands painted red to the wrist; pulled Darrow from the Wend (Prologue).
 - **Benedek Orrin** — knight of Hollis's own Sixth Lance, not yet thirty; a boar spear through the shoulder at the ford and a fever after it; says his oath at every bell; the cot next to Hollis's at Saint Ysolde's (Ch 1 Interlude).
-- **Rae Thorne** — the carter who drives the last cart up the Holloway to the foot of the Steps: talks to her oxen and hardly to knights; twenty-seven or near it, honey-brown hair loose past her shoulders, grey-green eyes, a dark hooded cloak pinned with an iron clasp, a small brass bell on a cord at her belt. She drove Darrow and Hollis the last of the road and said one thing to Darrow all day (Prologue). She heard the Confessors' list read at the inn in Coldmere and climbed the Steps before the bell to bring it up; her cart and two oxen stand at the winch-house (Ch 1).
+- **Rae Thorne** — the carter who drives the last cart up the Holloway to the foot of the Steps: talks to her oxen and hardly to knights; twenty-seven or near it, strong through the shoulders from hauling, a small brass bell on a cord at her belt that she never seems to hear. She drove Darrow and Hollis the last of the road and said one thing to Darrow all day (Prologue). She heard the Confessors' list read at the inn in Coldmere and climbed the Steps before the bell to bring it up; her cart and two oxen stand at the winch-house (Ch 1).
 
 ## Places and things
 - **Field-stones** — slabs of black Oathstone in iron frames, one per lance, hauled on ox-carts; knights kneel and touch them before battle to be filled with Grace (Prologue).
@@ -52,4 +52,5 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"They'll count you up. Don't help."** — Rae Thorne, the one thing she said to Darrow on the last cart, as they lifted him onto the litter (Prologue).
 - **"Mercy's the word on the paper. The paper's the point."** — Hollis to Darrow, of why the Confessors want the Faithless to kneel where people can see (Ch 1 Between).
 - **"It holds things up. It doesn't mend them."** — Maelis, of the Grace, at the linen press (Ch 1 Between).
+- **"Down's where they are."** — Rae Thorne, from the door of the warming room, when Darrow asked to be sent down the Steps before the grey cloaks came (Ch 1 Sc 3).
 - **"Ask the bell if it's tired."** — Sister Pell, asked whether she will ring Old Mercy dawn and dusk for as long as the grey cloaks care to wait; she has rung the House's bells fifty years (Ch 1 Sc 3).

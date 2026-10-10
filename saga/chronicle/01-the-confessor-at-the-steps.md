@@ -48,7 +48,7 @@ The pipe shifted from one side of her mouth to the other.
 
 "Technically," said a voice from the doorway, "I *embellish*."
 
-Wren Ashdown stood there in a cloak with snow on the shoulders, out of breath, her pencil behind her ear and her ledger clutched to her chest like a shield. Her cheeks were red from the wind. The rest of her face was white.
+Wren Ashdown stood there with snow on her shoulders and her ledger clutched to her chest like a shield. Her cheeks were red from the wind. The rest of her face was white.
 
 "Bell tower," she said. "Sister Pell's glass. There are riders on the Holloway: six of them, and a cart. Grey cloaks." She swallowed. "And a censer. Smoking. In the snow, which you'd think would be impractical."
 
@@ -76,11 +76,11 @@ Below the window the world fell away. Cloud filled the valley like milk in a bow
 
 Nearer, where the stair came out of the cloud at the valley floor, the winch-house was a grey block with a thread of smoke of its own, and beside it, small as a seed, stood a cart with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. He knew that cart. He had ridden the last of the Holloway in it with a fever and a leg that belonged to someone else, and the woman driving it had said one thing to him all that day, and he had not forgotten it.
 
-He knew how this went. Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
+Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
 
 *Ride wide today.*
 
-He realized his hands were clenched on the stone sill. He made them open, and looked down at them.
+His hands were clenched on the stone sill. He made them open, and looked down at them.
 
 There was light on them.
 
@@ -152,17 +152,13 @@ The cell was hers: a cot, a shelf of stoppered jars, a shutter latched against t
 
 "Say what you saw."
 
-He said it. The script, the numbers, the fainter numbers standing behind them like men in a second rank.
+He said it. The script, the numbers, the fainter numbers standing behind them like men in a second rank. He said it the way he would have reported a ford: what was there, where it stood, nothing about what it meant.
 
 She listened with the pipe clamped and her eyes on his hands rather than his face, as if the light might come back if nobody looked at it directly. When he finished she said, "Good. You can read it. Most can't, the first time."
 
-"Most of who?"
+He looked at his hands too. Nothing. Grey morning on grey skin. He shut his eyes, since it had been sharper with them shut, and got only the dark and the smell of her pipe.
 
-"Most."
-
-"That's not a number either."
-
-"No." She took the pipe out. "There are two fires a man can carry, Captain. One is poured in. You knelt for it, you know what it feels like, and you know what it feels like when the hand that poured it takes it back."
+"It comes when it likes," she said. "Not when you call it." She took the pipe out. "There are two fires a man can carry, Captain. One is poured in. You knelt for it, you know what it feels like, and you know what it feels like when the hand that poured it takes it back."
 
 He said nothing. The river said it for him.
 
@@ -175,6 +171,14 @@ He said nothing. The river said it for him.
 "The Emberwardens."
 
 "Not in the hall." It came fast and flat. "Not to Wren. Not to the Prior. Not to Hollis, most of all. He's second on a list, and when they ask him what he knows, I want the honest answer to be nothing."
+
+"Hollis rode into that river beside me." He kept his voice down; the shutter was thin. "He's second on their paper, and he'll be lying on his back when they read it. If there's a fire a man can build, he's owed the knowing of it before I am."
+
+"He's owed a leg. He'll get a wooden one." She did not raise her voice either; she never had to. "A Confessor asks a man what he knows and watches his mouth while he answers. Let Hollis answer with nothing and mean it. Give him this, and you've put a thing in him for them to find, and he's the one they'll find it in."
+
+"And when he asks me?"
+
+"Then you'll lie to him. You've done harder things this week." She watched him take that. He took it. "Now ask me the other thing. You've been holding it since the hall."
 
 "How do you know all this?"
 
@@ -210,7 +214,7 @@ Hollis did. "Because a captain who won't kneel is a song," he said. "Every tapro
 
 "Then they wait. And they're better at waiting than you, Darrow of the fast feet. Everyone is."
 
-Darrow thought of two fires, one poured and one built, and kept both behind his teeth.
+Two fires, one poured and one built. Darrow kept both behind his teeth.
 
 Down the hall the bell began. Benedek shut his eyes and started his oath, and Hollis, for once, let him finish.
 
@@ -222,7 +226,7 @@ He found Maelis at the linen press by the door, folding boiled linen into square
 
 "Wrong question." She did not look up. "What did it do?"
 
-He thought about it. "Made the river a road. Made every ache go quiet. I could hear my own heart."
+It took him a moment. "Made the river a road. Made every ache go quiet. I could hear my own heart."
 
 "And when it went?"
 
@@ -230,23 +234,23 @@ He thought about it. "Made the river a road. Made every ache go quiet. I could h
 
 She folded another square. "I've had my fingers on knees that carried it for twenty years. It holds things up, Captain. It doesn't mend them. A man can run on a torn thing a long while with that under it, and never know it's torn." She laid the square on the pile. "That's what a Mender knows of it. The rest, ask a herald."
 
+"It didn't go," he said. "It was taken. Sixty men don't lose a thing in the same heartbeat by accident."
+
+"Then somebody took it." She said it the way she would have said *then it's broken*: a finding, not a side. "I was up here that day with my hands in another man's leg. I can tell you what it did to your knee. What it did at the ford, and whose doing, I don't know."
+
 "And Faithless?"
 
 "A word for a knight the Grace has left. It says it left because of him." The pipe went from one side of her mouth to the other. "Did you break your oath?"
 
 "No."
 
-"Then you know as much about that word as I do."
-
-"That's not an answer."
-
-"It's the one you came for." She settled the pile on her hip and went off down the hall with it, and said over her shoulder, without turning: "Sit down. You've walked enough today."
+"Then you know as much about that word as I do." She settled the pile on her hip and went off down the hall with it, and said over her shoulder, without turning: "Sit down. You've walked enough today."
 
 ### Scene 3 — The Law of Bells
 
 He had sat as ordered for an hour when a novice fetched him to the warming room off the cloister. Nine steps down, no rail. He took them with a hand to the wall, and the knee held on every one, which he took as a compliment.
 
-Mother Ione had the one good chair and offered it to nobody: small and upright, white hair under a linen coif, a soft face creased like a winter apple, pale eyes that counted each of them in turn. Maelis stood by the fire. Beside it, in two shawls, sat a woman so old she might have been cut from the hearthstone, watching the Prior's mouth. Rae Thorne stood by the door, snow melting on her shoulders.
+Mother Ione had the one good chair and offered it to nobody: small and very upright by the fire, white hair cropped close under a linen coif, with pale eyes that counted each of them in turn as they came in and did not stop at Darrow any longer than at the rest. Maelis stood at the hearth. Beside it, in two shawls, sat a woman so old she might have been cut from the hearthstone, watching the Prior's mouth. Rae Thorne stood by the door, snow melting on her shoulders.
 
 "How did they read it, Rae?" said the Prior. "Loud?"
 
@@ -270,7 +274,23 @@ Mother Ione had the one good chair and offered it to nobody: small and upright, 
 
 She set her cup on the hearth, and Darrow saw the knuckles, swollen like walnuts, and the cup chatter twice before it settled. He read it before he meant to, the way he read a line before a charge. Nobody else looked.
 
-The council broke with nothing decided aloud. On the stair Rae stopped one step above him, so that for once they were eye to eye.
+So that was the law. A bell, a rope, and a pair of hands that had rung the dawn through fifty winters and would ring it through this one until they could not; and the Prior's soft face, creased like a winter apple, giving nothing away about whether she had counted the same thing he had.
+
+"Mother." He had not meant to speak first. "Don't spend it on me. They're a day off. The Steps are open until they're standing at the bottom of them, and I can walk to the chapel and back twice without a stick. Put me on the cage with the next load down, and the list has nothing to climb for."
+
+"Fifteen," said Maelis, to the fire.
+
+"I'm asking the Prior."
+
+"You're asking a woman who has never once told me my work. Fifteen, Captain, and the answer's the same as the other fourteen, and it'll be the same when it's fifty." She did not look round. "The thread is soft. Eleven hundred steps down is eleven hundred chances to tear it, and the cage is for salt."
+
+"Down's where they are," said Rae, from the door. It was the first thing she had said that was not an answer.
+
+Mother Ione let the silence sit a moment, the way she had let the chair sit empty.
+
+"Then the Captain has heard the law," she said, "and the Mender has heard the Captain, and I have heard you all. Sister, you'll hear from me before dusk. Rae, the lay brothers will want to know what to say to the valley, when it asks." The council broke with nothing decided aloud, which seemed to be how the House decided things.
+
+On the stair Rae stopped one step above him, so that for once they were eye to eye.
 
 "Did you ride a grey?" she said. "At the ford."
 

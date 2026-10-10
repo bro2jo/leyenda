@@ -25,7 +25,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
-  "last_seen_doing": "Holding her council in the warming room off the cloister, asking questions that are never idle; then calling Darrow back from the stair to ask what she ought to know before she decides whether Old Mercy rings.",
+  "last_seen_doing": "Holding her council in the warming room off the cloister, asking questions that are never idle, letting the Captain ask to be sent down and the Mender refuse him, and closing the council with nothing decided aloud; then calling Darrow back from the stair to ask what she ought to know before she decides whether Old Mercy rings.",
   "now": "Prior of Saint Ysolde's, with the grey cloaks a day from the foot of the Steps. She has heard how the list was read, had the law of Old Mercy said aloud, and asked Sister Pell whether she will ring it dawn and dusk for as long as they wait. She has not yet said whether it will ring; she has asked Darrow what she ought to know first, and what the lay brothers should tell the valley.",
   "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides.",
   "quote": {
@@ -55,6 +55,12 @@
       "chapter": "01",
       "scene": "3",
       "evidence": "Before I decide whether Old Mercy rings, is there anything you'd have me know?"
+    },
+    {
+      "fact": "She let the Captain ask to be sent down and the Mender answer him, then closed the council having heard them all: Sister Pell would hear from her before dusk, and the lay brothers would want to know what to say to the valley.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "you'll hear from me before dusk"
     }
   ],
   "relationships": [],

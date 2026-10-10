@@ -13,7 +13,7 @@
     "faction": "menders",
     "mark": "wheel"
   },
-  "appearance": "Twenty-seven, or near it, and strong through the shoulders in the way that comes from hauling rather than from Grace. She has a fair, open face with the wind's colour in it, grey-green eyes that stay on the road, and honey-brown hair that the hood of her cloak gives up holding, so that it falls loose past her shoulders and curls in the damp; her mouth smiles a little, at oxen more readily than at knights. She wears a dark hooded wool cloak pinned at the throat with a plain iron clasp over a linen shirt the colour of old cream, and a small brass bell hangs on a cord at her belt and rings whenever the cart jolts, which she never seems to hear. She drives the last cart up the Holloway to the foot of the Thousand Steps, talks to her oxen in whole sentences and to knights hardly at all, and looked at Darrow's hurt leg once, the way a carter looks at a cracked wheel.",
+  "appearance": "Twenty-seven, or near it, and strong through the shoulders in the way that comes from hauling rather than from Grace. She has a fair, open face with the wind's colour in it, grey-green eyes that stay on the road, and honey-brown hair that the hood of her cloak gives up holding, so that it falls loose past her shoulders and curls in the damp. She wears a dark hooded wool cloak pinned at the throat with a plain iron clasp over a linen shirt the colour of old cream, and a small brass bell hangs on a cord at her belt and rings whenever the cart jolts, which she never seems to hear. She drives the last cart up the Holloway to the foot of the Thousand Steps, talks to her oxen in whole sentences and to knights hardly at all, and looked at Darrow's hurt leg once, the way a carter looks at a cracked wheel.",
   "portrait": "characters/rae-thorne.jpg",
   "portrait_alt": "Portrait of Rae Thorne: a young woman of about twenty-seven with honey-brown hair falling loose past her shoulders, grey-green eyes and a small warm smile, in a dark hooded wool cloak pinned with a plain iron clasp over a cream linen shirt, before the stone and timber houses of a mountain village.",
   "portrait_focus": "50% 35%",
@@ -30,7 +30,7 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen_doing": "At Mother Ione's council, telling how the list was read at Coldmere; afterwards, on the stair, asking Darrow whether he rode a grey at the ford, and going on up without saying why.",
-  "now": "In the House, where she stood by the door of the warming room at Mother Ione's council with snow melting on her shoulders. Her cart and two oxen wait at the winch-house below, in the grey cloaks' path. She has asked Darrow whether he rode a grey at the ford and not said why.",
+  "now": "In the House, where she stood by the door of the warming room at Mother Ione's council with snow melting on her shoulders, and said, when Darrow asked to be sent down the Steps, that down is where they are. Her cart and two oxen wait at the winch-house below, in the grey cloaks' path. She has asked Darrow whether he rode a grey at the ford and not said why.",
   "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, in the grey cloaks' path.",
   "quote": {
     "text": "Slow. So the room could count.",
@@ -102,6 +102,12 @@
       "chapter": "01",
       "scene": "3",
       "evidence": "went on up without answering"
+    },
+    {
+      "fact": "When Darrow asked to be sent down the Steps before the grey cloaks came, she said from the door that down is where they are: the first thing she had said in the council that was not an answer.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "Down's where they are"
     }
   ],
   "relationships": [

@@ -29,8 +29,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
-  "last_seen_doing": "By the fire in the warming room at Mother Ione's council, giving the law of Old Mercy in two sentences when the Prior asked her to.",
-  "now": "At Saint Ysolde's, where she sat in Mother Ione's council over the Confessors' list and gave the law of the sanctuary bell. She has told Darrow what the script of the Reckoning counts and forbidden him to tell anyone, Hollis most of all.",
+  "last_seen_doing": "By the fire in the warming room at Mother Ione's council, giving the law of Old Mercy in two sentences when the Prior asked her to, and saying no to the Steps for the fifteenth time without looking round.",
+  "now": "At Saint Ysolde's, where she sat in Mother Ione's council over the Confessors' list and gave the law of the sanctuary bell; when Darrow asked to be sent down on the cage before the grey cloaks came, she said no for the fifteenth time. She has told Darrow what the script of the Reckoning counts and forbidden him to tell anyone, Hollis most of all.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow.",
   "quote": {
     "text": "The quiet is a liar.",
@@ -113,22 +113,40 @@
       "evidence": "I'm a Mender. We remember things."
     },
     {
+      "fact": "When Darrow argued that Hollis was owed the knowing of the built fire, she said Hollis is owed a leg and will get a wooden one, that a Confessor watches a man's mouth while he answers, that Hollis must be able to answer with nothing and mean it, and that when he asks, Darrow will lie to him.",
+      "chapter": "01",
+      "scene": "2",
+      "evidence": "Let Hollis answer with nothing and mean it"
+    },
+    {
       "fact": "Of the Grace: she has had her fingers on knees that carried it for twenty years; it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know. Of Faithless: a word for a knight the Grace has left, which says it left because of him.",
       "chapter": "01",
       "scene": "between-2",
       "evidence": "It holds things up, Captain. It doesn't mend them."
     },
     {
+      "fact": "Told the Grace was taken rather than lost, she agreed that then somebody took it, a finding and not a side, and said she was up here that day with her hands in another man's leg: what it did at the ford, and whose doing, she does not know.",
+      "chapter": "01",
+      "scene": "between-2",
+      "evidence": "What it did at the ford, and whose doing, I don't know"
+    },
+    {
       "fact": "At the Prior's council she gave the law: while Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate; miss one ringing and the law lapses till the next.",
       "chapter": "01",
       "scene": "3"
+    },
+    {
+      "fact": "When Darrow asked the council to send him down on the cage before the grey cloaks came, she answered for the fifteenth time, to the fire and without looking round, that the answer is the same as the other fourteen and will be the same at fifty: the thread is soft, eleven hundred steps down are eleven hundred chances to tear it, and the cage is for salt.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "Fifteen, Captain, and the answer's the same as the other fourteen"
     }
   ],
   "relationships": [
     {
       "to": "darrow",
       "label": "the knight whose knee she bound",
-      "note": "She read his knee at the top of the Steps, bound it with emberthread when he chose her way off the mountain, and has said no fourteen times when he asked to go down; he does the dawn forms because she would know if he didn't, though he has no idea how."
+      "note": "She read his knee at the top of the Steps, bound it with emberthread when he chose her way off the mountain, and has said no fifteen times when he asked to go down; he does the dawn forms because she would know if he didn't, though he has no idea how."
     },
     {
       "to": "wren-ashdown",

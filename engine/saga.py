@@ -1898,16 +1898,18 @@ def chapter_blocks(world):
         elif CHOICE_HEAD_RE.match(s):
             key, title = "choice", CHOICE_HEAD_RE.match(s).group(1)
         if key is not None:
-            out.append([key, title.strip(), 0])
+            out.append([key, title.strip(), 0, False])
         elif out and s:
             out[-1][2] += len(s.split())
+            if s.startswith("**What does Darrow"):
+                out[-1][3] = True  # a small choice: the scene may run to 800 (style.md §3)
     return [tuple(b) for b in out]
 
 
 def chapter_headings(world):
     """[(key, title)] of the current chapter file's scene-like headings; None when the file is missing."""
     blocks = chapter_blocks(world)
-    return None if blocks is None else [(k, t) for k, t, _ in blocks]
+    return None if blocks is None else [(k, t) for k, t, _, _ in blocks]
 
 
 def norm_title(t):
@@ -2221,8 +2223,10 @@ def cmd_check(args):
     for s in slots:
         if s.get("status") in ("planned", "next") and not str(s.get("turn") or "").strip():
             notes.append(f"slot {s.get('n')} ({s.get('day') or 'interlude'}) has no turn ({TURN_HINT}): `plan slot {s.get('n')} turn=\"…\"`, or state one in a line before writing")
-    for key, title, n in (chapter_blocks(world) or []):
+    for key, title, n, choice in (chapter_blocks(world) or []):
         band = WORD_BANDS.get("scene" if key.isdigit() else key.split("-")[0])
+        if band and choice and key.isdigit():
+            band = (band[0], 800)
         if band and (n < band[0] * 0.8 or n > band[1] * 1.2):
             label = f"Scene {key}" if key.isdigit() else key.capitalize()
             notes.append(f"{label} ({title}) runs {n:,} words against a band of {band[0]}–{band[1]}: a fifth outside the band is a reread, never a cut (style.md §3)")
