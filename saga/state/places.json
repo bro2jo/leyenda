@@ -54,7 +54,10 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "At the foot of the Thousand Steps, where the stair comes out of the cloud at the valley floor: a grey block with a thread of smoke of its own, and the cage the House's loads come up by. Rae Thorne's cart stands beside it with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter."
+      "description": "At the foot of the Thousand Steps, where the stair comes out of the cloud at the valley floor: a grey block with a thread of smoke of its own, and the cage the House's loads come up by. Rae Thorne's cart stands beside it with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter.",
+      "image": "places/winch-house.jpg",
+      "image_alt": "The winch-house: a low grey stone house with an icicled, snow-heavy slate roof and a thin thread of chimney smoke, built against the foot of a sheer cliff; a fire glows in its open door, a rope runs from a drum on its wall up into the cloud, an iron cage loaded with sacks waits beside it, a stair climbs the cliff in switchbacks, and two shaggy oxen stand in the snow by an empty wooden cart.",
+      "image_caption": "The winch-house where the stair comes out of the cloud, and Thorne's cart and two oxen in the snow."
     },
     {
       "id": "coldmere",
