@@ -107,7 +107,10 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "Darrow's country: he had the fastest feet in it, and its children count the lances in a rhyme. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north."
+      "description": "Darrow's country: he had the fastest feet in it, and its children count the lances in a rhyme. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north.",
+      "image": "places/the-lowmarch.jpg",
+      "image_alt": "A Lowmarch village on a wet afternoon: thatched timber cottages around a puddled green, flat fields of green and gold divided by hedgerows running to a low horizon under grey cloud. A grey stone bell-house with a bronze bell in its open belfry stands at the centre, and on its steps a herald reads from an unrolled parchment to villagers holding their hats, children sitting on a stone wall. In the foreground an ox-cart carrying hurt men wrapped in blankets rolls along the muddy road.",
+      "image_caption": "A bell-house in the Lowmarch: the herald on its steps, and a cart going by."
     },
     {
       "id": "the-wend",
