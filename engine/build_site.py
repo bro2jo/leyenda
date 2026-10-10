@@ -4,11 +4,12 @@
 Reads (and nothing else):
   saga/chronicle/*.md                      the story, by chapter
   saga/characters/*.json                   the cast, as the page has shown it
-  saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, chapters.csv, rolls.csv
+  saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, codex_art.json, chapters.csv, rolls.csv
   engine/rules.json                        game data (knots, arts, ranks)
   saga/art/                                images the user supplies, published as files when places.json names one
                                            or factions.json names one (image, image_alt, image_caption, image_focus; only
-                                           for an entry already on the page) or a character file does (portrait,
+                                           for an entry already on the page), or codex_art.json names one for a codex.md
+                                           entry (same keys plus name) or a character file does (portrait,
                                            portrait_alt, portrait_focus). Every picture sits
                                            in a fixed frame (places 16:9, portraits square) and is cropped to fit, never
                                            stretched; *_focus ("50% 30%") picks the crop's centre; tap shows it whole.
@@ -66,7 +67,8 @@ RULES = ROOT / "engine" / "rules.json"
 IMAGE_TYPES = {".webp", ".png", ".jpg", ".jpeg"}
 IMAGE_MAX_BYTES = 3 * 1024 * 1024
 READ_ALLOW = [CHRON, CHARS, ART, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
-              STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "chapters.csv", STATE / "rolls.csv", RULES]
+              STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "codex_art.json", STATE / "chapters.csv",
+              STATE / "rolls.csv", RULES]
 
 VERBOSE = "--verbose" in sys.argv
 FORCE = "--force" in sys.argv
@@ -799,6 +801,7 @@ class Site:
             if len(hits) > 1:
                 problem(f"world.json: companions.{key} matches more than one character file ({', '.join(hits)})")
         self.codex = self.parse_codex()
+        self.attach_codex_art()
         self.eye = next((a["rank"] for a in self.darrow.get("arts", []) if a["id"] == "wardens_eye"), 0)
         self.linkers = self.build_linkers()
 
@@ -834,7 +837,8 @@ class Site:
         return f' style="object-position:{m.group(1)}% {m.group(2)}%"'
 
     def codex_image(self, src, p):
-        """A codex entry's picture (a place in places.json or a faction in factions.json): only once it is on the page."""
+        """A codex entry's picture (a place in places.json or a faction in factions.json): only once it is on the page.
+        A codex.md entry's picture comes from codex_art.json (attach_codex_art)."""
         pid = p.get("id", "?")
         if not p.get("on_page"):
             problem(f"{src}: {pid} has an image but is not on the page yet (an image would show it early)")
@@ -843,6 +847,32 @@ class Site:
         if got:
             p["_image_path"], p["_image_size"] = got
             p["_image_focus"] = self.focus_style(f"{src}: {pid}.image_focus", p.get("image_focus"), "50% 50%")
+
+    def attach_codex_art(self):
+        """saga/state/codex_art.json (optional): pictures for codex.md entries, {"entries": [{name, image, image_alt,
+        image_caption, image_focus}]}. The name must be an entry the Codex renders under Things or Beasts and others."""
+        path = STATE / "codex_art.json"
+        if not path.exists():
+            return
+        by_name = {e["name"]: e for _sec, _bucket, e, _anchor in self.codex_things()}
+        seen = set()
+        for a in load_json(path).get("entries", []):
+            nm = str(a.get("name") or "")
+            where = f"codex_art.json: {nm or '?'}"
+            if nm in seen:
+                problem(f"{where} is listed twice")
+                continue
+            seen.add(nm)
+            e = by_name.get(nm)
+            if not e:
+                problem(f"{where} is not a codex.md entry the Codex shows (Sayings have no pictures; a person, place or "
+                        f"faction with its own file takes its picture there)")
+                continue
+            got = self.register_image(f"{where}.image", a.get("image"), a.get("image_alt"))
+            if got:
+                e["_image_path"], e["_image_size"] = got
+                e["_image_focus"] = self.focus_style(f"{where}.image_focus", a.get("image_focus"), "50% 50%")
+                e["image_alt"], e["image_caption"] = a.get("image_alt", ""), a.get("image_caption", "")
 
     def char_portrait(self, c):
         got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
@@ -1087,7 +1117,7 @@ class Site:
             key = "t:" + anchor
             nm = e["name"]
             self.link_targets[key] = {"href": f"codex/index.html#{anchor}", "t": nm, "s": "From the Codex", "x": excerpt(e["text"]),
-                                      "i": None, "k": "wide", "f": ""}
+                                      "i": e.get("_image_path"), "k": "wide", "f": focus_of(e.get("_image_focus"))}
             names = set(article_variants(nm))
             rest = nm[4:] if nm.startswith("The ") else ""
             if rest and (len(rest.split()) >= 2 or rest[:1].isupper()):
@@ -1714,7 +1744,8 @@ class Site:
         secs.append(sec("Sayings", f"{len(sayings)}", rows(sayings)))
         things, beasts, extra = [], [], {}
         for key, bucket, e, anchor in self.codex_things():
-            item = {"name": e["name"], "id": anchor, "tag": "", "html": f"<p>{inline(e['text'])}</p>"}
+            item = {"name": e["name"], "id": anchor, "tag": self.codex_thumb(e, rel),
+                    "html": self.codex_figure(e, rel) + f"<p>{inline(e['text'])}</p>"}
             (things if bucket == "things" else beasts if bucket == "beasts" else extra.setdefault(key, [])).append(item)
         extra_secs = list(extra.items())
         secs.append(sec("Things", f"{len(things)}", rows(things) if things else '<p class="empty">Nothing yet.</p>'))
