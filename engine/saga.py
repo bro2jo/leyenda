@@ -44,6 +44,8 @@ Commands (run from the repo root):
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
   challenge N success|fail|show|void    a slot's challenge (design §5.6): move a counter after each roll; it resolves when progress or strain fills
   invite N take|pass|show               a slot's invitation: taken when he answers in voice (a Between), passed at the next close if he has not
+  plan quest ID gate='beats.b1_1.status == "done"'   a quest's gate in the rule grammar (a beat id with its dot as an underscore; also quests.ID.status, flags.x, approval.x, tether.stage):
+                                        `check` refuses a planned slot of the quest while it is not met; `plan next` prints it
   project ID show | work --where chNN:between-K --what TEXT
                                         the Book's project quest: note a hand laid on it between stages; its trace lives in world.json → projects[]
   due --later                           callbacks: due items with when=later, fired wherever they fit, one per scene at most
@@ -408,7 +410,7 @@ def pending_items(ledger):
 RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.USub, ast.Compare,
               ast.Attribute, ast.Name, ast.Constant, ast.Load,
               ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Eq, ast.NotEq)
-KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether")
+KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats")
 
 
 def tether_stage():
@@ -481,6 +483,10 @@ def term_lookup(parts, st):
         return qid in q, (q.get(qid, {}).get("status") or "")
     if root == "tether" and parts[1:] == ["stage"]:
         return True, tether_stage()
+    if root == "beats" and len(parts) == 3 and parts[-1] == "status":  # beats.b1_1.status (the beat id with its dot written as an underscore)
+        bid = parts[1].replace("_", ".", 1)
+        b = plan.get("core_beats", {})
+        return bid in b, (b.get(bid, {}).get("status") or "")
     return False, 0
 
 
@@ -859,21 +865,72 @@ def under_pressure_for(text):
     return out
 
 
-def known_place_ids():
-    """The ids in saga/state/places.json, whichever shape the file takes (a list of places, or an object keyed by id or holding a `places` list)."""
+def known_places():
+    """{id: entry} from saga/state/places.json, whichever shape the file takes (a list, or an object keyed by id or holding a `places` list)."""
     path = ROOT / "saga/state/places.json"
     if not path.exists():
-        return set()
+        return {}
     data = load_json(path)
     if isinstance(data, dict):
         inner = data.get("places")
         if isinstance(inner, list):
             data = inner
         elif isinstance(inner, dict):
-            return set(inner.keys())
+            return dict(inner)
         else:
-            return {k for k in data.keys() if not str(k).startswith("_")}
-    return {x.get("id") if isinstance(x, dict) else str(x) for x in data}
+            return {k: v for k, v in data.items() if not str(k).startswith("_")}
+    return {(x.get("id") if isinstance(x, dict) else str(x)): (x if isinstance(x, dict) else {}) for x in data}
+
+
+def known_place_ids():
+    return set(known_places().keys())
+
+
+def art_names():
+    """{art id: name} from engine/rules.json, the knightly Arts and the sport Arts alike."""
+    rules = load_json(ROOT / "engine/rules.json")
+    out = {a["id"]: a["name"] for a in rules.get("arts", [])}
+    out.update({a["id"]: a["name"] for a in (rules.get("sport_arts") or {}).get("arts", [])})
+    return out
+
+
+def arts_spoken():
+    """The Art ids the chronicle has named, in prose or a Reckoning box. An Art on the sheet but not on the page is locked for devices."""
+    text = "\n".join(p_.read_text(encoding="utf-8") for p_ in sorted((ROOT / "saga/chronicle").glob("*.md"))).lower()
+    return {aid for aid, name in art_names().items() if name.lower() in text}
+
+
+def character_status(who):
+    """(id, status) of the character file `who` names (an id, or its first token), or (None, None) when nobody on the page matches."""
+    who = str(who or "").strip().lower()
+    for p_ in sorted((ROOT / "saga/characters").glob("*.json")):
+        if p_.stem == who or p_.stem.split("-")[0] == who:
+            try:
+                return p_.stem, (load_json(p_).get("status") or "")
+            except Exception:
+                return p_.stem, ""
+    return None, None
+
+
+NAME_STOP = {"The", "And", "But", "Then", "When", "While", "Not", "Nothing", "Nobody", "His", "Her", "She", "Him", "They", "Them", "What", "Who", "Where", "Why", "How", "Only", "Darrow", "Captain", "Ser"}
+
+
+def unknown_names_in(text):
+    """Capitalised words, not sentence-first, in GM device text that no registry knows: a name the page has not spoken would leak through a scene or a Between."""
+    reg = registered_names()
+    found = set()
+    for sent in re.split(r"(?<=[.!?:;])\s+|\n", str(text or "")):
+        words = re.findall(r"[A-Za-z][A-Za-z'-]+", sent)
+        for w in words[1:]:
+            if w[0].isupper() and len(w) >= 3 and w not in NAME_STOP and w.lower() not in reg:
+                found.add(w)
+    return found
+
+
+def gate_state(expr, st):
+    """('MET'|'NOT MET'|'MALFORMED'|'UNKNOWN TERM', detail) for a quest gate written in the rule grammar (design §5.6)."""
+    state, detail = rule_state({"id": "gate", "if": str(expr), "then": "", "where": ""}, st)
+    return ("MET" if state == "ARMED" else state), detail
 
 
 def device_kinds(slots, quests):
@@ -906,9 +963,11 @@ def device_summary(plan):
 def print_challenge(s, indent="  "):
     c = s.get("challenge") or {}
     print(f"{indent}challenge ({c.get('status')}): {c.get('objective')}")
+    spoken, names = arts_spoken(), art_names()
     for a in c.get("approaches") or []:
         art = f" + {a['art']}" if a.get("art") else ""
-        print(f"{indent}  · {a.get('name')}: {a.get('stat')}{art} · DC {a.get('dc')}")
+        lock = f"  ⚠ locked: the page has not named {names.get(a['art'], a['art'])}" if a.get("art") and a["art"] not in spoken else ""
+        print(f"{indent}  · {a.get('name')}: {a.get('stat')}{art} · DC {a.get('dc')}{lock}")
     res = c.get("result") or {}
     print(f"{indent}  progress {c.get('progress', 0)}/{c.get('goal')} · strain {c.get('strain', 0)}/{c.get('limit')} · if won: {short(res.get('won'), 90)} · if lost: {short(res.get('lost'), 90)}")
     print(f"{indent}  after each roll: `saga.py challenge {s.get('n')} success|fail`; the counters never reach the page")
@@ -931,6 +990,11 @@ def print_slot(s, full=False, plan=None):
             b = (m.get("bearing") or [None] * len(m["options"]))[i - 1]
             bt = f" [{', '.join(f'{k} {v:+d}' for k, v in b.items())}]" if b else ""
             print(f"    {i}. {opt}{bt}" + ("  (default)" if m.get("default") == i else ""))
+    if plan is not None and s.get("kind") == "quest":
+        gate = (plan.get("quests", {}).get(s.get("quest")) or {}).get("gate")
+        if gate:
+            state, detail = gate_state(gate, State())
+            print(f"  gate: {gate} · {state}" + (" (locked: the slot cannot be written yet)" if state != "MET" else "") + (f" · {detail}" if detail else ""))
     if s.get("challenge"):
         print_challenge(s)
     if s.get("invite"):
@@ -1625,6 +1689,10 @@ def cmd_plan(args):
         clash = sorted(device_kinds(ordered["slots"], plan.get("quests", {})) & set(ordered["previous_devices"]))
         if clash:
             print(f"⚠ {', '.join(clash)} ran in chapter {old.get('number')} too; a device kind rests a chapter (design §5.6): `check` will refuse the plan")
+        for s in ordered["slots"]:
+            gate = (plan.get("quests", {}).get(s.get("quest")) or {}).get("gate") if s.get("kind") == "quest" else None
+            if gate and gate_state(gate, st)[0] != "MET":
+                print(f"⚠ slot {s.get('n')} plans {s.get('quest')} while its gate ({gate}) is not met: locked; `check` will refuse it until the story gets there")
         # what the outgoing chapter leaves behind: unwritten slots are named; owed world moves carry over
         old = plan.get("chapter", {})
         left = [s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
@@ -2232,6 +2300,9 @@ def cmd_project(args):
         st.save()
         print(f"{args.id}: work noted at {args.where}; the next stage's scene shows it")
     total = arc_quest_stage_count(args.id)
+    if q.get("gate"):
+        g_state, g_detail = gate_state(q["gate"], st)
+        print(f"gate: {q['gate']} · {g_state}" + (" (locked)" if g_state != "MET" else "") + (f" · {g_detail}" if g_detail else ""))
     print(f"{args.id} · {q.get('status')} · stage {q.get('stage', 0)}" + (f"/{total}" if total else "") + f" · work noted: {len(q.get('work', []))}")
     for w in q.get("work", []):
         print(f"  {w.get('where')}: {w.get('what')}")
@@ -2471,9 +2542,16 @@ def cmd_check(args):
             probs.append(f"Saturday's slot ({sat}) must be spine")
         if len(day_slots) == 7 and not sat_slot:
             probs.append(f"7 day slots but none on Saturday {sat}")
-    # devices (design §5.6): one per slot, none on neighbouring days, the chapter's kinds capped and rotated
+    # devices (design §5.6): one per slot, none on neighbouring days, the chapter's kinds capped and rotated;
+    # and gated by the page: an Art the chronicle has named, a person with a character file who is alive, a quest gate that is met
     quests_ = plan.get("quests", {})
     devices, kinds = [], {}
+    arts_, spoken_ = art_names(), arts_spoken()
+    for qid, q in quests_.items():
+        if q.get("gate"):
+            g_state, g_detail = gate_state(q["gate"], st)
+            if g_state in ("MALFORMED", "UNKNOWN TERM"):
+                probs.append(f"quest {qid} gate {q['gate']!r} {g_state}: {g_detail}")
     for s in slots:
         n, dev = s.get("n"), []
         if s.get("micro"):
@@ -2492,6 +2570,15 @@ def cmd_check(args):
                 for a in apps:
                     if not isinstance(a, dict) or a.get("stat") not in STATS or not isinstance(a.get("dc"), int) or not 8 <= a["dc"] <= 20 or not str(a.get("name") or "").strip():
                         probs.append(f"slot {n} challenge approach {a!r}: needs name, stat in {STATS}, dc 8–20 (art optional)")
+                        continue
+                    if a.get("art"):
+                        if a["art"] not in arts_:
+                            probs.append(f"slot {n} challenge approach {a.get('name')!r}: no Art {a['art']!r} in rules.json")
+                        elif a["art"] not in spoken_:
+                            probs.append(f"slot {n} challenge approach {a.get('name')!r} uses {arts_[a['art']]}, which the page has not named yet: locked until it is taught or earned on the page (design §5.6)")
+                unk = unknown_names_in(" ".join([str(c.get("objective") or "")] + [str(a.get("name") or "") for a in apps if isinstance(a, dict)] + [str(v) for v in (c.get("result") or {}).values()]))
+                if unk:
+                    notes.append(f"slot {n} challenge names {', '.join(sorted(unk))}, which no registry knows: nothing the page has not spoken may reach a scene")
                 if not isinstance(c.get("goal"), int) or not 1 <= c["goal"] <= 4 or not isinstance(c.get("limit"), int) or not 1 <= c["limit"] <= 3:
                     probs.append(f"slot {n} challenge: goal 1–4 and limit 1–3")
                 if c.get("status") not in CHALLENGE_STATUS:
@@ -2509,8 +2596,20 @@ def cmd_check(args):
                     probs.append(f"slot {n} invite kind {inv.get('kind')!r} not in {INVITE_KINDS}")
                 if inv.get("status") not in INVITE_STATUS:
                     probs.append(f"slot {n} invite status {inv.get('status')!r} not in {INVITE_STATUS}")
+                cid_, cstat = character_status(inv.get("who"))
+                if cid_ is None:
+                    probs.append(f"slot {n} invite from {inv.get('who')!r}: nobody on the page by that name (no saga/characters/ file); people not yet on the page cannot invite (design §5.6)")
+                elif cstat != "alive":
+                    probs.append(f"slot {n} invite from {cid_}, whose status is {cstat!r}: the invitation cannot come from them")
+                unk = unknown_names_in(str(inv.get("want") or "") + " " + str(inv.get("if_ignored") or ""))
+                if unk:
+                    notes.append(f"slot {n} invite names {', '.join(sorted(unk))}, which no registry knows: nothing the page has not spoken may reach a Between")
         if s.get("kind") == "quest" and quests_.get(s.get("quest"), {}).get("project"):
             dev.append("project")
+        if s.get("kind") == "quest" and s.get("status") in ("planned", "next"):
+            gate = quests_.get(s.get("quest"), {}).get("gate")
+            if gate and gate_state(gate, st)[0] == "NOT MET":
+                probs.append(f"slot {n} plans {s.get('quest')} stage {s.get('stage')} while its gate ({gate}) is not met: locked until the story gets there (design §5.6)")
         if len(dev) > 1:
             probs.append(f"slot {n} carries {len(dev)} devices ({', '.join(dev)}); one at most (design §5.6)")
         if dev:
@@ -2536,13 +2635,15 @@ def cmd_check(args):
         if k in (ch.get("previous_devices") or []):
             probs.append(f"a {k} ran in the previous chapter too; a device kind rests a chapter (design §5.6)")
     # the Book's project on the page (world.json → projects[]) and the callback cap
-    place_ids = known_place_ids()
+    places_ = known_places()
     for pr in world.get("projects", []) or []:
         pid = pr.get("id")
         if pid not in quests_ or not quests_[pid].get("project"):
             probs.append(f"world.json projects[] {pid!r} is not a project quest in plan.json")
-        if pr.get("place") not in place_ids:
+        if pr.get("place") not in places_:
             probs.append(f"world.json project {pid}: place {pr.get('place')!r} is not in places.json")
+        elif not (places_.get(pr.get("place")) or {}).get("on_page"):
+            probs.append(f"world.json project {pid}: place {pr.get('place')!r} is not on the page yet; a project lives only where the story has been")
         if not isinstance(pr.get("stage"), int) or not isinstance(pr.get("of"), int) or not 1 <= pr["stage"] <= pr["of"]:
             probs.append(f"world.json project {pid}: stage must be an int from 1 to of")
         if pr.get("status") not in ("live", "done"):
@@ -2555,6 +2656,11 @@ def cmd_check(args):
     for qid, q in quests_.items():
         if q.get("project") and int(q.get("stage") or 0) >= 1 and not any(p_.get("id") == qid for p_ in world.get("projects", []) or []):
             notes.append(f"project {qid} is at stage {q.get('stage')} but world.json → projects[] has no entry: the page's trace is missing")
+    for e, it in pending_items(ledger):
+        if it.get("at") == "later":
+            unk = unknown_names_in(it.get("what"))
+            if unk:
+                notes.append(f"callback {it.get('id')} names {', '.join(sorted(unk))}, which no registry knows")
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
         notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")

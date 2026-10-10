@@ -189,7 +189,8 @@
     "q1.cart": {
       "status": "available",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "gate": "beats.b1_1.status == \"done\""
     },
     "q1.wager": {
       "status": "available",
@@ -247,7 +248,8 @@
       "status": "available",
       "stage": 0,
       "priority": "floating",
-      "project": true
+      "project": true,
+      "gate": "beats.b1_1.status == \"done\""
     }
   },
   "route": {
