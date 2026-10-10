@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-3"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-4"
   },
-  "last_seen_doing": "On his own cot, having won the stone at knucklebones and heard what Hollis had meant to tell somebody: two days dry, three by the dusk bell.",
-  "now": "Seven weeks past the Binding, in the season Maelis says is the softest. He sat in Mother Ione's council in the warming room, heard the law of Old Mercy (while it rings at dawn and dusk, no blade climbs the Steps or passes the gate), and asked to be sent down on the cage before the grey cloaks arrive; Maelis said no for the fifteenth time. Rae Thorne has asked whether he rode a grey at the ford and gone up the stair without saying why, and the Prior, before she decides whether the bell rings, has asked him what she ought to know and what the lay brothers should tell the valley. Back at his cot he won the stone at knucklebones from Hollis, and the story told true that Hollis paid was that he is two days without a drink and had not known who to tell.",
+  "last_seen_doing": "On his own cot after the hour bell, having said the oath's words with Benedek with his lips and no sound, nothing coming up through his hand.",
+  "now": "Seven weeks past the Binding, in the season Maelis says is the softest. He sat in Mother Ione's council in the warming room, heard the law of Old Mercy (while it rings at dawn and dusk, no blade climbs the Steps or passes the gate), and asked to be sent down on the cage before the grey cloaks arrive; Maelis said no for the fifteenth time. Rae Thorne has asked whether he rode a grey at the ford and gone up the stair without saying why, and the Prior, before she decides whether the bell rings, has asked him what she ought to know and what the lay brothers should tell the valley. Back at his cot he won the stone at knucklebones from Hollis, and the story told true that Hollis paid was that he is two days without a drink and had not known who to tell. At the hour bell he said the oath's words with Benedek, lips only and no sound, and nothing came up through his hand.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -177,6 +177,18 @@
       "chapter": "01",
       "scene": "between-3",
       "evidence": "the one man on this mountain who can't buy you a drink"
+    },
+    {
+      "fact": "Asked by Benedek to say the oath with him at the hour bell, only the words, he said go on, then; he had first said them kneeling in a cold chapel with Aldric Vane's shoulder against his and had not said them since the river, and they were still in him whole, by heart, and no use to anyone.",
+      "chapter": "01",
+      "scene": "between-4",
+      "evidence": "whole, by heart, and no use to anyone"
+    },
+    {
+      "fact": "His lips moved with Benedek's and no sound came out of him; the lad was watching his mouth, not listening for his voice, and when they finished nothing came up through Darrow's hand, there being no stone under it.",
+      "chapter": "01",
+      "scene": "between-4",
+      "evidence": "Darrow's lips moved with his"
     }
   ],
   "relationships": [
@@ -257,6 +269,10 @@
     {
       "chapter": "01",
       "scene": "between-3"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-4"
     }
   ]
 }

@@ -339,3 +339,19 @@ The bone sat on Darrow's knuckles like it had been born there. Hollis looked at 
 "You've told the one man on this mountain who can't buy you a drink."
 
 "Aye. That was the thinking." Hollis shut his fist on the bones and lay back. On his far side, Benedek's lips had begun to move, which meant the bell was coming before either of them had heard it.
+
+### Between — The Words
+
+The bell came, as Benedek had known it would, and Hollis shut his eyes on the instant, which is a thing forty years of barracks will teach a man: how to be asleep when something is about to be asked of him.
+
+"Captain." Benedek, on the cot beyond Hollis's, had his hands folded on the blanket already. "Would you say it with me? Only the words. I can't stand for it and you can't kneel, so we'd be even." He said it the way he said everything, straight, with an apology ready behind it. "You needn't. It's easier, two."
+
+Darrow had said the words first in a cold chapel, kneeling, with Aldric Vane's shoulder against his and the stone warming under their hands, and he had not said them since the river. They were still in him, it turned out, the way a marching song is: whole, by heart, and no use to anyone.
+
+"Go on, then."
+
+Benedek began. Darrow's lips moved with his. No sound came out of him, and after a moment it was plain that none was going to, and that it did not matter: the lad was not listening for his voice. He was watching the Captain's mouth, the way Sister Pell had watched the Prior's, and what he needed was the shape of the words beside his own.
+
+They finished together. Nothing came up through Darrow's hand; there was no stone under it. Benedek let his breath out and said "Thank you, Captain" to the roof.
+
+On the next cot, Hollis opened one eye, looked at Darrow for the length of a heartbeat, and shut it again.

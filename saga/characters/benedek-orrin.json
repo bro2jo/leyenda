@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-3"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-4"
   },
-  "last_seen_doing": "On the cot beyond Hollis's, his lips beginning to move for the bell before either captain had heard it.",
-  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his eyes shut and his oath on his lips. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up. He has told the Captain that the Grace forgives those who kneel, and had no answer when asked why mercy needs a list.",
+  "last_seen_doing": "On the cot beyond Hollis's at the hour bell, saying his oath with the Captain's lips moving beside his, and thanking him to the roof.",
+  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's, feverish from a spear wound at the ford, with his hands folded on the blanket and his oath on his lips at every bell. Hollis has told him that nobody is taking anyone up eleven hundred steps in the snow, and that they will be let kneel if the Confessors do come up. He has told the Captain that the Grace forgives those who kneel, and had no answer when asked why mercy needs a list. At the last bell the Captain said the words with him, lips only, and he thanked him for it.",
   "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
@@ -79,6 +79,18 @@
       "chapter": "01",
       "scene": "between-3",
       "evidence": "Benedek's lips had begun to move"
+    },
+    {
+      "fact": "At the hour bell he asked the Captain to say the oath with him, only the words, since he cannot stand for it and the Captain cannot kneel; he said the Captain needn't, and that it is easier, two.",
+      "chapter": "01",
+      "scene": "between-4",
+      "evidence": "Would you say it with me? Only the words."
+    },
+    {
+      "fact": "He was not listening for the Captain's voice; he watched his mouth, and what he needed was the shape of the words beside his own. When they finished together he let his breath out and thanked the Captain to the roof.",
+      "chapter": "01",
+      "scene": "between-4",
+      "evidence": "Thank you, Captain"
     }
   ],
   "relationships": [
@@ -116,6 +128,10 @@
     {
       "chapter": "01",
       "scene": "between-3"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-4"
     }
   ]
 }

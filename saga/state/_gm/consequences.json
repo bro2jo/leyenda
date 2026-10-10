@@ -64,6 +64,33 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c01.3",
+      "made": {
+        "chapter": 1,
+        "scene": "between-4",
+        "date": "2026-10-09"
+      },
+      "chose": "Said the oath with Benedek at the hour bell, lips moving and no sound, for the lad's sake; nothing came, and Hollis saw",
+      "now": {
+        "approval": {
+          "hollis": 3
+        },
+        "bearing": {
+          "hearth": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c01.3a",
+          "when": "next",
+          "at": "ch01:s4",
+          "weight": "color",
+          "what": "Benedek expects the Captain's mouth beside his at the bells now, and says so to nobody; Hollis has seen it and says nothing either",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

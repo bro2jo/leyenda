@@ -60,11 +60,18 @@
       "after": 3,
       "covers": [],
       "written": "2026-10-09"
+    },
+    {
+      "scene": "between-4",
+      "title": "The Words",
+      "after": 3,
+      "covers": [],
+      "written": "2026-10-09"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "his own cot in the infirmary hall, Hollis on the next cot with the knucklebones shut in his fist, the hour bell about to ring",
+    "detail": "his own cot in the infirmary hall after the hour bell, Benedek on the cot beyond Hollis's with his hands folded, Hollis asleep or pretending to be",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -74,7 +81,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council.",
-  "last_beat": "Back at his cot after the council, Darrow read Hollis's hands as he had read Sister Pell's cup, asked once and was put off, and played him at knucklebones for a story told true. He caught the stone on the back of his hand; Hollis chanted the loser's lines and paid: two days without a drink, three by the dusk bell, and he had meant to tell somebody and couldn't think who. On Hollis's far side Benedek's lips began to move before either captain had heard the bell.",
+  "last_beat": "At the hour bell Benedek asked the Captain to say the oath with him, only the words, since he cannot stand for it and Darrow cannot kneel. Darrow's lips moved with his and no sound came out, and the lad, watching his mouth, needed only the shape of the words beside his own. Nothing came up through Darrow's hand. Benedek thanked him to the roof; Hollis, pretending to sleep, opened one eye and shut it again.",
   "companions": {
     "maelis": {
       "approval": 15,
@@ -82,7 +89,7 @@
       "note": "has told him what she dared, and not where she learned it"
     },
     "hollis": {
-      "approval": 32,
+      "approval": 35,
       "present": true,
       "note": "on the list, second; drinking less this week"
     },

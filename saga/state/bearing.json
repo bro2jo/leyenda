@@ -15,7 +15,7 @@
       "right": "Guile"
     },
     "hearth_banner": {
-      "value": 0,
+      "value": -1,
       "left": "Hearth",
       "right": "Banner"
     },
@@ -43,6 +43,12 @@
       "date": "2026-10-09",
       "axis": "candor_guile",
       "delta": 1
+    },
+    {
+      "why": "c01.3",
+      "date": "2026-10-09",
+      "axis": "hearth_banner",
+      "delta": -1
     }
   ]
 }
