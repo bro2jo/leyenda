@@ -104,33 +104,41 @@ Appearance and voice: `cast.md`.
 - Vane's lieutenant; the man leading the six grey cloaks and the censer on the Holloway. 40s, bald, smiling, smells of the iron censer he carries. A zealot who enjoys his work, polite to the point of menace. Never touches a weapon in front of witnesses.
 - **Voice:** soft, courteous, every sentence a door he is holding open for you; uses first names uninvited; thanks people for their candour. *"Bells grow tired."* *"The Crown counts what it is owed."*
 - **Wants:** Maelis (he suspects Ember work in the House and is fishing for her); Darrow as the prize that makes his name with Vane. **Plan:** read the writ at the gate, be refused by Old Mercy, camp in the lower court until the bell lapses (Ch 1 climax); Hollow Benedek to frighten the House (b1.2); work Anselm through his sister (b1.4); move before Vane arrives (b1.5).
+- **Under pressure:** he notices what a person is proud of, and thanks them for it. He pursues by courtesy, holding every door open until you walk through one; when that fails he waits, smiling, and lets the bell do his work. He never raises his voice, and never touches a weapon where anyone can see.
 - Gets a `saga/characters/` file when he is named or steps on the page (planned: Chapter 1 climax). Until then reader-safe files say "the Confessor who leads them".
 
 ### Brother Anselm — the almoner
 - 40s, soft-spoken, beloved, keeps the stores and the letters. Always tired. Has a sister in Calden he mentions too often.
 - **Voice:** apologetic and gentle, trails off mid-sentence, thanks people for things they have not done yet.
+- **Under pressure:** he notices who is owed a kindness he has not yet done. He pursues by apologising first and asking second; when that fails he trails off, and the thing he did not say is the thing he has done.
 - **Wants:** Mirren safe. **Hides:** the tithe-shard came up the Steps in his letter-satchel (b1.2 → b1.4); Marrant works him through Mirren. **Flags:** `anselm_suspected`, `anselm_spared` (feeds `r.finale.return`).
 
 ### Mirren — Anselm's sister
 - In Calden, in Marrant's keeping: the lever on the almoner. Present in Book I only as a letter, a lock of hair or a name said too often; never seen unless a road brings her. If she appears: thirties, quick, braver than her brother, angry at having been used.
+- **Under pressure:** she notices who is being used, herself included. She pursues head-on, braver than her brother; when that fails she gets angry and says the true thing in front of the wrong people.
 
 ### Ash — the hound
 - A grey wolfhound bitch in the House kennels with a splinted hind leg, bad-tempered with everyone except Darrow, for no reason anyone can name. She heals alongside him. She does not fetch.
 - Appears in `q1.kennel` (why the hound picked Darrow) or, failing that, at the kennels in the transition (`t1`), one paragraph. `flags.ash_met`; her bond waits in `plan.json → companions_to_come.ash` until she is on the page. Not in `saga/NOW.md`, `world.json → companions` or any reader-safe file until then.
+- **Under pressure:** she notices who is hurt and who is pretending not to be. She pursues by lying down across the door; when that fails she bites. She does not fetch.
 
 ### King Aurel the Evergreen
 - Reigning for 311 years; not seen in public for nine. Present as bells, writs and the weight of the Oathspire. When Darrow is weakest he dreams of a green-lit hall and the sound of very slow breathing.
 - **Hides:** T1 and T2. He is three hundred years old because the Stones feed him. Never on the page in person before Book VI.
+- **Under pressure:** never on the page before Book VI; by then he notices nothing he is not fed, and pursues by the slowest means there are: a bell, a writ, a year.
 
 ### Elinor Vane — Aldric's sister
 - The person Aldric wants kept safe, and what the Crown holds over him. A letter from her is a Book II expandable. If she appears: late twenties, Aldric's face without the severity, braver with words than he is.
+- **Under pressure:** she notices what her brother is not saying. She pursues with words, which he cannot; when that fails she writes the letter anyway and sends it by the wrong hand.
 
 ### Ysra Tal, "the Needle of Calden" (Book II companion)
 - Oathsworn duelist, 29, precise and cold, the finest footwork Darrow has ever seen. Sent to bring him in alive; does not understand why he will not kneel. Becomes his Finesse mentor if he earns it. As his mentor she teaches **The Liar's Shoulder**, **The Wicket Gate** and **The Shadow-Step** (Sport Arts).
 - **Voice:** courteous, clipped, deadly literal. **Wants:** an order she can respect. **Fate:** defects or dies in Book III, set by earlier choices (`flags.ysra_spared`, `r.b3.ysra_fate`).
+- **Under pressure:** she notices feet: weight, balance, the step before the step. She pursues by the order she was given, to the letter; when that fails she asks for a better order, and is dangerous in the gap between.
 
 ### Ilse of Corrach (Book III companion)
 - Thornwild war-leader, 40s; dragged a drowning Vaelmark captain out of the Wend at Harrow Ford for reasons she has not explained. **Voice:** slow, amused, says less than she knows. **Wants:** her people through the winter; someone from the Vaelmark to have *seen*. **Knows:** T4 and T5 (the grey figures under the trees were the Hollow Tide; Harrow Ford was no battle).
+- **Under pressure:** she notices who is looking at the wrong thing. She pursues by making you look at the right one, by force if she must, and with few words; when that fails she laughs, slowly, and waits for winter to make her point.
 
 ---
 

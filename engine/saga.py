@@ -807,6 +807,44 @@ def chapter_template(ws, plan):
             "climax": {"plan": "", "checks": [], "options": ["", "", ""], "default": 1}}
 
 
+UP_SKIP = {"Ser", "The", "Confessor", "Brother", "Mother", "Sister", "King", "Dame", "Lady", "Lord"}
+
+
+def under_pressure_for(text):
+    """[(who, line)] for every GM character entry whose name the text mentions: the *Under pressure* drafting note
+    (`_gm/characters.md`), printed with a slot so the tactic is in front of the writer. GM-only output."""
+    path = ROOT / "saga/bible/_gm/characters.md"
+    if not path.exists():
+        return []
+    words = set(re.findall(r"[A-Za-z][A-Za-z'-]+", text or ""))
+    out, head, note = [], None, None
+    sections = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("### "):
+            if head:
+                sections.append((head, note))
+            head, note = line[4:].split(" — ")[0].split(" (")[0].strip(), None
+        elif head and line.startswith("- **Under pressure:**"):
+            note = line[len("- **Under pressure:**"):].strip()
+    if head:
+        sections.append((head, note))
+    for head, note in sections:
+        if not note:
+            continue
+        # the name proper: the words before any comma or quote in the heading, titles dropped ("Ser Darrow of Edgemoor" → Darrow,
+        # Edgemoor; "King Aurel the Evergreen" → Aurel; "The red-handed woman" → the phrase itself)
+        name = re.split(r"[,\"]", head)[0]
+        if head.lower().startswith("the "):
+            if head.lower() in (text or "").lower():
+                out.append((head, note))
+            continue
+        keys = [w for w in re.findall(r"[A-Z][A-Za-z'-]{2,}", name) if w not in UP_SKIP]
+        keys = [k for k in keys if k not in ("Evergreen",)]
+        if any(k in words for k in keys):
+            out.append((head, note))
+    return out
+
+
 def print_slot(s, full=False, plan=None):
     print(slot_label(s) + f" · {s.get('status')}" + (f" · wrote {s['wrote']}" if s.get("wrote") else ""))
     print(f"  plan: {s.get('plan')}")
@@ -842,6 +880,12 @@ def print_slot(s, full=False, plan=None):
                     print(f"  --- arc {prev}: the Downstream line of the choice that closed it (honour it in this beat) ---")
                     for l in down:
                         print(l)
+        ups = under_pressure_for((s.get("plan") or "") + " " + (s.get("turn") or ""))
+        if ups:
+            print("  --- under pressure: what each person named here notices, how they push, what they do when it fails ---")
+            for who, line in ups:
+                print(f"  {who}: {line}")
+        print("  then: write to the turn; the reread (style.md §4); then `plan done`")
 
 
 def parse_value(v):
@@ -1364,6 +1408,7 @@ def cmd_plan(args):
                     b["status"] = "in_progress"
                 plan["position"]["beat"] = s["beat"]
             print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']} · stage scene")
+            print("  the reread (style.md §4) came before this; now the records: NOW, the characters (evidence on the facts that need it), world.json, threads, codex, then `saga.py check`")
             if s.get("micro"):
                 print(f"slot {s['n']} carries a micro: if the scene ended on it, `plan micro open {s['n']}`")
             pay_owed_moves(plan, "scene")
