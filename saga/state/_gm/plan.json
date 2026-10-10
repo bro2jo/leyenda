@@ -112,7 +112,9 @@
         "float": false,
         "status": "next",
         "wrote": null,
-        "turn": "By the end Rae has chosen not to drive down past the grey cloaks while she still could, and said why in a single line; the cart at the winch-house is no longer hers to move. Darrow attempts to persuade her to go while the road is open, and is refused."
+        "turn": "By the end Rae has chosen not to drive down past the grey cloaks while she still could, and said why in a single line; the cart at the winch-house is no longer hers to move. Darrow attempts to persuade her to go while the road is open, and is refused.",
+        "challenge": null,
+        "invite": null
       },
       {
         "n": 8,
@@ -240,6 +242,12 @@
       "stage": 0,
       "priority": "floating",
       "standing": true
+    },
+    "q1.rail": {
+      "status": "available",
+      "stage": 0,
+      "priority": "floating",
+      "project": true
     }
   },
   "route": {

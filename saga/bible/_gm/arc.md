@@ -373,6 +373,24 @@ The coin onto the sill; the throw over the butt that drops behind it (*Overwall*
 - **spine link:** b1.5, b2.3.
 - **can run when:** Hollis present; any chapter from 2; weather allowing (the ward).
 
+## q1.rail — The Rail
+- **priority:** floating · **project:** Book I's one project (design §5.6): a beech rail down the nine steps to the warming room, where there is none
+- **hook:** Nine steps down and no rail: he took them with a hand to the wall and the knee held on every one. Sister Pell takes them on walnut knuckles, Hollis will take them on a beech leg, and the novices carry the Prior's fire down them in the dark. Darrow cannot build it; he can get it built, which is a thing he has never had to do.
+### stage 1 — the ask
+Darrow puts it to the Prior in her warming room, on her chair's terms: a question for a question. Who it is for (he says Pell; she asks whether he means Pell), whose wood, and who will say no (Maelis, if it is a thing he means to use to go down faster; she says the opposite: a rail is for coming up). Ends on the micro.
+- **micro:** Whose wood? · **axis:** hearth_banner · 1. The lay brothers' beech, the same they cut legs from: ask the House for it, and owe the House (hearth +1) · 2. The chapel's old pew, with the Prior's leave: the House sees a knight take a pew apart for a stair (banner +1) · 3. Rae's spare shaft, if she will sell it: a carter's wood for a carter's road (0) · **default:** 1
+### stage 2 — the making
+A lay brother with a drawknife and no opinions, Wren with the measure, Darrow on a stool at the top of the nine steps giving one order a day and learning that a thing built by other hands is built their way. The rail goes in pegged. Hollis is carried down to try it and swears at it, which is approval. Ends on the micro.
+- **micro:** The rail is a hand short at the bottom step, where the wood ran out. What does Darrow do? · **axis:** mercy_flint · 1. Leave it a hand short and say so: a true rail that ends where the wood did (mercy +1; Pell: "Like everything in this House") · 2. Have the last step cut down to meet it: the stair changed to fit the rail (flint +1) · 3. Wait for more wood, and let nobody use it till it is whole (0) · **default:** 1
+### stage 3 — the first hand
+Dusk. The first person down the nine steps with a hand on the new wood is not Darrow, who cannot be, and not Pell, who will not be seen to need it: it is whoever the chapter has made it. Someone carves a mark at the top. Ends on the micro, and the rail is on the map for good.
+- **micro:** What goes at the top of the rail? · **axis:** candor_guile · 1. Nothing. A rail is a rail (candor +1) · 2. The House's bell, cut small, as if it had always been there (guile +1: it will outlast the question of who put it up) · 3. Nine notches, one a step: Wren's count made wood (0) · **default:** 1
+### compressed
+1. The ask and the wood (stage 1). 2. The making, the short rail and the first hand on it (stages 2–3; the two micros become one).
+- **payoff:** a thing in the House that is his doing and not his body's; Pell, Hollis and the novices use it on the page afterwards without comment; the mark at the top is a callback for Book VI (the House he comes back to). `world.json → projects[]` from stage 1 on; `places.json` saint-ysoldes gets the rail in its description at stage 3.
+- **spine link:** b1.5 (the bell-tower stair has no rail either, and Pell's hands are the hinge); t1 (the last thing he touches going out).
+- **can run when:** Chapter 2 onward, one stage per chapter at most and never in two chapters running (the pacing rule); stage 3 may be the transition's quiet beat. Between stages a Between may lay a hand on it (`saga.py project q1.rail work`).
+
 ## rae.tether — The Tether
 - **priority:** floating and **standing** (`plan.json → quests.rae.tether.standing`): it does not count toward the two-live limit and finishes when the Ledger says, not within two chapters. **A stage is planned only once the engine has unlocked it** (`darrow.py sheet` → THE TETHER · N of V; `check` refuses a slot ahead of it). One scene per stage, in the next free quest slot of whichever Book it lands in, re-skinned to wherever the company is. The day's deeds colour it like any scene; approval sets whether she is warm or careful in it. The scene closes with the Reckoning box line `The Tether: **<name>**.`, and the first of them is the only place the page explains it: a second thread, read on his palms beside the first, counting something that is not his alone.
 - **hook:** The script on his hands has begun to count something that is not his alone.

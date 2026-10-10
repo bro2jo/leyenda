@@ -42,6 +42,11 @@ Commands (run from the repo root):
   plan quest ID k=v ... | plan beat ID status=... | plan flag [--new] k=v (true/false/null; --new to add a flag) | plan temptation add TEXT
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
+  challenge N success|fail|show|void    a slot's challenge (design §5.6): move a counter after each roll; it resolves when progress or strain fills
+  invite N take|pass|show               a slot's invitation: taken when he answers in voice (a Between), passed at the next close if he has not
+  project ID show | work --where chNN:between-K --what TEXT
+                                        the Book's project quest: note a hand laid on it between stages; its trace lives in world.json → projects[]
+  due --later                           callbacks: due items with when=later, fired wherever they fit, one per scene at most
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
   lore | lore ID | lore grep WORD | lore pick saying|verse|maxim|rhyme [--all] | lore spoke ID --where chNN:sK
                                         the Annals (_gm/lore.md): the index, one entry, a search, a line for a glimpse, mark an entry spoken
@@ -106,13 +111,20 @@ SLOT_KINDS = ("spine", "quest", "interlude", "cutaway")
 SLOT_STATUS = ("planned", "next", "written", "skipped")
 WEIGHTS = ("color", "scene", "route", "fate")
 STAGES = ("scene", "climax", "choice", "transition")
+STATS = ("might", "vigor", "finesse", "resolve")
+# devices (design §5.6): what a slot may carry beside its content; the pacing rule lives in `check`
+DEVICE_KINDS = ("challenge", "project", "invite")
+INVITE_KINDS = ("favour", "diversion", "opinion", "problem")
+INVITE_STATUS = ("waiting", "taken", "passed")
+CHALLENGE_STATUS = ("open", "won", "lost", "void")
+CALLBACK_CAP = 6  # due items with when=later alive at once
 QUEST_STATUS = ("available", "live", "done", "dropped")
 BEAT_STATUS = ("planned", "in_progress", "done", "folded")
 ROADS = ("low", "main", "high")
 ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"]
 NOW_CAP = 30
 
-WHEN_RE = re.compile(r"^(next|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|book\d:climax|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
+WHEN_RE = re.compile(r"^(next|later|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|book\d:climax|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
 WHERE_RE = re.compile(r"^(ch\d{2}(:(s\d+|climax|interlude(-\d+)?|choice|transition|between-\d+))?|book\d(:climax|:beat\d+)?)$")
 ENTRY_ID_RE = re.compile(r"^c(\d{2})\.(\d+)$")
 DUE_ID_RE = re.compile(r"^c(\d{2})\.(\d+)([a-z])$")
@@ -334,6 +346,8 @@ def at_status(at, st):
     book, chapter, nxt, stage = int(pos["book"]), int(pos["chapter"]), int(pos["next_scene"]), pos["stage"]
     if at == "any":
         return "due"
+    if at == "later":
+        return "later"  # a callback: never due, never overdue; fired wherever it fits
     m = re.match(r"^on:(\w+)$", at)
     if m:
         return "due" if st.plan.get("flags", {}).get(m.group(1)) else "future"
@@ -776,7 +790,7 @@ def next_slot(plan, date=None):
     return None
 
 
-SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "micro", "float", "day")
+SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "micro", "challenge", "invite", "float", "day")
 TURN_HINT = "who can, must, believes, risks or chooses what by the end that they could not at the start, and what Darrow attempts"
 # style.md §3: the word bands per block kind; `check` notes a block a fifth outside its band (a reread, never a cut)
 WORD_BANDS = {"scene": (300, 550), "interlude": (300, 550), "between": (120, 300), "climax": (900, 1800), "choice": (100, 250)}
@@ -801,7 +815,7 @@ def chapter_template(ws, plan):
             s.update({"kind": "quest", "quest": avail[0 if n == 3 else 1], "stage": 1, "float": True})
         else:
             s.update({"kind": "spine", "beat": beat, "float": False})
-        s.update({"plan": "", "turn": "", "micro": None})
+        s.update({"plan": "", "turn": "", "micro": None, "challenge": None, "invite": None})
         slots.append(s)
     return {"week_start": ws.isoformat(), "question": "", "slots": slots, "world_moves": ["", "", ""],
             "climax": {"plan": "", "checks": [], "options": ["", "", ""], "default": 1}}
@@ -845,6 +859,67 @@ def under_pressure_for(text):
     return out
 
 
+def known_place_ids():
+    """The ids in saga/state/places.json, whichever shape the file takes (a list of places, or an object keyed by id or holding a `places` list)."""
+    path = ROOT / "saga/state/places.json"
+    if not path.exists():
+        return set()
+    data = load_json(path)
+    if isinstance(data, dict):
+        inner = data.get("places")
+        if isinstance(inner, list):
+            data = inner
+        elif isinstance(inner, dict):
+            return set(inner.keys())
+        else:
+            return {k for k in data.keys() if not str(k).startswith("_")}
+    return {x.get("id") if isinstance(x, dict) else str(x) for x in data}
+
+
+def device_kinds(slots, quests):
+    """The device kinds a chapter carries (design §5.6): challenge, invite, project (a quest slot of a project quest)."""
+    kinds = set()
+    for s in slots:
+        if s.get("challenge"):
+            kinds.add("challenge")
+        if s.get("invite"):
+            kinds.add("invite")
+        if s.get("kind") == "quest" and (quests or {}).get(s.get("quest"), {}).get("project"):
+            kinds.add("project")
+    return kinds
+
+
+def device_summary(plan):
+    """One phrase per device in the chapter, for the digest."""
+    out, quests = [], plan.get("quests", {})
+    for s in plan.get("chapter", {}).get("slots", []):
+        n, c, inv = s.get("n"), s.get("challenge"), s.get("invite")
+        if c:
+            out.append(f"challenge slot {n} ({c.get('status')}: {c.get('progress', 0)}/{c.get('goal')} won, {c.get('strain', 0)}/{c.get('limit')} strain)")
+        if inv:
+            out.append(f"invite slot {n} ({inv.get('who')}, {inv.get('status')})")
+        if s.get("kind") == "quest" and quests.get(s.get("quest"), {}).get("project"):
+            out.append(f"project {s.get('quest')} stage {s.get('stage')} slot {n} ({s.get('status')})")
+    return out
+
+
+def print_challenge(s, indent="  "):
+    c = s.get("challenge") or {}
+    print(f"{indent}challenge ({c.get('status')}): {c.get('objective')}")
+    for a in c.get("approaches") or []:
+        art = f" + {a['art']}" if a.get("art") else ""
+        print(f"{indent}  · {a.get('name')}: {a.get('stat')}{art} · DC {a.get('dc')}")
+    res = c.get("result") or {}
+    print(f"{indent}  progress {c.get('progress', 0)}/{c.get('goal')} · strain {c.get('strain', 0)}/{c.get('limit')} · if won: {short(res.get('won'), 90)} · if lost: {short(res.get('lost'), 90)}")
+    print(f"{indent}  after each roll: `saga.py challenge {s.get('n')} success|fail`; the counters never reach the page")
+
+
+def print_invite(s, indent="  "):
+    inv = s.get("invite") or {}
+    print(f"{indent}invite ({inv.get('kind')}, {inv.get('status')}): {inv.get('who')} wants {inv.get('want')}")
+    print(f"{indent}  if ignored: {inv.get('if_ignored')} · offer it in one in-world line at the end of the close reply; `invite {s.get('n')} take|pass`")
+
+
 def print_slot(s, full=False, plan=None):
     print(slot_label(s) + f" · {s.get('status')}" + (f" · wrote {s['wrote']}" if s.get("wrote") else ""))
     print(f"  plan: {s.get('plan')}")
@@ -856,6 +931,10 @@ def print_slot(s, full=False, plan=None):
             b = (m.get("bearing") or [None] * len(m["options"]))[i - 1]
             bt = f" [{', '.join(f'{k} {v:+d}' for k, v in b.items())}]" if b else ""
             print(f"    {i}. {opt}{bt}" + ("  (default)" if m.get("default") == i else ""))
+    if s.get("challenge"):
+        print_challenge(s)
+    if s.get("invite"):
+        print_invite(s)
     if s.get("world_move"):
         print(f"  world move {'paid' if s.get('world_move_used') else 'owed'}: {s['world_move']}")
     if plan is not None and s.get("status") != "skipped":
@@ -880,7 +959,8 @@ def print_slot(s, full=False, plan=None):
                     print(f"  --- arc {prev}: the Downstream line of the choice that closed it (honour it in this beat) ---")
                     for l in down:
                         print(l)
-        ups = under_pressure_for((s.get("plan") or "") + " " + (s.get("turn") or ""))
+        inv = s.get("invite") or {}
+        ups = under_pressure_for(" ".join([s.get("plan") or "", s.get("turn") or "", str(inv.get("who") or "").capitalize(), inv.get("want") or ""]))
         if ups:
             print("  --- under pressure: what each person named here notices, how they push, what they do when it fails ---")
             for who, line in ups:
@@ -954,6 +1034,9 @@ def cmd_now(args):
     if betweens:
         lines.append(f"Between pieces after the last scene: {len(betweens)} of 2 (" + ", ".join(str(x.get("scene")) for x in betweens) + ")")
     lines.append("Quests available: " + short(", ".join(avail) or "none", 160))
+    dev = device_summary(plan)
+    if dev:
+        lines.append("Devices: " + " · ".join(dev))
     if int(pos["chapter"]) >= 2 and not live:
         first_req = next((k for k, v in q.items() if v.get("status") == "available" and v.get("priority") == "required"), None)
         lines.append("⚠ no quest live; plan a stage of " + (first_req or "any available quest") + " (design §5.2)")
@@ -964,13 +1047,15 @@ def cmd_now(args):
     else:
         lines.append("Micro: none open")
     lines.append(bearing_line(bearing))
-    due_now, overdue, future = [], [], 0
+    due_now, overdue, future, later = [], [], 0, 0
     for e, it in pending_items(ledger):
         s_ = at_status(it.get("at", ""), st)
         if s_ == "due":
             due_now.append(it)
         elif s_ == "overdue":
             overdue.append(it)
+        elif s_ == "later":
+            later += 1
         else:
             future += 1
     dues = [f"DUE NOW {it['id']} [{it.get('weight')}] @{it.get('at')}: {short(it.get('what'), 120)}" for it in due_now]
@@ -981,6 +1066,8 @@ def cmd_now(args):
             lines.append(f"  (+{len(dues) - 6} more due/overdue; `saga.py due`)")
     else:
         lines.append("Due now: nothing")
+    if later:
+        lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most)")
     shown, other = [], 0
     for r in ledger.get("rules", []):
         state, detail = rule_state(r, st)
@@ -1017,6 +1104,11 @@ def cmd_due(args):
         if not items:
             print("nothing pending")
         show(items)
+        return
+    if getattr(args, "later", False):
+        rows = [(e, it) for e, it in items if it.get("at") == "later"]
+        print(f"callbacks waiting for a fit: {len(rows)} (cap {CALLBACK_CAP}; at most one fired per scene: `fire ID --where …`, or `void ID --why …`)")
+        show(rows, label="LATER")
         return
     now_rows = [(e, it) for e, it in items if at_status(it.get("at", ""), st) in ("due", "overdue")]
     if args.at:
@@ -1409,6 +1501,12 @@ def cmd_plan(args):
                 plan["position"]["beat"] = s["beat"]
             print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']} · stage scene")
             print("  the reread (style.md §4) came before this; now the records: NOW, the characters (evidence on the facts that need it), world.json, threads, codex, then `saga.py check`")
+            if (s.get("invite") or {}).get("status") == "waiting":
+                print("  the slot's invitation is waiting: the close reply ends on its one in-world line; `invite N take` when he answers in voice, `invite N pass` at the next close if he has not")
+            if (s.get("challenge") or {}).get("status") == "open":
+                print("  the slot's challenge is still open: it may run into the next scene, then `challenge N success|fail` resolves it and `saga.py add` records what it changed")
+            if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("project"):
+                print("  a project stage: world.json → projects[] (stage, the decision, one visible line in the page's words), the place's description in places.json, codex.md")
             if s.get("micro"):
                 print(f"slot {s['n']} carries a micro: if the scene ended on it, `plan micro open {s['n']}`")
             pay_owed_moves(plan, "scene")
@@ -1430,6 +1528,8 @@ def cmd_plan(args):
         for k, v in kv.items():
             if k == "kind" and v not in SLOT_KINDS:
                 die(f"slot kind must be one of {SLOT_KINDS}")
+            if k in ("challenge", "invite") and v is not None and not isinstance(v, dict):
+                die(f"{k} must be JSON or null (the shape is in design.md §5.6)")
             if k == "micro" and v is not None and not isinstance(v, dict):
                 die("micro must be JSON (micro='{\"axis\":…,\"ask\":…,\"options\":[…],\"bearing\":[…],\"default\":1}') or null")
             if k == "day" and v is not None:
@@ -1514,11 +1614,17 @@ def cmd_plan(args):
             s.setdefault("micro", None)
             s.setdefault("float", False)
             s.setdefault("turn", "")
+            s.setdefault("challenge", None)
+            s.setdefault("invite", None)
         if ordered["slots"] and not any(s.get("status") == "next" for s in ordered["slots"]):
             ordered["slots"][0]["status"] = "next"
         no_turn = [s.get("n") for s in ordered["slots"] if not str(s.get("turn") or "").strip()]
         if no_turn:
             print(f"⚠ slots {no_turn} have no turn ({TURN_HINT}): `plan slot N turn=\"…\"` before their day closes")
+        ordered["previous_devices"] = sorted(device_kinds(old.get("slots", []), plan.get("quests", {})))
+        clash = sorted(device_kinds(ordered["slots"], plan.get("quests", {})) & set(ordered["previous_devices"]))
+        if clash:
+            print(f"⚠ {', '.join(clash)} ran in chapter {old.get('number')} too; a device kind rests a chapter (design §5.6): `check` will refuse the plan")
         # what the outgoing chapter leaves behind: unwritten slots are named; owed world moves carry over
         old = plan.get("chapter", {})
         left = [s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
@@ -2061,6 +2167,81 @@ def reconcile_chapter(st, probs):
             probs.append(f"{day} is closed in the Ledger but slot {s.get('n')} is still {s.get('status')}: write its scene, then `plan done {s.get('n')} --wrote {chn}:s{pos.get('next_scene')}`")
 
 
+# ---------------------------------------------------------------- commands: devices (design §5.6)
+def cmd_challenge(args):
+    st = State()
+    s = slot_by_n(st.plan, args.n)
+    c = s.get("challenge")
+    if not c:
+        die(f"slot {s['n']} has no challenge (`plan slot {s['n']} challenge='{{…}}'`; the shape is in design.md §5.6)")
+    if args.action == "show":
+        print_challenge(s)
+        return
+    if args.action == "void":
+        c["status"], c["why"] = "void", args.why or ""
+    else:
+        if c.get("status") != "open":
+            die(f"the challenge in slot {s['n']} is {c.get('status')}")
+        key = "progress" if args.action == "success" else "strain"
+        c[key] = int(c.get(key, 0)) + 1
+        if int(c.get("progress", 0)) >= int(c.get("goal", 1)):
+            c["status"] = "won"
+        elif int(c.get("strain", 0)) >= int(c.get("limit", 1)):
+            c["status"] = "lost"
+    print_challenge(s)
+    if c["status"] in ("won", "lost"):
+        print(f"  resolved: {c['status']}. Record what it changed with `saga.py add` (a flag, approval, a due item); a lost one is a cost or a turn, never a wall")
+    st.touch("plan")
+    st.save()
+
+
+def cmd_invite(args):
+    st = State()
+    s = slot_by_n(st.plan, args.n)
+    inv = s.get("invite")
+    if not inv:
+        die(f"slot {s['n']} has no invitation (`plan slot {s['n']} invite='{{…}}'`; the shape is in design.md §5.6)")
+    if args.action == "show":
+        print_invite(s)
+        return
+    if inv.get("status") != "waiting":
+        die(f"the invitation in slot {s['n']} is already {inv.get('status')}")
+    inv["status"] = "taken" if args.action == "take" else "passed"
+    if args.action == "take":
+        print(f"invite slot {s['n']} taken: the Between opens on {inv.get('who')}'s first line, not Darrow's; his answer goes through the ledger like any Between")
+    else:
+        print(f"invite slot {s['n']} passed: the next scene opens on it in a clause: {inv.get('if_ignored')}")
+    st.touch("plan")
+    st.save()
+
+
+def cmd_project(args):
+    st = State()
+    q = st.plan.get("quests", {}).get(args.id)
+    if not q:
+        die(f"no quest {args.id} in plan.json")
+    if not q.get("project"):
+        die(f"{args.id} is not a project quest (`plan quest {args.id} project=true`; design §5.6)")
+    if args.action == "work":
+        if not args.where or not WHERE_RE.match(args.where):
+            die("--where must be a position like ch02:between-1 or ch02:s3")
+        if not args.what:
+            die("--what says what hand he laid on it")
+        q.setdefault("work", []).append({"where": args.where, "what": args.what})
+        st.touch("plan")
+        st.save()
+        print(f"{args.id}: work noted at {args.where}; the next stage's scene shows it")
+    total = arc_quest_stage_count(args.id)
+    print(f"{args.id} · {q.get('status')} · stage {q.get('stage', 0)}" + (f"/{total}" if total else "") + f" · work noted: {len(q.get('work', []))}")
+    for w in q.get("work", []):
+        print(f"  {w.get('where')}: {w.get('what')}")
+    entry = next((p_ for p_ in st.world.get("projects", []) or [] if p_.get("id") == args.id), None)
+    if entry:
+        print(f"  on the page: stage {entry.get('stage')}/{entry.get('of')} · {entry.get('visible')}")
+    else:
+        print("  not yet on the page (world.json → projects[] once its first stage is written)")
+
+
 # ---------------------------------------------------------------- check & fmt
 def cmd_fmt(args):
     for k in STATE_FILES:
@@ -2191,9 +2372,11 @@ def cmd_check(args):
     for k, v in plan.get("flags", {}).items():
         if not (v is None or isinstance(v, bool)):
             probs.append(f"flag {k} is {v!r}; a flag is true, false or null")
-    live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live" and not q.get("standing")]
+    live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live" and not q.get("standing") and not q.get("project")]
     if len(live) > 2:
-        probs.append(f"{len(live)} quests live; never more than two (a `standing` quest, the Tether, is not counted)")
+        probs.append(f"{len(live)} quests live; never more than two (a `standing` quest, the Tether, and the Book's `project` quest are not counted)")
+    if sum(1 for q in plan.get("quests", {}).values() if q.get("project") and q.get("status") in ("available", "live")) > 1:
+        probs.append("more than one project quest available or live; one per Book (design §5.6)")
     for key, r in plan.get("route", {}).items():
         if not re.match(r"^book[1-6]$", key):
             probs.append(f"route key {key!r}")
@@ -2288,10 +2471,93 @@ def cmd_check(args):
             probs.append(f"Saturday's slot ({sat}) must be spine")
         if len(day_slots) == 7 and not sat_slot:
             probs.append(f"7 day slots but none on Saturday {sat}")
-    dated = sorted([s for s in micro_days if s.get("day")], key=lambda s: s["day"])
+    # devices (design §5.6): one per slot, none on neighbouring days, the chapter's kinds capped and rotated
+    quests_ = plan.get("quests", {})
+    devices, kinds = [], {}
+    for s in slots:
+        n, dev = s.get("n"), []
+        if s.get("micro"):
+            dev.append("micro")
+        c = s.get("challenge")
+        if c is not None:
+            dev.append("challenge")
+            if not isinstance(c, dict):
+                probs.append(f"slot {n} challenge must be an object (design §5.6)")
+            else:
+                if not str(c.get("objective") or "").strip():
+                    probs.append(f"slot {n} challenge has no objective")
+                apps = c.get("approaches") or []
+                if not 1 <= len(apps) <= 3:
+                    probs.append(f"slot {n} challenge needs 1–3 approaches")
+                for a in apps:
+                    if not isinstance(a, dict) or a.get("stat") not in STATS or not isinstance(a.get("dc"), int) or not 8 <= a["dc"] <= 20 or not str(a.get("name") or "").strip():
+                        probs.append(f"slot {n} challenge approach {a!r}: needs name, stat in {STATS}, dc 8–20 (art optional)")
+                if not isinstance(c.get("goal"), int) or not 1 <= c["goal"] <= 4 or not isinstance(c.get("limit"), int) or not 1 <= c["limit"] <= 3:
+                    probs.append(f"slot {n} challenge: goal 1–4 and limit 1–3")
+                if c.get("status") not in CHALLENGE_STATUS:
+                    probs.append(f"slot {n} challenge status {c.get('status')!r} not in {CHALLENGE_STATUS}")
+        inv = s.get("invite")
+        if inv is not None:
+            dev.append("invite")
+            if not isinstance(inv, dict):
+                probs.append(f"slot {n} invite must be an object (design §5.6)")
+            else:
+                for k in ("who", "want", "if_ignored"):
+                    if not str(inv.get(k) or "").strip():
+                        probs.append(f"slot {n} invite has no {k}")
+                if inv.get("kind") not in INVITE_KINDS:
+                    probs.append(f"slot {n} invite kind {inv.get('kind')!r} not in {INVITE_KINDS}")
+                if inv.get("status") not in INVITE_STATUS:
+                    probs.append(f"slot {n} invite status {inv.get('status')!r} not in {INVITE_STATUS}")
+        if s.get("kind") == "quest" and quests_.get(s.get("quest"), {}).get("project"):
+            dev.append("project")
+        if len(dev) > 1:
+            probs.append(f"slot {n} carries {len(dev)} devices ({', '.join(dev)}); one at most (design §5.6)")
+        if dev:
+            devices.append((s.get("day"), dev[0], n))
+            for k in dev:
+                if k != "micro":
+                    kinds[k] = kinds.get(k, 0) + 1
+    dated = sorted([d for d in devices if d[0]], key=lambda d: d[0])
     for a_, b_ in zip(dated, dated[1:]):
-        if (dt.date.fromisoformat(b_["day"]) - dt.date.fromisoformat(a_["day"])).days < 2:
-            probs.append(f"micros in adjacent slots {a_['n']} and {b_['n']}")
+        try:
+            gap = (dt.date.fromisoformat(b_[0]) - dt.date.fromisoformat(a_[0])).days
+        except ValueError:
+            continue
+        if gap < 2:
+            probs.append(f"devices on neighbouring days: slot {a_[2]} ({a_[1]}) and slot {b_[2]} ({b_[1]}); never two in adjacent slots (design §5.6)")
+    if kinds.get("challenge", 0) > 1:
+        probs.append("more than one challenge in the chapter; one at most (design §5.6)")
+    if kinds.get("invite", 0) > 2:
+        probs.append("more than two invitations in the chapter (design §5.6)")
+    if len(kinds) > 2:
+        probs.append(f"the chapter carries {len(kinds)} device kinds ({', '.join(sorted(kinds))}); at most two of challenge, project, invite (design §5.6)")
+    for k in sorted(kinds):
+        if k in (ch.get("previous_devices") or []):
+            probs.append(f"a {k} ran in the previous chapter too; a device kind rests a chapter (design §5.6)")
+    # the Book's project on the page (world.json → projects[]) and the callback cap
+    place_ids = known_place_ids()
+    for pr in world.get("projects", []) or []:
+        pid = pr.get("id")
+        if pid not in quests_ or not quests_[pid].get("project"):
+            probs.append(f"world.json projects[] {pid!r} is not a project quest in plan.json")
+        if pr.get("place") not in place_ids:
+            probs.append(f"world.json project {pid}: place {pr.get('place')!r} is not in places.json")
+        if not isinstance(pr.get("stage"), int) or not isinstance(pr.get("of"), int) or not 1 <= pr["stage"] <= pr["of"]:
+            probs.append(f"world.json project {pid}: stage must be an int from 1 to of")
+        if pr.get("status") not in ("live", "done"):
+            probs.append(f"world.json project {pid}: status {pr.get('status')!r} must be live or done")
+        if not str(pr.get("visible") or "").strip() or not str(pr.get("name") or "").strip():
+            probs.append(f"world.json project {pid}: needs a name and a visible line in the page's words")
+        for d_ in pr.get("decisions") or []:
+            if not isinstance(d_, dict) or not WHERE_RE.match(str(d_.get("scene", ""))) or not str(d_.get("chose") or "").strip() or not isinstance(d_.get("stage"), int):
+                probs.append(f"world.json project {pid}: decision {d_!r} needs stage (int), chose (text) and scene (chNN:sK)")
+    for qid, q in quests_.items():
+        if q.get("project") and int(q.get("stage") or 0) >= 1 and not any(p_.get("id") == qid for p_ in world.get("projects", []) or []):
+            notes.append(f"project {qid} is at stage {q.get('stage')} but world.json → projects[] has no entry: the page's trace is missing")
+    later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
+    if later_n > CALLBACK_CAP:
+        notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")
     axes_touched = {s["micro"]["axis"] for s in micro_days if s.get("micro")}
     if len(micro_days) >= 2 and len(axes_touched) < 2:
         probs.append("the chapter's micros touch only one axis; plan ≥ 2")
@@ -2385,11 +2651,14 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("now")
-    s = sub.add_parser("due"); s.add_argument("--at"); s.add_argument("--all", action="store_true")
+    s = sub.add_parser("due"); s.add_argument("--at"); s.add_argument("--all", action="store_true"); s.add_argument("--later", action="store_true")
     sub.add_parser("check")
     sub.add_parser("fmt")
     sub.add_parser("archive")
     s = sub.add_parser("add"); s.add_argument("entry"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true"); s.add_argument("--dry-run", action="store_true")
+    s = sub.add_parser("challenge"); s.add_argument("n"); s.add_argument("action", choices=["success", "fail", "show", "void"]); s.add_argument("--why")
+    s = sub.add_parser("invite"); s.add_argument("n"); s.add_argument("action", choices=["take", "pass", "show"])
+    s = sub.add_parser("project"); s.add_argument("id"); s.add_argument("action", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what")
     s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True)
     s = sub.add_parser("void"); s.add_argument("id"); s.add_argument("--why", required=True)
     s = sub.add_parser("bearing"); s.add_argument("pole", help="a pole word, or `show`"); s.add_argument("n", nargs="?", type=int); s.add_argument("--why"); s.add_argument("--force", action="store_true", help="allow a move beyond ±4")
@@ -2417,7 +2686,7 @@ def main():
     {
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
-        "plan": cmd_plan, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
+        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
     }[args.cmd](args)
 
 

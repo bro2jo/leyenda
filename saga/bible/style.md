@@ -114,6 +114,11 @@ One stage of a quest or a beat may end on a choice smaller than the climax's. Fo
 - People answer in voice and may refuse, deflect or lie. Zero or one die, only with stakes or a game, never with the chapter's tier. A failure costs a copper, a laugh or a line.
 - At most two between two scenes; a third is two lines and the moment passes. It ends on a line that hands the moment back, **never on a choice list**. No Reckoning box. The next scene opens on it in a clause, then does its own slot. Consequences, when there are any, go through the ledger (`design.md` §9).
 
+### Devices on the page (a challenge, an invitation, the project)
+- **A challenge** is a scene whose want has a few ways in. He tries them one at a time, in prose, each with its dice line where the roll happens; nothing is counted aloud, and the scene ends when the thing is done or the cost is paid, never on a tally. A lost one turns the scene; it does not stop it.
+- **An invitation** is the last line of a close-day reply, in-world, one sentence: *Wren is at the door with her ledger and a question.* Never a list. If he answers, the Between opens on that person's first line, not his, and ends like any Between.
+- **The project** leaves a trace: when a stage is written, the place's codex entry and the Now page carry one line of what changed, in the page's words, and every later scene set there has the thing in it without remark.
+
 ### A glimpse (after a log; not a scene)
 One or two italic sentences, about 40 words at most, closing a log reply: the House in the story's present moment, between the last scene and the next. Rotate the kind: a moment in the House, a line overheard, a tally from Wren's ledgers, a saying or verse of the realm, the body, weather on the Steps. Tone comes from how the day has gone, the sheet and the choices already made; content is texture only. A glimpse carries no plot, plants nothing, reveals nothing, names nothing the page has not named, binds no later scene, and never mirrors the log it follows. All of §1 applies. It never goes in a chapter file; it lives in `saga/state/glimpses.md`, which the site does not read. Full rules: `CLAUDE.md`, "The glimpse".
 

@@ -1123,6 +1123,29 @@ class Site:
                     f"{', '.join(ch['slug'] + '.md' for ch in self.chapters) or 'none'})")
         if isinstance(w.get("current_quest"), dict) and "summary" in w["current_quest"]:
             problem("world.json: current_quest.summary is GM text; keep only name and on_the_page (the summary lives in _gm/plan.json)")
+        projects = w.get("projects")
+        if projects is None:
+            projects = []
+        if not isinstance(projects, list):
+            problem("world.json: projects must be a list")
+            projects = []
+        for i, pr in enumerate(projects):
+            if not isinstance(pr, dict):
+                problem(f"world.json projects[{i}] must be an object")
+                continue
+            for k in ("id", "name", "place", "visible"):
+                if not str(pr.get(k) or "").strip():
+                    problem(f"world.json projects[{i}]: missing {k}")
+            if pr.get("place") not in self.place_by_id:
+                problem(f"world.json projects[{i}]: place {pr.get('place')!r} is not in places.json")
+            if not isinstance(pr.get("stage"), int) or not isinstance(pr.get("of"), int) or not 1 <= pr["stage"] <= pr["of"]:
+                problem(f"world.json projects[{i}]: stage must be an int from 1 to of")
+            if pr.get("status") not in ("live", "done"):
+                problem(f"world.json projects[{i}]: status must be live or done")
+            for d in pr.get("decisions") or []:
+                if not isinstance(d, dict) or not str(d.get("chose") or "").strip() or not isinstance(d.get("stage"), int):
+                    problem(f"world.json projects[{i}]: each decision needs stage (int) and chose (text)")
+        self.projects = projects
         choices = w.get("choices")
         if choices is None:
             choices = []
@@ -1803,7 +1826,9 @@ class Site:
         map_html = sec("The map", "where Darrow is", svg_map(self.places, self.route, self.current_place, rel)
                        + '<p class="legend"><span class="lg ember">●</span> Darrow <span class="lg brass">●</span> visited <span class="lg faint">●</span> not yet <span class="lg route">—</span> the road so far</p>')
         q = w.get("current_quest") or {}
-        quest = sec("The quest", esc(q.get("name", "")), f'<p class="prose">{esc(q.get("on_the_page", ""))}</p><h3 class="sub-h">What he is fighting</h3><p class="prose">{esc(w.get("current_struggle", ""))}</p>')
+        work = "".join(f'<h3 class="sub-h">Work in hand</h3><p class="prose">{esc(pr.get("name", ""))}, stage {pr.get("stage")} of {pr.get("of")}: {esc(pr.get("visible", ""))}</p>'
+                       for pr in getattr(self, "projects", []) or [] if pr.get("status") == "live")
+        quest = sec("The quest", esc(q.get("name", "")), f'<p class="prose">{esc(q.get("on_the_page", ""))}</p><h3 class="sub-h">What he is fighting</h3><p class="prose">{esc(w.get("current_struggle", ""))}</p>' + work)
         oc = self.open_choice()
         if oc:
             lis = "".join(f"<li>{inline(it)}</li>" for it in oc["items"])
@@ -1867,6 +1892,18 @@ class Site:
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
 
     # ---------------------------------------------------------------- codex
+    def project_html(self, place_id):
+        """What Darrow changed at a place: the Book's project trace from world.json → projects[] (reader-safe, in the page's words)."""
+        out = []
+        for pr in getattr(self, "projects", []) or []:
+            if pr.get("place") != place_id:
+                continue
+            state = "finished" if pr.get("status") == "done" else f"stage {pr.get('stage')} of {pr.get('of')}"
+            dec = "".join(f"<li>{esc(d.get('chose', ''))}</li>" for d in pr.get("decisions") or [] if d.get("chose"))
+            out.append(f'<h3 class="sub-h">What Darrow changed here</h3><p>{esc(pr.get("name", ""))} · {esc(state)}. {esc(pr.get("visible", ""))}</p>'
+                       + (f'<ul class="plain">{dec}</ul>' if dec else ""))
+        return "".join(out)
+
     def render_codex(self):
         rel = "../"
         secs = []
@@ -1885,7 +1922,7 @@ class Site:
             tag = badge("visited", "good") if p.get("visited") else badge("not yet", "dim")
             name = p["name"] + (f" · {p['subtitle']}" if p.get("subtitle") else "")
             places.append({"name": name, "id": f"place-{p['id']}", "tag": self.codex_thumb(p, rel) + tag,
-                           "html": self.codex_figure(p, rel) + f'<p>{esc(p["description"])}</p><p class="m">First on the page: {src}</p>'})
+                           "html": self.codex_figure(p, rel) + f'<p>{esc(p["description"])}</p>' + self.project_html(p["id"]) + f'<p class="m">First on the page: {src}</p>'})
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         extra = f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>' if offmap else ""
         secs.append(sec("Places", f"{len(places)}", rows(places) + extra))
