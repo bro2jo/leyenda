@@ -44,6 +44,7 @@ Commands (run from the repo root):
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
   challenge N success|fail|show|void    a slot's challenge (design §5.6): move a counter after each roll; it resolves when progress or strain fills
   invite N take|pass|show               a slot's invitation: taken when he answers in voice (a Between), passed at the next close if he has not
+  plan invite_rule WHO EXPR             a person's standing condition for coming to Darrow at all (rae: tether.stage >= 1); `check` refuses an invite while it is not met
   plan quest ID gate='beats.b1_1.status == "done"'   a quest's gate in the rule grammar (a beat id with its dot as an underscore; also quests.ID.status, flags.x, approval.x, tether.stage):
                                         `check` refuses a planned slot of the quest while it is not met; `plan next` prints it
   project ID show | work --where chNN:between-K --what TEXT
@@ -915,6 +916,55 @@ def character_status(who):
 NAME_STOP = {"The", "And", "But", "Then", "When", "While", "Not", "Nothing", "Nobody", "His", "Her", "She", "Him", "They", "Them", "What", "Who", "Where", "Why", "How", "Only", "Darrow", "Captain", "Ser"}
 
 
+def character_place(cid):
+    """(last_seen place id, companion present flag or None) for a character file id."""
+    path = ROOT / "saga/characters" / f"{cid}.json"
+    try:
+        c = load_json(path)
+    except Exception:
+        return None, None
+    place = ((c.get("last_seen") or {}).get("place")) or None
+    return place, None
+
+
+def invite_narrative_problems(inv, s, st):
+    """Why this person cannot come to Darrow now (design §5.6, the narrative gates): [(hard: bool, message)].
+    Hard: no why_now; a `when` or a per-person invite rule not met; a companion marked absent; the person last seen
+    somewhere Darrow is not, unless the slot's own plan names them (then a note: the scene must bring them first)."""
+    out = []
+    who = str(inv.get("who") or "").strip().lower()
+    if not str(inv.get("why_now") or "").strip():
+        out.append((True, f"invite from {who!r} has no why_now: one line of why this person comes to him now, from their want and the moment"))
+    if inv.get("when"):
+        state, detail = gate_state(inv["when"], st)
+        if state == "NOT MET":
+            out.append((True, f"invite from {who!r}: its when ({inv['when']}) is not met; the situation is not there yet"))
+        elif state != "MET":
+            out.append((True, f"invite from {who!r}: when {inv['when']!r} {state}: {detail}"))
+    cid, _ = character_status(who)
+    key = (cid or who).split("-")[0]
+    rule = (st.plan.get("invite_rules") or {}).get(key) or (st.plan.get("invite_rules") or {}).get(cid or "")
+    if rule:
+        state, detail = gate_state(rule, st)
+        if state == "NOT MET":
+            out.append((True, f"{cid or who} does not come to him yet: the invite rule ({rule}) is not met"))
+        elif state != "MET":
+            out.append((True, f"invite rule for {key} {rule!r} {state}: {detail}"))
+    if cid:
+        comp = (st.world.get("companions") or {}).get(key)
+        if isinstance(comp, dict) and comp.get("present") is False:
+            out.append((True, f"{cid} is not with him (world.json companions.{key}.present is false)"))
+        here = (st.world.get("location") or {}).get("place")
+        there, _ = character_place(cid)
+        if here and there and there != here:
+            named = re.search(r"\b" + re.escape(key) + r"\b", str(s.get("plan") or ""), re.I) is not None
+            if named:
+                out.append((False, f"{cid} was last seen at {there} and Darrow is at {here}: the slot's scene must bring them to him before the invitation is offered"))
+            else:
+                out.append((True, f"{cid} was last seen at {there} and Darrow is at {here}: they cannot come to him until the story brings them (name them in the slot's plan, or plan the invitation later)"))
+    return out
+
+
 def unknown_names_in(text):
     """Capitalised words, not sentence-first, in GM device text that no registry knows: a name the page has not spoken would leak through a scene or a Between."""
     reg = registered_names()
@@ -976,6 +1026,9 @@ def print_challenge(s, indent="  "):
 def print_invite(s, indent="  "):
     inv = s.get("invite") or {}
     print(f"{indent}invite ({inv.get('kind')}, {inv.get('status')}): {inv.get('who')} wants {inv.get('want')}")
+    print(f"{indent}  why now: {inv.get('why_now') or '(none: state one)'}" + (f" · when: {inv['when']}" if inv.get("when") else ""))
+    for hard, msg in invite_narrative_problems(inv, s, State()):
+        print(f"{indent}  {'⚠ locked' if hard else 'note'}: {msg}")
     print(f"{indent}  if ignored: {inv.get('if_ignored')} · offer it in one in-world line at the end of the close reply; `invite {s.get('n')} take|pass`")
 
 
@@ -1785,6 +1838,20 @@ def cmd_plan(args):
         st.touch("plan")
         st.save()
         return
+    if a == "invite_rule":
+        rules_ = plan.setdefault("invite_rules", {})
+        if args.expr in ("null", "none", ""):
+            rules_.pop(args.id, None)
+            print(f"invite_rules.{args.id} removed")
+        else:
+            state, detail = gate_state(args.expr, st)
+            if state in ("MALFORMED", "UNKNOWN TERM"):
+                die(f"invite rule {args.expr!r} {state}: {detail}")
+            rules_[args.id] = args.expr
+            print(f"invite_rules.{args.id}: {args.expr} · {state} now")
+        st.touch("plan")
+        st.save()
+        return
     if a == "beat":
         b = plan.setdefault("core_beats", {}).get(args.id)
         if b is None:
@@ -2547,6 +2614,10 @@ def cmd_check(args):
     quests_ = plan.get("quests", {})
     devices, kinds = [], {}
     arts_, spoken_ = art_names(), arts_spoken()
+    for who_, rule_ in (plan.get("invite_rules") or {}).items():
+        r_state, r_detail = gate_state(rule_, st)
+        if r_state in ("MALFORMED", "UNKNOWN TERM"):
+            probs.append(f"invite_rules.{who_} {rule_!r} {r_state}: {r_detail}")
     for qid, q in quests_.items():
         if q.get("gate"):
             g_state, g_detail = gate_state(q["gate"], st)
@@ -2601,7 +2672,10 @@ def cmd_check(args):
                     probs.append(f"slot {n} invite from {inv.get('who')!r}: nobody on the page by that name (no saga/characters/ file); people not yet on the page cannot invite (design §5.6)")
                 elif cstat != "alive":
                     probs.append(f"slot {n} invite from {cid_}, whose status is {cstat!r}: the invitation cannot come from them")
-                unk = unknown_names_in(str(inv.get("want") or "") + " " + str(inv.get("if_ignored") or ""))
+                if inv.get("status") == "waiting":
+                    for hard, msg in invite_narrative_problems(inv, s, st):
+                        (probs if hard else notes).append(f"slot {n} " + msg + ("" if hard else "") + (" (design §5.6)" if hard else ""))
+                unk = unknown_names_in(str(inv.get("want") or "") + " " + str(inv.get("if_ignored") or "") + " " + str(inv.get("why_now") or ""))
                 if unk:
                     notes.append(f"slot {n} invite names {', '.join(sorted(unk))}, which no registry knows: nothing the page has not spoken may reach a Between")
         if s.get("kind") == "quest" and quests_.get(s.get("quest"), {}).get("project"):
@@ -2774,6 +2848,7 @@ def main():
     x = ps.add_parser("done"); x.add_argument("n"); x.add_argument("--wrote"); x.add_argument("--skipped", action="store_true"); x.add_argument("--force", action="store_true", help="redo a slot already written or skipped")
     x = ps.add_parser("slot"); x.add_argument("n"); x.add_argument("kv", nargs="+", help="key=value; micro as JSON"); x.add_argument("--force", action="store_true", help="edit a slot already written or skipped")
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
+    x = ps.add_parser("invite_rule"); x.add_argument("id", help="a character id or its first token (rae, benedek)"); x.add_argument("expr", help="rule grammar; null removes")
     x = ps.add_parser("climax")
     x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers"); x.add_argument("--force", action="store_true", help="open a chapter out of sequence")
     x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)

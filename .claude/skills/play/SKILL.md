@@ -13,7 +13,7 @@ A **Between** is the scene extended by Darrow's own hand: the story's present mo
 - An answer to an **open choice** (climax or micro: `python3 engine/saga.py now` prints the micro, `saga/NOW.md` the climax's) is `/choose`, handled first; the rest of the message may then be played.
 - Anything that **reads like a log** is `/log` first; the Ledger reply comes first, then a rule, then the Between.
 - A **red flag** in the message: the `/log` red-flag reply, and no Between that day.
-- An answer in voice to a **waiting invitation** (`python3 engine/saga.py now` lists it under Devices; the close reply offered it in one line) is a Between that the other person opens with their want; everything below applies, and the bookkeeping adds `python3 engine/saga.py invite N take`.
+- An answer in voice to a **waiting invitation** (`python3 engine/saga.py now` lists it under Devices; the close reply offered it in one line) is a Between that the other person opens with their want (they are where he is, by the page: `check` has already held the invitation to that); everything below applies, and the bookkeeping adds `python3 engine/saga.py invite N take`.
 - Otherwise: `git pull --rebase origin main`, `python3 engine/saga.py now`, and this skill.
 
 ## 2. Read before writing

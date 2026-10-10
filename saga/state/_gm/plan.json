@@ -380,5 +380,9 @@
   "open_micro": null,
   "temptation": {
     "planted": []
+  },
+  "invite_rules": {
+    "rae": "tether.stage >= 1",
+    "benedek": "!flags.benedek_hollowed"
   }
 }
