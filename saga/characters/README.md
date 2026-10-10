@@ -10,6 +10,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
 - No real-world words: no foods, numbers or dates from logs, exercises, therapy, rehabilitation terms. Game numbers (level, Might, Ember, dice) are fine.
 - A name the page has not spoken is not spoken here. The red-handed woman has no name. The man leading the grey cloaks has no name.
 - Secrets, true identities and stat rationale go in `saga/bible/_gm/characters.md`, never here.
+- A known fact may carry `evidence`: a few words of the cited scene, verbatim, and the build fails when that scene does not contain them. It is **required** for any fact that reports what someone thought, felt, meant, believed, intended, knew or did not know, or that paraphrases rather than reports; optional for a plain event. The excerpt is the proof; the fact's own wording still says whether the thing was seen, reported or believed (`saga/bible/style.md` §4).
 
 ## Fields
 
@@ -34,7 +35,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
   "story_so_far": "2–5 sentences, spoiler-free.",
   "quote": {"text": "The quiet is a liar.", "chapter": "01", "scene": "1"},
   "known_facts": [
-    {"fact": "One fact, one sentence.", "chapter": "00", "scene": "III"}
+    {"fact": "One fact, one sentence.", "chapter": "00", "scene": "III", "evidence": "a few words of that scene, verbatim"}
   ],
   "relationships": [
     {"to": "darrow", "label": "the knight whose knee she bound", "note": "One sentence, as seen on the page."}
@@ -79,6 +80,9 @@ One JSON file per character who has **appeared or been named on the page** in `s
 | `01` | `1` | The Reading of the Knots | `chronicle/01-the-confessor-at-the-steps.html#scene-1` |
 | `01` | `interlude` | The Wax | `chronicle/01-the-confessor-at-the-steps.html#interlude` |
 | `01` | `2` | Two Fires | `chronicle/01-the-confessor-at-the-steps.html#scene-2` |
+| `01` | `between-1` | The Paper's the Point | `chronicle/01-the-confessor-at-the-steps.html#between-1` |
+| `01` | `between-2` | What It Holds Up | `chronicle/01-the-confessor-at-the-steps.html#between-2` |
+| `01` | `3` | The Law of Bells | `chronicle/01-the-confessor-at-the-steps.html#scene-3` |
 
 New chapters: scenes are `### Scene N — Title` → anchor `chronicle/<file>.html#scene-N`; an interlude (`### Interlude — Title`, another POV) is `#interlude` (a second in the same chapter: `#interlude-2`), scene key `interlude`; a Between (`### Between — Title`, a role-play piece between scenes) is `#between-K` with scene key `between-K`, counting up within the chapter; the climax is `#climax`; a climax choice's consequence (`### Choice — Title`) is `#choice`. A small choice at the end of a scene has no anchor of its own. The build fails on an anchor it cannot find.
 

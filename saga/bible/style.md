@@ -29,7 +29,7 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 | A red-light/rest day (plan says stop) | a **cutaway** scene: the world moves without him, in another POV (Wren, Hollis, the House, an enemy) or with Darrow made to rest by others. Never a setback frame; resting is never failure. |
 | A missed day (nothing logged at all) | No scene; the world moves without him. A day with only food logged is still a day, coloured by what was logged. The next scene after a missed day opens with **one off-page world move**, planned in advance: the grey cloaks a day closer, a companion did something alone, the weather closed a road. No guilt, no lesson. |
 
-**Tone, never the slot's content.** What happens in a scene is fixed when the chapter is planned; the day's real deeds set only its colour: warmth or cold in him, a stage that goes well or costs more, people who are kind or short with him. The **outcome** of the week is set only at the climax, by the tier. A warm day never buys a victory and a cold day never spends one.
+**Tone, never the slot's content.** What happens in a scene is fixed when the chapter is planned; the day's real deeds set only its colour, and the colour is Darrow's alone: warmth or cold in him, how long he lasts, how closely he reads a room, how he hears what is said to him. On a cold day a plain remark lands as short; it is the same remark that person would have made on any day, and the page keeps what was said apart from what he made of it. Everyone else acts from who they are, what they want in that moment, what they have seen, and how they stand with him, which only his choices move; nobody is warmer or shorter with him because of a day they could not know about. The **outcome** of the week is set only at the climax, by the tier. A warm day never buys a victory and a cold day never spends one.
 
 Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) may appear, but only inside Reckoning boxes and dice lines, never in narration.
 
@@ -39,13 +39,18 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 
 - **POV:** close third person on Darrow, past tense. At most one short **interlude** per chapter from another POV (Wren, Hollis, Maelis, an enemy, a distant hall), under its own heading `### Interlude — Title` (see §3); it is not tied to a day.
 - **Register:** grounded and specific. Concrete nouns, working verbs. Soldiers' humor. Earned emotion. Think *The First Law* dialogue, *Chalion* interiority, *Baldur's Gate 3* companions.
-- **Every scene:** someone wants something, something stops them, something turns. End on movement: a decision, a door, a line of dialogue, a new problem. Never end on a summary.
-- **Dialogue does the heavy lifting.** Use each character's voice line (`cast.md`). Let people interrupt, deflect, lie.
+- **Every scene:** someone wants something, something stops them, something turns. Say the turn before you write it, in one line: by the end, this person can, must, believes, risks or chooses something they could not at the start (the slot's `turn`; if the plan has none, you state one). Darrow attempts something in every scene, from a cot if it must be: he persuades, bargains, tests a guess, hides a thing, comforts, delegates, commits. If a scene opens and closes on the same charge, nothing happened; if an explanation is its only reason to exist, cut it and let the fact arrive later, where it costs something. When in doubt, do to him not the worst thing but the most revealing one. End on movement: a decision, a door, a line of dialogue, a new problem. Never end on a summary.
+- **Dialogue does the heavy lifting.** Use each character's voice line (`cast.md`). Let people interrupt, deflect, lie. A question gets one of four answers: the whole of it, part of it, the wrong one (the person does not know, or is mistaken and believes otherwise), or none; and none is the rarest, at most one a scene, kept for what the arc keeps. What the Annals mark `common` is told in full by anyone who would know it, a practical question gets a practical answer, and the House is full of people who are simply wrong about things, so let some of them be.
+- **People under pressure.** A voice line is a tendency, not a quota. What tells people apart is what they notice first, how they go after what they want, and what they do when that fails (`_gm/characters.md`, *Under pressure*): write the tactic and the tic follows by itself. Everyone who walks into a scene is the hero of their own day and wants something that is not Darrow's problem. Not everyone gets the last word: the closing line belongs to whoever's turn it is, and some scenes end on an action, or on a silence in which nobody is being clever.
 - **The body is real.** Darrow's knee is a presence: stiffness at dawn, the hot ache after the forms, the terror of a stair going down, the moment it holds. Write it the way a wounded soldier would feel it, never the way a clinic would describe it.
-- **Plant and pay off.** Before writing, read `saga/state/_gm/threads.md`. Every chapter should touch at least one open thread and plant at most one new one.
+- **The eye is his.** Close third means the page sees what Darrow would notice, in his order: in a fight the weapons, not the cloaks; in a sickroom the hands; in a room he knows, almost nothing. An entrance earns two details, and the rest arrives in action across later scenes, or never. Suspect every *thought, knew, realised, wanted, felt, remembered*: show the thing he noticed and let the reader think it.
+- **Plant and pay off.** Before writing, read `saga/state/_gm/threads.md`. Every chapter should touch at least one open thread and plant at most one new one. A truth is revealed only after its plants have reached the page, twice, in scenes the threads file can name. Open small things and close them inside the scene or the chapter, so a reader has somewhere to rest whatever the calendar does to a chapter's length; the Book's questions stay open.
 - **Lore is seasoning.** The Annals (`saga/bible/_gm/lore.md`) hold the realm's history, customs and songs, and the doctrine at their top is the rule. The scene's want, obstacle and turn come first, and lore never stands in for them. **At most one touch per scene**, none in a climax's action beats, never a paragraph of history in the narrator's voice: a name and a half-line, a custom done without comment, two lines of a song, through a person who would know it. A touch stays only if it also characterises, raises the stakes or sets the place. Never a truth ahead of the arc. In doubt, cut it: the world is deep whether or not this scene says so.
 - **The Bearing in prose.** Who Darrow's choices are making him (`saga/state/bearing.json`) is never a number or an axis name in narration. It shows as how people address him, which options he is offered, and the epithet in writs and talk. **An epithet must be spoken on the page**, in a writ, from an enemy's mouth, in a companion's jibe, in the scene or climax whose choice earns it, before the site may show it.
 - **Variety:** rotate scene types: dialogue-driven, action, investigation, quiet/character, set piece. No two consecutive scenes of the same type.
+- **The sound test.** Read the scene back as if aloud, before the bookkeeping (§4). Where it hesitates, where it drags, where it rushes a moment that should cost, the rhythm is telling you what the sentences hide. Only short sentences go monotonous, and so do only long ones; the one duty of a sentence is to lead to the next. Then find the clusters: three similes in a paragraph, two maxims in a row, a silence doing the work a line should do. Keep the best one and let the sentences around it be plain.
+
+*Where these come from, for the curious: McKee's scene that turns, Bujold's most revealing thing, Abercrombie's eye, Le Guin's ear, Kowal's nested questions. The rules above are the House's own.*
 
 **Banned (or once a Book at most):** "a testament to", "little did he know", "in that moment", "a dance of", "the weight of the world", "he let out a breath he didn't know he was holding", "something shifted", "steeled himself", eyes that "sparkle", any sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
 
@@ -54,7 +59,7 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 ## 3. Formats
 
 ### A daily scene (written when a day is closed)
-- **300–550 words**, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file.
+- **300–550 words** as the target, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file. The band is a target, not a wall: a scene that carries a choice, a reveal, a death or an arrival may run to 800, and one that only moves him across the House may stop at 250. What the band may never do is make a council of five break in one line, or pad a quiet morning to length. A scene a fifth outside its band gets the reread (§4), not a cut; `saga.py check` notes it.
 - Every daily scene is exactly one **kind**, fixed when the chapter is planned: **spine** (advances the chapter's core beat; at least two per chapter, and Saturday's slot is always spine), **quest** (one stage of an active side quest; at most two stages of one quest per chapter), **interlude** (another POV, at most one per chapter, heading `### Interlude — Title`, not tied to a day), or **cutaway** (a red-light day: the world moves without him; never a setback frame).
 - Tone is coloured by that day's deeds (see the table above); the content is the planned slot's, and the outcome is set only at the climax. The plot moves forward every day regardless.
 - A missed day gets no scene. The next scene opens with one off-page world move from the chapter's planned list, then carries on.
@@ -81,7 +86,7 @@ Show the check on its own line, before the outcome is narrated:
 - DCs: easy 8 · moderate 11 · hard 14 · very hard 17 · near impossible 20.
 
 ### The weekly climax (written at the Sunday checkpoint)
-- **900–1,800 words**: the chapter's battle, confrontation or revelation. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.
+- **900–1,800 words** (a target, as above: the space goes to the decision and what it costs): the chapter's battle, confrontation or revelation. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.
 - End with **a choice for Darrow** (2–3 options), in this format:
 ```
 **What does Darrow do?**
@@ -121,5 +126,20 @@ Each chapter opens with 1–3 lines from an in-world document, in italics, with 
 
 ---
 
-## 4. Copyright and originality
+## 4. The reread (before anything goes on the page)
+
+Every scene, climax, Between and Choice block gets this once it is drafted and before its bookkeeping. The build checks structure; this checks meaning, and it takes two minutes. Nothing here is written down except what it changes.
+
+1. **Canon.** What did this block make true that was not true before, and which sentence does it? Each such sentence is something seen, something someone reported, or something someone believes; the wording says which, and the records (`known_facts`, `codex.md`, `now`) say the same. A paraphrased secret is a spoiler the build cannot catch: if a sentence tells the reader a thing the page has not shown, it goes.
+2. **Who knows.** For each new fact: the reader, Darrow, which others? The threads file's *Who knows* column agrees, or is updated. Nobody acts on what they could not know.
+3. **Continuity.** Time of day and weather since the last block; where everyone is standing; what the knee has been allowed; the objects in hand. The Between before this scene, and the day's glimpses.
+4. **Debts.** The DUE NOW items the digest printed, the open choice, a promise made in a Between: honoured here, or still owed on purpose.
+5. **The turn.** The slot's `turn` happened on the page, and Darrow attempted something. If the block only explained, it is not done.
+6. **The sound.** §2's test: the clusters, the closing line, the thought verbs.
+
+Then the records: `saga/NOW.md`, the character files, `world.json`, the threads, the codex, in that order, and `saga.py check` and the build.
+
+---
+
+## 5. Copyright and originality
 All names, songs, verse and lore are original. Never quote or imitate real song lyrics or poems. Never borrow named characters, places or spells from existing games or books.

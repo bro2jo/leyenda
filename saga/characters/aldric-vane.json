@@ -51,32 +51,38 @@
     {
       "fact": "Darrow still remembers his face when the Grace went into him the first time: like a man hearing music he had only ever been told about.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "looked like a man hearing music he had only ever been told about"
     },
     {
       "fact": "By Darrow's account he has the better seat, the better manners and the better luck with the kind of women whose fathers mattered.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "He had the better seat, the better manners and the better luck"
     },
     {
       "fact": "Before the crossing he watched the far bank without smiling and told Darrow to ride wide, then wider; his mouth was open on some other word when the chaplain's bell began down the line, and he shut it and looked away.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "for a moment his mouth was open on some other word"
     },
     {
       "fact": "As Darrow went under, he saw Aldric's horse on the west bank already turned and already climbing out, Aldric bent low over its neck, one heartbeat early by Darrow's count; when the red-handed woman turned Darrow's head to the river, the Second Lance sat its horses on the west bank in perfect order, untouched, watching.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "Already turned. Already climbing out. Aldric bent low over its neck."
     },
     {
       "fact": "On the night Maelis offered Darrow the two ways off the mountain, he thought of the field-stone warming under his palm and of Aldric's horse on the west bank, already turned, before he asked whether he could kneel after.",
       "chapter": "00",
-      "scene": "III"
+      "scene": "III",
+      "evidence": "He thought about Aldric's horse on the west bank, already turned"
     },
     {
       "fact": "With Darrow's name first on the list the Confessors read out at the inn in Coldmere, Darrow believes it was written in a warm room in Calden by a man who has ridden knee to knee with him since they were boys, and hears again the words \"Ride wide today.\"",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "a man who had ridden knee to knee with him since they were boys had written his name first on the list"
     }
   ],
   "relationships": [

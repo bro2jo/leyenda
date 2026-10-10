@@ -51,7 +51,8 @@
     {
       "fact": "When Darrow said the knee had held fine for thirty-two years, she answered that it had help for twelve of them, watched his face while she said it, and did not explain what she meant.",
       "chapter": "00",
-      "scene": "III"
+      "scene": "III",
+      "evidence": "but she watched his face while she said it"
     },
     {
       "fact": "She refused to touch the knee for six weeks, because a Binding takes the measure of whatever it is tied to and a weak leg would give him a weak knee.",
@@ -81,12 +82,14 @@
     {
       "fact": "Asked how many Bindings she has done, she said only that it was enough to know what the soft season looks like, and agreed that was not a number.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "Enough to know what the soft season looks like"
     },
     {
       "fact": "When Darrow saw the script of light above his palms, she did not look surprised; she said \"So it's begun\" and told him to close the door.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "She didn't look surprised. That frightened him more than the light had."
     },
     {
       "fact": "She was shut in a cell down the hall with the Captain while Hollis hid the writ; nothing came through the door, and at the end of the Interlude a latch lifted and it opened.",
@@ -106,12 +109,14 @@
     {
       "fact": "Asked how she knows all this, she said only that she is a Mender and Menders remember things.",
       "chapter": "01",
-      "scene": "2"
+      "scene": "2",
+      "evidence": "I'm a Mender. We remember things."
     },
     {
       "fact": "Of the Grace: she has had her fingers on knees that carried it for twenty years; it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know. Of Faithless: a word for a knight the Grace has left, which says it left because of him.",
       "chapter": "01",
-      "scene": "between-2"
+      "scene": "between-2",
+      "evidence": "It holds things up, Captain. It doesn't mend them."
     },
     {
       "fact": "At the Prior's council she gave the law: while Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate; miss one ringing and the law lapses till the next.",

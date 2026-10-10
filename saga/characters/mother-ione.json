@@ -37,7 +37,8 @@
     {
       "fact": "By the time Wren Ashdown reached the infirmary hall with word of the grey cloaks on the Holloway, Mother Ione had been told.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "Mother Ione's been told."
     },
     {
       "fact": "She holds her council in the warming room off the cloister, has the one good chair by the fire, and offers it to nobody.",
@@ -52,7 +53,8 @@
     {
       "fact": "She has not yet decided whether Old Mercy rings. She called Darrow back from the stair to ask what he would have her know first, and what the lay brothers should tell the valley when it asks who sleeps up here.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "Before I decide whether Old Mercy rings, is there anything you'd have me know?"
     }
   ],
   "relationships": [],

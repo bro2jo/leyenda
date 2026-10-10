@@ -8,6 +8,8 @@ For people already on the page, appearance and voice are in `cast.md` and this f
 
 ## On the page
 
+Each entry's **Under pressure** line is the drafting note `style.md` §2 asks for: what the person notices first, how they go after what they want, and what they do when that fails. Written from the page where the page has shown it; the tic in `cast.md` follows from the tactic, never the other way round.
+
 ### Ser Darrow of Edgemoor — Knight-Captain of the Ninth Lance
 Appearance and voice: `cast.md`.
 - A horse-breeder's son from a minor house in the Edgemoor hills, raised to captain by talent rather than birth. Before Harrow Ford his men called him **Quickstep**: the fastest blade in the Lowmarch, and he fought from his feet, footwork, angles, turning a man before the man knew he had been turned. Proud of it, careless with it, fed by the Grace like everyone else.
@@ -15,6 +17,7 @@ Appearance and voice: `cast.md`.
 - **Now:** the leg is bound and weak; for the first time in his life he has to wait, and waiting does not come naturally.
 - **Flaw:** he wants the old self back, and that wish is the trap. **Arc:** from wanting to be who he was to choosing who he is building; from fighting to get back to fighting to go forward.
 - **Signature:** in the Ninth, a raised fist with two fingers out meant "hold." He hated giving that signal.
+- **Under pressure:** he notices lines first, the shape of a thing before its parts: the clan carts behind the spears, the cup on the hearth. He goes after what he wants by asking straight, and jokes when the asking fails; when the joke fails too he goes quiet and does the thing without leave, which is how the knee went. A full name means he is angry.
 - **The Knight Who Fell (the benchmark):** the Reckoning sometimes shows him, faintly, the measure he had at Harrow Ford: Might 15 · Vigor 15 · Finesse 18 · Resolve 12. Surpassing each is a story moment. Resolve is the first he will pass, and he will not notice when he does.
 
 ### Maelis Vorne — the Mender
@@ -22,6 +25,7 @@ Appearance and voice: `cast.md`.
 - Former field surgeon of three campaigns; now senior Mender at Saint Ysolde's. She performed the Binding and reads it each week with two fingers and her eyes shut (the Reading of the Knots).
 - **Rule of the saga:** Maelis never clears Darrow for anything the real-world plan has not cleared. Her verdicts track the PT's.
 - **Wants:** to see one Binding hold. **Fears:** the soft season.
+- **Under pressure:** she notices the body first: hands, gait, the knee before the face. She gets what she wants by withholding, a question for a question, until the other person says the true thing themselves; when that fails she gives a flat order and leaves the room. She never argues; she charges for it.
 - **Hides:** thirty years of Warden practice (T8); she saw his Reckoning begin before he said a word. She tells her own story only in Book IV, or earlier if `r.t8.early` arms.
 
 ### Ser Hollis Garrow — the Old Captain
@@ -29,11 +33,13 @@ Appearance and voice: `cast.md`.
 - Knight-Captain of the Sixth Lance. He will teach Darrow **the Seated Blade**, the art of fighting without footwork, from a chair across a practice ring; he learned it in his own chair, recently and badly. The Art is not named on the page until he teaches it there.
 - He also teaches throwing from a chair, the first lesson of winning sitting: **The Measured Hand** (a Sport Art, open now), then **Overwall**. Neither is named on the page until he teaches it (threads: Sport Arts).
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
+- **Under pressure:** he notices rank and fear, who is frightened and who is in command. He pursues by insult, which is affection and instruction at once; when that fails he goes quiet, and his quiet is the thing to fear. He lies kindly to the weak and never to the strong.
 - **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, its words known by heart, its seal never once looked at; since the Interlude it lies folded in the cup of the beech leg (T3: the seal is Vane's; b2.4 is where he finally looks). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
 
 ### Wren Ashdown — the Runner
 Appearance and voice: `cast.md`.
 - Grew up in the House after her mother, a knight, was brought up the Steps Hollowed when Wren was nine. Runner, ledger-keeper and resident liar of Saint Ysolde's; counts everything (steps, 1,117; bells; cots; debts). In Book I she is Darrow's legs. Her ledgers supply chapter epigraphs.
+- **Under pressure:** she notices counts and discrepancies, what has changed since she last looked. She pursues by talking faster and burying the ask in a number; when that fails she stops counting, and a silent Wren is a frightened one. She embellishes rather than lies, and will say so.
 - **Wants:** to know what happened to her mother. **Hides:** that she can read Warden script (T6). The page may catch her at it before then (q1.ledger, the Stonewright ruin at the end of Book II); the why, and her mother's name, stay for Book III.
 - Her mother was **Dame Elspeth Ashdown**, a secret Ember initiate who refused to re-kneel, Hollowed on purpose by the Confessors; she died on the far cots four years ago. Neither the name, the Hollowing nor the death is on the page yet; the page has only "one of the far cots".
 
@@ -47,6 +53,8 @@ Appearance and voice: `cast.md`. On the page since the Prologue (the last cart; 
 - **Thistle.** The grey mare came out of the Wend at the mill weir below the ford, lame in the off fore, and went to a Holloway horse-dealer at the Coldmere fair. Rae knew the Ninth's brand on her quarter and has paid for the mare's feed out of her own purse since, without saying why, or knowing exactly why. She asks whether the captain of the Ninth rode a grey (Chapter 1, slot 6). Nothing of this is on the page; the codex has "fate unknown". Payoffs: q1.cart stage 2 (the price), Tether III (the mare delivered; `thistle_found`).
 - **Wants:** the cart and the oxen free of the debt on them (owed to her uncle, who keeps the inn at Coldmere where the list was read); to see one thing she carried up come down whole. **Fears:** the rope; being the last person to have seen a face. **Hides:** she carries for the Lantern Market too, because a carter carries for everyone: the letter-drop at the river mill on the Holloway (q2.lantern) is hers, writs and names and script in oilcloth under the salt. She has never sold a name and has read none of it. `rae_market_told`: whether she tells him before he finds it.
 - **How she speaks to him:** nothing at all, which everyone notices, until Tether I; then Darrow, never Ser, never Captain ("I don't drive for the Ninth. I drive for the House."). Her saying is *"Road's the road."* (codex when the page speaks it). She never asks him to come down the Steps; she comes up. She would take the fast road herself, she says, if anyone offered it to carters: Tether II's question.
+- **Under pressure:** she notices loads and weights, what a thing will bear and who is carrying what. She pursues by doing the thing first and saying it once after; when that fails she says "Aye" and waits, and she can outwait anyone in the House. She shows rather than explains.
+- **Her look, spent slowly.** The page has her age, her shoulders and the bell (Prologue II, trimmed 10/10); the rest of `cast.md` (the hood that gives up on her hair, the grey-green eyes on the road, the cloak and its iron clasp, the smile for oxen) is still to be spent, a detail or two a scene and always in action: the hood on the gate wall in the wind, the clasp when she pins it against the cold.
 - **Arc:** from the woman who carries other people's lives up and down a cliff to one who picks a road and a person to walk it with. The Tether's stages are the Ledger's and its shape is his choices'; her approval is story-only and moves only through the ledger (`plan companion arrive rae` when q1.cart stage 3 writes; before that a choice she saw carries an explicit `now.approval.rae` with `saga.py add --pending`, since `--witnessed` only knows companions already arrived). On the road from t1 in every shape (`arc.md → rae.road`): she drives for the company. She lives in every road and is never the price of anything, and neither is the knee (design principle 4).
 - **The form.** Knights marry kneeling (`world.md` §6); she would not have him kneel anyway. Tether V with approval ≥ 50 arms `r.rae.form`: the epilogue's one image after the final kneel. **Flags:** `thistle_found`, `rae_market_told`, `rae_vow`. **Rules:** `r.rae.form`, `r.rae.parts` (approval ≤ −25: she drives home for a Book; the stages never fall), `r.rae.ledger` (approval ≥ 40 by b3.4: the seized ledger comes whole, her doing; else half burned).
 
@@ -55,6 +63,7 @@ Appearance and voice: `cast.md`.
 - Darrow's sworn brother: squired together, knighted the same morning kneeling side by side; rode at Darrow's left hand at Harrow Ford. Now leads the Confessors, charged with bringing the Faithless of Harrow Ford to the Oathspire to kneel again. Devout, disciplined.
 - Writes Darrow letters that are genuinely loving: *"Come home, brother. Kneel, and be whole."* None has reached the page yet.
 - **Wants:** order; his sister Elinor safe; Darrow back. He is not a liar. He believes.
+- **Under pressure:** he notices form, who is kneeling correctly and who is not. He pursues by patience and sincerity, which is why he is believed; when that fails he leaves the one word unsaid and acts a heartbeat early.
 - **Hides:** he knew the Three Heartbeats were coming (T2) and turned his horse one beat early; the charge order bore his seal (T3). The page has Darrow *believing* the list was written in his hand; nothing has confirmed it. **Flag:** `vane_unbound` (Book VI).
 
 ### Tobin Marsh
@@ -65,20 +74,24 @@ Appearance and voice: `cast.md`.
 Appearance and voice: `cast.md`.
 - On the page from Ch 1 Sc 3 (the council in the warming room); appearance and voice moved to `cast.md`.
 - Holds the sanctuary right and will die before she yields it. **Wants:** every name under her roof kept. **Fears:** the bell falling silent at a dusk when it must ring.
+- **Under pressure:** she notices who is in a room and who is missing from it. She pursues by questions that are orders; when that fails she decides alone and tells no one until the bell rings. She never raises her voice; she lowers it.
 - **Hides:** possibly what happened to Elspeth Ashdown (T6). In the low road of Book I she is left answerable to a Confessor's writ for every name in the House.
 
 ### Sister Pell — keeper of the bells
 Appearance and voice: `cast.md`.
 - On the page from Ch 1 Sc 3 (the council; "Not on my rope"; the cup that chatters, which Darrow read and nobody else looked at: the plant for b1.5); appearance and voice moved to `cast.md`.
+- **Under pressure:** she notices the sound of things, a bell off its note, a cup on stone. She pursues by refusing, with the bells as her reason; when that fails she does it anyway, and the bells are still her reason.
 - Sanctuary is renewed by ringing at every dawn and dusk, and Sister Pell is old: that is the hinge of Book I's climax (Old Mercy, b1.5), where she is hurt and the bell falls silent until Wren climbs to ring it. Her glass in the bell tower saw the grey cloaks first.
 
 ### The red-handed woman
 Appearance and voice: `cast.md` (unnamed there, as on the page).
 - Pulled Darrow out of the Wend onto the far bank and made him look. See *Identities* below; the public sheet understates her (table).
+- **Under pressure:** she notices the one who will remember. She pursues by force and few words; when that fails she leaves, and is not seen again for a long time.
 
 ### Ser Benedek Orrin — a knight of the Sixth
 Appearance and voice: `cast.md`.
 - On the cot next to Hollis. Grace-sworn, devout, kind, terrified of the Confessors and more terrified of being Faithless. Asks what "second on the list" means and watches Hollis for the answer.
+- **Under pressure:** he notices whether people are afraid, because he is. He pursues by offering the comfort he was taught, kneeling and mercy; when that fails he apologises and asks again, and shuts his eyes when told to.
 - On the page from the Ch 1 Interlude ("The Wax"; the cot next to Hollis's, the oath at every bell) and the first Between of Scene 2 ("The Grace forgives"); appearance and voice moved to `cast.md`.
 - **Standing:** he knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up (the heralds' mercy, taken early), so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
 - **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. Nothing of this reaches the page before then. The Chapter 1 interlude puts him on the page; his `cast.md` entry and `saga/characters/benedek-orrin.json` are written from that prose, and from nothing here.

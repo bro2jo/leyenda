@@ -56,17 +56,20 @@
     {
       "fact": "She looked at Darrow's leg once, the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her.",
       "chapter": "00",
-      "scene": "II"
+      "scene": "II",
+      "evidence": "the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her"
     },
     {
       "fact": "The first of the lay brothers coming down with the litter called her Rae, as if her name were a thing you could lean on.",
       "chapter": "00",
-      "scene": "II"
+      "scene": "II",
+      "evidence": "as if her name were a thing you could lean on"
     },
     {
       "fact": "The one thing she said to Darrow in the whole of that day, as they lifted him: 'They'll count you up. Don't help.'",
       "chapter": "00",
-      "scene": "II"
+      "scene": "II",
+      "evidence": "They'll count you up. Don't help."
     },
     {
       "fact": "By Wren's account she was in the taproom at the inn in Coldmere with the House's salt on her cart when the Confessors' list was read out, and heard every name.",
@@ -91,12 +94,14 @@
     {
       "fact": "At Mother Ione's council she said the list was read slow, so the room could count; and the room counted.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "So the room could count"
     },
     {
       "fact": "On the stair after the council she stopped one step above Darrow, eye to eye, and asked whether he rode a grey at the ford. When he said yes and asked why, she went on up without answering; the bell at her belt rang once at the turn.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "went on up without answering"
     }
   ],
   "relationships": [

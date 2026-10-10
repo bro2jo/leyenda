@@ -49,7 +49,8 @@
     {
       "fact": "He says his oath at every bell, and says he still feels a warmth in his chest.",
       "chapter": "01",
-      "scene": "interlude"
+      "scene": "interlude",
+      "evidence": "the eyes of a man who still felt a warmth in his chest, or said he did"
     },
     {
       "fact": "He asked Hollis what it meant to be second on the list and whether they would take him down, and was told that nobody was taking anyone up eleven hundred steps in the snow.",
@@ -64,12 +65,14 @@
     {
       "fact": "Told to say his oath and shut his eyes, he shut them and his lips began to move, and he did not see where Hollis put the folded paper from his shirt.",
       "chapter": "01",
-      "scene": "interlude"
+      "scene": "interlude",
+      "evidence": "Orrin saw what he was told to see; he always had."
     },
     {
       "fact": "He told the Captain the Grace forgives: kneel, and it comes back. Asked why mercy needs a list, he had no answer and apologised for not having one.",
       "chapter": "01",
-      "scene": "between-1"
+      "scene": "between-1",
+      "evidence": "Benedek had no answer, and apologised for not having one."
     }
   ],
   "relationships": [

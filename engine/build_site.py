@@ -453,6 +453,13 @@ def load_characters(registry, factions, places):
                 problem(f"{p.name}: a known_fact has no text")
             if key not in registry:
                 problem(f"{p.name}: known_fact '{str(f.get('fact'))[:50]}' has no chapter/scene source in the chronicle")
+            ev = f.get("evidence")
+            if ev is not None:
+                # the excerpt is the fact's proof: a few words of the cited scene, verbatim, or the build stops
+                if not isinstance(ev, str) or len(norm(ev)) < 12:
+                    problem(f"{p.name}: known_fact '{str(f.get('fact'))[:50]}' evidence must be a verbatim excerpt of the page, a few words at least")
+                elif key in registry and norm(ev) not in scene_text(registry[key]["scene"]):
+                    problem(f"{p.name}: known_fact '{str(f.get('fact'))[:50]}' cites evidence that chapter {key[0]} scene {key[1]} does not carry: {ev!r}")
         for a in c.get("appearances") or []:
             key = (str(a.get("chapter")), str(a.get("scene")))
             if key not in registry:
@@ -1808,6 +1815,17 @@ Set Sets Takes Take Took Gets Get Got Goes Go Went Comes Come Came Sees See Saw 
 Needs Need Needed Keeps Kept Holds Hold Held Reads Read Writes Write Wrote Uses Loses Lose Lost Wins Win Won Finds Find Found Tells Tell Told Puts Put
 Approved Approves Favors Favor Refuses Refuse Requires Require Required Earned Earns Earn Tied Ties Tie Written Done Doing Using Making Being Having
 Nobody Somebody Everybody Anybody Itself Himself Herself Themselves Myself Yourself Ourselves""".split())
+
+
+def scene_text(scene):
+    """The normalized text of one parsed scene: every string in its blocks, in order (the evidence check searches it)."""
+    def walk(x):
+        if isinstance(x, str):
+            yield x
+        elif isinstance(x, (list, tuple)):
+            for y in x:
+                yield from walk(y)
+    return norm(" ".join(walk(scene.get("blocks") or [])))
 
 
 def norm(s):

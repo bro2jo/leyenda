@@ -80,7 +80,8 @@
     {
       "fact": "He knew the grey cloaks and the smoking censer on the Holloway for Confessors before anyone else said the word, and his face went the color of the window.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "his face had gone the color of the window"
     },
     {
       "fact": "His name is second on the list of the Faithless at Saint Ysolde's that was read out at the inn in Coldmere; asked who was first, Wren did not answer and looked at Darrow.",
@@ -90,7 +91,8 @@
     {
       "fact": "He can say the order from Harrow Ford with his eyes shut, and has kept the paper folded small inside his shirt, wax inward, against his ribs; he has not looked at the seal since he broke it on the west bank.",
       "chapter": "01",
-      "scene": "interlude"
+      "scene": "interlude",
+      "evidence": "wax inward, against his ribs"
     },
     {
       "fact": "The lay brothers made him a leg of beech and a leather cup, which fits the way a boot fits someone else; he took nine steps on it and swore at every one.",
@@ -100,7 +102,8 @@
     {
       "fact": "He has not had a drink in two days, meant to tell somebody, and could not think who.",
       "chapter": "01",
-      "scene": "interlude"
+      "scene": "interlude",
+      "evidence": "He had not had a drink in two days, which he had meant to tell somebody and couldn't think who."
     },
     {
       "fact": "When Benedek Orrin of his own Sixth asked what second on the list meant and whether they would take him down, he said nobody was taking anyone up eleven hundred steps in the snow, and that they would read their list at the bottom and freeze.",
@@ -110,7 +113,8 @@
     {
       "fact": "For a fortnight he has thought of the Captain with a sword and a chair under him: a man could fight sitting down, if somebody taught him to stop looking at the floor.",
       "chapter": "01",
-      "scene": "interlude"
+      "scene": "interlude",
+      "evidence": "a man could fight sitting down, if somebody taught him to stop looking at the floor"
     },
     {
       "fact": "He told Benedek to say his oath and shut his eyes, and while the lad's lips moved he pushed the folded writ, still unread, into the cup of the wooden leg, where no Confessor would think to look; he has been telling himself since midsummer that he will look at the wax later.",
@@ -120,7 +124,8 @@
     {
       "fact": "His read of the Confessors: a captain who won't kneel is a song in every taproom from the Steps to Calden, so they take the song down the mountain and make it kneel where people can see. \"Mercy's the word on the paper. The paper's the point.\"",
       "chapter": "01",
-      "scene": "between-1"
+      "scene": "between-1",
+      "evidence": "Mercy's the word on the paper. The paper's the point."
     }
   ],
   "relationships": [

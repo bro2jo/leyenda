@@ -52,12 +52,14 @@
     {
       "fact": "The sanctuary law has lapsed twice, she says, both times for snow, and not on her rope.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "Not on my rope"
     },
     {
       "fact": "She watches the speaker's mouth, not their eyes; when she set her cup on the hearth it chattered twice on the stone before it settled.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "the cup chatter twice before it settled"
     }
   ],
   "relationships": [

@@ -51,7 +51,8 @@
     {
       "fact": "Before the charge he read the clan line as fleeing something in the trees behind them, coming through the ford rather than at it, and Hollis Garrow answered that the writ said clear the ford.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "They're coming through us"
     },
     {
       "fact": "Halfway across the Wend the Grace went out of him in a single heartbeat, frost bloomed on his mail in midsummer, and when he planted his left foot and turned toward Tobin Marsh the knee gave with no blade and nothing touching it.",
@@ -106,7 +107,8 @@
     {
       "fact": "At the infirmary window the Reckoning showed itself to him for the first time, a pale gold script hanging over his palms that he could read though nobody had learned it in three hundred years, and behind his own numbers stood fainter ones whose owner he did not need to be told.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "He could read it anyway, and it was reading him"
     },
     {
       "fact": "While Hollis hid the writ, the Captain was shut in a cell down the hall with Mender Vorne and nothing came through the door; Hollis has thought for a fortnight that a man could fight sitting down, if somebody taught him to stop looking at the floor.",
@@ -121,7 +123,8 @@
     {
       "fact": "He knew the name of the burned order before she said it, from the curse the lowlands make of it, and she forbade him to say it in the hall, to Wren, to the Prior, or to Hollis most of all.",
       "chapter": "01",
-      "scene": "2"
+      "scene": "2",
+      "evidence": "The Emberwardens."
     },
     {
       "fact": "He asked Hollis and Benedek why the Confessors chase the Faithless up a mountain if the Grace left them for faithlessness, and why mercy needs a list with his name first; he kept what Maelis told him behind his teeth.",
@@ -136,12 +139,14 @@
     {
       "fact": "At Mother Ione's council he saw Sister Pell's cup chatter on the hearth before it settled, and read it before he meant to, the way he read a line before a charge; nobody else looked.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "He read it before he meant to, the way he read a line before a charge. Nobody else looked."
     },
     {
       "fact": "Asked by Rae Thorne on the stair whether he rode a grey at the ford, he said yes and asked why; she did not say. He has not said Thistle's name since the river.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "He had not said her name since"
     }
   ],
   "relationships": [

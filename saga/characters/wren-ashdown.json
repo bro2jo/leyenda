@@ -49,7 +49,8 @@
     {
       "fact": "When Darrow, feverish on the litter, told her she had missed a step, she denied it and went on counting.",
       "chapter": "00",
-      "scene": "II"
+      "scene": "II",
+      "evidence": "I did not miss one. Four hundred and sixteen."
     },
     {
       "fact": "On the night of the Binding, when the bells rang the hour, she was somewhere in the House counting them.",
@@ -64,7 +65,8 @@
     {
       "fact": "She told Darrow that Maelis says 'Time makes it possible, proof makes it permitted' in her sleep; Maelis says she does not sleep and that Wren lies, which Wren calls embellishing.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "and Wren lies"
     },
     {
       "fact": "She came to the infirmary from the bell tower, where Sister Pell's glass had shown riders on the Holloway.",
@@ -79,7 +81,8 @@
     {
       "fact": "She knows who stands second on the list of the Faithless at Saint Ysolde's that was read out at the inn in Coldmere: Hollis. When he asked who was first, she answered only by looking at Darrow.",
       "chapter": "01",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "Wren didn't answer. She didn't have to. She was already looking at Darrow."
     },
     {
       "fact": "She brought word that Rae Thorne had heard the list read in the taproom at Coldmere, driven the Holloway in the dark ahead of the grey cloaks, and climbed the Steps before the bell to tell the winch-brothers.",

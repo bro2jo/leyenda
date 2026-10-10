@@ -27,13 +27,14 @@ Commands (run from the repo root):
                                         and closes the slot's quest when its arc stages are used up or the slot carries "last": true
   plan micro open N                     open the slot's micro; records the scene key of the slot just written (from slot.wrote or last_written)
   plan micro close [--option K] [--by darrow|bearing]   --by bearing with no --option takes the slot's default
-  plan slot N key=value ...             edit a planned slot in place (plan, kind, beat, quest, stage, last, pov, micro, float, day);
+  plan slot N key=value ...             edit a planned slot in place (plan, turn, kind, beat, quest, stage, last, pov, micro, float, day);
                                         micro is passed as JSON (micro='{"axis":…,"ask":…,"options":[…],"bearing":[…],"default":1}');
                                         a written/skipped slot is refused without --force
   plan climax                           the chapter's question, climax plan, checks, options, default and the world moves left
   plan chapter template --week_start YYYY-MM-DD
                                         print a canonical skeleton for the next chapter (7 dated slots, spine on Sunday and Saturday, two
-                                        float quest placeholders, world_moves, climax); fill it in a scratch file and pass it to `plan chapter open`
+                                        float quest placeholders, each with an empty plan and turn, world_moves, climax); fill it in a scratch file
+                                        and pass it to `plan chapter open` (it warns about slots whose turn is still empty)
   plan chapter open --number N 'JSON'   N must follow the current chapter (--force otherwise); refused while a micro is open; keeps climax.default; warns about the outgoing chapter's unwritten slots
                                         and carries its still-owed world moves to the front of the new chapter's world_moves
   plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded,
@@ -775,14 +776,19 @@ def next_slot(plan, date=None):
     return None
 
 
-SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "micro", "float", "day")
+SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "micro", "float", "day")
+TURN_HINT = "who can, must, believes, risks or chooses what by the end that they could not at the start, and what Darrow attempts"
+# style.md §3: the word bands per block kind; `check` notes a block a fifth outside its band (a reread, never a cut)
+WORD_BANDS = {"scene": (300, 550), "interlude": (300, 550), "between": (120, 300), "climax": (900, 1800), "choice": (100, 250)}
 
 
 def chapter_template(ws, plan):
     """A canonical next-chapter skeleton for `plan chapter open`: 7 dated slots from the Sunday `ws`, spine on Sunday
     and Saturday, two float quest placeholders (slots 3 and 5, non-adjacent so both may carry a micro), empty
     world moves and climax. The placeholders name the first two quests still available in this Book (falling back
-    to the Book's q<N>.* ids); every "" is for the writer to fill, and `plan chapter open` accepts the result as is."""
+    to the Book's q<N>.* ids); every "" is for the writer to fill (a slot's `plan` is its content, its `turn` is
+    who can, must, believes, risks or chooses what by the end, and what Darrow attempts), and `plan chapter open`
+    accepts the result as is."""
     book = int(plan["position"]["book"])
     avail = [k for k, q in plan.get("quests", {}).items() if k.startswith(f"q{book}.") and q.get("status") == "available"]
     avail += [k for k in plan.get("quests", {}) if k.startswith(f"q{book}.") and k not in avail]
@@ -795,7 +801,7 @@ def chapter_template(ws, plan):
             s.update({"kind": "quest", "quest": avail[0 if n == 3 else 1], "stage": 1, "float": True})
         else:
             s.update({"kind": "spine", "beat": beat, "float": False})
-        s.update({"plan": "", "micro": None})
+        s.update({"plan": "", "turn": "", "micro": None})
         slots.append(s)
     return {"week_start": ws.isoformat(), "question": "", "slots": slots, "world_moves": ["", "", ""],
             "climax": {"plan": "", "checks": [], "options": ["", "", ""], "default": 1}}
@@ -804,6 +810,7 @@ def chapter_template(ws, plan):
 def print_slot(s, full=False, plan=None):
     print(slot_label(s) + f" · {s.get('status')}" + (f" · wrote {s['wrote']}" if s.get("wrote") else ""))
     print(f"  plan: {s.get('plan')}")
+    print(f"  turn: {s.get('turn') or '(none planned: state one in a line before writing: ' + TURN_HINT + ')'}")
     m = s.get("micro")
     if m:
         print(f"  micro ({m.get('axis')}): {m.get('ask')}")
@@ -887,6 +894,7 @@ def cmd_now(args):
     if s:
         lines.append("Next: " + slot_label(s) + (" · micro " + s["micro"]["axis"] if s.get("micro") else ""))
         lines.append("  " + short(s.get("plan"), 150))
+        lines.append("  turn: " + (short(s.get("turn"), 150) if s.get("turn") else "none planned (state one before writing)"))
     else:
         lines.append("Next: no slot planned; `plan chapter open --number N '<json>'`")
         lines.append("  (every slot written or skipped)")
@@ -1460,8 +1468,12 @@ def cmd_plan(args):
             s.setdefault("wrote", None)
             s.setdefault("micro", None)
             s.setdefault("float", False)
+            s.setdefault("turn", "")
         if ordered["slots"] and not any(s.get("status") == "next" for s in ordered["slots"]):
             ordered["slots"][0]["status"] = "next"
+        no_turn = [s.get("n") for s in ordered["slots"] if not str(s.get("turn") or "").strip()]
+        if no_turn:
+            print(f"⚠ slots {no_turn} have no turn ({TURN_HINT}): `plan slot N turn=\"…\"` before their day closes")
         # what the outgoing chapter leaves behind: unwritten slots are named; owed world moves carry over
         old = plan.get("chapter", {})
         left = [s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
@@ -1860,9 +1872,10 @@ CLIMAX_HEAD_RE = re.compile(r"^##\s+Climax\s*[—–-]\s*(.+)$")
 CHOICE_HEAD_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
 
 
-def chapter_headings(world):
-    """The current chapter file's scene-like headings in order, as [(key, title)] with build_site's keys
-    ('1', 'interlude', 'interlude-2', 'between-1', 'climax', 'choice'). None when the file is missing."""
+def chapter_blocks(world):
+    """The current chapter file's scene-like blocks in order, as [(key, title, words)] with build_site's keys
+    ('1', 'interlude', 'interlude-2', 'between-1', 'climax', 'choice'); words counts every line under the heading
+    up to the next one. None when the file is missing."""
     cf = world.get("chapter_file")
     path = ROOT / cf if cf else None
     if not path or not path.exists():
@@ -1870,28 +1883,31 @@ def chapter_headings(world):
     out, n_int, n_btw = [], 0, 0
     for line in path.read_text(encoding="utf-8").splitlines():
         s = line.strip()
+        key = title = None
         m = SCENE_HEAD_RE.match(s)
         if m:
-            out.append((m.group(1), m.group(2).strip()))
-            continue
-        m = INTERLUDE_HEAD_RE.match(s)
-        if m:
+            key, title = m.group(1), m.group(2)
+        elif INTERLUDE_HEAD_RE.match(s):
             n_int += 1
-            out.append(("interlude" if n_int == 1 else f"interlude-{n_int}", m.group(1).strip()))
-            continue
-        m = BETWEEN_HEAD_RE.match(s)
-        if m:
+            key, title = ("interlude" if n_int == 1 else f"interlude-{n_int}"), INTERLUDE_HEAD_RE.match(s).group(1)
+        elif BETWEEN_HEAD_RE.match(s):
             n_btw += 1
-            out.append((f"between-{n_btw}", m.group(1).strip()))
-            continue
-        m = CLIMAX_HEAD_RE.match(s)
-        if m:
-            out.append(("climax", m.group(1).strip()))
-            continue
-        m = CHOICE_HEAD_RE.match(s)
-        if m:
-            out.append(("choice", m.group(1).strip()))
-    return out
+            key, title = f"between-{n_btw}", BETWEEN_HEAD_RE.match(s).group(1)
+        elif CLIMAX_HEAD_RE.match(s):
+            key, title = "climax", CLIMAX_HEAD_RE.match(s).group(1)
+        elif CHOICE_HEAD_RE.match(s):
+            key, title = "choice", CHOICE_HEAD_RE.match(s).group(1)
+        if key is not None:
+            out.append([key, title.strip(), 0])
+        elif out and s:
+            out[-1][2] += len(s.split())
+    return [tuple(b) for b in out]
+
+
+def chapter_headings(world):
+    """[(key, title)] of the current chapter file's scene-like headings; None when the file is missing."""
+    blocks = chapter_blocks(world)
+    return None if blocks is None else [(k, t) for k, t, _ in blocks]
 
 
 def norm_title(t):
@@ -2202,6 +2218,14 @@ def cmd_check(args):
                         if abs(int(v)) != 1:
                             probs.append(f"slot {n} micro moves {pole} by {v}; micros move ±1")
             micro_days.append(s)
+    for s in slots:
+        if s.get("status") in ("planned", "next") and not str(s.get("turn") or "").strip():
+            notes.append(f"slot {s.get('n')} ({s.get('day') or 'interlude'}) has no turn ({TURN_HINT}): `plan slot {s.get('n')} turn=\"…\"`, or state one in a line before writing")
+    for key, title, n in (chapter_blocks(world) or []):
+        band = WORD_BANDS.get("scene" if key.isdigit() else key.split("-")[0])
+        if band and (n < band[0] * 0.8 or n > band[1] * 1.2):
+            label = f"Scene {key}" if key.isdigit() else key.capitalize()
+            notes.append(f"{label} ({title}) runs {n:,} words against a band of {band[0]}–{band[1]}: a fifth outside the band is a reread, never a cut (style.md §3)")
     if len(slots) >= 2 and sum(1 for s in slots if s.get("kind") == "spine") < 2:
         probs.append("fewer than 2 spine slots in the chapter")
     if sum(1 for s in slots if s.get("kind") == "interlude") > 1:
