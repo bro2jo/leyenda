@@ -76,7 +76,7 @@ Below the window the world fell away. Cloud filled the valley like milk in a bow
 
 Nearer, where the stair came out of the cloud at the valley floor, the winch-house was a grey block with a thread of smoke of its own, and beside it, small as a seed, stood a cart with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. He knew that cart. He had ridden the last of the Holloway in it with a fever and a leg that belonged to someone else, and the woman driving it had said one thing to him all that day, and he had not forgotten it.
 
-Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
+Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. To kneel anew, at a stone, in front of a crowd, was to say it aloud: that the Grace had left the Ninth because the Ninth had failed it, and that forty-one men had died at Harrow Ford for their own bad faith. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
 
 *Ride wide today.*
 
@@ -176,7 +176,11 @@ He said nothing. The river said it for him.
 
 "He's owed a leg. He'll get a wooden one." She did not raise her voice either; she never had to. "A Confessor asks a man what he knows and watches his mouth while he answers. Let Hollis answer with nothing and mean it. Give him this, and you've put a thing in him for them to find, and he's the one they'll find it in."
 
-"And when he asks me?"
+"And me? I'm first on it."
+
+"They don't need you to tell them anything." She looked at the knee, not at him. "They need to see that. Any Confessor who lays a hand on it will know what's in it, and the Crown has burned every hand it ever caught putting it there."
+
+"And when Hollis asks me?"
 
 "Then you'll lie to him. You've done harder things this week." She watched him take that. He took it. "Now ask me the other thing. You've been holding it since the hall."
 
@@ -264,6 +268,8 @@ Mother Ione had the one good chair and offered it to nobody: small and very upri
 
 "While Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate," said Maelis, "and no name under it is taken down against its will. Miss one ringing and the law lapses till the next."
 
+Old Mercy was not the hour bell. It rang only while the House claimed sanctuary, at dawn and at dusk and at no other time, and the valley knew its voice. Rung, it told every village below that the House had someone it would not give up.
+
 "And how often has it lapsed, Sister Pell?"
 
 "Twice. Snow, both times." A dry rasp, rationed. "Not on my rope."
@@ -284,11 +290,11 @@ So that was the law. A bell, a rope, and a pair of hands that had rung the dawn 
 
 "You're asking a woman who has never once told me my work. Fifteen, Captain, and the answer's the same as the other fourteen, and it'll be the same when it's fifty." She did not look round. "The thread is soft. Eleven hundred steps down is eleven hundred chances to tear it, and the cage is for salt. And if you reach the bottom whole, they put you on your knees on a stone, and the thread goes, and I don't do this twice."
 
-"Down's where they are," said Rae, from the door. It was the first thing she had said that was not an answer.
+"Down's where they are," said Rae, from the door. It was the first thing she had said that was not an answer. "I've carted men down to kneel since midsummer. I've not carted one back up."
 
 Mother Ione let the silence sit a moment, the way she had let the chair sit empty.
 
-"Then the Captain has heard the law," she said, "and the Mender has heard the Captain, and I have heard you all. Sister, you'll hear from me before dusk. Rae, the lay brothers will want to know what to say to the valley, when it asks." The council broke with nothing decided aloud, which seemed to be how the House decided things.
+"And when we've given them one name, Captain," she said, "how many will the next writ carry?" She did not wait for him to count. "So the Captain has heard the law, and the Mender has heard the Captain, and I have heard you all. Sister, you'll hear from me before dusk. Rae, the lay brothers will want to know what to say to the valley, when it asks." The council broke with nothing decided aloud, which seemed to be how the House decided things.
 
 On the stair Rae stopped one step above him, so that for once they were eye to eye.
 

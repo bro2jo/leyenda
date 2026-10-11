@@ -345,6 +345,18 @@
       "chapter": "01",
       "scene": "climax",
       "evidence": "None of them had ever seen his face"
+    },
+    {
+      "fact": "To him, kneeling anew at a stone in front of a crowd would say aloud that the Grace left the Ninth because the Ninth failed it, and that forty-one men died at Harrow Ford for their own bad faith.",
+      "chapter": "01",
+      "scene": "1",
+      "evidence": "for their own bad faith"
+    },
+    {
+      "fact": "Maelis told him the Confessors do not need him to tell them anything: any Confessor who lays a hand on his knee will know what is in it, and the Crown has burned every hand it ever caught putting it there.",
+      "chapter": "01",
+      "scene": "2",
+      "evidence": "Any Confessor who lays a hand on it will know what's in it"
     }
   ],
   "relationships": [

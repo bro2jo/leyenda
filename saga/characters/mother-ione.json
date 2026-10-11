@@ -127,6 +127,12 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "She asked him whether the shoulder was hurt."
+    },
+    {
+      "fact": "When Darrow offered to go down on the cage so the list would have nothing to climb for, she asked him how many names the next writ would carry once the House had given them one, and did not wait for him to count.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "how many will the next writ carry?"
     }
   ],
   "relationships": [
