@@ -97,7 +97,7 @@ Show the check on its own line, before the outcome is narrated:
 3. **Say nothing — yet.**
 ```
   Gated options show the requirement in brackets, a stat (`*[Resolve 10]*`) or a Bearing value (`*[Guile 1]*` for a first step, `*[Guile 4]*` for a lean); if Darrow doesn't meet it, show it struck through: ~~[Finesse 14] Leap the gap~~. A climax choice may move the Bearing by two or three; only a betrayal or a sacrifice moves it by four, and the epithet it earns must be spoken on the page.
-- A climax choice carries across the first two scenes of the next chapter; if still open at the second close it resolves to the climax's planned default, recorded `by: bearing`, and its `### Choice` block is written then.
+- A climax choice carries across the first two scenes of the next chapter; if still open at the second close it resolves to the climax's planned default, recorded `by: bearing`, and its `### Choice` block is written then. **Except a Book's last climax:** its choice does not carry. The crossing (its `### Choice` block) must be on the page before the next Book's first scene, so if he has not answered by the first close of the new chapter, the default answers it there (`by: bearing`) and the crossing is written first, then that day's scene.
 
 ### A small choice (micro-choice, at the end of a daily scene)
 One stage of a quest or a beat may end on a choice smaller than the climax's. Format, the heading `**What does Darrow do?**` or `**What does Darrow say?**`, each option bold:

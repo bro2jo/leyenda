@@ -23,7 +23,7 @@ Conventions the parser and the checks rely on:
   Interlude   '### Interlude — Title': another POV, not tied to a day. Scene key and anchor 'interlude'
               (a second one in the same chapter: 'interlude-2'), label "Interlude".
   Between     '### Between — Title': a role-play piece between two scenes (the /play skill): the scene extended by
-              Darrow's own action, 120–300 words, no choice list. Scene key and anchor 'between-K' (K counts up
+              Darrow's own action, a moment (short), no choice list. Scene key and anchor 'between-K' (K counts up
               within the chapter), label "Between". Rendered smaller, listed with the scenes, never counted as one.
   Choices     a heading line '**What does Darrow do?**' (the chapter's climax choice) or
               '**What does Darrow say?**' (a small choice inside a scene) followed by a numbered list.

@@ -877,8 +877,9 @@ def chapter_template(ws, plan):
     avail += [k for k in plan.get("quests", {}) if k.startswith(f"q{book}.") and k not in avail]
     avail += [f"q{book}.quest_a", f"q{book}.quest_b"]
     beat = plan["position"].get("beat") or f"b{book}.1"
-    if plan["position"].get("stage") in ("climax", "choice", "transition"):
-        # planned at a checkpoint: the climax just answered the current beat, so the new chapter's spine is the next one
+    cur = plan.get("core_beats", {}).get(beat, {})
+    if plan["position"].get("stage") in ("climax", "choice", "transition") or cur.get("status") in ("done", "folded"):
+        # planned at a checkpoint (or after a cutaway): the current beat is answered, so the new chapter's spine is the next one
         beats = plan.get("core_beats", {})
         nxt = [k for k, v in beats.items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned"]
         nxt.sort(key=lambda k: int(k.split(".")[1]))
@@ -1139,7 +1140,7 @@ def print_slot(s, full=False, plan=None):
     print(f"  turn: {s.get('turn') or '(none planned: state one in a line before writing: ' + TURN_HINT + ')'}")
     m = s.get("micro")
     if m:
-        print(f"  micro ({m.get('axis')}): {m.get('ask')}")
+        print(f"  {'beat choice' if m.get('beat') else 'micro (' + str(m.get('axis')) + ')'}: {m.get('ask')}")
         for i, opt in enumerate(m.get("options", []), 1):
             b = (m.get("bearing") or [None] * len(m["options"]))[i - 1]
             bt = f" [{', '.join(f'{k} {v:+d}' for k, v in b.items())}]" if b else ""
@@ -1267,7 +1268,7 @@ def cmd_now(args):
         lines.append("⚠ no quest live; plan a stage of " + (first_req or "any available quest") + " (design §5.2)")
     om = plan.get("open_micro")
     if om:
-        lines.append(f"Open micro (slot {om.get('slot')}, scene {om.get('scene')}, {om.get('axis')}): {om.get('ask')}")
+        lines.append(f"Open {'beat choice' if om.get('beat') else 'micro'} (slot {om.get('slot')}, scene {om.get('scene')}{'' if om.get('beat') else ', ' + str(om.get('axis'))}): {om.get('ask')}")
         lines.append("  " + short(" / ".join(f"{i}. {o}" for i, o in enumerate(om.get("options", []), 1)), 170))
     else:
         lines.append("Micro: none open")
@@ -1831,7 +1832,7 @@ def cmd_plan(args):
             m = dict(s["micro"])
             scene_key = micro_scene_key(plan, s)
             plan["open_micro"] = {"slot": s["n"], "chapter": int(plan["chapter"].get("number")), "scene": scene_key, "opened": today_local().isoformat(), **m}
-            print(f"micro open from slot {s['n']} at scene {scene_key} ({m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
+            print(f"{'beat choice' if m.get('beat') else 'micro'} open from slot {s['n']} at scene {scene_key} ({'its arc weights' if m.get('beat') else m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
             print(f"  world.json choices[] entry: chapter {plan['chapter'].get('number')}, scene \"{scene_key}\", kind micro")
         else:
             om = plan.get("open_micro")
@@ -1860,7 +1861,9 @@ def cmd_plan(args):
             die(f"chapter {chp.get('number')} has written slots {wrote}: a cutaway chapter is a week with nothing on the page")
         if plan.get("open_micro"):
             die("a micro is open; resolve it first (/choose with its default)")
-        n_slots = len(chp.get("slots", []))
+        owed = [x["world_move"] for x in chp.get("slots", []) if x.get("world_move") and not x.get("world_move_used")]
+        n_slots = sum(1 for x in chp.get("slots", []) if x.get("status") in ("planned", "next"))
+        chp["world_moves"] = owed + list(chp.get("world_moves") or [])  # a skipped day's owed move stays owed
         chp["slots"] = []
         chp["climax"] = {"plan": "", "checks": [], "options": [], "default": None}
         plan["position"].update({"next_scene": 1, "stage": "scene"})
@@ -1935,13 +1938,21 @@ def cmd_plan(args):
             print(f"⚠ chapter {old.get('number')} leaves slots {[s['n'] for s in left]} unwritten (their content folds into the climax you have written)")
         for o in owed:
             print(f"⚠ world move still owed (slot {o['n']} of chapter {old.get('number')}): {o['world_move']} → carried to chapter {args.number}'s world_moves")
-        ordered["world_moves"] = [o["world_move"] for o in owed] + list(ordered.get("world_moves") or [])
+        blanks = [m for m in (ordered.get("world_moves") or []) if not str(m or "").strip()]
+        if blanks:
+            print(f"⚠ {len(blanks)} empty world move(s) dropped: a missed day pops one, so each must say what the world did")
+        ordered["world_moves"] = [o["world_move"] for o in owed] + [m for m in (ordered.get("world_moves") or []) if str(m or "").strip()]
         plan["chapter"] = ordered
         book = plan["position"]["book"]
         r = plan.setdefault("route", {}).setdefault(f"book{book}", {"chapters": [], "road": None, "override": None, "transition_chapter": None})
         if int(args.number) not in [int(c) for c in r["chapters"]]:
             r["chapters"].append(int(args.number))
         plan["position"].update({"chapter": int(args.number), "next_scene": 1, "stage": "scene"})
+        first_beat = next((x.get("beat") for x in sorted(ordered["slots"], key=lambda y: str(y.get("day") or "")) if x.get("kind") == "spine" and x.get("beat")), None)
+        if first_beat and first_beat in plan.get("core_beats", {}):
+            plan["position"]["beat"] = first_beat  # what is owed to this beat falls due from the chapter's first scene
+            if plan["core_beats"][first_beat].get("status") == "planned":
+                plan["core_beats"][first_beat]["status"] = "in_progress"
         st.touch("plan")
         st.save()
         print(f"chapter {args.number} opened (week of {ch['week_start']}, {len(ordered['slots'])} slots" + (f", climax default {ordered['climax'].get('default')}" if ordered.get("climax", {}).get("default") is not None else "") + "); run `saga.py check`")
@@ -2791,6 +2802,8 @@ def cmd_check(args):
                             probs.append(f"slot {n} beat choice moves {pole} by {v}; a folded beat keeps its climax weight, ±2 or ±3")
             if s.get("kind") != "spine":
                 probs.append(f"slot {n} carries a beat choice but is {s.get('kind')}; only a spine slot carries a core beat's choice")
+            if ws and s.get("day") == (ws + dt.timedelta(6)).isoformat():
+                probs.append(f"slot {n} carries a beat choice on Saturday; it must resolve before the climax, so never the last day")
             micro_days.append(s)
         elif m:
             if m.get("axis") not in bearing.get("axes", {}):
@@ -2838,7 +2851,7 @@ def cmd_check(args):
             got = int(s.get("stage") or 0)
             if got != expect:
                 probs.append(f"slot {s.get('n')} plans {qid_} stage {got}, but the next stage to write is {expect}: the stages go in order, one scene each")
-            expect = got + 1
+            expect += 1
     devices, kinds = [], {}
     arts_, spoken_ = art_names(), arts_spoken()
     for who_, rule_ in (plan.get("invite_rules") or {}).items():
