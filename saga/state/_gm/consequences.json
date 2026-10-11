@@ -115,6 +115,58 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c01.5",
+      "made": {
+        "chapter": 1,
+        "scene": "climax",
+        "date": "2026-10-11"
+      },
+      "chose": "Stepped forward to the bars in front of the whole court and answered to his name: Darrow of Edgemoor, Captain of the Ninth, called down the Steps to Marrant on the second flight; nobody went down the far side and nobody is going down this one",
+      "now": {
+        "approval": {
+          "maelis": 8,
+          "wren": -7,
+          "hollis": 3,
+          "rae": 2
+        },
+        "bearing": {
+          "candor": 2
+        },
+        "flags": {
+          "named_himself": true
+        },
+        "factions": {
+          "confessors": -5
+        }
+      },
+      "due": [
+        {
+          "id": "c01.5a",
+          "when": "book1:beat5",
+          "at": "book1:beat5",
+          "weight": "scene",
+          "what": "The Prior refuses the writ for a named man, not for a list: at Old Mercy, Marrant demands the Captain of the Ninth by name, and the House knows whose name it is keeping",
+          "status": "pending"
+        },
+        {
+          "id": "c01.5b",
+          "when": "book2",
+          "at": "book2",
+          "weight": "color",
+          "what": "The Lowmarch has heard that the captain of the Ninth stood up at the gate of Saint Ysolde and would not kneel: the Faithless take heart from it (apply faithless +5 in a Book II entry when the company reaches the valley)",
+          "status": "pending"
+        },
+        {
+          "id": "c01.5c",
+          "when": "next",
+          "at": "ch02:s1",
+          "weight": "scene",
+          "what": "Downstream of `named_himself` (b1.2): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.2`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

@@ -21,12 +21,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "Before the gate, unmoved, telling Confessor Ivo Marrant the bell was rung and giving him the law's other half: no name under it is taken down against its will.",
-  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, had the wicket opened a hand's width for his paper under the law of guests, and when two grey cloaks came through it Old Mercy rang, late, and she spoke the law of names. He thanked her for her candour and went down to make his fire.",
+  "last_seen_doing": "Turned back to the gate and looking at Darrow after he answered to his name, asking him mildly whether he would like to sit down.",
+  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, had the wicket opened a hand's width for his paper under the law of guests, and when two grey cloaks came through it Old Mercy rang, late, and she spoke the law of names. He thanked her for her candour and went down to make his fire. When Darrow then went to the bars and answered to his name in front of the court, she said nothing of the winch-brothers, the lie she had let go down the Steps for him, or the bell she had held silent since dawn; she asked him whether he would like to sit down.",
   "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate alone and let the Confessor read; when his men came through the wicket she waited for the bell, and then gave him the law's other half, that no name under it is taken down against its will, and asked whether his men would like to go back out the way they came.",
   "quote": {
     "text": "While it rings, no name under it is taken down against its will. Would your men like to go back out the way they came?",
@@ -121,6 +121,12 @@
       "chapter": "01",
       "scene": "climax",
       "evidence": "no name under it is taken down against its will"
+    },
+    {
+      "fact": "After Darrow answered to his name at the bars she said nothing of the winch-brothers, of the lie she had let go down the Steps for him that morning, or of the bell she had held silent since dawn so the gate would look as if it kept nobody; she asked him, mildly, whether he would like to sit down.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "whether he would like to sit down"
     }
   ],
   "relationships": [
@@ -163,6 +169,10 @@
     {
       "chapter": "01",
       "scene": "climax"
+    },
+    {
+      "chapter": "01",
+      "scene": "choice"
     }
   ]
 }

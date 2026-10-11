@@ -70,3 +70,5 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"The Crown has no quarrel with men who can't answer."** — Marrant, on why he did not read the far cots (Ch 1 Climax).
 - **"Bells grow tired."** — Marrant, going down to make his camp on the lower terrace (Ch 1 Climax).
 - **"You moved." "I know." "Nobody else knows."** — Hollis and Darrow, from the gatehouse window to the court, after the bell (Ch 1 Climax).
+- **"You've read to a full bed."** — Darrow, from the bars to the Confessor on the terrace, giving his name and rank in front of the whole court (Ch 1 Choice).
+- **"Now they know what they're waiting for."** — Maelis, at his shoulder at the bars, after he had answered to his name (Ch 1 Choice).

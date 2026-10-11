@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "At the gatehouse window with his hands on the sill, held steady, telling the Captain he had moved and nobody else knew, and that the girl ran well.",
-  "now": "In the infirmary hall of Saint Ysolde's, second on the list Confessor Ivo Marrant read at the bars. Two lay brothers carried him up to the gatehouse window in a chair so he could see the man who wanted him; he looked at the blue wax on the writ and away, and said nothing of it. He is dry, which he has told the Captain and nobody else. The Confessors are camped on the lower terrace below the gate, and Benedek Orrin of his own Sixth is on the next cot.",
+  "last_seen_doing": "At the gatehouse window, saying 'Captain' once to the man at the bars and letting the word carry what it needed to.",
+  "now": "In the infirmary hall of Saint Ysolde's, second on the list Confessor Ivo Marrant read at the bars. Two lay brothers carried him up to the gatehouse window in a chair so he could see the man who wanted him; he looked at the blue wax on the writ and away, and said nothing of it. He is dry, which he has told the Captain and nobody else. The Confessors are camped on the lower terrace below the gate, and Benedek Orrin of his own Sixth is on the next cot. When the Captain went to the bars and answered to his name, Hollis said 'Captain' from the window, once.",
   "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list. When they came to the gate he had himself carried up to the gatehouse window to see the man who wanted him, heard his name read second, looked at the wax on the writ and away, and afterwards told the Captain, who had moved at his own name, that nobody else knew.",
   "quote": {
     "text": "Mercy's the word on the paper. The paper's the point.",
@@ -174,6 +174,12 @@
       "chapter": "01",
       "scene": "climax",
       "evidence": "Girl ran well."
+    },
+    {
+      "fact": "When Darrow had called his name down to the terrace, Hollis said 'Captain' from the window, once, and let the word carry what it needed to.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "let the word carry what it needed to"
     }
   ],
   "relationships": [
@@ -264,6 +270,10 @@
     {
       "chapter": "01",
       "scene": "climax"
+    },
+    {
+      "chapter": "01",
+      "scene": "choice"
     }
   ]
 }

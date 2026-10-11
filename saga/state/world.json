@@ -21,17 +21,17 @@
   "last_beat": "Confessor Ivo Marrant read the list at the bars, Darrow first and Hollis second, and asked for the wicket under the law of guests. Darrow read him and said \"Wren. Now.\"; two grey cloaks came through before Old Mercy rang, late, and the House's shoulders put them back out, his own giving. The Prior spoke the law of names. Marrant thanked her for her candour, made his camp on the lower terrace, and called up for the Captain of the Ninth to come down and kneel: he would wait.",
   "companions": {
     "maelis": {
-      "approval": 15,
+      "approval": 23,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate"
     },
     "hollis": {
-      "approval": 35,
+      "approval": 38,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name"
     },
     "wren": {
-      "approval": 10,
+      "approval": 3,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word"
     }
@@ -45,6 +45,16 @@
       "text": "Tell the lay brothers the Faithless went down the far side a week ago. Let the valley carry it.",
       "date": "2026-10-09",
       "ledger": "c01.1",
+      "by": "darrow"
+    },
+    {
+      "chapter": 1,
+      "scene": "climax",
+      "kind": "climax",
+      "option": 1,
+      "text": "Step forward and answer to his name.",
+      "date": "2026-10-11",
+      "ledger": "c01.5",
       "by": "darrow"
     }
   ],

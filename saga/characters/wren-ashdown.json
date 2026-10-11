@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "Coming back along the wall from the bell tower with her scarf over her mouth and Pell's slowness in her face, with no number for the bell.",
-  "now": "At Saint Ysolde's. At the gate she stood at Darrow's side at the gatehouse stair with her ledger and no pencil; when he said 'Wren. Now.' she ran for the tower, and Old Mercy rang late. The Confessors are camped on the lower terrace below the gate, and the Captain's name has been called up for.",
+  "last_seen_doing": "Behind Darrow's elbow at the bars, not looking at him, counting the fires on the terrace.",
+  "now": "At Saint Ysolde's. She ran for the bell on Darrow's word, and when he went to the bars afterwards and answered to his name she told him that technically he had been hidden, for about as long as it takes to count to eleven, and counted the Confessors' fires instead of looking at him.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word.",
   "quote": {
     "text": "There's eleven hundred and seventeen. Everyone says a thousand. Everyone's wrong.",
@@ -129,6 +129,12 @@
       "chapter": "01",
       "scene": "climax",
       "evidence": "had no number for a thing"
+    },
+    {
+      "fact": "When Darrow answered to his name at the bars she said, from behind his elbow and not looking at him, that technically he had been hidden, for about as long as it takes to count to eleven; she was counting the fires.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "as long as it takes to count to eleven"
     }
   ],
   "relationships": [
@@ -206,6 +212,10 @@
     {
       "chapter": "01",
       "scene": "climax"
+    },
+    {
+      "chapter": "01",
+      "scene": "choice"
     }
   ]
 }

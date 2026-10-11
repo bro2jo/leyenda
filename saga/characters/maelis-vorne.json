@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "Standing in front of Darrow at the gatehouse post after the wicket, looking at the knee and then at his face, taking the pipe out of her mouth and putting it back without a word.",
-  "now": "At Saint Ysolde's, a pace behind the Prior's shoulder when Confessor Ivo Marrant read his list at the bars. When the bell was rung his eyes went to her and stayed a beat longer than courtesy, and she looked back with nothing in her face. After the wicket she saw to the bloodied lay brother first and then came to Darrow, looked at the knee, and said nothing. The Confessors are camped below the gate.",
+  "last_seen_doing": "At Darrow's shoulder at the bars, looking down at the terrace with him: now they know what they're waiting for.",
+  "now": "At Saint Ysolde's. When Darrow answered to his name at the bars she came and stood at his shoulder and looked down at the Confessors' fires with him, and said that now they know what they're waiting for. The Confessor's eyes found her at the gate; the Confessors are camped on the lower terrace below.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards she looked at Darrow's knee, which had been at the wicket, and said nothing at all.",
   "quote": {
     "text": "The quiet is a liar.",
@@ -152,6 +152,12 @@
       "chapter": "01",
       "scene": "climax",
       "evidence": "She did not say fifteen."
+    },
+    {
+      "fact": "When Darrow had answered to his name she came and stood at his shoulder at the bars and looked down at the terrace with him: 'Well. Now they know what they're waiting for.'",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "Now they know what they're waiting for."
     }
   ],
   "relationships": [
@@ -246,6 +252,10 @@
     {
       "chapter": "01",
       "scene": "climax"
+    },
+    {
+      "chapter": "01",
+      "scene": "choice"
     }
   ]
 }

@@ -20,7 +20,7 @@
         "kind": "spine",
         "beat": "b1.2",
         "float": false,
-        "plan": "The night of the gate (arc b1.2, Story time). Back in the hall: the names come back to the cots with Hollis carried down from the gatehouse, and Benedek was not read; his relief fills the hall and he says it to the Captain, who cannot tell him the thing Marrant said about men who can't answer without telling him why it frightens him. He asks the Captain to say the words with him at the night bell; Hollis, a third day dry and saying nothing of it, turns his face to the wall. From the hall window the camp's five fires on the lower terrace and the winch-house's one lamp far down in the dark. Maelis comes for the knee after the wicket and says nothing of it, which is worse. The climax choice is open and this scene ends before it is felt.",
+        "plan": "The night of the gate (arc b1.2, Story time). Back in the hall: the names come back to the cots with Hollis carried down from the gatehouse, and Benedek was not read; his relief fills the hall and he says it to the Captain, who cannot tell him the thing Marrant said about men who can't answer without telling him why it frightens him. He asks the Captain to say the words with him at the night bell; Hollis, a third day dry and saying nothing of it, turns his face to the wall. From the hall window the camp's five fires on the lower terrace and the winch-house's one lamp far down in the dark. Maelis comes for the knee after the wicket and says nothing of it, which is worse. He stood up to his name at the gate (c01.5, `named_himself`; the Choice block is written): the night opens on it in a clause, the court having seen the Captain of the Ninth call his own name down to the terrace, and at the night bell a grey cloak's voice comes up from below, courteous, for the Captain by rank: the writ's demand is personal now (fire the auto Downstream item c01.5c here).",
         "turn": "By the end Benedek believes himself safe because his name was not read, and says so to the Captain; Darrow attempts to take the camp's measure from the window (fires, men, who sleeps) and to say the words with the lad once more, and finds he can make no sound again.",
         "micro": null,
         "challenge": null,
@@ -34,7 +34,7 @@
         "kind": "spine",
         "beat": "b1.2",
         "float": false,
-        "plan": "Ysolde's feast at dawn (lore:house.ysolde): bread given away, the lay brothers carrying the feast loaves down to the gate under the Confessors' eyes, the kitchen's book running wild. Benedek is found Hollowed in his cot: breathing, empty, frost on his lips, and when Maelis turns his face a chip of black glass under his tongue, which the far cots, drained slowly over years, never had, the first thing she notices and the only thing she says. Hollis will not leave the cot and takes the boy's hand. The House is frightened; the kitchen starts counting loaves (world move). The climax choice resolves here by default if still open (option 1, by: bearing), its Choice block written before this scene.",
+        "plan": "Ysolde's feast at dawn (lore:house.ysolde): bread given away, the lay brothers carrying the feast loaves down to the gate under the Confessors' eyes, the kitchen's book running wild. Benedek is found Hollowed in his cot: breathing, empty, frost on his lips, and when Maelis turns his face a chip of black glass under his tongue, which the far cots, drained slowly over years, never had, the first thing she notices and the only thing she says. Hollis will not leave the cot and takes the boy's hand. The House is frightened; the kitchen starts counting loaves (world move).",
         "turn": "By the end the House knows Benedek is Hollowed and Maelis has seen the glass the far cots never had; Darrow attempts to hold the hall's eyes on the lad's mouth and not on the door, and to count from his cot who was awake in the night, and gets one answer he can use: nobody passed.",
         "micro": null,
         "challenge": null,
@@ -300,7 +300,7 @@
     "vane_unbound": null,
     "hollis_truth": null,
     "ysra_spared": null,
-    "named_himself": false,
+    "named_himself": true,
     "marrant_offer": false,
     "shard_found": false,
     "wren_script_seen": false,
@@ -347,7 +347,7 @@
   },
   "factions": {
     "crown": -10,
-    "confessors": -25,
+    "confessors": -30,
     "menders": 30,
     "faithless": 15,
     "thornwild": 0,
@@ -385,7 +385,7 @@
         "banner",
         "candor"
       ],
-      "approval_pending": 1
+      "approval_pending": 3
     },
     "ysra": {
       "note": "the Needle of Calden; Book II; a companion only if spared and if she comes over (q3.needle); approval banks here until then",

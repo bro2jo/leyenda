@@ -549,3 +549,23 @@ Wren came back along the wall from the tower with her scarf over her mouth and P
 1. **Step forward and answer to his name.** *(Maelis approves; Wren does not.)*
 2. **Stay hidden among the wounded and let the Prior answer for the House.** *(Wren approves.)*
 3. **Send Wren down to spy on the camp.** *[Guile 1]* *(Wren approves; risky.)*
+
+### Choice — Darrow of Edgemoor
+
+He did not decide it. He was at the bars before the Prior had finished turning from them, good leg, bad leg, no transfer, with the whole court watching him do it; below, on the terrace, the Confessor stood bare-headed between the first fire and the makings of the second, close enough to hail.
+
+"Ivo Marrant."
+
+Both names, as he gave a trooper his. The bald head came round.
+
+"Darrow of Edgemoor. Captain of the Ninth." The cold took the words and carried them down the mountain whether he liked it or not. "You've read to a full bed. Nobody went down the far side, and nobody's going down this one."
+
+A pause, the length of a man deciding to be pleased.
+
+"Captain," Marrant called up, and the rank came up the wall as warm as a hand laid on a shoulder. "Thank you for your candour." Then he turned back to his fire, and the fires below were five.
+
+Behind him the court let its breath out like one animal. Mother Ione had turned back to the gate and was looking at him. She said nothing of the winch-brothers, or of the lie she had let go down the Steps for him that morning, or of the bell she had held silent since dawn so that this gate would look as if it kept nobody; she asked him, mildly, whether he would like to sit down. It was worse than anything she might have said.
+
+"Technically," said Wren, from behind his elbow, "you were hidden. For about as long as it takes to count to eleven." She was not looking at him. She was counting the fires.
+
+Maelis came and stood at his shoulder and looked down at the terrace with him. "Well," she said. "Now they know what they're waiting for." From the window Hollis said, "Captain," once, and let the word carry what it needed to.

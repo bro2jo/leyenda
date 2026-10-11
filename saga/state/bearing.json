@@ -10,7 +10,7 @@
       "right": "Flint"
     },
     "candor_guile": {
-      "value": 1,
+      "value": -1,
       "left": "Candor",
       "right": "Guile"
     },
@@ -49,6 +49,12 @@
       "date": "2026-10-09",
       "axis": "hearth_banner",
       "delta": -1
+    },
+    {
+      "why": "c01.5",
+      "date": "2026-10-11",
+      "axis": "candor_guile",
+      "delta": -2
     }
   ]
 }
