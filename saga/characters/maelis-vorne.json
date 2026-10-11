@@ -131,9 +131,10 @@
       "evidence": "What it did at the ford, and whose doing, I don't know"
     },
     {
-      "fact": "At the Prior's council she gave the law: while Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate; miss one ringing and the law lapses till the next.",
+      "fact": "At the Prior's council she gave the law: while Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate, and no name under it is taken down against its will; miss one ringing and the law lapses till the next.",
       "chapter": "01",
-      "scene": "3"
+      "scene": "3",
+      "evidence": "no name under it is taken down against its will"
     },
     {
       "fact": "When Darrow asked the council to send him down on the cage before the grey cloaks came, she answered for the fifteenth time, to the fire and without looking round, that the answer is the same as the other fourteen and will be the same at fifty: the thread is soft, eleven hundred steps down are eleven hundred chances to tear it, and the cage is for salt.",
@@ -152,6 +153,12 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "That knee lies to me every morning"
+    },
+    {
+      "fact": "When Darrow asked the council to send him down on the cage, she said that if he reached the bottom whole they would put him on his knees on a stone, the thread would go, and she does not do this twice.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "they put you on your knees on a stone"
     }
   ],
   "relationships": [

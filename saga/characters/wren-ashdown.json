@@ -159,6 +159,12 @@
       "chapter": "02",
       "scene": "between-1",
       "evidence": "Times the Captain has promised to tell me first: 1."
+    },
+    {
+      "fact": "Bringing the news of the list, she said the named would be taken down the Steps, down the Holloway, all the way to the Oathspire, to kneel in front of whoever turns out to watch.",
+      "chapter": "01",
+      "scene": "1",
+      "evidence": "all the way to the Oathspire"
     }
   ],
   "relationships": [

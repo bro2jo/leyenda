@@ -56,7 +56,7 @@ The hall went quiet. Even Hollis had stopped snoring. Darrow couldn't have said 
 
 "Confessors," Hollis said.
 
-"They'll be at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere last night, and Rae Thorne was in the taproom with the House's salt on her cart and heard every name. She drove the Holloway in the dark ahead of them and came up the Steps before the bell, and she told the winch-brothers, and the winch-brothers told the kitchen, so now everyone knows. It's the names of the Faithless at Saint Ysolde's. The ones they've come to bring down to kneel."
+"They'll be at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere last night, and Rae Thorne was in the taproom with the House's salt on her cart and heard every name. She drove the Holloway in the dark ahead of them and came up the Steps before the bell, and she told the winch-brothers, and the winch-brothers told the kitchen, so now everyone knows. It's the names of the Faithless at Saint Ysolde's. The ones they've come to bring down to kneel. Down the Steps, down the Holloway, all the way to the Oathspire, and on their knees in front of whoever turns out to watch."
 
 "Am I on it?" said Hollis.
 
@@ -262,7 +262,7 @@ Mother Ione had the one good chair and offered it to nobody: small and very upri
 
 "Then the Captain should hear the law, shouldn't he? Maelis?"
 
-"While Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate," said Maelis. "Miss one ringing and the law lapses till the next."
+"While Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate," said Maelis, "and no name under it is taken down against its will. Miss one ringing and the law lapses till the next."
 
 "And how often has it lapsed, Sister Pell?"
 
@@ -282,7 +282,7 @@ So that was the law. A bell, a rope, and a pair of hands that had rung the dawn 
 
 "I'm asking the Prior."
 
-"You're asking a woman who has never once told me my work. Fifteen, Captain, and the answer's the same as the other fourteen, and it'll be the same when it's fifty." She did not look round. "The thread is soft. Eleven hundred steps down is eleven hundred chances to tear it, and the cage is for salt."
+"You're asking a woman who has never once told me my work. Fifteen, Captain, and the answer's the same as the other fourteen, and it'll be the same when it's fifty." She did not look round. "The thread is soft. Eleven hundred steps down is eleven hundred chances to tear it, and the cage is for salt. And if you reach the bottom whole, they put you on your knees on a stone, and the thread goes, and I don't do this twice."
 
 "Down's where they are," said Rae, from the door. It was the first thing she had said that was not an answer.
 
@@ -479,7 +479,7 @@ The grey cloaks came up the last flight in the hour before dusk, when the Steps 
 
 Mother Ione had ordered nobody into the court. At the hour bell she had asked whether the House would like to see who had climbed so far to read to it, and the House had come: the lay brothers in a line along the inner wall with their hands in their sleeves, the novices behind them, the kitchen in its aprons. Rae Thorne stood at the end of the lay brothers' line, as still as anything she had ever driven. The Prior stood before the gate with Maelis a pace behind her shoulder.
 
-The wounded who could walk as far as the gate were eleven men and Darrow. He stood among them at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to. Above them, at the gatehouse window, Hollis sat in a chair that two lay brothers had carried up the inside stair, because he had said, loud enough for the court, that he would see the man who wanted him.
+The wounded who could walk as far as the gate were eleven men and Darrow. He stood among them at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to. The grey cloaks had his name. None of them had ever seen his face, and among eleven sore men in infirmary shirts it was one more. Above them, at the gatehouse window, Hollis sat in a chair that two lay brothers had carried up the inside stair, because he had said, loud enough for the court, that he would see the man who wanted him.
 
 Wren stood at Darrow's left with her ledger against her chest and no pencil behind her ear; she was not there to count. Up in the tower Sister Pell had Old Mercy's rope in her hands, and the bell had not rung since the council. A bell rung for nobody tells the valley there's somebody. A bell rung too late tells the Confessors the gate is theirs. At the dawn bell the Prior had asked him to tell Wren when, and he had said he would. Wren had not asked him how he would know. He was not sure he could have told her.
 
