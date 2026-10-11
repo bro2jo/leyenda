@@ -574,6 +574,8 @@ In the court, eleven sore men were very carefully not looking at Darrow.
 
 ### Choice — Darrow of Edgemoor
 
+The two grey cloaks had walked the wounded looking at faces. Next time it would be every cot in the hall, every face in the House read for his, and eleven sore men taking his share of it. The lie had died when the Confessor said these beds weren't empty; it only wanted burying. The bell had already told the valley the House had someone. It might as well have a name.
+
 Darrow came off the post.
 
 He crossed the court to the gate, good leg, bad leg, with the whole House watching him do it and nobody stopping him, and Wren a step behind with her mouth shut. Marrant was at the head of the Steps, letting his men go down before him. Darrow put his hand on the bars.
@@ -602,8 +604,10 @@ Rae Thorne, at the end of the line, was rubbing the shoulder she had put to the 
 
 Maelis had gone to the lay brother first. She turned his face to what light there was with two fingers under the jaw, said "Teeth?" and got "All there, Mender," and let him go. Then she came across the court without hurrying and stood in front of Darrow. She looked at the knee first, as she always did, for long enough that the wicket was entered somewhere in her count. Then at his face. She took the pipe out of her mouth, which she only did to speak.
 
-"That knee lies to me every morning," she said. "You didn't, just now. Keep it that way."
+"Hidden, you were a lie they'd have found by the thaw," she said. "Named, you're a law they'll have to break where the valley can watch."
 
-The pipe went back in. "Hall. Slowly. I'll read it tonight."
+The pipe went back in, and came out again. "That knee lies to me every morning. You didn't. Keep it that way."
+
+Then, to the knee: "Hall. Slowly. I'll read it tonight."
 
 He went, slowly, because she was watching. Behind him, below the gate, the Confessors' first fire caught, and the House stood a while longer in the snow, watching it burn.

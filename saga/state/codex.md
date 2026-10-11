@@ -74,5 +74,5 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"You keep a fine bell. A little slow on the rope."** — Confessor Ivo Marrant to Mother Ione, after Old Mercy rang late (Ch 1 Climax).
 - **"You moved, when he read your name. I saw it. Nobody else did."** — Hollis to Darrow, from the gatehouse window, after Darrow gave his name at the bars (Ch 1 Choice).
 - **"You've read to a full bed."** — Darrow, through the bars to the Confessor, giving his name and rank in front of the whole House (Ch 1 Choice).
-- **"That knee lies to me every morning. You didn't, just now. Keep it that way."** — Maelis to Darrow in the court, after he gave his name at the bars (Ch 1 Choice).
+- **"Hidden, you were a lie they'd have found by the thaw. Named, you're a law they'll have to break where the valley can watch."** — Maelis to Darrow in the court, after he gave his name at the bars; then: "That knee lies to me every morning. You didn't. Keep it that way." (Ch 1 Choice).
 - **"Next time you mean to be brave, tell me first. So I don't run."** — Wren Ashdown to Darrow on the wall-walk, the night he gave his name at the gate; she wrote his promise in her ledger (Ch 2 Between).
