@@ -13,7 +13,9 @@
     "faction": "confessors",
     "mark": "none"
   },
-  "appearance": "A Confessor in his forties in the grey cloak of his order, who puts his hood back in the cold so that his bald head is bare to the snow: a pleasant, well-fed face and a smile he gives to a whole court at once. He carries the iron censer on its chain in his own hand, so that he stands in his own grey weather, and the smell of hot iron reaches a gate ahead of his voice. At the bars he held nothing but the censer and the writ.",
+  "appearance": "A Confessor in his forties in the grey cloak of his order, who puts his hood back in the cold so that his bald head is bare to the snow: a pleasant, well-fed face, round and clean-shaven, the cheeks pink with cold, pale brows that hardly show, small light-grey eyes that hold very still, a small mark on the chin, and a smile of neat, even teeth that he gives to a whole court at once. He carries the iron censer on its chain in his own hand, so that he stands in his own grey weather, and the smell of hot iron reaches a gate ahead of his voice. At the bars he held nothing but the censer and the writ. His grey cloak fastens at the throat with a plain iron toggle.",
+  "portrait": "characters/ivo-marrant.jpg",
+  "portrait_alt": "Portrait of Confessor Ivo Marrant: a bald, round-faced, clean-shaven man in his forties, snow settling on his bare scalp, pink-cheeked, with small light-grey eyes and a pleasant close-lipped smile showing neat teeth, in a heavy grey wool cloak with its hood pushed back, fastened with an iron toggle, holding an iron chain in one hand while thin grey smoke curls up beside him, before dark iron gate bars and a stone wall in falling snow.",
   "first_seen": {
     "chapter": "01",
     "scene": "climax",
