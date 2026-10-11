@@ -167,6 +167,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.1",
+      "made": {
+        "chapter": 2,
+        "scene": "between-1",
+        "date": "2026-10-11"
+      },
+      "chose": "Went after Wren on the wall-walk instead of the hall; kept her count of the hall lamps while she told him how stupid giving his name was, and promised to tell her first next time he means to be brave",
+      "now": {
+        "approval": {
+          "wren": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c02.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow promised Wren he would tell her first the next time he means to be brave; she wrote the count of it in her ledger, at one. The day he does, or does not, she counts it",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

@@ -22,18 +22,18 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "01",
-    "scene": "choice",
+    "chapter": "02",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
+    "anchor": "chronicle/02-the-grey-cot.html#between-1"
   },
-  "last_seen_doing": "At Darrow's elbow at the bars, not looking at him, counting the grey cloaks round the first fire on the terrace.",
-  "now": "At Saint Ysolde's. She ran for the bell on Darrow's word and came back from the tower with no number for it. When he crossed the court and gave his name at the bars she went a step behind him, told him that technically he had been hidden, for about as long as it takes to count to eleven, and counted the grey cloaks round the Confessors' fire instead of looking at him.",
+  "last_seen_doing": "On the low wall-walk at nightfall, shutting her ledger on a new line: Times the Captain has promised to tell me first: 1.",
+  "now": "At Saint Ysolde's, on the night the Confessors camped below the gate. She ran for the bell on Darrow's word, and when he gave his name at the bars anyway she counted the Confessors rather than look at him. On the wall-walk she made him count the hall's lamps while she told him how stupid it was, and he kept the count; she told him to tell her first, next time he means to be brave, and wrote his promise in her ledger.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word. When he gave his name at the bars anyway, she counted the Confessors instead of looking at him.",
   "quote": {
-    "text": "There's eleven hundred and seventeen. Everyone says a thousand. Everyone's wrong.",
-    "chapter": "00",
-    "scene": "II"
+    "text": "Next time you mean to be brave, tell me first. So I don't run.",
+    "chapter": "02",
+    "scene": "between-1"
   },
   "known_facts": [
     {
@@ -135,6 +135,30 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "as long as it takes to count to eleven"
+    },
+    {
+      "fact": "On the wall-walk she counted the grey cloaks for him, five round the fire and one at the winch-house, and told him that among eleven wounded men and him he had been one in twelve, and now he was one in one.",
+      "chapter": "02",
+      "scene": "between-1",
+      "evidence": "Now it's one in one."
+    },
+    {
+      "fact": "She says it is a hundred and twelve paces from the gatehouse stair to the tower door, and she ran them so the bell would ring before anyone found him.",
+      "chapter": "02",
+      "scene": "between-1",
+      "evidence": "A hundred and twelve paces from the gatehouse stair to the tower door."
+    },
+    {
+      "fact": "She made him count the hall's lamps while she told him how stupid giving his name had been, a chit if he lost the count; he kept it, and her lips moved along the windows and stopped where his had.",
+      "chapter": "02",
+      "scene": "between-1",
+      "evidence": "Lose the count and you owe me a chit."
+    },
+    {
+      "fact": "She told him to tell her first, next time he means to be brave, so she doesn't run; when he said he would, she said he wouldn't, and wrote in her ledger: Times the Captain has promised to tell me first: 1.",
+      "chapter": "02",
+      "scene": "between-1",
+      "evidence": "Times the Captain has promised to tell me first: 1."
     }
   ],
   "relationships": [
@@ -216,6 +240,10 @@
     {
       "chapter": "01",
       "scene": "choice"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-1"
     }
   ]
 }

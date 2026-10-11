@@ -1811,13 +1811,16 @@ class Site:
         cur_slug = w.get("chapter_file", "").split("/")[-1].replace(".md", "")
         ch = next((c for c in self.chapters if c["slug"] == cur_slug), None)
         latest = next((s for s in reversed(ch["scenes"]) if not s.get("between")), None) if ch and ch["scenes"] else None
-        after = [s for s in ch["scenes"][ch["scenes"].index(latest) + 1:] if s.get("between")] if latest else []
+        if latest:
+            after = [s for s in ch["scenes"][ch["scenes"].index(latest) + 1:] if s.get("between")]
+        else:  # a chapter whose first pieces are Betweens, before its first scene: list them on their own
+            after = [s for s in ch["scenes"] if s.get("between")] if ch else []
         place = self.place_by_id.get(self.current_place, {})
         loc = w.get("location") or {}
         where = place.get("name", "") + (f", {loc.get('detail')}" if isinstance(loc, dict) and loc.get("detail") else "")
         latest_html = (f'<a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">{esc((latest["label"] + " — " if latest["label"] else "") + latest["title"])}</a>' if latest else "—")
         if after:
-            latest_html += " · then " + ", ".join(f'<a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc("Between — " + s["title"])}</a>' for s in after)
+            latest_html = ("" if not latest else latest_html + " · then ") + ", ".join(f'<a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc("Between — " + s["title"])}</a>' for s in after)
         book_line = f"Book {roman(w.get('book', 1))} — {w['book_title']}" if w.get("book_title") else ""
         plate = (f'<section class="plate now-plate"><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>'

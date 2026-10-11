@@ -5,10 +5,18 @@
   "chapter": 2,
   "chapter_title": "The Grey Cot",
   "chapter_file": "saga/chronicle/02-the-grey-cot.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": "between-1",
+      "title": "The Count",
+      "after": "climax",
+      "covers": [],
+      "written": "2026-10-11"
+    }
+  ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "crossing the court from the gate to the hall at dusk, slowly, because Maelis is watching the knee; below the gate the Confessors' first fire has caught on the lower terrace",
+    "detail": "the far end of the low wall-walk beside the gate at nightfall, with Wren; across the court the novices have lit the hall's lamps, and below the gate the Confessors' fire burns on the lower terrace",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -18,7 +26,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council. At the wicket his shoulder could not shut it and the knee said one thing, quite clearly; Maelis looked at it before she looked at his face, and will read it tonight.",
-  "last_beat": "Darrow crossed the court to the bars and gave Confessor Ivo Marrant his name and rank: nobody went down the far side, and nobody is going down this one. Marrant looked at his face, called him Captain, and thanked the Prior for her candour. The Prior asked only whether his shoulder was hurt; Hollis told him he had seen him move at his name and called him Captain; Maelis: \"That knee lies to me every morning. You didn't, just now. Keep it that way.\" She will read the knee tonight.",
+  "last_beat": "On the wall-walk Wren made him count the hall's lamps while she told him how stupid giving his name was: one in twelve, and now one in one. He kept the count. \"Next time you mean to be brave, tell me first. So I don't run.\" He said he would; she said he wouldn't, and wrote it in her ledger anyway: Times the Captain has promised to tell me first: 1.",
   "companions": {
     "maelis": {
       "approval": 23,
@@ -31,9 +39,9 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 3,
+      "approval": 5,
       "present": true,
-      "note": "afraid; hides it with numbers; ran for the bell on his word, and counted the Confessors rather than look at him when he gave his name"
+      "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     }
   },
   "choices": [
