@@ -107,7 +107,7 @@
         "day": "2026-10-10",
         "kind": "spine",
         "beat": "b1.1",
-        "plan": "The grey cloaks reach the foot of the Steps; censer smoke rising through the cloud; the House counts what it has; Rae on the gate wall beside Darrow as the grey cloaks reach the winch-house and put a man on her cart; she could go down past them and does not, yet",
+        "plan": "Open at the dawn bell, in one movement: Benedek's lips moving and the Captain's beside them, Hollis dry and neither saying so (c01.2a, c01.3a); Mother Ione comes with the bell and answers the lie with a question (c01.1a): she lets the valley story go down with the winch-brothers, and she will hold Old Mercy, because a bell rung for nobody admits somebody. Then noon on the low wall-walk by the gate (no stair), Wren with Pell's glass borrowed and counted, Rae beside Darrow: through the glass the grey cloaks reach the foot of the Steps, censer smoke rising through the cloud, and one of them puts his boots up on Rae's cart at the winch-house. She could still go down past them and does not, yet.",
         "micro": null,
         "float": false,
         "status": "next",
@@ -136,7 +136,7 @@
       "a grey cloak has put his boots up on Rae Thorne's cart at the winch-house"
     ],
     "climax": {
-      "plan": "Marrant at the gate. He reads the writ; Mother Ione has Old Mercy rung; sanctuary holds. Marrant smiles and makes camp in the lower court: 'Bells grow tired.' Darrow's confrontation with him (Insight / Resolve; Warden's Eye applies). Choice at the end: step forward and answer to his name, stay hidden among the wounded, or send Wren to spy on the Confessors' camp. A grey cloak stays at the winch-house with his boots on Rae Thorne's cart: the cage, the House's larder and letter-box, is in the Order's hand (q1.cart).",
+      "plan": "Marrant at the gate in the last hour before dusk (arc b1.1, Staging). Six rode in, Marrant one of them; the sixth keeps the winch-house and Rae's cart; Marrant climbs with four. The Prior has held Old Mercy since dawn (the valley story: c01.1b, one line of his about reading to empty beds). He reads the writ at the bars to the House in the court; Darrow, unknown by face among the wounded at the gatehouse stair, reads him (Insight) and gives Wren the signal for Pell's rope, and holds still when his own name is read (Resolve); Hollis, carried to the gatehouse window, looks at the wax on the writ and away; Marrant's eyes stay on Maelis a beat too long. The bell rings in the tier's shape; the Prior speaks the law of names (no name under the bell is taken down); sanctuary holds. Marrant, named, smiles and camps on the lower terrace: 'Bells grow tired.' Then, courteous, he calls up for the Captain of the Ninth to come down and kneel, and says he will wait. Benedek's relief at not being named belongs to Chapter 2's first scene, not here.",
       "checks": [
         "resolve DC 13 (Mender's Patience)",
         "insight DC 13 (Warden's Eye)"
@@ -146,7 +146,7 @@
         "Stay hidden among the wounded",
         "Send Wren to spy on the camp *[Guile 1]*"
       ],
-      "default": 1
+      "default": 2
     }
   },
   "core_beats": {
@@ -242,7 +242,11 @@
       "status": "available",
       "stage": 0,
       "priority": "floating",
-      "standing": true
+      "standing": true,
+      "stage_gates": {
+        "4": "beats.b1_4.status == \"done\" || route.book1 != \"\"",
+        "5": "route.book3 != \"\""
+      }
     },
     "q1.rail": {
       "status": "available",
@@ -376,7 +380,7 @@
       "approval_pending": 0
     }
   },
-  "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with six men, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where the Confessors will camp first.",
+  "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
   "open_micro": null,
   "temptation": {
     "planted": []

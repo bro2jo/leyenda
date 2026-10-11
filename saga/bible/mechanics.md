@@ -28,15 +28,15 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions (one per session a day, never per skill) |
 | **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
 | **Resolve** | discipline, patience, honesty with oneself | floor minimum AM+PM, graded morning checks, running sessions as written |
-| **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target) |
+| **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target); a day counts once it is closed, so Ember does not dip at breakfast and climb back by dinner, and a climax's dice read the Ember its week ended on |
 | **Inspiration** (max 4) | moments of clarity; spend to reroll a die or take a bold option | a week with the floor minimum every day; a Triumph week |
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
-| **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs |
+| **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs, and a corrected day never takes one back |
 
 **Attribute growth:** each attribute = base + ⌊√(temper ÷ divisor)⌋. Growth is fast early and slower later, the way real strength returns.
 
-**No XP for overshooting.** Calories and protein stop paying at the target. Doing *more* rehab than prescribed earns nothing extra; running a session *as written* earns Resolve. Following a plan-directed rest (red light) is excused from the week score, not counted against it.
+**No XP for overshooting.** Calories and protein stop paying at the target. Doing *more* rehab than prescribed earns nothing extra (a knee session the day after another, sessions past the week's plan, minutes past the plan's longest ride, an add-on before its start date are logged and pay nothing); running a session *as written* earns Resolve. Following a plan-directed rest (red light) is excused from the week score, not counted against it, and a session the plan itself moves or cancels is never a miss.
 
 ---
 

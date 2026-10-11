@@ -120,6 +120,9 @@
       "accessory",
       "power"
     ],
+    "optional_from": {
+      "power": "2026-10-17"
+    },
     "source": "ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest; sport sessions from the week of 10/11: real/plan/sport/sport_plan.md section 5"
   },
   "weekly_template_history": [
@@ -158,28 +161,28 @@
         "knee"
       ],
       "Mon": [
-        "cond",
-        "upperA"
+        "cond"
       ],
       "Tue": [
         "knee"
       ],
       "Wed": [],
       "Thu": [
-        "cond",
-        "upperB"
+        "cond"
       ],
       "Fri": [
-        "pt"
+        "pt",
+        "upperA"
       ],
       "Sat": [
-        "cond"
+        "cond",
+        "upperB"
       ],
       "optional": [
         "accessory",
         "power"
       ],
-      "source": "the 10/9 revision before the sport plan: ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest"
+      "source": "the 10/9 revision before the sport plan: ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; the week's upper ran its own catch-up placement (Fri 10/9 A, Sat 10/10 B: real/visits/2026-10-10_trainer-instruction.md), and the trainer then moved Sat's B to Mon 10/12 (plan_changes); power & mobility (Sat) from 10/17 at the earliest"
     },
     {
       "until": "2026-10-17",
@@ -216,6 +219,24 @@
       "source": "trainer 10/10 (real/visits/2026-10-10_trainer-instruction.md): catch-up week, upper every other day from Mon 10/12 (B, A, B); Session A on Tue so Wed carries upper; the current template resumes 10/18"
     }
   ],
+  "plan_changes": [
+    {
+      "date": "2026-10-10",
+      "drop": [
+        "upperB"
+      ],
+      "add": [],
+      "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer-instruction.md",
+      "why": "no upper on Sat 10/10; Upper B moves to Mon 10/12, where the catch-up week's template carries it"
+    }
+  ],
+  "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
+  "conditioning": {
+    "cap_min": 30,
+    "source": "ACL_Whole_Athlete_AddOn.md conditioning table, Phase 3: bike 15-30 min, +3 min per ride to 30",
+    "_about": "The plan's longest prescribed ride: minutes past it are logged and paid nothing (golden rule 6). Update it when a phase changes the ceiling."
+  },
+  "food_itemised_from": "2026-10-08",
   "daily_minimum": {
     "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day).",
     "rounds": [

@@ -118,7 +118,7 @@ STATS = ("might", "vigor", "finesse", "resolve")
 # devices (design §5.6): what a slot may carry beside its content; the pacing rule lives in `check`
 DEVICE_KINDS = ("challenge", "project", "invite")
 INVITE_KINDS = ("favour", "diversion", "opinion", "problem")
-INVITE_STATUS = ("waiting", "taken", "passed")
+INVITE_STATUS = ("waiting", "taken", "passed", "void")
 CHALLENGE_STATUS = ("open", "won", "lost", "void")
 CALLBACK_CAP = 6  # due items with when=later alive at once
 QUEST_STATUS = ("available", "live", "done", "dropped")
@@ -287,6 +287,7 @@ def recompute_bearing(bearing):
 
 
 BEARING_MAX_MOVE = 4
+BETWEEN_APPROVAL_CAP = 6  # net approval Betweens may move one companion in one chapter (design §9)
 WHY_RE = re.compile(r"^(c\d{2}\.\d+|gm:.+)$")
 
 
@@ -382,12 +383,22 @@ def at_status(at, st):
         sub = m.group(2)
         if not sub:
             return "due"
-        if sub == "climax":
-            return "due" if stage in ("climax", "choice") else "future"
-        beat = st.plan.get("core_beats", {}).get(f"b{b}.{m.group(3)}")
+        tc = st.plan.get("route", {}).get(f"book{b}", {}).get("transition_chapter")
+        at_transition = tc is not None and int(tc) == chapter
+        if sub == "climax":  # the Book's climax is its transition chapter's, not every chapter climax in the Book
+            return "due" if (stage in ("climax", "choice", "transition") and at_transition) else "future"
+        k = int(m.group(3))
+        beats = st.plan.get("core_beats", {})
+        beat = beats.get(f"b{b}.{k}")
         if beat is None:
             return "unknown"
-        return {"in_progress": "due", "planned": "future"}.get(beat.get("status"), "overdue")
+        if beat.get("status") == "planned":
+            # a beat that never got its own chapter is being folded now: into the transition, or into a later beat
+            # already on the page; what was owed to it is owed there, not after the Book has moved on
+            later_started = any(v.get("status") in ("in_progress", "done") for kk, v in beats.items()
+                                if re.match(rf"^b{b}\.(\d+)$", kk) and int(kk.split(".")[1]) > k)
+            return "due" if (at_transition or later_started) else "future"
+        return {"in_progress": "due"}.get(beat.get("status"), "overdue")
     m = re.match(r"^transition(\d)$", at)
     if m:
         b = int(m.group(1))
@@ -398,6 +409,56 @@ def at_status(at, st):
         tc = st.plan.get("route", {}).get(f"book{b}", {}).get("transition_chapter")
         return "due" if tc is not None and int(tc) == chapter else "future"
     return "unknown"
+
+
+def item_status(it, st):
+    """A due item's status, with one courtesy: a `color` line made for `next` stays due through the block after its
+    own, so a scene's opening never has to carry every line owed to it (style.md §3, the opening)."""
+    s_ = at_status(it.get("at", ""), st)
+    if s_ != "overdue" or it.get("weight") != "color" or it.get("when") != "next":
+        return s_
+    m = re.match(r"^ch(\d{2}):s(\d+)$", str(it.get("at", "")))
+    pos = st.plan["position"]
+    if not m or int(m.group(1)) != int(pos["chapter"]):
+        return s_
+    k, nxt = int(m.group(2)), int(pos["next_scene"])
+    if pos["stage"] == "scene" and nxt == k + 1:
+        return "due"
+    if pos["stage"] in ("climax", "choice") and nxt == k + 1:  # the scene it was aimed at was the chapter's last
+        return "due"
+    return s_
+
+
+def rule_where_book(where):
+    """The Book a rule's `where` belongs to (bookN…, transitionN, finale = 6), or None for `any` and the like."""
+    w = str(where or "")
+    m = re.match(r"^(?:book|transition)(\d)", w)
+    if m:
+        return int(m.group(1))
+    return 6 if w == "finale" else None
+
+
+def knot_line(plan):
+    """A Knot tied on the Ledger (darrow.py knot tie) that the story has not crossed yet: Book N ends at Knot N+2."""
+    try:
+        sheet = load_json(P["sheet"])
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+    tied = int(sheet.get("knots_count") or 0)
+    book = int(plan["position"]["book"])
+    need = book + 2
+    if tied < need:
+        return None
+    road = (plan.get("route", {}).get(f"book{book}") or {}).get("road")
+    left = [k for k, v in plan.get("core_beats", {}).items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned"]
+    more = (len(left) + 1) // 2  # each chapter after this one lands at most two beats: one in its week, one as its climax
+    when = ("at this chapter's climax (its beat folds into the transition)" if not left else
+            f"in {more} chapter{'s' if more > 1 else ''} after this one: {len(left)} core beat{'s are' if len(left) > 1 else ' is'} still unwritten "
+            f"({', '.join(sorted(left))}); each chapter lands at most two, one in its week with its full choice and one as its climax, "
+            f"and the last one's climax is the transition (arc pacing)")
+    if road:
+        return f"KNOT {ROMAN[need]} tied · Book {ROMAN[book]}'s road decided ({road}): write t{book}.{road}, then `plan book open {book + 1}`"
+    return f"KNOT {ROMAN[need]} tied on the Ledger · Book {ROMAN[book]}'s transition is due {when}"
 
 
 def pending_items(ledger):
@@ -464,7 +525,10 @@ def term_lookup(parts, st):
     if root == "approval" and len(parts) == 2:
         cid = parts[1]
         comp = world.get("companions", {})
-        known = cid in comp or cid in plan.get("companions", {}) or cid in plan.get("companions_to_come", {})
+        to_come = plan.get("companions_to_come", {})
+        known = cid in comp or cid in plan.get("companions", {}) or cid in to_come
+        if cid not in comp and cid in to_come:  # not on the road with him yet: what she has banked still counts
+            return known, int(to_come[cid].get("approval_pending") or 0)
         return known, (comp.get(cid, {}).get("approval") or 0)
     if root == "bearing" and len(parts) == 2:
         return pole_axis(bearing, parts[1]) is not None, pole_value(bearing, parts[1])
@@ -799,8 +863,6 @@ def next_slot(plan, date=None):
 
 SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "micro", "challenge", "invite", "float", "day")
 TURN_HINT = "who can, must, believes, risks or chooses what by the end that they could not at the start, and what Darrow attempts"
-# style.md §3: the word bands per block kind; `check` notes a block a fifth outside its band (a reread, never a cut)
-WORD_BANDS = {"scene": (300, 550), "interlude": (300, 550), "between": (120, 300), "climax": (900, 1800), "choice": (100, 250)}
 
 
 def chapter_template(ws, plan):
@@ -815,6 +877,13 @@ def chapter_template(ws, plan):
     avail += [k for k in plan.get("quests", {}) if k.startswith(f"q{book}.") and k not in avail]
     avail += [f"q{book}.quest_a", f"q{book}.quest_b"]
     beat = plan["position"].get("beat") or f"b{book}.1"
+    if plan["position"].get("stage") in ("climax", "choice", "transition"):
+        # planned at a checkpoint: the climax just answered the current beat, so the new chapter's spine is the next one
+        beats = plan.get("core_beats", {})
+        nxt = [k for k, v in beats.items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned"]
+        nxt.sort(key=lambda k: int(k.split(".")[1]))
+        if nxt:
+            beat = nxt[0]
     slots = []
     for n in range(1, 8):
         s = {"n": n, "day": (ws + dt.timedelta(n - 1)).isoformat()}
@@ -983,6 +1052,38 @@ def gate_state(expr, st):
     return ("MET" if state == "ARMED" else state), detail
 
 
+def stage_gate_for(quests, qid, stage):
+    """A quest's per-stage gate (`quests[qid].stage_gates["N"]`, rule grammar): the sheet may reach a stage before the
+    story is ready for its scene; then the scene waits (design §8, the Tether's later stages)."""
+    return ((quests.get(qid) or {}).get("stage_gates") or {}).get(str(stage))
+
+
+def quest_live_peak(plan, slots=None):
+    """Walk a chapter's unwritten quest slots in day order from the quests live now, and return the most
+    non-standing, non-project quests that would be live at once, with the slot where that happens (design §5.2:
+    never more than two). A stage that is its quest's last takes the quest off the count after its day."""
+    quests = plan.get("quests", {})
+    live = {q for q, v in quests.items() if v.get("status") == "live" and not v.get("standing") and not v.get("project")}
+    peak, where = len(live), None
+    dated = [x for x in (slots if slots is not None else plan.get("chapter", {}).get("slots", [])) if x.get("day")]
+    for x in sorted(dated, key=lambda y: y["day"]):
+        if x.get("kind") != "quest" or x.get("status") not in ("planned", "next"):
+            continue
+        qid = x.get("quest")
+        q = quests.get(qid) or {}
+        if q.get("standing") or q.get("project"):
+            continue
+        live.add(qid)
+        if len(live) > peak:
+            peak = len(live)
+            if where is None and peak > 2:  # the first slot that opens one quest too many
+                where = (x.get("n"), sorted(live))
+        total = arc_quest_stage_count(qid)
+        if x.get("last") or (total and int(x.get("stage") or 0) >= total):
+            live.discard(qid)
+    return peak, where
+
+
 def device_kinds(slots, quests):
     """The device kinds a chapter carries (design §5.6): challenge, invite, project (a quest slot of a project quest)."""
     kinds = set()
@@ -1048,6 +1149,10 @@ def print_slot(s, full=False, plan=None):
         if gate:
             state, detail = gate_state(gate, State())
             print(f"  gate: {gate} · {state}" + (" (locked: the slot cannot be written yet)" if state != "MET" else "") + (f" · {detail}" if detail else ""))
+        sg = stage_gate_for(plan.get("quests", {}), s.get("quest"), s.get("stage"))
+        if sg:
+            state, detail = gate_state(sg, State())
+            print(f"  stage gate: {sg} · {state}" + (" (locked: the stage is on the sheet, its scene waits for the story)" if state != "MET" else ""))
     if s.get("challenge"):
         print_challenge(s)
     if s.get("invite"):
@@ -1131,9 +1236,12 @@ def cmd_now(args):
     warn = f" · ⚠ {len(planned_beats)} core beats still planned: compress ahead if the Knot nears" if len(planned_beats) > 2 else ""
     lines.append(f"Last written {pos.get('last_written')} · chapter question: {short(plan['chapter'].get('question'), 110)}{warn}")
     lines.append(road_line(st))
+    kl = knot_line(plan)
+    if kl:
+        lines.append(kl)
     s = next_slot(plan)
     if s:
-        lines.append("Next: " + slot_label(s) + (" · micro " + s["micro"]["axis"] if s.get("micro") else ""))
+        lines.append("Next: " + slot_label(s) + ((" · beat choice" if s["micro"].get("beat") else " · micro " + str(s["micro"].get("axis"))) if s.get("micro") else ""))
         lines.append("  " + short(s.get("plan"), 150))
         lines.append("  turn: " + (short(s.get("turn"), 150) if s.get("turn") else "none planned (state one before writing)"))
     else:
@@ -1166,7 +1274,7 @@ def cmd_now(args):
     lines.append(bearing_line(bearing))
     due_now, overdue, future, later = [], [], 0, 0
     for e, it in pending_items(ledger):
-        s_ = at_status(it.get("at", ""), st)
+        s_ = item_status(it, st)
         if s_ == "due":
             due_now.append(it)
         elif s_ == "overdue":
@@ -1185,22 +1293,29 @@ def cmd_now(args):
         lines.append("Due now: nothing")
     if later:
         lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most)")
-    shown, other = [], 0
+    broken, armed, near_, other = [], [], [], 0
+    cur_book = int(pos["book"])
     for r in ledger.get("rules", []):
         state, detail = rule_state(r, st)
         if state in ("UNKNOWN TERM", "MALFORMED"):
-            shown.insert(0, f"RULE {state} {r['id']}: {detail}")
-        elif state == "ARMED" and r.get("if", "").strip() != "true":
-            shown.append(f"RULE ARMED {r['id']} ({r.get('where')}): {short(r.get('then'), 100)}")
+            broken.append(f"RULE {state} {r['id']}: {detail}")
+            continue
+        wb = rule_where_book(r.get("where"))
+        if wb is not None and wb < cur_book:  # its moment has passed: the Book it was for is over
+            other += 1
+            continue
+        if state == "ARMED" and r.get("if", "").strip() != "true":
+            armed.append(f"RULE ARMED {r['id']} ({r.get('where')}): {short(r.get('then'), 100)}")
         else:
             near = rule_near(r, st)
             if near and state == "NOT MET":
-                shown.append(f"RULE near {r['id']}: {'; '.join(near)}")
+                near_.append(f"RULE near {r['id']}: {'; '.join(near)}")
             else:
                 other += 1
-    lines += shown[:4]
-    if len(shown) > 4:
-        lines.append(f"  (+{len(shown) - 4} more rules armed/near)")
+    shown = broken + armed + near_  # armed before near: an armed rule changes what the next scene may be
+    lines += shown[:5]
+    if len(shown) > 5:
+        lines.append(f"  (+{len(shown) - 5} more rules armed/near; `saga.py due --all` lists the ledger, `check` the rules)")
     lines.append(f"+{future} pending later, +{other} rules quiet; `saga.py due --all` · `saga.py check`")
     if len(lines) > NOW_CAP:
         lines = lines[: NOW_CAP - 1] + [lines[-1]]
@@ -1213,7 +1328,7 @@ def cmd_due(args):
 
     def show(rows, label=None):
         for e, it in rows:
-            tag = label or at_status(it.get("at", ""), st).upper()
+            tag = label or item_status(it, st).upper()
             print(f"{it['id']} [{it.get('weight')}] when={it.get('when')} at={it.get('at')} {tag} · from {e['id']} ({e['made'].get('date')}: {short(e.get('chose'), 60)})")
             print(f"  {it.get('what')}")
 
@@ -1227,7 +1342,7 @@ def cmd_due(args):
         print(f"callbacks waiting for a fit: {len(rows)} (cap {CALLBACK_CAP}; at most one fired per scene: `fire ID --where …`, or `void ID --why …`)")
         show(rows, label="LATER")
         return
-    now_rows = [(e, it) for e, it in items if at_status(it.get("at", ""), st) in ("due", "overdue")]
+    now_rows = [(e, it) for e, it in items if item_status(it, st) in ("due", "overdue")]
     if args.at:
         exact = [(e, it) for e, it in items if it.get("at") == args.at or it.get("at") == "any"]
         rest = [(e, it) for e, it in now_rows if (e, it) not in exact]
@@ -1356,10 +1471,16 @@ def cmd_add(args):
     witnessed = [w.strip() for w in (args.witnessed or "").split(",") if w.strip()]
     # companion-preference approval from bearing deltas (computed quietly; printed only once everything is accepted)
     pref_delta = {}
+    to_come = plan.get("companions_to_come", {})
+    banked = set()  # witnesses not yet on the road with him: their preference banks as approval_pending
     for cid in witnessed:
-        prefs = [p.lower() for p in plan.get("companions", {}).get(cid, {}).get("prefers", [])]
-        if cid not in plan.get("companions", {}):
-            die(f"--witnessed {cid}: not in plan.json companions")
+        if cid in plan.get("companions", {}):
+            prefs = [p.lower() for p in plan["companions"][cid].get("prefers", [])]
+        elif cid in to_come:
+            prefs = [p.lower() for p in to_come[cid].get("prefers", [])]
+            banked.add(cid)
+        else:
+            die(f"--witnessed {cid}: not in plan.json companions or companions_to_come")
         for pole, n in (now.get("bearing") or {}).items():
             aid, sign = pole_axis(st.bearing, pole)
             ax = st.bearing["axes"][aid]
@@ -1376,11 +1497,33 @@ def cmd_add(args):
             appr[cid] = appr.get(cid, 0) + dlt
             folded.append(f"witnessed {cid}: preference {dlt:+d} folded into now.approval")
         # the folded approval targets must be companions too, before anything is printed as applied
-        bad = [cid for cid in pref_delta if cid not in world.get("companions", {}) and not (args.pending and cid in plan.get("companions_to_come", {}))]
+        bad = [cid for cid in pref_delta if cid not in world.get("companions", {}) and not ((args.pending or cid in banked) and cid in to_come)]
         if bad:
             die("refusing the entry:\n  " + "\n  ".join(f"now.approval.{cid} (folded from --witnessed): not a companion in world.json (use --pending for companions_to_come)" for cid in bad))
     for line in folded:
         print(line)
+    # a Between moves regard a little: at most BETWEEN_APPROVAL_CAP net per companion per chapter (design §9), so
+    # role-play colours how people stand with him and the choices still decide it
+    made = entry.get("made") or {}
+    if str(made.get("scene", "")).startswith("between") and now.get("approval"):
+        prior = {}
+        for e in ledger["entries"]:
+            em = e.get("made") or {}
+            if int(em.get("chapter", -1)) == int(made.get("chapter", -2)) and str(em.get("scene", "")).startswith("between"):
+                for cid, dlt in ((e.get("now") or {}).get("approval") or {}).items():
+                    prior[cid] = prior.get(cid, 0) + int(dlt)
+        for cid in list(now["approval"]):
+            dlt, before = int(now["approval"][cid]), prior.get(cid, 0)
+            kept = max(-BETWEEN_APPROVAL_CAP - before, min(BETWEEN_APPROVAL_CAP - before, dlt))
+            kept = kept if (kept > 0) == (dlt > 0) or kept == 0 else 0
+            if kept != dlt:
+                print(f"Between approval {cid}: {dlt:+d} → {kept:+d} (Betweens move a companion at most ±{BETWEEN_APPROVAL_CAP} a chapter; this chapter so far {before:+d})")
+            if kept:
+                now["approval"][cid] = kept
+            else:
+                del now["approval"][cid]
+        if not now["approval"]:
+            del now["approval"]
     # apply approval
     for cid, dlt in (now.get("approval") or {}).items():
         comp = world.get("companions", {})
@@ -1586,6 +1729,18 @@ def cmd_plan(args):
                 print(f"slot {s['n']} skipped; no world_moves left in the chapter, invent one off-page move")
             if s.get("kind") == "spine":
                 print("a skipped spine slot's content folds into the next spine slot or the climax")
+            # what the slot carried does not happen by itself: say so, and close the devices that cannot wait
+            if s.get("kind") == "quest" and s.get("quest"):
+                print(f"quest {s['quest']} stage {s.get('stage')} did not run: re-plan it into a later float slot "
+                      f"(`plan slot N kind=quest quest={s['quest']} stage={s.get('stage')} plan=…`), or let it wait for the next chapter")
+            if s.get("micro"):
+                print("its micro-choice did not run; it comes back only if the stage is re-planned")
+            if (s.get("invite") or {}).get("status") == "waiting":
+                s["invite"]["status"] = "void"
+                print(f"its invitation ({s['invite'].get('who')}) is void: nobody came to a day that did not happen")
+            if (s.get("challenge") or {}).get("status") == "open":
+                s["challenge"]["status"] = "void"
+                print("its challenge is void; re-plan it with the stage if it still matters")
         else:
             if not args.wrote or not WROTE_RE.match(args.wrote):
                 die("--wrote must look like ch01:s3 or ch01:interlude")
@@ -1692,8 +1847,27 @@ def cmd_plan(args):
                 s["micro"]["answer"] = {"option": opt, "by": args.by}
             plan["open_micro"] = None
             print(f"micro from slot {om.get('slot')} (scene {om.get('scene')}) closed: option {opt} by {args.by}" + (" (the slot's default)" if args.option is None else ""))
+            print("  the answer is recorded only through /choose: its ledger entry (`saga.py add`, which moves the Bearing) and a world.json choices[] row; `check` refuses an answered micro without them")
         st.touch("plan")
         st.save()
+        return
+    if a == "chapter" and args.sub == "cutaway":
+        # a week with nothing logged whose chapter was already planned (the checkpoint before it opened it): it
+        # becomes a cutaway chapter, one interlude and no slots, no climax (checkpoint skill, section A)
+        chp = plan.get("chapter", {})
+        wrote = [x.get("n") for x in chp.get("slots", []) if x.get("status") == "written"]
+        if wrote:
+            die(f"chapter {chp.get('number')} has written slots {wrote}: a cutaway chapter is a week with nothing on the page")
+        if plan.get("open_micro"):
+            die("a micro is open; resolve it first (/choose with its default)")
+        n_slots = len(chp.get("slots", []))
+        chp["slots"] = []
+        chp["climax"] = {"plan": "", "checks": [], "options": [], "default": None}
+        plan["position"].update({"next_scene": 1, "stage": "scene"})
+        st.touch("plan")
+        st.save()
+        print(f"chapter {chp.get('number')} is now a cutaway chapter ({n_slots} planned slots cleared; world moves kept for its interlude): "
+              f"write its one `### Interlude — Title`, record it in world.json scenes[], then open the next chapter")
         return
     if a == "chapter" and args.sub == "template":
         try:
@@ -1709,7 +1883,7 @@ def cmd_plan(args):
             die("plan chapter open needs --number N and the chapter JSON (start from `plan chapter template --week_start <Sunday>`)")
         if plan.get("open_micro"):
             om = plan["open_micro"]
-            die(f"a micro is still open (slot {om.get('slot')}, scene {om.get('scene')}); resolve it first: /choose, or `plan micro close --option {om.get('default')} --by bearing`")
+            die(f"a micro is still open (slot {om.get('slot')}, scene {om.get('scene')}); resolve it first through /choose with its default, option {om.get('default')}, by bearing (a ledger entry, a choices[] row, then `plan micro close --by bearing`)")
         try:
             ch = json.loads(args.json)
         except json.JSONDecodeError as e:
@@ -1738,6 +1912,7 @@ def cmd_plan(args):
         no_turn = [s.get("n") for s in ordered["slots"] if not str(s.get("turn") or "").strip()]
         if no_turn:
             print(f"⚠ slots {no_turn} have no turn ({TURN_HINT}): `plan slot N turn=\"…\"` before their day closes")
+        old = plan.get("chapter", {})  # the outgoing chapter: read before anything replaces it
         ordered["previous_devices"] = sorted(device_kinds(old.get("slots", []), plan.get("quests", {})))
         clash = sorted(device_kinds(ordered["slots"], plan.get("quests", {})) & set(ordered["previous_devices"]))
         if clash:
@@ -1746,9 +1921,15 @@ def cmd_plan(args):
             gate = (plan.get("quests", {}).get(s.get("quest")) or {}).get("gate") if s.get("kind") == "quest" else None
             if gate and gate_state(gate, st)[0] != "MET":
                 print(f"⚠ slot {s.get('n')} plans {s.get('quest')} while its gate ({gate}) is not met: locked; `check` will refuse it until the story gets there")
+            sg = stage_gate_for(plan.get("quests", {}), s.get("quest"), s.get("stage")) if s.get("kind") == "quest" else None
+            if sg and gate_state(sg, st)[0] != "MET":
+                print(f"⚠ slot {s.get('n')} plans {s.get('quest')} stage {s.get('stage')} while its stage gate ({sg}) is not met: locked; the scene waits for the story")
+        peak, where = quest_live_peak(plan, ordered["slots"])
+        if peak > 2 and where and not args.force:
+            die(f"refusing the plan: slot {where[0]} would make {len(where[1])} quests live at once ({', '.join(where[1])}), {peak} at the most; never more than two "
+                f"(the Tether and the Book's project are not counted). Finish one quest before the next opens, or move a stage to the next chapter (design §5.2)")
         # what the outgoing chapter leaves behind: unwritten slots are named; owed world moves carry over
-        old = plan.get("chapter", {})
-        left = [s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
+        left =[s for s in old.get("slots", []) if s.get("status") in ("planned", "next")]
         owed = owed_moves(plan) if old.get("slots") else []
         if left:
             print(f"⚠ chapter {old.get('number')} leaves slots {[s['n'] for s in left]} unwritten (their content folds into the climax you have written)")
@@ -1826,6 +2007,11 @@ def cmd_plan(args):
                   f"plan quest {q_required[0]} status=dropped why=\"…\"")
         if beats.get(f"t{cur}", {}).get("status") not in (None, "done"):
             print(f"note: t{cur} is {beats[f't{cur}'].get('status')}; `plan beat t{cur} status=done` once the transition is written")
+        tc = plan.get("companions_to_come", {})
+        if tc:
+            print("still to come (rules read their banked approval; `plan companion arrive ID` the day they step on the road with him): "
+                  + "; ".join(f"{k} ({short(str(v.get('note') or ''), 70)})" for k, v in tc.items()))
+            print("  every road of the transition just written may have put someone on the road: arrive them now if it did (arc rae.road; Ash in t1)")
         print(f"next: set world.json book to {n}, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
         return
     if a == "quest":
@@ -2513,6 +2699,10 @@ def cmd_check(args):
     live = [q for q in plan.get("quests", {}).values() if q.get("status") == "live" and not q.get("standing") and not q.get("project")]
     if len(live) > 2:
         probs.append(f"{len(live)} quests live; never more than two (a `standing` quest, the Tether, and the Book's `project` quest are not counted)")
+    peak, where = quest_live_peak(plan)
+    if peak > 2 and where:
+        probs.append(f"the chapter's plan makes {len(where[1])} quests live at once at slot {where[0]} ({', '.join(where[1])}); never more than two: "
+                     f"finish one before the next opens, or move a stage to the next chapter (design §5.2)")
     if sum(1 for q in plan.get("quests", {}).values() if q.get("project") and q.get("status") in ("available", "live")) > 1:
         probs.append("more than one project quest available or live; one per Book (design §5.6)")
     for key, r in plan.get("route", {}).items():
@@ -2564,12 +2754,45 @@ def cmd_check(args):
             have = tether_stage()
             if need > have:
                 probs.append(f"slot {n} plans {s.get('quest')} stage {need}, but the engine's Tether stands at {have}; a stage is written only once the Ledger has unlocked it")
+        if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("standing") and s.get("status") in ("planned", "next"):
+            with_ = "rae-thorne"
+            her_place = character_place(with_)[0]
+            if her_place and world.get("location", {}).get("place") and her_place != world["location"]["place"]:
+                notes.append(f"slot {n} plans a stage of {s.get('quest')}, but by the page {with_} is at {her_place} and Darrow at {world['location']['place']}: the scene must bring them together first, or the stage waits for a slot where they are (design §8)")
         if s.get("float") and s.get("kind") != "quest":
             probs.append(f"slot {n} float is only for quest slots")
+        ans = (s.get("micro") or {}).get("answer")
+        if ans:
+            key_ = micro_scene_key(plan, s)
+            row_ = next((c for c in world.get("choices", []) if c.get("kind") == "micro" and int(c.get("chapter", -1)) == int(ch.get("number", -2)) and str(c.get("scene")) == str(key_)), None)
+            if row_ is None:
+                probs.append(f"slot {n}'s micro was answered (option {ans.get('option')}, by {ans.get('by')}) but world.json choices[] has no row for chapter {ch.get('number')} scene {key_}: record it through /choose (its ledger entry moves the Bearing)")
+            elif row_.get("ledger") and not any(e.get("id") == row_["ledger"] for e in ledger.get("entries", [])):
+                probs.append(f"slot {n}'s micro choice names ledger entry {row_['ledger']}, which the ledger does not have")
         if s.get("status") == "written" and not s.get("wrote"):
             probs.append(f"slot {n} written without wrote")
         m = s.get("micro")
-        if m:
+        if m and m.get("beat"):
+            # a folded core beat's own choice, carried by a daily scene (arc pacing): its options keep the arc's
+            # weights, one pole per option at up to ±3, and it opens and closes like a micro
+            opts = m.get("options") or []
+            if not 2 <= len(opts) <= 3:
+                probs.append(f"slot {n} beat choice needs 2–3 options")
+            if m.get("default") not in range(1, len(opts) + 1):
+                probs.append(f"slot {n} beat choice default {m.get('default')!r} not an option number")
+            for b in (m.get("bearing") or []):
+                if b:
+                    if len(b) != 1:
+                        probs.append(f"slot {n} beat choice option moves {len(b)} poles; one per option")
+                    for pole, v in b.items():
+                        if not pole_axis(bearing, pole):
+                            probs.append(f"slot {n} beat choice moves unknown pole {pole!r}")
+                        if not 1 <= abs(int(v)) <= 3:
+                            probs.append(f"slot {n} beat choice moves {pole} by {v}; a folded beat keeps its climax weight, ±2 or ±3")
+            if s.get("kind") != "spine":
+                probs.append(f"slot {n} carries a beat choice but is {s.get('kind')}; only a spine slot carries a core beat's choice")
+            micro_days.append(s)
+        elif m:
             if m.get("axis") not in bearing.get("axes", {}):
                 probs.append(f"slot {n} micro axis {m.get('axis')!r} not a bearing axis")
             opts = m.get("options") or []
@@ -2589,13 +2812,7 @@ def cmd_check(args):
     for s in slots:
         if s.get("status") in ("planned", "next") and not str(s.get("turn") or "").strip():
             notes.append(f"slot {s.get('n')} ({s.get('day') or 'interlude'}) has no turn ({TURN_HINT}): `plan slot {s.get('n')} turn=\"…\"`, or state one in a line before writing")
-    for key, title, n, choice in (chapter_blocks(world) or []):
-        band = WORD_BANDS.get("scene" if key.isdigit() else key.split("-")[0])
-        if band and choice and key.isdigit():
-            band = (band[0], 800)
-        if band and (n < band[0] * 0.8 or n > band[1] * 1.2):
-            label = f"Scene {key}" if key.isdigit() else key.capitalize()
-            notes.append(f"{label} ({title}) runs {n:,} words against a band of {band[0]}–{band[1]}: a fifth outside the band is a reread, never a cut (style.md §3)")
+    # lengths are the story's to decide (style.md §3: a scene runs as long as its want, obstacle and turn need), so no length notes here
     if len(slots) >= 2 and sum(1 for s in slots if s.get("kind") == "spine") < 2:
         probs.append("fewer than 2 spine slots in the chapter")
     if sum(1 for s in slots if s.get("kind") == "interlude") > 1:
@@ -2612,6 +2829,16 @@ def cmd_check(args):
     # devices (design §5.6): one per slot, none on neighbouring days, the chapter's kinds capped and rotated;
     # and gated by the page: an Art the chronicle has named, a person with a character file who is alive, a quest gate that is met
     quests_ = plan.get("quests", {})
+    # a standing quest's stages (the Tether) go in order, one scene each: stage I is the one that explains the thread
+    for qid_, q_ in quests_.items():
+        if not q_.get("standing"):
+            continue
+        expect = int(q_.get("stage") or 0) + 1
+        for s in sorted([x for x in slots if x.get("kind") == "quest" and x.get("quest") == qid_ and x.get("status") in ("planned", "next") and x.get("day")], key=lambda x: x["day"]):
+            got = int(s.get("stage") or 0)
+            if got != expect:
+                probs.append(f"slot {s.get('n')} plans {qid_} stage {got}, but the next stage to write is {expect}: the stages go in order, one scene each")
+            expect = got + 1
     devices, kinds = [], {}
     arts_, spoken_ = art_names(), arts_spoken()
     for who_, rule_ in (plan.get("invite_rules") or {}).items():
@@ -2623,6 +2850,10 @@ def cmd_check(args):
             g_state, g_detail = gate_state(q["gate"], st)
             if g_state in ("MALFORMED", "UNKNOWN TERM"):
                 probs.append(f"quest {qid} gate {q['gate']!r} {g_state}: {g_detail}")
+        for stg, expr in (q.get("stage_gates") or {}).items():
+            g_state, g_detail = gate_state(expr, st)
+            if g_state in ("MALFORMED", "UNKNOWN TERM"):
+                probs.append(f"quest {qid} stage_gates.{stg} {expr!r} {g_state}: {g_detail}")
     for s in slots:
         n, dev = s.get("n"), []
         if s.get("micro"):
@@ -2684,6 +2915,9 @@ def cmd_check(args):
             gate = quests_.get(s.get("quest"), {}).get("gate")
             if gate and gate_state(gate, st)[0] == "NOT MET":
                 probs.append(f"slot {n} plans {s.get('quest')} stage {s.get('stage')} while its gate ({gate}) is not met: locked until the story gets there (design §5.6)")
+            sg = stage_gate_for(quests_, s.get("quest"), s.get("stage"))
+            if sg and gate_state(sg, st)[0] == "NOT MET":
+                probs.append(f"slot {n} plans {s.get('quest')} stage {s.get('stage')} while its stage gate ({sg}) is not met: the sheet has the stage, the scene waits for the story (design §8)")
         if len(dev) > 1:
             probs.append(f"slot {n} carries {len(dev)} devices ({', '.join(dev)}); one at most (design §5.6)")
         if dev:
@@ -2738,7 +2972,16 @@ def cmd_check(args):
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
         notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")
-    axes_touched = {s["micro"]["axis"] for s in micro_days if s.get("micro")}
+    axes_touched = set()
+    for s in micro_days:
+        m_ = s.get("micro") or {}
+        if m_.get("axis"):
+            axes_touched.add(m_["axis"])
+        for b in (m_.get("bearing") or []):  # a beat choice spans the axes its options move
+            for pole in (b or {}):
+                r = pole_axis(bearing, pole)
+                if r:
+                    axes_touched.add(r[0])
     if len(micro_days) >= 2 and len(axes_touched) < 2:
         probs.append("the chapter's micros touch only one axis; plan ≥ 2")
     om = plan.get("open_micro")
@@ -2850,7 +3093,7 @@ def main():
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
     x = ps.add_parser("invite_rule"); x.add_argument("id", help="a character id or its first token (rae, benedek)"); x.add_argument("expr", help="rule grammar; null removes")
     x = ps.add_parser("climax")
-    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers"); x.add_argument("--force", action="store_true", help="open a chapter out of sequence")
+    x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template", "cutaway"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers"); x.add_argument("--force", action="store_true", help="open a chapter out of sequence")
     x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)
     x = ps.add_parser("quest"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("beat"); x.add_argument("id"); x.add_argument("kv", nargs="+")

@@ -51,9 +51,9 @@
     }
   },
   "ember": {
-    "value": 69,
-    "tier": "Low",
-    "effect": "none; the cold gets in"
+    "value": 77,
+    "tier": "Steady",
+    "effect": "none"
   },
   "inspiration": 0,
   "inspiration_cap": 4,

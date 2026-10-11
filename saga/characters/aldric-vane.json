@@ -93,6 +93,7 @@
     }
   ],
   "reckoning": {
+    "unread": true,
     "fire": {
       "kind": "grace",
       "state": "full"

@@ -219,7 +219,10 @@ def rollup(cfg, write=False):
     nut = read_csv("nutrition")
     idx = {r["date"]: r for r in nut}
     first = min([d(r["date"]) for r in nut] or [d(cfg["chronicle_start"])])
+    first_itemised = cfg.get("food_itemised_from")
     for date, items in by_date.items():
+        if first_itemised and date < first_itemised:
+            continue  # a dashboard-era day: its total is the record; `food add` refuses item rows for it
         row = idx.get(date)
         if row is None:
             row = {"date": date}
@@ -260,7 +263,7 @@ def gather(cfg, rules, nutrition=None):
         "floor": None, "check": False, "knee": None, "as_planned": False, "pt": False,
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(), "sport_sessions": set(),
         "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
-        "together": False,
+        "together": False, "pt_missed": False, "knee_unpaid": "", "addons_unpaid": set(),
     })
     for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
@@ -273,12 +276,16 @@ def gather(cfg, rules, nutrition=None):
         if f["kcal"] is not None:
             f["logged"] = True
 
+    # a daily row counts as logging only if it records something; a row holding nothing but `together` (the
+    # Tether's practice, never scored) or the `closed` mark earns no ledger credit in the week score
+    quiet_cols = {"date", "dow", "pod", "post_op_week", "dash_week_start", "together", "closed"}
     for r in read_csv("daily"):
         if not r.get("date"):
             continue
         f = facts[r["date"]]
-        f["logged"] = True
-        rounds = int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
+        if any(str(v or "").strip() for k, v in r.items() if k not in quiet_cols):
+            f["logged"] = True
+        rounds =int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
         f["floor"] = "full" if rounds >= floor_rounds(cfg, r["date"]) else ("half" if rounds else f["floor"])
         if VALID_SWELLING.match(str(r.get("am_swelling", "")).strip()):
             f["check"] = True
@@ -290,6 +297,8 @@ def gather(cfg, rules, nutrition=None):
         f["as_planned"] = yes(r.get("knee_as_planned"))
         if yes(r.get("pt")):
             f["pt"] = True
+        elif str(r.get("pt") or "").strip().lower() in ("missed", "skipped", "no-show", "noshow"):
+            f["pt_missed"] = True  # a booked visit he did not go to: the only way an appointment counts against the week
         for a in re.split(r"[+,/ ]+", str(r.get("addon_session", ""))):
             if a and a.lower() not in ("none", "no", "n", "-"):
                 f["addons"].add(a)
@@ -341,12 +350,14 @@ def gather(cfg, rules, nutrition=None):
             if sk in sport_map:
                 f["tags"].add("sport:" + sk)
 
+    mark_overshoot(facts, cfg, rules)
+
     for date, f in facts.items():  # derived tags
         f["sport"] = len(f["sport_sessions"])  # XP and temper pay per session a day (per_day_cap), never per skill row
         for a in f["addons"]:
-            if a in session_tags:
+            if a in session_tags and session_tags[a] not in f["addons_unpaid"]:
                 f["tags"].add(session_tags[a])
-        if f["knee"]:
+        if f["knee"] and not f["knee_unpaid"]:
             f["tags"].add("lower")
             if f["knee"].upper() in ("A", "B", "HOME"):
                 f["tags"].add("balance")
@@ -359,6 +370,47 @@ def gather(cfg, rules, nutrition=None):
         if f["check"]:
             f["tags"].add("check")
     return facts
+
+
+def mark_overshoot(facts, cfg, rules):
+    """Golden rule 6: work past the plan is logged truthfully and pays nothing (no XP, no temper, no Art practice).
+    From rules.json -> overshoot.from on: a knee session the day after another knee session (the plan never runs
+    them back to back), knee or upper sessions beyond the week's planned count, and the optional add-ons beyond
+    once a week or before their start date (weekly_template.optional_from). Earlier days are left as they were,
+    so the sheet the page has already shown never changes."""
+    start = (rules.get("overshoot") or {}).get("from")
+    if not start:
+        return
+    session_tags = rules["tags"]["session_tags"]
+    weeks = defaultdict(list)
+    for date in list(facts):
+        if date >= start:
+            weeks[week_start(d(date))].append(date)
+    for ws, dates in weeks.items():
+        plan, optional = week_plan(cfg, ws)
+        opt_from = template_for(cfg, ws).get("optional_from") or cfg["weekly_template"].get("optional_from") or {}
+        paid = defaultdict(int)
+        for date in sorted(dates):
+            f = facts[date]
+            if f["knee"]:
+                prev = facts.get((d(date) - dt.timedelta(1)).isoformat())
+                if prev is not None and prev["knee"]:
+                    f["knee_unpaid"] = "back-to-back with the day before"
+                elif paid["knee"] >= plan.get("knee", 0):
+                    f["knee_unpaid"] = "beyond the week's planned knee sessions"
+                else:
+                    paid["knee"] += 1
+            for kind in sorted({session_tags[a] for a in f["addons"] if a in session_tags}):
+                if kind == "upper":
+                    cap = plan.get("upper", 0)
+                elif opt_from.get(kind) and date < opt_from[kind]:
+                    cap = 0
+                else:
+                    cap = max(plan.get(kind, 0), 1 if kind in optional else 0)
+                if paid[kind] >= cap:
+                    f["addons_unpaid"].add(kind)
+                else:
+                    paid[kind] += 1
 
 
 # ---------------------------------------------------------------- scoring
@@ -389,10 +441,17 @@ def deeds_for_day(date, f, cfg, rules):
         add("floor_half")
     if f["check"]:
         add("morning_check")
+    def unpaid(label, why):  # work past the plan: kept in the audit trail at zero (mark_overshoot)
+        out.append({"date": date, "kind": "daily", "deed": f"{label} (logged; past the plan, not paid)",
+                    "xp": 0, **{a: 0 for a in ATTRS}, "note": why})
+
     if f["knee"]:
-        add("knee_session", note=f["knee"])
-        if f["as_planned"]:
-            add("knee_as_planned")
+        if f["knee_unpaid"]:
+            unpaid(R["knee_session"]["label"], f"{f['knee']}: {f['knee_unpaid']}")
+        else:
+            add("knee_session", note=f["knee"])
+            if f["as_planned"]:
+                add("knee_as_planned")
     if f["pt"]:
         add("pt_visit")
     addon_kinds = set()
@@ -401,12 +460,21 @@ def deeds_for_day(date, f, cfg, rules):
         kind = {"upper": "upper_session", "accessory": "accessory_session", "power": "power_session"}.get(tag)
         if kind and kind not in addon_kinds:
             addon_kinds.add(kind)
-            add(kind, note=a)
+            if tag in f["addons_unpaid"]:
+                unpaid(R[kind]["label"], f"{a}: beyond the week's plan, or before its start date")
+            else:
+                add(kind, note=a)
     c = R["conditioning"]
     if f["cond_min"] >= c["min_minutes"]:
-        xp = min(c["xp_cap"], int(round(f["cond_min"] * c["xp_per_min"])))
-        tv = min(c["temper_cap"], int(f["cond_min"] // 10))
-        add("conditioning", xp=xp, temper={"vigor": tv}, note=f"{int(f['cond_min'])} min {f['cond_type']}".strip())
+        start = (rules.get("overshoot") or {}).get("from")
+        cap_min = (cfg.get("conditioning") or {}).get("cap_min")
+        paid_min = min(f["cond_min"], cap_min) if (start and cap_min and date >= start) else f["cond_min"]
+        xp = min(c["xp_cap"], int(round(paid_min * c["xp_per_min"])))
+        tv = min(c["temper_cap"], int(paid_min // 10))
+        note = f"{int(f['cond_min'])} min {f['cond_type']}".strip()
+        if paid_min < f["cond_min"]:
+            note += f" (paid to the plan's {int(cap_min)} min)"
+        add("conditioning", xp=xp, temper={"vigor": tv}, note=note)
     for _ in range(min(f["sport"], R["sport_session"]["per_day_cap"])):
         add("sport_session", note=",".join(sorted(f["sport_skills"])))
     if f["weight"]:
@@ -431,25 +499,62 @@ def deeds_for_day(date, f, cfg, rules):
     return out
 
 
-def planned_for(cfg, day):
-    """The planned sessions for a date: the template in force then (weekly_template_history), else the current one."""
+def template_for(cfg, day):
+    """The weekly template in force on a date: the weekly_template_history entry that covers it, else the current one."""
     for t in sorted(cfg.get("weekly_template_history", []), key=lambda x: x["until"]):
         if day.isoformat() <= t["until"]:
-            return list(t.get(dow(day), []))
-    return list(cfg["weekly_template"].get(dow(day), []))
+            return t
+    return cfg["weekly_template"]
+
+
+def session_key(p):
+    """A plan code's family for counting: kneeA/kneeB -> knee, upperA/upperB -> upper, the rest as they are."""
+    return "knee" if p in ("kneeA", "kneeB", "knee") else ("upper" if p in ("upperA", "upperB") else p)
+
+
+def planned_for(cfg, day):
+    """The planned sessions for a date: the template in force then (weekly_template_history), else the current one,
+    then real/config.json -> plan_changes for that date. A plan change is a session a PT, surgeon or trainer moved or
+    cancelled ({"date", "drop": [codes], "add": [codes], "source"}): what the plan itself moves is never a miss."""
+    base = list(template_for(cfg, day).get(dow(day), []))
+    for ch in cfg.get("plan_changes", []):
+        if ch.get("date") != day.isoformat():
+            continue
+        for p in ch.get("drop", []):
+            hit = p if p in base else next((b for b in base if session_key(b) == session_key(p)), None)
+            if hit:
+                base.remove(hit)
+        base += list(ch.get("add", []))
+    return base
+
+
+def week_plan(cfg, ws):
+    """The week's planned sessions by family (knee, upper, cond, pt, sport, ...) and its optional add-ons."""
+    counts = defaultdict(int)
+    for i in range(7):
+        for p in planned_for(cfg, ws + dt.timedelta(i)):
+            counts[session_key(p)] += 1
+    return counts, set(template_for(cfg, ws).get("optional", []))
 
 
 def week_score(ws, upto, facts, cfg, rules):
-    """Score the week starting ws (Sunday) over days ws..upto inclusive."""
+    """Score the week starting ws (Sunday) over days ws..upto inclusive.
+
+    Red-light days (the plan said stop) are excused: they are left out of every part. A week that is all red-light
+    is scored on what rest still asks for (fuel, weigh-ins, the ledger) over those days, never on training it was
+    told not to do. A planned PT visit counts only when he went or when a booked visit was missed (pt=missed):
+    an appointment that was never booked is not his to miss."""
     W = rules["week_score"]["weights"]
     days = [ws + dt.timedelta(i) for i in range(7) if ws + dt.timedelta(i) <= upto]
     if not days:
         return None
     floor = checks = ledger = fuel = 0.0
+    red_fuel = red_ledger = 0.0
     counted = 0
     floor_full_nonred = 0
     planned = defaultdict(int)
     done = defaultdict(int)
+    pt_missed = 0
     weighins = 0
     excused = []
     for day in days:
@@ -457,11 +562,12 @@ def week_score(ws, upto, facts, cfg, rules):
         red = bool(f and f["light"] == "red")
         if red:
             excused.append(day.isoformat())
+            red_fuel += day_fuel(f, cfg, rules) or 0
+            red_ledger += 1 if f["logged"] else 0
         else:
             counted += 1
             for p in planned_for(cfg, day):
-                key = "knee" if p in ("kneeA", "kneeB") else ("upper" if p in ("upperA", "upperB") else p)
-                planned[key] += 1
+                planned[session_key(p)] += 1
         if not f:
             continue
         if red:
@@ -472,10 +578,12 @@ def week_score(ws, upto, facts, cfg, rules):
         ledger += 1 if f["logged"] else 0
         fu = day_fuel(f, cfg, rules)
         fuel += fu or 0
-        if f["knee"]:
+        if f["knee"] and not f["knee_unpaid"]:  # a back-to-back session is logged, never counted as the plan's
             done["knee"] += 1
         if f["pt"]:
             done["pt"] += 1
+        if f["pt_missed"]:
+            pt_missed += 1
         tags = {rules["tags"]["session_tags"].get(a) for a in f["addons"]}
         if "upper" in tags:
             done["upper"] += 1
@@ -489,16 +597,26 @@ def week_score(ws, upto, facts, cfg, rules):
         f = facts.get(day.isoformat())
         if f and f["light"] == "red" and f["weight"]:
             weighins += 1
-    n = max(counted, 1)
+    if planned.get("pt"):
+        planned["pt"] = min(planned["pt"], done["pt"] + pt_missed)
+        if not planned["pt"]:
+            del planned["pt"]
+    need_w = cfg["nutrition_targets"]["weighins_per_week"]
     total_planned = sum(planned.values())
     sess_done = sum(min(done[k], v) for k, v in planned.items())
-    sessions = (sess_done / total_planned) if total_planned else 1.0
-    need_w = cfg["nutrition_targets"]["weighins_per_week"]
-    parts = {
-        "floor": floor / n, "sessions": sessions, "fuel": fuel / n,
-        "checks": checks / n, "weighins": min(weighins, need_w) / need_w, "ledger": ledger / n,
-    }
-    score = round(sum(W[k] * parts[k] for k in W))
+    if counted == 0:
+        # every day excused: score what rest still asks for, over the excused days
+        nr = len(excused)
+        parts = {"fuel": red_fuel / nr, "weighins": min(weighins, need_w) / need_w, "ledger": red_ledger / nr}
+        score = round(100 * sum(W[k] * parts[k] for k in parts) / sum(W[k] for k in parts))
+    else:
+        n = counted
+        sessions = (sess_done / total_planned) if total_planned else 1.0
+        parts = {
+            "floor": floor / n, "sessions": sessions, "fuel": fuel / n,
+            "checks": checks / n, "weighins": min(weighins, need_w) / need_w, "ledger": ledger / n,
+        }
+        score = round(sum(W[k] * parts[k] for k in W))
     tier = next(t for t in rules["week_score"]["tiers"] if score >= t["min"])
     return {
         "week_start": ws.isoformat(), "through": days[-1].isoformat(), "days": len(days),
@@ -511,8 +629,13 @@ def week_score(ws, upto, facts, cfg, rules):
 
 
 def ember_at(day, facts, cfg, rules):
+    """The rolling 7-day fuel score as of `day`. A day still being eaten is not a day's fuel yet: `day` itself counts
+    only once it is closed; until then the window is the seven days before it. So Ember does not dip at breakfast
+    and climb back at dinner, and the glimpses and dice read a settled number."""
     vals = []
-    for i in range(7):
+    today = facts.get(day.isoformat())
+    first = 0 if (today is not None and today["closed"]) else 1
+    for i in range(first, first + 7):
         f = facts.get((day - dt.timedelta(i)).isoformat())
         if f:
             fu = day_fuel(f, cfg, rules)
@@ -692,6 +815,13 @@ def cmd_sync(args, cfg, rules):
     st = compute(cfg, rules, d(args.date) if getattr(args, "date", None) else None, write=True)
     write_csv("deeds", st["deeds"])
     old = load_json(P["sheet"]) if P["sheet"].exists() else None
+    ot, nt = (old or {}).get("tether") or {}, st["sheet"].get("tether") or {}
+    if nt and ot.get("stage", 0) > nt.get("stage", 0):
+        # the Tether only climbs: a corrected or moved day never takes back a stage the page may already have paid
+        names = (rules.get("tether") or {}).get("names") or []
+        stage = ot["stage"]
+        st["sheet"]["tether"] = {**nt, "stage": stage, "name": names[stage - 1] if stage <= len(names) else ot.get("name"),
+                                 "held": True}
     save_json(P["sheet"], st["sheet"])
     write_dashboards(st, cfg, rules)
     # report what changed, for the Reckoning notifications
@@ -734,10 +864,12 @@ def diff_sheets(old, new):
     if oe and new["ember"]["tier"] != oe:
         notes.append(f"EMBER {oe} -> {new['ember']['tier']}")
     ot, nt = (old.get("tether") or {}).get("stage", 0), (new.get("tether") or {}).get("stage", 0)
-    if nt > ot:
-        nm = (new.get("tether") or {}).get("name") or ""
-        notes.append(f"TETHER {'TIED' if ot == 0 else 'DRAWN'}: {roman(nt)} of {roman((new.get('tether') or {}).get('of', 5))} · {nm}"
-                     + ("" if ot == 0 else f" (was {roman(ot)})"))
+    names = (load_json(P["rules"]).get("tether") or {}).get("names") or []
+    of = (new.get("tether") or {}).get("of", 5)
+    for k in range(ot + 1, nt + 1):  # every stage crossed gets its own line: each one is a scene, and stage I explains them
+        nm = names[k - 1] if k <= len(names) else ""
+        notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
+                     + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
     return notes
 
 
@@ -1537,10 +1669,14 @@ def cmd_close(args, cfg, rules):
         sys.exit(f"the week of Sun {unclosed[0]} is not closed as a chapter yet: run /checkpoint first "
                  f"(its first engine step is `python3 engine/darrow.py chapter-close --date {unclosed[0] + dt.timedelta(6)}`), "
                  f"then close {date}. --force closes the day anyway.")
+    saga = ROOT / "engine/saga.py"
+    pre = subprocess.run([sys.executable, str(saga), "plan", "next", "--date", date], cwd=ROOT, capture_output=True, text=True)
+    if pre.returncode and not args.force:  # never a closed day without a slot to write its scene into
+        sys.exit(f"not closed: the story has no slot for {date} yet ({(pre.stderr or pre.stdout).strip()}). "
+                 f"Open its chapter first (a new week: /checkpoint and `saga.py plan chapter open`), then close {date}.")
     upsert_row("daily", date, {"closed": ("set", "Y")}, cfg)
     print(f"daily {date}: closed=Y")
     cmd_sync(argparse.Namespace(date=None), cfg, rules)
-    saga = ROOT / "engine/saga.py"
     for cmd in (["now"], ["plan", "next", "--date", date, "--full"]):
         print(f"\n$ python3 engine/saga.py {' '.join(cmd)}")
         r = subprocess.run([sys.executable, str(saga)] + cmd, cwd=ROOT, capture_output=True, text=True)
@@ -1567,6 +1703,11 @@ def cmd_food(args, cfg, rules):
             if "date" not in item or "item" not in item:
                 sys.exit("each food needs at least 'date' and 'item'")
             date = d(item["date"]).isoformat()
+            first_itemised = cfg.get("food_itemised_from")
+            if first_itemised and date < first_itemised:
+                sys.exit(f"{date} is before itemised food logging began ({first_itemised}): its day total in "
+                         f"nutrition_log.csv came from the dashboard and stands as it is. To add a forgotten item, add its "
+                         f"numbers to that total with `set nutrition {date} kcal=… protein_g=…`; an item row would replace it.")
             seq = 1 + max([int(r["id"].split("#")[1]) for r in rows
                            if r.get("date") == date and "#" in r.get("id", "")] or [0])
             row = {"id": f"{date}#{seq}", **{k: item.get(k, "") for k in COLS["food"] if k != "id"}}
@@ -1587,6 +1728,16 @@ def cmd_food(args, cfg, rules):
             sys.exit(f"no food entry {args.payload}")
         write_csv("food", keep)
         print(f"removed {args.payload}")
+        date = args.payload.split("#")[0]
+        if not any(r.get("date") == date for r in keep) and date >= (cfg.get("food_itemised_from") or "0"):
+            # the day's totals were rolled up from its items: with none left, clear them, or the old sum stays behind
+            nut = read_csv("nutrition")
+            for r in nut:
+                if r.get("date") == date:
+                    for k in NUTRIENTS:
+                        r[k] = ""
+            write_csv("nutrition", nut)
+            print(f"{date}: no food entries left; its rolled-up totals cleared (weight, creatine and notes kept)")
     elif args.action == "lib":
         q = args.payload.lower()
         for r in read_csv("foods"):
@@ -1653,6 +1804,10 @@ def cmd_roll(args, cfg, rules):
         cur = st["current_week"]
         mods.append((f"chapter so far {cur['tier']}", cur["roll_mod"]))
     et = s["ember"]["tier"]
+    if args.chapter:  # a climax reads the Ember its week ended on, like its frozen tier, whatever today's logs say
+        we = d(ch["week_end"]) if ch.get("week_end") else d(ch["week_start"]) + dt.timedelta(6)
+        ev = ember_at(we, st["facts"], cfg, rules)
+        et = tier_of(ev, rules["ember"]["tiers"])["name"] if ev is not None else None
     if et == "Blazing":
         mods.append(("Ember Blazing", 1))
     elif et == "Bright" and args.stat == "vigor":
@@ -1728,6 +1883,23 @@ def cmd_chapter_close(args, cfg, rules):
         sys.exit(f"the week of Sun {ws} – Sat {week_end} is still in progress (today is {today}); use --force to close it anyway")
     sc = week_score(ws, week_end, st["facts"], cfg, rules)
     n = chapter_no(cfg, ws)
+    if str(n) not in closed and not (args.partial_ok or args.force):
+        # the freeze is final: make sure the week's last day is in before it, so a Saturday dinner sent on Sunday
+        # morning is never scored as not eaten (late logs move totals, never a frozen tier)
+        last = week_end.isoformat()
+        f = st["facts"].get(last)
+        meals = {str(r.get("meal") or "").strip().lower() for r in read_csv("food") if r.get("date") == last}
+        kcal = (f or {}).get("kcal") if f else None
+        why = None
+        if not day_has_logs(last):
+            why = f"nothing is logged for {dow(week_end)} {last}"
+        elif kcal is None:
+            why = f"no food is logged for {dow(week_end)} {last}"
+        elif kcal < 0.6 * cfg["nutrition_targets"]["kcal"] and "dinner" not in meals:
+            why = f"{dow(week_end)} {last} shows {int(kcal):,} kcal and no dinner"
+        if why:
+            sys.exit(f"not frozen: {why}. If anything from that day is still to come, log it first (the Sunday "
+                     f"message's own Saturday items go in before this step). If that really is all, rerun with --partial-ok.")
     if str(n) in closed and not args.force:
         r = next(r for r in rows if r["chapter"] == str(n))
         print(f"Chapter {n} (Sun {ws} – Sat {week_end}) already closed: score {r['score']} · {r['tier']} (roll mod {r['roll_mod']}). Use --force to redo.")
@@ -1750,9 +1922,15 @@ def cmd_knot(args, cfg, rules):
         sys.exit(f"Knot {args.n} is already tied")
     if args.n != len(knots) + 1:
         sys.exit(f"Knots tie in order; next is {len(knots) + 1}")
+    try:
+        when = d(args.date)
+    except ValueError:
+        sys.exit(f"--date {args.date}: not a date (YYYY-MM-DD)")
+    if when > today_local(cfg):
+        sys.exit(f"--date {when} has not happened yet: a Knot ties on the day its evidence exists, never ahead of it")
     knots.append({"knot": args.n, "name": names[args.n], "date": d(args.date).isoformat(), "evidence": args.evidence})
     save_json(P["config"], cfg)
-    print(f"Knot {roman(args.n)} ({names[args.n]}) tied {args.date}. Run sync.")
+    print(f"Knot {roman(args.n)} ({names[args.n]}) tied {args.date}. Run sync; `saga.py now` shows the Book's transition as due.")
 
 
 def cmd_show(args, cfg, rules):
@@ -1836,6 +2014,7 @@ def main():
     s.add_argument("--reroll", action="store_true"); s.add_argument("--note")
     s = sub.add_parser("inspire"); s.add_argument("--reason", required=True)
     s = sub.add_parser("chapter-close"); s.add_argument("--date"); s.add_argument("--force", action="store_true")
+    s.add_argument("--partial-ok", action="store_true", help="freeze even though the week's last day looks unfinished (he said that was all)")
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
     s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport", "measurements"]); s.add_argument("date"); s.add_argument("--session")
     s = sub.add_parser("recap"); s.add_argument("--date"); s.add_argument("--write", action="store_true"); s.add_argument("--force", action="store_true")

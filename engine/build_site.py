@@ -487,7 +487,7 @@ def load_characters(registry, factions, places):
             if c.get("tier") != "fallen":
                 if not isinstance(rk, dict):
                     problem(f"{p.name}: reckoning must be an object for the living (null is only for the fallen)")
-                elif ((rk.get("fire") or {}).get("kind")) not in ("grace", "ember", "none"):
+                elif not rk.get("unread") and ((rk.get("fire") or {}).get("kind")) not in ("grace", "ember", "none"):
                     problem(f"{p.name}: reckoning.fire.kind must be grace, ember or none")
         if c.get("tier") not in ("major", "minor", "fallen"):
             problem(f"{p.name}: tier must be major, minor or fallen")
@@ -1499,7 +1499,7 @@ class Site:
         eye = self.eye
         if c.get("tier") == "fallen":
             return '<div class="rk-card sealed-box"><p class="rk-h">⟦ THE RECKONING ⟧</p><p class="sealed-line">The script does not read those who did not come back.</p></div>'
-        if rk is None:
+        if rk is None or rk.get("unread"):  # unread: the page has not yet let the script read this person
             return '<div class="rk-card sealed-box"><p class="rk-h">⟦ THE RECKONING ⟧</p><p class="sealed-line">⟦ unread ⟧</p></div>'
         fire = (rk.get("fire") or {})
         kind = fire.get("kind", "none")
@@ -1615,7 +1615,7 @@ class Site:
         rel = "../"
         rk = c.get("reckoning")
         level = None
-        if c["tier"] != "fallen" and isinstance(rk, dict) and self.eye >= 1:
+        if c["tier"] != "fallen" and isinstance(rk, dict) and not rk.get("unread") and self.eye >= 1:
             level = rk["level"] if rk.get("level") is not None else "—"
         body = self.identity_plate(c, rel, level) + self.character_sections(c, rel)
         ep = c.get("epithet", "")

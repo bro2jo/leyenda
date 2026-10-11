@@ -264,6 +264,10 @@
       }
     ]
   },
+  "overshoot": {
+    "_about": "Golden rule 6: work past the plan is logged truthfully and pays nothing. From this date on: a knee session the day after another, knee or upper sessions beyond the week's planned count, optional add-ons beyond once a week or before their start date (real/config.json -> weekly_template.optional_from), and conditioning minutes past the plan's ceiling (real/config.json -> conditioning.cap_min). Earlier days keep what they paid, so nothing the page has shown changes.",
+    "from": "2026-10-11"
+  },
   "ember": {
     "_about": "Rolling 7-day fuel score, 0-100, from logged days only. Day fuel = kcal_weight*(kcal/target)^exp + protein_weight*(protein/target)^exp, each ratio capped at 1.",
     "kcal_weight": 0.55,

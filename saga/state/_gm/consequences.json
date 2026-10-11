@@ -114,8 +114,8 @@
     },
     {
       "id": "r.t8.early",
-      "if": "approval.maelis >= 60",
-      "then": "Maelis tells her own story before Book IV",
+      "if": "approval.maelis >= 60 && route.book1 != \"\"",
+      "then": "Maelis tells her own story before Book IV, never before Book II: the gate is regard and a Book crossed together, so a warm first month cannot spend a late reveal",
       "where": "any"
     },
     {

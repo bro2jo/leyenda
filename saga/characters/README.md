@@ -52,6 +52,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
 ```
 
 - `reckoning` is **null** for the fallen (the script does not read the dead). Darrow's file has no `reckoning` key at all.
+- `reckoning.unread: true` keeps a living character's sheet sealed on the site (⟦ unread ⟧, the crest unread) whatever Darrow's Warden's Eye rank: for someone he has not looked at since the script woke, or whose sheet would tell the reader what the page has left as a claim or a doubt. The numbers stay in the file for the day it comes off; take the flag off once the page has had him read them.
 - `quote` is **null** when the character has not spoken a line on the page (the site then says so). Never invent one.
 - `appearances` lists the scenes the character is **present in**. A scene where they are only named gets `"mention": true`; a character who has only been named (not yet seen) has only mentions, and `first_seen`/`last_seen` point at those. `last_seen` is the latest presence, or the latest mention if there is no presence.
 - Grace-sworn characters carry the rank word `Oathsworn` (a game term for borrowed strength, with `level: null`); everyone else uses the Ember ranks from `engine/rules.json`.

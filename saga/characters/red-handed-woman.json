@@ -73,6 +73,7 @@
     }
   ],
   "reckoning": {
+    "unread": true,
     "fire": {
       "kind": "ember",
       "state": "banked"

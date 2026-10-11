@@ -59,8 +59,10 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 ## 3. Formats
 
 ### A daily scene (written when a day is closed)
-- **300–550 words** as the target, one scene. Heading: `### Scene N — Title`. Appended to the current chapter file. The band is a target, not a wall: a scene that carries a choice, a reveal, a death or an arrival may run to 800, and one that only moves him across the House may stop at 250. What the band may never do is make a council of five break in one line, or pad a quiet morning to length. A scene a fifth outside its band gets the reread (§4), not a cut; `saga.py check` notes it.
-- Every daily scene is exactly one **kind**, fixed when the chapter is planned: **spine** (advances the chapter's core beat; at least two per chapter, and Saturday's slot is always spine), **quest** (one stage of an active side quest; at most two stages of one quest per chapter), **interlude** (another POV, at most one per chapter, heading `### Interlude — Title`, not tied to a day), or **cutaway** (a red-light day: the world moves without him; never a setback frame).
+- **Length follows the scene.** One scene: someone wants something, something stops them, something turns (§2), and it is as long as that takes. Most daily scenes land somewhere around 300 to 600 words; a council of five, a death, an arrival or a choice takes what it needs, and a quiet scene that has done its turn in 250 stops there. A number never makes a council break in one line or pads a quiet morning to length. Heading: `### Scene N — Title`. Appended to the current chapter file.
+- **The opening carries at most two things owed from before**, each in a clause or a line, in this order of claim: an off-page world move from a missed day, the answer to the open choice, then whichever Between or due line matters most to this scene. Everything else owed waits: a colour line owed to the next scene may land anywhere in it or in the block after (the engine keeps it due one block longer), and the scene never opens on a list of debts. When the plan sets a scene in two places, it moves once, cleanly, with the time between them said.
+- **Story time.** A chapter covers roughly its own calendar week: a scene may open hours or days after the last, and says so in its first lines. Story time never runs ahead of the real calendar; the season and the feasts follow it.
+- Every daily scene is exactly one **kind**, fixed when the chapter is planned: **spine** (advances the chapter's core beat; at least two per chapter, and Saturday's slot is always spine; when a gate comes early, a spine scene may carry a folded core beat's own choice, a **beat choice**, below), **quest** (one stage of an active side quest; at most two stages of one quest per chapter), **interlude** (another POV, at most one per chapter, heading `### Interlude — Title`, not tied to a day), or **cutaway** (a red-light day: the world moves without him; never a setback frame).
 - Tone is coloured by that day's deeds (see the table above); the content is the planned slot's, and the outcome is set only at the climax. The plot moves forward every day regardless.
 - A missed day gets no scene. The next scene opens with one off-page world move from the chapter's planned list, then carries on.
 - Reckoning notifications, if the engine reported any, go at the end of the scene in a box.
@@ -86,7 +88,7 @@ Show the check on its own line, before the outcome is narrated:
 - DCs: easy 8 · moderate 11 · hard 14 · very hard 17 · near impossible 20.
 
 ### The weekly climax (written at the Sunday checkpoint)
-- **900–1,800 words** (a target, as above: the space goes to the decision and what it costs): the chapter's battle, confrontation or revelation. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.
+- **As long as the decision and its cost need** (most land between 900 and 1,800 words; the space goes to the decision and what it costs, never to everything the chapter touched): the chapter's battle, confrontation or revelation. A climax carries its own beat; whatever else is owed and does not fit the moment waits for the next chapter's first scenes. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.
 - End with **a choice for Darrow** (2–3 options), in this format:
 ```
 **What does Darrow do?**
@@ -106,11 +108,12 @@ One stage of a quest or a beat may end on a choice smaller than the climax's. Fo
 3. **Say nothing.**
 ```
 - At most one open at a time, at most one per scene, never in two scenes running. Each names exactly one Bearing axis, ±1 per option; gates as above.
-- It carries across one scene. If it is still open at the following close, Darrow answers for himself with the planned default, and the Ledger says so in one line.
+- It carries across one scene. If it is still open at the following close, Darrow answers for himself with the planned default (recorded through `/choose`, so its Bearing moves), and the Ledger says so in one line.
 - Its consequence is folded into the opening of the next scene. No separate block, no `### Choice` heading.
+- **A beat choice** is the same format carrying a folded core beat's own choice (the arc's options, each moving its own pole by its climax weight, and the flags it sets): a gate came early and the beat landed in a daily scene instead of a climax. It opens and closes like a small choice; what the tier decides about it lands at that chapter's climax.
 
 ### A Between (role-play; between two scenes)
-- Darrow's own action in the story's present, played out: `### Between — Title`, **120–300 words**, close third, past tense, appended to the chapter after the last block. It extends the moment; it never does the plan's work: nothing from the next slot, no truth ahead of schedule, no new name or place, nothing with the knee the plan has not cleared.
+- Darrow's own action in the story's present, played out: `### Between — Title`, short (a moment, not a scene: usually 100 to 300 words, as the moment needs), close third, past tense, appended to the chapter after the last block. It extends the moment; it never does the plan's work: nothing from the next slot, no truth ahead of schedule, no new name or place, nothing with the knee the plan has not cleared.
 - People answer in voice and may refuse, deflect or lie. Zero or one die, only with stakes or a game, never with the chapter's tier. A failure costs a copper, a laugh or a line.
 - At most two between two scenes; a third is two lines and the moment passes. It ends on a line that hands the moment back, **never on a choice list**. No Reckoning box. The next scene opens on it in a clause, then does its own slot. Consequences, when there are any, go through the ledger (`design.md` §9).
 
