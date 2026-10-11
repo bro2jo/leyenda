@@ -20,18 +20,18 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
   },
   "last_seen": {
-    "chapter": "01",
-    "scene": "choice",
+    "chapter": "02",
+    "scene": "between-2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
+    "anchor": "chronicle/02-the-grey-cot.html#between-2"
   },
-  "last_seen_doing": "In the court after Darrow gave his name at the bars and the Confessor thanked her for her candour, asking Darrow only whether the shoulder was hurt.",
-  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, and when he held his paper out under the law of guests she kept him waiting for the bell as long as she could, then had the wicket opened; two grey cloaks came through it before Old Mercy rang, late, and she spoke the law of names. When Darrow gave his name at the bars and the House's story died at her gate, the Confessor thanked her for her candour. She did not reproach Darrow; she asked whether his shoulder was hurt.",
+  "last_seen_doing": "Alone in the chapel at night with one candle, saying the names of everyone under her roof, until the Captain came for a reproach and got questions instead.",
+  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, and when he held his paper out under the law of guests she kept him waiting for the bell as long as she could, then had the wicket opened; two grey cloaks came through it before Old Mercy rang, late, and she spoke the law of names. When Darrow gave his name at the bars and the House's story died at her gate, the Confessor thanked her for her candour. She did not reproach Darrow; she asked whether his shoulder was hurt. That night in the chapel she told him a lie told for a man is his to bury, that she says the names of everyone under her roof every night, and that she has never once given a name to a writ; he is in her count.",
   "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate and let the Confessor read; she kept him waiting at the wicket for the bell as long as the law of guests allowed, and when his men came through and the bell rang late, she gave him the law's other half, that no name under it is taken down against its will. When Darrow gave his name at the bars, the Confessor thanked her for her candour, and she asked Darrow only whether the shoulder was hurt.",
   "quote": {
-    "text": "While it rings, no name under it is taken down against its will. Would your men like to go back out the way they came?",
-    "chapter": "01",
-    "scene": "climax"
+    "text": "I have never once given a name to a writ. Did you think I would start with yours?",
+    "chapter": "02",
+    "scene": "between-2"
   },
   "known_facts": [
     {
@@ -133,6 +133,30 @@
       "chapter": "01",
       "scene": "3",
       "evidence": "how many will the next writ carry?"
+    },
+    {
+      "fact": "Every night, alone in the chapel, she says the names of everyone under the House's roof, and notices which ones she has had to stop saying.",
+      "chapter": "02",
+      "scene": "between-2",
+      "evidence": "Everyone under this roof, every night"
+    },
+    {
+      "fact": "Asked to be angry that Darrow buried the House's story at the gate, she asked whose story it was: he gave it to the lay brothers, she only let them carry it, and a lie told for a man is his to bury.",
+      "chapter": "02",
+      "scene": "between-2",
+      "evidence": "A lie told for a man is his to bury"
+    },
+    {
+      "fact": "She told him the Menders' vow is four words, to mend what climbs, and nobody who wrote it thought to add 'and hand it down to whoever asks'; she has never once given a name to a writ.",
+      "chapter": "02",
+      "scene": "between-2",
+      "evidence": "To mend what climbs."
+    },
+    {
+      "fact": "She said she held the bell so that Darrow would have a choice too, and that he is in her count of names, and was before he gave his name to the Confessor.",
+      "chapter": "02",
+      "scene": "between-2",
+      "evidence": "I held the bell so that you would have one too."
     }
   ],
   "relationships": [
@@ -179,6 +203,10 @@
     {
       "chapter": "01",
       "scene": "choice"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-2"
     }
   ]
 }

@@ -191,6 +191,26 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.2",
+      "made": {
+        "chapter": 2,
+        "scene": "between-2",
+        "date": "2026-10-11"
+      },
+      "chose": "Went to the Prior in the chapel for the reproach she had not given him; she gave him questions instead, and told him she says the names of everyone under her roof every night, his among them",
+      "now": {},
+      "due": [
+        {
+          "id": "c02.2a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Mother Ione says the names of everyone under her roof every night in the chapel and notices which she has had to stop saying; the Captain is among them, and was before he gave his name at the gate. Fire it where a name has to come out of her count, or where he hears his in it",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

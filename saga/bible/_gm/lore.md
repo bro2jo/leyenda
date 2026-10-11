@@ -88,7 +88,7 @@ Three bells. **Old Mercy**, the sanctuary bell, oldest and heaviest, cracked onc
 By a right older than the Crown's chronicle, while the sanctuary bell is rung at dawn and dusk no blade may climb the Steps or pass the gate, and no name under the bell may be taken down against its will (the half the Confessors read twice), and the Crown has honoured it for three hundred years because bells are the Crown's own law, and it cannot unmake one without loosening the rest. The law covers the Steps and the gate. The lower terrace, where the springs steam outside the gate and inside the wall, is a grey, and everyone knows it. A dawn or a dusk unrung and sanctuary lapses until the next ringing; this has happened twice in the Bell-count, both times for snow. Beside it stands the older **law of guests**: whoever comes up unarmed is warmed and fed one night, whoever sent them.
 
 ## house.order — The Menders
-- **tier:** common · **spoken:** Prologue II–III · **names:** —
+- **tier:** common · **spoken:** Prologue II–III; ch02:between-2 (the vow, in the Prior's mouth) · **names:** —
 - **use:** who outranks whom in a corridor; a lay brother's grievance.
 
 A Prior, Mother or Father, over the House; the Mender, who is the senior surgeon and answers to the Prior in everything but the knife; the vowed Sisters and Brothers; the lay brothers, unvowed, who carry, cook, winch, dig and bury, and run the House in every way that matters; and the novices, who feed the far cots and learn by being shouted at. The vow is four words: *to mend what climbs*. There are Houses of the Menders down the Lowmarch and in the Marches, some fallen quiet, and Saint Ysolde's is the oldest and the highest and does not let the others forget it.

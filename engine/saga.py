@@ -2252,9 +2252,12 @@ def cmd_lore(args):
                 die(f"{arg} has no **spoken:** field")
             if "**spoken:**" in lines[i]:
                 old = re.search(r"\*\*spoken:\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lines[i]).group(1)
-                lines[i] = re.sub(r"(\*\*spoken:\*\*\s*)(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lambda m: m.group(1) + args.where, lines[i], count=1)
+                # where else it was spoken stays: an entry is spoken in more than one scene, and the field is its record
+                fresh = not old or old.strip() in ("—", "-", "unspoken") or old.strip().startswith("—")
+                joined = args.where if fresh else (old if args.where in old else f"{old}; {args.where}")
+                lines[i] = re.sub(r"(\*\*spoken:\*\*\s*)(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lambda m: m.group(1) + joined, lines[i], count=1)
                 P["lore"].write_text("\n".join(lines) + ("\n" if text.endswith("\n") else ""), encoding="utf-8")
-                print(f"{arg} spoken: {old or '—'} → {args.where}; give codex.md its reader-safe line")
+                print(f"{arg} spoken: {old or '—'} → {joined}; give codex.md its reader-safe line")
                 return
         die(f"{arg} has no **spoken:** field")
     e = entries.get(what)

@@ -92,6 +92,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
 | `01` | `climax` | The Law of Names | `chronicle/01-the-confessor-at-the-steps.html#climax` |
 | `01` | `choice` | Darrow of Edgemoor | `chronicle/01-the-confessor-at-the-steps.html#choice` |
 | `02` | `between-1` | The Count | `chronicle/02-the-grey-cot.html#between-1` |
+| `02` | `between-2` | The Kept | `chronicle/02-the-grey-cot.html#between-2` |
 
 New chapters: scenes are `### Scene N — Title` → anchor `chronicle/<file>.html#scene-N`; an interlude (`### Interlude — Title`, another POV) is `#interlude` (a second in the same chapter: `#interlude-2`), scene key `interlude`; a Between (`### Between — Title`, a role-play piece between scenes) is `#between-K` with scene key `between-K`, counting up within the chapter; the climax is `#climax`; a climax choice's consequence (`### Choice — Title`) is `#choice`. A small choice at the end of a scene has no anchor of its own. The build fails on an anchor it cannot find.
 
