@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "In the court, putting her shoulder in under the wicket's bar where Darrow's had been, as she would set it to a cart gone into a rut, until the leaf went home.",
-  "now": "In the House, with her cart and two oxen at the winch-house at the foot of the Steps, where a grey cloak sits on her cart with his boots on the board. When the Confessor read his list at the bars she stood at the end of the lay brothers' line as her oxen stand; when two grey cloaks came through the wicket and Darrow's shoulder gave, hers went in under the bar, and the leaf went home. Her oxen, she says, will stand all winter.",
-  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart. In the court at dusk she stood at the end of the lay brothers' line while the list was read, and when the wicket was forced her shoulder went in under the bar where Darrow's had given.",
+  "last_seen_doing": "At the end of the lay brothers' line in the court, rubbing the shoulder she had put to the wicket and watching Darrow after he gave his name at the bars.",
+  "now": "In the House, with her cart and two oxen at the winch-house at the foot of the Steps, where a grey cloak sits on her cart with his boots on the board. When a third grey cloak held the wicket open and Darrow's shoulder could not shut it, hers went in under the gate-ward's and it shut. She watched Darrow give his name at the bars. Her oxen, she says, will stand all winter.",
+  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart. In the court at dusk she stood at the end of the lay brothers' line while the list was read, and when Darrow's shoulder could not shut the wicket on a third grey cloak, hers went in where his had been and it shut.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
     "chapter": "01",
@@ -163,23 +163,29 @@
       "evidence": "The near one's the slow one"
     },
     {
-      "fact": "At the reading she stood at the end of the lay brothers' line in the court as her oxen stood below, as if she had been told to wait.",
+      "fact": "At the reading she stood at the end of the lay brothers' line in the court, as still as anything she had ever driven.",
       "chapter": "01",
       "scene": "climax",
-      "evidence": "as if she had been told to wait"
+      "evidence": "as still as anything she had ever driven"
     },
     {
-      "fact": "When two grey cloaks came through the wicket and Darrow's shoulder gave, hers went in under the bar where his had been, set as she would set it to a cart gone into a rut, and the leaf went home.",
+      "fact": "When a third grey cloak held the wicket open and it threw Darrow off, her shoulder went in under the gate-ward's, set as she would set it to a cart gone into a rut, and the wicket shut on the man's arm.",
       "chapter": "01",
       "scene": "climax",
       "evidence": "set as she would set it to a cart gone into a rut"
+    },
+    {
+      "fact": "When Darrow had given his name at the bars she was rubbing the shoulder she had put to the wicket and watching him the way she had watched the valley from the wall.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "rubbing the shoulder she had put to the wicket"
     }
   ],
   "relationships": [
     {
       "to": "darrow",
       "label": "the knight she drove to the foot of the Steps",
-      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks after the Binding he knew her cart from the infirmary window and had not forgotten it. When the grey cloaks came in, he told her from the gate wall to go while the road was open, and she let it shut. At the wicket her shoulder went in where his had given."
+      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks after the Binding he knew her cart from the infirmary window and had not forgotten it. When the grey cloaks came in, he told her from the gate wall to go while the road was open, and she let it shut. At the wicket her shoulder went in where his had given, and she watched him give his name at the bars."
     },
     {
       "to": "hollis-garrow",
@@ -248,6 +254,10 @@
     {
       "chapter": "01",
       "scene": "climax"
+    },
+    {
+      "chapter": "01",
+      "scene": "choice"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 5,
   "rank": "Kindled",
-  "xp": 1003,
+  "xp": 1008,
   "xp_this_level": 1000,
   "xp_next_level": 1500,
   "proficiency": 3,
@@ -44,7 +44,7 @@
       "raw": 9,
       "cap": null,
       "mod": -1,
-      "temper": 14,
+      "temper": 15,
       "next_at": 16,
       "fell": 12,
       "banked": false
@@ -136,7 +136,7 @@
       "tree": "Insight",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 10,
+      "practice": 11,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."

@@ -28,9 +28,9 @@
     "place": "lower-terrace",
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "On the lower terrace between the first fire and the makings of the second, turning at his name, calling the Captain by his rank and thanking him for his candour, then turning back to his fire.",
-  "now": "Camped on the lower terrace below the gate of Saint Ysolde's with four grey cloaks; a fifth keeps the winch-house. He read his list at the bars and was answered by Old Mercy and the law of names; then the Captain of the Ninth called his own name down from the bars, and Marrant called him Captain, thanked him for his candour, and went back to his fire. He has said he will wait.",
-  "story_so_far": "He led the grey cloaks up the Holloway and the Thousand Steps and came to the gate of Saint Ysolde's in the hour before dusk, with the censer in his hand. He had been told at the winch-house fire that the Faithless had gone down the far side a week since, and read his list to the House anyway: he has read to empty beds before, he said, and finds it steadies the hand. When the Prior had the wicket opened a hand's width for his paper, two of his men came through it and were put back out by the House's shoulders as Old Mercy rang, and Mother Ione gave him the law's other half: no name under the bell is taken down against its will. He thanked her for her candour, said bells grow tired, and made his camp on the lower terrace, calling up for the Captain of the Ninth to come down and kneel. Before his second fire was lit, the Captain of the Ninth called down from the bars and gave his name; Marrant thanked him for his candour and went back to his fire.",
+  "last_seen_doing": "Going down the first flight of the Steps into the dusk after the Captain of the Ninth gave his name at the bars; he had looked at Darrow's face, called him Captain, and thanked the Prior for her candour.",
+  "now": "Camped on the lower terrace below the gate of Saint Ysolde's with four grey cloaks; the sixth of them keeps the winch-house. He read his list at the bars and was answered by Old Mercy and the law of names. Then the Captain of the Ninth crossed the court and gave his name at the bars; Marrant looked at his face, called him Captain, and thanked the Prior for her candour. He has said he will wait.",
+  "story_so_far": "He led the grey cloaks up the Holloway and the Thousand Steps and came to the gate of Saint Ysolde's in the hour before dusk, five at the bars and the sixth at the winch-house, with the censer in his own hand. He had been told at the winch-house fire that the Faithless had gone down the far side a week since, and read his list anyway: he has read to empty beds before, he said, and finds it steadies the hand. He held his paper out for the wicket under the law of guests until the Prior could not refuse it without breaking that law; when the wicket opened a hand's width, two of his men came through, and Old Mercy rang late and stopped them a pace from the wounded. Mother Ione gave him the law's other half: no name under the bell is taken down against its will. He called her bell fine and a little slow on the rope, made his camp on the lower terrace, and called for the Captain of the Ninth to come down and kneel. The Captain came to the bars instead and gave his name; Marrant called him Captain and thanked the Prior for her candour.",
   "quote": {
     "text": "Bells grow tired.",
     "chapter": "01",
@@ -38,9 +38,10 @@
   },
   "known_facts": [
     {
-      "fact": "He came to the bars with four grey cloaks in the hour before dusk; the fifth had stayed at the winch-house with his boots on a cart.",
+      "fact": "He came to the bars with four grey cloaks in the hour before dusk; the sixth of them had stayed at the winch-house with his boots on Rae Thorne's cart.",
       "chapter": "01",
-      "scene": "climax"
+      "scene": "climax",
+      "evidence": "Five came to the bars."
     },
     {
       "fact": "He named himself to the Prior as Ivo Marrant, Confessor, under the Knight-Confessor's seal, as if they had corresponded.",
@@ -67,10 +68,10 @@
       "evidence": "The Crown has no quarrel with men who can't answer."
     },
     {
-      "fact": "He asked for the writ to be taken at the wicket under the law of guests, as a courier's paper; when the leaf opened a hand's width, two of his men put their shoulders into it and came through.",
+      "fact": "He held the writ out for the wicket under the law of guests, as a courier's paper, and when the Prior made him wait he said he would hate to tell the bell-houses her House broke one old law to keep a courier standing in the cold; when the wicket opened a hand's width, two of his men came through it and a third held it open.",
       "chapter": "01",
       "scene": "climax",
-      "evidence": "two grey cloaks put their shoulders into it"
+      "evidence": "I'd hate to tell the bell-houses"
     },
     {
       "fact": "What Darrow read in him at the bars: a fire, all of it poured, and under the pouring nothing of his own; no lie in him, and the wicket already open in his mind.",
@@ -85,34 +86,34 @@
       "evidence": "a beat longer than courtesy"
     },
     {
-      "fact": "He thanked the Prior for her candour, called his two men back through the wicket, and said the grey below the gate where the springs steam is the law's ground and nobody's: they would make their fire on the lower terrace, and bells grow tired.",
+      "fact": "He told the Prior she keeps a fine bell, a little slow on the rope, called his two men back out through the wicket, and said the grey below the gate where the springs steam is the law's ground and nobody's: they would make their fire on the lower terrace, and bells grow tired.",
       "chapter": "01",
       "scene": "climax",
-      "evidence": "Bells grow tired."
+      "evidence": "A little slow on the rope."
     },
     {
-      "fact": "He called up for Ser Darrow by name to the whole court, as a man says a name he is sure of: come down and kneel, and the rest of the paper goes back into his cloak and never comes out; he would wait, it is the thing he is best at.",
+      "fact": "He called for Ser Darrow by name to the whole court, as a man says a name he is sure of: come down and kneel, and the rest of the paper goes back into his cloak and never comes out; he would wait, it is the thing he is best at.",
       "chapter": "01",
       "scene": "climax",
       "evidence": "It's the thing I'm best at."
     },
     {
-      "fact": "Hailed from the bars by both his names, he turned; told that he had read to a full bed and that nobody was going down the far side or this one, he paused the length of a man deciding to be pleased, called the Captain by his rank, thanked him for his candour, and turned back to his fire.",
+      "fact": "Called back from the head of the Steps by both his names, he came to the bars and looked at the Captain's face, the first time anyone in grey had; told that he had read to a full bed, he paused the length of a man deciding to be pleased, called him Captain, and thanked the Prior for her candour.",
       "chapter": "01",
       "scene": "choice",
-      "evidence": "Thank you for your candour."
+      "evidence": "Mother Ione. Thank you for your candour."
     }
   ],
   "relationships": [
     {
       "to": "mother-ione",
       "label": "the Prior who answered his writ with the bell",
-      "note": "She let him read, had the wicket opened for his paper under the law of guests, and when his men came through it Old Mercy rang and she gave him the law of names; he thanked her for her candour."
+      "note": "She made him wait at the wicket for the bell, answered his men with the bell and the law of names, and was thanked for her candour when the Captain gave his name at her gate."
     },
     {
       "to": "darrow",
       "label": "the first name on his paper, who answered to it",
-      "note": "He read Darrow's name first at the bars without knowing his face; Darrow then called his own name and rank down from the gate, and Marrant called him Captain and thanked him for his candour."
+      "note": "He read Darrow's name first at the bars without knowing his face; then Darrow crossed the court and gave his name and rank through the bars, and Marrant looked at his face and called him Captain."
     },
     {
       "to": "maelis-vorne",

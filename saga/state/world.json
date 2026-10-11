@@ -8,32 +8,32 @@
   "scenes": [],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the court before the gate at dusk, his back to the gatehouse post and the knee talking after the wicket; the Confessors' first fire is lit on the lower terrace below the gate",
+    "detail": "crossing the court from the gate to the hall at dusk, slowly, because Maelis is watching the knee; below the gate the Confessors' first fire has caught on the lower terrace",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "on_the_page": "The Confessors' list of the Faithless at Saint Ysolde's was read aloud at the inn in Coldmere; Hollis's name is second on it, and asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade may climb the Steps or pass the gate; miss one ringing and the law lapses till the next. At Darrow's word the winch-brothers have carried a story down to the valley, that the Faithless went down the far side a week ago, and Mother Ione has held Old Mercy since the council, because a bell rung for nobody tells the valley there's somebody. When the grey cloaks are at the bars, Darrow is to tell Wren when. They came in three bells early: six grey cloaks, their cart and a censer are at the winch-house at the foot of the Steps, and one of them sits on Rae's cart with his boots on the board. Rae could have gone down past them while the road was open, and did not. In the hour before dusk four of them climbed to the gate. Confessor Ivo Marrant read the writ at the bars to the House standing in the court, Darrow first, Hollis second, the far cots not read, and asked for the wicket under the law of guests; two grey cloaks came through it before Old Mercy rang, late, and were put back out. Mother Ione spoke the law of names: while the bell rings, no name under it is taken down against its will. Marrant has camped on the lower terrace below the gate, where the springs steam, and called up for the Captain of the Ninth to come down and kneel. He says he will wait.",
+    "on_the_page": "The Confessors' list of the Faithless at Saint Ysolde's was read aloud at the inn in Coldmere; Hollis's name is second on it, and asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade may climb the Steps or pass the gate; miss one ringing and the law lapses till the next. At Darrow's word the winch-brothers have carried a story down to the valley, that the Faithless went down the far side a week ago, and Mother Ione has held Old Mercy since the council, because a bell rung for nobody tells the valley there's somebody. When the grey cloaks are at the bars, Darrow is to tell Wren when. They came in three bells early: six grey cloaks, their cart and a censer are at the winch-house at the foot of the Steps, and one of them sits on Rae's cart with his boots on the board. Rae could have gone down past them while the road was open, and did not. In the hour before dusk five of them climbed to the gate. Confessor Ivo Marrant read the writ at the bars to the House standing in the court, Darrow first, Hollis second, the far cots not read, and held his paper out for the wicket under the law of guests until the Prior could not refuse it; two grey cloaks came through before Old Mercy rang, late, and stopped a pace from the wounded. Mother Ione spoke the law of names: while the bell rings, no name under it is taken down against its will. Marrant made his camp on the lower terrace below the gate, where the springs steam, and called for the Captain of the Ninth to come down and kneel. Darrow went to the bars and gave him his name instead. Marrant says he will wait.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
-  "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council. At the wicket his shoulder gave and the knee said one thing, quite clearly; Maelis looked at it afterwards and said nothing, which was worse.",
-  "last_beat": "Confessor Ivo Marrant read the list at the bars, Darrow first and Hollis second, and asked for the wicket under the law of guests. Darrow read him and said \"Wren. Now.\"; two grey cloaks came through before Old Mercy rang, late, and the House's shoulders put them back out, his own giving. The Prior spoke the law of names. Marrant thanked her for her candour, made his camp on the lower terrace, and called up for the Captain of the Ninth to come down and kneel: he would wait.",
+  "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council. At the wicket his shoulder could not shut it and the knee said one thing, quite clearly; Maelis looked at it before she looked at his face, and will read it tonight.",
+  "last_beat": "Darrow crossed the court to the bars and gave Confessor Ivo Marrant his name and rank: nobody went down the far side, and nobody is going down this one. Marrant looked at his face, called him Captain, and thanked the Prior for her candour. The Prior asked only whether his shoulder was hurt; Hollis told him he had seen him move at his name and called him Captain; Maelis: \"That knee lies to me every morning. You didn't, just now. Keep it that way.\" She will read the knee tonight.",
   "companions": {
     "maelis": {
       "approval": 23,
       "present": true,
-      "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate"
+      "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
       "approval": 38,
       "present": true,
-      "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name"
+      "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
       "approval": 3,
       "present": true,
-      "note": "afraid; hides it with numbers; ran for the bell on his word"
+      "note": "afraid; hides it with numbers; ran for the bell on his word, and counted the Confessors rather than look at him when he gave his name"
     }
   },
   "choices": [

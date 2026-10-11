@@ -25,9 +25,9 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "Turned back to the gate and looking at Darrow after he answered to his name, asking him mildly whether he would like to sit down.",
-  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, had the wicket opened a hand's width for his paper under the law of guests, and when two grey cloaks came through it Old Mercy rang, late, and she spoke the law of names. He thanked her for her candour and went down to make his fire. When Darrow then went to the bars and answered to his name in front of the court, she said nothing of the winch-brothers, the lie she had let go down the Steps for him, or the bell she had held silent since dawn; she asked him whether he would like to sit down.",
-  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate alone and let the Confessor read; when his men came through the wicket she waited for the bell, and then gave him the law's other half, that no name under it is taken down against its will, and asked whether his men would like to go back out the way they came.",
+  "last_seen_doing": "In the court after Darrow gave his name at the bars and the Confessor thanked her for her candour, asking Darrow only whether the shoulder was hurt.",
+  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, and when he held his paper out under the law of guests she kept him waiting for the bell as long as she could, then had the wicket opened; two grey cloaks came through it before Old Mercy rang, late, and she spoke the law of names. When Darrow gave his name at the bars and the House's story died at her gate, the Confessor thanked her for her candour. She did not reproach Darrow; she asked whether his shoulder was hurt.",
+  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate and let the Confessor read; she kept him waiting at the wicket for the bell as long as the law of guests allowed, and when his men came through and the bell rang late, she gave him the law's other half, that no name under it is taken down against its will. When Darrow gave his name at the bars, the Confessor thanked her for her candour, and she asked Darrow only whether the shoulder was hurt.",
   "quote": {
     "text": "While it rings, no name under it is taken down against its will. Would your men like to go back out the way they came?",
     "chapter": "01",
@@ -105,13 +105,13 @@
       "evidence": "the House had come"
     },
     {
-      "fact": "She stood before the gate alone with Maelis a pace behind her shoulder; when the Confessor said she would forgive him if he read anyway, she asked, 'Would I stop you?'",
+      "fact": "She stood before the gate with Maelis a pace behind her shoulder; when the Confessor said she would forgive him if he read anyway, she asked, 'Would I stop you?'",
       "chapter": "01",
       "scene": "climax",
       "evidence": "Would I stop you?"
     },
     {
-      "fact": "She had the gate-ward open the wicket a hand's width to take the Confessor's paper under the law of guests, by asking him whether they should.",
+      "fact": "She let the Confessor hold his paper out through the bars while the bell did not come; when he said he would hate to tell the bell-houses her House broke the law of guests to keep a courier standing in the cold, she asked the gate-ward whether they should take the Confessor's paper.",
       "chapter": "01",
       "scene": "climax",
       "evidence": "shall we take the Confessor's paper?"
@@ -123,17 +123,17 @@
       "evidence": "no name under it is taken down against its will"
     },
     {
-      "fact": "After Darrow answered to his name at the bars she said nothing of the winch-brothers, of the lie she had let go down the Steps for him that morning, or of the bell she had held silent since dawn so the gate would look as if it kept nobody; she asked him, mildly, whether he would like to sit down.",
+      "fact": "When Darrow gave his name at the bars and the Confessor thanked her for her candour, she did not look at the gate; she looked at Darrow and asked him whether the shoulder was hurt.",
       "chapter": "01",
       "scene": "choice",
-      "evidence": "whether he would like to sit down"
+      "evidence": "She asked him whether the shoulder was hurt."
     }
   ],
   "relationships": [
     {
       "to": "ivo-marrant",
       "label": "the Confessor who read his list at her gate",
-      "note": "She let him read, took his paper under the law of guests, and answered his men at the wicket with the bell and the law of names."
+      "note": "She let him read, made him wait at the wicket for the bell, and answered his men with the bell and the law of names; when the Captain gave his name, Marrant thanked her for her candour."
     }
   ],
   "reckoning": {

@@ -29,9 +29,9 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
-  "last_seen_doing": "At the bars at dusk, having called both of the Confessor's names down to the terrace and then his own and his rank, and been thanked for his candour; the Prior asked him whether he would like to sit down.",
-  "now": "He has answered to his name. At the bars, in front of the whole court, he called down to the Confessor on the terrace: Darrow of Edgemoor, Captain of the Ninth; nobody went down the far side, and nobody is going down this one. Marrant called him Captain and thanked him for his candour. The valley's story is dead at the gate, and Mother Ione said nothing of it, which was worse. Confessor Ivo Marrant and four grey cloaks are camped on the lower terrace below the gate, and now they know what they are waiting for.",
-  "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He timed the bell for the Prior; it rang late, after two grey cloaks had come through the wicket and been put back out by shoulders that were not his; and the Confessor camped on the lower terrace and called up for the Captain of the Ninth to come down and kneel. Then he went to the bars and answered to his name in front of the whole court, and the Confessor on the terrace below called him Captain.",
+  "last_seen_doing": "Walking back from the gate to the hall at dusk, slowly because Maelis was watching the knee, after giving his name at the bars; below the gate the Confessors' first fire caught.",
+  "now": "He has answered to his name. He crossed the court to the bars in front of the whole House, called the Confessor back by both his names, and gave his own and his rank: nobody went down the far side, and nobody is going down this one. Marrant looked at his face through the bars, called him Captain, and thanked the Prior for her candour. The valley's story is dead at the gate; the Prior asked him only whether his shoulder was hurt. At the wicket his shoulder could not shut it and the knee said one thing, quite clearly; Maelis means to read it tonight. Confessor Ivo Marrant and four grey cloaks are camped on the lower terrace below the gate, and the sixth of them keeps the winch-house.",
+  "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -269,46 +269,70 @@
       "evidence": "His weight came off the post."
     },
     {
-      "fact": "He watched the Confessor's hands and the two men behind him, and the script came up over his palms unasked and showed him the man at the bars: a fire all of it poured, and under the pouring nothing of his own; there was no lie in the man, and the wicket was already open in his mind. He said, 'Wren. Now.'",
+      "fact": "The Prior had asked him at the dawn bell to tell Wren when to have Old Mercy rung, once the grey cloaks were at the bars: a bell rung for nobody tells the valley there's somebody, and a bell rung too late tells the Confessors the gate is theirs.",
       "chapter": "01",
       "scene": "climax",
-      "evidence": "nothing of his own at all"
+      "evidence": "A bell rung too late tells the Confessors the gate is theirs."
     },
     {
-      "fact": "He took three strides to the wicket without deciding to, good leg, bad leg, no transfer, and put his shoulder to the leaf beside the gate-ward's; the grey cloak's weight came through the oak and through him, his shoulder went back into the post, and the knee, deep in where the thread was, said one thing, quite clearly.",
+      "fact": "He watched the Confessor's hands and the four men behind him, and the script, which until then had only ever read him, came up over his palms unasked and read the man at the bars: a fire all of it poured, and under the pouring nothing of his own; there was no lie in him, and the wicket was already open in his mind. Darrow said, 'Wren. Now.'",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "Until that moment it had only ever read him."
+    },
+    {
+      "fact": "He took the three strides to the wicket and put his shoulder to it beside the gate-ward's to shut it on a third grey cloak; the man leaned, the wicket threw Darrow off it against the gate, and the knee, deep in where the thread was, said one thing, quite clearly. Lay brothers and Rae Thorne shut it.",
       "chapter": "01",
       "scene": "climax",
       "evidence": "said one thing, quite clearly"
     },
     {
-      "fact": "Marrant called up for him by name and rank to the whole court, as a man says a name he is sure of: come down and kneel, and the rest of the paper goes back into his cloak; he would wait.",
+      "fact": "Going back to his post among the wounded, he passed the two grey cloaks who had come through the wicket close enough to touch, and neither of them looked at him twice.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "Neither of them looked at him twice."
+    },
+    {
+      "fact": "Marrant called for him by name and rank to the whole court, as a man says a name he is sure of: come down and kneel, and the rest of the paper goes back into his cloak; he would wait.",
       "chapter": "01",
       "scene": "climax",
       "evidence": "as a man says a name he is sure of"
     },
     {
-      "fact": "From the window Hollis told him he had moved, and that nobody else knew; Darrow did not ask him how he was, with the whole court there and the hall door open on it.",
-      "chapter": "01",
-      "scene": "climax",
-      "evidence": "Nobody else knows."
-    },
-    {
-      "fact": "He went to the bars before the Prior had finished turning from them, good leg, bad leg, no transfer, with the whole court watching, and called the Confessor by both his names, as he gave a trooper his.",
+      "fact": "He crossed the court to the gate with the whole House watching and nobody stopping him, put his hand on the bars, and called the Confessor back from the head of the Steps by both his names.",
       "chapter": "01",
       "scene": "choice",
-      "evidence": "as he gave a trooper his"
+      "evidence": "Darrow put his hand on the bars."
     },
     {
-      "fact": "He called his own name and rank down to the terrace, Darrow of Edgemoor, Captain of the Ninth, and said the Confessor had read to a full bed: nobody went down the far side, and nobody is going down this one.",
+      "fact": "He gave his own name and rank through the bars, Darrow of Edgemoor, Captain of the Ninth, and told the Confessor he had read to a full bed: nobody went down the far side, and nobody is going down this one.",
       "chapter": "01",
       "scene": "choice",
       "evidence": "You've read to a full bed."
     },
     {
-      "fact": "Marrant called him Captain and thanked him for his candour; Mother Ione said nothing of the winch-brothers, the lie or the silent bell, and asked him mildly whether he would like to sit down, which was worse than anything she might have said.",
+      "fact": "Marrant came back to the bars and looked at his face, the first time anyone in grey had, called him Captain, and thanked the Prior for her candour.",
       "chapter": "01",
       "scene": "choice",
-      "evidence": "whether he would like to sit down"
+      "evidence": "the first time anyone in grey had"
+    },
+    {
+      "fact": "The Prior, who had heard her House's story die at her own gate, did not reproach him; she asked whether the shoulder was hurt.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "She asked him whether the shoulder was hurt."
+    },
+    {
+      "fact": "From the window Hollis told him he had moved when his name was read, that he had seen it and nobody else had, and that he had walked up and given it anyway; Darrow did not ask him how he was.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "I saw it. Nobody else did."
+    },
+    {
+      "fact": "Maelis looked at the knee first and then at his face, and told him the knee lies to her every morning and he hadn't, just now, and to keep it that way; she sent him to the hall slowly and said she would read the knee tonight.",
+      "chapter": "01",
+      "scene": "choice",
+      "evidence": "You didn't, just now."
     }
   ],
   "relationships": [
@@ -320,7 +344,7 @@
     {
       "to": "hollis-garrow",
       "label": "of the Sixth Lance, on the next cot",
-      "note": "He waved the writ at Darrow on the west bank and told him his head was not as fast as his feet; lost his right leg above the knee at the ford, cursed Darrow among many others on the carts north, and snores on his right at Saint Ysolde's, second on the list where Wren, asked who was first, only looked at Darrow. At the gate Hollis saw him move at his name from the window, and told him nobody else knew."
+      "note": "He waved the writ at Darrow on the west bank and told him his head was not as fast as his feet; lost his right leg above the knee at the ford, cursed Darrow among many others on the carts north, and snores on his right at Saint Ysolde's, second on the list where Wren, asked who was first, only looked at Darrow. At the gate Hollis saw him move at his name, told him nobody else had, and called him Captain when he gave his name at the bars."
     },
     {
       "to": "wren-ashdown",
