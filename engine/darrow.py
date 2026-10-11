@@ -285,7 +285,7 @@ def gather(cfg, rules, nutrition=None):
         f = facts[r["date"]]
         if any(str(v or "").strip() for k, v in r.items() if k not in quiet_cols):
             f["logged"] = True
-        rounds =int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
+        rounds = int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
         f["floor"] = "full" if rounds >= floor_rounds(cfg, r["date"]) else ("half" if rounds else f["floor"])
         if VALID_SWELLING.match(str(r.get("am_swelling", "")).strip()):
             f["check"] = True
