@@ -37,7 +37,7 @@
           "at": "ch01:climax",
           "weight": "color",
           "what": "Marrant has heard the valley story and climbs anyway; one line of his about reading to empty beds",
-          "status": "pending"
+          "status": "fired@ch01:climax"
         }
       ]
     },
@@ -61,7 +61,7 @@
           "at": "ch01:s4",
           "weight": "color",
           "what": "Hollis is dry and Darrow knows it; neither says so in front of Benedek, and Darrow does not ask Hollis how he is",
-          "status": "pending"
+          "status": "fired@ch01:climax"
         }
       ]
     },

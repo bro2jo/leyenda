@@ -2,17 +2,18 @@
 
 *Narrative only. Nothing from the real logs appears on this page except through the Reckoning.*
 
-**BOOK I — THE HOUSE OF MENDERS · Chapter 1 — The Confessor at the Steps**
+**BOOK I — THE HOUSE OF MENDERS · Chapter 1 closed on *The Law of Names*; Chapter 2 — The Grey Cot opens on the night of the gate**
 
-- **Where:** Saint Ysolde's, the House of Menders, high in the Greywater; right now on the gate-ward's bench on the low wall-walk beside the gate, at the hour bell after noon; Rae has gone along the wall toward the court. The snow held off.
-- **The quest:** *The List.* The Confessors came in three bells early: six grey cloaks, their cart and a censer are at the winch-house at the foot of the Steps, and one of them sits on Rae's cart with his boots up on the board. Their list of the Faithless at Saint Ysolde's has Hollis second; asked who was first, Wren only looked at Darrow. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade climbs the Steps or passes the gate, and a missed ringing lapses the law till the next. The Prior has held it since the council: the winch-brothers carried Darrow's story to the valley at first light, and a bell rung for nobody tells the valley there's somebody. When the grey cloaks are at the bars, Darrow is to tell Wren when.
-- **What Darrow is fighting right now:** the soft season. The knee feels well, and Maelis says that's exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick, and to the gate wall, which needs no stair; he can't kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times.
-- **Just happened (Between):** *The Grey.* He asked Rae why she had asked whether he rode a grey. *"Carters look at horses,"* she said, to the valley, and her hands closed on each other. The mare's name came as far as his teeth and stopped; he has not said it since the river. At the hour bell she went off along the wall, and at the turn: *"The near one's the slow one."*
-- **Earlier today, in order:** Scene 4, *Boots on the Board*: at the dawn bell the Prior told him the law has been down since dusk and asked him to tell Wren when, once they're at the bars; at noon on the gate wall the grey cloaks came in at the winch-house three bells early, one put his boots up on Rae's cart, and she let the road shut (*"The first two names on that list rode up in my cart."*). Then *What an Ox Will Stand* (a Between): her oxen's names withheld (*"They know them."*); she sat on the gate-ward's bench so he would, and *"Leg was shaking."*
-- **With him:** Mother Ione (has handed him the bell's timing by a question) · Maelis Vorne (has told him what she dared, not where she learned it) · Hollis Garrow (second on the list; dry, and has told Darrow so, nobody else) · Wren Ashdown (frightened, hiding it in numbers; at the glass she had no number for the cart) · Rae Thorne (stayed; her cart is under a grey cloak's boots).
-- **Also in the House:** Sister Pell, keeper of the bells, old; her glass is lent to Wren, counted out.
-- **Next:** the grey cloaks are at the foot of the Steps.
-- **Open choice:** none. The next comes at the chapter's climax.
+- **Where:** Saint Ysolde's, the House of Menders, high in the Greywater; right now in the court before the gate at dusk, with his back to the gatehouse post and the knee talking after the wicket. Below the gate, where the springs steam on the lower terrace, the Confessors' first fire is lit.
+- **The quest:** *The List.* In the hour before dusk four grey cloaks climbed to the gate (the fifth keeps the winch-house and Rae's cart). Confessor Ivo Marrant read the writ at the bars to the House standing in the court: Darrow first, Hollis second, the far cots not read ("The Crown has no quarrel with men who can't answer"). He asked for the wicket under the law of guests; two grey cloaks came through it before Old Mercy rang, late, and were put back out by the House's shoulders. Mother Ione spoke the law of names: while the bell rings, no name under it is taken down against its will. Marrant thanked her for her candour, made his camp on the lower terrace ("Bells grow tired"), and called up for the Captain of the Ninth to come down and kneel. He says he will wait.
+- **What Darrow is fighting right now:** the soft season, and now the waiting. He timed the bell for the Prior with one word to Wren and the timing was right; he flinched at his own name where only Wren and Hollis saw; his shoulder at the wicket gave, and the knee said one thing, quite clearly. Maelis looked at it afterwards and said nothing, which was worse than fifteen.
+- **Just happened (Climax):** *The Law of Names.* The reading at the bars, the wicket, the late bell, the law's other half from the Prior's mouth; Marrant's eyes on Maelis a beat too long; "You moved." "I know." "Nobody else knows."
+- **Earlier today, in order:** Scene 4, *Boots on the Board* (the Prior hands him the bell's timing; the grey cloaks in at the winch-house three bells early; Rae lets the road shut) · *What an Ox Will Stand* (Between: the oxen's names withheld; the bench; "Leg was shaking") · *The Grey* (Between: "Carters look at horses"; "The near one's the slow one").
+- **With him:** Mother Ione (held the gate alone and spoke the law of names) · Maelis Vorne (looked at the knee and said nothing; the Confessor's eyes found her) · Hollis Garrow (second on the list, read at the bars; saw the Captain move and told him nobody else knew; dry, and has told Darrow so, nobody else) · Wren Ashdown (ran for the bell on his word; came back with no number for it) · Rae Thorne (her shoulder under the wicket's bar where his gave; her cart still under a grey cloak's boots).
+- **Also in the House:** Sister Pell, keeper of the bells, whose hands were slow on the rope · Ser Benedek Orrin, in his cot in the hall; the far cots were not read.
+- **Against him:** Confessor Ivo Marrant and four grey cloaks on the lower terrace below the gate; a fifth at the winch-house.
+- **Next:** the night of the gate: the names come back to the cots, and the camp's fires burn on the terrace below the hall window.
+- **Open choice (the climax's):** What does Darrow do? **1.** Step forward and answer to his name *(Maelis approves; Wren does not)* · **2.** Stay hidden among the wounded and let the Prior answer for the House *(Wren approves)* · **3.** Send Wren down to spy on the camp *[Guile 1]* *(Wren approves; risky)*. It carries across the first two scenes of Chapter 2; unanswered at the second close, it resolves to 1.
 
 *Open threads and the GM's plan live under `saga/state/_gm/` and never appear on this page.*
 
@@ -21,9 +22,9 @@ _Engine block, regenerated by `sync`._
 
 ```
 ⟦ THE RECKONING ⟧
-Ser Darrow of Edgemoor · Level 4 · Bound
-XP 978 ▰▰▰▰▰▰▰▰▰▱ 1,000
-HP 34 · Ember 75 (Steady) · Inspiration 0/4 · Proficiency +2
+Ser Darrow of Edgemoor · Level 5 · Kindled
+XP 1,003 ▱▱▱▱▱▱▱▱▱▱ 1,500
+HP 38 · Ember 75 (Steady) · Inspiration 0/4 · Proficiency +3
 
 MIGHT    11 (+0)   the Knight Who Fell: 15
 VIGOR     9 (-1)   the Knight Who Fell: 15
@@ -35,5 +36,5 @@ ARTS · The Seated Blade I · Stillwater Stance II · The Long Breath I · The M
 SEALED (practice banked) · Groundbreaker (Knot III)
 ```
 
-**Chapter 1, so far (on what's logged):** Costly
+**Chapter 2, so far (on what's logged):** Setback
 <!-- engine:end -->

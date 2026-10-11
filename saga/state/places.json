@@ -15,7 +15,7 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The House of Menders at the top of the Thousand Steps, which takes the ones the lowland surgeons cannot fix and do not want to watch. Bells ring the hours; the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots, and the far ones hold the ones who no longer speak.",
+      "description": "The House of Menders at the top of the Thousand Steps, which takes the ones the lowland surgeons cannot fix and do not want to watch. Bells ring the hours; the air smells of snow and sulphur and boiled linen. Its infirmary hall is a long double row of cots, and the far ones hold the ones who no longer speak. Its gate opens on a court, with a wicket in the leaf for a courier's paper and a gatehouse whose window looks down on the Steps. Below the gate, where the springs steam on the lower terrace, the Confessors have made their fire.",
       "image": "places/saint-ysoldes.webp",
       "image_alt": "Saint Ysolde's: a grey stone house with a bell tower and lit windows on a snowy cliff above a sea of cloud, the Thousand Steps switchbacking down the cliff face, jagged snow peaks behind, and a thin road crossing a white valley far below.",
       "image_caption": "Saint Ysolde's above the cloud, and the Thousand Steps below it."
@@ -40,6 +40,26 @@
       "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind that comes round the shoulder of the mountain with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
     },
     {
+      "id": "lower-terrace",
+      "name": "The lower terrace",
+      "aliases": [
+        "the terrace"
+      ],
+      "subtitle": "below the gate of Saint Ysolde's",
+      "region": "greywater-peaks",
+      "kind": "terrace",
+      "x": 196,
+      "y": 74,
+      "on_page": true,
+      "visited": false,
+      "draw": false,
+      "first_seen": {
+        "chapter": "01",
+        "scene": "climax"
+      },
+      "description": "The grey below the House's gate where the springs steam: the law's ground and nobody's, Confessor Ivo Marrant said, and made his camp there in the snow with four grey cloaks, in sight of the gatehouse window. The first of their fires was built while the court was still standing in the snow."
+    },
+    {
       "id": "winch-house",
       "name": "The winch-house",
       "subtitle": "at the foot of the Steps",
@@ -54,7 +74,7 @@
         "chapter": "00",
         "scene": "II"
       },
-      "description": "At the foot of the Thousand Steps, where the stair comes out of the cloud at the valley floor: a grey block with a thread of smoke of its own, and the cage the House's loads come up by. Rae Thorne's cart stands beside it with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. The grey cloaks came in at it three bells early, six riders, their cart and a censer, and one of them sat down on Rae's cart and put his boots up on the board.",
+      "description": "At the foot of the Thousand Steps, where the stair comes out of the cloud at the valley floor: a grey block with a thread of smoke of its own, and the cage the House's loads come up by. Rae Thorne's cart stands beside it with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. The grey cloaks came in at it three bells early, six riders, their cart and a censer, and one of them sat down on Rae's cart and put his boots up on the board. One grey cloak keeps it while the rest camp on the lower terrace.",
       "image": "places/winch-house.jpg",
       "image_alt": "The winch-house: a low grey stone house with an icicled, snow-heavy slate roof and a thin thread of chimney smoke, built against the foot of a sheer cliff; a fire glows in its open door, a rope runs from a drum on its wall up into the cloud, an iron cage loaded with sacks waits beside it, a stair climbs the cliff in switchbacks, and two shaggy oxen stand in the snow by an empty wooden cart.",
       "image_caption": "The winch-house where the stair comes out of the cloud, and Thorne's cart and two oxen in the snow."

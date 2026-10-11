@@ -1,13 +1,13 @@
 {
-  "asof": "2026-10-10",
+  "asof": "2026-10-11",
   "name": "Ser Darrow of Edgemoor",
-  "level": 4,
-  "rank": "Bound",
-  "xp": 978,
-  "xp_this_level": 600,
-  "xp_next_level": 1000,
-  "proficiency": 2,
-  "hp_max": 34,
+  "level": 5,
+  "rank": "Kindled",
+  "xp": 1003,
+  "xp_this_level": 1000,
+  "xp_next_level": 1500,
+  "proficiency": 3,
+  "hp_max": 38,
   "attributes": {
     "might": {
       "score": 11,
@@ -318,10 +318,10 @@
     "with": "rae-thorne"
   },
   "chapter_now": {
-    "week_start": "2026-10-04",
-    "through": "2026-10-10",
-    "tier_so_far": "Costly",
-    "chapter": 1
+    "week_start": "2026-10-11",
+    "through": "2026-10-11",
+    "tier_so_far": "Setback",
+    "chapter": 2
   },
   "fell": {
     "might": 15,

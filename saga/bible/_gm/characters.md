@@ -96,16 +96,17 @@ Appearance and voice: `cast.md`.
 - **Standing:** he knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up (the heralds' mercy, taken early), so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
 - **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. Nothing of this reaches the page before then. The Chapter 1 interlude puts him on the page; his `cast.md` entry and `saga/characters/benedek-orrin.json` are written from that prose, and from nothing here.
 
----
-
-## Not yet on the page (full entries)
-
 ### Confessor Ivo Marrant — the Hound of the Oath (Book I antagonist)
-- Vane's lieutenant; the man leading the six grey cloaks and the censer on the Holloway. 40s, bald, smiling, smells of the iron censer he carries. A zealot who enjoys his work, polite to the point of menace. Never touches a weapon in front of witnesses.
+Appearance and voice: `cast.md` (moved there at the Ch 1 climax, 10/11, where he named himself at the bars).
+- Vane's lieutenant; led the grey cloaks up the Holloway and the Steps. 40s, bald, smiling, smells of the iron censer he carries. A zealot who enjoys his work, polite to the point of menace. Never touches a weapon in front of witnesses (the page has one gate's worth of this so far).
 - **Voice:** soft, courteous, every sentence a door he is holding open for you; uses first names uninvited; thanks people for their candour. *"Bells grow tired."* *"The Crown counts what it is owed."*
 - **Wants:** Maelis (he suspects Ember work in the House and is fishing for her); Darrow as the prize that makes his name with Vane. **Plan:** read the writ at the gate, be refused by Old Mercy, camp on the lower terrace (the springs' legal grey, outside the gate) until the bell lapses (Ch 1 climax); Hollow Benedek to frighten the House (b1.2); work Anselm through his sister (b1.4); move before Vane arrives (b1.5).
 - **Under pressure:** he notices what a person is proud of, and thanks them for it. He pursues by courtesy, holding every door open until you walk through one; when that fails he waits, smiling, and lets the bell do his work. He never raises his voice, and never touches a weapon where anyone can see.
-- Gets a `saga/characters/` file when he is named or steps on the page (planned: Chapter 1 climax). Until then reader-safe files say "the Confessor who leads them".
+- **On the page from the Ch 1 climax** (`saga/characters/ivo-marrant.json`): read the list at the bars (Darrow first, Hollis second, the far cots not read: "The Crown has no quarrel with men who can't answer"), the c01.1b line about empty beds, the wicket opened for his paper under the law of guests and two of his men through it before Old Mercy (Costly), the law of names from the Prior, "thank you for your candour", the camp on the lower terrace, "Bells grow tired", and the call for the Captain of the Ninth to come down and kneel. His eyes stayed on Maelis a beat too long (T8 planted, 01:climax). Darrow read him with the Warden's Eye (Insight success): borrowed fire, nothing of his own, no lie in him; his public sheet is the Oathsworn line (12 · 12 · 11 · 15 borrowed) and is not sealed.
+
+---
+
+## Not yet on the page (full entries)
 
 ### Brother Anselm — the almoner
 - 40s, soft-spoken, beloved, keeps the stores and the letters, and the stores key, which also opens the undercroft's old stair door where the wine is laid down. Always tired. Has a sister in Calden he mentions too often.
@@ -144,7 +145,7 @@ Appearance and voice: `cast.md`.
 
 ## Identities the reader does not have yet
 - **The red-handed woman** is **Ilse of Corrach**. Her `saga/characters/` file and her `cast.md` entry carry no name until Darrow learns it on the page (Book III).
-- **The man leading the grey cloaks**, the one with the censer, is **Confessor Ivo Marrant**. Reader-safe files call him "the Confessor who leads them" until the page names him (planned: Chapter 1 climax).
+- **The man leading the grey cloaks**, the one with the censer, is **Confessor Ivo Marrant**: named on the page at the Chapter 1 climax (10/11); reader-safe files use the name from there on. What stays hidden is what he wants (Maelis) and his plan (b1.2, b1.4, b1.5).
 - **The hand that wrote the list** is Aldric Vane's. Darrow believes it (Ch 1); the page has not confirmed it. Aldric's file states it as Darrow's belief, attributed as belief.
 - **Ash** the hound has not appeared in the prose: no file and no mention in `saga/NOW.md` until she does.
 - **Wren's mother** is Dame Elspeth Ashdown, one of the far cots. The page has the far cots and nothing about whose mother lay there.

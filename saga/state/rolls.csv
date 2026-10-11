@@ -1,2 +1,5 @@
 when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-10T02:50:12,ch01-between-3-knucklebones,finesse,11,19,,,-1 finesse,18,SUCCESS,
+2026-10-11T10:35:25,ch01-gate-insight,resolve,13,13,,,-1 resolve +3 proficiency +2 Warden's Eye II +0 chapter 1 Costly,17,SUCCESS,
+2026-10-11T10:35:25,ch01-gate-name,resolve,13,5,,,-1 resolve +3 proficiency +1 The Mender's Patience I +0 chapter 1 Costly,8,FAILURE,
+2026-10-11T10:35:25,ch01-gate-wicket,might,11,4,,,+0 might +0 chapter 1 Costly,4,FAILURE,

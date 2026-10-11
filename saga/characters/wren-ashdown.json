@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "between-5",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-5"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
   },
-  "last_seen_doing": "Going off along the gate wall to give Sister Pell back her glass, counting the caps under her breath.",
-  "now": "At Saint Ysolde's with Sister Pell's glass, lent and counted out to her. She counted the grey cloaks in at the winch-house at the foot of the Steps, three bells early: six riders, one cart, one censer. The Prior has asked Darrow to tell Wren when, once they are at the bars.",
-  "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it.",
+  "last_seen_doing": "Coming back along the wall from the bell tower with her scarf over her mouth and Pell's slowness in her face, with no number for the bell.",
+  "now": "At Saint Ysolde's. At the gate she stood at Darrow's side at the gatehouse stair with her ledger and no pencil; when he said 'Wren. Now.' she ran for the tower, and Old Mercy rang late. The Confessors are camped on the lower terrace below the gate, and the Captain's name has been called up for.",
+  "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word.",
   "quote": {
     "text": "There's eleven hundred and seventeen. Everyone says a thousand. Everyone's wrong.",
     "chapter": "00",
@@ -111,6 +111,24 @@
       "chapter": "01",
       "scene": "4",
       "evidence": "for once, had no number for it"
+    },
+    {
+      "fact": "In the court she stood at Darrow's left with her ledger against her chest and no pencil behind her ear; when his name was read her hand closed on his sleeve and stayed there.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "closed on his sleeve and stayed there"
+    },
+    {
+      "fact": "At 'Wren. Now.' she was gone along the inner wall toward the tower before the word was finished, and the ledger went with her.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "before the word was finished"
+    },
+    {
+      "fact": "She came back from the tower with her scarf over her mouth and Pell's slowness in her face, and for the second time that day had no number for a thing.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "had no number for a thing"
     }
   ],
   "relationships": [
@@ -184,6 +202,10 @@
       "chapter": "01",
       "scene": "between-6",
       "mention": true
+    },
+    {
+      "chapter": "01",
+      "scene": "climax"
     }
   ]
 }

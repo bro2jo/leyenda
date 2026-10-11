@@ -84,6 +84,12 @@ One JSON file per character who has **appeared or been named on the page** in `s
 | `01` | `between-1` | The Paper's the Point | `chronicle/01-the-confessor-at-the-steps.html#between-1` |
 | `01` | `between-2` | What It Holds Up | `chronicle/01-the-confessor-at-the-steps.html#between-2` |
 | `01` | `3` | The Law of Bells | `chronicle/01-the-confessor-at-the-steps.html#scene-3` |
+| `01` | `between-3` | The Stone | `chronicle/01-the-confessor-at-the-steps.html#between-3` |
+| `01` | `between-4` | The Words | `chronicle/01-the-confessor-at-the-steps.html#between-4` |
+| `01` | `4` | Boots on the Board | `chronicle/01-the-confessor-at-the-steps.html#scene-4` |
+| `01` | `between-5` | What an Ox Will Stand | `chronicle/01-the-confessor-at-the-steps.html#between-5` |
+| `01` | `between-6` | The Grey | `chronicle/01-the-confessor-at-the-steps.html#between-6` |
+| `01` | `climax` | The Law of Names | `chronicle/01-the-confessor-at-the-steps.html#climax` |
 
 New chapters: scenes are `### Scene N — Title` → anchor `chronicle/<file>.html#scene-N`; an interlude (`### Interlude — Title`, another POV) is `#interlude` (a second in the same chapter: `#interlude-2`), scene key `interlude`; a Between (`### Between — Title`, a role-play piece between scenes) is `#between-K` with scene key `between-K`, counting up within the chapter; the climax is `#climax`; a climax choice's consequence (`### Choice — Title`) is `#choice`. A small choice at the end of a scene has no anchor of its own. The build fails on an anchor it cannot find.
 

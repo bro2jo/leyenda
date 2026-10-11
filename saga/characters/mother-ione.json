@@ -21,17 +21,17 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "4",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-4"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
   },
-  "last_seen_doing": "At the foot of Darrow's cot on the last stroke of the dawn bell, telling him the winch-brothers had taken his story down to the valley and Old Mercy would not ring for nobody, and asking him to tell Wren when, once the grey cloaks are at the bars.",
-  "now": "Prior of Saint Ysolde's, with the grey cloaks in at the winch-house at the foot of the Steps. At Darrow's word the winch-brothers carried a story down to the valley at first light, that the Faithless went down the far side a week ago, and she has not had Old Mercy rung since her council: a bell rung for nobody tells the valley there's somebody. She has asked Darrow to tell Wren when, once they are at the bars.",
-  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when.",
+  "last_seen_doing": "Before the gate, unmoved, telling Confessor Ivo Marrant the bell was rung and giving him the law's other half: no name under it is taken down against its will.",
+  "now": "Prior of Saint Ysolde's, with Confessor Ivo Marrant camped on the lower terrace below her gate. She let him read his list at the bars, had the wicket opened a hand's width for his paper under the law of guests, and when two grey cloaks came through it Old Mercy rang, late, and she spoke the law of names. He thanked her for her candour and went down to make his fire.",
+  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate alone and let the Confessor read; when his men came through the wicket she waited for the bell, and then gave him the law's other half, that no name under it is taken down against its will, and asked whether his men would like to go back out the way they came.",
   "quote": {
-    "text": "You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?",
+    "text": "While it rings, no name under it is taken down against its will. Would your men like to go back out the way they came?",
     "chapter": "01",
-    "scene": "4"
+    "scene": "climax"
   },
   "known_facts": [
     {
@@ -97,9 +97,39 @@
       "chapter": "01",
       "scene": "4",
       "evidence": "will you tell Wren when?"
+    },
+    {
+      "fact": "She ordered nobody into the court; at the hour bell she asked whether the House would like to see who had climbed so far to read to it, and the House came.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "the House had come"
+    },
+    {
+      "fact": "She stood before the gate alone with Maelis a pace behind her shoulder; when the Confessor said she would forgive him if he read anyway, she asked, 'Would I stop you?'",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "Would I stop you?"
+    },
+    {
+      "fact": "She had the gate-ward open the wicket a hand's width to take the Confessor's paper under the law of guests, by asking him whether they should.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "shall we take the Confessor's paper?"
+    },
+    {
+      "fact": "When Old Mercy rang she told the Confessor, without moving and lowering her voice so the court leaned to hear, that while it rings no blade climbs the Steps or passes the gate, and the other half, which his order reads at every bell-house twice over: no name under it is taken down against its will.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "no name under it is taken down against its will"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "to": "ivo-marrant",
+      "label": "the Confessor who read his list at her gate",
+      "note": "She let him read, took his paper under the law of guests, and answered his men at the wicket with the bell and the law of names."
+    }
+  ],
   "reckoning": {
     "fire": {
       "kind": "ember",
@@ -129,6 +159,10 @@
     {
       "chapter": "01",
       "scene": "4"
+    },
+    {
+      "chapter": "01",
+      "scene": "climax"
     }
   ]
 }

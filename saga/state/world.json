@@ -2,123 +2,38 @@
   "_about": "Story state, reader-safe. Claude-owned. Update after every scene and climax. Never put real-world numbers here; GM-only state (plan, flags, factions, companions to come) lives in saga/state/_gm/plan.json and approval moves only through saga.py add. covers lists the days a scene drew on; whether a day is closed lives in the Ledger, not here.",
   "book": 1,
   "book_title": "The House of Menders",
-  "chapter": 1,
-  "chapter_title": "The Confessor at the Steps",
-  "chapter_file": "saga/chronicle/01-the-confessor-at-the-steps.md",
-  "scenes": [
-    {
-      "scene": 1,
-      "title": "The Reading of the Knots",
-      "covers": [
-        "2026-10-04",
-        "2026-10-05",
-        "2026-10-06",
-        "2026-10-07"
-      ],
-      "written": "2026-10-08"
-    },
-    {
-      "scene": "interlude",
-      "pov": "hollis",
-      "title": "The Wax",
-      "covers": [],
-      "written": "2026-10-08"
-    },
-    {
-      "scene": 2,
-      "title": "Two Fires",
-      "covers": [
-        "2026-10-08"
-      ],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": "between-1",
-      "title": "The Paper's the Point",
-      "after": 2,
-      "covers": [],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": "between-2",
-      "title": "What It Holds Up",
-      "after": 2,
-      "covers": [],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": 3,
-      "title": "The Law of Bells",
-      "covers": [
-        "2026-10-09"
-      ],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": "between-3",
-      "title": "The Stone",
-      "after": 3,
-      "covers": [],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": "between-4",
-      "title": "The Words",
-      "after": 3,
-      "covers": [],
-      "written": "2026-10-09"
-    },
-    {
-      "scene": 4,
-      "title": "Boots on the Board",
-      "covers": [
-        "2026-10-10"
-      ],
-      "written": "2026-10-10"
-    },
-    {
-      "scene": "between-5",
-      "title": "What an Ox Will Stand",
-      "after": 4,
-      "covers": [],
-      "written": "2026-10-10"
-    },
-    {
-      "scene": "between-6",
-      "title": "The Grey",
-      "after": 4,
-      "covers": [],
-      "written": "2026-10-10"
-    }
-  ],
+  "chapter": 2,
+  "chapter_title": "The Grey Cot",
+  "chapter_file": "saga/chronicle/02-the-grey-cot.md",
+  "scenes": [],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the gate-ward's bench on the low wall-walk beside the gate, at the hour bell after noon; Rae Thorne has gone along the wall toward the court",
+    "detail": "the court before the gate at dusk, his back to the gatehouse post and the knee talking after the wicket; the Confessors' first fire is lit on the lower terrace below the gate",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "on_the_page": "The Confessors' list of the Faithless at Saint Ysolde's was read aloud at the inn in Coldmere; Hollis's name is second on it, and asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade may climb the Steps or pass the gate; miss one ringing and the law lapses till the next. At Darrow's word the winch-brothers have carried a story down to the valley, that the Faithless went down the far side a week ago, and Mother Ione has held Old Mercy since the council, because a bell rung for nobody tells the valley there's somebody. When the grey cloaks are at the bars, Darrow is to tell Wren when. They came in three bells early: six grey cloaks, their cart and a censer are at the winch-house at the foot of the Steps, and one of them sits on Rae's cart with his boots on the board. Rae could have gone down past them while the road was open, and did not.",
+    "on_the_page": "The Confessors' list of the Faithless at Saint Ysolde's was read aloud at the inn in Coldmere; Hollis's name is second on it, and asked who was first, Wren only looked at Darrow. Rae Thorne, who drives the House's last cart, heard it read and climbed through the night to bring it up. While Old Mercy, the sanctuary bell, rings at dawn and dusk, no blade may climb the Steps or pass the gate; miss one ringing and the law lapses till the next. At Darrow's word the winch-brothers have carried a story down to the valley, that the Faithless went down the far side a week ago, and Mother Ione has held Old Mercy since the council, because a bell rung for nobody tells the valley there's somebody. When the grey cloaks are at the bars, Darrow is to tell Wren when. They came in three bells early: six grey cloaks, their cart and a censer are at the winch-house at the foot of the Steps, and one of them sits on Rae's cart with his boots on the board. Rae could have gone down past them while the road was open, and did not. In the hour before dusk four of them climbed to the gate. Confessor Ivo Marrant read the writ at the bars to the House standing in the court, Darrow first, Hollis second, the far cots not read, and asked for the wicket under the law of guests; two grey cloaks came through it before Old Mercy rang, late, and were put back out. Mother Ione spoke the law of names: while the bell rings, no name under it is taken down against its will. Marrant has camped on the lower terrace below the gate, where the springs steam, and called up for the Captain of the Ninth to come down and kneel. He says he will wait.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
-  "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council.",
-  "last_beat": "On the gate-ward's bench Darrow asked Rae why she had asked whether he rode a grey; to the valley she said, \"Carters look at horses,\" and her hands closed on each other. The mare's name came as far as his teeth and stopped. At the hour bell she went off along the wall, stopped at the turn, and said, \"The near one's the slow one.\"",
+  "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council. At the wicket his shoulder gave and the knee said one thing, quite clearly; Maelis looked at it afterwards and said nothing, which was worse.",
+  "last_beat": "Confessor Ivo Marrant read the list at the bars, Darrow first and Hollis second, and asked for the wicket under the law of guests. Darrow read him and said \"Wren. Now.\"; two grey cloaks came through before Old Mercy rang, late, and the House's shoulders put them back out, his own giving. The Prior spoke the law of names. Marrant thanked her for her candour, made his camp on the lower terrace, and called up for the Captain of the Ninth to come down and kneel: he would wait.",
   "companions": {
     "maelis": {
       "approval": 15,
       "present": true,
-      "note": "has told him what she dared, and not where she learned it"
+      "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate"
     },
     "hollis": {
       "approval": 35,
       "present": true,
-      "note": "on the list, second; drinking less this week"
+      "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name"
     },
     "wren": {
       "approval": 10,
       "present": true,
-      "note": "afraid; hides it with numbers"
+      "note": "afraid; hides it with numbers; ran for the bell on his word"
     }
   },
   "choices": [
@@ -139,7 +54,8 @@
   ],
   "recaps": {
     "_about": "One-line 'previously' per chapter file slug, shown at the top of that chapter in the reader. Spoiler-free; only what earlier chapters showed.",
-    "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river and did not come back, and Darrow's knee gave way with no blade near it. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire."
+    "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river and did not come back, and Darrow's knee gave way with no blade near it. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
+    "02-the-grey-cot": "In the hour before dusk the grey cloaks climbed to the gate and Confessor Ivo Marrant read his list to the House, Darrow's name first. Two of his men came through the wicket before Old Mercy rang, late, and were put back out; the Prior spoke the law of names, and Marrant made his camp on the lower terrace below the gate, saying he would wait for the Captain of the Ninth to come down and kneel."
   },
-  "last_updated": "2026-10-10"
+  "last_updated": "2026-10-11"
 }
