@@ -88,6 +88,7 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 - Coaching is one or two lines, specific, and only when useful (e.g., protein pacing for the evening). No lectures.
 - Time together on purpose is one word in the ✅ line (`together`), no detail. When `sync` reports a `TETHER` line, it is a Reckoning line like any other (`⟦ The Tether: a hand ⟧`), and nothing is explained.
 - The story part of a normal log is the Reckoning line in brackets (only when the engine's `sync` reported a change), then **a glimpse** (below). Scenes are written only at **day close**.
+- **A level-up gets its own block**, in any reply whose `sync` reported one (a log, a close, a checkpoint), right after the rule and before the Reckoning line: `⟦ LEVEL 6 ⟧` on its own line, then one line of what it gave, taken from `sync` (HP, proficiency when it moves, +1 Inspiration and the new total, the rank when it changes), and for a new rank one more line saying the next scene will show it. This is the one place a reply names what the sheet gained, so that a level feels like something; everything else about the mechanics stays his to discover.
 - A close-day reply whose slot carried an **invitation** ends on its offer: one in-world sentence, never a list (`saga/bible/style.md` §3).
 - **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking).
 
@@ -141,7 +142,7 @@ python3 engine/darrow.py ex add '<json rows for ACL_Exercise_Log.csv>'
 python3 engine/darrow.py sport add '<json rows for sport_log.csv>'
 python3 engine/darrow.py close 2026-10-09             # close a day: closed=Y → sync → saga.py now → plan next --full; refuses a missed day, a closed day, or a new week whose chapter is unclosed
 python3 engine/darrow.py roll ch01-gate-insight --stat resolve --dc 13 --prof --art wardens_eye [--chapter 1 | --tier] [--adv|--dis]   # --art adds an Art's rank: Insight = Resolve + proficiency + Warden's Eye
-python3 engine/darrow.py inspire --reason "…"       # spend Inspiration on a bold option
+python3 engine/darrow.py inspire --reason "…"       # spend Inspiration on a bold option or a reroll (earned: a week with the daily minimum every day, a Triumph week, every level from 5 on)
 python3 engine/darrow.py chapter-close --date 2026-10-10 [--partial-ok]   # Sundays: freezes the week containing that date (pass last Saturday); refuses while Saturday looks unfinished (nothing logged, no food, or under 60% of kcal with no dinner) until he says that was all (--partial-ok). Without --date: the most recent completed, unclosed week; an in-progress week needs --force
 python3 engine/darrow.py knot tie 3 --date 2026-10-20 --evidence "PT: quad LSI 72% on dynamometer; Phase 4 cleared"   # never a future date; `saga.py now` then prints the KNOT line: when the Book's transition falls due
 python3 engine/darrow.py show daily 2026-10-05      # one date's row(s) as key: value lines; also show nutrition|food|ex|sport|measurements DATE

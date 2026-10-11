@@ -41,7 +41,8 @@ Commands (run from the repo root):
                                         its unrun optional quests dropped; required ones are kept available and warned (re-skin on the road or drop by hand)
   plan quest ID k=v ... | plan beat ID status=... | plan flag [--new] k=v (true/false/null; --new to add a flag) | plan temptation add TEXT
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
-  plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves
+  plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves;
+                                        rank_on_page=<rank> once a scene has carried a rank crossing (`now` prints RANK OWED until then)
   challenge N success|fail|show|void    a slot's challenge (design §5.6): move a counter after each roll; it resolves when progress or strain fills
   invite N take|pass|show               a slot's invitation: taken when he answers in voice (a Between), passed at the next close if he has not
   plan invite_rule WHO EXPR             a person's standing condition for coming to Darrow at all (rae: tether.stage >= 1); `check` refuses an invite while it is not met
@@ -482,6 +483,20 @@ def tether_stage():
         return int(t.get("stage") or 0)
     except (OSError, ValueError, json.JSONDecodeError):
         return 0
+
+
+def sheet_rank():
+    """Darrow's rank from the engine's sheet (Bound, Kindled, …); None if unknown. darrow.py owns it."""
+    try:
+        return load_json(P["sheet"]).get("rank") or None
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+
+
+def rank_owed(plan):
+    """(on the page, on the sheet) when a rank crossing has not yet had its prose beat (style.md §3), else None."""
+    onp, rk = plan.get("position", {}).get("rank_on_page"), sheet_rank()
+    return (onp, rk) if onp and rk and onp != rk else None
 
 
 def rule_source(expr):
@@ -1273,6 +1288,9 @@ def cmd_now(args):
     else:
         lines.append("Micro: none open")
     lines.append(bearing_line(bearing))
+    ro = rank_owed(plan)
+    if ro:
+        lines.append(f"RANK OWED: {ro[0]} → {ro[1]}: one prose beat in the next scene, the script changing as he notices it (style.md §3); then `plan set rank_on_page={ro[1]}`")
     due_now, overdue, future, later = [], [], 0, 0
     for e, it in pending_items(ledger):
         s_ = item_status(it, st)

@@ -768,7 +768,22 @@ def compute(cfg, rules, asof=None, write=False):
                     "temper": temper[a], "next_at": nxt, "fell": spec["fell"],
                     "banked": raw > val}
 
-    # inspiration: chronological earn/spend, capped
+    # inspiration: chronological earn/spend, capped. A level gained from inspiration.per_level_from on brings
+    # per_level Inspiration, dated the day the XP crossed it.
+    per_level = rules["inspiration"].get("per_level", 0)
+    if per_level:
+        lv_from = rules["inspiration"].get("per_level_from", 2)
+        by_date = defaultdict(int)
+        for x in deeds:
+            by_date[x["date"]] += int(x["xp"])
+        run, lv = 0, 1
+        for date in sorted(by_date):
+            run += by_date[date]
+            reached = level_of(run)
+            for L in range(lv + 1, reached + 1):
+                if L >= lv_from:
+                    insp_events.append((date, +per_level, f"level {L}"))
+            lv = max(lv, reached)
     for s in read_csv("spends"):
         if s.get("what") == "inspiration":
             insp_events.append((s["date"], -1, s.get("reason", "")))
@@ -865,7 +880,14 @@ def diff_sheets(old, new):
     if new["xp"] != old.get("xp"):
         notes.append(f"XP {old.get('xp', 0):,} -> {new['xp']:,} ({new['xp'] - old.get('xp', 0):+,})")
     if new["level"] > old.get("level", 0):
-        notes.append(f"LEVEL UP: {old.get('level')} -> {new['level']} ({new['rank']})")
+        bits = [f"LEVEL UP: {old.get('level')} -> {new['level']} ({new['rank']})"]
+        if old.get("hp_max") is not None and new.get("hp_max") != old.get("hp_max"):
+            bits.append(f"HP {old['hp_max']} -> {new['hp_max']}")
+        if old.get("proficiency") is not None and new.get("proficiency") != old.get("proficiency"):
+            bits.append(f"Proficiency +{old['proficiency']} -> +{new['proficiency']}")
+        notes.append(" · ".join(bits))
+        if old.get("rank") and new.get("rank") != old.get("rank"):
+            notes.append(f"RANK: {old['rank']} -> {new['rank']} (a rank crossing: one prose beat in the next scene, style.md §3; `saga.py now` shows it owed)")
     for a in ATTRS:
         o = old.get("attributes", {}).get(a, {}).get("score")
         n = new["attributes"][a]["score"]
