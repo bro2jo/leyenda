@@ -58,4 +58,4 @@ She looked at the candle a while. "Names. Everyone under this roof, every night,
 
 "I thought you might have wanted the choice."
 
-"I had it. I held the bell so that you would have one too." She got to her feet, which took a while, and which she would not be helped with. "You're in it, Captain. You were in it before you gave it to him. Shall I tell the Mender you came here instead of the hall, or will you go now and save me the walk?"
+"I had it. I held the bell so that you would have one too." She got to her feet, which took a while, and which she would not be helped with. "You're in the count, Captain. You were in it before you gave him your name. Shall I tell the Mender you came here instead of the hall, or will you go now and save me the walk?"

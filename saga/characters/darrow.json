@@ -55,14 +55,21 @@
       "evidence": "They're coming through us"
     },
     {
+      "fact": "Hollis told him to mount up. He looked at the carts a moment longer, then at the spears in front of them, a line he knew what to do with, left the carts for command, and mounted.",
+      "chapter": "00",
+      "scene": "I",
+      "evidence": "Where the carts went after that was a question for whoever had put the wax on Hollis's paper"
+    },
+    {
       "fact": "Halfway across the Wend the Grace went out of him in a single heartbeat, frost bloomed on his mail in midsummer, and when he planted his left foot and turned toward Tobin Marsh the knee gave with no blade and nothing touching it.",
       "chapter": "00",
       "scene": "I"
     },
     {
-      "fact": "As he went under he saw Aldric's horse on the west bank already turned and climbing out, one heartbeat early.",
+      "fact": "As the knee folded and he went down, he saw Aldric's horse on the west bank through the spray, already turned and climbing out, one heartbeat early.",
       "chapter": "00",
-      "scene": "I"
+      "scene": "I",
+      "evidence": "Darrow, going down, saw one thing"
     },
     {
       "fact": "The red-handed woman dragged him by the collar of his gambeson to the east bank among the standing stones, turned his head to the river, and told him in rough Vaelish to look and remember it.",
@@ -73,6 +80,12 @@
       "fact": "Nineteen of the Ninth came back from Harrow Ford; he made himself count them, and he knows the names of the other forty-one and does not say them.",
       "chapter": "00",
       "scene": "II"
+    },
+    {
+      "fact": "Hearing the heralds call the Ninth faithless, he held that nobody in the Ninth had broken an oath; what he could find no place for was the bedding on the clan carts, and that he had seen it and mounted anyway.",
+      "chapter": "00",
+      "scene": "II",
+      "evidence": "that he had seen them and mounted anyway"
     },
     {
       "fact": "The surgeons of the Lowmarch pressed the knee, watched it slide, and sent him north, and four lay brothers carried him up the Thousand Steps on a litter, feverish, while Wren Ashdown counted the steps aloud beside him and insisted there are eleven hundred and seventeen.",
@@ -127,10 +140,10 @@
       "evidence": "The Emberwardens."
     },
     {
-      "fact": "He argued that Hollis, second on the list and lying on his back when it is read, was owed the knowing of the built fire before he was; Maelis answered that Hollis is owed a leg and will get a wooden one, and that when Hollis asks, Darrow will lie to him. He took it.",
+      "fact": "He argued that Hollis, second on the list and lying on his back when it is read, was owed the knowing of the built fire before he was; Maelis answered that Hollis is owed a leg and will get a wooden one. When she asked what he would tell Hollis, he chose the answer himself: that she had started charging by the warning.",
       "chapter": "01",
       "scene": "2",
-      "evidence": "Then you'll lie to him."
+      "evidence": "I'll tell him you've started charging by the warning."
     },
     {
       "fact": "He asked Hollis and Benedek why the Confessors chase the Faithless up a mountain if the Grace left them for faithlessness, and why mercy needs a list with his name first; he kept what Maelis told him behind his teeth.",
@@ -251,10 +264,10 @@
       "evidence": "true and still be standing in front of another thing"
     },
     {
-      "fact": "The mare's name came as far as his teeth and stopped; he had not said it since the river, and did not say it on the wall.",
+      "fact": "The mare's name came as far as his teeth and stopped; saying it would mean asking what a carter had seen of a grey and hearing the answer, and he did not say it on the wall.",
       "chapter": "01",
       "scene": "between-6",
-      "evidence": "He had not said it since the river"
+      "evidence": "The mare's name came as far as his teeth and stopped there."
     },
     {
       "fact": "At the gate he stood among the wounded who could walk, at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to; nobody in grey looked at him when his name was read first.",
@@ -269,10 +282,10 @@
       "evidence": "His weight came off the post."
     },
     {
-      "fact": "The Prior had asked him at the dawn bell to tell Wren when to have Old Mercy rung, once the grey cloaks were at the bars: a bell rung for nobody tells the valley there's somebody, and a bell rung too late tells the Confessors the gate is theirs.",
+      "fact": "The Prior had asked him at the dawn bell to tell Wren when to have Old Mercy rung, once the grey cloaks stopped wanting to read and started wanting to come in; the bell could not ring until the light was off the bars, and she meant it not to ring at all if paper was all they had brought.",
       "chapter": "01",
       "scene": "climax",
-      "evidence": "A bell rung too late tells the Confessors the gate is theirs."
+      "evidence": "the Prior meant it not to ring at all if paper was all they had brought"
     },
     {
       "fact": "He watched the Confessor's hands and the four men behind him, and the script, which until then had only ever read him, came up over his palms unasked and read the man at the bars: a fire all of it poured, and under the pouring nothing of his own; there was no lie in him, and the wicket was already open in his mind. Darrow said, 'Wren. Now.'",
@@ -368,7 +381,7 @@
       "fact": "He went to the Prior in the chapel for the reproach she had not given him; she answered in questions, and told him he is in the names she says every night, and was before he gave his to the Confessor.",
       "chapter": "02",
       "scene": "between-2",
-      "evidence": "You were in it before you gave it to him."
+      "evidence": "You were in it before you gave him your name."
     }
   ],
   "relationships": [

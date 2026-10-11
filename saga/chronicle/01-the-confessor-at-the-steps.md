@@ -12,9 +12,9 @@
 
 Darrow woke before the dawn bell and lay still in the dark, taking inventory.
 
-Snow, first of the year: he could tell by the silence. The far cots breathing their slow, even breath. Hollis snoring on his right like a man sawing through a beam and losing. And the knee, which woke a moment after he did and announced itself the way it did every morning: a stiffness wrapped round the joint like a wet bandage drying, and under that, deep in, a warm line where the thread was.
+Snow, first of the year: he could tell by the silence. Hollis snoring on his right like a man sawing through a beam and losing. At the far end of the hall a novice with a shaded lamp was turning one of the men who didn't speak, and the man went where she put him and did not look at her. And the knee, which woke a moment after he did and announced itself the way it did every morning: a stiffness wrapped round the joint like a wet bandage drying, and under that, deep in, a warm line where the thread was.
 
-Seven weeks since the Binding. Some mornings he forgot for whole minutes at a time. This wasn't one of them.
+Seven weeks since the Binding. Some mornings he forgot for whole minutes at a time. This wasn't one of them. Today he meant to ask about the springs.
 
 He did the dawn forms because Maelis would know if he didn't. He had no idea how she knew, but she did. They were dull and slow and they hurt in a dull, slow way, and afterward the leg lay a little straighter on the blanket than it had before, which was the point of them. He had done them most mornings this week. Some mornings. He did them now, and by the time the bell rang the window had gone from black to the grey of old pewter.
 
@@ -50,13 +50,13 @@ The pipe shifted from one side of her mouth to the other.
 
 Wren Ashdown stood there with snow on her shoulders and her ledger clutched to her chest like a shield. Her cheeks were red from the wind. The rest of her face was white.
 
-"Bell tower," she said. "Sister Pell's glass. There are riders on the Holloway: six of them, and a cart. Grey cloaks." She swallowed. "And a censer. Smoking. In the snow, which you'd think would be impractical."
+"Sister Pell's glass," she said. "There are riders on the Holloway: six of them, and a cart. Grey cloaks." She swallowed. "And a censer. Smoking. In the snow, which you'd think would be impractical."
 
-The hall went quiet. Even Hollis had stopped snoring. Darrow couldn't have said when. Hollis was propped on one elbow, and his face had gone the color of the window.
+Even Hollis had stopped snoring. Darrow couldn't have said when. Hollis was propped on one elbow, and his face had gone the color of the window.
 
 "Confessors," Hollis said.
 
-"They'll be at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere last night, and Rae Thorne was in the taproom with the House's salt on her cart and heard every name. She drove the Holloway in the dark ahead of them and came up the Steps before the bell, and she told the winch-brothers, and the winch-brothers told the kitchen, so now everyone knows. It's the names of the Faithless at Saint Ysolde's. The ones they've come to bring down to kneel. Down the Steps, down the Holloway, all the way to the Oathspire, and on their knees in front of whoever turns out to watch."
+"At the foot of the Steps by tomorrow night, if the snow holds off. Mother Ione's been told." Wren's eyes flicked to Maelis and away. "There's a list. They read it out at the inn in Coldmere last night, and Rae Thorne was in the taproom with the House's salt on her cart and heard every name, and drove the Holloway in the dark to bring it up ahead of them. It's the Faithless at Saint Ysolde's. The ones they've come to take down to kneel. Down the Steps, down the Holloway, all the way to the Oathspire, and on their knees in front of whoever turns out to watch."
 
 "Am I on it?" said Hollis.
 
@@ -65,6 +65,8 @@ The hall went quiet. Even Hollis had stopped snoring. Darrow couldn't have said 
 Hollis absorbed that. "Who's first?"
 
 Wren didn't answer. She didn't have to. She was already looking at Darrow.
+
+Maelis looked at the knee, not at him. "It changes nothing I said."
 
 ---
 
@@ -76,7 +78,9 @@ Below the window the world fell away. Cloud filled the valley like milk in a bow
 
 Nearer, where the stair came out of the cloud at the valley floor, the winch-house was a grey block with a thread of smoke of its own, and beside it, small as a seed, stood a cart with its shafts up and two oxen in the snow, standing the way oxen stand, as if they had been told to wait and meant to do it all winter. He knew that cart. He had ridden the last of the Holloway in it with a fever and a leg that belonged to someone else, and the woman driving it had said one thing to him all that day, and he had not forgotten it.
 
-Confessors didn't climb mountains for the Hollowed or the dying. They climbed for names. To kneel anew, at a stone, in front of a crowd, was to say it aloud: that the Grace had left the Ninth because the Ninth had failed it, and that forty-one men had died at Harrow Ford for their own bad faith. And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list.
+Confessors didn't climb mountains for the men at the far end of the hall, or for the dying. They climbed for names. And a name, at the bottom of the Steps, went to a stone. Kneel at it, and the thread would go the way the cord had gone in the river; Maelis had told him so with the box open on her knees. Kneel at it in front of a crowd, and every man watching would go home knowing that the Grace had left the Ninth because the Ninth had failed it. Forty-one men dead for their own bad faith, and his face to make it true.
+
+And somewhere behind six grey cloaks, in a warm room in Calden, a man who had ridden knee to knee with him since they were boys had written his name first on the list. Darrow had no proof of that, and did not need any.
 
 *Ride wide today.*
 
@@ -91,13 +95,13 @@ He had never learned to read this script. Nobody had, not for three hundred year
 > ⟦ THE RECKONING ⟧
 > **Ser Darrow of Edgemoor** · Level 4 · *Bound*
 > Might 11 · Vigor 8 · Finesse 9 · Resolve 9
-> Ember: *Steady*
-> The Binding: two Knots tied of seven. *The soft season.*
+> *and fainter, behind them:* Might 15 · Vigor 15 · Finesse 18 · Resolve 12
+> Ember: *Steady* · The Binding: two Knots tied of seven. *The soft season.*
 > Arts: Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 
-Behind the numbers, so faint he almost missed them, stood other numbers. *Might 15. Vigor 15. Finesse 18. Resolve 12.* He didn't need anyone to tell him whose they were.
+The second line was so faint he almost missed it. He didn't need anyone to tell him whose it was.
 
-He opened his eyes. Maelis was standing in the doorway of the hall. She had come back for her pipe, which was on the windowsill beside his hand, and she was looking at his face, at the way his eyes were tracking something in the empty air.
+He opened his eyes. Maelis was standing in the doorway of the hall. She had come back for something and forgotten it, and she was looking at his face, at the way his eyes were tracking something in the empty air.
 
 She didn't look surprised. That frightened him more than the light had.
 
@@ -145,7 +149,6 @@ Hollis took the paper out of his shirt, still folded, and pushed it into the cup
 
 Down the hall, a latch lifted, and the cell door opened.
 
-
 ### Scene 2 — Two Fires
 
 The cell was hers: a cot, a shelf of stoppered jars, a shutter latched against the snow-light, and the smell of bitterleaf that never got lit. There was nowhere to sit but the cot, so he stood, and she let him.
@@ -154,9 +157,13 @@ The cell was hers: a cot, a shelf of stoppered jars, a shutter latched against t
 
 He said it. The script, the numbers, the fainter numbers standing behind them like men in a second rank. He said it the way he would have reported a ford: what was there, where it stood, nothing about what it meant.
 
-She listened with the pipe clamped and her eyes on his hands rather than his face, as if the light might come back if nobody looked at it directly. When he finished she said, "Good. You can read it. Most can't, the first time."
+She listened with the pipe clamped and her eyes on his hands rather than his face, as if the light might come back if nobody looked at it directly. When he finished she said, "Good. You can read it. Most can't, the first time." Then: "Which of the two walked to my door this morning?"
 
-He looked at his hands too. Nothing. Grey morning on grey skin. He shut his eyes, since it had been sharper with them shut, and got only the dark and the smell of her pipe.
+He looked at the knee. "The smaller."
+
+"Then that's the one we'll work with."
+
+He looked at his hands. Nothing. Grey morning on grey skin. He shut his eyes, since it had been sharper with them shut, and got only the dark and the smell of her pipe.
 
 "It comes when it likes," she said. "Not when you call it." She took the pipe out. "There are two fires a man can carry, Captain. One is poured in. You knelt for it, you know what it feels like, and you know what it feels like when the hand that poured it takes it back."
 
@@ -166,7 +173,15 @@ He said nothing. The river said it for him.
 
 "And the writing?"
 
-"Counts it. Only it. The script reads what is yours and nothing else, which is why no one full of Grace has ever seen it." She turned the pipe over in her fingers. "There was an order that lived by the built fire. The Crown burned them three hundred years ago, halls and books and people, and made their name a curse. You've heard it. Ember-mad."
+"Counts it. Only it, and in its own time: you'll work a week and see nothing, and it'll tell you on a morning you did nothing at all. It reads what is yours and nothing else, which is why no one full of Grace has ever seen it."
+
+"And the Knots?"
+
+"What the knee has proved. One at a time, and none of them twice. It straightens. It walks." She turned the pipe over in her fingers. "Neither of those is a stair."
+
+He had come in hoping the light meant something had changed. She watched him put that down.
+
+"There was an order that lived by the built fire," she said. "The Crown burned them three hundred years ago, halls and books and people, and made their name a curse. You've heard it. Ember-mad."
 
 "The Emberwardens."
 
@@ -178,17 +193,23 @@ He said nothing. The river said it for him.
 
 "And me? I'm first on it."
 
-"They don't need you to tell them anything." She looked at the knee, not at him. "They need to see that. Any Confessor who lays a hand on it will know what's in it, and the Crown has burned every hand it ever caught putting it there."
+"They don't need you to tell them anything." Her eyes went to the knee. "They need to see that. Any Confessor who lays a hand on it will know what's in it, and the Crown has burned every hand it ever caught putting it there."
 
-"And when Hollis asks me?"
-
-"Then you'll lie to him. You've done harder things this week." She watched him take that. He took it. "Now ask me the other thing. You've been holding it since the hall."
+He looked at her hands then: the old scars seamed up the forearms, the ink on the fingers. She let him.
 
 "How do you know all this?"
 
-"I'm a Mender. We remember things." She stood, which in that cell put her nearly under his chin. "Your knee had help for twelve years and never knew it. It has none now. What holds it is you, and what you saw on your hands is the count of it. Feed it or it goes out."
+"I'm a Mender. We remember things."
 
-She lifted the latch.
+The pipe had stopped moving. He had learned that much about her in seven weeks: when the pipe stopped, so had the answer.
+
+She stood, which in that cell put her nearly under his chin. "Your knee had help for twelve years and never knew it. It has none now. What holds it is you, and what you saw on your hands is the count of it. Feed it or it goes out." Her hand went to the latch. "And when Hollis asks where you've been?"
+
+Hollis on his back, and a grey cloak standing over the cot, watching his mouth.
+
+"I'll tell him you've started charging by the warning."
+
+"Then I'd better start," said Maelis, and lifted the latch.
 
 > ⟦ THE RECKONING ⟧
 > Art ranked up: **Warden's Eye** II. *Read a weakness or a lie.*
@@ -196,7 +217,7 @@ She lifted the latch.
 
 ### Between — The Paper's the Point
 
-Maelis went back to her rounds. Darrow walked the hall the slow way, good leg, bad leg, transfer, and sat on the end of his own cot, facing Hollis's.
+Maelis went back to her rounds. Darrow walked the hall the slow way, good leg, bad leg, transfer, and sat on the end of his own cot, facing Hollis's. Past Hollis's shoulder the window had the Holloway in it, and the smudge of smoke on the road had come on since dawn.
 
 "Well?" said Hollis.
 
@@ -246,7 +267,7 @@ She folded another square. "I've had my fingers on knees that carried it for twe
 
 "A word for a knight the Grace has left. It says it left because of him." The pipe went from one side of her mouth to the other. "Did you break your oath?"
 
-"No."
+"No." He had kept it all the way into the river, with the bedding on those carts in front of him the whole way.
 
 "Then you know as much about that word as I do." She settled the pile on her hip and went off down the hall with it, and said over her shoulder, without turning: "Sit down. You've walked enough today."
 
@@ -254,7 +275,7 @@ She folded another square. "I've had my fingers on knees that carried it for twe
 
 He had sat as ordered for an hour when a novice fetched him to the warming room off the cloister. Nine steps down, no rail. He took them with a hand to the wall, and the knee held on every one, which he took as a compliment.
 
-Mother Ione had the one good chair and offered it to nobody: small and very upright by the fire, white hair cropped close under a linen coif, with pale eyes that counted each of them in turn as they came in and did not stop at Darrow any longer than at the rest. Maelis stood at the hearth. Beside it, in two shawls, sat a woman so old she might have been cut from the hearthstone, watching the Prior's mouth. Rae Thorne stood by the door, snow melting on her shoulders.
+Mother Ione had the Prior's chair, the one good chair, and offered it to nobody: small and very upright by the fire, white hair cropped close under a linen coif, with pale eyes that counted each of them in turn as they came in and did not stop at Darrow any longer than at the rest. Maelis stood at the hearth. Beside it, in two shawls, sat a woman so old she might have been cut from the hearthstone, watching the Prior's mouth. Rae Thorne stood by the door, snow melting on her shoulders.
 
 "How did they read it, Rae?" said the Prior. "Loud?"
 
@@ -268,9 +289,13 @@ Mother Ione had the one good chair and offered it to nobody: small and very upri
 
 "While Old Mercy rings at dawn and dusk, no blade climbs the Steps or passes the gate," said Maelis, "and no name under it is taken down against its will. Miss one ringing and the law lapses till the next."
 
-Old Mercy was not the hour bell. It rang only while the House claimed sanctuary, at dawn and at dusk and at no other time, and the valley knew its voice. Rung, it told every village below that the House had someone it would not give up.
+"The bell rang this morning," Darrow said. "I heard it."
 
-"And how often has it lapsed, Sister Pell?"
+"Hour bell," said the old woman by the hearth, to his mouth. "Old Mercy's dawn and dusk. Nothing else. The valley knows her."
+
+"And men with a Crown writ keep a law because a bell says so?"
+
+"Would they ask the valley to keep the laws rung from their own bell-houses, Captain," said the Prior, "after breaking the one rung from mine?" She turned to the hearth. "And how often has it lapsed, Sister Pell?"
 
 "Twice. Snow, both times." A dry rasp, rationed. "Not on my rope."
 
@@ -278,9 +303,7 @@ Old Mercy was not the hour bell. It rang only while the House claimed sanctuary,
 
 "Fifty years I've rung the bells. Ask the bell if it's tired."
 
-She set her cup on the hearth, and Darrow saw the knuckles, swollen like walnuts, and the cup chatter twice before it settled. He read it before he meant to, the way he read a line before a charge. Nobody else looked.
-
-So that was the law. A bell, a rope, and a pair of hands that had rung the dawn through fifty winters and would ring it through this one until they could not; and the Prior's soft face, creased like a winter apple, giving nothing away about whether she had counted the same thing he had.
+She set her cup on the hearth, and Darrow saw the knuckles, swollen like walnuts, and the cup chatter twice before it settled. He read it before he meant to, the way he read a line before a charge. Nobody else looked. The Prior's soft face, creased like a winter apple, gave nothing away about whether she had counted the same thing he had.
 
 "Mother." He had not meant to speak first. "Don't spend it on me. They're a day off. The Steps are open until they're standing at the bottom of them, and I can walk to the chapel and back twice without a stick. Put me on the cage with the next load down, and the list has nothing to climb for."
 
@@ -294,7 +317,17 @@ So that was the law. A bell, a rope, and a pair of hands that had rung the dawn 
 
 Mother Ione let the silence sit a moment, the way she had let the chair sit empty.
 
-"And when we've given them one name, Captain," she said, "how many will the next writ carry?" She did not wait for him to count. "So the Captain has heard the law, and the Mender has heard the Captain, and I have heard you all. Sister, you'll hear from me before dusk. Rae, the lay brothers will want to know what to say to the valley, when it asks." The council broke with nothing decided aloud, which seemed to be how the House decided things.
+"And when we've given them one name, Captain," she said, "how many will the next writ carry?" She did not wait for him to count. "Rae, the lay brothers will want to know what to say to the valley, when it asks who sleeps up here. Sister, you'll hear from me before dusk whether Old Mercy rings tonight."
+
+"Why wouldn't it?" said Darrow.
+
+The pale eyes came round to him. "If the lay brothers tell the valley there's nobody up here, Captain, what does a sanctuary bell tell it at dusk?"
+
+That there was somebody. Somebody the House would not give up. He saw it the way he saw a line before a charge: the story or the bell, and not both.
+
+"You'd take the law off your own gate."
+
+"Would I? Ask me at dusk." The council broke with nothing decided aloud, which seemed to be how the House decided things.
 
 On the stair Rae stopped one step above him, so that for once they were eye to eye.
 
@@ -305,6 +338,8 @@ Thistle, going down at the shoulder in the brown water. He had not said her name
 "Yes. Why?"
 
 She looked at him the way she had once looked at his leg, and went on up without answering. The bell at her belt rang once at the turn.
+
+He went up after her, nine steps with a hand to the wall, and at the top he still had his breath, which a week ago he would not have.
 
 "Captain?" Mother Ione, from the doorway below. "Before I decide whether Old Mercy rings, is there anything you'd have me know? And what should the lay brothers tell the valley, when it asks who sleeps up here?"
 
@@ -320,7 +355,7 @@ She looked at him the way she had once looked at his leg, and went on up without
 
 ### Between — The Stone
 
-Hollis had the knucklebones out when Darrow came back from the stair, five yellow sheep's knuckles on the blanket, and was throwing them the way a man cleans a blade he has no use for.
+Hollis had the knucklebones out when Darrow came back from the stair, five yellow sheep's knuckles on the blanket, and was throwing them the way a man cleans a blade he has no use for. In the window behind him the light had gone the blue of late afternoon, and the smoke on the Holloway was nearer the foot of the Steps than the inn.
 
 "She say yes?"
 
@@ -374,9 +409,7 @@ Brown water, and the men it had kept.
 
 "The river's had enough of us."
 
-"Has it?" She did not wait for him to answer that one. "You'll have noticed Old Mercy didn't ring at dusk. It didn't ring this morning either, and it won't, for nobody. A bell rung for nobody tells the valley there's somebody, doesn't it?"
-
-A soldier's arithmetic: she had taken the guard off the gate, so that the gate would look as if it kept nobody.
+"Has it?" She did not wait for him to answer that one. "You'll have noticed Old Mercy didn't ring at dusk. It didn't ring this morning either."
 
 "Then the law's down."
 
@@ -384,7 +417,17 @@ A soldier's arithmetic: she had taken the guard off the gate, so that the gate w
 
 He had slept like a stone. He did not say so, and she did not seem to need him to.
 
-"It comes back with the next ringing. Isn't that the law Maelis gave you?" Her voice went lower still. "You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?"
+"It comes back with the next ringing, if we ring it. If they believe the story, they'll read their paper at the bottom of the Steps and go home and say so. If they climb anyway, I'll meet them at the bars and let them read it to me." Her voice went lower still. "Old Mercy can't ring until the light's gone, Captain, and I'd as soon she didn't ring at all while paper is all they've brought. A courier's paper is taken at the wicket. This House has never refused one, and I'd rather not begin with a Confessor watching."
+
+"And if paper isn't all they've brought?"
+
+"Then somebody must tell Sister Pell, mustn't they? Would she hear you shout across the court?"
+
+Pell at the hearth, watching the Prior's mouth. The length of the court, the tower door, a stair, a rope: a runner, then, and time enough for the run.
+
+"Wren."
+
+"You read a line before it moves, Captain." Her hands stayed in her sleeves. "When they stop wanting to read to us and start wanting to come in, will you tell Wren when?"
 
 It was not a question. He said he would.
 
@@ -473,7 +516,7 @@ She was a while answering, and when she did it was to the valley. "Carters look 
 
 It was true, the way a thing can be true and still be standing in front of another thing. Her hands, between her knees, had closed on each other.
 
-He waited, since she had shown him how. The mare's name came as far as his teeth and stopped there. He had not said it since the river, and he was not going to start on a wall, to a woman who would not give him her oxen's.
+He waited, since she had shown him how. The mare's name came as far as his teeth and stopped there. Say it, and he would have to ask what a carter had seen of a grey, and then hear the answer, whichever it was. He was not going to start that on a wall, with a woman who would not give him her oxen's names.
 
 Behind them in the tower the hour bell began, and somewhere under it Wren would be waiting to count caps back into Pell's hands. Rae stood on the first stroke, as if it were what she had been waiting for, and went off along the wall toward the court. At the turn of the walk she stopped, long enough that he thought she would say it.
 
@@ -481,21 +524,27 @@ Behind them in the tower the hour bell began, and somewhere under it Wren would 
 
 ## Climax — The Law of Names
 
-The grey cloaks came up the last flight in the hour before dusk, when the Steps had gone blue and the court was still white, and the House was waiting for them in the snow.
+The grey cloaks came up the last flight in the hour before dusk, while the court was still white and the last of the sun lay along the bars of the gate, and the House was waiting for them in the snow.
 
 Mother Ione had ordered nobody into the court. At the hour bell she had asked whether the House would like to see who had climbed so far to read to it, and the House had come: the lay brothers in a line along the inner wall with their hands in their sleeves, the novices behind them, the kitchen in its aprons. Rae Thorne stood at the end of the lay brothers' line, as still as anything she had ever driven. The Prior stood before the gate with Maelis a pace behind her shoulder.
 
-The wounded who could walk as far as the gate were eleven men and Darrow. He stood among them at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to. The grey cloaks had his name. None of them had ever seen his face, and among eleven sore men in infirmary shirts it was one more. Above them, at the gatehouse window, Hollis sat in a chair that two lay brothers had carried up the inside stair, because he had said, loud enough for the court, that he would see the man who wanted him.
+The wounded who could walk as far as the gate were eleven men and Darrow. He stood among them at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to. Three of the eleven were his. He had counted them onto the carts at the ford and up the Holloway, and he did not look at them now. The grey cloaks had his name. None of them had ever seen his face, and among eleven sore men in infirmary shirts it was one more. Above them, at the gatehouse window, Hollis sat in a chair that two lay brothers had carried up the inside stair, because he had said, loud enough for the court, that he would see the man who wanted him.
 
-Wren stood at Darrow's left with her ledger against her chest and no pencil behind her ear; she was not there to count. Up in the tower Sister Pell had Old Mercy's rope in her hands, and the bell had not rung since the council. A bell rung for nobody tells the valley there's somebody. A bell rung too late tells the Confessors the gate is theirs. At the dawn bell the Prior had asked him to tell Wren when, and he had said he would. Wren had not asked him how he would know. He was not sure he could have told her.
+Wren stood at Darrow's left with her ledger against her chest and no pencil behind her ear; she was not there to count. Up in the tower Sister Pell had Old Mercy's rope in her hands, and the bell had not rung since the council. It could not ring until the light was off the bars, and the Prior meant it not to ring at all if paper was all they had brought. Between Wren and the rope lay the inner wall, the tower door and a stair, and Darrow had walked them twice in his head since noon. Wren had not asked him how he would know when. He was not sure he could have told her.
 
 Five came to the bars. The sixth had stayed at the winch-house with his boots on Rae's cart. The one who spoke had put his hood back in the cold, a bald head bare to the snow, a man in his forties with a pleasant, well-fed face, and the censer hung from his hand on its chain and smoked straight up, so that he stood in his own grey weather. The smell of hot iron came through the bars ahead of his voice.
 
 "Mother Ione." He said it as if they had corresponded. "Ivo Marrant, Confessor, under the Knight-Confessor's seal. They told us at the winch-house fire that the Faithless of Harrow Ford went down your far side a week since." He smiled at the court, at all of it. "I have read to empty beds before. I find it steadies the hand. You'll forgive me if I read anyway."
 
-"Would I stop you?" said the Prior.
+"Would I stop you?" said the Prior. "Which House is it addressed to, Confessor? I'd hate you to have climbed to the wrong one."
 
-He unrolled the writ against the bars so the court could see the seal, blue wax the size of a child's palm, and read.
+He showed her. She asked whose seal it carried, and he turned it so the court could see the blue wax, the size of a child's palm, and told her, at length and without impatience. She asked after the road. He told her about the road.
+
+She was buying the last of the daylight. He was letting her buy it.
+
+The sun went off the bars. Behind Marrant the Steps went blue, all the way down.
+
+He unrolled the writ against the bars and read.
 
 "Ser Darrow of Edgemoor, Knight-Captain of the Ninth Lance."
 
@@ -507,7 +556,11 @@ His weight came off the post. It was nothing: a man shifting a sore leg in the c
 
 Hollis looked at the wax. Darrow saw him do it from below: the old man's eyes went to the blue seal against the bars and held there, and then went away from it to the mountain, and he said nothing at all, which was not like him. His hands were on the sill. They were steady because he was holding them so.
 
-Marrant read on, the Ninth's names and the Sixth's, slow, so the court could count. Darrow counted them without hearing them. The far cots were not among them, and when the paper was done the Confessor said so himself, rolling it: "You'll notice I don't read your far cots, Mother. The Crown has no quarrel with men who can't answer." He held the writ out through the bars, and when nobody took it he turned it so the seal faced the court. "This is yours. It's addressed to the House. Under the law of guests a courier's paper is taken at the wicket, and I am, whatever else, a courier."
+Marrant read on, the Ninth's names and the Sixth's, slow, so the court could count. Three men beside Darrow heard their own and did not move. The far cots were not among them, and when the paper was done the Confessor said so himself, rolling it: "You'll notice I don't read your far cots, Mother. The Crown has no quarrel with men who can't answer." He held the writ out through the bars.
+
+The Prior put out her hand for it. He drew it back, not far: just out of her reach.
+
+"At the wicket, Mother, if you'd be so kind. Under the law of guests a courier's paper is taken at the wicket, and I am, whatever else, a courier."
 
 The gate was oak, with its bars set at the height of a man's face, and low in the oak was the wicket: a door for one man stooping, barred on the inside. Darrow looked at it, and then at Marrant's hands. He watched a man's hands before a charge, because the hands moved first; a face would lie to you all day and the hands only in the last heartbeat. Marrant's did not move at all. But the four behind him had changed their weight, all of them, the way a lance changes it when the captain's arm goes up and before it comes down.
 
@@ -521,7 +574,7 @@ Now it read the man at the bars. It showed Darrow a fire, all of it poured, and 
 
 She was gone before the word was finished, along the inner wall toward the tower, and the ledger went with her.
 
-The Prior did not turn round. She stood with her hands in her sleeves and let the Confessor hold his paper out through the bars, and Darrow counted with her: the length of the inner wall, the tower door, the stair, the rope. Nothing came.
+The Prior did not turn round. She stood with her hands in her sleeves and let the Confessor hold his paper out, and Darrow counted with her: the length of the inner wall, the tower door, the stair, the rope. Nothing came.
 
 "Mother," said Marrant, kindly. "Your House means to keep one old law against me tonight, I think. I'd hate to tell the bell-houses it broke another to keep a courier standing in the cold."
 
@@ -537,11 +590,11 @@ Darrow was three strides from it. He took them, good leg, bad leg, no transfer, 
 
 `[MIGHT · DC 11]` d20 **4** +0 might +0 chapter 1 Costly = **4** — *Failure*
 
-The third man leaned. His weight came through the oak and through Darrow, and the wicket threw him off it against the gate. The knee, deep in, where the thread was, said one thing, quite clearly, and he heard it. Then there were shoulders where his had been: two lay brothers', and Rae Thorne's in under the gate-ward's, set as she would set it to a cart gone into a rut. The wicket shut on the third man's arm, the arm went back out through it, and the bar went across.
+The third man leaned. His weight came through the oak and through Darrow, and the wicket threw him off it against the gate. Deep in the knee, along the line of the thread, something said one thing, quite clearly, and the leg would not push again. Not the soft, wet give of the river. Not that. Not yet. Then there were shoulders where his had been: two lay brothers', and Rae Thorne's in under the gate-ward's, set as she would set it to a cart gone into a rut. The wicket shut on the third man's arm, the arm went back out through it, and the bar went across.
 
 Two of them were inside.
 
-They had not stopped to fight anybody. They were walking across the court toward the gatehouse stair, where the eleven wounded stood, unhurried, looking at faces, the way men walk a market looking for one stall.
+They had not stopped to fight anybody. They were walking across the court toward the gatehouse stair, where the eleven wounded stood, unhurried, looking at faces, the way men walk a market looking for one stall. Darrow, with his back against the gate and his weight on the good leg, could not have crossed the court ahead of them if the House had been burning. He looked at the tower.
 
 Old Mercy rang.
 
@@ -549,7 +602,7 @@ It came up out of the tower late and dragging, as if the rope had argued with th
 
 "The bell is rung, Confessor," said Mother Ione. She had not moved. She lowered her voice, so that the court leaned to hear it. "While it rings, no blade climbs the Steps and no blade passes this gate. And the other half, which your order reads at every bell-house in the Lowmarch twice over, so I'll not insult you by reading it slowly: while it rings, no name under it is taken down against its will. Would your men like to go back out the way they came?"
 
-Marrant looked at her for a moment. Then his eyes went past her shoulder to Maelis and stayed there a beat longer than courtesy. Maelis looked back at him with the pipe clamped and nothing in her face at all, and Darrow, with his back against the gate and the knee still talking, saw the Confessor's smile change its weight the way his men's had.
+Marrant looked at her for a moment. Then his eyes went past her shoulder to Maelis and stayed there a beat longer than courtesy. Maelis looked back at him with the pipe clamped and nothing in her face at all, and Darrow, with the knee still talking, saw the Confessor's smile change its weight the way his men's had.
 
 "Mother," Marrant said, "you keep a fine bell. A little slow on the rope." He said something else, not loud. The gate-ward drew the wicket's bar again, and the two grey cloaks came back across the court to it.
 
@@ -557,11 +610,15 @@ Darrow went the other way, back to his post among the wounded, good leg, bad leg
 
 Wren came back along the wall from the tower with Pell's slowness in her face and took her place at Darrow's left again, and for the second time that day had no number for a thing.
 
-"The grey below your gate, where your springs steam, is the law's ground and nobody's," Marrant said. "We'll make our fire on the lower terrace. Bells grow tired." He bowed, to the Prior and to the court, and lifted the censer so its smoke went up between them and the dusk. "And Ser Darrow." He said it to the whole court, pleasantly, as a man says a name he is sure of. "I've read to empty beds. These aren't empty. Come down and kneel, Captain, and the rest of this paper goes back into my cloak and never comes out. I'll wait. It's the thing I'm best at."
+"The grey below your gate, where your springs steam, is the law's ground and nobody's," Marrant said. "We'll make our fire on the lower terrace."
+
+Outside the gate and a stone's throw below it: close enough to be back at the wicket the first dusk the rope was slow.
+
+"Bells grow tired." He bowed, to the Prior and to the court, and lifted the censer so its smoke went up between them and the dusk. "And Ser Darrow." He said it to the whole court, pleasantly, as a man says a name he is sure of. "I've read to empty beds. These aren't empty. Come down and kneel, Captain, and the rest of this paper goes back into my cloak and never comes out. I'll wait. It's the thing I'm best at."
 
 He turned for the Steps, and his smoke turned with him.
 
-In the court, eleven sore men were very carefully not looking at Darrow.
+In the court, eleven sore men were very carefully not looking at Darrow, and three of them were his.
 
 > ⟦ THE RECKONING ⟧
 > Level 5 · **Kindled**
