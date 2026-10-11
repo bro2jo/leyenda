@@ -452,3 +452,23 @@ The knee had gone from stiff to sullen with the standing, and he had shifted off
 He sat at the other end before he had decided to. Maelis had to order it, most days, and Hollis had to make it a bet.
 
 "Leg was shaking," Rae said, once, to the valley.
+
+### Between — The Grey
+
+He let the wind come round the shoulder of the mountain a time or two before he asked.
+
+"On the stair. You asked if I rode a grey at the ford."
+
+"Aye."
+
+"Why?"
+
+She was a while answering, and when she did it was to the valley. "Carters look at horses."
+
+It was true, the way a thing can be true and still be standing in front of another thing. Her hands, between her knees, had closed on each other.
+
+He waited, since she had shown him how. The mare's name came as far as his teeth and stopped there. He had not said it since the river, and he was not going to start on a wall, to a woman who would not give him her oxen's.
+
+Behind them in the tower the hour bell began, and somewhere under it Wren would be waiting to count caps back into Pell's hands. Rae stood on the first stroke, as if it were what she had been waiting for, and went off along the wall toward the court. At the turn of the walk she stopped, long enough that he thought she would say it.
+
+"The near one's the slow one," she said, and went.
