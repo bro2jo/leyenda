@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 5,
   "rank": "Kindled",
-  "xp": 1008,
+  "xp": 1058,
   "xp_this_level": 1000,
   "xp_next_level": 1500,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 23,
+      "temper": 25,
       "next_at": 27,
       "fell": 15,
       "banked": false
@@ -34,18 +34,18 @@
       "raw": 9,
       "cap": 10,
       "mod": -1,
-      "temper": 15,
+      "temper": 16,
       "next_at": 18,
       "fell": 18,
       "banked": false
     },
     "resolve": {
-      "score": 9,
-      "raw": 9,
+      "score": 10,
+      "raw": 10,
       "cap": null,
-      "mod": -1,
-      "temper": 15,
-      "next_at": 16,
+      "mod": 0,
+      "temper": 16,
+      "next_at": 36,
       "fell": 12,
       "banked": false
     }
@@ -103,7 +103,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 11,
+      "practice": 12,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -125,7 +125,7 @@
       "tree": "Binding",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 4,
+      "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -147,7 +147,7 @@
       "tree": "Footing",
       "rank": 0,
       "banked_rank": 2,
-      "practice": 8,
+      "practice": 9,
       "next_at": 15,
       "sealed_until_knot": 3,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
@@ -320,7 +320,7 @@
   "chapter_now": {
     "week_start": "2026-10-11",
     "through": "2026-10-11",
-    "tier_so_far": "Setback",
+    "tier_so_far": "Hard-won",
     "chapter": 2
   },
   "fell": {
