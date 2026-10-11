@@ -358,9 +358,9 @@ On the next cot, Hollis opened one eye, looked at Darrow for the length of a hea
 
 ### Scene 4 — Boots on the Board
 
-At the dawn bell Benedek's lips began to move, and his eyes went past Hollis, not to the roof but to the Captain's mouth, and waited there until it moved with his. Hollis lay on his back between them and studied the beams, and said nothing to either of them about it.
+At the dawn bell Benedek's lips began to move, and his eyes went past Hollis, not to the roof but to the Captain's mouth, and waited there until it moved with his. Hollis lay on his back between them and studied the beams. Whatever he made of it, he kept in his beard.
 
-Mother Ione came up the hall on the last stroke, alone, and stopped at the foot of Darrow's cot with her hands in her sleeves.
+Mother Ione came up the hall on the last stroke, alone, and stopped at the foot of Darrow's cot with her hands in her sleeves. Benedek's lips were still moving. She waited until they stopped.
 
 "The winch-brothers went down at first light with your far side of the mountain," she said, low. "They'll tell it at the winch-house fire, and the valley will have it by noon. Did you tell it for the House, Captain, or for the river?"
 
@@ -370,19 +370,25 @@ Brown water, and the men it had kept.
 
 "Has it?" She did not wait for him to answer that one. "You'll have noticed Old Mercy didn't ring at dusk. It didn't ring this morning either, and it won't, for nobody. A bell rung for nobody tells the valley there's somebody, doesn't it?"
 
+A soldier's arithmetic: she had taken the guard off the gate, so that the gate would look as if it kept nobody.
+
 "Then the law's down."
 
-"Until the next ringing. Isn't that what Maelis said?" She considered him a moment longer. "You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?"
+"Since dusk." Nothing in her face moved. "Did you sleep any worse for it?"
+
+He had slept like a stone. He did not say so, and she did not seem to need him to.
+
+"It comes back with the next ringing. Isn't that the law Maelis gave you?" Her voice went lower still. "You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?"
 
 It was not a question. He said he would.
 
 ---
 
-By noon he was on the low wall-walk beside the gate, which could be reached from the court without a stair, and that was the whole of Maelis's reason for allowing it. The cloud had torn open below, as it did on hard cold days, and the valley lay at the bottom of the hole.
+By noon he was on the low wall-walk beside the gate, which could be reached from the court without a stair, and that was the whole of Maelis's reason for allowing it. The cloud had torn open below, as it did on hard cold days, and through the tear the valley lay white and very far down, every fence on it drawn in snow.
 
-Wren had Pell's glass to her eye, her ledger under one arm and her chin in her scarf. "Lent," she said, before anyone could ask. "Counted out. One glass, two caps, one strap, and I'm to count them back to her by the next bell or she'll know why." The glass tracked along something. "Six riders. One cart. One censer. And one of the six isn't on the road anymore." She lowered it. "Three bells early. The snow held off."
+Wren had Pell's glass to her eye, her ledger under one arm and her chin in her scarf. "Lent," she said, before anyone could ask. "Counted out. One glass, two caps, one strap, and I'm to count them back to her by the next bell or she'll know why." The glass crept along the road. "Six riders. One cart. One censer. And one of the six isn't on the road anymore." She lowered it. "Three bells early. The snow held off."
 
-Rae Thorne stood at the parapet on his other side. She had not asked for the glass. The wind came over the wall and took her hood back, and she let it; her hair came loose and went where the wind sent it, and she went on looking down at the winch-house, a grey block the size of a thumbnail, and the seed beside it that was her cart.
+Rae Thorne stood at the parapet on his other side. She had not asked for the glass. The wind came over the wall and took her hood back, and she let it; her hair came loose and went where the wind sent it, and she went on looking down at the winch-house, a grey block the size of a thumbnail, and the seed beside it that was her cart. The bell at her belt hung still. There was nothing up here to jolt it.
 
 He took the glass. He found the road first, because he always found the line first: five grey cloaks strung along the last of the Holloway, their cart in the middle where you put what you mean to keep, and at the head a man whose saddle-bow trailed the censer's smoke straight up into the still air. Then the winch-house. A sixth grey cloak was walking round Rae's cart, slowly, the way a man walks round a horse he is thinking of buying. At the front he stopped, climbed onto the box, sat, and put his boots up on the board. The oxen did not turn their heads.
 
@@ -398,7 +404,15 @@ He took the glass. He found the road first, because he always found the line fir
 
 "That's aye."
 
-He put it to her the way he had once put a ford to a lance-captain who meant to hold it: what was coming, how long it would take, what it would cost. Once they had the winch-house they had the cage, and once they had the cage she was up here till the thaw, with forty cots and a list, and her oxen eating Confessors' hay. She heard all of it. She said "Aye" to the parts that wanted it, and stood, and waited, and the wind worked at her hair, and the knee began to stiffen with the standing still, and the cold found his hands, though not far.
+"Listen." He put it to her as he would have put a ford to a lance-captain who meant to hold one he couldn't. "Once they have the winch-house they have the cage. Once they have the cage, nothing goes down this mountain that they haven't counted, and that's you as well. You'll be up here till the thaw with forty cots and a list, and your oxen eating Confessors' hay."
+
+"Aye."
+
+"Fifteen times I've asked to go down those steps." It came out harder than he meant it to. "You can walk down them today. Nobody's stopping you."
+
+She did not say aye to that.
+
+After it he had nothing left to put to her but the waiting, and she was better at that; Hollis had told him everyone was. She stood as her oxen stood below, as if she had been told to wait and meant to do it all winter, and let the wind have her hair. The knee began to stiffen with the standing. The cold got into his hands and stopped there.
 
 Wren had taken the glass back out of Rae's hand. "Four," she said. "Five. Their cart." The censer came in under the winch-house wall, and the man on the box took his boots down and stood for it. When it had gone by, he sat again, and put them back up.
 
@@ -406,7 +420,7 @@ Wren lowered the glass and, for once, had no number for it.
 
 Rae pinned her cloak at the throat with its plain iron clasp, as if the cold had only now arrived, and drew the hood up over all that hair.
 
-"Rae Thorne," he said. "That was your road."
+"Rae Thorne." Both names, as he gave a trooper his when the trooper had done something brave and stupid. "That was your road."
 
 "The first two names on that list rode up in my cart."
 

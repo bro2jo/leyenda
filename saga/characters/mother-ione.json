@@ -63,6 +63,12 @@
       "evidence": "you'll hear from me before dusk"
     },
     {
+      "fact": "She came up the hall on the last stroke of the dawn bell and waited at the foot of Darrow's cot until Benedek's lips stopped moving before she spoke.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "She waited until they stopped."
+    },
+    {
       "fact": "At first light the winch-brothers went down with Darrow's story of the far side of the mountain, to tell it at the winch-house fire, so that the valley would have it by noon.",
       "chapter": "01",
       "scene": "4",
@@ -81,7 +87,13 @@
       "evidence": "A bell rung for nobody tells the valley there's somebody"
     },
     {
-      "fact": "When Darrow said the law was down, she said it was down until the next ringing, and asked him to tell Wren when, once the grey cloaks are at the bars; it was not a question, and he said he would.",
+      "fact": "When Darrow said the law was down, she said it had been since dusk and asked whether he had slept any worse for it; it comes back with the next ringing.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "Did you sleep any worse for it?"
+    },
+    {
+      "fact": "She asked Darrow, who reads a line before it moves, to tell Wren when, once the grey cloaks are at the bars; it was not a question, and he said he would.",
       "chapter": "01",
       "scene": "4",
       "evidence": "will you tell Wren when?"

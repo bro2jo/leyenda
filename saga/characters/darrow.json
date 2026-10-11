@@ -225,6 +225,18 @@
       "chapter": "01",
       "scene": "4",
       "evidence": "That was your road."
+    },
+    {
+      "fact": "He told Rae Thorne he had asked fifteen times to go down those steps and she could walk down them today; it came out harder than he meant it to.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "Fifteen times I've asked to go down those steps."
+    },
+    {
+      "fact": "When the Prior told him the law had been down since dusk, he had slept like a stone, and did not say so.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "He had slept like a stone."
     }
   ],
   "relationships": [

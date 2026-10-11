@@ -89,7 +89,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council.",
-  "last_beat": "At noon on the wall-walk by the gate, through Pell's glass, a grey cloak climbed onto Rae's cart at the winch-house and put his boots up on the board. Darrow told her to go down while the rest were an hour out, ask him off her box and be on the road to Coldmere by dark; she said \"Aye\" to all of it and waited until the five were in. When he said that had been her road, she said the first two names on that list rode up in her cart.",
+  "last_beat": "At noon on the wall-walk by the gate, through Pell's glass, a grey cloak climbed onto Rae's cart at the winch-house and put his boots up on the board. Darrow told her to go down while the rest were an hour out, ask him off her box and be on the road to Coldmere by dark; she said \"Aye\" to all of it. When he said he had asked fifteen times to go down those steps and she could walk down them today, she did not say aye, and waited until the five were in. When he said that had been her road, she said the first two names on that list rode up in her cart.",
   "companions": {
     "maelis": {
       "approval": 15,
