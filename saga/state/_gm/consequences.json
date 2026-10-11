@@ -91,6 +91,30 @@
           "status": "fired@ch01:s4"
         }
       ]
+    },
+    {
+      "id": "c01.4",
+      "made": {
+        "chapter": 1,
+        "scene": "between-5",
+        "date": "2026-10-10"
+      },
+      "chose": "Stayed on the gate wall with Rae after Wren left: asked after her oxen (she would not give their names: \"They know them\"), got a line about Hollis out of her, and sat when she sat, because she had seen the leg shaking",
+      "now": {
+        "approval": {
+          "rae": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c01.4a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae would not tell him her oxen's names (\"They know them.\"); the day she tells him one unasked, it lands as a small gift, said once and not remarked on",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

@@ -426,3 +426,29 @@ Rae pinned her cloak at the throat with its plain iron clasp, as if the cold had
 
 > ⟦ THE RECKONING ⟧
 > XP 948 → 978
+
+### Between — What an Ox Will Stand
+
+Wren went off along the wall to give Pell back her glass, counting the caps under her breath. Darrow stayed where he was. So did Rae, which he had not been sure of.
+
+"Do they have names?" He nodded down at the two specks beside her cart.
+
+"Aye."
+
+"Will you tell me them?"
+
+"They know them."
+
+He tried another way in. "You drove Hollis Garrow the whole of a day once, and he cursed everything on the road."
+
+"He did the oxen before me." She was still looking down at them, and something came and went at the corner of her mouth that was plainly for them and not for him.
+
+"They'll be cold, down there with him."
+
+"They'll stand." She seemed to weigh whether he had earned the rest of it. "A mule won't stand at the winch-house. An ox'll stand all winter."
+
+The knee had gone from stiff to sullen with the standing, and he had shifted off it twice, which he did not think anyone had seen. Rae walked along the wall to the gate-ward's bench under the slit, sat at one end of it with her hands between her knees, and went on looking at the valley from there, as if the view were better.
+
+He sat at the other end before he had decided to. Maelis had to order it, most days, and Hollis had to make it a bet.
+
+"Leg was shaking," Rae said, once, to the valley.

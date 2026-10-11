@@ -23,11 +23,11 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-4"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-5"
   },
-  "last_seen_doing": "On the gate wall at noon with Sister Pell's glass, lent and counted out, counting the grey cloaks in at the winch-house; when the last of them was in she lowered the glass and, for once, had no number for it.",
+  "last_seen_doing": "Going off along the gate wall to give Sister Pell back her glass, counting the caps under her breath.",
   "now": "At Saint Ysolde's with Sister Pell's glass, lent and counted out to her. She counted the grey cloaks in at the winch-house at the foot of the Steps, three bells early: six riders, one cart, one censer. The Prior has asked Darrow to tell Wren when, once they are at the bars.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it.",
   "quote": {
@@ -175,6 +175,10 @@
     {
       "chapter": "01",
       "scene": "4"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-5"
     }
   ]
 }

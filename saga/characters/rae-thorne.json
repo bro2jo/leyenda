@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-4"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#between-5"
   },
-  "last_seen_doing": "On the wall-walk beside the gate at noon, letting the wind have her hood while a grey cloak put his boots up on her cart at the winch-house below; she said \"Aye\" to every reason Darrow gave her to go, waited until the road was shut, and then told him why.",
-  "now": "In the House, with her cart and two oxen at the winch-house at the foot of the Steps, where six grey cloaks have come in and one of them sits on her cart with his boots on the board. Darrow told her to go down while the road was open; she stayed, and said the first two names on the list rode up in her cart.",
+  "last_seen_doing": "On the gate-ward's bench on the wall-walk at noon, having sat down at one end of it so that Darrow would sit at the other, because she had seen his leg shaking.",
+  "now": "In the House, with her cart and two oxen at the winch-house at the foot of the Steps, where six grey cloaks have come in and one of them sits on her cart with his boots on the board. Darrow told her to go down while the road was open; she stayed, and said the first two names on the list rode up in her cart. Her oxen, she says, will stand all winter.",
   "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -125,6 +125,30 @@
       "chapter": "01",
       "scene": "4",
       "evidence": "The first two names on that list rode up in my cart."
+    },
+    {
+      "fact": "Her oxen have names; asked to tell Darrow them, she said they know them.",
+      "chapter": "01",
+      "scene": "between-5",
+      "evidence": "They know them."
+    },
+    {
+      "fact": "Reminded that Hollis cursed everything on the road the day she drove him, she said he did the oxen before her, and something came and went at the corner of her mouth that was for the oxen.",
+      "chapter": "01",
+      "scene": "between-5",
+      "evidence": "He did the oxen before me."
+    },
+    {
+      "fact": "Of her oxen at the winch-house with a grey cloak on her cart: they'll stand; a mule won't stand at the winch-house, and an ox will stand all winter.",
+      "chapter": "01",
+      "scene": "between-5",
+      "evidence": "An ox'll stand all winter."
+    },
+    {
+      "fact": "When Darrow's knee began to shake from the standing, she sat down at one end of the gate-ward's bench, and he sat at the other before he had decided to; then she said, once, to the valley, that his leg was shaking.",
+      "chapter": "01",
+      "scene": "between-5",
+      "evidence": "Leg was shaking"
     }
   ],
   "relationships": [
@@ -188,6 +212,10 @@
     {
       "chapter": "01",
       "scene": "4"
+    },
+    {
+      "chapter": "01",
+      "scene": "between-5"
     }
   ]
 }

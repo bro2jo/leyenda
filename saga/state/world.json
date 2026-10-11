@@ -75,11 +75,18 @@
         "2026-10-10"
       ],
       "written": "2026-10-10"
+    },
+    {
+      "scene": "between-5",
+      "title": "What an Ox Will Stand",
+      "after": 4,
+      "covers": [],
+      "written": "2026-10-10"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the low wall-walk beside the gate at noon, with Wren and Pell's glass and Rae Thorne at the parapet; below, the grey cloaks are in at the winch-house and one sits on Rae's cart with his boots on the board",
+    "detail": "the gate-ward's bench on the low wall-walk beside the gate at noon, Rae Thorne at the other end of it; below, a grey cloak sits on her cart at the winch-house",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
@@ -89,7 +96,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
   "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He can walk to the chapel and back without the stick; he cannot kneel, and he has asked fifteen times to go down the Steps and been told no fifteen times, the last at the Prior's council.",
-  "last_beat": "At noon on the wall-walk by the gate, through Pell's glass, a grey cloak climbed onto Rae's cart at the winch-house and put his boots up on the board. Darrow told her to go down while the rest were an hour out, ask him off her box and be on the road to Coldmere by dark; she said \"Aye\" to all of it. When he said he had asked fifteen times to go down those steps and she could walk down them today, she did not say aye, and waited until the five were in. When he said that had been her road, she said the first two names on that list rode up in her cart.",
+  "last_beat": "On the gate wall after Wren went off with Pell's glass, Darrow asked Rae her oxen's names; she said they know them. Reminded that Hollis cursed everything on the road, she said he did the oxen before her, and of the oxen at the winch-house: an ox'll stand all winter. When the knee began to shake from the standing, she sat at one end of the gate-ward's bench, he sat at the other before he had decided to, and she said, once, to the valley: \"Leg was shaking.\"",
   "companions": {
     "maelis": {
       "approval": 15,
