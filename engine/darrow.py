@@ -1764,7 +1764,8 @@ def cmd_food(args, cfg, rules):
             added.append(row)
         write_csv("food", rows)
         for r in added:
-            print(f"+ {r['id']} {r['item']}: {r.get('kcal') or '?'} kcal, {r.get('protein_g') or '?'} g P")
+            shown = lambda v: "?" if v in (None, "") else v  # a zero is a value, not a blank
+            print(f"+ {r['id']} {r['item']}: {shown(r.get('kcal'))} kcal, {shown(r.get('protein_g'))} g P")
     elif args.action == "list":
         for r in read_csv("food"):
             if r.get("date") == d(args.payload).isoformat():
