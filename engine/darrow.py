@@ -264,6 +264,7 @@ def gather(cfg, rules, nutrition=None):
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(), "sport_sessions": set(),
         "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
         "together": False, "pt_missed": False, "knee_unpaid": "", "addons_unpaid": set(),
+        "knee_tags": set(), "other_tags": set(),
     })
     for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
@@ -331,6 +332,9 @@ def gather(cfg, rules, nutrition=None):
             f["knee"] = "home"
         if block in block_tags:
             f["tags"].add(block_tags[block])
+            # which session gave the tag: an unpaid knee session's own rows give no Art practice
+            is_knee_row = sess.lower() in ("home", "knee", "a", "b") and block in knee_blocks
+            (f["knee_tags"] if is_knee_row else f["other_tags"]).add(block_tags[block])
         if block == "conditioning":
             m = num(r.get("hold_or_duration"))
             if m:
@@ -357,6 +361,8 @@ def gather(cfg, rules, nutrition=None):
         for a in f["addons"]:
             if a in session_tags and session_tags[a] not in f["addons_unpaid"]:
                 f["tags"].add(session_tags[a])
+        if f["knee_unpaid"]:
+            f["tags"] -= (f["knee_tags"] - f["other_tags"])
         if f["knee"] and not f["knee_unpaid"]:
             f["tags"].add("lower")
             if f["knee"].upper() in ("A", "B", "HOME"):
@@ -393,8 +399,11 @@ def mark_overshoot(facts, cfg, rules):
         for date in sorted(dates):
             f = facts[date]
             if f["knee"]:
+                planned_today = any(session_key(p) == "knee" for p in planned_for(cfg, d(date)))
                 prev = facts.get((d(date) - dt.timedelta(1)).isoformat())
-                if prev is not None and prev["knee"]:
+                if not planned_today and prev is not None and prev["knee"]:
+                    # an unplanned session the day after a session: the plan never runs them back to back. A session
+                    # the plan put on this day is never the overshoot, even after an extra one the day before.
                     f["knee_unpaid"] = "back-to-back with the day before"
                 elif paid["knee"] >= plan.get("knee", 0):
                     f["knee_unpaid"] = "beyond the week's planned knee sessions"
@@ -494,7 +503,7 @@ def deeds_for_day(date, f, cfg, rules):
             add("protein_hit")
         elif r >= R["protein_near"]["threshold"]:
             add("protein_near")
-    if f["closed"]:
+    if f["closed"] and f["logged"]:  # a day holding only `together` earns nothing: the Tether is never scored
         add("day_closed")
     return out
 
@@ -520,12 +529,22 @@ def planned_for(cfg, day):
     for ch in cfg.get("plan_changes", []):
         if ch.get("date") != day.isoformat():
             continue
-        for p in ch.get("drop", []):
+        for p in as_codes(ch.get("drop")):
             hit = p if p in base else next((b for b in base if session_key(b) == session_key(p)), None)
             if hit:
                 base.remove(hit)
-        base += list(ch.get("add", []))
+        base += as_codes(ch.get("add"))
     return base
+
+
+PLAN_CODES = ("knee", "kneeA", "kneeB", "upperA", "upperB", "cond", "pt", "sport", "accessory", "power")
+
+
+def as_codes(v):
+    """A plan_changes drop/add value as a list of codes (a lone string is one code, never its letters)."""
+    if not v:
+        return []
+    return [v] if isinstance(v, str) else list(v)
 
 
 def week_plan(cfg, ws):
@@ -778,6 +797,16 @@ def compute(cfg, rules, asof=None, write=False):
                      "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"]})
 
     tether = tether_at(asof, facts, rules)
+    try:  # the Tether only climbs: a stage the saved sheet already reached is held, in every view
+        saved = (load_json(P["sheet"]).get("tether") or {}) if P["sheet"].exists() else {}
+    except (OSError, ValueError):
+        saved = {}
+    if tether and saved.get("stage", 0) > tether["stage"]:
+        t_ = rules.get("tether") or {}
+        stage = saved["stage"]
+        names_, stages_ = t_.get("names") or [], t_.get("stages") or []
+        tether = {**tether, "stage": stage, "name": names_[stage - 1] if stage <= len(names_) else saved.get("name"),
+                  "next_at": stages_[stage] if stage < len(stages_) else None, "held": True}
 
     ember = ember_at(asof, facts, cfg, rules)
     ember_t = tier_of(ember, rules["ember"]["tiers"]) if ember is not None else None
@@ -815,13 +844,6 @@ def cmd_sync(args, cfg, rules):
     st = compute(cfg, rules, d(args.date) if getattr(args, "date", None) else None, write=True)
     write_csv("deeds", st["deeds"])
     old = load_json(P["sheet"]) if P["sheet"].exists() else None
-    ot, nt = (old or {}).get("tether") or {}, st["sheet"].get("tether") or {}
-    if nt and ot.get("stage", 0) > nt.get("stage", 0):
-        # the Tether only climbs: a corrected or moved day never takes back a stage the page may already have paid
-        names = (rules.get("tether") or {}).get("names") or []
-        stage = ot["stage"]
-        st["sheet"]["tether"] = {**nt, "stage": stage, "name": names[stage - 1] if stage <= len(names) else ot.get("name"),
-                                 "held": True}
     save_json(P["sheet"], st["sheet"])
     write_dashboards(st, cfg, rules)
     # report what changed, for the Reckoning notifications
@@ -1384,6 +1406,10 @@ def recap_text(st, cfg, rules, ws):
         out.append("- no loaded days")
     if off_plan:
         flags.append("knee sessions not as written: " + ", ".join(off_plan))
+    past = [f"{dow(x)} knee ({fx(x).get('knee_unpaid')})" for x in days if fx(x).get("knee_unpaid")]
+    past += [f"{dow(x)} {k}" for x in days for k in sorted(fx(x).get("addons_unpaid") or ())]
+    if past:
+        flags.append("work past the plan (logged, not paid): " + ", ".join(past))
     floors = [fx(x).get("floor") for x in days]
     n_graded = sum(1 for x in days if fx(x).get("check"))
     out.append(f"Floor: full {floors.count('full')}/{len(days)} · half {floors.count('half')} · "
@@ -1883,7 +1909,8 @@ def cmd_chapter_close(args, cfg, rules):
         sys.exit(f"the week of Sun {ws} – Sat {week_end} is still in progress (today is {today}); use --force to close it anyway")
     sc = week_score(ws, week_end, st["facts"], cfg, rules)
     n = chapter_no(cfg, ws)
-    if str(n) not in closed and not (args.partial_ok or args.force):
+    week_empty = not any(day_has_logs((ws + dt.timedelta(i)).isoformat()) for i in range(7))
+    if str(n) not in closed and not (args.partial_ok or args.force or week_empty):
         # the freeze is final: make sure the week's last day is in before it, so a Saturday dinner sent on Sunday
         # morning is never scored as not eaten (late logs move totals, never a frozen tier)
         last = week_end.isoformat()
@@ -1991,6 +2018,25 @@ def cmd_check(args, cfg, rules):
             problems.append(f"{where}: side '{r.get('side')}' must be L or R")
         if num(r.get("value")) is None:
             problems.append(f"{where}: value '{r.get('value')}' is not a number")
+    for i, ch in enumerate(cfg.get("plan_changes", [])):
+        where = f"config.json plan_changes[{i}]"
+        try:
+            day = d(ch.get("date", ""))
+        except Exception:
+            problems.append(f"{where}: bad date '{ch.get('date')}'")
+            continue
+        for k in ("drop", "add"):
+            if ch.get(k) is not None and not isinstance(ch.get(k), list):
+                problems.append(f"{where}: {k} must be a list of codes, e.g. [\"upperB\"]")
+            for code in as_codes(ch.get(k)):
+                if code not in PLAN_CODES:
+                    problems.append(f"{where}: {k} code '{code}' is not one of {', '.join(PLAN_CODES)}")
+        base = list(template_for(cfg, day).get(dow(day), []))
+        for code in as_codes(ch.get("drop")):
+            if code not in base and not any(session_key(b) == session_key(code) for b in base):
+                problems.append(f"{where}: drop '{code}' matches nothing planned on {dow(day)} {day} ({', '.join(base) or 'no sessions'})")
+        if not ch.get("source"):
+            problems.append(f"{where}: no source (who moved it, and where it is filed)")
     print("\n".join(problems) if problems else "all logs look clean")
 
 
