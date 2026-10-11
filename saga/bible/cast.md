@@ -31,7 +31,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** He sang, badly and without stopping. Nothing he said has been written down.
 
 ## Mother Ione
-- **Appearance:** The Prior of Saint Ysolde's, in her seventies: small and very upright, white hair cropped close under a plain linen coif, a soft round face creased like a winter apple, and pale eyes that count everyone in a room in turn. Gentle in face and manner, with iron under the gentleness. In the warming room she has the one good chair by the fire and offers it to nobody.
+- **Appearance:** The Prior of Saint Ysolde's, in her seventies: small and very upright, white hair cropped close under a plain linen coif, a soft round face creased like a winter apple, and pale eyes that count everyone in a room in turn. The creases run all over it: rosy cheeks, sparse white brows, very pale grey-blue eyes, and a small firm mouth that keeps a faint, patient smile. The coif is tied under her chin, and she wears a high-collared gown of plain grey-brown wool under a worn grey-green wool shawl. Gentle in face and manner, with iron under the gentleness. In the warming room she has the one good chair by the fire and offers it to nobody. Her portrait (`saga/art/characters/mother-ione.jpg`) is canon for her face.
 - **Voice:** She speaks in questions, and the questions are never idle. She gives an order by asking whether someone would like to do it. *"Then the Captain should hear the law, shouldn't he? Maelis?"*
 
 ## Sister Pell

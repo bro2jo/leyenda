@@ -12,7 +12,9 @@
     "faction": "menders",
     "mark": "none"
   },
-  "appearance": "The Prior of Saint Ysolde's, in her seventies: small and very upright, white hair cropped close under a plain linen coif, a soft round face creased like a winter apple, and pale eyes that count everyone in a room in turn. Gentle in face and manner, with iron under it. In the warming room she has the one good chair by the fire and offers it to nobody.",
+  "appearance": "The Prior of Saint Ysolde's, in her seventies: small and very upright, white hair cropped close under a plain linen coif, a soft round face creased like a winter apple, and pale eyes that count everyone in a room in turn. The creases run all over it: rosy cheeks, sparse white brows, very pale grey-blue eyes, and a small firm mouth that keeps a faint, patient smile. The coif is tied under her chin, and she wears a high-collared gown of plain grey-brown wool under a worn grey-green wool shawl. Gentle in face and manner, with iron under it. In the warming room she has the one good chair by the fire and offers it to nobody.",
+  "portrait": "characters/mother-ione.jpg",
+  "portrait_alt": "Portrait of Mother Ione: a small old woman in her seventies with a round, deeply creased face, rosy cheeks, very pale grey-blue eyes, sparse white brows and a faint, patient smile, white hair under a plain white linen coif tied under her chin, in a high-collared grey-brown wool gown and a worn grey-green shawl, sitting in a carved high-backed wooden chair in a stone room with a hearth fire burning beside her.",
   "first_seen": {
     "chapter": "01",
     "scene": "1",
