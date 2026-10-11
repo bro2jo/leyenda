@@ -1,7 +1,6 @@
 # Glimpses — the House between scenes
 
 One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
-
 - 2026-10-09 · body · The knee woke a moment before he did, stiff as a cold hinge, and under it the thread lay warm. Quiet, too. He knows what Maelis says about quiet. He likes it anyway.
 - 2026-10-09 · ledger · From Wren's ledgers: Lengths of the hall walked by the Captain this morning: 2. Times he stopped at the far end for breath: 0. Times he noticed: also 0.
 - 2026-10-09 · weather · Wind off the Greywater has found the gap under the hall door, and the cold comes in along the floor like it pays rent. Darrow tucks his hands into his armpits and lets it.
@@ -15,3 +14,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-10 · saying · Through the infirmary wall, a novice reciting to the cold: "Time makes it possible. Proof makes it permitted." Over and over, a little faster each time, the way you stamp your feet.
 - 2026-10-10 · overheard · Two lay brothers banking the hall fire for the night, in whispers: "Who taught you to lay a fire like that?" "Nobody." "Then why's it still going?" "Because nobody told it different."
 - 2026-10-11 · weather · The cold came down off the peaks after dark and set the trodden snow of the court like plaster, every bootprint kept, as if the mountain meant to remember who had stood there.
+- 2026-10-11 · saying · Lancers' talk, carried along the cloister gallery after dark: stiff-kneed. It can mean proud, or treasonous, or a man who cannot kneel, and the lay brother saying it seemed to mean all three at once, and not unkindly.
