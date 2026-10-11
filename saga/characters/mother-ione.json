@@ -21,17 +21,17 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "3",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-4"
   },
-  "last_seen_doing": "Holding her council in the warming room off the cloister, asking questions that are never idle, letting the Captain ask to be sent down and the Mender refuse him, and closing the council with nothing decided aloud; then calling Darrow back from the stair to ask what she ought to know before she decides whether Old Mercy rings.",
-  "now": "Prior of Saint Ysolde's, with the grey cloaks a day from the foot of the Steps. She has heard how the list was read, had the law of Old Mercy said aloud, and asked Sister Pell whether she will ring it dawn and dusk for as long as they wait. She has not yet said whether it will ring; she has asked Darrow what she ought to know first, and what the lay brothers should tell the valley.",
-  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides.",
+  "last_seen_doing": "At the foot of Darrow's cot on the last stroke of the dawn bell, telling him the winch-brothers had taken his story down to the valley and Old Mercy would not ring for nobody, and asking him to tell Wren when, once the grey cloaks are at the bars.",
+  "now": "Prior of Saint Ysolde's, with the grey cloaks in at the winch-house at the foot of the Steps. At Darrow's word the winch-brothers carried a story down to the valley at first light, that the Faithless went down the far side a week ago, and she has not had Old Mercy rung since her council: a bell rung for nobody tells the valley there's somebody. She has asked Darrow to tell Wren when, once they are at the bars.",
+  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung and would not, for nobody, and when the grey cloaks are at the bars he is to tell Wren when.",
   "quote": {
-    "text": "Then the Captain should hear the law, shouldn't he?",
+    "text": "You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?",
     "chapter": "01",
-    "scene": "3"
+    "scene": "4"
   },
   "known_facts": [
     {
@@ -61,6 +61,30 @@
       "chapter": "01",
       "scene": "3",
       "evidence": "you'll hear from me before dusk"
+    },
+    {
+      "fact": "At first light the winch-brothers went down with Darrow's story of the far side of the mountain, to tell it at the winch-house fire, so that the valley would have it by noon.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "with your far side of the mountain"
+    },
+    {
+      "fact": "She asked Darrow whether he told it for the House or for the river; he said the river had had enough of them.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "or for the river?"
+    },
+    {
+      "fact": "Old Mercy did not ring at dusk after her council, nor at the next dawn, and she says it will not ring for nobody: a bell rung for nobody tells the valley there's somebody.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "A bell rung for nobody tells the valley there's somebody"
+    },
+    {
+      "fact": "When Darrow said the law was down, she said it was down until the next ringing, and asked him to tell Wren when, once the grey cloaks are at the bars; it was not a question, and he said he would.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "will you tell Wren when?"
     }
   ],
   "relationships": [],
@@ -89,6 +113,10 @@
     {
       "chapter": "01",
       "scene": "3"
+    },
+    {
+      "chapter": "01",
+      "scene": "4"
     }
   ]
 }

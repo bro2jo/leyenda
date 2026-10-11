@@ -26,7 +26,7 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen_doing": "Wrapped in two shawls by the fire at Mother Ione's council, watching the Prior's mouth; saying the sanctuary law has lapsed twice, both for snow, never on her rope, and that she will ring Old Mercy as long as it takes.",
-  "now": "Keeper of the House's bells, asked by Mother Ione whether she will ring Old Mercy every dawn and every dusk for as long as the grey cloaks care to sit at the foot of the Steps. Fifty years she has rung the bells; she told the Prior to ask the bell if it was tired.",
+  "now": "Keeper of the House's bells, asked by Mother Ione whether she will ring Old Mercy every dawn and every dusk for as long as the grey cloaks care to sit at the foot of the Steps. Fifty years she has rung the bells; she told the Prior to ask the bell if it was tired. She has lent Wren her glass, counted out; Old Mercy has not been rung since the council.",
   "story_so_far": "Her glass in the bell tower is where the grey cloaks were first seen on the Holloway. At Mother Ione's council in the warming room she sat by the fire in two shawls and said the sanctuary law has lapsed twice, both for snow, never on her rope; asked whether she would ring Old Mercy dawn and dusk for as long as the grey cloaks wait, she said she had rung the bells fifty years, and the Prior could ask the bell if it was tired.",
   "quote": {
     "text": "Fifty years I've rung the bells. Ask the bell if it's tired.",
@@ -60,6 +60,12 @@
       "chapter": "01",
       "scene": "3",
       "evidence": "the cup chatter twice before it settled"
+    },
+    {
+      "fact": "She lent Wren her glass counted out, one glass, two caps and one strap, to be counted back by the next bell.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "Counted out. One glass, two caps, one strap"
     }
   ],
   "relationships": [
@@ -94,6 +100,11 @@
     {
       "chapter": "01",
       "scene": "3"
+    },
+    {
+      "chapter": "01",
+      "scene": "4",
+      "mention": true
     }
   ]
 }

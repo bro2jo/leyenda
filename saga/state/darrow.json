@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 4,
   "rank": "Bound",
-  "xp": 973,
+  "xp": 978,
   "xp_this_level": 600,
   "xp_next_level": 1000,
   "proficiency": 2,
@@ -51,7 +51,7 @@
     }
   },
   "ember": {
-    "value": 77,
+    "value": 75,
     "tier": "Steady",
     "effect": "none"
   },

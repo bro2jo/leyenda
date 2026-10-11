@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 1,
     "beat": "b1.1",
-    "next_scene": 4,
+    "next_scene": 5,
     "stage": "scene",
-    "last_written": "ch01:s3"
+    "last_written": "ch01:s4"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
@@ -110,8 +110,8 @@
         "plan": "Open at the dawn bell (the House's hour bell, not Old Mercy), in one movement and only two owed lines: Benedek's lips moving and the Captain's beside them (c01.3a), and Mother Ione coming with the bell to answer the lie with a question (c01.1a): she lets the valley story go down with the winch-brothers, says Old Mercy has not rung since the council and will not for nobody, and hands him the bell's timing by a question that is an order ('You read a line before it moves, Captain. When they're at the bars, will you tell Wren when?'). Hollis dry (c01.2a) waits: it lands at the gatehouse window in the climax. Then one move, to noon on the low wall-walk by the gate (no stair): Wren with Pell's glass borrowed and counted, Rae beside Darrow; the riders and the cart he could see from the hall window, but only the glass shows one grey cloak putting his boots up on Rae's cart at the winch-house. She could still go down past them and does not, yet.",
         "micro": null,
         "float": false,
-        "status": "next",
-        "wrote": null,
+        "status": "written",
+        "wrote": "ch01:s4",
         "turn": "By the end Rae has chosen not to drive down past the grey cloaks while she still could, and said why in a single line; the cart at the winch-house is no longer hers to move. Darrow attempts to persuade her to go while the road is open, and is refused.",
         "challenge": null,
         "invite": null

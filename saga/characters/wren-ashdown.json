@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "01",
-    "scene": "1",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-4"
   },
-  "last_seen_doing": "Standing in the infirmary doorway with the news of the riders, answering Hollis's question of who was first on the list by looking at Darrow instead of speaking, before she went back to the bell tower.",
-  "now": "She has gone to the bell tower, from which, by Sister Pell's glass, she brought word of six grey-cloaked riders and a cart with a smoking censer on the Holloway, expected at the foot of the Steps by tomorrow night if the snow holds off. Mother Ione has been told. The whole House knows there is a list of the Faithless at Saint Ysolde's; Wren knows that Hollis is second on it, and when he asked who was first she only looked at Darrow.",
-  "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow.",
+  "last_seen_doing": "On the gate wall at noon with Sister Pell's glass, lent and counted out, counting the grey cloaks in at the winch-house; when the last of them was in she lowered the glass and, for once, had no number for it.",
+  "now": "At Saint Ysolde's with Sister Pell's glass, lent and counted out to her. She counted the grey cloaks in at the winch-house at the foot of the Steps, three bells early: six riders, one cart, one censer. The Prior has asked Darrow to tell Wren when, once they are at the bars.",
+  "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it.",
   "quote": {
     "text": "There's eleven hundred and seventeen. Everyone says a thousand. Everyone's wrong.",
     "chapter": "00",
@@ -93,6 +93,24 @@
       "fact": "Her ledger at the head of Chapter 1 also counts one cart at the winch-house, Thorne's, and one load waiting on the cage.",
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "fact": "Sister Pell lent her the glass counted out, one glass, two caps and one strap, to be counted back by the next bell.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "One glass, two caps, one strap"
+    },
+    {
+      "fact": "From the gate wall at noon she counted six riders, one cart and one censer, with one of the six already off the road: three bells early, because the snow held off.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "Three bells early. The snow held off."
+    },
+    {
+      "fact": "When the five came in at the winch-house she lowered the glass and, for once, had no number for it.",
+      "chapter": "01",
+      "scene": "4",
+      "evidence": "for once, had no number for it"
     }
   ],
   "relationships": [
@@ -153,6 +171,10 @@
     {
       "chapter": "01",
       "scene": "1"
+    },
+    {
+      "chapter": "01",
+      "scene": "4"
     }
   ]
 }
