@@ -226,18 +226,22 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 | | |
 |---|---|
 | **Placement** | Own days, alternating A → B, ≥2 days apart. This week: **Mon 10/12 B (session 2)** → **Upper A (session 3) on Thu 10/15, or Fri 10/16 if PT lands Thursday** |
-| **Sessions run** | 1 since 9/20: Upper A, Fri 10/9. Upper B due today. The week of 10/4 ended 1 of 2 |
+| **Sessions run** | 2 since 9/20: Upper A Fri 10/9 · Upper B Mon 10/12. The week of 10/4 ended 1 of 2 |
 | **Block** | Block 0 (re-entry) through the week of 10/18. Block 1 from 10/25 if 2 of 2 in the weeks of 10/11 and 10/18 |
 | **Unlocks** | Upper session 3: standing options and the chest pass. Saturday power & mobility earliest Sat 10/24. Seated throws need the PT's OK |
 | **Optional items** | **Off for the week of 10/11** (accessory day): the week of 10/4 had missed daily-minimum days |
 | **New from Mon 10/12** | Upper warm-up: thoracic extension → **doorway pec sequence** (contract-relax, chosen 10/12) → face pull with external rotation (seated) · tissue & trunk finisher · posture cooldown after every knee session (first attempt 10/11 skipped) |
 
-**Upper B (Mon 10/12): first time, upper session 2, seated or lying.** 3 sets each; loads that leave about 3 reps; set 1 of each lift finds the load.
+**Upper B, 10/12 — last dose and next (session 4, ~Mon 10/19).** Bike 18 first. C ran 2 of 3 rounds; the Copenhagen was skipped. Session minutes and RPE not reported.
 
-| Block | Lift | Today |
+| Lift | 10/12 | Next |
 |---|---|---|
-| B1 / B2 | Incline press (barbell in the rack with safeties) · chin-grip cable pulldown, seated | 3 × 8–10 each, alternating. Bench 105 was "pretty tough" on 10/9, so the incline starts lighter |
-| C (tri-set × 3) | **Chest-supported DB row** (the one-arm row starts at the next Upper B) · **rest 60–90 s** · seated neutral-grip DB press · **prone incline Y-raise** (replaces the reverse fly, 10/12) | 8–10 @ 15s · 6–8 @ ~20s (a flat neutral-grip DB press if overhead reach isn't clean) · 10–12 @ ~5 lb |
+| Face pull with external rotation (warm-up) | 50 lb × 2 × 15, standing, a few reps left | Same (standing is allowed from session 3) |
+| Incline barbell press | 95 × 5 / 8 / 5, last set ~2 in reserve: heavier than a first exposure should be | **85 × 3 × 8–10** (one step down, 3–4 in reserve) |
+| One-arm chin-grip cable pulldown | 80 × 3 × 8/side (one-arm in place of two-arm) | Same load, reps toward 10 |
+| C1 row | Chest-supported DB row 15s × 2 × 8 | **One-arm DB row** (hand on the bench, both feet on the floor), new: set 1 finds the load (~25 lb), 8/side |
+| C2 seated neutral-grip DB press | 20s × 2 × 8 (top of the range) | 20s × 3 × 6–8: the third round is the change. Rest 60–90 s before it |
+| C3 | Chest-supported DB reverse fly 5s × 2 × 10 | **Prone incline Y-raise** ~5 lb × 10–12 (Add-On, revised 10/12) |
 
 **Upper A, 10/9 — last dose and next (session 3).** Session RPE 7/10.
 
