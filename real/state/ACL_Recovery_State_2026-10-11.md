@@ -1,38 +1,50 @@
-# ACL Recovery State — Sun 2026-10-11 (POD 48, post-op week 7)
+# ACL Recovery State — Checkpoint Sun 2026-10-11, revised Mon 2026-10-12 (POD 49, post-op week 7)
 
-*The current program and where things stand, present tense only. The dashboard's ten sections are kept, so the Working Rules' references ("ladders live in the Recovery State, section 6") still hold; sections 2, 4 and 8 point to where that history lives in this repo.*
+**The single source for everything current** (see `claude/ACL_Project_Index.md`). Rules live in the Working Rules, the add-on design in the Add-On, and the PT's words in PT Notes.
 
-- **Program set:** Sun 2026-10-11 checkpoint: the 10/9 program (PT 9 folded in, Nick's 10/9 instruction, A/B alternation, upper body on its own days, the daily minimum cut to one weighted heel prop) plus the sport plan's three throwing sessions (from this week) and the trainer's catch-up week for upper (10/10).
-- **Last reviewed:** Sun 2026-10-11 (`real/checkpoints/2026-10-11.md`).
-- **Supersedes:** `real/state/archive/ACL_Recovery_State_2026-10-04.md` (set 10/4, revised 10/9). Earlier versions: `real/state/archive/ACL_Recovery_State_2026-10-04_rev10-09_dashboard.md` (as uploaded), `real/state/archive/ACL_Recovery_State_2026-10-04_v10-04.md`.
-- **Next:** reviewed at the 10/18 checkpoint (the Phase 3 gate review week).
-- **Source priority:** latest PT/surgeon instruction (`real/visits/`) → rehab master plan → this file and the Working Rules (`real/plan/ACL_Dashboard_Working_Rules.md`) → Whole-Athlete Add-On → logs → general ACL knowledge.
+- Covers dashboard week **Sun 10/4 → Sat 10/10**, plus this week so far: Sun 10/11's Session B and Mon 10/12's morning, which is its verdict.
+- **Revised in place Mon 10/12 at midday** (mid-week checkpoint on request). Monday's bike and Upper B were still to come.
+- Replaced `ACL_Recovery_State_2026-10-04.md` on 10/11.
+
+Source priority: latest PT/surgeon instruction → rehab plan → this file → Whole-Athlete Add-On → logs → general ACL knowledge.
 
 ---
 
 ## 1. Fixed facts
 
 - **Surgery:** 2026-08-24 — LEFT isolated ACL reconstruction, patellar tendon autograft. No meniscus, cartilage, or other procedures. The plan applies unmodified.
-- **Injury:** 2026-07-14. Prehab from 2026-07-22.
-- **Surgeon (9/25):** no brace; no crutches; very pleased with flexion and extension; **ramp up strength as long as the knee stays quiet**.
+- **Injury:** 2026-07-14. Clinic prehab from 2026-07-22.
+- **Sport:** a combination of ultimate, court, and field sports.
+- **Surgeon (9/25):** no brace; no crutches; very pleased with flexion and extension; ramp up strength as long as the knee stays quiet.
 - **PT:** Cleveland Clinic Rehabilitation & Sports Therapy.
   - Nick Immel PT oversees and treated 10/8; Cody Rardon PTA treats.
-  - Weekly, usually Fridays; 10/1 and 10/8 were both Thursday reschedules.
-  - **Next visit: not set. Usual slot ~Thu 10/15 or Fri 10/16 — confirm.**
+  - Weekly, usually Fridays; 10/1 and 10/8 were Thursday reschedules.
+  - **Next visit: not booked as of Mon 10/12.** Target Thu 10/15 or Fri 10/16; ask for the quad test when booking.
   - **Nick (10/9): progression is up to the master plan; his approval isn't needed; don't push through pain.**
 - **Right-knee reference (pre-op):** extension 0° AROM (hyperextension on a heel prop never measured), flexion 144°, quad 83.7 lb, hamstring 79 lb. **83.7 / 79 lb are the strength targets.**
 - **Left pre-op:** extension −1°, flexion 144°, quad 58.9 lb (LSI 70.4%), hamstring 55.8 lb (LSI 70.6%).
-- **Strength testing:** single-leg leg press 1RM (10/8): R 14 plates / L 9 plates = 64%. It is a whole-leg test, not a quad test. **No post-op dynamometer in five visits.**
+- **Body mass baseline:** 159.8 lb (72.5 kg), Sun 10/11, 5:30 PM. Weigh in Sundays at the same time. Protein target 1.6–2.0 g/kg ≈ 116–145 g/day.
 - **Calendar:**
-  - Post-op week n = POD 7n−6 to 7n (Tue → Mon). Week 7 = Tue 10/6 – Mon 10/12; week 8 starts Tue 10/13.
-  - Phase 4 earliest by calendar: week 9, Tue 10/20 (POD 57).
-  - **The graft's weakest window (~weeks 6–12) runs now through ~Mon 11/16 (POD 84).**
+  - Post-op week 7 ends Mon 10/12; week 8 = Tue 10/13 – Mon 10/19.
+  - Phase 4 earliest: week 9, Tue 10/20 (POD 57).
+  - **The graft's weakest window (~weeks 6–12) runs through ~Mon 11/16 (POD 84).**
+- **Home equipment:**
+  - Have: power rack and barbell with a cable system and ankle attachments; DBs; benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap.
+  - Don't have: leg press, leg curl, or knee-extension machine; wobble board.
 
 ---
 
-## 2. Current reading
+## 2. Now — Mon 10/12 midday (POD 49)
 
-*Not kept here. Each morning is in `real/logs/daily_log.csv` (`python3 engine/darrow.py today`); the plan for the next few days is in `real/NOW.md`.*
+- **Morning:** swelling **trace** (described as mild trace; same grade as Sunday) · pain 0 · extension good (self). Stiffness, catch and wellness not reported.
+- **Verdict on Sun 10/11's Session B: clean** on everything reported. That covers the ~8-change batch, including the RDL jump to 45 lb/hand. **The 10/11 doses are the Session B baseline** (§6).
+- **Session B, 10/11:**
+  - 80 min, RPE 7: session load 560, the first on record
+  - Forward step-down controlled (self); RDL at 45 lb/hand felt easy
+  - Evening: pain 0, no fullness, gait great
+  - Not done: posture cooldown; eyes-closed drill (it turned out to be a wobble-board drill, §5)
+- **Still to do today:** heel prop 10 lb × 10 min · bike 18 · **Upper B** (session 2, seated or lying) with the new warm-up and the finisher · **book PT**.
+- **Tue 10/13:** Session A, after the pre-session check.
 
 ---
 
@@ -42,190 +54,284 @@
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| Full/symmetric ROM | **Met** | Extension 2° hyperext AROM on 10/8, the third clinic reading at 2° (9/11, 10/1); the right was 0° AROM pre-op. Flexion 146° (9/25, 10/8) vs the right's 144°. One refinement left: the right knee's passive hyperextension on a heel prop is unmeasured (weekly photo; ask the clinic) |
-| Normal gait | **Met** | Nick 10/8: good pattern, equal weight bearing, no device, no brace |
-| Minimal/no post-exercise effusion | **Met** | Trace on every graded morning 10/6–10/9, including after the ~12-change home session (10/6) and the hardest PT session (10/8) |
+| Full/symmetric ROM | **Met** | Extension 2° hyperext AROM on 10/8 (third clinic reading at 2°); the right was 0° AROM pre-op. Flexion 146° vs the right's 144°. Refinement: the right knee's passive hyperextension on a heel prop is unmeasured |
+| Normal gait | **Met** | Nick 10/8 |
+| Minimal/no post-exercise effusion | **Met** | Trace on every graded morning 10/6–10/12 (10/10 not reported), including after the three biggest sessions |
 | No post-exercise pain flare | **Met** | Pain ≤2 in every session; no flare since 9/11–12 |
-| **Quad LSI ≥70%** | **Unmeasured** | The SL leg press 1RM (64%) is whole-leg, so the hip and calf can cover for the quad; it is not one of the plan's tests (isokinetic, handheld dynamometer, knee-extension machine). Target ≈58.6 lb on the left vs 83.7 on the right, or vs the right retested |
-| Good step-down / single-leg control | **Probably met** | 12" step-up with knee drive (PT), unassisted split squat, SL sit-to-stand 18". Forward 6" step-down not done since 10/1 ("still challenging" then); the first Session B at home (Sun 10/11) shows it |
-| Balance / joint-position control | **Met** | BOSU + ball toss 3 × 45 s; eyes-closed stance (PT 10/8) |
+| **Quad LSI ≥70%** | **Unmeasured** | The SL leg press 1RM (64%) is whole-leg, not one of the plan's tests. Target ≈58.6 lb on the left vs 83.7 on the right, or vs the right retested |
+| Good step-down / single-leg control | **Probably met** | Forward step-down at home 6.5" 2 × 10, controlled (self, 10/11); SL sit-to-stand 20" unassisted; 12" step-up with knee drive (PT). Needs the PT to watch a step-down |
+| Balance / joint-position control | **Met** | BOSU + ball toss; eyes-closed wobble board (PT 10/8) |
 
-**Phase 4 waits on one thing: the quad test.** Everything else is met or is shown by the first home Session B.
-
----
-
-## 4. Measurements log
-
-*Not kept here. Instrument numbers: `real/logs/measurements.csv` (`python3 engine/darrow.py measures`). Daily self-checks (swelling grade and trend, pain, extension, flexion, catch): `real/logs/daily_log.csv` (`python3 engine/darrow.py show daily DATE`).*
+**Phase 4 waits on the quad test.**
 
 ---
 
-## 5. Latest PT and surgeon instructions
+## 4. Measurements
 
-- **Nick 10/9 (patient-reported):** progression is up to the master plan; his approval isn't needed; don't push through pain.
-- **PT 10/8 (visit 9, Nick, written note):**
-  - upright bike L5 6'
-  - SL leg press 1RM test
-  - leg press L only, 6 plates
-  - standing double-leg heel raise, 35# DBs, 2 × 15
-  - standing bird dog, 8# KB, 2 × 15
-  - **12" step-up with opposite knee drive, 2 × 15 L**
-  - multi-hip abduction / extension / flexion (knee straight), 4 plates, 2 × 15, alternating
-  - eyes-closed double-leg stance, 1' each way
-- **Nick 10/8 (patient-reported):** keep progressing; add today's items alongside the master plan; well-balanced sessions that are challenging and progressing.
-- **PT 10/1 items (in force):** wall squat · heel tap slow eccentric · forward step-down 6" · isometric knee extension at 90° · weighted heel prop · step hamstring stretch.
+### Anchors
+
+| Date | POD | Extension L | Flexion L | Strength | Source |
+|---|---|---|---|---|---|
+| pre-op | — | −1° (R 0°) | 144° (R 144°) | Quad 58.9 / 83.7 lb (70.4%) · ham 55.8 / 79 lb (70.6%) | Dynamometer, goniometer |
+| 9/11 | 18 | 2° hyperext | 130° A / 135° P | — | Goniometer |
+| 9/25 | 32 | −3° (likely 3° short; the outlier) | 146° A | — | Goniometer |
+| 10/1 | 38 | 2° hyperext (after a weighted stretch) | — | — | Goniometer |
+| **10/8** | **45** | **2° hyperext AROM** | **146°** | **SL leg press 1RM R 14 / L 9 plates (64%, whole-leg)** | Goniometer, CLP |
+
+- **Swelling grades:** 1+ (9/20–9/27) → ungraded 9/28–10/5 → **trace 10/6–10/12** (10/10 not reported).
+- **Body mass:** 159.8 lb (10/11).
+- **Session load (RPE × min):** 10/11 Session B 7 × 80 = **560**, the first on record and the reference for later sessions.
+
+### Last three weeks
+
+| Date | POD | Swelling (grade) | Pain | Notes |
+|---|---|---|---|---|
+| 9/27 | 34 | 1+ (near trace) | 0 | — |
+| 9/28–10/5 | 35–42 | not graded | 0 | Sessions 9/28 and 9/30; PT 10/1; no sessions 10/4–10/5 |
+| 10/6 | 43 | trace | — | Session A, ~12-change batch |
+| 10/7 | 44 | trace | — | — |
+| 10/8 | 45 | trace | — | PT 9 (Nick) |
+| 10/9 | 46 | trace (barely visible) | — | Upper A; bike 15 |
+| 10/10 | 47 | not reported | — | Zero day |
+| 10/11 | 48 | trace (low side) | 0 | Session B, ~8-change batch, 80 min, RPE 7; body mass 159.8 |
+| 10/12 | 49 | trace (mild) | 0 | Verdict on Session B: clean |
+
+No post-op dynamometer in five visits.
+
+---
+
+## 5. PT and surgeon instructions in force
+
+- **Nick 10/9 (patient-reported):** progression is up to the master plan; no approval needed; don't push through pain.
+- **Nick 10/8 (patient-reported):** keep progressing; add the PT's items alongside the master plan; well-balanced sessions that are challenging and progressing.
 - **Surgeon 9/25:** no crutches; ramp up strength while the knee stays quiet.
-- **Earlier PT verbal (in force):** painless catch is normal · 18" sit-to-stand OK pain-free · bodyweight/DB substitutes for machine items.
-- **No longer held for the PT (Nick 10/9):**
-  - seated knee extension 90°→45° (plan Phase 3)
-  - heel prop weight
-  - wall squat depth
-  - isometric angles
-  - NMES (dropped)
-  - loaded bridge and slow-eccentric tempo (plan-variable progressions)
-- **Still through the PT / clinic:**
-  - **quad strength test, both sides**
-  - impact prep and drop jumps (plan: "when appropriately cleared")
-  - running (plan: "rehabilitation team agrees")
-  - BFR, Spanish squat, seated rotational throws (not in the plan)
+- **Earlier PT verbal:** painless catch is normal · 18" sit-to-stand OK pain-free · bodyweight/DB/cable substitutes for machine items.
 
-*The questions for the next visit are in `real/NOW.md`.*
+**PT-introduced items (in-plan):**
+
+| Date | Items |
+|---|---|
+| 10/1 | Wall squat · heel tap slow eccentric · forward step-down 6" · isometric knee extension 90° · weighted heel prop · step hamstring stretch |
+| 10/8 | 12" step-up with opposite knee drive · standing heel raise 35# DBs · standing bird dog 8# · multi-hip abduction / extension / flexion · **eyes-closed double-leg stance on a wobble board, 1 min each way** (wobble board per patient, 10/11) · bike level 5 |
+
+**Still through the PT / clinic:**
+- quad strength test
+- impact prep and drop jumps
+- running
+- BFR, Spanish squat, seated rotational throws (not in the plan)
+
+### For the next visit (the one list)
+
+1. **Book the quad test, both sides, plus hamstrings** — ask when booking. Test the right too: 83.7 / 79 lb are the targets.
+2. Watch a forward step-down (single-leg control gate).
+3. The right knee's hyperextension measured on a heel prop.
+4. Confirm the home version of the wobble-board drill: both feet on the BOSU dome, eyes closed, 1 min.
+5. If wanted: BFR · Spanish squat · seated rotational med-ball throws (~10/24).
+6. One-line heads-up: upper body on its own days; the right leg mirrors the left's single-leg work.
+7. Which PTA treated on 10/1.
 
 ---
 
-## 6. Current program — Phase 3 (set 10/9; this file 10/11)
+## 6. Current program — Phase 3
 
-### Weekly rhythm (Sun → Sat)
+### This week (Sun 10/11 → Sat 10/17)
 
-| Day | Knee | Around it |
-|---|---|---|
-| Sun | Knee session (next in the A/B rotation); the Sunday checks first | — |
-| Mon | — | Bike → Upper A |
-| Tue or Wed | Knee session | — |
-| Wed | — | Throwing A (control + breaks) |
-| Thu | — | Bike → Upper B |
-| Fri | PT | Throwing B (deception + overheads) |
-| Sat | — | Bike · Throwing C (long throws) · film 10–15 min |
+| Day | Plan |
+|---|---|
+| Sun 10/11 | ✓ **Session B** (80 min, RPE 7) · heel prop · sauna |
+| Mon 10/12 | ✓ Morning verdict (clean) · heel prop · bike 18 → **Upper B** → finisher · book PT |
+| Tue 10/13 | **Session A** (fixed Tuesday: keeps a day's gap from PT on Thursday or Friday) |
+| Wed 10/14 | Heel prop. Off |
+| Thu 10/15 | PT if booked Thursday. Otherwise bike 21 → **Upper A** → finisher |
+| Fri 10/16 | PT if booked Friday. If PT was Thursday: bike 21 → **Upper A** → finisher |
+| Sat 10/17 | Heel prop · bike 24 |
+| Sun 10/18 | Weigh-in (5:30 PM), **first extension photo**, SLR lag, flexion → checkpoint → **Session B** · Phase 3 gate review |
 
-- Every day: the daily minimum.
-- Sessions alternate **A → B → A** regardless of day. Three loaded days, none back-to-back by design. Throwing is not knee load in Phase 3 (seated or square-stance, easy effort, no pivot, no step-out: `real/plan/sport/sport_plan.md` §3, §5) and never replaces the daily minimum.
-- **Catch-up week of 10/11 (trainer 10/10):** upper every other day, **Mon 10/12 Upper B → Wed 10/14 Upper A → Fri 10/16 Upper B**; Session A on **Tue 10/13** so Wednesday carries upper. The template above resumes 10/18.
-- **Next:** Tue 10/13 **Session A** → PT (confirm day) → Sun 10/18 Session B.
+Rhythm structure and rotation rules: Working Rules.
 
-### Daily minimum — every day
+### Daily minimum
 
-- **Morning check (~30 s):** swelling grade · extension side by side · pain · catch.
-- **Weighted heel prop:** 10 lb, 10 min, once a day. Weight on the lower thigh, never on the kneecap; quad relaxed.
-  - Stops being daily once the side-view photo shows the left as straight as the right; then it's a weekly check.
-  - Upper-set rests with the leg up count as extra minutes.
-- **Dropped 10/9:** NMES, quad sets, heel slides, SLR, patellar glides, routine compression. The plan uses them for poor activation and early ROM; both are resolved.
-- **Weekly (Sunday):** SLR lag (one rep) · flexion (one heel slide vs the right) · extension photo · body mass.
-- **Optional:** Game Ready after big sessions · step hamstring stretch · posture drills.
+- **Morning check:** swelling grade · extension side by side · pain · stiffness · catch · wellness 1–5.
+- **Weighted heel prop: 10 lb, 10 min, once a day.** Weight on the lower thigh, never on the kneecap; quad relaxed.
+- Becomes a weekly check once the side-view photo shows the left as straight as the right. The first photo is due Sun 10/18.
 
-### Progression rules (full text: Working Rules, load rules 3–7)
+### PT items mapped into the home sessions
 
-- **Pain:** 0–2 fine · 3–4 hold that exercise, don't progress · ≥5 reduce or stop. Front-of-knee pain is watched most closely. Never push through pain.
-- **Effort:** every working set ends with **2–3 clean reps left (RPE 7–8)** once that exercise has produced a clean morning at its current dose. New items and new loads start at 3–4 in reserve. Never to failure.
-- **Mechanics end the set before effort does:** knee drifting in, hip dropping, rushed lowering.
-- **One change per exercise per session,** made on the last set, only if the earlier sets were clean.
-- **Load steps:** one DB increment or ≤10%. No first-exposure jumps.
-- **One new exercise per session,** bodyweight or lightest load first.
-- A morning that isn't clean reverses **every** change from the previous session.
+| PT item | Home slot |
+|---|---|
+| 12" step-up with knee drive | Step-up slot (A) |
+| Standing heel raise 35 lb | Calf slot (A) |
+| Multi-hip | Cable hip 4-way (B) |
+| Bird dog | Session B |
+| Eyes-closed wobble board | Home version (both feet on the BOSU dome, eyes closed, 1 min; confirm at PT). Its own drill after the BOSU ball toss, both sessions |
+| Heel tap | A's eccentric item |
+| Forward step-down | B's step-down |
+| 90° isometric | Beside the cable knee extension (A) |
+| Wall squat | Session A |
+| SL leg press | SL sit-to-stand at home (both sessions) |
+
+### Machine substitutes at home
+
+- SL sit-to-stand (leg press)
+- Standing cable hamstring curl, ankle strap, facing the stack (leg curl)
+- Strap isometric at 90°
+- **Cable seated knee extension 90°→45°:** facing away from the stack, low pulley behind, cable under the seat, ankle strap. Fallback: band
+- Standing cable hip 4-way, ankle strap (multi-hip)
+- BOSU dome, both feet, eyes closed (wobble board)
+
+**Clinic numbers:** SL leg press 55# 2 × 10 (10/1), 6 plates (10/8), 1RM R 14 / L 9 plates · leg curl 47.5# · multi-hip 4 plates.
+
+### Current depths and heights
+
+| Item | Current |
+|---|---|
+| SL sit-to-stand | Unassisted at 20" (10/11, clean). Assisted at 18" (10/6, clean) |
+| Wall squat | No deeper than the SL sit-to-stand |
+| Heel tap | 5" |
+| Forward step-down | 6.5" (10/11, clean, controlled) |
+| Step-up | 12" (PT) |
+
+### Progression rules
+
+Full text: Working Rules, load rules 3–7.
+- **Pain:** 0–2 fine · 3–4 hold · ≥5 reduce or stop. Never push through pain.
+- **Effort:** 2–3 reps left once clean at that dose; new items and new loads at 3–4 left.
+- **One change per exercise per session.** One new exercise per session. Load steps ≤10% or one increment.
+- A morning that isn't clean reverses every change.
 
 ### Session A — knee dominant (next: Tue 10/13)
 
-Doses below are the last clean dose (10/6, clean morning 10/7). "Next" = the one change for the next session.
+"→" marks the one change. Monday's morning was clean, so these doses stand; Tuesday's pre-session check still gates them.
 
 | # | Exercise | Dose next | Ladder — one step per session [plan Phase 3 target] |
 |---|---|---|---|
-| WU | Bike · TKE red (optional) | 8 min · 2 × 15 | — |
-| 1 | SL sit-to-stand, 18" (leg-press slot) | L 2 × 12, slight R-foot assist → **no assist on the last set** · R 2 × 12 | no assist → 3 × 10 → 3 × 12 → DB in hand [3 × 8–12] |
-| 2 | Step-up, 12" with opposite knee drive (PT 10/8) | L 2 × 15 · R 2 × 15, bodyweight. Needs a 12" step (confirm). Fallback: 8", 3 × 10 @ 25 lb DBs | 3 × 12 → DBs at 12" [3 × 8–10] |
-| 3 | Split squat, unassisted | 2 × 8/side, bodyweight → **3 × 8** | DBs, +5 lb steps [3 × 8–10] |
-| 4 | **Seated knee extension 90° → 45° — NEW** (plan Phase 3) | L 2 × 15, slow tempo, RPE 5–6 · R 2 × 15. Band anchored behind the bench leg or an ankle weight (confirm). Range stops at 45° | 3 × 15 → 3 × 20 → more load [2–3 × 15–20, RPE 5–7]. Front-of-knee pain >2 → shorten the range or lighten |
-| 5 | Isometric knee extension 90°, strap (PT 10/1) | L 10 × 10 s, max effort | add 60° (plan: ~60° and 90°) |
-| 6 | Heel tap, 5", slow eccentric (PT 10/1) | L 2 × 10 | 3 × 10 → 6" (height rule) |
-| 7 | Wall squat (PT 10/1) | 2 × 10, no deeper than the SL sit-to-stand | 3 × 10 → depth (plan decision, pain-free) |
-| 8 | Standing heel raise, 35 lb DBs (PT 10/8) | 2 × 15 | 3 × 15 → single-leg L bodyweight → single-leg + DB [3–4 × 10–15] |
-| 9 | SL balance + ball toss on BOSU · eyes-closed double-leg stance (PT 10/8) | 3 × 45 s · 1 min each way | + perturbation (partner nudge, off-center tosses) |
+| WU | Bike · TKE (optional) | 8 min · 2 × 15 | — |
+| 1 | SL sit-to-stand | L 2 × 12 → **at 18", unassisted** · R same. If 18" isn't clean: 20" → **3 × 12** instead | 18" unassisted → 3 × 12 → DB in hand [3 × 8–12] |
+| 2 | Step-up, 12" with opposite knee drive (PT 10/8) | L 2 × 15 · R 2 × 15, bodyweight (PT dose; first at home) | 3 × 12 → DBs at 12"; or slow lowering [3 × 8–10] |
+| 3 | Split squat, unassisted | 2 × 8/side → **3 × 8** | DBs, +5 lb steps; or slow lowering [3 × 8–10] |
+| 4 | **Cable seated knee extension 90° → 45° — NEW** | L 2 × 15, slow, RPE 5–6, lightest setting that loads the quad · R 2 × 15 | 3 × 15 → 3 × 20 → +1 plate [2–3 × 15–20, RPE 5–7]. Front-of-knee pain >2 → shorten the range or lighten |
+| 5 | Isometric knee extension 90°, strap (PT 10/1) | L 10 × 10 s, max effort | add 60° |
+| 6 | Heel tap, 5", slow eccentric (PT 10/1) | L 2 × 10 | 3 × 10 → 6" |
+| 7 | Wall squat (PT 10/1) | 2 × 10, no deeper than the SL sit-to-stand | 3 × 10 → depth (depth rule) |
+| 8 | Standing heel raise, 35 lb DBs (PT 10/8) | 2 × 15 (PT dose; first at home) | 3 × 15 → single-leg straight-knee hold 3 × 30 s → single-leg L → + DB [3–4 × 10–15] |
+| 9 | SL balance + ball toss on BOSU · then the eyes-closed drill | 3 × 45 s · 1 min, both feet on the BOSU dome, eyes closed, inside the rack with hands hovering near the uprights | + perturbation |
+| CD | Posture cooldown (Add-On §3) | ~6 min | chin nod → deep neck flexor hold |
 
-- **Next session's batch:** knee extension (new) · SL sit-to-stand assist off · split squat third set · step-up to 12" with knee drive (PT dose) · heel raise 35 lb (PT dose) · eyes-closed stance (PT dose).
-- **Short on time:** drop 9 → 8 → 7 → 6 → 3.
+- **Batch:** knee extension (new) · SL sit-to-stand to 18" unassisted · split squat third set · step-up 12" · heel raise 35 lb · eyes-closed drill (first at home).
+- **Short on time:** drop 9 → 8 → 7 → 6 → 3. On a short day, the posture cooldown is the 90/90 hip lift and chin nods.
 - **Minimum session:** warm-up + 1, 2, 4, 5 (~30 min).
 
 ### Session B — posterior / single-leg (next: Sun 10/18)
 
-| # | Exercise | Dose next | Ladder [plan Phase 3 target] |
-|---|---|---|---|
-| WU | Bike | 8 min | — |
-| 1 | Forward step-down, 6" (PT 10/1) | L 2 × 10 (6.5" step at home, 10/11) | 3 × 10 → 7" → 8" (height rule) [3 × 8–10] |
-| 2 | SL sit-to-stand, 18" | same dose as Session A | same ladder |
-| 3 | RDL, DBs | 3 × 10 @ 45 lb/hand (10/11) | +5 lb/hand steps; slow-eccentric tempo is an option as its one change [3 × 8–12] |
-| 4 | Lateral lunge — **NEW** | 2 × 8/side, short range, bodyweight | 3 × 8 → full range [3 × 8 each direction] |
-| 5 | Standing hamstring curl, cable | 2 × 10 each leg @ 30 lb (10/11) | 3 × 10 → 3 × 15 → +load [3 × 10–15] |
-| 6 | SL bridge | 3 × 8 each side | 3 × 10 → 3 s hold → load (in-plan from 10/9) |
-| 7 | Standing cable hip 4-way, cable at the ankle (PT 10/8 multi-hip + plan adduction) | abduction · adduction · extension · flexion (knee straight), 2 × 10 each side @ 20 lb, alternating (10/11) | 2 × 15 → 3 × 15 → +load [2–3 × 10–15] |
-| 8 | Standing bird dog, 15 lb (PT 10/8: 8 lb) | 2 × 10 (10/11) | 2 × 15 |
-| 9 | SL balance + ball toss on BOSU · eyes-closed double-leg stance | 3 × 45 s · 1 min each way | + perturbation |
-| CD | Step hamstring stretch (optional) | 2 × 30 s | — |
+Baseline = 10/11 (clean on 10/12). Next = one change each, if the mornings after Session A and PT are clean.
 
-- **Batch 10/11:** lateral lunge (new) · forward step-down first time at home (PT dose) · RDL third set · hip 4-way and bird dog at home (PT dose) · eyes-closed stance.
-- **10/11 ran past its batch and stands:** RDL 25 → 45 lb/hand, cable hamstring curl 30 lb and cable hip 4-way 20 lb in place of bands, bird dog 8 → 15 lb. Mon 10/12 morning was clean (trace, same; pain 0; extension good), so these are the doses now (load rule 5). From here, one change per exercise a session again.
+| # | Exercise | Baseline (10/11) | Next | Ladder [plan target] |
+|---|---|---|---|---|
+| WU | Bike | 8 min (2.06 mi) | 8 min | — |
+| 1 | Forward step-down, 6.5" | L 2 × 10, controlled | **3 × 10** | 7" → 8" [3 × 8–10] |
+| 2 | SL sit-to-stand | 20", 2 × 12, no assist | Same as Session A's result | Same ladder |
+| 3 | RDL, DBs | 45 lb/hand × 3 × 10, easy | **50 lb/hand × 3 × 10** (one DB step; 45 left more than 3 reps) | +5 lb/hand; or slow lowering [3 × 8–12] |
+| 4 | Lateral lunge | 2 × 8/side, short range | **3 × 8** | Full range [3 × 8 each direction] |
+| 5 | Cable hamstring curl, ankle strap | 1 × 10 @ 20 + 2 × 10 @ 30 lb, each leg | **3 × 10 @ 30** | +1 plate → 3 × 15 [3 × 10–15] |
+| 6 | SL bridge | 3 × 8 each side | **3 × 10** | 3 s hold → load |
+| 7 | Cable hip 4-way, ankle strap | 20 lb × 2 × 10 each leg | **2 × 15** | 3 × 15 → +1 plate [2–3 × 10–15] |
+| 8 | Standing bird dog | 15 lb × 2 × 10 | **2 × 15** | — |
+| 9 | SL balance + ball toss on BOSU · eyes-closed drill | 45 s (sets not stated) · not done | 3 × 45 s · 1 min (as in Session A) | + perturbation |
+| CD | Posture cooldown (Add-On §3) | not done | ~6 min | — |
+
+- **If a morning before 10/18 isn't clean:** Session B runs at the 10/11 baseline with no changes.
 - **Short on time:** drop 9 → 8 → 7 → 5.
 - **Minimum session:** warm-up + 1, 2, 3 (~25 min).
 
-### Machine items
+### Conditioning
 
-| Where | Items |
-|---|---|
-| Clinic | SL leg press 55# 2 × 10 (10/1) · 6 plates (10/8) · 1RM R 14 / L 9 plates · leg curl 47.5# · multi-hip 4 plates |
-| Home | SL sit-to-stand · band curl · strap isometric · seated knee extension with band or ankle weight · standing band hip 4-way |
-
-### Conditioning (plan Phase 3: low impact, 3–5 days a week, 15–30 min)
-
-- Bike easy, legs only: Mon, Thu, Sat and any other off day.
-- **Ladder:** 15 (Fri 10/9, 3.47 mi) → **18 (next ride: Mon 10/12)** → 21 → 24 → 27 → 30, +3 min per ride. Distance logged. Saturday's ride (10/10) was not done; the ladder does not skip a rung for it.
-- Hard intervals stay arms-only.
+- Bike easy, legs only, on off days.
+- **Ladder:** 15 (Fri 10/9, 3.47 mi) → **18 (Mon 10/12)** → 21 → 24 → 27 → 30, +3 min per ride. Missed rides aren't made up.
 
 ### Pre-session check
 
 Swelling **graded** and not up vs the previous morning · extension side by side · pain ≤2 · no hard or painful catch. Fail → last clean doses, 2 sets, no changes.
 
-**Own adjuncts (logged, not evaluated):** Game Ready / Go Ready, LLLT, red light, sauna (9/27, 9/30, 10/8 — no swelling change after any). Ibuprofen masks the morning feel.
+**Own adjuncts (logged, not evaluated):** Game Ready / Go Ready, LLLT, red light, sauna (9/27, 9/30, 10/8, 10/11 — no swelling change after any).
 
 ---
 
-## 7. Whole-Athlete Add-On (revised 10/9; catch-up week 10/11)
+## 7. Add-On status
 
 | | |
 |---|---|
-| **Placement** | Own days (user's choice, 10/5): Upper A Mon, Upper B Thu, after the bike. **This week (trainer 10/10, catch-up): Mon 10/12 B · Wed 10/14 A · Fri 10/16 B** (every other day; Wed/Fri are the reading of it, confirm). Template from 10/18 |
-| **Block** | Block 0 re-entry, weeks of 10/4 and 10/11: 3 sets on main lifts, RPE 6 the first time, then 7; seated or lying for the first two sessions. The week of 10/4 ran 1 (Fri A; Sat B moved by the trainer), so Block 0 repeats; Block 1 from 10/18 only if this week runs its three |
-| **Ran so far** | 1 since the add-on began 9/20: Fri 10/9 Upper A (Block 0, seated) |
-| **Standing upper work** | From the third upper session: pull-ups with a box, half-kneeling with the right knee down, standing landmine press, standing Pallof |
-| **Right leg** | Mirrors the left's single-leg strength work inside the knee sessions, including the new seated knee extension |
-| **Saturday power & mobility** | Earliest Sat 10/17, after two weeks of 2 of 2; seated throws need the PT's OK |
-| **Still open** | Prehab overhead screen result (decides Upper B's seated DB press; until then a second incline press) · body-mass baseline (the Sunday weigh-in, 10/11) |
+| **Placement** | Own days, alternating A → B, ≥2 days apart. This week: **Mon 10/12 B (session 2)** → **Upper A (session 3) on Thu 10/15, or Fri 10/16 if PT lands Thursday** |
+| **Sessions run** | 1 since 9/20: Upper A, Fri 10/9. Upper B due today. The week of 10/4 ended 1 of 2 |
+| **Block** | Block 0 (re-entry) through the week of 10/18. Block 1 from 10/25 if 2 of 2 in the weeks of 10/11 and 10/18 |
+| **Unlocks** | Upper session 3: standing options and the chest pass. Saturday power & mobility earliest Sat 10/24. Seated throws need the PT's OK |
+| **Optional items** | **Off for the week of 10/11** (accessory day): the week of 10/4 had missed daily-minimum days |
+| **New from Mon 10/12** | Upper warm-up: thoracic extension → **doorway pec sequence** (contract-relax, chosen 10/12) → face pull with external rotation (seated) · tissue & trunk finisher · posture cooldown after every knee session (first attempt 10/11 skipped) |
+
+**Upper B (Mon 10/12): first time, upper session 2, seated or lying.** 3 sets each; loads that leave about 3 reps; set 1 of each lift finds the load.
+
+| Block | Lift | Today |
+|---|---|---|
+| B1 / B2 | Incline press (barbell in the rack with safeties) · chin-grip cable pulldown, seated | 3 × 8–10 each, alternating. Bench 105 was "pretty tough" on 10/9, so the incline starts lighter |
+| C (tri-set × 3) | **Chest-supported DB row** (the one-arm row starts at the next Upper B) · seated neutral-grip DB press · reverse fly | 8–10 · 6–8 (a second incline press if overhead reach isn't clean) · 10–12 |
+
+**Upper A, 10/9 — last dose and next (session 3).** Session RPE 7/10.
+
+| Lift | 10/9 | Next |
+|---|---|---|
+| Seated med-ball chest pass | — | **4 × 3, first time** (unlocks at session 3) |
+| Bench press | 105 × 2 × 8, "pretty tough" | 105 × 3 × 8 if 2+ reps were left; 95 × 3 × 8 if 0–1 were left |
+| One-arm cable pulldown | 80 × 2 × 8/side | Same load, 3 sets |
+| Landmine press | 25 lb + bar × 2 × 8/side | Same load, 3 sets (standing allowed from session 3) |
+| Chest-supported DB row | 15s × 2 × 10 | Same load, 3 sets |
+
+**Right leg:** mirrors inside the knee sessions, including the cable knee extension. Reference: SL leg press 1RM 14 plates (10/8).
 
 ---
 
-## 8. Week in review
+## 8. Week in review — Sun 10/4 → Sat 10/10
 
-*Not kept here. Each week's review is `real/checkpoints/<Sunday>.md`. The dashboard's review of Sun 10/4 → Fri 10/9 AM is §8 of the archived 10/9 file; the 10/11 checkpoint folds it in.*
+| Date | Loaded? | What | Next-morning response |
+|---|---|---|---|
+| Sun 10/4 | No | ~3 h on feet; Session A not run | Mon: very clean, down further (not graded) |
+| Mon 10/5 | No | ~half day on feet; Session A skipped | Tue: **trace** |
+| Tue 10/6 | **Yes (Session A)** | ~12-change batch; heel prop | Wed: **trace** |
+| Wed 10/7 | No | Heel prop, NMES, heel slides; Game Ready | Thu: **trace** |
+| Thu 10/8 | **Yes (PT 9, Nick)** | Hardest session to date; measures; new PT items; sauna | Fri: **trace, barely visible** |
+| Fri 10/9 | No | Bike 15 (3.47 mi); heel prop; **Upper A** | Sat: not reported |
+| Sat 10/10 | No | Nothing | Sun: **trace (low side)** |
+
+| Measure | Week of 10/4 | Target |
+|---|---|---|
+| Loaded days | 2 | 3 |
+| Clean mornings after loading | 2 of 2 | — |
+| Daily minimum (heel prop) | 3 of 7 (Tue, Wed, Fri) | 7 |
+| Bike rides | 1 | 3+ |
+| Upper sessions | 1 | 2 |
+| Swelling graded | 4 of 7 | 7 |
+| Session minutes / RPE logged | 0 of 2 knee sessions | All |
+
+**This week so far (from 10/11):** Session B, ~8-change batch, 80 min, RPE 7, heel prop done → Mon 10/12 trace, clean. Graded 2 of 2 mornings; minutes and RPE 1 of 1 knee sessions.
 
 ---
 
-## 9. Patterns and concerns (carry forward)
+## 9. Patterns and concerns
 
-1. **Joint tolerance is high and still rising.** A ~12-change home batch and, two days later, the hardest PT session to date: trace both mornings. Swelling reached trace this week and no longer tracks load or hours on feet.
-2. **Quad strength is the only unmeasured gate and the real constraint.**
-   - The SL leg press (64%, whole-leg) is the first post-op strength number, but it isn't decisive.
-   - Session A now gets the plan's seated knee extension 90°→45°, the most direct quad tool.
-   - The clinic test is the one thing to ask for.
-3. **Extension:** 2° hyperext at three clinic readings. It held through a week with only two home heel-prop rounds. One round a day is maintenance; the remaining target is the right knee's passive hyperextension.
-4. **Off-day work stays thin.** Over the week of 10/4: floor full 2 of 7 (both after the minimum was cut to one round), bike 1 of 3, upper 1 (the first since 9/20; Saturday's was moved, not missed). The daily minimum is one 10-minute heel prop so it can run 7 of 7. If upper misses again, ask what the barrier is before redesigning (Working Rules).
-5. **Sessions displaced by time on feet** (10/4, 10/5). The knee no longer needs that caution: five clean mornings after big on-feet days.
-6. **Batch growth and first-exposure jumps** (9/30 RDL; 10/6 step-up DBs, SL sit-to-stand 18"). The knee tolerated them; the cost is attribution. With PT approval no longer a brake, one change per exercise is the main guardrail.
+1. **Joint tolerance is high and still rising.** Three big batches in six days (10/6, 10/8, 10/11), including the RDL +80% jump: trace every morning after each. Swelling no longer tracks load, hours on feet, or the sauna.
+2. **Quad strength is the only unmeasured gate, and PT isn't booked yet.** If the quad test isn't done at the next visit, Phase 4 can't open on 10/20. The cable knee extension starts Tuesday.
+3. **Extension:** 2° hyperext at three clinic readings. It held with few home heel-prop rounds; once a day is maintenance. Remaining target: the right knee's passive hyperextension. First photo due 10/18.
+4. **Off days and Saturdays produce little.**
+   - Daily minimum 3 of 7 in the week of 10/4.
+   - The Saturday bike has been missed five weeks running.
+   - Zero days: 10/4, 10/5 (on feet), 10/10.
+   - Upper is improving: 1 session after three weeks at 0.
+5. **More when it feels good:**
+   - Batches of 5 → 7 → ~12 → ~8 changes.
+   - First-exposure jumps: RDL 25 → 45 lb/hand (+80%, 10/11); step-up to 25 lb DBs with the band off (10/6); SL sit-to-stand 24" → 18" (10/6).
+   - The knee tolerated all of it, and 45 lb felt easy, so the RDL start was simply light. The next step is still one DB increment. One change per exercise is the guardrail now that PT approval isn't the brake.
+6. **Logging gaps:**
+   - Session minutes and RPE: 1 of 9 loaded days since 9/20 (10/11: 80 min, RPE 7).
+   - Morning stiffness, catch and wellness are now the items most often missing.
+   - Step-down quality: reported 10/11 (controlled).
 7. **Graft weak window through ~11/16.** A quiet knee is what this window feels like. Strength ramps; impact, running, rotation, and pivoting stay behind the plan's gates.
 8. **Posterior-knee tightness** (9/30) not reported since. If it ever becomes calf pain or calf swelling: surgeon, not dashboard.
 
@@ -233,13 +339,12 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 ## 10. Next milestones
 
-- [ ] Daily minimum **7 of 7** (morning grade + one heel prop)
-- [ ] Upper **3 of 3** this week (Mon B, Wed A, Fri B), then 2 of 2 from 10/18
-- [ ] Bike 3+ rides a week, +3 min per ride toward 30
-- [ ] **Sun 10/11:**
-  - [ ] weigh-in, first extension photo, SLR lag, flexion check
-  - [x] Session B: forward step-down at home (the single-leg control gate), lateral lunge (new)
-- [ ] **Throwing, week 1 (baseline):** Wed A, Fri B, Sat C, film; Phase 3 throwing only
-- [ ] **Session A, Tue 10/13:** seated knee extension 90°→45° (new). Confirm the equipment (band or ankle weight) and a 12" step
-- [ ] **Quad test, both sides,** booked at the next visit
-- [ ] **Phase 3 gate review, week of 10/18.** Phase 4 earliest Tue 10/20; quad LSI is the only open gate
+- [x] **Mon 10/12:** graded morning = verdict on the Session B batch and the RDL jump — clean
+- [ ] **Book PT today**; ask for the quad test (both sides, plus hamstrings) when booking
+- [ ] Daily minimum **7 of 7**; a swelling grade, stiffness, catch and wellness 1–5 every morning
+- [ ] **Minutes and RPE for every session** (Sun ✓)
+- [ ] Upper **2 of 2** (Mon B, Thu or Fri A); bike 3 rides (18 → 21 → 24)
+- [ ] Posture cooldown after both knee sessions; warm-up (with the pec sequence) and finisher on both upper days
+- [ ] **Session A (Tue):** cable knee extension (new); SL sit-to-stand at 18" unassisted; step-up 12"; first home eyes-closed drill
+- [ ] **Next PT visit:** quad test; watch a step-down; confirm the wobble-board home version
+- [ ] **Sun 10/18:** weigh-in (same time), **first extension photo**, SLR lag, flexion → checkpoint → Phase 3 gate review. Phase 4 earliest Tue 10/20; quad LSI is the only open gate

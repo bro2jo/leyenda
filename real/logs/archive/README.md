@@ -1,10 +1,10 @@
 # Imported originals
 
-Logs brought in from the old ACL dashboard, kept exactly as uploaded. They are history, not working files: nothing writes here except a re-import of the same file (git keeps every version). The working logs are one level up.
+Logs brought in from the ACL dashboard, kept exactly as uploaded. They are history, not working files: nothing writes here except a re-import of the same file (git keeps every version). The working logs are one level up.
 
 | File | Covers | Merged into |
 |---|---|---|
-| `ACL_Daily_Log.csv` | 9/10–10/9 (uploaded 10/9) | `../daily_log.csv` |
+| `ACL_Daily_Log.csv` | 9/10–10/12 (uploaded 10/9; replaced by the dashboard's audited copy 10/12) | `../daily_log.csv` |
 
 ## `ACL_Daily_Log.csv` → `daily_log.csv`
 
@@ -13,8 +13,10 @@ A merge fills only blank fields; it never overwrites what the repo already holds
 | Dashboard column | `daily_log.csv` |
 |---|---|
 | `weekday`, `pod`, `postop_week`, `dash_week_start` | `dow`, `pod`, `post_op_week`, `dash_week_start` (computed) |
-| `swelling_am` | `am_swelling` (the grade only: 0 / trace / 1+ / 2+ / 3+); the full text to `am_notes` when it says more |
-| `swelling_trend_vs_prev` | `am_trend` |
+| `swelling_am` | `am_swelling` (the grade only: 0 / trace / 1+ / 2+ / 3+; "not graded" or blank is no grade); descriptors are in `swelling_trend_vs_prev` from 10/10 |
+| `swelling_trend_vs_prev` | `am_trend` (trend words; its descriptors to `am_notes` when they say more) |
+| `wellness_1to5` | `wellness` (1 = poor, 5 = great; from 10/11) |
+| `conditioning_min` | `conditioning_min` (off-day bike minutes, from 10/9) |
 | `pain_am`, `pain_session`, `pain_pm` | `am_pain`, `pain_session`, `pain_pm` |
 | `extension_L` | `am_extension` (clinic numbers also go to `measurements.csv`) |
 | `flexion_L_active`, `flexion_L_passive` | `flexion` ("A / P") |

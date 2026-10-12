@@ -26,7 +26,8 @@ Commands (run from the repo root):
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
   measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
-  doc state|addon|rules|guide|master|sport|sportguide|checkpoint|visit|now|PATH [SECTION ...]   one section of a document (number or title words); no SECTION: its outline
+  doc state|addon|rules|guide|master|offseason|index|ptnotes|sport|sportguide|checkpoint|visit|now|PATH [SECTION ...]
+                               one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
 """
 import argparse
@@ -60,6 +61,9 @@ P = {
     "working_rules": ROOT / "real/plan/ACL_Dashboard_Working_Rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
     "master": ROOT / "real/plan/ACL_Reconstruction_Rehab_Master_Plan.md",
+    "offseason": ROOT / "real/plan/24-week-offseason-program-v4.md",
+    "index": ROOT / "real/plan/ACL_Project_Index.md",
+    "ptnotes": ROOT / "real/visits/ACL_PT_Notes.md",
     "deeds": ROOT / "engine/deeds.csv",
     "sheet": ROOT / "saga/state/darrow.json",
     "rolls": ROOT / "saga/state/rolls.csv",
@@ -79,7 +83,7 @@ COLS = {
     "food": ["id", "date", "time", "meal", "item", "qty"] + NUTRIENTS + ["source", "notes"],
     "foods": ["name", "aliases", "serving"] + NUTRIENTS + ["source", "confidence", "notes"],
     "daily": ["date", "dow", "pod", "post_op_week", "dash_week_start", "light",
-              "am_swelling", "am_trend", "am_pain", "am_extension", "flexion", "catch", "am_notes",
+              "am_swelling", "am_trend", "am_pain", "am_extension", "flexion", "catch", "wellness", "am_notes",
               "floor_am", "floor_pm", "knee_session", "knee_min", "knee_rpe", "knee_as_planned",
               "pain_session", "pain_pm", "pt", "addon_session", "addon_min", "addon_rpe",
               "conditioning_type", "conditioning_min", "sport_min",
@@ -98,6 +102,7 @@ DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 ATTRS = ["might", "vigor", "finesse", "resolve"]
 VALID_SWELLING = re.compile(r"^(0|none|trace|1\+|2\+|3\+)$", re.I)
 YES = {"y", "yes", "true", "1", "done", "full"}
+NOT_DONE = re.compile(r"^\s*(not done|skipped)\b", re.I)  # exercise-log notes that mark a planned item as not done
 
 
 # ---------------------------------------------------------------- io helpers
@@ -320,6 +325,8 @@ def gather(cfg, rules, nutrition=None):
             continue
         f = facts[r["date"]]
         f["logged"] = True
+        if NOT_DONE.match(str(r.get("notes") or "")):
+            continue  # a planned item recorded as not done ("NOT DONE ...", "SKIPPED ..."): a record, never a deed
         sess = str(r.get("session", "")).strip()
         block = str(r.get("block", "")).strip().lower()
         if sess == "PT":
@@ -517,8 +524,8 @@ def template_for(cfg, day):
 
 
 def session_key(p):
-    """A plan code's family for counting: kneeA/kneeB -> knee, upperA/upperB -> upper, the rest as they are."""
-    return "knee" if p in ("kneeA", "kneeB", "knee") else ("upper" if p in ("upperA", "upperB") else p)
+    """A plan code's family for counting: kneeA/kneeB -> knee, upper/upperA/upperB -> upper, the rest as they are."""
+    return "knee" if p in ("kneeA", "kneeB", "knee") else ("upper" if p in ("upper", "upperA", "upperB") else p)
 
 
 def planned_for(cfg, day):
@@ -537,7 +544,7 @@ def planned_for(cfg, day):
     return base
 
 
-PLAN_CODES = ("knee", "kneeA", "kneeB", "upperA", "upperB", "cond", "pt", "sport", "accessory", "power")
+PLAN_CODES = ("knee", "kneeA", "kneeB", "upper", "upperA", "upperB", "cond", "pt", "sport", "accessory", "power")
 
 
 def as_codes(v):
@@ -547,7 +554,8 @@ def as_codes(v):
     return [v] if isinstance(v, str) else list(v)
 
 
-SESSION_NAMES = {"knee": "knee session", "kneeA": "knee Session A", "kneeB": "knee Session B", "upperA": "Upper A",
+SESSION_NAMES = {"knee": "knee session", "kneeA": "knee Session A", "kneeB": "knee Session B",
+                 "upper": "upper session (next of A/B)", "upperA": "Upper A",
                  "upperB": "Upper B", "cond": "conditioning", "pt": "PT visit", "sport": "sport session",
                  "accessory": "accessory", "power": "power"}
 
@@ -555,7 +563,8 @@ SESSION_NAMES = {"knee": "knee session", "kneeA": "knee Session A", "kneeB": "kn
 def unlogged_sessions(cfg, day, f):
     """The day's planned sessions (plan_changes applied) with nothing recorded for them yet. Any outcome is a record:
     a partial knee session, a ride under the paid minimum, a booked PT visit missed. A rest day the plan ordered
-    (light=red) owes none. Knee sessions match as a family (A and B alternate whatever the day); add-ons by code."""
+    (light=red) owes none. Knee sessions match as a family (A and B alternate whatever the day), and so does the
+    generic `upper` code (the next upper session in the A/B rotation); upperA/upperB and the other add-ons by code."""
     if f and f["light"] == "red":
         return []
     out = []
@@ -571,6 +580,8 @@ def unlogged_sessions(cfg, day, f):
             hit = f["cond_min"] > 0
         elif k == "sport":
             hit = bool(f["sport_sessions"])
+        elif p == "upper":
+            hit = any(a in ("upperA", "upperB") for a in f["addons"])
         else:
             hit = p in f["addons"]
         if not hit:
@@ -1608,6 +1619,7 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
 def doc_path(name):
     fixed = {"addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"], "now": P["real_now"],
+             "offseason": P["offseason"], "index": P["index"], "ptnotes": P["ptnotes"],
              "sport": ROOT / "real/plan/sport/sport_plan.md",
              "sportguide": ROOT / "real/plan/sport/Ultimate_Offseason_Development_Guide.md"}
     if name in fixed:
@@ -1621,7 +1633,8 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, sport, sportguide, checkpoint, visit, now, or a path")
+        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, offseason, index, ptnotes, sport, sportguide, "
+                 f"checkpoint, visit, now, or a path")
     return p
 
 

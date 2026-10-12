@@ -11,7 +11,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) B
 Sport and position · season dates / target return · the 5–8 skills that matter most · the drills he does for each and how they're measured (reps, makes, time, distance, velocity) · equipment and where he trains · any coach or program file (if there is one, read it first and ask less).
 
 ## 2. Gate every skill by the rehab plan
-Using `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` and the add-on's §10 table, give each skill and drill the **earliest Knot** at which it's allowed:
+Using `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` and the add-on's §8 table ("Element by element"), give each skill and drill the **earliest Knot** at which it's allowed:
 - seated / static / upper-body / hands-only technique → Knot II (now)
 - standing, symmetric stance, no impact → Knot III (Phase 4), only if the PT agrees
 - running-based → Knot IV · jumping, landing, sprinting, decel → Knot V · cutting, pivoting, reactive, contact, game speed → Knot VI · full competition → Knot VII

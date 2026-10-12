@@ -136,7 +136,7 @@ date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,
 2026-09-23,2026-09-20,30,home,posterior,bridge,bil,3,12,,,,
 2026-09-23,2026-09-20,30,home,mobility,standing knee flexion AROM,L,3,10,,,,"stretch behind knee, good"
 2026-09-23,2026-09-20,30,home,calf,calf raise,bil,3,12,,,,left-biased; upper calf fatigue
-2026-09-23,2026-09-20,30,home,hip,"hip series (prone ext, sidelying abd, sidelying add)",both,2,10,,none,,"strict, no resistance"
+2026-09-23,2026-09-20,30,home,hip,"hip series (prone ext, sidelying abd, sidelying add)",bil,2,10,,none,,"strict, no resistance"
 2026-09-23,2026-09-20,30,home,balance,single-leg balance + ball toss,L,3,,30 s,,,solid
 2026-09-23,2026-09-20,30,home,gait,curved treadmill walk,,,,2 min 36 s,,none,0.10 mi; crutch-free
 2026-09-23,2026-09-20,30,home,single-leg,single-leg leg press,L,,,,,,NOT DONE - no leg press at home; PT: BW/DB substitute OK
@@ -230,26 +230,31 @@ date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,
 2026-10-08,2026-10-04,45,PT,hip,multi-hip abduction (CMH),bil,2,15,,4 plates,,new PT item; alternating sides
 2026-10-08,2026-10-04,45,PT,hip,multi-hip extension (CMH),bil,2,15,,4 plates,,new PT item; alternating sets
 2026-10-08,2026-10-04,45,PT,hip,"multi-hip flexion, knee straight (CMH)",bil,2,15,,4 plates,,new PT item; alternating sets
-2026-10-08,2026-10-04,45,PT,balance,"double-leg stance, eyes closed",bil,1,,1 min each way,,,new PT item
+2026-10-08,2026-10-04,45,PT,balance,"double-leg stance on wobble board, eyes closed",bil,1,,1 min each way,,,new PT item; wobble board per patient (10/11)
 2026-10-09,2026-10-04,46,conditioning,conditioning,air bike (legs only),,1,,15 min,easy,,3.47 mi; off-day conditioning (plan Phase 3)
-2026-10-09,2026-10-04,46,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,"daily minimum (one round, Nick 10/9); evening"
-2026-10-09,2026-10-04,46,upperA,upper,barbell bench press,bil,2,8,,105 lb,,felt pretty tough; plan Block 0 is 3 sets
-2026-10-09,2026-10-04,46,upperA,upper,one-arm cable lat pulldown,each,2,8,,80 lb,,in place of the seated band pulldown
-2026-10-09,2026-10-04,46,upperA,upper,standing one-arm landmine press,each,2,8,,25 lb + bar,,standing (plan: seated for the first two upper sessions)
-2026-10-09,2026-10-04,46,upperA,upper,chest-supported DB row,bil,2,10,,15 lb/hand,,
-2026-10-11,2026-10-11,48,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,the daily minimum
-2026-10-11,2026-10-11,48,home,warmup,air bike (legs only),,1,,8 min,easy,,2.06 mi; Session B warm-up
-2026-10-11,2026-10-11,48,home,single-leg,single-leg forward step-down (heel drop),L,2,10,,,,"6.5 in step; first time at home, PT dose"
-2026-10-11,2026-10-11,48,home,quad,single-leg sit-to-stand,L,2,12,,,none,20 in box (what he had; plan 18 in with slight R-foot assist); unassisted was challenging and felt right
-2026-10-11,2026-10-11,48,home,quad,single-leg sit-to-stand,R,2,12,,,none,20 in box
-2026-10-11,2026-10-11,48,home,posterior,Romanian deadlift (DB),bil,3,10,,45 lb DBs,,felt more appropriate; plan dose 25 lb/hand (load rule: one DB step a session)
-2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,L,2,8,,bodyweight,,"NEW; short range; stepping to the left good, took getting used to, short range felt okay by the end"
-2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,R,2,8,,bodyweight,,NEW; short range
-2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl (cable),bil,1,10,,20 lb cable,,"first set, both legs; cable in place of the band"
-2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl (cable),L,2,10,,30 lb cable,,cable in place of the band
-2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl (cable),R,2,10,,30 lb cable,,
+2026-10-09,2026-10-04,46,upperA,warmup,"upper warm-up (band pull-apart, thoracic extension)",,,,,,,as written; completed
+2026-10-09,2026-10-04,46,upperA,push,barbell bench press,,2,8,,105 lb,,felt pretty tough; Block 0 dose 3 x 8-10 @ RPE 6
+2026-10-09,2026-10-04,46,upperA,pull,one-arm cable lat pulldown,,2,8,,80 lb,,per side; cable (planned seated band pulldown)
+2026-10-09,2026-10-04,46,upperA,push,standing one-arm landmine press,,2,8,,25 lb + bar,,per side; standing (planned seated until upper session 3)
+2026-10-09,2026-10-04,46,upperA,pull,chest-supported DB row,,2,10,,15 lb DBs,,
+2026-10-09,2026-10-04,46,floor,mobility,weighted heel prop,L,1,,,,,done; time and weight not stated
+2026-10-11,2026-10-11,48,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
+2026-10-11,2026-10-11,48,home,warmup,air bike (legs only),,1,,8 min,easy,,2.06 mi
+2026-10-11,2026-10-11,48,home,single-leg,forward step-down,L,2,10,,6.5 in step,,first at home (PT dose 6 in); controlled (self)
+2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,L,2,12,,20 in box,none,first fully unassisted; box 20 in (planned 18 in); challenging
+2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,R,2,12,,20 in box,none,
+2026-10-11,2026-10-11,48,home,posterior,Romanian deadlift (DB),bil,3,10,,45 lb DBs,,up from 25 lb DBs 2x10 (9/30): +80% and a third set; felt easy
+2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,L,2,8,,bodyweight,,"NEW; short range; stepping left good, settled by the end"
+2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,R,2,8,,bodyweight,,short range
+2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,L,1,10,,20 lb,,ankle strap; replaces band curl
+2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,L,2,10,,30 lb,,
+2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,R,1,10,,20 lb,,ankle strap
+2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,R,2,10,,30 lb,,
 2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,L,3,8,,,,
 2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,R,3,8,,,,
-2026-10-11,2026-10-11,48,home,hip,"standing cable hip 4-way (abduction, adduction, extension, flexion)",bil,2,10,,20 lb cable,,both legs; cable in place of the band (plan 2 x 15 band)
-2026-10-11,2026-10-11,48,home,posterior,standing bird dog,bil,2,10,,15 lb,,plan 2 x 15 @ 8 lb
-2026-10-11,2026-10-11,48,home,balance,single-leg balance on BOSU with ball throws,L,,,45 s,,,sets not stated; eyes-closed stance not reported
+2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),L,2,10,,20 lb,,planned 2x15 light
+2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),R,2,10,,20 lb,,
+2026-10-11,2026-10-11,48,home,hip,standing bird dog,,2,10,,15 lb,,PT dose 8 lb 2x15
+2026-10-11,2026-10-11,48,home,balance,single-leg balance + ball toss on BOSU,L,,,45 s,,,sets not stated
+2026-10-11,2026-10-11,48,home,balance,"double-leg stance on wobble board, eyes closed",bil,,,,,,NOT DONE (no wobble board at home; home version set 10/12)
+2026-10-11,2026-10-11,48,home,cooldown,"posture cooldown (90/90, dead bug, hip flexor stretch, chin nods)",,,,,,,NOT DONE

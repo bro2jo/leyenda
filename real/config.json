@@ -90,13 +90,13 @@
     "reduce_above_lb": 1.0
   },
   "weekly_template": {
-    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: sport (a skill session: A Wed, B Fri, C Sat by default; any day counts), knee (the next of Session A/B; they alternate A -> B -> A regardless of day), pt, upperA, upperB, accessory, power, cond. The Tue knee session may run Wed. Upper the week of 10/4 ran its own placement: Fri 10/9 A; Sat 10/10 B moved to Mon 10/12 by the trainer, and the week of 10/11 is a catch-up week (its weekly_template_history entry). Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
+    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: sport (a skill session: A Wed, B Fri, C Sat by default; any day counts), knee (the next of Session A/B; they alternate A -> B -> A regardless of day), upper (the next of Upper A/B; they alternate A -> B regardless of day, at least 2 days apart), pt, upperA, upperB (a specific upper session, for a week that names one), accessory, power, cond. The Tue knee session may run Wed. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
     "Sun": [
       "knee"
     ],
     "Mon": [
       "cond",
-      "upperA"
+      "upper"
     ],
     "Tue": [
       "knee"
@@ -106,7 +106,7 @@
     ],
     "Thu": [
       "cond",
-      "upperB"
+      "upper"
     ],
     "Fri": [
       "pt",
@@ -121,9 +121,9 @@
       "power"
     ],
     "optional_from": {
-      "power": "2026-10-17"
+      "power": "2026-10-24"
     },
-    "source": "ACL_Dashboard_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; power & mobility (Sat) from 10/17 at the earliest; sport sessions from the week of 10/11: real/plan/sport/sport_plan.md section 5"
+    "source": "ACL_Dashboard_Working_Rules.md 'Program structure' (revised 10/12: upper alternates A -> B on Mon/Thu, next in the rotation) and ACL_Whole_Athlete_AddOn.md section 2 'Placement'; power & mobility (Sat) after two weeks of 2 of 2 upper, earliest Sat 10/24 (ACL_Recovery_State_2026-10-11.md, revised 10/12, section 7); sport sessions from the week of 10/11: real/plan/sport/sport_plan.md section 5"
   },
   "weekly_template_history": [
     {
@@ -197,16 +197,15 @@
         "knee"
       ],
       "Wed": [
-        "sport",
-        "upperA"
+        "sport"
       ],
       "Thu": [
-        "cond"
+        "cond",
+        "upperA"
       ],
       "Fri": [
         "pt",
-        "sport",
-        "upperB"
+        "sport"
       ],
       "Sat": [
         "cond",
@@ -216,7 +215,7 @@
         "accessory",
         "power"
       ],
-      "source": "trainer 10/10 (real/visits/2026-10-10_trainer-instruction.md): catch-up week, upper every other day from Mon 10/12 (B, A, B); Session A on Tue so Wed carries upper; the current template resumes 10/18"
+      "source": "ACL_Recovery_State_2026-10-11.md, revised 10/12, sections 6-7: Mon 10/12 Upper B (moved from Sat 10/10: real/visits/2026-10-10_trainer-instruction.md) -> Upper A Thu 10/15 (Fri 10/16 if PT lands Thursday); Session A Tue 10/13; Wed off. Replaces the earlier reading of the trainer's catch-up week (Mon B, Wed A, Fri B). Sport sessions per real/plan/sport/sport_plan.md section 5; the template resumes 10/18"
     }
   ],
   "plan_changes": [
