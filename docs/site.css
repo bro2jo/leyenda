@@ -62,13 +62,13 @@ html.mast-away .mast{transform:translateY(-100%)}
 .kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;margin:0;font-size:.95rem}
 .kv dt{font-family:var(--label);font-size:.8rem;letter-spacing:.08em;color:var(--dim)}
 .kv dd{margin:0}
-.beat{font-style:italic;color:var(--dim);border-left:2px solid var(--brass-dim);padding-left:10px}
-.btn{display:inline-grid;gap:1px;font-family:var(--label);font-weight:700;letter-spacing:.06em;border:1px solid var(--brass);border-radius:4px;padding:8px 14px;color:var(--night);background:var(--brass);max-width:100%}
+.beat{display:grid;gap:3px;color:var(--dim);border-left:2px solid var(--brass-dim);padding-left:10px;font-size:.95rem;line-height:1.5}
+.btn{display:inline-block;font-family:var(--label);font-weight:700;letter-spacing:.06em;line-height:1.3;white-space:nowrap;border:1px solid var(--brass);border-radius:4px;padding:7px 14px;color:var(--night);background:var(--brass)}
 .btn:hover{text-decoration:none;filter:brightness(1.08)}
-.btn-sub{font-family:var(--body);font-weight:500;letter-spacing:0;font-size:.85rem;opacity:.85}
-.btn.ghost{background:transparent;color:var(--brass);border-color:var(--brass-dim)}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.since{font-size:.9rem;color:var(--dim)} .since .lbl{margin-right:6px}
+.btn-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.btn-note{font-size:.9rem;color:var(--dim);min-width:0}
+.btn-note:hover{color:var(--brass);text-decoration:none}
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:3px}
 .fine{font-size:.82rem;color:var(--faint);font-style:italic}
 
 /* section heads */
@@ -233,7 +233,9 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
-.panels-h{margin-top:6px}
+.panels-h{margin-top:4px}
+.panels-h+.panel{margin-top:-2px}
+.panel+.panels-h{margin-top:18px}
 .panel{border:1px solid var(--rule);border-radius:6px;padding:0;background:var(--plate)}
 .panel[open]{border-color:var(--brass-dim);background:linear-gradient(180deg,var(--plate-hi),var(--plate) 120px)}
 .panel>summary{display:flex;align-items:center;gap:12px;padding:12px 14px;color:var(--ink);font-family:var(--body);font-size:1rem;letter-spacing:0}
@@ -311,6 +313,7 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .comp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .comp .m{font-size:.88rem;color:var(--dim)}
 .rk-mini{display:grid;gap:12px}
+.rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .mini-attr{display:grid;gap:0;border-top:2px solid var(--rule);padding-top:6px}
 .mini-attr .v{font-family:var(--display);font-weight:700;font-size:1.8rem;line-height:1}

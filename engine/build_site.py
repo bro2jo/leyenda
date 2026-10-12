@@ -1552,18 +1552,19 @@ class Site:
         return ch, None, [s for s in ch["scenes"] if s.get("between")]
 
     def continue_button(self, rel):
-        """Continue reading: the current chapter's latest scene (its newest Between before its first scene; the end of
-        the chapter before while the new one waits for its first scene)."""
+        """Continue reading: the newest piece on the page (the current chapter's latest scene or the Between after it; the
+        end of the chapter before while the new one waits for its first scene)."""
         ch, latest, after = self.latest_pieces()
-        target = latest or (after[-1] if after else None)
+        target = after[-1] if after else latest
         if target is None:
             done = [c for c in self.chapters if c["scenes"] and (ch is None or c["number"] < ch["number"])]
             if not done:
                 return ""
             ch, target = done[-1], done[-1]["scenes"][-1]
         what = ch["label"] + " · " + (target["label"] + " — " if target["label"] else "") + target["title"]
-        return (f'<a class="btn" href="{rel}chronicle/{ch["slug"]}.html#{target["anchor"]}">'
-                f'<span>Continue reading</span><span class="btn-sub">{esc(what)}</span></a>')
+        href = f'{rel}chronicle/{ch["slug"]}.html#{target["anchor"]}'
+        return (f'<div class="btn-row"><a class="btn" href="{href}">Continue reading</a>'
+                f'<a class="btn-note" href="{href}">{esc(what)}</a></div>')
 
     def render_chronicle_index(self):
         rel = "../"
@@ -1585,10 +1586,10 @@ class Site:
                          f'<span class="m num">{count}{" · now" if now else ""}</span>'
                          f'<ul class="scenes">{scenes}</ul></li>')
         first = self.chapters[0] if self.chapters else None
-        start = (f'<a class="btn ghost" href="{rel}chronicle/{first["slug"]}.html"><span>Start reading</span>'
-                 f'<span class="btn-sub">{esc(first["label"] + " — " + first["title"])}</span></a>') if first else ""
-        btns = f'<div class="btns">{self.continue_button(rel)}{start}</div>' if first else ""
-        body = f'<section class="plate"><p class="lbl">The Chronicle</p><h1>Books, chapters and scenes</h1><p class="dim">Read in order. The current chapter is marked in brass.</p>{btns}</section>'
+        start = (f'<p class="m">Or <a href="{rel}chronicle/{first["slug"]}.html">start from the beginning</a>: '
+                 f'{esc(first["label"] + " — " + first["title"])}.</p>') if first else ""
+        body = (f'<section class="plate"><p class="lbl">The Chronicle</p><h1>Books, chapters and scenes</h1>'
+                f'<p class="dim">Read in order. The current chapter is marked in brass.</p>{self.continue_button(rel)}{start}</section>')
         n_num = sum(1 for c in self.chapters if c["number"])
         n_pro = len(self.chapters) - n_num
         count = (("a prologue and " if n_pro else "") + f"{n_num} chapter{'s' if n_num != 1 else ''}") if n_num else "a prologue"
@@ -1809,8 +1810,7 @@ class Site:
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         inner = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                 f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}'
-                 f'{chip("Knots " + roman(d["knots_count"]) + " of " + roman(self.n_knots), "brass")}{self.tether_chip()}</div>'
+                 f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}</div>'
                  f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
                  f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
                  f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>'
@@ -1842,8 +1842,6 @@ class Site:
                 rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}"><div class="art-top"><b>{esc(art["name"])}</b>{pips(rank, n_pips, "rank")}</div>'
                             f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></li>')
             tree_html.append(f'<div class="tree"><h3>{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
-        tied = set(d.get("knots_tied") or [])
-        nxt = next((k for k in rules.get("knots") or [] if k["n"] not in tied), None)
         chap_rows = []
         titles = {str(ch["number"]): ch for ch in self.chapters}
         closed = sorted(self.chapters_csv, key=lambda r: int(r["chapter"]))
@@ -1851,10 +1849,7 @@ class Site:
             ch = titles.get(r["chapter"])
             t = f'<a href="{rel}chronicle/{ch["slug"]}.html">{esc(ch["label"])} — {esc(ch["title"])}</a>' if ch else f"Chapter {esc(r['chapter'])}"
             chap_rows.append(f'<li><b>{t}</b><span class="m">{esc(TIER_DONE.get(r["tier"], r["tier"]))}</span></li>')
-        sheet = [
-            ("arts", "Arts", f"{n_learned} learned · {n_sealed} sealed", "".join(tree_html)),
-            ("binding", "The Binding", f"next: {esc(nxt['name'])}" if nxt else "all tied", self.knots_html(d, rel)),
-        ]
+        sheet = [("arts", "Arts", f"{n_learned} learned · {n_sealed} sealed", "".join(tree_html))]
         if self.bearing:
             sheet.append(("bearing", "Bearing", esc(self.bearing_summary()),
                           f'<p class="hint">{esc(BEARING_LABEL[:1].upper() + BEARING_LABEL[1:])}.</p>' + self.bearing_html()))
@@ -1899,7 +1894,8 @@ class Site:
         first = ("now", "story")  # on his own page, where he stands comes before what he looks like
         parts = sorted(self.character_sections(c, rel), key=lambda x: (x["key"] not in first, first.index(x["key"]) if x["key"] in first else 0))
         story = "".join(panel(x["title"], x.get("meta", ""), x.get("panel_html", x["html"]), x["key"]) for x in parts)
-        body = (self.identity_plate(c, rel, d["level"]) + self.darrow_reckoning(rel)
+        binding = sec("The Binding", f"Knots tied {roman(d['knots_count'])} of {roman(self.n_knots)}", self.knots_html(d, rel), hid="binding")
+        body = (self.identity_plate(c, rel, d["level"]) + self.darrow_reckoning(rel) + binding
                 + f'<div class="panels"><p class="lbl panels-h">The sheet</p>{sheet}<p class="lbl panels-h">On the page</p>{story}</div>')
         self.pages["darrow/index.html"] = shell("Ser Darrow of Edgemoor", body, rel, "Darrow", "char-page darrow-page", desc="Darrow's page and his full Reckoning.")
 
@@ -2020,18 +2016,17 @@ class Site:
         place = self.place_by_id.get(self.current_place, {})
         loc = w.get("location") or {}
         where = place.get("name", "") + (f", {loc.get('detail')}" if isinstance(loc, dict) and loc.get("detail") else "")
-        since = ""
-        if after:
-            since = ('<p class="since"><span class="lbl">' + ("Since then" if latest else "So far") + '</span> '
-                     + ", ".join(f'<a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc("Between — " + s["title"])}</a>' for s in after) + '</p>')
+        scene_row = ""
+        if latest and after:  # the newest piece is a Between: the scene it follows gets its own row
+            scene_row = (f'<dt>Latest scene</dt><dd><a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">'
+                         f'{esc((latest["label"] + " — " if latest["label"] else "") + latest["title"])}</a></dd>')
         book_line = f"Book {roman(w.get('book', 1))} — {w['book_title']}" if w.get("book_title") else ""
         tier = (d.get("chapter_now") or {}).get("tier_so_far")
         tier_chip = f'<div class="chips">{chip(TIER_SO_FAR[tier], TIER_CLS.get(tier, ""))}</div>' if tier in TIER_SO_FAR else ""
         plate = (f'<section class="plate now-plate"><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>{tier_chip}'
-                 f'<dl class="kv"><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd></dl>'
-                 f'<p class="beat">{esc(w.get("last_beat", ""))}</p>'
-                 f'<div class="btns">{self.continue_button(rel)}</div>{since}</section>')
+                 f'<dl class="kv"><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd>{scene_row}</dl>'
+                 f'<div class="beat"><span class="lbl">Just happened</span><p>{esc(w.get("last_beat", ""))}</p></div>{self.continue_button(rel)}</section>')
         q = w.get("current_quest") or {}
         work = "".join(f'<h3 class="sub-h">Work in hand</h3><p class="prose">{esc(pr.get("name", ""))}, stage {pr.get("stage")} of {pr.get("of")}: {esc(pr.get("visible", ""))}</p>'
                        for pr in getattr(self, "projects", []) or [] if pr.get("status") == "live")
@@ -2067,7 +2062,7 @@ class Site:
         card = (f'<div class="rk-mini"><div class="hero">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
-                f'<div class="mini-attrs">{rk}</div><p class="lbl">the faint numbers are the ones he read behind his own</p>'
+                f'<div class="mini-attrs">{rk}</div><p class="hint">The faint numbers are the ones he read behind his own.</p>'
                 f'{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}'
                 f'{self.knots_brief(rel)}'
                 f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
@@ -2443,13 +2438,13 @@ html.mast-away .mast{transform:translateY(-100%)}
 .kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;margin:0;font-size:.95rem}
 .kv dt{font-family:var(--label);font-size:.8rem;letter-spacing:.08em;color:var(--dim)}
 .kv dd{margin:0}
-.beat{font-style:italic;color:var(--dim);border-left:2px solid var(--brass-dim);padding-left:10px}
-.btn{display:inline-grid;gap:1px;font-family:var(--label);font-weight:700;letter-spacing:.06em;border:1px solid var(--brass);border-radius:4px;padding:8px 14px;color:var(--night);background:var(--brass);max-width:100%}
+.beat{display:grid;gap:3px;color:var(--dim);border-left:2px solid var(--brass-dim);padding-left:10px;font-size:.95rem;line-height:1.5}
+.btn{display:inline-block;font-family:var(--label);font-weight:700;letter-spacing:.06em;line-height:1.3;white-space:nowrap;border:1px solid var(--brass);border-radius:4px;padding:7px 14px;color:var(--night);background:var(--brass)}
 .btn:hover{text-decoration:none;filter:brightness(1.08)}
-.btn-sub{font-family:var(--body);font-weight:500;letter-spacing:0;font-size:.85rem;opacity:.85}
-.btn.ghost{background:transparent;color:var(--brass);border-color:var(--brass-dim)}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.since{font-size:.9rem;color:var(--dim)} .since .lbl{margin-right:6px}
+.btn-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.btn-note{font-size:.9rem;color:var(--dim);min-width:0}
+.btn-note:hover{color:var(--brass);text-decoration:none}
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:3px}
 .fine{font-size:.82rem;color:var(--faint);font-style:italic}
 
 /* section heads */
@@ -2614,7 +2609,9 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
-.panels-h{margin-top:6px}
+.panels-h{margin-top:4px}
+.panels-h+.panel{margin-top:-2px}
+.panel+.panels-h{margin-top:18px}
 .panel{border:1px solid var(--rule);border-radius:6px;padding:0;background:var(--plate)}
 .panel[open]{border-color:var(--brass-dim);background:linear-gradient(180deg,var(--plate-hi),var(--plate) 120px)}
 .panel>summary{display:flex;align-items:center;gap:12px;padding:12px 14px;color:var(--ink);font-family:var(--body);font-size:1rem;letter-spacing:0}
@@ -2692,6 +2689,7 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .comp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .comp .m{font-size:.88rem;color:var(--dim)}
 .rk-mini{display:grid;gap:12px}
+.rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .mini-attr{display:grid;gap:0;border-top:2px solid var(--rule);padding-top:6px}
 .mini-attr .v{font-family:var(--display);font-weight:700;font-size:1.8rem;line-height:1}
