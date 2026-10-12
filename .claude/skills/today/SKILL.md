@@ -18,7 +18,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
 3. Answer, real numbers only, compact enough for a phone:
    - **Planned today:** each session with today's doses (e.g., Session A: SL sit-to-stand 24" 2 × 12 L …), the floor minimum, conditioning, and the minimum version if he's short on time (the plan's "short on time" cut order).
    - **Done so far** (from the engine).
-   - **Still open**, in priority order: floor first, then the knee session, then add-ons.
+   - **Still open**: the engine's `Still open` line, which already holds the day's planned sessions with plan changes applied (a red-light day owes none), in priority order: floor first, then the knee session, then add-ons. It means nothing is recorded yet, not that it wasn't done: if he says he did it, that's a `/log`. A partial session or a missed PT visit is recorded, so it isn't open. The optional add-ons (`optional this week`) are never on it: mention one only if he asks, and never before its `from` date.
    - **Nutrition:** kcal and protein to go, and one practical way to close the gap (based on what he usually eats).
    - **PT day:** list the questions to ask.
 4. No story content. If he wants the story, that's `/saga`.

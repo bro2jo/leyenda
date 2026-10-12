@@ -547,6 +547,37 @@ def as_codes(v):
     return [v] if isinstance(v, str) else list(v)
 
 
+SESSION_NAMES = {"knee": "knee session", "kneeA": "knee Session A", "kneeB": "knee Session B", "upperA": "Upper A",
+                 "upperB": "Upper B", "cond": "conditioning", "pt": "PT visit", "sport": "sport session",
+                 "accessory": "accessory", "power": "power"}
+
+
+def unlogged_sessions(cfg, day, f):
+    """The day's planned sessions (plan_changes applied) with nothing recorded for them yet. Any outcome is a record:
+    a partial knee session, a ride under the paid minimum, a booked PT visit missed. A rest day the plan ordered
+    (light=red) owes none. Knee sessions match as a family (A and B alternate whatever the day); add-ons by code."""
+    if f and f["light"] == "red":
+        return []
+    out = []
+    for p in planned_for(cfg, day):
+        k = session_key(p)
+        if not f:
+            hit = False
+        elif k == "knee":
+            hit = bool(f["knee"] or f["knee_partial"])
+        elif k == "pt":
+            hit = f["pt"] or f["pt_missed"]
+        elif k == "cond":
+            hit = f["cond_min"] > 0
+        elif k == "sport":
+            hit = bool(f["sport_sessions"])
+        else:
+            hit = p in f["addons"]
+        if not hit:
+            out.append(SESSION_NAMES.get(p, p))
+    return out
+
+
 def week_plan(cfg, ws):
     """The week's planned sessions by family (knee, upper, cond, pt, sport, ...) and its optional add-ons."""
     counts = defaultdict(int)
@@ -1024,8 +1055,12 @@ def cmd_today(args, cfg, rules):
     t = cfg["nutrition_targets"]
     print(f"# {dow(day)} {day.isoformat()} · POD {pod(cfg, day)} · post-op week {post_op_week(cfg, day)} · "
           f"Phase {cfg['rehab']['current_phase']}")
+    tpl = template_for(cfg, day)
+    opt_from = tpl.get("optional_from") or cfg["weekly_template"].get("optional_from") or {}
+    optional = [o + (f" (from {opt_from[o]})" if opt_from.get(o, "") > day.isoformat() else "")
+                for o in tpl.get("optional", [])]
     print(f"Planned today (template): {', '.join(planned_for(cfg, day)) or 'rest / floor minimum only'}"
-          f" · optional this week: {', '.join(cfg['weekly_template'].get('optional', []))}")
+          f" · optional this week: {', '.join(optional)}")
     items = [r for r in read_csv("food") if r.get("date") == day.isoformat()]
     if f and f["kcal"] is not None:
         k, p = f["kcal"], f["protein"] or 0
@@ -1035,14 +1070,20 @@ def cmd_today(args, cfg, rules):
         print(f"Nutrition: nothing logged yet · targets {fmt(t['kcal'])} kcal / {t['protein_g']}-{t['protein_g_max']} g protein")
     if f:
         done = []
+        if f["light"] == "red":
+            done.append("red light")
         if f["check"]:
             done.append("morning check")
         if f["floor"]:
             done.append(f"floor ({f['floor']})")
         if f["knee"]:
             done.append(f"knee session {f['knee']}")
+        elif f["knee_partial"]:
+            done.append("knee session partial")
         if f["pt"]:
             done.append("PT")
+        elif f["pt_missed"]:
+            done.append("PT missed")
         if f["addons"]:
             done.append("add-on " + "+".join(sorted(f["addons"])))
         if f["cond_min"]:
@@ -1060,12 +1101,14 @@ def cmd_today(args, cfg, rules):
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
         need = floor_rounds(cfg, day.isoformat())
         missing = [x for x, ok in [("morning check (grade swelling)", f["check"]),
-                                   ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full"),
-                                   ("creatine", f["creatine"])] if not ok]
+                                   ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full")]
+                   if not ok]
+        missing += unlogged_sessions(cfg, day, f) + ([] if f["creatine"] else ["creatine"])
         if missing:
-            print("Still open: " + ", ".join(missing))
+            print(("Not logged" if f["closed"] else "Still open") + ": " + ", ".join(missing))
     else:
-        print("Logged: nothing yet. Still open: morning check, daily minimum (weighted heel prop), creatine")
+        print("Logged: nothing yet. Still open: " + ", ".join(
+            ["morning check", "daily minimum (weighted heel prop)"] + unlogged_sessions(cfg, day, None) + ["creatine"]))
 
 
 def cmd_week(args, cfg, rules):
