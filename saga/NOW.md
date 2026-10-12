@@ -37,5 +37,5 @@ ARTS · The Seated Blade I · Stillwater Stance II · The Long Breath I · The M
 SEALED (practice banked) · Groundbreaker (Knot III)
 ```
 
-**Chapter 2, so far (on what's logged):** Hard-won
+**Chapter 2, so far (on what's logged):** Triumph
 <!-- engine:end -->
