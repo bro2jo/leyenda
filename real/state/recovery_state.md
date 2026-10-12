@@ -232,7 +232,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 | **Optional items** | **Off for the week of 10/11** (accessory day): the week of 10/4 had missed daily-minimum days |
 | **New from Mon 10/12** | Upper warm-up: thoracic extension → **doorway pec sequence** (contract-relax, chosen 10/12) → face pull with external rotation (seated) · tissue & trunk finisher · posture cooldown after every knee session (first attempt 10/11 skipped) |
 
-**Upper B, 10/12 — last dose and next (session 4, ~Mon 10/19).** Bike 18 first. C ran 2 of 3 rounds; the Copenhagen was skipped. Session minutes and RPE not reported.
+**Upper B, 10/12 — last dose and next (session 4, ~Mon 10/19).** Bike 18 first. C ran 2 of 3 rounds; the Copenhagen was skipped. 75 min, session RPE 7.5/10. He will run the next one as written below.
 
 | Lift | 10/12 | Next |
 |---|---|---|
