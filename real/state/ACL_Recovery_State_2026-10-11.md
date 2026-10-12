@@ -110,7 +110,7 @@
 - Every day: the daily minimum.
 - Sessions alternate **A → B → A** regardless of day. Three loaded days, none back-to-back by design. Throwing is not knee load in Phase 3 (seated or square-stance, easy effort, no pivot, no step-out: `real/plan/sport/sport_plan.md` §3, §5) and never replaces the daily minimum.
 - **Catch-up week of 10/11 (trainer 10/10):** upper every other day, **Mon 10/12 Upper B → Wed 10/14 Upper A → Fri 10/16 Upper B**; Session A on **Tue 10/13** so Wednesday carries upper. The template above resumes 10/18.
-- **Next:** Sun 10/11 **Session B** → Tue 10/13 **Session A** → PT (confirm day) → Sun 10/18 Session B.
+- **Next:** Tue 10/13 **Session A** → PT (confirm day) → Sun 10/18 Session B.
 
 ### Daily minimum — every day
 
@@ -153,23 +153,24 @@ Doses below are the last clean dose (10/6, clean morning 10/7). "Next" = the one
 - **Short on time:** drop 9 → 8 → 7 → 6 → 3.
 - **Minimum session:** warm-up + 1, 2, 4, 5 (~30 min).
 
-### Session B — posterior / single-leg (next: Sun 10/11)
+### Session B — posterior / single-leg (next: Sun 10/18)
 
 | # | Exercise | Dose next | Ladder [plan Phase 3 target] |
 |---|---|---|---|
 | WU | Bike | 8 min | — |
-| 1 | Forward step-down, 6" (PT 10/1) | L 2 × 10, first time at home (PT dose) | 3 × 10 → 7" → 8" (height rule) [3 × 8–10] |
+| 1 | Forward step-down, 6" (PT 10/1) | L 2 × 10 (6.5" step at home, 10/11) | 3 × 10 → 7" → 8" (height rule) [3 × 8–10] |
 | 2 | SL sit-to-stand, 18" | same dose as Session A | same ladder |
-| 3 | RDL, DBs | 3 × 10 @ 25 lb/hand (third set = the one change) | +5 lb/hand steps; slow-eccentric tempo is an option as its one change [3 × 8–12] |
+| 3 | RDL, DBs | 3 × 10 @ 45 lb/hand (10/11) | +5 lb/hand steps; slow-eccentric tempo is an option as its one change [3 × 8–12] |
 | 4 | Lateral lunge — **NEW** | 2 × 8/side, short range, bodyweight | 3 × 8 → full range [3 × 8 each direction] |
-| 5 | Standing hamstring curl, band | 3 × 10 L · R 3 × 10 | heavier band → 3 × 15 [3 × 10–15] |
+| 5 | Standing hamstring curl, cable | 2 × 10 each leg @ 30 lb (10/11) | 3 × 10 → 3 × 15 → +load [3 × 10–15] |
 | 6 | SL bridge | 3 × 8 each side | 3 × 10 → 3 s hold → load (in-plan from 10/9) |
-| 7 | Standing band hip 4-way, band at the ankle (PT 10/8 multi-hip + plan adduction) | abduction · adduction · extension · flexion (knee straight), 2 × 15 each side, alternating | 3 × 15 → heavier band [2–3 × 10–15] |
-| 8 | Standing bird dog, 8 lb (PT 10/8) | 2 × 15 | — |
+| 7 | Standing cable hip 4-way, cable at the ankle (PT 10/8 multi-hip + plan adduction) | abduction · adduction · extension · flexion (knee straight), 2 × 10 each side @ 20 lb, alternating (10/11) | 2 × 15 → 3 × 15 → +load [2–3 × 10–15] |
+| 8 | Standing bird dog, 15 lb (PT 10/8: 8 lb) | 2 × 10 (10/11) | 2 × 15 |
 | 9 | SL balance + ball toss on BOSU · eyes-closed double-leg stance | 3 × 45 s · 1 min each way | + perturbation |
 | CD | Step hamstring stretch (optional) | 2 × 30 s | — |
 
 - **Batch 10/11:** lateral lunge (new) · forward step-down first time at home (PT dose) · RDL third set · hip 4-way and bird dog at home (PT dose) · eyes-closed stance.
+- **10/11 ran past its batch and stands:** RDL 25 → 45 lb/hand, cable hamstring curl 30 lb and cable hip 4-way 20 lb in place of bands, bird dog 8 → 15 lb. Mon 10/12 morning was clean (trace, same; pain 0; extension good), so these are the doses now (load rule 5). From here, one change per exercise a session again.
 - **Short on time:** drop 9 → 8 → 7 → 5.
 - **Minimum session:** warm-up + 1, 2, 3 (~25 min).
 
@@ -237,7 +238,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 - [ ] Bike 3+ rides a week, +3 min per ride toward 30
 - [ ] **Sun 10/11:**
   - [ ] weigh-in, first extension photo, SLR lag, flexion check
-  - [ ] Session B: forward step-down at home (the single-leg control gate), lateral lunge (new)
+  - [x] Session B: forward step-down at home (the single-leg control gate), lateral lunge (new)
 - [ ] **Throwing, week 1 (baseline):** Wed A, Fri B, Sat C, film; Phase 3 throwing only
 - [ ] **Session A, Tue 10/13:** seated knee extension 90°→45° (new). Confirm the equipment (band or ankle weight) and a 12" step
 - [ ] **Quad test, both sides,** booked at the next visit
