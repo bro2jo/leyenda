@@ -4,10 +4,10 @@
     "book": 1,
     "chapter": 2,
     "beat": "b1.2",
-    "next_scene": 1,
+    "next_scene": 2,
     "stage": "scene",
-    "last_written": "ch01:s4",
-    "rank_on_page": "Bound"
+    "last_written": "ch02:s1",
+    "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
@@ -26,8 +26,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch02:s1"
       },
       {
         "n": 2,
@@ -40,7 +40,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {

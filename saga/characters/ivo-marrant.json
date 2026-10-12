@@ -29,7 +29,7 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
   },
   "last_seen_doing": "Going down the first flight of the Steps into the dusk after the Captain of the Ninth gave his name at the bars; he had looked at Darrow's face, called him Captain, and thanked the Prior for her candour.",
-  "now": "Camped on the lower terrace below the gate of Saint Ysolde's with four grey cloaks; the sixth of them keeps the winch-house. He read his list at the bars and was answered by Old Mercy and the law of names. Then the Captain of the Ninth crossed the court and gave his name at the bars; Marrant looked at his face, called him Captain, and thanked the Prior for her candour. He has said he will wait.",
+  "now": "Camped on the lower terrace below the gate of Saint Ysolde's with four grey cloaks; the sixth of them keeps the winch-house. He read his list at the bars and was answered by Old Mercy and the law of names. Then the Captain of the Ninth crossed the court and gave his name at the bars; Marrant looked at his face, called him Captain, and thanked the Prior for her candour. He has said he will wait. That night his camp sat up in turns round one fire, where the whole House could see it, and a man of his at the bars sent the Captain of the Ninth the Confessor's good night, by his rank.",
   "story_so_far": "He led the grey cloaks up the Holloway and the Thousand Steps and came to the gate of Saint Ysolde's in the hour before dusk, five at the bars and the sixth at the winch-house, with the censer in his own hand. He had been told at the winch-house fire that the Faithless had gone down the far side a week since, and read his list anyway: he has read to empty beds before, he said, and finds it steadies the hand. He held his paper out for the wicket under the law of guests until the Prior could not refuse it without breaking that law; when the wicket opened a hand's width, two of his men came through, and Old Mercy rang late and stopped them a pace from the wounded. Mother Ione gave him the law's other half: no name under the bell is taken down against its will. He called her bell fine and a little slow on the rope, made his camp on the lower terrace, and called for the Captain of the Ninth to come down and kneel. The Captain came to the bars instead and gave his name; Marrant called him Captain and thanked the Prior for her candour.",
   "quote": {
     "text": "Bells grow tired.",
@@ -102,6 +102,12 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "Mother Ione. Thank you for your candour."
+    },
+    {
+      "fact": "On the night he camped below the gate, one of his men at the bars asked the gate-ward, very civil, to give the Captain of the Ninth the Confessor's good night, by his rank.",
+      "chapter": "02",
+      "scene": "1",
+      "evidence": "to give the Captain of the Ninth the Confessor's good night"
     }
   ],
   "relationships": [

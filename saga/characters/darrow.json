@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-2",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-2"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-1"
   },
-  "last_seen_doing": "In the chapel at night, standing at the end of the Prior's pew, having asked her for a reproach and been told he is in her count of names.",
-  "now": "He has answered to his name. He crossed the court to the bars in front of the whole House, called the Confessor back by both his names, and gave his own and his rank: nobody went down the far side, and nobody is going down this one. Marrant looked at his face through the bars, called him Captain, and thanked the Prior for her candour. The valley's story is dead at the gate; the Prior asked him only whether his shoulder was hurt. At the wicket his shoulder could not shut it and the knee said one thing, quite clearly; Maelis means to read it tonight. Before the hall, he went along the wall-walk after Wren, kept her count of the lamps while she told him how stupid it was, and promised to tell her first next time. Confessor Ivo Marrant and four grey cloaks are camped on the lower terrace below the gate, and the sixth of them keeps the winch-house. In the chapel the Prior would not reproach him: she says the names of everyone under her roof every night, has never once given one to a writ, and he is in her count.",
+  "last_seen_doing": "Answering Benedek's good night aloud at the night bell, after his throat shut on the oath.",
+  "now": "He has answered to his name: he gave it and his rank to the Confessor at the bars in front of the whole House, and the valley's story is dead at the gate. The Prior would not reproach him; he is in the names she says every night. In the hall that night Maelis read the knee after the wicket and found it held, and still soft; while she read, the word under his name changed on his palms. Benedek, not read at the gate, takes it for mercy, and Darrow has not told him why the Confessor's words about men who can't answer stay with him. Confessor Ivo Marrant and four grey cloaks sit up in turns round one fire on the lower terrace below the gate, the sixth keeps the winch-house, and the Confessor's good night now comes to him by his rank.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -382,6 +382,42 @@
       "chapter": "02",
       "scene": "between-2",
       "evidence": "You were in it before you gave him your name."
+    },
+    {
+      "fact": "On the night of the gate the hall had his name before he reached his cot.",
+      "evidence": "The hall had his name before he reached his cot",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "He could not tell Benedek what the Confessor had said of men who can't answer: the law keeps a name that is taken against its will, and a man who cannot answer has no will to be taken against.",
+      "evidence": "A man who could not answer had no will to be taken against.",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "While Maelis read the knee by lamplight, the script came up over his palms unasked, and the word under his name had changed; he said nothing of it.",
+      "evidence": "under his name the word had changed",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "From the hall window he took the camp's measure: one fire, four sitting round it and one walking the terrace's edge, changing places in turns, nobody lying down.",
+      "evidence": "They were sitting up in turns, all night, where the whole House could see them do it.",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "Sent the Confessor's good night by his rank through the gate-ward, he had the man tell the Confessor that he had given it, and nothing more.",
+      "evidence": "Then tell him you gave it.",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "At the night bell he tried to say the oath aloud with Benedek and his throat shut on the first word; he gave the lad the shapes of it again.",
+      "evidence": "his throat shut on it like a door",
+      "chapter": "02",
+      "scene": "1"
     }
   ],
   "relationships": [
@@ -494,6 +530,10 @@
     {
       "chapter": "02",
       "scene": "between-2"
+    },
+    {
+      "chapter": "02",
+      "scene": "1"
     }
   ]
 }

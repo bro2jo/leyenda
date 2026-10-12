@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "01",
-    "scene": "choice",
+    "chapter": "02",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#choice"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-1"
   },
-  "last_seen_doing": "In front of Darrow in the court after he gave his name at the bars, having looked at the knee first: hidden he was a lie they'd have found, named he is a law they'll have to break; she sent him to the hall slowly and will read the knee tonight.",
-  "now": "At Saint Ysolde's. The Confessor's eyes found her at the gate and stayed a beat longer than courtesy. When Darrow had given his name at the bars she saw to the hurt lay brother first, then looked at the knee that had been at the wicket and at Darrow's face, and told him that hidden he was a lie they'd have found by the thaw, and named he is a law they'll have to break where the valley can watch; the knee lies to her every morning, he hadn't, and he is to keep it that way. She will read the knee tonight.",
+  "last_seen_doing": "Reading the knee by lamplight on the night of the gate, then taking the lamp on down the hall.",
+  "now": "At Saint Ysolde's, on the night the Confessors camped below the gate, whose eyes found her at the bars. She read the Captain's knee by lamplight after the wicket and found it held: another man's weight on that door a moment longer and she would have had nothing left to tie it to. It is still soft, she says, and will be at the thaw.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
   "quote": {
     "text": "The quiet is a liar.",
@@ -165,6 +165,18 @@
       "chapter": "01",
       "scene": "2",
       "evidence": "the Crown has burned every hand it ever caught putting it there"
+    },
+    {
+      "fact": "Reading the knee by lamplight on the night of the gate, she found it had held at the wicket, and said what one moment more of a man's weight on that door would have cost: nothing left to tie it to.",
+      "evidence": "I'd have had nothing left to tie it to",
+      "chapter": "02",
+      "scene": "1"
+    },
+    {
+      "fact": "Having found it held, she said it is still soft, and will be soft at the thaw.",
+      "evidence": "It'll be soft at the thaw.",
+      "chapter": "02",
+      "scene": "1"
     }
   ],
   "relationships": [
@@ -263,6 +275,10 @@
     {
       "chapter": "01",
       "scene": "choice"
+    },
+    {
+      "chapter": "02",
+      "scene": "1"
     }
   ]
 }

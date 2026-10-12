@@ -19,21 +19,29 @@
       "after": "climax",
       "covers": [],
       "written": "2026-10-11"
+    },
+    {
+      "scene": 1,
+      "title": "Good Night, Captain",
+      "covers": [
+        "2026-10-11"
+      ],
+      "written": "2026-10-11"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the House's chapel off the court at night, one candle lit, with Mother Ione; the hall is still ahead of him",
+    "detail": "the infirmary hall at night, on his cot by Hollis's and Benedek's, after the night bell; snow falling fine and dry, and the Confessors' one fire on the lower terrace below",
     "_about": "place is an id from saga/state/places.json"
   },
   "season": "first snow of the year on the Steps",
   "current_quest": {
     "name": "The List",
-    "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. The named are to be taken down the Steps to the Oathspire and made to kneel where everyone can watch, which would say the Ninth drowned for its own bad faith, and would tear the thread in Darrow's knee. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Miss one ringing and the law lapses till the next, and Sister Pell, who rings it, is very old. At the gate, Confessor Ivo Marrant read his names at the bars, and two of his men came through the wicket before the bell rang, late. Now five grey cloaks are camped on the lower terrace below the gate, and the sixth holds the winch-house, the cage and Rae's cart, so the road is theirs. Marrant's price: the Captain of the Ninth comes down and kneels, and the rest of the paper goes back in his cloak. Darrow went to the bars and gave him his name and his face. Marrant says he will wait.",
+    "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. The named are to be taken down the Steps to the Oathspire and made to kneel where everyone can watch, which would say the Ninth drowned for its own bad faith, and would tear the thread in Darrow's knee. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Miss one ringing and the law lapses till the next, and Sister Pell, who rings it, is very old. At the gate, Confessor Ivo Marrant read his names at the bars, and two of his men came through the wicket before the bell rang, late. Now five grey cloaks are camped on the lower terrace below the gate, and the sixth holds the winch-house, the cage and Rae's cart, so the road is theirs. Marrant's price: the Captain of the Ninth comes down and kneels, and the rest of the paper goes back in his cloak. Darrow went to the bars and gave him his name and his face. Marrant says he will wait, and that night a grey cloak at the bars sent the Captain of the Ninth the Confessor's good night, by his rank.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary)"
   },
-  "current_struggle": "The soft season. The knee feels well, and Maelis says that is exactly the danger: the thread is softest now, and the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. At the wicket his shoulder could not shut it, and something deep in the knee said one thing, quite clearly. Maelis looked at it before she looked at his face, and will read it tonight.",
-  "last_beat": "In the chapel Darrow asked the Prior for the reproach she had not given him, and got questions: whose story was it, and a lie told for a man is his to bury. She says the names of everyone under her roof every night. \"I have never once given a name to a writ. Did you think I would start with yours?\" He is in her count, and was before he gave it to the Confessor.",
+  "current_struggle": "The soft season. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. Below the gate the Confessors sit up in turns round their fire, and their good night now comes to him by his rank.",
+  "last_beat": "The night of the gate. The hall had his name before he reached his cot. Hollis, carried down from the gatehouse, gave the hall the names that were read, and Benedek was not among them: \"It's mercy after all.\" Darrow could not tell him what the Confessor had said about men who can't answer without telling him why it frightened him. Maelis read the knee by lamplight: \"Held.\" Another man's weight on that door a moment longer and she would have had nothing left to tie it to; it is still soft, and will be at the thaw. From the window the camp sits up in turns round one fire, where the whole House can see. A grey cloak at the bars sent the Captain of the Ninth the Confessor's good night, by his rank. At the night bell Darrow tried to say the oath aloud with Benedek, and his throat shut on it; he could answer the lad's good night.",
   "companions": {
     "maelis": {
       "approval": 23,

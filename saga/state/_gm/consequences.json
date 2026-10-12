@@ -164,7 +164,7 @@
           "at": "ch02:s1",
           "weight": "scene",
           "what": "Downstream of `named_himself` (b1.2): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.2`); fire where it is honoured, void with a reason if the story made it moot",
-          "status": "pending"
+          "status": "fired@ch02:s1"
         }
       ]
     },
