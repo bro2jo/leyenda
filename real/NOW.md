@@ -20,6 +20,7 @@ Program: `real/state/ACL_Recovery_State_2026-10-11.md` §6 (`python3 engine/darr
 - The right knee's hyperextension on a heel prop (the remaining extension target).
 - If wanted: BFR · Spanish squat isometric · seated rotational throws from ~10/17 (not in the plan).
 - **Throwing, for awareness** (sport plan §11): "Seated and square-stance throwing at easy effort now; pivots on the left from Phase 4; max-intent throws from Phase 5." Ask: anything he wants watched with pivots on the graft side? Any reason to wait on max-intent throws?
+- **Side plank from the feet, left side down** (trainer, 10/12): OK now in the graft's weak window, or wait? Until then right side down only. `real/visits/2026-10-12_trainer-session.md`.
 - Which PTA treated on 10/1.
 - Awareness line, no approval needed: upper body runs seated on its own days with the left leg up; the right leg mirrors the left's single-leg work.
 
