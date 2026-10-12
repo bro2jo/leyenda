@@ -1,10 +1,10 @@
 # Imported originals
 
-Logs brought in from the ACL dashboard, kept exactly as uploaded. They are history, not working files: nothing writes here except a re-import of the same file (git keeps every version). The working logs are one level up.
+Logs brought in from the old ACL dashboard (retired 10/12), kept exactly as uploaded. They are history, not working files: nothing writes here except a re-import of the same file (git keeps every version). The working logs are one level up.
 
 | File | Covers | Merged into |
 |---|---|---|
-| `ACL_Daily_Log.csv` | 9/10–10/12 (uploaded 10/9; replaced by the dashboard's audited copy 10/12) | `../daily_log.csv` |
+| `ACL_Daily_Log.csv` | 9/10–10/12 (uploaded 10/9; replaced by its audited final copy 10/12) | `../daily_log.csv` |
 
 ## `ACL_Daily_Log.csv` → `daily_log.csv`
 

@@ -13,8 +13,8 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - every day: the daily-minimum and bike lines in `real/NOW.md` → Plan in force (`doc state "daily minimum"` for the full text);
    - an upper, accessory or power day: `doc addon 3` (sessions);
    - a sport day (template `sport`): this week's row of `doc sport "first 12 weeks"` (week 1 = Sun 10/11) and that week in the guide (`doc sportguide "week N"`), only as far as the current stage allows (`config.json → sport.stage`);
-   - a PT day: the one question list, `doc state "next visit"` (State §5), plus anything `real/NOW.md` → Next PT visit adds since, and the newest `real/visits/` file if the last visit changed anything.
-   The newest visit file outranks the State until the dashboard's next State folds it in (`real/NOW.md` says when).
+   - a PT day: the one question list, `doc state "next visit"` (State §5), plus anything `real/NOW.md` → Next PT visit adds since, and the newest PT Notes entry (`doc ptnotes <date>`) if the last visit changed anything.
+   The newest PT Notes entry outranks the State until the checkpoint folds it in (`real/NOW.md` says when).
 3. Answer, real numbers only, compact enough for a phone:
    - **Planned today:** each session with today's doses (e.g., Session A: SL sit-to-stand 24" 2 × 12 L …), the floor minimum, conditioning, and the minimum version if he's short on time (the plan's "short on time" cut order).
    - **Done so far** (from the engine).

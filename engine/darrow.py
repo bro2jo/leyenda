@@ -58,7 +58,7 @@ P = {
     "checkpoints": ROOT / "real/checkpoints",
     "visits": ROOT / "real/visits",
     "addon": ROOT / "real/plan/ACL_Whole_Athlete_AddOn.md",
-    "working_rules": ROOT / "real/plan/ACL_Dashboard_Working_Rules.md",
+    "working_rules": ROOT / "real/plan/ACL_Working_Rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
     "master": ROOT / "real/plan/ACL_Reconstruction_Rehab_Master_Plan.md",
     "offseason": ROOT / "real/plan/24-week-offseason-program-v4.md",

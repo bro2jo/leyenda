@@ -1,12 +1,12 @@
-# ACL Recovery State — Checkpoint Sun 2026-10-11, revised Mon 2026-10-12 (POD 49, post-op week 7)
+# ACL Recovery State — Sun 2026-10-11, revised Mon 2026-10-12 (POD 49, post-op week 7)
 
-**The single source for everything current** (see `claude/ACL_Project_Index.md`). Rules live in the Working Rules, the add-on design in the Add-On, and the PT's words in PT Notes.
+*The current program and where things stand, present tense only. Rules live in the Working Rules, the add-on design in the Add-On, the PT's words in `real/visits/ACL_PT_Notes.md`; `real/plan/ACL_Project_Index.md` says where each fact lives. Sections 2, 4 and 8 point to where that history lives in this repo.*
 
-- Covers dashboard week **Sun 10/4 → Sat 10/10**, plus this week so far: Sun 10/11's Session B and Mon 10/12's morning, which is its verdict.
-- **Revised in place Mon 10/12 at midday** (mid-week checkpoint on request). Monday's bike and Upper B were still to come.
-- Replaced `ACL_Recovery_State_2026-10-04.md` on 10/11.
-
-Source priority: latest PT/surgeon instruction → rehab plan → this file → Whole-Athlete Add-On → logs → general ACL knowledge.
+- **Program set:** Sun 2026-10-11 checkpoint; revised Mon 10/12 (mid-week, on request): Session B's 10/11 doses as its baseline (clean morning); Session A fixed for Tuesday; the eyes-closed drill is a wobble-board drill, with a BOSU home version; Upper B's row chest-supported for session 2; this week's upper Mon B → Thu A; throwing days added.
+- **Last reviewed:** Mon 2026-10-12.
+- **Supersedes:** `real/state/archive/ACL_Recovery_State_2026-10-04.md`.
+- **Next:** reviewed at the 10/18 checkpoint (the Phase 3 gate review).
+- **Source priority:** latest PT/surgeon instruction (`ACL_PT_Notes.md`) → rehab master plan → this file and the Working Rules → Whole-Athlete Add-On → sport plan → logs → general ACL knowledge.
 
 ---
 
@@ -34,17 +34,9 @@ Source priority: latest PT/surgeon instruction → rehab plan → this file → 
 
 ---
 
-## 2. Now — Mon 10/12 midday (POD 49)
+## 2. Current reading
 
-- **Morning:** swelling **trace** (described as mild trace; same grade as Sunday) · pain 0 · extension good (self). Stiffness, catch and wellness not reported.
-- **Verdict on Sun 10/11's Session B: clean** on everything reported. That covers the ~8-change batch, including the RDL jump to 45 lb/hand. **The 10/11 doses are the Session B baseline** (§6).
-- **Session B, 10/11:**
-  - 80 min, RPE 7: session load 560, the first on record
-  - Forward step-down controlled (self); RDL at 45 lb/hand felt easy
-  - Evening: pain 0, no fullness, gait great
-  - Not done: posture cooldown; eyes-closed drill (it turned out to be a wobble-board drill, §5)
-- **Still to do today:** heel prop 10 lb × 10 min · bike 18 · **Upper B** (session 2, seated or lying) with the new warm-up and the finisher · **book PT**.
-- **Tue 10/13:** Session A, after the pre-session check.
+*Not kept here. Each morning is in `real/logs/daily_log.csv` (`python3 engine/darrow.py today`); what stands this week is in `real/NOW.md`. Mon 10/12 was clean after Sunday's Session B, so the 10/11 doses are Session B's baseline (§6).*
 
 ---
 
@@ -66,37 +58,9 @@ Source priority: latest PT/surgeon instruction → rehab plan → this file → 
 
 ---
 
-## 4. Measurements
+## 4. Measurements log
 
-### Anchors
-
-| Date | POD | Extension L | Flexion L | Strength | Source |
-|---|---|---|---|---|---|
-| pre-op | — | −1° (R 0°) | 144° (R 144°) | Quad 58.9 / 83.7 lb (70.4%) · ham 55.8 / 79 lb (70.6%) | Dynamometer, goniometer |
-| 9/11 | 18 | 2° hyperext | 130° A / 135° P | — | Goniometer |
-| 9/25 | 32 | −3° (likely 3° short; the outlier) | 146° A | — | Goniometer |
-| 10/1 | 38 | 2° hyperext (after a weighted stretch) | — | — | Goniometer |
-| **10/8** | **45** | **2° hyperext AROM** | **146°** | **SL leg press 1RM R 14 / L 9 plates (64%, whole-leg)** | Goniometer, CLP |
-
-- **Swelling grades:** 1+ (9/20–9/27) → ungraded 9/28–10/5 → **trace 10/6–10/12** (10/10 not reported).
-- **Body mass:** 159.8 lb (10/11).
-- **Session load (RPE × min):** 10/11 Session B 7 × 80 = **560**, the first on record and the reference for later sessions.
-
-### Last three weeks
-
-| Date | POD | Swelling (grade) | Pain | Notes |
-|---|---|---|---|---|
-| 9/27 | 34 | 1+ (near trace) | 0 | — |
-| 9/28–10/5 | 35–42 | not graded | 0 | Sessions 9/28 and 9/30; PT 10/1; no sessions 10/4–10/5 |
-| 10/6 | 43 | trace | — | Session A, ~12-change batch |
-| 10/7 | 44 | trace | — | — |
-| 10/8 | 45 | trace | — | PT 9 (Nick) |
-| 10/9 | 46 | trace (barely visible) | — | Upper A; bike 15 |
-| 10/10 | 47 | not reported | — | Heel prop; weigh-in |
-| 10/11 | 48 | trace (low side) | 0 | Session B, ~8-change batch, 80 min, RPE 7; body mass 159.8 |
-| 10/12 | 49 | trace (mild) | 0 | Verdict on Session B: clean |
-
-No post-op dynamometer in five visits.
+*Not kept here. Instrument numbers (pre-op, 9/11, 9/25, 10/1, 10/8): `real/logs/measurements.csv` (`python3 engine/darrow.py measures`). Daily self-checks (swelling grade and trend, pain, extension, flexion, catch, wellness) and session minutes and RPE: `real/logs/daily_log.csv` (`python3 engine/darrow.py show daily DATE`). No post-op dynamometer in five visits.*
 
 ---
 
@@ -129,6 +93,7 @@ No post-op dynamometer in five visits.
 5. If wanted: BFR · Spanish squat · seated rotational med-ball throws (~10/24).
 6. One-line heads-up: upper body on its own days; the right leg mirrors the left's single-leg work.
 7. Which PTA treated on 10/1.
+8. For awareness (sport plan §11): "Seated and square-stance throwing at easy effort now; pivots on the left from Phase 4; max-intent throws from Phase 5." Anything to watch with pivots on the graft side? Any reason to wait on max-intent throws?
 
 ---
 
@@ -288,29 +253,9 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 ---
 
-## 8. Week in review — Sun 10/4 → Sat 10/10
+## 8. Week in review
 
-| Date | Loaded? | What | Next-morning response |
-|---|---|---|---|
-| Sun 10/4 | No | ~3 h on feet; Session A not run | Mon: very clean, down further (not graded) |
-| Mon 10/5 | No | ~half day on feet; Session A skipped | Tue: **trace** |
-| Tue 10/6 | **Yes (Session A)** | ~12-change batch; heel prop | Wed: **trace** |
-| Wed 10/7 | No | Heel prop, NMES, heel slides; Game Ready | Thu: **trace** |
-| Thu 10/8 | **Yes (PT 9, Nick)** | Hardest session to date; measures; new PT items; sauna | Fri: **trace, barely visible** |
-| Fri 10/9 | No | Bike 15 (3.47 mi); heel prop; **Upper A** | Sat: not reported |
-| Sat 10/10 | No | Heel prop; weigh-in | Sun: **trace (low side)** |
-
-| Measure | Week of 10/4 | Target |
-|---|---|---|
-| Loaded days | 2 | 3 |
-| Clean mornings after loading | 2 of 2 | — |
-| Daily minimum (heel prop) | 4 of 7 (Tue, Wed, Fri, Sat) | 7 |
-| Bike rides | 1 | 3+ |
-| Upper sessions | 1 | 2 |
-| Swelling graded | 4 of 7 | 7 |
-| Session minutes / RPE logged | 0 of 2 knee sessions | All |
-
-**This week so far (from 10/11):** Session B, ~8-change batch, 80 min, RPE 7, heel prop done → Mon 10/12 trace, clean. Graded 2 of 2 mornings; minutes and RPE 1 of 1 knee sessions.
+*Not kept here. Each week's review is `real/checkpoints/<Sunday>.md`; the week of 10/4 is `real/checkpoints/2026-10-11.md`.*
 
 ---
 
@@ -333,7 +278,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
    - Morning stiffness, catch and wellness are now the items most often missing.
    - Step-down quality: reported 10/11 (controlled).
 7. **Graft weak window through ~11/16.** A quiet knee is what this window feels like. Strength ramps; impact, running, rotation, and pivoting stay behind the plan's gates.
-8. **Posterior-knee tightness** (9/30) not reported since. If it ever becomes calf pain or calf swelling: surgeon, not dashboard.
+8. **Posterior-knee tightness** (9/30) not reported since. If it ever becomes calf pain or calf swelling: surgeon, not Claude.
 
 ---
 

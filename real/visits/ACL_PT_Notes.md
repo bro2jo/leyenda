@@ -5,7 +5,7 @@ Append each visit's note below, newest at the bottom, the same day. These are th
 Each entry holds:
 - the note, word for word
 - the patient's account
-- a short dashboard reading (abbreviations, sign conventions, what an instruction changes)
+- a short reading (abbreviations, sign conventions, what an instruction changes)
 
 From 10/10, the list of questions for the next visit lives only in the Recovery State §5. Older entries keep their lists as written.
 

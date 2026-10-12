@@ -5,7 +5,7 @@
 - **Program set:** Sun 2026-10-04 checkpoint, revised Fri 10/9: PT 9 (10/8) folded in, Nick's 10/9 instruction, A/B alternation, upper body on its own days, the daily minimum cut to one weighted heel prop.
 - **Last reviewed:** Fri 2026-10-09, ingested from the dashboard. As uploaded: `real/state/archive/ACL_Recovery_State_2026-10-04_rev10-09_dashboard.md`. The 10/4 version: `real/state/archive/ACL_Recovery_State_2026-10-04_v10-04.md`.
 - **Next:** the 10/11 checkpoint writes `ACL_Recovery_State_2026-10-11.md` and moves this file to `real/state/archive/`.
-- **Source priority:** latest PT/surgeon instruction (`real/visits/`) → rehab master plan → this file and the Working Rules (`real/plan/ACL_Dashboard_Working_Rules.md`) → Whole-Athlete Add-On → logs → general ACL knowledge.
+- **Source priority:** latest PT/surgeon instruction (`real/visits/`) → rehab master plan → this file and the Working Rules (`real/plan/ACL_Working_Rules.md`) → Whole-Athlete Add-On → logs → general ACL knowledge.
 
 ---
 
