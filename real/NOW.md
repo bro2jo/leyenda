@@ -37,6 +37,7 @@ Phase 4 waits on one thing: the quad test.
 - **Batches keep growing:** 5 → 7 → ~12 → ~8 changes (9/28, 9/30, 10/6, 10/11), all clean mornings, none attributable. With PT approval no longer a brake, one change per exercise is the main guardrail.
 - **Sun 10/11 Session B ran past its batch** (RDL 25 → 45 lb/hand, SL sit-to-stand 20" unassisted, cable hamstring curl 30 lb and cable hip 4-way 20 lb in place of bands, bird dog 8 → 15 lb). Mon 10/12 was clean, so those are Session B's baseline (State §6). From here, one change per exercise a session.
 - **Weight:** 156.1 avg (+0.9 lb vs last week), not falling. The guide's two-week rule is one week away. Sunday's 159.8 was an evening weight (5:30 PM) and is the State's body-mass baseline; Mon 155.6 at 5:20 AM is a morning one.
+- **Mon 10/12 throwing ran from a pre-set pivot (step-out) stance**, standing and static, 20 min, felt easy. Phase 3 is square stance with weight even; the step-out stance is the first rung of Phase 4 (earliest Tue 10/20, on a knee-session day). Square until then; Tuesday's morning check is the verdict.
 - **Graft weak window through ~11/16:** a quiet knee is not evidence that impact, running, rotation or pivoting can come forward.
 
 ## Open items
