@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+# personal Claude Code files, never shared
+CLAUDE.local.md
+.claude/settings.local.json

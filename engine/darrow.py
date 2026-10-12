@@ -10,25 +10,46 @@ Commands (run from the repo root):
   today [--date D]             real-side view of one day
   week [--date D]              real-side view of the week (Sun-Sat) containing D
   sheet                        saga-side character sheet (no real numbers)
-  set nutrition|daily DATE k=v ...   upsert fields on a day's row (notes+=text appends)
+  set nutrition|daily DATE k=v ...   upsert fields on a day's row (notes+=text appends; an unknown column is refused).
+                               e.g. set daily D am_swelling=trace am_pain=0 floor_am=Y knee_session=A knee_as_planned=Y;
+                               set daily D together=Y (time together on purpose: the Tether's practice; sync reports
+                               TETHER TIED / DRAWN); set nutrition D weight_lb=156.2 creatine=Y "notes+=shake missed"
   close DATE [--force]         close a day in one step: closed=Y, sync, then saga.py now and plan next --date DATE --full;
                                refuses a missed day (nothing logged), a day already closed, and a new week whose last chapter is unclosed
   food add 'JSON' | food list DATE | food rm ID | food lib TEXT
+                               add: an object or a list {date, time, meal, item, qty, kcal, protein_g, … every nutrient
+                               column you can estimate, source (label|library|photo|estimate|library+estimate), notes};
+                               refused for dates before config.json -> food_itemised_from. rm ID: DATE#N (from food list)
   ex add 'JSON'                append exercise-log rows (list or object)
   sport add 'JSON'             append sport-log rows
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye)
-  inspire --reason TEXT        spend one Inspiration on a story action
-  chapter-close [--date D] [--force]   freeze the last completed week's score/tier as a chapter (D: any day of the week to close)
-  knot tie N --date D --evidence TEXT   record a Knot of the Binding
+  inspire --reason TEXT        spend one Inspiration on a bold option or a reroll (earned: a week with the daily minimum
+                               every day, a Triumph week, every level from 5 on)
+  chapter-close [--date D] [--partial-ok] [--force]   Sundays: freeze the week's score and tier as a chapter (pass last
+                               Saturday as D). Refuses while that Saturday looks unfinished (nothing logged, no food, or
+                               under 60% of the kcal target with no dinner) until he says that was all (--partial-ok).
+                               Without --date: the most recent completed, unclosed week; an in-progress week, or redoing
+                               a closed one, needs --force. The dice (--chapter N), the road and the XP bonus read the
+                               frozen tier from then on
+  knot tie N --date D --evidence TEXT   record a Knot of the Binding (a gate in config.json -> rehab.knot_gates passed
+                               with PT/surgeon clearance or measured criteria; never a future date); saga.py now then
+                               prints the KNOT line: when the Book's transition falls due
   show daily|nutrition|food|ex|sport|measurements DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
-  recap [--date D] [--write]   the weekly checkpoint numbers for the week containing D (default: the last completed week);
+  recap [--date D] [--write]   the weekly checkpoint numbers for the week containing D (default: the last completed week):
+                               macros, micros vs reference, weight vs last week, loaded days -> next mornings, sessions vs
+                               plan, measured, flags;
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
-  measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
+  measure add 'JSON'           append rows to real/logs/measurements.csv, one per side: {date (or pre-op), source, metric,
+                               side, value, unit, method, visit, notes}; metrics from config.json -> measurement_metrics
   measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
   doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
+  ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
+                               commit everything, push to main (pull --rebase and retry when the push is rejected; never
+                               force), then push the session's own branch too when it isn't main. Stops at the first
+                               failing step and says which. MESSAGE is reader-safe: he reads it (CLAUDE.md)
 """
 import argparse
 import csv
@@ -1760,7 +1781,7 @@ def day_has_logs(date):
 
 
 def cmd_close(args, cfg, rules):
-    """The first half of the day-close procedure in one command (CLAUDE.md, "Closing a day"): closed=Y -> sync ->
+    """The first half of the day-close procedure in one command (the /log skill, "Close day"): closed=Y -> sync ->
     saga.py now -> saga.py plan next --date D --full. It refuses a day that has not happened, a missed day (nothing
     logged: no row, no scene), a day already closed (it has its scene), and a day in a new week while an earlier
     week's chapter is still unclosed (the checkpoint comes first)."""
@@ -2132,6 +2153,67 @@ def cmd_check(args, cfg, rules):
     print("\n".join(problems) if problems else "all logs look clean")
 
 
+# ---------------------------------------------------------------- ship: the end of every change
+def run(cmd, quiet=False):
+    """Run a command from the repo root; returns (returncode, combined output)."""
+    r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    out = (r.stdout + r.stderr).strip()
+    if out and not quiet:
+        print(out)
+    return r.returncode, out
+
+
+def cmd_ship(args, cfg, rules):
+    """check -> sync -> saga.py check -> build -> commit -> push to main. Every step must pass before the next runs, so
+    nothing broken is committed, and the push never forces: a rejected push pulls --rebase, rebuilds and tries again."""
+    py = sys.executable
+    gates = [("logs", [py, "engine/darrow.py", "check"]), ("sync", [py, "engine/darrow.py", "sync"]),
+             ("story", [py, "engine/saga.py", "check"]), ("site", [py, "engine/build_site.py"])]
+
+    def gate():
+        for name, cmd in gates:
+            print(f"── {name}: {' '.join(cmd[1:])}")
+            code, out = run(cmd)
+            if code != 0 or (name == "logs" and out and out != "all logs look clean"):
+                sys.exit(f"ship stopped at {name}: fix the above, then ship again (nothing was committed)")
+
+    def commit(msg):
+        run(["git", "add", "-A"], quiet=True)
+        if run(["git", "diff", "--cached", "--quiet"], quiet=True)[0] == 0:
+            print("── commit: nothing new to commit")
+            return
+        code, _ = run(["git", "commit", "-q", "-m", msg])
+        if code != 0:
+            sys.exit("ship stopped at commit")
+        print("── commit: " + run(["git", "log", "--oneline", "-1"], quiet=True)[1])
+
+    if not args.message.strip():
+        sys.exit("ship needs -m with a reader-safe message")
+    gate()
+    commit(args.message.strip())
+    if args.no_push:
+        return
+    for attempt in range(3):
+        code, out = run(["git", "push", "-q", "origin", "HEAD:main"])
+        if code == 0:
+            print("── push: main is up to date with this commit")
+            break
+        if attempt == 2:
+            sys.exit("ship stopped at push: still rejected after three tries (nothing was forced)")
+        print("── push rejected: pulling main (rebase) and rebuilding")
+        if run(["git", "pull", "--rebase", "-q", "origin", "main"])[0] != 0:
+            sys.exit("ship stopped at pull --rebase: resolve the conflict (generated files: take either side, then "
+                     "sync and build again), `git rebase --continue`, then ship again")
+        gate()
+        commit("sync and site after pulling main")
+    branch = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], quiet=True)[1]
+    if branch not in ("main", "HEAD"):
+        if run(["git", "push", "-q", "-u", "origin", "HEAD"], quiet=True)[0] == 0:
+            print(f"── push: {branch} too")
+        else:
+            print(f"── push: {branch} not pushed (main has the commit)")
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2160,13 +2242,14 @@ def main():
     s = sub.add_parser("measures"); s.add_argument("--metric")
     s = sub.add_parser("doc"); s.add_argument("name"); s.add_argument("section", nargs="*")
     sub.add_parser("check")
+    s = sub.add_parser("ship"); s.add_argument("-m", "--message", required=True); s.add_argument("--no-push", action="store_true")
     args = ap.parse_args()
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
     {
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set, "close": cmd_close,
         "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap,
-        "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc,
+        "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc, "ship": cmd_ship,
         "ex": lambda a, c, r: cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)

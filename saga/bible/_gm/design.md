@@ -4,7 +4,7 @@ The final reference for how the story is run. `CLAUDE.md` has the per-session st
 
 Four principles bind every piece:
 1. **Real world outranks the realm.** Nothing here changes how deeds become XP or attributes (`darrow.py` owns that). Bearing, roads and consequences move only with story choices and chapter tiers, never with real numbers. The knee is cleared only by real gates and is never the price of anything.
-2. **The wall.** Reader-safe surfaces (`saga/` outside any `_gm/` directory, `docs/`, `CLAUDE.md`, `README.md`, the skills) never carry a name, place, thing or plan the Chronicle has not put on the page. Everything else lives under `saga/bible/_gm/` or `saga/state/_gm/`. The build scans the GM `.md` files to block their sentences and names from the site; JSON under `_gm/` is never rendered.
+2. **The wall.** Reader-safe surfaces (`saga/` outside any `_gm/` directory, `docs/`, `CLAUDE.md`, `README.md`, everything in `.claude/`) never carry a name, place, thing or plan the Chronicle has not put on the page. Everything else lives under `saga/bible/_gm/` or `saga/state/_gm/`. The build scans the GM `.md` files to block their sentences and names from the site; JSON under `_gm/` is never rendered.
 3. **Context-light.** Per session read `CLAUDE.md`, `real/NOW.md`, `saga/NOW.md`, and `saga.py now` (≤ 30 lines). Consult the arc, ledger and plan through `saga.py` sections, never whole.
 4. **No shame, no penalties, no recklessness rewarded.** Low roads cost Darrow ground, standing and company, never survivors and never the knee. Missed days are plot turns.
 

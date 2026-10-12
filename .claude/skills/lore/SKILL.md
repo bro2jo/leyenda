@@ -26,7 +26,7 @@ A telling, not a scene. The Annals (`saga/bible/_gm/lore.md`) hold the realm's h
 ## 4. When the Annals have no answer
 - Invent one that fits, under the doctrine at the top of `lore.md`: received, not revealed; no new plot (no faction with an agenda, no antagonist, no prophecy, no object of power); the fixed numbers hold; names from the palette in `saga/bible/_gm/characters.md`; nothing that forecloses a planned beat (when unsure, `python3 engine/saga.py arc pacing` and the beat ids the entry would touch).
 - **Write it into `lore.md` first**, as a `common` entry in the file's shape (`## kind.id — Title`, the tier/spoken/names line, the use line, two to eight lines of text), under the right kind; then tell it. One new entry per question at most.
-- `python3 engine/saga.py check` (it parses the Annals), then `git add -A && git commit -m "lore: <id>" && git push origin HEAD:main`.
+- `python3 engine/darrow.py ship -m "lore: <id>"` (its `saga.py check` parses the Annals).
 
 ## 5. Afterwards
 - If the Chronicle later speaks the entry, that scene's close marks it (`python3 engine/saga.py lore spoke <id> --where chNN:sK`) and gives `codex.md` its reader-safe line. This skill never does that.

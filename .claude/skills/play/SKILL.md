@@ -50,7 +50,7 @@ A dice line goes where the roll happens. The reread (`style.md` §4) before the 
 - The people in it: `last_seen` `{chapter, scene: "between-K", place, anchor: "chronicle/<file>.html#between-K"}`, `last_seen_doing`, `now`, `appearances` (`{"chapter": "NN", "scene": "between-K"}`), new `known_facts` for anything the page now says (with `evidence` where the README requires it); `quote` if a better line landed. `codex.md` for a new saying or thing; `saga/state/_gm/threads.md` only when a later scene must honour something (name the ledger id).
 - **The narrative top of `saga/NOW.md`, every time:** `Where` names the place and where in it he is now (the same as `location.detail`); `Just happened (Between)` is this Between in two or three lines, with its best spoken line; what was there before moves into `Earlier today, in order` (one short clause per scene, interlude or Between, oldest first, each tagged). Refresh `With him` if someone's standing with him changed.
 - If the Between answered an invitation: `python3 engine/saga.py invite N take`.
-- `python3 engine/saga.py check` and `python3 engine/build_site.py` (both must pass), then `git add -A && git commit -m "play chNN between-K: <title>" && git push origin HEAD:main`.
+- `python3 engine/darrow.py ship -m "play chNN between-K: <title>"` (it runs `saga.py check` and the build; both must pass).
 
 ## 7. Reply
 The Between, as written, in story voice; nothing else, unless a Ledger came first. If a choice is still open, end with "Still waiting on Darrow: 1 … / 2 … / 3 …". The next day's scene opens by taking the Between into account in a clause, then does its own slot's work.

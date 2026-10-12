@@ -85,6 +85,7 @@ real/
 - **A PT or surgeon visit:** a new entry at the bottom of `pt_notes.md` the same day (the note word for word, his account, a short reading); numbers to `measurements.csv`; exercises to `exercise_log.csv` (`session=PT`); `daily_log` `pt=Y`; NOW's top says what it changed. It outranks the State until the checkpoint folds it in.
 - **A decision mid-week** (moving a session, a new dose): NOW's top, and for a moved session `config.json → plan_changes`. The State takes it at the checkpoint, or mid-week when he asks.
 - **Sunday checkpoint** (`/checkpoint`): the week's review into `checkpoints/<Sunday>.md`; the State reviewed (replaced when the program changed, else its "Last reviewed" line); NOW's top for the new week; the Working Rules or the Add-On only if a rule or the design changed.
+- **Every change** ends with `python3 engine/darrow.py ship -m "…"`: checks, sync, the site build, one commit, pushed to `main`.
 - **A new document** (`/ingest`): into `plan/` under these naming rules, with a row in this file and a `doc` name in `engine/darrow.py` if it will be read often.
 
 ---

@@ -84,6 +84,9 @@ saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechani
            Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
 docs/      the site, generated; never edited by hand
 archive/   the old nutrition-only game (retired)
+.claude/   how Claude works here: skills/ (one per procedure: /log, /checkpoint, …), rules/ (story-writing rules,
+           loaded only when it touches saga/), hooks/ (at session start: pull, sync, today's digest; before a commit:
+           the checks; never a force-push), settings.json (what Claude may run without asking, and what it may never touch)
 ```
 
 Start reading at `saga/chronicle/00-prologue-the-three-heartbeats.md`.

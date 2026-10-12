@@ -31,4 +31,4 @@ When unsure, choose the later Knot and list it as a question for the PT. **Nothi
 - Plan a slot where whoever the plan names teaches the first of these Arts: a `quest` or `spine` slot set with `python3 engine/saga.py plan slot N key=value …` (plan, kind, beat or quest+stage, micro as JSON), then `saga.py check`, if the current chapter has an unwritten slot that fits; otherwise at the next checkpoint's `python3 engine/saga.py plan chapter open`. The Art is sealed on the site until its Knot ties; that is by design. **Never name the real sport in the prose.**
 
 ## 5. Finish
-`python3 engine/darrow.py sync` · `python3 engine/saga.py check` if `plan.json` changed · commit and push · reply with the skill→Art map, the gates, and the PT questions.
+`python3 engine/darrow.py ship -m "sport: <what was set up>"` (sync, `saga.py check`, build, commit, push) · reply with the skill→Art map, the gates, and the PT questions.
