@@ -23,3 +23,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-11#9,2026-10-11,,snack,Kirkland chewy protein bar,1 bar,190,10,23,7,3,3,8,120,120,50,1,25,0.6,0,0,0,library+estimate,protein 10 g from the library (his correction 10/1); kcal estimated from his 10/8 total with the Premier shake; macros and micros estimated
 2026-10-12#1,2026-10-12,11:20,snack,"Kettle Brand potato chips, Backyard Barbeque",1 bag (56 g),290,4,30,18,4,2,2,250,642,0,1,35,0.4,5,0,50,label,"label photo; sodium read from 11% DV; Mg, zinc, vit C, omega-3 estimated"
 2026-10-12#2,2026-10-12,11:20,snack,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,flavor not stated
+2026-10-12#3,2026-10-12,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,390,600,1,35,2.4,23,5,0,library+estimate,macros and vit C from the library; other micros estimated as on 10/8
+2026-10-12#4,2026-10-12,,breakfast,Kirkland chewy protein bar,1 bar,190,10,23,7,3,3,8,120,120,50,1,25,0.6,0,0,0,library+estimate,protein from the library; kcal from his 10/8 total; rest estimated
