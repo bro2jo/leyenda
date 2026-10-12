@@ -11,14 +11,15 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) B
 Sport and position · season dates / target return · the 5–8 skills that matter most · the drills he does for each and how they're measured (reps, makes, time, distance, velocity) · equipment and where he trains · any coach or program file (if there is one, read it first and ask less).
 
 ## 2. Gate every skill by the rehab plan
-Using `real/plan/ACL_Reconstruction_Rehab_Master_Plan.md` and the add-on's §8 table ("Element by element"), give each skill and drill the **earliest Knot** at which it's allowed:
+Using `real/plan/rehab_master_plan.md` and the add-on's §8 table ("Element by element"), give each skill and drill the **earliest Knot** at which it's allowed:
 - seated / static / upper-body / hands-only technique → Knot II (now)
 - standing, symmetric stance, no impact → Knot III (Phase 4), only if the PT agrees
 - running-based → Knot IV · jumping, landing, sprinting, decel → Knot V · cutting, pivoting, reactive, contact, game speed → Knot VI · full competition → Knot VII
 When unsure, choose the later Knot and list it as a question for the PT. **Nothing here may move a left-knee item earlier than the plan allows.**
 
 ## 3. Write the real side
-- `real/plan/sport/sport_plan.md`: the skills, drills, metrics, Knot gate per drill, weekly placement (respecting the add-on's no-back-to-back-loaded-days rule), and the PT questions.
+- `real/plan/sport_plan.md`: the skills, drills, metrics, Knot gate per drill, weekly placement (respecting the add-on's no-back-to-back-loaded-days rule), and the PT questions.
+- His program or guide file, if he sends one: kept as written in `real/plan/` under the naming rules (`real/README.md`), as `ultimate_offseason_guide.md` is (`doc sportguide` reads that one), with a row in `real/README.md`.
 - `real/config.json → sport`: name, position, season.
 - `real/config.json → weekly_template`: add sport sessions only where the plan has room.
 - The logging format: `sport_log.csv` columns `date, session, skill, drill, sets, reps, minutes, rpe, metric, value, notes`; `skill` must be one of the skill ids you defined.

@@ -1,12 +1,12 @@
 # ACL Recovery State — Sun 2026-10-11, revised Mon 2026-10-12 (POD 49, post-op week 7)
 
-*The current program and where things stand, present tense only. Rules live in the Working Rules, the add-on design in the Add-On, the PT's words in `real/visits/ACL_PT_Notes.md`; `real/plan/ACL_Project_Index.md` says where each fact lives. Sections 2, 4 and 8 point to where that history lives in this repo.*
+*The current program and where things stand, present tense only. Rules live in the Working Rules, the add-on design in the Add-On, the PT's words in `real/visits/pt_notes.md`; `real/README.md` says where each fact lives. Sections 2, 4 and 8 point to where that history lives in this repo.*
 
 - **Program set:** Sun 2026-10-11 checkpoint; revised Mon 10/12 (mid-week, on request): Session B's 10/11 doses as its baseline (clean morning); Session A fixed for Tuesday; the eyes-closed drill is a wobble-board drill, with a BOSU home version; Upper B's row chest-supported for session 2; this week's upper Mon B → Thu A; throwing days added.
 - **Last reviewed:** Mon 2026-10-12.
-- **Supersedes:** `real/state/archive/ACL_Recovery_State_2026-10-04.md`.
+- **Supersedes:** `real/state/archive/recovery_state_2026-10-04.md`.
 - **Next:** reviewed at the 10/18 checkpoint (the Phase 3 gate review).
-- **Source priority:** latest PT/surgeon instruction (`ACL_PT_Notes.md`) → rehab master plan → this file and the Working Rules → Whole-Athlete Add-On → sport plan → logs → general ACL knowledge.
+- **Source priority:** latest PT/surgeon instruction (`pt_notes.md`) → rehab master plan → this file and the Working Rules → Whole-Athlete Add-On → sport plan → logs → general ACL knowledge.
 
 ---
 

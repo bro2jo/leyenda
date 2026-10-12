@@ -4,9 +4,9 @@ Logs brought in from the old ACL dashboard (retired 10/12), kept exactly as uplo
 
 | File | Covers | Merged into |
 |---|---|---|
-| `ACL_Daily_Log.csv` | 9/10–10/12 (uploaded 10/9; replaced by its audited final copy 10/12) | `../daily_log.csv` |
+| `dashboard_daily_log.csv` (uploaded as `ACL_Daily_Log.csv`) | 9/10–10/12 (uploaded 10/9; replaced by its audited final copy 10/12) | `../daily_log.csv` |
 
-## `ACL_Daily_Log.csv` → `daily_log.csv`
+## `dashboard_daily_log.csv` → `daily_log.csv`
 
 A merge fills only blank fields; it never overwrites what the repo already holds. The exception is a loaded-day correction, made by hand and named in the commit.
 

@@ -1,6 +1,6 @@
 # Sport Plan — Ultimate (handler) · offseason Oct 2026 → late spring 2027
 
-*The operating layer for the sport: skills, the progression by rehab phase, weekly placement, logging, reviews. The content of the skill work is the guide, `Ultimate_Offseason_Development_Guide.md` (kept as written). This file decides when each part of it is allowed. Set up Fri 2026-10-09 (POD 46, Phase 3); the phase gates were set by him the same day: seated or standing throwing at easy effort now, pivoting from Phase 4, Phases 5–6 by the logic in §3.*
+*The operating layer for the sport: skills, the progression by rehab phase, weekly placement, logging, reviews. The content of the skill work is the guide, `ultimate_offseason_guide.md` (kept as written). This file decides when each part of it is allowed. Set up Fri 2026-10-09 (POD 46, Phase 3); the phase gates were set by him the same day: seated or standing throwing at easy effort now, pivoting from Phase 4, Phases 5–6 by the logic in §3.*
 
 **Source priority:** latest PT/surgeon instruction → rehab master plan → recovery state and Working Rules → Whole-Athlete Add-On → **this file** → the guide → logs. Nothing here moves a written left-knee item of the rehab plan; when a phase and the guide's calendar disagree, the phase wins (the guide's own Rule 7: "Whenever movement and ACL recovery conflict, rehab clearance wins"). The add-on's §10 "standing throws" are the off-season program's med-ball power throws, a different element; disc throwing is set here.
 

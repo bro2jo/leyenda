@@ -23,3 +23,5 @@
 ## Update, Mon 10/12
 
 He chose the side plank from the feet on both sides, as the Add-On's finisher (revised 10/12) writes it, knees straight. The question for the PT is dropped.
+
+The prehab/posture plan was retired the same day (posture work is in the Add-On), so the rib-flare check above is the standing one: the Add-On's Upper B gate for the seated DB press.

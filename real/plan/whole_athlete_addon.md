@@ -1,6 +1,6 @@
 # Whole-Athlete Add-On
 
-The **design** of everything around the knee: upper body, the right leg, conditioning, tissue and trunk work, posture, and how the 24-week off-season plan (`24-week-offseason-program-v4.md`) comes back. Status lives in the Recovery State §7: sessions run, the current block, this week's days, loads. This file changes only when the design changes.
+The **design** of everything around the knee: upper body, the right leg, conditioning, tissue and trunk work, posture, and how the 24-week off-season plan (`offseason_program_24_week.md`) comes back. Status lives in the Recovery State §7: sessions run, the current block, this week's days, loads. This file changes only when the design changes.
 
 **Revision history:**
 - 9/20: written

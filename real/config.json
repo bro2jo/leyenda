@@ -123,7 +123,7 @@
     "optional_from": {
       "power": "2026-10-24"
     },
-    "source": "ACL_Working_Rules.md 'Program structure' (revised 10/12: upper alternates A -> B on Mon/Thu, next in the rotation) and ACL_Whole_Athlete_AddOn.md section 2 'Placement'; power & mobility (Sat) after two weeks of 2 of 2 upper, earliest Sat 10/24 (ACL_Recovery_State_2026-10-11.md, revised 10/12, section 7); sport sessions from the week of 10/11: real/plan/sport/sport_plan.md section 5"
+    "source": "working_rules.md 'Program structure' (revised 10/12: upper alternates A -> B on Mon/Thu, next in the rotation) and whole_athlete_addon.md section 2 'Placement'; power & mobility (Sat) after two weeks of 2 of 2 upper, earliest Sat 10/24 (the Recovery State of Sun 10/11, revised 10/12, section 7: real/state/recovery_state.md); sport sessions from the week of 10/11: real/plan/sport_plan.md section 5"
   },
   "weekly_template_history": [
     {
@@ -153,7 +153,7 @@
         "accessory",
         "power"
       ],
-      "source": "the template before the 10/9 revision: Whole_Athlete_AddOn.md section 3 and ACL_Recovery_State_2026-10-04.md section 6"
+      "source": "the template before the 10/9 revision: whole_athlete_addon.md section 3 (as of 10/4) and the Recovery State of Sun 10/4 section 6 (real/state/archive/recovery_state_2026-10-04.md)"
     },
     {
       "until": "2026-10-10",
@@ -182,7 +182,7 @@
         "accessory",
         "power"
       ],
-      "source": "the 10/9 revision before the sport plan: ACL_Working_Rules.md 'Program structure' and ACL_Whole_Athlete_AddOn.md section 3, revised 10/9; the week's upper ran its own catch-up placement (Fri 10/9 A, Sat 10/10 B: real/visits/2026-10-10_trainer-instruction.md), and the trainer then moved Sat's B to Mon 10/12 (plan_changes); power & mobility (Sat) from 10/17 at the earliest"
+      "source": "the 10/9 revision before the sport plan: working_rules.md 'Program structure' and whole_athlete_addon.md section 3, revised 10/9; the week's upper ran its own catch-up placement (Fri 10/9 A, Sat 10/10 B: real/visits/2026-10-10_trainer_instruction.md), and the trainer then moved Sat's B to Mon 10/12 (plan_changes); power & mobility (Sat) from 10/17 at the earliest"
     },
     {
       "until": "2026-10-17",
@@ -215,7 +215,7 @@
         "accessory",
         "power"
       ],
-      "source": "ACL_Recovery_State_2026-10-11.md, revised 10/12, sections 6-7: Mon 10/12 Upper B (moved from Sat 10/10: real/visits/2026-10-10_trainer-instruction.md) -> Upper A Thu 10/15 (Fri 10/16 if PT lands Thursday); Session A Tue 10/13; Wed off. Replaces the earlier reading of the trainer's catch-up week (Mon B, Wed A, Fri B). Sport sessions per real/plan/sport/sport_plan.md section 5; the template resumes 10/18"
+      "source": "the Recovery State of Sun 10/11, revised 10/12 (real/state/recovery_state.md), sections 6-7: Mon 10/12 Upper B (moved from Sat 10/10: real/visits/2026-10-10_trainer_instruction.md) -> Upper A Thu 10/15 (Fri 10/16 if PT lands Thursday); Session A Tue 10/13; Wed off. Replaces the earlier reading of the trainer's catch-up week (Mon B, Wed A, Fri B). Sport sessions per real/plan/sport_plan.md section 5; the template resumes 10/18"
     }
   ],
   "plan_changes": [
@@ -225,14 +225,14 @@
         "upperB"
       ],
       "add": [],
-      "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer-instruction.md",
+      "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer_instruction.md",
       "why": "no upper on Sat 10/10; Upper B moves to Mon 10/12, where the catch-up week's template carries it"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
   "conditioning": {
     "cap_min": 30,
-    "source": "ACL_Whole_Athlete_AddOn.md conditioning table, Phase 3: bike 15-30 min, +3 min per ride to 30",
+    "source": "whole_athlete_addon.md conditioning table, Phase 3: bike 15-30 min, +3 min per ride to 30",
     "_about": "The plan's longest prescribed ride: minutes past it are logged and paid nothing (golden rule 6). Update it when a phase changes the ceiling."
   },
   "food_itemised_from": "2026-10-08",
@@ -247,7 +247,7 @@
       {
         "from": "2026-10-09",
         "rounds": 1,
-        "source": "ACL_Working_Rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
+        "source": "working_rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
       }
     ]
   },
@@ -266,7 +266,7 @@
         "knot": 2,
         "name": "Walking",
         "date": "2026-09-27",
-        "evidence": "Phase 3 entered POD 34 per ACL_Recovery_State_2026-10-04.md"
+        "evidence": "Phase 3 entered POD 34 per the Recovery State of Sun 10/4 (real/state/archive/recovery_state_2026-10-04.md)"
       }
     ],
     "knot_gates": {
@@ -326,8 +326,8 @@
     "setup": "a net through the Ohio winter (indoors or out), the field outdoors when dry; a partner sometimes, never relied on",
     "season": "offseason Oct 2026 (week 1 = Sun 10/11) -> late spring 2027",
     "target_return": "late spring 2027, by the rehab gates; for a cutting and pivoting sport the master plan treats 9 months (2027-05-24) as a minimum reference, after the return-to-sport battery",
-    "plan": "real/plan/sport/sport_plan.md",
-    "guide": "real/plan/sport/Ultimate_Offseason_Development_Guide.md",
+    "plan": "real/plan/sport_plan.md",
+    "guide": "real/plan/ultimate_offseason_guide.md",
     "skills": [
       "control",
       "breaks",

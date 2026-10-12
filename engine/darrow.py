@@ -26,7 +26,7 @@ Commands (run from the repo root):
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv (metrics from config.json -> measurement_metrics)
   measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
-  doc state|addon|rules|guide|master|offseason|index|ptnotes|sport|sportguide|checkpoint|visit|now|PATH [SECTION ...]
+  doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
 """
@@ -49,21 +49,24 @@ P = {
     "rules": ROOT / "engine/rules.json",
     "nutrition": ROOT / "real/logs/nutrition_log.csv",
     "food": ROOT / "real/logs/food_entries.csv",
-    "foods": ROOT / "real/logs/foods.csv",
+    "foods": ROOT / "real/logs/food_library.csv",
     "daily": ROOT / "real/logs/daily_log.csv",
-    "exercise": ROOT / "real/logs/ACL_Exercise_Log.csv",
+    "exercise": ROOT / "real/logs/exercise_log.csv",
     "sport": ROOT / "real/logs/sport_log.csv",
     "measurements": ROOT / "real/logs/measurements.csv",
     "state_dir": ROOT / "real/state",
+    "state": ROOT / "real/state/recovery_state.md",
     "checkpoints": ROOT / "real/checkpoints",
     "visits": ROOT / "real/visits",
-    "addon": ROOT / "real/plan/ACL_Whole_Athlete_AddOn.md",
-    "working_rules": ROOT / "real/plan/ACL_Working_Rules.md",
+    "addon": ROOT / "real/plan/whole_athlete_addon.md",
+    "working_rules": ROOT / "real/plan/working_rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
-    "master": ROOT / "real/plan/ACL_Reconstruction_Rehab_Master_Plan.md",
-    "offseason": ROOT / "real/plan/24-week-offseason-program-v4.md",
-    "index": ROOT / "real/plan/ACL_Project_Index.md",
-    "ptnotes": ROOT / "real/visits/ACL_PT_Notes.md",
+    "master": ROOT / "real/plan/rehab_master_plan.md",
+    "offseason": ROOT / "real/plan/offseason_program_24_week.md",
+    "index": ROOT / "real/README.md",
+    "sport_plan": ROOT / "real/plan/sport_plan.md",
+    "sport_guide": ROOT / "real/plan/ultimate_offseason_guide.md",
+    "ptnotes": ROOT / "real/visits/pt_notes.md",
     "deeds": ROOT / "engine/deeds.csv",
     "sheet": ROOT / "saga/state/darrow.json",
     "rolls": ROOT / "saga/state/rolls.csv",
@@ -1537,7 +1540,7 @@ def recap_text(st, cfg, rules, ws):
 
 CHECKPOINT_SKELETON = """# Checkpoint — Sun {sun} · week Sun {ws} – Sat {we}
 
-*Post-op weeks {w1}–{w2} · Phase {phase}. The archive of this week: what happened and what was decided. The program in force: `{state}`.*
+*Post-op weeks {w1}–{w2} · Phase {phase}. The archive of this week: what happened and what was decided. The program in force: {state}.*
 
 ## Numbers (engine)
 
@@ -1566,7 +1569,7 @@ CHECKPOINT_SKELETON = """# Checkpoint — Sun {sun} · week Sun {ws} – Sat {we
 
 ## PT and measurements
 
-<!-- Each visit this week with its real/visits/ file; what was measured; which questions were answered. -->
+<!-- Each PT or surgeon entry this week in real/visits/pt_notes.md (doc ptnotes DATE) and any other real/visits/ file; what was measured; which questions were answered. -->
 
 ## Gates
 
@@ -1602,15 +1605,27 @@ def cmd_recap(args, cfg, rules):
     sun = ws + dt.timedelta(7)
     path = P["checkpoints"] / f"{sun.isoformat()}.md"
     if not path.exists():
-        state = newest(P["state_dir"].glob("ACL_Recovery_State_*.md"))
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(CHECKPOINT_SKELETON.format(
             sun=sun.isoformat(), ws=md(ws), we=md(we), w1=post_op_week(cfg, ws), w2=post_op_week(cfg, we),
-            phase=cfg["rehab"]["current_phase"], state=state.relative_to(ROOT) if state else "real/state/"), encoding="utf-8")
+            phase=cfg["rehab"]["current_phase"], state=state_reference()), encoding="utf-8")
         print(f"created {path.relative_to(ROOT)} from the checkpoint template")
     replace_block(path, text, "")
     print(f"numbers written to {path.relative_to(ROOT)}\n")
     print(text)
+
+
+def state_reference():
+    """How a checkpoint names the program its week ran: the current Recovery State by the Sunday in its title, with the
+    archive path it moves to when the next one replaces it (real/state/archive/recovery_state_<that Sunday>.md)."""
+    if not P["state"].exists():
+        return "`real/state/` (no Recovery State yet)"
+    first = P["state"].read_text(encoding="utf-8").split("\n", 1)[0]
+    m = re.search(r"\d{4}-\d{2}-\d{2}", first)
+    if not m:
+        return f"`{P['state'].relative_to(ROOT)}`"
+    return (f"the Recovery State of Sun {m.group(0)} (`{P['state'].relative_to(ROOT)}`; once replaced, "
+            f"`real/state/archive/recovery_state_{m.group(0)}.md`)")
 
 
 # ---------------------------------------------------------------- documents, one section at a time
@@ -1618,14 +1633,12 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
 
 def doc_path(name):
-    fixed = {"addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"], "now": P["real_now"],
-             "offseason": P["offseason"], "index": P["index"], "ptnotes": P["ptnotes"],
-             "sport": ROOT / "real/plan/sport/sport_plan.md",
-             "sportguide": ROOT / "real/plan/sport/Ultimate_Offseason_Development_Guide.md"}
+    fixed = {"state": P["state"], "addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"],
+             "now": P["real_now"], "offseason": P["offseason"], "index": P["index"], "ptnotes": P["ptnotes"],
+             "sport": P["sport_plan"], "sportguide": P["sport_guide"]}
     if name in fixed:
         return fixed[name]
-    globs = {"state": (P["state_dir"], "ACL_Recovery_State_*.md"), "checkpoint": (P["checkpoints"], "20*.md"),
-             "visit": (P["visits"], "20*.md")}
+    globs = {"checkpoint": (P["checkpoints"], "20*.md")}  # the newest week's review
     if name in globs:
         found = newest(globs[name][0].glob(globs[name][1]))
         if not found:
@@ -1633,8 +1646,8 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, addon, rules, guide, master, offseason, index, ptnotes, sport, sportguide, "
-                 f"checkpoint, visit, now, or a path")
+        sys.exit(f"no document '{name}'. Use state, rules, addon, master, offseason, sport, sportguide, guide, ptnotes, index, "
+                 f"now, checkpoint, or a path")
     return p
 
 

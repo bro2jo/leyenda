@@ -2,7 +2,7 @@
 
 How the rehab runs: definitions, load and pain rules, clearance, red flags, check-in questions, the weekly rhythm's structure, the Sunday checkpoint, and the log columns.
 
-**This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/plan/ACL_Project_Index.md` says where each fact lives. This file changes only when a rule changes.
+**This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
 - 10/12 (repo): moved into this repo; the dashboard's thread workflow and kickoff prompt replaced by the repo's checkpoint and logs; the log columns are `daily_log.csv`'s; throwing named (program structure, priority)
@@ -146,7 +146,7 @@ A limp returning under fatigue means shorter bouts and a sit, not a crutch. Gait
   - impact preparation and the drop vertical jump
   - running
   - modalities and exercises not in the plan
-- **Patient-reported verbal PT instructions** are written into `real/visits/ACL_PT_Notes.md`, labelled as patient-reported, and carry PT priority. Anything that changes a gate or a restriction is reconfirmed at the next visit.
+- **Patient-reported verbal PT instructions** are written into `real/visits/pt_notes.md`, labelled as patient-reported, and carry PT priority. Anything that changes a gate or a restriction is reconfirmed at the next visit.
 - **Own adjuncts** (Game Ready / Go Ready, LLLT, red light, sauna) are logged, not evaluated. Ibuprofen can mask the morning feel — trust swelling and extension.
 
 ## Red flags (from the plan) — contact the surgical team, not Claude
@@ -169,11 +169,11 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 
 ## Weekly checkpoint (every Sunday)
 
-1. **PT day:** the note goes into `ACL_PT_Notes.md` word for word the same day, with his account after it. Verbal instructions he relays are appended as patient-reported.
+1. **PT day:** the note goes into `pt_notes.md` word for word the same day, with his account after it. Verbal instructions he relays are appended as patient-reported.
 2. **Saturday:** daily minimum + bike; the day's log as usual.
 3. **Sunday morning, before the loading session:** log the morning reading (graded), weigh in, take the extension photo, do the SLR lag and flexion checks, then say **"checkpoint"** (`/checkpoint`). It:
    - writes the week's review in `real/checkpoints/<Sunday>.md`
-   - reviews the Recovery State: a new `ACL_Recovery_State_<Sunday>.md` when the program changed (the old one to `real/state/archive/`), otherwise its "Last reviewed" line and whatever status moved
+   - reviews the Recovery State: a new `recovery_state.md` when the program changed (the old one to `real/state/archive/`), otherwise its "Last reviewed" line and whatever status moved
    - updates `real/NOW.md` for the new week
    - revises this file or the Add-On only if a rule or the design changed
 4. The Sunday session and its Monday reading belong to the new week.
@@ -217,13 +217,15 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 - Body mass goes to `nutrition_log.csv` (`weight_lb`); measured numbers to `measurements.csv`, one row per side.
 - Decisions and instructions go in the State, NOW or PT Notes, not in `notes`.
 
-**ACL_Exercise_Log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold/duration, load or band, assist, notes.
+**exercise_log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold/duration, load or band, assist, notes.
 - `session`: `home` / `PT` / `HEP` / `floor` for the knee · `conditioning` for off-day rides · `upperA` / `upperB` / `accessory` / `power` / `arms` for the add-on.
 - `block`: the slot type — `warmup`, `mobility`, `quad`, `knee`, `single-leg`, `posterior`, `hip`, `calf`, `balance`, `gait`, `test`, `manual`, `posture`, `cooldown`, `floor`, `conditioning`, `push`, `pull`, `finisher`.
 - `side`: `L` / `R` / `bil` (both legs) for leg exercises; blank for upper-body and conditioning rows.
 - Single-leg work done on both legs gets one row per side (`L`, then `R`); `bil` is only for movements where both legs work together. Right-leg mirrored sets are their own rows with side `R`.
 - Add-on accessories are one "as written" row unless something changed.
 - A planned item that didn't happen may be a row whose `notes` start `NOT DONE`: a record, never a deed.
+
+**measurements.csv** — one row per measured number and side: `date` (ISO, or `pre-op`), `source` (PT, surgeon, clinic, self), `metric` (one of `config.json → measurement_metrics`), `side` (`L` / `R`), `value`, `unit`, `method` (goniometer, dynamometer, 1RM…), `visit` (its `pt_notes.md` entry, `YYYY-MM-DD_PTn`), `notes`. The engine computes LSI.
 
 **Both logs:**
 - Give doses, loads, heights, minutes and RPE when reporting so the rows are complete.

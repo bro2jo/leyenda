@@ -1,16 +1,16 @@
 # NOW — the Ledger
 
-*Real numbers only. Nothing from the story appears on this page. Claude keeps the top section to what stands until something changes: the plan in force, the next PT visit, the gate, flags, open items. The engine owns every count and date in the block at the bottom, regenerated on every `sync`. History: `real/checkpoints/`. Visits: `real/visits/`. Measurements: `python3 engine/darrow.py measures`.*
+*Real numbers only. Nothing from the story appears on this page. Claude keeps the top section to what stands until something changes: the plan in force, the next PT visit, the gate, flags, open items. The engine owns every count and date in the block at the bottom, regenerated on every `sync`. Map of every file: `real/README.md`. History: `real/checkpoints/`. PT notes: `real/visits/pt_notes.md`. Measurements: `python3 engine/darrow.py measures`.*
 
 ## Plan in force · Phase 3 (strength foundation) · State Sun 10/11, revised Mon 10/12
 
-Program: `real/state/ACL_Recovery_State_2026-10-11.md`, revised 10/12 (`python3 engine/darrow.py doc state "this week"`, then `doc state "session a"` / `"session b"`). Rules: `real/plan/ACL_Working_Rules.md` (`doc rules "load rules"`). Where each fact lives: `real/plan/ACL_Project_Index.md`. Nick (10/9): progression is up to the master plan, no PT approval needed, never push through pain. Last week's review: `real/checkpoints/2026-10-11.md`.
+Program: `real/state/recovery_state.md`, revised 10/12 (`python3 engine/darrow.py doc state "this week"`, then `doc state "session a"` / `"session b"`). Rules: `real/plan/working_rules.md` (`doc rules "load rules"`). Where each fact lives: `real/README.md`. Nick (10/9): progression is up to the master plan, no PT approval needed, never push through pain. Last week's review: `real/checkpoints/2026-10-11.md`.
 
 - **Daily minimum (every day):** morning check (swelling **grade**, extension side by side, pain, stiffness, catch, **wellness 1–5**) + **one weighted heel prop, 10 lb, 10 min** + creatine.
 - **Knee:** **Tue 10/13 Session A** (fixed Tuesday, a day's gap before PT): cable seated knee extension 90°→45° new · SL sit-to-stand at 18" unassisted · 12" step-up with knee drive · first home eyes-closed drill (both feet on the BOSU dome, 1 min) · posture cooldown after (~6 min). Then **Sun 10/18 Session B**: the 10/11 doses are its baseline, one change each if the mornings stay clean (State §6).
 - **Upper:** **Mon 10/12 Upper B** (session 2, seated or lying; chest-supported row; the new warm-up with the doorway pec sequence; the tissue & trunk finisher) → **Upper A Thu 10/15**, or Fri 10/16 if PT lands Thursday (session 3: chest pass, standing options). Wed is off. Block 0 through the week of 10/18; Block 1 from 10/25 if upper runs 2 of 2 both weeks. No accessory day this week; Saturday power & mobility earliest 10/24.
 - **Bike, legs only, easy:** Mon 18 → Thu 21 → Sat 24, +3 min per ride to 30.
-- **Throwing, week 1 (baseline), Phase 3 only** (the sport plan; also in the State's week): seated or square-stance standing at easy effort, **no pivot, no step-out**. Wed A control + breaks · Fri B deception + overheads · Sat C long throws at controlled range · film 10–15 min. Minimum week 2 × 20 + 1 × 25 min. The week's question (guide): what feels different post-surgery, noticed, not corrected. Pivots on the left open with Phase 4, on knee-session days. Plan: `real/plan/sport/sport_plan.md` (`doc sport 5`); guide: `doc sportguide "week 1"`.
+- **Throwing, week 1 (baseline), Phase 3 only** (the sport plan; also in the State's week): seated or square-stance standing at easy effort, **no pivot, no step-out**. Wed A control + breaks · Fri B deception + overheads · Sat C long throws at controlled range · film 10–15 min. Minimum week 2 × 20 + 1 × 25 min. The week's question (guide): what feels different post-surgery, noticed, not corrected. Pivots on the left open with Phase 4, on knee-session days. Plan: `real/plan/sport_plan.md` (`doc sport 5`); guide: `doc sportguide "week 1"`.
 - **Sun 10/18 before the session:** weigh-in at the same time as the baseline (5:30 PM), the **first extension photo**, SLR lag, flexion vs the right → checkpoint → Session B → Phase 3 gate review.
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. This week's two fixes: a carb anchor at breakfast and dinner (rice, potato, oats, fruit); protein on quiet days (a shake or yoghurt whenever a day is short by mid-afternoon). Fish twice.
 
@@ -41,7 +41,6 @@ Phase 4 waits on one thing: the quad test.
 
 ## Open items
 
-- **Not here yet:** your nutrition project's instructions, if you still use them (bring them in with `/ingest`). The prehab/posture plan is retired: posture work is in the Add-On, and the check before seated DB pressing is Upper B's rib-flare check.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 - **Confirm:** the PT visit's day.
 
