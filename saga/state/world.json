@@ -27,11 +27,25 @@
         "2026-10-11"
       ],
       "written": "2026-10-11"
+    },
+    {
+      "scene": "between-3",
+      "title": "Same Paper",
+      "after": "1",
+      "covers": [],
+      "written": "2026-10-12"
+    },
+    {
+      "scene": "between-4",
+      "title": "Him Who Can Stand",
+      "after": "1",
+      "covers": [],
+      "written": "2026-10-12"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall at night, on his cot by Hollis's and Benedek's, after the night bell",
+    "detail": "the infirmary hall at night, on his cot by Hollis's, after the night bell and two games' worth of talk",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -41,7 +55,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times.",
-  "last_beat": "The night of the gate. The hall had his name before he reached his cot. Hollis, carried down from the gatehouse, gave the hall the names that were read, and Benedek was not among them: \"It's mercy after all.\" Darrow could not tell him what the Confessor had said about men who can't answer without telling him why it frightened him. Maelis read the knee by lamplight: \"Held.\" Another man's weight on that door a moment longer and she would have had nothing left to tie it to. From the window the camp sits up in turns round one fire, where the whole House can see. A grey cloak at the bars sent the Captain of the Ninth the Confessor's good night, by his rank. At the night bell Darrow tried to say the oath aloud with Benedek, and his throat shut on it; he could answer the lad's good night.",
+  "last_beat": "The night of the gate, after the night bell. Darrow sat up and played Hollis at knucklebones so his shaking hands had work (\"Can't sleep either.\"); the shake left the hand the moment it had something to hold. Darrow took the stone by a hair, and Hollis chanted the loser's line to the roof, \"and the bones go to him who can stand,\" and paid a story told true: at the gatehouse window, for as long as it takes to say it, he had thought it good that the Captain should go down and kneel for the rest; he would have gone down the Steps on Darrow's back sooner than kneel on the beech leg. Darrow let two jokes go by: \"I had three heartbeats in that river. I know what a man can think in one.\" Hollis's fist shut on the bones and did not shake. \"Go to sleep, Captain.\"",
   "companions": {
     "maelis": {
       "approval": 23,
@@ -49,7 +63,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 38,
+      "approval": 40,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },

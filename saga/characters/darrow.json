@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "1",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-1"
+    "anchor": "chronicle/02-the-grey-cot.html#between-4"
   },
-  "last_seen_doing": "Answering Benedek's good night aloud at the night bell, after his throat shut on the oath.",
-  "now": "He has answered to his name: he gave it and his rank to the Confessor at the bars in front of the whole House, and the valley's story is dead at the gate. The Prior would not reproach him; he is in the names she says every night. In the hall that night Maelis read the knee after the wicket and found it held, and still soft; while she read, the word under his name changed on his palms. Benedek, not read at the gate, takes it for mercy, and Darrow has not told him why the Confessor's words about men who can't answer stay with him. Confessor Ivo Marrant and four grey cloaks sit up in turns round one fire on the lower terrace below the gate, the sixth keeps the winch-house, and the Confessor's good night now comes to him by his rank.",
+  "last_seen_doing": "Lying down at last after knucklebones with Hollis, having put the bones into Hollis's open hand.",
+  "now": "He has answered to his name: he gave it and his rank to the Confessor at the bars in front of the whole House, and the valley's story is dead at the gate. The Prior would not reproach him; he is in the names she says every night. In the hall that night Maelis read the knee after the wicket and found it held, and still soft; while she read, the word under his name changed on his palms. Benedek, not read at the gate, takes it for mercy, and Darrow has not told him why the Confessor's words about men who can't answer stay with him. Confessor Ivo Marrant and four grey cloaks sit up in turns round one fire on the lower terrace below the gate, the sixth keeps the winch-house, and the Confessor's good night now comes to him by his rank. After the night bell he went down the hall to the three Ninth men read with him at the gate and offered to disown them to the Confessor; they told him they would not go down the Steps on his back. Later that night he played Hollis at knucklebones so the old man's shaking hands had work, won, and was paid a story told true: for a heartbeat at the window Hollis had wanted him to go down and kneel for the rest; Darrow let it go in one line.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -418,6 +418,18 @@
       "evidence": "his throat shut on it like a door",
       "chapter": "02",
       "scene": "1"
+    },
+    {
+      "fact": "After the night bell he went down the hall to the three Ninth men who had been read with him at the gate, told them to go on not knowing him, and said he would tell the Confessor himself they were not his; they would not have it.",
+      "chapter": "02",
+      "scene": "between-3",
+      "evidence": "I'll tell him myself you're not mine."
+    },
+    {
+      "fact": "He sat up after the night bell and played Hollis at knucklebones for a story told true; he took the stone by a hair, and when Hollis confessed he had thought it good for a heartbeat that the Captain kneel for the rest, Darrow answered that he had had three heartbeats in the river and knew what a man can think in one.",
+      "chapter": "02",
+      "scene": "between-4",
+      "evidence": "I know what a man can think in one."
     }
   ],
   "relationships": [
@@ -534,6 +546,14 @@
     {
       "chapter": "02",
       "scene": "1"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-3"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-4"
     }
   ]
 }

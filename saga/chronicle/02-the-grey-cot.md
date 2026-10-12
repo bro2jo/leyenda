@@ -127,3 +127,93 @@ That one Darrow could answer aloud. "Good night, Ser Benedek."
 > ⟦ THE RECKONING ⟧
 > Rank: **Kindled**.
 > XP 1,003 → 1,068
+
+### Between — Same Paper
+
+He gave the night bell time to settle before he got up: good leg, bad leg, transfer, the blanket round his shoulders against the cold coming up off the flags.
+
+He had known all day which three cots they were, near the banked fire on the far side of the hall, and all day he had not let his eyes go there. He went there now, the slow way, past men who were asleep and men who were pretending.
+
+Two of them were awake. He could tell by how still they lay.
+
+There was no getting down to a man on a cot with this knee. He sat on the end of the nearest one instead, and the man in it drew up his feet to make room: the oldest of the three, who had ridden with the Ninth longer than Darrow had commanded it, his forearm splinted across his chest.
+
+"You didn't look at us," the old one said. "At the gate."
+
+"No."
+
+"Good. Those two in grey were watching where every man's eyes went." He shifted the splint. "Then you walked up to the bars and gave him your face. Waste of a good bit of not-looking, that."
+
+Darrow had carried the thing he meant to say all the way down the hall, and he said it before it could get any heavier. "He'll read that paper again. When he does, you don't know me. You're three sore men who never once looked at their captain, and you can go on not looking. I'll tell him myself you're not mine."
+
+The third man was asleep, or doing it well enough that the other two let him be. The middle one had his head bound up in linen and had been listening with his eyes shut. He opened them now.
+
+"He read us, Captain. Same paper. Your name at the top and ours under it." He said it the way a man reads off a muster. "You can't not-know a man you're written under."
+
+"He says if I go down, the rest of it goes back in his cloak."
+
+Nobody answered that for a while. The fire ticked. Somewhere up the hall a man coughed and turned over.
+
+"We came up the Steps on other men's backs, Captain," the old one said at last. "We'll not go down them on yours."
+
+Darrow had a joke ready, and it was a poor one, and he kept it. "Go to sleep," he said instead. "That's an order."
+
+"Aye, Captain." The old one shut his eyes. "First one since the river."
+
+He went back up the hall the slow way. Hollis had not turned from the wall, but the blanket over his hand had not gone still either, and on the stool between their cots his knucklebones lay where he had left them, five pale knuckles in the dark beside the beech leg.
+
+"All three?" Hollis said, to the wall.
+
+"All three."
+
+"And?"
+
+Darrow sat down on his own cot and looked at the bones. "They won't go down on my back."
+
+Hollis was quiet long enough that it might have been sleep. "Ninth," he said to the wall, as if it were the worst word he knew. Under the blanket his hand went on shaking.
+
+### Between — Him Who Can Stand
+
+Hollis did not turn over. Darrow sat up anyway, found the stool with one hand and the bones with the other, and tipped them onto the blanket between his knees, five pale knuckles in the last of the fire.
+
+"Can't sleep either."
+
+"I was asleep. You woke me, thinking. A man can hear it across a hall, like a mill going."
+
+"Ones."
+
+Nothing from the wall. Then the cot complained, and Hollis came over onto his back and up onto his elbow, which cost him something he did not pay out loud.
+
+"Stakes."
+
+"A wick."
+
+"You haven't got a wick. You haven't got a shirt that's yours." He held out his hand. It was shaking, and he held it out anyway. "Story told true. Same as before. Give them here."
+
+The shake went out of the hand the moment it had work. Ones, twos, threes, the thick fingers going under the thrown bone as quick as they had been by daylight; at fours one of the four got away from him, and he swore at it, and at the stone the hand came up a hair late and the bone went off the back of his knuckles onto the blanket. He looked at it as if it had said something about his mother, and passed the bones across.
+
+Darrow's hands were nobody's wonder. He got through to the stone the slow way, the way he did everything now, and swept, and the thrown bone came down on the back of his hand and rocked there.
+
+`[FINESSE · DC 11]` d20 **12** -1 finesse = **11** — *Success*
+
+He kept the hand where it was and did not breathe until it stopped.
+
+"That's a cheat," Hollis said. "That's a cheat in any taproom in the Lowmarch."
+
+"Chant."
+
+Hollis chanted it to the roof, flat, the way the loser does: "*Four for the bell and five for the hand, and the bones go to him who can stand.*" He heard the last line as he said it, and his mouth went crooked, and he said it again anyway, because the rhyme was the rhyme.
+
+"Pay."
+
+For a while there was only the fire.
+
+"At the window," Hollis said. "When he said it. *Come down and kneel, Captain, and the rest goes back in my cloak.* I thought, good." The word lay there between the cots. "Long as it takes to say it. Then I thought it again, slower, to be sure, and it was still good. Then you walked." He was looking at the roof. "Your three won't go down the Steps on your back. I'd have gone down on it. Sat on your shoulders like a sack of meal and let you carry me to the Spire, so long as nobody asked me to kneel on this." He knocked the beech leg with his knuckles, once. "There. Story told true. Don't ask me for another; I've only the one."
+
+Darrow had a joke for it. He had two. He let them both go by.
+
+"I had three heartbeats in that river," he said. "I know what a man can think in one."
+
+Hollis said nothing. After a while his hand came out from under the blanket, open, and Darrow put the bones into it, and the fist shut on them and did not shake while it had something to hold.
+
+"Go to sleep, Captain," Hollis said, to the roof.

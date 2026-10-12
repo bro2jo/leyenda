@@ -211,6 +211,54 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.3",
+      "made": {
+        "chapter": 2,
+        "scene": "between-3",
+        "date": "2026-10-12"
+      },
+      "chose": "Went down the hall in the dark to his three Ninth men from the gate and told them to go on not knowing him; he would tell the Confessor himself they were not his",
+      "now": {
+        "bearing": {
+          "hearth": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.3a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "His three Ninth men from the gate (unnamed on the page): \"We came up the Steps on other men's backs, Captain. We'll not go down them on yours.\" They will not be bought off the Confessor's paper by his kneeling, and took his order to sleep as the first since the river. Fire it where the Confessor's terms, or the kneeling, come back to him in front of his own",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "c02.4",
+      "made": {
+        "chapter": 2,
+        "scene": "between-4",
+        "date": "2026-10-12"
+      },
+      "chose": "Sat up and played Hollis at knucklebones so his shaking hands had work; won the stone by a hair, and Hollis paid a story told true: at the gatehouse window, for as long as it takes to say it, he had thought it good that the Captain should go down and kneel for the rest; Darrow answered that he knows what a man can think in a heartbeat",
+      "now": {
+        "approval": {
+          "hollis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c02.4a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Hollis told the Captain, as a story told true over knucklebones, that at the window he had thought it good for a heartbeat that Darrow go down and kneel for the rest of the paper; Darrow forgave it in one line (\"I know what a man can think in one\"). Fire it where Hollis has to stand by him at a cost, or where the kneeling is put to Darrow again in Hollis's hearing",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
