@@ -291,11 +291,11 @@ Mother Ione had the Prior's chair, the one good chair, and offered it to nobody:
 
 "The bell rang this morning," Darrow said. "I heard it."
 
-"Hour bell," said the old woman by the hearth, to his mouth. "Old Mercy's dawn and dusk. Nothing else. The valley knows her."
+"Hour bell," said the old woman by the hearth, to his mouth. "Old Mercy rings when the House is keeping somebody. Then it's dawn and dusk till they're gone, and nothing else. The valley knows her."
 
 "And men with a Crown writ keep a law because a bell says so?"
 
-"Would they ask the valley to keep the laws rung from their own bell-houses, Captain," said the Prior, "after breaking the one rung from mine?" She turned to the hearth. "And how often has it lapsed, Sister Pell?"
+"Would they ask the valley to keep the laws rung from their own bell-houses, Captain," said the Prior, "after breaking the one rung from mine?" She turned to the hearth. "And once Old Mercy's rung, how often has the law lapsed, Sister Pell?"
 
 "Twice. Snow, both times." A dry rasp, rationed. "Not on my rope."
 
@@ -325,7 +325,7 @@ The pale eyes came round to him. "If the lay brothers tell the valley there's no
 
 That there was somebody. Somebody the House would not give up. He saw it the way he saw a line before a charge: the story or the bell, and not both.
 
-"You'd take the law off your own gate."
+"You'd leave your own gate without its law."
 
 "Would I? Ask me at dusk." The council broke with nothing decided aloud, which seemed to be how the House decided things.
 
@@ -409,15 +409,15 @@ Brown water, and the men it had kept.
 
 "The river's had enough of us."
 
-"Has it?" She did not wait for him to answer that one. "You'll have noticed Old Mercy didn't ring at dusk. It didn't ring this morning either."
+"Has it?" She did not wait for him to answer that one. "You'll have noticed Old Mercy didn't ring at dusk. The valley heard what it always hears from us."
 
-"Then the law's down."
+"Then there's no law on the gate."
 
-"Since dusk." Nothing in her face moved. "Did you sleep any worse for it?"
+"Not till she rings." Nothing in her face moved. "Did you sleep any worse for it?"
 
 He had slept like a stone. He did not say so, and she did not seem to need him to.
 
-"It comes back with the next ringing, if we ring it. If they believe the story, they'll read their paper at the bottom of the Steps and go home and say so. If they climb anyway, I'll meet them at the bars and let them read it to me." Her voice went lower still. "Old Mercy can't ring until the light's gone, Captain, and I'd as soon she didn't ring at all while paper is all they've brought. A courier's paper is taken at the wicket. This House has never refused one, and I'd rather not begin with a Confessor watching."
+"It starts with the first ringing, if we ring it. If they believe the story, they'll read their paper at the bottom of the Steps and go home and say so. If they climb anyway, I'll meet them at the bars and let them read it to me." Her voice went lower still. "Old Mercy can't ring until the light's gone, Captain, and I'd as soon she didn't ring at all while paper is all they've brought. A courier's paper is taken at the wicket. This House has never refused one, and I'd rather not begin with a Confessor watching."
 
 "And if paper isn't all they've brought?"
 
@@ -530,7 +530,7 @@ Mother Ione had ordered nobody into the court. At the hour bell she had asked wh
 
 The wounded who could walk as far as the gate were eleven men and Darrow. He stood among them at the foot of the gatehouse stair with his back to its post, where a man could lean without seeming to. Three of the eleven were his. He had counted them onto the carts at the ford and up the Holloway, and he did not look at them now. The grey cloaks had his name. None of them had ever seen his face, and among eleven sore men in infirmary shirts it was one more. Above them, at the gatehouse window, Hollis sat in a chair that two lay brothers had carried up the inside stair, because he had said, loud enough for the court, that he would see the man who wanted him.
 
-Wren stood at Darrow's left with her ledger against her chest and no pencil behind her ear; she was not there to count. Up in the tower Sister Pell had Old Mercy's rope in her hands, and the bell had not rung since the council. It could not ring until the light was off the bars, and the Prior meant it not to ring at all if paper was all they had brought. Between Wren and the rope lay the inner wall, the tower door and a stair, and Darrow had walked them twice in his head since noon. Wren had not asked him how he would know when. He was not sure he could have told her.
+Wren stood at Darrow's left with her ledger against her chest and no pencil behind her ear; she was not there to count. Up in the tower Sister Pell had Old Mercy's rope in her hands, and the bell had not rung for anyone in years. It could not ring until the light was off the bars, and the Prior meant it not to ring at all if paper was all they had brought. Between Wren and the rope lay the inner wall, the tower door and a stair, and Darrow had walked them twice in his head since noon. Wren had not asked him how he would know when. He was not sure he could have told her.
 
 Five came to the bars. The sixth had stayed at the winch-house with his boots on Rae's cart. The one who spoke had put his hood back in the cold, a bald head bare to the snow, a man in his forties with a pleasant, well-fed face, and the censer hung from his hand on its chain and smoked straight up, so that he stood in his own grey weather. The smell of hot iron came through the bars ahead of his voice.
 
