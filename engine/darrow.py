@@ -2164,11 +2164,11 @@ def run(cmd, quiet=False):
 
 
 def cmd_ship(args, cfg, rules):
-    """check -> sync -> saga.py check -> build -> commit -> push to main. Every step must pass before the next runs, so
+    """check -> sync -> saga.py check -> picture copies -> build -> commit -> push to main. Every step must pass before the next runs, so
     nothing broken is committed, and the push never forces: a rejected push pulls --rebase, rebuilds and tries again."""
     py = sys.executable
     gates = [("logs", [py, "engine/darrow.py", "check"]), ("sync", [py, "engine/darrow.py", "sync"]),
-             ("story", [py, "engine/saga.py", "check"]), ("site", [py, "engine/build_site.py"])]
+             ("story", [py, "engine/saga.py", "check"]), ("thumbs", [py, "engine/thumbs.py"]), ("site", [py, "engine/build_site.py"])]
 
     def gate():
         for name, cmd in gates:

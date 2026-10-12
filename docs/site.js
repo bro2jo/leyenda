@@ -1,16 +1,43 @@
 /* THE UNKNEELING — small helpers. Every page works without this file. */
 (function(){
 "use strict";
-var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-/* reading progress */
+var root = document.documentElement;
+/* reading progress (chapter pages carry the bar) */
 var bar = document.querySelector(".progress>i");
-if (bar && document.body.classList.contains("reader-page")) {
+if (bar) {
   var tick = function(){
-    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? Math.min(100, 100 * h.scrollTop / max) : 0).toFixed(1) + "%";
+    var max = root.scrollHeight - root.clientHeight;
+    bar.style.width = (max > 0 ? Math.min(100, 100 * root.scrollTop / max) : 0).toFixed(1) + "%";
   };
   window.addEventListener("scroll", tick, {passive:true}); tick();
-} else if (bar) { bar.parentNode.removeChild(bar); }
+}
+/* the masthead slides away while reading down and comes back on the way up (the progress bar stays). A jump to a
+   heading on the page puts it away first and holds it there while the page moves, so the heading lands in sight;
+   scroll-padding in site.css matches whichever way the masthead is. */
+var mast = document.querySelector(".mast"), holdUntil = 0;
+var mastAway = function(on){ root.classList.toggle("mast-away", on); };
+if (mast) {
+  var lastY = window.pageYOffset;
+  var measure = function(){ root.style.setProperty("--mast-h", mast.offsetHeight + "px"); };
+  measure(); window.addEventListener("resize", measure);
+  window.addEventListener("scroll", function(){
+    var y = window.pageYOffset, dy = y - lastY;
+    lastY = y;
+    if (Date.now() < holdUntil) { return; }
+    if (y <= mast.offsetHeight) { mastAway(false); }
+    else if (dy > 6) { mastAway(true); }
+    else if (dy < -6) { mastAway(false); }
+  }, {passive:true});
+  mast.addEventListener("focusin", function(){ mastAway(false); });
+}
+var hold = function(){ if (mast) { mastAway(true); holdUntil = Date.now() + 1000; } };
+/* a link to a place on this same page: the masthead goes first, then the browser jumps */
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a[href*='#']");
+  if (!a || e.defaultPrevented || a.hasAttribute("data-pv-t") || a.origin !== location.origin || a.pathname !== location.pathname || !a.hash) { return; }
+  var t = document.getElementById(decodeURIComponent(a.hash.slice(1)));
+  if (t) { hold(); }
+});
 /* roster filters */
 var box = document.querySelector("[data-filters]");
 if (box) {
@@ -84,8 +111,8 @@ if (pvLinks.length) {
     if (cur && cur !== a) { cur.classList.remove("pv-on"); cur.removeAttribute("aria-describedby"); }
     cur = a; a.classList.add("pv-on"); a.setAttribute("aria-describedby", "pv");
     while (card.firstChild) { card.removeChild(card.firstChild); }
-    var src = a.getAttribute("data-pv-i"), kind = a.getAttribute("data-pv-k") || "wide";
-    card.className = "pv" + (src && kind === "portrait" ? " portrait" : "") + (touch ? " touch" : "");
+    var src = a.getAttribute("data-pv-i"), kind = a.getAttribute("data-pv-k") === "face" ? "face" : "wide";
+    card.className = "pv" + (src && kind === "face" ? " pv-face" : "") + (touch ? " touch" : "");
     if (src) {
       var box = el("span", "pv-img " + kind), img = el("img");
       img.src = src; img.alt = "";
@@ -188,15 +215,23 @@ if (songLinks.length && typeof Audio === "function") {
 } else {
   Array.prototype.forEach.call(players, function(p){ p.addEventListener("play", function(){ hushPlayers(p); }); });
 }
-/* the Codex: a link to an entry (#place-…, #faction-…, #codex-…) opens it */
+/* a link to a folded entry or section (a Codex entry, a panel on Darrow's page) opens it, and every jump to a place on
+   a page lands below the masthead's spot with the masthead put away */
 var openTarget = function(){
   var id = decodeURIComponent(location.hash.slice(1)), t = id && document.getElementById(id);
   if (!t) { return; }
-  var d = t.tagName === "DETAILS" ? t : t.querySelector("details");
+  var d = t.tagName === "DETAILS" ? t : t.querySelector(":scope > details");
   if (d && !d.open) { d.open = true; }
-  t.scrollIntoView({block: "start"});
+  for (var p = t.parentElement; p; p = p.parentElement) { if (p.tagName === "DETAILS" && !p.open) { p.open = true; } }
+  hold();
+  t.scrollIntoView({block: "start", behavior: "instant"});
 };
 openTarget();
 window.addEventListener("hashchange", openTarget);
-if (reduce) { document.documentElement.classList.add("reduce"); }
+/* the page may still grow or shrink once its fonts and pictures arrive: until the reader moves, land on the target again */
+var moved = false;
+["wheel", "touchstart", "keydown"].forEach(function(t){ window.addEventListener(t, function(){ moved = true; }, {passive:true, once:true}); });
+var settle = function(){ if (!moved && location.hash) { openTarget(); } };
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(settle); }
+window.addEventListener("load", settle);
 })();

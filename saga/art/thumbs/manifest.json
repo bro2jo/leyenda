@@ -1,0 +1,203 @@
+{
+ "_about": "Small (sm, 256 px) and medium (md, 640 px) WebP copies of the pictures under saga/art/, made by engine/thumbs.py from the file whose SHA-1 is named here. Generated: never edit by hand; run the script.",
+ "images": {
+  "characters/aldric-vane.jpg": {
+   "sha1": "44fc48943ebaad04d6758a1e410159bbc4a9c567",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/benedek-orrin.jpg": {
+   "sha1": "91ed1423f74f99313a2d3ede0b0f64a7562a7077",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/darrow.jpg": {
+   "sha1": "f9256e067a62cc60288fa8d8a813195a7cc0dd14",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/hollis-garrow.jpg": {
+   "sha1": "8daeadb35b6c15aa10cb4dce59730ed59fa5b72a",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/ivo-marrant.jpg": {
+   "sha1": "5c6f3a6589d6445dae248ae75a2f5e8f8990b3d8",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/maelis-vorne.jpg": {
+   "sha1": "4a6d33cc1cfe75f32d6f723c868c5c9c06f3d901",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/mother-ione.jpg": {
+   "sha1": "2adea4ca8767a201814069118d42f466369a9ced",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/rae-thorne.jpg": {
+   "sha1": "835218f2e0651577ee5fc6b58e5a03e65a251022",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/red-handed-woman.jpg": {
+   "sha1": "52f734a8456be1ee7e89fb17c6d6f599a991d6f0",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/tobin-marsh.jpg": {
+   "sha1": "4891bde39e1e959b37a58dab67c2366f5a26a4c3",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/wren-ashdown.jpg": {
+   "sha1": "dc0cbd176bfffb99472e1c095bdf51e863cfed24",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "codex/thistle.jpg": {
+   "sha1": "fe5e019db4772144381497f4daa55846d49df3a7",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  },
+  "factions/confessors.jpg": {
+   "sha1": "b46150e9eb2936ff38f51b0da7c483a0a86eb14f",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  },
+  "places/coldmere.jpg": {
+   "sha1": "7b1203edf97c56e6c84015165631425d4b570895",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  },
+  "places/harrow-ford.jpg": {
+   "sha1": "d1afea5040d91b8b01e2b8cf7d0537c5d30adce6",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  },
+  "places/saint-ysoldes.webp": {
+   "sha1": "8606dd718245079dfe10bcd09af9b2604a3108fe",
+   "sm": [
+    256,
+    144
+   ],
+   "md": [
+    640,
+    360
+   ]
+  },
+  "places/the-lowmarch.jpg": {
+   "sha1": "dcc82d6444675cbe8fd6ff0c140ab55af1ccb3ee",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  },
+  "places/winch-house.jpg": {
+   "sha1": "66fa699aeda7d2fcbfc02a2a8be1924a2dbc321f",
+   "sm": [
+    256,
+    143
+   ],
+   "md": [
+    640,
+    357
+   ]
+  }
+ }
+}
