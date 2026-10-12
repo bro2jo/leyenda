@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-09 · house · Wren's pencil rolled off the sill. Darrow lobbed it back over two cots and a dozing lay brother, and it dropped into the fold of her open ledger as if it lived there. She looked at him and wrote something down.
 - 2026-10-09 · saying · What the lay brothers say on the Steps when the wind gets under a cloak: "The mountain keeps its own count." Nobody can tell you what it means. Everybody says it anyway.
 - 2026-10-09 · overheard · In the kitchen passage: "The Captain's got his colour back." "He's got somebody's colour. Hope he gives it back before the Mender notices."
 - 2026-10-09 · body · The cold that got into his hands this morning has gone out of them. He flexes them on the blanket and they close all the way, without argument.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `CLAUDE.md`, "The glimp
 - 2026-10-11 · weather · Snow came on again after dark, fine and dry, the kind that squeaks underfoot. By the hour bell it had filled the court's bootprints, and the court looked as if nobody had ever stood in it.
 - 2026-10-12 · verse · From the far end of the hall, low, a novice is singing the far cots to sleep: "Hush, the bell is counting, / one for you and one for me." Down the row, more than one of the near cots is listening too.
 - 2026-10-12 · house · In the small hours a lay brother comes down the hall with the night lamp, counting cots under his breath. He loses his place at Hollis's snore, sighs, and starts again from the door.
+- 2026-10-12 · saying · A lay brother barks his shin on the woodbox in the dark and says "Bells take it," loud. Then, to the whole silent hall, much quieter: "Not those bells. Some other bells."

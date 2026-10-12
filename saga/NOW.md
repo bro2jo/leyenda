@@ -32,6 +32,7 @@ FINESSE   9 (-1)   the Knight Who Fell: 18
 RESOLVE  10 (+0)   the Knight Who Fell: 12
 
 THE BINDING · Knots tied II of VII · the soft season (do not trust the quiet)
+THE TETHER · I of V · a name
 ARTS · The Seated Blade I · Stillwater Stance II · The Long Breath I · The Mender's Patience I · Warden's Eye II · The Measured Hand I · Overwall I
 SEALED (practice banked) · Groundbreaker (Knot III)
 ```
