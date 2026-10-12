@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-09 · weather · Dusk came up out of the valley before it came down out of the sky, and the lower Steps went blue one flight at a time, like someone walking up them putting out lamps.
 - 2026-10-10 · house · A lay brother bringing the morning kindling stopped at Darrow's cot to tell him he looked like a man who'd slept. He had. It was the first thing said about him in days that wasn't a warning.
 - 2026-10-10 · saying · Through the infirmary wall, a novice reciting to the cold: "Time makes it possible. Proof makes it permitted." Over and over, a little faster each time, the way you stamp your feet.
 - 2026-10-10 · overheard · Two lay brothers banking the hall fire for the night, in whispers: "Who taught you to lay a fire like that?" "Nobody." "Then why's it still going?" "Because nobody told it different."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-12 · ledger · From Wren's ledgers, a page headed Garrow, H.: Names called to the beech leg this week: 31. Names repeated: 2. (She has underlined the two, as a matter of standards.)
 - 2026-10-12 · overheard · Down the hall a lay brother banks the fire a second time, talking to it under his breath: "Slow, now. Nobody's asking you to be quick." Darrow lies still and lets the words do for him too.
 - 2026-10-12 · house · The hall's iron kettle takes two novices to hang on its hook. These days, if Darrow is nearer, he takes the bail one-handed and has it hung before either of them thinks to object.
+- 2026-10-12 · body · He does up the infirmary shirt's three buttons in the dark by feel, all three, first try, and only afterwards notices that his fingers didn't argue with him once.
