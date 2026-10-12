@@ -25,3 +25,5 @@
 He chose the side plank from the feet on both sides, as the Add-On's finisher (revised 10/12) writes it, knees straight. The question for the PT is dropped.
 
 The prehab/posture plan was retired the same day (posture work is in the Add-On), so the rib-flare check above is the standing one: the Add-On's Upper B gate for the seated DB press.
+
+He also chose the programming review's changes to Upper B (Add-On revision 10/12, later): a **prone incline Y-raise 10–12 at ~5 lb in place of the reverse fly** (the warm-up face pull already covers the rear delts), **60–90 s rest before the seated DB press**, and a **flat neutral-grip DB press** as its fallback instead of a second incline press. The trainer's B1, B2, row, warm-up and finisher stand as written.

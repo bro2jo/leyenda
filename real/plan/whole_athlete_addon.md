@@ -8,6 +8,7 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 - 10/9: upper on its own days, alternating A/B; Nick 10/9
 - 10/10: off-season mapping, tissue and trunk finisher, design-only cleanup (no separate prehab/posture plan); posture work for forward head, rounded shoulders, and anterior pelvic tilt built into the upper warm-up and a knee-session cooldown (§3)
 - 10/12: the doorway pec sequence (contract-relax) replaces the 30 s doorway stretch and moves ahead of the face pull; Upper B's row is chest-supported until upper session 3 (rule 3); Phase 4 bike intervals build from 3 × 4 to 4 × 4 min, as in off-season Phase 1
+- 10/12, later (programming review): Upper B's reverse fly → prone incline Y-raise (the face pull already covers the rear delts; lower traps had nothing on a week without the accessory day); 60–90 s rest before the DB press inside the tri-set; the DB press's fallback is a flat neutral-grip DB press, not a second incline; from Block 1, with speed bench, the incline drops to 2 sets; a day with throwing and upper both throws first (§2)
 
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
@@ -49,6 +50,8 @@ This file never changes a left-knee item. Anything here that touches the left kn
 
 The knee rhythm is in the Working Rules. An upper day is ~30 minutes plus the bike.
 
+**A day with throwing and upper both** (a PT visit moving an upper day onto a throwing day): throw first, then the bike, the upper core and the finisher. Skill before fatigue, and the shoulder throws fresh.
+
 ---
 
 ## 3. Sessions
@@ -87,11 +90,11 @@ The knee rhythm is in the Working Rules. An upper day is ~30 minutes plus the bi
 | Block | Exercise | Block 0 dose | Notes |
 |---|---|---|---|
 | A | Speed bench | — | From Block 1: 5 × 3 @ 45–55%, stop when the bar slows |
-| B1 | Incline DB or barbell press, or barbell floor press | 3 × 8–10 | No DB kick-ups off the left thigh |
+| B1 | Incline DB or barbell press, or barbell floor press | 3 × 8–10 | No DB kick-ups off the left thigh. **From Block 1, 2 × 8–10**: speed bench comes first, and three full presses would outgrow the session's pulling |
 | B2 | Chin-grip cable pulldown, seated | 3 × 8–10 | Alternate sets with B1 |
-| C | Tri-set × 3: one-arm DB row 8/side · seated neutral-grip DB press 6–8 · cable or band reverse fly 10–12 | 3 rounds | Row: hand on the bench, both feet on the floor, no left knee on the bench. **In upper sessions 1–2 it's a standing hinge, so a chest-supported DB row (8–10) replaces it** (rule 3). DB press: only if both arms reach overhead without the ribs flaring or the low back arching; otherwise a second incline variation |
+| C | Tri-set × 3: one-arm DB row 8/side · seated neutral-grip DB press 6–8 · prone incline Y-raise 10–12 (~5 lb) | 3 rounds | Row: hand on the bench, both feet on the floor, no left knee on the bench. **In upper sessions 1–2 it's a standing hinge, so a chest-supported DB row (8–10) replaces it** (rule 3). **Rest 60–90 s before the DB press**: it is the lowest-rep, most technical lift of the day. DB press: only if both arms reach overhead without the ribs flaring or the low back arching; otherwise a **flat neutral-grip DB press** (a second incline would repeat B1). Y-raise: chest on the incline bench, feet on the floor, thumbs up, arms in a Y; lower traps, which the face pull doesn't reach |
 
-Accessory volume stays pull-biased; heavy push and pull sets stay matched.
+Accessory volume stays pull-biased; heavy push and pull sets stay matched. The rear delts get the face pull every upper day; Upper B's accessory slot goes to the lower traps instead of repeating it.
 
 ### Tissue & trunk finisher — end of every upper day, ~5 min
 
@@ -111,7 +114,7 @@ No separate plan. Most of the work is already in the program; the gaps are fille
 | Issue | Already covered by | Added |
 |---|---|---|
 | **Forward head** | Thoracic extension (upper warm-up) | **Chin nod → deep neck flexor hold** (knee-session cooldown) · chin tucked on rows, pulldowns, bench, RDL |
-| **Rounded shoulders** | Rows, pulldowns, reverse fly; pull-biased accessory volume; thoracic extension; accessory day (Y-raise, lower-trap raise, serratus punch) | **Doorway pec sequence** and **face pull with external rotation** in every upper warm-up |
+| **Rounded shoulders** | Rows, pulldowns, prone Y-raise (Upper B); pull-biased accessory volume; thoracic extension; accessory day (Y-raise, lower-trap raise, serratus punch) | **Doorway pec sequence** and **face pull with external rotation** in every upper warm-up |
 | **Anterior pelvic tilt** | SL bridge, RDL, hamstring curl (Session B) · bird dog · side plank (finisher) | **90/90 hip lift**, **dead bug**, and a **supine hip flexor stretch** (knee-session cooldown) · ribs down and glutes on in bridges, landmine press, split squats; finish each bridge in a slight posterior tilt |
 
 #### Posture cooldown — end of every knee session, ~6 min, lying down

@@ -108,7 +108,7 @@
 | Tue 10/13 | **Session A** (fixed Tuesday: keeps a day's gap from PT on Thursday or Friday) |
 | Wed 10/14 | Heel prop · **Throwing A** (control + breaks; sport plan). No knee or upper work |
 | Thu 10/15 | PT if booked Thursday. Otherwise bike 21 → **Upper A** → finisher |
-| Fri 10/16 | PT if booked Friday. If PT was Thursday: bike 21 → **Upper A** → finisher. **Throwing B** (deception + overheads) |
+| Fri 10/16 | PT if booked Friday. **Throwing B** (deception + overheads). If PT was Thursday, throw first, then bike 21 → **Upper A** → finisher (Add-On §2) |
 | Sat 10/17 | Heel prop · bike 24 · **Throwing C** (long throws at a controlled range) · film 10–15 min |
 | Sun 10/18 | Weigh-in (5:30 PM), **first extension photo**, SLR lag, flexion → checkpoint → **Session B** · Phase 3 gate review |
 
@@ -237,7 +237,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 | Block | Lift | Today |
 |---|---|---|
 | B1 / B2 | Incline press (barbell in the rack with safeties) · chin-grip cable pulldown, seated | 3 × 8–10 each, alternating. Bench 105 was "pretty tough" on 10/9, so the incline starts lighter |
-| C (tri-set × 3) | **Chest-supported DB row** (the one-arm row starts at the next Upper B) · seated neutral-grip DB press · reverse fly | 8–10 · 6–8 (a second incline press if overhead reach isn't clean) · 10–12 |
+| C (tri-set × 3) | **Chest-supported DB row** (the one-arm row starts at the next Upper B) · **rest 60–90 s** · seated neutral-grip DB press · **prone incline Y-raise** (replaces the reverse fly, 10/12) | 8–10 @ 15s · 6–8 @ ~20s (a flat neutral-grip DB press if overhead reach isn't clean) · 10–12 @ ~5 lb |
 
 **Upper A, 10/9 — last dose and next (session 3).** Session RPE 7/10.
 
