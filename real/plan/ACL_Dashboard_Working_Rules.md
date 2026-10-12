@@ -137,6 +137,7 @@ Paste this as the first message of each new thread:
 - **Depth rule:** a squat pattern goes no deeper than the deepest pattern that has already produced a clean morning, one step at a time.
 - **The plan's exercises are tools; the gates are the program.** Being handed a later-phase exercise doesn't change the phase. The response-based gates hold a phase open, not the calendar.
 - **Right leg** mirrors the left's single-leg strength work inside the knee sessions, so the right-side strength reference doesn't drift down and flatter the symmetry number.
+- **Throwing** (disc skills) runs on its own plan, `sport_plan.md`: three sessions a week (Wed, Fri, Sat by default) plus film. In Phase 3 it is seated or square-stance at easy effort: not a loaded day and not knee load. The left-foot pivot opens with Phase 4 and rides the knee-session days. It never replaces the daily minimum.
 
 ## Gait
 
@@ -144,7 +145,7 @@ A limp returning under fatigue means shorter bouts and a sit, not a crutch. Gait
 
 ## Priority and clearance
 
-- **Priority:** latest PT/surgeon instruction → rehab plan → Recovery State → Whole-Athlete Add-On → logs → general ACL knowledge. The dashboard never clears a major progression. The add-on never changes a left-knee item.
+- **Priority:** latest PT/surgeon instruction → rehab plan → Recovery State → Whole-Athlete Add-On → sport plan (throwing) → logs → general ACL knowledge. The dashboard never clears a major progression. The add-on never changes a left-knee item.
 - **In-plan progression** doesn't need PT approval (Nick, 10/9). It is done at home and judged by response (load rules 3–7).
 - **Still goes through the PT / clinic:**
   - strength testing (equipment)

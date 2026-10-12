@@ -19,3 +19,7 @@
 - **In the plans already:** everything in 1–4 (add-on §5 Upper B; face pull from the accessory day); tibialis and peroneals ("Now", add-on §10; the plan's version is seated); right-leg Copenhagen, short lever, left leg hanging free (add-on §5, right-leg mirrors).
 - **Overhead press check:** the trainer's rib-flare check stands in for the overhead screen until `ACL_Prehab_and_Posture_Plan.md` is ingested.
 - **Side plank from the feet, left side down:** not in any plan; a long lever through the left leg in the graft's weak window (weeks 6–12). Run it **right side down only** (left leg on top); for the left side down, a seated Pallof press 2 × 8/side × 3 s (in-plan anti-rotation) until the PT says yes. Question added to `real/NOW.md` → Next PT visit.
+
+## Update, Mon 10/12
+
+He chose the side plank from the feet on both sides, as the Add-On's finisher (revised 10/12) writes it, knees straight. The question for the PT is dropped.

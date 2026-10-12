@@ -10,7 +10,7 @@ Program: `real/state/ACL_Recovery_State_2026-10-11.md`, the dashboard's, revised
 - **Knee:** **Tue 10/13 Session A** (fixed Tuesday, a day's gap before PT): cable seated knee extension 90°→45° new · SL sit-to-stand at 18" unassisted · 12" step-up with knee drive · first home eyes-closed drill (both feet on the BOSU dome, 1 min) · posture cooldown after (~6 min). Then **Sun 10/18 Session B**: the 10/11 doses are its baseline, one change each if the mornings stay clean (State §6).
 - **Upper:** **Mon 10/12 Upper B** (session 2, seated or lying; chest-supported row; the new warm-up with the doorway pec sequence; the tissue & trunk finisher) → **Upper A Thu 10/15**, or Fri 10/16 if PT lands Thursday (session 3: chest pass, standing options). Wed is off. Block 0 through the week of 10/18; Block 1 from 10/25 if upper runs 2 of 2 both weeks. No accessory day this week; Saturday power & mobility earliest 10/24.
 - **Bike, legs only, easy:** Mon 18 → Thu 21 → Sat 24, +3 min per ride to 30.
-- **Throwing, week 1 (baseline), Phase 3 only** (the sport plan; the dashboard's State doesn't include it): seated or square-stance standing at easy effort, **no pivot, no step-out**. Wed A control + breaks · Fri B deception + overheads · Sat C long throws at controlled range · film 10–15 min. Minimum week 2 × 20 + 1 × 25 min. The week's question (guide): what feels different post-surgery, noticed, not corrected. Pivots on the left open with Phase 4, on knee-session days. Plan: `real/plan/sport/sport_plan.md` (`doc sport 5`); guide: `doc sportguide "week 1"`.
+- **Throwing, week 1 (baseline), Phase 3 only** (the sport plan; named in the index, the Working Rules, the Add-On and the State's week): seated or square-stance standing at easy effort, **no pivot, no step-out**. Wed A control + breaks · Fri B deception + overheads · Sat C long throws at controlled range · film 10–15 min. Minimum week 2 × 20 + 1 × 25 min. The week's question (guide): what feels different post-surgery, noticed, not corrected. Pivots on the left open with Phase 4, on knee-session days. Plan: `real/plan/sport/sport_plan.md` (`doc sport 5`); guide: `doc sportguide "week 1"`.
 - **Sun 10/18 before the session:** weigh-in at the same time as the baseline (5:30 PM), the **first extension photo**, SLR lag, flexion vs the right → checkpoint → Session B → Phase 3 gate review.
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. This week's two fixes: a carb anchor at breakfast and dinner (rice, potato, oats, fruit); protein on quiet days (a shake or yoghurt whenever a day is short by mid-afternoon). Fish twice.
 
@@ -20,7 +20,6 @@ The list is the State's (§5, `doc state "next visit"`): **book the quad test, b
 
 Not on the State's list, from this repo:
 - **Throwing, for awareness** (sport plan §11): "Seated and square-stance throwing at easy effort now; pivots on the left from Phase 4; max-intent throws from Phase 5." Ask: anything he wants watched with pivots on the graft side? Any reason to wait on max-intent throws?
-- **Side plank from the feet, left side down:** the Add-On's finisher (10/12) runs it on both sides, knees straight. Ask whether left side down is fine in the graft's weak window; until it's asked, right side down is the cautious option (`real/visits/2026-10-12_trainer-session.md`).
 
 ## Gate · Phase 3 → 4 (review week of 10/18; earliest Tue 10/20)
 
@@ -37,7 +36,7 @@ Phase 4 waits on one thing: the quad test.
 ## Flags and notes for the week
 
 - **Last week closed Costly** on the engine's score: two of three knee sessions, one of three rides, two full floors, protein under target three days, calories at target once. Not a lecture; the plan is the same plan.
-- **Sat 10/10 reads differently in the two records.** The dashboard's log and State call it a zero day (no heel prop, no bike, morning not reported); this repo logged a heel prop and a 157.2 weigh-in that morning from your message, and that record stands. Tell the dashboard so its week of 10/4 (daily minimum 3 of 7, 10/10 among the zero days) matches.
+- **Sat 10/10 had a heel prop and a weigh-in** (you confirmed 10/12): the State here is corrected (week of 10/4: daily minimum 4 of 7, not a zero day). The dashboard's own copy and its daily log still call it a zero day until you tell it.
 - **Off-day work stays thin:** floor, bike and upper on off days are where the weeks are lost. If upper misses again, ask what the actual barrier is before redesigning (Working Rules).
 - **Batches keep growing:** 5 → 7 → ~12 → ~8 changes (9/28, 9/30, 10/6, 10/11), all clean mornings, none attributable. With PT approval no longer a brake, one change per exercise is the main guardrail.
 - **Sun 10/11 Session B ran past its batch** (RDL 25 → 45 lb/hand, SL sit-to-stand 20" unassisted, cable hamstring curl 30 lb and cable hip 4-way 20 lb in place of bands, bird dog 8 → 15 lb). Mon 10/12 was clean, so those are Session B's baseline (State §6). From here, one change per exercise a session.
@@ -47,7 +46,7 @@ Phase 4 waits on one thing: the quad test.
 ## Open items
 
 - **Not here yet:** your nutrition project's instructions (bring them in with `/ingest`). The dashboard's PT Notes and the 24-week off-season program arrived 10/12; the prehab/posture plan is retired (posture work is in the Add-On; the check before seated DB pressing is Upper B's rib-flare check).
-- **The dashboard doesn't have the throwing plan** (`real/plan/sport/sport_plan.md`): its State leaves Wed off and plans no throwing. Add the sport plan to the dashboard project if you want its State to plan around it.
+- **Give the dashboard the same two changes**, or its next upload drops them: the sport plan is named in the index, the Working Rules (priority, program structure), the Add-On (Sport line) and the State (§1, this week's throwing days); and Sat 10/10 was not a zero day.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 - **Confirm:** the PT visit's day.
 

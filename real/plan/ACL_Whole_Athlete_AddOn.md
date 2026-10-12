@@ -12,7 +12,7 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
 
-**Sport:** a combination of ultimate, court, and field sports. All three of the off-season plan's sport settings apply when it returns (section 8).
+**Sport:** a combination of ultimate, court, and field sports. All three of the off-season plan's sport settings apply when it returns (section 8). Disc throwing runs now on its own plan, `sport_plan.md` (what each rehab phase allows; Phase 3: seated or square-stance at easy effort, no pivot); it never changes a left-knee item.
 
 **Equipment:** Recovery State §1.
 

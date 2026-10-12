@@ -17,6 +17,7 @@ What each file in this project is for, where each kind of fact lives, and how th
 5. `ACL_Daily_Log.csv` and `ACL_Exercise_Log.csv`
 6. `ACL_Reconstruction_Rehab_Master_Plan.md` for phase criteria
 7. `24-week-offseason-program-v4.md` only when the add-on or a later phase needs it
+8. `sport_plan.md` when a throwing day or the sport comes up
 
 ---
 
@@ -32,6 +33,7 @@ What each file in this project is for, where each kind of fact lives, and how th
 | 6 | `ACL_Recovery_State_<Sunday>.md` | **The single source for "now"**: phase and gates, measurement anchors and recent readings, PT instructions in force, the program with doses and ladders, this week's schedule, add-on status, the next-visit list, patterns, milestones | Replaced every Sunday; revised mid-week only on request, in place, under the same Sunday name | Anything current | Long history (lives in the logs) |
 | 7 | `ACL_Daily_Log.csv` | One row per day | Via the thread; written at checkpoint or on request | The columns (schema in Working Rules). `swelling_am` = the grade only. `notes` ≤2 sentences (rows before 10/10 predate this rule and stay as written) | Decisions, instructions, plans |
 | 8 | `ACL_Exercise_Log.csv` | One row per exercise instance | Same as the daily log | Exercise, side (L / R / bil; blank for upper and conditioning), sets, reps, hold, load, assist. Single-leg work on both legs = one row per side | — |
+| 9 | `sport_plan.md` (its content: `Ultimate_Offseason_Development_Guide.md`) | The disc-throwing plan (ultimate, handler): skills, what each rehab phase allows (Phase 3: seated or square-stance at easy effort, no pivot; the left-foot pivot from Phase 4; max intent from Phase 5), three sessions a week (Wed A, Fri B, Sat C) plus film. Kept in the GitHub repo (`real/plan/sport/`), where throwing sessions are logged | Only when the sport plan changes | Throwing skills, stages by phase, weekly placement | Anything that loads the left knee ahead of the rehab plan's phase |
 | — | The weekly chat thread | Where the week happens | Every day | Conversation, questions, drafts | It isn't a record: anything that matters becomes a row or a State entry |
 
 ---
@@ -53,6 +55,7 @@ What each file in this project is for, where each kind of fact lives, and how th
 | Conditioning: the Phase 3 rule | Working Rules; the stages after it → Add-On §5; the current ladder → State §6 |
 | Upper status: sessions run, loads, block dates, unlocks | State §7 |
 | Patterns and tendencies | State §9 |
+| Throwing: what's allowed now, the week's throwing days | Sport plan (this week's days also in State §6) |
 | Daily and exercise data | The two CSVs |
 
 ---

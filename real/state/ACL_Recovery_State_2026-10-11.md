@@ -14,7 +14,7 @@ Source priority: latest PT/surgeon instruction → rehab plan → this file → 
 
 - **Surgery:** 2026-08-24 — LEFT isolated ACL reconstruction, patellar tendon autograft. No meniscus, cartilage, or other procedures. The plan applies unmodified.
 - **Injury:** 2026-07-14. Clinic prehab from 2026-07-22.
-- **Sport:** a combination of ultimate, court, and field sports.
+- **Sport:** a combination of ultimate, court, and field sports. Disc throwing (ultimate, handler) runs on the sport plan, `sport_plan.md`: Phase 3 = seated or square-stance at easy effort, no pivot, no step-out.
 - **Surgeon (9/25):** no brace; no crutches; very pleased with flexion and extension; ramp up strength as long as the knee stays quiet.
 - **PT:** Cleveland Clinic Rehabilitation & Sports Therapy.
   - Nick Immel PT oversees and treated 10/8; Cody Rardon PTA treats.
@@ -92,7 +92,7 @@ Source priority: latest PT/surgeon instruction → rehab plan → this file → 
 | 10/7 | 44 | trace | — | — |
 | 10/8 | 45 | trace | — | PT 9 (Nick) |
 | 10/9 | 46 | trace (barely visible) | — | Upper A; bike 15 |
-| 10/10 | 47 | not reported | — | Zero day |
+| 10/10 | 47 | not reported | — | Heel prop; weigh-in |
 | 10/11 | 48 | trace (low side) | 0 | Session B, ~8-change batch, 80 min, RPE 7; body mass 159.8 |
 | 10/12 | 49 | trace (mild) | 0 | Verdict on Session B: clean |
 
@@ -141,13 +141,13 @@ No post-op dynamometer in five visits.
 | Sun 10/11 | ✓ **Session B** (80 min, RPE 7) · heel prop · sauna |
 | Mon 10/12 | ✓ Morning verdict (clean) · heel prop · bike 18 → **Upper B** → finisher · book PT |
 | Tue 10/13 | **Session A** (fixed Tuesday: keeps a day's gap from PT on Thursday or Friday) |
-| Wed 10/14 | Heel prop. Off |
+| Wed 10/14 | Heel prop · **Throwing A** (control + breaks; sport plan). No knee or upper work |
 | Thu 10/15 | PT if booked Thursday. Otherwise bike 21 → **Upper A** → finisher |
-| Fri 10/16 | PT if booked Friday. If PT was Thursday: bike 21 → **Upper A** → finisher |
-| Sat 10/17 | Heel prop · bike 24 |
+| Fri 10/16 | PT if booked Friday. If PT was Thursday: bike 21 → **Upper A** → finisher. **Throwing B** (deception + overheads) |
+| Sat 10/17 | Heel prop · bike 24 · **Throwing C** (long throws at a controlled range) · film 10–15 min |
 | Sun 10/18 | Weigh-in (5:30 PM), **first extension photo**, SLR lag, flexion → checkpoint → **Session B** · Phase 3 gate review |
 
-Rhythm structure and rotation rules: Working Rules.
+Rhythm structure and rotation rules: Working Rules. Throwing: the sport plan, week 1 (baseline; minimum 2 × 20 + 1 × 25 min), Phase 3 throwing only.
 
 ### Daily minimum
 
@@ -298,13 +298,13 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 | Wed 10/7 | No | Heel prop, NMES, heel slides; Game Ready | Thu: **trace** |
 | Thu 10/8 | **Yes (PT 9, Nick)** | Hardest session to date; measures; new PT items; sauna | Fri: **trace, barely visible** |
 | Fri 10/9 | No | Bike 15 (3.47 mi); heel prop; **Upper A** | Sat: not reported |
-| Sat 10/10 | No | Nothing | Sun: **trace (low side)** |
+| Sat 10/10 | No | Heel prop; weigh-in | Sun: **trace (low side)** |
 
 | Measure | Week of 10/4 | Target |
 |---|---|---|
 | Loaded days | 2 | 3 |
 | Clean mornings after loading | 2 of 2 | — |
-| Daily minimum (heel prop) | 3 of 7 (Tue, Wed, Fri) | 7 |
+| Daily minimum (heel prop) | 4 of 7 (Tue, Wed, Fri, Sat) | 7 |
 | Bike rides | 1 | 3+ |
 | Upper sessions | 1 | 2 |
 | Swelling graded | 4 of 7 | 7 |
@@ -320,9 +320,9 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 2. **Quad strength is the only unmeasured gate, and PT isn't booked yet.** If the quad test isn't done at the next visit, Phase 4 can't open on 10/20. The cable knee extension starts Tuesday.
 3. **Extension:** 2° hyperext at three clinic readings. It held with few home heel-prop rounds; once a day is maintenance. Remaining target: the right knee's passive hyperextension. First photo due 10/18.
 4. **Off days and Saturdays produce little.**
-   - Daily minimum 3 of 7 in the week of 10/4.
+   - Daily minimum 4 of 7 in the week of 10/4.
    - The Saturday bike has been missed five weeks running.
-   - Zero days: 10/4, 10/5 (on feet), 10/10.
+   - Zero days: 10/4, 10/5 (on feet).
    - Upper is improving: 1 session after three weeks at 0.
 5. **More when it feels good:**
    - Batches of 5 → 7 → ~12 → ~8 changes.
