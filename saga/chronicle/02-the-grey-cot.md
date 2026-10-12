@@ -127,3 +127,47 @@ That one Darrow could answer aloud. "Good night, Ser Benedek."
 > ⟦ THE RECKONING ⟧
 > Rank: **Kindled**.
 > XP 1,003 → 1,068
+
+### Between — Same Paper
+
+He gave the night bell time to settle before he got up: good leg, bad leg, transfer, the blanket round his shoulders against the cold coming up off the flags.
+
+He had known all day which three cots they were, near the banked fire on the far side of the hall, and all day he had not let his eyes go there. He went there now, the slow way, past men who were asleep and men who were pretending.
+
+Two of them were awake. He could tell by how still they lay.
+
+There was no getting down to a man on a cot with this knee. He sat on the end of the nearest one instead, and the man in it drew up his feet to make room: the oldest of the three, who had ridden with the Ninth longer than Darrow had commanded it, his forearm splinted across his chest.
+
+"You didn't look at us," the old one said. "At the gate."
+
+"No."
+
+"Good. Those two in grey were watching where every man's eyes went." He shifted the splint. "Then you walked up to the bars and gave him your face. Waste of a good bit of not-looking, that."
+
+Darrow had carried the thing he meant to say all the way down the hall, and he said it before it could get any heavier. "He'll read that paper again. When he does, you don't know me. You're three sore men who never once looked at their captain, and you can go on not looking. I'll tell him myself you're not mine."
+
+The third man was asleep, or doing it well enough that the other two let him be. The middle one had his head bound up in linen and had been listening with his eyes shut. He opened them now.
+
+"He read us, Captain. Same paper. Your name at the top and ours under it." He said it the way a man reads off a muster. "You can't not-know a man you're written under."
+
+"He says if I go down, the rest of it goes back in his cloak."
+
+Nobody answered that for a while. The fire ticked. Somewhere up the hall a man coughed and turned over.
+
+"We came up the Steps on other men's backs, Captain," the old one said at last. "We'll not go down them on yours."
+
+Darrow had a joke ready, and it was a poor one, and he kept it. "Go to sleep," he said instead. "That's an order."
+
+"Aye, Captain." The old one shut his eyes. "First one since the river."
+
+He went back up the hall the slow way. Hollis had not turned from the wall, but the blanket over his hand had not gone still either, and on the stool between their cots his knucklebones lay where he had left them, five pale knuckles in the dark beside the beech leg.
+
+"All three?" Hollis said, to the wall.
+
+"All three."
+
+"And?"
+
+Darrow sat down on his own cot and looked at the bones. "They won't go down on my back."
+
+Hollis was quiet long enough that it might have been sleep. "Ninth," he said to the wall, as if it were the worst word he knew. Under the blanket his hand went on shaking.

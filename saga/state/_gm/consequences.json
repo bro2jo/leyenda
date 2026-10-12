@@ -211,6 +211,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.3",
+      "made": {
+        "chapter": 2,
+        "scene": "between-3",
+        "date": "2026-10-12"
+      },
+      "chose": "Went down the hall in the dark to his three Ninth men from the gate and told them to go on not knowing him; he would tell the Confessor himself they were not his",
+      "now": {
+        "bearing": {
+          "hearth": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.3a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "His three Ninth men from the gate (unnamed on the page): \"We came up the Steps on other men's backs, Captain. We'll not go down them on yours.\" They will not be bought off the Confessor's paper by his kneeling, and took his order to sleep as the first since the river. Fire it where the Confessor's terms, or the kneeling, come back to him in front of his own",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
