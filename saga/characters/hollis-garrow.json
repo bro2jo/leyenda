@@ -24,17 +24,17 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-3"
+    "anchor": "chronicle/02-the-grey-cot.html#between-4"
   },
-  "last_seen_doing": "Lying with his face to the wall after the night bell, asking the Captain whether his three Ninth men were all there; his hand still shaking under the blanket.",
-  "now": "In the infirmary hall of Saint Ysolde's, on his cot after being carried down from the gatehouse window, second on the list Confessor Ivo Marrant read at the bars. He gave the hall the names that were read. He is dry, which he has told the Captain and nobody else, and since the night bell he has lain with his face to the wall and his shaking hand under the blanket. When the Captain came back from his three Ninth men down the hall, Hollis asked the wall whether they were all there, and called them \"Ninth\" as if it were the worst word he knew. His knucklebones lie on the stool between their cots. The Confessors sit up in turns round their fire on the lower terrace below the gate.",
+  "last_seen_doing": "Lying on his back with his fist shut on his knucklebones, steady while it has something to hold, having told the Captain to go to sleep.",
+  "now": "In the infirmary hall of Saint Ysolde's, on his cot after being carried down from the gatehouse window, second on the list Confessor Ivo Marrant read at the bars. He gave the hall the names that were read. He is dry, which he has told the Captain and nobody else, and his hands shake under the blanket when nobody is meant to be looking. After the night bell the Captain sat up and played him at knucklebones; his hand was steady while it had work and he lost the stone by a hair, chanted the loser's line (\"the bones go to him who can stand\"), and paid a story told true: at the window, for as long as it takes to say it, he had thought it good that the Captain should kneel for the rest of the paper, and would have gone down the Steps on Darrow's back sooner than kneel on the beech leg. His fist is shut on the bones. The Confessors sit up in turns round their fire on the lower terrace below the gate.",
   "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list. When they came to the gate he had himself carried up to the gatehouse window to see the man who wanted him, heard his name read second, looked at the wax on the writ and away, and when the Captain gave his name at the bars, told him he had seen him move at it, that nobody else had, and called him Captain.",
   "quote": {
-    "text": "Mercy's the word on the paper. The paper's the point.",
-    "chapter": "01",
-    "scene": "between-1"
+    "text": "I thought, good. Long as it takes to say it. Then I thought it again, slower, to be sure, and it was still good. Then you walked.",
+    "chapter": "02",
+    "scene": "between-4"
   },
   "known_facts": [
     {
@@ -192,6 +192,18 @@
       "chapter": "02",
       "scene": "between-3",
       "evidence": "as if it were the worst word he knew"
+    },
+    {
+      "fact": "Over knucklebones after the night bell he paid a story told true: at the gatehouse window, for as long as it takes to say it, he had thought it good that the Captain should go down and kneel so the rest of the paper went back in the Confessor's cloak, and he would have ridden down the Steps on Darrow's back sooner than kneel on the beech leg.",
+      "chapter": "02",
+      "scene": "between-4",
+      "evidence": "I thought, good."
+    },
+    {
+      "fact": "His hands stop shaking while they have something to hold: the knucklebones steadied them in play, and his fist was steady shut on them after.",
+      "chapter": "02",
+      "scene": "between-4",
+      "evidence": "did not shake while it had something to hold"
     }
   ],
   "relationships": [
@@ -294,6 +306,10 @@
     {
       "chapter": "02",
       "scene": "between-3"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-4"
     }
   ]
 }

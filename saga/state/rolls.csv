@@ -4,3 +4,4 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-11T10:35:25,ch01-gate-name,resolve,13,5,,,-1 resolve +3 proficiency +1 The Mender's Patience I +0 chapter 1 Costly,8,FAILURE,
 2026-10-11T10:35:25,ch01-gate-wicket,might,11,4,,,+0 might +0 chapter 1 Costly,4,FAILURE,
 2026-10-11T18:24:06,ch02-between-1-wrens-count,resolve,10,16,,,-1 resolve,15,SUCCESS,
+2026-10-12T19:52:26,ch02-between-4-knucklebones,finesse,11,12,,,-1 finesse,11,SUCCESS,
