@@ -259,6 +259,38 @@
           "status": "fired@ch02:s2"
         }
       ]
+    },
+    {
+      "id": "c02.5",
+      "made": {
+        "chapter": 2,
+        "scene": "between-5",
+        "date": "2026-10-12"
+      },
+      "chose": "Followed Maelis to the far cots and asked what the glass was; she withheld until he said the thing he had come to say: under the bell's law a man who cannot answer has no will to be taken against, so the Confessor can carry the lad down without breaking it. She gave him the slow way every time as an order, and sent him to make Garrow eat",
+      "now": {
+        "approval": {
+          "maelis": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.5a",
+          "when": "next",
+          "at": "ch02:s3",
+          "weight": "color",
+          "what": "Darrow has said aloud, to Maelis and nobody else, that a Hollowed man has no will the bell's law protects: the Confessor could take the lad down the Steps without breaking it. The next scene carries it as his private dread while the House looks for a hand to blame",
+          "status": "pending"
+        },
+        {
+          "id": "c02.5b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Maelis's order at the far cots: the slow way, every time, or Wren counts his steps and reads her the number at every bell. Fire it where he hurries, or where Wren is seen counting them",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

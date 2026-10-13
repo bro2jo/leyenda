@@ -49,11 +49,18 @@
         "2026-10-12"
       ],
       "written": "2026-10-12"
+    },
+    {
+      "scene": "between-5",
+      "title": "Wrong Question",
+      "after": "2",
+      "covers": [],
+      "written": "2026-10-12"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall on the feast morning, sitting on the end of his cot by Hollis's, who holds Benedek's hand across the gap; the kitchen counting loaves; the Confessors' fire burning up below the gate",
+    "detail": "the far end of the infirmary hall on the feast morning, under the lamp that is never let go out, by the far cots, where Maelis has just sent him back up the row to make Hollis eat",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -63,10 +70,10 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. Now Benedek lies Hollowed in the next cot but one, with frost on his mouth and glass under his tongue, and nobody passed.",
-  "last_beat": "The feast morning. The lay brothers carried the feast bread down to the gate under the grey cloaks' eyes while the kitchen ran a book on whether they would take it. At the dawn bell Benedek's lips did not move: he lay breathing, eyes open on the roof, frost on his mouth. The hall said Hollowed and turned to the door; Darrow held it on the lad's mouth (\"Not the door. Here. Look at his mouth.\"). Maelis turned the lad's face and found a chip of black glass under his tongue: \"The far cots never had this,\" the only thing she said. Hollis took the boy's hand in both of his and said it out loud, as he had sworn to: \"I told him to get some sleep.\" The kitchen began counting loaves. From his cot Darrow asked the oldest of his three who had come up the row in the night: only the Captain, early, and the lamp on its round. \"Nobody passed, Captain.\"",
+  "last_beat": "The feast morning, after the finding. Darrow followed Maelis to the far cots and asked what the glass was. \"Wrong question.\" She withheld until he said what he had come to say: the bell's law protects no name that has no will, and a man who can't answer has none; the Confessor could carry the lad down the Steps tomorrow and the bell could ring all it liked. \"Now you've said it.\" Of the glass: not the far cots' sickness, and the rest when she knows it, not in a hall with this many ears. Then the order: he was up off the cot before he had decided to be, the knee held, and next time he decides first. \"The slow way, Captain. Every time.\" And a job: go and make Garrow eat something; he won't for her.",
   "companions": {
     "maelis": {
-      "approval": 23,
+      "approval": 24,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },

@@ -302,3 +302,37 @@ Darrow looked at the door nobody had come through, and then at the frost on the 
 > Art ranked up: **The Mender's Patience** II. *Hold against fear, haste and temptation.*
 > Might 11 → 12 · Finesse 9 → 10
 > XP 1,068 → 1,172
+
+### Between — Wrong Question
+
+He found her at the far end of the hall, under the lamp that is never let go out, with the folded linen in one hand and the other on a sleeping man's wrist. She did not look round.
+
+"What is it?"
+
+"Wrong question."
+
+"Then give me the right one."
+
+"The one you came down here to say." She let the wrist go. "Say it, Captain. I'm not asking twice."
+
+He looked back up the row, at the lad's cot and Hollis's back bent over it, and the door beyond them both.
+
+"The bell's law says no name under it is taken down against its will," he said. "He stood at the bars and told the Prior he had no quarrel with men who can't answer. A man who can't answer has no will." His voice had gone down to the bottom of itself again without his asking it to. "He can carry that lad down the Steps tomorrow, and the bell can ring all it likes."
+
+"Now you've said it."
+
+She turned at last. Her face was as it always was, except that she had not put the pipe back in her teeth.
+
+"And this?" He nodded at the linen.
+
+"Not the far cots' sickness. That much I'll say in a hall with this many ears in it. The rest I'll say when I know it, and not here."
+
+"That isn't an answer."
+
+"No. It's what you get." She came a step nearer, and her eyes went where they always went first, to the leg. "You were up off that cot before you'd decided to be. I watched the knee take it. It held. Next time, decide first."
+
+"Next time a man's Hollowed in front of me—"
+
+"The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell." The pipe went back in her teeth, crossed to the other side, and stayed there. "Go and make Garrow eat something. He won't for me."
+
+She bent to the next cot, two fingers under a jaw, and turned the man's face to the lamp the way she had turned the lad's to the window, and did not look at Darrow again.

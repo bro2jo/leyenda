@@ -25,17 +25,17 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "2",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-2"
+    "anchor": "chronicle/02-the-grey-cot.html#between-5"
   },
-  "last_seen_doing": "Lifting a chip of black glass from under Benedek's tongue onto linen and going down the hall without looking at anyone.",
-  "now": "At Saint Ysolde's, on the feast morning after the Confessors camped below the gate. She read the Captain's knee after the wicket and found it held, and still soft. At the dawn bell Benedek was found Hollowed; she looked at his hands first, turned his face to the window and found a chip of black glass under his tongue. \"The far cots never had this,\" she said, and nothing else, and took the glass away in her coat.",
+  "last_seen_doing": "Turning a far-cot man's face to the lamp, two fingers under the jaw, after sending the Captain to make Hollis eat.",
+  "now": "At Saint Ysolde's, on the feast morning. At the dawn bell Benedek was found Hollowed; she found a chip of black glass under his tongue, said the far cots never had this, and took it away in her coat. At the far cots she would tell the Captain only that it was not the far cots' sickness, made him say what he feared about the bell's law and a man with no will, and sent him to make Hollis eat.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
   "quote": {
-    "text": "The quiet is a liar.",
-    "chapter": "01",
-    "scene": "1"
+    "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
+    "chapter": "02",
+    "scene": "between-5"
   },
   "known_facts": [
     {
@@ -183,6 +183,24 @@
       "chapter": "02",
       "scene": "2",
       "evidence": "She lifted the chip out onto a square of linen"
+    },
+    {
+      "fact": "Asked what the glass was, she would say only that it was not the far cots' sickness, and that the rest she would say when she knew it and not in the hall.",
+      "chapter": "02",
+      "scene": "between-5",
+      "evidence": "Not the far cots' sickness."
+    },
+    {
+      "fact": "She saw the Captain get up off his cot before he had decided to, watched the knee take it and hold, and ordered him to take the slow way every time or she would have Wren count his steps.",
+      "chapter": "02",
+      "scene": "between-5",
+      "evidence": "Next time, decide first."
+    },
+    {
+      "fact": "She sent the Captain to make Hollis eat, because Hollis would not for her.",
+      "chapter": "02",
+      "scene": "between-5",
+      "evidence": "He won't for me."
     }
   ],
   "relationships": [
@@ -289,6 +307,10 @@
     {
       "chapter": "02",
       "scene": "2"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-5"
     }
   ]
 }
