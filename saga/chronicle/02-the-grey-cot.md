@@ -336,3 +336,43 @@ She turned at last. Her face was as it always was, except that the pipe was not 
 "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell." The pipe went back in her teeth, crossed to the other side, and stayed there. "Go and make Hollis eat something. He won't for me."
 
 She bent to the next cot, two fingers under a jaw, and turned the man's face to the lamp the way she had turned the lad's to the window, and did not look at Darrow again.
+
+### Between — One Hand
+
+He went to the kitchen for it himself, the slow way, and the novice with flour to the elbows broke a feast loaf in half for him without being asked and wrote something in the book before he was out of the door.
+
+Hollis had not moved. He sat on the edge of his cot with Benedek's hand in both of his, the beech leg lying where he had left it, and he did not look up when the bread came down on the blanket between them.
+
+"The Mender sent you."
+
+"She did."
+
+"She sends the one man in this hall who can't make me do anything, and thinks I'll not notice." He looked at the bread. "I'll eat when he does."
+
+"He's not going to, Hollis."
+
+"Then I'm not hungry."
+
+Darrow sat on the end of his own cot, which put his knees a hand's breadth from Hollis's, and looked where Hollis was not looking: at the two thick hands folded round the lad's one, and how still they were. They had been still over the knucklebones too, for as long as there was something in them.
+
+"Give him to me."
+
+Hollis's head came up.
+
+"For the length of a loaf. I hold him, you eat. Then you have him back."
+
+"He's Sixth."
+
+"I know whose he is."
+
+"You've one good leg and a captain's manners, and you think that's a trade for a man's hand." But Hollis was looking at the bread when he said it, and the insult had no weight behind it, which from him was as good as yes.
+
+Darrow put the half loaf into Hollis's right hand before the hand had decided anything, closed the thick fingers on it with his own, and took the lad's hand out of the left.
+
+It lay in his the way Benedek's eyes lay on the roof: there, and not.
+
+Hollis looked at the bread in his fist as if somebody else had put it there. Then he ate it, all of it, the way men eat the morning after a battle, without tasting it and without stopping, and his hand did not shake once, because it was never once empty.
+
+When it was done he held the hand out, palm up, and Darrow put the lad's back into it.
+
+"Tell her I ate," Hollis said. "Don't tell her how."

@@ -56,11 +56,18 @@
       "after": "2",
       "covers": [],
       "written": "2026-10-12"
+    },
+    {
+      "scene": "between-6",
+      "title": "One Hand",
+      "after": "2",
+      "covers": [],
+      "written": "2026-10-12"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the far end of the infirmary hall on the feast morning, under the lamp that is never let go out, by the far cots, where Maelis has just sent him back up the row to make Hollis eat",
+    "detail": "the infirmary hall on the feast morning, on his cot by Hollis's; Hollis has eaten and has Benedek's hand back in both of his",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -70,7 +77,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. Now Benedek lies Hollowed in the next cot but one, with frost on his mouth and glass under his tongue, and nobody passed.",
-  "last_beat": "The feast morning, after the finding. Darrow followed Maelis to the far cots and asked what the glass was. \"Wrong question.\" She withheld until he said what he had come to say: the bell's law protects no name that has no will, and a man who can't answer has none; the Confessor could carry the lad down the Steps tomorrow and the bell could ring all it liked. \"Now you've said it.\" Of the glass: not the far cots' sickness, and the rest when she knows it, not in a hall with this many ears. Then the order: he was up off the cot before he had decided to be, the knee held, and next time he decides first. \"The slow way, Captain. Every time.\" And a job: go and make Hollis eat something; he won't for her.",
+  "last_beat": "The feast morning, after Maelis sent him to make Hollis eat. Darrow fetched half a feast loaf from the kitchen (the novice wrote it in the book) and set it on the blanket. Hollis would not let go of Benedek's hand: \"I'll eat when he does.\" \"He's not going to, Hollis.\" Darrow saw that the thick hands were still only while they held something, as over the knucklebones, and offered: \"Give him to me. For the length of a loaf.\" \"He's Sixth.\" \"I know whose he is.\" He put the bread into Hollis's right hand, closed the fingers on it, and took the lad's hand out of the left; Hollis ate all of it the way men eat after a battle, and the hand never shook because it was never empty. Then he held out his palm and took the lad's hand back. \"Tell her I ate. Don't tell her how.\"",
   "companions": {
     "maelis": {
       "approval": 24,
@@ -78,7 +85,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 40,
+      "approval": 43,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
