@@ -59,6 +59,8 @@ Each Art is named on the page only when it is taught or earned (the site's sheet
 
 **10/12, ch02:between-6 (*One Hand*):** the second Between of the feast morning, because of the first (Maelis's job). Thread 13 on the page a third time: Hollis's hands are still only while they hold something; he would not let go of the lad because letting go means the hall sees the shake (never said aloud; the reader infers). Darrow read it (the knucklebones), held the lad's hand for the length of a loaf and filled Hollis's with bread; Hollis ate like a man after a battle. "He's Sixth." / "I know whose he is." Obligation **c02.6a** (later): "Tell her I ate. Don't tell her how" (fire where Maelis asks how, or where the hall sees his hands empty). Hollis +3 (hearth witnessed +2, the kindness +1): chapter Between net +5 of 6; **Hollis is now 43: r.b2.hollis_sober (45) and r.b4.hollis_lives (50) are near, and the next moves should come from choices, not Betweens.** Hearth/Banner −3 (even). Slot 5's invitation (his lie to the lad; witchcraft vs his own eyes) untouched: he asked nothing. The kitchen's book got the half loaf. Both Betweens after ch02:s2 are now written.
 
+**Revised 10/12, later (ch02:between-5):** the argument is pulled out of Darrow in beats ("The lad can't answer now." / the law and Marrant's line / Maelis waits twice / "Marrant can carry that lad down the Steps tomorrow" alone); the reader completes "no will" before he says the consequence. "That isn't an answer" (a verbatim repeat of between-2) is replaced by "How long?", which she leaves unanswered before retreating to the knee. Same events, same ledger (c02.5, c02.5a/b unchanged).
+
 ## Paid off
 
 | # | Thread | On the page | Who knows | Paid off |

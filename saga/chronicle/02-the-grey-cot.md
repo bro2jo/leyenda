@@ -317,7 +317,17 @@ He found Maelis at the far end of the hall among the far cots, under the lamp th
 
 He looked back up the row, at Benedek's cot and Hollis's back bent over it, and the door beyond them both.
 
-"The bell's law says no name under it is taken down against its will," he said. "The Confessor stood at the bars and told the Prior the Crown has no quarrel with men who can't answer. A man who can't answer has no will." His voice had gone down to the bottom of itself again without his asking it to. "Marrant can carry that lad down the Steps tomorrow, and the bell can ring all it likes."
+"The lad can't answer now."
+
+Maelis waited.
+
+"The bell's law says no name under it is taken down against its will. The Confessor stood at the bars and told the Prior the Crown has no quarrel with men who can't answer."
+
+She wiped the probe on her sleeve and said nothing.
+
+When it came, his voice had gone down to the bottom of itself without his asking it to.
+
+"Marrant can carry that lad down the Steps tomorrow, and the bell can ring all it likes."
 
 "Now you've said it."
 
@@ -327,9 +337,11 @@ She turned at last. Her face was as it always was, except that the pipe was not 
 
 "Not the far cots' sickness. That much I'll say in a hall with this many ears in it. The rest I'll say when I know it, and not here."
 
-"That isn't an answer."
+"How long?"
 
-"No. It's what you get." She came a step nearer, and her eyes went where they always went first, to the leg. "You were up off that cot before you'd decided to be. I watched the knee take it. It held. Next time, decide first."
+She did not answer that. She looked up the row at the lad's cot for as long as it took Hollis to shift his grip, and when her eyes came back they went where they always went first, to the leg.
+
+"You were up off that cot before you'd decided to be. I watched the knee take it. It held. Next time, decide first."
 
 "Next time a man's Hollowed in front of me—"
 
