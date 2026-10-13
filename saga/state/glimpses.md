@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-10 · overheard · Two lay brothers banking the hall fire for the night, in whispers: "Who taught you to lay a fire like that?" "Nobody." "Then why's it still going?" "Because nobody told it different."
 - 2026-10-11 · weather · The cold came down off the peaks after dark and set the trodden snow of the court like plaster, every bootprint kept, as if the mountain meant to remember who had stood there.
 - 2026-10-11 · saying · Lancers' talk, carried along the cloister gallery after dark: stiff-kneed. It can mean proud, or treasonous, or a man who cannot kneel, and the lay brother saying it seemed to mean all three at once, and not unkindly.
 - 2026-10-11 · house · At the end of the hall Wren is sharpening pencils with a kitchen knife, testing each point on her thumb and keeping the shavings in a neat pile, as if someone will ask for them later.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-12 · body · He does up the infirmary shirt's three buttons in the dark by feel, all three, first try, and only afterwards notices that his fingers didn't argue with him once.
 - 2026-10-12 · weather · The wind has dropped altogether. Snow comes down past the hall windows so straight and slow that a novice has stopped at one with her broom, as if waiting to see a single flake land.
 - 2026-10-12 · saying · Down the row in the dark, one man tells another to stop counting the west bank. "I'm not," the other says, and turns over, and his cot creaks a long while before it's quiet.
+- 2026-10-12 · ledger · From Wren's ledgers, a page headed Brooms: Owned by the lay brothers: 4. Findable: 2, up from 1. (Underneath, smaller: She has decided not to ask.)
