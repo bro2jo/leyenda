@@ -321,9 +321,9 @@ He looked back up the row, at Benedek's cot and Hollis's back bent over it, and 
 
 Maelis waited.
 
-"The bell's law says no name under it is taken down against its will. The Confessor stood at the bars and told the Prior the Crown has no quarrel with men who can't answer."
+"The bell's law says no name under it is taken down against its will. Marrant said it himself at the bars: the Crown has no quarrel with men who can't answer."
 
-She wiped the probe on her sleeve and said nothing.
+She said nothing.
 
 When it came, his voice had gone down to the bottom of itself without his asking it to.
 
