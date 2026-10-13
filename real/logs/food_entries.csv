@@ -30,3 +30,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-12#7,2026-10-12,22:28,snack,"Kirkland chewy protein bar, peanut butter & semisweet chocolate chip",1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,late snack
 2026-10-12#8,2026-10-12,22:32,snack,Good Foods organic avocado mash,"1 cup (2 oz, 56 g)",90,1,5,8,4,1,0,220,282,0,0.4,16,0.4,5,0,60,label,"label photo; Mg, zinc, vit C, omega-3 estimated"
 2026-10-12#9,2026-10-12,22:32,snack,Kettle Brand potato chips (assumed Backyard Barbeque),about 1/2 bag (~28 g),145,2,15,9,2,1,1,125,321,0,0.5,18,0.2,2.5,0,25,library+estimate,his estimate: half a bag; flavour assumed; with the avocado mash
+2026-10-13#1,2026-10-13,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his usual lunch bowl
