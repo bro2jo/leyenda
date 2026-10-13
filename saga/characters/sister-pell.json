@@ -12,7 +12,9 @@
     "faction": "menders",
     "mark": "spyglass"
   },
-  "appearance": "Keeper of the House's bells for fifty years, and so old she might have been cut from the hearthstone: small, wrapped in two shawls, with knuckles swollen like walnuts. She watches a speaker's mouth rather than their eyes, and her voice is a dry rasp, rationed. Her glass stands in the bell tower.",
+  "appearance": "Keeper of the House's bells for fifty years, and so old she might have been cut from the hearthstone: small, wrapped in two shawls, with knuckles swollen like walnuts. Her face is grey and furrowed all over, the mouth a thin flat line, a few white whiskers on the chin, pale grey eyes narrowed under sparse white brows, and wisps of white hair escaping a dark wool kerchief; the shawls are one brown and one faded grey, wrapped high. She watches a speaker's mouth rather than their eyes, and her voice is a dry rasp, rationed. Her glass stands in the bell tower.",
+  "portrait": "characters/sister-pell.jpg",
+  "portrait_alt": "Portrait of Sister Pell: a tiny, very old woman with a grey, deeply furrowed face, pale grey eyes narrowed in a stern look, thin pressed lips and a few white whiskers on her chin, wisps of white hair escaping a dark wool kerchief, wrapped in a brown shawl and a faded grey one, her gnarled, swollen-knuckled hands gripping a thick rope, under the dark curve of a great bell in a stone tower with snow falling.",
   "first_seen": {
     "chapter": "01",
     "scene": "1",

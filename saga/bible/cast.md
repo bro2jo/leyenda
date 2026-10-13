@@ -35,7 +35,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** She speaks in questions, and the questions are never idle. She gives an order by asking whether someone would like to do it. *"Then the Captain should hear the law, shouldn't he? Maelis?"*
 
 ## Sister Pell
-- **Appearance:** Keeper of the House's bells for fifty years, and so old she might have been cut from the hearthstone: small, wrapped in two shawls, knuckles swollen like walnuts. Nearly deaf from the bells, she watches a speaker's mouth rather than their eyes, and a cup chatters in her hand before it settles. Her glass stands in the bell tower.
+- **Appearance:** Keeper of the House's bells for fifty years, and so old she might have been cut from the hearthstone: small, wrapped in two shawls, knuckles swollen like walnuts. Her face is grey and furrowed all over, the mouth a thin flat line, a few white whiskers on the chin, pale grey eyes narrowed under sparse white brows, and wisps of white hair escaping a dark wool kerchief; the shawls are one brown and one faded grey, wrapped high. Nearly deaf from the bells, she watches a speaker's mouth rather than their eyes, and a cup chatters in her hand before it settles. Her glass stands in the bell tower. Her portrait (`saga/art/characters/sister-pell.jpg`) is canon for her face.
 - **Voice:** A dry rasp, rationed: she says what the bells have left her breath for and not a word more, and has no patience for fools. *"Fifty years I've rung the bells. Ask the bell if it's tired."*
 
 ## Ser Benedek Orrin
