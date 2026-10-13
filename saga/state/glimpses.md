@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-11 · ledger · From Wren's ledgers, a page headed Snow: Days of it so far: 2. Brooms the lay brothers own: 4. Brooms the lay brothers can find: 1.
 - 2026-10-11 · overheard · From the laundry, over the steam: "It's eleven hundred and seventeen." "Says who?" "Says anyone who's ever been made to carry something up them."
 - 2026-10-11 · body · His feet are warm under the blanket for the first time since the snow came, and he lies there a while doing nothing but noticing it.
 - 2026-10-11 · ledger · From Wren's ledgers: Times the Captain asked what hour it was, the week before the snow: 23. Since the snow: 2. (She has checked her sums twice.)
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-13 · house · The feast's leftover crusts sit in a basket by the kitchen door, and for once nobody is taking bets on who gets them. A lay brother passing with the kindling takes one, looks at it, and puts it back.
 - 2026-10-13 · weather · The sky over the Steps has gone the hard, clean blue that comes after snow, and the lay brothers crossing the court squint up at it as if it owes them money.
 - 2026-10-13 · overheard · Two novices changing the far cots' linen, in whispers: "Does it matter which way you fold it?" "It does to her." "Does she check?" "Every time." "How do you know?" "Because I folded it wrong once."
+- 2026-10-13 · verse · A man of the Sixth, two cots down from Hollis, hums the old marching nonsense under his breath: "Sixty men and a mule came home from the river, / fifty-nine and a mule…" He stops there, as if he has only just heard it.
