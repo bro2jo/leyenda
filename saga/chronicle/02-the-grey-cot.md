@@ -236,7 +236,7 @@ At the kitchen door a novice with flour to the elbows was running a book in a wh
 
 "Saint Ysolde's bread," said a lay brother coming in with the kindling, the way a man says grace.
 
-"Don't let the Mender hear you call her that," said the one behind him. "She'd have had the bell off its hook and hit you with it."
+"Saint," said the one behind him. "She was a bone-setter with a bad temper and a bell. Call her saint to her face and you'd have got the bell."
 
 The dawn bell rang.
 

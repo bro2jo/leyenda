@@ -42,7 +42,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The Hollowed** — knights who come home from the field breathing and walking and doing as they are told, with nobody behind the eyes; everyone in the Lowmarch knows the word. In a season or two their families send them up a mountain with a chit and a lamp, and the far cots at Saint Ysolde's are where they end. Said down the row of the infirmary hall when Benedek was found at the feast's dawn bell (Ch 2 Sc 2).
 - **Vaelish** — the tongue Darrow speaks. The red-handed woman spoke it roughly on the east bank of the Wend ("Look at it. Look. Remember it."), after calling across the water in her own (Prologue).
 - **The black glass** — a chip of black glass no bigger than a barleycorn that Maelis found under Hollowed Benedek's tongue; it takes the light and gives none back. "The far cots never had this" (Ch 2 Sc 2).
-- **The feast** — the House's feast day: the feast bread carried down to the gate and given away, and the kitchen's book running wild. The lay brothers call it Saint Ysolde's bread; the Mender, by their account, would say Ysolde would have hit them with the bell for calling her a saint (Ch 2 Sc 2).
+- **The feast** — the House's feast day: the feast bread carried down to the gate and given away, and the kitchen's book running wild. The lay brothers call it Saint Ysolde's bread, though not all of them: Ysolde, says one, was a bone-setter with a bad temper and a bell, and anyone who called her saint to her face would have got the bell (Ch 2 Sc 2).
 
 ## Songs and verses
 
