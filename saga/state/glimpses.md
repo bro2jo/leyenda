@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-11 · saying · Lancers' talk, carried along the cloister gallery after dark: stiff-kneed. It can mean proud, or treasonous, or a man who cannot kneel, and the lay brother saying it seemed to mean all three at once, and not unkindly.
 - 2026-10-11 · house · At the end of the hall Wren is sharpening pencils with a kitchen knife, testing each point on her thumb and keeping the shavings in a neat pile, as if someone will ask for them later.
 - 2026-10-11 · ledger · From Wren's ledgers, a page headed Snow: Days of it so far: 2. Brooms the lay brothers own: 4. Brooms the lay brothers can find: 1.
 - 2026-10-11 · overheard · From the laundry, over the steam: "It's eleven hundred and seventeen." "Says who?" "Says anyone who's ever been made to carry something up them."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-12 · saying · Down the row in the dark, one man tells another to stop counting the west bank. "I'm not," the other says, and turns over, and his cot creaks a long while before it's quiet.
 - 2026-10-12 · ledger · From Wren's ledgers, a page headed Brooms: Owned by the lay brothers: 4. Findable: 2, up from 1. (Underneath, smaller: She has decided not to ask.)
 - 2026-10-13 · house · The feast's leftover crusts sit in a basket by the kitchen door, and for once nobody is taking bets on who gets them. A lay brother passing with the kindling takes one, looks at it, and puts it back.
+- 2026-10-13 · weather · The sky over the Steps has gone the hard, clean blue that comes after snow, and the lay brothers crossing the court squint up at it as if it owes them money.
