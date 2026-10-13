@@ -4,8 +4,8 @@
 
 ## doctrine — How the Annals are used
 
-1. **The scene first.** A scene has a want, an obstacle and a turn, and it does its slot's work. Lore is seasoning. **At most one lore touch per scene**, none in the action beats of a climax, and never one that answers the scene's question for it. If a touch would slow the turn, cut the touch.
-2. **The tenth.** Show a tenth and let the rest be felt: a name and a half-line, a custom done without comment, two lines of a song, an epigraph. Never a paragraph of history in the narrator's voice. Lore enters through a person (what they know and how they say it), an object, a habit, a bell, a coin.
+1. **The scene first.** A scene has a want, an obstacle and a turn, and it does its slot's work. Lore is seasoning, and **there is no fixed count**: use as many touches as the scene's meaning needs. One is often enough; more are fine when they help the reader understand what is happening or why it matters (a word the reader meets for the first time, a custom the scene turns on). Prefer to keep a climax's action beats clear, and never let a touch answer the scene's question for it. If a touch would slow the turn, cut the touch.
+2. **The tenth.** Show a tenth and let the rest be felt: a name and a half-line, a custom done without comment, two lines of a song, an epigraph. Prefer a few lines in the point-of-view character's head, or through a person, to a paragraph of history in the narrator's voice. Lore enters through a person (what they know and how they say it), an object, a habit, a bell, a coin.
 3. **Double duty.** A touch earns its place only if it also does a second job: characterises the speaker, raises the stakes, or sets the texture of the place. A fact that only informs is cut.
 4. **Received, not revealed.** The Annals hold what people believe and tell. The truths live in `arc.md` and reveal on their schedule. Where history brushes a truth, the entry gives the received version and a `⟪gm: …⟫` pointer; the pointer is never on the page and never told by `/lore`. The arc wins every conflict, and the lore is corrected to it.
 5. **No new plot.** No faction with an agenda, no antagonist, no prophecy, no object of power. History, places, customs, crafts, songs, sayings, weather, beasts.
@@ -50,7 +50,7 @@ Three hundred years ago the king raised the Oathstones, and a thousand kneeling 
 The same king has reigned since the Quenching, and the realm has three ways of saying so: the pious say he is holy, the clerks say he is well advised, and the taprooms say nothing with great care. He has not been seen outside the Oathspire in nine years. In three hundred years the Vaelmark has fought nobody but the clans, a ford-war a generation and three in the last sixty, and the Lances have become the only thing a Lowmarch boy can imagine becoming. ⟪gm: T1, T2; three hundred years old because the Stone feeds him; Book VI.⟫
 
 ## age.hollowing — The Hollowing
-- **tier:** common · **spoken:** Prologue III (the far cots) · **names:** —
+- **tier:** common · **spoken:** Prologue III (the far cots); ch02:s2 · **names:** —
 - **use:** a family's shame; a novice's duty; a lamp.
 
 Within living memory the first knights came home gone behind the eyes: breathing, walking, doing what they were told, and nobody there. The heralds named it clan witchery and the name stuck. There are more every decade. Families keep them a season and then send them to a House of the Menders with a chit and a lamp, and do not visit. The far cots at Saint Ysolde's were an empty end of the hall in Maelis's first year there. ⟪gm: T4, the drained; never said before Book III.⟫

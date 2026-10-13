@@ -252,7 +252,11 @@ He was up before he had decided to be, good leg, bad leg, transfer, and his hand
 
 "What." Hollis came awake swearing, and stopped.
 
-Somebody down the row said it first, low: *Hollowed.* It went from cot to cot faster than his name had the night before. As it went the heads turned, and they did not turn to the lad. They turned to the door, to the court beyond it and the gate beyond that, where grey cloaks had come through the wicket once already. A man by the fire was on his feet. At the kitchen door the novice had stopped taking wagers.
+Somebody down the row said it first, low: *Hollowed.*
+
+Everyone in the Lowmarch knew the word. Knights came home from the field breathing and walking and doing as they were told, with nobody behind the eyes, and in a season or two their families sent them up a mountain with a chit and a lamp. The far end of this hall was where they ended.
+
+It went from cot to cot faster than his name had the night before. As it went the heads turned, and they did not turn to the lad. They turned to the door, to the court beyond it and the gate beyond that, where grey cloaks had come through the wicket once already. A man by the fire was on his feet. At the kitchen door the novice had stopped taking wagers.
 
 "Here," Darrow said.
 
