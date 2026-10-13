@@ -41,11 +41,19 @@
       "after": "1",
       "covers": [],
       "written": "2026-10-12"
+    },
+    {
+      "scene": 2,
+      "title": "Feast Bread",
+      "covers": [
+        "2026-10-12"
+      ],
+      "written": "2026-10-12"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall at night, on his cot by Hollis's, after the night bell and two games' worth of talk",
+    "detail": "the infirmary hall on the feast morning, sitting on the end of his cot by Hollis's, who holds Benedek's hand across the gap; the kitchen counting loaves; the Confessors' fire burning up below the gate",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -54,8 +62,8 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. The named are to be taken down the Steps to the Oathspire and made to kneel where everyone can watch, which would say the Ninth drowned for its own bad faith, and would tear the thread in Darrow's knee. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Miss one ringing and the law lapses till the next, and Sister Pell, who rings it, is very old. At the gate, Confessor Ivo Marrant read his names at the bars, and two of his men came through the wicket before the bell rang, late. Now five grey cloaks are camped on the lower terrace below the gate, and the sixth holds the winch-house, the cage and Rae's cart, so the road is theirs. Marrant's price: the Captain of the Ninth comes down and kneels, and the rest of the paper goes back in his cloak. Darrow went to the bars and gave him his name and his face. Marrant says he will wait.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The soft season. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times.",
-  "last_beat": "The night of the gate, after the night bell. Darrow went down the hall to his three Ninth men with an order (go on not knowing me) and left it on their cots: the oldest called it deciding for them without asking, the second said he would take the Confessor's bargain if there were one (\"Only he read us. Same paper\"), and Darrow asked what they wanted and promised \"You'll be asked.\" Back at his cot: \"They wouldn't let me go down for them.\" \"Ninth.\" Then \"Would you?\": Hollis would not answer, so Darrow won it off him at knucklebones by a hair (\"the bones go to him who can stand\"): at the window Hollis had wanted it for a moment, and now would carry Darrow down the Steps himself before the Confessor had him. \"I had three heartbeats in that river. I know what a man can think in one.\" Hollis swore to say the next such thought aloud (\"Out loud. Bells help me\"); his fist shut on the bones and did not shake.",
+  "current_struggle": "The soft season, and the waiting. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. Now Benedek lies Hollowed in the next cot but one, with frost on his mouth and glass under his tongue, and nobody passed.",
+  "last_beat": "The feast morning. The lay brothers carried the feast bread down to the gate under the grey cloaks' eyes while the kitchen ran a book on whether they would take it. At the dawn bell Benedek's lips did not move: he lay breathing, eyes open on the roof, frost on his mouth. The hall said Hollowed and turned to the door; Darrow held it on the lad's mouth (\"Not the door. Here. Look at his mouth.\"). Maelis turned the lad's face and found a chip of black glass under his tongue: \"The far cots never had this,\" the only thing she said. Hollis took the boy's hand in both of his and said it out loud, as he had sworn to: \"I told him to get some sleep.\" The kitchen began counting loaves. From his cot Darrow asked the oldest of his three who had come up the row in the night: only the Captain, early, and the lamp on its round. \"Nobody passed, Captain.\"",
   "companions": {
     "maelis": {
       "approval": 23,

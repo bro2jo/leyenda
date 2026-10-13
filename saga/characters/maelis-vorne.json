@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "1",
+    "scene": "2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-1"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-2"
   },
-  "last_seen_doing": "Reading the knee by lamplight on the night of the gate, then taking the lamp on down the hall.",
-  "now": "At Saint Ysolde's, on the night the Confessors camped below the gate, whose eyes found her at the bars. She read the Captain's knee by lamplight after the wicket and found it held: another man's weight on that door a moment longer and she would have had nothing left to tie it to. It is still soft, she says, and will be at the thaw.",
+  "last_seen_doing": "Lifting a chip of black glass from under Benedek's tongue onto linen and going down the hall without looking at anyone.",
+  "now": "At Saint Ysolde's, on the feast morning after the Confessors camped below the gate. She read the Captain's knee after the wicket and found it held, and still soft. At the dawn bell Benedek was found Hollowed; she looked at his hands first, turned his face to the window and found a chip of black glass under his tongue. \"The far cots never had this,\" she said, and nothing else, and took the glass away in her coat.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
   "quote": {
     "text": "The quiet is a liar.",
@@ -177,6 +177,12 @@
       "evidence": "It'll be soft at the thaw.",
       "chapter": "02",
       "scene": "1"
+    },
+    {
+      "fact": "On the feast morning she found a chip of black glass under Hollowed Benedek's tongue, looked down the hall at the far cots, said the far cots never had this, and took it away folded in linen inside her coat.",
+      "chapter": "02",
+      "scene": "2",
+      "evidence": "She lifted the chip out onto a square of linen"
     }
   ],
   "relationships": [
@@ -279,6 +285,10 @@
     {
       "chapter": "02",
       "scene": "1"
+    },
+    {
+      "chapter": "02",
+      "scene": "2"
     }
   ]
 }

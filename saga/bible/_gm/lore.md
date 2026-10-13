@@ -64,7 +64,7 @@ As the Lowmarch has it: at midsummer the Lances rode to the ford to stop a clan 
 # Saint Ysolde's
 
 ## house.ysolde — Ysolde of the springs
-- **tier:** common · **spoken:** — (the House is named on the page; she is not) · **names:** —
+- **tier:** common · **spoken:** ch02:s2 · **names:** —
 - **use:** the kitchen on her feast; a lay brother's version against a Mender's.
 
 A lowland bone-setter with a wasting sickness who had herself carried up to the hot springs to die in warm water, and did not. She hung a bell on the mountain's shoulder and rang it each dawn so the valley would know she had lived another day, and sick people started climbing toward the sound. The men who had carried her up stayed as the first lay brothers. The valley calls her a saint. The Menders do not, on the grounds that she would have hit anyone who did with the bell. Her feast is the first new moon after the first snow: bread given away, no work done that can be left, and the kitchen's book runs wild.

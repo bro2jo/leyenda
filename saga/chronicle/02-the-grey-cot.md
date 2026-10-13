@@ -223,3 +223,78 @@ Darrow sat with that until it had stopped hurting enough to answer. "I had three
 Darrow put the bones into the open hand, and the fist shut on them and did not shake while it had something to hold.
 
 "Now go to sleep," Hollis said, to the roof, "before you ask me anything else."
+
+### Scene 2 — Feast Bread
+
+He woke to bread.
+
+It came down the hall ahead of the dawn bell, warm and yeasty under the smoke of the banked fire, and for a moment he did not know why an infirmary should smell like a house with a mother in it. Then the roof, the cot, the cold coming up off the flags. On the next cot Hollis lay on his back with his mouth open and his fist still shut on the knucklebones, and the fist had not shaken that Darrow had woken to see.
+
+The feast. The kitchen had been counting loaves for it all week. Through the window at the hall's end the lay brothers were already going down the court toward the gate, two to a basket, the baskets heaped and steaming in the grey light. Below the gate the Confessors had let their fire burn up for the morning, and the grey cloaks stood along the terrace edge to watch the bread come.
+
+At the kitchen door a novice with flour to the elbows was running a book in a whisper that carried the length of the hall: would the grey cloaks take it? Two to one they would. Evens they'd make the lay brothers set it down in the snow first.
+
+"Saint Ysolde's bread," said a lay brother coming in with the kindling, the way a man says grace.
+
+"Don't let the Mender hear you call her that," said the one behind him. "She'd have had the bell off its hook and hit you with it."
+
+The dawn bell rang.
+
+Darrow turned on his elbow toward the far side of Hollis's cot, as he had at every bell since the lad first started watching his mouth. He had the first word ready. This morning he meant to try for the sound.
+
+Benedek lay on his back with his hands folded on the blanket and his eyes open on the roof. His lips did not move. The bell went on, and his eyes did not come.
+
+"Orrin."
+
+Nothing. The lad was breathing: the blanket rose and settled, slow and even, the breath Darrow had lain listening to from the far end of the hall every night since the Steps. There was frost on Benedek's mouth. It lay white along the line of the lips the way it comes on a window, in a hall with a fire in it.
+
+He was up before he had decided to be, good leg, bad leg, transfer, and his hand came down on Hollis's shoulder on the way past, hard.
+
+"What." Hollis came awake swearing, and stopped.
+
+Somebody down the row said it first, low: *Hollowed.* It went from cot to cot faster than his name had the night before. As it went the heads turned, and they did not turn to the lad. They turned to the door, to the court beyond it and the gate beyond that, where grey cloaks had come through the wicket once already. A man by the fire was on his feet. At the kitchen door the novice had stopped taking wagers.
+
+"Here," Darrow said.
+
+He did not shout. He had a voice that had carried across a river in flood, and he used the bottom of it.
+
+"Not the door. Here. Look at his mouth."
+
+They looked. That was the worst of it, afterwards: a hall full of men who had been knights, staring at what frost had done to a lad's lips twelve paces from a fire, and not one of them looking at the door. He kept them there because he did not know what else to hold.
+
+Maelis came up the row at a walk, which was worse than if she had run. She looked at the hands first, folded on the blanket, and laid the back of her own against them. Then she set two fingers under the lad's jaw and turned his face to the window, put her thumb to his chin, and opened his mouth.
+
+Under the tongue lay a chip of black glass no bigger than a barleycorn. It took the light from the window and gave none of it back.
+
+She looked at it a long time. Then she looked down the hall to the far cots, where the lamp that is never let go out burned on its hook over the slow, even breathing, and back at the glass.
+
+"The far cots never had this," she said.
+
+It was the only thing she said. She lifted the chip out onto a square of linen with the tip of a probe, folded the linen twice and put it inside her coat, and went down the hall without looking at anyone.
+
+Hollis had got himself to the edge of his cot without the beech leg. He reached across the gap and took the lad's hand, and when that was not enough he took it in both of his and held it on his knee. His hands did not shake.
+
+"Out loud, Captain," he said, without looking up. "Since I swore it." His thumb moved once over the lad's knuckles. "I told him to get some sleep."
+
+He said nothing else, and he did not let go.
+
+The last thing Darrow had given the lad was the oath's shapes with nothing in them, and a good night he could say aloud. He found his own hands closed on nothing, and opened them.
+
+At the kitchen door there were no more wagers. Behind the novice someone had begun to count the loaves on the shelves, aloud, the way you count men after a ford, and at the end of the shelf they started again from the top, as if the number might come out different.
+
+Darrow sat down on the end of his cot, because the knee would have it so, and looked down the hall at the fire. The oldest of his three was sitting up on his cot beside it with the splint across his chest, waiting on him.
+
+"Were you awake?" Darrow asked him, across the hall.
+
+"Most of it, Captain."
+
+"Did anyone come up the row?"
+
+The old man thought about it honestly, which took a while. "You, early, and back again. The lamp came round in the small hours the way it does, counting, and lost its place at Garrow's snoring and started over from the door." He shook his head. "Nobody else. Nobody passed, Captain."
+
+Darrow looked at the door nobody had come through, and then at the frost on the lad's mouth, which had come anyway.
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **The Mender's Patience** II. *Hold against fear, haste and temptation.*
+> Might 11 → 12 · Finesse 9 → 10
+> XP 1,068 → 1,172

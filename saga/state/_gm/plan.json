@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 2,
     "beat": "b1.2",
-    "next_scene": 2,
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch02:s1",
+    "last_written": "ch02:s2",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -40,8 +40,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch02:s2"
       },
       {
         "n": 3,
@@ -84,7 +84,7 @@
           }
         },
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -313,7 +313,7 @@
     "ash_met": false,
     "anselm_suspected": false,
     "anselm_spared": null,
-    "benedek_hollowed": false,
+    "benedek_hollowed": true,
     "vane_unbound": null,
     "hollis_truth": null,
     "ysra_spared": null,
