@@ -130,7 +130,7 @@ That one Darrow could answer aloud. "Good night, Ser Benedek."
 
 ### Between — Same Paper
 
-He had known all day which three cots were his, near the banked fire on the far side of the hall, and all day he had kept his eyes off them. After the night bell he went down to them the slow way, the blanket round his shoulders.
+He had known all day which three cots held his men, the three of the Ninth who had been read with him at the gate. They lay near the banked fire on the far side of the hall, and all day he had kept his eyes off them. After the night bell he went down to them the slow way, the blanket round his shoulders.
 
 Two were awake; he could tell by how still they lay. The third slept, or did it well enough that the other two let him. There was no getting down to a man on a cot with this knee, so he sat on the end of the nearest, and the man in it drew up his feet to make room: the oldest of the three, who had ridden with the Ninth longer than Darrow had commanded it, his forearm splinted across his chest.
 
@@ -176,7 +176,7 @@ Hollis kept his face to the wall. "Ninth," he said, as if it were the worst word
 
 ### Between — Him Who Can Stand
 
-The word was still in the dark between the cots when Darrow said, "Would you?"
+The word was still in the dark between the cots when Darrow said to Hollis's back, "Would you?"
 
 Nothing from the wall.
 
@@ -286,7 +286,7 @@ The last thing Darrow had given the lad was the oath's shapes with nothing in th
 
 At the kitchen door there were no more wagers. Behind the novice someone had begun to count the loaves on the shelves, aloud, the way you count men after a ford, and at the end of the shelf they started again from the top, as if the number might come out different.
 
-Darrow sat down on the end of his cot, because the knee would have it so, and looked down the hall at the fire. The oldest of his three was sitting up on his cot beside it with the splint across his chest, waiting on him.
+Darrow sat down on the end of his cot, because the knee would have it so, and looked down the hall at the fire. The oldest of his three Ninth men was sitting up on his cot beside it with the splint across his chest, waiting on him.
 
 "Were you awake?" Darrow asked him, across the hall.
 
@@ -305,7 +305,7 @@ Darrow looked at the door nobody had come through, and then at the frost on the 
 
 ### Between — Wrong Question
 
-He found her at the far end of the hall, under the lamp that is never let go out, with the folded linen in one hand and the other on a sleeping man's wrist. She did not look round.
+He found Maelis at the far end of the hall among the far cots, under the lamp that is never let go out, with two fingers on a sleeping man's wrist. She did not look round.
 
 "What is it?"
 
@@ -315,15 +315,15 @@ He found her at the far end of the hall, under the lamp that is never let go out
 
 "The one you came down here to say." She let the wrist go. "Say it, Captain. I'm not asking twice."
 
-He looked back up the row, at the lad's cot and Hollis's back bent over it, and the door beyond them both.
+He looked back up the row, at Benedek's cot and Hollis's back bent over it, and the door beyond them both.
 
-"The bell's law says no name under it is taken down against its will," he said. "He stood at the bars and told the Prior he had no quarrel with men who can't answer. A man who can't answer has no will." His voice had gone down to the bottom of itself again without his asking it to. "He can carry that lad down the Steps tomorrow, and the bell can ring all it likes."
+"The bell's law says no name under it is taken down against its will," he said. "The Confessor stood at the bars and told the Prior the Crown has no quarrel with men who can't answer. A man who can't answer has no will." His voice had gone down to the bottom of itself again without his asking it to. "Marrant can carry that lad down the Steps tomorrow, and the bell can ring all it likes."
 
 "Now you've said it."
 
-She turned at last. Her face was as it always was, except that she had not put the pipe back in her teeth.
+She turned at last. Her face was as it always was, except that the pipe was not in her teeth.
 
-"And this?" He nodded at the linen.
+"And the glass?" He nodded at her coat, where the linen was.
 
 "Not the far cots' sickness. That much I'll say in a hall with this many ears in it. The rest I'll say when I know it, and not here."
 
@@ -333,6 +333,6 @@ She turned at last. Her face was as it always was, except that she had not put t
 
 "Next time a man's Hollowed in front of me—"
 
-"The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell." The pipe went back in her teeth, crossed to the other side, and stayed there. "Go and make Garrow eat something. He won't for me."
+"The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell." The pipe went back in her teeth, crossed to the other side, and stayed there. "Go and make Hollis eat something. He won't for me."
 
 She bent to the next cot, two fingers under a jaw, and turned the man's face to the lamp the way she had turned the lad's to the window, and did not look at Darrow again.

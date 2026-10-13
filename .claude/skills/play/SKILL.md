@@ -43,7 +43,7 @@ Append to the current chapter file, after the last block:
 
 …a moment, close third on Darrow, past tense, the cast in voice…
 ```
-A dice line goes where the roll happens. The reread (`style.md` §4) before the bookkeeping. No Reckoning box (the engine's notifications belong to scenes). No glimpse in this reply: the Between is the glimpse's big brother.
+Name the person he is with in the first lines, and use names wherever two people share a pronoun (`style.md` §2, "Who is in the room"). A dice line goes where the roll happens. The reread (`style.md` §4, the stranger's read included) before the bookkeeping. No Reckoning box (the engine's notifications belong to scenes). No glimpse in this reply: the Between is the glimpse's big brother.
 
 ## 6. Bookkeeping, then the site
 - `saga/state/world.json` by Edit: `scenes[]` gets `{"scene": "between-K", "title": "…", "after": "<key of the scene it follows: 2, interlude, climax>", "covers": [], "written": "YYYY-MM-DD"}`; `last_beat` becomes the Between's last beat; `location.detail` **always** set to where he is at the Between's end (`location.place` too, a `places.json` id, if he left the place). The site's Now page reads both, and lists the Betweens after the latest scene. Never approval.
