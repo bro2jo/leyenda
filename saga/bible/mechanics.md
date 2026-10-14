@@ -33,7 +33,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
 | **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs, and a corrected day never takes one back |
-| **Works** | what he has finished with his hands outside the fight: a count on the sheet, and the tales it buys (the past, a piece at a time), each ending in a keepsake on someone's page | real goals outside the knee (`real/projects.json`, `darrow.py project`): a task reported pays a piece of a tale; a finished project counts as a work and brings 1 Inspiration; no XP, no temper |
+| **Works** | what he has finished with his hands outside the fight: a count on the sheet, and the tales it buys (the past, a piece at a time), each ending in a keepsake on someone's page | real goals outside the knee (`real/projects.json`, `darrow.py project`): a task reported pays a piece of a tale; a finished project counts as a work and brings 1 Inspiration; finished in the week it was planned, the tale ends on its full keepsake, after it on the lesser one; no XP, no temper |
 
 **Attribute growth:** each attribute = base + ⌊√(temper ÷ divisor)⌋. Growth is fast early and slower later, the way real strength returns.
 

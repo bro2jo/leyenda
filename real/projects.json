@@ -1,4 +1,31 @@
 {
   "_about": "The works: one real goal at a time outside the knee, in 2-5 tasks (clean it, park it, list it). `darrow.py project open|done|show|drop`; `today` names the next task. Each task reported pays one piece of the tale bound to the project (`saga.py tale bind`, then `saga.py brief --tale`), the last piece its keepsake; a finished project counts in the sheet's WORKS and brings one Inspiration. Titles and tasks are real-world words: they never reach the Chronicle or the site, only the counts do. Dates are the days the tasks were reported.",
-  "projects": []
+  "projects": [
+    {
+      "id": "sell-the-crv",
+      "title": "Get the CRV ready to sell",
+      "status": "live",
+      "opened": "2026-10-14",
+      "due": "2026-10-17",
+      "done": null,
+      "late": false,
+      "tasks": [
+        {
+          "n": 1,
+          "text": "Clean it",
+          "done": null
+        },
+        {
+          "n": 2,
+          "text": "Take pictures",
+          "done": null
+        },
+        {
+          "n": 3,
+          "text": "List it",
+          "done": null
+        }
+      ]
+    }
+  ]
 }

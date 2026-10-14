@@ -238,10 +238,30 @@ def main():
         check("Works · 1 finished" in page and "What he keeps" in page and "Quickstep" in page, "Darrow's page shows the work and the keepsake")
         tale_page = tmp / "docs/tales/01-quickstep.html"
         check(tale_page.exists() and "Piece 3" in tale_page.read_text(encoding="utf-8"), "the tale has its page")
-        code, out = run(darrow + ["project", "open", "Next week", "--tasks", "a", "b"], tmp)
-        check(code == 0, "a new project opens once the last is finished", out[-300:])
+        code, out = run(darrow + ["project", "open", "Last week's", "--tasks", "a", "b", "--date", "2026-10-05"], tmp)
+        check(code == 0 and "due Sat 2026-10-10" in out, "a project is due the Saturday of the week it opens", out[-300:])
         code, out = run(darrow + ["project", "drop", "--why", "not this week"], tmp)
         check(code == 0 and "set aside" in out, "a project can be set aside")
+        code, out = run(darrow + ["project", "open", "Late one", "--tasks", "a", "b", "--date", "2026-10-05"], tmp)
+        for task in ("1", "2"):
+            code, out = run(darrow + ["project", "done", task], tmp)
+        check(code == 0 and "LATE" in out, "a project finished after its due day is late", out[-300:])
+        code, out = run(saga + ["tale", "bind", "late-one", "--tale", "tale.hollis_table", "--force"], tmp)
+        check(code == 0, "a finished project can still be bound with --force", out[-300:])
+        code, out = run(saga + ["brief", "--tale"], tmp)
+        check(code == 0 and "tale02:p1" in out and "lesser" in out, "the brief of a late project's tale names the lesser keepsake ahead", out[-300:])
+        tale2 = next(tmp.glob("saga/chronicle/tales/02-*.md"))
+        with open(tale2, "a", encoding="utf-8") as f:
+            f.write("\n### Piece 1 — The Stake\n\nHollis said pay, then, and the table went quiet.\n")
+        code, out = run(saga + ["record", json.dumps({"key": "tale02:p1", "last_beat": "The table went quiet.", "people": [{"id": "darrow", "did": "Won the game."}, {"id": "hollis-garrow", "did": "Said pay, then."}]})], tmp)
+        check(code == 0 and "ok:" in out, "the late tale's first piece records", out[-400:])
+        with open(tale2, "a", encoding="utf-8") as f:
+            f.write("\n### Piece 2 — Paid\n\nHollis showed him the stone on the back of the hand, and that was all he paid.\n")
+        code, out = run(saga + ["record", json.dumps({"key": "tale02:p2", "last_beat": "That was all he paid.", "people": [{"id": "darrow", "did": "Learned the catch."}],
+                                                     "keepsake": {"name": "The stone on the back of the hand", "text": "The catch Hollis showed him, a trick and not a stake.", "to": "darrow"}})], tmp)
+        check(code == 0 and "the lesser one" in out and "ok:" in out, "the late tale's last piece records its keepsake as the lesser one", out[-400:])
+        world = json.loads((tmp / "saga/state/world.json").read_text(encoding="utf-8"))
+        check(world["keepsakes"][-1].get("lesser") is True and world["keepsakes"][0].get("lesser") is None, "world.json marks the lesser keepsake and not the full one")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes after the tales", out[-600:])
     finally:

@@ -614,7 +614,8 @@ def tales_state(plan, tale_events=None):
         title, when = tale_titles(path) if path else (b.get("title", ""), "")
         mine = [e for e in evs if (parse_tale_key(e.get("key", "")) or (None,))[0] == n]
         keeps = [{"name": e["keepsake"].get("name"), "text": e["keepsake"].get("text"), "to": e["keepsake"].get("to"),
-                  "tale": tale_id(n), "piece": f"p{parse_tale_key(e['key'])[1]}", "tale_title": title}
+                  "tale": tale_id(n), "piece": f"p{parse_tale_key(e['key'])[1]}", "tale_title": title,
+                  **({"lesser": True} if e["keepsake"].get("lesser") else {})}
                  for e in mine if isinstance(e.get("keepsake"), dict) and e["keepsake"].get("name")]
         pieces = int(b.get("pieces") or 0)
         out.append({"id": tale_id(n), "n": n, "title": title, "when": when, "of": b.get("of"), "pieces": pieces, "told": len(mine),

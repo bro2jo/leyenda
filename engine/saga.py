@@ -4444,7 +4444,7 @@ def cmd_choose(args):
 TALE_PLAN_HEAD_RE = re.compile(r"^##\s+(tale\.[a-z0-9_]+)\s*[—–-]\s*(.+?)\s*$")
 TALE_PIECE_HEAD_RE = re.compile(r"^###\s+piece\s+(\d+)\s*[—–-]\s*(.+?)\s*$", re.I)
 TALE_RECORD_KEYS = ("key", "tale", "piece", "kind", "title", "written", "where", "time", "last_beat", "people", "codex", "lore", "threads", "keepsake")
-TALE_FIELDS = ("of", "when", "pieces", "keepsake", "plants", "never")
+TALE_FIELDS = ("of", "when", "pieces", "keepsake", "keepsake_late", "plants", "never")
 
 
 def tale_plans():
@@ -4499,6 +4499,7 @@ def tale_state(st):
         t["tasks_done"] = sum(1 for x in pr.get("tasks", []) if x.get("done"))
         t["project_status"] = pr.get("status")
         t["owed"] = max(0, min(t["tasks_done"], t["pieces"]) - t["told"])
+        t["due"], t["late"] = pr.get("due"), bool(pr.get("late"))
     return rows
 
 
@@ -4519,7 +4520,7 @@ def cmd_tale(args):
         for t in rows:
             print(tale_line(t))
             for kp in t.get("keepsakes") or []:
-                print(f"    keepsake: {kp.get('name')} → {kp.get('to')}")
+                print(f"    keepsake: {kp.get('name')} → {kp.get('to')}" + (" (the lesser one: the work came late)" if kp.get("lesser") else ""))
         free = [t for t in plans.values() if t["id"] not in bound]
         print("plans in tales.md not yet bound: " + (", ".join(f"{t['id']} ({t['n_pieces']} pieces, of {t['fields'].get('of', '—')})" for t in free) or "none; plan one (design.md §12)"))
         return
@@ -4610,10 +4611,16 @@ def brief_tale(st, args):
     else:
         L.append(f"piece {k}: no plan in tales.md; state its want, its turn and its last image in a line before writing")
     if k == t["pieces"]:
-        L.append(f"THE KEEPSAKE (this is the last piece): {f.get('keepsake') or '<none planned: an object, a name, a song or a saying from this past, to the tale\'s person>'}"
-                 " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>}")
+        if t.get("late"):
+            L.append(f"THE PROJECT CAME LATE (due {t.get('due')}; finished after it): THE LESSER KEEPSAKE, not the full one: "
+                     f"{f.get('keepsake_late') or '<none planned: cut the full one down in tales.md: a smaller, plainer thing from this past>'}"
+                     " · the piece ends on it in the page's words, smaller than the tale promised and never explained; the record carries \"keepsake\": {\"name\": …, \"text\": …, \"to\": …} (the engine marks it lesser)")
+            L.append(f"(the full keepsake, which this tale no longer gives: {f.get('keepsake')})")
+        else:
+            L.append(f"THE KEEPSAKE (this is the last piece; the project finished in its week): {f.get('keepsake') or '<none planned: an object, a name, a song or a saying from this past, to the tale\'s person>'}"
+                     " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>}")
     else:
-        L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last")
+        L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last" + (f" (due {t['due']}: finished in its week it is the full one, after it the lesser)" if t.get("due") else ""))
     if f.get("never"):
         L.append(f"NEVER (the present's secrets stay sealed): {f['never']}")
     if f.get("plants"):
@@ -4747,6 +4754,13 @@ def record_tale(args, ev, st, key, n, k):
             probs.append('the last piece carries the keepsake: "keepsake": {"name": …, "text": <one line, the page\'s words>, "to": <character id>}')
         elif ks.get("to") not in char_ids:
             probs.append(f"keepsake.to {ks.get('to')!r} is not a character id")
+        elif set(ks) - {"name", "text", "to", "lesser"}:
+            probs.append("keepsake carries name, text and to only")
+        else:
+            ks = {k_: v for k_, v in ks.items() if k_ != "lesser"}
+            if t.get("late"):
+                ks["lesser"] = True  # the project finished after its week: the tale gives the lesser keepsake, and the record says so
+            ev["keepsake"] = ks
     elif ks:
         probs.append("a keepsake comes with the last piece only")
     reg = registered_names() | record_people_names(ev)
@@ -4813,7 +4827,7 @@ def record_tale(args, ev, st, key, n, k):
     R.save_threads(thr)
     changed = R.project_all(plan, write=True)
     print(f"{key} recorded: {btitle} · people {len(ordered.get('people') or [])} · facts {sum(len(p.get('facts') or []) for p in ordered.get('people') or [])} "
-          f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])}" + (f" · keepsake: {ks['name']} → {ks['to']}" if isinstance(ks, dict) else "")
+          f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])}" + (f" · keepsake: {ks['name']} → {ks['to']}" + (" (the lesser one)" if ks.get("lesser") else "") if isinstance(ks, dict) else "")
           + f" · projections rebuilt: {', '.join(changed) or 'none'}")
     r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "check"], cwd=ROOT, capture_output=True, text=True)
     sys.stdout.write(r.stdout + r.stderr)

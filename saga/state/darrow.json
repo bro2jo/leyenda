@@ -319,7 +319,8 @@
   },
   "works": {
     "finished": 0,
-    "tasks_done": 0
+    "tasks_done": 0,
+    "late": 0
   },
   "chapter_now": {
     "week_start": "2026-10-11",
