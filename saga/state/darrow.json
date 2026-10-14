@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 5,
   "rank": "Kindled",
-  "xp": 1267,
+  "xp": 1302,
   "xp_this_level": 1000,
   "xp_next_level": 1500,
   "proficiency": 3,
@@ -24,7 +24,7 @@
       "raw": 9,
       "cap": 12,
       "mod": -1,
-      "temper": 4,
+      "temper": 5,
       "next_at": 8,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 10,
       "mod": 0,
-      "temper": 19,
+      "temper": 21,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -44,7 +44,7 @@
       "raw": 10,
       "cap": null,
       "mod": 0,
-      "temper": 21,
+      "temper": 22,
       "next_at": 36,
       "fell": 12,
       "banked": false
@@ -125,7 +125,7 @@
       "tree": "Binding",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 7,
+      "practice": 8,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -235,7 +235,7 @@
       "tree": "Sport",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 2,
+      "practice": 3,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
@@ -268,7 +268,7 @@
       "tree": "Sport",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 2,
+      "practice": 3,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover."
@@ -320,7 +320,7 @@
   "chapter_now": {
     "week_start": "2026-10-11",
     "through": "2026-10-14",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 2
   },
   "fell": {

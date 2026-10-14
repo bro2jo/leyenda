@@ -227,6 +227,30 @@
       "add": [],
       "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer_instruction.md",
       "why": "no upper on Sat 10/10; Upper B moves to Mon 10/12, where the catch-up week's template carries it"
+    },
+    {
+      "date": "2026-10-15",
+      "drop": [
+        "cond",
+        "upperA"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
+      "why": "PT lands Thursday; the State's own rule moves Upper A and the bike to Friday"
+    },
+    {
+      "date": "2026-10-16",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "cond",
+        "upperA"
+      ],
+      "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
+      "why": "Upper A and bike 21 move here from Thursday; throwing B first, then upper (Add-On §2)"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",

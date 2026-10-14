@@ -19,7 +19,7 @@
 - **PT:** Cleveland Clinic Rehabilitation & Sports Therapy.
   - Nick Immel PT oversees and treated 10/8; Cody Rardon PTA treats.
   - Weekly, usually Fridays; 10/1 and 10/8 were Thursday reschedules.
-  - **Next visit: not booked as of Mon 10/12.** Target Thu 10/15 or Fri 10/16; ask for the quad test when booking.
+  - **Next visit: Thu 10/15** (booked Wed 10/14). Ask for the quad test.
   - **Nick (10/9): progression is up to the master plan; his approval isn't needed; don't push through pain.**
 - **Right-knee reference (pre-op):** extension 0° AROM (hyperextension on a heel prop never measured), flexion 144°, quad 83.7 lb, hamstring 79 lb. **83.7 / 79 lb are the strength targets.**
 - **Left pre-op:** extension −1°, flexion 144°, quad 58.9 lb (LSI 70.4%), hamstring 55.8 lb (LSI 70.6%).
@@ -108,8 +108,8 @@
 | Mon 10/12 | ✓ Morning verdict (clean) · heel prop · bike 18 → **Upper B** → finisher · book PT |
 | Tue 10/13 | **Session A** (fixed Tuesday: keeps a day's gap from PT on Thursday or Friday) |
 | Wed 10/14 | Heel prop · **Throwing A** (control + breaks; sport plan). No knee or upper work |
-| Thu 10/15 | PT if booked Thursday. Otherwise bike 21 → **Upper A** → finisher |
-| Fri 10/16 | PT if booked Friday. **Throwing B** (deception + overheads). If PT was Thursday, throw first, then bike 21 → **Upper A** → finisher (Add-On §2) |
+| Thu 10/15 | **PT** (booked). Heel prop. No upper or bike: they move to Friday |
+| Fri 10/16 | **Throwing B** (deception + overheads) first, then bike 21 → **Upper A** → finisher (Add-On §2) |
 | Sat 10/17 | Heel prop · bike 24 · **Throwing C** (long throws at a controlled range) · film 10–15 min |
 | Sun 10/18 | Weigh-in (5:30 PM), **first extension photo**, SLR lag, flexion → checkpoint → **Session B** · Phase 3 gate review |
 
