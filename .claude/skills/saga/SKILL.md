@@ -18,5 +18,5 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) B
    - **Work in hand:** the Book's project if the page has it (`world.json → projects[]`): its name, its stage, the one visible line; nothing from the plan.
    - **The Reckoning:** `python3 engine/darrow.py sheet` in a code block.
    - **How the chapter is going:** the tier so far in story terms ("the week is turning against him", "hard-won so far"), never the score.
-3. Variants from $ARGUMENTS: `read` prints the latest full scene; `recap` gives a "previously on" of the whole Book so far (no spoilers from `_gm/arc.md`); `threads` lists open threads **he has seen on the page** (never GM-only truths).
+3. Variants from $ARGUMENTS: `read` prints the latest full scene; `recap` gives a "previously on" of the whole Book so far (`python3 engine/saga.py history --chapter N` lists each block's last beat; no spoilers from `_gm/arc.md`); `threads` lists open threads **he has seen on the page** (never GM-only truths: `saga.py threads` is GM-side and is not used here).
 4. **The wall:** no foods, numbers from logs, exercises, PT or rehab terms. Game numbers (level, attributes, DCs) are fine.

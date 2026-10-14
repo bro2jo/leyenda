@@ -59,6 +59,8 @@ Numbers that are *game* numbers (Level, Might 11, Ember "Steady", DC 13, a d20) 
 
 ## 3. Formats
 
+*The brief (`saga.py brief …`) prints the exact form of the block being written; this section is the reference the build parses.*
+
 ### A daily scene (written when a day is closed)
 - **Length follows the scene.** One scene: someone wants something, something stops them, something turns (§2), and it is as long as that takes. Most daily scenes land somewhere around 300 to 600 words; a council of five, a death, an arrival or a choice takes what it needs, and a quiet scene that has done its turn in 250 stops there. A number never makes a council break in one line or pads a quiet morning to length. Heading: `### Scene N — Title`. Appended to the current chapter file.
 - **The opening carries at most two things owed from before**, each in a clause or a line, in this order of claim: an off-page world move from a missed day, the answer to the open choice, then whichever Between or due line matters most to this scene. Everything else owed waits: a colour line owed to the next scene may land anywhere in it or in the block after (the engine keeps it due one block longer), and the scene never opens on a list of debts. When the plan sets a scene in two places, it moves once, cleanly, with the time between them said.
@@ -140,13 +142,13 @@ Each chapter opens with 1–3 lines from an in-world document, in italics, with 
 Every scene, climax, Between and Choice block gets this once it is drafted and before its bookkeeping. The build checks structure; this checks meaning, and it takes two minutes. Nothing here is written down except what it changes.
 
 1. **Canon.** What did this block make true that was not true before, and which sentence does it? Each such sentence is something seen, something someone reported, or something someone believes; the wording says which, and the records (`known_facts`, `codex.md`, `now`) say the same. A paraphrased secret is a spoiler the build cannot catch: if a sentence tells the reader a thing the page has not shown, it goes.
-2. **Who knows.** For each new fact: the reader, Darrow, which others? The threads file's *Who knows* column agrees, or is updated. Nobody acts on what they could not know.
+2. **Who knows.** For each new fact: the reader, Darrow, which others? The thread's *who knows* (`saga.py threads --id N`) agrees, or the record's `gm.threads` updates it. Nobody acts on what they could not know.
 3. **Continuity.** Time of day and weather since the last block; where everyone is standing; what the knee has been allowed; the objects in hand. The Between before this scene, and the day's glimpses.
 4. **Debts.** The DUE NOW items the digest printed, the open choice, a promise made in a Between: honoured here, or still owed on purpose.
 5. **The turn.** The slot's `turn` happened on the page, and Darrow attempted something. If the block only explained, it is not done.
 6. **The sound.** §2's test: the clusters, the closing line, the thought verbs.
 
-Then the records: `saga/NOW.md`, the character files, `world.json`, the threads, the codex, in that order, and `saga.py check` and the build.
+Then the record: `python3 engine/saga.py record '<the brief's skeleton, filled>'` (it writes the event and the note, moves the plan, rebuilds the Now page, the character files, the world file and the Codex, and runs `check`), then `darrow.py ship`.
 
 ---
 

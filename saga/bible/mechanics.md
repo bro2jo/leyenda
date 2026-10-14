@@ -27,7 +27,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **Might** | strength of arm and body | the real side's leg work, upper-body, accessory and power work |
 | **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions (one per session a day, never per skill) |
 | **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
-| **Resolve** | discipline, patience, honesty with oneself | floor minimum AM+PM, graded morning checks, running sessions as written |
+| **Resolve** | discipline, patience, honesty with oneself | the daily minimum in full (one weighted heel-prop round from 10/9), graded morning checks, running sessions as written |
 | **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target); a day counts once it is closed, so Ember does not dip at breakfast and climb back by dinner, and a climax's dice read the Ember its week ended on |
 | **Inspiration** (max 4) | moments of clarity; spend to reroll a die or take a bold option | a week with the floor minimum every day; a Triumph week; every level from 5 on |
 | **HP** | how much punishment he can take in a fight | level and Vigor |
@@ -70,7 +70,7 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **Hammerfall** | Blade | power & mobility (throws) | now |
 | **Stillwater Stance** | Footing | balance work / the real side's leg work | now |
 | **The Long Breath** | Breath | conditioning ≥10 min | now |
-| **The Mender's Patience** | Binding | floor minimum AM+PM | now |
+| **The Mender's Patience** | Binding | the daily minimum in full | now |
 | **Warden's Eye** | Insight | graded morning checks | now |
 | **Groundbreaker** | Footing | lower-body sessions | Knot III |
 | **Soft Landing** | Footing | landing drills | Knot III |
@@ -115,10 +115,13 @@ A second thread, read on his palms beside the first. The real side drives it the
 |---|---|---|
 | `saga/state/darrow.json` | engine (never hand-edit) | the computed sheet |
 | `saga/state/rolls.csv`, `spends.csv`, `chapters.csv` | engine | every die rolled, every Inspiration spent, each chapter's frozen tier |
-| `saga/state/world.json` | Claude (approval through `saga.py add` only) | Book, chapter, scenes, location, the quest as the page knows it, companions and approval, choices, inventory, recaps |
+| `saga/state/events/chNN.jsonl` | `saga.py record` | the page's records: one event per block (reader-safe) |
+| `saga/state/_gm/notes/chNN.jsonl` | `saga.py record` (GM only) | one GM note per block |
+| `saga/state/world.json` | engine (a projection; approval through `saga.py add` / `choose`) | Book, chapter, scenes, location, the quest as the page knows it, companions and approval, choices, inventory, recaps |
+| `saga/characters/<id>.json` | base by hand, the rest a projection | a person's page: identity, appearance, relationships, reckoning by hand; seen, now, facts, appearances from the events |
 | `saga/state/bearing.json` | `saga.py bearing` | Darrow's Bearing: the four axes, leans and epithet |
-| `saga/state/_gm/plan.json` | `saga.py plan` (GM only) | position, the chapter's slots, flags, factions, quests, roads |
-| `saga/state/_gm/consequences.json` | `saga.py add / fire / void` (GM only) | the consequence ledger: what each choice changed and what it still owes |
-| `saga/state/_gm/threads.md` | Claude (GM only) | open plot threads and plants |
-| `saga/state/codex.md` | Claude | canon invented in play |
-| `saga/state/glimpses.md` | Claude | the last ~20 glimpses (the line of the House closing a log reply); texture, never plot; the site never reads it |
+| `saga/state/_gm/plan.json` | `saga.py plan` (GM only) | position, the chapter's slots, flags, factions, quests, roads, the open choices |
+| `saga/state/_gm/consequences.json` | `saga.py add / choose / fire / void` (GM only) | the consequence ledger: what each choice changed and what it still owes; the rules and where they fired |
+| `saga/state/_gm/threads.json` | `saga.py record / threads` (GM only) | open plot threads and plants, as data |
+| `saga/state/codex.json` → `codex.md` | `saga.py record` | canon invented in play; the page is rendered from the store |
+| `saga/state/glimpses.md` | `saga.py glimpse` | the last 20 glimpses (the line of the House closing a log reply); texture, never plot; the site never reads it |

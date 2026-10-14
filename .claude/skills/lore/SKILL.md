@@ -29,4 +29,4 @@ A telling, not a scene. The Annals (`saga/bible/_gm/lore.md`) hold the realm's h
 - `python3 engine/darrow.py ship -m "lore: <id>"` (its `saga.py check` parses the Annals).
 
 ## 5. Afterwards
-- If the Chronicle later speaks the entry, that scene's close marks it (`python3 engine/saga.py lore spoke <id> --where chNN:sK`) and gives `codex.md` its reader-safe line. This skill never does that.
+- If the Chronicle later speaks the entry, that block's record marks it (`"lore": ["<id>"]` in `saga.py record`, which also takes the Codex's reader-safe line as a codex item). This skill never does that.

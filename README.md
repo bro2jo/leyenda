@@ -31,7 +31,7 @@ You don't need commands; anything that looks like a log gets logged. Commands ex
 | `premier shake, 2 eggs + toast, creatine` | the Ledger: each item's kcal/protein, running totals vs 3,000 / 150, what's left today |
 | `swelling trace, pain 0, floor AM done` | logged; Warden's Eye practice counted |
 | `session A as written, upper A: bench 3x10 @ 95` | logged; one bracketed line if Darrow gained something |
-| `close day` | day summary **+ the day's scene** in the Chronicle |
+| `close day` | day summary **+ the day's scene** in the Chronicle (the engine briefs the scene, Claude writes it, the engine records it and rebuilds every page from the record) |
 | `/today` | real plan for today with doses, what's done, what's left, kcal/protein to go |
 | `/week` | real week table: nutrition, weigh-ins, floor, checks, sessions vs plan |
 | `/saga` | story only: where Darrow is, the fight he's in, companions, last scene, open choice |
@@ -77,11 +77,13 @@ Real effort sets the **tone** of each day's scene and the **outcome** of each we
 real/      the Ledger: NOW.md (what stands now), plan/ (the source documents; real/README.md says what each file is for),
            state/ (the one current program; archive/ for old ones), checkpoints/ (one archive file per week),
            visits/ (pt_notes.md: every PT and surgeon note, word for word), logs/ (CSVs, incl. measurements.csv)
-engine/    darrow.py (the real math) + rules.json (the exchange rates; tweak freely) + saga.py (the story's bookkeeping) + build_site.py (the site)
-saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechanics), state/ (world, bearing, places, factions, codex), characters/ (the cast), chronicle/ (the chapters)
-           saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger, the character secrets and the Annals
-           (the realm's history and songs, which the story draws on a line at a time): everything the page has not said yet.
-           Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
+engine/    darrow.py (the real math) + rules.json (the exchange rates; tweak freely) + saga.py and records.py (the story's bookkeeping and records) + build_site.py (the site)
+saga/      the Chronicle: NOW.md (story right now), bible/ (style, cast, mechanics), state/ (events/: one record per block of the page,
+           from which world.json, the cast's pages, the Codex and the Now page are rebuilt; bearing, places, factions), characters/ (the cast),
+           chronicle/ (the chapters)
+           saga/bible/_gm/ and saga/state/_gm/ hold the plot, the plan, the consequence ledger, the threads, the GM's notes, the character
+           secrets and the Annals (the realm's history and songs, which the story draws on a line at a time): everything the page has not
+           said yet. Don't open them unless you want spoilers. Nothing in them is ever rendered on the site.
 docs/      the site, generated; never edited by hand
 archive/   the old nutrition-only game (retired)
 .claude/   how Claude works here: skills/ (one per procedure: /log, /checkpoint, …), rules/ (story-writing rules,
