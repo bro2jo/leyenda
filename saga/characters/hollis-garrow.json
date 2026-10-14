@@ -177,15 +177,15 @@
     },
     {
       "fact": "Carried down from the gatehouse in his chair on the night of the gate, he gave the hall the names that had been read at the bars, the Ninth's and the Sixth's.",
-      "evidence": "gave the hall the names, because somebody had to and he had heard them read",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "gave the hall the names, because somebody had to and he had heard them read"
     },
     {
       "fact": "When a grey cloak sent the Captain of the Ninth the Confessor's good night by his rank, he started on a rude answer; the Captain's was shorter, and he lay back pleased with it.",
-      "evidence": "That'll keep the bastard up",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "That'll keep the bastard up"
     },
     {
       "fact": "Awake with his face to the wall after the night bell, he asked the Captain whether his three Ninth men were all there, and when told they would not go down on his back, said \"Ninth\" as if it were the worst word he knew.",
@@ -364,6 +364,11 @@
     {
       "chapter": "02",
       "scene": "3"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-7",
+      "mention": true
     },
     {
       "chapter": "02",

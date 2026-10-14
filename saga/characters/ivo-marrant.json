@@ -157,6 +157,16 @@
     {
       "chapter": "01",
       "scene": "choice"
+    },
+    {
+      "chapter": "02",
+      "scene": "1",
+      "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "3",
+      "mention": true
     }
   ]
 }

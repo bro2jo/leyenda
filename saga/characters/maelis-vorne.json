@@ -119,6 +119,12 @@
       "evidence": "Let Hollis answer with nothing and mean it"
     },
     {
+      "fact": "Behind the cell door she told Darrow that the Confessors don't need him to tell them anything, they need to see the knee: any Confessor who lays a hand on it will know what's in it, and the Crown has burned every hand it ever caught putting it there.",
+      "chapter": "01",
+      "scene": "2",
+      "evidence": "the Crown has burned every hand it ever caught putting it there"
+    },
+    {
       "fact": "Of the Grace: she has had her fingers on knees that carried it for twenty years; it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know. Of Faithless: a word for a knight the Grace has left, which says it left because of him.",
       "chapter": "01",
       "scene": "between-2",
@@ -143,6 +149,12 @@
       "evidence": "Fifteen, Captain, and the answer's the same as the other fourteen"
     },
     {
+      "fact": "When Darrow asked the council to send him down on the cage, she said that if he reached the bottom whole they would put him on his knees on a stone, the thread would go, and she does not do this twice.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "they put you on your knees on a stone"
+    },
+    {
       "fact": "She stood a pace behind Mother Ione's shoulder at the gate while the Confessor read; when his eyes went past the Prior to her and stayed a beat longer than courtesy, she looked back at him with the pipe clamped and nothing in her face at all.",
       "chapter": "01",
       "scene": "climax",
@@ -155,28 +167,16 @@
       "evidence": "That knee lies to me every morning"
     },
     {
-      "fact": "When Darrow asked the council to send him down on the cage, she said that if he reached the bottom whole they would put him on his knees on a stone, the thread would go, and she does not do this twice.",
-      "chapter": "01",
-      "scene": "3",
-      "evidence": "they put you on your knees on a stone"
-    },
-    {
-      "fact": "Behind the cell door she told Darrow that the Confessors don't need him to tell them anything, they need to see the knee: any Confessor who lays a hand on it will know what's in it, and the Crown has burned every hand it ever caught putting it there.",
-      "chapter": "01",
-      "scene": "2",
-      "evidence": "the Crown has burned every hand it ever caught putting it there"
-    },
-    {
       "fact": "Reading the knee by lamplight on the night of the gate, she found it had held at the wicket, and said what one moment more of a man's weight on that door would have cost: nothing left to tie it to.",
-      "evidence": "I'd have had nothing left to tie it to",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "I'd have had nothing left to tie it to"
     },
     {
       "fact": "Having found it held, she said it is still soft, and will be soft at the thaw.",
-      "evidence": "It'll be soft at the thaw.",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "It'll be soft at the thaw."
     },
     {
       "fact": "On the feast morning she found a chip of black glass under Hollowed Benedek's tongue, looked down the hall at the far cots, said the far cots never had this, and took it away folded in linen inside her coat.",

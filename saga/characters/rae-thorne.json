@@ -110,6 +110,12 @@
       "evidence": "Down's where they are"
     },
     {
+      "fact": "At the council, after saying down is where they are, she said she has carted men down to kneel since midsummer and has not carted one back up.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "I've not carted one back up."
+    },
+    {
       "fact": "From the gate wall at noon, through Sister Pell's glass, Darrow watched a grey cloak walk round her cart at the winch-house, climb onto the box and put his boots up on the board; she had not asked for the glass.",
       "chapter": "01",
       "scene": "4"
@@ -179,12 +185,6 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "rubbing the shoulder she had put to the wicket"
-    },
-    {
-      "fact": "At the council, after saying down is where they are, she said she has carted men down to kneel since midsummer and has not carted one back up.",
-      "chapter": "01",
-      "scene": "3",
-      "evidence": "I've not carted one back up."
     }
   ],
   "relationships": [
