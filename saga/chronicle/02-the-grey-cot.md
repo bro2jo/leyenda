@@ -405,11 +405,11 @@ There was a worse thing under it, and Darrow had said it to Maelis and nobody el
 
 "Yesterday you got off that cot like a man who'd been shot at. She has that number already." She did not look at the Grey Cot. She had not looked at it once, coming down the row. "What do you want?"
 
-"Whoever sat the night at the far end. Then the kitchen. Then you, with every door in this hall and every key on the Prior's ring."
+"Whoever sat the far lamp the night the lad was taken. Then the kitchen. Then you, with every door in this hall and every key on the Prior's ring."
 
 She went without arguing the errand, which was how he knew how frightened she was.
 
-The night novice was younger than Wren, with red eyes and a scrubbed face, and she stood at the foot of his cot with her hands folded in her sleeves the way the Prior folded hers. She had slept, she said. She was ashamed of it. She had sat down by the lamp at the far end after the night bell and woken at the dawn bell, and she was sorry, and she would sit two nights for it if the Mender wanted.
+The night novice was younger than Wren, with red eyes and a scrubbed face, and she stood at the foot of his cot with her hands folded in her sleeves the way the Prior folded hers. That night she had slept, she said. She was ashamed of it. She had sat down by the lamp at the far end after the night bell and woken at the dawn bell, and she was sorry, and she would sit two nights for it if the Mender wanted.
 
 Darrow looked at her hands, because she was hiding them.
 
@@ -417,9 +417,9 @@ Darrow looked at her hands, because she was hiding them.
 
 "Show me your fingers."
 
-She brought them out. The first two on the right were black to the knuckle with wick soot, the way fingers go when a lamp is trimmed by hand, more than once, and not long ago.
+She brought them out. Her face was scrubbed, but the first two fingers on the right were still black in the creases with wick soot, which stays for days whatever you scrub, and comes from trimming a lamp by hand, more than once.
 
-"The lamp at the far end is never let go out," he said. "Somebody trimmed it last night. Three times, by the look of you."
+"The lamp at the far end is never let go out," he said. "Somebody trimmed it that night, over and over, and you sat it alone."
 
 Her face went to pieces and came back together, which took a moment.
 
@@ -437,7 +437,7 @@ Darrow let her. He had learned in the last fortnight to lie still under weather.
 
 When she had run down at last and was standing there breathing, he asked her what the kitchen had counted.
 
-She blinked at him. Then, slowly, as if he had asked about something too ordinary to matter: "The loaves, Ser. Sixty out for the feast, and we've counted what's left nine times since, and it comes out different every time, because cook keeps eating the crusts." She stopped. "And the flour. On a feast night we sweep the floor by the hall door at the night bell and leave a skin of flour on it, so we know in the morning who's been at the bread. Nobody had. There wasn't a print in it but ours, and ours came after the bell."
+She blinked at him. Then, slowly, as if he had asked about something too ordinary to matter: "The loaves, Ser. Sixty out for the feast, and we've counted what's left nine times since, and it comes out different every time, because cook keeps eating the crusts." She stopped. "And the flour. The night before a feast we sweep the floor by the hall door at the night bell and leave a skin of flour on it, so we know in the morning who's been at the bread. Nobody had. There wasn't a print in it at the feast's dawn bell but ours, and ours came after."
 
 "Nobody came through the kitchen."
 
@@ -445,7 +445,7 @@ She blinked at him. Then, slowly, as if he had asked about something too ordinar
 
 Wren came back last, with the ledger open across her arm, and gave it to him faster than anyone could take it down.
 
-"Doors into the hall: two. Barred at the night bell: two. Barred at the dawn bell: two, and the bars cold, I put my hand on them. Keys on the Prior's ring: nine. Hanging where they hang this morning: nine. So nobody came in. So it came from—"
+"Doors into the hall: two. Barred at the night bell, the night of the gate: two. Still barred at the feast's dawn bell: two; the lay brother who draws them swears it. Keys on the Prior's ring: nine. Hanging where they hang at that dawn bell: nine. I count them every morning." She turned the ledger so he could see the column. "So nobody came in. So it came from—"
 
 "Nobody passed," Darrow said.
 
@@ -459,7 +459,7 @@ By the next bell the word was in the hall, as he had known it would be. A lay br
 
 Darrow sat up on the end of his cot, so that the hall had to look past him to see her.
 
-"Nobody passed," he said. He used the bottom of his voice again, and it carried. "The novice at the far lamp sat awake all night with her eyes on the door, and nobody came up the row but the lamp on its round. The kitchen's flour was clean at dawn. Both doors were barred at the night bell and barred at the dawn bell, and every key on the Prior's ring hung where it hangs. Nobody came into this hall last night. Not a grey cloak. Not a lay brother. Not the Mender. Nobody."
+"Nobody passed," he said. He used the bottom of his voice again, and it carried. "The night the lad was taken, the novice at the far lamp sat awake till dawn with her eyes on the door, and nobody came up the row but the lamp on its round. The kitchen's flour was clean at dawn. Both doors were barred at the night bell and still barred at the dawn bell, and every key on the Prior's ring hung where it hangs. Nobody came into this hall that night. Not a grey cloak. Not a lay brother. Not the Mender. Nobody."
 
 The hall looked at him. Then, one by one, the heads came back from the far end, and the lay brother at the fire went back to the fire.
 
