@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-12 · ledger · From Wren's ledgers, a page headed Garrow, H.: Names called to the beech leg this week: 31. Names repeated: 2. (She has underlined the two, as a matter of standards.)
 - 2026-10-12 · overheard · Down the hall a lay brother banks the fire a second time, talking to it under his breath: "Slow, now. Nobody's asking you to be quick." Darrow lies still and lets the words do for him too.
 - 2026-10-12 · house · The hall's iron kettle takes two novices to hang on its hook. These days, if Darrow is nearer, he takes the bail one-handed and has it hung before either of them thinks to object.
 - 2026-10-12 · body · He does up the infirmary shirt's three buttons in the dark by feel, all three, first try, and only afterwards notices that his fingers didn't argue with him once.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-14 · body · The cold finds his hands early today. He tucks them under his arms on the cot's end, and the far lamp's soot is still in the creases of two fingers when he takes them out again.
 - 2026-10-14 · ledger · From Wren's ledgers, a page headed Captain, steps (for the Mender): To the far lamp after the night bell: 41. Back at the dawn bell: 41. All slow. (Underneath: She asked why the same number twice. I said he walks the same.)
 - 2026-10-14 · house · A lay brother has taken to setting a cup of water by the Grey Cot every morning. Nobody drinks it. He takes it away at dusk and brings a fresh one at dawn.
+- 2026-10-14 · overheard · Two novices on the stair, arguing whether the Greywater freezes from the top down or the bottom up. Neither of them has seen it freeze. Both are certain.
