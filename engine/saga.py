@@ -2527,6 +2527,46 @@ def registered_names():
     return words
 
 
+def gm_unspoken_names():
+    """Capitalised words the GM files use (the arc, the characters, the world, the Annals, the design, the notes, the threads)
+    that no reader-safe registry knows and the page has never spoken: the names a block or a glimpse must never carry.
+    A word that the GM files also use in lowercase is a common noun, not a name (the site build draws the same line)."""
+    texts = []
+    gm_dir = ROOT / "saga/bible/_gm"
+    for p_ in sorted(gm_dir.glob("*.md")) if gm_dir.exists() else []:
+        texts.append(p_.read_text(encoding="utf-8"))
+    for row in R.load_notes():
+        texts.append(json.dumps(row, ensure_ascii=False))
+    if P["threads"].exists():
+        texts.append(P["threads"].read_text(encoding="utf-8"))
+    gm_text = "\n".join(texts)
+    page = "\n".join(p_.read_text(encoding="utf-8") for p_ in sorted(P["chronicle"].glob("*.md"))).lower()
+    page_words = set(re.findall(r"[a-z]+", page))
+    lower_words = set(re.findall(r"\b[a-z]{3,}\b", gm_text))
+    reg = registered_names()
+    out = set()
+    for w in set(re.findall(r"\b[A-Z][a-z]{2,}\b", gm_text)):
+        if w in NAME_STOP or w.lower() in reg or w.lower() in page_words or w.lower() in lower_words or w.lower().rstrip("s") in reg:
+            continue
+        out.add(w)
+    return out
+
+
+def name_problems(text, registered, allow=(), label="the block"):
+    """(refusals, notes) for a text's capitalised words: a name the GM files know and the page has not spoken is refused
+    (it would leak), any other unregistered word is noted (register it, or it is not a name)."""
+    found = {w for w in names_in_text(text, registered) if w not in set(allow)}
+    gm = gm_unspoken_names()
+    leaks = sorted(w for w in found if w in gm)
+    others = sorted(w for w in found if w not in gm)
+    refusals, notes = [], []
+    if leaks:
+        refusals.append(f"{label} names {', '.join(leaks)}, which the page has not spoken and the GM files know: nothing the page has not said may reach it")
+    if others:
+        notes.append(f"note: {label} has capitalised words no registry knows: {', '.join(others)}: a coinage gets a codex item or a character file; a common noun needs nothing")
+    return refusals, notes
+
+
 def names_in(path, registered):
     """Capitalised words in a chapter file that appear at least once mid-sentence and that no registry knows."""
     return names_in_text(path.read_text(encoding="utf-8"), registered)
@@ -4038,13 +4078,14 @@ def cmd_record(args):
         for k_ in p:
             if k_ not in ("id", "mention", "did", "now", "facts", "place", "present", "status", "quote", "story_so_far"):
                 probs.append(f"{cid}: unknown people field {k_!r}")
-    # names the page has not registered: a coinage is registered in this very record (a codex item, a person), or it is not a name
+    # names: a name the GM files know and the page has not spoken is refused (it would leak); any other unregistered
+    # capitalised word is noted (a coinage is registered in this very record by a codex item or a person; a common noun needs nothing)
     reg = registered_names() | record_people_names(ev)
     allow = {w.strip() for w in str(args.allow_names or "").split(",") if w.strip()}
-    unknown = {w for w in names_in_text(btext, reg) if w not in allow}
-    if unknown:
-        probs.append(f"names in the block that no registry knows: {', '.join(sorted(unknown))}: give each a codex item in this record, a character file, a place, or the Annals; "
-                     f"or --allow-names A,B when a word is not a name")
+    refusals, name_notes = name_problems(btext, reg, allow, label="the block")
+    probs += refusals
+    for n_ in name_notes:
+        print(n_)
     thr = R.load_threads()
     tids = {int(t["id"]) for t in thr.get("threads", [])}
     for t in ev.get("threads") or []:
@@ -4306,10 +4347,11 @@ def cmd_glimpse(args):
         return
     if not args.kind or not args.text:
         die("glimpse add --kind house|overheard|ledger|saying|verse|body|weather \"text\"")
-    reg = registered_names()
-    unknown = names_in_text(args.text, reg)
-    if unknown:
-        die(f"the glimpse names {', '.join(sorted(unknown))}, which the page has not spoken: a glimpse never names what the page has not")
+    refusals, name_notes = name_problems(args.text, registered_names(), label="the glimpse")
+    if refusals:
+        die("refusing the glimpse: " + "; ".join(refusals))
+    for n_ in name_notes:
+        print(n_)
     probs = R.glimpse_add(args.date or today_local().isoformat(), args.kind, args.text)
     if probs:
         die("refusing the glimpse:\n  " + "\n  ".join(probs))
