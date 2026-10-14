@@ -203,7 +203,7 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 | `am_notes` | Stiffness and anything else from the morning check |
 | `floor_am`, `floor_pm` | Daily minimum: one `Y` per weighted heel-prop round |
 | `knee_session` | `A` / `B` / `min` (minimum session) / `partial` (below the minimum: not a loaded day) |
-| `knee_min`, `knee_rpe`, `knee_as_planned` | Every knee session: minutes, session RPE (a number), `Y` if it ran as written |
+| `knee_min`, `knee_rpe`, `knee_as_planned` | Every knee session: minutes, session RPE (a number), `Y` if it ran as prescribed (the State's doses for that day, a planned progression included, nothing past the plan), `N` otherwise (an item past the plan, a change the plan did not call for, a session cut short). Never blank: it is the deed that pays for discipline |
 | `pt` | `Y` for a visit, `missed` for a booked one he didn't go to |
 | `addon_session`, `addon_min`, `addon_rpe` | Add-on session (`upperA`, `upperB`, `accessory`, `power`, `arms`; join with `+`), minutes, session RPE |
 | `conditioning_type`, `conditioning_min` | Off-day bike (or other) and its minutes |

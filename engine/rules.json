@@ -31,7 +31,8 @@
         "from": 30,
         "name": "Warden of the Ember"
       }
-    ]
+    ],
+    "_about": "The ladder runs past the Unkneeling on purpose. Unbowed (level 25) is this saga's summit: at a Costly pace it lies beyond the finale, at a Hard-won pace or better it lands about where the knee is whole again, so the comeback's quality decides whether he earns the name before Book VI ends. Warden of the Ember (level 30) belongs to what comes after: the sequels' rank. Resolve passing the Knight Who Fell early is by design (the GM file: he will not notice when he does)."
   },
   "attributes": {
     "_formula": "score = base + floor(sqrt(temper / divisor)), then capped by the Knots of the Binding",

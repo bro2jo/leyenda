@@ -66,11 +66,13 @@ def main():
         check("refused" in out, "ex add refuses a misspelt session")
 
         # a glimpse
-        code, out = run(saga + ["glimpse", "add", "--kind", "weather", "a test glimpse"], tmp, expect=1)
+        last_kind = next((l.split(" · ")[1] for l in reversed((tmp / "saga/state/glimpses.md").read_text(encoding="utf-8").splitlines()) if l.startswith("- ")), "weather")
+        code, out = run(saga + ["glimpse", "add", "--kind", last_kind, "a test glimpse"], tmp, expect=1)
         check("rotate" in out, "glimpse add refuses the same kind twice running")
-        code, out = run(saga + ["glimpse", "add", "--kind", "ledger", "From Wren's ledgers, a page headed Tests: 1."], tmp)
+        other_kind = "ledger" if last_kind != "ledger" else "house"
+        code, out = run(saga + ["glimpse", "add", "--kind", other_kind, "From Wren's ledgers, a page headed Tests: 1."], tmp)
         check(code == 0 and "note:" in out, "glimpse add keeps a new one and only notes a capitalised common noun")
-        code, out = run(saga + ["glimpse", "add", "--kind", "house", "Brother Anselm counts the stores again."], tmp, expect=1)
+        code, out = run(saga + ["glimpse", "add", "--kind", "body" if other_kind != "body" else "weather", "Brother Anselm counts the stores again."], tmp, expect=1)
         check("Anselm" in out and "refusing" in out, "glimpse add refuses a name the GM files know and the page has not spoken")
         lines = [l for l in (tmp / "saga/state/glimpses.md").read_text(encoding="utf-8").splitlines() if l.startswith("- ")]
         check(len(lines) <= 20 and lines[-1].endswith("Tests: 1."), "the glimpses file holds the last 20, newest last")

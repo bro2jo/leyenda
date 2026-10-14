@@ -23,11 +23,11 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 
 | Element | In the world | Driven by (real side) |
 |---|---|---|
-| **Level / Rank** | how much Ember he has kindled overall. Each level adds HP; every fourth level adds proficiency (+3 at 5, +4 at 9, +5 at 13); every level from 5 on brings 1 Inspiration. Ranks, every fifth level: Bound → Kindled → Tempered → Warden-Errant → Emberknight → Unbowed → Warden of the Ember, and the page shows each new rank once, in the next scene | total XP from every logged deed |
+| **Level / Rank** | how much Ember he has kindled overall. Each level adds HP; every fourth level adds proficiency (+3 at 5, +4 at 9, +5 at 13); every level from 5 on brings 1 Inspiration. Ranks, every fifth level: Bound → Kindled → Tempered → Warden-Errant → Emberknight → Unbowed → Warden of the Ember, and the page shows each new rank once, in the next scene. Unbowed is this saga's summit, earned before the finale only by a strong comeback; Warden of the Ember belongs to what comes after | total XP from every logged deed |
 | **Might** | strength of arm and body | the real side's leg work, upper-body, accessory and power work |
 | **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions (one per session a day, never per skill) |
 | **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
-| **Resolve** | discipline, patience, honesty with oneself | the daily minimum in full (one weighted heel-prop round from 10/9), graded morning checks, running sessions as written |
+| **Resolve** | discipline, patience, honesty with oneself | the daily minimum in full (one weighted heel-prop round from 10/9), graded morning checks, running a knee session as prescribed (the plan's doses, nothing past them) |
 | **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target); a day counts once it is closed, so Ember does not dip at breakfast and climb back by dinner, and a climax's dice read the Ember its week ended on |
 | **Inspiration** (max 4) | moments of clarity; spend to reroll a die or take a bold option | a week with the floor minimum every day; a Triumph week; every level from 5 on |
 | **HP** | how much punishment he can take in a fight | level and Vigor |
