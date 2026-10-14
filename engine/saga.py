@@ -62,6 +62,21 @@ Commands (run from the repo root):
                                         codex, cast, places, factions, the Annals, the game's own words; `check` notes them too
   archive                               move spent entries older than two Books to consequences_archive.json
 
+The records (engine/records.py; design.md §11): the story is kept as one event per block, and every page is rebuilt from them.
+  brief [--date D | --between --with WHO | --climax | --choice | --chapter] [--size]
+                                        what the next block must carry (the slot, what is owed), its continuity, what it may use (the people,
+                                        the threads, the Annals, callbacks, the arc), the format, and the record skeleton to send back
+  record 'JSON' [--force] [--slot N] [--allow-names A,B]
+                                        one block of the page recorded: validated against the heading, the registries and the plan; the event
+                                        and the GM note written; the slot done, a micro or the climax choice opened, due items fired, the
+                                        Annals marked spoken; world.json, the character files, the Codex, the threads and NOW.md rebuilt; check
+  choose --option K [--by darrow|bearing] [--which micro|climax] [--text …] 'ENTRY' [--witnessed a,b] [--pending]
+                                        his answer in one step: the ledger entry, the choices[] row, the choice closed (a climax's `### Choice` block follows)
+  project [--dry]                       rebuild every projection from the records (or list what would change)
+  history [--person ID] [--thread N] [--place ID] [--chapter N] [--last N] [--gm]   the records as a timeline
+  threads [--id N] [--all] | --id N --set k=v … | --new 'JSON'   the threads as data (GM)
+  glimpse add --kind K "TEXT" | glimpse show [--n N]   the line of the House after a log reply (rotated kinds, the last 20 kept)
+
 `when` / `at` grammar (ledger due items):
   next            the next scene (resolved by `add` to chNN:sN; at the climax, choice or transition stage: the next chapter's s1)
   later           a callback: never due or overdue, listed by `due --later`, fired wherever it fits (one per scene at most)
@@ -3949,7 +3964,9 @@ def cmd_record(args):
     if not parsed:
         die("key must look like ch02:s4, ch02:between-9, ch02:interlude, ch02:climax or ch02:choice")
     ch, sk, kind = parsed
-    if ch != int(pos["chapter"]) and not args.force:
+    ac = plan.get("answered_choice") or {}
+    prev_choice = kind == "choice" and int(ac.get("chapter", -1)) == ch  # a climax's Choice block belongs to its own chapter, even once the next is open
+    if ch != int(pos["chapter"]) and not args.force and not prev_choice:
         die(f"{key} is chapter {ch}; the plan is on chapter {pos['chapter']} (--force re-records an older block)")
     files = R.chapter_files()
     path = files.get(ch)
@@ -3983,7 +4000,7 @@ def cmd_record(args):
         probs.append("the stage is still 'scene': `plan set stage=climax` comes before the climax is written (it pays the owed world moves)")
     if kind == "climax" and not isinstance(ev.get("choice"), dict):
         probs.append('a climax record carries the choice as the page offers it: "choice": {"ask": …, "options": […], "default": K}')
-    if kind == "choice" and not plan.get("answered_choice") and not args.force:
+    if kind == "choice" and not ac and not args.force:
         probs.append("no answered climax choice is waiting for its block (`saga.py choose` first)")
     if kind != "prologue" and not str(ev.get("last_beat") or "").strip():
         probs.append("last_beat is required: the block's last beat in a line or two, in the page's words (the NOW page's 'Just happened')")

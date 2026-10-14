@@ -2,6 +2,8 @@
 
 One JSON file per character who has **appeared or been named on the page** in `saga/chronicle/`. The site build (`engine/build_site.py`) renders these. Darrow has a file too, for everything except his numbers; his Reckoning comes from `saga/state/darrow.json` and is never hand-edited.
 
+**Base by hand, the rest derived.** The fields you write are the person's base: `id`, `name`, `aliases`, `epithet`, `tier`, `faction`, `status` (until an event changes it), `sigil`, `appearance`, `portrait`, `portrait_alt`, `portrait_focus`, `relationships`, `reckoning`, and a first `quote`. Everything that follows the page (`first_seen`, `last_seen`, `last_seen_doing`, `now`, `story_so_far`, `quote` once the page gave a better one, `known_facts`, `appearances`) is rebuilt by the engine from the records (`saga/state/events/`) every time a block is recorded (`saga.py record`): a scene's record lists each person present with what they did, their `now`, and the new facts with their evidence, and the file follows. Never edit a derived field by hand: `check` refuses a stale file and `saga.py project` rewrites it. A new person: create the file with the base fields and empty derived ones (`"known_facts": []`, `"appearances": []`, `"first_seen"`/`"last_seen"` as the block that introduces them), then record the block that puts them on the page.
+
 ## Evidence rules (these are hard rules; the build and the audit enforce them)
 
 - Every sentence must be supported by text already in `saga/chronicle/`. If the page does not show it, it is not here.
@@ -110,4 +112,4 @@ Faction devices come from `factions.json`: `lance` (with the lance's numeral), `
 
 ## Maintenance (every scene, climax or choice)
 
-1. New on the page → new file (and an entry in `saga/bible/cast.md`). 2. Everyone on the page → `last_seen`, `last_seen_doing`, `now`, `appearances`, new `known_facts`, `appearance` if the story changed them, `status` if it changed. 3. `story_so_far` at chapter end. 4. `quote` when a better line lands. 5. Then `python3 engine/saga.py check`, `python3 engine/build_site.py`, and commit `docs/` with the rest.
+1. New on the page → new base file (and an entry in `saga/bible/cast.md`) before the block is recorded. 2. Everyone on the page → in the block's record (`saga.py record`): `did`, `now`, new `facts` (with `evidence` where this file's rules require it), `mention` for anyone only named, `status` if it changed, `quote` when a better line landed; `story_so_far` in the climax's record at chapter end. The engine rebuilds the file. 3. `appearance` changed by the story → edit the base field by hand. 4. `python3 engine/darrow.py ship` runs `check` and the build.

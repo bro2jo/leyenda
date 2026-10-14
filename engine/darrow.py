@@ -14,7 +14,7 @@ Commands (run from the repo root):
                                e.g. set daily D am_swelling=trace am_pain=0 floor_am=Y knee_session=A knee_as_planned=Y;
                                set daily D together=Y (time together on purpose: the Tether's practice; sync reports
                                TETHER TIED / DRAWN); set nutrition D weight_lb=156.2 creatine=Y "notes+=shake missed"
-  close DATE [--force]         close a day in one step: closed=Y, sync, then saga.py now and plan next --date DATE --full;
+  close DATE [--force]         close a day in one step: closed=Y, sync, then saga.py brief --date DATE (what the day's scene must carry);
                                refuses a missed day (nothing logged), a day already closed, and a new week whose last chapter is unclosed
   food add 'JSON' | food list DATE | food rm ID | food lib TEXT
                                add: an object or a list {date, time, meal, item, qty, kcal, protein_g, … every nutrient
