@@ -1839,17 +1839,14 @@ def cmd_close(args, cfg, rules):
     upsert_row("daily", date, {"closed": ("set", "Y")}, cfg)
     print(f"daily {date}: closed=Y")
     cmd_sync(argparse.Namespace(date=None), cfg, rules)
-    for cmd in (["now"], ["plan", "next", "--date", date, "--full"]):
-        print(f"\n$ python3 engine/saga.py {' '.join(cmd)}")
-        r = subprocess.run([sys.executable, str(saga)] + cmd, cwd=ROOT, capture_output=True, text=True)
-        sys.stdout.write(r.stdout)
-        if r.returncode:
-            sys.stdout.write(r.stderr)
-            sys.exit(f"saga.py {' '.join(cmd)} failed: the day is closed and synced, but its slot is not known; "
-                     f"fix the plan (a new week needs /checkpoint and `plan chapter open` first), then `saga.py plan next --date {date} --full`")
-    print("\nnext: write the slot's scene (style.md), then `saga.py plan done N --wrote chNN:sK` · `fire`/`void` each due item used · "
-          "`plan micro open N` if the scene ended on its micro · world.json, characters, places, NOW.md, threads.md · "
-          "`saga.py check` · `build_site.py` · commit")
+    print(f"\n$ python3 engine/saga.py brief --date {date}")
+    r = subprocess.run([sys.executable, str(saga), "brief", "--date", date], cwd=ROOT, capture_output=True, text=True)
+    sys.stdout.write(r.stdout)
+    if r.returncode:
+        sys.stdout.write(r.stderr)
+        sys.exit(f"saga.py brief failed: the day is closed and synced, but its slot is not known; "
+                 f"fix the plan (a new week needs /checkpoint and `plan chapter open` first), then `saga.py brief --date {date}`")
+    print("\nnext: write the scene to the brief (style.md: the wall, the craft, the reread), then `saga.py record '<the skeleton, filled>'`, then `darrow.py ship -m \"close DATE: …\"`")
 
 
 def as_list(js):

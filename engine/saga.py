@@ -3375,6 +3375,542 @@ def cmd_check(args):
 
 
 
+
+# ---------------------------------------------------------------- the brief: what a block needs, before it is written
+REGARD_WORDS = ((-25, "cold toward him"), (0, "wary of him"), (15, "civil with him"), (30, "warm toward him"), (50, "fond of him"), (101, "devoted to him"))
+
+
+def regard_words(v):
+    for lim, w in REGARD_WORDS:
+        if int(v) < lim:
+            return w
+    return "devoted to him"
+
+
+def cast_entries():
+    """{name: {appearance, voice}} from saga/bible/cast.md."""
+    out, cur = {}, None
+    if not P["cast"].exists():
+        return out
+    for line in P["cast"].read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            cur = line[3:].strip()
+            out[cur] = {"appearance": "", "voice": ""}
+        elif cur and line.startswith("- **Appearance:**"):
+            out[cur]["appearance"] = line[len("- **Appearance:**"):].strip()
+        elif cur and line.startswith("- **Voice:**"):
+            out[cur]["voice"] = line[len("- **Voice:**"):].strip()
+    return out
+
+
+def gm_character_lines(name):
+    """The GM entry's drafting lines for a name: wants/fears/now/under pressure (never the hides: those stay on demand)."""
+    path = ROOT / "saga/bible/_gm/characters.md"
+    if not path.exists():
+        return []
+    lines, head, keep = [], None, False
+    want = norm_title(name)
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("### "):
+            head = line[4:].split(" — ")[0].split(" (")[0].strip()
+            keep = norm_title(head) == want
+            continue
+        if line.startswith("## "):
+            keep = False
+        if keep and line.startswith(("- **Under pressure:**", "- **Wants:**", "- **Now:**", "- **Fears:**")):
+            l = line[2:].strip()
+            # only the tactic, the want, the fear and the now: what a person hides, carries or will do in a later Book stays on demand (`_gm/characters.md`)
+            l = re.split(r"\s*\*\*(?!Wants:|Fears:|Now:|Under pressure:)[A-Z][^*]{0,40}:\*\*", l)[0].strip()
+            lines.append(l)
+    return lines
+
+
+def people_index():
+    """{id: file} and a name → id map from the character files (name, aliases, epithet words)."""
+    files, by_word = R.char_files(), {}
+    names = {}
+    for cid, p in files.items():
+        try:
+            c = load_json(p)
+        except (OSError, ValueError):
+            continue
+        names[cid] = c
+        for s in [c.get("name")] + list(c.get("aliases") or []):
+            for w in re.findall(r"[A-Z][a-z]{2,}", str(s or "")):
+                if w in UP_SKIP:
+                    continue
+                by_word.setdefault(w, set()).add(cid)
+    return names, by_word
+
+
+def people_in(texts, names, by_word):
+    """Character ids a text names (a word of their name or an alias), in order of first mention."""
+    out = []
+    for text in texts:
+        for w in re.findall(r"[A-Z][a-z]{2,}", str(text or "")):
+            for cid in sorted(by_word.get(w, ())):
+                if cid not in out:
+                    out.append(cid)
+    return out
+
+
+def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2):
+    """One person for the brief: voice, under pressure, regard, now, their last facts, what they know on the touched threads."""
+    name = c.get("name") or cid
+    key = cid.split("-")[0]
+    comp = (world.get("companions") or {}).get(key)
+    lines = [f"· {name}" + (f" ({regard_words(comp.get('approval', 0))}, approval {comp.get('approval')})" if comp else "") + (f" · status {c.get('status')}" if c.get("status") not in (None, "alive") else "")]
+    ce = cast.get(name) or {}
+    if ce.get("voice"):
+        lines.append(f"  voice: {ce['voice']}")
+    for l in gm_character_lines(name):
+        lines.append(f"  {l}")
+    if c.get("last_seen_doing"):
+        lines.append(f"  last seen: {c['last_seen_doing']} ({(c.get('last_seen') or {}).get('scene')}, {(c.get('last_seen') or {}).get('place')})")
+    if c.get("now"):
+        lines.append(f"  now: {short(c['now'], 260)}")
+    for f in (c.get("known_facts") or [])[-facts_n:]:
+        lines.append(f"  fact ({f.get('scene')}): {short(f.get('fact'), 160)}")
+    for t in thr_rows or []:
+        if name.split()[-1].lower() in str(t.get("who_knows") or "").lower() or name.split()[0].lower() in str(t.get("who_knows") or "").lower():
+            lines.append(f"  knows (thread {t['id']}): {short(t.get('who_knows'), 160)}")
+    return lines
+
+
+def knee_line(rules):
+    try:
+        sheet = load_json(P["sheet"])
+        tied = int(sheet.get("knots_count") or 0)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+    kn = next((k for k in rules.get("knots", []) if int(k.get("n", 0)) == tied), None)
+    return f"Knots tied {ROMAN[tied]}: {kn.get('allows')}" if kn and kn.get("allows") else None
+
+
+def betweens_since_last_scene(st):
+    """[(event, [ledger chose lines])] for the Betweens written after the last scene of the current chapter."""
+    plan, ledger = st.plan, st.ledger
+    ch = int(plan["position"]["chapter"])
+    evs = [e for e in R.load_events(ch)]
+    last_scene = max((i for i, e in enumerate(evs) if e.get("kind") == "scene"), default=-1)
+    out = []
+    for e in evs[last_scene + 1:]:
+        if e.get("kind") != "between":
+            continue
+        made = [x for x in ledger.get("entries", []) if int((x.get("made") or {}).get("chapter", -1)) == ch and str((x.get("made") or {}).get("scene")) == e.get("scene")]
+        out.append((e, [x.get("chose") for x in made]))
+    return out
+
+
+def threads_for_brief(ch, cap=6):
+    thr = R.load_threads()
+    rows = [t for t in thr.get("threads", []) if t.get("status") == "open"]
+    touched = [t for t in rows if any(k.startswith(f"{ch:02d}:") for k in t.get("on_page") or [])]
+    rest = [t for t in rows if t not in touched]
+    rest.sort(key=lambda t: len(t.get("on_page") or []))
+    return (touched + rest)[:cap], len(rows)
+
+
+def thread_line(t):
+    n = len(t.get("on_page") or [])
+    state = "may reveal (two plants on the page)" if n >= 2 else ("one plant: plant again before any reveal" if n == 1 else "unplanted: plant only")
+    return f"· thread {t['id']} ({t.get('truth') or '—'}, {n} on the page, last {(t.get('on_page') or ['—'])[-1]}; {state}): {short(t.get('title'), 120)}\n    who knows: {short(t.get('who_knows'), 170)}"
+
+
+def lore_for_brief(texts, cap=3):
+    """Entries the slot names as lore:<id>, printed in full (capped), and the ids of the Annals' index for the rest."""
+    entries, _ = lore_entries()
+    ids = []
+    for text in texts:
+        for m in re.finditer(r"lore:([a-z]+\.[a-z0-9_]+)", str(text or "")):
+            if m.group(1) in entries and m.group(1) not in ids:
+                ids.append(m.group(1))
+    out = []
+    for lid in ids[:cap]:
+        e = entries[lid]
+        body = [l for l in e["lines"] if not l.startswith("- **")]
+        out.append(f"· {lid} — {e['title']} ({e['tier']}; spoken: {e['spoken'] or 'never'})")
+        out += ["    " + l for l in body if l.strip()][:8]
+    return out
+
+
+def callbacks_for_brief(st, cap=6):
+    rows = [(e, it) for e, it in pending_items(st.ledger) if it.get("at") == "later"]
+    return [f"· {it['id']}: {short(it.get('what'), 170)}" for e, it in rows[:cap]]
+
+
+def format_lines(kind, slot=None):
+    if kind == "scene":
+        out = ["heading: `### Scene N — Title` appended to the chapter file (N is the key's number)",
+               "a die, only with stakes: `python3 engine/darrow.py roll chNN-sK-<slug> --stat <might|vigor|finesse|resolve> --dc <8–20> [--prof] [--art <id>] [--adv|--dis]`; paste its first line as printed, on its own line, before the outcome",
+               "the Reckoning box at the end, only when sync reported a change: `> ⟦ THE RECKONING ⟧` then one line per change (`> Might 11 → 12`, `> The Tether: **a name**.`, `> Rank: **Kindled**.`)"]
+        if slot and slot.get("micro"):
+            out.append("ends on the small choice, exactly: `**What does Darrow say?**` (or do?) then `1. **…**` `2. **…**` `3. **…**`, one line each, nothing after it")
+        return out
+    if kind == "between":
+        return ["heading: `### Between — Title` appended after the last block; close third on Darrow, past tense; 300–500 words unless the exchange needs more",
+                "zero or one die, only with stakes or a game: `python3 engine/darrow.py roll chNN-between-K-<slug> --stat … --dc …` (never --chapter or --tier); its first line pasted as printed",
+                "no Reckoning box, no choice list; it ends on a line that hands the moment back (a look, a bell, a door, a last word)"]
+    if kind == "climax":
+        return ["heading: `## Climax — Title`; 900–1,800 words, the space on the decision and its cost",
+                "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … --dc … [--prof] [--art <id>] --chapter N`; each first line pasted as printed",
+                "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`), struck through if unmet, who approves in italics",
+                "the Reckoning box before the choice if sync reported a change"]
+    if kind == "choice":
+        return ["heading: `### Choice — Title` appended to the climax's chapter file; 100–250 words: the moment the choice lands, companions reacting in voice by their under-pressure lines; approval shows in what they say, never as numbers",
+                "a Book's last climax: this block is the crossing itself (`saga.py arc tN.<road>`), as long as it needs"]
+    return []
+
+
+def record_skeleton(key, kind, date, people_ids, place, extra=None):
+    ev = {"key": key}
+    if kind == "scene":
+        ev["date"] = date
+    ev.update({"where": {"place": place, "detail": "<where in it he is at the end>"}, "time": "<story time>",
+               "last_beat": "<the last beat, one or two sentences, the page's words>",
+               "people": [{"id": cid, "did": "<one line>", "now": "<1–3 sentences, as far as the reader knows>", "facts": [{"fact": "<one sentence>", "evidence": "<verbatim words of the block>"}]} for cid in people_ids]
+               + [{"id": "<only named>", "mention": True}],
+               "codex": [{"section": "Places and things", "name": "<new thing>", "text": "<what it is (Ch N Sc K)>"}],
+               "lore": [], "threads": [{"id": 0, "how": "plant|touch|payoff"}], "fired": [], "voided": [],
+               "struggle": None, "quest": None, "season": None, "inventory": None, "tether": None, "rank": None,
+               "now": {"against": "<one line>", "next": "<one line, spoiler-free>"},
+               "gm": {"note": "<what the block did for the plan; what was kept off the page>", "next_must_know": "<what the next block must honour>",
+                      "threads": [{"id": 0, "who_knows": "<updated>", "note": "<updated>"}]}})
+    if kind == "scene":
+        ev["micro_opened"] = False
+    if kind == "climax":
+        ev["choice"] = {"ask": "What does Darrow do?", "options": ["<option 1 as written>", "<option 2>", "<option 3>"], "default": 1}
+        ev["recap"] = "<one spoiler-free line for the top of this chapter in the reader>"
+        ev["story_so_far"] = {cid: "<2–5 sentences, spoiler-free, for the chapter just closed>" for cid in people_ids[:3]}
+    if kind == "between":
+        ev["invite"] = {"slot": "<N if this Between answers slot N's invitation>", "action": "take"}
+    if extra:
+        ev.update(extra)
+    return ev
+
+
+def cmd_brief(args):
+    st = State()
+    plan, world, ledger, bearing = st.plan, st.world, st.ledger, st.bearing
+    rules = load_json(P["rules"])
+    pos = plan["position"]
+    ch = int(pos["chapter"])
+    cast = cast_entries()
+    names, by_word = people_index()
+    try:
+        sheet = load_json(P["sheet"])
+    except (OSError, ValueError, json.JSONDecodeError):
+        sheet = {}
+    L = []
+    mode = "chapter" if args.chapter else "climax" if args.climax else "choice" if args.choice else "between" if args.between else "slot"
+
+    def section(title):
+        L.append("")
+        L.append(f"== {title} ==")
+
+    # ---------------- the header: where the story stands
+    evs = R.load_events(ch)
+    last = evs[-1] if evs else None
+    files = R.chapter_files()
+    L.append(f"BRIEF · Book {ROMAN[int(pos['book'])]} · Chapter {ch} — {world.get('chapter_title', '')} · {kl}" if (kl := knot_line(plan)) else f"BRIEF · Book {ROMAN[int(pos['book'])]} · Chapter {ch} — {world.get('chapter_title', '')}")
+    L.append(f"chapter question: {plan['chapter'].get('question')}")
+    tier = (sheet.get("chapter_now") or {}).get("tier_so_far")
+    L.append(f"the week so far: {tier or '—'} (colour and tier are GM-only; the page never says them) · Ember {(sheet.get('ember') or {}).get('tier', '—')} · {bearing_line(bearing)}")
+
+    # ---------------- which block
+    key = slot = None
+    if mode == "slot":
+        slot = next_slot(plan, args.date)
+        if not slot:
+            die("no slot to write: `plan chapter open` first (or `brief --between` for a Between)")
+        if slot.get("kind") == "interlude":
+            n_int = sum(1 for e in evs if e.get("kind") == "interlude")
+            key = f"{ch2(ch)}:interlude" + (f"-{n_int + 1}" if n_int else "")
+            kind = "interlude"
+        elif slot.get("kind") == "cutaway":
+            key, kind = f"{ch2(ch)}:s{pos['next_scene']}", "scene"
+        else:
+            key, kind = f"{ch2(ch)}:s{pos['next_scene']}", "scene"
+        L.append(f"THIS BLOCK: {key} · {slot_label(slot)} · {slot.get('status')}" + (f" · colour {colour_for(slot['day'])}" if slot.get("day") else ""))
+    elif mode == "between":
+        n_btw = sum(1 for e in evs if e.get("kind") == "between")
+        key, kind = f"{ch2(ch)}:between-{n_btw + 1}", "between"
+        since = betweens_since_last_scene(st)
+        L.append(f"THIS BLOCK: {key} · a Between ({len(since)} of 2 written since the last scene" + ("; a third is two lines and the moment passes" if len(since) >= 2 else "") + ")")
+    elif mode == "climax":
+        key, kind = f"{ch2(ch)}:climax", "climax"
+        L.append(f"THIS BLOCK: {key} · the chapter's climax · stage {pos.get('stage')}" + ("" if pos.get("stage") in ("climax", "choice") else " (⚠ `plan set stage=climax` first: it pays the owed world moves and makes the climax-targeted items due)"))
+    elif mode == "choice":
+        key, kind = f"{ch2(ch)}:choice", "choice"
+        ac = plan.get("answered_choice")
+        if not ac:
+            die("no answered climax choice is waiting for its block (`saga.py choose` first)")
+        key = f"{ch2(int(ac['chapter']))}:choice"
+        L.append(f"THIS BLOCK: {key} · the consequence of the climax choice of chapter {ac['chapter']}: option {ac['option']} by {ac['by']}: {ac.get('text')}")
+    else:
+        kind = "chapter"
+
+    if mode == "chapter":
+        return brief_chapter(st, L, args)
+
+    # ---------------- MUST
+    section("MUST: what this block carries")
+    if mode == "slot":
+        L.append(f"plan: {slot.get('plan')}")
+        L.append(f"turn: {slot.get('turn') or '(none planned: state one in a line first: ' + TURN_HINT + ')'}")
+        m = slot.get("micro")
+        if m:
+            L.append(f"ends on {'the beat choice' if m.get('beat') else 'a small choice (' + str(m.get('axis')) + ')'}: {m.get('ask')}")
+            for i, opt in enumerate(m.get("options", []), 1):
+                b = (m.get("bearing") or [None] * len(m["options"]))[i - 1]
+                L.append(f"  {i}. {opt}" + (f" [{', '.join(f'{k} {v:+d}' for k, v in b.items())}]" if b else "") + ("  (default)" if m.get("default") == i else ""))
+        if slot.get("challenge"):
+            c = slot["challenge"]
+            L.append(f"device, a challenge ({c.get('status')}): {c.get('objective')} · approaches: " + "; ".join(f"{a.get('name')} ({a.get('stat')}{' + ' + a['art'] if a.get('art') else ''}, DC {a.get('dc')})" for a in c.get("approaches") or []) + f" · after each roll `saga.py challenge {slot['n']} success|fail`; the counters never reach the page")
+        if slot.get("invite"):
+            inv = slot["invite"]
+            L.append(f"device, an invitation ({inv.get('status')}): {inv.get('who')} wants {inv.get('want')} · why now: {inv.get('why_now')} · offer it in one in-world sentence as the reply's last line; if ignored by the next close: {inv.get('if_ignored')}")
+        if slot.get("kind") == "quest" and plan.get("quests", {}).get(slot.get("quest"), {}).get("project"):
+            L.append("device, a project stage: the stage's decision goes into the page, then world.json → projects[] through the record")
+        for o in owed_moves(plan):
+            L.append(f"owed world move (open on it, one clause): {o['world_move']}")
+        mm = re.match(r"^b(\d+)\.(\d+)$", str(slot.get("beat") or ""))
+        if slot.get("kind") == "spine" and mm and int(mm.group(2)) > 1:
+            prev = f"b{mm.group(1)}.{int(mm.group(2)) - 1}"
+            for l in [l for l in arc_sections().get(prev, (0, "", []))[2] if "Downstream" in l]:
+                L.append(f"downstream of {prev}'s choice (honour it in this beat): {short(l, 300)}")
+    if mode == "between":
+        s_next = next_slot(plan)
+        if s_next:
+            L.append(f"off limits (the next slot owns it): {short(s_next.get('plan'), 220)}")
+        waiting = [s for s in plan["chapter"].get("slots", []) if (s.get("invite") or {}).get("status") == "waiting"]
+        for s in waiting:
+            inv = s["invite"]
+            L.append(f"an invitation is waiting (slot {s['n']}): if this Between answers it, {inv.get('who')} opens with their first line, not Darrow's: they want {inv.get('want')} ({inv.get('why_now')}); record it with \"invite\": {{\"slot\": {s['n']}, \"action\": \"take\"}}")
+        L.append("every Between changes an understanding, a relationship or a small obligation; its consequence is one terse ledger entry at most (`saga.py add`, made.scene between-K); never the plan's work, never a name or place the page has not spoken, nothing with the knee the plan has not cleared")
+    if mode == "climax":
+        c = plan["chapter"].get("climax") or {}
+        L.append(f"climax plan: {c.get('plan')}")
+        L.append("checks: " + ("; ".join(c.get("checks") or []) or "none planned"))
+        for i, o in enumerate(c.get("options") or [], 1):
+            L.append(f"  option {i}: {o}" + ("  (default)" if c.get("default") == i else ""))
+        rows = chapter_rows()
+        frozen = rows.get(ch)
+        L.append(f"the tier: {frozen.get('tier') + ' (frozen by chapter-close; roll with --chapter ' + str(ch) + ')' if frozen else 'NOT FROZEN YET: `darrow.py chapter-close --date <Saturday>` first; the dice read the frozen tier'}")
+        L.append("the tier's shape: Triumph, the plan works and something extra; Hard-won, he wins and it costs something real; Costly, one thing won and one lost; Setback, the enemy gains ground and the reversal sets up the next chapter (never humiliating, never a lecture)")
+        for o in owed_moves(plan):
+            L.append(f"owed world move (open on it): {o['world_move']}")
+        beat = pos.get("beat")
+        sec = arc_sections().get(beat)
+        if sec:
+            tiers = [l for l in sec[2] if re.match(r"^- \*(Triumph|Hard-won|Costly|Setback)", l)]
+            for l in tiers:
+                L.append(f"arc {beat}: {short(l, 260)}")
+            choice_l = [l for l in sec[2] if l.startswith("**Choice:**")]
+            for l in choice_l:
+                L.append(f"arc {beat} {short(l, 400)}")
+    if mode == "choice":
+        ac = plan["answered_choice"]
+        L.append(f"the choice: {ac.get('ask')} → {ac['option']}. {ac.get('text')} (by {ac['by']}; ledger {ac.get('ledger')})")
+        e = next((x for x in ledger.get("entries", []) if x.get("id") == ac.get("ledger")), None)
+        if e:
+            L.append(f"its ledger entry: {short(e.get('chose'), 200)} · now: {json.dumps(e.get('now') or {}, ensure_ascii=False)}")
+            for it in e.get("due") or []:
+                L.append(f"  it owes: {it['id']} [{it.get('weight')}] at {it.get('at')}: {short(it.get('what'), 180)}")
+        beat = pos.get("beat")
+        sec = arc_sections().get(beat)
+        if sec:
+            for l in [l for l in sec[2] if "Downstream" in l]:
+                L.append(f"arc {beat}: {short(l, 300)}")
+        L.append("companions react in their own voices by their under-pressure lines; an epithet earned must be spoken on the page here")
+    # owed things, every mode
+    om = plan.get("open_micro")
+    if om and mode in ("slot", "climax"):
+        L.append(f"OPEN small choice from scene {om.get('scene')} ({om.get('ask')}): if still unanswered, Darrow answers for himself with its default, option {om.get('default')} (`saga.py choose --by bearing '<entry>'`), said in one Ledger line, and the consequence opens this block in a clause")
+    for l in open_choice_lines(plan):
+        L.append(l)
+    ac = plan.get("answered_choice")
+    if ac and mode != "choice":
+        L.append(f"ANSWERED climax choice of chapter {ac['chapter']} (option {ac['option']}: {short(ac.get('text'), 100)}) still waits for its `### Choice` block: `saga.py brief --choice`")
+    due_now = [it for e, it in pending_items(ledger) if item_status(it, st) in ("due", "overdue")]
+    for it in due_now:
+        L.append(f"DUE {it['id']} [{it.get('weight')}] @{it.get('at')} ({item_status(it, st)}): {it.get('what')}")
+    if not due_now:
+        L.append("due now: nothing")
+    ro = rank_owed(plan)
+    if ro:
+        L.append(f"RANK OWED: {ro[0]} → {ro[1]}: one short prose beat of the script changed, as he notices it; the box names the rank; record \"rank\": \"{ro[1]}\"")
+    if mode == "slot" and slot.get("kind") == "quest" and str(slot.get("quest")) == "rae.tether":
+        t = sheet.get("tether") or {}
+        L.append(f"THE TETHER stage {t.get('stage')} ({t.get('name')}): this scene pays it; its box ends `> The Tether: **{t.get('name')}**.`; record \"tether\": \"{t.get('name')}\"")
+    section("CONTINUITY (from the records)")
+    loc = world.get("location") or {}
+    places = known_places()
+    pl = places.get(loc.get("place") or "", {})
+    L.append(f"where he is: {pl.get('name') or loc.get('place')}" + (f", {pl['subtitle']}" if pl.get("subtitle") else "") + f"; {loc.get('detail')}")
+    if last:
+        L.append(f"last block: {last['key']} · {last.get('title')}" + (f" · {last.get('time')}" if last.get("time") else "") + (f" · covers {last.get('date')}" if last.get("date") else ""))
+        if last.get("last_beat"):
+            L.append(f"  its last beat: {short(last['last_beat'], 400)}")
+    if world.get("season"):
+        L.append(f"season: {world['season']}")
+    kl2 = knee_line(rules)
+    if kl2:
+        L.append(f"the knee, on the page: {kl2}")
+    if world.get("inventory"):
+        L.append("in hand: " + "; ".join(world["inventory"]))
+    since = betweens_since_last_scene(st)
+    if since and mode != "between":
+        for e, chose in since:
+            L.append(f"since the last scene, a Between: {e.get('title')}: {short(e.get('last_beat'), 220)}" + (f" · it changed: {short(' / '.join(c for c in chose if c), 200)}" if any(chose) else ""))
+    elif since and mode == "between":
+        for e, chose in since:
+            L.append(f"the Between before this one: {e.get('title')}: {short(e.get('last_beat'), 220)}")
+    today = (slot or {}).get("day") or today_local().isoformat()
+    head, grows = R.glimpse_lines()
+    todays = [g for g in grows if g["date"] == today]
+    for g in todays[-3:]:
+        L.append(f"a glimpse already given today ({g['kind']}; the block may echo it, never contradicts it): {short(g['text'], 160)}")
+    here = []
+    for cid, c in names.items():
+        if cid == "darrow" or c.get("status") not in ("alive", "hollowed"):
+            continue
+        if (c.get("last_seen") or {}).get("place") == loc.get("place"):
+            here.append(f"{c.get('name')} ({short(c.get('last_seen_doing'), 70)})")
+    if here:
+        L.append("by the page, here: " + " · ".join(here))
+    # ---------------- MAY
+    section("MAY: the people in the room (voice, tactic, regard, what they know)")
+    texts = []
+    if mode == "slot":
+        texts = [slot.get("plan"), slot.get("turn"), str((slot.get("invite") or {}).get("who") or "").replace("-", " ").title()]
+    elif mode == "climax":
+        texts = [(plan["chapter"].get("climax") or {}).get("plan")]
+    elif mode == "choice":
+        texts = [plan["answered_choice"].get("text"), (plan["chapter"].get("climax") or {}).get("plan")]
+    elif mode == "between" and args.with_:
+        texts = [args.with_.replace(",", " ").replace("-", " ").title()]
+    ids = people_in(texts, names, by_word)
+    comps = [cid for cid in names if cid.split("-")[0] in (world.get("companions") or {}) and (world["companions"][cid.split("-")[0]].get("present") is not False)]
+    for cid in comps:
+        if cid not in ids and (mode == "between" or mode == "climax"):
+            ids.append(cid)
+    if "darrow" in ids:
+        ids.remove("darrow")
+    ids = ["darrow"] + ids
+    thr_rows, n_open = threads_for_brief(ch)
+    for cid in ids[:6]:
+        L += person_brief(cid, names[cid], world, cast, thr_rows, facts_n=2)
+    if len(ids) > 6:
+        L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
+    section(f"MAY: threads ({n_open} open; `saga.py threads` for all)")
+    for t in thr_rows:
+        L.append(thread_line(t))
+    L.append("plant and pay off: touch at least one open thread a chapter, plant at most one new one (a new thread goes in gm.threads with \"new\": true); a truth is revealed only after two plants")
+    lore_lines = lore_for_brief(texts)
+    if lore_lines:
+        section("MAY: the Annals the plan names (received, not revealed; as many touches as the scene's meaning needs, often one)")
+        L += lore_lines
+    else:
+        L.append("lore: the plan names no entry; `saga.py lore grep <word>` for a place or custom the block touches, `lore pick saying` for a line in someone's mouth")
+    cbs = callbacks_for_brief(st)
+    if cbs:
+        section("MAY: callbacks waiting for a fit (one per block at most; record it in \"fired\")")
+        L += cbs
+    if mode == "slot":
+        arc_key = slot.get("beat") if slot.get("kind") == "spine" else slot.get("quest")
+        if arc_key and arc_key in arc_sections():
+            section(f"THE ARC: {arc_key} (the plan above is this slot's share of it)")
+            sec = arc_sections()[arc_key]
+            lines = [l for l in sec[2]]
+            while lines and not lines[-1].strip():
+                lines.pop()
+            L += lines[:40]
+            if len(lines) > 40:
+                L.append(f"… ({len(lines) - 40} more lines: `saga.py arc {arc_key}`)")
+    elif mode == "climax" and pos.get("beat") in arc_sections():
+        section(f"THE ARC: {pos.get('beat')}")
+        sec = arc_sections()[pos.get("beat")]
+        L += [l for l in sec[2] if l.strip()][:40]
+    section("FORMAT")
+    L += ["· " + l for l in format_lines(kind if mode != "slot" else "scene", slot)]
+    L.append("· the wall: no foods, numbers, exercises, therapy or rehab words; the day's deeds colour only Darrow (warmth or cold in him, how he reads a room), never how others treat him; the outcome waits for the climax")
+    L.append("· names: only what the page has spoken, or what this record registers; unnamed novices, lay brothers and the kitchen are fine")
+    L.append("· then the reread (style.md §4), then `saga.py record` with the skeleton below, then `darrow.py ship`")
+    section("RECORD (send this back, filled; drop what does not apply)")
+    present = [cid for cid in ids if cid != "darrow"][:4]
+    L.append(json.dumps(record_skeleton(key, kind if mode != "slot" else "scene", today if mode == "slot" else None, ["darrow"] + present, loc.get("place")), ensure_ascii=False, indent=None))
+    text = "\n".join(L)
+    print(text)
+    if args.size:
+        print(f"\n[brief: {len(text):,} chars ≈ {len(text) // 4:,} tokens]")
+
+
+def brief_chapter(st, L, args):
+    """The planning brief: the next chapter's skeleton with the pacing rule applied, the quests that may run, the beats left, the threads owed a touch."""
+    plan, world = st.plan, st.world
+    pos = plan["position"]
+    book = int(pos["book"])
+    cur = plan.get("chapter", {})
+    try:
+        ws = dt.date.fromisoformat(cur.get("week_start")) + dt.timedelta(7)
+    except (TypeError, ValueError):
+        die("the current chapter has no week_start; pass the Sunday by opening the chapter from `plan chapter template --week_start`")
+    L.append(f"THIS BLOCK: the plan of chapter {int(cur.get('number', 0)) + 1} (week of Sunday {ws}) · `plan chapter open --number {int(cur.get('number', 0)) + 1} '<json>'`")
+    L.append("")
+    L.append("== MUST ==")
+    beats = plan.get("core_beats", {})
+    left = sorted([k for k, v in beats.items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned"], key=lambda k: int(k.split(".")[1]))
+    curb = pos.get("beat")
+    L.append(f"the Book's beats: current {curb} ({beats.get(curb, {}).get('status')}); planned after it: {', '.join(left) or 'none (the transition is next)'}")
+    kl = knot_line(plan)
+    if kl:
+        L.append(kl)
+    L.append("shape: 7 slots Sun–Sat (≥ 2 spine, Saturday spine, ≤ 1 interlude, two float quest slots); micros in non-adjacent slots touching ≥ 2 axes; world_moves (3); the climax plan with checks, options and a default (the option the highest-approval companion present would pick); the chapter touches ≥ 1 open thread")
+    prev = sorted(device_kinds(cur.get("slots", []), plan.get("quests", {})))
+    L.append(f"devices: one per slot, none on neighbouring days, at most two kinds of challenge/invite/project, ≤ 1 challenge, ≤ 2 invites; last chapter carried {', '.join(prev) or 'none'}, so those kinds rest this chapter")
+    quests = plan.get("quests", {})
+    live = [k for k, q in quests.items() if q.get("status") == "live" and not q.get("standing") and not q.get("project")]
+    L.append(f"quests live now: {', '.join(f'{k} (stage {quests[k].get(chr(115)+chr(116)+chr(97)+chr(103)+chr(101))})' for k in live) or 'none'}; never more than two live at once; required first; a quest finishes within two chapters")
+    cands = []
+    for k, q in quests.items():
+        if q.get("status") != "available":
+            continue
+        gate = q.get("gate")
+        g = gate_state(gate, st)[0] if gate else "MET"
+        cands.append((0 if q.get("priority") == "required" else 1 if q.get("priority") == "optional" else 2, k, q.get("priority"), g, gate))
+    cands.sort()
+    for _, k, pr, g, gate in cands[:10]:
+        L.append(f"  candidate {k} ({pr}; gate {g}{': ' + gate if gate and g != 'MET' else ''}): {short(' '.join(arc_sections().get(k, (0, '', ['']))[2][1:3]), 160)}")
+    t = (load_json(P["sheet"]).get("tether") or {}) if P["sheet"].exists() else {}
+    rt = quests.get("rae.tether") or {}
+    if int(t.get("stage") or 0) > int(rt.get("stage") or 0):
+        L.append(f"THE TETHER: the sheet stands at stage {t.get('stage')} ({t.get('name')}) and the page at {rt.get('stage') or 0}: the first float quest slot carries stage {int(rt.get('stage') or 0) + 1}")
+    L.append("the climax choice carries two scenes into this chapter if unanswered, then its default; slot 1 may be written while it is open")
+    oc = plan.get("open_choice")
+    if oc:
+        L += open_choice_lines(plan)
+    L.append("")
+    L.append("== MAY ==")
+    thr_rows, n_open = threads_for_brief(int(pos["chapter"]))
+    for tr in thr_rows:
+        L.append(thread_line(tr))
+    nxt = left[0] if left and pos.get("stage") in ("climax", "choice", "transition") else curb
+    if nxt in arc_sections():
+        L.append("")
+        L.append(f"== THE ARC: {nxt} (the next spine beat) ==")
+        L += [l for l in arc_sections()[nxt][2] if l.strip()][:40]
+    L.append("")
+    L.append("== TEMPLATE (fill plan, turn, micro, devices, world_moves, climax; keep the rest) ==")
+    tpl = chapter_template(ws, plan)
+    for s in tpl["slots"]:
+        s["device_allowed"] = s["n"] in (1, 3, 5, 7)  # a device every other day keeps them off neighbouring days; move them as the week needs
+    L.append(json.dumps(tpl, ensure_ascii=False, indent=1))
+    text = "\n".join(L)
+    print(text)
+    if args.size:
+        print(f"\n[brief: {len(text):,} chars ≈ {len(text) // 4:,} tokens]")
+
 # ---------------------------------------------------------------- the records: record, project, history, threads, glimpse, choose
 RECORD_KEYS = ("key", "chapter", "scene", "kind", "title", "date", "written", "after", "where", "time", "last_beat", "people", "codex",
                "lore", "threads", "fired", "voided", "quest", "struggle", "season", "book_title", "inventory", "tether", "rank", "now",
@@ -3848,6 +4384,7 @@ def main():
     s = sub.add_parser("arc"); s.add_argument("id")
     s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
+    s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
     s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
     s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
     s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
@@ -3865,7 +4402,7 @@ def main():
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
         "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
-        "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose,
+        "brief": cmd_brief, "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose,
     }[args.cmd](args)
 
 
