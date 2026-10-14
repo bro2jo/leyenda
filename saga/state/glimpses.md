@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-11 · weather · Snow came on again after dark, fine and dry, the kind that squeaks underfoot. By the hour bell it had filled the court's bootprints, and the court looked as if nobody had ever stood in it.
 - 2026-10-12 · verse · From the far end of the hall, low, a novice is singing the far cots to sleep: "Hush, the bell is counting, / one for you and one for me." Down the row, more than one of the near cots is listening too.
 - 2026-10-12 · house · In the small hours a lay brother comes down the hall with the night lamp, counting cots under his breath. He loses his place at Hollis's snore, sighs, and starts again from the door.
 - 2026-10-12 · saying · A lay brother barks his shin on the woodbox in the dark and says "Bells take it," loud. Then, to the whole silent hall, much quieter: "Not those bells. Some other bells."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-13 · overheard · Two lay brothers at the hall door, arguing over the night lamp. "Your turn." "I did it last night." "You lost count last night." "Then whose turn is it?" "Yours. Twice."
 - 2026-10-13 · saying · A lay brother handing a new novice the evening lamp for the Steps, the way it has been handed to every new novice: "Past the hundredth after dark, you're on your own." The novice asks the hundredth what. Nobody tells her.
 - 2026-10-14 · house · Under the next cot to the far lamp there are two stools now instead of one. Nobody has said why, and nobody has moved the second back.
+- 2026-10-14 · overheard · At the hall door, a novice to a lay brother: "Is it true the Captain sat the far lamp?" "Till the dawn bell." "Did anything happen?" "No." A pause. "Good." "That's what I said."
