@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-6",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-6"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-3"
   },
-  "last_seen_doing": "On his cot beside Hollis's, having held Benedek's hand for the length of a loaf so Hollis could eat, and given it back.",
-  "now": "He has answered to his name: he gave it and his rank to the Confessor at the bars in front of the whole House, and the valley's story is dead at the gate. Maelis read the knee after the wicket and found it held, and still soft; the word under his name has changed on his palms. On the night of the gate he went down the hall to his three Ninth men and came back having promised they would be asked before he decides for them again, and he won a story told true off Hollis at knucklebones. On the feast morning Benedek lay Hollowed in the next cot but one, frost on his mouth and a chip of black glass under his tongue that the far cots never had. Darrow held the hall's eyes on the lad's mouth, not the door, and from his cot learned that nobody passed in the night. Confessor Ivo Marrant and four grey cloaks sit up in turns round one fire on the lower terrace below the gate, the sixth keeps the winch-house. After the finding he asked Maelis what the glass was and got no answer; instead she made him say what he feared, that the bell's law cannot protect a man who has no will to refuse with, and ordered him to take the slow way every time. He got Hollis to eat the feast bread by holding the lad's hand for the length of a loaf, and owes Hollis silence about how.",
+  "last_seen_doing": "Sitting up on the end of his cot, having told the hall that nobody passed in the night.",
+  "now": "He has answered to his name: he gave it and his rank to the Confessor at the bars in front of the whole House, and the valley's story is dead at the gate. Maelis read the knee after the wicket and found it held, and still soft; the word under his name has changed on his palms. On the night of the gate he went down the hall to his three Ninth men and came back having promised they would be asked before he decides for them again, and he won a story told true off Hollis at knucklebones. On the feast morning Benedek lay Hollowed in the next cot but one, frost on his mouth and a chip of black glass under his tongue that the far cots never had. Darrow held the hall's eyes on the lad's mouth, not the door, and from his cot learned that nobody passed in the night. Confessor Ivo Marrant and four grey cloaks sit up in turns round one fire on the lower terrace below the gate, the sixth keeps the winch-house. After the finding he asked Maelis what the glass was and got no answer; instead she made him say what he feared, that the bell's law cannot protect a man who has no will to refuse with, and ordered him to take the slow way every time. He got Hollis to eat the feast bread by holding the lad's hand for the length of a loaf, and owes Hollis silence about how. The day after the feast he learned from his cot that nobody passed in the night (the novice at the far lamp, the kitchen's flour, Wren's count of doors and keys) and told the hall so before the Confessor's word, ember witchcraft, could settle on Maelis.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -460,6 +460,18 @@
       "chapter": "02",
       "scene": "between-6",
       "evidence": "Give him to me."
+    },
+    {
+      "fact": "From his cot he read the night novice's wick-blackened fingers and got the truth from her: she was awake all night watching the door, and nobody passed the far cots.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "Show me your fingers."
+    },
+    {
+      "fact": "He told the hall that nobody passed in the night, not a grey cloak, not a lay brother, not the Mender, when it began to look toward Maelis.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "Not the Mender. Nobody."
     }
   ],
   "relationships": [
@@ -596,6 +608,10 @@
     {
       "chapter": "02",
       "scene": "between-6"
+    },
+    {
+      "chapter": "02",
+      "scene": "3"
     }
   ]
 }

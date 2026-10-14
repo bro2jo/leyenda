@@ -25,11 +25,11 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-5",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-5"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-3"
   },
-  "last_seen_doing": "Turning a far-cot man's face to the lamp, two fingers under the jaw, after sending the Captain to make Hollis eat.",
+  "last_seen_doing": "Bent over a man at the far cots, two fingers under his jaw, when the hall began to look at her and the Captain told it nobody passed.",
   "now": "At Saint Ysolde's, on the feast morning. At the dawn bell Benedek was found Hollowed; she found a chip of black glass under his tongue, said the far cots never had this, and took it away in her coat. At the far cots she would tell the Captain only that it was not the far cots' sickness, made him say what he feared about the bell's law and a man with no will, and sent him to make Hollis eat.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
   "quote": {
@@ -201,6 +201,12 @@
       "chapter": "02",
       "scene": "between-5",
       "evidence": "He won't for me."
+    },
+    {
+      "fact": "When Marrant's word, ember witchcraft, reached the hall and heads turned toward her, the Captain told the hall that nobody passed, not the Mender either.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "Not the Mender."
     }
   ],
   "relationships": [
@@ -311,6 +317,10 @@
     {
       "chapter": "02",
       "scene": "between-5"
+    },
+    {
+      "chapter": "02",
+      "scene": "3"
     }
   ]
 }

@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-1",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-1"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-3"
   },
-  "last_seen_doing": "On the low wall-walk at nightfall, shutting her ledger on a new line: Times the Captain has promised to tell me first: 1.",
-  "now": "At Saint Ysolde's, on the night the Confessors camped below the gate. She ran for the bell on Darrow's word, and when he gave his name at the bars anyway she counted the Confessors rather than look at him. On the wall-walk she made him count the hall's lamps while she told him how stupid it was, and he kept the count; she told him to tell her first, next time he means to be brave, and wrote his promise in her ledger.",
+  "last_seen_doing": "Giving the Captain her count of the hall's doors and the Prior's keys, and stopping short of saying where it came from.",
+  "now": "At Saint Ysolde's, the day after the feast. She ran for the bell on Darrow's word and has his promise to tell her first next time, in her ledger. Maelis has her counting the Captain's steps. Since Benedek was found she will not look at the Grey Cot; she brought the Captain her count of the barred doors and the Prior's nine keys, and he stopped her before she said where it came from.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word. When he gave his name at the bars anyway, she counted the Confessors instead of looking at him.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -165,6 +165,24 @@
       "chapter": "01",
       "scene": "1",
       "evidence": "all the way to the Oathspire"
+    },
+    {
+      "fact": "Maelis has her count the Captain's steps and read the number to her at every bell.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "I'm to read her the number at every bell."
+    },
+    {
+      "fact": "Her count the day after the feast: both doors into the hall barred at the night bell and at the dawn bell, and all nine keys on the Prior's ring hanging where they hang.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "Keys on the Prior's ring: nine."
+    },
+    {
+      "fact": "She would not look at the Grey Cot, and went on the Captain's errand without arguing it.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "She did not look at the Grey Cot."
     }
   ],
   "relationships": [
@@ -250,6 +268,10 @@
     {
       "chapter": "02",
       "scene": "between-1"
+    },
+    {
+      "chapter": "02",
+      "scene": "3"
     }
   ]
 }

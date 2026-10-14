@@ -63,11 +63,19 @@
       "after": "2",
       "covers": [],
       "written": "2026-10-12"
+    },
+    {
+      "scene": 3,
+      "title": "Nobody Passed",
+      "covers": [
+        "2026-10-13"
+      ],
+      "written": "2026-10-13"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall on the feast morning, on his cot by Hollis's; Hollis has eaten and has Benedek's hand back in both of his",
+    "detail": "the infirmary hall the day after the feast, sitting up on the end of his cot by Hollis's and the Grey Cot, after telling the hall that nobody passed",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -76,11 +84,11 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. The named are to be taken down the Steps to the Oathspire and made to kneel where everyone can watch, which would say the Ninth drowned for its own bad faith, and would tear the thread in Darrow's knee. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Miss one ringing and the law lapses till the next, and Sister Pell, who rings it, is very old. At the gate, Confessor Ivo Marrant read his names at the bars, and two of his men came through the wicket before the bell rang, late. Now five grey cloaks are camped on the lower terrace below the gate, and the sixth holds the winch-house, the cage and Rae's cart, so the road is theirs. Marrant's price: the Captain of the Ninth comes down and kneels, and the rest of the paper goes back in his cloak. Darrow went to the bars and gave him his name and his face. Marrant says he will wait.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The soft season, and the waiting. Maelis read the knee after the wicket and found it held, and said it is still soft and will be at the thaw; the quiet is a liar. He cannot kneel, and has asked fifteen times to go down the Steps and been told no fifteen times. Now Benedek lies Hollowed in the next cot but one, with frost on his mouth and glass under his tongue, and nobody passed.",
-  "last_beat": "The feast morning, after Maelis sent him to make Hollis eat. Darrow fetched half a feast loaf from the kitchen (the novice wrote it in the book) and set it on the blanket. Hollis would not let go of Benedek's hand: \"I'll eat when he does.\" \"He's not going to, Hollis.\" Darrow saw that the thick hands were still only while they held something, as over the knucklebones, and offered: \"Give him to me. For the length of a loaf.\" \"He's Sixth.\" \"I know whose he is.\" He put the bread into Hollis's right hand, closed the fingers on it, and took the lad's hand out of the left; Hollis ate all of it the way men eat after a battle, and the hand never shook because it was never empty. Then he held out his palm and took the lad's hand back. \"Tell her I ate. Don't tell her how.\"",
+  "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
+  "last_beat": "The day after the feast. The novices came at dusk to carry Benedek to the far cots; Hollis would not let them, so they laid the far cots' grey blanket over him where he was, and the hall calls it the Grey Cot. The lay brothers who carried the bread down brought Marrant's word back up the Steps: ember witchcraft. From his cot Darrow read the night novice (she said she slept; the wick soot on her fingers said she trimmed the far lamp all night: she watched the door, and nobody passed), outwaited the kitchen (the flour at the hall door clean at dawn but for the bakers'), and held Wren to her count (both doors barred at night and dawn; nine keys where they hang) before she could say where it came from. When the hall began to turn toward Maelis, he told it from his cot: nobody passed, not a grey cloak, not a lay brother, not the Mender. The heads came back. At the Grey Cot, Hollis, to the lad's hand: \"Nobody.\"",
   "companions": {
     "maelis": {
-      "approval": 24,
+      "approval": 25,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },

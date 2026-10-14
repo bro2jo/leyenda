@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 2,
     "beat": "b1.2",
-    "next_scene": 3,
+    "next_scene": 4,
     "stage": "scene",
-    "last_written": "ch02:s2",
+    "last_written": "ch02:s3",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -75,17 +75,17 @@
           ],
           "goal": 2,
           "limit": 2,
-          "progress": 0,
+          "progress": 2,
           "strain": 0,
-          "status": "open",
+          "status": "won",
           "result": {
             "won": "Nobody passed the far cots: the doors were barred and the keys hung where they hang; the cold came from somewhere no door opens on, and the House has his word for it before Marrant's reaches the hall",
             "lost": "The House hears Marrant's word before his: a hand did this, and the hall looks at the Mender; what he learned stays his and Wren's"
           }
         },
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch02:s3"
       },
       {
         "n": 4,
@@ -99,7 +99,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {

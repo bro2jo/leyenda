@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-6",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-6"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-3"
   },
-  "last_seen_doing": "Lying Hollowed in his cot, his hand held by the Captain for the length of a loaf and then by Hollis again.",
-  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's. On the night of the gate he believed it was mercy that his name was not read, and said good night to the Captain. At the dawn bell of the feast his lips did not move: he lay breathing, slow and even, his eyes open on the roof and frost on his mouth, Hollowed. Maelis found a chip of black glass under his tongue that the far cots never had. Hollis holds his hand.",
+  "last_seen_doing": "Lying Hollowed in the Grey Cot under the far cots' grey blanket, Hollis holding his hand.",
+  "now": "On the cot next to Hollis Garrow's in the infirmary hall of Saint Ysolde's. On the night of the gate he believed it was mercy that his name was not read, and said good night to the Captain. At the dawn bell of the feast his lips did not move: he lay breathing, slow and even, his eyes open on the roof and frost on his mouth, Hollowed. Maelis found a chip of black glass under his tongue that the far cots never had. Hollis holds his hand. The novices would have carried him to the far cots; Hollis would not let them, so the far cots' grey blanket was laid over him where he is, and the hall calls it the Grey Cot.",
   "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
@@ -123,6 +123,12 @@
       "chapter": "02",
       "scene": "2",
       "evidence": "The far cots never had this"
+    },
+    {
+      "fact": "His cot, under the far cots' grey blanket, is called the Grey Cot; he was not moved to the far cots because Hollis would not allow it.",
+      "chapter": "02",
+      "scene": "3",
+      "evidence": "the hall was calling it the Grey Cot"
     }
   ],
   "relationships": [
@@ -181,6 +187,10 @@
     {
       "chapter": "02",
       "scene": "between-6"
+    },
+    {
+      "chapter": "02",
+      "scene": "3"
     }
   ]
 }

@@ -388,3 +388,84 @@ Hollis looked at the bread in his fist as if somebody else had put it there. The
 When it was done he held the hand out, palm up, and Darrow put the lad's back into it.
 
 "Tell her I ate," Hollis said. "Don't tell her how."
+
+### Scene 3 — Nobody Passed
+
+By the morning after the feast, Benedek's cot had a grey blanket on it.
+
+The novices had come at dusk with a stretcher to carry him down to the far cots, where the Hollowed lie, and Hollis had told them what they could do with the stretcher, and where, and in what order. They had gone away and come back with the far cots' blanket instead, grey wool washed thin, and laid it over the lad where he was. By the dawn bell the hall was calling it the Grey Cot, as if it already stood at the far end. Hollis sat beside it on the edge of his own cot with the lad's hand in his, and had not been moved. He had eaten. Darrow had told nobody how.
+
+The word came up the Steps with the empty bread baskets. The lay brothers who carried the feast loaves down had stood at the bars while the Confessor thanked the House for its charity, and they had carried something else back up: Marrant's name for what had happened in the night. *Ember witchcraft.* The old curse, the one the Crown had burned out of the realm three hundred years ago, halls and books and people. By morning it was in the kitchen. By the next bell it would be in the hall, and a hall that has been given a word for a thing goes looking for a hand to fit it.
+
+There was a worse thing under it, and Darrow had said it to Maelis and nobody else: a lad who could not answer had no will for the bell to keep. He did not say it again. He sent for Wren.
+
+"Steps you've taken today: none," Wren said, by way of good morning, and dropped onto the end of his cot with the ledger. "The Mender asked. I'm to read her the number at every bell."
+
+"And yesterday?"
+
+"Yesterday you got off that cot like a man who'd been shot at. She has that number already." She did not look at the Grey Cot. She had not looked at it once, coming down the row. "What do you want?"
+
+"Whoever sat the night at the far end. Then the kitchen. Then you, with every door in this hall and every key on the Prior's ring."
+
+She went without arguing the errand, which was how he knew how frightened she was.
+
+The night novice was younger than Wren, with red eyes and a scrubbed face, and she stood at the foot of his cot with her hands folded in her sleeves the way the Prior folded hers. She had slept, she said. She was ashamed of it. She had sat down by the lamp at the far end after the night bell and woken at the dawn bell, and she was sorry, and she would sit two nights for it if the Mender wanted.
+
+Darrow looked at her hands, because she was hiding them.
+
+`[RESOLVE · DC 12]` d20 **19** +0 resolve +2 Warden's Eye II = **21** — *Success*
+
+"Show me your fingers."
+
+She brought them out. The first two on the right were black to the knuckle with wick soot, the way fingers go when a lamp is trimmed by hand, more than once, and not long ago.
+
+"The lamp at the far end is never let go out," he said. "Somebody trimmed it last night. Three times, by the look of you."
+
+Her face went to pieces and came back together, which took a moment.
+
+"I didn't sleep," she said. "Not at all. I sat with the lamp and I watched the door, all night, because of the grey cloaks. I watched the door so hard my eyes hurt." She swallowed. "And it happened anyway. Right next to Ser Garrow's cot, and me awake the whole time. So I said I'd slept. It's better to be a girl who slept."
+
+"It isn't," Darrow said. "Did anyone come up the row?"
+
+"The lamp on its round, at the hour, counting. He never stopped walking." She shook her head. "Nobody else, Captain. Nobody passed the far cots. I'd swear it at the bell."
+
+The kitchen came up the hall at the noon bell in the person of the novice with flour to the elbows, who had run the book on the feast morning and had stopped running it, and who had a great deal to say. She said it all. What the lay brothers had heard at the bars; what the Confessor had meant by it; what the old cook said about the burnings, which her grandmother had told her; whether a witch needed a door at all; whether the Captain thought it would be the Mender they'd blame, being as she was the one who found the glass.
+
+Darrow let her. He had learned in the last fortnight to lie still under weather.
+
+`[RESOLVE · DC 11]` d20 **19** +0 resolve +2 The Mender's Patience II = **21** — *Success*
+
+When she had run down at last and was standing there breathing, he asked her what the kitchen had counted.
+
+She blinked at him. Then, slowly, as if he had asked about something too ordinary to matter: "The loaves, Ser. Sixty out for the feast, and we've counted what's left nine times since, and it comes out different every time, because cook keeps eating the crusts." She stopped. "And the flour. On a feast night we sweep the floor by the hall door at the night bell and leave a skin of flour on it, so we know in the morning who's been at the bread. Nobody had. There wasn't a print in it but ours, and ours came after the bell."
+
+"Nobody came through the kitchen."
+
+"Nobody, Ser. Not a mouse. We'd have had it in the book."
+
+Wren came back last, with the ledger open across her arm, and gave it to him faster than anyone could take it down.
+
+"Doors into the hall: two. Barred at the night bell: two. Barred at the dawn bell: two, and the bars cold, I put my hand on them. Keys on the Prior's ring: nine. Hanging where they hang this morning: nine. So nobody came in. So it came from—"
+
+"Nobody passed," Darrow said.
+
+"So it came from—"
+
+"Count what didn't happen first, Wren. All of it. Then we'll talk about what did."
+
+She shut her mouth on the rest of it, and looked at him, and for once did not write anything down.
+
+By the next bell the word was in the hall, as he had known it would be. A lay brother banking the fire said it to the man beside him, low, and the man said it to the next cot: *ember witchcraft*, *the Confessor says*, *somebody in this House*. Heads began to turn, and this time they did not turn to the door. They turned down the row toward the far end, where Maelis was bent over a man with two fingers under his jaw.
+
+Darrow sat up on the end of his cot, so that the hall had to look past him to see her.
+
+"Nobody passed," he said. He used the bottom of his voice again, and it carried. "The novice at the far lamp sat awake all night with her eyes on the door, and nobody came up the row but the lamp on its round. The kitchen's flour was clean at dawn. Both doors were barred at the night bell and barred at the dawn bell, and every key on the Prior's ring hung where it hangs. Nobody came into this hall last night. Not a grey cloak. Not a lay brother. Not the Mender. Nobody."
+
+The hall looked at him. Then, one by one, the heads came back from the far end, and the lay brother at the fire went back to the fire.
+
+At the Grey Cot, Hollis had not looked up once.
+
+"Nobody," he said to the lad's hand, as if that were the worst of it.
+
+> ⟦ THE RECKONING ⟧
+> XP 1,172 → 1,247

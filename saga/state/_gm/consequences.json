@@ -280,7 +280,7 @@
           "at": "ch02:s3",
           "weight": "color",
           "what": "Darrow has said aloud, to Maelis and nobody else, that a Hollowed man has no will the bell's law protects: the Confessor could take the lad down the Steps without breaking it. The next scene carries it as his private dread while the House looks for a hand to blame",
-          "status": "pending"
+          "status": "fired@ch02:s3"
         },
         {
           "id": "c02.5b",
@@ -288,7 +288,7 @@
           "at": "later",
           "weight": "color",
           "what": "Maelis's order at the far cots: the slow way, every time, or Wren counts his steps and reads her the number at every bell. Fire it where he hurries, or where Wren is seen counting them",
-          "status": "pending"
+          "status": "fired@ch02:s3"
         }
       ]
     },
@@ -315,6 +315,30 @@
           "at": "later",
           "weight": "color",
           "what": "Hollis ate the feast bread only because Darrow held Benedek's hand for him and filled his own with the loaf, so it never shook: \"Tell her I ate. Don't tell her how.\" Darrow owes him that silence. Fire it where Maelis asks how, or where the hall sees Hollis's hands empty",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "c02.7",
+      "made": {
+        "chapter": 2,
+        "scene": "3",
+        "date": "2026-10-13"
+      },
+      "chose": "Read the night novice (awake all night, watching the door) and outwaited the kitchen (the flour clean at dawn), held Wren to counting what did not happen, and told the hall from his cot that nobody passed: not a grey cloak, not a lay brother, not the Mender, before the Confessor's word could settle there",
+      "now": {
+        "approval": {
+          "maelis": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.7a",
+          "when": "ch02:climax",
+          "at": "ch02:climax",
+          "weight": "scene",
+          "what": "The hall heard the Captain's account first (both doors barred at night and dawn, the nine keys where they hang, the far-lamp novice awake all night, the kitchen flour clean: nobody passed) and turned back from the Mender; at the climax the House weighs Marrant's ember witchcraft against a word it already has, not the other way round",
           "status": "pending"
         }
       ]
