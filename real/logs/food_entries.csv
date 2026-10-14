@@ -39,3 +39,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-14#2,2026-10-14,,lunch,"Domino's chicken wings, garlic parmesan",4 wings,400,24,4,32,0,9,1,1200,220,80,1.2,24,2,0,0.4,60,estimate,"assumed garlic parmesan sauce wings, ~100 kcal and ~6 g P a wing"
 2026-10-14#3,2026-10-14,,lunch,Walnut Creek mashed potatoes with brown butter (deli tub),the whole 1.025-lb tub (~465 g),650,10,70,37,6,23,6,1630,1395,186,0.9,112,1.4,33,0.5,93,estimate,ingredients-only deli label; library per-100 g estimate x 4.65
 2026-10-14#4,2026-10-14,,snack,"Ferrero Rocher milk hazelnut squares, 3-piece pack",1 pack (31.5 g),170,2,16,11,0.5,6,14,40,94,52,0.4,20,0.4,0,0,20,label,label photo
+2026-10-14#5,2026-10-14,,snack,"Uglies sweet potato kettle chips, 43 g bag",1 bag (43 g),220,2,25,13,3,1,7,105,530,50,0.6,25,0.3,2,0,25,label,label photo; whole single-serve bag
+2026-10-14#6,2026-10-14,,snack,"Bloom Pop prebiotic soda, strawberry cream (12 oz can)",1 can (12 fl oz),20,0,5,0,0,0,3,90,0,0,0,0,0,0,0,0,label,label photo
