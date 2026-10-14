@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-12 · body · Since the word under his name changed, his hands have kept a little warmth of their own, the way a stone keeps the sun after dark. He catches himself holding them out over nothing, as if over a fire.
 - 2026-10-12 · ledger · From Wren's ledgers, a page headed Garrow, H.: Names called to the beech leg this week: 31. Names repeated: 2. (She has underlined the two, as a matter of standards.)
 - 2026-10-12 · overheard · Down the hall a lay brother banks the fire a second time, talking to it under his breath: "Slow, now. Nobody's asking you to be quick." Darrow lies still and lets the words do for him too.
 - 2026-10-12 · house · The hall's iron kettle takes two novices to hang on its hook. These days, if Darrow is nearer, he takes the bail one-handed and has it hung before either of them thinks to object.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-14 · weather · The morning comes up clear and hard over the Greywater, so still that the smoke from the kitchen chimney stands straight up like a stick somebody planted in the sky.
 - 2026-10-14 · body · The cold finds his hands early today. He tucks them under his arms on the cot's end, and the far lamp's soot is still in the creases of two fingers when he takes them out again.
 - 2026-10-14 · ledger · From Wren's ledgers, a page headed Captain, steps (for the Mender): To the far lamp after the night bell: 41. Back at the dawn bell: 41. All slow. (Underneath: She asked why the same number twice. I said he walks the same.)
+- 2026-10-14 · house · A lay brother has taken to setting a cup of water by the Grey Cot every morning. Nobody drinks it. He takes it away at dusk and brings a fresh one at dawn.
