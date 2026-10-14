@@ -362,6 +362,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.9",
+      "made": {
+        "chapter": 2,
+        "scene": "between-8",
+        "date": "2026-10-13"
+      },
+      "chose": "Asked the night novice if he might sit the far lamp with her; told her the truth when she asked if it would come again (\"I don't know\"); taught her what a watch is when you can do nothing; let her sleep and kept the lamp himself, trimming it till his fingers were black",
+      "now": {
+        "bearing": {
+          "hearth": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.9a",
+          "when": "next",
+          "at": "ch02:s4",
+          "weight": "color",
+          "what": "Darrow sat the far lamp after the night bell and kept it alone once the night novice slept; the next scene opens with him short of sleep and wick soot in the creases of his fingers, and nobody passed on his watch either",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

@@ -65,6 +65,8 @@ Each Art is named on the page only when it is taught or earned (the site's sheet
 
 **10/13, ch02:between-7 (*The Book*):** the kitchen's book (the flour-armed novice; a ledger, odds in pencil) taking odds on the next Hollowing: Hollis 4, the Captain 5, the kitchen 20, the Grey Cot unpriced. Her reason: a number can be rubbed out; otherwise it is in the dark with the rest of us. Darrow's bet: NOBODY, his chore the ovens if another cot goes grey before the thaw; if none, the kitchen rubs out every price (callback **c02.8a**). **Watch:** q1.farcots (frost on one far-cot mouth) and Hollow Night are not a *new cot going grey*: the bet is lost only by a new Hollowing in the hall. No dice (a wager, not a game). Two Betweens may follow Scene 3; this is the first.
 
+**10/13, ch02:between-8 (*The Far Lamp*):** the second Between after Scene 3, because of the first (the novice had put a wick on nobody). Darrow asked to sit the far lamp (asking, as he promised his men; not c02.3a's fire). Nothing happened on the page: no frost, no heads turning, no flame leaning (q1.farcots and slot 7 keep those). The novice slept; he kept the lamp; soot on his fingers as on hers. Due **c02.9a at ch02:s4**: the next scene opens with him short of sleep and soot in his creases (Rae's scene: she notices hands; one clause). Bearing Hearth/Banner −4: **leans Hearth** now (the site shows it in words). Both Betweens after ch02:s3 are written.
+
 ## Paid off
 
 | # | Thread | On the page | Who knows | Paid off |

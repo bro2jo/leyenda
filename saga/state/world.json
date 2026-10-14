@@ -78,11 +78,18 @@
       "after": "3",
       "covers": [],
       "written": "2026-10-13"
+    },
+    {
+      "scene": "between-8",
+      "title": "The Far Lamp",
+      "after": "3",
+      "covers": [],
+      "written": "2026-10-13"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall in the evening, halfway back up the row from the kitchen door to his cot, the kitchen's book open behind him on the bread table",
+    "detail": "the far end of the infirmary hall at night, on a stool beneath the lamp that is never let go out, keeping it while the night novice sleeps on her folded arms",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -92,7 +99,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "The evening after the hall heard nobody passed. The kitchen's book had reopened on the bread table, taking odds on which cot is Hollowed next: Hollis at four (he won't leave it), the Captain of the Ninth at five (the Confessor came up the Steps for him), the kitchen at twenty; the Grey Cot with no price, because nothing is left there to take. The flour-armed novice who runs it: \"If it's in the book it's a number, and you can rub a number out.\" Darrow did not shut it. He asked the price on nobody, had her write NOBODY at the foot of the column, and staked a chore: if another cot goes grey before the thaw he scours the ovens; if none does, every price is rubbed out and the kitchen stops counting cots. They shook on it. Halfway back up the hall he heard a wick go down, and a lay brother asking the price on nobody.",
+  "last_beat": "After the night bell Darrow went down to the far lamp and asked the night novice if he might sit it with her. \"It's my lamp.\" She let him. \"Will it come again?\" \"I don't know.\" She had put a wick on nobody; the kitchen had it at twelve by supper. \"What do you do on a watch, when you can't do anything?\" \"You keep it. You keep the lamp, and you keep the count, and when somebody asks you in the morning, you can tell them true.\" The lamp man on his round saw the Captain on a stool and lost his count. The novice slept on her folded arms; Darrow kept the lamp, trimming it till his fingers were black in the creases, as hers had been.",
   "companions": {
     "maelis": {
       "approval": 25,

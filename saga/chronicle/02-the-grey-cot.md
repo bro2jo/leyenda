@@ -515,3 +515,37 @@ She thought about it, which he liked her for. Then she wrote it at the foot of t
 She looked at the column, and at the one number with nothing after it, and wrote beside NOBODY: *the Captain, the ovens.* Then she put the pencil down and held out her hand to shake on it, flour and all.
 
 When he was halfway back up the hall he heard a wick go down on the bread table, and one of the lay brothers asking, low, what the price was on nobody.
+
+### Between — The Far Lamp
+
+After the night bell Darrow took his blanket and went down the hall the slow way, past Hollis at the Grey Cot with the lad's hand in his, who did not look up, and on to the far end, where the lamp that is never let go out hung on its hook over the far cots and the night novice sat on a stool beneath it with her hands in her sleeves.
+
+She stood up when she saw who it was.
+
+"The Mender won't like you up, Ser."
+
+"Then don't tell her. May I sit?"
+
+"It's my lamp." She said it fast, and then heard how it sounded, and went red. "I mean, I'm to sit it. Wren will count your steps."
+
+"Wren counts everything." He waited. "May I?"
+
+She looked at him a while, the way she had looked at the door all that other night, and then she pulled a second stool out from under the next cot and put it by hers.
+
+They sat. Down the row the far cots breathed, slow and even, all together, as they did every night. The lamp burned straight up. Somewhere toward the other end Hollis said something to the lad that did not carry.
+
+"Will it come again?" she asked, at last, to the lamp.
+
+"I don't know."
+
+She nodded as if that were the answer she had wanted, because it was not a lie. "I put a wick on nobody," she said. "In the book. The kitchen had it at twelve by supper."
+
+"Then you and I are on the same side of it."
+
+"What do you do," she said, "on a watch, when you can't do anything?"
+
+"You keep it." He thought about the riverbank, and the nights before it, and all the men who had sat up beside him with nothing to do but be awake. "You keep the lamp, and you keep the count, and when somebody asks you in the morning, you can tell them true."
+
+She kept it with him until a little past the hour. The lamp came round on its round, the lay brother counting cots under his breath; he saw the Captain of the Ninth on a stool at the far end, lost his count entirely, and went back to the door to start again. The novice laughed into her sleeve, and a while after that her head went down onto her folded arms, and she slept.
+
+Darrow let her. He kept the lamp. When the flame stood up tall and began to smoke, he trimmed it the way she had shown him, pinching the black off with his fingers, and when he looked at them afterwards they were black in the creases, the way hers had been.
