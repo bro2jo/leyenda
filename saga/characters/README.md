@@ -8,7 +8,7 @@ One JSON file per character who has **appeared or been named on the page** in `s
 
 - Every sentence must be supported by text already in `saga/chronicle/`. If the page does not show it, it is not here.
 - Exception: **appearance** and **voice** may draw on `saga/bible/cast.md` (reader-safe: looks and voice lines only, for people already on the page).
-- Never read or use `saga/bible/_gm/`, `saga/state/_gm/` (the plan, the consequence ledger, `threads.md`), `real/`, or `engine/deeds.csv`.
+- Never read or use `saga/bible/_gm/`, `saga/state/_gm/` (the plan, the consequence ledger, the threads, the notes), `real/`, or `engine/deeds.csv`.
 - No real-world words: no foods, numbers or dates from logs, exercises, therapy, rehabilitation terms. Game numbers (level, Might, Ember, dice) are fine.
 - A name the page has not spoken is not spoken here. The red-handed woman has no name. The man leading the grey cloaks has no name.
 - Secrets, true identities and stat rationale go in `saga/bible/_gm/characters.md`, never here.
