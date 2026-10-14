@@ -1428,9 +1428,12 @@ def cmd_now(args):
     else:
         lines.append("Micro: none open")
     lines += open_choice_lines(plan)
-    for t in tale_state(st):
+    t_rows = tale_state(st)
+    for t in t_rows:
         if t["owed"]:
             lines.append(f"TALE OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`, written now")
+    for pid, done in unbound_projects(t_rows):
+        lines.append(f"TALE UNBOUND: project {pid} has {done} task(s) reported and no tale: `saga.py tale bind {pid}`, then its piece(s)")
     lines.append(bearing_line(bearing))
     ro = rank_owed(plan)
     if ro:
@@ -3544,8 +3547,13 @@ def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2):
         lines.append(f"  last seen: {c['last_seen_doing']} ({(c.get('last_seen') or {}).get('scene')}, {(c.get('last_seen') or {}).get('place')})")
     if c.get("now"):
         lines.append(f"  now: {short(c['now'], 260)}")
-    for f in (c.get("known_facts") or [])[-facts_n:]:
+    facts = c.get("known_facts") or []
+    present = [f for f in facts if not str(f.get("chapter") or "").startswith("tale")]
+    past = [f for f in facts if str(f.get("chapter") or "").startswith("tale")]
+    for f in present[-facts_n:]:
         lines.append(f"  fact ({f.get('scene')}): {short(f.get('fact'), 160)}")
+    if past:  # the tales' facts never crowd the present out: one line, the latest, and where the rest are
+        lines.append(f"  the past, from the tales ({len(past)} fact{'s' if len(past) != 1 else ''}; `history --person {cid}`): {short(past[-1].get('fact'), 140)}")
     for t in thr_rows or []:
         if name.split()[-1].lower() in str(t.get("who_knows") or "").lower() or name.split()[0].lower() in str(t.get("who_knows") or "").lower():
             lines.append(f"  knows (thread {t['id']}): {short(t.get('who_knows'), 160)}")
@@ -3841,6 +3849,9 @@ def cmd_brief(args):
         L.append(f"the knee, on the page: {kl2}")
     if world.get("inventory"):
         L.append("in hand: " + "; ".join(world["inventory"]))
+    kept = world.get("keepsakes") or []
+    if kept:
+        L.append("kept from the tales (the page has them; an echo is allowed, never explained): " + " · ".join(f"{k.get('name')} ({k.get('to')})" for k in kept))
     since = betweens_since_last_scene(st)
     if since and mode != "between":
         for e, chose in since:
@@ -4503,6 +4514,17 @@ def tale_state(st):
     return rows
 
 
+def unbound_projects(rows):
+    """Projects with a task reported and no tale bound: a piece is being earned that nothing will tell."""
+    bound = {t.get("project") for t in rows}
+    out = []
+    for p in projects_data().get("projects", []):
+        done = sum(1 for x in p.get("tasks", []) if x.get("done"))
+        if p.get("id") not in bound and done and p.get("status") in ("live", "done"):
+            out.append((p["id"], done))
+    return out
+
+
 def tale_line(t):
     state = "told in full" if t["done"] else f"{t['told']} of {t['pieces']} told" + (f" · OWED {t['owed']}" if t["owed"] else "")
     pr = f"project {t['project']} ({t['project_status'] or 'missing'}, {t['tasks_done']} tasks reported)"
@@ -4846,10 +4868,13 @@ def check_tales(st, probs, notes):
     except ValueError as e:
         probs.append(str(e))
         return
-    rows = {t["n"]: t for t in tale_state(st)}
+    t_rows = tale_state(st)
+    rows = {t["n"]: t for t in t_rows}
     tfiles = R.tale_files()
     char_ids = set(R.char_files())
     plans = tale_plans()
+    for pid, done in unbound_projects(t_rows):
+        notes.append(f"project {pid}: {done} task(s) reported and no tale bound (`saga.py tale bind {pid}`)")
     for b in st.plan.get("tales") or []:
         n = int(b.get("n") or 0)
         t = rows.get(n)

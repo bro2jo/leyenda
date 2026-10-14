@@ -1582,6 +1582,7 @@ def recap_text(st, cfg, rules, ws):
     out += ["", "**Measured this week:** " + ("; ".join(
         f"{mdate(g['date'])} {g['source']} {metric_label(g['metric'], specs.get(g['metric'], {}))} {set_text(g)}"
         for g in ms) or "nothing")]
+    out += ["", "**Works:** " + works_week_line(ws)[len("Works: "):]]
     out += ["", "**Flags:** " + (" · ".join(flags) or "none")]
     return "\n".join(out)
 
