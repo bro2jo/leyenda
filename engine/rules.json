@@ -550,49 +550,57 @@
       "short": "Straightening",
       "name": "The Knot of Straightening",
       "proves": "the leg can be made straight",
-      "opens": 1
+      "opens": 1,
+      "allows": "the leg lies straight on the blanket; he is carried, or on crutches; nothing on the leg"
     },
     {
       "n": 2,
       "short": "Walking",
       "name": "The Knot of Walking",
       "proves": "the stride is true again",
-      "opens": 1
+      "opens": 1,
+      "allows": "walks on his own legs on the flat: the hall, the court, the wall-walk by the gate; no stair down, no running, no fight on his feet, nothing that tests the Binding (the soft season: the quiet is a liar)"
     },
     {
       "n": 3,
       "short": "Standing",
       "name": "The Knot of Standing",
       "proves": "the leg bears his weight",
-      "opens": 2
+      "opens": 2,
+      "allows": "stands and bears weight on the leg: a stair with a hand on the wall, the forms standing; still no running, no leap, no fight on his feet"
     },
     {
       "n": 4,
       "short": "the Road",
       "name": "The Knot of the Road",
       "proves": "it can run",
-      "opens": 3
+      "opens": 3,
+      "allows": "runs on the flat and on the road; no hard landing, no sprint, no turning at speed"
     },
     {
       "n": 5,
       "short": "Lightning",
       "name": "The Knot of Lightning",
       "proves": "it can leap, land, sprint and stop",
-      "opens": 4
+      "opens": 4,
+      "allows": "leaps, lands, sprints and stops dead; not yet the turn at speed"
     },
     {
       "n": 6,
       "short": "Turning",
       "name": "The Knot of Turning",
       "proves": "it can turn at speed: the movement that broke it",
-      "opens": 5
+      "opens": 5,
+      "allows": "turns at speed and fights on his feet; the movement that broke it is his again"
     },
     {
       "n": 7,
       "short": "the Field",
       "name": "The Knot of the Field",
       "proves": "it is whole for battle",
-      "opens": 6
+      "opens": 6,
+      "allows": "whole for battle: nothing the leg may not do"
     }
-  ]
+  ],
+  "knots_about": "`allows`: what the page may let the leg do once this Knot is tied, in story terms (the brief prints the tied Knot's line; the real plan clears the real knee, never the story)"
 }
