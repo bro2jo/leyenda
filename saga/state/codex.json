@@ -1,0 +1,518 @@
+{
+  "_about": "The Codex's entries (reader-safe): canon the page invented, one entry per name, in the sections the site renders. `saga.py record` appends an event's codex items here and regenerates codex.md; never edit codex.md by hand.",
+  "header": "Anything named in the Chronicle that isn't already in `bible/` goes here the first time it appears, so it stays consistent. Format: **Name** — what it is (first appearance). The site renders this file: anything the reader must not see goes inside `⟪gm: … ⟫`, which the build strips.",
+  "sections": [
+    {
+      "name": "People",
+      "entries": [
+        {
+          "name": "Tobin Marsh",
+          "text": "youngest knight of the Ninth Lance, 19, sang badly and constantly; went under his own horse in the current at Harrow Ford and was not among the nineteen who came back (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Thistle",
+          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The red-handed woman",
+          "text": "clan warrior, forty-odd, scar through one eyebrow, hands painted red to the wrist; pulled Darrow from the Wend (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Benedek Orrin",
+          "text": "knight of Hollis's own Sixth Lance, not yet thirty; a boar spear through the shoulder at the ford and a fever after it; says his oath at every bell; the cot next to Hollis's at Saint Ysolde's (Ch 1 Interlude). Found Hollowed at the dawn bell of the feast: breathing, eyes open, frost on his lips, a chip of black glass under his tongue (Ch 2 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Rae Thorne",
+          "text": "the carter who drives the last cart up the Holloway to the foot of the Steps: talks to her oxen and hardly to knights; twenty-seven or near it, strong through the shoulders from hauling, a small brass bell on a cord at her belt that she never seems to hear. She drove Darrow and Hollis the last of the road and said one thing to Darrow all day (Prologue). She heard the Confessors' list read at the inn in Coldmere and climbed the Steps before the bell to bring it up; her cart and two oxen stand at the winch-house (Ch 1). When the grey cloaks came in three bells early and one of them put his boots up on her cart, she let the road shut rather than go down past them: the first two names on that list, she said, rode up in her cart (Ch 1 Sc 4). Her two oxen have names she will not give: \"They know them\" (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Confessor Ivo Marrant",
+          "text": "the Confessor who led four grey cloaks to the gate of Saint Ysolde's in the hour before dusk and read the list of the Faithless at the bars under the Knight-Confessor's seal: a bald man in his forties with a pleasant, well-fed face and the iron censer in his own hand. He had been told at the winch-house fire that the Faithless had gone down the far side, and read anyway, having read to empty beds before. He did not read the far cots: the Crown has no quarrel with men who can't answer. When Old Mercy rang he called it a fine bell, a little slow on the rope, made his camp on the lower terrace, and called for the Captain of the Ninth to come down and kneel; he would wait. When the Captain came to the bars instead and gave his name, Marrant looked at his face, called him Captain, and thanked the Prior for her candour (Ch 1 Climax and Choice).",
+          "sources": [
+            "import"
+          ]
+        }
+      ],
+      "intro": ""
+    },
+    {
+      "name": "Places and things",
+      "entries": [
+        {
+          "name": "Field-stones",
+          "text": "slabs of black Oathstone in iron frames, one per lance, hauled on ox-carts; knights kneel and touch them before battle to be filled with Grace (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Coldmere",
+          "text": "a place below the mountain with an inn, where the Confessors' list of the Faithless was read aloud; the news climbed to the House by carter, lay brother and kitchen (Ch 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Sister Pell's glass",
+          "text": "the spyglass in the bell tower (Ch 1). Lent to Wren counted out, one glass, two caps, one strap, to be counted back by the next bell (Ch 1 Sc 4).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The dawn forms",
+          "text": "the slow, dull work Maelis sets him each morning; afterward the leg lies a little straighter on the blanket, which is the point of them (Ch 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Reading of the Knots",
+          "text": "Maelis's reading of the Binding: pipe between her teeth, two fingers either side of the kneecap, eyes shut. Darrow has stopped asking what she feels for; she has stopped answering (Ch 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Hollis's leg",
+          "text": "the wooden leg the lay brothers made him: beech and a leather cup, fitting the way a boot fits someone else. The writ from Harrow Ford, folded and unread, now lies in its cup (Ch 1 Interlude).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The writ",
+          "text": "the order from command at Harrow Ford, the Sixth and the Ninth to clear the ford and the Second in reserve; Hollis broke its wax with his thumb without looking, kept it folded small inside his shirt, wax inward, until the morning the grey cloaks were seen, and then hid it in the cup of his wooden leg (Prologue; Ch 1 Interlude).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The two fires",
+          "text": "Maelis's teaching behind the cell door: one fire is poured in and can be taken back by the hand that poured it; the other is built, kindled by one's own work, fed and kept, and cannot be poured or taken. The script of the Reckoning counts only the built one (Ch 1 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Emberwardens",
+          "text": "an order that lived by the built fire; the Crown burned them three hundred years ago, halls, books and people, and made their name a curse: ember-mad (Ch 1 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The winch-house",
+          "text": "at the foot of the Thousand Steps, where the stair comes out of the cloud: a grey block with a thread of smoke of its own; the House's loads come up from it by the cage, and the winch-brothers work the rope at the top (Ch 1). The grey cloaks came in at it three bells early, six riders, their cart and a censer (Ch 1 Sc 4).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Rae's bell",
+          "text": "the small brass bell on a cord at the carter's belt, which rings when the cart jolts; rung three times at the foot of the Steps, it was answered from the cloud (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Knucklebones",
+          "text": "five yellow sheep's knuckles on a blanket, played in rounds, ones, twos, threes, fours, and then the stone: all five swept and the thrown bone caught on the back of the hand. Two captains with no coin play for a story told true, and the loser chants the rhyme (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Old Mercy",
+          "text": "the House's sanctuary bell. It is not the hour bell: it hangs silent unless the House is keeping somebody, and then rings at dawn and at dusk till they are gone and at no other time, and the valley knows its voice, so ringing it tells every village below that the House has someone it will not give up (Ch 1 Sc 3). While it rings at dawn and at dusk, no blade climbs the Steps or passes the gate, and no name under it is taken down against its will; miss one ringing and the law lapses till the next. Sister Pell says that once it has been rung the law has lapsed twice, both times for snow, and never on her rope (Ch 1 Sc 3). After her council Mother Ione held it, so the valley heard what it always hears from the House (Ch 1 Sc 4). At the gate, the first time it had rung for anyone in years, it rang late and dragging when Wren ran for the tower, and the Prior gave the Confessor the law of names to his face (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The wall-walk by the gate",
+          "text": "the low wall-walk beside the House's gate, the one that can be reached from the court without a stair, which is the whole of Maelis's reason for allowing Darrow on it (Ch 1 Sc 4).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The gate and the wicket",
+          "text": "the House's gate is oak and opens on the court, with bars at the height of a man's face to speak and read through, and low in the oak a wicket, a door for one man stooping, barred on the inside, that opens a hand's width for a courier's paper under the law of guests; the gatehouse has an inside stair to a window and a post at the foot of its stair where a man can lean without seeming to. Two grey cloaks came through the wicket before Old Mercy rang while a third held it open; the House's shoulders shut it on him, and the two inside went back out under the law of names (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The lower terrace",
+          "text": "the grey below the House's gate where the springs steam: the law's ground and nobody's, Confessor Ivo Marrant said, and made his fire there in the snow (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The law of guests",
+          "text": "under it a courier's paper is taken at the wicket, Marrant said; and he was, whatever else, a courier (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Confessors' writ",
+          "text": "the list of the Faithless at Saint Ysolde's, the ones the Confessors have come to take down the Steps and on to the Oathspire to kneel where everyone can watch (Ch 1 Sc 1); under a seal of blue wax the size of a child's palm, read at the bars slow so the court could count: Darrow first, Hollis second, then the Ninth's names and the Sixth's; the far cots are not on it (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The chapel",
+          "text": "off the court, near enough to the hall that Darrow can walk to it and back without the stick (Ch 1 Sc 1). Mother Ione sits in its front pew each night by one candle and says the names of everyone under the House's roof, noticing which ones she has had to stop saying (Ch 2 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Menders' vow",
+          "text": "four words: *to mend what climbs*. Nobody who wrote it, the Prior says, thought to add *and hand it down to whoever asks* (Ch 2 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The warming room",
+          "text": "off the cloister, nine steps down and no rail; Mother Ione has the one good chair by its fire and offers it to nobody; the council over the Confessors' list met there (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Grace",
+          "text": "the warmth a knight takes from an Oathstone when he kneels: every ache goes quiet, the morning sharpens, and he can hear his own heart; old knights call it \"the Crown's hand on your back\" (Prologue). At Harrow Ford it went out of the knights mid-river, and when it came back to Darrow it was a thread too thin to do anything but show him how cold he was (Prologue). The heralds say it departed for the faithlessness of their oaths; Benedek holds that it forgives, and comes back to those who kneel (Ch 1 Between). Maelis, who has had her fingers on knees that carried it for twenty years: it holds things up, it doesn't mend them, and a man can run on a torn thing a long while with it under him and never know (Ch 1 Between). No one full of Grace has ever seen the script of the Reckoning (Ch 1 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Three Heartbeats",
+          "text": "the moment at Harrow Ford when the Grace went out of the knights halfway across the Wend. On the first heartbeat the warmth left Darrow and frost bloomed on his mail in midsummer; on the second Thistle went down, the Ninth sagged in their saddles, and his knee gave as he planted and turned toward Tobin Marsh; the third he spent underwater, and saw Aldric Vane's horse on the west bank already turned and climbing out, one heartbeat early (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Binding",
+          "text": "Maelis Vorne's old art for a knee that is undone rather than broken: a strand of his own sinew from below the kneecap, put where the cord was and bound in with emberthread. The Crown burned the people who knew it three hundred years ago. It is made of him, exactly as strong as he makes it and not one hair stronger, soft for a long time and softest just when it starts to feel good; it takes most of a year, maybe more; no Grace in it, nothing given, nothing anyone can take back. She would not bind the knee until the swelling was down, the leg straight and the thigh awake, because a Binding takes the measure of whatever it is tied to (Prologue). Seven weeks on, the Reckoning counts two Knots tied of seven, and Maelis calls this the soft season: the thread is changing from what she put in to what he will keep, and is weaker now than the day she tied it (Ch 1 Sc 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Emberthread",
+          "text": "what Maelis binds with: a spool of something that wasn't thread, on black cloth beside a curved needle in a wooden box, glowing the deep orange of a coal when you blow on it and warm even from across the cot. It went in like warmth poured into a cold cup (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Bitterleaf",
+          "text": "what Maelis keeps in the pipe clamped in her teeth while she works. It is never lit, and her cell smells of it anyway (Prologue; Ch 1 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Reckoning",
+          "text": "the pale, gold, angular script of light that came up over Darrow's palms at the infirmary window, hanging in the air the way the shape of the sun hangs in your eye; when he shut his eyes it was still there, sharper. Nobody has learned to read the script for three hundred years; he could read it anyway, and it was reading him. Maelis was not surprised (\"So it's begun.\"): by her account it counts the built fire and nothing else, and most can't read it the first time (Ch 1 Sc 1–2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Knight Who Fell",
+          "text": "the fainter numbers standing behind Darrow's own in the Reckoning, like men in a second rank: Might 15, Vigor 15, Finesse 18, Resolve 12. He didn't need anyone to tell him whose they were (Ch 1 Sc 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Hollowed",
+          "text": "knights who come home from the field breathing and walking and doing as they are told, with nobody behind the eyes; everyone in the Lowmarch knows the word. In a season or two their families send them up a mountain with a chit and a lamp, and the far cots at Saint Ysolde's are where they end. Said down the row of the infirmary hall when Benedek was found at the feast's dawn bell (Ch 2 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Vaelish",
+          "text": "the tongue Darrow speaks. The red-handed woman spoke it roughly on the east bank of the Wend (\"Look at it. Look. Remember it.\"), after calling across the water in her own (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The black glass",
+          "text": "a chip of black glass no bigger than a barleycorn that Maelis found under Hollowed Benedek's tongue; it takes the light and gives none back. \"The far cots never had this\" (Ch 2 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The feast",
+          "text": "the House's feast day: the feast bread carried down to the gate and given away, and the kitchen's book running wild. The lay brothers call it Saint Ysolde's bread, though not all of them: Ysolde, says one, was a bone-setter with a bad temper and a bell, and anyone who called her saint to her face would have got the bell (Ch 2 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Grey Cot",
+          "text": "Benedek's cot, under the far cots' grey blanket: the novices came to carry him to the far cots, Hollis would not let them, and the blanket came to him instead (Ch 2 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The kitchen's book",
+          "text": "the kitchen's wager-ledger, kept on the bread table, the running odds in pencil so they can be rubbed out; it takes a chore before a wick. On the feast it ran on the bread; after the Hollowing it ran on which cot is next, until the Captain bet the ovens on NOBODY (Ch 2 Sc 2, Between 7).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "Ember witchcraft",
+          "text": "the Confessor's name for Benedek's Hollowing, given to the lay brothers who carried the feast bread down and carried back up the Steps with the empty baskets: the old curse the Crown burned out of the realm (Ch 2 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        }
+      ],
+      "intro": ""
+    },
+    {
+      "name": "Songs and verses",
+      "entries": [
+        {
+          "name": "The knucklebones rhyme",
+          "text": "chanted by whoever is losing: *Three for the knight who won't come down, / four for the bell and five for the hand.* (Hollis, losing the stone to Darrow, Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "The Lowmarch counting rhyme",
+          "text": "a children's counting rhyme: *Count the lances on the west bank, child, / count them, one through nine. / Count them going, count them coming home, / and never get the same sum twice.* (Prologue, epigraph).",
+          "sources": [
+            "import"
+          ]
+        }
+      ],
+      "intro": "(A song or a rhyme the page has sung, the first time: **Title** — the lines sung, and who sang them (first appearance). The rest of it stays in the Annals until the page has it.)"
+    },
+    {
+      "name": "Histories",
+      "entries": [],
+      "intro": "(A piece of the realm's past the page has told, the first time: **Name** — what was said and by whom (first appearance). The Annals hold the longer telling.)"
+    },
+    {
+      "name": "Sayings",
+      "entries": [
+        {
+          "name": "\"Kneel to that.\"",
+          "text": "Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Ride wide today.\"",
+          "text": "what Aldric said at the ford (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"The quiet is a liar.\"",
+          "text": "Maelis, on the soft season (Ch 1).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Nobody's taking anyone.\"",
+          "text": "Hollis to Benedek Orrin, of the Confessors: not up eleven hundred steps in the snow (Ch 1 Interlude).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Stone and Crown.\"",
+          "text": "a soldier's oath; Hollis swears it over the nine steps he took on the wooden leg (Ch 1 Interlude).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Feed it or it goes out.\"",
+          "text": "Maelis, of the built fire (Ch 1 Sc 2).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"They'll count you up. Don't help.\"",
+          "text": "Rae Thorne, the one thing she said to Darrow on the last cart, as they lifted him onto the litter (Prologue).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Mercy's the word on the paper. The paper's the point.\"",
+          "text": "Hollis to Darrow, of why the Confessors want the Faithless to kneel where people can see (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"It holds things up. It doesn't mend them.\"",
+          "text": "Maelis, of the Grace, at the linen press (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Sit down or play.\"",
+          "text": "Hollis, asked about his hands, over the knucklebones (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Down's where they are.\"",
+          "text": "Rae Thorne, from the door of the warming room, when Darrow asked to be sent down the Steps before the grey cloaks came (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"I've carted men down to kneel since midsummer. I've not carted one back up.\"",
+          "text": "Rae Thorne, at the same council (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"And when we've given them one name, Captain, how many will the next writ carry?\"",
+          "text": "Mother Ione, answering Darrow's offer to go down on the cage (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Ask the bell if it's tired.\"",
+          "text": "Sister Pell, asked whether she will ring Old Mercy dawn and dusk for as long as the grey cloaks care to wait; she has rung the House's bells fifty years (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"If the lay brothers tell the valley there's nobody up here, Captain, what does a sanctuary bell tell it at dusk?\"",
+          "text": "Mother Ione to Darrow at her council, deciding whether Old Mercy rings (Ch 1 Sc 3).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"The first two names on that list rode up in my cart.\"",
+          "text": "Rae Thorne, on the gate wall, when Darrow told her that had been her road (Ch 1 Sc 4).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"An ox'll stand all winter.\"",
+          "text": "Rae Thorne, of her oxen at the winch-house; a mule won't stand there (Ch 1 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"I have read to empty beds before. I find it steadies the hand.\"",
+          "text": "Confessor Ivo Marrant at the bars, having been told at the winch-house fire that the Faithless went down the far side (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"The Crown has no quarrel with men who can't answer.\"",
+          "text": "Marrant, on why he did not read the far cots (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Bells grow tired.\"",
+          "text": "Marrant, going down to make his camp on the lower terrace (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"You keep a fine bell. A little slow on the rope.\"",
+          "text": "Confessor Ivo Marrant to Mother Ione, after Old Mercy rang late (Ch 1 Climax).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"You moved, when he read your name. I saw it. Nobody else did.\"",
+          "text": "Hollis to Darrow, from the gatehouse window, after Darrow gave his name at the bars (Ch 1 Choice).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"You've read to a full bed.\"",
+          "text": "Darrow, through the bars to the Confessor, giving his name and rank in front of the whole House (Ch 1 Choice).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Hidden, you were a lie they'd have found by the thaw. Named, you're a law they'll have to break where the valley can watch.\"",
+          "text": "Maelis to Darrow in the court, after he gave his name at the bars; then: \"That knee lies to me every morning. You didn't. Keep it that way.\" (Ch 1 Choice).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"Next time you mean to be brave, tell me first. So I don't run.\"",
+          "text": "Wren Ashdown to Darrow on the wall-walk, the night he gave his name at the gate; she wrote his promise in her ledger (Ch 2 Between).",
+          "sources": [
+            "import"
+          ]
+        },
+        {
+          "name": "\"I have never once given a name to a writ. Did you think I would start with yours?\"",
+          "text": "Mother Ione to Darrow, in the chapel, the night of the gate (Ch 2 Between).",
+          "sources": [
+            "import"
+          ]
+        }
+      ],
+      "intro": ""
+    }
+  ]
+}

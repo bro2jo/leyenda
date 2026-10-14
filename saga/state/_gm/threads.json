@@ -1,0 +1,214 @@
+{
+  "_about": "Open plots, plants and payoffs, as data (GM only). A thread: id, title, truth (T#), feeds, status open|paid, who_knows (the knowledge state the page has established), note (the GM's running note), on_page (the block keys where it was planted or touched: rebuilt by the engine from the events' thread touches; a truth needs two before any scene reveals it). Written through `saga.py record` (a block's note names the threads it touched or changed) and `saga.py threads`; read through `saga.py threads` and `saga.py brief`, never whole.",
+  "threads": [
+    {
+      "id": 1,
+      "title": "Aldric said *\"Ride wide today\"* and almost said more; his horse was turned and climbing the west bank one heartbeat before the Grace failed",
+      "truth": "T3",
+      "feeds": "T3",
+      "status": "open",
+      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name",
+      "note": "Darrow has told no one; in Ch 1 Between 2 (revised 10/10) he said aloud to Maelis that the Grace was taken, not lost, and named nobody; she said she does not know whose doing it was",
+      "on_page": [
+        "00:I",
+        "00:III",
+        "01:s1"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The writ to charge: Hollis broke the seal with his thumb without looking at it. Where is that paper now?",
+      "truth": "T3",
+      "feeds": "T3",
+      "status": "open",
+      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal once and look away; Darrow saw him do it; the reader",
+      "note": "active: paper in the cup of Hollis's wooden leg, seal unexamined; the writ at the bars wore blue wax the size of a child's palm (the first of the two wax plants q1.letters needs; his own still unlooked-at until b2.4)",
+      "on_page": [
+        "00:I",
+        "01:interlude",
+        "01:climax"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The clan line was drawn up wrong: carts, old people, children; warriors looking behind them into the trees",
+      "truth": "T5",
+      "feeds": "T5",
+      "status": "open",
+      "who_knows": "Darrow suspects they were fleeing; Hollis heard it and dismissed it; the reader",
+      "note": "Darrow suspects they were fleeing. **Revised 10/11 (editorial pass):** after Hollis said mount up, Darrow chose the line over the carts himself (\"a question for whoever had put the wax on Hollis's paper\"); he carries that, not the heralds' sin. Never a confession to anyone yet; T5 stays Book III",
+      "on_page": [
+        "00:I",
+        "00:II",
+        "01:between-2"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Grey armored figures standing motionless among the Thornwild trees, unmoved by the slaughter",
+      "truth": "T4",
+      "feeds": "T4",
+      "status": "open",
+      "who_knows": "Darrow saw them; the red-handed woman made him look; the reader",
+      "note": "unexplained",
+      "on_page": [
+        "00:I"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "The red-handed woman pulled Darrow out and said *\"Look. Remember it.\"*",
+      "truth": "T5",
+      "feeds": "Ilse, T5",
+      "status": "open",
+      "who_knows": "Darrow; the reader. He does not know her name",
+      "note": "he doesn't know her name",
+      "on_page": [
+        "00:I"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Maelis: the knee \"had help for twelve\" years (the Grace carried it)",
+      "truth": "T1",
+      "feeds": "T1, T7",
+      "status": "open",
+      "who_knows": "Maelis knows what she means; Darrow has the words and not the why; the reader likewise",
+      "note": "touched Ch 1 Sc 2: \"It has none now. What holds it is you.\" Still unexplained",
+      "on_page": [
+        "00:III",
+        "01:s2",
+        "01:between-2"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Maelis on how many Bindings she's done: *\"Enough to know what the soft season looks like.\"*",
+      "truth": "T8",
+      "feeds": "T8",
+      "status": "open",
+      "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader",
+      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title)",
+      "on_page": [
+        "01:s1",
+        "01:s2",
+        "01:climax"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "The List. Confessors on the Holloway: six men, a cart, a censer. Darrow first, Hollis second",
+      "truth": null,
+      "feeds": "Book I core 1",
+      "status": "open",
+      "who_knows": "The whole House, kitchen included; the valley got the lie (c01.1) and Marrant climbed anyway (c01.1b fired); the reader. Nobody in grey knows Darrow's face: Marrant called for the Captain of the Ninth to the whole court",
+      "note": "**b1.1 done at the Ch 1 climax (10/11, Costly):** Marrant named at the bars; the far cots not read (\"The Crown has no quarrel with men who can't answer\"); Marrant plus four at the bars, the sixth below with Rae's cart; the Prior stalled at the wicket for the bell until Marrant made refusing a courier a breach of the law of guests; two grey cloaks through and a third holding it, a lay brother bloodied, Darrow's shoulder could not shut it (Might fail), the lay brothers', the gate-ward's and Rae's did; the two inside walked the wounded looking at faces and passed Darrow close enough to touch without knowing him; Old Mercy late (Pell's hands: b1.5's hinge planted a second time, and Marrant noticed: \"A fine bell. A little slow on the rope.\"); the Prior spoke the law of names (lore house.law_of_bells fully spoken); Marrant's eyes on Maelis (T8); camp on the lower terrace; the call to come down and kneel. Darrow's Insight succeeded (the timing was his: \"Wren. Now.\"), his Resolve failed (the flinch: Wren's hand on his sleeve, Hollis's sound in his beard, nobody else). **Choice answered 10/11: option 1, step forward** (c01.5, `named_himself`; candor +2 → Candor/Guile −1, even; Maelis +8, Wren −7, Hollis +3, Rae +2 banked; confessors −5): he crossed the court, called Marrant back from the head of the Steps by both names, gave his own and his rank, and killed the valley's story himself ('You've read to a full bed'); Marrant looked at his face (he has it now), called him Captain, and thanked the *Prior* for her candour (the arc's barb, aimed where the Downstream puts it); the Prior did not reproach Darrow and asked whether the shoulder was hurt (the Downstream's 'which is worse', shown); Wren: hidden for as long as it takes to count to eleven; Hollis: he saw the flinch at the name and nobody else did, then 'Captain', meant; Maelis approved in her coin, with her reason on the page (revised 10/11): 'Hidden, you were a lie they'd have found by the thaw. Named, you're a law they'll have to break where the valley can watch.' then 'That knee lies to me every morning. You didn't. Keep it that way.' (she knows naming points them at the knee, and judges the law safer than the lie); Darrow's own reasons are on the page too: every face in the House read for his, the lie already dead, the bell already rung and will read the knee tonight (ch02:s1: the Knots held; the real knee was clean the next morning). Due: c01.5c at ch02:s1 (the writ's demand personal, by rank), c01.5a at b1.5 (the Prior refuses for a named man), c01.5b in Book II (the Lowmarch heard; faithless +5). Earlier: the council (Sc 3), the lie to the valley (c01.1, guile +1; c01.1a fired Sc 4), Sc 4 (the bell held; the timing handed to Darrow; the grey cloaks in at the winch-house three bells early)",
+      "on_page": [
+        "01:s1",
+        "01:s3",
+        "01:s4",
+        "01:climax"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The far cots: the Hollowed breathing in the dark; one was Wren's mother (not yet said on the page)",
+      "truth": "T6",
+      "feeds": "T6",
+      "status": "open",
+      "who_knows": "The page has only \"the far cots\"; Wren, Maelis and the Prior know whose (GM); Darrow and the reader do not",
+      "note": "background",
+      "on_page": [
+        "00:III",
+        "01:s1"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Tobin Marsh, 19, sang badly and constantly; went under at the ford while Darrow turned toward him (revised 10/11: his hand came up beyond Thistle's neck; when Darrow surfaced there was only water where it had been)",
+      "truth": null,
+      "feeds": "Darrow's guilt",
+      "status": "open",
+      "who_knows": "Darrow; the reader. Rae carted his bundle (GM; not on the page)",
+      "note": "Darrow hasn't said his name",
+      "on_page": [
+        "00:I"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Benedek Orrin introduced. Hollis's Sixth, not yet thirty, spear through the shoulder, fever, says his oath at every bell and claims he still feels the warmth; offered Hollis the heralds' mercy",
+      "truth": null,
+      "feeds": "b1.2 (the Grey Cot), `flags.benedek_hollowed`",
+      "status": "open",
+      "who_knows": "The reader has his oath and his claim of warmth; Hollis's kind lie is known to Hollis and the reader, not to Benedek; that he knelt anew is on no page yet (GM)",
+      "note": "on the page; Hollis lied to him kindly; Between 4: the Captain said the oath's words with him, lips only, no sound (c01.3: he expects it at the bells now; Hollis saw; c01.3a fired Sc 4). **Not named at the gate**: the page has not yet said so in his hearing; his relief is Ch 2 Sc 1 (the night of the gate), and the Grey Cot is Ch 2 Sc 2, the feast morning (b1.2)",
+      "on_page": [
+        "01:interlude",
+        "01:between-1",
+        "01:between-3",
+        "01:between-4",
+        "01:s4",
+        "01:climax"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Hollis has thought for a fortnight of teaching the Captain to fight from a chair; and he is two days without a drink with nobody to tell",
+      "truth": null,
+      "feeds": "Seated Blade, Hollis's arc; q1.wager's bottle still unspoken",
+      "status": "open",
+      "who_knows": "The chair: Hollis only; the reader. The drink: Hollis, Darrow (Between 3), the reader; not Benedek, not Maelis",
+      "note": "the drink told (c01.2, approval +2; c01.2a fired at the climax: his hands steady on the gatehouse sill because he held them so, and after the Choice Darrow looked at them and did not ask how he was); the chair still planted; the bottle he hasn't opened belongs to q1.wager and has not been mentioned. Choice: he saw the Captain flinch at his name, told him nobody else had, and called him Captain, meant",
+      "on_page": [
+        "01:interlude",
+        "01:between-3"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Rae Thorne on the page. The carter of the last cart (talked to her oxen, said \"Aye\" to Hollis, looked at his leg like a cracked wheel, rang her bell and a bell answered; \"They'll count you up. Don't help.\"); heard the list read at Coldmere, climbed through the night to bring it up; her cart and two oxen stand at the winch-house, which Darrow knew from the window",
+      "truth": null,
+      "feeds": "q1.cart, rae.tether, rae.road, the Tether (`design.md` §8)",
+      "status": "open",
+      "who_knows": "The House knows she brought the list; Darrow has her one line and her question; the reader",
+      "note": "on the page; slot 6 written (Ch 1 Sc 3: at the council, \"Slow. So the room could count.\"; the grey-mare question on the stair; revised 10/10: her first unprompted line, \"Down's where they are,\" when he asked to be sent down); slot 7 written (Ch 1 Sc 4, 10/10): on the gate wall a grey cloak put his boots up on her cart; Darrow told her to go while the road was open (\"Coldmere by dark\"); she said \"Aye\" to all of it; to \"Fifteen times I've asked to go down those steps. You can walk down them today.\" she did not say aye (it touched her; the page leaves why); she outwaited him until the five were in, then pinned her clasp and drew up her hood; her bell hung still, nothing to jolt it; \"The first two names on that list rode up in my cart.\" (Darrow first, Hollis second: both rode the last of the road in her cart, Prologue II.) She still has not addressed him by any name. The cart is under a grey cloak's boots (q1.cart's premise on the page). **Between 5 (10/10):** on the wall after, the oxen's names withheld (\"They know them\"; callback c01.4a, `when: later`: the day she tells him one unasked), \"He did the oxen before me\" (the smile for oxen spent, half), \"An ox'll stand all winter\" (lore craft.carting in her mouth), and she sat on the gate-ward's bench so he would, then \"Leg was shaking,\" once (rae +1 pending). Still no name or title for him. Revised 10/11, Sc 3: \"I've carted men down to kneel since midsummer. I've not carted one back up.\" (dread from her trade; it plants nothing specific and binds no later reveal). **Climax (10/11):** at the end of the lay brothers' line as her oxen stand; when the wicket was forced and Darrow's shoulder gave, hers went in under the bar (her strength shown in action, no word: the page's first look at what she can bear). Chapter 2 carries q1.cart stage 1 (Wed: down for the oxen; the letter in blue wax comes up with her; c01.4a may fire when she comes up with the oxen stabled) and q1.letters stage 1 (Thu)",
+      "on_page": [
+        "00:II",
+        "01:s1",
+        "01:s3",
+        "01:s4",
+        "01:between-5",
+        "01:between-6",
+        "01:climax"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Thistle. The grey mare went down in the Wend; the codex says fate unknown. (GM: alive, lame, a Holloway dealer's at Coldmere; Rae has fed her and asks whether the captain rode a grey)",
+      "truth": null,
+      "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
+      "status": "open",
+      "who_knows": "Rae knows the mare lives (GM); Darrow does not, and has not said her name since the Wend; the reader knows only that Rae asked",
+      "note": "asked on the page (Ch 1 Sc 3: \"Did you ride a grey? At the ford.\" He said yes; she did not say why). Rae knows; Darrow does not, and has kept the mare's name to himself since the Wend. **Between 6 (10/10):** he asked why she asked; she deflected (\"Carters look at horses\", true and in front of the thing; he saw her hands clench and read that there is more, not what). The name came to his teeth and he kept it (still unsaid: spend it at q1.cart stage 2 or Tether III, not before). She left at the hour bell with \"The near one's the slow one\" (a scrap of the oxen, unasked, not a name: c01.4a still waits for a name)",
+      "on_page": [
+        "00:I",
+        "01:s3",
+        "01:between-6"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Marrant at the gate. Confessor Ivo Marrant named at the bars; Marrant and four grey cloaks camped on the lower terrace, the sixth at the winch-house; he has noticed the bell is slow on the rope; his demand to the court: the Captain of the Ninth comes down and kneels and the rest of the paper goes back in his cloak; \"Bells grow tired\"; \"I'll wait. It's the thing I'm best at.\"",
+      "truth": null,
+      "feeds": "b1.2 (he names the Hollowing witchcraft and asks for the Mender by title), q1.letters stage 2 (he carries the second letter up), b1.5",
+      "status": "open",
+      "who_knows": "The whole House heard it; the reader. Marrant has the Captain's voice and his face at the bars now (c01.5): the demand is personal. What he wants (Maelis) and his plan (b1.2 Benedek, b1.4 Anselm, b1.5 Old Mercy) are GM only; his look at Maelis is thread 7",
+      "note": "the siege's first night; the kitchen's loaves and the feast's bread under his eyes are Ch 2's first world moves",
+      "on_page": [
+        "01:climax",
+        "01:choice"
+      ]
+    }
+  ]
+}

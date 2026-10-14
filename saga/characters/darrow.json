@@ -124,6 +124,12 @@
       "evidence": "He could read it anyway, and it was reading him"
     },
     {
+      "fact": "To him, kneeling anew at a stone in front of a crowd would say aloud that the Grace left the Ninth because the Ninth failed it, and that forty-one men died at Harrow Ford for their own bad faith.",
+      "chapter": "01",
+      "scene": "1",
+      "evidence": "for their own bad faith"
+    },
+    {
       "fact": "While Hollis hid the writ, the Captain was shut in a cell down the hall with Mender Vorne and nothing came through the door; Hollis has thought for a fortnight that a man could fight sitting down, if somebody taught him to stop looking at the floor.",
       "chapter": "01",
       "scene": "interlude"
@@ -144,6 +150,12 @@
       "chapter": "01",
       "scene": "2",
       "evidence": "I'll tell him you've started charging by the warning."
+    },
+    {
+      "fact": "Maelis told him the Confessors do not need him to tell them anything: any Confessor who lays a hand on his knee will know what is in it, and the Crown has burned every hand it ever caught putting it there.",
+      "chapter": "01",
+      "scene": "2",
+      "evidence": "Any Confessor who lays a hand on it will know what's in it"
     },
     {
       "fact": "He asked Hollis and Benedek why the Confessors chase the Faithless up a mountain if the Grace left them for faithlessness, and why mercy needs a list with his name first; he kept what Maelis told him behind his teeth.",
@@ -312,6 +324,12 @@
       "evidence": "as a man says a name he is sure of"
     },
     {
+      "fact": "The Confessors had his name and had never seen his face; among eleven wounded men in infirmary shirts at the gate, it was one more.",
+      "chapter": "01",
+      "scene": "climax",
+      "evidence": "None of them had ever seen his face"
+    },
+    {
       "fact": "He crossed the court to the gate with the whole House watching and nobody stopping him, put his hand on the bars, and called the Confessor back from the head of the Steps by both his names.",
       "chapter": "01",
       "scene": "choice",
@@ -348,34 +366,16 @@
       "evidence": "Named, you're a law they'll have to break"
     },
     {
-      "fact": "Instead of going straight to the hall he went along the wall-walk after Wren, kept her count of the hall's lamps, nine, while she told him how stupid giving his name was, and promised to tell her first the next time he means to be brave.",
-      "chapter": "02",
-      "scene": "between-1",
-      "evidence": "I'll tell you first."
-    },
-    {
-      "fact": "The Confessors had his name and had never seen his face; among eleven wounded men in infirmary shirts at the gate, it was one more.",
-      "chapter": "01",
-      "scene": "climax",
-      "evidence": "None of them had ever seen his face"
-    },
-    {
-      "fact": "To him, kneeling anew at a stone in front of a crowd would say aloud that the Grace left the Ninth because the Ninth failed it, and that forty-one men died at Harrow Ford for their own bad faith.",
-      "chapter": "01",
-      "scene": "1",
-      "evidence": "for their own bad faith"
-    },
-    {
-      "fact": "Maelis told him the Confessors do not need him to tell them anything: any Confessor who lays a hand on his knee will know what is in it, and the Crown has burned every hand it ever caught putting it there.",
-      "chapter": "01",
-      "scene": "2",
-      "evidence": "Any Confessor who lays a hand on it will know what's in it"
-    },
-    {
       "fact": "Before he went to the bars he weighed it: the grey cloaks had walked the wounded looking at faces, and next time it would be every cot in the hall and eleven sore men taking his share of it; the lie had died when the Confessor said the beds weren't empty, and the bell had already told the valley the House had someone. It might as well have a name.",
       "chapter": "01",
       "scene": "choice",
       "evidence": "It might as well have a name."
+    },
+    {
+      "fact": "Instead of going straight to the hall he went along the wall-walk after Wren, kept her count of the hall's lamps, nine, while she told him how stupid giving his name was, and promised to tell her first the next time he means to be brave.",
+      "chapter": "02",
+      "scene": "between-1",
+      "evidence": "I'll tell you first."
     },
     {
       "fact": "He went to the Prior in the chapel for the reproach she had not given him; she answered in questions, and told him he is in the names she says every night, and was before he gave his to the Confessor.",
@@ -385,39 +385,39 @@
     },
     {
       "fact": "On the night of the gate the hall had his name before he reached his cot.",
-      "evidence": "The hall had his name before he reached his cot",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "The hall had his name before he reached his cot"
     },
     {
       "fact": "He could not tell Benedek what the Confessor had said of men who can't answer: the law keeps a name that is taken against its will, and a man who cannot answer has no will to be taken against.",
-      "evidence": "A man who could not answer had no will to be taken against.",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "A man who could not answer had no will to be taken against."
     },
     {
       "fact": "While Maelis read the knee by lamplight, the script came up over his palms unasked, and the word under his name had changed; he said nothing of it.",
-      "evidence": "under his name the word had changed",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "under his name the word had changed"
     },
     {
       "fact": "From the hall window he took the camp's measure: one fire, four sitting round it and one walking the terrace's edge, changing places in turns, nobody lying down.",
-      "evidence": "They were sitting up in turns, all night, where the whole House could see them do it.",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "They were sitting up in turns, all night, where the whole House could see them do it."
     },
     {
       "fact": "Sent the Confessor's good night by his rank through the gate-ward, he had the man tell the Confessor that he had given it, and nothing more.",
-      "evidence": "Then tell him you gave it.",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "Then tell him you gave it."
     },
     {
       "fact": "At the night bell he tried to say the oath aloud with Benedek and his throat shut on the first word; he gave the lad the shapes of it again.",
-      "evidence": "his throat shut on it like a door",
       "chapter": "02",
-      "scene": "1"
+      "scene": "1",
+      "evidence": "his throat shut on it like a door"
     },
     {
       "fact": "After the night bell he went down the hall to the three Ninth men read with him at the gate with an order, to go on not knowing him, and said he would tell the Confessor himself they were not his; the oldest called it deciding for them without asking, and Darrow let the order go and asked what they wanted.",

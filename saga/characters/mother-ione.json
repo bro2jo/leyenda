@@ -17,9 +17,9 @@
   "portrait_alt": "Portrait of Mother Ione: a small old woman in her seventies with a round, deeply creased face, rosy cheeks, very pale grey-blue eyes, sparse white brows and a faint, patient smile, white hair under a plain white linen coif tied under her chin, in a high-collared grey-brown wool gown and a worn grey-green shawl, sitting in a carved high-backed wooden chair in a stone room with a hearth fire burning beside her.",
   "first_seen": {
     "chapter": "01",
-    "scene": "1",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"
+    "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen": {
     "chapter": "02",
@@ -65,6 +65,18 @@
       "evidence": "you'll hear from me before dusk"
     },
     {
+      "fact": "At her council she put it to Darrow as a question: if the lay brothers tell the valley there's nobody up here, what does a sanctuary bell tell it at dusk? After his answer, Old Mercy did not ring at dusk, nor at the next dawn.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "what does a sanctuary bell tell it at dusk?"
+    },
+    {
+      "fact": "When Darrow offered to go down on the cage so the list would have nothing to climb for, she asked him how many names the next writ would carry once the House had given them one, and did not wait for him to count.",
+      "chapter": "01",
+      "scene": "3",
+      "evidence": "how many will the next writ carry?"
+    },
+    {
       "fact": "She came up the hall on the last stroke of the dawn bell and waited at the foot of Darrow's cot until Benedek's lips stopped moving before she spoke.",
       "chapter": "01",
       "scene": "4",
@@ -81,12 +93,6 @@
       "chapter": "01",
       "scene": "4",
       "evidence": "or for the river?"
-    },
-    {
-      "fact": "At her council she put it to Darrow as a question: if the lay brothers tell the valley there's nobody up here, what does a sanctuary bell tell it at dusk? After his answer, Old Mercy did not ring at dusk, nor at the next dawn.",
-      "chapter": "01",
-      "scene": "3",
-      "evidence": "what does a sanctuary bell tell it at dusk?"
     },
     {
       "fact": "At the next dawn she told Darrow Old Mercy had not rung at dusk, so the valley heard what it always hears from the House; when he said there was no law on the gate, she said not till she rings, and asked whether he had slept any worse for it.",
@@ -129,12 +135,6 @@
       "chapter": "01",
       "scene": "choice",
       "evidence": "She asked him whether the shoulder was hurt."
-    },
-    {
-      "fact": "When Darrow offered to go down on the cage so the list would have nothing to climb for, she asked him how many names the next writ would carry once the House had given them one, and did not wait for him to count.",
-      "chapter": "01",
-      "scene": "3",
-      "evidence": "how many will the next writ carry?"
     },
     {
       "fact": "Every night, alone in the chapel, she says the names of everyone under the House's roof, and notices which ones she has had to stop saying.",

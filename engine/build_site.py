@@ -2231,12 +2231,39 @@ def text_of(h):
 GM_DIRS = [SAGA / "bible" / "_gm", SAGA / "state" / "_gm"]
 
 
+def gm_strings(obj, out=None):
+    """Every string value in a JSON structure (the GM records), one per line."""
+    if out is None:
+        out = []
+    if isinstance(obj, dict):
+        for v in obj.values():
+            gm_strings(v, out)
+    elif isinstance(obj, list):
+        for v in obj:
+            gm_strings(v, out)
+    elif isinstance(obj, str):
+        out.append(obj)
+    return out
+
+
 def gm_blocklists(chron_text, allowed_words, extra_gm="", allowed_text=""):
     """Sentences and unrevealed names from the GM files. Nothing from here is rendered; it only builds the checks.
     GM files: every .md under saga/bible/_gm/ and saga/state/_gm/ (JSON there is not scanned: every name it carries is
     also in a GM .md). A GM sentence is exempt when the chronicle or allowed_text (engine/rules.json strings and the
     Bearing's pole words / current epithet) already carries it."""
-    gm_text = "\n".join(p.read_text(encoding="utf-8") for d in GM_DIRS if d.exists() for p in sorted(d.glob("*.md")))
+    gm_text = "\n".join(p.read_text(encoding="utf-8") for d in GM_DIRS if d.exists() for p in sorted(d.rglob("*.md")))
+    # the GM records as data: every string in the notes (saga/state/_gm/notes/*.jsonl) and the threads (threads.json) is GM prose too
+    for d in GM_DIRS:
+        if not d.exists():
+            continue
+        for p in sorted(list(d.rglob("*.jsonl")) + [d / "threads.json"]):
+            if not p.exists():
+                continue
+            try:
+                rows = [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()] if p.suffix == ".jsonl" else [json.load(open(p, encoding="utf-8"))]
+            except (OSError, ValueError):
+                continue
+            gm_text += "\n" + "\n".join(gm_strings(rows))
     chron_norm = norm(chron_text)
     allowed_norm = norm(allowed_text)
     sentences = set()

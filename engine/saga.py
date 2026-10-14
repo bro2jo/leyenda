@@ -87,8 +87,12 @@ import json
 import os
 import random
 import re
+import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import records as R  # the events store and the projections (engine/records.py)
 
 ROOT = Path(__file__).resolve().parent.parent
 P = {
@@ -98,7 +102,10 @@ P = {
     "ledger": ROOT / "saga/state/_gm/consequences.json",
     "archive": ROOT / "saga/state/_gm/consequences_archive.json",
     "arc": ROOT / "saga/bible/_gm/arc.md",
-    "threads": ROOT / "saga/state/_gm/threads.md",
+    "threads": ROOT / "saga/state/_gm/threads.json",
+    "codex_json": ROOT / "saga/state/codex.json",
+    "events": ROOT / "saga/state/events",
+    "notes": ROOT / "saga/state/_gm/notes",
     "lore": ROOT / "saga/bible/_gm/lore.md",
     "codex": ROOT / "saga/state/codex.md",
     "cast": ROOT / "saga/bible/cast.md",
@@ -1572,14 +1579,20 @@ def cmd_add(args):
         entry = json.loads(args.entry)
     except json.JSONDecodeError as e:
         die(f"entry is not valid JSON: {e}")
+    add_entry(st, entry, args.witnessed, args.pending, args.dry_run)
+
+
+def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False):
+    """Record one ledger entry: validate, fold the witnesses' preference, trim a Between's approval to its cap, apply the
+    `now` deltas (approval, Bearing, flags, factions), append it, save. Used by `add` and by `choose`."""
     ledger, plan, world = st.ledger, st.plan, st.world
     auto = downstream_due(entry, plan)  # one due item per flag set: the Downstream line is owed, not remembered
     # first pass: shape, poles, magnitudes, the entry's own approval targets
-    probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=args.pending)
+    probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=pending)
     if probs:
         die("refusing the entry:\n  " + "\n  ".join(probs))
     now = entry["now"]
-    witnessed = [w.strip() for w in (args.witnessed or "").split(",") if w.strip()]
+    witnessed = [w.strip() for w in (witnessed_csv or "").split(",") if w.strip()]
     # companion-preference approval from bearing deltas (computed quietly; printed only once everything is accepted)
     pref_delta = {}
     to_come = plan.get("companions_to_come", {})
@@ -1608,7 +1621,7 @@ def cmd_add(args):
             appr[cid] = appr.get(cid, 0) + dlt
             folded.append(f"witnessed {cid}: preference {dlt:+d} folded into now.approval")
         # the folded approval targets must be companions too, before anything is printed as applied
-        bad = [cid for cid in pref_delta if cid not in world.get("companions", {}) and not ((args.pending or cid in banked) and cid in to_come)]
+        bad = [cid for cid in pref_delta if cid not in world.get("companions", {}) and not ((pending or cid in banked) and cid in to_come)]
         if bad:
             die("refusing the entry:\n  " + "\n  ".join(f"now.approval.{cid} (folded from --witnessed): not a companion in world.json (use --pending for companions_to_come)" for cid in bad))
     for line in folded:
@@ -1668,8 +1681,9 @@ def cmd_add(args):
     st.touch("ledger")
     for it in ordered["due"]:
         print(f"due {it['id']} when={it['when']} → at={it['at']} [{it['weight']}]" + ("  (auto: the flag's Downstream line)" if it["id"] in auto else ""))
-    st.save(dry=args.dry_run)
-    print(("(dry run) " if args.dry_run else "") + f"ledger entry {entry['id']} recorded with {len(ordered['due'])} due item(s)")
+    st.save(dry=dry_run)
+    print(("(dry run) " if dry_run else "") + f"ledger entry {entry['id']} recorded with {len(ordered['due'])} due item(s)")
+    return ordered
 
 
 def find_due(ledger, did):
@@ -1680,37 +1694,46 @@ def find_due(ledger, did):
     die(f"no due item {did} in the ledger")
 
 
+def fire_item(st, did, where):
+    """Mark a due item fired at `where`; a rule id (r.…) marks the rule honoured there. Returns the line to print."""
+    if not WHERE_RE.match(str(where or "")):
+        die(f"--where {where!r} must look like ch03:s2, ch03:climax, ch03:interlude or book2")
+    if str(did).startswith("r."):  # a rule honoured on the page: it has state, so `now` stops arming it (once per Book for a standing rule)
+        r = next((x for x in st.ledger.get("rules", []) if x.get("id") == did), None)
+        if not r:
+            die(f"no rule {did} in the ledger")
+        r.setdefault("fired", []).append(where)
+        st.touch("ledger")
+        return f"rule {did} honoured at {where}: {r.get('then')}" + (" (a standing rule: it may arm again in a later Book)" if str(r.get("where")) == "any" else "")
+    e, it = find_due(st.ledger, did)
+    if it["status"] != "pending":
+        die(f"{did} is already {it['status']}")
+    it["status"] = f"fired@{where}"
+    st.touch("ledger")
+    return f"{did} fired at {where}: {it['what']}"
+
+
+def void_item(st, did, why):
+    e, it = find_due(st.ledger, did)
+    if it["status"] != "pending":
+        die(f"{did} is already {it['status']}")
+    it["status"] = f"void:{why}"
+    st.touch("ledger")
+    return f"{did} void: {why}"
+
+
 def cmd_fire(args):
     st = State()
-    if not WHERE_RE.match(args.where):
-        die(f"--where {args.where!r} must look like ch03:s2, ch03:climax, ch03:interlude or book2")
-    if str(args.id).startswith("r."):  # a rule honoured on the page: it has state, so `now` stops arming it (once per Book for a standing rule)
-        r = next((x for x in st.ledger.get("rules", []) if x.get("id") == args.id), None)
-        if not r:
-            die(f"no rule {args.id} in the ledger")
-        r.setdefault("fired", []).append(args.where)
-        st.touch("ledger")
-        st.save()
-        print(f"rule {args.id} honoured at {args.where}: {r.get('then')}" + (" (a standing rule: it may arm again in a later Book)" if str(r.get("where")) == "any" else ""))
-        return
-    e, it = find_due(st.ledger, args.id)
-    if it["status"] != "pending":
-        die(f"{args.id} is already {it['status']}")
-    it["status"] = f"fired@{args.where}"
-    st.touch("ledger")
+    line = fire_item(st, args.id, args.where)
     st.save()
-    print(f"{args.id} fired at {args.where}: {it['what']}")
+    print(line)
 
 
 def cmd_void(args):
     st = State()
-    e, it = find_due(st.ledger, args.id)
-    if it["status"] != "pending":
-        die(f"{args.id} is already {it['status']}")
-    it["status"] = f"void:{args.why}"
-    st.touch("ledger")
+    line = void_item(st, args.id, args.why)
     st.save()
-    print(f"{args.id} void: {args.why}")
+    print(line)
 
 
 def cmd_archive(args):
@@ -1797,6 +1820,75 @@ def cmd_route(args):
 
 
 # ---------------------------------------------------------------- commands: plan
+def plan_done_written(st, s, wrote):
+    """A slot's scene is on the page: the slot, the position, its quest or beat, the owed world moves (the --wrote half of
+    `plan done`; `record` calls it too)."""
+    plan = st.plan
+    if not wrote or not WROTE_RE.match(wrote):
+        die("--wrote must look like ch01:s3 or ch01:interlude")
+    m = WROTE_RE.match(wrote)
+    if int(m.group(1)) != int(plan["position"]["chapter"]):
+        die(f"--wrote {wrote} names chapter {int(m.group(1))}; the plan is on chapter {plan['position']['chapter']}")
+    if m.group(3) and int(m.group(3)) > int(plan["position"].get("next_scene") or 1):
+        die(f"--wrote {wrote} skips ahead; the next scene is {plan['position'].get('next_scene')}")
+    heads = chapter_headings(st.world)
+    key = m.group(3) or m.group(2)
+    if heads is not None and key not in {k for k, _ in heads}:
+        want = f"### Scene {key}" if m.group(3) else "### " + key.split("-")[0].capitalize()
+        print(f"⚠ {st.world.get('chapter_file')} has no `{want}` heading yet; write the scene before `saga.py check`")
+    s["status"] = "written"
+    s["wrote"] = wrote
+    plan["position"]["last_written"] = wrote
+    plan["position"]["stage"] = "scene"
+    if m.group(3):
+        plan["position"]["next_scene"] = max(int(plan["position"].get("next_scene") or 1), int(m.group(3)) + 1)
+    if s.get("kind") == "quest" and s.get("quest"):
+        q = plan.setdefault("quests", {}).setdefault(s["quest"], {"status": "available", "stage": 0, "priority": "optional"})
+        q["stage"] = int(s.get("stage") or q.get("stage", 0) + 1)
+        total = arc_quest_stage_count(s["quest"])
+        q["status"] = "done" if (total and q["stage"] >= total) or s.get("last") else "live"
+        print(f"quest {s['quest']}: stage {q['stage']}" + (f"/{total}" if total else "") + f" · {q['status']}" + (" (slot marked last)" if s.get("last") and q["status"] == "done" else ""))
+    if s.get("kind") == "spine" and s.get("beat"):
+        b = plan.setdefault("core_beats", {}).setdefault(s["beat"], {"title": s["beat"], "status": "planned"})
+        if b.get("status") == "planned":
+            b["status"] = "in_progress"
+        plan["position"]["beat"] = s["beat"]
+    print(f"slot {s['n']} written as {wrote} · next scene {plan['position']['next_scene']} · stage scene")
+    if (s.get("invite") or {}).get("status") == "waiting":
+        print("  the slot's invitation is waiting: the close reply ends on its one in-world line; `invite N take` when he answers in voice, `invite N pass` at the next close if he has not")
+    if (s.get("challenge") or {}).get("status") == "open":
+        print("  the slot's challenge is still open: it may run into the next scene, then `challenge N success|fail` resolves it and `saga.py add` records what it changed")
+    if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("project"):
+        print("  a project stage: world.json → projects[] (stage, the decision, one visible line in the page's words), the place's description in places.json")
+    if s.get("micro"):
+        print(f"slot {s['n']} carries a micro: if the scene ended on it, it opens now (`record` with \"micro_opened\": true, or `plan micro open {s['n']}`)")
+    pay_owed_moves(plan, "scene")
+    st.touch("plan")
+
+
+def open_micro(st, s):
+    plan = st.plan
+    if not s.get("micro"):
+        die(f"slot {s.get('n')} has no micro planned")
+    if s.get("status") != "written":
+        die(f"slot {s.get('n')} is {s.get('status')}: its scene is recorded first (the micro takes its scene key from the slot)")
+    if plan.get("open_micro"):
+        die(f"a micro is already open (slot {plan['open_micro'].get('slot')}); close it first (it resolves to its default if unanswered)")
+    m = dict(s["micro"])
+    scene_key = micro_scene_key(plan, s)
+    plan["open_micro"] = {"slot": s["n"], "chapter": int(plan["chapter"].get("number")), "scene": scene_key, "opened": today_local().isoformat(), **m}
+    st.touch("plan")
+    print(f"{'beat choice' if m.get('beat') else 'micro'} open from slot {s['n']} at scene {scene_key} ({'its arc weights' if m.get('beat') else m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
+    print("  his answer: `saga.py choose --option K '<ledger entry>'` (the consequence is folded into the next scene's opening; the brief carries it)")
+
+
+def advance_next_slot(plan):
+    nxt = next((x for x in sorted(plan["chapter"]["slots"], key=lambda x: float(x.get("n", 0))) if x.get("status") == "planned"), None)
+    if nxt and not any(x.get("status") == "next" for x in plan["chapter"]["slots"]):
+        nxt["status"] = "next"
+        print(f"next: {slot_label(nxt)}")
+
+
 def cmd_plan(args):
     st = State()
     plan = st.plan
@@ -1902,50 +1994,8 @@ def cmd_plan(args):
                 s["challenge"]["status"] = "void"
                 print("its challenge is void; re-plan it with the stage if it still matters")
         else:
-            if not args.wrote or not WROTE_RE.match(args.wrote):
-                die("--wrote must look like ch01:s3 or ch01:interlude")
-            m = WROTE_RE.match(args.wrote)
-            if int(m.group(1)) != int(plan["position"]["chapter"]):
-                die(f"--wrote {args.wrote} names chapter {int(m.group(1))}; the plan is on chapter {plan['position']['chapter']}")
-            if m.group(3) and int(m.group(3)) > int(plan["position"].get("next_scene") or 1):
-                die(f"--wrote {args.wrote} skips ahead; the next scene is {plan['position'].get('next_scene')}")
-            heads = chapter_headings(st.world)
-            key = m.group(3) or m.group(2)
-            if heads is not None and key not in {k for k, _ in heads}:
-                want = f"### Scene {key}" if m.group(3) else "### " + key.split("-")[0].capitalize()
-                print(f"⚠ {st.world.get('chapter_file')} has no `{want}` heading yet; write the scene before `saga.py check`")
-            s["status"] = "written"
-            s["wrote"] = args.wrote
-            plan["position"]["last_written"] = args.wrote
-            plan["position"]["stage"] = "scene"
-            if m.group(3):
-                plan["position"]["next_scene"] = max(int(plan["position"].get("next_scene") or 1), int(m.group(3)) + 1)
-            if s.get("kind") == "quest" and s.get("quest"):
-                q = plan.setdefault("quests", {}).setdefault(s["quest"], {"status": "available", "stage": 0, "priority": "optional"})
-                q["stage"] = int(s.get("stage") or q.get("stage", 0) + 1)
-                total = arc_quest_stage_count(s["quest"])
-                q["status"] = "done" if (total and q["stage"] >= total) or s.get("last") else "live"
-                print(f"quest {s['quest']}: stage {q['stage']}" + (f"/{total}" if total else "") + f" · {q['status']}" + (" (slot marked last)" if s.get("last") and q["status"] == "done" else ""))
-            if s.get("kind") == "spine" and s.get("beat"):
-                b = plan.setdefault("core_beats", {}).setdefault(s["beat"], {"title": s["beat"], "status": "planned"})
-                if b.get("status") == "planned":
-                    b["status"] = "in_progress"
-                plan["position"]["beat"] = s["beat"]
-            print(f"slot {s['n']} written as {args.wrote} · next scene {plan['position']['next_scene']} · stage scene")
-            print("  the reread (style.md §4) came before this; now the records: NOW, the characters (evidence on the facts that need it), world.json, threads, codex, then `saga.py check`")
-            if (s.get("invite") or {}).get("status") == "waiting":
-                print("  the slot's invitation is waiting: the close reply ends on its one in-world line; `invite N take` when he answers in voice, `invite N pass` at the next close if he has not")
-            if (s.get("challenge") or {}).get("status") == "open":
-                print("  the slot's challenge is still open: it may run into the next scene, then `challenge N success|fail` resolves it and `saga.py add` records what it changed")
-            if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("project"):
-                print("  a project stage: world.json → projects[] (stage, the decision, one visible line in the page's words), the place's description in places.json, codex.md")
-            if s.get("micro"):
-                print(f"slot {s['n']} carries a micro: if the scene ended on it, `plan micro open {s['n']}`")
-            pay_owed_moves(plan, "scene")
-        nxt = next((x for x in sorted(plan["chapter"]["slots"], key=lambda x: float(x.get("n", 0))) if x.get("status") == "planned"), None)
-        if nxt and not any(x.get("status") == "next" for x in plan["chapter"]["slots"]):
-            nxt["status"] = "next"
-            print(f"next: {slot_label(nxt)}")
+            plan_done_written(st, s, args.wrote)
+        advance_next_slot(plan)
         st.touch("plan")
         st.save()
         return
@@ -1981,18 +2031,7 @@ def cmd_plan(args):
         return
     if a == "micro":
         if args.sub == "open":
-            s = slot_by_n(plan, args.n)
-            if not s.get("micro"):
-                die(f"slot {args.n} has no micro planned")
-            if s.get("status") != "written":
-                die(f"slot {args.n} is {s.get('status')}: write its scene and `plan done {args.n} --wrote …` first (the micro takes its scene key from the slot)")
-            if plan.get("open_micro"):
-                die(f"a micro is already open (slot {plan['open_micro'].get('slot')}); close it first (it resolves to its default if unanswered)")
-            m = dict(s["micro"])
-            scene_key = micro_scene_key(plan, s)
-            plan["open_micro"] = {"slot": s["n"], "chapter": int(plan["chapter"].get("number")), "scene": scene_key, "opened": today_local().isoformat(), **m}
-            print(f"{'beat choice' if m.get('beat') else 'micro'} open from slot {s['n']} at scene {scene_key} ({'its arc weights' if m.get('beat') else m.get('axis')}): {m.get('ask')} · default {m.get('default')}")
-            print(f"  world.json choices[] entry: chapter {plan['chapter'].get('number')}, scene \"{scene_key}\", kind micro")
+            open_micro(st, slot_by_n(plan, args.n))
         else:
             om = plan.get("open_micro")
             if not om:
@@ -2336,6 +2375,26 @@ def lore_pool(entries, kind):
     return items
 
 
+def lore_spoke(entry_id, where):
+    """Mark an entry of the Annals spoken at `where` (the field keeps every place it was spoken). Returns (old, new)."""
+    text = P["lore"].read_text(encoding="utf-8")
+    lines = text.splitlines()
+    head = next((i for i, l in enumerate(lines) if LORE_HEAD_RE.match(l) and LORE_HEAD_RE.match(l).group(1) == entry_id), None)
+    if head is None:
+        die(f"no entry `{entry_id}` in the Annals")
+    for i in range(head + 1, len(lines)):
+        if lines[i].startswith("#"):
+            break
+        if "**spoken:**" in lines[i]:
+            old = re.search(r"\*\*spoken:\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lines[i]).group(1)
+            fresh = not old or old.strip() in ("—", "-", "unspoken") or old.strip().startswith("—")
+            joined = where if fresh else (old if where in old else f"{old}; {where}")
+            lines[i] = re.sub(r"(\*\*spoken:\*\*\s*)(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lambda m: m.group(1) + joined, lines[i], count=1)
+            P["lore"].write_text("\n".join(lines) + ("\n" if text.endswith("\n") else ""), encoding="utf-8")
+            return old, joined
+    die(f"{entry_id} has no **spoken:** field")
+
+
 def cmd_lore(args):
     entries, dupes = lore_entries()
     if not entries:
@@ -2385,22 +2444,9 @@ def cmd_lore(args):
             die(f"lore spoke <id> --where chNN:sK; ids: {', '.join(list(entries)[:8])}…")
         if not args.where:
             die("--where is required (chNN:sK, chNN:climax, chNN:between-K, Prologue II, glimpse)")
-        text = P["lore"].read_text(encoding="utf-8")
-        head = next(i for i, l in enumerate(text.splitlines()) if LORE_HEAD_RE.match(l) and LORE_HEAD_RE.match(l).group(1) == arg)
-        lines = text.splitlines()
-        for i in range(head + 1, len(lines)):
-            if lines[i].startswith("#"):
-                die(f"{arg} has no **spoken:** field")
-            if "**spoken:**" in lines[i]:
-                old = re.search(r"\*\*spoken:\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lines[i]).group(1)
-                # where else it was spoken stays: an entry is spoken in more than one scene, and the field is its record
-                fresh = not old or old.strip() in ("—", "-", "unspoken") or old.strip().startswith("—")
-                joined = args.where if fresh else (old if args.where in old else f"{old}; {args.where}")
-                lines[i] = re.sub(r"(\*\*spoken:\*\*\s*)(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", lambda m: m.group(1) + joined, lines[i], count=1)
-                P["lore"].write_text("\n".join(lines) + ("\n" if text.endswith("\n") else ""), encoding="utf-8")
-                print(f"{arg} spoken: {old or '—'} → {joined}; give codex.md its reader-safe line")
-                return
-        die(f"{arg} has no **spoken:** field")
+        old, joined = lore_spoke(arg, args.where)
+        print(f"{arg} spoken: {old or '—'} → {joined}; its reader-safe line goes to the Codex through `record` (a codex item)")
+        return
     e = entries.get(what)
     if not e:
         hint = ", ".join(k for k in entries if k.startswith(what.split(".")[0])) or ", ".join(list(entries)[:10])
@@ -2468,8 +2514,12 @@ def registered_names():
 
 def names_in(path, registered):
     """Capitalised words in a chapter file that appear at least once mid-sentence and that no registry knows."""
+    return names_in_text(path.read_text(encoding="utf-8"), registered)
+
+
+def names_in_text(text, registered):
     found = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
+    for line in text.splitlines():
         s = line.strip()
         if not s or s.startswith(("#", ">", "`")):
             continue
@@ -2709,7 +2759,7 @@ def cmd_invite(args):
     st.save()
 
 
-def cmd_project(args):
+def cmd_project_quest(args):
     st = State()
     q = st.plan.get("quests", {}).get(args.id)
     if not q:
@@ -2740,8 +2790,71 @@ def cmd_project(args):
 
 
 # ---------------------------------------------------------------- check & fmt
+def check_records(st, probs, notes):
+    plan, pos = st.plan, st.plan.get("position", {})
+    try:
+        evs = R.load_events()
+        R.load_notes()
+    except ValueError as e:
+        probs.append(str(e))
+        return
+    files = R.chapter_files()
+    char_ids = set(R.char_files())
+    seen, cache = {}, {}
+    for ev in evs:
+        key = ev.get("key")
+        parsed = R.parse_key(key)
+        if not parsed:
+            probs.append(f"event key {key!r} malformed (ch02:s4, ch02:between-9, ch02:interlude, ch02:climax, ch02:choice, ch00:II)")
+            continue
+        seen[key] = seen.get(key, 0) + 1
+        ch, sk, kind = parsed
+        if ch not in files:
+            probs.append(f"event {key}: no chronicle file for chapter {ch}")
+            continue
+        blocks = cache.setdefault(ch, {k: t for k, t, _ in R.blocks_of(files[ch])})
+        if sk not in blocks:
+            probs.append(f"event {key}: {files[ch].name} has no such block")
+        elif norm_title(ev.get("title")) != norm_title(blocks[sk]):
+            probs.append(f"event {key}: title {ev.get('title')!r}, but the heading says {blocks[sk]!r} (re-record it with --force)")
+        for p in ev.get("people") or []:
+            if p.get("id") not in char_ids:
+                probs.append(f"event {key}: people id {p.get('id')!r} has no character file")
+        if kind == "scene" and not ev.get("date") and ch == int(pos.get("chapter", 0)):
+            notes.append(f"event {key}: no date (the day the scene covers)")
+    for k, n in seen.items():
+        if n > 1:
+            probs.append(f"event {k} is recorded {n} times")
+    cur = int(pos.get("chapter", 0))
+    if cur in files:
+        for k, t, _ in R.blocks_of(files[cur]):
+            if R.make_key(cur, k) not in seen:
+                probs.append(f"{files[cur].name} has `{t}` ({k}) but no event: `saga.py record '<json>'` (the page is not recorded until it is)")
+    try:
+        thr = R.load_threads()
+        tids = {}
+        for t in thr.get("threads", []):
+            tids[t.get("id")] = tids.get(t.get("id"), 0) + 1
+            if t.get("status") not in ("open", "paid"):
+                probs.append(f"thread {t.get('id')}: status {t.get('status')!r} must be open or paid")
+            if not str(t.get("title") or "").strip():
+                probs.append(f"thread {t.get('id')}: no title")
+        for i, n in tids.items():
+            if n > 1:
+                probs.append(f"thread id {i} appears {n} times")
+        if P["codex_json"].exists() and P["codex_json"].read_text(encoding="utf-8") != dumps(load_json(P["codex_json"])):
+            probs.append(f"{rel(P['codex_json'])} is not in canonical format; run `saga.py fmt`")
+    except (OSError, ValueError, json.JSONDecodeError) as e:
+        probs.append(f"threads/codex store unreadable: {e}")
+    try:
+        for f in R.project_all(plan, write=False):
+            probs.append(f"{f} is stale against the records: run `saga.py project` (a projection is never edited by hand; the records are)")
+    except Exception as e:  # a projection that cannot be built is a problem, never a traceback
+        probs.append(f"projections cannot be rebuilt: {e}")
+
+
 def cmd_fmt(args):
-    for k in STATE_FILES:
+    for k in STATE_FILES + ("codex_json", "threads"):
         if P[k].exists():
             obj = load_json(P[k])
             text = dumps(obj)
@@ -3197,6 +3310,10 @@ def cmd_check(args):
     # the chapter file, the slots, world.json's scenes[] and the Ledger's closed days must tell one story
     reconcile_chapter(st, probs)
 
+    # the records: every event parses, keys are unique and name a block with the same title, every person has a file,
+    # the current chapter's blocks are all recorded, the threads are well formed, and every projection is fresh
+    check_records(st, probs, notes)
+
     # the Annals: parseable, unique ids, known kinds, tiers, a spoken field
     entries, dupes = lore_entries()
     for d_ in dupes:
@@ -3257,6 +3374,444 @@ def cmd_check(args):
     print("ok: ledger, bearing, plan, world.json choices and formatting all check out")
 
 
+
+# ---------------------------------------------------------------- the records: record, project, history, threads, glimpse, choose
+RECORD_KEYS = ("key", "chapter", "scene", "kind", "title", "date", "written", "after", "where", "time", "last_beat", "people", "codex",
+               "lore", "threads", "fired", "voided", "quest", "struggle", "season", "book_title", "inventory", "tether", "rank", "now",
+               "recap", "story_so_far", "choice", "micro_opened", "invite")
+
+
+def record_people_names(ev):
+    out = set()
+    for p in ev.get("people") or []:
+        try:
+            c = load_json(P["characters"] / f"{p.get('id')}.json")
+        except (OSError, ValueError):
+            continue
+        for s in [c.get("name"), c.get("epithet")] + list(c.get("aliases") or []):
+            out.update(w.lower() for w in re.findall(r"[A-Z][a-z]+", str(s or "")))
+    for it in ev.get("codex") or []:
+        out.update(w.lower() for w in re.findall(r"[A-Z][a-z]+", str(it.get("name") or "")))
+    return out
+
+
+def cmd_record(args):
+    """One block of the page, recorded: validated against the chapter file, the registries and the plan; its event
+    appended (reader-safe) and its GM note (if any); the plan moved (the slot done, a micro opened, the climax's
+    choice opened, due items fired, the Annals marked spoken); every projection rebuilt; then `check`."""
+    st = State()
+    plan, world = st.plan, st.world
+    pos = plan["position"]
+    try:
+        ev = json.loads(args.json)
+    except json.JSONDecodeError as e:
+        die(f"the record is not valid JSON: {e}")
+    if not isinstance(ev, dict):
+        die("the record is a JSON object")
+    key = str(ev.get("key") or "")
+    parsed = R.parse_key(key)
+    if not parsed:
+        die("key must look like ch02:s4, ch02:between-9, ch02:interlude, ch02:climax or ch02:choice")
+    ch, sk, kind = parsed
+    if ch != int(pos["chapter"]) and not args.force:
+        die(f"{key} is chapter {ch}; the plan is on chapter {pos['chapter']} (--force re-records an older block)")
+    files = R.chapter_files()
+    path = files.get(ch)
+    if not path:
+        die(f"no chronicle file for chapter {ch}")
+    blocks = R.blocks_of(path)
+    block = next((b for b in blocks if b[0] == sk), None)
+    if not block:
+        want = {"scene": f"### Scene {sk} — Title", "between": "### Between — Title", "interlude": "### Interlude — Title", "climax": "## Climax — Title", "choice": "### Choice — Title"}.get(kind, sk)
+        die(f"{path.name} has no block {sk}: write it first under `{want}`")
+    _, btitle, btext = block
+    if ev.get("title") and norm_title(ev["title"]) != norm_title(btitle):
+        die(f"title {ev['title']!r} does not match the heading {btitle!r}")
+    ev["title"] = btitle
+    existing = {e["key"] for e in R.load_events(ch)}
+    if key in existing and not args.force:
+        die(f"{key} is already recorded; --force re-records it")
+    probs, unknown_keys = [], [k for k in ev if k not in RECORD_KEYS and k != "gm"]
+    if unknown_keys:
+        probs.append(f"unknown field(s) {', '.join(unknown_keys)}; fields: {', '.join(RECORD_KEYS)}, gm")
+    if kind == "scene" and int(sk) != int(pos["next_scene"]) and not args.force:
+        probs.append(f"the next scene is {pos['next_scene']}, not {sk}")
+    if kind == "between":
+        earlier = [k for k, _, _ in blocks if k.startswith("between-") and int(k.split("-")[1]) < int(sk.split("-")[1])]
+        missing = [k for k in earlier if R.make_key(ch, k) not in existing]
+        if missing and not args.force:
+            probs.append(f"record {R.make_key(ch, missing[0])} first: Betweens are recorded in page order")
+        before = [k for k, _, _ in blocks[: [b[0] for b in blocks].index(sk)] if not k.startswith("between-")]
+        ev["after"] = before[-1] if before else "climax"
+    if kind == "climax" and pos.get("stage") not in ("climax", "choice", "transition") and not args.force:
+        probs.append("the stage is still 'scene': `plan set stage=climax` comes before the climax is written (it pays the owed world moves)")
+    if kind == "climax" and not isinstance(ev.get("choice"), dict):
+        probs.append('a climax record carries the choice as the page offers it: "choice": {"ask": …, "options": […], "default": K}')
+    if kind == "choice" and not plan.get("answered_choice") and not args.force:
+        probs.append("no answered climax choice is waiting for its block (`saga.py choose` first)")
+    if kind != "prologue" and not str(ev.get("last_beat") or "").strip():
+        probs.append("last_beat is required: the block's last beat in a line or two, in the page's words (the NOW page's 'Just happened')")
+    if kind == "scene" and not ev.get("date"):
+        probs.append("date is required for a scene: the day it covers (YYYY-MM-DD)")
+    for d_ in ("date", "written"):
+        if ev.get(d_):
+            try:
+                dt.date.fromisoformat(str(ev[d_]))
+            except ValueError:
+                probs.append(f"{d_} {ev[d_]!r} is not a date")
+    places = known_places()
+    where = ev.get("where")
+    if where is not None:
+        if not isinstance(where, dict) or not where.get("place"):
+            probs.append('where is {"place": <places.json id>, "detail": "where in it he is at the end"}')
+        elif where["place"] not in places:
+            probs.append(f"where.place {where['place']!r} is not in places.json (add the place first)")
+    elif kind not in ("prologue", "choice"):
+        print("note: no `where`: his location carries forward from the last block")
+    char_ids = set(R.char_files())
+    for p in ev.get("people") or []:
+        cid = p.get("id")
+        if cid not in char_ids:
+            probs.append(f"people: no file saga/characters/{cid}.json; a new person gets their base file first (saga/characters/README.md), then the record")
+            continue
+        if p.get("place") and p["place"] not in places:
+            probs.append(f"{cid}: place {p['place']!r} is not in places.json")
+        for f in p.get("facts") or []:
+            if not str(f.get("fact") or "").strip():
+                probs.append(f"{cid}: a fact with no text")
+            evd = f.get("evidence")
+            if evd is not None and (len(R.norm(evd)) < 12 or R.norm(evd) not in R.norm(btext)):
+                probs.append(f"{cid}: evidence {evd!r} is not a verbatim excerpt of this block (a few words at least)")
+        for k_ in p:
+            if k_ not in ("id", "mention", "did", "now", "facts", "place", "present", "status", "quote", "story_so_far"):
+                probs.append(f"{cid}: unknown people field {k_!r}")
+    # names the page has not registered: a coinage is registered in this very record (a codex item, a person), or it is not a name
+    reg = registered_names() | record_people_names(ev)
+    allow = {w.strip() for w in str(args.allow_names or "").split(",") if w.strip()}
+    unknown = {w for w in names_in_text(btext, reg) if w not in allow}
+    if unknown:
+        probs.append(f"names in the block that no registry knows: {', '.join(sorted(unknown))}: give each a codex item in this record, a character file, a place, or the Annals; "
+                     f"or --allow-names A,B when a word is not a name")
+    thr = R.load_threads()
+    tids = {int(t["id"]) for t in thr.get("threads", [])}
+    for t in ev.get("threads") or []:
+        tid = t.get("id") if isinstance(t, dict) else t
+        if tid is None or int(tid) not in tids:
+            probs.append(f"threads: no thread {tid!r} (`saga.py threads --new '<json>'` first, or name it in gm.threads with \"new\": true)")
+        elif isinstance(t, dict) and t.get("how") not in (None, "plant", "touch", "payoff"):
+            probs.append(f"threads: how {t.get('how')!r} is plant, touch or payoff")
+    entries, _ = lore_entries()
+    for lid in ev.get("lore") or []:
+        if lid not in entries:
+            probs.append(f"lore: no entry {lid!r} in the Annals")
+    ledger = st.ledger
+    for did in ev.get("fired") or []:
+        if str(did).startswith("r."):
+            if not any(r.get("id") == did for r in ledger.get("rules", [])):
+                probs.append(f"fired: no rule {did}")
+        else:
+            hit = next((it for e in ledger["entries"] for it in e.get("due", []) if it["id"] == did), None)
+            if hit is None:
+                probs.append(f"fired: no due item {did}")
+            elif hit.get("status") != "pending" and not args.force:
+                probs.append(f"fired: {did} is already {hit['status']}")
+    for v in ev.get("voided") or []:
+        if not isinstance(v, dict) or not v.get("id") or not v.get("why"):
+            probs.append('voided items are {"id": …, "why": …}')
+    codex = R.load_codex()
+    if args.force:
+        R.unapply_codex_key(codex, key)
+    probs += R.apply_codex_items(codex, ev.get("codex"), key)
+    gm = ev.pop("gm", None) or {}
+    if gm and not isinstance(gm, dict):
+        probs.append("gm is an object: {note, kept_off, next_must_know, threads: [{id | new+title, who_knows, status, note}]}")
+        gm = {}
+    for tu in gm.get("threads") or []:
+        if tu.get("new"):
+            if not str(tu.get("title") or "").strip():
+                probs.append("a new thread needs a title")
+        elif tu.get("id") is None or int(tu["id"]) not in tids:
+            probs.append(f"gm.threads: no thread {tu.get('id')!r}")
+    if kind in ("scene", "interlude"):
+        s = find_slot_for(plan, ev, kind, args.slot)
+        if s is None:
+            probs.append("no slot for this block: a scene's slot is the one whose day is its date (`--slot N` names it; `plan slot N day=…` moves one)")
+    if probs:
+        die("refusing the record (nothing written):\n  " + "\n  ".join(probs))
+    # ---- the plan moves
+    today = today_local().isoformat()
+    wrote = f"{ch2(ch)}:{'s' + sk if kind == 'scene' else sk}"
+    if kind in ("scene", "interlude"):
+        if s.get("status") == "written" and s.get("wrote") == wrote:
+            print(f"slot {s['n']} already written as {wrote}")
+        else:
+            plan_done_written(st, s, wrote)
+            advance_next_slot(plan)
+        if ev.get("micro_opened"):
+            open_micro(st, s)
+    if kind == "climax":
+        c = ev["choice"]
+        opts = c.get("options") or []
+        if not 2 <= len(opts) <= 3 or c.get("default") not in range(1, len(opts) + 1):
+            die("the climax's choice needs 2–3 options and a default among them")
+        if pos.get("stage") == "scene":
+            pos["stage"] = "climax"
+            pay_owed_moves(plan, "climax")
+        plan["open_choice"] = {"chapter": int(plan["chapter"].get("number")), "scene": "climax", "ask": c.get("ask") or "What does Darrow do?",
+                               "options": [str(o) for o in opts], "default": int(c["default"]), "opened": today, "carries": int(c.get("carries") or 2)}
+        print("climax choice open: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)) + f" · default {c['default']}")
+    if kind == "choice":
+        if pos.get("stage") == "climax":
+            pos["stage"] = "choice"
+        plan.pop("answered_choice", None)
+    inv = ev.get("invite")
+    if isinstance(inv, dict) and inv.get("slot") is not None:
+        s_inv = slot_by_n(plan, inv["slot"])
+        if (s_inv.get("invite") or {}).get("status") == "waiting":
+            s_inv["invite"]["status"] = "taken" if inv.get("action", "take") == "take" else "passed"
+            print(f"invite slot {s_inv['n']} {s_inv['invite']['status']}")
+    for did in ev.get("fired") or []:
+        print(fire_item(st, did, wrote if WHERE_RE.match(wrote) else f"{ch2(ch)}"))
+    for v in ev.get("voided") or []:
+        print(void_item(st, v["id"], v["why"]))
+    for lid in ev.get("lore") or []:
+        old, new = lore_spoke(lid, wrote)
+        print(f"{lid} spoken: {old or '—'} → {new}")
+    if ev.get("rank"):
+        pos["rank_on_page"] = ev["rank"]
+        print(f"rank on the page: {ev['rank']}")
+    # ---- the records
+    ev.update({"chapter": ch, "scene": sk, "kind": kind})
+    ev.setdefault("written", today)
+    ev.setdefault("date", None)
+    ordered = {k: ev[k] for k in RECORD_KEYS if k in ev and k not in ("micro_opened", "invite")}
+    R.put_event(ordered, replace=args.force)
+    note = {k: v for k, v in gm.items() if k != "threads" and v}
+    for tu in gm.get("threads") or []:
+        if tu.get("new"):
+            nid = max([int(t["id"]) for t in thr["threads"]] + [0]) + 1
+            thr["threads"].append({"id": nid, "title": tu["title"], "truth": tu.get("truth"), "feeds": tu.get("feeds", ""), "status": "open",
+                                   "who_knows": tu.get("who_knows", ""), "note": tu.get("note", ""), "on_page": []})
+            ordered.setdefault("threads", []).append({"id": nid, "how": "plant"})
+            print(f"thread {nid} opened: {tu['title']}")
+        else:
+            t = next(x for x in thr["threads"] if int(x["id"]) == int(tu["id"]))
+            for f_ in ("who_knows", "status", "note", "title", "truth", "feeds"):
+                if tu.get(f_) is not None:
+                    t[f_] = tu[f_]
+    if any(t.get("new") for t in gm.get("threads") or []):
+        R.put_event(ordered, replace=True)
+    if note or gm.get("threads"):
+        note.update({"key": key, "chapter": ch, "written": today, "threads": [tu for tu in gm.get("threads") or []]})
+        R.put_note({k: note[k] for k in ("key", "chapter", "written", "note", "kept_off", "next_must_know", "threads") if k in note}, replace=True)
+    R.save_codex(codex)
+    R.save_threads(thr)
+    st.touch("plan")
+    st.save()
+    changed = R.project_all(plan, write=True)
+    print(f"{key} recorded: {btitle} · people {len(ordered.get('people') or [])} · facts {sum(len(p.get('facts') or []) for p in ordered.get('people') or [])} "
+          f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])} · projections rebuilt: {', '.join(changed) or 'none'}")
+    r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "check"], cwd=ROOT, capture_output=True, text=True)
+    sys.stdout.write(r.stdout + r.stderr)
+    if r.returncode:
+        sys.exit(r.returncode)
+    print("next: `python3 engine/darrow.py ship -m \"…\"`")
+
+
+def find_slot_for(plan, ev, kind, slot_n=None):
+    slots = plan["chapter"].get("slots", [])
+    if slot_n is not None:
+        return next((s for s in slots if str(s.get("n")) == str(slot_n)), None)
+    if kind == "interlude":
+        return next((s for s in slots if s.get("kind") == "interlude" and s.get("status") in ("planned", "next", "written")), None)
+    return next((s for s in slots if s.get("day") == ev.get("date") and s.get("kind") != "interlude"), None)
+
+
+def cmd_project(args):
+    st = State()
+    changed = R.project_all(st.plan, write=not args.dry)
+    if args.dry:
+        print("projections that would change: " + (", ".join(changed) or "none (all fresh)"))
+    else:
+        print("projections rebuilt: " + (", ".join(changed) or "none (all were fresh)"))
+
+
+def cmd_history(args):
+    evs = R.load_events()
+    notes = {n.get("key"): n for n in R.load_notes()} if args.gm else {}
+    rows = []
+    for ev in evs:
+        parsed = R.parse_key(ev.get("key", ""))
+        if not parsed:
+            continue
+        ch, sk, kind = parsed
+        if args.chapter is not None and ch != int(args.chapter):
+            continue
+        if args.place and (ev.get("where") or {}).get("place") != args.place:
+            continue
+        pid = (args.person or "").strip().lower()
+        person = next((p for p in ev.get("people") or [] if pid and (p.get("id") == pid or str(p.get("id", "")).split("-")[0] == pid)), None)
+        if pid and not person:
+            continue
+        tid = args.thread
+        touch = next((t for t in ev.get("threads") or [] if tid is not None and int(t.get("id") if isinstance(t, dict) else t) == int(tid)), None)
+        if tid is not None and not touch:
+            continue
+        rows.append((ev, person, touch))
+    if args.last:
+        rows = rows[-int(args.last):]
+    if not rows:
+        print("nothing recorded matches")
+        return
+    for ev, person, touch in rows:
+        head = f"{ev['key']} · {ev.get('title')}" + (f" · {ev['date']}" if ev.get("date") else "") + (f" · at {ev['where']['place']}" if ev.get("where") else "")
+        print(head)
+        if person:
+            if person.get("mention"):
+                print("  named only")
+            if person.get("did"):
+                print(f"  did: {person['did']}")
+            if person.get("now"):
+                print(f"  now: {short(person['now'], 220)}")
+            for f in person.get("facts") or []:
+                print(f"  · {f.get('fact')}")
+        elif touch:
+            how = touch.get("how", "touch") if isinstance(touch, dict) else "touch"
+            print(f"  {how}" + (f": {short(ev['last_beat'], 200)}" if ev.get("last_beat") else ""))
+        else:
+            if ev.get("last_beat"):
+                print(f"  {short(ev['last_beat'], 220)}")
+            if ev.get("people"):
+                print("  with: " + ", ".join(p["id"] + ("*" if p.get("mention") else "") for p in ev["people"]))
+        n = notes.get(ev["key"])
+        if n:
+            print(f"  GM: {short(n.get('note'), 300)}")
+            for tu in n.get("threads") or []:
+                print(f"  GM thread {tu.get('id')}: " + "; ".join(f"{k} {short(v, 90)}" for k, v in tu.items() if k not in ("id",) and v))
+    if args.gm and args.chapter is not None:
+        extra = [n for n in R.load_notes() if n.get("chapter") == int(args.chapter) and not R.parse_key(n.get("key", ""))]
+        for n in extra:
+            print(f"{n.get('key')} (GM): {short(n.get('note'), 300)}")
+
+
+def cmd_threads(args):
+    thr = R.load_threads()
+    rows = thr.get("threads", [])
+    if args.new:
+        try:
+            t = json.loads(args.new)
+        except json.JSONDecodeError as e:
+            die(f"--new is not valid JSON: {e}")
+        if not str(t.get("title") or "").strip():
+            die("a thread needs a title")
+        nid = max([int(x["id"]) for x in rows] + [0]) + 1
+        rows.append({"id": nid, "title": t["title"], "truth": t.get("truth"), "feeds": t.get("feeds", ""), "status": "open",
+                     "who_knows": t.get("who_knows", ""), "note": t.get("note", ""), "on_page": []})
+        R.save_threads(thr)
+        print(f"thread {nid} opened: {t['title']} (its first plant is the block that records it: threads [{{\"id\": {nid}, \"how\": \"plant\"}}])")
+        return
+    if args.set:
+        t = next((x for x in rows if str(x["id"]) == str(args.id)), None)
+        if not t:
+            die(f"no thread {args.id}")
+        for k, v in parse_kv(args.set).items():
+            if k not in ("who_knows", "status", "note", "title", "truth", "feeds"):
+                die(f"thread field {k!r} is not editable (who_knows, status, note, title, truth, feeds)")
+            if k == "status" and v not in ("open", "paid"):
+                die("status is open or paid")
+            print(f"thread {t['id']}.{k}: {short(t.get(k), 60)!r} → {short(v, 60)!r}")
+            t[k] = v
+        R.save_threads(thr)
+        return
+    if args.id is not None:
+        t = next((x for x in rows if str(x["id"]) == str(args.id)), None)
+        if not t:
+            die(f"no thread {args.id}")
+        print(f"thread {t['id']} · {t.get('status')} · {t.get('truth') or '—'} · feeds: {t.get('feeds')}")
+        print(f"  {t.get('title')}")
+        print(f"  who knows: {t.get('who_knows')}")
+        print(f"  on the page ({len(t.get('on_page') or [])}): {', '.join(t.get('on_page') or []) or 'nowhere yet'}")
+        print(f"  note: {t.get('note')}")
+        for n in R.load_notes():
+            for tu in n.get("threads") or []:
+                if str(tu.get("id")) == str(t["id"]):
+                    print(f"  {n.get('key')}: " + "; ".join(f"{k} {short(v, 120)}" for k, v in tu.items() if k != "id" and v))
+        return
+    shown = [t for t in rows if args.all or t.get("status") == "open"]
+    print(f"threads: {sum(1 for t in rows if t.get('status') == 'open')} open, {sum(1 for t in rows if t.get('status') == 'paid')} paid · `threads --id N` for one, `--all` for the paid ones")
+    for t in shown:
+        onp = t.get("on_page") or []
+        print(f"{t['id']:>3} {t.get('status'):4} {str(t.get('truth') or '—'):3} plants {len(onp):>2} last {onp[-1] if onp else '—':<14} {short(t.get('title'), 80)}")
+        print(f"     knows: {short(t.get('who_knows'), 110)}")
+
+
+def cmd_glimpse(args):
+    if args.action == "show":
+        head, rows = R.glimpse_lines()
+        for r in rows[-(args.n or 6):]:
+            print(f"- {r['date']} · {r['kind']} · {r['text']}")
+        return
+    if not args.kind or not args.text:
+        die("glimpse add --kind house|overheard|ledger|saying|verse|body|weather \"text\"")
+    reg = registered_names()
+    unknown = names_in_text(args.text, reg)
+    if unknown:
+        die(f"the glimpse names {', '.join(sorted(unknown))}, which the page has not spoken: a glimpse never names what the page has not")
+    probs = R.glimpse_add(args.date or today_local().isoformat(), args.kind, args.text)
+    if probs:
+        die("refusing the glimpse:\n  " + "\n  ".join(probs))
+    print(f"glimpse kept ({args.kind}); the file holds its last {R.GLIMPSE_KEEP}")
+
+
+def cmd_choose(args):
+    """His answer to the open choice, in one step: the ledger entry (approval, Bearing, flags, factions, the Downstream
+    due items), the choices[] row the site reads, and the open micro or climax choice closed."""
+    st = State()
+    plan, world = st.plan, st.world
+    om, oc = plan.get("open_micro"), plan.get("open_choice")
+    which = args.which or ("micro" if om else "climax" if oc else None)
+    if which is None:
+        die("nothing is open: no micro-choice and no climax choice (a Darrow action with nothing open is a Between: /play)")
+    target = om if which == "micro" else oc
+    if not target:
+        die(f"no {which} choice is open")
+    opts = target.get("options") or []
+    opt = args.option if args.option is not None else (target.get("default") if args.by == "bearing" else None)
+    if opt is None:
+        die("pass --option K, or --by bearing to take the planned default")
+    if opt not in range(1, len(opts) + 1):
+        die(f"option {opt} is not one of the {len(opts)} options: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)))
+    if not args.entry:
+        die("the ledger entry JSON is required (one terse entry, design §2): {\"id\": \"cNN.n\", \"made\": {…}, \"chose\": …, \"now\": {…}, \"due\": […]}")
+    try:
+        entry = json.loads(args.entry)
+    except json.JSONDecodeError as e:
+        die(f"the entry is not valid JSON: {e}")
+    chapter = int(plan["chapter"].get("number"))
+    made = entry.setdefault("made", {})
+    made.setdefault("chapter", chapter if which == "micro" else int(oc.get("chapter", chapter)))
+    made.setdefault("scene", str(om.get("scene")) if which == "micro" else "climax")
+    made.setdefault("date", today_local().isoformat())
+    ordered = add_entry(st, entry, args.witnessed, args.pending, False)
+    row = {"chapter": int(made["chapter"]), "scene": str(made["scene"]), "kind": which, "option": int(opt), "text": args.text or opts[opt - 1],
+           "date": today_local().isoformat(), "ledger": ordered["id"], "by": args.by}
+    world.setdefault("choices", []).append(row)
+    st.touch("world")
+    if which == "micro":
+        s = next((x for x in plan["chapter"]["slots"] if str(x.get("n")) == str(om.get("slot"))), None)
+        if s is not None and s.get("micro") is not None:
+            s["micro"]["answer"] = {"option": int(opt), "by": args.by}
+        plan["open_micro"] = None
+        print(f"micro from slot {om.get('slot')} (scene {om.get('scene')}) answered: option {opt} by {args.by}; the consequence is folded into the next scene's opening (the brief carries it)")
+    else:
+        plan["open_choice"] = None
+        plan["answered_choice"] = {"chapter": int(oc.get("chapter", chapter)), "ask": oc.get("ask"), "option": int(opt), "text": row["text"], "by": args.by, "ledger": ordered["id"]}
+        print(f"climax choice of chapter {oc.get('chapter')} answered: option {opt} by {args.by}; write its `### Choice — Title` block in that chapter's file "
+              f"(the brief: `saga.py brief --choice`), then `saga.py record` it")
+    st.touch("plan")
+    st.save()
+    R.project_all(plan, write=True)
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -3269,7 +3824,7 @@ def main():
     s = sub.add_parser("add"); s.add_argument("entry"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true"); s.add_argument("--dry-run", action="store_true")
     s = sub.add_parser("challenge"); s.add_argument("n"); s.add_argument("action", choices=["success", "fail", "show", "void"]); s.add_argument("--why")
     s = sub.add_parser("invite"); s.add_argument("n"); s.add_argument("action", choices=["take", "pass", "show"])
-    s = sub.add_parser("project"); s.add_argument("id"); s.add_argument("action", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what")
+    s = sub.add_parser("project"); s.add_argument("id", nargs="?", help="a project quest id (show|work), or nothing: rebuild the projections"); s.add_argument("action", nargs="?", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what"); s.add_argument("--dry", action="store_true", help="list the projections that would change, write nothing")
     s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True)
     s = sub.add_parser("void"); s.add_argument("id"); s.add_argument("--why", required=True)
     s = sub.add_parser("bearing"); s.add_argument("pole", help="a pole word, or `show`"); s.add_argument("n", nargs="?", type=int); s.add_argument("--why"); s.add_argument("--force", action="store_true", help="allow a move beyond ±4")
@@ -3293,15 +3848,29 @@ def main():
     s = sub.add_parser("arc"); s.add_argument("id")
     s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
+    s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
+    s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
+    s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
+    s = sub.add_parser("glimpse"); s.add_argument("action", choices=["add", "show"]); s.add_argument("text", nargs="?"); s.add_argument("--kind", choices=list(R.GLIMPSE_KINDS)); s.add_argument("--date"); s.add_argument("--n", type=int)
+    s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true")
     args = ap.parse_args()
     if args.cmd == "route" and args.action == "decide" and not args.book:
         die("route decide needs --book N")
+    if args.cmd == "project" and not args.id:
+        cmd_project(args)
+        return
+    if args.cmd == "project" and not args.action:
+        die("project ID show|work, or `project` alone to rebuild the projections")
     {
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
-        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
+        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
+        "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose,
     }[args.cmd](args)
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BrokenPipeError:  # piped into head: not an error
+        pass
