@@ -15,7 +15,7 @@ Commands (run from the repo root):
   fmt                                   rewrite the four state JSON files canonically
   add 'JSON' [--witnessed a,b] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas; every flag it sets
                                         gets a due item for the arc's Downstream line (fire where honoured, void with a reason)
-  fire ID --where ch03:s2               mark a due item fired there
+  fire ID --where ch03:s2               mark a due item fired there; a rule id (r.…) marks the rule honoured there (once per Book for a standing rule)
   void ID --why TEXT                    mark a due item void
   bearing POLE N --why ID [--force]     move the Bearing: |N| <= 4 unless --force; --why is a ledger id (c01.3) or gm:<reason>
   bearing show
@@ -30,7 +30,11 @@ Commands (run from the repo root):
   plan slot N key=value ...             edit a planned slot in place (plan, turn, kind, beat, quest, stage, last, pov, micro, float, day);
                                         micro is passed as JSON (micro='{"axis":…,"ask":…,"options":[…],"bearing":[…],"default":1}');
                                         a written/skipped slot is refused without --force
-  plan climax                           the chapter's question, climax plan, checks, options, default and the world moves left
+  plan climax                           the chapter's question, climax plan, checks, options, default and the world moves left; the open climax choice first
+  plan choice open 'JSON' | show | close [--option K] [--by darrow|bearing]
+                                        the climax choice as the page offers it ({"ask", "options", "default"}): it stays open across the chapter open,
+                                        so its default is its own; `saga.py choose` answers it (close is its bookkeeping half)
+  plan chapter cutaway                  a week with nothing logged whose chapter was already planned: its slots cleared, world moves kept (one interlude, no climax)
   plan chapter template --week_start YYYY-MM-DD
                                         print a canonical skeleton for the next chapter (7 dated slots, spine on Sunday and Saturday, two
                                         float quest placeholders, each with an empty plan and turn, world_moves, climax); fill it in a scratch file
@@ -60,10 +64,11 @@ Commands (run from the repo root):
 
 `when` / `at` grammar (ledger due items):
   next            the next scene (resolved by `add` to chNN:sN; at the climax, choice or transition stage: the next chapter's s1)
+  later           a callback: never due or overdue, listed by `due --later`, fired wherever it fits (one per scene at most)
   chNN            anywhere in chapter NN            chNN:sN      scene N of chapter NN
   chNN:climax     chapter NN's climax or choice     bookN        anywhere in Book N
   bookN:beatK     while core beat bN.K is in_progress   bookN:climax   Book N's last climax (what `finale` resolves to)
-  transitionN     Book N's transition chapter       finale       = book6:climax
+  transitionN     Book N's transition chapter       finale       = the saga's last Book's climax (plan.json → saga.finale_book, 6 unless a sequel moves it)
   on:<flag>       when plan.json flags.<flag> becomes true
   any             standing: shown until fired or void
 
@@ -125,14 +130,41 @@ CALLBACK_CAP = 6  # due items with when=later alive at once
 QUEST_STATUS = ("available", "live", "done", "dropped")
 BEAT_STATUS = ("planned", "in_progress", "done", "folded")
 ROADS = ("low", "main", "high")
-ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"]
 NOW_CAP = 30
+DEFAULT_FINALE_BOOK = 6  # plan.json → saga.finale_book overrides it: a sequel moves the finale, the grammar's `finale` follows
 
-WHEN_RE = re.compile(r"^(next|later|ch\d{2}|ch\d{2}:s\d+|ch\d{2}:climax|book\d|book\d:beat\d+|book\d:climax|transition\d|finale|on:[a-z][a-z0-9_]*|any)$")
-WHERE_RE = re.compile(r"^(ch\d{2}(:(s\d+|climax|interlude(-\d+)?|choice|transition|between-\d+))?|book\d(:climax|:beat\d+)?)$")
-ENTRY_ID_RE = re.compile(r"^c(\d{2})\.(\d+)$")
-DUE_ID_RE = re.compile(r"^c(\d{2})\.(\d+)([a-z])$")
-WROTE_RE = re.compile(r"^ch(\d{2}):(s(\d+)|interlude(-\d+)?|climax|transition)$")
+
+def roman(n):
+    """Roman numerals for any Book or Knot number (a sequel is not stopped at VII)."""
+    n = int(n)
+    if n <= 0:
+        return str(n)
+    out = ""
+    for v, s in ((1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v:
+            out += s
+            n -= v
+    return out
+
+
+class _Roman:
+    def __getitem__(self, n):
+        return roman(n)
+
+
+ROMAN = _Roman()
+
+# ids: chapters are two digits or more (ch02 … ch100), Books one digit or more, so nothing here ends at Book VI
+WHEN_RE = re.compile(r"^(next|later|ch\d{2,}|ch\d{2,}:s\d+|ch\d{2,}:climax|book\d+|book\d+:beat\d+|book\d+:climax|transition\d+|finale|on:[a-z][a-z0-9_]*|any)$")
+WHERE_RE = re.compile(r"^(ch\d{2,}(:(s\d+|climax|interlude(-\d+)?|choice|transition|between-\d+))?|book\d+(:climax|:beat\d+)?)$")
+ENTRY_ID_RE = re.compile(r"^c(\d{2,})\.(\d+)$")
+DUE_ID_RE = re.compile(r"^c(\d{2,})\.(\d+)([a-z])$")
+WROTE_RE = re.compile(r"^ch(\d{2,}):(s(\d+)|interlude(-\d+)?|climax|transition)$")
+BLOCK_KEY_RE = re.compile(r"^ch(\d{2,}):(s(\d+)|interlude(-\d+)?|between-(\d+)|climax|choice|[IVX]+)$")  # every block the page can hold
+
+
+def finale_book(plan):
+    return int((plan.get("saga") or {}).get("finale_book") or DEFAULT_FINALE_BOOK)
 
 
 # ---------------------------------------------------------------- io
@@ -341,7 +373,7 @@ def resolve_at(when, plan):
             return f"{ch2(int(pos['chapter']) + 1)}:s1"
         return f"{ch2(pos['chapter'])}:s{pos['next_scene']}"
     if when == "finale":
-        return "book6:climax"
+        return f"book{finale_book(plan)}:climax"
     return when
 
 
@@ -356,7 +388,7 @@ def at_status(at, st):
     m = re.match(r"^on:(\w+)$", at)
     if m:
         return "due" if st.plan.get("flags", {}).get(m.group(1)) else "future"
-    m = re.match(r"^ch(\d{2})(?::(s(\d+)|climax))?$", at)
+    m = re.match(r"^ch(\d{2,})(?::(s(\d+)|climax))?$", at)
     if m:
         c = int(m.group(1))
         if chapter > c:
@@ -374,7 +406,7 @@ def at_status(at, st):
         if nxt == s:
             return "due"
         return "overdue" if nxt > s else "future"
-    m = re.match(r"^book(\d)(?::(beat(\d+)|climax))?$", at)
+    m = re.match(r"^book(\d+)(?::(beat(\d+)|climax))?$", at)
     if m:
         b = int(m.group(1))
         if book > b:
@@ -400,7 +432,7 @@ def at_status(at, st):
                                 if re.match(rf"^b{b}\.(\d+)$", kk) and int(kk.split(".")[1]) > k)
             return "due" if (at_transition or later_started) else "future"
         return {"in_progress": "due"}.get(beat.get("status"), "overdue")
-    m = re.match(r"^transition(\d)$", at)
+    m = re.match(r"^transition(\d+)$", at)
     if m:
         b = int(m.group(1))
         if book > b:
@@ -418,7 +450,7 @@ def item_status(it, st):
     s_ = at_status(it.get("at", ""), st)
     if s_ != "overdue" or it.get("weight") != "color" or it.get("when") != "next":
         return s_
-    m = re.match(r"^ch(\d{2}):s(\d+)$", str(it.get("at", "")))
+    m = re.match(r"^ch(\d{2,}):s(\d+)$", str(it.get("at", "")))
     pos = st.plan["position"]
     if not m or int(m.group(1)) != int(pos["chapter"]):
         return s_
@@ -430,13 +462,35 @@ def item_status(it, st):
     return s_
 
 
-def rule_where_book(where):
-    """The Book a rule's `where` belongs to (bookN…, transitionN, finale = 6), or None for `any` and the like."""
+def rule_where_book(where, plan=None):
+    """The Book a rule's `where` belongs to (bookN…, transitionN, finale = the saga's finale Book), or None for `any` and the like."""
     w = str(where or "")
-    m = re.match(r"^(?:book|transition)(\d)", w)
+    m = re.match(r"^(?:book|transition)(\d+)", w)
     if m:
         return int(m.group(1))
-    return 6 if w == "finale" else None
+    return finale_book(plan or {}) if w == "finale" else None
+
+
+def rule_fired_in_book(rule, plan, book):
+    """A rule already honoured: for a standing rule (`where: any`, once per Book), fired in this Book; for any other, fired at all."""
+    fired = rule.get("fired") or []
+    if not fired:
+        return False
+    if str(rule.get("where")) != "any":
+        return True
+    for where in fired:
+        m = re.match(r"^ch(\d{2,})", str(where))
+        if m and book_of_chapter(plan, int(m.group(1))) == int(book):
+            return True
+    return False
+
+
+def rule_timing(rule, st):
+    """Where a rule's moment stands against the position: 'due' | 'future' | 'overdue' | 'any' | 'unknown'."""
+    w = str(rule.get("where") or "any")
+    if w == "any":
+        return "any"
+    return at_status(resolve_at(w, st.plan), st)
 
 
 def knot_line(plan):
@@ -550,7 +604,7 @@ def term_lookup(parts, st):
     if root == "flags" and len(parts) == 2:
         flags = plan.get("flags", {})
         return parts[1] in flags, bool(flags.get(parts[1]))
-    if root == "route" and len(parts) == 2 and re.match(r"^book[1-6]$", parts[1]):
+    if root == "route" and len(parts) == 2 and re.match(r"^book\d+$", parts[1]):
         return True, (plan.get("route", {}).get(parts[1], {}).get("road") or "")
     if root == "factions" and len(parts) == 2:
         f = plan.get("factions", {})
@@ -717,7 +771,7 @@ def road_line(st):
 
 # ---------------------------------------------------------------- arc sections
 HEAD_RE = re.compile(r"^(#{1,4})\s+(.*?)\s*$")
-ID_RE = re.compile(r"^(b\d\.\d+|q\d\.[a-z0-9_]+|t\d(\.(high|main|low))?|book\d\.question|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
+ID_RE = re.compile(r"^(b\d+\.\d+|q\d+\.[a-z0-9_]+|t\d+(\.(high|main|low))?|book\d+\.question|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
 
 
 def arc_sections():
@@ -998,9 +1052,6 @@ def character_status(who):
     return None, None
 
 
-NAME_STOP = {"The", "And", "But", "Then", "When", "While", "Not", "Nothing", "Nobody", "His", "Her", "She", "Him", "They", "Them", "What", "Who", "Where", "Why", "How", "Only", "Darrow", "Captain", "Ser"}
-
-
 def character_place(cid):
     """(last_seen place id, companion present flag or None) for a character file id."""
     path = ROOT / "saga/characters" / f"{cid}.json"
@@ -1050,14 +1101,21 @@ def invite_narrative_problems(inv, s, st):
     return out
 
 
-def unknown_names_in(text):
-    """Capitalised words, not sentence-first, in GM device text that no registry knows: a name the page has not spoken would leak through a scene or a Between."""
+def unknown_names_in(texts):
+    """Capitalised words, not sentence-first, in GM device text that no registry knows: a name the page has not spoken
+    would leak through a scene or a Between. Takes one text or a list (each text starts its own sentence); a possessive
+    or a contraction is read as its word ("Confessor's" is the Confessor, "You'll" is you)."""
     reg = registered_names()
     found = set()
-    for sent in re.split(r"(?<=[.!?:;])\s+|\n", str(text or "")):
-        words = re.findall(r"[A-Za-z][A-Za-z'-]+", sent)
-        for w in words[1:]:
-            if w[0].isupper() and len(w) >= 3 and w not in NAME_STOP and w.lower() not in reg:
+    for text in ([texts] if isinstance(texts, str) else texts or []):
+        for sent in re.split(r"(?<=[.!?:;])\s+|\n", str(text or "")):
+            words = re.findall(r"[A-Za-z][A-Za-z'’-]+", sent)
+            for w in words[1:]:
+                w = re.sub(r"[’']s$|[’'](ll|re|ve|d|m|t)$", "", w).strip("-'’")
+                if not w[:1].isupper() or len(w) < 3:
+                    continue
+                if w in NAME_STOP or w.lower() in reg or w.rstrip("s") in NAME_STOP or w.lower().rstrip("s") in reg:
+                    continue
                 found.add(w)
     return found
 
@@ -1240,6 +1298,52 @@ def parse_kv(pairs):
 
 
 # ---------------------------------------------------------------- commands: digest & due
+def open_choice_lines(plan, cap=170):
+    """The climax choice still open, if one is (plan.open_choice: it survives `plan chapter open`, so the default it
+    resolves to is the climax's own, never the next chapter's)."""
+    oc = plan.get("open_choice")
+    if not oc:
+        return []
+    lines = [f"OPEN CHOICE (chapter {oc.get('chapter')} climax; carries {oc.get('carries', 2)} scenes into the next chapter, then its default): {short(oc.get('ask'), 100)}"]
+    lines.append("  " + short(" / ".join(f"{i}. {o}" for i, o in enumerate(oc.get("options", []), 1)), cap) + f" · default {oc.get('default')} · answer: `saga.py choose --option K …`")
+    return lines
+
+
+def rule_lines(st):
+    """(broken, armed, waiting, near, quiet_count): the ledger's rules against the position (design §2). A rule is
+    ARMED when its condition holds and its moment (`where`) is due or overdue; one whose moment is still ahead in this
+    Book waits; one already honoured (`fired`: `saga.py fire r.id --where …`), whose Book has passed, or whose `if` is
+    simply `true` is quiet."""
+    plan, ledger = st.plan, st.ledger
+    pos = plan["position"]
+    cur_book = int(pos["book"])
+    broken, armed, waiting, near_, quiet = [], [], [], [], 0
+    for r in ledger.get("rules", []):
+        state, detail = rule_state(r, st)
+        if state in ("UNKNOWN TERM", "MALFORMED"):
+            broken.append(f"RULE {state} {r['id']}: {detail}")
+            continue
+        wb = rule_where_book(r.get("where"), plan)
+        if (wb is not None and wb < cur_book) or rule_fired_in_book(r, plan, cur_book) or str(r.get("if", "")).strip() == "true":
+            quiet += 1
+            continue
+        if state == "ARMED":
+            timing = rule_timing(r, st)
+            if timing in ("due", "overdue", "any"):
+                armed.append(f"RULE ARMED {r['id']} ({r.get('where')}{', overdue' if timing == 'overdue' else ''}): {short(r.get('then'), 100)} · `fire {r['id']} --where …` once the page honours it")
+            elif wb == cur_book:
+                waiting.append(f"RULE armed, waits for {r.get('where')} · {r['id']}: {short(r.get('then'), 90)}")
+            else:
+                quiet += 1
+            continue
+        near = rule_near(r, st)
+        if near:
+            near_.append(f"RULE near {r['id']} ({r.get('where')}): {'; '.join(near)}")
+        else:
+            quiet += 1
+    return broken, armed, waiting, near_, quiet
+
+
 def cmd_now(args):
     st = State()
     plan, world, ledger, bearing = st.plan, st.world, st.ledger, st.bearing
@@ -1287,10 +1391,13 @@ def cmd_now(args):
         lines.append("  " + short(" / ".join(f"{i}. {o}" for i, o in enumerate(om.get("options", []), 1)), 170))
     else:
         lines.append("Micro: none open")
+    lines += open_choice_lines(plan)
     lines.append(bearing_line(bearing))
     ro = rank_owed(plan)
     if ro:
         lines.append(f"RANK OWED: {ro[0]} → {ro[1]}: one prose beat in the next scene, the script changing as he notices it (style.md §3); then `plan set rank_on_page={ro[1]}`")
+    broken, armed, waiting, near_, quiet = rule_lines(st)
+    lines += broken + armed  # before the due items: an armed rule changes what the next scene may be
     due_now, overdue, future, later = [], [], 0, 0
     for e, it in pending_items(ledger):
         s_ = item_status(it, st)
@@ -1312,32 +1419,15 @@ def cmd_now(args):
         lines.append("Due now: nothing")
     if later:
         lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most)")
-    broken, armed, near_, other = [], [], [], 0
-    cur_book = int(pos["book"])
-    for r in ledger.get("rules", []):
-        state, detail = rule_state(r, st)
-        if state in ("UNKNOWN TERM", "MALFORMED"):
-            broken.append(f"RULE {state} {r['id']}: {detail}")
-            continue
-        wb = rule_where_book(r.get("where"))
-        if wb is not None and wb < cur_book:  # its moment has passed: the Book it was for is over
-            other += 1
-            continue
-        if state == "ARMED" and r.get("if", "").strip() != "true":
-            armed.append(f"RULE ARMED {r['id']} ({r.get('where')}): {short(r.get('then'), 100)}")
-        else:
-            near = rule_near(r, st)
-            if near and state == "NOT MET":
-                near_.append(f"RULE near {r['id']}: {'; '.join(near)}")
-            else:
-                other += 1
-    shown = broken + armed + near_  # armed before near: an armed rule changes what the next scene may be
-    lines += shown[:5]
-    if len(shown) > 5:
-        lines.append(f"  (+{len(shown) - 5} more rules armed/near; `saga.py due --all` lists the ledger, `check` the rules)")
-    lines.append(f"+{future} pending later, +{other} rules quiet; `saga.py due --all` · `saga.py check`")
-    if len(lines) > NOW_CAP:
-        lines = lines[: NOW_CAP - 1] + [lines[-1]]
+    shown = waiting[:2] + near_[:3]
+    lines += shown
+    more = len(waiting) + len(near_) - len(shown)
+    if more:
+        lines.append(f"  (+{more} more rules waiting/near; `saga.py check` lists the rules)")
+    lines.append(f"+{future} pending later, +{quiet} rules quiet; `saga.py brief` before writing · `saga.py due --all` · `saga.py check`")
+    if len(lines) > NOW_CAP:  # the digest is a digest: it says what it cut, and where the whole picture is
+        cut = len(lines) - NOW_CAP + 1
+        lines = lines[: NOW_CAP - 2] + [f"  (digest cut {cut} line(s): `saga.py brief` has the whole picture for the next block, `saga.py due` every item)", lines[-1]]
     print("\n".join(lines))
 
 
@@ -1351,6 +1441,8 @@ def cmd_due(args):
             print(f"{it['id']} [{it.get('weight')}] when={it.get('when')} at={it.get('at')} {tag} · from {e['id']} ({e['made'].get('date')}: {short(e.get('chose'), 60)})")
             print(f"  {it.get('what')}")
 
+    for o in owed_moves(st.plan):
+        print(f"WORLD MOVE owed (from skipped slot {o['n']}): the next scene or the climax opens on it: {o['world_move']}")
     if args.all:
         if not items:
             print("nothing pending")
@@ -1592,6 +1684,15 @@ def cmd_fire(args):
     st = State()
     if not WHERE_RE.match(args.where):
         die(f"--where {args.where!r} must look like ch03:s2, ch03:climax, ch03:interlude or book2")
+    if str(args.id).startswith("r."):  # a rule honoured on the page: it has state, so `now` stops arming it (once per Book for a standing rule)
+        r = next((x for x in st.ledger.get("rules", []) if x.get("id") == args.id), None)
+        if not r:
+            die(f"no rule {args.id} in the ledger")
+        r.setdefault("fired", []).append(args.where)
+        st.touch("ledger")
+        st.save()
+        print(f"rule {args.id} honoured at {args.where}: {r.get('then')}" + (" (a standing rule: it may arm again in a later Book)" if str(r.get("where")) == "any" else ""))
+        return
     e, it = find_due(st.ledger, args.id)
     if it["status"] != "pending":
         die(f"{args.id} is already {it['status']}")
@@ -1709,9 +1810,49 @@ def cmd_plan(args):
             return
         print_slot(s, full=args.full, plan=plan)
         return
+    if a == "choice":
+        oc = plan.get("open_choice")
+        if args.sub == "show":
+            print("\n".join(open_choice_lines(plan)) if oc else "no climax choice is open")
+            return
+        if args.sub == "open":
+            if oc:
+                die(f"a climax choice is already open (chapter {oc.get('chapter')}); `saga.py choose` answers it first")
+            try:
+                c = json.loads(args.json or "")
+            except json.JSONDecodeError as e:
+                die(f"choice JSON invalid ({e}): {{\"ask\": …, \"options\": [\"…\", \"…\"], \"default\": 1}}")
+            opts = c.get("options") or []
+            if not 2 <= len(opts) <= 3 or not all(str(o).strip() for o in opts):
+                die("a climax choice has 2–3 options, each the option's text as the page has it")
+            if c.get("default") not in range(1, len(opts) + 1):
+                die(f"default must be an option number (1–{len(opts)}): the one the highest-approval companion present would pick")
+            if plan["position"].get("stage") not in ("climax", "choice", "transition"):
+                die(f"the stage is {plan['position'].get('stage')}: a climax choice opens once the climax is written (`plan set stage=climax` first)")
+            plan["open_choice"] = {"chapter": int(plan["chapter"].get("number")), "scene": "climax", "ask": c.get("ask") or "What does Darrow do?",
+                                   "options": [str(o) for o in opts], "default": int(c["default"]), "opened": today_local().isoformat(), "carries": int(c.get("carries") or 2)}
+            st.touch("plan")
+            st.save()
+            print("\n".join(open_choice_lines(plan)))
+            return
+        if not oc:
+            die("no climax choice is open")
+        opt = args.option if args.option is not None else (oc.get("default") if args.by == "bearing" else None)
+        if opt is None:
+            die("pass --option K (or --by bearing to take the climax's default)")
+        if opt not in range(1, len(oc.get("options") or []) + 1):
+            die(f"option {opt} is not one of the {len(oc.get('options') or [])} options")
+        plan["open_choice"] = None
+        st.touch("plan")
+        st.save()
+        print(f"climax choice of chapter {oc.get('chapter')} closed: option {opt} by {args.by}" + (" (the climax's default)" if args.option is None else ""))
+        print("  recorded only through `saga.py choose` (its ledger entry moves the Bearing, its choices[] row marks the page); the `### Choice` block comes next")
+        return
     if a == "climax":
         ch = plan["chapter"]
         c = ch.get("climax") or {}
+        for l in open_choice_lines(plan):
+            print(l)
         print(f"chapter {ch.get('number')} · question: {ch.get('question')}")
         print(f"  plan: {c.get('plan')}")
         print("  checks: " + ("; ".join(c.get("checks") or []) or "none"))
@@ -2682,6 +2823,9 @@ def cmd_check(args):
             probs.append(f"rule {r.get('id')} UNKNOWN TERM: {detail}")
         if r.get("where") and not WHEN_RE.match(str(r["where"])):
             probs.append(f"rule {r.get('id')}: where {r['where']!r} not in the grammar")
+        for w in (r.get("fired") or []):
+            if not WHERE_RE.match(str(w)):
+                probs.append(f"rule {r.get('id')}: fired position {w!r} malformed")
     for i, n in rule_ids.items():
         if n > 1:
             probs.append(f"rule id {i} appears {n} times")
@@ -2738,7 +2882,7 @@ def cmd_check(args):
     if sum(1 for q in plan.get("quests", {}).values() if q.get("project") and q.get("status") in ("available", "live")) > 1:
         probs.append("more than one project quest available or live; one per Book (design §5.6)")
     for key, r in plan.get("route", {}).items():
-        if not re.match(r"^book[1-6]$", key):
+        if not re.match(r"^book\d+$", key):
             probs.append(f"route key {key!r}")
         if r.get("road") not in (None,) + ROADS:
             probs.append(f"route {key} road {r.get('road')!r}")
@@ -2912,7 +3056,7 @@ def cmd_check(args):
                             probs.append(f"slot {n} challenge approach {a.get('name')!r}: no Art {a['art']!r} in rules.json")
                         elif a["art"] not in spoken_:
                             probs.append(f"slot {n} challenge approach {a.get('name')!r} uses {arts_[a['art']]}, which the page has not named yet: locked until it is taught or earned on the page (design §5.6)")
-                unk = unknown_names_in(" ".join([str(c.get("objective") or "")] + [str(a.get("name") or "") for a in apps if isinstance(a, dict)] + [str(v) for v in (c.get("result") or {}).values()]))
+                unk = unknown_names_in([str(c.get("objective") or "")] + [str(a.get("name") or "") for a in apps if isinstance(a, dict)] + [str(v) for v in (c.get("result") or {}).values()])
                 if unk:
                     notes.append(f"slot {n} challenge names {', '.join(sorted(unk))}, which no registry knows: nothing the page has not spoken may reach a scene")
                 if not isinstance(c.get("goal"), int) or not 1 <= c["goal"] <= 4 or not isinstance(c.get("limit"), int) or not 1 <= c["limit"] <= 3:
@@ -2940,7 +3084,7 @@ def cmd_check(args):
                 if inv.get("status") == "waiting":
                     for hard, msg in invite_narrative_problems(inv, s, st):
                         (probs if hard else notes).append(f"slot {n} " + msg + ("" if hard else "") + (" (design §5.6)" if hard else ""))
-                unk = unknown_names_in(str(inv.get("want") or "") + " " + str(inv.get("if_ignored") or "") + " " + str(inv.get("why_now") or ""))
+                unk = unknown_names_in([str(inv.get("want") or ""), str(inv.get("if_ignored") or ""), str(inv.get("why_now") or "")])
                 if unk:
                     notes.append(f"slot {n} invite names {', '.join(sorted(unk))}, which no registry knows: nothing the page has not spoken may reach a Between")
         if s.get("kind") == "quest" and quests_.get(s.get("quest"), {}).get("project"):
@@ -3026,6 +3170,16 @@ def cmd_check(args):
     cl = ch.get("climax") or {}
     if cl.get("default") is not None and cl.get("default") not in range(1, len(cl.get("options") or []) + 1):
         probs.append(f"chapter.climax.default {cl.get('default')!r} is not an option number (1–{len(cl.get('options') or [])})")
+    oc = plan.get("open_choice")
+    if oc:
+        opts_ = oc.get("options") or []
+        if not isinstance(opts_, list) or not 2 <= len(opts_) <= 3 or oc.get("default") not in range(1, len(opts_) + 1):
+            probs.append("open_choice needs 2–3 options and a default among them")
+        carries = int(oc.get("carries") or 2)
+        if int(pos.get("chapter", 0)) > int(oc.get("chapter", 0)) + 1:
+            probs.append(f"the climax choice of chapter {oc.get('chapter')} is still open two chapters on: it resolves to its default, option {oc.get('default')}, by bearing (`saga.py choose --by bearing …`)")
+        elif int(pos.get("chapter", 0)) > int(oc.get("chapter", 0)) and int(pos.get("next_scene", 1)) > carries + 1:
+            probs.append(f"the climax choice of chapter {oc.get('chapter')} is still open after {carries} scenes of chapter {pos.get('chapter')}: it resolves to its default, option {oc.get('default')}, by bearing (`saga.py choose --by bearing …`), and its `### Choice` block is written then")
     if ws:
         sat_slot = next((s for s in slots if s.get("day") == (ws + dt.timedelta(6)).isoformat()), None)
         if sat_slot and sat_slot.get("status") == "skipped":
@@ -3068,7 +3222,7 @@ def cmd_check(args):
             if plan["route"][k].get("road"):
                 wanted.add(f"t{n}.{plan['route'][k]['road']}")
         for i in sorted(wanted):
-            if re.match(r"^t\d$", i):
+            if re.match(r"^t\d+$", i):
                 if not any(f"{i}.{road}" in ids_in_arc for road in ROADS) and i not in ids_in_arc:
                     probs.append(f"{i} has no `## {i}.high/main/low` headings in arc.md")
             elif i not in ids_in_arc:
@@ -3127,6 +3281,7 @@ def main():
     x = ps.add_parser("micro"); x.add_argument("sub", choices=["open", "close"]); x.add_argument("n", nargs="?"); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
     x = ps.add_parser("invite_rule"); x.add_argument("id", help="a character id or its first token (rae, benedek)"); x.add_argument("expr", help="rule grammar; null removes")
     x = ps.add_parser("climax")
+    x = ps.add_parser("choice"); x.add_argument("sub", choices=["open", "show", "close"]); x.add_argument("json", nargs="?", help='open: {"ask": …, "options": […], "default": K}'); x.add_argument("--option", type=int); x.add_argument("--by", choices=["darrow", "bearing"], default="darrow")
     x = ps.add_parser("chapter"); x.add_argument("sub", choices=["open", "template", "cutaway"]); x.add_argument("--number", type=int); x.add_argument("json", nargs="?"); x.add_argument("--week_start", help="template: the Sunday the chapter covers"); x.add_argument("--force", action="store_true", help="open a chapter out of sequence")
     x = ps.add_parser("book"); x.add_argument("sub", choices=["open"]); x.add_argument("n", type=int)
     x = ps.add_parser("quest"); x.add_argument("id"); x.add_argument("kv", nargs="+")

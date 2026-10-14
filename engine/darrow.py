@@ -1734,6 +1734,27 @@ def parse_kv(pairs):
     return out
 
 
+def vocab_problems(cfg, key, row, where):
+    """The row's scoring fields against config.json -> vocabulary (a misspelt code must never pay or cost silently)."""
+    v = (cfg.get("vocabulary") or {}).get(key) or {}
+    probs = []
+    for col, allowed in v.items():
+        if col.startswith("_") or not isinstance(allowed, list):
+            continue
+        raw = str(row.get(col) or "").strip()
+        if not raw:
+            continue
+        tokens = [t for t in re.split(r"[+,/]+", raw) if t.strip()] if col == "addon_session" else [raw]
+        for t in tokens:
+            t = t.strip()
+            ok = (t in allowed
+                  or (col == "knee_session" and t.lower().startswith("partial"))
+                  or (key == "sport" and col == "session" and t.upper() in {a.upper() for a in allowed}))
+            if not ok:
+                probs.append(f"{where}: {col} '{t}' is not one of {', '.join(allowed)} (config.json -> vocabulary.{key}.{col}; add it there if it is a new code)")
+    return probs
+
+
 def upsert_row(key, date, kv, cfg):
     """Upsert one day's row in nutrition_log or daily_log. kv maps a column to ("set"|"append", value). Returns the row."""
     rows = read_csv(key)
@@ -1758,6 +1779,9 @@ def upsert_row(key, date, kv, cfg):
             row[k] = row[k].rstrip() + " " + v
         else:
             row[k] = v
+    probs = vocab_problems(cfg, key, row, f"{key} {date}")
+    if probs:
+        sys.exit("refused, nothing written:\n  " + "\n  ".join(probs))
     rows.sort(key=lambda r: r.get("date", ""))
     write_csv(key, rows)
     return row
@@ -1887,14 +1911,21 @@ def cmd_food(args, cfg, rules):
 
 def cmd_append(key, args, cfg):
     rows = read_csv(key)
-    for item in as_list(args.payload):
+    probs = []
+    for i, item in enumerate(as_list(args.payload), 1):
         day = d(item["date"])
+        unknown = [k for k in item if k not in COLS[key]]
+        if unknown:
+            probs.append(f"{key} row {i}: unknown column(s) {', '.join(unknown)}; columns: {', '.join(COLS[key])}")
         row = {k: item.get(k, "") for k in COLS[key]}
         row["date"] = day.isoformat()
         if key == "exercise":
             row["dash_week_start"] = row["dash_week_start"] or week_start(day).isoformat()
             row["pod"] = row["pod"] or str(pod(cfg, day))
+        probs += vocab_problems(cfg, key, row, f"{key} row {i} ({row['date']})")
         rows.append(row)
+    if probs:
+        sys.exit("refused, nothing written:\n  " + "\n  ".join(probs))
     rows.sort(key=lambda r: r.get("date", ""))
     write_csv(key, rows)
     print(f"{key}: appended {len(as_list(args.payload))} row(s)")
@@ -2113,6 +2144,9 @@ def cmd_check(args, cfg, rules):
         s = str(r.get("am_swelling", "")).strip()
         if s and not VALID_SWELLING.match(s):
             problems.append(f"daily_log {r['date']}: am_swelling '{s}' is not a grade (0/trace/1+/2+/3+); no check credit")
+    for key in ("daily", "nutrition", "exercise", "sport"):  # the scoring vocabulary: a misspelt code never pays or costs silently
+        for i, r in enumerate(read_csv(key), 2):
+            problems += vocab_problems(cfg, key, r, f"{key}_log.csv line {i}")
     skills = cfg.get("sport", {}).get("skills") or []
     for i, r in enumerate(read_csv("sport"), 2):
         if skills and r.get("skill") not in skills:

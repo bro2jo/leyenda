@@ -85,12 +85,12 @@
       "temper": {
         "resolve": 1
       },
-      "label": "Floor minimum, AM and PM"
+      "label": "Daily minimum, full"
     },
     "floor_half": {
       "xp": 5,
       "temper": {},
-      "label": "Floor minimum, one round"
+      "label": "Daily minimum, one round (half)"
     },
     "morning_check": {
       "xp": 5,
