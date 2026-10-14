@@ -21,4 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-13 · overheard · Two novices changing the far cots' linen, in whispers: "Does it matter which way you fold it?" "It does to her." "Does she check?" "Every time." "How do you know?" "Because I folded it wrong once."
 - 2026-10-13 · verse · A man of the Sixth, two cots down from Hollis, hums the old marching nonsense under his breath: "Sixty men and a mule came home from the river, / fifty-nine and a mule…" He stops there, as if he has only just heard it.
 - 2026-10-13 · ledger · From Wren's ledgers, a page headed Kitchen: Times the loaves were counted today: 6. Totals that agreed: 2. (Underneath: Not my count. Theirs.)
-- 2026-10-13 · body · Somewhere in the afternoon his legs stopped feeling borrowed. He notices it only when he sits down on the cot's end and doesn't have to think about how.
+- 2026-10-13 · overheard · Two lay brothers at the hall door, arguing over the night lamp. "Your turn." "I did it last night." "You lost count last night." "Then whose turn is it?" "Yours. Twice."
