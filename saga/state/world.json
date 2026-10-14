@@ -71,11 +71,18 @@
         "2026-10-13"
       ],
       "written": "2026-10-13"
+    },
+    {
+      "scene": "between-7",
+      "title": "The Book",
+      "after": "3",
+      "covers": [],
+      "written": "2026-10-13"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall the day after the feast, sitting up on the end of his cot by Hollis's and the Grey Cot, after telling the hall that nobody passed",
+    "detail": "the infirmary hall in the evening, halfway back up the row from the kitchen door to his cot, the kitchen's book open behind him on the bread table",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -85,7 +92,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "The day after the feast. The novices came at dusk to carry Benedek to the far cots; Hollis would not let them, so they laid the far cots' grey blanket over him where he was, and the hall calls it the Grey Cot. The lay brothers who carried the bread down brought Marrant's word back up the Steps: ember witchcraft. From his cot Darrow read the night novice (she said she slept; the wick soot on her fingers said she trimmed the far lamp all night: she watched the door, and nobody passed), outwaited the kitchen (the flour at the hall door clean at dawn but for the bakers'), and held Wren to her count (both doors barred at night and dawn; nine keys where they hang) before she could say where it came from. When the hall began to turn toward Maelis, he told it from his cot: nobody passed, not a grey cloak, not a lay brother, not the Mender. The heads came back. At the Grey Cot, Hollis, to the lad's hand: \"Nobody.\"",
+  "last_beat": "The evening after the hall heard nobody passed. The kitchen's book had reopened on the bread table, taking odds on which cot is Hollowed next: Hollis at four (he won't leave it), the Captain of the Ninth at five (the Confessor came up the Steps for him), the kitchen at twenty; the Grey Cot with no price, because nothing is left there to take. The flour-armed novice who runs it: \"If it's in the book it's a number, and you can rub a number out.\" Darrow did not shut it. He asked the price on nobody, had her write NOBODY at the foot of the column, and staked a chore: if another cot goes grey before the thaw he scours the ovens; if none does, every price is rubbed out and the kitchen stops counting cots. They shook on it. Halfway back up the hall he heard a wick go down, and a lay brother asking the price on nobody.",
   "companions": {
     "maelis": {
       "approval": 25,

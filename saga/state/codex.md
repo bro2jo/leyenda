@@ -44,6 +44,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The black glass** — a chip of black glass no bigger than a barleycorn that Maelis found under Hollowed Benedek's tongue; it takes the light and gives none back. "The far cots never had this" (Ch 2 Sc 2).
 - **The feast** — the House's feast day: the feast bread carried down to the gate and given away, and the kitchen's book running wild. The lay brothers call it Saint Ysolde's bread, though not all of them: Ysolde, says one, was a bone-setter with a bad temper and a bell, and anyone who called her saint to her face would have got the bell (Ch 2 Sc 2).
 - **The Grey Cot** — Benedek's cot, under the far cots' grey blanket: the novices came to carry him to the far cots, Hollis would not let them, and the blanket came to him instead (Ch 2 Sc 3).
+- **The kitchen's book** — the kitchen's wager-ledger, kept on the bread table, the running odds in pencil so they can be rubbed out; it takes a chore before a wick. On the feast it ran on the bread; after the Hollowing it ran on which cot is next, until the Captain bet the ovens on NOBODY (Ch 2 Sc 2, Between 7).
 - **Ember witchcraft** — the Confessor's name for Benedek's Hollowing, given to the lay brothers who carried the feast bread down and carried back up the Steps with the empty baskets: the old curse the Crown burned out of the realm (Ch 2 Sc 3).
 
 ## Songs and verses

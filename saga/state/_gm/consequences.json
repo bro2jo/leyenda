@@ -342,6 +342,26 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.8",
+      "made": {
+        "chapter": 2,
+        "scene": "between-7",
+        "date": "2026-10-13"
+      },
+      "chose": "Found the kitchen's book taking odds on which cot is Hollowed next (Hollis at four, himself at five, the Grey Cot with no price because nothing is left there to take); did not shut it, and bet on NOBODY instead: if another cot goes grey before the thaw he scours the kitchen ovens; if none does, the kitchen rubs out every price and stops counting cots",
+      "now": {},
+      "due": [
+        {
+          "id": "c02.8a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The kitchen's book carries NOBODY at long odds, the Captain's chore against it: if another cot in the hall goes grey before the thaw he scours the ovens; if none does, every price is rubbed out and the kitchen stops counting cots. The lay brothers have begun to put wicks on nobody. Fire where the book is consulted, the odds move, or the thaw comes",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

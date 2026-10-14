@@ -469,3 +469,49 @@ At the Grey Cot, Hollis had not looked up once.
 
 > ⟦ THE RECKONING ⟧
 > XP 1,172 → 1,247
+
+### Between — The Book
+
+Darrow heard the odds before he saw the book. They came out of the kitchen door at the end of the hall in the flour-armed novice's carrying whisper, the same one that had taken wagers on the feast bread: *four to one the old Sixth, he's sat beside it two days*. Then a man's voice, low, asking a price.
+
+He went the slow way and stood in the kitchen door.
+
+The book lay open on the bread table, a fat ledger soft with flour, the running odds kept in pencil down the margin so they could be changed. The feast's wagers had been crossed out. Under them, in fresh pencil, ran a column of cots by number with a price beside each, and two lay brothers were leaning over it with a wick between them.
+
+Hollis was on it, at four. So was the Captain of the Ninth, at five.
+
+"Who set my price?"
+
+The lay brothers found they had kindling to see to. The novice did not move. She had a stub of pencil in her fingers and she held on to it.
+
+"I did, Ser."
+
+"Why five?"
+
+"Because the Confessor came up the Steps for you." She said it the way she had said the loaves, plainly, as something too ordinary to argue with. "Ser Garrow at four because he won't leave it. The kitchen at twenty, because nobody's ever been taken in a kitchen." Her chin came up. "You'll want it shut."
+
+He did. He had come down the hall meaning to shut it.
+
+"Why keep it?"
+
+"Because if it's in the book it's a number, Ser, and you can rub a number out." She looked at the page, not at him. "If it's not in the book, it's just in the dark with the rest of us."
+
+He looked at the column a long time. Every cot in the hall had a price beside it but one. The Grey Cot's number had nothing after it, because there was nothing left there to take.
+
+"What's the price on nobody?"
+
+She blinked. "Nobody's not a cot."
+
+"Make it one."
+
+She thought about it, which he liked her for. Then she wrote it at the foot of the column in careful capitals, NOBODY, and stood back. "Long odds, Ser. I'd not take it myself."
+
+"I haven't a wick."
+
+"The book takes a chore before a wick."
+
+"Then here's mine. If another cot in this hall goes grey before the thaw, I'll scour your ovens. And if nobody does, you rub out every price on that page, and the kitchen stops counting cots."
+
+She looked at the column, and at the one number with nothing after it, and wrote beside NOBODY: *the Captain, the ovens.* Then she put the pencil down and held out her hand to shake on it, flour and all.
+
+When he was halfway back up the hall he heard a wick go down on the bread table, and one of the lay brothers asking, low, what the price was on nobody.
