@@ -340,5 +340,131 @@
     "stage": "Phase 3: seated or square-stance standing, easy effort, no pivot, no step-out",
     "stage_since": "2026-10-09",
     "stage_evidence": "his decision 10/9: seated or standing throwing at easy effort now, the pivot from Phase 4, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
+  },
+  "vocabulary": {
+    "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
+    "daily": {
+      "knee_session": [
+        "A",
+        "B",
+        "min",
+        "home",
+        "partial"
+      ],
+      "_knee_session": "A/B (which session), min (the minimum session: a loaded day), home (a knee session logged by its rows), partial (below the minimum: not a loaded day; 'partial …' with a note after it is accepted)",
+      "addon_session": [
+        "upperA",
+        "upperB",
+        "accessory",
+        "power",
+        "arms"
+      ],
+      "_addon_session": "one code, or several joined with + (upperA+accessory)",
+      "light": [
+        "green",
+        "yellow",
+        "red"
+      ],
+      "pt": [
+        "Y",
+        "missed",
+        "skipped",
+        "no-show"
+      ],
+      "floor_am": [
+        "Y",
+        "N"
+      ],
+      "floor_pm": [
+        "Y",
+        "N"
+      ],
+      "knee_as_planned": [
+        "Y",
+        "N"
+      ],
+      "together": [
+        "Y",
+        "N"
+      ],
+      "closed": [
+        "Y"
+      ]
+    },
+    "nutrition": {
+      "creatine": [
+        "Y",
+        "N"
+      ],
+      "shake": [
+        "Y",
+        "N"
+      ]
+    },
+    "exercise": {
+      "session": [
+        "home",
+        "knee",
+        "A",
+        "B",
+        "PT",
+        "floor",
+        "HEP",
+        "upperA",
+        "upperB",
+        "accessory",
+        "power",
+        "arms",
+        "conditioning"
+      ],
+      "block": [
+        "knee",
+        "quad",
+        "single-leg",
+        "posterior",
+        "calf",
+        "hip",
+        "balance",
+        "mobility",
+        "gait",
+        "manual",
+        "test",
+        "warmup",
+        "finisher",
+        "cooldown",
+        "posture",
+        "push",
+        "pull",
+        "trunk",
+        "upper",
+        "conditioning",
+        "floor",
+        "landing",
+        "plyo",
+        "run",
+        "sprint",
+        "decel",
+        "cut",
+        "agility",
+        "reactive",
+        "throw"
+      ],
+      "side": [
+        "L",
+        "R",
+        "bil"
+      ]
+    },
+    "sport": {
+      "session": [
+        "A",
+        "B",
+        "C",
+        "film",
+        "test",
+        "review"
+      ],
+      "_session": "case-insensitive: the engine reads a/b/c/film as A/B/C/FILM"
+    }
   }
 }
