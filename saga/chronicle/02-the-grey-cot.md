@@ -417,7 +417,7 @@ Darrow looked at her hands, because she was hiding them.
 
 "Show me your fingers."
 
-She brought them out. Her face was scrubbed, but the first two fingers on the right were still black in the creases with wick soot, which stays for days whatever you scrub, and comes from trimming a lamp by hand, more than once.
+She brought them out. The first two fingers on the right were still black in the creases with wick soot, which stays for days whatever you scrub, and comes from trimming a lamp by hand, more than once.
 
 "The lamp at the far end is never let go out," he said. "Somebody trimmed it that night, over and over, and you sat it alone."
 
