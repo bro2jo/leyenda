@@ -77,6 +77,17 @@ The records (engine/records.py; design.md §11): the story is kept as one event 
   threads [--id N] [--all] | --id N --set k=v … | --new 'JSON'   the threads as data (GM)
   glimpse add --kind K "TEXT" | glimpse show [--n N]   the line of the House after a log reply (rotated kinds, the last 20 kept)
 
+The tales (design.md §12): the past, told a piece at a time, paid for by the works (real/projects.json; `darrow.py project`).
+  tale bind PROJECT [--tale tale.id] [--force]   bind the live project to a plan of _gm/tales.md with as many pieces as the project has
+                                        tasks (the first unbound one that fits, or --tale): starts saga/chronicle/tales/NN-slug.md, keeps the
+                                        binding in the plan (plan.json → tales[])
+  tale list | tale next                 every bound tale (pieces told, owed, done) and the plans still unbound · the piece owed now
+  brief --tale                          the piece owed (a task reported, its piece not yet told): the tale's plan, this piece's, what it may
+                                        plant and must never say, the keepsake on the last piece, the people, the record skeleton
+  record '{"key": "taleNN:pK", …}'      a piece recorded: its event (events/taleNN.jsonl) and note; people, facts, codex, threads, lore; the
+                                        keepsake on the last piece; the projections rebuilt (a person's appearances and facts, world.json →
+                                        keepsakes[] and tales[]); never the plan's position, approval or the ledger
+
 `when` / `at` grammar (ledger due items):
   next            the next scene (resolved by `add` to chNN:sN; at the climax, choice or transition stage: the next chapter's s1)
   later           a callback: never due or overdue, listed by `due --later`, fired wherever it fits (one per scene at most)
@@ -122,6 +133,9 @@ P = {
     "events": ROOT / "saga/state/events",
     "notes": ROOT / "saga/state/_gm/notes",
     "lore": ROOT / "saga/bible/_gm/lore.md",
+    "tales_plan": ROOT / "saga/bible/_gm/tales.md",
+    "tales_dir": ROOT / "saga/chronicle/tales",
+    "projects": ROOT / "real/projects.json",
     "codex": ROOT / "saga/state/codex.md",
     "cast": ROOT / "saga/bible/cast.md",
     "characters": ROOT / "saga/characters",
@@ -1414,6 +1428,9 @@ def cmd_now(args):
     else:
         lines.append("Micro: none open")
     lines += open_choice_lines(plan)
+    for t in tale_state(st):
+        if t["owed"]:
+            lines.append(f"TALE OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`, written now")
     lines.append(bearing_line(bearing))
     ro = rank_owed(plan)
     if ro:
@@ -2535,12 +2552,12 @@ def gm_unspoken_names():
     gm_dir = ROOT / "saga/bible/_gm"
     for p_ in sorted(gm_dir.glob("*.md")) if gm_dir.exists() else []:
         texts.append(p_.read_text(encoding="utf-8"))
-    for row in R.load_notes():
+    for row in R.load_notes() + R.load_tale_notes():
         texts.append(json.dumps(row, ensure_ascii=False))
     if P["threads"].exists():
         texts.append(P["threads"].read_text(encoding="utf-8"))
     gm_text = "\n".join(texts)
-    page = "\n".join(p_.read_text(encoding="utf-8") for p_ in sorted(P["chronicle"].glob("*.md"))).lower()
+    page = "\n".join(p_.read_text(encoding="utf-8") for p_ in sorted(P["chronicle"].glob("*.md")) + sorted(P["tales_dir"].glob("*.md"))).lower()
     page_words = set(re.findall(r"[a-z]+", page))
     lower_words = set(re.findall(r"\b[a-z]{3,}\b", gm_text))
     reg = registered_names()
@@ -3368,6 +3385,9 @@ def cmd_check(args):
     # the records: every event parses, keys are unique and name a block with the same title, every person has a file,
     # the current chapter's blocks are all recorded, the threads are well formed, and every projection is fresh
     check_records(st, probs, notes)
+    # the tales: every binding has its file and project, every piece its event (told in order, never ahead of its task),
+    # the last piece its keepsake; a piece owed is a note (it is written in the session that reports the task)
+    check_tales(st, probs, notes)
 
     # the Annals: parseable, unique ids, known kinds, tiers, a spoken field
     entries, dupes = lore_entries()
@@ -3614,6 +3634,11 @@ def format_lines(kind, slot=None):
     if kind == "choice":
         return ["heading: `### Choice — Title` appended to the climax's chapter file; 100–250 words: the moment the choice lands, companions reacting in voice by their under-pressure lines; approval shows in what they say, never as numbers",
                 "a Book's last climax: this block is the crossing itself (`saga.py arc tN.<road>`), as long as it needs"]
+    if kind == "tale":
+        return ["heading: `### Piece K — Title` appended to the tale's file (K is the key's number); 400–700 words, past tense, close third on the tale's own person",
+                "a whole small story each time: a want, a turn, a last image; the piece may end on the line the present will rhyme with, never on a lesson",
+                "no dice, no choice list, no Reckoning box; the present never intrudes except as an echo the reader can feel",
+                "the last piece ends on the keepsake in the page's words (the thing, the name, the song or the saying); the record names it"]
     return []
 
 
@@ -3656,6 +3681,8 @@ def cmd_brief(args):
         sheet = load_json(P["sheet"])
     except (OSError, ValueError, json.JSONDecodeError):
         sheet = {}
+    if getattr(args, "tale", False):
+        return brief_tale(st, args)
     L = []
     mode = "chapter" if args.chapter else "climax" if args.climax else "choice" if args.choice else "between" if args.between else "slot"
 
@@ -4000,9 +4027,12 @@ def cmd_record(args):
     if not isinstance(ev, dict):
         die("the record is a JSON object")
     key = str(ev.get("key") or "")
+    tk = R.parse_tale_key(key)
+    if tk:
+        return record_tale(args, ev, st, key, *tk)
     parsed = R.parse_key(key)
     if not parsed:
-        die("key must look like ch02:s4, ch02:between-9, ch02:interlude, ch02:climax or ch02:choice")
+        die("key must look like ch02:s4, ch02:between-9, ch02:interlude, ch02:climax, ch02:choice, or tale01:p2 for a tale's piece")
     ch, sk, kind = parsed
     ac = plan.get("answered_choice") or {}
     prev_choice = kind == "choice" and int(ac.get("chapter", -1)) == ch  # a climax's Choice block belongs to its own chapter, even once the next is open
@@ -4231,15 +4261,18 @@ def cmd_project(args):
 
 
 def cmd_history(args):
-    evs = R.load_events()
-    notes = {n.get("key"): n for n in R.load_notes()} if args.gm else {}
+    evs = R.load_events() + R.load_tale_events()
+    notes = {n.get("key"): n for n in R.load_notes() + R.load_tale_notes()} if args.gm else {}
     rows = []
     for ev in evs:
         parsed = R.parse_key(ev.get("key", ""))
-        if not parsed:
+        tale = R.parse_tale_key(ev.get("key", ""))
+        if not parsed and not tale:
             continue
-        ch, sk, kind = parsed
+        ch = parsed[0] if parsed else None
         if args.chapter is not None and ch != int(args.chapter):
+            continue
+        if getattr(args, "tale", None) is not None and (not tale or tale[0] != int(args.tale)):
             continue
         if args.place and (ev.get("where") or {}).get("place") != args.place:
             continue
@@ -4407,6 +4440,457 @@ def cmd_choose(args):
     st.save()
     R.project_all(plan, write=True)
 
+# ---------------------------------------------------------------- the tales: the past, a piece per task of a work (design.md §12)
+TALE_PLAN_HEAD_RE = re.compile(r"^##\s+(tale\.[a-z0-9_]+)\s*[—–-]\s*(.+?)\s*$")
+TALE_PIECE_HEAD_RE = re.compile(r"^###\s+piece\s+(\d+)\s*[—–-]\s*(.+?)\s*$", re.I)
+TALE_RECORD_KEYS = ("key", "tale", "piece", "kind", "title", "written", "where", "time", "last_beat", "people", "codex", "lore", "threads", "keepsake")
+TALE_FIELDS = ("of", "when", "pieces", "keepsake", "plants", "never")
+
+
+def tale_plans():
+    """The tales' plans from _gm/tales.md: {id: {id, title, fields (of, when, pieces, keepsake, plants, never), lines, pieces {k: {title, lines}}}}."""
+    out, cur, piece = {}, None, None
+    if not P["tales_plan"].exists():
+        return out
+    for line in P["tales_plan"].read_text(encoding="utf-8").splitlines():
+        m = TALE_PLAN_HEAD_RE.match(line)
+        if m:
+            cur = {"id": m.group(1), "title": m.group(2).strip(), "fields": {}, "lines": [], "pieces": {}}
+            out[cur["id"]] = cur
+            piece = None
+            continue
+        if line.startswith("## ") or line.startswith("# "):
+            cur, piece = None, None
+            continue
+        if cur is None:
+            continue
+        mp = TALE_PIECE_HEAD_RE.match(line)
+        if mp:
+            piece = {"title": mp.group(2).strip(), "lines": []}
+            cur["pieces"][int(mp.group(1))] = piece
+            continue
+        if piece is None and line.startswith("- **"):
+            for k, v in re.findall(r"\*\*(\w+):\*\*\s*(.*?)(?=\s*·\s*\*\*\w+:\*\*|$)", line):
+                if k in TALE_FIELDS:
+                    cur["fields"][k] = v.strip()
+            continue
+        (piece["lines"] if piece else cur["lines"]).append(line)
+    for t in out.values():
+        try:
+            t["n_pieces"] = int(t["fields"].get("pieces") or len(t["pieces"]))
+        except ValueError:
+            t["n_pieces"] = len(t["pieces"])
+    return out
+
+
+def projects_data():
+    try:
+        return load_json(P["projects"])
+    except (OSError, ValueError, json.JSONDecodeError):
+        return {"projects": []}
+
+
+def tale_state(st):
+    """One row per bound tale (records.tales_state) plus the project's side: tasks reported, its status, the pieces owed."""
+    rows = R.tales_state(st.plan)
+    projects = {p.get("id"): p for p in projects_data().get("projects", [])}
+    for t in rows:
+        pr = projects.get(t.get("project")) or {}
+        t["tasks_done"] = sum(1 for x in pr.get("tasks", []) if x.get("done"))
+        t["project_status"] = pr.get("status")
+        t["owed"] = max(0, min(t["tasks_done"], t["pieces"]) - t["told"])
+    return rows
+
+
+def tale_line(t):
+    state = "told in full" if t["done"] else f"{t['told']} of {t['pieces']} told" + (f" · OWED {t['owed']}" if t["owed"] else "")
+    pr = f"project {t['project']} ({t['project_status'] or 'missing'}, {t['tasks_done']} tasks reported)"
+    return f"{t['id']} · Tale {t['n']} — {t['title']} · of {t['of'] or '—'} · {pr} · {state} · {t['file']}"
+
+
+def cmd_tale(args):
+    st = State()
+    plan = st.plan
+    plans = tale_plans()
+    rows = tale_state(st)
+    bound = {t.get("tale") for t in rows}
+    if args.action == "list":
+        print(f"tales: {len(rows)} bound" + (f", {sum(1 for t in rows if t['done'])} told in full" if rows else ""))
+        for t in rows:
+            print(tale_line(t))
+            for kp in t.get("keepsakes") or []:
+                print(f"    keepsake: {kp.get('name')} → {kp.get('to')}")
+        free = [t for t in plans.values() if t["id"] not in bound]
+        print("plans in tales.md not yet bound: " + (", ".join(f"{t['id']} ({t['n_pieces']} pieces, of {t['fields'].get('of', '—')})" for t in free) or "none; plan one (design.md §12)"))
+        return
+    if args.action == "next":
+        owed = [t for t in rows if t["owed"]]
+        if not owed:
+            print("no piece owed: a tale pays one piece per task reported (`darrow.py project done TASK`)")
+            return
+        for t in owed:
+            print(f"OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`")
+        return
+    # bind
+    if not args.id:
+        die("tale bind PROJECT_ID [--tale tale.id]: the live project's id (`darrow.py project show`)")
+    pr = next((p for p in projects_data().get("projects", []) if p.get("id") == args.id), None)
+    if not pr:
+        die(f"no project {args.id!r} in real/projects.json (`darrow.py project open` first)")
+    if pr.get("status") != "live" and not args.force:
+        die(f"project {pr['id']} is {pr.get('status')}: only a live project binds a tale (--force to bind anyway)")
+    if any(t.get("project") == pr["id"] for t in rows):
+        die(f"project {pr['id']} is already bound: " + tale_line(next(t for t in rows if t.get("project") == pr["id"])))
+    n_tasks = len(pr.get("tasks") or [])
+    if args.tale:
+        tp = plans.get(args.tale)
+        if not tp:
+            die(f"no plan {args.tale!r} in {rel(P['tales_plan'])}; plans: " + ", ".join(plans) if plans else f"no plan {args.tale!r}: {rel(P['tales_plan'])} has none")
+        if tp["id"] in bound and not args.force:
+            die(f"{tp['id']} is already bound to another project (--force to tell it again as a new tale)")
+    else:
+        tp = next((t for t in plans.values() if t["id"] not in bound and t["n_pieces"] == n_tasks), None)
+        if not tp:
+            die(f"no unbound plan in {rel(P['tales_plan'])} has {n_tasks} pieces; plans: "
+                + (", ".join(f"{t['id']} ({t['n_pieces']})" for t in plans.values() if t["id"] not in bound) or "none")
+                + ". Fit one (a piece per task) or write a new one, then `tale bind` again, or name one with --tale")
+    if tp["n_pieces"] != n_tasks and not args.force:
+        die(f"{tp['id']} plans {tp['n_pieces']} pieces; the project has {n_tasks} tasks: a piece per task. Fit the plan in tales.md, pick another with --tale, or --force (the tale then has {n_tasks} pieces)")
+    pieces = n_tasks
+    n = max([int(b.get("n", 0)) for b in plan.get("tales") or []] + list(R.tale_files()) + [0]) + 1
+    slug = re.sub(r"[^a-z0-9]+", "-", tp["title"].lower()).strip("-") or tp["id"].split(".")[-1]
+    path = P["tales_dir"] / f"{n:02d}-{slug}.md"
+    if path.exists():
+        die(f"{rel(path)} exists already")
+    when = tp["fields"].get("when", "").strip()
+    refusals, name_notes = name_problems(when, registered_names(), label="the tale's opening line")
+    if refusals:
+        die("refusing to open the tale: " + "; ".join(refusals) + " (the `when` line of its plan goes on the page: keep it to what the page may say)")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(f"# Tale {n} — {tp['title']}\n\n" + (f"*{when}*\n\n" if when else "") + "---\n", encoding="utf-8")
+    plan.setdefault("tales", []).append({"n": n, "tale": tp["id"], "project": pr["id"], "of": tp["fields"].get("of") or None, "pieces": pieces,
+                                         "file": rel(path), "title": tp["title"], "bound": today_local().isoformat()})
+    st.touch("plan")
+    st.save()
+    R.project_all(plan, write=True)
+    print(f"tale {n} bound: {tp['id']} — {tp['title']} ({pieces} pieces, of {tp['fields'].get('of') or '—'}) ↔ project {pr['id']} ({n_tasks} tasks) · {rel(path)} started")
+    print("each task reported (`darrow.py project done TASK`) owes a piece: `saga.py brief --tale`, the piece written, `saga.py record`, `darrow.py ship`")
+
+
+def brief_tale(st, args):
+    """The brief for the piece owed: the tale's plan and this piece's, the keepsake on the last, what it must never say,
+    the pieces told so far, the people, the Annals the plan names, the format and the record skeleton."""
+    plan, world = st.plan, st.world
+    rows = [t for t in tale_state(st) if t["owed"] > 0]
+    if not rows:
+        die("no piece is owed: a tale pays one piece per task reported (`darrow.py project done TASK`, then `darrow.py sync`); `saga.py tale list` shows every tale")
+    t = rows[0]
+    plans = tale_plans()
+    tp = plans.get(t["tale"]) or {"fields": {}, "lines": [], "pieces": {}, "title": t["title"]}
+    f = tp.get("fields", {})
+    k = t["told"] + 1
+    key = R.tale_key(t["n"], k)
+    cast = cast_entries()
+    names, by_word = people_index()
+    L = []
+
+    def section(title):
+        L.append("")
+        L.append(f"== {title} ==")
+
+    L.append(f"BRIEF · Tale {t['n']} — {t['title']} · piece {k} of {t['pieces']} · the past of {t['of'] or '—'}" + (f" · {f.get('when')}" if f.get("when") else ""))
+    L.append(f"THIS BLOCK: {key} · owed by task {k} of project {t['project']} ({t['tasks_done']} tasks reported, {t['told']} pieces told); it is written now, before anything else in the session")
+    section("MUST: what this piece carries")
+    for l in [l for l in tp.get("lines", []) if l.strip()]:
+        L.append(f"the tale: {l.strip()}")
+    pp = tp.get("pieces", {}).get(k)
+    if pp:
+        L.append(f"piece {k} — {pp['title']} (a working title; the page's own may differ)")
+        L += ["  " + l.strip() for l in pp["lines"] if l.strip()]
+    else:
+        L.append(f"piece {k}: no plan in tales.md; state its want, its turn and its last image in a line before writing")
+    if k == t["pieces"]:
+        L.append(f"THE KEEPSAKE (this is the last piece): {f.get('keepsake') or '<none planned: an object, a name, a song or a saying from this past, to the tale\'s person>'}"
+                 " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>}")
+    else:
+        L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last")
+    if f.get("never"):
+        L.append(f"NEVER (the present's secrets stay sealed): {f['never']}")
+    if f.get("plants"):
+        L.append(f"plants (set down, never explained): {f['plants']}")
+    L.append("a tale is the past: it moves no approval, no Bearing, no ledger entry, no quest, no scene of the chapter; it may plant a thread (record it) and touch the Annals; it never contradicts a known fact on a person's page")
+    section("CONTINUITY (from the records)")
+    told = R.load_tale_events(t["n"])
+    if told:
+        for e in told:
+            L.append(f"piece {R.parse_tale_key(e['key'])[1]} · {e.get('title')}: {short(e.get('last_beat'), 300)}")
+    else:
+        L.append("the tale opens here" + (f": {t['when']}" if t.get("when") else ""))
+    who = t.get("of")
+    c = names.get(who) if who else None
+    if c:
+        for fact in (c.get("known_facts") or [])[-4:]:
+            L.append(f"known of {c.get('name')} ({fact.get('chapter')}:{fact.get('scene')}): {short(fact.get('fact'), 160)}")
+        if c.get("story_so_far"):
+            L.append(f"{c.get('name')} in the present, for the echo only: {short(c['story_so_far'], 240)}")
+    kept = world.get("keepsakes") or []
+    if kept:
+        L.append("keepsakes already kept: " + "; ".join(f"{x.get('name')} ({x.get('to')})" for x in kept))
+    section("MAY: the people in it (voice, tactic; what the page knows of them)")
+    texts = list(tp.get("lines", [])) + ([pp["title"]] + list(pp["lines"]) if pp else []) + [str(f.get("keepsake") or ""), str(f.get("plants") or "")]
+    ids = people_in(texts, names, by_word)
+    if who and who in names and who not in ids:
+        ids.insert(0, who)
+    for cid in ids[:6]:
+        L += person_brief(cid, names[cid], world, cast, None, facts_n=3)
+    if len(ids) > 6:
+        L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
+    L.append("a person without a file gets a base file first (saga/characters/README.md; status as the present knows it) and the record names them; the tale may leave people unnamed")
+    thr = R.load_threads()
+    tids = {int(x) for x in re.findall(r"thread (\d+)", " ".join(texts))}
+    rows_t = [x for x in thr.get("threads", []) if int(x["id"]) in tids]
+    if rows_t:
+        section("MAY: threads the plan names (a plant in the past counts)")
+        for x in rows_t:
+            L.append(thread_line(x))
+    lore_lines = lore_for_brief(texts)
+    if lore_lines:
+        section("MAY: the Annals the plan names (received, not revealed)")
+        L += lore_lines
+    else:
+        L.append("lore: the plan names no entry; `saga.py lore grep <word>` for the place or custom the piece touches")
+    section("FORMAT")
+    L += ["· " + l for l in format_lines("tale")]
+    L.append(f"· the file: {t['file']}")
+    L.append("· the wall: no foods, numbers, exercises, therapy or rehab words; nothing of the project itself, whose words never reach the page")
+    L.append("· names: only what the page has spoken, what this record registers, or what the plan above names; a place not in places.json is described, not named")
+    L.append("· then the reread (style.md §4), `saga.py record` with the skeleton below, then `darrow.py ship`")
+    section("RECORD (send this back, filled; drop what does not apply)")
+    present = ids[:4]
+    sk = {"key": key, "where": {"place": None, "detail": "<where the piece ends, in words; a places.json id in place when it has one>"}, "time": "<when, in the past>",
+          "last_beat": "<the last beat, one or two sentences, the page's words>",
+          "people": [{"id": cid, "did": "<one line>", "facts": [{"fact": "<one sentence>", "evidence": "<verbatim words of the piece>"}]} for cid in present] + [{"id": "<only named>", "mention": True}],
+          "codex": [{"section": "Histories", "name": "<new thing>", "text": "<what it is (Tale N, Piece K)>"}], "lore": [], "threads": [{"id": 0, "how": "plant|touch"}],
+          "gm": {"note": "<what the piece did for the tale; what was kept off the page>", "next_must_know": "<what the next piece must honour>"}}
+    if k == t["pieces"]:
+        sk["keepsake"] = {"name": "<the thing, the name, the song or the saying>", "text": "<one line, the page's words>", "to": who or "<character id>"}
+    L.append(json.dumps(sk, ensure_ascii=False))
+    text = "\n".join(L)
+    print(text)
+    if args.size:
+        print(f"\n[brief: {len(text):,} chars ≈ {len(text) // 4:,} tokens]")
+
+
+def record_tale(args, ev, st, key, n, k):
+    """One piece of a tale recorded: validated against its file, the binding, the project's tasks and the registries; its
+    event and note written; the Codex and the threads updated; the projections rebuilt (never the plan's position)."""
+    plan = st.plan
+    t = next((x for x in tale_state(st) if x["n"] == n), None)
+    if not t:
+        die(f"no bound tale {R.tale_id(n)} (`saga.py tale bind <project>` first; `tale list`)")
+    path = ROOT / t["file"] if t.get("file") else None
+    if not path or not path.exists():
+        die(f"{R.tale_id(n)}: its file {t.get('file')} is missing")
+    pieces = R.pieces_of(path)
+    block = next((b for b in pieces if b[0] == k), None)
+    if not block:
+        die(f"{path.name} has no piece {k}: write it first under `### Piece {k} — Title`")
+    _, btitle, btext = block
+    if ev.get("title") and norm_title(ev["title"]) != norm_title(btitle):
+        die(f"title {ev['title']!r} does not match the heading {btitle!r}")
+    ev["title"] = btitle
+    existing = {e["key"] for e in R.load_tale_events(n)}
+    if key in existing and not args.force:
+        die(f"{key} is already recorded; --force re-records it")
+    probs = []
+    unknown = [x for x in ev if x not in TALE_RECORD_KEYS and x != "gm"]
+    if unknown:
+        probs.append(f"unknown field(s) {', '.join(unknown)}; a tale's record has: {', '.join(TALE_RECORD_KEYS)}, gm (no fired, voided, now, quest or tether: the past moves nothing)")
+    if key not in existing and k != t["told"] + 1 and not args.force:
+        probs.append(f"the next piece is {t['told'] + 1}, not {k}: pieces are told in order")
+    if k > t["tasks_done"] and not args.force:
+        probs.append(f"piece {k} is not owed yet: {t['tasks_done']} task(s) of {t['project']} reported; the task comes first (`darrow.py project done TASK`, then `sync`)")
+    if k > t["pieces"]:
+        probs.append(f"the tale has {t['pieces']} pieces; piece {k} is past its end")
+    if not str(ev.get("last_beat") or "").strip():
+        probs.append("last_beat is required: the piece's last beat in a line or two, in the page's words")
+    if ev.get("written"):
+        try:
+            dt.date.fromisoformat(str(ev["written"]))
+        except ValueError:
+            probs.append(f"written {ev['written']!r} is not a date")
+    places = known_places()
+    where = ev.get("where")
+    if where is not None:
+        if not isinstance(where, dict):
+            probs.append('where is {"place": <places.json id or null>, "detail": "where the piece ends, in words"}')
+        elif where.get("place") and where["place"] not in places:
+            probs.append(f"where.place {where['place']!r} is not in places.json (null and a detail for a place the map does not hold)")
+    char_ids = set(R.char_files())
+    for p in ev.get("people") or []:
+        cid = p.get("id")
+        if cid not in char_ids:
+            probs.append(f"people: no file saga/characters/{cid}.json; a new person gets their base file first (saga/characters/README.md), then the record")
+            continue
+        for f in p.get("facts") or []:
+            if not str(f.get("fact") or "").strip():
+                probs.append(f"{cid}: a fact with no text")
+            evd = f.get("evidence")
+            if evd is not None and (len(R.norm(evd)) < 12 or R.norm(evd) not in R.norm(btext)):
+                probs.append(f"{cid}: evidence {evd!r} is not a verbatim excerpt of this piece (a few words at least)")
+        for k_ in p:
+            if k_ not in ("id", "mention", "did", "facts", "quote"):
+                probs.append(f"{cid}: unknown people field {k_!r} (a tale's people carry id, mention, did, facts, quote: the past moves no one's now, place or status)")
+    ks = ev.get("keepsake")
+    if k == t["pieces"]:
+        if not isinstance(ks, dict) or not str(ks.get("name") or "").strip() or not str(ks.get("text") or "").strip():
+            probs.append('the last piece carries the keepsake: "keepsake": {"name": …, "text": <one line, the page\'s words>, "to": <character id>}')
+        elif ks.get("to") not in char_ids:
+            probs.append(f"keepsake.to {ks.get('to')!r} is not a character id")
+    elif ks:
+        probs.append("a keepsake comes with the last piece only")
+    reg = registered_names() | record_people_names(ev)
+    allow = {w.strip() for w in str(args.allow_names or "").split(",") if w.strip()}
+    refusals, name_notes = name_problems(btext, reg, allow, label="the piece")
+    probs += refusals
+    for n_ in name_notes:
+        print(n_)
+    thr = R.load_threads()
+    tids = {int(x["id"]) for x in thr.get("threads", [])}
+    for x in ev.get("threads") or []:
+        tid = x.get("id") if isinstance(x, dict) else x
+        if tid is None or int(tid) not in tids:
+            probs.append(f"threads: no thread {tid!r} (`saga.py threads --new '<json>'` first, or name it in gm.threads with \"new\": true)")
+        elif isinstance(x, dict) and x.get("how") not in (None, "plant", "touch"):
+            probs.append(f"threads: how {x.get('how')!r} is plant or touch (a tale pays nothing off)")
+    entries, _ = lore_entries()
+    for lid in ev.get("lore") or []:
+        if lid not in entries:
+            probs.append(f"lore: no entry {lid!r} in the Annals")
+    codex = R.load_codex()
+    if args.force:
+        R.unapply_codex_key(codex, key)
+    probs += R.apply_codex_items(codex, ev.get("codex"), key)
+    gm = ev.pop("gm", None) or {}
+    if gm and not isinstance(gm, dict):
+        probs.append("gm is an object: {note, kept_off, next_must_know, threads: [{id | new+title, who_knows, status, note}]}")
+        gm = {}
+    for tu in gm.get("threads") or []:
+        if tu.get("new"):
+            if not str(tu.get("title") or "").strip():
+                probs.append("a new thread needs a title")
+        elif tu.get("id") is None or int(tu["id"]) not in tids:
+            probs.append(f"gm.threads: no thread {tu.get('id')!r}")
+    if probs:
+        die("refusing the record (nothing written):\n  " + "\n  ".join(probs))
+    today = today_local().isoformat()
+    for lid in ev.get("lore") or []:
+        old, new = lore_spoke(lid, key)
+        print(f"{lid} spoken: {old or '—'} → {new}")
+    ev.update({"tale": R.tale_id(n), "piece": k, "kind": "piece"})
+    ev.setdefault("written", today)
+    ordered = {x: ev[x] for x in TALE_RECORD_KEYS if x in ev}
+    R.put_event(ordered, replace=args.force)
+    note = {x: v for x, v in gm.items() if x != "threads" and v}
+    for tu in gm.get("threads") or []:
+        if tu.get("new"):
+            nid = max([int(x["id"]) for x in thr["threads"]] + [0]) + 1
+            thr["threads"].append({"id": nid, "title": tu["title"], "truth": tu.get("truth"), "feeds": tu.get("feeds", ""), "status": "open",
+                                   "who_knows": tu.get("who_knows", ""), "note": tu.get("note", ""), "on_page": []})
+            ordered.setdefault("threads", []).append({"id": nid, "how": "plant"})
+            print(f"thread {nid} opened: {tu['title']}")
+        else:
+            x = next(y for y in thr["threads"] if int(y["id"]) == int(tu["id"]))
+            for f_ in ("who_knows", "status", "note", "title", "truth", "feeds"):
+                if tu.get(f_) is not None:
+                    x[f_] = tu[f_]
+    if any(tu.get("new") for tu in gm.get("threads") or []):
+        R.put_event(ordered, replace=True)
+    if note or gm.get("threads"):
+        note.update({"key": key, "tale": R.tale_id(n), "written": today, "threads": [tu for tu in gm.get("threads") or []]})
+        R.put_note({x: note[x] for x in ("key", "tale", "written", "note", "kept_off", "next_must_know", "threads") if x in note}, replace=True)
+    R.save_codex(codex)
+    R.save_threads(thr)
+    changed = R.project_all(plan, write=True)
+    print(f"{key} recorded: {btitle} · people {len(ordered.get('people') or [])} · facts {sum(len(p.get('facts') or []) for p in ordered.get('people') or [])} "
+          f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])}" + (f" · keepsake: {ks['name']} → {ks['to']}" if isinstance(ks, dict) else "")
+          + f" · projections rebuilt: {', '.join(changed) or 'none'}")
+    r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "check"], cwd=ROOT, capture_output=True, text=True)
+    sys.stdout.write(r.stdout + r.stderr)
+    if r.returncode:
+        sys.exit(r.returncode)
+    if k >= t["pieces"]:
+        print(f"the tale is told in full; its keepsake goes on {ks['to']}'s page with the build. next: `python3 engine/darrow.py ship -m \"…\"`")
+    else:
+        print(f"piece {k + 1} waits for task {k + 1} of {t['project']}. next: `python3 engine/darrow.py ship -m \"…\"`")
+
+
+def check_tales(st, probs, notes):
+    try:
+        evs = R.load_tale_events()
+        R.load_tale_notes()
+    except ValueError as e:
+        probs.append(str(e))
+        return
+    rows = {t["n"]: t for t in tale_state(st)}
+    tfiles = R.tale_files()
+    char_ids = set(R.char_files())
+    plans = tale_plans()
+    for b in st.plan.get("tales") or []:
+        n = int(b.get("n") or 0)
+        t = rows.get(n)
+        if n not in tfiles:
+            probs.append(f"tale {n} ({b.get('tale')}): no file {b.get('file')} under {rel(P['tales_dir'])}")
+        if b.get("tale") not in plans:
+            notes.append(f"tale {n}: its plan {b.get('tale')} is no longer in tales.md")
+        if t and t["project_status"] is None:
+            probs.append(f"tale {n}: project {b.get('project')} is not in real/projects.json")
+        if t and t["told"] > t["pieces"]:
+            probs.append(f"tale {n}: {t['told']} pieces told of {t['pieces']}")
+        if t and t["owed"]:
+            notes.append(f"tale {n}: piece {t['told'] + 1} is owed (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`")
+    seen = {}
+    for ev in evs:
+        key = ev.get("key")
+        parsed = R.parse_tale_key(key)
+        if not parsed:
+            probs.append(f"tale event key {key!r} malformed (tale01:p2)")
+            continue
+        seen[key] = seen.get(key, 0) + 1
+        n, k = parsed
+        if n not in tfiles:
+            probs.append(f"event {key}: no tale file for tale {n}")
+            continue
+        pieces = {kk: tt for kk, tt, _ in R.pieces_of(tfiles[n])}
+        if k not in pieces:
+            probs.append(f"event {key}: {tfiles[n].name} has no piece {k}")
+        elif norm_title(ev.get("title")) != norm_title(pieces[k]):
+            probs.append(f"event {key}: title {ev.get('title')!r}, but the heading says {pieces[k]!r} (re-record it with --force)")
+        for p in ev.get("people") or []:
+            if p.get("id") not in char_ids:
+                probs.append(f"event {key}: people id {p.get('id')!r} has no character file")
+        t = rows.get(n)
+        if t is None:
+            probs.append(f"event {key}: tale {n} has no binding in the plan (`saga.py tale bind`)")
+            continue
+        if t["project_status"] is not None and k > t["tasks_done"]:
+            probs.append(f"event {key}: piece {k} told before task {k} of {t['project']} was reported")
+        ks = ev.get("keepsake")
+        if k == t["pieces"] and not isinstance(ks, dict):
+            probs.append(f"event {key}: the last piece has no keepsake")
+        if isinstance(ks, dict) and ks.get("to") not in char_ids:
+            probs.append(f"event {key}: keepsake.to {ks.get('to')!r} is not a character id")
+    for k_, n_ in seen.items():
+        if n_ > 1:
+            probs.append(f"event {k_} is recorded {n_} times")
+    for n, path in tfiles.items():
+        if n not in rows:
+            probs.append(f"{path.name}: tale {n} has no binding in the plan (`saga.py tale bind`)")
+        for k, title, _ in R.pieces_of(path):
+            if R.tale_key(n, k) not in seen:
+                probs.append(f"{path.name} has `{title}` (piece {k}) but no event: `saga.py record '<json>'`")
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -4443,9 +4927,10 @@ def main():
     s = sub.add_parser("arc"); s.add_argument("id")
     s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
-    s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
+    s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--tale", action="store_true", help="the tale piece owed by a task reported"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
+    s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan with a piece per task)"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
-    s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
+    s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--tale", type=int, help="one tale's pieces"); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
     s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
     s = sub.add_parser("glimpse"); s.add_argument("action", choices=["add", "show"]); s.add_argument("text", nargs="?"); s.add_argument("--kind", choices=list(R.GLIMPSE_KINDS)); s.add_argument("--date"); s.add_argument("--n", type=int)
     s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true")
@@ -4462,6 +4947,7 @@ def main():
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
         "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
         "brief": cmd_brief, "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose,
+        "tale": cmd_tale,
     }[args.cmd](args)
 
 

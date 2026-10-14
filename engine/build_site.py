@@ -71,6 +71,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SAGA = ROOT / "saga"
 DOCS = ROOT / "docs"
 CHRON = SAGA / "chronicle"
+TALES = CHRON / "tales"   # the tales: the past, a piece per task of a work (design.md §12); NN-slug.md under `### Piece K — Title`
 CHARS = SAGA / "characters"
 STATE = SAGA / "state"
 ART = SAGA / "art"
@@ -276,11 +277,54 @@ CLIMAX_RE = re.compile(r"^##\s+Climax\s*[—–-]\s*(.+)$")
 CHOICE_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
 HEAD_RE = re.compile(r"^(#{2,3})\s+(.+)$")
 CHAPTER_RE = re.compile(r"^(Chapter\s+(\d+)|Prologue)\s*[—–-]\s*(.+)$")
+TALE_RE = re.compile(r"^#\s+Tale\s+(\d+)\s*[—–-]\s*(.+)$")
+PIECE_RE = re.compile(r"^###\s+Piece\s+(\d+)\s*[—–-]\s*(.+)$")
 CHOICE_HEAD_RE = re.compile(r"^\*\*What does Darrow (do|say)\?\*\*$")
 
 
 def parse_chapter(path):
-    lines = read(path).split("\n")
+    return parse_chapter_text(read(path), path)
+
+
+def parse_tale(path):
+    """A tale file, parsed like a chapter: `# Tale N — Title`, the italic line of when it is set, `---`, then
+    `### Piece K — Title` blocks. It comes back in the chapter's shape (scenes are its pieces) with tale=True, so the
+    registry, the links and the character pages treat a piece like a scene."""
+    text = read(path)
+    out, n_tale = [], None
+    for ln in text.split("\n"):
+        m = TALE_RE.match(ln.strip())
+        if m and n_tale is None:
+            n_tale = int(m.group(1))
+            out.append(f"# Chapter {m.group(1)} — {m.group(2)}")
+            continue
+        mp = PIECE_RE.match(ln.strip())
+        if mp:
+            out.append(f"### Scene {mp.group(1)} — {mp.group(2)}")
+            continue
+        if re.match(r"^#{1,3}\s+(Scene|Interlude|Between|Climax|Choice)\b", ln.strip(), re.I):
+            problem(f"tales/{path.name}: a tale holds pieces only ('### Piece K — Title'), not '{ln.strip()}'")
+        out.append(ln)
+    if n_tale is None:
+        problem(f"tales/{path.name}: no '# Tale N — Title' heading")
+        n_tale = 0
+    ch = parse_chapter_text("\n".join(out), path)
+    m = re.match(r"^(\d+)-", path.name)
+    if m and int(m.group(1)) != n_tale:
+        problem(f"tales/{path.name}: the file is numbered {int(m.group(1))} but its heading says Tale {n_tale}")
+    ch.update({"tale": True, "code": f"tale{n_tale:02d}", "number": n_tale, "label": f"Tale {n_tale}", "book": None,
+               "when": " ".join(ch["epigraph"]["lines"]) if ch.get("epigraph") else ""})
+    ch["epigraph"] = None
+    for sc in ch["scenes"]:
+        if sc["key"].isdigit():
+            sc.update({"key": "p" + sc["key"], "label": "Piece " + sc["key"], "anchor": "piece-" + sc["key"]})
+        else:
+            problem(f"tales/{path.name}: text before the first piece ('{sc['title'] or sc['key']}'); a tale is its pieces")
+    return ch
+
+
+def parse_chapter_text(text, path):
+    lines = text.split("\n")
     ch = {"slug": path.stem, "code": path.stem[:2], "file": path.name, "book": None, "label": None,
           "number": None, "title": None, "epigraph": None, "scenes": [], "words": 0}
     i, n = 0, len(lines)
@@ -816,7 +860,7 @@ TIER_CLS = {"Triumph": "brass", "Hard-won": "brass", "Costly": "ember", "Setback
 
 # ============================================================ page shell
 CUR = ' aria-current="page"'
-NAV = [("Now", "index.html"), ("Chronicle", "chronicle/index.html"), ("Characters", "characters/index.html"),
+NAV = [("Now", "index.html"), ("Chronicle", "chronicle/index.html"), ("Tales", "tales/index.html"), ("Characters", "characters/index.html"),
        ("Darrow", "darrow/index.html"), ("Codex", "codex/index.html")]
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&display=swap">')
@@ -872,13 +916,18 @@ class Site:
             if c["empty"] and c["file"] != cur:
                 problem(f"{c['file']}: no scenes found (headings are '## I. Title' for prologue parts or '### Scene N — Title'); "
                         f"only the current chapter ({cur or 'world.json chapter_file'}) may wait for its first scene")
+        self.tales = [parse_tale(p) for p in sorted(TALES.glob("*.md"))] if TALES.exists() else []
+        for t in self.tales:
+            if t["empty"]:
+                note(f"tales/{t['file']}: no piece yet")
         self.registry = {}
-        for ch in self.chapters:
+        for ch in self.chapters + self.tales:
             for s in ch["scenes"]:
                 self.registry[(ch["code"], s["key"])] = {
-                    "href": f"chronicle/{ch['slug']}.html#{s['anchor']}", "chapter": ch, "scene": s,
+                    "href": f"{self.page_dir(ch)}{ch['slug']}.html#{s['anchor']}", "chapter": ch, "scene": s,
                     "label": (f"{ch['label']} · {s['label']}" if s["label"] else ch["label"]) + (f" — {s['title']}" if s["title"] else "")}
         self.chapter_by_number = {ch["number"]: ch for ch in self.chapters}
+        self.tale_by_code = {t["code"]: t for t in self.tales}
         self.bearing = self.load_bearing()
         self.check_world()
         self.chars = load_characters(self.registry, self.factions, self.place_by_id)
@@ -916,6 +965,11 @@ class Site:
         self.attach_codex_art()
         self.eye = next((a["rank"] for a in self.darrow.get("arts", []) if a["id"] == "wardens_eye"), 0)
         self.linkers = self.build_linkers()
+
+    @staticmethod
+    def page_dir(ch):
+        """Where a parsed chapter or tale is published: chronicle/ or tales/."""
+        return "tales/" if ch.get("tale") else "chronicle/"
 
     def register_image(self, where, img, alt):
         """Validate an image under saga/art/ and register it as an asset at art/<path>. Returns (path, size) or None."""
@@ -1215,6 +1269,40 @@ class Site:
                 if not isinstance(d, dict) or not str(d.get("chose") or "").strip() or not isinstance(d.get("stage"), int):
                     problem(f"world.json projects[{i}]: each decision needs stage (int) and chose (text)")
         self.projects = projects
+        keeps = w.get("keepsakes")
+        if keeps is None:
+            keeps = []
+        if not isinstance(keeps, list):
+            problem("world.json: keepsakes must be a list")
+            keeps = []
+        for i, kp in enumerate(keeps):
+            if not isinstance(kp, dict):
+                problem(f"world.json keepsakes[{i}] must be an object")
+                continue
+            for k in ("name", "text", "to", "tale", "piece"):
+                if not str(kp.get(k) or "").strip():
+                    problem(f"world.json keepsakes[{i}]: missing {k}")
+            if (str(kp.get("tale")), str(kp.get("piece"))) not in self.registry:
+                problem(f"world.json keepsakes[{i}]: {kp.get('tale')} {kp.get('piece')} is not a piece of a tale on the page")
+        self.keepsakes = keeps
+        tales = w.get("tales")
+        if tales is None:
+            tales = []
+        if not isinstance(tales, list):
+            problem("world.json: tales must be a list")
+            tales = []
+        for i, t in enumerate(tales):
+            if not isinstance(t, dict) or not str(t.get("id") or "").strip():
+                problem(f"world.json tales[{i}] must be an object with an id")
+                continue
+            if t["id"] not in self.tale_by_code:
+                problem(f"world.json tales[{i}]: {t['id']} has no file under saga/chronicle/tales/")
+            if not isinstance(t.get("pieces"), int) or not isinstance(t.get("told"), int):
+                problem(f"world.json tales[{i}]: pieces and told are counts")
+        self.tale_state = {t["id"]: t for t in tales if isinstance(t, dict) and t.get("id")}
+        for t in self.tales:
+            if t["code"] not in self.tale_state:
+                problem(f"tales/{t['file']}: not in world.json → tales[] (bind it: `saga.py tale bind`, or `saga.py project`)")
         choices = w.get("choices")
         if choices is None:
             choices = []
@@ -1693,7 +1781,7 @@ class Site:
             tag = ' <span class="state dim">named</span>' if named else ""
             groups.setdefault(ch["code"], (ch, []))[1].append(
                 f'<li class="{"named" if named else ""}"><a href="{rel}{r["href"]}">{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a>{tag}</li>')
-        items = "".join(f'<li><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
+        items = "".join(f'<li><a class="ch-link" href="{rel}{self.page_dir(ch)}{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
                         f'<ul class="scenes">{"".join(rows)}</ul></li>' for ch, rows in groups.values())
         label = f"{n_present} scene{'s' if n_present != 1 else ''}" + (f" · named in {n_named}" if n_named else "")
         return label, f'<ul class="chron">{items}</ul>'
@@ -1740,6 +1828,12 @@ class Site:
         out.append(dict(key="facts", title="Known facts", meta=str(len(facts)),
                         html=details(f"What the page has shown ({len(facts)})", fl) if facts else '<p class="empty">Nothing yet.</p>',
                         panel_html=fl if facts else '<p class="empty">Nothing yet.</p>'))
+        keeps = [kp for kp in getattr(self, "keepsakes", []) or [] if kp.get("to") == c["id"]]
+        if keeps:
+            rows = "".join(f'<li class="keep"><b>{esc(kp["name"])}</b><p class="prose">{esc(kp["text"])}</p>'
+                           f'<span class="src">From {self.scene_ref({"chapter": kp["tale"], "scene": kp["piece"]}, rel)}</span></li>' for kp in keeps)
+            out.append(dict(key="keepsakes", title="What he keeps" if c["id"] == "darrow" else "Keepsakes", meta=str(len(keeps)),
+                            html=f'<ul class="keeps">{rows}</ul>'))
         label, apps = self.appearances_html(c, rel)
         out.append(dict(key="appearances", title="Appearances", label=label, meta=esc(label), html=apps))
         return out
@@ -1810,7 +1904,7 @@ class Site:
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         inner = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                 f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}</div>'
+                 f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}</div>'
                  f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
                  f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
                  f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>'
@@ -1867,6 +1961,12 @@ class Site:
         if not t.get("stage"):
             return ""
         return chip(f"The Tether {roman(t['stage'])} of {roman(t.get('of', 5))} · {t.get('name', '')}", "ember")
+
+    def works_chip(self):
+        """The works: how many he has finished, once there is one. The count is the sheet's; what they were is not the page's."""
+        w = self.darrow.get("works") or {}
+        n = as_int(w.get("finished")) or 0
+        return chip(f"Works · {n} finished", "brass") if n else ""
 
     def knots_html(self, d, rel):
         tied = set(d.get("knots_tied") or [])
@@ -2031,6 +2131,16 @@ class Site:
         work = "".join(f'<h3 class="sub-h">Work in hand</h3><p class="prose">{esc(pr.get("name", ""))}, stage {pr.get("stage")} of {pr.get("of")}: {esc(pr.get("visible", ""))}</p>'
                        for pr in getattr(self, "projects", []) or [] if pr.get("status") == "live")
         quest = sec("The quest", q.get("name", ""), f'<p class="prose">{esc(q.get("on_the_page", ""))}</p><h3 class="sub-h">What he is fighting</h3><p class="prose">{esc(w.get("current_struggle", ""))}</p>' + work)
+        tales_html = ""
+        if self.tales:
+            items = []
+            for t in self.tales:
+                stt = self.tale_state.get(t["code"], {})
+                last = t["scenes"][-1] if t["scenes"] else None
+                state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
+                link = f'<a href="{rel}tales/{t["slug"]}.html{"#" + last["anchor"] if last else ""}"><b>{esc(t["label"])} — {esc(t["title"])}</b></a>'
+                items.append(f'<li>{link}<span class="m num">{esc(state)}' + (f' · latest: {esc(last["label"] + " — " + last["title"])}' if last else "") + "</span></li>")
+            tales_html = sec("The tales", f"{len(self.tales)}", f'<ul class="chron">{"".join(items)}</ul><p class="dim">The past, a piece at a time. <a href="{rel}tales/index.html">All the tales</a>.</p>')
         oc = self.open_choice()
         open_html = answered_html = ""
         if oc:
@@ -2058,7 +2168,7 @@ class Site:
         a = d["attributes"]
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
-        bchip = (self.bearing_chip() or "") + self.tether_chip()
+        bchip = (self.bearing_chip() or "") + self.tether_chip() + self.works_chip()
         card = (f'<div class="rk-mini"><div class="hero">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
@@ -2070,8 +2180,65 @@ class Site:
         map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel)
                        + '<p class="legend"><span class="lg ember">●</span> Darrow <span class="lg brass">●</span> visited <span class="lg faint">●</span> not yet <span class="lg route">—</span> the road so far</p>')
         dice = sec("The dice", "", self.dice_html(rel))
-        body = plate + open_html + quest + companions + reck + map_html + answered_html + dice
+        body = plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
+
+    # ---------------------------------------------------------------- tales
+    def render_tale(self, idx):
+        """A tale's page: its title and when it is set, its pieces as a reader, the people in it, a pager to the next tale."""
+        t = self.tales[idx]
+        rel = "../"
+        prev_t = self.tales[idx - 1] if idx > 0 else None
+        next_t = self.tales[idx + 1] if idx + 1 < len(self.tales) else None
+        stt = self.tale_state.get(t["code"], {})
+        head = [f'<p class="book-line">The tales</p>', f'<h1 class="ch-title"><span class="lbl">{esc(t["label"])}</span>{esc(t["title"])}</h1>']
+        if t.get("when"):
+            head.append(f'<p class="when">{inline(t["when"])}</p>')
+        state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} pieces told; the rest is still to come'
+        head.append(f'<p class="dim">{esc(state)}.</p>')
+        body = []
+        for s in t["scenes"]:
+            seen = set()
+            lab = f'<span class="scene-n">{esc(s["label"])}</span>' if s["label"] else ""
+            body.append(f'<section class="scene" id="{s["anchor"]}"><h2 class="scene-h">{lab}{esc(s["title"])}</h2>{self.render_blocks(t, s, rel, seen)}</section>')
+        if not t["scenes"]:
+            body.append('<p class="empty">The first piece is still to come.</p>')
+        keeps = [kp for kp in self.keepsakes if kp.get("tale") == t["code"]]
+        keep_html = ""
+        if keeps:
+            rows = "".join(f'<li class="keep"><b>{esc(kp["name"])}</b><p class="prose">{esc(kp["text"])}</p>'
+                           f'<span class="src">kept by <a href="{rel}{self.char_href(kp["to"])}">{esc(self.chars[kp["to"]]["name"] if kp["to"] in self.chars else kp["to"])}</a></span></li>' for kp in keeps)
+            keep_html = f'<div class="cast"><span class="lbl">What this tale left</span><ul class="keeps">{rows}</ul></div>'
+        cast = [c for c in self.chars.values() if any(str(a.get("chapter")) == t["code"] and not a.get("mention") for a in c.get("appearances") or [])]
+        cast_html = ""
+        if cast:
+            cast_html = '<div class="cast"><span class="lbl">On the page in this tale</span><div class="chips">' + "".join(
+                f'<a class="chip brass" href="{rel}{self.char_href(c["id"])}">{esc(c["name"])}</a>' for c in cast) + "</div></div>"
+        nav = '<nav class="pager" aria-label="Tales">'
+        nav += f'<a href="{rel}tales/{prev_t["slug"]}.html"><span class="lbl">Previous</span>{esc(prev_t["label"] + " — " + prev_t["title"])}</a>' if prev_t else '<span></span>'
+        nav += f'<a class="next" href="{rel}tales/{next_t["slug"]}.html"><span class="lbl">Next</span>{esc(next_t["label"] + " — " + next_t["title"])}</a>' if next_t else f'<a class="next" href="{rel}tales/index.html"><span class="lbl">The tales</span>All the tales</a>'
+        nav += "</nav>"
+        page = f'<article class="reader">{"".join(head)}{"".join(body)}</article>{keep_html}{cast_html}{nav}'
+        self.pages[f"tales/{t['slug']}.html"] = shell(f"{t['label']} — {t['title']}", page, rel, "Tales", "reader-page",
+                                                      desc=f"{t['label']} of The Unkneeling: {t['title']}.")
+
+    def render_tales_index(self):
+        rel = "../"
+        items = []
+        for t in self.tales:
+            stt = self.tale_state.get(t["code"], {})
+            pieces = "".join(f'<li><a href="{rel}tales/{t["slug"]}.html#{s["anchor"]}">{esc(s["label"] + " — " + s["title"])}</a></li>' for s in t["scenes"])
+            state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
+            items.append(f'<li class="{"now" if not stt.get("done") else ""}"><a class="ch-link" href="{rel}tales/{t["slug"]}.html"><b>{esc(t["label"])} — {esc(t["title"])}</b></a>'
+                         f'<span class="m num">{esc(state)}' + (f' · {esc(t["when"])}' if t.get("when") else "") + f' · about {t["words"]:,} words</span>'
+                         f'<ul class="scenes">{pieces}</ul></li>')
+        n_done = sum(1 for t in self.tales if self.tale_state.get(t["code"], {}).get("done"))
+        body = ('<section class="plate"><p class="lbl">The tales</p><h1>The past, a piece at a time</h1>'
+                '<p class="dim">What came before the Steps: who they were, where they rode, what they kept. Each tale is told in pieces, '
+                'and what it leaves behind goes to the one who keeps it.</p></section>')
+        body += sec("Told so far", (f"{len(self.tales)} tale{'s' if len(self.tales) != 1 else ''}" + (f" · {n_done} in full" if n_done else "")) if self.tales else "",
+                    f'<ul class="chron">{"".join(items)}</ul>' if items else '<p class="empty">No tale has begun yet.</p>')
+        self.pages["tales/index.html"] = shell("Tales", body, rel, "Tales", desc="The tales of The Unkneeling: the past, a piece at a time.")
 
     # ---------------------------------------------------------------- codex
     def project_html(self, place_id):
@@ -2150,6 +2317,9 @@ class Site:
         for i in range(len(self.chapters)):
             self.render_chapter(i)
         self.render_chronicle_index()
+        for i in range(len(self.tales)):
+            self.render_tale(i)
+        self.render_tales_index()
         for c in self.chars.values():
             if c["id"] != "darrow":
                 self.render_character(c)
@@ -2180,7 +2350,8 @@ Characters Codex Chronicle Now Darrow Unkneeling Books Chapter Scene Scenes Clim
 Visited Arts Learned Sealed Banked Tied Untied Opens Book Knots Binding Reckoning Dice Latest Rolls Cast Page Site Memorial Fallen Alive
 Hollowed Missing Unknown Major Minor Earned Grace Ember Unlit Fire Might Vigor Finesse Resolve Rank Ranks Temper Days Days Keeper Prior
 Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers
-Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting Songs Verses Histories Annals""".split()
+Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting Songs Verses Histories Annals
+Tales Tale Piece Pieces Keepsakes Keepsake Works Told Kept All""".split()
 STOP = set("""Seventh Present Former Scale Mid Magic Violence Tone Praise Speaks Talks Grounded Grants Grew Fights Families Companies Customs Geography Naming Peoples Recurring Reigning Surpassing Unwind Shatter Hinted Bible Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Wits Voices Signature Somber Stiff Steam Kennel Cripples Wager Magic
 About After Again Against Already Always Among Anyone Anything Around Because Before Behind Below Between Beyond
 Book Books Both Chapter Chapters Choice Choices Claude Core Could Darrow Does Each Early Either Ember End Every Everyone Expandable Expandables
@@ -2297,7 +2468,7 @@ def run_checks(site, out_dir):
         for m in pat_cs.finditer(v):
             problem(f"{k}: real-world term '{m.group(1)}' at …{v[max(0, m.start() - 40):m.end() + 40]!r}")
     # 2. GM sentences and unrevealed names
-    chron_text = "\n".join(read(p) for p in sorted(CHRON.glob("*.md")))
+    chron_text = "\n".join(read(p) for p in sorted(CHRON.glob("*.md")) + (sorted(TALES.glob("*.md")) if TALES.exists() else []))
     allowed = set()
     all_arts = site.rules.get("arts", []) + site.rules.get("sport_arts", {}).get("arts", [])  # sport Arts are game rules too
     for a in all_arts:
@@ -2823,6 +2994,11 @@ ol.choice li s{color:var(--faint)}
 .archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
 .archive li:target>details>summary{color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
+.keeps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.keep{display:grid;gap:3px;border-left:2px solid var(--brass-dim);padding-left:12px}
+.keep b{font-family:var(--display);font-size:1.15rem;color:var(--brass)}
+.keep .src{font-size:.82rem;color:var(--faint)}
+.reader .when{font-style:italic;color:var(--dim);font-size:17px}
 .pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid var(--rule);padding-top:14px}
 .pager a{display:grid;gap:2px;align-content:start;color:var(--ink)}
 .pager a.next{text-align:right}
@@ -3132,7 +3308,7 @@ def main():
     n_pages = sum(1 for k in site.pages if k.endswith(".html"))
     n_songs = sum(1 for k in site.assets if Path(k).suffix.lower() in AUDIO_TYPES)
     n_img = sum(1 for k in site.assets if Path(k).suffix.lower() in IMAGE_TYPES and not k.startswith("art/thumbs/") and "/" in k)
-    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {n_img} image{'' if n_img == 1 else 's'}"
+    print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {len(site.tales)} tale{'' if len(site.tales) == 1 else 's'}, {n_img} image{'' if n_img == 1 else 's'}"
           + (f", {n_songs} song{'' if n_songs == 1 else 's'}" if n_songs else "") + " → docs/" + (
         f"  (with {len(PROBLEMS)} problem(s), forced)" if PROBLEMS else "  · all checks passed"))
     if site.thumb_missing:

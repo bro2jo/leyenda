@@ -5,7 +5,8 @@ Read-only on the repo: the live state is only checked; every mutation runs on a 
 real/ under a temporary directory (the engines find their root from their own file, so the copy's engine works on the
 copy). It exercises the whole flow a session runs: the checks, the projections, the brief in every mode, a day closed
 and its scene recorded, a climax recorded and its choice carried across a chapter open, the answer and its Choice block,
-the vocabulary gate, a rule fired, a glimpse kept. Exit 1 on the first failure, with the output that failed.
+the vocabulary gate, a rule fired, a glimpse kept, and the works: a project opened, its tale bound, a task reported, the
+pieces recorded (refused ahead of their task), the keepsake, the site built with the tale. Exit 1 on the first failure, with the output that failed.
 """
 import json
 import os
@@ -175,6 +176,74 @@ def main():
         check(code == 0 and "ch03:between-1" in out, "a Between's brief in the new chapter keys ch03:between-1")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes at the end of the flow", out[-900:])
+
+        # the works and the tales: a project, its tale, a task reported, the piece written and recorded, the keepsake, the site
+        code, out = run(darrow + ["project", "open", "Sell the cart", "--tasks", "Clean it", "Park it", "List it"], tmp)
+        check(code == 0 and "sell-the-cart" in out, "project open starts the week's work with three tasks", out[-300:])
+        code, out = run(darrow + ["project", "open", "Another", "--tasks", "a", "b"], tmp, expect=1)
+        check("already open" in out, "a second live project is refused: one at a time")
+        code, out = run(saga + ["brief", "--tale"], tmp, expect=1)
+        check("no piece is owed" in out, "brief --tale refuses while no task is reported")
+        code, out = run(saga + ["tale", "bind", "sell-the-cart", "--tale", "tale.quickstep"], tmp)
+        check(code == 0 and "tale 1 bound" in out and (tmp / "saga/chronicle/tales/01-quickstep.md").exists(), "tale bind starts the tale's file and keeps the binding", out[-400:])
+        code, out = run(darrow + ["project", "done", "clean"], tmp)
+        check(code == 0 and "task 1/3 done" in out, "project done takes a few words of the task", out[-300:])
+        code, out = run(darrow + ["sync"], tmp)
+        check("WORK: a task done" in out, "sync reports the task as a work", out[-300:])
+        code, out = run(saga + ["now"], tmp)
+        check("TALE OWED: tale01 piece 1 of 3" in out, "now shows the piece owed", out[-300:])
+        code, out = run(saga + ["brief", "--tale", "--size"], tmp)
+        check(code == 0 and "tale01:p1" in out and "== RECORD" in out and "THE KEEPSAKE" not in out and len(out) <= 12000,
+              f"brief --tale prints the first piece's brief without the keepsake, within 12,000 chars (got {len(out):,})", out[-400:])
+        tale = tmp / "saga/chronicle/tales/01-quickstep.md"
+        with open(tale, "a", encoding="utf-8") as f:
+            f.write("\n### Piece 1 — The Breeder's Son\n\nThe boy walked at the grey's head down the hill before he could argue, and his father said nothing and opened the gate.\n")
+        piece = {"key": "tale01:p1", "last_beat": "His father said nothing and opened the gate.", "where": {"place": "edgemoor", "detail": "the paddock gate"},
+                 "people": [{"id": "darrow", "did": "Walked at the grey's head down the hill.", "facts": [{"fact": "As a boy he walked at a horse's head before he could argue.", "evidence": "before he could argue"}]}],
+                 "gm": {"note": "Self-test piece.", "next_must_know": "The grey mare is in the far field."}}
+        code, out = run(saga + ["record", json.dumps(piece, ensure_ascii=False)], tmp)
+        check(code == 0 and "tale01:p1 recorded" in out and "ok:" in out, "the piece is recorded and check passes", out[-600:])
+        code, out = run(saga + ["record", json.dumps({**piece, "key": "tale01:p2"}, ensure_ascii=False)], tmp, expect=1)
+        check("no piece 2" in out or "not owed yet" in out, "a piece ahead of its task is refused")
+        dar = json.loads((tmp / "saga/characters/darrow.json").read_text(encoding="utf-8"))
+        check(any(a.get("chapter") == "tale01" and a.get("scene") == "p1" for a in dar["appearances"]) and dar["last_seen"]["chapter"] != "tale01",
+              "the tale adds an appearance and never moves last_seen")
+        for task in ("2", "3"):
+            code, out = run(darrow + ["project", "done", task], tmp)
+        check(code == 0 and "project finished" in out, "the last task finishes the project", out[-300:])
+        code, out = run(darrow + ["sync"], tmp)
+        check("WORK FINISHED: 1" in out and "INSPIRATION +1" in out, "sync reports the finished work and its Inspiration", out[-400:])
+        code, out = run(darrow + ["sheet"], tmp)
+        check("WORKS · 1 finished" in out, "the sheet shows WORKS")
+        with open(tale, "a", encoding="utf-8") as f:
+            f.write("\n### Piece 2 — The Grey\n\nShe stood in the thistles to be left alone, and he named her for it.\n")
+        p2 = {"key": "tale01:p2", "last_beat": "He named her for the thistles.", "people": [{"id": "darrow", "did": "Named the filly."}], "threads": [{"id": 15, "how": "touch"}]}
+        code, out = run(saga + ["record", json.dumps(p2, ensure_ascii=False)], tmp)
+        check(code == 0 and "ok:" in out, "the second piece records with a thread touch", out[-400:])
+        with open(tale, "a", encoding="utf-8") as f:
+            f.write("\n### Piece 3 — The Name\n\nThe sergeant said it down the line and the Ninth said it back, and he answered to it: Quickstep.\n")
+        code, out = run(saga + ["brief", "--tale"], tmp)
+        check(code == 0 and "tale01:p3" in out and "THE KEEPSAKE" in out, "the last piece's brief carries the keepsake")
+        p3 = {"key": "tale01:p3", "last_beat": "He answered to the name.", "people": [{"id": "darrow", "did": "Answered to the name the Ninth gave him."}]}
+        code, out = run(saga + ["record", json.dumps(p3, ensure_ascii=False)], tmp, expect=1)
+        check("keepsake" in out, "the last piece without its keepsake is refused")
+        p3["keepsake"] = {"name": "Quickstep", "text": "The name the Ninth gave him, for the feet.", "to": "darrow"}
+        code, out = run(saga + ["record", json.dumps(p3, ensure_ascii=False)], tmp)
+        check(code == 0 and "told in full" in out and "ok:" in out, "the last piece records with its keepsake and the tale is told in full", out[-500:])
+        world = json.loads((tmp / "saga/state/world.json").read_text(encoding="utf-8"))
+        check(world["keepsakes"][-1]["to"] == "darrow" and world["tales"][-1]["done"] is True, "world.json carries the keepsake and the tale's state")
+        code, out = run(["engine/build_site.py"], tmp)
+        check(code == 0 and "1 tale" in out, "the site builds with the tale", out[-600:])
+        page = (tmp / "docs/darrow/index.html").read_text(encoding="utf-8")
+        check("Works · 1 finished" in page and "What he keeps" in page and "Quickstep" in page, "Darrow's page shows the work and the keepsake")
+        tale_page = tmp / "docs/tales/01-quickstep.html"
+        check(tale_page.exists() and "Piece 3" in tale_page.read_text(encoding="utf-8"), "the tale has its page")
+        code, out = run(darrow + ["project", "open", "Next week", "--tasks", "a", "b"], tmp)
+        check(code == 0, "a new project opens once the last is finished", out[-300:])
+        code, out = run(darrow + ["project", "drop", "--why", "not this week"], tmp)
+        check(code == 0 and "set aside" in out, "a project can be set aside")
+        code, out = run(saga + ["check"], tmp)
+        check(code == 0, "check passes after the tales", out[-600:])
     finally:
         if keep:
             print(f"scratch copy kept at {tmp}")

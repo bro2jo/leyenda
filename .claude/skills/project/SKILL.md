@@ -1,0 +1,30 @@
+---
+name: project
+description: The week's work — a real goal outside the knee ("sell the car", "clean the garage") run as 2–5 tasks; each task reported done pays a piece of a tale from the past, the last piece a keepsake. Use when the user names a project or its tasks, reports one of its tasks done, asks what is left of it, or wants to set it aside.
+argument-hint: "[the goal and its tasks, or a task done]"
+allowed-tools: Bash(python3 engine/darrow.py *) Bash(python3 engine/saga.py *) Bash(git *) Read Edit Write
+---
+
+# /project: the works, and the tales they pay for
+
+The works are the a-la-carte goals: one real goal at a time, outside the knee, in 2–5 tasks he can report done. The Ledger keeps them (`real/projects.json`); the sheet counts them (`WORKS`); each task reported pays one piece of a tale from the past (`saga/chronicle/tales/`), and the last piece leaves a keepsake on someone's page. Titles and tasks are real-world words and never reach the Chronicle, the site or a commit message. No shame: a project set aside stays as far as it got, and its pieces stay told. He discovers the tale piece by piece: never say which tale a project pays for, or what the keepsake will be.
+
+## 1. Opening a project (usually Sunday, with the week's plan)
+1. Take his goal and its tasks as he gives them. A goal with no tasks: cut it into 2–5 with him, one line each, things he can say "done" to ("clean the car", "park it on the street", "list it on both sites"), and confirm the order once.
+2. `python3 engine/darrow.py project open "<title>" --tasks "<task 1>" "<task 2>" …` (one live project at a time; `--id` for a short slug when the title is long; `--date` when he opened it earlier in the week).
+3. Bind its tale: `python3 engine/saga.py tale list` shows the plans in `saga/bible/_gm/tales.md` not yet bound, with their piece counts and whose past each is. `python3 engine/saga.py tale bind <project id>` takes the first unbound plan with a piece per task; `--tale tale.<id>` names one. Pick by what the story wants told next (alternate Darrow's past and Rae's over the months). No plan fits the task count: re-cut one in `tales.md` (`pieces`, and the `### piece K` plans, a piece per task) or write a new one by the file's rules, then bind. The bind starts the tale's file with its opening line.
+4. Reply in the Ledger's voice: the project and its tasks, one line each, and that the day plan will remind him of the next one. Nothing of the tale. `python3 engine/darrow.py ship -m "the week's work opened"`.
+
+## 2. A task reported ("cleaned the car", "crv is parked", "listed it")
+1. `python3 engine/darrow.py project done "<its number, or a few of its words>"` (`--date` for an earlier day), then `python3 engine/darrow.py sync`: the **RECKONING CHANGES** carry a `WORK:` line; the finishing task carries `WORK FINISHED` and an `INSPIRATION` line (a Reckoning line in the reply, unexplained).
+2. **The piece, now, in the same reply.** `python3 engine/saga.py brief --tale` prints what the piece must carry (the tale's plan and this piece's, the keepsake on the last piece, the never list, the plants), the pieces told so far, the people in it, the Annals the plan names, the format and the record skeleton. Read `saga/bible/style.md` §1 and §2. Write the piece under `### Piece K — Title` at the end of the tale's file (the brief names it): 400–700 words, past tense, close third on the tale's own person, a whole small story (a want, a turn, a last image); the last piece ends on the keepsake in the page's words. The wall holds: nothing of the project, nothing of the present but what a reader can feel as an echo, nothing the never list names. Then the reread (`style.md` §4).
+3. `python3 engine/saga.py record '<the skeleton, filled>'`: the people in it with their facts and evidence, codex items for a new thing (section Histories), threads planted or touched, the Annals spoken, and on the last piece the `keepsake` (`{"name", "text", "to"}`). It refuses, writing nothing, a piece ahead of its task, out of order, a title that is not the heading, evidence not in the piece, a last piece without its keepsake; fix what it names and run it again. A new person in the past: their base file first (`saga/characters/README.md`; status as the present knows it) and their line in `saga/bible/cast.md`.
+4. Reply: the Ledger line (task k of n done, what is left, a finished project in one line), the level-up block if `sync` reported one, the Reckoning line, then the piece in story voice under its heading, nothing explained. A log in the same message is handled first (`/log`); the piece takes the glimpse's place (no glimpse in a reply that carries a piece).
+5. `python3 engine/darrow.py ship -m "a task of the week's work done; tale N piece K, <the piece's title>"`. The message is reader-safe: the task's own words never go in it.
+
+## 3. The rest
+- **What is left:** `python3 engine/darrow.py project show` (`--all` for every project); `today`, `week` and the Ledger's NOW carry the live project and its next task. `/today` names the next task under the sessions, as a reminder, never as a debt.
+- **Set aside** ("drop the car thing", "not this week"): `python3 engine/darrow.py project drop --why "<his words>"`; the pieces told stay told, the next project may open. No lecture, no story cost.
+- **A task reported late** (last week's, or two at once): `project done … --date YYYY-MM-DD` for each, oldest first; each owes its piece, written now, in order (`saga.py now` shows `TALE OWED` until they are).
+- **A piece owed and not written** (a phone session ended early): the next session writes it first, before any log reply, from `saga.py brief --tale`.
+- **Sunday**, with `/checkpoint`: if no project is open, ask him in one line for the coming week's work (a goal outside the knee and its 2–5 tasks), and open it here. One at a time.

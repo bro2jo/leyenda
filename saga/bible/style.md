@@ -120,6 +120,9 @@ One stage of a quest or a beat may end on a choice smaller than the climax's. Fo
 - People answer in voice and may refuse, deflect or lie. Zero or one die, only with stakes or a game, never with the chapter's tier. A failure costs a copper, a laugh or a line.
 - At most two between two scenes; a third is two lines and the moment passes. It ends on a line that hands the moment back, **never on a choice list**. No Reckoning box. The next scene opens on it in a clause, then does its own slot. Consequences, when there are any, go through the ledger (`design.md` §9).
 
+### A tale's piece (the past, paid for by a work)
+- `### Piece K — Title`, appended to its tale's file (`saga/chronicle/tales/NN-slug.md`: `# Tale N — Title`, the italic line of when it is set, `---`, then the pieces in order), 400–700 words, past tense, close third on the tale's own person (Darrow's past, or Rae's). A whole small story each time: a want, a turn, a last image. No dice, no choice list, no Reckoning box; the present never intrudes except as an echo the reader can feel, and the prose never points at it. The last piece ends on the keepsake (an object, a name, a song or a saying) in the page's words. All of §1 applies; the work that paid for it never reaches the page.
+
 ### Devices on the page (a challenge, an invitation, the project)
 - **A challenge** is a scene whose want has a few ways in. He tries them one at a time, in prose, each with its dice line where the roll happens; nothing is counted aloud, and the scene ends when the thing is done or the cost is paid, never on a tally. A lost one turns the scene; it does not stop it.
 - **An invitation** is the last line of a close-day reply, in-world, one sentence: *Wren is at the door with her ledger and a question.* Never a list. If he answers, the Between opens on that person's first line, not his, and ends like any Between.
@@ -134,6 +137,7 @@ Each chapter opens with 1–3 lines from an in-world document, in italics, with 
 ### File layout
 - `saga/chronicle/NN-slug.md`, one file per chapter. Front matter line: `# Chapter N — Title`, then the epigraph (italic lines and a `— source` line), then a `---` line to close it, then scenes in order (`### Scene N — Title`, with at most one `### Interlude — Title` among them, and any `### Between — Title` pieces where they were played), then `## Climax — Title`, then the choice (`**What does Darrow do?**` and a numbered list). A small choice sits at the end of its scene under `**What does Darrow do?**` or `**What does Darrow say?**`. A consequence written by `/choose` for a climax choice goes under `### Choice — Title`; a small choice's consequence is folded into the next scene. The site build parses exactly these forms.
 - Book openings get a title page line: `# BOOK II — <TITLE>`.
+- `saga/chronicle/tales/NN-slug.md`, one file per tale, started by `saga.py tale bind`: `# Tale N — Title`, the italic line of when it is set, `---`, then `### Piece K — Title` in order. Nothing else goes in it.
 
 ---
 

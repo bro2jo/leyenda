@@ -33,6 +33,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
 | **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs, and a corrected day never takes one back |
+| **Works** | what he has finished with his hands outside the fight: a count on the sheet, and the tales it buys (the past, a piece at a time), each ending in a keepsake on someone's page | real goals outside the knee (`real/projects.json`, `darrow.py project`): a task reported pays a piece of a tale; a finished project counts as a work and brings 1 Inspiration; no XP, no temper |
 
 **Attribute growth:** each attribute = base + ⌊√(temper ÷ divisor)⌋. Growth is fast early and slower later, the way real strength returns.
 
@@ -124,4 +125,7 @@ A second thread, read on his palms beside the first. The real side drives it the
 | `saga/state/_gm/consequences.json` | `saga.py add / choose / fire / void` (GM only) | the consequence ledger: what each choice changed and what it still owes; the rules and where they fired |
 | `saga/state/_gm/threads.json` | `saga.py record / threads` (GM only) | open plot threads and plants, as data |
 | `saga/state/codex.json` → `codex.md` | `saga.py record` | canon invented in play; the page is rendered from the store |
+| `saga/state/events/taleNN.jsonl` | `saga.py record` | a tale's records: one event per piece (reader-safe), the keepsake on the last; its pieces in `saga/chronicle/tales/NN-slug.md` |
+| `saga/bible/_gm/tales.md` | by hand (GM only) | the tales' plans: whose past, how many pieces, what each piece carries, the keepsake, what it must never say |
+| `real/projects.json` | `darrow.py project` | the works: the live project and its tasks, in real-world words that never reach the page |
 | `saga/state/glimpses.md` | `saga.py glimpse` | the last 20 glimpses (the line of the House closing a log reply); texture, never plot; the site never reads it |

@@ -35,6 +35,12 @@ Commands (run from the repo root):
   knot tie N --date D --evidence TEXT   record a Knot of the Binding (a gate in config.json -> rehab.knot_gates passed
                                with PT/surgeon clearance or measured criteria; never a future date); saga.py now then
                                prints the KNOT line: when the Book's transition falls due
+  project open TITLE --tasks T1 T2 ... [--id slug] [--date D]
+                               the week's work: one real goal outside the knee, in 2-5 tasks, one project live at a time
+                               (real/projects.json); `today` names its next task. `saga.py tale bind ID` binds the tale it tells
+  project done TASK [--date D] a task reported (its number, or a few of its words): the tale it is bound to owes a piece
+                               (`saga.py now` says so); the last task finishes the project: WORKS +1 on the sheet, +1 Inspiration
+  project show [--all] | project drop --why TEXT   the live project (every project with --all); set the live one aside, no shame
   show daily|nutrition|food|ex|sport|measurements DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
   recap [--date D] [--write]   the weekly checkpoint numbers for the week containing D (default: the last completed week):
                                macros, micros vs reference, weight vs last week, loaded days -> next mornings, sessions vs
@@ -88,6 +94,7 @@ P = {
     "sport_plan": ROOT / "real/plan/sport_plan.md",
     "sport_guide": ROOT / "real/plan/ultimate_offseason_guide.md",
     "ptnotes": ROOT / "real/visits/pt_notes.md",
+    "projects": ROOT / "real/projects.json",
     "deeds": ROOT / "engine/deeds.csv",
     "sheet": ROOT / "saga/state/darrow.json",
     "rolls": ROOT / "saga/state/rolls.csv",
@@ -850,6 +857,11 @@ def compute(cfg, rules, asof=None, write=False):
                 if L >= lv_from:
                     insp_events.append((date, +per_level, f"level {L}"))
             lv = max(lv, reached)
+    works = works_at(asof)
+    per_work = (rules.get("works") or {}).get("inspiration_per_finished", 0)
+    if per_work:
+        for when in works["finished_dates"]:
+            insp_events.append((when, +per_work, "a work finished"))
     for s in read_csv("spends"):
         if s.get("what") == "inspiration":
             insp_events.append((s["date"], -1, s.get("reason", "")))
@@ -908,6 +920,7 @@ def compute(cfg, rules, asof=None, write=False):
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
         "tether": tether,
+        "works": {"finished": works["finished"], "tasks_done": works["tasks_done"]},
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},
         "fell": {a: rules["attributes"][a]["fell"] for a in ATTRS},
@@ -980,6 +993,11 @@ def diff_sheets(old, new):
         nm = names[k - 1] if k <= len(names) else ""
         notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
                      + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
+    ow, nw = old.get("works") or {}, new.get("works") or {}
+    if nw.get("tasks_done", 0) > ow.get("tasks_done", 0):
+        notes.append(f"WORK: a task done ({nw['tasks_done']} in all); its tale owes a piece (`saga.py now`, then `saga.py brief --tale`)")
+    if nw.get("finished", 0) > ow.get("finished", 0):
+        notes.append(f"WORK FINISHED: {nw['finished']} in all; the tale's last piece brings its keepsake")
     return notes
 
 
@@ -1144,6 +1162,7 @@ def cmd_today(args, cfg, rules):
     else:
         print("Logged: nothing yet. Still open: " + ", ".join(
             ["morning check", "daily minimum (weighted heel prop)"] + unlogged_sessions(cfg, day, None) + ["creatine"]))
+    print(project_line())
 
 
 def cmd_week(args, cfg, rules):
@@ -1157,6 +1176,7 @@ def cmd_week(args, cfg, rules):
     if sc and args.score:
         print(f"\n(score {sc['score']} · {sc['tier']} · parts " +
               ", ".join(f"{k} {v:.2f}" for k, v in sc["parts"].items()) + ")")
+    print("\n" + works_week_line(ws))
 
 
 def sheet_text(s):
@@ -1179,6 +1199,9 @@ def sheet_text(s):
     t = s.get("tether")
     if t and t.get("stage"):  # shown only once it is tied; the stage names are the page's words, never the Ledger's
         lines.append(f"THE TETHER · {roman(t['stage'])} of {roman(t['of'])} · {t['name']}")
+    w = s.get("works") or {}
+    if w.get("finished"):  # the works: counts only; what they were stays in the Ledger
+        lines.append(f"WORKS · {w['finished']} finished")
     learned = [x for x in s["arts"] if x["rank"] > 0]
     sealed = [x for x in s["arts"] if x["sealed_until_knot"] and x["practice"] > 0]
     lines.append("ARTS · " + (" · ".join(f"{x['name']} {roman(x['rank'])}" for x in learned) or "none yet"))
@@ -1217,7 +1240,8 @@ def write_dashboards(st, cfg, rules):
                   f"POD {pod(cfg, asof)} · post-op week {post_op_week(cfg, asof)} · Phase {cfg['rehab']['current_phase']}_\n\n"
                   f"### This week (Sun {md(ws)} – Sat {md(ws + dt.timedelta(6))})\n\n"
                   + real_week_table(st, cfg, rules, ws)
-                  + "\n\n**Latest measured:** " + latest_measured_line(cfg))
+                  + "\n\n**Latest measured:** " + latest_measured_line(cfg)
+                  + "\n\n**" + project_line().replace(": ", ":** ", 1))
     replace_block(P["real_now"], real_block, "NOW — the Ledger")
     s = st["sheet"]
     saga_block = ("_Engine block, regenerated by `sync`._\n\n```\n" + sheet_text(s) + "\n```\n\n"
@@ -2101,6 +2125,211 @@ def cmd_knot(args, cfg, rules):
     print(f"Knot {roman(args.n)} ({names[args.n]}) tied {args.date}. Run sync; `saga.py now` shows the Book's transition as due.")
 
 
+# ---------------------------------------------------------------- projects: the works (real/projects.json)
+PROJECT_ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+PROJECT_STATUS = ("live", "done", "dropped")
+PROJECTS_ABOUT = ("The works: one real goal at a time outside the knee, in 2-5 tasks (clean it, park it, list it). "
+                  "`darrow.py project open|done|show|drop`; `today` names the next task. Each task reported pays one piece of the tale "
+                  "bound to the project (`saga.py tale bind`, then `saga.py brief --tale`), the last piece its keepsake; a finished project "
+                  "counts in the sheet's WORKS and brings one Inspiration. Titles and tasks are real-world words: they never reach the "
+                  "Chronicle or the site, only the counts do. Dates are the days the tasks were reported.")
+
+
+def load_projects():
+    if not P["projects"].exists():
+        return {"_about": PROJECTS_ABOUT, "projects": []}
+    return load_json(P["projects"])
+
+
+def save_projects(data):
+    out = {"_about": data.get("_about") or PROJECTS_ABOUT}
+    out.update({k: v for k, v in data.items() if k != "_about"})
+    save_json(P["projects"], out)
+
+
+def slugify(text):
+    s = re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-")
+    return s[:40].rstrip("-") or "project"
+
+
+def live_project(data):
+    return next((p for p in data.get("projects", []) if p.get("status") == "live"), None)
+
+
+def works_at(asof, data=None):
+    """The counts the sheet shows as of a date: projects finished, tasks done, and the finish dates (one Inspiration each)."""
+    data = data or load_projects()
+    asof_s = asof.isoformat() if hasattr(asof, "isoformat") else str(asof)
+    finished = sorted(p["done"] for p in data.get("projects", []) if p.get("status") == "done" and p.get("done") and p["done"] <= asof_s)
+    tasks = sum(1 for p in data.get("projects", []) for t in p.get("tasks", []) if t.get("done") and t["done"] <= asof_s)
+    return {"finished": len(finished), "tasks_done": tasks, "finished_dates": finished}
+
+
+def project_line(data=None):
+    """One line for today's view and the Ledger's NOW: the live project, how far it is, its next task."""
+    p = live_project(data or load_projects())
+    if not p:
+        return "Project: none open (`darrow.py project open \"Title\" --tasks …` starts the week's)"
+    done = sum(1 for t in p["tasks"] if t.get("done"))
+    nxt = next((t for t in p["tasks"] if not t.get("done")), None)
+    return f"Project: {p['title']} · {done}/{len(p['tasks'])} done" + (f" · next: {nxt['n']}. {nxt['text']}" if nxt else "")
+
+
+def works_week_line(ws):
+    """The week's works, for `week`: tasks done and projects finished in it, and the live project."""
+    data = load_projects()
+    we = ws + dt.timedelta(6)
+    inw = lambda x: x and ws.isoformat() <= x <= we.isoformat()
+    tasks = [(p, t) for p in data.get("projects", []) for t in p.get("tasks", []) if inw(t.get("done"))]
+    fin = [p for p in data.get("projects", []) if p.get("status") == "done" and inw(p.get("done"))]
+    bits = [f"{len(tasks)} task{'s' if len(tasks) != 1 else ''} done this week"]
+    if fin:
+        bits.append("finished: " + ", ".join(p["title"] for p in fin))
+    return "Works: " + " · ".join(bits) + " · " + project_line(data)
+
+
+def project_problems(cfg):
+    """Validation for `check`: ids, statuses, dates, task numbering, and a done project with every task done."""
+    probs = []
+    try:
+        data = load_projects()
+    except (OSError, ValueError) as e:
+        return [f"projects.json: unreadable ({e})"]
+    today = today_local(cfg).isoformat()
+    seen, live = {}, 0
+    for i, p in enumerate(data.get("projects", [])):
+        where = f"projects.json projects[{i}]"
+        pid = str(p.get("id") or "")
+        if not PROJECT_ID_RE.match(pid):
+            probs.append(f"{where}: id {pid!r} must be lowercase words joined by hyphens")
+        seen[pid] = seen.get(pid, 0) + 1
+        if not str(p.get("title") or "").strip():
+            probs.append(f"{where}: no title")
+        if p.get("status") not in PROJECT_STATUS:
+            probs.append(f"{where}: status {p.get('status')!r} is live, done or dropped")
+        live += p.get("status") == "live"
+        for k in ("opened", "done", "dropped"):
+            v = p.get(k)
+            if v:
+                try:
+                    if d(v).isoformat() > today:
+                        probs.append(f"{where}: {k} {v} has not happened yet")
+                except ValueError:
+                    probs.append(f"{where}: {k} {v!r} is not a date")
+        tasks = p.get("tasks") or []
+        if not 2 <= len(tasks) <= 5:
+            probs.append(f"{where}: {len(tasks)} tasks; a project has 2 to 5")
+        for j, t in enumerate(tasks, 1):
+            if t.get("n") != j:
+                probs.append(f"{where}: task {j} is numbered {t.get('n')!r}")
+            if not str(t.get("text") or "").strip():
+                probs.append(f"{where}: task {j} has no text")
+            if t.get("done"):
+                try:
+                    if d(t["done"]).isoformat() > today:
+                        probs.append(f"{where}: task {j} done {t['done']} has not happened yet")
+                except ValueError:
+                    probs.append(f"{where}: task {j} done {t['done']!r} is not a date")
+        if p.get("status") == "done":
+            if not p.get("done"):
+                probs.append(f"{where}: done without a date")
+            if any(not t.get("done") for t in tasks):
+                probs.append(f"{where}: finished with a task still open")
+        if p.get("status") == "live" and tasks and all(t.get("done") for t in tasks):
+            probs.append(f"{where}: every task is done but the project is still live")
+    probs += [f"projects.json: id {k!r} appears {v} times" for k, v in seen.items() if v > 1]
+    if live > 1:
+        probs.append("projects.json: more than one live project; one at a time")
+    return probs
+
+
+def cmd_project(args, cfg, rules):
+    data = load_projects()
+    today = today_local(cfg)
+    when = today
+    if getattr(args, "date", None):
+        try:
+            when = d(args.date)
+        except ValueError:
+            sys.exit(f"--date {args.date}: not a date (YYYY-MM-DD)")
+        if when > today:
+            sys.exit(f"--date {when} has not happened yet")
+    p = live_project(data)
+    if args.action == "show":
+        rows = data.get("projects", []) if args.all else ([p] if p else [])
+        if not rows:
+            print(project_line(data))
+            return
+        for q in rows:
+            print(f"{q['id']} · {q['title']} · {q['status']} · opened {q.get('opened')}" + (f" · finished {q['done']}" if q.get("done") else "")
+                  + (f" · set aside {q['dropped']} ({q.get('why', '')})" if q.get("dropped") else ""))
+            for t in q.get("tasks", []):
+                print(f"  {'✓' if t.get('done') else '·'} {t['n']}. {t['text']}" + (f"  ({t['done']})" if t.get("done") else ""))
+        w = works_at(today, data)
+        print(f"works: {w['finished']} finished · {w['tasks_done']} tasks done in all")
+        return
+    if args.action == "open":
+        if p:
+            sys.exit(f"a project is already open: {p['title']} ({p['id']}); finish it (`project done`) or set it aside (`project drop --why …`) first")
+        title = str(args.what or "").strip()
+        tasks = [str(t).strip() for t in (args.tasks or []) if str(t).strip()]
+        if not title:
+            sys.exit('project open needs a title: project open "Sell the cart" --tasks "Clean it" "Park it" "List it"')
+        if not 2 <= len(tasks) <= 5:
+            sys.exit(f"{len(tasks)} tasks: a project has 2 to 5, each one thing he can report done")
+        pid = args.id or slugify(title)
+        if not PROJECT_ID_RE.match(pid):
+            sys.exit(f"--id {pid!r}: lowercase words joined by hyphens")
+        if any(q.get("id") == pid for q in data.get("projects", [])):
+            sys.exit(f"id {pid!r} is taken; pass --id")
+        data.setdefault("projects", []).append({"id": pid, "title": title, "status": "live", "opened": when.isoformat(), "done": None,
+                                                "tasks": [{"n": i, "text": t, "done": None} for i, t in enumerate(tasks, 1)]})
+        save_projects(data)
+        print(f"project {pid} open: {title} · {len(tasks)} tasks\n" + "\n".join(f"  {i}. {t}" for i, t in enumerate(tasks, 1)))
+        print(f"next: `python3 engine/saga.py tale bind {pid}` binds the tale its tasks will tell ({len(tasks)} pieces)")
+        return
+    if args.action == "drop":
+        if not p:
+            sys.exit("no project is open")
+        if not str(args.why or "").strip():
+            sys.exit("project drop --why TEXT: a line on why it is set aside (no shame; the pieces told stay told)")
+        p.update({"status": "dropped", "dropped": when.isoformat(), "why": args.why.strip()})
+        save_projects(data)
+        print(f"project {p['id']} set aside: {p['title']} ({sum(1 for t in p['tasks'] if t.get('done'))}/{len(p['tasks'])} tasks were done)")
+        return
+    # done
+    if not p:
+        sys.exit("no project is open (`project open` first)")
+    what = str(args.what or "").strip()
+    if not what:
+        sys.exit("project done TASK: its number, or a few of its words")
+    t = None
+    if what.isdigit():
+        t = next((x for x in p["tasks"] if x["n"] == int(what)), None)
+        if t is None:
+            sys.exit(f"no task {what}; the project has {len(p['tasks'])}")
+    else:
+        hits = [x for x in p["tasks"] if what.lower() in x["text"].lower()]
+        if len(hits) != 1:
+            sys.exit(f"{len(hits)} tasks match {what!r}: " + "; ".join(f"{x['n']}. {x['text']}" for x in p["tasks"]))
+        t = hits[0]
+    if t.get("done"):
+        sys.exit(f"task {t['n']} ({t['text']}) was already reported done on {t['done']}")
+    t["done"] = when.isoformat()
+    done = sum(1 for x in p["tasks"] if x.get("done"))
+    finished = done == len(p["tasks"])
+    if finished:
+        p["status"], p["done"] = "done", when.isoformat()
+    save_projects(data)
+    print(f"task {t['n']}/{len(p['tasks'])} done: {t['text']} ({when.isoformat()})")
+    if finished:
+        print(f"project finished: {p['title']} · works {works_at(today, data)['finished']} in all (sync shows it; one Inspiration)")
+    else:
+        nxt = next((x for x in p["tasks"] if not x.get("done")), None)
+        print(f"next task: {nxt['n']}. {nxt['text']}")
+    print(f"the tale owes piece {done}: `python3 engine/saga.py brief --tale` (run `sync` first)")
+
+
 def cmd_show(args, cfg, rules):
     """Record view: print the rows for one date as key: value lines, blank fields omitted. Reads only; never writes."""
     key = {"daily": "daily", "nutrition": "nutrition", "food": "food", "ex": "exercise", "exercise": "exercise", "sport": "sport",
@@ -2181,6 +2410,7 @@ def cmd_check(args, cfg, rules):
                 problems.append(f"{where}: drop '{code}' matches nothing planned on {dow(day)} {day} ({', '.join(base) or 'no sessions'})")
         if not ch.get("source"):
             problems.append(f"{where}: no source (who moved it, and where it is filed)")
+    problems += project_problems(cfg)
     print("\n".join(problems) if problems else "all logs look clean")
 
 
@@ -2267,6 +2497,8 @@ def main():
     s = sub.add_parser("chapter-close"); s.add_argument("--date"); s.add_argument("--force", action="store_true")
     s.add_argument("--partial-ok", action="store_true", help="freeze even though the week's last day looks unfinished (he said that was all)")
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
+    s = sub.add_parser("project"); s.add_argument("action", choices=["open", "done", "show", "drop"]); s.add_argument("what", nargs="?", help="open: the title; done: the task's number or a few of its words")
+    s.add_argument("--tasks", nargs="+", help="open: 2-5 tasks, each one thing he can report done"); s.add_argument("--id"); s.add_argument("--date"); s.add_argument("--why"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport", "measurements"]); s.add_argument("date"); s.add_argument("--session")
     s = sub.add_parser("recap"); s.add_argument("--date"); s.add_argument("--write", action="store_true"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("measure"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
@@ -2279,7 +2511,7 @@ def main():
     {
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set, "close": cmd_close,
         "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
-        "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap,
+        "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap, "project": cmd_project,
         "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc, "ship": cmd_ship,
         "ex": lambda a, c, r: cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),

@@ -327,6 +327,10 @@
     ],
     "with": "rae-thorne"
   },
+  "works": {
+    "_about": "The works: real goals outside the knee, run in 2-5 tasks (real/projects.json, `darrow.py project`). No XP and no temper: the Reckoning is the leg's. A finished project counts in the sheet's WORKS and brings inspiration_per_finished Inspiration (capped like the rest); its tale (saga/bible/_gm/tales.md) pays a piece per task and a keepsake at the end. Only the counts reach the sheet and the site.",
+    "inspiration_per_finished": 1
+  },
   "hp": {
     "_formula": "20 + 4*level + 2*(vigor - 10), minimum 10"
   },

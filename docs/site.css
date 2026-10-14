@@ -420,6 +420,11 @@ ol.choice li s{color:var(--faint)}
 .archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
 .archive li:target>details>summary{color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
+.keeps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.keep{display:grid;gap:3px;border-left:2px solid var(--brass-dim);padding-left:12px}
+.keep b{font-family:var(--display);font-size:1.15rem;color:var(--brass)}
+.keep .src{font-size:.82rem;color:var(--faint)}
+.reader .when{font-style:italic;color:var(--dim);font-size:17px}
 .pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid var(--rule);padding-top:14px}
 .pager a{display:grid;gap:2px;align-content:start;color:var(--ink)}
 .pager a.next{text-align:right}

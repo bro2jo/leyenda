@@ -18,6 +18,7 @@ real/
   NOW.md           what stands this week; the engine's counts in a block at the bottom
   CHANGELOG.md     how real/ came to be laid out; old names → new
   config.json      the engine's settings: targets, the weekly template, plan changes, daily minimum, phase and gates, sport stage
+  projects.json    the works: the week's real goal outside the knee and its tasks (darrow.py project); finished and set-aside ones kept
   plan/            the documents: rules and designs this repo keeps, and reference documents it never edits
   state/           recovery_state.md, the current program; archive/ keeps the one each Sunday replaced
   visits/          pt_notes.md, every PT and surgeon note; a dated file for anyone else's instruction
@@ -42,6 +43,7 @@ real/
 | `plan/nutrition_guide.md` | `guide` | Calories, protein, micronutrient reference values, the weight rule | **Reference:** never edited here; a new version replaces it whole | — | — |
 | `NOW.md` | `now` | What stands this week: plan in force, next PT visit, the gate, flags, open items; the engine's block of counts | Its top whenever something stands or changes; the block on every `sync` | Short pointers and what changed since the State | Doses and tables (→ State), history (→ checkpoints) |
 | `config.json` | — | What the engine needs: nutrition targets, the weekly template the week is scored on, plan changes by date, daily-minimum rounds, phase and gates, sport stage | When a target, the template or a phase changes | Values with their `source` | Prose |
+| `projects.json` | `project show` | The works: one real goal at a time outside the knee, in 2–5 tasks, with the day each task was reported done; finished and set-aside projects kept, for the count | `darrow.py project open|done|drop` (`/project`) | The goal and its tasks in his words, the dates | Anything of the story: the tale a project pays for is the Chronicle's (`saga/chronicle/tales/`) |
 | `checkpoints/<Sunday>.md` | `checkpoint` (newest) | The week in review (Sun–Sat), named for the Sunday after it; its numbers block is the engine's | Written at the checkpoint; then an archive | The week's numbers and their meaning | The current program |
 | `visits/<date>_<who>_<kind>.md` | — | An instruction from anyone but the PT or surgeon (a trainer's), one file each | Once, the day it comes | What was said and what it changed | PT or surgeon notes (→ `pt_notes.md`) |
 | `logs/daily_log.csv` | `show daily` | One row per day: morning check, daily minimum, sessions with minutes and RPE, pain, time on feet | As he reports (`/log`) | The columns (Working Rules → Log files); `am_swelling` the grade only | Decisions, instructions, plans |
@@ -73,6 +75,7 @@ real/
 | Upper status: sessions run, block, unlocks | State §7 |
 | Throwing: what's allowed now, the week's throwing days | Sport plan (this week's days also in State §6) |
 | Nutrition targets | `config.json → nutrition_targets` (from the nutrition guide) |
+| The week's work (a goal outside the knee) and its tasks | `projects.json` (`project show`); only its count reaches the sheet |
 | Patterns and tendencies | State §9 |
 | The week in review | `checkpoints/<Sunday>.md` |
 | Exercise and day data | The logs |

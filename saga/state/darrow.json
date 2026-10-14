@@ -317,6 +317,10 @@
     "last": "2026-10-11",
     "with": "rae-thorne"
   },
+  "works": {
+    "finished": 0,
+    "tasks_done": 0
+  },
   "chapter_now": {
     "week_start": "2026-10-11",
     "through": "2026-10-14",

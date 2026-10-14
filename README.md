@@ -44,6 +44,8 @@ You don't need commands; anything that looks like a log gets logged. Commands ex
 
 ---
 
+**The works.** Once a week you can also name a job outside the knee ("sell the car: clean it, park it, list it"). The day plan reminds you of the next task; each task you report done pays a piece of a tale from the past (Darrow's, Rae's, the people around them), and the last piece leaves a keepsake on someone's page. The site counts the works you finish and never says what they were.
+
 ## How real life becomes story
 
 | You do (real) | Darrow gets (story) |

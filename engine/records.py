@@ -18,6 +18,12 @@ saga/state/_gm/threads.json, the Codex's entries in saga/state/codex.json. From 
 `saga.py record` writes one event (and its note) and projects; `saga.py project` rebuilds everything; `saga.py check`
 refuses a stale projection. Nothing under saga/state/events, saga/characters (derived keys), world.json, codex.md or
 the NOW page's top is edited by hand any more. Standard library only.
+
+The tales (design.md §12) are kept the same way: one event per piece (taleNN:pK) in saga/state/events/taleNN.jsonl, one
+GM note per piece in saga/state/_gm/notes/taleNN.jsonl; the pieces live in saga/chronicle/tales/NN-slug.md under
+`### Piece K — Title`. A tale is the past: its events add appearances and known facts to the people in it, and its last
+piece's keepsake goes to world.json → keepsakes[] (what a person keeps from it); they never move anyone's last_seen,
+now or place, and never the plan. world.json → tales[] is the reader-safe state of each tale (pieces told, done).
 """
 import datetime as dt
 import json
@@ -37,6 +43,7 @@ PLACES = SAGA / "state" / "places.json"
 GLIMPSES = SAGA / "state" / "glimpses.md"
 CHARS = SAGA / "characters"
 CHRON = SAGA / "chronicle"
+TALES_DIR = CHRON / "tales"
 NOW_MD = SAGA / "NOW.md"
 ENGINE_START = "<!-- engine:start -->"
 
@@ -49,7 +56,8 @@ CHAR_ORDER = ("id", "name", "aliases", "epithet", "tier", "faction", "status", "
               "portrait_focus", "first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts",
               "relationships", "reckoning", "appearances")
 WORLD_ORDER = ("_about", "book", "book_title", "chapter", "chapter_title", "chapter_file", "scenes", "location", "season",
-               "current_quest", "current_struggle", "last_beat", "companions", "choices", "inventory", "recaps", "projects", "last_updated")
+               "current_quest", "current_struggle", "last_beat", "companions", "choices", "inventory", "keepsakes", "tales", "recaps",
+               "projects", "last_updated")
 
 KEY_RE = re.compile(r"^ch(\d{2,}):(s(\d+)|interlude(?:-(\d+))?|between-(\d+)|climax|choice|([IVX]+))$")
 SCENE_HEAD_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
@@ -60,6 +68,9 @@ CHOICE_HEAD_RE = re.compile(r"^###\s+Choice\s*[—–-]\s*(.+)$")
 PART_HEAD_RE = re.compile(r"^##\s+([IVX]+)\.\s+(.+)$")
 CHAPTER_TITLE_RE = re.compile(r"^#\s+(?:Chapter\s+\d+|Prologue)\s*[—–-]\s*(.+?)\s*$")
 BOOK_TITLE_RE = re.compile(r"^#\s+BOOK\s+([IVXLC]+)\s*[—–-]\s*(.+?)\s*$")
+TALE_KEY_RE = re.compile(r"^tale(\d{2,}):p(\d+)$")
+PIECE_HEAD_RE = re.compile(r"^###\s+Piece\s+(\d+)\s*[—–-]\s*(.+)$")
+TALE_TITLE_RE = re.compile(r"^#\s+Tale\s+(\d+)\s*[—–-]\s*(.+?)\s*$")
 
 
 # ---------------------------------------------------------------- io
@@ -226,6 +237,58 @@ def block_text(chapter, scene_key):
     return None
 
 
+# ---------------------------------------------------------------- the tales (the past, a piece at a time)
+def parse_tale_key(key):
+    """(tale number, piece number) for tale01:p2; None otherwise."""
+    m = TALE_KEY_RE.match(str(key or ""))
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def tale_id(n):
+    return f"tale{int(n):02d}"
+
+
+def tale_key(n, k):
+    return f"{tale_id(n)}:p{int(k)}"
+
+
+def tale_files():
+    """{tale number: path} for every tale file (saga/chronicle/tales/NN-slug.md)."""
+    out = {}
+    if TALES_DIR.exists():
+        for p in sorted(TALES_DIR.glob("*.md")):
+            m = re.match(r"^(\d+)-", p.name)
+            if m:
+                out[int(m.group(1))] = p
+    return out
+
+
+def tale_titles(path):
+    """(title, when) from a tale file's head: `# Tale N — Title`, then the italic line before the first `---`."""
+    title, when = "", ""
+    for line in path.read_text(encoding="utf-8").splitlines()[:12]:
+        mt = TALE_TITLE_RE.match(line)
+        if mt:
+            title = mt.group(2).strip()
+        elif line.strip() == "---":
+            break
+        elif line.strip().startswith("*") and not line.startswith("#"):
+            when = line.strip().strip("*").strip()
+    return title, when
+
+
+def pieces_of(path):
+    """[(k, title, text)] for every `### Piece K — Title` of a tale file, in page order."""
+    out = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        m = PIECE_HEAD_RE.match(line.strip())
+        if m:
+            out.append([int(m.group(1)), m.group(2).strip(), []])
+        elif out:
+            out[-1][2].append(line)
+    return [(k, t, "\n".join(lines).strip()) for k, t, lines in out]
+
+
 # ---------------------------------------------------------------- events, notes, threads, codex
 def events_path(chapter):
     return EVENTS_DIR / f"{ch2(chapter)}.jsonl"
@@ -233,6 +296,38 @@ def events_path(chapter):
 
 def notes_path(chapter):
     return NOTES_DIR / f"{ch2(chapter)}.jsonl"
+
+
+def store_paths(key):
+    """(events file, notes file) for a block key: a chapter's (chNN) or a tale's (taleNN)."""
+    if parse_key(key):
+        ch = parse_key(key)[0]
+        return events_path(ch), notes_path(ch)
+    t = parse_tale_key(key)
+    if t:
+        return EVENTS_DIR / f"{tale_id(t[0])}.jsonl", NOTES_DIR / f"{tale_id(t[0])}.jsonl"
+    raise ValueError(f"{key!r} is neither a chapter block key nor a tale piece key")
+
+
+def load_tale_events(n=None):
+    """Every tale event in order (tales ascending, each file in page order), or one tale's."""
+    if n is not None:
+        return read_jsonl(EVENTS_DIR / f"{tale_id(n)}.jsonl")
+    out = []
+    if not EVENTS_DIR.exists():
+        return out
+    for p in sorted(EVENTS_DIR.glob("tale*.jsonl"), key=lambda x: int(re.sub(r"\D", "", x.stem) or 0)):
+        out += read_jsonl(p)
+    return out
+
+
+def load_tale_notes():
+    out = []
+    if not NOTES_DIR.exists():
+        return out
+    for p in sorted(NOTES_DIR.glob("tale*.jsonl"), key=lambda x: int(re.sub(r"\D", "", x.stem) or 0)):
+        out += read_jsonl(p)
+    return out
 
 
 def load_events(chapter=None):
@@ -259,9 +354,9 @@ def load_notes(chapter=None):
 
 
 def put_event(ev, replace=False):
-    """Append an event to its chapter's file, or replace the one with the same key (`record --force`)."""
-    ch = parse_key(ev["key"])[0]
-    rows = load_events(ch)
+    """Append an event to its chapter's (or tale's) file, or replace the one with the same key (`record --force`)."""
+    path = store_paths(ev["key"])[0]
+    rows = read_jsonl(path)
     idx = next((i for i, r in enumerate(rows) if r.get("key") == ev["key"]), None)
     if idx is not None:
         if not replace:
@@ -269,12 +364,12 @@ def put_event(ev, replace=False):
         rows[idx] = ev
     else:
         rows.append(ev)
-    write_jsonl(events_path(ch), rows)
+    write_jsonl(path, rows)
 
 
 def put_note(note, replace=False):
-    ch = parse_key(note["key"])[0]
-    rows = load_notes(ch)
+    path = store_paths(note["key"])[1]
+    rows = read_jsonl(path)
     idx = next((i for i, r in enumerate(rows) if r.get("key") == note["key"]), None)
     if idx is not None:
         if not replace:
@@ -282,7 +377,7 @@ def put_note(note, replace=False):
         rows[idx] = note
     else:
         rows.append(note)
-    write_jsonl(notes_path(ch), rows)
+    write_jsonl(path, rows)
 
 
 def load_threads():
@@ -377,10 +472,11 @@ def char_files():
     return {p.stem: p for p in sorted(CHARS.glob("*.json"))}
 
 
-def derive_characters(events, bases):
+def derive_characters(events, bases, tale_events=()):
     """Derived fields per character id from the events: {cid: {first_seen, last_seen, last_seen_doing, now, story_so_far,
     quote, known_facts, appearances, status?}}. A person's place carries forward from one explicit place to the next;
-    a presence without one is where Darrow is."""
+    a presence without one is where Darrow is. A tale's pieces (the past) add appearances and facts, and a quote when the
+    chapters gave none; someone met only in a tale is first and last seen there; nothing else of theirs moves."""
     files = chapter_files()
     out = {cid: {"appearances": [], "known_facts": [], "first_presence": None, "first_mention": None, "last_presence": None, "last_mention": None,
                  "doing": None, "now": None, "story_so_far": None, "quote": None, "status": None, "place": None} for cid in bases}
@@ -434,6 +530,40 @@ def derive_characters(events, bases):
         for cid, text in (ev.get("story_so_far") or {}).items():
             if cid in out and text:
                 out[cid]["story_so_far"] = text
+    tfiles = tale_files()
+    for ev in tale_events:
+        parsed = parse_tale_key(ev.get("key", ""))
+        if not parsed:
+            continue
+        n, k = parsed
+        code, sk = tale_id(n), f"p{k}"
+        slug = tfiles[n].stem if n in tfiles else f"{n:02d}"
+        anchor = f"tales/{slug}.html#piece-{k}"
+        for p in ev.get("people") or []:
+            cid = p.get("id")
+            if cid not in out:
+                continue
+            d = out[cid]
+            mention = bool(p.get("mention"))
+            app = {"chapter": code, "scene": sk}
+            if mention:
+                app["mention"] = True
+            d["appearances"].append(app)
+            ref = {"chapter": code, "scene": sk, "place": None, "anchor": anchor}
+            if not mention:
+                d.setdefault("tale_presence", []).append(ref)
+                if p.get("did"):
+                    d["tale_doing"] = p["did"]
+            else:
+                d.setdefault("tale_mention", []).append(ref)
+            if p.get("quote") and not d.get("quote"):
+                q = p["quote"] if isinstance(p["quote"], dict) else {"text": p["quote"]}
+                d["quote"] = {"text": q.get("text"), "chapter": code, "scene": sk}
+            for f in p.get("facts") or []:
+                row = {"fact": f.get("fact"), "chapter": code, "scene": sk}
+                if f.get("evidence"):
+                    row["evidence"] = f["evidence"]
+                d["known_facts"].append(row)
     return out
 
 
@@ -442,6 +572,11 @@ def project_character(cid, base, derived):
     d = derived.get(cid) or {}
     first = d.get("first_presence") or d.get("first_mention")  # someone only named so far points at the mention (characters/README.md)
     last = d.get("last_presence") or d.get("last_mention")
+    if not first and (d.get("tale_presence") or d.get("tale_mention")):  # met only in a tale: seen there, and only there
+        tp = d.get("tale_presence") or d.get("tale_mention")
+        first, last = tp[0], tp[-1]
+        if d.get("tale_doing") and not d.get("doing"):
+            d["doing"] = d["tale_doing"]
 
     def ref_of(r):
         return {k: r[k] for k in ("chapter", "scene", "place", "anchor") if k in r and (k != "place" or r[k])}
@@ -467,8 +602,30 @@ def project_character(cid, base, derived):
     return ordered
 
 
-def project_world(events, plan, world):
-    """world.json from the events and the plan's position; approval, choices and projects stay as they are."""
+def tales_state(plan, tale_events=None):
+    """The reader-safe state of every bound tale, from the plan's bindings and the tale events: id, n, title, of (whose
+    past), pieces, told, done, file, keepsakes (the pieces' keepsakes, in order)."""
+    evs = load_tale_events() if tale_events is None else tale_events
+    tfiles = tale_files()
+    out = []
+    for b in plan.get("tales") or []:
+        n = int(b.get("n", 0))
+        path = tfiles.get(n)
+        title, when = tale_titles(path) if path else (b.get("title", ""), "")
+        mine = [e for e in evs if (parse_tale_key(e.get("key", "")) or (None,))[0] == n]
+        keeps = [{"name": e["keepsake"].get("name"), "text": e["keepsake"].get("text"), "to": e["keepsake"].get("to"),
+                  "tale": tale_id(n), "piece": f"p{parse_tale_key(e['key'])[1]}", "tale_title": title}
+                 for e in mine if isinstance(e.get("keepsake"), dict) and e["keepsake"].get("name")]
+        pieces = int(b.get("pieces") or 0)
+        out.append({"id": tale_id(n), "n": n, "title": title, "when": when, "of": b.get("of"), "pieces": pieces, "told": len(mine),
+                    "done": bool(pieces) and len(mine) >= pieces, "file": rel(path) if path else b.get("file"), "keepsakes": keeps,
+                    "project": b.get("project"), "tale": b.get("tale")})
+    return out
+
+
+def project_world(events, plan, world, tale_events=()):
+    """world.json from the events and the plan's position; approval, choices and projects stay as they are. The tales
+    (reader-safe: pieces told, done) and the keepsakes come from the tale events."""
     files = chapter_files()
     pos = plan["position"]
     chapter = int(pos["chapter"])
@@ -539,6 +696,9 @@ def project_world(events, plan, world):
             comp["present"] = state["present"][key]
     w["companions"] = comps
     w["inventory"] = state["inventory"]
+    tales = tales_state(plan, list(tale_events))
+    w["keepsakes"] = [k for t in tales for k in t["keepsakes"]]
+    w["tales"] = [{k: t[k] for k in ("id", "title", "of", "pieces", "told", "done", "file")} for t in tales]
     recaps = dict(world.get("recaps") or {})
     recaps.update(state["recaps"])
     w["recaps"] = recaps
@@ -622,6 +782,9 @@ def project_now(events, plan, world, chars, existing_text):
             here.append(f"{c.get('name')} ({short(c.get('last_seen_doing'), 140)})" if c.get("last_seen_doing") else c.get("name"))
     if here:
         lines.append("- **Also here:** " + " · ".join(here))
+    tl = world.get("tales") or []
+    if tl:
+        lines.append("- **The tales:** " + " · ".join(f"Tale {int(t['id'][4:])} — {t.get('title')} ({'told in full' if t.get('done') else str(t.get('told')) + ' of ' + str(t.get('pieces')) + ' told'})" for t in tl))
     if now_state.get("against"):
         lines.append(f"- **Against him:** {now_state['against']}")
     if now_state.get("next"):
@@ -653,14 +816,17 @@ def roman(n):
 
 
 def threads_on_page(events):
-    """{thread id: [keys]} from the events' thread touches, in story order."""
+    """{thread id: [keys]} from the events' thread touches, in story order (a tale's touch keys tale01:p2)."""
     out = {}
     for ev in events:
         parsed = parse_key(ev.get("key", ""))
-        if not parsed:
+        if parsed:
+            ch, sk, kind = parsed
+            short_key = f"{ch:02d}:{'s' + sk if sk.isdigit() else sk}"
+        elif parse_tale_key(ev.get("key", "")):
+            short_key = ev["key"]
+        else:
             continue
-        ch, sk, kind = parsed
-        short_key = f"{ch:02d}:{'s' + sk if sk.isdigit() else sk}"
         for t in ev.get("threads") or []:
             tid = t.get("id") if isinstance(t, dict) else t
             if tid is None:
@@ -683,11 +849,12 @@ def project_all(plan, write=True):
             if write:
                 save_text(path, text)
 
+    tale_events = load_tale_events()
     world = load_json(WORLD) if WORLD.exists() else {}
-    new_world = project_world(events, plan, world)
+    new_world = project_world(events, plan, world, tale_events)
     emit(WORLD, dumps(new_world))
     bases = {cid: load_json(p) for cid, p in char_files().items()}
-    derived = derive_characters(events, bases)
+    derived = derive_characters(events, bases, tale_events)
     chars = {}
     for cid, base in bases.items():
         c = project_character(cid, base, derived)
@@ -696,7 +863,7 @@ def project_all(plan, write=True):
     codex = load_codex()
     emit(CODEX_MD, render_codex(codex))
     thr = load_threads()
-    onp = threads_on_page(events)
+    onp = threads_on_page(events + tale_events)
     for t in thr.get("threads", []):
         t["on_page"] = onp.get(int(t["id"]), [])
     emit(THREADS, dumps(thr))
