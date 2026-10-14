@@ -496,6 +496,24 @@
       "chapter": "02",
       "scene": "between-8",
       "evidence": "you can tell them true"
+    },
+    {
+      "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
+      "chapter": "tale01",
+      "scene": "p1",
+      "evidence": "since before he could argue"
+    },
+    {
+      "fact": "He got onto the bay by going sideways into the place it had just left instead of backward, and up the rail to be higher than its eye.",
+      "chapter": "tale01",
+      "scene": "p1",
+      "evidence": "higher than the bay's eye"
+    },
+    {
+      "fact": "His father, who said nothing about most things, opened the gate for him without a word.",
+      "chapter": "tale01",
+      "scene": "p1",
+      "evidence": "as he said nothing about most things"
     }
   ],
   "relationships": [
@@ -644,6 +662,10 @@
     {
       "chapter": "02",
       "scene": "between-8"
+    },
+    {
+      "chapter": "tale01",
+      "scene": "p1"
     }
   ]
 }

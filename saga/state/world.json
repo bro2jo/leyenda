@@ -150,7 +150,7 @@
       "title": "Quickstep",
       "of": "darrow",
       "pieces": 3,
-      "told": 0,
+      "told": 1,
       "done": false,
       "file": "saga/chronicle/tales/01-quickstep.md"
     }

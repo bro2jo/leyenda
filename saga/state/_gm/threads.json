@@ -190,11 +190,12 @@
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
       "who_knows": "Rae knows the mare lives (GM); Darrow does not, and has not said her name since the Wend; the reader knows only that Rae asked",
-      "note": "asked on the page (Ch 1 Sc 3: \"Did you ride a grey? At the ford.\" He said yes; she did not say why). Rae knows; Darrow does not, and has kept the mare's name to himself since the Wend. **Between 6 (10/10):** he asked why she asked; she deflected (\"Carters look at horses\", true and in front of the thing; he saw her hands clench and read that there is more, not what). The name came to his teeth and he kept it (still unsaid: spend it at q1.cart stage 2 or Tether III, not before). She left at the hour bell with \"The near one's the slow one\" (a scrap of the oxen, unasked, not a name: c01.4a still waits for a name)",
+      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles.",
       "on_page": [
         "00:I",
         "01:s3",
-        "01:between-6"
+        "01:between-6",
+        "tale01:p1"
       ]
     },
     {

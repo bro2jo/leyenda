@@ -144,7 +144,7 @@ The mark of the Vael, the lowland people who came up the river valleys with oxen
 White stone on a white rock above the river road, and a hundred bells that ring the hours in a peal that rolls from the gate to the Spire and back. At its centre the Oathspire, black glass and iron, raised in the Quenching's year; the First Stone sits at the top of it, and every Oathstone in the realm answers to the First. Knights are sworn there once, climbing the Spire's stair on their knees, and most of them are glad never to see it again.
 
 ## realm.lances — The Lances
-- **tier:** common · **spoken:** Prologue I · **names:** —
+- **tier:** common · **spoken:** Prologue I; tale01:p1 · **names:** —
 - **use:** precedence; signals; a captain's habits.
 
 Twelve by the old count, each sixty knights and sixty squires, numbered by precedence of founding. The First is the king's own and never leaves Calden. The Second is the oldest that rides, and knows it. The Sixth and the Ninth are Lowmarch lances, raised from farm sons and horse-breeders, and the Ninth has been "the fast one" for longer than anyone can say why. A lance's field-stone travels with it on a cart. The signals are the raised fist, ready; the fist with two fingers out, hold; and the open hand swept outward, ride wide, which means give the flank room. No captain has ever liked giving the second.
@@ -203,7 +203,7 @@ The old road north from Calden to the Greywater landing, worn by three hundred y
 The last village below the mountain, on a tarn that never warms: an inn whose taproom hears everything the Holloway carries, a bell-house, a mill on the outflow, and a horse-fair in autumn that the Lowmarch rides to. Carts for the House stop there last, and the House's dead stop there first. Half the lay brothers were born within a mile of its bell.
 
 ## realm.edgemoor — Edgemoor and its greys
-- **tier:** common · **spoken:** Prologue I (Darrow of Edgemoor; the grey mare) · **names:** —
+- **tier:** common · **spoken:** Prologue I (Darrow of Edgemoor; the grey mare); tale01:p1 · **names:** —
 - **use:** Darrow's childhood; a horse's quality; a saying.
 
 Hill country west of the Lowmarch where the grass is thin and the horses are not: the Edgemoor grey, long-legged and sure on a slope, is the mount the Lances buy, and each lance brands its own. A horse-breeder's son from Edgemoor learns to ride before he can argue and to walk at a horse's head before that. Lowmarch saying: an Edgemoor horse and an Edgemoor man both go better uphill, and neither will tell you why they came down.
