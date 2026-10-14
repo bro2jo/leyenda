@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 5,
   "rank": "Kindled",
-  "xp": 1192,
+  "xp": 1222,
   "xp_this_level": 1000,
   "xp_next_level": 1500,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 27,
+      "temper": 29,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 10,
       "mod": 0,
-      "temper": 18,
+      "temper": 19,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -147,7 +147,7 @@
       "tree": "Footing",
       "rank": 0,
       "banked_rank": 2,
-      "practice": 9,
+      "practice": 10,
       "next_at": 15,
       "sealed_until_knot": 3,
       "effect": "Drive through a line; Might checks on foot gain +Rank."

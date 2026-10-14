@@ -93,7 +93,8 @@
 5. If wanted: BFR · Spanish squat · seated rotational med-ball throws (~10/24).
 6. One-line heads-up: upper body on its own days; the right leg mirrors the left's single-leg work.
 7. Which PTA treated on 10/1.
-8. For awareness (sport plan §11): "Seated and square-stance throwing at easy effort now; pivots on the left from Phase 4; max-intent throws from Phase 5." Anything to watch with pivots on the graft side? Any reason to wait on max-intent throws?
+8. Step-up height: he ran the step-up at 18" on Tue 10/13 (your dose was 12", first at home). Is 18" fine from here, or back to 12"?
+9. For awareness (sport plan §11): "Seated and square-stance throwing at easy effort now; pivots on the left from Phase 4; max-intent throws from Phase 5." Anything to watch with pivots on the graft side? Any reason to wait on max-intent throws?
 
 ---
 

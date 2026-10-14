@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-11 · body · His feet are warm under the blanket for the first time since the snow came, and he lies there a while doing nothing but noticing it.
 - 2026-10-11 · ledger · From Wren's ledgers: Times the Captain asked what hour it was, the week before the snow: 23. Since the snow: 2. (She has checked her sums twice.)
 - 2026-10-11 · overheard · Two novices on the cloister walk, arguing in whispers whether it can be too cold to snow. The older one says it can. The younger one points at the sky, which is doing it anyway.
 - 2026-10-11 · weather · Snow came on again after dark, fine and dry, the kind that squeaks underfoot. By the hour bell it had filled the court's bootprints, and the court looked as if nobody had ever stood in it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-13 · overheard · Two novices changing the far cots' linen, in whispers: "Does it matter which way you fold it?" "It does to her." "Does she check?" "Every time." "How do you know?" "Because I folded it wrong once."
 - 2026-10-13 · verse · A man of the Sixth, two cots down from Hollis, hums the old marching nonsense under his breath: "Sixty men and a mule came home from the river, / fifty-nine and a mule…" He stops there, as if he has only just heard it.
 - 2026-10-13 · ledger · From Wren's ledgers, a page headed Kitchen: Times the loaves were counted today: 6. Totals that agreed: 2. (Underneath: Not my count. Theirs.)
+- 2026-10-13 · body · Somewhere in the afternoon his legs stopped feeling borrowed. He notices it only when he sits down on the cot's end and doesn't have to think about how.
