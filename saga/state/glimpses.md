@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-11 · ledger · From Wren's ledgers: Times the Captain asked what hour it was, the week before the snow: 23. Since the snow: 2. (She has checked her sums twice.)
 - 2026-10-11 · overheard · Two novices on the cloister walk, arguing in whispers whether it can be too cold to snow. The older one says it can. The younger one points at the sky, which is doing it anyway.
 - 2026-10-11 · weather · Snow came on again after dark, fine and dry, the kind that squeaks underfoot. By the hour bell it had filled the court's bootprints, and the court looked as if nobody had ever stood in it.
 - 2026-10-12 · verse · From the far end of the hall, low, a novice is singing the far cots to sleep: "Hush, the bell is counting, / one for you and one for me." Down the row, more than one of the near cots is listening too.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-13 · verse · A man of the Sixth, two cots down from Hollis, hums the old marching nonsense under his breath: "Sixty men and a mule came home from the river, / fifty-nine and a mule…" He stops there, as if he has only just heard it.
 - 2026-10-13 · ledger · From Wren's ledgers, a page headed Kitchen: Times the loaves were counted today: 6. Totals that agreed: 2. (Underneath: Not my count. Theirs.)
 - 2026-10-13 · overheard · Two lay brothers at the hall door, arguing over the night lamp. "Your turn." "I did it last night." "You lost count last night." "Then whose turn is it?" "Yours. Twice."
+- 2026-10-13 · saying · A lay brother handing a new novice the evening lamp for the Steps, the way it has been handed to every new novice: "Past the hundredth after dark, you're on your own." The novice asks the hundredth what. Nobody tells her.
