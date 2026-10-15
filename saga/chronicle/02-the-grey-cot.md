@@ -552,11 +552,11 @@ Darrow let her. He kept the lamp. When the flame stood up tall and began to smok
 
 ### Scene 4 — The Last Hundred
 
-The dawn bell found him on the gate wall with the far lamp's soot still in the creases of two fingers, and nobody had passed on his watch either. He had not slept after it, and the wind on the wall was keeping his eyes open for him.
+The dawn bell found Darrow on the gate wall with the far lamp's soot still in the creases of two fingers, and nobody had passed on his watch either. He had not slept after it, and the wind on the wall was keeping his eyes open for him.
 
 There was new snow on the Steps. From the wall they went down the cliff in the switchbacks the lay brothers had names for, every tread drawn in white with a line of shadow under it, until a band of cloud lay across the mountain and swallowed them. Below the cloud, very small, stood the winch-house, and Rae Thorne's cart beside it, and her oxen in the snow, and on the box a man with his boots up on the board. Just under the gate, on the lower terrace, the Confessors' fire smoked into the steam of the springs.
 
-Rae came out through the wicket below him with her hood up, went past their fire without turning her head, and took the Last Hundred without looking back at the gate.
+Rae came out through the wicket below him with her hood up, went past their fire without turning her head, and took the Last Hundred and never once looked back at the gate.
 
 "No writ names a carter," Wren said. She had Pell's glass again, lent and counted out again, and her ledger under her arm. "The bell lets anybody down. It's up that's the trouble." The glass crept down the cliff after the hood. "She never counts. I've watched her. She takes them like a road."
 
@@ -576,15 +576,15 @@ Darrow did not take the glass. He found the hood with his own eyes, a dark stitc
 
 "She never opened her mouth. She went to the near ox's head and stood there, and he looked at her a bit, and then he got down." Wren lowered the glass. "He got down for her."
 
-She did not write it down.
+Wren did not write it down.
 
 ---
 
-She was all day at the bottom. He went back to the hall, where Hollis had not moved from the Grey Cot, and lay on his own cot not sleeping, and when the light began to go he was on the wall again.
+Rae was all day at the bottom. He went back to the hall, where Hollis had not moved from the Grey Cot, and lay on his own cot not sleeping, and when the light began to go he was on the wall again.
 
 Old Mercy came up out of the tower on her one slow note, the whole valley's bell. Under it the Last Hundred went down from the gate into the dusk, and at the hundredth step the niche with Ysolde's lamp in it was already lit, the one light on the Steps; the lay brothers would not go below it after dark. Rae came up past it with her hood back. She did not hurry for the bell and she did not look up. She took the Last Hundred the way Wren had said, like a road, came through the wicket on the last stroke, and found him where the wall-walk met the court.
 
-"The oxen are in the winch-house byre," she said. "He's put a stool in the door." She pushed her hair back off her face with the heel of her hand, and it came straight forward again. "They've flour out of Coldmere on that cart of theirs, for six men to the thaw and past it, and they're baking it on the House's wood. Hob won't eat with him in the door."
+"The oxen are in the winch-house byre," she said. "The one off my box has put a stool in the door." She pushed her hair back off her face with the heel of her hand, and it came straight forward again. "They've flour out of Coldmere on that cart of theirs, for six men to the thaw and past it, and they're baking it on the House's wood. Hob won't eat with him in the door."
 
 She took something from inside her shirt and put it in his hand: a letter, folded small, with a seal on it that was blue in the last of the light. It was too dark now to read what was written over the wax.
 
@@ -618,7 +618,7 @@ He stood in the last of the light with the letter in one hand, and looked at the
 
 In the hall the far lamp burned straight up, and Hollis at the Grey Cot did not look round.
 
-"Letter, is it?"
+"Letter, is it?" he said.
 
 "It is."
 
@@ -635,17 +635,17 @@ In the hall the far lamp burned straight up, and Hollis at the Grey Cot did not 
 
 Rae Thorne did not count steps. Counting was for Wren, and for men with lists, and any carter will tell you a road you count gets longer under you. She took the Shins the way she took the last mile into Coldmere, with her eyes on her feet and her mind on the load. Today the load was two oxen who had stood in the snow since the grey cloaks came, for a man who did not know which end of an ox ate.
 
-He was still on her box when she came off the last step, boots up on the board, and his boots were dry. The winch-brothers' were wet to the knee. There was a stack of the House's wood by the winch-house door, waiting on the cage, and a thread of smoke from the chimney that was some of it, and she did not have to ask which of them had carried it in.
+The grey cloak was still on her box when she came off the last step, with his feet up on the board, and his boots were dry. The winch-brothers' were wet to the knee. There was a stack of the House's wood by the winch-house door, waiting on the cage, and a thread of smoke from the chimney that was some of it, and she did not have to ask which of them had carried it in.
 
 She did not ask him anything. She went to Hob's head and stood there, with her hand flat on his neck where he could feel it.
 
-The grey cloak looked at her a while. Then he took his boots down and got off the box with a little bow, the kind a man makes to a lady at a fair, and she let him have it. A man moved easier when he thought he had decided to.
+The grey cloak looked at her a while. Then he took his feet down and got off the box with a little bow, the kind a man makes to a lady at a fair, and she let him think it was manners.
 
 "You stood," she told Hob, in the byre, where it was dim and smelled of other oxen. "You stood all that while and never turned your head, and Dun turned his, I'll be bound." Dun put his nose in her armpit. "I know. You're both fools. Eat."
 
 Hob would not. The grey cloak had brought a stool to the byre door and sat on it, and Hob would not eat with him in the door.
 
-Their cart stood under the winch-house eave with a cloth thrown over it and not tied, and she read it the way she read anyone, by what it ate and how many days of it it had brought. Flour, the Coldmere mill's mark on every sack. Six men, to the thaw and past it. Nobody brings flour past the thaw for a paper they mean to read at a gate and take home.
+The Confessors' cart stood under the winch-house eave with a cloth thrown over it and not tied, and she read the camp by it, the way she read anyone: by what it ate, and how many days of it it had brought. Flour, the Coldmere mill's mark on every sack. Six men, to the thaw and past it. Nobody brings flour past the thaw for a paper they mean to read at a gate and take home.
 
 At the end of the afternoon he got up off his stool with a letter in his hand.
 
