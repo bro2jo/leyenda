@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-13 · overheard · Two novices changing the far cots' linen, in whispers: "Does it matter which way you fold it?" "It does to her." "Does she check?" "Every time." "How do you know?" "Because I folded it wrong once."
 - 2026-10-13 · verse · A man of the Sixth, two cots down from Hollis, hums the old marching nonsense under his breath: "Sixty men and a mule came home from the river, / fifty-nine and a mule…" He stops there, as if he has only just heard it.
 - 2026-10-13 · ledger · From Wren's ledgers, a page headed Kitchen: Times the loaves were counted today: 6. Totals that agreed: 2. (Underneath: Not my count. Theirs.)
 - 2026-10-13 · overheard · Two lay brothers at the hall door, arguing over the night lamp. "Your turn." "I did it last night." "You lost count last night." "Then whose turn is it?" "Yours. Twice."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-15 · house · The kitchen has taken to leaving its book open on the bread table where anyone can read it. Nobody in the House admits to having read it, and the pencil has to be sharpened twice a day.
 - 2026-10-15 · ledger · From Wren's ledgers, the cage page: First load: linen, wet. Second: salt. Third: one novice, who rode up on a dare, weighed with the salt and entered as salt.
 - 2026-10-15 · weather · Snow on and off all afternoon, the kind that cannot decide whether it is falling or blowing and settles the question by doing both.
+- 2026-10-15 · body · His hands are warm without the brazier tonight. He notices it the way you notice a dog that has stopped barking: some time after it stopped.
