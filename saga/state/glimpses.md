@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-12 · body · He does up the infirmary shirt's three buttons in the dark by feel, all three, first try, and only afterwards notices that his fingers didn't argue with him once.
 - 2026-10-12 · weather · The wind has dropped altogether. Snow comes down past the hall windows so straight and slow that a novice has stopped at one with her broom, as if waiting to see a single flake land.
 - 2026-10-12 · saying · Down the row in the dark, one man tells another to stop counting the west bank. "I'm not," the other says, and turns over, and his cot creaks a long while before it's quiet.
 - 2026-10-12 · ledger · From Wren's ledgers, a page headed Brooms: Owned by the lay brothers: 4. Findable: 2, up from 1. (Underneath, smaller: She has decided not to ask.)
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-14 · overheard · Two novices on the stair, arguing whether the Greywater freezes from the top down or the bottom up. Neither of them has seen it freeze. Both are certain.
 - 2026-10-14 · saying · An old lay brother at the woodpile, to nobody in particular: Split it when it's dry, burn it when it's split, and never tell the Prior which pile was which.
 - 2026-10-14 · ledger · From Wren's ledgers, the margin of a kitchen page: Loaves left, by Cook: thirty-eight. By me: thirty-seven. Cook is eating the evidence.
+- 2026-10-14 · house · Somebody has mended the third step of the kitchen stair. It still creaks, only in a different note now, and the kitchen is divided on whether that is better.
