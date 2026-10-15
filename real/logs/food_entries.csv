@@ -41,3 +41,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-14#4,2026-10-14,,snack,"Ferrero Rocher milk hazelnut squares, 3-piece pack",1 pack (31.5 g),170,2,16,11,0.5,6,14,40,94,52,0.4,20,0.4,0,0,20,label,label photo
 2026-10-14#5,2026-10-14,,snack,"Uglies sweet potato kettle chips, 43 g bag",1 bag (43 g),220,2,25,13,3,1,7,105,530,50,0.6,25,0.3,2,0,25,label,label photo; whole single-serve bag
 2026-10-14#6,2026-10-14,,snack,"Bloom Pop prebiotic soda, strawberry cream (12 oz can)",1 can (12 fl oz),20,0,5,0,0,0,3,90,0,0,0,0,0,0,0,0,label,label photo
+2026-10-14#7,2026-10-14,,dinner,Cheddar cheese slice,"1 slice (~21 g, assumed deli slice)",80,5,0,6.5,0,4,0,130,20,150,0.1,6,0.7,0,0.1,30,estimate,typical pre-sliced cheddar
+2026-10-14#8,2026-10-14,,dinner,"BBQ chicken and bacon pizza, medium (half)","half a medium (4 of 8 slices), assumed regular crust",1040,48,112,42,5,18,24,2400,600,500,7,80,5,4,0.5,100,estimate,chain medium BBQ chicken ~230 kcal/slice + bacon; brand not given
