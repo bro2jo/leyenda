@@ -406,9 +406,9 @@ Dashboard reading (confirm with PT): "WB" = wobble board, not weight-bearing, so
 
 ---
 
-## 2026-10-15 (POD 52) — Visit 10 — therapist not stated
+## 2026-10-15 (POD 52) — Visit 10 — Cody (patient-reported)
 
-Booked 10/14 (moved from the usual slot). The pasted note does not name who treated.
+Booked 10/14 (moved from the usual slot). The pasted note does not name who treated; the patient says Cody (10/1's note may have been the same Cody; confirm).
 
 ### Progress note
 
@@ -442,10 +442,21 @@ Skilled Intervention: Patient was educated in proper exercise technique and purp
 
 ### Patient's account of the same visit
 
-Not yet given (asked 10/15: who treated, whether the quad test was booked, and what was said on step-up height and pivots).
+Relayed in the dashboard thread on Thu 2026-10-15. Patient-reported; carries PT priority.
+
+```text
+Cody treated. GJC: not sure what it stands for; it was a banded walk backwards
+as far as I could go, then slowly forward. Quad test: we'll wait another week.
+Pivots are okay to do within reason. We haven't booked next week yet.
+Step-up height is fine, 12 or 18. Knee extensions: all the way up with two legs,
+then slow back down with just the left leg. Want to incorporate more of that
+style at home: assisted up, then left only on the way down.
+```
 
 Dashboard reading (confirm with PT): pain 0, left knee; gait "no deviations noted" (10/8: good pattern). **No measurements taken**: no ROM, no strength test, so the quad LSI (the open Phase 4 gate) is still unmeasured, the sixth post-op visit without it. Abbreviations: LFUC 16 L5 = Life Fitness upright bike, seat 16, level 5 (as 10/8) · CC(n) TKE 3.5pl = cable-column terminal knee extension, 3.5 plates (side not stated; usually the operated leg) · goblet squat 15 lb ×10 then 25 lb ×10 · heel tap from a 6" step 2×10 (side not stated) · step-up with opposite knee drive on 12" 2×10, cued not to push off with the opposite (right) leg, so left stance; **the PT used 12", not the 18" run at home on 10/13** (State §5 question 8) · forward lunge 2×10 each side (bodyweight; new) · retro walk "GJC" 2×5 (GJC not decoded: possibly a resisted cable or sled; ask) · CKE(4/3) = Cybex-type knee extension machine, settings 4/3: 10 lb ×10 both legs, then left eccentric ×10 (lift with both, lower with the left); range of motion not recorded · SCLP 5/5 = selectorized leg press, settings 5/5, 70 lb single-leg left 2×10 · LFKF(7) = Life Fitness knee flexion (hamstring curl), setting 7, single-leg 25 lb ×10 then 32.5 lb ×10 (side not stated). New PT items: TKE, goblet squat, forward lunge, retro walk, knee extension machine with left eccentric, single-leg leg press by weight, single-leg hamstring curl.
 
 What it changes: the PT items join the home program in place of their plan equivalents (Nick 10/8, 10/9). The PT ran the knee extension machine with a left-only eccentric at 10 lb, which supports the cable knee extension at home; its range is not recorded, so the home 90°→45° range stands until the PT says otherwise. The 12" step-up is the PT's dose; 18" stays a question.
 
 Open for the next visit (date not set): **the quad test, both sides, plus hamstrings** (still the only open Phase 4 gate) · step-up height, 12" or 18" · forward step-down watched · right knee hyperextension on a heel prop · the BOSU home version of the wobble-board drill · GJC on the retro walk · the knee extension machine's range · throwing awareness (pivots from Phase 4) · BFR / Spanish squat / seated throws if wanted · which PTA treated on 10/1 and who treated 10/15.
+
+After his account (10/15): **GJC** = a banded retro walk (back as far as the band allows, then slowly forward). **Knee extension machine** ran through **full range** ("all the way up") with both legs, lowering slowly with the left only: the PT's own range, so full extension at that light load is PT-run, and the home cable knee extension takes the same style (both legs up, left only down, slow). **Step-up:** 12" or 18" are both fine. **Pivots:** okay within reason (throwing at easy effort; max intent still waits for its phase). **Quad test:** the PT is waiting another week, so the Phase 4 gate cannot be checked before the next visit, which is not booked yet. Still open: book that visit and the quad test (both sides, hamstrings too) · forward step-down watched · right knee hyperextension on a heel prop · BOSU home version of the wobble-board drill · BFR / Spanish squat / seated throws if wanted.

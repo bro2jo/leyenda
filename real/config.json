@@ -361,9 +361,9 @@
       "defense_iq",
       "defense_footwork"
     ],
-    "stage": "Phase 3: seated or square-stance standing, easy effort, no pivot, no step-out",
+    "stage": "Phase 3: seated or standing, easy effort; pivots okay within reason (PT 10/15); no max intent",
     "stage_since": "2026-10-09",
-    "stage_evidence": "his decision 10/9: seated or standing throwing at easy effort now, the pivot from Phase 4, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
+    "stage_evidence": "PT 10/15 (Cody, patient-reported): pivots are okay to do within reason; earlier, his decision 10/9: seated or standing throwing at easy effort, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
   },
   "vocabulary": {
     "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
