@@ -8,7 +8,7 @@
 
 ### Between — The Count
 
-He did not go to the hall. Not yet. The low wall-walk ran off the court without a stair, which was the whole of Maelis's reason for ever allowing it, and Wren was at the far end of it with her elbows on the parapet and her ledger shut, looking down at the terrace.
+Darrow went slowly, as Maelis had told him, but not to the hall. Not yet. The low wall-walk ran off the court without a stair, which was the whole of Maelis's reason for ever allowing it, and Wren was at the far end of it with her elbows on the parapet and her ledger shut, looking down at the terrace.
 
 "Five," she said, before he reached her. "Round the fire. One more at the winch-house. That's six of them, and eleven men in that court and you, and I had a number for you, Captain. Twelve. One in twelve. They'd have had to read every face." She still had not looked at him. "Now it's one in one."
 
@@ -64,7 +64,7 @@ She looked at the candle a while. "Names. Everyone under this roof, every night,
 
 He saved the Prior the walk. The hall had his name before he reached his cot: two novices at the door stopped talking when he came through it, a lay brother banking the fire stood up from it to watch him pass, and somewhere down the double row a man he could not see said "Edgemoor" to the man beside him, low, the way you pass a taper along a line.
 
-Hollis came down last, when there was nothing left at the gate to watch but the fire, in his chair, with two lay brothers at the poles and Hollis telling them where the stair turned as if they had not carried him up it. They set him by his cot. He did not get out of the chair at once. He sat in it with his hands on its arms and gave the hall the names, because somebody had to and he had heard them read: the Ninth's, the Sixth's, slow, the way Marrant had, and at each one a man in a cot let his breath go or did not.
+Hollis came down from the gatehouse last, when there was nothing left at the gate to watch but the fire, in his chair, with two lay brothers at the poles and Hollis telling them where the stair turned as if they had not carried him up it. They set him by his cot. He did not get out of the chair at once. He sat in it with his hands on its arms and gave the hall the names, because somebody had to and he had heard them read: the Ninth's, the Sixth's, slow, the way Marrant had, and at each one a man in a cot let his breath go or did not.
 
 "Is that all of them, Ser?" Benedek had himself up on his good elbow, the fever sitting high on his cheeks. "The Sixth?"
 
@@ -76,9 +76,9 @@ Hollis came down last, when there was nothing left at the gate to watch but the 
 
 "Then it's mercy." The lad lay back as if a string had been cut. "Like the heralds said. It's mercy after all."
 
-Darrow sat on the end of his own cot. *The Crown has no quarrel with men who can't answer.* He had heard the Prior give Marrant the law to his face: no name under the bell taken down against its will. A man who could not answer had no will to be taken against. He could not give the lad that without telling him why it had followed him up from the gate, and the lad was smiling at the roof.
+Darrow sat on the end of his own cot. *The Crown has no quarrel with men who can't answer.* He had heard the Prior give Marrant the law to his face: no name under the bell taken down against its will. A man who could not answer had no will to be taken against. He could not give the lad that thought without telling him why Marrant's words had followed him up from the gate, and the lad was smiling at the roof.
 
-"Get some sleep, Orrin," Hollis said, and looked at Darrow over the boy's head, and said nothing else.
+"Get some sleep, Orrin," Hollis said, and looked across at Darrow, and said nothing else.
 
 Maelis came with a lamp.
 
@@ -130,7 +130,7 @@ That one Darrow could answer aloud. "Good night, Ser Benedek."
 
 ### Between — Same Paper
 
-He had known all day which three cots held his men, the three of the Ninth who had been read with him at the gate. They lay near the banked fire on the far side of the hall, and all day he had kept his eyes off them. After the night bell he went down to them the slow way, the blanket round his shoulders.
+He had known all day which three cots held his men, the three of the Ninth who had been read with him at the gate. They lay near the banked fire on the other side of the hall, and all day he had kept his eyes off them. After the night bell he went down to them the slow way, the blanket round his shoulders.
 
 Two were awake; he could tell by how still they lay. The third slept, or did it well enough that the other two let him. There was no getting down to a man on a cot with this knee, so he sat on the end of the nearest, and the man in it drew up his feet to make room: the oldest of the three, who had ridden with the Ninth longer than Darrow had commanded it, his forearm splinted across his chest.
 
@@ -206,7 +206,7 @@ He did not breathe until it stopped.
 
 "And now?"
 
-Hollis was a long time answering, and when it came it went to the roof. "Now you've asked, and I've said it, and I'd have to carry you down those Steps myself before I let him have you. Look at me." He knocked the beech leg once with his knuckles. "That's your doing, Captain. All of it."
+Hollis was a long time answering, and when it came it went to the roof. "Now you've asked, and I've said it, and I'd have to carry you down those Steps myself before I let him have you. Look at me." He knocked the beech leg once with his knuckles. "A man on this, swearing he'd carry you. That's your doing, Captain. All of it."
 
 Darrow sat with that until it had stopped hurting enough to answer. "I had three heartbeats in that river. I know what a man can think in one."
 
@@ -228,9 +228,9 @@ Darrow put the bones into the open hand, and the fist shut on them and did not s
 
 He woke to bread.
 
-It came down the hall ahead of the dawn bell, warm and yeasty under the smoke of the banked fire, and for a moment he did not know why an infirmary should smell like a house with a mother in it. Then the roof, the cot, the cold coming up off the flags. On the next cot Hollis lay on his back with his mouth open and his fist still shut on the knucklebones, and the fist had not shaken that Darrow had woken to see.
+It came down the hall ahead of the dawn bell, warm and yeasty under the smoke of the banked fire, and for a moment he did not know why an infirmary should smell like a house with a mother in it. Then the roof, the cot, the cold coming up off the flags. On the next cot Hollis lay on his back with his mouth open and his fist still shut on the knucklebones, and as far as Darrow had woken to see, the fist had not shaken.
 
-The feast. The kitchen had been counting loaves for it all week. Through the window at the hall's end the lay brothers were already going down the court toward the gate, two to a basket, the baskets heaped and steaming in the grey light. Below the gate the Confessors had let their fire burn up for the morning, and the grey cloaks stood along the terrace edge to watch the bread come.
+The feast. The kitchen had been counting loaves for it all week, and on a feast day the House fed whoever was at its gate. Through the window at the hall's end the lay brothers were already going down the court toward the gate, two to a basket, the baskets heaped and steaming in the grey light. Below the gate the Confessors had let their fire burn up for the morning, and the grey cloaks stood along the terrace edge to watch the bread come.
 
 At the kitchen door a novice with flour to the elbows was running a book in a whisper that carried the length of the hall: would the grey cloaks take it? Two to one they would. Evens they'd make the lay brothers set it down in the snow first.
 
@@ -246,7 +246,7 @@ Benedek lay on his back with his hands folded on the blanket and his eyes open o
 
 "Orrin."
 
-Nothing. The lad was breathing: the blanket rose and settled, slow and even, the breath Darrow had lain listening to from the far end of the hall every night since the Steps. There was frost on Benedek's mouth. It lay white along the line of the lips the way it comes on a window, in a hall with a fire in it.
+Nothing. The lad was breathing: the blanket rose and settled, slow and even, the breath of the far cots, that Darrow had lain listening to every night since the Steps. There was frost on Benedek's mouth. It lay white along the line of the lips the way it comes on a window, in a hall with a fire in it.
 
 He was up before he had decided to be, good leg, bad leg, transfer, and his hand came down on Hollis's shoulder on the way past, hard.
 
@@ -294,7 +294,7 @@ Darrow sat down on the end of his cot, because the knee would have it so, and lo
 
 "Did anyone come up the row?"
 
-The old man thought about it honestly, which took a while. "You, early, and back again. The lamp came round in the small hours the way it does, counting, and lost its place at Garrow's snoring and started over from the door." He shook his head. "Nobody else. Nobody passed, Captain."
+The old man thought about it honestly, which took a while. "You, early, and back again. The lamp on its round came by in the small hours the way it does, counting, and lost its place at Garrow's snoring and started over from the door." He shook his head. "Nobody else. Nobody passed, Captain."
 
 Darrow looked at the door nobody had come through, and then at the frost on the lad's mouth, which had come anyway.
 
@@ -305,9 +305,9 @@ Darrow looked at the door nobody had come through, and then at the frost on the 
 
 ### Between — Wrong Question
 
-He found Maelis at the far end of the hall among the far cots, under the lamp that is never let go out, with two fingers on a sleeping man's wrist. She did not look round.
+Darrow found Maelis at the far end of the hall among the far cots, under the lamp that is never let go out, with two fingers on a sleeping man's wrist. She did not look round.
 
-"What is it?"
+"What is it?" Darrow said.
 
 "Wrong question."
 
@@ -395,7 +395,7 @@ By the morning after the feast, Benedek's cot had a grey blanket on it.
 
 The novices had come at dusk with a stretcher to carry him down to the far cots, where the Hollowed lie, and Hollis had told them what they could do with the stretcher, and where, and in what order. They had gone away and come back with the far cots' blanket instead, grey wool washed thin, and laid it over the lad where he was. By the dawn bell the hall was calling it the Grey Cot, as if it already stood at the far end. Hollis sat beside it on the edge of his own cot with the lad's hand in his, and had not been moved. He had eaten. Darrow had told nobody how.
 
-The word came up the Steps with the empty bread baskets. The lay brothers who carried the feast loaves down had stood at the bars while the Confessor thanked the House for its charity, and they had carried something else back up: Marrant's name for what had happened in the night. *Ember witchcraft.* The old curse, the one the Crown had burned out of the realm three hundred years ago, halls and books and people. By morning it was in the kitchen. By the next bell it would be in the hall, and a hall that has been given a word for a thing goes looking for a hand to fit it.
+The word had come back across the court with the empty bread baskets, late on the feast morning. The lay brothers who carried the feast loaves down had stood at the bars while the Confessor thanked the House for its charity, and they had carried something else back up: Marrant's name for what had happened in the night. *Ember witchcraft.* The old curse, the one the Crown had burned out of the realm three hundred years ago, halls and books and people. By this morning it was in the kitchen. By the next bell it would be in the hall, and a hall that has been given a word for a thing goes looking for a hand to fit it.
 
 There was a worse thing under it, and Darrow had said it to Maelis and nobody else: a lad who could not answer had no will for the bell to keep. He did not say it again. He sent for Wren.
 
@@ -427,17 +427,17 @@ Her face went to pieces and came back together, which took a moment.
 
 "It isn't," Darrow said. "Did anyone come up the row?"
 
-"The lamp on its round, at the hour, counting. He never stopped walking." She shook her head. "Nobody else, Captain. Nobody passed the far cots. I'd swear it at the bell."
+"The lamp on its round, at the hour, counting. He never stopped walking." She shook her head. "Nobody else, Captain. Nobody came in at the door, and nobody came up from the far cots. Nobody passed. I'd swear it at the bell."
 
-The kitchen came up the hall at the noon bell in the person of the novice with flour to the elbows, who had run the book on the feast morning and had stopped running it, and who had a great deal to say. She said it all. What the lay brothers had heard at the bars; what the Confessor had meant by it; what the old cook said about the burnings, which her grandmother had told her; whether a witch needed a door at all; whether the Captain thought it would be the Mender they'd blame, being as she was the one who found the glass.
+The kitchen came up the hall at the noon bell in the person of the novice with flour to the elbows, who had run the book on the feast morning and had stopped running it, and who had a great deal to say. She said it all. What the lay brothers had heard at the bars; what the Confessor had meant by it; what the old cook said about the burnings, which the cook's grandmother had told her; whether a witch needed a door at all; whether the Captain thought it would be the Mender they'd blame, being as she was the one who found the glass.
 
-Darrow let her. He had learned in the last fortnight to lie still under weather.
+Darrow let her. He had learned on that cot to lie still under weather.
 
 `[RESOLVE · DC 11]` d20 **19** +0 resolve +2 The Mender's Patience II = **21** — *Success*
 
 When she had run down at last and was standing there breathing, he asked her what the kitchen had counted.
 
-She blinked at him. Then, slowly, as if he had asked about something too ordinary to matter: "The loaves, Ser. Sixty out for the feast, and we've counted what's left nine times since, and it comes out different every time, because cook keeps eating the crusts." She stopped. "And the flour. The night before a feast we sweep the floor by the hall door at the night bell and leave a skin of flour on it, so we know in the morning who's been at the bread. Nobody had. There wasn't a print in it at the feast's dawn bell but ours, and ours came after."
+She blinked at him. Then, slowly, as if he had asked about something too ordinary to matter: "The loaves, Ser. Sixty out for the feast, and we've counted what's left nine times since, and it comes out different every time, because cook keeps eating the crusts." She stopped. "And the flour. The night before a feast we sweep the kitchen floor by the hall door at the night bell and leave a skin of flour on it, so we know in the morning who's been at the bread. Nobody had. There wasn't a print in it at the feast's dawn bell but ours, and ours came after."
 
 "Nobody came through the kitchen."
 
@@ -445,7 +445,7 @@ She blinked at him. Then, slowly, as if he had asked about something too ordinar
 
 Wren came back last, with the ledger open across her arm, and gave it to him faster than anyone could take it down.
 
-"Doors into the hall: two. Barred at the night bell, the night of the gate: two. Still barred at the feast's dawn bell: two; the lay brother who draws them swears it. Keys on the Prior's ring: nine. Hanging where they hang at that dawn bell: nine. I count them every morning." She turned the ledger so he could see the column. "So nobody came in. So it came from—"
+"Doors into the hall: two. Barred at the night bell, the night the lad was taken: two. Still barred at the feast's dawn bell: two; the lay brother who draws them swears it. Keys on the Prior's ring: nine. Hanging where they hang at that dawn bell: nine. I count them every morning." She turned the ledger so he could see the column. "So nobody came in. So it came from—"
 
 "Nobody passed," Darrow said.
 
@@ -476,7 +476,7 @@ Darrow heard the odds before he saw the book. They came out of the kitchen door 
 
 He went the slow way and stood in the kitchen door.
 
-The book lay open on the bread table, a fat ledger soft with flour, the running odds kept in pencil down the margin so they could be changed. The feast's wagers had been crossed out. Under them, in fresh pencil, ran a column of cots by number with a price beside each, and two lay brothers were leaning over it with a wick between them.
+The book lay open on the bread table, a fat ledger soft with flour, the running odds kept in pencil down the margin so they could be changed. The feast's wagers had been crossed out. Under them, in fresh pencil, ran a column of cots by number with a price beside each, and two lay brothers were leaning over it with a wick between them for a stake.
 
 Hollis was on it, at four. So was the Captain of the Ninth, at five.
 
@@ -518,7 +518,7 @@ When he was halfway back up the hall he heard a wick go down on the bread table,
 
 ### Between — The Far Lamp
 
-After the night bell Darrow took his blanket and went down the hall the slow way, past Hollis at the Grey Cot with the lad's hand in his, who did not look up, and on to the far end, where the lamp that is never let go out hung on its hook over the far cots and the night novice sat on a stool beneath it with her hands in her sleeves.
+After the night bell Darrow took his blanket and went down the hall the slow way, past Hollis, who sat at the Grey Cot with the lad's hand in his and did not look up, and on to the far end, where the lamp that is never let go out hung on its hook over the far cots and the night novice sat on a stool beneath it with her hands in her sleeves.
 
 She stood up when she saw who it was.
 
@@ -546,7 +546,7 @@ She nodded as if that were the answer she had wanted, because it was not a lie. 
 
 "You keep it." He thought about the riverbank, and the nights before it, and all the men who had sat up beside him with nothing to do but be awake. "You keep the lamp, and you keep the count, and when somebody asks you in the morning, you can tell them true."
 
-She kept it with him until a little past the hour. The lamp came round on its round, the lay brother counting cots under his breath; he saw the Captain of the Ninth on a stool at the far end, lost his count entirely, and went back to the door to start again. The novice laughed into her sleeve, and a while after that her head went down onto her folded arms, and she slept.
+She kept it with him until a little past the hour. The lamp came round on its round, the lay brother counting cots under his breath; the brother saw the Captain of the Ninth on a stool at the far end, lost his count entirely, and went back to the door to start again. The novice laughed into her sleeve, and a while after that her head went down onto her folded arms, and she slept.
 
 Darrow let her. He kept the lamp. When the flame stood up tall and began to smoke, he trimmed it the way she had shown him, pinching the black off with his fingers, and when he looked at them afterwards they were black in the creases, the way hers had been.
 
