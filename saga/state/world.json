@@ -126,7 +126,7 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. The named are to be taken down the Steps to the Oathspire and made to kneel where everyone can watch, which would say the Ninth drowned for its own bad faith, and would tear the thread in Darrow's knee. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Miss one ringing and the law lapses till the next, and Sister Pell, who rings it, is very old. At the gate, Confessor Ivo Marrant read his names at the bars, and two of his men came through the wicket before the bell rang, late. Now five grey cloaks are camped on the lower terrace below the gate, and the sixth holds the winch-house, the cage and Rae's cart, so the road is theirs. Marrant's price: the Captain of the Ninth comes down and kneels, and the rest of the paper goes back in his cloak. Darrow went to the bars and gave him his name and his face. Marrant says he will wait.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
+  "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
   "last_beat": "Darrow watched her hood go down the Last Hundred and did not count, and when Wren came up behind him with the glass he said \"Don't,\" before she had opened her mouth.",
   "companions": {
     "maelis": {
@@ -146,8 +146,8 @@
     },
     "rae": {
       "approval": 5,
-      "present": true,
-      "note": "the carter of the last cart (Prologue, revised 10/9) and named in Chapter 1; arrives as a companion when q1.cart stage 3 is written (she stays past the dusk bell); --pending until then"
+      "present": false,
+      "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
     }
   },
   "choices": [

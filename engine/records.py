@@ -750,6 +750,10 @@ def project_now(events, plan, world, chars, existing_text):
             i -= 1
         start = max(i - 1, 0)
         earlier = cur[start:len(cur) - 1]
+        # an interlude in the day's run is another's eyes, often stepping back in time: its own line, never "in order"
+        if side is None:
+            side = next((e for e in reversed(earlier) if parse_key(e["key"])[2] == "interlude"), None)
+        earlier = [e for e in earlier if parse_key(e["key"])[2] != "interlude"]
     now_state = {}
     for ev in events:
         if ev.get("now"):
