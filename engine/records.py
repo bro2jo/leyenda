@@ -662,6 +662,8 @@ def project_world(events, plan, world, tale_events=()):
             continue
         ch, sk, kind = parsed
         for k in ("where", "season", "quest", "struggle", "last_beat", "book_title"):
+            if kind == "interlude" and k in ("where", "last_beat"):
+                continue  # another's eyes, often stepping back in time: Darrow's place and his last beat stay with his own blocks
             if ev.get(k):
                 state[k] = ev[k]
         inv = ev.get("inventory") or {}
@@ -736,6 +738,9 @@ def project_now(events, plan, world, chars, existing_text):
     chapter = int(pos["chapter"])
     places = place_names()
     cur = [ev for ev in events if parse_key(ev.get("key", "")) and parse_key(ev["key"])[0] == chapter]
+    # an interlude last on the page is another's eyes, often stepping back over a day already shown: it gets its own
+    # line, and "Just happened" stays with Darrow's latest block so the page never reads out of order
+    side = cur.pop() if cur and parse_key(cur[-1]["key"])[2] == "interlude" else None
     last = cur[-1] if cur else None
     # "earlier today": the blocks since the last scene before the last block (a day's pieces), oldest first
     earlier = []
@@ -777,6 +782,8 @@ def project_now(events, plan, world, chars, existing_text):
     if earlier:
         parts = [f"*{e.get('title', '')}* ({kind_label(parse_key(e['key'])[2])})" + (f": {short(e['last_beat'], 160)}" if e.get("last_beat") else "") for e in earlier]
         lines.append("- **Earlier today, in order:** " + " · ".join(parts))
+    if side:
+        lines.append(f"- **The interlude, through other eyes:** *{side.get('title', '')}.* {side.get('last_beat') or ''}".rstrip())
     comps = world.get("companions") or {}
     with_him = []
     for key, comp in comps.items():

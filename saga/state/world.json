@@ -113,7 +113,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "At the foot of the Steps, the afternoon before she came up with the letter: she put it inside her shirt, wax inward, told Hob she would tell Darrow he wouldn't eat, and started up the Shins.",
+  "last_beat": "Hollis at the Grey Cot, without looking round, asked who the letter was from. \"I haven't looked.\" Darrow put it under his mattress with the wax whole, and lay down on it.",
   "companions": {
     "maelis": {
       "approval": 25,
