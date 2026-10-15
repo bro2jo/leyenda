@@ -604,9 +604,7 @@ He turned it over. The wax was whole.
 
 He looked up from it. In a day's road and a fortnight of the House she had not called him anything at all, not Ser, not Captain, and he had stopped waiting for it.
 
-"Not Ser?"
-
-"I don't drive for the Ninth." She said it to him, and not to the valley. "I drive for the House."
+"I don't drive for the Ninth," she said, to him and not to the valley. "I drive for the House."
 
 He turned the letter over again, for something to do with his hands. "Thorne," he said. "Where's that from?"
 
@@ -635,7 +633,7 @@ In the hall the far lamp burned straight up, and Hollis did not look round from 
 > XP 1,247 → 1,327
 > The Tether: **a name**.
 
-### Interlude — The Captain of the Ninth
+### Interlude — The Carter
 
 That morning, with Wren up on the gate wall counting her down, Rae Thorne did not count the Steps at all. Counting was for Wren, and for men with lists, and any carter will tell you a road you count gets longer under you. She came down the last of them with her eyes on her feet and her mind on her oxen, who had stood in the snow at the winch-house since the grey cloaks came.
 
