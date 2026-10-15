@@ -53,9 +53,9 @@ Darrow mounted.
 
 ---
 
-He would be honest about this later, because Maelis would make him: he loved it. He loved the moment when sixty horses came off the bank together and hit the water, the white explosion of it, spray going up higher than the lances, the cold slapping his face and failing to reach him through the warmth. He loved the speed. With the Grace in him, the river was a road and the stones underfoot were stairs he'd known all his life. He loved being at the point of the thing, with nobody in front of him, his men a weight of noise behind him and everything ahead of him getting larger, faster, simpler.
+He would be honest about this later, because a woman named Maelis would make him: he loved it. He loved the moment when sixty horses came off the bank together and hit the water, the white explosion of it, spray going up higher than the lances, the cold slapping his face and failing to reach him through the warmth. He loved the speed. With the Grace in him, the river was a road and the stones underfoot were stairs he'd known all his life. He loved being at the point of the thing, with nobody in front of him, his men a weight of noise behind him and everything ahead of him getting larger, faster, simpler.
 
-He was laughing. Thistle had her ears flat and was laughing too, in her way.
+He was laughing. Thistle, his grey, had her ears flat and was laughing too, in her way.
 
 Halfway across, the warmth went out of him.
 
@@ -71,7 +71,7 @@ And the knee went.
 
 There was no blade. Nothing touched him. Something inside the joint simply let go, the way a rope lets go under too much weight: a soft, wet give that he felt in his teeth. Then his leg was a thing that belonged to someone else. It folded sideways under him like a door off its hinge.
 
-They say a drowning man sees his whole life. Darrow, going down, saw one thing, and it would stay with him longer than the cold: through the spray, on the west bank, Aldric Vane's horse. Already turned. Already climbing out. Aldric bent low over its neck.
+They say a drowning man sees his whole life. Darrow, going down, saw one thing, and it would stay with him longer than the cold: through the spray, on the west bank, Aldric Vane's horse. Already turned. Already climbing back up out of the shallows. Aldric bent low over its neck.
 
 Already. One heartbeat early.
 
@@ -87,13 +87,13 @@ All around him, the river was full of the Ninth.
 
 A hand closed in the collar of his gambeson and hauled.
 
-He was dragged backward through the shallows, not toward his own bank but away from it, east, and dumped on the gravel among the standing stones of the far shore. He rolled over. The red-handed woman was standing over him, waist-deep in the river he had just ridden at her, breathing hard. Up close she was older than he'd thought, forty or more, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time.
+He was dragged backward through the shallows, not toward his own bank but away from it, east, and dumped on the gravel among the standing stones of the far shore. He rolled over. The red-handed woman was standing over him, soaked to the waist from the river he had just ridden at her, breathing hard. Up close she was older than he'd thought, forty or more, with a scar through one eyebrow and the patient, furious face of a woman who had been right about something for a long time.
 
 She grabbed his jaw and turned his head toward the river.
 
 "Look at it," she said in rough Vaelish. "Look. Remember it."
 
-He looked. The Wend was carrying knights downstream like driftwood. On the west bank, the Second Lance sat its horses in perfect order, untouched, watching. And behind the clan carts, in the dark under the trees of the Thornwild, stood a line of grey figures he had not seen before. They were very still. They were wearing armor. They didn't move at all, not even when the river screamed.
+He looked. The Wend was carrying knights downstream like driftwood. On the west bank, the Second Lance sat its horses in perfect order, untouched, watching. And when he looked round, behind the clan carts, in the dark under the trees of the Thornwild, stood a line of grey figures he had not seen before. They were very still. They were wearing armor. They didn't move at all, not even when the river screamed.
 
 When he turned back, the woman was gone.
 
@@ -109,13 +109,13 @@ Hollis Garrow rode the next cart over, missing his right leg above the knee, and
 
 "Kneel to that," Hollis said, and nobody on either cart laughed.
 
-Darrow lay with his teeth shut and let the herald finish. The Crown had the wrong sin. Nobody in the Ninth had broken an oath; they had kept it all the way into the river. What he could find no place for was the bedding on those carts, and the goat, and that he had seen them and mounted anyway.
+Darrow lay with his teeth shut and let the herald finish. The Crown had the wrong sin. Nobody in the Ninth had broken an oath; they had kept it all the way into the river. What he could find no place for was the bedding on the clan carts, and the goat, and that he had seen them and mounted anyway.
 
-The surgeons in the Lowmarch looked at his knee, pressed it, watched it slide, and sent him north, into the Greywater. *Saint Ysolde's*, they said, the way you would say *the sea*. The House of Menders took the ones the lowland surgeons couldn't fix and didn't want to watch.
+The surgeons in the Lowmarch had looked at his knee, pressed it, watched it slide, and sent him north, into the Greywater. *Saint Ysolde's*, they said, the way you would say *the sea*: the House of Menders, which took the ones the lowland surgeons couldn't fix and didn't want to watch.
 
 The last cart was a salt-cart off the Holloway, its load left at the landing to make room for two knights and a leg that was not there, and the woman who drove it talked to her oxen the whole of the last day and to her passengers not at all. Twenty-seven, or near it, and strong through the shoulders in the way that comes from hauling and not from Grace. Darrow watched her hands on the reins. The fever had taken away his choice of what to watch, and her hands were steady, and his were not. A small brass bell hung on a cord at her belt and rang whenever the cart jolted, and she never once seemed to hear it. When Hollis started on her, somewhere past the second milestone, she said "Aye," as if he had remarked on the weather, and the oxen leaned into the collar and the cart went on.
 
-At the foot of the Steps she got down and looked at his leg once, the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her. Then she looked up the cliff, where the stair went into the cloud, took the bell off her belt and rang it three times, hard. Somewhere up in the cloud, after a while, a bell answered.
+At the foot of the Steps she got down and looked at Darrow's leg once, the way a carter looks at a cracked wheel: a thing that would have to be seen to, and not by her. Then she looked up the cliff, where the stair went into the cloud, took the bell off her belt and rang it three times, hard. Somewhere up in the cloud, after a while, a bell answered.
 
 "Rae," said the first of the lay brothers coming down with the litter, as if her name were a thing you could lean on.
 
@@ -145,7 +145,7 @@ She didn't stop until the top, where bells were ringing and the air smelled of s
 
 "It isn't broken," said Maelis Vorne. "It's undone."
 
-She had her two first fingers on the joint and her eyes shut. She had been like that for a long time. The infirmary hall was dark except for her candle and the long double row of cots running away into shadow, and from the far end, where they put the ones who didn't speak anymore, came the slow, even breathing of people who no longer needed to be told when to sleep.
+She had her two first fingers on the joint, her grey braid over one shoulder, and her eyes shut. She had been like that for a long time. The infirmary hall was dark except for her candle and the long double row of cots running away into shadow, and from the far end, where they put the ones who didn't speak anymore, came the slow, even breathing of people who no longer needed to be told when to sleep.
 
 "The cord that holds the thighbone to the shin," she said. "The one in the middle, that stops it sliding. It's gone. Snapped." She opened her eyes. "What hit you?"
 
@@ -177,7 +177,7 @@ She opened the box. Inside, on black cloth, lay a curved needle and a spool of s
 
 "And then it's yours. Made of you. It'll be exactly as strong as you make it, and not one hair stronger. It'll be soft for a long time, softest just when it starts to feel good, and if you're stupid in that season you'll tear it and I won't do this twice. It will take most of a year. Maybe more. Every day of that year you'll do dull things I tell you to do, and some days you'll do them and nothing will happen, and you'll do them again the next day anyway." She shut the box. "No Grace in it. Nothing given. Nothing anyone can take back."
 
-Darrow looked up at the dark roof of the hall. He could go down. There would be a stone at the bottom, and a hand to help him onto his knee, and the warmth coming up through his palm the way it always had; by spring, perhaps, enough to sit a horse. On the west bank, in the spray, a horse was already turning.
+Darrow looked up at the dark roof of the hall. He could go down. There would be a stone at the bottom, and a hand to help him onto his knee, and the warmth coming up through his palm the way it always had; by spring, perhaps, enough to sit a horse. He could still see it: on the west bank, in the spray, Aldric's horse already turning.
 
 "Can I kneel?" he said. "After."
 

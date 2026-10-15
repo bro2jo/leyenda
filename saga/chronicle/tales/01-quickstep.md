@@ -6,7 +6,7 @@
 
 ### Piece 1 — The Breeder's Son
 
-The bay had put two men over the rails that spring and a third into the water trough, and after the third Darrow's father stopped using the name the horse had been sold under and called him only the bay, which in that house was a sentence.
+The bay had put two men over the rails that spring and a third into the water trough, and after the third, Darrow's father stopped using the name the horse had been sold under and called him only the bay, which in that house was a sentence.
 
 Darrow was eleven. He had walked at a horse's head since before he could argue, which was how a horse-breeder's son was raised in the Edgemoor hills: a lead in the hand and a horse on the end of it, and the horse teaching the boy where his feet went. He knew the greys by their legs before he knew the neighbours by their faces. He knew that an Edgemoor grey went up a slope the way water goes down one; that the men who came up from the Lowmarch in autumn with a lance's mark on their coats bought greys and nothing else; and that the bay was not a grey, and nobody had come for him, and nobody would. In that house a horse called by its colour went down the hill on the knacker's cart before the month was out.
 

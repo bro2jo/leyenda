@@ -554,15 +554,15 @@ Darrow let her. He kept the lamp. When the flame stood up tall and began to smok
 
 The dawn bell found Darrow on the gate wall with the far lamp's soot still in the creases of two fingers, and nobody had passed on his watch either. He had not slept after it, and the wind on the wall was keeping his eyes open for him.
 
-There was new snow on the Steps. From the wall they went down the cliff in the switchbacks the lay brothers had names for, every tread drawn in white with a line of shadow under it, until a band of cloud lay across the mountain and swallowed them. Below the cloud, very small, stood the winch-house, and Rae Thorne's cart beside it, and her oxen in the snow, and on the box a man with his boots up on the board. Just under the gate, on the lower terrace, the Confessors' fire smoked into the steam of the springs.
+There was new snow on the Steps. From the wall the stair went down the cliff in switchbacks the lay brothers had names for, every tread drawn in white with a line of shadow under it, until a band of cloud lay across the mountain and swallowed it. Below the cloud, very small, stood the winch-house, and the speck beside it that was Rae Thorne's cart, where a grey cloak had sat on the box for days with his boots up on the board. Just under the gate, on the lower terrace, the Confessors' fire smoked into the steam of the springs.
 
-Rae came out through the wicket below him with her hood up, went past their fire without turning her head, and took the Last Hundred and never once looked back at the gate.
+Rae came out through the wicket below him with her hood up, went past their fire without turning her head, and started down the Steps without once looking back at the gate.
 
-"No writ names a carter," Wren said. She had Pell's glass again, lent and counted out again, and her ledger under her arm. "The bell lets anybody down. It's up that's the trouble." The glass crept down the cliff after the hood. "She never counts. I've watched her. She takes them like a road."
+"No writ names a carter," Wren said. She had Pell's glass again, lent and counted out again, and her ledger under her arm. "The bell lets anybody down. Coming back up's eleven hundred and seventeen." The glass crept down the cliff after the hood. "She never counts. I've watched her. She takes them like a road."
 
 "Then don't count for her."
 
-"I'm not counting *for* her." The glass did not move. "Technically I'm counting at her. A hundred. That's the Last Hundred, and she hasn't slowed."
+"I'm not counting *for* her." The glass did not move. "Technically I'm counting at her. A hundred. That's the Last Hundred behind her, and she hasn't slowed."
 
 Darrow did not take the glass. He found the hood with his own eyes, a dark stitch on the white, and lost it at a turn, and found it again, and went on doing that. The bell at her belt came up to him on the wind, one note a step, until the cliff took it.
 
@@ -570,7 +570,7 @@ Darrow did not take the glass. He found the hood with his own eyes, a dark stitc
 
 "It's cold."
 
-"The Long Reach," Wren said. Then, a good while after: "The Elbow. That's the cloud. She's in it." A longer while, with nothing but the glass creeping. "Out. That's the Shins. She's—" The glass stopped. "He's off the box."
+"The Long Reach," Wren said. Then, a good while after: "The Elbow. That's the cloud. She's in it." A longer while, with nothing but the glass creeping. "Out. That's the Shins, the bottom. She's—" The glass stopped. "The grey cloak's off the box."
 
 "She asked him?"
 
@@ -582,7 +582,7 @@ Wren did not write it down.
 
 Rae stayed down all day. Darrow went back to the hall, where Hollis still sat at the Grey Cot, and lay on his own cot without sleeping. When the light began to go, he went out to the wall again to watch the Steps.
 
-She came up out of the cloud at the Elbow, a dark stitch on the white again, climbing now. Old Mercy began to ring the dusk while she was still on the Long Reach, and she did not hurry for it. She took the Last Hundred at the pace she had gone down them, came through the wicket on the bell's last stroke, and found Darrow waiting for her in the court.
+She came up out of the cloud at the Elbow, a dark stitch on the white again, climbing now. Old Mercy began to ring the dusk while Rae was still on the Long Reach, and Rae did not hurry for it. She climbed the Last Hundred at the pace she had gone down it, came through the wicket on the bell's last stroke, and found Darrow waiting for her in the court.
 
 "The oxen are in the byre at the winch-house," she said. "A grey cloak's sat on a stool in the door, and Hob won't eat with him there." She pushed her hair back off her face with the heel of her hand, and it came straight forward again. "Their cart's got flour out of Coldmere for six men to the thaw and past it."
 
@@ -590,7 +590,7 @@ She came up out of the cloud at the Elbow, a dark stitch on the white again, cli
 
 "Aye."
 
-She took a letter from inside her shirt and put it in his hand. It was folded small, with a seal that was blue in the last of the light, and it was too dark now to read what was written over the wax.
+She took a letter from inside her shirt and put it in his hand. It was folded small, with a seal of blue wax, and it was too dark now to read what was written over the seal.
 
 "It's for the Captain of the Ninth," she said. "At the House of Menders."
 
@@ -602,13 +602,17 @@ He turned it over. The wax was whole.
 
 "Darrow," she said.
 
-He looked up from it. In a day's road and a fortnight of the House she had not called him anything at all, not Ser, not Captain, and he had stopped waiting for it.
+He looked up from it. On the road and in the House she had never called him anything at all, not Ser, not Captain, and he had stopped waiting for it. A moment ago she had told him an ox's name.
 
 "I don't drive for the Ninth," she said, to him and not to the valley. "I drive for the House."
 
 He turned the letter over again, for something to do with his hands. "Thorne," he said. "Where's that from?"
 
-"My grandmother was Thornwild-born." She watched him take that. "She came over the Wend behind a drover, and Coldmere called us the Thornwild woman's till it wore down to Thorne."
+"My grandmother was Thornwild-born." She watched him take that.
+
+He had last seen the Thornwild across the ford, behind their spears, with their old people sitting on the bedding in the carts.
+
+"Gran came over the Wend behind a drover, long before the ford," Rae said. "Coldmere called us the Thornwild woman's, and it wore down to Thorne."
 
 "And you kept it."
 
@@ -616,7 +620,7 @@ He turned the letter over again, for something to do with his hands. "Thorne," h
 
 She went across the court to the kitchen and did not look back, and the bell at her belt rang once at the kitchen door.
 
-Darrow stood in the last of the light with the letter in one hand, and looked at the other, which he had not done all day. The script was there as it always was, pale, and the same with his eyes shut. And beside it, close along the first the way a second rope runs beside the one that carries the weight, was a line of it he had never seen before, finer and newer, and counting. It was not counting him. Or not him alone.
+Darrow stood in the last of the light with the letter in one hand, and the script came up on the palm of the other, unasked, the way it came when it liked: pale, and the same with his eyes shut. Beside the lines he knew ran a new one, finer than the rest, the way a second rope runs beside the one that carries the weight. It was counting. It was not counting him. Or not him alone.
 
 In the hall the far lamp burned straight up, and Hollis did not look round from the Grey Cot.
 
@@ -635,11 +639,11 @@ In the hall the far lamp burned straight up, and Hollis did not look round from 
 
 ### Interlude — The Carter
 
-That morning, with Wren up on the gate wall counting her down, Rae Thorne did not count the Steps at all. Counting was for Wren, and for men with lists, and any carter will tell you a road you count gets longer under you. She came down the last of them with her eyes on her feet and her mind on her oxen, who had stood in the snow at the winch-house since the grey cloaks came.
+That morning, with Wren up on the gate wall counting her down, Rae Thorne did not count the Steps at all. Counting was for Wren, and for men with lists, and any carter will tell you a road you count gets longer under you. She came down the Shins at the bottom with her eyes on her feet and her mind on her oxen, who had stood in the snow at the winch-house since the grey cloaks came.
 
-The grey cloak was still sitting on her cart when she came off the last step, with his feet up on the board, and his boots were dry. The winch-brothers' were wet to the knee. There was a stack of the House's wood by the winch-house door, waiting on the cage, and a thread of smoke from the chimney that was some of it, and she did not have to ask which of them had carried it in.
+The grey cloak was still sitting on her cart when she stepped off the bottom step, with his feet up on the board, and his boots were dry. The winch-brothers' were wet to the knee. There was a stack of the House's wood by the winch-house door, waiting on the cage, and some of it was already going up the chimney. She did not have to ask who had carried it in for him.
 
-She did not ask him anything. She went to Hob's head and stood there, with her hand flat on his neck where he could feel it.
+She did not ask the grey cloak anything. She went to Hob's head and stood there, with her hand flat on the ox's neck where he could feel it.
 
 The grey cloak looked at her a while. Then he took his feet down and got off the cart with a little bow, the kind a man makes to a lady at a fair, and she let him think it was manners.
 
@@ -647,7 +651,7 @@ She put the oxen in the winch-house byre, out of the snow. "You stood," she told
 
 Hob would not. The grey cloak had brought a stool to the byre door and sat down on it, and Hob would not eat with him in the door.
 
-The Confessors' own cart stood under the winch-house eave with a cloth thrown over it and not tied, and she read the camp by it, the way she read anyone: by what it ate, and how many days of it it had brought. Flour, with the Coldmere mill's mark on every sack. Six men, to the thaw and past it. Nobody brings flour past the thaw for a paper they mean to read at a gate and take home.
+The Confessors' own cart stood under the winch-house eave with a cloth thrown over it and not tied, and she read the camp by it, the way she read anyone: by what they ate, and how many days of it they had brought. Flour, with the Coldmere mill's mark on every sack. Six men, to the thaw and past it. Nobody brings flour past the thaw for a paper they mean to read at a gate and take home.
 
 At the end of the afternoon the grey cloak got up off his stool with a letter in his hand.
 
@@ -661,4 +665,4 @@ She took it out of his hand and put it inside her shirt, wax inward. He watched 
 
 "I'm going up," she told Hob, who still was not eating. "I'll tell Darrow you wouldn't."
 
-She went out past the stool and started back up the Steps with the letter against her skin. It was a long climb to the dusk bell. She did not look up at the gate wall, and she did not think about the grey, which took her most of the way to the Elbow.
+She went out past the stool and started back up the Steps with the letter against her skin. It was a long climb to the dusk bell. She did not look up at the gate wall, and she did not think about the grey Darrow had ridden at the ford, which took her most of the way to the Elbow.
