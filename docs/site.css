@@ -420,6 +420,50 @@ ol.choice li s{color:var(--faint)}
 .archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
 .archive li:target>details>summary{color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
+/* drawn things: tree glyphs, rank rings, tier seals, tally marks, mood embers, the d20, the keepsake shelf */
+.tree h3{display:flex;align-items:center;gap:8px}
+.tg{flex:none} .tg path,.tg circle,.tg ellipse{fill:none;stroke:var(--brass);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tg .f ellipse{fill:var(--brass);stroke:none}
+.rring{flex:none}
+.rr-bg{fill:none;stroke:var(--raw);stroke-width:4}
+.rr-seg{fill:none;stroke:var(--brass);stroke-width:4}
+.rr-part{fill:none;stroke:var(--brass-dim);stroke-width:4}
+.rr-n{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.02em;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.art.sealed .rr-seg,.art.sealed .rr-part{stroke:var(--t4)} .art.sealed .rr-n{fill:var(--t4-text)}
+.seal{flex:none;vertical-align:middle}
+.sl-wax{fill:var(--plate);stroke:var(--brass);stroke-width:2}
+.sl-rim{fill:none;stroke:var(--brass-dim);stroke-width:1;stroke-dasharray:2 2.5}
+.sl-dev{fill:none;stroke:var(--brass);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.seal.ember .sl-wax,.seal.ember .sl-dev{stroke:var(--ember)}
+.seal-row{display:flex;align-items:center;gap:10px}
+.chron li.sealed-row{grid-template-columns:auto minmax(0,1fr);gap:2px 10px;align-items:center}
+.sealed-row>div{display:grid;gap:2px}
+.tally{vertical-align:-2px;margin-left:3px} .tally path{fill:none;stroke:var(--brass);stroke-width:2;stroke-linecap:round}
+.works-chip{display:inline-flex;align-items:center;gap:2px}
+.mood{vertical-align:-3px;margin-right:4px}
+.md-coal{fill:var(--faint-stroke)} .md-fl{fill:var(--ember)} .md-halo{fill:none;stroke:var(--brass);stroke-width:1;opacity:.8} .md-crack{fill:none;stroke:var(--t6);stroke-width:1.3}
+.mood.civil .md-coal,.mood.warming .md-coal,.mood.fond .md-coal,.mood.loyal .md-coal,.mood.devoted .md-coal{fill:var(--t3)}
+.mood.cold .md-coal,.mood.hostile .md-coal,.mood.an-enemy .md-coal{fill:var(--t5)}
+.d20{flex:none} .d20 path{fill:var(--plate);stroke:var(--brass-dim);stroke-width:1.4;stroke-linejoin:round} .d20 .d-e{fill:none;stroke:var(--brass-dim);stroke-width:1}
+.d20 .d-n{font-family:var(--display);font-weight:700;font-size:12px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.d20.good path{stroke:var(--good)} .d20.warn path{stroke:var(--warn)} .d20.bad path{stroke:var(--bad)}
+.d20.crit .d-n{fill:var(--brass);font-size:13px} .d20.crit path:first-child{fill:rgba(207,166,95,.14)}
+.roll-top .d20{margin-right:2px}
+.shelf{list-style:none;margin:0;padding:0 6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.slot{display:grid;gap:4px;justify-items:center;align-content:start;text-align:center;border:1px solid var(--rule);border-radius:6px 6px 2px 2px;padding:10px 6px 8px;min-height:96px;background:linear-gradient(180deg,var(--plate-hi),var(--plate))}
+.slot.kept{border-color:var(--brass-dim)}
+.slot.pending{border-style:dashed}
+.slot.blank{border-style:dotted;opacity:.45}
+.slot .km{width:40px;height:44px}
+.slot .km .sg-l{fill:none;stroke:var(--brass);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.slot .km .sg-s{fill:none;stroke:var(--brass-dim);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.slot.pending .km .sg-s{stroke:var(--faint-stroke)}
+.slot b{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.1;color:var(--ink)}
+.slot b a{color:var(--brass)}
+.slot .m{font-size:.78rem;color:var(--dim);line-height:1.3}
+.slot .src{font-size:.74rem;color:var(--faint)}
+.shelf-ledge{height:7px;margin:-2px 0 0;border-radius:0 0 4px 4px;background:linear-gradient(180deg,var(--leather),#2a2016);box-shadow:0 3px 6px rgba(0,0,0,.4)}
+@media (max-width:440px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .keeps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .keep{display:grid;gap:3px;border-left:2px solid var(--brass-dim);padding-left:12px}
 .keep b{font-family:var(--display);font-size:1.15rem;color:var(--brass)}

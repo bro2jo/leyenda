@@ -4636,11 +4636,11 @@ def brief_tale(st, args):
         if t.get("late"):
             L.append(f"THE PROJECT CAME LATE (due {t.get('due')}; finished after it): THE LESSER KEEPSAKE, not the full one: "
                      f"{f.get('keepsake_late') or '<none planned: cut the full one down in tales.md: a smaller, plainer thing from this past>'}"
-                     " · the piece ends on it in the page's words, smaller than the tale promised and never explained; the record carries \"keepsake\": {\"name\": …, \"text\": …, \"to\": …} (the engine marks it lesser)")
+                     " · the piece ends on it in the page's words, smaller than the tale promised and never explained; the record carries \"keepsake\": {\"name\": …, \"text\": …, \"to\": …, \"mark\": <its drawing on the shelf: " + ", ".join(R.KEEPSAKE_MARKS) + ">} (the engine marks it lesser)")
             L.append(f"(the full keepsake, which this tale no longer gives: {f.get('keepsake')})")
         else:
             L.append(f"THE KEEPSAKE (this is the last piece; the project finished in its week): {f.get('keepsake') or '<none planned: an object, a name, a song or a saying from this past, to the tale\'s person>'}"
-                     " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>}")
+                     " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>, \"mark\": <its drawing on the shelf: " + ", ".join(R.KEEPSAKE_MARKS) + ">}")
     else:
         L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last" + (f" (due {t['due']}: finished in its week it is the full one, after it the lesser)" if t.get("due") else ""))
     if f.get("never"):
@@ -4702,7 +4702,7 @@ def brief_tale(st, args):
           "codex": [{"section": "Histories", "name": "<new thing>", "text": "<what it is (Tale N, Piece K)>"}], "lore": [], "threads": [{"id": 0, "how": "plant|touch"}],
           "gm": {"note": "<what the piece did for the tale; what was kept off the page>", "next_must_know": "<what the next piece must honour>"}}
     if k == t["pieces"]:
-        sk["keepsake"] = {"name": "<the thing, the name, the song or the saying>", "text": "<one line, the page's words>", "to": who or "<character id>"}
+        sk["keepsake"] = {"name": "<the thing, the name, the song or the saying>", "text": "<one line, the page's words>", "to": who or "<character id>", "mark": "<one of: " + ", ".join(R.KEEPSAKE_MARKS) + ">"}
     L.append(json.dumps(sk, ensure_ascii=False))
     text = "\n".join(L)
     print(text)
@@ -4776,8 +4776,10 @@ def record_tale(args, ev, st, key, n, k):
             probs.append('the last piece carries the keepsake: "keepsake": {"name": …, "text": <one line, the page\'s words>, "to": <character id>}')
         elif ks.get("to") not in char_ids:
             probs.append(f"keepsake.to {ks.get('to')!r} is not a character id")
-        elif set(ks) - {"name", "text", "to", "lesser"}:
-            probs.append("keepsake carries name, text and to only")
+        elif set(ks) - {"name", "text", "to", "lesser", "mark"}:
+            probs.append("keepsake carries name, text, to and an optional mark only")
+        elif ks.get("mark") and ks["mark"] not in R.KEEPSAKE_MARKS:
+            probs.append(f"keepsake.mark {ks['mark']!r} is not one the site can draw ({', '.join(R.KEEPSAKE_MARKS)})")
         else:
             ks = {k_: v for k_, v in ks.items() if k_ != "lesser"}
             if t.get("late"):
@@ -4857,6 +4859,8 @@ def record_tale(args, ev, st, key, n, k):
         sys.exit(r.returncode)
     if k >= t["pieces"]:
         print(f"the tale is told in full; its keepsake goes on {ks['to']}'s page with the build. next: `python3 engine/darrow.py ship -m \"…\"`")
+    elif t["tasks_done"] > k:
+        print(f"piece {k + 1} is owed too (task {k + 1} of {t['project']} is reported): `saga.py brief --tale` next, then `darrow.py ship`")
     else:
         print(f"piece {k + 1} waits for task {k + 1} of {t['project']}. next: `python3 engine/darrow.py ship -m \"…\"`")
 

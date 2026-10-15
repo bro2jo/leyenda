@@ -674,7 +674,118 @@ def svg_mark(mark):
     if mark == "wheel":
         return ('<circle cx="50" cy="82" r="14" class="sg-l"/><circle cx="50" cy="82" r="3" class="sg-l"/>'
                 '<path d="M50 68 L50 96 M36 82 L64 82 M40 72 L60 92 M60 72 L40 92" class="sg-s"/>')
+    if mark == "bell":
+        return '<path d="M50 64 C41 66 41 78 38 88 L62 88 C59 78 59 66 50 64 Z" class="sg-l"/><path d="M45 92 a5 5 0 0 0 10 0" class="sg-l"/><path d="M50 60 L50 64" class="sg-l"/>'
+    if mark == "hand":
+        return '<path d="M41 96 L41 78 M47 96 L47 70 M53 96 L53 68 M59 96 L59 74 M41 96 C41 101 59 101 59 96 M41 80 L35 86 L41 94" class="sg-l"/>'
+    if mark == "word":
+        return '<path d="M35 70 L65 70 L65 88 L48 88 L42 95 L42 88 L35 88 Z" class="sg-l"/><path d="M41 77 L59 77 M41 82 L54 82" class="sg-s"/>'
+    if mark == "cord":
+        return '<path d="M37 82 C37 70 63 70 63 82 C63 94 37 94 37 82 Z" class="sg-l"/><path d="M44 73 C51 79 51 85 44 91 M56 73 C49 79 49 85 56 91" class="sg-s"/>'
+    if mark == "coin":
+        return '<circle cx="50" cy="82" r="13" class="sg-l"/><circle cx="50" cy="82" r="7" class="sg-s"/><path d="M50 75 L50 89" class="sg-s"/>'
     return ""
+
+
+SHELF_MARKS = (MARKS - {"none"}) | {"bell", "hand", "word", "cord", "coin"}  # a keepsake's drawing on the shelf (records.py → KEEPSAKE_MARKS names the same set)
+TIER_SEAL = {"Triumph": "triumph", "Hard-won": "hardwon", "Costly": "costly", "Setback": "setback"}
+
+
+def svg_tree(tree, size=22):
+    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a knot, an eye, a thrown disc."""
+    body = {
+        "Blade": '<path d="M12 2.5 L14.2 6 L14.2 15.5 L9.8 15.5 L9.8 6 Z M6.5 15.8 L17.5 15.8 M12 16 L12 20.2"/><circle cx="12" cy="21.4" r="1.2"/>',
+        "Footing": '<g class="f"><ellipse cx="8" cy="13.2" rx="2.9" ry="3.6"/><ellipse cx="8" cy="19.6" rx="2.1" ry="1.9"/><ellipse cx="16" cy="5.7" rx="2.9" ry="3.6"/><ellipse cx="16" cy="12.1" rx="2.1" ry="1.9"/></g>',
+        "Breath": '<path d="M4 8 H13.5 a2.5 2.5 0 1 0 -2.5 -2.5 M4 13 H17.5 a2.5 2.5 0 1 1 -2.5 2.5 M4 18 H10.5 a2 2 0 1 0 -2 -2"/>',
+        "Binding": '<path d="M2 17 C6.5 17 7.5 5 12.5 5 C18.5 5 18.5 13.5 12.5 13.5 C8 13.5 9 17 22 17"/>',
+        "Insight": '<path d="M3 12 C8 5 16 5 21 12 C16 19 8 19 3 12 Z"/><circle cx="12" cy="12" r="3"/>',
+        "Sport": '<ellipse cx="13.5" cy="11.5" rx="7.5" ry="3"/><path d="M3 16 L8 15 M3 19.5 L10 17.5"/>',
+    }.get(tree, '<circle cx="12" cy="12" r="7"/>')
+    return f'<svg class="tg" viewBox="0 0 24 24" width="{size}" height="{size}" aria-hidden="true">{body}</svg>'
+
+
+def rank_ring(rank, n, frac=0.0, label="", size=32):
+    """An Art's rank as a ring of n segments: the filled ones its rank, the next one filling with practice; the numeral inside."""
+    import math
+    r, c = 14, 18
+    circ = 2 * math.pi * r
+    step, gap = circ / max(n, 1), 3.0
+    segs = [f'<circle class="rr-bg" cx="{c}" cy="{c}" r="{r}"/>']
+    for i in range(n):
+        if i < rank:
+            L, cls = step - gap, "rr-seg"
+        elif i == rank and frac > 0:
+            L, cls = max(0.0, (step - gap) * min(frac, 1.0)), "rr-part"
+        else:
+            continue
+        segs.append(f'<circle class="{cls}" cx="{c}" cy="{c}" r="{r}" stroke-dasharray="{L:.2f} {circ - L:.2f}" stroke-dashoffset="{-i * step:.2f}" transform="rotate(-90 {c} {c})"/>')
+    num = f'<text class="rr-n" x="{c}" y="{c + 0.5}">{roman(rank) if rank else "·"}</text>'
+    return f'<svg class="rring" viewBox="0 0 36 36" width="{size}" height="{size}" role="img" aria-label="{esc(label or f"rank {rank} of {n}")}">{"".join(segs)}{num}</svg>'
+
+
+def svg_seal(tier, size=44):
+    """A chapter's tier as a wax seal: a sunburst (Triumph), a notched sword (Hard-won), a tipped balance (Costly), a cracked ring (Setback)."""
+    kind = TIER_SEAL.get(tier)
+    if not kind:
+        return ""
+    dev = {
+        "triumph": '<circle cx="24" cy="24" r="4.5"/><path d="M24 8 L24 14 M24 34 L24 40 M8 24 L14 24 M34 24 L40 24 M12.7 12.7 L17 17 M31 31 L35.3 35.3 M35.3 12.7 L31 17 M17 31 L12.7 35.3"/>',
+        "hardwon": '<path d="M24 9 L24 31 M17 31 L31 31 M24 31 L24 38 M20.5 13.5 L24 9 L27.5 13.5 M24 20 L27 23"/>',
+        "costly": '<path d="M24 11 L24 37 M19 37 L29 37 M12 20 L36 16 M12 20 L8 29 L16 29 Z M36 16 L32 25 L40 25 Z"/>',
+        "setback": '<path d="M15 19 L24 29 L33 19"/><path d="M24 6 L22 11 L25.5 14.5"/>',
+    }[kind]
+    cls = "ember" if kind in ("costly", "setback") else ""
+    return (f'<svg class="seal {kind} {cls}" viewBox="0 0 48 48" width="{size}" height="{size}" role="img" aria-label="{esc(TIER_DONE.get(tier, tier))}">'
+            f'<circle class="sl-wax" cx="24" cy="24" r="21"/><circle class="sl-rim" cx="24" cy="24" r="17.5"/><g class="sl-dev">{dev}</g></svg>')
+
+
+def tally(n, size=18):
+    """n strokes in fives: four uprights and a strike through them."""
+    n = max(0, int(n or 0))
+    if not n:
+        return ""
+    groups, rem = divmod(n, 5)
+    w = groups * 22 + (rem * 5 + 2 if rem else 0) + 2
+    parts, x = [], 2
+    for _ in range(groups):
+        parts.append(f'<path d="M{x} 2 V18 M{x + 5} 2 V18 M{x + 10} 2 V18 M{x + 15} 2 V18 M{x - 2} 16 L{x + 18} 4"/>')
+        x += 22
+    for i in range(rem):
+        parts.append(f'<path d="M{x + i * 5} 2 V18"/>')
+    return f'<svg class="tally" viewBox="0 0 {w} 20" width="{w * size / 20:.0f}" height="{size}" role="img" aria-label="{n} finished">{"".join(parts)}</svg>'
+
+
+MOOD_FLAMES = {"devoted": 3, "loyal": 3, "fond": 2, "warming": 1, "civil": 0, "wary": 0, "cold": 0, "hostile": 0, "an enemy": 0}
+
+
+def mood_mark(word, size=16):
+    """A companion's regard as an ember: the coal lit or cold, a tongue of flame per degree of warmth, a halo when devoted."""
+    w = str(word or "")
+    flames = MOOD_FLAMES.get(w, 0)
+    band = w.replace(" ", "-")
+    xs = {1: [10], 2: [7.5, 12.5], 3: [5.5, 10, 14.5]}.get(flames, [])
+    tongues = "".join(f'<path class="md-fl" d="M{x} 14 C{x - 2.5} 10 {x - 1} 8 {x} 3 C{x + 1} 8 {x + 2.5} 10 {x} 14 Z"/>' for x in xs)
+    halo = '<circle class="md-halo" cx="10" cy="13" r="8.5"/>' if w == "devoted" else ""
+    crack = '<path class="md-crack" d="M7 15 L10 11 L12.5 15.5"/>' if w in ("hostile", "an enemy") else ""
+    return (f'<svg class="mood {band}" viewBox="0 0 20 20" width="{size}" height="{size}" role="img" aria-label="{esc(w)}">'
+            f'{halo}<ellipse class="md-coal" cx="10" cy="16" rx="7" ry="2.6"/>{tongues}{crack}</svg>')
+
+
+def d20_glyph(nat, result="", size=32):
+    """A twenty-sided die with the number it showed; coloured by the outcome, lit for a natural twenty or one."""
+    try:
+        n = int(str(nat).split("/")[0])
+    except (TypeError, ValueError):
+        n = None
+    res = str(result or "").lower()
+    cls = "good" if "success" in res else "warn" if "partial" in res else "bad" if "fail" in res else ""
+    if n in (20, 1):
+        cls += " crit"
+    num = f'<text class="d-n" x="16" y="17.5">{n}</text>' if n is not None else ""
+    return (f'<svg class="d20 {cls}" viewBox="0 0 32 32" width="{size}" height="{size}" role="img" aria-label="d20 {n if n is not None else ""}">'
+            '<path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z"/><path d="M16 9 L25 22 L7 22 Z"/>'
+            '<path d="M16 2 L16 9 M28 9 L25 22 M4 9 L7 22 M28 23 L25 22 M4 23 L7 22 M16 30 L16 22" class="d-e"/>'
+            f'{num}</svg>')
 
 
 def sigil(faction, mark, size=64, cls="", label=""):
@@ -1284,6 +1395,8 @@ class Site:
                     problem(f"world.json keepsakes[{i}]: missing {k}")
             if (str(kp.get("tale")), str(kp.get("piece"))) not in self.registry:
                 problem(f"world.json keepsakes[{i}]: {kp.get('tale')} {kp.get('piece')} is not a piece of a tale on the page")
+            if kp.get("mark") and kp["mark"] not in SHELF_MARKS:
+                problem(f"world.json keepsakes[{i}]: mark {kp.get('mark')!r} is not one the shelf can draw ({', '.join(sorted(SHELF_MARKS))})")
         self.keepsakes = keeps
         tales = w.get("tales")
         if tales is None:
@@ -1559,7 +1672,10 @@ class Site:
                     lines += f'<p class="song-cue">{cue}</p>'
                 out.append(f"<blockquote>{lines}</blockquote>")
             elif kind == "dice":
-                out.append(f'<div class="dice"><span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>')
+                m_nat = re.search(r"d20\s+\*{0,2}(\d+)(?:/(\d+))?", b[2])
+                m_res = re.search(r"\*?(Success|Failure|Partial[^*—]*)\*?", b[2])
+                die = d20_glyph(m_nat.group(1), m_res.group(1) if m_res else "") if m_nat else ""
+                out.append(f'<div class="dice">{die}<span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>')
             elif kind == "choice-h":
                 out.append(f'<h3 class="choice-h">{esc(b[1])}</h3>')
             elif kind == "ol":
@@ -1592,6 +1708,9 @@ class Site:
         if ch["book"]:
             head.append(f'<p class="book-line">{esc(ch["book"])}</p>')
         head.append(f'<h1 class="ch-title"><span class="lbl">{esc(ch["label"])}</span>{esc(ch["title"])}</h1>')
+        tier_row = next((r for r in self.chapters_csv if str(r.get("chapter")) == str(ch["number"])), None) if ch["number"] else None
+        if tier_row and tier_row.get("tier") in TIER_SEAL:
+            head.append(f'<div class="seal-row">{svg_seal(tier_row["tier"], 44)}<span class="lbl">{esc(TIER_DONE.get(tier_row["tier"], tier_row["tier"]))}</span></div>')
         recap = (self.world.get("recaps") or {}).get(ch["slug"])
         if recap:  # the reader's reminder, under the title and before the chapter's own first words
             head.append(f'<aside class="previously"><span class="lbl">Previously</span><p>{esc(recap)}</p></aside>')
@@ -1670,8 +1789,10 @@ class Site:
             n_bt = sum(1 for s in ch["scenes"] if s.get("between"))
             n_sc = len(ch["scenes"]) - n_bt
             count = "no scene yet" if ch["empty"] else (f'{n_sc} scene{"s" if n_sc != 1 else ""}' + (f' · {n_bt} between' if n_bt else "") + f' · about {ch["words"]:,} words')
+            tier_row = next((r for r in self.chapters_csv if str(r.get("chapter")) == str(ch["number"])), None) if ch["number"] else None
+            seal = (svg_seal(tier_row["tier"], 22) + " ") if tier_row and tier_row.get("tier") in TIER_SEAL else ""
             items.append(f'<li class="{"now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
-                         f'<span class="m num">{count}{" · now" if now else ""}</span>'
+                         f'<span class="m num">{seal}{count}{" · now" if now else ""}</span>'
                          f'<ul class="scenes">{scenes}</ul></li>')
         first = self.chapters[0] if self.chapters else None
         start = (f'<p class="m">Or <a href="{rel}chronicle/{first["slug"]}.html">start from the beginning</a>: '
@@ -1767,6 +1888,31 @@ class Site:
         hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
         return f'<section class="plate">{hero}{row}<p class="fine">{FINE_PRINT}</p></section>'
 
+    def shelf_html(self, c, rel):
+        """A character's keepsakes as a shelf: a slot per keepsake with its mark, a dashed slot per tale of theirs still being told,
+        and blank slots to fill the row, so the next one is in view before it is earned. Returns (html, kept, pending)."""
+        kept = [kp for kp in getattr(self, "keepsakes", []) or [] if kp.get("to") == c["id"]]
+        done_tales = {kp.get("tale") for kp in kept}
+        pending = [t for t in self.tales if (self.tale_state.get(t["code"]) or {}).get("of") == c["id"] and t["code"] not in done_tales
+                   and not (self.tale_state.get(t["code"]) or {}).get("done")]
+        slots = []
+        for kp in kept:
+            mark = kp.get("mark") or "star"
+            src = self.scene_ref({"chapter": kp["tale"], "scene": kp["piece"]}, rel)
+            slots.append(f'<li class="slot kept"><svg class="km" viewBox="28 56 44 48" aria-hidden="true">{svg_mark(mark)}</svg>'
+                         f'<b>{esc(kp["name"])}</b><p class="m">{esc(kp["text"])}</p><span class="src">{src}</span></li>')
+        for t in pending:
+            stt = self.tale_state.get(t["code"]) or {}
+            slots.append(f'<li class="slot pending"><svg class="km" viewBox="28 56 44 48" aria-hidden="true"><circle cx="50" cy="82" r="12" class="sg-s" stroke-dasharray="4 4"/></svg>'
+                         f'<b><a href="{rel}tales/{t["slug"]}.html">{esc(t["label"])}</a></b><p class="m">{esc(t["title"])} · {stt.get("told", 0)} of {stt.get("pieces", "?")} told</p></li>')
+        n = len(slots)
+        width = max(4, -(-n // 4) * 4)
+        slots += ['<li class="slot blank" aria-hidden="true"></li>'] * (width - n)
+        html = f'<ul class="shelf">{"".join(slots)}</ul><div class="shelf-ledge" aria-hidden="true"></div>'
+        if not kept and not pending:
+            html += '<p class="hint">The shelf is bare. What the tales leave him goes here.</p>'
+        return html, len(kept), len(pending)
+
     def appearances_html(self, c, rel):
         """(label, html): the scenes a character is in, grouped under their chapter; a scene they are only named in is marked."""
         groups, n_present, n_named = {}, 0, 0
@@ -1811,7 +1957,7 @@ class Site:
         comp = (self.world.get("companions") or {}).get(c["id"].split("-")[0]) if c["id"] != "darrow" else None
         if comp and "approval" in comp:
             a = int(comp["approval"])
-            rels.append(f'<li class="rel regard"><div class="rel-top"><b>Toward Darrow</b><span class="lbl">{esc(approval_word(a))}</span></div>'
+            rels.append(f'<li class="rel regard"><div class="rel-top"><b>Toward Darrow</b><span class="lbl">{mood_mark(approval_word(a))}{esc(approval_word(a))}</span></div>'
                         f'{bar(a + 100, 200, "Regard for Darrow", "approval", text=approval_word(a), quiet=True)}</li>')
         for rr in c.get("relationships") or []:
             to = rr.get("to", "")
@@ -1828,12 +1974,10 @@ class Site:
         out.append(dict(key="facts", title="Known facts", meta=str(len(facts)),
                         html=details(f"What the page has shown ({len(facts)})", fl) if facts else '<p class="empty">Nothing yet.</p>',
                         panel_html=fl if facts else '<p class="empty">Nothing yet.</p>'))
-        keeps = [kp for kp in getattr(self, "keepsakes", []) or [] if kp.get("to") == c["id"]]
-        if keeps:
-            rows = "".join(f'<li class="keep"><b>{esc(kp["name"])}</b><p class="prose">{esc(kp["text"])}</p>'
-                           f'<span class="src">From {self.scene_ref({"chapter": kp["tale"], "scene": kp["piece"]}, rel)}</span></li>' for kp in keeps)
-            out.append(dict(key="keepsakes", title="What he keeps" if c["id"] == "darrow" else "Keepsakes", meta=str(len(keeps)),
-                            html=f'<ul class="keeps">{rows}</ul>'))
+        shelf, n_kept, n_pending = self.shelf_html(c, rel)
+        if n_kept or n_pending or c["id"] == "darrow":
+            meta = (f"{n_kept} kept" if n_kept else "nothing yet") + (f" · {n_pending} to come" if n_pending else "")
+            out.append(dict(key="keepsakes", title="What he keeps" if c["id"] == "darrow" else "Keepsakes", meta=meta, html=shelf))
         label, apps = self.appearances_html(c, rel)
         out.append(dict(key="appearances", title="Appearances", label=label, meta=esc(label), html=apps))
         return out
@@ -1918,7 +2062,8 @@ class Site:
         for art in d["arts"]:
             trees[art["tree"]].append(art)
         order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Sport"]
-        n_pips = len(rules.get("art_ranks") or [1, 6, 15, 30, 50])
+        thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
+        n_pips = len(thresholds)
         tree_html, n_learned, n_sealed = [], 0, 0
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
             rows = []
@@ -1933,16 +2078,20 @@ class Site:
                     st = f'<span class="brass">rank {roman(art["rank"])}</span>' + (f' <span class="dim num">· next at {art["next_at"]} days ({art["practice"]} so far)</span>' if art.get("next_at") else "")
                 else:
                     st = '<span class="dim">not yet learned</span>'
-                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}"><div class="art-top"><b>{esc(art["name"])}</b>{pips(rank, n_pips, "rank")}</div>'
+                prev = thresholds[rank - 1] if rank else 0
+                nxt = art.get("next_at")
+                frac = (art["practice"] - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
+                ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}")
+                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
                             f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></li>')
-            tree_html.append(f'<div class="tree"><h3>{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
+            tree_html.append(f'<div class="tree"><h3>{svg_tree(tree)}{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
         chap_rows = []
         titles = {str(ch["number"]): ch for ch in self.chapters}
         closed = sorted(self.chapters_csv, key=lambda r: int(r["chapter"]))
         for r in closed:
             ch = titles.get(r["chapter"])
             t = f'<a href="{rel}chronicle/{ch["slug"]}.html">{esc(ch["label"])} — {esc(ch["title"])}</a>' if ch else f"Chapter {esc(r['chapter'])}"
-            chap_rows.append(f'<li><b>{t}</b><span class="m">{esc(TIER_DONE.get(r["tier"], r["tier"]))}</span></li>')
+            chap_rows.append(f'<li class="sealed-row">{svg_seal(r["tier"], 28)}<div><b>{t}</b><span class="m">{esc(TIER_DONE.get(r["tier"], r["tier"]))}</span></div></li>')
         sheet = [("arts", "Arts", f"{n_learned} learned · {n_sealed} sealed", "".join(tree_html))]
         if self.bearing:
             sheet.append(("bearing", "Bearing", esc(self.bearing_summary()),
@@ -1966,7 +2115,7 @@ class Site:
         """The works: how many he has finished, once there is one. The count is the sheet's; what they were is not the page's."""
         w = self.darrow.get("works") or {}
         n = as_int(w.get("finished")) or 0
-        return chip(f"Works · {n} finished", "brass") if n else ""
+        return f'<span class="chip brass works-chip">Works · {n} finished {tally(n, 13)}</span>' if n else ""
 
     def knots_html(self, d, rel):
         tied = set(d.get("knots_tied") or [])
@@ -1991,7 +2140,7 @@ class Site:
             problem("saga/characters/darrow.json is missing")
             return
         sheet = "".join(panel(t, m, h, k) for k, t, m, h in self.darrow_panels(rel))
-        first = ("now", "story")  # on his own page, where he stands comes before what he looks like
+        first = ("now", "story", "keepsakes")  # on his own page, where he stands comes before what he looks like, and what he keeps right after
         parts = sorted(self.character_sections(c, rel), key=lambda x: (x["key"] not in first, first.index(x["key"]) if x["key"] in first else 0))
         story = "".join(panel(x["title"], x.get("meta", ""), x.get("panel_html", x["html"]), x["key"]) for x in parts)
         binding = sec("The Binding", f"Knots tied {roman(d['knots_count'])} of {roman(self.n_knots)}", self.knots_html(d, rel), hid="binding")
@@ -2087,7 +2236,7 @@ class Site:
             res = r.get("result", "")
             cls = "good" if "SUCCESS" in res else ("warn" if "PARTIAL" in res else "bad")
             where = self.roll_where(r.get("label", ""), rel)
-            rows.append(f'<li class="roll"><div class="roll-top"><span class="dice-tag">{esc(r.get("stat", "").upper() or "FLAT")} · DC {esc(r.get("dc"))}</span>'
+            rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(r.get("d20"), res)}<span class="dice-tag">{esc(r.get("stat", "").upper() or "FLAT")} · DC {esc(r.get("dc"))}</span>'
                         f'{badge(res.title(), cls)}</div>'
                         f'<p class="roll-math num">d20 <b>{esc(d20)}</b> {esc(r.get("mods", ""))} = <b>{esc(r.get("total"))}</b></p>'
                         + (f'<p class="roll-where">{where}</p>' if where else "") + '</li>')
@@ -2163,7 +2312,7 @@ class Site:
             sg = c.get("sigil") or {}
             mood = approval_word(int(comp["approval"])) if "approval" in comp else "at his side"
             comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{self.avatar(c, rel, 48, "sm") or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 48)}'
-                         f'<div><div class="comp-top"><b>{esc(c["name"])}</b><span class="lbl">{esc(mood)}</span></div><span class="m">{esc(c.get("last_seen_doing", ""))}</span></div></a>')
+                         f'<div><div class="comp-top"><b>{esc(c["name"])}</b><span class="lbl">{mood_mark(mood)}{esc(mood)}</span></div><span class="m">{esc(c.get("last_seen_doing", ""))}</span></div></a>')
         companions = sec("With him", "", f'<div class="comps">{"".join(comps)}</div>' if comps else '<p class="empty">No one yet.</p>')
         a = d["attributes"]
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
@@ -2351,7 +2500,7 @@ Visited Arts Learned Sealed Banked Tied Untied Opens Book Knots Binding Reckonin
 Hollowed Missing Unknown Major Minor Earned Grace Ember Unlit Fire Might Vigor Finesse Resolve Rank Ranks Temper Days Days Keeper Prior
 Runner Senior Mender Menders Captain Knight Youngest Warrior Clan Clans Keeper Spoiler Spoilers
 Bearing Leans Named Even Epithet Small Answered Himself Interlude Waiting Songs Verses Histories Annals
-Tales Tale Piece Pieces Keepsakes Keepsake Works Told Kept All""".split()
+Tales Tale Piece Pieces Keepsakes Keepsake Works Told Kept All Shelf Finished Devoted Loyal Fond Warming Civil Wary Cold Hostile Enemy""".split()
 STOP = set("""Seventh Present Former Scale Mid Magic Violence Tone Praise Speaks Talks Grounded Grants Grew Fights Families Companies Customs Geography Naming Peoples Recurring Reigning Surpassing Unwind Shatter Hinted Bible Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Wits Voices Signature Somber Stiff Steam Kennel Cripples Wager Magic
 About After Again Against Already Always Among Anyone Anything Around Because Before Behind Below Between Beyond
 Book Books Both Chapter Chapters Choice Choices Claude Core Could Darrow Does Each Early Either Ember End Every Everyone Expandable Expandables
@@ -2994,6 +3143,50 @@ ol.choice li s{color:var(--faint)}
 .archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
 .archive li:target>details>summary{color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
+/* drawn things: tree glyphs, rank rings, tier seals, tally marks, mood embers, the d20, the keepsake shelf */
+.tree h3{display:flex;align-items:center;gap:8px}
+.tg{flex:none} .tg path,.tg circle,.tg ellipse{fill:none;stroke:var(--brass);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tg .f ellipse{fill:var(--brass);stroke:none}
+.rring{flex:none}
+.rr-bg{fill:none;stroke:var(--raw);stroke-width:4}
+.rr-seg{fill:none;stroke:var(--brass);stroke-width:4}
+.rr-part{fill:none;stroke:var(--brass-dim);stroke-width:4}
+.rr-n{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.02em;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.art.sealed .rr-seg,.art.sealed .rr-part{stroke:var(--t4)} .art.sealed .rr-n{fill:var(--t4-text)}
+.seal{flex:none;vertical-align:middle}
+.sl-wax{fill:var(--plate);stroke:var(--brass);stroke-width:2}
+.sl-rim{fill:none;stroke:var(--brass-dim);stroke-width:1;stroke-dasharray:2 2.5}
+.sl-dev{fill:none;stroke:var(--brass);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.seal.ember .sl-wax,.seal.ember .sl-dev{stroke:var(--ember)}
+.seal-row{display:flex;align-items:center;gap:10px}
+.chron li.sealed-row{grid-template-columns:auto minmax(0,1fr);gap:2px 10px;align-items:center}
+.sealed-row>div{display:grid;gap:2px}
+.tally{vertical-align:-2px;margin-left:3px} .tally path{fill:none;stroke:var(--brass);stroke-width:2;stroke-linecap:round}
+.works-chip{display:inline-flex;align-items:center;gap:2px}
+.mood{vertical-align:-3px;margin-right:4px}
+.md-coal{fill:var(--faint-stroke)} .md-fl{fill:var(--ember)} .md-halo{fill:none;stroke:var(--brass);stroke-width:1;opacity:.8} .md-crack{fill:none;stroke:var(--t6);stroke-width:1.3}
+.mood.civil .md-coal,.mood.warming .md-coal,.mood.fond .md-coal,.mood.loyal .md-coal,.mood.devoted .md-coal{fill:var(--t3)}
+.mood.cold .md-coal,.mood.hostile .md-coal,.mood.an-enemy .md-coal{fill:var(--t5)}
+.d20{flex:none} .d20 path{fill:var(--plate);stroke:var(--brass-dim);stroke-width:1.4;stroke-linejoin:round} .d20 .d-e{fill:none;stroke:var(--brass-dim);stroke-width:1}
+.d20 .d-n{font-family:var(--display);font-weight:700;font-size:12px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.d20.good path{stroke:var(--good)} .d20.warn path{stroke:var(--warn)} .d20.bad path{stroke:var(--bad)}
+.d20.crit .d-n{fill:var(--brass);font-size:13px} .d20.crit path:first-child{fill:rgba(207,166,95,.14)}
+.roll-top .d20{margin-right:2px}
+.shelf{list-style:none;margin:0;padding:0 6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.slot{display:grid;gap:4px;justify-items:center;align-content:start;text-align:center;border:1px solid var(--rule);border-radius:6px 6px 2px 2px;padding:10px 6px 8px;min-height:96px;background:linear-gradient(180deg,var(--plate-hi),var(--plate))}
+.slot.kept{border-color:var(--brass-dim)}
+.slot.pending{border-style:dashed}
+.slot.blank{border-style:dotted;opacity:.45}
+.slot .km{width:40px;height:44px}
+.slot .km .sg-l{fill:none;stroke:var(--brass);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.slot .km .sg-s{fill:none;stroke:var(--brass-dim);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.slot.pending .km .sg-s{stroke:var(--faint-stroke)}
+.slot b{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.1;color:var(--ink)}
+.slot b a{color:var(--brass)}
+.slot .m{font-size:.78rem;color:var(--dim);line-height:1.3}
+.slot .src{font-size:.74rem;color:var(--faint)}
+.shelf-ledge{height:7px;margin:-2px 0 0;border-radius:0 0 4px 4px;background:linear-gradient(180deg,var(--leather),#2a2016);box-shadow:0 3px 6px rgba(0,0,0,.4)}
+@media (max-width:440px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .keeps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .keep{display:grid;gap:3px;border-left:2px solid var(--brass-dim);padding-left:12px}
 .keep b{font-family:var(--display);font-size:1.15rem;color:var(--brass)}

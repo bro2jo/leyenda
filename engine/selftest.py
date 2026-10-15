@@ -321,7 +321,10 @@ def main():
         p3 = {"key": f"{tid1}:p3", "last_beat": "He answered to the name.", "people": [{"id": "darrow", "did": "Answered to the name the Ninth gave him."}]}
         code, out = run(saga + ["record", json.dumps(p3, ensure_ascii=False)], tmp, expect=1)
         check("keepsake" in out, "the last piece without its keepsake is refused")
-        p3["keepsake"] = {"name": "Quickstep", "text": "The name the Ninth gave him, for the feet.", "to": "darrow"}
+        p3["keepsake"] = {"name": "Quickstep", "text": "The name the Ninth gave him, for the feet.", "to": "darrow", "mark": "saddle"}
+        code, out = run(saga + ["record", json.dumps(p3, ensure_ascii=False)], tmp, expect=1)
+        check("mark" in out, "a keepsake mark the shelf cannot draw is refused")
+        p3["keepsake"]["mark"] = "word"
         code, out = run(saga + ["record", json.dumps(p3, ensure_ascii=False)], tmp)
         check(code == 0 and "told in full" in out and "ok:" in out, "the last piece records with its keepsake and the tale is told in full", out[-500:])
         world = jload(tmp / "saga/state/world.json")
@@ -336,6 +339,9 @@ def main():
         check(code == 0 and f"{n_tales} tale" in out, "the site builds with the tale", out[-600:])
         page = (tmp / "docs/darrow/index.html").read_text(encoding="utf-8")
         check("Works ·" in page and "What he keeps" in page and "Quickstep" in page, "Darrow's page shows the work and the keepsake")
+        check('class="slot kept"' in page and 'class="tally"' in page and 'class="rring"' in page and 'class="tg"' in page, "Darrow's page draws the shelf, the tally, the rank rings and the tree glyphs")
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import records, build_site; print(set(records.KEEPSAKE_MARKS) == build_site.SHELF_MARKS)"], tmp)
+        check(code == 0 and out.strip().endswith("True"), "the record's keepsake marks and the shelf's are the same set", out[-200:])
         tale_page = tmp / f"docs/tales/{tale.stem}.html"
         check(tale_page.exists() and "Piece 3" in tale_page.read_text(encoding="utf-8"), "the tale has its page")
         # a late project: due the Saturday of the week it opened, finished after it; the lesser keepsake

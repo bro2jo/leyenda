@@ -51,6 +51,9 @@ KINDS = ("prologue", "scene", "between", "interlude", "climax", "choice")
 CODEX_SECTIONS = ("People", "Places and things", "Songs and verses", "Histories", "Sayings")
 GLIMPSE_KINDS = ("house", "overheard", "ledger", "saying", "verse", "body", "weather")
 GLIMPSE_KEEP = 20
+# a keepsake's mark: the small drawing on the shelf (the site draws it; the record names it). The same set as the site's SHELF_MARKS.
+KEEPSAKE_MARKS = ("knot", "horn", "needle", "pencil", "spyglass", "key", "stone", "note", "knife", "quill", "cup", "candle", "star", "wheel",
+                  "bell", "hand", "word", "cord", "coin")
 CHAR_DERIVED = ("first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts", "appearances")
 CHAR_ORDER = ("id", "name", "aliases", "epithet", "tier", "faction", "status", "sigil", "appearance", "portrait", "portrait_alt",
               "portrait_focus", "first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts",
@@ -615,6 +618,7 @@ def tales_state(plan, tale_events=None):
         mine = [e for e in evs if (parse_tale_key(e.get("key", "")) or (None,))[0] == n]
         keeps = [{"name": e["keepsake"].get("name"), "text": e["keepsake"].get("text"), "to": e["keepsake"].get("to"),
                   "tale": tale_id(n), "piece": f"p{parse_tale_key(e['key'])[1]}", "tale_title": title,
+                  **({"mark": e["keepsake"]["mark"]} if e["keepsake"].get("mark") else {}),
                   **({"lesser": True} if e["keepsake"].get("lesser") else {})}
                  for e in mine if isinstance(e.get("keepsake"), dict) and e["keepsake"].get("name")]
         pieces = int(b.get("pieces") or 0)
