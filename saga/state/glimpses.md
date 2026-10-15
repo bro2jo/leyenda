@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-12 · saying · Down the row in the dark, one man tells another to stop counting the west bank. "I'm not," the other says, and turns over, and his cot creaks a long while before it's quiet.
 - 2026-10-12 · ledger · From Wren's ledgers, a page headed Brooms: Owned by the lay brothers: 4. Findable: 2, up from 1. (Underneath, smaller: She has decided not to ask.)
 - 2026-10-13 · house · The feast's leftover crusts sit in a basket by the kitchen door, and for once nobody is taking bets on who gets them. A lay brother passing with the kindling takes one, looks at it, and puts it back.
 - 2026-10-13 · weather · The sky over the Steps has gone the hard, clean blue that comes after snow, and the lay brothers crossing the court squint up at it as if it owes them money.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-14 · ledger · From Wren's ledgers, the margin of a kitchen page: Loaves left, by Cook: thirty-eight. By me: thirty-seven. Cook is eating the evidence.
 - 2026-10-14 · house · Somebody has mended the third step of the kitchen stair. It still creaks, only in a different note now, and the kitchen is divided on whether that is better.
 - 2026-10-15 · weather · The cloud came up the cliff in the night and lies on the Last Hundred like a cat on a step. The gate wall stands above it in hard clear sun, with nothing below but white.
+- 2026-10-15 · overheard · Two lay brothers at the woodpile, agreeing that the carter's oxen are the only creatures on the mountain with any sense. Neither of them has met the oxen.
