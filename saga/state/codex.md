@@ -49,6 +49,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The stretches of the Steps** — The lay brothers' names for the runs of the Thousand Steps, which Wren counts by. From the bottom: the Shins, steep from the winch-house; the Elbow, where the stair goes into the cloud; the Long Reach; and last, below the gate itself, the Last Hundred (Ch 2 Sc 4).
 - **Hob** — The near one of Rae Thorne's two oxen, the slow one; the first of their names she has said, once, unasked (Ch 2 Sc 4).
 - **Dun** — The off one of Rae Thorne's two oxen, beside Hob (Ch 2, Interlude).
+- **Name-the-load** — A carters' game played at every winch on the Holloway: name a load on the rope before it is up, by how it hangs. Rae Thorne plays it; salt sits like a stone (Ch 2, Between).
 
 ## Songs and verses
 

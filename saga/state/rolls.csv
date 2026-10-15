@@ -7,3 +7,4 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-12T19:52:26,ch02-between-4-knucklebones,finesse,11,12,,,-1 finesse,11,SUCCESS,
 2026-10-14T01:03:50,ch02-s3-night-novice,resolve,12,19,,,+0 resolve +2 Warden's Eye II,21,SUCCESS,
 2026-10-14T01:03:53,ch02-s3-kitchen,resolve,11,19,,,+0 resolve +2 The Mender's Patience II,21,SUCCESS,
+2026-10-15T10:08:30,ch02-between-10-name-the-load,resolve,12,5,,,+0 resolve,5,FAILURE,name the load with Rae

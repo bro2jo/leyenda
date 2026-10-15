@@ -712,3 +712,43 @@ Rae ate a spoonful of whatever was in the bowl, as if the matter were settled, w
 "Him most." She put the spoon down. "Read it. Then ask me again, if you still want to."
 
 The novice blew the flour off the page. Under his line, in pencil not yet dry, it said: *Thorne, a load.*
+
+### Between — Name the Load
+
+At first light Darrow was on the gate wall again, because he had not slept and the wall was where his feet went. Rae Thorne came out of the kitchen with her hood up and a heel of bread in her fist, and instead of going to the wicket she came along the wall-walk and stood at the parapet beside him.
+
+Below them the cage was coming up out of the cloud on its rope, a dark box swinging a little on the line, and from the drum at the head of the cliff came the creak of the winch-brothers leaning into the first load of the day.
+
+"What's on it?" she said.
+
+"How would I know?"
+
+"By how it hangs. Name it before it's up. Carters play it at every winch on the Holloway."
+
+"And the stake?"
+
+"Name it, and I'll tell you the other one's name."
+
+"The other ox."
+
+"Aye."
+
+"And if I don't?"
+
+"Then you owe me an aye."
+
+He watched the cage the way he would have watched a column on a far road: the weight in it, how slowly it came back from each swing, what the rope did when it stopped. It came back slow. It sat low on the line, like something that would not shift.
+
+`[RESOLVE · DC 12]` d20 **5** +0 resolve = **5** — *Failure*
+
+"Salt," he said.
+
+"Linen." She bit the bread. "Wet. Salt sits like a stone. That's sitting like a drunk."
+
+The cage came up over the lip and the winch-brothers swung it in, and there it was: bales of linen in sacking, dark with the cloud's wet, steaming a little in the cold.
+
+"One aye," Rae said. "I'll want it some day."
+
+"For what?"
+
+"I'll know when I ask." She finished the bread, dusted her hands on her cloak, and went along the wall-walk to the wicket, and down. Darrow watched her hood go down the Last Hundred and did not count, and when Wren came up behind him with the glass he said "Don't," before she had opened her mouth.

@@ -419,6 +419,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.11",
+      "made": {
+        "chapter": 2,
+        "scene": "between-10",
+        "date": "2026-10-15"
+      },
+      "chose": "Played name-the-load with Rae on the gate wall at first light before she went down, for the other ox name against an aye; named the first load salt, and it was wet linen; owes her one aye; watched her go down without counting and told Wren not to",
+      "now": {
+        "approval": {
+          "rae": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.11a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow owes Rae one aye, lost at name-the-load on the gate wall: she will want it some day and will know when she asks. Fire where she claims it; he gives it, or does not",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

@@ -106,11 +106,18 @@
       "after": "interlude",
       "covers": [],
       "written": "2026-10-15"
+    },
+    {
+      "scene": "between-10",
+      "title": "Name the Load",
+      "after": "interlude",
+      "covers": [],
+      "written": "2026-10-15"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the kitchen, at the bread table, after the night bell",
+    "detail": "the gate wall, at first light, after Rae went down",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -120,7 +127,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "The novice blew the flour off the page. Under his line, in pencil not yet dry, it said: Thorne, a load.",
+  "last_beat": "Darrow watched her hood go down the Last Hundred and did not count, and when Wren came up behind him with the glass he said \"Don't,\" before she had opened her mouth.",
   "companions": {
     "maelis": {
       "approval": 25,
@@ -138,7 +145,7 @@
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
     "rae": {
-      "approval": 4,
+      "approval": 5,
       "present": true,
       "note": "the carter of the last cart (Prologue, revised 10/9) and named in Chapter 1; arrives as a companion when q1.cart stage 3 is written (she stays past the dusk bell); --pending until then"
     }

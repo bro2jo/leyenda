@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-9",
+    "scene": "between-10",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-9"
+    "anchor": "chronicle/02-the-grey-cot.html#between-10"
   },
-  "last_seen_doing": "Read the kitchen's book like a load, called the Captain's bet a light load for a long road, and put her own stake beside his on NOBODY; would not say whose hand the letter came out of.",
-  "now": "In the House for the night; she goes down in the morning. Her stake is in the kitchen's book beside the Captain's on NOBODY: if a cot goes grey before the thaw, she carries the kitchen a load up the Steps on her back. She will not say whose hand the letter came from until he has read it.",
+  "last_seen_doing": "Before going down at first light, played name-the-load with Darrow for her other ox's name against an aye, and won.",
+  "now": "Gone down the Steps at first light to her oxen at the winch-house. Darrow owes her an aye, and she has not said what for.",
   "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart. In the court at dusk she stood at the end of the lay brothers' line while the list was read, and when Darrow's shoulder could not shut the wicket on a third grey cloak, hers went in where his had been and it shut.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -299,6 +299,24 @@
       "chapter": "02",
       "scene": "between-9",
       "evidence": "Read it. Then ask me again, if you still want to."
+    },
+    {
+      "fact": "Carters play name-the-load at every winch on the Holloway: you name a load before it is up, by how it hangs.",
+      "chapter": "02",
+      "scene": "between-10",
+      "evidence": "Carters play it at every winch on the Holloway."
+    },
+    {
+      "fact": "She read the first load as wet linen: salt sits like a stone, that was sitting like a drunk.",
+      "chapter": "02",
+      "scene": "between-10",
+      "evidence": "Salt sits like a stone. That's sitting like a drunk."
+    },
+    {
+      "fact": "She will claim the aye he owes her some day, and will know what for when she asks.",
+      "chapter": "02",
+      "scene": "between-10",
+      "evidence": "I'll know when I ask."
     }
   ],
   "relationships": [
@@ -390,6 +408,10 @@
     {
       "chapter": "02",
       "scene": "between-9"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-10"
     }
   ]
 }
