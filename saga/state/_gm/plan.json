@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 2,
     "beat": "b1.2",
-    "next_scene": 4,
+    "next_scene": 5,
     "stage": "scene",
-    "last_written": "ch02:s3",
+    "last_written": "ch02:interlude",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -99,8 +99,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch02:s4"
       },
       {
         "n": 5,
@@ -121,7 +121,7 @@
           "if_ignored": "Hollis put the heralds' question to a lay brother instead and got the heralds' answer, and sat the rest of the night by the Grey Cot without a word to anyone",
           "status": "waiting"
         },
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -166,7 +166,8 @@
         "challenge": null,
         "invite": null,
         "float": false,
-        "status": "planned"
+        "status": "written",
+        "wrote": "ch02:interlude"
       }
     ],
     "world_moves": [
@@ -227,8 +228,8 @@
       "priority": "required"
     },
     "q1.cart": {
-      "status": "available",
-      "stage": 0,
+      "status": "live",
+      "stage": 1,
       "priority": "optional",
       "gate": "beats.b1_1.status == \"done\""
     },
@@ -279,8 +280,8 @@
       "priority": "floating"
     },
     "rae.tether": {
-      "status": "available",
-      "stage": 0,
+      "status": "live",
+      "stage": 1,
       "priority": "floating",
       "standing": true,
       "stage_gates": {
@@ -388,6 +389,12 @@
         "guile",
         "unsworn"
       ]
+    },
+    "rae": {
+      "prefers": [
+        "banner",
+        "candor"
+      ]
     }
   },
   "companions_to_come": {
@@ -395,14 +402,6 @@
       "note": "the hound in the kennels; snarls at everyone else; appears in q1.kennel or in t1",
       "bond": 5,
       "approval_pending": 0
-    },
-    "rae": {
-      "note": "the carter of the last cart (Prologue, revised 10/9) and named in Chapter 1; arrives as a companion when q1.cart stage 3 is written (she stays past the dusk bell); --pending until then",
-      "prefers": [
-        "banner",
-        "candor"
-      ],
-      "approval_pending": 3
     },
     "ysra": {
       "note": "the Needle of Calden; Book II; a companion only if spared and if she comes over (q3.needle); approval banks here until then",

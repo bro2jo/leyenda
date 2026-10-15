@@ -204,11 +204,13 @@
       "truth": null,
       "feeds": "b1.2 (he names the Hollowing witchcraft and asks for the Mender by title), q1.letters stage 2 (he carries the second letter up), b1.5",
       "status": "open",
-      "who_knows": "The whole House heard it; the reader. Marrant has the Captain's voice and his face at the bars now (c01.5): the demand is personal. What he wants (Maelis) and his plan (b1.2 Benedek, b1.4 Anselm, b1.5 Old Mercy) are GM only; his look at Maelis is thread 7",
-      "note": "the siege's first night; the kitchen's loaves and the feast's bread under his eyes are Ch 2's first world moves",
+      "who_knows": "The whole House heard it; the reader. Marrant has the Captain's voice and his face at the bars now (c01.5): the demand is personal. What he wants (Maelis) and his plan (b1.2 Benedek, b1.4 Anselm, b1.5 Old Mercy) are GM only; his look at Maelis is thread 7. The camp's measure (flour for six to the thaw and past it, out of Coldmere; the House's wood) is Rae's count, said to Darrow on the page (02:s4); a grey cloak keeps the winch-house byre door.",
+      "note": "the siege's first night; the kitchen's loaves and the feast's bread under his eyes are Ch 2's first world moves. 02:s4: the grey cloak on Rae's box got down for her without a word; the camp has flour to the thaw and past it; the first letter came up with Rae.",
       "on_page": [
         "01:climax",
-        "01:choice"
+        "01:choice",
+        "02:s4",
+        "02:interlude"
       ]
     }
   ]

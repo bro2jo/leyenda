@@ -46,6 +46,9 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The Grey Cot** — Benedek's cot, under the far cots' grey blanket: the novices came to carry him to the far cots, Hollis would not let them, and the blanket came to him instead (Ch 2 Sc 3).
 - **The kitchen's book** — the kitchen's wager-ledger, kept on the bread table, the running odds in pencil so they can be rubbed out; it takes a chore before a wick. On the feast it ran on the bread; after the Hollowing it ran on which cot is next, until the Captain bet the ovens on NOBODY (Ch 2 Sc 2, Between 7).
 - **Ember witchcraft** — the Confessor's name for Benedek's Hollowing, given to the lay brothers who carried the feast bread down and carried back up the Steps with the empty baskets: the old curse the Crown burned out of the realm (Ch 2 Sc 3).
+- **Dun** — The off one of Rae Thorne's two oxen, beside Hob (Ch 2, Interlude).
+- **The stretches of the Steps** — The lay brothers' names for the runs of the Thousand Steps, which Wren counts by. From the bottom: the Shins, steep from the winch-house; the Elbow, where the stair goes into the cloud; the Long Reach; and last, below the gate itself, the Last Hundred. At the hundredth step from the top a niche holds Ysolde's lamp, the one light on the Steps at dusk, and the lay brothers will not go below it after dark (Ch 2 Sc 4).
+- **Hob** — The near one of Rae Thorne's two oxen, the slow one; the first of their names she has said, once, unasked (Ch 2 Sc 4).
 
 ## Songs and verses
 

@@ -43,3 +43,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-14#6,2026-10-14,,snack,"Bloom Pop prebiotic soda, strawberry cream (12 oz can)",1 can (12 fl oz),20,0,5,0,0,0,3,90,0,0,0,0,0,0,0,0,label,label photo
 2026-10-14#7,2026-10-14,,dinner,Cheddar cheese slice,"1 slice (~21 g, assumed deli slice)",80,5,0,6.5,0,4,0,130,20,150,0.1,6,0.7,0,0.1,30,estimate,typical pre-sliced cheddar
 2026-10-14#8,2026-10-14,,dinner,"BBQ chicken and bacon pizza, medium (half)","half a medium (4 of 8 slices), assumed regular crust",1040,48,112,42,5,18,24,2400,600,500,7,80,5,4,0.5,100,estimate,chain medium BBQ chicken ~230 kcal/slice + bacon; brand not given
+2026-10-14#9,2026-10-14,,snack,"Kettle-cooked potato chips, jalapeño ranch and sea salt (mixed)","some, assumed ~1.5 oz (42 g) across both flavors",225,3,22,14,2,1.5,1,260,480,10,0.7,26,0.3,4,0,40,estimate,his words: some; typical kettle chips ~150 kcal/oz; brand not given
