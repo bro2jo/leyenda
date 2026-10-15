@@ -47,3 +47,9 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-15#1,2026-10-15,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
 2026-10-15#2,2026-10-15,,breakfast,"Mixed fruit cup (pineapple, grapes, strawberries, blueberries, blackberries, kiwi)","2 cups (~160 g each, from photo)",180,2,44,1,6,0,34,5,500,40,0.8,30,0.3,120,0,60,photo,two deli fruit cups; portion estimated from photo
 2026-10-15#3,2026-10-15,,breakfast,"BBQ chicken and bacon pizza, medium (1 slice, leftover)",1 of 8 slices (assumed last night's medium),260,12,28,10.5,1.2,4.5,6,600,150,125,1.8,20,1.2,1,0.1,25,estimate,1/4 of last night's half-pizza estimate
+2026-10-15#4,2026-10-15,,lunch,"BBQ chicken and bacon pizza, medium (leftover, 3 slices)",the other half minus the breakfast slice: 3 of 8 slices,780,36,84,31.5,3.6,13.5,18,1800,450,375,5.4,60,3.6,3,0.3,75,estimate,3 x the per-slice estimate (10/14)
+2026-10-15#5,2026-10-15,,dinner,"Chick-fil-A Waffle Potato Fries, large",1 large,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,"web numbers, sodium unconfirmed"
+2026-10-15#6,2026-10-15,,dinner,"Chick-fil-A Sauce, dipping packet",1.5 packets (with the fries),210,0,9,19.5,0,3,9,255,15,8,0,1.5,0,0,0,1350,library,1.5 x packet
+2026-10-15#7,2026-10-15,,dinner,"Chick-fil-A Grilled Nuggets, 12 ct",12 nuggets,200,38,2,4.5,0,1,1,660,450,15,0.8,45,1.5,0,0.2,40,library,web numbers
+2026-10-15#8,2026-10-15,,dinner,"Chick-fil-A Sauce, dipping packet",2 packets (with the nuggets; assumed Chick-fil-A Sauce),280,0,12,26,0,4,12,340,20,10,0,2,0,0,0,1800,library+estimate,sauce type not stated; assumed Chick-fil-A Sauce
+2026-10-15#9,2026-10-15,,dinner,Chick-fil-A Chocolate Milkshake,1 shake,600,12,93,22,1,14,90,350,700,400,1.5,50,1.5,1,1.5,50,library,web numbers (official serving)
