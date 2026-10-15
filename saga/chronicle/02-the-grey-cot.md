@@ -666,3 +666,49 @@ She took it out of his hand and put it inside her shirt, wax inward. He watched 
 "I'm going up," she told Hob, who still was not eating. "I'll tell Darrow you wouldn't."
 
 She went out past the stool and started back up the Steps with the letter against her skin. It was a long climb to the dusk bell. She did not look up at the gate wall, and she did not think about the grey Darrow had ridden at the ford, which took her most of the way to the Elbow.
+
+### Between — Against the Ovens
+
+Darrow could not sleep on the letter, and after the night bell he stopped trying. There was light under the kitchen door at the end of the hall and voices behind it, and he went toward them the slow way.
+
+Rae Thorne sat at the bread table with a bowl in front of her and the kitchen's book open beside it. The novice with flour to the elbows stood at her shoulder with the pencil, showing her down the column of cots the way a stable-girl shows off a horse.
+
+"That's the Captain. Five. Ser Garrow, four, because he won't leave it. The kitchen, twenty."
+
+Rae ran a finger down the prices and did not hurry. She stopped at the foot of the column, where NOBODY stood in careful capitals with *the Captain, the ovens* beside it, and under that, in three different hands, the wicks the lay brothers had put on nobody since.
+
+"And this?"
+
+"The Captain's," said the novice. "If another cot goes grey before the thaw, he scours the ovens. If none does, we rub out every price and stop counting."
+
+Rae looked up and found him in the door.
+
+"Light load," she said, "for a long road."
+
+"It was the only price nobody had."
+
+"Aye." She turned the book a little toward the novice. "Put me beside him."
+
+The novice licked the pencil. "What's your stake?"
+
+"If a cot goes grey before the thaw, I carry this kitchen a load up the Steps. On my back, not the cage. Whatever it wants."
+
+"You'll be on the Holloway by then," Darrow said. "You go down in the morning."
+
+"And come up when I'm owing."
+
+"Eleven hundred steps with a sack on your back, for a wager."
+
+"Eleven hundred and seventeen," said the novice, writing. "Wren says." Then she went red, because nobody had asked her.
+
+Rae ate a spoonful of whatever was in the bowl, as if the matter were settled, which in that kitchen it now was. Darrow came in and stood across the table from her.
+
+"Who gave you the letter?"
+
+"A carter says who a load's for. Not whose hand it came out of."
+
+"Even to the man it's for?"
+
+"Him most." She put the spoon down. "Read it. Then ask me again, if you still want to."
+
+The novice blew the flour off the page. Under his line, in pencil not yet dry, it said: *Thorne, a load.*

@@ -99,11 +99,18 @@
       "title": "The Carter",
       "covers": [],
       "written": "2026-10-14"
+    },
+    {
+      "scene": "between-9",
+      "title": "Against the Ovens",
+      "after": "interlude",
+      "covers": [],
+      "written": "2026-10-15"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, on his cot, with the letter under the mattress",
+    "detail": "the kitchen, at the bread table, after the night bell",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -113,7 +120,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, has come up the Steps, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Hollis at the Grey Cot, without looking round, asked who the letter was from. \"I haven't looked.\" Darrow put it under his mattress with the wax whole, and lay down on it.",
+  "last_beat": "The novice blew the flour off the page. Under his line, in pencil not yet dry, it said: Thorne, a load.",
   "companions": {
     "maelis": {
       "approval": 25,
@@ -131,7 +138,7 @@
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
     "rae": {
-      "approval": 3,
+      "approval": 4,
       "present": true,
       "note": "the carter of the last cart (Prologue, revised 10/9) and named in Chapter 1; arrives as a companion when q1.cart stage 3 is written (she stays past the dusk bell); --pending until then"
     }
@@ -180,5 +187,5 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "In the hour before dusk the grey cloaks climbed to the gate, and Confessor Ivo Marrant read his list to the House, Darrow's name first. Two of his men came through the wicket before Old Mercy rang, late, and Darrow's shoulder could not shut it. The Prior spoke the law of names, and Marrant made his camp on the lower terrace to wait for the Captain of the Ninth to come down and kneel. Darrow went to the bars and gave him his name and his face."
   },
-  "last_updated": "2026-10-14"
+  "last_updated": "2026-10-15"
 }

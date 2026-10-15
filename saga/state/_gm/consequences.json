@@ -360,7 +360,7 @@
           "at": "later",
           "weight": "color",
           "what": "The kitchen's book carries NOBODY at long odds, the Captain's chore against it: if another cot in the hall goes grey before the thaw he scours the ovens; if none does, every price is rubbed out and the kitchen stops counting cots. The lay brothers have begun to put wicks on nobody. Fire where the book is consulted, the odds move, or the thaw comes",
-          "status": "pending"
+          "status": "fired@ch02:between-9"
         }
       ]
     },
@@ -385,6 +385,38 @@
           "weight": "color",
           "what": "Darrow sat the far lamp after the night bell and kept it alone once the night novice slept; the next scene opens with him short of sleep and wick soot in the creases of his fingers, and nobody passed on his watch either",
           "status": "fired@ch02:s4"
+        }
+      ]
+    },
+    {
+      "id": "c02.10",
+      "made": {
+        "chapter": 2,
+        "scene": "between-9",
+        "date": "2026-10-15"
+      },
+      "chose": "Went to the kitchen after the night bell and found Rae reading the book; did not stop her putting her own stake beside his on NOBODY (if a cot goes grey before the thaw she carries the kitchen a load up the Steps on her back, and comes up when she is owing); asked again who gave her the letter and took her answer: a carter says who a load is for, not whose hand it came out of; read it, then ask again",
+      "now": {
+        "approval": {
+          "rae": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.10a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae told Darrow to read the letter, then ask her again whose hand it came out of, if he still wanted to. Fire where he asks her again, or chooses not to",
+          "status": "pending"
+        },
+        {
+          "id": "c02.10b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The kitchen book now carries Thorne, a load, under the Captain on NOBODY: if a cot goes grey before the thaw she carries the kitchen a load up the Steps on her back, not the cage. Fire where the book is consulted, the odds move, a cot goes grey, or the thaw comes",
+          "status": "pending"
         }
       ]
     }
