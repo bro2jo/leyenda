@@ -691,35 +691,50 @@ SHELF_MARKS = (MARKS - {"none"}) | {"bell", "hand", "word", "cord", "coin"}  # a
 TIER_SEAL = {"Triumph": "triumph", "Hard-won": "hardwon", "Costly": "costly", "Setback": "setback"}
 
 
+# The palette, as in CSS :root. The drawings below carry their colours in the SVG itself, so a page shows them right even while a
+# browser still holds an older stylesheet; the stylesheet only places them.
+PAL = {"brass": "#CFA65F", "brass_dim": "#8A7044", "ember": "#E2713B", "good": "#72B396", "warn": "#D9A441", "bad": "#D0634D",
+       "ink": "#E8E2D4", "faint": "#646D79", "raw": "#262D37", "plate": "#161B22", "t3": "#A86B3C", "t4": "#7A4D86",
+       "t4_text": "#A77FB5", "t5": "#4062A3", "t6": "#8BB2D3"}
+SVG_LABEL_FONT = "Alegreya Sans SC, Alegreya Sans, Segoe UI, sans-serif"
+SVG_DISPLAY_FONT = "Grenze Gotisch, Georgia, serif"
+
+
 def svg_tree(tree, size=22):
-    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a knot, an eye, a thrown disc."""
+    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a looped rope, an eye, a thrown disc."""
     body = {
         "Blade": '<path d="M12 2.5 L14.2 6 L14.2 15.5 L9.8 15.5 L9.8 6 Z M6.5 15.8 L17.5 15.8 M12 16 L12 20.2"/><circle cx="12" cy="21.4" r="1.2"/>',
-        "Footing": '<g class="f"><ellipse cx="8" cy="13.2" rx="2.9" ry="3.6"/><ellipse cx="8" cy="19.6" rx="2.1" ry="1.9"/><ellipse cx="16" cy="5.7" rx="2.9" ry="3.6"/><ellipse cx="16" cy="12.1" rx="2.1" ry="1.9"/></g>',
+        "Footing": f'<g fill="{PAL["brass"]}" stroke="none"><ellipse cx="8" cy="13.2" rx="2.9" ry="3.6"/><ellipse cx="8" cy="19.6" rx="2.1" ry="1.9"/><ellipse cx="16" cy="5.7" rx="2.9" ry="3.6"/><ellipse cx="16" cy="12.1" rx="2.1" ry="1.9"/></g>',
         "Breath": '<path d="M4 8 H13.5 a2.5 2.5 0 1 0 -2.5 -2.5 M4 13 H17.5 a2.5 2.5 0 1 1 -2.5 2.5 M4 18 H10.5 a2 2 0 1 0 -2 -2"/>',
         "Binding": '<path d="M2 17 C6.5 17 7.5 5 12.5 5 C18.5 5 18.5 13.5 12.5 13.5 C8 13.5 9 17 22 17"/>',
         "Insight": '<path d="M3 12 C8 5 16 5 21 12 C16 19 8 19 3 12 Z"/><circle cx="12" cy="12" r="3"/>',
         "Sport": '<ellipse cx="13.5" cy="11.5" rx="7.5" ry="3"/><path d="M3 16 L8 15 M3 19.5 L10 17.5"/>',
     }.get(tree, '<circle cx="12" cy="12" r="7"/>')
-    return f'<svg class="tg" viewBox="0 0 24 24" width="{size}" height="{size}" aria-hidden="true">{body}</svg>'
+    return (f'<svg class="tg" viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="{PAL["brass"]}" stroke-width="1.8" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
 
 
-def rank_ring(rank, n, frac=0.0, label="", size=32):
-    """An Art's rank as a ring of n segments: the filled ones its rank, the next one filling with practice; the numeral inside."""
+def rank_ring(rank, n, frac=0.0, label="", size=32, sealed=False):
+    """An Art's rank as a ring of n segments: the filled ones its rank, the next one filling with practice; the numeral inside.
+    Violet while the Art is sealed (its rank banked)."""
     import math
     r, c = 14, 18
     circ = 2 * math.pi * r
     step, gap = circ / max(n, 1), 3.0
-    segs = [f'<circle class="rr-bg" cx="{c}" cy="{c}" r="{r}"/>']
+    on = PAL["t4"] if sealed else PAL["brass"]
+    part = PAL["t4"] if sealed else PAL["brass_dim"]
+    segs = [f'<circle cx="{c}" cy="{c}" r="{r}" fill="none" stroke="{PAL["raw"]}" stroke-width="4"/>']
     for i in range(n):
         if i < rank:
-            L, cls = step - gap, "rr-seg"
+            L, col, op = step - gap, on, ""
         elif i == rank and frac > 0:
-            L, cls = max(0.0, (step - gap) * min(frac, 1.0)), "rr-part"
+            L, col, op = max(0.0, (step - gap) * min(frac, 1.0)), part, ' stroke-opacity=".7"' if sealed else ""
         else:
             continue
-        segs.append(f'<circle class="{cls}" cx="{c}" cy="{c}" r="{r}" stroke-dasharray="{L:.2f} {circ - L:.2f}" stroke-dashoffset="{-i * step:.2f}" transform="rotate(-90 {c} {c})"/>')
-    num = f'<text class="rr-n" x="{c}" y="{c + 0.5}">{roman(rank) if rank else "·"}</text>'
+        segs.append(f'<circle cx="{c}" cy="{c}" r="{r}" fill="none" stroke="{col}"{op} stroke-width="4" stroke-dasharray="{L:.2f} {circ - L:.2f}" '
+                    f'stroke-dashoffset="{-i * step:.2f}" transform="rotate(-90 {c} {c})"/>')
+    num = (f'<text x="{c}" y="{c + 0.5}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="11" '
+           f'font-weight="700" fill="{PAL["t4_text"] if sealed else PAL["ink"]}">{roman(rank) if rank else "·"}</text>')
     return f'<svg class="rring" viewBox="0 0 36 36" width="{size}" height="{size}" role="img" aria-label="{esc(label or f"rank {rank} of {n}")}">{"".join(segs)}{num}</svg>'
 
 
@@ -734,9 +749,11 @@ def svg_seal(tier, size=44):
         "costly": '<path d="M24 11 L24 37 M19 37 L29 37 M12 20 L36 16 M12 20 L8 29 L16 29 Z M36 16 L32 25 L40 25 Z"/>',
         "setback": '<path d="M15 19 L24 29 L33 19"/><path d="M24 6 L22 11 L25.5 14.5"/>',
     }[kind]
-    cls = "ember" if kind in ("costly", "setback") else ""
-    return (f'<svg class="seal {kind} {cls}" viewBox="0 0 48 48" width="{size}" height="{size}" role="img" aria-label="{esc(TIER_DONE.get(tier, tier))}">'
-            f'<circle class="sl-wax" cx="24" cy="24" r="21"/><circle class="sl-rim" cx="24" cy="24" r="17.5"/><g class="sl-dev">{dev}</g></svg>')
+    col = PAL["ember"] if kind in ("costly", "setback") else PAL["brass"]
+    return (f'<svg class="seal {kind}" viewBox="0 0 48 48" width="{size}" height="{size}" role="img" aria-label="{esc(TIER_DONE.get(tier, tier))}">'
+            f'<circle cx="24" cy="24" r="21" fill="{PAL["plate"]}" stroke="{col}" stroke-width="2"/>'
+            f'<circle cx="24" cy="24" r="17.5" fill="none" stroke="{col}" stroke-opacity=".55" stroke-width="1" stroke-dasharray="2 2.5"/>'
+            f'<g fill="none" stroke="{col}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{dev}</g></svg>')
 
 
 def tally(n, size=18):
@@ -752,23 +769,24 @@ def tally(n, size=18):
         x += 22
     for i in range(rem):
         parts.append(f'<path d="M{x + i * 5} 2 V18"/>')
-    return f'<svg class="tally" viewBox="0 0 {w} 20" width="{w * size / 20:.0f}" height="{size}" role="img" aria-label="{n} finished">{"".join(parts)}</svg>'
+    return (f'<svg class="tally" viewBox="0 0 {w} 20" width="{w * size / 20:.0f}" height="{size}" fill="none" stroke="{PAL["brass"]}" stroke-width="2" '
+            f'stroke-linecap="round" role="img" aria-label="{n} finished">{"".join(parts)}</svg>')
 
 
 MOOD_FLAMES = {"devoted": 3, "loyal": 3, "fond": 2, "warming": 1, "civil": 0, "wary": 0, "cold": 0, "hostile": 0, "an enemy": 0}
+MOOD_COAL = {"devoted": "t3", "loyal": "t3", "fond": "t3", "warming": "t3", "civil": "t3", "wary": "faint", "cold": "t5", "hostile": "t5", "an enemy": "t5"}
 
 
 def mood_mark(word, size=16):
-    """A companion's regard as an ember: the coal lit or cold, a tongue of flame per degree of warmth, a halo when devoted."""
+    """A companion's regard as an ember: the coal warm, grey or cold, a tongue of flame per degree of warmth, a halo when devoted."""
     w = str(word or "")
     flames = MOOD_FLAMES.get(w, 0)
-    band = w.replace(" ", "-")
     xs = {1: [10], 2: [7.5, 12.5], 3: [5.5, 10, 14.5]}.get(flames, [])
-    tongues = "".join(f'<path class="md-fl" d="M{x} 14 C{x - 2.5} 10 {x - 1} 8 {x} 3 C{x + 1} 8 {x + 2.5} 10 {x} 14 Z"/>' for x in xs)
-    halo = '<circle class="md-halo" cx="10" cy="13" r="8.5"/>' if w == "devoted" else ""
-    crack = '<path class="md-crack" d="M7 15 L10 11 L12.5 15.5"/>' if w in ("hostile", "an enemy") else ""
-    return (f'<svg class="mood {band}" viewBox="0 0 20 20" width="{size}" height="{size}" role="img" aria-label="{esc(w)}">'
-            f'{halo}<ellipse class="md-coal" cx="10" cy="16" rx="7" ry="2.6"/>{tongues}{crack}</svg>')
+    tongues = "".join(f'<path d="M{x} 14 C{x - 2.5} 10 {x - 1} 8 {x} 3 C{x + 1} 8 {x + 2.5} 10 {x} 14 Z" fill="{PAL["ember"]}"/>' for x in xs)
+    halo = f'<circle cx="10" cy="13" r="8.5" fill="none" stroke="{PAL["brass"]}" stroke-opacity=".8" stroke-width="1"/>' if w == "devoted" else ""
+    crack = f'<path d="M7 15 L10 11 L12.5 15.5" fill="none" stroke="{PAL["t6"]}" stroke-width="1.3"/>' if w in ("hostile", "an enemy") else ""
+    return (f'<svg class="mood" viewBox="0 0 20 20" width="{size}" height="{size}" role="img" aria-label="{esc(w)}">'
+            f'{halo}<ellipse cx="10" cy="16" rx="7" ry="2.6" fill="{PAL[MOOD_COAL.get(w, "faint")]}"/>{tongues}{crack}</svg>')
 
 
 def d20_glyph(nat, result="", size=32):
@@ -778,14 +796,43 @@ def d20_glyph(nat, result="", size=32):
     except (TypeError, ValueError):
         n = None
     res = str(result or "").lower()
-    cls = "good" if "success" in res else "warn" if "partial" in res else "bad" if "fail" in res else ""
-    if n in (20, 1):
-        cls += " crit"
-    num = f'<text class="d-n" x="16" y="17.5">{n}</text>' if n is not None else ""
-    return (f'<svg class="d20 {cls}" viewBox="0 0 32 32" width="{size}" height="{size}" role="img" aria-label="d20 {n if n is not None else ""}">'
-            '<path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z"/><path d="M16 9 L25 22 L7 22 Z"/>'
-            '<path d="M16 2 L16 9 M28 9 L25 22 M4 9 L7 22 M28 23 L25 22 M4 23 L7 22 M16 30 L16 22" class="d-e"/>'
+    col = PAL["good"] if "success" in res else PAL["warn"] if "partial" in res else PAL["bad"] if "fail" in res else PAL["brass_dim"]
+    crit = n in (20, 1)
+    lit = f' fill="{PAL["brass"]}" fill-opacity=".14"' if crit else ' fill="none"'
+    num = (f'<text x="16" y="17.5" text-anchor="middle" dominant-baseline="central" font-family="{SVG_DISPLAY_FONT}" font-size="{13 if crit else 12}" '
+           f'font-weight="700" fill="{PAL["brass"] if crit else PAL["ink"]}">{n}</text>') if n is not None else ""
+    return (f'<svg class="d20" viewBox="0 0 32 32" width="{size}" height="{size}" role="img" aria-label="d20 {n if n is not None else ""}">'
+            f'<path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z"{lit} stroke="{col}" stroke-width="1.4" stroke-linejoin="round"/>'
+            f'<path d="M16 9 L25 22 L7 22 Z" fill="none" stroke="{col}" stroke-width="1.2" stroke-linejoin="round"/>'
+            f'<path d="M16 2 L16 9 M28 9 L25 22 M4 9 L7 22 M28 23 L25 22 M4 23 L7 22 M16 30 L16 22" fill="none" stroke="{col}" stroke-opacity=".6" stroke-width="1"/>'
             f'{num}</svg>')
+
+
+def told_marks(told, of, size=10):
+    """A tale's pieces as small diamonds, the told ones lit."""
+    of = max(1, int(of or 1))
+    step = size + 4
+    w = of * step
+    parts = []
+    for i in range(of):
+        x = i * step + step / 2
+        on = i < int(told or 0)
+        parts.append(f'<path d="M{x:.1f} 1 L{x + size / 2 - 1:.1f} {size / 2 + 1:.1f} L{x:.1f} {size} L{x - size / 2 + 1:.1f} {size / 2 + 1:.1f} Z" '
+                     f'fill="{PAL["brass"] if on else "none"}" stroke="{PAL["brass"] if on else PAL["brass_dim"]}" stroke-width="1"/>')
+    return f'<svg class="told" viewBox="0 0 {w} {size + 2}" width="{w}" height="{size + 2}" role="img" aria-label="{told} of {of} told">{"".join(parts)}</svg>'
+
+
+def shelf_mark(mark, size=40):
+    """A keepsake's mark on the shelf: the sigil drawings, with their colour carried in the SVG."""
+    return (f'<svg class="km" viewBox="28 56 44 48" width="{size}" height="{int(size * 1.1)}" aria-hidden="true">'
+            f'<g fill="none" stroke="{PAL["brass"]}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">{svg_mark(mark)}</g></svg>')
+
+
+def shelf_unknown(size=40):
+    """The mark of a keepsake still to come: a dashed ring and a question."""
+    return (f'<svg class="km" viewBox="28 56 44 48" width="{size}" height="{int(size * 1.1)}" aria-hidden="true">'
+            f'<circle cx="50" cy="80" r="15" fill="none" stroke="{PAL["brass_dim"]}" stroke-width="2.2" stroke-dasharray="3.5 4.5" stroke-linecap="round"/>'
+            f'<text x="50" y="81" text-anchor="middle" dominant-baseline="central" font-family="{SVG_DISPLAY_FONT}" font-size="18" font-weight="700" fill="{PAL["brass_dim"]}">?</text></svg>')
 
 
 def sigil(faction, mark, size=64, cls="", label=""):
@@ -977,6 +1024,17 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&display=swap">')
 
 
+ASSET_V = {}
+
+
+def asset_v(name):
+    """A short hash of the stylesheet or the script: its link changes whenever its content does, so a browser never pairs a new
+    page with a stylesheet it cached before the change."""
+    if name not in ASSET_V:
+        ASSET_V[name] = hashlib.sha1((CSS if name == "css" else JS).encode("utf-8")).hexdigest()[:10]
+    return ASSET_V[name]
+
+
 def shell(title, body, rel, current, cls="", desc=""):
     nav = "".join(f'<a href="{rel}{href}"{CUR if name == current else ""}>{name}</a>' for name, href in NAV)
     meta_desc = f'<meta name="description" content="{esc(desc)}">' if desc else ""
@@ -993,7 +1051,7 @@ def shell(title, body, rel, current, cls="", desc=""):
 <link rel="icon" href="{rel}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{rel}apple-touch-icon.png">
 {FONTS}
-<link rel="stylesheet" href="{rel}site.css">
+<link rel="stylesheet" href="{rel}site.css?v={asset_v("css")}">
 </head>
 <body class="{cls}">
 <a class="skip" href="#main">Skip to content</a>
@@ -1002,7 +1060,7 @@ def shell(title, body, rel, current, cls="", desc=""):
 {body}
 </main>
 <footer class="foot"><div class="wrap"><p>What is given can be taken. What is built is yours.</p><p class="faint">An original saga. The Chronicle is kept as it happens; the Reckoning is read, never written.</p></div></footer>
-<script src="{rel}site.js" defer></script>
+<script src="{rel}site.js?v={asset_v("js")}" defer></script>
 </body>
 </html>
 """
@@ -1893,24 +1951,28 @@ class Site:
         and blank slots to fill the row, so the next one is in view before it is earned. Returns (html, kept, pending)."""
         kept = [kp for kp in getattr(self, "keepsakes", []) or [] if kp.get("to") == c["id"]]
         done_tales = {kp.get("tale") for kp in kept}
-        pending = [t for t in self.tales if (self.tale_state.get(t["code"]) or {}).get("of") == c["id"] and t["code"] not in done_tales
-                   and not (self.tale_state.get(t["code"]) or {}).get("done")]
+        pending = []
+        for t in self.tales:
+            stt = self.tale_state.get(t["code"]) or {}
+            if stt.get("of") == c["id"] and t["code"] not in done_tales and not stt.get("done") and not stt.get("rests"):
+                pending.append(t)  # a tale still being told; one that rests (told in part) leaves nothing to wait for
         slots = []
         for kp in kept:
-            mark = kp.get("mark") or "star"
             src = self.scene_ref({"chapter": kp["tale"], "scene": kp["piece"]}, rel)
-            slots.append(f'<li class="slot kept"><svg class="km" viewBox="28 56 44 48" aria-hidden="true">{svg_mark(mark)}</svg>'
+            slots.append(f'<li class="slot kept">{shelf_mark(kp.get("mark") or "star")}'
                          f'<b>{esc(kp["name"])}</b><p class="m">{esc(kp["text"])}</p><span class="src">{src}</span></li>')
         for t in pending:
             stt = self.tale_state.get(t["code"]) or {}
-            slots.append(f'<li class="slot pending"><svg class="km" viewBox="28 56 44 48" aria-hidden="true"><circle cx="50" cy="82" r="12" class="sg-s" stroke-dasharray="4 4"/></svg>'
-                         f'<b><a href="{rel}tales/{t["slug"]}.html">{esc(t["label"])}</a></b><p class="m">{esc(t["title"])} · {stt.get("told", 0)} of {stt.get("pieces", "?")} told</p></li>')
+            slots.append(f'<li class="slot pending">{shelf_unknown()}<span class="lbl">{esc(t["label"])}</span>'
+                         f'<b><a href="{rel}tales/{t["slug"]}.html">{esc(t["title"])}</a></b>'
+                         f'{told_marks(stt.get("told", 0), stt.get("pieces") or 1)}<p class="m">kept when it is told in full</p></li>')
         n = len(slots)
         width = max(4, -(-n // 4) * 4)
-        slots += ['<li class="slot blank" aria-hidden="true"></li>'] * (width - n)
+        phone_row = max(2, -(-n // 2) * 2)  # on a phone the shelf is two wide: blanks past the first row it needs are hidden there
+        slots += [f'<li class="slot blank{" wide" if i >= phone_row else ""}" aria-hidden="true"></li>' for i in range(n, width)]
         html = f'<ul class="shelf">{"".join(slots)}</ul><div class="shelf-ledge" aria-hidden="true"></div>'
-        if not kept and not pending:
-            html += '<p class="hint">The shelf is bare. What the tales leave him goes here.</p>'
+        if not kept:
+            html += '<p class="hint shelf-note">Nothing kept yet. When a tale is told in full, what it leaves is set here.</p>'
         return html, len(kept), len(pending)
 
     def appearances_html(self, c, rel):
@@ -2081,7 +2143,7 @@ class Site:
                 prev = thresholds[rank - 1] if rank else 0
                 nxt = art.get("next_at")
                 frac = (art["practice"] - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
-                ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}")
+                ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}", sealed=bool(sealed))
                 rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
                             f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></li>')
             tree_html.append(f'<div class="tree"><h3>{svg_tree(tree)}{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
@@ -2286,7 +2348,7 @@ class Site:
             for t in self.tales:
                 stt = self.tale_state.get(t["code"], {})
                 last = t["scenes"][-1] if t["scenes"] else None
-                state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
+                state = "told in full" if stt.get("done") else f'told in part, {stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")}' if stt.get("rests") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
                 link = f'<a href="{rel}tales/{t["slug"]}.html{"#" + last["anchor"] if last else ""}"><b>{esc(t["label"])} — {esc(t["title"])}</b></a>'
                 items.append(f'<li>{link}<span class="m num">{esc(state)}' + (f' · latest: {esc(last["label"] + " — " + last["title"])}' if last else "") + "</span></li>")
             tales_html = sec("The tales", f"{len(self.tales)}", f'<ul class="chron">{"".join(items)}</ul><p class="dim">The past, a piece at a time. <a href="{rel}tales/index.html">All the tales</a>.</p>')
@@ -2343,7 +2405,8 @@ class Site:
         head = [f'<p class="book-line">The tales</p>', f'<h1 class="ch-title"><span class="lbl">{esc(t["label"])}</span>{esc(t["title"])}</h1>']
         if t.get("when"):
             head.append(f'<p class="when">{inline(t["when"])}</p>')
-        state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} pieces told; the rest is still to come'
+        state = ("told in full" if stt.get("done") else f'told in part: {stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} pieces, and the rest left untold'
+                 if stt.get("rests") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} pieces told; the rest is still to come')
         head.append(f'<p class="dim">{esc(state)}.</p>')
         body = []
         for s in t["scenes"]:
@@ -2377,7 +2440,7 @@ class Site:
         for t in self.tales:
             stt = self.tale_state.get(t["code"], {})
             pieces = "".join(f'<li><a href="{rel}tales/{t["slug"]}.html#{s["anchor"]}">{esc(s["label"] + " — " + s["title"])}</a></li>' for s in t["scenes"])
-            state = "told in full" if stt.get("done") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
+            state = "told in full" if stt.get("done") else f'told in part, {stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")}' if stt.get("rests") else f'{stt.get("told", len(t["scenes"]))} of {stt.get("pieces", "?")} told'
             items.append(f'<li class="{"now" if not stt.get("done") else ""}"><a class="ch-link" href="{rel}tales/{t["slug"]}.html"><b>{esc(t["label"])} — {esc(t["title"])}</b></a>'
                          f'<span class="m num">{esc(state)}' + (f' · {esc(t["when"])}' if t.get("when") else "") + f' · about {t["words"]:,} words</span>'
                          f'<ul class="scenes">{pieces}</ul></li>')
@@ -2688,7 +2751,7 @@ def run_checks(site, out_dir):
     for k, v in pages.items():
         base = Path(k).parent
         for m in re.finditer(r'(?:href|src)="([^"#]*)(#[^"]*)?"', v):
-            href, frag = m.group(1), m.group(2)
+            href, frag = m.group(1).split("?", 1)[0], m.group(2)
             if href.startswith(("http:", "https:", "mailto:")):
                 continue
             if href == "":
@@ -3143,50 +3206,31 @@ ol.choice li s{color:var(--faint)}
 .archive li:target>details{background:linear-gradient(90deg,rgba(207,166,95,.10),transparent 70%)}
 .archive li:target>details>summary{color:var(--brass)}
 .cast{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:12px}
-/* drawn things: tree glyphs, rank rings, tier seals, tally marks, mood embers, the d20, the keepsake shelf */
+/* drawn things: tree glyphs, rank rings, tier seals, tally marks, mood embers, the d20, the keepsake shelf. Their colours are
+   drawn into the SVG itself (build_site.py → PAL), so they never render black under an older stylesheet; these rules only place them. */
 .tree h3{display:flex;align-items:center;gap:8px}
-.tg{flex:none} .tg path,.tg circle,.tg ellipse{fill:none;stroke:var(--brass);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.tg .f ellipse{fill:var(--brass);stroke:none}
-.rring{flex:none}
-.rr-bg{fill:none;stroke:var(--raw);stroke-width:4}
-.rr-seg{fill:none;stroke:var(--brass);stroke-width:4}
-.rr-part{fill:none;stroke:var(--brass-dim);stroke-width:4}
-.rr-n{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.02em;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
-.art.sealed .rr-seg,.art.sealed .rr-part{stroke:var(--t4)} .art.sealed .rr-n{fill:var(--t4-text)}
-.seal{flex:none;vertical-align:middle}
-.sl-wax{fill:var(--plate);stroke:var(--brass);stroke-width:2}
-.sl-rim{fill:none;stroke:var(--brass-dim);stroke-width:1;stroke-dasharray:2 2.5}
-.sl-dev{fill:none;stroke:var(--brass);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.seal.ember .sl-wax,.seal.ember .sl-dev{stroke:var(--ember)}
+.tg,.rring,.seal,.d20,.told,.km{flex:none}
+.seal{vertical-align:middle}
 .seal-row{display:flex;align-items:center;gap:10px}
 .chron li.sealed-row{grid-template-columns:auto minmax(0,1fr);gap:2px 10px;align-items:center}
 .sealed-row>div{display:grid;gap:2px}
-.tally{vertical-align:-2px;margin-left:3px} .tally path{fill:none;stroke:var(--brass);stroke-width:2;stroke-linecap:round}
+.tally{vertical-align:-2px;margin-left:3px}
 .works-chip{display:inline-flex;align-items:center;gap:2px}
 .mood{vertical-align:-3px;margin-right:4px}
-.md-coal{fill:var(--faint-stroke)} .md-fl{fill:var(--ember)} .md-halo{fill:none;stroke:var(--brass);stroke-width:1;opacity:.8} .md-crack{fill:none;stroke:var(--t6);stroke-width:1.3}
-.mood.civil .md-coal,.mood.warming .md-coal,.mood.fond .md-coal,.mood.loyal .md-coal,.mood.devoted .md-coal{fill:var(--t3)}
-.mood.cold .md-coal,.mood.hostile .md-coal,.mood.an-enemy .md-coal{fill:var(--t5)}
-.d20{flex:none} .d20 path{fill:var(--plate);stroke:var(--brass-dim);stroke-width:1.4;stroke-linejoin:round} .d20 .d-e{fill:none;stroke:var(--brass-dim);stroke-width:1}
-.d20 .d-n{font-family:var(--display);font-weight:700;font-size:12px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
-.d20.good path{stroke:var(--good)} .d20.warn path{stroke:var(--warn)} .d20.bad path{stroke:var(--bad)}
-.d20.crit .d-n{fill:var(--brass);font-size:13px} .d20.crit path:first-child{fill:rgba(207,166,95,.14)}
 .roll-top .d20{margin-right:2px}
 .shelf{list-style:none;margin:0;padding:0 6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.slot{display:grid;gap:4px;justify-items:center;align-content:start;text-align:center;border:1px solid var(--rule);border-radius:6px 6px 2px 2px;padding:10px 6px 8px;min-height:96px;background:linear-gradient(180deg,var(--plate-hi),var(--plate))}
-.slot.kept{border-color:var(--brass-dim)}
-.slot.pending{border-style:dashed}
-.slot.blank{border-style:dotted;opacity:.45}
-.slot .km{width:40px;height:44px}
-.slot .km .sg-l{fill:none;stroke:var(--brass);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
-.slot .km .sg-s{fill:none;stroke:var(--brass-dim);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.slot.pending .km .sg-s{stroke:var(--faint-stroke)}
+.slot{display:grid;gap:5px;justify-items:center;align-content:start;text-align:center;border:1px solid var(--rule);border-radius:6px 6px 2px 2px;padding:12px 8px 10px;min-height:124px;background:linear-gradient(180deg,var(--plate-hi),var(--plate))}
+.slot.kept{border-color:var(--brass-dim);box-shadow:inset 0 0 18px rgba(207,166,95,.07)}
+.slot.pending{border-style:dashed;border-color:var(--brass-dim)}
+.slot.blank{border-style:dotted;background:rgba(0,0,0,.18);opacity:.5}
 .slot b{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.1;color:var(--ink)}
 .slot b a{color:var(--brass)}
+.slot .lbl{font-size:.7rem;line-height:1}
 .slot .m{font-size:.78rem;color:var(--dim);line-height:1.3}
 .slot .src{font-size:.74rem;color:var(--faint)}
 .shelf-ledge{height:7px;margin:-2px 0 0;border-radius:0 0 4px 4px;background:linear-gradient(180deg,var(--leather),#2a2016);box-shadow:0 3px 6px rgba(0,0,0,.4)}
-@media (max-width:440px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.shelf-note{margin-top:10px}
+@media (max-width:440px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}.slot.blank.wide{display:none}}
 .keeps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .keep{display:grid;gap:3px;border-left:2px solid var(--brass-dim);padding-left:12px}
 .keep b{font-family:var(--display);font-size:1.15rem;color:var(--brass)}

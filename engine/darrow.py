@@ -2321,6 +2321,10 @@ def cmd_project(args, cfg, rules):
         p.update({"status": "dropped", "dropped": when.isoformat(), "why": args.why.strip()})
         save_projects(data)
         print(f"project {p['id']} set aside: {p['title']} ({sum(1 for t in p['tasks'] if t.get('done'))}/{len(p['tasks'])} tasks were done)")
+        # its tale, if one is bound, rests (told in part): the story's projections carry that, so they are rebuilt now
+        r = subprocess.run([sys.executable, str(ROOT / "engine/saga.py"), "project"], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode:
+            print("note: `python3 engine/saga.py project` did not run cleanly; run it before shipping:\n" + (r.stdout + r.stderr).strip()[-400:])
         return
     # done
     if not p:

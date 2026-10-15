@@ -171,6 +171,7 @@
       "pieces": 3,
       "told": 1,
       "done": false,
+      "rests": false,
       "file": "saga/chronicle/tales/01-quickstep.md"
     }
   ],

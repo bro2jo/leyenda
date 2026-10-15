@@ -45,6 +45,7 @@ CHARS = SAGA / "characters"
 CHRON = SAGA / "chronicle"
 TALES_DIR = CHRON / "tales"
 NOW_MD = SAGA / "NOW.md"
+PROJECTS = ROOT / "real" / "projects.json"  # read for one thing only: whether a tale's work was set aside (its tale then rests)
 ENGINE_START = "<!-- engine:start -->"
 
 KINDS = ("prologue", "scene", "between", "interlude", "climax", "choice")
@@ -605,11 +606,21 @@ def project_character(cid, base, derived):
     return ordered
 
 
+def project_statuses():
+    """{project id: status} from real/projects.json; only the status crosses to the story (a tale whose work was set aside rests)."""
+    try:
+        return {p.get("id"): p.get("status") for p in load_json(PROJECTS).get("projects", [])}
+    except (OSError, ValueError):
+        return {}
+
+
 def tales_state(plan, tale_events=None):
     """The reader-safe state of every bound tale, from the plan's bindings and the tale events: id, n, title, of (whose
-    past), pieces, told, done, file, keepsakes (the pieces' keepsakes, in order)."""
+    past), pieces, told, done, rests (its work was set aside before the tale was told: told in part, for good), file,
+    keepsakes (the pieces' keepsakes, in order)."""
     evs = load_tale_events() if tale_events is None else tale_events
     tfiles = tale_files()
+    statuses = project_statuses()
     out = []
     for b in plan.get("tales") or []:
         n = int(b.get("n", 0))
@@ -622,9 +633,10 @@ def tales_state(plan, tale_events=None):
                   **({"lesser": True} if e["keepsake"].get("lesser") else {})}
                  for e in mine if isinstance(e.get("keepsake"), dict) and e["keepsake"].get("name")]
         pieces = int(b.get("pieces") or 0)
+        done = bool(pieces) and len(mine) >= pieces
         out.append({"id": tale_id(n), "n": n, "title": title, "when": when, "of": b.get("of"), "pieces": pieces, "told": len(mine),
-                    "done": bool(pieces) and len(mine) >= pieces, "file": rel(path) if path else b.get("file"), "keepsakes": keeps,
-                    "project": b.get("project"), "tale": b.get("tale")})
+                    "done": done, "rests": not done and statuses.get(b.get("project")) == "dropped",
+                    "file": rel(path) if path else b.get("file"), "keepsakes": keeps, "project": b.get("project"), "tale": b.get("tale")})
     return out
 
 
@@ -703,7 +715,7 @@ def project_world(events, plan, world, tale_events=()):
     w["inventory"] = state["inventory"]
     tales = tales_state(plan, list(tale_events))
     w["keepsakes"] = [k for t in tales for k in t["keepsakes"]]
-    w["tales"] = [{k: t[k] for k in ("id", "title", "of", "pieces", "told", "done", "file")} for t in tales]
+    w["tales"] = [{k: t[k] for k in ("id", "title", "of", "pieces", "told", "done", "rests", "file")} for t in tales]
     recaps = dict(world.get("recaps") or {})
     recaps.update(state["recaps"])
     w["recaps"] = recaps
@@ -789,7 +801,7 @@ def project_now(events, plan, world, chars, existing_text):
         lines.append("- **Also here:** " + " · ".join(here))
     tl = world.get("tales") or []
     if tl:
-        lines.append("- **The tales:** " + " · ".join(f"Tale {int(t['id'][4:])} — {t.get('title')} ({'told in full' if t.get('done') else str(t.get('told')) + ' of ' + str(t.get('pieces')) + ' told'})" for t in tl))
+        lines.append("- **The tales:** " + " · ".join(f"Tale {int(t['id'][4:])} — {t.get('title')} ({'told in full' if t.get('done') else 'told in part, ' + str(t.get('told')) + ' of ' + str(t.get('pieces')) if t.get('rests') else str(t.get('told')) + ' of ' + str(t.get('pieces')) + ' told'})" for t in tl))
     if now_state.get("against"):
         lines.append(f"- **Against him:** {now_state['against']}")
     if now_state.get("next"):

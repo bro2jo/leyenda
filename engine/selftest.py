@@ -50,6 +50,12 @@ def jload(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def page_of(path):
+    """A built page's text, or "" when the build did not produce it (the check that reads it then fails, it never crashes)."""
+    path = Path(path)
+    return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
 def main():
     keep = "--keep" in sys.argv
     print("live repo")
@@ -213,10 +219,13 @@ def main():
                 s["plan"], s["turn"] = "a test slot", "by the end something turns"
             t.update({"question": "a test question", "world_moves": ["a move", "another", "a third"], "climax": {"plan": "test", "checks": [], "options": ["a", "b"], "default": 1}})
             nxt_file = tmp / f"saga/chronicle/{ch + 1:02d}-the-test.md"
-            if not any(tmp.glob(f"saga/chronicle/{ch + 1:02d}-*.md")):
+            made = not any(tmp.glob(f"saga/chronicle/{ch + 1:02d}-*.md"))
+            if made:
                 nxt_file.write_text(f"# Chapter {ch + 1} — The Test\n\n*A test epigraph.*\n\n— a test source\n\n---\n", encoding="utf-8")
             code, out = run(saga + ["plan", "chapter", "open", "--number", str(ch + 1), json.dumps(t)], tmp)
-            check(code == 0, "the next chapter opens while the climax choice is open", out[-600:])
+            check(code == 0, "the next chapter opens from the template as filled (the template respects the live-quest cap)", out[-600:])
+            if code != 0 and made:
+                nxt_file.unlink()  # a refused open leaves no empty chapter behind to fail every later build
             code, out = run(saga + ["plan", "choice", "show"], tmp)
             check(f"chapter {ch}" in out and "default 3" in out, "the open choice survives the chapter open with its own default")
             entry = {"id": f"c{ch:02d}.990", "chose": "Sent Wren down with a lamp (self-test).", "now": {"approval": {"wren": 3}, "bearing": {"guile": 2}}, "due": []}
@@ -261,6 +270,14 @@ def main():
             settled += 1
         if settled:
             print(f"  (settled {settled} owed piece(s) from the live state)")
+        dropped = {q["id"] for q in jload(tmp / "real/projects.json").get("projects", []) if q.get("status") == "dropped"}
+        resting = [f"tale{int(b['n']):02d}" for b in jload(tmp / "saga/state/_gm/plan.json").get("tales") or [] if b.get("project") in dropped]
+        w_tales = {t["id"]: t for t in jload(tmp / "saga/state/world.json").get("tales") or []}
+        if resting:
+            check(all(w_tales[t]["rests"] or w_tales[t]["done"] for t in resting if t in w_tales),
+                  "a tale whose work was set aside rests (told in part), and the drop rebuilt the projections", str(w_tales)[:300])
+        else:
+            skip("no set-aside work in the live state to rest a tale")
         code, out = run(darrow + ["project", "open", "Sell the cart", "--tasks", "Clean it", "Park it", "List it"], tmp)
         check(code == 0 and "sell-the-cart" in out and "due Sat" in out, "project open starts the week's work with three tasks, due Saturday", out[-300:])
         code, out = run(darrow + ["project", "open", "Another", "--tasks", "a", "b"], tmp, expect=1)
@@ -290,6 +307,14 @@ def main():
         check(code == 0 and f"{tid1}:p1 recorded" in out and "ok:" in out, "the piece is recorded and check passes", out[-600:])
         code, out = run(saga + ["record", json.dumps({**piece, "key": f"{tid1}:p2"}, ensure_ascii=False)], tmp, expect=1)
         check("no piece 2" in out or "not owed yet" in out, "a piece ahead of its task is refused")
+        code, out = run(["engine/build_site.py"], tmp)
+        page = page_of(tmp / "docs/darrow/index.html")
+        check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and "Nothing kept yet" in page,
+              "the empty shelf shows the tale in progress, its pieces told, and what the shelf is for", out[-300:])
+        check(re.search(r'href="\.\./site\.css\?v=[0-9a-f]{10}"', page) is not None and re.search(r'src="\.\./site\.js\?v=[0-9a-f]{10}"', page) is not None,
+              "pages link the stylesheet and the script by a version that changes with their content")
+        check('class="rring"' in page and 'stroke="#262D37"' in page and 'class="tg"' in page and 'stroke="#CFA65F"' in page,
+              "the drawings carry their own colours, so an older stylesheet never turns them black")
         code, out = run(saga + ["brief", "--between", "--with", "hollis-garrow"], tmp)
         people = out[out.index("== MAY: the people"):out.index("== MAY: threads")]
         dar_lines = people[people.index("· Ser Darrow"):].split("\n· ")[0]
@@ -337,13 +362,13 @@ def main():
         code, out = run(["engine/build_site.py"], tmp)
         n_tales = len(list(tmp.glob("saga/chronicle/tales/*.md")))
         check(code == 0 and f"{n_tales} tale" in out, "the site builds with the tale", out[-600:])
-        page = (tmp / "docs/darrow/index.html").read_text(encoding="utf-8")
+        page = page_of(tmp / "docs/darrow/index.html")
         check("Works ·" in page and "What he keeps" in page and "Quickstep" in page, "Darrow's page shows the work and the keepsake")
         check('class="slot kept"' in page and 'class="tally"' in page and 'class="rring"' in page and 'class="tg"' in page, "Darrow's page draws the shelf, the tally, the rank rings and the tree glyphs")
         code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import records, build_site; print(set(records.KEEPSAKE_MARKS) == build_site.SHELF_MARKS)"], tmp)
         check(code == 0 and out.strip().endswith("True"), "the record's keepsake marks and the shelf's are the same set", out[-200:])
         tale_page = tmp / f"docs/tales/{tale.stem}.html"
-        check(tale_page.exists() and "Piece 3" in tale_page.read_text(encoding="utf-8"), "the tale has its page")
+        check("Piece 3" in page_of(tale_page), "the tale has its page")
         # a late project: due the Saturday of the week it opened, finished after it; the lesser keepsake
         today = dt.date.fromisoformat(ENV.get("DARROW_TODAY") or dt.date.today().isoformat())
         early = (today - dt.timedelta(days=9)).isoformat()

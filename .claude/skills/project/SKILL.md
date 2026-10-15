@@ -24,7 +24,7 @@ The works are the a-la-carte goals: one real goal at a time, outside the knee, i
 
 ## 3. The rest
 - **What is left:** `python3 engine/darrow.py project show` (`--all` for every project); `today`, `week` and the Ledger's NOW carry the live project and its next task. `/today` names the next task under the sessions, as a reminder, never as a debt.
-- **Set aside** ("drop the car thing", "not this week"): `python3 engine/darrow.py project drop --why "<his words>"`; the pieces told stay told, the next project may open. No lecture, no story cost.
+- **Set aside** ("drop the car thing", "not this week"): `python3 engine/darrow.py project drop --why "<his words>"`; the pieces told stay told and its tale rests, told in part (the site says so and the shelf stops waiting for it); a piece already owed by a reported task is still written. The next project may open. No lecture, no story cost.
 - **A task reported late** (last week's, or two at once): `project done … --date YYYY-MM-DD` for each, oldest first; each owes its piece, written now, in order (`saga.py now` shows `TALE OWED` until they are).
 - **A piece owed and not written** (a phone session ended early): the next session writes it first, before any log reply, from `saga.py brief --tale`.
 - **Sunday**, with `/checkpoint`: if no project is open, ask him in one line for the coming week's work (a goal outside the knee and its 2–5 tasks), and open it here. One at a time.

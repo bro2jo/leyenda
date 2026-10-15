@@ -973,14 +973,39 @@ TURN_HINT = "who can, must, believes, risks or chooses what by the end that they
 def chapter_template(ws, plan):
     """A canonical next-chapter skeleton for `plan chapter open`: 7 dated slots from the Sunday `ws`, spine on Sunday
     and Saturday, two float quest placeholders (slots 3 and 5, non-adjacent so both may carry a micro), empty
-    world moves and climax. The placeholders name the first two quests still available in this Book (falling back
-    to the Book's q<N>.* ids); every "" is for the writer to fill (a slot's `plan` is its content, its `turn` is
-    who can, must, believes, risks or chooses what by the end, and what Darrow attempts), and `plan chapter open`
-    accepts the result as is."""
+    world moves and climax. The placeholders continue the quests live now at their next stage first, then open the
+    Book's available quests (required before optional), never more than two counted quests live at once (the cap
+    `plan chapter open` enforces; the Tether and the Book's project are not counted), falling back to the Book's
+    q<N>.* ids; every "" is for the writer to fill (a slot's `plan` is its content, its `turn` is who can, must,
+    believes, risks or chooses what by the end, and what Darrow attempts), and `plan chapter open` accepts the result as is."""
     book = int(plan["position"]["book"])
-    avail = [k for k, q in plan.get("quests", {}).items() if k.startswith(f"q{book}.") and q.get("status") == "available"]
-    avail += [k for k in plan.get("quests", {}) if k.startswith(f"q{book}.") and k not in avail]
-    avail += [f"q{book}.quest_a", f"q{book}.quest_b"]
+    quests = plan.get("quests", {})
+    counted = lambda q: not q.get("standing") and not q.get("project")
+    live = [k for k, q in quests.items() if k.startswith(f"q{book}.") and q.get("status") == "live" and counted(q)]
+    avail = [k for k, q in quests.items() if k.startswith(f"q{book}.") and q.get("status") == "available" and counted(q)]
+    avail.sort(key=lambda k: 0 if quests[k].get("priority") == "required" else 1)
+    order = live + avail + [f"q{book}.quest_a", f"q{book}.quest_b"]
+    live_now, next_stage, picks = set(live), {k: int(quests[k].get("stage") or 0) + 1 for k in live}, []
+    for _ in range(2):  # slot 3, then slot 5: a quest not yet in this chapter first, else the next stage of one already in it
+        used, choice = {p[0] for p in picks}, None
+        for repeat in (False, True):
+            for k in order:
+                if (k in used) != repeat or (repeat and k not in live_now):
+                    continue
+                st, total = next_stage.get(k, 1), (arc_quest_stage_count(k) if k in quests else None)
+                if (total and st > total) or (k not in live_now and len(live_now) >= 2):
+                    continue
+                choice = (k, st)
+                break
+            if choice:
+                break
+        k, st = choice or (order[0], next_stage.get(order[0], 1))
+        picks.append((k, st))
+        live_now.add(k)
+        next_stage[k] = st + 1
+        total = arc_quest_stage_count(k) if k in quests else None
+        if total and st >= total:
+            live_now.discard(k)
     beat = plan["position"].get("beat") or f"b{book}.1"
     cur = plan.get("core_beats", {}).get(beat, {})
     if plan["position"].get("stage") in ("climax", "choice", "transition") or cur.get("status") in ("done", "folded"):
@@ -994,7 +1019,8 @@ def chapter_template(ws, plan):
     for n in range(1, 8):
         s = {"n": n, "day": (ws + dt.timedelta(n - 1)).isoformat()}
         if n in (3, 5):
-            s.update({"kind": "quest", "quest": avail[0 if n == 3 else 1], "stage": 1, "float": True})
+            q_, st_ = picks[0 if n == 3 else 1]
+            s.update({"kind": "quest", "quest": q_, "stage": st_, "float": True})
         else:
             s.update({"kind": "spine", "beat": beat, "float": False})
         s.update({"plan": "", "turn": "", "micro": None, "challenge": None, "invite": None})
