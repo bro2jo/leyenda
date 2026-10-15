@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 5,
   "rank": "Kindled",
-  "xp": 1347,
+  "xp": 1377,
   "xp_this_level": 1000,
   "xp_next_level": 1500,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 29,
+      "temper": 30,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 10,
       "mod": 0,
-      "temper": 21,
+      "temper": 22,
       "next_at": 32,
       "fell": 18,
       "banked": false
