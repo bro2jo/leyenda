@@ -113,11 +113,19 @@
       "after": "interlude",
       "covers": [],
       "written": "2026-10-15"
+    },
+    {
+      "scene": 5,
+      "title": "Come Home, Brother",
+      "covers": [
+        "2026-10-15"
+      ],
+      "written": "2026-10-15"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the gate wall, at first light, after Rae went down",
+    "detail": "the infirmary hall, at the Grey Cot, holding the lad's hand in Hollis's place",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -127,7 +135,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Darrow watched her hood go down the Last Hundred and did not count, and when Wren came up behind him with the glass he said \"Don't,\" before she had opened her mouth.",
+  "last_beat": "Wren closed the ledger: \"Letters to the Captain of the Ninth: one. Burned: one. There'll be another. There's always another.\"",
   "companions": {
     "maelis": {
       "approval": 25,

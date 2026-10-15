@@ -752,3 +752,41 @@ The cage came up over the lip and the winch-brothers swung it in, and there it w
 "For what?"
 
 "I'll know when I ask." She finished the bread, dusted her hands on her cloak, and went along the wall-walk to the wicket, and down. Darrow watched her hood go down the Last Hundred and did not count, and when Wren came up behind him with the glass he said "Don't," before she had opened her mouth.
+
+### Scene 5 — Come Home, Brother
+
+When Rae had gone down, Darrow went back into the hall and took the letter out from under his mattress. He had lain on it a whole night without sleeping, and that was long enough.
+
+The brazier stood at the end of their row, between his cot and the Grey Cot, banked from the night. He sat on the end of his cot where its warmth reached his knees and turned the letter over in the daylight. Blue wax. *To the Captain of the Ninth, at the House of Menders.* He knew the hand before he had read the first line. He had known it since they were boys holding other men's horses, and it had not changed: careful letters set down like men in a line who all knew their places.
+
+He broke the wax with his thumb without looking at it, and read.
+
+*Brother,*
+
+*They tell me you are on a mountain with a leg that will not carry you, and that you are being stubborn about it, which I could have told them. I have thought of you every day since the river. I think of Thistle too, and the bridge at Calden she would not cross until you walked her over it backward, talking to her the whole way as if she were a lady and you were sorry. I laughed at you then. I would give a good deal to laugh at you now.*
+
+*Nothing is so broken that the Grace cannot mend it, if a man will let it. Come home, brother. Kneel, and be whole.*
+
+*A.*
+
+He read it again the way he would have read a writ, for what it wanted, who stood behind the man who wrote it, and what it left out. It left out who had carried it as far as the winch-house. It wanted one thing, plainly, and it wanted it in Aldric's voice, and he could not get underneath the voice to the paper. Every time he tried, there was the bridge, and the mare going over it backward, and Aldric on the bank laughing.
+
+He put it in the brazier.
+
+The paper went quickly. The wax took longer. It softened at the edges, then bubbled, then ran blue into the coals and curled up black, and across the brazier Hollis turned his head from the Grey Cot for the first time that morning and watched every part of it. He said nothing at all. In all their weeks on the mountain Darrow had not known him go a minute without a word for something.
+
+"Say it."
+
+Hollis watched the black curl settle into the coals.
+
+"You went quiet like that at the bars," Darrow said. "At the Confessor's wax."
+
+Hollis set the lad's hand down on the grey blanket, carefully, the way you set down a thing that might spill. Then he reached under his cot for the beech leg, strapped it on without help, got up on it, and went down the hall and out of the door. It was the first time he had left the Grey Cot since the lad was found, and nobody in the hall said a word about it, because Darrow had already got up, good leg, bad leg, and sat down in Hollis's place and taken the lad's hand before anyone could see that nobody had it.
+
+Wren had come in behind him at some point. She stood at the foot of his cot with her ledger open, and for once she wrote something down.
+
+"Letters to the Captain of the Ninth: one," she said. "Burned: one." She closed the ledger. "There'll be another. There's always another."
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **Warden's Eye** III. *Read a weakness or a lie.*
+> XP 1,327 → 1,422

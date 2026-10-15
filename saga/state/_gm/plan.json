@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 2,
     "beat": "b1.2",
-    "next_scene": 5,
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch02:interlude",
+    "last_written": "ch02:s5",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -121,8 +121,8 @@
           "if_ignored": "Hollis put the heralds' question to a lay brother instead and got the heralds' answer, and sat the rest of the night by the Grey Cot without a word to anyone",
           "status": "waiting"
         },
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch02:s5"
       },
       {
         "n": 6,
@@ -135,7 +135,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -223,8 +223,8 @@
       "priority": "required"
     },
     "q1.letters": {
-      "status": "available",
-      "stage": 0,
+      "status": "live",
+      "stage": 1,
       "priority": "required"
     },
     "q1.cart": {

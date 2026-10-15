@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-10",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-10"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-5"
   },
-  "last_seen_doing": "Played name-the-load with Rae on the gate wall at first light, named the load salt and lost; owes her an aye; watched her go down without counting.",
-  "now": "On the gate wall at first light, sleepless, the letter still unopened under his mattress. He owes Rae one aye. He watched her go down without counting and told Wren not to count either.",
+  "last_seen_doing": "Read the letter in blue wax by the brazier, knew Aldric's hand, could not read it as a writ for the voice in it, and burned it; asked Hollis to say what the wax did to him, and took the lad's hand in Hollis's place when Hollis left.",
+  "now": "At the Grey Cot in Hollis's place, holding Benedek's hand. He has read his sworn brother's letter, Come home, brother. Kneel, and be whole, and burned it. Hollis has left the hall for the first time since the lad was found.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -576,6 +576,42 @@
       "evidence": "did not count, and when Wren came up behind him"
     },
     {
+      "fact": "He knew the hand on the letter before he read the first line: Aldric's, which he has known since they were boys holding other men's horses.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "He had known it since they were boys holding other men's horses"
+    },
+    {
+      "fact": "He broke the wax with his thumb without looking at it.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "He broke the wax with his thumb without looking at it"
+    },
+    {
+      "fact": "He tried to read the letter as a writ and could not get underneath Aldric's voice to the paper; it left out who had carried it as far as the winch-house.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "he could not get underneath the voice to the paper"
+    },
+    {
+      "fact": "He burned the letter in the brazier.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "He put it in the brazier."
+    },
+    {
+      "fact": "He told Hollis he had gone quiet the same way at the Confessor's wax at the bars.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "At the Confessor's wax."
+    },
+    {
+      "fact": "When Hollis left, he sat in Hollis's place and took the lad's hand before anyone could see that nobody had it.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "taken the lad's hand before anyone could see that nobody had it"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -757,6 +793,10 @@
     {
       "chapter": "02",
       "scene": "between-10"
+    },
+    {
+      "chapter": "02",
+      "scene": "5"
     },
     {
       "chapter": "tale01",

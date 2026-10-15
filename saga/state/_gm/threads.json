@@ -12,7 +12,8 @@
       "on_page": [
         "00:I",
         "00:III",
-        "01:s1"
+        "01:s1",
+        "02:s5"
       ]
     },
     {
@@ -21,12 +22,13 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal once and look away; Darrow saw him do it; the reader",
+      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal on Marrant's writ at the bars and watch the blue wax of Darrow's letter burn (02:s5), saying nothing both times; Darrow has noticed the two silences; the reader",
       "note": "active: paper in the cup of Hollis's wooden leg, seal unexamined; the writ at the bars wore blue wax the size of a child's palm (the first of the two wax plants q1.letters needs; his own still unlooked-at until b2.4)",
       "on_page": [
         "00:I",
         "01:interlude",
-        "01:climax"
+        "01:climax",
+        "02:s5"
       ]
     },
     {
@@ -162,7 +164,8 @@
       "note": "the drink told (c01.2, approval +2; c01.2a fired at the climax: his hands steady on the gatehouse sill because he held them so, and after the Choice Darrow looked at them and did not ask how he was); the chair still planted; the bottle he hasn't opened belongs to q1.wager and has not been mentioned. Choice: he saw the Captain flinch at his name, told him nobody else had, and called him Captain, meant",
       "on_page": [
         "01:interlude",
-        "01:between-3"
+        "01:between-3",
+        "02:s5"
       ]
     },
     {
@@ -195,6 +198,7 @@
         "00:I",
         "01:s3",
         "01:between-6",
+        "02:s5",
         "tale01:p1"
       ]
     },

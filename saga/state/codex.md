@@ -50,6 +50,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Hob** — The near one of Rae Thorne's two oxen, the slow one; the first of their names she has said, once, unasked (Ch 2 Sc 4).
 - **Dun** — The off one of Rae Thorne's two oxen, beside Hob (Ch 2, Interlude).
 - **Name-the-load** — A carters' game played at every winch on the Holloway: name a load on the rope before it is up, by how it hangs. Rae Thorne plays it; salt sits like a stone (Ch 2, Between).
+- **The bridge at Calden** — A bridge at Calden that Thistle would not cross until Darrow walked her over it backward, talking to her as if she were a lady; Aldric laughed from the bank (Ch 2 Sc 5, in Aldric's letter).
 
 ## Songs and verses
 

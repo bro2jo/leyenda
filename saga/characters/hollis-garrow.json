@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "4",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-4"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-5"
   },
-  "last_seen_doing": "At the Grey Cot without looking round, knew Darrow had come in with post and asked who from.",
-  "now": "At the Grey Cot with the lad's hand in his, as he has been since the feast. He knows a letter came up for Darrow and that Darrow has not looked at it.",
+  "last_seen_doing": "Watched the blue wax burn in the brazier and said nothing; when the Captain pressed him, set the lad's hand down, strapped on the beech leg and left the hall, the first time since the lad was found.",
+  "now": "Gone out of the hall on the beech leg, for the first time since Benedek was found; he would not say what the burning wax did to him.",
   "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list. When they came to the gate he had himself carried up to the gatehouse window to see the man who wanted him, heard his name read second, looked at the wax on the writ and away, and when the Captain gave his name at the bars, told him he had seen him move at it, that nobody else had, and called him Captain.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -252,6 +252,18 @@
       "chapter": "02",
       "scene": "4",
       "evidence": "Letter, is it?"
+    },
+    {
+      "fact": "He watched the blue wax burn in the brazier and said nothing at all, which in all their weeks Darrow had not known him do.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "watched every part of it. He said nothing at all."
+    },
+    {
+      "fact": "He left the Grey Cot on the beech leg, strapped on without help, for the first time since the lad was found.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "It was the first time he had left the Grey Cot since the lad was found"
     }
   ],
   "relationships": [
@@ -388,6 +400,10 @@
       "chapter": "02",
       "scene": "between-9",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "5"
     }
   ]
 }

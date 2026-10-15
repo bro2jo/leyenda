@@ -83,6 +83,12 @@
       "chapter": "01",
       "scene": "1",
       "evidence": "a man who had ridden knee to knee with him since they were boys had written his name first on the list"
+    },
+    {
+      "fact": "He wrote to Darrow at the House of Menders, signed A., remembering Thistle and the bridge at Calden: Come home, brother. Kneel, and be whole.",
+      "chapter": "02",
+      "scene": "5",
+      "evidence": "Come home, brother. Kneel, and be whole."
     }
   ],
   "relationships": [
@@ -122,6 +128,11 @@
     {
       "chapter": "01",
       "scene": "1",
+      "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "5",
       "mention": true
     }
   ]
