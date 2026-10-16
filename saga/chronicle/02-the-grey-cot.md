@@ -769,11 +769,11 @@ He broke the wax with his thumb without looking at it, and read.
 
 *A.*
 
-He read it again the way he would have read a writ, for what it wanted, who stood behind the man who wrote it, and what it left out. It left out who had carried it as far as the winch-house. It wanted one thing, plainly, and it wanted it in Aldric's voice, and he could not get underneath the voice to the paper. Every time he tried, there was the bridge, and the mare going over it backward, and Aldric on the bank laughing.
+He read it again the way he would have read a writ, for what it wanted, who stood behind the man who wrote it, and what it left out. It left out who had carried it as far as the winch-house. It wanted one thing, plainly, and it wanted it in Aldric's voice, and he could not get underneath the voice to the paper. Every time he tried, there was the bridge, and the mare going over it backward, and Aldric on the bank laughing. Then the other bank, the west one, and Aldric's horse already turned.
 
 He put it in the brazier.
 
-The paper went quickly. The wax took longer. It softened at the edges, then bubbled, then ran blue into the coals and curled up black, and across the brazier Hollis turned his head from the Grey Cot for the first time that morning and watched every part of it. He said nothing at all. In all their weeks on the mountain Darrow had not known him go a minute without a word for something.
+The paper went quickly. The wax took longer. It softened at the edges, then bubbled, then ran blue into the coals and curled up black, and across the brazier Hollis turned his head from the Grey Cot for the first time that morning and watched every part of it. He said nothing at all. Darrow had seen that silence once before.
 
 "Say it."
 
@@ -781,9 +781,9 @@ Hollis watched the black curl settle into the coals.
 
 "You went quiet like that at the bars," Darrow said. "At the Confessor's wax."
 
-Hollis set the lad's hand down on the grey blanket, carefully, the way you set down a thing that might spill. Then he reached under his cot for the beech leg, strapped it on without help, got up on it, and went down the hall and out of the door. It was the first time he had left the Grey Cot since the lad was found, and nobody in the hall said a word about it, because Darrow had already got up, good leg, bad leg, and sat down in Hollis's place and taken the lad's hand before anyone could see that nobody had it.
+Hollis set Benedek's hand down on the grey blanket, carefully, the way you set down a thing that might spill. Then he reached under his cot for the beech leg, strapped it on without help, got up on it, and went down the hall and out of the door. It was the first time he had left the Grey Cot since the lad was found. Nobody in the hall said a word about it, because Darrow had already got up, good leg, bad leg, sat down in Hollis's place and taken the lad's hand before anyone could see that nobody had it.
 
-Wren had come in behind him at some point. She stood at the foot of his cot with her ledger open, and for once she wrote something down.
+Wren had come in while the wax was burning. She stood at the foot of the Grey Cot with her ledger open, and this time she wrote it down.
 
 "Letters to the Captain of the Ninth: one," she said. "Burned: one." She closed the ledger. "There'll be another. There's always another."
 
