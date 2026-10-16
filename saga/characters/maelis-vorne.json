@@ -209,6 +209,12 @@
       "evidence": "Not the Mender."
     },
     {
+      "fact": "She knew his step: she was already looking at the door when he came in.",
+      "chapter": "02",
+      "scene": "between-12",
+      "evidence": "She knew his step."
+    },
+    {
       "fact": "She keeps the black glass from Benedek's mouth folded in linen inside her coat; three days on, the cold still comes off it.",
       "chapter": "02",
       "scene": "between-12",
@@ -227,10 +233,10 @@
       "evidence": "Maelis did not say no."
     },
     {
-      "fact": "She told him that saying so in the hall would give Marrant a better word than witchcraft, and that it clears her when she can prove it, not before.",
+      "fact": "She told him that if he said so in the hall, Marrant would ask how a Mender came by a piece of one; it clears her when she can prove it, not before.",
       "chapter": "02",
       "scene": "between-12",
-      "evidence": "you've given Marrant a better word than witchcraft"
+      "evidence": "Marrant will ask how a Mender came by a piece of one"
     }
   ],
   "relationships": [

@@ -827,9 +827,9 @@ Darrow sat down on the low wall of the cloister, and Hollis stayed on his feet w
 
 ### Between — Not in the Hall
 
-When the night bell had rung, Darrow left Hollis in the cloister and went back in by the level walk, down the hall past the Grey Cot and the night novice, to the cell where Maelis kept her jars. There was light under the door. His hands had been warm all evening without a fire, and he had only just noticed.
+When the night bell had rung, Darrow left Hollis in the cloister and went back inside to ask Maelis about the glass she had taken from under Benedek's tongue. Her cell was at the end of the hall, past the Grey Cot and the night novice, and there was light under the door. He put his hand to the latch, which was cold, and only then noticed that his hands were not. They had been warm all evening without a fire.
 
-He knocked once and went in. Maelis stood at the shelf with the pipe in her teeth, unlit, and did not turn round.
+He knocked once and went in. Maelis stood at the shelf with the pipe in her teeth, unlit, and she was already looking at the door. She knew his step.
 
 "You said not here," he said. "I've found you a not-here."
 
@@ -839,9 +839,9 @@ He knocked once and went in. Maelis stood at the shelf with the pipe in her teet
 
 She took the pipe out and looked at his knee before his face. "Will you sit, Captain, or shall the knee choose?"
 
-He sat on the end of her cot. She took the linen out of her coat, unfolded it twice on her palm and held it under the lamp.
+He sat on the end of her cot. She took the linen out of her coat, unfolded it twice on her palm and held the glass under the lamp.
 
-It was as small as he remembered, and it did what it had done at the window: took the light and gave none of it back. It had been three days inside her coat, against her ribs, and still the cold came off it the way it comes off a shutter in a hard frost.
+It did what it had done at the window: took the light and gave none of it back. It had been three days inside her coat, against her ribs, and still the cold came off it the way it comes off a shutter in a hard frost.
 
 His hand went toward it before he had decided anything. She caught his wrist.
 
@@ -853,13 +853,17 @@ She held on a moment longer than she needed to, two fingers on the inside of the
 
 "What does it look like?"
 
-He looked, since she would have it no other way. One face of it was flat and the edge was clean. It had not grown like that; it had come off something bigger. He thought of the field-stones coming up on their carts in the wet grass, black in their iron frames, cold under the palm until they weren't.
+"You'll have me say it again."
+
+"I'll have you look."
+
+He looked. One face of it was flat and the edge was clean. It had not grown like that; it had come off something bigger. The field-stones had come up on their carts in the wet grass at the ford, black in their iron frames, cold under the palm until they weren't.
 
 "Like a chip off a field-stone."
 
 Maelis did not say no. She folded the linen over it, once and twice, and put it back inside her coat.
 
-"Say that in the hall," she said, "and you've given Marrant a better word than witchcraft."
+"Say that in the hall," she said, "and Marrant will ask how a Mender came by a piece of one."
 
 "And if it's the thing that clears you?"
 
@@ -867,6 +871,6 @@ Maelis did not say no. She folded the linen over it, once and twice, and put it 
 
 He looked at her coat, where the cold was. "Not in the hall."
 
-"Good. Now go to bed. You've not slept since the letter, and I'll not have that knee sit up another night on a cold wall."
+"Good. Now go to bed. You've not slept since the letter, and I'll not have you and that knee on a cold wall another night."
 
 At the door he looked back. She had not taken the coat off. She stood at the shelf with it buttoned to the throat and one hand flat over the place where the linen was.

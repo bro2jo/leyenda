@@ -642,10 +642,16 @@
       "evidence": "I'd tell you."
     },
     {
-      "fact": "His hands had been warm all evening without a fire, and he had only just noticed.",
+      "fact": "He went to Maelis after the night bell to ask about the glass she had taken from under Benedek's tongue.",
       "chapter": "02",
       "scene": "between-12",
-      "evidence": "His hands had been warm all evening without a fire"
+      "evidence": "to ask Maelis about the glass she had taken from under Benedek's tongue"
+    },
+    {
+      "fact": "His hands had been warm all evening without a fire; he noticed only when he touched the cold latch of her door.",
+      "chapter": "02",
+      "scene": "between-12",
+      "evidence": "only then noticed that his hands were not"
     },
     {
       "fact": "He thinks the black glass looks like a chip off a field-stone, and said so to Maelis.",
