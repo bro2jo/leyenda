@@ -152,7 +152,8 @@
         "01:between-4",
         "01:s4",
         "01:climax",
-        "02:between-11"
+        "02:between-11",
+        "02:between-12"
       ]
     },
     {
@@ -217,6 +218,18 @@
         "01:choice",
         "02:s4",
         "02:interlude"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "The black glass under Benedek's tongue: still cold after three days in Maelis's coat; Darrow says it looks like a chip off a field-stone, and she did not say no; she keeps it, and asked him to keep it out of the hall",
+      "truth": "Oathstone: frost drawn out of a man too fast leaves a sliver of the stone it went to (arc b1.2, T1); the far cots, drained slowly over years, never had one",
+      "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
+      "status": "open",
+      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes it looks like a chip off a field-stone and has agreed not to say so in the hall (c02.13a); the reader. Not the hall, not Hollis, not Wren",
+      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist",
+      "on_page": [
+        "02:between-12"
       ]
     }
   ]

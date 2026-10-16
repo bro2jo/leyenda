@@ -824,3 +824,49 @@ He stopped with the word in his mouth. The snow came down. Behind them in the ha
 "No," Hollis said. "Sit up a while."
 
 Darrow sat down on the low wall of the cloister, and Hollis stayed on his feet with his hand on the pillar, and neither of them said anything else until the night bell.
+
+### Between — Not in the Hall
+
+When the night bell had rung, Darrow left Hollis in the cloister and went back in by the level walk, down the hall past the Grey Cot and the night novice, to the cell where Maelis kept her jars. There was light under the door. His hands had been warm all evening without a fire, and he had only just noticed.
+
+He knocked once and went in. Maelis stood at the shelf with the pipe in her teeth, unlit, and did not turn round.
+
+"You said not here," he said. "I've found you a not-here."
+
+"I said when I know it."
+
+"Do you?"
+
+She took the pipe out and looked at his knee before his face. "Will you sit, Captain, or shall the knee choose?"
+
+He sat on the end of her cot. She took the linen out of her coat, unfolded it twice on her palm and held it under the lamp.
+
+It was as small as he remembered, and it did what it had done at the window: took the light and gave none of it back. It had been three days inside her coat, against her ribs, and still the cold came off it the way it comes off a shutter in a hard frost.
+
+His hand went toward it before he had decided anything. She caught his wrist.
+
+"Decide first."
+
+She held on a moment longer than she needed to, two fingers on the inside of the wrist, the way she read the knee, and her face went very still. Then she let him go.
+
+"What is it?" he said.
+
+"What does it look like?"
+
+He looked, since she would have it no other way. One face of it was flat and the edge was clean. It had not grown like that; it had come off something bigger. He thought of the field-stones coming up on their carts in the wet grass, black in their iron frames, cold under the palm until they weren't.
+
+"Like a chip off a field-stone."
+
+Maelis did not say no. She folded the linen over it, once and twice, and put it back inside her coat.
+
+"Say that in the hall," she said, "and you've given Marrant a better word than witchcraft."
+
+"And if it's the thing that clears you?"
+
+"Then it clears me when I can prove it. Not before." The pipe went back in her teeth. "Not in the hall."
+
+He looked at her coat, where the cold was. "Not in the hall."
+
+"Good. Now go to bed. You've not slept since the letter, and I'll not have that knee sit up another night on a cold wall."
+
+At the door he looked back. She had not taken the coat off. She stood at the shelf with it buttoned to the throat and one hand flat over the place where the linen was.

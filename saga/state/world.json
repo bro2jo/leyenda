@@ -128,11 +128,18 @@
       "after": "5",
       "covers": [],
       "written": "2026-10-15"
+    },
+    {
+      "scene": "between-12",
+      "title": "Not in the Hall",
+      "after": "5",
+      "covers": [],
+      "written": "2026-10-15"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the cloister, on the low wall, sitting up with Hollis",
+    "detail": "at the door of Maelis's cell off the infirmary hall, sent to bed",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -142,10 +149,10 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Darrow sat down on the low wall of the cloister, and Hollis stayed on his feet with his hand on the pillar, and neither of them said anything else until the night bell.",
+  "last_beat": "At the door he looked back. She had not taken the coat off. She stood at the shelf with it buttoned to the throat and one hand flat over the place where the linen was.",
   "companions": {
     "maelis": {
-      "approval": 25,
+      "approval": 26,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },

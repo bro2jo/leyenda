@@ -470,6 +470,30 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.13",
+      "made": {
+        "chapter": 2,
+        "scene": "between-12",
+        "date": "2026-10-15"
+      },
+      "chose": "Went to Maelis in her cell after the night bell to collect the rest of what she knew of the black glass; she would not say, made him look and say what it looked like (a chip off a field-stone), did not say no, caught his warm wrist when his hand went to it, and asked him to keep it out of the hall, since it gives Marrant a better word than witchcraft; he agreed: not in the hall",
+      "now": {
+        "approval": {
+          "maelis": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.13a",
+          "when": "later",
+          "at": "later",
+          "weight": "scene",
+          "what": "Darrow agreed with Maelis, in her cell, not to say in the hall that the black glass looks like a chip off a field-stone (it would give Marrant a better word than witchcraft; it clears her only when she can prove it). Fire where he keeps that before the House, or breaks it",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
