@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "5",
+    "scene": "between-11",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-5"
+    "anchor": "chronicle/02-the-grey-cot.html#between-11"
   },
-  "last_seen_doing": "Read the letter in blue wax by the brazier, knew Aldric's hand, could not read it as a writ for the voice in it, and burned it; asked Hollis to say what the wax did to him, and took the lad's hand in Hollis's place when Hollis left.",
-  "now": "At the Grey Cot in Hollis's place, holding Benedek's hand. He has read his sworn brother's letter, Come home, brother. Kneel, and be whole, and burned it. Hollis has left the hall for the first time since the lad was found.",
+  "last_seen_doing": "Found Hollis in the cloister after dark, heard him out, would not give him the easy no, and sat up with him until the night bell.",
+  "now": "In the cloister with Hollis until the night bell, the lad's hand left with the night novice. He has told Hollis what his eyes say: nobody passed, the cold came anyway, and not yet from where.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -612,6 +612,30 @@
       "evidence": "taken the lad's hand before anyone could see that nobody had it"
     },
     {
+      "fact": "He did not ask Hollis about the wax.",
+      "chapter": "02",
+      "scene": "between-11",
+      "evidence": "did not ask about the wax"
+    },
+    {
+      "fact": "He would not give Hollis the easy answer: he does not know where the lad has gone, only that he did not walk there and nobody passed.",
+      "chapter": "02",
+      "scene": "between-11",
+      "evidence": "I don't know where he's gone"
+    },
+    {
+      "fact": "He told Hollis his own eyes say nobody came up the row and nobody went down it, and the cold came anyway; not yet from where.",
+      "chapter": "02",
+      "scene": "between-11",
+      "evidence": "and the cold came anyway"
+    },
+    {
+      "fact": "He promised Hollis he would tell him if it was his doing.",
+      "chapter": "02",
+      "scene": "between-11",
+      "evidence": "I'd tell you."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -797,6 +821,10 @@
     {
       "chapter": "02",
       "scene": "5"
+    },
+    {
+      "chapter": "02",
+      "scene": "between-11"
     },
     {
       "chapter": "tale01",

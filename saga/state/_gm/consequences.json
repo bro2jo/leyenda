@@ -443,6 +443,33 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.12",
+      "made": {
+        "chapter": 2,
+        "scene": "between-11",
+        "date": "2026-10-15"
+      },
+      "chose": "Answered Hollis's invitation in the cloister after dark: heard him confess the kind lies he told the lad (nobody was taking anyone; they would be let kneel) and ask whether they sent him; would not give him the easy no, said what his own eyes had (nobody passed, the cold came anyway, not yet from where), promised to tell him if it was him, and did not ask about the wax",
+      "now": {
+        "approval": {
+          "hollis": 1
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c02.12a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Hollis began to tell the Captain to get some sleep, the words he said to the lad before the lad was taken, stopped, and asked him to sit up a while instead. Fire where Hollis next tells anyone to get some sleep, or lies kindly in Darrow's hearing",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [

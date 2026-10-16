@@ -790,3 +790,37 @@ Wren had come in behind him at some point. She stood at the foot of his cot with
 > ⟦ THE RECKONING ⟧
 > Art ranked up: **Warden's Eye** III. *Read a weakness or a lie.*
 > XP 1,327 → 1,422
+
+### Between — Say Your Oath, Lad
+
+After dark Darrow gave the lad's hand to the night novice, who took it as if she had been waiting all day to be asked, and went out to find Hollis.
+
+The cloister walk ran level with the hall around a square of garden gone white. Hollis stood at its far corner on the beech leg, one hand on a pillar, watching the snow come down on the garden as if it owed him money. He did not turn round.
+
+"I told him nobody was taking anyone," Hollis said. "And when he asked, I told him they'd let us kneel. Mercy, the heralds said. Aye, I said. Say your oath, lad. Shut your eyes." The snow went on coming down. "He shut them."
+
+Darrow stopped by the next pillar and did not ask about the wax.
+
+"You were in the river." Hollis turned his head at last. "You know what the heralds are selling. So you tell me. A lad who'll believe a sergeant will believe anything. Did he go looking for it in the night, the kneeling, because I told him it was there?"
+
+No was the easy word, and it was ready.
+
+"I don't know where he's gone," Darrow said. "I know he didn't walk there. Nobody passed. Not him, not you, not anybody."
+
+"The Confessor says witchcraft."
+
+"The Confessor says a lot of things through bars." He looked at the snow, because Hollis was. "My eyes say nobody came up the row and nobody went down it, and the cold came anyway. They don't say from where. Not yet."
+
+"You'd tell me. If it was me."
+
+"I'd tell you." He let it stand a moment, so Hollis could look at it. "A lie doesn't climb a row of cots in the dark."
+
+Hollis made a sound that would have been a laugh on any other night. His hand on the pillar was steady, because he was holding it so.
+
+"Get some sleep, Capt—"
+
+He stopped with the word in his mouth. The snow came down. Somewhere behind them in the hall the night novice sat at the Grey Cot with the lad's hand in hers.
+
+"No," Hollis said. "Sit up a while."
+
+Darrow sat down on the low wall of the cloister, and Hollis stayed on his feet with his hand on the pillar, and neither of them said anything else until the night bell.
