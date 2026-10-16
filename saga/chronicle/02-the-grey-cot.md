@@ -797,11 +797,11 @@ After dark Darrow gave the lad's hand to the night novice, who took it as if she
 
 The cloister walk ran level with the hall around a square of garden gone white. Hollis stood at its far corner on the beech leg, one hand on a pillar, watching the snow come down on the garden as if it owed him money. He did not turn round.
 
-"I told him nobody was taking anyone," Hollis said. "And when he asked, I told him they'd let us kneel. Mercy, the heralds said. Aye, I said. Say your oath, lad. Shut your eyes." The snow went on coming down. "He shut them."
+"I told Orrin nobody was taking anyone," Hollis said. "And when he asked, I told him they'd let us kneel. Mercy, the heralds said. Aye, I said. Say your oath, lad. Shut your eyes." The snow went on coming down. "He shut them."
 
 Darrow stopped by the next pillar and did not ask about the wax.
 
-"You were in the river." Hollis turned his head at last. "You know what the heralds are selling. So you tell me. A lad who'll believe a sergeant will believe anything. Did he go looking for it in the night, the kneeling, because I told him it was there?"
+"You were in the river." Hollis turned his head at last. "You know what the heralds are selling. So you tell me. A lad who'll believe me will believe anything. Did he go looking for it in the night, the kneeling, because I told him it was there?"
 
 No was the easy word, and it was ready.
 
@@ -813,13 +813,13 @@ No was the easy word, and it was ready.
 
 "You'd tell me. If it was me."
 
-"I'd tell you." He let it stand a moment, so Hollis could look at it. "A lie doesn't climb a row of cots in the dark."
+"I'd tell you." He let it stand a moment, so Hollis could look at it.
 
 Hollis made a sound that would have been a laugh on any other night. His hand on the pillar was steady, because he was holding it so.
 
 "Get some sleep, Capt—"
 
-He stopped with the word in his mouth. The snow came down. Somewhere behind them in the hall the night novice sat at the Grey Cot with the lad's hand in hers.
+He stopped with the word in his mouth. The snow came down. Behind them in the hall, the night novice would be sitting at the Grey Cot with the lad's hand in hers.
 
 "No," Hollis said. "Sit up a while."
 
