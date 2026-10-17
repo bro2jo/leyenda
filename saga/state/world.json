@@ -143,11 +143,18 @@
         "2026-10-16"
       ],
       "written": "2026-10-16"
+    },
+    {
+      "scene": "between-13",
+      "title": "Told First",
+      "after": "6",
+      "covers": [],
+      "written": "2026-10-17"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on his cot in the infirmary hall at dusk, Wren at its end",
+    "detail": "at the head of the Grey Cot by the east wall, after the lamps were lit",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -157,7 +164,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "\"The wall,\" she said, low, so that nobody would hear her asking. \"Show me where.\"",
+  "last_beat": "She went off up the row to find her pencil, and before she reached the door she was counting again, under her breath: the lamps.",
   "companions": {
     "maelis": {
       "approval": 26,
@@ -170,7 +177,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 5,
+      "approval": 7,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
@@ -224,5 +231,5 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "In the hour before dusk the grey cloaks climbed to the gate, and Confessor Ivo Marrant read his list to the House, Darrow's name first. Two of his men came through the wicket before Old Mercy rang, late, and Darrow's shoulder could not shut it. The Prior spoke the law of names, and Marrant made his camp on the lower terrace to wait for the Captain of the Ninth to come down and kneel. Darrow went to the bars and gave him his name and his face."
   },
-  "last_updated": "2026-10-16"
+  "last_updated": "2026-10-17"
 }

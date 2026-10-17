@@ -189,7 +189,7 @@
           "at": "later",
           "weight": "color",
           "what": "Darrow promised Wren he would tell her first the next time he means to be brave; she wrote the count of it in her ledger, at one. The day he does, or does not, she counts it",
-          "status": "pending"
+          "status": "fired@ch02:between-13"
         }
       ]
     },
@@ -491,6 +491,30 @@
           "at": "later",
           "weight": "scene",
           "what": "Darrow agreed with Maelis, in her cell, not to say in the hall that the black glass looks like a chip off a field-stone (it would give Marrant a better word than witchcraft; it clears her only when she can prove it). Fire where he keeps that before the House, or breaks it",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "c02.14",
+      "made": {
+        "chapter": 2,
+        "scene": "between-13",
+        "date": "2026-10-16"
+      },
+      "chose": "Showed Wren the seam at dusk; could not get down to it, so she found it on her knees by touch (every wall sweats, this one is cold) and counted it three cots to the Grey Cot; stopped her following it past the third cot while the hall could see; told her first that tomorrow, when the fires are banked, he means to find where it starts. She counted it: Times you have told me first, one",
+      "now": {
+        "approval": {
+          "wren": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c02.14a",
+          "when": "next",
+          "at": "ch02:s7",
+          "weight": "color",
+          "what": "Darrow told Wren first, Friday at dusk, that he means to find where the seam starts tomorrow when the fires are banked; she found it cold to the touch and counted it to the third cot, and he stopped her going past it. Honour it where they go to the wall",
           "status": "pending"
         }
       ]
