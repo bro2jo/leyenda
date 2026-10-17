@@ -51,6 +51,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Dun** — The off one of Rae Thorne's two oxen, beside Hob (Ch 2, Interlude).
 - **Name-the-load** — A carters' game played at every winch on the Holloway: name a load on the rope before it is up, by how it hangs. Rae Thorne plays it; salt sits like a stone (Ch 2, Between).
 - **The bridge at Calden** — A bridge at Calden that Thistle would not cross until Darrow walked her over it backward, talking to her as if she were a lady; Aldric laughed from the bank (Ch 2 Sc 5, in Aldric's letter).
+- **The seam on the east wall** — A line of damp in the limewash a hand above the floor along the infirmary hall's east wall, where frost stood the night Benedek was taken; it runs the length of three cots and stops at the head of the Grey Cot. The hall says every wall in the House sweats (Ch 2 Sc 6).
 
 ## Songs and verses
 

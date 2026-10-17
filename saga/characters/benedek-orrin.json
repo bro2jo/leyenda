@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "5",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-5"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-6"
   },
-  "last_seen_doing": "Lay Hollowed in the Grey Cot; Hollis set his hand down, and the Captain took it.",
-  "now": "Lying Hollowed in the Grey Cot under the far cots' grey blanket, the Captain holding his hand in Hollis's place.",
+  "last_seen_doing": "Lay Hollowed in the Grey Cot; Rae was shown the frost on his mouth.",
+  "now": "Lying Hollowed in the Grey Cot. The frost has not gone from his mouth in four days, with a brazier at his head.",
   "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
@@ -129,6 +129,12 @@
       "chapter": "02",
       "scene": "3",
       "evidence": "the hall was calling it the Grey Cot"
+    },
+    {
+      "fact": "The frost has not gone from his mouth in four days, with a brazier at his head.",
+      "chapter": "02",
+      "scene": "6",
+      "evidence": "The frost had not gone from it in four days"
     }
   ],
   "relationships": [
@@ -205,6 +211,10 @@
       "chapter": "02",
       "scene": "between-12",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "6"
     }
   ]
 }

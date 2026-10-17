@@ -153,7 +153,8 @@
         "01:s4",
         "01:climax",
         "02:between-11",
-        "02:between-12"
+        "02:between-12",
+        "02:s6"
       ]
     },
     {
@@ -186,7 +187,8 @@
         "01:s4",
         "01:between-5",
         "01:between-6",
-        "01:climax"
+        "01:climax",
+        "02:s6"
       ]
     },
     {
@@ -217,7 +219,8 @@
         "01:climax",
         "01:choice",
         "02:s4",
-        "02:interlude"
+        "02:interlude",
+        "02:s6"
       ]
     },
     {
@@ -229,7 +232,8 @@
       "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes it looks like a chip off a field-stone and has agreed not to say so in the hall (c02.13a); the reader. Not the hall, not Hollis, not Wren",
       "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist",
       "on_page": [
-        "02:between-12"
+        "02:between-12",
+        "02:s6"
       ]
     }
   ]

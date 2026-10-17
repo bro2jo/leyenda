@@ -874,3 +874,72 @@ He looked at her coat, where the cold was. "Not in the hall."
 "Good. Now go to bed. You've not slept since the letter, and I'll not have you and that knee on a cold wall another night."
 
 At the door he looked back. She had not taken the coat off. She stood at the shelf with it buttoned to the throat and one hand flat over the place where the linen was.
+
+### Scene 6 — Which of Us
+
+Darrow slept, as he had been told to, and woke at the dawn bell with his hands cold again. Whatever had warmed them in the night had not stayed for morning.
+
+At the hour bell the Confessor came up to the bars.
+
+He brought one grey cloak to hold the censer and stood in the snow on the far side of the gate with his hands folded, and asked the gate-ward, very civil, whether the Mother of the House might spare him a moment. The gate-ward went for the Prior. The rest of the House came without being sent for. By the time Mother Ione had crossed the court there were novices in the kitchen door and lay brothers along the wall, and the men from the hall who could walk had come out onto the flags. Darrow put his back to the post at the foot of the gatehouse stair, where he had stood the day the list was read.
+
+Marrant found him there before he found the Prior. "Captain," he said, warmly, as if they had shared a fire.
+
+Then he thanked Mother Ione for her time, and the House for its bread, which had been very good, and said the rest pleasantly, to all of them.
+
+"You have a man in your hall with frost on his mouth, Mother. A sworn man, lying by a fire, in the same week this House refused the Crown its list." He let them hear the shape of that. "The Crown has a word for it, and I'm sorry to be the one who carries it up your Steps. Ember witchcraft." He bowed a little, to the word. "I'd be grateful for a moment with the Mender. The one who keeps your far cots."
+
+Mother Ione folded her hands into her sleeves.
+
+"We are a House of Menders, Confessor," she said. "Which of us did you climb for?"
+
+It was a good answer, and it was no use, because the House answered for her. Darrow watched it go through the court like wind through standing grain. The heads turned, not to the Prior and not to the bars, but to the hall door, where Maelis stood with the pipe in her teeth and her coat buttoned to the throat.
+
+She did not move. One hand lay flat on her coat, over the place where the linen was.
+
+Marrant looked where the House was looking. He did not hurry it.
+
+"Thank you," he said, to the court, as if it had given him something; and it had. He went back down the first flight with the censer smoking behind him, and nobody watched him go.
+
+---
+
+All afternoon the heads in the hall kept going down the row to the far end, where Maelis worked, and coming back, and going again.
+
+Darrow had found the seam on the second morning, when he had done counting what didn't happen and started on what did: a line of damp in the limewash a hand above the floor, along the east wall, darker than the wash around it, where frost had stood in the night and gone. It ran the length of three cots and stopped at the head of the Grey Cot.
+
+The next time the heads went down the row, he sat up on the end of his cot and used the bottom of his voice.
+
+"Not her. The wall."
+
+They looked, because he had said it the way he said things to a column. They saw a wall.
+
+"The night the lad was taken, frost ran along the foot of that wall to his cot. It's in the limewash yet. Look at it."
+
+The lay brother banking the fire gave it a fair look and shook his head. "Every wall in this House sweats in the snow, Captain. That one always has."
+
+"Not in a line."
+
+But the heads had already gone back down the row. He had held this hall once with the bottom of his voice. It was not a thing that held twice.
+
+Rae Thorne came in at the far door in the middle of the afternoon, with the Steps' snow on her hood and a bale of the wet linen on her shoulder. She looked down the hall the way she looked at a load, and saw which way it leaned.
+
+"Thorne."
+
+She came over and set the bale down at the foot of the Grey Cot. Hollis looked up from the lad's hand at her and said nothing.
+
+"You've carted more hurt men than anyone in this House," Darrow said. "Have you seen that?"
+
+She looked at the lad's mouth for a long moment. The frost had not gone from it in four days, with a brazier at his head.
+
+"I've had that cold in my cart," she said.
+
+"When?"
+
+She shouldered the bale again. "Aye," she said, which was no answer to anything, and took the linen down the row to the press, and did not look at the Grey Cot again.
+
+Only Wren had followed his eyes to the wall. She came at dusk, when the wind had dropped and the snow had begun to come straight down, and sat on the end of his cot with the ledger shut on her knees and no pencil behind her ear.
+
+"The wall," she said, low, so that nobody would hear her asking. "Show me where."
+
+> ⟦ THE RECKONING ⟧
+> XP 1,422 → 1,467

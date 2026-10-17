@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-10",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-10"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-6"
   },
-  "last_seen_doing": "Before going down at first light, played name-the-load with Darrow for her other ox's name against an aye, and won.",
-  "now": "Gone down the Steps at first light to her oxen at the winch-house. Darrow owes her an aye, and she has not said what for.",
+  "last_seen_doing": "Came up the Steps with a bale of linen; shown the frost on the lad's mouth, said she had had that cold in her cart, and would not say when.",
+  "now": "Up from the winch-house with the linen, in the House. Shown the frost on Benedek's mouth, she said she has had that cold in her cart, and answered when with Aye.",
   "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart. In the court at dusk she stood at the end of the lay brothers' line while the list was read, and when Darrow's shoulder could not shut the wicket on a third grey cloak, hers went in where his had been and it shut.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -317,6 +317,18 @@
       "chapter": "02",
       "scene": "between-10",
       "evidence": "I'll know when I ask."
+    },
+    {
+      "fact": "Shown the frost on the lad's mouth, she said she has had that cold in her cart.",
+      "chapter": "02",
+      "scene": "6",
+      "evidence": "I've had that cold in my cart"
+    },
+    {
+      "fact": "Asked when, she said only Aye.",
+      "chapter": "02",
+      "scene": "6",
+      "evidence": "which was no answer to anything"
     }
   ],
   "relationships": [
@@ -417,6 +429,10 @@
       "chapter": "02",
       "scene": "5",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "6"
     }
   ]
 }
