@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-14 · body · The cold finds his hands early today. He tucks them under his arms on the cot's end, and the far lamp's soot is still in the creases of two fingers when he takes them out again.
 - 2026-10-14 · ledger · From Wren's ledgers, a page headed Captain, steps (for the Mender): To the far lamp after the night bell: 41. Back at the dawn bell: 41. All slow. (Underneath: She asked why the same number twice. I said he walks the same.)
 - 2026-10-14 · house · A lay brother has taken to setting a cup of water by the Grey Cot every morning. Nobody drinks it. He takes it away at dusk and brings a fresh one at dawn.
 - 2026-10-14 · overheard · Two novices on the stair, arguing whether the Greywater freezes from the top down or the bottom up. Neither of them has seen it freeze. Both are certain.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-17 · body · The knee is quiet this afternoon. He has learned not to trust it when it is quiet, and lately, a little, to enjoy it anyway.
 - 2026-10-17 · saying · Halfway up the Steps with the noon wood, a lay brother stopped at the Elbow to get his breath, and the one behind him said what is always said there: "Ysolde climbed it dying. What's your excuse?"
 - 2026-10-17 · house · Sister Pell has taken the far lamp's spare wicks into her own keeping, counted, in a tin with a lid that sticks. Nobody asked her to. Nobody has asked her to give them back, either.
+- 2026-10-17 · weather · Thin sun on the Steps by early afternoon, enough to set the snow dripping from the gatehouse eaves in a steady count that nobody in the House has yet been able to resist keeping.
