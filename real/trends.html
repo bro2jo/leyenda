@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Ledger Trends</title>
+<style>
+/* Layout: one column, the width of a phone; sections separated by hairlines, cards only for the streak tiles. */
+:root {
+  color-scheme: light;
+  --bg: #f6f6f3;
+  --surface: #fcfcfb;
+  --ink: #111210;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11,11,11,.10);
+  --accent: #2a78d6;
+  --accent-soft: rgba(42,120,214,.14);
+  --dim: #b4b3ad;
+  --seq-0: #e6eef9;
+  --seq-1: #b7d3f6;
+  --seq-2: #6da7ec;
+  --seq-3: #2a78d6;
+  --seq-4: #184f95;
+  --good: #0ca30c;
+  --good-text: #006300;
+  --warn: #fab219;
+  --serious: #ec835a;
+  --critical: #d03b3b;
+  --tip-bg: #fcfcfb;
+  --shadow: 0 6px 24px rgba(11,11,11,.14);
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,.10);
+    --accent: #3987e5; --accent-soft: rgba(57,135,229,.22); --dim: #5a5953;
+    --seq-0: #22314a; --seq-1: #184f95; --seq-2: #256abf; --seq-3: #3987e5; --seq-4: #86b6ef;
+    --good-text: #0ca30c; --tip-bg: #232322; --shadow: 0 6px 24px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,.10);
+  --accent: #3987e5; --accent-soft: rgba(57,135,229,.22); --dim: #5a5953;
+  --seq-0: #22314a; --seq-1: #184f95; --seq-2: #256abf; --seq-3: #3987e5; --seq-4: #86b6ef;
+  --good-text: #0ca30c; --tip-bg: #232322; --shadow: 0 6px 24px rgba(0,0,0,.5);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.45;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 10; }
+.wrap { max-width: 640px; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); padding-block: 8px 48px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 600; }
+h1 { font-size: 24px; letter-spacing: -.01em; }
+h2 { font-size: 18px; }
+p { margin: 0; }
+small, .muted { color: var(--muted); }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.head { display: grid; gap: 6px; padding-block: 10px 14px; }
+.status { color: var(--ink-2); font-size: 14px; }
+.now { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; margin-top: 6px; }
+.now dt { color: var(--muted); }
+.now dd { margin: 0; color: var(--ink-2); min-width: 0; overflow-wrap: anywhere; }
+.now dd b { color: var(--ink); font-weight: 600; }
+
+/* the range control: one row, sticky, every chart below follows it */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 8px 10px; }
+.seg { display: flex; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); padding: 3px; gap: 3px; }
+.seg button {
+  flex: 1 1 0; min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: var(--ink-2);
+  font: inherit; font-size: 15px; font-weight: 500; cursor: pointer; padding: 0 4px;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 600; }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.seg button[hidden] { display: none; }
+.range-note { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+section { padding-block: 18px 22px; border-top: 1px solid var(--grid); }
+.sec-h { display: grid; gap: 2px; margin-bottom: 12px; }
+.sec-h p { color: var(--ink-2); font-size: 14px; }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 560px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 12px 10px; display: grid; gap: 6px; min-width: 0; }
+.tile-h { display: flex; justify-content: space-between; gap: 6px; align-items: baseline; }
+.tile-l { font-size: 14px; font-weight: 600; }
+.tile-s { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.tile-v { display: flex; align-items: baseline; gap: 6px; }
+.big { font-size: 34px; font-weight: 600; line-height: 1; letter-spacing: -.02em; }
+.unit { font-size: 12px; color: var(--muted); }
+.tile-f { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
+.tile-w { font-size: 11px; color: var(--muted); }
+.strip { display: flex; gap: 3px; }
+.strip i { flex: 1 1 0; height: 8px; border-radius: 2px; background: var(--seq-3); }
+.strip i.off { background: transparent; box-shadow: inset 0 0 0 1px var(--axis); }
+.strip i.red { background: var(--grid); }
+.strip i.today { outline: 2px solid var(--accent); outline-offset: 1px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.stat { display: grid; gap: 2px; min-width: 0; }
+.stat .k { font-size: 12px; color: var(--muted); }
+.stat .v { font-size: 22px; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
+.stat .v small { font-size: 13px; font-weight: 500; color: var(--ink-2); margin-left: 4px; }
+.stat .d { font-size: 12px; color: var(--ink-2); }
+.flag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; }
+.flag.good { color: var(--good-text); }
+.flag.warn { color: var(--serious); }
+.flag svg { width: 12px; height: 12px; }
+
+/* figures */
+figure { margin: 0; position: relative; }
+.plot { position: relative; min-width: 0; }
+.chart { display: block; width: 100%; height: auto; touch-action: pan-y pinch-zoom; -webkit-tap-highlight-color: transparent; overflow: visible; }
+.chart:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.chart:focus:not(:focus-visible) { outline: none; }
+.chart text { fill: var(--muted); font-family: var(--font); font-size: 11px; }
+.chart text.halo { paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
+.chart text.ink { fill: var(--ink); font-weight: 600; }
+.chart text.ink2 { fill: var(--ink-2); }
+.chart .grid { stroke: var(--grid); stroke-width: 1; }
+.chart .axis { stroke: var(--axis); stroke-width: 1; }
+.chart .wk { stroke: var(--grid); stroke-width: 1; }
+.chart .target { stroke: var(--ink-2); stroke-width: 1; }
+.chart .band { fill: var(--accent-soft); }
+.chart .col { fill: var(--accent); }
+.chart .col.open { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.chart .col.hi { filter: brightness(1.15); }
+.chart .line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .dot { fill: var(--dim); stroke: var(--surface); stroke-width: 2; }
+.chart .dot.hi { fill: var(--accent); r: 5; }
+.chart .end { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.chart .cross { stroke: var(--axis); stroke-width: 1; }
+.chart .hit { fill: transparent; }
+figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.legend i.none { box-shadow: inset 0 0 0 1px var(--axis); }
+
+/* tooltips: tap to read; nothing is only in them */
+.tip { position: absolute; z-index: 4; pointer-events: none; background: var(--tip-bg); color: var(--ink); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); padding: 8px 10px; font-size: 13px; min-width: 120px; max-width: 240px; display: none; }
+.tip.on { display: block; }
+.tip .th { font-weight: 600; margin-bottom: 4px; }
+.tip .tr { display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+.tip .tr b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.tip .tr span { color: var(--ink-2); }
+.tip .tn { color: var(--muted); font-size: 12px; margin-top: 3px; }
+
+/* strips and grids */
+.rows { display: grid; gap: 6px; }
+.row { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 8px; align-items: center; }
+.row .rl { font-size: 12px; color: var(--ink-2); }
+.cells { display: grid; gap: 2px; }
+.cells i { display: block; height: 26px; border-radius: 3px; background: var(--seq-1); min-width: 0; }
+.cells i.g0 { background: var(--seq-0); } .cells i.g1 { background: var(--seq-1); } .cells i.g2 { background: var(--seq-2); }
+.cells i.g3 { background: var(--seq-3); } .cells i.g4 { background: var(--seq-4); }
+.cells i.none { background: transparent; box-shadow: inset 0 0 0 1px var(--grid); }
+.cells i.text { background: transparent; box-shadow: inset 0 0 0 1px var(--axis); }
+.cells i.hi { outline: 2px solid var(--ink); outline-offset: -2px; }
+.xlab { display: grid; gap: 2px; font-size: 11px; color: var(--muted); }
+.xlab span { min-width: 0; white-space: nowrap; overflow: visible; }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal .dh { font-size: 11px; color: var(--muted); text-align: center; padding-bottom: 2px; }
+.cal .c { aspect-ratio: 1; border-radius: 6px; display: flex; align-items: flex-start; justify-content: flex-start; padding: 4px 5px; font-size: 11px; color: var(--ink-2); background: var(--seq-0); min-width: 0; }
+.cal .c.h1 { background: var(--seq-1); } .cal .c.h2 { background: var(--seq-2); color: #fff; } .cal .c.h3 { background: var(--seq-3); color: #fff; } .cal .c.h4 { background: var(--seq-4); color: #fff; }
+.cal .c.none { background: transparent; box-shadow: inset 0 0 0 1px var(--grid); color: var(--muted); }
+.cal .c.red { background: transparent; box-shadow: inset 0 0 0 1px var(--axis); color: var(--muted); }
+.cal .c.out { visibility: hidden; }
+.cal .c.today { outline: 2px solid var(--accent); outline-offset: 1px; }
+.cal .c.hi { outline: 2px solid var(--ink); outline-offset: 1px; }
+:root[data-theme="dark"] .cal .c.h1, :root[data-theme="dark"] .cal .c.h2 { color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cal .c.h1, :root:not([data-theme="light"]) .cal .c.h2 { color: #fff; }
+  :root:not([data-theme="light"]) .cal .c.h4 { color: #0d0d0d; } }
+:root[data-theme="dark"] .cal .c.h4 { color: #0d0d0d; }
+
+/* tables */
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; white-space: nowrap; }
+th { font-weight: 600; color: var(--ink-2); font-size: 12px; }
+td.n, th.n { text-align: right; }
+td small, th small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; white-space: normal; }
+tr.hist td { border-bottom: 1px solid var(--grid); font-size: 12px; white-space: normal; padding-top: 2px; }
+tr.cur td { background: var(--accent-soft); }
+table.sessions th, table.sessions td { padding: 7px 4px; }
+table.sessions td { text-align: center; }
+table.sessions th.fam { padding-left: 0; width: 1%; }
+details.twin table { font-size: 12px; }
+details.twin th, details.twin td { padding: 5px 6px; }
+table.sessions .pips { display: inline-flex; gap: 3px; justify-content: center; margin-bottom: 2px; }
+table.sessions .pips i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+table.sessions .pips i.open { background: transparent; box-shadow: inset 0 0 0 1.5px var(--axis); }
+table.sessions .pips i.extra { background: var(--seq-2); }
+table.sessions .cnt { display: block; font-size: 12px; color: var(--ink-2); }
+details.twin { margin-top: 8px; }
+details.twin summary { cursor: pointer; font-size: 13px; color: var(--ink-2); padding: 8px 0; min-height: 40px; display: flex; align-items: center; gap: 6px; list-style: none; }
+details.twin summary::-webkit-details-marker { display: none; }
+details.twin summary::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(-45deg); transition: transform .15s; }
+details.twin[open] summary::before { transform: rotate(45deg); }
+.foot { font-size: 13px; color: var(--muted); display: grid; gap: 6px; padding-top: 18px; border-top: 1px solid var(--grid); }
+.foot code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--ink-2); }
+noscript .scroll { margin-top: 10px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print { .bar { position: static; } .tip { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <div class="eyebrow">The Ledger</div>
+    <h1>Trends</h1>
+    <p class="status">Sat 10/17 · POD 54 · post-op week 8 · Phase 3 since 9/27</p>
+    <dl class="now">
+      <dt>Today</dt><dd>planned <b>conditioning, sport session</b> · still open: conditioning, sport session</dd>
+      <dt>Project</dt><dd>Get the CRV ready to sell · 1/3 done · next: 2. Take pictures · due Sat 10/17</dd>
+      <dt>PT</dt><dd>Last PT visit Thu 10/15 · 6 visits logged</dd>
+    </dl>
+  </header>
+
+  <div class="bar" id="bar">
+    <div class="seg" role="group" aria-label="Range">
+      <button type="button" data-range="14" aria-pressed="false">2 wk</button>
+      <button type="button" data-range="28" aria-pressed="false">4 wk</button>
+      <button type="button" data-range="56" aria-pressed="false">8 wk</button>
+      <button type="button" data-range="all" aria-pressed="false">All</button>
+    </div>
+    <div class="range-note" id="range-note">Every chart and count below follows this range.</div>
+  </div>
+
+  <section id="streaks">
+    <div class="sec-h"><div class="eyebrow">Streaks</div><h2>Days in a row</h2>
+      <p>Consecutive days with each habit done. Today is still open, so a streak stands until the day ends; a rest day the plan ordered is skipped. The dots are the last 14 days.</p></div>
+    <div class="tiles"><div class="tile" data-habit="logged"><div class="tile-h"><span class="tile-l">Logging</span></div><div class="tile-v"><span class="big">38</span><span class="unit">days in a row</span></div><div class="strip" aria-hidden="true"><i class="on" title="Sun 10/4"></i><i class="on" title="Mon 10/5"></i><i class="on" title="Tue 10/6"></i><i class="on" title="Wed 10/7"></i><i class="on" title="Thu 10/8"></i><i class="on" title="Fri 10/9"></i><i class="on" title="Sat 10/10"></i><i class="on" title="Sun 10/11"></i><i class="on" title="Mon 10/12"></i><i class="on" title="Tue 10/13"></i><i class="on" title="Wed 10/14"></i><i class="on" title="Thu 10/15"></i><i class="on" title="Fri 10/16"></i><i class="on today" title="Sat 10/17"></i></div><div class="tile-f"><span>best 38 · 9/10–10/17</span></div><div class="tile-f"><span data-slot="rate-logged">—</span><span class="tile-s">✓ today</span></div><div class="tile-w">anything recorded for the day</div></div><div class="tile" data-habit="check"><div class="tile-h"><span class="tile-l">Morning check</span></div><div class="tile-v"><span class="big">7</span><span class="unit">days in a row</span></div><div class="strip" aria-hidden="true"><i class="off" title="Sun 10/4"></i><i class="off" title="Mon 10/5"></i><i class="on" title="Tue 10/6"></i><i class="on" title="Wed 10/7"></i><i class="on" title="Thu 10/8"></i><i class="on" title="Fri 10/9"></i><i class="off" title="Sat 10/10"></i><i class="on" title="Sun 10/11"></i><i class="on" title="Mon 10/12"></i><i class="on" title="Tue 10/13"></i><i class="on" title="Wed 10/14"></i><i class="on" title="Thu 10/15"></i><i class="on" title="Fri 10/16"></i><i class="on today" title="Sat 10/17"></i></div><div class="tile-f"><span>best 7 · 10/11–10/17</span></div><div class="tile-f"><span data-slot="rate-check">—</span><span class="tile-s">✓ today</span></div><div class="tile-w">the swelling grade recorded</div></div><div class="tile" data-habit="floorfull"><div class="tile-h"><span class="tile-l">Heel prop</span></div><div class="tile-v"><span class="big">1</span><span class="unit">day in a row</span></div><div class="strip" aria-hidden="true"><i class="off" title="Sun 10/4"></i><i class="off" title="Mon 10/5"></i><i class="off" title="Tue 10/6"></i><i class="off" title="Wed 10/7"></i><i class="off" title="Thu 10/8"></i><i class="on" title="Fri 10/9"></i><i class="on" title="Sat 10/10"></i><i class="on" title="Sun 10/11"></i><i class="on" title="Mon 10/12"></i><i class="on" title="Tue 10/13"></i><i class="on" title="Wed 10/14"></i><i class="on" title="Thu 10/15"></i><i class="off" title="Fri 10/16"></i><i class="on today" title="Sat 10/17"></i></div><div class="tile-f"><span>best 7 · 10/9–10/15</span></div><div class="tile-f"><span data-slot="rate-floorfull">—</span><span class="tile-s">✓ today</span></div><div class="tile-w">the daily minimum, every round</div></div><div class="tile" data-habit="creatine"><div class="tile-h"><span class="tile-l">Creatine</span></div><div class="tile-v"><span class="big">16</span><span class="unit">days in a row</span></div><div class="strip" aria-hidden="true"><i class="on" title="Sun 10/4"></i><i class="on" title="Mon 10/5"></i><i class="on" title="Tue 10/6"></i><i class="on" title="Wed 10/7"></i><i class="on" title="Thu 10/8"></i><i class="on" title="Fri 10/9"></i><i class="on" title="Sat 10/10"></i><i class="on" title="Sun 10/11"></i><i class="on" title="Mon 10/12"></i><i class="on" title="Tue 10/13"></i><i class="on" title="Wed 10/14"></i><i class="on" title="Thu 10/15"></i><i class="on" title="Fri 10/16"></i><i class="on today" title="Sat 10/17"></i></div><div class="tile-f"><span>best 16 · 10/2–10/17</span></div><div class="tile-f"><span data-slot="rate-creatine">—</span><span class="tile-s">✓ today</span></div><div class="tile-w">taken</div></div><div class="tile" data-habit="food"><div class="tile-h"><span class="tile-l">Food</span></div><div class="tile-v"><span class="big">20</span><span class="unit">days in a row</span></div><div class="strip" aria-hidden="true"><i class="on" title="Sun 10/4"></i><i class="on" title="Mon 10/5"></i><i class="on" title="Tue 10/6"></i><i class="on" title="Wed 10/7"></i><i class="on" title="Thu 10/8"></i><i class="on" title="Fri 10/9"></i><i class="on" title="Sat 10/10"></i><i class="on" title="Sun 10/11"></i><i class="on" title="Mon 10/12"></i><i class="on" title="Tue 10/13"></i><i class="on" title="Wed 10/14"></i><i class="on" title="Thu 10/15"></i><i class="on" title="Fri 10/16"></i><i class="on today" title="Sat 10/17"></i></div><div class="tile-f"><span>best 20 · 9/28–10/17</span></div><div class="tile-f"><span data-slot="rate-food">—</span><span class="tile-s">✓ today</span></div><div class="tile-w">the day&#x27;s total logged</div></div></div>
+  </section>
+
+  <section id="weeks">
+    <div class="sec-h"><div class="eyebrow">Week score</div><h2>Week by week</h2>
+      <p>The engine's 0–100 score of each week (Sun–Sat): floor 20 · sessions 25 · fuel 30 · checks 10 · weigh-ins 5 · logging 10. This week is scored on its days so far.</p></div>
+    <div class="stats" id="week-stats"></div>
+    <figure>
+      <div class="plot" id="week-plot"></div>
+      <div class="tip" id="week-tip"></div>
+      <details class="twin"><summary>Table</summary><div class="scroll" id="week-table"></div></details>
+    </figure>
+  </section>
+
+  <section id="habits">
+    <div class="sec-h"><div class="eyebrow">Daily habits</div><h2>Coverage</h2>
+      <p>How many of the four daily habits each day carried: the morning check, the heel prop (1 round), creatine and the day's food total. An empty day was not logged.</p></div>
+    <figure>
+      <div class="plot" id="cal-plot"></div>
+      <div class="tip" id="cal-tip"></div>
+      <div class="legend"><span><i class="none"></i>not logged</span><span><i style="background:var(--seq-0)"></i>0</span><span><i style="background:var(--seq-1)"></i>1</span><span><i style="background:var(--seq-2)"></i>2</span><span><i style="background:var(--seq-3)"></i>3</span><span><i style="background:var(--seq-4)"></i>4 of 4</span></div>
+      <details class="twin"><summary>Table</summary><div class="scroll" id="cal-table"></div></details>
+    </figure>
+  </section>
+
+  <section id="sessions">
+    <div class="sec-h"><div class="eyebrow">Sessions</div><h2>Done against the plan</h2>
+      <p>Each week's planned sessions by family (plan changes the PT or trainer made are already applied), filled when done. A session beyond the plan shows in a lighter dot.</p></div>
+    <div class="stats" id="sess-stats"></div>
+    <div class="scroll" id="sess-grid"></div>
+  </section>
+
+  <section id="knee">
+    <div class="sec-h"><div class="eyebrow">The knee</div><h2>Mornings</h2>
+      <p>The morning check, day by day: the swelling grade on the clinic's scale (0 · trace · 1+ · 2+ · 3+) and the morning pain (0–10). A day without a grade stays empty.</p></div>
+    <div class="stats" id="knee-stats"></div>
+    <figure>
+      <div class="plot" id="knee-plot"></div>
+      <div class="tip" id="knee-tip"></div>
+      <div class="legend" id="knee-legend"></div>
+      <details class="twin"><summary>Table</summary><div class="scroll" id="knee-table"></div></details>
+    </figure>
+    <p class="muted" style="font-size:13px;margin-top:12px">Next gate: Phase 3 exit -&gt; Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI &gt;= 70%, good single-leg control. Earliest by calendar Tue 2026-10-20.</p>
+  </section>
+
+  <section id="weight">
+    <div class="sec-h"><div class="eyebrow">Weight</div><h2>Morning weigh-ins</h2>
+      <p>Each reading as a dot; the line is the 7-day average. The guide reads the weekly average, not the day.</p></div>
+    <div class="stats" id="weight-stats"></div>
+    <figure>
+      <div class="plot" id="weight-plot"></div>
+      <div class="tip" id="weight-tip"></div>
+      <figcaption>This week: 7/3 · avg 157.2 lb · last week 156.1 (3 readings) · +1.1 lb</figcaption>
+      <details class="twin"><summary>Table</summary><div class="scroll" id="weight-table"></div></details>
+    </figure>
+  </section>
+
+  <section id="fuel">
+    <div class="sec-h"><div class="eyebrow">Fuel</div><h2>Calories and protein</h2>
+      <p>Each day's total against the target (3,000 kcal · 150–160 g protein). Today is drawn hollow until it is closed and left out of the averages.</p></div>
+    <div class="stats" id="kcal-stats"></div>
+    <figure>
+      <div class="plot" id="kcal-plot"></div>
+      <div class="tip" id="kcal-tip"></div>
+      <figcaption>Calories, kcal per day</figcaption>
+    </figure>
+    <div class="stats" id="prot-stats" style="margin-top:18px"></div>
+    <figure>
+      <div class="plot" id="prot-plot"></div>
+      <div class="tip" id="prot-tip"></div>
+      <figcaption>Protein, g per day</figcaption>
+      <details class="twin"><summary>Table</summary><div class="scroll" id="fuel-table"></div></details>
+    </figure>
+  </section>
+
+  <section id="measured">
+    <div class="sec-h"><div class="eyebrow">Measured</div><h2>Latest clinic numbers</h2>
+      <p>The newest value per side, and the limb symmetry index (left as a share of right). The line under each metric is its history.</p></div>
+    <div class="scroll"><table class="measured"><thead><tr><th>Metric</th><th>Left</th><th>Right</th><th>LSI</th></tr></thead><tbody><tr><th scope="row">extension<small>knee extension; 0 = straight, + = hyperextension, - = short of straight</small></th><td><b>+2°</b><small>10/8 · gonio, AROM</small></td><td><b>0°</b><small>pre-op · AROM</small></td><td class="muted">—</td></tr><tr class="hist"><td colspan="4"><span class="muted">pre-op: L -1° · pre-op: R 0° · 9/11: L +2° · 9/25: L -3° · 10/1: L +2° · 10/8: L +2°</span></td></tr><tr><th scope="row">flexion<small>knee flexion</small></th><td><b>146°</b><small>10/8 · gonio</small></td><td><b>144°</b><small>pre-op</small></td><td class="muted">—</td></tr><tr class="hist"><td colspan="4"><span class="muted">pre-op: L 144° · R 144° · 9/11: L 130° · 9/11: L 135° · 9/25: L 146° · 10/8: L 146°</span></td></tr><tr><th scope="row">quad<small>isometric quad strength, dynamometer</small></th><td><b>58.9 lb</b><small>pre-op · dynamometer</small></td><td><b>83.7 lb</b><small>pre-op · dynamometer</small></td><td><b>70.4%</b><small>pre-op</small></td></tr><tr class="hist"><td colspan="4"><span class="muted">pre-op: L 58.9 lb · R 83.7 lb · LSI 70.4%</span></td></tr><tr><th scope="row">hamstring<small>isometric hamstring strength, dynamometer</small></th><td><b>55.8 lb</b><small>pre-op · dynamometer</small></td><td><b>79 lb</b><small>pre-op · dynamometer</small></td><td><b>70.6%</b><small>pre-op</small></td></tr><tr class="hist"><td colspan="4"><span class="muted">pre-op: L 55.8 lb · R 79 lb · LSI 70.6%</span></td></tr><tr><th scope="row">SL leg press<small>single-leg leg press max; a stand-in for quad LSI until a dynamometer test</small></th><td><b>9 plates</b><small>10/8 · max</small></td><td><b>14 plates</b><small>10/8 · max</small></td><td><b>64.3%</b><small>10/8</small></td></tr><tr class="hist"><td colspan="4"><span class="muted">10/8: L 9 plates · R 14 plates · LSI 64.3%</span></td></tr></tbody></table></div>
+  </section>
+
+  <noscript><section><div class="sec-h"><div class="eyebrow">This week</div><h2>The week's table</h2><p>The charts need JavaScript; the week's rows are here.</p></div><div class="scroll"><table class="plain"><thead><tr><th>Day</th><th>Plan</th><th>kcal</th><th>P (g)</th><th>Wt</th><th>Cr</th><th>Floor</th><th>Check</th><th>Knee</th><th>PT</th><th>Add-on</th><th>Cond</th><th>Sport</th><th>Together</th></tr></thead><tbody><tr><td>Sun 10/11</td><td>knee</td><td>2,260</td><td>112</td><td>159.8</td><td>✔</td><td>✔✔</td><td>✔</td><td>B</td><td></td><td></td><td></td><td></td><td>✔</td></tr><tr><td>Mon 10/12</td><td>cond, upperB</td><td>2,740</td><td>142</td><td>155.6</td><td>✔</td><td>✔✔</td><td>✔</td><td></td><td></td><td>upperB</td><td>18m</td><td>1</td><td></td></tr><tr><td>Tue 10/13</td><td>knee</td><td>2,432</td><td>135</td><td>155.8</td><td>✔</td><td>✔✔</td><td>✔</td><td>min</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Wed 10/14</td><td>sport</td><td>3,233</td><td>112</td><td>157.2</td><td>✔</td><td>✔✔</td><td>✔</td><td></td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Thu 10/15</td><td>pt</td><td>3,470</td><td>143</td><td>157.8</td><td>✔</td><td>✔✔</td><td>✔</td><td></td><td>✔</td><td></td><td></td><td></td><td></td></tr><tr><td>Fri 10/16</td><td>sport, cond, upperA</td><td>2,415</td><td>154</td><td>155.6</td><td>✔</td><td></td><td>✔</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Sat 10/17</td><td>cond, sport</td><td>1,600</td><td>55</td><td>158.4</td><td>✔</td><td>✔✔</td><td>✔</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></section></noscript>
+
+  <footer class="foot">
+    <span>38 of 38 days logged since Thu 9/10 · 13 closed</span>
+    <span>71 food items since 10/8: 36 estimate, 17 library, 11 label, 7 photo</span>
+    <span>From the logs only, through the engine (<code>python3 engine/report.py</code>; <code>ship</code> rebuilds it). Generated Sat 2026-10-17 16:34.</span>
+  </footer>
+</div>
+
+<script type="application/json" id="data">{"generated":"Sat 2026-10-17 16:34","asof":"2026-10-17","asof_dow":"Sat","today_closed":false,"pod":54,"post_op_week":8,"surgery_date":"2026-08-24","phase":3,"phase_entered":"2026-09-27","next_gate":"Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. Earliest by calendar Tue 2026-10-20.","targets":{"kcal":3000,"protein_g":150,"protein_g_max":160,"weighins_per_week":3},"floor_rounds":1,"today_open":["conditioning","sport session"],"project":"Project: Get the CRV ready to sell · 1/3 done · next: 2. Take pictures · due Sat 10/17","weight_week_line":"7/3 · avg 157.2 lb · last week 156.1 (3 readings) · +1.1 lb","pt":{"visits":6,"last":"2026-10-15"},"days":[{"date":"2026-09-10","dow":"Thu","pod":17,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":2.0,"pain_text":"2","trend":"improving","catch":"none","wellness":null,"knee":"home","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-11","dow":"Fri","pod":18,"planned":["pt"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":2.0,"pain_text":"2","trend":"","catch":"none","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-09-12","dow":"Sat","pod":19,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":null,"pain_text":"a little sore","trend":"slightly up","catch":"none","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-13","dow":"Sun","pod":20,"planned":["kneeA","upperA"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":1.0,"pain_text":"1","trend":"back to Fri level","catch":"yes - on straightening; sup/inf glide limited","wellness":null,"knee":"home","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["Upper A"]},{"date":"2026-09-14","dow":"Mon","pod":21,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":null,"pain_text":"quiet","trend":"not worse","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-15","dow":"Tue","pod":22,"planned":["kneeB","upperB"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":0.0,"pain_text":"0-1","trend":"down","catch":"none; patella more mobile","wellness":null,"knee":"home","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["Upper B"]},{"date":"2026-09-16","dow":"Wed","pod":23,"planned":[],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":null,"floorfull":false,"food":false,"check":false,"swelling":null,"pain":null,"pain_text":"fine","trend":"a bit more","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-09-17","dow":"Thu","pod":24,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":null,"floorfull":false,"food":false,"check":false,"swelling":null,"pain":null,"pain_text":"fine","trend":"a bit worse","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-18","dow":"Fri","pod":25,"planned":["pt"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"down","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-09-19","dow":"Sat","pod":26,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"down","catch":"yes - painless catch ext->flex (episode 2)","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-20","dow":"Sun","pod":27,"planned":["kneeA","upperA"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"same or down","catch":"present, painless (episode 2 day 2)","wellness":null,"knee":"home","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["Upper A"]},{"date":"2026-09-21","dow":"Mon","pod":28,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":null,"floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"down","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-22","dow":"Tue","pod":29,"planned":["kneeB","upperB"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"down","catch":"","wellness":null,"knee":null,"knee_partial":true,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["Upper B"]},{"date":"2026-09-23","dow":"Wed","pod":30,"planned":[],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"down (trending better)","catch":"absent (first absent day since 9/19)","wellness":null,"knee":"home","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-09-24","dow":"Thu","pod":31,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-25","dow":"Fri","pod":32,"planned":["pt"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":null,"floorfull":false,"food":false,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-09-26","dow":"Sat","pod":33,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":false,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-27","dow":"Sun","pod":34,"planned":["kneeA","upperA"],"light":"","logged":true,"closed":false,"kcal":null,"protein":null,"weight":null,"creatine":false,"floor":null,"floorfull":false,"food":false,"check":true,"swelling":"1+","pain":0.0,"pain_text":"0","trend":"same or slightly down","catch":"absent","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["knee Session A","Upper A"]},{"date":"2026-09-28","dow":"Mon","pod":35,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":1925.0,"protein":145.0,"weight":154.0,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"absent","wellness":null,"knee":"A","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-09-29","dow":"Tue","pod":36,"planned":["kneeB","upperB"],"light":"","logged":true,"closed":false,"kcal":2150.0,"protein":170.0,"weight":null,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["knee Session B","Upper B"]},{"date":"2026-09-30","dow":"Wed","pod":37,"planned":[],"light":"","logged":true,"closed":false,"kcal":2575.0,"protein":150.0,"weight":null,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":"B","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-10-01","dow":"Thu","pod":38,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":2750.0,"protein":120.0,"weight":null,"creatine":false,"floor":"half","floorfull":false,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-10-02","dow":"Fri","pod":39,"planned":["pt"],"light":"","logged":true,"closed":false,"kcal":3900.0,"protein":185.0,"weight":null,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["PT visit"]},{"date":"2026-10-03","dow":"Sat","pod":40,"planned":["cond"],"light":"","logged":true,"closed":false,"kcal":2500.0,"protein":110.0,"weight":156.3,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":false,"swelling":null,"pain":null,"pain_text":"","trend":"","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-10-04","dow":"Sun","pod":41,"planned":["knee"],"light":"green","logged":true,"closed":true,"kcal":2425.0,"protein":95.0,"weight":null,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":false,"swelling":null,"pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["knee session"]},{"date":"2026-10-05","dow":"Mon","pod":42,"planned":["cond"],"light":"green","logged":true,"closed":true,"kcal":3775.0,"protein":200.0,"weight":156.0,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":false,"swelling":null,"pain":null,"pain_text":"","trend":"down","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-10-06","dow":"Tue","pod":43,"planned":["knee"],"light":"green","logged":true,"closed":true,"kcal":2925.0,"protein":150.0,"weight":null,"creatine":true,"floor":"half","floorfull":false,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"same or down","catch":"","wellness":null,"knee":"A","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-10-07","dow":"Wed","pod":44,"planned":[],"light":"green","logged":true,"closed":true,"kcal":2100.0,"protein":95.0,"weight":null,"creatine":true,"floor":"half","floorfull":false,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-10-08","dow":"Thu","pod":45,"planned":["cond"],"light":"green","logged":true,"closed":true,"kcal":2550.0,"protein":150.0,"weight":null,"creatine":true,"floor":"half","floorfull":false,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-10-09","dow":"Fri","pod":46,"planned":["pt","upperA"],"light":"","logged":true,"closed":true,"kcal":2950.0,"protein":162.0,"weight":155.0,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"same or down","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":["upperA"],"cond_min":15.0,"cond_type":"air bike (legs only)","sport":1,"sport_min":null,"together":false,"missed":["PT visit"]},{"date":"2026-10-10","dow":"Sat","pod":47,"planned":["cond"],"light":"","logged":true,"closed":true,"kcal":1970.0,"protein":97.0,"weight":157.2,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":false,"swelling":null,"pain":null,"pain_text":"","trend":"","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning"]},{"date":"2026-10-11","dow":"Sun","pod":48,"planned":["knee"],"light":"","logged":true,"closed":true,"kcal":2260.0,"protein":112.0,"weight":159.8,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":0.0,"pain_text":"0","trend":"low side of trace","catch":"","wellness":null,"knee":"B","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":true,"missed":[]},{"date":"2026-10-12","dow":"Mon","pod":49,"planned":["cond","upperB"],"light":"","logged":true,"closed":true,"kcal":2740.0,"protein":142.0,"weight":155.6,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":["upperB"],"cond_min":18.0,"cond_type":"bike","sport":1,"sport_min":20.0,"together":false,"missed":[]},{"date":"2026-10-13","dow":"Tue","pod":50,"planned":["knee"],"light":"","logged":true,"closed":true,"kcal":2432.0,"protein":135.0,"weight":155.8,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":0.0,"pain_text":"0","trend":"same","catch":"none","wellness":5.0,"knee":"min","knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-10-14","dow":"Wed","pod":51,"planned":["sport"],"light":"","logged":true,"closed":true,"kcal":3233.0,"protein":112.0,"weight":157.2,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":0.0,"pain_text":"0","trend":"same","catch":"none","wellness":5.0,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":1,"sport_min":25.0,"together":false,"missed":[]},{"date":"2026-10-15","dow":"Thu","pod":52,"planned":["pt"],"light":"","logged":true,"closed":true,"kcal":3470.0,"protein":143.0,"weight":157.8,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":0.0,"pain_text":"0","trend":"same","catch":"","wellness":5.0,"knee":null,"knee_partial":false,"as_planned":false,"pt":true,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":[]},{"date":"2026-10-16","dow":"Fri","pod":53,"planned":["sport","cond","upperA"],"light":"","logged":true,"closed":true,"kcal":2415.0,"protein":154.0,"weight":155.6,"creatine":true,"floor":null,"floorfull":false,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["sport session","conditioning","Upper A"]},{"date":"2026-10-17","dow":"Sat","pod":54,"planned":["cond","sport"],"light":"","logged":true,"closed":false,"kcal":1600.0,"protein":55.0,"weight":158.4,"creatine":true,"floor":"full","floorfull":true,"food":true,"check":true,"swelling":"trace","pain":null,"pain_text":"","trend":"","catch":"","wellness":null,"knee":null,"knee_partial":false,"as_planned":false,"pt":false,"pt_missed":false,"addons":[],"cond_min":0.0,"cond_type":"","sport":0,"sport_min":null,"together":false,"missed":["conditioning","sport session"]}],"weeks":[{"week_start":"2026-09-06","through":"2026-09-12","days":7,"complete":true,"current":false,"score":15,"parts":{"floor":0.214,"sessions":0.25,"fuel":0.0,"checks":0.0,"weighins":0.0,"ledger":0.429},"planned":{"knee":2,"upper":2,"cond":3,"pt":1},"done":{"knee":1,"upper":0,"cond":0,"pt":1},"did":{"knee":1,"pt":1},"excused":[],"floor_full":0,"checks":0,"logged":3,"weighins":0,"kcal_avg":null,"kcal_days":0,"kcal_hit":0,"protein_avg":null,"protein_days":0,"protein_hit":0,"weight_avg":null,"weight_n":0,"weight_delta":null},{"week_start":"2026-09-13","through":"2026-09-19","days":7,"complete":true,"current":false,"score":27,"parts":{"floor":0.357,"sessions":0.375,"fuel":0.0,"checks":0.0,"weighins":0.0,"ledger":1.0},"planned":{"knee":2,"upper":2,"cond":3,"pt":1},"done":{"knee":2,"upper":0,"cond":0,"pt":1},"did":{"knee":2,"pt":1},"excused":[],"floor_full":0,"checks":0,"logged":7,"weighins":0,"kcal_avg":null,"kcal_days":0,"kcal_hit":0,"protein_avg":null,"protein_days":0,"protein_hit":0,"weight_avg":null,"weight_n":0,"weight_delta":null},{"week_start":"2026-09-20","through":"2026-09-26","days":7,"complete":true,"current":false,"score":34,"parts":{"floor":0.357,"sessions":0.375,"fuel":0.0,"checks":0.714,"weighins":0.0,"ledger":1.0},"planned":{"knee":2,"upper":2,"cond":3,"pt":1},"done":{"knee":2,"upper":0,"cond":0,"pt":1},"did":{"knee":2,"pt":1},"excused":[],"floor_full":0,"checks":5,"logged":7,"weighins":0,"kcal_avg":null,"kcal_days":0,"kcal_hit":0,"protein_avg":null,"protein_days":0,"protein_hit":0,"weight_avg":null,"weight_n":0,"weight_delta":null},{"week_start":"2026-09-27","through":"2026-10-03","days":7,"complete":true,"current":false,"score":51,"parts":{"floor":0.357,"sessions":0.375,"fuel":0.658,"checks":0.143,"weighins":0.667,"ledger":1.0},"planned":{"knee":2,"upper":2,"cond":3,"pt":1},"done":{"knee":2,"upper":0,"cond":0,"pt":1},"did":{"knee":2,"pt":1},"excused":[],"floor_full":2,"checks":1,"logged":7,"weighins":2,"kcal_avg":2633,"kcal_days":6,"kcal_hit":1,"protein_avg":147,"protein_days":6,"protein_hit":3,"weight_avg":155.2,"weight_n":2,"weight_delta":null},{"week_start":"2026-10-04","through":"2026-10-10","days":7,"complete":true,"current":false,"score":67,"parts":{"floor":0.5,"sessions":0.571,"fuel":0.745,"checks":0.571,"weighins":1.0,"ledger":1.0},"planned":{"knee":2,"cond":3,"pt":1,"upper":1},"done":{"knee":1,"cond":1,"pt":1,"upper":1},"did":{"knee":1,"pt":1,"upper":1,"cond":1,"sport":1},"excused":[],"floor_full":2,"checks":4,"logged":7,"weighins":3,"kcal_avg":2671,"kcal_days":7,"kcal_hit":1,"protein_avg":136,"protein_days":7,"protein_hit":4,"weight_avg":156.1,"weight_n":3,"weight_delta":0.9},{"week_start":"2026-10-11","through":"2026-10-17","days":7,"complete":true,"current":true,"score":79,"parts":{"floor":0.857,"sessions":0.636,"fuel":0.705,"checks":1.0,"weighins":1.0,"ledger":1.0},"planned":{"knee":2,"cond":3,"upper":2,"sport":3,"pt":1},"done":{"knee":2,"cond":1,"upper":1,"sport":2,"pt":1},"did":{"knee":2,"upper":1,"cond":1,"sport":2,"pt":1},"excused":[],"floor_full":6,"checks":7,"logged":7,"weighins":7,"kcal_avg":2758,"kcal_days":6,"kcal_hit":2,"protein_avg":133,"protein_days":6,"protein_hit":1,"weight_avg":157.2,"weight_n":7,"weight_delta":1.1}],"streaks":{"logged":{"current":38,"best":38,"best_from":"2026-09-10","best_to":"2026-10-17","today":true},"check":{"current":7,"best":7,"best_from":"2026-10-11","best_to":"2026-10-17","today":true},"floorfull":{"current":1,"best":7,"best_from":"2026-10-09","best_to":"2026-10-15","today":true},"creatine":{"current":16,"best":16,"best_from":"2026-10-02","best_to":"2026-10-17","today":true},"food":{"current":20,"best":20,"best_from":"2026-09-28","best_to":"2026-10-17","today":true}},"measured":[{"metric":"ext_deg","label":"extension","unit":"deg","about":"knee extension; 0 = straight, + = hyperextension, - = short of straight","L":{"text":"+2°","date":"10/8","method":"gonio, AROM"},"R":{"text":"0°","date":"pre-op","method":"AROM"},"lsi":null,"history":[{"date":"pre-op","text":"L -1°","source":"clinic","method":""},{"date":"pre-op","text":"R 0°","source":"clinic","method":"AROM"},{"date":"9/11","text":"L +2°","source":"PT","method":"gonio"},{"date":"9/25","text":"L -3°","source":"clinic","method":"gonio"},{"date":"10/1","text":"L +2°","source":"PT","method":"gonio"},{"date":"10/8","text":"L +2°","source":"PT","method":"gonio, AROM"}]},{"metric":"flex_deg","label":"flexion","unit":"deg","about":"knee flexion","L":{"text":"146°","date":"10/8","method":"gonio"},"R":{"text":"144°","date":"pre-op","method":""},"lsi":null,"history":[{"date":"pre-op","text":"L 144° · R 144°","source":"clinic","method":""},{"date":"9/11","text":"L 130°","source":"PT","method":"gonio, active"},{"date":"9/11","text":"L 135°","source":"PT","method":"gonio, passive"},{"date":"9/25","text":"L 146°","source":"clinic","method":"gonio, active"},{"date":"10/8","text":"L 146°","source":"PT","method":"gonio"}]},{"metric":"quad_lb","label":"quad","unit":"lb","about":"isometric quad strength, dynamometer","L":{"text":"58.9 lb","date":"pre-op","method":"dynamometer"},"R":{"text":"83.7 lb","date":"pre-op","method":"dynamometer"},"lsi":{"value":70.4,"date":"pre-op"},"history":[{"date":"pre-op","text":"L 58.9 lb · R 83.7 lb · LSI 70.4%","source":"clinic","method":"dynamometer"}]},{"metric":"ham_lb","label":"hamstring","unit":"lb","about":"isometric hamstring strength, dynamometer","L":{"text":"55.8 lb","date":"pre-op","method":"dynamometer"},"R":{"text":"79 lb","date":"pre-op","method":"dynamometer"},"lsi":{"value":70.6,"date":"pre-op"},"history":[{"date":"pre-op","text":"L 55.8 lb · R 79 lb · LSI 70.6%","source":"clinic","method":"dynamometer"}]},{"metric":"sl_leg_press_plates","label":"SL leg press","unit":"plates","about":"single-leg leg press max; a stand-in for quad LSI until a dynamometer test","L":{"text":"9 plates","date":"10/8","method":"max"},"R":{"text":"14 plates","date":"10/8","method":"max"},"lsi":{"value":64.3,"date":"10/8"},"history":[{"date":"10/8","text":"L 9 plates · R 14 plates · LSI 64.3%","source":"PT","method":"max"}]}],"food":{"items":71,"from":"2026-10-08","mix":{"estimate":36,"library":17,"label":11,"photo":7}},"coverage":{"first":"2026-09-10","days":38,"logged":38,"closed":13,"red":0},"week_weights":{"floor":20,"sessions":25,"fuel":30,"checks":10,"weighins":5,"ledger":10},"week_table":"| Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| Sun 10/11 | knee | 2,260 | 112 | 159.8 | ✔ | ✔✔ | ✔ | B |  |  |  |  | ✔ |\n| Mon 10/12 | cond, upperB | 2,740 | 142 | 155.6 | ✔ | ✔✔ | ✔ |  |  | upperB | 18m | 1 |  |\n| Tue 10/13 | knee | 2,432 | 135 | 155.8 | ✔ | ✔✔ | ✔ | min |  |  |  |  |  |\n| Wed 10/14 | sport | 3,233 | 112 | 157.2 | ✔ | ✔✔ | ✔ |  |  |  |  | 1 |  |\n| Thu 10/15 | pt | 3,470 | 143 | 157.8 | ✔ | ✔✔ | ✔ |  | ✔ |  |  |  |  |\n| Fri 10/16 | sport, cond, upperA | 2,415 | 154 | 155.6 | ✔ |  | ✔ |  |  |  |  |  |  |\n| Sat 10/17 | cond, sport | 1,600 | 55 | 158.4 | ✔ | ✔✔ | ✔ |  |  |  |  |  |  |"}</script>
+<script>
+(function () {
+  'use strict';
+  var DATA = JSON.parse(document.getElementById('data').textContent);
+  var D = DATA.days;
+  var W = DATA.weeks;
+  var T = DATA.targets;
+  var ASOF = DATA.asof;
+  var OPEN = !DATA.today_closed;
+  var DOWS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var GRADES = ['0', 'trace', '1+', '2+', '3+'];
+  var SVG = 'http://www.w3.org/2000/svg';
+  var FAMS = [['knee', 'Knee'], ['upper', 'Upper'], ['cond', 'Cond.'], ['sport', 'Sport'], ['pt', 'PT'], ['accessory', 'Access.'], ['power', 'Power']];
+
+  // ---- small helpers
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function svg(tag, attrs, parent) { var e = document.createElementNS(SVG, tag); for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function stext(parent, x, y, str, cls, anchor) { var t = svg('text', { x: x, y: y, 'text-anchor': anchor || 'start' }, parent); if (cls) t.setAttribute('class', cls); t.textContent = str; return t; }
+  function md(iso) { var p = iso.split('-'); return (+p[1]) + '/' + (+p[2]); }
+  function dowmd(iso) { var i = D.length ? indexOf(iso) : -1; return (i >= 0 ? D[i].dow : DOWS[new Date(iso + 'T12:00:00').getDay()]) + ' ' + md(iso); }
+  var INDEX = {}; D.forEach(function (r, i) { INDEX[r.date] = i; });
+  function indexOf(iso) { return INDEX[iso] == null ? -1 : INDEX[iso]; }
+  function fmtInt(n) { return n == null ? '–' : Math.round(n).toLocaleString('en-US'); }
+  function fmt1(n) { return n == null ? '–' : (Math.round(n * 10) / 10).toFixed(1); }
+  function signed(n, dec) { if (n == null) return '–'; var s = dec ? fmt1(Math.abs(n)) : fmtInt(Math.abs(n)); return (n > 0 ? '+' : n < 0 ? '−' : '±') + s; }
+  function compact(n) { return n >= 1000 ? (n / 1000).toFixed(n % 1000 ? 1 : 0) + 'K' : String(n); }
+  function mean(a) { return a.length ? a.reduce(function (s, v) { return s + v; }, 0) / a.length : null; }
+  function isOpen(r) { return r.date === ASOF && OPEN; }
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function niceStep(range, count) { var rough = range / Math.max(1, count); var p = Math.pow(10, Math.floor(Math.log(rough) / Math.LN10)); var r = rough / p; return (r >= 5 ? 10 : r >= 2 ? 5 : r >= 1 ? 2 : 1) * p; }
+  function ticks(lo, hi, count) { var st = niceStep(hi - lo, count), out = []; for (var v = Math.ceil(lo / st) * st; v <= hi + 1e-9; v += st) out.push(+v.toFixed(6)); return out; }
+  function table(container, head, rows, curRow) {
+    var t = el('table', 'plain'), th = el('thead'), tr = el('tr');
+    head.forEach(function (h) { var c = el('th', typeof h === 'object' ? h.cls : '', typeof h === 'object' ? h.t : h); tr.appendChild(c); });
+    th.appendChild(tr); t.appendChild(th);
+    var tb = el('tbody');
+    rows.forEach(function (r, i) {
+      var row = el('tr', curRow === i ? 'cur' : '');
+      r.forEach(function (v, j) { row.appendChild(el('td', typeof head[j] === 'object' ? head[j].cls : '', v == null ? '' : String(v))); });
+      tb.appendChild(row);
+    });
+    t.appendChild(tb); container.replaceChildren(t);
+  }
+  function stat(k, v, small, d, flag) {
+    var s = el('div', 'stat'); s.appendChild(el('div', 'k', k));
+    var vv = el('div', 'v', v); if (small) vv.appendChild(el('small', '', small)); s.appendChild(vv);
+    if (d) s.appendChild(el('div', 'd', d));
+    if (flag) s.appendChild(flag);
+    return s;
+  }
+  function flagEl(kind, text) {
+    var f = el('span', 'flag ' + kind);
+    var ic = svg('svg', { viewBox: '0 0 12 12', 'aria-hidden': 'true' });
+    if (kind === 'good') svg('path', { d: 'M2 6.5l2.5 2.5L10 3.5', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.8', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, ic);
+    else svg('path', { d: 'M6 1.5l5 9H1z M6 5v2.6 M6 8.8v.2', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.4', 'stroke-linejoin': 'round' }, ic);
+    f.appendChild(ic); f.appendChild(document.createTextNode(text)); return f;
+  }
+
+  // ---- range
+  var RANGES = { '14': 14, '28': 28, '56': 56, 'all': 0 };
+  var range = load('ledger.range') || '28';
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.seg button'));
+  buttons.forEach(function (b) {
+    var n = RANGES[b.getAttribute('data-range')];
+    if (n && n >= D.length && n !== 14) b.hidden = true;  // a range longer than the logs is just "All"
+    b.addEventListener('click', function () { range = b.getAttribute('data-range'); store('ledger.range', range); renderAll(); });
+  });
+  if (!buttons.some(function (b) { return b.getAttribute('data-range') === range && !b.hidden; })) range = 'all';
+  function slice() { var n = RANGES[range]; return n ? D.slice(-n) : D; }
+
+  // ---- tooltip (one per figure; tap or hover; arrow keys when the chart has focus)
+  function tipOf(id) { return document.getElementById(id); }
+  function showTip(tip, fig, x, html_rows, title, note, prefer) {
+    tip.replaceChildren();
+    tip.appendChild(el('div', 'th', title));
+    html_rows.forEach(function (r) { var d = el('div', 'tr'); d.appendChild(el('b', '', r[0])); d.appendChild(el('span', '', r[1])); tip.appendChild(d); });
+    if (note) tip.appendChild(el('div', 'tn', note));
+    tip.classList.add('on');
+    var fw = fig.clientWidth, tw = tip.offsetWidth;
+    var left = prefer === 'right' ? x + 12 : x - tw - 12;
+    if (left + tw > fw) left = x - tw - 12;
+    if (left < 0) left = Math.min(Math.max(0, x + 12), fw - tw);
+    tip.style.left = Math.max(0, left) + 'px';
+    tip.style.top = '0px';
+  }
+  function hideTip(tip) { tip.classList.remove('on'); }
+  var TIPS = [];
+  document.addEventListener('pointerdown', function (e) {
+    TIPS.forEach(function (t) { if (!t.fig.contains(e.target)) { hideTip(t.tip); if (t.clear) t.clear(); } });
+  });
+  function attach(fig, tip, target, n, locate, onIndex, clear) {
+    var cur = -1;
+    function at(e) {
+      var rect = target.getBoundingClientRect();
+      var i = locate(e.clientX - rect.left, e.clientY - rect.top, rect);
+      if (i == null || i < 0 || i >= n) return;
+      cur = i; onIndex(i, e.clientX - fig.getBoundingClientRect().left);
+    }
+    target.addEventListener('pointerdown', function (e) { at(e); e.preventDefault(); });  // read, never focus: keyboard focus keeps its ring
+    target.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse' || e.buttons) at(e); });
+    target.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hideTip(tip); clear(); cur = -1; } });
+    target.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { cur = Math.max(0, Math.min(n - 1, (cur < 0 ? n - 1 : cur) + (e.key === 'ArrowRight' ? 1 : -1))); onIndex(cur, null); e.preventDefault(); }
+      if (e.key === 'Escape') { hideTip(tip); clear(); cur = -1; }
+    });
+    TIPS.push({ fig: fig, tip: tip, clear: clear });
+  }
+
+  // ---- shared chart frame: x = days, y = values; Sundays labeled; week boundaries ruled
+  function frame(container, days, height, yDomain, opts) {
+    opts = opts || {};
+    var Wd = Math.max(240, container.clientWidth || 320);
+    var m = { t: 12, r: 8, b: 22, l: 8 };
+    var s = svg('svg', { viewBox: '0 0 ' + Wd + ' ' + height, width: Wd, height: height, role: 'img', tabindex: '0', 'aria-label': opts.label || '' });
+    s.setAttribute('class', 'chart');
+    container.replaceChildren(s);
+    var n = days.length, pw = Wd - m.l - m.r, slot = pw / n, ph = height - m.t - m.b;
+    var y0 = yDomain[0], y1 = yDomain[1];
+    function xc(i) { return m.l + slot * (i + 0.5); }
+    function y(v) { return m.t + ph * (1 - (v - y0) / (y1 - y0)); }
+    var g = svg('g', {}, s);
+    var tk = opts.ticks || ticks(y0, y1, 4);
+    tk.forEach(function (v) {
+      if (v < y0 || v > y1) return;
+      svg('line', { x1: m.l, x2: Wd - m.r, y1: y(v), y2: y(v), class: v === y0 ? 'axis' : 'grid' }, g);
+      if (v !== y0 || opts.labelZero) stext(g, m.l + 2, y(v) - 3, opts.fmtTick ? opts.fmtTick(v) : String(v), 'halo', 'start');
+    });
+    var firstSun = -1;
+    days.forEach(function (r, i) {
+      if (r.dow === 'Sun') {
+        if (firstSun < 0) firstSun = i;
+        if (i > 0) svg('line', { x1: m.l + slot * i, x2: m.l + slot * i, y1: m.t, y2: height - m.b, class: 'wk' }, g);
+        var lbl = slot * 7 >= 110 ? 'Sun ' + md(r.date) : md(r.date);
+        if (m.l + slot * i + 50 <= Wd) stext(g, m.l + slot * i + 3, height - 7, lbl, '', 'start');
+      }
+    });
+    if (days[0].dow !== 'Sun' && (firstSun < 0 || firstSun * slot >= 48)) stext(g, m.l + 1, height - 7, md(days[0].date), '', 'start');
+    return { svg: s, W: Wd, H: height, m: m, n: n, slot: slot, xc: xc, y: y, base: y(y0), g: g, locate: function (px) { return Math.max(0, Math.min(n - 1, Math.floor((px - m.l) / slot))); } };
+  }
+  function crosshair(F) { var c = svg('line', { class: 'cross', x1: 0, x2: 0, y1: F.m.t, y2: F.base, visibility: 'hidden' }, F.svg); return { show: function (i) { c.setAttribute('x1', F.xc(i)); c.setAttribute('x2', F.xc(i)); c.setAttribute('visibility', 'visible'); }, hide: function () { c.setAttribute('visibility', 'hidden'); } }; }
+  function colPath(x, yTop, yBase, w, r) {
+    var h = yBase - yTop; if (h <= 0) return '';
+    r = Math.min(r, w / 2, h);
+    return 'M' + (x - w / 2) + ' ' + yBase + ' V' + (yTop + r) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' -' + r + ' h' + (w - 2 * r) + ' a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + r + ' V' + yBase + ' Z';
+  }
+
+  // ---- streaks: the rate within the range
+  function renderStreakRates(days) {
+    var counted = days.filter(function (r) { return r.light !== 'red'; });
+    ['logged', 'check', 'floorfull', 'creatine', 'food'].forEach(function (k) {
+      var slot = document.querySelector('[data-slot="rate-' + k + '"]');
+      if (!slot) return;
+      var done = counted.filter(function (r) { return r[k]; }).length;
+      slot.textContent = done + ' of ' + counted.length + ' days';
+    });
+  }
+
+  // ---- week score
+  function renderWeeks(days) {
+    var first = days[0].date;
+    var weeks = W.filter(function (w) { return w.through >= first; });
+    var fig = document.getElementById('week-plot').parentNode, tip = tipOf('week-tip');
+    var cur = W[W.length - 1], prev = W.length > 1 ? W[W.length - 2] : null;
+    var stats = document.getElementById('week-stats');
+    stats.replaceChildren(
+      stat('This week so far', String(cur.score), '/ 100', cur.days + ' of 7 days scored'),
+      stat('Last week', prev ? String(prev.score) : '–', prev ? '/ 100' : '', prev ? 'week of ' + md(prev.week_start) : 'no completed week yet'));
+    var container = document.getElementById('week-plot');
+    var Wd = Math.max(240, container.clientWidth || 320), H = 150, m = { t: 14, r: 8, b: 22, l: 8 };
+    var s = svg('svg', { viewBox: '0 0 ' + Wd + ' ' + H, width: Wd, height: H, role: 'img', tabindex: '0', 'aria-label': 'Week score by week' });
+    s.setAttribute('class', 'chart'); container.replaceChildren(s);
+    var n = weeks.length, slot = (Wd - m.l - m.r) / n, ph = H - m.t - m.b;
+    function y(v) { return m.t + ph * (1 - v / 100); }
+    [0, 50, 100].forEach(function (v) { svg('line', { x1: m.l, x2: Wd - m.r, y1: y(v), y2: y(v), class: v === 0 ? 'axis' : 'grid' }, s); if (v) stext(s, m.l + 2, y(v) - 3, String(v)); });
+    var bw = Math.min(24, slot * 0.6), cols = [];
+    weeks.forEach(function (w, i) {
+      var x = m.l + slot * (i + 0.5);
+      var p = svg('path', { d: colPath(x, y(w.score), y(0), bw, 4), class: 'col' + (w.current ? ' open' : '') }, s);
+      cols.push(p);
+      if (i === n - 1 || i === n - 2) stext(s, x, y(w.score) - 5, String(w.score), 'ink', 'middle');
+      stext(s, x, H - 7, md(w.week_start), '', 'middle');
+    });
+    function show(i, px) {
+      cols.forEach(function (c, j) { c.classList.toggle('hi', j === i); });
+      var w = weeks[i], P = w.parts, rows = [[String(w.score), w.current ? 'so far' : 'score']];
+      [['floor', 'floor'], ['sessions', 'sessions'], ['fuel', 'fuel'], ['checks', 'checks'], ['weighins', 'weigh-ins'], ['ledger', 'logging']].forEach(function (k) { if (P[k[0]] != null) rows.push([Math.round(P[k[0]] * 100) + '%', k[1]]); });
+      showTip(tip, fig, px == null ? m.l + slot * (i + 0.5) : px, rows, 'Week of ' + md(w.week_start) + (w.current ? ' (this week)' : ''), w.excused.length ? w.excused.length + ' rest day(s) excused' : '', i < n / 2 ? 'right' : 'left');
+    }
+    attach(fig, tip, s, n, function (px) { return Math.max(0, Math.min(n - 1, Math.floor((px - m.l) / slot))); }, show, function () { cols.forEach(function (c) { c.classList.remove('hi'); }); });
+    table(document.getElementById('week-table'),
+      ['Week', { t: 'Score', cls: 'n' }, { t: 'Floor', cls: 'n' }, { t: 'Sessions', cls: 'n' }, { t: 'Fuel', cls: 'n' }, { t: 'Checks', cls: 'n' }, { t: 'Weigh-ins', cls: 'n' }, { t: 'Logged', cls: 'n' }],
+      weeks.map(function (w) {
+        var P = w.parts, pl = Object.keys(w.planned).reduce(function (a, k) { return a + w.planned[k]; }, 0), dn = Object.keys(w.done).reduce(function (a, k) { return a + w.done[k]; }, 0);
+        return [md(w.week_start) + (w.current ? ' (so far)' : ''), w.score, w.floor_full + '/' + w.days, dn + '/' + pl, P.fuel != null ? Math.round(P.fuel * 100) + '%' : '–', w.checks + '/' + w.days, w.weighins + '/' + T.weighins_per_week, w.logged + '/' + w.days];
+      }), weeks.length - 1);
+  }
+
+  // ---- the calendar of daily habits
+  function habitsOf(r) { return [['check', 'morning check'], ['floorfull', 'heel prop'], ['creatine', 'creatine'], ['food', 'food logged']].filter(function (h) { return r[h[0]]; }).map(function (h) { return h[1]; }); }
+  function renderCalendar(days) {
+    var plot = document.getElementById('cal-plot'), fig = plot.parentNode, tip = tipOf('cal-tip');
+    var grid = el('div', 'cal');
+    DOWS.forEach(function (d) { grid.appendChild(el('div', 'dh', d[0])); });
+    var lead = DOWS.indexOf(days[0].dow);
+    for (var i = 0; i < lead; i++) grid.appendChild(el('div', 'c out'));
+    var cells = [];
+    days.forEach(function (r, i) {
+      var k = habitsOf(r).length;
+      var c = el('div', 'c ' + (r.light === 'red' ? 'red' : !r.logged ? 'none' : 'h' + k) + (r.date === ASOF ? ' today' : ''), String(+r.date.slice(8)));
+      c.setAttribute('data-i', String(i));
+      c.setAttribute('role', 'img');
+      c.setAttribute('aria-label', dowmd(r.date) + ': ' + (r.logged ? k + ' of 4' : 'not logged'));
+      grid.appendChild(c); cells.push(c);
+    });
+    plot.replaceChildren(grid);
+    function show(i, px) {
+      cells.forEach(function (c, j) { c.classList.toggle('hi', j === i); });
+      var r = days[i], hs = habitsOf(r);
+      var rows = r.logged ? [[hs.length + ' of 4', 'habits']] : [['not logged', '']];
+      if (r.light === 'red') rows.unshift(['rest', 'the plan said stop']);
+      var cell = cells[i].getBoundingClientRect(), fr = fig.getBoundingClientRect();
+      showTip(tip, fig, cell.left - fr.left + cell.width / 2, rows, dowmd(r.date) + (isOpen(r) ? ' · today, open' : ''), hs.length ? hs.join(', ') : (r.logged ? 'none of the four' : ''), (cell.left - fr.left) < fr.width / 2 ? 'right' : 'left');
+      tip.style.top = (cell.top - fr.top + cell.height + 6) + 'px';
+    }
+    attach(fig, tip, grid, days.length, function (x, y) {
+      var e = document.elementFromPoint(x + grid.getBoundingClientRect().left, y + grid.getBoundingClientRect().top);
+      return e && e.hasAttribute && e.hasAttribute('data-i') ? +e.getAttribute('data-i') : null;
+    }, show, function () { cells.forEach(function (c) { c.classList.remove('hi'); }); });
+    table(document.getElementById('cal-table'), ['Day', 'Check', 'Heel prop', 'Creatine', 'Food', 'Logged'],
+      days.map(function (r) { return [dowmd(r.date), r.check ? '✓' : '', r.floorfull ? '✓' : r.floor === 'half' ? 'half' : '', r.creatine ? '✓' : '', r.food ? '✓' : '', r.logged ? '✓' : r.light === 'red' ? 'rest' : '']; }), days.length - 1);
+  }
+
+  // ---- sessions against the plan, by week
+  function renderSessions(days) {
+    var first = days[0].date;
+    var weeks = W.filter(function (w) { return w.through >= first; });
+    var planned = 0, done = 0;
+    weeks.forEach(function (w) { Object.keys(w.planned).forEach(function (k) { planned += w.planned[k]; done += Math.min(w.did[k] || 0, w.planned[k]); }); });
+    var cur = W[W.length - 1], cp = Object.keys(cur.planned).reduce(function (a, k) { return a + cur.planned[k]; }, 0), cd = Object.keys(cur.planned).reduce(function (a, k) { return a + Math.min(cur.did[k] || 0, cur.planned[k]); }, 0);
+    document.getElementById('sess-stats').replaceChildren(
+      stat('In range', done + ' of ' + planned, '', 'planned sessions done'),
+      stat('This week', cd + ' of ' + cp, '', 'through ' + dowmd(cur.through)));
+    var fams = FAMS.filter(function (f) { return weeks.some(function (w) { return (w.planned[f[0]] || 0) + (w.did[f[0]] || 0) > 0; }); });
+    var t = el('table', 'sessions'), th = el('thead'), tr = el('tr');
+    tr.appendChild(el('th', 'fam', ''));
+    weeks.forEach(function (w) { var c = el('th', '', w.current ? 'this wk' : md(w.week_start)); c.style.textAlign = 'center'; tr.appendChild(c); });
+    th.appendChild(tr); t.appendChild(th);
+    var tb = el('tbody');
+    fams.forEach(function (f) {
+      var row = el('tr'); var h = el('th', 'fam', f[1]); h.setAttribute('scope', 'row'); row.appendChild(h);
+      weeks.forEach(function (w) {
+        var p = w.planned[f[0]] || 0, d = w.did[f[0]] || 0, td = el('td');
+        if (!p && !d) { td.appendChild(el('span', 'muted', '–')); row.appendChild(td); return; }
+        var pips = el('div', 'pips');
+        for (var i = 0; i < Math.max(p, d); i++) pips.appendChild(el('i', i < Math.min(p, d) ? '' : i < p ? 'open' : 'extra'));
+        td.appendChild(pips);
+        td.appendChild(el('span', 'cnt', p ? d + '/' + p : d + ' done'));
+        td.setAttribute('aria-label', f[1] + ', week of ' + md(w.week_start) + ': ' + d + ' of ' + p);
+        row.appendChild(td);
+      });
+      tb.appendChild(row);
+    });
+    t.appendChild(tb);
+    var box = document.getElementById('sess-grid');
+    box.replaceChildren(t);
+    box.scrollLeft = box.scrollWidth;  // the current week first; earlier weeks by scrolling left
+  }
+
+  // ---- the knee: swelling and pain, as strips
+  function renderKnee(days) {
+    var plot = document.getElementById('knee-plot'), fig = plot.parentNode, tip = tipOf('knee-tip');
+    var graded = days.filter(function (r) { return r.swelling != null; });
+    var last = graded.length ? graded[graded.length - 1] : null;
+    var run = 0; for (var i = days.length - 1; i >= 0; i--) { var r = days[i]; if (r.swelling == null) { if (r.date === ASOF && OPEN) continue; break; } if (GRADES.indexOf(r.swelling) <= 1) run++; else break; }
+    var pains = days.filter(function (r) { return r.pain != null; }), zero = pains.filter(function (r) { return r.pain === 0; }).length;
+    var lastPain = pains.length ? pains[pains.length - 1] : null;
+    document.getElementById('knee-stats').replaceChildren(
+      stat('Swelling', last ? last.swelling : '–', last ? dowmd(last.date) : 'not graded', graded.length + ' of ' + days.length + ' mornings graded' + (run > 1 ? ' · ' + run + ' in a row at trace or less' : '')),
+      stat('Morning pain', lastPain ? (lastPain.pain_text || String(lastPain.pain)) : '–', lastPain ? dowmd(lastPain.date) : 'not recorded', pains.length ? '0 on ' + zero + ' of ' + pains.length + ' mornings' : 'no readings in range'));
+    var wrap = el('div', 'rows'), n = days.length, cols = 'repeat(' + n + ', minmax(0, 1fr))';
+    function row(label, cls) { var rw = el('div', 'row'); rw.appendChild(el('div', 'rl', label)); var cells = el('div', 'cells ' + (cls || '')); cells.style.gridTemplateColumns = cols; rw.appendChild(cells); wrap.appendChild(rw); return cells; }
+    var sw = row('Swelling'), pn = row('Pain'), swc = [], pnc = [];
+    days.forEach(function (r, i) {
+      var g = r.swelling == null ? 'none' : 'g' + GRADES.indexOf(r.swelling);
+      var a = el('i', g); a.setAttribute('data-i', String(i)); sw.appendChild(a); swc.push(a);
+      var pc = r.pain == null ? (r.pain_text ? 'text' : 'none') : 'g' + Math.min(4, Math.ceil(r.pain));
+      var b = el('i', pc); b.setAttribute('data-i', String(i)); pn.appendChild(b); pnc.push(b);
+    });
+    var xl = el('div', 'row'); xl.appendChild(el('div', 'rl', '')); var xs = el('div', 'xlab'); xs.style.gridTemplateColumns = cols;
+    days.forEach(function (r, i) { var s = el('span', '', r.dow === 'Sun' && (n - i) * (1 / n) * 300 > 36 ? md(r.date) : ''); xs.appendChild(s); });
+    xl.appendChild(xs); wrap.appendChild(xl);
+    plot.replaceChildren(wrap);
+    var legend = document.getElementById('knee-legend'); legend.replaceChildren();
+    GRADES.forEach(function (g, i) { var s = el('span'); var sw2 = el('i'); sw2.style.background = 'var(--seq-' + i + ')'; s.appendChild(sw2); s.appendChild(document.createTextNode(g)); legend.appendChild(s); });
+    var ng = el('span'); ng.appendChild(el('i', 'none')); ng.appendChild(document.createTextNode('not graded')); legend.appendChild(ng);
+    var pl = el('span'); pl.appendChild(document.createTextNode('pain: 0 lightest, 4+ darkest')); legend.appendChild(pl);
+    function show(i, px) {
+      swc.forEach(function (c, j) { c.classList.toggle('hi', j === i); }); pnc.forEach(function (c, j) { c.classList.toggle('hi', j === i); });
+      var r = days[i], rows = [[r.swelling == null ? 'not graded' : r.swelling, 'swelling'], [r.pain != null ? String(r.pain) : (r.pain_text || '–'), 'pain']];
+      if (r.trend) rows.push([r.trend, 'vs yesterday']);
+      if (r.catch) rows.push([r.catch.length > 26 ? r.catch.slice(0, 26) + '…' : r.catch, 'catch']);
+      var cell = swc[i].getBoundingClientRect(), fr = fig.getBoundingClientRect();
+      showTip(tip, fig, cell.left - fr.left + cell.width / 2, rows, dowmd(r.date), r.light === 'red' ? 'rest day' : '', i < n / 2 ? 'right' : 'left');
+      tip.style.top = (pn.getBoundingClientRect().bottom - fr.top + 6) + 'px';
+    }
+    attach(fig, tip, wrap, n, function (x) { var rect = sw.getBoundingClientRect(), wr = wrap.getBoundingClientRect(); return Math.floor((x + wr.left - rect.left) / rect.width * n); }, show, function () { swc.concat(pnc).forEach(function (c) { c.classList.remove('hi'); }); });
+    table(document.getElementById('knee-table'), ['Day', 'Swelling', 'Pain', 'Trend', 'Catch'],
+      days.map(function (r) { return [dowmd(r.date), r.swelling == null ? '' : r.swelling, r.pain_text, r.trend, r.catch]; }), days.length - 1);
+  }
+
+  // ---- weight: dots and the 7-day average
+  var ROLL = D.map(function (r, i) { var w = []; for (var j = Math.max(0, i - 6); j <= i; j++) if (D[j].weight != null) w.push(D[j].weight); return w.length >= 2 ? mean(w) : null; });
+  function renderWeight(days) {
+    var plot = document.getElementById('weight-plot'), fig = plot.parentNode, tip = tipOf('weight-tip');
+    var off = indexOf(days[0].date);
+    var pts = days.filter(function (r) { return r.weight != null; });
+    var last = pts.length ? pts[pts.length - 1] : null;
+    var n = D.length, now7 = ROLL[n - 1], before = n > 7 ? ROLL[n - 8] : null;
+    var flag = null;
+    if (now7 != null && before != null) { var dlt = now7 - before; flag = dlt < 0 ? flagEl('warn', 'falling ' + fmt1(Math.abs(dlt)) + ' lb vs the prior 7 days') : flagEl('good', signed(dlt, true) + ' lb vs the prior 7 days'); }
+    document.getElementById('weight-stats').replaceChildren(
+      stat('Latest', last ? fmt1(last.weight) : '–', last ? 'lb' : '', last ? dowmd(last.date) : 'no weigh-in in range'),
+      stat('7-day average', now7 != null ? fmt1(now7) : '–', now7 != null ? 'lb' : '', null, flag));
+    var vals = pts.map(function (r) { return r.weight; }).concat(days.map(function (r, i) { return ROLL[off + i]; }).filter(function (v) { return v != null; }));
+    if (!vals.length) { plot.replaceChildren(el('p', 'muted', 'No weigh-ins in this range.')); document.getElementById('weight-table').replaceChildren(); return; }
+    var lo = Math.floor(Math.min.apply(null, vals) - 1), hi = Math.ceil(Math.max.apply(null, vals) + 1);
+    var F = frame(plot, days, 190, [lo, hi], { label: 'Weight by day', ticks: ticks(lo, hi, 4), fmtTick: function (v) { return v + ' lb'; } });
+    var d = '', pen = false, lastRoll = null;
+    days.forEach(function (r, i) { var v = ROLL[off + i]; if (v == null) { pen = false; return; } d += (pen ? ' L' : ' M') + F.xc(i).toFixed(1) + ' ' + F.y(v).toFixed(1); pen = true; lastRoll = { i: i, v: v }; });
+    if (d) svg('path', { d: d.trim(), class: 'line' }, F.g);
+    var dots = [];
+    days.forEach(function (r, i) { if (r.weight != null) dots.push(svg('circle', { cx: F.xc(i), cy: F.y(r.weight), r: 4, class: 'dot' }, F.g)); else dots.push(null); });
+    if (lastRoll) {
+      var ex = F.xc(lastRoll.i), ey = F.y(lastRoll.v);
+      svg('circle', { cx: ex, cy: ey, r: 4, class: 'end' }, F.g);
+      stext(F.g, ex + 20 > F.W - F.m.r ? ex + 4 : ex, ey - 9, fmt1(lastRoll.v), 'ink halo', ex + 20 > F.W - F.m.r ? 'end' : 'middle');
+    }
+    var ch = crosshair(F);
+    function show(i, px) {
+      ch.show(i); dots.forEach(function (c, j) { if (c) c.classList.toggle('hi', j === i); });
+      var r = days[i], v = ROLL[off + i], rows = [];
+      if (r.weight != null) rows.push([fmt1(r.weight) + ' lb', 'weigh-in']); else rows.push(['no weigh-in', '']);
+      if (v != null) rows.push([fmt1(v) + ' lb', '7-day average']);
+      showTip(tip, fig, px == null ? F.xc(i) : px, rows, dowmd(r.date), '', i < F.n / 2 ? 'right' : 'left');
+    }
+    attach(fig, tip, F.svg, F.n, F.locate, show, function () { ch.hide(); dots.forEach(function (c) { if (c) c.classList.remove('hi'); }); });
+    table(document.getElementById('weight-table'), ['Day', { t: 'Weigh-in', cls: 'n' }, { t: '7-day avg', cls: 'n' }],
+      days.map(function (r, i) { return [dowmd(r.date), r.weight != null ? fmt1(r.weight) : '', ROLL[off + i] != null ? fmt1(ROLL[off + i]) : '']; }), days.length - 1);
+  }
+
+  // ---- fuel: columns against the target
+  function last7(key) {
+    var settled = D.filter(function (r) { return !isOpen(r); });
+    var a = settled.slice(-7).filter(function (r) { return r[key] != null; }).map(function (r) { return r[key]; });
+    var b = settled.slice(-14, -7).filter(function (r) { return r[key] != null; }).map(function (r) { return r[key]; });
+    return { now: mean(a), n: a.length, before: mean(b) };
+  }
+  function columns(plotId, tipId, days, key, domainTop, target, band, unit, fmtTick) {
+    var plot = document.getElementById(plotId), fig = plot.parentNode, tip = tipOf(tipId);
+    var F = frame(plot, days, 200, [0, domainTop], { label: key + ' by day', fmtTick: fmtTick });
+    if (band) { svg('rect', { x: F.m.l, y: F.y(band[1]), width: F.W - F.m.l - F.m.r, height: F.y(band[0]) - F.y(band[1]), class: 'band' }, F.g); }
+    else { svg('line', { x1: F.m.l, x2: F.W - F.m.r, y1: F.y(target), y2: F.y(target), class: 'target' }, F.g); }
+    var bw = Math.max(3, Math.min(24, F.slot - 2)), cols = [];
+    days.forEach(function (r, i) {
+      var v = r[key]; if (v == null) { cols.push(null); return; }
+      cols.push(svg('path', { d: colPath(F.xc(i), F.y(Math.min(v, domainTop)), F.base, bw, Math.min(4, bw / 2)), class: 'col' + (isOpen(r) ? ' open' : '') }, F.g));
+    });
+    if (band) stext(F.g, F.W - F.m.r - 2, F.y(band[1]) - 3, band[0] + '–' + band[1] + ' target', 'ink2 halo', 'end');
+    else stext(F.g, F.W - F.m.r - 2, F.y(target) - 4, fmtInt(target) + ' target', 'ink2 halo', 'end');
+    var ch = crosshair(F);
+    function show(i, px) {
+      ch.show(i); cols.forEach(function (c, j) { if (c) c.classList.toggle('hi', j === i); });
+      var r = days[i], v = r[key], rows = [];
+      if (v == null) rows.push(['not logged', '']); else { rows.push([fmtInt(v) + ' ' + unit, isOpen(r) ? 'so far' : 'total']); rows.push([signed(v - target), 'vs target']); }
+      showTip(tip, fig, px == null ? F.xc(i) : px, rows, dowmd(r.date) + (isOpen(r) ? ' · today, open' : ''), '', i < F.n / 2 ? 'right' : 'left');
+    }
+    attach(fig, tip, F.svg, F.n, F.locate, show, function () { ch.hide(); cols.forEach(function (c) { if (c) c.classList.remove('hi'); }); });
+  }
+  function renderFuel(days) {
+    var settled = days.filter(function (r) { return !isOpen(r); });
+    var k7 = last7('kcal'), p7 = last7('protein');
+    var kd = settled.filter(function (r) { return r.kcal != null; }), pd = settled.filter(function (r) { return r.protein != null; });
+    var kh = kd.filter(function (r) { return r.kcal >= T.kcal; }).length, ph = pd.filter(function (r) { return r.protein >= T.protein_g; }).length;
+    document.getElementById('kcal-stats').replaceChildren(
+      stat('Calories, last 7 days', k7.now != null ? fmtInt(k7.now) : '–', 'avg', k7.before != null ? signed(k7.now - k7.before) + ' vs the 7 before' : k7.n + ' days with totals'),
+      stat('At target', kh + ' of ' + kd.length, 'days', 'in range, today left out'));
+    document.getElementById('prot-stats').replaceChildren(
+      stat('Protein, last 7 days', p7.now != null ? fmtInt(p7.now) : '–', 'g avg', p7.before != null ? signed(p7.now - p7.before) + ' g vs the 7 before' : p7.n + ' days with totals'),
+      stat('At target', ph + ' of ' + pd.length, 'days', T.protein_g + ' g or more'));
+    var kmax = Math.max(T.kcal, Math.max.apply(null, days.map(function (r) { return r.kcal || 0; })));
+    var pmax = Math.max(T.protein_g_max, Math.max.apply(null, days.map(function (r) { return r.protein || 0; })));
+    columns('kcal-plot', 'kcal-tip', days, 'kcal', Math.ceil(kmax * 1.12 / 500) * 500, T.kcal, null, 'kcal', function (v) { return compact(v); });
+    columns('prot-plot', 'prot-tip', days, 'protein', Math.ceil(pmax * 1.12 / 50) * 50, T.protein_g, [T.protein_g, T.protein_g_max], 'g', function (v) { return v + ' g'; });
+    table(document.getElementById('fuel-table'), ['Day', { t: 'kcal', cls: 'n' }, { t: 'vs target', cls: 'n' }, { t: 'Protein g', cls: 'n' }, { t: 'vs target', cls: 'n' }],
+      days.map(function (r) { return [dowmd(r.date) + (isOpen(r) ? ' (open)' : ''), r.kcal != null ? fmtInt(r.kcal) : '', r.kcal != null ? signed(r.kcal - T.kcal) : '', r.protein != null ? fmtInt(r.protein) : '', r.protein != null ? signed(r.protein - T.protein_g) : '']; }), days.length - 1);
+  }
+
+  // ---- all together
+  function renderAll() {
+    var days = slice();
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-range') === range ? 'true' : 'false'); });
+    document.getElementById('range-note').textContent = dowmd(days[0].date) + ' – ' + dowmd(days[days.length - 1].date) + ' · ' + days.length + ' days · every chart and count below follows this range.';
+    TIPS.length = 0;
+    renderStreakRates(days); renderWeeks(days); renderCalendar(days); renderSessions(days); renderKnee(days); renderWeight(days); renderFuel(days);
+  }
+  var tmr = null, lastW = window.innerWidth;
+  window.addEventListener('resize', function () { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(tmr); tmr = setTimeout(renderAll, 150); });
+  renderAll();
+})();
+</script>
+</body>
+</html>

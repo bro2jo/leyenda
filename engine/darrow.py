@@ -54,7 +54,8 @@ Commands (run from the repo root):
   doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
-  ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
+  ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, the trends page (engine/report.py),
+                               saga.py check, build the site,
                                commit everything, push to main (pull --rebase and retry when the push is rejected; never
                                force), then push the session's own branch too when it isn't main. Stops at the first
                                failing step and says which. MESSAGE is reader-safe: he reads it (CLAUDE.md)
@@ -2456,11 +2457,11 @@ def run(cmd, quiet=False):
 
 
 def cmd_ship(args, cfg, rules):
-    """check -> sync -> saga.py check -> picture copies -> build -> commit -> push to main. Every step must pass before the next runs, so
+    """check -> sync -> trends page -> saga.py check -> picture copies -> build -> commit -> push to main. Every step must pass before the next runs, so
     nothing broken is committed, and the push never forces: a rejected push pulls --rebase, rebuilds and tries again."""
     py = sys.executable
     gates = [("logs", [py, "engine/darrow.py", "check"]), ("sync", [py, "engine/darrow.py", "sync"]),
-             ("story", [py, "engine/saga.py", "check"]), ("thumbs", [py, "engine/thumbs.py"]), ("site", [py, "engine/build_site.py"])]
+             ("trends", [py, "engine/report.py"]), ("story", [py, "engine/saga.py", "check"]), ("thumbs", [py, "engine/thumbs.py"]), ("site", [py, "engine/build_site.py"])]
 
     def gate():
         for name, cmd in gates:

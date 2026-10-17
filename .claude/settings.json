@@ -6,6 +6,8 @@
       "Bash(python3 engine/saga.py *)",
       "Bash(python3 engine/build_site.py *)",
       "Bash(python3 engine/build_site.py)",
+      "Bash(python3 engine/report.py *)",
+      "Bash(python3 engine/report.py)",
       "Bash(git status *)",
       "Bash(git add *)",
       "Bash(git commit *)",

@@ -307,6 +307,9 @@ def main():
         check(code == 0 and f"{tid1}:p1 recorded" in out and "ok:" in out, "the piece is recorded and check passes", out[-600:])
         code, out = run(saga + ["record", json.dumps({**piece, "key": f"{tid1}:p2"}, ensure_ascii=False)], tmp, expect=1)
         check("no piece 2" in out or "not owed yet" in out, "a piece ahead of its task is refused")
+        code, out = run(["engine/report.py"], tmp)
+        check(code == 0 and (tmp / "real/trends.html").exists() and "trends:" in out and "<title>Ledger Trends</title>" in (tmp / "real/trends.html").read_text(encoding="utf-8"),
+              "the trends page builds from the copy's logs", out[-300:])
         code, out = run(["engine/build_site.py"], tmp)
         page = page_of(tmp / "docs/darrow/index.html")
         check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and "Nothing kept yet" in page,
