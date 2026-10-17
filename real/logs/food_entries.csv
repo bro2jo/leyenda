@@ -57,3 +57,9 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-16#1,2026-10-16,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
 2026-10-16#2,2026-10-16,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,library row (the usual bowl)
 2026-10-16#3,2026-10-16,,snack,"Baked From the Heart healthy donut, chocolate (black bean)",1 donut (assumed ~75 g),200,6,26,9,5,6,12,200,300,40,2,50,1,0,0.2,20,library+estimate,"library row (home-produced, no label; estimated from ingredients)"
+2026-10-16#4,2026-10-16,,dinner,GoGo SqueeZ AppleApple pouch,1 pouch (3.2 oz),60,0,15,0,1,0,12,0,80,5,0.2,4,0,2,0,0,estimate,typical label values; label not seen
+2026-10-16#5,2026-10-16,,dinner,"Mango slices, fresh",assumed ~1/2 cup (~80 g),50,0.7,12,0.3,1.3,0.1,11,1,135,9,0.1,8,0.1,29,0,30,estimate,"assumed fresh, about half a cup"
+2026-10-16#6,2026-10-16,,dinner,"Salmon fillet, air-fried, lightly glazed",assumed ~5 oz cooked (~140 g),310,31,5,17,0,3.5,4,350,540,20,0.5,40,0.6,3,9,3000,photo,farmed Atlantic salmon assumed; glaze estimated
+2026-10-16#7,2026-10-16,,dinner,"White basmati rice, plain",assumed ~1.5 cups cooked,310,6.5,68,0.7,1,0.2,0,5,85,25,0.5,30,1.2,0,0,0,photo,portion from photo
+2026-10-16#8,2026-10-16,,dinner,"Broccoli and carrots, steamed",3 florets + 2 carrot pieces (~80 g),25,2,5,0.3,2,0,2,35,230,30,0.5,15,0.3,50,0,20,photo,"plain, from photo"
+2026-10-16#9,2026-10-16,,dinner,Brazilian cheese bread bite (pao de queijo),1 bite (~20 g),60,1.5,7,3,0,1.5,0,110,10,35,0.1,2,0.2,0,0,0,photo,size from photo; brand not known
