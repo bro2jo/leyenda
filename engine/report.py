@@ -424,7 +424,8 @@ TEMPLATE = r"""<!doctype html>
   --warn: #fab219;
   --serious: #ec835a;
   --critical: #d03b3b;
-  --c-knee: #2a78d6; --c-upper: #eb6834; --c-cond: #1baf7a; --c-sport: #eda100; --c-pt: #e87ba4; --c-rec: #008300;
+  --c-knee: #2a78d6; --c-upper: #e87ba4; --c-cond: #1baf7a; --c-sport: #eda100; --c-pt: #008300;
+  --c-sauna: #e34948; --c-gr: #6250d6; --c-light: #eb6834;
   --tip-bg: #fcfcfb;
   --shadow: 0 6px 24px rgba(11,11,11,.14);
   --radius: 10px;
@@ -438,7 +439,8 @@ TEMPLATE = r"""<!doctype html>
     --accent: #3987e5; --accent-soft: rgba(57,135,229,.22); --dim: #5a5953;
     --seq-0: #22314a; --seq-1: #184f95; --seq-2: #256abf; --seq-3: #3987e5; --seq-4: #86b6ef;
     --good-text: #0ca30c; --tip-bg: #232322; --shadow: 0 6px 24px rgba(0,0,0,.5);
-    --c-knee: #3987e5; --c-upper: #d95926; --c-cond: #199e70; --c-sport: #c98500; --c-pt: #d55181; --c-rec: #008300;
+    --c-knee: #3987e5; --c-upper: #d55181; --c-cond: #199e70; --c-sport: #c98500; --c-pt: #008300;
+    --c-sauna: #e66767; --c-gr: #9085e9; --c-light: #d95926;
   }
 }
 :root[data-theme="dark"] {
@@ -560,27 +562,34 @@ figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 13px; color: var(--ink); min-height: 28px; max-width: 100%; }
 .chip.q { color: var(--ink-2); }
-.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
-.dot.knee { background: var(--c-knee); } .dot.upper { background: var(--c-upper); } .dot.cond { background: var(--c-cond); }
-.dot.sport { background: var(--c-sport); } .dot.pt { background: var(--c-pt); } .dot.rec { background: var(--c-rec); }
-.mgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: 12px; }
+/* the kinds: one colour each; circles are training and the clinic, squares are recovery */
+.mk { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; background: transparent; }
+.mk.sq { border-radius: 2px; }
+.mk.knee { background: var(--c-knee); } .mk.upper { background: var(--c-upper); } .mk.cond { background: var(--c-cond); }
+.mk.sport { background: var(--c-sport); } .mk.pt { background: var(--c-pt); }
+.mk.sauna { background: var(--c-sauna); } .mk.gr { background: var(--c-gr); } .mk.light { background: var(--c-light); }
+.legend .mk { width: 12px; height: 12px; }
+.mgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; margin-top: 12px; }
 .mgrid .dh { font-size: 11px; color: var(--muted); text-align: center; }
-.mc { aspect-ratio: 1; min-height: 44px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); padding: 4px 5px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; font: inherit; font-size: 12px; color: var(--ink-2); cursor: pointer; min-width: 0; text-align: left; }
+.mc { min-height: 64px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); padding: 4px 4px 5px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 4px; font: inherit; font-size: 13px; line-height: 1.2; color: var(--ink-2); cursor: pointer; min-width: 0; text-align: left; }
 .mc.none { background: transparent; color: var(--muted); }
 .mc.red { background: var(--grid); }
 .mc.out { background: transparent; border-color: transparent; color: var(--muted); opacity: .45; cursor: default; }
-.mc.today { outline: 2px solid var(--accent); outline-offset: 1px; }
-.mc.today .dn { color: var(--accent); font-weight: 600; }
-.mc:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
-.mc .dots { display: grid; grid-template-columns: repeat(3, 7px); gap: 3px; }
-.mc .dots i { width: 7px; height: 7px; border-radius: 50%; background: transparent; }
-.mc .dots i.on.knee { background: var(--c-knee); } .mc .dots i.on.upper { background: var(--c-upper); } .mc .dots i.on.cond { background: var(--c-cond); }
-.mc .dots i.on.sport { background: var(--c-sport); } .mc .dots i.on.pt { background: var(--c-pt); } .mc .dots i.on.rec { background: var(--c-rec); }
-.day { padding: 12px 0; border-top: 1px solid var(--grid); display: grid; gap: 8px; scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 140px); transition: background .4s; }
-.day:first-child { border-top: 0; }
-.day.hi { background: var(--accent-soft); }
-.day header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
-.day header b { font-size: 15px; }
+.mc.today { background: var(--accent-soft); }
+.mc.today .dn { color: var(--accent); font-weight: 700; }
+.mc.sel { outline: 2px solid var(--ink); outline-offset: 1px; }
+.mc:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.mc .marks { display: grid; grid-template-columns: repeat(3, 10px); gap: 3px; }
+.dnav { margin-left: auto; display: inline-flex; gap: 4px; }
+.dnav button { min-width: 40px; min-height: 36px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 8px; font: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
+.dnav button:disabled { opacity: .35; cursor: default; }
+.dnav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#dayview { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 112px); }
+.day { padding: 12px 0; display: grid; gap: 8px; }
+.day header { display: grid; gap: 2px; }
+.day header .dh1 { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.day header .dh2 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.day header b { font-size: 17px; }
 .day header .muted { font-size: 12px; }
 .tag { font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px; }
 details.more summary { cursor: pointer; font-size: 13px; color: var(--ink-2); padding: 6px 0; min-height: 36px; display: flex; align-items: center; gap: 6px; list-style: none; }
@@ -788,15 +797,14 @@ noscript .scroll { margin-top: 10px; }
   <div id="tab-days" role="tabpanel" hidden>
     <section id="month">
       <div class="sec-h"><div class="eyebrow">The month</div><h2>What each day carried</h2>
-        <p>Dots by kind, in fixed places: knee, upper and conditioning on the top row; sport, PT and recovery below. A cell without a fill was not logged. Tap a day to open its card below.</p></div>
+        <p>One colour and one place per kind. Circles are training and the clinic; squares are recovery. A cell without a fill was not logged. Tap a day to see it below.</p></div>
       <div class="chips" id="m-summary"></div>
       <div class="mgrid" id="m-grid"></div>
       <div class="legend" id="m-legend"></div>
     </section>
-    <section id="daylist">
-      <div class="sec-h"><div class="eyebrow">Day by day</div><h2>Newest first</h2>
-        <p>Everything logged for each day: the habits, the sessions with their minutes and effort, throwing, food, adjuncts like the sauna, and the notes. Open a day for its exercises and items.</p></div>
-      <div id="m-days"></div>
+    <section id="dayview">
+      <div class="sec-h"><div class="eyebrow">Selected day</div></div>
+      <div id="m-day"></div>
     </section>
   </div>
 
@@ -1209,28 +1217,39 @@ noscript .scroll { margin-top: 10px; }
   }
 
   // ---- Days: the month as a grid, and one card per day with everything logged
-  var CATS = [['knee', 'Knee'], ['upper', 'Upper'], ['cond', 'Conditioning'], ['sport', 'Sport'], ['pt', 'PT'], ['rec', 'Recovery']];
+  // the kinds, in the places they keep in a day's cell (3 x 3; null is an empty place): circles, then the recovery squares
+  var KINDS = [['knee', 'Knee', 'o', 'knee'], ['upper', 'Upper', 'o', 'upper'], ['cond', 'Conditioning', 'o', 'conditioning'],
+               ['sport', 'Sport (throwing)', 'o', 'throwing'], ['pt', 'PT', 'o', 'PT'], null,
+               ['sauna', 'Sauna', 'sq', 'sauna'], ['gr', 'Game Ready', 'sq', 'Game Ready'], ['light', 'Light therapy', 'sq', 'light therapy']];
+  var KIND_LIST = KINDS.filter(function (k) { return k; });
+  var SHAPE = {}; KIND_LIST.forEach(function (k) { SHAPE[k[0]] = k[2]; });
+  function adjKind(a) { return /sauna/i.test(a) ? 'sauna' : /game ?ready|go ready/i.test(a) ? 'gr' : /lllt|laser|red light|light therap/i.test(a) ? 'light' : null; }
+  function mark(kind) { return el('i', 'mk ' + (SHAPE[kind] === 'sq' ? 'sq ' : '') + kind); }
   var PLAN_NAMES = { knee: 'knee session', kneeA: 'knee Session A', kneeB: 'knee Session B', upper: 'upper session', upperA: 'Upper A', upperB: 'Upper B', cond: 'conditioning', pt: 'PT visit', sport: 'sport session', accessory: 'accessory', power: 'power' };
   var ADDON_NAMES = { upperA: 'Upper A', upperB: 'Upper B', accessory: 'accessory', power: 'power & mobility', arms: 'arms' };
   var SESSION_LABELS = { home: 'Knee (home)', knee: 'Knee', A: 'Session A', B: 'Session B', PT: 'PT', HEP: 'HEP', floor: 'Floor', upperA: 'Upper A', upperB: 'Upper B', accessory: 'Accessory', power: 'Power', arms: 'Arms', conditioning: 'Conditioning' };
   var MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var DETAIL = DATA.detail || {};
-  function catsOf(r) { return { knee: !!(r.knee || r.knee_partial), upper: r.addons.length > 0, cond: r.cond_min > 0, sport: r.sport > 0 || r.sport_min != null, pt: !!r.pt, rec: r.adjunct_list.length > 0 }; }
-  function hasSauna(r) { return r.adjunct_list.some(function (a) { return /sauna/i.test(a); }); }
+  function catsOf(r) {
+    var c = { knee: !!(r.knee || r.knee_partial), upper: r.addons.length > 0, cond: r.cond_min > 0, sport: r.sport > 0 || r.sport_min != null, pt: !!r.pt, sauna: false, gr: false, light: false };
+    r.adjunct_list.forEach(function (a) { var k = adjKind(a); if (k) c[k] = true; });
+    return c;
+  }
   var MONTHS = (function () { var seen = {}; D.forEach(function (r) { seen[r.date.slice(0, 7)] = true; }); return Object.keys(seen).sort(); })();
   var month = load('ledger.month'); if (MONTHS.indexOf(month) < 0) month = MONTHS[MONTHS.length - 1];
   function monthLabel(ym) { var p = ym.split('-'); return MONTH_NAMES[+p[1] - 1] + ' ' + p[0]; }
   function stepMonth(by) { var i = MONTHS.indexOf(month) + by; if (i < 0 || i >= MONTHS.length) return; month = MONTHS[i]; store('ledger.month', month); renderDays(); }
   document.getElementById('m-prev').addEventListener('click', function () { stepMonth(-1); });
   document.getElementById('m-next').addEventListener('click', function () { stepMonth(1); });
-  function chip(text, cat, quiet) { var c = el('span', 'chip' + (quiet ? ' q' : '')); if (cat) c.appendChild(el('i', 'dot ' + cat)); c.appendChild(document.createTextNode(text)); return c; }
+  function chip(text, kind, quiet) { var c = el('span', 'chip' + (quiet ? ' q' : '')); if (kind) c.appendChild(mark(kind)); c.appendChild(document.createTextNode(text)); return c; }
   function mins(v) { var n = parseFloat(v); return isNaN(n) ? '' : ' ' + (n % 1 ? n : Math.round(n)) + ' min'; }
   function rpe(v) { return v ? ' · RPE ' + v : ''; }
-  function openDay(iso) {
-    var card = document.getElementById('d-' + iso); if (!card) return;
-    var det = card.querySelector('details'); if (det) det.open = true;
-    card.scrollIntoView({ block: 'start' });
-    card.classList.add('hi'); setTimeout(function () { card.classList.remove('hi'); }, 1600);
+  var selDay = load('ledger.day');
+  function selectDay(iso, scroll) {
+    selDay = iso; store('ledger.day', iso);
+    if (iso.slice(0, 7) !== month) { month = iso.slice(0, 7); store('ledger.month', month); }
+    renderDays();
+    if (scroll) { var view = document.getElementById('dayview'); if (view) view.scrollIntoView({ block: 'start' }); }
   }
   function renderDays() {
     var days = D.filter(function (r) { return r.date.slice(0, 7) === month; });
@@ -1238,14 +1257,13 @@ noscript .scroll { margin-top: 10px; }
     document.getElementById('m-label').textContent = monthLabel(month);
     document.getElementById('m-prev').disabled = mi <= 0;
     document.getElementById('m-next').disabled = mi >= MONTHS.length - 1;
-    var logged = days.filter(function (r) { return r.logged; }).length, counts = { sauna: 0 };
-    CATS.forEach(function (c) { counts[c[0]] = 0; });
-    days.forEach(function (r) { var c = catsOf(r); CATS.forEach(function (k) { if (c[k[0]]) counts[k[0]]++; }); if (hasSauna(r)) counts.sauna++; });
+    if (!selDay || selDay.slice(0, 7) !== month || INDEX[selDay] == null) selDay = ASOF.slice(0, 7) === month ? ASOF : days[days.length - 1].date;
+    var logged = days.filter(function (r) { return r.logged; }).length, counts = {};
+    KIND_LIST.forEach(function (k) { counts[k[0]] = 0; });
+    days.forEach(function (r) { var c = catsOf(r); KIND_LIST.forEach(function (k) { if (c[k[0]]) counts[k[0]]++; }); });
     var sum = document.getElementById('m-summary'); sum.replaceChildren();
     sum.appendChild(chip(logged + ' of ' + days.length + ' day' + (days.length === 1 ? '' : 's') + ' logged', null, true));
-    [['knee', 'knee'], ['upper', 'upper'], ['cond', 'conditioning'], ['sport', 'sport'], ['pt', 'PT'], ['sauna', 'sauna'], ['rec', 'recovery']].forEach(function (k) {
-      if (counts[k[0]]) sum.appendChild(chip(k[1] + ' ' + counts[k[0]], k[0] === 'sauna' ? 'rec' : k[0]));
-    });
+    KIND_LIST.forEach(function (k) { if (counts[k[0]]) sum.appendChild(chip(k[3] + ' ' + counts[k[0]], k[0])); });
     var grid = document.getElementById('m-grid'); grid.replaceChildren();
     DOWS.forEach(function (d) { grid.appendChild(el('div', 'dh', d[0])); });
     var p = month.split('-'), y = +p[0], m = +p[1];
@@ -1254,28 +1272,36 @@ noscript .scroll { margin-top: 10px; }
     for (var d = 1; d <= n; d++) {
       var iso = month + '-' + (d < 10 ? '0' : '') + d, r = D[INDEX[iso]];
       if (!r) { grid.appendChild(el('div', 'mc out', String(d))); continue; }
-      var cell = el('button', 'mc' + (r.light === 'red' ? ' red' : !r.logged ? ' none' : '') + (r.date === ASOF ? ' today' : ''));
+      var cell = el('button', 'mc' + (r.light === 'red' ? ' red' : !r.logged ? ' none' : '') + (r.date === ASOF ? ' today' : '') + (r.date === selDay ? ' sel' : ''));
       cell.type = 'button'; cell.appendChild(el('span', 'dn', String(d)));
-      var c = catsOf(r), dots = el('span', 'dots'), on = [];
-      CATS.forEach(function (k) { dots.appendChild(el('i', c[k[0]] ? 'on ' + k[0] : '')); if (c[k[0]]) on.push(k[1]); });
-      cell.appendChild(dots);
+      var c = catsOf(r), marks = el('span', 'marks'), on = [];
+      KINDS.forEach(function (k) { if (k && c[k[0]]) { marks.appendChild(mark(k[0])); on.push(k[1]); } else marks.appendChild(el('i', 'mk')); });
+      cell.appendChild(marks);
       cell.setAttribute('aria-label', dowmd(r.date) + ': ' + (r.logged ? (on.join(', ') || 'no session') : 'not logged'));
-      cell.addEventListener('click', (function (iso) { return function () { openDay(iso); }; })(iso));
+      cell.setAttribute('aria-pressed', r.date === selDay ? 'true' : 'false');
+      cell.addEventListener('click', (function (iso) { return function () { selectDay(iso, true); }; })(iso));
       grid.appendChild(cell);
     }
     var legend = document.getElementById('m-legend'); legend.replaceChildren();
-    CATS.forEach(function (k) { var s = el('span'); s.appendChild(el('i', 'dot ' + k[0])); s.appendChild(document.createTextNode(k[1] + (k[0] === 'rec' ? ' (sauna, Game Ready, laser…)' : k[0] === 'sport' ? ' (throwing)' : ''))); legend.appendChild(s); });
-    var list = document.getElementById('m-days'); list.replaceChildren();
-    days.slice().reverse().forEach(function (r) { list.appendChild(dayCard(r)); });
+    KIND_LIST.forEach(function (k) { var s = el('span'); s.appendChild(mark(k[0])); s.appendChild(document.createTextNode(k[1] + (k[0] === 'light' ? ' (LLLT, red light)' : ''))); legend.appendChild(s); });
+    document.getElementById('m-day').replaceChildren(dayCard(D[INDEX[selDay]]));
   }
   function dayCard(r) {
     var a = el('article', 'day'); a.id = 'd-' + r.date;
-    var h = el('header'); h.appendChild(el('b', '', dowmd(r.date)));
+    var h = el('header'), top = el('div', 'dh1'), meta = el('div', 'dh2');
+    top.appendChild(el('b', '', dowmd(r.date)));
+    var nav = el('div', 'dnav'), i = INDEX[r.date];
+    var prev = el('button', '', '‹'), next = el('button', '', '›');
+    prev.type = next.type = 'button'; prev.setAttribute('aria-label', 'The day before'); next.setAttribute('aria-label', 'The day after');
+    prev.disabled = i <= 0; next.disabled = i >= D.length - 1;
+    prev.addEventListener('click', function () { selectDay(D[i - 1].date, false); });
+    next.addEventListener('click', function () { selectDay(D[i + 1].date, false); });
+    nav.appendChild(prev); nav.appendChild(next); top.appendChild(nav);
     var plan = r.planned.map(function (p) { return PLAN_NAMES[p] || p; }).join(', ');
-    h.appendChild(el('span', 'muted', 'POD ' + r.pod + (plan ? ' · plan: ' + plan : ' · no session planned')));
-    if (r.date === ASOF) h.appendChild(el('span', 'tag', OPEN ? 'today, open' : 'today'));
-    if (r.light === 'red') h.appendChild(el('span', 'tag', 'rest day, by the plan')); else if (r.light === 'yellow') h.appendChild(el('span', 'tag', 'yellow'));
-    a.appendChild(h);
+    meta.appendChild(el('span', 'muted', 'POD ' + r.pod + (plan ? ' · plan: ' + plan : ' · no session planned')));
+    if (r.date === ASOF) meta.appendChild(el('span', 'tag', OPEN ? 'today, open' : 'today'));
+    if (r.light === 'red') meta.appendChild(el('span', 'tag', 'rest day, by the plan')); else if (r.light === 'yellow') meta.appendChild(el('span', 'tag', 'yellow'));
+    h.appendChild(top); h.appendChild(meta); a.appendChild(h);
     if (!r.logged) { a.appendChild(el('p', 'muted', 'Nothing logged.')); return a; }
     var dt = DETAIL[r.date] || { ex: [], sport: [], food: [], food_notes: '', measured: [], tasks: [] };
     var chips = el('div', 'chips');
@@ -1289,15 +1315,16 @@ noscript .scroll { margin-top: 10px; }
     else if (r.knee_partial) chips.appendChild(chip('knee, partial' + mins(r.knee_min), 'knee'));
     r.addons.forEach(function (ad) { chips.appendChild(chip((ADDON_NAMES[ad] || ad) + mins(r.addon_min) + rpe(r.addon_rpe), 'upper')); });
     if (r.cond_min > 0) chips.appendChild(chip((r.cond_type || 'conditioning') + mins(r.cond_min), 'cond'));
-    if (r.sport > 0 || r.sport_min != null) chips.appendChild(chip('throwing' + (r.sport_sessions.length ? ' ' + r.sport_sessions.join('+') : '') + mins(r.sport_min) + (r.sport_skills.length ? ' · ' + r.sport_skills.join(', ') : ''), 'sport'));
+    if (r.sport > 0 || r.sport_min != null) chips.appendChild(chip((r.sport_sessions.indexOf('FILM') >= 0 && r.sport_sessions.length === 1 ? 'film' : 'throwing') + (r.sport_sessions.length ? ' ' + r.sport_sessions.join('+') : '') + mins(r.sport_min) + (r.sport_skills.length ? ' · ' + r.sport_skills.join(', ') : ''), 'sport'));
     if (r.pt) chips.appendChild(chip('PT visit', 'pt'));
     if (r.pt_missed) chips.appendChild(chip('PT visit missed', null, true));
-    r.adjunct_list.forEach(function (ad) { chips.appendChild(chip(ad, 'rec')); });
+    r.adjunct_list.forEach(function (ad) { var k = adjKind(ad); chips.appendChild(chip(ad, k, !k)); });
     if (r.together) chips.appendChild(chip('together', null, true));
     dt.tasks.forEach(function (t) { chips.appendChild(chip(t.task === 'finished' ? 'project finished: ' + t.project : 'task done: ' + t.task, null, true)); });
     if (dt.measured.length) chips.appendChild(chip('measured', null, true));
     a.appendChild(chips);
     var det = el('details', 'more'), body = el('div', 'det');
+    det.open = true;  // the one card on the page: its details are the point
     det.appendChild(el('summary', '', 'Details'));
     function line(k, v) { if (!v) return; var dl = el('div', 'dl'); dl.appendChild(el('span', 'k', k)); var vv = el('span', 'v'); if (typeof v === 'string') vv.textContent = v; else vv.appendChild(v); dl.appendChild(vv); body.appendChild(dl); }
     var morning = ['swelling ' + (r.swelling == null ? 'not graded' : r.swelling)];
