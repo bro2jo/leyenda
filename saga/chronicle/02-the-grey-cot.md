@@ -1000,9 +1000,9 @@ Rae put the spoon down.
 
 "The grey cloak at the winch-house," she said. "The one who had his boots up on my cart till I came down for it. He held it out to me at the end of the day and said who it was for." She turned the bowl a quarter turn on the board. "Twice. *The Captain of the Ninth.* The second time he smiled, the way you say the name of a horse you've already bought."
 
-Darrow sat with that. His brother's hand, and his brother's wax, and it had come up the Holloway in the keeping of the men who had come for his name.
+Darrow sat with that. Aldric's hand, and Aldric's wax, and it had come up the Holloway in the keeping of the men who had come for his name.
 
-"My brother's choice of courier," he said. It was meant for a joke, and it did not come out as one.
+"He always did know how to pick a courier," he said. It was meant for a joke, and it did not come out as one.
 
 "You could have sent it up in the cage."
 

@@ -30,7 +30,7 @@
     "anchor": "chronicle/02-the-grey-cot.html#between-14"
   },
   "last_seen_doing": "Found Rae in the kitchen after dark and asked her again whose hand the letter came out of; learned it was the grey cloak at the winch-house; asked about the cold in her cart and was refused; thanked her for the wax.",
-  "now": "At the bread table in the kitchen with Rae, after dark. He knows now that his brother's letter came up the Holloway in a grey cloak's hand, and that Rae carried it up herself so it would not lie overnight in the cage.",
+  "now": "At the bread table in the kitchen with Rae, after dark. He knows now that Aldric's letter came up the Holloway in a grey cloak's hand, and that Rae carried it up herself so it would not lie overnight in the cage.",
   "story_so_far": "With the Grace of the field-stone warm in his chest and sixty knights behind him, Darrow led the Ninth Lance into the Wend at Harrow Ford, laughing, until halfway across the warmth went out of him, his horse went down, and his knee gave with nothing touching it as he planted and turned toward the boy who had gone under his horse. As he went under he saw Aldric Vane's horse on the west bank, already turned and climbing out, one heartbeat early. A red-handed clanswoman hauled him onto the east bank by his collar and made him look: the Wend carrying knights downstream, the Second Lance sitting untouched on the far shore, and a line of grey armored figures standing very still under the trees. Nineteen of the Ninth came home, and the Crown's heralds were already on the bell-house steps naming them the Faithless and bidding them kneel anew at the Oathspire. Carried up the Thousand Steps to the House of Menders, he chose Maelis Vorne's old art over the Crown's fast way, a strand of his own sinew bound in with emberthread, nothing given and nothing anyone can take back, and heard that he may never kneel again. Seven weeks on, walking without the stick, he learns that six grey cloaks with a cart and a censer are riding the Holloway toward the foot of the Steps with a list of the Faithless, and that when Wren was asked who was first on it, she looked at him. He asked to be sent down the Steps before the grey cloaks came and was refused a fifteenth time; he told the Prior to let the valley hear that the Faithless had gone down the far side, and she held Old Mercy silent so the gate would look as if it kept nobody. From the gate wall he watched the grey cloaks come in at the winch-house three bells early, and in the hour before dusk he stood among the wounded in the court while Confessor Ivo Marrant read his name first. He read the Confessor's trap a breath before it sprang and sent Wren for the bell, but the bell rang late: two grey cloaks came through the wicket, and his shoulder could not shut it on a third. When the bell stopped them and the Prior spoke the law of names, the Confessor made his camp on the lower terrace and called for the Captain of the Ninth to come down and kneel. Darrow crossed the court to the bars and gave him his name.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -720,16 +720,16 @@
       "evidence": "Whose hand did it come out of?"
     },
     {
-      "fact": "He knows now that his brother's letter came up the Holloway in the keeping of the men who came for his name.",
+      "fact": "He knows now that Aldric's letter came up the Holloway in the keeping of the men who came for his name.",
       "chapter": "02",
       "scene": "between-14",
       "evidence": "in the keeping of the men who had come for his name"
     },
     {
-      "fact": "Learning the grey cloak carried his brother's letter, he tried a joke about his brother's choice of courier, and it did not come out as one.",
+      "fact": "Learning the grey cloak carried Aldric's letter, he tried a joke about how Aldric always did know how to pick a courier, and it did not come out as one.",
       "chapter": "02",
       "scene": "between-14",
-      "evidence": "My brother's choice of courier"
+      "evidence": "He always did know how to pick a courier"
     },
     {
       "fact": "He thanked Rae for the wax.",
