@@ -45,7 +45,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | "PT moved my session", "visit cancelled", a session the plan moves or drops | `/log` → `real/config.json → plan_changes`: a plan-directed change is never a miss |
 | the week's work outside the knee ("sell the CRV: clean it, park it, list it"), a task of it done ("car's listed"), "what's left of the project", "drop it" | `/project`: the Ledger keeps the project (`darrow.py project`); each task reported pays a piece of a tale from the past, written in the same reply (`saga.py brief --tale`); the last piece leaves a keepsake |
 | "what's today" · "how's my week" · "sheet", "stats" | `/today` · `/week` (real only) · `/sheet` |
-| "trends", "streaks", "how am I trending" | real only: `python3 engine/report.py` (the page is built only when he asks; `ship` never runs it), then send him `real/trends.html` rendered (it is the page itself; nothing to summarise) |
+| "trends", "streaks", "how am I trending", "what did I do this month", "month view" | real only: `python3 engine/report.py` (the page is built only when he asks; `ship` never runs it), then send him `real/trends.html` rendered (it is the page itself; nothing to summarise) |
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
 | "checkpoint", the first message on a Sunday, or a new week's first message while last week's chapter is unclosed | `/checkpoint` (anything in the message dated last week is logged first; a week with nothing logged is still a chapter), then `/chapter` plans the next one, in the same session or a fresh one |
 | an answer to an open story choice ("2", "open it", "go the long way") | `/choose` |

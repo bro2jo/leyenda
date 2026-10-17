@@ -308,7 +308,7 @@ def main():
         code, out = run(saga + ["record", json.dumps({**piece, "key": f"{tid1}:p2"}, ensure_ascii=False)], tmp, expect=1)
         check("no piece 2" in out or "not owed yet" in out, "a piece ahead of its task is refused")
         code, out = run(["engine/report.py"], tmp)
-        check(code == 0 and (tmp / "real/trends.html").exists() and "trends:" in out and "<title>Ledger Trends</title>" in (tmp / "real/trends.html").read_text(encoding="utf-8"),
+        check(code == 0 and (tmp / "real/trends.html").exists() and "trends:" in out and "<title>The Ledger</title>" in (tmp / "real/trends.html").read_text(encoding="utf-8"),
               "the trends page builds from the copy's logs", out[-300:])
         code, out = run(["engine/build_site.py"], tmp)
         page = page_of(tmp / "docs/darrow/index.html")

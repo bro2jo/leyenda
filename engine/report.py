@@ -32,6 +32,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -86,7 +87,46 @@ def day_record(cfg, rules, facts, rows, day):
     rec["catch"] = str(r.get("catch", "")).strip()
     rec["wellness"] = E.num(r.get("wellness"))
     rec["sport_min"] = E.num(r.get("sport_min"))
+    for k in ("am_extension", "flexion", "pain_session", "pain_pm", "am_notes", "notes", "hours_on_feet", "crutches",
+              "gait_notes", "adjuncts", "sleep_h", "knee_min", "knee_rpe", "addon_min", "addon_rpe", "knee_as_planned"):
+        rec[k] = str(r.get(k, "")).strip()  # his words, for the day's card
+    rec["adjunct_list"] = [a.strip() for a in re.split(r";", rec["adjuncts"]) if a.strip()]  # sauna, Game Ready, laser, ...
+    rec["sport_sessions"] = sorted(f["sport_sessions"]) if f else []
+    rec["sport_skills"] = sorted(f["sport_skills"]) if f else []
     return rec
+
+
+DETAIL_COLS = {
+    "ex": ("session", "block", "exercise", "side", "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"),
+    "sport": ("session", "skill", "drill", "sets", "reps", "minutes", "rpe", "metric", "value", "notes"),
+    "food": ("meal", "item", "qty", "kcal", "protein_g", "source"),
+}
+
+
+def details(cfg, recs):
+    """Everything else the logs hold about a day, for its card: the exercise rows by session, the throwing rows, the
+    food items, the day's nutrition note, what was measured, and the project tasks reported done. Days with none of
+    it are left out, so the page stays small."""
+    out = {r["date"]: {"ex": [], "sport": [], "food": [], "food_notes": "", "measured": [], "tasks": []} for r in recs}
+    for key in ("ex", "sport", "food"):
+        for r in E.read_csv("exercise" if key == "ex" else key):
+            if r.get("date") in out:
+                out[r["date"]][key].append({c: str(r.get(c) or "").strip() for c in DETAIL_COLS[key]})
+    for r in E.read_csv("nutrition"):
+        if r.get("date") in out:
+            out[r["date"]]["food_notes"] = str(r.get("notes") or "").strip()
+    specs = E.metric_specs(cfg)
+    for g in E.measurement_sets(cfg):
+        if g["date"] in out:
+            out[g["date"]]["measured"].append(f"{E.metric_label(g['metric'], specs.get(g['metric'], {}))} {E.set_text(g)}"
+                                              + (f" ({g['source']})" if g.get("source") else ""))
+    for p in E.load_projects().get("projects", []):
+        for t in p.get("tasks", []):
+            if t.get("done") in out:
+                out[t["done"]]["tasks"].append({"project": p["title"], "task": f"{t['n']}. {t['text']}"})
+        if p.get("done") in out:
+            out[p["done"]]["tasks"].append({"project": p["title"], "task": "finished"})
+    return {k: v for k, v in out.items() if any(v[x] for x in ("ex", "sport", "food", "food_notes", "measured", "tasks"))}
 
 
 def streak(recs, key):
@@ -237,7 +277,7 @@ def collect(asof=None):
         "today_open": today["missed"], "project": E.project_line(),
         "weight_week_line": E.weight_line(E.weight_compare(facts, E.week_start(asof), asof), t["weighins_per_week"]),
         "pt": {"visits": len(pt_days), "last": pt_days[-1] if pt_days else None},
-        "days": recs, "weeks": week_records(cfg, rules, facts, recs, asof),
+        "days": recs, "weeks": week_records(cfg, rules, facts, recs, asof), "detail": details(cfg, recs),
         "streaks": {k: streak(recs, k) for k, _, _ in HABITS},
         "measured": measured(cfg), "food": food_sources(),
         "coverage": {"first": recs[0]["date"], "days": len(recs), "logged": sum(1 for r in recs if r["logged"]),
@@ -328,7 +368,7 @@ def render(data):
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = TEMPLATE
     for k, v in {
-        "{{TITLE}}": "Ledger Trends",
+        "{{TITLE}}": "The Ledger",
         "{{STATUS}}": f'{data["asof_dow"]} {md_of(data["asof"])} · POD {data["pod"]} · post-op week {data["post_op_week"]} · Phase {data["phase"]}{phase_since}',
         "{{TODAY_PLAN}}": esc(planned_today),
         "{{TODAY_OPEN}}": esc(open_txt),
@@ -384,6 +424,7 @@ TEMPLATE = r"""<!doctype html>
   --warn: #fab219;
   --serious: #ec835a;
   --critical: #d03b3b;
+  --c-knee: #2a78d6; --c-upper: #eb6834; --c-cond: #1baf7a; --c-sport: #eda100; --c-pt: #e87ba4; --c-rec: #008300;
   --tip-bg: #fcfcfb;
   --shadow: 0 6px 24px rgba(11,11,11,.14);
   --radius: 10px;
@@ -397,6 +438,7 @@ TEMPLATE = r"""<!doctype html>
     --accent: #3987e5; --accent-soft: rgba(57,135,229,.22); --dim: #5a5953;
     --seq-0: #22314a; --seq-1: #184f95; --seq-2: #256abf; --seq-3: #3987e5; --seq-4: #86b6ef;
     --good-text: #0ca30c; --tip-bg: #232322; --shadow: 0 6px 24px rgba(0,0,0,.5);
+    --c-knee: #3987e5; --c-upper: #d95926; --c-cond: #199e70; --c-sport: #c98500; --c-pt: #d55181; --c-rec: #008300;
   }
 }
 :root[data-theme="dark"] {
@@ -501,6 +543,58 @@ figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
 .legend i.none { box-shadow: inset 0 0 0 1px var(--axis); }
+.legend i.dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* the two views */
+.tabs { display: flex; border-bottom: 1px solid var(--grid); margin-bottom: 8px; }
+.tabs button { flex: 1 1 0; min-height: 44px; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: transparent; color: var(--ink-2); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.mnav { display: flex; align-items: center; gap: 6px; }
+.mnav button { min-width: 48px; min-height: 40px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 9px; font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+.mnav button:disabled { opacity: .35; cursor: default; }
+.mnav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mnav .ml { flex: 1; text-align: center; font-weight: 600; font-size: 16px; }
+
+/* days: chips, the month grid, the cards */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 13px; color: var(--ink); min-height: 28px; max-width: 100%; }
+.chip.q { color: var(--ink-2); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+.dot.knee { background: var(--c-knee); } .dot.upper { background: var(--c-upper); } .dot.cond { background: var(--c-cond); }
+.dot.sport { background: var(--c-sport); } .dot.pt { background: var(--c-pt); } .dot.rec { background: var(--c-rec); }
+.mgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: 12px; }
+.mgrid .dh { font-size: 11px; color: var(--muted); text-align: center; }
+.mc { aspect-ratio: 1; min-height: 44px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); padding: 4px 5px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; font: inherit; font-size: 12px; color: var(--ink-2); cursor: pointer; min-width: 0; text-align: left; }
+.mc.none { background: transparent; color: var(--muted); }
+.mc.red { background: var(--grid); }
+.mc.out { background: transparent; border-color: transparent; color: var(--muted); opacity: .45; cursor: default; }
+.mc.today { outline: 2px solid var(--accent); outline-offset: 1px; }
+.mc.today .dn { color: var(--accent); font-weight: 600; }
+.mc:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.mc .dots { display: grid; grid-template-columns: repeat(3, 7px); gap: 3px; }
+.mc .dots i { width: 7px; height: 7px; border-radius: 50%; background: transparent; }
+.mc .dots i.on.knee { background: var(--c-knee); } .mc .dots i.on.upper { background: var(--c-upper); } .mc .dots i.on.cond { background: var(--c-cond); }
+.mc .dots i.on.sport { background: var(--c-sport); } .mc .dots i.on.pt { background: var(--c-pt); } .mc .dots i.on.rec { background: var(--c-rec); }
+.day { padding: 12px 0; border-top: 1px solid var(--grid); display: grid; gap: 8px; scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 140px); transition: background .4s; }
+.day:first-child { border-top: 0; }
+.day.hi { background: var(--accent-soft); }
+.day header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.day header b { font-size: 15px; }
+.day header .muted { font-size: 12px; }
+.tag { font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px; }
+details.more summary { cursor: pointer; font-size: 13px; color: var(--ink-2); padding: 6px 0; min-height: 36px; display: flex; align-items: center; gap: 6px; list-style: none; }
+details.more summary::-webkit-details-marker { display: none; }
+details.more summary::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(-45deg); transition: transform .15s; }
+details.more[open] summary::before { transform: rotate(45deg); }
+.det { display: grid; gap: 8px; font-size: 13px; color: var(--ink-2); padding-bottom: 4px; }
+.dl { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 8px; }
+.dl .k { color: var(--muted); font-size: 12px; padding-top: 1px; }
+.dl .v { min-width: 0; overflow-wrap: anywhere; color: var(--ink); }
+.dl ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 5px; }
+.dl li small { display: block; color: var(--muted); font-size: 12px; }
+.dl li.gk { color: var(--muted); font-size: 12px; font-weight: 600; margin-top: 2px; }
+.dl li.nd { color: var(--muted); text-decoration: line-through; }
 
 /* tooltips: tap to read; nothing is only in them */
 .tip { position: absolute; z-index: 4; pointer-events: none; background: var(--tip-bg); color: var(--ink); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); padding: 8px 10px; font-size: 13px; min-width: 120px; max-width: 240px; display: none; }
@@ -572,8 +666,8 @@ noscript .scroll { margin-top: 10px; }
 <body>
 <div class="wrap">
   <header class="head">
-    <div class="eyebrow">The Ledger</div>
-    <h1>Trends</h1>
+    <div class="eyebrow">Real numbers only</div>
+    <h1>The Ledger</h1>
     <p class="status">{{STATUS}}</p>
     <dl class="now">
       <dt>Today</dt><dd>planned <b>{{TODAY_PLAN}}</b> · still open: {{TODAY_OPEN}}</dd>
@@ -583,15 +677,29 @@ noscript .scroll { margin-top: 10px; }
   </header>
 
   <div class="bar" id="bar">
-    <div class="seg" role="group" aria-label="Range">
-      <button type="button" data-range="14" aria-pressed="false">2 wk</button>
-      <button type="button" data-range="28" aria-pressed="false">4 wk</button>
-      <button type="button" data-range="56" aria-pressed="false">8 wk</button>
-      <button type="button" data-range="all" aria-pressed="false">All</button>
+    <div class="tabs" role="tablist" aria-label="View">
+      <button type="button" role="tab" data-tab="trends" aria-selected="true" aria-controls="tab-trends">Trends</button>
+      <button type="button" role="tab" data-tab="days" aria-selected="false" aria-controls="tab-days">Days</button>
     </div>
-    <div class="range-note" id="range-note">Every chart and count below follows this range.</div>
+    <div id="range-row">
+      <div class="seg" role="group" aria-label="Range">
+        <button type="button" data-range="14" aria-pressed="false">2 wk</button>
+        <button type="button" data-range="28" aria-pressed="false">4 wk</button>
+        <button type="button" data-range="56" aria-pressed="false">8 wk</button>
+        <button type="button" data-range="all" aria-pressed="false">All</button>
+      </div>
+      <div class="range-note" id="range-note">Every chart and count below follows this range.</div>
+    </div>
+    <div id="month-row" hidden>
+      <div class="mnav">
+        <button type="button" id="m-prev" aria-label="Earlier month">‹</button>
+        <div class="ml" id="m-label"></div>
+        <button type="button" id="m-next" aria-label="Later month">›</button>
+      </div>
+    </div>
   </div>
 
+  <div id="tab-trends" role="tabpanel">
   <section id="streaks">
     <div class="sec-h"><div class="eyebrow">Streaks</div><h2>Days in a row</h2>
       <p>Consecutive days with each habit done. Today is still open, so a streak stands until the day ends; a rest day the plan ordered is skipped. The dots are the last 14 days.</p></div>
@@ -675,8 +783,24 @@ noscript .scroll { margin-top: 10px; }
       <p>The newest value per side, and the limb symmetry index (left as a share of right). The line under each metric is its history.</p></div>
     {{MEASURED}}
   </section>
+  </div>
 
-  <noscript><section><div class="sec-h"><div class="eyebrow">This week</div><h2>The week's table</h2><p>The charts need JavaScript; the week's rows are here.</p></div>{{WEEK_TABLE}}</section></noscript>
+  <div id="tab-days" role="tabpanel" hidden>
+    <section id="month">
+      <div class="sec-h"><div class="eyebrow">The month</div><h2>What each day carried</h2>
+        <p>Dots by kind, in fixed places: knee, upper and conditioning on the top row; sport, PT and recovery below. A cell without a fill was not logged. Tap a day to open its card below.</p></div>
+      <div class="chips" id="m-summary"></div>
+      <div class="mgrid" id="m-grid"></div>
+      <div class="legend" id="m-legend"></div>
+    </section>
+    <section id="daylist">
+      <div class="sec-h"><div class="eyebrow">Day by day</div><h2>Newest first</h2>
+        <p>Everything logged for each day: the habits, the sessions with their minutes and effort, throwing, food, adjuncts like the sauna, and the notes. Open a day for its exercises and items.</p></div>
+      <div id="m-days"></div>
+    </section>
+  </div>
+
+  <noscript><section><div class="sec-h"><div class="eyebrow">This week</div><h2>The week's table</h2><p>The charts and the day view need JavaScript; the week's rows are here.</p></div>{{WEEK_TABLE}}</section></noscript>
 
   <footer class="foot">
     <span>{{COVERAGE}}</span>
@@ -1084,6 +1208,174 @@ noscript .scroll { margin-top: 10px; }
       days.map(function (r) { return [dowmd(r.date) + (isOpen(r) ? ' (open)' : ''), r.kcal != null ? fmtInt(r.kcal) : '', r.kcal != null ? signed(r.kcal - T.kcal) : '', r.protein != null ? fmtInt(r.protein) : '', r.protein != null ? signed(r.protein - T.protein_g) : '']; }), days.length - 1);
   }
 
+  // ---- Days: the month as a grid, and one card per day with everything logged
+  var CATS = [['knee', 'Knee'], ['upper', 'Upper'], ['cond', 'Conditioning'], ['sport', 'Sport'], ['pt', 'PT'], ['rec', 'Recovery']];
+  var PLAN_NAMES = { knee: 'knee session', kneeA: 'knee Session A', kneeB: 'knee Session B', upper: 'upper session', upperA: 'Upper A', upperB: 'Upper B', cond: 'conditioning', pt: 'PT visit', sport: 'sport session', accessory: 'accessory', power: 'power' };
+  var ADDON_NAMES = { upperA: 'Upper A', upperB: 'Upper B', accessory: 'accessory', power: 'power & mobility', arms: 'arms' };
+  var SESSION_LABELS = { home: 'Knee (home)', knee: 'Knee', A: 'Session A', B: 'Session B', PT: 'PT', HEP: 'HEP', floor: 'Floor', upperA: 'Upper A', upperB: 'Upper B', accessory: 'Accessory', power: 'Power', arms: 'Arms', conditioning: 'Conditioning' };
+  var MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var DETAIL = DATA.detail || {};
+  function catsOf(r) { return { knee: !!(r.knee || r.knee_partial), upper: r.addons.length > 0, cond: r.cond_min > 0, sport: r.sport > 0 || r.sport_min != null, pt: !!r.pt, rec: r.adjunct_list.length > 0 }; }
+  function hasSauna(r) { return r.adjunct_list.some(function (a) { return /sauna/i.test(a); }); }
+  var MONTHS = (function () { var seen = {}; D.forEach(function (r) { seen[r.date.slice(0, 7)] = true; }); return Object.keys(seen).sort(); })();
+  var month = load('ledger.month'); if (MONTHS.indexOf(month) < 0) month = MONTHS[MONTHS.length - 1];
+  function monthLabel(ym) { var p = ym.split('-'); return MONTH_NAMES[+p[1] - 1] + ' ' + p[0]; }
+  function stepMonth(by) { var i = MONTHS.indexOf(month) + by; if (i < 0 || i >= MONTHS.length) return; month = MONTHS[i]; store('ledger.month', month); renderDays(); }
+  document.getElementById('m-prev').addEventListener('click', function () { stepMonth(-1); });
+  document.getElementById('m-next').addEventListener('click', function () { stepMonth(1); });
+  function chip(text, cat, quiet) { var c = el('span', 'chip' + (quiet ? ' q' : '')); if (cat) c.appendChild(el('i', 'dot ' + cat)); c.appendChild(document.createTextNode(text)); return c; }
+  function mins(v) { var n = parseFloat(v); return isNaN(n) ? '' : ' ' + (n % 1 ? n : Math.round(n)) + ' min'; }
+  function rpe(v) { return v ? ' · RPE ' + v : ''; }
+  function openDay(iso) {
+    var card = document.getElementById('d-' + iso); if (!card) return;
+    var det = card.querySelector('details'); if (det) det.open = true;
+    card.scrollIntoView({ block: 'start' });
+    card.classList.add('hi'); setTimeout(function () { card.classList.remove('hi'); }, 1600);
+  }
+  function renderDays() {
+    var days = D.filter(function (r) { return r.date.slice(0, 7) === month; });
+    var mi = MONTHS.indexOf(month);
+    document.getElementById('m-label').textContent = monthLabel(month);
+    document.getElementById('m-prev').disabled = mi <= 0;
+    document.getElementById('m-next').disabled = mi >= MONTHS.length - 1;
+    var logged = days.filter(function (r) { return r.logged; }).length, counts = { sauna: 0 };
+    CATS.forEach(function (c) { counts[c[0]] = 0; });
+    days.forEach(function (r) { var c = catsOf(r); CATS.forEach(function (k) { if (c[k[0]]) counts[k[0]]++; }); if (hasSauna(r)) counts.sauna++; });
+    var sum = document.getElementById('m-summary'); sum.replaceChildren();
+    sum.appendChild(chip(logged + ' of ' + days.length + ' day' + (days.length === 1 ? '' : 's') + ' logged', null, true));
+    [['knee', 'knee'], ['upper', 'upper'], ['cond', 'conditioning'], ['sport', 'sport'], ['pt', 'PT'], ['sauna', 'sauna'], ['rec', 'recovery']].forEach(function (k) {
+      if (counts[k[0]]) sum.appendChild(chip(k[1] + ' ' + counts[k[0]], k[0] === 'sauna' ? 'rec' : k[0]));
+    });
+    var grid = document.getElementById('m-grid'); grid.replaceChildren();
+    DOWS.forEach(function (d) { grid.appendChild(el('div', 'dh', d[0])); });
+    var p = month.split('-'), y = +p[0], m = +p[1];
+    var lead = new Date(y, m - 1, 1).getDay(), n = new Date(y, m, 0).getDate();
+    for (var i = 0; i < lead; i++) grid.appendChild(el('div', 'mc out'));
+    for (var d = 1; d <= n; d++) {
+      var iso = month + '-' + (d < 10 ? '0' : '') + d, r = D[INDEX[iso]];
+      if (!r) { grid.appendChild(el('div', 'mc out', String(d))); continue; }
+      var cell = el('button', 'mc' + (r.light === 'red' ? ' red' : !r.logged ? ' none' : '') + (r.date === ASOF ? ' today' : ''));
+      cell.type = 'button'; cell.appendChild(el('span', 'dn', String(d)));
+      var c = catsOf(r), dots = el('span', 'dots'), on = [];
+      CATS.forEach(function (k) { dots.appendChild(el('i', c[k[0]] ? 'on ' + k[0] : '')); if (c[k[0]]) on.push(k[1]); });
+      cell.appendChild(dots);
+      cell.setAttribute('aria-label', dowmd(r.date) + ': ' + (r.logged ? (on.join(', ') || 'no session') : 'not logged'));
+      cell.addEventListener('click', (function (iso) { return function () { openDay(iso); }; })(iso));
+      grid.appendChild(cell);
+    }
+    var legend = document.getElementById('m-legend'); legend.replaceChildren();
+    CATS.forEach(function (k) { var s = el('span'); s.appendChild(el('i', 'dot ' + k[0])); s.appendChild(document.createTextNode(k[1] + (k[0] === 'rec' ? ' (sauna, Game Ready, laser…)' : k[0] === 'sport' ? ' (throwing)' : ''))); legend.appendChild(s); });
+    var list = document.getElementById('m-days'); list.replaceChildren();
+    days.slice().reverse().forEach(function (r) { list.appendChild(dayCard(r)); });
+  }
+  function dayCard(r) {
+    var a = el('article', 'day'); a.id = 'd-' + r.date;
+    var h = el('header'); h.appendChild(el('b', '', dowmd(r.date)));
+    var plan = r.planned.map(function (p) { return PLAN_NAMES[p] || p; }).join(', ');
+    h.appendChild(el('span', 'muted', 'POD ' + r.pod + (plan ? ' · plan: ' + plan : ' · no session planned')));
+    if (r.date === ASOF) h.appendChild(el('span', 'tag', OPEN ? 'today, open' : 'today'));
+    if (r.light === 'red') h.appendChild(el('span', 'tag', 'rest day, by the plan')); else if (r.light === 'yellow') h.appendChild(el('span', 'tag', 'yellow'));
+    a.appendChild(h);
+    if (!r.logged) { a.appendChild(el('p', 'muted', 'Nothing logged.')); return a; }
+    var dt = DETAIL[r.date] || { ex: [], sport: [], food: [], food_notes: '', measured: [], tasks: [] };
+    var chips = el('div', 'chips');
+    if (r.swelling != null) chips.appendChild(chip('check ' + r.swelling, null, true));
+    else if (r.pain_text || r.trend || r.am_notes || r.am_extension) chips.appendChild(chip('check, not graded', null, true));
+    if (r.floor === 'full') chips.appendChild(chip('heel prop', null, true)); else if (r.floor === 'half') chips.appendChild(chip('heel prop, one round', null, true));
+    if (r.creatine) chips.appendChild(chip('creatine', null, true));
+    if (r.weight != null) chips.appendChild(chip(fmt1(r.weight) + ' lb', null, true));
+    if (r.kcal != null) chips.appendChild(chip(fmtInt(r.kcal) + ' kcal · ' + fmtInt(r.protein) + ' g', null, true));
+    if (r.knee) chips.appendChild(chip('knee ' + r.knee + mins(r.knee_min) + rpe(r.knee_rpe) + (r.knee_as_planned === 'Y' ? ' · as written' : r.knee_as_planned === 'N' ? ' · changed' : ''), 'knee'));
+    else if (r.knee_partial) chips.appendChild(chip('knee, partial' + mins(r.knee_min), 'knee'));
+    r.addons.forEach(function (ad) { chips.appendChild(chip((ADDON_NAMES[ad] || ad) + mins(r.addon_min) + rpe(r.addon_rpe), 'upper')); });
+    if (r.cond_min > 0) chips.appendChild(chip((r.cond_type || 'conditioning') + mins(r.cond_min), 'cond'));
+    if (r.sport > 0 || r.sport_min != null) chips.appendChild(chip('throwing' + (r.sport_sessions.length ? ' ' + r.sport_sessions.join('+') : '') + mins(r.sport_min) + (r.sport_skills.length ? ' · ' + r.sport_skills.join(', ') : ''), 'sport'));
+    if (r.pt) chips.appendChild(chip('PT visit', 'pt'));
+    if (r.pt_missed) chips.appendChild(chip('PT visit missed', null, true));
+    r.adjunct_list.forEach(function (ad) { chips.appendChild(chip(ad, 'rec')); });
+    if (r.together) chips.appendChild(chip('together', null, true));
+    dt.tasks.forEach(function (t) { chips.appendChild(chip(t.task === 'finished' ? 'project finished: ' + t.project : 'task done: ' + t.task, null, true)); });
+    if (dt.measured.length) chips.appendChild(chip('measured', null, true));
+    a.appendChild(chips);
+    var det = el('details', 'more'), body = el('div', 'det');
+    det.appendChild(el('summary', '', 'Details'));
+    function line(k, v) { if (!v) return; var dl = el('div', 'dl'); dl.appendChild(el('span', 'k', k)); var vv = el('span', 'v'); if (typeof v === 'string') vv.textContent = v; else vv.appendChild(v); dl.appendChild(vv); body.appendChild(dl); }
+    var morning = ['swelling ' + (r.swelling == null ? 'not graded' : r.swelling)];
+    if (r.trend) morning.push('trend ' + r.trend); if (r.pain_text) morning.push('pain ' + r.pain_text);
+    if (r.am_extension) morning.push('extension ' + r.am_extension); if (r.flexion) morning.push('flexion ' + r.flexion);
+    if (r.catch) morning.push('catch ' + r.catch); if (r.wellness != null) morning.push('wellness ' + r.wellness + '/5');
+    if (r.am_notes) morning.push('"' + r.am_notes + '"');
+    if (morning.length > 1 || r.swelling != null) line('Morning', morning.join(' · '));
+    var groups = [], byKey = {};
+    dt.ex.forEach(function (x) { var k = x.session || 'other'; if (!byKey[k]) { byKey[k] = []; groups.push(k); } byKey[k].push(x); });
+    groups.forEach(function (k) {
+      var ul = el('ul');
+      byKey[k].forEach(function (x) {
+        var li = el('li', /^\s*(not done|skipped)/i.test(x.notes) ? 'nd' : ''), parts = [x.exercise];
+        if (x.side) parts.push(x.side);
+        if (x.sets && x.reps) parts.push(x.sets + ' × ' + x.reps); else if (x.sets && x.sets !== '1') parts.push(x.sets + ' sets'); else if (x.reps) parts.push(x.reps + ' reps');
+        if (x.hold_or_duration) parts.push(x.hold_or_duration);
+        if (x.load_or_band) parts.push(x.load_or_band);
+        if (x.assist) parts.push('assist: ' + x.assist);
+        li.textContent = parts.join(' · ');
+        if (x.notes) li.appendChild(el('small', '', x.notes));
+        ul.appendChild(li);
+      });
+      line(SESSION_LABELS[k] || k, ul);
+    });
+    if (dt.sport.length) {
+      var su = el('ul');
+      dt.sport.forEach(function (s) {
+        var parts = [s.skill + (s.drill ? ': ' + s.drill : '')];
+        if (s.sets && s.reps) parts.push(s.sets + ' × ' + s.reps); else if (s.reps) parts.push(s.reps + ' reps');
+        if (s.minutes) parts.push(s.minutes + ' min'); if (s.rpe) parts.push('RPE ' + s.rpe);
+        if (s.metric) parts.push(s.metric + (s.value ? ' ' + s.value : ''));
+        var li = el('li', '', parts.join(' · ')); if (s.notes) li.appendChild(el('small', '', s.notes)); su.appendChild(li);
+      });
+      line('Throwing', su);
+    }
+    if (dt.food.length) {
+      var fu = el('ul'), meals = [], byMeal = {};
+      dt.food.forEach(function (f) { var k = f.meal || 'food'; if (!byMeal[k]) { byMeal[k] = []; meals.push(k); } byMeal[k].push(f); });
+      meals.forEach(function (k) {
+        fu.appendChild(el('li', 'gk', k));
+        byMeal[k].forEach(function (f) {
+          fu.appendChild(el('li', '', f.item + (f.qty ? ' (' + f.qty + ')' : '') + (f.kcal ? ' · ' + fmtInt(+f.kcal) + ' kcal' : '') + (f.protein_g ? ' · ' + fmtInt(+f.protein_g) + ' g' : '') + (/estimate|photo/i.test(f.source) ? ' · est.' : '')));
+        });
+      });
+      line('Food', fu);
+    }
+    if (dt.food_notes) line(dt.food.length ? 'Food note' : 'Food', dt.food_notes);
+    var pain = []; if (r.pain_session) pain.push('in session ' + r.pain_session); if (r.pain_pm) pain.push('evening ' + r.pain_pm);
+    line('Pain', pain.join(' · '));
+    var feet = []; if (r.hours_on_feet) feet.push('on feet: ' + r.hours_on_feet); if (r.crutches) feet.push('crutches: ' + r.crutches); if (r.gait_notes) feet.push('gait: ' + r.gait_notes);
+    line('On feet', feet.join(' · '));
+    line('Adjuncts', r.adjuncts);
+    if (r.sleep_h) line('Sleep', r.sleep_h + ' h');
+    if (dt.measured.length) line('Measured', dt.measured.join(' · '));
+    if (dt.tasks.length) line('Project', dt.tasks.map(function (t) { return t.project + ' · ' + t.task; }).join(' · '));
+    if (r.missed.length) line(r.date === ASOF && OPEN ? 'Still open' : 'Not done', r.missed.join(', '));
+    line('Notes', r.notes);
+    if (r.closed) line('Ledger', 'day closed');
+    det.appendChild(body); a.appendChild(det);
+    return a;
+  }
+
+  // ---- the two views
+  var TABS = Array.prototype.slice.call(document.querySelectorAll('.tabs button'));
+  var tab = (location.hash === '#days' || location.hash === '#trends') ? location.hash.slice(1) : (load('ledger.tab') || 'trends');
+  function showTab(name, byTap) {
+    tab = name; store('ledger.tab', name);
+    TABS.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-tab') === name ? 'true' : 'false'); });
+    document.getElementById('tab-trends').hidden = name !== 'trends';
+    document.getElementById('tab-days').hidden = name !== 'days';
+    document.getElementById('range-row').hidden = name !== 'trends';
+    document.getElementById('month-row').hidden = name !== 'days';
+    if (byTap) { try { history.replaceState(null, '', '#' + name); } catch (e) { } window.scrollTo(0, 0); }
+    if (name === 'trends') renderAll(); else renderDays();
+  }
+  TABS.forEach(function (b) { b.addEventListener('click', function () { showTab(b.getAttribute('data-tab'), true); }); });
+
   // ---- all together
   function renderAll() {
     var days = slice();
@@ -1093,8 +1385,8 @@ noscript .scroll { margin-top: 10px; }
     renderStreakRates(days); renderWeeks(days); renderCalendar(days); renderSessions(days); renderKnee(days); renderWeight(days); renderFuel(days);
   }
   var tmr = null, lastW = window.innerWidth;
-  window.addEventListener('resize', function () { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(tmr); tmr = setTimeout(renderAll, 150); });
-  renderAll();
+  window.addEventListener('resize', function () { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(tmr); tmr = setTimeout(function () { if (tab === 'trends') renderAll(); }, 150); });
+  showTab(tab, false);
 })();
 </script>
 </body>
