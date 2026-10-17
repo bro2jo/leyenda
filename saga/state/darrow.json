@@ -1,13 +1,13 @@
 {
   "asof": "2026-10-17",
   "name": "Ser Darrow of Edgemoor",
-  "level": 5,
+  "level": 6,
   "rank": "Kindled",
-  "xp": 1497,
-  "xp_this_level": 1000,
-  "xp_next_level": 1500,
+  "xp": 1507,
+  "xp_this_level": 1500,
+  "xp_next_level": 2100,
   "proficiency": 3,
-  "hp_max": 38,
+  "hp_max": 42,
   "attributes": {
     "might": {
       "score": 12,
@@ -24,7 +24,7 @@
       "raw": 9,
       "cap": 12,
       "mod": -1,
-      "temper": 5,
+      "temper": 7,
       "next_at": 8,
       "fell": 15,
       "banked": false
@@ -55,7 +55,7 @@
     "tier": "Steady",
     "effect": "none"
   },
-  "inspiration": 1,
+  "inspiration": 2,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -114,7 +114,7 @@
       "tree": "Breath",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 2,
+      "practice": 3,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
