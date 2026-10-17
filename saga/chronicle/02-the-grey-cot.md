@@ -877,9 +877,11 @@ At the door he looked back. She had not taken the coat off. She stood at the she
 
 ### Scene 6 — Which of Us
 
-Darrow slept, as he had been told to, and woke at the dawn bell with his hands cold again. Whatever had warmed them in the night had not stayed for morning.
+Darrow slept, as Maelis had told him to, and woke at the dawn bell with his hands cold again. Whatever had warmed them in the night had not stayed for morning.
 
-At the hour bell the Confessor came up to the bars.
+He lay still with them under his arms, and the low light came in flat along the floor of the hall, the way it does for a little while after the dawn bell, and showed him what noon never had: a line of damp in the limewash a hand above the floor, along the east wall, darker than the wash around it, where frost had stood in the night and gone. It ran the length of three cots and stopped at the head of the Grey Cot.
+
+At the hour bell Marrant came up to the bars.
 
 He brought one grey cloak to hold the censer and stood in the snow on the far side of the gate with his hands folded, and asked the gate-ward, very civil, whether the Mother of the House might spare him a moment. The gate-ward went for the Prior. The rest of the House came without being sent for. By the time Mother Ione had crossed the court there were novices in the kitchen door and lay brothers along the wall, and the men from the hall who could walk had come out onto the flags. Darrow put his back to the post at the foot of the gatehouse stair, where he had stood the day the list was read.
 
@@ -893,9 +895,11 @@ Mother Ione folded her hands into her sleeves.
 
 "We are a House of Menders, Confessor," she said. "Which of us did you climb for?"
 
-It was a good answer, and it was no use, because the House answered for her. Darrow watched it go through the court like wind through standing grain. The heads turned, not to the Prior and not to the bars, but to the hall door, where Maelis stood with the pipe in her teeth and her coat buttoned to the throat.
+It was a good answer, and it was no use, because the House answered for her. Darrow watched it go through the court the way it goes through a line when the first man looks over his shoulder. The heads turned, not to the Prior and not to the bars, but to the hall door, where Maelis stood with the pipe in her teeth and her coat buttoned to the throat.
 
 She did not move. One hand lay flat on her coat, over the place where the linen was.
+
+His weight came off the post. Across the court Maelis's eyes came to him, to the knee first and then his face, and she moved her head once: no. He put his back to the post again.
 
 Marrant looked where the House was looking. He did not hurry it.
 
@@ -904,8 +908,6 @@ Marrant looked where the House was looking. He did not hurry it.
 ---
 
 All afternoon the heads in the hall kept going down the row to the far end, where Maelis worked, and coming back, and going again.
-
-Darrow had found the seam on the second morning, when he had done counting what didn't happen and started on what did: a line of damp in the limewash a hand above the floor, along the east wall, darker than the wash around it, where frost had stood in the night and gone. It ran the length of three cots and stopped at the head of the Grey Cot.
 
 The next time the heads went down the row, he sat up on the end of his cot and used the bottom of his voice.
 
@@ -925,7 +927,7 @@ Rae Thorne came in at the far door in the middle of the afternoon, with the Step
 
 "Thorne."
 
-She came over and set the bale down at the foot of the Grey Cot. Hollis looked up from the lad's hand at her and said nothing.
+She came over and set the bale down at the foot of the Grey Cot. She did not ask about the letter. Hollis looked up from the lad's hand at her.
 
 "You've carted more hurt men than anyone in this House," Darrow said. "Have you seen that?"
 
@@ -936,6 +938,8 @@ She looked at the lad's mouth for a long moment. The frost had not gone from it 
 "When?"
 
 She shouldered the bale again. "Aye," she said, which was no answer to anything, and took the linen down the row to the press, and did not look at the Grey Cot again.
+
+"Talks to her oxen in whole sentences, that one," Hollis told the lad. "Saves nothing for the rest of us."
 
 Only Wren had followed his eyes to the wall. She came at dusk, when the wind had dropped and the snow had begun to come straight down, and sat on the end of his cot with the ledger shut on her knees and no pencil behind her ear.
 

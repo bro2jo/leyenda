@@ -329,6 +329,12 @@
       "chapter": "02",
       "scene": "6",
       "evidence": "which was no answer to anything"
+    },
+    {
+      "fact": "She did not ask him about the letter.",
+      "chapter": "02",
+      "scene": "6",
+      "evidence": "She did not ask about the letter."
     }
   ],
   "relationships": [
