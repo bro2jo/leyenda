@@ -22,7 +22,8 @@ rule 5: not reported, not done). "Done" is the engine's own reading of the day: 
 grade, the heel prop the day's full round count (config.json -> daily_minimum), food a kcal total.
 
 Usage: python3 engine/report.py [--out PATH] [--date D]
-  `darrow.py ship` runs it after `sync`, so the page is committed with the logs it shows. The page needs no
+  Run it when he asks for the trends (CLAUDE.md routes "trends" here); `ship` does not run it, so the page shows
+  the logs as of its last build (the footer says when) and the next ship commits that build. The page needs no
   network: no fonts, scripts, styles or images from anywhere; open the file and it works, JavaScript on or off
   (off: the streaks, the measured numbers and this week's table still show).
 Standard library only (Python 3.9+).
@@ -680,7 +681,7 @@ noscript .scroll { margin-top: 10px; }
   <footer class="foot">
     <span>{{COVERAGE}}</span>
     <span>{{FOOD_MIX}}</span>
-    <span>From the logs only, through the engine (<code>python3 engine/report.py</code>; <code>ship</code> rebuilds it). Generated {{GENERATED}}.</span>
+    <span>From the logs only, through the engine (<code>python3 engine/report.py</code>, run when you ask for it). Built {{GENERATED}}.</span>
   </footer>
 </div>
 
