@@ -64,3 +64,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-16#8,2026-10-16,,dinner,"Broccoli and carrots, steamed",3 florets + 2 carrot pieces (~80 g),25,2,5,0.3,2,0,2,35,230,30,0.5,15,0.3,50,0,20,photo,"plain, from photo"
 2026-10-16#9,2026-10-16,,dinner,Brazilian cheese bread bite (pao de queijo),1 bite (~20 g),60,1.5,7,3,0,1.5,0,110,10,35,0.1,2,0.2,0,0,0,photo,size from photo; brand not known
 2026-10-16#10,2026-10-16,,snack,Brazilian cheese bread bite (pao de queijo),4 bites (~20 g each),240,6,28,12,0,6,0,440,40,140,0.4,8,0.8,0,0,0,photo,"same bites as dinner, size from the dinner photo"
+2026-10-17#1,2026-10-17,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,library row (PB & chocolate chip label)
