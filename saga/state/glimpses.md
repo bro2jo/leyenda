@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-14 · house · Under the next cot to the far lamp there are two stools now instead of one. Nobody has said why, and nobody has moved the second back.
 - 2026-10-14 · overheard · At the hall door, a novice to a lay brother: "Is it true the Captain sat the far lamp?" "Till the dawn bell." "Did anything happen?" "No." A pause. "Good." "That's what I said."
 - 2026-10-14 · weather · The morning comes up clear and hard over the Greywater, so still that the smoke from the kitchen chimney stands straight up like a stick somebody planted in the sky.
 - 2026-10-14 · body · The cold finds his hands early today. He tucks them under his arms on the cot's end, and the far lamp's soot is still in the creases of two fingers when he takes them out again.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-16 · house · In the warming room the novices have hung their wet stockings in a row along the chimney breast, and someone has chalked a number over each pair, in a hand that is not Wren's and is trying very hard to be.
 - 2026-10-16 · weather · The wind dropped at dusk and the snow came straight down for once, slow and heavy, the kind that makes a whole House talk quietly without anyone asking it to.
 - 2026-10-17 · ledger · From Wren's ledgers, the lamps page: Lamps in the hall, fourteen. Lit at dusk, fourteen. Counted twice on the way to find a pencil, fourteen both times, which is the right answer and is written down anyway.
+- 2026-10-17 · body · The knee is quiet this afternoon. He has learned not to trust it when it is quiet, and lately, a little, to enjoy it anyway.
