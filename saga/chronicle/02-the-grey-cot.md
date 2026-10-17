@@ -983,3 +983,43 @@ Wren put her hand up behind her ear for the pencil. It was not there, and she le
 "Times you've told me first," she said. "One."
 
 She went off up the row to find her pencil, and before she reached the door she was counting again, under her breath: the lamps.
+
+### Between — Whose Hand
+
+Darrow found Rae Thorne where he had found her two nights before, at the bread table in the kitchen with a bowl in front of her and the kitchen's book shut at her elbow. The cook was asleep in the chimney corner with her mouth open. Nobody else was up.
+
+Rae watched him come in, looked at the knee, and pushed the bench out from the table with her foot. He sat.
+
+"I read it," he said.
+
+"I heard. Wren counted it to half the House."
+
+"You said to ask you again." He put his hands flat on the table. They were still cold. "Whose hand did it come out of?"
+
+Rae put the spoon down.
+
+"The grey cloak at the winch-house," she said. "The one who's had my stool since the snow. He held it out to me at the end of the day and said who it was for." She turned the bowl a quarter turn on the board. "Twice. *The Captain of the Ninth.* The second time he smiled, the way you say the name of a horse you've already bought."
+
+Darrow sat with that. His brother's hand, and his brother's wax, and it had come up the Holloway in the keeping of the men who had come for his name.
+
+"You could have sent it up in the cage."
+
+"A night's a long time for a letter to lie at the bottom of a cage with a man like that sitting over it." She picked the spoon up again. "So I didn't."
+
+He had turned it over in the court at dusk and seen the wax whole, and had not once thought what it cost to bring it up that way: inside her shirt, all the way from the bottom.
+
+"Eleven hundred steps," he said.
+
+"I don't count them. Wren does."
+
+He looked at her, and she let him. Then, because he was a man who asked straight: "And the cold. In your cart."
+
+Rae looked at him over the spoon for a good while.
+
+"You get one a night," she said. "You've had it."
+
+"Then thank you," Darrow said. "For the wax."
+
+She took that the way she took a load she had already weighed, without any fuss at all.
+
+"Aye," she said, and went back to her bowl, and after a while pushed the bread across the board to him without looking up.

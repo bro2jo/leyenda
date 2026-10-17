@@ -408,7 +408,7 @@
           "at": "later",
           "weight": "color",
           "what": "Rae told Darrow to read the letter, then ask her again whose hand it came out of, if he still wanted to. Fire where he asks her again, or chooses not to",
-          "status": "pending"
+          "status": "fired@ch02:between-14"
         },
         {
           "id": "c02.10b",
@@ -518,6 +518,21 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c02.15",
+      "made": {
+        "chapter": 2,
+        "scene": "between-14",
+        "date": "2026-10-16"
+      },
+      "chose": "Went to Rae in the kitchen after dark and asked her again whose hand the letter came out of: the grey cloak at the winch-house, who said the Captain of the Ninth twice and smiled; she carried it up inside her shirt rather than leave it in the cage overnight with him over it. Pressed her on the cold in her cart and was refused (one a night); thanked her for the wax",
+      "now": {
+        "approval": {
+          "rae": 2
+        }
+      },
+      "due": []
     }
   ],
   "rules": [

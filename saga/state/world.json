@@ -150,11 +150,18 @@
       "after": "6",
       "covers": [],
       "written": "2026-10-17"
+    },
+    {
+      "scene": "between-14",
+      "title": "Whose Hand",
+      "after": "6",
+      "covers": [],
+      "written": "2026-10-17"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "at the head of the Grey Cot by the east wall, after the lamps were lit",
+    "detail": "at the bread table in the kitchen with Rae, after dark",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -164,7 +171,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "She went off up the row to find her pencil, and before she reached the door she was counting again, under her breath: the lamps.",
+  "last_beat": "\"Aye,\" she said, and went back to her bowl, and after a while pushed the bread across the board to him without looking up.",
   "companions": {
     "maelis": {
       "approval": 26,
@@ -182,7 +189,7 @@
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
     "rae": {
-      "approval": 5,
+      "approval": 7,
       "present": false,
       "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
     }
