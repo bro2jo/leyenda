@@ -950,31 +950,33 @@ Only Wren had followed his eyes to the wall. She came at dusk, when the wind had
 
 ### Between — Told First
 
-The hall had lit its lamps by the time Darrow got up, good leg, bad leg, and went down the row with Wren at his elbow to the head of the Grey Cot. Hollis looked up at them over the lad's hand.
+The hall had lit its lamps by the time Darrow got up, good leg, bad leg, and went down the row with Wren at his elbow to the Grey Cot, which stood with its head to the east wall. Hollis sat on the edge of his own cot beside it, as he had all week, with Benedek's hand in his, and looked up at them over it.
 
 The seam did not show. At dawn the light had come flat along the floor and drawn it out like a chalk line; the lamps hung from above and drew nothing.
 
-"It was here," Darrow said. "A hand above the floor. From the third cot to his head."
+"It was here," Darrow said. "A hand above the floor. From the third cot down to the lad's head."
 
-He could not get down to it. He had not been that low since the Steps, and the knee told him so before he had properly thought of trying.
+He could not get down to it. He had not been down on a knee since the river, and the bad one told him so before he had properly thought of trying.
 
-Wren looked at the knee, and then at him, and got down on hers without being asked. She put her palm flat on the limewash a hand above the flags and moved it along, slowly, the way you feel along a shelf in the dark.
+Wren looked at the knee, and then at him, and got down on hers without being asked, at the head of the Grey Cot, so close to Hollis that he drew his foot in to give her room. She put her palm flat on the limewash a hand above the flags and moved it along, slowly, the way you feel along a shelf in the dark.
 
 Her hand stopped.
 
 "Technically," she said, "every wall in this House sweats. I've counted them." She did not take her hand away. "This one's cold."
 
-She went along it on her knees with her palm on the wash, counting under her breath: one cot, two, three. At the third her hand went on past it, toward the dark end of the wall, and Darrow said, "Not now."
+She went along it on her knees, away from them, with her palm on the wash, counting under her breath: one cot, two, three. Hollis turned on his cot to watch her go. At the third the cold went on under her palm, toward the dark end of the wall, and her hand went after it.
 
-She looked up at him.
+"Not now," Darrow said.
 
-"Half this hall spent the afternoon looking at the Mender," he said. "Let them see you crawling along a wall after dark, and see what word they find for it."
+She looked back. He had come along the row after her, and behind him, down the hall, heads had turned their way.
 
-"Lost something, girl?" Hollis said.
+"Half this hall spent the afternoon looking at the Mender," he said, low. "Now they're looking at you."
 
-"My nerve," said Wren. She got up and dusted her knees, and did not look at the dark end of the wall again.
+"Lost something, girl?" Hollis called from the Grey Cot, loud enough for the row to hear, and the row, hearing about a girl who had dropped something, went back to its own business.
 
-Darrow kept his voice down. "Tomorrow, when the fires are banked and nobody's looking at walls, I mean to find out where it starts." He let her look at him. "I'm telling you first."
+"My nerve," said Wren, not loud at all. She got up and dusted her knees, and did not look at the dark end of the wall again.
+
+Darrow kept his voice down. "Tomorrow, when the fires are banked and nobody's looking at walls, I mean to find out where it starts." He let her look at him. "That's me meaning to be brave. I'm telling you first."
 
 Wren put her hand up behind her ear for the pencil. It was not there, and she left her hand there a moment anyway.
 
