@@ -1,9 +1,9 @@
 {
-  "asof": "2026-10-17",
+  "asof": "2026-10-18",
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1602,
+  "xp": 1687,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -55,7 +55,7 @@
     "tier": "Steady",
     "effect": "none"
   },
-  "inspiration": 2,
+  "inspiration": 3,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -323,10 +323,10 @@
     "late": 0
   },
   "chapter_now": {
-    "week_start": "2026-10-11",
-    "through": "2026-10-17",
-    "tier_so_far": "Triumph",
-    "chapter": 2
+    "week_start": "2026-10-18",
+    "through": "2026-10-18",
+    "tier_so_far": "Setback",
+    "chapter": 3
   },
   "fell": {
     "might": 15,
