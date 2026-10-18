@@ -67,8 +67,21 @@ Who his choices are making him: four axes, −10 … +10, story-only, reader-vis
 
 - No axis concerns the leg; no micro-option and no climax option in any Book is about testing the knee or defying the Mender on it.
 - Moves: ±1 (micro), ±2/±3 (climax), ±4 only for a betrayal or a sacrifice. `saga.py bearing <pole> <n> --why <ledger id>` moves toward that pole, clamped, and appends to `history`; normally the ledger entry's `now.bearing` does it for you.
-- **Leans** at |value| ≥ 4 ("leans Candor"); **named** at ≥ 8. The **epithet** is the named pole with the largest |value| (ties → the pole moved most recently): Mercy → *Open-hand* · Flint → *Flintheart* · Candor → *Plainspoken* · Guile → *the Fox of Edgemoor* · Hearth → *Hearthkeeper* · Banner → *Captain of Strangers* (Hollis's jibe, turned into a name) · Sworn → *the Faithful* · Unsworn → *the Masterless*.
-- **An epithet must be spoken on the page** (a writ, an enemy's mouth, a companion's jibe) in the scene or climax whose choice earns it. The site shows pole words and the epithet; prose shows no numbers, only how people address him, which options exist, the epithet in writs and talk.
+- **The title ladder** (`bearing.json → ladder`, `names`; the engine replays `history` from zero, so the rungs are a projection of the moves). Three rungs: a **lean** (gained at |value| ≥ 4, kept until the axis is back at ≤ 1 or has crossed to the other pole), a **named** pole (gained at ≥ 8, kept until ≤ 5 or crossed), and a **mixed** name for an axis he has gone both ways on (gained when the moves toward each pole total ≥ 6 and |value| ≤ 3, kept until |value| ≥ 6). Hysteresis means a single move never takes a title away. The names:
+
+  | Axis | Pole | Lean (≥ 4) | Named (≥ 8) | Mixed (both ways) |
+  |---|---|---|---|---|
+  | Mercy / Flint | Mercy | the Lenient | Open-hand | the Even-Handed |
+  | | Flint | the Hard | Flintheart | |
+  | Candor / Guile | Candor | the Blunt | Plainspoken | the Shrewd |
+  | | Guile | the Sly | the Fox of Edgemoor | |
+  | Hearth / Banner | Hearth | the Kinsman | Hearthkeeper | the Steward |
+  | | Banner | Friend of Strangers | Captain of Strangers (Hollis's jibe, turned into a name) | |
+  | Sworn / Unsworn | Sworn | the Dutiful | the Faithful | the Freesworn |
+  | | Unsworn | the Unpledged | the Masterless | |
+
+- **Titles held** (`bearing.json → titles`) are every rung currently earned; `bearing show` prints them with each axis's movement. **The epithet** (`epithet`) is the one name the realm uses: the highest rung held (named over mixed over lean), **sticky** (it stays while its own title holds, even if another axis grows larger, and yields only when its title lapses or a higher rung is earned; among equals the axis moved furthest, ties to the last moved). The engine keeps the one next in line as `epithet_next`; `now` and the brief print `EPITHET PENDING` while they differ.
+- **An epithet is given only at a climax or a Choice block**, never by a daily scene: someone gives it (a writ, an enemy's mouth, a companion's jibe), `record` promotes it when that block carries the name (`epithet_since` is the block's key), and a lapsed one drops there. The site shows pole words and the epithet (once spoken, which promotion guarantees); prose shows no numbers, only how people address him, which options exist, the names in writs and talk. The Annals' `saying.bynames` is the custom behind it.
 - **Companion preferences** (`plan.json → companions.<id>.prefers`): Maelis Candor, Sworn · Wren Guile, Unsworn · Hollis Mercy, Hearth · (to come) Rae Banner, Candor · Ysra Sworn, Candor · Ilse Flint, Banner. A choice on a companion's pole, witnessed or learned of, rides ±2 approval (`add --witnessed`).
 - **Every climax option sets something downstream** (`arc.md`: the **Downstream** line under each beat's choice): a flag the next beat or a later Book reads, so a choice changes who is where and what a later scene can be, not only the Bearing. **Every companion has approval rules in every Book** (`_gm/characters.md`, "Approval with teeth"): thresholds that decide the shape of a later scene, never a death except where the arc already says so.
 - **Gating:** an option may require a Bearing value: `*[Guile 1]*` for a first step, `*[Guile 4]*` for a lean; struck through when unmet, like a stat gate. Roads and endings consult Bearing only through ledger rules.

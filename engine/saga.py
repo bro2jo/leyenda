@@ -22,7 +22,8 @@ Commands (run from the repo root):
   fire ID --where ch03:s2               mark a due item fired there; a rule id (r.…) marks the rule honoured there (once per Book for a standing rule)
   void ID --why TEXT                    mark a due item void
   bearing POLE N --why ID [--force]     move the Bearing: |N| <= 4 unless --force; --why is a ledger id (c01.3) or gm:<reason>
-  bearing show
+  bearing show                          the axes, how far each has moved toward its poles, the rung each holds (lean, named, mixed: design §3), the
+                                        titles held, the epithet the realm uses and the one next in line (given only at a climax or a Choice block)
   route decide --book N [--road low|main|high --why TEXT] | route show
                                         a Book already decided is only re-decided with --road … --why …
   plan next [--date D] [--full]         the slot for a day (default: the first next/planned slot) and any world move owed; --full adds the arc section
@@ -332,37 +333,145 @@ def pole_value(bearing, pole):
 
 def axis_word(bearing, aid):
     ax = bearing["axes"][aid]
+    r = ax.get("rungs") or {}
+    if r.get("named"):
+        return f"named {r['named']}"
+    if r.get("mixed"):
+        return "mixed" + (f", leans {r['lean']}" if r.get("lean") else "")
+    if r.get("lean"):
+        return f"leans {r['lean']}"
     v = ax["value"]
     pole = ax["right"] if v > 0 else ax["left"]
-    if abs(v) >= bearing["name_at"]:
+    if abs(v) >= bearing.get("name_at", 8):
         return f"named {pole}"
-    if abs(v) >= bearing["lean_at"]:
+    if abs(v) >= bearing.get("lean_at", 4):
         return f"leans {pole}"
     return "even"
 
 
+# the title ladder (design §3): a lean, a named pole, and a mixed name for an axis he has gone both ways on; each rung is
+# gained at its threshold and kept until the axis has clearly left it, so a title never flickers on a single move
+DEFAULT_LADDER = {"lean": {"gain_at": 4, "keep_until": 1}, "named": {"gain_at": 8, "keep_until": 5}, "mixed": {"moved_each": 6, "gain_within": 3, "lose_at": 6}}
+RUNG_ORDER = {"named": 3, "mixed": 2, "lean": 1}
+
+
+def ladder_of(bearing):
+    lad = {k: dict(v) for k, v in DEFAULT_LADDER.items()}
+    for k, v in (bearing.get("ladder") or {}).items():
+        if isinstance(v, dict):
+            lad.setdefault(k, {}).update(v)
+    return lad
+
+
+def title_name(bearing, rung, aid, pole):
+    """The name a rung carries: names[<Pole>] for a named pole, names[<Pole>.lean] for a lean, names[<axis>.mixed] for a mixed axis."""
+    names = bearing.get("names") or {}
+    if rung == "named":
+        return names.get(pole, pole)
+    if rung == "lean":
+        return names.get(f"{pole}.lean")
+    return names.get(f"{aid}.mixed")
+
+
+def replay_bearing(bearing):
+    """Replay `history` from zero: per axis the value, how far it has moved toward each pole, the rungs held with the
+    ladder's hysteresis, and the index of its last move. The moves are the record; everything else is read off them."""
+    lad = ladder_of(bearing)
+    rng = int(bearing.get("range", 10))
+    axes = bearing["axes"]
+    state = {aid: {"value": 0, "left": 0, "right": 0, "lean": None, "named": None, "mixed": False, "last": -1} for aid in axes}
+    for i, h in enumerate(bearing.get("history", [])):
+        aid, d = h.get("axis"), int(h.get("delta") or 0)
+        if aid not in state or d == 0:
+            continue
+        s, ax = state[aid], axes[aid]
+        s["value"] = clamp(s["value"] + d, -rng, rng)
+        s["last"] = i
+        if d > 0:
+            s["right"] += d
+        else:
+            s["left"] += -d
+        v = s["value"]
+        pole = ax["right"] if v > 0 else ax["left"] if v < 0 else None
+        for rung in ("lean", "named"):
+            if s[rung] and (abs(v) <= lad[rung]["keep_until"] or (pole and pole != s[rung])):
+                s[rung] = None
+            if not s[rung] and pole and abs(v) >= lad[rung]["gain_at"]:
+                s[rung] = pole
+        if s["mixed"] and abs(v) >= lad["mixed"]["lose_at"]:
+            s["mixed"] = False
+        if not s["mixed"] and min(s["left"], s["right"]) >= lad["mixed"]["moved_each"] and abs(v) <= lad["mixed"]["gain_within"]:
+            s["mixed"] = True
+    return state
+
+
 def recompute_bearing(bearing):
-    """Refresh `leans` and `epithet` from the axis values and the history (ties go to the pole moved last)."""
-    leans, named = [], []
+    """Refresh what the history makes true: each axis's movement toward its poles and the rungs it holds, the leans, the
+    titles held, and the epithet next in line. `epithet` itself moves only when a climax or a Choice block speaks the next
+    one (`promote_epithet`), so the name the realm has for him changes at the big moments and never flickers. The next
+    epithet is sticky: it stays while its own title holds and yields only when that title lapses or a higher rung is earned
+    (named over mixed over lean); among equals, the axis moved furthest, ties to the last moved."""
+    state = replay_bearing(bearing)
+    leans, titles = [], []
     for aid, ax in bearing["axes"].items():
-        v = ax["value"]
-        pole = ax["right"] if v > 0 else ax["left"]
-        if abs(v) >= bearing["lean_at"]:
-            leans.append(pole)
-        if abs(v) >= bearing["name_at"]:
-            named.append((abs(v), aid, pole))
+        s = state[aid]
+        ax["moved"] = {"left": s["left"], "right": s["right"]}
+        ax["rungs"] = {"lean": s["lean"], "named": s["named"], "mixed": s["mixed"]}
+        if s["lean"]:
+            leans.append(s["lean"])
+        pole_rung = "named" if s["named"] else "lean" if s["lean"] else None
+        if pole_rung:
+            pole = s[pole_rung]
+            titles.append({"axis": aid, "rung": pole_rung, "pole": pole, "name": title_name(bearing, pole_rung, aid, pole), "weight": abs(s["value"]), "last": s["last"]})
+        if s["mixed"]:
+            titles.append({"axis": aid, "rung": "mixed", "pole": None, "name": title_name(bearing, "mixed", aid, None), "weight": s["left"] + s["right"], "last": s["last"]})
+    titles = [t for t in titles if t.get("name")]
     bearing["leans"] = leans
-    if not named:
-        bearing["epithet"] = None
-        return
-    best = max(v for v, _, _ in named)
-    tied = [(aid, pole) for v, aid, pole in named if v == best]
-    if len(tied) > 1:
-        last = {}
-        for i, h in enumerate(bearing.get("history", [])):
-            last[h["axis"]] = i
-        tied.sort(key=lambda t: last.get(t[0], -1), reverse=True)
-    bearing["epithet"] = bearing["names"].get(tied[0][1], tied[0][1])
+    bearing["titles"] = [{k: t[k] for k in ("axis", "rung", "pole", "name")} for t in titles]
+    cur = bearing.get("epithet")
+    held = next((t for t in titles if t["name"] == cur), None) if cur else None
+    best = max(titles, key=lambda t: (RUNG_ORDER[t["rung"]], t["weight"], t["last"]), default=None)
+    if held and (best is None or RUNG_ORDER[best["rung"]] <= RUNG_ORDER[held["rung"]]):
+        bearing["epithet_next"] = cur
+    else:
+        bearing["epithet_next"] = best["name"] if best else None
+    bearing.setdefault("epithet", None)
+    bearing.setdefault("epithet_since", None)
+
+
+def epithet_pending_line(bearing):
+    """What the next climax or Choice block owes the Bearing, or None."""
+    cur, nxt = bearing.get("epithet"), bearing.get("epithet_next")
+    if nxt == cur:
+        return None
+    if nxt is None:
+        return f"EPITHET LAPSES: {cur} no longer holds; it drops at the next climax or Choice block (nothing to speak)"
+    return (f"EPITHET PENDING: {nxt}" + (f" (in place of {cur})" if cur else "")
+            + ": someone gives it at the next climax or Choice block (a writ, an enemy's mouth, a companion's jibe); the block must carry the name, and the site shows it from then")
+
+
+def spoken_in(name, text):
+    n = re.sub(r"^the\s+", "", str(name or "").strip(), flags=re.I).lower()
+    return bool(n) and n in re.sub(r"\s+", " ", str(text or "")).lower()
+
+
+def promote_epithet(st, block_text, key):
+    """At a climax or a Choice block: the epithet next in line becomes his if the block speaks it; a lapsed one drops.
+    Returns the lines to print."""
+    b = st.bearing
+    recompute_bearing(b)
+    cur, nxt = b.get("epithet"), b.get("epithet_next")
+    if nxt == cur:
+        return []
+    if nxt is None:
+        b["epithet"], b["epithet_since"] = None, key
+        st.touch("bearing")
+        return [f"epithet lapsed at {key}: {cur} no longer holds"]
+    if spoken_in(nxt, block_text):
+        b["epithet"], b["epithet_since"] = nxt, key
+        st.touch("bearing")
+        return [f"epithet at {key}: {cur or '—'} → {nxt} (spoken in the block; the site shows it from here)"]
+    return [f"EPITHET PENDING: {nxt} was not spoken in {key}; it waits for the next climax or Choice block (someone gives it: a writ, an enemy's mouth, a companion's jibe)"]
 
 
 BEARING_MAX_MOVE = 4
@@ -390,7 +499,9 @@ def move_bearing(st, pole, n, why, quiet=False, force=False):
     recompute_bearing(b)
     st.touch("bearing")
     if not quiet:
-        print(f"bearing {aid}: {old:+d} → {new:+d} ({axis_word(b, aid)}) · epithet: {b['epithet'] or '—'}")
+        nxt = b.get("epithet_next")
+        print(f"bearing {aid}: {old:+d} → {new:+d} ({axis_word(b, aid)}) · epithet: {b.get('epithet') or '—'}"
+              + (f" · next in line: {nxt or '— (lapses)'} (given at the next climax or Choice block)" if nxt != b.get("epithet") else ""))
     return aid, old, new
 
 
@@ -1529,6 +1640,9 @@ def cmd_now(args):
     ro = rank_owed(plan)
     if ro:
         lines.append(f"RANK OWED: {ro[0]} → {ro[1]}: one prose beat in the next scene, the script changing as he notices it (style.md §3); then `plan set rank_on_page={ro[1]}`")
+    ep = epithet_pending_line(bearing)
+    if ep:
+        lines.append(ep)
     broken, armed, waiting, near_, quiet = rule_lines(st)
     lines += broken + armed  # before the due items: an armed rule changes what the next scene may be
     due_now, overdue, future, later = [], [], 0, 0
@@ -2256,8 +2370,13 @@ def cmd_bearing(args):
             width = b["range"] * 2
             marker = v + b["range"]
             bar = "".join("●" if i == marker else "─" for i in range(width + 1))
-            print(f"{ax['left']:>7} {bar} {ax['right']:<8} {v:+d} · {axis_word(b, aid)}")
-        print(f"epithet: {b['epithet'] or '— (none named yet)'} · leans: {', '.join(b['leans']) or 'none'} · moves: {len(b.get('history', []))}")
+            mv = ax.get("moved") or {}
+            print(f"{ax['left']:>7} {bar} {ax['right']:<8} {v:+d} · {axis_word(b, aid)} · moved {ax['left']} {mv.get('left', 0)} / {ax['right']} {mv.get('right', 0)}")
+        titles = b.get("titles") or []
+        print("titles held: " + (" · ".join(f"{t['name']} ({t['rung']}{', ' + t['pole'] if t.get('pole') else ''})" for t in titles) or "none")
+              + f" · leans: {', '.join(b.get('leans') or []) or 'none'} · moves: {len(b.get('history', []))}")
+        print(f"epithet: {b.get('epithet') or '— (none given yet)'}" + (f" (since {b['epithet_since']})" if b.get("epithet_since") else "")
+              + (f" · next in line: {b.get('epithet_next') or '— (it lapses)'}" if b.get("epithet_next") != b.get("epithet") else " · nothing pending"))
         return
     if args.n is None or not args.why:
         die("usage: bearing <pole> <n> --why <ledger id | gm:reason> [--force]")
@@ -3497,17 +3616,27 @@ def cmd_check(args):
         if total != c.get("approval"):
             probs.append(f"approval {cid}: baseline {base[cid]} + ledger = {total}, world.json says {c.get('approval')}")
 
-    # bearing
+    # bearing: every rung has its name, the moves replay to the values, the derived fields are fresh, the epithet is one of the names
+    names_ = bearing.get("names", {})
+    replay = replay_bearing(bearing) if isinstance(bearing.get("axes"), dict) else {}
     for aid, ax in bearing.get("axes", {}).items():
         if not isinstance(ax.get("value"), int) or abs(ax["value"]) > bearing.get("range", 10):
             probs.append(f"bearing {aid} value {ax.get('value')!r} out of range")
         for side in ("left", "right"):
-            if ax.get(side) not in bearing.get("names", {}):
+            if ax.get(side) not in names_:
                 probs.append(f"bearing {aid}.{side} {ax.get(side)!r} has no epithet in names")
+            if f"{ax.get(side)}.lean" not in names_:
+                notes.append(f"bearing: no lean title for {ax.get(side)} (names['{ax.get(side)}.lean']); the ladder's first rung has no name")
+        if f"{aid}.mixed" not in names_:
+            notes.append(f"bearing: no mixed name for {aid} (names['{aid}.mixed'])")
+        if aid in replay and replay[aid]["value"] != ax.get("value"):
+            probs.append(f"bearing {aid}: the history replays to {replay[aid]['value']:+d} but the value says {ax.get('value')}; the moves are the record (`saga.py bearing`), never a hand edit")
+    if bearing.get("epithet") and bearing["epithet"] not in names_.values():
+        probs.append(f"bearing epithet {bearing['epithet']!r} is not one of the names")
     snapshot = json.dumps(bearing, sort_keys=True)
     recompute_bearing(bearing)
     if json.dumps(bearing, sort_keys=True) != snapshot:
-        probs.append("bearing leans/epithet do not match the axis values; run `saga.py bearing show` after fmt or move with `saga.py bearing`")
+        probs.append("bearing leans/titles/epithet_next do not match the history; run `saga.py bearing show` (it refreshes them) or move with `saga.py bearing`")
 
     # plan: position
     pos = plan.get("position", {})
@@ -4436,6 +4565,9 @@ def cmd_brief(args):
     ro = rank_owed(plan)
     if ro:
         L.append(f"RANK OWED: {ro[0]} → {ro[1]}: one short prose beat of the script changed, as he notices it; the box names the rank; record \"rank\": \"{ro[1]}\"")
+    ep = epithet_pending_line(bearing)
+    if ep:
+        L.append(ep + (" · THIS block is one: give it here, in someone's mouth" if mode in ("climax", "choice") else " · not in this block: a scene never gives the name"))
     if mode == "slot" and slot.get("kind") == "quest" and str(slot.get("quest")) == "rae.tether":
         t = sheet.get("tether") or {}
         L.append(f"THE TETHER stage {t.get('stage')} ({t.get('name')}): this scene pays it; its box ends `> The Tether: **{t.get('name')}**.`; record \"tether\": \"{t.get('name')}\"")
@@ -4849,6 +4981,9 @@ def cmd_record(args):
         if pos.get("stage") == "climax":
             pos["stage"] = "choice"
         plan.pop("answered_choice", None)
+    if kind in ("climax", "choice"):  # the one place a new epithet is given: the block speaks it, the realm uses it from here
+        for line_ in promote_epithet(st, btext, key):
+            print(line_)
     inv = ev.get("invite")
     where_inv = wrote if WHERE_RE.match(wrote) else ch2(ch)
     if isinstance(inv, dict) and inv.get("slot") is not None:

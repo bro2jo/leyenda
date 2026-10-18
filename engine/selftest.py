@@ -131,6 +131,32 @@ def main():
         lines = [l for l in (tmp / "saga/state/glimpses.md").read_text(encoding="utf-8").splitlines() if l.startswith("- ")]
         check(len(lines) <= 20 and lines[-1].endswith("Tests: 1."), "the glimpses file holds the last 20, newest last")
 
+        # the title ladder: a lean is kept through a dip and lapses once the axis has clearly left it; both ways long enough is a name of its own
+        b0 = jload(tmp / "saga/state/bearing.json")
+        v0 = b0["axes"]["hearth_banner"]["value"]
+        code, out = run(saga + ["bearing", "hearth", str(max(1, 5 + v0)) if v0 > -5 else "1", "--why", "gm:self-test"], tmp)
+        b = jload(tmp / "saga/state/bearing.json")
+        kins = b["names"].get("Hearth.lean")
+        check(code == 0 and any(t["rung"] == "lean" and t["pole"] == "Hearth" for t in b["titles"]) and b["epithet_next"] == kins and b["epithet"] is None,
+              "a lean at 4 or more holds its title and queues the epithet without giving it", json.dumps(b.get("titles")) + f" next {b.get('epithet_next')}")
+        v1 = b["axes"]["hearth_banner"]["value"]
+        run(saga + ["bearing", "banner", str(-2 - v1), "--why", "gm:self-test"], tmp)  # back to −2: a dip, not a lapse
+        b = jload(tmp / "saga/state/bearing.json")
+        check(b["axes"]["hearth_banner"]["value"] == -2 and any(t["pole"] == "Hearth" for t in b["titles"]), "a dip to 2 keeps the title (hysteresis)", json.dumps(b.get("titles")))
+        run(saga + ["bearing", "banner", "2", "--why", "gm:self-test"], tmp)  # to 0: lapsed
+        b = jload(tmp / "saga/state/bearing.json")
+        check(b["axes"]["hearth_banner"]["value"] == 0 and not any(t["pole"] == "Hearth" for t in b["titles"]), "back at 0 the lean lapses")
+        for pole in ("mercy", "mercy", "flint", "flint"):
+            run(saga + ["bearing", pole, "3", "--why", "gm:self-test"], tmp)
+        b = jload(tmp / "saga/state/bearing.json")
+        mixed_name = b["names"].get("mercy_flint.mixed")
+        check(b["axes"]["mercy_flint"]["value"] == 0 and any(t["rung"] == "mixed" and t["axis"] == "mercy_flint" for t in b["titles"]) and b["epithet_next"] == mixed_name,
+              "six each way inside the lean is a mixed name, next in line", json.dumps(b.get("titles")) + f" next {b.get('epithet_next')}")
+        code, out = run(saga + ["check"], tmp)
+        check(code == 0, "check passes with the ladder's titles", out[-400:])
+        code, out = run(saga + ["bearing", "show"], tmp)
+        check(code == 0 and "titles held:" in out and "next in line" in out, "bearing show prints the titles and the epithet next in line", out[-300:])
+
         # a rule fired has state (the first armed rule the digest shows)
         code, out = run(saga + ["now"], tmp)
         m = re.search(r"RULE armed[^\n]*?(r\.[a-z0-9_.]+)", out)
@@ -295,6 +321,7 @@ def main():
             check("Inspiration" in out, "a climax whose default costs Inspiration is refused", out[-300:])
             code, out = run(saga + ["record", json.dumps(climax, ensure_ascii=False)], tmp)
             check(code == 0 and "climax choice open" in out, "the climax is recorded and its choice opened", out[-600:])
+            check("EPITHET PENDING" in out and jload(tmp / "saga/state/bearing.json").get("epithet") is None, "a climax that does not speak the pending epithet leaves it pending", out[-400:])
             hol = jload(tmp / "saga/characters/hollis-garrow.json")
             check(hol["story_so_far"] == "He kept the Grey Cot through the week.", "story_so_far follows the climax's record")
             days = sorted(s["day"] for s in slots if s.get("day"))
@@ -350,12 +377,15 @@ def main():
             code2, out2 = run(saga + ["invite", "2", "pass"], tmp)
             hol1 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
             check(code == 0 and code2 == 0 and "its cost" in out2 and hol1 == hol0 - 2, "an invitation let pass costs its person's regard through an entry the engine writes", out[-200:] + " | " + out2[-300:])
+            pending = jload(tmp / "saga/state/bearing.json").get("epithet_next") or "the Even-Handed"
             with open(chapter, "a", encoding="utf-8") as f:
-                f.write("\n### Choice — The Lamp Goes Down\n\nWren went, and Hollis disapproved in the usual way.\n")
+                f.write(f"\n### Choice — The Lamp Goes Down\n\nWren went, and Hollis disapproved in the usual way. \"{pending[0].upper() + pending[1:]},\" he said, \"sends nobody.\"\n")
             choice = {"key": f"ch{ch:02d}:choice", "where": {"place": "saint-ysoldes", "detail": "the hall"}, "last_beat": "Wren went down with the lamp.",
                       "people": [{"id": "wren-ashdown", "did": "Went down with the lamp."}, {"id": "hollis-garrow", "did": "Disapproved."}]}
             code, out = run(saga + ["record", json.dumps(choice, ensure_ascii=False)], tmp)
             check(code == 0 and "ok:" in out, "the Choice block records into its own chapter once the next is open, and check passes", out[-900:])
+            b = jload(tmp / "saga/state/bearing.json")
+            check(b.get("epithet") == pending and b.get("epithet_since") == f"ch{ch:02d}:choice" and "spoken in the block" in out, "a Choice block that speaks the pending epithet gives it", out[-300:])
             plan3 = jload(tmp / "saga/state/_gm/plan.json")
             check(plan3.get("answered_choice") is None and plan3.get("open_choice") is None and plan3["position"]["chapter"] == ch + 1, f"the answered choice is cleared; the plan is on chapter {ch + 1}")
             code, out = run(saga + ["brief", "--between", "--with", "hollis-garrow"], tmp)
