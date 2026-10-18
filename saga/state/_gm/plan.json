@@ -2,193 +2,181 @@
   "_about": "GM plan and position. Never rendered. Prose for beats, quests and roads lives in saga/bible/_gm/arc.md (saga.py arc <id>); this file holds state. Edit through saga.py plan where a command exists; otherwise with Edit, keeping the canonical format (saga.py fmt).",
   "position": {
     "book": 1,
-    "chapter": 2,
-    "beat": "b1.2",
-    "next_scene": 8,
-    "stage": "climax",
+    "chapter": 3,
+    "beat": "b1.3",
+    "next_scene": 1,
+    "stage": "scene",
     "last_written": "ch02:s7",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
-    "number": 2,
-    "week_start": "2026-10-11",
-    "question": "Who hollowed Ser Benedek Orrin in the night, and where did the cold come from?",
+    "number": 3,
+    "week_start": "2026-10-18",
+    "question": "What is under the House, and who will take him down to it?",
     "slots": [
       {
         "n": 1,
-        "day": "2026-10-11",
+        "day": "2026-10-18",
         "kind": "spine",
-        "beat": "b1.2",
+        "beat": "b1.3",
         "float": false,
-        "plan": "The night of the gate (arc b1.2, Story time). Open in a clause on his name given at the bars (c01.5): the hall has it before he reaches his cot. The names come back to the cots with Hollis carried down from the gatehouse, and Benedek was not read; his relief fills the hall and he says it to the Captain, who cannot tell him the thing Marrant said about men who can't answer without telling him why it frightens him. Maelis reads the knee by lamplight, as she said she would: the Knots held at the wicket, and she says so in one word and what it would have cost in one sentence; the soft season stands, and she does not say it is over. At the night bell Benedek asks the Captain to say the words with him; Hollis, four days dry and saying nothing of it, turns his face to the wall. From the hall window, the camp's one fire on the lower terrace and the winch-house's one lamp far down in the dark. Word comes up from the gate: a grey cloak at the bars has asked the gate-ward, courteously, to give the Captain of the Ninth the Confessor's good night by his rank. The writ's demand is personal now (fire the auto Downstream item c01.5c here). The rank beat is owed here (Bound → Kindled; style.md §3): while Maelis reads the knee by lamplight, the script comes up over his palms and the word under his name is not the word it was; he notices and says nothing, one beat inside the scene and no number in it, and Maelis does not look up from the knee. The scene's box names the rank; then `plan set rank_on_page=Kindled`.",
-        "turn": "By the end Benedek believes himself safe because his name was not read, and says so to the Captain; Maelis has read the knee and found it held; Darrow attempts to take the camp's measure from the window (the fire, the men round it, who sleeps) and to say the words with the lad once more, and finds he can make no sound again.",
+        "plan": "The dawn after the eve (arc b1.3, its run-up). The kitchen's flour at the undercroft door is read at the dawn bell before the House can crowd it: no print in it, and none going out, but a fan of frost glazed on the flour from the gap, as if something below had breathed on it all night; Sister Pell rang every hour with her eye on the door and heard nothing. The cold comes up nightly, and it comes up alone. The House, which believed him last night, now wants the door opened and wants it today, and Darrow is the one man in the hall who cannot go down it. The open climax choice (how the stair is taken) is not resolved here; the scene may lean toward it. Maelis reads the knee in the morning and says nothing about stairs.",
+        "turn": "By the end the House knows the cold comes up every night, alone, and Darrow must decide how the stair is taken while the whole hall waits on him; he attempts to read the flour before anyone else steps in it, and to keep the House from the door without the Prior's word",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s1"
+        "status": "next",
+        "wrote": null
       },
       {
         "n": 2,
-        "day": "2026-10-12",
+        "day": "2026-10-19",
         "kind": "spine",
-        "beat": "b1.2",
+        "beat": "b1.3",
         "float": false,
-        "plan": "Ysolde's feast at dawn (lore:house.ysolde): bread given away, the lay brothers carrying the feast loaves down to the gate under the Confessors' eyes, the kitchen's book running wild. Benedek is found Hollowed in his cot: breathing, empty, frost on his lips, and when Maelis turns his face a chip of black glass under his tongue, which the far cots, drained slowly over years, never had, the first thing she notices and the only thing she says. Hollis will not leave the cot and takes the boy's hand. The House is frightened; the kitchen starts counting loaves (world move). The last thing Darrow gave the lad was an oath's shapes with no sound in them, and a good night he could say aloud: let that sit in his hands for one line, no more; the scene's weight is the hall, the glass and Hollis's hand.",
-        "turn": "By the end the House knows Benedek is Hollowed and Maelis has seen the glass the far cots never had; Darrow attempts to hold the hall's eyes on the lad's mouth and not on the door, and to count from his cot who was awake in the night, and gets one answer he can use: nobody passed.",
+        "plan": "The stair's terms, in the shape the ch02 choice set (its `### Choice` block first if the choice closes by default at this close). (1) Maelis: a day of asking; she answers questions with questions and charges for every one; her terms stand (her count, a hand on Wren's shoulder, her right to say stop) and she has not yet said yes. (2) Wren goes down with a lamp after the night bell while Darrow sits at the door; she comes back up white, with the count of the steps and a report he can see has a line left out of it (T6: she will not say what is written over the door below). (3) The Prior gives him the key's condition before the key: she is to be told everything found below, every word, and Maelis will take him down herself. In every shape the one condition no one argues is the Mender's: not until the leg will bear him on a stair.",
+        "turn": "By the end the stair has its terms (whose leave, whose count, whose key) and Maelis has set the one condition nobody argues, the leg first; Darrow attempts to get the door opened before the leg is ready, and is refused by the one person he will not go against",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s2"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 3,
-        "day": "2026-10-13",
-        "kind": "spine",
-        "beat": "b1.2",
-        "float": false,
-        "plan": "Darrow investigates from his cot with Wren as his legs, the day after the feast: who passed the far cots in the night, which doors were barred, what the novices heard; the night novice, the kitchen, Wren's count of the keys. Marrant, from the lower terrace, has named it Ember witchcraft to the lay brothers who carried the bread down, and the word has come back up the Steps. The answer to every question is nobody, and that is the clue: the cold came up from below; nobody says the undercroft yet. Hollis sits the watch by the Grey Cot with the boy's hand in his and will not be moved.",
-        "turn": "By the end Darrow believes nobody passed the far cots in the night and must say so to a House that wants a hand to blame; Wren can count what did not happen; he attempts the reading of three people from a cot, one at a time.",
-        "micro": null,
-        "challenge": {
-          "objective": "Learn from his cot who passed the far cots in the night and which doors were barred, before the House settles on the Confessor's word",
-          "approaches": [
-            {
-              "name": "Read the night novice, who is lying about having slept",
-              "stat": "resolve",
-              "art": "wardens_eye",
-              "dc": 12
-            },
-            {
-              "name": "Outwait the kitchen until it tells him what it counted instead of what it fears",
-              "stat": "resolve",
-              "art": "menders_patience",
-              "dc": 11
-            },
-            {
-              "name": "Hold Wren's count of the barred doors against the keys on the Prior's ring without letting her run ahead of it",
-              "stat": "resolve",
-              "dc": 13
-            }
+        "day": "2026-10-20",
+        "kind": "quest",
+        "quest": "q1.letters",
+        "stage": 2,
+        "last": true,
+        "float": true,
+        "plan": "q1.letters compressed (stages 2 and 3, arc q1.letters): at the hour bell Marrant comes up to the bars himself with two letters in blue wax and hands them through, courteous, as if he were the House's carrier. The second: 'Did you turn? Tell me you did not turn toward the boy.' The third, folded inside it: 'Answer me, or I will come myself.' The second is dated before the list was read at Coldmere: Aldric has known where he is all along. Marrant thanks him for taking them, and asks nothing about the undercroft, which he has not heard of. Ends on the micro. Hollis, from the gatehouse post or the Grey Cot, sees the blue wax a second time and looks away (T3 plant).",
+        "turn": "By the end Darrow knows his oldest friend has known where he lay since before the list, and must answer him, burn him, or keep him; he attempts to take the letters from the Confessor's hand without giving the Confessor his face",
+        "micro": {
+          "ask": "What does Darrow do with his brother's letters?",
+          "axis": "sworn_unsworn",
+          "options": [
+            "Write back as a brother: he will not kneel, and why",
+            "Burn them unread",
+            "Keep them sealed, with the first one's ashes"
           ],
-          "goal": 2,
-          "limit": 2,
-          "progress": 2,
-          "strain": 0,
-          "status": "won",
-          "result": {
-            "won": "Nobody passed the far cots: the doors were barred and the keys hung where they hang; the cold came from somewhere no door opens on, and the House has his word for it before Marrant's reaches the hall",
-            "lost": "The House hears Marrant's word before his: a hand did this, and the hall looks at the Mender; what he learned stays his and Wren's"
-          }
+          "bearing": [
+            {
+              "Sworn": 1
+            },
+            {
+              "Unsworn": 1
+            },
+            null
+          ],
+          "default": 1
         },
+        "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s3"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 4,
-        "day": "2026-10-14",
-        "kind": "quest",
-        "quest": "rae.tether",
-        "stage": 1,
-        "float": true,
-        "plan": "rae.tether stage 1, a name (arc rae.tether), carried on q1.cart stage 1's errand. Two movements and nothing between them on the page: the bottom of the Steps is slot 8's (Rae's interlude, written right after this scene), so the scene cuts from her going down to her coming up. Morning on the gate wall: Rae must go down for her oxen (no writ names a carter; the law of bells lets anyone down). Darrow tries to count her down without the count showing on his face; Wren counts for her, aloud, and through Pell's glass the grey cloak on her box gets off it for her. Dusk: she comes up the last flight with the oxen stabled below under a grey cloak's eye, the camp's measure in one carter's sentence (what they eat, how many days of it they brought), and a letter in blue wax addressed to the Captain of the Ninth. She puts it in his hand and calls him Darrow, not Ser, not Captain: 'I don't drive for the Ninth. I drive for the House.' He asks why Thorne, and gets it in two lines (the village's word for her grandmother, worn smooth, and kept). The second thread comes up on his palms beside the first, counting something that is not his alone: the only place the page explains it. The letter goes under his mattress unopened (q1.letters stage 1 is tomorrow's). The callback c01.4a only if it fits in one line (an ox's name, once, unasked); otherwise it waits. Reckoning box line: '> The Tether: **a name**.' At the close: plan companion arrive rae; plan quest q1.cart stage=1 status=live (its stage 2 next chapter, the grey question with it); THEN write slot 8, Rae's interlude, as planned.",
-        "turn": "By the end Rae has been down and up past the Confessors and has called him by his name, and he holds a letter he has not opened; Darrow attempts to count her down without the count showing on his face, and gets his own name back instead of a rank.",
+        "day": "2026-10-21",
+        "kind": "spine",
+        "beat": "b1.3",
+        "float": false,
+        "plan": "Opens with Wren on the gate wall with Pell's glass reporting riders on the Holloway, far down, under a banner that is not grey (q1.letters stage 3's end; the riders do not arrive this chapter). Then the leg's first stair since the river, now that it bears him (Knot III): the nine steps down to the warming room off the cloister, with a hand on the wall and Maelis counting, 'every step down is a negotiation', and nine back up; it costs him nothing but his pride and gives him the undercroft. The stair is texture, never a stake.",
+        "turn": "By the end Darrow has gone down a stair and come back up it on his own leg, and the undercroft is a thing he can do, not a thing he is carried to; the riders give the week a clock; he attempts the nine steps without the hand on the wall, and Maelis puts it back",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s4"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 5,
-        "day": "2026-10-15",
+        "day": "2026-10-22",
         "kind": "quest",
-        "quest": "q1.letters",
-        "stage": 1,
+        "quest": "q1.cart",
+        "stage": 2,
+        "last": true,
         "float": true,
-        "plan": "q1.letters stage 1: the letter has sat a night unopened under the mattress. He reads it by the infirmary brazier: loving, specific, in the hand he has known since they held other men's horses; it remembers Thistle's name. 'Come home, brother. Kneel, and be whole.' He burns it. Hollis, at the Grey Cot, watches the blue wax curl and says nothing at all, which is unlike him, and leaves the hall on the beech leg for the first time since the boy was found. Ends: Wren: 'There'll be another. There's always another.'",
-        "turn": "By the end Darrow has read his sworn brother's hand and burned it, and Hollis has walked out of the hall on the beech leg rather than watch the wax; Darrow attempts to read the letter as a captain reads a writ and cannot, and attempts to make Hollis say what the wax did to him, and is left with Wren's count instead.",
-        "micro": null,
-        "challenge": null,
-        "invite": {
-          "who": "hollis-garrow",
-          "kind": "opinion",
-          "want": "To hear from the one other man who was in the river whether his kind lie to the lad, that they would be let kneel, was what sent the boy wherever he has gone; and whether the Captain believes the Confessor's word for it, witchcraft, or his own eyes",
-          "why_now": "The lad was taken on the night after Hollis told him nobody was taking anyone; he has been dry since before the grey cloaks came, and the only man he told is the one who has just put a brother's letter in the brazier in front of him",
-          "if_ignored": "Hollis put the heralds' question to a lay brother instead and got the heralds' answer, and sat the rest of the night by the Grey Cot without a word to anyone",
-          "status": "taken"
+        "plan": "q1.cart compressed (stages 2 and 3, arc q1.cart): the cage comes up light, a load the grey cloaks have 'inspected'; Rae and Wren on the rope at the top, Rae's palms showing what the rope has done to them. Unasked, Rae says what the almoner's satchel weighed going down last week and what it weighed coming up (b1.2's clue; nobody knows yet what it means). Then the only thing she has ever brought up the mountain that was not on a manifest: the grey mare is alive, lame, a Holloway dealer's, and can be had for the dealer's debt (thread 15). Ends on the micro. The dusk bell catches her at the top and the House keeps her as a guest; on the gate wall at night, the camp's fires below, she tells him at last about the cold in her cart: a crate she once carried to Calden's lower door that froze her cart-bed in midsummer; she does not know what was in it, and she asks him nothing.",
+        "turn": "By the end Darrow knows the grey mare lives and must say what he will send down for her, and has Rae's cold at last without knowing what it means; he attempts to keep his face for the mare in front of Wren",
+        "micro": {
+          "ask": "The mare can be had for the dealer's debt. What does Darrow send down?",
+          "axis": "candor_guile",
+          "options": [
+            "His name, as surety: a captain's word, though the Faithless have no credit in the Lowmarch",
+            "Word, through Rae, that the mare is wanted for the House's stables, in Mother Ione's name",
+            "Nothing. Leave her where she is"
+          ],
+          "bearing": [
+            {
+              "Candor": 1
+            },
+            {
+              "Guile": 1
+            },
+            null
+          ],
+          "default": 1
         },
-        "status": "written",
-        "wrote": "ch02:s5"
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 6,
-        "day": "2026-10-16",
+        "day": "2026-10-23",
         "kind": "spine",
-        "beat": "b1.2",
+        "beat": "b1.3",
         "float": false,
-        "plan": "Marrant at the bars at the hour bell, courteous, asks for the Mender by her title: the House has a Hollowed man in it the same week it refused his list, and the Crown's word for frost on a sworn man's mouth is Ember witchcraft; he would like to speak to the woman who treats the far cots. Mother Ione answers him with a question and gives him nothing; the House, behind her, looks at Maelis (if slot 3's challenge was lost, the hall has looked at her since Tuesday; this is the first time it does so in front of the gate). Rae, shown the frost on the lad's mouth, says only 'I've had that cold in my cart' and will not be drawn. Darrow tries to turn the hall's eyes from the Mender to the east wall, where the frost ran the night the lad was taken; the hall does not follow, and only Wren asks him, quietly, to show her where. Nothing is tested today: the candle is Saturday's.",
-        "turn": "By the end the House has heard the Confessor call it witchcraft and ask for the Mender by title, and has looked at her; Darrow attempts to turn the hall's eyes from the Mender to the wall where the frost ran, and gets one line from Rae and one question from Wren.",
+        "plan": "The eve of the descent, in the choice's shape. (1) Maelis's first unforced yes, on her terms, given in her own words and not as a bargain; she says she will come down after them, without a lamp, and does not say how she knows the way (T8 plant). (2) Wren's report, pressed: the steps counted, the hall at the bottom, the pictures on the walls; she will take him down at dawn the same way, and the line she left out stays out. (3) The Prior at the door at dusk with the key on its cord: her condition said again in front of Maelis, and Maelis says she will lead. Hollis, told, asks to be carried to the stair's head; he cannot go down, and he will not be left at the Grey Cot for this. Something to take down: a lamp, oilcloth, a pry bar from the kitchen, chosen by whoever is careful.",
+        "turn": "By the end the descent is set for tomorrow, with its terms and its people, and Hollis has made himself part of it from the top of the stair; Darrow attempts to go tonight and is held to the morning by the terms he agreed",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s6"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 7,
-        "day": "2026-10-17",
+        "day": "2026-10-24",
         "kind": "spine",
-        "beat": "b1.2",
+        "beat": "b1.3",
         "float": false,
-        "plan": "The eve. One line of the House counting what it has (Pell's hands on the rope at dusk; the camp's fires one more than the night before), then the scene's two movements. At dusk, with the hall's fires banked, Wren walks the east wall with a candle where Darrow showed her, and the flame leans toward a door the House keeps shut: the undercroft stair, the word spoken on the page for the first time (plant b1.3). Then the warming room, Mother Ione alone with him and Maelis: the door below is the Prior's and has been shut since before her time; she does not forbid and does not permit; she asks what he would find and what he would do with it. Maelis knows the way down too well and says so with her hands, not her mouth. Ends with the Prior's decision, as a question: the House will hear what he has found tonight, in the hall, where the lad lies; would he like to be the one who tells it?",
-        "turn": "By the end Darrow knows the cold came from below and that the door below is the Prior's to open; he attempts to ask her for it tonight and is asked instead what he would do at the bottom of a stair he cannot come back up alone, and is given the House to tell instead.",
+        "plan": "The stair (arc b1.3, plants). The door opened (shapes 1, 3) or Wren's way followed (2); Hollis's voice from the top telling him to look at the wall and not the floor; one hand on the wall or on Wren's shoulder, step by step, the knee bearing him. At the bottom a hall older than the House: Wren reads the words cut over the inner door aloud before Maelis can translate them and stops herself halfway (T6); Maelis walks the dark without a lamp; they pass a door with script round its frame and no handle, where Maelis's hand rests a moment too long (q1.door). The walls are painted. Ends with the lamp on the far wall, where frost is spreading across the stone from a low alcove beneath where the infirmary floor must be: the climax is what is in it.",
+        "turn": "By the end Darrow has gone down the stair on his own leg into a hall nobody living walks but one, and sees the frost on the far wall; he attempts the stair under the terms the choice set, and keeps them",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch02:s7"
-      },
-      {
-        "n": 8,
-        "day": null,
-        "kind": "interlude",
-        "pov": "rae",
-        "beat": null,
-        "quest": null,
-        "stage": null,
-        "plan": "Rae at the bottom of the Steps, the middle of Wednesday that Scene 4 cuts past: her POV, close third, short, as the Wax was. Written right after Scene 4, so the reader has already seen her come up; this shows what she carried and why. She takes the last flights not counting. The grey cloak gets off her box for her, and she lets him think it was manners. She talks to her oxen in whole sentences; their names stay out of the narration unless c01.4a fired in Scene 4. She reads the camp the way a carter reads anyone, by what it eats, how many days of it they brought, and whose boots are dry. A grey cloak holds out the blue-wax letter for the Captain of the Ninth with a smile she does not like, and says the rank twice, the way you say the name of a horse you have already bought. She weighs leaving it on the cage for the next load, and puts it inside her shirt instead. She does not look up at the gate wall, and does not think about the grey, which takes some doing (a plant: never that the mare lives, where, or what it costs her). Not her father, the rope or the splice (Tether II's), not the Market, the tags or the debt, and not her grandmother (Scene 4 has said it aloud). Ends as she starts up.",
-        "turn": "By the end Rae has chosen to carry the letter up herself rather than send it on the cage, and has heard the rank said once too often by the wrong mouth: the reader learns why she will not use it; the name she uses instead is Scene 4's.",
-        "micro": null,
-        "challenge": null,
-        "invite": null,
-        "float": false,
-        "status": "written",
-        "wrote": "ch02:interlude"
+        "status": "planned",
+        "wrote": null
       }
     ],
     "world_moves": [
-      "the kitchen has started counting loaves against the feast's sixty",
-      "a second fire on the lower terrace, nearer the gate than the first",
-      "the winch-house lamp burned all night: the cage ran once in the dark, and nobody at the top saw what came up"
+      "the grey cloaks built a stone windbreak on the lower terrace and roofed it with the camp's cart-canvas: they mean to winter",
+      "a lymer came up to the Confessors' camp from the valley; its baying comes up the Steps after dark and the House's kennel answers it",
+      "the first hard frost took the last herbs in the cloister garden, and the kitchen opened the winter stores a week early"
     ],
     "climax": {
-      "plan": "Who did this, and from where (arc b1.2). The night of the eve, in the infirmary hall, the House called to it by the Prior and standing among the cots, Benedek breathing in the Grey Cot with Hollis's hand on his: Darrow lays the night of the Hollowing out before the House from his cot's end, Wren's count beside him (the barred doors, the keys, the hour, nobody passing the far cots, the candle's lean along the east wall to the undercroft stair), against Marrant's word for it, witchcraft and the Mender, which the House has had all week. Maelis stands where the House can see her and says nothing in her own defence. By tier: Triumph, the count fixes the hour and the stair and the House believes him over Marrant; Hard-won, the stair is found but half the House still believes Marrant and Maelis is asked, politely, to stop treating the far cots; Costly, a lay brother swears to Marrant he saw the Mender at Benedek's cot in the night, and Mother Ione must put her own word against his at the gate; Setback, the Prior forbids the undercroft outright and Marrant's camp raises a priest's tent, the lower terrace becoming a chapel under the gate, and the House begins to split. Ends on the choice: how the stair is taken.",
+      "plan": "What is under the House (arc b1.3). The alcove beneath the infirmary floor, the frost spreading from it, and in it a sliver of the same black stone as the chip under Benedek's tongue, set in mortar that is new, laid since the first snow, in a hole the width of a letter-satchel; the cold drawing up through the floor toward the wounded above (`shard_found`). The murals around them: the Reckoning, and among them a kneeling knight with light running up out of him along a thread (T7 plant; a new thread). By tier: Triumph, Darrow reads the murals aloud as far as the Reckoning lets him and brings the shard up wrapped in oilcloth, the frost burning through to his hands, and on the far cots the Hollowed turn their heads to follow it; Hard-won, the shard is too cold to lift and stays, but he has seen it and the fresh mortar, and that is enough to know it was carried; Costly, the shard is gone when they come back with the lamp and Maelis, the mortar still wet: someone in the House moved it between dusk and dawn; Setback, the alcove is empty and newly broken, and at dusk Marrant announces at the bars that he will inspect the undercroft for witchery under his writ. Hollis waits at the stair's head and is the first face when they come up. The knee is never the stake: the stair back up is texture. Ends on the choice: who is told.",
       "checks": [
-        "insight DC 13 (Warden's Eye: the lay brother who swears, or the Prior's face)",
-        "resolve DC 12 (Mender's Patience: against haste at the stair's head)"
+        "insight DC 13 (Warden's Eye: the mortar's age, the murals, what was carried and how)",
+        "vigor DC 13 (holding the cold of the stone long enough: the frost into his hands)",
+        "finesse DC 12 (freeing the shard from the mortar without breaking it)"
       ],
       "options": [
-        "Ask Maelis to take him down herself, and go on her terms: one step at a time, a hand on Wren's shoulder, her right to say stop",
-        "Send Wren down with a lamp",
-        "Ask Mother Ione for the key, and wait"
+        "Tell the Prior everything, shard and murals",
+        "Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law",
+        "Tell no one yet, and watch the stair"
       ],
-      "default": 3
+      "default": 2
     },
-    "previous_devices": []
+    "previous_devices": [
+      "challenge",
+      "invite"
+    ]
   },
   "core_beats": {
     "b1.1": {
@@ -201,7 +189,7 @@
     },
     "b1.3": {
       "title": "The Undercroft",
-      "status": "planned"
+      "status": "in_progress"
     },
     "b1.4": {
       "title": "The Almoner's Sister",
@@ -301,7 +289,8 @@
     "book1": {
       "chapters": [
         1,
-        2
+        2,
+        3
       ],
       "road": null,
       "override": null,
