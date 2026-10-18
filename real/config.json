@@ -1,494 +1,495 @@
 {
-  "_about": "Real-world facts the engine needs. Claude updates this when a plan, target, phase or gate changes, and cites the source in 'evidence'.",
-  "timezone": "America/New_York",
-  "athlete": {
-    "sex": "M",
-    "age": 32,
-    "height": "6'0\"",
-    "pre_injury_weight_lb": 164,
-    "goal_weight_lb": 170
-  },
-  "injury_date": "2026-07-14",
-  "surgery_date": "2026-08-24",
-  "procedure": "Left isolated ACL reconstruction, patellar-tendon autograft",
-  "chronicle_start": "2026-10-04",
-  "week_starts": "Sun",
-  "nutrition_targets": {
-    "kcal": 3000,
-    "protein_g": 150,
-    "protein_g_max": 160,
-    "carbs_g": [
-      350,
-      400
-    ],
-    "fat_g": [
-      85,
-      100
-    ],
-    "weighins_per_week": 3,
-    "creatine_daily": true,
-    "shake_is_target": false,
-    "source": "nutrition_guide.md; shake dropped as a target 10/8"
-  },
-  "nutrition_reference": {
-    "_about": "Daily reference values for the weekly recap, from nutrition_guide.md 'Micronutrient Reference' (added 2026-10-08): standard adult-male DRI / FDA DV. Not targets; judged week to week at the checkpoint. min = at least, max = at most; show = how the recap prints it.",
-    "fiber_g": {
-      "min": 25,
-      "max": 35,
-      "show": "25–35"
-    },
-    "sat_fat_g": {
-      "max": 33,
-      "show": "<33"
-    },
-    "sugar_g": {
-      "max": 75,
-      "show": "<75"
-    },
-    "sodium_mg": {
-      "max": 2300,
-      "show": "<2,300"
-    },
-    "potassium_mg": {
-      "min": 3400,
-      "show": "3,400"
-    },
-    "calcium_mg": {
-      "min": 1000,
-      "show": "1,000"
-    },
-    "iron_mg": {
-      "min": 8,
-      "show": "8"
-    },
-    "magnesium_mg": {
-      "min": 420,
-      "show": "420"
-    },
-    "zinc_mg": {
-      "min": 11,
-      "show": "11"
-    },
-    "vit_c_mg": {
-      "min": 90,
-      "show": "90"
-    },
-    "vit_d_mcg": {
-      "min": 15,
-      "show": "15–20"
-    },
-    "omega3_mg": {
-      "min": 250,
-      "show": "250–500"
-    }
-  },
-  "weight_rule": {
-    "_about": "nutrition_guide.md 'Calories': after 2 consistent weeks, still losing/flat -> add 150-250 kcal/day; gaining ~0.25-0.75 lb/week -> stay; consistently >1 lb/week after the initial rebound -> reduce ~150-200 kcal. A consistent week = at least min_readings morning weigh-ins. Golden rule 3: a falling weekly average is always flagged.",
-    "min_readings": 3,
-    "gain_low_lb": 0.25,
-    "gain_high_lb": 0.75,
-    "reduce_above_lb": 1.0
-  },
-  "weekly_template": {
-    "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: sport (a skill session: A Wed, B Fri, C Sat by default; any day counts), knee (the next of Session A/B; they alternate A -> B -> A regardless of day), upper (the next of Upper A/B; they alternate A -> B regardless of day, at least 2 days apart), pt, upperA, upperB (a specific upper session, for a week that names one), accessory, power, cond. The Tue knee session may run Wed. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
-    "Sun": [
-      "knee"
-    ],
-    "Mon": [
-      "cond",
-      "upper"
-    ],
-    "Tue": [
-      "knee"
-    ],
-    "Wed": [
-      "sport"
-    ],
-    "Thu": [
-      "cond",
-      "upper"
-    ],
-    "Fri": [
-      "pt",
-      "sport"
-    ],
-    "Sat": [
-      "cond",
-      "sport"
-    ],
-    "optional": [
-      "accessory",
-      "power"
-    ],
-    "optional_from": {
-      "power": "2026-10-24"
-    },
-    "source": "working_rules.md 'Program structure' (revised 10/12: upper alternates A -> B on Mon/Thu, next in the rotation) and whole_athlete_addon.md section 2 'Placement'; power & mobility (Sat) after two weeks of 2 of 2 upper, earliest Sat 10/24 (the Recovery State of Sun 10/11, revised 10/12, section 7: real/state/recovery_state.md); sport sessions from the week of 10/11: real/plan/sport_plan.md section 5"
-  },
-  "weekly_template_history": [
-    {
-      "until": "2026-10-03",
-      "Sun": [
-        "kneeA",
-        "upperA"
-      ],
-      "Mon": [
-        "cond"
-      ],
-      "Tue": [
-        "kneeB",
-        "upperB"
-      ],
-      "Wed": [],
-      "Thu": [
-        "cond"
-      ],
-      "Fri": [
-        "pt"
-      ],
-      "Sat": [
-        "cond"
-      ],
-      "optional": [
-        "accessory",
-        "power"
-      ],
-      "source": "the template before the 10/9 revision: whole_athlete_addon.md section 3 (as of 10/4) and the Recovery State of Sun 10/4 section 6 (real/state/archive/recovery_state_2026-10-04.md)"
-    },
-    {
-      "until": "2026-10-10",
-      "Sun": [
-        "knee"
-      ],
-      "Mon": [
-        "cond"
-      ],
-      "Tue": [
-        "knee"
-      ],
-      "Wed": [],
-      "Thu": [
-        "cond"
-      ],
-      "Fri": [
-        "pt",
-        "upperA"
-      ],
-      "Sat": [
-        "cond",
-        "upperB"
-      ],
-      "optional": [
-        "accessory",
-        "power"
-      ],
-      "source": "the 10/9 revision before the sport plan: working_rules.md 'Program structure' and whole_athlete_addon.md section 3, revised 10/9; the week's upper ran its own catch-up placement (Fri 10/9 A, Sat 10/10 B: real/visits/2026-10-10_trainer_instruction.md), and the trainer then moved Sat's B to Mon 10/12 (plan_changes); power & mobility (Sat) from 10/17 at the earliest"
-    },
-    {
-      "until": "2026-10-17",
-      "Sun": [
-        "knee"
-      ],
-      "Mon": [
-        "cond",
-        "upperB"
-      ],
-      "Tue": [
-        "knee"
-      ],
-      "Wed": [
-        "sport"
-      ],
-      "Thu": [
-        "cond",
-        "upperA"
-      ],
-      "Fri": [
-        "pt",
-        "sport"
-      ],
-      "Sat": [
-        "cond",
-        "sport"
-      ],
-      "optional": [
-        "accessory",
-        "power"
-      ],
-      "source": "the Recovery State of Sun 10/11, revised 10/12 (real/state/recovery_state.md), sections 6-7: Mon 10/12 Upper B (moved from Sat 10/10: real/visits/2026-10-10_trainer_instruction.md) -> Upper A Thu 10/15 (Fri 10/16 if PT lands Thursday); Session A Tue 10/13; Wed off. Replaces the earlier reading of the trainer's catch-up week (Mon B, Wed A, Fri B). Sport sessions per real/plan/sport_plan.md section 5; the template resumes 10/18"
-    }
+ "_about": "Real-world facts the engine needs. Claude updates this when a plan, target, phase or gate changes, and cites the source in 'evidence'.",
+ "timezone": "America/New_York",
+ "athlete": {
+  "sex": "M",
+  "age": 32,
+  "height": "6'0\"",
+  "pre_injury_weight_lb": 164,
+  "goal_weight_lb": 170
+ },
+ "injury_date": "2026-07-14",
+ "surgery_date": "2026-08-24",
+ "procedure": "Left isolated ACL reconstruction, patellar-tendon autograft",
+ "chronicle_start": "2026-10-04",
+ "week_starts": "Sun",
+ "nutrition_targets": {
+  "kcal": 3000,
+  "protein_g": 150,
+  "protein_g_max": 160,
+  "carbs_g": [
+   350,
+   400
   ],
-  "plan_changes": [
-    {
-      "date": "2026-10-10",
-      "drop": [
-        "upperB"
-      ],
-      "add": [],
-      "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer_instruction.md",
-      "why": "no upper on Sat 10/10; Upper B moves to Mon 10/12, where the catch-up week's template carries it"
-    },
-    {
-      "date": "2026-10-15",
-      "drop": [
-        "cond",
-        "upperA"
-      ],
-      "add": [
-        "pt"
-      ],
-      "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
-      "why": "PT lands Thursday; the State's own rule moves Upper A and the bike to Friday"
-    },
-    {
-      "date": "2026-10-16",
-      "drop": [
-        "pt"
-      ],
-      "add": [
-        "cond",
-        "upperA"
-      ],
-      "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
-      "why": "Upper A and bike 21 move here from Thursday; throwing B first, then upper (Add-On §2)"
-    }
+  "fat_g": [
+   85,
+   100
   ],
-  "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
-  "conditioning": {
-    "cap_min": 30,
-    "source": "whole_athlete_addon.md conditioning table, Phase 3: bike 15-30 min, +3 min per ride to 30",
-    "_about": "The plan's longest prescribed ride: minutes past it are logged and paid nothing (golden rule 6). Update it when a phase changes the ceiling."
+  "weighins_per_week": 3,
+  "creatine_daily": true,
+  "shake_is_target": false,
+  "source": "nutrition_guide.md; shake dropped as a target 10/8"
+ },
+ "nutrition_reference": {
+  "_about": "Daily reference values for the weekly recap, from nutrition_guide.md 'Micronutrient Reference' (added 2026-10-08): standard adult-male DRI / FDA DV. Not targets; judged week to week at the checkpoint. min = at least, max = at most; show = how the recap prints it.",
+  "fiber_g": {
+   "min": 25,
+   "max": 35,
+   "show": "25–35"
   },
-  "food_itemised_from": "2026-10-08",
-  "daily_minimum": {
-    "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day).",
-    "rounds": [
-      {
-        "from": "2026-07-22",
-        "rounds": 2,
-        "source": "AM + PM rounds, as the floor was scored before 10/9"
-      },
-      {
-        "from": "2026-10-09",
-        "rounds": 1,
-        "source": "working_rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
-      }
-    ]
+  "sat_fat_g": {
+   "max": 33,
+   "show": "<33"
   },
-  "rehab": {
-    "current_phase": 3,
-    "phase_entered": "2026-09-27",
-    "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. All met by Sat 2026-10-17 (PT 11: quad LSI 90.4%, step-downs passed). Earliest by calendar Tue 2026-10-20: Knot III ties that day.",
-    "knots": [
-      {
-        "knot": 1,
-        "name": "Straightening",
-        "date": "2026-09-08",
-        "evidence": "Phase 1 exit criteria met (extension 0, SLR without lag) before Phase 2 work; exact date approximate"
-      },
-      {
-        "knot": 2,
-        "name": "Walking",
-        "date": "2026-09-27",
-        "evidence": "Phase 3 entered POD 34 per the Recovery State of Sun 10/4 (real/state/archive/recovery_state_2026-10-04.md)"
-      }
-    ],
-    "knot_gates": {
-      "3": "Before Phase 4 checklist (master plan): full/symmetric ROM, normal gait, minimal/no effusion, quad LSI ~>=70%, good single-leg control; PT agrees",
-      "4": "Before Running checklist: full extension, >=95% flexion, no/trace effusion, quad LSI >80%, good SL squat, pain-free pogos, good landings, rehab team agrees",
-      "5": "Before Higher Plyometrics/Agility: running tolerated, quad ~>=85%, hop ~>=85%, no meaningful effusion, good landing and SL force absorption",
-      "6": "Before Hard Cutting/Pivoting: quad >=90%, hop >=90%, effusion <= trace, full ROM, running and sprint progressions complete, good high-speed decel, no apprehension",
-      "7": "Before Full Return to Sport: full battery ~>=95%, KOOS/IKDC/ACL-RSI, full practice tolerated, surgeon/PT clearance"
-    }
+  "sugar_g": {
+   "max": 75,
+   "show": "<75"
   },
-  "measurement_metrics": {
-    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. Add a metric here before logging it.",
-    "ext_deg": {
-      "label": "extension",
-      "unit": "deg",
-      "about": "knee extension; 0 = straight, + = hyperextension, - = short of straight",
-      "now": true
-    },
-    "flex_deg": {
-      "label": "flexion",
-      "unit": "deg",
-      "about": "knee flexion",
-      "now": true
-    },
-    "quad_lb": {
-      "label": "quad",
-      "unit": "lb",
-      "about": "isometric quad strength, dynamometer",
-      "lsi": "higher",
-      "now": true
-    },
-    "ham_lb": {
-      "label": "hamstring",
-      "unit": "lb",
-      "about": "isometric hamstring strength, dynamometer",
-      "lsi": "higher",
-      "now": true
-    },
-    "sl_leg_press_plates": {
-      "label": "SL leg press",
-      "unit": "plates",
-      "about": "single-leg leg press max; a stand-in for quad LSI until a dynamometer test",
-      "lsi": "higher",
-      "now": true
-    }
+  "sodium_mg": {
+   "max": 2300,
+   "show": "<2,300"
   },
-  "milestones": {
-    "_about": "Real firsts worth a story moment. Record date + evidence. first_kneel triggers the finale's final image (see saga/bible/_gm/arc.md).",
-    "first_kneel": null
+  "potassium_mg": {
+   "min": 3400,
+   "show": "3,400"
+  },
+  "calcium_mg": {
+   "min": 1000,
+   "show": "1,000"
+  },
+  "iron_mg": {
+   "min": 8,
+   "show": "8"
+  },
+  "magnesium_mg": {
+   "min": 420,
+   "show": "420"
+  },
+  "zinc_mg": {
+   "min": 11,
+   "show": "11"
+  },
+  "vit_c_mg": {
+   "min": 90,
+   "show": "90"
+  },
+  "vit_d_mcg": {
+   "min": 15,
+   "show": "15–20"
+  },
+  "omega3_mg": {
+   "min": 250,
+   "show": "250–500"
+  }
+ },
+ "weight_rule": {
+  "_about": "nutrition_guide.md 'Calories': after 2 consistent weeks, still losing/flat -> add 150-250 kcal/day; gaining ~0.25-0.75 lb/week -> stay; consistently >1 lb/week after the initial rebound -> reduce ~150-200 kcal. A consistent week = at least min_readings morning weigh-ins. Golden rule 3: a falling weekly average is always flagged.",
+  "min_readings": 3,
+  "gain_low_lb": 0.25,
+  "gain_high_lb": 0.75,
+  "reduce_above_lb": 1.0
+ },
+ "weekly_template": {
+  "_about": "Planned sessions per day, used to score the week and to answer 'what's today'. Codes: sport (a skill session: A Wed, B Fri, C Sat by default; any day counts), knee (the next of Session A/B; they alternate A -> B -> A regardless of day), upper (the next of Upper A/B; they alternate A -> B regardless of day, at least 2 days apart), pt, upperA, upperB (a specific upper session, for a week that names one), accessory, power, cond. The Tue knee session may run Wed. Weeks before a revision use weekly_template_history (each entry applies through its 'until' date).",
+  "Sun": [
+   "knee"
+  ],
+  "Mon": [
+   "cond",
+   "upper"
+  ],
+  "Tue": [
+   "knee"
+  ],
+  "Wed": [
+   "sport"
+  ],
+  "Thu": [
+   "cond",
+   "upper"
+  ],
+  "Fri": [
+   "pt",
+   "sport"
+  ],
+  "Sat": [
+   "cond",
+   "sport"
+  ],
+  "optional": [
+   "accessory",
+   "power"
+  ],
+  "optional_from": {
+   "accessory": "2026-10-25",
+   "power": "2026-10-31"
+  },
+  "source": "working_rules.md 'Program structure' (revised 10/12: upper alternates A -> B on Mon/Thu, next in the rotation) and whole_athlete_addon.md section 2 'Placement'; optional items off for the week of 10/18 (Add-On rule 1: Fri 10/16 missed the daily minimum), so the accessory day returns 10/25 and power & mobility (Sat) is earliest Sat 10/31, after two weeks of 2 of 2 upper (the Recovery State of Sun 10/18, section 7: real/state/recovery_state.md); sport sessions from the week of 10/11: real/plan/sport_plan.md section 5"
+ },
+ "weekly_template_history": [
+  {
+   "until": "2026-10-03",
+   "Sun": [
+    "kneeA",
+    "upperA"
+   ],
+   "Mon": [
+    "cond"
+   ],
+   "Tue": [
+    "kneeB",
+    "upperB"
+   ],
+   "Wed": [],
+   "Thu": [
+    "cond"
+   ],
+   "Fri": [
+    "pt"
+   ],
+   "Sat": [
+    "cond"
+   ],
+   "optional": [
+    "accessory",
+    "power"
+   ],
+   "source": "the template before the 10/9 revision: whole_athlete_addon.md section 3 (as of 10/4) and the Recovery State of Sun 10/4 section 6 (real/state/archive/recovery_state_2026-10-04.md)"
+  },
+  {
+   "until": "2026-10-10",
+   "Sun": [
+    "knee"
+   ],
+   "Mon": [
+    "cond"
+   ],
+   "Tue": [
+    "knee"
+   ],
+   "Wed": [],
+   "Thu": [
+    "cond"
+   ],
+   "Fri": [
+    "pt",
+    "upperA"
+   ],
+   "Sat": [
+    "cond",
+    "upperB"
+   ],
+   "optional": [
+    "accessory",
+    "power"
+   ],
+   "source": "the 10/9 revision before the sport plan: working_rules.md 'Program structure' and whole_athlete_addon.md section 3, revised 10/9; the week's upper ran its own catch-up placement (Fri 10/9 A, Sat 10/10 B: real/visits/2026-10-10_trainer_instruction.md), and the trainer then moved Sat's B to Mon 10/12 (plan_changes); power & mobility (Sat) from 10/17 at the earliest"
+  },
+  {
+   "until": "2026-10-17",
+   "Sun": [
+    "knee"
+   ],
+   "Mon": [
+    "cond",
+    "upperB"
+   ],
+   "Tue": [
+    "knee"
+   ],
+   "Wed": [
+    "sport"
+   ],
+   "Thu": [
+    "cond",
+    "upperA"
+   ],
+   "Fri": [
+    "pt",
+    "sport"
+   ],
+   "Sat": [
+    "cond",
+    "sport"
+   ],
+   "optional": [
+    "accessory",
+    "power"
+   ],
+   "source": "the Recovery State of Sun 10/11, revised 10/12 (real/state/recovery_state.md), sections 6-7: Mon 10/12 Upper B (moved from Sat 10/10: real/visits/2026-10-10_trainer_instruction.md) -> Upper A Thu 10/15 (Fri 10/16 if PT lands Thursday); Session A Tue 10/13; Wed off. Replaces the earlier reading of the trainer's catch-up week (Mon B, Wed A, Fri B). Sport sessions per real/plan/sport_plan.md section 5; the template resumes 10/18"
+  }
+ ],
+ "plan_changes": [
+  {
+   "date": "2026-10-10",
+   "drop": [
+    "upperB"
+   ],
+   "add": [],
+   "source": "trainer, Sat 10/10: real/visits/2026-10-10_trainer_instruction.md",
+   "why": "no upper on Sat 10/10; Upper B moves to Mon 10/12, where the catch-up week's template carries it"
+  },
+  {
+   "date": "2026-10-15",
+   "drop": [
+    "cond",
+    "upperA"
+   ],
+   "add": [
+    "pt"
+   ],
+   "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
+   "why": "PT lands Thursday; the State's own rule moves Upper A and the bike to Friday"
+  },
+  {
+   "date": "2026-10-16",
+   "drop": [
+    "pt"
+   ],
+   "add": [
+    "cond",
+    "upperA"
+   ],
+   "source": "PT booked for Thu 10/15 (his message, Wed 10/14)",
+   "why": "Upper A and bike 21 move here from Thursday; throwing B first, then upper (Add-On §2)"
+  }
+ ],
+ "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
+ "conditioning": {
+  "cap_min": 30,
+  "source": "whole_athlete_addon.md conditioning table, Phase 3: bike 15-30 min, +3 min per ride to 30",
+  "_about": "The plan's longest prescribed ride: minutes past it are logged and paid nothing (golden rule 6). Update it when a phase changes the ceiling."
+ },
+ "food_itemised_from": "2026-10-08",
+ "daily_minimum": {
+  "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day).",
+  "rounds": [
+   {
+    "from": "2026-07-22",
+    "rounds": 2,
+    "source": "AM + PM rounds, as the floor was scored before 10/9"
+   },
+   {
+    "from": "2026-10-09",
+    "rounds": 1,
+    "source": "working_rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
+   }
+  ]
+ },
+ "rehab": {
+  "current_phase": 3,
+  "phase_entered": "2026-09-27",
+  "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. All met by Sat 2026-10-17 (PT 11: quad LSI 90.4%, step-downs passed). Earliest by calendar Tue 2026-10-20: Knot III ties that day.",
+  "knots": [
+   {
+    "knot": 1,
+    "name": "Straightening",
+    "date": "2026-09-08",
+    "evidence": "Phase 1 exit criteria met (extension 0, SLR without lag) before Phase 2 work; exact date approximate"
+   },
+   {
+    "knot": 2,
+    "name": "Walking",
+    "date": "2026-09-27",
+    "evidence": "Phase 3 entered POD 34 per the Recovery State of Sun 10/4 (real/state/archive/recovery_state_2026-10-04.md)"
+   }
+  ],
+  "knot_gates": {
+   "3": "Before Phase 4 checklist (master plan): full/symmetric ROM, normal gait, minimal/no effusion, quad LSI ~>=70%, good single-leg control; PT agrees",
+   "4": "Before Running checklist: full extension, >=95% flexion, no/trace effusion, quad LSI >80%, good SL squat, pain-free pogos, good landings, rehab team agrees",
+   "5": "Before Higher Plyometrics/Agility: running tolerated, quad ~>=85%, hop ~>=85%, no meaningful effusion, good landing and SL force absorption",
+   "6": "Before Hard Cutting/Pivoting: quad >=90%, hop >=90%, effusion <= trace, full ROM, running and sprint progressions complete, good high-speed decel, no apprehension",
+   "7": "Before Full Return to Sport: full battery ~>=95%, KOOS/IKDC/ACL-RSI, full practice tolerated, surgeon/PT clearance"
+  }
+ },
+ "measurement_metrics": {
+  "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. Add a metric here before logging it.",
+  "ext_deg": {
+   "label": "extension",
+   "unit": "deg",
+   "about": "knee extension; 0 = straight, + = hyperextension, - = short of straight",
+   "now": true
+  },
+  "flex_deg": {
+   "label": "flexion",
+   "unit": "deg",
+   "about": "knee flexion",
+   "now": true
+  },
+  "quad_lb": {
+   "label": "quad",
+   "unit": "lb",
+   "about": "isometric quad strength, dynamometer",
+   "lsi": "higher",
+   "now": true
+  },
+  "ham_lb": {
+   "label": "hamstring",
+   "unit": "lb",
+   "about": "isometric hamstring strength, dynamometer",
+   "lsi": "higher",
+   "now": true
+  },
+  "sl_leg_press_plates": {
+   "label": "SL leg press",
+   "unit": "plates",
+   "about": "single-leg leg press max; a stand-in for quad LSI until a dynamometer test",
+   "lsi": "higher",
+   "now": true
+  }
+ },
+ "milestones": {
+  "_about": "Real firsts worth a story moment. Record date + evidence. first_kneel triggers the finale's final image (see saga/bible/_gm/arc.md).",
+  "first_kneel": null
+ },
+ "sport": {
+  "_about": "Set by /sport on 10/9. skills = the only valid sport_log.csv 'skill' values; each feeds a Sport Art (engine/rules.json -> sport_arts).",
+  "name": "Ultimate",
+  "position": "handler",
+  "throwing_hand": "right",
+  "pivot_foot": "left (the graft side)",
+  "setup": "a net through the Ohio winter (indoors or out), the field outdoors when dry; a partner sometimes, never relied on",
+  "season": "offseason Oct 2026 (week 1 = Sun 10/11) -> late spring 2027",
+  "target_return": "late spring 2027, by the rehab gates; for a cutting and pivoting sport the master plan treats 9 months (2027-05-24) as a minimum reference, after the return-to-sport battery",
+  "plan": "real/plan/sport_plan.md",
+  "guide": "real/plan/ultimate_offseason_guide.md",
+  "skills": [
+   "control",
+   "breaks",
+   "deception",
+   "overheads",
+   "hucks",
+   "defense_iq",
+   "defense_footwork"
+  ],
+  "stage": "Phase 3: seated or standing, easy effort; pivots okay within reason (PT 10/15); no max intent",
+  "stage_since": "2026-10-09",
+  "stage_evidence": "PT 10/15 (Cody, patient-reported): pivots are okay to do within reason; earlier, his decision 10/9: seated or standing throwing at easy effort, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
+ },
+ "vocabulary": {
+  "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
+  "daily": {
+   "knee_session": [
+    "A",
+    "B",
+    "min",
+    "home",
+    "partial"
+   ],
+   "_knee_session": "A/B (which session), min (the minimum session: a loaded day), home (a knee session logged by its rows), partial (below the minimum: not a loaded day; 'partial …' with a note after it is accepted)",
+   "addon_session": [
+    "upperA",
+    "upperB",
+    "accessory",
+    "power",
+    "arms"
+   ],
+   "_addon_session": "one code, or several joined with + (upperA+accessory)",
+   "light": [
+    "green",
+    "yellow",
+    "red"
+   ],
+   "pt": [
+    "Y",
+    "missed",
+    "skipped",
+    "no-show"
+   ],
+   "floor_am": [
+    "Y",
+    "N"
+   ],
+   "floor_pm": [
+    "Y",
+    "N"
+   ],
+   "knee_as_planned": [
+    "Y",
+    "N"
+   ],
+   "together": [
+    "Y",
+    "N"
+   ],
+   "closed": [
+    "Y"
+   ]
+  },
+  "nutrition": {
+   "creatine": [
+    "Y",
+    "N"
+   ],
+   "shake": [
+    "Y",
+    "N"
+   ]
+  },
+  "exercise": {
+   "session": [
+    "home",
+    "knee",
+    "A",
+    "B",
+    "PT",
+    "floor",
+    "HEP",
+    "upperA",
+    "upperB",
+    "accessory",
+    "power",
+    "arms",
+    "conditioning"
+   ],
+   "block": [
+    "knee",
+    "quad",
+    "single-leg",
+    "posterior",
+    "calf",
+    "hip",
+    "balance",
+    "mobility",
+    "gait",
+    "manual",
+    "test",
+    "warmup",
+    "finisher",
+    "cooldown",
+    "posture",
+    "push",
+    "pull",
+    "trunk",
+    "upper",
+    "conditioning",
+    "floor",
+    "landing",
+    "plyo",
+    "run",
+    "sprint",
+    "decel",
+    "cut",
+    "agility",
+    "reactive",
+    "throw"
+   ],
+   "side": [
+    "L",
+    "R",
+    "bil"
+   ]
   },
   "sport": {
-    "_about": "Set by /sport on 10/9. skills = the only valid sport_log.csv 'skill' values; each feeds a Sport Art (engine/rules.json -> sport_arts).",
-    "name": "Ultimate",
-    "position": "handler",
-    "throwing_hand": "right",
-    "pivot_foot": "left (the graft side)",
-    "setup": "a net through the Ohio winter (indoors or out), the field outdoors when dry; a partner sometimes, never relied on",
-    "season": "offseason Oct 2026 (week 1 = Sun 10/11) -> late spring 2027",
-    "target_return": "late spring 2027, by the rehab gates; for a cutting and pivoting sport the master plan treats 9 months (2027-05-24) as a minimum reference, after the return-to-sport battery",
-    "plan": "real/plan/sport_plan.md",
-    "guide": "real/plan/ultimate_offseason_guide.md",
-    "skills": [
-      "control",
-      "breaks",
-      "deception",
-      "overheads",
-      "hucks",
-      "defense_iq",
-      "defense_footwork"
-    ],
-    "stage": "Phase 3: seated or standing, easy effort; pivots okay within reason (PT 10/15); no max intent",
-    "stage_since": "2026-10-09",
-    "stage_evidence": "PT 10/15 (Cody, patient-reported): pivots are okay to do within reason; earlier, his decision 10/9: seated or standing throwing at easy effort, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
-  },
-  "vocabulary": {
-    "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
-    "daily": {
-      "knee_session": [
-        "A",
-        "B",
-        "min",
-        "home",
-        "partial"
-      ],
-      "_knee_session": "A/B (which session), min (the minimum session: a loaded day), home (a knee session logged by its rows), partial (below the minimum: not a loaded day; 'partial …' with a note after it is accepted)",
-      "addon_session": [
-        "upperA",
-        "upperB",
-        "accessory",
-        "power",
-        "arms"
-      ],
-      "_addon_session": "one code, or several joined with + (upperA+accessory)",
-      "light": [
-        "green",
-        "yellow",
-        "red"
-      ],
-      "pt": [
-        "Y",
-        "missed",
-        "skipped",
-        "no-show"
-      ],
-      "floor_am": [
-        "Y",
-        "N"
-      ],
-      "floor_pm": [
-        "Y",
-        "N"
-      ],
-      "knee_as_planned": [
-        "Y",
-        "N"
-      ],
-      "together": [
-        "Y",
-        "N"
-      ],
-      "closed": [
-        "Y"
-      ]
-    },
-    "nutrition": {
-      "creatine": [
-        "Y",
-        "N"
-      ],
-      "shake": [
-        "Y",
-        "N"
-      ]
-    },
-    "exercise": {
-      "session": [
-        "home",
-        "knee",
-        "A",
-        "B",
-        "PT",
-        "floor",
-        "HEP",
-        "upperA",
-        "upperB",
-        "accessory",
-        "power",
-        "arms",
-        "conditioning"
-      ],
-      "block": [
-        "knee",
-        "quad",
-        "single-leg",
-        "posterior",
-        "calf",
-        "hip",
-        "balance",
-        "mobility",
-        "gait",
-        "manual",
-        "test",
-        "warmup",
-        "finisher",
-        "cooldown",
-        "posture",
-        "push",
-        "pull",
-        "trunk",
-        "upper",
-        "conditioning",
-        "floor",
-        "landing",
-        "plyo",
-        "run",
-        "sprint",
-        "decel",
-        "cut",
-        "agility",
-        "reactive",
-        "throw"
-      ],
-      "side": [
-        "L",
-        "R",
-        "bil"
-      ]
-    },
-    "sport": {
-      "session": [
-        "A",
-        "B",
-        "C",
-        "film",
-        "test",
-        "review"
-      ],
-      "_session": "case-insensitive: the engine reads a/b/c/film as A/B/C/FILM"
-    }
+   "session": [
+    "A",
+    "B",
+    "C",
+    "film",
+    "test",
+    "review"
+   ],
+   "_session": "case-insensitive: the engine reads a/b/c/film as A/B/C/FILM"
   }
+ }
 }
