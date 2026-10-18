@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-15 · weather · The cloud came up the cliff in the night and lies on the Last Hundred like a cat on a step. The gate wall stands above it in hard clear sun, with nothing below but white.
 - 2026-10-15 · overheard · Two lay brothers at the woodpile, agreeing that the carter's oxen are the only creatures on the mountain with any sense. Neither of them has met the oxen.
 - 2026-10-15 · house · The kitchen has taken to leaving its book open on the bread table where anyone can read it. Nobody in the House admits to having read it, and the pencil has to be sharpened twice a day.
 - 2026-10-15 · ledger · From Wren's ledgers, the cage page: First load: linen, wet. Second: salt. Third: one novice, who rode up on a dare, weighed with the salt and entered as salt.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-17 · weather · Clear and hard tonight, the first night of the snow with stars in it. The steam off the springs on the lower terrace goes straight up and stands there like a post.
 - 2026-10-17 · overheard · From the kitchen, late, the cook to nobody in particular: "If the Mother wants the bread counted again she can come and count it. I've counted it. It came out the same. That's what's wrong with it."
 - 2026-10-18 · body · He swung both legs off the cot at the dawn bell together, out of old habit, and the left came with the right as if it had never had a reason not to. He sat and looked at it until the bell stopped.
+- 2026-10-18 · ledger · From Wren's ledgers, the stockings page: pairs on the chimney breast, eleven. Pairs with a number chalked over them, eleven. Pairs that are the right pair when they come down, nine, which she has decided not to mention.

@@ -223,7 +223,7 @@ The plan's Phase 4 Session A with the PT's items. "→" marks the one change; Tu
 | 1 | **Goblet squat** (PT 10/15) | 25 lb DB × 2 × 10, to an 18" box (PT dose; first at home) | 3 × 10 → +5 lb → depth (depth rule) [3–4 × 6–10, RPE 7–8] |
 | 2 | Cable seated knee extension, full range | L 20 lb × 2 × 12 → **lift with both legs, lower with the left alone over ~3 s** (PT style) | 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8]. Front-of-knee pain >2 → shorten the range or lighten |
 | 3 | **Rear-foot elevated split squat — NEW** (replaces the split squat) | Rear foot on the 6.5" step, bodyweight, 2 × 8/side | 3 × 8 → DBs, +5 lb steps [3 × 8 each side] |
-| 4 | Cable hamstring curl, ankle strap | Sunday's result (3 × 10 @ 30 lb if Sunday ran clean), each leg | +1 plate → 3 × 12 [3 × 8–12] |
+| 4 | Cable hamstring curl, ankle strap | 3 × 10 @ 50 lb each leg if Monday is clean (Sunday ran 40 / 50 / 60, past the planned 30); 30 lb if it isn't | +1 plate (60) → 3 × 12 [3 × 8–12] |
 | 5 | Standing heel raise, 35 lb DBs | **3 × 15** (the PT's 2 × 15 + a third set) | 4 × 15 → single-leg L → + DB [4 × 10–15] |
 | 6 | Step-up with opposite knee drive, 18" | L 2 × 15 · R 2 × 15, bodyweight (as 10/13) | 3 × 12 → DBs |
 | 7 | Heel tap, 6.5", slow eccentric | L 2 × 10 | 3 × 10 → 8" |
