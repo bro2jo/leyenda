@@ -1794,23 +1794,29 @@ def find_due(ledger, did):
     die(f"no due item {did} in the ledger")
 
 
-def fire_item(st, did, where):
-    """Mark a due item fired at `where`; a rule id (r.…) marks the rule honoured there. Returns the line to print."""
+def fire_item(st, did, where, evidence=None):
+    """Mark a due item fired at `where`; a rule id (r.…) marks the rule honoured there. `evidence` is the block's own
+    words that pay it (the record requires it; from the command line it is a courtesy). Returns the line to print."""
     if not WHERE_RE.match(str(where or "")):
         die(f"--where {where!r} must look like ch03:s2, ch03:climax, ch03:interlude or book2")
+    proof = f" · proved: “{short(evidence, 100)}”" if evidence else " · unproved: the record should carry the block's words that pay it"
     if str(did).startswith("r."):  # a rule honoured on the page: it has state, so `now` stops arming it (once per Book for a standing rule)
         r = next((x for x in st.ledger.get("rules", []) if x.get("id") == did), None)
         if not r:
             die(f"no rule {did} in the ledger")
         r.setdefault("fired", []).append(where)
+        if evidence:
+            r.setdefault("evidence", {})[where] = evidence
         st.touch("ledger")
-        return f"rule {did} honoured at {where}: {r.get('then')}" + (" (a standing rule: it may arm again in a later Book)" if str(r.get("where")) == "any" else "")
+        return f"rule {did} honoured at {where}: {r.get('then')}" + (" (a standing rule: it may arm again in a later Book)" if str(r.get("where")) == "any" else "") + proof
     e, it = find_due(st.ledger, did)
     if it["status"] != "pending":
         die(f"{did} is already {it['status']}")
     it["status"] = f"fired@{where}"
+    if evidence:
+        it["evidence"] = evidence
     st.touch("ledger")
-    return f"{did} fired at {where}: {it['what']}"
+    return f"{did} fired at {where}: {it['what']}{proof}"
 
 
 def void_item(st, did, why):
@@ -1824,7 +1830,7 @@ def void_item(st, did, why):
 
 def cmd_fire(args):
     st = State()
-    line = fire_item(st, args.id, args.where)
+    line = fire_item(st, args.id, args.where, getattr(args, "evidence", None))
     st.save()
     print(line)
 
@@ -3816,7 +3822,8 @@ def record_skeleton(key, kind, date, people_ids, place, extra=None):
                "people": [{"id": cid, "did": "<one line>", "now": "<1–3 sentences, as far as the reader knows>", "facts": [{"fact": "<one sentence>", "evidence": "<verbatim words of the block>"}]} for cid in people_ids]
                + [{"id": "<only named>", "mention": True}],
                "codex": [{"section": "Places and things", "name": "<new thing>", "text": "<what it is (Ch N Sc K)>"}],
-               "lore": [], "threads": [{"id": 0, "how": "plant|touch|payoff"}], "fired": [], "voided": [],
+               "lore": [], "threads": [{"id": 0, "how": "plant|touch|payoff"}],
+               "fired": [{"id": "<a due item, callback or rule id this block pays>", "evidence": "<verbatim words of the block that pay it>"}], "voided": [],
                "struggle": None, "quest": None, "season": None, "inventory": None, "tether": None, "rank": None,
                "now": {"against": "<one line>", "next": "<one line, spoiler-free>"},
                "gm": {"note": "<what the block did for the plan; what was kept off the page>", "next_must_know": "<what the next block must honour>",
@@ -4074,7 +4081,7 @@ def cmd_brief(args):
         L.append("lore: the plan names no entry; `saga.py lore grep <word>` for a place or custom the block touches, `lore pick saying` for a line in someone's mouth")
     cbs = callbacks_for_brief(st)
     if cbs:
-        section("MAY: callbacks waiting for a fit (one per block at most; record it in \"fired\")")
+        section("MAY: callbacks waiting for a fit (one per block at most; record it in \"fired\" with the block's words that pay it)")
         L += cbs
     if mode == "slot":
         arc_key = slot.get("beat") if slot.get("kind") == "spine" else slot.get("quest")
@@ -4306,8 +4313,23 @@ def cmd_record(args):
         if lid not in entries:
             probs.append(f"lore: no entry {lid!r} in the Annals")
     ledger = st.ledger
-    for did in ev.get("fired") or []:
-        if str(did).startswith("r."):
+    # what the block paid: each fired item carries the block's own words that pay it, so a consequence is proved on the
+    # page, never only marked (a bare id passes only when --force re-records a block already recorded)
+    fired_items = []
+    for f_ in ev.get("fired") or []:
+        f_ = {"id": f_} if isinstance(f_, str) else (f_ if isinstance(f_, dict) else {})
+        did = str(f_.get("id") or "")
+        if not did:
+            probs.append('fired items are {"id": "<a due item, callback or rule id>", "evidence": "<verbatim words of the block that pay it>"}')
+            continue
+        evd = f_.get("evidence")
+        if evd is None or not str(evd).strip():
+            if not (args.force and key in existing):
+                probs.append(f"fired {did}: no evidence; quote the block's words that pay it (a few words at least, verbatim)")
+            evd = None
+        elif len(R.norm(evd)) < 12 or R.norm(evd) not in R.norm(btext):
+            probs.append(f"fired {did}: evidence {evd!r} is not a verbatim excerpt of this block (a few words at least)")
+        if did.startswith("r."):
             if not any(r.get("id") == did for r in ledger.get("rules", [])):
                 probs.append(f"fired: no rule {did}")
         else:
@@ -4316,6 +4338,8 @@ def cmd_record(args):
                 probs.append(f"fired: no due item {did}")
             elif hit.get("status") != "pending" and not args.force:
                 probs.append(f"fired: {did} is already {hit['status']}")
+        fired_items.append({"id": did, "evidence": evd} if evd is not None else {"id": did})
+    ev["fired"] = fired_items
     for v in ev.get("voided") or []:
         if not isinstance(v, dict) or not v.get("id") or not v.get("why"):
             probs.append('voided items are {"id": …, "why": …}')
@@ -4382,14 +4406,18 @@ def cmd_record(args):
         if (s_inv.get("invite") or {}).get("status") == "waiting":
             s_inv["invite"]["status"] = "taken" if inv.get("action", "take") == "take" else "passed"
             print(f"invite slot {s_inv['n']} {s_inv['invite']['status']}")
-    for did in ev.get("fired") or []:
+    for f_ in ev.get("fired") or []:
+        did, evd = f_["id"], f_.get("evidence")
         where_ = wrote if WHERE_RE.match(wrote) else f"{ch2(ch)}"
         if args.force and not str(did).startswith("r."):  # a revised block keeps what it already paid
             _, it_ = find_due(st.ledger, did)
             if it_.get("status") == f"fired@{where_}":
+                if evd and not it_.get("evidence"):
+                    it_["evidence"] = evd
+                    st.touch("ledger")
                 print(f"{did} already fired at {where_} (kept)")
                 continue
-        print(fire_item(st, did, where_))
+        print(fire_item(st, did, where_, evd))
     for v in ev.get("voided") or []:
         print(void_item(st, v["id"], v["why"]))
     for lid in ev.get("lore") or []:
@@ -4504,6 +4532,11 @@ def cmd_history(args):
                 print(f"  {short(ev['last_beat'], 220)}")
             if ev.get("people"):
                 print("  with: " + ", ".join(p["id"] + ("*" if p.get("mention") else "") for p in ev["people"]))
+        for f_ in ev.get("fired") or []:  # what the block paid, with the words that pay it
+            if isinstance(f_, dict):
+                print(f"  paid {f_.get('id')}" + (f": “{short(f_.get('evidence'), 120)}”" if f_.get("evidence") else " (unproved)"))
+            else:
+                print(f"  paid {f_} (recorded before the words were kept)")
         n = notes.get(ev["key"])
         if n:
             print(f"  GM: {short(n.get('note'), 300)}")
@@ -5152,7 +5185,7 @@ def main():
     s = sub.add_parser("challenge"); s.add_argument("n"); s.add_argument("action", choices=["success", "fail", "show", "void"]); s.add_argument("--why")
     s = sub.add_parser("invite"); s.add_argument("n"); s.add_argument("action", choices=["take", "pass", "show"])
     s = sub.add_parser("project"); s.add_argument("id", nargs="?", help="a project quest id (show|work), or nothing: rebuild the projections"); s.add_argument("action", nargs="?", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what"); s.add_argument("--dry", action="store_true", help="list the projections that would change, write nothing")
-    s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True)
+    s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True); s.add_argument("--evidence", help="the block's own words that pay it (verbatim); the record carries it by itself")
     s = sub.add_parser("void"); s.add_argument("id"); s.add_argument("--why", required=True)
     s = sub.add_parser("bearing"); s.add_argument("pole", help="a pole word, or `show`"); s.add_argument("n", nargs="?", type=int); s.add_argument("--why"); s.add_argument("--force", action="store_true", help="allow a move beyond ±4")
     s = sub.add_parser("route"); s.add_argument("action", choices=["decide", "show"]); s.add_argument("--book", type=int); s.add_argument("--road", choices=ROADS); s.add_argument("--why")

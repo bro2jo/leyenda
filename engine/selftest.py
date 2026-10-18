@@ -165,6 +165,9 @@ def main():
                   "record refuses a missing last_beat and an unregistered name, writing nothing")
             code, out = run(saga + ["due"], tmp)
             due_id = next((x for x in re.findall(r"^(c\d+\.\d+[a-z])\s", out, re.M)), None)
+            if not due_id:  # nothing due now: a callback (when=later) fires wherever it fits, this scene included
+                code, out = run(saga + ["due", "--later"], tmp)
+                due_id = next((x for x in re.findall(r"^(c\d+\.\d+[a-z])\s", out, re.M)), None)
             code, out = run(saga + ["threads"], tmp)
             tid = next((int(x) for x in re.findall(r"^\s*(\d+)\s+open", out, re.M)), None)
             good = {"key": key, "date": day, "where": {"place": "saint-ysoldes", "detail": "the gate wall at dusk"}, "time": "dusk",
@@ -181,7 +184,14 @@ def main():
                 good["threads"] = [{"id": tid, "how": "touch"}]
                 good["gm"]["threads"] = [{"id": tid, "who_knows": "The House; the reader."}]
             if due_id:
-                good["fired"] = [due_id]
+                # a consequence is proved, never only marked: a bare id and a wrong excerpt are refused, the block's words pass
+                bare = dict(good, fired=[due_id])
+                code, out = run(saga + ["record", json.dumps(bare, ensure_ascii=False)], tmp, expect=1)
+                check("no evidence" in out, "a fired item without the block's words is refused", out[-300:])
+                wrong = dict(good, fired=[{"id": due_id, "evidence": "words the scene never says"}])
+                code, out = run(saga + ["record", json.dumps(wrong, ensure_ascii=False)], tmp, expect=1)
+                check("not a verbatim excerpt" in out, "a fired item with words the block does not carry is refused", out[-300:])
+                good["fired"] = [{"id": due_id, "evidence": "wrote the number down twice"}]
             code, out = run(saga + ["record", json.dumps(good, ensure_ascii=False)], tmp)
             check(code == 0 and "recorded" in out and "ok:" in out, "record accepts the scene and check passes afterwards", out[-900:])
             did_scene = code == 0
@@ -199,7 +209,9 @@ def main():
             if due_id:
                 ledger = jload(tmp / "saga/state/_gm/consequences.json")
                 item = next(it for e in ledger["entries"] for it in e["due"] if it["id"] == due_id)
-                check(item["status"] == f"fired@{key}", "the due item the scene honoured is fired there")
+                check(item["status"] == f"fired@{key}" and item.get("evidence") == "wrote the number down twice", "the due item the scene honoured is fired there, with the words that pay it")
+                code, out = run(saga + ["history", "--chapter", str(ch), "--last", "1"], tmp)
+                check(code == 0 and f"paid {due_id}" in out and "wrote the number down twice" in out, "history prints what the block paid with its words", out[-300:])
             else:
                 skip("no due item to fire in the scene")
             if tid is not None:
