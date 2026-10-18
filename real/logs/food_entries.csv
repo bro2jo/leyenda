@@ -71,3 +71,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-17#6,2026-10-17,,lunch,BBQ chicken wing,1 wing,95,6,4,6,0,1.5,3,320,60,8,0.3,6,0.5,0,0,20,estimate,assumed Domino's BBQ wing
 2026-10-17#7,2026-10-17,,lunch,Domino's GF small chicken bacon ranch pizza,half the pizza (3 of 6 slices),615,27,51,33,1.5,12,4.5,1410,330,360,2.4,36,3,0,0.3,150,library,library row x3 (macros from a web listing 10/17; sodium and micros estimated)
 2026-10-17#8,2026-10-17,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,library row (PB & chocolate chip label)
+2026-10-17#9,2026-10-17,,dinner,Domino's GF small chicken bacon ranch pizza,the other half (3 of 6 slices),615,27,51,33,1.5,12,4.5,1410,330,360,2.4,36,3,0,0.3,150,library,library row x3 (macros from a web listing 10/17; sodium and micros estimated)
+2026-10-17#10,2026-10-17,,dinner,BBQ chicken wing,2 wings,190,12,8,12,0,3,6,640,120,16,0.6,12,1,0,0,40,estimate,same wings as lunch; assumed Domino's BBQ wings
