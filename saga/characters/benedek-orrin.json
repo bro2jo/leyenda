@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "6",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-6"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Lay Hollowed in the Grey Cot; Rae was shown the frost on his mouth.",
-  "now": "Lying Hollowed in the Grey Cot. The frost has not gone from his mouth in four days, with a brazier at his head.",
-  "story_so_far": "A knight of the Sixth Lance who came back from Harrow Ford with a boar spear wound through the shoulder and a fever after it, and has the cot next to Hollis Garrow's at Saint Ysolde's. He says his oath at every bell. On the morning the grey cloaks were seen on the Holloway he asked Hollis what it meant to be second on the list, offered to carry him down the Steps himself if they would let him, and was told he couldn't carry a bucket, which made him smile. Hollis told him to say his oath and shut his eyes, and he did.",
+  "last_seen_doing": "Lay Hollowed in the Grey Cot while the House heard how he was taken.",
+  "now": "Lying Hollowed in the Grey Cot. The House knows the hour he was taken: between the third bell and the fourth.",
+  "story_so_far": "A knight of Hollis Garrow's Sixth, wounded at Harrow Ford, who says his oath at every bell. On the night of the gate his name was not read, and he took it for mercy and said good night to the Captain. At the dawn bell of the feast he did not say his oath: he lay breathing with his eyes open and frost on his mouth, Hollowed, and the Mender took a chip of black glass from under his tongue. He lies in the Grey Cot under the far cots' blanket with Hollis's hand on his; the House has heard that he said his oath at the first three bells of that night, and not at the fourth.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
     "chapter": "01",
@@ -135,6 +135,12 @@
       "chapter": "02",
       "scene": "6",
       "evidence": "The frost had not gone from it in four days"
+    },
+    {
+      "fact": "On the night he was taken he said his oath at the first three bells, in his sleep, and not at the fourth; the night novice heard him.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "At the fourth he didn't."
     }
   ],
   "relationships": [
@@ -225,6 +231,10 @@
       "chapter": "02",
       "scene": "7",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

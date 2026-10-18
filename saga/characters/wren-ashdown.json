@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Walked the east wall with a candle; the flame bent at the third cot and led to the undercroft door, where it lay flat toward the gap; named the undercroft; sent to bed by the Prior, correcting her count of the hall's doors to three.",
-  "now": "Sent to bed by the Prior, correcting her own count under her breath: doors into the hall, three.",
-  "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word. When he gave his name at the bars anyway, she counted the Confessors instead of looking at him.",
+  "last_seen_doing": "Read the House her count of the night's bells and the lad's oaths, which fixed the hour; walked the east wall with her candle before the whole House to the undercroft door; offered to go down the stair herself; counted the Prior's key.",
+  "now": "At the undercroft door with her candle out, having offered to go down the stair herself.",
+  "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -261,6 +261,30 @@
       "chapter": "02",
       "scene": "7",
       "evidence": "Doors into the hall. Three."
+    },
+    {
+      "fact": "Her count fixed the hour the lad was taken: eight bells rung between the night bell and the dawn bell, his oath said at three, so between the third bell and the fourth.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "So it was between the third bell and the fourth."
+    },
+    {
+      "fact": "Before the whole House her candle's flame bent at the third cot and lay flat toward the gap under the undercroft door.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "the whole of it was walking down the east side of its own hall behind a girl with a candle"
+    },
+    {
+      "fact": "She offered to go down the stair herself: she is light and can count steps in the dark.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "\"I could go,\" Wren said. \"I'm light. I can count steps in the dark."
+    },
+    {
+      "fact": "Seeing the Prior's key on its cord, she counted the keys again: ten.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "\"Keys,\" said Wren under her breath. \"Ten.\""
     }
   ],
   "relationships": [
@@ -389,6 +413,10 @@
     {
       "chapter": "02",
       "scene": "7"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

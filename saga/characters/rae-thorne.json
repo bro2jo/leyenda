@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-14",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-14"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Told the Captain the letter came from the grey cloak at the winch-house, who said the Captain of the Ninth twice and smiled; said she carried it up rather than leave it in the cage overnight with him; would not answer about the cold in her cart; pushed him the bread.",
-  "now": "At the bread table in the kitchen after dark. She has told the Captain whose hand the letter came out of, and given him one answer for the night and no more.",
-  "story_so_far": "She drove the last cart of Darrow's road north, a salt-cart off the Holloway with its load left at the landing to make room for two knights and a leg that was not there, talking to her oxen the whole day and to her passengers not at all. When Hollis started on her she said 'Aye' as if he had remarked on the weather. At the foot of the Steps she looked at Darrow's leg once, the way a carter looks at a cracked wheel, rang the bell at her belt three times, and a bell answered from the cloud; the lay brothers who came down with the litter called her Rae, and the one thing she said to Darrow all day was that they would count him up and he should not help. Seven weeks after Darrow's Binding she was in the taproom at Coldmere with the House's salt on her cart when the Confessors read out their list of the Faithless at Saint Ysolde's. She drove the Holloway in the dark ahead of them, climbed the Steps before the bell, and told the winch-brothers, who told the kitchen; her cart and oxen wait at the winch-house below, at the foot of the Steps. When the grey cloaks came in three bells early and one of them put his boots up on her cart, she stood on the gate wall beside Darrow, said \"Aye\" to every reason he gave her to go, and let the road shut: the first two names on that list, she said, rode up in her cart. In the court at dusk she stood at the end of the lay brothers' line while the list was read, and when Darrow's shoulder could not shut the wicket on a third grey cloak, hers went in where his had been and it shut.",
+  "last_seen_doing": "Stayed in the kitchen door while the House followed Wren's candle down the hall, and watched the flame from there.",
+  "now": "In the kitchen door of the infirmary hall on the night of the eve.",
+  "story_so_far": "The carter who drove Darrow and Hollis the last of the road north, and who brought the House word of the Confessors' list; she let the road shut rather than leave, and when Darrow's shoulder could not shut the wicket, hers did. In the week of the Grey Cot she went down the Steps for her oxen and came up the Last Hundred at dusk with a letter in blue wax for the Captain, carried inside her shirt rather than left overnight in the cage with the grey cloak who gave it her; she won an aye off him at name-the-load and put her stake beside his in the kitchen's book. Shown the frost on Ser Benedek Orrin's mouth, she said she had had that cold in her cart, and would not say when. On the eve she stayed in the kitchen door while the House followed Wren's candle down the hall.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
     "chapter": "01",
@@ -359,6 +359,12 @@
       "chapter": "02",
       "scene": "between-14",
       "evidence": "You get one a night"
+    },
+    {
+      "fact": "She alone stayed in the kitchen door and watched the flame lie down from there, the way you watch weather you have already been out in.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "the way you watch weather you have already been out in"
     }
   ],
   "relationships": [
@@ -467,6 +473,10 @@
     {
       "chapter": "02",
       "scene": "between-14"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

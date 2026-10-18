@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Came up the hall without a lamp, sent Wren to bed, would neither forbid nor permit the undercroft door, asked what the Captain would find and do and who would carry him up the stair; will call the House into the hall after the night bell, and asked whether he would like to tell it.",
-  "now": "At the undercroft door in the dark. She will call the House into the hall after the night bell to hear what the Captain found, where the lad lies, and has asked him whether he would like to be the one who tells it.",
-  "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung at dusk, so the valley heard what it always hears from the House, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate and let the Confessor read; she kept him waiting at the wicket for the bell as long as the law of guests allowed, and when his men came through and the bell rang late, she gave him the law's other half, that no name under it is taken down against its will. When Darrow gave his name at the bars, the Confessor thanked her for her candour, and she asked Darrow only whether the shoulder was hurt.",
+  "last_seen_doing": "Called the House into the hall after the night bell and left the telling to the Captain; sent the House to bed by name; showed an old key on a cord at her neck and told the Captain to ask for it when he can say what he would do at the bottom.",
+  "now": "At the undercroft door, an old key on a cord at her neck. She has told the Captain to ask her for it when he can say what he would do at the bottom of the stair.",
+  "story_so_far": "The Prior of Saint Ysolde's, who holds the House's law and its bell. When the grey cloaks came she kept the Confessor at the wicket as long as the law of guests allowed and gave him the law of names; at night she says the names of everyone under her roof in the chapel. When the Confessor came back to the bars to ask for the Mender, she answered him with a question. When the cold led to the undercroft door, whose key has passed from Prior to Prior unturned, she neither forbade nor permitted it; she called the House into the hall after the night bell and let the Captain tell it, and she wears an old key on a cord at her neck, to be asked for when he can say what he would do at the bottom.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
     "chapter": "02",
@@ -195,6 +195,24 @@
       "chapter": "02",
       "scene": "7",
       "evidence": "Would you like to be the one who tells them?"
+    },
+    {
+      "fact": "She gave the Captain the House and no other help in telling it.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "that was all the help she meant to give him"
+    },
+    {
+      "fact": "She wears a key on a cord at her neck, black and long and older than any on her ring.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "A key hung on it, black and long, older than any on her ring."
+    },
+    {
+      "fact": "She told the Captain to ask her for it when he can say what he would do at the bottom.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "When you can tell me what you'd do at the bottom"
     }
   ],
   "relationships": [
@@ -253,6 +271,10 @@
     {
       "chapter": "02",
       "scene": "7"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

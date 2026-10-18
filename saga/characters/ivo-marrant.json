@@ -30,7 +30,7 @@
   },
   "last_seen_doing": "Came to the bars at the hour bell, greeted the Captain first, named the frost on a sworn man's mouth Ember witchcraft before the House, asked for the Mender who keeps the far cots, and thanked the court when it looked at her.",
   "now": "Gone back down to the lower terrace after asking at the bars for the Mender who keeps the far cots; the House looked at her in front of him, and he thanked it.",
-  "story_so_far": "He led the grey cloaks up the Holloway and the Thousand Steps and came to the gate of Saint Ysolde's in the hour before dusk, five at the bars and the sixth at the winch-house, with the censer in his own hand. He had been told at the winch-house fire that the Faithless had gone down the far side a week since, and read his list anyway: he has read to empty beds before, he said, and finds it steadies the hand. He held his paper out for the wicket under the law of guests until the Prior could not refuse it without breaking that law; when the wicket opened a hand's width, two of his men came through, and Old Mercy rang late and stopped them a pace from the wounded. Mother Ione gave him the law's other half: no name under the bell is taken down against its will. He called her bell fine and a little slow on the rope, made his camp on the lower terrace, and called for the Captain of the Ninth to come down and kneel. The Captain came to the bars instead and gave his name; Marrant called him Captain and thanked the Prior for her candour.",
+  "story_so_far": "He led the grey cloaks up the Thousand Steps with a list of the Faithless, read the Captain's name first at the gate of Saint Ysolde's, and made his camp on the lower terrace when the Prior spoke the law of names; the Captain came to the bars and gave him his name. When Ser Benedek Orrin was found Hollowed, Marrant's word for it, Ember witchcraft, came up to the House with the lay brothers who carried the feast bread down; at the hour bell he came to the bars himself, asked for a moment with the Mender who keeps the far cots, and thanked the court when it turned to look at her. On the eve the House heard the Captain's account of the night against the Confessor's word.",
   "quote": {
     "text": "Bells grow tired.",
     "chapter": "01",
@@ -200,6 +200,11 @@
     {
       "chapter": "02",
       "scene": "6"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax",
+      "mention": true
     }
   ]
 }

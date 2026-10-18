@@ -340,7 +340,7 @@
           "at": "ch02:climax",
           "weight": "scene",
           "what": "The hall heard the Captain's account first (both doors barred at night and dawn, the nine keys where they hang, the far-lamp novice awake all night, the kitchen flour clean: nobody passed) and turned back from the Mender; at the climax the House weighs Marrant's ember witchcraft against a word it already has, not the other way round",
-          "status": "pending"
+          "status": "fired@ch02:climax"
         }
       ]
     },
@@ -491,7 +491,7 @@
           "at": "later",
           "weight": "scene",
           "what": "Darrow agreed with Maelis, in her cell, not to say in the hall that the black glass looks like a chip off a field-stone (it would give Marrant a better word than witchcraft; it clears her only when she can prove it). Fire where he keeps that before the House, or breaks it",
-          "status": "pending"
+          "status": "fired@ch02:climax"
         }
       ]
     },

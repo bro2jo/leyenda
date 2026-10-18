@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Came up from the far cots, said nothing; her hand went flat to a worn place on the door's frame, and she took it away when the Captain looked.",
-  "now": "At the undercroft door beside the Prior, saying nothing, her hand back inside her coat.",
-  "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
+  "last_seen_doing": "Stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; looked at the Captain's face when he kept the glass out of the hall; answered his question about the stair with one about the knee.",
+  "now": "At the undercroft door with the Prior, the Captain and Wren, having answered his question about the stair with a question about the knee.",
+  "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
     "chapter": "02",
@@ -255,6 +255,30 @@
       "chapter": "02",
       "scene": "7",
       "evidence": "the way a hand goes to a post it has leaned on in the dark"
+    },
+    {
+      "fact": "She stood at the foot of the Grey Cot where the whole House could see her; nobody had told her to.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "Maelis stood at the foot of the Grey Cot, where the whole House could see her"
+    },
+    {
+      "fact": "When the Captain kept the glass out of the hall, she was looking at his face and not the knee.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "for once she was looking at his face, not the knee"
+    },
+    {
+      "fact": "She did not sit on the stool the lay brother set behind her, and did not move it.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "Maelis did not sit on it. She did not move it, either."
+    },
+    {
+      "fact": "Asked whether she had been down the undercroft stair, she asked the Captain what the knee did this morning; it was not a no.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "\"What did the knee do this morning, Captain?\""
     }
   ],
   "relationships": [
@@ -381,6 +405,10 @@
     {
       "chapter": "02",
       "scene": "7"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

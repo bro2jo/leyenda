@@ -1084,3 +1084,114 @@ He looked at the knee, because she had made him.
 > Level 5 → 6 · **Kindled**
 > Vigor 9 → 10
 > XP 1,467 → 1,602
+
+## Climax — The Fourth Bell
+
+After the night bell the House came into the hall, every soul under Mother Ione's roof who could stand.
+
+They came in by both doors and stood where they could. The lay brothers lined the west wall in their aprons. The kitchen came up all together, the cook with her arms folded and the novice with flour to the elbows behind her, and Sister Pell came last in both her shawls, holding her hands in front of her the way a bell-ringer does at the end of a long day on the rope. Novices sat on the ends of empty cots. The men of the hall who could walk got up and leaned on the posts, and the ones who could not turned their heads on the pillow. Rae Thorne stood in the kitchen door with her hood down and came no further in.
+
+Maelis stood at the foot of the Grey Cot, where the whole House could see her, with her coat buttoned to the throat. Nobody had told her to stand there. Hollis sat beside her on the edge of his own cot with the lad's hand in his, and looked at no one.
+
+Darrow stood at the end of his cot. He had decided to stand for this and had not consulted the knee, which held anyway, and was warm, and seemed for once to be on his side.
+
+"The Captain has something to tell the House," the Prior said. Then she sat down by the brazier and folded her hands into her sleeves, and that was all the help she meant to give him.
+
+He had his first word ready. The lay brother who banked the fires got in ahead of it.
+
+"Begging the Mother's pardon." It was the one who had looked at the wall the day before and said every wall in the House sweats. He did not look at Darrow. He looked at the foot of the Grey Cot. "The Confessor says it was Ember-work. Ember-work wants a hand to do it. That's all anyone's asking, Captain. Whose?"
+
+Every head in the hall went the way his had gone.
+
+`[RESOLVE · DC 13]` d20 **4** +0 resolve +3 proficiency +3 Warden's Eye III +3 chapter 2 Triumph = **13** — *Success*
+
+Darrow nearly answered him the way you answer a man who carries the enemy's word into your camp. Then he saw the hands. The lay brother had them knotted in his apron with the knuckles gone white, and he had put his question to the Mender's back, not her face, because he could not have put it to her face. He was not Marrant's man. He was frightened, and he was asking to be told it was nobody here.
+
+"Nobody's," Darrow said. "You've had that from me already. Nobody passed. The far lamp was awake all night, the kitchen's flour was clean, both doors were barred, and every key hung where it hangs." They knew it; he watched them know it. "The Confessor's word has been in this House since the feast. Mine's been here nearly as long. Here's the rest of it. Wren."
+
+Wren had been got out of bed for this, and had come with the ledger open across her arm and the candle in its cup in her other hand. Every face in the hall turned to her, and for a moment she looked down at the ledger as if it might help, and it did.
+
+"Bells rung the night the lad was taken, between the night bell and the dawn bell," she said. "Eight. Sister Pell rang every one."
+
+"Every one," said Sister Pell, from her shawls. "I don't sleep. I ring."
+
+"Ser Orrin says his oath at every bell. You've all heard him." Wren turned the page and did not look at the Grey Cot. "The far-lamp novice was awake that night. Technically she always was; she only said she slept." On the end of an empty cot the night novice went scarlet and did not deny it. "So I asked her what she heard at the bells."
+
+The night novice spoke to her hands. "The first bell, and the second, and the third. He says it in his sleep. I heard every word." She swallowed. "At the fourth he didn't. I thought he'd gone properly to sleep at last. I was glad for him."
+
+"Oaths said: three," said Wren. "So it was between the third bell and the fourth. Nobody came in at a door between the third bell and the fourth. I asked that too."
+
+Beside the Grey Cot, Hollis had shut his eyes. He did not open them.
+
+"If nobody came in at a door," said the cook, reasonably, "then how?"
+
+Wren lit the candle at the brazier and held it up, and Darrow looked at the hall over the top of it.
+
+"There's no wind tonight," he said. "Go out and look at the springs, if you like. The steam's standing straight up like a post. Whatever moves in this hall tonight, it isn't a draught."
+
+Wren went down on her knees at the head of the Grey Cot, as she had at dusk, and held the flame low to the east wall. It stood straight. She moved it along, past the first cot and the second. At the third it bent.
+
+The hall leaned in.
+
+She went on along the wall on her knees, and the House came after her without anyone telling it to, the lay brothers off the wall and the novices off the cots and Darrow with them, slow on the flags, until the whole of it was walking down the east side of its own hall behind a girl with a candle. At the last cot the flame was bent nearly flat. At the linen press it lay down, and at the door behind the press it lay flat toward the gap under the iron and went thin and blue at the root.
+
+Nobody said anything. Only Rae Thorne had stayed in the kitchen door. She watched the flame from there, the way you watch weather you have already been out in.
+
+"Doors into the hall," Wren said, to all of them. "Three."
+
+"That's the undercroft." The lay brother from the fire had his hands out of his apron now. "That's been shut since—"
+
+"Since before you could count," said Wren. "I know. I could count early."
+
+Somebody laughed, the way a hall laughs when it has been frightened all week and is let off. Darrow watched the heads, as he had watched them all week, and this time they did not go back up the row to the foot of the Grey Cot. They stayed on the door.
+
+The novice with flour to the elbows put her hand up like a child at lessons.
+
+"And the glass, Captain? The black glass the Mender took out of his mouth. What is it?"
+
+He knew what it looked like. He could feel how well that would sit in a frightened House, and what Marrant would make of it by the dawn bell. Up the row by the Grey Cot, Maelis was looking at him, and for once she was looking at his face, not the knee.
+
+"The Mender found it," he said. "She'll tell you what it is when she knows. Not before."
+
+Maelis held his eye a moment longer. Then she turned to the lad and put two fingers under his jaw, as if nothing had been said in the hall at all.
+
+The novice with flour to the elbows looked from the door to Darrow and back, and said the thing that made it the House's and not his.
+
+"We'll lay flour at that door tonight," she said. "Like the kitchen. Then in the morning we'll know."
+
+"I'll ring the hours," said Sister Pell, "with my eye on it."
+
+The lay brother from the fire went back up the row without a word, took a stool from the end of the row, carried it to the foot of the Grey Cot, set it behind the Mender, and went back to his fire. Maelis did not sit on it. She did not move it, either.
+
+The Prior sent the House to bed a few at a time, by name, and it went. When the hall was down to its cots and its lamps, there were five of them at the door below: the Prior, the Mender, Wren with her candle gone out, Darrow, and Hollis's voice from up the row, which carried, and which counted.
+
+The House had walked the length of its hall behind him. If he asked for the door now, with that still warm at his back, the Prior would open it. He could see she knew it too.
+
+`[RESOLVE · DC 12]` d20 **6** +0 resolve +3 proficiency +2 The Mender's Patience II +3 chapter 2 Triumph = **14** — *Success*
+
+He did not ask. The knee had been warm all evening and was quiet now, and he had learned this autumn what its quiet was worth. He put his hand flat on the iron instead, and it was cold, and he left it there until he was sure he would not say anything he would have to take back.
+
+"I could go," Wren said. "I'm light. I can count steps in the dark. I've done it on the Steps for a bet—"
+
+"Don't you send that girl down a hole, Captain," said Hollis from the Grey Cot, without opening his eyes.
+
+Mother Ione drew a cord out from the neck of her habit. A key hung on it, black and long, older than any on her ring.
+
+"Keys," said Wren under her breath. "Ten."
+
+"When you can tell me what you'd do at the bottom," the Prior said, "ask me for it. I'll be awake." She put the key back where it lived.
+
+Maelis had said nothing. Darrow looked at the frame a hand's width left of the lock, the place worn pale and smooth, and then at her.
+
+"Have you been down there?"
+
+"What did the knee do this morning, Captain?"
+
+It was not an answer. It was not a no, either. She held his eye and let him have that much.
+
+Behind them the novice with flour to the elbows came down the row with a basin, knelt at the gap under the door, and laid a skin of flour across the flags, white and smooth, from the iron to the foot of the linen press.
+
+**What does Darrow do?**
+1. **Ask Maelis to take him down herself, and go on her terms: one step at a time, a hand on Wren's shoulder, her right to say stop.** *(She may still say no.)*
+2. **Send Wren down with a lamp.** *(Hollis disapproves.)*
+3. **Ask Mother Ione for the key, and wait.** *(Hollis approves.)*

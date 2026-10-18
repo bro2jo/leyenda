@@ -24,13 +24,13 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
+    "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "From the Grey Cot, said the candle's lean was no draught: draughts come at you.",
-  "now": "At the Grey Cot with the lad's hand, after the candle went by.",
-  "story_so_far": "At Harrow Ford he brought the writ from command that sent the Sixth and the Ninth into the river, and when Darrow pointed at the carts and children behind the clan line he answered that the clans were stupid and told him to mount up. He came back from Harrow Ford on a cart, missing his right leg above the knee. On the five days of carts and barge back through the Lowmarch, with the Crown's heralds reading the proclamation of the Faithless from every bell-house, he cursed everything from the surgeon to himself and then went quiet. He has had the cot next to Darrow's at Saint Ysolde's since, mostly drunk through the weeks before the Binding, and now six grey cloaks and a censer are on the Holloway below with his name second on their list. When they came to the gate he had himself carried up to the gatehouse window to see the man who wanted him, heard his name read second, looked at the wax on the writ and away, and when the Captain gave his name at the bars, told him he had seen him move at it, that nobody else had, and called him Captain.",
+  "last_seen_doing": "Sat at the Grey Cot with the lad's hand and shut his eyes when the night novice told of the fourth bell; told the Captain not to send Wren down a hole.",
+  "now": "At the Grey Cot with the lad's hand, his eyes shut since he heard of the fourth bell.",
+  "story_so_far": "At Harrow Ford he brought the writ that sent the Sixth and the Ninth into the river, and came back from it missing his right leg above the knee; he has had the cot next to Darrow's at Saint Ysolde's since, with his name second on the Confessor's list. When the lad of his Sixth, Ser Benedek Orrin, was found Hollowed on the feast morning, Hollis would not let him be carried to the far cots, and has sat beside the Grey Cot with the lad's hand in his ever since. He watched a letter in blue wax burn and left the hall for the first time; in the cloister he asked the Captain whether the kind lies he told the lad had sent him wherever he has gone, and asked him to sit up a while. When the House heard that the lad stopped saying his oath between the third bell and the fourth, Hollis shut his eyes, and when Wren offered to go down the undercroft stair he told the Captain not to send that girl down a hole.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
     "chapter": "02",
@@ -300,6 +300,18 @@
       "chapter": "02",
       "scene": "7",
       "evidence": "Draughts come at you."
+    },
+    {
+      "fact": "When the night novice told how the lad said his oath at three bells and not the fourth, he shut his eyes and did not open them.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "Hollis had shut his eyes. He did not open them."
+    },
+    {
+      "fact": "When Wren offered to go down the stair, he told the Captain not to send her down a hole.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "Don't you send that girl down a hole, Captain"
     }
   ],
   "relationships": [
@@ -461,6 +473,10 @@
     {
       "chapter": "02",
       "scene": "7"
+    },
+    {
+      "chapter": "02",
+      "scene": "climax"
     }
   ]
 }

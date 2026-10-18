@@ -5,7 +5,7 @@
     "chapter": 2,
     "beat": "b1.2",
     "next_scene": 8,
-    "stage": "scene",
+    "stage": "climax",
     "last_written": "ch02:s7",
     "rank_on_page": "Kindled"
   },
@@ -440,5 +440,18 @@
       "title": "Quickstep",
       "bound": "2026-10-14"
     }
-  ]
+  ],
+  "open_choice": {
+    "chapter": 2,
+    "scene": "climax",
+    "ask": "What does Darrow do?",
+    "options": [
+      "Ask Maelis to take him down herself, and go on her terms: one step at a time, a hand on Wren's shoulder, her right to say stop.",
+      "Send Wren down with a lamp.",
+      "Ask Mother Ione for the key, and wait."
+    ],
+    "default": 3,
+    "opened": "2026-10-17",
+    "carries": 2
+  }
 }
