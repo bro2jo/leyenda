@@ -3652,7 +3652,7 @@ def format_lines(kind, slot=None):
     if kind == "scene":
         out = ["heading: `### Scene N — Title` appended to the chapter file (N is the key's number)",
                "a die, only with stakes: `python3 engine/darrow.py roll chNN-sK-<slug> --stat <might|vigor|finesse|resolve> --dc <8–20> [--prof] [--art <id>] [--adv|--dis]`; paste its first line as printed, on its own line, before the outcome",
-               "the Reckoning box at the end, only when sync reported a change: `> ⟦ THE RECKONING ⟧` then one line per change (`> Might 11 → 12`, `> The Tether: **a name**.`, `> Rank: **Kindled**.`)"]
+               "the Reckoning box at the end, only when sync reported a change: `> ⟦ THE RECKONING ⟧` then one line per change (`> Might 11 → 12`, `> Level 5 → 6 · Kindled`, `> The Tether: **a name**.`, `> Rank: **Kindled**.`)"]
         if slot and slot.get("micro"):
             out.append("ends on the small choice, exactly: `**What does Darrow say?**` (or do?) then `1. **…**` `2. **…**` `3. **…**`, one line each, nothing after it")
         return out

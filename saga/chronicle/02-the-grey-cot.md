@@ -1081,6 +1081,6 @@ He looked at the knee, because she had made him.
 "Here is what I'll do," the Prior said. "After the night bell I'll call the House into this hall, every soul under my roof who can stand, and they'll hear what you've found, here, where the lad lies." She turned her pale eyes from the Grey Cot to him. "You gave your name at my gate without asking me. So I'm asking you this one. Would you like to be the one who tells them?"
 
 > ⟦ THE RECKONING ⟧
-> Level 6 · **Kindled**
+> Level 5 → 6 · **Kindled**
 > Vigor 9 → 10
 > XP 1,467 → 1,602
