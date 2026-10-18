@@ -22,8 +22,10 @@ Commands (run from the repo root):
                                refused for dates before config.json -> food_itemised_from. rm ID: DATE#N (from food list)
   ex add 'JSON'                append exercise-log rows (list or object)
   sport add 'JSON'             append sport-log rows
-  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll]
-                               prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye)
+  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
+                               prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
+                               --reroll spends one Inspiration on a second cast (--paid: the *[Inspiration]* option that offered it already spent it);
+                               at the cap a climax check that fails outright rerolls by itself (rules.json -> inspiration.auto_reroll_at_cap): both lines go on the page
   odds [--stat S] [--prof] [--art ID ...] [--chapter N | --tier] [--adv|--dis] [--bonus N] [--dc N | --target P] [--json]
                                what a DC means for him: the chance of a full success, a partial and an outright failure with the
                                modifiers roll would carry (DC 8-20, or one DC); --target P names the DC nearest that chance of a
@@ -2068,25 +2070,16 @@ def cmd_odds(args, cfg, rules):
         print(f"use DC {target_dc} for a {args.target:.0%} chance of a full success")
 
 
-def cmd_roll(args, cfg, rules):
+def spend_inspiration(st, reason):
+    sp = read_csv("spends")
+    sp.append({"date": st["asof"].isoformat(), "what": "inspiration", "reason": reason})
+    write_csv("spends", sp)
+
+
+def cast(args, mods, label, note):
+    """Cast one d20 under `label` with these modifiers, record it in rolls.csv and print its dice line (line 1 is the
+    chapter's, in the style guide's exact form; paste it as it is). Returns the result."""
     rows = read_csv("rolls")
-    label = args.label + ("#reroll" if args.reroll else "")
-    prior = next((r for r in rows if r["label"] == label), None)
-    if prior:
-        print(f"ALREADY ROLLED (no takebacks): {prior['label']} → d20 {prior['d20']}"
-              f"{'/' + prior['d20_b'] if prior['d20_b'] else ''} {prior['mods']} = {prior['total']} vs DC {prior['dc']} → {prior['result']}")
-        return
-    st = compute(cfg, rules)
-    s = st["sheet"]
-    if args.reroll:
-        if not any(r["label"] == args.label for r in rows):
-            sys.exit("nothing to reroll under that label")
-        if s["inspiration"] < 1:
-            sys.exit("no Inspiration to spend")
-        sp = read_csv("spends")
-        sp.append({"date": st["asof"].isoformat(), "what": "inspiration", "reason": f"reroll {args.label}"})
-        write_csv("spends", sp)
-    mods = roll_mods(args, st, cfg, rules)
     a = secrets.randbelow(20) + 1
     b = secrets.randbelow(20) + 1 if (args.adv or args.dis) else None
     mode = "adv" if args.adv else "dis" if args.dis else ""
@@ -2096,23 +2089,55 @@ def cmd_roll(args, cfg, rules):
     mod_txt = " ".join(f"{m:+d} {n}" for n, m in mods)
     rows.append({"when": dt.datetime.now().isoformat(timespec="seconds"), "label": label, "stat": args.stat or "",
                  "dc": args.dc, "d20": a, "d20_b": b or "", "mode": mode, "mods": mod_txt, "total": total,
-                 "result": result, "note": args.note or ""})
+                 "result": result, "note": note or ""})
     write_csv("rolls", rows)
     shown = f"{a}/{b} ({mode})" if b else f"{a}"
     pretty = {"CRITICAL SUCCESS": "Critical success", "CRITICAL FAILURE": "Critical failure", "SUCCESS": "Success",
               "PARTIAL (success at a cost)": "Partial: success at a cost", "FAILURE": "Failure"}[result]
-    # line 1 is the chapter's dice line, in the style guide's exact form; paste it as it is
     print(f"`[{(args.stat or 'flat').upper()} · DC {args.dc}]` d20 **{shown}** {mod_txt} = **{total}** — *{pretty}*")
     print(f"(roll {label}: {result}; recorded in saga/state/rolls.csv)")
+    return result
+
+
+def cmd_roll(args, cfg, rules):
+    rows = read_csv("rolls")
+    label = args.label + ("#reroll" if args.reroll else "")
+    prior = next((r for r in rows if r["label"] == label), None)
+    if prior:
+        print(f"ALREADY ROLLED (no takebacks): {prior['label']} → d20 {prior['d20']}"
+              f"{'/' + prior['d20_b'] if prior['d20_b'] else ''} {prior['mods']} = {prior['total']} vs DC {prior['dc']} → {prior['result']}")
+        return
+    if args.paid and not args.reroll:
+        sys.exit("--paid goes with --reroll: the choice that offered the reroll spent the Inspiration")
+    st = compute(cfg, rules)
+    s = st["sheet"]
+    note = args.note or ""
+    if args.reroll:
+        if not any(r["label"] == args.label for r in rows):
+            sys.exit("nothing to reroll under that label")
+        if args.paid:  # an *[Inspiration]* option in the choice: saga.py choose spent it already
+            note = (note + "; " if note else "") + "paid by the choice"
+        else:
+            if s["inspiration"] < 1:
+                sys.exit("no Inspiration to spend")
+            spend_inspiration(st, f"reroll {args.label}")
+    mods = roll_mods(args, st, cfg, rules)
+    result = cast(args, mods, label, note)
+    # at the cap nothing new can be earned, so a climax check that fails outright spends one on a second cast by itself
+    # (rules.json -> inspiration.auto_reroll_at_cap); both dice lines go on the page and the Reckoning box shows the spend
+    cap = int(s.get("inspiration_cap") or rules["inspiration"]["cap"])
+    if (args.chapter and not args.reroll and result in ("FAILURE", "CRITICAL FAILURE") and rules["inspiration"].get("auto_reroll_at_cap")
+            and int(s["inspiration"]) >= cap and not any(r["label"] == label + "#reroll" for r in read_csv("rolls"))):
+        spend_inspiration(st, f"auto at cap: {args.label}")
+        cast(args, mods, label + "#reroll", "Inspiration spent at the cap")
+        print(f"Inspiration spent at the cap: {s['inspiration']} → {int(s['inspiration']) - 1} (both dice lines go on the page; the Reckoning box shows the spend)")
 
 
 def cmd_inspire(args, cfg, rules):
     st = compute(cfg, rules)
     if st["sheet"]["inspiration"] < 1:
         sys.exit("no Inspiration to spend")
-    sp = read_csv("spends")
-    sp.append({"date": st["asof"].isoformat(), "what": "inspiration", "reason": args.reason})
-    write_csv("spends", sp)
+    spend_inspiration(st, args.reason)
     print(f"Inspiration spent: {args.reason} (left: {st['sheet']['inspiration'] - 1})")
 
 
@@ -2590,7 +2615,7 @@ def main():
     g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
     s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append", help="add an Art's rank by its rules.json id, e.g. --art wardens_eye for an Insight check")
     s.add_argument("--prof", action="store_true"); s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int)
-    s.add_argument("--reroll", action="store_true"); s.add_argument("--note")
+    s.add_argument("--reroll", action="store_true"); s.add_argument("--paid", action="store_true", help="with --reroll: the choice that offered the reroll spent the Inspiration (saga.py choose); no second spend"); s.add_argument("--note")
     s = sub.add_parser("odds"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int); s.add_argument("--target", type=float, help="the chance of a full success you want, e.g. 0.8: prints the DC nearest it")
     g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
     s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append"); s.add_argument("--prof", action="store_true")

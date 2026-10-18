@@ -71,7 +71,9 @@ The records (engine/records.py; design.md §11): the story is kept as one event 
                                         and the GM note written; the slot done, a micro or the climax choice opened, due items fired, the
                                         Annals marked spoken; world.json, the character files, the Codex, the threads and NOW.md rebuilt; check
   choose --option K [--by darrow|bearing] [--which micro|climax] [--text …] 'ENTRY' [--witnessed a,b] [--pending]
-                                        his answer in one step: the ledger entry, the choices[] row, the choice closed (a climax's `### Choice` block follows)
+                                        his answer in one step: the ledger entry, the choices[] row, the choice closed (a climax's `### Choice` block follows);
+                                        an option tagged *[Inspiration]* spends one (refused while he holds none; never the default); the entry keeps
+                                        the options he declined, and the brief names the last two
   project [--dry]                       rebuild every projection from the records (or list what would change)
   history [--person ID] [--thread N] [--place ID] [--chapter N] [--last N] [--gm]   the records as a timeline
   threads [--id N] [--all] | --id N --set k=v … | --new 'JSON'   the threads as data (GM)
@@ -1360,6 +1362,40 @@ def parse_kv(pairs):
 
 
 # ---------------------------------------------------------------- commands: digest & due
+INSPIRATION_RE = re.compile(r"\[\s*inspiration\s*\]", re.I)  # an option's gate: `*[Inspiration]*` costs one when he picks it
+
+
+def inspiration_held():
+    """(held, cap) from the sheet (saga/state/darrow.json); (0, 4) when it cannot be read."""
+    try:
+        s = load_json(P["sheet"])
+        return int(s.get("inspiration") or 0), int(s.get("inspiration_cap") or 4)
+    except (OSError, ValueError, json.JSONDecodeError, TypeError):
+        return 0, 4
+
+
+def costs_inspiration(option_text):
+    return bool(INSPIRATION_RE.search(str(option_text or "")))
+
+
+def inspiration_default_problem(options, default, label):
+    """An *[Inspiration]* option is his to pick and costs one, so it is never the default taken for him."""
+    try:
+        if default is not None and costs_inspiration(options[int(default) - 1]):
+            return f"{label}: the default (option {default}) costs Inspiration; the default is never an *[Inspiration]* option (it is taken for him)"
+    except (IndexError, ValueError, TypeError):
+        return None
+    return None
+
+
+def inspiration_line(options):
+    """The line the writer needs beside a choice that offers an *[Inspiration]* option: whether it is open or struck."""
+    if not any(costs_inspiration(o) for o in options or []):
+        return None
+    held, cap = inspiration_held()
+    return f"  Inspiration held: {held} of {cap}: the *[Inspiration]* option is {'open (`choose` spends it)' if held else 'struck through: he holds none'}"
+
+
 def open_choice_lines(plan, cap=170):
     """The climax choice still open, if one is (plan.open_choice: it survives `plan chapter open`, so the default it
     resolves to is the climax's own, never the next chapter's)."""
@@ -1368,6 +1404,9 @@ def open_choice_lines(plan, cap=170):
         return []
     lines = [f"OPEN CHOICE (chapter {oc.get('chapter')} climax; carries {oc.get('carries', 2)} scenes into the next chapter, then its default): {short(oc.get('ask'), 100)}"]
     lines.append("  " + short(" / ".join(f"{i}. {o}" for i, o in enumerate(oc.get("options", []), 1)), cap) + f" · default {oc.get('default')} · answer: `saga.py choose --option K …`")
+    il = inspiration_line(oc.get("options"))
+    if il:
+        lines.append(il)
     return lines
 
 
@@ -1980,6 +2019,9 @@ def cmd_plan(args):
                 die("a climax choice has 2–3 options, each the option's text as the page has it")
             if c.get("default") not in range(1, len(opts) + 1):
                 die(f"default must be an option number (1–{len(opts)}): the one the highest-approval companion present would pick")
+            p_i = inspiration_default_problem(opts, c.get("default"), "the climax choice")
+            if p_i:
+                die(p_i)
             if plan["position"].get("stage") not in ("climax", "choice", "transition"):
                 die(f"the stage is {plan['position'].get('stage')}: a climax choice opens once the climax is written (`plan set stage=climax` first)")
             plan["open_choice"] = {"chapter": int(plan["chapter"].get("number")), "scene": "climax", "ask": c.get("ask") or "What does Darrow do?",
@@ -2013,6 +2055,8 @@ def cmd_plan(args):
             print(f"  {i}. {o}" + ("  (default)" if c.get("default") == i else ""))
         if c.get("default") is not None:
             print(f"  default: option {c['default']} (taken by the Bearing if the choice is still open at the second close of the next chapter)")
+        held_i, cap_i = inspiration_held()
+        print(f"  Inspiration held: {held_i} of {cap_i} (an `*[Inspiration]*` option is offered open while he holds one, struck through at none; never the default)")
         print("  world moves left: " + (" / ".join(ch.get("world_moves") or []) or "none"))
         for o in owed_moves(plan):
             print(f"  world move owed (from skipped slot {o['n']}): {o['world_move']}")
@@ -2174,6 +2218,11 @@ def cmd_plan(args):
         no_turn = [s.get("n") for s in ordered["slots"] if not str(s.get("turn") or "").strip()]
         if no_turn:
             print(f"⚠ slots {no_turn} have no turn ({TURN_HINT}): `plan slot N turn=\"…\"` before their day closes")
+        cl_ = ordered.get("climax") or {}
+        p_i = [p for p in [inspiration_default_problem(cl_.get("options") or [], cl_.get("default"), "climax")]
+               + [inspiration_default_problem((s.get("micro") or {}).get("options") or [], (s.get("micro") or {}).get("default"), f"slot {s.get('n')} micro") for s in ordered["slots"] if s.get("micro")] if p]
+        if p_i:
+            die("refusing the plan:\n  " + "\n  ".join(p_i))
         old = plan.get("chapter", {})  # the outgoing chapter: read before anything replaces it
         ordered["previous_devices"] = sorted(device_kinds(old.get("slots", []), plan.get("quests", {})))
         clash = sorted(device_kinds(ordered["slots"], plan.get("quests", {})) & set(ordered["previous_devices"]))
@@ -3364,6 +3413,16 @@ def cmd_check(args):
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
         notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")
+    # an *[Inspiration]* option spends through `choose`, which marks its entry: a choice's spend with no such entry behind it is a note
+    sp_path = ROOT / "saga/state/spends.csv"
+    if sp_path.exists():
+        try:
+            choice_spends = sum(1 for r in read_csv(sp_path) if str(r.get("reason", "")).startswith("choice "))
+            marked = sum(1 for e in ledger.get("entries", []) if e.get("inspiration"))
+            if choice_spends > marked:
+                notes.append(f"{choice_spends - marked} Inspiration spend(s) for a choice with no ledger entry marked `inspiration`: a `choose` that stopped after spending; add its entry, or note the spend in spends.csv")
+        except (OSError, ValueError):
+            pass
     axes_touched = set()
     for s in micro_days:
         m_ = s.get("micro") or {}
@@ -3384,11 +3443,19 @@ def cmd_check(args):
     cl = ch.get("climax") or {}
     if cl.get("default") is not None and cl.get("default") not in range(1, len(cl.get("options") or []) + 1):
         probs.append(f"chapter.climax.default {cl.get('default')!r} is not an option number (1–{len(cl.get('options') or [])})")
+    # an *[Inspiration]* option is his to pick (it costs one): never a default, at the climax or in a slot's micro
+    for p_i in [inspiration_default_problem(cl.get("options") or [], cl.get("default"), "chapter.climax")] + \
+               [inspiration_default_problem((s.get("micro") or {}).get("options") or [], (s.get("micro") or {}).get("default"), f"slot {s.get('n')} micro") for s in slots if s.get("micro")]:
+        if p_i:
+            probs.append(p_i)
     oc = plan.get("open_choice")
     if oc:
         opts_ = oc.get("options") or []
         if not isinstance(opts_, list) or not 2 <= len(opts_) <= 3 or oc.get("default") not in range(1, len(opts_) + 1):
             probs.append("open_choice needs 2–3 options and a default among them")
+        p_i = inspiration_default_problem(opts_ if isinstance(opts_, list) else [], oc.get("default"), "open_choice")
+        if p_i:
+            probs.append(p_i)
         carries = int(oc.get("carries") or 2)
         if int(pos.get("chapter", 0)) > int(oc.get("chapter", 0)) + 1:
             probs.append(f"the climax choice of chapter {oc.get('chapter')} is still open two chapters on: it resolves to its default, option {oc.get('default')}, by bearing (`saga.py choose --by bearing …`)")
@@ -3727,7 +3794,7 @@ def format_lines(kind, slot=None):
     if kind == "climax":
         return ["heading: `## Climax — Title`; 900–1,800 words, the space on the decision and its cost",
                 "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … --dc … [--prof] [--art <id>] --chapter N`; each first line pasted as printed",
-                "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`), struck through if unmet, who approves in italics",
+                "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`, `*[Inspiration]*` for a bold way or a reroll that costs one), struck through if unmet, who approves in italics; the default never carries `*[Inspiration]*`",
                 "the Reckoning box before the choice if sync reported a change"]
     if kind == "choice":
         return ["heading: `### Choice — Title` appended to the climax's chapter file; 100–250 words: the moment the choice lands, companions reacting in voice by their under-pressure lines; approval shows in what they say, never as numbers",
@@ -3878,6 +3945,8 @@ def cmd_brief(args):
         L.append("checks: " + ("; ".join(c.get("checks") or []) or "none planned"))
         for i, o in enumerate(c.get("options") or [], 1):
             L.append(f"  option {i}: {o}" + ("  (default)" if c.get("default") == i else ""))
+        held_i, cap_i = inspiration_held()
+        L.append(f"Inspiration held: {held_i} of {cap_i}: an option tagged `*[Inspiration]*` (a bold way, or the reroll of a check that failed here) is offered open while he holds one and struck through at none; never the default; `saga.py choose` spends it, and a reroll is cast in the Choice block with `--reroll --paid`")
         rows = chapter_rows()
         frozen = rows.get(ch)
         L.append(f"the tier: {frozen.get('tier') + ' (frozen by chapter-close; roll with --chapter ' + str(ch) + ')' if frozen else 'NOT FROZEN YET: `darrow.py chapter-close --date <Saturday>` first; the dice read the frozen tier'}")
@@ -3914,6 +3983,8 @@ def cmd_brief(args):
         L.append(f"OPEN small choice from scene {om.get('scene')} ({om.get('ask')}): if still unanswered, Darrow answers for himself with its default, option {om.get('default')} (`saga.py choose --by bearing '<entry>'`), said in one Ledger line, and the consequence opens this block in a clause")
     for l in open_choice_lines(plan):
         L.append(l)
+    for e in [e for e in ledger.get("entries", []) if e.get("declined")][-2:]:
+        L.append(f"declined lately ({e['id']}, {short(e.get('chose'), 60)}): " + " / ".join(short(x, 70) for x in e["declined"]) + " · a line may notice the road not taken, never explain it")
     ac = plan.get("answered_choice")
     if ac and mode != "choice":
         L.append(f"ANSWERED climax choice of chapter {ac['chapter']} (option {ac['option']}: {short(ac.get('text'), 100)}) still waits for its `### Choice` block: `saga.py brief --choice`")
@@ -4284,6 +4355,9 @@ def cmd_record(args):
         opts = c.get("options") or []
         if not 2 <= len(opts) <= 3 or c.get("default") not in range(1, len(opts) + 1):
             die("the climax's choice needs 2–3 options and a default among them")
+        p_i = inspiration_default_problem(opts, c.get("default"), "the climax's choice")
+        if p_i:
+            die(p_i)
         oc = plan.get("open_choice") or {}
         if ch != int(pos["chapter"]):  # --force on an older chapter's climax: the plan has moved on, so only a still-open choice's wording follows the page
             if int(oc.get("chapter", -1)) == ch:
@@ -4529,6 +4603,13 @@ def cmd_choose(args):
         die("pass --option K, or --by bearing to take the planned default")
     if opt not in range(1, len(opts) + 1):
         die(f"option {opt} is not one of the {len(opts)} options: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)))
+    costs = costs_inspiration(opts[opt - 1])
+    if costs:  # an *[Inspiration]* option: his to pick while he holds one; never taken for him
+        if args.by == "bearing":
+            die("the default never costs Inspiration: an *[Inspiration]* option is his to pick, not taken for him")
+        held, cap = inspiration_held()
+        if held < 1:
+            die(f"option {opt} costs Inspiration and he holds none (0 of {cap}): on the page it is struck through; pick another option")
     if not args.entry:
         die("the ledger entry JSON is required (one terse entry, design §2): {\"id\": \"cNN.n\", \"made\": {…}, \"chose\": …, \"now\": {…}, \"due\": […]}")
     try:
@@ -4540,6 +4621,21 @@ def cmd_choose(args):
     made.setdefault("chapter", chapter if which == "micro" else int(oc.get("chapter", chapter)))
     made.setdefault("scene", str(om.get("scene")) if which == "micro" else "climax")
     made.setdefault("date", today_local().isoformat())
+    entry["declined"] = [o for i, o in enumerate(opts, 1) if i != opt]  # the roads not taken: a later line may notice one
+    if costs:
+        entry["inspiration"] = True
+        # the entry is proved before the point is spent, so a spend never goes without its entry
+        probs = validate_entry(json.loads(json.dumps(entry)), st.ledger, plan, bearing=st.bearing, world=world, pending=args.pending)
+        probs += [f"--witnessed {w}: not in plan.json companions or companions_to_come" for w in (args.witnessed or "").split(",")
+                  if w.strip() and w.strip() not in plan.get("companions", {}) and w.strip() not in plan.get("companions_to_come", {})]
+        if probs:
+            die("refusing the entry (nothing spent):\n  " + "\n  ".join(probs))
+        r = subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "inspire", "--reason", f"choice {ch2(int(made['chapter']))} {which} option {opt}"],
+                           cwd=ROOT, capture_output=True, text=True)
+        if r.returncode:
+            die("the spend failed, nothing written: " + (r.stdout + r.stderr).strip())
+        print((r.stdout or "").strip())
+        subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "sync"], cwd=ROOT, capture_output=True, text=True)  # the sheet shows the spend
     ordered = add_entry(st, entry, args.witnessed, args.pending, False)
     row = {"chapter": int(made["chapter"]), "scene": str(made["scene"]), "kind": which, "option": int(opt), "text": args.text or opts[opt - 1],
            "date": today_local().isoformat(), "ledger": ordered["id"], "by": args.by}

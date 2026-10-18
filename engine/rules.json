@@ -307,10 +307,11 @@
     ]
   },
   "inspiration": {
-    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), and every level gained from per_level_from on (per_level each); spent with `darrow.py inspire`.",
+    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), and every level gained from per_level_from on (per_level each). Spent by him: an option tagged *[Inspiration]* at a climax or a small choice (saga.py choose spends it; the default never carries one), or `darrow.py roll --reroll`. auto_reroll_at_cap: when he holds the cap and a climax check fails outright, roll spends one and casts again by itself, so nothing earned at the cap is wasted.",
     "cap": 4,
     "per_level": 1,
-    "per_level_from": 5
+    "per_level_from": 5,
+    "auto_reroll_at_cap": true
   },
   "tether": {
     "_about": "The Tether: time together on purpose, logged as daily_log.csv -> together=Y (nothing else about it is recorded, and it is never scored). Its stage is the count of such days against `stages`, like an Art's ranks, and it only ever climbs: a quiet week is a thread at rest, never a thread frayed. No XP, no temper. The sheet shows it from stage I; each stage unlocks one planned scene (saga/bible/_gm/arc.md -> rae.tether). Her regard is story-only and moves by choices alone.",

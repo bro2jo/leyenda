@@ -214,16 +214,35 @@ def main():
             skip(f"the day close and the scene: the live chapter is at stage {pos.get('stage')} with {len(open_slots)} open slot(s)")
 
         # the climax: recorded with its choice; the choice survives the chapter open; the answer and its Choice block
+        # a climax choice carried from the last chapter (most weeks, right after the checkpoint): the copy settles it by its
+        # default, the way the second close would, so the chapter flow below can run
+        oc_live = plan.get("open_choice")
+        if pos.get("stage") == "scene" and oc_live and not plan.get("answered_choice"):
+            oc_ch = int(oc_live.get("chapter"))
+            settle = {"id": f"c{oc_ch:02d}.980", "chose": "Answered for himself with the default (self-test).", "now": {}, "due": []}
+            code, out = run(saga + ["choose", "--by", "bearing", "--which", "climax", json.dumps(settle)], tmp)
+            check(code == 0 and f"option {oc_live.get('default')} by bearing" in out, "a carried climax choice resolves to its default by the Bearing", out[-400:])
+            oc_file = next(iter(sorted(tmp.glob(f"saga/chronicle/{oc_ch:02d}-*.md"))), None)
+            if code == 0 and oc_file:
+                with open(oc_file, "a", encoding="utf-8") as f:
+                    f.write("\n### Choice — Settled by the Self-Test\n\nHe let the matter stand as it was, and the House went on with its night.\n")
+                code, out = run(saga + ["record", json.dumps({"key": f"ch{oc_ch:02d}:choice", "last_beat": "He let the matter stand.", "people": [{"id": "darrow", "did": "Let the matter stand."}]})], tmp)
+                check(code == 0 and "ok:" in out, "the settled choice's block records into its own chapter", out[-500:])
+            plan = jload(tmp / "saga/state/_gm/plan.json")
+            pos = plan["position"]
         has_climax = any(l.startswith("## Climax") for l in chapter.read_text(encoding="utf-8").splitlines())
         if pos.get("stage") == "scene" and not has_climax and not plan.get("open_choice") and not plan.get("answered_choice"):
             code, out = run(saga + ["plan", "set", "stage=climax"], tmp)
             check(code == 0, "plan set stage=climax")
             with open(chapter, "a", encoding="utf-8") as f:
-                f.write("\n## Climax — The Test of the Stair\n\nDarrow laid the night out before the House, and Hollis said nothing.\n\n**What does Darrow do?**\n1. **Ask Maelis.**\n2. **Send Wren.**\n3. **Ask the Prior.**\n")
+                f.write("\n## Climax — The Test of the Stair\n\nDarrow laid the night out before the House, and Hollis said nothing.\n\n**What does Darrow do?**\n1. **Ask Maelis.**\n2. **Send Wren.** *[Inspiration]*\n3. **Ask the Prior.**\n")
             climax = {"key": f"ch{ch:02d}:climax", "where": {"place": "saint-ysoldes", "detail": "the hall"}, "last_beat": "The House waited on his answer.",
                       "people": [{"id": "darrow", "did": "Laid the night out before the House."}, {"id": "hollis-garrow", "did": "Said nothing."}],
-                      "choice": {"ask": "What does Darrow do?", "options": ["Ask Maelis.", "Send Wren.", "Ask the Prior."], "default": 3},
+                      "choice": {"ask": "What does Darrow do?", "options": ["Ask Maelis.", "Send Wren. *[Inspiration]*", "Ask the Prior."], "default": 3},
                       "recap": "The House heard the night laid out.", "story_so_far": {"hollis-garrow": "He kept the Grey Cot through the week."}}
+            bad_default = dict(climax, choice={**climax["choice"], "default": 2})
+            code, out = run(saga + ["record", json.dumps(bad_default, ensure_ascii=False)], tmp, expect=1)
+            check("Inspiration" in out, "a climax whose default costs Inspiration is refused", out[-300:])
             code, out = run(saga + ["record", json.dumps(climax, ensure_ascii=False)], tmp)
             check(code == 0 and "climax choice open" in out, "the climax is recorded and its choice opened", out[-600:])
             hol = jload(tmp / "saga/characters/hollis-garrow.json")
@@ -247,8 +266,27 @@ def main():
             code, out = run(saga + ["plan", "choice", "show"], tmp)
             check(f"chapter {ch}" in out and "default 3" in out, "the open choice survives the chapter open with its own default")
             entry = {"id": f"c{ch:02d}.990", "chose": "Sent Wren down with a lamp (self-test).", "now": {"approval": {"wren": 3}, "bearing": {"guile": 2}}, "due": []}
+            # option 2 costs Inspiration: refused while he holds none (writing nothing), spent when he does
+            sp_path = tmp / "saga/state/spends.csv"
+            sp_before = sp_path.read_text(encoding="utf-8")
+            held = int(jload(tmp / "saga/state/darrow.json").get("inspiration") or 0)
+            with open(sp_path, "a", encoding="utf-8") as f:
+                for _ in range(held):
+                    f.write(f"{dt.date.today().isoformat()},inspiration,self-test drain\n")
+            run(darrow + ["sync"], tmp)
+            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis"], tmp, expect=1)
+            led_ids = {e["id"] for e in jload(tmp / "saga/state/_gm/consequences.json")["entries"]}
+            check("holds none" in out and f"c{ch:02d}.990" not in led_ids, "an *[Inspiration]* option is refused while he holds none, and nothing is written", out[-300:])
+            sp_path.write_text(sp_before, encoding="utf-8")
+            run(darrow + ["sync"], tmp)
+            if held < 1:
+                skip("the spend on choose: the live sheet holds no Inspiration")
             code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis"], tmp)
             check(code == 0 and "answered: option 2" in out, "choose records the entry, the row and closes the choice", out[-600:])
+            if held >= 1:
+                check("Inspiration spent" in out and "choice ch" in sp_path.read_text(encoding="utf-8"), "choose spends the Inspiration the option costs, under the choice's name", out[-300:])
+                led = jload(tmp / "saga/state/_gm/consequences.json")["entries"][-1]
+                check(led.get("inspiration") is True and led.get("declined") == ["Ask Maelis.", "Ask the Prior."], "the entry marks the spend and keeps the options he declined", json.dumps(led)[:300])
             world = jload(tmp / "saga/state/world.json")
             check(world["choices"][-1]["ledger"] == f"c{ch:02d}.990" and world["choices"][-1]["chapter"] == ch, "the choices[] row the site reads is written")
             code, out = run(saga + ["brief", "--choice"], tmp)
@@ -267,6 +305,43 @@ def main():
             skip("the climax flow: the live chapter has its climax, an open or answered choice, or is past the scene stage")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes at the end of the chapter flow", out[-900:])
+        # Inspiration at the cap: a climax check that fails outright rerolls by itself; --paid casts again without a second spend
+        rules_path = tmp / "engine/rules.json"
+        rules_json = jload(rules_path)
+        held = int(jload(tmp / "saga/state/darrow.json").get("inspiration") or 0)
+        closed = [r for r in (tmp / "saga/state/chapters.csv").read_text(encoding="utf-8").splitlines()[1:] if r.strip()]
+        sp_path = tmp / "saga/state/spends.csv"
+        if closed:
+            # Inspiration is counted in order with the cap applied as it goes, so the one sure way to stand him at the cap is
+            # no spends and a cap of one: whatever he has earned, he holds exactly one
+            cap0 = rules_json["inspiration"]["cap"]
+            sp_text = sp_path.read_text(encoding="utf-8")
+            sp_path.write_text(sp_text.splitlines()[0] + "\n", encoding="utf-8")
+            rules_json["inspiration"]["cap"] = 1
+            rules_path.write_text(json.dumps(rules_json, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            run(darrow + ["sync"], tmp)
+            at_cap = int(jload(tmp / "saga/state/darrow.json").get("inspiration") or 0) >= 1
+            chap = closed[-1].split(",")[0]
+            code, out = run(darrow + ["roll", "selftest-cap", "--stat", "might", "--dc", "40", "--dis", "--chapter", chap], tmp)
+            dice = [l for l in out.splitlines() if l.startswith("`[")]
+            sp_after = len(sp_path.read_text(encoding="utf-8").splitlines())
+            if not at_cap:
+                skip("the cap's auto-reroll: nothing earned yet in the copy")
+            elif dice and "Critical success" in dice[0]:
+                check(code == 0 and len(dice) == 1 and sp_after == 1, "a critical success at the cap is not rerolled")
+            else:
+                check(code == 0 and len(dice) == 2 and "spent at the cap" in out and sp_after == 2, "at the cap an outright failure of a climax check rerolls by itself and spends one", out[-400:])
+            sp_path.write_text(sp_text, encoding="utf-8")
+            rules_json["inspiration"]["cap"] = cap0
+            rules_path.write_text(json.dumps(rules_json, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            run(darrow + ["sync"], tmp)
+        else:
+            skip("the cap's auto-reroll: no closed chapter in the copy")
+        sp_n = len(sp_path.read_text(encoding="utf-8").splitlines())
+        run(darrow + ["roll", "selftest-paid", "--stat", "might", "--dc", "12"], tmp)
+        code, out = run(darrow + ["roll", "selftest-paid", "--stat", "might", "--dc", "12", "--reroll", "--paid"], tmp)
+        sp_after = len(sp_path.read_text(encoding="utf-8").splitlines())
+        check(code == 0 and "#reroll" in out and sp_after == sp_n, "--reroll --paid casts again without a second spend", out[-300:])
 
         # the works and the tales: a project, its tale, a task reported, the piece written and recorded, the keepsake, the site
         run(darrow + ["project", "drop", "--why", "self-test"], tmp, expect=None)  # a live project in the copy is set aside first (nothing to drop is fine)
