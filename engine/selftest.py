@@ -156,6 +156,20 @@ def main():
             code, out = run(darrow + ["close", day], tmp, expect=1)
             check("already closed" in out, "a closed day is refused a second close")
 
+            # callbacks: one that fits Wren's company (worth a beat), one that waits for a companion still to come and lapses after this scene at a cost
+            cb = {"id": f"c{ch:02d}.981", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Promised two things (self-test).", "now": {},
+                  "due": [{"id": f"c{ch:02d}.981a", "when": "later", "weight": "color", "fits": "present.wren", "priority": 3, "what": "A thing owed in Wren's hearing (self-test)."},
+                          {"id": f"c{ch:02d}.981b", "when": "later", "weight": "color", "fits": "present.ysra", "valid_until": key, "if_void": {"approval": {"wren": -2}}, "what": "A promise to keep by this scene (self-test)."}]}
+            code, out = run(saga + ["add", json.dumps(cb)], tmp)
+            check(code == 0 and "2 due item(s)" in out, "add takes a callback's fits, priority, valid_until and if_void", out[-300:])
+            bad_cb = {"id": f"c{ch:02d}.982", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "x", "now": {},
+                      "due": [{"id": f"c{ch:02d}.982a", "when": "later", "weight": "color", "fits": "present.nobody_here", "what": "x"}]}
+            code, out = run(saga + ["add", json.dumps(bad_cb)], tmp, expect=1)
+            check("unknown term" in out, "a callback whose fits names nobody the registries know is refused")
+            code, out1 = run(saga + ["brief", "--between", "--with", "wren-ashdown"], tmp)
+            check(code == 0 and f"c{ch:02d}.981a" in out1 and f"c{ch:02d}.981b" not in out1 and "wait for other company" in out1, "the brief lists a callback where it fits and only counts the ones that wait for other company", out1[-300:])
+            wren_before = jload(tmp / "saga/state/world.json")["companions"]["wren"]["approval"]
+
             # the scene recorded: a refusal first, then the record, then the projections
             with open(chapter, "a", encoding="utf-8") as f:
                 f.write(f"\n### Scene {next_scene} — The Self-Test\n\nRae came up the last flight at dusk with a letter in blue wax, and called him Darrow. Wren counted the steps she took, aloud, and wrote the number down twice. The Quorrel stood at the gate with a lamp.\n")
@@ -218,6 +232,16 @@ def main():
                 thr = jload(tmp / "saga/state/_gm/threads.json")
                 t = next(t for t in thr["threads"] if t["id"] == tid)
                 check(f"{ch:02d}:s{next_scene}" in t["on_page"] and t["who_knows"] == "The House; the reader.", "the thread's plants and who-knows follow the record")
+            ledger = jload(tmp / "saga/state/_gm/consequences.json")
+            items = {it["id"]: it for e in ledger["entries"] for it in e["due"]}
+            a_, b_ = items.get(f"c{ch:02d}.981a") or {}, items.get(f"c{ch:02d}.981b") or {}
+            check(a_.get("offered") == 1 and a_.get("offered_at") == [key] and a_.get("status") == "pending", "a callback that fit the scene and was not paid counts one offer", json.dumps(a_)[:200])
+            wren_after = jload(tmp / "saga/state/world.json")["companions"]["wren"]["approval"]
+            auto = [e for e in ledger["entries"] if e.get("auto")]
+            check(str(b_.get("status", "")).startswith("void:expired@") and wren_after == wren_before - 2 and auto and auto[-1]["now"]["approval"] == {"wren": -2},
+                  "a callback past its valid_until lapses at the record, at its if_void cost, through an entry the engine writes", f"{b_.get('status')} wren {wren_before}→{wren_after}")
+            code, out = run(saga + ["due", "--later"], tmp)
+            check(code == 0 and "offered 1×" in out and "fits: present.wren" in out, "due --later shows a callback's fit and its offers", out[-300:])
             code, out = run(saga + ["history", "--person", "rae-thorne", "--last", "1"], tmp)
             check(code == 0 and key in out and "called him Darrow" in out, "history reads the record back")
             code, out = run(saga + ["record", json.dumps(good, ensure_ascii=False)], tmp, expect=1)

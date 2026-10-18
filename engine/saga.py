@@ -54,7 +54,9 @@ Commands (run from the repo root):
                                         `check` refuses a planned slot of the quest while it is not met; `plan next` prints it
   project ID show | work --where chNN:between-K --what TEXT
                                         the Book's project quest: note a hand laid on it between stages; its trace lives in world.json → projects[]
-  due --later                           callbacks: due items with when=later, fired wherever they fit, one per scene at most
+  due --later                           callbacks: due items with when=later; each may carry fits (the rule grammar, with present.<id> and place.<id>),
+                                        priority 1-3, valid_until (it lapses after that position, at its if_void cost); the brief lists the ones that
+                                        fit the block, most worth first; a record counts the ones it could have paid and did not (offered)
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
   lore | lore ID | lore grep WORD | lore pick saying|verse|maxim|rhyme [--all] | lore spoke ID --where chNN:sK
                                         the Annals (_gm/lore.md): the index, one entry, a search, a line for a glimpse, mark an entry spoken
@@ -164,7 +166,8 @@ DEVICE_KINDS = ("challenge", "project", "invite")
 INVITE_KINDS = ("favour", "diversion", "opinion", "problem")
 INVITE_STATUS = ("waiting", "taken", "passed", "void")
 CHALLENGE_STATUS = ("open", "won", "lost", "void")
-CALLBACK_CAP = 6  # due items with when=later alive at once
+CALLBACK_CAP = 10  # due items with when=later alive at once (they fit, count their offers and lapse: design §5.6)
+VALID_UNTIL_RE = re.compile(r"^(ch\d{2,}(:(s\d+|climax))?|book\d+(:climax)?|transition\d+|finale)$")  # a callback's valid_until: the position it lapses after
 QUEST_STATUS = ("available", "live", "done", "dropped")
 BEAT_STATUS = ("planned", "in_progress", "done", "folded")
 ROADS = ("low", "main", "high")
@@ -257,6 +260,7 @@ class State:
     def __init__(self):
         self._d = {}
         self.dirty = set()
+        self.ctx = {}  # what a block's context makes true for the rule grammar: {"present": {ids}, "place": id} (callbacks' `fits`)
 
     def __getattr__(self, key):
         if key in STATE_FILES:
@@ -565,7 +569,15 @@ def pending_items(ledger):
 RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.USub, ast.Compare,
               ast.Attribute, ast.Name, ast.Constant, ast.Load,
               ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Eq, ast.NotEq)
-KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats")
+KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats", "present", "place")
+_CHAR_IDS = None
+
+
+def char_ids():
+    global _CHAR_IDS
+    if _CHAR_IDS is None:
+        _CHAR_IDS = set(R.char_files())
+    return _CHAR_IDS
 
 
 def tether_stage():
@@ -659,6 +671,16 @@ def term_lookup(parts, st):
         bid = parts[1].replace("_", ".", 1)
         b = plan.get("core_beats", {})
         return bid in b, (b.get(bid, {}).get("status") or "")
+    ctx = getattr(st, "ctx", None) or {}
+    if root == "present" and len(parts) == 2:  # the person is in the block: a companion's short id, or a character id with its hyphen as an underscore
+        who = parts[1]
+        known = (who in char_ids() or who.replace("_", "-") in char_ids() or who in plan.get("companions", {})
+                 or who in plan.get("companions_to_come", {}) or who in world.get("companions", {}))
+        pres = ctx.get("present") or set()
+        return known, (who in pres or who.replace("_", "-") in pres)
+    if root == "place" and len(parts) == 2:  # the block's place (places.json id, its hyphens as underscores)
+        pid = parts[1].replace("_", "-")
+        return pid in known_place_ids(), ctx.get("place") == pid
     return False, 0
 
 
@@ -1525,7 +1547,8 @@ def cmd_now(args):
     else:
         lines.append("Due now: nothing")
     if later:
-        lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most)")
+        stale = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later" and int(it.get("offered") or 0) >= 4)
+        lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most" + (f"; {stale} offered 4+ times unfired: rewrite or void" if stale else "") + ")")
     shown = waiting[:2] + near_[:3]
     lines += shown
     more = len(waiting) + len(near_) - len(shown)
@@ -1547,6 +1570,13 @@ def cmd_due(args):
             tag = label or item_status(it, st).upper()
             print(f"{it['id']} [{it.get('weight')}] when={it.get('when')} at={it.get('at')} {tag} · from {e['id']} ({e['made'].get('date')}: {short(e.get('chose'), 60)})")
             print(f"  {it.get('what')}")
+            extras = [x for x in (f"fits: {it['fits']}" if it.get("fits") else None,
+                                  f"priority {it['priority']}" if it.get("priority") else None,
+                                  f"until {it['valid_until']}" if it.get("valid_until") else None,
+                                  f"offered {it['offered']}× unfired ({', '.join(it.get('offered_at') or [])})" if it.get("offered") else None,
+                                  f"if void: approval {json.dumps((it.get('if_void') or {}).get('approval'))}" if it.get("if_void") else None) if x]
+            if extras:
+                print("  " + " · ".join(extras))
 
     for o in owed_moves(st.plan):
         print(f"WORLD MOVE owed (from skipped slot {o['n']}): the next scene or the climax opens on it: {o['world_move']}")
@@ -1576,7 +1606,7 @@ def cmd_due(args):
 
 
 # ---------------------------------------------------------------- commands: ledger writes
-def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False):
+def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False, st=None):
     """Shape and target checks for a ledger entry. Every refusal is found here, before cmd_add applies or prints
     anything: ids, made, chose, the `now` keys, Bearing moves (known pole, |n| <= BEARING_MAX_MOVE), approval
     targets (a world.json companion, or with --pending one in companions_to_come) and the due items."""
@@ -1635,8 +1665,35 @@ def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False)
         if it["status"] != "pending":
             probs.append(f"due[{i}].status must start pending")
         it["at"] = resolve_at(it.get("when"), plan) if WHEN_RE.match(str(it.get("when", ""))) else it.get("when")
+        # a callback (when: later) may say where it fits, how much it is worth, when it lapses and what lapsing costs (design §5.6)
+        later = it.get("when") == "later"
+        for k_ in ("fits", "priority", "valid_until"):
+            if it.get(k_) is not None and not later:
+                probs.append(f"due[{i}].{k_}: only a callback (when: later) carries it")
+        if it.get("fits") is not None:
+            tree = parse_rule(it["fits"]) if isinstance(it["fits"], str) else None
+            if tree is None:
+                probs.append(f"due[{i}].fits {it.get('fits')!r} is malformed (the rule grammar: present.<id>, place.<id>, flags.x, approval.x, quests.x.status …)")
+            elif st is not None:
+                unk = sorted({".".join(p) for p in rule_terms(tree) if not term_lookup(p, st)[0]})
+                if unk:
+                    probs.append(f"due[{i}].fits: unknown term(s) {', '.join(unk)}")
+        if it.get("priority") is not None and (isinstance(it["priority"], bool) or it["priority"] not in (1, 2, 3)):
+            probs.append(f"due[{i}].priority {it.get('priority')!r}: 1 (a line if it fits), 2 (the default) or 3 (worth a beat)")
+        if it.get("valid_until") is not None and not VALID_UNTIL_RE.match(str(it["valid_until"])):
+            probs.append(f"due[{i}].valid_until {it.get('valid_until')!r}: the position it lapses after (chNN, chNN:sN, chNN:climax, bookN, bookN:climax, transitionN, finale)")
+        iv = it.get("if_void")
+        if iv is not None:
+            if not isinstance(iv, dict) or set(iv) - {"approval"} or not isinstance(iv.get("approval"), dict) or not iv["approval"]:
+                probs.append(f"due[{i}].if_void is {{\"approval\": {{\"<companion>\": -N}}}}: what lapsing or voiding it costs")
+            else:
+                for cid, dlt in iv["approval"].items():
+                    if isinstance(dlt, bool) or not isinstance(dlt, int):
+                        probs.append(f"due[{i}].if_void.approval.{cid} {dlt!r} is not an integer")
+                    if world is not None and cid not in world.get("companions", {}) and cid not in plan.get("companions_to_come", {}):
+                        probs.append(f"due[{i}].if_void.approval.{cid}: not a companion")
         # canonical key order
-        ordered = {k: it[k] for k in ("id", "when", "at", "weight", "what", "status") if k in it}
+        ordered = {k: it[k] for k in ("id", "when", "at", "weight", "what", "fits", "priority", "valid_until", "if_void", "status") if k in it}
         ordered.update({k: v for k, v in it.items() if k not in ordered})
         entry["due"][i] = ordered
     return probs
@@ -1688,7 +1745,7 @@ def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False):
     ledger, plan, world = st.ledger, st.plan, st.world
     auto = downstream_due(entry, plan)  # one due item per flag set: the Downstream line is owed, not remembered
     # first pass: shape, poles, magnitudes, the entry's own approval targets
-    probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=pending)
+    probs = validate_entry(entry, ledger, plan, bearing=st.bearing, world=world, pending=pending, st=st)
     if probs:
         die("refusing the entry:\n  " + "\n  ".join(probs))
     now = entry["now"]
@@ -1825,7 +1882,79 @@ def void_item(st, did, why):
         die(f"{did} is already {it['status']}")
     it["status"] = f"void:{why}"
     st.touch("ledger")
-    return f"{did} void: {why}"
+    cost = apply_if_void(st, it, f"void of {did} ({short(why, 40)})")
+    return f"{did} void: {why}" + (f"\n{cost}" if cost else "")
+
+
+# ---------------------------------------------------------------- callbacks: where they fit, what they cost when they lapse
+def presence_ctx(people_ids, place):
+    """The context a callback's `fits` is read against: who is in the block, in every spelling the grammar takes
+    (hollis-garrow, hollis_garrow, hollis), and where it is."""
+    pres = set()
+    for cid in people_ids or []:
+        cid = str(cid or "")
+        if cid:
+            pres.update({cid, cid.replace("-", "_"), cid.split("-")[0]})
+    return {"present": pres, "place": place}
+
+
+def callback_fits(it, st, ctx):
+    """(fits here, specificity): a callback with no `fits` fits anywhere; specificity is the number of terms it names."""
+    expr = it.get("fits")
+    if not expr:
+        return True, 0
+    tree = parse_rule(expr)
+    if tree is None:
+        return False, 0
+    old = st.ctx
+    st.ctx = ctx or {}
+    try:
+        ok = bool(eval_node(tree, st))
+    finally:
+        st.ctx = old
+    return ok, len(rule_terms(tree))
+
+
+def next_entry_id(ledger, chapter):
+    ns = [int(m.group(2)) for e in ledger.get("entries", []) for m in [ENTRY_ID_RE.match(str(e.get("id", "")))] if m and int(m.group(1)) == int(chapter)]
+    return f"c{int(chapter):02d}.{(max(ns) + 1) if ns else 1}"
+
+
+def auto_entry(st, chose, now, scene):
+    """A terse entry the engine writes for a cost the rules set (a promise lapsed, an invitation passed): it goes through
+    `add_entry` like any other, so the ledger's invariant holds and `history` can name it. Its `made.scene` never reads
+    as a Between, so the Between cap leaves it alone."""
+    plan = st.plan
+    chapter = int(plan["chapter"].get("number") or plan["position"]["chapter"])
+    entry = {"id": next_entry_id(st.ledger, chapter), "made": {"chapter": chapter, "scene": scene, "date": today_local().isoformat()},
+             "chose": chose, "now": now, "due": [], "auto": True}
+    return add_entry(st, entry, "", pending=True, dry_run=False)
+
+
+def apply_if_void(st, it, chose):
+    """What a due item's `if_void` costs, applied: approval through an auto entry. Returns the line to print, or None."""
+    appr = {k: int(v) for k, v in ((it.get("if_void") or {}).get("approval") or {}).items()}
+    if not appr:
+        return None
+    ordered = auto_entry(st, f"{chose}: {short(it.get('what'), 80)}", {"approval": appr}, scene=f"auto:{it.get('id')}")
+    return f"  its cost ({ordered['id']}): approval " + ", ".join(f"{k} {v:+d}" for k, v in appr.items())
+
+
+def expire_callbacks(st, where):
+    """A callback past its valid_until lapses at `where`: void:expired, its if_void cost applied, each printed loudly."""
+    out = []
+    for e, it in list(pending_items(st.ledger)):
+        vu = it.get("valid_until")
+        if not vu or it.get("at") != "later":
+            continue
+        if at_status(resolve_at(vu, st.plan), st) == "overdue":
+            it["status"] = f"void:expired@{where}"
+            st.touch("ledger")
+            out.append(f"callback {it['id']} lapsed at {where} (valid until {vu}): {short(it.get('what'), 100)}")
+            cost = apply_if_void(st, it, f"lapsed: {it['id']}")
+            if cost:
+                out.append(cost)
+    return out
 
 
 def cmd_fire(args):
@@ -2267,6 +2396,8 @@ def cmd_plan(args):
             plan["position"]["beat"] = first_beat  # what is owed to this beat falls due from the chapter's first scene
             if plan["core_beats"][first_beat].get("status") == "planned":
                 plan["core_beats"][first_beat]["status"] = "in_progress"
+        for line_ in expire_callbacks(st, ch2(int(args.number))):
+            print(line_)
         st.touch("plan")
         st.save()
         print(f"chapter {args.number} opened (week of {ch['week_start']}, {len(ordered['slots'])} slots" + (f", climax default {ordered['climax'].get('default')}" if ordered.get("climax", {}).get("default") is not None else "") + "); run `saga.py check`")
@@ -2320,6 +2451,8 @@ def cmd_plan(args):
         pos["beat"] = f"b{n}.1"
         if f"b{n}.1" not in beats:
             print(f"warning: arc.md has no `## b{n}.1 — …` heading; add it (or Edit core_beats) before `saga.py check`")
+        for line_ in expire_callbacks(st, f"book{n}"):
+            print(line_)
         st.touch("plan")
         st.save()
         print(f"Book {ROMAN[n]} opened: position.book {cur} → {n}, beat b{n}.1 · route.book{n} {'seeded' if not r['chapters'] else 'kept'}"
@@ -3416,6 +3549,20 @@ def cmd_check(args):
             unk = unknown_names_in(it.get("what"))
             if unk:
                 notes.append(f"callback {it.get('id')} names {', '.join(sorted(unk))}, which no registry knows")
+            if it.get("fits") is not None:  # a hand edit is checked the way `add` checks a new one
+                tree = parse_rule(it["fits"]) if isinstance(it["fits"], str) else None
+                if tree is None:
+                    probs.append(f"callback {it.get('id')}: fits {it.get('fits')!r} is malformed")
+                else:
+                    unk_t = sorted({".".join(p) for p in rule_terms(tree) if not term_lookup(p, st)[0]})
+                    if unk_t:
+                        probs.append(f"callback {it.get('id')}: fits names unknown term(s) {', '.join(unk_t)}")
+            if it.get("valid_until") is not None and not VALID_UNTIL_RE.match(str(it["valid_until"])):
+                probs.append(f"callback {it.get('id')}: valid_until {it.get('valid_until')!r} is not a position (chNN, chNN:sN, chNN:climax, bookN, bookN:climax, transitionN, finale)")
+            if it.get("priority") is not None and it["priority"] not in (1, 2, 3):
+                probs.append(f"callback {it.get('id')}: priority {it.get('priority')!r} is 1, 2 or 3")
+            if int(it.get("offered") or 0) >= 4:
+                notes.append(f"callback {it.get('id')} offered {it['offered']} times unfired ({', '.join(it.get('offered_at') or [])}): rewrite it or void it at the checkpoint")
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
         notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")
@@ -3716,9 +3863,29 @@ def lore_for_brief(texts, cap=3):
     return out
 
 
-def callbacks_for_brief(st, cap=6):
+def callbacks_for_brief(st, ctx=None, cap=4):
+    """The callbacks that fit this block, the way Hades picks a line: eligible first (`fits` against who is here and where),
+    then by priority, then by how specific the fit is, then the oldest; the rest are counted, never listed."""
     rows = [(e, it) for e, it in pending_items(st.ledger) if it.get("at") == "later"]
-    return [f"· {it['id']}: {short(it.get('what'), 170)}" for e, it in rows[:cap]]
+    fitting, waiting = [], 0
+    for i, (e, it) in enumerate(rows):
+        ok, spec = callback_fits(it, st, ctx or {})
+        if ok:
+            fitting.append((-int(it.get("priority") or 2), -spec, i, it))
+        else:
+            waiting += 1
+    fitting.sort(key=lambda t: t[:3])
+    out = []
+    for *_, it in fitting[:cap]:
+        tags = [t for t in (f"priority {it['priority']}" if it.get("priority") else None,
+                            f"offered {it['offered']}× unfired" if int(it.get("offered") or 0) >= 2 else None,
+                            f"until {it['valid_until']}" if it.get("valid_until") else None) if t]
+        out.append(f"· {it['id']}" + (f" ({' · '.join(tags)})" if tags else "") + f": {short(it.get('what'), 170)}")
+    if len(fitting) > cap:
+        out.append(f"  (+{len(fitting) - cap} more that fit here: `saga.py due --later`)")
+    if waiting:
+        out.append(f"  (+{waiting} wait for other company or places: `saga.py due --later`)")
+    return out
 
 
 # the kinds of check a climax plan names, as `darrow.py roll` takes them (Insight = Resolve + proficiency + Warden's Eye)
@@ -4037,12 +4204,13 @@ def cmd_brief(args):
     todays = [g for g in grows if g["date"] == today]
     for g in todays[-3:]:
         L.append(f"a glimpse already given today ({g['kind']}; the block may echo it, never contradicts it): {short(g['text'], 160)}")
-    here = []
+    here, here_ids = [], []
     for cid, c in names.items():
         if cid == "darrow" or c.get("status") not in ("alive", "hollowed"):
             continue
         if (c.get("last_seen") or {}).get("place") == loc.get("place"):
             here.append(f"{c.get('name')} ({short(c.get('last_seen_doing'), 70)})")
+            here_ids.append(cid)
     if here:
         L.append("by the page, here: " + " · ".join(here))
     # ---------------- MAY
@@ -4079,7 +4247,7 @@ def cmd_brief(args):
         L += lore_lines
     else:
         L.append("lore: the plan names no entry; `saga.py lore grep <word>` for a place or custom the block touches, `lore pick saying` for a line in someone's mouth")
-    cbs = callbacks_for_brief(st)
+    cbs = callbacks_for_brief(st, presence_ctx(set(ids) | set(here_ids), loc.get("place")))
     if cbs:
         section("MAY: callbacks waiting for a fit (one per block at most; record it in \"fired\" with the block's words that pay it)")
         L += cbs
@@ -4363,6 +4531,15 @@ def cmd_record(args):
             probs.append("no slot for this block: a scene's slot is the one whose day is its date (`--slot N` names it; `plan slot N day=…` moves one)")
     if probs:
         die("refusing the record (nothing written):\n  " + "\n  ".join(probs))
+    # callbacks that fit this block and were not paid are counted as offered, so the checkpoint sees what keeps passing by
+    rec_ctx = presence_ctx([p.get("id") for p in ev.get("people") or [] if not p.get("mention")],
+                           (where or {}).get("place") or (world.get("location") or {}).get("place"))
+    paid_ids = {f_["id"] for f_ in ev.get("fired") or []}
+    for e_, it_ in pending_items(st.ledger):
+        if it_.get("at") == "later" and it_["id"] not in paid_ids and key not in (it_.get("offered_at") or []) and callback_fits(it_, st, rec_ctx)[0]:
+            it_["offered"] = int(it_.get("offered") or 0) + 1
+            it_.setdefault("offered_at", []).append(key)
+            st.touch("ledger")
     # ---- the plan moves
     today = today_local().isoformat()
     wrote = f"{ch2(ch)}:{'s' + sk if kind == 'scene' else sk}"
@@ -4426,6 +4603,8 @@ def cmd_record(args):
     if ev.get("rank"):
         pos["rank_on_page"] = ev["rank"]
         print(f"rank on the page: {ev['rank']}")
+    for line_ in expire_callbacks(st, wrote if WHERE_RE.match(wrote) else ch2(ch)):  # a promise past its day lapses here, at its cost
+        print(line_)
     # ---- the records
     ev.update({"chapter": ch, "scene": sk, "kind": kind})
     ev.setdefault("written", today)
@@ -4658,7 +4837,7 @@ def cmd_choose(args):
     if costs:
         entry["inspiration"] = True
         # the entry is proved before the point is spent, so a spend never goes without its entry
-        probs = validate_entry(json.loads(json.dumps(entry)), st.ledger, plan, bearing=st.bearing, world=world, pending=args.pending)
+        probs = validate_entry(json.loads(json.dumps(entry)), st.ledger, plan, bearing=st.bearing, world=world, pending=args.pending, st=st)
         probs += [f"--witnessed {w}: not in plan.json companions or companions_to_come" for w in (args.witnessed or "").split(",")
                   if w.strip() and w.strip() not in plan.get("companions", {}) and w.strip() not in plan.get("companions_to_come", {})]
         if probs:
