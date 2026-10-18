@@ -73,3 +73,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-17#8,2026-10-17,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,library row (PB & chocolate chip label)
 2026-10-17#9,2026-10-17,,dinner,Domino's GF small chicken bacon ranch pizza,the other half (3 of 6 slices),615,27,51,33,1.5,12,4.5,1410,330,360,2.4,36,3,0,0.3,150,library,library row x3 (macros from a web listing 10/17; sodium and micros estimated)
 2026-10-17#10,2026-10-17,,dinner,BBQ chicken wing,2 wings,190,12,8,12,0,3,6,640,120,16,0.6,12,1,0,0,40,estimate,same wings as lunch; assumed Domino's BBQ wings
+2026-10-17#11,2026-10-17,,snack,"Undercover chocolate quinoa crisps, dark chocolate + sea salt",about 5 crisps (1.25 servings),150,2.5,23.8,7.5,2.5,4.4,7.5,112,212,12.5,3.25,38,0.75,0,0,12,label,label photo; 4 crisps = 1 oz
+2026-10-17#12,2026-10-17,,snack,Organic peanut butter (for dipping),assumed ~1.5 tbsp (24 g),140,6,5,12,1.5,2,1.5,90,160,10,0.5,40,0.8,0,0,0,estimate,amount guessed for dipping 5 crisps; typical organic PB
