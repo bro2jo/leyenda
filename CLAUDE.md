@@ -56,7 +56,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 
 Every log reply is Ledger first, Chronicle after: the format, the level-up block and the glimpse are in `.claude/skills/log/reply.md`. **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking).
 
-**Approval and Bearing are never edited by hand:** only `saga.py add`, `saga.py choose` and `saga.py bearing` move them. **Neither are the projections:** `saga/state/world.json`, the derived fields of `saga/characters/*.json`, `saga/state/codex.md` and the top of `saga/NOW.md` are rebuilt from the records by `saga.py record` (`check` refuses a stale one).
+**Approval and Bearing are never edited by hand:** only `saga.py add`, `saga.py choose`, `saga.py bearing` and the engine's own entries (an invitation he let pass, a promise that lapsed) move them; regard moves only for who saw a thing or heard of it (`--witnessed`, `--learned`). The epithet is given only at a climax or a Choice block that speaks it (`now` prints `EPITHET PENDING` until then). **Neither are the projections:** `saga/state/world.json`, the derived fields of `saga/characters/*.json`, `saga/state/codex.md` and the top of `saga/NOW.md` are rebuilt from the records by `saga.py record` (`check` refuses a stale one).
 
 ---
 
@@ -69,10 +69,10 @@ python3 engine/darrow.py sync | today | week | sheet | check | ship -m "…"
 python3 engine/darrow.py set daily|nutrition DATE k=v … · food add|ex add|sport add|measure add '<json>' · food list DATE · food lib TEXT
 python3 engine/darrow.py show daily|nutrition|food|ex|sport|measurements DATE · measures · recap --date D [--write]
 python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint [section]
-python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · knot tie N --date D --evidence "…"
+python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · odds --stat S [--prof --art ID] [--chapter N] [--dc N | --target P] · knot tie N --date D --evidence "…"
 python3 engine/darrow.py project open "Title" --tasks … | done TASK | show [--all] | drop --why "…"   (the week's work; `today` names its next task)
 python3 engine/saga.py now · brief [--date D | --between --with who | --climax | --choice | --chapter | --tale] · record '<json>' · choose --option K '<entry>'
-python3 engine/saga.py glimpse add --kind K "…" · history --person|--thread|--last · threads [--id N] · due · arc ID · lore ID · check · project
+python3 engine/saga.py glimpse add --kind K "…" · history --person|--thread|--last · threads [--id N] · due [--later] · approval forecast · bearing show · arc ID · lore ID · check · project
 python3 engine/saga.py tale bind <project id> [--tale tale.id] | list | next   (a project's tale; a task reported owes a piece)
 ```
 

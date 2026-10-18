@@ -2039,6 +2039,49 @@ def void_item(st, did, why):
     return f"{did} void: {why}" + (f"\n{cost}" if cost else "")
 
 
+# ---------------------------------------------------------------- flags: a plant without a payoff is one nothing reads
+def flag_reader_notes(st):
+    """A note for every flag in plan.json that nothing reads: no rule, quest gate, stage gate, invite rule, invite `when`,
+    callback `fits`, due target `on:<flag>`, nor a line of the arc outside its `## flags` list (Fable's acorn: a flag set
+    and never read is a consequence that never arrives)."""
+    plan, ledger = st.plan, st.ledger
+    flags = plan.get("flags") or {}
+    if not flags:
+        return []
+    read = set()
+
+    def terms_of(expr):
+        tree = parse_rule(expr) if expr else None
+        if tree is None:
+            return
+        for p in rule_terms(tree):
+            if len(p) == 2 and p[0] == "flags":
+                read.add(p[1])
+
+    for r in ledger.get("rules", []):
+        terms_of(r.get("if"))
+    for q in (plan.get("quests") or {}).values():
+        terms_of(q.get("gate"))
+        for g in (q.get("stage_gates") or {}).values():
+            terms_of(g)
+    for g in (plan.get("invite_rules") or {}).values():
+        terms_of(g)
+    for s in (plan.get("chapter") or {}).get("slots", []):
+        terms_of((s.get("invite") or {}).get("when"))
+    for e in ledger.get("entries", []):
+        for it in e.get("due", []):
+            terms_of(it.get("fits"))
+            m = re.match(r"^on:(\w+)$", str(it.get("when") or ""))
+            if m:
+                read.add(m.group(1))
+    secs = arc_sections()
+    skip = set(id(l) for l in (secs.get("flags") or (0, "", []))[2])
+    body_lines = {l for k, (lvl, text, body) in secs.items() for l in body if id(l) not in skip}
+    arc_words = set(re.findall(r"`([a-z][a-z0-9_]*)`", "\n".join(body_lines)))
+    read |= {w for w in arc_words if w in flags}
+    return [f"flag {k} has no reader yet (no rule, gate, due target, callback fit or arc line outside ## flags): a plant without a payoff" for k in flags if k not in read]
+
+
 # ---------------------------------------------------------------- approval: regard, its income, the rules' moments, the forecast (design §2)
 def approval_value(st, cid):
     """(value, banked): a companion's approval from world.json, or what is banked for one still to come; (None, None) if unknown."""
@@ -3928,6 +3971,7 @@ def cmd_check(args):
     for qid, q in quests_.items():
         if q.get("project") and int(q.get("stage") or 0) >= 1 and not any(p_.get("id") == qid for p_ in world.get("projects", []) or []):
             notes.append(f"project {qid} is at stage {q.get('stage')} but world.json → projects[] has no entry: the page's trace is missing")
+    notes += flag_reader_notes(st)
     for e, it in pending_items(ledger):
         if it.get("at") == "later":
             unk = unknown_names_in(it.get("what"))
