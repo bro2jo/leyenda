@@ -278,7 +278,7 @@
   "rehab": {
     "current_phase": 3,
     "phase_entered": "2026-09-27",
-    "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. Earliest by calendar Tue 2026-10-20.",
+    "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. All met by Sat 2026-10-17 (PT 11: quad LSI 90.4%, step-downs passed). Earliest by calendar Tue 2026-10-20: Knot III ties that day.",
     "knots": [
       {
         "knot": 1,

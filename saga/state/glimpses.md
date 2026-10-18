@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-14 · overheard · Two novices on the stair, arguing whether the Greywater freezes from the top down or the bottom up. Neither of them has seen it freeze. Both are certain.
 - 2026-10-14 · saying · An old lay brother at the woodpile, to nobody in particular: Split it when it's dry, burn it when it's split, and never tell the Prior which pile was which.
 - 2026-10-14 · ledger · From Wren's ledgers, the margin of a kitchen page: Loaves left, by Cook: thirty-eight. By me: thirty-seven. Cook is eating the evidence.
 - 2026-10-14 · house · Somebody has mended the third step of the kitchen stair. It still creaks, only in a different note now, and the kitchen is divided on whether that is better.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-17 · weather · Thin sun on the Steps by early afternoon, enough to set the snow dripping from the gatehouse eaves in a steady count that nobody in the House has yet been able to resist keeping.
 - 2026-10-17 · overheard · Two novices on the wall-walk, stamping their feet: "He's walking the hall like he means it now." "He always meant it." "No. Before, he was walking it like it owed him money."
 - 2026-10-17 · body · He got up off the cot this evening without putting a hand down, and was halfway to the brazier before he noticed he hadn't.
+- 2026-10-17 · house · The kitchen has moved the bread table a hand's width nearer the hall door, nobody will say why, and the novice with flour to the elbows has started setting a second bench out at night without being asked.
