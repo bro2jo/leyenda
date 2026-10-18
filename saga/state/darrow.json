@@ -1,9 +1,9 @@
 {
-  "asof": "2026-10-17",
+  "asof": "2026-10-18",
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1602,
+  "xp": 1702,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -44,7 +44,7 @@
       "raw": 10,
       "cap": null,
       "mod": 0,
-      "temper": 27,
+      "temper": 28,
       "next_at": 36,
       "fell": 12,
       "banked": false
@@ -55,7 +55,7 @@
     "tier": "Steady",
     "effect": "none"
   },
-  "inspiration": 2,
+  "inspiration": 3,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -125,7 +125,7 @@
       "tree": "Binding",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 10,
+      "practice": 11,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -136,7 +136,7 @@
       "tree": "Insight",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 17,
+      "practice": 18,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
@@ -323,10 +323,10 @@
     "late": 0
   },
   "chapter_now": {
-    "week_start": "2026-10-11",
-    "through": "2026-10-17",
-    "tier_so_far": "Triumph",
-    "chapter": 2
+    "week_start": "2026-10-18",
+    "through": "2026-10-18",
+    "tier_so_far": "Setback",
+    "chapter": 3
   },
   "fell": {
     "might": 15,

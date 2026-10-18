@@ -2,7 +2,7 @@
 
 *The current program and where things stand, present tense only. Rules live in the Working Rules, the add-on design in the Add-On, the PT's words in `real/visits/pt_notes.md`; `real/README.md` says where each fact lives. Sections 2, 4 and 8 point to where that history lives in this repo.*
 
-- **Program set:** Sun 2026-10-18 checkpoint (written Sat 10/17 evening, on request). The Phase 3 → 4 gate is met (PT 11, 10/17); Phase 4 opens Tue 10/20 by the plan's calendar, and Session A becomes the plan's Phase 4 Session A from that day. Session B runs once more at Phase 3 on Sun 10/18.
+- **Program set:** Sun 2026-10-18 checkpoint (written Sat 10/17 evening, on request; Sunday morning's checks folded in 10/18 AM: the heel prop becomes a weekly check). The Phase 3 → 4 gate is met (PT 11, 10/17); Phase 4 opens Tue 10/20 by the plan's calendar, and Session A becomes the plan's Phase 4 Session A from that day. Session B runs once more at Phase 3 on Sun 10/18.
 - **Last reviewed:** Sun 2026-10-18.
 - **Supersedes:** `real/state/archive/recovery_state_2026-10-11.md`.
 - **Next:** reviewed at the 10/25 checkpoint (first Phase 4 week; Session B becomes Phase 4's).
@@ -25,7 +25,7 @@
   - Right pre-op: quad 83.7 lb, hamstring 79 lb, extension 0° AROM, flexion 144°.
   - Left pre-op: quad 58.9 lb (LSI 70.4%), hamstring 55.8 lb (LSI 70.6%), extension −1°, flexion 144°.
   - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83%. Hamstrings not yet tested.
-- **Body mass:** baseline 159.8 lb (72.5 kg), Sun 10/11, 5:30 PM; the week of 10/11 averaged 157.2 lb (7 readings). Weigh in Sundays at the same time. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein).
+- **Body mass:** 158.4 lb, Sun 10/18, morning. The 10/11 baseline (159.8) was a 5:30 PM weight, so the two are not like for like; the week of 10/11 averaged 157.2 lb (7 readings). Weigh in Sunday mornings from here; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein).
 - **Calendar:**
   - Post-op week 8 ends Mon 10/19; **week 9 = Tue 10/20 (POD 57): Phase 4 opens and Knot III ties that day.**
   - Phase 4 runs weeks 9–12 (through ~Mon 11/16); running (Phase 5) earliest Tue 11/17, behind its own gate.
@@ -48,7 +48,7 @@
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| Full/symmetric ROM | **Met** | Extension 2° hyperext AROM on 10/8 (third clinic reading at 2°); flexion 146° vs the right's 144° |
+| Full/symmetric ROM | **Met** | Extension 2° hyperext AROM on 10/8 (third clinic reading at 2°); flexion 146° vs the right's 144°. Home, Sun 10/18 (self): first side-view heel-prop photo, the left as straight as the right; SLR without lag; flexion full, about the right's |
 | Normal gait | **Met** | Nick 10/8; PT 10 (10/15): no deviations |
 | Minimal/no post-exercise effusion | **Met** | Trace on every graded morning 10/6–10/17 |
 | No post-exercise pain flare | **Met** | Pain ≤2 in every session; no flare since 9/11–12 |
@@ -119,23 +119,22 @@
 
 | Day | Plan |
 |---|---|
-| Sun 10/18 | Weigh-in (5:30 PM), **first extension photo**, SLR lag, flexion · **Session B** (Phase 3, last time; doses below) · heel prop |
-| Mon 10/19 | Morning check · heel prop · bike **24** → **Upper B** (session 4) → finisher |
-| Tue 10/20 | **Knot III · Phase 4 opens.** Pre-session check → **first pivot bout** (15–25 min, before the session or 2–3 h after) · **Phase 4 Session A** · heel prop |
-| Wed 10/21 | Heel prop · **Throwing A** (speed control: soft / normal / fast, FH and BH; square stance) |
-| Thu 10/22 | Heel prop · bike **27** → **Upper A** (session 5) → finisher |
-| Fri 10/23 | Heel prop · **Throwing B** (scoober at different speeds and heights; upper-body fakes before breaks; square stance) · PT if it books (then Throwing B moves) |
-| Sat 10/24 | Heel prop · bike **30** · **Throwing C** (long throws) · film 10–15 min (handler defenders' hips) |
-| Sun 10/25 | Weigh-in, photo, SLR lag, flexion → checkpoint → **Phase 4 Session B** · pivot bout 2 |
+| Sun 10/18 | ✓ Weigh-in 158.4 (AM) · ✓ first extension photo, clean · ✓ SLR no lag · ✓ flexion full · morning trace, quiet → **Session B** (Phase 3, last time; doses below) |
+| Mon 10/19 | Morning check · bike **24** → **Upper B** (session 4) → finisher |
+| Tue 10/20 | **Knot III · Phase 4 opens.** Pre-session check → **first pivot bout** (15–25 min, before the session or 2–3 h after) · **Phase 4 Session A** |
+| Wed 10/21 | **Throwing A** (speed control: soft / normal / fast, FH and BH; square stance) |
+| Thu 10/22 | Bike **27** → **Upper A** (session 5) → finisher |
+| Fri 10/23 | **Throwing B** (scoober at different speeds and heights; upper-body fakes before breaks; square stance) · PT if it books (then Throwing B moves) |
+| Sat 10/24 | Bike **30** · **Throwing C** (long throws) · film 10–15 min (handler defenders' hips) |
+| Sun 10/25 | Heel prop, photo, SLR lag, flexion, weigh-in (AM) → checkpoint → **Phase 4 Session B** · pivot bout 2 |
 
 - **No optional items this week** (accessory day, Saturday power & mobility): Fri 10/16's missed heel prop costs this week its optional items (Add-On rule 1).
 - Rhythm structure and rotation rules: Working Rules. Throwing: the sport plan, week 2 (speed control). The pivot opens with Knot III on Tue; the other throwing days stay pivot-free.
 
 ### Daily minimum
 
-- **Morning check:** swelling grade · extension side by side · pain · stiffness · catch · wellness 1–5.
-- **Weighted heel prop: 10 lb, 10 min, once a day.** Weight on the lower thigh, never on the kneecap; quad relaxed. It is the item most likely to be missed (10/16): do it before anything else on a busy day.
-- Becomes a weekly check once the side-view photo shows the left as straight as the right. The first photo is due Sun 10/18.
+- **Morning check:** swelling grade · extension side by side · pain · stiffness · catch · wellness 1–5. **From Sun 10/18 this is the whole daily minimum.**
+- **Weighted heel prop: 10 lb, 10 min, now a weekly check.** The Working Rules ran it daily until the side-view photo showed the left as straight as the right; the first photo (Sun 10/18) did. Sundays, before the checkpoint: the prop (weight on the lower thigh, never on the kneecap; quad relaxed), then the photo, the SLR lag and flexion vs the right, and the weigh-in. **Back to daily** if a morning side-by-side look or a clinic reading shows the left short of the right.
 
 ### PT items mapped into the home sessions
 
@@ -297,21 +296,21 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 1. **The knee is quiet under load.** Trace every graded morning since 10/6, including after the RDL jump (10/11), the 18" step-up (10/13), two PT visits and a max-effort quad test (10/17). Swelling no longer tracks load, hours on feet, or the sauna.
 2. **Phase 4 adds three new kinds of load at once:** knee extension through full range (donor site), pivot throwing (rotation on the graft side), and the squat pattern under a load. The one-change rule and the morning verdict decide; the pivot ladder moves one rung per bout. This is still the graft's weakest window (through ~11/16).
-3. **The daily minimum is the week's weak spot again:** 6 of 7 (Fri 10/16 missed the heel prop), and it costs this week its optional items. Saturdays and tired evenings are when it slips.
+3. **The daily minimum was the week's weak spot again:** 6 of 7 (Fri 10/16 missed the heel prop), and it costs this week its optional items. From 10/18 the daily minimum is the graded morning check alone (the heel prop is weekly), so 7 of 7 is a grade every morning.
 4. **More when it feels good.** The 10/13 session ran two items past the plan (step-up 18", knee extension full range). PT 10 endorsed both, and the knee was fine, but the plan's guardrail is one change per exercise now that the PT's approval isn't the brake.
 5. **Protein and sodium.** The week averaged 130 g protein (target 150–160) and 4,136 mg sodium (over 2,300 every day): quiet days run ~112 g. Fish once.
 6. **Weight:** 157.2 lb average (+1.1 lb). One week, mixed times of day: no change to the target. Review at 10/25 with two weeks of readings.
-7. **Logging gaps:** session minutes and RPE are now reported for most sessions; extension photos and the Sunday SLR lag and flexion haven't started.
+7. **Logging:** session minutes and RPE are now reported for most sessions. The Sunday checks started 10/18 (photo clean, SLR no lag, flexion full); the Sunday weigh-in is a morning one from here.
 8. **Posterior-knee tightness** (9/30) not reported since. If it ever becomes calf pain or calf swelling: surgeon, not Claude.
 
 ---
 
 ## 10. Next milestones
 
-- [ ] **Sun 10/18:** weigh-in (same time), **first extension photo**, SLR lag, flexion · Session B (Phase 3 doses)
+- [x] **Sun 10/18 AM:** weigh-in 158.4, first extension photo (clean), SLR no lag, flexion full · [ ] Session B (Phase 3 doses)
 - [ ] **Tue 10/20:** Knot III ties, Phase 4 opens · first pivot bout · Phase 4 Session A (goblet squat, knee extension PT style, RFESS)
 - [ ] **Book PT;** ask for the hamstring test (both sides) and the early plyometric prep
-- [ ] Daily minimum **7 of 7** (it reopens the optional items for the week of 10/25)
+- [ ] Daily minimum **7 of 7**: a graded morning check every day (it reopens the optional items for the week of 10/25); the heel prop on Sunday
 - [ ] Upper **2 of 2** (Mon B, Thu A): opens Block 1 on 10/25 · bench 110 · bike 24 → 27 → 30
 - [ ] Throwing 3 sessions (week 2, speed control) + film; the pivot only on knee days
 - [ ] Protein ≥150 g on quiet days; a second fish meal

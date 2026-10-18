@@ -325,9 +325,16 @@ def gather(cfg, rules, nutrition=None):
         if any(str(v or "").strip() for k, v in r.items() if k not in quiet_cols):
             f["logged"] = True
         rounds = int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
-        f["floor"] = "full" if rounds >= floor_rounds(cfg, r["date"]) else ("half" if rounds else f["floor"])
         if VALID_SWELLING.match(str(r.get("am_swelling", "")).strip()):
             f["check"] = True
+        need = floor_rounds(cfg, r["date"])
+        if need == 0:
+            # the heel prop is a weekly check now (Working Rules): the daily minimum is the graded morning check,
+            # which pays its own deed, so the floor shows full without paying the floor deed a second time
+            f["floor"] = "full" if f["check"] else f["floor"]
+            f["floor_is_check"] = True
+        else:
+            f["floor"] = "full" if rounds >= need else ("half" if rounds else f["floor"])
         ks = str(r.get("knee_session", "")).strip()
         if ks.lower().startswith("partial"):  # below the minimum session: not a loaded day (Working Rules)
             f["knee_partial"] = True
@@ -484,7 +491,7 @@ def deeds_for_day(date, f, cfg, rules):
                     **{a: (temper if temper is not None else rule.get("temper", {})).get(a, 0) for a in ATTRS},
                     "note": note})
 
-    if f["floor"] == "full":
+    if f["floor"] == "full" and not f.get("floor_is_check"):
         add("floor_full")
     elif f["floor"] == "half":
         add("floor_half")
@@ -1157,14 +1164,14 @@ def cmd_today(args, cfg, rules):
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
         need = floor_rounds(cfg, day.isoformat())
         missing = [x for x, ok in [("morning check (grade swelling)", f["check"]),
-                                   ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full")]
+                                   ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full" or need == 0)]
                    if not ok]
         missing += unlogged_sessions(cfg, day, f) + ([] if f["creatine"] else ["creatine"])
         if missing:
             print(("Not logged" if f["closed"] else "Still open") + ": " + ", ".join(missing))
     else:
         print("Logged: nothing yet. Still open: " + ", ".join(
-            ["morning check", "daily minimum (weighted heel prop)"] + unlogged_sessions(cfg, day, None) + ["creatine"]))
+            ["morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"]))
     print(project_line())
 
 

@@ -262,7 +262,7 @@
  },
  "food_itemised_from": "2026-10-08",
  "daily_minimum": {
-  "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day).",
+  "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day). rounds 0 = the heel prop is a weekly check (Sundays, logged as floor_am=Y that day) and the daily minimum is the graded morning check.",
   "rounds": [
    {
     "from": "2026-07-22",
@@ -273,6 +273,11 @@
     "from": "2026-10-09",
     "rounds": 1,
     "source": "working_rules.md, revised 10/9 (Nick 10/9): morning check + one 10-min weighted heel prop a day"
+   },
+   {
+    "from": "2026-10-18",
+    "rounds": 0,
+    "source": "working_rules.md 'Daily minimum': the heel prop ran daily until the side-view photo showed the left as straight as the right; the first photo, Sun 10/18, did (his report), so it is a weekly check and the daily minimum is the graded morning check"
    }
   ]
  },
