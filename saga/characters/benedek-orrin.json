@@ -220,6 +220,11 @@
       "chapter": "02",
       "scene": "between-13",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "7",
+      "mention": true
     }
   ]
 }

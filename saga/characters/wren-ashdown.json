@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "between-13",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#between-13"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
   },
-  "last_seen_doing": "Got down on her knees and found the seam by touch, cold where every other wall in the House only sweats; counted it three cots to the Grey Cot; counted the Captain's telling her first: one.",
-  "now": "Gone up the row to find her pencil, counting the lamps under her breath again. She has found the seam cold to the touch, and the Captain has told her first what he means to do tomorrow.",
+  "last_seen_doing": "Walked the east wall with a candle; the flame bent at the third cot and led to the undercroft door, where it lay flat toward the gap; named the undercroft; sent to bed by the Prior, counting the door.",
+  "now": "Sent to bed by the Prior, counting under her breath: doors in the east wall, one.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word. When he gave his name at the bars anyway, she counted the Confessors instead of looking at him.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -243,6 +243,24 @@
       "chapter": "02",
       "scene": "between-13",
       "evidence": "Times you've told me first"
+    },
+    {
+      "fact": "Her candle's flame bent at the third cot and leaned toward the dark end of the wall, and lay flat toward the gap under the undercroft door.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "At the third the flame bent"
+    },
+    {
+      "fact": "She named the door: the undercroft, the stair down, shut since before she could count.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "It's been shut since before I could count."
+    },
+    {
+      "fact": "Sent to bed by the Prior, she went, counting: doors in the east wall, one.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "Doors in the east wall: one."
     }
   ],
   "relationships": [
@@ -367,6 +385,10 @@
       "chapter": "02",
       "scene": "between-14",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "7"
     }
   ]
 }

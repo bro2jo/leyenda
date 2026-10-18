@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "6",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-6"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
   },
-  "last_seen_doing": "Answered the Confessor at the bars with a question and gave him nothing.",
-  "now": "Prior of Saint Ysolde's. At the bars she answered Marrant's request for the Mender with a question, which of us did you climb for, and the House answered for her by looking at Maelis.",
+  "last_seen_doing": "Came up the hall without a lamp, sent Wren to bed, would neither forbid nor permit the undercroft door, asked what the Captain would find and do and who would carry him up the stair; will call the House into the hall after the night bell, and asked whether he would like to tell it.",
+  "now": "At the undercroft door in the dark. She will call the House into the hall after the night bell to hear what the Captain found, where the lad lies, and has asked him whether he would like to be the one who tells it.",
   "story_so_far": "When the grey cloaks were sighted on the Holloway, the news went first to Mother Ione. She called a council in the warming room off the cloister: Maelis, Sister Pell, Rae Thorne who had heard the list read, and Darrow, whose name is first on it. She asked how it was read, had the law of Old Mercy said aloud for the Captain, and asked Sister Pell whether she would ring it dawn and dusk for as long as the grey cloaks wait. The council broke with nothing decided aloud, and she called Darrow back to ask what she ought to know before she decides. At the next dawn bell she came to the foot of Darrow's cot: the winch-brothers had taken his far side of the mountain down to the valley, Old Mercy had not rung at dusk, so the valley heard what it always hears from the House, and when the grey cloaks are at the bars he is to tell Wren when. In the hour before dusk she stood before the gate and let the Confessor read; she kept him waiting at the wicket for the bell as long as the law of guests allowed, and when his men came through and the bell rang late, she gave him the law's other half, that no name under it is taken down against its will. When Darrow gave his name at the bars, the Confessor thanked her for her candour, and she asked Darrow only whether the shoulder was hurt.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -165,6 +165,36 @@
       "chapter": "02",
       "scene": "6",
       "evidence": "Which of us did you climb for?"
+    },
+    {
+      "fact": "The undercroft key came to her from the Prior before her, and to her from the one before; none of them has turned it.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "None of us has turned it."
+    },
+    {
+      "fact": "She neither forbade nor permitted the door.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "I haven't said yes."
+    },
+    {
+      "fact": "She asked what he would do at the bottom of a stair he cannot come back up by himself, and who would carry him up.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "a stair you cannot come back up by yourself"
+    },
+    {
+      "fact": "She will call every soul under her roof who can stand into the hall after the night bell to hear what he found.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "After the night bell I'll call the House into this hall"
+    },
+    {
+      "fact": "Because he gave his name at her gate without asking her, she asked him whether he would like to be the one who tells the House.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "Would you like to be the one who tells them?"
     }
   ],
   "relationships": [
@@ -219,6 +249,10 @@
     {
       "chapter": "02",
       "scene": "6"
+    },
+    {
+      "chapter": "02",
+      "scene": "7"
     }
   ]
 }

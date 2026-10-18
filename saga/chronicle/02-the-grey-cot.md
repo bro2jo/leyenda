@@ -1025,3 +1025,62 @@ Rae looked at him over the spoon for a good while.
 She took that without any fuss at all.
 
 "Aye," she said, and went back to her bowl, and after a while pushed the bread across the board to him without looking up.
+
+### Scene 7 — The Door Below
+
+The House counted what it had now, every dusk, the way a garrison does: Sister Pell's hands on Old Mercy's rope, and below the gate the grey cloaks' fires, one more tonight than the night before.
+
+When the hall's fires were banked, Wren came down the row with a candle in a cup and her pencil back behind her ear. Darrow was already on his feet. He had told her first, and he meant to be there for the rest of it.
+
+She knelt at the head of the Grey Cot, where the seam ended, and held the candle low to the wall. The flame stood straight.
+
+She moved it along, a hand above the flags, past the first cot and the second. At the third the flame bent, the way a flame bends at a crack in a shutter, and when she went on it bent further and stayed bent, toward the dark end of the wall.
+
+"That's no draught," Hollis said from the Grey Cot. "I've slept in draughts forty years. Draughts come at you."
+
+This one was going away from them. Wren followed it on her knees, and Darrow walked beside her, good leg, bad leg, past the last cot to the corner where the linen press stood. Behind the press, low in the wall, in a place the hall had looked at so long it had stopped seeing it, was a door: iron bands, a lock the size of a fist, and under it a gap you could have slid a letter through.
+
+Wren held the candle to the gap. The flame lay down flat toward it and went thin and blue at the root, as if something on the other side were taking a long, slow breath. She snatched the candle back.
+
+"What's behind it?"
+
+"The undercroft." Wren said it the way you say the name of a dog that bites. "The stair down. It's been shut since before I could count." She looked at the lock. "I could count early."
+
+Darrow put his palm on the door. It was cold all the way through, the way the glass in Maelis's linen had been cold. So it had come up from below: up a stair, under a door nobody had opened, along the foot of the wall to the lad's head. Nobody passed. It had not needed to.
+
+"Wren," said Mother Ione, behind them.
+
+She had come up the hall without a lamp, as she did most things, without seeming to have been sent for. She looked at the candle, at the door, at the Captain's hand on it, and at Wren last.
+
+"Would you like to go to bed, Wren?"
+
+Wren would not, very much. She went anyway and took the candle with her, and left them the dark and the far lamp at the other end of the hall. Before she was out of hearing he heard her, low: "Doors in the east wall: one."
+
+Maelis came up out of the dark from the far cots, wiping her hands, and stopped at the Prior's shoulder. Nobody had sent for her either.
+
+"Open it," Darrow said.
+
+"It's mine to open." Ione did not raise her voice; she lowered it. "The key came to me from the Prior before me, and to her from the one before. None of us has turned it." She let that sit. "I haven't said no, Captain."
+
+"Then—"
+
+"I haven't said yes. What would you find?"
+
+"Whatever came up."
+
+"And what would you do with it?"
+
+He did not have an answer that would bear weight, and she let him see that she knew it.
+
+Maelis had said nothing. But while the Prior spoke her hand had gone to the door, not to the lock but to the frame a hand's width left of it, and lay there flat on a place where the wood had worn pale and smooth, the way a hand goes to a post it has leaned on in the dark. When she saw him look, she took it away and put it inside her coat.
+
+"There's a stair behind that door," Ione said. "Say you go down it. Say you find whatever it is. What do you do at the bottom of a stair you cannot come back up by yourself, Captain? Who carries you up? Wren?"
+
+He looked at the knee, because she had made him.
+
+"Here is what I'll do," the Prior said. "After the night bell I'll call the House into this hall, every soul under my roof who can stand, and they'll hear what you've found, here, where the lad lies." She turned her pale eyes from the Grey Cot to him. "You gave your name at my gate without asking me. So I'm asking you this one. Would you like to be the one who tells them?"
+
+> ⟦ THE RECKONING ⟧
+> Level 6 · **Kindled**
+> Vigor 9 → 10
+> XP 1,467 → 1,602

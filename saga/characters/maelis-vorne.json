@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "6",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#scene-6"
+    "anchor": "chronicle/02-the-grey-cot.html#scene-7"
   },
-  "last_seen_doing": "Stood in the hall door while the House turned to look at her in front of the gate, and did not move.",
-  "now": "Working the far cots while the hall's heads keep turning to her. In front of the gate the House looked at her when the Confessor asked for the Mender; she did not move, one hand flat on her coat over the linen.",
+  "last_seen_doing": "Came up from the far cots, said nothing; her hand went flat to a worn place on the door's frame, and she took it away when the Captain looked.",
+  "now": "At the undercroft door beside the Prior, saying nothing, her hand back inside her coat.",
   "story_so_far": "She met Darrow at the gate of Saint Ysolde's when the lay brothers carried him up the Steps, read his knee with two fingers and her eyes shut, and named it not broken but undone. She would not touch it for six weeks, then sat on the end of his cot with a wooden box on her knees and offered him two ways off the mountain: the Crown's, which is fast, or hers, which is made of him and can't be taken back. When he chose hers, she bound the knee with emberthread, an old art she asked him never to mention she practices. Seven weeks on she still reads the Knots, has said no fourteen times when he asked to go down the Steps, and has warned him that the soft season is now and that the quiet in the knee is a liar. Then Wren brought word of six riders in grey cloaks on the Holloway and of a list of the Faithless at Saint Ysolde's read out at the inn in Coldmere; asked who was first on it, Wren only looked at Darrow. At the gate she stood behind the Prior while the list was read, and the Confessor's eyes found her and stayed; afterwards, when he had given his name at the bars, she told him a hidden man is a lie they find in the end and a named one is a law they must break where the valley can watch, and to keep it that way.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -249,6 +249,12 @@
       "chapter": "02",
       "scene": "6",
       "evidence": "she moved her head once: no"
+    },
+    {
+      "fact": "While the Prior spoke, her hand went flat to a place on the door's frame worn pale and smooth, the way a hand goes to a post it has leaned on in the dark; she took it away when the Captain looked.",
+      "chapter": "02",
+      "scene": "7",
+      "evidence": "the way a hand goes to a post it has leaned on in the dark"
     }
   ],
   "relationships": [
@@ -371,6 +377,10 @@
     {
       "chapter": "02",
       "scene": "6"
+    },
+    {
+      "chapter": "02",
+      "scene": "7"
     }
   ]
 }

@@ -128,6 +128,11 @@
       "chapter": "02",
       "scene": "4",
       "mention": true
+    },
+    {
+      "chapter": "02",
+      "scene": "7",
+      "mention": true
     }
   ]
 }
