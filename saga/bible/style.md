@@ -88,7 +88,7 @@ Show the check on its own line, before the outcome is narrated:
 - Rolls come only from `python3 engine/darrow.py roll` and are written exactly as returned. **No invented rolls. No rerolls** except by spending Inspiration (`--reroll`).
 - Use rolls for moments with real stakes: 1–2 per daily scene at most (often zero), 2–4 in a chapter climax.
 - A failure is never a dead end. It's a complication, a cost, a different road.
-- DCs: easy 8 · moderate 11 · hard 14 · very hard 17 · near impossible 20.
+- DCs: **the brief sets them.** At a climax, `saga.py brief --climax` prints, for each kind of check, his modifiers under the frozen tier and the DC at which a full success has the tier's chance (`rules.json → week_score.tiers[].target_odds`: a Triumph's checks are very likely, a Setback's are even); roll at that DC. The tier's roll modifier stays in the dice line; the DC is what answers it, so a strong week shows in the odds and the die can still fail. In a daily scene or a Between, `python3 engine/darrow.py odds --stat … [--prof --art …] --dc N` says what a DC means for him now; easy is about three in four, hard about one in two.
 
 ### The weekly climax (written at the Sunday checkpoint)
 - **As long as the decision and its cost need** (most land between 900 and 1,800 words; the space goes to the decision and what it costs, never to everything the chapter touched): the chapter's battle, confrontation or revelation. A climax carries its own beat; whatever else is owed and does not fit the moment waits for the next chapter's first scenes. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.

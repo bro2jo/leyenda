@@ -76,8 +76,26 @@ def main():
         code, out = run(["engine/saga.py", "brief"] + mode + ["--size"], ROOT)
         marker = "== TEMPLATE" if mode == ["--chapter"] else "== RECORD"
         check(code == 0 and marker in out and len(out) <= budget, f"brief {' '.join(mode) or '(next slot)'} prints within {budget:,} chars (got {len(out):,})", out[-300:])
+        if mode == ["--climax"]:
+            check("use DC" in out or "odds: the DCs are set once" in out, "brief --climax prints the dice odds for the tier (or says the tier is not frozen yet)", out[-400:])
     code, out = run(["engine/saga.py", "now"], ROOT)
     check(code == 0 and len(out.splitlines()) <= 30, "now stays within 30 lines", out[-200:])
+    # the dice's odds: the same rule as the die, exactly (deterministic: no die is cast)
+    code, out = run(["engine/darrow.py", "odds", "--bonus", "4", "--dc", "13", "--json"], ROOT)
+    try:
+        o = json.loads(out.strip().splitlines()[-1])
+    except (ValueError, IndexError):
+        o = None
+    code2, brute = run(["-c", "import sys; sys.path.insert(0, 'engine'); import darrow; "
+                        "ns = [darrow.check_result(n, n + 4, 13) for n in range(1, 21)]; "
+                        "print(sum(r in ('SUCCESS', 'CRITICAL SUCCESS') for r in ns) / 20, sum(r.startswith('PARTIAL') for r in ns) / 20)"], ROOT)
+    bs, bp = (brute.split() + ["0", "0"])[:2]
+    row = (o or {}).get("rows", {}).get("13") or {}
+    check(code == 0 and code2 == 0 and row and abs(row["success"] - float(bs)) < 1e-6 and abs(row["partial"] - float(bp)) < 1e-6 and abs(sum(row.values()) - 1) < 1e-6,
+          "odds match the die's own rule and sum to one", out[-300:] + " | " + brute[-200:])
+    code, out = run(["engine/darrow.py", "odds", "--stat", "resolve", "--prof", "--target", "0.8", "--json"], ROOT)
+    tdc = ((json.loads(out.strip().splitlines()[-1]) if code == 0 and out.strip() else {}) or {}).get("target_dc")
+    check(code == 0 and isinstance(tdc, int) and 5 <= tdc <= 30, "odds --target names a DC", out[-200:])
 
     tmp = Path(tempfile.mkdtemp(prefix="unkneeling-selftest-"))
     try:
@@ -143,7 +161,7 @@ def main():
                 f.write(f"\n### Scene {next_scene} — The Self-Test\n\nRae came up the last flight at dusk with a letter in blue wax, and called him Darrow. Wren counted the steps she took, aloud, and wrote the number down twice. The Quorrel stood at the gate with a lamp.\n")
             bad = json.dumps({"key": key, "date": day, "people": [{"id": "wren-ashdown", "did": "counted"}]})
             code, out = run(saga + ["record", bad], tmp, expect=1)
-            check("last_beat is required" in out and "Quorrel" in out and key not in (tmp / f"saga/state/events/ch{ch:02d}.jsonl").read_text(encoding="utf-8"),
+            check("last_beat is required" in out and "Quorrel" in out and key not in page_of(tmp / f"saga/state/events/ch{ch:02d}.jsonl"),
                   "record refuses a missing last_beat and an unregistered name, writing nothing")
             code, out = run(saga + ["due"], tmp)
             due_id = next((x for x in re.findall(r"^(c\d+\.\d+[a-z])\s", out, re.M)), None)

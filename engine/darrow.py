@@ -24,7 +24,11 @@ Commands (run from the repo root):
   sport add 'JSON'             append sport-log rows
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye)
-  inspire --reason TEXT        spend one Inspiration on a bold option or a reroll (earned: a week with the daily minimum
+  odds [--stat S] [--prof] [--art ID ...] [--chapter N | --tier] [--adv|--dis] [--bonus N] [--dc N | --target P] [--json]
+                               what a DC means for him: the chance of a full success, a partial and an outright failure with the
+                               modifiers roll would carry (DC 8-20, or one DC); --target P names the DC nearest that chance of a
+                               full success. The climax's brief prints it: the week's tier sets the DC (rules.json -> target_odds)
+  inspire --reason TEXT       spend one Inspiration on a bold option or a reroll (earned: a week with the daily minimum
                                every day, a Triumph week, every level from 5 on)
   chapter-close [--date D] [--partial-ok] [--force]   Sundays: freeze the week's score and tier as a chapter (pass last
                                Saturday as D). Refuses while that Saturday looks unfinished (nothing logged, no food, or
@@ -1964,6 +1968,106 @@ def cmd_append(key, args, cfg):
 
 
 # ---------------------------------------------------------------- dice
+def check_result(nat, total, dc):
+    """The one rule `roll` and `odds` share: a natural 20 is a critical success and a natural 1 a critical failure
+    whatever the total; otherwise success at the DC, a partial (success at a cost) within 3 under it, failure below."""
+    if nat == 20:
+        return "CRITICAL SUCCESS"
+    if nat == 1:
+        return "CRITICAL FAILURE"
+    if total >= dc:
+        return "SUCCESS"
+    if total >= dc - 3:
+        return "PARTIAL (success at a cost)"
+    return "FAILURE"
+
+
+def roll_mods(args, st, cfg, rules):
+    """The modifiers a check carries, in the dice line's order: the stat, proficiency, each Art's rank, the chapter's
+    frozen tier (--chapter N) or the live one (--tier), the Ember's effect (a climax reads the Ember its week ended on,
+    whatever today's logs say), a bonus. `roll` and `odds` share it, so the odds printed before a climax are the odds
+    of the die then cast."""
+    s = st["sheet"]
+    mods = []
+    if args.stat:
+        mods.append((args.stat, s["attributes"][args.stat]["mod"]))
+    if args.prof:
+        mods.append(("proficiency", s["proficiency"]))
+    for art_id in (args.art or []):  # an Art's rank rides the check: --art wardens_eye (Insight), --art menders_patience
+        art = next((a for a in s["arts"] if a["id"] == art_id), None)
+        if not art:
+            sys.exit(f"unknown Art '{art_id}'; ids: " + ", ".join(a["id"] for a in s["arts"]))
+        if art["rank"] < 1:
+            sys.exit(f"{art['name']} is not learned yet"
+                     + (f" (sealed until Knot {roman(art['sealed_until_knot'])})" if art.get("sealed_until_knot") else "")
+                     + "; roll without --art")
+        mods.append((f"{art['name']} {roman(art['rank'])}", art["rank"]))
+    ch = None
+    if args.chapter:
+        ch = next((r for r in read_csv("chapters") if r["chapter"] == str(args.chapter)), None)
+        if not ch:
+            sys.exit(f"chapter {args.chapter} is not closed yet; run chapter-close first")
+        mods.append((f"chapter {args.chapter} {ch['tier']}", int(ch["roll_mod"])))
+    elif args.tier:
+        cur = st["current_week"]
+        mods.append((f"chapter so far {cur['tier']}", cur["roll_mod"]))
+    et = s["ember"]["tier"]
+    if ch:
+        we = d(ch["week_end"]) if ch.get("week_end") else d(ch["week_start"]) + dt.timedelta(6)
+        ev = ember_at(we, st["facts"], cfg, rules)
+        et = tier_of(ev, rules["ember"]["tiers"])["name"] if ev is not None else None
+    if et == "Blazing":
+        mods.append(("Ember Blazing", 1))
+    elif et == "Bright" and args.stat == "vigor":
+        mods.append(("Ember Bright", 1))
+    elif et == "Guttering" and args.stat in ("might", "vigor"):
+        mods.append(("Ember Guttering", -1))
+    if args.bonus:
+        mods.append(("bonus", args.bonus))
+    return mods
+
+
+def check_odds(total_mod, dc, mode=""):
+    """Exact odds of a full success, a partial and an outright failure for d20 + total_mod against dc, by
+    `check_result`'s rule, over every natural (every pair of naturals with advantage or disadvantage)."""
+    nats = [max(a, b) if mode == "adv" else min(a, b) for a in range(1, 21) for b in range(1, 21)] if mode else list(range(1, 21))
+    out = {"success": 0, "partial": 0, "failure": 0}
+    for nat in nats:
+        r = check_result(nat, nat + total_mod, dc)
+        out["success" if r in ("SUCCESS", "CRITICAL SUCCESS") else "partial" if r.startswith("PARTIAL") else "failure"] += 1
+    return {k: v / len(nats) for k, v in out.items()}
+
+
+def cmd_odds(args, cfg, rules):
+    """What a DC means for him now, or at a chapter's climax (--chapter N): the chance of a full success, a partial and
+    an outright failure, with the modifiers `roll` would carry. --target P names the DC whose chance of a full success
+    lands nearest P (ties go to the harder DC). The brief prints this before a climax, so the week's tier sets the DC."""
+    st = compute(cfg, rules)
+    mods = roll_mods(args, st, cfg, rules)
+    total = sum(m for _, m in mods)
+    mod_txt = " ".join(f"{m:+d} {n}" for n, m in mods) or "+0"
+    mode = "adv" if args.adv else "dis" if args.dis else ""
+    rows = {dc: check_odds(total, dc, mode) for dc in ([args.dc] if args.dc else range(8, 21))}
+    target_dc = None
+    if args.target is not None:
+        if not 0 < args.target < 1:
+            sys.exit("--target is a probability between 0 and 1, e.g. 0.8")
+        cands = {dc: check_odds(total, dc, mode) for dc in range(5, 31)}
+        target_dc = min(cands, key=lambda dc: (abs(cands[dc]["success"] - args.target), -dc))
+        rows.setdefault(target_dc, cands[target_dc])
+    if args.json:
+        print(json.dumps({"stat": args.stat or "flat", "mods": total, "mods_text": mod_txt, "mode": mode,
+                          "rows": {str(dc): {k: round(v, 4) for k, v in r.items()} for dc, r in sorted(rows.items())},
+                          "target": args.target, "target_dc": target_dc}))
+        return
+    print(f"[{(args.stat or 'flat').upper()}] {mod_txt} = {total:+d}" + (f" ({mode})" if mode else "") + " · partial = within 3 of the DC (success at a cost)")
+    for dc in sorted(rows):
+        r = rows[dc]
+        print(f"  DC {dc:>2}: success {r['success']:4.0%} · partial {r['partial']:4.0%} · fail {r['failure']:4.0%}" + ("  ← use this" if dc == target_dc else ""))
+    if target_dc is not None:
+        print(f"use DC {target_dc} for a {args.target:.0%} chance of a full success")
+
+
 def cmd_roll(args, cfg, rules):
     rows = read_csv("rolls")
     label = args.label + ("#reroll" if args.reroll else "")
@@ -1982,57 +2086,13 @@ def cmd_roll(args, cfg, rules):
         sp = read_csv("spends")
         sp.append({"date": st["asof"].isoformat(), "what": "inspiration", "reason": f"reroll {args.label}"})
         write_csv("spends", sp)
-    mods = []
-    if args.stat:
-        m = s["attributes"][args.stat]["mod"]
-        mods.append((args.stat, m))
-    if args.prof:
-        mods.append(("proficiency", s["proficiency"]))
-    for art_id in (args.art or []):  # an Art's rank rides the check: --art wardens_eye (Insight), --art menders_patience
-        art = next((a for a in s["arts"] if a["id"] == art_id), None)
-        if not art:
-            sys.exit(f"unknown Art '{art_id}'; ids: " + ", ".join(a["id"] for a in s["arts"]))
-        if art["rank"] < 1:
-            sys.exit(f"{art['name']} is not learned yet"
-                     + (f" (sealed until Knot {roman(art['sealed_until_knot'])})" if art.get("sealed_until_knot") else "")
-                     + "; roll without --art")
-        mods.append((f"{art['name']} {roman(art['rank'])}", art["rank"]))
-    if args.chapter:
-        ch = next((r for r in read_csv("chapters") if r["chapter"] == str(args.chapter)), None)
-        if not ch:
-            sys.exit(f"chapter {args.chapter} is not closed yet; run chapter-close first")
-        mods.append((f"chapter {args.chapter} {ch['tier']}", int(ch["roll_mod"])))
-    elif args.tier:
-        cur = st["current_week"]
-        mods.append((f"chapter so far {cur['tier']}", cur["roll_mod"]))
-    et = s["ember"]["tier"]
-    if args.chapter:  # a climax reads the Ember its week ended on, like its frozen tier, whatever today's logs say
-        we = d(ch["week_end"]) if ch.get("week_end") else d(ch["week_start"]) + dt.timedelta(6)
-        ev = ember_at(we, st["facts"], cfg, rules)
-        et = tier_of(ev, rules["ember"]["tiers"])["name"] if ev is not None else None
-    if et == "Blazing":
-        mods.append(("Ember Blazing", 1))
-    elif et == "Bright" and args.stat == "vigor":
-        mods.append(("Ember Bright", 1))
-    elif et == "Guttering" and args.stat in ("might", "vigor"):
-        mods.append(("Ember Guttering", -1))
-    if args.bonus:
-        mods.append(("bonus", args.bonus))
+    mods = roll_mods(args, st, cfg, rules)
     a = secrets.randbelow(20) + 1
     b = secrets.randbelow(20) + 1 if (args.adv or args.dis) else None
     mode = "adv" if args.adv else "dis" if args.dis else ""
     nat = max(a, b) if args.adv else min(a, b) if args.dis else a
     total = nat + sum(m for _, m in mods)
-    if nat == 20:
-        result = "CRITICAL SUCCESS"
-    elif nat == 1:
-        result = "CRITICAL FAILURE"
-    elif total >= args.dc:
-        result = "SUCCESS"
-    elif total >= args.dc - 3:
-        result = "PARTIAL (success at a cost)"
-    else:
-        result = "FAILURE"
+    result = check_result(nat, total, args.dc)
     mod_txt = " ".join(f"{m:+d} {n}" for n, m in mods)
     rows.append({"when": dt.datetime.now().isoformat(timespec="seconds"), "label": label, "stat": args.stat or "",
                  "dc": args.dc, "d20": a, "d20_b": b or "", "mode": mode, "mods": mod_txt, "total": total,
@@ -2531,6 +2591,10 @@ def main():
     s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append", help="add an Art's rank by its rules.json id, e.g. --art wardens_eye for an Insight check")
     s.add_argument("--prof", action="store_true"); s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int)
     s.add_argument("--reroll", action="store_true"); s.add_argument("--note")
+    s = sub.add_parser("odds"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int); s.add_argument("--target", type=float, help="the chance of a full success you want, e.g. 0.8: prints the DC nearest it")
+    g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
+    s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append"); s.add_argument("--prof", action="store_true")
+    s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int); s.add_argument("--json", action="store_true")
     s = sub.add_parser("inspire"); s.add_argument("--reason", required=True)
     s = sub.add_parser("chapter-close"); s.add_argument("--date"); s.add_argument("--force", action="store_true")
     s.add_argument("--partial-ok", action="store_true", help="freeze even though the week's last day looks unfinished (he said that was all)")
@@ -2548,7 +2612,7 @@ def main():
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
     {
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set, "close": cmd_close,
-        "food": cmd_food, "roll": cmd_roll, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
+        "food": cmd_food, "roll": cmd_roll, "odds": cmd_odds, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap, "project": cmd_project,
         "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc, "ship": cmd_ship,
         "ex": lambda a, c, r: cmd_append("exercise", a, c),

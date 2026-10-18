@@ -233,7 +233,7 @@
     "triumph_inspiration": 1
   },
   "week_score": {
-    "_about": "0-100. Sets the chapter's outcome tier. Red-light days (plan says rest) are excused, not counted against.",
+    "_about": "0-100. Sets the chapter's outcome tier. Red-light days (plan says rest) are excused, not counted against. roll_mod rides every climax die; target_odds is the chance of a full success each climax check is set to have (the brief prints the DC that gives it, from his modifiers that week: darrow.py odds), so a strong week's checks are very likely and a thin week's are even, and the dice can still fail.",
     "weights": {
       "floor": 20,
       "sessions": 25,
@@ -246,22 +246,26 @@
       {
         "min": 85,
         "name": "Triumph",
-        "roll_mod": 3
+        "roll_mod": 3,
+        "target_odds": 0.8
       },
       {
         "min": 70,
         "name": "Hard-won",
-        "roll_mod": 1
+        "roll_mod": 1,
+        "target_odds": 0.7
       },
       {
         "min": 50,
         "name": "Costly",
-        "roll_mod": 0
+        "roll_mod": 0,
+        "target_odds": 0.6
       },
       {
         "min": 0,
         "name": "Setback",
-        "roll_mod": -2
+        "roll_mod": -2,
+        "target_odds": 0.5
       }
     ]
   },

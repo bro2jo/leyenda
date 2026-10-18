@@ -3648,6 +3648,70 @@ def callbacks_for_brief(st, cap=6):
     return [f"· {it['id']}: {short(it.get('what'), 170)}" for e, it in rows[:cap]]
 
 
+# the kinds of check a climax plan names, as `darrow.py roll` takes them (Insight = Resolve + proficiency + Warden's Eye)
+CHECK_KINDS = {"insight": ("resolve", True, "wardens_eye"), "might": ("might", False, None), "vigor": ("vigor", False, None),
+               "finesse": ("finesse", False, None), "resolve": ("resolve", False, None)}
+
+
+def darrow_odds(extra):
+    """`darrow.py odds --json …` as a dict, or None when the engine refuses (an Art not learned, a chapter not frozen)."""
+    r = subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "odds", "--json"] + [str(x) for x in extra],
+                       cwd=ROOT, capture_output=True, text=True)
+    if r.returncode:
+        return None
+    try:
+        return json.loads(r.stdout.strip().splitlines()[-1])
+    except (ValueError, IndexError):
+        return None
+
+
+def odds_line(label, extra, dc=None):
+    """One line of odds for a check: his total modifier and, for `dc` (or the target DC the extra args asked for), the
+    chance of a full success, a partial and an outright failure. An Art he has not learned falls back to the bare stat."""
+    o = darrow_odds(extra)
+    if o is None and "--art" in extra:
+        i = extra.index("--art")
+        o = darrow_odds(extra[:i] + extra[i + 2:])
+    if o is None:
+        return f"  {label}: odds unavailable (`darrow.py odds {' '.join(str(x) for x in extra)}`)"
+    dc = dc if dc is not None else o.get("target_dc")
+    row = (o.get("rows") or {}).get(str(dc))
+    if not row:
+        return f"  {label} ({o['mods_text']} = {o['mods']:+d}): DC {dc} is outside the table (`darrow.py odds --dc {dc} …`)"
+    verb = "use DC" if dc == o.get("target_dc") and o.get("target") is not None else "DC"
+    return f"  {label} ({o['mods_text']} = {o['mods']:+d}): {verb} {dc} → success {row['success']:.0%} · partial {row['partial']:.0%} · fail {row['failure']:.0%}", o
+
+
+def climax_odds_lines(ch, checks, rules, frozen):
+    """The climax's dice before they are cast: for every kind of check, his modifier under the frozen tier and Ember
+    and the DC at which a full success has the tier's chance (rules.json → week_score.tiers[].target_odds), with what
+    the planned DC would give beside it. The tier's roll modifier stays in the dice line; the DC is what answers it."""
+    tiers = {t["name"]: t for t in rules.get("week_score", {}).get("tiers", [])}
+    tier_name = frozen.get("tier") if frozen else None
+    target = (tiers.get(tier_name) or {}).get("target_odds") if tier_name else None
+    if target is None:
+        return ["odds: the DCs are set once `darrow.py chapter-close` freezes the tier (`darrow.py odds --chapter N --target P`); until then plan them as written"]
+    planned = {}
+    for text in checks:
+        m = re.match(r"^\s*(insight|might|vigor|finesse|resolve)\b.*?DC\s*(\d+)", str(text), re.I)
+        if m:
+            planned.setdefault(m.group(1).lower(), []).append(int(m.group(2)))
+    out = [f"odds ({tier_name}: each check's DC is set so a full success has a {target:.0%} chance; the dice line keeps the tier's modifier; partial = within 3, success at a cost; the planned DCs are advisory):"]
+    for kind, (stat, prof, art) in CHECK_KINDS.items():
+        extra = ["--stat", stat, "--chapter", ch, "--target", target] + (["--prof"] if prof else []) + (["--art", art] if art else [])
+        got = odds_line(kind, extra)
+        if isinstance(got, str):
+            out.append(got)
+            continue
+        line, o = got
+        for pdc in planned.get(kind, []):
+            row = (o.get("rows") or {}).get(str(pdc))
+            if row and pdc != o.get("target_dc"):
+                line += f" · planned DC {pdc} would be {row['success']:.0%}"
+        out.append(line)
+    return out
+
+
 def format_lines(kind, slot=None):
     if kind == "scene":
         out = ["heading: `### Scene N — Title` appended to the chapter file (N is the key's number)",
@@ -3783,6 +3847,10 @@ def cmd_brief(args):
         if slot.get("challenge"):
             c = slot["challenge"]
             L.append(f"device, a challenge ({c.get('status')}): {c.get('objective')} · approaches: " + "; ".join(f"{a.get('name')} ({a.get('stat')}{' + ' + a['art'] if a.get('art') else ''}, DC {a.get('dc')})" for a in c.get("approaches") or []) + f" · after each roll `saga.py challenge {slot['n']} success|fail`; the counters never reach the page")
+            for a_ in c.get("approaches") or []:
+                if a_.get("stat") in ("might", "vigor", "finesse", "resolve") and a_.get("dc"):
+                    got = odds_line(f"approach {a_.get('name')}", ["--stat", a_["stat"], "--dc", a_["dc"]] + (["--prof", "--art", a_["art"]] if a_.get("art") else []), dc=int(a_["dc"]))
+                    L.append(got if isinstance(got, str) else got[0])
         if slot.get("invite"):
             inv = slot["invite"]
             L.append(f"device, an invitation ({inv.get('status')}): {inv.get('who')} wants {inv.get('want')} · why now: {inv.get('why_now')} · offer it in one in-world sentence as the reply's last line; if ignored by the next close: {inv.get('if_ignored')}")
@@ -3814,6 +3882,7 @@ def cmd_brief(args):
         frozen = rows.get(ch)
         L.append(f"the tier: {frozen.get('tier') + ' (frozen by chapter-close; roll with --chapter ' + str(ch) + ')' if frozen else 'NOT FROZEN YET: `darrow.py chapter-close --date <Saturday>` first; the dice read the frozen tier'}")
         L.append("the tier's shape: Triumph, the plan works and something extra; Hard-won, he wins and it costs something real; Costly, one thing won and one lost; Setback, the enemy gains ground and the reversal sets up the next chapter (never humiliating, never a lecture)")
+        L += climax_odds_lines(ch, c.get("checks") or [], rules, frozen)
         for o in owed_moves(plan):
             L.append(f"owed world move (open on it): {o['world_move']}")
         beat = pos.get("beat")
