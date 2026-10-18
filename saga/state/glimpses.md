@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-15 · house · The kitchen has taken to leaving its book open on the bread table where anyone can read it. Nobody in the House admits to having read it, and the pencil has to be sharpened twice a day.
 - 2026-10-15 · ledger · From Wren's ledgers, the cage page: First load: linen, wet. Second: salt. Third: one novice, who rode up on a dare, weighed with the salt and entered as salt.
 - 2026-10-15 · weather · Snow on and off all afternoon, the kind that cannot decide whether it is falling or blowing and settles the question by doing both.
 - 2026-10-15 · body · His hands are warm without the brazier tonight. He notices it the way you notice a dog that has stopped barking: some time after it stopped.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-18 · body · He swung both legs off the cot at the dawn bell together, out of old habit, and the left came with the right as if it had never had a reason not to. He sat and looked at it until the bell stopped.
 - 2026-10-18 · ledger · From Wren's ledgers, the stockings page: pairs on the chimney breast, eleven. Pairs with a number chalked over them, eleven. Pairs that are the right pair when they come down, nine, which she has decided not to mention.
 - 2026-10-18 · weather · The wind went round to the north at noon and glazed the top flights of the Steps. The lay brothers bringing up the wood are doing it as much sitting down as standing, and swearing at it in the plain words of men who have been told not to.
+- 2026-10-18 · house · Sister Pell has had the novices carry a second brazier into the bell tower, and sits between the two of them with her rope across her knees like a cat that may or may not be asleep.

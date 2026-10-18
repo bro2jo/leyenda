@@ -75,5 +75,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-17#10,2026-10-17,,dinner,BBQ chicken wing,2 wings,190,12,8,12,0,3,6,640,120,16,0.6,12,1,0,0,40,estimate,same wings as lunch; assumed Domino's BBQ wings
 2026-10-17#11,2026-10-17,,snack,"Undercover chocolate quinoa crisps, dark chocolate + sea salt",about 5 crisps (1.25 servings),150,2.5,23.8,7.5,2.5,4.4,7.5,112,212,12.5,3.25,38,0.75,0,0,12,label,label photo; 4 crisps = 1 oz
 2026-10-17#12,2026-10-17,,snack,Organic peanut butter (for dipping),assumed ~1.5 tbsp (24 g),140,6,5,12,1.5,2,1.5,90,160,10,0.5,40,0.8,0,0,0,estimate,amount guessed for dipping 5 crisps; typical organic PB
-2026-10-18#1,2026-10-18,,lunch,Seasoned ground beef (crumbles),"assumed ~6 oz cooked (~1/2 lb raw), 85/15",430,45,3,26,0.5,10,1,520,600,30,4.6,36,10.5,0,0.2,60,photo,portion and fat % from the photo; seasoning sodium guessed
-2026-10-18#2,2026-10-18,,lunch,"White rice, plain",assumed ~1.5 cups cooked,310,6.5,68,0.7,1,0.2,0,5,85,25,0.5,30,1.2,0,0,0,photo,portion from photo
+2026-10-18#1,2026-10-18,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row
+2026-10-18#2,2026-10-18,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,library row
+2026-10-18#3,2026-10-18,,lunch,Homemade taco beef and rice,1 bowl,875,56,73,40,2,15,2,1450,800,90,6.5,,,,0,,estimate,"his estimate (kcal, macros, sat fat, Na, fiber, sugar, Ca, Fe, K, vit D); replaces my photo estimate; Mg, zinc, vit C, omega-3 not given"
