@@ -1028,7 +1028,7 @@ She took that without any fuss at all.
 
 ### Scene 7 — The Door Below
 
-By the next dusk the House counted every evening, the way a garrison does: its own bell going up on Sister Pell's rope, and the grey cloaks' fires below the gate, one more tonight than the night before.
+At the next dusk the House counted, as it did every evening now, the way a garrison does: its own bell going up on Sister Pell's rope, and the grey cloaks' fires below the gate, one more tonight than the night before.
 
 When the hall's fires were banked, Wren came down the row with a candle in a cup and her pencil back behind her ear. Darrow was already on his feet. He had told her first, and he meant to be there for the rest of it.
 
