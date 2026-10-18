@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-15 · overheard · Two lay brothers at the woodpile, agreeing that the carter's oxen are the only creatures on the mountain with any sense. Neither of them has met the oxen.
 - 2026-10-15 · house · The kitchen has taken to leaving its book open on the bread table where anyone can read it. Nobody in the House admits to having read it, and the pencil has to be sharpened twice a day.
 - 2026-10-15 · ledger · From Wren's ledgers, the cage page: First load: linen, wet. Second: salt. Third: one novice, who rode up on a dare, weighed with the salt and entered as salt.
 - 2026-10-15 · weather · Snow on and off all afternoon, the kind that cannot decide whether it is falling or blowing and settles the question by doing both.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-17 · overheard · From the kitchen, late, the cook to nobody in particular: "If the Mother wants the bread counted again she can come and count it. I've counted it. It came out the same. That's what's wrong with it."
 - 2026-10-18 · body · He swung both legs off the cot at the dawn bell together, out of old habit, and the left came with the right as if it had never had a reason not to. He sat and looked at it until the bell stopped.
 - 2026-10-18 · ledger · From Wren's ledgers, the stockings page: pairs on the chimney breast, eleven. Pairs with a number chalked over them, eleven. Pairs that are the right pair when they come down, nine, which she has decided not to mention.
+- 2026-10-18 · weather · The wind went round to the north at noon and glazed the top flights of the Steps. The lay brothers bringing up the wood are doing it as much sitting down as standing, and swearing at it in the plain words of men who have been told not to.
