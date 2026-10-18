@@ -1089,7 +1089,7 @@ He looked at the knee, because she had made him.
 
 After the night bell the House came into the hall, every soul under Mother Ione's roof who could stand.
 
-They came in by both doors and stood where they could. The lay brothers lined the west wall in their aprons. The kitchen came up all together, the cook with her arms folded and the novice with flour to the elbows behind her, and Sister Pell came last in both her shawls, holding her hands in front of her the way a bell-ringer does at the end of a long day on the rope. Novices sat on the ends of empty cots. The men of the hall who could walk got up and leaned on the posts, and the ones who could not turned their heads on the pillow. Rae Thorne stood in the kitchen door with her hood down and came no further in.
+They came in by both doors and stood where they could: the lay brothers along the west wall in their aprons, the kitchen all together with the cook's arms folded, novices on the ends of empty cots, and Sister Pell last, in both her shawls. The men of the hall who could walk leaned on the posts. Rae Thorne stood in the kitchen door with her hood down and came no further in.
 
 Maelis stood at the foot of the Grey Cot, where the whole House could see her, with her coat buttoned to the throat. Nobody had told her to stand there. Hollis sat beside her on the edge of his own cot with the lad's hand in his, and looked at no one.
 
@@ -1115,7 +1115,7 @@ Wren had been got out of bed for this, and had come with the ledger open across 
 
 "Every one," said Sister Pell, from her shawls. "I don't sleep. I ring."
 
-"Ser Orrin says his oath at every bell. You've all heard him." Wren turned the page and did not look at the Grey Cot. "The far-lamp novice was awake that night. Technically she always was; she only said she slept." On the end of an empty cot the night novice went scarlet and did not deny it. "So I asked her what she heard at the bells."
+"Ser Orrin says his oath at every bell. You've all heard him." Wren turned the page and did not look at the Grey Cot. "The far-lamp novice was awake that night. Technically she was awake the whole time; she only said she slept." On the end of an empty cot the night novice went scarlet and did not deny it. "So I asked her what she heard at the bells."
 
 The night novice spoke to her hands. "The first bell, and the second, and the third. He says it in his sleep. I heard every word." She swallowed. "At the fourth he didn't. I thought he'd gone properly to sleep at last. I was glad for him."
 
@@ -1123,7 +1123,9 @@ The night novice spoke to her hands. "The first bell, and the second, and the th
 
 Beside the Grey Cot, Hollis had shut his eyes. He did not open them.
 
-"If nobody came in at a door," said the cook, reasonably, "then how?"
+"My grandmother used to say a witch doesn't need a door," said the cook, to the whole hall, and a few of the heads went back toward the Mender.
+
+"Neither does the cold," Darrow said.
 
 Wren lit the candle at the brazier and held it up, and Darrow looked at the hall over the top of it.
 
@@ -1143,19 +1145,25 @@ Nobody said anything. Only Rae Thorne had stayed in the kitchen door. She watche
 
 "Since before you could count," said Wren. "I know. I could count early."
 
-Somebody laughed, the way a hall laughs when it has been frightened all week and is let off. Darrow watched the heads, as he had watched them all week, and this time they did not go back up the row to the foot of the Grey Cot. They stayed on the door.
+Somebody laughed, too loud, and stopped.
+
+Darrow turned to the lay brother from the fire. "You asked whose hand," he said. "Nobody's. It came up."
+
+The lay brother looked at the door a long moment, and nodded.
+
+Darrow watched the heads, as he had watched them all week, and this time they did not go back up the row to the foot of the Grey Cot. They stayed on the door.
 
 The novice with flour to the elbows put her hand up like a child at lessons.
 
 "And the glass, Captain? The black glass the Mender took out of his mouth. What is it?"
 
-He knew what it looked like. He could feel how well that would sit in a frightened House, and what Marrant would make of it by the dawn bell. Up the row by the Grey Cot, Maelis was looking at him, and for once she was looking at his face, not the knee.
+He knew what it looked like. He had told Maelis, in her cell, that he would not say it here. He could feel how well it would sit in a frightened House, and what Marrant would make of it by the dawn bell. Up the row by the Grey Cot, Maelis was looking at him, and for once she was looking at his face, not the knee.
 
 "The Mender found it," he said. "She'll tell you what it is when she knows. Not before."
 
 Maelis held his eye a moment longer. Then she turned to the lad and put two fingers under his jaw, as if nothing had been said in the hall at all.
 
-The novice with flour to the elbows looked from the door to Darrow and back, and said the thing that made it the House's and not his.
+The kitchen novice looked from the door to Darrow and back, and said the thing that made it the House's and not his.
 
 "We'll lay flour at that door tonight," she said. "Like the kitchen. Then in the morning we'll know."
 
@@ -1177,7 +1185,7 @@ He did not ask. The knee had been warm all evening and was quiet now, and he had
 
 Mother Ione drew a cord out from the neck of her habit. A key hung on it, black and long, older than any on her ring.
 
-"Keys," said Wren under her breath. "Ten."
+"Keys on the Prior's ring: nine," Wren said under her breath. "Keys on the Prior: ten."
 
 "When you can tell me what you'd do at the bottom," the Prior said, "ask me for it. I'll be awake." She put the key back where it lived.
 
@@ -1189,9 +1197,9 @@ Maelis had said nothing. Darrow looked at the frame a hand's width left of the l
 
 It was not an answer. It was not a no, either. She held his eye and let him have that much.
 
-Behind them the novice with flour to the elbows came down the row with a basin, knelt at the gap under the door, and laid a skin of flour across the flags, white and smooth, from the iron to the foot of the linen press.
+Behind them the kitchen novice came down the row with a basin, knelt at the gap under the door, and laid a skin of flour across the flags, white and smooth, from the iron to the foot of the linen press.
 
 **What does Darrow do?**
-1. **Ask Maelis to take him down herself, and go on her terms: one step at a time, a hand on Wren's shoulder, her right to say stop.** *(She may still say no.)*
+1. **Ask Maelis to take him down herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop.** *(She may still say no.)*
 2. **Send Wren down with a lamp.** *(Hollis disapproves.)*
 3. **Ask Mother Ione for the key, and wait.** *(Hollis approves.)*

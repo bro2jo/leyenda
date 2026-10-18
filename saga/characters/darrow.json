@@ -29,7 +29,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/02-the-grey-cot.html#climax"
   },
-  "last_seen_doing": "Stood at his cot's end and laid the night out before the whole House; read the fire lay brother as frightened, not Marrant's man; kept the black glass out of the hall as he had promised the Mender; at the undercroft door, with the House behind him, did not ask for it to be opened; asked Maelis whether she had been down there.",
+  "last_seen_doing": "Stood at his cot's end and laid the night out before the whole House; read the fire lay brother as frightened, not Marrant's man, and told him whose hand it was: nobody's, it came up; kept the black glass out of the hall as he had promised the Mender; at the undercroft door, with the House behind him, did not ask for it to be opened; asked Maelis whether she had been down there.",
   "now": "At the undercroft door after the House has gone to bed, with the Prior, Maelis and Wren, and flour laid on the flags at its foot. The House believes the cold came up the stair. The Prior keeps an old key and has told him to ask for it when he can say what he would do at the bottom.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
@@ -786,7 +786,13 @@
       "evidence": "He was not Marrant's man. He was frightened, and he was asking to be told it was nobody here."
     },
     {
-      "fact": "Asked before the House what the black glass is, he said the Mender would tell it when she knows, and did not say what it looks like.",
+      "fact": "He answered the lay brother who had asked whose hand did it: nobody's; it came up.",
+      "chapter": "02",
+      "scene": "climax",
+      "evidence": "Nobody's. It came up."
+    },
+    {
+      "fact": "Asked before the House what the black glass is, he kept what he had told Maelis in her cell and said only that the Mender would tell it when she knows.",
       "chapter": "02",
       "scene": "climax",
       "evidence": "She'll tell you what it is when she knows. Not before."

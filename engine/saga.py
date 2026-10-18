@@ -4215,12 +4215,20 @@ def cmd_record(args):
         opts = c.get("options") or []
         if not 2 <= len(opts) <= 3 or c.get("default") not in range(1, len(opts) + 1):
             die("the climax's choice needs 2–3 options and a default among them")
-        if pos.get("stage") == "scene":
-            pos["stage"] = "climax"
-            pay_owed_moves(plan, "climax")
-        plan["open_choice"] = {"chapter": int(plan["chapter"].get("number")), "scene": "climax", "ask": c.get("ask") or "What does Darrow do?",
-                               "options": [str(o) for o in opts], "default": int(c["default"]), "opened": today, "carries": int(c.get("carries") or 2)}
-        print("climax choice open: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)) + f" · default {c['default']}")
+        oc = plan.get("open_choice") or {}
+        if ch != int(pos["chapter"]):  # --force on an older chapter's climax: the plan has moved on, so only a still-open choice's wording follows the page
+            if int(oc.get("chapter", -1)) == ch:
+                oc.update({"ask": c.get("ask") or oc.get("ask"), "options": [str(o) for o in opts], "default": int(c["default"])})
+                print("climax choice (still open) follows the page: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)) + f" · default {c['default']}")
+            else:
+                print(f"{key} re-recorded; its choice is no longer open, so the plan is unchanged")
+        else:
+            if pos.get("stage") == "scene":
+                pos["stage"] = "climax"
+                pay_owed_moves(plan, "climax")
+            plan["open_choice"] = {"chapter": int(plan["chapter"].get("number")), "scene": "climax", "ask": c.get("ask") or "What does Darrow do?",
+                                   "options": [str(o) for o in opts], "default": int(c["default"]), "opened": today, "carries": int(c.get("carries") or 2)}
+            print("climax choice open: " + " / ".join(f"{i}. {o}" for i, o in enumerate(opts, 1)) + f" · default {c['default']}")
     if kind == "choice":
         if pos.get("stage") == "climax":
             pos["stage"] = "choice"
@@ -4232,7 +4240,13 @@ def cmd_record(args):
             s_inv["invite"]["status"] = "taken" if inv.get("action", "take") == "take" else "passed"
             print(f"invite slot {s_inv['n']} {s_inv['invite']['status']}")
     for did in ev.get("fired") or []:
-        print(fire_item(st, did, wrote if WHERE_RE.match(wrote) else f"{ch2(ch)}"))
+        where_ = wrote if WHERE_RE.match(wrote) else f"{ch2(ch)}"
+        if args.force and not str(did).startswith("r."):  # a revised block keeps what it already paid
+            _, it_ = find_due(st.ledger, did)
+            if it_.get("status") == f"fired@{where_}":
+                print(f"{did} already fired at {where_} (kept)")
+                continue
+        print(fire_item(st, did, where_))
     for v in ev.get("voided") or []:
         print(void_item(st, v["id"], v["why"]))
     for lid in ev.get("lore") or []:
