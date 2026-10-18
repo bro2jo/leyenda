@@ -6,7 +6,7 @@
       "title": "Get the CRV ready to sell",
       "status": "live",
       "opened": "2026-10-14",
-      "due": "2026-10-17",
+      "due": "2026-10-31",
       "done": null,
       "late": false,
       "tasks": [
@@ -25,7 +25,12 @@
           "text": "List it",
           "done": null
         }
-      ]
+      ],
+      "deferred": {
+        "date": "2026-10-17",
+        "from_due": "2026-10-17",
+        "why": "his call: deferred to the week of 10/25"
+      }
     }
   ]
 }
