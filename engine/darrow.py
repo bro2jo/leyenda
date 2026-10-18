@@ -2271,6 +2271,10 @@ def project_line(data=None):
     done = sum(1 for t in p["tasks"] if t.get("done"))
     nxt = next((t for t in p["tasks"] if not t.get("done")), None)
     due = f" · due {dow(d(p['due']))} {md(d(p['due']))}" if p.get("due") else ""
+    resumes = (p.get("deferred") or {}).get("resumes")
+    if resumes and today_local(load_json(P["config"])).isoformat() < resumes:
+        # set aside by his own call until a later week: named, never pressed as today's next task
+        return f"Project: {p['title']} · {done}/{len(p['tasks'])} done · resting until the week of {md(d(resumes))}" + due
     return f"Project: {p['title']} · {done}/{len(p['tasks'])} done" + (f" · next: {nxt['n']}. {nxt['text']}" if nxt else "") + due
 
 

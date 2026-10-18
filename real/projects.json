@@ -1,5 +1,5 @@
 {
-  "_about": "The works: one real goal at a time outside the knee, in 2-5 tasks (clean it, park it, list it). `darrow.py project open|done|show|drop`; `today` names the next task. Each task reported pays one piece of the tale bound to the project (`saga.py tale bind`, then `saga.py brief --tale`), the last piece its keepsake; a finished project counts in the sheet's WORKS and brings one Inspiration. Titles and tasks are real-world words: they never reach the Chronicle or the site, only the counts do. Dates are the days the tasks were reported.",
+  "_about": "The works: one real goal at a time outside the knee, in 2-5 tasks (clean it, park it, list it). `darrow.py project open|done|show|drop`; `today` names the next task. Each task reported pays one piece of the tale bound to the project (`saga.py tale bind`, then `saga.py brief --tale`), the last piece its keepsake; a finished project counts in the sheet's WORKS and brings one Inspiration. Titles and tasks are real-world words: they never reach the Chronicle or the site, only the counts do. Dates are the days the tasks were reported. A project set aside by his call keeps `deferred {date, from_due, why, resumes}`: until `resumes` (a Sunday) `today` names it as resting, not as the day's next task.",
   "projects": [
     {
       "id": "sell-the-crv",
@@ -29,7 +29,8 @@
       "deferred": {
         "date": "2026-10-17",
         "from_due": "2026-10-17",
-        "why": "his call: deferred to the week of 10/25"
+        "why": "his call: deferred to the week of 10/25",
+        "resumes": "2026-10-25"
       }
     }
   ]

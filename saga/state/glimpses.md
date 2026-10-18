@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-15 · weather · Snow on and off all afternoon, the kind that cannot decide whether it is falling or blowing and settles the question by doing both.
 - 2026-10-15 · body · His hands are warm without the brazier tonight. He notices it the way you notice a dog that has stopped barking: some time after it stopped.
 - 2026-10-16 · overheard · At the woodpile, one lay brother to another: "Eleven hundred and seventeen, she says. I made it eleven hundred and nineteen." The other, splitting: "Then you counted two of them twice. Don't tell her."
 - 2026-10-16 · house · In the warming room the novices have hung their wet stockings in a row along the chimney breast, and someone has chalked a number over each pair, in a hand that is not Wren's and is trying very hard to be.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-18 · weather · The wind went round to the north at noon and glazed the top flights of the Steps. The lay brothers bringing up the wood are doing it as much sitting down as standing, and swearing at it in the plain words of men who have been told not to.
 - 2026-10-18 · house · Sister Pell has had the novices carry a second brazier into the bell tower, and sits between the two of them with her rope across her knees like a cat that may or may not be asleep.
 - 2026-10-18 · overheard · Two lay brothers at the woodpile, stamping the ice off: "Third time today she's sent for more wood." "She's rung bells fifty years. Let her be warm for one of them."
+- 2026-10-18 · body · Evening, and the knee has spent the whole day being ordinary. He has started, without meaning to, to forget which one it is until he stands.
