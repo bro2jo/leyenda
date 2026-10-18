@@ -1028,7 +1028,7 @@ She took that without any fuss at all.
 
 ### Scene 7 — The Door Below
 
-The House counted what it had now, every dusk, the way a garrison does: Sister Pell's hands on Old Mercy's rope, and below the gate the grey cloaks' fires, one more tonight than the night before.
+By the next dusk the House counted every evening, the way a garrison does: its own bell going up on Sister Pell's rope, and the grey cloaks' fires below the gate, one more tonight than the night before.
 
 When the hall's fires were banked, Wren came down the row with a candle in a cup and her pencil back behind her ear. Darrow was already on his feet. He had told her first, and he meant to be there for the rest of it.
 
@@ -1038,7 +1038,7 @@ She moved it along, a hand above the flags, past the first cot and the second. A
 
 "That's no draught," Hollis said from the Grey Cot. "I've slept in draughts forty years. Draughts come at you."
 
-This one was going away from them. Wren followed it on her knees, and Darrow walked beside her, good leg, bad leg, past the last cot to the corner where the linen press stood. Behind the press, low in the wall, in a place the hall had looked at so long it had stopped seeing it, was a door: iron bands, a lock the size of a fist, and under it a gap you could have slid a letter through.
+This one was going away from them. Wren followed it on her knees, and Darrow walked beside her, slow on the flags, past the last cot to the corner where the linen press stood. Behind the press, low in the wall, in a place the hall had looked at so long it had stopped seeing it, was a door: iron bands, a lock the size of a fist, and under it a gap you could have slid a letter through.
 
 Wren held the candle to the gap. The flame lay down flat toward it and went thin and blue at the root, as if something on the other side were taking a long, slow breath. She snatched the candle back.
 
@@ -1050,11 +1050,11 @@ Darrow put his palm on the door. It was cold all the way through, the way the gl
 
 "Wren," said Mother Ione, behind them.
 
-She had come up the hall without a lamp, as she did most things, without seeming to have been sent for. She looked at the candle, at the door, at the Captain's hand on it, and at Wren last.
+She had come up the hall without a lamp, and as usual nobody had sent for her. She looked at the candle, at the door, at the Captain's hand on it, and at Wren last.
 
 "Would you like to go to bed, Wren?"
 
-Wren would not, very much. She went anyway and took the candle with her, and left them the dark and the far lamp at the other end of the hall. Before she was out of hearing he heard her, low: "Doors in the east wall: one."
+Wren would not, very much. She went anyway and took the candle with her, and left them the dark and the far lamp at the other end of the hall. Before she was out of hearing he heard her, low: "Doors into the hall. Three."
 
 Maelis came up out of the dark from the far cots, wiping her hands, and stopped at the Prior's shoulder. Nobody had sent for her either.
 

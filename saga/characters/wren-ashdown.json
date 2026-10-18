@@ -27,8 +27,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/02-the-grey-cot.html#scene-7"
   },
-  "last_seen_doing": "Walked the east wall with a candle; the flame bent at the third cot and led to the undercroft door, where it lay flat toward the gap; named the undercroft; sent to bed by the Prior, counting the door.",
-  "now": "Sent to bed by the Prior, counting under her breath: doors in the east wall, one.",
+  "last_seen_doing": "Walked the east wall with a candle; the flame bent at the third cot and led to the undercroft door, where it lay flat toward the gap; named the undercroft; sent to bed by the Prior, correcting her count of the hall's doors to three.",
+  "now": "Sent to bed by the Prior, correcting her own count under her breath: doors into the hall, three.",
   "story_so_far": "She counted the Thousand Steps aloud beside Darrow's litter on the day the lay brothers carried him up to Saint Ysolde's, insisting there are eleven hundred and seventeen and that everyone who says a thousand is wrong. Her ledgers keep the House's tallies: the Steps, the cots, the bells, and how many times the captain of the Ninth has asked to go down the mountain and how many times Mender Vorne has said no. Seven weeks after the Binding, on the first snow of the year, she came down from the bell tower to the infirmary hall, out of breath, with word of six grey cloaks and a censer on the Holloway road, and of a list read out at the inn in Coldmere naming the Faithless they had come to bring down to kneel. Hollis is second on it. When he asked who was first, she looked at Darrow. When they came in three bells early she was on the gate wall with Pell's glass, counting them, until the last was in and she had no number for it. At the gate she stood at the Captain's side while his name was read, and ran for the bell tower on his word. When he gave his name at the bars anyway, she counted the Confessors instead of looking at him.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -257,10 +257,10 @@
       "evidence": "It's been shut since before I could count."
     },
     {
-      "fact": "Sent to bed by the Prior, she went, counting: doors in the east wall, one.",
+      "fact": "Sent to bed by the Prior, she corrected her count of the doors into the hall from two to three.",
       "chapter": "02",
       "scene": "7",
-      "evidence": "Doors in the east wall: one."
+      "evidence": "Doors into the hall. Three."
     }
   ],
   "relationships": [
