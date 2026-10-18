@@ -13,7 +13,11 @@ Commands (run from the repo root):
   check                                 validate ledger, plan, bearing, world.json choices, arc ids, formatting, and reconcile the chapter file with the
                                         plan's slots, world.json scenes[] and the Ledger's closed days; exit 1 on problems (an unreadable state file is named)
   fmt                                   rewrite the four state JSON files canonically
-  add 'JSON' [--witnessed a,b] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas; every flag it sets
+  approval forecast                     each companion's regard, its income a chapter (Betweens, choices, the engine's costs apart) and, for every
+                                        rule that reads it, the rule's moment and whether the road crosses its line before then (met for free),
+                                        in reach, late, or not at this rate; `brief --chapter` repeats the lines met for free
+  add 'JSON' [--witnessed a,b] [--learned id:how] [--pending] [--dry-run]   append a ledger entry, resolve `at`, apply its `now` deltas (regard moves only
+                                        for who saw it or is said to have heard of it); every flag it sets
                                         gets a due item for the arc's Downstream line (fire where honoured, void with a reason)
   fire ID --where ch03:s2               mark a due item fired there; a rule id (r.…) marks the rule honoured there (once per Book for a standing rule)
   void ID --why TEXT                    mark a due item void
@@ -1547,8 +1551,8 @@ def cmd_now(args):
     else:
         lines.append("Due now: nothing")
     if later:
-        stale = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later" and int(it.get("offered") or 0) >= 4)
-        lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most" + (f"; {stale} offered 4+ times unfired: rewrite or void" if stale else "") + ")")
+        stale = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later" and int(it.get("offered") or 0) >= STALE_OFFERS)
+        lines.append(f"Callbacks waiting for a fit: {later} (`saga.py due --later`; one per scene at most" + (f"; {stale} offered {STALE_OFFERS}+ times unfired: rewrite or void" if stale else "") + ")")
     shown = waiting[:2] + near_[:3]
     lines += shown
     more = len(waiting) + len(near_) - len(shown)
@@ -1736,12 +1740,39 @@ def cmd_add(args):
         entry = json.loads(args.entry)
     except json.JSONDecodeError as e:
         die(f"entry is not valid JSON: {e}")
-    add_entry(st, entry, args.witnessed, args.pending, args.dry_run)
+    add_entry(st, entry, args.witnessed, args.pending, args.dry_run, learned=args.learned)
 
 
-def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False):
+def parse_learned(learned_list):
+    """--learned <companion>:<how they heard of it>, repeatable → {cid: how}."""
+    out = {}
+    for x in learned_list or []:
+        cid, _, how = str(x).partition(":")
+        if not cid.strip() or not how.strip():
+            die(f"--learned {x!r}: <companion>:<how they heard of it>")
+        out[cid.strip()] = how.strip()
+    return out
+
+
+def unaccounted_approval(entry, witnessed, learned):
+    """The companions an entry moves with nobody saying they were there or how they heard: regard moves for witnesses
+    and for those told, never for an absent name. An entry the engine writes (auto) is its own account."""
+    if entry.get("auto"):
+        return []
+    return [cid for cid in ((entry.get("now") or {}).get("approval") or {}) if cid not in witnessed and cid not in learned]
+
+
+def between_cap(approval):
+    """How far Betweens may raise a companion's regard in a chapter, by standing: banter builds a new regard faster than
+    it moves an old friend (design §9). A Between that lands badly may always cost the full cap."""
+    a = int(approval or 0)
+    return BETWEEN_APPROVAL_CAP if a < 40 else 4 if a < 70 else 2
+
+
+def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False, learned=None):
     """Record one ledger entry: validate, fold the witnesses' preference, trim a Between's approval to its cap, apply the
-    `now` deltas (approval, Bearing, flags, factions), append it, save. Used by `add` and by `choose`."""
+    `now` deltas (approval, Bearing, flags, factions), append it, save. Used by `add`, by `choose` and by the engine's own
+    entries (auto)."""
     ledger, plan, world = st.ledger, st.plan, st.world
     auto = downstream_due(entry, plan)  # one due item per flag set: the Downstream line is owed, not remembered
     # first pass: shape, poles, magnitudes, the entry's own approval targets
@@ -1750,6 +1781,12 @@ def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False):
         die("refusing the entry:\n  " + "\n  ".join(probs))
     now = entry["now"]
     witnessed = [w.strip() for w in (witnessed_csv or "").split(",") if w.strip()]
+    learned_by = parse_learned(learned)
+    missing = unaccounted_approval(entry, witnessed, learned_by)
+    if missing:
+        die("refusing the entry: approval moves for " + ", ".join(missing) + " with nobody saying they were there (--witnessed) or how they heard of it (--learned <id>:<how>)")
+    if learned_by:
+        entry["learned"] = learned_by
     # companion-preference approval from bearing deltas (computed quietly; printed only once everything is accepted)
     pref_delta = {}
     to_come = plan.get("companions_to_come", {})
@@ -1795,10 +1832,12 @@ def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False):
                     prior[cid] = prior.get(cid, 0) + int(dlt)
         for cid in list(now["approval"]):
             dlt, before = int(now["approval"][cid]), prior.get(cid, 0)
-            kept = max(-BETWEEN_APPROVAL_CAP - before, min(BETWEEN_APPROVAL_CAP - before, dlt))
+            standing, _ = approval_value(st, cid)
+            cap_up = between_cap(standing)
+            kept = max(-BETWEEN_APPROVAL_CAP - before, min(cap_up - before, dlt))
             kept = kept if (kept > 0) == (dlt > 0) or kept == 0 else 0
             if kept != dlt:
-                print(f"Between approval {cid}: {dlt:+d} → {kept:+d} (Betweens move a companion at most ±{BETWEEN_APPROVAL_CAP} a chapter; this chapter so far {before:+d})")
+                print(f"Between approval {cid}: {dlt:+d} → {kept:+d} (Betweens raise a companion at most +{cap_up} a chapter at a regard of {standing}, and cost at most {BETWEEN_APPROVAL_CAP}; this chapter so far {before:+d})")
             if kept:
                 now["approval"][cid] = kept
             else:
@@ -1886,6 +1925,200 @@ def void_item(st, did, why):
     return f"{did} void: {why}" + (f"\n{cost}" if cost else "")
 
 
+# ---------------------------------------------------------------- approval: regard, its income, the rules' moments, the forecast (design §2)
+def approval_value(st, cid):
+    """(value, banked): a companion's approval from world.json, or what is banked for one still to come; (None, None) if unknown."""
+    comp = (st.world.get("companions") or {}).get(cid)
+    if isinstance(comp, dict):
+        return int(comp.get("approval") or 0), False
+    tc = (st.plan.get("companions_to_come") or {}).get(cid)
+    if isinstance(tc, dict):
+        return int(tc.get("approval_pending") or 0), True
+    return None, None
+
+
+def approval_income(st):
+    """{cid: {chapter: {"between": n, "choices": n, "costs": n}}} from the ledger's entries (costs: the engine's own)."""
+    out = {}
+    for e in st.ledger.get("entries", []):
+        made = e.get("made") or {}
+        try:
+            chn = int(made.get("chapter"))
+        except (TypeError, ValueError):
+            continue
+        kind = "costs" if e.get("auto") else "between" if str(made.get("scene", "")).startswith("between") else "choices"
+        for cid, d_ in ((e.get("now") or {}).get("approval") or {}).items():
+            row = out.setdefault(cid, {}).setdefault(chn, {"between": 0, "choices": 0, "costs": 0})
+            row[kind] += int(d_)
+    return out
+
+
+def book_beat_counts():
+    """{book: core beats} from the arc's `## bN.K` headings."""
+    out = {}
+    for k in arc_ids():
+        m = re.match(r"^b(\d+)\.(\d+)$", k)
+        if m:
+            out[int(m.group(1))] = max(out.get(int(m.group(1)), 0), int(m.group(2)))
+    return out
+
+
+def moment_bounds(st):
+    """where → (earliest chapter, typical chapter) for a rule's moment. Earliest by the compress rule (two core beats a
+    chapter at most: the current Book's planned beats, later Books by the arc's beat counts); typical at
+    plan.saga.chapters_per_book (default 6) a Book. (None, None) when the target is unknown."""
+    plan = st.plan
+    pos = plan["position"]
+    C, B = int(pos["chapter"]), int(pos["book"])
+    T = int((plan.get("saga") or {}).get("chapters_per_book") or 6)
+    beats = plan.get("core_beats", {})
+    counts = book_beat_counts()
+    rem = sorted(int(k.split(".")[1]) for k, v in beats.items() if re.match(rf"^b{B}\.\d+$", k) and v.get("status") == "planned")
+    so_far = len((plan.get("route", {}).get(f"book{B}") or {}).get("chapters") or [C])
+    e_end = {B: C + (len(rem) + 1) // 2}
+    t_end = {B: C + max((len(rem) + 1) // 2, T - so_far)}
+    for N in range(B + 1, finale_book(plan) + 1):
+        e_end[N] = e_end[N - 1] + max(1, (counts.get(N, 4) + 1) // 2)
+        t_end[N] = t_end[N - 1] + T
+
+    def start(N):
+        return (C, C) if N == B else (e_end[N - 1] + 1, t_end[N - 1] + 1)
+
+    def beat(N, K):
+        if N == B:
+            if (beats.get(f"b{B}.{K}") or {}).get("status") in ("done", "in_progress", "folded") or K not in rem:
+                return C, C
+            r = rem.index(K) + 1
+            e = C + (r + 1) // 2
+            return e, max(e, C + round(r / len(rem) * (t_end[B] - C)))
+        if N not in e_end:
+            return None, None
+        se, stp = start(N)
+        e = se + (K + 1) // 2 - 1
+        return e, max(e, stp + round((K - 0.5) / counts.get(N, 4) * T) - 1)
+
+    def of(where):
+        w = resolve_at(str(where or ""), plan)
+        if w == "any":
+            return C, C
+        m = re.match(r"^ch(\d{2,})", w)
+        if m:
+            return int(m.group(1)), int(m.group(1))
+        m = re.match(r"^book(\d+)(?::(beat(\d+)|climax))?$", w)
+        if m:
+            N = int(m.group(1))
+            if N < B:
+                return C, C
+            if N not in e_end:
+                return None, None
+            if not m.group(2):
+                return start(N)
+            if m.group(2) == "climax":
+                return e_end[N], t_end[N]
+            return beat(N, int(m.group(3)))
+        m = re.match(r"^transition(\d+)$", w)
+        if m:
+            N = int(m.group(1))
+            return (e_end[N], t_end[N]) if N in e_end else (C, C) if N < B else (None, None)
+        return None, None
+    return of
+
+
+def approval_terms(rule):
+    """[(cid, op, threshold)] for every approval comparison in a rule's `if`."""
+    tree = parse_rule(rule.get("if", ""))
+    out = []
+    if tree is None:
+        return out
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Compare) or len(node.comparators) != 1:
+            continue
+        a, b, op = node.left, node.comparators[0], node.ops[0]
+        flip = False
+        if isinstance(a, (ast.Constant, ast.UnaryOp)) and isinstance(b, ast.Attribute):
+            a, b, flip = b, a, True
+        if isinstance(b, ast.UnaryOp) and isinstance(b.op, ast.USub) and isinstance(b.operand, ast.Constant):
+            b = ast.Constant(value=-b.operand.value)
+        parts = dotted(a) if isinstance(a, ast.Attribute) else None
+        if not parts or parts[0] != "approval" or len(parts) != 2 or not isinstance(b, ast.Constant) or isinstance(b.value, bool) or not isinstance(b.value, (int, float)):
+            continue
+        sym = {ast.Gt: ">", ast.GtE: ">=", ast.Lt: "<", ast.LtE: "<=", ast.Eq: "==", ast.NotEq: "!="}[type(op)]
+        if flip:
+            sym = {">": "<", ">=": "<=", "<": ">", "<=": ">=", "==": "==", "!=": "!="}[sym]
+        out.append((parts[1], sym, b.value))
+    return out
+
+
+def approval_forecast(st):
+    """Per companion: regard, income a chapter (Betweens, choices and costs apart) over the closed chapters; per approval
+    rule: its threshold, its moment (earliest–typical chapter) and the chapter the line is crossed at this rate, with a
+    verdict: already met · met for free (crossed before its earliest moment) · in reach · late · not at this rate."""
+    plan = st.plan
+    C = int(plan["position"]["chapter"])
+    closed = sorted(chapter_rows())
+    n_closed = len(closed) or 1
+    inc = approval_income(st)
+    bounds = moment_bounds(st)
+    comps = st.world.get("companions") or {}
+    cids = list(comps) + [c for c in (plan.get("companions_to_come") or {}) if c not in comps]
+    per, rows = {}, []
+    for cid in cids:
+        v, banked = approval_value(st, cid)
+        hist = inc.get(cid, {})
+        tot = {k: sum(hist.get(c_, {}).get(k, 0) for c_ in closed) for k in ("between", "choices", "costs")}
+        rate = sum(tot.values()) / n_closed
+        per[cid] = (v, banked, rate, tot)
+        for r in st.ledger.get("rules", []):
+            for tcid, op, thr in approval_terms(r):
+                if tcid != cid or op in ("==", "!="):
+                    continue
+                e, t = bounds(r.get("where"))
+                up = op in (">", ">=")
+                target = thr + (1 if op == ">" else -1 if op == "<" else 0)
+                if (v >= target) if up else (v <= target):
+                    verdict = "already met"
+                elif (up and rate <= 0) or (not up and rate >= 0):
+                    verdict = f"not at this rate ({rate:+.1f}/ch)"
+                else:
+                    # chapter by chapter, with Betweens capped by standing as the regard climbs (design §9)
+                    b_rate, c_rate = tot["between"] / n_closed, (tot["choices"] + tot["costs"]) / n_closed
+                    sim, cross = v, None
+                    for k_ in range(1, 61):
+                        sim += c_rate + (min(b_rate, between_cap(sim)) if b_rate > 0 else b_rate)
+                        if (sim >= target) if up else (sim <= target):
+                            cross = C + k_
+                            break
+                    if cross is None:
+                        verdict = f"not within 60 chapters at this rate ({rate:+.1f}/ch, Betweens capped by standing)"
+                    elif e is None:
+                        verdict = f"crosses ch {cross} (its moment is not placeable yet)"
+                    elif cross < e:
+                        verdict = f"met for free: crosses ch {cross}, before its earliest moment ch {e}"
+                    elif cross <= t:
+                        verdict = f"in reach: crosses ch {cross} (moment ch {e}–{t})"
+                    else:
+                        verdict = f"late: crosses ch {cross} (moment ch {e}–{t})"
+                rows.append((cid, r.get("id"), f"approval.{cid} {op} {thr}", str(r.get("where")), e, t, verdict))
+    return per, rows, n_closed
+
+
+def cmd_approval(args):
+    st = State()
+    plan = st.plan
+    per, rows, n_closed = approval_forecast(st)
+    T = int((plan.get("saga") or {}).get("chapters_per_book") or 6)
+    print(f"approval forecast · chapter {plan['position']['chapter']} of Book {ROMAN[int(plan['position']['book'])]} · income over {n_closed} closed chapter(s) · "
+          f"a rule's moment: earliest by the compress rule, typical at {T} chapters a Book (plan.saga.chapters_per_book)")
+    free = 0
+    for cid, (v, banked, rate, tot) in per.items():
+        print(f"  {cid:<8}{v:>4}{' (banked)' if banked else ''}  income {rate:+.1f}/ch (Betweens {tot['between']:+d} · choices {tot['choices']:+d} · costs {tot['costs']:+d}, over {n_closed} chapter(s))")
+        for c_, rid, term, where, e, t, verdict in rows:
+            if c_ == cid:
+                free += verdict.startswith("met for free")
+                print(f"    {rid:<28} {term:<24} @{where:<14} {verdict}")
+    print(f"{free} rule(s) met for free at this rate: a line the road crosses before its moment asks nothing of him; raise the threshold, or let the moment come sooner")
+
+
 # ---------------------------------------------------------------- callbacks: where they fit, what they cost when they lapse
 def presence_ctx(people_ids, place):
     """The context a callback's `fits` is read against: who is in the block, in every spelling the grammar takes
@@ -1938,6 +2171,25 @@ def apply_if_void(st, it, chose):
         return None
     ordered = auto_entry(st, f"{chose}: {short(it.get('what'), 80)}", {"approval": appr}, scene=f"auto:{it.get('id')}")
     return f"  its cost ({ordered['id']}): approval " + ", ".join(f"{k} {v:+d}" for k, v in appr.items())
+
+
+INVITE_PASS_COST = {"favour": 2, "problem": 2, "opinion": 1, "diversion": 1}  # what letting someone's want pass costs with them (design §5.6)
+
+
+def pass_invite(st, s, where):
+    """An invitation he let pass: the slot's invite marked passed and, when its person is a companion, their regard moved
+    by the kind's cost through an entry the engine writes. Returns the lines to print."""
+    inv = s.get("invite") or {}
+    inv["status"] = "passed"
+    st.touch("plan")
+    out = [f"invite slot {s.get('n')} passed at {where}: the next scene opens on it in a clause: {inv.get('if_ignored')}"]
+    who = str(inv.get("who") or "").strip().lower()
+    key = who.split("-")[0]
+    if key and (key in (st.world.get("companions") or {}) or key in (st.plan.get("companions_to_come") or {})):
+        cost = INVITE_PASS_COST.get(str(inv.get("kind") or "").lower(), 1)
+        ordered = auto_entry(st, f"Let {who}'s {inv.get('kind') or 'want'} pass: {short(inv.get('want'), 80)}", {"approval": {key: -cost}}, scene=f"auto:invite-{s.get('n')}")
+        out.append(f"  its cost ({ordered['id']}): approval {key} {-cost:+d}")
+    return out
 
 
 def expire_callbacks(st, where):
@@ -2252,6 +2504,8 @@ def cmd_plan(args):
                 die(f"slot kind must be one of {SLOT_KINDS}")
             if k in ("challenge", "invite") and v is not None and not isinstance(v, dict):
                 die(f"{k} must be JSON or null (the shape is in design.md §5.6)")
+            if k == "invite" and isinstance(v, dict):
+                v.setdefault("status", "waiting")  # an invitation is planned waiting; take or pass move it
             if k == "micro" and v is not None and not isinstance(v, dict):
                 die("micro must be JSON (micro='{\"axis\":…,\"ask\":…,\"options\":[…],\"bearing\":[…],\"default\":1}') or null")
             if k == "day" and v is not None:
@@ -3039,11 +3293,12 @@ def cmd_invite(args):
         return
     if inv.get("status") != "waiting":
         die(f"the invitation in slot {s['n']} is already {inv.get('status')}")
-    inv["status"] = "taken" if args.action == "take" else "passed"
     if args.action == "take":
+        inv["status"] = "taken"
         print(f"invite slot {s['n']} taken: the Between opens on {inv.get('who')}'s first line, not Darrow's; his answer goes through the ledger like any Between")
     else:
-        print(f"invite slot {s['n']} passed: the next scene opens on it in a clause: {inv.get('if_ignored')}")
+        for line in pass_invite(st, s, st.plan["position"].get("last_written") or ch2(int(st.plan["position"]["chapter"]))):
+            print(line)
     st.touch("plan")
     st.save()
 
@@ -3561,7 +3816,7 @@ def cmd_check(args):
                 probs.append(f"callback {it.get('id')}: valid_until {it.get('valid_until')!r} is not a position (chNN, chNN:sN, chNN:climax, bookN, bookN:climax, transitionN, finale)")
             if it.get("priority") is not None and it["priority"] not in (1, 2, 3):
                 probs.append(f"callback {it.get('id')}: priority {it.get('priority')!r} is 1, 2 or 3")
-            if int(it.get("offered") or 0) >= 4:
+            if int(it.get("offered") or 0) >= STALE_OFFERS:
                 notes.append(f"callback {it.get('id')} offered {it['offered']} times unfired ({', '.join(it.get('offered_at') or [])}): rewrite it or void it at the checkpoint")
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
@@ -3863,9 +4118,13 @@ def lore_for_brief(texts, cap=3):
     return out
 
 
-def callbacks_for_brief(st, ctx=None, cap=4):
-    """The callbacks that fit this block, the way Hades picks a line: eligible first (`fits` against who is here and where),
-    then by priority, then by how specific the fit is, then the oldest; the rest are counted, never listed."""
+CALLBACKS_SHOWN = 4  # the brief lists this many fitting callbacks; a record counts these as offered when they go unpaid
+STALE_OFFERS = 6  # offered this often and never fired: `now` and `check` name it for the checkpoint
+
+
+def callbacks_fitting(st, ctx):
+    """(the callbacks that fit this context, in the brief's order; how many wait for other company or places). The order is
+    the way Hades picks a line: priority, then how specific the fit is, then the oldest."""
     rows = [(e, it) for e, it in pending_items(st.ledger) if it.get("at") == "later"]
     fitting, waiting = [], 0
     for i, (e, it) in enumerate(rows):
@@ -3875,8 +4134,15 @@ def callbacks_for_brief(st, ctx=None, cap=4):
         else:
             waiting += 1
     fitting.sort(key=lambda t: t[:3])
+    return [it for *_, it in fitting], waiting
+
+
+def callbacks_for_brief(st, ctx=None, cap=CALLBACKS_SHOWN):
+    """The callbacks that fit this block (`fits` against who is here and where), the most worth first, `cap` at most;
+    the rest are counted, never listed."""
+    fitting, waiting = callbacks_fitting(st, ctx)
     out = []
-    for *_, it in fitting[:cap]:
+    for it in fitting[:cap]:
         tags = [t for t in (f"priority {it['priority']}" if it.get("priority") else None,
                             f"offered {it['offered']}× unfired" if int(it.get("offered") or 0) >= 2 else None,
                             f"until {it['valid_until']}" if it.get("valid_until") else None) if t]
@@ -4324,6 +4590,11 @@ def brief_chapter(st, L, args):
     oc = plan.get("open_choice")
     if oc:
         L += open_choice_lines(plan)
+    _, f_rows, _ = approval_forecast(st)
+    free = [f"  {rid}: {term} @{where}: {verdict}" for cid, rid, term, where, e, t, verdict in f_rows if verdict.startswith("met for free")]
+    if free:
+        L.append("approval: rules the road crosses before their moment at the measured income (`saga.py approval forecast`): raise the threshold, or let the moment come sooner")
+        L += free[:6]
     L.append("")
     L.append("== MAY ==")
     thr_rows, n_open = threads_for_brief(int(pos["chapter"]))
@@ -4531,12 +4802,13 @@ def cmd_record(args):
             probs.append("no slot for this block: a scene's slot is the one whose day is its date (`--slot N` names it; `plan slot N day=…` moves one)")
     if probs:
         die("refusing the record (nothing written):\n  " + "\n  ".join(probs))
-    # callbacks that fit this block and were not paid are counted as offered, so the checkpoint sees what keeps passing by
+    # the callbacks the brief would have listed for this block (they fit, the most worth first) and the block did not pay are
+    # counted as offered, so the checkpoint sees what keeps passing by
     rec_ctx = presence_ctx([p.get("id") for p in ev.get("people") or [] if not p.get("mention")],
                            (where or {}).get("place") or (world.get("location") or {}).get("place"))
     paid_ids = {f_["id"] for f_ in ev.get("fired") or []}
-    for e_, it_ in pending_items(st.ledger):
-        if it_.get("at") == "later" and it_["id"] not in paid_ids and key not in (it_.get("offered_at") or []) and callback_fits(it_, st, rec_ctx)[0]:
+    for it_ in callbacks_fitting(st, rec_ctx)[0][:CALLBACKS_SHOWN]:
+        if it_["id"] not in paid_ids and key not in (it_.get("offered_at") or []):
             it_["offered"] = int(it_.get("offered") or 0) + 1
             it_.setdefault("offered_at", []).append(key)
             st.touch("ledger")
@@ -4578,11 +4850,21 @@ def cmd_record(args):
             pos["stage"] = "choice"
         plan.pop("answered_choice", None)
     inv = ev.get("invite")
+    where_inv = wrote if WHERE_RE.match(wrote) else ch2(ch)
     if isinstance(inv, dict) and inv.get("slot") is not None:
         s_inv = slot_by_n(plan, inv["slot"])
         if (s_inv.get("invite") or {}).get("status") == "waiting":
-            s_inv["invite"]["status"] = "taken" if inv.get("action", "take") == "take" else "passed"
-            print(f"invite slot {s_inv['n']} {s_inv['invite']['status']}")
+            if inv.get("action", "take") == "take":
+                s_inv["invite"]["status"] = "taken"
+                print(f"invite slot {s_inv['n']} taken")
+            else:
+                for line_ in pass_invite(st, s_inv, where_inv):
+                    print(line_)
+    if kind in ("scene", "interlude", "climax"):  # an invitation offered at the last close and not answered by this one has passed, at its cost
+        for s_ in plan["chapter"].get("slots", []):
+            if (s_.get("invite") or {}).get("status") == "waiting" and s_.get("status") == "written" and not (kind != "climax" and s_.get("n") == s.get("n")):
+                for line_ in pass_invite(st, s_, where_inv):
+                    print(line_)
     for f_ in ev.get("fired") or []:
         did, evd = f_["id"], f_.get("evidence")
         where_ = wrote if WHERE_RE.match(wrote) else f"{ch2(ch)}"
@@ -4840,6 +5122,9 @@ def cmd_choose(args):
         probs = validate_entry(json.loads(json.dumps(entry)), st.ledger, plan, bearing=st.bearing, world=world, pending=args.pending, st=st)
         probs += [f"--witnessed {w}: not in plan.json companions or companions_to_come" for w in (args.witnessed or "").split(",")
                   if w.strip() and w.strip() not in plan.get("companions", {}) and w.strip() not in plan.get("companions_to_come", {})]
+        missing = unaccounted_approval(entry, [w.strip() for w in (args.witnessed or "").split(",") if w.strip()], parse_learned(args.learned))
+        if missing:
+            probs.append("approval moves for " + ", ".join(missing) + " with nobody saying they were there (--witnessed) or how they heard of it (--learned <id>:<how>)")
         if probs:
             die("refusing the entry (nothing spent):\n  " + "\n  ".join(probs))
         r = subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "inspire", "--reason", f"choice {ch2(int(made['chapter']))} {which} option {opt}"],
@@ -4848,7 +5133,7 @@ def cmd_choose(args):
             die("the spend failed, nothing written: " + (r.stdout + r.stderr).strip())
         print((r.stdout or "").strip())
         subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "sync"], cwd=ROOT, capture_output=True, text=True)  # the sheet shows the spend
-    ordered = add_entry(st, entry, args.witnessed, args.pending, False)
+    ordered = add_entry(st, entry, args.witnessed, args.pending, False, learned=args.learned)
     row = {"chapter": int(made["chapter"]), "scene": str(made["scene"]), "kind": which, "option": int(opt), "text": args.text or opts[opt - 1],
            "date": today_local().isoformat(), "ledger": ordered["id"], "by": args.by}
     world.setdefault("choices", []).append(row)
@@ -5360,7 +5645,8 @@ def main():
     sub.add_parser("check")
     sub.add_parser("fmt")
     sub.add_parser("archive")
-    s = sub.add_parser("add"); s.add_argument("entry"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true"); s.add_argument("--dry-run", action="store_true")
+    s = sub.add_parser("add"); s.add_argument("entry"); s.add_argument("--witnessed"); s.add_argument("--learned", action="append", help="<companion>:<how they heard of it>, for one who was not there; repeatable"); s.add_argument("--pending", action="store_true"); s.add_argument("--dry-run", action="store_true")
+    s = sub.add_parser("approval"); s.add_argument("sub", nargs="?", choices=["forecast"], default="forecast")
     s = sub.add_parser("challenge"); s.add_argument("n"); s.add_argument("action", choices=["success", "fail", "show", "void"]); s.add_argument("--why")
     s = sub.add_parser("invite"); s.add_argument("n"); s.add_argument("action", choices=["take", "pass", "show"])
     s = sub.add_parser("project"); s.add_argument("id", nargs="?", help="a project quest id (show|work), or nothing: rebuild the projections"); s.add_argument("action", nargs="?", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what"); s.add_argument("--dry", action="store_true", help="list the projections that would change, write nothing")
@@ -5393,7 +5679,7 @@ def main():
     s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--tale", type=int, help="one tale's pieces"); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
     s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
     s = sub.add_parser("glimpse"); s.add_argument("action", choices=["add", "show"]); s.add_argument("text", nargs="?"); s.add_argument("--kind", choices=list(R.GLIMPSE_KINDS)); s.add_argument("--date"); s.add_argument("--n", type=int)
-    s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--witnessed"); s.add_argument("--pending", action="store_true")
+    s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--witnessed"); s.add_argument("--learned", action="append", help="<companion>:<how they heard of it>, for one who was not there; repeatable"); s.add_argument("--pending", action="store_true")
     args = ap.parse_args()
     if args.cmd == "route" and args.action == "decide" and not args.book:
         die("route decide needs --book N")
@@ -5406,7 +5692,7 @@ def main():
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
         "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
-        "brief": cmd_brief, "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose,
+        "brief": cmd_brief, "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
         "tale": cmd_tale,
     }[args.cmd](args)
 

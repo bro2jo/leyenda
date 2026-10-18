@@ -209,6 +209,8 @@
           "at": "later",
           "weight": "color",
           "what": "Mother Ione says the names of everyone under her roof every night in the chapel and notices which she has had to stop saying; the Captain is among them, and was before he gave his name at the gate. Fire it where a name has to come out of her count, or where he hears his in it",
+          "fits": "present.mother_ione",
+          "priority": 2,
           "status": "pending"
         }
       ]
@@ -233,6 +235,7 @@
           "at": "later",
           "weight": "color",
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
+          "priority": 2,
           "status": "pending"
         }
       ]
@@ -416,6 +419,8 @@
           "at": "later",
           "weight": "color",
           "what": "The kitchen book now carries Thorne, a load, under the Captain on NOBODY: if a cot goes grey before the thaw she carries the kitchen a load up the Steps on her back, not the cage. Fire where the book is consulted, the odds move, a cot goes grey, or the thaw comes",
+          "fits": "present.rae",
+          "priority": 2,
           "status": "pending"
         }
       ]
@@ -440,6 +445,8 @@
           "at": "later",
           "weight": "color",
           "what": "Darrow owes Rae one aye, lost at name-the-load on the gate wall: she will want it some day and will know when she asks. Fire where she claims it; he gives it, or does not",
+          "fits": "present.rae",
+          "priority": 3,
           "status": "pending"
         }
       ]
@@ -467,6 +474,8 @@
           "at": "later",
           "weight": "color",
           "what": "Hollis began to tell the Captain to get some sleep, the words he said to the lad before the lad was taken, stopped, and asked him to sit up a while instead. Fire where Hollis next tells anyone to get some sleep, or lies kindly in Darrow's hearing",
+          "fits": "present.hollis",
+          "priority": 2,
           "status": "pending"
         }
       ]
@@ -550,19 +559,19 @@
     },
     {
       "id": "r.finale.return",
-      "if": "approval.maelis >= 50 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound)",
+      "if": "approval.maelis >= 65 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound)",
       "then": "Finale option 3 (return the tithe) is offered",
       "where": "book6:climax"
     },
     {
       "id": "r.t8.early",
-      "if": "approval.maelis >= 60 && route.book1 != \"\"",
+      "if": "approval.maelis >= 70 && route.book1 != \"\"",
       "then": "Maelis tells her own story before Book IV, never before Book II: the gate is regard and a Book crossed together, so a warm first month cannot spend a late reveal",
       "where": "any"
     },
     {
       "id": "r.b4.hollis_lives",
-      "if": "approval.hollis >= 50 && flags.hollis_truth",
+      "if": "approval.hollis >= 80 && flags.hollis_truth",
       "then": "Hollis survives his last stand in Book IV",
       "where": "book4"
     },
@@ -676,7 +685,7 @@
     },
     {
       "id": "r.b1.seated_blade",
-      "if": "approval.hollis >= 40",
+      "if": "approval.hollis >= 50",
       "then": "Hollis names the Seated Blade on the page before Old Mercy (q1.blade stage 3 runs before b1.5); otherwise he teaches it on the tower stair itself, in the fight",
       "where": "book1:beat5"
     },
@@ -688,7 +697,7 @@
     },
     {
       "id": "r.b2.hollis_sober",
-      "if": "approval.hollis >= 45",
+      "if": "approval.hollis >= 60",
       "then": "Hollis hears the writ's truth sober and asks for the second letter to read Aldric's hand himself (b2.4); otherwise the drunk hearing is available in any tier",
       "where": "book2:beat4"
     },
@@ -718,13 +727,13 @@
     },
     {
       "id": "r.b4.maelis_lets_him_teach",
-      "if": "approval.maelis >= 50",
+      "if": "approval.maelis >= 65",
       "then": "Maelis lets Darrow teach the first forms himself in the yard (b4.2) and the host sees a Warden; otherwise she teaches and he watches",
       "where": "book4:beat2"
     },
     {
       "id": "r.b5.permitted_early",
-      "if": "approval.maelis >= 70",
+      "if": "approval.maelis >= 85",
       "then": "Maelis says Permitted for the turn before he asks (b5.3), in any road",
       "where": "book5:beat3"
     },

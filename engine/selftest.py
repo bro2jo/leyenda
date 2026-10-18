@@ -169,6 +169,20 @@ def main():
             code, out1 = run(saga + ["brief", "--between", "--with", "wren-ashdown"], tmp)
             check(code == 0 and f"c{ch:02d}.981a" in out1 and f"c{ch:02d}.981b" not in out1 and "wait for other company" in out1, "the brief lists a callback where it fits and only counts the ones that wait for other company", out1[-300:])
             wren_before = jload(tmp / "saga/state/world.json")["companions"]["wren"]["approval"]
+            # regard moves only for who saw it or heard of it; Betweens raise an old friend less than a new one
+            pres = {"id": f"c{ch:02d}.983", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Said a kind thing of Maelis (self-test).", "now": {"approval": {"maelis": 1}}, "due": []}
+            code, out = run(saga + ["add", json.dumps(pres)], tmp, expect=1)
+            check("nobody saying they were there" in out, "an approval delta for a companion nobody saw or told is refused")
+            code, out = run(saga + ["add", json.dumps(pres), "--learned", "maelis:Wren told her at the ovens"], tmp)
+            check(code == 0 and "approval maelis" in out, "--learned accounts for a companion who was not there", out[-300:])
+            hol0 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
+            btw = {"id": f"c{ch:02d}.985", "made": {"chapter": ch, "scene": "between-77", "date": day}, "chose": "Won a game off Hollis (self-test).", "now": {"approval": {"hollis": 6}}, "due": []}
+            code, out = run(saga + ["add", json.dumps(btw), "--witnessed", "hollis"], tmp)
+            hol1 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
+            want = 6 if hol0 < 40 else 4 if hol0 < 70 else 2
+            check(code == 0 and hol1 - hol0 == want, f"a Between raises a companion at regard {hol0} by at most +{want} a chapter (got {hol1 - hol0:+d})", out[-300:])
+            code, out = run(saga + ["approval", "forecast"], tmp)
+            check(code == 0 and "hollis" in out and "rule(s) met for free" in out, "approval forecast names every companion and a verdict", out[-300:])
 
             # the scene recorded: a refusal first, then the record, then the projections
             with open(chapter, "a", encoding="utf-8") as f:
@@ -310,14 +324,16 @@ def main():
                 for _ in range(held):
                     f.write(f"{dt.date.today().isoformat()},inspiration,self-test drain\n")
             run(darrow + ["sync"], tmp)
-            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis"], tmp, expect=1)
+            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis", "--learned", "wren:Hollis told her"], tmp, expect=1)
             led_ids = {e["id"] for e in jload(tmp / "saga/state/_gm/consequences.json")["entries"]}
             check("holds none" in out and f"c{ch:02d}.990" not in led_ids, "an *[Inspiration]* option is refused while he holds none, and nothing is written", out[-300:])
             sp_path.write_text(sp_before, encoding="utf-8")
             run(darrow + ["sync"], tmp)
             if held < 1:
                 skip("the spend on choose: the live sheet holds no Inspiration")
-            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis"], tmp)
+            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis"], tmp, expect=1)
+            check("nobody saying they were there" in out, "choose refuses an approval delta for a companion nobody saw or told")
+            code, out = run(saga + ["choose", "--option", "2", json.dumps(entry), "--witnessed", "hollis", "--learned", "wren:Hollis told her"], tmp)
             check(code == 0 and "answered: option 2" in out, "choose records the entry, the row and closes the choice", out[-600:])
             if held >= 1:
                 check("Inspiration spent" in out and "choice ch" in sp_path.read_text(encoding="utf-8"), "choose spends the Inspiration the option costs, under the choice's name", out[-300:])
@@ -327,6 +343,13 @@ def main():
             check(world["choices"][-1]["ledger"] == f"c{ch:02d}.990" and world["choices"][-1]["chapter"] == ch, "the choices[] row the site reads is written")
             code, out = run(saga + ["brief", "--choice"], tmp)
             check(code == 0 and f"ch{ch:02d}:choice" in out, "brief --choice prints the answered choice")
+            # an invitation let pass costs its person: planned on the new chapter's second slot, passed by hand
+            inv = {"who": "hollis-garrow", "kind": "favour", "want": "a hand with the beech leg's strap", "why_now": "the strap broke at the dusk bell", "if_ignored": "he mended it himself and swore at it"}
+            code, out = run(saga + ["plan", "slot", "2", "invite=" + json.dumps(inv)], tmp)
+            hol0 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
+            code2, out2 = run(saga + ["invite", "2", "pass"], tmp)
+            hol1 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
+            check(code == 0 and code2 == 0 and "its cost" in out2 and hol1 == hol0 - 2, "an invitation let pass costs its person's regard through an entry the engine writes", out[-200:] + " | " + out2[-300:])
             with open(chapter, "a", encoding="utf-8") as f:
                 f.write("\n### Choice — The Lamp Goes Down\n\nWren went, and Hollis disapproved in the usual way.\n")
             choice = {"key": f"ch{ch:02d}:choice", "where": {"place": "saint-ysoldes", "detail": "the hall"}, "last_beat": "Wren went down with the lamp.",
