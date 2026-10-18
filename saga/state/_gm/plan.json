@@ -350,7 +350,10 @@
     "heartbeats_told": false,
     "turn_shown": false,
     "bells_rung": false,
-    "sworn_carried": false
+    "sworn_carried": false,
+    "rae_calling_known": false,
+    "rae_brief_known": false,
+    "rae_recalled": false
   },
   "factions": {
     "crown": -10,

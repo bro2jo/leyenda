@@ -226,6 +226,14 @@ Knights who came home with the Grace gone and themselves gone after it: breathin
 
 A writ is the Crown's voice on paper under a seal, and whoever holds it holds that much of the Crown. A soldier breaks the wax with his thumb, reads the words, and keeps the paper folded small against his skin, wax inward, until the thing it ordered is done; a writ carried wax outward is a writ you mean to show someone. Seals are matched by clerks, not soldiers, and most knights could not tell you whose seal they broke.
 
+## realm.lanterns — The Lantern Market
+- **tier:** common · **spoken:** — · **names:** Saltreach
+- **use:** a shrug about where a thing came from; a carter asked what else is on the cart; the kitchen on prices.
+
+Saltreach is a sea-town in a fog that never quite lifts, and in the fog is the Lantern Market, where the valley says anything can be bought: a name, a seal, a page of the old script, a letter that never reached the hand it was meant for. Nobody in the Lowmarch has been; everybody knows someone whose cousin has. The lamps in the fog are said to be the stalls, each one lit for as long as its keeper has something to sell. ⟪gm: the lamps and the wicks, world.md §5a; Rae is a wick (thread 18); the cold crates are T1.⟫
+- "There's a lamp for every road." (of Saltreach; also of any bribe)
+- "Saltreach sells the rope and the knife both." (the Lowmarch, of a dealer who serves both sides)
+
 # The Thornwild
 
 ## folk.clans — The clans

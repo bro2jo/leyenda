@@ -748,6 +748,12 @@
       "if": "approval.wren >= 60",
       "then": "The last chapter's count is Wren's, said aloud to him",
       "where": "finale"
+    },
+    {
+      "id": "r.b6.rae_door",
+      "if": "approval.rae >= 40 && flags.rae_calling_known",
+      "then": "the Spire's lower door opens to Rae's word (the Market's wick calls in six years on the north road); the Market's price falls on her debt, the cart and the oxen, and he pays it or lets her (rae.road, Book VI)",
+      "where": "book6:beat1"
     }
   ]
 }
