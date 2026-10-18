@@ -17,3 +17,7 @@ pre-op,clinic,ham_lb,R,79,lb,dynamometer,,the strength target
 2026-10-08,PT,flex_deg,L,146,deg,gonio,2026-10-08_PT9,
 2026-10-08,PT,sl_leg_press_plates,L,9,plates,max,2026-10-08_PT9,stands in for quad LSI until a dynamometer test
 2026-10-08,PT,sl_leg_press_plates,R,14,plates,max,2026-10-08_PT9,
+2026-10-17,PT,quad_lb,R,70.4,lb,"dynamometer (torque monitor), peak",2026-10-17_PT11,round 1
+2026-10-17,PT,quad_lb,L,68.0,lb,"dynamometer (torque monitor), peak",2026-10-17_PT11,round 1
+2026-10-17,PT,quad_lb,R,77.2,lb,"dynamometer (torque monitor), peak",2026-10-17_PT11,round 2
+2026-10-17,PT,quad_lb,L,69.8,lb,"dynamometer (torque monitor), peak",2026-10-17_PT11,round 2

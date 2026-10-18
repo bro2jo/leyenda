@@ -460,3 +460,26 @@ What it changes: the PT items join the home program in place of their plan equiv
 Open for the next visit (date not set): **the quad test, both sides, plus hamstrings** (still the only open Phase 4 gate) · step-up height, 12" or 18" · forward step-down watched · right knee hyperextension on a heel prop · the BOSU home version of the wobble-board drill · GJC on the retro walk · the knee extension machine's range · throwing awareness (pivots from Phase 4) · BFR / Spanish squat / seated throws if wanted · which PTA treated on 10/1 and who treated 10/15.
 
 After his account (10/15): **GJC** = a banded retro walk (back as far as the band allows, then slowly forward). **Knee extension machine** ran through **full range** ("all the way up") with both legs, lowering slowly with the left only: the PT's own range, so full extension at that light load is PT-run, and the home cable knee extension takes the same style (both legs up, left only down, slow). **Step-up:** 12" or 18" are both fine. **Pivots:** okay within reason (throwing at easy effort; max intent still waits for its phase). **Quad test:** the PT is waiting another week, so the Phase 4 gate cannot be checked before the next visit, which is not booked yet. Still open: book that visit and the quad test (both sides, hamstrings too) · forward step-down watched · right knee hyperextension on a heel prop · BOSU home version of the wobble-board drill · BFR / Spanish squat / seated throws if wanted.
+
+## 2026-10-17 (POD 54) — Visit 11 — PT, quad test (patient-reported)
+
+No written note. Who treated is not named in his message. The quad test, the open Phase 4 gate, put off a week on 10/15.
+
+### Progress note
+
+None received.
+
+### Patient's account of the same visit
+
+Relayed Sat 2026-10-17, evening. Patient-reported; carries PT priority.
+
+```text
+70.4 quad right peak round 1 and round 2 was 77.2
+68 quad left round 1, and round 2, 69.8 lb
+Went in to message today on quad strength, with a torque monitor. Above were stats.
+PT is pleased.
+```
+
+Reading: isometric quad peak on a torque monitor (dynamometer), two rounds a side. Right 70.4 → 77.2 lb; left 68.0 → 69.8 lb. **Quad LSI 90.4%** (round 2, 69.8 / 77.2); round 1 96.6%. Against the pre-op right (83.7 lb, a different device) the left is 83.4%. The left is up from 58.9 lb pre-op. The plan's Phase 4 gate wants **≥70%**: met, by either reference. Not reported: hamstrings, a watched step-down, any word on Phase 4 itself, the treating PT's name, and whether anything else was done at the visit.
+
+What it changes: the last measured criterion of the Phase 3 → 4 gate is met. The gate's own wording (`config.json → rehab.knot_gates` 3) also wants good single-leg control and **the PT's agreement**; single-leg control is "probably met" (the State), with a watched step-down still open. So Phase 4 waits on the PT saying so, not on a number. Open: did the PT say anything about moving on; hamstrings; a watched step-down; who treated.
