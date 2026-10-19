@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-16 · weather · The wind dropped at dusk and the snow came straight down for once, slow and heavy, the kind that makes a whole House talk quietly without anyone asking it to.
 - 2026-10-17 · ledger · From Wren's ledgers, the lamps page: Lamps in the hall, fourteen. Lit at dusk, fourteen. Counted twice on the way to find a pencil, fourteen both times, which is the right answer and is written down anyway.
 - 2026-10-17 · body · The knee is quiet this afternoon. He has learned not to trust it when it is quiet, and lately, a little, to enjoy it anyway.
 - 2026-10-17 · saying · Halfway up the Steps with the noon wood, a lay brother stopped at the Elbow to get his breath, and the one behind him said what is always said there: "Ysolde climbed it dying. What's your excuse?"
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-18 · ledger · From Wren's ledgers, the bell page: hours rung tonight so far, four. Hours rung by Sister Pell sitting down, four. Times she has told Wren that is none of Wren's business, also four.
 - 2026-10-18 · house · Somebody has taken the lid off the bell tower's wood box and left a cup of something hot on it. Sister Pell has not said who. The cup is empty, and has been put back exactly where it was.
 - 2026-10-19 · weather · Fog this morning, up from the springs and down from the cloud at once, so the gate wall stands in it to the knees and the lay brothers on the wall-walk look like men wading.
+- 2026-10-19 · overheard · In the cloister, a novice to another, very low: "The Captain said it out loud last night. The whole oath. I heard it from the far lamp." "You never." "I did. And then Ser Garrow said it at the next bell, and that's the bit nobody believes."

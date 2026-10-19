@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1767,
+  "xp": 1787,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -51,7 +51,7 @@
     }
   },
   "ember": {
-    "value": 82,
+    "value": 84,
     "tier": "Steady",
     "effect": "none"
   },
@@ -325,7 +325,7 @@
   "chapter_now": {
     "week_start": "2026-10-18",
     "through": "2026-10-19",
-    "tier_so_far": "Setback",
+    "tier_so_far": "Costly",
     "chapter": 3
   },
   "fell": {
