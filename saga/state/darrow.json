@@ -308,13 +308,13 @@
     }
   ],
   "tether": {
-    "days": 1,
+    "days": 2,
     "stage": 1,
     "of": 5,
     "name": "a name",
     "next_at": 4,
     "first": "2026-10-11",
-    "last": "2026-10-11",
+    "last": "2026-10-18",
     "with": "rae-thorne"
   },
   "works": {
