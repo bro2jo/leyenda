@@ -150,7 +150,7 @@ White stone on a white rock above the river road, and a hundred bells that ring 
 Twelve by the old count, each sixty knights and sixty squires, numbered by precedence of founding. The First is the king's own and never leaves Calden. The Second is the oldest that rides, and knows it. The Sixth and the Ninth are Lowmarch lances, raised from farm sons and horse-breeders, and the Ninth has been "the fast one" for longer than anyone can say why. A lance's field-stone travels with it on a cart. The signals are the raised fist, ready; the fist with two fingers out, hold; and the open hand swept outward, ride wide, which means give the flank room. No captain has ever liked giving the second.
 
 ## realm.oath — The Oath of the Bended Knee
-- **tier:** common · **spoken:** Prologue I (the knighting; the field-stones) · **names:** —
+- **tier:** common · **spoken:** Prologue I (the knighting; the field-stones); ch03:between-2 · **names:** —
 - **use:** Benedek at every bell; a herald's demand; what Darrow can no longer do.
 
 Sworn kneeling on the left knee with both palms flat on an Oathstone: at knighting, before every battle at the lance's field-stone, and whenever the Crown bids. The words are short enough for a frightened boy: *Stone and Crown, knee and hand. What I am given I hold. What I hold I give.* The Grace comes up through the palms as warmth and settles in the chest, and old knights call it the Crown's hand on your back. A knight who cannot kneel cannot be sworn, which is why "stiff-kneed" is an insult. ⟪gm: the third line is a tithe-oath in truth (T1). Never gloss it.⟫

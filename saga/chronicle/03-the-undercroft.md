@@ -169,3 +169,57 @@ He looked at her. She had had that cold in her cart, she had told him once, and 
 "Aye," he said.
 
 The novice wrote that down too, because the kitchen wrote everything down, and Rae went back to her halter as if nothing had been owed in the first place.
+
+### Between — The Even Bells
+
+When he came back up the hall from the kitchen the lamps were down to the far one and the brazier, and the only man awake in the row was Hollis, on the edge of his cot beside the Grey Cot, with the lad's hand in his.
+
+Darrow sat down on the end of his own cot, across the brazier from them, and did not lie down.
+
+"You'll be wanting your sleep," Hollis said, without looking up. "Captain."
+
+"The bell's not far off."
+
+"No."
+
+The lad lay as he had lain for a week: on his back, breathing, eyes open on the roof, the frost on his mouth catching what light there was. He had said his oath at every bell since the ford. The night he was taken he had said it at three and not at the fourth, and the whole House knew that now, and nobody had said it to the two men who had been in the river with him.
+
+"What is it you say to him?" Darrow asked. "Every night. It never carries."
+
+Hollis was quiet for a while. His thumb moved over the lad's knuckles.
+
+"I tell him what I didn't." He said it to the lad, not to Darrow. "That nobody was letting anybody kneel. That I said it so he'd sleep. He said his oath at every bell for me, the whole way up the road, because I told him it would keep him. So I owe him one bell at a time." He looked up at last. "It's not much of a trade. The truth, for a lie, to a lad who can't hear either."
+
+"He heard the lie."
+
+"Aye. Well." Hollis looked at the roof. "That's the part I'm paying off."
+
+Down the hall, under the far lamp, the night novice turned on her stool and was still. Then the bell came, up in the tower, slow, the way it came now that the hand on the rope was sitting down.
+
+The lad's lips did not move. They had not moved since the fourth bell.
+
+Darrow had given him the shapes of the words twice, in the nights before, and no sound with them; his throat had shut on the first word both times, like a door he had not known was there. He found the first word again now and set his breath against it.
+
+`[RESOLVE · DC 12]` d20 **17** +0 resolve +3 proficiency = **20** — *Success*
+
+"Stone and Crown," he said, aloud, and the door was not there. "Knee and hand. What I am given I hold. What I hold I give."
+
+They were not loud. They did not need to be. They went across the brazier and settled on the cot, and the lad went on breathing, and the frost on his mouth did not change.
+
+Hollis had not turned his face to the wall. He had watched the whole of it.
+
+"First time I've heard that out of you since the river," he said.
+
+"It wasn't for the Crown."
+
+"No. He'd not have known the difference." Hollis looked down at the hand in his. "I do."
+
+The bell had stopped. Up the row somebody turned over and slept on.
+
+"There's seven more before dawn," Hollis said. "He never missed one till the fourth. I'll not have him missing them now." He set the lad's hand down on the grey blanket, carefully, and took it up again. "You take the odd ones, Captain. I'll take the even."
+
+Darrow looked at him. Forty years of barracks had taught Hollis Garrow to be asleep when a bell came.
+
+"You'll say it?"
+
+"I'll say it." His voice did not change at all. "And the fourth's mine."

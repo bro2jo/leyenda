@@ -241,11 +241,12 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
-            "ch03:between-1"
+            "ch03:between-1",
+            "ch03:between-2"
           ]
         }
       ]
@@ -615,6 +616,39 @@
           "weight": "scene",
           "what": "Darrow owes Rae her aye: when he has been down the stair he tells her what the cold does on the stone, plain, not as he would tell the House. Honour it on the gate wall the night the House keeps her (slot 5), before her crate",
           "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "c03.2",
+      "made": {
+        "chapter": 3,
+        "scene": "between-2",
+        "date": "2026-10-18"
+      },
+      "chose": "Sat up at the Grey Cot with Hollis for the first hour bell of the night; asked what Hollis says to the lad every night (the truth he did not tell him alive, one bell at a time); at the bell said the lad's oath aloud, the first words of it out of him since the river, for the lad and not the Crown; Hollis watched instead of turning to the wall, and divided the night's bells between them: the Captain the odd, Hollis the even, and the fourth his",
+      "now": {
+        "approval": {
+          "hollis": 3
+        },
+        "bearing": {
+          "sworn": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c03.2a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow and Hollis keep the lad's bells in turns at the Grey Cot: the Captain the odd bells, Hollis the even, and the fourth is Hollis's. Fire where a night bell passes with them in the hall, where the fourth bell is spoken of, or where Hollis is heard saying the oath",
+          "fits": "present.hollis",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch03:between-2"
+          ]
         }
       ]
     }

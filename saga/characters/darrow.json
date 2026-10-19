@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "between-1",
+    "scene": "between-2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#between-1"
+    "anchor": "chronicle/03-the-undercroft.html#between-2"
   },
-  "last_seen_doing": "Went to the kitchen after the night bell; would not let the novice rub out the prices because NOBODY has not won yet, and gave her the nights to cross off instead; gave Rae the aye he owed her.",
-  "now": "In the kitchen after the night bell. He owes Rae a plain telling of what the cold does on the stone, once he has been down the stair.",
+  "last_seen_doing": "Sat up across the brazier from the Grey Cot; asked Hollis what he says to the lad every night; at the hour bell said the lad's oath aloud, the first time since the river, for the lad and not the Crown; took the odd bells of the night.",
+  "now": "On the end of his cot across from the Grey Cot, keeping the lad's bells with Hollis: his the odd ones. He has said the oath aloud for the first time since the river.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -876,6 +876,24 @@
       "evidence": "When you've been down that stair, you'll tell me what the cold does on the stone. Plain. Not how you'd tell the House."
     },
     {
+      "fact": "At the hour bell he said the oath aloud, the first words of it out of him since the river, and his throat did not shut on it.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "\"Stone and Crown,\" he said, aloud, and the door was not there."
+    },
+    {
+      "fact": "He said it for the lad, not for the Crown.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "\"It wasn't for the Crown.\""
+    },
+    {
+      "fact": "He takes the odd bells of the night for the lad, Hollis the even.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "You take the odd ones, Captain. I'll take the even."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1101,6 +1119,10 @@
     {
       "chapter": "03",
       "scene": "between-1"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-2"
     },
     {
       "chapter": "tale01",

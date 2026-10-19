@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "1",
+    "scene": "between-2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-1"
+    "anchor": "chronicle/03-the-undercroft.html#between-2"
   },
-  "last_seen_doing": "At the Grey Cot with the lad's hand; told Sister Pell to go and get some sleep, heard himself, and closed his hand on the lad's; told the Captain, who had been told not yet, to ask her faster.",
-  "now": "At the Grey Cot with the lad's hand, waiting on the Mender's yes.",
+  "last_seen_doing": "Told the Captain what he says to the lad every night: the truth he did not tell him alive, that nobody was letting anybody kneel, one bell at a time; watched the Captain say the oath aloud instead of turning to the wall; divided the night's bells between them and claimed the fourth.",
+  "now": "At the Grey Cot with the lad's hand, keeping the even bells of the night for him, and the fourth.",
   "story_so_far": "At Harrow Ford he brought the writ that sent the Sixth and the Ninth into the river, and came back from it missing his right leg above the knee; he has had the cot next to Darrow's at Saint Ysolde's since, with his name second on the Confessor's list. When the lad of his Sixth, Ser Benedek Orrin, was found Hollowed on the feast morning, Hollis would not let him be carried to the far cots, and has sat beside the Grey Cot with the lad's hand in his ever since. He watched a letter in blue wax burn and left the hall for the first time; in the cloister he asked the Captain whether the kind lies he told the lad had sent him wherever he has gone, and asked him to sit up a while. When the House heard that the lad stopped saying his oath between the third bell and the fourth, Hollis shut his eyes, and when Wren offered to go down the undercroft stair he told the Captain not to send that girl down a hole.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -324,6 +324,24 @@
       "chapter": "03",
       "scene": "1",
       "evidence": "Then ask her faster, Captain"
+    },
+    {
+      "fact": "Every night he tells the lad the truth he did not tell him alive: that nobody was letting anybody kneel, and that he said it so the lad would sleep.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "That nobody was letting anybody kneel. That I said it so he'd sleep."
+    },
+    {
+      "fact": "He said it was the first time he had heard the oath out of the Captain since the river, and that he knew the difference it was not said for the Crown.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "First time I've heard that out of you since the river"
+    },
+    {
+      "fact": "He will say the lad's oath himself at the even bells of the night, and the fourth bell is his.",
+      "chapter": "03",
+      "scene": "between-2",
+      "evidence": "\"I'll say it.\" His voice did not change at all. \"And the fourth's mine.\""
     }
   ],
   "relationships": [
@@ -498,6 +516,10 @@
     {
       "chapter": "03",
       "scene": "1"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-2"
     }
   ]
 }
