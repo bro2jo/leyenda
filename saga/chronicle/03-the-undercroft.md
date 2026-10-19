@@ -127,3 +127,45 @@ Hollis looked at the lad's mouth, where the frost still was.
 > ⟦ THE RECKONING ⟧
 > XP 1,602 → 1,762
 > Inspiration 2 → 3
+
+### Between — Even Money
+
+After the night bell there was light under the kitchen door again, and Darrow went toward it on the flat, which was all the hall would give him and, tonight, all he wanted.
+
+The cook was asleep in the chimney corner with her cleaver across her knees. The kitchen novice had the book open on the bread table. On the second bench, the one she had taken to setting out at night without being asked, Rae Thorne sat splicing a halter, and did not look up.
+
+"Captain." The novice turned the book to him before he could ask, the way you show a man his own horse has won. "Look."
+
+The column of cots had not changed. The foot of it had. Under NOBODY and *the Captain, the ovens* and *Thorne, a load*, the stakes went on down the page in a dozen hands and over onto the next: wicks, a knife, a month of scouring pots, a lay brother's good boots. Someone had written *the cleaver*, and someone else had crossed it out.
+
+"Since last night," said the novice. "You said nobody's. In front of everyone. So it's even money on nobody now, Ser, and they're still coming." She had the pencil ready over the page. "Do I rub them out? The prices. Like you said."
+
+He looked at the page for a while.
+
+"No."
+
+Her face fell a little. She held on to the pencil.
+
+"The bet was no other cot goes grey before the thaw," he said. "Not who did it. The thaw's a long way off, and the cold comes up that stair every night. Nobody's won anything yet." He put his finger on NOBODY. "But you can cross off the nights. Every dawn there's no new grey blanket, put a line through one. That's a number you can rub something out with."
+
+The novice looked at the page, and then at him, and wrote at the top of a clean margin, very small: *Nights without.* Under it, a single stroke.
+
+Rae had stopped splicing. She was looking at the book the way she looked at a load on a cart: how it sat, and what was under it.
+
+"Heavy book," she said. "Whole House is under it now."
+
+"It was already. Now it's written down."
+
+"Aye." She pulled the splice tight and tested it with both hands. Then she looked at him, which she did not often do. "I'll have my aye."
+
+He had lost it to her on the gate wall, naming a load he could not see. He had wondered since what she would spend it on.
+
+"Ask."
+
+"When you've been down that stair, you'll tell me what the cold does on the stone. Plain. Not how you'd tell the House."
+
+Everyone who had asked him about that stair today had wanted it opened. Nobody had asked for that.
+
+"Aye," he said.
+
+The novice wrote that down too, because the kitchen wrote everything down, and Rae went back to her halter as if nothing had been owed in the first place.

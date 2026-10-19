@@ -53,6 +53,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The bridge at Calden** — A bridge at Calden that Thistle would not cross until Darrow walked her over it backward, talking to her as if she were a lady; Aldric laughed from the bank (Ch 2 Sc 5, in Aldric's letter).
 - **The seam on the east wall** — A line of damp in the limewash a hand above the floor along the infirmary hall's east wall, where frost stood the night Benedek was taken; it runs the length of three cots and stops at the head of the Grey Cot. The hall says every wall in the House sweats (Ch 2 Sc 6).
 - **The undercroft door** — A low iron-banded door with a lock the size of a fist, behind the linen press at the dark end of the infirmary hall's east wall: the stair down to the undercroft. Shut since before Wren could count; the key is the Prior's, handed from Prior to Prior and never turned. Cold all the way through (Ch 2 Sc 7).
+- **Nights without** — A margin the kitchen novice keeps in the kitchen's betting book since the Captain would not let NOBODY be paid out: a stroke for every dawn with no new grey blanket in the hall (Ch 3, Between).
 
 ## Songs and verses
 

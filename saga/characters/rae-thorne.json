@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "02",
-    "scene": "climax",
+    "chapter": "03",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#between-1"
   },
-  "last_seen_doing": "Stayed in the kitchen door while the House followed Wren's candle down the hall, and watched the flame from there.",
-  "now": "In the kitchen door of the infirmary hall on the night of the eve.",
+  "last_seen_doing": "Sat splicing a halter on the kitchen's second bench; read the book like a load (the whole House is under it now); claimed the aye the Captain owes her.",
+  "now": "In the kitchen at night, splicing a halter. The Captain owes her a plain telling of what the cold does on the stone below the House.",
   "story_so_far": "The carter who drove Darrow and Hollis the last of the road north, and who brought the House word of the Confessors' list; she let the road shut rather than leave, and when Darrow's shoulder could not shut the wicket, hers did. In the week of the Grey Cot she went down the Steps for her oxen and came up the Last Hundred at dusk with a letter in blue wax for the Captain, carried inside her shirt rather than left overnight in the cage with the grey cloak who gave it her; she won an aye off him at name-the-load and put her stake beside his in the kitchen's book. Shown the frost on Ser Benedek Orrin's mouth, she said she had had that cold in her cart, and would not say when. On the eve she stayed in the kitchen door while the House followed Wren's candle down the hall.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -365,6 +365,18 @@
       "chapter": "02",
       "scene": "climax",
       "evidence": "the way you watch weather you have already been out in"
+    },
+    {
+      "fact": "She read the kitchen's book like a load and said the whole House is under it now.",
+      "chapter": "03",
+      "scene": "between-1",
+      "evidence": "Heavy book,\" she said. \"Whole House is under it now."
+    },
+    {
+      "fact": "She claimed her aye: when the Captain has been down the stair he is to tell her what the cold does on the stone, plain, not how he would tell the House.",
+      "chapter": "03",
+      "scene": "between-1",
+      "evidence": "I'll have my aye."
     }
   ],
   "relationships": [
@@ -477,6 +489,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-1"
     }
   ]
 }

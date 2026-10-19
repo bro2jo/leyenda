@@ -241,10 +241,11 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch03:s1",
-            "ch02:choice"
+            "ch02:choice",
+            "ch03:between-1"
           ]
         }
       ]
@@ -430,7 +431,11 @@
           "what": "The kitchen book now carries Thorne, a load, under the Captain on NOBODY: if a cot goes grey before the thaw she carries the kitchen a load up the Steps on her back, not the cage. Fire where the book is consulted, the odds move, a cot goes grey, or the thaw comes",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch03:between-1"
+          ]
         }
       ]
     },
@@ -456,7 +461,8 @@
           "what": "Darrow owes Rae one aye, lost at name-the-load on the gate wall: she will want it some day and will know when she asks. Fire where she claims it; he gives it, or does not",
           "fits": "present.rae",
           "priority": 3,
-          "status": "pending"
+          "status": "fired@ch03:between-1",
+          "evidence": "\"I'll have my aye.\""
         }
       ]
     },
@@ -583,6 +589,33 @@
       "declined": [
         "Send Wren down with a lamp.",
         "Ask Mother Ione for the key, and wait."
+      ]
+    },
+    {
+      "id": "c03.1",
+      "made": {
+        "chapter": 3,
+        "scene": "between-1",
+        "date": "2026-10-18"
+      },
+      "chose": "Went to the kitchen after the night bell; the book has gone even money on NOBODY since the hall heard nobody's hand; would not let the novice rub out the prices (the bet is no cot grey before the thaw, not who did it) and gave her nights to cross off instead; Rae claimed her aye: when he has been down the stair he will tell her what the cold does on the stone, plain, not as he would tell the House; he said aye",
+      "now": {
+        "approval": {
+          "rae": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c03.1a",
+          "when": "ch03:s5",
+          "at": "ch03:s5",
+          "weight": "scene",
+          "what": "Darrow owes Rae her aye: when he has been down the stair he tells her what the cold does on the stone, plain, not as he would tell the House. Honour it on the gate wall the night the House keeps her (slot 5), before her crate",
+          "status": "pending"
+        }
       ]
     }
   ],

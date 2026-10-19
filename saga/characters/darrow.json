@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "1",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-1"
+    "anchor": "chronicle/03-the-undercroft.html#between-1"
   },
-  "last_seen_doing": "Read the flour at the undercroft door at the dawn bell; held the House to the Mender's count and the Prior's key and sent the eager ones to carry wood up the bell tower; asked Maelis again, and gave her the answer to the Prior's question: he will come back up, on this leg.",
-  "now": "At his cot in the hall. The House knows the cold comes up every night through the gap under the undercroft door, and is held to the Mender's count and the Prior's key. Maelis has told him his answer is the right one and not true yet: ask tomorrow.",
+  "last_seen_doing": "Went to the kitchen after the night bell; would not let the novice rub out the prices because NOBODY has not won yet, and gave her the nights to cross off instead; gave Rae the aye he owed her.",
+  "now": "In the kitchen after the night bell. He owes Rae a plain telling of what the cold does on the stone, once he has been down the stair.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -858,6 +858,24 @@
       "evidence": "He put his hand on the knee, the way you put a hand on a horse you are about to ask something of."
     },
     {
+      "fact": "He told the kitchen novice the bet on NOBODY is that no other cot goes grey before the thaw, not who did it, and that nobody has won anything yet.",
+      "chapter": "03",
+      "scene": "between-1",
+      "evidence": "The bet was no other cot goes grey before the thaw,\" he said. \"Not who did it."
+    },
+    {
+      "fact": "He told her to cross off a night every dawn there is no new grey blanket.",
+      "chapter": "03",
+      "scene": "between-1",
+      "evidence": "Every dawn there's no new grey blanket, put a line through one."
+    },
+    {
+      "fact": "He gave Rae the aye he lost to her on the gate wall: when he has been down the stair he will tell her what the cold does on the stone, plainly.",
+      "chapter": "03",
+      "scene": "between-1",
+      "evidence": "When you've been down that stair, you'll tell me what the cold does on the stone. Plain. Not how you'd tell the House."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1079,6 +1097,10 @@
     {
       "chapter": "03",
       "scene": "1"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-1"
     },
     {
       "chapter": "tale01",
