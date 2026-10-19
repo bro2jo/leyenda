@@ -1210,7 +1210,7 @@ He looked from the flour to Maelis.
 
 "You won't tell me whether you've been down there," he said. "Then take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
 
-The Prior's hands went into her sleeves. Up the row, a cot creaked by the Grey Cot and was still.
+The Prior's hands went into her sleeves. Up the row, Hollis's cot creaked and was still.
 
 "And if I say no?" said Maelis.
 

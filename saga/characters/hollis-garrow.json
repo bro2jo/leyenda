@@ -491,6 +491,11 @@
       "scene": "climax"
     },
     {
+      "chapter": "02",
+      "scene": "choice",
+      "mention": true
+    },
+    {
       "chapter": "03",
       "scene": "1"
     }

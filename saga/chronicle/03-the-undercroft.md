@@ -10,11 +10,11 @@
 
 At the dawn bell Darrow swung both legs off the cot together, out of old habit, and was halfway down the row before he noticed the left had come along without being asked.
 
-He had a question to ask the Mender again, and it was tomorrow now. The flour came first.
+He had a question for the Mender. The flour came first.
 
 The hall was still grey. Most of it was asleep or pretending, and the fires were down to their coals. At the dark end of the east wall a lamp was already burning low on the flags, and behind it, on her knees with her arms spread like a woman guarding a hen from a fox, was the kitchen novice.
 
-"Nobody step in my flour," she said, before she saw who it was. Then, a little less fiercely: "Captain. Nobody has. I've been here since the lamps."
+"Nobody step in my flour," she said, before she saw who it was. Then, a little less fiercely: "Kinsman. Captain. Nobody has. I've been here since the lamps."
 
 "Good. Don't let them."
 
@@ -38,9 +38,9 @@ The flour lay as she had laid it, white and smooth from the iron to the foot of 
 
 Wren came down the row at a run with the ledger under her arm and her pencil in her teeth, and stopped dead a yard from the flour, because the kitchen novice put out an arm like a gate. She looked over it for a long moment. Then she took the pencil out.
 
-"Prints in," she said. "None. Prints out. None. Frost." She wrote. "The wall sweats along that seam every dawn. I've looked. That's every dawn since I started looking." She looked up. "It's not new. It's just the first night anyone sat up with it."
+"Prints in," she said. "None. Prints out. None. Frost." She wrote. "The wall sweats along that seam every dawn. I've looked." She looked up. "It's not new. It's just the first night anyone sat up with it."
 
-"Every night," said Sister Pell, from her shawls, as if it were a thing she had suspected of the House for fifty years and was not surprised to have proved.
+"Every night," said Sister Pell, from her shawls, not at all surprised.
 
 Wren turned the ledger round so he could see the top of a fresh page. *Times the Captain has asked the Mender: 1.* There was a great deal of room under it.
 
