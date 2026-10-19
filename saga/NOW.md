@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told)
 - **Against him:** Something below the hall draws on it every night through the gap under the undercroft door, and the only man the House waits on cannot go down a stair.
 - **Next:** How the stair is taken.
-- **Open choice (the climax of Chapter 2):** What does Darrow do? 1. Ask Maelis to take him down herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop. / 2. Send Wren down with a lamp. / 3. Ask Mother Ione for the key, and wait.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

@@ -1203,3 +1203,29 @@ Behind them the kitchen novice came down the row with a basin, knelt at the gap 
 1. **Ask Maelis to take him down herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop.** *(She may still say no.)*
 2. **Send Wren down with a lamp.** *(Hollis disapproves.)*
 3. **Ask Mother Ione for the key, and wait.** *(Hollis approves.)*
+
+### Choice — Her Count
+
+He went down the row to the far cots before he could think better of it, and Wren came with him without being asked, which saved him asking.
+
+Maelis was at the last cot with two fingers under an old man's jaw. She did not look up.
+
+"You said ask," Darrow said. "Take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
+
+"And if I say no?"
+
+"Then I wait."
+
+She took her fingers away from the old man's jaw and looked at Darrow's knee, and then, for longer, at his face.
+
+"You've never waited for anything in your life."
+
+"I'm learning. I have a good teacher. She charges."
+
+Nothing moved in her face. "Wren. Would you take his weight?"
+
+"Technically he weighs about two of me," said Wren. "So, half of it. It's better than a hole." She looked at Darrow sideways. "The kitchen's calling him the Kinsman, since the wood. Eleven times since the dawn bell. I thought he should know before he leans on anybody."
+
+"The Kinsman," said Maelis, as if she were testing the word for soundness. She turned back to the old man. "Not today. Ask me again tomorrow, Captain, and the day after. When the leg will bear you on a stair, I'll tell you."
+
+It was not a yes. It was not a no, either. He had been getting a lot of those from her lately, and he had begun to tell them apart.

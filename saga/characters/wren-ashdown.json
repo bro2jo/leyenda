@@ -287,6 +287,18 @@
       "evidence": "Keys on the Prior: ten."
     },
     {
+      "fact": "Asked whether she would take his weight, she said half of it, and that it is better than a hole.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "So, half of it. It's better than a hole."
+    },
+    {
+      "fact": "She told him the kitchen has been calling him the Kinsman since the wood, eleven times since the dawn bell.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "The kitchen's calling him the Kinsman, since the wood. Eleven times since the dawn bell."
+    },
+    {
       "fact": "She counted no prints into the flour and none out, and frost.",
       "chapter": "03",
       "scene": "1",
@@ -429,6 +441,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "02",
+      "scene": "choice"
     },
     {
       "chapter": "03",

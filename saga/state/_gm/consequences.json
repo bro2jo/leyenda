@@ -237,9 +237,10 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch03:s1"
+            "ch03:s1",
+            "ch02:choice"
           ]
         }
       ]
@@ -547,6 +548,38 @@
         }
       },
       "due": []
+    },
+    {
+      "id": "c02.16",
+      "made": {
+        "chapter": 2,
+        "scene": "climax",
+        "date": "2026-10-18"
+      },
+      "chose": "Asked Maelis to take him down the undercroft stair herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop; and if she says no, he waits",
+      "now": {
+        "approval": {
+          "maelis": 8,
+          "wren": 2
+        },
+        "bearing": {
+          "sworn": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c02.16a",
+          "when": "ch03",
+          "at": "ch03",
+          "weight": "scene",
+          "what": "The stair is taken on Maelis's terms (b1.3 shape 1): it costs him a day of asking; her first unforced yes comes later in the week, in her own words and not as a bargain; at the descent, her count, one hand on Wren's shoulder, Hollis's voice from the top telling him to look at the wall and not the floor; she comes down after them without a lamp. She may still say no, and then he waits",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Send Wren down with a lamp.",
+        "Ask Mother Ione for the key, and wait."
+      ]
     }
   ],
   "rules": [

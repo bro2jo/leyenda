@@ -35,7 +35,7 @@
         "kind": "spine",
         "beat": "b1.3",
         "float": false,
-        "plan": "The stair's terms, in the shape the ch02 choice set (its `### Choice` block first if the choice closes by default at this close). (1) Maelis: a day of asking; she answers questions with questions and charges for every one; her terms stand (her count, a hand on Wren's shoulder, her right to say stop) and she has not yet said yes. (2) Wren goes down with a lamp after the night bell while Darrow sits at the door; she comes back up white, with the count of the steps and a report he can see has a line left out of it (T6: she will not say what is written over the door below). (3) The Prior gives him the key's condition before the key: she is to be told everything found below, every word, and Maelis will take him down herself. In every shape the one condition no one argues is the Mender's: not until the leg will bear him on a stair.",
+        "plan": "The stair on Maelis's terms (ch02 choice, option 1): the second day of asking. He asks again at the hour reading, as she told him to; she answers each question with a sharper one and charges for every answer (what did the knee do this morning; what would you do at the bottom; who carries you up), and he answers them truly. She has not said yes. Wren practises being a shoulder and keeps a count of it. In every shape the one condition no one argues is the Mender's: not until the leg will bear him on a stair.",
         "turn": "By the end the stair has its terms (whose leave, whose count, whose key) and Maelis has set the one condition nobody argues, the leg first; Darrow attempts to get the door opened before the leg is ready, and is refused by the one person he will not go against",
         "micro": null,
         "challenge": null,
@@ -131,7 +131,7 @@
         "kind": "spine",
         "beat": "b1.3",
         "float": false,
-        "plan": "The eve of the descent, in the choice's shape. (1) Maelis's first unforced yes, on her terms, given in her own words and not as a bargain; she says she will come down after them, without a lamp, and does not say how she knows the way (T8 plant). (2) Wren's report, pressed: the steps counted, the hall at the bottom, the pictures on the walls; she will take him down at dawn the same way, and the line she left out stays out. (3) The Prior at the door at dusk with the key on its cord: her condition said again in front of Maelis, and Maelis says she will lead. Hollis, told, asks to be carried to the stair's head; he cannot go down, and he will not be left at the Grey Cot for this. Something to take down: a lamp, oilcloth, a pry bar from the kitchen, chosen by whoever is careful.",
+        "plan": "The eve of the descent (option 1). Maelis's first unforced yes, on her terms, given in her own words and not as a bargain; she will come down behind them without a lamp and does not say how she knows the way (T8 plant). The door is still the Prior's: Darrow goes to Mother Ione with the answer to her question at the door (what he would do at the bottom of the stair: come back up it, on his own leg, at the Mender's count), and she says she will open it at dusk tomorrow. Hollis, told, asks to be carried to the stair's head; he cannot go down, and he will not be left at the Grey Cot for this. Something to take down: a lamp, oilcloth, a pry bar from the kitchen, chosen by whoever is careful.",
         "turn": "By the end the descent is set for tomorrow, with its terms and its people, and Hollis has made himself part of it from the top of the stair; Darrow attempts to go tonight and is held to the morning by the terms he agreed",
         "micro": null,
         "challenge": null,
@@ -145,7 +145,7 @@
         "kind": "spine",
         "beat": "b1.3",
         "float": false,
-        "plan": "The stair (arc b1.3, plants). The door opened (shapes 1, 3) or Wren's way followed (2); Hollis's voice from the top telling him to look at the wall and not the floor; one hand on the wall or on Wren's shoulder, step by step, the knee bearing him. At the bottom a hall older than the House: Wren reads the words cut over the inner door aloud before Maelis can translate them and stops herself halfway (T6); Maelis walks the dark without a lamp; they pass a door with script round its frame and no handle, where Maelis's hand rests a moment too long (q1.door). The walls are painted. Ends with the lamp on the far wall, where frost is spreading across the stone from a low alcove beneath where the infirmary floor must be: the climax is what is in it.",
+        "plan": "The stair (arc b1.3, plants; option 1). The Prior opens the door at dusk with the key from her neck; Wren goes first with the lamp and his hand on her shoulder, Maelis behind them without a lamp, counting; Hollis's voice from the top telling him to look at the wall and not the floor; step by step, the knee bearing him. At the bottom a hall older than the House: Wren reads the words cut over the inner door aloud before Maelis can translate them and stops herself halfway (T6); they pass a door with script round its frame and no handle, where Maelis's hand rests a moment too long (q1.door). The walls are painted. Ends with the lamp on the far wall, where frost is spreading across the stone from a low alcove beneath where the infirmary floor must be: the climax is what is in it.",
         "turn": "By the end Darrow has gone down the stair on his own leg into a hall nobody living walks but one, and sees the frost on the far wall; he attempts the stair under the terms the choice set, and keeps them",
         "micro": null,
         "challenge": null,
@@ -433,17 +433,5 @@
       "bound": "2026-10-14"
     }
   ],
-  "open_choice": {
-    "chapter": 2,
-    "scene": "climax",
-    "ask": "What does Darrow do?",
-    "options": [
-      "Ask Maelis to take him down herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop.",
-      "Send Wren down with a lamp.",
-      "Ask Mother Ione for the key, and wait."
-    ],
-    "default": 3,
-    "opened": "2026-10-17",
-    "carries": 2
-  }
+  "open_choice": null
 }

@@ -30,7 +30,7 @@
   "last_beat": "\"Make your mind up, Captain,\" he said. \"He's not getting any warmer.\"",
   "companions": {
     "maelis": {
-      "approval": 26,
+      "approval": 34,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
@@ -40,7 +40,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 7,
+      "approval": 9,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
@@ -69,6 +69,16 @@
       "text": "Step forward and answer to his name.",
       "date": "2026-10-11",
       "ledger": "c01.5",
+      "by": "darrow"
+    },
+    {
+      "chapter": 2,
+      "scene": "climax",
+      "kind": "climax",
+      "option": 1,
+      "text": "Ask Maelis to take him down herself, on her terms: her count, a hand on Wren's shoulder, her right to say stop.",
+      "date": "2026-10-18",
+      "ledger": "c02.16",
       "by": "darrow"
     }
   ],

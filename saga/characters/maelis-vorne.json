@@ -281,6 +281,18 @@
       "evidence": "\"What did the knee do this morning, Captain?\""
     },
     {
+      "fact": "She told the Captain he has never waited for anything in his life.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "You've never waited for anything in your life."
+    },
+    {
+      "fact": "She told him to ask again tomorrow and the day after, and that she will tell him when the leg will bear him on a stair.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "When the leg will bear you on a stair, I'll tell you."
+    },
+    {
       "fact": "She let the Captain wait for her to speak of the stair, and did not.",
       "chapter": "03",
       "scene": "1",
@@ -421,6 +433,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "02",
+      "scene": "choice"
     },
     {
       "chapter": "03",

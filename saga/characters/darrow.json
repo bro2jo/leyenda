@@ -810,6 +810,18 @@
       "evidence": "\"Have you been down there?\""
     },
     {
+      "fact": "He asked Maelis to take him down the undercroft stair herself, on her count, with his hand on Wren's shoulder, and to stop when she says stop.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "Take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
+    },
+    {
+      "fact": "Told he has never waited for anything in his life, he said he is learning, from a good teacher who charges.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "I'm learning. I have a good teacher. She charges."
+    },
+    {
       "fact": "He read the flour by a lamp held low on the flags: no print in it or out, but a half-moon of frost glazed into it from the gap, every grain leaning toward the door.",
       "chapter": "03",
       "scene": "1",
@@ -1053,6 +1065,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "02",
+      "scene": "choice"
     },
     {
       "chapter": "03",
