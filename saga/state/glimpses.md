@@ -21,4 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-18 · house · Sister Pell has had the novices carry a second brazier into the bell tower, and sits between the two of them with her rope across her knees like a cat that may or may not be asleep.
 - 2026-10-18 · overheard · Two lay brothers at the woodpile, stamping the ice off: "Third time today she's sent for more wood." "She's rung bells fifty years. Let her be warm for one of them."
 - 2026-10-18 · body · Evening, and the knee has spent the whole day being ordinary. He has started, without meaning to, to forget which one it is until he stands.
-- 2026-10-18 · ledger · From Wren's ledgers, the kitchen page: second helpings asked for in the hall tonight, nine. Given, nine. Asked for by the Captain, one, which the cook says she will be telling people about.
+- 2026-10-18 · ledger · From Wren's ledgers, the bell page: hours rung tonight so far, four. Hours rung by Sister Pell sitting down, four. Times she has told Wren that is none of Wren's business, also four.
