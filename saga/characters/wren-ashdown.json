@@ -22,13 +22,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "02",
-    "scene": "climax",
+    "chapter": "03",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Read the House her count of the night's bells and the lad's oaths, which fixed the hour; walked the east wall with her candle before the whole House to the undercroft door; offered to go down the stair herself; counted the Prior's key.",
-  "now": "At the undercroft door with her candle out, having offered to go down the stair herself.",
+  "last_seen_doing": "Counted the flour: no prints in or out, frost; said the seam on the wall sweats every dawn she has looked; sat by the Captain afterwards, not counting.",
+  "now": "Sitting on the end of the cot next to the Captain's with her ledger shut, waiting on him.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -285,6 +285,18 @@
       "chapter": "02",
       "scene": "climax",
       "evidence": "Keys on the Prior: ten."
+    },
+    {
+      "fact": "She counted no prints into the flour and none out, and frost.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "\"Prints in,\" she said. \"None. Prints out. None. Frost.\""
+    },
+    {
+      "fact": "She says the seam on the wall sweats every dawn since she started looking, so this is not new: only the first night anyone sat up with it.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "It's not new. It's just the first night anyone sat up with it."
     }
   ],
   "relationships": [
@@ -417,6 +429,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "1"
     }
   ]
 }

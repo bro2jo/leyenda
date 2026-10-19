@@ -5,10 +5,19 @@
   "chapter": 3,
   "chapter_title": "The Undercroft",
   "chapter_file": "saga/chronicle/03-the-undercroft.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "The Flour",
+      "covers": [
+        "2026-10-18"
+      ],
+      "written": "2026-10-18"
+    }
+  ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "at the undercroft door at the dark end of the infirmary hall's east wall, with the Prior, Maelis and Wren; flour laid across the flags at its foot",
+    "detail": "at his cot in the infirmary hall, the kitchen novice still kneeling over the flour at the undercroft door",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -18,7 +27,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Behind them the kitchen novice came down the row with a basin, knelt at the gap under the door, and laid a skin of flour across the flags, white and smooth, from the iron to the foot of the linen press.",
+  "last_beat": "\"Make your mind up, Captain,\" he said. \"He's not getting any warmer.\"",
   "companions": {
     "maelis": {
       "approval": 26,
@@ -85,5 +94,5 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had."
   },
-  "last_updated": "2026-10-17"
+  "last_updated": "2026-10-18"
 }

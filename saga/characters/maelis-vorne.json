@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "02",
-    "scene": "climax",
+    "chapter": "03",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; looked at the Captain's face when he kept the glass out of the hall; answered his question about the stair with one about the knee.",
-  "now": "At the undercroft door with the Prior, the Captain and Wren, having answered his question about the stair with a question about the knee.",
+  "last_seen_doing": "Read the knee at the hour and asked what it did this morning; said nothing of the stair, though she saw him waiting for it; told him to ask if he wanted to ask, and went to the far cots without a lamp.",
+  "now": "At the far cots. She has not spoken of the stair, and has told the Captain to ask her outright if he wants something.",
   "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -279,6 +279,18 @@
       "chapter": "02",
       "scene": "climax",
       "evidence": "\"What did the knee do this morning, Captain?\""
+    },
+    {
+      "fact": "She let the Captain wait for her to speak of the stair, and did not.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "because she let him wait"
+    },
+    {
+      "fact": "She told him that if he wants to ask her something he should ask it, and that she would be at the far cots.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "If you want to ask me something, ask it. I'll be at the far cots."
     }
   ],
   "relationships": [
@@ -409,6 +421,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "1"
     }
   ]
 }

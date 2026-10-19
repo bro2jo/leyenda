@@ -236,7 +236,11 @@
           "weight": "color",
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch03:s1"
+          ]
         }
       ]
     },
@@ -476,7 +480,8 @@
           "what": "Hollis began to tell the Captain to get some sleep, the words he said to the lad before the lad was taken, stopped, and asked him to sit up a while instead. Fire where Hollis next tells anyone to get some sleep, or lies kindly in Darrow's hearing",
           "fits": "present.hollis",
           "priority": 2,
-          "status": "pending"
+          "status": "fired@ch03:s1",
+          "evidence": "\"Go and get some sleep, sister,\" he said. \"The door'll keep.\""
         }
       ]
     },

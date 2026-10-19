@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "02",
-    "scene": "climax",
+    "chapter": "03",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Stood at his cot's end and laid the night out before the whole House; read the fire lay brother as frightened, not Marrant's man, and told him whose hand it was: nobody's, it came up; kept the black glass out of the hall as he had promised the Mender; at the undercroft door, with the House behind him, did not ask for it to be opened; asked Maelis whether she had been down there.",
-  "now": "At the undercroft door after the House has gone to bed, with the Prior, Maelis and Wren, and flour laid on the flags at its foot. The House believes the cold came up the stair. The Prior keeps an old key and has told him to ask for it when he can say what he would do at the bottom.",
+  "last_seen_doing": "Read the flour at the undercroft door before the House could step in it; held the House back from taking the door off its pins without the Prior, and sent the eager ones to carry wood up the bell tower; waited for Maelis to speak of the stair, and she did not.",
+  "now": "At his cot in the hall. The House knows the cold comes up every night through the gap under the undercroft door, and it is waiting on him to say how the stair is taken.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -810,6 +810,36 @@
       "evidence": "\"Have you been down there?\""
     },
     {
+      "fact": "He read the flour by a lamp held low on the flags: no print in it or out, but a half-moon of frost glazed into it from the gap, every grain leaning toward the door.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "every grain of that glaze caught the light the same way, all of them leaning, as if the floor had been combed toward the door in the night"
+    },
+    {
+      "fact": "He believes something on the other side draws on the hall through the gap; the novice said breathed on, he said breathed in.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "\"Breathed in,\" Darrow said."
+    },
+    {
+      "fact": "He would not let the House take the undercroft door off its pins without the Prior, who has the key.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "Nobody touches this door without the Prior. She has the key."
+    },
+    {
+      "fact": "He sent the lay brother from the fire and the young ones with the mallet to carry wood up the bell tower for Sister Pell instead.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "If you want something to carry, carry that."
+    },
+    {
+      "fact": "Told he would want to be first down the stair, he said he would be first down and the last to arrive.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "I'll just be the last to arrive."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1023,6 +1053,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "1"
     },
     {
       "chapter": "tale01",

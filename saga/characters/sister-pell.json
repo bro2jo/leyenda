@@ -22,13 +22,13 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen": {
-    "chapter": "02",
-    "scene": "climax",
+    "chapter": "03",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Said she rang every bell the night the lad was taken; will ring the hours with her eye on the undercroft door.",
-  "now": "Ringing the hours tonight with her eye on the undercroft door.",
+  "last_seen_doing": "Rang the hours through the night and came down between every bell to sit by the undercroft door; heard nothing come or go; told Hollis she would sleep after the noon bell.",
+  "now": "Gone up to her bell tower after the dawn bell, her palms raw from the rope; the lay brothers are carrying wood up to her.",
   "story_so_far": "Bell-ringer of Saint Ysolde's these fifty years; her glass in the bell tower is where the grey cloaks were first seen on the Holloway, and at the Prior's council she said Old Mercy rings only when the House is keeping somebody. She rang every hour the night Ser Benedek Orrin was taken; she does not sleep, she rings. On the eve she said she would ring the hours with her eye on the undercroft door.",
   "quote": {
     "text": "Fifty years I've rung the bells. Ask the bell if it's tired.",
@@ -86,6 +86,24 @@
       "chapter": "02",
       "scene": "climax",
       "evidence": "with my eye on it"
+    },
+    {
+      "fact": "She climbed the bell tower and came back down to sit by the undercroft door eight times between the night bell and the dawn bell.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "Up the tower. Ring. Down the stair. Sit. Up again. Eight times."
+    },
+    {
+      "fact": "Nothing came through the undercroft door or went in that night, by her ear.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "Nothing came through that door, Captain, and nothing went in."
+    },
+    {
+      "fact": "Her palms are rubbed red by the rope in two straight lines.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "they were red across the palms in two straight lines"
     }
   ],
   "relationships": [
@@ -149,6 +167,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "1"
     }
   ]
 }
