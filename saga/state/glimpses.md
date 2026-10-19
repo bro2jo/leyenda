@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-16 · house · In the warming room the novices have hung their wet stockings in a row along the chimney breast, and someone has chalked a number over each pair, in a hand that is not Wren's and is trying very hard to be.
 - 2026-10-16 · weather · The wind dropped at dusk and the snow came straight down for once, slow and heavy, the kind that makes a whole House talk quietly without anyone asking it to.
 - 2026-10-17 · ledger · From Wren's ledgers, the lamps page: Lamps in the hall, fourteen. Lit at dusk, fourteen. Counted twice on the way to find a pencil, fourteen both times, which is the right answer and is written down anyway.
 - 2026-10-17 · body · The knee is quiet this afternoon. He has learned not to trust it when it is quiet, and lately, a little, to enjoy it anyway.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-18 · body · Evening, and the knee has spent the whole day being ordinary. He has started, without meaning to, to forget which one it is until he stands.
 - 2026-10-18 · ledger · From Wren's ledgers, the bell page: hours rung tonight so far, four. Hours rung by Sister Pell sitting down, four. Times she has told Wren that is none of Wren's business, also four.
 - 2026-10-18 · house · Somebody has taken the lid off the bell tower's wood box and left a cup of something hot on it. Sister Pell has not said who. The cup is empty, and has been put back exactly where it was.
+- 2026-10-19 · weather · Fog this morning, up from the springs and down from the cloud at once, so the gate wall stands in it to the knees and the lay brothers on the wall-walk look like men wading.
