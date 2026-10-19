@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1802,
+  "xp": 1839,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 35,
+      "temper": 37,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -24,7 +24,7 @@
       "raw": 10,
       "cap": 12,
       "mod": 0,
-      "temper": 8,
+      "temper": 10,
       "next_at": 18,
       "fell": 15,
       "banked": false
@@ -70,7 +70,7 @@
       "tree": "Blade",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 3,
+      "practice": 4,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
@@ -114,7 +114,7 @@
       "tree": "Breath",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 3,
+      "practice": 4,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
@@ -325,7 +325,7 @@
   "chapter_now": {
     "week_start": "2026-10-18",
     "through": "2026-10-19",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 3
   },
   "fell": {
