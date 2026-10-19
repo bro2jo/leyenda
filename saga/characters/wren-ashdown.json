@@ -27,8 +27,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Counted the flour: no prints in or out, frost; said the seam on the wall sweats every dawn she has looked; sat by the Captain afterwards, not counting.",
-  "now": "Sitting on the end of the cot next to the Captain's with her ledger shut, waiting on him.",
+  "last_seen_doing": "Counted the flour: no prints in or out, frost; said the seam on the wall sweats every dawn she has looked; showed the Captain a fresh ledger page counting the times he has asked the Mender, and added to it.",
+  "now": "With her ledger, keeping the count of the times the Captain has asked the Mender.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -293,10 +293,10 @@
       "evidence": "So, half of it. It's better than a hole."
     },
     {
-      "fact": "She told him the kitchen has been calling him the Kinsman since the wood, eleven times since the dawn bell.",
+      "fact": "She told him the kitchen has been calling him the Kinsman since tonight; she heard it four times while the House went up to bed.",
       "chapter": "02",
       "scene": "choice",
-      "evidence": "The kitchen's calling him the Kinsman, since the wood. Eleven times since the dawn bell."
+      "evidence": "The kitchen's calling him the Kinsman, since tonight. I heard it four times while the House went up to bed."
     },
     {
       "fact": "She counted no prints into the flour and none out, and frost.",
@@ -309,6 +309,12 @@
       "chapter": "03",
       "scene": "1",
       "evidence": "It's not new. It's just the first night anyone sat up with it."
+    },
+    {
+      "fact": "She has started a ledger page counting the times the Captain has asked the Mender, with a great deal of room under it.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "Times the Captain has asked the Mender: 1."
     }
   ],
   "relationships": [

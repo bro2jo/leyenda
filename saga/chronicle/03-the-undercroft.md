@@ -10,6 +10,8 @@
 
 At the dawn bell Darrow swung both legs off the cot together, out of old habit, and was halfway down the row before he noticed the left had come along without being asked.
 
+He had a question to ask the Mender again, and it was tomorrow now. The flour came first.
+
 The hall was still grey. Most of it was asleep or pretending, and the fires were down to their coals. At the dark end of the east wall a lamp was already burning low on the flags, and behind it, on her knees with her arms spread like a woman guarding a hen from a fox, was the kitchen novice.
 
 "Nobody step in my flour," she said, before she saw who it was. Then, a little less fiercely: "Captain. Nobody has. I've been here since the lamps."
@@ -18,11 +20,11 @@ The hall was still grey. Most of it was asleep or pretending, and the fires were
 
 Sister Pell sat on the stool beside the linen press with both shawls up to her nose and her eyes shut. The stool was the one the lay brother had set behind the Mender. Her hands were in her lap, and they were red across the palms in two straight lines.
 
-"I'm not asleep," she said, without opening her eyes. "Up the tower. Ring. Down the stair. Sit. Up again. Eight times." The eyes opened, pale and furious with age. "Nothing came through that door, Captain, and nothing went in. I'd have heard a mouse. I've heard mice for fifty years."
+"I'm not asleep," she said, without opening her eyes. "Up the tower. Ring. Down the stair. Sit. Up again. Eight times." The eyes opened, pale and very much awake. "Nothing came through that door, Captain, and nothing went in. I'd have heard a mouse. I've heard mice for fifty years."
 
-He looked at her hands, and let it go. Behind him, up the hall, cots were creaking. The House was waking, and a House that had walked its own hall behind a candle the night before would want to come and look.
+He looked at her hands and did not tell her she should have sent a novice. She would only have told him the bell was hers.
 
-He could not get down to the flour. He had not been down on a knee since the river and he did not mean to try it in front of the kitchen.
+He could not get down to the flour, and the kitchen was not going to watch him try.
 
 "Hold the lamp low," he said. "Lower. There."
 
@@ -40,6 +42,8 @@ Wren came down the row at a run with the ledger under her arm and her pencil in 
 
 "Every night," said Sister Pell, from her shawls, as if it were a thing she had suspected of the House for fifty years and was not surprised to have proved.
 
+Wren turned the ledger round so he could see the top of a fresh page. *Times the Captain has asked the Mender: 1.* There was a great deal of room under it.
+
 The House arrived the way the House did everything now, all at once and with opinions. Lay brothers in their aprons, novices with their hair down, the cook with a cleaver she had forgotten to put down, and in front of them the lay brother who banked the fires, who had nodded at the door in the night and had evidently been nodding at it in his sleep.
 
 He looked at the flour. He looked at the frost. He took it in faster than Darrow had expected, and his face went from frightened to useful, which on a frightened man is worse.
@@ -52,7 +56,7 @@ He looked at the flour. He looked at the frost. He took it in faster than Darrow
 
 That landed somewhere under the ribs. Every head in the hall knew it, because every head in the hall went, very briefly, to the knee.
 
-"I'll be first down," Darrow said. "I'll just be the last to arrive."
+"I will be," Darrow said. "On the Mender's count, with the Prior's key. I'll just be the last to arrive."
 
 Somebody laughed. The lay brother didn't. Behind him two of the younger ones had already gone for the mallet; Darrow could see the backs of them at the kitchen door.
 
@@ -64,7 +68,7 @@ He did not raise his voice. He let it go down to the bottom, where it carried.
 
 Nobody answered. At the kitchen door the two young ones had stopped with the mallet between them.
 
-"Nobody touches this door without the Prior. She has the key. In a House of Menders we don't take a door off its pins because we're frightened of it." He looked at the lay brother from the fire, and made it a request, because a man who has been useful in the night wants to be useful in the morning. "Sister Pell has been up the bell tower eight times since the night bell. There's no wood up there and her hands are raw. If you want something to carry, carry that."
+"Nobody touches this door without the Prior. She has the key, and the Mender has my word." He looked at the lay brother from the fire, and made it a request, because a man who has been useful in the night wants to be useful in the morning. "Sister Pell has been up the bell tower eight times since the night bell. There's no wood up there and her hands are raw. If you want something to carry, carry that."
 
 The lay brother looked at Pell's palms. His face did something complicated, and then he went, and the two with the mallet put it down by the kitchen door and went after him. The rest of the House stood a while longer looking at the flour, and then went back up the row to its fires.
 
@@ -74,7 +78,7 @@ As she went past the Grey Cot, Hollis lifted his head from the lad's hand.
 
 "Go and get some sleep, sister," he said. "The door'll keep."
 
-He heard himself say it. Darrow saw it happen: the words out, and then the old man's hand closing on the lad's, slowly, as if he could take them back that way.
+He heard himself say it: the same words he had given the lad, the last night the lad could hear them. Darrow saw it happen, the words out and then the old man's hand closing on the lad's, slowly, as if he could take them back that way.
 
 Sister Pell looked at him, and at the lad, and at his hand.
 
@@ -88,25 +92,37 @@ Maelis came at the hour, as she always came, and stood at the foot of his cot un
 
 "Came off the cot with the other one," he said. "Didn't ask me first."
 
-She opened her eyes. She did not say *good*, because she never said good. She looked at the knee for a while as if it had told her something she would have to think about, and then at the dark end of the hall, where the kitchen novice was still kneeling over her flour, and then back at the knee.
+She opened her eyes. She did not say *good*, because she never said good.
 
-He waited for her to say the word. *Stair.* It was right there between them, and she must have known he was waiting for it, because she let him wait.
+"You told me to ask you again," he said. "It's tomorrow."
 
-"You're not going to say it," he said.
+"So it is." She wiped her two fingers on her coat. "Then I'll ask you something first. What will you do at the bottom?"
 
-"Say what?"
+It was the Prior's question. Last night he had not had an answer to it that would bear weight.
 
-"You know what."
+"Come back up."
 
-"I read knees, Captain." She wiped her two fingers on her coat. "If you want to ask me something, ask it. I'll be at the far cots."
+"On what?"
 
-She went. He watched her go down the row and past the Grey Cot and into the dark at the far end, where the far cots were, without a lamp, as she always went.
+"On this." He put his hand on the knee, the way you put a hand on a horse you are about to ask something of.
 
-When he looked round, Wren was sitting on the end of the next cot with the ledger shut on her knees, not counting anything. At the dark end of the hall the kitchen novice had not moved from her flour. Up the row the lay brothers were coming back in with their arms full of wood, and they looked at him as they went past with it, every one of them, and none of them asked.
+Maelis looked at the hand, and at the knee under it, for a long moment.
+
+"That's the right answer," she said. "It isn't true yet. Ask me tomorrow."
+
+She went down the row and past the Grey Cot and into the dark at the far end, where the far cots were, without a lamp, as she always went.
+
+When he looked round, Wren was writing. She did not show him the page. She did not need to.
 
 At the Grey Cot, Hollis had not let go of the lad's hand.
 
-"Make your mind up, Captain," he said. "He's not getting any warmer."
+"Well?"
+
+"Not yet."
+
+Hollis looked at the lad's mouth, where the frost still was.
+
+"Then ask her faster, Captain," he said. "He's not getting any warmer."
 
 > ⟦ THE RECKONING ⟧
 > XP 1,602 → 1,762

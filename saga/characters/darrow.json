@@ -29,8 +29,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Read the flour at the undercroft door before the House could step in it; held the House back from taking the door off its pins without the Prior, and sent the eager ones to carry wood up the bell tower; waited for Maelis to speak of the stair, and she did not.",
-  "now": "At his cot in the hall. The House knows the cold comes up every night through the gap under the undercroft door, and it is waiting on him to say how the stair is taken.",
+  "last_seen_doing": "Read the flour at the undercroft door at the dawn bell; held the House to the Mender's count and the Prior's key and sent the eager ones to carry wood up the bell tower; asked Maelis again, and gave her the answer to the Prior's question: he will come back up, on this leg.",
+  "now": "At his cot in the hall. The House knows the cold comes up every night through the gap under the undercroft door, and is held to the Mender's count and the Prior's key. Maelis has told him his answer is the right one and not true yet: ask tomorrow.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -810,10 +810,10 @@
       "evidence": "\"Have you been down there?\""
     },
     {
-      "fact": "He asked Maelis to take him down the undercroft stair herself, on her count, with his hand on Wren's shoulder, and to stop when she says stop.",
+      "fact": "Since Maelis would not say whether she has been down the undercroft stair, he asked her to take him down it herself, on her count, with his hand on Wren's shoulder, stopping when she says stop.",
       "chapter": "02",
       "scene": "choice",
-      "evidence": "Take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
+      "evidence": "You won't tell me whether you've been down there"
     },
     {
       "fact": "Told he has never waited for anything in his life, he said he is learning, from a good teacher who charges.",
@@ -834,22 +834,28 @@
       "evidence": "\"Breathed in,\" Darrow said."
     },
     {
-      "fact": "He would not let the House take the undercroft door off its pins without the Prior, who has the key.",
-      "chapter": "03",
-      "scene": "1",
-      "evidence": "Nobody touches this door without the Prior. She has the key."
-    },
-    {
       "fact": "He sent the lay brother from the fire and the young ones with the mallet to carry wood up the bell tower for Sister Pell instead.",
       "chapter": "03",
       "scene": "1",
       "evidence": "If you want something to carry, carry that."
     },
     {
-      "fact": "Told he would want to be first down the stair, he said he would be first down and the last to arrive.",
+      "fact": "Told he would want to be first down, he said he would be, on the Mender's count and with the Prior's key, and the last to arrive.",
       "chapter": "03",
       "scene": "1",
-      "evidence": "I'll just be the last to arrive."
+      "evidence": "On the Mender's count, with the Prior's key. I'll just be the last to arrive."
+    },
+    {
+      "fact": "He would not let the House take the undercroft door off its pins: the Prior has the key, and the Mender has his word.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "Nobody touches this door without the Prior. She has the key, and the Mender has my word."
+    },
+    {
+      "fact": "Asked by Maelis what he will do at the bottom of the stair, he said he will come back up, on this leg.",
+      "chapter": "03",
+      "scene": "1",
+      "evidence": "He put his hand on the knee, the way you put a hand on a horse you are about to ask something of."
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",

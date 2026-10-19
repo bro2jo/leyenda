@@ -211,7 +211,11 @@
           "what": "Mother Ione says the names of everyone under her roof every night in the chapel and notices which she has had to stop saying; the Captain is among them, and was before he gave his name at the gate. Fire it where a name has to come out of her count, or where he hears his in it",
           "fits": "present.mother_ione",
           "priority": 2,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch02:choice"
+          ]
         }
       ]
     },

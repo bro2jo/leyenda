@@ -1206,17 +1206,17 @@ Behind them the kitchen novice came down the row with a basin, knelt at the gap 
 
 ### Choice — Her Count
 
-He went down the row to the far cots before he could think better of it, and Wren came with him without being asked, which saved him asking.
+He looked from the flour to Maelis.
 
-Maelis was at the last cot with two fingers under an old man's jaw. She did not look up.
+"You won't tell me whether you've been down there," he said. "Then take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
 
-"You said ask," Darrow said. "Take me down. Yourself. On your count, one step at a time, my hand on Wren's shoulder, and you say stop and I stop."
+The Prior's hands went into her sleeves. Up the row, a cot creaked by the Grey Cot and was still.
 
-"And if I say no?"
+"And if I say no?" said Maelis.
 
 "Then I wait."
 
-She took her fingers away from the old man's jaw and looked at Darrow's knee, and then, for longer, at his face.
+She looked at his knee, and then, for longer, at his face.
 
 "You've never waited for anything in your life."
 
@@ -1224,8 +1224,10 @@ She took her fingers away from the old man's jaw and looked at Darrow's knee, an
 
 Nothing moved in her face. "Wren. Would you take his weight?"
 
-"Technically he weighs about two of me," said Wren. "So, half of it. It's better than a hole." She looked at Darrow sideways. "The kitchen's calling him the Kinsman, since the wood. Eleven times since the dawn bell. I thought he should know before he leans on anybody."
+"Technically he weighs about two of me," said Wren. "So, half of it. It's better than a hole." She glanced up the row toward the Grey Cot, and then at Darrow. "The kitchen's calling him the Kinsman, since tonight. I heard it four times while the House went up to bed. I thought he should know before he leans on anybody."
 
-"The Kinsman," said Maelis, as if she were testing the word for soundness. She turned back to the old man. "Not today. Ask me again tomorrow, Captain, and the day after. When the leg will bear you on a stair, I'll tell you."
+"The Kinsman," said Maelis, as if she were testing the word for soundness. "Not tonight. Not on that leg. Ask me again tomorrow, Captain, and the day after. When the leg will bear you on a stair, I'll tell you."
 
-It was not a yes. It was not a no, either. He had been getting a lot of those from her lately, and he had begun to tell them apart.
+"And when she tells you," said the Prior, "come and tell me what you'd do at the bottom."
+
+It was not a yes. It was not a no, either. He had been getting a lot of those lately, and he had begun to tell them apart.

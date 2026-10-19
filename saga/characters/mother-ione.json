@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "02",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/02-the-grey-cot.html#climax"
+    "anchor": "chronicle/02-the-grey-cot.html#choice"
   },
-  "last_seen_doing": "Called the House into the hall after the night bell and left the telling to the Captain; sent the House to bed by name; showed an old key on a cord at her neck and told the Captain to ask for it when he can say what he would do at the bottom.",
-  "now": "At the undercroft door, an old key on a cord at her neck. She has told the Captain to ask her for it when he can say what he would do at the bottom of the stair.",
+  "last_seen_doing": "At the undercroft door, told the Captain to come and tell her what he would do at the bottom when the Mender tells him yes.",
+  "now": "At the undercroft door with the key on its cord. She will hear the Captain's answer when the Mender has said yes.",
   "story_so_far": "The Prior of Saint Ysolde's, who holds the House's law and its bell. When the grey cloaks came she kept the Confessor at the wicket as long as the law of guests allowed and gave him the law of names; at night she says the names of everyone under her roof in the chapel. When the Confessor came back to the bars to ask for the Mender, she answered him with a question. When the cold led to the undercroft door, whose key has passed from Prior to Prior unturned, she neither forbade nor permitted it; she called the House into the hall after the night bell and let the Captain tell it, and she wears an old key on a cord at her neck, to be asked for when he can say what he would do at the bottom.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -213,6 +213,12 @@
       "chapter": "02",
       "scene": "climax",
       "evidence": "When you can tell me what you'd do at the bottom"
+    },
+    {
+      "fact": "She told the Captain to come to her with what he would do at the bottom of the stair when the Mender tells him.",
+      "chapter": "02",
+      "scene": "choice",
+      "evidence": "And when she tells you,\" said the Prior, \"come and tell me what you'd do at the bottom."
     }
   ],
   "relationships": [
@@ -275,6 +281,10 @@
     {
       "chapter": "02",
       "scene": "climax"
+    },
+    {
+      "chapter": "02",
+      "scene": "choice"
     },
     {
       "chapter": "03",

@@ -29,8 +29,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/03-the-undercroft.html#scene-1"
   },
-  "last_seen_doing": "Read the knee at the hour and asked what it did this morning; said nothing of the stair, though she saw him waiting for it; told him to ask if he wanted to ask, and went to the far cots without a lamp.",
-  "now": "At the far cots. She has not spoken of the stair, and has told the Captain to ask her outright if he wants something.",
+  "last_seen_doing": "Read the knee at the hour; when the Captain asked again, asked him first what he will do at the bottom; told him 'come back up, on this' is the right answer and not true yet, and to ask tomorrow; went to the far cots without a lamp.",
+  "now": "At the far cots. She has told the Captain his answer is right and not yet true, and to ask her again tomorrow.",
   "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -287,22 +287,22 @@
       "evidence": "You've never waited for anything in your life."
     },
     {
-      "fact": "She told him to ask again tomorrow and the day after, and that she will tell him when the leg will bear him on a stair.",
+      "fact": "She told him not tonight, not on that leg: to ask again tomorrow and the day after, and that she will tell him when the leg will bear him on a stair.",
       "chapter": "02",
       "scene": "choice",
-      "evidence": "When the leg will bear you on a stair, I'll tell you."
+      "evidence": "Not tonight. Not on that leg. Ask me again tomorrow, Captain, and the day after."
     },
     {
-      "fact": "She let the Captain wait for her to speak of the stair, and did not.",
+      "fact": "Asked again, she asked him first what he will do at the bottom of the stair.",
       "chapter": "03",
       "scene": "1",
-      "evidence": "because she let him wait"
+      "evidence": "Then I'll ask you something first. What will you do at the bottom?"
     },
     {
-      "fact": "She told him that if he wants to ask her something he should ask it, and that she would be at the far cots.",
+      "fact": "She told him his answer, to come back up on this leg, is the right one and is not true yet, and to ask her tomorrow.",
       "chapter": "03",
       "scene": "1",
-      "evidence": "If you want to ask me something, ask it. I'll be at the far cots."
+      "evidence": "That's the right answer,\" she said. \"It isn't true yet. Ask me tomorrow."
     }
   ],
   "relationships": [
