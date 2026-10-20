@@ -47,15 +47,15 @@
       }
     },
     "sworn_unsworn": {
-      "value": -3,
+      "value": -4,
       "left": "Sworn",
       "right": "Unsworn",
       "moved": {
-        "left": 3,
+        "left": 4,
         "right": 0
       },
       "rungs": {
-        "lean": null,
+        "lean": "Sworn",
         "named": null,
         "mixed": false
       }
@@ -85,7 +85,8 @@
   },
   "epithet": "the Kinsman",
   "leans": [
-    "Hearth"
+    "Hearth",
+    "Sworn"
   ],
   "history": [
     {
@@ -147,6 +148,12 @@
       "date": "2026-10-18",
       "axis": "sworn_unsworn",
       "delta": -1
+    },
+    {
+      "why": "c03.3",
+      "date": "2026-10-19",
+      "axis": "sworn_unsworn",
+      "delta": -1
     }
   ],
   "ladder": {
@@ -170,6 +177,12 @@
       "rung": "lean",
       "pole": "Hearth",
       "name": "the Kinsman"
+    },
+    {
+      "axis": "sworn_unsworn",
+      "rung": "lean",
+      "pole": "Sworn",
+      "name": "the Dutiful"
     }
   ],
   "epithet_next": "the Kinsman",

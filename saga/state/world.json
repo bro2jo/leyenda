@@ -102,6 +102,16 @@
       "date": "2026-10-18",
       "ledger": "c02.16",
       "by": "darrow"
+    },
+    {
+      "chapter": 3,
+      "scene": "2",
+      "kind": "micro",
+      "option": 1,
+      "text": "Write back as a brother: he will not kneel, and why",
+      "date": "2026-10-19",
+      "ledger": "c03.3",
+      "by": "darrow"
     }
   ],
   "inventory": [

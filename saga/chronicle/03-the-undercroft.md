@@ -297,7 +297,7 @@ He turned the smaller sheet over in his fingers. *Or I will come myself.* Aldric
 > ⟦ THE RECKONING ⟧
 > XP 1,762 → 1,854
 
-**What does Darrow do with his brother's letters?**
+**What does Darrow do?**
 1. **Write back as a brother: he will not kneel, and why.**
 2. **Burn them, as he burned the first.**
 3. **Keep them, folded, under the mattress.**

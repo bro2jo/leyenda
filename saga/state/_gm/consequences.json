@@ -653,6 +653,45 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c03.3",
+      "made": {
+        "chapter": 3,
+        "scene": "2",
+        "date": "2026-10-19"
+      },
+      "chose": "Wrote back to Aldric as a brother, the night the letters came, knowing a Confessor would carry it: yes, he turned toward Tobin and the knee went, and he would turn again; but the warmth went out of him first, before the mare, the boy and the turn, and whoever told Aldric was not there; he will not kneel, because he would be kneeling to that order told backwards; he nearly burned the letters so that Aldric would come, he wants to see him that much, and wants to understand what he saw from the river, which only Aldric can tell him",
+      "now": {
+        "bearing": {
+          "sworn": 1
+        },
+        "flags": {
+          "vane_answered": true
+        }
+      },
+      "due": [
+        {
+          "id": "c03.3a",
+          "when": "next",
+          "at": "ch03:s3",
+          "weight": "scene",
+          "what": "Darrow's answer to Aldric, written the night the letters came (quote it, or its lines, in the next scene's opening clause; it goes down by the bars in Marrant's hand, read by two): Aldric, Yes. I turned. I planted on a stone and turned toward Tobin, and the knee went, and I would turn again. But tell them the order, since you are telling them things: the warmth went out of me first, halfway across, before the mare went down, before the boy, before I turned. I was there. Whoever told you was not. I will not kneel. Not for pride in the leg: because I would be kneeling to that order told backwards. I nearly burned this so that you would come. I want to see you that much. I want to understand what I saw from the river, and I cannot, and you are the only man who can tell me. D.",
+          "status": "pending"
+        },
+        {
+          "id": "c03.3b",
+          "when": "next",
+          "at": "ch03:s3",
+          "weight": "scene",
+          "what": "Downstream of `vane_answered` (b1.3): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.3`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Burn them, as he burned the first",
+        "Keep them, folded, under the mattress"
+      ]
     }
   ],
   "rules": [

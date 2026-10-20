@@ -54,7 +54,11 @@
             },
             null
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 1,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -315,7 +319,7 @@
     "marrant_offer": false,
     "shard_found": false,
     "wren_script_seen": false,
-    "vane_answered": false,
+    "vane_answered": true,
     "sanctuary_writ": false,
     "elinor_letter": false,
     "ilse_named": false,
@@ -417,29 +421,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 2,
-    "chapter": 3,
-    "scene": "2",
-    "opened": "2026-10-19",
-    "ask": "What does Darrow do with his brother's letters?",
-    "axis": "sworn_unsworn",
-    "options": [
-      "Write back as a brother: he will not kneel, and why",
-      "Burn them, as he burned the first",
-      "Keep them, folded, under the mattress"
-    ],
-    "bearing": [
-      {
-        "Sworn": 1
-      },
-      {
-        "Unsworn": 1
-      },
-      null
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": []
   },

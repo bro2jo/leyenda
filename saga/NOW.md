@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told)
 - **Against him:** Aldric knew where he lay before the list and says he will come himself; something below the hall draws on it every night.
 - **Next:** What he does with Aldric's letters; then the stair.
-- **Open choice (a small one):** What does Darrow do with his brother's letters? 1. Write back as a brother: he will not kneel, and why / 2. Burn them, as he burned the first / 3. Keep them, folded, under the mattress
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 
