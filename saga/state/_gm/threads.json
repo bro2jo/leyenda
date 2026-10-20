@@ -24,14 +24,15 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal on Marrant's writ at the bars and watch the blue wax of Darrow's letter burn (02:s5), saying nothing both times; Darrow has noticed the two silences; the reader",
+      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal on Marrant's writ at the bars and watch the blue wax of Darrow's letters (02:s5, 03:s2), saying nothing; Darrow knows (03:between-3) Hollis kept the writ and has never looked at its seal, not where it is; the reader (the leg's cup, 01:interlude)",
       "note": "active: paper in the cup of Hollis's wooden leg, seal unexamined; the writ at the bars wore blue wax the size of a child's palm (the first of the two wax plants q1.letters needs; his own still unlooked-at until b2.4)",
       "on_page": [
         "00:I",
         "01:interlude",
         "01:climax",
         "02:s5",
-        "03:s2"
+        "03:s2",
+        "03:between-3"
       ]
     },
     {

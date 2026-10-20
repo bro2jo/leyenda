@@ -35,11 +35,18 @@
         "2026-10-19"
       ],
       "written": "2026-10-19"
+    },
+    {
+      "scene": "between-3",
+      "title": "What I Hold",
+      "after": "2",
+      "covers": [],
+      "written": "2026-10-19"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on the end of his cot in the infirmary hall, the letters in his hand",
+    "detail": "on his cot in the infirmary hall, across the brazier from the Grey Cot, at night",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -49,7 +56,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "He turned the smaller sheet over in his fingers. Or I will come myself. Aldric had never once said a thing like that and not done it.",
+  "last_beat": "Lying awake, Darrow heard him stop for half a breath before the last line, and then go on. What I hold I give.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -57,7 +64,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 47,
+      "approval": 48,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },

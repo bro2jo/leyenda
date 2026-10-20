@@ -301,3 +301,53 @@ He turned the smaller sheet over in his fingers. *Or I will come myself.* Aldric
 1. **Write back as a brother: he will not kneel, and why.**
 2. **Burn them, as he burned the first.**
 3. **Keep them, folded, under the mattress.**
+
+### Between — What I Hold
+
+Darrow did not write that night, not at once. He sat on the end of his cot with Aldric's letters on his knee and nothing yet to say to them.
+
+*Somebody had told him, and told it backwards.* Somebody had also sent the Ninth into the river.
+
+Across the brazier Hollis sat at the Grey Cot with the lad's hand in his. The night bell had gone. The first hour bell was not far off.
+
+"Hollis. The writ from the ford."
+
+Hollis did not look up. "What of it?"
+
+"You brought it up the bank. You broke the wax and held it out to me, and I didn't read it." He had been looking at the water, and at the clan line, and at the carts behind the spears; at the man holding the paper, not at all. "What became of it?"
+
+For a while Hollis did not answer, and his thumb went on moving over the lad's knuckles. Darrow had seen him go quiet three times now over blue wax. This was not that quiet. This was a man deciding whether to lie, and finding he could not be bothered.
+
+"I've got it," Hollis said.
+
+"Still?"
+
+"Came down the river road on a cart with me, and up the Steps on a litter. It's not gone anywhere."
+
+"Have you looked at it since?"
+
+"At the order? Don't need to. The Sixth and the Ninth to clear the ford. Second in reserve." He said it the way the lad said his oath, by heart. "I could say it in my sleep. I have."
+
+"At the seal."
+
+Hollis's thumb stopped.
+
+"No."
+
+"Why not?"
+
+"A seal's command. The rest is for clerks." It came out worn smooth, like something he had said to himself a great many times. Then, lower: "And if I look, I'll know whose. And then I'll have to be a man who knows."
+
+Darrow thought of the blue wax against the bars, and the blue wax curling black in the brazier, and Hollis walking out of the hall on one leg rather than watch it. He did not ask to see it. Hollis was waiting for him to, and was ready to refuse, and Darrow would not make him.
+
+"When you look," he said instead, "I'd like to be there."
+
+Hollis looked at him then, a long, measuring look, the kind he gave a man before deciding where to put him in a line.
+
+"Aye," he said. "Maybe."
+
+The bell came, up in the tower, slow. It was an odd bell, and Darrow's, and he said the words across the brazier to the lad, aloud, as he had the night before.
+
+When the next one came, an hour later, it was Hollis who said them, gruff and low, without missing one. Lying awake, Darrow heard him stop for half a breath before the last line, and then go on.
+
+*What I hold I give.*
