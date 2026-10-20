@@ -96,3 +96,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-19#12,2026-10-19,,snack,Organic peanut butter (for dipping),assumed ~1.5 tbsp (24 g),140,6,5,12,1.5,2,1.5,90,160,10,0.5,40,0.8,0,0,0,estimate,"amount guessed for dipping 5 crisps, as 10/17"
 2026-10-20#1,2026-10-20,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,library row
 2026-10-20#2,2026-10-20,,breakfast,"Ratio Protein dairy snack, strawberry",1 container (150 g),170,25,9,3.5,0,1.5,3,100,282,455,0,,,,0,,label,label photo
+2026-10-20#3,2026-10-20,,snack,Peanut M&M's,1 pack (1.74 oz),250,5,29,13,2,5,24,25,188,52,1.1,,,,0,,label,label photo
