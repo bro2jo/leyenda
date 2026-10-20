@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-17 · weather · Clear and hard tonight, the first night of the snow with stars in it. The steam off the springs on the lower terrace goes straight up and stands there like a post.
 - 2026-10-17 · overheard · From the kitchen, late, the cook to nobody in particular: "If the Mother wants the bread counted again she can come and count it. I've counted it. It came out the same. That's what's wrong with it."
 - 2026-10-18 · body · He swung both legs off the cot at the dawn bell together, out of old habit, and the left came with the right as if it had never had a reason not to. He sat and looked at it until the bell stopped.
 - 2026-10-18 · ledger · From Wren's ledgers, the stockings page: pairs on the chimney breast, eleven. Pairs with a number chalked over them, eleven. Pairs that are the right pair when they come down, nine, which she has decided not to mention.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-20 · body · He stood up this morning and the leg took him the way a horse takes a rider it has decided to keep. He noticed. He did not say anything to it, in case it changed its mind.
 - 2026-10-20 · overheard · On the gate wall, the gate-ward to a lay brother, both of them looking down into the cloud: "Count the fires." "Six." "Count them again." "Six." "Then why does it feel like more?"
 - 2026-10-20 · weather · The fog has gone back down the mountain, and the Steps stand out of it this afternoon, flight after flight, every one white, as if somebody had laid them fresh.
+- 2026-10-20 · house · A novice has been set to sweep the cloister and has swept it twice, very slowly, past the end of the hall where the iron-banded door is, as if the broom had business there of its own.
