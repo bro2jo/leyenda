@@ -29,7 +29,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/03-the-undercroft.html#scene-2"
   },
-  "last_seen_doing": "Went to the bars when the Confessor asked for him by rank; took two letters in blue wax from Marrant's hand without giving him his face; read them at his cot and saw the first was dated three days before the first snow.",
+  "last_seen_doing": "Went to the bars when the Confessor asked for him by rank; took two letters in blue wax from Marrant's hand without giving him his face; read that Calden says the Ninth broke faith when its captain turned for the boy, and that Aldric asks him to deny it; knows the order was the other way round.",
   "now": "At his cot with Aldric's two new letters. He knows Aldric knew where he lay before the list was read at Coldmere, and that Aldric has written he will come himself if not answered.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
@@ -918,10 +918,22 @@
       "evidence": "Calden, the third day before the snow."
     },
     {
-      "fact": "He believes Aldric, on the west bank with his horse already climbing out, could not have seen which way he turned in the river, so somebody told him.",
+      "fact": "He turned toward the boy in the river, on the left foot, and the knee went; but the warmth had gone out of him first, before the mare went down and before the boy.",
       "chapter": "03",
       "scene": "2",
-      "evidence": "He could not have seen which way Darrow turned. Somebody had told him."
+      "evidence": "But the warmth had gone out of him first, halfway across, before any of it."
+    },
+    {
+      "fact": "He believes Aldric, on the west bank and already climbing out, could not have seen which way he turned: somebody told him, and told it backwards.",
+      "chapter": "03",
+      "scene": "2",
+      "evidence": "Somebody had told him, and told it backwards."
+    },
+    {
+      "fact": "He reads the letter as written for two readers, with nothing a Confessor could use but its last line.",
+      "chapter": "03",
+      "scene": "2",
+      "evidence": "It had been written for two readers."
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",

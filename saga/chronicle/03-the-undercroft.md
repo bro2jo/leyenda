@@ -226,11 +226,11 @@ Darrow looked at him. Forty years of barracks had taught Hollis Garrow to be asl
 
 ### Scene 2 — Blue Wax
 
-The fog came up from the springs at dawn and did not lift, and at the hour bell the Confessor came up out of it to the bars as if the fog had made him.
+The fog rose from the springs at dawn and did not lift, and at the hour bell the Confessor walked up out of it to the bars as if the fog had made him.
 
 He had brought no censer this time and no grey cloak to carry one. He stood alone on the far side of the gate with his hands folded, and when the gate-ward went for the Prior he called after him, very civil, that it was not the Mother he had climbed for this morning.
 
-"It's the Captain," the gate-ward said, at the foot of Darrow's cot. He was turning his cap again. "He asked for you by your rank."
+"It's you he wants, Captain," the gate-ward said, at the foot of Darrow's cot. He was turning his cap again. "He asked for you by your rank."
 
 "He always does."
 
@@ -238,17 +238,17 @@ Wren was already on her feet with the ledger. Darrow told her to stay, and she c
 
 The court was white and close. The fog had taken the far wall and the bell tower and left only the gate, black bars standing in nothing, and Marrant behind them. He smiled when he saw who was coming, the way a host smiles at the first guest.
 
-"Captain. I'm glad. I'd have hated to leave these with a stranger." He brought two letters out of his sleeve, one tucked inside the other, and held them through the bars. Blue wax. A hand Darrow had known since they were boys holding other men's horses. "They came up the Holloway last night with a rider of my lord Vane's. I said I'd carry them. It seemed the least I could do, being already on the stair."
+"Captain. I'm glad. I'd have hated to leave these with a stranger." He brought two letters out of his sleeve, one tucked inside the other, and held them through the bars. Blue wax, and a hand on the outside he would have known in the dark. "They came up the Holloway last night with a rider of Ser Aldric's. I said I'd carry them. It seemed the least I could do, being already on the stair."
 
 Darrow did not take them at once.
 
-He knew what Marrant wanted. Not the letters; the Confessor would have read them already, or not cared to. He wanted the Captain's face when he saw the hand, and he wanted the court to see him want it.
+He knew what Marrant wanted. Not the letters; whatever was in them, he had not climbed for that. He wanted the Captain's face when he saw the hand, and he wanted the court to see him want it.
 
 So Darrow looked at the bars, and the wax, and at nothing in particular, the way he had looked at a herald's writ across a table, with lords watching to see what it cost him. Then he took them.
 
 "That's kind," he said.
 
-"It's nothing." Marrant bowed a little. "I'll thank you for your candour another day. You've been sparing with it this morning." He looked past Darrow at the House, the novices in the kitchen door, the lay brothers along the wall, Wren with her pencil. If he saw anything new in them he did not say so. "Good day, Captain. My lord Vane is anxious for an answer. I'd not keep him waiting long."
+"It's nothing." Marrant bowed a little. "I'll thank you for your candour another day. You've been sparing with it this morning." He looked past Darrow at the House, the novices in the kitchen door, the lay brothers along the wall, Wren with her pencil. If he saw anything new in them he did not say so. "Good day, Captain. Ser Aldric is anxious for an answer. I'd not keep him waiting long."
 
 He went back down into the fog, and it closed behind him before he had gone a flight.
 
@@ -256,23 +256,27 @@ He went back down into the fog, and it closed behind him before he had gone a fl
 
 Darrow read them on the end of his cot, with the brazier between him and the Grey Cot, the way he had read the first.
 
-The first page was short.
+*Brother,*
+
+*I have written once already and do not know whether it found you. The man who carries this will not tell me, so I will write as if it did.*
+
+*They are saying in Calden that the Ninth broke faith at the Wend: that its captain turned out of the line to go back for one of his own, and that the Grace left the Ninth in the moment he did. I have said in three rooms that it is a lie. I will say it in a fourth, before the King, if you will give me the words. I know you. So I know what I am asking.*
 
 *Did you turn? Tell me you did not turn toward the boy.*
 
-Nothing else. No *brother*, no mare, no bridge. Aldric had never wasted a word when one would carry, and he had always known which one.
+*A.*
 
-The boy. Tobin Marsh, nineteen, who had gone under his own horse in the river at Darrow's left, and who Darrow had turned toward when the knee went.
+He read it again, the way he would have read a writ, for what it wanted and who stood behind the man who wrote it. It had been written for two readers. Aldric had known whose sleeve it would ride up the Steps in, and there was nothing in it a Confessor could use but the last line, which he had not been able to keep out.
 
-Aldric had been on the west bank by then, his horse already climbing out. He could not have seen which way Darrow turned. Somebody had told him.
+He had turned. He had planted his left foot on a stone and turned on it, fast and low, the way he had turned ten thousand times, and the knee had gone. But the warmth had gone out of him first, halfway across, before any of it. Then the mare. Then the boy, Tobin Marsh, nineteen, going under his own horse at Darrow's left. Then the turn. He had been there for the order.
 
-The second sheet had been folded inside it, smaller, the hand faster.
+Aldric had been on the west bank by then, his horse already climbing out. He could not have seen which way Darrow turned. Somebody had told him, and told it backwards.
+
+The second letter had been folded small inside the first and sealed on its own, in a faster hand and a different ink, as if Aldric had come back to it after the candle was out.
 
 *Answer me, or I will come myself.*
 
-He read them both twice, as he would have read a writ, for what they wanted and who stood behind the man who wrote them. Then he looked at the top of the first one, where Aldric dated everything like a clerk, because he had been taught to and had never once forgotten.
-
-*Calden, the third day before the snow.*
+At the head of the first, where Aldric dated everything like a clerk because he had been taught to and had never once forgotten, it said: *Calden, the third day before the snow.*
 
 Darrow sat with that.
 
