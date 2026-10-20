@@ -897,7 +897,7 @@
       "fact": "He took the letters from the Confessor without letting his face show what the hand cost him.",
       "chapter": "03",
       "scene": "2",
-      "evidence": "the way he had looked at a herald's writ across a table at Calden with three lords watching to see what it cost him. Then he took them."
+      "evidence": "the way he had looked at a herald's writ across a table, with lords watching to see what it cost him. Then he took them."
     },
     {
       "fact": "The second letter asks: did you turn, tell me you did not turn toward the boy.",
@@ -916,6 +916,12 @@
       "chapter": "03",
       "scene": "2",
       "evidence": "Calden, the third day before the snow."
+    },
+    {
+      "fact": "He believes Aldric, on the west bank with his horse already climbing out, could not have seen which way he turned in the river, so somebody told him.",
+      "chapter": "03",
+      "scene": "2",
+      "evidence": "He could not have seen which way Darrow turned. Somebody had told him."
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",

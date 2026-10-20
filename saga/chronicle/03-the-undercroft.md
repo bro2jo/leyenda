@@ -226,7 +226,7 @@ Darrow looked at him. Forty years of barracks had taught Hollis Garrow to be asl
 
 ### Scene 2 — Blue Wax
 
-The fog came up from the springs at dawn and did not lift, and at the hour bell the Confessor came up out of it to the bars as if he had been made there.
+The fog came up from the springs at dawn and did not lift, and at the hour bell the Confessor came up out of it to the bars as if the fog had made him.
 
 He had brought no censer this time and no grey cloak to carry one. He stood alone on the far side of the gate with his hands folded, and when the gate-ward went for the Prior he called after him, very civil, that it was not the Mother he had climbed for this morning.
 
@@ -244,7 +244,7 @@ Darrow did not take them at once.
 
 He knew what Marrant wanted. Not the letters; the Confessor would have read them already, or not cared to. He wanted the Captain's face when he saw the hand, and he wanted the court to see him want it.
 
-So Darrow looked at the bars, and the wax, and at nothing in particular, the way he had looked at a herald's writ across a table at Calden with three lords watching to see what it cost him. Then he took them.
+So Darrow looked at the bars, and the wax, and at nothing in particular, the way he had looked at a herald's writ across a table, with lords watching to see what it cost him. Then he took them.
 
 "That's kind," he said.
 
@@ -262,6 +262,10 @@ The first page was short.
 
 Nothing else. No *brother*, no mare, no bridge. Aldric had never wasted a word when one would carry, and he had always known which one.
 
+The boy. Tobin Marsh, nineteen, who had gone under his own horse in the river at Darrow's left, and who Darrow had turned toward when the knee went.
+
+Aldric had been on the west bank by then, his horse already climbing out. He could not have seen which way Darrow turned. Somebody had told him.
+
 The second sheet had been folded inside it, smaller, the hand faster.
 
 *Answer me, or I will come myself.*
@@ -272,7 +276,7 @@ He read them both twice, as he would have read a writ, for what they wanted and 
 
 Darrow sat with that.
 
-Rae had heard the list read at the inn in Coldmere the night the first snow came. Three days before that, in a warm room in Calden, Aldric had known which House of Menders and which mountain, and had sat down and written to the Captain of the Ninth there, and had not once asked where he was.
+Rae had heard the list read at the inn in Coldmere the night the first snow came. Three days before that, in a warm room in Calden, Aldric had known the House and the mountain, and written to the Captain of the Ninth there as if he had never needed to ask.
 
 Across the brazier Hollis had looked up from the lad's hand. He was looking at the blue wax on the blanket. He looked at it for exactly as long as he had looked at the Confessor's writ at the bars, and then he looked away, at the wall, and did not say anything at all.
 
