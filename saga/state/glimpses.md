@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-17 · weather · Thin sun on the Steps by early afternoon, enough to set the snow dripping from the gatehouse eaves in a steady count that nobody in the House has yet been able to resist keeping.
 - 2026-10-17 · overheard · Two novices on the wall-walk, stamping their feet: "He's walking the hall like he means it now." "He always meant it." "No. Before, he was walking it like it owed him money."
 - 2026-10-17 · body · He got up off the cot this evening without putting a hand down, and was halfway to the brazier before he noticed he hadn't.
 - 2026-10-17 · house · The kitchen has moved the bread table a hand's width nearer the hall door, nobody will say why, and the novice with flour to the elbows has started setting a second bench out at night without being asked.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-19 · house · Hollis has found a broom handle somewhere and is using it to point at things from his cot: the brazier, the door, a novice who has forgotten something. Nobody has yet worked out what he means to do with it.
 - 2026-10-19 · ledger · From Wren's ledgers, the kitchen's margin, copied out without asking: Nights without, two. Underneath, in the kitchen novice's hand: "Three tomorrow." Underneath that, in Wren's: "Technically you can't write that yet."
 - 2026-10-19 · weather · The fog never lifted. By dusk it had come in at the hall door and lay along the floor between the cots, and the lamps stood up out of it like posts in a flooded field.
+- 2026-10-20 · house · Somebody has swept the snow off the gate wall's parapet in one long stroke, end to end, the way you clear a table for something to be set down on it. Wren says it was not her, and has not said who.
