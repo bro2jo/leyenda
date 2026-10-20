@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1854,
+  "xp": 1859,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -22,7 +22,7 @@
     "vigor": {
       "score": 10,
       "raw": 10,
-      "cap": 12,
+      "cap": 14,
       "mod": 0,
       "temper": 10,
       "next_at": 18,
@@ -32,7 +32,7 @@
     "finesse": {
       "score": 10,
       "raw": 10,
-      "cap": 10,
+      "cap": 12,
       "mod": 0,
       "temper": 26,
       "next_at": 32,
@@ -44,7 +44,7 @@
       "raw": 10,
       "cap": null,
       "mod": 0,
-      "temper": 29,
+      "temper": 30,
       "next_at": 36,
       "fell": 12,
       "banked": false
@@ -59,9 +59,10 @@
   "inspiration_cap": 4,
   "knots_tied": [
     1,
-    2
+    2,
+    3
   ],
-  "knots_count": 2,
+  "knots_count": 3,
   "soft_season": true,
   "arts": [
     {
@@ -125,7 +126,7 @@
       "tree": "Binding",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 12,
+      "practice": 13,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -136,7 +137,7 @@
       "tree": "Insight",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 19,
+      "practice": 20,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
@@ -145,11 +146,11 @@
       "id": "groundbreaker",
       "name": "Groundbreaker",
       "tree": "Footing",
-      "rank": 0,
-      "banked_rank": 2,
+      "rank": 2,
+      "banked_rank": 0,
       "practice": 11,
       "next_at": 15,
-      "sealed_until_knot": 3,
+      "sealed_until_knot": null,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
     },
     {
@@ -160,7 +161,7 @@
       "banked_rank": 0,
       "practice": 0,
       "next_at": 1,
-      "sealed_until_knot": 3,
+      "sealed_until_knot": null,
       "effect": "Take falls and drops without harm."
     },
     {
@@ -303,7 +304,7 @@
       "banked_rank": 0,
       "practice": 0,
       "next_at": 1,
-      "sealed_until_knot": 3,
+      "sealed_until_knot": null,
       "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
     }
   ],

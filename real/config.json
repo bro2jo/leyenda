@@ -282,9 +282,9 @@
   ]
  },
  "rehab": {
-  "current_phase": 3,
-  "phase_entered": "2026-09-27",
-  "next_gate": "Phase 3 exit -> Phase 4: full/symmetric ROM, normal gait, minimal/no post-exercise effusion, quad LSI >= 70%, good single-leg control. All met by Sat 2026-10-17 (PT 11: quad LSI 90.4%, step-downs passed). Earliest by calendar Tue 2026-10-20: Knot III ties that day.",
+  "current_phase": 4,
+  "phase_entered": "2026-10-20",
+  "next_gate": "Phase 4 exit -> Phase 5 (Before Running; master plan): full extension, >=95% flexion, no/trace effusion, quad LSI >80% (90.4% on 10/17), hamstring LSI >=80% (untested), glute ~>=80% symmetry, 10 controlled single-leg squats to ~60 deg, pain-free low-level impact prep (PT clearance first), good landings, rehab team agrees. Earliest by calendar: week 13, Tue 11/17 (Knot IV).",
   "knots": [
    {
     "knot": 1,
@@ -297,6 +297,12 @@
     "name": "Walking",
     "date": "2026-09-27",
     "evidence": "Phase 3 entered POD 34 per the Recovery State of Sun 10/4 (real/state/archive/recovery_state_2026-10-04.md)"
+   },
+   {
+    "knot": 3,
+    "name": "Standing",
+    "date": "2026-10-20",
+    "evidence": "Phase 3 -> 4 (Before Phase 4 checklist, master plan) met: quad LSI 90.4% (PT 11, 10/17, torque monitor), step-downs watched and passed (PT 11), full/symmetric ROM (2 deg hyperext AROM 10/8; flexion 146 vs 144; first side-view photo clean 10/18), normal gait (Nick 10/8; PT 10), trace or no effusion every graded morning 10/6-10/20, no pain flare; Nick 10/9: progression follows the master plan, no PT approval needed; earliest by the plan's calendar: week 9, Tue 10/20 (POD 57)"
    }
   ],
   "knot_gates": {
@@ -367,9 +373,9 @@
    "defense_iq",
    "defense_footwork"
   ],
-  "stage": "Phase 3: seated or standing, easy effort; pivots okay within reason (PT 10/15); no max intent",
-  "stage_since": "2026-10-09",
-  "stage_evidence": "PT 10/15 (Cody, patient-reported): pivots are okay to do within reason; earlier, his decision 10/9: seated or standing throwing at easy effort, Phases 5-6 by sport_plan.md section 3; Nick 10/9 leaves progression to the master plan"
+  "stage": "Phase 4: the throwing pivot on the left foot and the step-out, planned, at walking tempo, on knee-session days only, one ladder rung per bout after a clean morning (sport_plan.md section 3); game-range long throws (<=~80%); defense Level 2a; still no max intent, no game-tempo shimmies, no throwing after running, no reaction",
+  "stage_since": "2026-10-20",
+  "stage_evidence": "Knot III tied Tue 10/20 (Phase 4 entered; Before Phase 4 checklist met, PT 11 10/17); PT 10/15 (Cody): pivots okay within reason"
  },
  "vocabulary": {
   "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",

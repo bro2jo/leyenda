@@ -27,7 +27,7 @@
   - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83%. Hamstrings not yet tested.
 - **Body mass:** 158.4 lb, Sun 10/18, morning. The 10/11 baseline (159.8) was a 5:30 PM weight, so the two are not like for like; the week of 10/11 averaged 157.2 lb (7 readings). Weigh in Sunday mornings from here; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein).
 - **Calendar:**
-  - Post-op week 8 ends Mon 10/19; **week 9 = Tue 10/20 (POD 57): Phase 4 opens and Knot III ties that day.**
+  - Post-op week 8 ends Mon 10/19; **week 9 = Tue 10/20 (POD 57): Phase 4 entered; Knot III tied that day.**
   - Phase 4 runs weeks 9–12 (through ~Mon 11/16); running (Phase 5) earliest Tue 11/17, behind its own gate.
   - **The graft's weakest window (~weeks 6–12) runs through ~Mon 11/16 (POD 84).**
 - **Home equipment:**
@@ -42,7 +42,7 @@
 
 ---
 
-## 3. Phase status — **Phase 3 (weeks 6–8), entered POD 34 (Sun 9/27) · Phase 4 from Tue 10/20**
+## 3. Phase status — **Phase 4 (weeks 9–12), entered POD 57 (Tue 10/20)**
 
 ### Phase 3 exit gates (= the plan's "Before Phase 4" checklist): **all met, Sat 10/17**
 
@@ -56,7 +56,7 @@
 | Good step-down / single-leg control | **Met** | PT 11 (10/17): step-downs watched and passed |
 | Balance / joint-position control | **Met** | BOSU + ball toss; eyes-closed wobble board (PT 10/8) |
 
-**Knot III ties Tue 10/20** (the plan's earliest date, week 9), with this evidence: `python3 engine/darrow.py knot tie 3 --date 2026-10-20 --evidence "…"`, then `rehab.current_phase` → 4 and the next gate → Phase 4's exit.
+**Knot III tied Tue 10/20** (the plan's earliest date, week 9) on this evidence; `rehab.current_phase` is 4 and the next gate is Phase 4's exit (below). The morning of 10/20 was clean (trace to none, no stiffness).
 
 ### Phase 4 exit (return-to-run preparation; the next gate)
 
@@ -308,7 +308,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 ## 10. Next milestones
 
 - [x] **Sun 10/18 AM:** weigh-in 158.4, first extension photo (clean), SLR no lag, flexion full · [ ] Session B (Phase 3 doses)
-- [ ] **Tue 10/20:** Knot III ties, Phase 4 opens · first pivot bout · Phase 4 Session A (goblet squat, knee extension PT style, RFESS)
+- [x] **Tue 10/20:** Knot III tied, Phase 4 entered · [ ] first pivot bout · Phase 4 Session A (goblet squat, knee extension PT style, RFESS)
 - [ ] **Book PT;** ask for the hamstring test (both sides) and the early plyometric prep
 - [ ] Daily minimum **7 of 7**: a graded morning check every day (it reopens the optional items for the week of 10/25); the heel prop on Sunday
 - [ ] Upper **2 of 2** (Mon B, Thu A): opens Block 1 on 10/25 · bench 110 · bike 24 → 27 → 30
