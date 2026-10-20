@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 3,
     "beat": "b1.3",
-    "next_scene": 2,
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch03:s1",
+    "last_written": "ch03:s2",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -42,8 +42,8 @@
           "axis": "sworn_unsworn",
           "options": [
             "Write back as a brother: he will not kneel, and why",
-            "Burn them unread",
-            "Keep them sealed, under the mattress"
+            "Burn them, as he burned the first",
+            "Keep them, folded, under the mattress"
           ],
           "bearing": [
             {
@@ -58,8 +58,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null,
+        "status": "written",
+        "wrote": "ch03:s2",
         "quest": "q1.letters",
         "stage": 2,
         "last": true
@@ -77,7 +77,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null,
         "beat": "b1.3"
       },
@@ -215,8 +215,8 @@
       "priority": "required"
     },
     "q1.letters": {
-      "status": "live",
-      "stage": 1,
+      "status": "done",
+      "stage": 2,
       "priority": "required"
     },
     "q1.cart": {
@@ -417,7 +417,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 2,
+    "chapter": 3,
+    "scene": "2",
+    "opened": "2026-10-19",
+    "ask": "What does Darrow do with his brother's letters?",
+    "axis": "sworn_unsworn",
+    "options": [
+      "Write back as a brother: he will not kneel, and why",
+      "Burn them, as he burned the first",
+      "Keep them, folded, under the mattress"
+    ],
+    "bearing": [
+      {
+        "Sworn": 1
+      },
+      {
+        "Unsworn": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": []
   },

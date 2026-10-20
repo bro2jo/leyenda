@@ -241,12 +241,13 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
             "ch03:between-1",
-            "ch03:between-2"
+            "ch03:between-2",
+            "ch03:s2"
           ]
         }
       ]
@@ -645,9 +646,10 @@
           "fits": "present.hollis",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch03:between-2"
+            "ch03:between-2",
+            "ch03:s2"
           ]
         }
       ]
