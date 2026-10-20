@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-17 · saying · Halfway up the Steps with the noon wood, a lay brother stopped at the Elbow to get his breath, and the one behind him said what is always said there: "Ysolde climbed it dying. What's your excuse?"
 - 2026-10-17 · house · Sister Pell has taken the far lamp's spare wicks into her own keeping, counted, in a tin with a lid that sticks. Nobody asked her to. Nobody has asked her to give them back, either.
 - 2026-10-17 · weather · Thin sun on the Steps by early afternoon, enough to set the snow dripping from the gatehouse eaves in a steady count that nobody in the House has yet been able to resist keeping.
 - 2026-10-17 · overheard · Two novices on the wall-walk, stamping their feet: "He's walking the hall like he means it now." "He always meant it." "No. Before, he was walking it like it owed him money."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-19 · overheard · In the cloister, a novice to another, very low: "The Captain said it out loud last night. The whole oath. I heard it from the far lamp." "You never." "I did. And then Ser Garrow said it at the next bell, and that's the bit nobody believes."
 - 2026-10-19 · body · The knee woke before he did and was quiet about it. He has stopped asking it how it slept. It has stopped saying.
 - 2026-10-19 · house · Hollis has found a broom handle somewhere and is using it to point at things from his cot: the brazier, the door, a novice who has forgotten something. Nobody has yet worked out what he means to do with it.
+- 2026-10-19 · ledger · From Wren's ledgers, the kitchen's margin, copied out without asking: Nights without, two. Underneath, in the kitchen novice's hand: "Three tomorrow." Underneath that, in Wren's: "Technically you can't write that yet."

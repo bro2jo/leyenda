@@ -87,3 +87,7 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-19#3,2026-10-19,,breakfast,"Baked From the Heart healthy donut, chocolate (black bean)",2 donuts (assumed ~75 g each),400,12,52,18,10,12,24,400,600,80,4,100,2,0,0.4,40,library+estimate,"library row x2 (home-produced, no label; estimated from ingredients)"
 2026-10-19#4,2026-10-19,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his usual lunch bowl
 2026-10-18#8,2026-10-18,,snack,Popcorn with nutritional yeast and salt,"large bowl (~16 cups popped, movie-theater large); assumed popped in ~1.5 tbsp oil, ~2 tbsp nutritional yeast",720,21,103,27,21,3,1,940,630,20,4,180,6,0,0,60,estimate,logged late (Mon); size from his description; oil and salt amounts guessed
+2026-10-19#5,2026-10-19,,dinner,Kirkland chewy protein bar,2 bars (40 g each),380,20,32,22,12,6,12,250,300,80,2.8,70,1.6,0,0,0,library,library row x2
+2026-10-19#6,2026-10-19,,dinner,Good Foods organic avocado mash,2 cups (2 oz each),180,2,10,16,8,2,0,440,564,0,0.8,32,0.8,10,0,120,library,library row x2
+2026-10-19#7,2026-10-19,,dinner,"Tortilla chips, corn","assumed ~2 oz (56 g), as 10/17",280,4,36,14,3,2,0,230,110,60,0.6,50,0.8,0,0,80,estimate,amount as he confirmed on 10/17 for the same snack
+2026-10-19#8,2026-10-19,,dinner,GoGo SqueeZ AppleApple pouch,1 pouch (3.2 oz),60,0,15,0,1,0,12,0,80,5,0.2,4,0,2,0,0,estimate,as 10/16: typical label values; brand assumed
