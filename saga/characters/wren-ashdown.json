@@ -27,7 +27,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/03-the-undercroft.html#between-4"
   },
-  "last_seen_doing": "Turned on the second step with the lamp, buried the Captain's thanks in counts, went without a number, then told him he is the only one who asks what she counted; asked him to come back up, and counted it.",
+  "last_seen_doing": "Turned on the step below with the lamp, buried the Captain's thanks in counts, went without a number, then said he is the one who wants the count, not what it means; asked him to come back up, and counted it.",
   "now": "A step below the Captain on the undercroft stair with the lamp held out over the second step. She has asked him to come back up, and keeps a new count: times the Captain has said a decent thing on a stair, one.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
@@ -341,10 +341,10 @@
       "evidence": "Wren went first with the lamp, because that was the arrangement"
     },
     {
-      "fact": "She says everyone in the House asks her what a count means, and the Captain is the only one who asks what she counted.",
+      "fact": "She says everybody in the House wants to know what her counts mean, and the Captain wants the count itself; she calls that liking an audience.",
       "chapter": "03",
       "scene": "between-4",
-      "evidence": "You're the only one who asks what I counted."
+      "evidence": "Everybody in this House wants to know what my counts mean, Captain. You want the count."
     },
     {
       "fact": "She asked the Captain to come back up the undercroft stair.",

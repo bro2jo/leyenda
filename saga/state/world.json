@@ -71,7 +71,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Behind him Maelis had not moved, and had not said a word. \"Still one,\" she said.",
+  "last_beat": "He did not have to turn round to know she had been watching the knee the whole time, and not them. \"Still one,\" she said.",
   "companions": {
     "maelis": {
       "approval": 34,

@@ -492,44 +492,44 @@ He put his foot down into it.
 
 ### Between — Room Under It
 
-On the first step down, with the cold standing round his knee and his hand on Wren's shoulder, Darrow did not take the second.
+On the first step down, both feet on it now and the cold standing round his knee, Darrow kept his hand on Wren's shoulder and did not take the second.
 
-The shoulder was narrower than he had thought. It had been under his hand, or near it, since the litter: beside him up the Steps, counting them aloud while he burned; a hundred and twelve paces to the tower door, run, so the bell would ring before anyone found him; five round a fire and one at the winch-house, counted so he would not have to look; down on her knees on a cold floor because he could not get there; and now a step below him in the dark with the only lamp, because she had got there before anyone could say otherwise.
+He could feel the bone of her shoulder through the wool. She had been at his side since the litter. Up the Steps beside him, counting them aloud while he burned. A hundred and twelve paces to the tower door, run, so the bell would ring before anyone found him. Five round a fire and one at the winch-house. On her knees at a cold wall because he could not get down to it. And now first into the dark under the House, with the only lamp.
 
-He was counting it. He stopped.
+He was counting it, the way she would. He stopped.
 
 "Wren."
 
-"Step's dry," she said, without turning round. "I'm looking. Mender's on one, Captain. Two comes after you move. That's how it works."
+"You've stopped," she said, without turning round. "Mender's on one, Captain. Two comes after you move. That's how counting works."
 
 "Turn round a moment."
 
 She turned, and the lamp came round with her and lit her from under the chin, so that she looked about twelve and very cross. "If this is where you send me back up—"
 
-"It isn't." He had a joke ready for the face she was making, and let it go. "You've been good to me. Since the Steps, every day of it. And I've had you counting for me as if you were the House's ledger, and you're not. I wanted to say so before we went down, not after."
+"It isn't." He had a joke ready for the face she was making, and let it go. "You've been good to me. Since the Steps, every day of it. And I've had you counting for me like a ledger. You're not one. I wanted to say so before we went down, not after."
 
-"Technically I am the House's ledger." It came out fast. "Sister Pell says so. Eleven hundred and seventeen Steps, whatever anybody tells you, nine keys on the ring and ten on the Prior, three doors into the hall, which I had at two and will not hear the end of, and—"
+"Technically I'm the House's ledger." It came out fast. "Sister Pell says so. Eleven hundred and seventeen Steps, whatever anybody tells you, nine keys on the ring and ten on the Prior, three doors into the hall, which I had at two and won't hear the end of, and—"
 
 "Wren."
 
-She stopped. Her lips, which moved along every row of lamps she passed, did not move. He had seen her without a number twice before, both times on the day the grey cloaks came.
+She stopped. Her lips, which moved along every row of lamps she passed, were still. He had seen her without a number twice before, both times on the day the grey cloaks came.
 
 The lamp flame stood up straight between them, then leaned away from the dark below.
 
-"You don't get to do that," she said at last, quieter. "Say a thing like that on a stair. Where I can't put it anywhere."
+"You don't get to do that," she said at last, quieter. "Say a thing like that on a stair, with the Prior up there listening. Where I can't put it anywhere."
 
 "Where would you put it?"
 
-"In the ledger. Under something." She looked at his hand on her shoulder and not at his face. "Everyone in this House asks me what a count means, Captain. You're the only one who asks what I counted. That's not me being good to you. That's you being the only one who listens."
+"In the ledger. Under something." She looked at his hand on her shoulder and not at his face. "Everybody in this House wants to know what my counts mean, Captain. You want the count. That's not me being good to you. That's me liking an audience."
 
-He had no answer to that, so he did not make one.
+He let her have that.
 
-"Come back up, then," Wren said. "I'll not have you in the book going down and not up. It would spoil the page."
+"Come back up, then," Wren said. "I'm not having you in the book going down and not up. Spoils the page."
 
 "Down and up. You can count both."
 
-"You'll say that." She turned back to the dark and held the lamp out over the second step. "Times the Captain has said a decent thing on a stair: one. There's room under it."
+"You'll say that." She turned back to the dark and held the lamp out over the next step down. "Times the Captain has said a decent thing on a stair: one. There's room under it."
 
-Behind him Maelis had not moved, and had not said a word.
+Behind him Maelis had not said a word. He did not have to turn round to know she had been watching the knee the whole time, and not them.
 
 "Still one," she said.
