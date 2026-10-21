@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-20",
+  "asof": "2026-10-21",
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
@@ -325,8 +325,8 @@
   },
   "chapter_now": {
     "week_start": "2026-10-18",
-    "through": "2026-10-20",
-    "tier_so_far": "Triumph",
+    "through": "2026-10-21",
+    "tier_so_far": "Hard-won",
     "chapter": 3
   },
   "fell": {

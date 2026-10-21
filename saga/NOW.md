@@ -37,5 +37,5 @@ THE TETHER · I of V · a name
 ARTS · The Seated Blade I · Stillwater Stance II · The Long Breath I · The Mender's Patience II · Warden's Eye III · Groundbreaker II · The Measured Hand I · Overwall I
 ```
 
-**Chapter 3, so far (on what's logged):** Triumph
+**Chapter 3, so far (on what's logged):** Hard-won
 <!-- engine:end -->

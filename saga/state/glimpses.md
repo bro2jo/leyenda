@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-18 · body · He swung both legs off the cot at the dawn bell together, out of old habit, and the left came with the right as if it had never had a reason not to. He sat and looked at it until the bell stopped.
 - 2026-10-18 · ledger · From Wren's ledgers, the stockings page: pairs on the chimney breast, eleven. Pairs with a number chalked over them, eleven. Pairs that are the right pair when they come down, nine, which she has decided not to mention.
 - 2026-10-18 · weather · The wind went round to the north at noon and glazed the top flights of the Steps. The lay brothers bringing up the wood are doing it as much sitting down as standing, and swearing at it in the plain words of men who have been told not to.
 - 2026-10-18 · house · Sister Pell has had the novices carry a second brazier into the bell tower, and sits between the two of them with her rope across her knees like a cat that may or may not be asleep.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-20 · weather · The fog has gone back down the mountain, and the Steps stand out of it this afternoon, flight after flight, every one white, as if somebody had laid them fresh.
 - 2026-10-20 · house · A novice has been set to sweep the cloister and has swept it twice, very slowly, past the end of the hall where the iron-banded door is, as if the broom had business there of its own.
 - 2026-10-20 · saying · In the yard after supper, a Lancer watches two lay brothers stack firewood on a handcart well past its rails and says to nobody, "Two fingers." One of them, without knowing why, lifts the top log off.
+- 2026-10-21 · overheard · "Salt," says a lay brother at the kitchen end of the hall, for the second time, and still nobody passes it: the whole long table is looking the other way, down the row, at a doorway with no lamp left in it.
