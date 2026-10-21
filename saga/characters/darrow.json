@@ -30,7 +30,7 @@
     "anchor": "chronicle/03-the-undercroft.html#scene-3"
   },
   "last_seen_doing": "Gave his answer to Aldric through the bars unsealed and let the Confessor read it; watched riders far down the Holloway with Wren; went down and up the warming-room stair on the Mender's count, took his hand off the wall at five and she put it back; carried her yes to the Prior; at dusk took the first step down the undercroft stair, his hand on Wren's shoulder.",
-  "now": "On the first step of the undercroft stair at dusk, his hand on Wren's shoulder, the Mender counting behind him without a lamp. He has not slept since the letters came.",
+  "now": "On the first step of the undercroft stair at dusk, his hand on Wren's shoulder, the Mender counting behind him without a lamp. He sat up all night writing to Aldric.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -954,34 +954,40 @@
       "evidence": "Yes. I turned. I planted on a stone and turned toward Tobin, and the knee went, and I would turn again."
     },
     {
-      "fact": "He wrote that the warmth went out of him first, before the mare, the boy and the turn, and that whoever told Aldric was not there.",
+      "fact": "He wrote that the warmth went out of him first, before Thistle, the boy and the turn, and that whoever told Aldric was not there.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "The warmth went out of me first, halfway across, before the mare went down, before the boy, before I turned. I was there. Whoever told you was not."
+      "evidence": "The warmth went out of me first, halfway across, before Thistle went down, before the boy, before I turned. I was there. Whoever told you was not."
     },
     {
       "fact": "He wrote that he will not kneel, because he would be kneeling to the order told backwards.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "I will not kneel. Not for pride in the leg: because I would be kneeling to that order told backwards."
+      "evidence": "I will not kneel. Not for pride in the leg. Because I would be kneeling to that order told backwards."
     },
     {
-      "fact": "He wrote that he nearly burned the letter so that Aldric would come, because he wants to see him and understand what he saw from the river.",
+      "fact": "He told Aldric he burned the first letter and nearly burned this one too so that Aldric would come, because he wants to see him and understand what he saw from the water.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "I nearly burned this so that you would come. I want to see you that much."
+      "evidence": "I burned your first. I nearly burned this one too, so that you would come. I want to see you that much."
+    },
+    {
+      "fact": "He wrote Thistle's name and Tobin's in the letter.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "before Thistle went down, before the boy"
     },
     {
       "fact": "He gave the letter through the bars unsealed and let the Confessor read it.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "He gave it through the bars at the dawn bell, folded once and not sealed."
+      "evidence": "folded once and not sealed"
     },
     {
-      "fact": "He has not slept since he wrote it.",
+      "fact": "He wrote the letter twice over at a brazier that went out before he did.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "and had not slept after"
+      "evidence": "He had written it twice over at a brazier that went out before he did"
     },
     {
       "fact": "On the warming-room stair he took his hand off the wall at the fifth step up, and the Mender put it back.",
@@ -993,7 +999,7 @@
       "fact": "He had not asked the Mender that day; she said she would take him down anyway.",
       "chapter": "03",
       "scene": "3",
-      "evidence": "and that he had not asked her today"
+      "evidence": "he had not asked her today"
     },
     {
       "fact": "He told the Prior he would look at the bottom and come back up on this leg, at the Mender's count.",
