@@ -110,6 +110,7 @@
 5. If wanted: BFR · Spanish squat · seated rotational med-ball throws (the Saturday power & mobility session's throw needs your OK).
 6. For awareness: "Pivot throwing started 10/20 on knee days, one direction, walking tempo, one rung per bout. Anything to watch?"
 7. Who treated 10/17 and 10/1.
+8. **Session A loads, recalibrated 10/21** (the starting doses felt well under RPE 7–8): goblet squat 40, cable knee extension 40 through full range (left lowering alone), hamstring curl 60–70. "Is the knee extension OK at that load and range in weeks 9–12?"
 
 ---
 
@@ -173,7 +174,7 @@
 |---|---|
 | SL sit-to-stand | 18", slight assist (10/13). Unassisted at 20" (10/11) |
 | Squat pattern (depth rule) | No deeper than the 18" sit-to-stand: the goblet squat to an 18" box at first |
-| Heel tap | 6" (PT 10/15); 6.5" step at home |
+| Heel tap | 6" (PT 10/15); 6.5" step at home; 7.5" box, lateral (10/21) |
 | Forward step-down | 6.5" (10/11, controlled; PT passed it 10/17) |
 | Step-up | 18" bodyweight (10/13, easy); 12" or 18" both fine (PT 10/15) |
 
@@ -213,25 +214,26 @@ Baseline = 10/11 (clean on 10/12). Every morning since was clean, so "Next" stan
 - **Ladder, one rung per bout after a clean morning:** the other direction → a wider step (full stance) → +10 throws → both directions in a set order → slow planned shimmies → game-range long throws with a step and pivot. Up to ~60 pivot throws a bout by the end of Phase 4. Two bouts a week, knee days only.
 - **Still out:** max-intent throws, game-tempo shimmies, throwing after jogging or running, any reaction.
 
-### Session A — Phase 4, knee dominant (Tue 10/20)
+### Session A — Phase 4, knee dominant (first run Wed 10/21)
 
-The plan's Phase 4 Session A with the PT's items. "→" marks the one change; Tuesday's pre-session check gates it.
+The plan's Phase 4 Session A with the PT's items. Doses as recalibrated Wed 10/21 (below); the pre-session check gates every session.
 
-| # | Exercise | Dose (10/20) | Ladder — one step per session [plan Phase 4 target] |
+| # | Exercise | Dose (from 10/21) | Ladder — one step per session [plan Phase 4 target] |
 |---|---|---|---|
 | WU | Bike · cable TKE (optional) | 8 min · 2 × 10 | — |
-| 1 | **Goblet squat** (PT 10/15) | 25 lb DB × 2 × 10, to an 18" box (PT dose; first at home) | 3 × 10 → +5 lb → depth (depth rule) [3–4 × 6–10, RPE 7–8] |
-| 2 | Cable seated knee extension, full range | L 20 lb × 2 × 12 → **lift with both legs, lower with the left alone over ~3 s** (PT style) | 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8]. Front-of-knee pain >2 → shorten the range or lighten |
-| 3 | **Rear-foot elevated split squat — NEW** (replaces the split squat) | Rear foot on the 6.5" step, bodyweight, 2 × 8/side | 3 × 8 → DBs, +5 lb steps [3 × 8 each side] |
-| 4 | Cable hamstring curl, ankle strap | 3 × 10 @ 50 lb each leg if Monday is clean (Sunday ran 40 / 50 / 60, past the planned 30); 30 lb if it isn't | +1 plate (60) → 3 × 12 [3 × 8–12] |
-| 5 | Standing heel raise, 35 lb DBs | **3 × 15** (the PT's 2 × 15 + a third set) | 4 × 15 → single-leg L → + DB [4 × 10–15] |
+| 1 | **Goblet squat** (PT 10/15) | **40 lb DB × 2 × 10**, to an 18" box, paused on the box (10/21; PT dose was 25) | 3 × 10 → +5 lb → depth (depth rule) [3–4 × 6–10, RPE 7–8] |
+| 2 | Cable seated knee extension, full range | **40 lb × 2 × 12**: L lifts with both legs, lowers alone over ~3 s (PT style); R alone both ways (10/21; was 20) | 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8]. Front-of-knee pain >2 → shorten the range or lighten |
+| 3 | **Rear-foot elevated split squat — NEW** (replaces the split squat) | Rear foot on a 7.5" box, bodyweight, 2 × 8/side (first run 10/21) | 3 × 8 → DBs, +5 lb steps [3 × 8 each side] |
+| 4 | Cable hamstring curl, ankle strap | 3 × 10 each leg: **60 / 60 / 70 lb** (10/21; was 50) | 3 × 10 @ 70 → 3 × 12 [3 × 8–12] |
+| 5 | Standing heel raise, DBs | **40 lb DBs × 3 × 15** (10/21; was 35s) | 4 × 15 → single-leg L → + DB [4 × 10–15] |
 | 6 | Step-up with opposite knee drive, 18" | L 2 × 15 · R 2 × 15, bodyweight (as 10/13) | 3 × 12 → DBs |
-| 7 | Heel tap, 6.5", slow eccentric | L 2 × 10 | 3 × 10 → 8" |
+| 7 | Heel tap, slow eccentric | L 2 × 10 on a 7.5" box, lateral (10/21) | 3 × 10 → 8" |
 | 8 | SL balance + ball toss on BOSU · eyes-closed drill | 3 × 45 s · 1 min, inside the rack, hands hovering near the uprights | + perturbation |
 | 9 | Isometric knee extension 90°, strap | L 10 × 10 s, max effort | add 60° |
 | CD | Posture cooldown (Add-On §3) | ~6 min | chin nod → deep neck flexor hold |
 
-- **Batch:** the goblet squat (PT item, first at home) · knee extension in the PT's style · RFESS (the one new exercise) · heel raise third set. The SL sit-to-stand moves to Session B only (B's single-leg leg press substitute); the wall squat leaves (the goblet squat takes its slot).
+- **Recalibrated Wed 10/21 (his call):** the PT's starting doses ran well under the plan's RPE 7–8, so the first Session A reset its loads in one go (goblet squat 25 → 40, knee extension 20 → 40, hamstring curl 50 → 60/70, heel raise 35s → 40s; RFESS and heel tap on a 7.5" box): 76 min, RPE 8, front-of-knee pain 0, no fullness after, knee tracking fine. **The new doses stand if Thu 10/22's morning is clean**; if it isn't, every change reverses to the 10/20 doses (25 · 20 · 50 · 35s · 6.5"). From here each exercise climbs one step at a time (the master plan: ~2.5–10%, smaller on isolation work; knee extension "progress range and load gradually"). The knee extension at this load is on the next-visit list.
+- **Batch (as planned 10/20):** the goblet squat (PT item, first at home) · knee extension in the PT's style · RFESS (the one new exercise) · heel raise third set. The SL sit-to-stand moves to Session B only (B's single-leg leg press substitute); the wall squat leaves (the goblet squat takes its slot).
 - **Short on time:** drop 9 → 8 → 7 → 6. On a short day, the posture cooldown is the 90/90 hip lift and chin nods.
 - **Minimum session:** warm-up + 1, 2, 3, 4 (~35 min).
 
