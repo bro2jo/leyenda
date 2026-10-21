@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1909,
+  "xp": 1919,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -44,7 +44,7 @@
       "raw": 10,
       "cap": null,
       "mod": 0,
-      "temper": 30,
+      "temper": 31,
       "next_at": 36,
       "fell": 12,
       "banked": false
@@ -126,7 +126,7 @@
       "tree": "Binding",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 13,
+      "practice": 14,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -137,7 +137,7 @@
       "tree": "Insight",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 20,
+      "practice": 21,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
