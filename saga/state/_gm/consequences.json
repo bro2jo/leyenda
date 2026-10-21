@@ -242,7 +242,7 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 7,
+          "offered": 8,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
@@ -250,7 +250,8 @@
             "ch03:between-2",
             "ch03:s2",
             "ch03:between-3",
-            "ch03:s3"
+            "ch03:s3",
+            "ch03:between-4"
           ]
         }
       ]
@@ -727,6 +728,44 @@
           "offered_at": [
             "ch03:between-3",
             "ch03:s3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c03.5",
+      "made": {
+        "chapter": 3,
+        "scene": "between-4",
+        "date": "2026-10-20"
+      },
+      "chose": "On the first step of the undercroft stair, stopped and turned Wren round to tell her plainly she has been good to him since the Steps, and that he has had her counting for him as if she were the House's ledger and she is not; she buried it in counts, he stopped her, and she went without a number; she said he is the only one in the House who asks what she counted, not what it means, and asked him to come back up; he said down and up, she can count both; she counted it: Times the Captain has said a decent thing on a stair, one, room under it",
+      "now": {
+        "approval": {
+          "wren": 3
+        }
+      },
+      "due": [
+        {
+          "id": "c03.5a",
+          "when": "next",
+          "at": "ch03:s4",
+          "weight": "color",
+          "what": "Wren asked the Captain to come back up the undercroft stair (she will not have him in the book going down and not up), and he told her she can count both, down and up. Honour it where he comes back up: her count of both",
+          "status": "pending"
+        },
+        {
+          "id": "c03.5b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren keeps a count: Times the Captain has said a decent thing on a stair, one, with room under it. Fire where he says another plain kind thing to her and she counts it, or where she reads the count back to him",
+          "fits": "present.wren",
+          "priority": 1,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch03:between-4"
           ]
         }
       ]

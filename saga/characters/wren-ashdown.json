@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-3"
+    "anchor": "chronicle/03-the-undercroft.html#between-4"
   },
-  "last_seen_doing": "Counted the Captain's letter down the Steps with Sister Pell's glass; found about twenty riders far down the Holloway under a banner that is not grey, and wrote it down; at dusk counted the key turned and went first down the undercroft stair with the lamp.",
-  "now": "A step below the Captain on the undercroft stair at dusk, with the lamp, his hand on her shoulder.",
+  "last_seen_doing": "Turned on the second step with the lamp, buried the Captain's thanks in counts, went without a number, then told him he is the only one who asks what she counted; asked him to come back up, and counted it.",
+  "now": "A step below the Captain on the undercroft stair with the lamp held out over the second step. She has asked him to come back up, and keeps a new count: times the Captain has said a decent thing on a stair, one.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -339,6 +339,24 @@
       "chapter": "03",
       "scene": "3",
       "evidence": "Wren went first with the lamp, because that was the arrangement"
+    },
+    {
+      "fact": "She says everyone in the House asks her what a count means, and the Captain is the only one who asks what she counted.",
+      "chapter": "03",
+      "scene": "between-4",
+      "evidence": "You're the only one who asks what I counted."
+    },
+    {
+      "fact": "She asked the Captain to come back up the undercroft stair.",
+      "chapter": "03",
+      "scene": "between-4",
+      "evidence": "\"Come back up, then,\" Wren said."
+    },
+    {
+      "fact": "She keeps a count of the times the Captain has said a decent thing on a stair: one, with room under it.",
+      "chapter": "03",
+      "scene": "between-4",
+      "evidence": "Times the Captain has said a decent thing on a stair: one. There's room under it."
     }
   ],
   "relationships": [
@@ -487,6 +505,10 @@
     {
       "chapter": "03",
       "scene": "3"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-4"
     }
   ]
 }

@@ -489,3 +489,47 @@ He put his foot down into it.
 > Art learned: **Groundbreaker** II. *Drive through a line.*
 > Ember: Steady → Bright
 > XP 1,854 → 1,909
+
+### Between — Room Under It
+
+On the first step down, with the cold standing round his knee and his hand on Wren's shoulder, Darrow did not take the second.
+
+The shoulder was narrower than he had thought. It had been under his hand, or near it, since the litter: beside him up the Steps, counting them aloud while he burned; a hundred and twelve paces to the tower door, run, so the bell would ring before anyone found him; five round a fire and one at the winch-house, counted so he would not have to look; down on her knees on a cold floor because he could not get there; and now a step below him in the dark with the only lamp, because she had got there before anyone could say otherwise.
+
+He was counting it. He stopped.
+
+"Wren."
+
+"Step's dry," she said, without turning round. "I'm looking. Mender's on one, Captain. Two comes after you move. That's how it works."
+
+"Turn round a moment."
+
+She turned, and the lamp came round with her and lit her from under the chin, so that she looked about twelve and very cross. "If this is where you send me back up—"
+
+"It isn't." He had a joke ready for the face she was making, and let it go. "You've been good to me. Since the Steps, every day of it. And I've had you counting for me as if you were the House's ledger, and you're not. I wanted to say so before we went down, not after."
+
+"Technically I am the House's ledger." It came out fast. "Sister Pell says so. Eleven hundred and seventeen Steps, whatever anybody tells you, nine keys on the ring and ten on the Prior, three doors into the hall, which I had at two and will not hear the end of, and—"
+
+"Wren."
+
+She stopped. Her lips, which moved along every row of lamps she passed, did not move. He had seen her without a number twice before, both times on the day the grey cloaks came.
+
+The lamp flame stood up straight between them, then leaned away from the dark below.
+
+"You don't get to do that," she said at last, quieter. "Say a thing like that on a stair. Where I can't put it anywhere."
+
+"Where would you put it?"
+
+"In the ledger. Under something." She looked at his hand on her shoulder and not at his face. "Everyone in this House asks me what a count means, Captain. You're the only one who asks what I counted. That's not me being good to you. That's you being the only one who listens."
+
+He had no answer to that, so he did not make one.
+
+"Come back up, then," Wren said. "I'll not have you in the book going down and not up. It would spoil the page."
+
+"Down and up. You can count both."
+
+"You'll say that." She turned back to the dark and held the lamp out over the second step. "Times the Captain has said a decent thing on a stair: one. There's room under it."
+
+Behind him Maelis had not moved, and had not said a word.
+
+"Still one," she said.

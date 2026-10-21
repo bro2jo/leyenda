@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-3"
+    "anchor": "chronicle/03-the-undercroft.html#between-4"
   },
-  "last_seen_doing": "Gave his answer to Aldric through the bars unsealed and let the Confessor read it; watched riders far down the Holloway with Wren; went down and up the warming-room stair on the Mender's count, took his hand off the wall at five and she put it back; carried her yes to the Prior; at dusk took the first step down the undercroft stair, his hand on Wren's shoulder.",
-  "now": "On the first step of the undercroft stair at dusk, his hand on Wren's shoulder, the Mender counting behind him without a lamp. He sat up all night writing to Aldric.",
+  "last_seen_doing": "Stopped on the first step of the undercroft stair and turned Wren round to tell her she has been good to him since the Steps, and that she is not the House's ledger.",
+  "now": "On the first step of the undercroft stair at dusk, his hand on Wren's shoulder, the Mender behind him still at one. He has told Wren she can count him down and up.",
   "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1008,6 +1008,12 @@
       "evidence": "I look. Then I come back up it. On this leg, at her count."
     },
     {
+      "fact": "He told Wren she has been good to him since the Steps, and that he has had her counting for him as if she were the House's ledger.",
+      "chapter": "03",
+      "scene": "between-4",
+      "evidence": "You've been good to me. Since the Steps, every day of it."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1249,6 +1255,10 @@
     {
       "chapter": "03",
       "scene": "3"
+    },
+    {
+      "chapter": "03",
+      "scene": "between-4"
     },
     {
       "chapter": "tale01",
