@@ -110,7 +110,7 @@
 5. If wanted: BFR · Spanish squat · seated rotational med-ball throws (the Saturday power & mobility session's throw needs your OK).
 6. For awareness: "Pivot throwing started 10/20 on knee days, one direction, walking tempo, one rung per bout. Anything to watch?"
 7. Who treated 10/17 and 10/1.
-8. **Session A loads, recalibrated 10/21** (the starting doses felt well under RPE 7–8): goblet squat 40, cable knee extension 40 through full range (left lowering alone), hamstring curl 60–70. "Is the knee extension OK at that load and range in weeks 9–12?"
+8. **Session A loads, recalibrated 10/21** (the starting doses felt well under RPE 7–8): goblet squat 40, cable knee extension 40 two up / one down through full range (the left lowers the 40 alone from full extension), hamstring curl 60–70. "Is the eccentric knee extension OK at that load and range in weeks 9–12?"
 
 ---
 
@@ -222,7 +222,7 @@ The plan's Phase 4 Session A with the PT's items. Doses as recalibrated Wed 10/2
 |---|---|---|---|
 | WU | Bike · cable TKE (optional) | 8 min · 2 × 10 | — |
 | 1 | **Goblet squat** (PT 10/15) | **40 lb DB × 2 × 10**, to an 18" box, paused on the box (10/21; PT dose was 25) | 3 × 10 → +5 lb → depth (depth rule) [3–4 × 6–10, RPE 7–8] |
-| 2 | Cable seated knee extension, full range | **40 lb × 2 × 12**: L lifts with both legs, lowers alone over ~3 s (PT style); R alone both ways (10/21; was 20) | 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8]. Front-of-knee pain >2 → shorten the range or lighten |
+| 2 | Cable seated knee extension, full range | **40 lb × 2 × 12, two up / one down (eccentric overload, PT style):** both legs lift, the left lowers alone over ~3 s; the load is set for the left's lowering, so it runs heavier than a one-leg extension both ways (10/21; was 20). R alone both ways | 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8]. Front-of-knee pain >2 → shorten the range or lighten |
 | 3 | **Rear-foot elevated split squat — NEW** (replaces the split squat) | Rear foot on a 7.5" box, bodyweight, 2 × 8/side (first run 10/21) | 3 × 8 → DBs, +5 lb steps [3 × 8 each side] |
 | 4 | Cable hamstring curl, ankle strap | 3 × 10 each leg: **60 / 60 / 70 lb** (10/21; was 50) | 3 × 10 @ 70 → 3 × 12 [3 × 8–12] |
 | 5 | Standing heel raise, DBs | **40 lb DBs × 3 × 15** (10/21; was 35s) | 4 × 15 → single-leg L → + DB [4 × 10–15] |

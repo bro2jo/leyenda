@@ -20,7 +20,7 @@ Program: `real/state/recovery_state.md` (Sun 10/18): `python3 engine/darrow.py d
 
 PT 11 (his account; `pt_notes.md`, 2026-10-17): isometric quad peak on a torque monitor, **LSI 90.4%** (right 77.2, left 69.8 lb; vs the pre-op right 83.7: 83%). Step-downs passed · Copenhagen okay on both sides · hamstrings not tested. PT 10 (10/15) items are folded into the State (§5–6).
 
-For the next visit (State §5): **book it** · Session A's recalibrated loads (knee extension 40 lb through full range: OK in weeks 9–12?) · hamstring test, both sides · when the plan's early plyometric prep can start · right knee hyperextension on a heel prop · BOSU home version of the wobble-board drill · BFR / Spanish squat / seated throws if wanted · who treated 10/17 and 10/1.
+For the next visit (State §5): **book it** · Session A's recalibrated loads (knee extension 40 lb two up / one down through full range, the left lowering alone: OK in weeks 9–12?) · hamstring test, both sides · when the plan's early plyometric prep can start · right knee hyperextension on a heel prop · BOSU home version of the wobble-board drill · BFR / Spanish squat / seated throws if wanted · who treated 10/17 and 10/1.
 
 ## Gate · Phase 3 → 4 **met (10/17); Knot III tied Tue 10/20** · next: Phase 4 exit (return-to-run preparation)
 
