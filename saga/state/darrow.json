@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1919,
+  "xp": 1949,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 37,
+      "temper": 39,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 12,
       "mod": 0,
-      "temper": 26,
+      "temper": 27,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -104,7 +104,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 13,
+      "practice": 14,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -148,7 +148,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 11,
+      "practice": 12,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
@@ -326,7 +326,7 @@
   "chapter_now": {
     "week_start": "2026-10-18",
     "through": "2026-10-21",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 3
   },
   "fell": {
