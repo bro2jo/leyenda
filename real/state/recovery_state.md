@@ -121,8 +121,8 @@
 |---|---|
 | Sun 10/18 | ✓ Weigh-in 158.4 (AM) · ✓ first extension photo, clean · ✓ SLR no lag · ✓ flexion full · morning trace, quiet → **Session B** (Phase 3, last time; doses below) |
 | Mon 10/19 | Morning check · bike **24** → **Upper B** (session 4) → finisher |
-| Tue 10/20 | **Knot III · Phase 4 opens.** Pre-session check → **first pivot bout** (15–25 min, before the session or 2–3 h after) · **Phase 4 Session A** |
-| Wed 10/21 | **Throwing A** (speed control: soft / normal / fast, FH and BH; square stance) |
+| Tue 10/20 | **Knot III · Phase 4 opens.** Morning check ✓ · the session moved to Wednesday (his call, Tue evening) |
+| Wed 10/21 | Pre-session check → **first pivot bout** (15–25 min, before the session or 2–3 h after) · **Phase 4 Session A** (Tuesday's, same doses) · **Throwing A** (speed control: soft / normal / fast, FH and BH; square stance) with the pivot bout or 2–3 h apart from the session |
 | Thu 10/22 | Bike **27** → **Upper A** (session 5) → finisher |
 | Fri 10/23 | **Throwing B** (scoober at different speeds and heights; upper-body fakes before breaks; square stance) · PT if it books (then Throwing B moves) |
 | Sat 10/24 | Bike **30** · **Throwing C** (long throws) · film 10–15 min (handler defenders' hips) |
