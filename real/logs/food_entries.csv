@@ -101,5 +101,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-20#5,2026-10-20,,snack,Kinnikinnick Kinni-Kritters vanilla animal cookies (gluten-free),"about 2 servings (24 cookies, 60 g)",260,0,44,8,0,4,14,160,20,0,0.4,,,,0,,label,label photo; about two servings (his estimate)
 2026-10-20#6,2026-10-20,,snack,Kinnikinnick Kinni-Kritters vanilla animal cookies (gluten-free),"another helping, about 2 servings (24 cookies, 60 g)",260,0,44,8,0,4,14,160,20,0,0.4,,,,0,,library,assumed the same size as the afternoon helping
 2026-10-20#7,2026-10-20,,dinner,Gluten-free BBQ chicken and bacon pizza,"whole medium (assumed ~12 in, 8 slices)",1700,80,190,68,6,26,35,3600,900,1000,5,,,,0.5,,estimate,"GF crust, BBQ sauce, mozzarella, chicken, bacon; size assumed"
-2026-10-21#1,2026-10-21,,breakfast,Crunchy protein bar (brand unknown),1 bar (assumed ~45 g),200,12,22,8,3,2.5,9,150,150,60,1.2,40,1,0,0,0,estimate,"typical crunchy protein bar values; brand not given, asked"
 2026-10-21#2,2026-10-21,,breakfast,GoGo SqueeZ Apple Banana pouch,1 pouch (3.2 oz),60,0,15,0,1,0,11,0,130,5,0.2,6,0,2,0,0,estimate,typical label values; label not seen
+2026-10-21#3,2026-10-21,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his usual; corrected from an unknown crunchy bar
