@@ -342,9 +342,10 @@
         },
         {
           "name": "The undercroft door",
-          "text": "A low iron-banded door with a lock the size of a fist, behind the linen press at the dark end of the infirmary hall's east wall: the stair down to the undercroft. Shut since before Wren could count; the key is the Prior's, handed from Prior to Prior and never turned. Cold all the way through (Ch 2 Sc 7).",
+          "text": "A low iron-banded door with a lock the size of a fist, behind the linen press at the dark end of the infirmary hall's east wall: the stair down to the undercroft. Shut since before Wren could count; the key is the Prior's, handed from Prior to Prior and never turned. Cold all the way through (Ch 2 Sc 7). The masons found the stair behind it when they cut the House's footings, and built on it rather than through it. Mother Ione turned the key at dusk with both hands, the first of her line of Priors to do so, and the door swung out on a stair of cut stone older than the House; the cold came up it to the height of a man's knee (Ch 3 Sc 3).",
           "sources": [
-            "ch02:s7"
+            "ch02:s7",
+            "ch03:s3"
           ]
         },
         {

@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "2",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-2"
+    "anchor": "chronicle/03-the-undercroft.html#scene-3"
   },
-  "last_seen_doing": "Followed the Captain to the bars; counted the letters to the Captain of the Ninth: three.",
-  "now": "At the foot of the Captain's cot with her ledger shut.",
+  "last_seen_doing": "Counted the Captain's letter down the Steps with Sister Pell's glass; found about twenty riders far down the Holloway under a banner that is not grey, and wrote it down; at dusk counted the key turned and went first down the undercroft stair with the lamp.",
+  "now": "A step below the Captain on the undercroft stair at dusk, with the lamp, his hand on her shoulder.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -321,6 +321,24 @@
       "chapter": "03",
       "scene": "2",
       "evidence": "I just didn't want to be the only one who'd said it."
+    },
+    {
+      "fact": "She counted riders far down the Holloway at about twenty.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "Twenty, about. I'll say twenty and be wrong by two."
+    },
+    {
+      "fact": "Their banner is not grey; she could tell no more at that distance.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "Not grey. That's all I can tell you, and I'm the one who's been holding it."
+    },
+    {
+      "fact": "She went first down the undercroft stair with the lamp.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "Wren went first with the lamp, because that was the arrangement"
     }
   ],
   "relationships": [
@@ -465,6 +483,10 @@
     {
       "chapter": "03",
       "scene": "2"
+    },
+    {
+      "chapter": "03",
+      "scene": "3"
     }
   ]
 }

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "1",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-1"
+    "anchor": "chronicle/03-the-undercroft.html#scene-3"
   },
-  "last_seen_doing": "Read the knee at the hour; when the Captain asked again, asked him first what he will do at the bottom; told him 'come back up, on this' is the right answer and not true yet, and to ask tomorrow; went to the far cots without a lamp.",
-  "now": "At the far cots. She has told the Captain his answer is right and not yet true, and to ask her again tomorrow.",
+  "last_seen_doing": "Took the Captain to the warming room and counted him down and up the nine steps, his hand on the wall; read the knee at the foot; put his hand back on the wall when he took it off; on the top step said it was a stair and, unasked, that she would take him down at dusk; at dusk stood behind him at the undercroft stair without a lamp and counted one.",
+  "now": "Behind the Captain on the undercroft stair at dusk, without a lamp, counting.",
   "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -303,6 +303,30 @@
       "chapter": "03",
       "scene": "1",
       "evidence": "That's the right answer,\" she said. \"It isn't true yet. Ask me tomorrow."
+    },
+    {
+      "fact": "She read the leg, after the warming-room stair, as able to take a stair.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "That's a stair"
+    },
+    {
+      "fact": "Unasked, she said she would take him down the undercroft stair at dusk: her count, Wren's shoulder.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "Tell the Prior I'll take you down"
+    },
+    {
+      "fact": "She would rather fewer people watched him do it.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "I'd rather fewer people watched you do it"
+    },
+    {
+      "fact": "She said it is as dark below at noon as at midnight, and to Darrow it did not sound like a guess.",
+      "chapter": "03",
+      "scene": "3",
+      "evidence": "She had said it the way she said what a knee would do: not as a guess."
     }
   ],
   "relationships": [
@@ -441,6 +465,10 @@
     {
       "chapter": "03",
       "scene": "1"
+    },
+    {
+      "chapter": "03",
+      "scene": "3"
     }
   ]
 }

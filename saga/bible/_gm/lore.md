@@ -112,7 +112,7 @@ Forty cots in two rows under a dark roof, a fire at the gate end and a lamp at t
 An iron-bound cage on a rope the thickness of a wrist, from the winch-house at the foot of the cliff to the drum at the top, worked by the winch-brothers in pairs. Up: salt, oil, flour, linen, letters, and the ones too hurt to be carried. Down: the House's letters, the effects of its dead in bundles with a tag, and the ones who can stand but not walk. It does not run after the dusk bell; a splice that let go in the dark is a story every winch-brother tells and none of them was there for. Everything that comes up is weighed, and Wren writes it down.
 
 ## house.undercroft — The undercroft
-- **tier:** learned · **spoken:** — · **names:** —
+- **tier:** learned · **spoken:** ch03:s3 · **names:** —
 - **use:** a cold draught; the key at the Prior's belt; what the lay brothers will not do.
 
 Under the hall there is older stone than the House: a vaulted undercroft the masons found when they cut the foundations, and built on rather than through. It is kept locked with a key the Prior wears, the lay brothers do not go down, and the flagstones above it are the coldest in the hall. ⟪gm: a Warden hall; b1.3, q1.door. Say nothing of what is in it.⟫

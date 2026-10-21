@@ -351,3 +351,141 @@ The bell came, up in the tower, slow. It was an odd bell, and Darrow's, and he s
 When the next one came, an hour later, it was Hollis who said them, gruff and low, without missing one. Lying awake, Darrow heard him stop for half a breath before the last line, and then go on.
 
 *What I hold I give.*
+
+### Scene 3 — Nine Down
+
+*Aldric,*
+
+*Yes. I turned. I planted on a stone and turned toward Tobin, and the knee went, and I would turn again.*
+
+*But tell them the order, since you are telling them things. The warmth went out of me first, halfway across, before the mare went down, before the boy, before I turned. I was there. Whoever told you was not.*
+
+*I will not kneel. Not for pride in the leg: because I would be kneeling to that order told backwards.*
+
+*I nearly burned this so that you would come. I want to see you that much. I want to understand what I saw from the river, and I cannot, and you are the only man who can tell me.*
+
+*D.*
+
+He gave it through the bars at the dawn bell, folded once and not sealed. He had no wax, and would not have used it if he had.
+
+Marrant had come up for it alone, in the grey before the fog rose off the springs, and he did not put it in his sleeve. He unfolded it there at the gate and read it in no hurry, with Darrow on the other side of the bars letting him. Aldric had written for two readers. Darrow had done the same, twice, at a brazier that went out before he did, and had not slept after.
+
+Marrant's eyes stopped once, near the middle, and went on.
+
+"There's the candour," he said, and folded it along its crease. "I said I'd thank you for it another day. Thank you." The letter went into his sleeve. "It'll find him. Letters do."
+
+He went back down to his terrace. Darrow went up to the wall-walk, where Wren had Sister Pell's glass on its strap and had been at the parapet since before the bell.
+
+"I'm counting it down," she said, without lowering it. "Your letter. Somebody should. He's given it to one of his at the fire, and that one's taking it down." The glass crept. "Long Reach. They don't hurry, do they. The Elbow." Then it went on, through the band of cloud and out under it, past the Shins and the winch-house, out along the Holloway where the road ran pale through the dead fields, and stopped.
+
+"Riders," she said. "Far down. Twenty, about. I'll say twenty and be wrong by two." She turned the glass a hair. "There's a banner."
+
+"Grey?"
+
+"No." She lowered it and held it out to him, which she never did. "Not grey. That's all I can tell you, and I'm the one who's been holding it."
+
+He found the road, then the dark knot on it, then the scrap above the knot that might have been colour and might have been the wind in his eye. Too far. They were not hurrying either. His letter was not yet at the Shins. Whoever they were, they had set out before it.
+
+He gave her back the glass. "Write it down. Twenty. Not grey."
+
+"Twenty, about." She wrote. "Technically, *about*'s the important word."
+
+---
+
+Maelis came at the hour, and did not sit. She looked at the knee, and then, for once, at his hands, which still had last night's ink on them.
+
+"Up," she said. "Warming room."
+
+It landed like a reprimand. He was too tired to argue with it, which she probably noticed, and went.
+
+The warming room was nine steps down off the cloister, with no rail. He had been down them and up again a dozen times since the snow, a hand to the wall, when nobody was counting. Somebody was counting now. Maelis stood on the top step. Two novices at the fire below turned round to look and did not turn back, and the kitchen girl came to the hatch with a ladle and stayed there with it.
+
+"Hand on the wall," Maelis said. "You go on my count. Not before it."
+
+"I've done these."
+
+"Not on my count. One."
+
+He put the left foot down. Down was the part the knee hated: it had to hold him and lower him at once, and on every step it thought about it. He could feel it thinking. The stone was rough and cold under his palm.
+
+"Two."
+
+She did not hurry him and did not wait for him. Each number came when the last step was finished and not before, and somewhere about five he stopped listening to the knee and listened to her instead, which was easier. At nine his foot was on the warming-room floor and the novices at the fire had stopped pretending to talk.
+
+Maelis came down after him, put two fingers either side of the kneecap there at the foot of the stair with the House watching, and shut her eyes.
+
+"Up," she said.
+
+He went up on her count. At five, with the top in sight and the ladle still at the hatch, he took his hand off the wall. He could do the last four without it. He was nearly sure he could, and he was tired, and tired of being counted like a child on a ladder, and a man who could take four steps without a wall could—
+
+Maelis, a step below him, reached up past his hip, took his wrist, and put his hand back flat on the stone. She held it there under hers while she said "Six," and then let go.
+
+Nobody at the fire laughed. It would have been easier if they had.
+
+"Seven. Eight. Nine."
+
+He stood on the top step with his hand still on the wall, because she had not told him to take it off. She came up beside him and looked at the knee, and then at his face, for longer.
+
+"That's a stair," she said.
+
+It took him a moment. *It straightens. It walks. Neither of those is a stair.* She had said it the morning Wren first saw grey cloaks on the Holloway, with her pipe in her teeth, and he had hated her for it for a week.
+
+"Tell the Prior I'll take you down," Maelis said. "My count. Wren's shoulder. Dusk, when the House is at its supper. It's as dark down there at noon as at midnight, and I'd rather fewer people watched you do it."
+
+He heard it short, the way he had heard everything since the bars: an order, to be got on with. He was halfway along the cloister before he understood what she had said, and that he had not asked her today. He had meant to, and had been too tired to want the answer again. She had given it anyway.
+
+*As dark at noon as at midnight.* She had said it the way she said what a knee would do: not as a guess.
+
+---
+
+Mother Ione was in the chapel with the lamps not yet lit. She heard him come in, and did not turn round until he had got all the way up the aisle.
+
+"You told me to come when the Mender said yes," he said. "She has."
+
+"Has she?" The Prior's hands went into her sleeves. "And at the bottom?"
+
+"I look. Then I come back up it. On this leg, at her count."
+
+"Is it true, Captain? Or only the right thing to say?"
+
+"It's true today."
+
+She looked at him the way she looked into a full room, for whoever was missing from it. Then she nodded, once.
+
+"Would you like it at dusk, then, when the House is at supper?"
+
+"The Mender said the same."
+
+"Did she," said the Prior, and for once it was not a question.
+
+---
+
+At dusk the Prior asked the House whether it would like its supper at the kitchen end of the hall tonight, and it would. The fog had gone back down the mountain in the afternoon, and the last of the light came in white off the Steps and lay along the row. Up the row, Hollis had turned at the Grey Cot to watch, the lad's hand still in his, and he said nothing at all.
+
+At the iron-banded door there were four of them: the Prior, the Mender, Wren with a lamp, and Darrow. The evening's flour lay across the gap under the door, smooth and unmarked.
+
+Mother Ione drew the cord out from the neck of her habit.
+
+"The masons found this stair when they cut the House's footings," she said, to the key as much as to them. "They built on it, not through it. The Prior before me gave me this with the ring and told me to wear it, as she'd been told. She never turned it. Nor did hers."
+
+The key went in. It did not want to turn. She put both hands to it, and it went over with a sound like a knuckle.
+
+"Keys turned," Wren said under her breath. "One."
+
+The door swung out toward them, and its foot swept the flour into a white fan across the flags. Then the cold came up the stair. It did not blow. It rose, the way water comes up into a boot-print on a riverbank, and stood in the doorway at the height of his knee, and the lamp flame leaned away from it.
+
+The stair went down into the dark. Cut stone, older than the House.
+
+Wren went first with the lamp, because that was the arrangement, and because she was on the second step before anyone could say otherwise. He put his hand on her shoulder. It was narrower than he had thought. Behind him Maelis had no lamp.
+
+The cold stood round his knee and did not move off. It was coming from somewhere.
+
+"One," said Maelis.
+
+He put his foot down into it.
+
+> ⟦ THE RECKONING ⟧
+> The Binding: three Knots tied of seven.
+> Art learned: **Groundbreaker** II. *Drive through a line.*
+> Ember: Steady → Bright
+> XP 1,854 → 1,909

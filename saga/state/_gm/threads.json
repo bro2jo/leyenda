@@ -7,15 +7,16 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name",
-      "note": "Darrow has told no one; in Ch 1 Between 2 (revised 10/10) he said aloud to Maelis that the Grace was taken, not lost, and named nobody; she said she does not know whose doing it was",
+      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand (the warmth first, then the mare, the boy, the turn); neither 'ride wide' nor the horse turned early is in it.",
+      "note": "Darrow has told no one; in Ch 1 Between 2 (revised 10/10) he said aloud to Maelis that the Grace was taken, not lost, and named nobody; she said she does not know whose doing it was. 03:s3: his answer to Aldric gives the order and says he wants to understand 'what I saw from the river' (a question to Aldric, not an accusation); Marrant read it at the gate, his eyes stopping once near the middle.",
       "on_page": [
         "00:I",
         "00:III",
         "01:s1",
         "02:s5",
         "02:between-14",
-        "03:s2"
+        "03:s2",
+        "03:s3"
       ]
     },
     {
@@ -94,7 +95,7 @@
       "feeds": "T8",
       "status": "open",
       "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader",
-      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title)",
+      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title). 03:s3 (T8 warm): unasked, she says the dark below is the same at noon as at midnight, 'not as a guess' to Darrow's ear; she goes down behind him without a lamp.",
       "on_page": [
         "01:s1",
         "01:s2",
@@ -102,7 +103,8 @@
         "02:s7",
         "02:climax",
         "02:choice",
-        "03:s1"
+        "03:s1",
+        "03:s3"
       ]
     },
     {
@@ -139,11 +141,12 @@
       "truth": null,
       "feeds": "Darrow's guilt",
       "status": "open",
-      "who_knows": "Darrow; the reader. Rae carted his bundle (GM; not on the page)",
-      "note": "Darrow hasn't said his name",
+      "who_knows": "Darrow; the reader; Marrant (read it) and Aldric (when it reaches him), from Darrow's letter, that he turned toward Tobin. Rae carted his bundle (GM; not on the page).",
+      "note": "Darrow hasn't said his name aloud; he wrote it in his answer to Aldric (03:s3).",
       "on_page": [
         "00:I",
-        "03:s2"
+        "03:s2",
+        "03:s3"
       ]
     },
     {
