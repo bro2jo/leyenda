@@ -630,7 +630,7 @@ They came back up the same way, with the cold on their backs. Up was easier. Goi
 
 "I'm looking at it."
 
-He was. The strokes went by under his palm the other way, and he had the man with his hands up four more times and nothing else. Wren counted. At thirty the light from the hall came down the shaft to meet them, the supper lamps at the kitchen end, and then Hollis's face at the top, red and upside down to him, because Hollis was sitting on the floor with his back to the doorframe and his one foot braced against the linen press. Mother Ione stood behind him with her hands folded.
+He was. The strokes went by under his palm the other way, and he had the man with his hands up four more times and nothing else. Wren counted. At thirty the light from the hall came down the shaft to meet them, the supper lamps at the kitchen end, and then Hollis at the top, red in the face, sitting on the floor with his back to the doorframe and his one foot braced against the linen press. Mother Ione stood behind him with her hands folded.
 
 "Thirty-nine," said Wren at the top step. "Up." She had the ledger out of her scarf before the lamp was down, and wrote two numbers side by side. "Down and up, both columns, same number. Technically that's a clean page."
 
