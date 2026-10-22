@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-18 · overheard · Two lay brothers at the woodpile, stamping the ice off: "Third time today she's sent for more wood." "She's rung bells fifty years. Let her be warm for one of them."
 - 2026-10-18 · body · Evening, and the knee has spent the whole day being ordinary. He has started, without meaning to, to forget which one it is until he stands.
 - 2026-10-18 · ledger · From Wren's ledgers, the bell page: hours rung tonight so far, four. Hours rung by Sister Pell sitting down, four. Times she has told Wren that is none of Wren's business, also four.
 - 2026-10-18 · house · Somebody has taken the lid off the bell tower's wood box and left a cup of something hot on it. Sister Pell has not said who. The cup is empty, and has been put back exactly where it was.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-21 · ledger · Wren's ledger, the hall page, in the morning's pencil: Lamps on the row, counted by the Captain at the dawn bell without being asked: all of them. Right, too. Don't tell him.
 - 2026-10-21 · weather · Dusk comes down the Steps from the top flight to the bottom one landing at a time, and the snow on each goes blue, then grey, before the one below it has noticed.
 - 2026-10-21 · body · His hands are warm tonight all the way to the ends of the fingers, which in this House, this deep into the cold, is a thing worth noticing; he turns them over once by the fire and notices it.
+- 2026-10-22 · saying · Past the late bell someone at the far end of the hall stubs a toe in the dark and says it the soldiers' way, Stone and Crown, half curse and half vow, and three voices shush him at once.
