@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-18 · ledger · From Wren's ledgers, the bell page: hours rung tonight so far, four. Hours rung by Sister Pell sitting down, four. Times she has told Wren that is none of Wren's business, also four.
 - 2026-10-18 · house · Somebody has taken the lid off the bell tower's wood box and left a cup of something hot on it. Sister Pell has not said who. The cup is empty, and has been put back exactly where it was.
 - 2026-10-19 · weather · Fog this morning, up from the springs and down from the cloud at once, so the gate wall stands in it to the knees and the lay brothers on the wall-walk look like men wading.
 - 2026-10-19 · overheard · In the cloister, a novice to another, very low: "The Captain said it out loud last night. The whole oath. I heard it from the far lamp." "You never." "I did. And then Ser Garrow said it at the next bell, and that's the bit nobody believes."
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-21 · body · His hands are warm tonight all the way to the ends of the fingers, which in this House, this deep into the cold, is a thing worth noticing; he turns them over once by the fire and notices it.
 - 2026-10-22 · saying · Past the late bell someone at the far end of the hall stubs a toe in the dark and says it the soldiers' way, Stone and Crown, half curse and half vow, and three voices shush him at once.
 - 2026-10-22 · house · Up in the tower Sister Pell takes three turns of the bell rope round her forearm before the noon bell, as she always does, and lets the novices go on believing the bell is heavier than it is.
+- 2026-10-22 · body · He sits through the whole of the noon bell with the knee stiff under the blanket and does not once tell it what he thinks of it. It seems as surprised as he is.
