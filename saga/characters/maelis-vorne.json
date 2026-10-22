@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "between-4",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#between-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-4"
   },
-  "last_seen_doing": "Waited behind the Captain on the stair without a word while he spoke to Wren, watching the knee, then said the count was still one.",
-  "now": "Behind the Captain on the undercroft stair at dusk, without a lamp; her count still at one.",
+  "last_seen_doing": "Counted him down and up; put the words over the inner door into plain speech and told Wren she would not hear them in the hall; walked the dark of the hall without a lamp; made him look at the frost, and kept him from the far end tonight.",
+  "now": "At the head of the undercroft stair with the others, having brought him up at her count.",
   "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -333,6 +333,30 @@
       "chapter": "03",
       "scene": "3",
       "evidence": "She had said it the way she said what a knee would do. Not as a guess."
+    },
+    {
+      "fact": "She put the words over the inner door into plain speech.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "She said it flat, to the lintel"
+    },
+    {
+      "fact": "She told Wren she will not hear those words in the hall.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "You'll not hear it in the hall."
+    },
+    {
+      "fact": "She walked the undercroft hall in the dark without a lamp.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "She went round a fallen block of stone without looking down at it"
+    },
+    {
+      "fact": "She held him to his word: look, then come up.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "You said you'd look, then come up. You've looked."
     }
   ],
   "relationships": [
@@ -479,6 +503,10 @@
     {
       "chapter": "03",
       "scene": "between-4"
+    },
+    {
+      "chapter": "03",
+      "scene": "4"
     }
   ]
 }

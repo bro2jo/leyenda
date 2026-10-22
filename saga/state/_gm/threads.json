@@ -94,8 +94,8 @@
       "truth": "T8",
       "feeds": "T8",
       "status": "open",
-      "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader",
-      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title). 03:s3 (T8 warm): unasked, she says the dark below is the same at noon as at midnight, 'not as a guess' to Darrow's ear; she goes down behind him without a lamp.",
+      "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader. 03:s4: Darrow saw her walk the undercroft dark without a lamp and put the lintel into plain speech, and noted the unmarked flour and the unturned key",
+      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title). 03:s3 (T8 warm): unasked, she says the dark below is the same at noon as at midnight, 'not as a guess' to Darrow's ear; she goes down behind him without a lamp. 03:s4 (T8 plant): walks the undercroft dark like her own house, stops at a pillar 'the way a woman stops at her own door'; translated the lintel; made him look at the frost; refused the far end tonight",
       "on_page": [
         "01:s1",
         "01:s2",
@@ -104,7 +104,8 @@
         "02:climax",
         "02:choice",
         "03:s1",
-        "03:s3"
+        "03:s3",
+        "03:s4"
       ]
     },
     {
@@ -128,11 +129,12 @@
       "truth": "T6",
       "feeds": "T6",
       "status": "open",
-      "who_knows": "The page has only \"the far cots\"; Wren, Maelis and the Prior know whose (GM); Darrow and the reader do not",
-      "note": "background",
+      "who_knows": "The page has only 'the far cots'; Wren, Maelis and the Prior know whose (GM); Darrow and the reader do not. 03:s4: Darrow and Maelis saw Wren read the old hand over the undercroft's inner door straight off and stop halfway; nobody has asked her how; Hollis and the Prior did not see it",
+      "note": "background. 03:s4 (T6 plant): Wren read 'What is given can be taken' over the inner door and stopped; Maelis finished it and told her not in the hall; Wren read none of the murals for him and shut her ledger on the line for the door",
       "on_page": [
         "00:III",
-        "01:s1"
+        "01:s1",
+        "03:s4"
       ]
     },
     {
@@ -253,12 +255,13 @@
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
       "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes it looks like a chip off a field-stone and kept it out of the hall before the whole House when asked (02:climax, c02.13a kept); the reader. The hall knows only that the Mender found a black glass and will say what it is when she knows. Not Hollis, not Wren",
-      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist",
+      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist. 03:s4: rime furred thick beyond the undercroft pillars, climbing the far wall toward the infirmary hall, 'except that nothing up there was cold'; the source not reached",
       "on_page": [
         "02:between-12",
         "02:s6",
         "02:s7",
-        "02:climax"
+        "02:climax",
+        "03:s4"
       ]
     },
     {
@@ -270,6 +273,18 @@
       "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; nobody at the House; the reader has her tells only (the bow off her box, the camp read by flour, the letter inside her shirt, name-the-load, the cold in her cart, one question a night)",
       "note": "Plants already on the page before this thread was opened, counted by eye (the engine counts from here): 02:s4, 02:interlude, 02:between-10, 02:between-11, 02:climax. Next plants: q1.cart stage 2 (the satchel's weights), b1.4 (the clerk's first climb), b1.5 (the second line). No reveal before Book III.",
       "on_page": []
+    },
+    {
+      "id": 19,
+      "title": "The mural under the House: a knight kneeling at a black stone, the light running up out of him along a thread into the vault, where the standing figures hold theirs over their open hands",
+      "truth": "T7",
+      "feeds": "T7, b1.3 climax (the murals by tier)",
+      "status": "open",
+      "who_knows": "Darrow, Wren and Maelis saw it; the reader. Nobody has said what it means; Maelis knows (T7)",
+      "note": "03:s4 planted: 'The others held theirs. His went up.' Darrow tried the strokes beside the knight's head and got nothing; Wren did not read them.",
+      "on_page": [
+        "03:s4"
+      ]
     }
   ]
 }

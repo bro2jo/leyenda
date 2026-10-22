@@ -57,11 +57,19 @@
       "after": "3",
       "covers": [],
       "written": "2026-10-20"
+    },
+    {
+      "scene": 4,
+      "title": "What Is Given",
+      "covers": [
+        "2026-10-21"
+      ],
+      "written": "2026-10-22"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on the first step of the undercroft stair, behind the iron-banded door at the dark end of the infirmary hall, at dusk",
+    "detail": "at the head of the undercroft stair, back up from the hall under the House, at supper",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -71,7 +79,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "He did not have to turn round to know she had been watching the knee the whole time, and not them. \"Still one,\" she said.",
+  "last_beat": "Wren's pencil had stopped under the two columns, where a line would go for whatever was over the door. Then she shut the ledger on it, tucked it back into her scarf, and went to give the kitchen back its lamp.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -158,5 +166,5 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had."
   },
-  "last_updated": "2026-10-20"
+  "last_updated": "2026-10-22"
 }

@@ -212,10 +212,11 @@
           "fits": "present.mother_ione",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch02:choice",
-            "ch03:s3"
+            "ch03:s3",
+            "ch03:s4"
           ]
         }
       ]
@@ -242,7 +243,7 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 8,
+          "offered": 9,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
@@ -251,7 +252,8 @@
             "ch03:s2",
             "ch03:between-3",
             "ch03:s3",
-            "ch03:between-4"
+            "ch03:between-4",
+            "ch03:s4"
           ]
         }
       ]
@@ -724,10 +726,11 @@
           "fits": "present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch03:between-3",
-            "ch03:s3"
+            "ch03:s3",
+            "ch03:s4"
           ]
         }
       ]
@@ -752,7 +755,8 @@
           "at": "ch03:s4",
           "weight": "color",
           "what": "Wren asked the Captain to come back up the undercroft stair (she will not have him in the book going down and not up), and he told her she can count both, down and up. Honour it where he comes back up: her count of both",
-          "status": "pending"
+          "status": "fired@ch03:s4",
+          "evidence": "Down and up, both columns, same number. Technically that's a clean page."
         },
         {
           "id": "c03.5b",
@@ -763,9 +767,10 @@
           "fits": "present.wren",
           "priority": 1,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch03:between-4"
+            "ch03:between-4",
+            "ch03:s4"
           ]
         }
       ]

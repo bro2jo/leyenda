@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "between-4",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#between-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-4"
   },
-  "last_seen_doing": "Turned on the step below with the lamp, buried the Captain's thanks in counts, went without a number, then said he is the one who wants the count, not what it means; asked him to come back up, and counted it.",
-  "now": "A step below the Captain on the undercroft stair with the lamp held out over the second step. She has asked him to come back up, and keeps a new count: times the Captain has said a decent thing on a stair, one.",
+  "last_seen_doing": "Went first with the lamp and counted the stair down and up; read the first half of the words over the inner door aloud before the Mender could, and stopped; held the lamp at the murals and read none of them; wrote both columns.",
+  "now": "At the head of the undercroft stair at supper, the ledger back in her scarf with both columns in it and nothing written under them; gone to give the kitchen back its lamp.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -357,6 +357,30 @@
       "chapter": "03",
       "scene": "between-4",
       "evidence": "Times the Captain has said a decent thing on a stair: one. There's room under it."
+    },
+    {
+      "fact": "She read the first half of the words over the undercroft's inner door aloud, straight off, and stopped.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "She read it straight off, her lips going along it in the right order."
+    },
+    {
+      "fact": "She counted the undercroft stair the same down and up, and called it a clean page.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "Down and up, both columns, same number. Technically that's a clean page."
+    },
+    {
+      "fact": "She held the lamp for the Captain at the painted wall and did not read the strokes there.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "Wren held the lamp for him the whole time and did not read it"
+    },
+    {
+      "fact": "She wrote nothing in her ledger for what was over the door.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "Then she shut the ledger on it"
     }
   ],
   "relationships": [
@@ -509,6 +533,10 @@
     {
       "chapter": "03",
       "scene": "between-4"
+    },
+    {
+      "chapter": "03",
+      "scene": "4"
     }
   ]
 }

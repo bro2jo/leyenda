@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "3",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-3"
+    "anchor": "chronicle/03-the-undercroft.html#scene-4"
   },
-  "last_seen_doing": "Turned at the Grey Cot to watch the undercroft door open at dusk, the lad's hand in his, and called nothing down the hall.",
-  "now": "At the Grey Cot with the lad's hand in his; he watched the undercroft door open and said nothing.",
+  "last_seen_doing": "Had himself carried from the Grey Cot to the head of the undercroft stair, and told the Captain down it to look at the wall and not the floor.",
+  "now": "Sitting on the floor at the head of the undercroft stair, his back to the doorframe and his one foot against the linen press.",
   "story_so_far": "At Harrow Ford he brought the writ that sent the Sixth and the Ninth into the river, and came back from it missing his right leg above the knee; he has had the cot next to Darrow's at Saint Ysolde's since, with his name second on the Confessor's list. When the lad of his Sixth, Ser Benedek Orrin, was found Hollowed on the feast morning, Hollis would not let him be carried to the far cots, and has sat beside the Grey Cot with the lad's hand in his ever since. He watched a letter in blue wax burn and left the hall for the first time; in the cloister he asked the Captain whether the kind lies he told the lad had sent him wherever he has gone, and asked him to sit up a while. When the House heard that the lad stopped saying his oath between the third bell and the fourth, Hollis shut his eyes, and when Wren offered to go down the undercroft stair he told the Captain not to send that girl down a hole.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -372,6 +372,12 @@
       "chapter": "03",
       "scene": "between-3",
       "evidence": "\"Aye,\" he said. \"Maybe.\""
+    },
+    {
+      "fact": "He told the Captain on the stair to look at the wall, not the floor.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "Look at the bloody wall."
     }
   ],
   "relationships": [
@@ -562,6 +568,10 @@
     {
       "chapter": "03",
       "scene": "3"
+    },
+    {
+      "chapter": "03",
+      "scene": "4"
     }
   ]
 }

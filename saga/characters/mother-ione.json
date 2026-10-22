@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "3",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-3"
+    "anchor": "chronicle/03-the-undercroft.html#scene-4"
   },
-  "last_seen_doing": "Heard the Captain's answer in the chapel and asked whether it was true or only right; set it for dusk; at dusk had the House sup at the kitchen end, told how the masons found the stair, and turned the key that no Prior before her had turned.",
-  "now": "At the open undercroft door at dusk, the key in the lock.",
+  "last_seen_doing": "Waited at the head of the undercroft stair and asked only whether the Captain came up on it.",
+  "now": "At the head of the undercroft stair at supper. She has asked nothing of what he saw.",
   "story_so_far": "The Prior of Saint Ysolde's, who holds the House's law and its bell. When the grey cloaks came she kept the Confessor at the wicket as long as the law of guests allowed and gave him the law of names; at night she says the names of everyone under her roof in the chapel. When the Confessor came back to the bars to ask for the Mender, she answered him with a question. When the cold led to the undercroft door, whose key has passed from Prior to Prior unturned, she neither forbade nor permitted it; she called the House into the hall after the night bell and let the Captain tell it, and she wears an old key on a cord at her neck, to be asked for when he can say what he would do at the bottom.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -237,6 +237,12 @@
       "chapter": "03",
       "scene": "3",
       "evidence": "She put both hands to it, and it went over with a sound like a knuckle."
+    },
+    {
+      "fact": "She will hear what he saw below when he knows what it was.",
+      "chapter": "03",
+      "scene": "4",
+      "evidence": "You'll tell me what you saw when you know what it was."
     }
   ],
   "relationships": [
@@ -312,6 +318,10 @@
     {
       "chapter": "03",
       "scene": "3"
+    },
+    {
+      "chapter": "03",
+      "scene": "4"
     }
   ]
 }
