@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 1984,
+  "xp": 2009,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -24,7 +24,7 @@
       "raw": 10,
       "cap": 14,
       "mod": 0,
-      "temper": 10,
+      "temper": 11,
       "next_at": 18,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 12,
       "mod": 0,
-      "temper": 27,
+      "temper": 29,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -236,7 +236,7 @@
       "tree": "Sport",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 4,
+      "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
@@ -269,7 +269,7 @@
       "tree": "Sport",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 4,
+      "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover."
@@ -278,10 +278,10 @@
       "id": "far_cast",
       "name": "The Far Cast",
       "tree": "Sport",
-      "rank": 0,
+      "rank": 1,
       "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": null,
       "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be."
     },
@@ -326,7 +326,7 @@
   "chapter_now": {
     "week_start": "2026-10-18",
     "through": "2026-10-22",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 3
   },
   "fell": {
