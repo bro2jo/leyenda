@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 6,
   "rank": "Kindled",
-  "xp": 2009,
+  "xp": 2048,
   "xp_this_level": 1500,
   "xp_next_level": 2100,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 39,
+      "temper": 41,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -24,7 +24,7 @@
       "raw": 10,
       "cap": 14,
       "mod": 0,
-      "temper": 11,
+      "temper": 13,
       "next_at": 18,
       "fell": 15,
       "banked": false
@@ -71,7 +71,7 @@
       "tree": "Blade",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 4,
+      "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
@@ -115,7 +115,7 @@
       "tree": "Breath",
       "rank": 1,
       "banked_rank": 0,
-      "practice": 4,
+      "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
