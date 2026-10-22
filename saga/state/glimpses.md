@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-19 · weather · Fog this morning, up from the springs and down from the cloud at once, so the gate wall stands in it to the knees and the lay brothers on the wall-walk look like men wading.
 - 2026-10-19 · overheard · In the cloister, a novice to another, very low: "The Captain said it out loud last night. The whole oath. I heard it from the far lamp." "You never." "I did. And then Ser Garrow said it at the next bell, and that's the bit nobody believes."
 - 2026-10-19 · body · The knee woke before he did and was quiet about it. He has stopped asking it how it slept. It has stopped saying.
 - 2026-10-19 · house · Hollis has found a broom handle somewhere and is using it to point at things from his cot: the brazier, the door, a novice who has forgotten something. Nobody has yet worked out what he means to do with it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-22 · house · Up in the tower Sister Pell takes three turns of the bell rope round her forearm before the noon bell, as she always does, and lets the novices go on believing the bell is heavier than it is.
 - 2026-10-22 · body · He sits through the whole of the noon bell with the knee stiff under the blanket and does not once tell it what he thinks of it. It seems as surprised as he is.
 - 2026-10-22 · weather · The wind comes across the Steps from the west all afternoon, steady, and he catches himself reading it the way you read a long field: where a thing would carry, and where it would drop.
+- 2026-10-22 · overheard · In the kitchen someone is arguing that snow falls slower on the Steps than in the valley, and someone else says it only looks slower because there's further to fall, and neither of them will be told.
