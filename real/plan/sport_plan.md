@@ -1,6 +1,6 @@
 # Sport Plan — Ultimate (handler) · offseason Oct 2026 → late spring 2027
 
-*The operating layer for the sport: skills, the progression by rehab phase, weekly placement, logging, reviews. The content of the skill work is the guide, `ultimate_offseason_guide.md` (kept as written). This file decides when each part of it is allowed. Set up Fri 2026-10-09 (POD 46, Phase 3); the phase gates were set by him the same day: seated or standing throwing at easy effort now, pivoting from Phase 4, Phases 5–6 by the logic in §3.*
+*The operating layer for the sport: skills, the progression by rehab phase, weekly placement, logging, reviews. The content of the skill work is the guide, `ultimate_offseason_guide.md` (kept as written). This file decides when each part of it is allowed. Set up Fri 2026-10-09 (POD 46, Phase 3); the phase gates were set by him the same day: seated or standing throwing at easy effort now, pivoting from Phase 4, Phases 5–6 by the logic in §3. Revised Thu 10/22 (`/ingest`): Phase 4's footwork follows the Add-On §3 (Cody 10/15: slight pivots within reason; the step-out, throwing on the move and marking wait for the PT's OK per drill), and throwing sits on days without a knee session (§5).*
 
 **Source priority:** latest PT/surgeon instruction → rehab master plan → recovery state and Working Rules → Whole-Athlete Add-On → **this file** → the guide → logs. Nothing here moves a written left-knee item of the rehab plan; when a phase and the guide's calendar disagree, the phase wins (the guide's own Rule 7: "Whenever movement and ACL recovery conflict, rehab clearance wins"). The add-on's §10 "standing throws" are the off-season program's med-ball power throws, a different element; disc throwing is set here.
 
@@ -16,9 +16,9 @@ Read a section: `python3 engine/darrow.py doc sport <number or words>`; the guid
 
 | Rehab phase (Knot that opens it) | Earliest by the calendar | Opens for the sport |
 |---|---|---|
-| 3 (now; Knot II tied) | — | seated or square-stance standing throwing at easy effort; film |
-| 4 (Knot III) | Tue 10/20 | **the throwing pivot and step-out**, planned, walking tempo; game-range long throws; defense Level 2a |
-| 5 (Knot IV) | Tue 11/17 | max-intent long throws; game-tempo pivots and shimmies; throwing after a straight-line walk or jog |
+| 3 (Knot II) | — | seated or square-stance standing throwing at easy effort; film |
+| 4 (Knot III) | Tue 10/20 | **slight pivots on the planted left foot, within reason** (Cody 10/15); game-range long throws from the planted stance; defense Level 2a. The step-out waits for the PT's OK |
+| 5 (Knot IV) | Tue 11/17 | max-intent long throws; game-tempo pivots and shimmies; the step-out and throwing after a straight-line walk or jog, each with the PT's OK |
 | 6 (Knot V) | ~Thu 12/24 (month 4) | throwing after planned decelerations and cuts; defense Level 2b (planned shuffles and patterns) |
 | 7 (Knot VI) | ~Wed 2/24/2027 (month 6) | live marks, reactive work, give-go, hard pivots at game speed; defense Level 3 |
 | 8 (Knot VII) | ~Mon 5/24/2027 (month 9) | team practice, small-sided play, then competition; defense Level 4 |
@@ -29,9 +29,9 @@ The graft's weakest window runs through ~Mon 11/16. A quiet knee is not evidence
 
 | id | Covers (guide priority) | First allowed |
 |---|---|---|
-| `control` | speed, spin, height, edge, shape, distance, arrival angle; the three-speed ladder; same target, different arrival (1) | Phase 3 (now) |
-| `breaks` | inside and around releases, high/low releases, quick release; the pivot and step-out from Phase 4 (2) | Phase 3 (release shapes) |
-| `deception` | upper-body fakes (shoulder, head, arm), rhythm and release-height changes; pivot fakes and shimmies from Phase 4; against a live mark from Phase 7 (2) | Phase 3 (upper body) |
+| `control` | speed, spin, height, edge, shape, distance, arrival angle; the three-speed ladder; same target, different arrival (1) | Phase 3 |
+| `breaks` | inside and around releases, high/low releases, quick release; with a slight pivot from Phase 4, the step-out with the PT's OK (2) | Phase 3 (release shapes) |
+| `deception` | upper-body fakes (shoulder, head, arm), rhythm and release-height changes; slow pivot fakes from Phase 4, shimmies with the feet from Phase 5; against a live mark from Phase 7 (2) | Phase 3 (upper body) |
 | `overheads` | scoober and hammer, dominant and off-hand (3) | Phase 3 |
 | `hucks` | long throws: BH and FH, IO / flat / OI, three gears (controlled, game range, stretch) (4) | Phase 3 (controlled gear, square stance) |
 | `defense_iq` | film and study: stance, leverage, hips, first steps, force, upline and breakside positioning (5, Level 1) | Phase 3 |
@@ -45,23 +45,25 @@ The graft's weakest window runs through ~Mon 11/16. A quiet knee is not evidence
 2. **One variable at a time, in the master plan's own order:** step width → tempo → direction (one side, then the other, then alternating) → force (effort) → movement before the throw → unpredictability (planned → chosen → cued → reactive). It is the shape of the plan's lateral-agility and cutting progressions ("planned → faster → greater angle → greater force → multiple possible directions → reactive").
 3. **Each new variable is a batch item.** It is judged by the next morning (the Working Rules' clean morning); a morning that isn't clean reverses it. The Working Rules' one-change-per-exercise rule applies to the pivot work as to any exercise.
 4. **Mechanics end the set before effort does** (Working Rules, load rule 5). The pivot turns on the ball of the left foot with the heel light, the knee tracking over the toes, the hips turning with the foot. Stop the set at: the knee drifting inside the foot, a flat foot grinding into the floor, a wobbling step-out, front-of-knee or joint-line pain above 2 (load rule 4).
-5. **Pivots are knee load and ride the loaded days;** the days between stay pivot-free (§5).
+5. **Throwing runs on days without a knee session** (Add-On §3), slight pivots included. With the feet planted it is not a knee variable; with pivots, a morning after a throwing day that isn't clean, with no knee session before it, sends the next session back to planted feet (§5).
 6. **Effort is the last dial.** Max-intent rotation waits for Phase 5, where the add-on also puts power throws.
 7. **Footing.** Dry, flat ground. No ice, frost, mud or wet leaves. No high-grip rubber gym floors for pivots: the sole grabs and the turn goes into the knee. On grass, turf shoes rather than long cleats while pivots are new. Cold days: a longer warm-up before the first fast throw.
 8. **Criteria over calendar.** A phase's throwing opens when its Knot ties, not on its date.
 
-### Phase 3 — now (Knot II)
+### Phase 3 (Knot II)
 
 - **Allowed:** seated (left foot resting, not braced) or **standing with both feet planted**: square stance, weight even, no pivot, no step-out. **Easy effort** (RPE ≤5–6; "fast" in the three-speed ladder means crisp, not maximal).
 - **What that covers:** FH and BH control and three speeds; inside and around release shapes and angles; high and low releases; quick release from a compact set; scoober and hammer with both hands; upper-body fakes (shoulder, head, arm, rhythm, release height); long throws at controlled range from the square stance (outdoors); film (defense Level 1). Walking to collect discs is fine.
 - **Not yet:** pivots, step-outs, shimmies with the feet, game- or stretch-range long throws, throwing after movement.
 
-### Phase 4 — the pivot (Knot III; earliest Tue 10/20)
+### Phase 4 — slight pivots (Knot III; tied Tue 10/20)
 
-- **Opens:** the throwing pivot on the left foot and the step-out, planned, at walking tempo, against the net or an imaginary mark; game-range long throws (≤~80% effort) with a step and pivot; defense Level 2a.
-- **First bout:** ~20–30 pivot throws, **one direction** (whichever feels easier), a short step (about shoulder width), walking tempo.
-- **Ladder, one rung per bout after a clean morning:** the other direction → a wider step (full stance) → +10 throws → both directions in a set order → slow planned shimmies (weight shifts on the pivot) → game-range long throws with a step and pivot.
-- **Dose:** two pivot bouts a week, on knee-session days (§5); up to ~60 pivot throws a bout by the end of Phase 4. Square-stance throwing continues on the other days as in Phase 3.
+- **Opens** (Add-On §3; Cody 10/15, "pivots are okay within reason"): standing throws with the feet planted, and **slight pivots on the planted foot** (the left, the graft side) on any throwing day; game-range long throws (≤~80% effort) from the planted stance; defense Level 2a.
+- **Not yet, each with the PT's OK for that drill** (State §5, the next-visit list): step-out throws (a lunge with rotation on the pivot foot), throwing on the move, marking or defending, catching on the run, jumping catches, layouts. Max-intent throws wait for Phase 5.
+- **Volume:** change one dial a week, throw count or intensity (crisp or full-power throws), not both (the guide's Rule 7).
+- **The knee:** feet planted, throwing is not a knee variable. With pivots: if a morning after a throwing day isn't clean and no knee session preceded it, the next session goes back to planted feet.
+- **The pivot foot:** record which foot each pivot session turned on, in the row's `drill` (§9). For a right-handed thrower the conventional pivot is the left foot, the surgical knee, so slight pivots load the graft side in rotation; whether that matters is on the PT list (§11).
+- **Mechanics** (logic 4): the ball of the left foot, the heel light, the knee over the toes, the hips turning with the foot; stop at the knee drifting in, a flat foot grinding into the floor, or pain above 2.
 - **Defense Level 2a:** stance, mark positioning, approaching a thrower at walking pace, planned small steps; mirroring only a known pattern.
 - **Still out:** max-intent throws, game-tempo shimmies, throwing after jogging or running, any reaction.
 
@@ -69,10 +71,10 @@ The graft's weakest window runs through ~Mon 11/16. A quiet knee is not evidence
 
 - **Max-intent long throws** (stretch range): up to 8–10 a session, after a full warm-up and some game-range throws, on dry ground; one such session a week to start, then two.
 - **Game-tempo pivots and shimmies,** both directions, planned sequences (fake → opposite release at speed); quick release off the pivot.
-- **Throwing after movement, only what the running progression has already cleared:** walk or jog in a straight line to a spot, slow to a stop over 3–4 steps, set the pivot, throw. No hard plants, no cuts.
+- **Throwing after movement, only what the running progression has already cleared and the PT has OK'd** (Add-On §8: throwing on the move is a PT-cleared drill): walk or jog in a straight line to a spot, slow to a stop over 3–4 steps, set the pivot, throw. No hard plants, no cuts.
 - **Moving receivers** when a partner is there (they move; he doesn't need to).
 - **Defense:** Level 2a with a straight-line jog approach and a gradual stop.
-- **Dose:** up to three pivot bouts a week, still on loaded days (knee or running days).
+- **Dose:** three throwing sessions a week, on days without a knee session (§5).
 - **Still out:** cuts, hard stops, lateral shuffles at speed, any reaction.
 
 ### Phase 6 — power, plyometrics, sprinting, agility (Knot V; earliest ~12/24)
@@ -93,17 +95,17 @@ The master plan's return-to-competition progression: non-contact team practice �
 
 ## 4. Drills by phase
 
-| Guide work | Phase 3 (now) | Phase 4 | Phase 5 | Phase 6+ |
+| Guide work | Phase 3 | Phase 4 | Phase 5 | Phase 6+ |
 |---|---|---|---|---|
 | Warm-up (5–8 min easy throwing) | seated or square | + a few slow pivots | + jog | normal |
 | Three-speed ladder, FH and BH | square; "fast" = crisp | + off the pivot | full speed | after movement |
 | Same target, different arrival | yes | yes | yes | yes |
-| Inside / around breaks | release shape only, no step | with the pivot and step-out, planned | game tempo | after planned movement; live mark at Phase 7 |
-| High / low releases | yes | + from the step-out | yes | yes |
+| Inside / around breaks | release shape only, no step | with a slight pivot, planned; the step-out with the PT's OK | game tempo | after planned movement; live mark at Phase 7 |
+| High / low releases | yes | yes (from the step-out only with the PT's OK) | yes | yes |
 | Quick release, compact setups | yes | yes | off the pivot | after movement |
-| Fakes | upper body | + pivot fakes, slow shimmies | game-tempo shimmies | planned two-option sequences |
+| Fakes | upper body | + slow pivot fakes (shimmies with the feet: Phase 5) | game-tempo shimmies | planned two-option sequences |
 | Scoober, hammer (both hands) | yes, several distances | yes | yes | yes |
-| Long throws: controlled gear | square stance | with a step and pivot | yes | yes |
+| Long throws: controlled gear | square stance | planted, or a slight pivot | yes | yes |
 | Long throws: game range (70–85%) | — | yes | yes | yes |
 | Long throws: stretch range (max intent) | — | — | yes (≤8–10 a session) | yes |
 | Long-throw consistency test (Weeks 8, 12) | controlled range, square | game range | game range | game range |
@@ -116,12 +118,12 @@ The master plan's return-to-competition progression: non-contact team practice �
 ## 5. The week
 
 - **Three skill sessions, 90–110 min in all, plus 10–15 min of film** (guide §1).
-- **Phase 3 (now):** Wed Session A (control + breaks), Fri Session B (deception + overheads), Sat Session C (long throws). Any day works; the point is three. Not knee load: like an add-on session, fine next to anything, never instead of the daily minimum.
-- **From Phase 4, pivots are knee load and share the knee-session days** (Sun and Tue/Wed): a pivot bout of 15–25 min runs as its own bout, before the knee session or at least 2–3 hours after it, never straight after the main lifts when the quad is tired. The other days stay pivot-free (square-stance control, overheads, upper-body fakes, net work). In practice the pivot parts of Sessions A and B move to the knee days and the rest of the throwing stays where it was. From Phase 5 the same rule covers running days.
+- **Phase 3:** Wed Session A (control + breaks), Fri Session B (deception + overheads), Sat Session C (long throws). Any day works; the point is three. Not knee load: like an add-on session, fine next to anything, never instead of the daily minimum.
+- **From Phase 4 (Thu 10/22), throwing runs on days without a knee session** (Add-On §3): never on a knee day, a home session or a PT visit (a knee session that lands on a throwing day moves the throwing, not the knee session); on an upper day, after the bike and before lifting; on Saturday, after the bike and before power & mobility. Slight pivots ride those sessions; there are no separate pivot bouts. From Phase 5 the running days are loaded days too, and the same rule covers them.
 - **Minimum-viable week:** 2 × 20 min throwing + 1 × 25 min long throws. That is enough.
 - **Missed sessions are not repaid** and never doubled (guide Rule 1; Working Rules load rule 10). High rehab or training load → less skill volume (Rule 3). Stop while you still want a few more throws (Rule 2). One primary purpose per session (Rule 4).
 - **The Ohio winter:** the net on bad days; long-throw work bunched into the dry, calm days outdoors (a skipped outdoor day is not repaid either). Wind goes in `notes` on long-throw rows.
-- The weekly template (`real/config.json`) carries `sport` on Wed, Fri and Sat from the week of 10/11. When Phase 4 opens, the template stays (three sessions); where the pivot bouts sit is this section's rule.
+- The weekly template (`real/config.json`) carries `sport` on Wed, Thu and Sat from the week of 10/18 (Wed, Fri and Sat for the week of 10/11, before PT settled on Friday). Three sessions stay the plan; which days they fall on is this section's rule, so a knee session on Wednesday makes that week's throwing days Thu and Sat, plus any other day without knee work.
 
 ## 6. Solo first: the net, the field, a partner
 
@@ -136,14 +138,14 @@ Weeks run Sun–Sat. Each week's content is in the guide (`doc sportguide "week 
 | Wk | Dates | Guide focus | Earliest phase | How it runs |
 |---|---|---|---|---|
 | 1 | 10/11–10/17 | Baseline | 3 | seated or square: comfortable FH/BH, three speeds, compact inside/around releases, dominant scoober; controlled-range long throws outdoors; note what feels different. Film: starting position |
-| 2 | 10/18–10/24 | Speed control | 3 → 4 from 10/20 if Knot III ties | the guide's 70–85% long throws wait for Phase 4; first pivot bout on a knee day once it opens |
-| 3 | 10/25–10/31 | Inside breaks | 3/4 | inside release shapes; with the pivot and a short step once Phase 4 opens (one direction first) |
-| 4 | 11/1–11/7 | Around breaks · **month check** | 3/4 | around shapes; the second pivot direction is its own rung; dominant hammer begins |
+| 2 | 10/18–10/24 | Speed control | 4 from 10/20 (Knot III) | game-range long throws from the planted stance; slight pivots from the first Phase 4 session (Thu 10/22) |
+| 3 | 10/25–10/31 | Inside breaks | 4 | inside release shapes, planted or with a slight pivot; the step-out waits for the PT |
+| 4 | 11/1–11/7 | Around breaks · **month check** | 4 | around shapes, the same footwork; dominant hammer begins |
 | 5 | 11/8–11/14 | Same throw, different arrival | 4 | touch work suits any phase |
-| 6 | 11/15–11/21 | Deception | 4 → 5 from 11/17 | slow pivot fakes and shimmies in Phase 4; game tempo only from Phase 5. The graft window ends ~11/16 |
+| 6 | 11/15–11/21 | Deception | 4 → 5 from 11/17 | upper-body and slow pivot fakes in Phase 4; shimmies with the feet and game tempo from Phase 5. The graft window ends ~11/16 |
 | 7 | 11/22–11/28 | Off-hand scoober | any | begin close |
 | 8 | 11/29–12/5 | Long-throw consistency · **month check** | 4/5 | the test at game range, outdoors on a dry day (controlled range from the square if still Phase 3) |
-| 9 | 12/6–12/12 | Quick release | any | compact setups; off the pivot from Phase 4 |
+| 9 | 12/6–12/12 | Quick release | any | compact setups; off a slight pivot in Phase 4 |
 | 10 | 12/13–12/19 | Off-hand hammer | any | start conservatively |
 | 11 | 12/20–12/26 | Combinations | 5 → 6 from ~12/24 | combinations of planned pieces; after movement only as far as the running and deceleration progressions reach |
 | 12 | 12/27–1/2 | Test + consolidate · **12-week review** | — | repeat the Week 8 test; overheads rated weapon / usable / developmental |
@@ -164,8 +166,8 @@ Weeks run Sun–Sat. Each week's content is in the guide (`doc sportguide "week 
 
 - **session:** `A`, `B`, `C`, `film`, `test`, `review`.
 - **skill:** one of the seven ids in §2 (`darrow.py check` flags anything else). A session that works two skills is two rows.
-- **drill:** what was done, with the stance and place: `seated`, `square`, `pivot FH side` / `pivot BH side` / `pivot both`, `after jog`; `net` or `field`; the hand for overheads ("off-hand scoober, net, square").
-- **reps:** pivot throws are counted as reps on pivot rows (the Phase 4 dose).
+- **drill:** what was done, with the stance and place: `seated`, `planted` (square stance), `slight pivot, left foot` (the foot the pivot turned on is named on every pivot row: the Working Rules' throwing check-in asks for it), `after jog`; `net` or `field`; the hand for overheads ("off-hand scoober, net, planted").
+- **reps:** pivot throws are counted as reps on pivot rows (the week's count dial).
 - **metric / value** (only when measured; the guide says look for patterns, not percentages):
   - `on_target` · "7/10" (a speed, shape or release on a net zone or field target)
   - long-throw test (Weeks 8, 12): `usable`, `lane`, `shape` · "x/10", one row per side
@@ -180,13 +182,13 @@ Weeks run Sun–Sat. Each week's content is in the guide (`doc sportguide "week 
 
 - **Weekly:** the guide's weekly question, answered in `notes` of that week's last session; the checkpoint's Sport section summarises sessions vs plan, the phase, and any new rung of the pivot ladder.
 - **Monthly** (end of Weeks 4, 8, 12, then every four weeks): the 1–5 ratings as `review` rows, and the guide's seven review questions answered in that week's checkpoint (`real/checkpoints/<Sunday>.md` → Sport), including "what does my rehab now allow that it did not last month?" against §3.
-- **Video** occasionally (guide Rule 8), especially the first pivot bouts from the side and front (the knee over the toes, the heel light): note the date in `notes`.
+- **Video** occasionally (guide Rule 8), especially the first pivot sessions from the side and front (the knee over the toes, the heel light): note the date in `notes`.
 
 ## 11. The PT
 
-He set the throwing phases himself (10/9); Nick's 10/9 instruction leaves progression to the master plan, and nothing here changes a written rehab item. For awareness at the next visit, one line: "I'm throwing seated and square-stance at easy effort; pivots on the left from Phase 4, max-intent throws from Phase 5." Worth asking:
+He set the throwing phases himself (10/9); Nick's 10/9 instruction leaves progression to the master plan, and nothing here changes a written rehab item. Cody (10/15): pivots are okay within reason, applied to slight pivots on the planted foot; the step-out, throwing on the move and marking wait for the PT's OK per drill (Add-On §3). For the next visit (State §5):
 
-1. Pivoting on the left (the graft side) from Phase 4: anything he wants watched? (Here: the ball of the foot, the heel light, the knee over the toes.)
+1. Are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee. Here: the ball of the foot, the heel light, the knee over the toes.)
 2. Max-intent long throws from Phase 5: any reason to wait?
 
 ## 12. Still to confirm

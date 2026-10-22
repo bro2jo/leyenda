@@ -485,3 +485,15 @@ Reading: isometric quad peak on a torque monitor (dynamometer), two rounds a sid
 What it changes: the last measured criterion of the Phase 3 → 4 gate is met. The gate's own wording (`config.json → rehab.knot_gates` 3) also wants good single-leg control and **the PT's agreement**; single-leg control is "probably met" (the State), with a watched step-down still open. So Phase 4 waits on the PT saying so, not on a number. Open: did the PT say anything about moving on; hamstrings; a watched step-down; who treated.
 
 After his account (10/17, later the same evening, patient-reported): **step-downs were watched and passed.** **Copenhagen is okay on both sides** (the left-leg version was a Phase 6 item awaiting the PT's OK in the Add-On; that OK is given). **Hamstrings were not tested**; he says they feel about the same side to side. Reading: every criterion of the Phase 3 → 4 checklist is now met with evidence (ROM measured 10/8; gait, Nick 10/8; effusion trace on every graded morning; quad LSI 90.4% measured; single-leg control watched and passed), and Nick's 10/9 instruction stands (progression follows the master plan, no PT approval needed). Phase 4's earliest date by the plan's calendar is Tue 10/20: **Knot III ties that day.** Still open: hamstrings, both sides · who treated.
+
+## 2026-10-22 (POD 59) — Clarifications of the 10/15 and 10/17 visits, relayed through the dashboard's Recovery State (no visit)
+
+Patient-reported, by way of the dashboard project's Recovery State of Sun 10/18 as he revised it on Wed 10/21 and brought here on Thu 10/22 (`/ingest`). Nothing new was said by the PT; these are his readings of what was said, and they carry PT priority as patient-reported instructions.
+
+### Patient's account
+
+- **10/17 (Visit 11):** **Nick Immel ran the quad test** (the torque-monitor numbers are his). "Copenhagen on both sides OK" is read as the **short-lever** version done that day; the long lever (foot on the bench) isn't covered and stays a Phase 6 item.
+- **10/15 (Visit 10, Cody):** the knee extension ran through **full range, both legs up, left alone down, at the clinic's 10 lb**; how far the range and the load can go at home is to be reconfirmed at the next visit. "Pivots are okay within reason" is applied to **slight pivots on the planted foot** in disc throwing; step-out throws, throwing on the move and marking wait until the PT clears the specific drill.
+- The last three treating visits were Thursdays (10/1, 10/8, 10/15); the next one is asked for Friday 10/23, so that it isn't back-to-back with Wednesday's Session A.
+
+Reading: closes "who treated 10/17" (Nick). Still open: who treated 10/1 (Cody or a covering PTA). What it changes: nothing in the gate or the program beyond what the State of 10/18 (revised 10/21) already carries: the home knee extension holds at 40 lb on the left until the PT answers (State §5, next-visit item 2), and throwing keeps to planted feet or slight pivots.

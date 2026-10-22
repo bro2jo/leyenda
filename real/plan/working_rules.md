@@ -5,6 +5,10 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`); throwing follows the Add-On §3 (days without a knee session; slight pivots within reason; the step-out with the PT's OK) and is logged in `sport_log.csv` (the pivot foot named in the row's `drill`)
+- 10/21: once the photo passes, the daily minimum is the morning check alone; check-ins: the off day no longer asks about the heel prop, the upper check-in drops the leg-up question, the throwing check-in adds the pivot foot
+- 10/18: check-in set covers Phases 3–4; Sunday weigh-in in the morning; the weekly heel prop joins the Sunday checks; the bike-interval gate points to the Add-On
+- 10/15: disc throwing is an add-on session; a throwing check-in
 - 10/12 (repo): moved into this repo; the dashboard's thread workflow and kickoff prompt replaced by the repo's checkpoint and logs; the log columns are `daily_log.csv`'s; throwing named (program structure, priority)
 - 10/12: mid-week checkpoint on request; pre-session pain ≤2 (was ≤1–2, now matches the clean-morning rule); knee-session check-in adds single-leg control and the cooldown; exercise-log `block` defined; the bike intervals after Phase 3 credited to the Add-On (the rehab plan sets none); the graft-window date points to the State
 - 10/10: audit cleanup (current facts moved to the Recovery State; index added; posture plan dropped; log columns added)
@@ -44,7 +48,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   - partial sessions below the minimum
   - conditioning rides
   - add-on sessions
-- **Add-on session:** upper core, the accessory day, Saturday power & mobility, arms-only conditioning (Whole-Athlete Add-On). **Not a knee variable.**
+- **Add-on session:** upper core, the accessory day, Saturday power & mobility, arms-only conditioning, disc throwing (Whole-Athlete Add-On; the sport plan for throwing's content). **Not a knee variable,** except that throwing pivots load the planted knee (Add-On §3).
 - **Time on feet:** hours standing or walking, gym minutes on feet included. It counts as load and is logged. It is not a reason to skip a knee session unless a morning shows it.
 - **Batch:** everything changed in one session: sets, reps, load, range, height, speed, support, a new exercise, or a PT item done at home for the first time. Judged together by the next morning and reversed together if that morning is not clean.
 - **In-plan / out-of-plan:**
@@ -52,7 +56,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   - Progressions of plan exercises along the plan's own variables (load, reps, sets, range, speed, holds) are in-plan.
   - **Out-of-plan** = modalities or exercises the plan doesn't contain. These go to the PT first.
   - **Later-phase items** stay behind the plan's criteria (load rule 9).
-- **Daily minimum:** the morning check plus one weighted heel prop a day, at the dose in the Recovery State §6. It runs until the side-view photo shows the left as straight as the right; then it becomes a weekly check.
+- **Daily minimum:** the morning check plus one weighted heel prop a day, at the dose in the Recovery State §6, until the side-view photo shows the left as straight as the right. After that the heel prop is a weekly check, and the daily minimum is the morning check alone.
 - **Minimum session:** the version of each session marked in the Recovery State §6. Below it, the day is partial, not loaded.
 - **Week:** Sunday through Saturday, identified by its Sunday date (`dash_week_start`).
 - **Post-op week:** counted from surgery (Mon 2026-08-24). Week n = POD 7n−6 to 7n, Tuesday → Monday (`postop_week`). Example: POD 43 = 6 weeks + 1 day = the first day of post-op week 7.
@@ -115,14 +119,14 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
 **Daily minimum and checks:**
 - Daily: see Definitions.
-- **Weekly (Sunday):** SLR lag (one rep) · flexion (one heel slide vs the right) · extension photo · body mass.
+- **Weekly (Sunday morning):** SLR lag (one rep) · flexion (one heel slide vs the right) · extension photo · body mass · the heel prop, once it has become weekly.
 - **Optional extras:** Game Ready after big sessions · step hamstring stretch · TKE in the warm-up.
 - **Not part of the program:** NMES, quad sets, heel slides, SLR, and patellar glides. The plan uses them for poor activation and early ROM, both resolved before Phase 3. They return only if a red-light morning brings back an extension or activation problem.
 
 **Conditioning** (plan Phase 3: low impact, 3–5 days a week, 15–30 min):
 - Bike, easy, legs only, on off days.
 - Build minutes first: +3 min per ride toward 30. The bike intervals that follow come from the off-season plan, not the rehab plan; their stages and gate are in the Add-On §5.
-- Not a loaded day. The knee-session warm-up bike stays ≤8 min. Hard intervals stay arms-only until Phase 4.
+- Not a loaded day. The knee-session warm-up bike stays ≤8 min. Hard intervals stay arms-only until the bike-interval gate in the Add-On §5.
 
 **Other structure rules:**
 - **PT items replace plan equivalents rather than stacking.** The current mapping is in the Recovery State §6.
@@ -130,7 +134,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 - **Depth rule:** a squat pattern goes no deeper than the deepest pattern that has already produced a clean morning, one step at a time.
 - **The plan's exercises are tools; the gates are the program.** Being handed a later-phase exercise doesn't change the phase. The response-based gates hold a phase open, not the calendar.
 - **Right leg** mirrors the left's single-leg strength work inside the knee sessions, so the right-side strength reference doesn't drift down and flatter the symmetry number.
-- **Throwing** (disc skills) runs on its own plan, `sport_plan.md`: three sessions a week (Wed, Fri, Sat by default) plus film. In Phase 3 it is seated or square-stance at easy effort: not a loaded day and not knee load. The left-foot pivot opens with Phase 4 and rides the knee-session days. It never replaces the daily minimum.
+- **Throwing** (disc skills) runs on its own plan, `sport_plan.md`: three sessions a week plus film, on **days without a knee session** (Add-On §3; on an upper day after the bike and before lifting). It is an add-on session, not a loaded day. The knee's part is the footwork: feet planted or slight pivots on the planted foot (Cody 10/15, "within reason"); step-out throws, throwing on the move and marking wait for the PT's OK per drill. The pivot foot is logged every session. It never replaces the morning check.
 
 ## Gait
 
@@ -158,13 +162,14 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 - **Extension → PT** before the next session if the left looks visibly bent next to the right, or a hard block appears at the end of the stretch.
 - **Back-of-knee tightness** that becomes calf pain or calf swelling → surgical team.
 
-## Check-in question set (Phase 3)
+## Check-in question set (Phases 3–4)
 
 - **Morning:** **swelling grade** (none / trace / 1+ — ask for the grade, not a trend) and vs yesterday · extension side by side · pain · stiffness · catch present / absent · wellness 1–5 · planned hours on feet.
 - **After a knee session:** which session (A or B) · doses, including anything changed on the fly · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
-- **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · leg up between sets? · anything about the setup the knee noticed.
-- **Off day:** heel prop done? (ask directly) · bike minutes and distance.
-- **Weekly (Sunday):** body mass, same time · extension photo · SLR lag (one rep) · flexion vs the right.
+- **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · anything about the setup the knee noticed.
+- **After a throwing session:** throws by type · stance (feet planted / slight pivots) · **pivot foot** · minutes and session RPE · anything the knee, elbow or shoulder noticed.
+- **Off day:** bike minutes and distance · rest, or what the accessory day included.
+- **Weekly (Sunday morning):** body mass · extension photo (with the heel prop once it's weekly) · SLR lag (one rep) · flexion vs the right.
 - **Every PT visit:** any numbers taken (goniometer, dynamometer, 1RM) · anything said verbally · who treated.
 
 ## Weekly checkpoint (every Sunday)
@@ -224,6 +229,9 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 - Single-leg work done on both legs gets one row per side (`L`, then `R`); `bil` is only for movements where both legs work together. Right-leg mirrored sets are their own rows with side `R`.
 - Add-on accessories are one "as written" row unless something changed.
 - A planned item that didn't happen may be a row whose `notes` start `NOT DONE`: a record, never a deed.
+
+**sport_log.csv** — one row per skill worked in a throwing or film session (the sport plan §9): `date, session, skill, drill, sets, reps, minutes, rpe, metric, value, notes`.
+- `drill` carries what was done with the stance and the place, and on pivot rows the foot the pivot turned on (`slight pivot, left foot`); pivot throws are counted as reps on pivot rows.
 
 **measurements.csv** — one row per measured number and side: `date` (ISO, or `pre-op`), `source` (PT, surgeon, clinic, self), `metric` (one of `config.json → measurement_metrics`), `side` (`L` / `R`), `value`, `unit`, `method` (goniometer, dynamometer, 1RM…), `visit` (its `pt_notes.md` entry, `YYYY-MM-DD_PTn`), `notes`. The engine computes LSI.
 

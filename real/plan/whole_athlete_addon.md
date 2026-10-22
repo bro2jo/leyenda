@@ -8,12 +8,17 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 - 10/9: upper on its own days, alternating A/B; Nick 10/9
 - 10/10: off-season mapping, tissue and trunk finisher, design-only cleanup (no separate prehab/posture plan); posture work for forward head, rounded shoulders, and anterior pelvic tilt built into the upper warm-up and a knee-session cooldown (§3)
 - 10/12: the doorway pec sequence (contract-relax) replaces the 30 s doorway stretch and moves ahead of the face pull; Upper B's row is chest-supported until upper session 3 (rule 3); Phase 4 bike intervals build from 3 × 4 to 4 × 4 min, as in off-season Phase 1
-- 10/12, later (programming review): Upper B's reverse fly → prone incline Y-raise (the face pull already covers the rear delts; lower traps had nothing on a week without the accessory day); 60–90 s rest before the DB press inside the tri-set; the DB press's fallback is a flat neutral-grip DB press, not a second incline; from Block 1, with speed bench, the incline drops to 2 sets; a day with throwing and upper both throws first (§2)
+- 10/12, later (programming review): Upper B's reverse fly → prone incline Y-raise (the face pull already covers the rear delts; lower traps had nothing on a week without the accessory day); 60–90 s rest before the DB press inside the tri-set; the DB press's fallback is a flat neutral-grip DB press, not a second incline; from Block 1, with speed bench, the incline drops to 2 sets; a day with throwing and upper both throws first (§2; replaced 10/21)
+- 10/15: §6's knee-extension limit points to the range the plan or the PT has introduced, not only the plan's Phase 3 range
+- 10/15 (evening): disc throwing added (§2 placement, §3 limits, §6, §8); the A/B/C sessions themselves come from outside the project
+- 10/18: the finisher's Copenhagen runs on both sides at short lever (Nick 10/17); the long lever on the left stays Phase 6
+- 10/21 (knee and upper reviews): rules 1, 2, 5 and 10 (morning check first, with no penalty on optional items; leg up between sets optional; carries in with Phase 4; the Copenhagen stays when the finisher is cut) · the remaining off day is rest by default · time budgets match the real sessions · the Copenhagen carries the adductor work and gets a hold ladder · the bird dog leaves the posture coverage · the accessory day drops its duplicate Y-raise, runs the Pallof standing and swaps the seated DB hold for a suitcase carry · Saturday drops the arms-only aerobic and runs the Pallof standing · throwing records the pivot foot · the right-leg list matches the Phase 4 sessions, and the left's caps don't apply to it · carries leave §6
+- 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`). On a day with throwing and upper both, the order is now the bike, then throwing, then lifting (§2), in place of the 10/12 throw-first order. Throwing's content (skills, sessions, the weeks) stays in the sport plan; §3 sets only what the knee allows and where throwing sits
 
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
 
-**Sport:** a combination of ultimate, court, and field sports. All three of the off-season plan's sport settings apply when it returns (section 8). Disc throwing runs now on its own plan, `sport_plan.md` (what each rehab phase allows; Phase 3: seated or square-stance at easy effort, no pivot); it never changes a left-knee item.
+**Sport:** a combination of ultimate, court, and field sports. All three of the off-season plan's sport settings apply when it returns (section 8). Disc throwing runs now on its own plan, `sport_plan.md` (its skills, sessions and weeks); section 3 here sets what the knee allows and where it sits in the week, and never changes a left-knee item.
 
 **Equipment:** Recovery State §1.
 
@@ -21,13 +26,13 @@ This file never changes a left-knee item. Anything here that touches the left kn
 
 ## 1. Operating rules
 
-1. **Daily minimum first.** The morning check and the heel prop are done every day before any add-on work. A week with a missed daily-minimum day costs the following week its optional items (accessory day, Saturday session).
-2. **Left leg up between upper sets.** Heel on a bench, knee unsupported, quad relaxed. Rest periods are extra heel-prop minutes.
+1. **Morning check first.** The morning check (the Working Rules' daily minimum) comes before any add-on work. The heel prop has been weekly since 10/18. A missed morning check doesn't cost the optional items.
+2. **Left leg up between upper sets: optional.** Heel on a bench, knee unsupported, quad relaxed. It was extra heel-prop time while extension was the priority; extension was restored on 10/18.
 3. **Seated or lying for the first two upper sessions.**
    - From the third session: pull-ups with a box (step on and off with hands on the bar; a drop is a landing), half-kneeling with the right knee down, standing landmine press, standing Pallof.
    - No kneeling of any kind on the left, which is the harvest site. On the chest-supported row, feet stay on the floor.
 4. **Upper sessions alternate A → B, at least 2 days apart.** A missed one isn't made up the next day; the next one runs on its normal day.
-5. **Gym minutes on feet are logged.** Loaded carries wait for Phase 4 (section 8).
+5. **Gym minutes on feet are logged.** Loaded carries come in with Phase 4 (section 8): the suitcase carry on the accessory day. Its first exposure is judged by the next morning, like a knee change.
 6. **Upper body is not a knee variable.** If a morning after a knee day isn't clean, reverse the knee batch first. Check the upper setup (leg hanging, walking around) before cutting any lifting.
 7. **Upper body and the right leg progress on their own criteria** (section 4). A heavier bench is not a knee variable.
 8. **Bad mornings:**
@@ -35,7 +40,7 @@ This file never changes a left-knee item. Anything here that touches the left kn
    - **Plan red light** (new swelling, extension loss, giving way): contact the PT first. Seated upper work is still available after that.
    - **Post-op red flags** (fever, calf pain or swelling, chest pain, shortness of breath, wound changes): no training of any kind; call the surgical team.
 9. **Three weeks up, one down** on upper volume. Deload = sets −30–40%, loads held.
-10. **Short on time — cut in this order:** the finisher → the C pair → the whole upper core → the accessory day. Never the daily minimum, never the knee session's minimum.
+10. **Short on time — cut in this order:** the finisher, except the Copenhagen (the week's only adductor work, about 2 minutes) → the C pair → the whole upper core → the accessory day. Never the morning check, never the knee session's minimum.
 
 ---
 
@@ -45,12 +50,11 @@ This file never changes a left-knee item. Anything here that touches the left kn
 |---|---|
 | Mon | Bike → upper core (next in the A/B rotation) → finisher |
 | Thu | Bike → upper core → finisher |
-| Any other off day | Optional accessory day |
+| The remaining off day | Rest by default: it's the week's only day without knee or upper work. The optional accessory day can go here |
 | Sat | Bike · power & mobility once unlocked (section 4) |
+| Any day without a knee session | Disc throwing (section 3). On upper days: after the bike, before lifting |
 
-The knee rhythm is in the Working Rules. An upper day is ~30 minutes plus the bike.
-
-**A day with throwing and upper both** (a PT visit moving an upper day onto a throwing day): throw first, then the bike, the upper core and the finisher. Skill before fatigue, and the shoulder throws fresh.
+The knee rhythm is in the Working Rules. An upper day runs about 45 minutes (warm-up ~5, core ~30–35, finisher ~8) plus the bike and any throwing, so 90–95 minutes in all; Block 1 adds about 10.
 
 ---
 
@@ -75,7 +79,7 @@ The knee rhythm is in the Working Rules. An upper day is ~30 minutes plus the bi
 3. **Face pull with external rotation**, 2 × 15, light. Cable with a rope at forehead height (or a band); pull to the face and rotate the hands back. Seated for the first two upper sessions. Replaces the band pull-apart.
 4. Arms-only air bike 1–2 min if cooled down.
 
-### Upper A core — ~20–25 min
+### Upper A core — ~30–35 min
 
 | Block | Exercise | Block 0 dose | Notes |
 |---|---|---|---|
@@ -85,27 +89,27 @@ The knee rhythm is in the Working Rules. An upper day is ~30 minutes plus the bi
 | C1 | Landmine press, bar end in a corner | 3 × 8/side | Seated for the first two sessions, then standing. Ribs down |
 | C2 | Chest-supported DB row on an incline bench | 3 × 10 | Full stretch, pause, no shrug. Feet on the floor, no kneeling on the seat |
 
-### Upper B core — ~20–25 min
+### Upper B core — ~30–35 min
 
 | Block | Exercise | Block 0 dose | Notes |
 |---|---|---|---|
 | A | Speed bench | — | From Block 1: 5 × 3 @ 45–55%, stop when the bar slows |
 | B1 | Incline DB or barbell press, or barbell floor press | 3 × 8–10 | No DB kick-ups off the left thigh. **From Block 1, 2 × 8–10**: speed bench comes first, and three full presses would outgrow the session's pulling |
 | B2 | Chin-grip cable pulldown, seated | 3 × 8–10 | Alternate sets with B1 |
-| C | Tri-set × 3: one-arm DB row 8/side · seated neutral-grip DB press 6–8 · prone incline Y-raise 10–12 (~5 lb) | 3 rounds | Row: hand on the bench, both feet on the floor, no left knee on the bench. **In upper sessions 1–2 it's a standing hinge, so a chest-supported DB row (8–10) replaces it** (rule 3). **Rest 60–90 s before the DB press**: it is the lowest-rep, most technical lift of the day. DB press: only if both arms reach overhead without the ribs flaring or the low back arching; otherwise a **flat neutral-grip DB press** (a second incline would repeat B1). Y-raise: chest on the incline bench, feet on the floor, thumbs up, arms in a Y; lower traps, which the face pull doesn't reach |
+| C | Tri-set × 3: one-arm DB row 8/side → **rest 60–90 s** → seated neutral-grip DB press 6–8 → prone incline Y-raise 10–12, ~5 lb | 3 rounds | **Row:** hand on the bench, both feet on the floor, no left knee on the bench. In upper sessions 1–2 it's a standing hinge, so a chest-supported DB row (8–10) replaces it (rule 3). **DB press:** the most technical lift of the day, so it gets the rest. Only if both arms reach overhead without the ribs flaring or the low back arching; otherwise a **flat neutral-grip DB press** (no kick-ups off the left thigh). **Y-raise:** chest on the incline bench, feet on the floor, thumbs up, arms out in a Y; lower traps doing the work, no shrug. Same bench setup as the chest-supported row |
 
-Accessory volume stays pull-biased; heavy push and pull sets stay matched. The rear delts get the face pull every upper day; Upper B's accessory slot goes to the lower traps instead of repeating it.
+Accessory volume stays pull-biased; heavy push and pull sets stay matched.
 
-### Tissue & trunk finisher — end of every upper day, ~5 min
+### Tissue & trunk finisher — end of every upper day, ~8 min
 
-From the off-season plan's tissue block and anti-rotation work. None of it loads the left knee.
+From the off-season plan's tissue block and anti-rotation work. Only the left-side Copenhagen involves the left knee (PT-cleared at short lever).
 
 | Item | Dose | Notes |
 |---|---|---|
 | Seated tibialis raise | 2 × 15, both ankles | Ankle only |
 | Banded eversion (peroneals) | 2 × 15, both ankles | Ankle only |
 | Side plank from the feet | 2 × 20–30 s/side | Knees straight. Never from the knees on the left side |
-| Right-leg Copenhagen, short lever | 2 × 20 s | Right knee on the bench, left forearm down, left leg hanging free. Off-season threshold later: ≥45 s hold |
+| Copenhagen, short lever, both sides | 2 × 20 s/side → +5 s per hold after a clean morning, to 3 × 30 s | Top knee on the bench, bottom leg hanging free; the top leg's adductors hold you up. The left side cleared by Nick 10/17 at short lever; the long lever (foot on the bench) waits. **The week's only adductor work** since 10/21 (Session B's hip work is abduction only), so it stays when the rest of the finisher is cut (rule 10). Off-season threshold later: ≥45 s hold |
 
 ### Posture work — forward head, rounded shoulders, anterior pelvic tilt
 
@@ -114,8 +118,8 @@ No separate plan. Most of the work is already in the program; the gaps are fille
 | Issue | Already covered by | Added |
 |---|---|---|
 | **Forward head** | Thoracic extension (upper warm-up) | **Chin nod → deep neck flexor hold** (knee-session cooldown) · chin tucked on rows, pulldowns, bench, RDL |
-| **Rounded shoulders** | Rows, pulldowns, prone Y-raise (Upper B); pull-biased accessory volume; thoracic extension; accessory day (Y-raise, lower-trap raise, serratus punch) | **Doorway pec sequence** and **face pull with external rotation** in every upper warm-up |
-| **Anterior pelvic tilt** | SL bridge, RDL, hamstring curl (Session B) · bird dog · side plank (finisher) | **90/90 hip lift**, **dead bug**, and a **supine hip flexor stretch** (knee-session cooldown) · ribs down and glutes on in bridges, landmine press, split squats; finish each bridge in a slight posterior tilt |
+| **Rounded shoulders** | Rows, pulldowns; prone incline Y-raise in Upper B (lower traps); pull-biased accessory volume; thoracic extension; accessory day (lower-trap raise, serratus punch) | **Doorway pec sequence** and **face pull with external rotation** in every upper warm-up |
+| **Anterior pelvic tilt** | SL bridge, RDL (Session B) · hamstring curl (Sessions A and B) · side plank (finisher) | **90/90 hip lift**, **dead bug**, and a **supine hip flexor stretch** (knee-session cooldown) · ribs down and glutes on in bridges, landmine press, split squats; finish each bridge in a slight posterior tilt |
 
 #### Posture cooldown — end of every knee session, ~6 min, lying down
 
@@ -128,35 +132,48 @@ No separate plan. Most of the work is already in the program; the gaps are fille
 
 On a minimum-session day, do the 90/90 hip lift and the chin nods (~3 min).
 
-### Accessory day — optional, ~25 min, seated or lying (any off day)
+### Disc throwing — ultimate
 
-- Prone incline Y-raise 3 × 12 (5 lb is plenty)
-- Lower-trap raise, prone on incline, 3 × 12/side
+From the off-season plan's ultimate dial: disc throwing on low days, with weekly volume built gradually because the forehand loads the elbow and wrist. The skills, the sessions and each week's content are the sport plan (`sport_plan.md`) and the guide it runs on; this section sets only what the knee allows and where throwing sits in the week.
+
+- **Placement:** days without a knee session. On upper days, after the bike and before lifting.
+- **Footwork, for now** (rehab Phases 3–4; graft weakest through roughly week 12):
+  - Allowed: standing throws with the feet planted; slight pivots on the planted foot (Cody 10/15: "pivots are okay within reason").
+  - Not yet: step-out throws (a lunge with rotation on the pivot foot), throwing on the move, marking or defending, catching on the run, jumping catches, layouts. Each needs the PT's OK for that drill.
+- **Volume:** change one dial per week, throw count or intensity (crisp or full-power throws), not both. Same idea as the off-season plan's rule 7.
+- **The knee:** feet planted, it's not a knee variable. With pivots: if a morning after a throwing day isn't clean and no knee session preceded it, go back to planted feet.
+- **Pivot foot:** for a right-handed thrower the conventional pivot is the left foot, the surgical knee, so slight pivots load the reconstructed knee in rotation. Record which foot it is every session (in the sport log's `drill`); whether it matters is a PT question (Recovery State §5).
+- **Log:** throws by type, stance (planted / slight pivots), pivot foot, minutes, session RPE: `sport_log.csv` (sport plan §9).
+
+### Accessory day — optional, ~25 min (the remaining off day; rest by default)
+
+- Lower-trap raise, prone on incline, 3 × 12/side (5 lb is plenty). Upper B already has the bilateral Y-raise
 - Serratus punch 3 × 12/side
-- Seated Pallof press 3 × 8/side × 3 s
-- Heavy seated DB hold 3 × 20–30 s
+- Pallof press, standing (or half-kneeling, right knee down), 3 × 8/side × 3 s
+- Suitcase carry, one DB, 3 × 20–30 s per side: upright, no lean, normal gait; the first set finds the load. Its first exposure is judged by the next morning (rule 5)
 - Arms: DB curl 3 × 10–12, cable or band triceps 3 × 12–15, lateral raise 3 × 15
 - Optional arms-only intervals: 8 × 10 s hard / 50 s easy. Stop when two in a row land ~10% under your best.
 
 ### Right leg — mirrors inside the knee sessions
 
-There are no leg machines at home, so the right leg does the left's single-leg strength items at its own dose: SL sit-to-stand (no assist), step-up, split squat, SL bridge, cable hamstring curl, cable knee extension, calf raise. That keeps the right-side strength reference honest.
+There are no leg machines at home, so the right leg does the left's single-leg strength items at its own dose: SL sit-to-stand (no assist), step-up, RFESS and lateral lunge, SL bridge, cable hamstring curl, cable knee extension, calf raise. Control drills (step-down, heel tap) are left only. That keeps the right-side strength reference honest.
 
-Progress it like the healthy leg it is. The only brake is gait: if right-leg soreness changes how you walk, drop a set.
+Progress it like the healthy leg it is. Caps on the left (a load held for the PT, say) don't apply to the right. The only brake is gait: if right-leg soreness changes how you walk, drop a set.
 
 With gym access: SL leg press R 3 × 8 @ RPE 7 · leg curl machine R 3 × 10.
 
-### Saturday — power & mobility (once unlocked, section 4) · ~45 min including the bike
+### Saturday — power & mobility (once unlocked, section 4) · ~45 min including the bike, plus any throwing
 
 | Order | Item | Dose | Notes |
 |---|---|---|---|
 | 1 | Bike | On the conditioning ladder | Goes first |
 | 2 | Seated rotational technique throw, 1–2 kg | 3 × 5/side, ~70% intent | Only with the PT's OK (not in the rehab plan). Sideways on a bench, pelvis still, left foot resting, not braced |
-| 3 | Seated Pallof press | 3 × 8/side × 3 s | |
-| 4 | Arms-only aerobic | 15–20 min conversational | |
-| 5 | Open book | 6–8/side | Pillow between the knees |
-| 6 | Hip flexor, supine at a table edge | 45 s/side | Left: let the leg hang; no quad stretch on the harvest side |
-| 7 | Seated wall slide with lift-off | 2 × 6–8 | |
+| 3 | Pallof press, standing (or half-kneeling, right knee down) | 3 × 8/side × 3 s | |
+| 4 | Open book | 6–8/side | Pillow between the knees |
+| 5 | Hip flexor, supine at a table edge | 45 s/side | Left: let the leg hang; no quad stretch on the harvest side |
+| 6 | Seated wall slide with lift-off | 2 × 6–8 | |
+
+On a throwing Saturday, throwing goes after the bike. The arms-only aerobic block (15–20 min) came out on 10/21: it was the aerobic work while the leg bike was short, and the 30-minute bike now covers it.
 
 ---
 
@@ -193,14 +210,15 @@ Follows the off-season plan's upper sequence (its Phases 1–4). Calendar dates 
 
 ## 6. Out for now
 
-- Carries, push press, standing landmine rotation (Phase 4–6, section 8)
+- Push press and standing landmine rotation (section 8). Carries came in with Phase 4 (rule 5)
 - Kneeling on the left, tall-kneeling, push-ups from the knees
 - Pull-up drops or jumps down
 - Rower: deep flexion under a hard leg drive
 - Any jump, hop, run, sled, or sprint
-- Left knee extension beyond the plan's Phase 3 range (90° → 45°). Range and load progress gradually in Phase 4 ("if the donor site tolerates")
+- Disc throwing beyond the section 3 limits: step-out throws, throwing on the move, marking (PT OK per drill)
+- Left knee extension beyond the range and load the plan or the PT has introduced (current: Recovery State §5–6). Range and load progress gradually ("if the donor site tolerates")
 - BFR, Spanish squat, seated rotational throws: not in the rehab plan (section 7)
-- Nordics (Phase 6)
+- Nordics; the long-lever Copenhagen on the left (Phase 6)
 - Any out-of-plan left-knee addition without the PT
 
 ---
@@ -230,7 +248,7 @@ The off-season plan assumes a healthy athlete. Every week it trains max-speed sp
 | Rehab phase | Approx. timing | Off-season content it unlocks |
 |---|---|---|
 | 3 (weeks 6–8) | — | Phase 1 upper (one push, two pulls, one landmine/overhead, 3 × 8–10) = Upper A/B Block 0 · Zone 2 aerobic → the bike ladder · tissue block minus the knee items · seated anti-rotation |
-| 4 (weeks 9–12) | From 10/20, after the quad test | Phase 1 Lower A/B strength: squat or trap bar at 65–75% with slow lowering, rear-foot-elevated split squat, lateral lunge, RDL · carries · 3–4 × 4 min on the bike · seated calf. **Not** Nordics or Copenhagens on the left |
+| 4 (weeks 9–12) | From 10/20, after the quad test | Phase 1 Lower A/B strength: squat or trap bar at 65–75% with slow lowering, rear-foot-elevated split squat, lateral lunge, RDL · carries · 3–4 × 4 min on the bike · seated calf. **Not** Nordics; Copenhagens on the left at short lever only (Nick 10/17) |
 | 5 (weeks 13–16+) | ~late Nov | Conditioning moves to running: walk-jog, then extensive tempo |
 | 6 (months 4–6) | ~late Dec–Feb | Phases 1–2 speed, plyo and cutting: landing → extensive plyos, sprint stages A–C (≤85–90%), deceleration levels 1–5, planned cuts · Nordics · left-leg Copenhagens · standing throws |
 | 7 (months 6–9) | ~late Feb–May | Phases 3–4: intensive and reactive plyos, reactive agility, max-velocity sprinting, contrast lifting |
@@ -259,7 +277,9 @@ The off-season plan assumes a healthy athlete. Every week it trains max-speed sp
 | Upper A/B | Now (own days) | — |
 | Anti-rotation | Now seated; standing from upper session 3 | Crutch-free, normal gait |
 | Pull-ups · half-kneeling with the right knee down · standing presses | Upper session 3 | Phase 2 exit |
-| Tibialis, peroneals, side plank, right-leg Copenhagen | Now (finisher) | — |
+| Tibialis, peroneals, side plank, short-lever Copenhagen (both sides) | Now (finisher) | Left side: Nick 10/17 |
+| Disc throwing, stationary (feet planted or slight pivots) | Now (section 3) | Cody 10/15: pivots within reason |
+| Step-out throws · throwing on the move · marking | When the PT clears the drill | PT OK; pivoting throws at speed are Phase 7 |
 | Left calf loading (seated) | Phase 4 | Phase 4 entry |
 | Spanish squat | Via section 7 | PT |
 | Lower A/B lifts | Phases 3–5, at the rehab plan's doses | Quad LSI ≥70% to enter Phase 4 |
@@ -268,7 +288,7 @@ The off-season plan assumes a healthy athlete. Every week it trains max-speed sp
 | Landing → extensive plyos | Late Phase 4 prep → Phase 6 | Quad >80%, then ≥85% with hop ≥85%; plan: "when appropriately cleared" |
 | Braking mechanics (cutting stage 1) | Phase 6 deceleration levels 1–5 | Running tolerated |
 | Sprinting to 85–90% | Phase 6 stages A–C | Run progression complete, effusion ≤ trace |
-| Nordics · left-leg Copenhagens | Phase 6 | Kneeling tolerance on the harvest site; pad it; PT OK |
+| Nordics · long-lever Copenhagen on the left | Phase 6 | Kneeling tolerance on the harvest site; pad it; PT OK |
 | Planned → reactive cuts · intensive and reactive plyos · pivoting throws | Phase 7 | Quad ≥90%, hop ≥90%, no apprehension |
 | Max-velocity sprinting (≥95%) | Phase 7–8 | The rehab plan sets no gate — get one from the PT. Minimum: stage C clean plus the hard-cutting gate |
 | Game speed, game simulation | Phase 8 | Return-to-sport battery |

@@ -2,6 +2,15 @@
 
 How the Ledger's files came to be laid out, newest first. The current map is `README.md`. A rule's own history is the "Revision history" at the top of `plan/working_rules.md` and `plan/whole_athlete_addon.md`; a week's is its `checkpoints/<Sunday>.md`.
 
+## 2026-10-22 · the dashboard's 10/15–10/21 revisions folded in
+
+The dashboard project kept running beside the repo for ten days, and on 10/21 he re-issued its Working Rules and Add-On and revised its Recovery State of 10/18 in place (two reviews: the knee sessions, then the upper and add-on work). All three were ingested here (`/ingest`).
+1. **Working Rules and Add-On:** the rule and design changes went into the repo's adapted copies (the file names, `/checkpoint`, the repo's log columns and the sport-plan pointer stay); each file's revision history carries the 10/15, 10/18 and 10/21 lines and a 10/22 (repo) line. Two repo-only items: the Add-On's "from Block 1 the incline drops to 2 sets" was kept (the re-issue doesn't contradict it); its 10/12 "throw first" order gave way to the re-issue's bike → throwing → lifting.
+2. **State:** revised in place under 10/18 ("revised Wed 10/21"); §2, §4 and §8 stay pointers. The 10/21 Session A loads are its baselines, confirmed by Thursday's clean morning.
+3. **Throwing:** where the uploads and the repo's sport plan disagreed, the State and the Add-On won (source priority): throwing on days without a knee session, slight pivots on any throwing day, no pivot bouts on knee days, the step-out and throwing on the move only with the PT's OK per drill; the pivot foot is named in each pivot row's `drill` (no new column). `config.json`: the sport days are Wed, Thu and Sat; the optional items' penalty is gone (`optional_from`: accessory 10/21, power 10/24); `sport.stage` reworded.
+4. **PT notes:** a patient-reported clarification entry (Nick ran the 10/17 test; the Copenhagen OK is short-lever; Cody's knee-extension range and load).
+5. **Left as the repo logged it:** Fri 10/16's heel prop (missed here, done in the dashboard's week table); 10/20–10/21's morning grades (trace here, "not reported" there).
+
 ## 2026-10-12 · one naming scheme
 
 Every file and folder in `real/` renamed to lowercase snake_case with no `ACL_` prefix; current files keep a stable name, dates only on archives and one-event files (`README.md` → "Naming rules"). Older checkpoints, commit messages and git history use the old names:
