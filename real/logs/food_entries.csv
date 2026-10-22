@@ -103,3 +103,13 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-20#7,2026-10-20,,dinner,Gluten-free BBQ chicken and bacon pizza,"whole medium (assumed ~12 in, 8 slices)",1700,80,190,68,6,26,35,3600,900,1000,5,,,,0.5,,estimate,"GF crust, BBQ sauce, mozzarella, chicken, bacon; size assumed"
 2026-10-21#2,2026-10-21,,breakfast,GoGo SqueeZ Apple Banana pouch,1 pouch (3.2 oz),60,0,15,0,1,0,11,0,130,5,0.2,6,0,2,0,0,estimate,typical label values; label not seen
 2026-10-21#3,2026-10-21,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his usual; corrected from an unknown crunchy bar
+2026-10-21#4,2026-10-21,,breakfast,Crunchy peanut butter energy ball,1 ball (assumed ~30 g),130,3,15,7,2,1.5,8,40,110,15,0.8,30,0.6,0,0,30,estimate,same estimate as 10/19; brand and label not seen
+2026-10-21#5,2026-10-21,,breakfast,"Baked From the Heart healthy donut, chocolate (black bean)",1 donut (~75 g),200,6,26,9,5,6,12,200,300,40,2,50,1,0,0.2,20,library,library row (ingredient estimate)
+2026-10-21#6,2026-10-21,,breakfast,Coffee,"1 cup, assumed black",5,0.3,0,0,,,,5,115,,,7,,,,,estimate,assumed black; milk or creamer not mentioned
+2026-10-21#7,2026-10-21,,lunch,Chick-fil-A Chocolate Milkshake,1 shake,600,12,93,22,1,14,90,350,700,400,1.5,50,1.5,1,1.5,50,library,library row
+2026-10-21#8,2026-10-21,,lunch,"Chick-fil-A Grilled Nuggets, 12 ct",12 nuggets (142 g),200,38,2,4.5,0,1,1,660,450,15,0.8,45,1.5,0,0.2,40,library,library row
+2026-10-21#9,2026-10-21,,lunch,"Chick-fil-A Waffle Potato Fries, medium",1 medium order,420,5,45,24,5,4,1,240,840,15,1.3,50,0.6,7,0,1260,estimate,"official CFA menu 420 kcal, 24 g fat, 45 g carbs, 5 g protein; sodium 240 per third-party; micros scaled from the large"
+2026-10-21#10,2026-10-21,,lunch,"Chick-fil-A Sauce, dipping packet",1 packet (assumed),140,0,6,13,0,2,6,170,10,5,0,1,0,0,0,900,library,library row; one packet assumed
+2026-10-21#11,2026-10-21,,dinner,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,library row
+2026-10-21#12,2026-10-21,,dinner,"Chick-fil-A Sauce, dipping packet",1 packet (assumed),140,0,6,13,0,2,6,170,10,5,0,1,0,0,0,900,library,library row; one packet assumed
+2026-10-21#13,2026-10-21,,snack,"Smoothie King Peanut Power Plus Strawberry, 32 oz",1 smoothie (32 oz),960,27,130,36,8,7,95,400,1400,300,3,160,3,90,0,50,estimate,"official 20 oz (600 kcal, 17 g P) scaled to 32 oz; listings run 840-1060 kcal; fat from FatSecret; micros estimated"
