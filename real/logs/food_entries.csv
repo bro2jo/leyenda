@@ -112,4 +112,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-21#10,2026-10-21,,lunch,"Chick-fil-A Sauce, dipping packet",1 packet (assumed),140,0,6,13,0,2,6,170,10,5,0,1,0,0,0,900,library,library row; one packet assumed
 2026-10-21#11,2026-10-21,,dinner,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,library row
 2026-10-21#12,2026-10-21,,dinner,"Chick-fil-A Sauce, dipping packet",1 packet (assumed),140,0,6,13,0,2,6,170,10,5,0,1,0,0,0,900,library,library row; one packet assumed
-2026-10-21#13,2026-10-21,,snack,"Smoothie King Peanut Power Plus Strawberry, 32 oz",1 smoothie (32 oz),960,27,130,36,8,7,95,400,1400,300,3,160,3,90,0,50,estimate,"official 20 oz (600 kcal, 17 g P) scaled to 32 oz; listings run 840-1060 kcal; fat from FatSecret; micros estimated"
+2026-10-21#13,2026-10-21,,snack,"Smoothie King Peanut Power Plus Strawberry, 32 oz","1 smoothie (32 fl oz), standard recipe",900,26,129,36,18,8,89,500,1400,300,3,160,3,90,0,50,label,"Smoothie King published 32 oz table (2024), sent by him 10/21; potassium and other micros estimated"
