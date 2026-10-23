@@ -261,6 +261,17 @@
       "add": [],
       "source": "whole_athlete_addon.md section 3 (re-issued 10/21): throwing never on a knee-session day; the Recovery State of Sun 10/18, revised 10/21, section 6: 'throwing skipped (knee day)'",
       "why": "Session A moved Tue -> Wed (his call, Tue 10/20), so Wednesday became a knee day and its throwing dropped; Thu and Sat carry the week's throwing"
+    },
+    {
+      "date": "2026-10-23",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his message, Fri 10/23: no PT visit this week (none was booked); Session B run in the PT slot at the vacation gym",
+      "why": "the week keeps three loaded days (Working Rules: three a week, A -> B -> A regardless of day, a day between each): Wed A -> Fri B -> Sun A; the first Phase 4 B moves from Sunday to Friday, Sunday takes Session A"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",

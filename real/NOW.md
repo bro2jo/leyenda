@@ -10,14 +10,14 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 - **Daily minimum (every day):** the morning check (swelling **grade**, extension side by side, pain, stiffness, catch, **wellness 1–5**) + creatine. **The heel prop is a weekly check** (Sundays, 10 lb × 10 min, then the photo, SLR lag, flexion and the weigh-in); back to daily if a morning look or the clinic shows the left short.
 - **Throwing (Add-On §3, sport plan §5):** on days without a knee session, never on a knee or PT day; on an upper day after the bike and before lifting. Feet planted or **slight pivots on the planted foot** (Cody 10/15, "within reason"); **step-out throws, throwing on the move and marking wait for the PT's OK**. One dial a week (count or intensity). Name the pivot foot every session. A morning after a throwing day that isn't clean, with no knee session before it, means feet planted next time.
 - **Thu 10/22:** ✓ morning **clean** (none, down from trace; extension good; wellness 5) → **the 10/21 Session A baselines stand** · ✓ throwing (140 throws, 30 min, RPE 3: BH, FH, hammer, scoober, controlled-range FH long throws; planted and slight pivots mixed, **pivot foot: left**) · ✓ bike 27 · ✓ **Upper A** (session 5, at a vacation gym: machine and DB substitutes for the bench, pull-up, landmine press and row, loads not comparable to home; chest pass skipped, no med ball; RPE 6) → **upper 2 of 2 this week** · finisher at home: tibialis only; **the Copenhagen wasn't done**, so its next run is still **2 × 25 s/side** (Mon 10/26, Upper B).
-- **Fri 10/23:** morning check → **PT** (book it for Friday; a Thursday visit would have been back-to-back with Wednesday's A). No throwing on a PT day.
+- **Fri 10/23:** **no PT this week** (his call; none was booked) → **Session B run in its place** at the vacation gym (first Phase 4 B; `config.json → plan_changes`): step-down ~6" L 3 × 10 · SL sit-to-stand at bench height 2 × 12 · RDL 55 × 3 × 8 · lateral lunge 3 × 8 (set 3 shortened, mild discomfort) · **machine subs:** single-leg curl machine 40 × 3 × 10 (3–4 RIR), seated abduction machine 85 × 2 × 15 (neither comparable to the cable) · seated calf raise machine, left, lightest × 3 × 12 (new) · eyes-closed drill skipped (no safe spot) · **SL bridge and the cooldown due at home later today**; morning check, minutes, RPE and in-session pain not yet reported. The week keeps three loaded days: Wed A → Fri B → Sun A.
 - **Sat 10/24:** bike **30** → throwing → **Saturday power & mobility, first run** (optional; with Upper A on Thursday): Pallof standing 3 × 8/side × 3 s → open book → supine hip flexor → seated wall slide. Seated throws wait for the PT.
-- **Sun 10/25:** weekly checks (morning weigh-in, photo + heel prop, SLR, flexion) → checkpoint → **Session B, first Phase 4 B (~60 min)**: step-down left only 3 × 10 (each set ends at the first hip drop) · SL sit-to-stand 18" unassisted 2 × 12 · RDL 55 × 3 × 8 · lateral lunge full range 3 × 8 · hamstring curl 70 × 3 × 10 · hip abduction 20 × 2 × 15 · SL bridge 3 × 10 · **seated calf raise, left, new** (lightest DB on a folded towel across the lower thigh) · full cooldown. **Block 1 from 10/25 if upper runs 2 of 2** (then the incline drops to 2 sets and speed bench comes in).
-- **Session A, next ~Tue 10/27 (~55 min):** goblet squat 40 × 3 × 10 · knee extension L 40 × 2 × 12 (held), R on its own · RFESS 3 × 8/side on the 7.5" box · hamstring curl one change from Sunday's · heel raise 40s × 4 × 15 · step-up 18" bodyweight 2 × 10/side (a control drill, no load ladder) · lateral heel tap 7.5" L 3 × 10 · full cooldown.
+- **Sun 10/25:** weekly checks (morning weigh-in, photo + heel prop, SLR, flexion) → checkpoint → **Session A (~55 min; B ran Friday)**: goblet squat 40 × 3 × 10 · knee extension L 40 × 2 × 12 (held), R on its own · RFESS 3 × 8/side on the 7.5" box · hamstring curl one change from Friday's (on the home cable: last 60/60/70) · heel raise 40s × 4 × 15 · step-up 18" bodyweight 2 × 10/side (a control drill, no load ladder) · lateral heel tap 7.5" L 3 × 10 · full cooldown. **Block 1 from 10/25: upper ran 2 of 2** (the incline drops to 2 sets and speed bench comes in).
+- **Session B, next ~Tue/Wed 10/27–28 (~60 min):** one change per exercise from Friday's, back on the home gear: step-down left only (7.5" once 3 × 10 is level) · SL sit-to-stand 18" · RDL 55 → 60 × 3 × 8 · lateral lunge full range, then the lightest DB · cable hamstring curl (its last home dose 60/60/70) · cable hip abduction 20 × 2 × 15 → 3 × 15 · SL bridge 3 × 10 (the loaded hip thrust is the B after this one) · seated calf raise, left (DB on a towel) · eyes-closed drill in the warm-up · full cooldown.
 - **Bike, legs only, easy:** Mon 24 ✓ → Thu 27 → Sat 30. Intervals earliest ~the week of 11/8 (two weeks of 30 with clean mornings and a PT OK).
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. This week's two fixes: a shake or Greek yogurt by mid-afternoon on any day short of protein; a second fish meal, and a carb anchor at breakfast and dinner in place of one salty snack bag a day.
 
-## Last PT visit · **Sat 10/17, PT 11** (quad test; Nick, his account) · next: **not booked as of 10/21; Friday 10/23 asked for**
+## Last PT visit · **Sat 10/17, PT 11** (quad test; Nick, his account) · next: **none this week (his call, 10/23); not booked**
 
 PT 11 (his account; `pt_notes.md`, 2026-10-17 and the 10/22 clarification): isometric quad peak on a torque monitor, **LSI 90.4%** (right 77.2, left 69.8 lb; vs the pre-op right 83.7: 83.4%). Step-downs passed · Copenhagen okay on both sides (short lever) · hamstrings not tested. PT 10 (10/15, Cody) items are folded into the State (§5–6).
 
@@ -41,7 +41,7 @@ For the next visit (State §5, in this order): **book Friday** · **the home kne
 
 ## Open items
 
-- **Book the PT visit for Friday.** If it lands on another day, move it in `real/config.json → plan_changes`.
+- **Book the next PT visit.** Nothing this week (his call); the left knee extension's load, step-out throws and the hamstring/glute tests wait on it. When it lands, move it in `real/config.json → plan_changes`.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 
 <!-- engine:start -->
@@ -56,13 +56,13 @@ _Engine block, regenerated by `sync` · as of Fri 2026-10-23 · POD 60 · post-o
 | Tue 10/20 | knee | 3,705 | 176 |  | ✔ | ✔✔ | ✔ |  |  |  |  |  |  |
 | Wed 10/21 | floor | 4,240 | 129 |  | ✔ | ✔✔ | ✔ | A |  |  |  |  |  |
 | Thu 10/22 | cond, upper, sport | 3,670 | 170 |  | ✔ | ✔✔ | ✔ |  |  | upperA | 27m | 1 |  |
-| Fri 10/23 | pt | | | | | | | | | | | | |
+| Fri 10/23 | knee | - | - |  |  |  |  | B |  |  |  |  |  |
 | Sat 10/24 | cond, sport | | | | | | | | | | | | |
 
 **Nutrition:** avg 3,522 kcal (target 3,000) · avg 157 g protein (target 150-160) · at kcal target 4/5 days · at protein target 3/5 days
 **Weigh-ins:** 2/3 · avg 157.6 lb · last week 157.2 (7 readings) · +0.4 lb
 **Morning swelling grades:** Sun trace · Mon trace · Tue trace · Wed trace · Thu 0
-**Sessions (through Fri):** knee 2/2 · cond 2/2 · upper 2/2 · sport 1/1 · floor full 5/6 · graded morning checks 5/6
+**Sessions (through Fri):** knee 3/3 · cond 2/2 · upper 2/2 · sport 1/1 · floor full 5/6 · graded morning checks 5/6
 
 **Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 90.4% (10/17) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8)
 

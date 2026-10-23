@@ -1,20 +1,20 @@
 {
   "asof": "2026-10-23",
   "name": "Ser Darrow of Edgemoor",
-  "level": 6,
+  "level": 7,
   "rank": "Kindled",
-  "xp": 2093,
-  "xp_this_level": 1500,
-  "xp_next_level": 2100,
+  "xp": 2123,
+  "xp_this_level": 2100,
+  "xp_next_level": 2800,
   "proficiency": 3,
-  "hp_max": 44,
+  "hp_max": 48,
   "attributes": {
     "might": {
       "score": 12,
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 41,
+      "temper": 43,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 12,
       "mod": 0,
-      "temper": 29,
+      "temper": 30,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -55,7 +55,7 @@
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
-  "inspiration": 3,
+  "inspiration": 4,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -102,10 +102,10 @@
       "id": "stillwater",
       "name": "Stillwater Stance",
       "tree": "Footing",
-      "rank": 2,
+      "rank": 3,
       "banked_rank": 0,
-      "practice": 14,
-      "next_at": 15,
+      "practice": 15,
+      "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
     },
@@ -148,7 +148,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 12,
+      "practice": 13,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
