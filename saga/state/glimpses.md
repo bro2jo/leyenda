@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-19 · ledger · From Wren's ledgers, the kitchen's margin, copied out without asking: Nights without, two. Underneath, in the kitchen novice's hand: "Three tomorrow." Underneath that, in Wren's: "Technically you can't write that yet."
 - 2026-10-19 · weather · The fog never lifted. By dusk it had come in at the hall door and lay along the floor between the cots, and the lamps stood up out of it like posts in a flooded field.
 - 2026-10-20 · house · Somebody has swept the snow off the gate wall's parapet in one long stroke, end to end, the way you clear a table for something to be set down on it. Wren says it was not her, and has not said who.
 - 2026-10-20 · body · He stood up this morning and the leg took him the way a horse takes a rider it has decided to keep. He noticed. He did not say anything to it, in case it changed its mind.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-22 · ledger · Wren's ledger, the kitchen page: Candles burnt at supper: eleven. Candles the kitchen says it burnt: nine. Candles found under the dresser: two. Reported to nobody, on account of nobody asking.
 - 2026-10-22 · verse · Two novices are playing knucklebones on an upturned bucket by the cloister door, and the one who is losing chants it faster to put the other off: *One for the stone and two for the crown, three for the knight who won't come down…*
 - 2026-10-22 · house · Mother Ione walks the row at the lamp-lighting with her hands folded, stops at no cot in particular, and somehow every cot on it has been looked at by the time she reaches the door.
+- 2026-10-23 · weather · Past midnight the sky over the Steps is clear and hard with stars, and cold enough that the snow along the parapet squeaks under a sleeve like a cork in a bottle.
