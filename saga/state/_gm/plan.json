@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 3,
     "beat": "b1.3",
-    "next_scene": 5,
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch03:s4",
+    "last_written": "ch03:s5",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -130,8 +130,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch03:s5"
       },
       {
         "n": 6,
@@ -144,7 +144,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -224,8 +224,8 @@
       "priority": "required"
     },
     "q1.cart": {
-      "status": "live",
-      "stage": 1,
+      "status": "done",
+      "stage": 2,
       "priority": "optional",
       "gate": "beats.b1_1.status == \"done\""
     },
@@ -421,7 +421,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 5,
+    "chapter": 3,
+    "scene": "5",
+    "opened": "2026-10-23",
+    "ask": "The mare can be had for the dealer's debt. What does Darrow send down?",
+    "axis": "candor_guile",
+    "options": [
+      "His name, as surety: a captain's word, though the Faithless have no credit in the Lowmarch",
+      "Word, through Rae, that the mare is wanted for the House's stables, in Mother Ione's name",
+      "Nothing. Leave her where she is"
+    ],
+    "bearing": [
+      {
+        "Candor": 1
+      },
+      {
+        "Guile": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": []
   },

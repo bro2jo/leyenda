@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "between-1",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#between-1"
+    "anchor": "chronicle/03-the-undercroft.html#scene-5"
   },
-  "last_seen_doing": "Sat splicing a halter on the kitchen's second bench; read the book like a load (the whole House is under it now); claimed the aye the Captain owes her.",
-  "now": "In the kitchen at night, splicing a halter. The Captain owes her a plain telling of what the cold does on the stone below the House.",
+  "last_seen_doing": "Named the inspected cage light before it cleared the cloud; told, unasked, what the almoner's satchel weighed going down and coming up; told the Captain of a grey mare at a Holloway dealer's; kept by the dusk bell as the House's guest, and on the gate wall told of a midsummer crate that froze her cart-bed.",
+  "now": "The House's guest for the night under the law of guests; she goes down at first light to Hob, and will carry down whatever the Captain sends for the mare. She asked him nothing.",
   "story_so_far": "The carter who drove Darrow and Hollis the last of the road north, and who brought the House word of the Confessors' list; she let the road shut rather than leave, and when Darrow's shoulder could not shut the wicket, hers did. In the week of the Grey Cot she went down the Steps for her oxen and came up the Last Hundred at dusk with a letter in blue wax for the Captain, carried inside her shirt rather than left overnight in the cage with the grey cloak who gave it her; she won an aye off him at name-the-load and put her stake beside his in the kitchen's book. Shown the frost on Ser Benedek Orrin's mouth, she said she had had that cold in her cart, and would not say when. On the eve she stayed in the kitchen door while the House followed Wren's candle down the hall.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -377,6 +377,42 @@
       "chapter": "03",
       "scene": "between-1",
       "evidence": "I'll have my aye."
+    },
+    {
+      "fact": "Her palms are horn at the heel and scarred straight across where a rope once went through them and she did not let go.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "where a rope had once gone through them and she had not let it go"
+    },
+    {
+      "fact": "She says the almoner's satchel went down in the cage the day before the snow sitting like paper, and came back up that evening sitting like a stone.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "Went back in for the top that evening. Sat like a stone."
+    },
+    {
+      "fact": "She did not open the satchel: it was not hers to open.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "Wasn't mine to open."
+    },
+    {
+      "fact": "She says a grey mare long in the back, that came out of the Wend below the ford, goes short behind and will not take a bridge forwards, is at a dealer's on the Holloway, and whoever stands his debt at Coldmere can lead her off.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "Whoever stands his debt can lead her off."
+    },
+    {
+      "fact": "At midsummer she carted a nailed, unmarked crate from a barge at the Wend landing to the lower door at Calden, and found frost on her cart-bed under it; she does not know what was in it.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "When I backed up to the door there was frost on my cart-bed. In midsummer."
+    },
+    {
+      "fact": "She will carry down whatever the Captain sends for the mare.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "Whatever you're sending down for her. I'll carry it."
     }
   ],
   "relationships": [
@@ -498,6 +534,10 @@
       "chapter": "03",
       "scene": "2",
       "mention": true
+    },
+    {
+      "chapter": "03",
+      "scene": "5"
     }
   ]
 }

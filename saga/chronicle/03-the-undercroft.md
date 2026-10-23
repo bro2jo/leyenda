@@ -648,3 +648,91 @@ Wren's pencil had stopped under the two columns, where a line would go for whate
 
 > ⟦ THE RECKONING ⟧
 > XP 1,909 → 1,974
+
+### Scene 5 — Like a Stone
+
+The day after the undercroft, an hour short of dusk, the cage came up out of the cloud, and Rae Thorne named it before anyone could see it.
+
+"Light," she said. She was on the rope at the cage head beside Wren and the two winch-brothers, and she said it once, to the rope, the way she said aye. "That's not what went on at the bottom."
+
+Darrow stood back against the gate-tower with a hand flat on the stone, where he could watch and be in nobody's road. He had come out for the air and stayed for the cage, because Wren had told him at the noon bell that the House's lamp oil was coming up and she meant to count it twice, once for the kitchen and once for herself.
+
+The rope came in hand over hand. Rae's hands were bare on it. When the brothers swung the cage in over the lip of the stair she let go and turned her palms up without thinking, the way you shake out a cloak, and he saw them. The heels of both had gone to horn, and across each ran a pale ridge of old scar, straight as a rule, where a rope had once gone through them and she had not let it go.
+
+Wren had the chit off the crate before the bar was across. The lid had been opened and nailed down again; the new nails were bright among the old ones.
+
+"Inspected," Wren said, as if the word tasted of something. "Lamp oil, twelve jars, says the chit. One. Two." She counted under her breath, and stopped. "Nine. And they've had the salt open and shut it again with their thumbs." She wrote it. "Technically, three jars of oil have been inspected all the way down to the lower terrace."
+
+Rae was not looking at the crate. She was looking at the empty cage.
+
+"Your almoner's satchel," she said.
+
+Wren's pencil stopped. Nobody had asked.
+
+"Went down in the cage the day before the snow, with the House's letters. I had it out at the bottom. It sat like paper." Rae put one scarred hand on the cage rail, as if to feel the rope through it again. "Went back in for the top that evening. Sat like a stone."
+
+Wren was already turning back pages. "Satchel, down, light. Satchel, up—" Her finger stopped on the line. "I've got it heavier. I wrote *letters*. With a mark after it." She looked at the mark. "I put a mark after it because I didn't believe it, and then I believed it, because what else goes in a satchel."
+
+"What does?" Darrow said.
+
+Rae shrugged. "Wasn't mine to open."
+
+She left it there, on the rail, the way she left a load where it belonged and walked away from it. Then she wiped her palms on her cloak and turned round to him, and he saw she had something else, and that it had come a long way up to be said.
+
+"There's a grey mare at a dealer's on the Holloway," Rae said.
+
+The cage swung a little on its chain behind her.
+
+"Long in the back. Came out of the Wend below the ford, three days after. Goes short behind; she'll walk, and she'll not be ridden into a river again." She said it like a manifest, item by item, and only her hands gave her away, closing on each other. "Won't take a bridge forwards. The dealer walks her over backwards, and calls her names."
+
+Darrow kept his face.
+
+He had kept it at the bars with a Confessor reading his name out slow, and he kept it now, for Wren, who had the pencil up and was looking from Rae to him and back, the way she looked from a chit to a crate. He did not say the mare's name. He had not said it since the Wend, and he was not going to say it first at a winch with Wren's pencil out.
+
+"Is she sound?" His voice came out level. He was grateful to it.
+
+"No."
+
+"Whose is she?"
+
+"His. He owes at Coldmere. Whoever stands his debt can lead her off." Rae looked at the shirt he had on, and at the stick he would not use, leaning on the tower beside him. "It's more than a shirt and a stick."
+
+"I'm not writing anything down," Wren said, to nobody, and did not.
+
+---
+
+The dusk bell caught Rae at the top. The cage did not run after dark, and the Steps after dark were for lay brothers and fools; the law of guests said whoever came up unarmed was warmed and fed one night, and the kitchen had counted her in before she had said she was stopping.
+
+Later, when the House had eaten, he found her on the gate-ward's bench under the slit, at the far end of it, with her hands between her knees. He sat at the other end. Below them, on the lower terrace, the grey cloaks' fires burned in a row where the springs steamed, and far down past them, in the dark at the bottom of the world, the winch-house had its one lamp lit. Hob and Dun were down there under it. So was a stool in a byre door.
+
+The cold came off the stone of the wall into his back, and stopped there. It did not get into him tonight.
+
+"You'll want your aye," he said.
+
+"Aye."
+
+So he told her, plain, the way she had asked it, and not the way he would have told the House. "It comes up the stair the way water comes up into a boot-print. It doesn't blow. It stands, about the height of your knee, and it doesn't move off for a lamp or anything else. At the bottom there's a hall, older than the House. Past the pillars the floor's white. Frost, thick as fur." He found the line of it again in his head, the feathers on the far wall. "And it grows up. Not down, the way it comes off a roof. Up the wall, toward where the row is. I didn't go to the end of it. That's all of it."
+
+She said nothing for a long time. The fires on the terrace burned down a little. Somewhere on the Steps below the gate a lantern was climbing, slow, a lay brother coming up late, and the light went in and out of the cloud.
+
+"Midsummer," Rae said, to the valley. "I carted a crate off a barge at the Wend landing, to the lower door at Calden. Nailed shut. Small, for what it weighed. No mark on it." Her hands had found each other again. "Day and a half on the road. When I backed up to the door there was frost on my cart-bed. In midsummer. Hob wouldn't stand for the unloading. The boards under it were white."
+
+"What was in it?"
+
+"I don't know." She said it once, and it was true; he would have known if it were not. "Man at the door paid me and didn't sign."
+
+He waited for her to ask him what it meant. She did not ask him anything. She sat at her end of the bench with the cold of the wall at her back, and he sat at his, and the lay brother's lantern came out of the cloud again, nearer, and went on climbing.
+
+"First light," she said at last, and stood. "Hob'll want me." At the turn of the walk she stopped, the way she had once before. "Whatever you're sending down for her. I'll carry it."
+
+Then she went in, and he was alone with the fires below, and a shirt, and a stick, and a name on a Confessor's list that no dealer in the Lowmarch would take for a copper.
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **The Mender's Patience** III. *Hold against fear, haste and temptation.*
+> Art learned: **The Far Cast** I. *Land it where the runner will be.*
+> XP 1,974 → 2,093
+
+**What does Darrow do?**
+1. **Send down his name as surety: a captain's word, though the Faithless have no credit in the Lowmarch.**
+2. **Send word through Rae that the mare is wanted for the House's stables, in Mother Ione's name.**
+3. **Send nothing. Leave her where she is.**

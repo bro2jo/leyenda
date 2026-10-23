@@ -211,7 +211,8 @@
         "02:s6",
         "02:between-14",
         "02:climax",
-        "03:between-1"
+        "03:between-1",
+        "03:s5"
       ]
     },
     {
@@ -220,13 +221,14 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae knows the mare lives (GM); Darrow does not, and has not said her name since the Wend; the reader knows only that Rae asked",
-      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles.",
+      "who_knows": "Rae knows the mare lives and where; Darrow knows it now from her (03:s5: the bridge tell), and has still not said her name; Wren heard Rae and wrote nothing; the reader",
+      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. The micro sets what he sends; Tether III is the finding",
       "on_page": [
         "00:I",
         "01:s3",
         "01:between-6",
         "02:s5",
+        "03:s5",
         "tale01:p1"
       ]
     },
@@ -255,13 +257,14 @@
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
       "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes it looks like a chip off a field-stone and kept it out of the hall before the whole House when asked (02:climax, c02.13a kept); the reader. The hall knows only that the Mender found a black glass and will say what it is when she knows. Not Hollis, not Wren",
-      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist. 03:s4: rime furred thick beyond the undercroft pillars, climbing the far wall toward the infirmary hall, 'except that nothing up there was cold'; the source not reached",
+      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist. 03:s4: rime furred thick beyond the undercroft pillars, climbing the far wall toward the infirmary hall, 'except that nothing up there was cold'; the source not reached. 03:s5 (T1 plants): the almoner's satchel up 'like a stone' the day before the snow (Rae, Wren's tally); Rae's midsummer crate to Calden's lower door frosted her cart-bed; Darrow told her the undercroft frost grows up toward the row. Nobody has joined them aloud",
       "on_page": [
         "02:between-12",
         "02:s6",
         "02:s7",
         "02:climax",
-        "03:s4"
+        "03:s4",
+        "03:s5"
       ]
     },
     {

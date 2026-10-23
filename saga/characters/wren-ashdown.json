@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "4",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-5"
   },
-  "last_seen_doing": "Went first with the lamp and counted the stair down and up; read the first half of the words over the inner door aloud before the Mender could, and stopped; held the lamp at the murals and read none of them; wrote both columns.",
-  "now": "At the head of the undercroft stair at supper, the ledger back in her scarf with both columns in it and nothing written under them; gone to give the kitchen back its lamp.",
+  "last_seen_doing": "Counted the inspected cage three jars short; found the almoner's satchel in her tally coming up heavier, marked letters with a mark after it; did not write down what Rae said of the grey mare.",
+  "now": "At the cage head at dusk with the ledger, three jars of lamp oil short on the kitchen's page.",
   "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -381,6 +381,24 @@
       "chapter": "03",
       "scene": "4",
       "evidence": "Then she shut the ledger on it"
+    },
+    {
+      "fact": "Her tally has the almoner's satchel coming up heavier than it went down; she wrote letters, with a mark after it because she did not believe it.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "I put a mark after it because I didn't believe it"
+    },
+    {
+      "fact": "She counted the cage the grey cloaks had inspected three jars of lamp oil short, and the salt opened.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "Technically, three jars of oil have been inspected all the way down to the lower terrace."
+    },
+    {
+      "fact": "She did not write down what Rae said of the grey mare.",
+      "chapter": "03",
+      "scene": "5",
+      "evidence": "I'm not writing anything down"
     }
   ],
   "relationships": [
@@ -537,6 +555,10 @@
     {
       "chapter": "03",
       "scene": "4"
+    },
+    {
+      "chapter": "03",
+      "scene": "5"
     }
   ]
 }
