@@ -665,21 +665,21 @@ Wren's pencil had stopped under the two columns. She had left a line there, the 
 
 ### Scene 5 — Like a Stone
 
-The day after the undercroft, an hour short of dusk, the cage came up out of the cloud, and Rae Thorne named it before anyone could see it.
+The day after the undercroft, an hour short of dusk, the winch cage came up the cliff out of the cloud on its rope, and Rae Thorne, who had climbed the Steps ahead of it, said what it weighed before anyone could see it.
 
-"Light," she said. She was on the rope at the cage head beside Wren and the two winch-brothers, and she said it once, to the rope, the way she said aye. "That's not what went on at the bottom."
+"Light," she said. She was on the rope at the cage head beside Wren and the two winch-brothers, and she said it once, to the rope, the way she said aye. "That's not what went in at the bottom."
 
 Darrow stood back against the gate-tower with a hand flat on the stone, where he could watch and be in nobody's road. He had come out for the air and stayed for the cage, because Wren had told him at the noon bell that the House's lamp oil was coming up and she meant to count it twice, once for the kitchen and once for herself.
 
 The rope came in hand over hand. Rae's hands were bare on it. When the brothers swung the cage in over the lip of the stair she let go and turned her palms up without thinking, the way you shake out a cloak, and he saw them. The heels of both had gone to horn, and across each ran a pale ridge of old scar, straight as a rule, where a rope had once gone through them and she had not let it go.
 
-Wren had the chit off the crate before the bar was across. The lid had been opened and nailed down again; the new nails were bright among the old ones.
+Wren had the chit off the crate before the bar was across, the note of what had been loaded at the bottom. The lid had been opened and nailed down again; the new nails were bright among the old ones.
 
-"Inspected," Wren said, as if the word tasted of something. "Lamp oil, twelve jars, says the chit. One. Two." She counted under her breath, and stopped. "Nine. And they've had the salt open and shut it again with their thumbs." She wrote it. "Technically, three jars of oil have been inspected all the way down to the lower terrace."
+"Inspected," Wren said. It was the grey cloaks' word for what they did to a load at the winch-house now, and she said it as if it tasted of something. "Lamp oil, twelve jars, says the chit. One. Two." She counted under her breath, and stopped. "Nine. And they've had the salt open and shut it again with their thumbs." She wrote it. "Technically, three jars of oil have been inspected all the way down to the lower terrace."
 
 Rae was not looking at the crate. She was looking at the empty cage.
 
-"Your almoner's satchel," she said.
+"Your almoner's satchel," she said. The House's letters went down the mountain in it.
 
 Wren's pencil stopped. Nobody had asked.
 
@@ -687,17 +687,21 @@ Wren's pencil stopped. Nobody had asked.
 
 Wren was already turning back pages. "Satchel, down, light. Satchel, up—" Her finger stopped on the line. "I've got it heavier. I wrote *letters*. With a mark after it." She looked at the mark. "I put a mark after it because I didn't believe it, and then I believed it, because what else goes in a satchel."
 
-"What does?" Darrow said.
+"And what was in it?" Darrow said.
 
 Rae shrugged. "Wasn't mine to open."
 
-She left it there, on the rail, the way she left a load where it belonged and walked away from it. Then she wiped her palms on her cloak and turned round to him, and he saw she had something else, and that it had come a long way up to be said.
+Down with letters, light. Up the same evening, heavy. Something had gone into the House's satchel at the bottom of the rope and come up the mountain in it, and nobody at the top had asked what.
+
+Rae left it there, on the rail, the way she left a load where it belonged and walked away from it. Then she wiped her palms on her cloak and turned round to him, and he saw she had something else, and that it had come a long way up to be said.
 
 "There's a grey mare at a dealer's on the Holloway," Rae said.
 
-The cage swung a little on its chain behind her.
+The cage swung a little on its rope behind her.
 
 "Long in the back. Came out of the Wend below the ford, three days after. Goes short behind; she'll walk, and she'll not be ridden into a river again." She said it like a manifest, item by item, and only her hands gave her away, closing on each other. "Won't take a bridge forwards. The dealer walks her over backwards, and calls her names."
+
+A grey mare, long in the back, had gone down at the shoulder in the Wend at Harrow Ford with him on her, and he had not seen her come up. There was a bridge at Calden she had never once taken forwards, and one man who had walked her over it backward, talking to her the whole way.
 
 Darrow kept his face.
 
@@ -709,7 +713,7 @@ He had kept it at the bars with a Confessor reading his name out slow, and he ke
 
 "Whose is she?"
 
-"His. He owes at Coldmere. Whoever stands his debt can lead her off." Rae looked at the shirt he had on, and at the stick he would not use, leaning on the tower beside him. "It's more than a shirt and a stick."
+"His. He owes at Coldmere. Whoever stands his debt can lead her off." Rae looked at the shirt he had on, and at the stick he would not use, leaning on the tower beside him, the way she looked at a load to see what it would fetch. "It's more than a shirt and a stick."
 
 "I'm not writing anything down," Wren said, to nobody, and did not.
 
@@ -717,11 +721,13 @@ He had kept it at the bars with a Confessor reading his name out slow, and he ke
 
 The dusk bell caught Rae at the top. The cage did not run after dark, and the Steps after dark were for lay brothers and fools; the law of guests said whoever came up unarmed was warmed and fed one night, and the kitchen had counted her in before she had said she was stopping.
 
-Later, when the House had eaten, he found her on the gate-ward's bench under the slit, at the far end of it, with her hands between her knees. He sat at the other end. Below them, on the lower terrace, the grey cloaks' fires burned in a row where the springs steamed, and far down past them, in the dark at the bottom of the world, the winch-house had its one lamp lit. Hob and Dun were down there under it. So was a stool in a byre door.
+Later, when the House had eaten, he found her on the gate-ward's bench under the slit, at the far end of it, with her hands between her knees. He sat at the other end. Below them, on the lower terrace, the grey cloaks' fires burned in a row where the springs steamed, and far down past them, in the dark at the bottom of the world, the winch-house had its one lamp lit. Hob and Dun, her oxen, were down there under it, in the winch-house byre. So, the last she had said of it, was a grey cloak on a stool in the byre door.
 
 The cold came off the stone of the wall into his back, and stopped there. It did not get into him tonight.
 
-"You'll want your aye," he said.
+He owed her a telling. She had claimed it in the kitchen, days before he went down: when he had been on that stair, what the cold did on the stone, plain, and not the way he would tell the House.
+
+"You'll want it now," he said.
 
 "Aye."
 
@@ -737,7 +743,7 @@ She said nothing for a long time. The fires on the terrace burned down a little.
 
 He waited for her to ask him what it meant. She did not ask him anything. She sat at her end of the bench with the cold of the wall at her back, and he sat at his, and the lay brother's lantern came out of the cloud again, nearer, and went on climbing.
 
-"First light," she said at last, and stood. "Hob'll want me." At the turn of the walk she stopped, the way she had once before. "Whatever you're sending down for her. I'll carry it."
+"First light," she said at last, and stood. "Hob'll want me." At the turn of the walk she stopped, the way she had stopped once before on this wall with a thing she had nearly said. "Whatever you're sending down for her. I'll carry it."
 
 Then she went in, and he was alone with the fires below, and a shirt, and a stick, and a name on a Confessor's list that no dealer in the Lowmarch would take for a copper.
 
