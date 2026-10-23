@@ -359,13 +359,6 @@
           ]
         },
         {
-          "name": "The undercroft hall",
-          "text": "Thirty-nine steps down from the undercroft door, cut in the rock and worn hollow in the middle: a hall older than the House, low and vaulted, its pillars cut from the living rock. Its walls are painted with a rank of men and women holding a small cloud of pale strokes over their open hands, and one knight kneeling at a black stone with the light running up out of him along a thread into the vault. Over its inner door, in the old hand: *What is given can be taken. What is built is yours.* Beyond the pillars the flags are white with rime, and the rime climbs the far wall (Ch 3 Sc 4).",
-          "sources": [
-            "ch03:s4"
-          ]
-        },
-        {
           "name": "The almoner's satchel",
           "text": "The satchel in which the House's letters go down by the cage. The day before the first snow it went down sitting like paper and came back up that evening sitting like a stone, by Rae Thorne's hands at the bottom of the rope and Wren's tally at the top (Ch 3 Sc 5).",
           "sources": [
@@ -377,6 +370,13 @@
           "text": "A nailed crate with no mark on it, small for what it weighed, that Rae Thorne carted at midsummer from a barge at the Wend landing to the lower door at Calden. By the time she backed up to the door there was frost on her cart-bed; the man at the door paid her and did not sign (Ch 3 Sc 5).",
           "sources": [
             "ch03:s5"
+          ]
+        },
+        {
+          "name": "The undercroft hall",
+          "text": "Thirty-nine steps down from the undercroft door, cut in the rock and worn hollow in the middle: a hall older than the House, low and vaulted, its pillars cut from the living rock. Its walls are painted with a rank of men and women holding a small cloud of pale strokes over their open hands, and one knight kneeling at a black stone with the light running up out of him along a thread into the vault. Over its inner door, in the old hand: *What is given can be taken. What is built is yours.* Beyond the pillars the flags are white with rime, and the rime climbs the far wall (Ch 3 Sc 4).",
+          "sources": [
+            "ch03:s4"
           ]
         }
       ],

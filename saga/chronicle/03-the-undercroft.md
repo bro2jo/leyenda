@@ -536,87 +536,101 @@ Behind him Maelis had not said a word. He did not have to turn round to know she
 
 ### Scene 4 — What Is Given
 
-Wren's new count still stood at one, with room under it, when Maelis said "Two," and Darrow took the second step down.
+The stair went down under the iron-banded door at the far end of the hall, and there were four of them on it, in the order the Mender had set.
 
-His right hand was on Wren's shoulder and his left was flat on the wall, because those were the terms. The steps were cut out of the rock and worn hollow in the middle, each one a shallow dish, as if a great many feet had come this way once and then, for a very long time, none. At every one the knee stopped to think about it. He let it. Maelis gave it the next number when it had finished, and not before.
+Wren first, a step below him, with the only lamp. Darrow second, his right hand on Wren's shoulder and his left flat on the wall, because those were the terms. Maelis behind him, with no lamp and no hand on anything, counting. At the top, in the open doorway, Mother Ione with her hands folded, and behind her the whole House at its supper at the kitchen end, pretending not to look down the row.
 
-"Three," she said. A step below him Wren said "Three" as well, under her breath, half a beat behind, the way her lips went along a row of lamps. Two counts. One was for the knee. The other was for the book.
+On the first step he had said a decent thing to Wren, and she had counted it, with room under it. "Two," said Maelis, and he took the second.
 
-The cold stood round his knee and got no higher. It could not get into his hands. They were warm tonight to the ends of the fingers, and he could feel the warmth of Wren's shoulder through the wool under one and the cold of the stone under the other, and he went down between the two.
+The steps were cut out of the rock and worn hollow in the middle, each one a shallow dish, as if a great many feet had come this way once and then, for a very long time, none. At every one the knee stopped to think about it. He let it. Maelis gave it the next number when it had finished, and not before.
+
+"Three," she said. A step below him Wren said "Three" as well, under her breath, half a beat behind, the way her lips went along a row of lamps. So there were two counts going down the stair: Maelis's, which was for the knee, and Wren's, which was for the ledger in her scarf.
+
+The cold that had come up out of the dark when the door opened stood round his knee like water and got no higher. It could not get into his hands. They were warm tonight to the ends of the fingers; he could feel the warmth of Wren's shoulder through the wool under the one and the cold of the stone under the other, and he went down between the two.
 
 "Go on, you coward," he told the knee, under his breath, and it went.
 
-At seven there was a noise in the hall above them: boots scraping, two men grunting under a weight, and a voice he would have known in any dark there was, telling them what their mothers had been.
+At the seventh step there was a noise in the hall above them: boots scraping on the flags, two men grunting under a weight, and a voice he would have known in any dark there was, telling them what their mothers had been. Hollis. He had not walked the length of the hall on the beech leg. He had got two of the lay brothers to carry him down it instead.
 
 "Gently, you pair of— there. Down. Not on the leg. On the arse. I've only the one of those as well."
 
-He could not turn round on a stair, and did not try.
+Darrow could not turn round on a stair, and did not try.
 
-"Captain." Hollis's voice came down the shaft, filling it. "Look at the wall. Not the floor. The floor's coming whether you watch it or not. Look at the bloody wall."
+"Captain." Hollis's voice came down the shaft and filled it. "Look at the wall. Not the floor. The floor's coming whether you watch it or not. Look at the bloody wall."
 
 He looked at the wall.
 
-His own hand was on it, pale in the lamplight, and under the hand the stone was not smooth. He had felt it for four steps and put it down to the masons. It was cut. A line of fine strokes and dots ran down beside the stair at the height of his shoulder, angular and deep as a thumbnail, going down ahead of the lamp the way the stair went.
+His own hand was on it, pale in the lamplight, and the stone under the hand was not smooth. He had felt it for four steps and taken it for the mason's chisel. It was not. It was cut. Beside the stair, at the height of his shoulder, a line of fine strokes and dots ran down the wall, angular, each one as deep as a thumbnail, keeping pace with the steps and going on down ahead of the lamp into the dark.
 
-He knew the hand. He had seen it every few days since the Steps, coming up pale over his own palms when it pleased. Nobody had read it in three hundred years, and when it came for him he could read it anyway. Here on the stone it did nothing of the kind. It lay still under the lamp and waited, like letters on a slate for a boy who has not learned them.
+He knew the hand. It was the script that came up over his own palms. Since the Steps it had come every few days, when it pleased, pale and gold and angular, strokes and dots hanging just above the skin. No one living had read that script in three hundred years, and when it came for him he could read it anyway, because it read itself to him. Here on the stone it did nothing of the kind. The same strokes, the same dots, cut into rock by somebody's hand, and they lay still under the lamp and waited, like letters on a slate for a boy who has not learned them.
 
 "Eight," said Maelis. "You've stopped."
 
-He went on, and tried to do both. The knee would not have it. Whenever he gave the wall his eyes the knee took them back, and whenever he gave the knee its due the line had gone on without him. He got one shape, a long stroke with two dots above it like a man with his hands up, three times, and could make nothing of it. Then the stair had the rest of him.
+He went on, and tried to do both. The knee would not have it. When he gave the wall his eyes the knee took them back, and when he gave the knee its due the line had gone on down without him. In the whole length of the stair he got one shape he could hold: a long stroke with two dots above it, like a man with his hands up. It came three times. He could make nothing of it.
 
-Wren counted. At twenty, Hollis's voice came down to them smaller. At thirty it was only a noise, and then not even that.
+Wren counted. At twenty Hollis's voice came down to them smaller. At thirty it was only a noise, and then not even that.
 
 "Thirty-nine," Wren said, and the lamp came level. "Down."
 
 ---
 
-The floor at the foot of the stair was flagged and dry, and colder than the stair had been. A short passage ran ahead to an inner door. No door was left in it, only the frame, a square of black, and over the black a lintel cut deep in the same hand: one clean line, the strokes as sharp as if the mason had gone up to his supper an hour ago.
+The foot of the stair was a flagged floor, dry, and colder than the stair had been. A short passage ran ahead of them to an inner doorway. No door was left in it, only the frame, a square of black. Over the black, cut into the lintel, ran one line of the same script, the strokes as sharp as if the mason had gone up to his supper an hour ago.
 
 Wren held the lamp up to it.
 
-The first shape was the man with his hands up. He had it. He nearly had what came after, it was there the way a name is there at the back of the tongue—
+The first shape was the man with his hands up. He had that one. He nearly had what came after it; it was there the way a name is there at the back of the tongue—
 
 "It says—" Maelis began, behind him.
 
 "*What is given can be taken*," said Wren.
 
-She read it straight off, her lips going along it in the right order. Then her lips stopped with the shape of the next word on them, and nothing came after it. The lamp stood very still.
+She read it straight off, her lips going along it in the right order. She read it the way she read a row of lamps or a column of her own figures, without stopping to think, and she was halfway along the lintel before she heard herself. Then her lips stopped with the shape of the next word on them, and nothing came after it. The lamp stood very still.
 
 "*What is built is yours*," said Maelis. She said it flat, to the lintel, as if she were putting it into plain speech for a slow pupil and nobody had spoken before her. "That's what it says. You've heard it now. You'll not hear it in the hall."
 
-That last was for Wren. Wren did not answer. Under his hand her shoulder had gone as hard as the wall.
+The last of that was for Wren, and it was not a prediction. It meant: not upstairs. Not to anyone.
 
-He had heard the second half before, in a cell, through pipe smoke: *It can't be poured. It can't be taken.* Two people under this House could read a hand nobody had read in three hundred years, and he was neither of them. He had a joke for that, and let it go. He closed his hand once on Wren's shoulder and left it there, and said nothing, and after a moment she breathed out and the lamp moved again.
+Wren did not answer. Under his hand her shoulder had gone as hard as the wall.
+
+He stood between the two of them with the lamp on the lintel and put it together. A script no one living could read, over a door that three Priors had worn the key to, one after another, and never turned. Wren had read half of it aloud, like a child reading a sign over a shop, and had frightened herself silent; Maelis had finished it for her. And he had heard the second half of it before, in her cell, through pipe smoke, in newer words: the fire a man builds for himself, that *can't be poured* and *can't be taken*. So two people under this House could read a hand nobody had read in three hundred years, and he, who had that hand coming up over his own palms every few days, was neither of them.
+
+He had a joke for that, and let it go. He closed his hand once on Wren's shoulder and left it there, and said nothing, and after a moment she breathed out and the lamp moved again.
 
 They went through.
 
-The hall beyond was older than the House. It was low and vaulted, the pillars cut out of the living rock, and the lamp reached the first two pairs of them; the rest went off into the dark in rows. The walls were painted. People stood along them larger than life, faded to the colours of old harness, men and women in a long rank with their hands held open at the waist, and over every pair of open hands, laid on in a pale paint the lamp turned gold, hung a small cloud of strokes and dots.
+The hall beyond the doorway was older than the House. It was low and vaulted, and the pillars that held up the vault were not built but cut, left standing out of the living rock when the rest was hollowed away. The lamp reached the first two pairs of them. The rest went off into the dark in rows, so that the hall was longer than the light, and he could not have said by how much.
+
+The walls were painted. Along the wall nearest the lamp stood a rank of people larger than life, men and women, faded to the colours of old harness, each with their hands held open at the waist, palms up. Over every pair of open hands the painter had laid a small cloud of strokes and dots in a pale paint that the lamp turned gold. The same script. On the wall it hung over their hands the way it hung over his.
 
 He looked down at his own palms before he could stop himself. They were only palms.
 
-"Captain," said Wren. It was her first word since the lintel. She had taken the lamp to the far end of the rank.
+"Captain," said Wren. It was her first word since the lintel. She had taken the lamp along the rank to its far end, and she was holding it up to the last figure.
 
-One of them knelt. A knight in a knight's harness, on both knees before a stone the painter had made black, with his head bowed and both hands flat on the stone. There was no cloud over his hands. The pale paint came out of him instead, out of the chest, in a single fine line, and ran up. Up the wall, up past the heads of the standing figures, a thread drawn tight into the vault where the lamp could not follow.
+That one knelt. A knight in a knight's harness, down on both knees before a stone the painter had made black, head bowed, both hands flat on the stone. There was no cloud over his hands. The pale paint came out of him instead, out of the middle of the chest, in a single fine line, and ran up: up the wall, up past the heads of the standing figures, a thread drawn tight into the vault where the lamp could not follow it.
 
-The others held theirs. His went up.
+The others held theirs. His went up. Whatever the standing ones kept in their open hands, the kneeling one's was leaving him, up that thread, toward whatever the painter had meant to be above the roof of the hall.
 
-There were strokes beside the knight's head, faint, the paint half flaked away. He put his face a hand's breadth from the wall and tried them. The man with his hands up again; something after it that would not come. He got nothing, and Wren held the lamp for him the whole time and did not read it. He noticed that she did not.
+There were strokes beside the kneeling knight's head, faint, the paint half flaked away. He put his face a hand's breadth from the wall and tried them. The man with his hands up again; then something after it that would not come. He got nothing. Wren held the lamp for him the whole time and did not read it. She could have. He had just heard her. He noticed that she did not, and he did not ask.
 
-Maelis was no longer behind them. He found her by her voice first, and then by her shape against the far pillars, out in the dark past the lamp, where he could not have gone a yard without a hand out in front of him. She was walking. She went round a fallen block of stone without looking down at it, and stopped at a pillar the way a woman stops at her own door.
+Maelis was no longer behind them.
 
-The flour had lain smooth under the iron-banded door. The Prior's key had not been turned by the Prior before her, nor by hers.
+He found her by her footsteps first, and then by her shape against the far pillars, out in the dark past where the lamp reached, where he could not have gone a yard without a hand out in front of him. She was walking. She did not have the lamp and did not want it. She went round a fallen block of stone without looking down at it, and stopped at a pillar the way a woman stops at her own door.
+
+Standing there with his hand on Wren's shoulder, he counted it the way Wren would have. The flour laid under the iron-banded door every night: never a mark in it but the frost's. The key on the Prior's cord: never turned, she had said, by her or by the two before her. Feet on this stair in three lifetimes: none. And the Mender walked this hall in the dark like a woman who had been in it before, and often.
+
+So there was another way down, and she knew it.
 
 "Mender," he said.
 
 "Look at the floor," said Maelis, from the dark. "Now. Ser Hollis isn't here to stop you."
 
-He looked. Out beyond the pillars, past where she stood, the flags were white. Rime, furred thick, and on the far wall it climbed. It grew up the stone in feathers toward the vault, the way frost comes up a window from the sill, except that nothing up there was cold. Up there, as near as he could work it, was the infirmary hall. The row. Every cot on it.
+He looked. Out beyond the pillars, past where she stood, the flags were white. Rime, furred thick, and on the far wall it climbed. It grew up the stone in feathers toward the vault, the way frost comes up a window from the sill. Except that frost on a window grows from the cold side. Above that wall, as near as he could work it, was the infirmary hall. The row. Every cot on it. Nothing up there was cold, and the frost was growing toward it.
 
-"What's at the end of it?"
+"Where does it end?" he said. "The far side of it. What's it growing from?"
 
 "Tonight? The stair." She came back into the lamplight. "You said you'd look, then come up. You've looked."
 
-He thought about walking on into the white. He thought about it with his whole body, the way he had thought about the last four steps of the warming-room stair, and Maelis watched him think it, and waited, and did not take his wrist.
+He thought about walking on into the white. He thought about it with his whole body, the way he had thought about the last four steps of the warming-room stair that morning, and Maelis watched him think it, and waited, and did not take his wrist.
 
 "Up," he said.
 
@@ -624,27 +638,27 @@ He thought about walking on into the white. He thought about it with his whole b
 
 ---
 
-They came back up the same way, with the cold on their backs. Up was easier. Going up the knee only had to push, and it pushed, sullen, a step at a time, at her count. Halfway, Hollis's voice found them again.
+They came back up the same way, with the cold on their backs. Up was easier. Going up, the knee only had to push, and it pushed, sullen, a step at a time, at her count. Halfway up, Hollis's voice found them again.
 
 "Wall, Captain."
 
 "I'm looking at it."
 
-He was. The strokes went by under his palm the other way, and he had the man with his hands up four more times and nothing else. Wren counted. At thirty the light from the hall came down the shaft to meet them, the supper lamps at the kitchen end, and then Hollis at the top, red in the face, sitting on the floor with his back to the doorframe and his one foot braced against the linen press. Mother Ione stood behind him with her hands folded.
+He was. The strokes went by under his palm the other way, and he had the man with his hands up four more times and nothing else. Wren counted. At thirty the light from the hall came down the shaft to meet them, the supper lamps at the kitchen end, and then the doorway, and the two who had waited in it. Hollis sat on the floor, red in the face, with his back against the doorframe and his one foot braced against the linen press, where the lay brothers had set him down and left him. Mother Ione stood behind him with her hands folded, exactly where she had been.
 
-"Thirty-nine," said Wren at the top step. "Up." She had the ledger out of her scarf before the lamp was down, and wrote two numbers side by side. "Down and up, both columns, same number. Technically that's a clean page."
+"Thirty-nine," said Wren on the top step. "Up." She had the ledger out of her scarf before the lamp was down, and wrote two numbers side by side. "Down and up, both columns, same number. Technically that's a clean page."
 
 "Did you come up on it, Captain?" said the Prior.
 
 "I did."
 
-"Then you've kept your word to me." She looked at him a moment longer, the way she looked into a full room. "You'll tell me what you saw when you know what it was."
+"Then you've kept your word to me." She looked at him a moment longer, the way she looked into a full room. She did not ask what was down there. "You'll tell me what you saw when you know what it was."
 
 Hollis squinted up at him from the floor. "Well? You look like a man who's been shown his own grave and didn't think much of the masonry."
 
 "It's good masonry," said Darrow. "That's the trouble."
 
-Wren's pencil had stopped under the two columns, where a line would go for whatever was over the door. She looked at the place for a moment. Then she shut the ledger on it, tucked it back into her scarf, and went to give the kitchen back its lamp.
+Wren's pencil had stopped under the two columns. She had left a line there, the way she left a line for anything she meant to come back to, and it was the line where the words over the door would go. Then she shut the ledger on it, tucked it back into her scarf, and went to give the kitchen back its lamp.
 
 > ⟦ THE RECKONING ⟧
 > XP 1,909 → 1,974
