@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-20 · body · He stood up this morning and the leg took him the way a horse takes a rider it has decided to keep. He noticed. He did not say anything to it, in case it changed its mind.
 - 2026-10-20 · overheard · On the gate wall, the gate-ward to a lay brother, both of them looking down into the cloud: "Count the fires." "Six." "Count them again." "Six." "Then why does it feel like more?"
 - 2026-10-20 · weather · The fog has gone back down the mountain, and the Steps stand out of it this afternoon, flight after flight, every one white, as if somebody had laid them fresh.
 - 2026-10-20 · house · A novice has been set to sweep the cloister and has swept it twice, very slowly, past the end of the hall where the iron-banded door is, as if the broom had business there of its own.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-23 · weather · Past midnight the sky over the Steps is clear and hard with stars, and cold enough that the snow along the parapet squeaks under a sleeve like a cork in a bottle.
 - 2026-10-23 · saying · A lay brother going down past the gate with an empty creel says it to the Steps, not to anyone: Nobody's carried up twice. From him, this morning, it sounds like a kindness.
 - 2026-10-23 · overheard · Two winch-brothers at the rope, one to the other, low: Count her in for supper again. Aye, says the other, before she's said. It saves asking.
+- 2026-10-23 · house · Wren has chalked a small tally on the inside of the kitchen door, where only the kitchen can read it, and rubs one mark out with her thumb every time the cage comes up with what the chit said it would.
