@@ -75,3 +75,69 @@ Darrow found he was standing. He did not remember getting up. The knee held.
 "They come up with the carter," Anselm whispered. "Every seventh day. There's— there's always another letter."
 
 Behind them, at the far end of the row, the thin novice was on his knees on the flags with his ear to the floor, listening, and when he saw the Captain looking he got up, and dusted his knees, and went on with his bread.
+
+### Scene 2 — Her Hand
+
+The cage went down empty the next morning, for the first time in anyone's count. The almoner's satchel hung on its hook by the stores door with nothing in it, because the man who carried it was sitting on the cot next to Darrow's with the stores key in his fist and had been told not to move, and the winch-brothers, who had been told nothing, sent the cage down bare and stood at the drum looking at one another.
+
+It came up at dusk with nothing in it either. Rae Thorne came up the Steps instead.
+
+Wren saw her first, through Pell's glass from the wall: a hooded shape on the Last Hundred, climbing the way she climbed, not counting. "She's got something inside her cloak," Wren reported, coming down the row at a run with her scarf flying. "She's holding her arm across it. She did that with your brother's letter."
+
+Darrow was on his feet before she had finished. The cold had let go of him a little in the night; there was warmth in the left hand again, and a dull red heat in the right where the feeling was coming back under the linen, which Maelis said was good and felt like the opposite. He went down the hall to the gate with Wren, and Hollis had himself carried after, and Brother Anselm came because Darrow had told him to stay where he could be seen, and so the four of them were at the wicket when Rae came through it with the snow on her hood.
+
+She did not say what she had. She looked at the almoner, and at the key in his fist, and at Darrow's slung arm, and then she reached inside her cloak and brought out a letter and put it, not into the almoner's hands, but into Darrow's left one.
+
+"For him," she said. "I'll not leave a thing like that in the cage overnight with that man's stool in the door."
+
+It was addressed to Brother Anselm, almoner, at the House of Menders at Saint Ysolde's, in a neat upright clerk's hand with a long tail to its y, and sealed with plain wax.
+
+He knew the hand.
+
+He had seen it three times on the outside of folded paper, over blue wax, addressed to the Captain of the Ninth at the House of Menders: the same upright letters, the same long tail. Not Aldric's hand. Aldric wrote like a man falling downstairs. Whoever had written the direction on his brother's letters had written the direction on this one, and the man who had carried both up the Steps to the winch-house sat at a board on two kegs and never knelt.
+
+"Rae." She had already turned for the kitchen. "This hand. Where have you seen it?"
+
+She stopped. She did not turn round.
+
+"I've seen that hand," she said, to the door.
+
+"Where?"
+
+"I've seen it." Her shoulders did something under the cloak, a settling, the way she set them to a cart in a rut. "That's what I've got for you on it. The kitchen's counted me in, I expect."
+
+"Rae—"
+
+"Aye," she said, and went in.
+
+Wren looked at him. He shook his head, and gave the almoner his letter.
+
+---
+
+Anselm opened it standing, by the gate lamp, with the four of them watching and the snow coming in at the wicket, because he could not wait to sit and could not have sat if he tried. Something fell out of the fold as he opened it, and Wren caught it before it reached the flags.
+
+A lock of hair. Dark, and tied with thread.
+
+He read it. His lips moved along it the way Wren's moved along a row of lamps. Then he read it again, and folded it, and held out his hand to Wren for the hair, and put both inside his shirt, and did not weep. Darrow had been braced for weeping. This was worse. The man's face had simply shut, like a door with no handle.
+
+"She says she is well kept," Anselm said. "She says they have told her I have a thing to finish, and that when it is finished I may come down to Calden and fetch her home. She says to do it." His voice had gone flat and careful, the way a man's goes when he is carrying something full to the brim. "It's her mark at the bottom. Nobody else has that. But she would never say *kept*. She'd never in her life say she was *well kept*. That's his word. He wrote it and she signed under it."
+
+"Who did?" said Hollis.
+
+"The clerk." Anselm looked at Darrow. "The one who never kneels. He wrote this, Captain. He writes all of them. He wrote her words for her and put her hair in with them so that I'd—" He stopped. "So that I'd finish."
+
+Darrow stood in the gate lamp's light with his good hand open and the snow on it, and read the shape of the thing the way he read a ford.
+
+Marrant had not touched a weapon in front of the House in a month. He had read a list, and camped, and smiled, and kept the cage, and sent lamp oil up three jars short; and under all of it, through a clerk's hand and a cage rope, he had reached into the House and found the one man in it who loved somebody more than he feared anything, and had put a hand round that man's sister in Calden and squeezed, gently, with a lock of hair. He did not need a blade. He had never needed one. The lever was the whole of his method, and the House had been standing on it since before the snow.
+
+"He's got your name as well," Rae said.
+
+She was in the kitchen door with a cup. He had not heard her come back.
+
+"The dealer. On the Holloway." She said it to the cup. "He took it. He said a captain's word was worth the mare's keep till the thaw, and nothing past it, and he'd hold her that long on it. After the thaw it's coin or she's sold on." She drank. "I said you'd hear. Now you've heard."
+
+Till the thaw. A grey mare in a dealer's byre with his name over her like a roof that would last until the snow went.
+
+"Captain." Hollis, from the chair. He had the lad's blanket on his knee as he always had now, and he was looking at the almoner, who was looking at the floor. "I'll ask it, since nobody else will, and since I'm the one who nearly broke his neck for it. What does a captain do with a man who did a terrible thing for love?"
+
+Nobody answered him. The snow came in at the wicket and lay on the flags, and the almoner stood with his sister's hair inside his shirt and the stores key in his fist, and waited to be told.

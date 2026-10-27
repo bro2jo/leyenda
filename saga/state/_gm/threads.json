@@ -7,8 +7,8 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand (the warmth first, then Thistle, the boy, the turn) and that he wants to understand 'what I saw from the water'; neither 'ride wide' nor the horse turned early is in it.",
-      "note": "Darrow has told no one; in Ch 1 Between 2 (revised 10/10) he said aloud to Maelis that the Grace was taken, not lost, and named nobody; she said she does not know whose doing it was. 03:s3: his answer to Aldric gives the order and says he wants to understand 'what I saw from the water' (a question to Aldric, not an accusation); Marrant read it at the gate, his eyes stopping once near the middle.",
+      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand. 04:s2: Darrow, Wren, Hollis, Anselm and Rae saw that the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where",
+      "note": "touched 03:s3 (the letter to Aldric). 04:s2 (T3 plant): the direction on Aldric's three letters and Mirren's letter are in one clerk's hand, the clerk at the winch-house who never kneels: Vane's household and the Confessors write with one hand. Darrow has joined the two letters; he has not said Vane's name over it",
       "on_page": [
         "00:I",
         "00:III",
@@ -16,7 +16,8 @@
         "02:s5",
         "02:between-14",
         "03:s2",
-        "03:s3"
+        "03:s3",
+        "04:s2"
       ]
     },
     {
@@ -218,7 +219,8 @@
         "02:between-14",
         "02:climax",
         "03:between-1",
-        "03:s5"
+        "03:s5",
+        "04:s2"
       ]
     },
     {
@@ -227,14 +229,15 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae knows the mare lives and where; Darrow knows it now from her (03:s5: the bridge tell), and has still not said her name; Wren heard Rae and wrote nothing; the reader",
-      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. The micro sets what he sends; Tether III is the finding",
+      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he has still not said her name; Wren and Hollis heard; the reader",
+      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. 04:s2 (c03.6a paid): the dealer took his name: the mare's keep till the thaw, then coin or sold on. The finding is Tether III; the thaw is its clock",
       "on_page": [
         "00:I",
         "01:s3",
         "01:between-6",
         "02:s5",
         "03:s5",
+        "04:s2",
         "tale01:p1"
       ]
     },
@@ -307,8 +310,10 @@
       "feeds": "T1, b1.5 (Marrant's method), b2.4",
       "status": "open",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
-      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out",
-      "on_page": []
+      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out. 04:s2: his hand on Mirren's letter is the hand that addressed Aldric's three letters (T3: Vane's secretary); 'He writes all of them'",
+      "on_page": [
+        "04:s2"
+      ]
     },
     {
       "id": 21,

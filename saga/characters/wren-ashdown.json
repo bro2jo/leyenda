@@ -22,13 +22,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "climax",
+    "chapter": "04",
+    "scene": "2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#climax"
+    "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
-  "last_seen_doing": "Set the lamp down for him; gave him her satchel line, down light and up heavy; began to say who takes the letters down and was stopped; carried the lamp, the oilcloth and the mortar slab up, and set the slab on the linen press like an egg.",
-  "now": "Standing at the linen press with her hand on the slab of mortar, white, counting something under her breath that nobody asked for.",
+  "last_seen_doing": "Saw Rae on the Last Hundred through Pell's glass with something held inside her cloak; ran to tell the Captain; caught the lock of hair before it reached the flags and gave it back.",
+  "now": "Inside the wicket at dusk, having caught the lock of hair; she has no count for this.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -447,6 +447,12 @@
       "chapter": "03",
       "scene": "climax",
       "evidence": "had set the slab of mortar on the linen press as carefully as if it were an egg"
+    },
+    {
+      "fact": "She caught the lock of hair before it reached the flags.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "Wren caught it before it reached the flags."
     }
   ],
   "relationships": [
@@ -619,6 +625,10 @@
     {
       "chapter": "03",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "2"
     }
   ]
 }

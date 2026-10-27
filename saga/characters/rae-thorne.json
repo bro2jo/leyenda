@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "5",
+    "chapter": "04",
+    "scene": "2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-5"
+    "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
-  "last_seen_doing": "Named the inspected cage light before it cleared the cloud; told, unasked, what the almoner's satchel weighed going down and coming up; told the Captain of a grey mare at a Holloway dealer's; kept by the dusk bell as the House's guest, and on the gate wall told of a midsummer crate that froze her cart-bed.",
-  "now": "The House's guest for the night under the law of guests; she goes down at first light to Hob, and will carry down whatever the Captain sends for the mare. She asked him nothing.",
+  "last_seen_doing": "Came up the Steps at dusk with the almoner's letter inside her cloak rather than leave it in the cage overnight; put it in the Captain's hand, not the almoner's; would not say where she had seen the hand; from the kitchen door, told him the dealer took his name and holds the mare on it till the thaw.",
+  "now": "In the kitchen door with a cup, counted in for the night. She has said she has seen that hand, and will not say where.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -413,6 +413,24 @@
       "chapter": "03",
       "scene": "5",
       "evidence": "Whatever you're sending down for her. I'll carry it."
+    },
+    {
+      "fact": "She carried the almoner's letter up the Steps herself rather than leave it in the cage overnight with the grey cloak's stool in the byre door.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "I'll not leave a thing like that in the cage overnight with that man's stool in the door."
+    },
+    {
+      "fact": "She says she has seen the clerk's hand before, and will not say where.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "\"I've seen it.\" Her shoulders did something under the cloak"
+    },
+    {
+      "fact": "The dealer on the Holloway took the Captain's name as surety: worth the mare's keep till the thaw and nothing past it; after the thaw it is coin or she is sold on.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "He said a captain's word was worth the mare's keep till the thaw, and nothing past it"
     }
   ],
   "relationships": [
@@ -548,6 +566,10 @@
       "chapter": "04",
       "scene": "1",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "2"
     }
   ]
 }

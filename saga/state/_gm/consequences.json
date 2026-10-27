@@ -247,7 +247,7 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 15,
+          "offered": 16,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
@@ -263,7 +263,8 @@
             "ch03:s7",
             "ch03:climax",
             "ch03:choice",
-            "ch04:s1"
+            "ch04:s1",
+            "ch04:s2"
           ]
         }
       ]
@@ -450,10 +451,11 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch03:between-1",
-            "ch03:s5"
+            "ch03:s5",
+            "ch04:s2"
           ]
         }
       ]
@@ -738,7 +740,7 @@
           "fits": "present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 7,
+          "offered": 8,
           "offered_at": [
             "ch03:between-3",
             "ch03:s3",
@@ -746,7 +748,8 @@
             "ch03:s7",
             "ch03:climax",
             "ch03:choice",
-            "ch04:s1"
+            "ch04:s1",
+            "ch04:s2"
           ]
         }
       ]
@@ -821,7 +824,8 @@
           "what": "Rae carried the Captain's name down the Steps as surety for the grey mare. Fire where word comes back up from the Holloway: whether the dealer took a Faithless captain's word, and what it cost (the finding itself is a stage of the second thread, rae.tether)",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending"
+          "status": "fired@ch04:s2",
+          "evidence": "He said a captain's word was worth the mare's keep till the thaw, and nothing past it, and he'd hold her that long on it."
         }
       ],
       "declined": [

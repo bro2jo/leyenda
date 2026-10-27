@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "1",
+    "scene": "2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-1"
+    "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
-  "last_seen_doing": "Had himself carried in a poled chair at the end of the dawn bell with the almoner walking in front of it, having had the man's confession at the third bell; leaned at him with his whole weight when the man said mercy; stopped at his full name and sat back at the Captain's order.",
-  "now": "In the carried chair at the foot of Darrow's cot, the lad's blanket folded on his knee, his hands off the poles. He said Captain.",
+  "last_seen_doing": "Had himself carried to the gate; asked, since nobody else would, what a captain does with a man who did a terrible thing for love.",
+  "now": "In his chair inside the wicket with the lad's blanket on his knee, his question unanswered.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -426,6 +426,12 @@
       "chapter": "04",
       "scene": "1",
       "evidence": "\"Captain,\" he said."
+    },
+    {
+      "fact": "He asked what a captain does with a man who did a terrible thing for love, and nobody answered.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "What does a captain do with a man who did a terrible thing for love?"
     }
   ],
   "relationships": [
@@ -641,6 +647,10 @@
     {
       "chapter": "04",
       "scene": "1"
+    },
+    {
+      "chapter": "04",
+      "scene": "2"
     }
   ]
 }

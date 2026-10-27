@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "1",
+    "scene": "2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-1"
+    "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
-  "last_seen_doing": "Told the thin novice at the night bell and the Prior at the dawn bell, on his own leg with his right hand slung; heard the almoner's confession; stopped Hollis with his full name and an order, the first since the ford; told the almoner to stay in the hall, keep the stores key and give it to nobody.",
-  "now": "Standing at his cot with his right hand in a sling of Maelis's linen, the almoner on the next cot under his eye and the stores key still on the man's belt. The next letter from Calden comes up with the carter.",
+  "last_seen_doing": "Met Rae at the wicket; took the letter and knew its hand from the direction on his brother's letters; asked Rae twice where she had seen it and got only that she had; read Marrant's method whole: the lever, never the blade; heard the dealer holds the mare on his name till the thaw.",
+  "now": "Inside the wicket at dusk with his good hand open in the snow, having read the shape of Marrant's method; the almoner beside him waiting to be told what a captain does, and Hollis's question unanswered.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. He could not lift it. The cold took his right hand to the wrist, and he left the thing in the wall when Maelis said up. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1194,6 +1194,30 @@
       "evidence": "He did not remember getting up. The knee held."
     },
     {
+      "fact": "He knows the hand on the almoner's letter: the same upright clerk's hand with a long-tailed y that wrote the direction on all three of his brother's letters, and not Aldric's own.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "He had seen it three times on the outside of folded paper, over blue wax, addressed to the Captain of the Ninth"
+    },
+    {
+      "fact": "He believes Marrant's whole method is the lever and that he has never needed a blade: the almoner's sister squeezed with a lock of hair.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "He did not need a blade. He had never needed one. The lever was the whole of his method"
+    },
+    {
+      "fact": "He asked Rae twice where she had seen the hand and she would not say.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "\"I've seen that hand,\" she said, to the door."
+    },
+    {
+      "fact": "The feeling is coming back into his right hand under the linen as a dull red heat; the cold let go of him a little in the night.",
+      "chapter": "04",
+      "scene": "2",
+      "evidence": "there was warmth in the left hand again, and a dull red heat in the right where the feeling was coming back under the linen"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1467,6 +1491,10 @@
     {
       "chapter": "04",
       "scene": "1"
+    },
+    {
+      "chapter": "04",
+      "scene": "2"
     },
     {
       "chapter": "tale01",

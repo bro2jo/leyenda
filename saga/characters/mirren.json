@@ -21,8 +21,8 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "1",
-    "anchor": "chronicle/04-old-mercy.html#scene-1"
+    "scene": "2",
+    "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
   "last_seen_doing": "",
   "now": "",
@@ -57,6 +57,11 @@
     {
       "chapter": "04",
       "scene": "1",
+      "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "2",
       "mention": true
     }
   ]
