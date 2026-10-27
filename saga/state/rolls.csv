@@ -12,3 +12,7 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-18T02:31:19,ch02-the-stair-head,resolve,12,6,,,+0 resolve +3 proficiency +2 The Mender's Patience II +3 chapter 2 Triumph,14,SUCCESS,
 2026-10-19T00:50:45,ch03-s1-the-door,resolve,12,15,,,+0 resolve +3 proficiency,18,SUCCESS,
 2026-10-19T02:52:35,ch03-between-2-the-words-aloud,resolve,12,17,,,+0 resolve +3 proficiency,20,SUCCESS,
+2026-10-27T11:24:14,ch03-mortar,resolve,14,17,,,+0 resolve +3 proficiency +3 Warden's Eye III +1 chapter 3 Hard-won,24,SUCCESS,
+2026-10-27T11:24:15,ch03-pry,finesse,8,10,,,+0 finesse +1 chapter 3 Hard-won,11,SUCCESS,
+2026-10-27T11:24:15,ch03-cold,vigor,8,2,,,+0 vigor +1 chapter 3 Hard-won,3,FAILURE,
+2026-10-27T11:24:15,ch03-cold#reroll,vigor,8,2,,,+0 vigor +1 chapter 3 Hard-won,3,FAILURE,Inspiration spent at the cap
