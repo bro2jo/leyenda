@@ -415,17 +415,17 @@
           ]
         },
         {
-          "name": "The letter from Calden",
-          "text": "A letter for Brother Anselm that Rae Thorne carried up the Steps rather than leave in the cage: addressed in a neat upright clerk's hand with a long-tailed y, the same hand that wrote the direction on the Captain's three letters from his brother. Inside, his sister's words as the clerk wrote them (she is well kept; he has a thing to finish; then he may fetch her home), her private mark under them, and a lock of her dark hair tied with thread (Ch 4 Sc 2).",
-          "sources": [
-            "ch04:s2"
-          ]
-        },
-        {
           "name": "The black sliver under the row",
           "text": "What the frost comes from: a piece of black glass the size of the last joint of a thumb, standing on end in the rock at the back of the alcove under the infirmary row, with frost running out of its foot in straight lines and up the wall. It was shut in with a hand's depth of mortar laid like a lid over an old hole, and came up the Steps in the House's own letter-satchel the day before the first snow. It is one piece with the rock, like a root with the ground: Darrow's hand could not pull it, and the cold whitened his fingers to the second joint before he let it go; it stays in the wall. The mortar lid, with a thumbprint in its corner, is on the linen press (Ch 3 Climax).",
           "sources": [
             "ch03:climax"
+          ]
+        },
+        {
+          "name": "The letter from Calden",
+          "text": "A letter for Brother Anselm that Rae Thorne carried up the Steps rather than leave in the cage: addressed in a neat upright clerk's hand with a long-tailed y, the same hand that wrote the direction on the Captain's three letters from his brother. Inside, his sister's words as the clerk wrote them (she is well kept; he has a thing to finish; then he may fetch her home), her private mark under them, and a lock of her dark hair tied with thread (Ch 4 Sc 2).",
+          "sources": [
+            "ch04:s2"
           ]
         }
       ],
