@@ -85,7 +85,12 @@ Show the check on its own line, before the outcome is narrated:
 ```
 `[MIGHT · DC 13]` d20 **14** +2 = **16** — *Success*
 ```
-- Rolls come only from `python3 engine/darrow.py roll` and are written exactly as returned. **No invented rolls. No rerolls** except by spending Inspiration (`--reroll`), or the engine's own at the cap: when he holds all four and a climax check fails outright, `roll` spends one and casts again by itself, prints both dice lines, and both go on the page in order; the Reckoning box shows the spend (`> Inspiration 4 → 3`).
+- Rolls come only from `python3 engine/darrow.py roll` and are written exactly as returned. **No invented rolls. No rerolls** except on Inspiration: a climax check that fails outright is cast again on his Inspiration, and again, until it succeeds or he has none left (`rules.json → inspiration.auto_reroll_on_fail`); `--reroll` is the same spend by hand. `roll` prints the casts with an Inspiration line between them, and they go on the page **together, in order, as one block with nothing between the lines** (the site shows them as one check), then the prose tells what the dice decided; the Reckoning box shows the spend (`> Inspiration 4 → 2`):
+```
+`[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+`[INSPIRATION]` 4 → 3 · cast again
+`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Success*
+```
 - Use rolls for moments with real stakes: 1–2 per daily scene at most (often zero), 2–4 in a chapter climax.
 - A failure is never a dead end. It's a complication, a cost, a different road.
 - DCs: **the brief sets them.** At a climax, `saga.py brief --climax` prints, for each kind of check, his modifiers under the frozen tier and the DC at which a full success has the tier's chance (`rules.json → week_score.tiers[].target_odds`: a Triumph's checks are very likely, a Setback's are even); roll at that DC. The tier's roll modifier stays in the dice line; the DC is what answers it, so a strong week shows in the odds and the die can still fail. In a daily scene or a Between, `python3 engine/darrow.py odds --stat … [--prof --art …] --dc N` says what a DC means for him now; easy is about three in four, hard about one in two.

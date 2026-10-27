@@ -1730,10 +1730,23 @@ class Site:
                     lines += f'<p class="song-cue">{cue}</p>'
                 out.append(f"<blockquote>{lines}</blockquote>")
             elif kind == "dice":
-                m_nat = re.search(r"d20\s+\*{0,2}(\d+)(?:/(\d+))?", b[2])
-                m_res = re.search(r"\*?(Success|Failure|Partial[^*—]*)\*?", b[2])
-                die = d20_glyph(m_nat.group(1), m_res.group(1) if m_res else "") if m_nat else ""
-                out.append(f'<div class="dice">{die}<span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>')
+                # consecutive dice lines are one check: a cast, an Inspiration line, the cast again (style.md §3)
+                if b[1].strip().upper() == "INSPIRATION":
+                    row = f'<div class="dice-row insp"><span class="insp-glyph" aria-hidden="true">✦</span><span class="dice-tag">Inspiration</span> <span class="dice-body">{inline(b[2])}</span></div>'
+                else:
+                    m_nat = re.search(r"d20\s+\*{0,2}(\d+)(?:/(\d+))?", b[2])
+                    m_res = re.search(r"\*?(Success|Failure|Partial[^*—]*)\*?", b[2])
+                    die = d20_glyph(m_nat.group(1), m_res.group(1) if m_res else "") if m_nat else ""
+                    row = f'<div class="dice-row">{die}<span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>'
+                if out and out[-1].startswith('<div class="dice">') and out[-1].endswith("</div></div>"):
+                    prev = out.pop()[:-len("</div>")]
+                    if "dice-row insp" in row:  # the cast before an Inspiration line is the one it replaces
+                        k = prev.rfind('<div class="dice-row">')
+                        if k >= 0:
+                            prev = prev[:k] + '<div class="dice-row superseded">' + prev[k + len('<div class="dice-row">'):]
+                    out.append(prev + row + "</div>")
+                else:
+                    out.append(f'<div class="dice">{row}</div>')
             elif kind == "choice-h":
                 out.append(f'<h3 class="choice-h">{esc(b[1])}</h3>')
             elif kind == "ol":
@@ -3177,7 +3190,11 @@ hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}
 .reckoning{border:1px solid var(--brass-dim);border-radius:6px;padding:12px 14px;background:linear-gradient(180deg,rgba(207,166,95,.08),transparent);display:grid;gap:4px;max-width:65ch}
 .reckoning p{font-size:1rem;line-height:1.5;color:var(--t1);font-family:var(--body)}
 .reckoning .rk-h{color:var(--brass)}
-.dice{font-family:var(--body);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+.dice{font-family:var(--body);display:flex;flex-direction:column;gap:6px;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+.dice-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.dice-row.superseded{opacity:.55}
+.dice-row.insp{padding-left:4px}
+.insp-glyph{display:inline-block;width:32px;text-align:center;font-size:1.25rem;line-height:32px;color:var(--brass)}
 .dice-tag{font-family:var(--label);letter-spacing:.08em;font-size:.82rem;color:var(--brass);border:1px solid var(--brass-dim);border-radius:3px;padding:1px 7px;white-space:nowrap}
 .dice-body{font-variant-numeric:tabular-nums}
 .choice-h{font-family:var(--display);font-size:1.35rem;color:var(--brass)}

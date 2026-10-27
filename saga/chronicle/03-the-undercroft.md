@@ -973,22 +973,18 @@ She did not answer that. She did not say up, either.
 He put his right hand into the hole.
 
 `[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+`[INSPIRATION]` 4 → 3 · cast again
+`[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+`[INSPIRATION]` 3 → 2 · cast again
+`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Success*
 
 The cold did not bite. Biting is a thing with an edge, and this had none. It took the hand the way deep water takes a hand, all at once and everywhere, and the hand was not his. He watched his own fingers close on the black thing and felt nothing, and pulled, and the thing did not come, and the fingers did not open either. The white was coming up them. He could see it: rime on his own knuckles, growing from the stone outward, the way it had grown on the inside of the lid, and under the rime his hand had gone the colour of tallow.
 
-He tried once more. Everything he had was in the arm, and the arm was a rope with a stone on the end.
-
-`[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
-*(Inspiration, spent at the cap: cast again.)*
-
-Nothing. The white passed the second knuckle and went on toward the wrist, and the arm was still a rope.
+He tried once more. Everything he had was in the arm, and the arm was a rope with a stone on the end. Nothing. The white passed the second knuckle and went on toward the wrist.
 
 So he stopped pulling.
 
 It was the thing Maelis had taught him on a stair, with her hand over his on the stone: you do not fight what is holding you; you let it have the weight, and you breathe. He let the arm go slack in the hole with the hand still closed on the black thing, and breathed out, long, the way the forms went, and breathed in, and did it again, and the white stopped where it was.
-
-`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Success*
-*(Inspiration, spent: cast again.)*
 
 The cold did not go. But it stopped climbing, and with the hand quiet in it he could feel, for the first time, what it was closed on. The thing did not rock. It did not give the hair's breadth a stone gives in mortar or a tooth in a jaw. It was one piece with the rock behind it, the way a root is one piece with the ground: the frost-lines running out of its foot were not on the stone, they were in it, and a hand that pulled on this pulled on the mountain.
 

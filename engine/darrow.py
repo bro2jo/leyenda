@@ -25,7 +25,8 @@ Commands (run from the repo root):
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
                                --reroll spends one Inspiration on a second cast (--paid: the *[Inspiration]* option that offered it already spent it);
-                               at the cap a climax check that fails outright rerolls by itself (rules.json -> inspiration.auto_reroll_at_cap): both lines go on the page
+                               a climax check that fails outright is cast again on his Inspiration, again and again, until it succeeds or he has none
+                               (rules.json -> inspiration.auto_reroll_on_fail): every line it prints goes on the page, in order, as one block
   odds [--stat S] [--prof] [--art ID ...] [--chapter N | --tier] [--adv|--dis] [--bonus N] [--dc N | --target P] [--json]
                                what a DC means for him: the chance of a full success, a partial and an outright failure with the
                                modifiers roll would carry (DC 8-20, or one DC); --target P names the DC nearest that chance of a
@@ -2112,25 +2113,35 @@ def cmd_roll(args, cfg, rules):
     st = compute(cfg, rules)
     s = st["sheet"]
     note = args.note or ""
+    insp = int(s["inspiration"])
     if args.reroll:
         if not any(r["label"] == args.label for r in rows):
             sys.exit("nothing to reroll under that label")
         if args.paid:  # an *[Inspiration]* option in the choice: saga.py choose spent it already
             note = (note + "; " if note else "") + "paid by the choice"
+            print("`[INSPIRATION]` spent at the choice · cast again")
         else:
-            if s["inspiration"] < 1:
+            if insp < 1:
                 sys.exit("no Inspiration to spend")
             spend_inspiration(st, f"reroll {args.label}")
+            print(f"`[INSPIRATION]` {insp} → {insp - 1} · cast again")
+            insp -= 1
     mods = roll_mods(args, st, cfg, rules)
     result = cast(args, mods, label, note)
-    # at the cap nothing new can be earned, so a climax check that fails outright spends one on a second cast by itself
-    # (rules.json -> inspiration.auto_reroll_at_cap); both dice lines go on the page and the Reckoning box shows the spend
-    cap = int(s.get("inspiration_cap") or rules["inspiration"]["cap"])
-    if (args.chapter and not args.reroll and result in ("FAILURE", "CRITICAL FAILURE") and rules["inspiration"].get("auto_reroll_at_cap")
-            and int(s["inspiration"]) >= cap and not any(r["label"] == label + "#reroll" for r in read_csv("rolls"))):
-        spend_inspiration(st, f"auto at cap: {args.label}")
-        cast(args, mods, label + "#reroll", "Inspiration spent at the cap")
-        print(f"Inspiration spent at the cap: {s['inspiration']} → {int(s['inspiration']) - 1} (both dice lines go on the page; the Reckoning box shows the spend)")
+    # a climax check that fails outright is cast again on his Inspiration, and again, until it succeeds or he has none left
+    # (rules.json -> inspiration.auto_reroll_on_fail); the dice lines and the Inspiration lines between them go on the page
+    # together, in order, as one block, and the Reckoning box shows the spend
+    if args.chapter and not args.reroll and rules["inspiration"].get("auto_reroll_on_fail"):
+        lab = label
+        while (result in ("FAILURE", "CRITICAL FAILURE") and insp >= 1
+               and not any(r["label"] == lab + "#reroll" for r in read_csv("rolls"))):
+            spend_inspiration(st, f"cast again on a failed climax check: {args.label}")
+            print(f"`[INSPIRATION]` {insp} → {insp - 1} · cast again")
+            insp -= 1
+            lab += "#reroll"
+            result = cast(args, mods, lab, "Inspiration spent on a failed climax check")
+        if lab != label:
+            print("(every dice and Inspiration line above goes on the page, in order, as one block; the Reckoning box shows the spend)")
 
 
 def cmd_inspire(args, cfg, rules):

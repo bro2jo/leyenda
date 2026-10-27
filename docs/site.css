@@ -391,7 +391,11 @@ hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}
 .reckoning{border:1px solid var(--brass-dim);border-radius:6px;padding:12px 14px;background:linear-gradient(180deg,rgba(207,166,95,.08),transparent);display:grid;gap:4px;max-width:65ch}
 .reckoning p{font-size:1rem;line-height:1.5;color:var(--t1);font-family:var(--body)}
 .reckoning .rk-h{color:var(--brass)}
-.dice{font-family:var(--body);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+.dice{font-family:var(--body);display:flex;flex-direction:column;gap:6px;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+.dice-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.dice-row.superseded{opacity:.55}
+.dice-row.insp{padding-left:4px}
+.insp-glyph{display:inline-block;width:32px;text-align:center;font-size:1.25rem;line-height:32px;color:var(--brass)}
 .dice-tag{font-family:var(--label);letter-spacing:.08em;font-size:.82rem;color:var(--brass);border:1px solid var(--brass-dim);border-radius:3px;padding:1px 7px;white-space:nowrap}
 .dice-body{font-variant-numeric:tabular-nums}
 .choice-h{font-family:var(--display);font-size:1.35rem;color:var(--brass)}
