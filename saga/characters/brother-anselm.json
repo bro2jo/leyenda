@@ -14,7 +14,10 @@
     "faction": "menders",
     "mark": "none"
   },
-  "appearance": "A lay brother in his forties with cropped hair gone grey at the sides, a soft, tired face, and ink on the first two fingers of his right hand. He keeps the House's stores and its letters: the letter-satchel across his chest, the stores key on a cord at his belt. He apologises before he asks and trails off in the middle of a sentence.",
+  "appearance": "A lay brother in his forties with deep brown skin, close-cropped tight black curls gone grey at the temples, and a broad, soft face that looks tired even when it smiles: warm dark eyes with the creases of too little sleep under them, the brows drawn up at the middle in a worried, kindly line, a small uncertain smile. He wears the House's grey wool hood and robe over a cream linen collar, with the worn leather strap of the letter-satchel across his chest and the stores key on a cord at his belt, and he has a way of pressing a hand flat to his chest when he speaks, the first two fingers of it dark with ink. He apologises before he asks and trails off in the middle of a sentence.",
+  "portrait": "characters/brother-anselm.jpg",
+  "portrait_alt": "Portrait of Brother Anselm: a man in his forties with deep brown skin, close-cropped black curls greying at the temples and a tired, kindly face with a small uncertain smile, in a grey wool hood and robe over a cream linen collar, a worn leather satchel strap across his chest and one ink-stained hand pressed flat to his chest, before the snowy grey stone of the House.",
+  "portrait_focus": "50% 30%",
   "first_seen": {
     "chapter": "04",
     "scene": "1",

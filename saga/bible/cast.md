@@ -51,7 +51,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** A few words of rough Vaelish, each one an order. She says less than she knows.
 
 ## Brother Anselm
-- **Appearance:** A lay brother in his forties with cropped hair gone grey at the sides, a soft, tired face, and ink on the first two fingers of his right hand. He keeps the House's stores and its letters: the letter-satchel across his chest, the stores key on a cord at his belt.
+- **Appearance:** A lay brother in his forties with deep brown skin, close-cropped tight black curls gone grey at the temples, and a broad, soft face that looks tired even when it smiles: warm dark eyes with the creases of too little sleep under them, the brows drawn up at the middle in a worried, kindly line, a small uncertain smile. He wears the House's grey wool hood and robe over a cream linen collar, the worn leather strap of the letter-satchel across his chest, the stores key on a cord at his belt; he presses a hand flat to his chest when he speaks, the first two fingers of it dark with ink. His portrait (`saga/art/characters/brother-anselm.jpg`) is canon for his face.
 - **Voice:** Apologetic and gentle; he apologises before he asks, trails off in the middle of a sentence, and thanks people for things they have not done yet. He mentions his sister too often.
 
 ## Mirren
