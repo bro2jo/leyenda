@@ -5,10 +5,19 @@
   "chapter": 4,
   "chapter_title": "Old Mercy",
   "chapter_file": "saga/chronicle/04-old-mercy.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "The Almoner",
+      "covers": [
+        "2026-10-25"
+      ],
+      "written": "2026-10-27"
+    }
+  ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on the floor of the infirmary hall by the undercroft door, beside Hollis; the Prior standing off; Maelis gone up the row",
+    "detail": "standing at his cot in the infirmary hall, the almoner on the next cot, Hollis in a carried chair at its foot",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -18,7 +27,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "\"Get the novice who feeds the far cots. The thin one. He's the one who'll have to know where not to put his feet.\"",
+  "last_beat": "Behind them, at the far end of the row, the thin novice was on his knees on the flags with his ear to the floor, listening, and when he saw the Captain looking he got up, and dusted his knees, and went on with his bread.",
   "companions": {
     "maelis": {
       "approval": 29,

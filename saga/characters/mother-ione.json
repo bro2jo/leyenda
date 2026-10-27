@@ -22,13 +22,13 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "choice",
+    "chapter": "04",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#choice"
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
   },
-  "last_seen_doing": "Watched Maelis go, then Darrow, and still asked nothing.",
-  "now": "Standing off in the lit hall with the undercroft key, having asked nothing; she has not yet been told.",
+  "last_seen_doing": "Heard it all in the chapel before the lamps were lit, said once that she had counted the nights between, two, and that she says every name under the roof every night and will go on saying all of them; asked nothing.",
+  "now": "In the chapel at dawn, the first lamp lit. She knows what is under the House and has said her one thing about where she came in the order of telling.",
   "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -249,6 +249,18 @@
       "chapter": "03",
       "scene": "climax",
       "evidence": "and asked nothing at all"
+    },
+    {
+      "fact": "She counted the nights between his promise at the stair head and his telling: two.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "I counted the nights between. Two."
+    },
+    {
+      "fact": "She says every name under the roof in the chapel every night, has not had to stop saying one since he came, and will go on saying all of them.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "I say every name under this roof in this chapel every night, Captain, and I have not had to stop saying one since you came. I shall go on saying all of them."
     }
   ],
   "relationships": [
@@ -345,6 +357,10 @@
     {
       "chapter": "03",
       "scene": "choice"
+    },
+    {
+      "chapter": "04",
+      "scene": "1"
     }
   ]
 }

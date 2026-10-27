@@ -48,6 +48,20 @@
           "sources": [
             "import"
           ]
+        },
+        {
+          "name": "Brother Anselm",
+          "text": "The House's almoner: a soft, tired lay brother in his forties with ink on two fingers, who keeps the stores and takes the letters down to the carter each week. Before the snow a clerk in grey at the winch-house gave him two wrapped things and called them a mercy for the wounded, with his sister's letter under his hand; he set one under the row by the wine stair and could not set the other. Hollis brought him to the Captain at dawn (Ch 4 Sc 1).",
+          "sources": [
+            "ch04:s1"
+          ]
+        },
+        {
+          "name": "Mirren",
+          "text": "Brother Anselm's sister, the brave one of the two by his account: she went to the Spire at Calden to ask what had become of the brothers' letters from Coldmere, asked the wrong man before the wrong people, and is kept at Calden, comfortably, a clerk said twice. Her letters to her brother come up the cage in the clerk's hand with her private mark under them (Ch 4 Sc 1).",
+          "sources": [
+            "ch04:s1"
+          ]
         }
       ],
       "intro": ""
@@ -398,6 +412,13 @@
           "text": "What the frost comes from: a piece of black glass the size of the last joint of a thumb, standing on end in the rock at the back of the alcove under the infirmary row, with frost running out of its foot in straight lines and up the wall. It was shut in with a hand's depth of mortar laid like a lid over an old hole, and came up the Steps in the House's own letter-satchel the day before the first snow. Darrow could not lift it: the cold took his right hand to the wrist, and it stays in the wall; the mortar lid, with a thumbprint in its corner, is on the linen press (Ch 3 Climax).",
           "sources": [
             "ch03:climax"
+          ]
+        },
+        {
+          "name": "The wine stair",
+          "text": "A second way down to the undercroft: the old stair door where the House's wine was once laid down, below the kitchen end, opened by the almoner's stores key. Its stair comes out in the painted hall behind a pillar at the kitchen end, far from the iron-banded door and its flour. Brother Anselm carried the black sliver down it with a trowel and a lamp (Ch 4 Sc 1).",
+          "sources": [
+            "ch04:s1"
           ]
         }
       ],

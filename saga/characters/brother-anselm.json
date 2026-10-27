@@ -1,0 +1,113 @@
+{
+  "id": "brother-anselm",
+  "name": "Brother Anselm",
+  "aliases": [
+    "Anselm",
+    "the almoner",
+    "Brother Anselm"
+  ],
+  "epithet": "Almoner of Saint Ysolde's",
+  "tier": "minor",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "none"
+  },
+  "appearance": "A lay brother in his forties with cropped hair gone grey at the sides, a soft, tired face, and ink on the first two fingers of his right hand. He keeps the House's stores and its letters: the letter-satchel across his chest, the stores key on a cord at his belt. He apologises before he asks and trails off in the middle of a sentence.",
+  "first_seen": {
+    "chapter": "04",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
+  },
+  "last_seen": {
+    "chapter": "04",
+    "scene": "1",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
+  },
+  "last_seen_doing": "Was brought to the Captain shaking, and confessed: the stores key opens the old wine stair down to the undercroft; a clerk in grey at the winch-house, who wrote and never knelt, gave him two wrapped things before the snow and called them a mercy for the wounded, with his sister's letter under his hand; he set the first under the hall by the wine stair and was sick on the stair; the second was still in his satchel, and he gave it to Maelis.",
+  "now": "On the cot next to Darrow's, ordered to stay in the hall where the Captain can see him, to eat, and to keep the stores key and give it to nobody. The next letter from Calden comes with the carter.",
+  "story_so_far": "",
+  "quote": null,
+  "known_facts": [
+    {
+      "fact": "The stores key opens the old stair door where the wine was laid, below the kitchen end; the stair comes out in the undercroft hall behind a pillar at the kitchen end; he never used the flour door.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "It comes out in the hall below, at the kitchen end, behind a pillar. I never went near the other door."
+    },
+    {
+      "fact": "A clerk in grey with a desk at the winch-house, older than the grey cloaks and not one of them, gave him two wrapped things before the snow and had his sister's letter, written in the clerk's hand and signed with her private mark.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "He had a desk in the winch-house, they'd put a board on two kegs for him, and he had my sister's letter."
+    },
+    {
+      "fact": "The clerk called the things a mercy for the wounded: the fever comes off a man through the floor if there is a stone to take it, as at the Spire; one under the hall, then the other under the far cots.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "He said the fever comes off a man through the floor if there's a stone to take it"
+    },
+    {
+      "fact": "He set the first by the wine stair with a trowel and a lamp and was sick on the stair; he never set the second.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "I set it and I came up and I was sick on the stair."
+    },
+    {
+      "fact": "His sister Mirren went to the Spire at Calden to ask what had become of the brothers' letters from Coldmere, asked the wrong man in front of the wrong people, and is kept at Calden, comfortably, the clerk said twice.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "She went to the Spire to ask what had become of the brothers' letters from Coldmere, because they'd stopped, and she asked the wrong man, in front of the wrong people, and now she's—kept."
+    },
+    {
+      "fact": "He never saw the clerk kneel; the grey cloaks all kneel at the dawn bell, and the clerk only wrote.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "\"I never saw him kneel,\" Anselm said, to the floor."
+    },
+    {
+      "fact": "He says the letters from Calden come up with the carter every seventh day, and there is always another letter.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "They come up with the carter"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "mother-ione",
+      "label": "the Prior he keeps the stores and the letters for",
+      "note": "He takes the House's letters down to the carter each week and holds the stores key."
+    },
+    {
+      "to": "darrow",
+      "label": "the Captain he was brought to",
+      "note": "Hollis brought him to the Captain's cot, shaking."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "ember",
+      "state": "low"
+    },
+    "level": 2,
+    "rank": "Bound",
+    "attributes": {
+      "might": 7,
+      "vigor": 8,
+      "finesse": 9,
+      "resolve": 9
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "04",
+      "scene": "1"
+    }
+  ]
+}

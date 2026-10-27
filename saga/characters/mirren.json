@@ -1,0 +1,63 @@
+{
+  "id": "mirren",
+  "name": "Mirren",
+  "aliases": [
+    "Mirren",
+    "the almoner's sister"
+  ],
+  "epithet": "Brother Anselm's sister, held at Calden",
+  "tier": "minor",
+  "faction": "crown",
+  "status": "alive",
+  "sigil": {
+    "faction": "crown",
+    "mark": "none"
+  },
+  "appearance": "Not yet seen on the page: known there by her name in her brother's mouth, a letter in another's hand, and a lock of dark hair.",
+  "first_seen": {
+    "chapter": "04",
+    "scene": "1",
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
+  },
+  "last_seen": {
+    "chapter": "04",
+    "scene": "1",
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
+  },
+  "last_seen_doing": "",
+  "now": "",
+  "story_so_far": "",
+  "quote": null,
+  "known_facts": [],
+  "relationships": [
+    {
+      "to": "brother-anselm",
+      "label": "her brother, the almoner of Saint Ysolde's",
+      "note": "He mentions her too often."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "none",
+      "state": "unlit"
+    },
+    "level": 1,
+    "rank": "Bound",
+    "attributes": {
+      "might": 7,
+      "vigor": 9,
+      "finesse": 10,
+      "resolve": 12
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "04",
+      "scene": "1",
+      "mention": true
+    }
+  ]
+}

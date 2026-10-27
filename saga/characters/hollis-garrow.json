@@ -23,13 +23,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "choice",
+    "chapter": "04",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#choice"
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
   },
-  "last_seen_doing": "Heard it like a scout's report; said it is under his lad and under all of them; set the order: the far cots' keepers tonight, then the Prior, and the Prior is to be told it was his asking.",
-  "now": "On the floor at the stair head with the lad's blanket pulled straight, sending for the novice who feeds the far cots.",
+  "last_seen_doing": "Had himself carried in a poled chair at the end of the dawn bell with the almoner walking in front of it, having had the man's confession at the third bell; leaned at him with his whole weight when the man said mercy; stopped at his full name and sat back at the Captain's order.",
+  "now": "In the carried chair at the foot of Darrow's cot, the lad's blanket folded on his knee, his hands off the poles. He said Captain.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -414,6 +414,18 @@
       "chapter": "03",
       "scene": "choice",
       "evidence": "He's the one who'll have to know where not to put his feet."
+    },
+    {
+      "fact": "He had the almoner's confession at the third bell of the night and brought him to the Captain at dawn.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "Tell the Captain what you told me at the third bell."
+    },
+    {
+      "fact": "He stopped at his full name and the order to sit, and said Captain.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "\"Captain,\" he said."
     }
   ],
   "relationships": [
@@ -625,6 +637,10 @@
     {
       "chapter": "03",
       "scene": "choice"
+    },
+    {
+      "chapter": "04",
+      "scene": "1"
     }
   ]
 }

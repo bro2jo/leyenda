@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "choice",
+    "chapter": "04",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#choice"
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
   },
-  "last_seen_doing": "Told Hollis, low, what is under the row: the black glass in the rock, carried up in the House's satchel; agreed the far cots' keepers hear tonight and the Prior after.",
-  "now": "On the floor by the undercroft door beside Hollis, his right hand laid on his knee where Maelis left it. The far cots' keepers are to be told tonight; the Prior after, at Hollis's asking.",
+  "last_seen_doing": "Told the thin novice at the night bell and the Prior at the dawn bell, on his own leg with his right hand slung; heard the almoner's confession; stopped Hollis with his full name and an order, the first since the ford; told the almoner to stay in the hall, keep the stores key and give it to nobody.",
+  "now": "Standing at his cot with his right hand in a sling of Maelis's linen, the almoner on the next cot under his eye and the stores key still on the man's belt. The next letter from Calden comes up with the carter.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. He could not lift it. The cold took his right hand to the wrist, and he left the thing in the wall when Maelis said up. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1164,6 +1164,36 @@
       "evidence": "He told Hollis there on the floor, low, with the Prior ten paces off and the whole row lit"
     },
     {
+      "fact": "He told the Prior everything in the chapel at the dawn bell, after the far cots' keeper, and said the order of telling was Hollis's asking.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "He told her it had been Hollis's asking that the keepers came first, because it was."
+    },
+    {
+      "fact": "He knows there is a second way down to the undercroft: the old wine stair from the stores, opened by the stores key, which comes out behind a pillar at the kitchen end of the hall below.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "So there were two ways down."
+    },
+    {
+      "fact": "He stopped Hollis with his full name and the voice from the ford, which he had not used since the water, and ordered him to sit.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "It came out of Darrow in the voice from the ford, the one that had put the Ninth into a line it did not want to hold."
+    },
+    {
+      "fact": "He ordered the almoner to stay in the hall, eat, and keep the stores key on him, giving it to nobody, not the Prior, not Darrow himself.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "You'll keep the stores key on you and you'll give it to nobody, not the Prior, not me."
+    },
+    {
+      "fact": "He stood up without remembering getting up, and the knee held.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "He did not remember getting up. The knee held."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1433,6 +1463,10 @@
     {
       "chapter": "03",
       "scene": "choice"
+    },
+    {
+      "chapter": "04",
+      "scene": "1"
     },
     {
       "chapter": "tale01",

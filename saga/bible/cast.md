@@ -49,3 +49,11 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 ## The red-handed woman
 - **Appearance:** A clanswoman of forty or more, older than she looked from across the water: a weathered, freckled face with high cheekbones and a strong nose, amber-brown eyes under heavy brows, a scar through one eyebrow, dark hair gone grey at the temples in one long braid bound with a leather thong, a small iron ring in one ear, and hands painted red to the wrist. At the ford she wore a dark green wool mantle pinned with a bronze ring brooch over a leather jerkin and a coarse undyed tunic, with a spear over her shoulder. She has the patient, furious face of someone who has been right about something for a long time. Her portrait (`saga/art/characters/red-handed-woman.jpg`) is canon for her face.
 - **Voice:** A few words of rough Vaelish, each one an order. She says less than she knows.
+
+## Brother Anselm
+- **Appearance:** A lay brother in his forties with cropped hair gone grey at the sides, a soft, tired face, and ink on the first two fingers of his right hand. He keeps the House's stores and its letters: the letter-satchel across his chest, the stores key on a cord at his belt.
+- **Voice:** Apologetic and gentle; he apologises before he asks, trails off in the middle of a sentence, and thanks people for things they have not done yet. He mentions his sister too often.
+
+## Mirren
+- **Appearance:** Not yet seen on the page: known there by her name in her brother's mouth, a letter in another's hand, and a lock of dark hair.
+- **Voice:** Not yet heard.

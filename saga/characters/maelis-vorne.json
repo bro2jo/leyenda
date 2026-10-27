@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "choice",
+    "chapter": "04",
+    "scene": "1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#choice"
+    "anchor": "chronicle/04-old-mercy.html#scene-1"
   },
-  "last_seen_doing": "Let go of his hand, laid it on his knee, and told him he will tell the Prior himself and she will not be standing beside him when he does; went up the row past the Prior without a look.",
-  "now": "Gone up the row. She will not carry it to the Prior and will not stand beside him when he does.",
+  "last_seen_doing": "Came up behind Hollis's chair unheard, held out her hand for the second wrapped thing, closed her fingers on it, put it in her coat and said nothing more.",
+  "now": "At the cot with the second wrapped thing in her coat beside the chip. She has said nothing to Darrow since the night of the lid but Give it here.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost reached his wrist. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -429,6 +429,12 @@
       "chapter": "03",
       "scene": "choice",
       "evidence": "It won't be me who carries it, and I'll not be standing beside you when you do."
+    },
+    {
+      "fact": "She took the second wrapped thing from the almoner's satchel into her coat without a word about it.",
+      "chapter": "04",
+      "scene": "1",
+      "evidence": "she closed her fingers on it and looked at nothing, and put it in her coat, and said no more than that"
     }
   ],
   "relationships": [
@@ -595,6 +601,10 @@
     {
       "chapter": "03",
       "scene": "choice"
+    },
+    {
+      "chapter": "04",
+      "scene": "1"
     }
   ]
 }
