@@ -72,7 +72,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 (A song or a rhyme the page has sung, the first time: **Title** — the lines sung, and who sang them (first appearance). The rest of it stays in the Annals until the page has it.)
 - **The knucklebones rhyme** — chanted by whoever is losing: *Three for the knight who won't come down, / four for the bell and five for the hand.* (Hollis, losing the stone to Darrow, Ch 1 Between).
 - **The Lowmarch counting rhyme** — a children's counting rhyme: *Count the lances on the west bank, child, / count them, one through nine. / Count them going, count them coming home, / and never get the same sum twice.* (Prologue, epigraph).
-- **The dusk verse** — Said, not sung, to the rope by whoever rings Old Mercy at dusk, one line to each of four strokes; nobody below hears it. *Day's done and the door's shut. / The blade stays below. / What climbed, we keep. / And the bell says so.* Sister Pell knocked it out on the undercroft door for Darrow and told him the third line is not his to say: he is what it is about (Ch 4 Between).
+- **The dusk verse** — Said, not sung, to the rope by whoever rings Old Mercy at dusk, one line to each of four strokes; nobody below hears it. *Day's done and the door's shut. / The blade stays below. / What climbed, we keep. / And the bell says so.* Sister Pell knocked it out on the undercroft door for Darrow and told him the third line is not his to say (Ch 4 Between).
 
 ## Histories
 

@@ -196,8 +196,6 @@ At the turn of the Last Hundred she stopped, the way she had stopped twice befor
 
 ### Between — What Climbed
 
-He went back up the hall from the wicket with the thaw-wind at his back, and somewhere past the brazier he was no longer counting the cots, and could not have said where he had stopped.
-
 The undercroft door stood at the dark end as it had stood all week: shut, the Prior's key gone from it, the cold still coming under it along the flags. Nobody sat by it now. Darrow stood by it instead, one hand on the wall, and waited, because between every bell of those nights an old woman had come down from her tower to sit at this door, and he had been asleep for all of it.
 
 She came at the end of the grey, when the lamps were out and the windows had not yet taken over: two shawls, the dark kerchief, the walnut knuckles, moving down the row at the pace of someone who had been up and down a tower all night and meant to go up it again. She saw him before she reached him and did not slow. Sister Pell did not alter her pace for knights.
@@ -252,7 +250,7 @@ He said them to her, slow, with the window on his mouth, and got as far as the t
 
 She read the stop. She had read harder things.
 
-"Aye," said Sister Pell. "That one's not yours to say. You're what it's about." She took her hand off the door and put it back under the shawls. "Dusk. Under the tower, in the court, where I can see your mouth from the window. You'll say them with the strokes, and if you're late on a line I'll know it, and so will she."
+"Aye," said Sister Pell. "That one's not yours to say." She took her hand off the door and put it back under the shawls. "Dusk. Under the tower, in the court, where I can see your mouth from the window. You'll say them with the strokes, and if you're late on a line I'll know it, and so will she."
 
 "You'll be on the rope."
 

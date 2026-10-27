@@ -27,7 +27,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#between-2"
   },
-  "last_seen_doing": "Came down the row between the dawn bell and the hour bell; read the Captain's mouth and made him say it plain; refused her hands with Ask the bell; told him the House's three bells, the Small that rings once and flat for a far cot, and how Old Mercy cracked in the Quenching's winter and was poured again with the cracked piece in her; knocked the four lines of the dusk verse out on the undercroft door and made him say them back; told him to be under the tower at dusk where she can see his mouth from the window, and went up.",
+  "last_seen_doing": "Came down the row between the dawn bell and the hour bell; read the Captain's mouth and made him say it plain; refused her hands with Ask the bell; told him the House's three bells, the Small that rings once and flat for a far cot, and how Old Mercy cracked in the Quenching's winter and was poured again with the cracked piece in her; knocked the four lines of the dusk verse out on the undercroft door and made him say them back; told him the third line is not his to say; told him to be under the tower at dusk where she can see his mouth from the window, and went up.",
   "now": "Gone back up the row to her tower for the hour bell. She has given the Captain the dusk verse and expects him under the tower at dusk, in the court, where she can see his mouth from the window.",
   "story_so_far": "She rings the hours. Her glass on its strap counted the Captain's letter down the Steps and the riders on the road.",
   "quote": {
@@ -136,10 +136,10 @@
       "evidence": "One line to a stroke, four strokes, and nobody below hears them; she's over them."
     },
     {
-      "fact": "She gave the Captain the four lines, knocked out on the undercroft door, and told him the third line is not his to say because he is what it is about.",
+      "fact": "She gave the Captain the four lines, knocked out on the undercroft door, and told him the third line is not his to say.",
       "chapter": "04",
       "scene": "between-2",
-      "evidence": "That one's not yours to say. You're what it's about."
+      "evidence": "That one's not yours to say."
     },
     {
       "fact": "She told him to be under the tower at dusk, in the court, where she can see his mouth from the window, and not to be clever at it.",
