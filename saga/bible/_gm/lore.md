@@ -326,7 +326,7 @@ Sung low over the far cots by novices who were sung it in the valley, to the tun
 > and the mountain lets you go.
 
 ## song.menders — The dusk verse
-- **tier:** common · **spoken:** — · **names:** Old Mercy
+- **tier:** common · **spoken:** ch04:between-2 · **names:** Old Mercy
 - **use:** the dusk ringing; a thing Wren says instead of praying.
 
 Said, not sung, by whoever rings the sanctuary bell at dusk, one line to each stroke.

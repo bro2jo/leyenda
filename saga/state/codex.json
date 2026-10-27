@@ -428,6 +428,20 @@
           "sources": [
             "ch04:s2"
           ]
+        },
+        {
+          "name": "The Small",
+          "text": "The House's third bell: rung once, flat, when one of the far cots goes, so the House knows without being told. Darrow has never heard it; the Prior has not had a name to stop saying since he came up (Ch 4 Between).",
+          "sources": [
+            "ch04:between-2"
+          ]
+        },
+        {
+          "name": "The bells of the House",
+          "text": "Three, by Sister Pell: the hour bell, which tells the day; Old Mercy, the sanctuary bell, which cracked in the Quenching's winter before any count she keeps and was broken up and poured again with the cracked piece in the pour, so that there is no other voice like hers and never will be; and the Small (Ch 4 Between).",
+          "sources": [
+            "ch04:between-2"
+          ]
         }
       ],
       "intro": ""
@@ -447,6 +461,13 @@
           "text": "a children's counting rhyme: *Count the lances on the west bank, child, / count them, one through nine. / Count them going, count them coming home, / and never get the same sum twice.* (Prologue, epigraph).",
           "sources": [
             "import"
+          ]
+        },
+        {
+          "name": "The dusk verse",
+          "text": "Said, not sung, to the rope by whoever rings Old Mercy at dusk, one line to each of four strokes; nobody below hears it. *Day's done and the door's shut. / The blade stays below. / What climbed, we keep. / And the bell says so.* Sister Pell knocked it out on the undercroft door for Darrow and told him the third line is not his to say: he is what it is about (Ch 4 Between).",
+          "sources": [
+            "ch04:between-2"
           ]
         }
       ],
@@ -647,6 +668,13 @@
           "text": "Rae Thorne, at the wicket at first light, drawing up her hood to go down: her word for a thing that is what it is and will be walked anyway (Ch 4 Between).",
           "sources": [
             "ch04:between-1"
+          ]
+        },
+        {
+          "name": "\"Four strokes. Don't be clever at it.\"",
+          "text": "Sister Pell to Darrow, going back up to her tower, having given him the dusk verse and a dusk to say it under the tower where she can see his mouth (Ch 4 Between).",
+          "sources": [
+            "ch04:between-2"
           ]
         }
       ],

@@ -910,6 +910,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c04.2",
+      "made": {
+        "chapter": 4,
+        "scene": "between-2",
+        "date": "2026-10-27"
+      },
+      "chose": "At the undercroft door between the dawn bell and the hour bell, asked Sister Pell what the bell says at dusk; said it again plain to her face when she lost it in the bad light; let her refuse him her hands with Ask the bell; took the three bells, the Small and Old Mercy's crack from her, and the four lines of the dusk verse knocked out on the oak; said them back and stopped on the third; and owes her a dusk under the tower, in the court, saying them with the strokes where she can see his mouth from the window",
+      "now": {},
+      "due": [
+        {
+          "id": "c04.2a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow owes Sister Pell a dusk: under the tower in the court, saying the four lines of the dusk verse with Old Mercy's strokes where she can see his mouth from the tower window; late on a line and she will know. Fire where he says them at a dusk ringing, where she says he was late on a line or not there, or where someone else says the lines with him",
+          "fits": "place.saint_ysoldes",
+          "priority": 2,
+          "valid_until": "transition1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-2"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

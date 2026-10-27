@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-1",
+    "scene": "between-2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-1"
+    "anchor": "chronicle/04-old-mercy.html#between-2"
   },
-  "last_seen_doing": "Waited for Rae at the wicket before the dawn bell; told her all he knows of her is her oxen's names; asked his one question, what she wants, and let the hand on the letter go; answered hers with the mare's name, Thistle, said for the first time since the river.",
-  "now": "At the open wicket at first light, Rae gone down the Steps with the mare's name. He has said Thistle aloud for the first time since the water.",
+  "last_seen_doing": "Waited at the undercroft door between the dawn bell and the hour bell for Sister Pell; asked her what the bell says at dusk, said it again plain to her face when she lost it in the light, started to ask about her palms and was stopped with Ask the bell; took the three bells and Old Mercy's crack from her, said the four lines of the dusk verse back and stopped on the third; took on a dusk under the tower.",
+  "now": "At the undercroft door at the dark end of the hall, Sister Pell gone up the row to her tower. He has the dusk verse, and owes her a dusk under the tower in the court, saying it with the strokes where she can see his mouth.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1254,6 +1254,30 @@
       "evidence": "It had not been written about his mare; it was older than both of them. It had been true of her anyway."
     },
     {
+      "fact": "He asked Sister Pell what the bell says at dusk, and when she lost his words in the bad light he said them again plain, to her face, without the joke.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "He turned so the window was on his face and said it again, plain, and left off the joke he had been going to put on the end of it"
+    },
+    {
+      "fact": "He said the four lines of the dusk verse back to her and stopped on the third, What climbed, we keep.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "got as far as the third line and stopped on it."
+    },
+    {
+      "fact": "He owes Sister Pell a dusk under the tower, in the court, saying the lines with the strokes where she can see his mouth from the window.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "Dusk. Under the tower, in the court, where I can see your mouth from the window. You'll say them with the strokes"
+    },
+    {
+      "fact": "He kept his wrapped right hand inside his shirt when she spoke of the bell poured again with its own crack in it.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "Darrow's right hand was inside his shirt, where the linen was. He left it there."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1535,6 +1559,10 @@
     {
       "chapter": "04",
       "scene": "between-1"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-2"
     },
     {
       "chapter": "tale01",

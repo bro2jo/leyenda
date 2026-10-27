@@ -22,13 +22,13 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-3"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "1",
+    "chapter": "04",
+    "scene": "between-2",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-1"
+    "anchor": "chronicle/04-old-mercy.html#between-2"
   },
-  "last_seen_doing": "Rang the hours through the night and came down between every bell to sit by the undercroft door; heard nothing come or go; told Hollis she would sleep after the noon bell.",
-  "now": "Gone up to her bell tower after the dawn bell, her palms raw from the rope; the lay brothers are carrying wood up to her.",
+  "last_seen_doing": "Came down the row between the dawn bell and the hour bell; read the Captain's mouth and made him say it plain; refused her hands with Ask the bell; told him the House's three bells, the Small that rings once and flat for a far cot, and how Old Mercy cracked in the Quenching's winter and was poured again with the cracked piece in her; knocked the four lines of the dusk verse out on the undercroft door and made him say them back; told him to be under the tower at dusk where she can see his mouth from the window, and went up.",
+  "now": "Gone back up the row to her tower for the hour bell. She has given the Captain the dusk verse and expects him under the tower at dusk, in the court, where she can see his mouth from the window.",
   "story_so_far": "She rings the hours. Her glass on its strap counted the Captain's letter down the Steps and the riders on the road.",
   "quote": {
     "text": "Fifty years I've rung the bells. Ask the bell if it's tired.",
@@ -104,6 +104,48 @@
       "chapter": "03",
       "scene": "1",
       "evidence": "they were red across the palms in two straight lines"
+    },
+    {
+      "fact": "She hears with her eyes: fifty years under the bells, she reads a speaker's mouth and loses words said sideways or in bad light.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "Fifty years under them, and whatever she heard now she heard with her eyes."
+    },
+    {
+      "fact": "She will not speak of her hands: asked, she said Ask the bell.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "\"Ask the bell,\" she said, without looking up from her hand, and that was the end of that."
+    },
+    {
+      "fact": "The House has three bells: the hour bell, Old Mercy, and the Small, rung once and flat when one of the far cots goes; the Captain has never heard the Small.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "The third's the Small. Once, flat, when one of them goes."
+    },
+    {
+      "fact": "Old Mercy cracked in the Quenching's winter, before any count she keeps, and was broken up and poured again with the cracked piece in the pour, which is why she has the voice she has.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "They broke her up and poured her again with the cracked piece in the pour, and she came out with that voice."
+    },
+    {
+      "fact": "The dusk verse is said to the rope, one line to a stroke, four strokes, by whoever rings Old Mercy at dusk; nobody below hears it, and she has said it every dusk the bell has rung.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "One line to a stroke, four strokes, and nobody below hears them; she's over them."
+    },
+    {
+      "fact": "She gave the Captain the four lines, knocked out on the undercroft door, and told him the third line is not his to say because he is what it is about.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "That one's not yours to say. You're what it's about."
+    },
+    {
+      "fact": "She told him to be under the tower at dusk, in the court, where she can see his mouth from the window, and not to be clever at it.",
+      "chapter": "04",
+      "scene": "between-2",
+      "evidence": "Four strokes. Don't be clever at it."
     }
   ],
   "relationships": [
@@ -181,6 +223,10 @@
       "chapter": "03",
       "scene": "7",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "between-2"
     }
   ]
 }

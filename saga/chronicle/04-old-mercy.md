@@ -193,3 +193,69 @@ Rae said nothing for the length of the dawn bell's last stroke. Then she nodded,
 At the turn of the Last Hundred she stopped, the way she had stopped twice before, and spoke without looking back.
 
 "I'll tell her."
+
+### Between — What Climbed
+
+He went back up the hall from the wicket with the thaw-wind at his back, and somewhere past the brazier he was no longer counting the cots, and could not have said where he had stopped.
+
+The undercroft door stood at the dark end as it had stood all week: shut, the Prior's key gone from it, the cold still coming under it along the flags. Nobody sat by it now. Darrow stood by it instead, one hand on the wall, and waited, because between every bell of those nights an old woman had come down from her tower to sit at this door, and he had been asleep for all of it.
+
+She came at the end of the grey, when the lamps were out and the windows had not yet taken over: two shawls, the dark kerchief, the walnut knuckles, moving down the row at the pace of someone who had been up and down a tower all night and meant to go up it again. She saw him before she reached him and did not slow. Sister Pell did not alter her pace for knights.
+
+"Sister."
+
+She looked at his mouth, not his eyes, and then past him at the door, and said nothing. He had seen her do it at the council, watch the Prior's lips as if the words were on them and not in the air, and had taken it for a trick of the old. It was the bells. Fifty years under them, and whatever she heard now she heard with her eyes.
+
+"What does the bell say at dusk?" he said.
+
+"It says dusk." She had the rasp of a hinge nobody oiled. "Be under it and you'll hear it."
+
+"Not the bell. You. The Prior says names in the chapel. Hollis says a thing to the lad at every bell that doesn't carry. The lad said his oath. I've been in this hall a season and I don't know what the woman on the rope says."
+
+She had not caught all of it. He saw her lose it somewhere around Hollis, in the bad light, and stop reaching for it, the way you stop reaching for a rope that has gone past.
+
+"Slower," she said. "And to me, not the floor. I can't read a floor."
+
+He turned so the window was on his face and said it again, plain, and left off the joke he had been going to put on the end of it, because she would only have made him say that again too.
+
+"Hm." She looked at the door. "There's a rope wants me."
+
+"After."
+
+"There's no after a bell, Captain. There's the next one." But she did not go. She put one hand flat on the oak of the undercroft door, and as it turned he saw the palm: two lines rubbed red across it, straight as a rule, a week old and not healed. He opened his mouth.
+
+"Ask the bell," she said, without looking up from her hand, and that was the end of that.
+
+"Three bells," she said. "You've heard two. The hour bell you hear till you don't. Old Mercy you heard at the gate, late, which I'll thank you not to say to me, and every dawn and dusk since. The third's the Small. Once, flat, when one of them goes." Her chin went down the row, toward the breathing dark. "You've not heard it. The Prior's not had a name to stop saying since you came up. Keep it that way, if you've any say in it, which you haven't."
+
+"And Old Mercy. Why does the valley know her, and not the hour bell?"
+
+"Because there's not another like her and never will be. She cracked, the Quenching's winter, before any count I keep. They broke her up and poured her again with the cracked piece in the pour, and she came out with that voice. You can't make it twice. A bell with her own crack in her."
+
+Darrow's right hand was inside his shirt, where the linen was. He left it there.
+
+"The words," he said.
+
+"They're said to the rope. One line to a stroke, four strokes, and nobody below hears them; she's over them. I've said them every dusk she's rung, and there's been fewer of those than you'd think, and nobody's asked." She considered him, mouth first and then the rest. "You'll have them wrong. You'll say them like a Lowmarch soldier and she'll know."
+
+"Then give them to me right."
+
+She knocked once on the oak with the knuckle of her first finger, the sound of a cup on stone, and said the first line with it.
+
+"*Day's done and the door's shut.*" Knock. "*The blade stays below.*" Knock. "*What climbed, we keep.*" Knock. "*And the bell says so.*"
+
+The hall took them and gave nothing back. Down the row a far cot breathed in, and out.
+
+"Again," she said. "You. To me."
+
+He said them to her, slow, with the window on his mouth, and got as far as the third line and stopped on it.
+
+She read the stop. She had read harder things.
+
+"Aye," said Sister Pell. "That one's not yours to say. You're what it's about." She took her hand off the door and put it back under the shawls. "Dusk. Under the tower, in the court, where I can see your mouth from the window. You'll say them with the strokes, and if you're late on a line I'll know it, and so will she."
+
+"You'll be on the rope."
+
+"I've been on the rope fifty years, Captain. I can look out of a window." She was already going, back up the row toward her tower at the pace she had come, and said the last of it to the hall and not to him, since she could not see his answer and did not want it.
+
+"Four strokes. Don't be clever at it."
