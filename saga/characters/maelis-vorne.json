@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "anchor": "chronicle/03-the-undercroft.html#climax"
   },
-  "last_seen_doing": "Made him say up means up before she said one; went down behind them with nothing; stood at his shoulder at the alcove with her arms in her sleeves and let him take the bar and the knee, and watched which.",
-  "now": "At his shoulder at the alcove, arms folded in her sleeves, breathing the cold like air. She has not said up.",
-  "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
+  "last_seen_doing": "Did not say up when he refused to leave it, and did not say it when he put his hand in; said it when the frost reached his wrist; carried him up the stair under both arms; held the hand in both of hers by the fire; told him he will keep the fingers, that it is the second time she has seen a hand go into one of those, and that she waited to see if he would go.",
+  "now": "On the floor by the undercroft door holding his right hand in both of hers. She has told him the first man who put a hand in one of those kept his.",
+  "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost reached his wrist. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
     "chapter": "02",
@@ -399,6 +399,30 @@
       "chapter": "03",
       "scene": "7",
       "evidence": "she stood at his shoulder in the cold with her arms folded inside her sleeves, breathing, and let him go down onto the right knee, and watched which"
+    },
+    {
+      "fact": "She did not say up when he refused to leave the thing, and let him put his hand in.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "She did not answer that. She did not say up, either."
+    },
+    {
+      "fact": "She says this is the second time she has seen a hand go into one of those, and that the first man kept his.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"That's the second time I've seen a hand go into one of those. The first man kept his.\""
+    },
+    {
+      "fact": "She says she waited before saying up because she wanted to see if he would go.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"I wanted to see if you'd go.\""
+    },
+    {
+      "fact": "She says he will keep the fingers but will not close that hand on anything for a week, and is not to put it near the stone again.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "You won't close that hand on anything for a week"
     }
   ],
   "relationships": [
@@ -557,6 +581,10 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax"
     }
   ]
 }

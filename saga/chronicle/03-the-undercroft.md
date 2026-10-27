@@ -921,3 +921,100 @@ He leaned on the bar.
 
 > ⟦ THE RECKONING ⟧
 > XP 2,138 → 2,143
+
+## Climax — What Was Carried
+
+The mortar did not fight him.
+
+He had braced for it to: for the bar to skid, for the pale line to hold like the wall it was pretending to be and for the cold to have the last word. Instead the iron bit, and he leaned, and the whole pale square came away from the stone in one piece and fell into his lap like a dropped tile.
+
+`[FINESSE · DC 8]` d20 **10** +0 finesse +1 chapter 3 Hard-won = **11** — *Success*
+
+It had never been part of the wall. It was a lid. Whoever had laid it had cut nothing and built nothing; they had pressed a hand's depth of wet mortar into the mouth of a hole that was already there, smoothed it, and gone. He turned the slab over on his knee. The trowel-ridge was on the outside, the thumbprint in its corner. The inside was a cast of the thing it had covered: a shallow dent, and round the dent a ring of rime that had grown on the mortar from the inside out.
+
+"Lamp," he said, and Wren put it down on the flags beside his knee without a word.
+
+The hole was a hole in the living rock, a little wider than it was high, old as the hall. The rime inside had lost its covering now and lay open to the light, and in the back of it, where the lamp reached, there was the thing.
+
+It was black. That was the first of it: black the way the lad's chip had been black when Maelis had held it out to him in the cup of her hand, glass-black, with the lamp sliding on it and finding nothing to hold. The size of the last joint of a man's thumb. It did not sit on the rock; it stood up out of it a little, on end, as if it had been pushed into soft ground and the ground had set, and from its foot the frost ran out across the floor of the hole in lines, straight lines, like the lines a dropped stone draws in ice on a trough. Up the back of the hole they ran, and up the wall above it, and up through two spans of stone into a row of beds.
+
+He had seen a thing the size of this before, in a cup of Maelis's hand, and had called it a chip off a field-stone to keep it out of the hall. He had been wrong, and he had known he was wrong when he said it, and here was the rest of the stone.
+
+"Wren." He did not look round. "Your satchel line. The day before the snow."
+
+"Down light, up heavy." Her voice came small and quick, a half-step behind the way it came on the stair. "I wrote *letters*. With a mark."
+
+He laid his two hands flat on the flags either side of the hole, the way you measure a horse's hoof, and looked at the width between them. A satchel's width, lying on its side. The thing in the back of it was no bigger than a thumb-joint. A thumb-joint does not make a satchel sit like a stone.
+
+But a thumb-joint with that round it would.
+
+`[RESOLVE · DC 14]` d20 **17** +0 resolve +3 proficiency +3 Warden's Eye III +1 chapter 3 Hard-won = **24** — *Success*
+
+The pale script came up over his palms without being asked, there on the flags in the lamplight, and he read the hole by it the way he had read the ford from the water: not the parts, the shape. The mortar laid in one pass, by one hand, wet, in the dark. The slab in his lap the size of a satchel's flap. The thing stood on end because it had been *placed*, not dropped. The frost on the mortar's inside grown from the stone outward, so the stone had been cold before it was shut in. And the satchel that went down the cage with the House's letters the day before the snow and came up that same evening sitting like a stone, and was carried up the Last Hundred by whoever carries the House's letters, and across the hall, and down thirty-nine steps, and set in the wall under the row, and the flour swept and laid again before the dawn bell.
+
+"It came up in the satchel," he said. "In the House's own bag, with the House's letters on top of it. Somebody at the bottom put it in, and somebody at the top carried it down here and shut it in with a trowel."
+
+"The almoner takes the letters d—"
+
+"Not down here." He said it quietly, and she stopped.
+
+Behind him Maelis had not moved. He could feel her there the way you feel a wall at your back in the dark.
+
+"You've seen it," she said. "Up."
+
+"Not yet."
+
+"You gave me your word on the top step."
+
+"I gave you my word that when you said up it was up. You haven't said it." He had the oilcloth already in his left hand. "It's a thumb-joint of glass, Maelis. It's in the wall under a boy who says his oath at every bell and can't feel his own mouth. I'm not leaving it there and going up to supper."
+
+She did not answer that. She did not say up, either.
+
+He put his right hand into the hole.
+
+`[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+
+The cold did not bite. Biting is a thing with an edge, and this had none. It took the hand the way deep water takes a hand, all at once and everywhere, and the hand was not his. He watched his own fingers close on the black thing and felt nothing, and pulled, and the thing did not come, and the fingers did not open either. The white was coming up them. He could see it: rime on his own knuckles, growing from the stone outward, the way it had grown on the inside of the lid, and under the rime his hand had gone the colour of tallow.
+
+He tried once more. Everything he had was in the arm, and the arm was a rope with a stone on the end.
+
+`[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+
+Nothing. The frost reached his wrist.
+
+"**Up.**"
+
+It was not loud. He heard it the way he had heard the gate-bell from the water, from a long way off and the only sound there was, and his word went before him: his left hand came across and took his own right wrist and hauled, and the dead hand came out of the hole open, and the black thing stayed where it stood, doing nothing, up through two spans of rock.
+
+Then Maelis had him under both arms from behind, and Wren had the lamp and the oilcloth and the slab of mortar and was already backing toward the pillars with her teeth going, and the three of them went up the hall and through the empty frame and up thirty-nine steps with his hand held against his chest in his left, and he did not look at the wall or the floor. He looked at the hand. It was white to the second knuckle and did not look like a hand.
+
+---
+
+Hollis was the first face. He was where they had left him, on the floor with his back to the frame and the lad's blanket over his knees, and he saw the hand before he saw anything else, because he was a sergeant and sergeants see the wound before the man.
+
+"Stone and Crown," he said, very low. And then, louder, up the hall, in the voice that carried over rivers: "Fire. *Now.* Not the kitchen's: the warming room's. And water that's been stood in the room, not off the ice. Move, you—"
+
+They moved. Lay brothers went past at a run. Somewhere down the row a novice was lighting every lamp on it at once, and Wren, white herself, had set the slab of mortar on the linen press as carefully as if it were an egg and stood with her hand on it, counting something under her breath that nobody asked her for.
+
+Maelis sat him on the floor by Hollis, and took the hand in both of hers, and did not blow on it, and did not rub it. She held it. After a while there was a feeling in it, and the feeling was fire, and he found he had his teeth in his own sleeve.
+
+"You'll keep the fingers," she said, flat, as if reading a knee. "That's the second time I've seen a hand go into one of those. The first man kept his. You won't close that hand on anything for a week, and you'll not put it near the stone again, and the next time I say a thing on a stair you'll not bargain with it."
+
+"You didn't say it."
+
+"No." She looked at him. "I wanted to see if you'd go."
+
+The Prior came down the row through the lamps with her hands folded, and stopped a little way off, and looked at the hand, and at the slab of mortar on the linen press, and at the three of them on the floor, and asked nothing at all. Up the hall a door opened and the cold air of the court came in, and with it, faint, from the lower terrace, the grey cloaks' voices at their fires.
+
+Hollis had not let go of the lad's blanket. He leaned over it now, close, so the words went to Darrow and no further.
+
+"Well, Captain." His eyes went to the undercroft door, which somebody had shut, and the key the Prior still held, and the hand. "What's under us. And who do we tell."
+
+> ⟦ THE RECKONING ⟧
+> Inspiration 4 → 3
+> XP 2,143 → 2,173
+
+**What does Darrow do?**
+1. **Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.** *(Maelis approves.)*
+2. **Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law.** *(Hollis approves; Maelis disapproves.)*
+3. **Tell no one yet, and watch the stair.** *(Risky.)*

@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "anchor": "chronicle/03-the-undercroft.html#climax"
   },
-  "last_seen_doing": "Brought the kitchen's pry bar under her scarf; found it off its hook, behind the flour bins on the floor, and wrote that under nothing; offered to work the bar herself and gave it up at his word; carried the oilcloth down.",
-  "now": "At the alcove with Darrow and Maelis, her teeth going in the cold, the oilcloth laid out; she has given him the bar.",
-  "story_so_far": "She keeps the House's tallies in her ledgers; she counted the Thousand Steps beside Darrow's litter and the grey cloaks in at the gate. When Ser Benedek Orrin was found Hollowed she became the Captain's legs: the doors into the hall, the keys on the Prior's ring, a letter and its burning, and the cold seam along the east wall, which she found by touch. At dusk on the eve she walked the wall with a candle and the flame led her to the undercroft door. After the night bell, before the whole House, her count of the bells fixed the hour the lad was taken, between the third bell and the fourth, and the House walked its hall behind her candle; she has offered to go down the stair herself.",
+  "last_seen_doing": "Set the lamp down for him; gave him her satchel line, down light and up heavy; began to say who takes the letters down and was stopped; carried the lamp, the oilcloth and the mortar slab up, and set the slab on the linen press like an egg.",
+  "now": "Standing at the linen press with her hand on the slab of mortar, white, counting something under her breath that nobody asked for.",
+  "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -435,6 +435,18 @@
       "chapter": "03",
       "scene": "7",
       "evidence": "\"I can do it. I've got two good knees and no face anyone's watching.\""
+    },
+    {
+      "fact": "She began to say that the almoner takes the letters down, and stopped when he said not down here.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"The almoner takes the letters d—\""
+    },
+    {
+      "fact": "She carried the slab of mortar up and set it on the linen press as carefully as an egg.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "had set the slab of mortar on the linen press as carefully as if it were an egg"
     }
   ],
   "relationships": [
@@ -603,6 +615,10 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax"
     }
   ]
 }

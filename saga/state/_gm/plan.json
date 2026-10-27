@@ -321,7 +321,7 @@
     "ysra_spared": null,
     "named_himself": true,
     "marrant_offer": false,
-    "shard_found": false,
+    "shard_found": true,
     "wren_script_seen": false,
     "vane_answered": true,
     "sanctuary_writ": false,
@@ -445,5 +445,17 @@
       "bound": "2026-10-14"
     }
   ],
-  "open_choice": null
+  "open_choice": {
+    "chapter": 3,
+    "scene": "climax",
+    "ask": "What does Darrow do?",
+    "options": [
+      "Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.",
+      "Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law.",
+      "Tell no one yet, and watch the stair."
+    ],
+    "default": 2,
+    "opened": "2026-10-27",
+    "carries": 2
+  }
 }

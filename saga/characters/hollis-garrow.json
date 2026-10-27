@@ -24,13 +24,13 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "anchor": "chronicle/03-the-undercroft.html#climax"
   },
-  "last_seen_doing": "Had himself carried to the stair's head before the key was turned, the lad's blanket over his knees; told the Captain wall, once, from the top, and that he would be there.",
-  "now": "Sitting on the floor at the head of the undercroft stair, his back to the frame, his one foot against the linen press, the lad's blanket over his knees, waiting for a word to come up.",
-  "story_so_far": "At Harrow Ford he brought the writ that sent the Sixth and the Ninth into the river, and came back from it missing his right leg above the knee; he has had the cot next to Darrow's at Saint Ysolde's since, with his name second on the Confessor's list. When the lad of his Sixth, Ser Benedek Orrin, was found Hollowed on the feast morning, Hollis would not let him be carried to the far cots, and has sat beside the Grey Cot with the lad's hand in his ever since. He watched a letter in blue wax burn and left the hall for the first time; in the cloister he asked the Captain whether the kind lies he told the lad had sent him wherever he has gone, and asked him to sit up a while. When the House heard that the lad stopped saying his oath between the third bell and the fourth, Hollis shut his eyes, and when Wren offered to go down the undercroft stair he told the Captain not to send that girl down a hole.",
+  "last_seen_doing": "Saw the hand before the man as they came up; called for the warming room's fire and stood water in a voice that carried over rivers; kept the lad's blanket; leaned close and asked what is under them and who they tell.",
+  "now": "On the floor at the head of the undercroft stair beside Darrow, the lad's blanket still over his knees, waiting to hear who is told.",
+  "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
     "chapter": "02",
@@ -390,6 +390,18 @@
       "chapter": "03",
       "scene": "7",
       "evidence": "Hollis watched the undercroft door over the lad's head the whole time he was saying it."
+    },
+    {
+      "fact": "He saw the hand before he saw anything else and called for the warming room's fire and stood water.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "he saw the hand before he saw anything else, because he was a sergeant and sergeants see the wound before the man"
+    },
+    {
+      "fact": "He asked, close, so the words went no further: what is under them, and who do they tell.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"What's under us. And who do we tell.\""
     }
   ],
   "relationships": [
@@ -593,6 +605,10 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax"
     }
   ]
 }

@@ -31,7 +31,7 @@
   },
   "last_seen_doing": "Said his oath at the noon bell with Hollis's hand round his; the frost on his mouth neither grew nor melted.",
   "now": "In the Grey Cot, the frost on his mouth unchanged, his blanket on Hollis's knees at the stair head.",
-  "story_so_far": "A knight of Hollis Garrow's Sixth, wounded at Harrow Ford, who says his oath at every bell. On the night of the gate his name was not read, and he took it for mercy and said good night to the Captain. At the dawn bell of the feast he did not say his oath: he lay breathing with his eyes open and frost on his mouth, Hollowed, and the Mender took a chip of black glass from under his tongue. He lies in the Grey Cot under the far cots' blanket with Hollis's hand on his; the House has heard that he said his oath at the first three bells of that night, and not at the fourth.",
+  "story_so_far": "He lies in the Grey Cot and says his oath at every bell with Hollis's hand round his, the frost on his mouth neither growing nor melting. The thing that makes it is in the wall beneath him.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
     "chapter": "01",
@@ -274,6 +274,11 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax",
+      "mention": true
     }
   ]
 }

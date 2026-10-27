@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "anchor": "chronicle/03-the-undercroft.html#climax"
   },
-  "last_seen_doing": "Asked the House to take its supper at the kitchen end again, and came to the undercroft door with the cord over her head and turned the key.",
-  "now": "At the undercroft door at the top of the stair, the key turned.",
-  "story_so_far": "The Prior of Saint Ysolde's, who holds the House's law and its bell. When the grey cloaks came she kept the Confessor at the wicket as long as the law of guests allowed and gave him the law of names; at night she says the names of everyone under her roof in the chapel. When the Confessor came back to the bars to ask for the Mender, she answered him with a question. When the cold led to the undercroft door, whose key has passed from Prior to Prior unturned, she neither forbade nor permitted it; she called the House into the hall after the night bell and let the Captain tell it, and she wears an old key on a cord at her neck, to be asked for when he can say what he would do at the bottom.",
+  "last_seen_doing": "Came down the row through the lamps with her hands folded, looked at the hand, the slab of mortar and the three of them, and asked nothing.",
+  "now": "Standing a little way off in the lit hall with the undercroft key in her hand, having asked nothing.",
+  "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
     "chapter": "02",
@@ -243,6 +243,12 @@
       "chapter": "03",
       "scene": "4",
       "evidence": "You'll tell me what you saw when you know what it was."
+    },
+    {
+      "fact": "She came down the row, looked at the hand and the mortar on the linen press, and asked nothing at all.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "and asked nothing at all"
     }
   ],
   "relationships": [
@@ -331,6 +337,10 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax"
     }
   ]
 }

@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "anchor": "chronicle/03-the-undercroft.html#climax"
   },
-  "last_seen_doing": "Spent the day looked at and not asked, the cold in his hands since the night before; took the kitchen's pry bar from Wren at the alcove rather than let her take the cold, gave Maelis his word that up means up, and set the bar to the new mortar under the row.",
-  "now": "On his right knee at the alcove under the row with the kitchen's pry bar set to the mortar and the lamp and oilcloth beside him, Wren and Maelis at his shoulder, the House waiting above. He has leaned on the bar.",
-  "story_so_far": "At Harrow Ford the Grace went out of him midriver, his knee gave, and he saw Aldric Vane's horse on the west bank already turned; nineteen of the Ninth came home to be named the Faithless, and at the House of Menders he chose Maelis Vorne's old art for the knee. When the Confessor came to the gate with a list of the Faithless, Darrow crossed the court to the bars and gave him his name. On the feast morning after, Ser Benedek Orrin was found Hollowed at the dawn bell with frost on his mouth, and the Confessor's word for it, Ember witchcraft, came up from the lower terrace and turned the House's eyes toward the Mender. From his cot, with Wren for his legs, Darrow showed the hall that nobody had passed in the night; he burned a letter in Aldric's hand that bade him come home and kneel, kept his word to Maelis about the black glass, and followed the cold along the east wall to a door nobody had opened. After the night bell he laid the whole night out before the House, and the House walked the length of its hall behind Wren's candle and believed him; now he stands at the undercroft door, above a stair he cannot come back up alone.",
+  "last_seen_doing": "Pried the mortar off in one piece and found it a lid over an old hole; read the hole and the slab by the script and knew the black thing came up in the House's letter-satchel and was set in the wall by hand; put his right hand in for it against Maelis's silence, could not lift it, and when she said up, pulled his own dead hand out and left it; came up with the hand white to the second knuckle.",
+  "now": "On the floor of the hall by the undercroft door with his right hand in Maelis's, the feeling coming back into it as fire. He will keep the fingers and will not close that hand on anything for a week. The black thing is still in the wall under the row, its lid of mortar on the linen press. Hollis has asked him who is told.",
+  "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. He could not lift it. The cold took his right hand to the wrist, and he left the thing in the wall when Maelis said up. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -1116,6 +1116,48 @@
       "evidence": "It had come up the stair into his hands last night and had not left"
     },
     {
+      "fact": "He pried the mortar off the alcove in one piece: it was a lid pressed over a hole already there, with the thumbprint on its outside and a cast of the thing on its inside.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "It had never been part of the wall. It was a lid."
+    },
+    {
+      "fact": "He saw the black thing in the back of the hole: glass-black like the chip from under the lad's tongue, the size of the last joint of a thumb, standing on end in the rock with frost running out of its foot in straight lines.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "The size of the last joint of a man's thumb. It did not sit on the rock; it stood up out of it a little, on end"
+    },
+    {
+      "fact": "He knows the thing came up in the House's own letter-satchel the day before the snow and was carried down and shut in the wall by hand.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"It came up in the satchel,\" he said. \"In the House's own bag, with the House's letters on top of it.\""
+    },
+    {
+      "fact": "He stopped Wren from naming who carries the letters, down there.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"Not down here.\" He said it quietly, and she stopped."
+    },
+    {
+      "fact": "He put his right hand into the hole and could not lift the thing; the frost came up his hand to the wrist.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "The frost reached his wrist."
+    },
+    {
+      "fact": "When Maelis said up he pulled his own right hand out with his left and left the thing where it stood.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "his left hand came across and took his own right wrist and hauled, and the dead hand came out of the hole open, and the black thing stayed where it stood"
+    },
+    {
+      "fact": "His right hand came up white to the second knuckle; Maelis says he will keep the fingers and will not close the hand on anything for a week.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"You'll keep the fingers,\" she said, flat, as if reading a knee."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1377,6 +1419,10 @@
     {
       "chapter": "03",
       "scene": "7"
+    },
+    {
+      "chapter": "03",
+      "scene": "climax"
     },
     {
       "chapter": "tale01",

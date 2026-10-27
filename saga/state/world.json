@@ -89,11 +89,17 @@
         "2026-10-24"
       ],
       "written": "2026-10-27"
+    },
+    {
+      "scene": "climax",
+      "title": "What Was Carried",
+      "covers": [],
+      "written": "2026-10-27"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on one knee at the alcove in the undercroft hall's east wall, the pry bar set to the mortar, Wren and Maelis beside him; Hollis at the stair's head above",
+    "detail": "on the floor of the infirmary hall by the undercroft door, his right hand in Maelis's, Hollis beside him, the Prior standing off with the key",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -103,7 +109,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Above him, through the rock, the House was holding its breath, and a one-legged man was sitting on a floor with a boy's blanket over his knees, waiting to hear a word come up the stair. He leaned on the bar.",
+  "last_beat": "\"Well, Captain.\" His eyes went to the undercroft door, which somebody had shut, and the key the Prior still held, and the hand. \"What's under us. And who do we tell.\"",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -198,7 +204,8 @@
   "recaps": {
     "_about": "One-line 'previously' per chapter file slug, shown at the top of that chapter in the reader. Spoiler-free; only what earlier chapters showed.",
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
-    "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had."
+    "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
+    "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold took his hand to the wrist, and he left it there on the Mender's word. Now the whole House has seen them come up, and he must decide who is told."
   },
   "last_updated": "2026-10-27"
 }
