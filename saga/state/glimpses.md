@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-20 · weather · The fog has gone back down the mountain, and the Steps stand out of it this afternoon, flight after flight, every one white, as if somebody had laid them fresh.
 - 2026-10-20 · house · A novice has been set to sweep the cloister and has swept it twice, very slowly, past the end of the hall where the iron-banded door is, as if the broom had business there of its own.
 - 2026-10-20 · saying · In the yard after supper, a Lancer watches two lay brothers stack firewood on a handcart well past its rails and says to nobody, "Two fingers." One of them, without knowing why, lifts the top log off.
 - 2026-10-21 · overheard · "Salt," says a lay brother at the kitchen end of the hall, for the second time, and still nobody passes it: the whole long table is looking the other way, down the row, at a doorway with no lamp left in it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-23 · overheard · Two winch-brothers at the rope, one to the other, low: Count her in for supper again. Aye, says the other, before she's said. It saves asking.
 - 2026-10-23 · house · Wren has chalked a small tally on the inside of the kitchen door, where only the kitchen can read it, and rubs one mark out with her thumb every time the cage comes up with what the chit said it would.
 - 2026-10-27 · body · Walking the row after the dawn bell he finds he has stopped counting the cots he passes, which he has done since the litter, and does not know when he stopped.
+- 2026-10-27 · weather · A thaw-wind came up the Steps in the night and the snow on the Last Hundred has gone to grey slush that holds a bootprint for an hour and then forgets it.
