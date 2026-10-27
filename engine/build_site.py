@@ -2301,19 +2301,40 @@ class Site:
         return f'<a href="{rel}chronicle/{ch["slug"]}.html">{esc(ch["label"] + " — " + ch["title"])}</a>'
 
     def dice_html(self, rel, n=5):
-        """The latest rolls: the check and its result on one line with where it was cast, the arithmetic on its own line."""
-        rolls = sorted(self.rolls, key=lambda r: r.get("when", ""), reverse=True)[:n]
-        if not rolls:
+        """The latest checks: one entry per check, its casts in order (a cast, Inspiration spent, the cast again: the
+        rolls.csv labels chain as label, label#reroll, label#reroll#reroll), the outcome of the last cast on the top line,
+        the arithmetic of each cast on its own line, and where it was cast."""
+        groups, order = {}, []
+        for r in sorted(self.rolls, key=lambda r: r.get("when", "")):
+            base = (r.get("label") or "").split("#")[0]
+            if base not in groups:
+                groups[base] = []
+                order.append(base)
+            groups[base].append(r)
+        latest = [groups[b] for b in order[::-1][:n]]
+        if not latest:
             return '<p class="empty">No dice have been cast yet.</p>'
         rows = []
-        for r in rolls:
-            d20 = r.get("d20", "") + (f"/{r['d20_b']}" if r.get("d20_b") else "")
-            res = r.get("result", "")
+        for casts in latest:
+            first, last = casts[0], casts[-1]
+            res = last.get("result", "")
             cls = "good" if "SUCCESS" in res else ("warn" if "PARTIAL" in res else "bad")
-            where = self.roll_where(r.get("label", ""), rel)
-            rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(r.get("d20"), res)}<span class="dice-tag">{esc(r.get("stat", "").upper() or "FLAT")} · DC {esc(r.get("dc"))}</span>'
+            where = self.roll_where(first.get("label", ""), rel)
+            times = f'<span class="roll-times">cast ×{len(casts)}</span>' if len(casts) > 1 else ""
+            lines = []
+            for i, c in enumerate(casts):
+                if i:
+                    note = (c.get("note") or "").lower()
+                    how = "paid at the choice" if "paid by the choice" in note else "spent"
+                    lines.append(f'<li class="roll-insp"><span class="insp-glyph" aria-hidden="true">✦</span>Inspiration {how} · cast again</li>')
+                d20 = c.get("d20", "") + (f"/{c['d20_b']}" if c.get("d20_b") else "")
+                cres = c.get("result", "")
+                sup = " superseded" if i < len(casts) - 1 else ""
+                lines.append(f'<li class="roll-cast{sup}">{d20_glyph(c.get("d20"), cres, 26)}<span class="roll-math num">d20 <b>{esc(d20)}</b> {esc(c.get("mods", ""))} = <b>{esc(c.get("total"))}</b></span>'
+                             f'<span class="roll-res">{esc(cres.title())}</span></li>')
+            rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(last.get("d20"), res)}<span class="dice-tag">{esc(first.get("stat", "").upper() or "FLAT")} · DC {esc(first.get("dc"))}</span>{times}'
                         f'{badge(res.title(), cls)}</div>'
-                        f'<p class="roll-math num">d20 <b>{esc(d20)}</b> {esc(r.get("mods", ""))} = <b>{esc(r.get("total"))}</b></p>'
+                        f'<ul class="roll-casts">{"".join(lines)}</ul>'
                         + (f'<p class="roll-where">{where}</p>' if where else "") + '</li>')
         return f'<ul class="rolls">{"".join(rows)}</ul>'
 
@@ -3124,6 +3145,14 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .roll-where{font-size:.84rem;color:var(--faint)}
 .roll-where a{color:var(--dim)} .roll-where a:hover{color:var(--brass)}
 .roll-math{font-size:.92rem;color:var(--ink)}
+.roll-casts{list-style:none;margin:0;padding:0 0 0 2px;display:grid;gap:4px}
+.roll-cast{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.roll-cast .d20{flex:none}
+.roll-cast.superseded{opacity:.55}
+.roll-res{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--dim)}
+.roll-insp{display:flex;align-items:center;gap:6px;font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--brass)}
+.roll-insp .insp-glyph{width:26px;line-height:26px;font-size:1.1rem}
+.roll-times{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--dim)}
 .knots-brief{display:grid;gap:6px}
 .knots-brief .m{font-size:.86rem;color:var(--dim)}
 

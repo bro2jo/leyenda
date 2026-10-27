@@ -325,6 +325,14 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .roll-where{font-size:.84rem;color:var(--faint)}
 .roll-where a{color:var(--dim)} .roll-where a:hover{color:var(--brass)}
 .roll-math{font-size:.92rem;color:var(--ink)}
+.roll-casts{list-style:none;margin:0;padding:0 0 0 2px;display:grid;gap:4px}
+.roll-cast{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.roll-cast .d20{flex:none}
+.roll-cast.superseded{opacity:.55}
+.roll-res{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--dim)}
+.roll-insp{display:flex;align-items:center;gap:6px;font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--brass)}
+.roll-insp .insp-glyph{width:26px;line-height:26px;font-size:1.1rem}
+.roll-times{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--dim)}
 .knots-brief{display:grid;gap:6px}
 .knots-brief .m{font-size:.86rem;color:var(--dim)}
 
