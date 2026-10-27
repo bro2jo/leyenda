@@ -450,11 +450,12 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch03:between-1",
             "ch03:s5",
-            "ch04:s2"
+            "ch04:s2",
+            "ch04:between-1"
           ]
         }
       ]
@@ -875,6 +876,39 @@
       "declined": [
         "Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.",
         "Tell no one yet, and watch the stair."
+      ]
+    },
+    {
+      "id": "c04.1",
+      "made": {
+        "chapter": 4,
+        "scene": "between-1",
+        "date": "2026-10-27"
+      },
+      "chose": "At the wicket before the dawn bell, asked Rae what she wants, not the House, her; took her two answers (the cart and the oxen free of the debt on them to her uncle at the Coldmere inn; to carry a thing up the mountain once and see it come down whole) without pressing for the hand she will not name; and when she asked why his name went down for the mare, said the mare's name, Thistle, for the first time since the river, and that she will not stand under somebody else's word",
+      "now": {
+        "approval": {
+          "rae": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c04.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae has the mare's name from him, Thistle, said at the wicket at first light, and went down saying she would tell her. Fire where she brings word of the mare, brings the mare, or says the name back to him",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-1"
+          ]
+        }
       ]
     }
   ],

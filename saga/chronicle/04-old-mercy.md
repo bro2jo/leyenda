@@ -141,3 +141,55 @@ Till the thaw. A grey mare in a dealer's byre with his name over her like a roof
 "Captain." Hollis, from the chair. He had the lad's blanket on his knee as he always had now, and he was looking at the almoner, who was looking at the floor. "I'll ask it, since nobody else will, and since I'm the one who nearly broke his neck for it. What does a captain do with a man who did a terrible thing for love?"
 
 Nobody answered him. The snow came in at the wicket and lay on the flags, and the almoner stood with his sister's hair inside his shirt and the stores key in his fist, and waited to be told.
+
+### Between — One Question
+
+He was at the wicket before her, in the grey before the dawn bell, with the snow stopped and the lower terrace's fires gone to red eyes in the dark below.
+
+She came along the wall with the ox-bell at her belt not ringing, because she walked so that it did not, and stopped when she saw him, and went on pinning the cloak at her throat. The hood had given up on her hair in the night; it came out past the wool and the wind took it.
+
+"You're going down," he said.
+
+"Hob won't eat till I'm there."
+
+"Rae." He had the good hand on the gate-bar and the other inside his shirt where the fingers could not be looked at. "I don't know where you're from. I don't know what you carry when it isn't the House's, or why you keep coming up a mountain you don't live on. I know your oxen's names. That's what I've got."
+
+"That's a fair bit."
+
+"It isn't."
+
+She finished the clasp. Then she looked at him properly, the grey-green eyes going over him the way they went over a load, and he had the feeling of being weighed and the weight written down somewhere he would not see.
+
+"One question a night," she said. "You know the rule. It's not night, so I'll allow it's a new one."
+
+He thought about the hand on the letter, and let it go. It was the thing she would not give, and asking for it again would only cost him the one he had.
+
+"What do you want?" he said. "Not the House. You."
+
+For a moment he thought she would say *Aye* and go. The bell on the terrace rang for the grey cloaks' dawn, far down, thin, and the House's own answered it above them, and she waited for both to finish.
+
+"Coldmere," she said. "The inn on the tarn, the one with the bell-house across the road, where they read your list. My uncle keeps it. The cart's his, and the oxen; there's a debt on them, and I pay it by the load. One day I'll pay the last of it, and the cart will be mine, and Hob and Dun, and I'll drive what I like where I like." She said it flat, as a manifest. "That's one."
+
+"You said one."
+
+"I did." She looked down the Steps into the cloud, where the road was. "I've brought a deal of people to the foot of those stairs. Some I've brought up. I don't count them; Wren counts. I keep the faces." Her hands had found each other inside the cloak. "I'd like, once, to carry a thing up this mountain and see it come down whole. That's the other. You'll not get a third."
+
+He had nothing to put against that, and did not try.
+
+"My turn," Rae said. "You sent your name down for a lame mare. Not the Prior's, which would have bought her for a word. Yours, which the Lowmarch won't take for a copper and you knew it." The ox-bell stirred as she shifted, and she put her hand on it to still it. "Why?"
+
+He looked at the cloud. There was a song about a grey mare of Edgemoor that every road in the Lowmarch sang, and his men had sung it worse than most. *She never once asked me the why or the where.* It had not been written about his mare; it was older than both of them. It had been true of her anyway.
+
+"Her name's Thistle," he said.
+
+He had not said it since the water. It came out of him rough, like a thing kept in a pocket too long.
+
+"She carried me into that river and she didn't ask the why or the where, and I've not said her name since. I'm not having her stand in a dealer's byre under somebody else's word. If it has to be a bad word, it'll be mine."
+
+Rae said nothing for the length of the dawn bell's last stroke. Then she nodded, once, to the cloud and not to him, and drew up her hood.
+
+"Road's the road," she said, and opened the wicket.
+
+At the turn of the Last Hundred she stopped, the way she had stopped twice before, and spoke without looking back.
+
+"I'll tell her."

@@ -14,10 +14,11 @@
         },
         {
           "name": "Thistle",
-          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; whoever stands the dealer's debt at Coldmere can lead her off (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5).",
+          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; whoever stands the dealer's debt at Coldmere can lead her off (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between).",
           "sources": [
             "import",
-            "ch03:s5"
+            "ch03:s5",
+            "ch04:between-1"
           ],
           "_rebuild": true
         },
@@ -639,6 +640,13 @@
           "text": "Mother Ione to Darrow, in the chapel, the night of the gate (Ch 2 Between).",
           "sources": [
             "import"
+          ]
+        },
+        {
+          "name": "\"Road's the road.\"",
+          "text": "Rae Thorne, at the wicket at first light, drawing up her hood to go down: her word for a thing that is what it is and will be walked anyway (Ch 4 Between).",
+          "sources": [
+            "ch04:between-1"
           ]
         }
       ],

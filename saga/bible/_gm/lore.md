@@ -278,7 +278,7 @@ A clapping rhyme for two, the sums never matching because the lances come home f
 > and that's the count of hands.
 
 ## song.greymare — The Grey Mare of Edgemoor
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch04:between-1 · **names:** —
 - **use:** a road song; a thing hummed in an inn; what the Ninth sang on the march.
 
 The Lowmarch's road song, three verses everybody knows and nine nobody agrees on. The Ninth sang it on every march, and one of them sang it worse than the rest and more often. ⟪gm: Tobin's song; his mother hums it (q5.tobin); the nineteen know it. The Sixth's is song.sixth.⟫

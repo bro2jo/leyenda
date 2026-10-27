@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "2",
+    "scene": "between-1",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-2"
+    "anchor": "chronicle/04-old-mercy.html#between-1"
   },
-  "last_seen_doing": "Met Rae at the wicket; took the letter and knew its hand from the direction on his brother's letters; asked Rae twice where she had seen it and got only that she had; read Marrant's method whole: the lever, never the blade; heard the dealer holds the mare on his name till the thaw.",
-  "now": "Inside the wicket at dusk with his hand open in the snow, having read the shape of Marrant's method; the almoner beside him waiting to be told what a captain does, and Hollis's question unanswered.",
+  "last_seen_doing": "Waited for Rae at the wicket before the dawn bell; told her all he knows of her is her oxen's names; asked his one question, what she wants, and let the hand on the letter go; answered hers with the mare's name, Thistle, said for the first time since the river.",
+  "now": "At the open wicket at first light, Rae gone down the Steps with the mare's name. He has said Thistle aloud for the first time since the water.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1230,6 +1230,30 @@
       "evidence": "a dull red heat in the ends of the right one's fingers where the feeling was coming back under the linen"
     },
     {
+      "fact": "He said the mare's name, Thistle, to Rae at the wicket, the first time he had said it since the river.",
+      "chapter": "04",
+      "scene": "between-1",
+      "evidence": "He had not said it since the water. It came out of him rough"
+    },
+    {
+      "fact": "He chose not to ask Rae again about the hand on the letter, judging that asking would cost him the one question he had.",
+      "chapter": "04",
+      "scene": "between-1",
+      "evidence": "It was the thing she would not give, and asking for it again would only cost him the one he had."
+    },
+    {
+      "fact": "He sent his own name down for the mare because he will not have her stand in a dealer's byre under somebody else's word.",
+      "chapter": "04",
+      "scene": "between-1",
+      "evidence": "I'm not having her stand in a dealer's byre under somebody else's word. If it has to be a bad word, it'll be mine."
+    },
+    {
+      "fact": "He knows the Lowmarch's road song about a grey mare of Edgemoor; his men sang it worse than most; it is older than his mare and was true of her anyway.",
+      "chapter": "04",
+      "scene": "between-1",
+      "evidence": "It had not been written about his mare; it was older than both of them. It had been true of her anyway."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1507,6 +1531,10 @@
     {
       "chapter": "04",
       "scene": "2"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-1"
     },
     {
       "chapter": "tale01",

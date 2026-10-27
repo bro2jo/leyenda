@@ -206,7 +206,7 @@
       "feeds": "q1.cart, rae.tether, rae.road, the Tether (`design.md` §8)",
       "status": "open",
       "who_knows": "The House knows she brought the list; Darrow has her one line and her question; the reader",
-      "note": "on the page; slot 6 written (Ch 1 Sc 3: at the council, \"Slow. So the room could count.\"; the grey-mare question on the stair; revised 10/10: her first unprompted line, \"Down's where they are,\" when he asked to be sent down); slot 7 written (Ch 1 Sc 4, 10/10): on the gate wall a grey cloak put his boots up on her cart; Darrow told her to go while the road was open (\"Coldmere by dark\"); she said \"Aye\" to all of it; to \"Fifteen times I've asked to go down those steps. You can walk down them today.\" she did not say aye (it touched her; the page leaves why); she outwaited him until the five were in, then pinned her clasp and drew up her hood; her bell hung still, nothing to jolt it; \"The first two names on that list rode up in my cart.\" (Darrow first, Hollis second: both rode the last of the road in her cart, Prologue II.) She still has not addressed him by any name. The cart is under a grey cloak's boots (q1.cart's premise on the page). **Between 5 (10/10):** on the wall after, the oxen's names withheld (\"They know them\"; callback c01.4a, `when: later`: the day she tells him one unasked), \"He did the oxen before me\" (the smile for oxen spent, half), \"An ox'll stand all winter\" (lore craft.carting in her mouth), and she sat on the gate-ward's bench so he would, then \"Leg was shaking,\" once (rae +1 pending). Still no name or title for him. Revised 10/11, Sc 3: \"I've carted men down to kneel since midsummer. I've not carted one back up.\" (dread from her trade; it plants nothing specific and binds no later reveal). **Climax (10/11):** at the end of the lay brothers' line as her oxen stand; when the wicket was forced and Darrow's shoulder gave, hers went in under the bar (her strength shown in action, no word: the page's first look at what she can bear). Chapter 2 carries q1.cart stage 1 (Wed: down for the oxen; the letter in blue wax comes up with her; c01.4a may fire when she comes up with the oxen stabled) and q1.letters stage 1 (Thu)",
+      "note": "04:between-1: her wants in her own words (the debt on the cart and oxen to her uncle at the inn, paid by the load; to carry a thing up and see it come down whole); 'I keep the faces'; one question a night, the dawn a new one; 'Road's the road' spoken; she took the mare's name down",
       "on_page": [
         "00:II",
         "01:s1",
@@ -220,7 +220,8 @@
         "02:climax",
         "03:between-1",
         "03:s5",
-        "04:s2"
+        "04:s2",
+        "04:between-1"
       ]
     },
     {
@@ -229,8 +230,8 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he has still not said her name; Wren and Hollis heard; the reader",
-      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. 04:s2 (c03.6a paid): the dealer took his name: the mare's keep till the thaw, then coin or sold on. The finding is Tether III; the thaw is its clock",
+      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he said her name, Thistle, to Rae at the wicket (04:between-1); Wren and Hollis heard of the mare; the reader",
+      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. 04:s2 (c03.6a paid): the dealer took his name: the mare's keep till the thaw, then coin or sold on. 04:between-1: he said her name to Rae ('Her name's Thistle'), the first time since the water; Rae: 'I'll tell her.' The finding is Tether III; the thaw is its clock",
       "on_page": [
         "00:I",
         "01:s3",
@@ -238,6 +239,7 @@
         "02:s5",
         "03:s5",
         "04:s2",
+        "04:between-1",
         "tale01:p1"
       ]
     },
