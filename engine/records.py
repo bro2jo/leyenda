@@ -797,7 +797,21 @@ def project_now(events, plan, world, chars, existing_text):
         c = chars.get(cid) or {}
         line = c.get("name") or key
         tail = c.get("now") or comp.get("note") or ""
-        with_him.append(f"{line} ({short(tail, 220)})" if tail else line)
+        # a companion's line comes from the last block they were in; when that is older than the latest block, say
+        # which, so a stale "now" reads as where the page last left them and not as the present
+        since = ""
+        ls = c.get("last_seen") or {}
+        if tail and last and ls.get("chapter") and ls.get("scene"):
+            sc = str(ls["scene"])
+            src_key = f"ch{str(ls['chapter']).zfill(2)}:" + (f"s{sc}" if sc.isdigit() else sc)
+            if src_key != last.get("key"):
+                src = next((ev for ev in events if ev.get("key") == src_key), None)
+                if src and src.get("title"):
+                    since = f"; since *{src['title']}*"
+        t = short(tail, 220)
+        if since and t.endswith("."):
+            t = t[:-1]
+        with_him.append(f"{line} ({t}{since})" if tail else line)
     if with_him:
         lines.append("- **With him:** " + " · ".join(with_him))
     here = []
