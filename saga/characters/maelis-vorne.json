@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "4",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-7"
   },
-  "last_seen_doing": "Counted him down and up; put the words over the inner door into plain speech and told Wren she would not hear them in the hall; walked the dark of the hall without a lamp; made him look at the frost, and kept him from the far end tonight.",
-  "now": "At the head of the undercroft stair with the others, having brought him up at her count.",
+  "last_seen_doing": "Made him say up means up before she said one; went down behind them with nothing; stood at his shoulder at the alcove with her arms in her sleeves and let him take the bar and the knee, and watched which.",
+  "now": "At his shoulder at the alcove, arms folded in her sleeves, breathing the cold like air. She has not said up.",
   "story_so_far": "She bound Darrow's knee with emberthread, an old art she asked him never to mention, and reads its Knots; at the gate the Confessor's eyes found her and stayed. On the feast morning she found a chip of black glass under Ser Benedek Orrin's tongue and said the far cots never had this; she keeps it in her coat, made the Captain say what it looks like, and asked him to keep that out of the hall. When the Confessor named the frost Ember witchcraft and asked for the Mender who keeps the far cots, the House turned to look at her, and she did not move. On the eve she stood at the foot of the Grey Cot where the whole House could see her and said nothing in her own defence; asked by the Captain whether she had been down the undercroft stair, she asked him what the knee did this morning.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -357,6 +357,48 @@
       "chapter": "03",
       "scene": "4",
       "evidence": "You said you'd look, then come up. You've looked."
+    },
+    {
+      "fact": "She knew which way to go in the undercroft before he asked: east, the pillars on the right.",
+      "chapter": "03",
+      "scene": "6",
+      "evidence": "\"East,\" Maelis said, from behind them, before he had asked."
+    },
+    {
+      "fact": "She put her hand flat on the handleless door, low, and left it there a moment before wiping it on her coat and telling him to leave that one.",
+      "chapter": "03",
+      "scene": "6",
+      "evidence": "She put her hand flat on the grey wood, low down, where a hand would go to push, and left it there."
+    },
+    {
+      "fact": "She breathed the cold at the far wall as if the air were air, without lamp or cloak.",
+      "chapter": "03",
+      "scene": "6",
+      "evidence": "breathed as if the air were air"
+    },
+    {
+      "fact": "She stopped his hand at the alcove: not with his hand, not today.",
+      "chapter": "03",
+      "scene": "6",
+      "evidence": "\"Not with your hand,\" she said. \"Not today.\""
+    },
+    {
+      "fact": "She said yes, it is in the wall under the lad's cot, and yes, somebody put it there.",
+      "chapter": "03",
+      "scene": "6",
+      "evidence": "\"Yes.\" She let go of his wrist."
+    },
+    {
+      "fact": "She made him promise, in words, that if she says up it is up at once, not after the next thing.",
+      "chapter": "03",
+      "scene": "7",
+      "evidence": "\"If I say up,\" she said, \"it's up. At once. Not after the next thing.\""
+    },
+    {
+      "fact": "She let him take the bar and go down on the right knee, and did not take his wrist this time.",
+      "chapter": "03",
+      "scene": "7",
+      "evidence": "she stood at his shoulder in the cold with her arms folded inside her sleeves, breathing, and let him go down onto the right knee, and watched which"
     }
   ],
   "relationships": [
@@ -507,6 +549,14 @@
     {
       "chapter": "03",
       "scene": "4"
+    },
+    {
+      "chapter": "03",
+      "scene": "6"
+    },
+    {
+      "chapter": "03",
+      "scene": "7"
     }
   ]
 }

@@ -95,7 +95,7 @@
       "feeds": "T8",
       "status": "open",
       "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader. 03:s4: Darrow saw her walk the undercroft dark without a lamp and put the lintel into plain speech, counted the unmarked flour, the unturned key and the unwalked stair, and concluded there is another way down that she knows",
-      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title). 03:s3 (T8 warm): unasked, she says the dark below is the same at noon as at midnight, 'not as a guess' to Darrow's ear; she goes down behind him without a lamp. 03:s4 (T8 plant): walks the undercroft dark like her own house, stops at a pillar 'the way a woman stops at her own door'; translated the lintel; made him look at the frost; refused the far end tonight; the rewrite of 10/23 has Darrow conclude on the page that there is another way down and she knows it (the way itself unsaid)",
+      "note": "evaded twice; revised 10/11, Sc 2: she tells him any Confessor who lays a hand on the knee will know what's in it (the danger to her is on the page; her past still is not); the Confessor has looked at her once on the page (b1.2 asks for the Mender by title). 03:s3 (T8 warm): unasked, she says the dark below is the same at noon as at midnight, 'not as a guess' to Darrow's ear; she goes down behind him without a lamp. 03:s4 (T8 plant): walks the undercroft dark like her own house, stops at a pillar 'the way a woman stops at her own door'; translated the lintel; made him look at the frost; refused the far end tonight. 03:s6 (T8 plant): 'East' before he asked; her hand flat on the handleless door a moment too long, wiped on her coat, 'Leave that one. That's not what you came for'; breathed the alcove's cold 'as if the air were air'; stopped his hand",
       "on_page": [
         "01:s1",
         "01:s2",
@@ -105,7 +105,8 @@
         "02:choice",
         "03:s1",
         "03:s3",
-        "03:s4"
+        "03:s4",
+        "03:s6"
       ]
     },
     {
@@ -158,7 +159,7 @@
       "feeds": "b1.2 (the Grey Cot), `flags.benedek_hollowed`",
       "status": "open",
       "who_knows": "The reader has his oath and his claim of warmth; Hollis's kind lie is known to Hollis and the reader, not to Benedek; that he knelt anew is on no page yet (GM). The House knows (02:climax) he said his oath at the first three bells of the night he was taken and not at the fourth",
-      "note": "on the page; Hollis lied to him kindly; Between 4: the Captain said the oath's words with him, lips only, no sound (c01.3: he expects it at the bells now; Hollis saw; c01.3a fired Sc 4). **Not named at the gate**: the page has not yet said so in his hearing; his relief is Ch 2 Sc 1 (the night of the gate), and the Grey Cot is Ch 2 Sc 2, the feast morning (b1.2)",
+      "note": "on the page; Hollis lied to him kindly; Between 4: the Captain said the oath's words with him, lips only, no sound (c01.3: he expects it at the bells now; Hollis saw; c01.3a fired Sc 4). **Not named at the gate**: the page has not yet said so in his hearing; his relief is Ch 2 Sc 1 (the night of the gate), and the Grey Cot is Ch 2 Sc 2, the feast morning (b1.2) 03:s7: at the noon oath the lad's frost neither grew nor melted; Hollis carried his blanket to the stair head.",
       "on_page": [
         "01:interlude",
         "01:between-1",
@@ -173,7 +174,8 @@
         "02:s7",
         "02:climax",
         "03:s1",
-        "03:between-2"
+        "03:between-2",
+        "03:s7"
       ]
     },
     {
@@ -256,15 +258,17 @@
       "truth": "Oathstone: frost drawn out of a man too fast leaves a sliver of the stone it went to (arc b1.2, T1); the far cots, drained slowly over years, never had one",
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
-      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes it looks like a chip off a field-stone and kept it out of the hall before the whole House when asked (02:climax, c02.13a kept); the reader. The hall knows only that the Mender found a black glass and will say what it is when she knows. Not Hollis, not Wren",
-      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist. 03:s4: rime furred thick beyond the undercroft pillars, climbing the far wall toward the infirmary hall, 'except that nothing up there was cold'; the source not reached. 03:s5 (T1 plants): the almoner's satchel up 'like a stone' the day before the snow (Rae, Wren's tally); Rae's midsummer crate to Calden's lower door frosted her cart-bed; Darrow told her the undercroft frost grows up toward the row. Nobody has joined them aloud",
+      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow believes the chip looks like a field-stone, and now knows something was set in new mortar under the row by someone's hand (03:s6), and has not said satchel aloud; Wren saw the alcove and the mortar and wrote it under nothing; the reader. The hall knows only that the Mender found a black glass. Not Hollis",
+      "note": "on the page before this thread: 02:s2 (found under the tongue; the far cots never had this), 02:between-5 (not the far cots' sickness; the rest when she knows it). 02:between-12: still cold after three days; a field-stone, not denied; she catches his warm wrist. 03:s4: rime furred thick beyond the undercroft pillars, climbing the far wall toward the infirmary hall, 'except that nothing up there was cold'; the source not reached. 03:s5 (T1 plants): the almoner's satchel up 'like a stone' the day before the snow (Rae, Wren's tally); Rae's midsummer crate to Calden's lower door frosted her cart-bed; Darrow told her the undercroft frost grows up toward the row. 03:s6: the source found: a low alcove under the row, something dark the size of a thumb-joint set in week-old mortar with a thumbprint; the hole a satchel's size on its side; Maelis stopped his hand; the shard itself not named or seen clear. Nobody has joined the satchel to the hole aloud",
       "on_page": [
         "02:between-12",
         "02:s6",
         "02:s7",
         "02:climax",
         "03:s4",
-        "03:s5"
+        "03:s5",
+        "03:s6",
+        "03:s7"
       ]
     },
     {

@@ -176,6 +176,11 @@
       "chapter": "03",
       "scene": "3",
       "mention": true
+    },
+    {
+      "chapter": "03",
+      "scene": "7",
+      "mention": true
     }
   ]
 }

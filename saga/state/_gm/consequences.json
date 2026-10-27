@@ -212,11 +212,12 @@
           "fits": "present.mother_ione",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch02:choice",
             "ch03:s3",
-            "ch03:s4"
+            "ch03:s4",
+            "ch03:s7"
           ]
         }
       ]
@@ -243,7 +244,7 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 10,
+          "offered": 12,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
@@ -254,7 +255,9 @@
             "ch03:s3",
             "ch03:between-4",
             "ch03:s4",
-            "ch03:s5"
+            "ch03:s5",
+            "ch03:s6",
+            "ch03:s7"
           ]
         }
       ]
@@ -729,11 +732,12 @@
           "fits": "present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch03:between-3",
             "ch03:s3",
-            "ch03:s4"
+            "ch03:s4",
+            "ch03:s7"
           ]
         }
       ]
@@ -770,13 +774,49 @@
           "fits": "present.wren",
           "priority": 1,
           "status": "pending",
-          "offered": 3,
+          "offered": 5,
           "offered_at": [
             "ch03:between-4",
             "ch03:s4",
-            "ch03:s5"
+            "ch03:s5",
+            "ch03:s6",
+            "ch03:s7"
           ]
         }
+      ]
+    },
+    {
+      "id": "c03.6",
+      "made": {
+        "chapter": 3,
+        "scene": "5",
+        "date": "2026-10-22"
+      },
+      "chose": "Sent his name down with Rae at first light as surety for the grey mare: a captain's word against a Holloway dealer's debt",
+      "now": {
+        "bearing": {
+          "candor": 1
+        },
+        "approval": {
+          "rae": 2,
+          "wren": -2
+        }
+      },
+      "due": [
+        {
+          "id": "c03.6a",
+          "when": "later",
+          "at": "later",
+          "weight": "scene",
+          "what": "Rae carried the Captain's name down the Steps as surety for the grey mare. Fire where word comes back up from the Holloway: whether the dealer took a Faithless captain's word, and what it cost (the finding itself is a stage of the second thread, rae.tether)",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Word, through Rae, that the mare is wanted for the House's stables, in Mother Ione's name",
+        "Nothing. Leave her where she is"
       ]
     }
   ],

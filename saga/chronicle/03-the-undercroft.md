@@ -756,3 +756,168 @@ Then she went in, and he was alone with the fires below, and a shirt, and a stic
 1. **Send down his name as surety: a captain's word, though the Faithless have no credit in the Lowmarch.**
 2. **Send word through Rae that the mare is wanted for the House's stables, in Mother Ione's name.**
 3. **Send nothing. Leave her where she is.**
+
+### Scene 6 — New Mortar
+
+At first light he had given Rae his name for the mare, a captain's word to carry down to a dealer who would have no use for it, and she had taken it the way she took any load, without weighing it where he could see; by dusk she was long gone into the cloud, and Darrow was on the undercroft stair again with his hand on Wren's shoulder and Maelis counting behind him.
+
+They went down faster this time. The knee had done it once and remembered, and Maelis gave the numbers closer together, and Wren said them under her breath a half-beat behind as before, for the book. The lamp was the kitchen's, trimmed low; the kitchen was three jars short and had said so. The cut line on the wall went by under his palm, the man with his hands up, and he let it go by. He had not come down for the wall tonight.
+
+The cold stood round his knee at the top as it had before. Tonight it got further in. By the twentieth step it had found his hands, up to the second knuckle, and he flexed them on Wren's shoulder and on the stone and it did not go.
+
+"Thirty-nine," said Wren. "Down."
+
+---
+
+The hall was as they had left it. The passage, the lintel with its two halves cut over the empty frame, and then the pillars going off in their rows into the dark, and the painted people along the walls holding their small clouds of light over their open hands. Wren did not lift the lamp to the lintel. She walked under it with her eyes on the floor.
+
+"East," Maelis said, from behind them, before he had asked. "Keep the pillars on your right."
+
+He found the frost with his feet before the lamp found it. The flags went slick, then crisp, and then white, and the white had a direction. It lay thin on the floor by the pillars and thickened as they went, the way snow lies thin under a tree and deep in the open, so that by the third pillar they were walking on rime a finger deep that broke under his boots with a sound like biscuit. It was going somewhere. They followed it.
+
+Halfway along, on the left, between two of the painted figures, there was a door.
+
+Not an empty frame like the one behind them. A door, shut, of some dark wood gone grey, set in a frame cut with the same strokes and dots as the lintel, a whole border of them running up one side, over the top and down the other. It had no handle. No latch, no ring, no keyhole; nothing to put a hand to. The frost did not touch it. It ran up to the sill of that door and went round, the way water goes round a stone.
+
+"Doors with no handle," Wren said, and the lamp came up to the frame. "One."
+
+Maelis had stopped beside it. She put her hand flat on the grey wood, low down, where a hand would go to push, and left it there. A moment. Another. The lamp flame stood straight in the still air between them, and then she took the hand away and wiped it down her coat as if the wood had been wet.
+
+"Leave that one," she said. "That's not what you came for."
+
+"What is it?"
+
+"A door." She was already walking. "Keep the pillars on your right."
+
+---
+
+The far wall came up out of the dark a few strides on, and it was white from the floor to as high as the lamp could reach, the rime furred thick and feathering upward in the shapes he had seen two nights ago, the whole wall growing frost the way a hedge grows thorns. Above it, through two spans of stone, was the row. He could have put his hand on the place under Hollis's cot.
+
+The cold here was not a thing that stood round his knee. It came off the wall like a river comes off a weir, steady, and his breath went out of him in a cloud and did not come back warm. Wren's teeth had started. Maelis, behind them, without a lamp and without a cloak, breathed as if the air were air.
+
+"Low," she said. "Look low."
+
+The alcove was a hand off the floor, in the foot of the wall: a square hole cut in the rock, a little wider than it was high, about the size of a letter-satchel lying on its side. He had to go down to one knee to see into it, and he went down onto the right one, and felt Maelis behind him note which.
+
+The rime inside was thickest of all, so thick the stone's edges were lost under it, and under the rime, at the back of the hole, the lamplight found something that was not stone and not frost. It was dark. The size of a thumb-joint, perhaps; he could not make out the shape of it for the white. Round it, holding it in, was mortar.
+
+He knew mortar. He had watched a wall go up at Edgemoor every summer of his boyhood, and he knew what it looked like at a week and at a year. This had not been in the wall a year. It had not been in the wall a month. It was pale and grainy and had not taken the colour of the stone around it, and where the trowel had drawn it flat there was a ridge the frost had not yet eaten, and at one corner, pressed into it while it was wet, there was the print of a thumb.
+
+Somebody had come down here in the dark with a trowel. Somebody had set this in the wall under the row, and smoothed it over, and gone back up thirty-nine steps and across a floor of flour that had never shown a mark.
+
+"Wren," he said. "Hold the lamp lower."
+
+She did. His hand was already going out. He did not remember deciding to send it; it went the way it had gone to a sword hilt all his life, ahead of him, and the cold got to it first, up the fingers and into the palm like a hand closing on a hand—
+
+Maelis's fingers shut on his wrist from behind and took it back.
+
+She did not pull. She put his hand back on his own knee and held it there, as she had held it flat on the warming-room wall, and said nothing until it stayed.
+
+"Not with your hand," she said. "Not today."
+
+"It's in the wall under the lad's cot."
+
+"Yes."
+
+"Somebody put it there."
+
+"Yes." She let go of his wrist. "Now you know two things, and you knew neither when you came down. That's a day."
+
+He stayed on his knee a moment longer. The thing in the hole did nothing. It had been doing nothing for a week, by the mortar, and whatever it did it did without moving, up through two spans of stone into a row of beds.
+
+"Then I'll need a lamp of my own," he said, to the hole. "Oilcloth. And the kitchen's pry bar."
+
+"You'll need me to say so."
+
+"Will you?"
+
+Maelis looked at the alcove, and at his hands, which he had not noticed were shaking, and at the knee he was kneeling on.
+
+"Up," she said. "One."
+
+---
+
+Wren wrote it on the top step with her back to the hall and the kitchen's lamp guttering beside her, two lines, and then stopped with the pencil on the page.
+
+"What do I put it under?"
+
+"Under nothing. Not yet."
+
+She looked at him the way she had looked at the chit on the crate. Then she wrote one more word, and shut the ledger, and went to ask the kitchen for its pry bar, and the kitchen, he could hear from where he stood, wanted to know what for.
+
+"Tell them the Captain's hanging a shelf," he called after her, and flexed his hands, and the cold in them stayed where it was.
+
+> ⟦ THE RECKONING ⟧
+> Level 6 → 7 · Kindled
+> Inspiration 3 → 4
+> Art ranked up: **Stillwater Stance** III. *Keep your footing; nothing knocks you down while braced.*
+> XP 2,093 → 2,138
+
+### Scene 7 — The Bar
+
+The next day the House held its breath, and knew it was doing it.
+
+Nobody had been told anything. Wren's ledger had the alcove under nothing, and the kitchen had been told a shelf. But a House is a hall full of people breathing, and people can tell when three of them are waiting for dusk. The lay brothers stacked the wood for Pell's tower a little too neatly. The novices at the far cots spoke in the voices people use in a room where someone is dying, though nobody was, or nobody new. Up the row the lad in the Grey Cot said his oath at the noon bell with Hollis's hand round his, and the frost on his mouth, which had never gone, did not grow and did not melt, and Hollis watched the undercroft door over the lad's head the whole time he was saying it.
+
+Darrow spent the day being looked at and not asked. It was a day for the cold. It had come up the stair into his hands last night and had not left, and it did not matter how near the fire he sat; he kept his hands in his sleeves and his face still, and when Wren came by with the kitchen's pry bar under her scarf like a stolen loaf, he did not take it from her where anyone could see.
+
+"It wasn't on its hook," she said, low, at the foot of his cot. "The kitchen keeps it on a hook by the flour bins. It was behind the bins. On the floor." She looked at the bar as if it had lied to her. "The cook says nobody's had it. The cook says that about the honey as well."
+
+"Write it down."
+
+"I did." She tucked the bar deeper. "Under nothing."
+
+---
+
+At dusk the Prior asked the House whether it would like its supper at the kitchen end, and the House, which had been expecting the question since noon, said that it would.
+
+Hollis had himself carried to the stair's head before the key was turned this time, so that he was already sitting on the floor with his back to the frame and his one foot against the linen press when the Prior came with the cord over her head. He had the lad's blanket over his knees. He did not explain it and nobody asked.
+
+"Wall, Captain," he said, before the door was open. "I'll say it once from here so I needn't shout it down."
+
+"I heard you the first time."
+
+"You heard me the first time and stopped dead at eight. Wren told me." He settled his back against the frame. "Go on, then. I'll be here. I've nowhere to be that I can get to."
+
+The key went over with its knuckle sound. The flour under the door, which a lay brother had laid fresh at noon, swept into its white fan, and the cold came up the stair and stood in the doorway at the height of his knee, and this time it did not stop there. It came up into his chest and sat.
+
+He had the lamp himself tonight, the House's second-best one, with oil in it the kitchen had sighed over. Wren had the oilcloth folded under her arm and the pry bar in her hand like a thing she might have to use on a person. Maelis had nothing, as always. She stood behind him at the top step and did not say one. She looked at him for a long moment, at his hands on the lamp, at the knee, at his face last.
+
+"If I say up," she said, "it's up. At once. Not after the next thing."
+
+"Yes."
+
+"Say it."
+
+"If you say up, it's up."
+
+"One," said Maelis.
+
+---
+
+Thirty-nine down, and the passage, and the lintel that Wren walked under with her eyes on her boots, and the hall opening out with its pillars going off into the dark, and the painted people with their small clouds of light. He kept the pillars on his right. He did not look at the door with no handle as they passed it, and so he knew exactly where it was.
+
+The frost had not moved. It lay thin by the pillars and thickened east and broke under their boots, and the far wall came up white out of the dark with its feathers going up toward the row. The cold here took his breath the way the river had, all at once and without malice. Wren's teeth went. Maelis breathed.
+
+The alcove was as he had left it, a hand off the floor, a satchel's width, furred white to the edges. The lamp found the pale line of the mortar, and the ridge the trowel had left, and the thumbprint in the corner. Behind the white, at the back, the dark thing the size of a thumb-joint sat where it had sat, doing nothing, up through two spans of stone into a row of beds.
+
+He set the lamp down on the flags. He laid the oilcloth out beside it, open, the way you lay a cloth for a wound.
+
+"Give me the bar."
+
+Wren did not move. "I can do it. I've got two good knees and no face anyone's watching."
+
+"No."
+
+"Technically—"
+
+"Wren." He held out his hand without turning round, and after a moment the bar came into it, cold already from her holding it. "This is mine. It's under his cot."
+
+Maelis said nothing from behind them. He had half expected her to take the bar, or his wrist, and she did neither; she stood at his shoulder in the cold with her arms folded inside her sleeves, breathing, and let him go down onto the right knee, and watched which.
+
+He put the flat of the bar to the pale line where the mortar met the stone. The cold came up the iron into his hands at once, past the knuckles, past the wrist, and he set his teeth and kept them there. Above him, through the rock, the House was holding its breath, and a one-legged man was sitting on a floor with a boy's blanket over his knees, waiting to hear a word come up the stair.
+
+He leaned on the bar.
+
+> ⟦ THE RECKONING ⟧
+> XP 2,138 → 2,143

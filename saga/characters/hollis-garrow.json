@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "4",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-7"
   },
-  "last_seen_doing": "Had himself carried from the Grey Cot to the head of the undercroft stair, and told the Captain down it to look at the wall and not the floor.",
-  "now": "Sitting on the floor at the head of the undercroft stair, his back to the doorframe and his one foot against the linen press.",
+  "last_seen_doing": "Had himself carried to the stair's head before the key was turned, the lad's blanket over his knees; told the Captain wall, once, from the top, and that he would be there.",
+  "now": "Sitting on the floor at the head of the undercroft stair, his back to the frame, his one foot against the linen press, the lad's blanket over his knees, waiting for a word to come up.",
   "story_so_far": "At Harrow Ford he brought the writ that sent the Sixth and the Ninth into the river, and came back from it missing his right leg above the knee; he has had the cot next to Darrow's at Saint Ysolde's since, with his name second on the Confessor's list. When the lad of his Sixth, Ser Benedek Orrin, was found Hollowed on the feast morning, Hollis would not let him be carried to the far cots, and has sat beside the Grey Cot with the lad's hand in his ever since. He watched a letter in blue wax burn and left the hall for the first time; in the cloister he asked the Captain whether the kind lies he told the lad had sent him wherever he has gone, and asked him to sit up a while. When the House heard that the lad stopped saying his oath between the third bell and the fourth, Hollis shut his eyes, and when Wren offered to go down the undercroft stair he told the Captain not to send that girl down a hole.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -378,6 +378,18 @@
       "chapter": "03",
       "scene": "4",
       "evidence": "Look at the bloody wall."
+    },
+    {
+      "fact": "He had himself carried to the stair's head before the key was turned, with the lad's blanket over his knees, and nobody asked why.",
+      "chapter": "03",
+      "scene": "7",
+      "evidence": "He had the lad's blanket over his knees. He did not explain it and nobody asked."
+    },
+    {
+      "fact": "He watched the undercroft door over the lad's head through the whole of the noon oath.",
+      "chapter": "03",
+      "scene": "7",
+      "evidence": "Hollis watched the undercroft door over the lad's head the whole time he was saying it."
     }
   ],
   "relationships": [
@@ -572,6 +584,15 @@
     {
       "chapter": "03",
       "scene": "4"
+    },
+    {
+      "chapter": "03",
+      "scene": "6",
+      "mention": true
+    },
+    {
+      "chapter": "03",
+      "scene": "7"
     }
   ]
 }

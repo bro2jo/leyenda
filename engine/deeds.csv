@@ -169,10 +169,12 @@ date,kind,deed,xp,might,vigor,finesse,resolve,note
 2026-10-23,daily,"Morning knee check, swelling graded",5,0,0,0,1,
 2026-10-23,daily,Knee session,30,2,0,1,0,B
 2026-10-23,daily,Creatine,5,0,0,0,0,
+2026-10-23,daily,Day closed,5,0,0,0,0,
+2026-10-24,daily,Day closed,5,0,0,0,0,
 2026-10-26,daily,Creatine,5,0,0,0,0,
 2026-10-26,daily,Calorie target reached,20,0,0,0,0,
 2026-10-27,daily,Morning weigh-in,10,0,0,0,0,
 2026-10-10,weekly,3+ weigh-ins this week,25,0,0,0,0,
 2026-10-17,weekly,3+ weigh-ins this week,25,0,0,0,0,
 2026-10-17,weekly,Chapter tier: Triumph,60,0,0,0,0,frozen by chapter-close (score 88)
-2026-10-24,weekly,Chapter tier: Hard-won,30,0,0,0,0,week score 84
+2026-10-24,weekly,Chapter tier: Hard-won,30,0,0,0,0,frozen by chapter-close (score 84)

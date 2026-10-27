@@ -73,11 +73,27 @@
         "2026-10-22"
       ],
       "written": "2026-10-23"
+    },
+    {
+      "scene": 6,
+      "title": "New Mortar",
+      "covers": [
+        "2026-10-23"
+      ],
+      "written": "2026-10-27"
+    },
+    {
+      "scene": 7,
+      "title": "The Bar",
+      "covers": [
+        "2026-10-24"
+      ],
+      "written": "2026-10-27"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on the gate-ward's bench on the gate wall at night, the grey cloaks' fires below",
+    "detail": "on one knee at the alcove in the undercroft hall's east wall, the pry bar set to the mortar, Wren and Maelis beside him; Hollis at the stair's head above",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -87,7 +103,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "Then she went in, and he was alone with the fires below, and a shirt, and a stick, and a name on a Confessor's list that no dealer in the Lowmarch would take for a copper.",
+  "last_beat": "Above him, through the rock, the House was holding its breath, and a one-legged man was sitting on a floor with a boy's blanket over his knees, waiting to hear a word come up the stair. He leaned on the bar.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -100,12 +116,12 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 12,
+      "approval": 10,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
     "rae": {
-      "approval": 11,
+      "approval": 13,
       "present": false,
       "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
     }
@@ -150,6 +166,16 @@
       "date": "2026-10-19",
       "ledger": "c03.3",
       "by": "darrow"
+    },
+    {
+      "chapter": 3,
+      "scene": "5",
+      "kind": "micro",
+      "option": 1,
+      "text": "Send down his name as surety: a captain's word, though the Faithless have no credit in the Lowmarch.",
+      "date": "2026-10-22",
+      "ledger": "c03.6",
+      "by": "darrow"
     }
   ],
   "inventory": [
@@ -174,5 +200,5 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had."
   },
-  "last_updated": "2026-10-23"
+  "last_updated": "2026-10-27"
 }

@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "4",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-4"
+    "anchor": "chronicle/03-the-undercroft.html#scene-7"
   },
-  "last_seen_doing": "Waited at the head of the undercroft stair and asked only whether the Captain came up on it.",
-  "now": "At the head of the undercroft stair at supper. She has asked nothing of what he saw.",
+  "last_seen_doing": "Asked the House to take its supper at the kitchen end again, and came to the undercroft door with the cord over her head and turned the key.",
+  "now": "At the undercroft door at the top of the stair, the key turned.",
   "story_so_far": "The Prior of Saint Ysolde's, who holds the House's law and its bell. When the grey cloaks came she kept the Confessor at the wicket as long as the law of guests allowed and gave him the law of names; at night she says the names of everyone under her roof in the chapel. When the Confessor came back to the bars to ask for the Mender, she answered him with a question. When the cold led to the undercroft door, whose key has passed from Prior to Prior unturned, she neither forbade nor permitted it; she called the House into the hall after the night bell and let the Captain tell it, and she wears an old key on a cord at her neck, to be asked for when he can say what he would do at the bottom.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -327,6 +327,10 @@
       "chapter": "03",
       "scene": "5",
       "mention": true
+    },
+    {
+      "chapter": "03",
+      "scene": "7"
     }
   ]
 }
