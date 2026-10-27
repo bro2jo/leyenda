@@ -13,7 +13,10 @@
     "faction": "crown",
     "mark": "none"
   },
-  "appearance": "Not yet seen on the page: known there by her name in her brother's mouth, a letter in another's hand, and a lock of dark hair.",
+  "appearance": "Brother Anselm's younger sister: the same brown skin as her brother and a great deal of dark curling hair, worn loose. Seen only in a thin torn shift, sitting against a bare stone wall, somewhere that is not comfortable.",
+  "portrait": "characters/mirren.jpg",
+  "portrait_alt": "Portrait of Mirren: a woman in her thirties with brown skin and loose dark curling hair, in a thin torn white shift, sitting against a bare stone wall and looking up, wary and tired.",
+  "portrait_focus": "50% 25%",
   "first_seen": {
     "chapter": "04",
     "scene": "1",

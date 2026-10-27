@@ -78,6 +78,17 @@
     640
    ]
   },
+  "characters/mirren.jpg": {
+   "sha1": "e112a067660dc655391b6bef7f304a71e98834cc",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "characters/mother-ione.jpg": {
    "sha1": "2adea4ca8767a201814069118d42f466369a9ced",
    "sm": [

@@ -55,5 +55,5 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Apologetic and gentle; he apologises before he asks, trails off in the middle of a sentence, and thanks people for things they have not done yet. He mentions his sister too often.
 
 ## Mirren
-- **Appearance:** Not yet seen on the page: known there by her name in her brother's mouth, a letter in another's hand, and a lock of dark hair.
+- **Appearance:** Brother Anselm's younger sister: the same brown skin as her brother and a great deal of dark curling hair, worn loose. Seen only in a thin torn shift, sitting against a bare stone wall, somewhere that is not comfortable. Her portrait (`saga/art/characters/mirren.jpg`) is canon for her face.
 - **Voice:** Not yet heard.
