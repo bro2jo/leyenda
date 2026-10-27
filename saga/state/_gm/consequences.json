@@ -241,11 +241,10 @@
       "due": [
         {
           "id": "c02.3a",
-          "when": "later",
-          "at": "later",
-          "weight": "color",
-          "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
-          "priority": 2,
+          "when": "transition1",
+          "at": "transition1",
+          "weight": "scene",
+          "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"), and he promised them \"You'll be asked\" before he decides for them again. Honour it at the crossing: before he goes down the Steps he asks them, or decides for them and they say so; Wren holds a sister promise (c02.1a)",
           "status": "pending",
           "offered": 16,
           "offered_at": [
@@ -733,12 +732,10 @@
       "due": [
         {
           "id": "c03.4a",
-          "when": "later",
-          "at": "later",
+          "when": "book2:beat4",
+          "at": "book2:beat4",
           "weight": "scene",
           "what": "Hollis said Aye, maybe, when Darrow asked to be there when he looks at the seal on the writ from the ford. Fire where Hollis takes the writ out to look at last, honoured (Darrow beside him) or not (alone)",
-          "fits": "present.hollis",
-          "priority": 3,
           "status": "pending",
           "offered": 8,
           "offered_at": [
@@ -795,7 +792,8 @@
             "ch03:s7",
             "ch03:climax",
             "ch04:s2"
-          ]
+          ],
+          "valid_until": "transition1"
         }
       ]
     },
