@@ -290,8 +290,10 @@
       "feeds": "q1.cart, q2.lantern, b3.4, q4.censer, q5.second, q6.market, r.b6.rae_door",
       "status": "open",
       "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; nobody at the House; the reader has her tells only (the bow off her box, the camp read by flour, the letter inside her shirt, name-the-load, the cold in her cart, one question a night)",
-      "note": "Plants already on the page before this thread was opened, counted by eye (the engine counts from here): 02:s4, 02:interlude, 02:between-10, 02:between-11, 02:climax. Next plants: q1.cart stage 2 (the satchel's weights), b1.4 (the clerk's first climb), b1.5 (the second line). No reveal before Book III.",
-      "on_page": []
+      "note": "Plants already on the page before this thread was opened, counted by eye (the engine counts from here): 02:s4, 02:interlude, 02:between-10, 02:between-11, 02:climax. Next plants: q1.cart stage 2 (the satchel's weights), b1.4 (the clerk's first climb), b1.5 (the second line). No reveal before Book III. 04:between-1: the leash said as a family debt ('He paid for them, once, and I've been paying him back by the load since'); 'nobody's hand on the rope but mine' is the want under the calling",
+      "on_page": [
+        "04:between-1"
+      ]
     },
     {
       "id": 19,

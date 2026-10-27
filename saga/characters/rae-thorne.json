@@ -29,7 +29,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#between-1"
   },
-  "last_seen_doing": "Came along the wall at first light with the ox-bell stilled; allowed him one question since it was a new day; told him she is of Coldmere, that her uncle keeps the inn on the tarn where the list was read, that the cart and oxen are his with a debt on them she pays by the load, and that she wants once to carry a thing up the mountain and see it come down whole; asked why his name went down for the mare, heard it, said Road's the road, and went down saying she would tell her.",
+  "last_seen_doing": "Came along the wall at first light with the ox-bell stilled; allowed him one question since it was a new day; told him she is of Coldmere, that her uncle keeps the inn on the tarn where the list was read, that he paid for the cart and the oxen once and she has been paying him back by the load since, and that she wants once to carry a thing up the mountain and see it come down whole; asked why his name went down for the mare, heard it, said Road's the road, and went down saying she would tell her.",
   "now": "Gone down the Last Hundred into the cloud at first light, with the mare's name. She means to tell the mare.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
@@ -439,10 +439,10 @@
       "evidence": "The inn on the tarn, the one with the bell-house across the road, where they read your list. My uncle keeps it."
     },
     {
-      "fact": "The cart and the oxen are her uncle's, with a debt on them that she pays by the load; one day she means to pay the last of it and drive what she likes where she likes.",
+      "fact": "Her uncle paid for the cart and the oxen once, and she has been paying him back by the load since; one day she means to pay the last of it, with nobody's hand on the rope but hers.",
       "chapter": "04",
       "scene": "between-1",
-      "evidence": "The cart's his, and the oxen; there's a debt on them, and I pay it by the load."
+      "evidence": "He paid for them, once, and I've been paying him back by the load since."
     },
     {
       "fact": "She does not count the people she has brought to the foot of the Steps; Wren counts; she keeps the faces.",

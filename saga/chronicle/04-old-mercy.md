@@ -168,7 +168,7 @@ He thought about the hand on the letter, and let it go. It was the thing she wou
 
 For a moment he thought she would say *Aye* and go. The bell on the terrace rang for the grey cloaks' dawn, far down, thin, and the House's own answered it above them, and she waited for both to finish.
 
-"Coldmere," she said. "The inn on the tarn, the one with the bell-house across the road, where they read your list. My uncle keeps it. The cart's his, and the oxen; there's a debt on them, and I pay it by the load. One day I'll pay the last of it, and the cart will be mine, and Hob and Dun, and I'll drive what I like where I like." She said it flat, as a manifest. "That's one."
+"Coldmere," she said. "The inn on the tarn, the one with the bell-house across the road, where they read your list. My uncle keeps it. The cart's mine, and Hob and Dun, as far as the road knows. He paid for them, once, and I've been paying him back by the load since. One day I'll pay the last of it, and there'll be nobody's hand on the rope but mine, and I'll drive what I like where I like." She said it flat, as a manifest. "That's one."
 
 "You said one."
 
