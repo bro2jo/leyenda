@@ -16,3 +16,4 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-27T11:24:15,ch03-pry,finesse,8,10,,,+0 finesse +1 chapter 3 Hard-won,11,SUCCESS,
 2026-10-27T11:24:15,ch03-cold,vigor,8,2,,,+0 vigor +1 chapter 3 Hard-won,3,FAILURE,
 2026-10-27T11:24:15,ch03-cold#reroll,vigor,8,2,,,+0 vigor +1 chapter 3 Hard-won,3,FAILURE,Inspiration spent at the cap
+2026-10-27T12:23:14,ch03-cold#reroll#reroll,vigor,8,19,,,+0 vigor +1 chapter 3 Hard-won,20,SUCCESS,

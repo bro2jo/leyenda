@@ -323,6 +323,16 @@
       "status": "open",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
       "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out",
+      "on_page": []
+    },
+    {
+      "id": 22,
+      "title": "The clerk in grey at the winch-house: an older man with a desk on two kegs who writes the Confessors' letters and never kneels at the dawn bell; he gave the almoner two slivers before the snow and called them the Spire's mercy for the wounded",
+      "truth": "T1",
+      "feeds": "T1, b1.5 (Marrant's method), b2.4",
+      "status": "open",
+      "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
+      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out",
       "on_page": [
         "04:s1"
       ]

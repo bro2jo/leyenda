@@ -979,14 +979,26 @@ The cold did not bite. Biting is a thing with an edge, and this had none. It too
 He tried once more. Everything he had was in the arm, and the arm was a rope with a stone on the end.
 
 `[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
+*(Inspiration, spent at the cap: cast again.)*
 
-Nothing. The frost reached his wrist.
+Nothing. The white passed the second knuckle and went on toward the wrist, and the arm was still a rope.
+
+So he stopped pulling.
+
+It was the thing Maelis had taught him on a stair, with her hand over his on the stone: you do not fight what is holding you; you let it have the weight, and you breathe. He let the arm go slack in the hole with the hand still closed on the black thing, and breathed out, long, the way the forms went, and breathed in, and did it again, and the white stopped where it was.
+
+`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Success*
+*(Inspiration, spent: cast again.)*
+
+The cold did not go. But it stopped climbing, and with the hand quiet in it he could feel, for the first time, what it was closed on. The thing did not rock. It did not give the hair's breadth a stone gives in mortar or a tooth in a jaw. It was one piece with the rock behind it, the way a root is one piece with the ground: the frost-lines running out of its foot were not on the stone, they were in it, and a hand that pulled on this pulled on the mountain.
+
+It had learned the wall. No hand would take it out of there, and no bar either; what had come away was the lid, and only the lid.
 
 "**Up.**"
 
-It was not loud. He heard it the way he had heard the gate-bell from the water, from a long way off and the only sound there was, and his word went before him: his left hand came across and took his own right wrist and hauled, and the dead hand came out of the hole open, and the black thing stayed where it stood, doing nothing, up through two spans of rock.
+It was not loud. He heard it the way he had heard the gate-bell from the water, from a long way off and the only sound there was, and his word went before him: he opened his fingers, one at a time, because they would only go one at a time, and brought the hand out of the hole open, and the black thing stayed where it stood, doing nothing, up through two spans of rock.
 
-Then Maelis had him under both arms from behind, and Wren had the lamp and the oilcloth and the slab of mortar and was already backing toward the pillars with her teeth going, and the three of them went up the hall and through the empty frame and up thirty-nine steps with his hand held against his chest in his left, and he did not look at the wall or the floor. He looked at the hand. It was white to the second knuckle and did not look like a hand.
+Then Maelis had him under both arms from behind, and Wren had the lamp and the oilcloth and the slab of mortar and was already backing toward the pillars with her teeth going, and the three of them went up the hall and through the empty frame and up thirty-nine steps with his right hand held against his chest in his left, and he did not look at the wall or the floor. He looked at the hand. The ends of the fingers were white to the second joint and did not feel like his.
 
 ---
 
@@ -998,7 +1010,7 @@ They moved. Lay brothers went past at a run. Somewhere down the row a novice was
 
 Maelis sat him on the floor by Hollis, and took the hand in both of hers, and did not blow on it, and did not rub it. She held it. After a while there was a feeling in it, and the feeling was fire, and he found he had his teeth in his own sleeve.
 
-"You'll keep the fingers," she said, flat, as if reading a knee. "That's the second time I've seen a hand go into one of those. The first man kept his. You won't close that hand on anything for a week, and you'll not put it near the stone again, and the next time I say a thing on a stair you'll not bargain with it."
+"You'll have the use of it by the dawn bell," she said, flat, as if reading a knee. "The ends of the fingers, not for a week. That's the second time I've seen a hand go into one of those. The first man kept his. You'll not put it near the stone again, and the next time I say a thing on a stair you'll not bargain with it."
 
 "You didn't say it."
 
@@ -1011,7 +1023,7 @@ Hollis had not let go of the lad's blanket. He leaned over it now, close, so the
 "Well, Captain." His eyes went to the undercroft door, which somebody had shut, and the key the Prior still held, and the hand. "What's under us. And who do we tell."
 
 > ⟦ THE RECKONING ⟧
-> Inspiration 4 → 3
+> Inspiration 4 → 2
 > XP 2,143 → 2,173
 
 **What does Darrow do?**

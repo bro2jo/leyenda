@@ -12,7 +12,7 @@ The thin novice who fed the far cots was told at the night bell, standing at the
 
 Mother Ione was told at the dawn bell.
 
-Darrow went to her. He did it on his own leg, up the row with his right hand strapped across his chest in a sling of Maelis's linen, and the cold had got into him in the night and stayed, so that he walked the hall the way a man walks a frozen field, carefully, each step a thing decided. He found her in the chapel with the lamps not yet lit, as he had found her once before, and told her all of it there with his back to the door: the painted hall, the black thing in the rock under the row, the lid of new mortar, the satchel. He told her it had been Hollis's asking that the keepers came first, because it was.
+Darrow went to her. He did it on his own leg, up the row with the ends of his right-hand fingers wrapped in Maelis's linen, so that the hand would not quite close, and the cold had got into him in the night and stayed, so that he walked the hall the way a man walks a frozen field, carefully, each step a thing decided. He found her in the chapel with the lamps not yet lit, as he had found her once before, and told her all of it there with his back to the door: the painted hall, the black thing in the rock under the row, the lid of new mortar, the satchel. He told her it had been Hollis's asking that the keepers came first, because it was.
 
 She heard him out with her hands folded. When he had done she looked at him the way she looked into a full room.
 
@@ -84,9 +84,9 @@ It came up at dusk with nothing in it either. Rae Thorne came up the Steps inste
 
 Wren saw her first, through Pell's glass from the wall: a hooded shape on the Last Hundred, climbing the way she climbed, not counting. "She's got something inside her cloak," Wren reported, coming down the row at a run with her scarf flying. "She's holding her arm across it. She did that with your brother's letter."
 
-Darrow was on his feet before she had finished. The cold had let go of him a little in the night; there was warmth in the left hand again, and a dull red heat in the right where the feeling was coming back under the linen, which Maelis said was good and felt like the opposite. He went down the hall to the gate with Wren, and Hollis had himself carried after, and Brother Anselm came because Darrow had told him to stay where he could be seen, and so the four of them were at the wicket when Rae came through it with the snow on her hood.
+Darrow was on his feet before she had finished. The cold had let go of him a little in the night; there was warmth in his hands again, and a dull red heat in the ends of the right one's fingers where the feeling was coming back under the linen, which Maelis said was good and felt like the opposite. He went down the hall to the gate with Wren, and Hollis had himself carried after, and Brother Anselm came because Darrow had told him to stay where he could be seen, and so the four of them were at the wicket when Rae came through it with the snow on her hood.
 
-She did not say what she had. She looked at the almoner, and at the key in his fist, and at Darrow's slung arm, and then she reached inside her cloak and brought out a letter and put it, not into the almoner's hands, but into Darrow's left one.
+She did not say what she had. She looked at the almoner, and at the key in his fist, and at Darrow's wrapped fingers, and then she reached inside her cloak and brought out a letter and put it, not into the almoner's hands, but into Darrow's hand.
 
 "For him," she said. "I'll not leave a thing like that in the cage overnight with that man's stool in the door."
 
@@ -126,7 +126,7 @@ He read it. His lips moved along it the way Wren's moved along a row of lamps. T
 
 "The clerk." Anselm looked at Darrow. "The one who never kneels. He wrote this, Captain. He writes all of them. He wrote her words for her and put her hair in with them so that I'd—" He stopped. "So that I'd finish."
 
-Darrow stood in the gate lamp's light with his good hand open and the snow on it, and read the shape of the thing the way he read a ford.
+Darrow stood in the gate lamp's light with his hand open and the snow on it, and read the shape of the thing the way he read a ford.
 
 Marrant had not touched a weapon in front of the House in a month. He had read a list, and camped, and smiled, and kept the cage, and sent lamp oil up three jars short; and under all of it, through a clerk's hand and a cage rope, he had reached into the House and found the one man in it who loved somebody more than he feared anything, and had put a hand round that man's sister in Calden and squeezed, gently, with a lock of hair. He did not need a blade. He had never needed one. The lever was the whole of his method, and the House had been standing on it since before the snow.
 

@@ -30,8 +30,8 @@
     "anchor": "chronicle/04-old-mercy.html#scene-2"
   },
   "last_seen_doing": "Met Rae at the wicket; took the letter and knew its hand from the direction on his brother's letters; asked Rae twice where she had seen it and got only that she had; read Marrant's method whole: the lever, never the blade; heard the dealer holds the mare on his name till the thaw.",
-  "now": "Inside the wicket at dusk with his good hand open in the snow, having read the shape of Marrant's method; the almoner beside him waiting to be told what a captain does, and Hollis's question unanswered.",
-  "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. He could not lift it. The cold took his right hand to the wrist, and he left the thing in the wall when Maelis said up. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
+  "now": "Inside the wicket at dusk with his hand open in the snow, having read the shape of Marrant's method; the almoner beside him waiting to be told what a captain does, and Hollis's question unanswered.",
+  "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -1140,22 +1140,34 @@
       "evidence": "\"Not down here.\" He said it quietly, and she stopped."
     },
     {
-      "fact": "He put his right hand into the hole and could not lift the thing; the frost came up his hand to the wrist.",
+      "fact": "He put his right hand into the hole and could not pull the thing; the frost climbed his fingers past the second knuckle toward the wrist.",
       "chapter": "03",
       "scene": "climax",
-      "evidence": "The frost reached his wrist."
+      "evidence": "The white passed the second knuckle and went on toward the wrist, and the arm was still a rope."
     },
     {
-      "fact": "When Maelis said up he pulled his own right hand out with his left and left the thing where it stood.",
+      "fact": "He stopped pulling and breathed as Maelis had taught him on the stair, and the frost stopped where it was.",
       "chapter": "03",
       "scene": "climax",
-      "evidence": "his left hand came across and took his own right wrist and hauled, and the dead hand came out of the hole open, and the black thing stayed where it stood"
+      "evidence": "and breathed in, and did it again, and the white stopped where it was."
     },
     {
-      "fact": "His right hand came up white to the second knuckle; Maelis says he will keep the fingers and will not close the hand on anything for a week.",
+      "fact": "Holding it quietly he felt the black thing is one piece with the rock behind it, like a root with the ground, and that no hand or bar will take it out: only the lid came away.",
       "chapter": "03",
       "scene": "climax",
-      "evidence": "\"You'll keep the fingers,\" she said, flat, as if reading a knee."
+      "evidence": "It had learned the wall. No hand would take it out of there, and no bar either"
+    },
+    {
+      "fact": "When Maelis said up he opened his fingers one at a time and brought the hand out open, and left the thing where it stood.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "he opened his fingers, one at a time, because they would only go one at a time, and brought the hand out of the hole open"
+    },
+    {
+      "fact": "The ends of his right-hand fingers came up white to the second joint; Maelis says he will have the use of the hand by the dawn bell and the ends of the fingers not for a week.",
+      "chapter": "03",
+      "scene": "climax",
+      "evidence": "\"You'll have the use of it by the dawn bell,\" she said, flat, as if reading a knee."
     },
     {
       "fact": "He told Hollis first, on the floor, what is in the wall under the row and how it came up.",
@@ -1212,10 +1224,10 @@
       "evidence": "\"I've seen that hand,\" she said, to the door."
     },
     {
-      "fact": "The feeling is coming back into his right hand under the linen as a dull red heat; the cold let go of him a little in the night.",
+      "fact": "The feeling is coming back into the ends of his right-hand fingers under the linen as a dull red heat; the cold let go of him a little in the night.",
       "chapter": "04",
       "scene": "2",
-      "evidence": "there was warmth in the left hand again, and a dull red heat in the right where the feeling was coming back under the linen"
+      "evidence": "a dull red heat in the ends of the right one's fingers where the feeling was coming back under the linen"
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",

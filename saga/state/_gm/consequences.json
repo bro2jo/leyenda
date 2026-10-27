@@ -786,14 +786,15 @@
           "fits": "present.wren",
           "priority": 1,
           "status": "pending",
-          "offered": 6,
+          "offered": 7,
           "offered_at": [
             "ch03:between-4",
             "ch03:s4",
             "ch03:s5",
             "ch03:s6",
             "ch03:s7",
-            "ch03:climax"
+            "ch03:climax",
+            "ch04:s2"
           ]
         }
       ]
