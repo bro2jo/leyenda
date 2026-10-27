@@ -15,6 +15,7 @@ Appearance and voice: `cast.md`.
 - A horse-breeder's son from a minor house in the Edgemoor hills, raised to captain by talent rather than birth. Before Harrow Ford his men called him **Quickstep**: the fastest blade in the Lowmarch, and he fought from his feet, footwork, angles, turning a man before the man knew he had been turned. Proud of it, careless with it, fed by the Grace like everyone else.
 - Nineteen of his sixty came home. He remembers every name of the forty-one who did not, and says none aloud. When he finally says Tobin Marsh's name it should cost him.
 - **Now:** the leg is bound and weak; for the first time in his life he has to wait, and waiting does not come naturally.
+- **Wants:** the old self back, which is the trap; under it, each day, to be of use to somebody in the hall rather than waited on, and to go down the Steps on his own leg. **Fears:** being carried.
 - **Flaw:** he wants the old self back, and that wish is the trap. **Arc:** from wanting to be who he was to choosing who he is building; from fighting to get back to fighting to go forward.
 - **Signature:** in the Ninth, a raised fist with two fingers out meant "hold." He hated giving that signal.
 - **Under pressure:** he notices lines first, the shape of a thing before its parts: the clan carts behind the spears, the cup on the hearth. He goes after what he wants by asking straight, and jokes when the asking fails; when the joke fails too he goes quiet and does the thing without leave, which is how the knee went. A full name means he is angry.
@@ -77,13 +78,15 @@ Appearance and voice: `cast.md`.
 ### Mother Ione — Prior of Saint Ysolde's
 Appearance and voice: `cast.md`.
 - On the page from Ch 1 Sc 3 (the council in the warming room); appearance and voice moved to `cast.md`.
-- Holds the sanctuary right and will die before she yields it. **Wants:** every name under her roof kept. **Fears:** the bell falling silent at a dusk when it must ring.
+- **Wants:** every name under her roof kept. **Fears:** the bell falling silent at a dusk when it must ring.
+- Holds the sanctuary right and will die before she yields it.
 - **Under pressure:** she notices who is in a room and who is missing from it. She pursues by questions that are orders; when that fails she decides alone and tells no one until the bell rings. She never raises her voice; she lowers it.
 - **Hides:** possibly what happened to Elspeth Ashdown (T6). In the low road of Book I she is left answerable to a Confessor's writ for every name in the House.
 
 ### Sister Pell — keeper of the bells
 Appearance and voice: `cast.md`.
 - On the page from Ch 1 Sc 3 (the council; "Not on my rope"; the cup that chatters, which Darrow read and nobody else looked at: the plant for b1.5); appearance and voice moved to `cast.md`.
+- **Wants:** every bell on its note and on its stroke, rung by her for as long as she has breath, and nobody else's hand on her rope. **Fears:** being late on a stroke where the valley can hear it; a bell she cannot ring.
 - **Under pressure:** she notices the sound of things, a bell off its note, a cup on stone. She pursues by refusing, with the bells as her reason; when that fails she does it anyway, and the bells are still her reason.
 - Sanctuary is renewed by ringing at every dawn and dusk, and Sister Pell is old: that is the hinge of Book I's climax (Old Mercy, b1.5), where she is hurt and the bell falls silent until Wren climbs to ring it. Her glass in the bell tower saw the grey cloaks first.
 
@@ -95,6 +98,7 @@ Appearance and voice: `cast.md` (unnamed there, as on the page).
 ### Ser Benedek Orrin — a knight of the Sixth
 Appearance and voice: `cast.md`.
 - On the cot next to Hollis. Grace-sworn, devout, kind, terrified of the Confessors and more terrified of being Faithless. Asks what "second on the list" means and watches Hollis for the answer.
+- **Wants:** to be told it is all right and to believe it: the Captain's words at the bell, Hollis's hand, and not to be Faithless. Since the frost, nothing anyone can see; the want is Hollis's now.
 - **Under pressure:** he notices whether people are afraid, because he is. He pursues by offering the comfort he was taught, kneeling and mercy; when that fails he apologises and asks again, and shuts his eyes when told to.
 - On the page from the Ch 1 Interlude ("The Wax"; the cot next to Hollis's, the oath at every bell) and the first Between of Scene 2 ("The Grace forgives"); appearance and voice moved to `cast.md`.
 - **Standing:** he knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up (the heralds' mercy, taken early), so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
