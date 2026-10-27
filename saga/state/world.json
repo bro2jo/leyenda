@@ -95,11 +95,17 @@
       "title": "What Was Carried",
       "covers": [],
       "written": "2026-10-27"
+    },
+    {
+      "scene": "choice",
+      "title": "His Own People",
+      "covers": [],
+      "written": "2026-10-27"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "on the floor of the infirmary hall by the undercroft door, his right hand in Maelis's, Hollis beside him, the Prior standing off with the key",
+    "detail": "on the floor of the infirmary hall by the undercroft door, beside Hollis; the Prior standing off; Maelis gone up the row",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -109,15 +115,15 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The soft season, and the waiting. The knee is held and still soft. Benedek lies Hollowed in the Grey Cot, and nobody passed in the night; the Confessor's word for it, ember witchcraft, is in the hall now, and the hall wants a hand to fit it. Under it is the thing he has said only to Maelis: a lad who cannot answer has no will for the bell to keep.",
-  "last_beat": "\"Well, Captain.\" His eyes went to the undercroft door, which somebody had shut, and the key the Prior still held, and the hand. \"What's under us. And who do we tell.\"",
+  "last_beat": "\"Get the novice who feeds the far cots. The thin one. He's the one who'll have to know where not to put his feet.\"",
   "companions": {
     "maelis": {
-      "approval": 34,
+      "approval": 29,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 48,
+      "approval": 58,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
@@ -181,6 +187,16 @@
       "text": "Send down his name as surety: a captain's word, though the Faithless have no credit in the Lowmarch.",
       "date": "2026-10-22",
       "ledger": "c03.6",
+      "by": "darrow"
+    },
+    {
+      "chapter": 3,
+      "scene": "climax",
+      "kind": "climax",
+      "option": 2,
+      "text": "Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law.",
+      "date": "2026-10-27",
+      "ledger": "c03.7",
       "by": "darrow"
     }
   ],

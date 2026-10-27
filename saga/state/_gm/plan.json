@@ -5,7 +5,7 @@
     "chapter": 3,
     "beat": "b1.3",
     "next_scene": 8,
-    "stage": "climax",
+    "stage": "choice",
     "last_written": "ch03:s7",
     "rank_on_page": "Kindled"
   },
@@ -334,7 +334,7 @@
     "thistle_found": false,
     "rae_market_told": null,
     "rae_vow": false,
-    "hollis_told_shard": false,
+    "hollis_told_shard": true,
     "stair_watched": false,
     "marrant_told": false,
     "wren_blooded": false,
@@ -445,17 +445,5 @@
       "bound": "2026-10-14"
     }
   ],
-  "open_choice": {
-    "chapter": 3,
-    "scene": "climax",
-    "ask": "What does Darrow do?",
-    "options": [
-      "Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.",
-      "Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law.",
-      "Tell no one yet, and watch the stair."
-    ],
-    "default": 2,
-    "opened": "2026-10-27",
-    "carries": 2
-  }
+  "open_choice": null
 }

@@ -1018,3 +1018,17 @@ Hollis had not let go of the lad's blanket. He leaned over it now, close, so the
 1. **Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.** *(Maelis approves.)*
 2. **Tell Hollis and the far cots' keepers first, and the Prior only after: his own people before the House's law.** *(Hollis approves; Maelis disapproves.)*
 3. **Tell no one yet, and watch the stair.** *(Risky.)*
+
+### Choice — His Own People
+
+He told Hollis there on the floor, low, with the Prior ten paces off and the whole row lit: a piece of black glass the size of a thumb-joint, the same glass as the chip from under the lad's tongue, standing in the rock under the row, carried up the Steps in the House's own satchel and shut in with a trowel; the frost running out of it in lines, up through the stone, into the beds.
+
+Hollis listened the way he listened to a scout, without a word until the end. Then he looked up the row to the Grey Cot.
+
+"Under my lad," he said. "Under *all* of them." He pulled the blanket straight across his knees, as if it were the lad himself. "Right. The far cots' keepers next, tonight, before they bed anyone down over it. Then your Prior, Captain, and you'll tell her it was my asking, because it was."
+
+Maelis let go of his hand.
+
+She did it carefully, the way she did everything, and laid it on his knee, and stood. "You'll tell her yourself," she said. "Tonight or tomorrow, I don't care which. It won't be me who carries it, and I'll not be standing beside you when you do." She went up the row past the Prior without a look, and the Prior watched her go, and then watched Darrow, and still asked nothing.
+
+"She'll come round," said Hollis, who did not believe it either. "Get the novice who feeds the far cots. The thin one. He's the one who'll have to know where not to put his feet."

@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#choice"
   },
-  "last_seen_doing": "Saw the hand before the man as they came up; called for the warming room's fire and stood water in a voice that carried over rivers; kept the lad's blanket; leaned close and asked what is under them and who they tell.",
-  "now": "On the floor at the head of the undercroft stair beside Darrow, the lad's blanket still over his knees, waiting to hear who is told.",
+  "last_seen_doing": "Heard it like a scout's report; said it is under his lad and under all of them; set the order: the far cots' keepers tonight, then the Prior, and the Prior is to be told it was his asking.",
+  "now": "On the floor at the stair head with the lad's blanket pulled straight, sending for the novice who feeds the far cots.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -402,6 +402,18 @@
       "chapter": "03",
       "scene": "climax",
       "evidence": "\"What's under us. And who do we tell.\""
+    },
+    {
+      "fact": "He said the Prior is to be told the keepers came first at his asking, because it was.",
+      "chapter": "03",
+      "scene": "choice",
+      "evidence": "and you'll tell her it was my asking, because it was"
+    },
+    {
+      "fact": "He wants the thin novice who feeds the far cots told tonight, so he knows where not to put his feet.",
+      "chapter": "03",
+      "scene": "choice",
+      "evidence": "He's the one who'll have to know where not to put his feet."
     }
   ],
   "relationships": [
@@ -609,6 +621,10 @@
     {
       "chapter": "03",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "choice"
     }
   ]
 }

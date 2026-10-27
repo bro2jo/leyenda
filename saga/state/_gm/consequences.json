@@ -212,13 +212,14 @@
           "fits": "present.mother_ione",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch02:choice",
             "ch03:s3",
             "ch03:s4",
             "ch03:s7",
-            "ch03:climax"
+            "ch03:climax",
+            "ch03:choice"
           ]
         }
       ]
@@ -245,7 +246,7 @@
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"; one would take the bargain if it existed, and said so), and he promised them \"You'll be asked\" before he decides for them again. Fire it where he decides something that touches his men without asking, or asks first; Wren holds a sister promise (c02.1a)",
           "priority": 2,
           "status": "pending",
-          "offered": 13,
+          "offered": 14,
           "offered_at": [
             "ch03:s1",
             "ch02:choice",
@@ -259,7 +260,8 @@
             "ch03:s5",
             "ch03:s6",
             "ch03:s7",
-            "ch03:climax"
+            "ch03:climax",
+            "ch03:choice"
           ]
         }
       ]
@@ -734,13 +736,14 @@
           "fits": "present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch03:between-3",
             "ch03:s3",
             "ch03:s4",
             "ch03:s7",
-            "ch03:climax"
+            "ch03:climax",
+            "ch03:choice"
           ]
         }
       ]
@@ -821,6 +824,49 @@
       "declined": [
         "Word, through Rae, that the mare is wanted for the House's stables, in Mother Ione's name",
         "Nothing. Leave her where she is"
+      ]
+    },
+    {
+      "id": "c03.7",
+      "made": {
+        "chapter": 3,
+        "scene": "climax",
+        "date": "2026-10-25"
+      },
+      "chose": "Told Hollis and the far cots' keepers first what is under the House, the black sliver in the wall under the row and the satchel it came up in, and the Prior only after: his own people before the House's law",
+      "now": {
+        "approval": {
+          "hollis": 10,
+          "maelis": -5
+        },
+        "bearing": {
+          "hearth": 2
+        },
+        "flags": {
+          "hollis_told_shard": true
+        }
+      },
+      "due": [
+        {
+          "id": "c03.7a",
+          "when": "ch04",
+          "at": "ch04",
+          "weight": "scene",
+          "what": "Mother Ione hears what is under the House after Hollis and the far cots' keepers have. She said at the stair head he would tell her when he knew what it was; she says once, to his face, that she counted the nights between, and asks nothing more",
+          "status": "pending"
+        },
+        {
+          "id": "c03.7b",
+          "when": "ch04",
+          "at": "ch04",
+          "weight": "scene",
+          "what": "Downstream of `hollis_told_shard` (b1.3): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.3`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Tell the Prior everything: the black thing in the wall, the painted hall, the satchel.",
+        "Tell no one yet, and watch the stair."
       ]
     }
   ],

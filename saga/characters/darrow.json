@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#choice"
   },
-  "last_seen_doing": "Pried the mortar off in one piece and found it a lid over an old hole; read the hole and the slab by the script and knew the black thing came up in the House's letter-satchel and was set in the wall by hand; put his right hand in for it against Maelis's silence, could not lift it, and when she said up, pulled his own dead hand out and left it; came up with the hand white to the second knuckle.",
-  "now": "On the floor of the hall by the undercroft door with his right hand in Maelis's, the feeling coming back into it as fire. He will keep the fingers and will not close that hand on anything for a week. The black thing is still in the wall under the row, its lid of mortar on the linen press. Hollis has asked him who is told.",
+  "last_seen_doing": "Told Hollis, low, what is under the row: the black glass in the rock, carried up in the House's satchel; agreed the far cots' keepers hear tonight and the Prior after.",
+  "now": "On the floor by the undercroft door beside Hollis, his right hand laid on his knee where Maelis left it. The far cots' keepers are to be told tonight; the Prior after, at Hollis's asking.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. He could not lift it. The cold took his right hand to the wrist, and he left the thing in the wall when Maelis said up. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1158,6 +1158,12 @@
       "evidence": "\"You'll keep the fingers,\" she said, flat, as if reading a knee."
     },
     {
+      "fact": "He told Hollis first, on the floor, what is in the wall under the row and how it came up.",
+      "chapter": "03",
+      "scene": "choice",
+      "evidence": "He told Hollis there on the floor, low, with the Prior ten paces off and the whole row lit"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1423,6 +1429,10 @@
     {
       "chapter": "03",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "choice"
     },
     {
       "chapter": "tale01",

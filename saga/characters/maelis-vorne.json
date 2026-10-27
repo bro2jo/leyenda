@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#choice"
   },
-  "last_seen_doing": "Did not say up when he refused to leave it, and did not say it when he put his hand in; said it when the frost reached his wrist; carried him up the stair under both arms; held the hand in both of hers by the fire; told him he will keep the fingers, that it is the second time she has seen a hand go into one of those, and that she waited to see if he would go.",
-  "now": "On the floor by the undercroft door holding his right hand in both of hers. She has told him the first man who put a hand in one of those kept his.",
+  "last_seen_doing": "Let go of his hand, laid it on his knee, and told him he will tell the Prior himself and she will not be standing beside him when he does; went up the row past the Prior without a look.",
+  "now": "Gone up the row. She will not carry it to the Prior and will not stand beside him when he does.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost reached his wrist. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -423,6 +423,12 @@
       "chapter": "03",
       "scene": "climax",
       "evidence": "You won't close that hand on anything for a week"
+    },
+    {
+      "fact": "She said it will not be her who carries it to the Prior, and she will not be standing beside him when he does.",
+      "chapter": "03",
+      "scene": "choice",
+      "evidence": "It won't be me who carries it, and I'll not be standing beside you when you do."
     }
   ],
   "relationships": [
@@ -585,6 +591,10 @@
     {
       "chapter": "03",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "choice"
     }
   ]
 }

@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "03",
-    "scene": "climax",
+    "scene": "choice",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#climax"
+    "anchor": "chronicle/03-the-undercroft.html#choice"
   },
-  "last_seen_doing": "Came down the row through the lamps with her hands folded, looked at the hand, the slab of mortar and the three of them, and asked nothing.",
-  "now": "Standing a little way off in the lit hall with the undercroft key in her hand, having asked nothing.",
+  "last_seen_doing": "Watched Maelis go, then Darrow, and still asked nothing.",
+  "now": "Standing off in the lit hall with the undercroft key, having asked nothing; she has not yet been told.",
   "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -341,6 +341,10 @@
     {
       "chapter": "03",
       "scene": "climax"
+    },
+    {
+      "chapter": "03",
+      "scene": "choice"
     }
   ]
 }
