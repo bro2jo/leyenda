@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-20 · saying · In the yard after supper, a Lancer watches two lay brothers stack firewood on a handcart well past its rails and says to nobody, "Two fingers." One of them, without knowing why, lifts the top log off.
 - 2026-10-21 · overheard · "Salt," says a lay brother at the kitchen end of the hall, for the second time, and still nobody passes it: the whole long table is looking the other way, down the row, at a doorway with no lamp left in it.
 - 2026-10-21 · ledger · Wren's ledger, the hall page, in the morning's pencil: Lamps on the row, counted by the Captain at the dawn bell without being asked: all of them. Right, too. Don't tell him.
 - 2026-10-21 · weather · Dusk comes down the Steps from the top flight to the bottom one landing at a time, and the snow on each goes blue, then grey, before the one below it has noticed.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-27 · body · Walking the row after the dawn bell he finds he has stopped counting the cots he passes, which he has done since the litter, and does not know when he stopped.
 - 2026-10-27 · weather · A thaw-wind came up the Steps in the night and the snow on the Last Hundred has gone to grey slush that holds a bootprint for an hour and then forgets it.
 - 2026-10-27 · overheard · From the kitchen door, the cook to a lay brother stamping grey slush off his boots on her clean flags: Leave the Steps outside. They've plenty of themselves.
+- 2026-10-27 · body · Halfway through the hour bell he notices he has been breathing with it, in on one stroke and out on the next, and that it costs him nothing.

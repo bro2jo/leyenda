@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 7,
   "rank": "Kindled",
-  "xp": 2223,
+  "xp": 2268,
   "xp_this_level": 2100,
   "xp_next_level": 2800,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 43,
+      "temper": 45,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -24,7 +24,7 @@
       "raw": 10,
       "cap": 14,
       "mod": 0,
-      "temper": 13,
+      "temper": 16,
       "next_at": 18,
       "fell": 15,
       "banked": false
@@ -69,10 +69,10 @@
       "id": "seated_blade",
       "name": "The Seated Blade",
       "tree": "Blade",
-      "rank": 1,
+      "rank": 2,
       "banked_rank": 0,
-      "practice": 5,
-      "next_at": 6,
+      "practice": 6,
+      "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
     },
@@ -113,10 +113,10 @@
       "id": "long_breath",
       "name": "The Long Breath",
       "tree": "Breath",
-      "rank": 1,
+      "rank": 2,
       "banked_rank": 0,
-      "practice": 5,
-      "next_at": 6,
+      "practice": 6,
+      "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
     },
@@ -326,7 +326,7 @@
   "chapter_now": {
     "week_start": "2026-10-25",
     "through": "2026-10-27",
-    "tier_so_far": "Setback",
+    "tier_so_far": "Costly",
     "chapter": 4
   },
   "fell": {
