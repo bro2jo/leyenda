@@ -278,9 +278,9 @@ Wren did not look round. Her lips moved, the way they did along a row of lamps.
 
 "Technically this is a ramp," she said. "It doesn't count as a stair." A pause, three steps of it. "It can go in the room under the one."
 
-The kennel-master met them at the run with a mallet in his belt and a face like a shut gate: a lay brother broad as a door, who fed the House's dogs on what the kitchen would not admit to and had views. He looked at the Captain of the Ninth, at the stick under the arm, at the wrapped fingers.
+The kennel-master met them at the run with a mallet in his belt and a face like a shut gate: a lay brother who fed the House's dogs on what the kitchen would not admit to, and had views. He looked at the Captain of the Ninth, at the stick under the arm, at the wrapped fingers.
 
-"Menders spend good meat on bad knights," he said, "and I've said so to the Prior. They'll not spend it on a bad dog as well. Not with them watching." He nodded down over the wall, to the lower terrace and its grey fires. "Mind her. She's quick."
+"Menders spend good meat on bad knights," he said, "and I've said so to the Prior. They'll not spend it on a bad dog as well. She's not the House's. She climbed, in the first snow; they do, and the kitchen feeds them till I notice." He nodded down over the wall, to the lower terrace and its grey fires. "And that lot keep the cage now, and count what comes up it. The oil was three jars short last week and nobody said why. I'll not give them the meat to count next." He looked at the run. "Mind her. She's quick."
 
 She was against the far door of the run, the one in the wall that faced up the hill toward the hall: a grey bitch, long-boned, all rib and shoulder, with a splint of two laths and twine bound on the hind leg and the hair worn off around it. Her lips came up off her teeth as they came in. There was no sound with it, which was worse.
 
@@ -296,7 +296,7 @@ He did nothing. It hurt. He sat in the straw with his hand in a dog's mouth and 
 
 "Leave it."
 
-The jaw let go. Not all at once: a loosening, as if she had been told something. She stood over the hand with her head low, and smelled it, and smelled up his arm, and then went down the length of the bad leg in the straw with her nose an inch off it, all the way to the boot. There she stopped. She stood for a long breath on three legs, and lay down, the way a tired thing lies down, in pieces; and put the splinted leg across his boot, and laid her head on her own paws, and shut her eyes.
+The jaw let go. Not all at once: a loosening, as if she had been told something. She stood over the hand with her head low and did not smell it. She was shaking, a fine shake along the ribs, the kind a horse has after a hard road and not before one, and her eyes stayed on the hand for whatever it would do next. It did nothing. The other hand, the wrapped one, had come an inch off his knee toward her without being asked, and he put it back. Then she smelled the hand, and smelled up his arm, and went down the length of the bad leg in the straw with her nose an inch off it, all the way to the boot. There she stopped. She stood for a long breath on three legs, and lay down, the way a tired thing lies down, in pieces; and put the splinted leg across his boot, and laid her head on her own paws, and shut her eyes.
 
 The kennel-master had his hand on the mallet. He took it off.
 
