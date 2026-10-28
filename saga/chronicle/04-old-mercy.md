@@ -260,9 +260,9 @@ She read the stop. She had read harder things.
 
 ### Scene 3 — The Ramp
 
-He had the four lines by heart before the hour bell was done, and the third one still stopped him, so he was saying the first two under his breath at the window when Wren came up the row at a pace that meant somebody was about to be dead.
+He had the four lines by heart before the hour bell was done, and the third one still stopped him, so he was saying the first two under his breath at the window when Wren came up the row at a pace that meant something was about to be killed.
 
-"Two lay brothers," she said, before she had stopped. "And the farrier, who's never been bitten by anything in his life, he says, which makes three and a liar. Four days she's not eaten. She sleeps against the door that faces this way." She jerked her chin at the far wall, the hall's footings, the cloister below them. "The kennel-master's going to knock her on the head before the grey cloaks look up from the terrace and see what we feed. He says today." She held out the stick, the borrowed one he would not use. "You've got something in common."
+"There's a dog," she said, before she had stopped. "In the kennels, under the cloister. A grey bitch. She's bitten two lay brothers and the farrier, who says he's never been bitten by anything in his life, so that's three bites and one liar. Four days she's not eaten. She sleeps against the door that faces this way." She jerked her chin at the far wall, the hall's footings, the cloister below them. "The kennel-master's going to knock her on the head before the grey cloaks look up from the terrace and see what we feed. He says today." She held out the stick, the borrowed one he would not use. "You've got something in common."
 
 "Have we."
 
@@ -270,7 +270,7 @@ He had the four lines by heart before the hour bell was done, and the third one 
 
 He looked at the stick, and took it, and put it under his arm like a captain's baton, which it had never been.
 
-The kennels were below the cloister, and the way down was a ramp, not a stair: a long ramp of worn boards with slats nailed across it for purchase, built, Wren told him, so that a dog with a bad leg could be got up it. The thaw had come in under the cloister arch and left the slats running with grey slush. Halfway down he put the stick to the boards once, because the alternative was going down the rest of it on his backside, and Wren had the grace to be looking at the sky.
+The way down to the kennels was a ramp, not a stair: a long ramp of worn boards with slats nailed across it for purchase, built, Wren told him, so that a dog with a bad leg could be got up it. The thaw had come in under the cloister arch and left the slats running with grey slush. Halfway down he put the stick to the boards once, because the alternative was going down the rest of it on his backside, and Wren had the grace to be looking at the sky.
 
 "You caught it," he said. "The hair. At the gate. He'd have had to pick his sister out of the slush in front of all of us, and you didn't let him."
 
