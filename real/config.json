@@ -368,7 +368,7 @@
   "rehab": {
     "current_phase": 4,
     "phase_entered": "2026-10-20",
-    "next_gate": "Phase 4 exit -> Phase 5 (Before Running; master plan): full extension, >=95% flexion, no/trace effusion, quad LSI >80% (90.4% on 10/17), hamstring LSI >=80% (untested), glute ~>=80% symmetry, 10 controlled single-leg squats to ~60 deg, pain-free low-level impact prep (PT clearance first), good landings, rehab team agrees. Earliest by calendar: week 13, Tue 11/17 (Knot IV).",
+    "next_gate": "Phase 4 exit -> Phase 5 (Before Running; master plan): full extension, >=95% flexion, no/trace effusion, quad LSI >80% (90.4% on 10/17), hamstring LSI >=80% (untested), glute ~>=80% symmetry, 10 controlled single-leg squats to ~60 deg (home test, filmed, from 10/28), pain-free low-level impact prep (home, the plan's Phase 4 sequence from 10/28; the drop vertical jump cleared by Nick 10/28 once the rungs before it are clean), good landings, rehab team agrees. Earliest by calendar: week 13, Tue 11/17 (Knot IV).",
     "knots": [
       {
         "knot": 1,
@@ -430,6 +430,12 @@
       "unit": "plates",
       "about": "single-leg leg press max; a stand-in for quad LSI until a dynamometer test",
       "lsi": "higher",
+      "now": true
+    },
+    "sl_squat_reps": {
+      "label": "SL squat",
+      "unit": "reps",
+      "about": "single-leg squat test (master plan Phase 4): controlled reps to ~60 deg knee flexion that meet every item of the plan's checklist (knee over the foot, pelvis controlled, no major trunk compensation, no unloading of the surgical leg, smooth depth and tempo), out of 10; 10 = pass. Filmed at home, Sundays until it passes",
       "now": true
     }
   },

@@ -14,6 +14,7 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 - 10/18: the finisher's Copenhagen runs on both sides at short lever (Nick 10/17); the long lever on the left stays Phase 6
 - 10/21 (knee and upper reviews): rules 1, 2, 5 and 10 (morning check first, with no penalty on optional items; leg up between sets optional; carries in with Phase 4; the Copenhagen stays when the finisher is cut) · the remaining off day is rest by default · time budgets match the real sessions · the Copenhagen carries the adductor work and gets a hold ladder · the bird dog leaves the posture coverage · the accessory day drops its duplicate Y-raise, runs the Pallof standing and swaps the seated DB hold for a suitcase carry · Saturday drops the arms-only aerobic and runs the Pallof standing · throwing records the pivot foot · the right-leg list matches the Phase 4 sessions, and the left's caps don't apply to it · carries leave §6
 - 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`). On a day with throwing and upper both, the order is now the bike, then throwing, then lifting (§2), in place of the 10/12 throw-first order. Throwing's content (skills, sessions, the weeks) stays in the sport plan; §3 sets only what the knee allows and where throwing sits
+- 10/28 (repo): §6's jump line excepts the rehab plan's own Phase 4 impact sequence, which runs inside the knee sessions from 10/28 (Nick 10/28: the plan's criteria and times govern; Recovery State §6)
 
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
@@ -214,7 +215,7 @@ Follows the off-season plan's upper sequence (its Phases 1–4). Calendar dates 
 - Kneeling on the left, tall-kneeling, push-ups from the knees
 - Pull-up drops or jumps down
 - Rower: deep flexion under a hard leg drive
-- Any jump, hop, run, sled, or sprint
+- Any jump, hop, run, sled, or sprint outside the rehab plan's own impact sequence (Phase 4, inside the knee sessions: Recovery State §6)
 - Disc throwing beyond the section 3 limits: step-out throws, throwing on the move, marking (PT OK per drill)
 - Left knee extension beyond the range and load the plan or the PT has introduced (current: Recovery State §5–6). Range and load progress gradually ("if the donor site tolerates")
 - BFR, Spanish squat, seated rotational throws: not in the rehab plan (section 7)

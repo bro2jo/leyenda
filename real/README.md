@@ -52,7 +52,7 @@ real/
 | `logs/exercise_log.csv` | `show ex` | One row per exercise instance | As he reports | Exercise, block, side, sets, reps, hold, load, assist | — |
 | `logs/nutrition_log.csv` · `food_entries.csv` · `food_library.csv` | `show nutrition` · `food list` · `food lib` | Day totals with weight and creatine · one row per food item · the food library | As he reports | — | — |
 | `logs/sport_log.csv` | `show sport` | One row per skill worked in a throwing or film session | As he reports | — | — |
-| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, hop tests later) | Each visit or test | The number, its source and method | Daily self-checks (→ daily log) |
+| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, the filmed home single-leg squat test, hop tests later) | Each visit or test | The number, its source and method | Daily self-checks (→ daily log) |
 | `state/archive/`, `logs/archive/` | — | History: each replaced State; the old dashboard's daily log as uploaded (column map: its README) | Never (path corrections aside) | History | Anything current |
 
 ---

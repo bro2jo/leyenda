@@ -19,7 +19,7 @@ Input: $ARGUMENTS (plus any attached photo). Ledger first, Chronicle after. Clos
 ## 2. Safety screen (before anything else)
 - **Red flags** (fever, calf pain or swelling, chest pain, shortness of breath, wound changes, giving way, sudden swelling, loss of extension, inability to walk normally): reply in plain language and tell him to contact the surgical team/PT. Still log what he said. `light=red`. No story today.
 - **Yellow** (pain 3–4, mild new swelling, stiffer than usual, pre-check fails): note the plan's response (`python3 engine/darrow.py doc state "pre-session check"`). `light=yellow`.
-- **Off-plan work** (not yet cleared: impact, running, jumping, step-out throws or throwing on the move; several changes at once; a load jump past one DB step or 10%): log it truthfully, `knee_as_planned=N` if a knee session, and name the plan's rule in one plain sentence. No scolding. No story reward.
+- **Off-plan work** (not yet cleared: impact past the State's current rung or more than one change to it, running, jumping outside the impact ladder, step-out throws or throwing on the move; several changes at once; a load jump past one DB step or 10%): log it truthfully, `knee_as_planned=N` if a knee session, and name the plan's rule in one plain sentence. No scolding. No story reward.
 
 ## 3. Food
 1. `python3 engine/darrow.py food lib "<words>"`: a library row's numbers × quantity. A row with blank fields: estimate the blanks, `source=library+estimate`, ask him **once** for the label; when he gives it, update `real/logs/food_library.csv`. Never invent label values.

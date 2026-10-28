@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 10/28 (repo, from the dashboard's correction): impact prep follows the plan's own start criteria (Phase 4: "when basic strength, control, and knee response permit"), not a PT start; "only when appropriately cleared" is the drop vertical jump's alone, and Nick cleared it on its criteria (10/28, patient-reported). The 10/9 reading had merged the two. Impact guards added (rule 5); the clearance list follows (Priority and clearance)
 - 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`); throwing follows the Add-On §3 (days without a knee session; slight pivots within reason; the step-out with the PT's OK) and is logged in `sport_log.csv` (the pivot foot named in the row's `drill`)
 - 10/21: once the photo passes, the daily minimum is the morning check alone; check-ins: the off day no longer asks about the heel prop, the upper check-in drops the leg-up question, the throwing check-in adds the pivot foot
 - 10/18: check-in set covers Phases 3–4; Sunday weigh-in in the morning; the weekly heel prop joins the Sunday checks; the bike-interval gate points to the Add-On
@@ -80,7 +81,8 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
    - **Load steps:** one DB increment, one cable plate, or ≤10% (plan: 2.5–10%). No first-exposure jumps.
    - **One new exercise per session,** bodyweight or the lightest load first. PT items run at the PT's dose don't count as new.
    - **Ladders** for every exercise live in the Recovery State §6. Move one rung at a time.
-   - A morning that isn't clean reverses **every** change from the previous session.
+   - **Impact (the plan's Phase 4 sequence):** the plan's dose (2 exercises, 2–3 sets, 5–8 contacts a set; stop while mechanics are still excellent), fresh, before the lifts. **One new rung per session and one variable per session** (sets, contacts or the rung, never two). Landings quiet, knee over the foot.
+   - A morning that isn't clean reverses **every** change from the previous session, **the impact block first** (back one rung; on the first rung, out until a clean morning).
 6. **Progress only after a clean morning.** A slightly-up morning holds the dose.
 7. **Reduce in this order when yellow** (plan: volume → load → range/impact/complexity):
    1. Reverse the most recent batch.
@@ -91,7 +93,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 9. **Response drives dosing, not graft loading.**
    - Swelling and pain report joint irritation, not graft strength.
    - The graft is at its weakest at roughly weeks 6–12 (dates in the Recovery State §1).
-   - Impact, running, rotation and pivoting, and anything from a later phase stay gated by the plan's criteria, its minimum healing time, and its own clearance steps: impact prep and drop jumps "only when appropriately cleared"; running needs "rehabilitation team agrees". Nick's 10/9 instruction does not remove these.
+   - Impact, running, rotation and pivoting, and anything from a later phase stay gated by the plan's criteria, its minimum healing time, and its own clearance steps: impact prep begins "when basic strength, control, and knee response permit" and climbs the plan's sequence one rung at a time (rule 5); the drop vertical jump "only when appropriately cleared" (Nick 10/28: cleared once the rungs before it are clean); running needs week 13 and "rehabilitation team agrees". Nick's 10/9 and 10/28 instructions put the plan's criteria and minimum times in charge; they do not remove them.
    - A quiet knee is not evidence that they can come forward.
 10. **Missed sessions are not repaid.** A missed or partial session is gone; the next one runs at its planned dose, never doubled or crammed onto the next day. The week is judged by:
     - loaded days (3)
@@ -144,12 +146,13 @@ A limp returning under fatigue means shorter bouts and a sit, not a crutch. Gait
 
 - **Priority:** latest PT/surgeon instruction → rehab plan → Recovery State → Whole-Athlete Add-On → sport plan (throwing) → logs → general ACL knowledge. Claude never clears a major progression. The add-on never changes a left-knee item.
 - **In-plan progression** doesn't need PT approval (Nick, 10/9). It is done at home and judged by response (load rules 3–7).
+- **The plan's own gates** decide when something starts: its criteria and its minimum times (Nick, 10/28). That covers the Phase 4 impact sequence and the single-leg squat test (both at home), and the drop vertical jump once the rungs before it are clean (Nick's clearance, 10/28). Where the plan waits for a criterion or a week, the wait stands.
 - **Still goes through the PT / clinic:**
   - strength testing (equipment)
   - phase-gate measurements that can't be taken at home
-  - impact preparation and the drop vertical jump
-  - running
+  - running (the plan: "rehabilitation team agrees")
   - modalities and exercises not in the plan
+  - throwing beyond the Add-On §3 limits (step-out throws, throwing on the move, marking)
 - **Patient-reported verbal PT instructions** are written into `real/visits/pt_notes.md`, labelled as patient-reported, and carry PT priority. Anything that changes a gate or a restriction is reconfirmed at the next visit.
 - **Own adjuncts** (Game Ready / Go Ready, LLLT, red light, sauna) are logged, not evaluated. Ibuprofen can mask the morning feel — trust swelling and extension.
 
@@ -165,7 +168,7 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 ## Check-in question set (Phases 3–4)
 
 - **Morning:** **swelling grade** (none / trace / 1+ — ask for the grade, not a trend) and vs yesterday · extension side by side · pain · stiffness · catch present / absent · wellness 1–5 · planned hours on feet.
-- **After a knee session:** which session (A or B) · doses, including anything changed on the fly · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
+- **After a knee session:** which session (A or B) · doses, including anything changed on the fly · **impact: rung, sets × contacts, landings quiet or not** · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
 - **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · anything about the setup the knee noticed.
 - **After a throwing session:** throws by type · stance (feet planted / slight pivots) · **pivot foot** · minutes and session RPE · anything the knee, elbow or shoulder noticed.
 - **Off day:** bike minutes and distance · rest, or what the accessory day included.

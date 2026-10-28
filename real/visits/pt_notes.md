@@ -512,3 +512,28 @@ Cody: continue progressing, and get further into it.
 
 Reading: confirms in-plan progression at home, as Nick's 10/9 instruction already allowed (one change per exercise, the morning verdict decides; the plan's gates and the graft's weak window through ~11/16 still hold). It is not an answer to the open item on the **left knee extension** (the setup shown, the load at week 10, how range and load progress): that item asked the PT to look at the home setup, which a general "keep progressing" does not, so the left stays at 40 lb until he says Cody's words were about it. Every other open question carries to 11/4.
 
+
+---
+
+## 2026-10-28 (POD 65) — Patient-reported verbal PT instruction, Nick Immel PT (no visit)
+
+Relayed by him on Wed 2026-10-28, through the dashboard project's PT Notes (its 10/28 entry) and brought here the same day (`/ingest`). Patient-reported, carries PT priority. Said by Nick Immel PT; not at a visit (this week's was cancelled, the next is Wed 11/4). The wording is his summary of what Nick said.
+
+```text
+THE MASTER PLAN AND ITS GATES
+Nick (PT): the master plan is good; go with it. As long as the criteria
+and the times match the plan, he's good with it.
+
+DROP VERTICAL JUMP
+Nick (PT): the drop vertical jump is cleared if the plan asks for it and
+the other criteria to unlock it are met.
+```
+
+Reading:
+- **It extends 10/9 to the plan's own gates.** On 10/9 progression was the plan's to decide; now the plan's criteria **and its minimum times** decide when something starts, impact included. It is not a blanket clearance: where the plan waits for a criterion or a week, the wait stands.
+- **Impact preparation is a home item from here.** The plan opens "early plyometric preparation" in Phase 4 "when basic strength, control, and knee response permit" and keeps "only when appropriately cleared" for the drop vertical jump alone. The 10/9 reading above (and the Working Rules written from it) had merged the two, which was stricter than the plan. Corrected in the Working Rules (10/28); the sequence and its dose are in the Recovery State §6.
+- **The drop vertical jump is cleared in advance, on a condition:** it comes after the low vertical jump and landing, once the rungs before it have run cleanly (mechanics excellent, a clean morning after). Until then it isn't due.
+- **The left knee extension** follows the plan's Phase 4 dose (2–3 × 8–12 toward RPE 7–8; "progress range and load gradually, if the donor site tolerates"). The open item in Cody's entry above no longer holds the load at 40 lb.
+- **The single-leg squat test** is the plan's own Phase 4 test with no further condition: it runs at home, filmed.
+- **Unchanged:** running needs week 13 (Tue 11/17) and the rehabilitation team's agreement; the hamstring and glute tests need the clinic's equipment; step-out throws, throwing on the move and marking (the Add-On §3, not the plan) and the items outside the plan (BFR, Spanish squat, seated rotational throws) still go to the PT.
+- **Reconfirm both points at the 11/4 visit**, as with every relayed instruction that changes a gate or a restriction.
