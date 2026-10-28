@@ -368,23 +368,23 @@ Darrow moved. The farrier went on with the knife.
 
 "It's got a burn in it." The hand went back to the leather.
 
-Darrow looked at the cup instead, because the man wanted him to look at the hand and argue, and he had spent a season learning what arguing cost with people who worked with their hands. It was a good cup. Oiled leather, dark, the shape of a man's thigh an inch above where the thigh stopped, and three lines scored round the inside of it with the knife's point where the leather had been taken down and would be taken down further.
+Darrow looked at the cup instead, because the man wanted him to look at the hand and argue, and he had spent a season learning what it cost to argue with people who worked with their hands. It was a good cup. Oiled leather, dark, the shape of a man's thigh an inch above where the thigh stopped, and three lines scored round the inside of it with the knife's point where the leather had been taken down and would be taken down further.
 
 "Whose?"
 
-"Whose do you think." The farrier held it up to the light and looked down it like a man sighting a bow. "Beech leg, leather cup, nine steps, and he swore at every one, and the whole hall heard him, and I heard him from here. A cup's not made once. It's made to the stump, and the stump changes, and he'll not come down to me." The knife went in again. "I made that leg in a week off a tracing on a bit of sacking, because the Mender said he'd not wait. He didn't wait. Now he's got a boot that fits somebody else and he's blaming the beech."
+"Whose do you think." The farrier held it up to the light and looked down it like a man sighting a bow. "Beech leg, leather cup, nine steps, and Ser Hollis swore at every one, and the whole hall heard him, and I heard him from here. A cup's not made once. It's made to the stump, and the stump changes, and he'll not come down to me." The knife went in again. "I made that leg in a week off a tracing on a bit of sacking, because the Mender said he'd not wait. He didn't wait. Now he's got a boot that fits somebody else and he's blaming the beech."
 
 "He blames everything. He got to the carter by the second milestone."
 
-"Aye, well. The carter's not the one who has to look at his face." He blew the shavings off the leather. "You rode a grey."
+"Aye, well. The carter's not the one who has to look him in the face when it bites." He blew the shavings off the leather. "You rode a grey."
 
 It was not a question, and Darrow looked at the board by the door. The chalk marks were brands, a dozen of them, each the size of a palm, drawn the way they sit on a horse's quarter. The Second's was a tower; the Second liked you to know it. The Sixth's was a mule's shoe, which the Sixth had not chosen and could not be rid of. The third from the end was two posts and a bar across, and he had stood in the smoke at the fair while it went onto sixty horses, the greys fighting the men who held them.
 
-"Ninth," said the farrier, not looking. "The gate. You breed them up there and we burned them down at the fair, and I held the iron twenty years before the mountain. Every lance has its mark and every grey carries it on the near quarter, and a man who's held the iron knows them in his sleep." A shaving fell. "There's not a horse within a thousand steps of us. I chalk them up anyway. A hand forgets."
+"Ninth," said the farrier, not looking. "The gate. Edgemoor breeds them and the fair burns them, and I held the iron twenty years before the mountain. Every lance has its mark and every grey carries it on the near quarter, and a man who's held the iron knows them in his sleep." A shaving fell. "There's not a horse within a thousand steps of us. I chalk them up anyway. A hand forgets."
 
 Darrow had nothing to say to that, and said nothing, and the farrier seemed to approve, because he said nothing back for the length of three strokes.
 
-"Right." He held the cup up again, looked down it, and tossed it; and Darrow caught it against his chest with the bitten hand before the bound one had been asked, and swore, and the farrier watched him swear with the first interest he had shown in anything. "That's close. Not there. Take it up to him. He puts it on, he stands, he takes ten steps, not nine, and he tells you where it bites, and you tell me, not him. If he says it's the beech, you tell him the beech is fine. The beech is."
+"Right." He held the cup up again, looked down it, and tossed it; and Darrow caught it against his chest with both bad hands, and swore, and the farrier watched him swear with the first interest he had shown in anything. "That's close. Not there. Take it up to him. He puts it on, he stands, he takes ten steps, not nine, and he tells you where it bites, and you tell me, not him. If he says it's the beech, you tell him the beech is fine. The beech is."
 
 "I'm your runner now."
 
