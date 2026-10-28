@@ -155,3 +155,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-28#4,2026-10-28,,snack,Walnut Creek gluten-free chocolate chip cookies,2 cookies (assumed ~45 g each),440,4,57,21,1.2,6,32,270,110,30,1,24,0.4,0,0.2,0,estimate,"label photo has ingredients only, no nutrition facts; cookie size assumed"
 2026-10-28#5,2026-10-28,,lunch,"Oikos Pro yogurt cup, mixed berry",1 container (150 g),130,20,6,3,0,2.5,3,45,188,195,0,15,1,0,2,0,library,library row (label 10/13)
 2026-10-28#6,2026-10-28,,snack,Uncle Mike's Sweet & Spicy Snack Sticks,2 sticks (2.07 oz / 59 g),166,12.4,2.1,10.4,0,4.1,2.1,766,222,0,0,10,2.1,0,0,41,library,"library row (label 10/28), 14 sticks per 14.5 oz bag"
+2026-10-28#7,2026-10-28,,lunch,Mudd Valley grilled chicken chef salad,"1 clamshell (est. ~5 oz chicken, ~1.5 oz cheese)",390,47,7,18,2.5,8,3,900,750,330,2,60,3.5,15,0.3,40,photo,label has ingredients only; portions estimated from the photo
+2026-10-28#8,2026-10-28,,lunch,Hartville Kitchen ranch dressing packet,1 packet (assumed all of it),210,1,6,21,0,3.5,5,370,18,33,3,1,0.1,0,0,0,label,label photo; kcal from macros (cut off in photo); whole packet assumed
