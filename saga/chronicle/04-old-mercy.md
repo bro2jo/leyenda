@@ -257,3 +257,57 @@ She read the stop. She had read harder things.
 "I've been on the rope fifty years, Captain. I can look out of a window." She was already going, back up the row toward her tower at the pace she had come, and said the last of it to the hall and not to him, since she could not see his answer and did not want it.
 
 "Four strokes. Don't be clever at it."
+
+### Scene 3 — The Ramp
+
+He had the four lines by heart before the hour bell was done, and the third one still stopped him, so he was saying the first two under his breath at the window when Wren came up the row at a pace that meant somebody was about to be dead.
+
+"Two lay brothers," she said, before she had stopped. "And the farrier, who's never been bitten by anything in his life, he says, which makes three and a liar. Four days she's not eaten. She sleeps against the door that faces this way." She jerked her chin at the far wall, the hall's footings, the cloister below them. "The kennel-master's going to knock her on the head before the grey cloaks look up from the terrace and see what we feed. He says today." She held out the stick, the borrowed one he would not use. "You've got something in common."
+
+"Have we."
+
+"She's got a splint on her back leg."
+
+He looked at the stick, and took it, and put it under his arm like a captain's baton, which it had never been.
+
+The kennels were below the cloister, and the way down was a ramp, not a stair: a long ramp of worn boards with slats nailed across it for purchase, built, Wren told him, so that a dog with a bad leg could be got up it. The thaw had come in under the cloister arch and left the slats running with grey slush. Halfway down he put the stick to the boards once, because the alternative was going down the rest of it on his backside, and Wren had the grace to be looking at the sky.
+
+"You caught it," he said. "The hair. At the gate. He'd have had to pick his sister out of the slush in front of all of us, and you didn't let him."
+
+Wren did not look round. Her lips moved, the way they did along a row of lamps.
+
+"Technically this is a ramp," she said. "It doesn't count as a stair." A pause, three steps of it. "It can go in the room under the one."
+
+The kennel-master met them at the run with a mallet in his belt and a face like a shut gate: a lay brother broad as a door, who fed the House's dogs on what the kitchen would not admit to and had views. He looked at the Captain of the Ninth, at the stick under the arm, at the wrapped fingers.
+
+"Menders spend good meat on bad knights," he said, "and I've said so to the Prior. They'll not spend it on a bad dog as well. Not with them watching." He nodded down over the wall, to the lower terrace and its grey fires. "Mind her. She's quick."
+
+She was against the far door of the run, the one in the wall that faced up the hill toward the hall: a grey bitch, long-boned, all rib and shoulder, with a splint of two laths and twine bound on the hind leg and the hair worn off around it. Her lips came up off her teeth as they came in. There was no sound with it, which was worse.
+
+Darrow gave Wren the stick. He put his good hand on the post of the run, bent the good leg, took the bad one out straight in front of him as Maelis had taught him to take it anywhere near a floor, and let himself down the post into the straw, slow, the way a man lowers a full bucket. It was not kneeling. He made sure of that. He sat with his back to the boards and the bad leg out in the straw, and held out his left hand, flat, low, and did nothing else at all.
+
+`[RESOLVE · DC 12]` d20 **4** +0 resolve +3 proficiency +3 The Mender's Patience III = **10** — *Partial: success at a cost*
+
+She came off the door like a thrown thing. He saw it coming the way he saw a line move, the shoulders first, and every year of the Lances in him said take the hand back, and he left it where it was. She had it in her teeth before he had finished deciding: the meat of the thumb, a hard clamp and a tooth through the skin, and her eyes on his from a hand's width off, yellow and waiting to see what he would do.
+
+He did nothing. It hurt. He sat in the straw with his hand in a dog's mouth and his blood going warm down his wrist, and breathed, in and out, the way he had breathed with the bell.
+
+"Captain," said Wren, very quietly, from the gate.
+
+"Leave it."
+
+The jaw let go. Not all at once: a loosening, as if she had been told something. She stood over the hand with her head low, and smelled it, and smelled up his arm, and then went down the length of the bad leg in the straw with her nose an inch off it, all the way to the boot. There she stopped. She stood for a long breath on three legs, and lay down, the way a tired thing lies down, in pieces; and put the splinted leg across his boot, and laid her head on her own paws, and shut her eyes.
+
+The kennel-master had his hand on the mallet. He took it off.
+
+"Four," said Wren, under her breath. "One of them a knight."
+
+"She's not slept since she came in," the kennel-master said. He looked at the dog for a long while, and then at the blood on the Captain's hand, and then down over the wall at the fires on the terrace. "Till they're gone. The grey cloaks. If she's eating from somebody's hand by then, I'll find her the meat. If she isn't, I'll not be told twice."
+
+Darrow looked at the leg across his boot, the laths and the twine, the weight of her, which was more than he had thought.
+
+He did not move his foot.
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **The Long Breath** II. *Endure where others tire.*
+> XP 2,223 → 2,283

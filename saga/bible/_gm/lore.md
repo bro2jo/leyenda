@@ -124,7 +124,7 @@ Under the hall there is older stone than the House: a vaulted undercroft the mas
 The kitchen hears everything first, because everything passes its door on the way to the hall, and it keeps a book on anything the House can see from a window: how long a snow will hold, whether a knight will walk, which way a cart will turn at the Elbow. Stakes are bread and chores. It counts loaves the way Wren counts cots, and the two counts are compared at the dusk bell and argued over. Bitterleaf grows on the south terrace; surgeons chew it or smoke it to keep their hands steady, and a few only hold it in their teeth.
 
 ## house.kennel — The kennels
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch04:s3 · **names:** —
 - **use:** dogs on the Steps in snow; the kennel-master's temper.
 
 Below the cloister, reached by a ramp and not a stair, so that a dog with a bad leg can be got up it: lymers for finding people in snow on the Steps, two House hounds that are nobody's, and whatever strays climb. The kennel-master feeds them on what the kitchen won't admit to, and holds that the Menders waste good meat on bad knights.

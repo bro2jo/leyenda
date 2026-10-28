@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "2",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-2"
+    "anchor": "chronicle/04-old-mercy.html#scene-3"
   },
-  "last_seen_doing": "Saw Rae on the Last Hundred through Pell's glass with something held inside her cloak; ran to tell the Captain; caught the lock of hair before it reached the flags and gave it back.",
-  "now": "Inside the wicket at dusk, having caught the lock of hair; she has no count for this.",
+  "last_seen_doing": "Came for the Captain at a run with the count of the hound's bites and the kennel-master's plan to put her down before the grey cloaks see; handed him the borrowed stick; on the ramp counted his decent word as a ramp, not a stair, in the room under the one; watched from the gate and counted the bite: four, one of them a knight.",
+  "now": "At the gate of the kennel run with the borrowed stick, having counted the Captain's bitten hand as the hound's fourth.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -453,6 +453,36 @@
       "chapter": "04",
       "scene": "2",
       "evidence": "Wren caught it before it reached the flags."
+    },
+    {
+      "fact": "She counted the grey hound's bites: two lay brothers and the farrier, who says he has never been bitten by anything in his life.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "\"Two lay brothers,\" she said, before she had stopped. \"And the farrier, who's never been bitten by anything in his life, he says, which makes three and a liar."
+    },
+    {
+      "fact": "She brought the Captain to the hound because they have something in common: a splint on a back leg.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "\"You've got something in common.\""
+    },
+    {
+      "fact": "She told him the kennel ramp was built so that a dog with a bad leg could be got up it.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "built, Wren told him, so that a dog with a bad leg could be got up it."
+    },
+    {
+      "fact": "She counted the Captain's decent word on the ramp: a ramp does not count as a stair, but it can go in the room under the one.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "\"It can go in the room under the one.\""
+    },
+    {
+      "fact": "She counted the Captain's bitten hand as the hound's fourth bite.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "\"Four,\" said Wren, under her breath. \"One of them a knight.\""
     }
   ],
   "relationships": [
@@ -634,6 +664,10 @@
       "chapter": "04",
       "scene": "between-1",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "3"
     }
   ]
 }

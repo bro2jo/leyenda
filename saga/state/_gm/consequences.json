@@ -783,7 +783,7 @@
           "what": "Wren keeps a count: Times the Captain has said a decent thing on a stair, one, with room under it. Fire where he says another plain kind thing to her and she counts it, or where she reads the count back to him",
           "fits": "present.wren",
           "priority": 1,
-          "status": "pending",
+          "status": "fired@ch04:s3",
           "offered": 7,
           "offered_at": [
             "ch03:between-4",
@@ -794,7 +794,8 @@
             "ch03:climax",
             "ch04:s2"
           ],
-          "valid_until": "transition1"
+          "valid_until": "transition1",
+          "evidence": "\"Technically this is a ramp,\" she said. \"It doesn't count as a stair.\" A pause, three steps of it. \"It can go in the room under the one.\""
         }
       ]
     },
@@ -931,9 +932,10 @@
           "priority": 2,
           "valid_until": "transition1",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-2"
+            "ch04:between-2",
+            "ch04:s3"
           ]
         }
       ]

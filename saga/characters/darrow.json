@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-2",
+    "scene": "3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-2"
+    "anchor": "chronicle/04-old-mercy.html#scene-3"
   },
-  "last_seen_doing": "Waited at the undercroft door between the dawn bell and the hour bell for Sister Pell; asked her what the bell says at dusk, said it again plain to her face when she lost it in the light, started to ask about her palms and was stopped with Ask the bell; took the three bells and Old Mercy's crack from her, said the four lines of the dusk verse back and stopped on the third; took on a dusk under the tower.",
-  "now": "At the undercroft door at the dark end of the hall, Sister Pell gone up the row to her tower. He has the dusk verse, and owes her a dusk under the tower in the court, saying it with the strokes where she can see his mouth.",
+  "last_seen_doing": "Went down the kennel ramp with Wren, the borrowed stick under his arm and used once on the slush; told her plainly she did well catching the hair; let himself down into the straw of the run without kneeling, held out his good hand to a grey bitch who bites, and kept it there when she took it in her teeth; she let go, lay down with her splinted leg across his boot and slept; the kennel-master gave him until the grey cloaks are gone.",
+  "now": "Sitting in the straw of the kennel run with a grey hound asleep across his boot and his left hand bitten and bleeding at the thumb; the fingers of the right are still wrapped. The kennel-master has given him until the grey cloaks are gone.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1278,6 +1278,42 @@
       "evidence": "Darrow's right hand was inside his shirt, where the linen was. He left it there."
     },
     {
+      "fact": "He told Wren plainly that she did well to catch the lock of hair at the gate before it reached the slush.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "\"You caught it,\" he said. \"The hair. At the gate."
+    },
+    {
+      "fact": "He lowered himself into the straw by the post with the bad leg out straight, and made sure it was not kneeling.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "It was not kneeling. He made sure of that."
+    },
+    {
+      "fact": "He held out his good hand to the hound and left it there when she bit it.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "every year of the Lances in him said take the hand back, and he left it where it was."
+    },
+    {
+      "fact": "The hound bit his left hand through the skin at the thumb, and he did not pull it away.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "the meat of the thumb, a hard clamp and a tooth through the skin"
+    },
+    {
+      "fact": "The hound lay down with her splinted leg across his boot and slept, and he did not move his foot.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "put the splinted leg across his boot, and laid her head on her own paws, and shut her eyes."
+    },
+    {
+      "fact": "The kennel-master gave him until the grey cloaks are gone: if the hound is eating from somebody's hand by then, she gets the meat.",
+      "chapter": "04",
+      "scene": "3",
+      "evidence": "If she's eating from somebody's hand by then, I'll find her the meat."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1563,6 +1599,10 @@
     {
       "chapter": "04",
       "scene": "between-2"
+    },
+    {
+      "chapter": "04",
+      "scene": "3"
     },
     {
       "chapter": "tale01",

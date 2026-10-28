@@ -442,6 +442,13 @@
           "sources": [
             "ch04:between-2"
           ]
+        },
+        {
+          "name": "The kennels",
+          "text": "Below the cloister, reached by a long ramp of worn boards with slats across it and not by a stair, so that a dog with a bad leg can be got up it. The kennel-master, a lay brother broad as a door, feeds the House's dogs on what the kitchen will not admit to and holds that the Menders spend good meat on bad knights. The run looks down over the wall onto the lower terrace. In it a grey bitch with a splinted hind leg, who had bitten two lay brothers and the farrier and would not eat, bit the Captain's hand and then slept across his boot; the kennel-master has given him until the grey cloaks are gone (Ch 4 Sc 3).",
+          "sources": [
+            "ch04:s3"
+          ]
         }
       ],
       "intro": ""
@@ -675,6 +682,13 @@
           "text": "Sister Pell to Darrow, going back up to her tower, having given him the dusk verse and a dusk to say it under the tower where she can see his mouth (Ch 4 Between).",
           "sources": [
             "ch04:between-2"
+          ]
+        },
+        {
+          "name": "\"Menders spend good meat on bad knights.\"",
+          "text": "The kennel-master's view, said to the Prior and to the Captain of the Ninth's face (Ch 4 Sc 3).",
+          "sources": [
+            "ch04:s3"
           ]
         }
       ],

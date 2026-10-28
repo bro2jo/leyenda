@@ -35,11 +35,19 @@
       "after": "2",
       "covers": [],
       "written": "2026-10-27"
+    },
+    {
+      "scene": 3,
+      "title": "The Ramp",
+      "covers": [
+        "2026-10-27"
+      ],
+      "written": "2026-10-27"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, at the undercroft door at the dark end; Sister Pell gone back up the row to her tower for the hour bell",
+    "detail": "the kennels below the cloister, sitting in the straw of the run with his back to the boards and a grey hound asleep across his boot",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -49,7 +57,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "What a captain does with a good man who did a terrible thing for love, with the whole House watching him decide. The sliver stays in the wall under forty beds, one with the rock; the lid is off and whoever set it will know. Maelis has walked away from his telling and keeps two pieces of black glass in her coat. His fingertips are numb under the linen. The knee holds a stair at the Mender's count and no more, and the soft season is not over.",
-  "last_beat": "She was already going, back up the row toward her tower at the pace she had come, and said the last of it to the hall and not to him. \"Four strokes. Don't be clever at it.\"",
+  "last_beat": "Darrow looked at the leg across his boot, the laths and the twine, the weight of her, which was more than he had thought. He did not move his foot.",
   "companions": {
     "maelis": {
       "approval": 29,
