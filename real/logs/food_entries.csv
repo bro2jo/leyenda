@@ -153,3 +153,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-28#2,2026-10-28,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola bar; assumed his usual Kirkland chewy bar
 2026-10-28#3,2026-10-28,,breakfast,Applesauce pouch,1 pouch (assumed 3.2 oz / 90 g),60,0,14,0,1,0,11,0,80,5,0.1,3,0,20,0,0,estimate,"brand not given; typical 3.2 oz pouch, as on 10/27"
 2026-10-28#4,2026-10-28,,snack,Walnut Creek gluten-free chocolate chip cookies,2 cookies (assumed ~45 g each),440,4,57,21,1.2,6,32,270,110,30,1,24,0.4,0,0.2,0,estimate,"label photo has ingredients only, no nutrition facts; cookie size assumed"
+2026-10-28#5,2026-10-28,,lunch,"Oikos Pro yogurt cup, mixed berry",1 container (150 g),130,20,6,3,0,2.5,3,45,188,195,0,15,1,0,2,0,library,library row (label 10/13)
