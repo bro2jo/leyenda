@@ -311,3 +311,37 @@ He did not move his foot.
 > ⟦ THE RECKONING ⟧
 > Art ranked up: **The Long Breath** II. *Endure where others tire.*
 > XP 2,223 → 2,283
+
+### Between — Her Mark
+
+Getting out from under the dog took longer than getting bitten had. He drew the boot back a finger's width at a time while she slept, and at the last of it she opened one eye and watched the foot go and did not lift her head, and the kennel-master at the gate let him go without a word about the hand. Wren gave him the stick at the foot of the ramp and took it back at the hall door, and wrote something.
+
+Brother Anselm was where he had been told to be, on the cot next to Darrow's, with the stores key in his fist and his sister inside his shirt. He saw the hand before Darrow had sat down.
+
+"Oh, Captain. I'm sorry, let me—" He was up and gone to the linen press and back before he had finished being sorry, with a strip of clean linen and the basin, and sat on the edge of his own cot and drew the bitten hand across the gap into both of his as if it had been given him to keep. His own hands were steady. Darrow had not expected that. "The grey one. I heard. Hold still, I'm sorry, this will—"
+
+"Brother. Your sister's mark. The one nobody else has." Anselm's hands stopped on the linen, and went on. "What is it?"
+
+"It's an M." He said it to the hand. "She was five. Our mother was teaching her her letters on the hearthstone with a burnt stick, and she'd not have the M the way it was shown her, two hills and a valley. She put a loop in the valley, like a hook, and said that was so it would hold. She's put it on everything since. On her clothes-chest. On the lintel of our mother's house the day we buried her, with a nail. Under her name on every letter to me, so I'd know it was her hand even when—" He wound the linen once round the thumb. "Even when it wasn't."
+
+"And the clerk wrote the words over it."
+
+"She signed under them. That's what I can't—" He trailed off and did not come back, and tied the linen instead, a flat knot, a storesman's knot.
+
+"Why is she the brave one?"
+
+Anselm sat back. For a moment he looked almost as if he might smile.
+
+"When she was twelve the herald cried our father's name at the bell. Debt. The mill's debt, not his, but he'd put his hand to the paper for the miller, and the miller was gone. Cried from the steps after the noon bell, in front of the whole village, and we were in the crowd, the two of us, and I was going to take her home." He turned the key over in his free hand. "A man named at the bell may answer at the bell. Everyone knows that. Nobody does it. She went up the steps in her pinafore and answered. She told the herald her father had put his hand to a paper, and the man who had asked him to was gone down the Holloway with the mill's money, and the herald could cry that too if he liked crying things." He looked at the hand he had bound. "He did. The next day. I apologised to him. I was fourteen." He turned the key again. "That's the two of us, Captain. I say sorry first and ask second. She asks, and she has never said sorry in her life, and she went to the Spire to ask what had become of the brothers' letters because somebody should, and I—" He stopped. "I write the letters."
+
+Darrow looked at the knot on his thumb. It would hold.
+
+"Where's the man with the mill's money now?"
+
+"Nobody knows. She's not forgiven him that either." Anselm got up with a hand on the cot's edge and stood with the basin, and then did the thing Darrow had seen him do with the lay brothers and the cook and once with Hollis, and had taken for a tic.
+
+"Thank you, Captain," he said.
+
+"For what?"
+
+"I don't know yet." He took the basin away up the row. "You will."

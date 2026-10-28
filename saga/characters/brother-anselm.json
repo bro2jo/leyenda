@@ -26,12 +26,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "2",
+    "scene": "between-3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-2"
+    "anchor": "chronicle/04-old-mercy.html#between-3"
   },
-  "last_seen_doing": "Opened his sister's letter standing by the gate lamp; a lock of her dark hair fell from it; read it twice and did not weep; said the words are the clerk's and the mark is hers; said the clerk wrote it so that he would finish.",
-  "now": "Inside the wicket with his sister's letter and her hair inside his shirt and the stores key in his fist, waiting to be told what the Captain will do with him.",
+  "last_seen_doing": "Saw the Captain's bitten hand before he had sat down, fetched linen and the basin, bound the thumb with a storesman's knot; told him his sister's mark is an M with a loop in the valley, like a hook, so it would hold, hers since she was five on the hearthstone and on everything since; told him she is the brave one because at twelve she answered the herald at the bell when their father was cried for the mill's debt, while he, fourteen, apologised to the herald; thanked the Captain for a thing he does not know yet.",
+  "now": "Gone up the row with the basin, the stores key in his fist. He has bound the Captain's hand, told him who his sister is, and thanked him for whatever he will do.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -100,6 +100,48 @@
       "chapter": "04",
       "scene": "2",
       "evidence": "The man's face had simply shut, like a door with no handle."
+    },
+    {
+      "fact": "He bound the Captain's bitten thumb himself, with steady hands and a flat storesman's knot.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "tied the linen instead, a flat knot, a storesman's knot."
+    },
+    {
+      "fact": "He says his sister's mark is an M with a loop in the valley, like a hook, which she made at five learning her letters on the hearthstone and said was so it would hold.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "She put a loop in the valley, like a hook, and said that was so it would hold."
+    },
+    {
+      "fact": "He says she has put the mark on everything since: her clothes-chest, the lintel of their mother's house the day they buried her, and under her name on every letter to him.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "On the lintel of our mother's house the day we buried her, with a nail. Under her name on every letter to me"
+    },
+    {
+      "fact": "He says their father was cried at the bell for the mill's debt when she was twelve, having put his hand to the paper for a miller who was gone, and that she went up the steps and answered at the bell.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "She went up the steps in her pinafore and answered."
+    },
+    {
+      "fact": "He says the herald cried her answer the next day, and that he, fourteen, apologised to the herald.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "\"He did. The next day. I apologised to him. I was fourteen.\""
+    },
+    {
+      "fact": "He says the two of them are this: he says sorry first and asks second; she asks and has never said sorry in her life.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "I say sorry first and ask second. She asks, and she has never said sorry in her life"
+    },
+    {
+      "fact": "He thanked the Captain for something he does not know yet.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "\"I don't know yet.\" He took the basin away up the row. \"You will.\""
     }
   ],
   "relationships": [
@@ -144,6 +186,10 @@
       "chapter": "04",
       "scene": "3",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "between-3"
     }
   ]
 }

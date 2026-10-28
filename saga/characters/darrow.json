@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "3",
+    "scene": "between-3",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-3"
+    "anchor": "chronicle/04-old-mercy.html#between-3"
   },
-  "last_seen_doing": "Went down the kennel ramp with Wren, the borrowed stick under his arm and used once on the slush; told her plainly she did well catching the hair; let himself down into the straw of the run without kneeling, held out his good hand to a grey bitch who bites, and kept it there when she took it in her teeth; she let go, lay down with her splinted leg across his boot and slept; the kennel-master gave him until the grey cloaks are gone.",
-  "now": "Sitting in the straw of the kennel run with a grey hound asleep across his boot and his left hand bitten and bleeding at the thumb; the fingers of the right are still wrapped. The kennel-master has given him until the grey cloaks are gone.",
+  "last_seen_doing": "Eased his boot out from under the sleeping hound and left her in the run; came up to his cot and let Brother Anselm bind the bitten hand; asked him what his sister's mark is and why she is the brave one; heard both in full and promised nothing; was thanked for a thing not yet done.",
+  "now": "On his own cot with the left hand bound at the thumb in a storesman's knot and the right fingertips still wrapped. He knows Mirren's mark and why she is the brave one, and has promised the almoner nothing.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1320,6 +1320,24 @@
       "evidence": "If she's eating from somebody's hand by then, I'll find her the meat."
     },
     {
+      "fact": "He eased his boot out from under the sleeping hound a finger's width at a time and left her in the run; she watched the foot go and did not lift her head.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "she opened one eye and watched the foot go and did not lift her head"
+    },
+    {
+      "fact": "He let Brother Anselm bind the bitten hand, and noticed the almoner's hands were steady.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "His own hands were steady. Darrow had not expected that."
+    },
+    {
+      "fact": "He asked Anselm what his sister's mark is and why she is the brave one, and promised him nothing.",
+      "chapter": "04",
+      "scene": "between-3",
+      "evidence": "\"Brother. Your sister's mark. The one nobody else has.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1609,6 +1627,10 @@
     {
       "chapter": "04",
       "scene": "3"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-3"
     },
     {
       "chapter": "tale01",

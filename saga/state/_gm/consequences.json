@@ -932,10 +932,38 @@
           "priority": 2,
           "valid_until": "transition1",
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch04:between-2",
-            "ch04:s3"
+            "ch04:s3",
+            "ch04:between-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c04.3",
+      "made": {
+        "chapter": 4,
+        "scene": "between-3",
+        "date": "2026-10-28"
+      },
+      "chose": "Came up from the kennels with the bitten hand and let Anselm bind it; asked about Mirren's mark (an M with a loop in the valley, like a hook, so it would hold, hers since she was five) and why she is the brave one (at twelve she answered the herald at the bell when their father was cried for the mill's debt; Anselm, fourteen, apologised to the herald); promised nothing; Anselm thanked him for what he does not know yet",
+      "now": {},
+      "due": [
+        {
+          "id": "c04.3a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow knows Mirren's mark: an M with a loop in the valley, like a hook, so it would hold; Anselm says she has put it on everything since she was five and under her name on every letter. Fire where a letter comes with it or without it, where Darrow names the mark, or where the mark is seen on a thing that is not a letter",
+          "fits": "present.brother_anselm",
+          "priority": 2,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-3"
           ]
         }
       ]
