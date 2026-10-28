@@ -292,10 +292,10 @@
         "sport"
       ],
       "add": [
-        "pt"
+        "knee"
       ],
-      "source": "his message Tue 10/27, relaying the week plan from his dashboard review; PT Wed 10/28",
-      "why": "four unloaded days (Sat 10/24-Mon 10/26, away; not repaid, load rule 10); A is next in the knee rotation and cannot run Tue back-to-back with Wednesday's PT (load rule 2), so Fri takes A with a day clear of PT on either side; Upper B Tue (Block 1 starts), Upper A Sat (4 days apart); throwing Tue, Thu and Sat after the bike; two loaded days this week"
+      "source": "his message Wed 10/28: this week's PT visit cancelled, the next scheduled Wed 11/4; Cody: keep progressing",
+      "why": "no PT today, so the next knee session (A, after Fri 10/23's B) runs today: Tue was an upper day, so it is not back-to-back; Friday takes B and Sunday A, a day between each"
     },
     {
       "date": "2026-10-29",
@@ -314,8 +314,8 @@
       "add": [
         "knee"
       ],
-      "source": "his message Tue 10/27, relaying the week plan from his dashboard review; PT Wed 10/28",
-      "why": "four unloaded days (Sat 10/24-Mon 10/26, away; not repaid, load rule 10); A is next in the knee rotation and cannot run Tue back-to-back with Wednesday's PT (load rule 2), so Fri takes A with a day clear of PT on either side; Upper B Tue (Block 1 starts), Upper A Sat (4 days apart); throwing Tue, Thu and Sat after the bike; two loaded days this week"
+      "source": "his message Wed 10/28 (PT cancelled; A moved to Wednesday)",
+      "why": "Friday keeps a knee session: B, the rotation's next after Wednesday's A, with Thursday between"
     },
     {
       "date": "2026-10-31",
@@ -325,6 +325,17 @@
       ],
       "source": "his message Tue 10/27, relaying the week plan from his dashboard review; PT Wed 10/28",
       "why": "four unloaded days (Sat 10/24-Mon 10/26, away; not repaid, load rule 10); A is next in the knee rotation and cannot run Tue back-to-back with Wednesday's PT (load rule 2), so Fri takes A with a day clear of PT on either side; Upper B Tue (Block 1 starts), Upper A Sat (4 days apart); throwing Tue, Thu and Sat after the bike; two loaded days this week"
+    },
+    {
+      "date": "2026-11-04",
+      "drop": [
+        "sport"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his message Wed 10/28: PT scheduled for Wed 11/4",
+      "why": "the visit replaces Wednesday's throwing (never on a PT day)"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",

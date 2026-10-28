@@ -116,7 +116,7 @@
 
 ### For the next visit (the one list)
 
-1. **Wed 10/28** (Friday 10/23's visit wasn't booked; Session B ran in its slot). Friday 10/30 is Session A: a day clear on either side.
+1. **Wed 11/4** (scheduled; 10/28's visit was cancelled, and Cody said to keep progressing: `pt_notes.md`, 2026-10-28). Keep a day between it and the nearest home session.
 2. **Knee extension at home — show the setup.** Full range, 40 lb, both legs up, left alone down over 3 s (right solo both ways); pain 0. Is that load OK at week 9, and how should range and load progress? The left holds at 40 lb at home until this is answered; the right progresses on its own.
 3. **Hamstring test, both sides.** The before-running gate needs ≥80%; pre-op was 70.6%. **Glute med/max too**, and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18).
 4. **Impact prep:** when and how to start the plan's Phase 4 sequence (shuttle or leg-press jumps → small pogos → snap-downs → low jump and landing).
@@ -140,13 +140,13 @@ Last week in one line: loaded days 3 of 3 (Sun B, Wed A, **Fri B in the PT slot*
 | Sun 10/25 | Away: nothing (the weekly checks and Session B did not run) |
 | Mon 10/26 | Travel day: nothing (creatine ✓) |
 | Tue 10/27 | ✓ 160.7 lb · morning check + **the missed weekly checks** (photo + heel prop, SLR, flexion) → bike 30 → throwing (**feet planted**, ~60 throws: Friday's morning was trace after Thursday's pivots) → **Upper B, session 6: Block 1 starts** (§7) → finisher, Copenhagen 2 × 25 s/side |
-| Wed 10/28 | Morning check → **PT** (§5 list). No throwing on a PT day |
+| Wed 10/28 | ✓ 159.2 lb · **PT cancelled** (next Wed 11/4; Cody: keep progressing) → morning check → **Session A** in its place (the 10/21 baselines, one change per exercise; the left knee extension held at 40 lb) |
 | Thu 10/29 | Morning check → bike 30 → throwing; otherwise rest |
-| Fri 10/30 | Morning check → **Session A** (the 10/21 baselines, one change per exercise; the left knee extension held at 40 lb unless Wednesday's PT says otherwise) |
+| Fri 10/30 | Morning check → **Session B** (the 10/25 column below) |
 | Sat 10/31 | Morning check → bike 30 → throwing → **Upper A, session 7** (Block 1). Saturday power & mobility waits for the next free Saturday |
-| Sun 11/1 | Weekly checks (morning weigh-in, photo + heel prop, SLR, flexion) → checkpoint → **Session B** (the 10/25 column below: Friday's run on machines had no graded morning after it) |
+| Sun 11/1 | Weekly checks (morning weigh-in, photo + heel prop, SLR, flexion) → checkpoint → **Session A** (one change from Wednesday's) |
 
-- **Two loaded days this week** (Wed PT, Fri A): A is next in the rotation and can't run Tuesday back-to-back with Wednesday's PT (load rule 2). The cost of the weekend away; it stays unpaid (load rule 10).
+- **Two loaded days this week** (Wed A, Fri B), with the PT visit cancelled; the weekend away stays unpaid (load rule 10).
 
 - **Throwing:** never on a knee day (a home session or a PT visit); on upper days after the bike and before lifting; on Saturday after the bike. Feet planted or slight pivots on the planted foot; the pivot foot named in the log (Add-On §3; sport plan §5, §9). Thu ✓ and Sat this week.
 - **The week is judged by** (Working Rules, load rule 10): loaded days 3 (Sun B, Wed A, Fri PT) · morning checks 7 · bike rides 3 (24 ✓, 27, 30) · upper 2 (1 so far).
@@ -216,7 +216,7 @@ Full text: Working Rules, load rules 3–7.
 - A morning that isn't clean reverses every change.
 - **Impact prep is not on the home program** until the PT starts it.
 
-### Session B — next: Sun 11/1 (~60 min; ran Fri 10/23 at a vacation gym on machine substitutes with no graded morning after it, so the 10/25 column stands as the next home dose)
+### Session B — next: Fri 10/30 (~60 min; ran Fri 10/23 at a vacation gym on machine substitutes with no graded morning after it, so the 10/25 column stands as the next home dose)
 
 Baseline = 10/18 (clean on 10/19). One change each. Trimmed in the 10/21 review (below Session A).
 
@@ -237,7 +237,7 @@ Baseline = 10/18 (clean on 10/19). One change each. Trimmed in the 10/21 review 
 - **Minimum session:** warm-up + 1, 2, 3 + the 3-minute cooldown (90/90 hip lift and chin nods), ~30 min.
 - **Gap vs the plan's Phase 4 B:** it opens with a bilateral leg press, and there is no home equivalent, so bilateral knee-dominant lifting runs once a week (A's squat). Accepted for now.
 
-### Session A — Phase 4 (baseline Wed 10/21, clean on 10/22; next Fri 10/30, ~55 min)
+### Session A — Phase 4 (baseline Wed 10/21, clean on 10/22; next Wed 10/28, in the cancelled PT visit's place, ~55 min)
 
 The master plan's Phase 4 A (squat, knee extension, RFESS, hamstring curl, standing calf raise) plus the PT's step-up and heel tap. **Baselines = 10/21** (the recalibration above); Thursday's morning was clean, so they stand.
 

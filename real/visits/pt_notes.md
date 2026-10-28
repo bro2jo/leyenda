@@ -497,3 +497,18 @@ Patient-reported, by way of the dashboard project's Recovery State of Sun 10/18 
 - The last three treating visits were Thursdays (10/1, 10/8, 10/15); the next one is asked for Friday 10/23, so that it isn't back-to-back with Wednesday's Session A.
 
 Reading: closes "who treated 10/17" (Nick). Still open: who treated 10/1 (Cody or a covering PTA). What it changes: nothing in the gate or the program beyond what the State of 10/18 (revised 10/21) already carries: the home knee extension holds at 40 lb on the left until the PT answers (State §5, next-visit item 2), and throwing keeps to planted feet or slight pivots.
+
+---
+
+## 2026-10-28 (POD 65) — Patient-reported verbal PT instruction; this week's visit cancelled (no visit)
+
+Relayed by him in the repo thread on Wed 2026-10-28. Patient-reported, carries PT priority. Said by Cody (PTA).
+
+```text
+SCHEDULING AND PROGRESSION
+This week's visit is cancelled; the next is scheduled for Wednesday 11/4.
+Cody: continue progressing, and get further into it.
+```
+
+Reading: confirms in-plan progression at home, as Nick's 10/9 instruction already allowed (one change per exercise, the morning verdict decides; the plan's gates and the graft's weak window through ~11/16 still hold). It is not an answer to the open item on the **left knee extension** (the setup shown, the load at week 10, how range and load progress): that item asked the PT to look at the home setup, which a general "keep progressing" does not, so the left stays at 40 lb until he says Cody's words were about it. Every other open question carries to 11/4.
+
