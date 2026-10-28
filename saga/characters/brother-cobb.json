@@ -13,7 +13,10 @@
     "faction": "menders",
     "mark": "knife"
   },
-  "appearance": "A lay brother in his fifties, short and wide, with forearms like a drover's and a leather apron black at the belly; grey stubble on a square jaw, small slate-coloured eyes under brows singed thin, a nose flattened long ago. Burn scars pale and shiny on both hands, and across the back of the right a half-ring of small white marks he calls a burn. He wears the House's grey hood pushed back and his sleeves past the elbow in any weather, and smells of coal and hoof-oil though nothing has worn a shoe up here in his time.",
+  "appearance": "A lay brother in his fifties, short and wide through the chest, with forearms like a drover's and a leather apron black at the belly; a square weathered face gone red at the cheeks, soot in the creases, a nose flattened long ago, pale blue-grey eyes under heavy brows, grey stubble on the jaw, and short hair cropped close and going grey. Burn scars pale and shiny on both hands, and across the back of the right a half-ring of small white marks he calls a burn. He wears the House's grey hood pushed back and his sleeves past the elbow in any weather, and smells of coal and hoof-oil though nothing has worn a shoe up here in his time.",
+  "portrait": "characters/brother-cobb.jpg",
+  "portrait_alt": "Portrait of Brother Cobb: a broad, weathered man in his fifties with short grey hair, grey stubble, a flattened reddened nose and pale blue-grey eyes, soot on his face, in a grey hooded tunic with the hood down and a scorched leather apron, a forge fire glowing in a stone wall behind him.",
+  "portrait_focus": "50% 35%",
   "first_seen": {
     "chapter": "04",
     "scene": "between-4",
