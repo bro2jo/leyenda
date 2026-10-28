@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 7,
   "rank": "Kindled",
-  "xp": 2303,
+  "xp": 2333,
   "xp_this_level": 2100,
   "xp_next_level": 2800,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 45,
+      "temper": 47,
       "next_at": 48,
       "fell": 15,
       "banked": false
@@ -34,7 +34,7 @@
       "raw": 10,
       "cap": 12,
       "mod": 0,
-      "temper": 30,
+      "temper": 31,
       "next_at": 32,
       "fell": 18,
       "banked": false
@@ -104,7 +104,7 @@
       "tree": "Footing",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 15,
+      "practice": 16,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -148,7 +148,7 @@
       "tree": "Footing",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 13,
+      "practice": 14,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
@@ -180,9 +180,9 @@
       "name": "Thunderstep",
       "tree": "Footing",
       "rank": 0,
-      "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "banked_rank": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": 5,
       "effect": "Leap gaps, walls and horses."
     },

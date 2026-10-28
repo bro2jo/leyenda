@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-22 · ledger · Wren's ledger, the kitchen page: Candles burnt at supper: eleven. Candles the kitchen says it burnt: nine. Candles found under the dresser: two. Reported to nobody, on account of nobody asking.
 - 2026-10-22 · verse · Two novices are playing knucklebones on an upturned bucket by the cloister door, and the one who is losing chants it faster to put the other off: *One for the stone and two for the crown, three for the knight who won't come down…*
 - 2026-10-22 · house · Mother Ione walks the row at the lamp-lighting with her hands folded, stops at no cot in particular, and somehow every cot on it has been looked at by the time she reaches the door.
 - 2026-10-23 · weather · Past midnight the sky over the Steps is clear and hard with stars, and cold enough that the snow along the parapet squeaks under a sleeve like a cork in a bottle.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-28 · ledger · From Wren's ledger, under the day's airing: Blankets hung on the wall in the noon wind, 30. Blankets the wind tried to take, 2. Blankets it got, 0.
 - 2026-10-28 · overheard · From the scullery, a lay brother up to his elbows in the pots, to whoever has just set down another: Is that the last? — It's the last of these. — That's not what I asked.
 - 2026-10-28 · house · Wren runs out of ink halfway down the afternoon's column and finishes it in a stub of charcoal from the brazier, and anyone who looks can see the charcoal half is the neater.
+- 2026-10-28 · body · The warmth has got into his hands tonight and stays there; he turns them over by the candle twice to be sure, and the second time he is grinning at himself for checking.

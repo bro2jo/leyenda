@@ -11,9 +11,9 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 - **Daily minimum (every day):** the morning check (swelling **grade**, extension side by side, pain, stiffness, catch, **wellness 1–5**) + creatine. **The heel prop is a weekly check** (Sundays; this week's is owed Tuesday with the photo, SLR and flexion).
 - **Throwing (Add-On §3, sport plan §5):** on days without a knee session, never on a PT day; on an upper day after the bike and before lifting. **This week feet planted** (Friday's morning was trace after Thursday's pivots with no knee session between), back at ~60 throws a session; the dial waits. Step-out throws and throwing on the move wait for the PT's OK.
 - **Tue 10/27:** ✓ 160.7 lb (AM) · morning check (trace) · bike 30 ✓ · **Upper B, session 6: Block 1's first** ✓ (~60 min, RPE 7). Throwing, the finisher and the Copenhagen 2 × 25 s didn't run (the Copenhagen moves to Saturday).
-- **Wed 10/28:** ✓ 159.2 lb · **PT cancelled** → morning check → **the single-leg squat test first**, fresh and filmed (10 to ~60°, left then right, the plan's checklist: State §6) → bike 8 → ball toss → **small double-leg pogos 2 × 5, quiet (the first impact)** → **Session A** (~65 min): goblet 40 × 3 × 10 · **knee extension 40 × 3 × 12, both legs** (the left off its hold: the third set today, one plate next A, never two) · RFESS 3 × 8/side on the 7.5" box · hamstring curl 70 × 3 × 10 paired with heel raise 40s × 4 × 15 · step-up 18" 2 × 10/side · lateral heel tap 7.5" L 3 × 10 · full cooldown. No throwing on a knee day.
-- **Thu 10/29:** morning check (**it judges the pogos first**: anything up and the impact block reverses before anything else) → bike 30 → throwing; otherwise rest.
-- **Fri 10/30:** morning check → **Session B** (the State's 10/25 column: step-down L 3 × 10 · SL sit-to-stand 18" 2 × 12 · RDL 55 × 3 × 8 · lateral lunge full range, held after 10/23's front-of-knee 2–3 · hamstring curl one change from Wednesday's · hip abduction 20 × 2 × 15 · SL bridge 3 × 10 · seated calf raise, left, lightest · full cooldown) with **the pogos one change on (3 × 5) if Thursday's morning is clean**.
+- **Wed 10/28:** ✓ 159.2 lb · PT cancelled · morning check (trace, pain 0) · **Session A ran, cut for time:** the squat test (left 4 clean of 12, right 12 clean), bike 8, ball toss, pogos, TKE 70, goblet 45/45/50 × 10, knee extension 40 × 3 × 12 both legs (the left solo both ways), RFESS 3 × 8; the curls, heel raises, step-ups and heel taps skipped, the cooldown short. Pain 0 throughout. The impact went past the ladder: see the flags.
+- **Thu 10/29:** morning check (**it judges Wednesday's hops first**: anything up and the impact block reverses before anything else) → bike 30 → throwing; otherwise rest.
+- **Fri 10/30:** morning check → **Session B** (the State's 10/25 column: step-down L 3 × 10 · SL sit-to-stand 18" 2 × 12 · RDL 55 × 3 × 8 · lateral lunge full range, held after 10/23's front-of-knee 2–3 · hamstring curl one change from Wednesday's · hip abduction 20 × 2 × 15 · SL bridge 3 × 10 · seated calf raise, left, lightest · full cooldown) with **two-leg pogos 3 × 8 (the top of the first rung) if Thursday's morning is clean**; the single-leg hops are not on the ladder.
 - **Sat 10/31:** morning check → bike 30 → throwing → **Upper A, session 7** (Block 1; the bench from 110) → finisher with the **Copenhagen 2 × 25 s/side** (owed since 10/22). Saturday power & mobility waits for the next free Saturday.
 - **Sun 11/1:** weekly checks (now with **the single-leg squat test**, every Sunday until it passes) → checkpoint → **Session A** (one change from Wednesday's). **Mon 11/2: Upper B, session 8** (State §7; the speed bench **70 × 5 × 3**, three reps a set however the bar moves).
 - **Impact (State §6):** the plan's sequence from small double-leg pogos (the leg-press/shuttle rung has no home equipment) → snap-downs → low jump and landing → the drop vertical jump (cleared once the rung before it is clean). The plan's dose (2 exercises, 2–3 sets, 5–8 contacts, stop while mechanics are excellent), knee days only, before the lifts. Guards: one new rung per session, one variable per session, and the impact block is the first thing reversed after a morning that isn't clean.
@@ -28,9 +28,12 @@ For Wed 11/4 (State §5, in this order): **hamstring test, both sides; glute med
 
 ## Gate · Phase 3 → 4 **met (10/17); Knot III tied Tue 10/20** · next: Phase 4 exit (the plan's "Before Running" gate)
 
-- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ · normal gait ✓ · quad LSI >80% ✓ (90.4%; retest ~week 12) · **hamstring LSI ≥80% (unmeasured)** · **glute med/max ≥80% (unmeasured)** · **10 controlled single-leg squats to ~60° (first home test Wed 10/28, filmed; Sundays until it passes)** · **pain-free low-level impact prep (at home from Wed 10/28)** · good landings (the low jump, then the drop vertical jump) · the rehab team agrees · week 13 at the earliest (Tue 11/17). Running still needs week 13 and the team.
+- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ · normal gait ✓ · quad LSI >80% ✓ (90.4%; retest ~week 12) · **hamstring LSI ≥80% (unmeasured)** · **glute med/max ≥80% (unmeasured)** · **10 controlled single-leg squats to ~60° (first home test Wed 10/28: left 4 clean of 12, the rest lightly assisted; right all clean; Sundays until it passes)** · **pain-free low-level impact prep (at home from Wed 10/28)** · good landings (the low jump, then the drop vertical jump) · the rehab team agrees · week 13 at the earliest (Tue 11/17). Running still needs week 13 and the team.
 
 ## Flags and notes for the week
+
+- **Wed 10/28's first impact went past the ladder on its first day:** two-leg pogos 2 × 15 (the plan's dose is 5–8 contacts a set; the rung's first dose was 2 × 5) and single-leg hops 2 × 5 each side (not on the ladder: the plan's Phase 5 impact-tolerance item), with goblet 45/50 (planned 40) and the left knee extension lifted solo (planned both up, left down) in the same session. Pain 0 throughout. **Thursday's morning is the verdict:** clean, and Friday's impact is two-leg pogos 3 × 8 with the single-leg hops off until the ladder reaches them; not clean, and the impact block is out until a clean morning, then the session's other changes reverse (load rule 5). Logged `knee_as_planned=N`.
+- **The squat test:** left 4 clean of 12 (the other 8 with very light assistance), right 12 clean, pain 0. Not a pass; it repeats Sunday with the weekly checks. The left's control is the gate's soft spot, which is why the impact sequence starts double-leg.
 
 - **Last week closed Hard-won** on the engine's score (84): three loaded days, upper 2 of 2, the quad test still the last measurement; the away weekend took the Saturday session and the Sunday checks.
 - **Weight: 160.7 Tue 10/27**, after four days away at ~3,100 kcal and ~4,000+ mg sodium a day with no training: salt and water until three morning readings this week say otherwise. Last week's average 157.6 (+0.4). No target change.
@@ -42,7 +45,7 @@ For Wed 11/4 (State §5, in this order): **hamstring test, both sides; glute med
 ## Open items
 
 - **Tuesday's weekly checks:** the extension photo on the heel prop, the heel prop itself (10 lb × 10 min), SLR lag, flexion vs the right; and this morning's check (grade, extension, pain, stiffness, catch, wellness).
-- **Tonight's report:** the single-leg squat test (controlled reps out of 10 each side, what the video showed against the checklist), the pogos (quiet or not), and Session A as run.
+- **Wednesday's Session A:** minutes and RPE; which seat the squat test used (the 24"?) and whether it was filmed; were the hop landings quiet.
 - **Upper B's next doses** (State §7): the dashboard's summary gave only the speed bench (70 × 5 × 3); the incline, pulldown, row and press were set here from the Block 1 rules. Send the dashboard's numbers if they differ.
 - **Monday's M&M's:** the whole sharing-size packet was assumed (~1,350 kcal); say if it was less.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
@@ -57,7 +60,7 @@ _Engine block, regenerated by `sync` · as of Wed 2026-10-28 · POD 65 · post-o
 | Sun 10/25 | knee | 2,430 | 89 |  |  |  |  |  |  |  |  |  |  |
 | Mon 10/26 | cond, upper | 4,550 | 99 |  | ✔ |  |  |  |  |  |  |  |  |
 | Tue 10/27 | cond, upperB, sport | 2,870 | 130 | 160.7 | ✔ | ✔✔ | ✔ |  |  | upperB | 30m |  |  |
-| Wed 10/28 | knee | 2,075 | 134 | 159.2 | ✔ | ✔✔ | ✔ |  |  |  |  |  |  |
+| Wed 10/28 | knee | 2,075 | 134 | 159.2 | ✔ | ✔✔ | ✔ | A |  |  |  |  |  |
 | Thu 10/29 | cond, sport | | | | | | | | | | | | |
 | Fri 10/30 | knee | | | | | | | | | | | | |
 | Sat 10/31 | cond, sport, upperA | | | | | | | | | | | | |
@@ -65,9 +68,9 @@ _Engine block, regenerated by `sync` · as of Wed 2026-10-28 · POD 65 · post-o
 **Nutrition:** avg 2,981 kcal (target 3,000) · avg 113 g protein (target 150-160) · at kcal target 1/4 days · at protein target 0/4 days
 **Weigh-ins:** 2/3 · avg 159.9 lb · last week 157.6 (2 readings) · +2.3 lb
 **Morning swelling grades:** Tue trace · Wed trace
-**Sessions (through Wed):** knee 0/2 · cond 1/2 · upper 1/2 · sport 0/1 · floor full 2/4 · graded morning checks 2/4
+**Sessions (through Wed):** knee 1/2 · cond 1/2 · upper 1/2 · sport 0/1 · floor full 2/4 · graded morning checks 2/4
 
-**Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 90.4% (10/17) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8)
+**Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 90.4% (10/17) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8) · SL squat L 4 reps (10/28)
 
 **Project:** Get the CRV ready to sell · 1/3 done · next: 2. Take pictures · due Sat 10/31
 <!-- engine:end -->
