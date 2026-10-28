@@ -345,3 +345,47 @@ Darrow looked at the knot on his thumb. It would hold.
 "For what?"
 
 "I don't know yet." He took the basin away up the row. "You will."
+
+### Between — Never Bitten
+
+The forge was at the far end of the kennel yard, under the cloister wall, and Darrow found it by the sound, which was not the sound of iron. It was a knife on leather, slow, the stroke of a man who had all day and meant to use it.
+
+The farrier did not look up. He was a lay brother built short and wide, with a leather apron black at the belly and the House's hood pushed back off a square grey-stubbled head, and he sat on an upturned keg in the one square of light the door let in, a leather cup in his lap and a round knife in his fist, taking the inside of the cup down a shaving at a time. Behind him the fire was banked to a red eye. Nothing in the place had the shape of a horseshoe. There were laths stacked by length, a drum's tooth half-filed on the anvil, a row of bell clappers on pegs from the size of a thumb to the size of a forearm, and on a board by the door, in chalk, a dozen small marks that Darrow's eye went to before the rest of him had decided to.
+
+"You're in my light," the farrier said.
+
+Darrow moved. The farrier went on with the knife.
+
+"I'm told you've never been bitten by anything in your life."
+
+"Cobb," he said. "And that's right."
+
+"Wren Ashdown says that makes three bites and a liar."
+
+"Wren Ashdown counts her own feet going downstairs." He turned the cup a quarter and took another shaving. "Burn," he said, before Darrow had asked, and lifted the back of his right hand into the light without stopping the knife in his left: a half-ring of small white marks across it, the size of a hound's jaw, old and shiny. "Took a bar out of the fire with the wrong hand. Forty years back."
+
+"It's got teeth in it."
+
+"It's got a burn in it." The hand went back to the leather.
+
+Darrow looked at the cup instead, because the man wanted him to look at the hand and argue, and he had spent a season learning what arguing cost with people who worked with their hands. It was a good cup. Oiled leather, dark, the shape of a man's thigh an inch above where the thigh stopped, and three lines scored round the inside of it with the knife's point where the leather had been taken down and would be taken down further.
+
+"Whose?"
+
+"Whose do you think." The farrier held it up to the light and looked down it like a man sighting a bow. "Beech leg, leather cup, nine steps, and he swore at every one, and the whole hall heard him, and I heard him from here. A cup's not made once. It's made to the stump, and the stump changes, and he'll not come down to me." The knife went in again. "I made that leg in a week off a tracing on a bit of sacking, because the Mender said he'd not wait. He didn't wait. Now he's got a boot that fits somebody else and he's blaming the beech."
+
+"He blames everything. He got to the carter by the second milestone."
+
+"Aye, well. The carter's not the one who has to look at his face." He blew the shavings off the leather. "You rode a grey."
+
+It was not a question, and Darrow looked at the board by the door. The chalk marks were brands, a dozen of them, each the size of a palm, drawn the way they sit on a horse's quarter. The Second's was a tower; the Second liked you to know it. The Sixth's was a mule's shoe, which the Sixth had not chosen and could not be rid of. The third from the end was two posts and a bar across, and he had stood in the smoke at the fair while it went onto sixty horses, the greys fighting the men who held them.
+
+"Ninth," said the farrier, not looking. "The gate. You breed them up there and we burned them down at the fair, and I held the iron twenty years before the mountain. Every lance has its mark and every grey carries it on the near quarter, and a man who's held the iron knows them in his sleep." A shaving fell. "There's not a horse within a thousand steps of us. I chalk them up anyway. A hand forgets."
+
+Darrow had nothing to say to that, and said nothing, and the farrier seemed to approve, because he said nothing back for the length of three strokes.
+
+"Right." He held the cup up again, looked down it, and tossed it; and Darrow caught it against his chest with the bitten hand before the bound one had been asked, and swore, and the farrier watched him swear with the first interest he had shown in anything. "That's close. Not there. Take it up to him. He puts it on, he stands, he takes ten steps, not nine, and he tells you where it bites, and you tell me, not him. If he says it's the beech, you tell him the beech is fine. The beech is."
+
+"I'm your runner now."
+
+"You're a man going up to the hall with his hands full." He had already picked up the next piece of leather. "Better than coming down with them empty. Go on. You're in my light."

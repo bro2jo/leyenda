@@ -129,6 +129,13 @@ The kitchen hears everything first, because everything passes its door on the wa
 
 Below the cloister, reached by a ramp and not a stair, so that a dog with a bad leg can be got up it: lymers for finding people in snow on the Steps, two House hounds that are nobody's, and whatever strays climb. The kennel-master feeds them on what the kitchen won't admit to, and holds that the Menders waste good meat on bad knights.
 
+## house.forge — The forge
+- **tier:** common · **spoken:** ch04:between-4 · **names:** —
+- **use:** a splint, a leg, a pin for the cage; the one lay brother nobody argues with.
+
+At the far end of the kennel yard, under the cloister wall, a forge that shoes nothing: no horse has climbed the Steps in living memory and the oxen stay at the winch-house. The House's farrier is a lay brother who makes everything iron and most things wood: the cage's pins and the drum's teeth, the bells' clappers, trowels, laths for a splint, and the legs. A wooden leg from Saint Ysolde's is beech, turned and fitted to a leather cup the farrier works to the stump over weeks, a shaving at a time, and the valley's one-legged men can tell a House leg by its weight. He keeps the Lowmarch lance brands chalked on a board by the door, out of habit, from a life before the mountain.
+- "The Mender mends what climbs. The farrier mends what the Mender gives up on." (the kitchen)
+
 # The realm
 
 ## realm.name — The Vaelmark and its tongue
@@ -147,7 +154,7 @@ White stone on a white rock above the river road, and a hundred bells that ring 
 - **tier:** common · **spoken:** Prologue I; tale01:p1 · **names:** —
 - **use:** precedence; signals; a captain's habits.
 
-Twelve by the old count, each sixty knights and sixty squires, numbered by precedence of founding. The First is the king's own and never leaves Calden. The Second is the oldest that rides, and knows it. The Sixth and the Ninth are Lowmarch lances, raised from farm sons and horse-breeders, and the Ninth has been "the fast one" for longer than anyone can say why. A lance's field-stone travels with it on a cart. The signals are the raised fist, ready; the fist with two fingers out, hold; and the open hand swept outward, ride wide, which means give the flank room. No captain has ever liked giving the second.
+Twelve by the old count, each sixty knights and sixty squires, numbered by precedence of founding. The First is the king's own and never leaves Calden. The Second is the oldest that rides, and knows it. The Sixth and the Ninth are Lowmarch lances, raised from farm sons and horse-breeders, and the Ninth has been "the fast one" for longer than anyone can say why. A lance's field-stone travels with it on a cart. Every lance's greys carry its brand on the near quarter, burned at the fair the day they are bought: the Second's is a tower, the Sixth's a mule's shoe, which the Sixth did not choose and cannot be rid of, and the Ninth's a gate, two posts and a bar. The signals are the raised fist, ready; the fist with two fingers out, hold; and the open hand swept outward, ride wide, which means give the flank room. No captain has ever liked giving the second.
 
 ## realm.oath — The Oath of the Bended Knee
 - **tier:** common · **spoken:** Prologue I (the knighting; the field-stones); ch03:between-2 · **names:** —

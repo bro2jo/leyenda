@@ -54,6 +54,10 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Appearance:** A lay brother in his forties with deep brown skin, close-cropped tight black curls gone grey at the temples, and a broad, soft face that looks tired even when it smiles: warm dark eyes with the creases of too little sleep under them, the brows drawn up at the middle in a worried, kindly line, a small uncertain smile. He wears the House's grey wool hood and robe over a cream linen collar, the worn leather strap of the letter-satchel across his chest, the stores key on a cord at his belt; he presses a hand flat to his chest when he speaks, the first two fingers of it dark with ink. His portrait (`saga/art/characters/brother-anselm.jpg`) is canon for his face.
 - **Voice:** Apologetic and gentle; he apologises before he asks, trails off in the middle of a sentence, and thanks people for things they have not done yet. He mentions his sister too often.
 
+## Brother Cobb
+- **Appearance:** A lay brother in his fifties, short and wide, with forearms like a drover's and a leather apron black at the belly; grey stubble on a square jaw, small slate-coloured eyes under brows singed thin, a nose flattened long ago. Burn scars pale and shiny on both hands, and across the back of the right a half-ring of small white marks he calls a burn. He wears the House's grey hood pushed back and his sleeves past the elbow in any weather, and smells of coal and hoof-oil though nothing has worn a shoe up here in his time.
+- **Voice:** Few words, most of them to the thing in his hands. He calls everything by its material, the beech, the iron, the leather, and does not stop working to talk, so you wait or you leave. He has never been bitten by anything in his life. *"You're in my light."*
+
 ## Mirren
 - **Appearance:** Brother Anselm's younger sister: the same brown skin as her brother and a great deal of dark curling hair, worn loose. Seen only in a thin torn shift, sitting against a bare stone wall, somewhere that is not comfortable. Her portrait (`saga/art/characters/mirren.jpg`) is canon for her face.
 - **Voice:** Not yet heard.

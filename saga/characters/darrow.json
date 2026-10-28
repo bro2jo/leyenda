@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-3",
+    "scene": "between-4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-3"
+    "anchor": "chronicle/04-old-mercy.html#between-4"
   },
-  "last_seen_doing": "Eased his boot out from under the sleeping hound and left her in the run; came up to his cot and let Brother Anselm bind the bitten hand; asked him what his sister's mark is and why she is the brave one; heard both in full and promised nothing; was thanked for a thing not yet done.",
-  "now": "On his own cot with the left hand bound at the thumb in a storesman's knot and the right fingertips still wrapped. He knows Mirren's mark and why she is the brave one, and has promised the almoner nothing.",
+  "last_seen_doing": "Found the forge by the sound of a knife on leather; asked the farrier about never being bitten and was shown the half-ring of marks he calls a burn; read the Second's, the Sixth's and the Ninth's brands off the chalk board by the door; caught Hollis's remade cup against his chest with the bitten hand; took it up to the hall as the farrier's runner.",
+  "now": "Leaving the forge with Hollis's remade leather cup against his chest, both hands bad; he is to have Hollis put it on, stand, take ten steps, not nine, and say where it bites, and bring the word back to the farrier.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1338,6 +1338,30 @@
       "evidence": "\"Brother. Your sister's mark. The one nobody else has.\""
     },
     {
+      "fact": "He saw the half-ring of small white marks on the farrier's right hand, the size of a hound's jaw, and said it had teeth in it; the farrier said it had a burn in it.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "\"It's got teeth in it.\""
+    },
+    {
+      "fact": "He stood in the smoke at the fair while the Ninth's brand, a gate, two posts and a bar, went onto sixty horses.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "he had stood in the smoke at the fair while it went onto sixty horses, the greys fighting the men who held them."
+    },
+    {
+      "fact": "He caught the remade cup against his chest with the bitten hand and swore.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "Darrow caught it against his chest with the bitten hand before the bound one had been asked, and swore"
+    },
+    {
+      "fact": "He is carrying the farrier's remade cup up to Hollis: ten steps, not nine, and where it bites goes back to the farrier.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "He puts it on, he stands, he takes ten steps, not nine, and he tells you where it bites, and you tell me, not him."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1631,6 +1655,10 @@
     {
       "chapter": "04",
       "scene": "between-3"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-4"
     },
     {
       "chapter": "tale01",

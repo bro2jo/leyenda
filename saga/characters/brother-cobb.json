@@ -1,0 +1,111 @@
+{
+  "id": "brother-cobb",
+  "name": "Brother Cobb",
+  "aliases": [
+    "Cobb",
+    "the farrier"
+  ],
+  "epithet": "The House's farrier",
+  "tier": "minor",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "knife"
+  },
+  "appearance": "A lay brother in his fifties, short and wide, with forearms like a drover's and a leather apron black at the belly; grey stubble on a square jaw, small slate-coloured eyes under brows singed thin, a nose flattened long ago. Burn scars pale and shiny on both hands, and across the back of the right a half-ring of small white marks he calls a burn. He wears the House's grey hood pushed back and his sleeves past the elbow in any weather, and smells of coal and hoof-oil though nothing has worn a shoe up here in his time.",
+  "first_seen": {
+    "chapter": "04",
+    "scene": "between-4",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#between-4"
+  },
+  "last_seen": {
+    "chapter": "04",
+    "scene": "between-4",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#between-4"
+  },
+  "last_seen_doing": "Sat on a keg in the forge door taking the inside of Hollis's leather cup down a shaving at a time; told the Captain he was in his light and gave his name, Cobb; showed him the half-ring of marks on his right hand and called it a burn from a bar taken out of the fire forty years back; said he made Hollis's beech leg in a week off a tracing on sacking because the Mender would not wait, and that a cup is made to the stump and Hollis will not come down to be measured; named the Ninth's brand, the gate, and said he held the branding iron at the fair for twenty years before the mountain and chalks the lance brands up still because a hand forgets; tossed the cup to the Captain and sent him up to Hollis with it.",
+  "now": "At his forge below the cloister with the next piece of leather, the fire banked to a red eye. He has sent the Captain up to Hollis with the remade cup and wants the word of where it bites brought back to him.",
+  "story_so_far": "",
+  "quote": null,
+  "known_facts": [
+    {
+      "fact": "He says he has never been bitten by anything in his life, and that the half-ring of marks on his right hand is a burn from a bar taken out of the fire with the wrong hand forty years back.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "\"Took a bar out of the fire with the wrong hand. Forty years back.\""
+    },
+    {
+      "fact": "He made Hollis's beech leg in a week off a tracing on a bit of sacking, because the Mender said Hollis would not wait.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "I made that leg in a week off a tracing on a bit of sacking, because the Mender said he'd not wait."
+    },
+    {
+      "fact": "He says a cup is not made once but made to the stump, which changes, and Hollis will not come down to him to have it fitted.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "A cup's not made once. It's made to the stump, and the stump changes, and he'll not come down to me."
+    },
+    {
+      "fact": "He held the branding iron at the fair for twenty years before the mountain, burning the lances' brands onto Edgemoor greys, and keeps the brands chalked on a board by the forge door because a hand forgets.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "I held the iron twenty years before the mountain."
+    },
+    {
+      "fact": "His forge shoes nothing; it holds laths stacked by length, a drum's tooth on the anvil, and a row of bell clappers from the size of a thumb to the size of a forearm.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "Nothing in the place had the shape of a horseshoe."
+    },
+    {
+      "fact": "He sent the Captain up to Hollis with the remade cup: ten steps, not nine, and the word of where it bites to come back to him.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "\"Take it up to him. He puts it on, he stands, he takes ten steps, not nine\""
+    },
+    {
+      "fact": "He says a man going up to the hall with his hands full is better than one coming down with them empty.",
+      "chapter": "04",
+      "scene": "between-4",
+      "evidence": "\"You're a man going up to the hall with his hands full.\""
+    }
+  ],
+  "relationships": [
+    {
+      "to": "hollis-garrow",
+      "label": "made his leg",
+      "note": "He turned the beech leg in a week off a tracing on sacking and is remaking its leather cup to the stump, which Hollis will not come down to have measured."
+    }
+  ],
+  "reckoning": {
+    "fire": {
+      "kind": "ember",
+      "state": "low"
+    },
+    "level": 3,
+    "rank": "Bound",
+    "attributes": {
+      "might": 13,
+      "vigor": 9,
+      "finesse": 11,
+      "resolve": 11
+    },
+    "arts": [
+      {
+        "name": "Iron Grip",
+        "rank": 2
+      }
+    ],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "04",
+      "scene": "between-4"
+    }
+  ]
+}

@@ -932,11 +932,12 @@
           "priority": 2,
           "valid_until": "transition1",
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch04:between-2",
             "ch04:s3",
-            "ch04:between-3"
+            "ch04:between-3",
+            "ch04:between-4"
           ]
         }
       ]
@@ -965,6 +966,26 @@
           "offered_at": [
             "ch04:between-3"
           ]
+        }
+      ]
+    },
+    {
+      "id": "c04.4",
+      "made": {
+        "chapter": 4,
+        "scene": "between-4",
+        "date": "2026-10-28"
+      },
+      "chose": "Went looking for the farrier who has never been bitten; stood in his light; was shown the half-ring of marks on his hand and told it was a burn; read the Ninth's brand, a gate, off the chalk board; caught Hollis's remade leather cup against his chest with the bitten hand and took it up to the hall as the farrier's runner: Hollis is to put it on, stand, take ten steps not nine, and say where it bites, and the word goes back to the farrier",
+      "now": {},
+      "due": [
+        {
+          "id": "c04.4a",
+          "when": "next",
+          "at": "ch04:s4",
+          "weight": "color",
+          "what": "Darrow carries the farrier's remade leather cup up to Hollis: he is to put it on, stand, take ten steps, not nine, and say where it bites; the word goes back to the farrier, not to Hollis. Honour it where Darrow reaches Hollis with the cup in his hands, or where Hollis takes his ten steps",
+          "status": "pending"
         }
       ]
     }

@@ -114,6 +114,13 @@ Appearance and voice: `cast.md` (moved there at the Ch 1 climax, 10/11, where he
 
 ---
 
+### Brother Cobb — the farrier
+Appearance and voice: `cast.md`.
+- On the page from Ch 4 Between 4 (the forge). Twenty years burning lance brands onto Edgemoor greys at the fairs before he came up the mountain; the House's farrier since, who shoes nothing and makes everything else: the cage's pins, the clappers, the laths, and the legs. He made Hollis's beech leg in a week off a tracing on sacking because the Mender would not wait, and is remaking its cup to the stump.
+- **Wants:** Hollis's cup to fit before the week is out; to be left in his own light. **Fears:** a thing he made breaking under somebody.
+- **Under pressure:** he notices what a thing is made of and where it will break. He pursues by not stopping work, so you wait or you leave; when that fails he puts the thing in your hands and sends you up the hall with it.
+- **Hides:** nothing worth the name. The half-ring of marks on his right hand is a dog's, and he will die calling it a burn.
+
 ## Not yet on the page (full entries)
 
 ### Brother Anselm — the almoner
@@ -196,6 +203,6 @@ NPC numbers are set by the GM for canon consistency; they are never derived from
 Deeper lines (Warden's Eye IV+) in the files are written to be safe if read early; anything that would spoil stays in this table.
 
 ## Naming palette
-- **Vaelmark (people, places):** Darrow, Hollis, Aldric, Elinor, Benedek, Anselm, Ione, Mirren, Edgemoor, Holloway, Calden, Coldmere, Ashby, Orrin, Marrant, Hale, Wick, Thorne.
+- **Vaelmark (people, places):** Darrow, Hollis, Aldric, Elinor, Benedek, Anselm, Ione, Mirren, Edgemoor, Holloway, Calden, Coldmere, Ashby, Orrin, Marrant, Hale, Wick, Thorne, Cobb (the farrier), Oswin, Tamsin, Garret, Edda, Piers.
 - **Thornwild clans:** Ilse, Corrach, Haskel, Brannagh, Teague, Morna, Siv, Oddny, Ruadh.
 - **Warden/old words:** ember, kindling, temper, knot, reckoning, ward, hearth, forge.

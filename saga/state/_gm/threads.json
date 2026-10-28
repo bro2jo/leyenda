@@ -230,8 +230,8 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he said her name, Thistle, to Rae at the wicket (04:between-1); Wren and Hollis heard of the mare; the reader",
-      "note": "Tale 1 p1: the long grey mare in the far field, unnamed; piece 2 names the filly out of her for the thistles. 03:s5 (q1.cart stage 2): Rae on the cage head: a grey mare at a dealer's on the Holloway, out of the Wend below the ford, short behind, won't take a bridge forwards (the Calden bridge, codex); the price is the dealer's debt at Coldmere, 'more than a shirt and a stick'. 04:s2 (c03.6a paid): the dealer took his name: the mare's keep till the thaw, then coin or sold on. 04:between-1: he said her name to Rae ('Her name's Thistle'), the first time since the water; Rae: 'I'll tell her.' The finding is Tether III; the thaw is its clock",
+      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he said her name, Thistle, to Rae (04:between-1). The Ninth's brand (a gate) is on the page from the farrier (04:between-4); that the mare carries it, and that Rae knew it on her, is not.",
+      "note": "plant 04:between-4: the Ninth's brand named on the page (a gate, two posts and a bar) from the farrier's chalk board; the mare can be known by it later.",
       "on_page": [
         "00:I",
         "01:s3",
@@ -240,6 +240,7 @@
         "03:s5",
         "04:s2",
         "04:between-1",
+        "04:between-4",
         "tale01:p1"
       ]
     },
