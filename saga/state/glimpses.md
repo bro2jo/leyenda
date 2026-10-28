@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-21 · weather · Dusk comes down the Steps from the top flight to the bottom one landing at a time, and the snow on each goes blue, then grey, before the one below it has noticed.
 - 2026-10-21 · body · His hands are warm tonight all the way to the ends of the fingers, which in this House, this deep into the cold, is a thing worth noticing; he turns them over once by the fire and notices it.
 - 2026-10-22 · saying · Past the late bell someone at the far end of the hall stubs a toe in the dark and says it the soldiers' way, Stone and Crown, half curse and half vow, and three voices shush him at once.
 - 2026-10-22 · house · Up in the tower Sister Pell takes three turns of the bell rope round her forearm before the noon bell, as she always does, and lets the novices go on believing the bell is heavier than it is.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-27 · body · Halfway through the hour bell he notices he has been breathing with it, in on one stroke and out on the next, and that it costs him nothing.
 - 2026-10-27 · ledger · From Wren's ledger, a line under the night's lamps: Lamps lit at dusk, 40. Lamps that wanted a second taper, 3. Lay brothers who blamed the wick, 3.
 - 2026-10-27 · saying · The kitchen's verdict on the Mender, said daily and unfairly, and never where she can hear it: If the Mender's smiling, somebody's dying.
+- 2026-10-28 · house · Before the dawn bell a lay brother goes down the row with the water jug and fills every cup in the order he always does, and skips none, and nobody on the row says thank you, and he would not know what to do if they did.
