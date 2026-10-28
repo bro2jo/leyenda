@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-22 · house · Up in the tower Sister Pell takes three turns of the bell rope round her forearm before the noon bell, as she always does, and lets the novices go on believing the bell is heavier than it is.
 - 2026-10-22 · body · He sits through the whole of the noon bell with the knee stiff under the blanket and does not once tell it what he thinks of it. It seems as surprised as he is.
 - 2026-10-22 · weather · The wind comes across the Steps from the west all afternoon, steady, and he catches himself reading it the way you read a long field: where a thing would carry, and where it would drop.
 - 2026-10-22 · overheard · In the kitchen someone is arguing that snow falls slower on the Steps than in the valley, and someone else says it only looks slower because there's further to fall, and neither of them will be told.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-28 · house · Before the dawn bell a lay brother goes down the row with the water jug and fills every cup in the order he always does, and skips none, and nobody on the row says thank you, and he would not know what to do if they did.
 - 2026-10-28 · weather · By noon the cloud over the Steps has torn open on a hard, pale blue, and the wind through the gate carries woodsmoke up from somewhere far below, where people are cooking for people they know.
 - 2026-10-28 · body · He goes to hold his hands to the brazier out of habit and finds they are already warm, and stands there a moment anyway, because it is pleasant and nobody needs the spot.
+- 2026-10-28 · verse · Over the pots, someone in the kitchen has the one verse and no more: Oh the grey mare of Edgemoor, she carried me far, by the Wend and the Holloway, by the bell and the star. Then round again from the top.

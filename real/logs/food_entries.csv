@@ -152,3 +152,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-28#1,2026-10-28,,lunch,Uncle Mike's Sweet & Spicy Snack Sticks,5 sticks (5.18 oz / 147 g; 14 sticks per 14.5 oz bag),414,31.1,5.2,25.9,0,10.4,5.2,1916,554,0,0,26,5.2,0,0,104,label,"label photo; Mg, zinc, omega-3 estimated"
 2026-10-28#2,2026-10-28,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola bar; assumed his usual Kirkland chewy bar
 2026-10-28#3,2026-10-28,,breakfast,Applesauce pouch,1 pouch (assumed 3.2 oz / 90 g),60,0,14,0,1,0,11,0,80,5,0.1,3,0,20,0,0,estimate,"brand not given; typical 3.2 oz pouch, as on 10/27"
+2026-10-28#4,2026-10-28,,snack,Walnut Creek gluten-free chocolate chip cookies,2 cookies (assumed ~45 g each),440,4,57,21,1.2,6,32,270,110,30,1,24,0.4,0,0.2,0,estimate,"label photo has ingredients only, no nutrition facts; cookie size assumed"
