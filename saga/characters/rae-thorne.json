@@ -491,6 +491,24 @@
       "chapter": "tale02",
       "scene": "p1",
       "evidence": "\"He's behind a cart.\" She let the bell hang. \"Road's the road.\""
+    },
+    {
+      "fact": "Her grandmother could not write, and read a manifest upside down faster than the Coldmere bell-house clerk read it the right way up.",
+      "chapter": "tale02",
+      "scene": "p2",
+      "evidence": "She could not write her own name. She could read a manifest across a room."
+    },
+    {
+      "fact": "Coldmere called her grandmother the Thornwild woman, and the name wore down in its mouths to Thorne, which Rae took for her own.",
+      "chapter": "tale02",
+      "scene": "p2",
+      "evidence": "\"Thorne,\" she said, to try it, and it fit."
+    },
+    {
+      "fact": "Her grandmother taught her the clan word for stand, said from the belly, and the oxen stood to it for her.",
+      "chapter": "tale02",
+      "scene": "p2",
+      "evidence": "Rae said the word from her belly, and the oxen stood like two rocks in a river"
     }
   ],
   "relationships": [
@@ -648,6 +666,10 @@
     {
       "chapter": "tale02",
       "scene": "p1"
+    },
+    {
+      "chapter": "tale02",
+      "scene": "p2"
     }
   ]
 }
