@@ -535,7 +535,7 @@ Anselm had the key in his lap and his hands folded over it, the way he folded th
 
 "Yes, Captain."
 
-"The letter's to your sister, the way every one of them has been. He'll read it at the winch-house before it goes anywhere, the way he reads them all, and he'll not know that you know it. So you write to her, and you let him read. Your hand, your words, the way you'd write if nobody had told you anything. You tell her the thing they said you had to finish is finished: the second one set, under the far cots, two nights ago, and the hall gone quiet since. You let her see you're frightened, which is true, and you ask her to ask them what you're to do next, since they're the ones with her ear. The words are yours. You know how your letters go. I don't." He laid it out the way he laid a line before a charge, one piece after the other, so a man could see where he stood in it. "And then you ask after her. Not how she is. Where. You ask where she's kept, so you can send her warm things for the winter, because that's what a brother asks. And you ask for a line in her own hand, because the last came in his and you'd like hers. That's the letter."
+"The letter's to your sister, the way every one of them has been. He'll read it at the winch-house before it goes anywhere, the way he reads them all, and he'll not know that you know it. So you write to her, and you let him read. Your hand, your words, the way you'd write if nobody had told you anything. You tell her the thing they said you had to finish is finished: the second one set, under the far cots, two nights ago, and the hall gone quiet since. You let her see you're frightened, which is true, and you ask her to ask them what you're to do next, since they're the ones with her ear. The words are yours. You know how your letters go. I don't." He laid it out the way he laid a line before a charge, one piece after the other, so a man could see where he stood in it. "And then you ask after her. Not how she is. Where. You ask where she's kept, so you can send her warm things for the winter, because that's what a brother asks. And you ask her one thing only she knows the answer to. Not for her hand. A hand can be made to order, and he's made one already. An answer can't, not by him. That's the letter."
 
 "And what it's for."
 
@@ -559,7 +559,7 @@ He wrote the way he spoke, in starts, with the apologies in, and Darrow read it 
 
 *You didn't say where they have you. Is it in the town, or up at the Spire? Mother's shawl is in the stores chest with the camphor and I'll send it down the moment I have a door to send it to. You'll want it before the cold.*
 
-*And write to me yourself next time, if they'll let you. I was glad of the last, but your hand was always better than mine and I'd know it anywhere.*
+*And tell me what mother called the brindle cat. I've been trying to remember it for a week and it's gone, and it's been bothering me more than it should, and you'll know.*
 
 At the bottom, under his name, the almoner wrote one more line that Darrow had not given him, and sat back from it.
 
