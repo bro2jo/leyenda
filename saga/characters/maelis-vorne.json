@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "1",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-1"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Came up behind Hollis's chair unheard, held out her hand for the second wrapped thing, closed her fingers on it, put it in her coat and said nothing more.",
-  "now": "At the cot with the second wrapped thing in her coat beside the chip. She has said nothing to Darrow since the night of the lid but Give it here.",
+  "last_seen_doing": "Came to the cot's foot after the night lamps unasked, with her hands in her sleeves; when the Captain looked to her, said Wrong question before he had asked one.",
+  "now": "At the foot of the Captain's cot with her hands in her sleeves. She has said two words to him since the night of the lid: Wrong question.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost had stopped at his knuckles. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -435,6 +435,12 @@
       "chapter": "04",
       "scene": "1",
       "evidence": "she closed her fingers on it and looked at nothing, and put it in her coat, and said no more than that"
+    },
+    {
+      "fact": "She came to the cot after the night lamps without being asked, and said Wrong question before the Captain had asked one.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"Wrong question,\" she said, before he had asked one."
     }
   ],
   "relationships": [
@@ -615,6 +621,10 @@
       "chapter": "04",
       "scene": "between-4",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }

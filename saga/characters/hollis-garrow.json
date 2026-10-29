@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "2",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-2"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Had himself carried to the gate; asked, since nobody else would, what a captain does with a man who did a terrible thing for love.",
-  "now": "In his chair inside the wicket with the lad's blanket on his knee, his question unanswered.",
+  "last_seen_doing": "Took ten steps at the noon bell on the farrier's new cup and swore at seven; said it bites at the back and that the beech is fine; kept the cup strapped on into the night rather than give the farrier the satisfaction; at the cot asked his question a second time, now with a price on it.",
+  "now": "In his chair at the Captain's cot with the lad's blanket and the new cup still strapped on. He has asked his question twice and it has not been answered.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -432,6 +432,18 @@
       "chapter": "04",
       "scene": "2",
       "evidence": "What does a captain do with a man who did a terrible thing for love?"
+    },
+    {
+      "fact": "He took ten steps on the farrier's new cup at the noon bell and swore at seven of them; it bites at the back, and the beech is fine.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"It bites at the back,\" he said, at the tenth"
+    },
+    {
+      "fact": "He asked a second time what a captain does with a man who did a terrible thing for love, now that there is a price on him.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"Then I'll ask it a second time,\" said Hollis, \"since the first one went begging.\""
     }
   ],
   "relationships": [
@@ -666,6 +678,10 @@
       "chapter": "04",
       "scene": "between-4",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }

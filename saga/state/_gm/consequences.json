@@ -931,14 +931,15 @@
           "fits": "place.saint_ysoldes",
           "priority": 2,
           "valid_until": "transition1",
-          "status": "pending",
+          "status": "fired@ch04:s4",
           "offered": 4,
           "offered_at": [
             "ch04:between-2",
             "ch04:s3",
             "ch04:between-3",
             "ch04:between-4"
-          ]
+          ],
+          "evidence": "He stood where he had said he would, under the tower, in the court, with his face turned up to the window where he could not see her and she could see him."
         }
       ]
     },
@@ -962,9 +963,10 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-3"
+            "ch04:between-3",
+            "ch04:s4"
           ]
         }
       ]
@@ -985,7 +987,8 @@
           "at": "ch04:s4",
           "weight": "color",
           "what": "Darrow carries the farrier's remade leather cup up to Hollis: he is to put it on, stand, take ten steps, not nine, and say where it bites; the word goes back to the farrier, not to Hollis. Honour it where Darrow reaches Hollis with the cup in his hands, or where Hollis takes his ten steps",
-          "status": "pending"
+          "status": "fired@ch04:s4",
+          "evidence": "Hollis took his ten steps at the noon bell, with the farrier's new cup strapped on and the whole row pretending not to count, and swore at seven of them."
         }
       ]
     }

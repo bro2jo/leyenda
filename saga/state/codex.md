@@ -113,3 +113,4 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"Road's the road."** — Rae Thorne, at the wicket at first light, drawing up her hood to go down: her word for a thing that is what it is and will be walked anyway (Ch 4 Between).
 - **"Four strokes. Don't be clever at it."** — Sister Pell to Darrow, going back up to her tower, having given him the dusk verse and a dusk to say it under the tower where she can see his mouth (Ch 4 Between).
 - **"Menders spend good meat on bad knights."** — The kennel-master's view, said to the Prior and to the Captain of the Ninth's face (Ch 4 Sc 3).
+- **"I'd not known the third line was yours to say."** — Confessor Ivo Marrant to Darrow at the bars, having heard the Faithless captain say the dusk verse under the tower with the strokes (Ch 4 Sc 4).

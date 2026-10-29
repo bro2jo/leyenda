@@ -57,11 +57,19 @@
       "after": "3",
       "covers": [],
       "written": "2026-10-28"
+    },
+    {
+      "scene": 4,
+      "title": "The Price",
+      "covers": [
+        "2026-10-28"
+      ],
+      "written": "2026-10-28"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the forge at the far end of the kennel yard, under the cloister wall, turning for the ramp with Hollis's remade leather cup against his chest",
+    "detail": "the infirmary hall, at his cot after the night lamps, with Anselm, Hollis, Wren and Maelis about him and the Prior in the chapel doorway",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -70,8 +78,8 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Marrant has not drawn a blade in a month. He has camped on the lower terrace, kept the cage, and reached into the House by the lever: a clerk in grey who never kneels sent two black slivers up in the House's own letter-satchel, one of them now set in the rock under the row and making the stone grow frost, and holds the almoner's sister at Calden for the second. Banners that are not grey are on the Holloway, a day off.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "What a captain does with a good man who did a terrible thing for love, with the whole House watching him decide. The sliver stays in the wall under forty beds, one with the rock; the lid is off and whoever set it will know. Maelis has walked away from his telling and keeps two pieces of black glass in her coat. His fingertips are numb under the linen. The knee holds a stair at the Mender's count and no more, and the soft season is not over.",
-  "last_beat": "\"You're a man going up to the hall with his hands full.\" He had already picked up the next piece of leather. \"Better than coming down with them empty. Go on. You're in my light.\"",
+  "current_struggle": "What the House is for, with a price on the almoner by the dawn bell: the almoner for two names off the Confessor's paper, the Prior's roof under the answer, the script silent on whether the price is real, and one grey cloak gone down the Steps with a horse.",
+  "last_beat": "In the doorway from the chapel stood the Prior, with her hands in her sleeves and the rain still on her coif, and she asked it the way she asked everything, so that it was not a question. \"What is the House for, Captain?\"",
   "companions": {
     "maelis": {
       "approval": 29,

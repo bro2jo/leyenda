@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "1",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-1"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Heard it all in the chapel before the lamps were lit, said once that she had counted the nights between, two, and that she says every name under the roof every night and will go on saying all of them; asked nothing.",
-  "now": "In the chapel at dawn, the first lamp lit. She knows what is under the House and has said her one thing about where she came in the order of telling.",
+  "last_seen_doing": "Came out of the chapel unasked and stood beside the Captain under the tower while he said the verse, then at the bars; told the Confessor the almoner is a brother of the House under the law of guests, older than the Crown's, and that his name is not the Captain's to give; put her own roof under the night's answer; at the cot after the night lamps asked the Captain what the House is for.",
+  "now": "In the chapel doorway with the rain on her coif, having asked the Captain what the House is for. The dawn's answer comes from under her roof, by her own word to the Confessor.",
   "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -261,6 +261,24 @@
       "chapter": "04",
       "scene": "1",
       "evidence": "I say every name under this roof in this chapel every night, Captain, and I have not had to stop saying one since you came. I shall go on saying all of them."
+    },
+    {
+      "fact": "She told the Confessor that the almoner came up the Steps unarmed years ago and was warmed and fed, the law of guests, and that a guest the House has kept that long is the House's.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "A guest the House has kept that long is the House's."
+    },
+    {
+      "fact": "She said the almoner's name is not the Captain's to give.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "You'll not have his name from the Captain, because it isn't the Captain's to give."
+    },
+    {
+      "fact": "She asked the Captain what the House is for, so that it was not a question.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"What is the House for, Captain?\""
     }
   ],
   "relationships": [
@@ -371,6 +389,10 @@
       "chapter": "04",
       "scene": "3",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }

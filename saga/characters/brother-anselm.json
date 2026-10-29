@@ -26,12 +26,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-3",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-3"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Saw the Captain's bitten hand before he had sat down, fetched linen and the basin, bound the thumb with a storesman's knot; told him his sister's mark is an M with a loop in the valley, like a hook, so it would hold, hers since she was five on the hearthstone and on everything since; told him she is the brave one because at twelve she answered the herald at the bell when their father was cried for the mill's debt, while he, fourteen, apologised to the herald; thanked the Captain for a thing he does not know yet.",
-  "now": "Gone up the row with the basin, the stores key in his fist. He has bound the Captain's hand, told him who his sister is, and thanked him for whatever he will do.",
+  "last_seen_doing": "Sat on the next cot through the night with the stores key; when the price was told, offered at once to go down to the Confessor in the morning and apologise, since the Captain's name is one of the two; was refused by his full name.",
+  "now": "On the cot next to the Captain's with the key in his fist, told he will not go down and that it is not on the table.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -142,6 +142,12 @@
       "chapter": "04",
       "scene": "between-3",
       "evidence": "\"I don't know yet.\" He took the basin away up the row. \"You will.\""
+    },
+    {
+      "fact": "He offered to go down to the Confessor in the morning for the two names, the Captain's among them, and was refused.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"Send me down,\" said Anselm."
     }
   ],
   "relationships": [
@@ -190,6 +196,10 @@
     {
       "chapter": "04",
       "scene": "between-3"
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }

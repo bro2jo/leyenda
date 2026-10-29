@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "3",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-3"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Came for the Captain at a run with the count of the hound's bites and the kennel-master's plan to put her down before the grey cloaks see; handed him the borrowed stick; on the ramp counted his decent word as a ramp, not a stair, in the room under the one; watched from the gate and counted the bite: four, one of them a knight.",
-  "now": "At the gate of the kennel run with the borrowed stick, having counted the Captain's bitten hand as the hound's fourth.",
+  "last_seen_doing": "Watched the terrace from the wall-walk with Pell's glass through the dusk; counted five fires where there have always been six, and one grey cloak gone down the Steps before the bell with a horse; sat on the floor by the brazier at the cot with the ledger shut, and opened it, and did not write.",
+  "now": "On the floor by the brazier at the Captain's cot with the ledger shut on her knee. Her count is five fires, not six, and one man gone down the Steps who has not come back.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -483,6 +483,12 @@
       "chapter": "04",
       "scene": "3",
       "evidence": "\"Four,\" said Wren, under her breath. \"One of them a knight.\""
+    },
+    {
+      "fact": "She counted five grey cloaks' fires on the lower terrace where there have always been six, and saw one of them go down the Steps before the dusk bell with a horse.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"Five fires,\" she said. \"There's always been six. One of them went down the Steps before the bell, with a horse. He's not come back up.\""
     }
   ],
   "relationships": [
@@ -678,6 +684,10 @@
       "chapter": "04",
       "scene": "between-4",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }

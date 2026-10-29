@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-4",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-4"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Found the forge by the sound of a knife on leather; asked the farrier about never being bitten and was shown the half-ring of marks he calls a burn; read the Second's, the Sixth's and the Ninth's brands off the chalk board by the door; caught Hollis's remade cup against his chest with the bitten hand; took it up to the hall as the farrier's runner.",
-  "now": "Leaving the forge with Hollis's remade leather cup against his chest, both hands bad; he is to have Hollis put it on, stand, take ten steps, not nine, and say where it bites, and bring the word back to the farrier.",
+  "last_seen_doing": "Carried the farrier's cup to Hollis, who took his ten steps on it; said the four lines of the dusk verse under the tower with Old Mercy's strokes, in the rain, with the Confessor at the bars listening; heard Marrant's price, the almoner for two names off his paper, and could not read whether it was real; asked for the night and got it on the Prior's roof; refused Anselm's offer to go down; brought the price to the cot and was asked what the House is for.",
+  "now": "At his cot after the night lamps with the price in the room: the almoner for two names off the paper, by the dawn bell, on the Prior's roof. He has refused to let Anselm go down. The Prior has asked him what the House is for and he has not answered.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1362,6 +1362,36 @@
       "evidence": "He puts it on, he stands, he takes ten steps, not nine, and he tells you where it bites, and you tell me, not him."
     },
     {
+      "fact": "He said the four lines of the dusk verse aloud under the tower, with the strokes, where Sister Pell could see him from the window, and did not stop on the third line this time.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "He said the third line and did not stop on it this time, and the bell went over it."
+    },
+    {
+      "fact": "He heard the Confessor name his price: the almoner sent down, and two names come off his paper, whose unsaid.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "Send the almoner down to me, and two names come off my paper. I'll not say whose. You'll know whose."
+    },
+    {
+      "fact": "He looked at Marrant for the thing under the words and the script gave him nothing; he could not tell whether two names would come off any paper for the price of one lay brother.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "whether two names would come off any paper in Calden for the price of one lay brother he could not have said"
+    },
+    {
+      "fact": "He told the Confessor he would have an answer at the dawn bell.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"You'll have an answer at the dawn bell,\" Darrow said."
+    },
+    {
+      "fact": "He refused Anselm's offer to go down to the Confessor, by his full name, and said it is not on the table.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"You'll not go down. That isn't on the table, and I'll not have you put it there again.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1659,6 +1689,10 @@
     {
       "chapter": "04",
       "scene": "between-4"
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     },
     {
       "chapter": "tale01",

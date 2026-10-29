@@ -389,3 +389,87 @@ Darrow had nothing to say to that, and said nothing, and the farrier seemed to a
 "I'm your runner now."
 
 "You're a man going up to the hall with his hands full." He had already picked up the next piece of leather. "Better than coming down with them empty. Go on. You're in my light."
+
+### Scene 4 — The Price
+
+Hollis took his ten steps at the noon bell, with the farrier's new cup strapped on and the whole row pretending not to count, and swore at seven of them.
+
+"It bites at the back," he said, at the tenth, standing, with his hand on the end of the lad's cot and his face the colour of the window. "Tell Cobb that. Tell him the beech is fine, since he'll want to hear it, and that if he says ten again I'll walk down to him on it and he can measure the stump from underneath." He sat. "Captain. Your hands are a disgrace."
+
+They were, and they were warm, which was the strange part; Darrow turned them over by the brazier once to be sure of it, the wrapped one and the bound one, and found he was pleased with them, and kept that to himself.
+
+---
+
+The rain came in at dusk, the thin kind that does not fall so much as arrive, and the court was running with it when Old Mercy began.
+
+He stood where he had said he would, under the tower, in the court, with his face turned up to the window where he could not see her and she could see him. The Prior stood beside him. She had come out of the chapel without being asked and had not said why. On the first stroke he said the first line, aloud, to the rain.
+
+*Day's done and the door's shut.* The bell, slow, with the crack in its voice. *The blade stays below.* Across the court, at the bars, a grey shape had come up to the gate with the smell of hot iron ahead of it, and stood, and listened. *What climbed, we keep.* He said the third line and did not stop on it this time, and the bell went over it. *And the bell says so.*
+
+The last stroke went down the mountain and the valley had it. Nobody in the court moved until the bronze had finished arguing with itself.
+
+"Captain," said Confessor Ivo Marrant, pleasantly, through the bars. "I've never heard it said. Only rung. Thank you."
+
+Darrow walked across the court to him, slow, with the Prior keeping his pace, and the wet flags trying to take his feet, and the knee holding every one of them.
+
+"Mother Ione." Marrant's hood was back; the rain stood on his bald head and he did not seem to feel it. The censer hung from his fist and smoked at the rain. "A small thing, and I'd not raise it at the bell if it would wait. The House's letters haven't come down this week. The cage has gone down empty twice." He said it as if he were sorry for the cage. "I ask after your almoner. Brother Anselm. There's a woman in Calden waiting on her brother's reply, and she's asked me, as a kindness, to ask."
+
+Nobody at the bars said anything. Behind them in the court the House had come out as it always came out, and stood in the rain, and listened.
+
+"I'll be plain, Captain, since you are. Send the almoner down to me, and two names come off my paper. I'll not say whose. You'll know whose." He smiled at the whole court. "A good man, I'm told, who did a foolish thing for his sister. The Spire is kinder to those than to captains."
+
+Darrow looked at him the way he had looked at him the first night, for the thing under the words, and the script that lived behind his palms gave him nothing.
+
+`[RESOLVE · DC 13]` d20 **2** +0 resolve +3 proficiency +3 Warden's Eye III = **8** — *Failure*
+
+He saw a man in the rain with a smile and a censer and borrowed warmth in his chest, which he had seen before, and whether two names would come off any paper in Calden for the price of one lay brother he could not have said, and the not knowing sat in him like a stone in a boot.
+
+"The almoner is a brother of this House," said Mother Ione. She had not raised her voice. She had lowered it, and the court leaned. "He came up the Steps unarmed, years ago, and was warmed and fed, which is the law of guests, Confessor, and older than yours. Whoever sent him. A guest the House has kept that long is the House's. You'll not have his name from the Captain, because it isn't the Captain's to give."
+
+"Thank you, Mother." Marrant bowed his head to her, a little, in the rain. "For your candour. I'll remember who said it."
+
+"You'll have an answer at the dawn bell," Darrow said.
+
+"I'll wait." The smile did not change. "It's the thing I'm best at. Your Prior has just told me whose roof the answer comes from. I'll ask under it, at dawn." He drew his hood up at last. "Good night, Captain. Good night, Mother. A fine verse. I'd not known the third line was yours to say."
+
+He went down the terrace path into the dark and the rain took him.
+
+Wren was on the wall-walk with Pell's glass, where nobody had told her to be. She came down the gatehouse stair at a run and stopped at Darrow's elbow and did not, for once, say a number straight off.
+
+"Five fires," she said. "There's always been six. One of them went down the Steps before the bell, with a horse. He's not come back up."
+
+---
+
+They were at his cot after the night lamps: Anselm on the next one with the key in his fist, as he had been told; Hollis in his chair with the lad's blanket and the new cup still strapped on, because he would not give Cobb the satisfaction; Wren on the floor with her back to the brazier and the ledger shut on her knee; and Maelis at the cot's foot with her hands in her sleeves, who had not been asked and had come.
+
+Darrow gave them the price the way Marrant had given it, without the smile.
+
+"Send me down," said Anselm. He said it to the floor, at once, as if he had been holding it ready since the dawn bell. "Two names, Captain. Yours is one. I'll go down in the morning, and I'll apologise to him, and—"
+
+"No."
+
+"Captain, I'm sorry, but she's—"
+
+"Brother Anselm." The full name, and the almoner's mouth shut on it. "You'll not go down. That isn't on the table, and I'll not have you put it there again."
+
+A silence, in which the brazier settled.
+
+"Then I'll ask it a second time," said Hollis, "since the first one went begging." He had both hands on the chair's arms and the beech leg out in front of him in its new cup. "What does a captain do with a man who did a terrible thing for love? Only now there's a price on him, and a paper, and a woman in Calden, so it's not a riddle any more. It's a night with a bell at the end of it."
+
+Darrow looked at Maelis, because she had come and had not said why.
+
+"Wrong question," she said, before he had asked one.
+
+Wren opened the ledger, and shut it, and did not write.
+
+In the doorway from the chapel stood the Prior, with her hands in her sleeves and the rain still on her coif, and she asked it the way she asked everything, so that it was not a question.
+
+"What is the House for, Captain?"
+
+> ⟦ THE RECKONING ⟧
+> XP 2,293 → 2,393
+
+**What does Darrow do?**
+1. **Tell the House what the almoner did, and let the Prior judge him under her law.** *(Maelis approves.)*
+2. **Shield him: the satchel stays with the five who know, and the Confessor gets nothing.** *(Hollis approves.)*
+3. **Use him: his next letter down carries what the Captain wants the Confessor to believe.** *[Resolve 10]* *(Wren approves; risky.)*

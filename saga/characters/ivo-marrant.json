@@ -23,13 +23,13 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#climax"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "3",
+    "chapter": "04",
+    "scene": "4",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-3"
+    "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Came to the bars at the dawn bell to ask for the Captain's answer, read it at the gate, thanked him for his candour, and sent it down the Steps by one of his men.",
-  "now": "On the lower terrace. The Captain's answer to Aldric has gone down the Steps by one of his men.",
+  "last_seen_doing": "Came to the bars at the dusk bell, listened to the Captain say the verse, and thanked him for it; asked the Prior after the almoner by name, since the cage has gone down empty twice and a woman in Calden waits on her brother's reply; named his price to the court, the almoner for two names off his paper; thanked the Prior for her candour when she put the almoner under the law of guests; said he would wait, and ask under her roof at dawn; went down into the rain.",
+  "now": "Gone back down to the lower terrace in the rain with his price on the table until the dawn bell. He has heard the dusk verse said, and has the Prior's word that the almoner's name is the House's and not the Captain's.",
   "story_so_far": "He read the Captain's letter to Aldric at the bars, thanked him for the candour, and sent it down the Steps by one of his men. His fires burn on the lower terrace, and his men have had the House's lamp oil open on its way up.",
   "quote": {
     "text": "Bells grow tired.",
@@ -168,6 +168,42 @@
       "chapter": "03",
       "scene": "3",
       "evidence": "He's handed it to one of his at the fire, and that one's taking it down."
+    },
+    {
+      "fact": "He asked after Brother Anselm by name at the bars, saying a woman in Calden had asked him, as a kindness, to ask.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "There's a woman in Calden waiting on her brother's reply, and she's asked me, as a kindness, to ask."
+    },
+    {
+      "fact": "He offered the court a price: the almoner sent down to him, and two names come off his paper, whose he would not say.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "Send the almoner down to me, and two names come off my paper."
+    },
+    {
+      "fact": "He said the Spire is kinder to a man who did a foolish thing for his sister than to captains.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "The Spire is kinder to those than to captains."
+    },
+    {
+      "fact": "He thanked the Prior for her candour and said he would remember who had said the almoner was the House's.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "\"For your candour. I'll remember who said it.\""
+    },
+    {
+      "fact": "He will wait for the answer at dawn, and ask for it under the Prior's roof.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "Your Prior has just told me whose roof the answer comes from. I'll ask under it, at dawn."
+    },
+    {
+      "fact": "He said he had not known the third line of the verse was the Captain's to say.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "I'd not known the third line was yours to say."
     }
   ],
   "relationships": [
@@ -248,6 +284,10 @@
       "chapter": "04",
       "scene": "2",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "4"
     }
   ]
 }
