@@ -418,11 +418,13 @@ Nobody at the bars said anything. Behind them in the court the House had come ou
 
 "I'll be plain, Captain, since you are. Send the almoner down to me, and two names come off my paper. I'll not say whose. You'll know whose." He smiled at the whole court. "A good man, I'm told, who did a foolish thing for his sister. The Spire is kinder to those than to captains."
 
-Darrow looked at him the way he had looked at him the first night, for the thing under the words, and the script that lived behind his palms gave him nothing.
+Darrow looked at him the way he had looked at him the first night, for the thing under the words, and the script came up pale behind his palms and let him look.
 
 `[RESOLVE · DC 13]` d20 **2** +0 resolve +3 proficiency +3 Warden's Eye III = **8** — *Failure*
+`[INSPIRATION]` 2 → 1 · cast again
+`[RESOLVE · DC 13]` d20 **12** +0 resolve +3 proficiency +3 Warden's Eye III = **18** — *Success*
 
-He saw a man in the rain with a smile and a censer and borrowed warmth in his chest, which he had seen before, and whether two names would come off any paper in Calden for the price of one lay brother he could not have said, and the not knowing sat in him like a stone in a boot.
+A man in the rain with a smile and a censer and borrowed warmth in his chest, which he had seen before; and under the words, nothing. No lie. That was the worst of it. He meant the two names. He could afford to mean them: they would come off his paper, and his paper was not the only paper on the road. There were banners a day off on the Holloway that were not grey, and whoever rode under them carried their own. Marrant would keep his word and lose nothing by it, and have the almoner, and a man who had found that a lever worked did not stop at one door.
 
 "The almoner is a brother of this House," said Mother Ione. She had not raised her voice. She had lowered it, and the court leaned. "He came up the Steps unarmed, years ago, and was warmed and fed, which is the law of guests, Confessor, and older than yours. Whoever sent him. A guest the House has kept that long is the House's. You'll not have his name from the Captain, because it isn't the Captain's to give."
 
@@ -442,7 +444,7 @@ Wren was on the wall-walk with Pell's glass, where nobody had told her to be. Sh
 
 They were at his cot after the night lamps: Anselm on the next one with the key in his fist, as he had been told; Hollis in his chair with the lad's blanket and the new cup still strapped on, because he would not give Cobb the satisfaction; Wren on the floor with her back to the brazier and the ledger shut on her knee; and Maelis at the cot's foot with her hands in her sleeves, who had not been asked and had come.
 
-Darrow gave them the price the way Marrant had given it, without the smile.
+Darrow gave them the price the way Marrant had given it, without the smile, and what he had read under it: that the man meant every word, and that meaning it cost him nothing.
 
 "Send me down," said Anselm. He said it to the floor, at once, as if he had been holding it ready since the dawn bell. "Two names, Captain. Yours is one. I'll go down in the morning, and I'll apologise to him, and—"
 
@@ -468,6 +470,7 @@ In the doorway from the chapel stood the Prior, with her hands in her sleeves an
 
 > ⟦ THE RECKONING ⟧
 > XP 2,293 → 2,393
+> Inspiration 2 → 1
 
 **What does Darrow do?**
 1. **Tell the House what the almoner did, and let the Prior judge him under her law.** *(Maelis approves.)*

@@ -29,7 +29,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#scene-4"
   },
-  "last_seen_doing": "Carried the farrier's cup to Hollis, who took his ten steps on it; said the four lines of the dusk verse under the tower with Old Mercy's strokes, in the rain, with the Confessor at the bars listening; heard Marrant's price, the almoner for two names off his paper, and could not read whether it was real; asked for the night and got it on the Prior's roof; refused Anselm's offer to go down; brought the price to the cot and was asked what the House is for.",
+  "last_seen_doing": "Carried the farrier's cup to Hollis, who took his ten steps on it; said the four lines of the dusk verse under the tower with Old Mercy's strokes, in the rain, with the Confessor at the bars listening; heard Marrant's price, the almoner for two names off his paper, and read under it that the man meant it and could afford to; asked for the night and got it on the Prior's roof; refused Anselm's offer to go down; brought the price to the cot and was asked what the House is for.",
   "now": "At his cot after the night lamps with the price in the room: the almoner for two names off the paper, by the dawn bell, on the Prior's roof. He has refused to let Anselm go down. The Prior has asked him what the House is for and he has not answered.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
@@ -1374,10 +1374,16 @@
       "evidence": "Send the almoner down to me, and two names come off my paper. I'll not say whose. You'll know whose."
     },
     {
-      "fact": "He looked at Marrant for the thing under the words and the script gave him nothing; he could not tell whether two names would come off any paper for the price of one lay brother.",
+      "fact": "He read the Confessor with the script and found no lie in him: Marrant means the two names and can afford to, because they come off his paper only, and his paper is not the only paper on the road.",
       "chapter": "04",
       "scene": "4",
-      "evidence": "whether two names would come off any paper in Calden for the price of one lay brother he could not have said"
+      "evidence": "He meant the two names. He could afford to mean them: they would come off his paper, and his paper was not the only paper on the road."
+    },
+    {
+      "fact": "He told the cot what he had read under the price: that the man meant every word, and that meaning it cost him nothing.",
+      "chapter": "04",
+      "scene": "4",
+      "evidence": "that the man meant every word, and that meaning it cost him nothing."
     },
     {
       "fact": "He told the Confessor he would have an answer at the dawn bell.",
