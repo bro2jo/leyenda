@@ -32,6 +32,32 @@
         "why": "his call: deferred to the week of 10/25",
         "resumes": "2026-10-25"
       }
+    },
+    {
+      "id": "budget-cleanup",
+      "title": "Clean up the budgeting system",
+      "status": "live",
+      "opened": "2026-10-29",
+      "due": "2026-10-31",
+      "done": null,
+      "late": false,
+      "tasks": [
+        {
+          "n": 1,
+          "text": "Clean up the budgeting system",
+          "done": null
+        },
+        {
+          "n": 2,
+          "text": "Revise the budgets accordingly",
+          "done": null
+        },
+        {
+          "n": 3,
+          "text": "Implement a system for maintaining it",
+          "done": null
+        }
+      ]
     }
   ]
 }

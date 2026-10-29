@@ -435,6 +435,16 @@
       "file": "saga/chronicle/tales/01-quickstep.md",
       "title": "Quickstep",
       "bound": "2026-10-14"
+    },
+    {
+      "n": 2,
+      "tale": "tale.thorne_road",
+      "project": "budget-cleanup",
+      "of": "rae-thorne",
+      "pieces": 3,
+      "file": "saga/chronicle/tales/02-road-s-the-road.md",
+      "title": "Road's the Road",
+      "bound": "2026-10-29"
     }
   ],
   "open_choice": null

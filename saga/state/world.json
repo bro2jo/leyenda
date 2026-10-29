@@ -203,6 +203,16 @@
       "done": false,
       "rests": false,
       "file": "saga/chronicle/tales/01-quickstep.md"
+    },
+    {
+      "id": "tale02",
+      "title": "Road's the Road",
+      "of": "rae-thorne",
+      "pieces": 3,
+      "told": 0,
+      "done": false,
+      "rests": false,
+      "file": "saga/chronicle/tales/02-road-s-the-road.md"
     }
   ],
   "recaps": {

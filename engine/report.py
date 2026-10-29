@@ -372,7 +372,7 @@ def render(data):
         "{{STATUS}}": f'{data["asof_dow"]} {md_of(data["asof"])} · POD {data["pod"]} · post-op week {data["post_op_week"]} · Phase {data["phase"]}{phase_since}',
         "{{TODAY_PLAN}}": esc(planned_today),
         "{{TODAY_OPEN}}": esc(open_txt),
-        "{{PROJECT}}": esc(data["project"].replace("Project: ", "", 1)),
+        "{{PROJECT}}": esc(" · ".join(line.replace("Project: ", "", 1) for line in data["project"].splitlines())),
         "{{PT_LINE}}": esc(pt_txt),
         "{{TILES}}": tiles,
         "{{FLOOR_ROUNDS}}": str(data["floor_rounds"]),

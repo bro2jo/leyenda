@@ -436,7 +436,8 @@ def main():
         check(code == 0 and "#reroll" in out and sp_after == sp_n, "--reroll --paid casts again without a second spend", out[-300:])
 
         # the works and the tales: a project, its tale, a task reported, the piece written and recorded, the keepsake, the site
-        run(darrow + ["project", "drop", "--why", "self-test"], tmp, expect=None)  # a live project in the copy is set aside first (nothing to drop is fine)
+        for q in [q for q in jload(tmp / "real/projects.json").get("projects", []) if q.get("status") == "live"]:  # every live project in the copy is set aside first
+            run(darrow + ["project", "drop", "--id", q["id"], "--why", "self-test"], tmp, expect=None)
         settled = 0
         for _ in range(12):  # a piece the live state already owes (a task reported, its piece not yet written) is settled first, so the flow starts clean
             code, out = run(saga + ["brief", "--tale"], tmp, expect=None)
@@ -465,8 +466,16 @@ def main():
             skip("no set-aside work in the live state to rest a tale")
         code, out = run(darrow + ["project", "open", "Sell the cart", "--tasks", "Clean it", "Park it", "List it"], tmp)
         check(code == 0 and "sell-the-cart" in out and "due Sat" in out, "project open starts the week's work with three tasks, due Saturday", out[-300:])
-        code, out = run(darrow + ["project", "open", "Another", "--tasks", "a", "b"], tmp, expect=1)
-        check("already open" in out, "a second live project is refused: one at a time")
+        code, out = run(darrow + ["project", "open", "Another", "--tasks", "Sweep the yard", "Mend the fence"], tmp)
+        check(code == 0 and "alongside: sell-the-cart" in out, "a second project opens alongside the first", out[-300:])
+        code, out = run(darrow + ["today"], tmp)
+        check("Project: Sell the cart" in out and "Project: Another" in out, "today names every live project, one line each", out[-400:])
+        code, out = run(darrow + ["project", "done", "1"], tmp, expect=1)
+        check("needs --id" in out, "with two live, a task number alone is refused (it needs --id)", out[-300:])
+        code, out = run(darrow + ["project", "drop", "--why", "x"], tmp, expect=1)
+        check("--id" in out, "with two live, drop asks which (--id)", out[-300:])
+        code, out = run(darrow + ["project", "drop", "--id", "another", "--why", "self-test: the second one"], tmp)
+        check(code == 0 and "set aside" in out, "drop --id sets one of two aside", out[-300:])
         code, out = run(saga + ["brief", "--tale"], tmp, expect=1)
         check("no piece is owed" in out, "brief --tale refuses while no task is reported")
         code, out = run(saga + ["tale", "bind", "sell-the-cart", "--tale", "tale.quickstep", "--force"], tmp)
