@@ -26,12 +26,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#between-5"
   },
-  "last_seen_doing": "Sat on the next cot through the night with the stores key; when the price was told, offered at once to go down to the Confessor in the morning and apologise, since the Captain's name is one of the two; was refused by his full name.",
-  "now": "On the cot next to the Captain's with the key in his fist, told he will not go down and that it is not on the table.",
+  "last_seen_doing": "Said he would write whatever the Captain gave him, in his own hand and his own way, and sit where he can be seen while someone else takes it down; said that if the next letter up had no hook in the M he would sooner know than not; said his sister would say ask first and be sorry after, and that he has been sorry a month and would like to ask.",
+  "now": "On the cot next to the Captain's with the key and his sister's letter, having said yes to writing whatever the Captain gives him.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -148,6 +148,24 @@
       "chapter": "04",
       "scene": "4",
       "evidence": "\"Send me down,\" said Anselm."
+    },
+    {
+      "fact": "He said he would write whatever the Captain gave him, in his hand, the way he would write it.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "I'll write whatever you give me, in my hand, the way I'd write it"
+    },
+    {
+      "fact": "He said that if the next letter up had no hook in the M he would sooner know what he did than not, and that his sister would say so.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "I'd sooner know than not. She would. She'd say so."
+    },
+    {
+      "fact": "He said his sister would say ask first and be sorry after, and that he has been sorry a month and would like to ask.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "I've been sorry a month, Captain. I'd like to ask."
     }
   ],
   "relationships": [
@@ -200,6 +218,10 @@
     {
       "chapter": "04",
       "scene": "4"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-5"
     }
   ]
 }

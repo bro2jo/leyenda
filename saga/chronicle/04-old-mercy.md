@@ -476,3 +476,47 @@ In the doorway from the chapel stood the Prior, with her hands in her sleeves an
 1. **Tell the House what the almoner did, and let the Prior judge him under her law.** *(Maelis approves.)*
 2. **Shield him: the satchel stays with the five who know, and the Confessor gets nothing.** *(Hollis approves.)*
 3. **Use him: his next letter down carries what the Captain wants the Confessor to believe.** *[Resolve 10]* *(Wren approves; risky.)*
+
+### Between — Three Answers
+
+The Prior went back into the chapel without waiting for an answer, which was her way of giving him the night, and the four of them sat on in the brazier's light with the question where she had left it.
+
+"I'll ask it round," Darrow said. "Since Hollis asked twice and got nothing. What would you do with the price. Each of you. Then I'll tell you what I'm thinking, and you can tell me what's wrong with it."
+
+"Nothing," said Hollis at once. "That's what I'd do with it. You don't buy from a man who's told you he'll wait. You let him wait. He said the names come off his paper. He never said whose paper they go on next." He shifted the beech leg in its cup and winced, and did not say the cup's name. "Shield the brother. Say nothing of the satchel to the hall or the gate. Keep him where you can see him, which you're doing. Let the grey bastard camp till the thaw."
+
+"Wren."
+
+She had the ledger open on her knee and had not written in it. "Technically he's already using the letters," she said. "The clerk writes hers. Brother Anselm writes the House's. Every seventh day one goes down the cage and one comes up, and the grey cloaks read both at the winch-house, because they read everything now. That's what inspected means." She looked at the almoner, and then at Darrow, and he saw her see it. "So a letter down that says what you want him to think. It's not even a lie if it's in his hand and his words and he'd have written it anyway. It only has to be a letter he'd write. Frightened. Sorry. Asking what to do next, so they tell him, and then you know what they want him to do." She stopped counting, which was the frightening part. "And if they catch it?"
+
+"Then the next letter up comes without the hook in her M," Darrow said.
+
+Nobody said anything. The brazier ticked.
+
+"That's what I'm thinking," he said. "The letters."
+
+"I know you are," said Hollis. "You've had the face on since the gate." He leaned forward on the chair arms. "Then hear this from the one man here who's lied to a lad every bell for a week. I'd not do it. A captain doesn't send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it's found, and his sister. You tell the brother all of it, Captain, or you do it with your own name on it and go down the Steps yourself. There's no third way that isn't the Confessor's."
+
+"Brother."
+
+Anselm had the key in his fist and his sister against his chest, and he had been looking at the floor since the word mark.
+
+"I'll write it," he said. "I'm sorry. I'll write whatever you give me, in my hand, the way I'd write it, and I'll put it in the satchel and take it down on the cage with my own—" He stopped. "No. They'll not let me down. Somebody else takes it down."
+
+"Rae," said Wren. "If she's up."
+
+"Then I'll write it, and she'll take it, and I'll sit here where you can see me." His voice had gone flat and careful again, the way it had at the gate. "And if the next one up has no hook in the M, then I'll know what I did, and you'll know, and I'd sooner know than not. She would. She'd say so." He looked up. "She'd say ask first and be sorry after. Ask them what they want me to do. I've been sorry a month, Captain. I'd like to ask."
+
+Darrow looked at Maelis, because she had sat through all of it with her hands in her sleeves and her eyes on his hands, not his face.
+
+"Who signs it?" she said.
+
+"He does."
+
+"Then it's his to say yes to, and he's said it." She stood. "Decide by the bell. Whatever you decide, I'll want those hands at the dawn forms, both of them, so don't sit up writing letters you've not decided to send."
+
+She went up the row. Hollis watched her go, and then Darrow, for a long moment, with the look he gave a man before deciding where to put him in a line.
+
+"Tell him every word," he said. "That's my price. It's cheaper than his."
+
+Wren wrote something in the ledger, small, and shut it on her finger.

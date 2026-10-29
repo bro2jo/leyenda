@@ -962,12 +962,13 @@
           "fits": "present.brother_anselm",
           "priority": 2,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "fired@ch04:between-5",
           "offered": 2,
           "offered_at": [
             "ch04:between-3",
             "ch04:s4"
-          ]
+          ],
+          "evidence": "\"Then the next letter up comes without the hook in her M,\" Darrow said."
         }
       ]
     },
@@ -989,6 +990,38 @@
           "what": "Darrow carries the farrier's remade leather cup up to Hollis: he is to put it on, stand, take ten steps, not nine, and say where it bites; the word goes back to the farrier, not to Hollis. Honour it where Darrow reaches Hollis with the cup in his hands, or where Hollis takes his ten steps",
           "status": "fired@ch04:s4",
           "evidence": "Hollis took his ten steps at the noon bell, with the farrier's new cup strapped on and the whole row pretending not to count, and swore at seven of them."
+        }
+      ]
+    },
+    {
+      "id": "c04.5",
+      "made": {
+        "chapter": 4,
+        "scene": "between-5",
+        "date": "2026-10-28"
+      },
+      "chose": "Asked Hollis, Wren and Anselm in turn what each would do with the price and said he is thinking of the letters: Hollis would let the Confessor wait and shield the brother, and set his price (tell the brother every word before any lie goes down in his hand); Wren laid out how a letter down could work (one he'd write, read at the winch-house) and asked what if it is caught; Darrow said the next letter up would come without the hook in her M; Anselm said he would write it and sit where he can be seen; Maelis asked who signs it and ordered both hands to the dawn forms",
+      "now": {
+        "approval": {
+          "hollis": 1,
+          "wren": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c04.5a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Hollis's price: a captain who sends a lie down the mountain in another man's hand tells that man every word of it first, and what it costs him if it is found. Fire where Darrow tells Anselm the whole of a letter's purpose before it goes down, where he sends one without, or where Hollis asks whether he did",
+          "fits": "present.hollis || present.brother_anselm",
+          "priority": 2,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-5"
+          ]
         }
       ]
     }

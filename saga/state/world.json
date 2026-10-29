@@ -65,11 +65,18 @@
         "2026-10-28"
       ],
       "written": "2026-10-28"
+    },
+    {
+      "scene": "between-5",
+      "title": "Three Answers",
+      "after": "4",
+      "covers": [],
+      "written": "2026-10-28"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, at his cot after the night lamps, with Anselm, Hollis, Wren and Maelis about him and the Prior in the chapel doorway",
+    "detail": "the infirmary hall, at his cot after the night lamps, Maelis gone up the row, Hollis and Wren and Anselm still with him",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -79,7 +86,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "What the House is for, with a price on the almoner by the dawn bell: the almoner for two names off the Confessor's paper, the Prior's roof under the answer, the price read as real and worth nothing, since the names come off Marrant's paper only, and one grey cloak gone down the Steps with a horse.",
-  "last_beat": "In the doorway from the chapel stood the Prior, with her hands in her sleeves and the rain still on her coif, and she asked it the way she asked everything, so that it was not a question. \"What is the House for, Captain?\"",
+  "last_beat": "\"Tell him every word,\" he said. \"That's my price. It's cheaper than his.\" Wren wrote something in the ledger, small, and shut it on her finger.",
   "companions": {
     "maelis": {
       "approval": 29,
@@ -87,12 +94,12 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 58,
+      "approval": 59,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 10,
+      "approval": 12,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },

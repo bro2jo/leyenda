@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#between-5"
   },
-  "last_seen_doing": "Carried the farrier's cup to Hollis, who took his ten steps on it; said the four lines of the dusk verse under the tower with Old Mercy's strokes, in the rain, with the Confessor at the bars listening; heard Marrant's price, the almoner for two names off his paper, and read under it that the man meant it and could afford to; asked for the night and got it on the Prior's roof; refused Anselm's offer to go down; brought the price to the cot and was asked what the House is for.",
-  "now": "At his cot after the night lamps with the price in the room: the almoner for two names off the paper, by the dawn bell, on the Prior's roof. He has refused to let Anselm go down. The Prior has asked him what the House is for and he has not answered.",
+  "last_seen_doing": "Asked Hollis, Wren and Anselm in turn what each would do with the Confessor's price; said he is thinking of the letters; said that if a false letter down were caught, the next letter up would come without the hook in her M; heard Hollis's price, Anselm's yes and Maelis's order, and left the choice for the bell.",
+  "now": "At his cot after the lamps with three answers and the night to decide in: Hollis would let the Confessor wait and shield the brother, Wren has shown him how a letter down could work and what it costs, Anselm has said he will write it. Maelis wants both hands at the dawn forms.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1398,6 +1398,18 @@
       "evidence": "\"You'll not go down. That isn't on the table, and I'll not have you put it there again.\""
     },
     {
+      "fact": "He asked each of them what they would do with the price and said he is thinking of using the letters.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "\"That's what I'm thinking,\" he said. \"The letters.\""
+    },
+    {
+      "fact": "He said that if a letter down were caught, the next letter up would come without the hook in her M.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "\"Then the next letter up comes without the hook in her M,\" Darrow said."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1699,6 +1711,10 @@
     {
       "chapter": "04",
       "scene": "4"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-5"
     },
     {
       "chapter": "tale01",

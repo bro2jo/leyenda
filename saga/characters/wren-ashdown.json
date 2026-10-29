@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#between-5"
   },
-  "last_seen_doing": "Watched the terrace from the wall-walk with Pell's glass through the dusk; counted five fires where there have always been six, and one grey cloak gone down the Steps before the bell with a horse; sat on the floor by the brazier at the cot with the ledger shut, and opened it, and did not write.",
-  "now": "On the floor by the brazier at the Captain's cot with the ledger shut on her knee. Her count is five fires, not six, and one man gone down the Steps who has not come back.",
+  "last_seen_doing": "Said the Confessor is already using the letters, the clerk writing the sister's and Anselm the House's, both read at the winch-house; laid out how a letter down could carry what the Captain wants believed if it is one the almoner would write; asked what happens if it is caught; named Rae as the one to take it down; wrote something small in the ledger and shut it on her finger.",
+  "now": "On the floor by the brazier with the ledger shut on her finger. She has shown the Captain how a letter down could work and asked him what it costs if caught.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -489,6 +489,24 @@
       "chapter": "04",
       "scene": "4",
       "evidence": "\"Five fires,\" she said. \"There's always been six. One of them went down the Steps before the bell, with a horse. He's not come back up.\""
+    },
+    {
+      "fact": "She says the grey cloaks read every letter up and down at the winch-house now, which is what inspected means.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "the grey cloaks read both at the winch-house, because they read everything now. That's what inspected means."
+    },
+    {
+      "fact": "She says a letter down need not be a lie if it is in the almoner's hand and his words and one he would write: frightened, sorry, asking what to do next.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "It only has to be a letter he'd write. Frightened. Sorry. Asking what to do next"
+    },
+    {
+      "fact": "She named Rae, if she is up, as the one to take a letter down.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "\"Rae,\" said Wren. \"If she's up.\""
     }
   ],
   "relationships": [
@@ -688,6 +706,10 @@
     {
       "chapter": "04",
       "scene": "4"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-5"
     }
   ]
 }

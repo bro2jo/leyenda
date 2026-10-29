@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "between-5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#between-5"
   },
-  "last_seen_doing": "Took ten steps at the noon bell on the farrier's new cup and swore at seven; said it bites at the back and that the beech is fine; kept the cup strapped on into the night rather than give the farrier the satisfaction; at the cot asked his question a second time, now with a price on it.",
-  "now": "In his chair at the Captain's cot with the lad's blanket and the new cup still strapped on. He has asked his question twice and it has not been answered.",
+  "last_seen_doing": "Said he would do nothing with the price: let the Confessor wait, shield the brother, say nothing of the satchel, and let the grey cloaks camp till the thaw; said a captain does not send a lie down a mountain in another man's hand without that man knowing every word of it first; set his price: tell the brother every word.",
+  "now": "In his chair at the Captain's cot with the new cup still on. His price is set: the brother is told every word before any letter goes down, or the Captain does it in his own name and goes down himself.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -444,6 +444,24 @@
       "chapter": "04",
       "scene": "4",
       "evidence": "\"Then I'll ask it a second time,\" said Hollis, \"since the first one went begging.\""
+    },
+    {
+      "fact": "He would let the Confessor wait and shield the brother; the Confessor said the names come off his paper and never said whose paper they go on next.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "He said the names come off his paper. He never said whose paper they go on next."
+    },
+    {
+      "fact": "He holds that a captain does not send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it is found.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "A captain doesn't send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it's found, and his sister."
+    },
+    {
+      "fact": "His price for the letters is that the brother is told every word; he calls it cheaper than the Confessor's.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "\"Tell him every word,\" he said. \"That's my price. It's cheaper than his.\""
     }
   ],
   "relationships": [
@@ -682,6 +700,10 @@
     {
       "chapter": "04",
       "scene": "4"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-5"
     }
   ]
 }
