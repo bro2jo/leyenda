@@ -126,31 +126,52 @@ def main():
         other_kind = "ledger" if last_kind != "ledger" else "house"
         code, out = run(saga + ["glimpse", "add", "--kind", other_kind, "From Wren's ledgers, a page headed Tests: 1."], tmp)
         check(code == 0 and "note:" in out, "glimpse add keeps a new one and only notes a capitalised common noun")
-        code, out = run(saga + ["glimpse", "add", "--kind", "body" if other_kind != "body" else "weather", "Brother Anselm counts the stores again."], tmp, expect=1)
-        check("Anselm" in out and "refusing" in out, "glimpse add refuses a name the GM files know and the page has not spoken")
+        # a name the GM files know and the page has not spoken, picked from the copy as it stands (a fixed name goes stale
+        # the day the page speaks it); read from the engine itself, so it never sits in this file
+        r = subprocess.run([PY, "-c", "import sys; sys.path.insert(0, 'engine'); import saga; print(' '.join(sorted(saga.gm_unspoken_names())))"],
+                           cwd=tmp, capture_output=True, text=True, env=ENV)
+        unspoken = r.stdout.split()
+        if unspoken:
+            code, out = run(saga + ["glimpse", "add", "--kind", "body" if other_kind != "body" else "weather", f"Brother {unspoken[0]} counts the stores again."], tmp, expect=1)
+            check(unspoken[0] in out and "refusing" in out, "glimpse add refuses a name the GM files know and the page has not spoken")
+        else:
+            skip("glimpse add refusing an unspoken name: the GM files hold none the page has not spoken")
         lines = [l for l in (tmp / "saga/state/glimpses.md").read_text(encoding="utf-8").splitlines() if l.startswith("- ")]
         check(len(lines) <= 20 and lines[-1].endswith("Tests: 1."), "the glimpses file holds the last 20, newest last")
 
         # the title ladder: a lean is kept through a dip and lapses once the axis has clearly left it; both ways long enough is a name of its own
+        def bearing_move(pole, n):
+            """A shift of n toward a pole, in the engine's steps: a single move is at most ±4 (betrayal or sacrifice)."""
+            code, out, n = 0, "", int(n)
+            while n > 0 and code == 0:
+                step = min(4, n)
+                code, out = run(saga + ["bearing", pole, str(step), "--why", "gm:self-test"], tmp)
+                n -= step
+            return code, out
+
         b0 = jload(tmp / "saga/state/bearing.json")
         v0 = b0["axes"]["hearth_banner"]["value"]
-        code, out = run(saga + ["bearing", "hearth", str(max(1, 5 + v0)) if v0 > -5 else "1", "--why", "gm:self-test"], tmp)
+        code, out = bearing_move("hearth", max(1, 5 + v0) if v0 > -5 else 1)
         b = jload(tmp / "saga/state/bearing.json")
         kins = b["names"].get("Hearth.lean")
-        check(code == 0 and any(t["rung"] == "lean" and t["pole"] == "Hearth" for t in b["titles"]) and b["epithet_next"] == kins and b["epithet"] is None,
+        # the move never gives an epithet (only a climax or a Choice block that speaks it does); with none given yet the
+        # lean's own name is next in line, and an epithet already given stays next while its title holds
+        check(code == 0 and any(t["rung"] == "lean" and t["pole"] == "Hearth" for t in b["titles"]) and b["epithet"] == b0.get("epithet")
+              and b["epithet_next"] == (b0.get("epithet") or kins),
               "a lean at 4 or more holds its title and queues the epithet without giving it", json.dumps(b.get("titles")) + f" next {b.get('epithet_next')}")
         v1 = b["axes"]["hearth_banner"]["value"]
-        run(saga + ["bearing", "banner", str(-2 - v1), "--why", "gm:self-test"], tmp)  # back to −2: a dip, not a lapse
+        bearing_move("banner", -2 - v1)  # back to −2: a dip, not a lapse
         b = jload(tmp / "saga/state/bearing.json")
         check(b["axes"]["hearth_banner"]["value"] == -2 and any(t["pole"] == "Hearth" for t in b["titles"]), "a dip to 2 keeps the title (hysteresis)", json.dumps(b.get("titles")))
-        run(saga + ["bearing", "banner", "2", "--why", "gm:self-test"], tmp)  # to 0: lapsed
+        bearing_move("banner", 2)  # to 0: lapsed
         b = jload(tmp / "saga/state/bearing.json")
         check(b["axes"]["hearth_banner"]["value"] == 0 and not any(t["pole"] == "Hearth" for t in b["titles"]), "back at 0 the lean lapses")
         for pole in ("mercy", "mercy", "flint", "flint"):
             run(saga + ["bearing", pole, "3", "--why", "gm:self-test"], tmp)
         b = jload(tmp / "saga/state/bearing.json")
-        mixed_name = b["names"].get("mercy_flint.mixed")
-        check(b["axes"]["mercy_flint"]["value"] == 0 and any(t["rung"] == "mixed" and t["axis"] == "mercy_flint" for t in b["titles"]) and b["epithet_next"] == mixed_name,
+        # mixed outranks a lean, so a mixed name is next in line (another axis may hold a mixed title of its own in a live copy)
+        mixed_names = {t["name"] for t in b["titles"] if t["rung"] == "mixed"}
+        check(b["axes"]["mercy_flint"]["value"] == 0 and any(t["rung"] == "mixed" and t["axis"] == "mercy_flint" for t in b["titles"]) and b["epithet_next"] in mixed_names,
               "six each way inside the lean is a mixed name, next in line", json.dumps(b.get("titles")) + f" next {b.get('epithet_next')}")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes with the ladder's titles", out[-400:])
@@ -202,11 +223,15 @@ def main():
             code, out = run(saga + ["add", json.dumps(pres), "--learned", "maelis:Wren told her at the ovens"], tmp)
             check(code == 0 and "approval maelis" in out, "--learned accounts for a companion who was not there", out[-300:])
             hol0 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
+            # what Betweens have already raised him this chapter counts against the cap (a live copy may carry some)
+            so_far = sum(int(((e.get("now") or {}).get("approval") or {}).get("hollis", 0))
+                         for e in jload(tmp / "saga/state/_gm/consequences.json").get("entries", [])
+                         if int((e.get("made") or {}).get("chapter", -1)) == ch and str((e.get("made") or {}).get("scene", "")).startswith("between"))
             btw = {"id": f"c{ch:02d}.985", "made": {"chapter": ch, "scene": "between-77", "date": day}, "chose": "Won a game off Hollis (self-test).", "now": {"approval": {"hollis": 6}}, "due": []}
             code, out = run(saga + ["add", json.dumps(btw), "--witnessed", "hollis"], tmp)
             hol1 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
-            want = 6 if hol0 < 40 else 4 if hol0 < 70 else 2
-            check(code == 0 and hol1 - hol0 == want, f"a Between raises a companion at regard {hol0} by at most +{want} a chapter (got {hol1 - hol0:+d})", out[-300:])
+            want = max(0, min(6, (6 if hol0 < 40 else 4 if hol0 < 70 else 2) - so_far))
+            check(code == 0 and hol1 - hol0 == want, f"a Between raises a companion at regard {hol0} by what is left of its cap this chapter (+{want}; got {hol1 - hol0:+d})", out[-300:])
             code, out = run(saga + ["approval", "forecast"], tmp)
             check(code == 0 and "hollis" in out and "rule(s) met for free" in out, "approval forecast names every companion and a verdict", out[-300:])
 
@@ -322,9 +347,10 @@ def main():
             bad_default = dict(climax, choice={**climax["choice"], "default": 2})
             code, out = run(saga + ["record", json.dumps(bad_default, ensure_ascii=False)], tmp, expect=1)
             check("Inspiration" in out, "a climax whose default costs Inspiration is refused", out[-300:])
+            ep0 = jload(tmp / "saga/state/bearing.json").get("epithet")
             code, out = run(saga + ["record", json.dumps(climax, ensure_ascii=False)], tmp)
             check(code == 0 and "climax choice open" in out, "the climax is recorded and its choice opened", out[-600:])
-            check("EPITHET PENDING" in out and jload(tmp / "saga/state/bearing.json").get("epithet") is None, "a climax that does not speak the pending epithet leaves it pending", out[-400:])
+            check("EPITHET PENDING" in out and jload(tmp / "saga/state/bearing.json").get("epithet") == ep0, "a climax that does not speak the pending epithet leaves it pending (the one he has, if any, stays)", out[-400:])
             hol = jload(tmp / "saga/characters/hollis-garrow.json")
             check(hol["story_so_far"] == "He kept the Grey Cot through the week.", "story_so_far follows the climax's record")
             days = sorted(s["day"] for s in slots if s.get("day"))
@@ -415,14 +441,15 @@ def main():
             at_cap = int(jload(tmp / "saga/state/darrow.json").get("inspiration") or 0) >= 1
             chap = closed[-1].split(",")[0]
             code, out = run(darrow + ["roll", "selftest-cap", "--stat", "might", "--dc", "40", "--dis", "--chapter", chap], tmp)
-            dice = [l for l in out.splitlines() if l.startswith("`[")]
+            dice = [l for l in out.splitlines() if l.startswith("`[") and not l.startswith("`[INSPIRATION]")]  # the d20 lines only
             sp_after = len(sp_path.read_text(encoding="utf-8").splitlines())
             if not at_cap:
                 skip("the cap's auto-reroll: nothing earned yet in the copy")
             elif dice and "Critical success" in dice[0]:
                 check(code == 0 and len(dice) == 1 and sp_after == 1, "a critical success at the cap is not rerolled")
             else:
-                check(code == 0 and len(dice) == 2 and "spent at the cap" in out and sp_after == 2, "at the cap an outright failure of a climax check rerolls by itself and spends one", out[-400:])
+                # one held (the cap of one): the failure is cast again on it, once, and the spend is written
+                check(code == 0 and len(dice) == 2 and "1 → 0 · cast again" in out and sp_after == 2, "an outright failure of a climax check rerolls by itself on his Inspiration and spends one", f"code {code} · dice {len(dice)} · spends.csv lines {sp_after}\n" + out[-400:])
             sp_path.write_text(sp_text, encoding="utf-8")
             rules_json["inspiration"]["cap"] = cap0
             rules_path.write_text(json.dumps(rules_json, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
