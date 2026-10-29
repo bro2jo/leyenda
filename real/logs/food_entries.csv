@@ -162,3 +162,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-29#2,2026-10-29,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
 2026-10-29#3,2026-10-29,,snack,Uncle Mike's Sweet & Spicy Snack Sticks,3 sticks (3.11 oz / 88 g),249,18.6,3.1,15.5,0,6.2,3.1,1150,333,0,0,16,3.1,0,0,62,library,"library row (label 10/28), 14 sticks per 14.5 oz bag"
 2026-10-29#4,2026-10-29,,snack,Uncle Mike's Sweet & Spicy Snack Sticks,1 stick (1.04 oz / 29 g),83,6.2,1,5.2,0,2.1,1,383,111,0,0,5,1,0,0,21,library,"library row (label 10/28), 14 sticks per 14.5 oz bag"
+2026-10-29#5,2026-10-29,,lunch,Homemade taco beef and rice,half a bowl (his words: about half the usual),438,28,36.5,20,1,7.5,1,725,400,45,3.3,28,4.5,1.5,0,20,library+estimate,"half the library bowl (his 10/18 numbers); Mg, zinc, vit C, omega-3 estimated"
