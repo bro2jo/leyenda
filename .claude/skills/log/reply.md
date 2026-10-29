@@ -14,15 +14,16 @@ Mobile-first. Ledger first, Chronicle after, separated by a rule.
 ✅ Floor AM · morning check (trace, pain 0)
 ⏭️ Still today: floor PM · bike 15 · creatine
 ───
-⟦ +45 XP · Warden's Eye II ⟧
+⟦ +45 XP · 1,245 ▰▰▰▰▰▱▱▱▱▱ 1,500 · Finesse 9 → 10 · Warden's Eye I → II ⟧
 *Snow on the sill again. Down the hall, Hollis is swearing at the beech leg one strap at a time, and the leg is winning.*
 ```
 
 - Food lines: item, kcal, protein, plus at most 2–3 micros that matter for that item. The full micro row goes to the CSV.
 - Coaching is one or two lines, specific, and only when useful (e.g., protein pacing for the evening). No lectures.
-- Time together on purpose is one word in the ✅ line (`together`), no detail. When `sync` reports a `TETHER` line, it is a Reckoning line like any other (`⟦ The Tether: a hand ⟧`), and nothing is explained.
-- The week's work rides the ⏭️ line as its next task (`project: park the CRV`), from the engine's `Project:` line. A task reported done gets its own ✅ (`project: task 2 of 3`) and its piece of the tale after the rule, under its `### Piece K — Title` heading, in place of the glimpse; a finished project is a Reckoning line (`⟦ Works: 1 ⟧`, and the Inspiration), unexplained.
+- Time together on purpose is one word in the ✅ line (`together`), no detail. When `sync` reports a `TETHER` line, it rides the Reckoning line like any other change (`The Tether: a hand (II of V)`), and nothing is explained.
+- The week's work rides the ⏭️ line as its next task (`project: park the CRV`), from the engine's `Project:` line. A task reported done gets its own ✅ (`project: task 2 of 3`) and its piece of the tale after the rule, under its `### Piece K — Title` heading, in place of the glimpse; a finished project rides the Reckoning line (`Works 0 → 1`, and the Inspiration), unexplained.
 - The story part of a normal log is the Reckoning line in brackets (only when the engine's `sync` reported a change), then **a glimpse** (below). Scenes are written only at **day close**.
+- **The Reckoning line is the engine's, pasted whole:** `sync` prints it as `RECKONING LINE` under the changes (`darrow.py close` and `ship` print it too, since they sync). It carries the XP gained with **the bar to the next level** (`2,358 ▰▰▰▱▱▱▱▱▱▱ 2,800`: the XP now, the bar from this level's floor, the XP the next level needs) and **everything that moved as before → after** (`Finesse 10 → 11`, `The Measured Hand I → II`, a new Art as `new → I`, `Ember Steady → Bright`, `Inspiration 2 → 3`, `Knots III → IV of VII`, the Tether's stage, the works). Never retype it from the change notes, never shorten it, never add to it, never explain it: what each piece is stays his to discover. No line when `sync` printed none.
 - **A level-up gets its own block**, in any reply whose `sync` reported one (a log, a close, a checkpoint), right after the rule and before the Reckoning line: `⟦ LEVEL 6 ⟧` on its own line, then one line of what it gave, taken from `sync` (HP, proficiency when it moves, +1 Inspiration and the new total, the rank when it changes), and for a new rank one more line saying the next scene will show it. This is the one place a reply names what the sheet gained, so that a level feels like something; everything else about the mechanics stays his to discover.
 - A close-day reply whose slot carried an **invitation** ends on its offer: one in-world sentence, never a list (`saga/bible/style.md` §3).
 

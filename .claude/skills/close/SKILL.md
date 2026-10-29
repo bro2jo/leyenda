@@ -16,7 +16,7 @@ One block of the page. The engine says what it must carry and may use (**the bri
 - A plan-directed rest day (`light=red`) is not missed: its scene is a **cutaway**, another POV or Darrow made to rest by others, never a setback frame.
 
 ## 2. Close, and read the brief
-`python3 engine/darrow.py close DATE`: it sets `closed=Y`, syncs (read the **RECKONING CHANGES**: a LEVEL UP gets the reply's level-up block; a TETHER line means a stage's scene is owed to a float quest slot) and prints **the brief** for the day's slot (`python3 engine/saga.py brief --date DATE` prints it again at any time). The brief is the whole picture:
+`python3 engine/darrow.py close DATE`: it sets `closed=Y`, syncs (read the **RECKONING CHANGES**: a LEVEL UP gets the reply's level-up block; a TETHER line means a stage's scene is owed to a float quest slot; the **RECKONING LINE** it prints is the reply's bracketed line, pasted whole: `.claude/skills/log/reply.md`) and prints **the brief** for the day's slot (`python3 engine/saga.py brief --date DATE` prints it again at any time). The brief is the whole picture:
 - **MUST:** the slot's plan and turn, its device, the small choice it ends on, and what is owed: the open choice and its default, the DUE items, the owed world move, a rank beat, the Tether's line.
 - **CONTINUITY:** where he is, the last block and its last beat, the season, what the knee may do on the page, what is in hand, the Betweens since the last scene and what they changed, today's glimpses, who is there by the page.
 - **MAY:** the people the slot names (voice, tactic, regard, what they know), the threads with their plant counts and whether they may reveal, the Annals the plan names, callbacks that fit, the arc section.

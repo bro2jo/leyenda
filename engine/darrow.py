@@ -968,6 +968,10 @@ def cmd_sync(args, cfg, rules):
             print("RECKONING CHANGES:")
             for n in notes:
                 print("  " + n)
+            line = reckoning_line(old, s)
+            if line:
+                print("RECKONING LINE (paste it as the reply's bracketed line, nothing explained):")
+                print("  " + line)
 
 
 def diff_sheets(old, new):
@@ -994,7 +998,9 @@ def diff_sheets(old, new):
     for a in new["arts"]:
         prev = oa.get(a["id"], {})
         if a["rank"] > prev.get("rank", 0):
-            notes.append(f"ART {'LEARNED' if prev.get('rank', 0) == 0 else 'RANKED UP'}: {a['name']} {roman(a['rank'])}")
+            was = prev.get("rank", 0)
+            notes.append(f"ART LEARNED: {a['name']} {roman(a['rank'])}" if was == 0
+                         else f"ART RANKED UP: {a['name']} {roman(was)} -> {roman(a['rank'])}")
     if new["inspiration"] > old.get("inspiration", 0):
         notes.append(f"INSPIRATION +{new['inspiration'] - old.get('inspiration', 0)} (now {new['inspiration']})")
     if new["knots_count"] > old.get("knots_count", 0):
@@ -1020,6 +1026,43 @@ def diff_sheets(old, new):
 
 def roman(n):
     return ["-", "I", "II", "III", "IV", "V", "VI", "VII"][n] if 0 <= n <= 7 else str(n)
+
+
+def reckoning_line(old, new):
+    """The bracketed Reckoning line a reply carries when the sheet moved: the XP gained with the bar to the next
+    level, then everything that changed as before -> after (attributes, Arts, Ember, Inspiration, Knots, the Tether,
+    the works). The level itself is not here: a level-up has its own block in the reply (the /log reply shape).
+    Empty when nothing moved. Only the engine builds it, so no number in a reply is ever worked out by hand."""
+    bits = []
+    dx = new["xp"] - old.get("xp", 0)
+    if dx:
+        bar = progress_bar(new["xp"] - new["xp_this_level"], new["xp_next_level"] - new["xp_this_level"])
+        bits.append(f"{dx:+,} XP · {new['xp']:,} {bar} {new['xp_next_level']:,}")
+    for a in ATTRS:
+        o = old.get("attributes", {}).get(a, {}).get("score")
+        n = new["attributes"][a]["score"]
+        if o is not None and n != o:
+            bits.append(f"{a.capitalize()} {o} → {n}")
+    oa = {a["id"]: a for a in old.get("arts", [])}
+    for a in new["arts"]:
+        was = oa.get(a["id"], {}).get("rank", 0)
+        if a["rank"] > was:
+            bits.append(f"{a['name']} {roman(was) if was else 'new'} → {roman(a['rank'])}")
+    oe = (old.get("ember") or {}).get("tier")
+    if oe and new["ember"]["tier"] != oe:
+        bits.append(f"Ember {oe} → {new['ember']['tier']}")
+    if new["inspiration"] > old.get("inspiration", 0):
+        bits.append(f"Inspiration {old.get('inspiration', 0)} → {new['inspiration']}")
+    if new["knots_count"] > old.get("knots_count", 0):
+        bits.append(f"Knots {roman(old.get('knots_count', 0))} → {roman(new['knots_count'])} of VII")
+    ot, nt = (old.get("tether") or {}).get("stage", 0), (new.get("tether") or {}).get("stage", 0)
+    if nt > ot:
+        t = new.get("tether") or {}
+        bits.append(f"The Tether: {t.get('name', '')}".rstrip(": ") + f" ({roman(nt)} of {roman(t.get('of', 5))})")
+    ow, nw = old.get("works") or {}, new.get("works") or {}
+    if nw.get("finished", 0) > ow.get("finished", 0):
+        bits.append(f"Works {ow.get('finished', 0)} → {nw['finished']}")
+    return "⟦ " + " · ".join(bits) + " ⟧" if bits else ""
 
 
 # ---------------------------------------------------------------- views
