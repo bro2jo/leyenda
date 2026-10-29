@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-23 · weather · Past midnight the sky over the Steps is clear and hard with stars, and cold enough that the snow along the parapet squeaks under a sleeve like a cork in a bottle.
 - 2026-10-23 · saying · A lay brother going down past the gate with an empty creel says it to the Steps, not to anyone: Nobody's carried up twice. From him, this morning, it sounds like a kindness.
 - 2026-10-23 · overheard · Two winch-brothers at the rope, one to the other, low: Count her in for supper again. Aye, says the other, before she's said. It saves asking.
 - 2026-10-23 · house · Wren has chalked a small tally on the inside of the kitchen door, where only the kitchen can read it, and rubs one mark out with her thumb every time the cage comes up with what the chit said it would.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-28 · body · The warmth has got into his hands tonight and stays there; he turns them over by the candle twice to be sure, and the second time he is grinning at himself for checking.
 - 2026-10-28 · weather · A thin rain on the Steps after dark, the kind that does not fall so much as arrive; the lamps on the lower landings wear it like wool.
 - 2026-10-28 · saying · A lay brother coming in out of the wet with an empty pannier on his back, shaking the rain off at the door, to nobody: Up is a prayer, down is a bill. Tonight he seems to mean the prayer.
+- 2026-10-29 · overheard · From the kitchen before the dawn bell, the cook, low, to the dough under the cloth: Rise, then. Nobody up here is carrying you.
