@@ -91,3 +91,41 @@ Rae turned it over. The Thornwild woman's, in the clerk's mouth. Something short
 "Thorne," she said, to try it, and it fit.
 
 The boy ran the bar up at the bell-house, and her grandmother put the lines in Rae's hands without a word. A dray came across the green out of the fog. Rae said the word from her belly, and the oxen stood like two rocks in a river, and the dray went by; and at his window the clerk bent to his book and pretended he had heard nothing at all.
+
+### Piece 3 — A Carter Without a Bell
+
+The year Rae could see over the oxen's backs without standing on the shaft, her grandmother walked to the Coldmere bell-house beside the cart instead of riding on it, and did not say why.
+
+Rae knew why. A week before, at the Elbow, she had watched her grandmother come down off the box with one hand on the wheel and then both, and stand a while in the road with her eyes shut, the way she stood at a milestone when there was no story in her. Rae had driven the Elbow that day. Nobody had said anything about that either.
+
+The fog was off the tarn. The clerk was at his window, greyer than he had been, and he had the stamp in his hand before they reached the bar, which in all the years Rae had known him he had never once done.
+
+At the bar her grandmother stopped walking. She put her hand to her belt and began to work at the knot that held the bell.
+
+"Not here," Rae said.
+
+"Here's as good as anywhere."
+
+"At the landing, then. I'll drive her down and give it you back at the landing."
+
+Her grandmother did not answer. She got the knot loose, which took a while, because the leather had been tied there longer than Rae had been alive, and she lifted the bell by its strap and held it out. It hung there, plain and dark, not ringing, because she held it still.
+
+Rae kept both hands on the lines so they would be full.
+
+"You're not done," she said.
+
+"Aye," said her grandmother, and waited.
+
+Rae waited too. She had learned waiting on this box, from this woman, and she was good at it. She looked at the tarn. She looked at the off ox's ears, and at the clerk, who was reading something very closely. Her grandmother stood in the road with her arm out and did not lower it and did not say another word, and the fog went between them and came back.
+
+Down the green a cart came out of the fog and drew up short of them, and its bell rang once, flat and patient, the way a bell rings when a carter has stopped behind another and does not mean to argue about it.
+
+"There's a cart," said her grandmother.
+
+There was. They were on the road, and the road was the road, and nobody stood in the bar of a bell-house because she did not want a thing. Rae put both lines in one hand. With the other she took the bell. It was heavier than it looked and warm from her grandmother's hip, and she tied it to her own belt with the knot her grandmother had shown her for the yoke, and pulled it hard.
+
+"A carter without a bell," her grandmother said, "is a thief until she proves otherwise." She stepped out of the road onto the bell-house step, and put her hands under her shawl, and nodded at the bar.
+
+The clerk's stamp came down. The boy ran the bar up. Rae shook the lines, and the off ox leaned into the yoke a breath before the near one, as he always had, as if he had to be sure first.
+
+The cart jolted over the rut at the bell-house sill, and the bell rang at Rae's hip, and Rae, watching the road, did not hear it.

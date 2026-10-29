@@ -509,6 +509,24 @@
       "chapter": "tale02",
       "scene": "p2",
       "evidence": "Rae said the word from her belly, and the oxen stood like two rocks in a river"
+    },
+    {
+      "fact": "Her grandmother handed her the ox-bell at the bar of the Coldmere bell-house, the year Rae could see over the oxen's backs, and stayed on the step as Rae drove on.",
+      "chapter": "tale02",
+      "scene": "p3",
+      "evidence": "With the other she took the bell."
+    },
+    {
+      "fact": "The ox-bell at Rae's belt was her grandmother's, tied on with the knot her grandmother had shown her for the yoke.",
+      "chapter": "tale02",
+      "scene": "p3",
+      "evidence": "she tied it to her own belt with the knot her grandmother had shown her for the yoke"
+    },
+    {
+      "fact": "She learned her waiting on her grandmother's box.",
+      "chapter": "tale02",
+      "scene": "p3",
+      "evidence": "She had learned waiting on this box, from this woman, and she was good at it."
     }
   ],
   "relationships": [
@@ -670,6 +688,10 @@
     {
       "chapter": "tale02",
       "scene": "p2"
+    },
+    {
+      "chapter": "tale02",
+      "scene": "p3"
     }
   ]
 }

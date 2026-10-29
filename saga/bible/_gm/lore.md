@@ -198,13 +198,13 @@ When the bell-house rings the long peal, every mill and farm sends a man or a bo
 Copper **wicks**, small and thin, a dozen to a loaf; silver **marks**, stamped with the river; gold **spires**, stamped with the Spire, which a Lowmarch farmer may see twice in his life. "Not worth a wick" is the bottom of the scale and "a spire for your horse" is a compliment. Wagers in the House are in wicks and chores, and the kitchen's book will take a chore before a wick.
 
 ## realm.holloway — The Holloway
-- **tier:** common · **spoken:** Prologue II, Ch 1; tale02:p1 · **names:** —
+- **tier:** common · **spoken:** Prologue II, Ch 1; tale02:p1; tale02:p3 · **names:** —
 - **use:** any journey; a carter's bell; the milestones.
 
 The old road north from Calden to the Greywater landing, worn by three hundred years of carts until it runs below the fields between banks, hollow as its name. Milestones every mile, numbered from Calden, and every carter knows the road by them: "past the second milestone" means a thing and "short of the twelfth" means another. Salt and oil go up it from the coast and letters come down. A Holloway carter wears an ox-bell at the belt so a cart in fog is heard before it is hit, and a carter without a bell is a thief until proved otherwise.
 
 ## realm.coldmere — Coldmere
-- **tier:** common · **spoken:** Ch 1 Sc 1; tale02:p2 · **names:** —
+- **tier:** common · **spoken:** Ch 1 Sc 1; tale02:p2; tale02:p3 · **names:** —
 - **use:** the last warmth before the climb; news; a fair.
 
 The last village below the mountain, on a tarn that never warms: an inn whose taproom hears everything the Holloway carries, a bell-house, a mill on the outflow, and a horse-fair in autumn that the Lowmarch rides to. Carts for the House stop there last, and the House's dead stop there first. Half the lay brothers were born within a mile of its bell.

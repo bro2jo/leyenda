@@ -55,7 +55,7 @@
     "tier": "Steady",
     "effect": "none"
   },
-  "inspiration": 1,
+  "inspiration": 2,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -319,8 +319,8 @@
     "with": "rae-thorne"
   },
   "works": {
-    "finished": 0,
-    "tasks_done": 3,
+    "finished": 1,
+    "tasks_done": 4,
     "late": 0
   },
   "chapter_now": {

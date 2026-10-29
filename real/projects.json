@@ -36,10 +36,10 @@
     {
       "id": "budget-cleanup",
       "title": "Clean up the budgeting system",
-      "status": "live",
+      "status": "done",
       "opened": "2026-10-29",
       "due": "2026-10-31",
-      "done": null,
+      "done": "2026-10-29",
       "late": false,
       "tasks": [
         {
@@ -55,7 +55,7 @@
         {
           "n": 3,
           "text": "Implement a system for maintaining it",
-          "done": null
+          "done": "2026-10-29"
         }
       ]
     }

@@ -192,7 +192,17 @@
     "infirmary shirt and breeches",
     "a borrowed stick he refuses to use"
   ],
-  "keepsakes": [],
+  "keepsakes": [
+    {
+      "name": "The ox-bell",
+      "text": "Her grandmother's plain dark ox-bell, warm from her hip, tied to Rae's own belt at the Coldmere bell-house.",
+      "to": "rae-thorne",
+      "tale": "tale02",
+      "piece": "p3",
+      "tale_title": "Road's the Road",
+      "mark": "bell"
+    }
+  ],
   "tales": [
     {
       "id": "tale01",
@@ -209,8 +219,8 @@
       "title": "Road's the Road",
       "of": "rae-thorne",
       "pieces": 3,
-      "told": 2,
-      "done": false,
+      "told": 3,
+      "done": true,
       "rests": false,
       "file": "saga/chronicle/tales/02-road-s-the-road.md"
     }
