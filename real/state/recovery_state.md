@@ -347,14 +347,17 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 **Upper A — last home dose (10/17, session 3; 45 min, RPE 8; 10/22's vacation-gym numbers don't carry) and next (session 7, Thu 10/29; Block 1: main lifts 4 × 6–8 at RPE 7–8, accessories 3 × 8–10, loads from where Block 0 left them).**
 
-| Lift | 10/17 | Next |
+| Lift | 10/17 | Next (session 7, Block 1) |
 |---|---|---|
-| A Seated med-ball chest pass | 8 lb × 4 × 3 (first time) | Same |
-| B1 Bench press | 105 × 3 × 8, "pretty easy" | **110 × 3 × 8** |
-| B2 Band-assisted pull-up | 3 × 5, challenging (replaced the pulldown) | Same band, **3 × 6**, building to 3 × 8, then a lighter band. Step down to a box; no dropping |
-| C1 Standing landmine press | 25 lb + bar × 3 × 8/side, challenging (left arm) | Same; start each set with the left |
-| C2 Chest-supported DB row | 15s × 3 × 10, easy | **20s × 3 × 10** |
-| Finisher | All four, Copenhagen both sides | Same; **Copenhagen 2 × 25 s/side** (Thursday's morning was clean: the ladder's next step). Short on time: keep the Copenhagen |
+| A Seated med-ball chest pass | 8 lb × 4 × 3 (first time) | **8 lb × 4 × 3**, max intent, full reset each rep (skipped 10/22: no ball) |
+| B1 Bench press | 105 × 3 × 8, "pretty easy" | **110 × 4 × 6–8** (main lift), 2–3 reps left. Feet flat, no leg drive. Alternate sets with B2 |
+| B2 Band-assisted pull-up | 3 × 5, challenging (replaced the pulldown) | Same band, **4 × 5–6** (main lift; Block 1's first), building to 4 × 8, then a lighter band. Step down to a box; no dropping |
+| C1 Standing landmine press | 25 lb + bar × 3 × 8/side, challenging (left arm) | **25 + bar × 3 × 8/side** (accessory, 3 × 8–10); start each set with the left |
+| C2 Chest-supported DB row | 15s × 3 × 10, easy | **20s × 3 × 10** (accessory; one DB step, as planned for 10/22) |
+| Finisher | All four, Copenhagen both sides | Same; **Copenhagen 2 × 25 s/side** (the ladder's next step; owed since 10/22). Short on time: keep the Copenhagen |
+
+- **Short on time (Add-On rule 10):** the finisher except the Copenhagen goes first, then the C pair. The bike stays at 30 when it can: two weeks of 30-minute rides with clean mornings is the bike-interval gate (Add-On §5).
+- **Rest (the plans set none here; general guidance):** chest pass ~45–60 s between sets · B1/B2 alternated, ~90 s after each (about 3 min between sets of the same lift) · C1/C2 alternated, ~60 s after each · finisher holds ~20–30 s apart.
 
 **Saturday power & mobility — first run Sat 10/24 (optional; ~45 min with the bike, plus throwing).** Bike 30 → throwing → Pallof press, standing (or half-kneeling, right knee down), 3 × 8/side × 3 s, light to start → open book 6–8/side → supine hip flexor at the table edge, 45 s/side (left: let it hang) → seated wall slide with lift-off, 2 × 6–8. Seated rotational throws wait for the PT. The arms-only aerobic block is out (the 30-minute bike covers it).
 
