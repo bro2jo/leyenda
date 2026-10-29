@@ -473,6 +473,24 @@
       "chapter": "04",
       "scene": "between-1",
       "evidence": "\"Road's the road,\" she said, and opened the wicket."
+    },
+    {
+      "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
+      "chapter": "tale02",
+      "scene": "p1",
+      "evidence": "Her grandmother let her have the lines on the straight below the seventh milestone"
+    },
+    {
+      "fact": "Her grandmother wore a plain dark ox-bell at her belt and spoke to the oxen in her own tongue.",
+      "chapter": "tale02",
+      "scene": "p1",
+      "evidence": "the plain dark one that knocked at her hip all day"
+    },
+    {
+      "fact": "At the Elbow her grandmother would not draw over for a rider in a lance's colours, and gave the reason as the bell: Road's the road.",
+      "chapter": "tale02",
+      "scene": "p1",
+      "evidence": "\"He's behind a cart.\" She let the bell hang. \"Road's the road.\""
     }
   ],
   "relationships": [
@@ -626,6 +644,10 @@
       "chapter": "04",
       "scene": "between-5",
       "mention": true
+    },
+    {
+      "chapter": "tale02",
+      "scene": "p1"
     }
   ]
 }

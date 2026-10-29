@@ -198,7 +198,7 @@ When the bell-house rings the long peal, every mill and farm sends a man or a bo
 Copper **wicks**, small and thin, a dozen to a loaf; silver **marks**, stamped with the river; gold **spires**, stamped with the Spire, which a Lowmarch farmer may see twice in his life. "Not worth a wick" is the bottom of the scale and "a spire for your horse" is a compliment. Wagers in the House are in wicks and chores, and the kitchen's book will take a chore before a wick.
 
 ## realm.holloway — The Holloway
-- **tier:** common · **spoken:** Prologue II, Ch 1 · **names:** —
+- **tier:** common · **spoken:** Prologue II, Ch 1; tale02:p1 · **names:** —
 - **use:** any journey; a carter's bell; the milestones.
 
 The old road north from Calden to the Greywater landing, worn by three hundred years of carts until it runs below the fields between banks, hollow as its name. Milestones every mile, numbered from Calden, and every carter knows the road by them: "past the second milestone" means a thing and "short of the twelfth" means another. Salt and oil go up it from the coast and letters come down. A Holloway carter wears an ox-bell at the belt so a cart in fog is heard before it is hit, and a carter without a bell is a thief until proved otherwise.
@@ -427,7 +427,7 @@ A by-name is given, never taken: from an enemy's mouth, a clerk's writ, or a jib
 Bone-setting, boiled linen, splints of beech and leather, the springs, bitterleaf for pain and for steady hands, and patience, which is the one the valley complains of. The Lowmarch knows that Saint Ysolde's mends what the lowland surgeons send away and does not ask how, which suits the Menders. ⟪gm: the Binding and emberthread are Warden art (T8); the valley has never heard the word.⟫
 
 ## craft.carting — Carting
-- **tier:** common · **spoken:** Prologue II · **names:** —
+- **tier:** common · **spoken:** Prologue II; tale02:p1 · **names:** —
 - **use:** a carter at work; a manifest; the road's law.
 
 Oxen on the Holloway, because a mule will not stand at the winch-house and an ox will stand all winter. A cart carries a manifest, and the manifest is law at every bell-house, which is why a good carter can read one upside down and a great one can write one that says what she needs it to. The road's law: a cart with a bell has the right of way, a cart without one has a story to tell, and nobody passes a cart on the Elbow.
