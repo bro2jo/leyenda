@@ -114,3 +114,4 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"Four strokes. Don't be clever at it."** — Sister Pell to Darrow, going back up to her tower, having given him the dusk verse and a dusk to say it under the tower where she can see his mouth (Ch 4 Between).
 - **"Menders spend good meat on bad knights."** — The kennel-master's view, said to the Prior and to the Captain of the Ninth's face (Ch 4 Sc 3).
 - **"I'd not known the third line was yours to say."** — Confessor Ivo Marrant to Darrow at the bars, having heard the Faithless captain say the dusk verse under the tower with the strokes (Ch 4 Sc 4).
+- **"Tell her the loop still holds."** — The one line of Brother Anselm's own at the foot of the letter he wrote at the Captain's asking: nothing to the clerk who reads it, and to his sister, who puts a loop in her M so it will hold, the word that her brother is writing to her and not to him (Ch 4 Between).

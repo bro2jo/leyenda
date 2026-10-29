@@ -520,3 +520,49 @@ She went up the row. Hollis watched her go, and then Darrow, for a long moment, 
 "Not whatever you give him," he said. "Every word, and what it's for. That's my price. It's cheaper than his."
 
 Wren wrote something in the ledger, small, and shut it on her finger.
+
+### Between — The Loop
+
+Wren had gone, and Maelis, and the lamps were down to the far one and the brazier, and Darrow had the almoner's ink and a sheet of the House's paper on the end of his cot between them, and had not touched either.
+
+"Before a word goes on that," he said, "you'll have all of it. What it says, what it's for, and what I'm doing to you by asking. Hollis's price, and it's a fair one. Stop me if I go too fast."
+
+Anselm sat on the edge of his own cot with the key in his lap and his hands folded over it, the way he folded them when he was about to apologise, and did not.
+
+"It's to the clerk. In your hand, your words, the way you'd write if nobody had told you anything. You say the second one is set, under the far cots, two nights ago. You say the hall has gone quiet. You say you're frightened, which is true, and you ask what you're to do next, which is what she'd have you do. And you ask after her." He laid it out the way he laid out a line before a charge, one piece after the other, so that a man could see where he stood in it. "That's the letter."
+
+"And what it's for."
+
+"Three things. First, that he believes it. If he thinks the thing is working he'll wait for it to work, and a man who's waiting isn't climbing. Second, that it's worth sending down the road. A thing like that goes to Calden, and somebody carries it, and that's one fewer on the terrace. Third, whatever he tells you to do next tells us what he's afraid of." Darrow looked at him. "And here's the rest. He meant the two names. I read him for a lie and there wasn't one. I could have your name down the Steps by dawn and two off his paper by noon, and I'm not doing it, and the reason I'm not is the House. Not your sister. If this letter's caught, the next one up comes without her mark, and that'll be on me, and on you for writing it, and I'm asking you to write it anyway." He stopped. "That's every word, Brother. That's what it's for."
+
+The brazier ticked. Across it Hollis had the lad's hand in his and his eyes on the roof, and he had not moved.
+
+Anselm looked at the paper for a long time.
+
+"Would you spend her for the House?" he said. "Say it. Not round it. I've had a month of round it."
+
+"Yes."
+
+"Yes." He said it after Darrow, quietly, as if trying the weight of it. Then he took the key off his lap and set it on the cot, and picked up the pen, and dipped it, and wrote.
+
+He wrote the way he spoke, in starts, with the apologies in, and Darrow read it over his shoulder as it went down and did not change a word of it, because it was the letter of a frightened man and nothing he could have given him would have been. The second is set. The hall is quiet. I don't know what I'm to do now. Please tell me. Please tell me how she is.
+
+At the bottom, under his name, the almoner wrote one more line that Darrow had not given him, and sat back from it.
+
+*Tell her the loop still holds.*
+
+"That's mine," he said. "He'll read it and think nothing. She'll read it and know I'm writing to her and not to him. If you want it out, say so. I'd sooner it stayed."
+
+"It stays."
+
+Anselm folded the sheet twice, small, and did not seal it; the carter would see it sealed at the winch-house, in front of them, the way all the House's letters went down now. He held it a moment in both hands.
+
+"When it's done," he said, "caught or not caught, I'm going down. Not to him. To the bell at Coldmere, where they cried my father. I'm going to stand on the steps and ask what they did with my sister, out loud, with the village there, the way she would. I'll want you to let me."
+
+"Yes."
+
+"You keep saying that." He put the letter inside his shirt, against the lock of hair, and the key back on its cord, and lay down on his cot with his face to the Captain, and shut his eyes, and did not sleep.
+
+Across the brazier, Hollis's thumb went on over the lad's knuckles.
+
+"That's paid," he said, to the lad, not to Darrow. "Go to sleep, Captain. You've a bell to answer."

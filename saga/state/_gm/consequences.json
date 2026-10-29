@@ -1017,11 +1017,12 @@
           "fits": "present.hollis || present.brother_anselm",
           "priority": 2,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "fired@ch04:between-6",
           "offered": 1,
           "offered_at": [
             "ch04:between-5"
-          ]
+          ],
+          "evidence": "\"Before a word goes on that,\" he said, \"you'll have all of it. What it says, what it's for, and what I'm doing to you by asking. Hollis's price, and it's a fair one."
         }
       ]
     },
@@ -1056,6 +1057,37 @@
       "declined": [
         "Expose him to the Prior and the House.",
         "Shield him and say nothing of the satchel."
+      ]
+    },
+    {
+      "id": "c04.7",
+      "made": {
+        "chapter": 4,
+        "scene": "between-6",
+        "date": "2026-10-28"
+      },
+      "chose": "Sat down with Anselm by the brazier and gave him every word of the letter and what each was for before he wrote it: that the second is set and the hall quiet, so the Confessor waits; that it is worth carrying to Calden, so one fewer sits on the terrace; that what he is told to do next says what the Confessor fears; and the honest part, that the two names were real and refused for the House, not for the sister. Answered his straight question with yes. Let his own line stand: Tell her the loop still holds. Said yes to his vow to go down and answer at the bell at Coldmere when it is over. Hollis watched and called it paid",
+      "now": {
+        "approval": {
+          "hollis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c04.7a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Anselm's vow, with the Captain's yes: when the letter's work is done, caught or not, he goes down to the bell at Coldmere where his father was cried, and asks aloud on its steps what was done with his sister. Fire where he goes, where he is stopped from going, or where someone says he means to",
+          "fits": "present.brother_anselm",
+          "priority": 2,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-6"
+          ]
+        }
       ]
     }
   ],

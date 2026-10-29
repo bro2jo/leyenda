@@ -72,11 +72,18 @@
       "after": "4",
       "covers": [],
       "written": "2026-10-28"
+    },
+    {
+      "scene": "between-6",
+      "title": "The Loop",
+      "after": "4",
+      "covers": [],
+      "written": "2026-10-28"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, at his cot after the night lamps, Maelis gone up the row, Hollis and Wren and Anselm still with him",
+    "detail": "the infirmary hall, on his cot by the brazier in the small hours, Anselm lying awake on the next cot with the letter inside his shirt, Hollis across the brazier with the lad's hand",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -85,8 +92,8 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Marrant has not drawn a blade in a month. He has camped on the lower terrace, kept the cage, and reached into the House by the lever: a clerk in grey who never kneels sent two black slivers up in the House's own letter-satchel, one of them now set in the rock under the row and making the stone grow frost, and holds the almoner's sister at Calden for the second. Banners that are not grey are on the Holloway, a day off.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "What the House is for, with a price on the almoner by the dawn bell: the almoner for two names off the Confessor's paper, the Prior's roof under the answer, the price read as real and worth nothing, since the names come off Marrant's paper only, and one grey cloak gone down the Steps with a horse.",
-  "last_beat": "\"Not whatever you give him,\" he said. \"Every word, and what it's for. That's my price. It's cheaper than his.\" Wren wrote something in the ledger, small, and shut it on her finger.",
+  "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and one true line in it for his sister. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
+  "last_beat": "\"That's paid,\" he said, to the lad, not to Darrow. \"Go to sleep, Captain. You've a bell to answer.\"",
   "companions": {
     "maelis": {
       "approval": 27,
@@ -94,7 +101,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 57,
+      "approval": 59,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },

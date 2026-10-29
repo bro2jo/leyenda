@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-5",
+    "scene": "between-6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-5"
+    "anchor": "chronicle/04-old-mercy.html#between-6"
   },
-  "last_seen_doing": "Said he would do nothing with the price: let the Confessor wait, shield the brother, say nothing of the satchel, and let the grey cloaks camp till the thaw; said the brother has heard what a caught letter costs but not what the letter says, and that a captain does not send a lie down a mountain in another man's hand without that man reading every word first and knowing what each is for; set his price: every word, and what it's for.",
-  "now": "In his chair at the Captain's cot with the new cup still on. His price is set: the brother reads every word of any letter before it goes down and knows what each is for, or the Captain puts his own name on it and goes down himself.",
+  "last_seen_doing": "Sat awake across the brazier with the lad's hand in his and his eyes on the roof through the whole of it; when the letter was written and inside the almoner's shirt, said to the lad that it was paid, and told the Captain to sleep, since he had a bell to answer.",
+  "now": "In his chair across the brazier with the lad's hand in his. He has heard the Captain pay his price and called it paid.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -468,6 +468,12 @@
       "chapter": "04",
       "scene": "between-5",
       "evidence": "Every word, and what it's for. That's my price. It's cheaper than his."
+    },
+    {
+      "fact": "He heard the Captain tell the almoner every word of the letter and what it was for, and called the price paid.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "\"That's paid,\" he said, to the lad, not to Darrow."
     }
   ],
   "relationships": [
@@ -710,6 +716,10 @@
     {
       "chapter": "04",
       "scene": "between-5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-6"
     }
   ]
 }

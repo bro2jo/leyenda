@@ -26,12 +26,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-5",
+    "scene": "between-6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-5"
+    "anchor": "chronicle/04-old-mercy.html#between-6"
   },
-  "last_seen_doing": "Said he would write whatever the Captain gave him, in his own hand and his own way, and sit where he can be seen while someone else takes it down; said that if the next letter up had no hook in the M he would sooner know than not; said his sister would say ask first and be sorry after, and that he has been sorry a month and would like to ask.",
-  "now": "On the cot next to the Captain's with the key and his sister's letter, having said yes to writing whatever the Captain gives him.",
+  "last_seen_doing": "Heard every word of the letter and what it was for, and the Captain's yes to spending his sister for the House; asked it straight, not round; set the key down and wrote the letter in his own hand and his own starts, the second set, the hall quiet, what am I to do, how is she; added a line of his own, Tell her the loop still holds, and asked that it stay; folded it unsealed and put it inside his shirt against the lock of hair; vowed to go down to the bell at Coldmere when it is done and ask aloud what was done with his sister; lay down facing the Captain and did not sleep.",
+  "now": "On his cot with the letter inside his shirt against his sister's hair, awake, the key back on its cord. He has written the false letter knowing every word's purpose, put one true line in it for his sister, and means to answer at the bell at Coldmere when it is over.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -166,6 +166,36 @@
       "chapter": "04",
       "scene": "between-5",
       "evidence": "I've been sorry a month, Captain. I'd like to ask."
+    },
+    {
+      "fact": "He asked the Captain straight whether he would spend his sister for the House, and said he had had a month of being talked round.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "\"Would you spend her for the House?\" he said. \"Say it. Not round it. I've had a month of round it.\""
+    },
+    {
+      "fact": "He wrote the letter himself, in starts, with the apologies in: the second is set, the hall is quiet, what is he to do, how is she.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "The second is set. The hall is quiet. I don't know what I'm to do now. Please tell me. Please tell me how she is."
+    },
+    {
+      "fact": "He added one line of his own under his name, Tell her the loop still holds, so that the clerk would read nothing in it and his sister would know he wrote to her and not to him.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "He'll read it and think nothing. She'll read it and know I'm writing to her and not to him."
+    },
+    {
+      "fact": "He folded the letter unsealed, since the carter sees the House's letters sealed at the winch-house now, and put it inside his shirt against the lock of hair.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "the carter would see it sealed at the winch-house, in front of them, the way all the House's letters went down now."
+    },
+    {
+      "fact": "He vowed that when it is done, caught or not, he will go down to the bell at Coldmere where his father was cried and ask aloud on its steps what they did with his sister, the way she would.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "I'm going to stand on the steps and ask what they did with my sister, out loud, with the village there, the way she would."
     }
   ],
   "relationships": [
@@ -222,6 +252,10 @@
     {
       "chapter": "04",
       "scene": "between-5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-6"
     }
   ]
 }

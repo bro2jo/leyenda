@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-5",
+    "scene": "between-6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-5"
+    "anchor": "chronicle/04-old-mercy.html#between-6"
   },
-  "last_seen_doing": "Asked Hollis, Wren and Anselm in turn what each would do with the Confessor's price; said he is thinking of the letters; said that if a false letter down were caught, the next letter up would come without the hook in her M; heard Hollis's price, Anselm's yes and Maelis's order, and left the choice for the bell.",
-  "now": "At his cot after the lamps with three answers and the night to decide in: Hollis would let the Confessor wait and shield the brother, Wren has shown him how a letter down could work and what it costs, Anselm has said he will write it. Maelis wants both hands at the dawn forms.",
+  "last_seen_doing": "Sat down with Anselm by the brazier with the House's paper and ink; gave him every word of the letter and what each was for before he wrote it, and the honest part, that the two names were real and refused for the House and not for the sister; answered his straight question with yes; read the letter over his shoulder and changed nothing; let Anselm's own last line stand; said yes to his vow to answer at the bell at Coldmere when it is over.",
+  "now": "On his cot in the small hours with the letter written and inside the almoner's shirt, waiting for the carter and the dawn bell. He has told Anselm what the letter is for, every word, and said yes to him twice.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1410,6 +1410,42 @@
       "evidence": "\"Then the next letter up comes without the hook in her M,\" Darrow said."
     },
     {
+      "fact": "Before a word was written he told Anselm what the letter says, what it is for, and what he was doing to him by asking, and called it Hollis's price and a fair one.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "\"Before a word goes on that,\" he said, \"you'll have all of it. What it says, what it's for, and what I'm doing to you by asking. Hollis's price, and it's a fair one."
+    },
+    {
+      "fact": "He laid out the letter's three purposes: that the Confessor believes it and waits, that it is worth carrying to Calden so one fewer sits on the terrace, and that whatever Anselm is told to do next says what the Confessor fears.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "a man who's waiting isn't climbing. Second, that it's worth sending down the road."
+    },
+    {
+      "fact": "He told Anselm the two names were real, that he could have had them by noon, and that he is refusing them for the House and not for the sister.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "I could have your name down the Steps by dawn and two off his paper by noon, and I'm not doing it, and the reason I'm not is the House. Not your sister."
+    },
+    {
+      "fact": "Asked straight whether he would spend the sister for the House, he said yes.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "\"Yes.\" He said it after Darrow, quietly, as if trying the weight of it."
+    },
+    {
+      "fact": "He read the letter as it was written and changed no word of it, and let the almoner's own last line stand.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "did not change a word of it, because it was the letter of a frightened man and nothing he could have given him would have been."
+    },
+    {
+      "fact": "He said yes to Anselm's vow to go down to the bell at Coldmere when it is over and ask aloud what was done with his sister.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "\"You keep saying that.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1715,6 +1751,10 @@
     {
       "chapter": "04",
       "scene": "between-5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-6"
     },
     {
       "chapter": "tale01",
