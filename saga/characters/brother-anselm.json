@@ -30,8 +30,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#between-6"
   },
-  "last_seen_doing": "Heard every word of the letter and what it was for, and the Captain's yes to spending his sister for the House; asked it straight, not round; set the key down and wrote the letter in his own hand and his own starts, the second set, the hall quiet, what am I to do, how is she; added a line of his own, Tell her the loop still holds, and asked that it stay; folded it unsealed and put it inside his shirt against the lock of hair; vowed to go down to the bell at Coldmere when it is done and ask aloud what was done with his sister; lay down facing the Captain and did not sleep.",
-  "now": "On his cot with the letter inside his shirt against his sister's hair, awake, the key back on its cord. He has written the false letter knowing every word's purpose, put one true line in it for his sister, and means to answer at the bell at Coldmere when it is over.",
+  "last_seen_doing": "Heard the Captain say he has not stopped seeing the trowel in his hand, and every word of the letter and what it was for; asked what if it is caught and was answered without softening; said his sister would rather be asked after than traded for, and would be angry at him for the stone first; wrote the letter in his own hand and starts, the second set, the hall quiet, what am I to do, where is she, a line in her hand; added a line of his own, Tell her the loop still holds; folded it unsealed inside his shirt against the lock of hair; vowed to go down to the bell at Coldmere when it is done and ask aloud; lay down facing the Captain and did not sleep.",
+  "now": "On his cot with the letter inside his shirt against his sister's hair, awake, the key back on its cord. He has written the false letter knowing every word's purpose, with a brother's questions in it for his sister and one true line, and means to answer at the bell at Coldmere when it is over.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -168,16 +168,22 @@
       "evidence": "I've been sorry a month, Captain. I'd like to ask."
     },
     {
-      "fact": "He asked the Captain straight whether he would spend his sister for the House, and said he had had a month of being talked round.",
+      "fact": "He asked what happens if the letter is caught, and was told his sister pays and that he could refuse.",
       "chapter": "04",
       "scene": "between-6",
-      "evidence": "\"Would you spend her for the House?\" he said. \"Say it. Not round it. I've had a month of round it.\""
+      "evidence": "\"And if it's caught,\" said Anselm."
     },
     {
-      "fact": "He wrote the letter himself, in starts, with the apologies in: the second is set, the hall is quiet, what is he to do, how is she.",
+      "fact": "He said his sister would rather be asked after than traded for, and would be angry at him for the stone first, and rightly.",
       "chapter": "04",
       "scene": "between-6",
-      "evidence": "The second is set. The hall is quiet. I don't know what I'm to do now. Please tell me. Please tell me how she is."
+      "evidence": "She'd rather be asked after than traded for. She'd be angry at the trade. She'd be angry at me for the stone first, and she'd be right."
+    },
+    {
+      "fact": "He wrote the letter himself, in starts, with the apologies in: the second is set, the hall is quiet, what is he to do, where is she so he can send their mother's shawl, and a line in her own hand.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "Please tell me where she is, so I can send her mother's shawl before the cold. Please let her write me a line herself."
     },
     {
       "fact": "He added one line of his own under his name, Tell her the loop still holds, so that the clerk would read nothing in it and his sister would know he wrote to her and not to him.",

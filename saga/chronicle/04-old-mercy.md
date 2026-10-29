@@ -525,27 +525,33 @@ Wren wrote something in the ledger, small, and shut it on her finger.
 
 Wren had gone, and Maelis, and the lamps were down to the far one and the brazier, and Darrow had the almoner's ink and a sheet of the House's paper on the end of his cot between them, and had not touched either.
 
-"Before a word goes on that," he said, "you'll have all of it. What it says, what it's for, and what I'm doing to you by asking. Hollis's price, and it's a fair one. Stop me if I go too fast."
+He did not sit close. He sat on his own cot with the width of the gap between them, the way he had sat since the night the lid came off, and Anselm, who noticed such things, kept to his.
 
-Anselm sat on the edge of his own cot with the key in his lap and his hands folded over it, the way he folded them when he was about to apologise, and did not.
+"Before a word goes on that," Darrow said, "you'll have all of it. What it says, what it's for, and what it could cost. Hollis made it his price, and I'd have done it without him, so hear it as mine. I'll not have one more man in this House sent somewhere on a paper he hasn't read."
 
-"It's to the clerk. In your hand, your words, the way you'd write if nobody had told you anything. You say the second one is set, under the far cots, two nights ago. You say the hall has gone quiet. You say you're frightened, which is true, and you ask what you're to do next, which is what she'd have you do. And you ask after her." He laid it out the way he laid out a line before a charge, one piece after the other, so that a man could see where he stood in it. "That's the letter."
+Anselm had the key in his lap and his hands folded over it, the way he folded them before he apologised, and did not.
+
+"And hear this first, so there's no mistaking where I am. You set that stone under forty beds and went up to your supper. I've not stopped seeing the trowel in your hand, and I'll not pretend I have." He let it sit. "And a man whose trade is lying put it there for you, with your sister's hair, and I know the shape of that. I was sent into a river on a paper once. So you get every word, Brother. Not because you've earned it. Because the other way is his."
+
+"Yes, Captain."
+
+"The letter's to the clerk. Your hand, your words, the way you'd write if nobody had told you anything. You say the second one is set, under the far cots, two nights ago. You say the hall's gone quiet. You say you're frightened, which is true, and you ask what you're to do next." He laid it out the way he laid a line before a charge, one piece after the other, so a man could see where he stood in it. "And then you ask after her. Not how she is. Where. You ask where she's kept, so you can send her warm things for the winter, because that's what a brother asks. And you ask for a line in her own hand, because you've had one in his and you want hers. That's the letter."
 
 "And what it's for."
 
-"Three things. First, that he believes it. If he thinks the thing is working he'll wait for it to work, and a man who's waiting isn't climbing. Second, that it's worth sending down the road. A thing like that goes to Calden, and somebody carries it, and that's one fewer on the terrace. Third, whatever he tells you to do next tells us what he's afraid of." Darrow looked at him. "And here's the rest. He meant the two names. I read him for a lie and there wasn't one. I could have your name down the Steps by dawn and two off his paper by noon, and I'm not doing it, and the reason I'm not is the House. Not your sister. If this letter's caught, the next one up comes without her mark, and that'll be on me, and on you for writing it, and I'm asking you to write it anyway." He stopped. "That's every word, Brother. That's what it's for."
+"For the House, three things. If he believes it, he waits for it to work, and a man who's waiting isn't climbing. If it's worth sending down the road, somebody rides to Calden with it, and that's one fewer on the terrace. And whatever he tells you to do next tells us what he's afraid of." Darrow looked at him across the gap. "For her, one thing, and it's the one I care about. We don't know where she is. Kept, he says. Comfortably, he says twice. A kept woman is kept somewhere, and a clerk who answers a brother's question about her shawl will tell us the place, or lie about it, and either one is more than we have. That's the only road I can see that goes toward her. The other one, the trade, sends you down the Steps into their hands and gets her nothing. I'll not take it. I read him for a lie and found none, and I'm still not taking it."
 
-The brazier ticked. Across it Hollis had the lad's hand in his and his eyes on the roof, and he had not moved.
+The brazier ticked. Across it Hollis had the lad's hand in his and his eyes on the roof, and had not moved.
+
+"And if it's caught," said Anselm.
+
+"Then she pays for it. The next letter up comes without her mark, and I'll have done that, and you for writing it. I'll not tell you otherwise." He held the almoner's eyes. "It's a risk on her. It's a better risk than leaving her where she is and doing nothing, which is what I've done for a month. That's my judgment. You can refuse it."
 
 Anselm looked at the paper for a long time.
 
-"Would you spend her for the House?" he said. "Say it. Not round it. I've had a month of round it."
+"She'd say ask," he said at last. "She'd rather be asked after than traded for. She'd be angry at the trade. She'd be angry at me for the stone first, and she'd be right." He took the key off his lap and set it on the cot, and picked up the pen, and dipped it, and wrote.
 
-"Yes."
-
-"Yes." He said it after Darrow, quietly, as if trying the weight of it. Then he took the key off his lap and set it on the cot, and picked up the pen, and dipped it, and wrote.
-
-He wrote the way he spoke, in starts, with the apologies in, and Darrow read it over his shoulder as it went down and did not change a word of it, because it was the letter of a frightened man and nothing he could have given him would have been. The second is set. The hall is quiet. I don't know what I'm to do now. Please tell me. Please tell me how she is.
+He wrote the way he spoke, in starts, with the apologies in, and Darrow read it over his shoulder as it went down and changed not a word, because it was the letter of a frightened man and nothing he could have given him would have been. The second is set. The hall is quiet. I don't know what I'm to do now. Please tell me. Please tell me where she is, so I can send her mother's shawl before the cold. Please let her write me a line herself.
 
 At the bottom, under his name, the almoner wrote one more line that Darrow had not given him, and sat back from it.
 
