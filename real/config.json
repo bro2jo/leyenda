@@ -302,9 +302,11 @@
       "drop": [
         "upper"
       ],
-      "add": [],
-      "source": "his message Tue 10/27, relaying the week plan from his dashboard review; PT Wed 10/28",
-      "why": "four unloaded days (Sat 10/24-Mon 10/26, away; not repaid, load rule 10); A is next in the knee rotation and cannot run Tue back-to-back with Wednesday's PT (load rule 2), so Fri takes A with a day clear of PT on either side; Upper B Tue (Block 1 starts), Upper A Sat (4 days apart); throwing Tue, Thu and Sat after the bike; two loaded days this week"
+      "add": [
+        "upperA"
+      ],
+      "source": "his decision Thu 10/29 (the week review in chat), after the 10/27 plan had put Upper A on Sat 10/31",
+      "why": "Upper A moves from Sat 10/31 back to its template day: Tue B to Thu A is the Add-On's minimum of 2 days apart (rule 4), the same gap the 10/27 plan had between Sat A and Mon 11/2 B; Thursday has no knee session (bike, throwing, then lifting), Friday's B is unchanged, and Mon 11/2 stays Upper B, so the Mon/Thu rhythm is back from Monday; Saturday is freed for bike, throwing and the optional power & mobility session (its first run)"
     },
     {
       "date": "2026-10-30",
@@ -316,15 +318,6 @@
       ],
       "source": "his message Wed 10/28 (PT cancelled; A moved to Wednesday)",
       "why": "Friday keeps a knee session: B, the rotation's next after Wednesday's A, with Thursday between"
-    },
-    {
-      "date": "2026-10-31",
-      "drop": [],
-      "add": [
-        "upperA"
-      ],
-      "source": "his message Tue 10/27, relaying the week plan from his dashboard review; PT Wed 10/28",
-      "why": "four unloaded days (Sat 10/24-Mon 10/26, away; not repaid, load rule 10); A is next in the knee rotation and cannot run Tue back-to-back with Wednesday's PT (load rule 2), so Fri takes A with a day clear of PT on either side; Upper B Tue (Block 1 starts), Upper A Sat (4 days apart); throwing Tue, Thu and Sat after the bike; two loaded days this week"
     },
     {
       "date": "2026-11-04",
