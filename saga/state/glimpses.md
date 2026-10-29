@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-27 · saying · The kitchen's verdict on the Mender, said daily and unfairly, and never where she can hear it: If the Mender's smiling, somebody's dying.
 - 2026-10-28 · house · Before the dawn bell a lay brother goes down the row with the water jug and fills every cup in the order he always does, and skips none, and nobody on the row says thank you, and he would not know what to do if they did.
 - 2026-10-28 · weather · By noon the cloud over the Steps has torn open on a hard, pale blue, and the wind through the gate carries woodsmoke up from somewhere far below, where people are cooking for people they know.
 - 2026-10-28 · body · He goes to hold his hands to the brazier out of habit and finds they are already warm, and stands there a moment anyway, because it is pleasant and nobody needs the spot.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-29 · overheard · From the kitchen door, the cook, to a lay brother asking whether the pot is ready yet: It's ready when it's ready. Then, lifting the lid: It's ready. Take it before it changes its mind.
 - 2026-10-29 · saying · A lay brother drops a whole armful of kindling on the turn of the stair, says to it, quite reasonably, Bells take it, and then picks up every stick himself, because the bells never do.
 - 2026-10-29 · body · Toward evening his hands get restless on the blanket, the way they did before a ride once, and he lets them, and finds he does not mind the feeling.
+- 2026-10-29 · house · The row's lamps go down early tonight. Wren walks the length of it once with her hand cupped round the last flame, and at the end she pinches it out, and nobody asks her to leave it.
