@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-27 · body · Halfway through the hour bell he notices he has been breathing with it, in on one stroke and out on the next, and that it costs him nothing.
 - 2026-10-27 · ledger · From Wren's ledger, a line under the night's lamps: Lamps lit at dusk, 40. Lamps that wanted a second taper, 3. Lay brothers who blamed the wick, 3.
 - 2026-10-27 · saying · The kitchen's verdict on the Mender, said daily and unfairly, and never where she can hear it: If the Mender's smiling, somebody's dying.
 - 2026-10-28 · house · Before the dawn bell a lay brother goes down the row with the water jug and fills every cup in the order he always does, and skips none, and nobody on the row says thank you, and he would not know what to do if they did.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-29 · ledger · From Wren's ledger, the morning's line: Cots on the row, 22. Cots made before the bell, 22. Cots made twice because the first was not to her liking, 1.
 - 2026-10-29 · weather · By early afternoon a wind has got into the gate's loose rope and sets it knocking at the post, slow and even, like someone patient who would like to come in.
 - 2026-10-29 · overheard · From the kitchen door, the cook, to a lay brother asking whether the pot is ready yet: It's ready when it's ready. Then, lifting the lid: It's ready. Take it before it changes its mind.
+- 2026-10-29 · saying · A lay brother drops a whole armful of kindling on the turn of the stair, says to it, quite reasonably, Bells take it, and then picks up every stick himself, because the bells never do.
