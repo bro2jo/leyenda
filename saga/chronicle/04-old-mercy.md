@@ -535,7 +535,7 @@ Anselm had the key in his lap and his hands folded over it, the way he folded th
 
 "Yes, Captain."
 
-"The letter's to your sister, the way every one of them has been. He'll read it at the winch-house before it goes anywhere, the way he reads them all, and he'll not know that you know it. So you write to her, and you let him read. Your hand, your words, the way you'd write if nobody had told you anything. You tell her the thing they said you had to finish is finished: the second one set, under the far cots, two nights ago, and the hall gone quiet since. You tell her you're frightened, which is true, and you ask her to ask them what you're to do next, since they're the ones with her ear." He laid it out the way he laid a line before a charge, one piece after the other, so a man could see where he stood in it. "And then you ask after her. Not how she is. Where. You ask where she's kept, so you can send her warm things for the winter, because that's what a brother asks. And you ask for a line in her own hand, because the last came in his and you'd like hers. That's the letter."
+"The letter's to your sister, the way every one of them has been. He'll read it at the winch-house before it goes anywhere, the way he reads them all, and he'll not know that you know it. So you write to her, and you let him read. Your hand, your words, the way you'd write if nobody had told you anything. You tell her the thing they said you had to finish is finished: the second one set, under the far cots, two nights ago, and the hall gone quiet since. You let her see you're frightened, which is true, and you ask her to ask them what you're to do next, since they're the ones with her ear. The words are yours. You know how your letters go. I don't." He laid it out the way he laid a line before a charge, one piece after the other, so a man could see where he stood in it. "And then you ask after her. Not how she is. Where. You ask where she's kept, so you can send her warm things for the winter, because that's what a brother asks. And you ask for a line in her own hand, because the last came in his and you'd like hers. That's the letter."
 
 "And what it's for."
 
@@ -551,13 +551,15 @@ Anselm looked at the paper for a long time.
 
 "She'd say ask," he said at last. "She'd rather be asked after than traded for. She'd be angry at the trade. She'd be angry at me for the stone first, and she'd be right." He took the key off his lap and set it on the cot, and picked up the pen, and dipped it, and wrote.
 
-He wrote the way he spoke, in starts, with the apologies in, and Darrow read it over his shoulder as it went down and changed not a word, because it was the letter of a frightened man and nothing he could have given him would have been.
+He wrote the way he spoke, in starts, with the apologies in, and Darrow read it over his shoulder as it went down and changed not a word. It said everything he had asked it to say and none of it in the words he had given, and it was better for that: a man writing to his sister about snow and a shawl, with the thing in the middle where a clerk would look for it and a sister would read past it.
 
-*Mirren. I have done the thing they told you I had to finish. The second is set, two nights ago, under the far cots, and the hall has gone quiet since, and I don't know what I'm to do now. Ask them for me. Ask them what I'm to do, and tell me.*
+*Mirren. I'm sorry this is late. The cage has gone down twice with nothing in it and I didn't trust the next one. We've had the first snow and a thaw on top of it and the Steps are all slush, Sister Pell has rung herself raw, and the Prior says every name every night the way she does. I'm well. I'm eating, before you ask.*
 
-*Tell me where you are. Not that you're well kept. Where. Mother's shawl is in the stores chest and I'll send it down before the cold if I know where to send it.*
+*You said in your last that they'd told you I had a thing to finish, and that when it was finished I could come down and fetch you home. It's finished. Two nights ago, the way I was shown, and the hall has been quieter since than I've known it. So tell them, and tell me when I'm to come, and I'll come.*
 
-*And write me a line yourself. One line. They wrote your last for you and I was glad of it, but I'd like one in your own hand.*
+*You didn't say where they have you. Is it in the town, or up at the Spire? Mother's shawl is in the stores chest with the camphor and I'll send it down the moment I have a door to send it to. You'll want it before the cold.*
+
+*And write to me yourself next time, if they'll let you. I was glad of the last, but your hand was always better than mine and I'd know it anywhere.*
 
 At the bottom, under his name, the almoner wrote one more line that Darrow had not given him, and sat back from it.
 

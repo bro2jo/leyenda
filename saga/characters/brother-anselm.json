@@ -30,7 +30,7 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#between-6"
   },
-  "last_seen_doing": "Heard the Captain say he has not stopped seeing the trowel in his hand, and every word of the letter and what it was for; asked what if it is caught and was answered without softening; said his sister would rather be asked after than traded for, and would be angry at him for the stone first; wrote the letter to his sister in his own hand and starts, the thing finished, the second set, the hall quiet, ask them what I am to do, where are you, a line in your own hand; added a line of his own, The loop still holds; folded it unsealed inside his shirt against the lock of hair; vowed to go down to the bell at Coldmere when it is done and ask aloud; lay down facing the Captain and did not sleep.",
+  "last_seen_doing": "Heard the Captain say he has not stopped seeing the trowel in his hand, and every word of the letter and what it was for; asked what if it is caught and was answered without softening; said his sister would rather be asked after than traded for, and would be angry at him for the stone first; wrote the letter to his sister in his own hand and his own shape, late and sorry, the snow and the bells, I'm eating, the thing finished two nights ago the way he was shown and the hall quieter since, tell me when I'm to come, where have they put you, mother's shawl, write to me yourself; added a line of his own, The loop still holds; folded it unsealed inside his shirt against the lock of hair; vowed to go down to the bell at Coldmere when it is done and ask aloud; lay down facing the Captain and did not sleep.",
   "now": "On his cot with the letter inside his shirt against his sister's hair, awake, the key back on its cord. He has written the false letter knowing every word's purpose, with a brother's questions in it for his sister and one true line, and means to answer at the bell at Coldmere when it is over.",
   "story_so_far": "",
   "quote": null,
@@ -180,10 +180,16 @@
       "evidence": "She'd rather be asked after than traded for. She'd be angry at the trade. She'd be angry at me for the stone first, and she'd be right."
     },
     {
-      "fact": "He wrote the letter to his sister, in starts, with the apologies in: the thing they said he had to finish is finished, the second set and the hall quiet; she is to ask them what he is to do; where is she, so he can send their mother's shawl; and a line in her own hand.",
+      "fact": "He wrote the letter to his sister in the shape his letters take, late and sorry, the snow and the bells and whether he is eating, with the thing in the middle: the thing they told her he had to finish is finished, two nights ago, the way he was shown, and the hall quieter since; tell me when I'm to come.",
       "chapter": "04",
       "scene": "between-6",
-      "evidence": "Tell me where you are. Not that you're well kept. Where. Mother's shawl is in the stores chest and I'll send it down before the cold if I know where to send it."
+      "evidence": "It's finished. Two nights ago, the way I was shown, and the hall has been quieter since than I've known it. So tell them, and tell me when I'm to come, and I'll come."
+    },
+    {
+      "fact": "He asked where they have her, the town or the Spire, so he can send their mother's shawl, and asked her to write to him herself next time.",
+      "chapter": "04",
+      "scene": "between-6",
+      "evidence": "Is it in the town, or up at the Spire? Mother's shawl is in the stores chest with the camphor and I'll send it down the moment I have a door to send it to."
     },
     {
       "fact": "He added one line of his own under his name, The loop still holds, so that the clerk would read nothing in it and his sister would know it was him writing and not what they had him write.",
