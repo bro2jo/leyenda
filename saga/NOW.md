@@ -14,7 +14,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told)
 - **Against him:** Marrant has named his price at the bars: the almoner sent down, and two names off his paper, by the dawn bell, to be asked under the Prior's roof; the grey cloaks read every letter up and down at the winch-house; one sliver is in the wall under the row, the other in Maelis's coat; one grey cloak has gone down the Steps with a horse and not come back; the banners on the Holloway are a day off.
 - **Next:** What the House is for, by the dawn bell: three answers in the room, and his own.
-- **Open choice (a small one):** What does Darrow do with the almoner? 1. Expose him to the Prior and the House. / 2. Shield him and say nothing of the satchel. / 3. Use him to feed the Confessor false word. *[Resolve 10]*
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

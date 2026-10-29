@@ -85,7 +85,11 @@
               "Guile": 3
             }
           ],
-          "default": 2
+          "default": 2,
+          "answer": {
+            "option": 3,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -413,31 +417,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 4,
-    "chapter": 4,
-    "scene": "4",
-    "opened": "2026-10-28",
-    "beat": true,
-    "ask": "What does Darrow do with the almoner?",
-    "options": [
-      "Expose him to the Prior and the House.",
-      "Shield him and say nothing of the satchel.",
-      "Use him to feed the Confessor false word. *[Resolve 10]*"
-    ],
-    "bearing": [
-      {
-        "Candor": 3
-      },
-      {
-        "Mercy": 3
-      },
-      {
-        "Guile": 3
-      }
-    ],
-    "default": 2
-  },
+  "open_micro": null,
   "temptation": {
     "planted": []
   },

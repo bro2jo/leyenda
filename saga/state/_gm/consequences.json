@@ -1024,6 +1024,39 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c04.6",
+      "made": {
+        "chapter": 4,
+        "scene": "4",
+        "date": "2026-10-28"
+      },
+      "chose": "Use him: Anselm's next letter down carries what the Captain wants the Confessor to believe, in Anselm's own hand and with his consent; the Confessor's price, the almoner for two names, refused",
+      "now": {
+        "approval": {
+          "wren": 6,
+          "hollis": -2,
+          "maelis": -2
+        },
+        "bearing": {
+          "guile": 3
+        }
+      },
+      "due": [
+        {
+          "id": "c04.6a",
+          "when": "ch04:climax",
+          "at": "ch04:climax",
+          "weight": "scene",
+          "what": "The false letter's fate, by the week's tier (the arc's Downstream for the almoner's beat, option 3): believed, and the Confessor moves later and a man short; or caught, and the almoner is lost to the House. The climax's second entry sets the flag the arc names",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Expose him to the Prior and the House.",
+        "Shield him and say nothing of the satchel."
+      ]
     }
   ],
   "rules": [
