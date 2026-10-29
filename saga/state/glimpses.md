@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-23 · house · Wren has chalked a small tally on the inside of the kitchen door, where only the kitchen can read it, and rubs one mark out with her thumb every time the cage comes up with what the chit said it would.
 - 2026-10-27 · body · Walking the row after the dawn bell he finds he has stopped counting the cots he passes, which he has done since the litter, and does not know when he stopped.
 - 2026-10-27 · weather · A thaw-wind came up the Steps in the night and the snow on the Last Hundred has gone to grey slush that holds a bootprint for an hour and then forgets it.
 - 2026-10-27 · overheard · From the kitchen door, the cook to a lay brother stamping grey slush off his boots on her clean flags: Leave the Steps outside. They've plenty of themselves.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-29 · overheard · From the kitchen before the dawn bell, the cook, low, to the dough under the cloth: Rise, then. Nobody up here is carrying you.
 - 2026-10-29 · weather · The rain went off in the small hours and left the Steps scrubbed and dark; from the gate this morning you can count the landings a long way down before the mist takes them.
 - 2026-10-29 · body · He wakes before the bell and lies still and lets the bell come to him, and the waiting costs nothing; there was a season when lying still was the hardest work he did.
+- 2026-10-29 · house · Someone has set the row's wet boots by the brazier to dry, toes in, smallest to largest; move one and within the hour it is back in its place, and nobody owns to having done it.
