@@ -1000,7 +1000,7 @@
         "scene": "between-5",
         "date": "2026-10-28"
       },
-      "chose": "Asked Hollis, Wren and Anselm in turn what each would do with the price and said he is thinking of the letters: Hollis would let the Confessor wait and shield the brother, and set his price (tell the brother every word before any lie goes down in his hand); Wren laid out how a letter down could work (one he'd write, read at the winch-house) and asked what if it is caught; Darrow said the next letter up would come without the hook in her M; Anselm said he would write it and sit where he can be seen; Maelis asked who signs it and ordered both hands to the dawn forms",
+      "chose": "Asked Hollis, Wren and Anselm in turn what each would do with the price and said he is thinking of the letters: Hollis would let the Confessor wait and shield the brother; Wren laid out how a letter down could work (one he'd write, read at the winch-house) and asked what if it is caught; Darrow said the next letter up would come without the hook in her M, with Anselm there to hear it; Hollis set his price (the brother has heard the cost, not the words: he reads every word and knows what each is for before it goes down); Anselm said he would write whatever he is given and sit where he can be seen; Maelis asked who signs it and ordered both hands to the dawn forms",
       "now": {
         "approval": {
           "hollis": 1,
@@ -1013,7 +1013,7 @@
           "when": "later",
           "at": "later",
           "weight": "color",
-          "what": "Hollis's price: a captain who sends a lie down the mountain in another man's hand tells that man every word of it first, and what it costs him if it is found. Fire where Darrow tells Anselm the whole of a letter's purpose before it goes down, where he sends one without, or where Hollis asks whether he did",
+          "what": "Hollis's price on the letters road: Anselm has heard what a caught letter costs; before any letter goes down in his hand he reads every word and knows what each is for, not what he is told it is for. Fire where Darrow shows Anselm the whole letter and its purpose before it goes down, where he sends one with its purpose kept from him, or where Hollis asks whether he did",
           "fits": "present.hollis || present.brother_anselm",
           "priority": 2,
           "valid_until": "book1",

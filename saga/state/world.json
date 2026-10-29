@@ -86,7 +86,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "What the House is for, with a price on the almoner by the dawn bell: the almoner for two names off the Confessor's paper, the Prior's roof under the answer, the price read as real and worth nothing, since the names come off Marrant's paper only, and one grey cloak gone down the Steps with a horse.",
-  "last_beat": "\"Tell him every word,\" he said. \"That's my price. It's cheaper than his.\" Wren wrote something in the ledger, small, and shut it on her finger.",
+  "last_beat": "\"Not whatever you give him,\" he said. \"Every word, and what it's for. That's my price. It's cheaper than his.\" Wren wrote something in the ledger, small, and shut it on her finger.",
   "companions": {
     "maelis": {
       "approval": 29,

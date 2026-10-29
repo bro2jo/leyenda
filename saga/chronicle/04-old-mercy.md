@@ -495,7 +495,7 @@ Nobody said anything. The brazier ticked.
 
 "That's what I'm thinking," he said. "The letters."
 
-"I know you are," said Hollis. "You've had the face on since the gate." He leaned forward on the chair arms. "Then hear this from the one man here who's lied to a lad every bell for a week. I'd not do it. A captain doesn't send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it's found, and his sister. You tell the brother all of it, Captain, or you do it with your own name on it and go down the Steps yourself. There's no third way that isn't the Confessor's."
+"I know you are," said Hollis. "You've had the face on since the gate." He leaned forward on the chair arms. "Then hear this from the one man here who's lied to a lad every bell for a week. I'd not do it. But if you do: he's sat there and heard what it costs. He's not heard what it says. A captain doesn't send a lie down a mountain in another man's hand without that man reading every word of it first, and knowing what each one's for. Not what you tell him it's for. What it's for. Or you put your own name on it and go down the Steps yourself. There's no third way that isn't the Confessor's."
 
 "Brother."
 
@@ -517,6 +517,6 @@ Darrow looked at Maelis, because she had sat through all of it with her hands in
 
 She went up the row. Hollis watched her go, and then Darrow, for a long moment, with the look he gave a man before deciding where to put him in a line.
 
-"Tell him every word," he said. "That's my price. It's cheaper than his."
+"Not whatever you give him," he said. "Every word, and what it's for. That's my price. It's cheaper than his."
 
 Wren wrote something in the ledger, small, and shut it on her finger.

@@ -28,8 +28,8 @@
     "place": "saint-ysoldes",
     "anchor": "chronicle/04-old-mercy.html#between-5"
   },
-  "last_seen_doing": "Said he would do nothing with the price: let the Confessor wait, shield the brother, say nothing of the satchel, and let the grey cloaks camp till the thaw; said a captain does not send a lie down a mountain in another man's hand without that man knowing every word of it first; set his price: tell the brother every word.",
-  "now": "In his chair at the Captain's cot with the new cup still on. His price is set: the brother is told every word before any letter goes down, or the Captain does it in his own name and goes down himself.",
+  "last_seen_doing": "Said he would do nothing with the price: let the Confessor wait, shield the brother, say nothing of the satchel, and let the grey cloaks camp till the thaw; said the brother has heard what a caught letter costs but not what the letter says, and that a captain does not send a lie down a mountain in another man's hand without that man reading every word first and knowing what each is for; set his price: every word, and what it's for.",
+  "now": "In his chair at the Captain's cot with the new cup still on. His price is set: the brother reads every word of any letter before it goes down and knows what each is for, or the Captain puts his own name on it and goes down himself.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -452,16 +452,22 @@
       "evidence": "He said the names come off his paper. He never said whose paper they go on next."
     },
     {
-      "fact": "He holds that a captain does not send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it is found.",
+      "fact": "He says the brother has sat there and heard what a caught letter costs, but has not heard what it says.",
       "chapter": "04",
       "scene": "between-5",
-      "evidence": "A captain doesn't send a lie down a mountain in another man's hand without that man knowing every word of it first, and what it costs him if it's found, and his sister."
+      "evidence": "he's sat there and heard what it costs. He's not heard what it says."
     },
     {
-      "fact": "His price for the letters is that the brother is told every word; he calls it cheaper than the Confessor's.",
+      "fact": "He holds that a captain does not send a lie down a mountain in another man's hand without that man reading every word of it first and knowing what each one is for, not what he is told it is for.",
       "chapter": "04",
       "scene": "between-5",
-      "evidence": "\"Tell him every word,\" he said. \"That's my price. It's cheaper than his.\""
+      "evidence": "without that man reading every word of it first, and knowing what each one's for. Not what you tell him it's for. What it's for."
+    },
+    {
+      "fact": "His price for the letters is every word, and what it is for, not whatever the Captain gives the brother; he calls it cheaper than the Confessor's.",
+      "chapter": "04",
+      "scene": "between-5",
+      "evidence": "Every word, and what it's for. That's my price. It's cheaper than his."
     }
   ],
   "relationships": [
