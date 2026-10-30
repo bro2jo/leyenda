@@ -168,3 +168,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-29#8,2026-10-29,,snack,Glutino original pretzel sticks (gluten-free),"1 serving (about 32 pretzels, 30 g)",110,1,21,2,0,0,1,430,0,0,0,3,0.1,0,0,0,label,label photo; Mg and zinc estimated
 2026-10-29#9,2026-10-29,,dinner,Kirkland Signature supreme cauliflower crust pizza,5 slices (assumed 8 slices a pizza: 5/8 pizza = 2.5 servings),775,35,77.5,37.5,2.5,20,10,2250,728,883,4,62,4,12,0.5,125,library+estimate,listing values per 1/4 pizza x 2.5; slices per pizza assumed (8): asked
 2026-10-29#10,2026-10-29,,dinner,BBQ chicken wing,3 wings,285,18,12,18,0,4.5,9,960,180,24,0.9,18,1.5,0,0,60,estimate,"brand not given; per-wing estimate as on 10/17 (~95 kcal, 6 g P)"
+2026-10-29#11,2026-10-29,,snack,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,label,label photo; Mg and zinc estimated
