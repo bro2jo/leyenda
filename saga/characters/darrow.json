@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "5",
+    "scene": "between-7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-5"
+    "anchor": "chronicle/04-old-mercy.html#between-7"
   },
-  "last_seen_doing": "Fed the grey hound from his left hand, held her head for the splint, felt the old cellars' cold through the kennel grate, could not call her off the Confessor's lymer, sat down by her instead of chaining her, and named her Ash; she followed him up the ramp.",
-  "now": "At his cot in the infirmary hall with Ash lying under it on her new splint. He has felt through the kennel grate the same cold as the stone in the wall, and Maelis saw his hand come away.",
+  "last_seen_doing": "Took the knucklebones off Hollis and played him for the story of the Sixth's mule's-shoe brand; played left-handed with both hands bad and lost at the threes; chanted the loser's rhyme in full; paid a story told true, how he broke his nose; heard the brand's story the way the Sixth tells it to the Second, the song, and the true part.",
+  "now": "At his cot with the bones lost and the Sixth's brand half-won: the story they tell the Second, the song, and one true line. The hound has the fifth bone.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1476,6 +1476,24 @@
       "evidence": "there was one left in his mouth from the morning, from the brazier gone grey before the dawn bell"
     },
     {
+      "fact": "He played the knucklebones left-handed, the right's fingertips still wrapped and the left thumb bound, and lost at the threes.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "On the threes the thrown bone came down past his knuckles and he grabbed for it and got a handful of blanket."
+    },
+    {
+      "fact": "He broke his nose at fourteen on a well-windlass at home, letting the bucket down without a hand on the crank to show a girl from the lower holding, and looking at her when she smiled.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "\"A well-windlass,\" he said. \"At home. I was fourteen."
+    },
+    {
+      "fact": "He was standing still when the crank came round.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "\"I was standing still.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1789,6 +1807,10 @@
     {
       "chapter": "04",
       "scene": "5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-7"
     },
     {
       "chapter": "tale01",

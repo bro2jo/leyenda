@@ -678,3 +678,70 @@ The bitch went under the cot, turned round twice, and lay down with her nose on 
 > Inspiration 1 → 2
 > Works 0 → 1
 > XP 2,393 → 2,438
+
+### Between — The One We Tell the Second
+
+Hollis kept the knucklebones in his shirt, and he did not hand them over so much as let them be taken.
+
+"You want a story," he said. "Everyone wants a story off a one-legged man. Which."
+
+"The Sixth's brand. The mule's shoe."
+
+Hollis looked at him for a long moment, the way he looked at a man who had come into a tent uninvited and sat on the good stool. "Who's been telling you about the Sixth's brand?"
+
+"Cobb has it chalked on his door."
+
+"Cobb would. Cobb chalks everything." He nodded at the blanket. "Play, then. Same as before. A story told true. I'll warn you I've been practising."
+
+Darrow played left-handed, because the right's fingertips were still somewhere in Maelis's linen and the left had a storesman's knot round the thumb, and the bones knew it before he did. Ones he swept. Twos he swept, just. On the threes the thrown bone came down past his knuckles and he grabbed for it and got a handful of blanket.
+
+`[FINESSE · DC 11]` d20 **5** +0 finesse = **5** — *Failure*
+
+Under the cot, at the sound of the bones on the blanket, a grey nose came out an inch and went back in.
+
+"Chant," said Hollis.
+
+"*One for the stone and two for the crown, three for the knight who won't come down*—"
+
+"All of it."
+
+"*Four for the bell and five for the hand, and the bones go to him who can stand.*"
+
+"And they come to me, so you can draw your own conclusions." Hollis gathered them up, all but the one that had gone off the blanket's edge, and did not look for it. "Pay. The nose. I've looked at that nose since the ford. Who broke it?"
+
+Darrow had been hoping for anything else.
+
+"A well-windlass," he said. "At home. I was fourteen. A girl from the lower holding came up for water, and I was letting the bucket down to show her I could do it without a hand on the crank. She smiled at me. I looked at her. The crank came round."
+
+Hollis's face did nothing at all for a breath, and then everything, and the laugh that came out of him went up the row like a dropped tray and woke two men and the night novice.
+
+"The fastest feet in the Lowmarch."
+
+"I was standing still."
+
+"You were *standing still*." He wiped his eyes with the back of his wrist. "Bells take it. That's worth the game. That's worth two." And because he had won, and had been paid in better coin than he had expected, he was generous, which in Hollis meant he would tell it and tell it wrong.
+
+"The first captain of the Sixth went into a ford," he said, "the oldest ford there is, before your grandfather's grandfather, and every grey the Sixth had bolted at the first clan horn, and a baggage mule walked into the river on its own, and stood over the captain in the current, and would not move till they'd got him up onto its back. So the Sixth swore every grey it ever bought would carry the mule's shoe on the near quarter, for the one beast in the Lowmarch with sense." He sat back. "That's the story."
+
+"That's not true."
+
+"No. That's the one we tell the Second. You lost. You get the one we tell the Second." And then, because the hall was awake now anyway, and the lad was breathing beside him, and he had wanted to for a fortnight and nobody had given him a reason, he sang, low and very badly, in a voice that had been made for rivers and been put to this instead:
+
+> *Sixty men and a mule went down to the river,*
+> *sixty men and a mule, and the mule was the giver,*
+> *for the mule had the sense that the captain had not,*
+> *and the mule's at the inn and the captain is shot.*
+
+Somebody down the row said *Bells take you, Ser* into a pillow, and meant it kindly.
+
+"There's forty more," said Hollis. "They get worse."
+
+"And the true one."
+
+Hollis turned the bones over in his fist. "The Second gave it us," he said. "At a fair, the year the Sixth was raised, when the Sixth was farm sons on borrowed horses and the Second had been riding since before there were roads. Their captain paid the man with the iron to burn a mule's shoe on every grey we bought, so the Lowmarch would know us for mule-men. And we wore it. Through every ford since. That's all the true you've won." He looked at the edge of the blanket, and the floor beyond it, and the dark under the Captain's cot. "Where's my fifth bone?"
+
+There was a small, satisfied sound from under the cot, and then the sound of something being chewed with great care.
+
+Hollis looked at the dark for a long time.
+
+"She's having the stone," he said. "Fine. She's earned it. She's the only one in this hall who's caught anything all week."

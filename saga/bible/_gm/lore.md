@@ -301,10 +301,10 @@ The Lowmarch's road song, three verses everybody knows and nine nobody agrees on
 > and she counted us back with a toss of her chin.
 
 ## song.sixth — Sixty and a Mule
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch04:between-7 · **names:** —
 - **use:** Hollis in his cups; a lance marching out; a joke on the Sixth.
 
-The Sixth's marching song, which has more verses than the Sixth has men and gets worse as it goes. ⟪gm: b4.4, the Sixth "singing badly".⟫
+The Sixth's marching song, which has more verses than the Sixth has men and gets worse as it goes. The Sixth tells outsiders that its mule's-shoe brand honours a baggage mule that stood over its first captain in a ford when every grey had bolted. Among themselves they say otherwise: the Second paid the brander at the fair of the Sixth's raising to mark the farm sons' borrowed greys as a mule-men's, and the Sixth kept the mark out of spite and has carried it through every ford since. ⟪gm: b4.4, the Sixth "singing badly".⟫
 
 > Sixty men and a mule went down to the river,
 > sixty men and a mule, and the mule was the giver,

@@ -79,10 +79,12 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The knucklebones rhyme** — chanted by whoever is losing: *Three for the knight who won't come down, / four for the bell and five for the hand.* (Hollis, losing the stone to Darrow, Ch 1 Between).
 - **The Lowmarch counting rhyme** — a children's counting rhyme: *Count the lances on the west bank, child, / count them, one through nine. / Count them going, count them coming home, / and never get the same sum twice.* (Prologue, epigraph).
 - **The dusk verse** — Said, not sung, to the rope by whoever rings Old Mercy at dusk, one line to each of four strokes; nobody below hears it. *Day's done and the door's shut. / The blade stays below. / What climbed, we keep. / And the bell says so.* Sister Pell knocked it out on the undercroft door for Darrow and told him the third line is not his to say (Ch 4 Between).
+- **Sixty and a Mule** — The Sixth's marching song, sung by Hollis low and very badly at the Captain's cot: *Sixty men and a mule went down to the river, / sixty men and a mule, and the mule was the giver, / for the mule had the sense that the captain had not, / and the mule's at the inn and the captain is shot.* He says there are forty more, and they get worse (Ch 4 Between).
 
 ## Histories
 
 (A piece of the realm's past the page has told, the first time: **Name** — what was said and by whom (first appearance). The Annals hold the longer telling.)
+- **The Sixth's mule's shoe** — Two stories. The one the Sixth tells the Second: a baggage mule walked into a ford and stood over the Sixth's first captain when every grey had bolted, and the Sixth swore its greys would carry the mule's shoe for the one beast with sense. The one Hollis gave Darrow as the true part: the Second paid the brander at the fair the year the Sixth was raised, when the Sixth were farm sons on borrowed horses, so the Lowmarch would know them for mule-men, and the Sixth wore it through every ford after (Ch 4 Between).
 
 ## Sayings
 - **"Kneel to that."** — Hollis's answer to the heralds' proclamation, on the cart from Harrow Ford; nobody laughed (Prologue).

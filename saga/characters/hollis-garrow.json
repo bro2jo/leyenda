@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "5",
+    "scene": "between-7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-5"
+    "anchor": "chronicle/04-old-mercy.html#between-7"
   },
-  "last_seen_doing": "Asked what the dog was, and gave her name its reasons: her colour, and what's left when the fire's gone.",
-  "now": "In his chair by the brazier with the lad's blanket and the new cup strapped on, the Captain's hound under the next cot.",
+  "last_seen_doing": "Let the Captain take the knucklebones from his shirt; won at the threes; made him chant the whole of the loser's rhyme; asked for the story of the nose and laughed loud enough to wake the row; told the Sixth's brand the way the Sixth tells the Second, and said so; sang a verse of the Sixth's marching song, badly; gave one true part: the Second gave it them; let the hound keep the fifth bone.",
+  "now": "At the Captain's cot with four knucklebones and the lad's hand, the hall awake from his laughing and his singing. The hound has his fifth bone and he has let her keep it.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -480,6 +480,42 @@
       "chapter": "04",
       "scene": "5",
       "evidence": "And because she's what's left when the fire's gone."
+    },
+    {
+      "fact": "He keeps the knucklebones in his shirt.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "Hollis kept the knucklebones in his shirt"
+    },
+    {
+      "fact": "The Sixth tells the Second that its brand honours a baggage mule that walked into a ford and stood over the Sixth's first captain when every grey had bolted at the first clan horn.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "and a baggage mule walked into the river on its own, and stood over the captain in the current"
+    },
+    {
+      "fact": "He says that is the story the Sixth tells the Second, and that it is not true.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "\"No. That's the one we tell the Second. You lost. You get the one we tell the Second.\""
+    },
+    {
+      "fact": "He sang a verse of the Sixth's marching song, Sixty and a Mule, low and very badly, and says there are forty more and they get worse.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "\"There's forty more,\" said Hollis. \"They get worse.\""
+    },
+    {
+      "fact": "He says the true story is that the Second gave the Sixth its brand: at a fair the year the Sixth was raised, the Second's captain paid the brander to burn a mule's shoe on every grey the Sixth bought, so the Lowmarch would know them for mule-men, and the Sixth wore it through every ford since.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "Their captain paid the man with the iron to burn a mule's shoe on every grey we bought, so the Lowmarch would know us for mule-men."
+    },
+    {
+      "fact": "He let the hound keep his fifth knucklebone, the stone.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "\"She's having the stone,\" he said."
     }
   ],
   "relationships": [
@@ -730,6 +766,10 @@
     {
       "chapter": "04",
       "scene": "5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-7"
     }
   ]
 }

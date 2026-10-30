@@ -511,13 +511,28 @@
           "sources": [
             "ch04:between-2"
           ]
+        },
+        {
+          "name": "Sixty and a Mule",
+          "text": "The Sixth's marching song, sung by Hollis low and very badly at the Captain's cot: *Sixty men and a mule went down to the river, / sixty men and a mule, and the mule was the giver, / for the mule had the sense that the captain had not, / and the mule's at the inn and the captain is shot.* He says there are forty more, and they get worse (Ch 4 Between).",
+          "sources": [
+            "ch04:between-7"
+          ]
         }
       ],
       "intro": "(A song or a rhyme the page has sung, the first time: **Title** — the lines sung, and who sang them (first appearance). The rest of it stays in the Annals until the page has it.)"
     },
     {
       "name": "Histories",
-      "entries": [],
+      "entries": [
+        {
+          "name": "The Sixth's mule's shoe",
+          "text": "Two stories. The one the Sixth tells the Second: a baggage mule walked into a ford and stood over the Sixth's first captain when every grey had bolted, and the Sixth swore its greys would carry the mule's shoe for the one beast with sense. The one Hollis gave Darrow as the true part: the Second paid the brander at the fair the year the Sixth was raised, when the Sixth were farm sons on borrowed horses, so the Lowmarch would know them for mule-men, and the Sixth wore it through every ford after (Ch 4 Between).",
+          "sources": [
+            "ch04:between-7"
+          ]
+        }
+      ],
       "intro": "(A piece of the realm's past the page has told, the first time: **Name** — what was said and by whom (first appearance). The Annals hold the longer telling.)"
     },
     {

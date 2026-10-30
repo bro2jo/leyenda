@@ -1090,6 +1090,37 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c04.8",
+      "made": {
+        "chapter": 4,
+        "scene": "between-7",
+        "date": "2026-10-29"
+      },
+      "chose": "Took the knucklebones off Hollis and played him for the Sixth's brand; lost at the threes, left-handed with both hands bad; chanted the loser's rhyme and paid a story told true, how he broke his nose on a well-windlass at fourteen looking at a girl; got the brand the way the Sixth tells the Second, and the song, and one true part: the Second gave it them; Ash took the fifth bone under the cot",
+      "now": {
+        "approval": {
+          "hollis": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c04.8a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Ash has Hollis's fifth knucklebone under the Captain's cot and is chewing it; Hollis let her keep it, the stone. The set is four until she gives it up. Fire where the bones come out again and are one short, where Ash brings the bone, or where Hollis says she has it",
+          "fits": "present.hollis || present.ash",
+          "priority": 1,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-7"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

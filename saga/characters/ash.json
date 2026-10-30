@@ -22,12 +22,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "5",
+    "scene": "between-7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-5"
+    "anchor": "chronicle/04-old-mercy.html#between-7"
   },
-  "last_seen_doing": "Ate only from the Captain's left hand, growled at the kennel grate, fought the Confessor's lymer through the bars until her mouth bled, came off the bars to her new name, and followed him up the ramp to lie under his cot.",
-  "now": "Under the Captain's cot in the infirmary hall on a new splint; the lay brothers sweep round her.",
+  "last_seen_doing": "Put her nose out from under the cot at the sound of the bones and took it back in; took the knucklebone that went off the blanket's edge and lay chewing it under the cot.",
+  "now": "Under the Captain's cot on her nest of blanket with Hollis's fifth knucklebone, chewing it with great care.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -54,6 +54,12 @@
       "chapter": "04",
       "scene": "5",
       "evidence": "lay down against him with the new splint across his boot"
+    },
+    {
+      "fact": "She took the fifth knucklebone when it went off the blanket and kept it under the Captain's cot.",
+      "chapter": "04",
+      "scene": "between-7",
+      "evidence": "There was a small, satisfied sound from under the cot, and then the sound of something being chewed with great care."
     }
   ],
   "relationships": [
@@ -84,6 +90,10 @@
     {
       "chapter": "04",
       "scene": "5"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-7"
     }
   ]
 }

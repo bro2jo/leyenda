@@ -20,3 +20,4 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-28T01:19:41,ch04-s3-sit-still,resolve,12,4,,,+0 resolve +3 proficiency +3 The Mender's Patience III,10,PARTIAL (success at a cost),
 2026-10-29T01:24:33,ch04-s4-the-price,resolve,13,2,,,+0 resolve +3 proficiency +3 Warden's Eye III,8,FAILURE,
 2026-10-29T01:38:41,ch04-s4-the-price#reroll,resolve,13,12,,,+0 resolve +3 proficiency +3 Warden's Eye III,18,SUCCESS,
+2026-10-30T15:15:33,ch04-between-7-knucklebones,finesse,11,5,,,+0 finesse,5,FAILURE,
