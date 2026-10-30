@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-28 · verse · Over the pots, someone in the kitchen has the one verse and no more: Oh the grey mare of Edgemoor, she carried me far, by the Wend and the Holloway, by the bell and the star. Then round again from the top.
 - 2026-10-28 · ledger · From Wren's ledger, under the day's airing: Blankets hung on the wall in the noon wind, 30. Blankets the wind tried to take, 2. Blankets it got, 0.
 - 2026-10-28 · overheard · From the scullery, a lay brother up to his elbows in the pots, to whoever has just set down another: Is that the last? — It's the last of these. — That's not what I asked.
 - 2026-10-28 · house · Wren runs out of ink halfway down the afternoon's column and finishes it in a stub of charcoal from the brazier, and anyone who looks can see the charcoal half is the neater.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-29 · weather · The wind drops after dark and the night comes in clear and hard; by the late bell the wet on the landings has gone stiff and quiet, and the stars over the Steps are the small, sharp kind.
 - 2026-10-30 · house · Under the Captain's cot, Ash has got hold of the end of a blanket nobody remembers giving her, and has made a nest of it with the care of someone who means to stay.
 - 2026-10-30 · weather · A bright, still noon on the Steps; the frost on the shaded landings has not given up, and the lay brothers coming up go round it, not over it, the way you go round a sleeping dog.
+- 2026-10-30 · overheard · From the stair, two novices carrying a bench between them and losing the argument about it: Your end's lower. — It's the stair that's lower. — Then lift the stair.
