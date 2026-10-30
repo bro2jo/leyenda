@@ -232,6 +232,7 @@ Full text: Working Rules, load rules 3–7.
 | 2 | + Snap-down (the second exercise; the plan's cap is two) | 2 × 5 → 3 × 5 → 3 × 8 | The same |
 | 3 | Low vertical jump and landing (in the pogo's place) | 2 × 5 → 3 × 5 | Landings quiet and even, a clean morning after |
 | 4 | **Drop vertical jump** | A filmed check, not a ladder: the plan's list (symmetrical loading, controlled knee and hip flexion, no major valgus collapse, stable trunk, quiet landing, no pain or swelling afterward). Box height set when it's due | **Cleared by Nick (10/28)** once rung 3 has run cleanly. Not due before then |
+| 5 | **Single-leg pogo**, each leg, small | 2 × 5 (hop, land, reset) → 3 × 5 → 3 × 8 repeated (continuous, quiet) | **The plan's return-to-run gate asks for it** ("pain-free repeated single-leg pogos"), so running waits on this rung. Left control first: the single-leg squat test is the measure |
 
 - **Plan's dose:** 2 exercises · 2–3 sets · 5–8 contacts a set.
 - **Guards (the graft's weak window, through ~11/16):** one new rung per session · one variable per session (sets, contacts or the rung) · a morning that isn't clean reverses the impact block first (back one rung; on rung 1, out until a clean morning), then the session's other changes (load rule 5).
@@ -249,7 +250,7 @@ Baseline = 10/18 (clean on 10/19). One change each. Trimmed in the 10/21 review 
 
 | # | Exercise | 10/18 | 10/25 | Ladder [plan Phase 4 target] |
 |---|---|---|---|---|
-| WU | Bike · BOSU SL balance + ball toss (L) · eyes-closed drill | Bike 8 min (1.76 mi); BOSU skipped (time) | Bike 8 · ball toss 3 × 45 s · **eyes-closed 1 min, both feet on the dome, inside the rack, hands near the uprights (first at home)** · **impact: pogos, one change from Wednesday's (3 × 5) if Thursday's morning was clean; otherwise 2 × 5 or out** | Ball toss + perturbation · impact per its ladder (above) |
+| WU | Bike · BOSU SL balance + ball toss (L) · eyes-closed drill | Bike 8 min (1.76 mi); BOSU skipped (time) | Bike 8 · ball toss 3 × 45 s · **eyes-closed 1 min, both feet on the dome, inside the rack, hands near the uprights (first at home)** · **impact: two-leg pogos 3 × 8, the top of rung 1** (Thursday's morning was clean after Wednesday's 2 × 15, so the rung's top dose is inside what the knee has already taken; the single-leg hops wait for rung 5) | Ball toss + perturbation · impact per its ladder (above) |
 | 1 | Forward step-down, 6.5", **left only** | 3 × 10 each leg; left challenging, slight hip drop at the bottom | **L 3 × 10; each set ends at the first hip drop.** The third set counts only with the hip level | 7.5" → 8" once 3 × 10 is level [3 × 8–12] |
 | 2 | SL sit-to-stand | 20" × 3 × 12 each leg, unassisted (18" seat unavailable); left slightly shaky | **18", left unassisted, 2 × 12** · R same. Needs help → 20" × 3 × 12 | 18" × 3 × 12 → DB in hand [SL leg press 3 × 8–10] |
 | 3 | RDL, DBs — pair with 6 | 50 lb/hand × 3 × 10, ~4 left | **55 × 3 × 8** | → 60 × 3 × 8 [3–4 × 6–10] |
