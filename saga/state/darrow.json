@@ -3,11 +3,11 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 7,
   "rank": "Kindled",
-  "xp": 2488,
+  "xp": 2513,
   "xp_this_level": 2100,
   "xp_next_level": 2800,
   "proficiency": 3,
-  "hp_max": 48,
+  "hp_max": 50,
   "attributes": {
     "might": {
       "score": 13,
@@ -20,12 +20,12 @@
       "banked": false
     },
     "vigor": {
-      "score": 10,
-      "raw": 10,
+      "score": 11,
+      "raw": 11,
       "cap": 14,
       "mod": 0,
-      "temper": 17,
-      "next_at": 18,
+      "temper": 18,
+      "next_at": 32,
       "fell": 15,
       "banked": false
     },
@@ -34,7 +34,7 @@
       "raw": 11,
       "cap": 12,
       "mod": 0,
-      "temper": 34,
+      "temper": 36,
       "next_at": 50,
       "fell": 18,
       "banked": false
@@ -236,7 +236,7 @@
       "tree": "Sport",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 6,
+      "practice": 7,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
@@ -326,7 +326,7 @@
   "chapter_now": {
     "week_start": "2026-10-25",
     "through": "2026-10-30",
-    "tier_so_far": "Costly",
+    "tier_so_far": "Hard-won",
     "chapter": 4
   },
   "fell": {
