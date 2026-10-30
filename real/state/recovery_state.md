@@ -27,7 +27,7 @@
   - Right pre-op: quad 83.7 lb, hamstring 79 lb, extension 0° AROM, flexion 144°.
   - Left pre-op: quad 58.9 lb (LSI 70.4%), hamstring 55.8 lb (LSI 70.6%), extension −1°, flexion 144°.
   - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83.4%. The right is 7.8% below its own pre-op number. Hamstrings not yet tested.
-- **Body mass:** 158.4 lb (71.9 kg), Sun 10/18, morning: the baseline. The 10/11 reading (159.8) was a 5:30 PM weight, so the two are not like for like; the week of 10/11 averaged 157.2 lb (7 readings). Weigh in Sunday mornings; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein; the Add-On's 1.6–2.0 g/kg is 115–145 g).
+- **Body mass:** **starting weight 154.0 lb, Mon 9/28, 8:30 am fasted** (the nutrition guide's start; pre-injury 164, goal lean ~170; the guide's steps 154 → 160 → 164 → ~170). Weekly averages since: 155.2 (wk of 9/27, 2 readings) · 156.1 (10/4, 3) · 157.2 (10/11, 7) · 157.6 (10/18, 2) · 160.3 (10/25, 3 so far, salt-heavy days). 158.4 lb, Sun 10/18 morning, is the first Sunday-morning reading; the 10/11 reading (159.8) was a 5:30 PM weight, so readings are mornings from there. Weigh in Sunday mornings; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein; the Add-On's 1.6–2.0 g/kg is 115–145 g).
 - **Calendar:**
   - Post-op week 8 ended Mon 10/19; **week 9 = Tue 10/20 – Mon 10/26: Phase 4; Knot III tied Tue 10/20 (POD 57).**
   - Phase 4 = weeks 9–12, through Mon 11/16 (POD 84). **That is also the end of the graft's weakest window (~weeks 6–12).**
