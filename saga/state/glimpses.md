@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-28 · weather · By noon the cloud over the Steps has torn open on a hard, pale blue, and the wind through the gate carries woodsmoke up from somewhere far below, where people are cooking for people they know.
 - 2026-10-28 · body · He goes to hold his hands to the brazier out of habit and finds they are already warm, and stands there a moment anyway, because it is pleasant and nobody needs the spot.
 - 2026-10-28 · verse · Over the pots, someone in the kitchen has the one verse and no more: Oh the grey mare of Edgemoor, she carried me far, by the Wend and the Holloway, by the bell and the star. Then round again from the top.
 - 2026-10-28 · ledger · From Wren's ledger, under the day's airing: Blankets hung on the wall in the noon wind, 30. Blankets the wind tried to take, 2. Blankets it got, 0.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-29 · body · Toward evening his hands get restless on the blanket, the way they did before a ride once, and he lets them, and finds he does not mind the feeling.
 - 2026-10-29 · house · The row's lamps go down early tonight. Wren walks the length of it once with her hand cupped round the last flame, and at the end she pinches it out, and nobody asks her to leave it.
 - 2026-10-29 · weather · The wind drops after dark and the night comes in clear and hard; by the late bell the wet on the landings has gone stiff and quiet, and the stars over the Steps are the small, sharp kind.
+- 2026-10-30 · house · Under the Captain's cot, Ash has got hold of the end of a blanket nobody remembers giving her, and has made a nest of it with the care of someone who means to stay.

@@ -169,3 +169,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-29#9,2026-10-29,,dinner,Kirkland Signature supreme cauliflower crust pizza,5 slices (assumed 8 slices a pizza: 5/8 pizza = 2.5 servings),775,35,77.5,37.5,2.5,20,10,2250,728,883,4,62,4,12,0.5,125,library+estimate,listing values per 1/4 pizza x 2.5; slices per pizza assumed (8): asked
 2026-10-29#10,2026-10-29,,dinner,BBQ chicken wing,3 wings,285,18,12,18,0,4.5,9,960,180,24,0.9,18,1.5,0,0,60,estimate,"brand not given; per-wing estimate as on 10/17 (~95 kcal, 6 g P)"
 2026-10-29#11,2026-10-29,,snack,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,label,label photo; Mg and zinc estimated
+2026-10-30#1,2026-10-30,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
+2026-10-30#2,2026-10-30,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,he said cafe latte protein drink
+2026-10-30#3,2026-10-30,,breakfast,Uncle Mike's Sweet & Spicy Snack Sticks,2 sticks (2.07 oz / 59 g),166,12.4,2.1,10.4,0,4.1,2.1,766,222,0,0,10,2.1,0,0,41,library,"library row (label 10/28), 14 sticks per 14.5 oz bag"
