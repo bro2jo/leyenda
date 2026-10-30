@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
-  "last_seen_doing": "Came to the bars at the dusk bell, listened to the Captain say the verse, and thanked him for it; asked the Prior after the almoner by name, since the cage has gone down empty twice and a woman in Calden waits on her brother's reply; named his price to the court, the almoner for two names off his paper; thanked the Prior for her candour when she put the almoner under the law of guests; said he would wait, and ask under her roof at dawn; went down into the rain.",
-  "now": "Gone back down to the lower terrace in the rain with his price on the table until the dawn bell. He has heard the dusk verse said, and has the Prior's word that the almoner's name is the House's and not the Captain's.",
+  "last_seen_doing": "Stood behind his men's lymer on the terrace path below the kennels, said the hound was learning the House so it would know it again on the road, and thanked the Captain for the name.",
+  "now": "Gone back down the terrace path behind the lymer, with the Prior's answer from the dawn bell.",
   "story_so_far": "He read the Captain's letter to Aldric at the bars, thanked him for the candour, and sent it down the Steps by one of his men. His fires burn on the lower terrace, and his men have had the House's lamp oil open on its way up.",
   "quote": {
     "text": "Bells grow tired.",
@@ -204,6 +204,18 @@
       "chapter": "04",
       "scene": "4",
       "evidence": "I'd not known the third line was yours to say."
+    },
+    {
+      "fact": "He had his answer at the dawn bell, under the Prior's roof and in her words.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "The Confessor had his answer at the dawn bell, under the Prior's roof and in her words"
+    },
+    {
+      "fact": "He said his lymer was learning the House so it would know it again on the road.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "He's learning the House, so he'll know it again on the road."
     }
   ],
   "relationships": [
@@ -293,6 +305,10 @@
       "chapter": "04",
       "scene": "between-5",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "5"
     }
   ]
 }

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-6",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-6"
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
-  "last_seen_doing": "Sat down with Anselm by the brazier, not close, with the House's paper and ink; told him first that he has not stopped seeing the trowel in his hand, and that he gets every word anyway because the other way is the clerk's; gave him the letter and what it is for, three things for the House and one for the sister, where she is kept and an answer only she could give, the only road that goes toward her; named the risk on her and did not soften it; read the letter as it was written and changed nothing; let Anselm's own line stand; said yes to his vow to answer at the bell at Coldmere.",
-  "now": "On his cot in the small hours with the letter written and inside the almoner's shirt, waiting for the carter and the dawn bell. He has told Anselm every word and what it is for, and keeps the width of the gap between their cots.",
+  "last_seen_doing": "Fed the grey hound from his left hand, held her head for the splint, felt the old cellars' cold through the kennel grate, could not call her off the Confessor's lymer, sat down by her instead of chaining her, and named her Ash; she followed him up the ramp.",
+  "now": "At his cot in the infirmary hall with Ash lying under it on her new splint. He has felt through the kennel grate the same cold as the stone in the wall, and Maelis saw his hand come away.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1464,6 +1464,18 @@
       "evidence": "\"You keep saying that.\""
     },
     {
+      "fact": "Through the kennel grate he felt the same cold as the stone in the wall under the row and the black glass under Benedek's tongue.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "the stone in the wall under the row, the black glass under Benedek's tongue, the cold that a hand remembers"
+    },
+    {
+      "fact": "He named the grey hound Ash, for the brazier gone grey before the dawn bell, when no kennel word would call her off.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "there was one left in his mouth from the morning, from the brazier gone grey before the dawn bell"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1773,6 +1785,10 @@
     {
       "chapter": "04",
       "scene": "between-6"
+    },
+    {
+      "chapter": "04",
+      "scene": "5"
     },
     {
       "chapter": "tale01",

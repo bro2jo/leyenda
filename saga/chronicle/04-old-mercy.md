@@ -580,3 +580,101 @@ Anselm folded the sheet twice, small, and did not seal it; the carter would see 
 Across the brazier, Hollis's thumb went on over the lad's knuckles.
 
 "That's paid," he said, to the lad, not to Darrow. "Go to sleep, Captain. You've a bell to answer."
+
+### Scene 5 — The Lymer
+
+The Confessor had his answer at the dawn bell, under the Prior's roof and in her words, and by noon he had a hound on the terrace wall.
+
+Darrow did not see it come up. He was in the kennel run with his back to the boards and the bad leg out in the straw, the way he had sat the first time, and the grey bitch was eating out of his left hand.
+
+Only the left. Wren had tried her with the kitchen's scraps on a board, and she had looked at the board as if it had insulted her mother; the kennel-master had tried her with his own hand and kept it, just. She would take from the Captain's left, and only with the right out of her sight, tucked under his arm. He had stopped asking why. The cold had got into his fingers that morning and would not come out of them, a dull ache in the knuckles that the brazier had not touched, and she did not seem to mind it. She took the meat off his palm the way a horse takes an apple, all lip, and then licked the palm clean, slowly, as if that were part of the bargain.
+
+"Hold her head," said Maelis.
+
+She had come down the ramp with her bag and the face of a woman who had been fetched, which she had. She stood at the gate of the run and looked at the dog the way she looked at a knee: the leg first, the face last, if at all.
+
+"I don't do dogs."
+
+"She doesn't do Menders. You'll get on."
+
+That bought him nothing. She came in and went down in the straw at the bitch's hind end, out of reach of the teeth if he did his part, and cut the twine with a small knife. The laths came away. Under them the leg was thin and bare, with a knot on the bone where it had begun to knit and knit wrong.
+
+"Laths and garden twine," Maelis said. "Who did this?"
+
+"She came with it on," said the kennel-master, from the gate. "Climbed in the first snow with it on."
+
+"Then somebody down there knows a little, and not enough." She ran her thumb down the bone. The bitch's lip came up off her teeth, without a sound, and Darrow put his left hand flat on the long skull between the eyes, and the lip went down. Maelis looked at that and said nothing about it. She bound clean splints on, pine and linen, quick and hard, the way she bound everything, and sat back.
+
+"It'll take her weight by the thaw. Not before. If she runs on it, it won't." She wiped the knife on the straw. "That's a wolfhound. Somebody fed her well, once."
+
+Then the bitch growled.
+
+Not at Maelis. Not at the gate or the hand on her head. She had put her nose to the floor of the run, to the iron grate in the middle of it where the swill went down, and the whole long ridge of her back had come up, and the sound she made was the first sound he had heard from her: low and even, like something heard through a wall.
+
+"Drain," said the kennel-master. "Runs to the old cellars. She does that."
+
+Darrow knew where the old cellars ran. He had been down them with a lamp. He put his left hand flat on the grate.
+
+It was cold. Not the day's cold, which was in his knuckles already and knew its way. This came up through the bars into the palm like water, and he knew it before he had a name for it: the stone in the wall under the row, the black glass under Benedek's tongue, the cold that a hand remembers. He took the hand away before he had decided to.
+
+Maelis was watching the hand. She put the knife in her sleeve, looked at the grate a moment longer, looked at him, and went out of the run without a word, which from her was a word.
+
+The bitch heard the hound before he did. She came up off the straw and onto the bars at the far end of the run, the ones that looked down over the terrace wall, and hit them hard enough to shake dust out of the beams.
+
+Below the wall, on the terrace path, two grey cloaks had walked up a lymer on a long leash: a heavy, low-built hound, loose in the skin, with a nose like a spade and ears to its jaw, the kind of dog a man keeps for following another man who has gone. It bayed at the kennels, once, a long sound that went round the cloister. Behind it, with his hood back and his censer smoking in his fist, stood Confessor Ivo Marrant.
+
+The bitch went for the lymer through the bars. She could not reach it, and went at it as if she could; she bit the iron, and bit it again, and the blood came out of her mouth and down the bars, and still she went at it.
+
+"Off," Darrow said.
+
+Nothing.
+
+"Leave it. Here. Here." Every word a kennel has, every word the Ninth's dog-boys ever shouted across a camp. She had none of them. She had been somebody's, once, and none of their words had come up the mountain with her.
+
+He got up. The post took him and the leg took the rest, and he went along the run with one hand on the boards, and still could not reach her without letting go.
+
+"I'll chain her," said the kennel-master. He had the chain off its hook. "Before she breaks her teeth on the House's iron and the grey lot see her do it."
+
+"No."
+
+"Captain—"
+
+"No." He let himself down the boards into the straw beside her, slow, the bad leg out, close enough that she could have had his face if she had turned. She did not turn. He sat with his shoulder an arm's length from her bleeding mouth and talked to her, low, not words for a dog, and when the words ran out there was one left in his mouth from the morning, from the brazier gone grey before the dawn bell and the colour of the thing beside him.
+
+"Ash," he said.
+
+Nothing. He said it again, the way you say a name that has always been somebody's, not the way you give an order. "Ash."
+
+One ear came round. Then the head. She stood with her front feet on the bars and blood on her lip and looked at him, and the lymer bayed again below and she let it.
+
+"Ash."
+
+She came off the bars. She came back along the run on three legs, slowly, the way a tired thing walks, and lay down against him with the new splint across his boot, and put her bloody chin on his knee, the good one, and shut her eyes.
+
+The kennel-master hung the chain back on its hook.
+
+"Captain." Marrant's voice came up over the wall, pleasant, as if they had met in a corridor. "Forgive the noise. He's new to the mountain. He's learning the House, so he'll know it again on the road." A pause, in which the censer smoked. "A good name. Thank you."
+
+Darrow did not answer him. After a while the grey cloaks turned the lymer down the path, and Marrant went after it, and the bitch did not lift her head.
+
+---
+
+She followed him up the ramp on three legs, a length behind the stick, and stopped when he stopped, and came on when he came on, and the kennel-master watched them all the way to the top and did not say a word about feed.
+
+Hollis was in his chair by the brazier with the lad's blanket and the new cup still strapped on. He looked at the dog for a long moment and then at the Captain.
+
+"What in the Grace's name is that?"
+
+"Ash."
+
+"For her colour." Hollis looked at her again, the grey coat and the ribs and the blood still on her mouth, and then across the row at the lad, and at his own leg, and his voice went down. "And because she's what's left when the fire's gone."
+
+Nobody said anything to that.
+
+The bitch went under the cot, turned round twice, and lay down with her nose on her splint. A lay brother came down the row an hour later with a broom, stopped at the end of the Captain's cot, looked under it, and swept round.
+
+> ⟦ THE RECKONING ⟧
+> Resolve 10 → 11
+> Inspiration 1 → 2
+> Works 0 → 1
+> XP 2,393 → 2,438

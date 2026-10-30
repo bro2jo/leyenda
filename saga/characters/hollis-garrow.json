@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-6",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-6"
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
-  "last_seen_doing": "Sat awake across the brazier with the lad's hand in his and his eyes on the roof through the whole of it; when the letter was written and inside the almoner's shirt, said to the lad that it was paid, and told the Captain to sleep, since he had a bell to answer.",
-  "now": "In his chair across the brazier with the lad's hand in his. He has heard the Captain give the almoner every word and called the price paid.",
+  "last_seen_doing": "Asked what the dog was, and gave her name its reasons: her colour, and what's left when the fire's gone.",
+  "now": "In his chair by the brazier with the lad's blanket and the new cup strapped on, the Captain's hound under the next cot.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -474,6 +474,12 @@
       "chapter": "04",
       "scene": "between-6",
       "evidence": "\"That's paid,\" he said, to the lad, not to Darrow."
+    },
+    {
+      "fact": "He said Ash is named for her colour, and because she is what's left when the fire's gone.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "And because she's what's left when the fire's gone."
     }
   ],
   "relationships": [
@@ -720,6 +726,10 @@
     {
       "chapter": "04",
       "scene": "between-6"
+    },
+    {
+      "chapter": "04",
+      "scene": "5"
     }
   ]
 }

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-5",
+    "scene": "5",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-5"
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
-  "last_seen_doing": "Sat through it with her eyes on the Captain's hands; asked who signs the letter, and when told the almoner does, said it is his to say yes to and he has said it; ordered the Captain to decide by the bell and bring both hands to the dawn forms; went up the row.",
-  "now": "Gone up the row. She has said the letter is the almoner's to say yes to, and wants both of the Captain's hands at the dawn forms whatever he decides.",
+  "last_seen_doing": "Came down to the kennels with bad grace and re-splinted the hound in pine and linen; watched the Captain take his hand off the cold grate, and left without a word.",
+  "now": "Gone back up from the kennels. She has seen the Captain's hand go to the drain grate and come away.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost had stopped at his knuckles. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -453,6 +453,18 @@
       "chapter": "04",
       "scene": "between-5",
       "evidence": "I'll want those hands at the dawn forms, both of them, so don't sit up writing letters you've not decided to send."
+    },
+    {
+      "fact": "She does not do dogs, and re-splinted the hound anyway.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "\"I don't do dogs.\""
+    },
+    {
+      "fact": "She watched the Captain take his hand off the kennel grate, looked at the grate and at him, and left without a word.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "Maelis was watching the hand."
     }
   ],
   "relationships": [
@@ -646,6 +658,10 @@
       "chapter": "04",
       "scene": "between-6",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "5"
     }
   ]
 }

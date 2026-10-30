@@ -71,6 +71,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Mirren's mark** — An M with a loop in the valley, like a hook, so it would hold: the letter Anselm's sister would not make the way she was shown it at five, and has put on everything since, her clothes-chest, the lintel of their mother's house, and under her name on every letter to her brother, so he would know her hand even when it was not (Ch 4 Between).
 - **The forge** — At the far end of the kennel yard, under the cloister wall: a forge that shoes nothing, since no horse has climbed the Steps in living memory. Laths stacked by length, a drum's tooth on the anvil, bell clappers on pegs from a thumb's size to a forearm's, a fire banked to a red eye, and by the door a board with the Lowmarch lance brands in chalk. The farrier works a leather cup to a stump a shaving at a time (Ch 4 Between).
 - **The lance brands** — Each lance burns its own mark onto its greys at the fair, the day they are bought, on the near quarter. The Second's is a tower, and the Second likes you to know it; the Sixth's a mule's shoe, which the Sixth did not choose and cannot be rid of; the Ninth's a gate, two posts and a bar. Darrow stood in the smoke at the fair while it went onto sixty horses (Ch 4 Between).
+- **The lymer** — A heavy, low-built tracking hound the grey cloaks walked up the terrace path to the wall below the kennels; the Confessor said it was learning the House (Ch 4 Sc 5).
 
 ## Songs and verses
 

@@ -4,9 +4,9 @@
     "book": 1,
     "chapter": 4,
     "beat": "b1.4",
-    "next_scene": 5,
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch04:s4",
+    "last_written": "ch04:s5",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -109,8 +109,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch04:s5"
       },
       {
         "n": 6,
@@ -141,7 +141,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -209,8 +209,8 @@
   },
   "quests": {
     "q1.kennel": {
-      "status": "live",
-      "stage": 1,
+      "status": "done",
+      "stage": 2,
       "priority": "required"
     },
     "q1.letters": {
@@ -304,7 +304,7 @@
   "flags": {
     "reckoning_awakened": true,
     "knows_wardens_exist": true,
-    "ash_met": false,
+    "ash_met": true,
     "anselm_suspected": true,
     "anselm_spared": null,
     "benedek_hollowed": true,
@@ -391,14 +391,12 @@
         "banner",
         "candor"
       ]
+    },
+    "ash": {
+      "prefers": []
     }
   },
   "companions_to_come": {
-    "ash": {
-      "note": "the hound in the kennels; snarls at everyone else; appears in q1.kennel or in t1",
-      "bond": 5,
-      "approval_pending": 0
-    },
     "ysra": {
       "note": "the Needle of Calden; Book II; a companion only if spared and if she comes over (q3.needle); approval banks here until then",
       "prefers": [

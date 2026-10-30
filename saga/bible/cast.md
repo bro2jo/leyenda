@@ -58,6 +58,10 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Appearance:** A lay brother in his fifties, short and wide through the chest, with forearms like a drover's and a leather apron black at the belly; a square weathered face gone red at the cheeks, soot in the creases, a nose flattened long ago, pale blue-grey eyes under heavy brows, grey stubble on the jaw, and short hair cropped close and going grey. Burn scars pale and shiny on both hands, and across the back of the right a half-ring of small white marks he calls a burn. He wears the House's grey hood pushed back and his sleeves past the elbow in any weather, and smells of coal and hoof-oil though nothing has worn a shoe up here in his time. His portrait (`saga/art/characters/brother-cobb.jpg`) is canon for his face.
 - **Voice:** Few words, most of them to the thing in his hands. He calls everything by its material, the beech, the iron, the leather, and does not stop working to talk, so you wait or you leave. He has never been bitten by anything in his life. *"You're in my light."*
 
+## Ash
+- **Appearance:** A grey wolfhound bitch, long-boned, all rib and shoulder, with yellow eyes and a splint on the hind leg, the hair worn off around it. She climbed to the House in the first snow and is nobody's.
+- **Voice:** No sound before she bites; the lip comes up and that is all. She takes meat only from the Captain's left hand, all lip, like a horse with an apple. She does not fetch.
+
 ## Mirren
 - **Appearance:** Brother Anselm's younger sister: the same brown skin as her brother and a great deal of dark curling hair, worn loose. Seen only in a thin torn shift, sitting against a bare stone wall, somewhere that is not comfortable. Her portrait (`saga/art/characters/mirren.jpg`) is canon for her face.
 - **Voice:** Not yet heard.

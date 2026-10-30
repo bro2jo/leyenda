@@ -1,0 +1,89 @@
+{
+  "id": "ash",
+  "name": "Ash",
+  "aliases": [
+    "the grey bitch",
+    "the hound"
+  ],
+  "epithet": "The grey hound from the House kennels",
+  "tier": "minor",
+  "faction": "menders",
+  "status": "alive",
+  "sigil": {
+    "faction": "menders",
+    "mark": "none"
+  },
+  "appearance": "A grey wolfhound bitch, long-boned, all rib and shoulder, with yellow eyes and a splinted hind leg, the hair worn off around it. Her lip comes up off her teeth with no sound at all before she bites.",
+  "first_seen": {
+    "chapter": "04",
+    "scene": "5",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
+  },
+  "last_seen": {
+    "chapter": "04",
+    "scene": "5",
+    "place": "saint-ysoldes",
+    "anchor": "chronicle/04-old-mercy.html#scene-5"
+  },
+  "last_seen_doing": "Ate only from the Captain's left hand, growled at the kennel grate, fought the Confessor's lymer through the bars until her mouth bled, came off the bars to her new name, and followed him up the ramp to lie under his cot.",
+  "now": "Under the Captain's cot in the infirmary hall on a new splint; the lay brothers sweep round her.",
+  "story_so_far": "",
+  "quote": null,
+  "known_facts": [
+    {
+      "fact": "She takes meat only from the Captain's left hand, with his right out of her sight.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "She would take from the Captain's left, and only with the right out of her sight"
+    },
+    {
+      "fact": "She growls at the grate in the kennel run, which the kennel-master says drains to the old cellars.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "\"Drain,\" said the kennel-master. \"Runs to the old cellars. She does that.\""
+    },
+    {
+      "fact": "Maelis judged her a wolfhound that somebody once fed well, whose leg will take her weight by the thaw if she does not run on it.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "That's a wolfhound. Somebody fed her well, once."
+    },
+    {
+      "fact": "She came off the bars to the name Ash and lay down with her splint across the Captain's boot.",
+      "chapter": "04",
+      "scene": "5",
+      "evidence": "lay down against him with the new splint across his boot"
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "sleeps with her leg across his boot",
+      "note": "She bit him through the thumb in the kennel run, then lay down with her splinted leg across his boot and slept."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "none",
+      "state": "unlit"
+    },
+    "level": 2,
+    "rank": "Bound",
+    "attributes": {
+      "might": 11,
+      "vigor": 13,
+      "finesse": 15,
+      "resolve": 14
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "04",
+      "scene": "5"
+    }
+  ]
+}

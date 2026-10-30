@@ -79,11 +79,19 @@
       "after": "4",
       "covers": [],
       "written": "2026-10-29"
+    },
+    {
+      "scene": 5,
+      "title": "The Lymer",
+      "covers": [
+        "2026-10-29"
+      ],
+      "written": "2026-10-29"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, on his cot by the brazier in the small hours, Anselm lying awake on the next cot with the letter inside his shirt, Hollis across the brazier with the lad's hand",
+    "detail": "the infirmary hall, at the Captain's cot, with the hound under it",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -93,7 +101,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and in it a brother's questions for his sister, where she is kept and a line in her hand, and one true line. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits and the clerk may name the place; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
-  "last_beat": "\"That's paid,\" he said, to the lad, not to Darrow. \"Go to sleep, Captain. You've a bell to answer.\"",
+  "last_beat": "A lay brother came down the row an hour later with a broom, stopped at the end of the Captain's cot, looked under it, and swept round.",
   "companions": {
     "maelis": {
       "approval": 27,
@@ -114,6 +122,12 @@
       "approval": 17,
       "present": false,
       "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
+    },
+    "ash": {
+      "approval": 0,
+      "present": true,
+      "note": "the grey hound from the kennels; eats only from his left hand; came off the bars to her name and sleeps under his cot",
+      "bond": 5
     }
   },
   "choices": [

@@ -5,7 +5,8 @@
       "maelis": 15,
       "hollis": 30,
       "wren": 10,
-      "rae": 0
+      "rae": 0,
+      "ash": 0
     },
     "note": "approval before any ledger entry; check verifies baseline + sum(now.approval) == world.json"
   },
