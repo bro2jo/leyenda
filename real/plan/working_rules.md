@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 10/30 (repo, his call): impact paces like the lifts (one change per exercise, one new exercise per session, inside the plan's caps); the dashboard's one-change-per-session limit for the whole impact block is gone (the master plan sets none)
 - 10/28 (repo, from the dashboard's correction): impact prep follows the plan's own start criteria (Phase 4: "when basic strength, control, and knee response permit"), not a PT start; "only when appropriately cleared" is the drop vertical jump's alone, and Nick cleared it on its criteria (10/28, patient-reported). The 10/9 reading had merged the two. Impact guards added (rule 5); the clearance list follows (Priority and clearance)
 - 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`); throwing follows the Add-On §3 (days without a knee session; slight pivots within reason; the step-out with the PT's OK) and is logged in `sport_log.csv` (the pivot foot named in the row's `drill`)
 - 10/21: once the photo passes, the daily minimum is the morning check alone; check-ins: the off day no longer asks about the heel prop, the upper check-in drops the leg-up question, the throwing check-in adds the pivot foot
@@ -81,7 +82,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
    - **Load steps:** one DB increment, one cable plate, or ≤10% (plan: 2.5–10%). No first-exposure jumps.
    - **One new exercise per session,** bodyweight or the lightest load first. PT items run at the PT's dose don't count as new.
    - **Ladders** for every exercise live in the Recovery State §6. Move one rung at a time.
-   - **Impact (the plan's Phase 4 sequence):** the plan's dose (2 exercises, 2–3 sets, 5–8 contacts a set; stop while mechanics are still excellent), fresh, before the lifts. **One new rung per session and one variable per session** (sets, contacts or the rung, never two). Landings quiet, knee over the foot.
+   - **Impact (the plan's Phase 4 sequence):** the plan's dose (2 exercises, 2–3 sets, 5–8 contacts a set; stop while mechanics are still excellent), fresh, before the lifts. Paced like the lifts: **one change per exercise per session** (sets or contacts) **and one new rung per session**; other exercises may change the same day. Landings quiet, knee over the foot.
    - A morning that isn't clean reverses **every** change from the previous session, **the impact block first** (back one rung; on the first rung, out until a clean morning).
 6. **Progress only after a clean morning.** A slightly-up morning holds the dose.
 7. **Reduce in this order when yellow** (plan: volume → load → range/impact/complexity):
@@ -93,7 +94,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 9. **Response drives dosing, not graft loading.**
    - Swelling and pain report joint irritation, not graft strength.
    - The graft is at its weakest at roughly weeks 6–12 (dates in the Recovery State §1).
-   - Impact, running, rotation and pivoting, and anything from a later phase stay gated by the plan's criteria, its minimum healing time, and its own clearance steps: impact prep begins "when basic strength, control, and knee response permit" and climbs the plan's sequence one rung at a time (rule 5); the drop vertical jump "only when appropriately cleared" (Nick 10/28: cleared once the rungs before it are clean); running needs week 13 and "rehabilitation team agrees". Nick's 10/9 and 10/28 instructions put the plan's criteria and minimum times in charge; they do not remove them.
+   - Impact, running, rotation and pivoting, and anything from a later phase stay gated by the plan's criteria, its minimum healing time, and its own clearance steps: impact prep begins "when basic strength, control, and knee response permit" and climbs the plan's sequence a rung at a time (rule 5); the drop vertical jump "only when appropriately cleared" (Nick 10/28: cleared once the rungs before it are clean); running needs week 13 and "rehabilitation team agrees". Nick's 10/9 and 10/28 instructions put the plan's criteria and minimum times in charge; they do not remove them.
    - A quiet knee is not evidence that they can come forward.
 10. **Missed sessions are not repaid.** A missed or partial session is gone; the next one runs at its planned dose, never doubled or crammed onto the next day. The week is judged by:
     - loaded days (3)

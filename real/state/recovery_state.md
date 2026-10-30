@@ -125,9 +125,8 @@
 3. **Reconfirm Nick's 10/28 words** (relayed): the plan's criteria and times govern, impact included; the drop vertical jump cleared on its criteria. Show where the impact ladder stands and the single-leg squat video.
 4. **Throwing:** are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee.)
 5. The written note from 10/17 (device, knee angle), so the numbers are on record.
-6. Confirm the eyes-closed BOSU home version.
-7. If wanted: BFR · Spanish squat · seated rotational med-ball throws.
-8. Still from the repo's list: the right knee's hyperextension measured on a heel prop (the extension target until the clinic measures it) · who treated 10/1.
+6. If wanted: BFR · Spanish squat · seated rotational med-ball throws.
+7. Still from the repo's list: the right knee's hyperextension measured on a heel prop (the extension target until the clinic measures it) · who treated 10/1.
 
 ---
 
@@ -177,7 +176,7 @@ Last week in one line: loaded days 3 of 3 (Sun B, Wed A, **Fri B in the PT slot*
 | Single-leg leg curl (10/15) | Cable hamstring curl (**A and B**) |
 | Multi-hip (10/8: abduction, extension, flexion) | **Cable hip abduction (B).** Extension → RDL and bridge; flexion → the step-up's knee drive (A); adduction (the plan's, not the PT's) → Copenhagen (upper-day finisher) |
 | Bird dog (10/8) | **Dropped 10/21:** covered by the BOSU work, the bridge, the side plank and the cooldown |
-| Eyes-closed wobble board (10/8) | Both feet on the BOSU dome, eyes closed, 1 min, after the ball toss; **B's warm-up** |
+| Eyes-closed wobble board (10/8) | **Dropped 10/30 (his call):** the ball toss carries the balance work |
 | Wall squat (10/1) | Replaced by the goblet squat |
 | Copenhagen, both sides (10/17) | The upper-day finisher (short lever) |
 
@@ -187,7 +186,6 @@ Last week in one line: loaded days 3 of 3 (Sun B, Wed A, **Fri B in the PT slot*
 - Standing cable hamstring curl, ankle strap, facing the stack (leg curl)
 - **Cable seated knee extension:** facing away from the stack, low pulley behind, cable under the seat, ankle strap on the left. Both legs up (right foot hooked under the left ankle), left alone down. Fallback: band
 - Standing cable hip abduction, ankle strap (multi-hip)
-- BOSU dome, both feet, eyes closed (wobble board)
 - Banded backward walk: band around the waist, anchored to the rack
 - Strap isometric at 90° (the knee extension's fallback)
 
@@ -217,7 +215,7 @@ Full text: Working Rules, load rules 3–7.
 - **Rep ranges come down as load goes up:** the plan's Phase 4 targets are in brackets in each ladder.
 - **One change per exercise per session · one new exercise per session · load steps ≤10% or one increment.**
 - A morning that isn't clean reverses every change.
-- **Impact prep is on the home program from Wed 10/28** (below): the plan's dose, one new rung and one variable per session, and the impact block is the first thing reversed when a morning isn't clean (Working Rules, load rule 5).
+- **Impact prep is on the home program from Wed 10/28** (below): the plan's dose and the lifts' rule (one change per exercise, one new exercise per session; from 10/30), and the impact block is the first thing reversed when a morning isn't clean (Working Rules, load rule 5).
 
 ### Impact preparation and the single-leg squat test (plan Phase 4; from Wed 10/28)
 
@@ -235,7 +233,8 @@ Full text: Working Rules, load rules 3–7.
 | 5 | **Single-leg pogo**, each leg, small | 2 × 5 (hop, land, reset) → 3 × 5 → 3 × 8 repeated (continuous, quiet) | **The plan's return-to-run gate asks for it** ("pain-free repeated single-leg pogos"), so running waits on this rung. Left control first: the single-leg squat test is the measure |
 
 - **Plan's dose:** 2 exercises · 2–3 sets · 5–8 contacts a set.
-- **Guards (the graft's weak window, through ~11/16):** one new rung per session · one variable per session (sets, contacts or the rung) · a morning that isn't clean reverses the impact block first (back one rung; on rung 1, out until a clean morning), then the session's other changes (load rule 5).
+- **Pacing (from Fri 10/30, his call: the plan sets no one-change-per-session limit):** the lifts' rule. One change per exercise per session (sets or contacts) and one new rung per session, inside the plan's caps (2 exercises, 2–3 sets, 5–8 contacts a set). A morning that isn't clean reverses the impact block first (back one rung; on rung 1, out until a clean morning), then the session's other changes (load rule 5).
+- **Where it lands:** with a clean morning after every knee session, about one rung a session: snap-downs from 10/30, the low jump and landing in the next sessions, then the drop vertical jump and single-leg pogos, with repeated single-leg pogos around mid-November, in time for the run gate (week 13, Tue 11/17).
 - **Logged** in the exercise log, `block` = `plyo`: the rung, sets × contacts, and whether the landings were quiet.
 
 **The single-leg squat test** (the plan's Phase 4 test; at home, no further condition):
@@ -244,22 +243,22 @@ Full text: Working Rules, load rules 3–7.
 - Judged on the plan's checklist: knee tracks over the foot · pelvis stays controlled · no major trunk compensation · no obvious unloading of the surgical leg · smooth depth and tempo. **Pass = all 10 with every item.**
 - Logged as `sl_squat_reps` in `measurements.csv` (controlled reps out of 10, one row per side; method `home video`).
 
-### Session B — next: Fri 10/30 (~60 min; ran Fri 10/23 at a vacation gym on machine substitutes with no graded morning after it, so the 10/25 column stands as the next home dose)
+### Session B — next: Fri 10/30 (~60 min; the vacation-gym B of Fri 10/23 had a clean morning after it, his report 10/30, so its doses carry)
 
-Baseline = 10/18 (clean on 10/19). One change each. Trimmed in the 10/21 review (below Session A).
+Baseline = 10/18 (clean on 10/19), then 10/23 (clean on 10/24). One change per exercise; several exercises change on the same day. Trimmed in the 10/21 review (below Session A).
 
-| # | Exercise | 10/18 | 10/25 | Ladder [plan Phase 4 target] |
+| # | Exercise | 10/23 (vacation gym) | Next (Fri 10/30) | Ladder [plan Phase 4 target] |
 |---|---|---|---|---|
-| WU | Bike · BOSU SL balance + ball toss (L) · eyes-closed drill | Bike 8 min (1.76 mi); BOSU skipped (time) | Bike 8 · ball toss 3 × 45 s · **eyes-closed 1 min, both feet on the dome, inside the rack, hands near the uprights (first at home)** · **impact: two-leg pogos 3 × 8, the top of rung 1** (Thursday's morning was clean after Wednesday's 2 × 15, so the rung's top dose is inside what the knee has already taken; the single-leg hops wait for rung 5) | Ball toss + perturbation · impact per its ladder (above) |
-| 1 | Forward step-down, 6.5", **left only** | 3 × 10 each leg; left challenging, slight hip drop at the bottom | **L 3 × 10; each set ends at the first hip drop.** The third set counts only with the hip level | 7.5" → 8" once 3 × 10 is level [3 × 8–12] |
-| 2 | SL sit-to-stand | 20" × 3 × 12 each leg, unassisted (18" seat unavailable); left slightly shaky | **18", left unassisted, 2 × 12** · R same. Needs help → 20" × 3 × 12 | 18" × 3 × 12 → DB in hand [SL leg press 3 × 8–10] |
-| 3 | RDL, DBs — pair with 6 | 50 lb/hand × 3 × 10, ~4 left | **55 × 3 × 8** | → 60 × 3 × 8 [3–4 × 6–10] |
-| 4 | Lateral lunge | 3 × 8/side; set 3 near-full range | **Full range, 3 × 8** | → lightest DB [3 × 8 each direction]. Also the off-season Phase 1 Lower B item that rehab Phase 4 unlocks (Add-On §8) |
-| 5 | Cable hamstring curl, ankle strap | 40 / 50 / 60 lb × 10, each leg · (A 10/21: 60 / 60 / 70) | **70 × 3 × 10**, each leg; hold if the last set is above RPE 8 | +1 plate → 3 × 12 [3 × 8–12]. Shared with A: one change per session from the last session's dose |
-| 6 | Cable hip abduction, standing, ankle strap — pair with 3 | Hip 4-way skipped (time); last 20 lb × 2 × 10 (10/11) | **20 lb × 2 × 15**, each leg | 3 × 15 → +1 plate [plan: 2–3 × 10–15] |
-| 7 | SL bridge — pair with 8 | 3 × 10 each side | **3 × 10** (hold) | → loaded bilateral hip thrust (Add-On §7). Due now that 3 × 10 is clean; it's the new exercise in the B after this one (11/1) |
-| 8 | **Seated calf raise, left loaded (new)** | — | 3 × 12, lightest DB first. **DB on a folded towel across the lower thigh, just above the kneecap; not on the kneecap or the tendon (harvest site)** | 3–4 × 10–15 (plan Phase 4 B) |
-| CD | Posture cooldown (Add-On §3) | Chin nods only | **Full, ~6 min** | Chin nod → deep neck flexor hold |
+| WU | Bike · BOSU SL balance + ball toss (L) · impact | Bike 8 · ball toss 3 × 45 s | Bike 8 · ball toss 3 × 45 s · **impact: two-leg pogos 3 × 8 + snap-downs 2 × 5 (new)** | Ball toss + perturbation · impact per its ladder (above) |
+| 1 | Forward step-down, 6.5", **left only** | ~6" step, L 3 × 10 (hip drop not reported). 10/18: 6.5", slight hip drop at the bottom | **L 6.5" 3 × 10; each set ends at the first hip drop.** The third set counts only with the hip level | 7.5" → 8" once 3 × 10 is level [3 × 8–12] |
+| 2 | SL sit-to-stand | ~17–18" bench, 2 × 12 each leg, unassisted | **18" × 3 × 12** each leg. Needs help → 20" × 3 × 12 | → DB in hand [SL leg press 3 × 8–10] |
+| 3 | RDL, DBs — pair with 6 | 55 lb/hand × 3 × 8 | **60 × 3 × 8** | → 65 × 3 × 8 [3–4 × 6–10] |
+| 4 | Lateral lunge | 3 × 8/side; set 3 shortened (front of knee 2–3) | **Full range, 3 × 8, bodyweight** (held for the 2–3) | → lightest DB [3 × 8 each direction]. Also the off-season Phase 1 Lower B item that rehab Phase 4 unlocks (Add-On §8) |
+| 5 | Cable hamstring curl, ankle strap | Machine 40 × 3 × 10 (not comparable). Last cable: A 10/21, 60 / 60 / 70 | **70 × 3 × 10**, each leg; hold if the last set is above RPE 8 | +1 plate → 3 × 12 [3 × 8–12]. Shared with A: one change per session from the last session's dose |
+| 6 | Cable hip abduction, standing, ankle strap — pair with 3 | Seated machine 85 × 2 × 15, both legs (not comparable). Last cable 20 × 2 × 10 (10/11) | **20 lb × 2 × 15**, each leg | 3 × 15 → +1 plate [plan: 2–3 × 10–15] |
+| 7 | SL bridge — pair with 8 | Not done. 10/18: 3 × 10 each side | **3 × 10** (hold) | → loaded bilateral hip thrust (Add-On §7): the new exercise in the next B |
+| 8 | **Seated calf raise, left loaded** | Machine, lightest, 3 × 12 (first time) | **Lightest DB, 3 × 12** (first at home: the new setup is the change). **DB on a folded towel across the lower thigh, just above the kneecap; not on the kneecap or the tendon (harvest site)** | → 3 × 15 → 4 × 12 [3–4 × 10–15, plan Phase 4 B] |
+| CD | Posture cooldown (Add-On §3) | Not done | **Full, ~6 min** | Chin nod → deep neck flexor hold |
 
 - **Short on time:** drop 5 (also in A) → 7 → 4. Keep 6: it's the glute med work behind Sunday's hip drop.
 - **Minimum session:** warm-up + 1, 2, 3 + the 3-minute cooldown (90/90 hip lift and chin nods), ~30 min.
@@ -284,7 +283,7 @@ The master plan's Phase 4 A (squat, knee extension, RFESS, hamstring curl, stand
 
 - **Short on time:** drop 4 (also in B) → 6 → 7.
 - **Minimum session:** warm-up + 1, 2, 3 + the 3-minute cooldown, ~35 min.
-- **Out of A:** the 90° isometric (now the knee extension's fallback) · cable TKE as a default (optional) · the eyes-closed drill (B) · SL sit-to-stand (B only) · wall squat (→ goblet squat) · split squat and forward lunge (→ RFESS).
+- **Out of A:** the 90° isometric (now the knee extension's fallback) · cable TKE as a default (optional) · SL sit-to-stand (B only) · wall squat (→ goblet squat) · split squat and forward lunge (→ RFESS).
 
 ### Knee-session review (10/21)
 
@@ -394,7 +393,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 9. **Protein and sodium.** The week of 10/11 averaged 130 g protein (target 150–160) and 4,136 mg sodium (over 2,300 every day): quiet days run ~112 g. Fish once.
 10. **Weight:** 157.2 lb average for the week of 10/11 (+1.1 lb), mixed times of day: no change to the target. Review at 10/25 with two weeks of morning readings.
 11. **Posterior-knee tightness** (9/30) not reported since; no soreness after the 10/18 hamstring jump. If it ever becomes calf pain or calf swelling: surgeon, not Claude.
-12. **The session tail gets cut.** The eyes-closed drill was skipped 10/11, 10/18 and 10/21; the full posture cooldown hasn't run at home (10/11 none, 10/13 short, 10/18 chin nods only, 10/21 none). From the next sessions the balance work leads both warm-ups (short in A; full, with the eyes-closed drill, in B), and the 3-minute cooldown is part of the minimum session.
+12. **The session tail gets cut.** The eyes-closed drill was skipped 10/11, 10/18 and 10/21 (dropped from the plan 10/30); the full posture cooldown hasn't run at home (10/11 none, 10/13 short, 10/18 chin nods only, 10/21 none). From the next sessions the balance work leads both warm-ups (short in A; full, with the eyes-closed drill, in B), and the 3-minute cooldown is part of the minimum session.
 13. **Session length:** B 10/18 ran 110 min, A 10/21 76 min. The 10/21 review trims them to ~60 and ~55 min by removing redundant work, not gated or PT-purposed work (§6).
 15. **The away weekend (Sat 10/24 – Mon 10/26):** no training, no morning checks, creatine 1 of 3; food logged after the fact (~2,200 / 107 g, ~2,400 / 89 g, ~4,550 / 99 g). Tue 10/27: 160.7 lb (+3 on the week's average; salt and water until three readings say otherwise). Nothing reverses (no unclean morning reported) and nothing is repaid; the first sessions back feel heavier than their numbers.
 14. **No full rest day by design.** The only day without knee or upper work is the accessory-day slot, so it's rest by default from 10/21. Upper days run 90–95 min with the bike and throwing.
