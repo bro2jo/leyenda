@@ -59,7 +59,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 - **Voice:** Few words, most of them to the thing in his hands. He calls everything by its material, the beech, the iron, the leather, and does not stop working to talk, so you wait or you leave. He has never been bitten by anything in his life. *"You're in my light."*
 
 ## Ash
-- **Appearance:** A grey wolfhound bitch, long-boned, all rib and shoulder, with yellow eyes and a splint on the hind leg, the hair worn off around it. She climbed to the House in the first snow and is nobody's.
+- **Appearance:** A grey wolfhound bitch, long-boned, all rib and shoulder, with a rough, wiry grey coat gone darker along the back, yellow eyes, a grizzled beard and folded ears. Her hind leg is splinted in pine laths and linen, the hair worn off around it. She climbed to the House in the first snow and is nobody's. Her portrait (`saga/art/characters/ash.jpg`) is canon for her look.
 - **Voice:** No sound before she bites; the lip comes up and that is all. She takes meat only from the Captain's left hand, all lip, like a horse with an apple. She does not fetch.
 
 ## Mirren

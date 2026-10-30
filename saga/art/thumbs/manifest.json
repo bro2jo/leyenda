@@ -12,6 +12,17 @@
     640
    ]
   },
+  "characters/ash.jpg": {
+   "sha1": "bfd641fff0110da21164fe03b2eae2fdf3ae5c12",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    512,
+    512
+   ]
+  },
   "characters/benedek-orrin.jpg": {
    "sha1": "91ed1423f74f99313a2d3ede0b0f64a7562a7077",
    "sm": [
