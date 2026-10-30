@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-5",
+    "scene": "between-8",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-5"
+    "anchor": "chronicle/04-old-mercy.html#between-8"
   },
-  "last_seen_doing": "Said the Confessor is already using the letters, the clerk writing the sister's and Anselm the House's, both read at the winch-house; laid out how a letter down could carry what the Captain wants believed if it is one the almoner would write; asked what happens if it is caught; named Rae as the one to take it down; wrote something small in the ledger and shut it on her finger.",
-  "now": "On the floor by the brazier with the ledger shut on her finger. She has shown the Captain how a letter down could work and asked him what it costs if caught.",
+  "last_seen_doing": "Came down the row after the singing counting who had woken; counted Hollis's set at four bones; played the Captain for her line with three counts, one embellished, and lost; showed him the line she wrote at the council; was told the letters are her road and asked to hand the letter to the carter; wrote a second line under the first; shut the ledger flat and went to count the far lamp.",
+  "now": "Gone up the row to the far lamp with her ledger shut flat. She has two lines with room under them, and the Captain's letter to put in the carter's hands when she comes up.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -507,6 +507,42 @@
       "chapter": "04",
       "scene": "between-5",
       "evidence": "\"Rae,\" said Wren. \"If she's up.\""
+    },
+    {
+      "fact": "She counted five awake after the singing, two for Hollis and three for the dog.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "\"Five awake,\" she said, at the end of his cot. \"Two of them because of Ser Hollis and three of them because of the dog"
+    },
+    {
+      "fact": "She played the Captain for her line with three counts, one embellished: four bites, eleven hundred and seventeen steps, and Hollis's song counted twice.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "Three counts. One of them's embellished. You tell me which, I show you the line."
+    },
+    {
+      "fact": "She says she counted Hollis singing once before, on the road up, when he was too drunk to sing and did anyway, and cannot prove it.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "I've given him one for the road up, when he was too drunk to sing and did anyway and I was the only one counting."
+    },
+    {
+      "fact": "The line she wrote at the council and kept shut on her finger: Times the Captain has asked me what I'd do: 1.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "*Times the Captain has asked me what I'd do: 1.*"
+    },
+    {
+      "fact": "Told the letters are her road, she wrote under it: Times he did it: 1.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "*Times he did it: 1.*"
+    },
+    {
+      "fact": "She shut the ledger flat, with nothing in it to keep the place.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "She shut the ledger, flat this time, with nothing in it to keep the place"
     }
   ],
   "relationships": [
@@ -720,6 +756,10 @@
       "chapter": "04",
       "scene": "5",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "between-8"
     }
   ]
 }

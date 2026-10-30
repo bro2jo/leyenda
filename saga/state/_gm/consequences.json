@@ -1114,10 +1114,42 @@
           "fits": "present.hollis || present.ash",
           "priority": 1,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "fired@ch04:between-8",
           "offered": 1,
           "offered_at": [
             "ch04:between-7"
+          ],
+          "evidence": "\"Four bones in his set. I'll be writing that down.\""
+        }
+      ]
+    },
+    {
+      "id": "c04.9",
+      "made": {
+        "chapter": 4,
+        "scene": "between-8",
+        "date": "2026-10-29"
+      },
+      "chose": "Asked Wren for the line she wrote at the council and shut on her finger; played her counting game (three counts, one embellished) and caught Hollis's song counted twice; read the line, Times the Captain has asked me what I'd do: 1; told her the letters are her road and that she is the third to know, and asked her to be the one who puts the letter in the carter's hands; she wrote under it, Times he did it: 1",
+      "now": {
+        "approval": {
+          "wren": 3
+        }
+      },
+      "due": [
+        {
+          "id": "c04.9a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren is to be the one who puts the almoner's letter in the carter's hands when she comes up the Steps, at the Captain's asking. Fire where the letter goes to the carter by Wren's hand, or where someone else hands it over instead",
+          "fits": "present.wren || present.rae",
+          "priority": 2,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-8"
           ]
         }
       ]

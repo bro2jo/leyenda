@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-7",
+    "scene": "between-8",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-7"
+    "anchor": "chronicle/04-old-mercy.html#between-8"
   },
-  "last_seen_doing": "Took the knucklebones off Hollis and played him for the story of the Sixth's mule's-shoe brand; played left-handed with both hands bad and lost at the threes; chanted the loser's rhyme in full; paid a story told true, how he broke his nose; heard the brand's story the way the Sixth tells it to the Second, the song, and the true part.",
-  "now": "At his cot with the bones lost and the Sixth's brand half-won: the story they tell the Second, the song, and one true line. The hound has the fifth bone.",
+  "last_seen_doing": "Asked Wren for the line she wrote at the council and shut on her finger; played her game of three counts and picked the embellished one, Hollis's song counted twice; read her line; told her the letters are her road, that she is the third to know, and asked her to put the letter in the carter's hands when she comes up.",
+  "now": "At his cot after the singing, having read Wren's line and given her the letter to hand to the carter. Two lines in her ledger have room under them.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1494,6 +1494,24 @@
       "evidence": "\"I was standing still.\""
     },
     {
+      "fact": "He caught Wren's embellished count: Hollis has sung once on the mountain, tonight.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "\"He's sung once. Tonight. You've given him one for luck.\""
+    },
+    {
+      "fact": "He told Wren the letters are her road, that the brother wrote it every word his and knows what each is for, and that she is the third to know.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "\"It's your road,\" he said. \"The letters."
+    },
+    {
+      "fact": "He asked Wren to be the one who puts the letter in the carter's hands, since she named her.",
+      "chapter": "04",
+      "scene": "between-8",
+      "evidence": "I'd like it to be you that puts it in her hands. You named her."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1811,6 +1829,10 @@
     {
       "chapter": "04",
       "scene": "between-7"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-8"
     },
     {
       "chapter": "tale01",

@@ -22,12 +22,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-7",
+    "scene": "between-8",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-7"
+    "anchor": "chronicle/04-old-mercy.html#between-8"
   },
-  "last_seen_doing": "Put her nose out from under the cot at the sound of the bones and took it back in; took the knucklebone that went off the blanket's edge and lay chewing it under the cot.",
-  "now": "Under the Captain's cot on her nest of blanket with Hollis's fifth knucklebone, chewing it with great care.",
+  "last_seen_doing": "Stopped chewing under the cot when Wren named the House's property, considered it, and went on.",
+  "now": "Under the Captain's cot with the fifth knucklebone.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -94,6 +94,10 @@
     {
       "chapter": "04",
       "scene": "between-7"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-8"
     }
   ]
 }

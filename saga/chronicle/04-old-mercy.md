@@ -745,3 +745,41 @@ There was a small, satisfied sound from under the cot, and then the sound of som
 Hollis looked at the dark for a long time.
 
 "She's having the stone," he said. "Fine. She's earned it. She's the only one in this hall who's caught anything all week."
+
+### Between — Room Under It
+
+Wren came down the row with her ledger when the singing stopped, the way she came down it after anything that woke the hall, counting the men who had sat up and the men who had pretended not to.
+
+"Five awake," she said, at the end of his cot. "Two of them because of Ser Hollis and three of them because of the dog, who's eating the House's property." Under the cot the chewing stopped, considered, and went on. "Four bones in his set. I'll be writing that down."
+
+"You wrote something at the council," Darrow said. "And shut it on your finger. I'd like to see it."
+
+"Would you." She sat on the end of Anselm's empty cot; the almoner was at the far lamp with the night novice, being useful at something. "It's a game, then. Three counts. One of them's embellished. You tell me which, I show you the line. You get it wrong, it's a chit, and I keep the line."
+
+"Go."
+
+She did not slow down for him. She never had. "Bites, four, one of them a knight. Steps to the winch-house, eleven hundred and seventeen, and anybody who says a thousand can carry the cage up themselves. Times Ser Hollis has sung on this mountain, two."
+
+`[RESOLVE · DC 10]` d20 **16** +0 resolve = **16** — *Success*
+
+He did not have to think about it. He had heard the hall wake.
+
+"He's sung once. Tonight. You've given him one for luck."
+
+"Technically," said Wren, "I've given him one for the road up, when he was too drunk to sing and did anyway and I was the only one counting." She looked at him. "But I can't prove it, so it's embellished. You win." She opened the ledger at the place her finger had kept and turned it to the brazier so he could read.
+
+*Times the Captain has asked me what I'd do: 1.*
+
+There was a great deal of room under it.
+
+He read it twice. It was a small line in a small hand, and she had written it while Hollis was setting his price and nobody was looking at her, and kept it shut on her finger for a day as if it might get out.
+
+"It's your road," he said. "The letters. The brother wrote it last night, every word his, and he knows what each one's for, and so does Hollis. You're the third. I'd have told you first, but you'd gone up." She did not say anything, which was not like her. "It goes down when the carter comes up. I'd like it to be you that puts it in her hands. You named her."
+
+Wren looked at the line for a while. Then she took the pencil from behind her ear and wrote under it, small, and turned the ledger round again.
+
+*Times he did it: 1.*
+
+"That's two lines with room under them," she said. "Don't make me start a new page."
+
+She shut the ledger, flat this time, with nothing in it to keep the place, and went off up the row to count the far lamp.

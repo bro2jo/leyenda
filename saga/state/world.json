@@ -94,11 +94,18 @@
       "after": "5",
       "covers": [],
       "written": "2026-10-30"
+    },
+    {
+      "scene": "between-8",
+      "title": "Room Under It",
+      "after": "5",
+      "covers": [],
+      "written": "2026-10-30"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the infirmary hall, at the Captain's cot, the knucklebones on Hollis's blanket and Ash under the cot with the fifth",
+    "detail": "the infirmary hall, at his cot by the brazier, Wren gone up the row to the far lamp, Ash under the cot with the fifth bone",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -108,7 +115,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and in it a brother's questions for his sister, where she is kept and a line in her hand, and one true line. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits and the clerk may name the place; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
-  "last_beat": "\"She's having the stone,\" he said. \"Fine. She's earned it. She's the only one in this hall who's caught anything all week.\"",
+  "last_beat": "She shut the ledger, flat this time, with nothing in it to keep the place, and went off up the row to count the far lamp.",
   "companions": {
     "maelis": {
       "approval": 27,
@@ -121,7 +128,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 18,
+      "approval": 21,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
