@@ -320,6 +320,17 @@
       "why": "Friday keeps a knee session: B, the rotation's next after Wednesday's A, with Thursday between"
     },
     {
+      "date": "2026-11-03",
+      "drop": [
+        "knee"
+      ],
+      "add": [
+        "sport"
+      ],
+      "source": "his request Sat 10/31 for next week's schedule; PT moved to Wed 11/4 (pt_notes.md, 2026-10-28)",
+      "why": "PT on Wed 11/4: the home knee sessions keep a day clear of it (Sun A, Fri B; Working Rules, program structure); Tue's knee slot becomes a throwing day; upper Mon B and Thu A (3 days apart); bike Mon, Thu, Sat; throwing Tue, Thu, Sat"
+    },
+    {
       "date": "2026-11-04",
       "drop": [
         "sport"
@@ -329,6 +340,17 @@
       ],
       "source": "his message Wed 10/28: PT scheduled for Wed 11/4",
       "why": "the visit replaces Wednesday's throwing (never on a PT day)"
+    },
+    {
+      "date": "2026-11-06",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his request Sat 10/31 for next week's schedule; PT moved to Wed 11/4 (pt_notes.md, 2026-10-28)",
+      "why": "PT on Wed 11/4: the home knee sessions keep a day clear of it (Sun A, Fri B; Working Rules, program structure); Tue's knee slot becomes a throwing day; upper Mon B and Thu A (3 days apart); bike Mon, Thu, Sat; throwing Tue, Thu, Sat"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
