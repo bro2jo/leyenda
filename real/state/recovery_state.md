@@ -33,7 +33,7 @@
   - Phase 4 = weeks 9–12, through Mon 11/16 (POD 84). **That is also the end of the graft's weakest window (~weeks 6–12).**
   - Running: earliest week 13 (Tue 11/17, POD 85), and only with its gate met and the rehab team's agreement.
 - **Home equipment:**
-  - Have: power rack and barbell with a cable system and ankle attachments; DBs **to 52.5 lb** (heavier ones on offer, 10/31: undecided); benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 7.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap; 8 lb med ball.
+  - Have: power rack and barbell with a cable system and ankle attachments; DBs **to 52.5 lb** (10/31: not buying heavier; past 52.5 a lift moves to the barbell, §6 "Dumbbells at their top"); benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 7.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap; 8 lb med ball.
   - Don't have: leg press, leg curl, or knee-extension machine; wobble board.
 
 ---
@@ -213,6 +213,7 @@ Full text: Working Rules, load rules 3–7.
 - **Pain:** 0–2 fine · 3–4 hold · ≥5 reduce or stop. Front of the knee watched most on the knee extension, goblet squat, RFESS, heel tap and step-down.
 - **Effort:** Phase 4 main lifts work toward **RPE 7–8 (2–3 reps left)** once clean at a dose. New items and new loads start at 3–4 left. Never to failure.
 - **Rep ranges come down as load goes up:** the plan's Phase 4 targets are in brackets in each ladder.
+- **Dumbbells at their top (52.5 lb, 10/31):** a lift that outgrows them moves to the barbell at about the same total load, then climbs in +5 lb steps: the RDL now (115 from the next B), the goblet squat after 52.5 (a back squat to the same box, empty bar first), the standing calf raise after single-leg with one 52.5 (a barbell on the back), the seated calf raise (a padded bar across the thighs), the RFESS after 52.5s (a bar on the back in the rack). The hip thrust starts on the barbell. Single-leg work stays on dumbbells while they last: they balance better. The upper lifts have room (row 30, press 25s, chest-supported row 20s); past 52.5 they go to the barbell or the cable.
 - **One change per exercise per session · one new exercise per session · load steps ≤10% or one increment.**
 - A morning that isn't clean reverses every change.
 - **Impact prep is on the home program from Wed 10/28** (below): the plan's dose and the lifts' rule (one change per exercise, one new exercise per session; from 10/30), and the impact block is the first thing reversed when a morning isn't clean (Working Rules, load rule 5).
@@ -252,12 +253,12 @@ Baseline = 10/18 (clean on 10/19), then 10/23 (clean on 10/24). One change per e
 | WU | Bike · BOSU SL balance + ball toss (L) · impact | Bike 8 · ball toss 3 × 45 s | Bike 8 · ball toss 3 × 45 s · **impact: two-leg pogos 3 × 8 + snap-downs 2 × 5 (new)** | Ball toss + perturbation · impact per its ladder (above) |
 | 1 | Forward step-down, 6.5", **left only** | ~6" step, L 3 × 10 (hip drop not reported). 10/18: 6.5", slight hip drop at the bottom | **L 6.5" 3 × 10; each set ends at the first hip drop.** The third set counts only with the hip level | 7.5" → 8" once 3 × 10 is level [3 × 8–12] |
 | 2 | SL sit-to-stand | ~17–18" bench, 2 × 12 each leg, unassisted | **18" × 3 × 12** each leg. Needs help → 20" × 3 × 12 | → DB in hand [SL leg press 3 × 8–10] |
-| 3 | RDL, DBs — pair with 6 | 55 lb/hand × 3 × 8 | **60 × 3 × 8** | → 65 × 3 × 8 [3–4 × 6–10] |
+| 3 | RDL — pair with 6 | 55 lb/hand × 3 × 8 | 60 × 3 × 8 planned; **ran 52.5 × 3 × 8 (the DBs' top), effort 4/10** | **Barbell RDL from the next B: 115 × 3 × 8** (bar + 35 a side; the DBs' 105 felt easy) → +5 lb steps [3–4 × 6–10] |
 | 4 | Lateral lunge | 3 × 8/side; set 3 shortened (front of knee 2–3) | **Full range, 3 × 8, bodyweight** (held for the 2–3) | → lightest DB [3 × 8 each direction]. Also the off-season Phase 1 Lower B item that rehab Phase 4 unlocks (Add-On §8) |
 | 5 | Cable hamstring curl, ankle strap | Machine 40 × 3 × 10 (not comparable). Last cable: A 10/21, 60 / 60 / 70 | **70 × 3 × 10**, each leg; hold if the last set is above RPE 8 | +1 plate → 3 × 12 [3 × 8–12]. Shared with A: one change per session from the last session's dose |
 | 6 | Cable hip abduction, standing, ankle strap — pair with 3 | Seated machine 85 × 2 × 15, both legs (not comparable). Last cable 20 × 2 × 10 (10/11) | **20 lb × 2 × 15**, each leg | 3 × 15 → +1 plate [plan: 2–3 × 10–15] |
 | 7 | SL bridge — pair with 8 | Not done. 10/18: 3 × 10 each side | **3 × 10** (hold) | → loaded bilateral hip thrust (Add-On §7): the new exercise in the next B |
-| 8 | **Seated calf raise, left loaded** | Machine, lightest, 3 × 12 (first time) | **Lightest DB, 3 × 12** (first at home: the new setup is the change). **DB on a folded towel across the lower thigh, just above the kneecap; not on the kneecap or the tendon (harvest site)** | → 3 × 15 → 4 × 12 [3–4 × 10–15, plan Phase 4 B] |
+| 8 | **Seated calf raise, left loaded** | Machine, lightest, 3 × 12 (first time) | **Lightest DB, 3 × 12** (first at home: the new setup is the change). **DB on a folded towel across the lower thigh, just above the kneecap; not on the kneecap or the tendon (harvest site)** | → 3 × 15 → 4 × 12 → heavier DBs to 52.5 → a padded barbell across the thighs, same spot [3–4 × 10–15, plan Phase 4 B] |
 | CD | Posture cooldown (Add-On §3) | Not done | **Full, ~6 min** | Chin nod → deep neck flexor hold |
 
 - **Short on time:** drop 5 (also in A) → 7 → 4. Keep 6: it's the glute med work behind Sunday's hip drop.
@@ -272,11 +273,11 @@ The master plan's Phase 4 A (squat, knee extension, RFESS, hamstring curl, stand
 |---|---|---|---|---|
 | T | Single-leg squat test (10/28, then Sundays) | — | **Wed 10/28: first, fresh, filmed** (the test above) | Until it passes |
 | WU | Bike · BOSU ball toss (L) · impact | Bike 8 (2.06 mi) · TKE 60 lb × 2 × 10 · ball toss 3 × 45 s (done at the end) | Bike 8 · **ball toss 2 × 45 s, first** · **small double-leg pogos 2 × 5, quiet (first impact)** · cable TKE optional (Working Rules optional extra) | Impact per its ladder (above) |
-| 1 | Goblet squat to an 18" box, paused | 40 lb × 2 × 10 | **40 × 3 × 10** | → 3–4 s lowering (the off-season Phase 1 emphasis, Add-On §8) → +5 lb steps → 3 × 8 at RPE 7–8 → barbell squat in the rack, empty bar first [3–4 × 6–10, RPE 7–8] |
+| 1 | Goblet squat to an 18" box, paused | 40 lb × 2 × 10 | **40 × 3 × 10** | → 3–4 s lowering (the off-season Phase 1 emphasis, Add-On §8; 3 s ran 10/28) → +5 lb steps to **52.5, the DBs' top** (45/45/50 ran 10/28) → **then the barbell: a back squat in the rack to the same 18" box, paused, empty bar first**, +5 lb steps → 3 × 8 at RPE 7–8 [3–4 × 6–10, RPE 7–8] |
 | 2 | Cable knee extension, full range: both legs up, left alone down over 3 s · R solo both ways | 40 lb × 2 × 12 each side, pain 0 | **40 × 3 × 12, both legs** (the third set; the left off its hold, Nick 10/28) | Next A: +1 plate → 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8, if the donor site tolerates]. **Never more than one plate a step on the left.** The right progresses on its own. Front-of-knee pain >2 → stop short of straight first, then lighten; the 90° isometric (5 × 10 s) is the fallback |
-| 3 | RFESS, bodyweight, rear foot on a 7.5" box | 2 × 8/side (first time) | **3 × 8/side** | → 3 s lowering → DBs, +5 lb steps [3 × 8/side]. **Rear box stays at 7.5" for now:** on the right-leg sets the left is the rear leg, in a loaded quad stretch on the harvest side. Stop each rep before the left knee touches the floor (no kneeling on the left). Raise the box only with front-of-knee 0–2 on those sets |
+| 3 | RFESS, bodyweight, rear foot on a 7.5" box | 2 × 8/side (first time) | **3 × 8/side** | → 3 s lowering → DBs, +5 lb steps to 52.5s → a barbell on the back in the rack [3 × 8/side]. **Rear box stays at 7.5" for now:** on the right-leg sets the left is the rear leg, in a loaded quad stretch on the harvest side. Stop each rep before the left knee touches the floor (no kneeling on the left). Raise the box only with front-of-knee 0–2 on those sets |
 | 4 | Cable hamstring curl, ankle strap — pair with 5 | 60 / 60 / 70 lb × 10, each leg | **70 × 3 × 10**, each leg (B's 10/25 dose didn't run at home) | Shared with B |
-| 5 | Standing heel raise, DBs (calf slot) | 40s × 3 × 15 | **40s × 4 × 15** | → single-leg L + DB [4 × 10–15] |
+| 5 | Standing heel raise, DBs (calf slot) | 40s × 3 × 15 | **40s × 4 × 15** | → single-leg L + DB (52.5s × 3 × 12 ran both legs on 10/30, in B: two-leg work is at the DBs' top, so single-leg is next; past one 52.5, a barbell on the back in the rack) [4 × 10–15] |
 | 6 | Step-up, 18", opposite knee drive, right foot passive | Bodyweight 2 × 15/side, no push-off | **Bodyweight 2 × 10/side** | No load ladder: it stays a control drill (the PT's no-push-off cue, 10/15) and the week's hip-flexion work. The RFESS carries the strength progression |
 | 7 | Heel tap, lateral, 7.5", slow lowering | L 2 × 10 | **L 3 × 10**; watch the hip as well as the knee | → 8" |
 | CD | Posture cooldown (Add-On §3) | Skipped (time) | **Full, ~6 min** | Chin nod → deep neck flexor hold |
