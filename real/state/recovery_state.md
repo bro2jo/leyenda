@@ -33,7 +33,7 @@
   - Phase 4 = weeks 9–12, through Mon 11/16 (POD 84). **That is also the end of the graft's weakest window (~weeks 6–12).**
   - Running: earliest week 13 (Tue 11/17, POD 85), and only with its gate met and the rehab team's agreement.
 - **Home equipment:**
-  - Have: power rack and barbell with a cable system and ankle attachments; DBs; benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 7.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap; 8 lb med ball.
+  - Have: power rack and barbell with a cable system and ankle attachments; DBs **to 52.5 lb** (heavier ones on offer, 10/31: undecided); benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 7.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap; 8 lb med ball.
   - Don't have: leg press, leg curl, or knee-extension machine; wobble board.
 
 ---
