@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-28 · body · The warmth has got into his hands tonight and stays there; he turns them over by the candle twice to be sure, and the second time he is grinning at himself for checking.
 - 2026-10-28 · weather · A thin rain on the Steps after dark, the kind that does not fall so much as arrive; the lamps on the lower landings wear it like wool.
 - 2026-10-28 · saying · A lay brother coming in out of the wet with an empty pannier on his back, shaking the rain off at the door, to nobody: Up is a prayer, down is a bill. Tonight he seems to mean the prayer.
 - 2026-10-29 · overheard · From the kitchen before the dawn bell, the cook, low, to the dough under the cloth: Rise, then. Nobody up here is carrying you.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-30 · ledger · From Wren's ledger, under the week's linen: Sheets sent down to the wash, 41. Sheets come back, 41. Sheets come back cleaner than they went, 40; the forty-first is being looked into.
 - 2026-10-30 · body · His feet have stopped arguing with the floor; on the long walk to the refectory he forgets, for a whole flight of stairs, to listen to the left one.
 - 2026-10-30 · saying · A novice comes up the row with the afternoon pot and goes straight past the near cots without a glance, because the rule is older than he is: Feed the far end first. The near cots, who know the rule, wait.
+- 2026-10-30 · verse · Late, down at the far cots, a lay brother sits with the oldest of them and sings under his breath, the way you sing to a child: Sleep till the Small bell wakes you, sleep till the lamp burns low.
