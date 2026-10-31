@@ -1155,6 +1155,37 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c04.10",
+      "made": {
+        "chapter": 4,
+        "scene": "6",
+        "date": "2026-10-30"
+      },
+      "chose": "Hit Hollis properly, once, from the chair, as he asked: because an old head who asks to be hit properly is owed a proper blow, and handling him like a Mender would be the insult",
+      "now": {
+        "approval": {
+          "hollis": 1
+        },
+        "bearing": {
+          "flint": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c04.10a",
+          "when": "next",
+          "at": "ch04:s7",
+          "weight": "color",
+          "what": "The proper blow, from the chair, in the cloister with the kitchen watching: what it did to Hollis and what he said after. Open the next scene on it in a clause",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "\"No.\"",
+        "Let Wren call it."
+      ]
     }
   ],
   "rules": [

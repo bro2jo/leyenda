@@ -131,7 +131,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 60,
+      "approval": 61,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
@@ -221,6 +221,16 @@
       "text": "Use him: his next letter down carries what the Captain wants the Confessor to believe.",
       "date": "2026-10-28",
       "ledger": "c04.6",
+      "by": "darrow"
+    },
+    {
+      "chapter": 4,
+      "scene": "6",
+      "kind": "micro",
+      "option": 2,
+      "text": "Hit him properly.",
+      "date": "2026-10-30",
+      "ledger": "c04.10",
       "by": "darrow"
     }
   ],

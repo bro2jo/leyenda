@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** Marrant has his answer from under the Prior's roof and a lymer learning the House for the road; the almoner's letter waits inside his shirt for the carter, to be read at the winch-house like every letter now; the cold comes up through the kennel grate; one sliver is in the wall under the row, the other in Maelis's coat; one grey cloak has gone down the Steps with a horse; the banners on the Holloway are a day off.
 - **Next:** A man in a chair has asked to be hit properly.
-- **Open choice (a small one):** Hollis wants to be hit properly, not like a Mender. What does Darrow do? 1. "No." / 2. Hit him properly. / 3. Let Wren call it.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

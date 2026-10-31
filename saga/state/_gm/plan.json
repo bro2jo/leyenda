@@ -137,7 +137,11 @@
             },
             null
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 2,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -415,29 +419,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 6,
-    "chapter": 4,
-    "scene": "6",
-    "opened": "2026-10-30",
-    "axis": "mercy_flint",
-    "ask": "Hollis wants to be hit properly, not like a Mender. What does Darrow do?",
-    "options": [
-      "\"No.\"",
-      "Hit him properly.",
-      "Let Wren call it."
-    ],
-    "bearing": [
-      {
-        "Mercy": 1
-      },
-      {
-        "Flint": 1
-      },
-      null
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": []
   },
