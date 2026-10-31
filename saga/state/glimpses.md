@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-29 · house · Someone has set the row's wet boots by the brazier to dry, toes in, smallest to largest; move one and within the hour it is back in its place, and nobody owns to having done it.
 - 2026-10-29 · ledger · From Wren's ledger, the morning's line: Cots on the row, 22. Cots made before the bell, 22. Cots made twice because the first was not to her liking, 1.
 - 2026-10-29 · weather · By early afternoon a wind has got into the gate's loose rope and sets it knocking at the post, slow and even, like someone patient who would like to come in.
 - 2026-10-29 · overheard · From the kitchen door, the cook, to a lay brother asking whether the pot is ready yet: It's ready when it's ready. Then, lifting the lid: It's ready. Take it before it changes its mind.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-31 · body · He wakes with his hands warm and the knee quiet, and lies a while listening to the dog under the cot breathe, slower than he does, and then, after a while, the same.
 - 2026-10-31 · weather · The morning comes up clear over the Steps, frost still in the shade of every landing, and the cloud lies low and flat across the valley like a floor you could walk out on.
 - 2026-10-31 · house · A novice has been set to scrub the refectory benches and is doing it in strict order, end to end, humming the same three notes under his breath until somebody throws a rag at him, after which he hums them more quietly.
+- 2026-10-31 · body · His breath comes back quicker than it used to; he notices it on the second landing, where he would once have stopped, and does not stop.

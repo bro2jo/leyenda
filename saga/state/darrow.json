@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 7,
   "rank": "Kindled",
-  "xp": 2573,
+  "xp": 2588,
   "xp_this_level": 2100,
   "xp_next_level": 2800,
   "proficiency": 3,
@@ -24,7 +24,7 @@
       "raw": 11,
       "cap": 14,
       "mod": 0,
-      "temper": 18,
+      "temper": 21,
       "next_at": 32,
       "fell": 15,
       "banked": false
@@ -115,7 +115,7 @@
       "tree": "Breath",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 6,
+      "practice": 7,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
