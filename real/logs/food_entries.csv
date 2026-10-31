@@ -175,3 +175,7 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-30#4,2026-10-30,,lunch,"Gluten-free BBQ chicken and bacon pizza, medium","half (4 of 8 slices, assumed ~12 in)",850,40,95,34,3,13,17.5,1800,450,500,2.5,45,4,2,0.25,100,estimate,"half the 10/20 whole-medium estimate (1700 kcal, 80 g P); size assumed ~12 in"
 2026-10-30#5,2026-10-30,,snack,Mott's organic no sugar added applesauce cup,1 cup (3.9 oz / 111 g),50,0,13,0,1,0,11,0,90,5,0.1,3,0,15,0,0,estimate,no panel on the lid; typical Mott's values
 2026-10-30#6,2026-10-30,,snack,Nobody's Gonna Know GF chocolate chunk cookie,1 cookie (~73 g; a quarter of the 291 g pack),350,3.5,46,17.5,1.5,10,26,220,140,30,1.5,30,0.5,0,0.2,20,estimate,"label has ingredients and net weight only; weight from the pack, numbers for a butter chocolate-chunk cookie"
+2026-10-30#7,2026-10-30,,dinner,Fried rice with vegetables (takeout bowl),"large helping, assumed ~2.5 cups (~400 g)",650,15,105,20,4,3.5,5,1300,350,50,2.5,60,2,4,0.2,60,photo,portion from the photo and his words: a large helping
+2026-10-30#8,2026-10-30,,dinner,Grilled glazed chicken skewers,2 skewers (~6 oz cooked chicken),330,48,12,9,0,2.5,10,900,420,15,1.2,45,1.8,0,0.2,40,photo,teriyaki-style glaze assumed; ~3 pieces a skewer
+2026-10-30#9,2026-10-30,,dinner,"Egg roll, fried",1 roll,200,6,22,10,1.5,2,2,450,150,20,0.8,12,0.5,2,0,20,estimate,typical takeout egg roll
+2026-10-30#10,2026-10-30,,dinner,Pineapple pieces,assumed ~1/2 cup (80 g),40,0.5,10,0,1,0,8,1,90,10,0.2,10,0.1,38,0,0,photo,in the bowl
