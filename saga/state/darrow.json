@@ -3,7 +3,7 @@
   "name": "Ser Darrow of Edgemoor",
   "level": 7,
   "rank": "Kindled",
-  "xp": 2593,
+  "xp": 2618,
   "xp_this_level": 2100,
   "xp_next_level": 2800,
   "proficiency": 3,
@@ -14,7 +14,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 49,
+      "temper": 51,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -71,7 +71,7 @@
       "tree": "Blade",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 6,
+      "practice": 7,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
