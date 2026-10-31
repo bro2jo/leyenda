@@ -116,11 +116,18 @@
       "after": "6",
       "covers": [],
       "written": "2026-10-30"
+    },
+    {
+      "scene": "between-10",
+      "title": "The Warm",
+      "after": "6",
+      "covers": [],
+      "written": "2026-10-31"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the cloister, in the plain chair facing Hollis's, his wooden sword in the arcade under the dog's foot",
+    "detail": "Maelis's room down the hall, at the table under the window, the dog across the sill",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -130,10 +137,10 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and in it a brother's questions for his sister, where she is kept and a line in her hand, and one true line. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits and the clerk may name the place; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
-  "last_beat": "In the doorway the cook paid a lay brother a chit, without a word, and the lay brother put it in his apron like a man who had known all along.",
+  "last_beat": "\"Every bell,\" she said, without looking round. \"I'll know.\" He believed her. He always had, without the least idea how.",
   "companions": {
     "maelis": {
-      "approval": 27,
+      "approval": 31,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
@@ -284,5 +291,5 @@
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told."
   },
-  "last_updated": "2026-10-30"
+  "last_updated": "2026-10-31"
 }

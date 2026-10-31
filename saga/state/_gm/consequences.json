@@ -1198,6 +1198,40 @@
       "chose": "Gave Hollis the Lances' ready signal with the bound fist, told him to watch his shoulders, and hit him properly across the ribs from the chair; the sword left his numb fingers and went to the dog, who would not fetch it; Hollis took it, kept his chair with the planted sword, and said that is what you've got",
       "now": {},
       "due": []
+    },
+    {
+      "id": "c04.12",
+      "made": {
+        "chapter": 4,
+        "scene": "between-10",
+        "date": "2026-10-30"
+      },
+      "chose": "Went to Maelis with his fingers because Hollis told him to; told her he had put his hand on the kennel grate; set down the easy answer and said the true one himself: her silence since the lid was never the order of telling but that she waited on the stair to see if he would go, and he went, into the stone and onto the grate, and she is frightened of what he will put his hands in next",
+      "now": {
+        "approval": {
+          "maelis": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c04.12a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Maelis's order: his hands in the upper pool's warm to the wrist at every bell, as long as the bell takes, closing them on the bottom stones; never the lower terrace; she will know. The fingers come back if he stops giving them to the cold. Fire where he keeps it or skips it, where she says she knows, or where the fingers come back",
+          "fits": "present.maelis || place.saint_ysoldes",
+          "priority": 1,
+          "valid_until": "book1",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch04:between-10"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

@@ -96,8 +96,8 @@
       "truth": "T8",
       "feeds": "T8",
       "status": "open",
-      "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader. 03:s4: Darrow saw her walk the undercroft dark without a lamp and put the lintel into plain speech, counted the unmarked flour, the unturned key and the unwalked stair, and concluded there is another way down that she knows",
-      "note": "03:climax (T8 plant): she did not say up until the wrist ('I wanted to see if you'd go'); 'the second time I've seen a hand go into one of those. The first man kept his.' She has a past with these stones, said aloud for the first time; what she was is still unsaid",
+      "who_knows": "Maelis; Darrow suspects a past and saw the Confessor look; Marrant suspects (GM: he is fishing for her); the reader. 04:between-10: she says the first man's hand came back in the end, and he was a worse fool than the Captain.",
+      "note": "touch 04:between-10: the first man's hand came back; she has seen it mend; nothing of who he was or what she was.",
       "on_page": [
         "01:s1",
         "01:s2",
@@ -109,7 +109,8 @@
         "03:s3",
         "03:s4",
         "03:s6",
-        "03:climax"
+        "03:climax",
+        "04:between-10"
       ]
     },
     {
@@ -273,8 +274,8 @@
       "truth": "Oathstone: frost drawn out of a man too fast leaves a sliver of the stone it went to (arc b1.2, T1); the far cots, drained slowly over years, never had one",
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
-      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has now seen the rest of the stone in the wall under the row, knows it came up in the satchel and that a hand set it (03:climax), and says it is the same glass as the chip; Wren saw it and was stopped before naming the almoner; Hollis saw the hand and the slab, and has asked; the Prior saw the slab and the hand and asked nothing; the whole lit row saw them come up; 04:s5: Darrow felt the same cold come up through the kennel grate that drains to the old cellars, where the hound growls, and Maelis saw him take his hand off it; the reader",
-      "note": "03:climax (Hard-won): the lid of mortar off in one piece; the sliver seen on end with frost in straight lines from its foot; 'It came up in the satchel'; the frost to his knuckles, then held; the shard is one with the rock: it stays. The chip and the sliver joined aloud by Darrow ('here was the rest of the stone'). The lid with the thumbprint is on the linen press: evidence that can be shown or hidden",
+      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has felt the same cold come up through the kennel grate into his fingers (04:s5) and has her word that it is not the weather's (04:between-10); the reader.",
+      "note": "touch 04:between-10: 'the cold that's in them isn't the weather's.'",
       "on_page": [
         "02:between-12",
         "02:s6",
@@ -287,7 +288,8 @@
         "03:climax",
         "03:choice",
         "04:s1",
-        "04:s5"
+        "04:s5",
+        "04:between-10"
       ]
     },
     {

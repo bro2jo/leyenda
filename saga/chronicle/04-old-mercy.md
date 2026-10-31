@@ -882,3 +882,45 @@ He did not say it the way he usually said Captain. Darrow heard the difference, 
 "No," said Hollis. "I see that." He settled back in his chair, sore and pleased with himself. "Again tomorrow. Bring the stick. You'll want something to hit me with that she won't sit on."
 
 In the doorway the cook paid a lay brother a chit, without a word, and the lay brother put it in his apron like a man who had known all along.
+
+### Between — The Warm
+
+Her door was open a hand's width, which was as much as Maelis Vorne ever opened a door, and Ash got there first and lay down across the sill, the way she lay across every door now that had somebody behind it.
+
+Maelis stepped over the dog without looking at her. She was at the table under the window with a pestle and a stone bowl and the clay pipe cold in her teeth, and she did not stop grinding.
+
+"Hollis says I'm to tell you about my fingers," Darrow said. "He says you'll not hear it from me."
+
+"He's right." She set the pestle down. "Show me."
+
+He held them out, both, the right with the ends of it white and dead as candle wax, the left with Anselm's knot round the thumb. She took them the way she took a knee, two fingers on each, and shut her eyes, and the pipe went from one side of her mouth to the other.
+
+"These were coming back," she said. "Two days ago they were coming back. What did you put them on?"
+
+"The grate in the kennel run. The one the drain goes down. The dog growled at it, and I put my hand on it."
+
+"After I told you not to put it near the stone again."
+
+"You told me the stone."
+
+Her eyes opened. It was not quite a look; it was what she did instead of one. "Is that the answer you want to give me?"
+
+It was not. He had been carrying a different one for a week, and he set it down.
+
+"You've said about four words to me since the night of the lid," he said. "I'd thought it was the order of telling. That I'd gone to the Prior without you, after you said you'd not be beside me."
+
+"Was it?"
+
+"No." He looked at his own hands in hers. "You waited on the stair to see if I'd go. And I went. Into the stone. Onto the grate. You're frightened of what I'll put them in next."
+
+She did not say yes. She turned the right hand over and pressed a thumb into the palm, hard, until he felt it somewhere a long way off, and held it there.
+
+"They'll come back," she said, "if you stop giving them to it. I can say that because I've seen it. The first man's came back, in the end, and he was a worse fool than you." She let go of the palm. "The upper pool, at every bell, as long as the bell takes. Hands in the warm to the wrist, and close them on the bottom stones and open them. Not the lower terrace. The upper. If you go near the lower I'll hear of it before you're dry."
+
+"And why won't they come back on their own?"
+
+"Because the cold that's in them isn't the weather's." She picked up the pestle again. That was the end of that, and they both knew it, and she ground for a while as if he had already gone.
+
+"Every bell," she said, without looking round. "I'll know."
+
+He believed her. He always had, without the least idea how.

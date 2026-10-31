@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-9",
+    "scene": "between-10",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-9"
+    "anchor": "chronicle/04-old-mercy.html#between-10"
   },
-  "last_seen_doing": "Did not argue; lifted his bound left fist in the Lances' ready signal; told Hollis to watch his shoulders; hit him properly, flat across the ribs under the guard; lost the sword from his numb fingers on the blow, and it went to the dog, who would not fetch it.",
-  "now": "In his chair in the cloister with an empty hand, having hit Hollis properly once. His sword is under the dog's foot in the arcade, and Hollis wants the Mender told about his fingers.",
+  "last_seen_doing": "Went to Maelis because Hollis told him to; held out both hands; told her he had put his hand on the kennel grate; set down the easy answer about her silence and said the true one himself; asked why the fingers will not come back on their own and got part of an answer.",
+  "now": "Leaving Maelis's room with an order for every bell: his hands in the upper pool's warm. He has said aloud why she went quiet, and she did not say no.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1566,6 +1566,30 @@
       "evidence": "The cost was the hand."
     },
     {
+      "fact": "He told Maelis he put his hand on the kennel grate where the dog growled, after she had told him not to put it near the stone again.",
+      "chapter": "04",
+      "scene": "between-10",
+      "evidence": "\"The grate in the kennel run. The one the drain goes down. The dog growled at it, and I put my hand on it.\""
+    },
+    {
+      "fact": "He told her he had thought her silence since the night of the lid was about the order of telling, and then said it was not.",
+      "chapter": "04",
+      "scene": "between-10",
+      "evidence": "\"You've said about four words to me since the night of the lid,\" he said. \"I'd thought it was the order of telling."
+    },
+    {
+      "fact": "He said the true thing himself: she waited on the stair to see if he would go, he went into the stone and onto the grate, and she is frightened of what he will put his hands in next.",
+      "chapter": "04",
+      "scene": "between-10",
+      "evidence": "You're frightened of what I'll put them in next."
+    },
+    {
+      "fact": "He believes she will know whether he does as she says, without the least idea how.",
+      "chapter": "04",
+      "scene": "between-10",
+      "evidence": "He believed her. He always had, without the least idea how."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1895,6 +1919,10 @@
     {
       "chapter": "04",
       "scene": "between-9"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-10"
     },
     {
       "chapter": "tale01",

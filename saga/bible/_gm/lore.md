@@ -94,7 +94,7 @@ By a right older than the Crown's chronicle, while the sanctuary bell is rung at
 A Prior, Mother or Father, over the House; the Mender, who is the senior surgeon and answers to the Prior in everything but the knife; the vowed Sisters and Brothers; the lay brothers, unvowed, who carry, cook, winch, dig and bury, and run the House in every way that matters; and the novices, who feed the far cots and learn by being shouted at. The vow is four words: *to mend what climbs*. There are Houses of the Menders down the Lowmarch and in the Marches, some fallen quiet, and Saint Ysolde's is the oldest and the highest and does not let the others forget it.
 
 ## house.springs — The grey springs
-- **tier:** common · **spoken:** Ch 1 Sc 1 ("the springs") · **names:** —
+- **tier:** common · **spoken:** Ch 1 Sc 1 ("the springs"); ch04:between-10 · **names:** —
 - **use:** steam in a cold scene; a Mender's prescription; the smell.
 
 Hot water comes out of the mountain grey with stone-flour and stinking of sulphur, and pools on three terraces. The upper pools are for the sick and smell of boiled linen; the lower terrace lies outside the gate. The water takes the knot out of a shoulder and the colour out of cloth, and the lay brothers say it takes the lies out of a man if he sits long enough. In the first snows the terraces steam like a kitchen.

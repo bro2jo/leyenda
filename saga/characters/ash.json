@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-9",
+    "scene": "between-10",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-9"
+    "anchor": "chronicle/04-old-mercy.html#between-10"
   },
-  "last_seen_doing": "Stood up when the Captain's sword skittered into the arcade against her, put a foot on it, looked at it and at him, and did not bring it.",
-  "now": "In the arcade with a foot on the Captain's wooden sword. She did not fetch it.",
+  "last_seen_doing": "Got to Maelis's door first and lay across the sill; was stepped over.",
+  "now": "Across the sill of Maelis's door.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -75,6 +75,12 @@
       "chapter": "04",
       "scene": "between-9",
       "evidence": "She did not bring it. She did not fetch."
+    },
+    {
+      "fact": "She lies across every door now that has somebody behind it.",
+      "chapter": "04",
+      "scene": "between-10",
+      "evidence": "the way she lay across every door now that had somebody behind it."
     }
   ],
   "relationships": [
@@ -121,6 +127,10 @@
     {
       "chapter": "04",
       "scene": "between-9"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-10"
     }
   ]
 }
