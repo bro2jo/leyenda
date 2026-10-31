@@ -190,14 +190,15 @@
       "truth": null,
       "feeds": "Seated Blade, Hollis's arc; q1.wager's bottle still unspoken",
       "status": "open",
-      "who_knows": "The chair: Hollis only; the reader. The drink: Hollis, Darrow (Between 3), the reader; not Benedek, not Maelis",
-      "note": "the drink told (c01.2, approval +2; c01.2a fired at the climax: his hands steady on the gatehouse sill because he held them so, and after the Choice Darrow looked at them and did not ask how he was); the chair still planted; the bottle he hasn't opened belongs to q1.wager and has not been mentioned. Choice: he saw the Captain flinch at his name, told him nobody else had, and called him Captain, meant",
+      "who_knows": "Hollis, Darrow, Wren, the kitchen; the reader. The drink: Hollis, Darrow, the reader.",
+      "note": "payoff 04:s6: the chair lesson taught in the cloister and the Seated Blade named; the bottle (q1.wager) still unspoken.",
       "on_page": [
         "01:interlude",
         "01:between-3",
         "02:s5",
         "02:between-11",
-        "03:between-2"
+        "03:between-2",
+        "04:s6"
       ]
     },
     {

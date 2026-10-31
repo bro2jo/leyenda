@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-7",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-7"
+    "anchor": "chronicle/04-old-mercy.html#scene-6"
   },
-  "last_seen_doing": "Let the Captain take the knucklebones from his shirt; won at the threes; made him chant the whole of the loser's rhyme; asked for the story of the nose and laughed loud enough to wake the row; told the Sixth's brand the way the Sixth tells the Second, and said so; sang a verse of the Sixth's marching song, badly; gave one true part: the Second gave it them; let the hound keep the fifth bone.",
-  "now": "At the Captain's cot with four knucklebones and the lad's hand, the hall awake from his laughing and his singing. The hound has his fifth bone and he has let her keep it.",
+  "last_seen_doing": "Had himself carried to the cloister at the noon bell; set two chairs and two wooden swords; taught the Captain to stop looking at the floor and to watch the shoulders, and the bind, a blade held is a blade not swinging; beat him on the collarbone and the wrist; went over backwards in his chair on the wet flags and saved it with his sword planted behind him; called that the lesson; named it the Seated Blade; asked to be hit properly, once, not like a Mender.",
+  "now": "In his chair in the cloister with the wooden sword across his knees, winded and steady-eyed, having asked the Captain to hit him properly, once, so he knows what he has.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -516,6 +516,42 @@
       "chapter": "04",
       "scene": "between-7",
       "evidence": "\"She's having the stone,\" he said."
+    },
+    {
+      "fact": "He says the Captain will not win on his feet this winter, and set out to teach him to win sitting.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "\"You'll not win on your feet, Captain. Not this winter. Sit down and I'll teach you to win sitting.\""
+    },
+    {
+      "fact": "His first lesson: stop looking at the floor; a man in a chair goes where his shoulders go, so watch the shoulders.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "A man in a chair goes where his shoulders go. Watch the shoulders."
+    },
+    {
+      "fact": "His second lesson is the bind: a blade held is a blade not swinging, and a man who cannot step off it keeps it.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "A blade held is a blade not swinging."
+    },
+    {
+      "fact": "When his chair went over backwards he saved it with his sword planted behind him, and called that the lesson: the blade is a seated man's feet, holding the enemy off and holding him up.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "The blade's your feet now. It holds them off, and it holds you up. Both. Same piece of wood."
+    },
+    {
+      "fact": "He named it the Seated Blade, fight from where you're put, and did not say where he learned it.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "\"That's the Seated Blade, Captain. Fight from where you're put.\""
+    },
+    {
+      "fact": "He asked the Captain to hit him properly, once, because the man on the stair will not tap.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "Hit me properly. Once. So I know what you've got."
     }
   ],
   "relationships": [
@@ -775,6 +811,10 @@
       "chapter": "04",
       "scene": "between-8",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "6"
     }
   ]
 }

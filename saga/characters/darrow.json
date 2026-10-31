@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-8",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-8"
+    "anchor": "chronicle/04-old-mercy.html#scene-6"
   },
-  "last_seen_doing": "Asked Wren for the line she wrote at the council and shut on her finger; played her game of three counts and picked the embellished one, Hollis's song counted twice; read her line; told her the letters are her road, that she is the third to know, and asked her to put the letter in the carter's hands when she comes up.",
-  "now": "At his cot after the singing, having read Wren's line and given her the letter to hand to the carter. Two lines in her ledger have room under them.",
+  "last_seen_doing": "Came to the cloister on his own leg with the dog at his heel; sat in a chair facing Hollis and held a wooden sword by the palm and the knuckles, the fingertips telling him nothing; learned to stop looking for his feet and to hold the bind; tried to win by turning the bind the way his feet used to and lost to a blow on the wrist; laughed when Hollis's chair tipped and he saved it with the sword; heard the Art named; was asked to hit Hollis properly.",
+  "now": "In a chair in the cloister with a wooden sword, beaten and laughing, the Seated Blade named. Hollis has asked to be hit properly, once, and the kitchen has gone quiet.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1512,6 +1512,36 @@
       "evidence": "I'd like it to be you that puts it in her hands. You named her."
     },
     {
+      "fact": "He held the wooden sword by the palm and the knuckles, the ends of his right fingers telling him nothing about it.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "the ends of the fingers told him nothing about it, so he held it by the palm and the knuckles, the way a man holds a thing in the dark."
+    },
+    {
+      "fact": "He found that every answer he had ever had in a fight was in his legs.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "Darrow found in the first minute that every answer he had ever had was in his legs."
+    },
+    {
+      "fact": "He held Hollis's blade in the bind with wrist, forearm and shoulder, then tried to win by turning it the way his feet would have, and lost to a blow on the back of the wrist.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "He went for it with his shoulders, and his shoulders went, and the rest of him stayed in the chair"
+    },
+    {
+      "fact": "He laughed for the first time since the river, when Hollis's chair tipped and Hollis saved it with the sword.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "He had not laughed since the river. He did not know that either until it was done"
+    },
+    {
+      "fact": "He did not ask Hollis where he had learned the Seated Blade.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "He did not say where he had learned it, and Darrow did not ask."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1833,6 +1863,10 @@
     {
       "chapter": "04",
       "scene": "between-8"
+    },
+    {
+      "chapter": "04",
+      "scene": "6"
     },
     {
       "chapter": "tale01",

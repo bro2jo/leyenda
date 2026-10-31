@@ -667,6 +667,11 @@
       "chapter": "04",
       "scene": "between-7",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "6",
+      "mention": true
     }
   ]
 }

@@ -1084,9 +1084,10 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-6"
+            "ch04:between-6",
+            "ch04:s6"
           ]
         }
       ]
@@ -1147,9 +1148,10 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-8"
+            "ch04:between-8",
+            "ch04:s6"
           ]
         }
       ]
@@ -1298,7 +1300,13 @@
       "id": "r.b1.seated_blade",
       "if": "approval.hollis >= 50",
       "then": "Hollis names the Seated Blade on the page before Old Mercy (q1.blade stage 3 runs before b1.5); otherwise he teaches it on the tower stair itself, in the fight",
-      "where": "book1:beat5"
+      "where": "book1:beat5",
+      "fired": [
+        "ch04:s6"
+      ],
+      "evidence": {
+        "ch04:s6": "\"That's the Seated Blade, Captain. Fight from where you're put.\""
+      }
     },
     {
       "id": "r.t1.wren_stays",

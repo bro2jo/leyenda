@@ -484,6 +484,13 @@
           "sources": [
             "ch04:s5"
           ]
+        },
+        {
+          "name": "The cloister",
+          "text": "A square of worn flags round a dead fountain, the arcade on three sides and the kitchen door on the fourth. Hollis taught the Captain the Seated Blade there from two plain chairs with two wooden swords, the kitchen in its door taking odds (Ch 4 Sc 6).",
+          "sources": [
+            "ch04:s6"
+          ]
         }
       ],
       "intro": ""
@@ -753,6 +760,13 @@
           "text": "The one line of Brother Anselm's own at the foot of the letter he wrote to his sister at the Captain's asking: nothing to the clerk who reads it on the way, and to her, who puts a loop in her M so it will hold, the word that it is her brother writing and not what they had him write (Ch 4 Between).",
           "sources": [
             "ch04:between-6"
+          ]
+        },
+        {
+          "name": "\"Fight from where you're put.\"",
+          "text": "Hollis, naming the Seated Blade in the cloister after his chair went over and he held it up with his sword (Ch 4 Sc 6).",
+          "sources": [
+            "ch04:s6"
           ]
         }
       ],

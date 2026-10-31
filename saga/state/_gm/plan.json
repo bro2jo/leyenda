@@ -3,10 +3,10 @@
   "position": {
     "book": 1,
     "chapter": 4,
-    "beat": "b1.4",
-    "next_scene": 6,
+    "beat": "b1.5",
+    "next_scene": 7,
     "stage": "scene",
-    "last_written": "ch04:s5",
+    "last_written": "ch04:s6",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
@@ -141,8 +141,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch04:s6"
       },
       {
         "n": 7,
@@ -155,7 +155,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       }
     ],
@@ -200,7 +200,7 @@
     },
     "b1.5": {
       "title": "Old Mercy",
-      "status": "planned"
+      "status": "in_progress"
     },
     "t1": {
       "title": "The Descent",
@@ -261,8 +261,8 @@
       "priority": "floating"
     },
     "q1.blade": {
-      "status": "available",
-      "stage": 0,
+      "status": "done",
+      "stage": 3,
       "priority": "floating"
     },
     "q1.hand": {
@@ -415,7 +415,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 6,
+    "chapter": 4,
+    "scene": "6",
+    "opened": "2026-10-30",
+    "axis": "mercy_flint",
+    "ask": "Hollis wants to be hit properly, not like a Mender. What does Darrow do?",
+    "options": [
+      "\"No.\"",
+      "Hit him properly.",
+      "Let Wren call it."
+    ],
+    "bearing": [
+      {
+        "Mercy": 1
+      },
+      {
+        "Flint": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": []
   },

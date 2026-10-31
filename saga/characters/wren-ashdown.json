@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-8",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-8"
+    "anchor": "chronicle/04-old-mercy.html#scene-6"
   },
-  "last_seen_doing": "Came down the row after the singing counting who had woken; counted Hollis's set at four bones; played the Captain for her line with three counts, one embellished, and lost; showed him the line she wrote at the council; was told the letters are her road and asked to hand the letter to the carter; wrote a second line under the first; shut the ledger flat and went to count the far lamp.",
-  "now": "Gone up the row to the far lamp with her ledger shut flat. She has two lines with room under them, and the Captain's letter to put in the carter's hands when she comes up.",
+  "last_seen_doing": "Sat on the fountain's rim as notary with her ledger; wrote the Seated Blade under Things the Captain can do, and then again under Things Ser Hollis can do; stopped writing when Hollis asked to be hit.",
+  "now": "On the fountain's rim in the cloister with her pencil stopped.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -543,6 +543,12 @@
       "chapter": "04",
       "scene": "between-8",
       "evidence": "She shut the ledger, flat this time, with nothing in it to keep the place"
+    },
+    {
+      "fact": "She wrote the Seated Blade in her ledger under Things the Captain can do, and again under Things Ser Hollis can do.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "and then wrote it again, further down the page, under *Things Ser Hollis can do*, and did not look up."
     }
   ],
   "relationships": [
@@ -760,6 +766,10 @@
     {
       "chapter": "04",
       "scene": "between-8"
+    },
+    {
+      "chapter": "04",
+      "scene": "6"
     }
   ]
 }

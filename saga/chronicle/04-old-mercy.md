@@ -783,3 +783,70 @@ Wren looked at the line for a while. Then she took the pencil from behind her ea
 "That's two lines with room under them," she said. "Don't make me start a new page."
 
 She shut the ledger, flat this time, with nothing in it to keep the place, and went off up the row to count the far lamp.
+
+### Scene 6 — Sitting Down
+
+The almoner was on the next cot in the morning, as he had been told, with the key on its cord and the letter inside his shirt, waiting on the carter like the rest of the House; and Hollis, four knucklebones the poorer, had been up since before the dawn bell with a borrowed awl and the new cup across his knee.
+
+At the noon bell he had himself carried to the cloister.
+
+It was a square of worn flags round a dead fountain, the arcade on three sides and the kitchen door on the fourth, and when Darrow came out to it on his own leg, with the dog a length behind his heel and the fifth bone in her mouth, there were two plain chairs in the middle of the flags, set facing each other a sword's length apart and a little more. Two wooden swords lay across the near one. Hollis sat in the far one with the beech leg out in front of him and both hands on his knees, like a man waiting for a cart he means to complain about.
+
+Wren was on the fountain's rim with her ledger open. The kitchen was in its door: the cook, two lay brothers and a boy with flour to the elbows, none of whom had any reason to be there.
+
+"I've been thinking a fortnight," Hollis said. "You'll not win on your feet, Captain. Not this winter. Sit down and I'll teach you to win sitting."
+
+Darrow sat. He took the sword in his right hand, and the ends of the fingers told him nothing about it, so he held it by the palm and the knuckles, the way a man holds a thing in the dark. The bad leg he put out a little, as Maelis had taught him to put it anywhere he meant to stay a while. Ash lay down in the arcade with the bone between her paws and watched the swords.
+
+"Kitchen's got you at two to one, Ser," said the cook. "Against."
+
+"Kitchen can mind its ovens." Hollis lifted his sword. "First lesson. Stop looking at the floor."
+
+"I'm not looking at the floor."
+
+Hollis put the point of his sword under Darrow's chin, quite gently, and tipped it up. "You're looking for your feet. You've looked for them every time you've moved since the litter, and they're not coming, and while you look, I've had you twice." He took the point away. "Look at me. Not my blade. Me. A man in a chair goes where his shoulders go. Watch the shoulders."
+
+They went at it. It was nothing like a fight. It was two men in chairs knocking wood together in the cold while a kitchen watched, and Darrow found in the first minute that every answer he had ever had was in his legs. He went to turn Hollis's blade the way he would have turned a man, and the turn wanted a step, and there was no step, and the chair under him slid a hand's width on the flags and Hollis's wood was on his collarbone before it stopped.
+
+"Again."
+
+"Second lesson," said Hollis. He laid his blade across Darrow's, near the hilts, and leaned on it, and the two swords stuck there between them like a gate bar. "The bind. On your feet you'd step off this and come round. You can't. So you keep it. A blade held is a blade not swinging. Hold mine and I can't hit you. Hold it long enough and I get tired, and I'm sixty-one, and I get tired quick." He leaned harder. "Hold."
+
+Darrow held. His fingers did not tell him he was holding, so he held with the wrist and the forearm and the shoulder, and Hollis's weight came through the wood into all three, and for a while neither blade moved, and the kitchen stopped breathing.
+
+Then Darrow tried to win. He had felt the old man's weight shift in the bind, the way a line shifts before it moves, and he knew the answer to it in his bones: off the line, round, and in. He went for it with his shoulders, and his shoulders went, and the rest of him stayed in the chair, and his blade came free a beat too early and Hollis's came down on the back of his wrist like a schoolmaster's rule.
+
+"There," said Hollis. "That's your feet, wanting their own way."
+
+He leaned back to say something else about it, and the beech leg in its new cup skidded on the wet flags, and the chair went over backwards.
+
+It did not get there. Hollis's sword went down behind him point first onto the flags, and he hung on it, the chair on two legs and the old man on the hilt, and for a long moment the whole cloister looked at him tilted against the sky. Then he hauled, and the chair came down on four legs with a bang that sent Ash up off the bone, and Hollis sat in it with his face purple and the sword planted beside him like a third leg.
+
+"That," he said, when he had the breath, "is the lesson. The blade's your feet now. It holds them off, and it holds you up. Both. Same piece of wood."
+
+Darrow laughed.
+
+It came up out of him before he knew it was coming, the laugh the Ninth used to hear across a camp at night, too big for a cloister, and it went round the arcade and into the kitchen and set the boy with the flour off as well. He had not laughed since the river. He did not know that either until it was done, and he did not stop to look at it, because Hollis was glaring at him and the cook was laughing now too and the dog had come out of the arcade to see what the noise was for.
+
+"Laugh," said Hollis. "Go on. I nearly broke my neck for it." But the corner of his beard had gone up. "That's the Seated Blade, Captain. Fight from where you're put." He did not say where he had learned it, and Darrow did not ask.
+
+Wren wrote in her ledger. Darrow could see it upside down from his chair: *The Seated Blade*, under a heading that said *Things the Captain can do*. She looked at it a moment, and then wrote it again, further down the page, under *Things Ser Hollis can do*, and did not look up.
+
+"Kitchen'll take you at threes now, Captain," said one of the lay brothers.
+
+"Kitchen'll take nothing." Hollis pulled his sword out of the flags and laid it across his knees, and looked at Darrow across the gap with his breath still coming hard and his eyes very steady. "Now hit me."
+
+"I've been hitting you."
+
+"You've been tapping me. Like a Mender. Like I'm a knee you're frightened of." He tapped his own chest with two fingers, where the Grace had used to sit. "I've one leg and a chair, and that's what the man on the stair will see, and he'll not tap. Hit me properly. Once. So I know what you've got."
+
+The kitchen went quiet. Wren's pencil stopped.
+
+> ⟦ THE RECKONING ⟧
+> Art ranked up: **The Seated Blade** II. *No penalty for being unable to move.*
+> XP 2,448 → 2,558
+
+**What does Darrow do?**
+1. **"No."**
+2. **Hit him properly.**
+3. **Let Wren call it.**

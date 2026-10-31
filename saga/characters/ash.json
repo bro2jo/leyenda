@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-8",
+    "scene": "6",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-8"
+    "anchor": "chronicle/04-old-mercy.html#scene-6"
   },
-  "last_seen_doing": "Stopped chewing under the cot when Wren named the House's property, considered it, and went on.",
-  "now": "Under the Captain's cot with the fifth knucklebone.",
+  "last_seen_doing": "Followed the Captain to the cloister with the fifth bone in her mouth; lay in the arcade watching the swords; came up off the bone when Hollis's chair banged down; came out to see what the laughing was for.",
+  "now": "In the cloister near the Captain's chair, the bone left in the arcade.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -63,6 +63,12 @@
       "chapter": "04",
       "scene": "between-7",
       "evidence": "There was a small, satisfied sound from under the cot, and then the sound of something being chewed with great care."
+    },
+    {
+      "fact": "She came to the cloister a length behind the Captain's heel with the fifth knucklebone in her mouth.",
+      "chapter": "04",
+      "scene": "6",
+      "evidence": "with the dog a length behind his heel and the fifth bone in her mouth"
     }
   ],
   "relationships": [
@@ -101,6 +107,10 @@
     {
       "chapter": "04",
       "scene": "between-8"
+    },
+    {
+      "chapter": "04",
+      "scene": "6"
     }
   ]
 }
