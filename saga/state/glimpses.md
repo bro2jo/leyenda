@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-29 · overheard · From the kitchen door, the cook, to a lay brother asking whether the pot is ready yet: It's ready when it's ready. Then, lifting the lid: It's ready. Take it before it changes its mind.
 - 2026-10-29 · saying · A lay brother drops a whole armful of kindling on the turn of the stair, says to it, quite reasonably, Bells take it, and then picks up every stick himself, because the bells never do.
 - 2026-10-29 · body · Toward evening his hands get restless on the blanket, the way they did before a ride once, and he lets them, and finds he does not mind the feeling.
 - 2026-10-29 · house · The row's lamps go down early tonight. Wren walks the length of it once with her hand cupped round the last flame, and at the end she pinches it out, and nobody asks her to leave it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-31 · body · His breath comes back quicker than it used to; he notices it on the second landing, where he would once have stopped, and does not stop.
 - 2026-10-31 · overheard · From the refectory door, the cook, to the novice with the scrubbing brush: You've had the grain off them. — You said clean. — I said clean. I never said new.
 - 2026-10-31 · house · Brother Cobb sets the bread out on the long table a loaf at a time and squares each one to the edge, and when a novice nudges one crooked in passing he squares it again without looking up.
+- 2026-10-31 · ledger · From Wren's ledger, the evening's line: Candles issued to the forge, 2. Candles asked for twice, 1, by Brother Cobb, who says the first was a poor candle and he knows a poor candle.
