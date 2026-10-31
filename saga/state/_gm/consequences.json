@@ -1148,10 +1148,11 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch04:between-8",
-            "ch04:s6"
+            "ch04:s6",
+            "ch04:between-9"
           ]
         }
       ]
@@ -1186,6 +1187,17 @@
         "\"No.\"",
         "Let Wren call it."
       ]
+    },
+    {
+      "id": "c04.11",
+      "made": {
+        "chapter": 4,
+        "scene": "between-9",
+        "date": "2026-10-30"
+      },
+      "chose": "Gave Hollis the Lances' ready signal with the bound fist, told him to watch his shoulders, and hit him properly across the ribs from the chair; the sword left his numb fingers and went to the dog, who would not fetch it; Hollis took it, kept his chair with the planted sword, and said that is what you've got",
+      "now": {},
+      "due": []
     }
   ],
   "rules": [

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "6",
+    "scene": "between-9",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-6"
+    "anchor": "chronicle/04-old-mercy.html#between-9"
   },
-  "last_seen_doing": "Came to the cloister on his own leg with the dog at his heel; sat in a chair facing Hollis and held a wooden sword by the palm and the knuckles, the fingertips telling him nothing; learned to stop looking for his feet and to hold the bind; tried to win by turning the bind the way his feet used to and lost to a blow on the wrist; laughed when Hollis's chair tipped and he saved it with the sword; heard the Art named; was asked to hit Hollis properly.",
-  "now": "In a chair in the cloister with a wooden sword, beaten and laughing, the Seated Blade named. Hollis has asked to be hit properly, once, and the kitchen has gone quiet.",
+  "last_seen_doing": "Did not argue; lifted his bound left fist in the Lances' ready signal; told Hollis to watch his shoulders; hit him properly, flat across the ribs under the guard; lost the sword from his numb fingers on the blow, and it went to the dog, who would not fetch it.",
+  "now": "In his chair in the cloister with an empty hand, having hit Hollis properly once. His sword is under the dog's foot in the arcade, and Hollis wants the Mender told about his fingers.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1542,6 +1542,30 @@
       "evidence": "He did not say where he had learned it, and Darrow did not ask."
     },
     {
+      "fact": "He held that an old soldier who asks to be hit in front of a kitchen is asking for a courtesy, and that tapping him instead would tell him what you think he is.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "and a man who taps him instead has told him what he thinks he is."
+    },
+    {
+      "fact": "He gave Hollis the Lances' ready signal with his bound left fist before the blow.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "So he lifted his left fist, the bound one, and held it up between them: the Lances' signal, ready"
+    },
+    {
+      "fact": "He hit Hollis flat across the ribs below the arm, under the guard, with everything in his shoulders.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "The wood came round under Hollis's guard, flat and hard, and took him across the ribs below the arm"
+    },
+    {
+      "fact": "On the blow his numb fingers opened and the sword went across the flags to the dog.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "The cost was the hand."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1867,6 +1891,10 @@
     {
       "chapter": "04",
       "scene": "6"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-9"
     },
     {
       "chapter": "tale01",

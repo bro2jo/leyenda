@@ -22,3 +22,4 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-10-29T01:38:41,ch04-s4-the-price#reroll,resolve,13,12,,,+0 resolve +3 proficiency +3 Warden's Eye III,18,SUCCESS,
 2026-10-30T15:15:33,ch04-between-7-knucklebones,finesse,11,5,,,+0 finesse,5,FAILURE,
 2026-10-30T15:56:22,ch04-between-8-wrens-count,resolve,10,16,,,+0 resolve,16,SUCCESS,
+2026-10-31T03:04:58,ch04-between-9-the-blow,might,12,5,,,+1 might +3 proficiency +2 The Seated Blade II,11,PARTIAL (success at a cost),

@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "6",
+    "scene": "between-9",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-6"
+    "anchor": "chronicle/04-old-mercy.html#between-9"
   },
-  "last_seen_doing": "Sat on the fountain's rim as notary with her ledger; wrote the Seated Blade under Things the Captain can do, and then again under Things Ser Hollis can do; stopped writing when Hollis asked to be hit.",
-  "now": "On the fountain's rim in the cloister with her pencil stopped.",
+  "last_seen_doing": "Sat on the fountain's rim with her pencil stopped through the blow.",
+  "now": "On the fountain's rim in the cloister.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -770,6 +770,10 @@
     {
       "chapter": "04",
       "scene": "6"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-9"
     }
   ]
 }

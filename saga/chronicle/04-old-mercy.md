@@ -850,3 +850,35 @@ The kitchen went quiet. Wren's pencil stopped.
 1. **"No."**
 2. **Hit him properly.**
 3. **Let Wren call it.**
+
+### Between — Ready
+
+Darrow did not argue. He had argued with Hollis Garrow about a great many things since the ford, and lost most of them, and this was not one to argue. An old soldier who asks to be hit in front of a kitchen is asking for the one courtesy left that he can still be paid, and a man who taps him instead has told him what he thinks he is.
+
+So he lifted his left fist, the bound one, and held it up between them: the Lances' signal, ready, the one every rider knows from the first week he carries a lance. Across the gap the old man's face changed. He set the planted sword where he wanted it, and lifted his own fist, and opened it, and took the hilt.
+
+"Watch my shoulders," Darrow said.
+
+Hollis watched them. It did him no good, because Darrow had stopped looking for his feet, and everything he had was in the shoulders now and the shoulders went all at once. The wood came round under Hollis's guard, flat and hard, and took him across the ribs below the arm with a sound like a dropped plank.
+
+The breath went out of Hollis in one piece. The chair went back on two legs, and the old man's sword went down behind him onto the flags, point first, the way it had before, and the chair hung there and came down.
+
+The cost was the hand. The blow came back up Darrow's arm into the fingers that could not feel it, and they opened on their own, and the sword went out of them and skittered across the flags into the arcade, end over end, and stopped against the dog. Ash stood up, put a foot on it, looked at it, and looked at him.
+
+She did not bring it. She did not fetch.
+
+Hollis was bent over his knees with one arm across his ribs and his face the colour of old brick, and for a while the only sound in the cloister was the old man trying to get his breath back from wherever it had gone. The kitchen did not move. Wren's pencil had not moved. Then Hollis lifted his head, and he was grinning through his beard like a man who has been handed a full cup.
+
+"*That's* what you've got," he said, when he could. "Bells take you, Captain. *That's* what you've got."
+
+He did not say it the way he usually said Captain. Darrow heard the difference, and so did the kitchen.
+
+"I've lost the sword."
+
+"You've lost the sword, and you've hit me, and I'd not have the one without the other." He straightened, carefully, a hand flat to his side. "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so; she'll not hear it from you." He looked across at the dog standing over the wood. "And you'll want a dog that fetches."
+
+"She doesn't."
+
+"No," said Hollis. "I see that." He settled back in his chair, sore and pleased with himself. "Again tomorrow. Bring the stick. You'll want something to hit me with that she won't sit on."
+
+In the doorway the cook paid a lay brother a chit, without a word, and the lay brother put it in his apron like a man who had known all along.

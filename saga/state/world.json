@@ -109,11 +109,18 @@
         "2026-10-30"
       ],
       "written": "2026-10-30"
+    },
+    {
+      "scene": "between-9",
+      "title": "Ready",
+      "after": "6",
+      "covers": [],
+      "written": "2026-10-30"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the cloister, in a plain chair facing Hollis's across a sword's length of wet flags, the kitchen in its door, Wren on the fountain's rim, Ash in the arcade",
+    "detail": "the cloister, in the plain chair facing Hollis's, his wooden sword in the arcade under the dog's foot",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -123,7 +130,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and in it a brother's questions for his sister, where she is kept and a line in her hand, and one true line. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits and the clerk may name the place; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
-  "last_beat": "\"Hit me properly. Once. So I know what you've got.\" The kitchen went quiet. Wren's pencil stopped.",
+  "last_beat": "In the doorway the cook paid a lay brother a chit, without a word, and the lay brother put it in his apron like a man who had known all along.",
   "companions": {
     "maelis": {
       "approval": 27,

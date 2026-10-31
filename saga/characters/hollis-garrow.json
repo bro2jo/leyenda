@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "6",
+    "scene": "between-9",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-6"
+    "anchor": "chronicle/04-old-mercy.html#between-9"
   },
-  "last_seen_doing": "Had himself carried to the cloister at the noon bell; set two chairs and two wooden swords; taught the Captain to stop looking at the floor and to watch the shoulders, and the bind, a blade held is a blade not swinging; beat him on the collarbone and the wrist; went over backwards in his chair on the wet flags and saved it with his sword planted behind him; called that the lesson; named it the Seated Blade; asked to be hit properly, once, not like a Mender.",
-  "now": "In his chair in the cloister with the wooden sword across his knees, winded and steady-eyed, having asked the Captain to hit him properly, once, so he knows what he has.",
+  "last_seen_doing": "Answered the ready signal with his own fist; watched the Captain's shoulders and took the blow across the ribs anyway; kept his chair with the planted sword, the lesson; got his breath back and grinned; said that is what you've got, and said Captain differently; told the Captain to have the Mender see to his fingers before the man on the stair finds out; said again tomorrow, and bring the stick.",
+  "now": "In his chair in the cloister with a hand flat to his ribs, sore and pleased with himself. He has had what he asked for and says again tomorrow.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -552,6 +552,36 @@
       "chapter": "04",
       "scene": "6",
       "evidence": "Hit me properly. Once. So I know what you've got."
+    },
+    {
+      "fact": "He answered the Captain's ready signal with his own fist, then took the hilt.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "He set the planted sword where he wanted it, and lifted his own fist, and opened it, and took the hilt."
+    },
+    {
+      "fact": "He took the blow across the ribs and kept his chair by planting his sword behind him, as before.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "the old man's sword went down behind him onto the flags, point first, the way it had before"
+    },
+    {
+      "fact": "Getting his breath back, he grinned and said that is what you've got, and said Captain differently from his usual way.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "\"*That's* what you've got,\" he said, when he could. \"Bells take you, Captain. *That's* what you've got.\""
+    },
+    {
+      "fact": "He told the Captain to get his fingers back before the man on the stair finds out about them, and to tell the Mender Hollis said so.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so; she'll not hear it from you."
+    },
+    {
+      "fact": "He said again tomorrow, and to bring the stick, something to hit him with that the dog won't sit on.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "\"Again tomorrow. Bring the stick. You'll want something to hit me with that she won't sit on.\""
     }
   ],
   "relationships": [
@@ -815,6 +845,10 @@
     {
       "chapter": "04",
       "scene": "6"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-9"
     }
   ]
 }

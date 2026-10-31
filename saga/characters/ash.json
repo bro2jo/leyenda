@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "6",
+    "scene": "between-9",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-6"
+    "anchor": "chronicle/04-old-mercy.html#between-9"
   },
-  "last_seen_doing": "Followed the Captain to the cloister with the fifth bone in her mouth; lay in the arcade watching the swords; came up off the bone when Hollis's chair banged down; came out to see what the laughing was for.",
-  "now": "In the cloister near the Captain's chair, the bone left in the arcade.",
+  "last_seen_doing": "Stood up when the Captain's sword skittered into the arcade against her, put a foot on it, looked at it and at him, and did not bring it.",
+  "now": "In the arcade with a foot on the Captain's wooden sword. She did not fetch it.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -69,6 +69,12 @@
       "chapter": "04",
       "scene": "6",
       "evidence": "with the dog a length behind his heel and the fifth bone in her mouth"
+    },
+    {
+      "fact": "When the Captain's sword skittered into the arcade she put a foot on it and would not bring it to him.",
+      "chapter": "04",
+      "scene": "between-9",
+      "evidence": "She did not bring it. She did not fetch."
     }
   ],
   "relationships": [
@@ -111,6 +117,10 @@
     {
       "chapter": "04",
       "scene": "6"
+    },
+    {
+      "chapter": "04",
+      "scene": "between-9"
     }
   ]
 }
