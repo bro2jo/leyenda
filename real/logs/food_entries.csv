@@ -179,3 +179,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-30#8,2026-10-30,,dinner,Grilled glazed chicken skewers,2 skewers (~6 oz cooked chicken),330,48,12,9,0,2.5,10,900,420,15,1.2,45,1.8,0,0.2,40,photo,teriyaki-style glaze assumed; ~3 pieces a skewer
 2026-10-30#9,2026-10-30,,dinner,"Egg roll, fried",1 roll,200,6,22,10,1.5,2,2,450,150,20,0.8,12,0.5,2,0,20,estimate,typical takeout egg roll
 2026-10-30#10,2026-10-30,,dinner,Pineapple pieces,assumed ~1/2 cup (80 g),40,0.5,10,0,1,0,8,1,90,10,0.2,10,0.1,38,0,0,photo,in the bowl
+2026-10-30#11,2026-10-30,,snack,Walnut Creek gluten-free chocolate chip cookie,1 cookie (assumed ~45 g),220,2,28.5,10.5,0.6,3,16,135,55,15,0.5,12,0.2,0,0.1,0,library,library row (estimate 10/28; label has no weight)
