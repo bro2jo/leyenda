@@ -1052,25 +1052,41 @@ The censer swung from his fist and smoked at the cold, and for the first time Da
 
 ---
 
-At the hour bell before dusk Darrow had his hands in the upper pool to the wrist, as he had been told, closing them on the bottom stones; and the right one knew the stones were there, and when he took the stick in it afterward, on the turn of the tower stair, it knew that too.
+At the hour bell before dusk Darrow had his hands in the upper pool to the wrist, as he had been told, closing them on the bottom stones; and the right one knew the stones were there, and when he took the stick in it afterward, it knew that too.
 
-The chair stood where the stair narrowed and turned, with a slit window over it going grey. Below, in the door, Hollis sat in his own chair with the wooden sword across his knees and the beech leg out across the threshold. Above, a ladder went up into the bell-loft, and on it Wren's boots, and above them Pell's.
+Before he went in at the tower door he looked at the court the way he would have looked at a ford. Marrant's three men had been warmed and fed since noon, as the law of guests allowed, and they were no longer by the brazier. One stood at the well. One leaned in the arcade by the kennel ramp. The third stood a dozen paces from the tower door with his hands in his sleeves, looking at nothing. Three men, and every one of them a short run from the same door. Marrant himself stood by the gate with the censer, where the whole House could see that his hands were empty.
 
-Old Mercy began at dusk.
+"They're not here for me," Darrow said to Hollis, low. "They're here for the bell."
 
-One stroke. The bronze went out over the court and the valley, and the second did not come. Above him the rope ran loose through its box with a sound like a sail tearing, and Wren said Pell's name twice, sharply, not counting anything. Fifty years of rope had opened the two lines across the old woman's palms on that first stroke, and the rope had torn out of her hands, and she had fallen with it.
+"Then they can come past a one-legged man," said Hollis, and had his chair set down in the doorway.
 
-Then the door below was full of grey.
+The tower was a stair and two rooms. The stair went up from the door to a turn where it narrowed under a slit window, and there Darrow's chair stood, with the stick across his knees. Above the turn it went on to the ringing floor, where Old Mercy's rope came down through a hole in the boards, and Pell stood at it with Wren beside her. From the ringing floor a ladder went up through a trap into the loft, where the bell hung in the dark.
 
-Hollis took the first across the shins from the chair and held him in the doorway with the bind, swearing; the other two came over the beech leg and past him, and up the stair. Unarmed, as the law said, with their hands out.
+Dusk at Saint Ysolde's is not a moment. It is the time the light takes to leave the bars of the gate and climb the face of the tower and go out of its windows one by one, and the law asks only that Old Mercy sound inside it. Darrow watched the slit window over his chair go from white to grey.
 
-The first came up the turn fast, a big man with his eyes on the ladder, and reached past the chair for the stick.
+Old Mercy began.
+
+One stroke. The bronze went out over the court and the valley, and the second did not come.
+
+Above him the rope went up through its hole with a sound like a sail tearing. Wren said Pell's name twice, sharply, not counting anything. Fifty years of rope had opened the two lines across the old woman's palms on that first stroke, and the rope had torn out of her hands and gone up on the bell's swing, through the boards and into the loft, out of anyone's reach; and Pell had gone down on the ringing floor with her hands open and bleeding.
+
+"It's gone up," Wren called down. "The rope's gone up through the floor."
+
+There was one way left to ring the bell, and it was the ladder.
+
+In the court the three men moved at the same moment, on the silence where the second stroke should have been. They knew what it meant as well as anyone in the House: no bell before dark, no law after it. They had not come for anyone's name. They had come to keep anyone from reaching that bell until the light was gone.
+
+Hollis took the first across the shins from his chair and caught him in the bind in the doorway, swearing. The other two came over the beech leg and past him and up the stair, unarmed as the law said, with their hands out.
+
+Above, Wren had started up the ladder.
+
+The first man came round the turn fast, a big man with his eyes on the ringing floor, and Darrow put the stick across the stair in front of him. The big man took hold of it and wrenched.
 
 `[MIGHT · DC 14]` d20 **3** +1 might +3 proficiency +2 The Seated Blade II +1 chapter 4 Hard-won = **10** — *Failure*
 `[INSPIRATION]` 2 → 1 · cast again
 `[MIGHT · DC 14]` d20 **9** +1 might +3 proficiency +2 The Seated Blade II +1 chapter 4 Hard-won = **16** — *Success*
 
-The big man got a hand on the end of it, and the Captain's fingers did not know they had lost it; and then the wrist did, and the shoulder, and the shoulder did not let go. Darrow took the pull and kept it. A blade held is a blade not swinging. He leaned into the bind from the chair and the big man leaned back against it on the narrow stair, and the stick between them did not move, and neither did they.
+The Captain's fingers did not know they had lost their grip; then the wrist knew, and the shoulder, and the shoulder did not let go. Darrow took the pull and kept it. A blade held is a blade not swinging. He leaned into the bind from the chair and the big man leaned back against it on the narrow stair, and the stick between them did not move, and neither did they.
 
 The second tried to come past on the rail side. The rail was older than the House's oldest Mender. It went with a crack, and he went with it, over and down into the dark of the stairwell, and landed with a sound like a cart being unloaded, in the firewood that nobody had carried up.
 
@@ -1078,19 +1094,23 @@ He swore, at length, from among it. He lived.
 
 Below the kennel wall the lymer began to bay, and stopped all at once, the way a hound stops when something at the bars has answered it.
 
-The light in the slit window was going. Above, the rope hung still; Wren had left it and was on the ladder to the loft, slow, one rung, then nothing, then one. The bell had no voice, and every breath it had none was a breath of sanctuary running out of the House, and he knew how many there were left better than he wanted to. He had only to stand. Stand, step past the man in the bind, and go up after her.
+Above, the climbing had stopped. Wren was halfway up the ladder and not moving: one rung, then nothing, then nothing again. He knew that silence. He had heard her count the Steps with a litter on her shoulder and the grey cloaks at the bars, and she had never once stopped, and she had stopped now. The light was going out of the slit window. Every breath the bell had no voice was a breath of the law running out of the House. He had only to stand. Stand, step past the man in the bind, and go up after her.
 
 `[RESOLVE · DC 14]` d20 **12** +0 resolve +3 proficiency +3 The Mender's Patience III +1 chapter 4 Hard-won = **19** — *Success*
 
 He sat. *Sitting. Every moment of it.*
 
+He could not go up to her. He could give her back her count.
+
 "Count it, Wren," he said up the stair, as if they were on the wall-walk with the glass. "Count me the rungs."
 
-A breath. Then, from above, flat and quick: "Nine. Ten. Eleven. Technically there's no twelfth, it's a beam—"
+A breath. Then, from above, flat and quick: "Seven. Eight." The big man heaved on the stick, and Darrow leaned into it and kept it. "Nine. Ten." The window over his head had gone dark; only the top of the tower still had the light. "Eleven. Technically there's no twelfth, it's a beam—"
 
 Old Mercy rang.
 
-Not Pell's ringing. A hand on the clapper itself, in the loft, ragged, every stroke a little early, with the crack in its voice the valley knew; and it went out over the court on the last of the light, and the light went out under it. The big man on the stair let go of the stick, and sat down on the step below the chair, and put his head in his hands.
+Not Pell's ringing. A hand on the clapper itself, in the loft, ragged, every stroke a little early, with the crack in its voice the valley knew; it went out over the court on the last of the light, and the light went out under it.
+
+The big man on the stair let go of the stick. He was the law's man, and the law had just spoken from the tower in a voice the whole valley knew. A Confessor's man who laid hands on anyone under that bell would be breaking the Crown's own law in front of a House full of witnesses, and he knew it better than Darrow did. He sat down on the step below the chair and put his head in his hands.
 
 On the gate wall, against what was left of the west, stood a carter with an ox-bell at her belt who had not been in the House at noon.
 

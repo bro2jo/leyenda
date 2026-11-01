@@ -493,13 +493,6 @@
           ]
         },
         {
-          "name": "Rung down",
-          "text": "The House's custom for a guest who leaves in peace: Old Mercy sounds as he goes down the Steps, and by the law a man the House has rung down may not lawfully climb them against it again. The Prior named it at the foot of the tower stair after the bell, with Sister Pell's hands too torn to ring (Ch 4 Climax).",
-          "sources": [
-            "ch04:climax"
-          ]
-        },
-        {
           "name": "The bell tower",
           "text": "Old Mercy's tower. Its door at the foot of the stair is the only way up to the bell; the stair narrows and turns halfway. On the eve the Captain set Hollis's chair in the door and his own on the turn, and Wren beside Sister Pell at the rope (Ch 4 Sc 7).",
           "sources": [
@@ -511,6 +504,13 @@
           "text": "An old plain sword, the blade dull, that Maelis carried down the Thousand Steps wrapped in oilcloth that smelled of the undercroft, with one word cut in the steel near the hilt: Patience. Darrow laughed; he thought it was a joke, and she let him (Ch 4 Choice).",
           "sources": [
             "ch04:choice"
+          ]
+        },
+        {
+          "name": "Rung down",
+          "text": "The House's custom for a guest who leaves in peace: Old Mercy sounds as he goes down the Steps, and by the law a man the House has rung down may not lawfully climb them against it again. The Prior named it at the foot of the tower stair after the bell, with Sister Pell's hands too torn to ring (Ch 4 Climax).",
+          "sources": [
+            "ch04:climax"
           ]
         }
       ],
