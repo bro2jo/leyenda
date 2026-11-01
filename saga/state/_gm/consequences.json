@@ -1329,10 +1329,44 @@
           "what": "Rae asked, on the fold wall, what he was going to say to Aldric on the road: her one question of the night. Fire where he answers her, or she asks again, or he tells her he cannot yet",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch05:between-2",
           "offered": 1,
           "offered_at": [
             "ch05:between-1"
+          ],
+          "evidence": "I wanted to stand in front of him and say, *Did you know?* and watch it while he answered."
+        }
+      ]
+    },
+    {
+      "id": "c05.2",
+      "made": {
+        "chapter": 5,
+        "scene": "between-2",
+        "date": "2026-11-01"
+      },
+      "chose": "Answered Rae's question on the fold wall: first the light half, that he missed Aldric; then, with the hut door shut on Hollis, the rest: Ride wide, the horse already turned one heartbeat early, his fear that it was known and his wish that it were not, and that he wanted to ask Aldric to his face whether he knew",
+      "now": {
+        "approval": {
+          "rae": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c05.2a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow told Rae what he saw from the water at the ford (Aldric's horse already turned, one heartbeat early) and that he fears it was known; she said it is carried and she does not open what she carries; it is Hollis's to come to at the seal. Fire where she keeps it under pressure, or where Hollis learns it and finds she already had it",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-2"
           ]
         }
       ]

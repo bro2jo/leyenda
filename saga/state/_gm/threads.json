@@ -7,7 +7,7 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Darrow; the reader. Maelis knows only that he believes the Grace was taken, no name. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand. 04:s2: Darrow, Wren, Hollis, Anselm and Rae saw that the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where",
+      "who_knows": "Darrow; the reader; Rae (from Darrow on the fold wall, 05:between-2: Ride wide, the horse already turned one heartbeat early, his fear it was known; she keeps it). Hollis does not: it is his to come to at the seal. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
       "note": "touched 03:s3 (the letter to Aldric). 04:s2 (T3 plant): the direction on Aldric's three letters and Mirren's letter are in one clerk's hand, the clerk at the winch-house who never kneels: Vane's household and the Confessors write with one hand. Darrow has joined the two letters; he has not said Vane's name over it",
       "on_page": [
         "00:I",
@@ -18,7 +18,8 @@
         "03:s2",
         "03:s3",
         "04:s2",
-        "05:s1"
+        "05:s1",
+        "05:between-2"
       ]
     },
     {
@@ -35,7 +36,8 @@
         "01:climax",
         "02:s5",
         "03:s2",
-        "03:between-3"
+        "03:between-3",
+        "05:between-2"
       ]
     },
     {
@@ -236,6 +238,7 @@
         "04:choice",
         "05:s1",
         "05:between-1",
+        "05:between-2",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"
@@ -316,7 +319,8 @@
       "note": "Plants already on the page before this thread was opened, counted by eye (the engine counts from here): 02:s4, 02:interlude, 02:between-10, 02:between-11, 02:climax. Next plants: q1.cart stage 2 (the satchel's weights), b1.4 (the clerk's first climb), b1.5 (the second line). No reveal before Book III. 04:between-1: the leash said as a family debt ('He paid for them, once, and I've been paying him back by the load since'); 'nobody's hand on the rope but mine' is the want under the calling",
       "on_page": [
         "04:between-1",
-        "05:between-1"
+        "05:between-1",
+        "05:between-2"
       ]
     },
     {

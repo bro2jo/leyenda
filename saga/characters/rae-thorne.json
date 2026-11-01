@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-1",
+    "scene": "between-2",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-1"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-2"
   },
-  "last_seen_doing": "Kept the fold dark from the far shore; told him about her uncle and his taproom, and that she went out the back the night the list was read without asking him; made her one question of the night his: what he was going to say to Aldric.",
-  "now": "On the fold wall above the tarn, watching her uncle's door across the water, her shoulder against Darrow's.",
+  "last_seen_doing": "Called his first answer light, heard the rest, told him a face shows what a man fears and not what he did, and said what he told her is carried and unopened.",
+  "now": "On the fold wall above the dark tarn, keeping what he told her.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -547,6 +547,24 @@
       "evidence": "He'll do what's good for the inn. He always has."
     },
     {
+      "fact": "She keeps the faces of everyone she has brought to the foot of the Steps and taken down again.",
+      "chapter": "05",
+      "scene": "between-2",
+      "evidence": "Every man I've brought to the foot of those stairs, and every one I took down again."
+    },
+    {
+      "fact": "She holds that a face tells what a man is afraid of, not what he did.",
+      "chapter": "05",
+      "scene": "between-2",
+      "evidence": "A face tells you what a man's afraid of. It's no good at all for what he did."
+    },
+    {
+      "fact": "She does not open what she carries.",
+      "chapter": "05",
+      "scene": "between-2",
+      "evidence": "I don't open what I carry."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -782,6 +800,10 @@
     {
       "chapter": "05",
       "scene": "between-1"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-2"
     },
     {
       "chapter": "tale02",

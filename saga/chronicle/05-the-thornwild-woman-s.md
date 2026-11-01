@@ -148,3 +148,47 @@ He did not tell her it would be all right. She would have known what it was wort
 That got her: one short breath through the nose, which on Rae was a laugh, and her shoulder against his for the length of it, and there it stayed.
 
 "You've had two," she said. "I'll have mine." She was looking across the water, not at him. "On the road today. Standing there. What were you going to say to him?"
+
+### Between — The Better Seat
+
+He took a while over it. Across the water the inn's door opened and let its bar of light out over the tarn and took it back. Behind them in the hut Hollis had started singing to the kettle, low, one of the Sixth's, with a verse in it about a Confessor and a goat that no kettle should have had to hear.
+
+"I was going to say I'd missed him," Darrow said, and watched how she took it.
+
+She took it with the cup in both hands, and weighed it, and he felt it being weighed.
+
+"That's light," Rae said. "For what you were carrying on that road."
+
+"It's true, though." It was. "We held other men's horses together when we were too small to hold them. We were knighted in the same chapel on the same morning, and I watched his face when the warmth went into him, like a man hearing music he'd only been told about. He had the better seat and the better manners and the second-fastest feet in the Lowmarch, and he'd have told you they were the fastest." Something went through him that was nearly a laugh. "Nobody's called me an idiot in that particular voice since midsummer. Hollis does it, but Hollis does it about everything."
+
+"And the rest of it?"
+
+He looked back at the hut. The door was shut, and Hollis had reached the goat.
+
+"The morning of the ford he told me to ride wide," Darrow said, lower. "Then wider. He had his mouth open on something else, and the chaplain's bell went, and he shut it. Halfway across the river the warmth went out of me, and I looked back at the west bank." He had to stop and start again. "His horse was already turned. Already climbing out of the shallows. One heartbeat before the rest of us went down, he was going the other way."
+
+Rae had stopped turning the cup.
+
+"Somebody knew it was coming," he said. "Sixty men don't lose the same thing in the same breath by chance, and you don't turn a horse for nothing. If somebody knew, he knew. I've known it since the water. And I don't want it to be true. I've wanted that every day since midsummer, and every day it's been true anyway."
+
+"So you wanted his face."
+
+"I wanted to stand in front of him and say, *Did you know?* and watch it while he answered. He could lie to anybody in the Lowmarch. He never once managed it to me, not to my face."
+
+Rae looked across the water at the yellow door for a long breath before she answered, and when she did, it was plain.
+
+"I keep faces," she said. "You know I do. Every man I've brought to the foot of those stairs, and every one I took down again. A face tells you what a man's afraid of. It's no good at all for what he did." She tipped the cup at the far shore. "My uncle's got a good face. Everybody says so."
+
+Darrow turned that over, and liked it less the longer he held it, which was usually how he knew a thing was true.
+
+"Does Hollis know?" she said.
+
+"That's two."
+
+That nearly got her again. "Aye. Does he?"
+
+"No. He carried the order up the bank, and he's never looked at the seal on it. When he does, I'll be there. It's his to come to, not mine to hand him."
+
+"Then it's carried." She put the empty cup into his hands. "I don't open what I carry."
+
+Across the water the inn's door shut for the night, and the tarn went dark from shore to shore. In the hut, Hollis finished the goat and started on the Confessor's sister.

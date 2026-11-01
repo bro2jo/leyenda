@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-1",
+    "scene": "between-2",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-1"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-2"
   },
-  "last_seen_doing": "Took Rae a cup from the kettle on the fold wall with no light, asked about the man pouring for the column, would not tell her it would be all right, and offered to go round Coldmere rather than put her uncle to it.",
-  "now": "On the fold wall beside Rae, with Ash across their feet, her question waiting: what he was going to say to Aldric.",
+  "last_seen_doing": "Answered Rae's question: first that he missed Aldric; then, with the hut door shut on Hollis, that Aldric's horse was already turned one heartbeat before the warmth went, that he fears it was known and does not want it to be true, and that he wanted to ask Aldric to his face.",
+  "now": "On the fold wall beside Rae, holding the empty cup; he has told one person what he saw from the water.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1734,6 +1734,18 @@
       "evidence": "If it isn't good for the inn,"
     },
     {
+      "fact": "He told Rae he had wanted to ask Aldric to his face whether he knew, and to watch him answer.",
+      "chapter": "05",
+      "scene": "between-2",
+      "evidence": "I wanted to stand in front of him and say, *Did you know?* and watch it while he answered."
+    },
+    {
+      "fact": "He believes somebody knew the ford was coming, and does not want it to be Aldric.",
+      "chapter": "05",
+      "scene": "between-2",
+      "evidence": "And I don't want it to be true."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2087,6 +2099,10 @@
     {
       "chapter": "05",
       "scene": "between-1"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-2"
     },
     {
       "chapter": "tale01",
