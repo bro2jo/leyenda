@@ -73,7 +73,7 @@
 | Quad LSI >80% | **Met on 10/17** | 90.4%, or 83.4% vs the pre-op right. Retest ~week 12 (plan: every 3–5 weeks) |
 | Hamstring LSI ≥80% | **Unmeasured** | Pre-op 70.6%. Ask for the test at the next visit |
 | Glute med/max ≥80% | **Unmeasured** | Pre-op hip 5/5 was a manual test, not a symmetry number. Slight left hip drop at the bottom of the 6.5" step-down (10/18). Ask at the next visit |
-| 10 controlled single-leg squats to ~60° | **First test Wed 10/28** | At home, filmed, judged on the plan's checklist (§6); Sundays until it passes. Single-leg control is the soft spot (§9, item 6) |
+| 10 controlled single-leg squats to ~60° | **Passed Sun 11/1** (left 12 of 12 clean on his read of the film, some rocking on the ascent; right 12 of 12); first test 10/28: left 4 | At home, filmed, judged on the plan's checklist (§6); stays on Sundays (his call) until the left's ascent is smooth; the PT sees the video 11/4. Single-leg control is the soft spot (§9, item 6) |
 | Pain-free low-level impact prep | **Started Wed 10/28** | At home, the plan's sequence from small double-leg pogos (§6); Nick 10/28 |
 | Good landing mechanics | Not yet | Judged on the low vertical jump and landing, then the drop vertical jump (§6; cleared by Nick 10/28 once the rungs before it are clean) |
 | Rehabilitation team agrees | — | — |
@@ -273,7 +273,7 @@ The master plan's Phase 4 A (squat, knee extension, RFESS, hamstring curl, stand
 
 | # | Exercise | Last (Wed 10/28) | Next (Sun 11/1) | Ladder [plan Phase 4 target] |
 |---|---|---|---|---|
-| T | Single-leg squat test (Sundays) | 24" seat, filmed: left 4 clean of 12 (the rest lightly assisted), right 12 clean | **First, fresh, filmed, the 24" seat** | Until it passes (10 clean) |
+| T | Single-leg squat test (Sundays) | 11/1, 24" seat, filmed: left 12 of 12 clean (some rocking on the ascent), right 12 of 12: **passed** (10/28: left 4) | **First, fresh, filmed, the 24" seat** | Passed 11/1; stays on Sundays until the left's ascent is smooth (his call) |
 | WU | Bike · BOSU ball toss (L) · impact | Bike 8 (2.00 mi) · ball toss 2 × 45 s · pogos 2 × 15 · single-leg hops 2 × 5 each (ahead) · TKE 70 × 2 × 10 | Bike 8 · ball toss 3 × 45 s · **snap-down 3 × 5 + low vertical jump and landing 2 × 5** (rung 3, in the pogo's place) · cable TKE optional | Impact per its ladder (above) |
 | 1 | Goblet squat to an 18" box, paused, 3 s lowering — pair with 5 | 45 / 45 / 50 × 10 (pain 0; reps left not logged) | **50 / 50 / 52.5 × 10** (one DB step on every set; the top set reaches the DBs' top). Rate reps left | → 52.5 × 10 clean = the DBs outgrown → **a barbell back squat in the rack to the same 18" box, paused, empty bar first** (the next A), +5 lb steps → 3 × 8 at RPE 7–8 [3–4 × 6–10, RPE 7–8] |
 | 2 | Cable knee extension, full range — **pair with 4** | 40 × 3 × 12 each leg, **the left solo both ways** (planned: both up, left down) | **40 + 1 plate × 3 × 12, the left solo both ways** (10/28: every rep, pain 0, a quiet morning, so the plan's rule gives the load step). Rate reps left | +1 plate (11/1) → 3 × 12 → +1 plate [2–3 × 8–12, RPE 7–8, if the donor site tolerates]. **Never more than one plate a step on the left.** Front-of-knee pain >2 → stop short of straight first, then lighten; the 90° isometric (5 × 10 s) is the fallback |
