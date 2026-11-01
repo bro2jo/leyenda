@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-30 · house · Under the Captain's cot, Ash has got hold of the end of a blanket nobody remembers giving her, and has made a nest of it with the care of someone who means to stay.
 - 2026-10-30 · weather · A bright, still noon on the Steps; the frost on the shaded landings has not given up, and the lay brothers coming up go round it, not over it, the way you go round a sleeping dog.
 - 2026-10-30 · overheard · From the stair, two novices carrying a bench between them and losing the argument about it: Your end's lower. — It's the stair that's lower. — Then lift the stair.
 - 2026-10-30 · ledger · From Wren's ledger, under the week's linen: Sheets sent down to the wash, 41. Sheets come back, 41. Sheets come back cleaner than they went, 40; the forty-first is being looked into.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-31 · overheard · From the linen press, a lay brother counting sheets under his breath: …eleven, twelve, twelve, thirteen. No. One. And he starts again from the top, out of principle.
 - 2026-11-01 · body · The cold off the tarn finds every old break in him and, tonight, misses the knee. He notices the way you notice a dog that has stopped barking: late, and suspicious of his luck.
 - 2026-11-01 · weather · Fog comes off the tarn at dusk and settles on the drove road as if it has paid for the spot. Hollis tells it to move along. It does not.
+- 2026-11-01 · house · Wren has begun a tally of every dog in the Lowmarch, strictly for the ledger. Ash appears in it twice: once as hound, ours, and once, in smaller letters, as hound, thief of cheese.
