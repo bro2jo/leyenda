@@ -1306,6 +1306,36 @@
         "Let him go, and ring the bell for him as he leaves, as the law says.",
         "Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*"
       ]
+    },
+    {
+      "id": "c05.1",
+      "made": {
+        "chapter": 5,
+        "scene": "between-1",
+        "date": "2026-11-01"
+      },
+      "chose": "Brought Rae the kettle's brew on the fold wall with no light, asked about the man pouring for the column and heard all of it; would not tell her it would be all right; said they would go round Coldmere rather than put her uncle to it, and made her laugh",
+      "now": {
+        "approval": {
+          "rae": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae asked, on the fold wall, what he was going to say to Aldric on the road: her one question of the night. Fire where he answers her, or she asks again, or he tells her he cannot yet",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-1"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

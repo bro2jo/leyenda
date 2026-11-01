@@ -106,3 +106,45 @@ Rae looked at the fires for a long time. Then she pointed with the goad at the b
 
 > ⟦ THE RECKONING ⟧
 > Ember Steady → Bright
+
+### Between — Across the Water
+
+Maelis had built the fire inside the shepherds' hut, because Rae had said a fire on this shore would show on that one, and Maelis had looked across the tarn and agreed without a word of argument, which Hollis said he would remember on his deathbed. What came out of the kettle was hot, and that was all anybody would say for it.
+
+Darrow carried a cup of it out into the dark with the stick under his arm and no lamp. Rae was sitting on the fold wall above the water, where she had been since the fires came out, with her cloak pulled round her knees and the ox-bell closed in her fist to keep it quiet.
+
+"No light," she said, before he reached her.
+
+"No light." He held out the cup. "Maelis made it. I'd call it a drink if I were feeling generous."
+
+She took it in both hands and drank, and made a face, and drank again. He got himself up onto the wall beside her, which took longer than he liked and less than it would have a week ago. Ash came out of the dark, considered the two of them, and lay down across both their feet, which settled whether he was staying.
+
+Across the water the fires on the green had burned down into a row of red. The inn's door opened and shut, and each time it opened a long bar of yellow went out across the tarn toward them and stopped short.
+
+"Tell me about him," Darrow said. "The man pouring."
+
+She answered all of it, in one go, and set it down where it would stay.
+
+"He keeps the only inn in Coldmere, and the best on the Holloway, and he'd tell you the second is because of the first. Everything that goes up or down the road goes through his taproom: carters, drovers, heralds, the Crown's clerks, your lot, their lot. He pours for all of them, and he listens to all of them, and he forgets none of it. That's what he's for." She turned the cup in her hands. "He poured the night they read your list. Stood behind the tap and filled the reader's cup between the names, so the man wouldn't dry up halfway down."
+
+"And you?"
+
+"I went out the back. The House's salt was on the cart and the oxen were still in the yoke. I didn't ask him." She looked at the yellow door across the water. "I've asked him everything since I could reach the tap. That was the first thing I didn't."
+
+He thought about that, and about a girl standing on a box behind a bar, and about what it had cost to walk out through a yard in the dark without asking.
+
+"Will he give us up?"
+
+"That's two," Rae said, and answered it anyway. "I don't know. He'll do what's good for the inn. He always has." The door opened; the bar of light came out over the water and went in again. "Sometimes that's me."
+
+He did not tell her it would be all right. She would have known what it was worth.
+
+"If it isn't good for the inn," he said, "we don't put it to him. We go round Coldmere."
+
+"You'd go round my village."
+
+"I'd go round anything you asked me to. I've been practising all day."
+
+That got her: one short breath through the nose, which on Rae was a laugh, and her shoulder against his for the length of it, and there it stayed.
+
+"You've had two," she said. "I'll have mine." She was looking across the water, not at him. "On the road today. Standing there. What were you going to say to him?"

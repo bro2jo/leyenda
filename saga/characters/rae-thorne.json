@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "1",
+    "scene": "between-1",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-1"
   },
-  "last_seen_doing": "Told him she had told the mare her name; took the cart off the Holloway onto the drove road round the tarn rather than drive it into a Lance on the march, and argued it out loud; waited for his word before she drove on.",
-  "now": "At the fold on the north shore of the tarn, looking across at Coldmere, where the column has stopped on the green and her uncle keeps the inn at the water's edge.",
+  "last_seen_doing": "Kept the fold dark from the far shore; told him about her uncle and his taproom, and that she went out the back the night the list was read without asking him; made her one question of the night his: what he was going to say to Aldric.",
+  "now": "On the fold wall above the tarn, watching her uncle's door across the water, her shoulder against Darrow's.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -523,6 +523,30 @@
       "evidence": "\"That's my uncle's,\" she said."
     },
     {
+      "fact": "Her uncle keeps the only inn in Coldmere; everything on the Holloway goes through his taproom, and he pours for all of them and forgets none of it.",
+      "chapter": "05",
+      "scene": "between-1",
+      "evidence": "He pours for all of them, and he listens to all of them, and he forgets none of it."
+    },
+    {
+      "fact": "Her uncle poured for the reader the night the list was read in his taproom, between the names.",
+      "chapter": "05",
+      "scene": "between-1",
+      "evidence": "filled the reader's cup between the names"
+    },
+    {
+      "fact": "The night the list was read she went out the back to the House's cart without asking her uncle, the first thing she had not asked him.",
+      "chapter": "05",
+      "scene": "between-1",
+      "evidence": "That was the first thing I didn't."
+    },
+    {
+      "fact": "She does not know whether her uncle will give them up: he does what is good for the inn.",
+      "chapter": "05",
+      "scene": "between-1",
+      "evidence": "He'll do what's good for the inn. He always has."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -754,6 +778,10 @@
     {
       "chapter": "05",
       "scene": "1"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-1"
     },
     {
       "chapter": "tale02",

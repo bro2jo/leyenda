@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "1",
+    "scene": "between-1",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-1"
   },
-  "last_seen_doing": "Ranged ahead on the road and came back twice to report nothing.",
-  "now": "With the company at the fold on the drove road.",
+  "last_seen_doing": "Lay down across Darrow's and Rae's feet on the fold wall.",
+  "now": "Across their feet on the fold wall.",
   "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
   "quote": null,
   "known_facts": [
@@ -159,6 +159,10 @@
     {
       "chapter": "05",
       "scene": "1"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-1"
     }
   ]
 }
