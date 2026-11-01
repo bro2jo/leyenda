@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/1 (repo, his call): progression follows the master plan's own rule ("Progressive Overload Rules": one major variable at a time per exercise, loads +2.5–10%); the stricter limits this file had added are gone: one change per session made on the last set only, one new exercise per session, one new impact rung per session. Any number of exercises may progress in the same session
 - 10/30 (repo, his call): impact paces like the lifts (one change per exercise, one new exercise per session, inside the plan's caps); the dashboard's one-change-per-session limit for the whole impact block is gone (the master plan sets none)
 - 10/28 (repo, from the dashboard's correction): impact prep follows the plan's own start criteria (Phase 4: "when basic strength, control, and knee response permit"), not a PT start; "only when appropriately cleared" is the drop vertical jump's alone, and Nick cleared it on its criteria (10/28, patient-reported). The 10/9 reading had merged the two. Impact guards added (rule 5); the clearance list follows (Priority and clearance)
 - 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`); throwing follows the Add-On §3 (days without a knee session; slight pivots within reason; the step-out with the PT's OK) and is logged in `sport_log.csv` (the pivot foot named in the row's `drill`)
@@ -78,11 +79,11 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 5. **Progression mechanics:**
    - **Effort:** working sets end with 2–3 clean reps left (RPE 7–8) once that exercise has produced a clean morning at its current dose. New exercises and new loads start at 3–4 in reserve. Never to failure (plan Phase 3).
    - **Mechanics end the set before effort does:** knee drifting in, hip dropping, rushed lowering, compensation onto the right.
-   - **One change per exercise per session,** made on the last set, only if the earlier sets were clean. Several exercises may change on the same day.
-   - **Load steps:** one DB increment, one cable plate, or ≤10% (plan: 2.5–10%). No first-exposure jumps.
-   - **One new exercise per session,** bodyweight or the lightest load first. PT items run at the PT's dose don't count as new.
-   - **Ladders** for every exercise live in the Recovery State §6. Move one rung at a time.
-   - **Impact (the plan's Phase 4 sequence):** the plan's dose (2 exercises, 2–3 sets, 5–8 contacts a set; stop while mechanics are still excellent), fresh, before the lifts. Paced like the lifts: **one change per exercise per session** (sets or contacts) **and one new rung per session**; other exercises may change the same day. Landings quiet, knee over the foot.
+   - **The master plan's rule ("Progress one major variable at a time"):** on any one exercise, raise one of load, reps, sets, range, speed, impact or complexity at a time, never several together. **Any number of exercises may progress in the same session**, and an exercise may change on every set, when all its target reps were completed with excellent technique and the knee stayed quiet (plan: "Increasing Load").
+   - **Load steps (plan: ~2.5–10%):** one DB increment, one cable plate, or ≤10%; small isolation lifts take the smaller jumps (plan). No first-exposure jumps.
+   - **New exercises** start at bodyweight or a light load, 3–4 reps in reserve. Several may start in one session. PT items run at the PT's dose.
+   - **Ladders** for every exercise live in the Recovery State §6; each rung is one variable.
+   - **Impact (the plan's Phase 4 sequence):** the plan's dose (2 exercises, 2–3 sets, 5–8 contacts a set; stop while mechanics are still excellent), fresh, before the lifts. Each impact exercise moves one variable at a time (sets, contacts, or on to the next rung). Landings quiet, knee over the foot.
    - A morning that isn't clean reverses **every** change from the previous session, **the impact block first** (back one rung; on the first rung, out until a clean morning).
 6. **Progress only after a clean morning.** A slightly-up morning holds the dose.
 7. **Reduce in this order when yellow** (plan: volume → load → range/impact/complexity):

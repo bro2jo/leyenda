@@ -14,6 +14,7 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 - 10/18: the finisher's Copenhagen runs on both sides at short lever (Nick 10/17); the long lever on the left stays Phase 6
 - 10/21 (knee and upper reviews): rules 1, 2, 5 and 10 (morning check first, with no penalty on optional items; leg up between sets optional; carries in with Phase 4; the Copenhagen stays when the finisher is cut) · the remaining off day is rest by default · time budgets match the real sessions · the Copenhagen carries the adductor work and gets a hold ladder · the bird dog leaves the posture coverage · the accessory day drops its duplicate Y-raise, runs the Pallof standing and swaps the seated DB hold for a suitcase carry · Saturday drops the arms-only aerobic and runs the Pallof standing · throwing records the pivot foot · the right-leg list matches the Phase 4 sessions, and the left's caps don't apply to it · carries leave §6
 - 10/22 (repo): the dashboard's 10/15, 10/18 and 10/21 revisions folded in (`/ingest`). On a day with throwing and upper both, the order is now the bike, then throwing, then lifting (§2), in place of the 10/12 throw-first order. Throwing's content (skills, sessions, the weeks) stays in the sport plan; §3 sets only what the knee allows and where throwing sits
+- 11/1 (repo): §7's tempo item follows the plan's one-variable rule per exercise; the "one exercise at a time" limit is gone
 - 10/28 (repo): §6's jump line excepts the rehab plan's own Phase 4 impact sequence, which runs inside the knee sessions from 10/28 (Nick 10/28: the plan's criteria and times govern; Recovery State §6)
 
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
@@ -235,7 +236,7 @@ Nick (10/9): progression is up to the master plan. A plan exercise progressed al
 | 3 | **Seated calf raise, left, loaded** (soleus) | **In-plan from Phase 4** (plan Phase 4, Session B: 3–4 × 10–15) |
 | 4 | **Spanish squat isometric** | Not in the plan. The off-season tissue block's patellar-tendon item; loads the harvest site directly. **Ask the PT** |
 | 5 | **Reverse sled drag** | Not in the plan; no sled at home. Parked |
-| 6 | **Slow-eccentric tempo (3–4 s lowering)** on the split squat, RDL, step-up | **In-plan** (speed variable). One exercise at a time, as that exercise's one change for the session. This is the off-season Phase 1 strength emphasis |
+| 6 | **Slow-eccentric tempo (3–4 s lowering)** on the split squat, RDL, step-up | **In-plan** (speed variable). As that exercise's one variable for the session (the plan's rule); several exercises may take it at once. This is the off-season Phase 1 strength emphasis |
 | 7 | **Calf/Achilles isometric hold** | **In-plan** (a hold on the plan's calf raise). Straight-knee single-leg hold at mid-range, 3 × 30 s, as the calf slot's one change. The bent-knee (soleus) version waits for Phase 4 |
 
 ---

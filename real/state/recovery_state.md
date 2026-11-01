@@ -144,12 +144,12 @@ Last week in one line: loaded days 2 of 2 (Wed A in the cancelled PT slot, Fri B
 | Tue 11/3 | Morning check → **throwing** (the knee slot moved for Wednesday's PT; feet planted or slight pivots on the left; ~60 throws, the week's dial on count or intensity, not both) |
 | Wed 11/4 | **PT** (§5's list). No throwing |
 | Thu 11/5 | Morning check → bike 30 → throwing → **Upper A, session 9** (§7) → finisher |
-| Fri 11/6 | Morning check → **Session B**: bike 8 · ball toss 3 × 45 s · **impact, two exercises, one change each from Sunday's:** low vertical jump and landing **3 × 5** + snap-down **3 × 8**; or, if Sunday's landings were quiet and even and Monday's morning clean, **the drop vertical jump check in the snap-down's place** (off the 8" box, 2 × 4, filmed from the front; §6) · step-down L 6.5" **3 × 10** (hold; 7.5" once the hip stays level the whole set) · SL sit-to-stand 18" **3 × 12** (hold) · RDL **barbell 115 × 3 × 8** (the DBs stop at 52.5: §6, "Dumbbells at their top") · lateral lunge **lightest DB × 3 × 8** (the ladder's next; front of knee 0 on 10/30) · hamstring curl **70 × 3 × 10** · hip abduction **30 × 3 × 15** (the third set) · **barbell hip thrust, the bar alone (45 lb, pad on the hips), 3 × 10** (new: the SL bridge's next) · seated calf raise, left, lightest DB 3 × 12 · full cooldown. **Pairs:** step-down + seated calf (both left-only) · RDL + hip abduction · hip thrust + lateral lunge · the curl last. **Short on time: drop the curl first** (the RDL and the hip thrust carry the hamstrings that day) → lateral lunge |
+| Fri 11/6 | Morning check → **Session B**: bike 8 · ball toss 3 × 45 s · **impact, two exercises, one variable each from Sunday's:** low vertical jump and landing **3 × 5** + snap-down **3 × 8**; or, if Sunday's landings were quiet and even and Monday's morning clean, **the drop vertical jump check in the snap-down's place** (off the 8" box, 2 × 4, filmed from the front; §6) · step-down L 6.5" **3 × 10** (hold; 7.5" once the hip stays level the whole set) · SL sit-to-stand 18" **3 × 12** (hold) · RDL **barbell 115 × 3 × 8** (the DBs stop at 52.5: §6, "Dumbbells at their top") · lateral lunge **lightest DB × 3 × 8** (the ladder's next; front of knee 0 on 10/30) · hamstring curl **70 × 3 × 10** · hip abduction **30 × 3 × 15** (the third set) · **barbell hip thrust, the bar alone (45 lb, pad on the hips), 3 × 10** (new: the SL bridge's next) · seated calf raise, left, lightest DB 3 × 12 · full cooldown. **Pairs:** step-down + seated calf (both left-only) · RDL + hip abduction · hip thrust + lateral lunge · the curl last. **Short on time: drop the curl first** (the RDL and the hip thrust carry the hamstrings that day) → lateral lunge |
 | Sat 11/7 | Morning check → bike 30 → throwing → **Saturday power & mobility, first run** (optional; §7) |
 | Sun 11/8 | Weekly checks + the single-leg squat test → checkpoint (the sport plan's month check) → Session A |
 
 - **Loaded days: three** (Sun A, Wed PT, Fri B), a day clear on each side of the visit (`config.json → plan_changes` 11/3–11/6).
-- **Impact (§6, the ladder):** rung 1 is done (3 × 15 quiet, clean mornings); snap-downs ran 2 × 5 on 10/30. The plan's caps stand: **two exercises, 2–3 sets, 5–8 contacts a set**, one new rung a session. The single-leg hops (rung 5) wait for rung 3 and the drop vertical jump; they ran ahead twice last week.
+- **Impact (§6, the ladder):** rung 1 is done (3 × 15 quiet, clean mornings); snap-downs ran 2 × 5 on 10/30. The plan's caps stand: **two exercises, 2–3 sets, 5–8 contacts a set**, each exercise one variable at a time. The single-leg hops (rung 5) wait for rung 3 and the drop vertical jump; they ran ahead twice last week.
 - **Throwing:** Tue, Thu, Sat, **never on a knee day or a PT day** (Add-On §3); on upper days after the bike, before lifting. The sport plan's week 4: around breaks, the dominant hammer begins; the month check is next Sunday.
 - **The week is judged by** (load rule 10): loaded days 3 · morning checks 7 · bike rides 3 (Mon, Thu, Sat) · upper 2 (Mon B, Thu A).
 
@@ -208,15 +208,15 @@ Last week in one line: loaded days 2 of 2 (Wed A in the cancelled PT slot, Fri B
 Full text: Working Rules, load rules 3–7.
 - **10/21 recalibration (his decision).** The Session A starting doses (mostly the PT's 10/15 doses) were well below capacity, so Wednesday's loads replace them as the baselines: goblet squat 40 lb · knee extension 40 lb · hamstring curl 60–70 lb · heel raise 40s · cable TKE 60 lb · RFESS and lateral heel tap at 7.5". In-plan load progression is his to make (Nick 10/9); this is not a PT clearance. The day itself stays logged as past the plan (the doses as they stood that morning).
   - **Thu 10/22's morning was clean, so the baselines stand.** (Had it not been, every 10/21 change would have reversed to the last clean doses: 10/13 home and the PT's 10/15.)
-  - **From here the normal mechanics apply:** one change per exercise per session; ≤10% or one increment.
+  - **From here the plan's mechanics apply:** one major variable at a time per exercise; ≤10% or one increment.
   - **Left knee extension: off the 40 lb hold (Wed 10/28).** It had waited for the PT; Nick's 10/28 instruction puts it on the plan's Phase 4 dose (2–3 × 8–12 toward RPE 7–8; "progress range and load gradually, if the donor site tolerates"). 10/28: the third set at 40; the next A: +1 plate. **It stays the one exercise whose step is never more than one plate**, whatever the reps in reserve: open-chain extension near straight is the graft's highest-strain position, and the graft is at its weakest through ~11/16.
 - **Pain:** 0–2 fine · 3–4 hold · ≥5 reduce or stop. Front of the knee watched most on the knee extension, goblet squat, RFESS, heel tap and step-down.
 - **Effort:** Phase 4 main lifts work toward **RPE 7–8 (2–3 reps left)** once clean at a dose. New items and new loads start at 3–4 left. Never to failure.
 - **Rep ranges come down as load goes up:** the plan's Phase 4 targets are in brackets in each ladder.
 - **Dumbbells at their top (52.5 lb, 10/31):** a lift that outgrows them moves to the barbell at about the same total load, then climbs in +5 lb steps: the RDL now (115 from the next B), the goblet squat after 52.5 (a back squat to the same box, empty bar first), the standing calf raise after single-leg with one 52.5 (a barbell on the back), the seated calf raise (a padded bar across the thighs), the RFESS after 52.5s (a bar on the back in the rack). The hip thrust starts on the barbell. Single-leg work stays on dumbbells while they last: they balance better. The upper lifts have room (row 30, press 25s, chest-supported row 20s); past 52.5 they go to the barbell or the cable.
-- **One change per exercise per session · one new exercise per session · load steps ≤10% or one increment.**
+- **The master plan's rule (from 11/1, his call; Working Rules, load rule 5): one major variable at a time per exercise** (load, reps, sets, range, speed, impact or complexity), and **any number of exercises may progress in the same session**, new exercises included. Load steps ~2.5–10% or one increment.
 - A morning that isn't clean reverses every change.
-- **Impact prep is on the home program from Wed 10/28** (below): the plan's dose and the lifts' rule (one change per exercise, one new exercise per session; from 10/30), and the impact block is the first thing reversed when a morning isn't clean (Working Rules, load rule 5).
+- **Impact prep is on the home program from Wed 10/28** (below): the plan's dose and the plan's one-variable rule per exercise, and the impact block is the first thing reversed when a morning isn't clean (Working Rules, load rule 5).
 
 ### Impact preparation and the single-leg squat test (plan Phase 4; from Wed 10/28)
 
@@ -234,7 +234,7 @@ Full text: Working Rules, load rules 3–7.
 | 5 | **Single-leg pogo**, each leg, small | 2 × 5 (hop, land, reset) → 3 × 5 → 3 × 8 repeated (continuous, quiet) | **The plan's return-to-run gate asks for it** ("pain-free repeated single-leg pogos"), so running waits on this rung. Left control first: the single-leg squat test is the measure |
 
 - **Plan's dose:** 2 exercises · 2–3 sets · 5–8 contacts a set.
-- **Pacing (from Fri 10/30, his call: the plan sets no one-change-per-session limit):** the lifts' rule. One change per exercise per session (sets or contacts) and one new rung per session, inside the plan's caps (2 exercises, 2–3 sets, 5–8 contacts a set). A morning that isn't clean reverses the impact block first (back one rung; on rung 1, out until a clean morning), then the session's other changes (load rule 5).
+- **Pacing (11/1, his call):** the master plan's rule: each impact exercise moves one variable at a time (sets, contacts, or on to the next rung), inside the plan's caps (2 exercises, 2–3 sets, 5–8 contacts a set). No per-session limit on how many exercises move. A morning that isn't clean reverses the impact block first (back one rung; on rung 1, out until a clean morning), then the session's other changes (load rule 5).
 - **Where it lands:** with a clean morning after every knee session, about one rung a session: the low jump 11/1, the drop vertical jump check 11/6, single-leg pogos 2 × 5 from 11/8, then 3 × 5 and 3 × 8 repeated by about 11/15, in time for the run gate (week 13, Tue 11/17). A morning that isn't clean costs a session on this line.
 - **Logged** in the exercise log, `block` = `plyo`: the rung, sets × contacts, and whether the landings were quiet.
 
@@ -246,7 +246,7 @@ Full text: Working Rules, load rules 3–7.
 
 ### Session B — ran Fri 10/30, clean on 10/31; **next Fri 11/6** (~60 min)
 
-Baseline = 10/18, then 10/23, then 10/30 (each clean the next morning). One change per exercise; several exercises change on the same day. Trimmed in the 10/21 review (below Session A).
+Baseline = 10/18, then 10/23, then 10/30 (each clean the next morning). One major variable at a time per exercise (the plan); any number of exercises progress the same day. Trimmed in the 10/21 review (below Session A).
 
 | # | Exercise | Last (Fri 10/30) | Next (Fri 11/6) | Ladder [plan Phase 4 target] |
 |---|---|---|---|---|
@@ -389,7 +389,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
    - Batches of 5 → 7 → ~12 → ~8 changes; bench 105 instead of 95; left Copenhagen before the PT's OK.
    - 10/18: hamstring curl 20/30/30 → 40/50/60; lateral lunge range and volume together.
    - 10/21: nearly every Session A item well above its starting dose, the knee extension doubled (20 → 40). Recorded as a recalibration (§6), not a rule change; the day stays logged as past the plan.
-   - The knee has tolerated all of it. Inside the graft's weak window (through ~11/16), the next-morning verdict and one change per exercise carry the load progression from here; the left knee extension moves one plate at a time, never more (10/28).
+   - The knee has tolerated all of it. Inside the graft's weak window (through ~11/16), the next-morning verdict and the plan's one-variable-per-exercise rule carry the load progression from here; the left knee extension moves one plate at a time, never more (10/28).
 6. **Single-leg control:** slight left hip drop at the bottom of the 6.5" step-down (10/18); the left slightly shaky on the 20" sit-to-stand; the knee tracked fine on the RFESS, step-up and lateral heel tap (10/21). 18" unassisted still not done. Nick passed the step-downs on 10/17. **It is the soft spot the impact sequence starts around** (double-leg first) **and the single-leg squat test measures** (first 10/28, then Sundays).
 7. **Disc throwing:** slight pivots load the planted knee in rotation; the pivot foot isn't named yet, and for a right-hander the conventional pivot is the left (surgical) foot. The step-out waits for the PT. Elbow and wrist volume build gradually: one dial a week.
 8. **Graft weak window through ~11/16 = all of Phase 4.** Strength ramps toward RPE 7–8; impact climbs the plan's sequence one rung at a time from 10/28 (the guards in §6); running and sport pivoting at speed stay behind the plan's gates and the PT. A quiet knee is not evidence they can come forward.
@@ -420,7 +420,7 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 - [ ] **A graded morning every day**, with stiffness, catch and wellness
 - [x] Upper **2 of 2** (10/19, 10/22) → **Block 1 from Tue 10/27**; Saturday power & mobility's first run missed (10/24, away)
 - [ ] Bike 27 → 30
-- [ ] **Sun 11/1:** morning weigh-in, photo + heel prop, SLR, flexion, **the single-leg squat test** → checkpoint → Session A (one change from Wednesday's)
+- [ ] **Sun 11/1:** morning weigh-in, photo + heel prop, SLR, flexion, **the single-leg squat test** → checkpoint → Session A (this week's doses, §6)
 - [x] Throwing pivot foot named: left (10/22)
 - [ ] Protein ≥150 g on quiet days; a second fish meal
 - [ ] **Toward the Phase 4 exit:** hamstring and glute ≥80% (unmeasured; the clinic) · the single-leg squat test passed (home, Sundays) · the impact sequence through the low jump and landing, then the drop vertical jump (cleared, Nick 10/28) · quad retest ~week 12 · running not before week 13 (Tue 11/17) and the team's agreement
