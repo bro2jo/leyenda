@@ -189,3 +189,7 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-10-31#8,2026-10-31,,snack,"Buttery topping, layered (Cinemark)","layered through the large tub, assumed ~3 tbsp",390,0,0,42,0,6,0,30,0,0,0,0,0,0,0,0,estimate,"his figure ~130 kcal and 2 g sat fat a tbsp; layers assumed 3 (his range for the buttered tub 1,200-1,600+)"
 2026-10-31#9,2026-10-31,,snack,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,library row (label 10/29)
 2026-10-31#10,2026-10-31,,snack,"Bacon, thick cut","1 slice, cooked (a second)",70,5,0.2,5.5,0,2,0,280,80,2,0.2,5,0.5,0,0.1,30,estimate,as #6
+2026-11-01#1,2026-11-01,,breakfast,"Bacon, thick cut","2 slices, cooked",140,10,0.4,11,0,4,0,560,160,4,0.4,10,1,0,0.2,60,estimate,"typical thick-cut slice x2, as 10/31"
+2026-11-01#2,2026-11-01,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
+2026-11-01#3,2026-11-01,,breakfast,M&M peanut butter cookie,1 cookie (assumed ~60 g),290,4,36,15,1,6,22,190,100,25,0.8,20,0.4,0,0.1,20,estimate,brand and size not given; numbers for a ~60 g peanut butter cookie with M&Ms at ~4.8 kcal/g: asked
+2026-11-01#4,2026-11-01,,breakfast,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,library row (label 10/29); flavour assumed as before
