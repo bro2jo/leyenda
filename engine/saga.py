@@ -1165,7 +1165,7 @@ HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many befor
     ("'It was not … / not … either' pairs", r"\bIt was not an?\b[^.\n]{0,60}\.\s+It was not", 0.0, 1, "say the thing it was"),
     ("lines said to things (to the roof, the cup…)", r"\b(?:said|says|asked|told \w+),? to the (?:roof|cloud|cup|door|valley|floor|fire|wall|window|bowl|rope|road|snow|lamp)\b", 0.0, 2,
      "let people look at each other, or at what they are doing"),
-    ("catchphrases (Technically, Aye, Road's the road, Wrong question…)", r"\b(?:Technically|Aye)\b|thing I'm best at|Road's the road|Wrong question|[Tt]hank you for your candour", 0.0, 3,
+    ("catchphrases (Technically, Aye, Road's the road, Wrong question…)", r"\b(?:Technically|Aye)\b|thing I'm best at|Road's the road|Wrong question|[Tt]hank you for your candour|question a night|\bThat's (?:one|two|three)\b|I'll have mine", 0.0, 3,
      "a catchphrase lands harder for being rare: once in a block, unless the scene is about it"),
     ("'as if' clauses", r"\bas if\b", 3.0, 3, "trust the action; one 'as if' a page is plenty"),
     ("'for once'", r"\bfor once\b", 0.0, 2, "it marks a change; a change marked twice is a habit"),
@@ -1183,6 +1183,13 @@ def reread_notes(text, kind, prev_text=None):
         n = len(re.findall(pat, body))
         if n >= floor and n > rate * per_k:
             out.append(f"habit: {label} ×{n}: {advice}")
+    if prev_text:  # a catchphrase two blocks running is a tic even when each block uses it once
+        cp = next(pat for label, pat, *_ in HABITS if label.startswith("catchphrases"))
+        mine = {m.group(0).lower() for m in re.finditer(cp, body)}
+        theirs = {m.group(0).lower() for m in re.finditer(cp, prev_text)}
+        both = sorted((mine & theirs) - {"aye"})
+        if both:
+            out.append(f"habit: the block before used {', '.join(repr(b) for b in both)} too: a line that lands once becomes a tic the second time running")
     paras = [p.strip() for p in body.split("\n\n") if p.strip() and p.strip() != "---"]
     if paras:
         first = re.split(r"(?<=[.!?])\s", paras[0])[0]

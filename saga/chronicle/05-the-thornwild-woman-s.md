@@ -183,11 +183,9 @@ Darrow turned that over, and liked it less the longer he held it, which was usua
 
 "Does Hollis know?" she said.
 
-"That's two."
+From the hut came the end of the goat verse, and Hollis laughing at his own rhyme.
 
-That nearly got her again. "Aye. Does he?"
-
-"No. He carried the order up the bank, and he's never looked at the seal on it. When he does, I'll be there. It's his to come to, not mine to hand him."
+"Does that sound like a man who knows anything?" Then, because she was still waiting: "No. He carried the order up the bank, and he's never looked at the seal on it. When he does, I'll be there. It's his to come to, not mine to hand him."
 
 "Then it's carried." She put the empty cup into his hands. "I don't open what I carry."
 
