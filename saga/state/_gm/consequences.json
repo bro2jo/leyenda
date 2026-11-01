@@ -452,7 +452,7 @@
           "what": "The kitchen book now carries Thorne, a load, under the Captain on NOBODY: if a cot goes grey before the thaw she carries the kitchen a load up the Steps on her back, not the cage. Fire where the book is consulted, the odds move, a cot goes grey, or the thaw comes",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending",
+          "status": "void:the company went down the Steps; the kitchen's book stays at the House, its wager on the carter unsettled",
           "offered": 7,
           "offered_at": [
             "ch03:between-1",
@@ -1092,7 +1092,7 @@
           "fits": "present.brother_anselm",
           "priority": 2,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "void:expired@book2",
           "offered": 4,
           "offered_at": [
             "ch04:between-6",
@@ -1268,7 +1268,7 @@
           "at": "ch05",
           "weight": "scene",
           "what": "Downstream of `anselm_double` (b1.5): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.5`); fire where it is honoured, void with a reason if the story made it moot",
-          "status": "pending"
+          "status": "void:honoured on the page at ch04:climax: the Confessor a night late and a man short, the rider gone for Calden with the false word"
         }
       ]
     },

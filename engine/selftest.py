@@ -277,7 +277,8 @@ def main():
             world = jload(tmp / "saga/state/world.json")
             check(world["scenes"][-1]["scene"] == next_scene and world["location"]["detail"] == "the gate wall at dusk", "world.json follows the record (the scene, the location)")
             rae = jload(tmp / "saga/characters/rae-thorne.json")
-            check(rae["last_seen"]["scene"] == str(next_scene) and rae["known_facts"][-1]["evidence"] == "called him Darrow", "the character file follows the record (last_seen, the fact)")
+            check(rae["last_seen"]["scene"] == str(next_scene) and any(f.get("evidence") == "called him Darrow" and str(f.get("chapter")) == f"{ch:02d}" for f in rae["known_facts"]),
+                  "the character file follows the record (last_seen, the fact; a tale's facts list after the chapters')")
             codex = (tmp / "saga/state/codex.md").read_text(encoding="utf-8")
             check("**The Quorrel**" in codex, "the Codex page carries the new entry")
             now_md = (tmp / "saga/NOW.md").read_text(encoding="utf-8")
@@ -310,8 +311,8 @@ def main():
             run(saga + ["plan", "flag", "--new", "selftest_orphan=false"], tmp)
             code, out = run(saga + ["check"], tmp)
             check(code == 0 and "flag selftest_orphan has no reader" in out, "check notes a flag nothing reads (a plant without a payoff), without failing", out[-300:])
-            code, out = run(saga + ["history", "--person", "rae-thorne", "--last", "1"], tmp)
-            check(code == 0 and key in out and "called him Darrow" in out, "history reads the record back")
+            code, out = run(saga + ["history", "--person", "rae-thorne", "--chapter", str(ch), "--last", "1"], tmp)
+            check(code == 0 and key in out and "called him Darrow" in out, "history reads the record back", out[-400:])
             code, out = run(saga + ["record", json.dumps(good, ensure_ascii=False)], tmp, expect=1)
             check("already recorded" in out, "a block is not recorded twice without --force")
         else:

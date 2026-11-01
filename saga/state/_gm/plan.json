@@ -1,132 +1,129 @@
 {
   "_about": "GM plan and position. Never rendered. Prose for beats, quests and roads lives in saga/bible/_gm/arc.md (saga.py arc <id>); this file holds state. Edit through saga.py plan where a command exists; otherwise with Edit, keeping the canonical format (saga.py fmt).",
   "position": {
-    "book": 1,
-    "chapter": 4,
-    "beat": "b1.5",
-    "next_scene": 8,
-    "stage": "choice",
+    "book": 2,
+    "chapter": 5,
+    "beat": "b2.1",
+    "next_scene": 1,
+    "stage": "scene",
     "last_written": "ch04:s7",
     "rank_on_page": "Kindled"
   },
   "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
   "chapter": {
-    "number": 4,
-    "week_start": "2026-10-25",
-    "question": "What is the House for, and can a knight who cannot stand hold its stair?",
+    "number": 5,
+    "week_start": "2026-11-01",
+    "question": "Will the Lowmarch hide a captain who will not kneel, and what will it cost the carter who brings him home?",
     "slots": [
       {
         "n": 1,
-        "day": "2026-10-25",
+        "day": "2026-11-01",
         "kind": "spine",
-        "beat": "b1.4",
+        "beat": "b2.1",
         "float": false,
-        "plan": "Dawn after the lid came off. The far cots' keepers were told in the night; at the dawn bell Darrow tells the Prior, who says once that she counted the nights and asks nothing more (c03.7a). Then Hollis, carried, brings Brother Anselm the almoner to the cot, shaking (c03.7b: Hollis went to him in the night, so the man cannot come of his own accord): he carried it down by the stores key, through the old stair door where the House's wine is laid, never the iron-banded one, which is why the flour never showed a mark; a clerk in grey gave it him at the winch-house before the snow, where he takes the House's letters down to the carter each week, a man he never saw kneel; why: his sister Mirren, held at Calden by the Confessors, who write to him in a clerk's hand. The satchel still holds a second one, wrapped in the letters' oilcloth, unplaced; Maelis takes it without a word. Darrow keeps Hollis's hands off the man, by rank.",
-        "turn": "By the end Darrow knows who carried it and why, and that the Confessors hold the almoner's sister; he attempts to keep Hollis from breaking the man, and does it by his rank, the first order he has given since the river",
+        "plan": "The first miles of the Holloway below the winch-house, at a walk: Wren off the mountain for the first time and counting everything; Hollis at war with the mule; Maelis's count on the knee; Ash ranging ahead and reporting nothing. Rae tells him she told the mare her name, as she said she would (c04.1a). Then the banner that is not grey, coming up the Holloway toward Coldmere: Darrow wants to go and see whose it is, sure it is Aldric's; Rae will not drive her cart into a Knight-Confessor's column and turns off the Holloway onto the drove road round the far side of the tarn; Hollis backs her; they have it out on the road, out loud. Camp at a sheepfold; Wren's first night under a whole sky.",
+        "turn": "Darrow, who once rode sixty men into a river because he was sure, tries to take the road toward the banner and ends by giving it to a carter who is right; Rae, who has never asked anyone's leave on the Holloway, finds she wanted his.",
+        "tone": "warm",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch04:s1"
+        "status": "next",
+        "wrote": null
       },
       {
         "n": 2,
-        "day": "2026-10-26",
+        "day": "2026-11-02",
         "kind": "spine",
-        "beat": "b1.4",
+        "beat": "b2.1",
         "float": false,
-        "plan": "Rae comes up the Steps with the cage's letter rather than leave it below: a letter for the almoner from Calden in a clerk's hand, and a lock of hair folded inside it. Marrant's method: the lever, never the blade. Darrow knows the hand: it addressed his brother's letters. Rae, asked where she has seen it, says only that she has seen that hand before, and will not say where. The House's letters did not go down this week; the almoner reads his sister's letter in front of them and does not weep, which is worse. Hollis asks what a captain does with a man who did a terrible thing for love, and nobody answers.",
-        "turn": "By the end Darrow knows what Marrant holds over the almoner and whose household wrote the holding; he attempts to get Rae to say where she has seen the hand, and fails",
-        "micro": null,
-        "challenge": null,
-        "invite": null,
-        "status": "written",
-        "wrote": "ch04:s2"
-      },
-      {
-        "n": 3,
-        "day": "2026-10-27",
-        "kind": "quest",
-        "quest": "q1.kennel",
-        "stage": 1,
-        "float": true,
-        "plan": "Wren brings Darrow down the kennel ramp, with the stick he refuses, because they have something in common: a grey bitch with a splinted hind leg who has bitten two lay brothers and the farrier, will not eat, and sleeps against the door that faces the infirmary. The kennel-master wants her put down before the grey cloaks come up and see what the Menders feed. The snarling stops when Darrow sits down on the straw with one hand out, the other's fingertips still wrapped; she puts the splinted leg across his boot and goes to sleep. The kennel-master gives him until the grey cloaks are gone to prove she is worth the feed.",
-        "turn": "By the end Darrow has a hound's weight on his boot and a kennel-master's deadline; he attempts to sit still with a dog that bites, and she chooses him",
-        "micro": null,
-        "challenge": null,
-        "invite": null,
-        "status": "written",
-        "wrote": "ch04:s3"
-      },
-      {
-        "n": 4,
-        "day": "2026-10-28",
-        "kind": "spine",
-        "beat": "b1.4",
-        "float": false,
-        "plan": "Dusk at the bars. Marrant, courteous to the whole court, asks after the House's almoner by name: the letters have not come down this week, and a woman in Calden is waiting on her brother's reply. He names a price pleasantly: the almoner's name, and two others come off the list. The Prior, beside Darrow this time, says the law of guests covers a brother of the House; Marrant thanks her for it. Wren counts the grey cloaks at the fires: one fewer than yesterday. Inside, with Anselm, Hollis, Maelis and Wren at the cot, what the House is for: the beat choice.",
-        "turn": "By the end Darrow knows Marrant's price and that the lever is the whole of his method; he must decide what the House is for and attempts to buy a night first, which the Prior pays for",
+        "plan": "A drove-road hamlet with its door barred and a fresh writ on its bell-post: the Captain of the Ninth's name above every other (c04.14a), and under it, new, the Mender Vorne (T8 plant, thread 8). The reeve will not sell bread to anything off Rae's cart: a carter's custom spent on the man she carries, the first time it has cost her. Maelis reads her own name on a writ and says plainly what she makes of it. At dusk a Faithless man of the hamlet, who has heard of the captain who stood up at the gate and would not kneel, leaves bread at the fold (c01.5b: the Faithless take heart).",
+        "turn": "The Lowmarch reads his name before it sees his face, and Maelis's under it; Rae learns what carrying him costs a carter on her own road, and keeps carrying.",
+        "tone": "tense",
         "micro": {
-          "beat": true,
-          "ask": "What does Darrow do with the almoner?",
+          "axis": "candor_guile",
+          "ask": "The reeve asks, through the bars, who rides on the Thorne cart. What does Darrow say?",
           "options": [
-            "Expose him to the Prior and the House.",
-            "Shield him and say nothing of the satchel.",
-            "Use him to feed the Confessor false word. *[Resolve 10]*"
+            "\"Darrow of Edgemoor. The one on your post.\"",
+            "\"Salt, a sick man and his nurse. Ask the carter.\"",
+            "Let Rae answer for her own cart."
           ],
           "bearing": [
             {
-              "Candor": 3
+              "Candor": 1
             },
             {
-              "Mercy": 3
+              "Guile": 1
             },
-            {
-              "Guile": 3
-            }
+            null
           ],
-          "default": 2,
-          "answer": {
-            "option": 3,
-            "by": "darrow"
-          }
+          "default": 1
         },
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch04:s4"
+        "status": "planned",
+        "wrote": null
       },
       {
-        "n": 5,
-        "day": "2026-10-29",
-        "kind": "quest",
-        "quest": "q1.kennel",
-        "stage": 2,
-        "float": true,
-        "last": true,
-        "plan": "She eats only from his hand, the left. Maelis re-splints the leg with bad grace (she does not do dogs) and the bitch growls, not at people, at the floor: at the grate over the undercroft. Marrant's men bring the lymer up to the terrace wall below the kennels and she fights it through the bars until her mouth bleeds; the kennel-master wants her chained and Darrow sits with her instead. He names her Ash: for her colour, Hollis says, and because she is what is left when the fire is gone. She follows him up the ramp on three legs and lies down under his cot, where no lay brother will move her (ash_met; plan companion arrive ash).",
-        "turn": "By the end Darrow has a dog with a name under his cot and the kennel has told him where the cold is; he attempts to call her off the lymer and cannot, and names her instead",
+        "n": 3,
+        "day": "2026-11-03",
+        "kind": "spine",
+        "beat": "b2.1",
+        "float": false,
+        "plan": "Noon in a turnip field below the drove road: a Hollowed knight in a Lance's surcoat walks east through the rows, slow and straight, past the company as if they were posts (T4: the Hollowing is on this side of the Wend; thread 4). Darrow tries to stop him, to turn him, to get a name, and cannot. Wren knows how to make a Hollowed man take water, does it without being asked, and goes white doing it. Rae tells her grandmother's story of the grey country east of the Wend, where they walk home: told to frighten a child, never believed, until this noon. They let him go east.",
+        "turn": "Darrow, who called the far cots sick men, watches one walk with somewhere to go; the company stops being a party in flight and becomes one with a question.",
+        "tone": "eerie",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch04:s5"
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 4,
+        "day": "2026-11-04",
+        "kind": "spine",
+        "beat": "b2.1",
+        "float": false,
+        "plan": "A carter on the drove road brings the news: the banner turned back at the Coldmere crossroads on a rider from Calden and went north (book2.question). Into Coldmere at dusk: the inn on the tarn, the bell-house across the road where the list was read; Rae at home (the taproom calls her by name, the old ones by her grandmother's; the village has heard of the bell); her uncle at the tap, his welcome and his book. Then the dealer's yard on the fair-ground: Thistle, lame in the off fore, alive, eating a stranger's hay on Darrow's word; the dealer lets slip that the carter has paid the mare's keep since the fair; asked why, Rae answers plainly.",
+        "turn": "Darrow learns what Rae has done for him without a word said, and she learns he will not let it go unsaid; the mare is still the dealer's until the debt is stood.",
+        "tone": "warm",
+        "micro": null,
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 5,
+        "day": "2026-11-05",
+        "kind": "spine",
+        "beat": "b2.1",
+        "float": false,
+        "plan": "The levy sergeant and six men come through Coldmere looking for Faithless and a woman Mender. Darrow and Hollis go up into the loft over the inn's byre with Ash, where Hollis cannot whisper; Maelis goes into the kitchen as a cook and is a terrible one; Wren keeps the sergeant's questions in her ledger from behind the tap; Rae talks oxen with him in the yard for an hour, until he leaves knowing nothing and with an opinion on yokes (rae.road, any tier). On his way out the sergeant asks the uncle about the Mender Vorne; the uncle has never heard of her, and looks at Rae.",
+        "turn": "Rae holds a whole village's danger with an hour of talk while the fastest blade of the Lowmarch hides in hay; the uncle's look tells Darrow the inn's silence has a price, and whose book it will be written in.",
+        "tone": "comic",
+        "micro": null,
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 6,
-        "day": "2026-10-30",
+        "day": "2026-11-06",
         "kind": "spine",
-        "beat": "b1.5",
+        "beat": "b2.1",
         "float": false,
-        "plan": "Wednesday's choice in its first clause: what became of the almoner. Then the cloister: two chairs, two wooden swords, and Hollis, who has thought for a fortnight about teaching the Captain to fight sitting down, does it: stop looking at the floor; the bind and the hold, a blade held is a blade not swinging; a one-legged man who learned it recently and badly, and a captain whose fingertips are still numb on the hilt. Wren as notary, the kitchen at the door. Darrow loses to a man with one leg and laughs for the first time since the river; Hollis's chair tips and he saves it with the sword, which is the lesson. Hollis names it on the page: the Seated Blade. Ends on the micro.",
-        "turn": "By the end Darrow can hold a stair from a chair, badly, with numb fingers, and the Art has its name on the page; he attempts to win and loses, and laughs",
+        "plan": "Dice night in the taproom. At the next table a Grace-burned knight of another Lance drinks and wins, a man who kneels at every field-stone on the road (q2.inn folded into the beat: the Book II temptation, `plan temptation add` when written). In the yard a cart's axle goes and he lifts the cart off a carter's boy with his hands, and his hands are frosted when he sets it down. He knows the Faithless captain by the stick and the face and offers him the fast road with a full heart: down to the crossroads stone in the morning, kneel, and be what you were. Warden's Eye shows the frost going in.",
+        "turn": "Darrow meets the man he would be on the fast road and likes him, and the temptation is real because it works.",
+        "tone": "rowdy",
         "micro": {
           "axis": "mercy_flint",
-          "ask": "Hollis wants to be hit properly, not like a Mender. What does Darrow do?",
+          "ask": "The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do?",
           "options": [
-            "\"No.\"",
-            "Hit him properly.",
-            "Let Wren call it."
+            "Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.",
+            "Let him keep his comfort.",
+            "Buy him a drink and say nothing."
           ],
           "bearing": [
             {
@@ -137,49 +134,60 @@
             },
             null
           ],
-          "default": 1,
-          "answer": {
-            "option": 2,
-            "by": "darrow"
-          }
+          "default": 2
         },
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch04:s6"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 7,
-        "day": "2026-10-31",
+        "day": "2026-11-07",
         "kind": "spine",
-        "beat": "b1.5",
+        "beat": "b2.1",
         "float": false,
-        "plan": "The eve. Through Sister Pell's glass, banners on the Holloway below the Shins, a day off; and Marrant's camp striking its cart-canvas before dawn to go down and meet them: he will move first. Darrow sets the House's night with what he has: Wren to the tower with Pell, Hollis's chair at the tower door, Ash below the kennels, himself on the bell-tower stair with a chair and a stick; Maelis reads the Knots by lamplight and does not say the word. Wren refuses to be sent anywhere but the rope. Ends on the dusk bell, rung, and the lower terrace gone quiet under it.",
-        "turn": "By the end Darrow has placed every piece he has for a thing he cannot stand up for, and knows Marrant moves at dawn; he attempts to send Wren away from the tower and she refuses",
+        "plan": "Hollis and Darrow walk to the crossroads to read the column's tracks: the banner's riders turned north for Calden; one horse went on south alone, light and shod for speed, and at the mill a rider in the Second's colours asked after a captain with a stick and a carter with oxen (plant for b2.2; unnamed). Back at the inn the uncle names his price for what comes next: a reader of writs rides in at the noon bell tomorrow to read the list again at Coldmere's bell-house. Rae means to stand the price on her own debt; Darrow refuses to let her pay for him; they have it out in the yard, both with a point, and he leaves the choice with her because it is hers.",
+        "turn": "Darrow lets someone else decide what she will pay for him, which no man of the Ninth ever saw him do; the bell-house will read his name at noon.",
+        "tone": "tense",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch04:s7"
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 8,
+        "day": null,
+        "kind": "interlude",
+        "pov": "rae-thorne",
+        "float": false,
+        "tone": "bittersweet",
+        "plan": "Rae at her uncle's table after the inn has gone to bed (written on the Wednesday or Thursday close): the book of the debt and the load she pays into it; the uncle's question, what the captain of the Ninth is worth to the Holloway; a packet in salt for the river mill that she carries and does not open; the thing she wanted, a thing carried up the mountain and seen come down whole, and what she finds she wants now that she has had it. Thread 18 tells only; nothing named; her father and the cage stay for Tether II.",
+        "turn": "Rae, who carries and never keeps, admits to herself that she has kept something, and does not put it down.",
+        "micro": null,
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       }
     ],
     "world_moves": [
-      "the grey cloaks' lymer was walked up to the terrace wall under the kennels and left tied there, baying at the kennel door through the night",
-      "the twenty riders under the banner that is not grey turned off the Holloway at the Wend landing and took the river road, a day further off than they should be",
-      "the House's letters did not go down this week: the almoner's satchel hung on its hook with nothing in it, and the winch-brothers sent the cage down empty"
+      "a levy column went south along the Holloway toward the ford villages, driving the farms' cattle ahead of it",
+      "a Confessor's rider passed on the Holloway with a satchel of writs for every bell-post below the mountain",
+      "sleet closed the drove road for a morning, and the company sheltered under the cart until it passed"
     ],
     "climax": {
-      "plan": "Old Mercy (arc b1.5), with Wednesday's choice and the week's tier deciding the almoner's fate as the arc fixes it. Marrant moves before the banners arrive: at dawn the cage rope is cut at the winch-house (the sixth man keeps it); the winter's salt and oil are already up, which only the kitchen's loaf-count explains, and in Triumph and Hard-won the tower's firewood came up by a second line nobody saw, hers. Marrant and four climb unarmed under the bell: Sister Pell is hurt, the bell falls silent, and sanctuary lapses at dusk unless it rings. Darrow holds the bell-tower stair seated (the Seated Blade, named Friday) while Wren climbs to ring; Hollis holds the tower door below from his chair; Ash holds the lymer at the terrace wall. Marrant, unarmed to the last, asks Maelis by a name that is not hers (T8); the censer's iron is the black of the sliver (T1). Rae, below, sees the rope fall and climbs the Steps in the dark, and is on the gate wall when the bell rings or does not. By tier: Triumph, the bell rings with light to spare and the grey cloaks go back down the Steps behind a Confessor who has stopped smiling; Hard-won, it rings on the last of the light, one of the four goes over the stair rail and lives, Marrant leaves with his writ and a limp; Costly, it rings a breath after dusk and only the Prior's reading of the law holds (the sun is down when the Prior says it is), and Marrant's writ gains a line against her; Setback, it rings with Marrant inside the tower, the law is argued not won, he goes down leaving a man and a paper and the Prior signs it to keep her roof. Ends on the choice; the Book's road is decided at this checkpoint (route decide --book 1) and the crossing follows his answer.",
+      "plan": "The Bell at Coldmere (arc b2.1). At the noon bell a reader of writs, two grey cloaks and the levy read the list at Coldmere's bell-house, where it was first read: the Captain of the Ninth above every other, the Mender Vorne under it, Hollis's name among the Sixth's. The village stands in the road; the uncle stands at his door; Rae's choice from Saturday decides who stands where. By tier (arc b2.1; the levy sergeant already gone unless Costly brings him back): Triumph, the uncle hides them for Rae's sake and sends the readers' men the wrong way, and the village that has heard of the bell turns its back on the writ; Hard-won, a night in a barn on the tarn and away before the dawn bell, Ash giving them away once and forgiven; Costly, the levy sergeant comes back and knows Hollis's name, and they leave Coldmere at a walk with the village watching, Rae's custom on the Holloway spent for him; Setback, the writ is nailed to the inn's door with his epithet on it, and the Lowmarch knows what he is called before he does. Then the road out, and the choice.",
+      "tone": "tense",
       "checks": [
-        "might (the Seated Blade: holding the bell-tower stair seated against the first man up)",
-        "resolve (the Mender's Patience: the bell silent and the light going; fear and haste)",
-        "vigor (the hold on the stair until the bell rings; the bad hand)",
-        "insight (Warden's Eye: Marrant's lever: the name he asks the Mender by, and what he means to do with the almoner)"
+        "insight (Warden's Eye: the reader, the uncle, and who in the crowd will speak)",
+        "resolve (the Mender's Patience: standing in the road while his name is read, and not stepping forward this time)",
+        "finesse (the cart, the mule and five people out of Coldmere unseen)"
       ],
       "options": [
-        "Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him.",
-        "Let him go, and ring the bell for him as he leaves, as the law says.",
-        "Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*"
+        "East by the river road, where the levies are driving the farms in front of them.",
+        "North by the mill tracks, the safe road for his own."
       ],
       "default": 2
     },
@@ -209,6 +217,30 @@
     "t1": {
       "title": "The Descent",
       "status": "done"
+    },
+    "b2.1": {
+      "title": "The Lowmarch in Fear",
+      "status": "in_progress"
+    },
+    "b2.2": {
+      "title": "The Needle",
+      "status": "planned"
+    },
+    "b2.3": {
+      "title": "The Mill at Coldmere",
+      "status": "planned"
+    },
+    "b2.4": {
+      "title": "Hollis's Writ",
+      "status": "planned"
+    },
+    "b2.5": {
+      "title": "The Stonewright Ruin",
+      "status": "planned"
+    },
+    "t2": {
+      "title": "Book II transition",
+      "status": "planned"
     }
   },
   "quests": {
@@ -229,24 +261,28 @@
       "gate": "beats.b1_1.status == \"done\""
     },
     "q1.wager": {
-      "status": "available",
+      "status": "dropped",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "why": "Book I closed before it ran"
     },
     "q1.steam": {
-      "status": "available",
+      "status": "dropped",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "why": "Book I closed before it ran"
     },
     "q1.farcots": {
-      "status": "available",
+      "status": "dropped",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "why": "Book I closed before it ran"
     },
     "q1.ledger": {
-      "status": "available",
+      "status": "dropped",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "why": "Book I closed before it ran"
     },
     "q1.snow": {
       "status": "available",
@@ -290,6 +326,21 @@
       "priority": "floating",
       "project": true,
       "gate": "beats.b1_1.status == \"done\""
+    },
+    "q2.inn": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q2.needle": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
+    },
+    "q2.lantern": {
+      "status": "available",
+      "stage": 0,
+      "priority": "optional"
     }
   },
   "route": {
@@ -303,6 +354,19 @@
       "road": "main",
       "override": null,
       "transition_chapter": 4
+    },
+    "book2": {
+      "chapters": [
+        5
+      ],
+      "road": null,
+      "override": null,
+      "transition_chapter": null,
+      "knot_window": {
+        "earliest": "2026-11-17",
+        "likely": "2026-12-01",
+        "why": "the Before Running gate: week 13 at the earliest (Tue 11/17); the single-leg squat test, the impact ladder, the hamstring and glute tests and the quad retest still to pass, then the team's agreement"
+      }
     }
   },
   "flags": {

@@ -1204,41 +1204,15 @@ def reread_notes(text, kind, prev_text=None):
 
 
 def chapter_template(ws, plan):
-    """A canonical next-chapter skeleton for `plan chapter open`: 7 dated slots from the Sunday `ws`, spine on Sunday
-    and Saturday, two float quest placeholders (slots 3 and 5, non-adjacent so both may carry a micro), empty
-    world moves and climax. The placeholders continue the quests live now at their next stage first, then open the
-    Book's available quests (required before optional), never more than two counted quests live at once (the cap
-    `plan chapter open` enforces; the Tether and the Book's project are not counted), falling back to the Book's
-    q<N>.* ids; every "" is for the writer to fill (a slot's `plan` is its content, its `turn` is who can, must,
-    believes, risks or chooses what by the end, and what Darrow attempts), and `plan chapter open` accepts the result as is."""
+    """A next-chapter skeleton for `plan chapter open`: 7 dated slots from the Sunday `ws`, every one a spine slot of
+    the Book's next core beat (the story moves every day; the chapter's question is that beat's, its climax the
+    beat's climax), except: an owed Tether stage takes a quest slot (slot 3: never a spine slot, by its rule), and
+    when `pace_line` says the story is ahead of the Knot, slot 5 carries the first quest the Book may run, to spend a
+    week the plot would otherwise run ahead. Every "" is for the writer to fill (a slot's `plan` is its content,
+    its `turn` who can, must, believes, risks or chooses what by the end, its `tone` the register), and `plan chapter
+    open` accepts the result as is."""
     book = int(plan["position"]["book"])
     quests = plan.get("quests", {})
-    counted = lambda q: not q.get("standing") and not q.get("project")
-    live = [k for k, q in quests.items() if k.startswith(f"q{book}.") and q.get("status") == "live" and counted(q)]
-    avail = [k for k, q in quests.items() if k.startswith(f"q{book}.") and q.get("status") == "available" and counted(q)]
-    avail.sort(key=lambda k: 0 if quests[k].get("priority") == "required" else 1)
-    order = live + avail + [f"q{book}.quest_a", f"q{book}.quest_b"]
-    live_now, next_stage, picks = set(live), {k: int(quests[k].get("stage") or 0) + 1 for k in live}, []
-    for _ in range(2):  # slot 3, then slot 5: a quest not yet in this chapter first, else the next stage of one already in it
-        used, choice = {p[0] for p in picks}, None
-        for repeat in (False, True):
-            for k in order:
-                if (k in used) != repeat or (repeat and k not in live_now):
-                    continue
-                st, total = next_stage.get(k, 1), (arc_quest_stage_count(k) if k in quests else None)
-                if (total and st > total) or (k not in live_now and len(live_now) >= 2):
-                    continue
-                choice = (k, st)
-                break
-            if choice:
-                break
-        k, st = choice or (order[0], next_stage.get(order[0], 1))
-        picks.append((k, st))
-        live_now.add(k)
-        next_stage[k] = st + 1
-        total = arc_quest_stage_count(k) if k in quests else None
-        if total and st >= total:
-            live_now.discard(k)
     beat = plan["position"].get("beat") or f"b{book}.1"
     cur = plan.get("core_beats", {}).get(beat, {})
     if plan["position"].get("stage") in ("climax", "choice", "transition") or cur.get("status") in ("done", "folded"):
@@ -1248,18 +1222,68 @@ def chapter_template(ws, plan):
         nxt.sort(key=lambda k: int(k.split(".")[1]))
         if nxt:
             beat = nxt[0]
+    rt = quests.get("rae.tether") or {}
+    try:
+        t_sheet = int((load_json(P["sheet"]).get("tether") or {}).get("stage") or 0) if P["sheet"].exists() else 0
+    except (OSError, ValueError, json.JSONDecodeError):
+        t_sheet = 0
+    tether_owed = t_sheet > int(rt.get("stage") or 0)
+    ahead = (pace_state(plan, ws)[0] or 0) > 0
+    filler = None
+    if ahead:
+        counted = lambda q: not q.get("standing") and not q.get("project")
+        cands = [k for k, q in quests.items() if q.get("status") in ("live", "available") and counted(q) and (k.startswith(f"q{book}.") or q.get("priority") == "floating")]
+        cands.sort(key=lambda k: (0 if quests[k].get("status") == "live" else 1, 0 if k.startswith(f"q{book}.") else 1))
+        filler = cands[0] if cands else f"q{book}.quest_a"
     slots = []
     for n in range(1, 8):
         s = {"n": n, "day": (ws + dt.timedelta(n - 1)).isoformat()}
-        if n in (3, 5):
-            q_, st_ = picks[0 if n == 3 else 1]
-            s.update({"kind": "quest", "quest": q_, "stage": st_, "float": True})
+        if n == 3 and tether_owed:
+            s.update({"kind": "quest", "quest": "rae.tether", "stage": int(rt.get("stage") or 0) + 1, "float": True})
+        elif n == 5 and filler:
+            s.update({"kind": "quest", "quest": filler, "stage": int((quests.get(filler) or {}).get("stage") or 0) + 1, "float": True})
         else:
             s.update({"kind": "spine", "beat": beat, "float": False})
         s.update({"plan": "", "turn": "", "tone": "", "micro": None, "challenge": None, "invite": None})
         slots.append(s)
     return {"week_start": ws.isoformat(), "question": "", "slots": slots, "world_moves": ["", "", ""],
             "climax": {"plan": "", "tone": "", "checks": [], "options": ["", "", ""], "default": 1}}
+
+
+def pace_state(plan, ws=None):
+    """(ahead, beats_left, chapters_left, window) for the current Book: the core beats not yet done against the
+    weekly chapters from the week of `ws` (default: this week) through the Knot's likely week
+    (`route.bookN.knot_window.likely`, set from the State's next gate with `plan pace`). ahead > 0: the story would
+    outrun the Knot by that many chapters (spend them on quests); < 0: behind (two beats in a chapter where they fit,
+    the compress rule); None when no window is set."""
+    book = int(plan["position"]["book"])
+    beats = plan.get("core_beats", {})
+    left = [k for k, v in beats.items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") in ("planned", "in_progress")]
+    if ws is None:
+        today_ = today_local()
+        ws = today_ - dt.timedelta(days=(today_.weekday() + 1) % 7)
+    kw = (plan.get("route", {}).get(f"book{book}") or {}).get("knot_window") or {}
+    try:
+        likely = dt.date.fromisoformat(kw.get("likely"))
+    except (TypeError, ValueError):
+        return None, len(left), None, kw
+    chapters = max(0, (likely - ws).days // 7 + 1)
+    return chapters - len(left), len(left), chapters, kw
+
+
+def pace_line(plan, ws=None):
+    """One line on whether the story is on pace with the real gate (arc pacing): the spine moves every chapter;
+    quests fill only the weeks the story would otherwise run ahead of the Knot."""
+    ahead, left, chapters, kw = pace_state(plan, ws)
+    book = int(plan["position"]["book"])
+    if ahead is None:
+        return f"Pace: {left} core beat{'s' if left != 1 else ''} left in Book {ROMAN[book]}; no Knot window set (`saga.py plan pace --earliest D --likely D`, from the State's next gate)"
+    head = f"Pace: {left} core beat{'s' if left != 1 else ''} left · the Knot likely in {chapters} chapter{'s' if chapters != 1 else ''} (earliest {kw.get('earliest', '?')}, likely {kw.get('likely')})"
+    if ahead > 0:
+        return head + f" · ahead by {ahead}: one beat a chapter, and {ahead} week{'s' if ahead > 1 else ''} of the Book's quests (or a floating one) where the plot would otherwise outrun the knee"
+    if ahead < 0:
+        return head + f" · behind by {-ahead}: two beats in a chapter where they fit (one in its week, one as its climax), never rushed; the story may trail the Ledger"
+    return head + " · on pace: one core beat a chapter, no quest needed"
 
 
 UP_SKIP = {"Ser", "The", "Confessor", "Brother", "Mother", "Sister", "King", "Dame", "Lady", "Lord"}
@@ -1685,7 +1709,7 @@ def cmd_now(args):
     title = f" — {world.get('chapter_title', '')}" if int(world.get("chapter", -1)) == int(pos["chapter"]) else " (world.json still on chapter %s)" % world.get("chapter")
     lines.append(f"Book {ROMAN[int(pos['book'])]} · Chapter {pos['chapter']}{title} · {pos.get('beat')} {beat.get('title', '')} ({beat.get('status', '?')}) · stage {pos['stage']} · next scene {pos['next_scene']}")
     planned_beats = [k for k, v in plan.get("core_beats", {}).items() if re.match(rf"^b{pos['book']}\.", k) and v.get("status") == "planned"]
-    warn = f" · ⚠ {len(planned_beats)} core beats still planned: compress ahead if the Knot nears" if len(planned_beats) > 2 else ""
+    warn = ""  # the pace line below says whether the beats left fit the weeks to the Knot
     lines.append(f"Last written {pos.get('last_written')} · chapter question: {short(plan['chapter'].get('question'), 110)}{warn}")
     lines.append(road_line(st))
     kl = knot_line(plan)
@@ -1714,9 +1738,9 @@ def cmd_now(args):
     dev = device_summary(plan)
     if dev:
         lines.append("Devices: " + " · ".join(dev))
-    if int(pos["chapter"]) >= 2 and not live:
-        first_req = next((k for k, v in q.items() if v.get("status") == "available" and v.get("priority") == "required"), None)
-        lines.append("⚠ no quest live; plan a stage of " + (first_req or "any available quest") + " (design §5.2)")
+    pl = pace_line(plan)
+    if pl:
+        lines.append(pl)
     om = plan.get("open_micro")
     if om:
         lines.append(f"Open {'beat choice' if om.get('beat') else 'micro'} (slot {om.get('slot')}, scene {om.get('scene')}{'' if om.get('beat') else ', ' + str(om.get('axis'))}): {om.get('ask')}")
@@ -2874,7 +2898,7 @@ def cmd_plan(args):
         ordered["previous_devices"] = sorted(device_kinds(old.get("slots", []), plan.get("quests", {})))
         clash = sorted(device_kinds(ordered["slots"], plan.get("quests", {})) & set(ordered["previous_devices"]))
         if clash:
-            print(f"⚠ {', '.join(clash)} ran in chapter {old.get('number')} too; a device kind rests a chapter (design §5.6): `check` will refuse the plan")
+            print(f"note: {', '.join(clash)} ran in chapter {old.get('number')} too: vary it if the story allows")
         for s in ordered["slots"]:
             gate = (plan.get("quests", {}).get(s.get("quest")) or {}).get("gate") if s.get("kind") == "quest" else None
             if gate and gate_state(gate, st)[0] != "MET":
@@ -3059,6 +3083,25 @@ def cmd_plan(args):
         st.touch("plan", "world", "ledger")
         st.save()
         print(f"{args.id} arrived: approval {approval}, present" + (f", bond {c['bond']}" if "bond" in c else "") + f"; baseline set to {approval - summed}. Give them a saga/characters file and an Edit to the note.")
+        return
+    if a == "pace":
+        book = int(plan["position"]["book"])
+        rt = plan.setdefault("route", {}).setdefault(f"book{book}", {})
+        kw = rt.setdefault("knot_window", {})
+        for k in ("earliest", "likely"):
+            v = getattr(args, k)
+            if v:
+                try:
+                    dt.date.fromisoformat(v)
+                except ValueError:
+                    die(f"--{k} must be a date (YYYY-MM-DD)")
+                kw[k] = v
+        if args.why:
+            kw["why"] = args.why
+        st.touch("plan")
+        st.save()
+        print(f"route.book{book}.knot_window: {kw}")
+        print(pace_line(plan))
         return
     if a == "set":
         pos = plan["position"]
@@ -4034,17 +4077,15 @@ def cmd_check(args):
             gap = (dt.date.fromisoformat(b_[0]) - dt.date.fromisoformat(a_[0])).days
         except ValueError:
             continue
-        if gap < 2:
-            probs.append(f"devices on neighbouring days: slot {a_[2]} ({a_[1]}) and slot {b_[2]} ({b_[1]}); never two in adjacent slots (design §5.6)")
-    if kinds.get("challenge", 0) > 1:
-        probs.append("more than one challenge in the chapter; one at most (design §5.6)")
-    if kinds.get("invite", 0) > 2:
-        probs.append("more than two invitations in the chapter (design §5.6)")
-    if len(kinds) > 2:
-        probs.append(f"the chapter carries {len(kinds)} device kinds ({', '.join(sorted(kinds))}); at most two of challenge, project, invite (design §5.6)")
+        if gap < 2 and (a_[1] != "micro" or b_[1] != "micro"):
+            notes.append(f"devices on neighbouring days: slot {a_[2]} ({a_[1]}) and slot {b_[2]} ({b_[1]}): fine when the story wants it, a rhythm if it happens every week")
+        elif gap < 2:
+            probs.append(f"small choices on neighbouring days: slot {a_[2]} and slot {b_[2]}; one must be answered before the next opens (design §5.5)")
+    if kinds.get("challenge", 0) > 1 or kinds.get("invite", 0) > 2 or len(kinds) > 2:
+        notes.append(f"the chapter carries {', '.join(f'{v} {k}' for k, v in sorted(kinds.items()))}: devices are seasoning, and a week of them crowds the story")
     for k in sorted(kinds):
         if k in (ch.get("previous_devices") or []):
-            probs.append(f"a {k} ran in the previous chapter too; a device kind rests a chapter (design §5.6)")
+            notes.append(f"a {k} ran in the previous chapter too: vary it if the story allows")
     # the Book's project on the page (world.json → projects[]) and the callback cap
     places_ = known_places()
     for pr in world.get("projects", []) or []:
@@ -4149,8 +4190,8 @@ def cmd_check(args):
     for qid, n in quest_counts.items():
         if n > 2:
             probs.append(f"quest {qid} appears in {n} slots; at most two stages of one quest per chapter")
-    if int(pos.get("chapter") or 0) >= 2 and slots and not quest_counts and any(q.get("status") == "available" for q in plan.get("quests", {}).values()):
-        probs.append("chapter has no quest slot while quests are available (design §5.2)")
+    # no chapter is asked to carry a side quest: the spine moves every week, and quests fill only when the story is
+    # ahead of the Knot (`pace_line`; arc pacing)
 
     # the chapter file, the slots, world.json's scenes[] and the Ledger's closed days must tell one story
     reconcile_chapter(st, probs)
@@ -4847,7 +4888,8 @@ def brief_chapter(st, L, args):
     kl = knot_line(plan)
     if kl:
         L.append(kl)
-    L.append("shape: 7 slots Sun–Sat (≥ 2 spine, Saturday spine, ≤ 1 interlude, two float quest slots); micros in non-adjacent slots touching ≥ 2 axes; world_moves (3); the climax plan with checks, options and a default (the option the highest-approval companion present would pick); the chapter touches ≥ 1 open thread")
+    L.append(pace_line(plan, ws))
+    L.append("shape: 7 slots Sun–Sat, spine by default (≥ 2 spine, Saturday spine, ≤ 1 interlude); a quest slot only for an owed Tether stage, or when the pace line says the story is ahead; every day moves the beat on the page, the climax answers the week's question; small choices in non-adjacent slots; world_moves (3); the climax plan with checks, options and a default (the option the highest-approval companion present would pick)")
     prev = sorted(device_kinds(cur.get("slots", []), plan.get("quests", {})))
     L.append(f"devices: one per slot, none on neighbouring days, at most two kinds of challenge/invite/project, ≤ 1 challenge, ≤ 2 invites; last chapter carried {', '.join(prev) or 'none'}, so those kinds rest this chapter")
     prev_tones = [f"{s.get('n')} {s.get('tone')}" for s in sorted(cur.get("slots", []), key=lambda x: float(x.get("n") or 0)) if s.get("tone")]
@@ -4855,7 +4897,7 @@ def brief_chapter(st, L, args):
              f"last chapter: {', '.join(prev_tones) or 'none recorded'}")
     quests = plan.get("quests", {})
     live = [k for k, q in quests.items() if q.get("status") == "live" and not q.get("standing") and not q.get("project")]
-    L.append(f"quests live now: {', '.join(f'{k} (stage {quests[k].get(chr(115)+chr(116)+chr(97)+chr(103)+chr(101))})' for k in live) or 'none'}; never more than two live at once; required first; a quest finishes within two chapters")
+    L.append(f"quests live now: {', '.join(f'{k} (stage {quests[k].get(chr(115)+chr(116)+chr(97)+chr(103)+chr(101))})' for k in live) or 'none'}; quests are for weeks the story is ahead of the Knot (the pace line), never more than two live, a quest finishes within two chapters; a quest's content may be folded into a spine scene instead, when it belongs to the beat")
     cands = []
     for k, q in quests.items():
         if q.get("status") != "available":
@@ -4869,7 +4911,7 @@ def brief_chapter(st, L, args):
     t = (load_json(P["sheet"]).get("tether") or {}) if P["sheet"].exists() else {}
     rt = quests.get("rae.tether") or {}
     if int(t.get("stage") or 0) > int(rt.get("stage") or 0):
-        L.append(f"THE TETHER: the sheet stands at stage {t.get('stage')} ({t.get('name')}) and the page at {rt.get('stage') or 0}: the first float quest slot carries stage {int(rt.get('stage') or 0) + 1}")
+        L.append(f"THE TETHER: the sheet stands at stage {t.get('stage')} ({t.get('name')}) and the page at {rt.get('stage') or 0}: a quest slot carries stage {int(rt.get('stage') or 0) + 1} (the template puts it in slot 3)")
     L.append("the climax choice carries two scenes into this chapter if unanswered, then its default; slot 1 may be written while it is open")
     oc = plan.get("open_choice")
     if oc:
@@ -5253,6 +5295,9 @@ def cmd_reread(args):
     if not path:
         die(f"no chronicle file for chapter {ch}")
     blocks = R.blocks_of(path)
+    if not blocks and sk is None and files.get(ch - 1):  # a chapter just opened: the last block written is the last chapter's
+        ch, path = ch - 1, files[ch - 1]
+        blocks = R.blocks_of(path)
     if not blocks:
         die(f"{path.name} has no blocks yet")
     if sk is None:
@@ -6014,6 +6059,7 @@ def main():
     x = ps.add_parser("temptation"); x.add_argument("sub", choices=["add"]); x.add_argument("text")
     x = ps.add_parser("companion"); x.add_argument("sub", choices=["arrive"]); x.add_argument("id")
     x = ps.add_parser("set"); x.add_argument("kv", nargs="+")
+    x = ps.add_parser("pace", help="the Knot's window for the current Book (GM: from the State's next gate), which the pace line reads"); x.add_argument("--earliest"); x.add_argument("--likely"); x.add_argument("--why")
     s = sub.add_parser("arc"); s.add_argument("id")
     s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
