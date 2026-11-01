@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-9",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-9"
+    "anchor": "chronicle/04-old-mercy.html#scene-7"
   },
-  "last_seen_doing": "Answered the ready signal with his own fist; watched the Captain's shoulders and took the blow across the ribs anyway; kept his chair with the planted sword, the lesson; got his breath back and grinned; said that is what you've got, and said Captain differently; told the Captain to have the Mender see to his fingers before the man on the stair finds out; said again tomorrow, and bring the stick.",
-  "now": "In his chair in the cloister with a hand flat to his ribs, sore and pleased with himself. He has had what he asked for and says again tomorrow.",
+  "last_seen_doing": "Went to the noon bell stiff along one side from the blow and called the Captain Captain the new way; claimed the tower door for his chair before anyone else could have it.",
+  "now": "His chair is to be the tower door at the foot of the stair, with a wooden sword and a temper.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -582,6 +582,18 @@
       "chapter": "04",
       "scene": "between-9",
       "evidence": "\"Again tomorrow. Bring the stick. You'll want something to hit me with that she won't stand on.\""
+    },
+    {
+      "fact": "He went about stiff along one side, a hand to the ribs where the wood had taken him, and called the Captain Captain the new way.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "Hollis went down to the noon bell stiff along one side, with a hand flat to the ribs where the wood had taken him"
+    },
+    {
+      "fact": "He claimed the tower door at the foot of the stair for his chair.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "\"Mine,\" said Hollis, before anyone else could have it. \"I'll hold a door. I've held worse with more legs."
     }
   ],
   "relationships": [
@@ -854,6 +866,10 @@
       "chapter": "04",
       "scene": "between-10",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "7"
     }
   ]
 }

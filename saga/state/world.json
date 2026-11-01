@@ -123,11 +123,19 @@
       "after": "6",
       "covers": [],
       "written": "2026-10-31"
+    },
+    {
+      "scene": 7,
+      "title": "The Eve",
+      "covers": [
+        "2026-10-31"
+      ],
+      "written": "2026-10-31"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "Maelis's room, the last door down the hall from the infirmary, at the table under the window, the dog across the sill",
+    "detail": "the court under the bell tower at dusk, the night set: Hollis's chair for the tower door, Ash at the kennel bars over the terrace wall, Wren on the rope with Pell, the Captain's chair waiting on the turn of the tower stair",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -136,8 +144,8 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Marrant has not drawn a blade in a month. He has camped on the lower terrace, kept the cage, and reached into the House by the lever: a clerk in grey who never kneels sent two black slivers up in the House's own letter-satchel, one of them now set in the rock under the row and making the stone grow frost, and holds the almoner's sister at Calden for the second. Banners that are not grey are on the Holloway, a day off.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The false letter is written and held: the second set, the hall quiet, in the almoner's own hand with every word's purpose told, and in it a brother's questions for his sister, where she is kept and a line in her hand, and one true line. It goes down with the carter and is read at the winch-house. If it is believed, the Confessor waits and the clerk may name the place; if it is caught, the next letter up comes without her mark. The answer at the dawn bell is owed under the Prior's roof.",
-  "last_beat": "\"Every bell,\" she said, without looking round. \"I'll know.\" He believed her. He always had, without the least idea how.",
+  "current_struggle": "The eve: the banner that is not grey a day off on the Holloway, the Confessor's camp packing its cart with the censer lit to move first, at dawn, up; the House's night set with what it has, a one-legged man in a door, a dog at the bars, a girl at the rope, and a captain who cannot stand in a chair on the turn of the stair.",
+  "last_beat": "Below the wall, on the lower terrace, the grey cloaks had stopped their packing to listen, and the fires had burned down low, and the lymer lay with its head on its paws. Nobody down there spoke while it rang, or after.",
   "companions": {
     "maelis": {
       "approval": 31,

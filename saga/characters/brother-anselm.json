@@ -26,12 +26,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "6",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-6"
+    "anchor": "chronicle/04-old-mercy.html#scene-7"
   },
-  "last_seen_doing": "Was on the next cot in the morning as he had been told, the key on its cord and the letter inside his shirt, waiting on the carter.",
-  "now": "In the hall with the letter inside his shirt, waiting on the carter.",
+  "last_seen_doing": "Stood at the wall with the stores key while Wren sent his letter down, and did not come nearer; shut his eyes once when it was read at the bottom.",
+  "now": "At the wall with the key, his letter gone down and read at the winch-house.",
   "story_so_far": "",
   "quote": null,
   "known_facts": [
@@ -208,6 +208,12 @@
       "chapter": "04",
       "scene": "between-6",
       "evidence": "I'm going to stand on the steps and ask what they did with my sister, out loud, with the village there, the way she would."
+    },
+    {
+      "fact": "He watched his letter go down from the wall, and shut his eyes once when it was read at the bottom.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "Behind them the almoner shut his eyes, once, and opened them."
     }
   ],
   "relationships": [
@@ -282,6 +288,10 @@
       "chapter": "04",
       "scene": "between-10",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "7"
     }
   ]
 }

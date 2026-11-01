@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-2",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-2"
+    "anchor": "chronicle/04-old-mercy.html#scene-7"
   },
-  "last_seen_doing": "Came down the row between the dawn bell and the hour bell; read the Captain's mouth and made him say it plain; refused her hands with Ask the bell; told him the House's three bells, the Small that rings once and flat for a far cot, and how Old Mercy cracked in the Quenching's winter and was poured again with the cracked piece in her; knocked the four lines of the dusk verse out on the undercroft door and made him say them back; told him the third line is not his to say; told him to be under the tower at dusk where she can see his mouth from the window, and went up.",
-  "now": "Gone back up the row to her tower for the hour bell. She has given the Captain the dusk verse and expects him under the tower at dusk, in the court, where she can see his mouth from the window.",
+  "last_seen_doing": "Rang Old Mercy at dusk with Wren beside her at the rope.",
+  "now": "In the bell tower at the rope, Wren beside her, the dusk bell rung.",
   "story_so_far": "She rings the hours. Her glass on its strap counted the Captain's letter down the Steps and the riders on the road.",
   "quote": {
     "text": "Fifty years I've rung the bells. Ask the bell if it's tired.",
@@ -146,6 +146,12 @@
       "chapter": "04",
       "scene": "between-2",
       "evidence": "Four strokes. Don't be clever at it."
+    },
+    {
+      "fact": "She rang Old Mercy at dusk on the eve with Wren beside her at the rope.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "Old Mercy rang at dusk, slow, with the crack in her voice, and Sister Pell rang it"
     }
   ],
   "relationships": [
@@ -232,6 +238,10 @@
       "chapter": "04",
       "scene": "4",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "7"
     }
   ]
 }

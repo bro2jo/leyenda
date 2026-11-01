@@ -451,12 +451,13 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch03:between-1",
             "ch03:s5",
             "ch04:s2",
-            "ch04:between-1"
+            "ch04:between-1",
+            "ch04:s7"
           ]
         }
       ]
@@ -906,9 +907,10 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-1"
+            "ch04:between-1",
+            "ch04:s7"
           ]
         }
       ]
@@ -1084,10 +1086,11 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch04:between-6",
-            "ch04:s6"
+            "ch04:s6",
+            "ch04:s7"
           ]
         }
       ]
@@ -1147,13 +1150,14 @@
           "fits": "present.wren || present.rae",
           "priority": 2,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "fired@ch04:s7",
           "offered": 3,
           "offered_at": [
             "ch04:between-8",
             "ch04:s6",
             "ch04:between-9"
-          ]
+          ],
+          "evidence": "Wren put the almoner's letter in the satchel herself"
         }
       ]
     },
@@ -1180,7 +1184,8 @@
           "at": "ch04:s7",
           "weight": "color",
           "what": "The proper blow, from the chair, in the cloister with the kitchen watching: what it did to Hollis and what he said after. Open the next scene on it in a clause",
-          "status": "pending"
+          "status": "fired@ch04:s7",
+          "evidence": "Hollis went down to the noon bell stiff along one side, with a hand flat to the ribs where the wood had taken him, and called Darrow Captain twice before the bell was done, the new way both times"
         }
       ],
       "declined": [

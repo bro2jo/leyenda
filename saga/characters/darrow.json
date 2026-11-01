@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "between-10",
+    "scene": "7",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#between-10"
+    "anchor": "chronicle/04-old-mercy.html#scene-7"
   },
-  "last_seen_doing": "Went to Maelis because Hollis told him to; held out both hands; told her he had put his hand on the kennel grate; set down the easy answer about her silence and said the true one himself; asked why the fingers will not come back on their own and got part of an answer.",
-  "now": "Leaving Maelis's room with an order for every bell: his hands in the upper pool's warm. He has said aloud why she went quiet, and she did not say no.",
+  "last_seen_doing": "Kept Maelis's order at the upper pool; read the banners on the Holloway through Pell's glass, a day off, and read the camp's packing as a man meaning to move first, at dawn, up; watched the letter go down and be read at the winch-house; set the House's night piece by piece; tried to send Wren to the hall and was refused; had the Knots read and was told sitting; said the lines under the tower at dusk without stopping on the third.",
+  "now": "Under the tower at dusk with the night set and every piece he has placed: himself to sit on the turn of the tower stair with a chair and the stick. He knows the Confessor moves at dawn.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1590,6 +1590,42 @@
       "evidence": "He believed her. He always had, without the least idea how."
     },
     {
+      "fact": "His right hand had begun, very faintly, to know the bottom stones of the upper pool.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "the right one had begun, very faintly, to know that the stones were there."
+    },
+    {
+      "fact": "Through Pell's glass he read the riders under the banner that is not grey by their pace: steady, at a walk, meaning to arrive tomorrow and not tonight.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "He could not read the device. He could read the pace."
+    },
+    {
+      "fact": "He read the grey cloaks' packing as men keeping the censer lit and their hands empty: the Confessor means to move first, at dawn, up the Steps, so the man under the banner finds it already done.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "\"He moves first. At dawn. Up.\""
+    },
+    {
+      "fact": "He set the night: Hollis's chair in the tower door, the dog at the kennel bars over the terrace wall, himself on the tower stair halfway, where it narrows and turns, with a chair and the stick.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "\"The tower stair. Halfway, where it narrows and turns. A chair on the turn and the stick.\""
+    },
+    {
+      "fact": "He tried to send Wren to the hall with the Prior and the far cots, and when she refused, gave her the tower with Pell.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "\"The tower, then,\" he said. \"With Pell.\""
+    },
+    {
+      "fact": "He said the four lines under the tower at dusk, as he has every dusk since he learned them, and did not stop on the third.",
+      "chapter": "04",
+      "scene": "7",
+      "evidence": "Darrow stood under the tower and said the four lines to the strokes, as he had said them every dusk since he learned them"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1923,6 +1959,10 @@
     {
       "chapter": "04",
       "scene": "between-10"
+    },
+    {
+      "chapter": "04",
+      "scene": "7"
     },
     {
       "chapter": "tale01",

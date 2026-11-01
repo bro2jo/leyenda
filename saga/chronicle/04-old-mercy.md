@@ -924,3 +924,88 @@ She did not say yes. She turned the right hand over and pressed a thumb into the
 "Every bell," she said, without looking round. "I'll know."
 
 He believed her. He always had, without the least idea how.
+
+### Scene 7 — The Eve
+
+Hollis went down to the noon bell stiff along one side, with a hand flat to the ribs where the wood had taken him, and called Darrow Captain twice before the bell was done, the new way both times; and Darrow had had his hands in the upper pool to the wrist at the dawn bell and the hour bell, closing them on the bottom stones the way he had been told, and the right one had begun, very faintly, to know that the stones were there.
+
+A little after noon Wren called him up to the wall-walk with Pell's glass.
+
+"Banners," she said, and gave it him.
+
+They came out of the cloud on the Holloway below the Shins, where the road ran pale through the snow: a long knot of riders, too far off to count by the glass, with a banner over them that was not grey. He could not read the device. He could read the pace. Riders who mean to be somewhere tomorrow and not tonight ride the way those did, steady, at a walk, in no hurry to arrive anywhere before they had to.
+
+"A day off," he said.
+
+"A day and a bit. They'll camp on the road tonight and be at the foot of the Steps tomorrow by dark." Wren took the glass back and swung it down onto the lower terrace. "And look at this lot."
+
+The grey cloaks were taking the canvas off their cart. Two of them were rolling it, and a third was loading the cart with the slow care of a man who means to leave nothing behind, and the censer still smoked on its rock by the fire, and the lymer lay tied at the foot of the kennel wall with its long ears in the slush.
+
+"Packing," said Wren. "Going down to meet them. Good."
+
+"No." He took the glass again, and looked a long time, the way he had looked at a clan line once with the water at his horse's knees. "Men going down roll the canvas and leave the fire. These are packing the cart and keeping the censer lit. They want the cart ready and their hands empty, and the censer in his fist when he does it. He means the man under that banner to come up the Steps tomorrow and find it already done." He gave her back the glass. "He moves first. At dawn. Up."
+
+Wren did not say anything for a while, which was the thing to listen to.
+
+---
+
+At the hour bell before dusk the cage went down with something in it for the first time in a week.
+
+Wren put the almoner's letter in the satchel herself, under the eyes of the two winch-brothers and the Captain and Brother Anselm, who stood at the wall with the stores key in his fist and did not come nearer. She hung the satchel on the cage's hook, and rang the little bell by the drum twice, the cant for a letter, and the brothers let the rope out.
+
+Darrow watched it down through the glass: the cage dropping into the cloud, and out of it at the Shins, and down to the winch-house, where a cart stood with its shafts up and two oxen in the snow beside it. Thorne's cart, back from the Holloway. At the bottom the grey cloak who kept the winch-house got to the satchel first. He opened it on the cage's floor, unfolded the letter, read it, folded it again, and put it back. Then he stepped away, and the carter came from her oxen and took the satchel off the hook, and put it on her own shoulder, and did not look up.
+
+"Inspected," said Wren. She wrote it down. Behind them the almoner shut his eyes, once, and opened them.
+
+---
+
+He set the House's night in the warming room with the brazier and the people he had, the way he had once set a lance's night at a ford: a piece at a time, each where it would hold.
+
+"The tower door," he said. "At the foot of the stair. It's the only way up to the bell."
+
+"Mine," said Hollis, before anyone else could have it. "I'll hold a door. I've held worse with more legs. Put my chair in it and give me the wood, and anything that comes through has to come past a one-legged man who's in a temper."
+
+"Ash." The dog lifted her head from his boot. "The kennel bars, over the terrace wall, where the hound bayed. She'll go there whether I send her or not." She put her head down again, which he took for yes.
+
+"And you," said Wren.
+
+"The tower stair. Halfway, where it narrows and turns. A chair on the turn and the stick." He looked at his hands. "A man in a chair can hold a stair that men can only climb one at a time."
+
+"First sensible thing you've said all week," said Hollis, pleased.
+
+"Wren." He turned to her. "You'll be in the hall tonight. With the Prior and the far cots. Not the tower."
+
+"No."
+
+"That wasn't a question."
+
+"Technically," said Wren, "nothing you say ever is." But she had stopped talking fast, and he heard it. "Sister Pell has two straight lines rubbed across each palm and she rang Old Mercy late once already this winter, on the night they read your name, and I ran the hundred and twelve paces to that tower so it would ring at all. Somebody stands by her on the rope and counts her strokes. That's me. Send me anywhere you like, Captain. Not away from the rope."
+
+He looked at her for a long moment. She looked back, and did not count anything.
+
+"The tower, then," he said. "With Pell."
+
+"With Pell," said Wren, and wrote it down, and the hand that wrote it was quite steady.
+
+Maelis read the Knots by lamplight after, in the corner of the warming room, with two fingers on the knee and her eyes shut and the pipe gone still in her teeth. He waited for the word. He had heard her say it fifteen times about the Steps, and he waited for her to say it now about the stair.
+
+She took her fingers off the knee and opened her eyes.
+
+"Sitting," she said. "Every moment of it. If you stand up on that turn, I'll know before you've finished doing it."
+
+That was all. She did not say the other word.
+
+---
+
+Old Mercy rang at dusk, slow, with the crack in her voice, and Sister Pell rang it, and Wren stood beside her at the rope where the window could see the court.
+
+Darrow stood under the tower and said the four lines to the strokes, as he had said them every dusk since he learned them, and did not stop on the third one.
+
+The bronze went down the mountain and the valley had it. Below the wall, on the lower terrace, the grey cloaks had stopped their packing to listen, and the fires had burned down low, and the lymer lay with its head on its paws. Nobody down there spoke while it rang, or after.
+
+> ⟦ THE RECKONING ⟧
+> Might 12 → 13
+> Vigor 10 → 11
+> Finesse 10 → 11
+> Art ranked up: **Groundbreaker** III. *Drive through a line.*
+> XP 2,558 → 2,643
