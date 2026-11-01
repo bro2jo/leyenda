@@ -12,15 +12,17 @@
 
 By the second milestone Darrow had got down off the tailboard, and nobody had stopped him.
 
-Maelis had let him. She had looked at the knee, then at the road, which ran flat and pale between its hedge-banks as far as the snow let anyone see, and said, "To the next stone. Then you ride, and you don't argue." So he walked at Hob's head with one hand on the yoke and the stick in the other, and the ox put up with him.
+Maelis had looked at the knee, then at the flat pale road between its hedge-banks, and said, "To the next stone. Then you ride, and you don't argue." So he walked at Hob's head with one hand on the yoke and the stick in the other, and the ox put up with him.
 
-The cold was the clean kind that stopped at the skin. He had the sun on one side of his face and the wind on the other, and the knee reported every rut, and he found he did not mind the reports. He was warm to the ends of his fingers. He was walking down a road. A month ago that had been a thing other men did.
+The cold was the clean kind that stopped at the skin. The knee reported every rut, and he found he did not mind the reports; he was warm to the ends of his fingers, and he was walking down a road. A month ago that had been a thing other men did.
 
-Wren had been counting since the winch-house: milestones, gates, a dead crow, a gibbet with nobody on it, three chimneys, a woman beating a rug who stopped to stare at them. She had started on the sheep in a field below the road and reached sixty-one when Hollis, on the tailboard with his leg out straight, told her sheep were not to be counted separately.
+Somewhere below, the banner was coming up the same road. He looked for it at every rise. So, he noticed, did Rae.
+
+Wren had been counting since the winch-house: milestones, gates, a dead crow, an empty gibbet, a woman who stopped beating her rug to stare. She had reached sixty-one sheep when Hollis, on the tailboard with his leg out straight, told her sheep were not counted separately.
 
 "How else do you count them?"
 
-"By the field. That's a field of sheep. Write *a field*."
+"By the field. Write *a field*."
 
 "That isn't a number."
 
@@ -28,9 +30,7 @@ Wren had been counting since the winch-house: milestones, gates, a dead crow, a 
 
 She wrote something down. Darrow suspected it was sixty-one.
 
-Ash had gone ahead at the start and come back twice to report nothing, tongue out, delighted with the nothing. The splint clacked on the frozen ruts. The mule walked beside Dun as if it had been hired for the work and meant to be paid.
-
-Rae walked at Dun's shoulder, which put both oxen between her and Darrow, and that seemed to suit everyone, the oxen included. He had been working out how to ask for half a mile.
+Ash ranged ahead and came back twice to report nothing, delighted with it, and the mule walked beside Dun as if it had been hired and meant to be paid. Rae walked at Dun's shoulder, which put both oxen between her and Darrow, and that seemed to suit everyone, the oxen included. He had been working out how to ask for half a mile.
 
 "Did you—"
 
@@ -46,9 +46,9 @@ He laughed, the whole laugh, the one that used to carry down a hall, and the mul
 
 ---
 
-The road came over a rise, and below them, where the Holloway dipped to the tarn and Coldmere's smoke, the banner was coming up it.
+The road came over a rise, and below them, where the Holloway dipped to the tarn and Coldmere's smoke, there it was.
 
-It was no smudge now. Riders, two and two, the low sun on their helms, the banner dark on a pale field, and in the middle of the column, small and slow, a cart with a thread of smoke going up from it that he knew. Wren had her hand flat over her eyes. "Forty-four," she said. "Forty-six. Their cart. His cart."
+Riders, two and two, the low sun on their helms, the banner dark on a pale field; in the middle of the column the Confessor's cart, small and slow, with the censer's thread of smoke going straight up from it; and at the head a rider who had the better seat, and had always had it. Darrow would have known him at five miles. Wren had her hand flat over her eyes. "Forty-four," she said. "Forty-six. Their cart. His cart."
 
 Rae had the oxen turned before he had properly looked. She put the goad to Hob's shoulder and said one word to him, and the cart came off the Holloway onto a track Darrow had not seen at all, a drove road between two walls, running north round the far side of the water.
 
@@ -58,9 +58,9 @@ Darrow stayed where he was, in the middle of the Holloway.
 
 "It goes round the tarn. We come at Coldmere from the north, when it's empty of them." She did not stop.
 
-"I know whose that is."
+"That's Aldric."
 
-"So do I."
+"I know who it is."
 
 "He wrote he'd come himself. He's come. I can stand on this road and let him find me, and say what I've got to say to his face, and—"
 
@@ -70,11 +70,11 @@ Darrow stayed where he was, in the middle of the Holloway.
 
 "And you've walked to your stone," said Maelis.
 
-He stood on the Holloway and looked at the banner, and knew what he was doing, because he had done it before. He had looked across a river once at a line of spears and seen the thing he wanted to hit, and decided, and the deciding had felt exactly like knowing. He had decided this one on the Steps, somewhere in the second hundred, when the road came out of the cloud with the banner on it, and he had walked two miles since without once asking anybody.
+He stood on the Holloway and looked at the rider at the head of the column, and knew what he was doing, because he had done it before. He had looked across a river once at a line of spears, and decided, and the deciding had felt exactly like knowing. He had decided this one on the Steps, when the road came out of the cloud with the banner on it, and walked two miles toward it without once asking anybody.
 
-"I'd decided," he said. "Before any of you said a word. It's a habit." He made himself look away from the column. "It's how I lost the last horse."
+"I'd decided," he said. "Before any of you said a word. It's a habit." He made himself look away. "It's how I lost the last horse."
 
-Rae had the oxen turned and the cart on her road, and she was not moving it. She was standing at Dun's head, looking at him, and it took him a moment to see what she was waiting for. Nobody on the Holloway had ever needed his leave for a thing she did. She had told him so with every load she ever brought up the Steps. She was waiting for it now.
+Rae had the cart on her road, and she was not moving it. She stood at Dun's head, looking at him, and it took him a moment to see what she was waiting for. Nobody on the Holloway had ever needed his leave for a thing she did; she had told him so with every load she ever brought up the Steps. She was waiting for it now.
 
 "Your road," Darrow said.
 
@@ -84,9 +84,9 @@ He got on the tailboard.
 
 ---
 
-The drove road ran between its walls all afternoon, and the walls kept off the wind and the outriders' eyes. Twice the column's jingle came to them across the water, and twice Rae stopped the oxen in the lee of the wall and stood with her hand on Hob's nose until it passed. At dusk they came to a sheepfold on the north shore, with a stone hut for the shepherds and nobody in it, and Hollis declared it the finest inn in the Lowmarch and asked where they kept the beer.
+All afternoon the walls kept off the wind and the outriders' eyes. Twice the column's jingle came across the water, and Rae stopped the oxen in the lee of the wall with her hand on Hob's nose until it passed. At dusk they came to an empty sheepfold on the north shore, and Hollis declared it the finest inn in the Lowmarch and asked where they kept the beer.
 
-Wren lay on her back on the cart with the ledger on her chest and looked up. On the mountain the sky had been cloud most nights and a roof the rest.
+Wren lay on her back on the cart with the ledger on her chest. On the mountain the sky had been cloud most nights and a roof the rest.
 
 "How many are there?"
 

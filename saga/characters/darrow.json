@@ -29,7 +29,7 @@
     "place": "holloway",
     "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
   },
-  "last_seen_doing": "Walked the first miles at Hob's head to Maelis's stone; wanted to wait on the Holloway for the banner, owned that he had decided before anyone spoke, and gave Rae the road.",
+  "last_seen_doing": "Walked the first miles at Hob's head to Maelis's stone, watching every rise for the banner; knew Aldric at the head of the column and wanted to stand on the Holloway and meet him; owned that he had decided before anyone spoke, and gave Rae the road.",
   "now": "At a shepherds' fold on the drove road round the tarn, with the company, the column's fires across the water at Coldmere.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
@@ -1720,6 +1720,12 @@
       "chapter": "05",
       "scene": "1",
       "evidence": "\"Your road,\" Darrow said."
+    },
+    {
+      "fact": "He knew Aldric at the head of the column by his seat on a horse.",
+      "chapter": "05",
+      "scene": "1",
+      "evidence": "That's Aldric."
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
