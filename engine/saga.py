@@ -73,8 +73,8 @@ The records (engine/records.py; design.md §11): the story is kept as one event 
   brief [--date D | --between --with WHO | --climax | --choice | --chapter] [--size]
                                         what the next block must carry (the slot, what is owed), its continuity, what it may use (the people,
                                         the threads, the Annals, callbacks, the arc), the format, and the record skeleton to send back
-  reread [KEY]                          the reread's notes for a block (default: the current chapter's last): its length against the usual
-                                        for its kind, the Book I habits above their rate, its first and last lines, the week's registers;
+  reread [KEY]                          the reread's notes for a block (default: the current chapter's last): its length (information,
+                                        never a target), the Book I habits above their rate, its first and last lines, the week's registers;
                                         advice only (record prints the same notes after it records)
   record 'JSON' [--force] [--slot N] [--allow-names A,B]
                                         one block of the page recorded: validated against the heading, the registries and the plan; the event
@@ -1158,8 +1158,6 @@ def tone_notes(slots, climax=None):
 
 
 # ---------------------------------------------------------------- the reread: length and the habits Book I leaned on
-BLOCK_WORDS = {"scene": (400, 1000), "interlude": (300, 900), "between": (250, 600), "climax": (1200, 2200),
-               "choice": (150, 400), "tale": (400, 700)}
 HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many before it is named, what to try instead)
     ("'the way …' comparisons", r"\bthe way\b", 2.0, 3, "keep the best one; make the others plain, or let an action carry the comparison"),
     ("negation beats (did not, said nothing, nobody…)", r"\b(?:did not|didn't|had not|was not|would not|could not|said nothing|nothing at all|nobody|no one)\b", 7.0, 5,
@@ -1175,18 +1173,11 @@ HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many befor
 
 
 def reread_notes(text, kind, prev_text=None):
-    """Plain notes for the reread (style.md §4): the length against the usual range for the kind, the habits above
+    """Plain notes for the reread (style.md §4): the length (information only), the habits above
     their rate, and the opening and closing lines. Advice for the writer's eye; nothing here refuses a block."""
     body = "\n".join(l for l in (text or "").splitlines() if not l.startswith(("`[", ">", "**What does")) and not re.match(r"^\d+\.\s", l))
     words = len(re.findall(r"[A-Za-z0-9'’-]+", body))
-    out = []
-    lo, hi = BLOCK_WORDS.get(kind, (0, 0))
-    if hi:
-        verdict = "within the usual" if lo <= words <= hi else ("longer than the usual" if words > hi else "shorter than the usual")
-        line = f"length: {words:,} words, {verdict} {lo:,}–{hi:,} for a {kind}" + (" (a Book's crossing is as long as it needs)" if kind == "choice" else "")
-        if words > hi * 1.25:
-            line += ": what would a reader miss if the first paragraph went, or the last exchange? (a set piece may run long when its turn needs it)"
-        out.append(line)
+    out = [f"length: {words:,} words (information, never a target: does every paragraph earn its place, and is anything the scene needs missing?)"]
     per_k = max(words, 1) / 1000
     for label, pat, rate, floor, advice in HABITS:
         n = len(re.findall(pat, body))
@@ -4531,26 +4522,26 @@ def climax_odds_lines(ch, checks, rules, frozen):
 def format_lines(kind, slot=None):
     if kind == "scene":
         out = ["heading: `### Scene N — Title` appended to the chapter file (N is the key's number)",
-               "length: as long as the turn needs; most daily scenes land 400–1,000 words, a set piece more (`saga.py reread` after drafting)",
+               "length: as long as good writing needs: no padding to look substantial, no cutting to hit a number (`saga.py reread` after drafting)",
                "a die, only with stakes: `python3 engine/darrow.py roll chNN-sK-<slug> --stat <might|vigor|finesse|resolve> --dc <8–20> [--prof] [--art <id>] [--adv|--dis]`; paste its first line as printed, on its own line, before the outcome",
                "the Reckoning box at the end, only when sync reported a change: `> ⟦ THE RECKONING ⟧` then one line per change (`> Might 11 → 12`, `> Level 5 → 6 · Kindled`, `> The Tether: **a name**.`, `> Rank: **Kindled**.`)"]
         if slot and slot.get("micro"):
             out.append("ends on the small choice, exactly: `**What does Darrow say?**` (or do?) then `1. **…**` `2. **…**` `3. **…**`, one line each, nothing after it")
         return out
     if kind == "between":
-        return ["heading: `### Between — Title` appended after the last block; close third on Darrow, past tense; usually 250–600 words, as long as the exchange needs",
+        return ["heading: `### Between — Title` appended after the last block; close third on Darrow, past tense; as long as the exchange needs",
                 "zero or one die, only with stakes or a game: `python3 engine/darrow.py roll chNN-between-K-<slug> --stat … --dc …` (never --chapter or --tier); its first line pasted as printed",
                 "no Reckoning box, no choice list; it ends on a line that hands the moment back (a look, a bell, a door, a last word)"]
     if kind == "climax":
-        return ["heading: `## Climax — Title`; usually 1,200–2,200 words, the space on the decision and its cost, never on everything the chapter touched",
+        return ["heading: `## Climax — Title`; as long as it needs, the space on the decision and its cost, never on everything the chapter touched",
                 "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … --dc … [--prof] [--art <id>] --chapter N`; each first line pasted as printed",
                 "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`, `*[Inspiration]*` for a bold way or a reroll that costs one), struck through if unmet, who approves in italics; the default never carries `*[Inspiration]*`",
                 "the Reckoning box before the choice if sync reported a change"]
     if kind == "choice":
-        return ["heading: `### Choice — Title` appended to the climax's chapter file; usually 150–400 words: the moment the choice lands, companions reacting in voice by their under-pressure or at-ease lines; approval shows in what they say, never as numbers",
+        return ["heading: `### Choice — Title` appended to the climax's chapter file; as long as it needs: the moment the choice lands, companions reacting in voice by their under-pressure or at-ease lines; approval shows in what they say, never as numbers",
                 "a Book's last climax: this block is the crossing itself (`saga.py arc tN.<road>`), as long as it needs"]
     if kind == "tale":
-        return ["heading: `### Piece K — Title` appended to the tale's file (K is the key's number); 400–700 words, past tense, close third on the tale's own person",
+        return ["heading: `### Piece K — Title` appended to the tale's file (K is the key's number); as long as the small story needs, past tense, close third on the tale's own person",
                 "a whole small story each time: a want, a turn, a last image; the piece may end on the line the present will rhyme with, never on a lesson",
                 "no dice, no choice list, no Reckoning box; the present never intrudes except as an echo the reader can feel",
                 "the last piece ends on the keepsake in the page's words (the thing, the name, the song or the saying); the record names it"]
@@ -5265,7 +5256,7 @@ def cmd_record(args):
 
 
 def cmd_reread(args):
-    """The reread's notes for one block (style.md §4): its length against the usual range, the habits above their
+    """The reread's notes for one block (style.md §4): its length (information only), the habits above their
     rate, its opening and closing lines, and the chapter's registers so far. Advice only."""
     st = State()
     plan = st.plan

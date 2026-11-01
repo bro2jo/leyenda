@@ -12,7 +12,7 @@
 
 By the second milestone Darrow had got down off the tailboard, and nobody had stopped him.
 
-Maelis had looked at the knee, then at the flat pale road between its hedge-banks, and said, "To the next stone. Then you ride, and you don't argue." So he walked at Hob's head with one hand on the yoke and the stick in the other, and the ox put up with him.
+Maelis had let him. She had looked at the knee, then at the road, flat and pale between its hedge-banks as far as the snow let anyone see, and said, "To the next stone. Then you ride, and you don't argue." So he walked at Hob's head with one hand on the yoke and the stick in the other, and the ox put up with him.
 
 The cold was the clean kind that stopped at the skin. The knee reported every rut, and he found he did not mind the reports; he was warm to the ends of his fingers, and he was walking down a road. A month ago that had been a thing other men did.
 
@@ -30,7 +30,9 @@ Wren had been counting since the winch-house: milestones, gates, a dead crow, an
 
 She wrote something down. Darrow suspected it was sixty-one.
 
-Ash ranged ahead and came back twice to report nothing, delighted with it, and the mule walked beside Dun as if it had been hired and meant to be paid. Rae walked at Dun's shoulder, which put both oxen between her and Darrow, and that seemed to suit everyone, the oxen included. He had been working out how to ask for half a mile.
+Once, at a bend, she turned round on the tailboard and looked back the way they had come. The mountain stood over the whole valley, white to the cloud, and under the cloud, small as a fingernail, the House: a pale scratch on the rock with the Steps going up to it like a stitch. She had lived her whole life on that scratch. She looked at it for as long as the bend lasted, and her pencil stayed where it was.
+
+Ash ranged ahead and came back twice to report nothing, delighted with it, the splint clacking on the frozen ruts, and the mule walked beside Dun as if it had been hired and meant to be paid. Rae walked at Dun's shoulder, which put both oxen between her and Darrow, and that seemed to suit everyone, the oxen included. He had been working out how to ask for half a mile.
 
 "Did you—"
 
@@ -64,13 +66,15 @@ Darrow stayed where he was, in the middle of the Holloway.
 
 "He wrote he'd come himself. He's come. I can stand on this road and let him find me, and say what I've got to say to his face, and—"
 
-"And then what?" She stopped the oxen and turned round on the track, and said it all, more words together than he had had from her in a month. "That's a Lance on the march, and a Confessor's cart gone down to meet it. You've four people on that cart who are on a paper, and one who isn't, who drives it. You stand there and say your piece, and he says his, and then forty men ride on up to the winch-house and take the cart and the oxen and the Mender, because a Lance on the march doesn't pass a cart, it takes it. I've seen it done. Not at the Elbow. Anywhere else. This is my road, and I'm not driving it into him so you can see his face."
+What he could not say in front of Hollis was the rest of it: he wanted to watch that face while it answered. The west bank in the spray, Aldric's horse already turned and climbing, one heartbeat early. He had carried that up the Steps and down them again, and the one man who could tell him what it meant was a mile off, riding toward him.
+
+"And then what?" Rae stopped the oxen and turned round on the track, and said it all, more words together than he had had from her in a month. "That's a Lance on the march, and a Confessor's cart gone down to meet it. You've four people on that cart who are on a paper, and one who isn't, who drives it. You stand there and say your piece, and he says his, and then forty men ride on up to the winch-house and take the cart and the oxen and the Mender, because a Lance on the march doesn't pass a cart, it takes it. I've seen it done. Not at the Elbow. Anywhere else. This is my road, and I'm not driving it into him so you can see his face."
 
 "She's right," Hollis said from the tailboard, "and you know she's right, Captain, and you hate it, and I'd pay money to watch you hate it a while longer, but they've outriders, and outriders have eyes."
 
 "And you've walked to your stone," said Maelis.
 
-He stood on the Holloway and looked at the rider at the head of the column, and knew what he was doing, because he had done it before. He had looked across a river once at a line of spears, and decided, and the deciding had felt exactly like knowing. He had decided this one on the Steps, when the road came out of the cloud with the banner on it, and walked two miles toward it without once asking anybody.
+He stood on the Holloway and looked at the rider at the head of the column, and knew what he was doing, because he had done it before. He had looked across a river once at a line of spears and seen the thing he wanted to hit, and decided, and the deciding had felt exactly like knowing. He had decided this one on the Steps, when the road came out of the cloud with the banner on it, and walked two miles toward it without once asking anybody.
 
 "I'd decided," he said. "Before any of you said a word. It's a habit." He made himself look away. "It's how I lost the last horse."
 
@@ -84,7 +88,7 @@ He got on the tailboard.
 
 ---
 
-All afternoon the walls kept off the wind and the outriders' eyes. Twice the column's jingle came across the water, and Rae stopped the oxen in the lee of the wall with her hand on Hob's nose until it passed. At dusk they came to an empty sheepfold on the north shore, and Hollis declared it the finest inn in the Lowmarch and asked where they kept the beer.
+All afternoon the walls kept off the wind and the outriders' eyes. Twice the column's jingle came across the water, and Rae stopped the oxen in the lee of the wall with her hand on Hob's nose until it passed. At dusk they came to a sheepfold on the north shore, a stone hut for the shepherds and nobody in it, and Hollis declared it the finest inn in the Lowmarch and asked where they kept the beer.
 
 Wren lay on her back on the cart with the ledger on her chest. On the mountain the sky had been cloud most nights and a roof the rest.
 

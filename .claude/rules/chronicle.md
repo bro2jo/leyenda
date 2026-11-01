@@ -22,7 +22,7 @@ The story is kept the way the Ledger is kept: **records in, projections out.** O
 
 ## After writing anything in `saga/`
 
-- **The reread first:** `python3 engine/saga.py reread [KEY]` prints the block's length against the usual, the Book I habits it counts and its first and last lines (advice, never a refusal; `record` prints the same notes after it records).
+- **The reread first:** `python3 engine/saga.py reread [KEY]` prints the block's length (information, never a target), the Book I habits it counts and its first and last lines (advice, never a refusal; `record` prints the same notes after it records).
 - **The record:** `python3 engine/saga.py record '<the skeleton, filled>'`. It validates the block against the page and the registries (the heading, every person's file, every evidence excerpt, every name the page has not spoken, every thread and lore id), writes the event and the note, moves the plan (the slot done, the small choice opened, the climax choice opened, due items and rules fired, the Annals marked spoken, a rank or Tether line), rebuilds every projection and runs `check`. `--force` re-records a revised block. A choice goes through `python3 engine/saga.py choose` (the ledger entry, the choices[] row, the choice closed). A glimpse goes through `python3 engine/saga.py glimpse add`.
 - A new person on the page: their base file (`saga/characters/README.md`) and their entry in `saga/bible/cast.md` before the record. A new place: `saga/state/places.json` (map x/y, `on_page`, `visited`, description, `aliases`). A picture he supplies: `saga/art/README.md`.
 - Then `python3 engine/darrow.py ship -m "…"` (it runs `check`, builds the site, commits and pushes). Commit messages are reader-safe.
