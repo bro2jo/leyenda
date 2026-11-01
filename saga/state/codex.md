@@ -76,6 +76,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The bell tower** — Old Mercy's tower. Its door at the foot of the stair is the only way up to the bell; the stair narrows and turns halfway. On the eve the Captain set Hollis's chair in the door and his own on the turn, and Wren beside Sister Pell at the rope (Ch 4 Sc 7).
 - **Patience** — An old plain sword, the blade dull, that Maelis carried down the Thousand Steps wrapped in oilcloth that smelled of the undercroft, with one word cut in the steel near the hilt: Patience. Darrow laughed; he thought it was a joke, and she let him (Ch 4 Choice).
 - **Rung down** — The House's custom for a guest who leaves in peace: Old Mercy sounds as he goes down the Steps, and by the law a man the House has rung down may not lawfully climb them against it again. The Prior named it at the foot of the tower stair after the bell, with Sister Pell's hands too torn to ring (Ch 4 Climax).
+- **The drove road** — A walled track that leaves the Holloway above Coldmere and runs north round the far side of the tarn: the carter's road round a Lance on the march (Ch 5 Sc 1).
 
 ## Songs and verses
 

@@ -23,13 +23,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "04",
-    "scene": "choice",
+    "chapter": "05",
+    "scene": "1",
     "place": "holloway",
-    "anchor": "chronicle/04-old-mercy.html#choice"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
   },
-  "last_seen_doing": "Sat with the lad's hand at the Grey Cot from the dawn bell; told it the carter brought a mule up the Steps after the rope went; gave the even bells to the night novice; rode the mule down the Thousand Steps cursing it the whole way; got onto the cart's tailboard at the bottom.",
-  "now": "On the tailboard of the carter's cart on the Holloway, having ridden a mule down the Thousand Steps and left the lad's even bells with the night novice.",
+  "last_seen_doing": "Rode the tailboard, ordered that sheep not be counted separately, backed the carter, and called the fold the finest inn in the Lowmarch.",
+  "now": "At the fold on the drove road, asking where they keep the beer.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -618,6 +618,12 @@
       "chapter": "04",
       "scene": "choice",
       "evidence": "and the carter who had brought it, whom he called a saint and a lunatic in the same breath."
+    },
+    {
+      "fact": "He backed the carter over the banner: a Lance's outriders have eyes.",
+      "chapter": "05",
+      "scene": "1",
+      "evidence": "but they've outriders, and outriders have eyes"
     }
   ],
   "relationships": [
@@ -902,6 +908,10 @@
     {
       "chapter": "04",
       "scene": "choice"
+    },
+    {
+      "chapter": "05",
+      "scene": "1"
     }
   ]
 }

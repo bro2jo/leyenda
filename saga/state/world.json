@@ -5,20 +5,29 @@
   "chapter": 5,
   "chapter_title": "The Thornwild Woman's",
   "chapter_file": "saga/chronicle/05-the-thornwild-woman-s.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "The Drove Road",
+      "covers": [
+        "2026-11-01"
+      ],
+      "written": "2026-11-01"
+    }
+  ],
   "location": {
     "place": "holloway",
-    "detail": "on the tailboard of Rae Thorne's cart on the first rut of the Holloway, below the winch-house at the foot of the Thousand Steps",
+    "detail": "a shepherds' fold on the drove road round the north shore of the tarn, across the water from Coldmere",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
-  "season": "first snow of the year on the Steps",
+  "season": "clear cold after the first snow, on the road below the mountain",
   "current_quest": {
     "name": "The Road",
     "on_the_page": "The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "The cart jolted over the first rut of the Holloway, and the bell at Rae's hip rang, and Rae, watching the road, did not hear it. He did.",
+  "last_beat": "Across the tarn the column's fires came out on Coldmere's green, and Rae pointed with the goad at the biggest light, her uncle's inn, where he would be pouring for them.",
   "companions": {
     "maelis": {
       "approval": 34,

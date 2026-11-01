@@ -910,14 +910,15 @@
           "what": "Rae has the mare's name from him, Thistle, said at the wicket at first light, and went down saying she would tell her. Fire where she brings word of the mare, brings the mare, or says the name back to him",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch05:s1",
           "offered": 4,
           "offered_at": [
             "ch04:between-1",
             "ch04:s7",
             "ch04:climax",
             "ch04:choice"
-          ]
+          ],
+          "evidence": "In her ear, at the dealer's, the morning I went down."
         }
       ]
     },

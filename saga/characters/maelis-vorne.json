@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "04",
-    "scene": "choice",
+    "chapter": "05",
+    "scene": "1",
     "place": "holloway",
-    "anchor": "chronicle/04-old-mercy.html#choice"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
   },
-  "last_seen_doing": "Read the Third Knot by first light, longer than ever, and said Permitted; said it is her count, step by step, not the quiet's, and the soft season is not done until she says so; came down the Steps behind the Captain with her surgeon's roll and an old sword wrapped in oilcloth with Patience cut in the blade, giving him the count; let him think the sword a joke.",
-  "now": "On the Holloway with the company, her roll and the wrapped sword on the cart. She has said Permitted and not that the soft season is done.",
+  "last_seen_doing": "Let him walk to the next milestone and no further, then put him back on the tailboard.",
+  "now": "With the company at the fold on the drove road.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost had stopped at his knuckles. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -525,6 +525,12 @@
       "chapter": "04",
       "scene": "choice",
       "evidence": "said *now* when the next step was his to take, and not before."
+    },
+    {
+      "fact": "She let him walk the Holloway to a milestone, then had him ride.",
+      "chapter": "05",
+      "scene": "1",
+      "evidence": "To the next stone. Then you ride, and you don't argue."
     }
   ],
   "relationships": [
@@ -753,6 +759,10 @@
     {
       "chapter": "04",
       "scene": "choice"
+    },
+    {
+      "chapter": "05",
+      "scene": "1"
     }
   ]
 }

@@ -24,13 +24,13 @@
     "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
   "last_seen": {
-    "chapter": "04",
-    "scene": "choice",
+    "chapter": "05",
+    "scene": "1",
     "place": "holloway",
-    "anchor": "chronicle/04-old-mercy.html#choice"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
   },
-  "last_seen_doing": "Went down the Thousand Steps on three legs and the splint beside the Captain, at the edge where the drop was, between him and it.",
-  "now": "On the Holloway with the company, having come down the Steps beside the Captain on the drop side.",
+  "last_seen_doing": "Ranged ahead on the road and came back twice to report nothing.",
+  "now": "With the company at the fold on the drove road.",
   "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
   "quote": null,
   "known_facts": [
@@ -155,6 +155,10 @@
     {
       "chapter": "04",
       "scene": "choice"
+    },
+    {
+      "chapter": "05",
+      "scene": "1"
     }
   ]
 }

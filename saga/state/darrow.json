@@ -51,9 +51,9 @@
     }
   },
   "ember": {
-    "value": 84,
-    "tier": "Steady",
-    "effect": "none"
+    "value": 89,
+    "tier": "Bright",
+    "effect": "+1 to Vigor checks"
   },
   "inspiration": 1,
   "inspiration_cap": 4,

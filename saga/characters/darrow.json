@@ -24,13 +24,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "04",
-    "scene": "choice",
+    "chapter": "05",
+    "scene": "1",
     "place": "holloway",
-    "anchor": "chronicle/04-old-mercy.html#choice"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
   },
-  "last_seen_doing": "Told Wren first; went down the terrace path into the grey before the dawn bell and asked the Confessor to keep his name first and only on the writ, and to tell whoever rides under the banner that the Captain of the Ninth is on the road, not under the bell; gave him nothing of the script; heard Maelis say Permitted; asked his three Ninth men, as promised; answered the Prior's question at last; walked down the Thousand Steps on his own legs at Maelis's count with a hand on the cliff; reached the Holloway with the company.",
-  "now": "On the tailboard of the carter's cart on the Holloway, at the foot of the Steps he walked down on his own legs, with the company: Hollis, Maelis, Wren, Ash and the carter, with the banner that is not grey on the road below the Shins.",
+  "last_seen_doing": "Walked the first miles at Hob's head to Maelis's stone; wanted to wait on the Holloway for the banner, owned that he had decided before anyone spoke, and gave Rae the road.",
+  "now": "At a shepherds' fold on the drove road round the tarn, with the company, the column's fires across the water at Coldmere.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1710,6 +1710,18 @@
       "evidence": "and Rae, watching the road, did not hear it."
     },
     {
+      "fact": "He walked the first miles of the Holloway at the ox's head, the stick in one hand.",
+      "chapter": "05",
+      "scene": "1",
+      "evidence": "So he walked at Hob's head with one hand on the yoke and the stick in the other"
+    },
+    {
+      "fact": "He owned that he had decided to meet the banner before anyone spoke, and left the road to Rae.",
+      "chapter": "05",
+      "scene": "1",
+      "evidence": "\"Your road,\" Darrow said."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2055,6 +2067,10 @@
     {
       "chapter": "04",
       "scene": "choice"
+    },
+    {
+      "chapter": "05",
+      "scene": "1"
     },
     {
       "chapter": "tale01",
