@@ -1128,6 +1128,7 @@ Down on the lower terrace the four fires were being built up, not put out. Wren 
 1. **Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him.** *(Maelis disapproves.)*
 2. **Let him go, and ring the bell for him as he leaves, as the law says.** *(The Prior approves.)*
 3. ~~**Have Wren follow his camp down with a lamp and a knife, and the knife is not for show.**~~ *[Guile 4]* *(Wren approves; risky.)*
+4. **His own: go down to the lower terrace at dawn and take the Confessor's attention onto himself, without telling him what the script showed.** *(Darrow's own answer, not one of the three.)*
 
 ### Choice — Eleven Hundred and Seventeen
 
@@ -1258,3 +1259,7 @@ Rae climbed onto the box and took up the lines, and looked down the Holloway at 
 The off ox leaned into the yoke a breath before the near one, as if he had to be sure first. The cart jolted over the first rut of the Holloway, and the bell at Rae's hip rang, and Rae, watching the road, did not hear it.
 
 He did.
+
+---
+
+*End of Book I · The House of Menders*

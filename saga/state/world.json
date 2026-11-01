@@ -152,8 +152,8 @@
   },
   "season": "first snow of the year on the Steps",
   "current_quest": {
-    "name": "The List",
-    "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Marrant has not drawn a blade in a month. He has camped on the lower terrace, kept the cage, and reached into the House by the lever: a clerk in grey who never kneels sent two black slivers up in the House's own letter-satchel, one of them now set in the rock under the row and making the stone grow frost, and holds the almoner's sister at Calden for the second. Banners that are not grey are on the Holloway, a day off.",
+    "name": "The Road",
+    "on_the_page": "The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
@@ -176,7 +176,7 @@
     },
     "rae": {
       "approval": 24,
-      "present": false,
+      "present": true,
       "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
     },
     "ash": {
@@ -271,7 +271,7 @@
       "chapter": 4,
       "scene": "climax",
       "kind": "climax",
-      "option": 1,
+      "option": 4,
       "text": "His own: go down to the lower terrace at dawn and take the Confessor's attention onto himself, without telling him what the script showed.",
       "date": "2026-11-01",
       "ledger": "c04.14",
@@ -280,7 +280,7 @@
   ],
   "inventory": [
     "infirmary shirt and breeches",
-    "a borrowed stick he refuses to use"
+    "the borrowed stick, used on the Steps and kept"
   ],
   "keepsakes": [
     {
@@ -320,7 +320,7 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
-    "04-old-mercy": "Old Mercy: the rope cut at dawn, the bell silenced at dusk, and the stair held from a chair."
+    "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last."
   },
   "last_updated": "2026-11-01"
 }
