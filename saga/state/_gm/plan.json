@@ -449,17 +449,13 @@
       "bound": "2026-10-29"
     }
   ],
-  "open_choice": {
+  "open_choice": null,
+  "answered_choice": {
     "chapter": 4,
-    "scene": "climax",
     "ask": "What does Darrow do?",
-    "options": [
-      "Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him.",
-      "Let him go, and ring the bell for him as he leaves, as the law says.",
-      "Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*"
-    ],
-    "default": 2,
-    "opened": "2026-11-01",
-    "carries": 2
+    "option": 1,
+    "text": "His own: go down to the lower terrace at dawn and take the Confessor's attention onto himself, without telling him what the script showed.",
+    "by": "darrow",
+    "ledger": "c04.14"
   }
 }

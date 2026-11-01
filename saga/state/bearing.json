@@ -33,12 +33,12 @@
       }
     },
     "hearth_banner": {
-      "value": -6,
+      "value": -4,
       "left": "Hearth",
       "right": "Banner",
       "moved": {
         "left": 6,
-        "right": 0
+        "right": 2
       },
       "rungs": {
         "lean": "Hearth",
@@ -191,6 +191,12 @@
       "date": "2026-10-31",
       "axis": "candor_guile",
       "delta": -1
+    },
+    {
+      "why": "c04.14",
+      "date": "2026-11-01",
+      "axis": "hearth_banner",
+      "delta": 2
     }
   ],
   "ladder": {

@@ -1267,6 +1267,40 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c04.14",
+      "made": {
+        "chapter": 4,
+        "scene": "climax",
+        "date": "2026-11-01"
+      },
+      "chose": "His own answer: went down to the lower terrace at dawn and took the Confessor's attention onto himself, the writ to stop at his name and not go on to the next man on it, without telling him what the script showed; then went down the Steps so the hunt would follow him and not the House",
+      "now": {
+        "approval": {
+          "rae": 7,
+          "wren": 3,
+          "maelis": 3,
+          "hollis": -2
+        },
+        "bearing": {
+          "banner": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c04.14a",
+          "when": "book2",
+          "at": "book2",
+          "weight": "scene",
+          "what": "The writs of Book II carry the Captain of the Ninth's name above every other: he went down to the grey of the lower terrace at dawn and made himself the Confessor's quarry so the writ would stop at him, and gave the Confessor nothing of the script. The hunt follows him down the Steps, not the House; the Confessors know his name and his face, not what he is",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Let him go, and ring the bell for him as he leaves, as the law says.",
+        "Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*"
+      ]
     }
   ],
   "rules": [

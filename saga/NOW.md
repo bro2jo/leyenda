@@ -14,7 +14,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** The Confessor's camp on the lower terrace, his writ refused, and a banner's lights at the foot of the Steps.
 - **Next:** Dawn, when the grey cloaks go down to meet the banner.
-- **Open choice (the climax of Chapter 4):** What does Darrow do? 1. Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him. / 2. Let him go, and ring the bell for him as he leaves, as the law says. / 3. Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 
