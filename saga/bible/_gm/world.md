@@ -93,6 +93,24 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 | `saltreach` | Saltreach | city | 36 | 176 | `saltreach` |
 | `ashen-fields` | The Ashen Fields | waste | 322 | 252 | `ashen-fields` |
 
+### 4b. Beyond the map (open)
+
+The Vaelmark is not the whole world; it is the whole world its people think about. Past its edges there are other lands and other folk, and this section is left open on purpose: nothing below is canon until the page says it, and any of it may be changed, grown or dropped as the story needs. Fill a heading in when a scene reaches for it, not ahead of time.
+
+**Fixed, whatever gets filled in:**
+- Received, not revealed, and no new plot (the Annals' doctrine): far lands are trade, travellers, words, goods, songs and weather, never a faction with an agenda, an invasion, a prophecy or an object of power.
+- The realm has fought nobody but the clans in three hundred years (`age.peace`), so no land beyond the map has warred with it in living or written memory.
+- Nothing east of the Wend: that side of the map is the arc's, and so is every region in §4. Before a far land touches a scene, check `saga.py arc pacing` and the beats it would sit near; the arc wins every conflict.
+- Names from the palette, or a new palette line here when a far people first speaks on the page.
+
+**Seeds (directions, not facts; use, change or ignore):**
+- **Over the peaks.** Something behind the Greywater: a pass that closes with the first snow, and folk from the far side who come down now and then, to the autumn fair or to the Steps, with goods and little Vaelish.
+- **Over the sea.** A land past the coast that the Vaelmark trades with and has never fought: a strange coin in a ledger, a sailors' word in the Lowmarch mouth.
+- **South of Calden.** Country with its own accent, its own jokes about the north, and wine.
+- **Where things come from.** A trade map for the loads on the Holloway: salt and oil from the coast, greys from Edgemoor, wool from the hills, and whatever else a scene finds a home for.
+
+**How it grows:** when the page touches one of these, the touch becomes a `common` entry in `lore.md` (the usual pace: a tenth, and only when a scene needs it), a named place goes into `saga/state/places.json` (the build requires a map position: a far land goes at the edge of the site's map, toward where it lies), and the seed here is rewritten to say what is now true and what is still open.
+
 ---
 
 ## 5. Peoples and factions
