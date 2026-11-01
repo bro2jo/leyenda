@@ -400,6 +400,16 @@ hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}
 .reckoning p{font-size:1rem;line-height:1.5;color:var(--t1);font-family:var(--body)}
 .reckoning .rk-h{color:var(--brass)}
 .dice{font-family:var(--body);display:flex;flex-direction:column;gap:6px;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+details.dice{display:block;padding:6px 10px}
+details.dice>summary{justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:6px 10px;color:var(--ink);font-family:var(--body);font-size:1rem;letter-spacing:0}
+details.dice>summary::after{margin-left:auto}
+.dice-total{font-variant-numeric:tabular-nums}
+.dice-res{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.dice-times{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--brass)}
+.dice-full{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:8px;border-top:1px dotted var(--rule)}
+details.roll-more{border-top:0;padding-top:0}
+details.roll-more>summary{justify-content:flex-start;gap:8px;font-size:.8rem}
+details.roll-more>summary::after{margin-left:0}
 .dice-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
 .dice-row.superseded{opacity:.55}
 .dice-row.insp{padding-left:4px}

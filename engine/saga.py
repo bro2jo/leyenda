@@ -73,6 +73,9 @@ The records (engine/records.py; design.md §11): the story is kept as one event 
   brief [--date D | --between --with WHO | --climax | --choice | --chapter] [--size]
                                         what the next block must carry (the slot, what is owed), its continuity, what it may use (the people,
                                         the threads, the Annals, callbacks, the arc), the format, and the record skeleton to send back
+  reread [KEY]                          the reread's notes for a block (default: the current chapter's last): its length against the usual
+                                        for its kind, the Book I habits above their rate, its first and last lines, the week's registers;
+                                        advice only (record prints the same notes after it records)
   record 'JSON' [--force] [--slot N] [--allow-names A,B]
                                         one block of the page recorded: validated against the heading, the registries and the plan; the event
                                         and the GM note written; the slot done, a micro or the climax choice opened, due items fired, the
@@ -946,7 +949,7 @@ def road_line(st):
 
 # ---------------------------------------------------------------- arc sections
 HEAD_RE = re.compile(r"^(#{1,4})\s+(.*?)\s*$")
-ID_RE = re.compile(r"^(b\d+\.\d+|q\d+\.[a-z0-9_]+|t\d+(\.(high|main|low))?|book\d+\.question|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
+ID_RE = re.compile(r"^(b\d+\.\d+|q\d+\.[a-z0-9_]+|t\d+(\.(high|main|low))?|book\d+\.(?:question|tone)|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
 
 
 def arc_sections():
@@ -1105,8 +1108,99 @@ def next_slot(plan, date=None):
     return None
 
 
-SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "micro", "challenge", "invite", "float", "day")
+SLOT_FIELDS = ("kind", "beat", "quest", "stage", "last", "pov", "plan", "turn", "tone", "micro", "challenge", "invite", "float", "day")
 TURN_HINT = "who can, must, believes, risks or chooses what by the end that they could not at the start, and what Darrow attempts"
+TONE_HINT = ("the register the moment calls for, a word or two (comic, rowdy, warm, tender, wonder, eerie, dread, tense, action, "
+             "grief, bittersweet, triumph…): what happens sets it, the Book's register colours it, the day's colour never does")
+
+
+def book_tone_lines(book, n=14, head_only=False, focus=None):
+    """The Book's register: the body of `## bookN.tone` in the arc (GM), its first n non-empty lines; head_only stops
+    at its first `###` subsection (the baseline alone), and focus (a beat or quest id) adds that id's line of the tone map."""
+    sec = arc_sections().get(f"book{int(book)}.tone")
+    if not sec:
+        return []
+    body = sec[2][1:]
+    head = []
+    for l in body:
+        if head_only and l.startswith("###"):
+            break
+        if l.strip():
+            head.append(l)
+    out = head[:n]
+    if focus:
+        out += [f"for {focus}: " + re.sub(r"^-\s*\*\*[^*]*\*\*\s*", "", l).strip() for l in body if re.match(rf"^-\s*\*\*{re.escape(focus)}\b", l)]
+    return out
+
+
+def tone_key(t):
+    """A tone's first word, lowercased: what the variety notes compare."""
+    return (re.findall(r"[a-z]+", str(t or "").lower()) or [""])[0]
+
+
+def tone_notes(slots, climax=None):
+    """Soft notes on a week's planned registers (never a refusal: the story decides). Three or more registers in a
+    week, neighbours rarely alike, every slot and the climax with one."""
+    rows = [(s.get("n"), tone_key(s.get("tone"))) for s in sorted(slots or [], key=lambda x: float(x.get("n") or 0))]
+    notes = []
+    missing = [n for n, t in rows if not t]
+    if missing:
+        notes.append(f"slots {missing} have no tone ({TONE_HINT})")
+    if climax is not None and not tone_key((climax or {}).get("tone")):
+        notes.append("the climax has no tone: name its register (it may be the week's loudest or its quietest, never by default the same as Saturday's)")
+    distinct = {t for _, t in rows if t}
+    if rows and not missing and len(distinct) < 3:
+        notes.append(f"the week plans {len(distinct)} register(s) ({', '.join(sorted(distinct))}): most weeks want three or more, set by what happens")
+    same = [f"{a}–{b}" for (a, t1), (b, t2) in zip(rows, rows[1:]) if t1 and t1 == t2]
+    if same:
+        notes.append(f"neighbouring slots share a register ({', '.join(same)}): fine when the story needs it, rarely twice in a week")
+    return notes
+
+
+# ---------------------------------------------------------------- the reread: length and the habits Book I leaned on
+BLOCK_WORDS = {"scene": (400, 1000), "interlude": (300, 900), "between": (250, 600), "climax": (1200, 2200),
+               "choice": (150, 400), "tale": (400, 700)}
+HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many before it is named, what to try instead)
+    ("'the way …' comparisons", r"\bthe way\b", 2.0, 3, "keep the best one; make the others plain, or let an action carry the comparison"),
+    ("negation beats (did not, said nothing, nobody…)", r"\b(?:did not|didn't|had not|was not|would not|could not|said nothing|nothing at all|nobody|no one)\b", 7.0, 5,
+     "say what people did instead of what they did not; let someone answer whole"),
+    ("'It was not … / not … either' pairs", r"\bIt was not an?\b[^.\n]{0,60}\.\s+It was not", 0.0, 1, "say the thing it was"),
+    ("lines said to things (to the roof, the cup…)", r"\b(?:said|says|asked|told \w+),? to the (?:roof|cloud|cup|door|valley|floor|fire|wall|window|bowl|rope|road|snow|lamp)\b", 0.0, 2,
+     "let people look at each other, or at what they are doing"),
+    ("catchphrases (Technically, Aye, Road's the road, Wrong question…)", r"\b(?:Technically|Aye)\b|thing I'm best at|Road's the road|Wrong question|[Tt]hank you for your candour", 0.0, 3,
+     "a catchphrase lands harder for being rare: once in a block, unless the scene is about it"),
+    ("'as if' clauses", r"\bas if\b", 3.0, 3, "trust the action; one 'as if' a page is plenty"),
+    ("'for once'", r"\bfor once\b", 0.0, 2, "it marks a change; a change marked twice is a habit"),
+)
+
+
+def reread_notes(text, kind, prev_text=None):
+    """Plain notes for the reread (style.md §4): the length against the usual range for the kind, the habits above
+    their rate, and the opening and closing lines. Advice for the writer's eye; nothing here refuses a block."""
+    body = "\n".join(l for l in (text or "").splitlines() if not l.startswith(("`[", ">", "**What does")) and not re.match(r"^\d+\.\s", l))
+    words = len(re.findall(r"[A-Za-z0-9'’-]+", body))
+    out = []
+    lo, hi = BLOCK_WORDS.get(kind, (0, 0))
+    if hi:
+        verdict = "within the usual" if lo <= words <= hi else ("longer than the usual" if words > hi else "shorter than the usual")
+        line = f"length: {words:,} words, {verdict} {lo:,}–{hi:,} for a {kind}" + (" (a Book's crossing is as long as it needs)" if kind == "choice" else "")
+        if words > hi * 1.25:
+            line += ": what would a reader miss if the first paragraph went, or the last exchange? (a set piece may run long when its turn needs it)"
+        out.append(line)
+    per_k = max(words, 1) / 1000
+    for label, pat, rate, floor, advice in HABITS:
+        n = len(re.findall(pat, body))
+        if n >= floor and n > rate * per_k:
+            out.append(f"habit: {label} ×{n}: {advice}")
+    paras = [p.strip() for p in body.split("\n\n") if p.strip() and p.strip() != "---"]
+    if paras:
+        first = re.split(r"(?<=[.!?])\s", paras[0])[0]
+        out.append(f"opens: {short(first, 140)}")
+        bell = r"^(?:At|By|After|Before)\b[^,]{0,30}\bbell\b"
+        if prev_text and re.search(bell, first) and re.search(bell, (prev_text or "").strip()):
+            out.append("opens on a bell, as the block before did: time can arrive another way (weather, a voice, a thing in hand, mid-action)")
+        out.append(f"closes: {short(paras[-1].splitlines()[-1], 140)}")
+    return out
 
 
 def chapter_template(ws, plan):
@@ -1162,10 +1256,10 @@ def chapter_template(ws, plan):
             s.update({"kind": "quest", "quest": q_, "stage": st_, "float": True})
         else:
             s.update({"kind": "spine", "beat": beat, "float": False})
-        s.update({"plan": "", "turn": "", "micro": None, "challenge": None, "invite": None})
+        s.update({"plan": "", "turn": "", "tone": "", "micro": None, "challenge": None, "invite": None})
         slots.append(s)
     return {"week_start": ws.isoformat(), "question": "", "slots": slots, "world_moves": ["", "", ""],
-            "climax": {"plan": "", "checks": [], "options": ["", "", ""], "default": 1}}
+            "climax": {"plan": "", "tone": "", "checks": [], "options": ["", "", ""], "default": 1}}
 
 
 UP_SKIP = {"Ser", "The", "Confessor", "Brother", "Mother", "Sister", "King", "Dame", "Lady", "Lord"}
@@ -2769,6 +2863,8 @@ def cmd_plan(args):
         no_turn = [s.get("n") for s in ordered["slots"] if not str(s.get("turn") or "").strip()]
         if no_turn:
             print(f"⚠ slots {no_turn} have no turn ({TURN_HINT}): `plan slot N turn=\"…\"` before their day closes")
+        for tn in tone_notes(ordered["slots"], ordered.get("climax")):
+            print(f"note: {tn}")
         cl_ = ordered.get("climax") or {}
         p_i = [p for p in [inspiration_default_problem(cl_.get("options") or [], cl_.get("default"), "climax")]
                + [inspiration_default_problem((s.get("micro") or {}).get("options") or [], (s.get("micro") or {}).get("default"), f"slot {s.get('n')} micro") for s in ordered["slots"] if s.get("micro")] if p]
@@ -4169,10 +4265,10 @@ def gm_character_lines(name):
             continue
         if line.startswith("## "):
             keep = False
-        if keep and line.startswith(("- **Under pressure:**", "- **Wants:**", "- **Now:**", "- **Fears:**")):
+        if keep and line.startswith(("- **Under pressure:**", "- **At ease:**", "- **Wrong, in character:**", "- **Wants:**", "- **Now:**", "- **Fears:**")):
             l = line[2:].strip()
             # only the tactic, the want, the fear and the now: what a person hides, carries or will do in a later Book stays on demand (`_gm/characters.md`)
-            l = re.split(r"\s*\*\*(?!Wants:|Fears:|Now:|Under pressure:)[A-Z][^*]{0,40}:\*\*", l)[0].strip()
+            l = re.split(r"\s*\*\*(?!Wants:|Fears:|Now:|Under pressure:|At ease:|Wrong, in character:)[A-Z][^*]{0,40}:\*\*", l)[0].strip()
             lines.append(l)
     return lines
 
@@ -4394,22 +4490,23 @@ def climax_odds_lines(ch, checks, rules, frozen):
 def format_lines(kind, slot=None):
     if kind == "scene":
         out = ["heading: `### Scene N — Title` appended to the chapter file (N is the key's number)",
+               "length: as long as the turn needs; most daily scenes land 400–1,000 words, a set piece more (`saga.py reread` after drafting)",
                "a die, only with stakes: `python3 engine/darrow.py roll chNN-sK-<slug> --stat <might|vigor|finesse|resolve> --dc <8–20> [--prof] [--art <id>] [--adv|--dis]`; paste its first line as printed, on its own line, before the outcome",
                "the Reckoning box at the end, only when sync reported a change: `> ⟦ THE RECKONING ⟧` then one line per change (`> Might 11 → 12`, `> Level 5 → 6 · Kindled`, `> The Tether: **a name**.`, `> Rank: **Kindled**.`)"]
         if slot and slot.get("micro"):
             out.append("ends on the small choice, exactly: `**What does Darrow say?**` (or do?) then `1. **…**` `2. **…**` `3. **…**`, one line each, nothing after it")
         return out
     if kind == "between":
-        return ["heading: `### Between — Title` appended after the last block; close third on Darrow, past tense; 300–500 words unless the exchange needs more",
+        return ["heading: `### Between — Title` appended after the last block; close third on Darrow, past tense; usually 250–600 words, as long as the exchange needs",
                 "zero or one die, only with stakes or a game: `python3 engine/darrow.py roll chNN-between-K-<slug> --stat … --dc …` (never --chapter or --tier); its first line pasted as printed",
                 "no Reckoning box, no choice list; it ends on a line that hands the moment back (a look, a bell, a door, a last word)"]
     if kind == "climax":
-        return ["heading: `## Climax — Title`; 900–1,800 words, the space on the decision and its cost",
+        return ["heading: `## Climax — Title`; usually 1,200–2,200 words, the space on the decision and its cost, never on everything the chapter touched",
                 "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … --dc … [--prof] [--art <id>] --chapter N`; each first line pasted as printed",
                 "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`, `*[Inspiration]*` for a bold way or a reroll that costs one), struck through if unmet, who approves in italics; the default never carries `*[Inspiration]*`",
                 "the Reckoning box before the choice if sync reported a change"]
     if kind == "choice":
-        return ["heading: `### Choice — Title` appended to the climax's chapter file; 100–250 words: the moment the choice lands, companions reacting in voice by their under-pressure lines; approval shows in what they say, never as numbers",
+        return ["heading: `### Choice — Title` appended to the climax's chapter file; usually 150–400 words: the moment the choice lands, companions reacting in voice by their under-pressure or at-ease lines; approval shows in what they say, never as numbers",
                 "a Book's last climax: this block is the crossing itself (`saga.py arc tN.<road>`), as long as it needs"]
     if kind == "tale":
         return ["heading: `### Piece K — Title` appended to the tale's file (K is the key's number); 400–700 words, past tense, close third on the tale's own person",
@@ -4518,6 +4615,7 @@ def cmd_brief(args):
     if mode == "slot":
         L.append(f"plan: {slot.get('plan')}")
         L.append(f"turn: {slot.get('turn') or '(none planned: state one in a line first: ' + TURN_HINT + ')'}")
+        L.append(f"tone: {slot.get('tone') or '(none planned: choose it from what happens: ' + TONE_HINT + ')'}")
         m = slot.get("micro")
         if m:
             L.append(f"ends on {'the beat choice' if m.get('beat') else 'a small choice (' + str(m.get('axis')) + ')'}: {m.get('ask')}")
@@ -4708,11 +4806,18 @@ def cmd_brief(args):
         section(f"THE ARC: {pos.get('beat')}")
         sec = arc_sections()[pos.get("beat")]
         L += [l for l in sec[2] if l.strip()][:40]
+    focus = (slot.get("beat") if slot.get("kind") == "spine" else slot.get("quest")) if mode == "slot" and slot else pos.get("beat")
+    bt = book_tone_lines(pos["book"], 8, head_only=True, focus=focus)
+    if bt or mode == "climax":
+        section(f"TONE: Book {ROMAN[int(pos['book'])]}'s register (a baseline; the moment decides)")
+        if mode == "climax":
+            L.append(f"the climax: {(plan['chapter'].get('climax') or {}).get('tone') or '(none planned: its register is the decision’s and the cost’s, named before the first line)'}")
+        L += bt
     section("FORMAT")
     L += ["· " + l for l in format_lines(kind if mode != "slot" else "scene", slot)]
     L.append("· the wall: no foods, numbers, exercises, therapy or rehab words; the day's deeds colour only Darrow (warmth or cold in him, how he reads a room), never how others treat him; the outcome waits for the climax")
     L.append("· names: only what the page has spoken, or what this record registers; unnamed novices, lay brothers and the kitchen are fine")
-    L.append("· then the reread (style.md §4), then `saga.py record` with the skeleton below, then `darrow.py ship`")
+    L.append("· then the reread (style.md §4; `saga.py reread` prints the length and the habits), then `saga.py record` with the skeleton below, then `darrow.py ship`")
     section("RECORD (send this back, filled; drop what does not apply)")
     present = [cid for cid in ids if cid != "darrow"][:4]
     L.append(json.dumps(record_skeleton(key, kind if mode != "slot" else "scene", today if mode == "slot" else None, ["darrow"] + present, loc.get("place")), ensure_ascii=False, indent=None))
@@ -4745,6 +4850,9 @@ def brief_chapter(st, L, args):
     L.append("shape: 7 slots Sun–Sat (≥ 2 spine, Saturday spine, ≤ 1 interlude, two float quest slots); micros in non-adjacent slots touching ≥ 2 axes; world_moves (3); the climax plan with checks, options and a default (the option the highest-approval companion present would pick); the chapter touches ≥ 1 open thread")
     prev = sorted(device_kinds(cur.get("slots", []), plan.get("quests", {})))
     L.append(f"devices: one per slot, none on neighbouring days, at most two kinds of challenge/invite/project, ≤ 1 challenge, ≤ 2 invites; last chapter carried {', '.join(prev) or 'none'}, so those kinds rest this chapter")
+    prev_tones = [f"{s.get('n')} {s.get('tone')}" for s in sorted(cur.get("slots", []), key=lambda x: float(x.get("n") or 0)) if s.get("tone")]
+    L.append(f"tone: every slot and the climax name a register ({TONE_HINT}); three or more in a week, neighbours rarely alike, set by what happens there; "
+             f"last chapter: {', '.join(prev_tones) or 'none recorded'}")
     quests = plan.get("quests", {})
     live = [k for k, q in quests.items() if q.get("status") == "live" and not q.get("standing") and not q.get("project")]
     L.append(f"quests live now: {', '.join(f'{k} (stage {quests[k].get(chr(115)+chr(116)+chr(97)+chr(103)+chr(101))})' for k in live) or 'none'}; never more than two live at once; required first; a quest finishes within two chapters")
@@ -4771,6 +4879,11 @@ def brief_chapter(st, L, args):
     if free:
         L.append("approval: rules the road crosses before their moment at the measured income (`saga.py approval forecast`): raise the threshold, or let the moment come sooner")
         L += free[:6]
+    bt = book_tone_lines(book, 30)
+    if bt:
+        L.append("")
+        L.append(f"== THE BOOK'S REGISTER (arc book{book}.tone: the baseline, the tone map, the lessons the planner carries) ==")
+        L += bt
     L.append("")
     L.append("== MAY ==")
     thr_rows, n_open = threads_for_brief(int(pos["chapter"]))
@@ -5101,7 +5214,59 @@ def cmd_record(args):
     sys.stdout.write(r.stdout + r.stderr)
     if r.returncode:
         sys.exit(r.returncode)
+    idx = [b[0] for b in blocks].index(sk)
+    notes = reread_notes(btext, kind, blocks[idx - 1][2] if idx else None)
+    if notes:
+        print("reread notes (advice, never a refusal; `saga.py reread` again after a revision, `record --force` to re-record):")
+        print("\n".join("  " + n for n in notes))
     print("next: `python3 engine/darrow.py ship -m \"…\"`")
+
+
+def cmd_reread(args):
+    """The reread's notes for one block (style.md §4): its length against the usual range, the habits above their
+    rate, its opening and closing lines, and the chapter's registers so far. Advice only."""
+    st = State()
+    plan = st.plan
+    files = R.chapter_files()
+    if args.key:
+        tk = R.parse_tale_key(args.key)
+        if tk:
+            tfiles = R.tale_files()
+            path = tfiles.get(tk[0])
+            if not path:
+                die(f"no tale file for {args.key}")
+            pieces = {k: (t, txt) for k, t, txt in R.pieces_of(path)}
+            got = pieces.get(tk[1])
+            if not got:
+                die(f"{path.name} has no piece {tk[1]}")
+            print(f"{args.key} · {got[0]}")
+            print("\n".join("  " + n for n in reread_notes(got[1], "tale")))
+            return
+        parsed = R.parse_key(args.key)
+        if not parsed:
+            die("key must look like ch05:s2, ch05:between-3, ch05:interlude, ch05:climax, ch05:choice or tale03:p1")
+        ch, sk, kind = parsed
+    else:
+        ch = int(plan["position"]["chapter"])
+        sk = kind = None
+    path = files.get(ch)
+    if not path:
+        die(f"no chronicle file for chapter {ch}")
+    blocks = R.blocks_of(path)
+    if not blocks:
+        die(f"{path.name} has no blocks yet")
+    if sk is None:
+        sk = blocks[-1][0]
+        kind = ("between" if sk.startswith("between-") else "interlude" if sk.startswith("interlude") else sk if sk in ("climax", "choice") else "scene")
+    idx = next((i for i, b in enumerate(blocks) if b[0] == sk), None)
+    if idx is None:
+        die(f"{path.name} has no block {sk}")
+    print(f"{R.make_key(ch, sk)} · {blocks[idx][1]}")
+    print("\n".join("  " + n for n in reread_notes(blocks[idx][2], kind, blocks[idx - 1][2] if idx else None)))
+    if ch == int(plan["position"]["chapter"]):
+        tones = [f"{s_.get('n')}:{s_.get('tone') or '—'}" for s_ in sorted(plan["chapter"].get("slots", []), key=lambda x: float(x.get("n") or 0))]
+        if tones:
+            print(f"  the week's registers: {' · '.join(tones)} · climax: {(plan['chapter'].get('climax') or {}).get('tone') or '—'}")
 
 
 def find_slot_for(plan, ev, kind, slot_n=None):
@@ -5854,6 +6019,7 @@ def main():
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
     s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--tale", action="store_true", help="the tale piece owed by a task reported"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
     s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan with a piece per task)"); s.add_argument("--force", action="store_true")
+    s = sub.add_parser("reread", help="the reread's notes for a block: length, habits, opening and closing lines (advice only)"); s.add_argument("key", nargs="?", help="ch05:s2, ch05:between-3, ch05:climax, tale03:p1 … (default: the last block of the current chapter)")
     s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
     s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--tale", type=int, help="one tale's pieces"); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
     s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
@@ -5871,7 +6037,7 @@ def main():
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
         "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
-        "brief": cmd_brief, "record": cmd_record, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
+        "brief": cmd_brief, "record": cmd_record, "reread": cmd_reread, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
         "tale": cmd_tale,
     }[args.cmd](args)
 

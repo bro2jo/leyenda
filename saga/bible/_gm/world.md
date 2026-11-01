@@ -136,3 +136,5 @@ The table of what the common folk believe against what is true gave the twists a
 ## 8. Tone
 
 Grounded, northern, cold-weather fantasy: weathered stone, wet wool, bells, hot springs steaming in snow. Somber with real warmth and real jokes; the people in it are funny the way soldiers and nurses are funny. Magic is rare, costly and physical. Violence is fast, frightening and has consequences. Think the companions and moral weight of *Baldur's Gate 3*, the grit of *The First Law*, the patience and intimacy of *The Curse of Chalion*, the visible stats and progression of LitRPG, and the hard-won body of a sports comeback story that never once says "sports."
+
+**The register moves by Book and by moment.** The baseline above holds for the whole saga; each Book sets its own register in `arc.md → bookN.tone` (printed in every brief), and each planned slot names a tone for what happens in it. Book I's hush belonged to the House, a sickroom under siege; it is not the saga's default. Joy, comedy and wonder are as much the realm as cold and dread, and a chapter that moves through three or four registers reads truer than one held at a single pitch.

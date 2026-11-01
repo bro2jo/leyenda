@@ -1730,23 +1730,12 @@ class Site:
                     lines += f'<p class="song-cue">{cue}</p>'
                 out.append(f"<blockquote>{lines}</blockquote>")
             elif kind == "dice":
-                # consecutive dice lines are one check: a cast, an Inspiration line, the cast again (style.md §3)
-                if b[1].strip().upper() == "INSPIRATION":
-                    row = f'<div class="dice-row insp"><span class="insp-glyph" aria-hidden="true">✦</span><span class="dice-tag">Inspiration</span> <span class="dice-body">{inline(b[2])}</span></div>'
+                # consecutive dice lines are one check: a cast, an Inspiration line, the cast again (style.md §3);
+                # they are gathered here and drawn as one block by dice_check() below
+                if out and isinstance(out[-1], list):
+                    out[-1].append((b[1], b[2]))
                 else:
-                    m_nat = re.search(r"d20\s+\*{0,2}(\d+)(?:/(\d+))?", b[2])
-                    m_res = re.search(r"\*?(Success|Failure|Partial[^*—]*)\*?", b[2])
-                    die = d20_glyph(m_nat.group(1), m_res.group(1) if m_res else "") if m_nat else ""
-                    row = f'<div class="dice-row">{die}<span class="dice-tag">{esc(b[1])}</span> <span class="dice-body">{inline(b[2])}</span></div>'
-                if out and out[-1].startswith('<div class="dice">') and out[-1].endswith("</div></div>"):
-                    prev = out.pop()[:-len("</div>")]
-                    if "dice-row insp" in row:  # the cast before an Inspiration line is the one it replaces
-                        k = prev.rfind('<div class="dice-row">')
-                        if k >= 0:
-                            prev = prev[:k] + '<div class="dice-row superseded">' + prev[k + len('<div class="dice-row">'):]
-                    out.append(prev + row + "</div>")
-                else:
-                    out.append(f'<div class="dice">{row}</div>')
+                    out.append([(b[1], b[2])])
             elif kind == "choice-h":
                 out.append(f'<h3 class="choice-h">{esc(b[1])}</h3>')
             elif kind == "ol":
@@ -1754,7 +1743,36 @@ class Site:
                 out.append(self.choice_list(items, self.choice_for(ch, scene["key"]) if is_choice else None, bool(is_choice)))
             elif kind == "ul":
                 out.append("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in b[1]) + "</ul>")
-        return "".join(out)
+        return "".join(self.dice_check(x) if isinstance(x, list) else x for x in out)
+
+    @staticmethod
+    def dice_check(lines):
+        """One check on the page: the die, the stat and DC, the total and the outcome on one line; a tap opens the casts
+        in full (the modifiers, and any Inspiration spent and the cast again), so the arithmetic never stops the prose."""
+        rows, last, casts = [], None, 0
+        for tag, body in lines:
+            if tag.strip().upper() == "INSPIRATION":
+                if rows and rows[-1].startswith('<div class="dice-row">'):  # the cast before an Inspiration line is the one it replaces
+                    rows[-1] = '<div class="dice-row superseded">' + rows[-1][len('<div class="dice-row">'):]
+                rows.append(f'<div class="dice-row insp"><span class="insp-glyph" aria-hidden="true">✦</span><span class="dice-tag">Inspiration</span> <span class="dice-body">{inline(body)}</span></div>')
+                continue
+            m_nat = re.search(r"d20\s+\*{0,2}(\d+)(?:/(\d+))?", body)
+            m_res = re.search(r"\*?((?:Critical )?(?:[Ss]uccess|[Ff]ailure)|Partial[^*—]*)\*?", body)
+            m_tot = re.search(r"=\s*\*{0,2}(-?\d+)\*{0,2}", body)
+            res = m_res.group(1).strip() if m_res else ""
+            die = d20_glyph(m_nat.group(1), res) if m_nat else ""
+            rows.append(f'<div class="dice-row">{die}<span class="dice-body">{inline(body)}</span></div>')
+            last, casts = (tag, die, m_tot.group(1) if m_tot else "", res), casts + 1
+        if last is None:  # only an Inspiration line: nothing to sum up
+            return f'<div class="dice">{"".join(rows)}</div>'
+        tag, die, total, res = last
+        if casts == 1:  # one cast: the summary already shows its die and its tag, so the tap shows the sum alone
+            rows = [re.sub(r'^<div class="dice-row">.*?<span class="dice-body">', '<div class="dice-row"><span class="dice-body">', r, count=1) for r in rows]
+        times = f'<span class="dice-times">✦ cast ×{casts}</span>' if casts > 1 else ""
+        total_html = f'<b class="dice-total">{esc(total)}</b>' if total else ""
+        res_html = f'<span class="dice-res">{esc(res)}</span>' if res else ""
+        return (f'<details class="dice"><summary title="Show the roll">{die}<span class="dice-tag">{esc(tag)}</span>'
+                f'{total_html}{res_html}{times}</summary><div class="dice-full">{"".join(rows)}</div></details>')
 
     @staticmethod
     def choice_list(items, rec=None, is_choice=True):
@@ -2334,7 +2352,7 @@ class Site:
                              f'<span class="roll-res">{esc(cres.title())}</span></li>')
             rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(last.get("d20"), res)}<span class="dice-tag">{esc(first.get("stat", "").upper() or "FLAT")} · DC {esc(first.get("dc"))}</span>{times}'
                         f'{badge(res.title(), cls)}</div>'
-                        f'<ul class="roll-casts">{"".join(lines)}</ul>'
+                        f'<details class="roll-more"><summary>the roll</summary><ul class="roll-casts">{"".join(lines)}</ul></details>'
                         + (f'<p class="roll-where">{where}</p>' if where else "") + '</li>')
         return f'<ul class="rolls">{"".join(rows)}</ul>'
 
@@ -3220,6 +3238,16 @@ hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}
 .reckoning p{font-size:1rem;line-height:1.5;color:var(--t1);font-family:var(--body)}
 .reckoning .rk-h{color:var(--brass)}
 .dice{font-family:var(--body);display:flex;flex-direction:column;gap:6px;border:1px dashed var(--rule);border-radius:4px;padding:8px 10px;max-width:65ch}
+details.dice{display:block;padding:6px 10px}
+details.dice>summary{justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:6px 10px;color:var(--ink);font-family:var(--body);font-size:1rem;letter-spacing:0}
+details.dice>summary::after{margin-left:auto}
+.dice-total{font-variant-numeric:tabular-nums}
+.dice-res{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.dice-times{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--brass)}
+.dice-full{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:8px;border-top:1px dotted var(--rule)}
+details.roll-more{border-top:0;padding-top:0}
+details.roll-more>summary{justify-content:flex-start;gap:8px;font-size:.8rem}
+details.roll-more>summary::after{margin-left:0}
 .dice-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
 .dice-row.superseded{opacity:.55}
 .dice-row.insp{padding-left:4px}

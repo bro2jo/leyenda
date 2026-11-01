@@ -627,6 +627,22 @@ def main():
         check(code == 0 and "set aside" in out, "a project can be set aside")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes after the tales", out[-600:])
+
+        print("\n# the craft aids: the reread, the Book's register, the dice on the page")
+        code, out = run(saga + ["reread"], tmp)
+        check(code == 0 and "length:" in out and "opens:" in out and "closes:" in out, "reread prints a block's length and its first and last lines", out[-400:])
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
+                         "n = saga.reread_notes('He did not answer. She did not look. Nobody spoke. It was not a yes. It was not a no, either. ' * 3, 'scene'); "
+                         "print('|'.join(n))"], tmp)
+        check(code == 0 and "negation beats" in out and "It was not" in out, "reread names the Book I habits it finds", out[-400:])
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
+                         "print(saga.tone_notes([{'n': 1, 'tone': 'warm'}, {'n': 2, 'tone': 'warm'}, {'n': 3, 'tone': ''}], {'tone': ''}))"], tmp)
+        check(code == 0 and "no tone" in out and "climax has no tone" in out and "neighbouring" in out, "a week's tones draw notes, never a refusal", out[-400:])
+        code, out = run(saga + ["arc", "book2.tone"], tmp)
+        check(code == 0 and "register" in out.lower(), "the arc carries a Book's register (book2.tone)", out[-300:])
+        chap_pages = sorted((tmp / "docs/chronicle").glob("0[1-9]*.html"))
+        dice_pages = [p_ for p_ in chap_pages if '<details class="dice">' in page_of(p_)]
+        check(bool(dice_pages), "a check on the page is one line, its modifiers behind a tap (details.dice)", ", ".join(p_.name for p_ in chap_pages))
     finally:
         if keep:
             print(f"scratch copy kept at {tmp}")
