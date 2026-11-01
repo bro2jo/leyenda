@@ -115,7 +115,7 @@
       "title": "Ready",
       "after": "6",
       "covers": [],
-      "written": "2026-10-30"
+      "written": "2026-10-31"
     },
     {
       "scene": "between-10",
@@ -127,7 +127,7 @@
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "Maelis's room down the hall, at the table under the window, the dog across the sill",
+    "detail": "Maelis's room, the last door down the hall from the infirmary, at the table under the window, the dog across the sill",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",

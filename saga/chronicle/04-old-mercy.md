@@ -853,17 +853,17 @@ The kitchen went quiet. Wren's pencil stopped.
 
 ### Between — Ready
 
-Darrow did not argue. He had argued with Hollis Garrow about a great many things since the ford, and lost most of them, and this was not one to argue. An old soldier who asks to be hit in front of a kitchen is asking for the one courtesy left that he can still be paid, and a man who taps him instead has told him what he thinks he is.
+Darrow did not argue. He had argued with Hollis Garrow about a great many things since the ford, and lost most of them, and this was not one to argue. An old soldier who asks to be hit in front of a kitchen is asking for the one courtesy left that he can still be paid. Tap him instead, and you've told him he's too old to be hit.
 
-So he lifted his left fist, the bound one, and held it up between them: the Lances' signal, ready, the one every rider knows from the first week he carries a lance. Across the gap the old man's face changed. He set the planted sword where he wanted it, and lifted his own fist, and opened it, and took the hilt.
+So he lifted his free hand, the left with the bound thumb, closed it, and held the fist up between them: the Lances' signal, ready, the one every rider knows from the first week he carries a lance. Across the gap the old man's face changed. He lifted his own fist to answer it. Then he opened the hand and took up the wooden sword from across his knees.
 
 "Watch my shoulders," Darrow said.
 
-Hollis watched them. It did him no good, because Darrow had stopped looking for his feet, and everything he had was in the shoulders now and the shoulders went all at once. The wood came round under Hollis's guard, flat and hard, and took him across the ribs below the arm with a sound like a dropped plank.
+Hollis watched them. It did him no good. Darrow had stopped looking for his feet, and everything he had was in his shoulders now, and they went all at once, with nothing in them beforehand to warn a man. The wood came round under Hollis's guard, flat and hard, and took him across the ribs under his sword arm with a sound like a dropped plank.
 
-The breath went out of Hollis in one piece. The chair went back on two legs, and the old man's sword went down behind him onto the flags, point first, the way it had before, and the chair hung there and came down.
+The breath went out of Hollis in one piece. His chair rocked back onto two legs, and the old man's sword went down behind him onto the flags, point first, the way it had before; the chair hung there on it a moment and came down onto all four legs again.
 
-The cost was the hand. The blow came back up Darrow's arm into the fingers that could not feel it, and they opened on their own, and the sword went out of them and skittered across the flags into the arcade, end over end, and stopped against the dog. Ash stood up, put a foot on it, looked at it, and looked at him.
+Darrow paid for it in his hand. The blow came back up his arm into the fingers that could not feel it, and they opened on their own, and the sword went out of them and skittered across the flags into the arcade, end over end, and stopped against the dog. Ash stood up, put a foot on it, looked at it, and looked at him.
 
 She did not bring it. She did not fetch.
 
@@ -871,21 +871,21 @@ Hollis was bent over his knees with one arm across his ribs and his face the col
 
 "*That's* what you've got," he said, when he could. "Bells take you, Captain. *That's* what you've got."
 
-He did not say it the way he usually said Captain. Darrow heard the difference, and so did the kitchen.
+He had called Darrow Captain a hundred times since the ford, mostly to mock him. This was not that. Darrow heard the difference, and so did the kitchen.
 
 "I've lost the sword."
 
-"You've lost the sword, and you've hit me, and I'd not have the one without the other." He straightened, carefully, a hand flat to his side. "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so; she'll not hear it from you." He looked across at the dog standing over the wood. "And you'll want a dog that fetches."
+"You've lost the sword, and you've hit me, and I'd not have the one without the other." He straightened, carefully, a hand flat to his side. "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so, since you'll not tell her yourself." He looked across at the dog standing over the wood. "And you'll want a dog that fetches."
 
 "She doesn't."
 
-"No," said Hollis. "I see that." He settled back in his chair, sore and pleased with himself. "Again tomorrow. Bring the stick. You'll want something to hit me with that she won't sit on."
+"No," said Hollis. "I see that." He settled back in his chair, sore and pleased with himself. "Again tomorrow. Bring the stick. You'll want something to hit me with that she won't stand on."
 
-In the doorway the cook paid a lay brother a chit, without a word, and the lay brother put it in his apron like a man who had known all along.
+In the kitchen doorway the cook paid a lay brother a chit, without a word. The lay brother had said all along that the Captain would really hit him, and he put the chit in his apron like a man who had known it.
 
 ### Between — The Warm
 
-Her door was open a hand's width, which was as much as Maelis Vorne ever opened a door, and Ash got there first and lay down across the sill, the way she lay across every door now that had somebody behind it.
+Maelis's room was the last door down the hall from the infirmary. When Darrow got there it stood open a hand's width, which was as much as Maelis Vorne ever opened a door, and Ash got there first and lay down across the sill, the way she lay across every door now that had somebody behind it.
 
 Maelis stepped over the dog without looking at her. She was at the table under the window with a pestle and a stone bowl and the clay pipe cold in her teeth, and she did not stop grinding.
 
@@ -893,7 +893,7 @@ Maelis stepped over the dog without looking at her. She was at the table under t
 
 "He's right." She set the pestle down. "Show me."
 
-He held them out, both, the right with the ends of it white and dead as candle wax, the left with Anselm's knot round the thumb. She took them the way she took a knee, two fingers on each, and shut her eyes, and the pipe went from one side of her mouth to the other.
+He held them out, both: the right with its fingertips white and dead as candle wax, the left with Anselm's knot round the thumb. She took them the way she took a knee, two fingers on each, and shut her eyes, and the pipe went from one side of her mouth to the other.
 
 "These were coming back," she said. "Two days ago they were coming back. What did you put them on?"
 
@@ -901,21 +901,21 @@ He held them out, both, the right with the ends of it white and dead as candle w
 
 "After I told you not to put it near the stone again."
 
-"You told me the stone."
+"You said the stone. You never said the grate."
 
 Her eyes opened. It was not quite a look; it was what she did instead of one. "Is that the answer you want to give me?"
 
-It was not. He had been carrying a different one for a week, and he set it down.
+It was not. There was another answer, one he had been carrying around for a week, and he gave her that instead.
 
-"You've said about four words to me since the night of the lid," he said. "I'd thought it was the order of telling. That I'd gone to the Prior without you, after you said you'd not be beside me."
+"You've said about four words to me since the night of the lid," he said. "I thought it was the Prior. That I told her without you, after you said you'd not stand beside me when I did."
 
 "Was it?"
 
-"No." He looked at his own hands in hers. "You waited on the stair to see if I'd go. And I went. Into the stone. Onto the grate. You're frightened of what I'll put them in next."
+"No." He looked at his own hands in hers. "Down in the undercroft you waited to see if I'd put my hand in. And I did. Into the stone, and now onto the grate. You're frightened of what I'll put them in next."
 
 She did not say yes. She turned the right hand over and pressed a thumb into the palm, hard, until he felt it somewhere a long way off, and held it there.
 
-"They'll come back," she said, "if you stop giving them to it. I can say that because I've seen it. The first man's came back, in the end, and he was a worse fool than you." She let go of the palm. "The upper pool, at every bell, as long as the bell takes. Hands in the warm to the wrist, and close them on the bottom stones and open them. Not the lower terrace. The upper. If you go near the lower I'll hear of it before you're dry."
+"They'll come back," she said, "if you stop giving them to it. I can say that because I've seen it. The first man's came back, in the end, and he was a worse fool than you." She let go of the palm. "The upper pool, at every bell, as long as the bell takes. Hands in the warm to the wrist, and close them on the bottom stones and open them. Not the lower terrace, where the grey cloaks have their fire. The upper. If you go near the lower I'll hear of it before you're dry."
 
 "And why won't they come back on their own?"
 

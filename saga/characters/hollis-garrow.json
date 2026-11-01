@@ -554,10 +554,10 @@
       "evidence": "Hit me properly. Once. So I know what you've got."
     },
     {
-      "fact": "He answered the Captain's ready signal with his own fist, then took the hilt.",
+      "fact": "He answered the Captain's ready signal with his own fist, then took up his wooden sword from across his knees.",
       "chapter": "04",
       "scene": "between-9",
-      "evidence": "He set the planted sword where he wanted it, and lifted his own fist, and opened it, and took the hilt."
+      "evidence": "He lifted his own fist to answer it. Then he opened the hand and took up the wooden sword from across his knees."
     },
     {
       "fact": "He took the blow across the ribs and kept his chair by planting his sword behind him, as before.",
@@ -566,7 +566,7 @@
       "evidence": "the old man's sword went down behind him onto the flags, point first, the way it had before"
     },
     {
-      "fact": "Getting his breath back, he grinned and said that is what you've got, and said Captain differently from his usual way.",
+      "fact": "Getting his breath back, he grinned and said that is what you've got, and called Darrow Captain not to mock him, for once.",
       "chapter": "04",
       "scene": "between-9",
       "evidence": "\"*That's* what you've got,\" he said, when he could. \"Bells take you, Captain. *That's* what you've got.\""
@@ -575,13 +575,13 @@
       "fact": "He told the Captain to get his fingers back before the man on the stair finds out about them, and to tell the Mender Hollis said so.",
       "chapter": "04",
       "scene": "between-9",
-      "evidence": "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so; she'll not hear it from you."
+      "evidence": "You'll want those fingers back before the man on the stair finds out about them. Tell the Mender I said so, since you'll not tell her yourself."
     },
     {
-      "fact": "He said again tomorrow, and to bring the stick, something to hit him with that the dog won't sit on.",
+      "fact": "He said again tomorrow, and to bring the stick, something to hit him with that the dog won't stand on.",
       "chapter": "04",
       "scene": "between-9",
-      "evidence": "\"Again tomorrow. Bring the stick. You'll want something to hit me with that she won't sit on.\""
+      "evidence": "\"Again tomorrow. Bring the stick. You'll want something to hit me with that she won't stand on.\""
     }
   ],
   "relationships": [

@@ -1226,9 +1226,10 @@
           "priority": 1,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch04:between-10"
+            "ch04:between-10",
+            "ch04:between-9"
           ]
         }
       ]
