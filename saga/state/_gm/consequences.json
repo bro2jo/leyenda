@@ -247,7 +247,7 @@
           "at": "transition1",
           "weight": "scene",
           "what": "His three Ninth men from the gate (unnamed on the page) refused to be bought off the Confessor's paper by his kneeling (\"We came up those Steps on other men's backs, Captain. We'll not go down them on yours\"), and he promised them \"You'll be asked\" before he decides for them again. Honour it at the crossing: before he goes down the Steps he asks them, or decides for them and they say so; Wren holds a sister promise (c02.1a)",
-          "status": "pending",
+          "status": "fired@ch04:choice",
           "offered": 16,
           "offered_at": [
             "ch03:s1",
@@ -266,7 +266,8 @@
             "ch03:choice",
             "ch04:s1",
             "ch04:s2"
-          ]
+          ],
+          "evidence": "\"I'm going down the Steps this morning,\" he said. \"You'll be asked. Come, or stay.\""
         }
       ]
     },
@@ -452,14 +453,15 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 6,
+          "offered": 7,
           "offered_at": [
             "ch03:between-1",
             "ch03:s5",
             "ch04:s2",
             "ch04:between-1",
             "ch04:s7",
-            "ch04:climax"
+            "ch04:climax",
+            "ch04:choice"
           ]
         }
       ]
@@ -909,11 +911,12 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch04:between-1",
             "ch04:s7",
-            "ch04:climax"
+            "ch04:climax",
+            "ch04:choice"
           ]
         }
       ]
@@ -1090,11 +1093,12 @@
           "priority": 2,
           "valid_until": "book1",
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch04:between-6",
             "ch04:s6",
-            "ch04:s7"
+            "ch04:s7",
+            "ch04:choice"
           ]
         }
       ]

@@ -24,13 +24,13 @@
     "anchor": "chronicle/01-the-confessor-at-the-steps.html#interlude"
   },
   "last_seen": {
-    "chapter": "03",
-    "scene": "7",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/03-the-undercroft.html#scene-7"
+    "chapter": "04",
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Said his oath at the noon bell with Hollis's hand round his; the frost on his mouth neither grew nor melted.",
-  "now": "In the Grey Cot, the frost on his mouth unchanged, his blanket on Hollis's knees at the stair head.",
+  "last_seen_doing": "Lay in the Grey Cot while Hollis put his hand down on the grey blanket and gave his even bells to the night novice.",
+  "now": "In the Grey Cot at Saint Ysolde's, his even bells given to the night novice.",
   "story_so_far": "He lies in the Grey Cot and says his oath at every bell with Hollis's hand round his, the frost on his mouth neither growing nor melting. The thing that makes it is in the wall beneath him.",
   "quote": {
     "text": "I'd carry you down the Steps myself, if they'd let me.",
@@ -314,6 +314,10 @@
       "chapter": "04",
       "scene": "between-7",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }

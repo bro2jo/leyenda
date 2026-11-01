@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Was on the gate wall when Old Mercy rang on the last of the light, though she had not been in the House at noon.",
-  "now": "On the gate wall at dusk, the ox-bell at her belt.",
+  "last_seen_doing": "Had the cart at the winch-house with Hob and Dun in the traces and the cut rope coiled in the back; looked at the company like a load, and up the cliff to the House and back at him; put the load on the cart and not on any of them; took up the lines and said the road is the road; did not hear the bell at her hip on the first rut.",
+  "now": "On the box of her cart on the Holloway with the company aboard, Hob and Dun in the traces and the mule beside the off ox, the company aboard.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -487,6 +487,24 @@
       "evidence": "a carter with an ox-bell at her belt who had not been in the House at noon"
     },
     {
+      "fact": "She had the cart at the winch-house with the cut rope coiled in the back.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "and the coil of the cut rope thrown in the back of it."
+    },
+    {
+      "fact": "She put the company's load on the cart and not on any of them.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"Load's going on the cart,\" she said. \"Not on any of you.\""
+    },
+    {
+      "fact": "On the box with the lines up she said: Road's the road.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"Road's the road,\" she said."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -710,6 +728,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     },
     {
       "chapter": "tale02",

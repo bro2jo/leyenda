@@ -70,7 +70,7 @@ As the Lowmarch has it: at midsummer the Lances rode to the ford to stop a clan 
 A lowland bone-setter with a wasting sickness who had herself carried up to the hot springs to die in warm water, and did not. She hung a bell on the mountain's shoulder and rang it each dawn so the valley would know she had lived another day, and sick people started climbing toward the sound. The men who had carried her up stayed as the first lay brothers. The valley calls her a saint. The Menders do not, on the grounds that she would have hit anyone who did with the bell. Her feast is the first new moon after the first snow: bread given away, no work done that can be left, and the kitchen's book runs wild.
 
 ## house.steps — The Thousand Steps
-- **tier:** common · **spoken:** Prologue II; ch02:s4 · **names:** —
+- **tier:** common · **spoken:** Prologue II; ch02:s4; ch04:choice · **names:** —
 - **use:** anyone climbing; Wren's count; the rule of the hundredth step.
 
 Cut into the cliff over forty years by masons and lay brothers, switchback over switchback, from the winch-house to the gate. Everyone says a thousand. Wren has counted eleven hundred and seventeen and has made a note of everyone who disagrees. The stretches have names the lay brothers use without thinking: the Shins, the first steep run; the Elbow, the turn at the cloud line; the Long Reach; and the Last Hundred under the gate. At the hundredth step from the top there is a niche with a lamp in it, Ysolde's lamp, and the lay brothers will not go below it after dark. The sick are carried up and the dead carried down, and the Steps count everyone twice.

@@ -130,18 +130,24 @@
       "covers": [
         "2026-10-31"
       ],
-      "written": "2026-10-31"
+      "written": "2026-11-01"
     },
     {
       "scene": "climax",
       "title": "Old Mercy",
       "covers": [],
       "written": "2026-11-01"
+    },
+    {
+      "scene": "choice",
+      "title": "Eleven Hundred and Seventeen",
+      "covers": [],
+      "written": "2026-11-01"
     }
   ],
   "location": {
-    "place": "saint-ysoldes",
-    "detail": "the turn of the bell-tower stair, seated, with the court and the tower door below",
+    "place": "holloway",
+    "detail": "on the tailboard of Rae Thorne's cart on the first rut of the Holloway, below the winch-house at the foot of the Thousand Steps",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -150,8 +156,8 @@
     "on_the_page": "The Confessors have come for the Faithless at Saint Ysolde's with a list: Darrow first, Hollis second. What stands between them and the hall is Old Mercy, the sanctuary bell: while it rings at dawn and dusk, no blade passes the gate and no name under it is taken down against its will. Marrant has not drawn a blade in a month. He has camped on the lower terrace, kept the cage, and reached into the House by the lever: a clerk in grey who never kneels sent two black slivers up in the House's own letter-satchel, one of them now set in the rock under the row and making the stone grow frost, and holds the almoner's sister at Calden for the second. Banners that are not grey are on the Holloway, a day off.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The eve: the banner that is not grey a day off on the Holloway, the Confessor's camp packing its cart with the censer lit to move first, at dawn, up; the House's night set with what it has, a one-legged man in a door, a dog at the bars, a girl at the rope, and a captain who cannot stand in a chair on the turn of the stair.",
-  "last_beat": "Down on the lower terrace the four fires were being built up, not put out. At dawn the grey cloaks would go down to meet the banner, and whatever rode under it would come up.",
+  "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
+  "last_beat": "The cart jolted over the first rut of the Holloway, and the bell at Rae's hip rang, and Rae, watching the road, did not hear it. He did.",
   "companions": {
     "maelis": {
       "approval": 34,

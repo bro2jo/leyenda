@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Counted the fires at dawn and read the letter believed; warned Pell; climbed to the bell-loft when the rope ran loose, counting the rungs aloud, and rang Old Mercy by the clapper on the last of the light.",
-  "now": "Sitting on the step above the Captain's chair with Pell's blood on her hand, not counting.",
+  "last_seen_doing": "Was told first and counted it, two; watched from the wall-walk; counted the Thousand Steps aloud a step below the Captain, each number as his foot came down; said the last one with her voice doing a thing she would deny.",
+  "now": "At the foot of the Steps on the Holloway with her ledger buttoned in her coat, having counted the Captain down every one of the eleven hundred and seventeen.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -579,6 +579,18 @@
       "chapter": "04",
       "scene": "climax",
       "evidence": "One rode in the night. Down, toward Calden"
+    },
+    {
+      "fact": "She counted the Steps aloud a step below the Captain, saying each number as his foot came down on it, so that it was a record and never a promise.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "said each number as his foot came down on it, not before, so that it was never a promise, only a record."
+    },
+    {
+      "fact": "Her count at the bottom: eleven hundred and seventeen, and anybody who says a thousand can go back up and count it.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"Eleven hundred and seventeen. And anybody who tells you it's a thousand can go back up and count it themselves.\""
     }
   ],
   "relationships": [
@@ -812,6 +824,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }

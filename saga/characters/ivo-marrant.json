@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Came up unarmed with three men under the law of guests; called the Mender Warden; demanded the Captain of the Ninth by name under the Crown's writ after the bell; sent thanks to the almoner; went down on one knee on the ice at the tower door and left with a limp.",
-  "now": "Gone back down to the lower terrace with the writ refused and a limp, his fires built up, the banner's lights at the foot of the Steps.",
+  "last_seen_doing": "Stood by his censer on the lower terrace at dawn and watched the Captain come down into the grey; heard him ask to keep his name first and alone on the writ; asked what he had seen in the court and was answered with nothing; laughed softly and thanked him for his candour; said they will sing it in every taproom and he will see they sing it right; told him to mind the knee; went down the Steps ahead of the day with his men.",
+  "now": "Gone down the Steps at dawn with his men and the lymer to meet the banner that is not grey on the Holloway. He has the Captain's name, asked for, and nothing of what the Captain saw.",
   "story_so_far": "He read the Captain's letter to Aldric at the bars, thanked him for the candour, and sent it down the Steps by one of his men. His fires burn on the lower terrace, and his men have had the House's lamp oil open on its way up.",
   "quote": {
     "text": "Bells grow tired.",
@@ -240,6 +240,24 @@
       "chapter": "04",
       "scene": "climax",
       "evidence": "a limp he had not brought"
+    },
+    {
+      "fact": "He asked the Captain what he had seen in him in the court, the way the Mender looks at a knee.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"You looked at me yesterday in the court,\" he said, \"the way the Mender looks at a knee. I've been wondering all night what you saw.\""
+    },
+    {
+      "fact": "He says they will sing it in every taproom to Calden: the Faithless captain who walked down into the grey to take a list onto his own back.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "The Faithless captain who walked down into the grey to take a list onto his own back."
+    },
+    {
+      "fact": "He told the Captain the road is longer than the Steps, and to mind the knee.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"The road's longer than the Steps, Captain. Mind the knee.\""
     }
   ],
   "relationships": [
@@ -342,6 +360,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }

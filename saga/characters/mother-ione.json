@@ -23,12 +23,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Let the Confessor's party through the bars as guests; refused the Crown's writ for the Captain by name before the court.",
-  "now": "In the court with the House behind her, the writ refused.",
+  "last_seen_doing": "Stood at the gate with the House behind her; asked the Captain to carry the House's word to any Mender he meets on the road; reminded him he never answered what the House is for, heard his answer, nodded once, and stepped aside from the gate.",
+  "now": "At the gate of Saint Ysolde's with the House, the Captain gone down the Steps with the House's word to carry.",
   "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
@@ -285,6 +285,18 @@
       "chapter": "04",
       "scene": "climax",
       "evidence": "This House knows whose name it is keeping."
+    },
+    {
+      "fact": "She asked the Captain to carry the House's word to any Mender he meets on the road, since the Houses down the Lowmarch will want to know what this one did.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"You'll carry the House's word, Captain?\" said Mother Ione. \"To any Mender you meet on the road? The Houses down the Lowmarch will want to know what this one did.\""
+    },
+    {
+      "fact": "Hearing his answer to what the House is for, she nodded once, the way a woman nods when a sum has come out right, and stepped aside from the gate.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "she nodded, once, the way a woman nods when a sum has come out right, and stepped aside from the gate."
     }
   ],
   "relationships": [
@@ -418,6 +430,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }

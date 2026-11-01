@@ -5,7 +5,7 @@
     "chapter": 4,
     "beat": "b1.5",
     "next_scene": 8,
-    "stage": "climax",
+    "stage": "choice",
     "last_written": "ch04:s7",
     "rank_on_page": "Kindled"
   },
@@ -204,11 +204,11 @@
     },
     "b1.5": {
       "title": "Old Mercy",
-      "status": "in_progress"
+      "status": "done"
     },
     "t1": {
       "title": "The Descent",
-      "status": "planned"
+      "status": "done"
     }
   },
   "quests": {
@@ -449,13 +449,5 @@
       "bound": "2026-10-29"
     }
   ],
-  "open_choice": null,
-  "answered_choice": {
-    "chapter": 4,
-    "ask": "What does Darrow do?",
-    "option": 1,
-    "text": "His own: go down to the lower terrace at dawn and take the Confessor's attention onto himself, without telling him what the script showed.",
-    "by": "darrow",
-    "ledger": "c04.14"
-  }
+  "open_choice": null
 }

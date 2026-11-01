@@ -24,12 +24,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Held the tower door from his chair, took the first man across the shins and held him in the bind; moved the beech leg an inch as the Confessor stepped over it.",
-  "now": "In his chair in the tower door with the wooden sword, having said kneel to that to a Confessor on the ice.",
+  "last_seen_doing": "Sat with the lad's hand at the Grey Cot from the dawn bell; told it the carter brought a mule up the Steps after the rope went; gave the even bells to the night novice; rode the mule down the Thousand Steps cursing it the whole way; got onto the cart's tailboard at the bottom.",
+  "now": "On the tailboard of the carter's cart on the Holloway, having ridden a mule down the Thousand Steps and left the lad's even bells with the night novice.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -600,6 +600,24 @@
       "chapter": "04",
       "scene": "climax",
       "evidence": "Hollis shifted it, by about an inch."
+    },
+    {
+      "fact": "He says the carter brought a mule up the Steps after the rope went, for a one-legged man, and nobody asked her to.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"The carter brought it up after the rope went. Up eleven hundred steps with a mule, and the cage gone. For a one-legged man. Nobody asked her to.\""
+    },
+    {
+      "fact": "He gave the lad's even bells to the night novice: he never missed one till the fourth, and she is not to let him start.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"You. The evens are yours now. He never missed one till the fourth. You'll not let him start.\""
+    },
+    {
+      "fact": "He rode the mule down the Thousand Steps cursing it all the way, and called the carter a saint and a lunatic in the same breath.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "and the carter who had brought it, whom he called a saint and a lunatic in the same breath."
     }
   ],
   "relationships": [
@@ -880,6 +898,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }

@@ -73,8 +73,9 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The lance brands** — Each lance burns its own mark onto its greys at the fair, the day they are bought, on the near quarter. The Second's is a tower, and the Second likes you to know it; the Sixth's a mule's shoe, which the Sixth did not choose and cannot be rid of; the Ninth's a gate, two posts and a bar. Darrow stood in the smoke at the fair while it went onto sixty horses (Ch 4 Between).
 - **The lymer** — A heavy, low-built tracking hound the grey cloaks walked up the terrace path to the wall below the kennels; the Confessor said it was learning the House (Ch 4 Sc 5).
 - **The cloister** — A square of worn flags round a dead fountain, the arcade on three sides and the kitchen door on the fourth. Hollis taught the Captain the Seated Blade there from two plain chairs with two wooden swords, the kitchen in its door taking odds (Ch 4 Sc 6).
-- **The bell tower** — Old Mercy's tower. Its door at the foot of the stair is the only way up to the bell; the stair narrows and turns halfway. On the eve the Captain set Hollis's chair in the door and his own on the turn, and Wren beside Sister Pell at the rope (Ch 4 Sc 7).
 - **Rung down** — The House's custom for a guest who leaves in peace: Old Mercy sounds as he goes down the Steps, and by the law a man the House has rung down may not lawfully climb them against it again. The Prior named it at the foot of the tower stair after the bell, with Sister Pell's hands too torn to ring (Ch 4 Climax).
+- **The bell tower** — Old Mercy's tower. Its door at the foot of the stair is the only way up to the bell; the stair narrows and turns halfway. On the eve the Captain set Hollis's chair in the door and his own on the turn, and Wren beside Sister Pell at the rope (Ch 4 Sc 7).
+- **Patience** — An old plain sword, the blade dull, that Maelis carried down the Thousand Steps wrapped in oilcloth that smelled of the undercroft, with one word cut in the steel near the hilt: Patience. Darrow laughed; he thought it was a joke, and she let him (Ch 4 Choice).
 
 ## Songs and verses
 
@@ -122,3 +123,4 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **"I'd not known the third line was yours to say."** — Confessor Ivo Marrant to Darrow at the bars, having heard the Faithless captain say the dusk verse under the tower with the strokes (Ch 4 Sc 4).
 - **"The loop still holds."** — The one line of Brother Anselm's own at the foot of the letter he wrote to his sister at the Captain's asking: nothing to the clerk who reads it on the way, and to her, who puts a loop in her M so it will hold, the word that it is her brother writing and not what they had him write (Ch 4 Between).
 - **"Fight from where you're put."** — Hollis, naming the Seated Blade in the cloister after his chair went over and he held it up with his sword (Ch 4 Sc 6).
+- **"What climbed, you keep."** — Darrow's answer at the gate to the Prior's question, what the House is for, after a night with the four lines in his head: that's what it's for, and he is going down so it can (Ch 4 Choice).

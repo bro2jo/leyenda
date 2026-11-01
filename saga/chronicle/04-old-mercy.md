@@ -939,11 +939,11 @@ They came out of the cloud on the Holloway below the Shins, where the road ran p
 
 "A day and a bit. They'll camp on the road tonight and be at the foot of the Steps tomorrow by dark." Wren took the glass back and swung it down onto the lower terrace. "And look at this lot."
 
-The grey cloaks were taking the canvas off their cart. Two of them were rolling it, and a third was loading the cart with the slow care of a man who means to leave nothing behind, and the censer still smoked on its rock by the fire, and the lymer lay tied at the foot of the kennel wall with its long ears in the slush.
+The grey cloaks were striking their shelters, the canvas they had carried up off their cart. Two of them were rolling it, and a third was packing their loads with the slow care of a man who means to leave nothing behind, and the censer still smoked on its rock by the fire, and the lymer lay tied at the foot of the kennel wall with its long ears in the slush.
 
 "Packing," said Wren. "Going down to meet them. Good."
 
-"No." He took the glass again, and looked a long time, the way he had looked at a clan line once with the water at his horse's knees. "Men going down roll the canvas and leave the fire. These are packing the cart and keeping the censer lit. They want the cart ready and their hands empty, and the censer in his fist when he does it. He means the man under that banner to come up the Steps tomorrow and find it already done." He gave her back the glass. "He moves first. At dawn. Up."
+"No." He took the glass again, and looked a long time, the way he had looked at a clan line once with the water at his horse's knees. "Men going down roll the canvas and leave the fire. These are packing and keeping the censer lit. They want their loads ready and their hands empty, and the censer in his fist when he does it. He means the man under that banner to come up the Steps tomorrow and find it already done." He gave her back the glass. "He moves first. At dawn. Up."
 
 Wren did not say anything for a while, which was the thing to listen to.
 
@@ -1128,3 +1128,133 @@ Down on the lower terrace the four fires were being built up, not put out. Wren 
 1. **Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him.** *(Maelis disapproves.)*
 2. **Let him go, and ring the bell for him as he leaves, as the law says.** *(The Prior approves.)*
 3. ~~**Have Wren follow his camp down with a lamp and a knife, and the knife is not for show.**~~ *[Guile 4]* *(Wren approves; risky.)*
+
+### Choice — Eleven Hundred and Seventeen
+
+He told Wren first. She was on the wall-walk before the dawn bell with Pell's glass, as he had known she would be, and he said it to her before he said it to anyone, plainly, the way she had asked him to on a night that felt a year ago.
+
+"I'm going down to the terrace. To him. Now, before they go."
+
+She did not lower the glass. "Times the Captain has told me first," she said, to the lower terrace. "Two." Then: "Take the stick. It's steep, and I'll not run this time, I'll watch."
+
+The terrace path went down from the gate's outer step along the inside of the wall, steep and slick, to the place where the springs steamed and the law of bells did not reach. He took it with a hand on the stones and the stick in the other, and the knee took every step of it and told him about each one, and nobody above said a word while he went.
+
+The grey cloaks had their loads on their backs and the fires kicked out. The censer still smoked on its rock. Confessor Ivo Marrant stood by it with his hood back and the frost on his bald head, and watched the Captain of the Ninth come down into the grey on his own leg, and smiled at him the way you smile at a man who has come to the right door.
+
+"Captain. You're early for the bell."
+
+"You read my name first at the bars," Darrow said. "Keep it there. The next writ that comes up these Steps, put mine on it and nobody else's. I'm going down this morning. Tell whoever rides under that banner the Captain of the Ninth isn't under this bell. He's on the road. If they want him, they can follow him, and leave the House be."
+
+Marrant looked at him for a long moment, pleasantly, the censer's smoke going up straight between them in the still air.
+
+"You looked at me yesterday in the court," he said, "the way the Mender looks at a knee. I've been wondering all night what you saw."
+
+`[RESOLVE · DC 14]` d20 **18** +0 resolve +3 proficiency +3 The Mender's Patience III +1 chapter 4 Hard-won = **25** — *Success*
+
+It was a door held open, as all of them were. Darrow had walked through every one this man had held for him since the gate. He stood in front of this one and did not.
+
+"A man who's good at waiting," he said.
+
+Marrant laughed, softly, the first time Darrow had heard him do it. "Thank you, Captain. For your candour." He took up the censer by its chain. "They'll sing it in every taproom from here to Calden, you know. The Faithless captain who walked down into the grey to take a list onto his own back."
+
+"Then let them sing it right."
+
+"I'll see that they do." He drew up his hood. "The road's longer than the Steps, Captain. Mind the knee."
+
+He went down the Steps ahead of the day with his men and their loads and the lymer at heel, and none of them looked back.
+
+---
+
+Maelis read the Third Knot in the warming room by the first light, two fingers and her eyes shut, the pipe gone still. She took longer than she ever had. He did not ask her anything; he had learned that much.
+
+She opened her eyes.
+
+"Permitted," she said.
+
+He had waited all winter for the word, and now it was in the room he did not know where to put it.
+
+"That's my count," she said, before he could do anything foolish with it. "Not the quiet's. Step by step, at my count, with a hand on the wall, and I'll be behind you to give it. The soft season's not done because a Knot is tied. It's done when I say so, and I've not said so."
+
+"You're coming."
+
+"Somebody has to give the count." She bent and picked up from beside her chair her surgeon's roll, and with it a long thing wrapped in oilcloth that smelled of the undercroft. She unwrapped the end of it enough for him to see: a plain sword, old, the blade dull, with one word cut in the steel near the hilt. *Patience.*
+
+Darrow laughed. He thought it was a joke.
+
+She let him think so, and wrapped it up again.
+
+---
+
+His three Ninth men were sitting up on their cots at the far end of the row when he came down it, as if they had been told. He had not told them. He stopped at the oldest, the one who had said the thing at the gate about other men's backs, and kept his promise.
+
+"I'm going down the Steps this morning," he said. "You'll be asked. Come, or stay."
+
+The oldest looked at the other two, and they looked at him, and something went between the three of them that had been going between them since the river.
+
+"We came up those Steps on other men's backs, Captain," the oldest said. "We'll go down them on our own feet, when we've got them. Not before. Not on a mule, and not in a cart, and not on yours." He held out his hand, and Darrow took it. "You asked. That'll do."
+
+Hollis was at the Grey Cot with the lad's hand in his. He had been there since the dawn bell, and he did not get up when Darrow came, and Darrow did not ask him to.
+
+"Mule's at the gate," Hollis said, to the lad. "The carter brought it up after the rope went. Up eleven hundred steps with a mule, and the cage gone. For a one-legged man. Nobody asked her to." He put the lad's hand down on the grey blanket, carefully, and took it up again, and put it down. Then he looked up the row at the night novice on her stool. "You. The evens are yours now. He never missed one till the fourth. You'll not let him start."
+
+The novice nodded, white.
+
+"Sixty men and a mule," said Hollis, to nobody, and got up on the beech leg, and went to see about the mule.
+
+---
+
+The Prior was at the gate with her hands in her sleeves and the House behind her, the whole of it, out in the cold again because she had asked whether it would like to be. The almoner stood near the front with the stores key on its cord. Sister Pell was not there. Sister Pell was in the tower, with her hands bound in Maelis's linen, and would not hear of anyone else at the rope.
+
+"You'll carry the House's word, Captain?" said Mother Ione. "To any Mender you meet on the road? The Houses down the Lowmarch will want to know what this one did."
+
+"I'll carry it."
+
+"Good." She looked at him, and counted him, the way she counted every room. "You never did answer me. In the hall, after the price. What the House is for."
+
+He had had a long night to think of it, and the four lines in his head the whole of it.
+
+"What climbed, you keep," he said. "That's what it's for. I'm going down so you can."
+
+She looked at him a while longer. Then she nodded, once, the way a woman nods when a sum has come out right, and stepped aside from the gate.
+
+"Thank you, Captain," said the almoner, as he passed.
+
+"Do you know what for?"
+
+"Yes," said Brother Anselm. "Now I do."
+
+---
+
+Old Mercy rang the dawn behind them as they went: slow, every stroke on its time, not one early, with the crack in its voice the valley knew. It would ring again at dusk, and every dusk after, for the three at the end of the row who meant to come down on their own feet. But this was the last time it rang for him, and he listened to it all the way to the first turn.
+
+He went down the Thousand Steps on his own legs.
+
+Wren counted them aloud. She walked a step below him with her ledger buttoned inside her coat, and said each number as his foot came down on it, not before, so that it was never a promise, only a record. Maelis came behind with the roll on her back and the oilcloth sword under her arm and said *now* when the next step was his to take, and not before. Two counts, all the way down: one in numbers, and one in leave.
+
+He kept his left hand on the cliff. The stone was cold and wet and he did not care. The right held the stick, and the fingers knew the stick was there, which a week ago they had not. The knee took the first hundred the way it had taken the undercroft stair, each one a thing decided; and somewhere in the second hundred it stopped being a decision and became a thing he was doing, and he was so surprised he nearly missed the next one, and Maelis said *now* in a voice that would have stopped a horse.
+
+Ash came beside him on three legs and the splint, at the edge where the drop was, so that she was between him and it, and nobody had told her to do that either.
+
+Hollis came behind on the mule, cursing it. He cursed it at the Long Reach for its ears and at the Elbow for its opinions and in the cloud, where nobody could see anything, for its ancestry, its manners, its gait, the Crown, the Second, and the carter who had brought it, whom he called a saint and a lunatic in the same breath. The mule went down the Steps like water goes downhill and did not care what anyone called it. It was, by a long way, the steadiest thing on the mountain.
+
+They came out of the cloud at the Shins into the morning. Far below on the Holloway, where the road ran pale through the snow, the banner that was not grey was coming on at a walk, and the grey cloaks' cart was going down to meet it, small as a seed.
+
+"Eleven hundred and fifteen," said Wren. "Eleven hundred and sixteen." Her voice did a thing on the last one that she would deny later. "Eleven hundred and seventeen. And anybody who tells you it's a thousand can go back up and count it themselves."
+
+He was standing at the bottom of the Thousand Steps, on his own legs, with a hand on nothing.
+
+Rae Thorne had the cart at the winch-house with its shafts down and Hob and Dun in the traces, and the coil of the cut rope thrown in the back of it. She looked at the company the way she looked at a load: the old man on the mule, the Mender with the long wrapped thing, the girl with the ledger, the dog on three legs, and the Captain on two. Then she looked up the face of the cliff, all the long way to the House, and back down at him.
+
+She did not say anything about it. She did not need to. He had heard her say it at the wicket, five mornings ago, before the dawn bell: *I'd like, once, to carry a thing up this mountain and see it come down whole.*
+
+"Load's going on the cart," she said. "Not on any of you."
+
+They put it on the cart: Maelis's roll, Wren's satchel, the oilcloth sword. Not the stick. He found he did not need it to stand at the tailboard, and kept it anyway. Hollis got down off the mule and onto the tailboard and told the mule what he thought of it one last time, and the mule, freed, walked round to the front of the cart and stood beside the off ox as if it had been told to and meant to do it all winter.
+
+Rae climbed onto the box and took up the lines, and looked down the Holloway at the banner coming, and the other way, where the road went on without it.
+
+"Road's the road," she said.
+
+The off ox leaned into the yoke a breath before the near one, as if he had to be sure first. The cart jolted over the first rut of the Holloway, and the bell at Rae's hip rang, and Rae, watching the road, did not hear it.
+
+He did.

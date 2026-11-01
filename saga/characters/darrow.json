@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Watched the cage rope cut at dawn; read the Confessor's lever in the court; held the tower stair from a chair in the bind while the bell was silent, and did not stand; had Wren count the rungs; said nothing when the Confessor sent thanks to the almoner.",
-  "now": "On his chair on the turn of the tower stair after Old Mercy rang on the last of the light. The Confessor has gone down with his writ refused, and the banner's lights are at the foot of the Steps.",
+  "last_seen_doing": "Told Wren first; went down the terrace path into the grey before the dawn bell and asked the Confessor to keep his name first and only on the writ, and to tell whoever rides under the banner that the Captain of the Ninth is on the road, not under the bell; gave him nothing of the script; heard Maelis say Permitted; asked his three Ninth men, as promised; answered the Prior's question at last; walked down the Thousand Steps on his own legs at Maelis's count with a hand on the cliff; reached the Holloway with the company.",
+  "now": "On the tailboard of the carter's cart on the Holloway, at the foot of the Steps he walked down on his own legs, with the company: Hollis, Maelis, Wren, Ash and the carter, with the banner that is not grey on the road below the Shins.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1644,6 +1644,60 @@
       "evidence": "A blade held is a blade not swinging."
     },
     {
+      "fact": "He told Wren first that he was going down to the terrace, and she counted it: two.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"Times the Captain has told me first,\" she said, to the lower terrace. \"Two.\""
+    },
+    {
+      "fact": "He asked the Confessor to keep his name first on the writ and nobody else's, and to tell whoever rides under the banner that the Captain of the Ninth is on the road, so they follow him and leave the House be.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "If they want him, they can follow him, and leave the House be."
+    },
+    {
+      "fact": "Asked what he had seen in the Confessor in the court, he answered only: a man who's good at waiting.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"A man who's good at waiting,\" he said."
+    },
+    {
+      "fact": "He thought Maelis's sword with Patience cut in the blade was a joke.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "Darrow laughed. He thought it was a joke."
+    },
+    {
+      "fact": "He kept his promise to his three Ninth men and asked them whether they would come or stay.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"I'm going down the Steps this morning,\" he said. \"You'll be asked. Come, or stay.\""
+    },
+    {
+      "fact": "He answered the Prior's question at last: what climbed, the House keeps; that is what it is for, and he is going down so it can.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"What climbed, you keep,\" he said. \"That's what it's for. I'm going down so you can.\""
+    },
+    {
+      "fact": "He walked down the Thousand Steps on his own legs with his left hand on the cliff, at Maelis's count, and somewhere in the second hundred the knee stopped being a decision.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "somewhere in the second hundred it stopped being a decision and became a thing he was doing"
+    },
+    {
+      "fact": "At the bottom he stood on his own legs with a hand on nothing.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "He was standing at the bottom of the Thousand Steps, on his own legs, with a hand on nothing."
+    },
+    {
+      "fact": "On the first rut of the Holloway he heard the bell at Rae's hip ring, which she did not.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "and Rae, watching the road, did not hear it."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1985,6 +2039,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     },
     {
       "chapter": "tale01",

@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "climax",
-    "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#climax"
+    "scene": "choice",
+    "place": "holloway",
+    "anchor": "chronicle/04-old-mercy.html#choice"
   },
-  "last_seen_doing": "Did not answer when the Confessor called her Warden; went up to Pell at the rope when the bell had rung.",
-  "now": "Up in the tower with Sister Pell.",
+  "last_seen_doing": "Read the Third Knot by first light, longer than ever, and said Permitted; said it is her count, step by step, not the quiet's, and the soft season is not done until she says so; came down the Steps behind the Captain with her surgeon's roll and an old sword wrapped in oilcloth with Patience cut in the blade, giving him the count; let him think the sword a joke.",
+  "now": "On the Holloway with the company, her roll and the wrapped sword on the cart. She has said Permitted and not that the soft season is done.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost had stopped at his knuckles. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -501,6 +501,30 @@
       "chapter": "04",
       "scene": "climax",
       "evidence": "Maelis did not answer to it."
+    },
+    {
+      "fact": "Reading the Third Knot at first light she said Permitted.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "\"Permitted,\" she said."
+    },
+    {
+      "fact": "She says Permitted is her count, step by step, not the quiet's, and that the soft season is not done because a Knot is tied, but when she says so.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "The soft season's not done because a Knot is tied. It's done when I say so, and I've not said so."
+    },
+    {
+      "fact": "She came down the Steps with the company, carrying her surgeon's roll and an old plain sword wrapped in oilcloth that smelled of the undercroft, with Patience cut in the blade near the hilt.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "a plain sword, old, the blade dull, with one word cut in the steel near the hilt. *Patience.*"
+    },
+    {
+      "fact": "She gave the Captain the count all the way down, saying now when the next step was his to take.",
+      "chapter": "04",
+      "scene": "choice",
+      "evidence": "said *now* when the next step was his to take, and not before."
     }
   ],
   "relationships": [
@@ -725,6 +749,10 @@
     {
       "chapter": "04",
       "scene": "climax"
+    },
+    {
+      "chapter": "04",
+      "scene": "choice"
     }
   ]
 }
