@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-29 · body · Toward evening his hands get restless on the blanket, the way they did before a ride once, and he lets them, and finds he does not mind the feeling.
 - 2026-10-29 · house · The row's lamps go down early tonight. Wren walks the length of it once with her hand cupped round the last flame, and at the end she pinches it out, and nobody asks her to leave it.
 - 2026-10-29 · weather · The wind drops after dark and the night comes in clear and hard; by the late bell the wet on the landings has gone stiff and quiet, and the stars over the Steps are the small, sharp kind.
 - 2026-10-30 · house · Under the Captain's cot, Ash has got hold of the end of a blanket nobody remembers giving her, and has made a nest of it with the care of someone who means to stay.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-10-31 · house · Brother Cobb sets the bread out on the long table a loaf at a time and squares each one to the edge, and when a novice nudges one crooked in passing he squares it again without looking up.
 - 2026-10-31 · ledger · From Wren's ledger, the evening's line: Candles issued to the forge, 2. Candles asked for twice, 1, by Brother Cobb, who says the first was a poor candle and he knows a poor candle.
 - 2026-10-31 · saying · Told that tonight's pot is the same as last night's, one of the old men on the far cots says to the rafters, with great dignity: Kneel to that. Two cots down, somebody laughs and has to be thumped on the back.
+- 2026-10-31 · overheard · From the linen press, a lay brother counting sheets under his breath: …eleven, twelve, twelve, thirteen. No. One. And he starts again from the top, out of principle.
