@@ -1026,7 +1026,7 @@ Wren had him on the wall-walk before the bell, with Pell's glass and her own bre
 
 The cook came up the wall-walk stair with her sleeves pushed back and flour to the elbow, and looked down at the place where the rope had been, and sniffed.
 
-"Cage or no cage, the winter's salt and oil are in my cellar," she said, before anyone asked. "Came up four days since, under the carter's flour. I bake to a count, and the count's been wrong in our favour all week, and I never asked her why. Somebody'll want to thank her. Not me. I'd only make it awkward."
+"Cage or no cage, the winter's salt and oil are in my cellar," she said, before anyone asked. "Came up under the carter's flour, a sack at a time, since the first snow. I bake to a count, and the count's been wrong in our favour all week, and I never asked her why. Somebody'll want to thank her. Not me. I'd only make it awkward."
 
 When Wren went up the tower to warn Sister Pell, there was firewood stacked inside the door to the height of a man, split and dry, a winter's worth, that nobody in the House had carried up the Steps and nobody could account for. Pell heard her out at the rope.
 
@@ -1040,11 +1040,11 @@ He saw Darrow by the tower, and bowed. Then he saw Maelis in the infirmary door,
 
 "Warden," he said to her, pleasantly. "Good afternoon."
 
-Maelis did not answer to it. She looked at him the way she looked at a knee that was going to be trouble, and went back inside.
+Maelis did not answer to it. She looked at him the way she looked at a knee that was going to be trouble, and went back inside. In the kitchen door somebody laughed, once, the way you laugh at a word for frightening children, and stopped, because nobody else had.
 
 `[RESOLVE · DC 14]` d20 **19** +0 resolve +3 proficiency +3 Warden's Eye III +1 chapter 4 Hard-won = **26** — *Success*
 
-The script came up pale behind his palms and he read the man all the way down. He was not guessing at the word; he had said it the way a man says a name he has carried a long way to say. And twice, while the court stood listening, his eyes went along the faces at the hall door, looking for one face the way you look for a man you have paid, and did not find it, and were not troubled. The almoner, then. He still thought the almoner was his. Tonight, with the bell silent, a man of the House would open a door for him, and then everyone would know whose man he had been. That was the lever. It had always been the lever.
+The script came up pale behind his palms and he read the man all the way down. Marrant was not guessing at the word; he had said it the way a man says a name he has carried a long way to say. And twice, while the court stood listening, his eyes went along the faces at the hall door, looking for one face the way you look for a man you have paid, and did not find it, and were not troubled. The almoner, then. He still thought the almoner was his. Tonight, with the bell silent, a man of the House would open a door for him, and then everyone would know whose man he had been. That was the lever. It had always been the lever.
 
 The censer swung from his fist and smoked at the cold, and for the first time Darrow looked at the iron and not the smoke. It was black. Not the black of a pot: the black of the sliver in the wall under the row, that took the light and gave none back.
 
@@ -1058,7 +1058,7 @@ The chair stood where the stair narrowed and turned, with a slit window over it 
 
 Old Mercy began at dusk.
 
-One stroke. The bronze went out over the court and the valley, and the second did not come. Above him the rope ran loose through its box with a sound like a sail tearing, and Wren said Pell's name twice, sharply, not counting anything. Fifty years of rope had opened the two lines across the old woman's palms at the last bell of the day, and the rope had gone out of them, and she had gone off the box with it.
+One stroke. The bronze went out over the court and the valley, and the second did not come. Above him the rope ran loose through its box with a sound like a sail tearing, and Wren said Pell's name twice, sharply, not counting anything. Fifty years of rope had opened the two lines across the old woman's palms on that first stroke, and the rope had torn out of her hands, and she had fallen with it.
 
 Then the door below was full of grey.
 
@@ -1070,11 +1070,13 @@ The first came up the turn fast, a big man with his eyes on the ladder, and reac
 `[INSPIRATION]` 2 → 1 · cast again
 `[MIGHT · DC 14]` d20 **9** +1 might +3 proficiency +2 The Seated Blade II +1 chapter 4 Hard-won = **16** — *Success*
 
-He had it by the end, and the Captain's fingers did not know they had lost it; and then the wrist did, and the shoulder, and the shoulder did not let go. Darrow took the pull and kept it. A blade held is a blade not swinging. He leaned into the bind from the chair and the big man leaned back against it on the narrow stair, and the stick between them did not move, and neither did they.
+The big man got a hand on the end of it, and the Captain's fingers did not know they had lost it; and then the wrist did, and the shoulder, and the shoulder did not let go. Darrow took the pull and kept it. A blade held is a blade not swinging. He leaned into the bind from the chair and the big man leaned back against it on the narrow stair, and the stick between them did not move, and neither did they.
 
 The second tried to come past on the rail side. The rail was older than the House's oldest Mender. It went with a crack, and he went with it, over and down into the dark of the stairwell, and landed with a sound like a cart being unloaded, in the firewood that nobody had carried up.
 
 He swore, at length, from among it. He lived.
+
+Below the kennel wall the lymer began to bay, and stopped all at once, the way a hound stops when something at the bars has answered it.
 
 The light in the slit window was going. Above, the rope hung still; Wren had left it and was on the ladder to the loft, slow, one rung, then nothing, then one. The bell had no voice, and every breath it had none was a breath of sanctuary running out of the House, and he knew how many there were left better than he wanted to. He had only to stand. Stand, step past the man in the bind, and go up after her.
 
@@ -1094,7 +1096,7 @@ On the gate wall, against what was left of the west, stood a carter with an ox-b
 
 ---
 
-When it was done Marrant came to the tower door. He did not try to pass Hollis's chair. He held up a paper with a red seal, and spoke to the court, because there was always a court.
+When it was done Marrant came to the tower door. He did not try to pass Hollis's chair. He held up his writ, and spoke to the court, because there was always a court.
 
 "Darrow of Edgemoor. Captain of the Ninth." He said it pleasantly. "By the Crown's writ."
 
@@ -1104,7 +1106,7 @@ The Prior came across the flags in the dark with the House behind her.
 
 "Thank you, Mother." He folded the writ, and bowed to her, a little. "For your candour. And tell the almoner I'm grateful. He'll know for what."
 
-Darrow, on his chair on the turn, said nothing at all.
+Somewhere in the House behind the Prior someone said the almoner's name, low, and then nobody said anything. Darrow, on his chair on the turn, said nothing either.
 
 Marrant stepped out over the beech leg into the court. Hollis shifted it, by about an inch. The flags were glazed with the day's meltwater gone to ice, and the Confessor went down on one knee on them, hard, with the censer swinging.
 
@@ -1113,6 +1115,8 @@ Marrant stepped out over the beech leg into the court. Hollis shifted it, by abo
 Marrant got up. He went out to the bars with his writ in his fist and a limp he had not brought, and his men after him, the one from the woodpile last; and from the kennel wall Ash watched the lymer go down the path behind them, and did not make a sound.
 
 Wren came down the ladder with her hands shaking and Pell's blood on the left one, and sat on the step above the chair, and did not count anything for a long time. Maelis was already up with Pell at the rope. Pell, from up there, could be heard telling her that the clapper had been struck early on every stroke but the last.
+
+"If he goes down in peace at dawn, the law says the House rings him down the Steps," said the Prior, from the foot of the stair. "And a man this House has rung down can't lawfully climb them against it again." She looked up the stair at the Captain on his chair. "Pell can't ring it."
 
 Down on the lower terrace the four fires were being built up, not put out. Wren said the banners were at the foot of the Steps; you could see their lights. At dawn the grey cloaks would go down to meet them, and whatever rode under that banner would come up.
 
