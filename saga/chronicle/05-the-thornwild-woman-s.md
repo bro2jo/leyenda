@@ -105,6 +105,7 @@ Rae looked at the fires for a long time. Then she pointed with the goad at the b
 "That's my uncle's," she said. "He'll be pouring for them."
 
 > ⟦ THE RECKONING ⟧
+> XP 2,708 → 2,793
 > Ember Steady → Bright
 
 ### Between — Across the Water
