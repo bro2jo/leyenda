@@ -150,7 +150,8 @@
           "at": "book1:beat5",
           "weight": "scene",
           "what": "The Prior refuses the writ for a named man, not for a list: at Old Mercy, Marrant demands the Captain of the Ninth by name, and the House knows whose name it is keeping",
-          "status": "pending"
+          "status": "fired@ch04:climax",
+          "evidence": "You'll not have a name off it either. Not his. This House knows whose name it is keeping."
         },
         {
           "id": "c01.5b",
@@ -451,13 +452,14 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch03:between-1",
             "ch03:s5",
             "ch04:s2",
             "ch04:between-1",
-            "ch04:s7"
+            "ch04:s7",
+            "ch04:climax"
           ]
         }
       ]
@@ -907,10 +909,11 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch04:between-1",
-            "ch04:s7"
+            "ch04:s7",
+            "ch04:climax"
           ]
         }
       ]
@@ -1054,7 +1057,8 @@
           "at": "ch04:climax",
           "weight": "scene",
           "what": "The false letter's fate, by the week's tier (the arc's Downstream for the almoner's beat, option 3): believed, and the Confessor moves later and a man short; or caught, and the almoner is lost to the House. The climax's second entry sets the flag the arc names",
-          "status": "pending"
+          "status": "fired@ch04:climax",
+          "evidence": "He believed it. The letter. He sat on his hands a whole night for it, and sent a man to say so."
         }
       ],
       "declined": [
@@ -1230,12 +1234,37 @@
           "fits": "present.maelis || place.saint_ysoldes",
           "priority": 1,
           "valid_until": "book1",
-          "status": "pending",
+          "status": "fired@ch04:climax",
           "offered": 2,
           "offered_at": [
             "ch04:between-10",
             "ch04:between-9"
-          ]
+          ],
+          "evidence": "Darrow had his hands in the upper pool to the wrist, as he had been told"
+        }
+      ]
+    },
+    {
+      "id": "c04.13",
+      "made": {
+        "chapter": 4,
+        "scene": "climax",
+        "date": "2026-11-01"
+      },
+      "chose": "Let the Confessor go on believing the almoner's letter: kept the almoner in the House and said nothing when the Confessor sent him thanks",
+      "now": {
+        "flags": {
+          "anselm_double": true
+        }
+      },
+      "due": [
+        {
+          "id": "c04.13a",
+          "when": "ch05",
+          "at": "ch05",
+          "weight": "scene",
+          "what": "Downstream of `anselm_double` (b1.5): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b1.5`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
         }
       ]
     }

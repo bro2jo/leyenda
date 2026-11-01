@@ -32,7 +32,7 @@
   },
   "last_seen_doing": "Stood at the wall with the stores key while Wren sent his letter down, and did not come nearer; shut his eyes once when it was read at the bottom.",
   "now": "At the wall with the key, his letter gone down and read at the winch-house.",
-  "story_so_far": "",
+  "story_so_far": "The almoner confessed he carried the stone up in his satchel for his sister's sake. He wrote a letter to her in his own hand with every word explained to him, and the Confessor, believing it, sent him thanks.",
   "quote": null,
   "known_facts": [
     {
@@ -292,6 +292,11 @@
     {
       "chapter": "04",
       "scene": "7"
+    },
+    {
+      "chapter": "04",
+      "scene": "climax",
+      "mention": true
     }
   ]
 }

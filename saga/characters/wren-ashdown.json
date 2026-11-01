@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-7"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Called the Captain to the wall-walk with Pell's glass and showed him the banners and the packing camp; put the almoner's letter in the satchel herself, hung it on the cage and rang the cant for a letter, and wrote down that it was inspected at the bottom; refused to be sent to the hall: anywhere but away from the rope; took the tower with Pell, and wrote it down with a steady hand; stood by Pell at the rope at dusk.",
-  "now": "In the bell tower beside Sister Pell at the rope, where the window can see the court. She has refused to be sent anywhere but the rope.",
-  "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
+  "last_seen_doing": "Counted the fires at dawn and read the letter believed; warned Pell; climbed to the bell-loft when the rope ran loose, counting the rungs aloud, and rang Old Mercy by the clapper on the last of the light.",
+  "now": "Sitting on the step above the Captain's chair with Pell's blood on her hand, not counting.",
+  "story_so_far": "She caught the hair at the gate, counted the Confessor's fires through Pell's glass, and sent the almoner's letter down the cage herself. She refused to be sent anywhere but the rope, and when the rope ran loose she climbed to the loft and rang Old Mercy by hand.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -567,6 +567,18 @@
       "chapter": "04",
       "scene": "7",
       "evidence": "\"A day and a bit. They'll camp on the road tonight and be at the foot of the Steps tomorrow by dark.\""
+    },
+    {
+      "fact": "She rang Old Mercy by hand, on the clapper in the loft, on the last of the light.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "A hand on the clapper itself, in the loft, ragged"
+    },
+    {
+      "fact": "She counted four fires at dawn: one man had ridden toward Calden in the night.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "One rode in the night. Down, toward Calden"
     }
   ],
   "relationships": [
@@ -796,6 +808,10 @@
     {
       "chapter": "04",
       "scene": "7"
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     }
   ]
 }

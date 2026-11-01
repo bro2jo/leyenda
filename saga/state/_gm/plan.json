@@ -5,7 +5,7 @@
     "chapter": 4,
     "beat": "b1.5",
     "next_scene": 8,
-    "stage": "scene",
+    "stage": "climax",
     "last_written": "ch04:s7",
     "rank_on_page": "Kindled"
   },
@@ -300,9 +300,9 @@
         3,
         4
       ],
-      "road": null,
+      "road": "main",
       "override": null,
-      "transition_chapter": null
+      "transition_chapter": 4
     }
   },
   "flags": {
@@ -338,7 +338,7 @@
     "wren_spied": false,
     "stair_by_wren": false,
     "stair_by_prior": false,
-    "anselm_double": false,
+    "anselm_double": true,
     "bell_rung_for_marrant": false,
     "road_east": false,
     "vane_messaged": false,
@@ -449,5 +449,17 @@
       "bound": "2026-10-29"
     }
   ],
-  "open_choice": null
+  "open_choice": {
+    "chapter": 4,
+    "scene": "climax",
+    "ask": "What does Darrow do?",
+    "options": [
+      "Go down to the lower terrace at dawn and tell Marrant, before his men, what the Reckoning showed him.",
+      "Let him go, and ring the bell for him as he leaves, as the law says.",
+      "Have Wren follow his camp down with a lamp and a knife, and the knife is not for show. *[Guile 4]*"
+    ],
+    "default": 2,
+    "opened": "2026-11-01",
+    "carries": 2
+  }
 }

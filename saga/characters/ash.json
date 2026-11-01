@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-7"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Lifted her head from the Captain's boot when he named the kennel bars, and put it down again.",
-  "now": "To go to the kennel bars over the terrace wall, where the lymer bayed.",
-  "story_so_far": "",
+  "last_seen_doing": "Held the kennel wall over the terrace; watched the lymer go down the path behind the grey cloaks without a sound.",
+  "now": "At the kennel wall over the terrace.",
+  "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
   "quote": null,
   "known_facts": [
     {
@@ -81,6 +81,12 @@
       "chapter": "04",
       "scene": "between-10",
       "evidence": "the way she lay across every door now that had somebody behind it."
+    },
+    {
+      "fact": "She watched the lymer go down behind the grey cloaks and did not make a sound.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "Ash watched the lymer go down the path behind them, and did not make a sound"
     }
   ],
   "relationships": [
@@ -135,6 +141,10 @@
     {
       "chapter": "04",
       "scene": "7"
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     }
   ]
 }

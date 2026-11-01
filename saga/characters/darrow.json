@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-7"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Kept Maelis's order at the upper pool; read the banners on the Holloway through Pell's glass, a day off, and read the camp's packing as a man meaning to move first, at dawn, up; watched the letter go down and be read at the winch-house; set the House's night piece by piece; tried to send Wren to the hall and was refused; had the Knots read and was told sitting; said the lines under the tower at dusk without stopping on the third.",
-  "now": "Under the tower at dusk with the night set and every piece he has placed: himself to sit on the turn of the tower stair with a chair and the stick. He knows the Confessor moves at dawn.",
-  "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
+  "last_seen_doing": "Watched the cage rope cut at dawn; read the Confessor's lever in the court; held the tower stair from a chair in the bind while the bell was silent, and did not stand; had Wren count the rungs; said nothing when the Confessor sent thanks to the almoner.",
+  "now": "On his chair on the turn of the tower stair after Old Mercy rang on the last of the light. The Confessor has gone down with his writ refused, and the banner's lights are at the foot of the Steps.",
+  "story_so_far": "He found the almoner who carried the stone up in his satchel, and chose to use him: a letter in the almoner's own hand, every word told him first. He took a grey hound out of the kennels and named her Ash, learned from Hollis to fight from a chair, and on the day the Confessor cut the cage rope he held the bell-tower stair seated until Wren rang Old Mercy on the last of the light.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -1626,6 +1626,24 @@
       "evidence": "Darrow stood under the tower and said the four lines to the strokes, as he had said them every dusk since he learned them"
     },
     {
+      "fact": "He read that the Confessor still believed the almoner was his man, and that this was his lever.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "He still thought the almoner was his."
+    },
+    {
+      "fact": "He saw that the iron of the Confessor's censer is the black of the sliver in the wall under the row.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "the black of the sliver in the wall under the row, that took the light and gave none back"
+    },
+    {
+      "fact": "He held the tower stair seated, in the bind, against an unarmed man of the Confessor's, and did not stand while the bell was silent.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "A blade held is a blade not swinging."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -1963,6 +1981,10 @@
     {
       "chapter": "04",
       "scene": "7"
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     },
     {
       "chapter": "tale01",

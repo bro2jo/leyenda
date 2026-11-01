@@ -24,13 +24,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "5",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-5"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Stood behind his men's lymer on the terrace path below the kennels, said the hound was learning the House so it would know it again on the road, and thanked the Captain for the name.",
-  "now": "Gone back down the terrace path behind the lymer, with the Prior's answer from the dawn bell.",
-  "story_so_far": "He read the Captain's letter to Aldric at the bars, thanked him for the candour, and sent it down the Steps by one of his men. His fires burn on the lower terrace, and his men have had the House's lamp oil open on its way up.",
+  "last_seen_doing": "Came up unarmed with three men under the law of guests; called the Mender Warden; demanded the Captain of the Ninth by name under the Crown's writ after the bell; sent thanks to the almoner; went down on one knee on the ice at the tower door and left with a limp.",
+  "now": "Gone back down to the lower terrace with the writ refused and a limp, his fires built up, the banner's lights at the foot of the Steps.",
+  "story_so_far": "He camped on the lower terrace, offered two names off his paper for the almoner, and brought a lymer up to learn the House. He believed the almoner's letter, cut the cage rope at dawn, and climbed with three men under the law of guests. When the bell rang he held up the Crown's writ for the Captain by name, was refused, and went down with a limp.",
   "quote": {
     "text": "Bells grow tired.",
     "chapter": "01",
@@ -216,6 +216,30 @@
       "chapter": "04",
       "scene": "5",
       "evidence": "He's learning the House, so he'll know it again on the road."
+    },
+    {
+      "fact": "He called Maelis Warden across the court, and she did not answer to it.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "\"Warden,\" he said to her, pleasantly."
+    },
+    {
+      "fact": "Wren read that he believed the almoner's letter: he waited a night for it and sent a rider toward Calden.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "He believed it. The letter. He sat on his hands a whole night for it, and sent a man to say so."
+    },
+    {
+      "fact": "He held up the Crown's writ for the Captain of the Ninth by name, and the Prior refused it.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "\"Darrow of Edgemoor. Captain of the Ninth.\" He said it pleasantly. \"By the Crown's writ.\""
+    },
+    {
+      "fact": "He went down on one knee on the ice at the tower door and left with a limp.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "a limp he had not brought"
     }
   ],
   "relationships": [
@@ -314,6 +338,10 @@
       "chapter": "04",
       "scene": "7",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     }
   ]
 }

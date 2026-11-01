@@ -366,7 +366,7 @@ Five sheep's knuckles. Throw one up, sweep the rest, catch the one: ones, twos, 
 - "Ysolde climbed it dying. What's your excuse?" (to anyone who stops at the Elbow)
 
 ## saying.lowmarch — Lowmarch proverbs
-- **tier:** common · **spoken:** Prologue (Wend-cold; kneel to that) · **names:** —
+- **tier:** common · **spoken:** Prologue (Wend-cold; kneel to that); ch04:climax · **names:** —
 - **use:** farmers, carters, innkeepers; a glimpse.
 
 - "Wend-cold." (terrible; the river's cold is the measure of all cold)

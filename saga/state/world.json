@@ -131,11 +131,17 @@
         "2026-10-31"
       ],
       "written": "2026-10-31"
+    },
+    {
+      "scene": "climax",
+      "title": "Old Mercy",
+      "covers": [],
+      "written": "2026-11-01"
     }
   ],
   "location": {
     "place": "saint-ysoldes",
-    "detail": "the court under the bell tower at dusk, the night set: Hollis's chair for the tower door, Ash at the kennel bars over the terrace wall, Wren on the rope with Pell, the Captain's chair waiting on the turn of the tower stair",
+    "detail": "the turn of the bell-tower stair, seated, with the court and the tower door below",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "first snow of the year on the Steps",
@@ -145,7 +151,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The eve: the banner that is not grey a day off on the Holloway, the Confessor's camp packing its cart with the censer lit to move first, at dawn, up; the House's night set with what it has, a one-legged man in a door, a dog at the bars, a girl at the rope, and a captain who cannot stand in a chair on the turn of the stair.",
-  "last_beat": "Below the wall, on the lower terrace, the grey cloaks had stopped their packing to listen, and the fires had burned down low, and the lymer lay with its head on its paws. Nobody down there spoke while it rang, or after.",
+  "last_beat": "Down on the lower terrace the four fires were being built up, not put out. At dawn the grey cloaks would go down to meet the banner, and whatever rode under it would come up.",
   "companions": {
     "maelis": {
       "approval": 31,
@@ -297,7 +303,8 @@
     "_about": "One-line 'previously' per chapter file slug, shown at the top of that chapter in the reader. Spoiler-free; only what earlier chapters showed.",
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
-    "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told."
+    "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
+    "04-old-mercy": "Old Mercy: the rope cut at dawn, the bell silenced at dusk, and the stair held from a chair."
   },
-  "last_updated": "2026-10-31"
+  "last_updated": "2026-11-01"
 }

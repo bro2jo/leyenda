@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "7",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-7"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Rang Old Mercy at dusk with Wren beside her at the rope.",
-  "now": "In the bell tower at the rope, Wren beside her, the dusk bell rung.",
-  "story_so_far": "She rings the hours. Her glass on its strap counted the Captain's letter down the Steps and the riders on the road.",
+  "last_seen_doing": "Rang every bell of the day herself so her hands would know the rope; at the first stroke of Old Mercy the lines across her palms opened and she went off the box.",
+  "now": "Hurt, at the rope in the tower with Maelis, telling her the clapper was struck early on every stroke but the last.",
+  "story_so_far": "She rang the hours and Old Mercy through the week, and on the day the rope was cut she rang every bell herself so her hands would know it at dusk. At the first stroke the rope opened her palms and she went off the box; Wren finished the bell.",
   "quote": {
     "text": "Fifty years I've rung the bells. Ask the bell if it's tired.",
     "chapter": "01",
@@ -152,6 +152,18 @@
       "chapter": "04",
       "scene": "7",
       "evidence": "Old Mercy rang at dusk, slow, with the crack in her voice, and Sister Pell rang it"
+    },
+    {
+      "fact": "Warned at dawn, she rang every bell of the day herself so her hands would know the rope at dusk.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "Then I'll ring every bell today myself"
+    },
+    {
+      "fact": "At the first stroke of Old Mercy the rope opened the lines across her palms and she went off the box.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "she had gone off the box with it"
     }
   ],
   "relationships": [
@@ -242,6 +254,10 @@
     {
       "chapter": "04",
       "scene": "7"
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     }
   ]
 }

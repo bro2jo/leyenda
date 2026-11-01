@@ -23,13 +23,13 @@
   },
   "last_seen": {
     "chapter": "04",
-    "scene": "4",
+    "scene": "climax",
     "place": "saint-ysoldes",
-    "anchor": "chronicle/04-old-mercy.html#scene-4"
+    "anchor": "chronicle/04-old-mercy.html#climax"
   },
-  "last_seen_doing": "Came out of the chapel unasked and stood beside the Captain under the tower while he said the verse, then at the bars; told the Confessor the almoner is a brother of the House under the law of guests, older than the Crown's, and that his name is not the Captain's to give; put her own roof under the night's answer; at the cot after the night lamps asked the Captain what the House is for.",
-  "now": "In the chapel doorway with the rain on her coif, having asked the Captain what the House is for. The dawn's answer comes from under her roof, by her own word to the Confessor.",
-  "story_so_far": "She turned a key no Prior before her had turned, three nights running, and asked at the top of the stair only whether the Captain came up on his own leg. When they came up with his hand white she looked, and asked nothing.",
+  "last_seen_doing": "Let the Confessor's party through the bars as guests; refused the Crown's writ for the Captain by name before the court.",
+  "now": "In the court with the House behind her, the writ refused.",
+  "story_so_far": "She put the almoner under the law of guests in front of the court, gave the Confessor her answer at the dawn bell, and on the night of Old Mercy refused his writ for the Captain by name.",
   "quote": {
     "text": "I have never once given a name to a writ. Did you think I would start with yours?",
     "chapter": "02",
@@ -279,6 +279,12 @@
       "chapter": "04",
       "scene": "4",
       "evidence": "\"What is the House for, Captain?\""
+    },
+    {
+      "fact": "She refused the writ for the Captain by name: the House knows whose name it is keeping.",
+      "chapter": "04",
+      "scene": "climax",
+      "evidence": "This House knows whose name it is keeping."
     }
   ],
   "relationships": [
@@ -408,6 +414,10 @@
       "chapter": "04",
       "scene": "between-10",
       "mention": true
+    },
+    {
+      "chapter": "04",
+      "scene": "climax"
     }
   ]
 }
