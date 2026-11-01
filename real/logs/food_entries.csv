@@ -201,3 +201,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-01#10,2026-11-01,,snack,Queso Mama White Queso with diced green chiles,"about 1/2 cup (8 tbsp, 120 g)",280,16,4,24,0,14,2,1000,168,480,0,28,3.2,2,0,0,label,label photo; 4 servings
 2026-11-01#11,2026-11-01,,snack,Siete Grain Free Sea Salt tortilla chips,assumed ~2 oz (~36 chips),260,2,34,14,6,2,0,280,100,20,1,30,0.3,0,0,0,label,"label photo; amount not given, 2 servings assumed: asked"
 2026-11-01#12,2026-11-01,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,label,"label photo; vit D3 1,000 IU"
+2026-11-01#13,2026-11-01,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
