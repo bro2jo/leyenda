@@ -55,7 +55,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | his sport set-up, a throwing clearance | `/sport` |
 | a picture from the Wardrobe's Forge with its `Look:` line | file it as a look: the picture in `saga/art/looks/`, its entry in `saga/state/looks.json` (`saga/art/README.md` → looks), then ship |
 
-Every log reply is Ledger first, Chronicle after: the format, the level-up block and the glimpse are in `.claude/skills/log/reply.md`. **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking).
+Every log reply is Ledger first, Chronicle after: the format, the level-up block and the glimpse are in `.claude/skills/log/reply.md`. **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking; the Wardrobe's greyed pieces name what opens them, at his request).
 
 **Approval and Bearing are never edited by hand:** only `saga.py add`, `saga.py choose`, `saga.py bearing` and the engine's own entries (an invitation he let pass, a promise that lapsed) move them; regard moves only for who saw a thing or heard of it (`--witnessed`, `--learned`). The epithet is given only at a climax or a Choice block that speaks it (`now` prints `EPITHET PENDING` until then). **Neither are the projections:** `saga/state/world.json`, the derived fields of `saga/characters/*.json`, `saga/state/codex.md` and the top of `saga/NOW.md` are rebuilt from the records by `saga.py record` (`check` refuses a stale one).
 

@@ -2424,20 +2424,24 @@ class Site:
                 if oid in known or not o.get("name") or not o.get("prompt"):
                     problem(f"{where}: {oid} is listed twice, or has no name or prompt")
                 known.add(oid)
-                if (set(u) - {"level", "art", "rank", "knot", "page"} or ("art" in u and u["art"] not in arts) or ("rank" in u and "art" not in u)
+                if (set(u) - {"level", "art", "rank", "knot", "page"} or len(set(u) & {"level", "art", "knot", "page"}) > 1
+                        or ("art" in u and u["art"] not in arts) or ("rank" in u and "art" not in u)
                         or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1)) or ("level" in u and not isinstance(u["level"], int))):
-                    problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u}")
+                    problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u} (one of level, art with rank, knot or page)")
                 if "page" in u and u["page"] not in on_page:
                     problem(f"{where}: {oid} opens on {u['page']}, which is not a scene on the page (a piece the story has not shown stays out)")
                 o["_open"] = not u or "page" in u or oid in earned
-                o["_lock"] = ("" if o["_open"] else f'Level {u["level"]}' if "level" in u else f'Knot {roman(u["knot"])}' if "knot" in u
-                              else f'{arts.get(u.get("art"), "")} {roman(u.get("rank", 1))}')
-                o["_from"] = ("There from the start" if not u else f'Opened at Level {u["level"]}' if "level" in u
-                              else f'Opened by {mid(knots.get(u["knot"], ""))}' if "knot" in u else f'Opened by {mid(arts.get(u.get("art"), ""))} {roman(u.get("rank", 1))}'
-                              if "art" in u else "From the story: ")
+                what = (f'Level {u["level"]}' if "level" in u else mid(knots.get(u["knot"], "")) if "knot" in u
+                        else f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}' if "art" in u else "")
+                o["_lock"] = "" if o["_open"] else what  # the greyed menu entry: "Running · the Knot of the Road"
+                o["_from"] = ("There from the start" if not u else "From the story: " if "page" in u
+                              else ("Opened at " if "level" in u else "Opened by ") + what)
                 o["_story"] = on_page.get(u.get("page"))  # (scene, href) for a piece the story showed
-                if o.get("reference") and o["_open"]:  # a locked piece's reference is published when it opens
-                    o["_ref"] = self.reference(o["reference"], f"{where}: {oid}.reference")
+                ref = o.get("reference")
+                if ref and (not all(ref.get(k) for k in ("label", "image", "file", "use")) or not (ART / str(ref["image"])).is_file()):
+                    problem(f"{where}: {oid}.reference needs label, image (a picture under saga/art/), file and use")
+                elif ref and o["_open"]:  # checked now, published only once the piece is open
+                    o["_ref"] = self.reference(ref, f"{where}: {oid}.reference")
             if not any(o["_open"] for o in cat["options"]):
                 problem(f"{where}: {cat['id']} has no piece open yet; give it one open from the start, so the Forge always has one to show")
         if earned - known:
@@ -2445,13 +2449,14 @@ class Site:
         w["_refs"] = [r for r in (self.reference(r, f"{where}: references[{i}]") for i, r in enumerate(w.get("references") or [])) if r]
         self.wardrobe = w
         pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
-        stems = {Path(str(r.get("image"))).stem for r in w.get("references") or [] if str(r.get("image")).startswith("looks/")}
+        refs = list(w.get("references") or []) + [o["reference"] for c in w["categories"] for o in c["options"] if o.get("reference")]
+        stems = {Path(str(r.get("image"))).stem for r in refs if str(r.get("image")).startswith("looks/")}
         path = STATE / "looks.json"
         for i, lk in enumerate(load_json(path).get("looks", []) if path.exists() else []):
             lw = f"saga/state/looks.json: looks[{i}]"
             stems.add(Path(str(lk.get("image"))).stem)
-            if any(not lk.get(k) for k in ("id", "name", "made", "image", "alt", "values")):
-                problem(f"{lw}: a look needs id, name, made, image, alt and values")
+            if any(not lk.get(k) for k in ("id", "name", "made", "image", "alt", "values")) or not isinstance(lk["values"], dict):
+                problem(f"{lw}: a look needs id, name, made, image, alt and values (a mapping: category → piece id, from the Look line)")
                 continue
             bad = [f"{c}={v}" for c, v in lk["values"].items() if v not in pieces.get(c, {})] + [f"{c} missing" for c in pieces if c not in lk["values"]]
             if bad:
@@ -2476,8 +2481,9 @@ class Site:
         cur = self.looks[0] if self.looks else None
         start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_open"]), "") for c in w["categories"]}
         hide = "" if cur else " hidden"
-        stage = (f'<a id="forge-zoom" href="{rel}{cur["_path"] if cur else ""}" data-zoom{hide}><img id="forge-img" src="{rel}{cur["_md"] if cur else ""}" '
-                 f'alt="{esc(cur["alt"]) if cur else ""}" decoding="async"></a>'
+        href = f' href="{rel}{cur["_path"]}"' if cur else ""  # no look yet: nothing to fetch
+        img = f' src="{rel}{cur["_md"]}" alt="{esc(cur["alt"])}"' if cur else ' alt=""'
+        stage = (f'<a id="forge-zoom"{href} data-zoom{hide}><img id="forge-img"{img} decoding="async"></a>'
                  f'<div class="forge-empty" id="forge-empty"{"" if not cur else " hidden"}><span class="glyph" aria-hidden="true">✧</span>'
                  '<b>Not painted yet</b><span>Every piece is chosen; the prompt below will paint it.</span></div>')
         plate = (f'<section class="plate wardrobe-plate{self.metal(d["level"])}"><p class="lbl"><a href="index.html">Ser Darrow of Edgemoor</a></p>'
@@ -2498,10 +2504,9 @@ class Site:
                 n_open += o["_open"]
                 lock = "" if o["_open"] else f' · {esc(o["_lock"])}'
                 opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_open"] else " disabled"}>{esc(o["name"])}{lock}</option>')
-            chosen = next((o for o in c["options"] if o["id"] == start.get(c["id"])), c["options"][0])
             fields.append(f'<div class="forge-field"><label for="forge-{esc(c["id"])}">{esc(c["label"])}</label>'
                           f'<select id="forge-{esc(c["id"])}" data-cat="{esc(c["id"])}">{"".join(opts)}</select>'
-                          f'<span class="forge-src" data-from="{esc(c["id"])}">{self.piece_source(chosen, rel)}</span></div>')
+                          f'<span class="forge-src" data-from="{esc(c["id"])}"></span></div>')
         forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
                     f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it.</p><div class="forge-grid">{"".join(fields)}</div>'
                     '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
@@ -2533,13 +2538,6 @@ class Site:
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
                 f'<script src="{rel}forge.js?v={asset_v("forge")}" defer></script>')
         self.pages["darrow/wardrobe.html"] = shell("The Wardrobe", body, rel, "Darrow", "wardrobe-page", desc="Darrow's looks, and the Forge that paints new ones.")
-
-    @staticmethod
-    def piece_source(o, rel):
-        """Where a piece came from, under its menu: the start, a level, an Art, a Knot, or the scene that showed it (a link)."""
-        if o.get("_story"):
-            return f'{esc(o["_from"])}<a href="{rel}{o["_story"][1]}">{esc(o["_story"][0])}</a>'
-        return esc(o["_from"])
 
     @staticmethod
     def ref_card(r, rel, for_piece="", n=0):
@@ -4027,7 +4025,7 @@ FORGE_JS = r"""/* THE UNKNEELING — the Forge (darrow/wardrobe.html). Choose a 
 "use strict";
 var dataEl = document.getElementById("forge-data");
 if (!dataEl) { return; }
-var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", state = {};
+var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", state = {}, base;
 var $ = function(id){ return document.getElementById(id); };
 var pieces = {};
 D.cats.forEach(function(c){ pieces[c.id] = {}; c.options.forEach(function(o){ pieces[c.id][o.id] = o; }); });
@@ -4038,6 +4036,7 @@ var wear = function(v){
 };
 var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
 var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
+base = keyOf(D.start, "");  /* his current look: a remembered choice holds only while it is still the newest */
 var selects = document.querySelectorAll("select[data-cat]"), notes = $("forge-details");
 var tiles = document.querySelectorAll(".look-tile[data-look]");
 
@@ -4074,7 +4073,7 @@ var render = function(){
     .split("{details}").join(state.details.trim() || "none");
   $("forge-line").textContent = "Look: " + D.cats.map(function(c){ return c.id + "=" + state[c.id]; }).join(" ")
     + (state.details.trim() ? " · touches: " + state.details.trim() : "");
-  try { localStorage.setItem(SAVE, JSON.stringify(state)); } catch (e) { /* the choice is only a convenience */ }
+  try { localStorage.setItem(SAVE, JSON.stringify({base: base, state: state})); } catch (e) { /* the choice is only a convenience */ }
 };
 
 var copy = function(text, btn, fallback){
@@ -4087,7 +4086,7 @@ var copy = function(text, btn, fallback){
 };
 
 wear(D.start);
-try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved) { wear(saved); } } catch (e) { /* start from his look */ }
+try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved && saved.base === base) { wear(saved.state); } } catch (e) { /* start from his look */ }
 if (notes) { notes.value = state.details; notes.addEventListener("input", function(){ state.details = notes.value; render(); }); }
 Array.prototype.forEach.call(selects, function(s){
   s.addEventListener("change", function(){ state[s.getAttribute("data-cat")] = s.value; render(); });
