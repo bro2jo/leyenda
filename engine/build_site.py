@@ -1386,10 +1386,20 @@ class Site:
 
     @staticmethod
     def stray_pictures(folder, stems, named_for):
-        """A file in saga/art/<folder>/ whose name is none of stems is a typo: the build fails and says what it should be."""
+        """Every file in saga/art/<folder>/ must be a picture (.webp, .png, .jpg) named for one of stems, one per name; the
+        build fails on anything else and says what is wrong. Hidden files (.DS_Store) and folders are let be."""
+        seen = {}
         for p in sorted((ART / folder).glob("*")):
-            if p.stem not in stems:
+            if p.name.startswith(".") or not p.is_file():
+                continue
+            if p.suffix.lower() not in IMAGE_TYPES:
+                problem(f"saga/art/{folder}/{p.name}: a picture must be one of {', '.join(sorted(IMAGE_TYPES))}")
+            elif p.stem not in stems:
                 problem(f"saga/art/{folder}/{p.name}: '{p.stem}' is not {named_for}")
+            elif p.stem in seen:
+                problem(f"saga/art/{folder}/{p.name}: {seen[p.stem]} is already the picture for '{p.stem}'; keep one")
+            else:
+                seen[p.stem] = p.name
 
     def avatar(self, c, rel, size, cls=""):
         """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none. With a
@@ -2256,7 +2266,7 @@ class Site:
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>')
         fig = self.rank_figures(rel)
         if fig:
-            head = f'<div class="reck-top{self.metal(d["level"])}">{fig}<div class="reck">{head}</div></div>'
+            head = f'<div class="reck-top{self.metal(d["level"])}">{fig}<div class="reck-head">{head}</div></div>'
         inner = head + f'<div class="streaks">{"".join(tiles)}</div>'
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
@@ -3084,8 +3094,9 @@ html.mast-away .mast{transform:translateY(-100%)}
 .crest{width:86px;height:auto;display:block}
 .cr-shield{fill:var(--plate);stroke:var(--metal);stroke-width:2}
 .cr-inner{fill:none;stroke:var(--metal-dim);stroke-width:1}
-/* the rank's metal (METALS): brass by default, so anything with no level read keeps the house colour */
+/* the rank's metal (METALS, ART_METALS); brass by default, so anything with no level read keeps the house colour */
 .metal-iron{--metal:#8E949C;--metal-dim:#555B63}
+.metal-brass{--metal:var(--brass);--metal-dim:var(--brass-dim)}
 .metal-steel{--metal:#9DB4CB;--metal-dim:#566C82}
 .metal-silver{--metal:#E4E8EE;--metal-dim:#A2AAB4}
 .metal-ember{--metal:var(--ember);--metal-dim:#8E3B26}
@@ -3246,7 +3257,8 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .reck{display:grid;gap:12px}
 /* Darrow's figure by rank (rank_figures) beside the head of the Reckoning: a tall frame in the swipe strip of the portraits */
 .reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
-.portrait.tall .pf-strip{aspect-ratio:3/4}
+.reck-head{display:grid;gap:12px;min-width:0}
+.portrait.tall .pf-strip{aspect-ratio:3/4} .portrait.tall .pf-strip a{aspect-ratio:auto}
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
