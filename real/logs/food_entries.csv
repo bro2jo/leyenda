@@ -205,3 +205,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-01#14,2026-11-01,,snack,Large apple + organic peanut butter (large helping),"1 apple + ~4 tbsp (""a large scoop or two"")",495,19,43,33,9,5.3,25,200,620,50,1.9,110,2,8,0,0,library+estimate,"his usual, scaled to ~4 tbsp as on 10/11; apple assumed large"
 2026-11-02#1,2026-11-02,,breakfast,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,library row (label 10/29); flavour assumed
 2026-11-02#2,2026-11-02,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
+2026-11-02#3,2026-11-02,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his usual lunch bowl

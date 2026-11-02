@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-30 · overheard · From the stair, two novices carrying a bench between them and losing the argument about it: Your end's lower. — It's the stair that's lower. — Then lift the stair.
 - 2026-10-30 · ledger · From Wren's ledger, under the week's linen: Sheets sent down to the wash, 41. Sheets come back, 41. Sheets come back cleaner than they went, 40; the forty-first is being looked into.
 - 2026-10-30 · body · His feet have stopped arguing with the floor; on the long walk to the refectory he forgets, for a whole flight of stairs, to listen to the left one.
 - 2026-10-30 · saying · A novice comes up the row with the afternoon pot and goes straight past the near cots without a glance, because the rule is older than he is: Feed the far end first. The near cots, who know the rule, wait.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-01 · weather · Fog comes off the tarn at dusk and settles on the drove road as if it has paid for the spot. Hollis tells it to move along. It does not.
 - 2026-11-01 · house · Wren has begun a tally of every dog in the Lowmarch, strictly for the ledger. Ash appears in it twice: once as hound, ours, and once, in smaller letters, as hound, thief of cheese.
 - 2026-11-02 · overheard · At first light, through the hut wall: Hollis telling the kettle that it heard nothing last night, nothing about any goat. Darrow, up and laced before anyone asked, laughs before he can stop himself.
+- 2026-11-02 · saying · Rae says the lay brothers' line, *Up is a prayer, down is a bill*, to any cart wheel that sticks, as if the wheel had done the Steps itself. Darrow has started saying it with her. The wheel, she claims, prefers him.
