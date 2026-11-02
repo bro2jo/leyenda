@@ -84,6 +84,29 @@ if (zoomLinks.length && typeof HTMLDialogElement === "function") {
     });
   });
 }
+/* earlier portraits: a character's frame swipes between their portraits (newest first) and the tabs under it jump to
+   one and follow the swipe. Without this file the frame still swipes and the tabs stay hidden. */
+Array.prototype.forEach.call(document.querySelectorAll("figure[data-pf]"), function(fig){
+  var strip = fig.querySelector(".pf-strip"), box = fig.querySelector(".pf-tabs");
+  if (!strip || !box) { return; }
+  var tabs = box.querySelectorAll("button[data-pf-i]"), timer = null;
+  var mark = function(i){
+    Array.prototype.forEach.call(tabs, function(b){ b.setAttribute("aria-pressed", String(+b.getAttribute("data-pf-i") === i)); });
+  };
+  box.hidden = false;
+  strip.addEventListener("scroll", function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ mark(Math.round(strip.scrollLeft / Math.max(1, strip.clientWidth))); }, 60);
+  }, {passive: true});
+  box.addEventListener("click", function(e){
+    var b = e.target.closest("button[data-pf-i]");
+    if (!b) { return; }
+    var i = +b.getAttribute("data-pf-i"), x = i * strip.clientWidth;
+    var still = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if (strip.scrollTo) { strip.scrollTo({left: x, behavior: still ? "auto" : "smooth"}); } else { strip.scrollLeft = x; }
+    mark(i);
+  });
+});
 /* name previews: a linked name in the story (data-pv-t) shows a small card with its picture, if it has one, and one
    line. Hover or keyboard focus on a desktop; on a touch screen the first tap shows the card and the second (or Open)
    follows the link. Without this file every name is a plain link. */
@@ -116,7 +139,8 @@ if (pvLinks.length) {
     if (src) {
       var box = el("span", "pv-img " + kind), img = el("img");
       img.src = src; img.alt = "";
-      if (a.getAttribute("data-pv-f")) { img.style.objectPosition = a.getAttribute("data-pv-f"); }
+      if (a.getAttribute("data-pv-z")) { img.style.cssText = a.getAttribute("data-pv-z"); }
+      else if (a.getAttribute("data-pv-f")) { img.style.objectPosition = a.getAttribute("data-pv-f"); }
       img.addEventListener("load", function(){ if (cur === a) { place(a); } });
       box.appendChild(img); card.appendChild(box);
     }

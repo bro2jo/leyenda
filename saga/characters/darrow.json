@@ -15,8 +15,18 @@
     "mark": "knot"
   },
   "appearance": "Thirty-two, tall and rangy, with short dark hair that won't lie flat, a few days of dark stubble and grey-green eyes in a lean, weathered face. His nose was broken once and set a little crooked, with a faint scar across the bridge; his smile comes out dry and lopsided, and his laugh carries the length of a hall. At Saint Ysolde's he wears a plain linen infirmary shirt, often with a grey wool blanket round his shoulders, and gets up the way he does everything now: the good leg first, then the bad one, then the slow transfer, as if crossing a frozen pond. This week he walks the length of the hall without the stick, and he does not limp.",
-  "portrait": "characters/darrow.jpg",
-  "portrait_alt": "Portrait of Ser Darrow: a man in his thirties with short dark hair, stubble, a nose once broken and set a little crooked, and a dry half-smile, a grey wool blanket around his shoulders over a linen shirt, in a stone infirmary hall with a fire on one side and a snowy mountain window on the other.",
+  "portrait": "characters/darrow-book2.jpg",
+  "portrait_alt": "Portrait of Ser Darrow in Book II: laughing as he walks a snowy road beside an ox, one hand on its wooden yoke and a walking stick in the other, a grey wool blanket worn round his shoulders like a cloak over a linen shirt, a great snow-covered mountain behind.",
+  "portrait_focus": "52% 22%",
+  "portrait_zoom": 2.5,
+  "portrait_label": "Book II",
+  "portraits_earlier": [
+    {
+      "label": "Book I",
+      "portrait": "characters/darrow.jpg",
+      "portrait_alt": "Portrait of Ser Darrow: a man in his thirties with short dark hair, stubble, a nose once broken and set a little crooked, and a dry half-smile, a grey wool blanket around his shoulders over a linen shirt, in a stone infirmary hall with a fire on one side and a snowy mountain window on the other."
+    }
+  ],
   "first_seen": {
     "chapter": "00",
     "scene": "I",

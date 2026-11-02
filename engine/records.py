@@ -57,7 +57,7 @@ KEEPSAKE_MARKS = ("knot", "horn", "needle", "pencil", "spyglass", "key", "stone"
                   "bell", "hand", "word", "cord", "coin")
 CHAR_DERIVED = ("first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts", "appearances")
 CHAR_ORDER = ("id", "name", "aliases", "epithet", "tier", "faction", "status", "sigil", "appearance", "portrait", "portrait_alt",
-              "portrait_focus", "first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts",
+              "portrait_focus", "portrait_zoom", "portrait_label", "portraits_earlier", "first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts",
               "relationships", "reckoning", "appearances")
 WORLD_ORDER = ("_about", "book", "book_title", "chapter", "chapter_title", "chapter_file", "scenes", "location", "season",
                "current_quest", "current_struggle", "last_beat", "companions", "choices", "inventory", "keepsakes", "tales", "recaps",

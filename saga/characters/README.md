@@ -2,7 +2,7 @@
 
 One JSON file per character who has **appeared or been named on the page** in `saga/chronicle/`. The site build (`engine/build_site.py`) renders these. Darrow has a file too, for everything except his numbers; his Reckoning comes from `saga/state/darrow.json` and is never hand-edited.
 
-**Base by hand, the rest derived.** The fields you write are the person's base: `id`, `name`, `aliases`, `epithet`, `tier`, `faction`, `status` (until an event changes it), `sigil`, `appearance`, `portrait`, `portrait_alt`, `portrait_focus`, `relationships`, `reckoning`, and a first `quote`. Everything that follows the page (`first_seen`, `last_seen`, `last_seen_doing`, `now`, `story_so_far`, `quote` once the page gave a better one, `known_facts`, `appearances`) is rebuilt by the engine from the records (`saga/state/events/`) every time a block is recorded (`saga.py record`): a scene's record lists each person present with what they did, their `now`, and the new facts with their evidence, and the file follows. Never edit a derived field by hand: `check` refuses a stale file and `saga.py project` rewrites it. A new person: create the file with the base fields and empty derived ones (`"known_facts": []`, `"appearances": []`, `"first_seen"`/`"last_seen"` as the block that introduces them), then record the block that puts them on the page.
+**Base by hand, the rest derived.** The fields you write are the person's base: `id`, `name`, `aliases`, `epithet`, `tier`, `faction`, `status` (until an event changes it), `sigil`, `appearance`, `portrait`, `portrait_alt`, `portrait_focus`, `portrait_zoom`, `portrait_label`, `portraits_earlier`, `relationships`, `reckoning`, and a first `quote`. Everything that follows the page (`first_seen`, `last_seen`, `last_seen_doing`, `now`, `story_so_far`, `quote` once the page gave a better one, `known_facts`, `appearances`) is rebuilt by the engine from the records (`saga/state/events/`) every time a block is recorded (`saga.py record`): a scene's record lists each person present with what they did, their `now`, and the new facts with their evidence, and the file follows. Never edit a derived field by hand: `check` refuses a stale file and `saga.py project` rewrites it. A new person: create the file with the base fields and empty derived ones (`"known_facts": []`, `"appearances": []`, `"first_seen"`/`"last_seen"` as the block that introduces them), then record the block that puts them on the page.
 
 ## Evidence rules (these are hard rules; the build and the audit enforce them)
 
@@ -30,6 +30,11 @@ One JSON file per character who has **appeared or been named on the page** in `s
   "portrait": "characters/maelis-vorne.jpg",   // optional: a picture he supplies, path under saga/art/ (see saga/art/README.md)
   "portrait_alt": "What the portrait shows, for screen readers.",
   "portrait_focus": "50% 30%",                // optional: the centre of the square crop (default 50% 30%)
+  "portrait_zoom": 2.4,                       // optional, 1-4: the small round copies (avatars, name previews) zoom in on portrait_focus; for a picture where the face is small
+  "portrait_label": "Book II",                // optional: the current portrait's tab when there are earlier ones (default "Now")
+  "portraits_earlier": [                      // optional: her look in an earlier Book, newest first; the page's frame swipes back to them
+    {"label": "Book I", "portrait": "characters/maelis-vorne.jpg", "portrait_alt": "What it shows.", "portrait_focus": "50% 30%"}
+  ],
   "first_seen": {"chapter": "00", "scene": "II", "place": "saint-ysoldes", "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"},
   "last_seen":  {"chapter": "01", "scene": "1",  "place": "saint-ysoldes", "anchor": "chronicle/01-the-confessor-at-the-steps.html#scene-1"},
   "last_seen_doing": "One sentence: what they were doing the last time they were on the page.",

@@ -10,7 +10,9 @@ Reads (and nothing else):
                                            or factions.json names one (image, image_alt, image_caption, image_focus; only
                                            for an entry already on the page), or codex_art.json names one for a codex.md
                                            entry (same keys plus name) or a character file does (portrait,
-                                           portrait_alt, portrait_focus). Every picture sits
+                                           portrait_alt, portrait_focus, portrait_zoom for the small round copies,
+                                           portrait_label and portraits_earlier: a look from an earlier Book the
+                                           character page's frame swipes back to). Every picture sits
                                            in a fixed frame (places 16:9, portraits square) and is cropped to fit, never
                                            stretched; *_focus ("50% 30%") picks the crop's centre; tap shows it whole.
                                            A song (saga/art/songs/, codex_art.json audio + audio_title) plays in its Codex
@@ -1280,16 +1282,77 @@ class Site:
         e["_song"] = self.songs[anchor]
 
     def char_portrait(self, c):
-        got = self.register_image(f"saga/characters/{c['id']}.json: portrait", c["portrait"], c.get("portrait_alt"))
-        if got:
-            c["_portrait_path"], c["_portrait_size"], c["_portrait_sm"], c["_portrait_md"] = got
-            c["_portrait_focus"] = self.focus_style(f"saga/characters/{c['id']}.json: portrait_focus", c.get("portrait_focus"), "50% 30%")
+        """The portrait, its small round copies (zoomed in on portrait_focus by portrait_zoom), and the earlier portraits
+        (portraits_earlier: [{label, portrait, portrait_alt, portrait_focus}], a look from an earlier Book) the page's frame
+        swipes back to; the current one is labelled portrait_label ("Now" when unset)."""
+        where = f"saga/characters/{c['id']}.json"
+        got = self.register_image(f"{where}: portrait", c["portrait"], c.get("portrait_alt"))
+        if not got:
+            return
+        c["_portrait_path"], c["_portrait_size"], c["_portrait_sm"], c["_portrait_md"] = got
+        c["_portrait_focus"] = self.focus_style(f"{where}: portrait_focus", c.get("portrait_focus"), "50% 30%")
+        c["_portrait_face"] = self.face_transform(where, c.get("portrait_focus"), c.get("portrait_zoom"))
+        earlier = c.get("portraits_earlier") or []
+        if not isinstance(earlier, list):
+            problem(f"{where}: portraits_earlier must be a list of {{label, portrait, portrait_alt}}")
+            earlier = []
+        shots = [{"label": str(c.get("portrait_label") or "Now").strip(), "path": got[0], "size": got[1], "md": got[3],
+                  "focus": c["_portrait_focus"], "alt": c.get("portrait_alt", "")}]
+        for i, e in enumerate(earlier):
+            w = f"{where}: portraits_earlier[{i}]"
+            if not isinstance(e, dict) or not str(e.get("label") or "").strip() or not e.get("portrait"):
+                problem(f"{w} needs a label (e.g. \"Book I\") and a portrait")
+                continue
+            g = self.register_image(f"{w}.portrait", e["portrait"], e.get("portrait_alt"))
+            if g:
+                shots.append({"label": str(e["label"]).strip(), "path": g[0], "size": g[1], "md": g[3],
+                              "focus": self.focus_style(f"{w}.portrait_focus", e.get("portrait_focus"), "50% 30%"),
+                              "alt": e.get("portrait_alt", "")})
+        labels = [s["label"] for s in shots]
+        if len(set(labels)) != len(labels):
+            problem(f"{where}: portrait labels must differ ({', '.join(labels)})")
+        c["_portraits"] = shots
+
+    @staticmethod
+    def face_transform(where, focus, zoom):
+        """portrait_zoom (1-4) for the small round copies of a portrait (avatars, name previews): a CSS transform that
+        scales the picture by the zoom and brings portrait_focus to the circle's centre, held so the picture still fills
+        it. "" without a zoom (the whole picture, as before)."""
+        if zoom is None:
+            return ""
+        try:
+            z = float(zoom)
+        except (TypeError, ValueError):
+            z = 0
+        if not 1 <= z <= 4:
+            problem(f"{where}: portrait_zoom '{zoom}' must be a number from 1 to 4")
+            return ""
+        if z == 1:
+            return ""
+        m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(focus or "50% 30%"))
+        fx, fy = (int(m.group(1)), int(m.group(2))) if m else (50, 30)
+        lo = 100 * (1 - z)
+        tx, ty = min(0, max(lo, 50 - z * fx)), min(0, max(lo, 50 - z * fy))
+        return f"transform-origin:0 0;transform:translate({tx:.1f}%,{ty:.1f}%) scale({z:g})"
 
     def portrait_figure(self, c, rel, overlay=""):
         """A character's portrait at the head of their page: a square frame, cropped to fit, tap or click to see it whole.
-        overlay (the level crest) sits on the frame's corner and lets taps through to the picture."""
+        overlay (the level crest) sits on the frame's corner and lets taps through to the picture. With earlier portraits
+        the frame swipes between them, newest first, and a row of tabs under it (shown by the script) jumps to one."""
         if not c.get("_portrait_path"):
             return ""
+        shots = c.get("_portraits") or []
+        if len(shots) > 1:
+            slides = []
+            for s in shots:
+                dims = f' width="{s["size"][0]}" height="{s["size"][1]}"' if s.get("size") else ""
+                a = esc(s["alt"])
+                slides.append(f'<a href="{rel}{s["path"]}" data-zoom aria-label="Enlarge: {a}">'
+                              f'<img src="{rel}{s["md"]}" alt="{a}"{dims}{s["focus"]} decoding="async"></a>')
+            tabs = "".join(f'<button type="button" data-pf-i="{i}" aria-pressed="{"true" if i == 0 else "false"}">{esc(s["label"])}</button>'
+                           for i, s in enumerate(shots))
+            return (f'<figure class="portrait multi" data-pf><div class="pf-frame"><div class="pf-strip">{"".join(slides)}</div>{overlay}</div>'
+                    f'<div class="pf-tabs" role="group" aria-label="Portraits" hidden>{tabs}</div></figure>')
         href = rel + c["_portrait_path"]
         wh = c.get("_portrait_size")
         dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
@@ -1298,10 +1361,15 @@ class Site:
                 f'<img src="{rel}{c["_portrait_md"]}" alt="{alt}"{dims}{c.get("_portrait_focus", "")} decoding="async"></a>{overlay}</figure>')
 
     def avatar(self, c, rel, size, cls=""):
-        """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none."""
+        """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none. With a
+        portrait_zoom it is a circle zoomed in on the face (the medium copy, so the zoom stays sharp)."""
         if not c or not c.get("_portrait_path"):
             return ""
-        return (f'<img class="avatar{(" " + cls) if cls else ""}" src="{rel}{c["_portrait_sm"]}" alt="" '
+        k = f'avatar{(" " + cls) if cls else ""}'
+        if c.get("_portrait_face"):
+            return (f'<span class="{k} zoomed"><img src="{rel}{c["_portrait_md"]}" alt="" width="{size}" height="{size}" '
+                    f'style="{c["_portrait_face"]}" decoding="async"></span>')
+        return (f'<img class="{k}" src="{rel}{c["_portrait_sm"]}" alt="" '
                 f'width="{size}" height="{size}"{c.get("_portrait_focus", "")} decoding="async">')
 
     def codex_figure(self, p, rel):
@@ -1582,7 +1650,8 @@ class Site:
                     names.append(a)
             key = "c:" + cid
             self.link_targets[key] = {"href": self.char_href(cid), "t": c["name"], "s": c.get("epithet", ""), "x": "",
-                                      "i": c.get("_portrait_sm"), "k": "face", "f": focus_of(c.get("_portrait_focus"))}
+                                      "i": c.get("_portrait_md") if c.get("_portrait_face") else c.get("_portrait_sm"),
+                                      "k": "face", "f": focus_of(c.get("_portrait_focus")), "z": c.get("_portrait_face", "")}
             for nm in names:
                 variants = {nm}
                 if nm.lower().startswith("the "):
@@ -1648,6 +1717,8 @@ class Site:
             attrs += f' data-pv-x="{esc(t["x"])}"'
         if t.get("i"):
             attrs += f' data-pv-i="{rel}{t["i"]}" data-pv-k="{t["k"]}"' + (f' data-pv-f="{esc(t["f"])}"' if t.get("f") else "")
+            if t.get("z"):
+                attrs += f' data-pv-z="{esc(t["z"])}"'
         return f'<a class="nm" href="{rel}{t["href"]}"{attrs}>{text}</a>'
 
     def link_names(self, frag, seen, rel, exclude=None):
@@ -3030,6 +3101,18 @@ details[open]>summary::after{content:"\2212"}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
 .avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
 .avatar.sm{width:48px;height:48px}
+.avatar.zoomed{overflow:hidden;flex:none}
+.avatar.zoomed img{display:block;width:100%;height:100%;object-fit:cover}
+/* earlier portraits (a look from an earlier Book): the frame swipes between them, newest first; the tabs under it jump */
+.portrait .pf-frame{position:relative}
+.portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--brass-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait .pf-strip::-webkit-scrollbar{display:none}
+.portrait .pf-strip a{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border:0;border-radius:0;box-shadow:none}
+.portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:14px}
+.portrait .pf-tabs[hidden]{display:none}
+.portrait .pf-tabs button{font:inherit;font-size:.72rem;line-height:1.25;padding:2px 7px;border:1px solid var(--rule);border-radius:999px;background:transparent;color:var(--faint);cursor:pointer}
+.portrait .pf-tabs button[aria-pressed="true"]{color:var(--brass);border-color:var(--brass-dim)}
+.portrait .pf-tabs button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 @media (hover:hover) and (pointer:fine){.zoom-hint .c{display:inline}.zoom-hint .t{display:none}}
 dialog.zoom{padding:0;border:0;margin:0;inset:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none}
 dialog.zoom[open]{display:flex;align-items:center;justify-content:center}
@@ -3431,6 +3514,29 @@ if (zoomLinks.length && typeof HTMLDialogElement === "function") {
     });
   });
 }
+/* earlier portraits: a character's frame swipes between their portraits (newest first) and the tabs under it jump to
+   one and follow the swipe. Without this file the frame still swipes and the tabs stay hidden. */
+Array.prototype.forEach.call(document.querySelectorAll("figure[data-pf]"), function(fig){
+  var strip = fig.querySelector(".pf-strip"), box = fig.querySelector(".pf-tabs");
+  if (!strip || !box) { return; }
+  var tabs = box.querySelectorAll("button[data-pf-i]"), timer = null;
+  var mark = function(i){
+    Array.prototype.forEach.call(tabs, function(b){ b.setAttribute("aria-pressed", String(+b.getAttribute("data-pf-i") === i)); });
+  };
+  box.hidden = false;
+  strip.addEventListener("scroll", function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ mark(Math.round(strip.scrollLeft / Math.max(1, strip.clientWidth))); }, 60);
+  }, {passive: true});
+  box.addEventListener("click", function(e){
+    var b = e.target.closest("button[data-pf-i]");
+    if (!b) { return; }
+    var i = +b.getAttribute("data-pf-i"), x = i * strip.clientWidth;
+    var still = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if (strip.scrollTo) { strip.scrollTo({left: x, behavior: still ? "auto" : "smooth"}); } else { strip.scrollLeft = x; }
+    mark(i);
+  });
+});
 /* name previews: a linked name in the story (data-pv-t) shows a small card with its picture, if it has one, and one
    line. Hover or keyboard focus on a desktop; on a touch screen the first tap shows the card and the second (or Open)
    follows the link. Without this file every name is a plain link. */
@@ -3463,7 +3569,8 @@ if (pvLinks.length) {
     if (src) {
       var box = el("span", "pv-img " + kind), img = el("img");
       img.src = src; img.alt = "";
-      if (a.getAttribute("data-pv-f")) { img.style.objectPosition = a.getAttribute("data-pv-f"); }
+      if (a.getAttribute("data-pv-z")) { img.style.cssText = a.getAttribute("data-pv-z"); }
+      else if (a.getAttribute("data-pv-f")) { img.style.objectPosition = a.getAttribute("data-pv-f"); }
       img.addEventListener("load", function(){ if (cur === a) { place(a); } });
       box.appendChild(img); card.appendChild(box);
     }

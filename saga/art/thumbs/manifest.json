@@ -12,6 +12,17 @@
     640
    ]
   },
+  "characters/ash-book2.jpg": {
+   "sha1": "4b4e056a78b09f0247056e32c7f8dfac83ffaa20",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "characters/ash.jpg": {
    "sha1": "bfd641fff0110da21164fe03b2eae2fdf3ae5c12",
    "sm": [
@@ -56,8 +67,30 @@
     640
    ]
   },
+  "characters/darrow-book2.jpg": {
+   "sha1": "3b6137d03c29255830eb29c83ba236a9d5e10610",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "characters/darrow.jpg": {
    "sha1": "f9256e067a62cc60288fa8d8a813195a7cc0dd14",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/hollis-garrow-book2.jpg": {
+   "sha1": "74670ef2f52b59fd3fbd210570a7db0fd5ae99b5",
    "sm": [
     256,
     256
@@ -80,6 +113,17 @@
   },
   "characters/ivo-marrant.jpg": {
    "sha1": "5c6f3a6589d6445dae248ae75a2f5e8f8990b3d8",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/maelis-vorne-book2.jpg": {
+   "sha1": "408b7132631f72124f96b54193223a0b8fe6477e",
    "sm": [
     256,
     256
@@ -113,6 +157,17 @@
   },
   "characters/mother-ione.jpg": {
    "sha1": "2adea4ca8767a201814069118d42f466369a9ced",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/rae-thorne-book2.jpg": {
+   "sha1": "9d12855a9c29b1bde0d7e9c6ed4c10d64c3a1ab0",
    "sm": [
     256,
     256
@@ -157,6 +212,17 @@
   },
   "characters/tobin-marsh.jpg": {
    "sha1": "4891bde39e1e959b37a58dab67c2366f5a26a4c3",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "characters/wren-ashdown-book2.jpg": {
+   "sha1": "4f38e7e3c83a7e490cea9a56c12745bf0d3fdd2f",
    "sm": [
     256,
     256
