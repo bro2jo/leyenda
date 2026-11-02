@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THE UNKNEELING — small copies of the site's pictures.
 
-For every picture under saga/art/characters, places, factions, codex and arts, makes a small copy (sm: 256 px on its long
+For every picture under saga/art/characters, places, factions, codex, arts and figure, makes a small copy (sm: 256 px on its long
 side) and a medium copy (md: 640 px) as WebP under saga/art/thumbs/, mirroring the folders, and writes
 saga/art/thumbs/manifest.json naming the exact file (SHA-1) each pair was made from. The site shows the copies where a
 picture is small: avatars, Codex rows and name previews take sm; a portrait's frame and a place's preview take md. The
@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ART = ROOT / "saga" / "art"
 OUT = ART / "thumbs"
 MANIFEST = OUT / "manifest.json"
-KINDS = ("characters", "places", "factions", "codex", "arts")
+KINDS = ("characters", "places", "factions", "codex", "arts", "figure")
 SIZES = {"sm": 256, "md": 640}
 TYPES = {".webp", ".png", ".jpg", ".jpeg"}
 ABOUT = ("Small (sm, 256 px) and medium (md, 640 px) WebP copies of the pictures under saga/art/, made by engine/thumbs.py "

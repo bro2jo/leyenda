@@ -22,6 +22,8 @@ Reads (and nothing else):
                                            an entry is opened or a picture tapped. saga/art/site/: the favicon's bitmaps.
                                            saga/art/arts/<art id>.webp (or .png, .jpg): an Art's card picture, found by its
                                            name, shown on Darrow's page once the Art has a rank.
+                                           saga/art/figure/<rank>.webp: Darrow's figure at a rank (kindled, warden-errant),
+                                           found by its name, shown at the head of his Reckoning once he has the rank.
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -1353,22 +1355,41 @@ class Site:
             return ""
         shots = c.get("_portraits") or []
         if len(shots) > 1:
-            slides = []
-            for s in shots:
-                dims = f' width="{s["size"][0]}" height="{s["size"][1]}"' if s.get("size") else ""
-                a = esc(s["alt"])
-                slides.append(f'<a href="{rel}{s["path"]}" data-zoom aria-label="Enlarge: {a}">'
-                              f'<img src="{rel}{s["md"]}" alt="{a}"{dims}{s["focus"]} decoding="async"></a>')
-            tabs = "".join(f'<button type="button" data-pf-i="{i}" aria-pressed="{"true" if i == 0 else "false"}">{esc(s["label"])}</button>'
-                           for i, s in enumerate(shots))
-            return (f'<figure class="portrait multi" data-pf><div class="pf-frame"><div class="pf-strip">{"".join(slides)}</div>{overlay}</div>'
-                    f'<div class="pf-tabs" role="group" aria-label="Portraits" hidden>{tabs}</div></figure>')
+            return self.swipe_frame(shots, rel, "Portraits", overlay)
         href = rel + c["_portrait_path"]
         wh = c.get("_portrait_size")
         dims = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
         alt = esc(c.get("portrait_alt", ""))
         return (f'<figure class="portrait"><a href="{href}" data-zoom aria-label="Enlarge: {alt}">'
                 f'<img src="{rel}{c["_portrait_md"]}" alt="{alt}"{dims}{c.get("_portrait_focus", "")} decoding="async"></a>{overlay}</figure>')
+
+    @staticmethod
+    def swipe_frame(shots, rel, label, overlay="", cls=""):
+        """Pictures in one frame that swipes between them, the first shown first, and a row of tabs under it (shown by
+        the script) that jumps to one: a character's portraits by Book, Darrow's figures by rank. Each shot is
+        {label, path, size, md, focus, alt}; tap or click one to see it whole."""
+        slides = []
+        for s in shots:
+            dims = f' width="{s["size"][0]}" height="{s["size"][1]}"' if s.get("size") else ""
+            a = esc(s["alt"])
+            slides.append(f'<a href="{rel}{s["path"]}" data-zoom aria-label="Enlarge: {a}">'
+                          f'<img src="{rel}{s["md"]}" alt="{a}"{dims}{s["focus"]} decoding="async"></a>')
+        tabs = "".join(f'<button type="button" data-pf-i="{i}" aria-pressed="{"true" if i == 0 else "false"}">{esc(s["label"])}</button>'
+                       for i, s in enumerate(shots))
+        return (f'<figure class="portrait multi{cls}" data-pf><div class="pf-frame"><div class="pf-strip">{"".join(slides)}</div>{overlay}</div>'
+                f'<div class="pf-tabs" role="group" aria-label="{label}" hidden>{tabs}</div></figure>')
+
+    def named_picture(self, folder, stem, alt):
+        """saga/art/<folder>/<stem>.webp (or .png, .jpg), registered for the site: (path, size, sm, md), or None if there is none."""
+        src = next((p for p in sorted((ART / folder).glob(stem + ".*")) if p.suffix.lower() in IMAGE_TYPES), None)
+        return self.register_image(f"saga/art/{folder}/{src.name}", src.relative_to(ART).as_posix(), alt) if src else None
+
+    @staticmethod
+    def stray_pictures(folder, stems, named_for):
+        """A file in saga/art/<folder>/ whose name is none of stems is a typo: the build fails and says what it should be."""
+        for p in sorted((ART / folder).glob("*")):
+            if p.stem not in stems:
+                problem(f"saga/art/{folder}/{p.name}: '{p.stem}' is not {named_for}")
 
     def avatar(self, c, rel, size, cls=""):
         """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none. With a
@@ -2228,13 +2249,32 @@ class Site:
             tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}"><span class="v num">{x["score"]}<small>{x["mod"]:+d}</small></span>'
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
-        inner = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                 f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}</div>'
-                 f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
-                 f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
-                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>'
-                 f'<div class="streaks">{"".join(tiles)}</div>')
+        head = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
+                f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}</div>'
+                f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
+                f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
+                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>')
+        fig = self.rank_figures(rel)
+        if fig:
+            head = f'<div class="reck-top{self.metal(d["level"])}">{fig}<div class="reck">{head}</div></div>'
+        inner = head + f'<div class="streaks">{"".join(tiles)}</div>'
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
+
+    def rank_figures(self, rel):
+        """Darrow's figure at each rank he has reached, his current rank first: saga/art/figure/<rank>.webp, the rank's name
+        in lower case with hyphens (kindled, warden-errant). His build and bearing as the comeback rebuilds them, never his
+        clothes or gear (the story's portraits own those). Empty until the first one is drawn; a rank not reached yet stays
+        hidden even when its picture is ready."""
+        ranks = self.rules["levels"]["ranks"]
+        slug = {r["name"]: re.sub(r"[^a-z]+", "-", r["name"].lower()).strip("-") for r in ranks}
+        self.stray_pictures("figure", set(slug.values()), "a rank of engine/rules.json → levels.ranks, in lower case with hyphens (e.g. warden-errant)")
+        shots = []
+        for r in reversed([r for r in ranks if self.darrow["level"] >= r["from"]]):
+            alt = f"Ser Darrow as he stands at the rank of {r['name']}"
+            got = self.named_picture("figure", slug[r["name"]], alt)
+            if got:
+                shots.append({"label": r["name"], "path": got[0], "size": got[1], "md": got[3], "focus": "", "alt": alt})
+        return self.swipe_frame(shots, rel, "Figures by rank", cls=" tall") if shots else ""
 
     def darrow_panels(self, rel):
         """Darrow's sheet below the Reckoning, each section folded shut with a line of what it holds: (meta, title, html, id)."""
@@ -2245,10 +2285,7 @@ class Site:
         order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Sport"]
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
-        ids = {a["id"] for a in d["arts"]}
-        for p in sorted((ART / "arts").glob("*")):
-            if p.stem not in ids:
-                problem(f"saga/art/arts/{p.name}: no Art has the id '{p.stem}' (an Art's picture is named for its id in engine/rules.json)")
+        self.stray_pictures("arts", {a["id"] for a in d["arts"]}, "the id of an Art in engine/rules.json")
         tree_html, n_learned, n_sealed = [], 0, 0
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
             rows = []
@@ -2291,8 +2328,7 @@ class Site:
         sealed), framed in the rank's metal (ART_METALS). Before its first rank, or until its picture is drawn, the tree's
         glyph stands in its place: a dashed blank before the first rank, the ranked frame after."""
         frame = f" metal-{ART_METALS[min(rank, len(ART_METALS)) - 1]}" if rank else " back"
-        src = next((p for p in sorted((ART / "arts").glob(art["id"] + ".*")) if p.suffix.lower() in IMAGE_TYPES), None) if rank else None
-        got = self.register_image(f"saga/art/arts/{src.name}", src.relative_to(ART).as_posix(), art["name"]) if src else None
+        got = self.named_picture("arts", art["id"], art["name"]) if rank else None
         if not got:
             return f'<span class="art-pic{frame}">{svg_tree(tree, 28)}</span>'
         name = esc(art["name"])
@@ -3208,6 +3244,9 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
+/* Darrow's figure by rank (rank_figures) beside the head of the Reckoning: a tall frame in the swipe strip of the portraits */
+.reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
+.portrait.tall .pf-strip{aspect-ratio:3/4}
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
