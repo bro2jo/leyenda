@@ -1,13 +1,13 @@
 {
-  "asof": "2026-11-01",
+  "asof": "2026-11-02",
   "name": "Ser Darrow of Edgemoor",
-  "level": 7,
+  "level": 8,
   "rank": "Kindled",
-  "xp": 2793,
-  "xp_this_level": 2100,
-  "xp_next_level": 2800,
+  "xp": 2803,
+  "xp_this_level": 2800,
+  "xp_next_level": 3600,
   "proficiency": 3,
-  "hp_max": 50,
+  "hp_max": 54,
   "attributes": {
     "might": {
       "score": 13,
@@ -55,7 +55,7 @@
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
-  "inspiration": 1,
+  "inspiration": 2,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -325,8 +325,8 @@
   },
   "chapter_now": {
     "week_start": "2026-11-01",
-    "through": "2026-11-01",
-    "tier_so_far": "Triumph",
+    "through": "2026-11-02",
+    "tier_so_far": "Costly",
     "chapter": 5
   },
   "fell": {
