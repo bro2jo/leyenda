@@ -4,8 +4,10 @@
 Reads (and nothing else):
   saga/chronicle/*.md                      the story, by chapter
   saga/characters/*.json                   the cast, as the page has shown it
-  saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, codex_art.json, chapters.csv, rolls.csv
+  saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, codex_art.json, chapters.csv, rolls.csv,
+  looks.json                               (his finished looks, for the Wardrobe)
   engine/rules.json                        game data (knots, arts, ranks)
+  engine/wardrobe.json                     the Wardrobe's pieces, what opens each, the references and the image prompt
   saga/art/                                images and songs the user supplies, published as files when places.json names one
                                            or factions.json names one (image, image_alt, image_caption, image_focus; only
                                            for an entry already on the page), or codex_art.json names one for a codex.md
@@ -22,8 +24,8 @@ Reads (and nothing else):
                                            an entry is opened or a picture tapped. saga/art/site/: the favicon's bitmaps.
                                            saga/art/arts/<art id>.webp (or .png, .jpg): an Art's card picture, found by its
                                            name, shown on Darrow's page once the Art has a rank.
-                                           saga/art/figure/<rank>.webp: Darrow's figure at a rank (kindled, warden-errant),
-                                           found by its name, shown at the head of his Reckoning once he has the rank.
+                                           saga/art/looks/: his finished looks (saga/state/looks.json) and the Wardrobe's
+                                           references (engine/wardrobe.json), on the Wardrobe page (darrow/wardrobe.html).
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -85,13 +87,14 @@ ART = SAGA / "art"
 THUMBS = ART / "thumbs"   # small and medium copies of every picture, made by engine/thumbs.py (manifest.json names their source)
 SITE_ART = ART / "site"   # the favicon's bitmaps (the SVG is FAVICON below), published at the site's root
 RULES = ROOT / "engine" / "rules.json"
+WARDROBE = ROOT / "engine" / "wardrobe.json"   # the Wardrobe's pieces and what opens each; the finished looks are saga/state/looks.json
 IMAGE_TYPES = {".webp", ".png", ".jpg", ".jpeg"}
 IMAGE_MAX_BYTES = 3 * 1024 * 1024
 AUDIO_TYPES = {".mp3", ".m4a", ".ogg", ".opus"}
 AUDIO_MAX_BYTES = 10 * 1024 * 1024
 READ_ALLOW = [CHRON, CHARS, ART, STATE / "world.json", STATE / "places.json", STATE / "factions.json",
               STATE / "darrow.json", STATE / "bearing.json", STATE / "codex.md", STATE / "codex_art.json", STATE / "chapters.csv",
-              STATE / "rolls.csv", RULES]
+              STATE / "rolls.csv", RULES, WARDROBE, STATE / "looks.json"]
 
 VERBOSE = "--verbose" in sys.argv
 FORCE = "--force" in sys.argv
@@ -1045,7 +1048,7 @@ def asset_v(name):
     """A short hash of the stylesheet or the script: its link changes whenever its content does, so a browser never pairs a new
     page with a stylesheet it cached before the change."""
     if name not in ASSET_V:
-        ASSET_V[name] = hashlib.sha1((CSS if name == "css" else JS).encode("utf-8")).hexdigest()[:10]
+        ASSET_V[name] = hashlib.sha1({"css": CSS, "js": JS, "forge": FORGE_JS}[name].encode("utf-8")).hexdigest()[:10]
     return ASSET_V[name]
 
 
@@ -1366,7 +1369,7 @@ class Site:
     @staticmethod
     def swipe_frame(shots, rel, label, overlay="", cls=""):
         """Pictures in one frame that swipes between them, the first shown first, and a row of tabs under it (shown by
-        the script) that jumps to one: a character's portraits by Book, Darrow's figures by rank. Each shot is
+        the script) that jumps to one: a character's portraits by Book. Each shot is
         {label, path, size, md, focus, alt}; tap or click one to see it whole."""
         slides = []
         for s in shots:
@@ -2260,31 +2263,25 @@ class Site:
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         head = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}</div>'
+                f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}{self.wardrobe_chip(rel)}</div>'
                 f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
                 f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>')
-        fig = self.rank_figures(rel)
+        fig = self.look_figure(rel)
         if fig:
             head = f'<div class="reck-top{self.metal(d["level"])}">{fig}<div class="reck-head">{head}</div></div>'
         inner = head + f'<div class="streaks">{"".join(tiles)}</div>'
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
-    def rank_figures(self, rel):
-        """Darrow's figure at each rank he has reached, his current rank first: saga/art/figure/<rank>.webp, the rank's name
-        in lower case with hyphens (kindled, warden-errant). His build and bearing as the comeback rebuilds them, never his
-        clothes or gear (the story's portraits own those). Empty until the first one is drawn; a rank not reached yet stays
-        hidden even when its picture is ready."""
-        ranks = self.rules["levels"]["ranks"]
-        slug = {r["name"]: re.sub(r"[^a-z]+", "-", r["name"].lower()).strip("-") for r in ranks}
-        self.stray_pictures("figure", set(slug.values()), "a rank of engine/rules.json → levels.ranks, in lower case with hyphens (e.g. warden-errant)")
-        shots = []
-        for r in reversed([r for r in ranks if self.darrow["level"] >= r["from"]]):
-            alt = f"Ser Darrow as he stands at the rank of {r['name']}"
-            got = self.named_picture("figure", slug[r["name"]], alt)
-            if got:
-                shots.append({"label": r["name"], "path": got[0], "size": got[1], "md": got[3], "focus": "", "alt": alt})
-        return self.swipe_frame(shots, rel, "Figures by rank", cls=" tall") if shots else ""
+    def look_figure(self, rel):
+        """His current look (the newest in the Wardrobe) beside the head of his Reckoning: a tall frame in his rank's
+        metal that opens the Wardrobe. Empty while no look is filed."""
+        lk = self.looks[0] if self.looks else None
+        if not lk:
+            return ""
+        href = f"{rel}darrow/wardrobe.html"
+        return (f'<figure class="look-fig"><a href="{href}"><img src="{rel}{lk["_md"]}" alt="{esc(lk["alt"])}" decoding="async"></a>'
+                f'<figcaption><a href="{href}">{esc(lk["name"])}</a></figcaption></figure>')
 
     def darrow_panels(self, rel):
         """Darrow's sheet below the Reckoning, each section folded shut with a line of what it holds: (meta, title, html, id)."""
@@ -2392,6 +2389,142 @@ class Site:
         body = (self.identity_plate(c, rel, d["level"]) + self.darrow_reckoning(rel) + binding
                 + f'<div class="panels"><p class="lbl panels-h">The sheet</p>{sheet}<p class="lbl panels-h">On the page</p>{story}</div>')
         self.pages["darrow/index.html"] = shell("Ser Darrow of Edgemoor", body, rel, "Darrow", "char-page darrow-page", desc="Darrow's page and his full Reckoning.")
+
+    # ---------------------------------------------------------------- the wardrobe
+    def wardrobe_chip(self, rel):
+        return f'<a class="chip brass" href="{rel}darrow/wardrobe.html">The Wardrobe</a>' if self.wardrobe else ""
+
+    def reference(self, r, where):
+        """A reference picture for the image prompt: {label, image under saga/art/, file (its name when downloaded), use
+        (what the prompt says it is for)}, published with its small copy."""
+        got = self.register_image(where, r.get("image"), r.get("label"))
+        if not got or not r.get("file") or not r.get("use"):
+            problem(f"{where}: a reference needs label, image, file and use")
+            return None
+        return {"label": r["label"], "href": got[0], "sm": got[2], "file": r["file"], "use": r["use"]}
+
+    def load_wardrobe(self):
+        """engine/wardrobe.json (every piece and what opens it) and saga/state/looks.json (the finished looks). A piece is
+        open from the start, once the scene its page key names is on the page (the key must be one), or once darrow.json →
+        wardrobe says the sheet has earned it (a level, an Art's rank, a Knot); otherwise locked, with what opens it. A look
+        shows once every piece it wears is open, the newest first; its picture is published only then."""
+        self.wardrobe, self.looks = None, []
+        if not WARDROBE.exists():
+            return
+        w, where = load_json(WARDROBE), "engine/wardrobe.json"
+        arts = {a["id"]: a["name"] for a in self.rules["arts"] + self.rules.get("sport_arts", {}).get("arts", [])}
+        on_page = {f'{c["code"]}:{sc["key"]}' for c in self.chapters + self.tales for sc in c["scenes"]}
+        earned, known = set(self.darrow.get("wardrobe") or []), set()
+        for cat in w["categories"]:
+            for o in cat["options"]:
+                oid, u = f'{cat["id"]}.{o["id"]}', o.get("unlock") or {}
+                if oid in known or not o.get("name") or not o.get("prompt"):
+                    problem(f"{where}: {oid} is listed twice, or has no name or prompt")
+                known.add(oid)
+                if set(u) - {"level", "art", "rank", "knot", "page"} or ("art" in u and u["art"] not in arts):
+                    problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u}")
+                if "page" in u and u["page"] not in on_page:
+                    problem(f"{where}: {oid} opens on {u['page']}, which is not a scene on the page (a piece the story has not shown stays out)")
+                o["_open"] = not u or "page" in u or oid in earned
+                o["_lock"] = ("" if o["_open"] else f'Level {u["level"]}' if "level" in u else f'Knot {roman(u["knot"])}' if "knot" in u
+                              else f'{arts.get(u.get("art"), "")} {roman(u.get("rank", 1))}')
+                if o.get("reference"):
+                    o["_ref"] = self.reference(o["reference"], f"{where}: {oid}.reference")
+        if earned - known:
+            problem(f"saga/state/darrow.json: wardrobe names {', '.join(sorted(earned - known))}, which {where} does not; run python3 engine/darrow.py sync")
+        w["_refs"] = [r for r in (self.reference(r, f"{where}: references[{i}]") for i, r in enumerate(w.get("references") or [])) if r]
+        self.wardrobe = w
+        pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
+        stems = {Path(str(r.get("image"))).stem for r in w.get("references") or [] if str(r.get("image")).startswith("looks/")}
+        path = STATE / "looks.json"
+        for i, lk in enumerate(load_json(path).get("looks", []) if path.exists() else []):
+            lw = f"saga/state/looks.json: looks[{i}]"
+            if any(not lk.get(k) for k in ("id", "name", "made", "image", "alt", "values")):
+                problem(f"{lw}: a look needs id, name, made, image, alt and values")
+                continue
+            stems.add(Path(lk["image"]).stem)
+            bad = [f"{c}={v}" for c, v in lk["values"].items() if v not in pieces.get(c, {})] + [f"{c} missing" for c in pieces if c not in lk["values"]]
+            if bad:
+                problem(f"{lw} ({lk['id']}): {', '.join(bad)}: one piece of {where} per category (a piece a look wears is never removed or renamed)")
+            elif not (ART / lk["image"]).is_file():
+                problem(f"{lw} ({lk['id']}): saga/art/{lk['image']} does not exist")
+            elif all(pieces[c][v]["_open"] for c, v in lk["values"].items()):
+                got = self.register_image(lw, lk["image"], lk["alt"])
+                if got:
+                    self.looks.append({**lk, "_path": got[0], "_md": got[3]})
+        self.looks.sort(key=lambda x: x["made"], reverse=True)
+        self.stray_pictures("looks", stems, "a look in saga/state/looks.json or a reference in engine/wardrobe.json")
+
+    def render_wardrobe(self):
+        """The Wardrobe (darrow/wardrobe.html): his looks and the Forge. The stage shows the chosen look if it is painted;
+        the Forge offers every piece, the locked ones greyed with what opens them; the prompt, the references and the Look
+        line paint a new one (forge.js; without it the stage and the lookbook still work)."""
+        w = self.wardrobe
+        if not w:
+            return
+        rel, d = "../", self.darrow
+        cur = self.looks[0] if self.looks else None
+        start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_open"]), "") for c in w["categories"]}
+        hide = "" if cur else " hidden"
+        stage = (f'<a id="forge-zoom" href="{rel}{cur["_path"] if cur else ""}" data-zoom{hide}><img id="forge-img" src="{rel}{cur["_md"] if cur else ""}" '
+                 f'alt="{esc(cur["alt"]) if cur else ""}" decoding="async"></a>'
+                 f'<div class="forge-empty" id="forge-empty"{"" if not cur else " hidden"}><span class="glyph" aria-hidden="true">✧</span>'
+                 '<b>Not painted yet</b><span>Every piece is chosen; the prompt below will paint it.</span></div>')
+        plate = (f'<section class="plate wardrobe-plate{self.metal(d["level"])}"><p class="lbl"><a href="index.html">Ser Darrow of Edgemoor</a></p>'
+                 '<h1>The Wardrobe</h1><p class="sub">Looks he has earned. What he wears in the story is the story\'s; these are his own, and more opens as he grows.</p>'
+                 f'<figure class="forge-stage" id="forge-stage">{stage}</figure>'
+                 f'<p class="forge-cap"><b id="forge-name">{esc(cur["name"]) if cur else "A new look"}</b>'
+                 f'<span class="lbl" id="forge-state">{"in the lookbook" if cur else "not painted yet"}</span></p></section>')
+        tiles = "".join(f'<a class="look-tile" href="{rel}{lk["_path"]}" data-look="{esc(lk["id"])}"><img src="{rel}{lk["_md"]}" alt="" loading="lazy" decoding="async">'
+                        f'<span>{esc(lk["name"])}</span></a>' for lk in self.looks)
+        n = len(self.looks)
+        book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div><p class="hint">Tap a look to put it on in the Forge.</p>'
+                   if tiles else '<p class="empty">No look painted yet.</p>'))
+        fields, n_open, n_all = [], 0, 0
+        for c in w["categories"]:
+            opts = []
+            for o in c["options"]:
+                n_all += 1
+                n_open += o["_open"]
+                lock = "" if o["_open"] else f' · {esc(o["_lock"])}'
+                opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_open"] else " disabled"}>{esc(o["name"])}{lock}</option>')
+            fields.append(f'<label>{esc(c["label"])}<select data-cat="{esc(c["id"])}">{"".join(opts)}</select></label>')
+        forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
+                    f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it.</p><div class="forge-grid">{"".join(fields)}</div>'
+                    '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
+                    'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></label>'
+                    '<p class="forge-result" id="forge-result" aria-live="polite"></p></div>')
+        cards = [self.ref_card(r, rel) for r in w["_refs"]]
+        cards += [self.ref_card(o["_ref"], rel, f'{c["id"]}.{o["id"]}') for c in w["categories"] for o in c["options"] if o.get("_ref")]
+        paint = sec("Paint it", "", '<ol class="forge-steps"><li>Copy the prompt.</li><li>Download the references and attach them in ChatGPT with it.</li>'
+                    '<li>When the picture is done, send it to Claude with the Look line: it goes into the lookbook for good.</li></ol>'
+                    '<textarea class="forge-prompt" id="forge-prompt" readonly rows="10" aria-label="The image prompt"></textarea>'
+                    '<div class="btn-row"><button class="btn" type="button" id="forge-copy">Copy prompt</button>'
+                    '<a class="btn ghost" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT</a></div>'
+                    f'<div class="ref-grid">{"".join(cards)}</div>'
+                    '<p class="lbl">The Look line</p><code class="look-line" id="forge-line"></code>'
+                    '<div class="btn-row"><button class="btn ghost" type="button" id="forge-copy-line">Copy the Look line</button></div>'
+                    '<noscript><p class="empty">The Forge needs JavaScript; the lookbook works without it.</p></noscript>')
+        data = {"cats": [{"id": c["id"], "label": c["label"], "options": [{"id": o["id"], "prompt": o["prompt"], "open": o["_open"]} for o in c["options"]]}
+                         for c in w["categories"]],
+                "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
+                "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
+                "looks": [{"id": lk["id"], "name": lk["name"], "alt": lk["alt"], "values": lk["values"], "details": lk.get("details") or "",
+                           "md": rel + lk["_md"], "full": rel + lk["_path"]} for lk in self.looks],
+                "start": start, "template": "\n".join(w["prompt"])}
+        blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+        body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
+                f'<script src="{rel}forge.js?v={asset_v("forge")}" defer></script>')
+        self.pages["darrow/wardrobe.html"] = shell("The Wardrobe", body, rel, "Darrow", "wardrobe-page", desc="Darrow's looks, and the Forge that paints new ones.")
+
+    @staticmethod
+    def ref_card(r, rel, for_piece=""):
+        """A reference to download and attach; one a piece brings (for_piece) shows only while that piece is chosen."""
+        if not r:
+            return ""
+        attr = f' data-ref-for="{esc(for_piece)}" hidden' if for_piece else ""
+        return (f'<a class="ref-card" href="{rel}{r["href"]}" download="{esc(r["file"])}"{attr}><img src="{rel}{r["sm"]}" alt="" loading="lazy" decoding="async">'
+                f'<span><b>{esc(r["label"])}</b><span>Download</span></span></a>')
 
     # ---------------------------------------------------------------- now
     def open_choice(self):
@@ -2609,7 +2742,11 @@ class Site:
         new_rank = any(r["from"] == d["level"] for r in self.rules["levels"]["ranks"])
         head = f'Level {d["level"]}' + (f' · {esc(d["rank"])}' if new_rank else "")
         line = ("A new rank. " if new_rank else "") + f'HP {d["hp_max"]} · Proficiency +{d["proficiency"]}'
-        return (f'<a class="lvl-news{self.metal(d["level"])}" href="{rel}darrow/index.html#reckoning">{crest(d["level"])}'
+        pieces = [o["name"] for c in (self.wardrobe or {}).get("categories", []) for o in c["options"] if (o.get("unlock") or {}).get("level") == d["level"]]
+        if pieces:
+            line += '</span><span class="m">New in the Wardrobe: ' + ", ".join(esc(x) for x in pieces)
+        href = f"{rel}darrow/wardrobe.html" if pieces else f"{rel}darrow/index.html#reckoning"
+        return (f'<a class="lvl-news{self.metal(d["level"])}" href="{href}">{crest(d["level"])}'
                 f'<span><span class="lbl">A new level</span><b>{head}</b><span class="m">{line}</span></span></a>')
 
     # ---------------------------------------------------------------- tales
@@ -2744,6 +2881,7 @@ class Site:
 
     # ---------------------------------------------------------------- run
     def build(self):
+        self.load_wardrobe()
         for i in range(len(self.chapters)):
             self.render_chapter(i)
         self.render_chronicle_index()
@@ -2755,10 +2893,12 @@ class Site:
                 self.render_character(c)
         self.render_roster()
         self.render_darrow()
+        self.render_wardrobe()
         self.render_now()
         self.render_codex()
         self.pages["site.css"] = CSS
         self.pages["site.js"] = JS
+        self.pages["forge.js"] = FORGE_JS
         self.pages["favicon.svg"] = FAVICON
         for name in ("favicon-32.png", "apple-touch-icon.png"):  # the favicon as bitmaps, for browsers that take no SVG
             if (SITE_ART / name).is_file():
@@ -3009,6 +3149,7 @@ CSS = r"""/* THE UNKNEELING — one stylesheet. Dark only, by choice: a forge at
   --brass:#CFA65F; --brass-dim:#8A7044; --ember:#E2713B; --good:#72B396; --warn:#D9A441; --bad:#D0634D;
   --t1:#EADBA6; --t2:#D9AE5F; --t3:#A86B3C; --t4:#7A4D86; --t5:#4062A3; --t6:#8BB2D3;
   --metal:var(--brass); --metal-dim:var(--brass-dim);
+  --stage:radial-gradient(ellipse at 50% 42%,#3d2e25 0%,#211f21 50%,#13171c 100%);
   --display:"Grenze Gotisch","UnifrakturMaguntia",Georgia,serif;
   --body:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
   --label:"Alegreya Sans SC","Alegreya Sans","Segoe UI",system-ui,sans-serif;
@@ -3255,10 +3396,13 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
-/* Darrow's figure by rank (rank_figures) beside the head of the Reckoning: a tall frame in the swipe strip of the portraits */
+/* his current look (look_figure) beside the head of the Reckoning: a tall frame in his rank's metal, opening the Wardrobe */
 .reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
 .reck-head{display:grid;gap:12px;min-width:0}
-.portrait.tall .pf-strip{aspect-ratio:3/4} .portrait.tall .pf-strip a{aspect-ratio:auto}
+.look-fig{margin:0;display:grid;gap:6px;min-width:0}
+.look-fig>a{display:block;aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage)}
+.look-fig img{display:block;width:100%;height:100%;object-fit:contain}
+.look-fig figcaption{font-size:.85rem;text-align:center}
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
@@ -3547,6 +3691,41 @@ ol.choice li s{color:var(--faint)}
   .bar>i{transition:none}
   .mast,.panel>summary::after{transition:none}
 }
+/* the Wardrobe (render_wardrobe, forge.js): the stage, the lookbook, the Forge's pieces, the prompt and its references */
+.forge-stage{position:relative;margin:0 auto;width:min(100%,calc(64vh * 2 / 3));aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage);display:grid}
+.forge-stage>*{grid-area:1/1}
+.forge-stage a{display:block;cursor:zoom-in} .forge-stage img{display:block;width:100%;height:100%;object-fit:contain}
+.forge-empty{display:grid;place-content:center;justify-items:center;gap:6px;text-align:center;padding:24px;color:var(--dim)}
+.forge-empty .glyph{font-size:2.6rem;line-height:1;color:var(--brass)} .forge-empty b{font-family:var(--display);font-size:1.6rem;color:var(--ink)}
+.forge-cap{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap}
+.forge-cap b{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+.look-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.look-tile{display:grid;gap:6px;border:1px solid var(--rule);border-radius:6px;padding:4px 4px 8px;background:var(--plate);color:var(--ink);text-align:center;font-size:.85rem;line-height:1.25}
+.look-tile:hover{text-decoration:none;border-color:var(--brass-dim)}
+.look-tile[aria-current=true]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass-dim)}
+.look-tile img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain;border-radius:4px;background:var(--stage)}
+.forge{display:grid;gap:12px}
+.wardrobe-page [hidden]{display:none}
+.forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (max-width:519px){.forge-grid label{grid-template-columns:6.6em minmax(0,1fr);align-items:center;gap:10px}}
+@media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.forge-grid label,.forge-notes{display:grid;gap:4px;min-width:0;font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.forge-notes em{font-style:normal;letter-spacing:0;color:var(--faint)}
+.forge select,.forge textarea,.forge-prompt{width:100%;min-width:0;font:inherit;font-family:var(--body);font-size:1rem;letter-spacing:0;color:var(--ink);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px}
+.forge select{appearance:none;-webkit-appearance:none;padding-right:30px;background:var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA65F' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center}
+.forge select option:disabled{color:var(--faint)}
+.forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.forge-result{font-size:.95rem;color:var(--dim)} .forge-result b{color:var(--brass);font-weight:600}
+.forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
+.forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
+button.btn{font-size:1rem;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--brass)}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.ref-card{display:flex;gap:10px;align-items:center;border:1px solid var(--rule);border-radius:6px;padding:6px;color:var(--ink);min-width:0}
+.ref-card:hover{text-decoration:none;border-color:var(--brass-dim)}
+.ref-card img{width:52px;height:52px;flex:none;object-fit:cover;border-radius:4px;background:var(--plate)}
+.ref-card b{display:block;font-size:.9rem;font-weight:600} .ref-card span span{font-size:.8rem;color:var(--brass)}
+.look-line{display:block;font-family:var(--mono);font-size:.78rem;line-height:1.5;color:var(--dim);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px;overflow-wrap:anywhere}
 """
 
 JS = r"""/* THE UNKNEELING — small helpers. Every page works without this file. */
@@ -3809,6 +3988,94 @@ var moved = false;
 var settle = function(){ if (!moved && location.hash) { openTarget(); } };
 if (document.fonts && document.fonts.ready) { document.fonts.ready.then(settle); }
 window.addEventListener("load", settle);
+})();
+"""
+
+
+FORGE_JS = r"""/* THE UNKNEELING — the Forge (darrow/wardrobe.html). Choose a look from the pieces he has earned, see it on the stage
+   if it has been painted, and copy the prompt that paints it, with the Look line Claude files it by. Its data is the
+   JSON in #forge-data, written by the build; the choice is remembered in this browser only. */
+(function(){
+"use strict";
+var dataEl = document.getElementById("forge-data");
+if (!dataEl) { return; }
+var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", state = {};
+var $ = function(id){ return document.getElementById(id); };
+var pieces = {};
+D.cats.forEach(function(c){ pieces[c.id] = {}; c.options.forEach(function(o){ pieces[c.id][o.id] = o; }); });
+var isOpen = function(cat, id){ return !!(pieces[cat][id] && pieces[cat][id].open); };
+var wear = function(v){
+  D.cats.forEach(function(c){ state[c.id] = isOpen(c.id, v[c.id]) ? v[c.id] : D.start[c.id]; });
+  state.details = typeof v.details === "string" ? v.details : "";
+};
+var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
+var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
+var selects = document.querySelectorAll("select[data-cat]"), notes = $("forge-details");
+var tiles = document.querySelectorAll(".look-tile[data-look]");
+
+var render = function(){
+  var key = keyOf(state, state.details), look = null;
+  D.looks.forEach(function(l){ if (!look && keyOf(l.values, l.details) === key) { look = l; } });
+  Array.prototype.forEach.call(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
+  if (look) { $("forge-img").src = look.md; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
+  $("forge-zoom").hidden = !look;
+  $("forge-empty").hidden = !!look;
+  $("forge-name").textContent = look ? look.name : "A new look";
+  $("forge-state").textContent = look ? "in the lookbook" : "not painted yet";
+  $("forge-result").innerHTML = look ? "<b>Painted.</b> This look is in the lookbook."
+    : "<b>Not painted yet.</b> The prompt below paints it.";
+  Array.prototype.forEach.call(tiles, function(t){ t.setAttribute("aria-current", String(!!look && t.getAttribute("data-look") === look.id)); });
+  var refs = D.refs.slice();
+  Array.prototype.forEach.call(document.querySelectorAll("[data-ref-for]"), function(card){
+    var on = state[card.getAttribute("data-ref-for").split(".")[0]] === card.getAttribute("data-ref-for").split(".")[1];
+    card.hidden = !on;
+    if (on) { refs.push(D.optRefs[card.getAttribute("data-ref-for")]); }
+  });
+  var design = D.cats.map(function(c){ return "- " + c.label + ": " + pieces[c.id][state[c.id]].prompt; }).join("\n");
+  var listed = refs.map(function(r, i){ return (i + 1) + '. "' + r.file + '": ' + r.use; }).join("\n");
+  $("forge-prompt").value = D.template.split("{references}").join(listed).split("{design}").join(design)
+    .split("{details}").join(state.details.trim() || "none");
+  $("forge-line").textContent = "Look: " + D.cats.map(function(c){ return c.id + "=" + state[c.id]; }).join(" ")
+    + (state.details.trim() ? " · touches: " + state.details.trim() : "");
+  try { localStorage.setItem(SAVE, JSON.stringify(state)); } catch (e) { /* the choice is only a convenience */ }
+};
+
+var copy = function(text, btn, fallback){
+  var label = btn.getAttribute("data-label") || btn.textContent;
+  btn.setAttribute("data-label", label);
+  var said = function(msg){ btn.textContent = msg; setTimeout(function(){ btn.textContent = label; }, 2200); };
+  var manual = function(){ fallback(); said("Selected: copy it"); };
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(function(){ said("Copied"); }, manual); }
+  else { manual(); }
+};
+
+wear(D.start);
+try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved) { wear(saved); } } catch (e) { /* start from his look */ }
+if (notes) { notes.value = state.details; notes.addEventListener("input", function(){ state.details = notes.value; render(); }); }
+Array.prototype.forEach.call(selects, function(s){
+  s.addEventListener("change", function(){ state[s.getAttribute("data-cat")] = s.value; render(); });
+});
+Array.prototype.forEach.call(tiles, function(t){
+  t.addEventListener("click", function(e){
+    var look = D.looks.filter(function(l){ return l.id === t.getAttribute("data-look"); })[0];
+    if (!look || e.metaKey || e.ctrlKey || e.shiftKey) { return; }
+    e.preventDefault();
+    wear(Object.assign({details: look.details}, look.values));
+    if (notes) { notes.value = state.details; }
+    render();
+    $("forge-stage").scrollIntoView({behavior: "smooth", block: "center"});
+  });
+});
+$("forge-copy").addEventListener("click", function(){
+  copy($("forge-prompt").value, $("forge-copy"), function(){ $("forge-prompt").focus(); $("forge-prompt").select(); });
+});
+$("forge-copy-line").addEventListener("click", function(){
+  copy($("forge-line").textContent, $("forge-copy-line"), function(){
+    var r = document.createRange(); r.selectNodeContents($("forge-line"));
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+  });
+});
+render();
 })();
 """
 

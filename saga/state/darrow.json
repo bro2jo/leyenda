@@ -319,6 +319,15 @@
     "last": "2026-10-31",
     "with": "rae-thorne"
   },
+  "wardrobe": [
+    "expression.patient",
+    "expression.reading",
+    "pose.walking",
+    "pose.square",
+    "pose.folded",
+    "hand.staff",
+    "hand.hammer"
+  ],
   "works": {
     "finished": 1,
     "tasks_done": 4,

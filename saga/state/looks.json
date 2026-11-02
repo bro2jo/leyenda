@@ -1,0 +1,15 @@
+{
+  "_about": "Darrow's finished looks, for the Wardrobe (darrow/wardrobe.html). Each: id, name, made (the date it was filed), image (under saga/art/, in looks/), alt (what the picture shows), values (one option id per category of engine/wardrobe.json) and details (the small touches typed in the Forge, or empty). A look shows once every piece it wears is open; the newest shown is his current look, at the head of his Reckoning. Filed from the Look line the Forge gives with the picture.",
+  "looks": [
+    {
+      "id": "the-drove-road",
+      "name": "The Drove Road",
+      "made": "2026-11-02",
+      "image": "looks/the-drove-road.webp",
+      "alt": "Ser Darrow, full length against a dark glow, laughing: a few days' stubble, the grey wool blanket round his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots.",
+      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "laughing",
+                 "pose": "square", "hand": "none", "feet": "worn", "extra": "none", "side": "none"},
+      "details": ""
+    }
+  ]
+}

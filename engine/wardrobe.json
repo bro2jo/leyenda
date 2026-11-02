@@ -1,0 +1,121 @@
+{
+  "_about": "The Wardrobe (darrow/wardrobe.html): every piece Darrow's looks can be made of, and what opens it. Each option: id (unique in its category), name (the menu), prompt (the words the image prompt uses) and unlock: none (open from the start), {\"level\": N}, {\"art\": id, \"rank\": R} (an Art at rank R or more, sealed Arts never), {\"knot\": N} (that Knot tied), or {\"page\": \"NN:key\"} (a scene already on the page that showed it: a chapter's code and scene key, e.g. \"04:5\", or a tale piece, \"tale01:p1\"). The engine reads level, art and knot (darrow.json -> wardrobe, and sync reports what opens); the site reads page itself. Poses follow the Knots, so a look never shows the leg doing what the story has not let it. Names stay generic: no faction's colours or crest, nothing the page has not shown. A finished look goes in saga/state/looks.json with its picture in saga/art/looks/. A piece a look wears is never removed or renamed (the build fails on a look that names a missing piece). The prompt is joined line by line; {references}, {design} and {details} are filled by the Forge.",
+  "categories": [
+    {"id": "build", "label": "Build", "options": [
+      {"id": "mending", "name": "Lean, still mending", "prompt": "lean and rangy, long in the limb and a little hollow in the cheek: a strong man still mending"},
+      {"id": "hard", "name": "Rangy and hard", "prompt": "rangy and hard-muscled, filling out again through the arms, shoulders and chest", "unlock": {"level": 10}},
+      {"id": "broad", "name": "Broad through the shoulders", "prompt": "broad through the shoulders and chest, strong arms, a soldier's frame come back", "unlock": {"level": 15}},
+      {"id": "fighter", "name": "A fighter's build", "prompt": "a fighter's build, deep-chested and heavy-shouldered, powerful through the arms and legs", "unlock": {"level": 20}},
+      {"id": "whole", "name": "Whole and unbowed", "prompt": "whole and powerful, a seasoned knight at the height of his strength, standing tall", "unlock": {"level": 25}}
+    ]},
+    {"id": "clothing", "label": "Clothing", "options": [
+      {"id": "linen", "name": "Linen shirt, sleeves rolled", "prompt": "an open-necked linen shirt with the sleeves rolled, brown wool trousers and a plain leather belt", "unlock": {"page": "03:5"}},
+      {"id": "ford", "name": "Mail over a gambeson, as at the Ford", "prompt": "a knee-length shirt of riveted mail over a quilted gambeson, belted at the waist", "unlock": {"page": "00:I"}},
+      {"id": "jerkin", "name": "Leather jerkin", "prompt": "a sleeveless brown leather jerkin, laced up the front, over a linen shirt and wool trousers", "unlock": {"level": 9}},
+      {"id": "gambeson", "name": "Quilted gambeson", "prompt": "a quilted linen gambeson, padded and buttoned to the throat, over wool trousers", "unlock": {"level": 10}},
+      {"id": "coat", "name": "Long riding coat", "prompt": "a long dark wool riding coat, split for the saddle, over a linen shirt", "unlock": {"level": 12}},
+      {"id": "brigandine", "name": "Brigandine", "prompt": "a brigandine of riveted plates under dark leather, worn over a gambeson", "unlock": {"level": 15}},
+      {"id": "half-plate", "name": "Half-plate harness", "prompt": "a half-plate harness: breastplate, pauldrons and vambraces over mail", "unlock": {"level": 20}},
+      {"id": "full-plate", "name": "Full harness of plate", "prompt": "a full harness of fitted plate armour, well kept and battle-worn, no helmet", "unlock": {"level": 25}}
+    ]},
+    {"id": "cloak", "label": "Cloak", "options": [
+      {"id": "none", "name": "No cloak", "prompt": "none"},
+      {"id": "blanket", "name": "The grey wool blanket", "prompt": "a grey wool blanket, washed thin and frayed at the edges, worn round his shoulders as a hooded cloak", "unlock": {"page": "02:between-3"}},
+      {"id": "moss", "name": "Moss-green hooded cloak", "prompt": "a moss-green hooded wool cloak", "unlock": {"level": 9}},
+      {"id": "fur", "name": "Fur-lined brown cloak", "prompt": "a heavy brown wool cloak lined with fur at the collar", "unlock": {"level": 11}},
+      {"id": "midnight", "name": "Midnight-blue cloak", "prompt": "a midnight-blue wool cloak with a plain iron clasp", "unlock": {"level": 13}},
+      {"id": "mantle", "name": "Black wool mantle", "prompt": "a long black wool mantle, fastened at one shoulder", "unlock": {"level": 16}},
+      {"id": "ember", "name": "Ember-red cloak", "prompt": "a deep ember-red wool cloak with a plain bronze clasp", "unlock": {"level": 20}}
+    ]},
+    {"id": "hair", "label": "Hair", "options": [
+      {"id": "tousled", "name": "Short, won't lie flat", "prompt": "short dark hair that won't lie flat"},
+      {"id": "cropped", "name": "Close-cropped", "prompt": "dark hair cropped close to the head"},
+      {"id": "tied", "name": "Tied back", "prompt": "dark hair grown out past the collar and tied back", "unlock": {"level": 11}},
+      {"id": "long", "name": "Shoulder-length", "prompt": "dark hair grown to the shoulders, loose and windblown", "unlock": {"level": 17}}
+    ]},
+    {"id": "beard", "label": "Beard", "options": [
+      {"id": "stubble", "name": "A few days' stubble", "prompt": "a few days of dark stubble"},
+      {"id": "shaven", "name": "Clean-shaven", "prompt": "clean-shaven"},
+      {"id": "short", "name": "Short beard", "prompt": "a short, trimmed dark beard", "unlock": {"level": 12}},
+      {"id": "full", "name": "Full beard", "prompt": "a full dark beard, kept short at the cheeks", "unlock": {"level": 18}}
+    ]},
+    {"id": "expression", "label": "Expression", "options": [
+      {"id": "laughing", "name": "Laughing", "prompt": "laughing out loud, the laugh that carries the length of a hall"},
+      {"id": "wry", "name": "Dry, lopsided smile", "prompt": "a dry, lopsided half-smile"},
+      {"id": "weary", "name": "Tired but standing", "prompt": "tired around the eyes, but steady and unafraid"},
+      {"id": "patient", "name": "Patient calm", "prompt": "calm and unhurried, the look of a man who will wait as long as it takes", "unlock": {"art": "menders_patience", "rank": 3}},
+      {"id": "reading", "name": "Reading you", "prompt": "eyes a little narrowed, reading the viewer the way he would read a line of riders", "unlock": {"art": "wardens_eye", "rank": 3}},
+      {"id": "grim", "name": "Grim resolve", "prompt": "jaw set, grim and resolved", "unlock": {"level": 14}},
+      {"id": "war-cry", "name": "War cry", "prompt": "shouting a war cry, teeth bared", "unlock": {"level": 19}},
+      {"id": "unbowed", "name": "Unbowed", "prompt": "chin up, unafraid, with a quiet, fierce pride", "unlock": {"level": 25}}
+    ]},
+    {"id": "pose", "label": "Pose", "options": [
+      {"id": "seated", "name": "Seated, one leg out straight", "prompt": "seated on a plain wooden stool, one leg stretched out straight in front of him"},
+      {"id": "walking", "name": "Walking on the flat", "prompt": "walking toward the viewer at an easy pace on level ground", "unlock": {"knot": 2}},
+      {"id": "square", "name": "Standing square", "prompt": "standing square on both legs, weight even, at ease, facing the viewer", "unlock": {"knot": 3}},
+      {"id": "folded", "name": "Arms folded", "prompt": "standing on both legs with his arms folded, facing the viewer", "unlock": {"knot": 3}},
+      {"id": "stick-arm", "name": "The stick under his arm", "prompt": "standing easy with a plain walking stick tucked under one arm like a captain's bat", "unlock": {"page": "04:3"}},
+      {"id": "running", "name": "Running", "prompt": "running on a road, mid-stride", "unlock": {"knot": 4}},
+      {"id": "leap", "name": "Mid-leap", "prompt": "caught mid-leap, both feet off the ground", "unlock": {"knot": 5}},
+      {"id": "turning", "name": "Turning to strike", "prompt": "turning at speed into a strike, his weight driving through the turn", "unlock": {"knot": 6}},
+      {"id": "battle", "name": "Braced for battle", "prompt": "in a braced battle stance, ready to meet a charge", "unlock": {"knot": 7}}
+    ]},
+    {"id": "hand", "label": "In hand", "options": [
+      {"id": "none", "name": "Nothing", "prompt": "none"},
+      {"id": "stick", "name": "The borrowed stick", "prompt": "a plain wooden walking stick", "unlock": {"page": "04:3"}},
+      {"id": "staff", "name": "Quarterstaff", "prompt": "a long ash quarterstaff, held upright beside him", "unlock": {"art": "stillwater", "rank": 3}},
+      {"id": "hammer", "name": "War hammer", "prompt": "a short-hafted war hammer", "unlock": {"art": "groundbreaker", "rank": 3}},
+      {"id": "sling", "name": "Sling", "prompt": "a leather sling with a stone in its cup", "unlock": {"art": "measured_hand", "rank": 3}},
+      {"id": "knives", "name": "Throwing knives", "prompt": "a brace of throwing knives in a bandolier across his chest", "unlock": {"art": "far_cast", "rank": 3}},
+      {"id": "sword", "name": "Arming sword", "prompt": "a plain arming sword in its scabbard at his belt", "unlock": {"level": 10}},
+      {"id": "bow", "name": "Longbow", "prompt": "an unstrung yew longbow", "unlock": {"level": 13}},
+      {"id": "spear", "name": "Boar spear", "prompt": "a boar spear with a crossbar below the blade", "unlock": {"level": 16}},
+      {"id": "shield", "name": "Sword and round shield", "prompt": "an arming sword and a battered round shield", "unlock": {"level": 17}},
+      {"id": "lance", "name": "A lance", "prompt": "a knight's lance held upright, a plain pennon at its head", "unlock": {"level": 22}}
+    ]},
+    {"id": "feet", "label": "Footwear", "options": [
+      {"id": "worn", "name": "Worn brown boots", "prompt": "tall, worn brown leather boots"},
+      {"id": "barefoot", "name": "Barefoot", "prompt": "bare feet"},
+      {"id": "shoes", "name": "Soft leather shoes", "prompt": "soft leather shoes"},
+      {"id": "riding", "name": "Black riding boots", "prompt": "tall black riding boots", "unlock": {"level": 12}},
+      {"id": "sabatons", "name": "Steel greaves and sabatons", "prompt": "steel greaves and sabatons", "unlock": {"level": 21}}
+    ]},
+    {"id": "extra", "label": "Accessory", "options": [
+      {"id": "none", "name": "Nothing", "prompt": "none"},
+      {"id": "pouches", "name": "Belt pouches", "prompt": "two small leather pouches on his belt"},
+      {"id": "bones", "name": "A pouch of knucklebones", "prompt": "a small pouch at his belt with five yellow sheep's knucklebones spilling from it", "unlock": {"page": "01:between-3"}},
+      {"id": "wrapped", "name": "Linen-wrapped fingers", "prompt": "the ends of the fingers of his right hand wrapped in clean linen", "unlock": {"page": "04:1"}},
+      {"id": "satchel", "name": "Leather satchel", "prompt": "a leather satchel on a strap across his chest", "unlock": {"level": 9}},
+      {"id": "gloves", "name": "Riding gloves", "prompt": "worn leather riding gloves", "unlock": {"level": 11}},
+      {"id": "quiver", "name": "Quiver of arrows", "prompt": "a quiver of arrows at his hip", "unlock": {"level": 13}},
+      {"id": "pack", "name": "Travel pack", "prompt": "a travel pack on his back with a rolled blanket strapped on top", "unlock": {"art": "long_breath", "rank": 3}}
+    ]},
+    {"id": "side", "label": "At his side", "options": [
+      {"id": "none", "name": "No one", "prompt": "none"},
+      {"id": "ash", "name": "Ash, the grey hound", "prompt": "Ash at his heel: a grey wolfhound bitch, long-boned, all rib and shoulder, with a rough, wiry grey coat gone darker along the back, yellow eyes, a grizzled beard and folded ears, her hind leg splinted in pine laths and linen", "unlock": {"page": "04:5"},
+       "reference": {"label": "Ash", "image": "characters/ash-book2.jpg", "file": "ash.jpg", "use": "Ash's likeness: keep her coat, colouring, ears and the splint on her hind leg; ignore the scene around her."}}
+    ]}
+  ],
+  "references": [
+    {"label": "His face", "image": "characters/darrow-book2.jpg", "file": "darrow-face.jpg", "use": "the original painting: keep this man's face exactly (its shape, his grey-green eyes, the brows, the crooked nose and its faint scar, his smile, his colouring). Ignore the mountain, snow, ox, stick and the scene."},
+    {"label": "Full-body style", "image": "looks/reference-fullbody.jpg", "file": "darrow-fullbody.jpg", "use": "the full-body framing, scale and hand-painted brushwork. Replace the clothes, cloak, pose and everything else with the design below wherever they differ."}
+  ],
+  "prompt": [
+    "Create ONE new full-body, character-only illustration of the same man, for his lookbook, using the ATTACHED REFERENCE IMAGES. He must be the SAME RECOGNIZABLE MAN every time.",
+    "",
+    "REFERENCE IMAGES:",
+    "{references}",
+    "",
+    "EXACT DESIGN TO CREATE:",
+    "{design}",
+    "- Small touches: {details}",
+    "",
+    "IDENTITY AND STYLE LOCK:",
+    "He is a man of thirty-two, tall, with grey-green eyes in a lean, weathered face, a nose broken once and set a little crooked with a faint scar across the bridge, and a dry, lopsided smile. Keep his face from reference 1 even when the beard, hair or expression changes. His body is the one the Build line describes, not the references'. Painterly fantasy concept illustration, visible elegant brush strokes, believable weathered medieval textiles, leather and steel, detailed garment stitching, soft warm natural painterly lighting, grounded historical-fantasy craftsmanship. No cartoon exaggeration, no photographic realism, no glossy 3D render, no redesign of the face.",
+    "",
+    "COMPOSITION AND OUTPUT:",
+    "One man, full body, in the selected pose and expression, his feet and the top of his hair fully inside the picture with comfortable margins. Vertical 2:3 canvas, the same scale and framing as reference 2. A transparent background if possible; otherwise a plain dark background with a soft warm glow behind him. No scene, no floor, no other people, no animals except a companion chosen above, no text, no border, no watermark. His hands hold only what the design names. Where a line says none, leave that thing out entirely.",
+    "",
+    "IMPORTANT: carry nothing over from the references (cloak, clothes, boots, beard, pose, objects) unless the design above names it. Check every line of the design before finishing."
+  ]
+}

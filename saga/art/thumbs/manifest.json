@@ -265,6 +265,28 @@
     357
    ]
   },
+  "looks/reference-fullbody.jpg": {
+   "sha1": "9eb223874591df6aa717b826b084c93d31fdb0f2",
+   "sm": [
+    171,
+    256
+   ],
+   "md": [
+    427,
+    640
+   ]
+  },
+  "looks/the-drove-road.webp": {
+   "sha1": "1e2371adbf068d21cab615d87f87b40c0464eba3",
+   "sm": [
+    171,
+    256
+   ],
+   "md": [
+    427,
+    640
+   ]
+  },
   "places/coldmere.jpg": {
    "sha1": "7b1203edf97c56e6c84015165631425d4b570895",
    "sm": [

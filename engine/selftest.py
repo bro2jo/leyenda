@@ -536,6 +536,15 @@ def main():
         page = page_of(tmp / "docs/darrow/index.html")
         check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and "Nothing kept yet" in page,
               "the empty shelf shows the tale in progress, its pieces told, and what the shelf is for", out[-300:])
+        ward = page_of(tmp / "docs/darrow/wardrobe.html")
+        check('id="forge-data"' in ward and " disabled>" in ward and 'class="look-tile"' in ward and 'class="look-fig"' in page,
+              "the Wardrobe builds: the Forge's data, a locked piece, the lookbook, and his current look on his page")
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import darrow as D; a = [{'id': 'wardens_eye', 'rank': 3}]; "
+                         "print(len(D.wardrobe_earned(9, a, [])) < len(D.wardrobe_earned(25, a, [1, 2, 3, 4, 5, 6, 7])), "
+                         "'expression.reading' in D.wardrobe_earned(1, a, []), 'expression.reading' in D.wardrobe_earned(30, [], []), "
+                         "'pose.running' in D.wardrobe_earned(30, a, [1, 2, 3]))"], tmp)
+        check(code == 0 and out.strip().endswith("True True False False"),
+              "the Wardrobe opens by level, Art rank and Knot: an Art's piece waits for its rank, a pose for its Knot", out[-300:])
         check(re.search(r'href="\.\./site\.css\?v=[0-9a-f]{10}"', page) is not None and re.search(r'src="\.\./site\.js\?v=[0-9a-f]{10}"', page) is not None,
               "pages link the stylesheet and the script by a version that changes with their content")
         check('class="rring"' in page and 'stroke="#262D37"' in page and 'class="tg"' in page and 'stroke="#CFA65F"' in page,

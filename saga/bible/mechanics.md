@@ -97,6 +97,10 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 
 A second thread, read on his palms beside the first. The real side drives it the way it drives Ember: the days logged as **time together on purpose** (`daily_log.csv → together=Y`, and nothing else about them is recorded or asked) are staged like an Art's ranks, at 1 / 4 / 10 / 20 / 35 days: *a name · a hand · a road · a door · a home*. It only climbs; a quiet month is a thread at rest, never a thread frayed. It buys no XP and no tier, and it never moves anyone's regard: Rae Thorne's approval is a story matter, moved by Darrow's choices like Maelis's or Wren's. What a stage buys is one scene: a planned moment between them, written when the stage is reached, wherever the road has them by then. The sheet shows the Tether from stage I, and the scene that pays a stage closes with its line in the Reckoning box.
 
+## The Wardrobe
+
+His looks, outside the story: a page of the site (`darrow/wardrobe.html`) where he chooses a look from pieces he has opened (build, clothing, cloak, hair, beard, expression, pose, what he holds, footwear, an accessory, who is at his side), copies the prompt that paints it, and sends Claude the finished picture with its Look line to keep in the lookbook. The pieces and what opens each are `engine/wardrobe.json`: some are open from the start; a level opens more (the steady drip, a new build at each rank); an Art at rank III opens its signature piece; a Knot opens the poses the leg may now take, so a look never shows the leg doing what the page has not let it; a scene opens what the page showed him wearing or carrying. `sync` reports what opened (`WARDROBE:`, and `Wardrobe +` on the Reckoning line); the level-up banner names a level's pieces. It buys nothing and changes no number: what he wears in the story stays the story's.
+
 ---
 
 ## Checks and the chapter tier

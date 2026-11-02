@@ -85,6 +85,7 @@ ROOT = Path(__file__).resolve().parent.parent
 P = {
     "config": ROOT / "real/config.json",
     "rules": ROOT / "engine/rules.json",
+    "wardrobe": ROOT / "engine/wardrobe.json",
     "nutrition": ROOT / "real/logs/nutrition_log.csv",
     "food": ROOT / "real/logs/food_entries.csv",
     "foods": ROOT / "real/logs/food_library.csv",
@@ -793,6 +794,35 @@ def rank_of(level, rules):
     return name
 
 
+def wardrobe_earned(level, arts, knots):
+    """The Wardrobe's options this sheet has opened (engine/wardrobe.json), as 'category.option': a level reached, an Art
+    at a rank (a sealed Art has none), a Knot tied. What is open from the start, or opened by a scene, is the site's."""
+    if not P["wardrobe"].exists():
+        return []
+    rank = {a["id"]: a["rank"] for a in arts}
+    earned = []
+    for cat in load_json(P["wardrobe"])["categories"]:
+        for o in cat["options"]:
+            u = o.get("unlock") or {}
+            if (("level" in u and level >= u["level"]) or ("art" in u and rank.get(u["art"], 0) >= u.get("rank", 1))
+                    or ("knot" in u and u["knot"] in knots)):
+                earned.append(f'{cat["id"]}.{o["id"]}')
+    return earned
+
+
+def wardrobe_names(ids):
+    names = {f'{c["id"]}.{o["id"]}': o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]}
+    return [names.get(i, i) for i in ids]
+
+
+def wardrobe_new(old, new):
+    """What the Wardrobe opened since the saved sheet; nothing on the first sync that carries a wardrobe at all."""
+    if "wardrobe" not in old:
+        return []
+    had = set(old["wardrobe"])
+    return [x for x in new.get("wardrobe", []) if x not in had]
+
+
 # ---------------------------------------------------------------- sync
 def compute(cfg, rules, asof=None, write=False):
     """Everything the sheet needs. write=True (sync only) also rewrites nutrition_log.csv from the food entries."""
@@ -940,6 +970,7 @@ def compute(cfg, rules, asof=None, write=False):
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
         "tether": tether,
+        "wardrobe": wardrobe_earned(level, arts, knots),
         "works": {"finished": works["finished"], "tasks_done": works["tasks_done"], "late": works["late"]},
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},
@@ -1019,6 +1050,8 @@ def diff_sheets(old, new):
         nm = names[k - 1] if k <= len(names) else ""
         notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
                      + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
+    if wardrobe_new(old, new):
+        notes.append("WARDROBE: new to choose from: " + ", ".join(wardrobe_names(wardrobe_new(old, new))) + " (darrow/wardrobe.html)")
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("tasks_done", 0) > ow.get("tasks_done", 0):
         notes.append(f"WORK: a task done ({nw['tasks_done']} in all); its tale owes a piece (`saga.py now`, then `saga.py brief --tale`)")
@@ -1066,6 +1099,8 @@ def reckoning_line(old, new):
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("finished", 0) > ow.get("finished", 0):
         bits.append(f"Works {ow.get('finished', 0)} → {nw['finished']}")
+    if wardrobe_new(old, new):
+        bits.append("Wardrobe + " + ", ".join(wardrobe_names(wardrobe_new(old, new))))
     return "⟦ " + " · ".join(bits) + " ⟧" if bits else ""
 
 
