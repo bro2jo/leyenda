@@ -1367,7 +1367,7 @@ class Site:
                 f'<img src="{rel}{c["_portrait_md"]}" alt="{alt}"{dims}{c.get("_portrait_focus", "")} decoding="async"></a>{overlay}</figure>')
 
     @staticmethod
-    def swipe_frame(shots, rel, label, overlay="", cls=""):
+    def swipe_frame(shots, rel, label, overlay=""):
         """Pictures in one frame that swipes between them, the first shown first, and a row of tabs under it (shown by
         the script) that jumps to one: a character's portraits by Book. Each shot is
         {label, path, size, md, focus, alt}; tap or click one to see it whole."""
@@ -1379,7 +1379,7 @@ class Site:
                           f'<img src="{rel}{s["md"]}" alt="{a}"{dims}{s["focus"]} decoding="async"></a>')
         tabs = "".join(f'<button type="button" data-pf-i="{i}" aria-pressed="{"true" if i == 0 else "false"}">{esc(s["label"])}</button>'
                        for i, s in enumerate(shots))
-        return (f'<figure class="portrait multi{cls}" data-pf><div class="pf-frame"><div class="pf-strip">{"".join(slides)}</div>{overlay}</div>'
+        return (f'<figure class="portrait multi" data-pf><div class="pf-frame"><div class="pf-strip">{"".join(slides)}</div>{overlay}</div>'
                 f'<div class="pf-tabs" role="group" aria-label="{label}" hidden>{tabs}</div></figure>')
 
     def named_picture(self, folder, stem, alt):
@@ -2421,15 +2421,18 @@ class Site:
                 if oid in known or not o.get("name") or not o.get("prompt"):
                     problem(f"{where}: {oid} is listed twice, or has no name or prompt")
                 known.add(oid)
-                if set(u) - {"level", "art", "rank", "knot", "page"} or ("art" in u and u["art"] not in arts):
+                if (set(u) - {"level", "art", "rank", "knot", "page"} or ("art" in u and u["art"] not in arts) or ("rank" in u and "art" not in u)
+                        or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1)) or ("level" in u and not isinstance(u["level"], int))):
                     problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u}")
                 if "page" in u and u["page"] not in on_page:
                     problem(f"{where}: {oid} opens on {u['page']}, which is not a scene on the page (a piece the story has not shown stays out)")
                 o["_open"] = not u or "page" in u or oid in earned
                 o["_lock"] = ("" if o["_open"] else f'Level {u["level"]}' if "level" in u else f'Knot {roman(u["knot"])}' if "knot" in u
                               else f'{arts.get(u.get("art"), "")} {roman(u.get("rank", 1))}')
-                if o.get("reference"):
+                if o.get("reference") and o["_open"]:  # a locked piece's reference is published when it opens
                     o["_ref"] = self.reference(o["reference"], f"{where}: {oid}.reference")
+            if not any(o["_open"] for o in cat["options"]):
+                problem(f"{where}: {cat['id']} has no piece open yet; give it one open from the start, so the Forge always has one to show")
         if earned - known:
             problem(f"saga/state/darrow.json: wardrobe names {', '.join(sorted(earned - known))}, which {where} does not; run python3 engine/darrow.py sync")
         w["_refs"] = [r for r in (self.reference(r, f"{where}: references[{i}]") for i, r in enumerate(w.get("references") or [])) if r]
@@ -2439,10 +2442,10 @@ class Site:
         path = STATE / "looks.json"
         for i, lk in enumerate(load_json(path).get("looks", []) if path.exists() else []):
             lw = f"saga/state/looks.json: looks[{i}]"
+            stems.add(Path(str(lk.get("image"))).stem)
             if any(not lk.get(k) for k in ("id", "name", "made", "image", "alt", "values")):
                 problem(f"{lw}: a look needs id, name, made, image, alt and values")
                 continue
-            stems.add(Path(lk["image"]).stem)
             bad = [f"{c}={v}" for c, v in lk["values"].items() if v not in pieces.get(c, {})] + [f"{c} missing" for c in pieces if c not in lk["values"]]
             if bad:
                 problem(f"{lw} ({lk['id']}): {', '.join(bad)}: one piece of {where} per category (a piece a look wears is never removed or renamed)")
@@ -2451,8 +2454,8 @@ class Site:
             elif all(pieces[c][v]["_open"] for c, v in lk["values"].items()):
                 got = self.register_image(lw, lk["image"], lk["alt"])
                 if got:
-                    self.looks.append({**lk, "_path": got[0], "_md": got[3]})
-        self.looks.sort(key=lambda x: x["made"], reverse=True)
+                    self.looks.append({**lk, "_path": got[0], "_md": got[3], "_i": i})
+        self.looks.sort(key=lambda x: (x["made"], x["_i"]), reverse=True)  # newest first; on a shared date, the later entry
         self.stray_pictures("looks", stems, "a look in saga/state/looks.json or a reference in engine/wardrobe.json")
 
     def render_wardrobe(self):
@@ -2743,11 +2746,10 @@ class Site:
         head = f'Level {d["level"]}' + (f' · {esc(d["rank"])}' if new_rank else "")
         line = ("A new rank. " if new_rank else "") + f'HP {d["hp_max"]} · Proficiency +{d["proficiency"]}'
         pieces = [o["name"] for c in (self.wardrobe or {}).get("categories", []) for o in c["options"] if (o.get("unlock") or {}).get("level") == d["level"]]
-        if pieces:
-            line += '</span><span class="m">New in the Wardrobe: ' + ", ".join(esc(x) for x in pieces)
+        news = f'<span class="m">New in the Wardrobe: {", ".join(esc(x) for x in pieces)}</span>' if pieces else ""
         href = f"{rel}darrow/wardrobe.html" if pieces else f"{rel}darrow/index.html#reckoning"
         return (f'<a class="lvl-news{self.metal(d["level"])}" href="{href}">{crest(d["level"])}'
-                f'<span><span class="lbl">A new level</span><b>{head}</b><span class="m">{line}</span></span></a>')
+                f'<span><span class="lbl">A new level</span><b>{head}</b><span class="m">{line}</span>{news}</span></a>')
 
     # ---------------------------------------------------------------- tales
     def render_tale(self, idx):
@@ -3497,7 +3499,7 @@ a.art-pic{cursor:zoom-in}
 .lvl-news:hover{text-decoration:none;border-color:var(--ember)}
 .lvl-news .crest{width:52px;flex:none}
 .lvl-news b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.15}
-.lvl-news .m{color:var(--dim);font-size:.95rem}
+.lvl-news .m{display:block;color:var(--dim);font-size:.95rem}
 .rk-mini{display:grid;gap:12px}
 .rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}

@@ -811,6 +811,9 @@ def wardrobe_earned(level, arts, knots):
 
 
 def wardrobe_names(ids):
+    """The menu names of these pieces (one read of the catalogue, only when something opened)."""
+    if not ids:
+        return []
     names = {f'{c["id"]}.{o["id"]}': o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]}
     return [names.get(i, i) for i in ids]
 
@@ -1050,8 +1053,9 @@ def diff_sheets(old, new):
         nm = names[k - 1] if k <= len(names) else ""
         notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
                      + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
-    if wardrobe_new(old, new):
-        notes.append("WARDROBE: new to choose from: " + ", ".join(wardrobe_names(wardrobe_new(old, new))) + " (darrow/wardrobe.html)")
+    opened = wardrobe_names(wardrobe_new(old, new))
+    if opened:
+        notes.append("WARDROBE: new to choose from: " + ", ".join(opened) + " (darrow/wardrobe.html)")
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("tasks_done", 0) > ow.get("tasks_done", 0):
         notes.append(f"WORK: a task done ({nw['tasks_done']} in all); its tale owes a piece (`saga.py now`, then `saga.py brief --tale`)")
@@ -1099,8 +1103,9 @@ def reckoning_line(old, new):
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("finished", 0) > ow.get("finished", 0):
         bits.append(f"Works {ow.get('finished', 0)} → {nw['finished']}")
-    if wardrobe_new(old, new):
-        bits.append("Wardrobe + " + ", ".join(wardrobe_names(wardrobe_new(old, new))))
+    opened = wardrobe_names(wardrobe_new(old, new))
+    if opened:
+        bits.append("Wardrobe + " + ", ".join(opened))
     return "⟦ " + " · ".join(bits) + " ⟧" if bits else ""
 
 
