@@ -1,5 +1,5 @@
 {
-  "_about": "The Wardrobe (darrow/wardrobe.html): every piece Darrow's looks can be made of, and what opens it. Each option: id (unique in its category), name (the menu), prompt (the words the image prompt uses) and unlock: none (open from the start), {\"level\": N}, {\"art\": id, \"rank\": R} (an Art at rank R or more, sealed Arts never), {\"knot\": N} (that Knot tied), or {\"page\": \"NN:key\"} (a scene already on the page that showed it: a chapter's code and scene key, e.g. \"04:5\", or a tale piece, \"tale01:p1\"). The engine reads level, art and knot (darrow.json -> wardrobe, and sync reports what opens); the site reads page itself. Poses follow the Knots, so a look never shows the leg doing what the story has not let it. Names stay generic: no faction's colours or crest, nothing the page has not shown. A finished look goes in saga/state/looks.json with its picture in saga/art/looks/. A piece a look wears is never removed or renamed (the build fails on a look that names a missing piece). The prompt is joined line by line; {references}, {design} and {details} are filled by the Forge.",
+  "_about": "The Wardrobe (darrow/wardrobe.html): every piece Darrow's looks can be made of, and what opens it. Each option: id (unique in its category), name (the menu), prompt (the words the image prompt uses) and unlock: none (open from the start), {\"level\": N}, {\"art\": id, \"rank\": R} (an Art at rank R or more, sealed Arts never), {\"knot\": N} (that Knot tied), or {\"page\": \"NN:key\"} (a scene already on the page that showed it: a chapter's code and scene key, e.g. \"04:5\", or a tale piece, \"tale01:p1\"). The engine reads level, art and knot (darrow.json -> wardrobe, and sync reports what opens); the site reads page itself. Poses follow the Knots, so a look never shows the leg doing what the story has not let it. Names stay generic: no faction's colours or crest, nothing the page has not shown. A finished look goes in saga/state/looks.json with its picture in saga/art/looks/. A piece a look wears is never removed or renamed (the build fails on a look that names a missing piece). A piece may bring its own reference picture (\"reference\": {label, image under saga/art/, file, use}, like Ash): the Forge offers it to download and names it as the next Image while the piece is chosen. The prompt is written for OpenAI's image generation and joined line by line; {references} (Image 1, Image 2… in the order they are attached), {design} and {details} are filled by the Forge.",
   "categories": [
     {"id": "build", "label": "Build", "options": [
       {"id": "mending", "name": "Lean, still mending", "prompt": "lean and rangy, long in the limb and a little hollow in the cheek: a strong man still mending"},
@@ -93,29 +93,35 @@
     {"id": "side", "label": "At his side", "options": [
       {"id": "none", "name": "No one", "prompt": "none"},
       {"id": "ash", "name": "Ash, the grey hound", "prompt": "Ash at his heel: a grey wolfhound bitch, long-boned, all rib and shoulder, with a rough, wiry grey coat gone darker along the back, yellow eyes, a grizzled beard and folded ears, her hind leg splinted in pine laths and linen", "unlock": {"page": "04:5"},
-       "reference": {"label": "Ash", "image": "characters/ash-book2.jpg", "file": "ash.jpg", "use": "Ash's likeness: keep her coat, colouring, ears and the splint on her hind leg; ignore the scene around her."}}
+       "reference": {"label": "Ash", "image": "characters/ash-book2.jpg", "file": "ash.jpg", "use": "Ash, the hound at his side. Keep her likeness: the rough grey coat darker along the back, the folded ears, the yellow eyes and the splint on her hind leg. Take nothing else from this picture."}}
     ]}
   ],
   "references": [
-    {"label": "His face", "image": "characters/darrow-book2.jpg", "file": "darrow-face.jpg", "use": "the original painting: keep this man's face exactly (its shape, his grey-green eyes, the brows, the crooked nose and its faint scar, his smile, his colouring). Ignore the mountain, snow, ox, stick and the scene."},
-    {"label": "Full-body style", "image": "looks/reference-fullbody.jpg", "file": "darrow-fullbody.jpg", "use": "the full-body framing, scale and hand-painted brushwork. Replace the clothes, cloak, pose and everything else with the design below wherever they differ."}
+    {"label": "His face", "image": "characters/darrow-book2.jpg", "file": "darrow-face.jpg", "use": "his face. Keep it exactly: its shape, the grey-green eyes, the brows, the crooked nose with its faint scar, his smile and his colouring. Take nothing else from this picture (not the mountain, snow, ox, stick or clothes)."},
+    {"label": "Full-body style", "image": "looks/reference-fullbody.jpg", "file": "darrow-fullbody.jpg", "use": "the full-body framing, scale and proportions, and the hand-painted brushwork. Its clothes, cloak and pose are replaced by the design."}
   ],
   "prompt": [
-    "Create ONE new full-body, character-only illustration of the same man, for his lookbook, using the ATTACHED REFERENCE IMAGES. He must be the SAME RECOGNIZABLE MAN every time.",
+    "A full-body character illustration for a fantasy lookbook: one man, standing alone, isolated on a transparent background.",
     "",
-    "REFERENCE IMAGES:",
+    "Reference images, attached in this order:",
     "{references}",
     "",
-    "EXACT DESIGN TO CREATE:",
+    "Design (draw exactly this; whatever the references show that is not listed here is replaced):",
     "{design}",
     "- Small touches: {details}",
     "",
-    "IDENTITY AND STYLE LOCK:",
-    "He is a man of thirty-two, tall, with grey-green eyes in a lean, weathered face, a nose broken once and set a little crooked with a faint scar across the bridge, and a dry, lopsided smile. Keep his face from reference 1 even when the beard, hair or expression changes. His body is the one the Build line describes, not the references'. Painterly fantasy concept illustration, visible elegant brush strokes, believable weathered medieval textiles, leather and steel, detailed garment stitching, soft warm natural painterly lighting, grounded historical-fantasy craftsmanship. No cartoon exaggeration, no photographic realism, no glossy 3D render, no redesign of the face.",
+    "Keep the same man:",
+    "He is thirty-two, tall, with grey-green eyes in a lean, weathered face, a nose broken once and set a little crooked with a faint scar across the bridge, and a dry, lopsided smile. Take his face from Image 1 and do not change his facial features, eye colour, skin tone or the shape of his nose, even when his beard, hair or expression changes. His body is the one the Build line describes.",
     "",
-    "COMPOSITION AND OUTPUT:",
-    "One man, full body, in the selected pose and expression, his feet and the top of his hair fully inside the picture with comfortable margins. Vertical 2:3 canvas, the same scale and framing as reference 2. A transparent background if possible; otherwise a plain dark background with a soft warm glow behind him. No scene, no floor, no other people, no animals except a companion chosen above, no text, no border, no watermark. His hands hold only what the design names. Where a line says none, leave that thing out entirely.",
+    "Style:",
+    "Painterly fantasy concept art in the hand-painted style of Image 2: visible, elegant brushwork; believable weathered medieval wool, linen, leather and steel with detailed stitching; soft, warm, natural light; grounded historical fantasy. Not a photograph, not a 3D render, not a cartoon.",
     "",
-    "IMPORTANT: carry nothing over from the references (cloak, clothes, boots, beard, pose, objects) unless the design above names it. Check every line of the design before finishing."
+    "Composition and output:",
+    "Vertical 2:3 portrait (1024 x 1536) at the same scale and framing as Image 2: his whole figure, from the top of his hair to the soles of his boots, with a comfortable margin on every side. Transparent background: a PNG with a real alpha channel, so everything around him is empty. No checkerboard pattern, no backdrop, no floor, no ground shadow, no frame, no text, no watermark. Only if a transparent background is truly impossible, use a plain, flat, very dark charcoal background instead.",
+    "",
+    "Rules:",
+    "- One man; no other people, and no animal unless the design names a companion.",
+    "- He wears and holds only what the design names; where a line says none, leave that thing out entirely.",
+    "- Check every line of the design before finishing."
   ]
 }

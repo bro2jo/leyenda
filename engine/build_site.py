@@ -2413,7 +2413,10 @@ class Site:
             return
         w, where = load_json(WARDROBE), "engine/wardrobe.json"
         arts = {a["id"]: a["name"] for a in self.rules["arts"] + self.rules.get("sport_arts", {}).get("arts", [])}
-        on_page = {f'{c["code"]}:{sc["key"]}' for c in self.chapters + self.tales for sc in c["scenes"]}
+        on_page = {f'{c["code"]}:{sc["key"]}': (f'{c["label"]} · {sc["label"]} — {sc["title"]}' if sc["label"] else f'{c["label"]} — {sc["title"]}',
+                                                 f'{self.page_dir(c)}{c["slug"]}.html#{sc["anchor"]}') for c in self.chapters + self.tales for sc in c["scenes"]}
+        knots = {k["n"]: k["name"] for k in self.rules.get("knots") or []}
+        mid = lambda name: "the " + name[4:] if name.startswith("The ") else name  # "Opened by the Knot of Standing"
         earned, known = set(self.darrow.get("wardrobe") or []), set()
         for cat in w["categories"]:
             for o in cat["options"]:
@@ -2429,6 +2432,10 @@ class Site:
                 o["_open"] = not u or "page" in u or oid in earned
                 o["_lock"] = ("" if o["_open"] else f'Level {u["level"]}' if "level" in u else f'Knot {roman(u["knot"])}' if "knot" in u
                               else f'{arts.get(u.get("art"), "")} {roman(u.get("rank", 1))}')
+                o["_from"] = ("There from the start" if not u else f'Opened at Level {u["level"]}' if "level" in u
+                              else f'Opened by {mid(knots.get(u["knot"], ""))}' if "knot" in u else f'Opened by {mid(arts.get(u.get("art"), ""))} {roman(u.get("rank", 1))}'
+                              if "art" in u else "From the story: ")
+                o["_story"] = on_page.get(u.get("page"))  # (scene, href) for a piece the story showed
                 if o.get("reference") and o["_open"]:  # a locked piece's reference is published when it opens
                     o["_ref"] = self.reference(o["reference"], f"{where}: {oid}.reference")
             if not any(o["_open"] for o in cat["options"]):
@@ -2491,16 +2498,21 @@ class Site:
                 n_open += o["_open"]
                 lock = "" if o["_open"] else f' · {esc(o["_lock"])}'
                 opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_open"] else " disabled"}>{esc(o["name"])}{lock}</option>')
-            fields.append(f'<label>{esc(c["label"])}<select data-cat="{esc(c["id"])}">{"".join(opts)}</select></label>')
+            chosen = next((o for o in c["options"] if o["id"] == start.get(c["id"])), c["options"][0])
+            fields.append(f'<div class="forge-field"><label for="forge-{esc(c["id"])}">{esc(c["label"])}</label>'
+                          f'<select id="forge-{esc(c["id"])}" data-cat="{esc(c["id"])}">{"".join(opts)}</select>'
+                          f'<span class="forge-src" data-from="{esc(c["id"])}">{self.piece_source(chosen, rel)}</span></div>')
         forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
                     f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it.</p><div class="forge-grid">{"".join(fields)}</div>'
                     '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
                     'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></label>'
                     '<p class="forge-result" id="forge-result" aria-live="polite"></p></div>')
-        cards = [self.ref_card(r, rel) for r in w["_refs"]]
+        cards = [self.ref_card(r, rel, n=i + 1) for i, r in enumerate(w["_refs"])]
         cards += [self.ref_card(o["_ref"], rel, f'{c["id"]}.{o["id"]}') for c in w["categories"] for o in c["options"] if o.get("_ref")]
-        paint = sec("Paint it", "", '<ol class="forge-steps"><li>Copy the prompt.</li><li>Download the references and attach them in ChatGPT with it.</li>'
-                    '<li>When the picture is done, send it to Claude with the Look line: it goes into the lookbook for good.</li></ol>'
+        paint = sec("Paint it", "", '<ol class="forge-steps"><li>Copy the prompt.</li><li>Download the references and attach them to your ChatGPT message in order, Image 1 first.</li>'
+                    '<li>Paste the prompt and send. If the background comes back as a checkerboard or a backdrop, reply: '
+                    '<i>Remove the background and give me a real transparent PNG with an alpha channel, not a checkerboard.</i></li>'
+                    '<li>Send the finished picture to Claude with the Look line: it goes into the lookbook for good.</li></ol>'
                     '<textarea class="forge-prompt" id="forge-prompt" readonly rows="10" aria-label="The image prompt"></textarea>'
                     '<div class="btn-row"><button class="btn" type="button" id="forge-copy">Copy prompt</button>'
                     '<a class="btn ghost" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT</a></div>'
@@ -2508,7 +2520,9 @@ class Site:
                     '<p class="lbl">The Look line</p><code class="look-line" id="forge-line"></code>'
                     '<div class="btn-row"><button class="btn ghost" type="button" id="forge-copy-line">Copy the Look line</button></div>'
                     '<noscript><p class="empty">The Forge needs JavaScript; the lookbook works without it.</p></noscript>')
-        data = {"cats": [{"id": c["id"], "label": c["label"], "options": [{"id": o["id"], "prompt": o["prompt"], "open": o["_open"]} for o in c["options"]]}
+        data = {"cats": [{"id": c["id"], "label": c["label"], "options": [
+                    {"id": o["id"], "prompt": o["prompt"], "open": o["_open"], "from": o["_from"],
+                     **({"story": o["_story"][0], "href": rel + o["_story"][1]} if o["_story"] else {})} for o in c["options"]]}
                          for c in w["categories"]],
                 "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
                 "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
@@ -2521,13 +2535,21 @@ class Site:
         self.pages["darrow/wardrobe.html"] = shell("The Wardrobe", body, rel, "Darrow", "wardrobe-page", desc="Darrow's looks, and the Forge that paints new ones.")
 
     @staticmethod
-    def ref_card(r, rel, for_piece=""):
-        """A reference to download and attach; one a piece brings (for_piece) shows only while that piece is chosen."""
+    def piece_source(o, rel):
+        """Where a piece came from, under its menu: the start, a level, an Art, a Knot, or the scene that showed it (a link)."""
+        if o.get("_story"):
+            return f'{esc(o["_from"])}<a href="{rel}{o["_story"][1]}">{esc(o["_story"][0])}</a>'
+        return esc(o["_from"])
+
+    @staticmethod
+    def ref_card(r, rel, for_piece="", n=0):
+        """A reference to download and attach, numbered in the order the prompt names them (Image 1, Image 2…); one a
+        piece brings (for_piece) shows only while that piece is chosen, and the Forge numbers it then."""
         if not r:
             return ""
         attr = f' data-ref-for="{esc(for_piece)}" hidden' if for_piece else ""
         return (f'<a class="ref-card" href="{rel}{r["href"]}" download="{esc(r["file"])}"{attr}><img src="{rel}{r["sm"]}" alt="" loading="lazy" decoding="async">'
-                f'<span><b>{esc(r["label"])}</b><span>Download</span></span></a>')
+                f'<span class="ref-t"><i class="ref-n">{f"Image {n}" if n else ""}</i><b>{esc(r["label"])}</b><span class="ref-d">Download</span></span></a>')
 
     # ---------------------------------------------------------------- now
     def open_choice(self):
@@ -3709,9 +3731,12 @@ ol.choice li s{color:var(--faint)}
 .forge{display:grid;gap:12px}
 .wardrobe-page [hidden]{display:none}
 .forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
-@media (max-width:519px){.forge-grid label{grid-template-columns:6.6em minmax(0,1fr);align-items:center;gap:10px}}
+.forge-field{display:grid;gap:4px;min-width:0}
+.forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}}
 @media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.forge-grid label,.forge-notes{display:grid;gap:4px;min-width:0;font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.forge-notes{display:grid;gap:4px;min-width:0}
 .forge-notes em{font-style:normal;letter-spacing:0;color:var(--faint)}
 .forge select,.forge textarea,.forge-prompt{width:100%;min-width:0;font:inherit;font-family:var(--body);font-size:1rem;letter-spacing:0;color:var(--ink);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px}
 .forge select{appearance:none;-webkit-appearance:none;padding-right:30px;background:var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA65F' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center}
@@ -3726,7 +3751,8 @@ button.btn{font-size:1rem;cursor:pointer}
 .ref-card{display:flex;gap:10px;align-items:center;border:1px solid var(--rule);border-radius:6px;padding:6px;color:var(--ink);min-width:0}
 .ref-card:hover{text-decoration:none;border-color:var(--brass-dim)}
 .ref-card img{width:52px;height:52px;flex:none;object-fit:cover;border-radius:4px;background:var(--plate)}
-.ref-card b{display:block;font-size:.9rem;font-weight:600} .ref-card span span{font-size:.8rem;color:var(--brass)}
+.ref-t{display:grid;min-width:0} .ref-n{font-style:normal;font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--dim)}
+.ref-card b{font-size:.9rem;font-weight:600} .ref-d{font-size:.8rem;color:var(--brass)}
 .look-line{display:block;font-family:var(--mono);font-size:.78rem;line-height:1.5;color:var(--dim);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px;overflow-wrap:anywhere}
 """
 
@@ -4033,8 +4059,17 @@ var render = function(){
     card.hidden = !on;
     if (on) { refs.push(D.optRefs[card.getAttribute("data-ref-for")]); }
   });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-from]"), function(el){
+    var o = pieces[el.getAttribute("data-from")][state[el.getAttribute("data-from")]];
+    el.textContent = o.from;
+    if (o.href) { var a = document.createElement("a"); a.href = o.href; a.textContent = o.story; el.appendChild(a); }
+  });
+  var n = 0;
+  Array.prototype.forEach.call(document.querySelectorAll(".ref-card"), function(card){
+    if (!card.hidden) { n += 1; card.querySelector(".ref-n").textContent = "Image " + n; }
+  });
   var design = D.cats.map(function(c){ return "- " + c.label + ": " + pieces[c.id][state[c.id]].prompt; }).join("\n");
-  var listed = refs.map(function(r, i){ return (i + 1) + '. "' + r.file + '": ' + r.use; }).join("\n");
+  var listed = refs.map(function(r, i){ return "Image " + (i + 1) + " (" + r.file + "): " + r.use; }).join("\n");
   $("forge-prompt").value = D.template.split("{references}").join(listed).split("{design}").join(design)
     .split("{details}").join(state.details.trim() || "none");
   $("forge-line").textContent = "Look: " + D.cats.map(function(c){ return c.id + "=" + state[c.id]; }).join(" ")
