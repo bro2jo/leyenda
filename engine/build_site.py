@@ -847,6 +847,11 @@ def sigil(faction, mark, size=64, cls="", label=""):
             + svg_device(f.get("device"), f.get("numeral", "")) + svg_mark(mark) + "</svg>")
 
 
+# The metal of each rank, in the order of rules.json → levels.ranks (CSS .metal-*): the crest, the portrait's frame, the
+# plate's rivets and Darrow's round picture on the Now page take it. A rank past the end of this list keeps the last metal.
+METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
+
+
 def crest(level, big=False):
     lv = esc(level)
     size = 30 if (isinstance(level, int) and level >= 10) else 36
@@ -2046,7 +2051,14 @@ class Site:
                + (f'<div class="chips">{"".join(chips)}</div>' if chips else "") + '</div>')
         fig = self.portrait_figure(c, rel, "" if c["tier"] == "fallen" else cr)
         hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
-        return f'<section class="plate">{hero}{row}<p class="fine">{FINE_PRINT}</p></section>'
+        return f'<section class="plate{self.metal(level)}">{hero}{row}<p class="fine">{FINE_PRINT}</p></section>'
+
+    def metal(self, level):
+        """' metal-<name>', the class for the metal of the rank a level falls in (METALS); empty when no level is read."""
+        if not isinstance(level, int):
+            return ""
+        rank = sum(1 for r in self.rules["levels"]["ranks"] if level >= r["from"])
+        return f" metal-{METALS[min(max(rank, 1), len(METALS)) - 1]}"
 
     def shelf_html(self, c, rel):
         """A character's keepsakes as a shelf: a slot per keepsake with its mark, a dashed slot per tale of theirs still being told,
@@ -2503,7 +2515,7 @@ class Site:
         rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
         bchip = (self.bearing_chip() or "") + self.tether_chip() + self.works_chip()
-        card = (f'<div class="rk-mini"><div class="hero">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
+        card = (f'<div class="rk-mini"><div class="hero{self.metal(d["level"])}">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
                 f'<div class="mini-attrs">{rk}</div><p class="hint">The faint numbers are the ones he read behind his own.</p>'
@@ -2913,6 +2925,7 @@ CSS = r"""/* THE UNKNEELING — one stylesheet. Dark only, by choice: a forge at
   --ink:#E8E2D4; --dim:#9AA2AE; --faint:#7D8692; --faint-stroke:#646D79; --t4-text:#A77FB5;
   --brass:#CFA65F; --brass-dim:#8A7044; --ember:#E2713B; --good:#72B396; --warn:#D9A441; --bad:#D0634D;
   --t1:#EADBA6; --t2:#D9AE5F; --t3:#A86B3C; --t4:#7A4D86; --t5:#4062A3; --t6:#8BB2D3;
+  --metal:var(--brass); --metal-dim:var(--brass-dim);
   --display:"Grenze Gotisch","UnifrakturMaguntia",Georgia,serif;
   --body:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
   --label:"Alegreya Sans SC","Alegreya Sans","Segoe UI",system-ui,sans-serif;
@@ -2960,10 +2973,10 @@ html.mast-away .mast{transform:translateY(-100%)}
 .plate{
   border:1px solid var(--rule);border-radius:6px;padding:18px 16px 16px;display:grid;gap:12px;
   background:
-    radial-gradient(circle at 9px 9px,var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at calc(100% - 9px) 9px,var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at 9px calc(100% - 9px),var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),var(--brass-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at 9px 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at calc(100% - 9px) 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at 9px calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
     linear-gradient(180deg,var(--plate-hi),var(--plate));
 }
 .plate h1{font-family:var(--display);font-weight:700;font-size:1.8rem;line-height:1.1}
@@ -2996,8 +3009,15 @@ html.mast-away .mast{transform:translateY(-100%)}
 .sigil-row{display:flex;align-items:center;gap:10px;font-size:.9rem;border-top:1px dotted var(--rule);padding-top:10px}
 .fac-name{color:var(--dim)} a.fac-name:hover{color:var(--brass)}
 .crest{width:86px;height:auto;display:block}
-.cr-shield{fill:var(--plate);stroke:var(--brass);stroke-width:2}
-.cr-inner{fill:none;stroke:var(--brass-dim);stroke-width:1}
+.cr-shield{fill:var(--plate);stroke:var(--metal);stroke-width:2}
+.cr-inner{fill:none;stroke:var(--metal-dim);stroke-width:1}
+/* the rank's metal (METALS): brass by default, so anything with no level read keeps the house colour */
+.metal-iron{--metal:#8E949C;--metal-dim:#555B63}
+.metal-steel{--metal:#9DB4CB;--metal-dim:#566C82}
+.metal-silver{--metal:#E4E8EE;--metal-dim:#A2AAB4}
+.metal-ember{--metal:var(--ember);--metal-dim:#8E3B26}
+.metal-gold{--metal:#F2C94C;--metal-dim:#A8862F}
+.metal-white-gold{--metal:#F7EFDC;--metal-dim:#BCA97A}
 .crest .lv{font-family:var(--display);font-weight:700;fill:var(--ink)}
 .crest .lvl{font-family:var(--label);fill:var(--dim);letter-spacing:.12em}
 .crest.unread .cr-shield{stroke:var(--t4)} .crest.unread .lv{fill:var(--t4-text)}
@@ -3094,18 +3114,18 @@ details[open]>summary::after{content:"\2212"}
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
 .hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
 .portrait{margin:0;position:relative;min-width:0}
-.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover}
 .portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
-.avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
+.avatar.big{width:86px;height:86px;border:2px solid var(--metal-dim)}
 .avatar.sm{width:48px;height:48px}
 .avatar.zoomed{overflow:hidden;flex:none}
 .avatar.zoomed img{display:block;width:100%;height:100%;object-fit:cover}
 /* earlier portraits (a look from an earlier Book): the frame swipes between them, newest first; the tabs under it jump */
 .portrait .pf-frame{position:relative}
-.portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--brass-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait .pf-strip::-webkit-scrollbar{display:none}
 .portrait .pf-strip a{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border:0;border-radius:0;box-shadow:none}
 .portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:14px}
