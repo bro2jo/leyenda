@@ -20,6 +20,8 @@ Reads (and nothing else):
                                            Small pictures use the copies in saga/art/thumbs/ (engine/thumbs.py; a missing or
                                            stale copy falls back to the picture, with a note); the full file loads only when
                                            an entry is opened or a picture tapped. saga/art/site/: the favicon's bitmaps.
+                                           saga/art/arts/<art id>.webp (or .png, .jpg): an Art's card picture, found by its
+                                           name, shown on Darrow's page once the Art has a rank.
 Never: real/, engine/deeds.csv, saga/bible/ or any _gm/ directory (the checks open saga/bible/_gm/*.md and
 saga/state/_gm/*.md only to build blocklists; nothing from them is ever rendered).
 
@@ -851,6 +853,7 @@ def sigil(faction, mark, size=64, cls="", label=""):
 # The metal of each rank, in the order of rules.json → levels.ranks (CSS .metal-*): the crest, the portrait's frame, the
 # plate's rivets and Darrow's round picture on the Now page take it. A rank past the end of this list keeps the last metal.
 METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
+ART_METALS = ("iron", "brass", "steel", "silver", "gold")  # an Art card's frame, by its rank I-V (rules.json → art_ranks)
 
 
 def crest(level, big=False):
@@ -2242,6 +2245,10 @@ class Site:
         order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Sport"]
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
+        ids = {a["id"] for a in d["arts"]}
+        for p in sorted((ART / "arts").glob("*")):
+            if p.stem not in ids:
+                problem(f"saga/art/arts/{p.name}: no Art has the id '{p.stem}' (an Art's picture is named for its id in engine/rules.json)")
         tree_html, n_learned, n_sealed = [], 0, 0
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
             rows = []
@@ -2260,8 +2267,9 @@ class Site:
                 nxt = art.get("next_at")
                 frac = (art["practice"] - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
                 ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}", sealed=bool(sealed))
-                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
-                            f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></li>')
+                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}">{self.art_pic(art, rank, tree, rel)}'
+                            f'<div class="art-txt"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
+                            f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></div></li>')
             tree_html.append(f'<div class="tree"><h3>{svg_tree(tree)}{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
         chap_rows = []
         titles = {str(ch["number"]): ch for ch in self.chapters}
@@ -2277,6 +2285,19 @@ class Site:
         sheet.append(("chapters", "Chapters", f"{len(closed)} closed" if closed else "none closed yet",
                       f'<ul class="chron">{"".join(chap_rows)}</ul>' if chap_rows else '<p class="empty">No chapter has closed yet.</p>'))
         return sheet
+
+    def art_pic(self, art, rank, tree, rel):
+        """An Art's card picture, saga/art/arts/<art id>.webp (or .png, .jpg), once the Art has a rank (greyed while it is
+        sealed), framed in the rank's metal (ART_METALS). Before its first rank, or until its picture is drawn, the tree's
+        glyph stands in its place: a dashed blank before the first rank, the ranked frame after."""
+        frame = f" metal-{ART_METALS[min(rank, len(ART_METALS)) - 1]}" if rank else " back"
+        src = next((p for p in sorted((ART / "arts").glob(art["id"] + ".*")) if p.suffix.lower() in IMAGE_TYPES), None) if rank else None
+        got = self.register_image(f"saga/art/arts/{src.name}", src.relative_to(ART).as_posix(), art["name"]) if src else None
+        if not got:
+            return f'<span class="art-pic{frame}">{svg_tree(tree, 28)}</span>'
+        name = esc(art["name"])
+        return (f'<a class="art-pic{frame}" href="{rel}{got[0]}" data-zoom aria-label="Enlarge: {name}">'
+                f'<img src="{rel}{got[2]}" alt="{name}" width="64" height="64" loading="lazy" decoding="async"></a>')
 
     @property
     def n_knots(self):
@@ -3208,7 +3229,14 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .tree{display:grid;gap:8px;margin-bottom:14px}
 .tree h3{font-family:var(--label);font-weight:700;font-size:.85rem;letter-spacing:.1em;color:var(--dim)}
 .arts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.art{display:grid;gap:3px;border-left:2px solid var(--rule);padding-left:12px}
+.art{display:grid;grid-template-columns:64px minmax(0,1fr);gap:3px 12px;align-items:start;border-left:2px solid var(--rule);padding-left:12px}
+.art-txt{display:grid;gap:3px;min-width:0}
+/* an Art's card picture (art_pic): framed in its rank's metal; a dashed blank before its first rank; greyed while sealed */
+.art-pic{display:grid;place-items:center;width:64px;aspect-ratio:1/1;border:1px solid var(--metal);border-radius:6px;overflow:hidden;background:var(--plate)}
+a.art-pic{cursor:zoom-in}
+.art-pic img{display:block;width:100%;height:100%;object-fit:cover}
+.art-pic.back{border:1px dashed var(--rule)} .art-pic.back .tg{opacity:.3}
+.art.sealed .art-pic{border-color:var(--t4)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
 .art.on{border-left-color:var(--brass)}
 .art.sealed{border-left-color:var(--t4)}
 .art-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
