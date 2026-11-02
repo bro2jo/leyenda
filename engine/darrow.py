@@ -859,22 +859,24 @@ def compute(cfg, rules, asof=None, write=False):
                     "temper": temper[a], "next_at": nxt, "fell": spec["fell"],
                     "banked": raw > val}
 
-    # inspiration: chronological earn/spend, capped. A level gained from inspiration.per_level_from on brings
-    # per_level Inspiration, dated the day the XP crossed it.
+    # the day the XP crossed each level: the sheet keeps the current level's (the site's level-up banner), and
+    # inspiration (below) pays per_level for each level from inspiration.per_level_from on, dated that day
+    by_date = defaultdict(int)
+    for x in deeds:
+        by_date[x["date"]] += int(x["xp"])
+    reached_on, run, lv = {}, 0, 1
+    for date in sorted(by_date):
+        run += by_date[date]
+        reached = level_of(run)
+        for L in range(lv + 1, reached + 1):
+            reached_on[L] = date
+        lv = max(lv, reached)
+
+    # inspiration: chronological earn/spend, capped
     per_level = rules["inspiration"].get("per_level", 0)
     if per_level:
         lv_from = rules["inspiration"].get("per_level_from", 2)
-        by_date = defaultdict(int)
-        for x in deeds:
-            by_date[x["date"]] += int(x["xp"])
-        run, lv = 0, 1
-        for date in sorted(by_date):
-            run += by_date[date]
-            reached = level_of(run)
-            for L in range(lv + 1, reached + 1):
-                if L >= lv_from:
-                    insp_events.append((date, +per_level, f"level {L}"))
-            lv = max(lv, reached)
+        insp_events += [(date, +per_level, f"level {L}") for L, date in reached_on.items() if L >= lv_from]
     works = works_at(asof)
     per_work = (rules.get("works") or {}).get("inspiration_per_finished", 0)
     if per_work:
@@ -927,7 +929,7 @@ def compute(cfg, rules, asof=None, write=False):
     sheet = {
         "asof": asof.isoformat(),
         "name": "Ser Darrow of Edgemoor",
-        "level": level, "rank": rank_of(level, rules), "xp": xp,
+        "level": level, "rank": rank_of(level, rules), "level_reached": reached_on.get(level), "xp": xp,
         "xp_this_level": 50 * level * (level - 1), "xp_next_level": 50 * (level + 1) * level,
         "proficiency": 2 + (level - 1) // 4, "hp_max": hp,
         "attributes": attrs,

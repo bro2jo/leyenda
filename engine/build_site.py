@@ -59,6 +59,7 @@ Usage: python3 engine/build_site.py [--verbose] [--force]
 Standard library only (Python 3.9+). Plain HTML + one stylesheet + a little JS; every page works with JavaScript off.
 """
 import csv
+import datetime as dt
 import hashlib
 import html
 import json
@@ -985,6 +986,7 @@ def pips(have, need, cls=""):
 BEARING_LABEL = "who his choices are making him"  # the site's own label for the Bearing section (exempt from the GM-sentence check)
 
 
+LEVEL_NEWS_DAYS = 3  # the Now page carries a level-up banner this many days after the level came (darrow.json → level_reached)
 FINE_PRINT = "Only what the story has shown so far."  # the one line that replaces a disclaimer on every section head
 
 
@@ -2526,8 +2528,22 @@ class Site:
         map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel)
                        + '<p class="legend"><span class="lg ember">●</span> Darrow <span class="lg brass">●</span> visited <span class="lg faint">●</span> not yet <span class="lg route">—</span> the road so far</p>')
         dice = sec("The dice", "", self.dice_html(rel))
-        body = plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
+        body = self.level_news(rel) + plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
+
+    def level_news(self, rel):
+        """The level-up banner at the head of the Now page, for LEVEL_NEWS_DAYS after the level came: the crest in the
+        rank's metal, the level, and the sheet's HP and proficiency as they stand; a level that opens a rank names it."""
+        d = self.darrow
+        if not d.get("level_reached"):
+            return ""
+        if not 0 <= (dt.date.fromisoformat(d["asof"]) - dt.date.fromisoformat(d["level_reached"])).days <= LEVEL_NEWS_DAYS:
+            return ""
+        new_rank = any(r["from"] == d["level"] for r in self.rules["levels"]["ranks"])
+        head = f'Level {d["level"]}' + (f' · {esc(d["rank"])}' if new_rank else "")
+        line = ("A new rank. " if new_rank else "") + f'HP {d["hp_max"]} · Proficiency +{d["proficiency"]}'
+        return (f'<a class="lvl-news{self.metal(d["level"])}" href="{rel}darrow/index.html#reckoning">{crest(d["level"])}'
+                f'<span><span class="lbl">A new level</span><b>{head}</b><span class="m">{line}</span></span></a>')
 
     # ---------------------------------------------------------------- tales
     def render_tale(self, idx):
@@ -3253,6 +3269,12 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .comp>div{display:grid;gap:2px;min-width:0}
 .comp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .comp .m{font-size:.88rem;color:var(--dim)}
+/* the level-up banner (level_news): the crest and the border in the rank's metal */
+.lvl-news{display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--metal);border-radius:6px;color:var(--ink);background:linear-gradient(90deg,rgba(226,113,59,.16),transparent 75%)}
+.lvl-news:hover{text-decoration:none;border-color:var(--ember)}
+.lvl-news .crest{width:52px;flex:none}
+.lvl-news b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.15}
+.lvl-news .m{color:var(--dim);font-size:.95rem}
 .rk-mini{display:grid;gap:12px}
 .rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
