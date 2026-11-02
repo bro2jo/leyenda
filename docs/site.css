@@ -4,6 +4,7 @@
   --ink:#E8E2D4; --dim:#9AA2AE; --faint:#7D8692; --faint-stroke:#646D79; --t4-text:#A77FB5;
   --brass:#CFA65F; --brass-dim:#8A7044; --ember:#E2713B; --good:#72B396; --warn:#D9A441; --bad:#D0634D;
   --t1:#EADBA6; --t2:#D9AE5F; --t3:#A86B3C; --t4:#7A4D86; --t5:#4062A3; --t6:#8BB2D3;
+  --metal:var(--brass); --metal-dim:var(--brass-dim);
   --display:"Grenze Gotisch","UnifrakturMaguntia",Georgia,serif;
   --body:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
   --label:"Alegreya Sans SC","Alegreya Sans","Segoe UI",system-ui,sans-serif;
@@ -51,10 +52,10 @@ html.mast-away .mast{transform:translateY(-100%)}
 .plate{
   border:1px solid var(--rule);border-radius:6px;padding:18px 16px 16px;display:grid;gap:12px;
   background:
-    radial-gradient(circle at 9px 9px,var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at calc(100% - 9px) 9px,var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at 9px calc(100% - 9px),var(--brass-dim) 0 1.6px,transparent 2.2px),
-    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),var(--brass-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at 9px 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at calc(100% - 9px) 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at 9px calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
     linear-gradient(180deg,var(--plate-hi),var(--plate));
 }
 .plate h1{font-family:var(--display);font-weight:700;font-size:1.8rem;line-height:1.1}
@@ -87,8 +88,16 @@ html.mast-away .mast{transform:translateY(-100%)}
 .sigil-row{display:flex;align-items:center;gap:10px;font-size:.9rem;border-top:1px dotted var(--rule);padding-top:10px}
 .fac-name{color:var(--dim)} a.fac-name:hover{color:var(--brass)}
 .crest{width:86px;height:auto;display:block}
-.cr-shield{fill:var(--plate);stroke:var(--brass);stroke-width:2}
-.cr-inner{fill:none;stroke:var(--brass-dim);stroke-width:1}
+.cr-shield{fill:var(--plate);stroke:var(--metal);stroke-width:2}
+.cr-inner{fill:none;stroke:var(--metal-dim);stroke-width:1}
+/* the rank's metal (METALS, ART_METALS); brass by default, so anything with no level read keeps the house colour */
+.metal-iron{--metal:#8E949C;--metal-dim:#555B63}
+.metal-brass{--metal:var(--brass);--metal-dim:var(--brass-dim)}
+.metal-steel{--metal:#9DB4CB;--metal-dim:#566C82}
+.metal-silver{--metal:#E4E8EE;--metal-dim:#A2AAB4}
+.metal-ember{--metal:var(--ember);--metal-dim:#8E3B26}
+.metal-gold{--metal:#F2C94C;--metal-dim:#A8862F}
+.metal-white-gold{--metal:#F7EFDC;--metal-dim:#BCA97A}
 .crest .lv{font-family:var(--display);font-weight:700;fill:var(--ink)}
 .crest .lvl{font-family:var(--label);fill:var(--dim);letter-spacing:.12em}
 .crest.unread .cr-shield{stroke:var(--t4)} .crest.unread .lv{fill:var(--t4-text)}
@@ -185,18 +194,18 @@ details[open]>summary::after{content:"\2212"}
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
 .hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
 .portrait{margin:0;position:relative;min-width:0}
-.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--brass-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover}
 .portrait .crest{position:absolute;left:-8px;bottom:-10px;width:clamp(38px,11vw,52px);height:auto;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7))}
 .avatar{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--brass-dim);background:var(--plate)}
-.avatar.big{width:86px;height:86px;border:2px solid var(--brass-dim)}
+.avatar.big{width:86px;height:86px;border:2px solid var(--metal-dim)}
 .avatar.sm{width:48px;height:48px}
 .avatar.zoomed{overflow:hidden;flex:none}
 .avatar.zoomed img{display:block;width:100%;height:100%;object-fit:cover}
 /* earlier portraits (a look from an earlier Book): the frame swipes between them, newest first; the tabs under it jump */
 .portrait .pf-frame{position:relative}
-.portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--brass-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait .pf-strip::-webkit-scrollbar{display:none}
 .portrait .pf-strip a{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border:0;border-radius:0;box-shadow:none}
 .portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:14px}
@@ -242,6 +251,10 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
+/* Darrow's figure by rank (rank_figures) beside the head of the Reckoning: a tall frame in the swipe strip of the portraits */
+.reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
+.reck-head{display:grid;gap:12px;min-width:0}
+.portrait.tall .pf-strip{aspect-ratio:3/4} .portrait.tall .pf-strip a{aspect-ratio:auto}
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
@@ -263,7 +276,14 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .tree{display:grid;gap:8px;margin-bottom:14px}
 .tree h3{font-family:var(--label);font-weight:700;font-size:.85rem;letter-spacing:.1em;color:var(--dim)}
 .arts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.art{display:grid;gap:3px;border-left:2px solid var(--rule);padding-left:12px}
+.art{display:grid;grid-template-columns:64px minmax(0,1fr);gap:3px 12px;align-items:start;border-left:2px solid var(--rule);padding-left:12px}
+.art-txt{display:grid;gap:3px;min-width:0}
+/* an Art's card picture (art_pic): framed in its rank's metal; a dashed blank before its first rank; greyed while sealed */
+.art-pic{display:grid;place-items:center;width:64px;aspect-ratio:1/1;border:1px solid var(--metal);border-radius:6px;overflow:hidden;background:var(--plate)}
+a.art-pic{cursor:zoom-in}
+.art-pic img{display:block;width:100%;height:100%;object-fit:cover}
+.art-pic.back{border:1px dashed var(--rule)} .art-pic.back .tg{opacity:.3}
+.art.sealed .art-pic{border-color:var(--t4)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
 .art.on{border-left-color:var(--brass)}
 .art.sealed{border-left-color:var(--t4)}
 .art-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
@@ -324,6 +344,12 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .comp>div{display:grid;gap:2px;min-width:0}
 .comp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .comp .m{font-size:.88rem;color:var(--dim)}
+/* the level-up banner (level_news): the crest and the border in the rank's metal */
+.lvl-news{display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--metal);border-radius:6px;color:var(--ink);background:linear-gradient(90deg,rgba(226,113,59,.16),transparent 75%)}
+.lvl-news:hover{text-decoration:none;border-color:var(--ember)}
+.lvl-news .crest{width:52px;flex:none}
+.lvl-news b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.15}
+.lvl-news .m{color:var(--dim);font-size:.95rem}
 .rk-mini{display:grid;gap:12px}
 .rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
