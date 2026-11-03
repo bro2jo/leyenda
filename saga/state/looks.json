@@ -10,6 +10,16 @@
       "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "laughing",
                  "pose": "square", "hand": "none", "feet": "worn", "extra": "none", "side": "none"},
       "details": ""
+    },
+    {
+      "id": "ash-at-his-heel",
+      "name": "Ash at His Heel",
+      "made": "2026-11-02",
+      "image": "looks/ash-at-his-heel.webp",
+      "alt": "Ser Darrow, full length against a dark glow, walking with a calm half-smile, clean-shaven: an open-necked linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots, a plain walking stick in his left hand and the fingers of his right hand wrapped in linen; Ash, a grey wolfhound with a splinted hind leg, walks at his side.",
+      "values": {"build": "mending", "clothing": "linen", "cloak": "none", "hair": "tousled", "beard": "shaven", "expression": "patient",
+                 "pose": "walking", "hand": "stick", "feet": "worn", "extra": "wrapped", "side": "ash"},
+      "details": ""
     }
   ]
 }
