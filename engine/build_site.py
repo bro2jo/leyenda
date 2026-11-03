@@ -859,7 +859,7 @@ def sigil(faction, mark, size=64, cls="", label=""):
 # The metal of each rank, in the order of rules.json → levels.ranks (CSS .metal-*): the crest, the portrait's frame, the
 # plate's rivets and Darrow's round picture on the Now page take it. A rank past the end of this list keeps the last metal.
 METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
-ART_METALS = ("iron", "brass", "steel", "silver", "gold")  # an Art card's frame, by its rank I-V (rules.json → art_ranks)
+ART_METALS = ("iron", "bronze", "steel", "silver", "gold")  # an Art card's frame, by its rank I-V (rules.json → art_ranks); bronze, not brass, so rank II never reads as gold
 
 
 def crest(level, big=False):
@@ -2353,15 +2353,20 @@ class Site:
 
     def art_pic(self, art, rank, tree, rel):
         """An Art's card picture, saga/art/arts/<art id>.webp (or .png, .jpg), once the Art has a rank (greyed while it is
-        sealed), framed in the rank's metal (ART_METALS). Before its first rank, or until its picture is drawn, the tree's
-        glyph stands in its place: a dashed blank before the first rank, the ranked frame after."""
-        frame = f" metal-{ART_METALS[min(rank, len(ART_METALS)) - 1]}" if rank else " back"
-        got = self.named_picture("arts", art["id"], art["name"]) if rank else None
+        sealed), framed in the rank's metal (ART_METALS) with the rank's numeral on the frame; the frame gains studs at III,
+        a second rule at IV and a glow at V (CSS .art-pic.rN). Before its first rank, or until its picture is drawn, the
+        tree's glyph stands in its place: a dashed blank before the first rank, the ranked frame after."""
+        if not rank:
+            return f'<span class="art-pic back">{svg_tree(tree, 28)}</span>'
+        step = min(rank, len(ART_METALS))
+        cls = f"art-pic metal-{ART_METALS[step - 1]} r{step}"
+        tab = f'<span class="art-rank" aria-hidden="true">{roman(rank)}</span>'
+        got = self.named_picture("arts", art["id"], art["name"])
         if not got:
-            return f'<span class="art-pic{frame}">{svg_tree(tree, 28)}</span>'
+            return f'<span class="{cls}"><span class="art-in">{svg_tree(tree, 28)}</span>{tab}</span>'
         name = esc(art["name"])
-        return (f'<a class="art-pic{frame}" href="{rel}{got[0]}" data-zoom aria-label="Enlarge: {name}">'
-                f'<img src="{rel}{got[2]}" alt="{name}" width="64" height="64" loading="lazy" decoding="async"></a>')
+        return (f'<a class="{cls}" href="{rel}{got[0]}" data-zoom aria-label="Enlarge: {name}">'
+                f'<span class="art-in"><img src="{rel}{got[2]}" alt="{name}" width="58" height="58" loading="lazy" decoding="async"></span>{tab}</a>')
 
     @property
     def n_knots(self):
@@ -3301,7 +3306,7 @@ CSS = r"""/* THE UNKNEELING — one stylesheet. Dark only, by choice: a forge at
   --ink:#E8E2D4; --dim:#9AA2AE; --faint:#7D8692; --faint-stroke:#646D79; --t4-text:#A77FB5;
   --brass:#CFA65F; --brass-dim:#8A7044; --ember:#E2713B; --good:#72B396; --warn:#D9A441; --bad:#D0634D;
   --t1:#EADBA6; --t2:#D9AE5F; --t3:#A86B3C; --t4:#7A4D86; --t5:#4062A3; --t6:#8BB2D3;
-  --metal:var(--brass); --metal-dim:var(--brass-dim);
+  --metal:var(--brass); --metal-dim:var(--brass-dim); --metal-hi:#EBCF96;
   --stage:radial-gradient(ellipse at 50% 42%,#3d2e25 0%,#211f21 50%,#13171c 100%);
   --display:"Grenze Gotisch","UnifrakturMaguntia",Georgia,serif;
   --body:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
@@ -3388,14 +3393,16 @@ html.mast-away .mast{transform:translateY(-100%)}
 .crest{width:86px;height:auto;display:block}
 .cr-shield{fill:var(--plate);stroke:var(--metal);stroke-width:2}
 .cr-inner{fill:none;stroke:var(--metal-dim);stroke-width:1}
-/* the rank's metal (METALS, ART_METALS); brass by default, so anything with no level read keeps the house colour */
-.metal-iron{--metal:#8E949C;--metal-dim:#555B63}
-.metal-brass{--metal:var(--brass);--metal-dim:var(--brass-dim)}
-.metal-steel{--metal:#9DB4CB;--metal-dim:#566C82}
-.metal-silver{--metal:#E4E8EE;--metal-dim:#A2AAB4}
-.metal-ember{--metal:var(--ember);--metal-dim:#8E3B26}
-.metal-gold{--metal:#F2C94C;--metal-dim:#A8862F}
-.metal-white-gold{--metal:#F7EFDC;--metal-dim:#BCA97A}
+/* the rank's metal (METALS, ART_METALS); brass by default, so anything with no level read keeps the house colour.
+   --metal-hi is the metal's catch-light (an Art card's frame and its numeral) */
+.metal-iron{--metal:#8E949C;--metal-dim:#555B63;--metal-hi:#C3C7CC}
+.metal-bronze{--metal:#B5794A;--metal-dim:#6E4527;--metal-hi:#DDAA80}
+.metal-brass{--metal:var(--brass);--metal-dim:var(--brass-dim);--metal-hi:#EBCF96}
+.metal-steel{--metal:#9DB4CB;--metal-dim:#566C82;--metal-hi:#CFDDEA}
+.metal-silver{--metal:#E4E8EE;--metal-dim:#A2AAB4;--metal-hi:#FFFFFF}
+.metal-ember{--metal:var(--ember);--metal-dim:#8E3B26;--metal-hi:#F2A57E}
+.metal-gold{--metal:#F2C94C;--metal-dim:#A8862F;--metal-hi:#FFE9A3}
+.metal-white-gold{--metal:#F7EFDC;--metal-dim:#BCA97A;--metal-hi:#FFFFFF}
 .crest .lv{font-family:var(--display);font-weight:700;fill:var(--ink)}
 .crest .lvl{font-family:var(--label);fill:var(--dim);letter-spacing:.12em}
 .crest.unread .cr-shield{stroke:var(--t4)} .crest.unread .lv{fill:var(--t4-text)}
@@ -3579,12 +3586,26 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .arts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .art{display:grid;grid-template-columns:64px minmax(0,1fr);gap:3px 12px;align-items:start;border-left:2px solid var(--rule);padding-left:12px}
 .art-txt{display:grid;gap:3px;min-width:0}
-/* an Art's card picture (art_pic): framed in its rank's metal; a dashed blank before its first rank; greyed while sealed */
-.art-pic{display:grid;place-items:center;width:64px;aspect-ratio:1/1;border:1px solid var(--metal);border-radius:6px;overflow:hidden;background:var(--plate)}
+/* an Art's card picture (art_pic): a frame in its rank's metal with the rank's numeral on it, and more to the frame as the
+   rank climbs: studs at III, a second rule at IV, a glow at V. A dashed blank before its first rank; violet and greyed while sealed */
+.art-pic{position:relative;display:block;box-sizing:border-box;width:64px;aspect-ratio:1/1;margin-bottom:8px;padding:3px;border-radius:7px;
+  background:linear-gradient(135deg,var(--metal-hi),var(--metal-dim) 45%,var(--metal) 70%,var(--metal-dim))}
 a.art-pic{cursor:zoom-in}
-.art-pic img{display:block;width:100%;height:100%;object-fit:cover}
-.art-pic.back{border:1px dashed var(--rule)} .art-pic.back .tg{opacity:.3}
-.art.sealed .art-pic{border-color:var(--t4)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
+.art-in{display:grid;place-items:center;width:100%;height:100%;border-radius:4px;overflow:hidden;background:var(--plate);box-shadow:0 0 0 1px rgba(0,0,0,.55)}
+.art-in img{display:block;width:100%;height:100%;object-fit:cover}
+.art-rank{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);min-width:20px;height:16px;padding:0 5px;box-sizing:border-box;border-radius:3px;
+  background:linear-gradient(var(--metal-hi),var(--metal));color:var(--night);font:700 .66rem/16px var(--label);letter-spacing:.04em;text-align:center;
+  box-shadow:0 1px 3px rgba(0,0,0,.65)}
+.art-pic.r3::after,.art-pic.r4::after,.art-pic.r5::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  --stud:var(--metal-hi) 1.7px,rgba(0,0,0,.6) 2.3px,transparent 2.8px;
+  background:radial-gradient(circle at 5px 5px,var(--stud)),radial-gradient(circle at calc(100% - 5px) 5px,var(--stud)),
+    radial-gradient(circle at 5px calc(100% - 5px),var(--stud)),radial-gradient(circle at calc(100% - 5px) calc(100% - 5px),var(--stud))}
+.art-pic.r4,.art-pic.r5{outline:1px solid var(--metal);outline-offset:2px}
+.art-pic.r5{box-shadow:0 0 12px 1px color-mix(in srgb,var(--metal) 45%,transparent)}
+.art-pic.back{display:grid;place-items:center;margin-bottom:0;padding:0;border:1px dashed var(--rule);background:var(--plate)} .art-pic.back .tg{opacity:.3}
+.art.sealed .art-pic{background:var(--t4);outline:none;box-shadow:none} .art.sealed .art-pic::after{content:none}
+.art.sealed .art-pic.back{background:var(--plate);border-color:var(--t4)}
+.art.sealed .art-rank{background:var(--t4);color:var(--ink)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
 .art.on{border-left-color:var(--brass)}
 .art.sealed{border-left-color:var(--t4)}
 .art-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
