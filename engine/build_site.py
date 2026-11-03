@@ -712,14 +712,14 @@ SVG_DISPLAY_FONT = "Grenze Gotisch, Georgia, serif"
 
 
 def svg_tree(tree, size=22):
-    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a looped rope, an eye, a thrown disc."""
+    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a looped rope, an eye, a stone in flight."""
     body = {
         "Blade": '<path d="M12 2.5 L14.2 6 L14.2 15.5 L9.8 15.5 L9.8 6 Z M6.5 15.8 L17.5 15.8 M12 16 L12 20.2"/><circle cx="12" cy="21.4" r="1.2"/>',
         "Footing": f'<g fill="{PAL["brass"]}" stroke="none"><ellipse cx="8" cy="13.2" rx="2.9" ry="3.6"/><ellipse cx="8" cy="19.6" rx="2.1" ry="1.9"/><ellipse cx="16" cy="5.7" rx="2.9" ry="3.6"/><ellipse cx="16" cy="12.1" rx="2.1" ry="1.9"/></g>',
         "Breath": '<path d="M4 8 H13.5 a2.5 2.5 0 1 0 -2.5 -2.5 M4 13 H17.5 a2.5 2.5 0 1 1 -2.5 2.5 M4 18 H10.5 a2 2 0 1 0 -2 -2"/>',
         "Binding": '<path d="M2 17 C6.5 17 7.5 5 12.5 5 C18.5 5 18.5 13.5 12.5 13.5 C8 13.5 9 17 22 17"/>',
         "Insight": '<path d="M3 12 C8 5 16 5 21 12 C16 19 8 19 3 12 Z"/><circle cx="12" cy="12" r="3"/>',
-        "Sport": '<ellipse cx="13.5" cy="11.5" rx="7.5" ry="3"/><path d="M3 16 L8 15 M3 19.5 L10 17.5"/>',
+        "Cast": '<path d="M3 20.5 Q6.5 9.5 13 8.2" stroke-dasharray="2 2.6"/><circle cx="17" cy="8" r="3.4"/>',
     }.get(tree, '<circle cx="12" cy="12" r="7"/>')
     return (f'<svg class="tg" viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="{PAL["brass"]}" stroke-width="1.8" '
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
@@ -2310,7 +2310,7 @@ class Site:
         trees = defaultdict(list)
         for art in d["arts"]:
             trees[art["tree"]].append(art)
-        order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Sport"]
+        order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Cast"]
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
         self.stray_pictures("arts", {a["id"] for a in d["arts"]}, "the id of an Art in engine/rules.json")
@@ -3064,7 +3064,8 @@ class Site:
 FORBIDDEN = [r"kcal", r"calori\w*", r"protein\w*", r"creatin\w*", r"macros?", r"rehab\w*", r"physio\w*", r"therap\w*",
              r"surgery", r"surgical", r"graft\w*", r"ligament\w*", r"reps?", r"squat\w*", r"bik(?:e|es|ing)", r"bicycl\w*",
              r"weigh-ins?", r"dynamometer", r"exercis\w*", r"workout\w*", r"dumbbells?", r"barbells?", r"kettlebells?",
-             r"treadmill", r"gym", r"supplements?", r"step-downs?", r"post-op"]
+             r"treadmill", r"gym", r"supplements?", r"step-downs?", r"post-op",
+             r"sports?", r"frisbees?"]
 FORBIDDEN_CS = ["ACL", "PT", "RPE"]
 UI_WORDS = """Faction Factions Status Roster Previously Appearance Quote Relationships Known Facts Appearances Timeline Places Sayings Things
 Attributes Chapters Legend Season Latest Where Skip Content Level Inspiration Proficiency Regard Toward Borrowed Unread Deeper Start Reading
@@ -3082,7 +3083,7 @@ Made Make Many More Most Much Must Never Next Nine No None Not Nothing Now Once 
 Question Real Reveal Rough Rule Rules Same Scene Second Seven Since Six Some Someone Something State Still Story Such Than That The Their Then There These They
 This Those Three Through Time Transition Truth Truths Two Under Until Upper Use Used Uses Very What When Where Which While Who Why Will With Within
 Without Would Your Yes Final Image Trigger Record Week Weeks Gate Gates Window Earliest Reader Readers Spoilers Darrow's Darrows Companion Companions Antagonist
-Antagonists Voice Wants Fears Hides Carries Flaw Arc Rank Ranks Might Vigor Finesse Resolve Insight Blade Breath Footing Binding Sport Arts Art
+Antagonists Voice Wants Fears Hides Carries Flaw Arc Rank Ranks Might Vigor Finesse Resolve Insight Blade Breath Footing Binding Arts Art
 Might's Dice Checks Check Approval Inspiration Eye Tier Tiers Climax Expandables Mother Sister Brother Ser Dame Knight Confessor Confessors Crown Menders
 Mender Hound Runner Captain Captains Old Young Prior Lance Lances Boss Interlude Scenes Pages Page Table Entry Entries Format Formats Files File Notes Note
 Secrets Secret Identity Identities Reckoning Reckonings Grace Oath Oaths Bound Kindled Tempered Unbowed Emberknight Warden Wardens Oathsworn Oathstone
