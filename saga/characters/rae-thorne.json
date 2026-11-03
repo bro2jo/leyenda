@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "2",
+    "scene": "between-3",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-2"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-3"
   },
-  "last_seen_doing": "Was refused at the reeve's door, where she has sold since she could lift a sack; would not put her load down to trade; took the bread a Faithless man brought over the wall.",
-  "now": "At the fire past the hamlet, her custom there spent on the man she carries, the reeve at the gate calling her by name.",
+  "last_seen_doing": "Answered the reeve at the gate: a carter names her load to the one who paid for it, never at a gate; he may say he asked and she would not tell him; the boy only brought bread to a carter he has known all his life.",
+  "now": "Seeing to the oxen in the dark by the field wall; she let the bell at her belt ring.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -587,6 +587,24 @@
       "evidence": "And then I'd be a carter who put her load down because a reeve looked at it."
     },
     {
+      "fact": "A carter names her load to the one who paid for it, nobody else, and never at a gate.",
+      "chapter": "05",
+      "scene": "between-3",
+      "evidence": "A carter names her load to the one who paid for it. Nobody else, and never at a gate."
+    },
+    {
+      "fact": "She learned the road's law about naming a load from the reeve's father, at his door, when she was nine.",
+      "chapter": "05",
+      "scene": "between-3",
+      "evidence": "your father told me why, at your own door, when I was nine"
+    },
+    {
+      "fact": "She gave Darrow the larger half of her bread.",
+      "chapter": "05",
+      "scene": "between-3",
+      "evidence": "put the larger half on his knee without looking at it"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -830,6 +848,10 @@
     {
       "chapter": "05",
       "scene": "2"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-3"
     },
     {
       "chapter": "tale02",

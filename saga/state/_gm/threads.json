@@ -135,7 +135,8 @@
         "04:climax",
         "04:choice",
         "05:between-1",
-        "05:s2"
+        "05:s2",
+        "05:between-3"
       ]
     },
     {
@@ -242,6 +243,7 @@
         "05:between-1",
         "05:between-2",
         "05:s2",
+        "05:between-3",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"

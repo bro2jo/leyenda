@@ -1366,10 +1366,11 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch05:between-2",
-            "ch05:s2"
+            "ch05:s2",
+            "ch05:between-3"
           ]
         }
       ]
@@ -1409,12 +1410,46 @@
           "at": "ch05:s3",
           "weight": "scene",
           "what": "Rae answered the reeve for her own cart, since Darrow looked to her: a carter names her load to the one who paid for it and never at a gate; he has asked, he may say he asked, and he may say Rae Thorne would not tell him. Open the next scene on it in a clause or a line (the reeve's lantern going back up the track), and let the reeve keep what he came for: to have asked",
-          "status": "pending"
+          "status": "fired@ch05:between-3",
+          "evidence": "A carter names her load to the one who paid for it. Nobody else, and never at a gate."
         }
       ],
       "declined": [
         "\"Darrow of Edgemoor. The one on your post.\"",
         "\"Salt, a sick man and his nurse. Ask the carter.\""
+      ]
+    },
+    {
+      "id": "c05.5",
+      "made": {
+        "chapter": 5,
+        "scene": "between-3",
+        "date": "2026-11-02"
+      },
+      "chose": "Looked to Rae at the gate and let her answer the reeve for her own cart; said nothing to the reeve; thanked her across the fire when it was done",
+      "now": {},
+      "due": [
+        {
+          "id": "c05.5a",
+          "when": "next",
+          "at": "ch05:s3",
+          "weight": "scene",
+          "what": "They leave the field wall at grey light, before the hamlet's bell, by Maelis's word; Darrow rides the cart until noon (the leg has had two days of road). Open the next scene on it in a clause",
+          "status": "pending"
+        },
+        {
+          "id": "c05.5b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-3"
+          ]
+        }
       ]
     }
   ],

@@ -265,3 +265,59 @@ The lantern came a while after: down the track from the hamlet, swinging, with t
 1. **"Darrow of Edgemoor. The one on your post."**
 2. **"Salt, a sick man and his nurse. Ask the carter."**
 3. **Let Rae answer for her own cart.**
+
+### Between — A Load Named at a Gate
+
+Every face at the fire went to Darrow. He felt them go, Wren's first, then Hollis's, then the lantern's yellow edge on his cheek, and the reeve's eyes behind it, waiting to see whether the face fitted the name on the post.
+
+He looked at Rae.
+
+It was a carter's road and a carter's gate and a reeve who had bought her salt since she could lift a sack. She knew every man behind that lantern and which of them would remember what was said, and he knew none of them. She saw him look, and understood it, and got up from the fire.
+
+She went to the gate and stood at the bars with her hands on the top rail, close enough that the lantern lit her and not the people behind her.
+
+"You've asked," she said. "That's done, and you can say it. You came down with a lantern and three men and asked Rae Thorne who rides on her cart."
+
+"And?"
+
+"And she wouldn't tell you. You know why, because your father told me why, at your own door, when I was nine and tried to sell him a sack I hadn't paid for." She did not raise her voice. "A carter names her load to the one who paid for it. Nobody else, and never at a gate. You didn't pay for this one."
+
+The reeve's lantern came down a hand's breadth.
+
+"If a grey cloak asks you," Rae said, "tell him that. Tell him Rae Thorne stood at your gate and wouldn't say. It's true. You can swear to it on your post with your hand on the nails."
+
+"And the boy?"
+
+"The boy brought bread to a carter he's known since he could walk. That's what he did. If anybody asks you that, it's true as well."
+
+The reeve looked at her for a long moment, then past her once more, at the fire, and Darrow saw him decide what he had seen. It was the face of a man setting down a heavy thing in the place he had meant to set it all along.
+
+"That'll do," the reeve said. "That'll do, Rae." He turned the lantern away. "Home."
+
+Two of the men went with him. The third, the young one with the fork, stayed at the bars a breath longer than his father had, and he was not looking at Rae. He was looking at Darrow, and from Darrow to the bell-post up the track, as if he were reading the one off the other. Then the reeve said something short over his shoulder, and the boy went, and the lantern went jogging up the track and in at the reeve's door, and the door shut on it.
+
+Rae came back to the fire and sat down in her place.
+
+"Men at the gate: three," Wren said into the quiet. "Men who went home believing her: two." She had the ledger open on her knee and the pencil moving. "The one with the fork can read. I watched his mouth go along the post this afternoon."
+
+"He's the reeve's eldest," said Rae. "He reads. He's wanted that bell-post since he was six."
+
+"Then we're gone before their bell," said Maelis, who had not looked up from the fire the whole time and had heard all of it. "Grey light. Not dawn. The leg's had two days of road; it can have the third in the cart until noon."
+
+Hollis was tearing the bread into equal parts with the care of a man dividing an inheritance. He handed Rae hers first. "That," he said, "was the best lie I ever heard that wasn't one."
+
+"It wasn't a lie."
+
+"I said that. I'm praising you, carter. Don't argue with it, it doesn't happen often."
+
+Darrow had said nothing since the lantern came. He found he had nothing he needed to say, and one thing he wanted to.
+
+"You answered for me," he said to her, across the fire.
+
+"You looked at me." She tore her bread in half and put the larger half on his knee without looking at it. "It's my cart. You were right to."
+
+He ate it. It was only bread, as the boy had said, and it was very good.
+
+The fire burned down. Ash went and lay with her nose to the gap under the gate, where she could hear the track. Wren wrote one more line in the ledger and shut it without showing anyone, which meant it was about one of them.
+
+When the others had gone under their blankets, Rae got up to see to the oxen. On the way across the dark, the bell at her belt rang once, and she let it.

@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "2",
+    "scene": "between-3",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-2"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-3"
   },
-  "last_seen_doing": "Found himself third on the writ and took it like a wound; opened the bread.",
-  "now": "At the fire past the hamlet.",
+  "last_seen_doing": "Divided the boy's bread with great care, Rae's share first, and praised her answer as the best lie he ever heard that wasn't one.",
+  "now": "Under his blanket by the field wall.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -640,6 +640,12 @@
       "chapter": "05",
       "scene": "2",
       "evidence": "I was second at the bars."
+    },
+    {
+      "fact": "He called Rae's answer at the gate the best lie he ever heard that wasn't one.",
+      "chapter": "05",
+      "scene": "between-3",
+      "evidence": "That,\" he said, \"was the best lie I ever heard that wasn't one."
     }
   ],
   "relationships": [
@@ -941,6 +947,10 @@
     {
       "chapter": "05",
       "scene": "2"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-3"
     }
   ]
 }

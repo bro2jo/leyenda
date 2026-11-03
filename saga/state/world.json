@@ -35,11 +35,18 @@
         "2026-11-02"
       ],
       "written": "2026-11-02"
+    },
+    {
+      "scene": "between-3",
+      "title": "A Load Named at a Gate",
+      "after": "2",
+      "covers": [],
+      "written": "2026-11-02"
     }
   ],
   "location": {
     "place": "holloway",
-    "detail": "in the lee of a field wall past a drove-road hamlet, the reeve's lantern at the barred gate",
+    "detail": "at the fire in the lee of the field wall past the drove-road hamlet, the gate barred and the track dark",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -49,7 +56,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "The reeve held his lantern up to the bars of the field gate, past Rae to the faces round the fire, and stopped on Darrow's: who rides on the Thorne cart?",
+  "last_beat": "When the others were under their blankets Rae went to see to the oxen, and on the way across the dark the bell at her belt rang once, and she let it.",
   "companions": {
     "maelis": {
       "approval": 34,
