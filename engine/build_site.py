@@ -1206,7 +1206,11 @@ class Site:
         rel_src = src.relative_to(ART.resolve()).as_posix()
         path = f"art/{rel_src}"
         self.assets[path] = src
-        return path, image_size(src), self.thumb(src, rel_src, "sm") or path, self.thumb(src, rel_src, "md") or path
+        # Every link carries a short hash of the picture, so a picture replaced under the same name shows at once instead
+        # of the copy a browser cached; its small and medium copies are made from it, so the same hash marks them too.
+        v = f"?v={file_sha1(src)[:10]}"
+        sm, md = self.thumb(src, rel_src, "sm") or path, self.thumb(src, rel_src, "md") or path
+        return path + v, image_size(src), sm + v, md + v
 
     def load_thumbs(self):
         """saga/art/thumbs/manifest.json (engine/thumbs.py writes it): {"images": {source path under saga/art/: {sha1, sm, md}}}."""
