@@ -1,8 +1,30 @@
 {
  "_about": "Small (sm, 256 px) and medium (md, 640 px) WebP copies of the pictures under saga/art/, made by engine/thumbs.py from the file whose SHA-1 is named here. Generated: never edit by hand; run the script.",
  "images": {
+  "arts/groundbreaker.webp": {
+   "sha1": "39564c7da6a9a246f3fe56000981dcf0af74254c",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/long_breath.webp": {
    "sha1": "f211d56cf25c5b34c6899f88b3ca5d6f72c218de",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/menders_patience.webp": {
+   "sha1": "fc5ed5cc30f018ac503792262b21e14a63ed8074",
    "sm": [
     256,
     256
@@ -25,6 +47,28 @@
   },
   "arts/stillwater.webp": {
    "sha1": "d59d6bcf7e27d066520714ee3d9ef102a33b0dad",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/thunderstep.webp": {
+   "sha1": "6f3ded4a2f202809bc96af1627716b8e0f37baa0",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/wardens_eye.webp": {
+   "sha1": "f57d5298f66301afb4b4935bab8dc4fc6bda1c20",
    "sm": [
     256,
     256
