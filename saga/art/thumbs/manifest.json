@@ -1,6 +1,39 @@
 {
  "_about": "Small (sm, 256 px) and medium (md, 640 px) WebP copies of the pictures under saga/art/, made by engine/thumbs.py from the file whose SHA-1 is named here. Generated: never edit by hand; run the script.",
  "images": {
+  "arts/long_breath.webp": {
+   "sha1": "f211d56cf25c5b34c6899f88b3ca5d6f72c218de",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/seated_blade.webp": {
+   "sha1": "04746d60c251bd0740bd2e75c8972ec9888b91ff",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/stillwater.webp": {
+   "sha1": "d59d6bcf7e27d066520714ee3d9ef102a33b0dad",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "characters/aldric-vane.jpg": {
    "sha1": "44fc48943ebaad04d6758a1e410159bbc4a9c567",
    "sm": [
