@@ -565,7 +565,7 @@ ol.choice li s{color:var(--faint)}
 .forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .forge-field{display:grid;gap:4px;min-width:0}
 .forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
-@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
 @media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
 .forge-notes{display:grid;gap:4px;min-width:0}

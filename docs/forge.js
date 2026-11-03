@@ -16,8 +16,9 @@ var fits = function(cat, id){  /* open, and everything it needs is what is chose
   var o = pieces[cat][id];
   return !!(o && o.open) && Object.keys(o.needs || {}).every(function(k){ return state[k] === o.needs[k]; });
 };
-var settle = function(fixed){  /* every other piece that no longer fits falls back */
-  for (var pass = 0; pass < 3; pass += 1) {
+var settle = function(fixed){  /* every other piece that no longer fits falls back; twice, since a piece that falls back can
+  leave another without what it needs (what a needed piece needs, its needer names too, so the second pass settles it) */
+  for (var pass = 0; pass < 2; pass += 1) {
     D.cats.forEach(function(c){
       if (fixed[c.id] || fits(c.id, state[c.id])) { return; }
       var back = fits(c.id, D.start[c.id]) ? D.start[c.id] : null;

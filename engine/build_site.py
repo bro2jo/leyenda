@@ -2421,20 +2421,27 @@ class Site:
         knots = {k["n"]: k["name"] for k in self.rules.get("knots") or []}
         mid = lambda name: "the " + name[4:] if name.startswith("The ") else name  # "Opened by the Knot of Standing"
         tether = list((self.rules.get("tether") or {}).get("names") or [])
-        paid = {}  # the Tether stages the page has paid (world.json → tether): stage → the scene that paid it, as a page key
+        paid = {}  # the Tether stages the page has paid (world.json → tether): stage → the page key of the scene that paid it
         for t in self.world.get("tether") or []:
             m = re.match(r"^ch(\d+):(?:s(\d+)|(.+))$", str(t.get("key")))
-            if t.get("name") in tether and m:
-                paid.setdefault(tether.index(t["name"]) + 1, f"{m[1]}:{m[2] or m[3]}")
+            key = m and f"{m[1]}:{m[2] or m[3]}"
+            if t.get("name") not in tether or key not in on_page:
+                problem(f"saga/state/world.json: tether {t}: needs a stage name of engine/rules.json → tether and the key of a scene on the page (saga.py project rebuilds it)")
+            else:
+                paid.setdefault(tether.index(t["name"]) + 1, key)
         earned, known = set(self.darrow.get("wardrobe") or []), set()
         for cat in w["categories"]:
             for o in cat["options"]:
                 oid, u = f'{cat["id"]}.{o["id"]}', o.get("unlock") or {}
+                if not isinstance(u, dict):
+                    problem(f"{where}: {oid} has an unlock that is not a set of conditions: {u!r}")
+                    u = {}
+                o["_unlock"] = u
                 if oid in known or not o.get("name") or not o.get("prompt"):
                     problem(f"{where}: {oid} is listed twice, or has no name or prompt")
                 known.add(oid)
                 if (set(u) - {"level", "art", "rank", "knot", "page", "tether"} or ("art" in u and u["art"] not in arts)
-                        or ("rank" in u and "art" not in u) or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1))
+                        or ("rank" in u and ("art" not in u or not isinstance(u["rank"], int))) or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1))
                         or ("level" in u and not isinstance(u["level"], int)) or ("tether" in u and u["tether"] not in range(1, len(tether) + 1))):
                     problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u} (any of level, art with rank, knot, tether, page)")
                 if "page" in u and u["page"] not in on_page:
@@ -2444,16 +2451,10 @@ class Site:
                               and (not {"level", "art", "knot"} & set(u) or oid in earned))
                 parts = ([f'the Tether {roman(u["tether"])}'] if "tether" in u else []) + ([f'Level {u["level"]}'] if "level" in u else []) \
                     + ([f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}'] if "art" in u else []) + ([mid(knots.get(u["knot"], ""))] if "knot" in u else [])
-                what = " and ".join(parts)
-                o["_lock"] = "" if o["_open"] else what  # the greyed menu entry: "Running · the Knot of the Road"
+                o["_lock"] = what = " and ".join(parts)  # the greyed menu entry: "Running · the Knot of the Road"
                 o["_from"] = ("There from the start" if not u else "From the story: " if "page" in u
-                              else ("Opened at " if parts[0].startswith("Level") else "Opened by ") + what + (": " if "tether" in u else ""))
+                              else ("Opened at " if "level" in u and "tether" not in u else "Opened by ") + what + (": " if "tether" in u else ""))
                 o["_story"] = on_page.get(u["page"] if "page" in u else paid.get(u.get("tether")))  # (scene, href): the scene that showed it
-                ref = o.get("reference")
-                if ref and (not all(ref.get(k) for k in ("label", "image", "file", "use")) or not (ART / str(ref["image"])).is_file()):
-                    problem(f"{where}: {oid}.reference needs label, image (a picture under saga/art/), file and use")
-                elif ref and o["_open"]:  # checked now, published only once the piece is open
-                    o["_ref"] = self.reference(ref, f"{where}: {oid}.reference")
         pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
         for cat in w["categories"]:  # needs: a piece that only makes sense with another (the stick under his arm needs the stick)
             for o in cat["options"]:
@@ -2463,12 +2464,19 @@ class Site:
                     needs = {}
                 if not o.get("hidden") and any(pieces[c][v].get("hidden") for c, v in needs.items()):
                     problem(f"{where}: {oid} needs a hidden piece, so its greyed entry would name it; hide it too, or need something else")
+                if any(needs.get(k) != x for c, v in needs.items() for k, x in (pieces[c][v].get("needs") or {}).items()):
+                    problem(f"{where}: {oid} needs a piece that needs more than {oid} asks for; name that too, so the Forge brings it all in one step")
                 missing = [pieces[c][v]["name"] for c, v in needs.items() if not pieces[c][v]["_open"]]
                 o["_needs"] = needs
-                o["_usable"] = o["_open"] and not missing  # open, with everything it needs open too
-                if o["_open"] and missing:
-                    o["_lock"] = "needs " + ", ".join(missing)
-                o["_shown"] = o["_open"] or not o.get("hidden")  # a hidden piece is not on the site at all until it opens
+                o["_usable"] = o["_open"] and not missing  # open, with everything it needs open too: what the reader sees as open
+                if o["_open"]:
+                    o["_lock"] = "needs " + ", ".join(missing) if missing else ""
+                o["_shown"] = o["_usable"] or not o.get("hidden")  # a hidden piece is not on the site at all until it can be worn
+                ref = o.get("reference")
+                if ref and (not all(ref.get(k) for k in ("label", "image", "file", "use")) or not (ART / str(ref["image"])).is_file()):
+                    problem(f"{where}: {oid}.reference needs label, image (a picture under saga/art/), file and use")
+                elif ref and o["_usable"]:  # checked now, published only once the piece can be worn
+                    o["_ref"] = self.reference(ref, f"{where}: {oid}.reference")
             if not any(o["_usable"] and not o["_needs"] for o in cat["options"]):
                 problem(f"{where}: {cat['id']} has no piece open that needs nothing; give it one open from the start, so the Forge always has one to show")
         if earned - known:
@@ -2494,7 +2502,7 @@ class Site:
                 problem(f"{lw} ({lk['id']}): {', '.join(broke)}")
             elif not (ART / lk["image"]).is_file():
                 problem(f"{lw} ({lk['id']}): saga/art/{lk['image']} does not exist")
-            elif all(pieces[c][v]["_open"] for c, v in lk["values"].items()):
+            elif all(pieces[c][v]["_usable"] for c, v in lk["values"].items()):
                 got = self.register_image(lw, lk["image"], lk["alt"])
                 if got:
                     self.looks.append({**lk, "_path": got[0], "_md": got[3], "_i": i})
@@ -2511,8 +2519,9 @@ class Site:
 
     def render_wardrobe(self):
         """The Wardrobe (darrow/wardrobe.html): his looks and the Forge. The stage shows the chosen look if it is painted;
-        the Forge offers every piece, the locked ones greyed with what opens them; the prompt, the references and the Look
-        line paint a new one (forge.js; without it the stage and the lookbook still work)."""
+        the Forge offers every piece but the hidden ones still locked, the locked ones greyed with what opens them (or what
+        they need); the prompt, the references and the Look line paint a new one (forge.js; without it the stage and the
+        lookbook still work)."""
         w = self.wardrobe
         if not w:
             return
@@ -2537,7 +2546,7 @@ class Site:
                    if tiles else '<p class="empty">No look painted yet.</p>'))
         shown = {c["id"]: [o for o in c["options"] if o["_shown"]] for c in w["categories"]}
         n_all = sum(len(v) for v in shown.values())
-        n_open = sum(o["_open"] for v in shown.values() for o in v)
+        n_open = sum(o["_usable"] for v in shown.values() for o in v)
         n_hidden = sum(len(c["options"]) for c in w["categories"]) - n_all
         fields = []
         for c in w["categories"]:
@@ -2812,7 +2821,7 @@ class Site:
         head = f'Level {d["level"]}' + (f' · {esc(d["rank"])}' if new_rank else "")
         line = ("A new rank. " if new_rank else "") + f'HP {d["hp_max"]} · Proficiency +{d["proficiency"]}'
         pieces = [o["name"] for c in (self.wardrobe or {}).get("categories", []) for o in c["options"]
-                  if o["_open"] and (o.get("unlock") or {}).get("level") == d["level"]]
+                  if o["_usable"] and o["_unlock"].get("level") == d["level"]]
         news = f'<span class="m">New in the Wardrobe: {", ".join(esc(x) for x in pieces)}</span>' if pieces else ""
         href = f"{rel}darrow/wardrobe.html" if pieces else f"{rel}darrow/index.html#reckoning"
         return (f'<a class="lvl-news{self.metal(d["level"])}" href="{href}">{crest(d["level"])}'
@@ -3778,7 +3787,7 @@ ol.choice li s{color:var(--faint)}
 .forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .forge-field{display:grid;gap:4px;min-width:0}
 .forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
-@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
 @media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
 .forge-notes{display:grid;gap:4px;min-width:0}
@@ -4084,8 +4093,9 @@ var fits = function(cat, id){  /* open, and everything it needs is what is chose
   var o = pieces[cat][id];
   return !!(o && o.open) && Object.keys(o.needs || {}).every(function(k){ return state[k] === o.needs[k]; });
 };
-var settle = function(fixed){  /* every other piece that no longer fits falls back */
-  for (var pass = 0; pass < 3; pass += 1) {
+var settle = function(fixed){  /* every other piece that no longer fits falls back; twice, since a piece that falls back can
+  leave another without what it needs (what a needed piece needs, its needer names too, so the second pass settles it) */
+  for (var pass = 0; pass < 2; pass += 1) {
     D.cats.forEach(function(c){
       if (fixed[c.id] || fits(c.id, state[c.id])) { return; }
       var back = fits(c.id, D.start[c.id]) ? D.start[c.id] : null;

@@ -811,7 +811,7 @@ def wardrobe_earned(level, arts, knots):
     for cat in load_json(P["wardrobe"])["categories"]:
         for o in cat["options"]:
             u = o.get("unlock") or {}
-            conds = [k for k in WARDROBE_SHEET if k in u]
+            conds = [k for k in WARDROBE_SHEET if k in u] if isinstance(u, dict) else []  # a malformed one is the build's to report
             if conds and all(holds[k](u) for k in conds):
                 earned.append(f'{cat["id"]}.{o["id"]}')
     return earned
@@ -826,7 +826,7 @@ def wardrobe_opened(old, new):
     if not fresh:
         return []
     return [o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]
-            if f'{c["id"]}.{o["id"]}' in fresh and not {"page", "tether"} & set(o.get("unlock") or {})]
+            if f'{c["id"]}.{o["id"]}' in fresh and not {"page", "tether"} & set(o.get("unlock") or {})]  # only a dict unlock is ever earned
 
 
 # ---------------------------------------------------------------- sync

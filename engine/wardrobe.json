@@ -1,5 +1,5 @@
 {
-  "_about": "The Wardrobe (darrow/wardrobe.html): every piece Darrow's looks can be made of, and what opens it. Each option: id (unique in its category), name (the menu), prompt (the words the image prompt uses) and unlock, a set of conditions that must all hold (none: open from the start): {\"level\": N}; {\"art\": id, \"rank\": R} (an Art at rank R or more, sealed Arts never); {\"knot\": N} (that Knot tied); {\"tether\": N} (the Tether's stage N paid on the page: the stage reached and its scene written); {\"page\": \"NN:key\"} (a scene already on the page that showed it: a chapter's code and scene key, e.g. \"04:5\", or a tale piece, \"tale01:p1\"). The engine reads level, art and knot (darrow.json -> wardrobe; sync reports what the sheet opens on its own); the site reads page and tether (world.json -> tether). Optional: needs {category: piece} (a piece that only makes sense with another, like the stick under his arm: the Forge brings that piece when this one is chosen, and a look must wear it); hidden: true (off the site entirely until it opens; the Forge counts the hidden ones, and names any piece new since his last visit; a shown piece never needs a hidden one). Poses follow the Knots, so a look never shows the leg doing what the story has not let it: a pose that stands, walks or moves names the Knot that allows it, or the scene that showed it. Names stay generic: no faction's colours or crest, nothing the page has not shown. A finished look goes in saga/state/looks.json with its picture in saga/art/looks/. A piece a look wears is never removed or renamed (the build fails on a look that names a missing piece). A piece may bring its own reference picture (\"reference\": {label, image under saga/art/, file, use}, like Ash): the Forge offers it to download and names it as the next Image while the piece is chosen. The prompt is written for OpenAI's image generation and joined line by line; {references} (Image 1, Image 2… in the order they are attached), {design} and {details} are filled by the Forge.",
+  "_about": "The Wardrobe (darrow/wardrobe.html): every piece Darrow's looks can be made of, and what opens it. Each option: id (unique in its category), name (the menu), prompt (the words the image prompt uses) and unlock, a set of conditions that must all hold (none: open from the start): {\"level\": N}; {\"art\": id, \"rank\": R} (an Art at rank R or more, sealed Arts never); {\"knot\": N} (that Knot tied); {\"tether\": N} (the Tether's stage N paid on the page: the stage reached and its scene written); {\"page\": \"NN:key\"} (a scene already on the page that showed it: a chapter's code and scene key, e.g. \"04:5\", or a tale piece, \"tale01:p1\"). The engine reads level, art and knot (darrow.json -> wardrobe; sync reports what the sheet opens on its own); the site reads page and tether (world.json -> tether). Optional: needs {category: piece} (a piece that only makes sense with another, like the stick under his arm: the Forge brings that piece when this one is chosen, and a look must wear it); hidden: true (off the site entirely until it opens; the Forge counts the hidden ones, and names any piece new since his last visit; a shown piece never needs a hidden one, and a piece names everything its needed pieces need). Poses follow the Knots, so a look never shows the leg doing what the story has not let it: a pose that stands, walks or moves names the Knot that allows it, or the scene that showed it. Names stay generic: no faction's colours or crest, nothing the page has not shown. A finished look goes in saga/state/looks.json with its picture in saga/art/looks/. A piece a look wears is never removed or renamed (the build fails on a look that names a missing piece). A piece may bring its own reference picture (\"reference\": {label, image under saga/art/, file, use}, like Ash): the Forge offers it to download and names it as the next Image while the piece is chosen. The prompt is written for OpenAI's image generation and joined line by line; {references} (Image 1, Image 2… in the order they are attached), {design} and {details} are filled by the Forge.",
   "categories": [
     {"id": "build", "label": "Build", "options": [
       {"id": "mending", "name": "Lean, still mending", "prompt": "lean and rangy, long in the limb and a little hollow in the cheek: a strong man still mending"},
@@ -48,7 +48,7 @@
       {"id": "grim", "name": "Grim resolve", "prompt": "jaw set, grim and resolved", "unlock": {"level": 14}},
       {"id": "war-cry", "name": "War cry", "prompt": "shouting a war cry, teeth bared", "unlock": {"level": 19}},
       {"id": "unbowed", "name": "Unbowed", "prompt": "chin up, unafraid, with a quiet, fierce pride", "unlock": {"level": 25}},
-      {"id": "on-her", "name": "Eyes on her", "prompt": "looking at Rae instead of the viewer, with the smile he keeps for her", "unlock": {"tether": 2}, "needs": {"side": "rae"}, "hidden": true}
+      {"id": "on-her", "name": "Eyes on her", "prompt": "his whole attention on Rae instead of the viewer, his face softened: the look he keeps only for her", "unlock": {"tether": 2}, "needs": {"side": "rae"}, "hidden": true}
     ]},
     {"id": "pose", "label": "Pose", "options": [
       {"id": "seated", "name": "Seated, one leg out straight", "prompt": "seated on a plain wooden stool, one leg stretched out straight in front of him"},
@@ -56,31 +56,30 @@
       {"id": "chair-blade", "name": "In the chair, the blade across his knees", "prompt": "seated upright in a plain wooden chair, one leg put out a little, the sword laid across his knees, ready to take it up", "unlock": {"art": "seated_blade", "rank": 3}, "needs": {"hand": "wooden-sword"}},
       {"id": "walking", "name": "Walking on the flat", "prompt": "walking toward the viewer at an easy pace on level ground", "unlock": {"knot": 2}},
       {"id": "square", "name": "Standing square", "prompt": "standing square on both legs, weight even, at ease, facing the viewer", "unlock": {"knot": 3}},
-      {"id": "folded", "name": "Arms folded", "prompt": "standing on both legs with his arms folded, facing the viewer", "unlock": {"knot": 3}},
+      {"id": "folded", "name": "Arms folded", "prompt": "standing on both legs with his arms folded, facing the viewer; anything he carries leans against him or hangs at his belt", "unlock": {"knot": 3}},
       {"id": "stick-arm", "name": "The stick under his arm", "prompt": "standing easy with the walking stick tucked under one arm like a captain's bat", "unlock": {"page": "04:3"}, "needs": {"hand": "stick"}},
       {"id": "post", "name": "Leaning on a post", "prompt": "leaning one shoulder against a weathered timber post, arms loose, at ease; only the post is drawn", "unlock": {"knot": 3}},
       {"id": "hound", "name": "A hand on the hound", "prompt": "standing at ease, one hand resting on the head of the hound at his side", "unlock": {"knot": 3}, "needs": {"side": "ash"}},
       {"id": "stair", "name": "A stair, a hand on the wall", "prompt": "climbing a short flight of worn stone steps, one hand on a rough stone wall beside him; only the steps and that piece of wall are drawn", "unlock": {"knot": 3}},
       {"id": "over-shoulder", "name": "A look back over his shoulder", "prompt": "standing half turned away from the viewer, looking back over his shoulder", "unlock": {"knot": 3}},
       {"id": "forms", "name": "The forms, standing", "prompt": "standing in a slow practice form, both feet planted and still, the sword raised in a high guard", "unlock": {"knot": 3}, "needs": {"hand": "wooden-sword"}},
-      {"id": "running", "name": "Running", "prompt": "running on a road, mid-stride", "unlock": {"knot": 4}},
-      {"id": "road-hound", "name": "On the road with the hound", "prompt": "running easily on a flat road, the hound loping at his side", "unlock": {"knot": 4}, "needs": {"side": "ash"}},
+      {"id": "running", "name": "Running", "prompt": "running on level ground, mid-stride", "unlock": {"knot": 4}},
       {"id": "leap", "name": "Mid-leap", "prompt": "caught mid-leap, both feet off the ground", "unlock": {"knot": 5}},
       {"id": "vault", "name": "Over a low wall", "prompt": "vaulting a low dry-stone wall, one hand on its top, both feet off the ground; only the wall is drawn", "unlock": {"knot": 5}},
-      {"id": "long-throw", "name": "The long throw", "prompt": "at the end of a long overhand throw, his weight driven onto the front foot and the throwing arm following through", "unlock": {"art": "far_cast", "rank": 3, "knot": 5}},
+      {"id": "long-throw", "name": "The long throw", "prompt": "at the end of a long overhand throw, the throwing hand empty and following through, his weight driven onto the front foot; anything else he carries is slung or belted", "unlock": {"art": "far_cast", "rank": 3, "knot": 5}},
       {"id": "turning", "name": "Turning to strike", "prompt": "turning at speed into a strike, his weight driving through the turn", "unlock": {"knot": 6}},
       {"id": "guard", "name": "Behind the shield", "prompt": "light on his feet in a fighting guard, the round shield raised and the sword ready behind it", "unlock": {"knot": 6}, "needs": {"hand": "shield"}},
       {"id": "battle", "name": "Braced for battle", "prompt": "in a braced battle stance, ready to meet a charge", "unlock": {"knot": 7}},
-      {"id": "charge", "name": "The charge", "prompt": "charging forward at a full run, shouting, ready to meet the line", "unlock": {"knot": 7}},
+      {"id": "charge", "name": "The charge", "prompt": "charging forward at a full run, ready to meet the line", "unlock": {"knot": 7}},
       {"id": "hand-in-hand", "name": "Her hand in his", "prompt": "standing side by side with Rae, close, their fingers laced between them, both at ease", "unlock": {"tether": 2, "knot": 3}, "needs": {"side": "rae"}, "hidden": true},
       {"id": "arm-in-arm", "name": "Out walking, her arm through his", "prompt": "walking at an easy pace on level ground beside Rae, her arm through his, the two of them in step", "unlock": {"tether": 3, "knot": 2}, "needs": {"side": "rae"}, "hidden": true},
       {"id": "tailboard", "name": "Side by side on her tailboard", "prompt": "sitting beside Rae on the tailboard of a plain wooden carter's cart, shoulders touching, their legs hanging over the edge; only the cart's tail is drawn", "unlock": {"tether": 3}, "needs": {"side": "rae"}, "hidden": true},
       {"id": "shoulder", "name": "Her head on his shoulder", "prompt": "seated beside Rae on a plain wooden bench, her head resting on his shoulder and his arm around her; only the bench is drawn", "unlock": {"tether": 4}, "needs": {"side": "rae"}, "hidden": true},
-      {"id": "forehead", "name": "Forehead to forehead", "prompt": "standing close with Rae, his forehead resting against hers, eyes closed, his hands at her waist and hers at his chest", "unlock": {"tether": 4, "knot": 3}, "needs": {"side": "rae", "hand": "none"}, "hidden": true},
+      {"id": "forehead", "name": "Forehead to forehead", "prompt": "standing close with Rae, his forehead resting against hers, his hands at her waist and hers at his chest", "unlock": {"tether": 4, "knot": 3}, "needs": {"side": "rae", "hand": "none", "expression": "on-her"}, "hidden": true},
       {"id": "slow-dance", "name": "A slow dance", "prompt": "dancing slowly with Rae, close, one hand holding hers and the other at the small of her back, feet planted, swaying, no spin", "unlock": {"tether": 4, "knot": 3}, "needs": {"side": "rae", "hand": "none"}, "hidden": true},
-      {"id": "kiss", "name": "The kiss", "prompt": "kissing Rae, unhurried, one hand at her cheek and her arms around his neck", "unlock": {"tether": 5, "knot": 3}, "needs": {"side": "rae", "hand": "none"}, "hidden": true},
-      {"id": "lift", "name": "Swept off her feet", "prompt": "lifting Rae off her feet in an embrace, both of them laughing, her arms round his neck", "unlock": {"tether": 5, "knot": 5}, "needs": {"side": "rae", "hand": "none"}, "hidden": true},
-      {"id": "swung", "name": "Swung round", "prompt": "swinging Rae round in a fast turn, her feet off the ground and her hair flying, both of them laughing", "unlock": {"tether": 5, "knot": 6}, "needs": {"side": "rae", "hand": "none"}, "hidden": true}
+      {"id": "kiss", "name": "The kiss", "prompt": "kissing Rae, unhurried, one hand at her cheek and her arms around his neck", "unlock": {"tether": 5, "knot": 3}, "needs": {"side": "rae", "hand": "none", "expression": "on-her"}, "hidden": true},
+      {"id": "lift", "name": "Swept off her feet", "prompt": "lifting Rae off her feet in an embrace, her arms round his neck, Rae laughing", "unlock": {"tether": 5, "knot": 5}, "needs": {"side": "rae", "hand": "none"}, "hidden": true},
+      {"id": "swung", "name": "Swung round", "prompt": "swinging Rae round in a fast turn, her feet off the ground, her hair flying, Rae laughing", "unlock": {"tether": 5, "knot": 6}, "needs": {"side": "rae", "hand": "none"}, "hidden": true}
     ]},
     {"id": "hand", "label": "In hand", "options": [
       {"id": "none", "name": "Nothing", "prompt": "none"},
@@ -122,7 +121,7 @@
     ]}
   ],
   "references": [
-    {"label": "His face", "image": "characters/darrow-book2.jpg", "file": "darrow-face.jpg", "use": "his face. Keep it exactly: its shape, the grey-green eyes, the brows, the crooked nose with its faint scar, his smile and his colouring. Take nothing else from this picture (not the mountain, snow, ox, stick or clothes)."},
+    {"label": "His face", "image": "characters/darrow-book2.jpg", "file": "darrow-face.jpg", "use": "his face. Keep it exactly: its shape, the grey-green eyes, the brows, the crooked nose with its faint scar, and his colouring. Take nothing else from this picture (not the mountain, snow, ox, stick or clothes)."},
     {"label": "Full-body style", "image": "looks/reference-fullbody.jpg", "file": "darrow-fullbody.jpg", "use": "the full-body framing, scale and proportions, and the hand-painted brushwork. Its clothes, cloak and pose are replaced by the design."}
   ],
   "prompt": [
@@ -146,7 +145,7 @@
     "",
     "Rules:",
     "- No other people and no animals beyond the companion the At his side line names.",
-    "- He wears and holds only what the design names; where a line says none, leave that thing out entirely.",
+    "- He wears and holds only what the design names; where a line says none, leave that thing off him entirely.",
     "- Check every line of the design before finishing."
   ]
 }
