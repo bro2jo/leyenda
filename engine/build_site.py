@@ -1327,7 +1327,8 @@ class Site:
                 if words_of(ln) and f" {words_of(ln)} " not in page:
                     problem(f"{where}.audio sings a line the page has not: {ln[:60]!r} (a song may carry only what the "
                             f"chronicle has already sung; the rest stays in the Annals)")
-        self.songs[anchor] = {"path": path, "title": str(title or e["name"]).strip(), "cues": cues}
+        # the link carries a short hash of the file, so a song replaced under the same name plays at once, not a cached copy
+        self.songs[anchor] = {"path": f"{path}?v={file_sha1(src)[:10]}", "title": str(title or e["name"]).strip(), "cues": cues}
         e["_song"] = self.songs[anchor]
 
     def char_portrait(self, c):

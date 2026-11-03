@@ -12,6 +12,11 @@
       "name": "The Lowmarch counting rhyme",
       "audio": "songs/count-the-lances.mp3",
       "audio_title": "Count the Lances"
+    },
+    {
+      "name": "Sixty and a Mule",
+      "audio": "songs/the-mule-had-the-sense.mp3",
+      "audio_title": "The Mule Had the Sense"
     }
   ]
 }
