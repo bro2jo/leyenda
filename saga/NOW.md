@@ -38,5 +38,5 @@ ARTS · The Seated Blade II · Stillwater Stance III · The Long Breath II · Th
 SEALED (practice banked) · Thunderstep (Knot V)
 ```
 
-**Chapter 5, so far (on what's logged):** Hard-won
+**Chapter 5, so far (on what's logged):** Triumph
 <!-- engine:end -->
