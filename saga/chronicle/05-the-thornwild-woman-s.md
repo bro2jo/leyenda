@@ -191,3 +191,77 @@ From the hut came the end of the goat verse, and Hollis laughing at his own rhym
 "Then it's carried." She put the empty cup into his hands. "I don't open what I carry."
 
 Across the water the inn's door shut for the night, and the tarn went dark from shore to shore. In the hut, Hollis finished the goat and started on the Confessor's sister.
+
+### Scene 2 — Above Every Other
+
+If Rae remembered the fold wall, she showed it only by walking on his side of the oxen.
+
+The bread had run out at breakfast, by a route Hollis would not discuss, and by noon the drove road had brought them down off the moor's shoulder to the first houses since the Holloway: six of them round a well, a byre, a pound for strays, and a bell-post where the tracks crossed, with one small bell under a roof of its own. Every door was shut. Every shutter was barred, at noon, in a hamlet where the only thing worth stealing was the bell.
+
+"Six chimneys, four smoking," Wren said. "Somebody's home, and somebody would rather not be."
+
+A paper was nailed to the bell-post, the nails still bright and the paper still white under its blob of blue wax. Darrow could read the first line from the cart. He got down and read it anyway, because a man ought to read his own name standing up.
+
+Wren read it aloud behind him, fast, as she read everything. "By the Knight-Confessor's seal, these to be held and given up, on pain of the Crown's displeasure, as Faithless who would not kneel." She stopped. "You're first."
+
+"I'm usually first."
+
+"Not like this." She put her finger on it. His name sat alone at the top, in letters a size bigger than the rest, as if the clerk had wanted it read from the road: SER DARROW OF EDGEMOOR, KNIGHT-CAPTAIN OF THE NINTH LANCE. Then a space. Then, smaller: *the Mender Vorne, of Saint Ysolde's, who harbours him.* Then the Ninth and the Sixth, man by man.
+
+"Where am I?" Hollis demanded from the tailboard.
+
+"Third."
+
+"Third." Hollis took it like a wound. "I was second at the bars. A man goes down one mountain and loses his place to a surgeon."
+
+Maelis had come round the cart and was reading her own name with the pipe clamped in her teeth. She read it twice. Darrow watched her do it and could not have said what was in her face, which was the purpose of her face.
+
+"Well?" he said.
+
+"Good," said Maelis. "Now nobody has to pretend I'm the nurse." She took the pipe out. "It means he wants me as much as he wants you, and that I'm the easier one to carry off. Don't go standing in front of me about it. You'll only fall over."
+
+Rae had gone to the reeve's door.
+
+Darrow knew it for the reeve's by the bench outside it and the iron on the shutters. Rae knocked, and said something low through the grille, and a man's voice answered her by name, and they talked a while in the voices of people who had done business for years. Then the voice said, loud enough for the well to hear: "Not off that cart, Rae. Not with that on the post. I'm sorry for it."
+
+Her hand went to her purse. The grille shut.
+
+She walked back to the cart unhurried and took up the goad, and her face was a carter's face that had just been told the road was out.
+
+"How long have you sold to him?" Darrow said.
+
+"Since I could lift a sack." She was looking at the oxen. "His father before him."
+
+There it was, then, what he cost her. Not coin, and not the bread: twenty years of a door opening when she knocked on it.
+
+"Put me off at the next wall," he said. "Take the cart through without me and pick me up a mile on. They'll sell to you."
+
+"They'd sell to me." She set the goad to Hob's shoulder. "And then I'd be a carter who put her load down because a reeve looked at it. On this road that's worse than anything they can nail to a post." The cart moved. "Get up or walk. I'm not stopping."
+
+He walked.
+
+---
+
+They made camp past the hamlet in the lee of a field wall with a barred gate in it. The rain came over the hills at dusk in a hurry and left the same way, and after it the drove road smelled of wet wool and woodsmoke. Nobody said anything about supper, there being nothing to say it about.
+
+The man came over the wall a little after the rain stopped, at the corner farthest from the hamlet, with a cloth bundle held against his chest. He was young and broad in the face, and Darrow knew the face before he could place it, until the man stood in the firelight and he could: it was a lay brother's face, younger, and without the hood.
+
+"My brother had the foot of your litter," the man said. "Going up the Steps, the summer. He sent word down with the salt, after." He held the bundle out, not to Darrow but to Rae. "He says the captain stood up at the gate and wouldn't kneel. There's a few of us here heard it. We don't put it on any post." He looked at Darrow once, quickly, as a boy looks at a man on a horse. "It's bread. It's only bread."
+
+Rae took it. "Tell your mother I'll be by," she said, "the next time I'm by."
+
+The man went back over the wall. Hollis already had the cloth open.
+
+The lantern came a while after: down the track from the hamlet, swinging, with three men behind it and one of them carrying a fork. They stopped at the barred gate and held the lantern up to the bars, and the man holding it was the voice from the grille, grey and heavy and frightened.
+
+"Rae," he said. He sounded sorry about that too. "I saw that boy go over the wall. I've a writ on my post and three children in my house and a Confessor's rider through here twice a week, and if they ask me, I want to have asked." He lifted the lantern past her, to the fire and the faces round it, and stopped on Darrow's. "So I'm asking. Who rides on the Thorne cart?"
+
+> ⟦ THE RECKONING ⟧
+> Level 7 → 8 · Kindled
+> Inspiration 1 → 2
+> XP 2,713 → 2,888
+
+**What does Darrow say?**
+1. **"Darrow of Edgemoor. The one on your post."**
+2. **"Salt, a sick man and his nurse. Ask the carter."**
+3. **Let Rae answer for her own cart.**

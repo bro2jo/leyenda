@@ -159,7 +159,8 @@
           "at": "book2",
           "weight": "color",
           "what": "The Lowmarch has heard that the captain of the Ninth stood up at the gate of Saint Ysolde and would not kneel: the Faithless take heart from it (apply faithless +5 in a Book II entry when the company reaches the valley)",
-          "status": "pending"
+          "status": "fired@ch05:s2",
+          "evidence": "There's a few of us here heard it. We don't put it on any post."
         },
         {
           "id": "c01.5c",
@@ -1299,7 +1300,8 @@
           "at": "book2",
           "weight": "scene",
           "what": "The writs of Book II carry the Captain of the Ninth's name above every other: he went down to the grey of the lower terrace at dawn and made himself the Confessor's quarry so the writ would stop at him, and gave the Confessor nothing of the script. The hunt follows him down the Steps, not the House; the Confessors know his name and his face, not what he is",
-          "status": "pending"
+          "status": "fired@ch05:s2",
+          "evidence": "His name sat alone at the top, in letters a size bigger than the rest"
         }
       ],
       "declined": [
@@ -1364,12 +1366,28 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch05:between-2"
+            "ch05:between-2",
+            "ch05:s2"
           ]
         }
       ]
+    },
+    {
+      "id": "c05.3",
+      "made": {
+        "chapter": 5,
+        "scene": "s2",
+        "date": "2026-11-02"
+      },
+      "chose": "Read his own name at the top of the writ on a drove-road hamlet's bell-post, standing; offered to be put off the cart so Rae could trade, and was refused; a lay brother's brother brought bread over the wall at dusk for the captain who would not kneel",
+      "now": {
+        "factions": {
+          "faithless": 5
+        }
+      },
+      "due": []
     }
   ],
   "rules": [

@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "1",
+    "scene": "2",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-1"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-2"
   },
-  "last_seen_doing": "Counted everything on the road, sheep included until Hollis forbade it; counted the column at forty-six and its cart; began to count the stars.",
-  "now": "Flat on her back on the cart at the fold, counting the sky.",
+  "last_seen_doing": "Read the writ aloud and found him first, alone, above every other.",
+  "now": "At the fire past the hamlet.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -625,6 +625,12 @@
       "chapter": "05",
       "scene": "1",
       "evidence": "Nobody's ever tried."
+    },
+    {
+      "fact": "She read the writ on the bell-post aloud.",
+      "chapter": "05",
+      "scene": "2",
+      "evidence": "Wren read it aloud behind him, fast, as she read everything."
     }
   ],
   "relationships": [
@@ -866,6 +872,10 @@
     {
       "chapter": "05",
       "scene": "1"
+    },
+    {
+      "chapter": "05",
+      "scene": "2"
     }
   ]
 }

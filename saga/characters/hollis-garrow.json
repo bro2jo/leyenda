@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-2",
+    "scene": "2",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-2"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-2"
   },
-  "last_seen_doing": "Sang one of the Sixth's songs to the kettle in the shepherds' hut, the verses nobody should hear.",
-  "now": "In the shepherds' hut, singing.",
+  "last_seen_doing": "Found himself third on the writ and took it like a wound; opened the bread.",
+  "now": "At the fire past the hamlet.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -634,6 +634,12 @@
       "chapter": "05",
       "scene": "1",
       "evidence": "but they've outriders, and outriders have eyes"
+    },
+    {
+      "fact": "On the new writ he is third, under Darrow and the Mender.",
+      "chapter": "05",
+      "scene": "2",
+      "evidence": "I was second at the bars."
     }
   ],
   "relationships": [
@@ -931,6 +937,10 @@
     {
       "chapter": "05",
       "scene": "between-2"
+    },
+    {
+      "chapter": "05",
+      "scene": "2"
     }
   ]
 }
