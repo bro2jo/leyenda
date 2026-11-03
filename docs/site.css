@@ -5,6 +5,7 @@
   --brass:#CFA65F; --brass-dim:#8A7044; --ember:#E2713B; --good:#72B396; --warn:#D9A441; --bad:#D0634D;
   --t1:#EADBA6; --t2:#D9AE5F; --t3:#A86B3C; --t4:#7A4D86; --t5:#4062A3; --t6:#8BB2D3;
   --metal:var(--brass); --metal-dim:var(--brass-dim);
+  --stage:radial-gradient(ellipse at 50% 42%,#3d2e25 0%,#211f21 50%,#13171c 100%);
   --display:"Grenze Gotisch","UnifrakturMaguntia",Georgia,serif;
   --body:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
   --label:"Alegreya Sans SC","Alegreya Sans","Segoe UI",system-ui,sans-serif;
@@ -251,10 +252,13 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
-/* Darrow's figure by rank (rank_figures) beside the head of the Reckoning: a tall frame in the swipe strip of the portraits */
+/* his current look (look_figure) beside the head of the Reckoning: a tall frame in his rank's metal, opening the Wardrobe */
 .reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
 .reck-head{display:grid;gap:12px;min-width:0}
-.portrait.tall .pf-strip{aspect-ratio:3/4} .portrait.tall .pf-strip a{aspect-ratio:auto}
+.look-fig{margin:0;display:grid;gap:6px;min-width:0}
+.look-fig>a{display:block;aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage)}
+.look-fig img{display:block;width:100%;height:100%;object-fit:contain}
+.look-fig figcaption{font-size:.85rem;text-align:center}
 .reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
@@ -349,7 +353,7 @@ a.art-pic{cursor:zoom-in}
 .lvl-news:hover{text-decoration:none;border-color:var(--ember)}
 .lvl-news .crest{width:52px;flex:none}
 .lvl-news b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.15}
-.lvl-news .m{color:var(--dim);font-size:.95rem}
+.lvl-news .m{display:block;color:var(--dim);font-size:.95rem}
 .rk-mini{display:grid;gap:12px}
 .rk-mini .who h3{font-size:1.35rem}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
@@ -543,3 +547,42 @@ ol.choice li s{color:var(--faint)}
   .bar>i{transition:none}
   .mast,.panel>summary::after{transition:none}
 }
+/* the Wardrobe (render_wardrobe, forge.js): the stage, the lookbook, the Forge's pieces, the prompt and its references */
+.forge-stage{position:relative;margin:0 auto;width:min(100%,calc(64vh * 2 / 3));aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage);display:grid}
+.forge-stage>*{grid-area:1/1}
+.forge-stage a{display:block;cursor:zoom-in} .forge-stage img{display:block;width:100%;height:100%;object-fit:contain}
+.forge-empty{display:grid;place-content:center;justify-items:center;gap:6px;text-align:center;padding:24px;color:var(--dim)}
+.forge-empty .glyph{font-size:2.6rem;line-height:1;color:var(--brass)} .forge-empty b{font-family:var(--display);font-size:1.6rem;color:var(--ink)}
+.forge-cap{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap}
+.forge-cap b{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+.look-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.look-tile{display:grid;gap:6px;border:1px solid var(--rule);border-radius:6px;padding:4px 4px 8px;background:var(--plate);color:var(--ink);text-align:center;font-size:.85rem;line-height:1.25}
+.look-tile:hover{text-decoration:none;border-color:var(--brass-dim)}
+.look-tile[aria-current=true]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass-dim)}
+.look-tile img{display:block;width:100%;aspect-ratio:2/3;object-fit:contain;border-radius:4px;background:var(--stage)}
+.forge{display:grid;gap:12px}
+.wardrobe-page [hidden]{display:none}
+.forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.forge-field{display:grid;gap:4px;min-width:0}
+.forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}}
+@media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.forge-notes{display:grid;gap:4px;min-width:0}
+.forge-notes em{font-style:normal;letter-spacing:0;color:var(--faint)}
+.forge select,.forge textarea,.forge-prompt{width:100%;min-width:0;font:inherit;font-family:var(--body);font-size:1rem;letter-spacing:0;color:var(--ink);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px}
+.forge select{appearance:none;-webkit-appearance:none;padding-right:30px;background:var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA65F' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center}
+.forge select option:disabled{color:var(--faint)}
+.forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.forge-result{font-size:.95rem;color:var(--dim)} .forge-result b{color:var(--brass);font-weight:600}
+.forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
+.forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
+button.btn{font-size:1rem;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--brass)}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.ref-card{display:flex;gap:10px;align-items:center;border:1px solid var(--rule);border-radius:6px;padding:6px;color:var(--ink);min-width:0}
+.ref-card:hover{text-decoration:none;border-color:var(--brass-dim)}
+.ref-card img{width:52px;height:52px;flex:none;object-fit:cover;border-radius:4px;background:var(--plate)}
+.ref-t{display:grid;min-width:0} .ref-n{font-style:normal;font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--dim)}
+.ref-card b{font-size:.9rem;font-weight:600} .ref-d{font-size:.8rem;color:var(--brass)}
+.look-line{display:block;font-family:var(--mono);font-size:.78rem;line-height:1.5;color:var(--dim);background:var(--night);border:1px solid var(--raw);border-radius:4px;padding:8px 10px;overflow-wrap:anywhere}
