@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-30 · ledger · From Wren's ledger, a line in the margin: Dogs on the row, 1. Lay brothers who have asked whether that is allowed, 3. Answers given, 0.
 - 2026-10-31 · body · He wakes with his hands warm and the knee quiet, and lies a while listening to the dog under the cot breathe, slower than he does, and then, after a while, the same.
 - 2026-10-31 · weather · The morning comes up clear over the Steps, frost still in the shade of every landing, and the cloud lies low and flat across the valley like a floor you could walk out on.
 - 2026-10-31 · house · A novice has been set to scrub the refectory benches and is doing it in strict order, end to end, humming the same three notes under his breath until somebody throws a rag at him, after which he hums them more quietly.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-02 · weather · Rain comes over the hills at dusk in a hurry and leaves the same way, and the drove road smells of wet wool and woodsmoke. Ash comes back out of it twice his size and very pleased with himself.
 - 2026-11-02 · overheard · From the far side of the fire, Maelis, to no one in particular: Ask me once more whether a thing is broken and I will break it, and then we will all know.
 - 2026-11-03 · body · The cold sits in his hands at first light and then lets go all at once, as if it has somewhere better to be. He flexes them out of old habit and finds, for once, nothing to report.
+- 2026-11-03 · house · Wren has decided the Lowmarch's cows are friendlier than the mountain's goats, and is keeping evidence. So far the evidence is one cow, which has followed her the length of a hedge and has opinions about her pencil.
