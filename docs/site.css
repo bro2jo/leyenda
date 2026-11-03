@@ -195,7 +195,7 @@ details[open]>summary::after{content:"\2212"}
 .zoom-hint .c{display:none}
 /* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
-.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
+.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr);align-items:start}
 .portrait{margin:0;position:relative;min-width:0}
 .portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
@@ -211,7 +211,7 @@ details[open]>summary::after{content:"\2212"}
 .portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait .pf-strip::-webkit-scrollbar{display:none}
 .portrait .pf-strip a{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border:0;border-radius:0;box-shadow:none}
-.portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:14px}
+.portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:4px;margin-top:14px}
 .portrait .pf-tabs[hidden]{display:none}
 .portrait .pf-tabs button{font:inherit;font-size:.72rem;line-height:1.25;padding:2px 7px;border:1px solid var(--rule);border-radius:999px;background:transparent;color:var(--faint);cursor:pointer}
 .portrait .pf-tabs button[aria-pressed="true"]{color:var(--brass);border-color:var(--brass-dim)}
@@ -254,14 +254,19 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
-/* his current look (look_figure) beside the head of the Reckoning: a tall frame in his rank's metal, opening the Wardrobe */
-.reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
-.reck-head{display:grid;gap:12px;min-width:0}
-.look-fig{margin:0;display:grid;gap:6px;min-width:0}
-.look-fig>a{display:block;aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage)}
-.look-fig img{display:block;width:100%;height:100%;object-fit:contain}
-.look-fig figcaption{font-size:.85rem;text-align:center}
-.reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
+/* where he stands, across the foot of his plate (darrow_standing) */
+.stand{display:grid;gap:12px;border-top:1px dotted var(--rule);padding-top:14px}
+.reck-line{font-size:1rem}
+/* his faction's shield beside the title that names it, on his plate */
+.fac-sub{display:flex;align-items:center;gap:8px}
+a.fac-sub{color:var(--dim);text-decoration:none} a.fac-sub:hover{color:var(--brass)}
+.fac-sub .sigil{flex:none}
+/* the look he wears (wearing_strip) at the head of the Reckoning: a small picture and its name, framed in his rank's metal, opening the Wardrobe */
+.wear-strip{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:center;padding:8px;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);color:var(--ink);text-decoration:none}
+.wear-strip img{width:64px;height:auto;aspect-ratio:2/3;object-fit:contain;background:var(--stage);border-radius:4px;display:block}
+.wear-strip>span{display:grid;gap:2px;min-width:0}
+.wear-strip b{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;color:var(--brass)}
+.wear-strip .go{color:var(--dim);font-size:.9rem} .wear-strip:hover .go{color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
 .panels-h{margin-top:4px}
@@ -598,14 +603,14 @@ ol.choice li s{color:var(--faint)}
 .step-n{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border:1px solid var(--brass-dim);border-radius:50%;color:var(--brass);font-family:var(--label);font-size:.78rem}
 .forge-who{display:grid;gap:6px}
 .who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
-.who{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
-.who[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
-.who:disabled{opacity:.5;cursor:not-allowed}
-.who:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.who-btn{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
+.who-btn[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+.who-btn:disabled{opacity:.5;cursor:not-allowed}
+.who-btn:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
 .who-pic{width:56px;height:56px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--plate-hi)}
 .who-pic img{width:100%;height:100%;object-fit:cover} .who-pic .glyph{font-size:1.5rem;color:var(--brass)}
-.who b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
-.who b .forge-new{display:table;margin:3px auto 0}
+.who-btn b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
+.who-btn b .forge-new{display:table;margin:3px auto 0}
 .forge-fit{font-size:.92rem;color:var(--dim)}
 .forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}

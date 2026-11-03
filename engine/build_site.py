@@ -2103,7 +2103,9 @@ class Site:
 
     def identity_plate(self, c, rel, level):
         """Portrait (or crest), name, epithet; chips only for what the rest of the plate does not say: the status when it is
-        not 'alive' (alive is the default and goes unsaid), and Darrow's names. The faction is said once, under its shield."""
+        not 'alive' (alive is the default and goes unsaid), and Darrow's names. The faction is said once, under its shield;
+        on Darrow's page its shield stands beside the title that names it, and where he stands (XP, Ember, Inspiration)
+        runs across the foot of the plate, so the level is said once, on the crest."""
         sg = c.get("sigil") or {}
         chips = []
         if c["id"] == "darrow":
@@ -2120,11 +2122,28 @@ class Site:
         else:
             cr = crest(level if level is not None else "?")
             row = f'<div class="sigil-row">{sigil(fac, sg.get("mark"), 44)}{self.faction_link(c["faction"], rel)}</div>'
-        who = (f'<div class="who"><h1>{esc(c["name"])}</h1><p class="sub">{esc(c.get("epithet", ""))}</p>'
+        sub = f'<p class="sub">{esc(c.get("epithet", ""))}</p>'
+        foot = ""
+        if c["id"] == "darrow" and c["tier"] != "fallen" and self.darrow:
+            inner = f'{sigil(fac, sg.get("mark"), 22)}<span>{esc(c.get("epithet", ""))}</span>'
+            sub = (f'<a class="sub fac-sub" href="{rel}codex/index.html#faction-{esc(c["faction"])}">{inner}</a>' if fac.get("on_page")
+                   else f'<p class="sub fac-sub">{inner}</p>')
+            row, foot = "", self.darrow_standing()
+        who = (f'<div class="who"><h1>{esc(c["name"])}</h1>{sub}'
                + (f'<div class="chips">{"".join(chips)}</div>' if chips else "") + '</div>')
         fig = self.portrait_figure(c, rel, "" if c["tier"] == "fallen" else cr)
         hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
-        return f'<section class="plate{self.metal(level)}">{hero}{row}<p class="fine">{FINE_PRINT}</p></section>'
+        return f'<section class="plate{self.metal(level)}">{hero}{row}{foot}<p class="fine">{FINE_PRINT}</p></section>'
+
+    def darrow_standing(self):
+        """Where Darrow stands, at the foot of his plate: his rank and XP, the bar to the next level, Ember and Inspiration."""
+        d = self.darrow
+        xp_into = d["xp"] - d["xp_this_level"]
+        xp_span = d["xp_next_level"] - d["xp_this_level"]
+        return (f'<div class="stand"><p class="reck-line">{esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
+                f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", f"{xp_into:,} / {xp_span:,}")}'
+                f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
+                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div></div>')
 
     def metal(self, level):
         """' metal-<name>', the class for the metal of the rank a level falls in (METALS); empty when no level is read."""
@@ -2279,12 +2298,10 @@ class Site:
 
     # ---------------------------------------------------------------- darrow
     def darrow_reckoning(self, rel):
-        """The Reckoning at the head of Darrow's page: level, XP, Ember, Inspiration and the four attributes, always open."""
+        """The Reckoning under Darrow's plate, always open: the look he wears (a strip that opens the Wardrobe), his chips,
+        and the four attributes. His level, XP, Ember and Inspiration are on the plate above it (darrow_standing)."""
         d, rules = self.darrow, self.rules
         a = d["attributes"]
-        xp_into = d["xp"] - d["xp_this_level"]
-        xp_span = d["xp_next_level"] - d["xp_this_level"]
-        xp_show = f"{xp_into:,} / {xp_span:,}"
         tiles = []
         for k in ("might", "vigor", "finesse", "resolve"):
             x = a[k]
@@ -2296,26 +2313,21 @@ class Site:
             tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}"><span class="v num">{x["score"]}<small>{x["mod"]:+d}</small></span>'
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
-        head = (f'<p class="reck-line"><b>Level {d["level"]}</b> · {esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.works_chip()}{self.wardrobe_chip(rel)}</div>'
-                f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", xp_show)}'
-                f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
-                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div>')
-        fig = self.look_figure(rel)
-        if fig:
-            head = f'<div class="reck-top{self.metal(d["level"])}">{fig}<div class="reck-head">{head}</div></div>'
-        inner = head + f'<div class="streaks">{"".join(tiles)}</div>'
+        wear = self.wearing_strip(rel)
+        chips = (f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
+                 f'{self.works_chip()}{"" if wear else self.wardrobe_chip(rel)}</div>')
+        inner = wear + chips + f'<div class="streaks">{"".join(tiles)}</div>'
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
-    def look_figure(self, rel):
-        """The look he wears (looks.json → wearing, else the newest) beside the head of his Reckoning: a tall frame in his
-        rank's metal that opens the Wardrobe. Empty while no look is filed."""
+    def wearing_strip(self, rel):
+        """The look he wears (looks.json → wearing, else the newest) at the head of his Reckoning: a small picture and its
+        name in a strip framed in his rank's metal, opening the Wardrobe. Empty while no look is filed."""
         lk = self.looks[0] if self.looks else None
         if not lk:
             return ""
-        href = f"{rel}darrow/wardrobe.html"
-        return (f'<figure class="look-fig"><a href="{href}"><img src="{rel}{lk["_md"]}" alt="{esc(lk["alt"])}" decoding="async"></a>'
-                f'<figcaption><a href="{href}">{esc(lk["name"])}</a></figcaption></figure>')
+        return (f'<a class="wear-strip{self.metal(self.darrow["level"])}" href="{rel}darrow/wardrobe.html">'
+                f'<img src="{rel}{lk["_sm"]}" alt="{esc(lk["alt"])}" width="64" height="96" decoding="async">'
+                f'<span><span class="lbl">Wearing</span><b>{esc(lk["name"])}</b><span class="go">The Wardrobe →</span></span></a>')
 
     def darrow_panels(self, rel):
         """Darrow's sheet below the Reckoning, each section folded shut with a line of what it holds: (meta, title, html, id)."""
@@ -2574,7 +2586,7 @@ class Site:
             elif all(pieces[c][v]["_usable"] for c, v in lk["values"].items()):
                 got = self.register_image(lw, lk["image"], lk["alt"])
                 if got:
-                    self.looks.append({**lk, "_path": got[0], "_md": got[3], "_i": i})
+                    self.looks.append({**lk, "_path": got[0], "_sm": got[2], "_md": got[3], "_i": i})
         self.looks.sort(key=lambda x: (x["made"], x["_i"]), reverse=True)  # newest first; on a shared date, the later entry
         wearing = book.get("wearing")  # the look he wears on his page, when he has chosen one; else the newest
         if wearing:
@@ -2637,7 +2649,7 @@ class Site:
                    else '<span class="glyph" aria-hidden="true">✧</span>')
             lock = "" if o["_usable"] else f'<span class="who-lock">{esc(o["_lock"])}</span>'
             pressed = "true" if start.get(COMPANY) == o["id"] else "false"
-            return (f'<button type="button" class="who" data-who="{esc(o["id"])}" aria-pressed="{pressed}"{"" if o["_usable"] else " disabled"}>'
+            return (f'<button type="button" class="who-btn" data-who="{esc(o["id"])}" aria-pressed="{pressed}"{"" if o["_usable"] else " disabled"}>'
                     f'<span class="who-pic">{pic}</span><b>{esc(o["name"])}</b>{lock}</button>')
 
         steps = []
@@ -3512,7 +3524,7 @@ details[open]>summary::after{content:"\2212"}
 .zoom-hint .c{display:none}
 /* portraits: one square frame on every character page, scaling with the screen (about a third of a phone, 200px on
    anything wider), cropped to fit and never stretched; the level crest pinned to the frame's corner; round in cards */
-.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr)}
+.hero.with-portrait{grid-template-columns:clamp(112px,34vw,200px) minmax(0,1fr);align-items:start}
 .portrait{margin:0;position:relative;min-width:0}
 .portrait a{display:block;aspect-ratio:1/1;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--plate);cursor:zoom-in;box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
@@ -3528,7 +3540,7 @@ details[open]>summary::after{content:"\2212"}
 .portrait .pf-strip{display:flex;aspect-ratio:1/1;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
 .portrait .pf-strip::-webkit-scrollbar{display:none}
 .portrait .pf-strip a{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border:0;border-radius:0;box-shadow:none}
-.portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:14px}
+.portrait .pf-tabs{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:4px;margin-top:14px}
 .portrait .pf-tabs[hidden]{display:none}
 .portrait .pf-tabs button{font:inherit;font-size:.72rem;line-height:1.25;padding:2px 7px;border:1px solid var(--rule);border-radius:999px;background:transparent;color:var(--faint);cursor:pointer}
 .portrait .pf-tabs button[aria-pressed="true"]{color:var(--brass);border-color:var(--brass-dim)}
@@ -3571,14 +3583,19 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 
 /* Darrow's page: the Reckoning open at the top, every other section a panel folded shut */
 .reck{display:grid;gap:12px}
-/* his current look (look_figure) beside the head of the Reckoning: a tall frame in his rank's metal, opening the Wardrobe */
-.reck-top{display:grid;grid-template-columns:clamp(120px,36vw,220px) minmax(0,1fr);gap:16px;align-items:start}
-.reck-head{display:grid;gap:12px;min-width:0}
-.look-fig{margin:0;display:grid;gap:6px;min-width:0}
-.look-fig>a{display:block;aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage)}
-.look-fig img{display:block;width:100%;height:100%;object-fit:contain}
-.look-fig figcaption{font-size:.85rem;text-align:center}
-.reck-line{font-size:1.05rem} .reck-line b{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--brass)}
+/* where he stands, across the foot of his plate (darrow_standing) */
+.stand{display:grid;gap:12px;border-top:1px dotted var(--rule);padding-top:14px}
+.reck-line{font-size:1rem}
+/* his faction's shield beside the title that names it, on his plate */
+.fac-sub{display:flex;align-items:center;gap:8px}
+a.fac-sub{color:var(--dim);text-decoration:none} a.fac-sub:hover{color:var(--brass)}
+.fac-sub .sigil{flex:none}
+/* the look he wears (wearing_strip) at the head of the Reckoning: a small picture and its name, framed in his rank's metal, opening the Wardrobe */
+.wear-strip{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:center;padding:8px;border:1px solid var(--metal-dim);border-radius:6px;background:var(--plate);color:var(--ink);text-decoration:none}
+.wear-strip img{width:64px;height:auto;aspect-ratio:2/3;object-fit:contain;background:var(--stage);border-radius:4px;display:block}
+.wear-strip>span{display:grid;gap:2px;min-width:0}
+.wear-strip b{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;color:var(--brass)}
+.wear-strip .go{color:var(--dim);font-size:.9rem} .wear-strip:hover .go{color:var(--brass)}
 .reck .streaks{margin-top:6px}
 .panels{display:grid;gap:10px}
 .panels-h{margin-top:4px}
@@ -3915,14 +3932,14 @@ ol.choice li s{color:var(--faint)}
 .step-n{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border:1px solid var(--brass-dim);border-radius:50%;color:var(--brass);font-family:var(--label);font-size:.78rem}
 .forge-who{display:grid;gap:6px}
 .who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
-.who{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
-.who[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
-.who:disabled{opacity:.5;cursor:not-allowed}
-.who:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.who-btn{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
+.who-btn[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+.who-btn:disabled{opacity:.5;cursor:not-allowed}
+.who-btn:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
 .who-pic{width:56px;height:56px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--plate-hi)}
 .who-pic img{width:100%;height:100%;object-fit:cover} .who-pic .glyph{font-size:1.5rem;color:var(--brass)}
-.who b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
-.who b .forge-new{display:table;margin:3px auto 0}
+.who-btn b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
+.who-btn b .forge-new{display:table;margin:3px auto 0}
 .forge-fit{font-size:.92rem;color:var(--dim)}
 .forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
@@ -4243,7 +4260,7 @@ var wear = function(v){
 var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
 var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
 base = keyOf(D.start, "");  /* his current look: a remembered choice holds only while it is still the newest */
-var selects = document.querySelectorAll("select[data-cat]"), whos = document.querySelectorAll(".who[data-who]");
+var selects = document.querySelectorAll("select[data-cat]"), whos = document.querySelectorAll(".who-btn[data-who]");
 var notes = $("forge-details"), tiles = document.querySelectorAll(".look-tile[data-look]");
 
 /* New since this browser last saw the Forge: marked on the piece and its step, and named above them (not on a first visit) */
@@ -4258,7 +4275,7 @@ var notes = $("forge-details"), tiles = document.querySelectorAll(".look-tile[da
     var cat = k.split(".")[0], id = k.slice(cat.length + 1);
     fresh[k] = true;
     names.push(pieces[cat][id].name);
-    var host = cat === D.company ? document.querySelector('.who[data-who="' + id + '"] b')
+    var host = cat === D.company ? document.querySelector('.who-btn[data-who="' + id + '"] b')
       : (document.querySelector('select[data-cat="' + cat + '"]') || {}).parentNode;
     host = host && (host.tagName === "B" ? host : host.querySelector("label"));
     if (host && !host.querySelector(".forge-new")) {

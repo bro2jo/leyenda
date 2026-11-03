@@ -39,7 +39,7 @@ var wear = function(v){
 var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
 var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
 base = keyOf(D.start, "");  /* his current look: a remembered choice holds only while it is still the newest */
-var selects = document.querySelectorAll("select[data-cat]"), whos = document.querySelectorAll(".who[data-who]");
+var selects = document.querySelectorAll("select[data-cat]"), whos = document.querySelectorAll(".who-btn[data-who]");
 var notes = $("forge-details"), tiles = document.querySelectorAll(".look-tile[data-look]");
 
 /* New since this browser last saw the Forge: marked on the piece and its step, and named above them (not on a first visit) */
@@ -54,7 +54,7 @@ var notes = $("forge-details"), tiles = document.querySelectorAll(".look-tile[da
     var cat = k.split(".")[0], id = k.slice(cat.length + 1);
     fresh[k] = true;
     names.push(pieces[cat][id].name);
-    var host = cat === D.company ? document.querySelector('.who[data-who="' + id + '"] b')
+    var host = cat === D.company ? document.querySelector('.who-btn[data-who="' + id + '"] b')
       : (document.querySelector('select[data-cat="' + cat + '"]') || {}).parentNode;
     host = host && (host.tagName === "B" ? host : host.querySelector("label"));
     if (host && !host.querySelector(".forge-new")) {
