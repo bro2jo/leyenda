@@ -158,11 +158,11 @@ var choose = function(cat, id){
   render();
 };
 
-var copy = function(text, btn, fallback, done){
+var copy = function(text, btn, fallback, done, manualLabel){
   var label = btn.getAttribute("data-label") || btn.textContent;
   btn.setAttribute("data-label", label);
   var said = function(msg){ btn.textContent = msg; setTimeout(function(){ btn.textContent = label; }, 2200); };
-  var manual = function(){ fallback(); said("Selected: copy it"); };
+  var manual = function(){ fallback(); said(manualLabel || "Selected: copy it"); };
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(function(){ said("Copied"); if (done) { done(); } }, manual);
   } else { manual(); }
@@ -256,7 +256,7 @@ $("forge-copy-line").addEventListener("click", function(){
 $("look-wear").addEventListener("click", function(){
   var msg = "Switch his look to “" + $("look-wear").getAttribute("data-name") + "”.", hint = $("look-wear-hint");
   copy(msg, $("look-wear"), function(){ hint.textContent = "Send Claude: " + msg; hint.hidden = false; },
-    function(){ hint.textContent = "Copied. Send it to Claude, and this look goes on his page."; hint.hidden = false; });
+    function(){ hint.textContent = "Copied. Send it to Claude, and this look goes on his page."; hint.hidden = false; }, "Copy it from below");
 });
 render();
 var deep = /^#piece-([a-z]+)-([\w-]+)$/.exec(location.hash);

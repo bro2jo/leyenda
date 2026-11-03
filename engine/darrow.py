@@ -71,6 +71,7 @@ Commands (run from the repo root):
 import argparse
 import csv
 import datetime as dt
+import functools
 import json
 import math
 import os
@@ -797,6 +798,12 @@ def rank_of(level, rules):
 WARDROBE_SHEET = ("level", "art", "knot")  # the unlock conditions the sheet decides; page and tether are the page's (the site's)
 
 
+@functools.lru_cache(maxsize=1)
+def wardrobe_categories():
+    """engine/wardrobe.json's categories, read once per run (wardrobe_earned, wardrobe_when and wardrobe_opened all read them)."""
+    return load_json(P["wardrobe"])["categories"] if P["wardrobe"].exists() else []
+
+
 def wardrobe_earned(level, arts, knots):
     """The Wardrobe's options this sheet has opened (engine/wardrobe.json), as 'category.option': every sheet condition
     of its unlock holds (a level reached, an Art at a rank, a sealed Art having none, a Knot tied). A piece that also
@@ -808,7 +815,7 @@ def wardrobe_earned(level, arts, knots):
     holds = {"level": lambda u: level >= u["level"], "art": lambda u: rank.get(u["art"], 0) >= u.get("rank", 1),
              "knot": lambda u: u["knot"] in knots}
     earned = []
-    for cat in load_json(P["wardrobe"])["categories"]:
+    for cat in wardrobe_categories():
         for o in cat["options"]:
             u = o.get("unlock") or {}
             conds = [k for k in WARDROBE_SHEET if k in u] if isinstance(u, dict) else []  # a malformed one is the build's to report
@@ -824,7 +831,7 @@ def wardrobe_when(cfg, earned, reached_on, art_on, knot_on):
     if not P["wardrobe"].exists():
         return {}
     out = {}
-    for cat in load_json(P["wardrobe"])["categories"]:
+    for cat in wardrobe_categories():
         for o in cat["options"]:
             pid, u = f'{cat["id"]}.{o["id"]}', o.get("unlock") or {}
             if pid not in earned or not isinstance(u, dict):
@@ -844,7 +851,7 @@ def wardrobe_opened(old, new):
     fresh = set(new.get("wardrobe", [])) - set(old["wardrobe"])
     if not fresh:
         return []
-    return [o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]
+    return [o["name"] for c in wardrobe_categories() for o in c["options"]
             if f'{c["id"]}.{o["id"]}' in fresh and not {"page", "tether"} & set(o.get("unlock") or {})]  # only a dict unlock is ever earned
 
 
@@ -965,14 +972,15 @@ def compute(cfg, rules, asof=None, write=False):
                      "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"]})
     # the day each Art reached each rank (a sealed Art's from its Knot's day), and each Knot's: the Wardrobe dates its pieces by them
     knot_on = {k["knot"]: k.get("date") for k in cfg["rehab"].get("knots", [])}
-    art_on, count = {}, defaultdict(int)
+    art_on, count, by_tag = {}, defaultdict(int), defaultdict(list)
+    for a in all_arts:
+        by_tag[a["tag"]].append(a)
     for date in sorted(x for x in facts if d(x) <= asof):
         for t in facts[date]["tags"]:
             count[t] += 1
             if count[t] in thresholds:
-                for a in all_arts:
-                    if a["tag"] == t:
-                        art_on[(a["id"], thresholds.index(count[t]) + 1)] = max(date, knot_on.get(a.get("knot", 0)) or date)
+                for a in by_tag[t]:
+                    art_on[(a["id"], thresholds.index(count[t]) + 1)] = max(date, knot_on.get(a.get("knot", 0)) or date)
 
     tether = tether_at(asof, facts, rules)
     try:  # the Tether only climbs: a stage the saved sheet already reached is held, in every view

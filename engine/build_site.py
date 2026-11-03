@@ -2513,10 +2513,7 @@ class Site:
                               and (not {"level", "art", "knot"} & set(u) or oid in earned))
                 parts = ([f'the Tether {roman(u["tether"])}'] if "tether" in u else []) + ([f'Level {u["level"]}'] if "level" in u else []) \
                     + ([f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}'] if "art" in u else []) + ([mid(knots.get(u["knot"], ""))] if "knot" in u else [])
-                o["_lock"] = what = " and ".join(parts)  # the greyed menu entry: "Running · the Knot of the Road"
-                o["_from"] = ("There from the start" if not u else "From the story: " if "page" in u
-                              else ("Opened at " if "level" in u and "tether" not in u else "Opened by ") + what + (": " if "tether" in u else ""))
-                o["_story"] = on_page.get(u["page"] if "page" in u else paid.get(u.get("tether")))  # (scene, href): the scene that showed it
+                o["_lock"] = " and ".join(parts)  # what opens it: "the Knot of the Road"
         # the steps: the Forge's order, each earlier choice ruling which later pieces fit (who is in the picture first)
         cats = {c["id"]: c for c in w["categories"]}
         order = [cid for st in w.get("steps") or [] for cid in st.get("cats") or []]
@@ -2706,16 +2703,17 @@ class Site:
 
     def collection_stats(self):
         """The Collection's count: the pieces he can wear (a hidden one counts once it opens) of every piece, the rank its
-        count has reached (engine/wardrobe.json → collection) and the next."""
-        w = self.wardrobe
-        allp = [o for c in w["categories"] for o in c["options"]]
-        have = sum(o["_usable"] for o in allp)
-        ranks = (w.get("collection") or {}).get("ranks") or [{"at": 0, "name": "Threadbare"}]
-        rank = [r for r in ranks if have >= r["at"]][-1] if have >= ranks[0]["at"] else ranks[0]
-        nxt = next((r for r in ranks if r["at"] > have), None)
-        done = have == len(allp)
-        return {"have": have, "of": len(allp), "rank": (w.get("collection") or {}).get("complete") if done else rank["name"],
-                "next": nxt, "ranks": ranks, "rank_at": rank["at"], "complete": done}
+        count has reached (engine/wardrobe.json → collection; load checks the ranks start at 0) and the next. Worked out once."""
+        if getattr(self, "_col", None) is None:
+            w = self.wardrobe
+            allp = [o for c in w["categories"] for o in c["options"]]
+            have = sum(o["_usable"] for o in allp)
+            ranks = (w.get("collection") or {}).get("ranks") or [{"at": 0, "name": "Threadbare"}]
+            rank = [r for r in ranks if have >= r["at"]][-1] if have >= ranks[0]["at"] else ranks[0]  # a bad first rank is load's problem, not a crash
+            done = have == len(allp)
+            self._col = {"have": have, "of": len(allp), "rank": (w.get("collection") or {}).get("complete") if done else rank["name"],
+                         "next": next((r for r in ranks if r["at"] > have), None), "ranks": ranks, "rank_at": rank["at"], "complete": done}
+        return self._col
 
     def render_wardrobe(self):
         """The Wardrobe (darrow/wardrobe.html): his looks and the Forge. The stage shows the chosen look if it is painted,
@@ -4688,11 +4686,11 @@ var choose = function(cat, id){
   render();
 };
 
-var copy = function(text, btn, fallback, done){
+var copy = function(text, btn, fallback, done, manualLabel){
   var label = btn.getAttribute("data-label") || btn.textContent;
   btn.setAttribute("data-label", label);
   var said = function(msg){ btn.textContent = msg; setTimeout(function(){ btn.textContent = label; }, 2200); };
-  var manual = function(){ fallback(); said("Selected: copy it"); };
+  var manual = function(){ fallback(); said(manualLabel || "Selected: copy it"); };
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(function(){ said("Copied"); if (done) { done(); } }, manual);
   } else { manual(); }
@@ -4786,7 +4784,7 @@ $("forge-copy-line").addEventListener("click", function(){
 $("look-wear").addEventListener("click", function(){
   var msg = "Switch his look to “" + $("look-wear").getAttribute("data-name") + "”.", hint = $("look-wear-hint");
   copy(msg, $("look-wear"), function(){ hint.textContent = "Send Claude: " + msg; hint.hidden = false; },
-    function(){ hint.textContent = "Copied. Send it to Claude, and this look goes on his page."; hint.hidden = false; });
+    function(){ hint.textContent = "Copied. Send it to Claude, and this look goes on his page."; hint.hidden = false; }, "Copy it from below");
 });
 render();
 var deep = /^#piece-([a-z]+)-([\w-]+)$/.exec(location.hash);
