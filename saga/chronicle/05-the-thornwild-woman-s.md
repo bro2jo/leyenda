@@ -321,3 +321,53 @@ He ate it. It was only bread, as the boy had said, and it was very good.
 The fire burned down. Ash went and lay with her nose to the gap under the gate, where she could hear the track. Wren wrote one more line in the ledger and shut it without showing anyone, which meant it was about one of them.
 
 When the others had gone under their blankets, Rae got up to see to the oxen. On the way across the dark, the bell at her belt rang once, and she let it.
+
+### Between — From the Belly
+
+The cold had got into the knee while he lay still, as it did now when he lay still, and getting up off the ground took the wall, the stick and a word to the knee that his mother would not have liked. He went over to the oxen anyway.
+
+Rae had them on a short tie in the lee of the wall, out of the wind, and she was going over Hob by feel in the dark: the shoulders where the yoke sat, the dewlap, down each leg to the foot. She heard him coming the whole way and kept her back to him.
+
+"Want a hand?"
+
+"Can you hold a head?"
+
+"I walked at a horse's head before I could argue."
+
+"An ox isn't a horse."
+
+"Nothing is." He took Hob's head-rope where she pointed, close up under the jaw, and the ox turned one great wet eye on him and decided he would do. "Evening, Hob. You did well today. You were patient with a reeve. Few are."
+
+"He doesn't like being talked to like a horse."
+
+"I'm talking to him like a sergeant."
+
+"He likes that less." But she had bent to the near fore, and lifted it with her shoulder in against the leg, and was working at the cleft with the point of her knife, and her back had gone unsteady: she was trying not to laugh at a man telling an ox it had been patient.
+
+A stone came out of the cleft and clicked off the wall. She set the foot down. Hob shifted, all of him at once, as oxen do, and leaned toward the warm of the ashes, and Rae said a word.
+
+It was short, with a catch in the middle that Darrow's mouth had no shape for, and she did not say it so much as set it down from somewhere under her ribs. Hob stopped dead. So did Dun, who had not been going anywhere.
+
+"What was that?"
+
+"Stand." She wiped the knife on her knee. "My grandmother's word. It's Thornwild. She had a few dozen, all for oxen. This is the one that works."
+
+"Say it again."
+
+She said it again. He tried it. What came out of him was a Lowmarch noise with a hiccup in it, and Hob turned his whole head round to look at him, slowly, the way a sergeant looks at a recruit who has said something about his mother.
+
+Rae laughed. Not the breath through the nose; out loud, once, into the dark, and put her hand over her mouth after it as if it had got out without leave.
+
+"From the belly," she said, when she could. "Not the mouth. The mouth's for talking. This isn't talking."
+
+He tried it from the belly. It came out deeper and no more right, and Dun, who was already standing, stood harder.
+
+"Wrong ox," said Rae.
+
+"He took it as meant for him. Dun's a generous animal."
+
+"Dun's a fool. He'd stand for a cough." She took the head-rope back from him and tied Hob short again, and stood a moment with her hand flat on the ox's neck. "Keep it. It's not much use to anybody but oxen."
+
+"I'll keep it."
+
+He went back to his blanket saying it under his breath, and got it wrong all the way there. Behind him, into Hob's neck, where nobody was meant to hear it, Rae laughed again.

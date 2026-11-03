@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-3",
+    "scene": "between-4",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-4"
   },
-  "last_seen_doing": "Answered the reeve at the gate: a carter names her load to the one who paid for it, never at a gate; he may say he asked and she would not tell him; the boy only brought bread to a carter he has known all his life.",
-  "now": "Seeing to the oxen in the dark by the field wall; she let the bell at her belt ring.",
+  "last_seen_doing": "Went over Hob by feel and took a stone from his near fore; taught Darrow her grandmother's Thornwild word for stand, from the belly, and laughed out loud at him trying it.",
+  "now": "With the oxen on their short tie by the field wall, laughing into Hob's neck.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "The first two names on that list rode up in my cart.",
@@ -605,6 +605,24 @@
       "evidence": "put the larger half on his knee without looking at it"
     },
     {
+      "fact": "Her grandmother's Thornwild word for stand is said from the belly, and it stops an ox dead.",
+      "chapter": "05",
+      "scene": "between-4",
+      "evidence": "My grandmother's word. It's Thornwild."
+    },
+    {
+      "fact": "Her grandmother had a few dozen Thornwild words, all for oxen.",
+      "chapter": "05",
+      "scene": "between-4",
+      "evidence": "She had a few dozen, all for oxen."
+    },
+    {
+      "fact": "She laughed out loud at Darrow trying the word, and covered her mouth after.",
+      "chapter": "05",
+      "scene": "between-4",
+      "evidence": "Rae laughed. Not the breath through the nose; out loud, once, into the dark"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -852,6 +870,10 @@
     {
       "chapter": "05",
       "scene": "between-3"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-4"
     },
     {
       "chapter": "tale02",
