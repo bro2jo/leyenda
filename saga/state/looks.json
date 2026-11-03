@@ -40,6 +40,16 @@
       "values": {"side": "rae", "pose": "rae-wall", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "wry",
                  "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
       "details": ""
+    },
+    {
+      "id": "the-cup-at-the-wall",
+      "name": "The Cup at the Wall",
+      "made": "2026-11-03",
+      "image": "looks/the-cup-at-the-wall.webp",
+      "alt": "Ser Darrow, full length, standing and holding out a steaming cup to Rae Thorne, who sits on a low dry-stone wall with her cloak pulled round her knees and smiles up at him. He has a calm, patient look and a few days' stubble, the grey wool blanket round his shoulders over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots; she has honey-brown hair and a dark hooded cloak pinned with an iron clasp, a small bell at her belt.",
+      "values": {"side": "rae", "pose": "rae-cup", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "patient",
+                 "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
+      "details": ""
     }
   ]
 }
