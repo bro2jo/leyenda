@@ -2482,7 +2482,7 @@ class Site:
         start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_open"]), "") for c in w["categories"]}
         hide = "" if cur else " hidden"
         href = f' href="{rel}{cur["_path"]}"' if cur else ""  # no look yet: nothing to fetch
-        img = f' src="{rel}{cur["_md"]}" alt="{esc(cur["alt"])}"' if cur else ' alt=""'
+        img = f' src="{rel}{cur["_path"]}" alt="{esc(cur["alt"])}"' if cur else ' alt=""'  # the stage is large: the full picture, not a copy
         stage = (f'<a id="forge-zoom"{href} data-zoom{hide}><img id="forge-img"{img} decoding="async"></a>'
                  f'<div class="forge-empty" id="forge-empty"{"" if not cur else " hidden"}><span class="glyph" aria-hidden="true">✧</span>'
                  '<b>Not painted yet</b><span>Every piece is chosen; the prompt below will paint it.</span></div>')
@@ -2532,7 +2532,7 @@ class Site:
                 "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
                 "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
                 "looks": [{"id": lk["id"], "name": lk["name"], "alt": lk["alt"], "values": lk["values"], "details": lk.get("details") or "",
-                           "md": rel + lk["_md"], "full": rel + lk["_path"]} for lk in self.looks],
+                           "full": rel + lk["_path"]} for lk in self.looks],
                 "start": start, "template": "\n".join(w["prompt"])}
         blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
@@ -4044,7 +4044,7 @@ var render = function(){
   var key = keyOf(state, state.details), look = null;
   D.looks.forEach(function(l){ if (!look && keyOf(l.values, l.details) === key) { look = l; } });
   Array.prototype.forEach.call(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
-  if (look) { $("forge-img").src = look.md; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
+  if (look) { $("forge-img").src = look.full; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
   $("forge-name").textContent = look ? look.name : "A new look";

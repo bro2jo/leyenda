@@ -24,7 +24,7 @@ var render = function(){
   var key = keyOf(state, state.details), look = null;
   D.looks.forEach(function(l){ if (!look && keyOf(l.values, l.details) === key) { look = l; } });
   Array.prototype.forEach.call(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
-  if (look) { $("forge-img").src = look.md; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
+  if (look) { $("forge-img").src = look.full; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
   $("forge-name").textContent = look ? look.name : "A new look";
