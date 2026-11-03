@@ -1,6 +1,17 @@
 {
  "_about": "Small (sm, 256 px) and medium (md, 640 px) WebP copies of the pictures under saga/art/, made by engine/thumbs.py from the file whose SHA-1 is named here. Generated: never edit by hand; run the script.",
  "images": {
+  "arts/far_cast.webp": {
+   "sha1": "e937a5d0bd76d860c6e40451573cf089f0f0f4e8",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/groundbreaker.webp": {
    "sha1": "39564c7da6a9a246f3fe56000981dcf0af74254c",
    "sm": [
@@ -23,8 +34,30 @@
     640
    ]
   },
+  "arts/measured_hand.webp": {
+   "sha1": "6483f06ce6b87155b8fe743528d876228ea742ee",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/menders_patience.webp": {
    "sha1": "fc5ed5cc30f018ac503792262b21e14a63ed8074",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/overwall.webp": {
+   "sha1": "f2ef6528e453a61cf9c3e4d379b7741b54fbaff1",
    "sm": [
     256,
     256
