@@ -1018,6 +1018,26 @@ def details(summary, inner, open_=False):
 
 STATUS_CLS = {"alive": "good", "fallen": "bad", "hollowed": "sealed", "missing": "warn", "unknown": "dim"}
 
+COMPANY, POSE, HELD, FACE = "side", "pose", "hand", "expression"  # the Wardrobe's categories its rules read (engine/wardrobe.json)
+
+
+def wardrobe_clash(ca, a, cb, b):
+    """Whether piece a (of category ca) and piece b (of cb) cannot be worn together: one needs another piece of the
+    other's category; a piece for someone (with: a companion, or alone) beside anyone else at his side; a pose with
+    something held in more hands than it leaves free, or with no weapon in a fight; a battle face out of a fight, or a
+    fierce or battle face in a tender pose."""
+    for (cx, x), (cy, y) in (((ca, a), (cb, b)), ((cb, b), (ca, a))):
+        if (x.get("needs") or {}).get(cy, y["id"]) != y["id"]:
+            return True
+        if cy == COMPANY and x.get("with") and x["with"] != ("alone" if y["id"] == "none" else y["id"]):
+            return True
+        if cx == POSE and cy == HELD and (y.get("hands", 1) > x.get("free_hands", 2) or (x.get("fight") and not y.get("weapon"))):
+            return True
+        if cx == POSE and cy == FACE and ((y.get("mood") == "battle" and not x.get("fight")) or (x.get("tender") and y.get("mood"))):
+            return True
+    return False
+
+
 APPROVAL_WORDS = [(75, "devoted"), (50, "loyal"), (25, "fond"), (10, "warming"), (0, "civil"),
                   (-10, "wary"), (-25, "cold"), (-50, "hostile"), (-101, "an enemy")]
 
@@ -2455,30 +2475,58 @@ class Site:
                 o["_from"] = ("There from the start" if not u else "From the story: " if "page" in u
                               else ("Opened at " if "level" in u and "tether" not in u else "Opened by ") + what + (": " if "tether" in u else ""))
                 o["_story"] = on_page.get(u["page"] if "page" in u else paid.get(u.get("tether")))  # (scene, href): the scene that showed it
-        pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
-        for cat in w["categories"]:  # needs: a piece that only makes sense with another (the stick under his arm needs the stick)
+        # the steps: the Forge's order, each earlier choice ruling which later pieces fit (who is in the picture first)
+        cats = {c["id"]: c for c in w["categories"]}
+        order = [cid for st in w.get("steps") or [] for cid in st.get("cats") or []]
+        if sorted(order) != sorted(cats) or not all(st.get("title") for st in w.get("steps") or []):
+            problem(f"{where}: steps must name every category once, each step with a title")
+            order = list(cats)
+            w["steps"] = [{"title": "The pieces", "cats": order}]
+        if not {COMPANY, POSE, HELD, FACE} <= set(cats):
+            problem(f"{where}: the Forge's rules need the categories {COMPANY}, {POSE}, {HELD} and {FACE}")
+        w["categories"] = [cats[cid] for cid in order if cid in cats]
+        pieces = {c["id"]: {o["id"]: o for o in c["options"]} for c in w["categories"]}
+        fields = {"with": lambda c, v: v == "alone" or v in pieces.get(COMPANY, {}), "free_hands": lambda c, v: c == POSE and v in (0, 1, 2),
+                 "fight": lambda c, v: c == POSE and v is True, "tender": lambda c, v: c == POSE and v is True,
+                 "hands": lambda c, v: c == HELD and v in (0, 1, 2), "weapon": lambda c, v: c == HELD and v is True,
+                 "mood": lambda c, v: c == FACE and v in ("fierce", "battle")}
+        for cat in w["categories"]:
             for o in cat["options"]:
                 oid, needs = f'{cat["id"]}.{o["id"]}', o.get("needs") or {}
                 if not isinstance(needs, dict) or any(c == cat["id"] or v not in pieces.get(c, {}) for c, v in needs.items()):
                     problem(f"{where}: {oid} needs {needs}: a mapping of other categories to one piece of each")
-                    needs = {}
-                if not o.get("hidden") and any(pieces[c][v].get("hidden") for c, v in needs.items()):
-                    problem(f"{where}: {oid} needs a hidden piece, so its greyed entry would name it; hide it too, or need something else")
-                if any(needs.get(k) != x for c, v in needs.items() for k, x in (pieces[c][v].get("needs") or {}).items()):
-                    problem(f"{where}: {oid} needs a piece that needs more than {oid} asks for; name that too, so the Forge brings it all in one step")
-                missing = [pieces[c][v]["name"] for c, v in needs.items() if not pieces[c][v]["_open"]]
-                o["_needs"] = needs
-                o["_usable"] = o["_open"] and not missing  # open, with everything it needs open too: what the reader sees as open
-                if o["_open"]:
-                    o["_lock"] = "needs " + ", ".join(missing) if missing else ""
+                    o["needs"] = {}
+                bad = [k for k, ok in fields.items() if k in o and not ok(cat["id"], o[k])]
+                if bad:
+                    problem(f"{where}: {oid}: {', '.join(f'{k}={o[k]!r}' for k in bad)} (with: alone or a companion; pose: free_hands 0-2, fight, tender; "
+                            f"{HELD}: hands 0-2, weapon; {FACE}: mood fierce or battle)")
+                    for k in bad:
+                        del o[k]
+        for cat in w["categories"]:
+            for o in cat["options"]:
+                oid = f'{cat["id"]}.{o["id"]}'
+                for c, v in (o.get("needs") or {}).items():  # what the needed piece rules out, this one must rule out too, so choosing it settles in one step
+                    y = pieces[c][v]
+                    if not o.get("hidden") and y.get("hidden"):
+                        problem(f"{where}: {oid} needs a hidden piece, so its greyed entry would name it; hide it too, or need something else")
+                    if any(wardrobe_clash(c, y, d["id"], q) and not wardrobe_clash(cat["id"], o, d["id"], q) for d in w["categories"] if d["id"] not in (c, cat["id"]) for q in d["options"]):
+                        problem(f"{where}: {oid} needs {c}.{v}, which rules out more than {oid} does; give {oid} the same with, hands or needs")
+                # usable: open, and in every other category some open piece goes with it; that is what the reader sees as open
+                blocked = [d for d in w["categories"] if d is not cat and not any(q["_open"] and not wardrobe_clash(cat["id"], o, d["id"], q) for q in d["options"])]
+                o["_usable"] = o["_open"] and not blocked
+                if o["_open"] and blocked:
+                    later = [q["name"] for q in blocked[0]["options"] if not q.get("hidden") and not wardrobe_clash(cat["id"], o, blocked[0]["id"], q)]
+                    o["_lock"] = "needs " + (later[0] if later else "more pieces")
+                elif o["_open"]:
+                    o["_lock"] = ""
                 o["_shown"] = o["_usable"] or not o.get("hidden")  # a hidden piece is not on the site at all until it can be worn
                 ref = o.get("reference")
                 if ref and (not all(ref.get(k) for k in ("label", "image", "file", "use")) or not (ART / str(ref["image"])).is_file()):
                     problem(f"{where}: {oid}.reference needs label, image (a picture under saga/art/), file and use")
                 elif ref and o["_usable"]:  # checked now, published only once the piece can be worn
                     o["_ref"] = self.reference(ref, f"{where}: {oid}.reference")
-            if not any(o["_usable"] and not o["_needs"] for o in cat["options"]):
-                problem(f"{where}: {cat['id']} has no piece open that needs nothing; give it one open from the start, so the Forge always has one to show")
+            if not any(o["_usable"] for o in cat["options"]):
+                problem(f"{where}: {cat['id']} has no piece open; give it one open from the start, so the Forge always has one to show")
         if earned - known:
             problem(f"saga/state/darrow.json: wardrobe names {', '.join(sorted(earned - known))}, which {where} does not; run python3 engine/darrow.py sync")
         w["_refs"] = [r for r in (self.reference(r, f"{where}: references[{i}]") for i, r in enumerate(w.get("references") or [])) if r]
@@ -2494,12 +2542,13 @@ class Site:
                 problem(f"{lw}: a look needs id, name, made, image, alt and values (a mapping: category → piece id, from the Look line)")
                 continue
             bad = [f"{c}={v}" for c, v in lk["values"].items() if v not in pieces.get(c, {})] + [f"{c} missing" for c in pieces if c not in lk["values"]]
-            broke = [f"{c}={v} needs {nc}={nv}" for c, v in lk["values"].items() if not bad
-                     for nc, nv in pieces[c][v]["_needs"].items() if lk["values"].get(nc) != nv]
+            vals = list(lk["values"].items())
+            broke = [] if bad else [f"{c}={v} with {d}={u}" for i, (c, v) in enumerate(vals) for d, u in vals[i + 1:]
+                                    if wardrobe_clash(c, pieces[c][v], d, pieces[d][u])]
             if bad:
                 problem(f"{lw} ({lk['id']}): {', '.join(bad)}: one piece of {where} per category (a piece a look wears is never removed or renamed)")
             elif broke:
-                problem(f"{lw} ({lk['id']}): {', '.join(broke)}")
+                problem(f"{lw} ({lk['id']}): {', '.join(broke)}: pieces that cannot be worn together (engine/wardrobe.json's rules)")
             elif not (ART / lk["image"]).is_file():
                 problem(f"{lw} ({lk['id']}): saga/art/{lk['image']} does not exist")
             elif all(pieces[c][v]["_usable"] for c, v in lk["values"].items()):
@@ -2518,16 +2567,23 @@ class Site:
         self.stray_pictures("looks", stems, "a look in saga/state/looks.json or a reference in engine/wardrobe.json")
 
     def render_wardrobe(self):
-        """The Wardrobe (darrow/wardrobe.html): his looks and the Forge. The stage shows the chosen look if it is painted;
-        the Forge offers every piece but the hidden ones still locked, the locked ones greyed with what opens them (or what
-        they need); the prompt, the references and the Look line paint a new one (forge.js; without it the stage and the
-        lookbook still work)."""
+        """The Wardrobe (darrow/wardrobe.html): his looks and the Forge. The stage shows the chosen look if it is painted.
+        The Forge goes in steps (who is in the picture, the pose, what he holds, him, his dress): each step offers what goes
+        with the steps before it (wardrobe_clash), every piece but the hidden ones still locked, the locked ones greyed with
+        what opens them; the prompt, the references and the Look line paint a new one (forge.js; without it the stage and
+        the lookbook still work)."""
         w = self.wardrobe
         if not w:
             return
         rel, d = "../", self.darrow
         cur = self.looks[0] if self.looks else None
-        start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_usable"] and not o["_needs"]), "") for c in w["categories"]}
+        start = dict(cur["values"]) if cur else {}
+        if not cur:  # no look yet: in step order, the first open piece that goes with the ones chosen before it
+            chosen = []
+            for c in w["categories"]:
+                o = next((o for o in c["options"] if o["_usable"] and not any(wardrobe_clash(c["id"], o, k, q) for k, q in chosen)), c["options"][0])
+                chosen.append((c["id"], o))
+                start[c["id"]] = o["id"]
         hide = "" if cur else " hidden"
         href = f' href="{rel}{cur["_path"]}"' if cur else ""  # no look yet: nothing to fetch
         img = f' src="{rel}{cur["_path"]}" alt="{esc(cur["alt"])}"' if cur else ' alt=""'  # the stage is large: the full picture, not a copy
@@ -2548,21 +2604,36 @@ class Site:
         n_all = sum(len(v) for v in shown.values())
         n_open = sum(o["_usable"] for v in shown.values() for o in v)
         n_hidden = sum(len(c["options"]) for c in w["categories"]) - n_all
-        fields = []
-        for c in w["categories"]:
-            opts = []
-            for o in shown[c["id"]]:
-                lock = "" if o["_usable"] else f' · {esc(o["_lock"])}'
-                opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_usable"] else " disabled"}>{esc(o["name"])}{lock}</option>')
-            fields.append(f'<div class="forge-field"><label for="forge-{esc(c["id"])}">{esc(c["label"])}</label>'
-                          f'<select id="forge-{esc(c["id"])}" data-cat="{esc(c["id"])}">{"".join(opts)}</select>'
-                          f'<span class="forge-src" data-from="{esc(c["id"])}"></span></div>')
+        label = {c["id"]: c["label"] for c in w["categories"]}
+
+        def field(cid):  # a menu; forge.js refills it with what goes with the earlier steps
+            opts = "".join(f'<option value="{esc(o["id"])}"{" selected" if start.get(cid) == o["id"] else ""}{"" if o["_usable"] else " disabled"}>'
+                           f'{esc(o["name"])}{"" if o["_usable"] else " · " + esc(o["_lock"])}</option>' for o in shown[cid])
+            return (f'<div class="forge-field"><label for="forge-{esc(cid)}">{esc(label[cid])}</label>'
+                    f'<select id="forge-{esc(cid)}" data-cat="{esc(cid)}">{opts}</select><span class="forge-src" data-from="{esc(cid)}"></span></div>')
+
+        def who(o):  # a card for who is in the picture: their reference's small copy, or a mark for him alone
+            pic = (f'<img src="{rel}{o["_ref"]["sm"]}" alt="" loading="lazy" decoding="async">' if o.get("_ref")
+                   else '<span class="glyph" aria-hidden="true">✧</span>')
+            lock = "" if o["_usable"] else f'<span class="who-lock">{esc(o["_lock"])}</span>'
+            pressed = "true" if start.get(COMPANY) == o["id"] else "false"
+            return (f'<button type="button" class="who" data-who="{esc(o["id"])}" aria-pressed="{pressed}"{"" if o["_usable"] else " disabled"}>'
+                    f'<span class="who-pic">{pic}</span><b>{esc(o["name"])}</b>{lock}</button>')
+
+        steps = []
+        for i, st in enumerate(w["steps"], 1):
+            inner = "".join((f'<div class="who-grid" role="group" aria-label="{esc(label[cid])}">{"".join(who(o) for o in shown[cid])}</div>'
+                             f'<span class="forge-src" data-from="{esc(cid)}"></span>') if cid == COMPANY else field(cid) for cid in st["cats"])
+            steps.append(f'<fieldset class="forge-step"><legend><span class="step-n">{i}</span>{esc(st["title"])}</legend>'
+                         f'<div class="{"forge-who" if st["cats"] == [COMPANY] else "forge-grid"}">{inner}</div></fieldset>')
         secret = ("" if not n_hidden else "; one more stays hidden until it opens" if n_hidden == 1
                   else f"; {n_hidden} more stay hidden until they open")
         forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
-                    f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it{secret}.</p>'
+                    f'<div class="forge"><p class="hint">Choose from what he has earned, a step at a time: each step offers only what goes with the steps before it. '
+                    f'A greyed piece names what opens it{secret}.</p>'
                     '<p class="forge-fresh" id="forge-fresh" hidden></p>'
-                    f'<div class="forge-grid">{"".join(fields)}</div>'
+                    f'{"".join(steps)}'
+                    '<p class="forge-fit" id="forge-fit" aria-live="polite" hidden></p>'
                     '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
                     'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></label>'
                     '<p class="forge-result" id="forge-result" aria-live="polite"></p></div>')
@@ -2579,16 +2650,19 @@ class Site:
                     '<p class="lbl">The Look line</p><code class="look-line" id="forge-line"></code>'
                     '<div class="btn-row"><button class="btn ghost" type="button" id="forge-copy-line">Copy the Look line</button></div>'
                     '<noscript><p class="empty">The Forge needs JavaScript; the lookbook works without it.</p></noscript>')
+        flat = [(c["id"], o) for c in w["categories"] for o in shown[c["id"]]]
         data = {"cats": [{"id": c["id"], "label": c["label"], "options": [
                     {"id": o["id"], "name": o["name"], "prompt": o["prompt"], "open": o["_usable"], "from": o["_from"],
-                     **({"needs": o["_needs"]} if o["_needs"] else {}),
+                     **({} if o["_usable"] else {"lock": o["_lock"]}),
                      **({"story": o["_story"][0], "href": rel + o["_story"][1]} if o["_story"] else {})} for o in shown[c["id"]]]}
                          for c in w["categories"]],
+                "clash": [[f"{ca}.{a['id']}", f"{cb}.{b['id']}"] for i, (ca, a) in enumerate(flat) for cb, b in flat[i + 1:]
+                          if ca != cb and wardrobe_clash(ca, a, cb, b)],  # the pairs that cannot be worn together, among the pieces on the page
                 "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
                 "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
                 "looks": [{"id": lk["id"], "name": lk["name"], "alt": lk["alt"], "values": lk["values"], "details": lk.get("details") or "",
                            "full": rel + lk["_path"], "worn": lk is cur} for lk in self.looks],
-                "start": start, "template": "\n".join(w["prompt"])}
+                "start": start, "company": COMPANY, "template": "\n".join(w["prompt"])}
         blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
                 f'<script src="{rel}forge.js?v={asset_v("forge")}" defer></script>')
@@ -3787,7 +3861,7 @@ ol.choice li s{color:var(--faint)}
 .forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .forge-field{display:grid;gap:4px;min-width:0}
 .forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
-@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-field .forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
 @media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
 .forge-notes{display:grid;gap:4px;min-width:0}
@@ -3797,6 +3871,20 @@ ol.choice li s{color:var(--faint)}
 .forge select option:disabled{color:var(--faint)}
 .forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
 .forge-result,.forge-fresh{font-size:.95rem;color:var(--dim)} .forge-result b,.forge-fresh b{color:var(--brass);font-weight:600}
+.forge-step{border:0;margin:0;padding:0;min-width:0;display:grid;gap:10px}
+.forge-step legend{display:flex;align-items:center;gap:8px;padding:0;margin:0 0 10px;font-family:var(--display);font-size:1.3rem;line-height:1.2;color:var(--ink)}
+.step-n{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border:1px solid var(--brass-dim);border-radius:50%;color:var(--brass);font-family:var(--label);font-size:.78rem}
+.forge-who{display:grid;gap:6px}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.who{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
+.who[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+.who:disabled{opacity:.5;cursor:not-allowed}
+.who:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.who-pic{width:56px;height:56px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--plate-hi)}
+.who-pic img{width:100%;height:100%;object-fit:cover} .who-pic .glyph{font-size:1.5rem;color:var(--brass)}
+.who b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
+.who b .forge-new{display:table;margin:3px auto 0}
+.forge-fit{font-size:.92rem;color:var(--dim)}
 .forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
 .forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
@@ -4075,82 +4163,95 @@ window.addEventListener("load", settle);
 """
 
 
-FORGE_JS = r"""/* THE UNKNEELING — the Forge (darrow/wardrobe.html). Choose a look from the pieces he has earned, see it on the stage
-   if it has been painted, and copy the prompt that paints it, with the Look line Claude files it by. Its data is the
-   JSON in #forge-data, written by the build; the choice, and which pieces this browser has already seen open, are
-   remembered in this browser only. A piece that needs another (the stick under his arm needs the stick) brings it when
-   chosen; a piece that no longer fits what was just chosen falls back to his own look's, or the first that fits. */
+FORGE_JS = r"""/* THE UNKNEELING — the Forge (darrow/wardrobe.html). Build a look a step at a time from the pieces he has earned, see
+   it on the stage if it has been painted, and copy the prompt that paints it, with the Look line Claude files it by.
+   Its data is the JSON in #forge-data, written by the build: the pieces in step order, and the pairs that cannot be worn
+   together (the build's wardrobe_clash). Each step offers only what goes with the steps before it; when an earlier
+   choice changes, a later piece that no longer goes with it falls back to his own look's, or the first that fits, and
+   the Forge says so. The choice, and which pieces this browser has seen open, are remembered in this browser only. */
 (function(){
 "use strict";
 var dataEl = document.getElementById("forge-data");
 if (!dataEl) { return; }
-var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", SEEN = "unkneeling-forge-seen", state = {}, base;
+var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", SEEN = "unkneeling-forge-seen", state = {}, fresh = {}, base;
 var $ = function(id){ return document.getElementById(id); };
 var each = function(list, fn){ Array.prototype.forEach.call(list, fn); };
-var pieces = {};
-D.cats.forEach(function(c){ pieces[c.id] = {}; c.options.forEach(function(o){ pieces[c.id][o.id] = o; }); });
-var fits = function(cat, id){  /* open, and everything it needs is what is chosen now */
-  var o = pieces[cat][id];
-  return !!(o && o.open) && Object.keys(o.needs || {}).every(function(k){ return state[k] === o.needs[k]; });
+var pieces = {}, clash = {}, at = {};
+D.cats.forEach(function(c, i){ at[c.id] = i; pieces[c.id] = {}; c.options.forEach(function(o){ pieces[c.id][o.id] = o; }); });
+D.clash.forEach(function(p){ clash[p[0] + "|" + p[1]] = clash[p[1] + "|" + p[0]] = true; });
+var goes = function(ci, id){  /* goes with every piece the earlier steps chose */
+  var k = D.cats[ci].id + "." + id;
+  for (var j = 0; j < ci; j += 1) { if (clash[k + "|" + D.cats[j].id + "." + state[D.cats[j].id]]) { return false; } }
+  return true;
 };
-var settle = function(fixed){  /* every other piece that no longer fits falls back; twice, since a piece that falls back can
-  leave another without what it needs (what a needed piece needs, its needer names too, so the second pass settles it) */
-  for (var pass = 0; pass < 2; pass += 1) {
-    D.cats.forEach(function(c){
-      if (fixed[c.id] || fits(c.id, state[c.id])) { return; }
-      var back = fits(c.id, D.start[c.id]) ? D.start[c.id] : null;
-      c.options.forEach(function(o){ if (!back && fits(c.id, o.id)) { back = o.id; } });
-      state[c.id] = back || state[c.id];
-    });
+var fits = function(ci, id){ var o = pieces[D.cats[ci].id][id]; return !!(o && o.open) && goes(ci, id); };
+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved */
+  var moved = [];
+  for (var ci = from; ci < D.cats.length; ci += 1) {
+    var c = D.cats[ci], back = null;
+    if (fits(ci, state[c.id])) { continue; }
+    if (fits(ci, D.start[c.id])) { back = D.start[c.id]; }
+    c.options.forEach(function(o){ if (!back && fits(ci, o.id)) { back = o.id; } });
+    if (back) { state[c.id] = back; moved.push(c.label + ": " + pieces[c.id][back].name); }
   }
-};
-var choose = function(cat, id){
-  var fixed = {}, needs = (pieces[cat][id] || {}).needs || {};
-  state[cat] = id; fixed[cat] = true;
-  Object.keys(needs).forEach(function(k){ state[k] = needs[k]; fixed[k] = true; });
-  settle(fixed);
+  return moved;
 };
 var wear = function(v){
   D.cats.forEach(function(c){ state[c.id] = pieces[c.id][v[c.id]] ? v[c.id] : D.start[c.id]; });
   state.details = typeof v.details === "string" ? v.details : "";
-  settle({});
+  settle(0);
 };
 var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
 var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
 base = keyOf(D.start, "");  /* his current look: a remembered choice holds only while it is still the newest */
-var selects = document.querySelectorAll("select[data-cat]"), notes = $("forge-details");
-var tiles = document.querySelectorAll(".look-tile[data-look]");
+var selects = document.querySelectorAll("select[data-cat]"), whos = document.querySelectorAll(".who[data-who]");
+var notes = $("forge-details"), tiles = document.querySelectorAll(".look-tile[data-look]");
 
-/* New since this browser last saw the Forge: marked in its menu and named above it (nothing on a first visit) */
+/* New since this browser last saw the Forge: marked on the piece and its step, and named above them (not on a first visit) */
 (function(){
-  var open = [], fresh = [];
+  var open = [], seen = null;
   D.cats.forEach(function(c){ c.options.forEach(function(o){ if (o.open) { open.push(c.id + "." + o.id); } }); });
-  try {
-    var seen = JSON.parse(localStorage.getItem(SEEN) || "null");
-    if (Array.isArray(seen)) { fresh = open.filter(function(k){ return seen.indexOf(k) < 0; }); }
-    localStorage.setItem(SEEN, JSON.stringify(open));
-  } catch (e) { return; }
-  if (!fresh.length) { return; }
-  fresh.forEach(function(k){
-    var cat = k.split(".")[0], id = k.slice(cat.length + 1), sel = document.querySelector('select[data-cat="' + cat + '"]');
-    each(sel ? sel.options : [], function(opt){ if (opt.value === id) { opt.textContent += " · new"; } });
-    var label = sel && sel.parentNode.querySelector("label");
-    if (label && !label.querySelector(".forge-new")) {
-      var tag = document.createElement("span"); tag.className = "forge-new"; tag.textContent = "New"; label.appendChild(tag);
+  try { seen = JSON.parse(localStorage.getItem(SEEN) || "null"); localStorage.setItem(SEEN, JSON.stringify(open)); } catch (e) { return; }
+  if (!Array.isArray(seen)) { return; }
+  var names = [];
+  open.forEach(function(k){
+    if (seen.indexOf(k) >= 0) { return; }
+    var cat = k.split(".")[0], id = k.slice(cat.length + 1);
+    fresh[k] = true;
+    names.push(pieces[cat][id].name);
+    var host = cat === D.company ? document.querySelector('.who[data-who="' + id + '"] b')
+      : (document.querySelector('select[data-cat="' + cat + '"]') || {}).parentNode;
+    host = host && (host.tagName === "B" ? host : host.querySelector("label"));
+    if (host && !host.querySelector(".forge-new")) {
+      var tag = document.createElement("span"); tag.className = "forge-new"; tag.textContent = "New"; host.appendChild(tag);
     }
   });
+  if (!names.length) { return; }
   var line = $("forge-fresh");
   line.innerHTML = "<b>New since you last looked:</b> ";
-  line.appendChild(document.createTextNode(fresh.map(function(k){
-    var cat = k.split(".")[0]; return pieces[cat][k.slice(cat.length + 1)].name;
-  }).join(", ") + "."));
+  line.appendChild(document.createTextNode(names.join(", ") + "."));
   line.hidden = false;
 })();
+
+var fill = function(sel){  /* a step's menu: what goes with the earlier steps; the locked ones greyed with what opens them */
+  var cat = sel.getAttribute("data-cat"), ci = at[cat];
+  sel.textContent = "";
+  D.cats[ci].options.forEach(function(o){
+    if (!goes(ci, o.id)) { return; }
+    var opt = document.createElement("option");
+    opt.value = o.id;
+    opt.disabled = !o.open;
+    opt.textContent = o.name + (!o.open ? " · " + o.lock : fresh[cat + "." + o.id] ? " · new" : "");
+    sel.appendChild(opt);
+  });
+  sel.value = state[cat];
+};
 
 var render = function(){
   var key = keyOf(state, state.details), look = null;
   D.looks.forEach(function(l){ if (!look && keyOf(l.values, l.details) === key) { look = l; } });
-  each(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
+  each(selects, fill);
+  each(whos, function(b){ b.setAttribute("aria-pressed", String(state[D.company] === b.getAttribute("data-who"))); });
   if (look) { $("forge-img").src = look.full; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
@@ -4180,6 +4281,14 @@ var render = function(){
   try { localStorage.setItem(SAVE, JSON.stringify({base: base, state: state})); } catch (e) { /* the choice is only a convenience */ }
 };
 
+var choose = function(cat, id){
+  state[cat] = id;
+  var moved = settle(at[cat] + 1), note = $("forge-fit");
+  note.textContent = moved.length ? "To go with that: " + moved.join("; ") + "." : "";
+  note.hidden = !moved.length;
+  render();
+};
+
 var copy = function(text, btn, fallback){
   var label = btn.getAttribute("data-label") || btn.textContent;
   btn.setAttribute("data-label", label);
@@ -4192,9 +4301,8 @@ var copy = function(text, btn, fallback){
 wear(D.start);
 try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved && saved.base === base) { wear(saved.state); } } catch (e) { /* start from his look */ }
 if (notes) { notes.value = state.details; notes.addEventListener("input", function(){ state.details = notes.value; render(); }); }
-each(selects, function(s){
-  s.addEventListener("change", function(){ choose(s.getAttribute("data-cat"), s.value); render(); });
-});
+each(selects, function(s){ s.addEventListener("change", function(){ choose(s.getAttribute("data-cat"), s.value); }); });
+each(whos, function(b){ b.addEventListener("click", function(){ choose(D.company, b.getAttribute("data-who")); }); });
 each(tiles, function(t){
   t.addEventListener("click", function(e){
     var look = D.looks.filter(function(l){ return l.id === t.getAttribute("data-look"); })[0];
@@ -4202,6 +4310,7 @@ each(tiles, function(t){
     e.preventDefault();
     wear(Object.assign({details: look.details}, look.values));
     if (notes) { notes.value = state.details; }
+    $("forge-fit").hidden = true;
     render();
     $("forge-stage").scrollIntoView({behavior: "smooth", block: "center"});
   });

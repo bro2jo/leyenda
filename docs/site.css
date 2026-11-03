@@ -565,7 +565,7 @@ ol.choice li s{color:var(--faint)}
 .forge-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .forge-field{display:grid;gap:4px;min-width:0}
 .forge-src{font-size:.82rem;line-height:1.35;color:var(--faint)}
-@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
+@media (max-width:519px){.forge-field{grid-template-columns:6.6em minmax(0,1fr);align-items:center;column-gap:10px}.forge-field .forge-src{grid-column:2}.forge-field .forge-new{display:table;margin:3px 0 0}}
 @media (min-width:520px){.forge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .forge-field label,.forge-notes{font-family:var(--label);font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
 .forge-notes{display:grid;gap:4px;min-width:0}
@@ -575,6 +575,20 @@ ol.choice li s{color:var(--faint)}
 .forge select option:disabled{color:var(--faint)}
 .forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
 .forge-result,.forge-fresh{font-size:.95rem;color:var(--dim)} .forge-result b,.forge-fresh b{color:var(--brass);font-weight:600}
+.forge-step{border:0;margin:0;padding:0;min-width:0;display:grid;gap:10px}
+.forge-step legend{display:flex;align-items:center;gap:8px;padding:0;margin:0 0 10px;font-family:var(--display);font-size:1.3rem;line-height:1.2;color:var(--ink)}
+.step-n{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border:1px solid var(--brass-dim);border-radius:50%;color:var(--brass);font-family:var(--label);font-size:.78rem}
+.forge-who{display:grid;gap:6px}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.who{display:grid;justify-items:center;align-content:start;gap:4px;padding:10px 6px;background:var(--night);border:1px solid var(--raw);border-radius:6px;color:var(--ink);font:inherit;text-align:center;cursor:pointer}
+.who[aria-pressed="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+.who:disabled{opacity:.5;cursor:not-allowed}
+.who:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.who-pic{width:56px;height:56px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--plate-hi)}
+.who-pic img{width:100%;height:100%;object-fit:cover} .who-pic .glyph{font-size:1.5rem;color:var(--brass)}
+.who b{font-weight:600;font-size:.95rem;line-height:1.25} .who-lock{font-size:.75rem;line-height:1.3;color:var(--faint)}
+.who b .forge-new{display:table;margin:3px auto 0}
+.forge-fit{font-size:.92rem;color:var(--dim)}
 .forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
 .forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
