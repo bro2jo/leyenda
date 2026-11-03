@@ -800,7 +800,8 @@ WARDROBE_SHEET = ("level", "art", "knot")  # the unlock conditions the sheet dec
 
 @functools.lru_cache(maxsize=1)
 def wardrobe_categories():
-    """engine/wardrobe.json's categories, read once per run (wardrobe_earned, wardrobe_when and wardrobe_opened all read them)."""
+    """engine/wardrobe.json's categories, read once per run (wardrobe_earned, wardrobe_when and wardrobe_opened all read them);
+    none while the file is missing."""
     return load_json(P["wardrobe"])["categories"] if P["wardrobe"].exists() else []
 
 
@@ -825,16 +826,15 @@ def wardrobe_earned(level, arts, knots):
 
 
 def wardrobe_when(cfg, earned, reached_on, art_on, knot_on):
-    """The chapter each earned piece opened in (darrow.json → wardrobe_opened, for the Wardrobe's 'opened in Chapter N'):
-    the week of the day its last sheet condition came true (the level reached, the Art's rank, the Knot tied), never a
-    date. A day before the Chronicle began is chapter 0, the Prologue. The page's own conditions are the site's to date."""
-    if not P["wardrobe"].exists():
-        return {}
-    out = {}
+    """darrow.json → wardrobe: every piece the sheet has opened (wardrobe_earned), with the chapter it opened in, for the
+    Wardrobe's 'opened in Chapter N': the week of the day its last sheet condition came true (the level reached, the Art's
+    rank, the Knot tied), never a date; null when a day is not known (a Knot tied without one). A day before the Chronicle
+    began is chapter 0, the Prologue. The page's own conditions (a scene, a Tether stage) are the site's to date."""
+    out = dict.fromkeys(earned)
     for cat in wardrobe_categories():
         for o in cat["options"]:
             pid, u = f'{cat["id"]}.{o["id"]}', o.get("unlock") or {}
-            if pid not in earned or not isinstance(u, dict):
+            if pid not in out or not isinstance(u, dict):
                 continue
             days = ([reached_on.get(u["level"])] if "level" in u else []) + ([knot_on.get(u["knot"])] if "knot" in u else []) \
                 + ([art_on.get((u["art"], u.get("rank", 1)))] if "art" in u else [])
@@ -1013,8 +1013,7 @@ def compute(cfg, rules, asof=None, write=False):
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
         "tether": tether,
-        "wardrobe": (earned := wardrobe_earned(level, arts, knots)),
-        "wardrobe_opened": wardrobe_when(cfg, earned, reached_on, art_on, knot_on),
+        "wardrobe": wardrobe_when(cfg, wardrobe_earned(level, arts, knots), reached_on, art_on, knot_on),
         "works": {"finished": works["finished"], "tasks_done": works["tasks_done"], "late": works["late"]},
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},

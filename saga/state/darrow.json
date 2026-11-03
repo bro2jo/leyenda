@@ -319,29 +319,7 @@
     "last": "2026-10-31",
     "with": "rae-thorne"
   },
-  "wardrobe": [
-    "expression.patient",
-    "expression.reading",
-    "pose.walking",
-    "pose.square",
-    "pose.folded",
-    "pose.post",
-    "pose.stair",
-    "pose.over-shoulder",
-    "pose.forms",
-    "pose.hound",
-    "pose.rae-walk",
-    "pose.rae-cup",
-    "pose.hand-in-hand",
-    "pose.hand-up",
-    "pose.arm-in-arm",
-    "pose.forehead",
-    "pose.slow-dance",
-    "pose.kiss",
-    "hand.staff",
-    "hand.hammer"
-  ],
-  "wardrobe_opened": {
+  "wardrobe": {
     "expression.patient": 3,
     "expression.reading": 2,
     "pose.walking": 0,

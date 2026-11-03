@@ -9,7 +9,8 @@ Reads (and nothing else):
                                            the page has paid, which open the Wardrobe's pieces for the two of them)
   engine/rules.json                        game data (knots, arts, ranks)
   engine/site/                             the stylesheet and the scripts (site.css, site.js, forge.js), published as they are
-  engine/wardrobe.json                     the Wardrobe's pieces, what opens each, the references and the image prompt,
+  engine/wardrobe.json                     the Wardrobe's pieces, what opens each, the references and the image prompt
+                                           (engine/wardrobe.md says how each field works),
                                            the sets and the Collection's ranks (darrow/collection.html)
   saga/art/                                images and songs the user supplies, published as files when places.json names one
                                            or factions.json names one (image, image_alt, image_caption, image_focus; only
@@ -2611,13 +2612,13 @@ class Site:
 
     def wardrobe_reasons(self, w, where, arts, knots, mid, on_page, paid):
         """Why each piece is his, for the picker, the lookbook and the Collection. Each option gets _ch (the chapter it opened
-        in: darrow.json → wardrobe_opened for the sheet's conditions, the scene's chapter for the page's; never a date),
+        in: darrow.json → wardrobe for the sheet's conditions, the scene's chapter for the page's; never a date),
         _new (opened this chapter or the one before, the same on every device), _desc (what it looks like: its prompt),
         _tag (the short reason on its card) and _why (the reason in full, as HTML with its links: the scene, the Binding,
         his Arts, his Reckoning). Checks each category's groups and chips, each quote against its scene, the sets and the
         Collection's ranks."""
         rel = "../"
-        opened = self.darrow.get("wardrobe_opened") or {}
+        opened = self.darrow.get("wardrobe") if isinstance(self.darrow.get("wardrobe"), dict) else {}  # piece → chapter (a list: an older sheet)
         now_ch = as_int((self.darrow.get("chapter_now") or {}).get("chapter")) or 0
         proves = {k["n"]: k.get("proves", "") for k in self.rules.get("knots") or []}
         page_ch = lambda key: int(key.split(":")[0]) if key and key.split(":")[0].isdigit() else None
@@ -2644,7 +2645,7 @@ class Site:
                 elif groups is None and "group" in o:
                     problem(f"{where}: {oid} has a group, but {cat['id']} has no groups")
                 story = u["page"] if "page" in u else paid.get(u.get("tether"))  # the page key of the scene that showed it, or paid its Tether stage
-                chs = ([opened[oid]] if oid in opened and {"level", "art", "knot"} & set(u) else []) + ([page_ch(story)] if page_ch(story) is not None else [])
+                chs = ([opened[oid]] if opened.get(oid) is not None and {"level", "art", "knot"} & set(u) else []) + ([page_ch(story)] if page_ch(story) is not None else [])
                 o["_ch"] = max(chs) if o["_usable"] and chs else None
                 o["_new"] = o["_ch"] is not None and o["_ch"] >= now_ch - 1
                 text = re.sub(r";\s*only .* drawn$", "", o["prompt"]).strip()
