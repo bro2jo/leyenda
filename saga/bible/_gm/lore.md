@@ -343,6 +343,22 @@ Said, not sung, by whoever rings the sanctuary bell at dusk, one line to each st
 > What climbed, we keep,
 > and the bell says so.
 
+## song.salt — Salt Goes Up
+- **tier:** common · **spoken:** — · **names:** —
+- **use:** a carter in fog; a sunk stretch of the Holloway; a farm gate when a bell is heard; something hummed to oxen.
+
+The Holloway carters' song, sung in fog to the swing of the ox-bell so a cart is heard before it is met. Every carter has it and no two sing it to the same tune; the first line was a proverb before it was a song. The first verse is the road's law. The second is the one the farms on the road know: a gate hears every bell, and in a ford-war year it goes out to see which.
+
+> Salt goes up and the letters come down,
+> stone after stone out of Calden town,
+> and the road gives way to a cart with a bell,
+> and a cart with none has a tale to tell.
+
+> Salt goes up and the letters come down,
+> and the farms hear the bell before I come round,
+> and they come to the gate with their hands in their shawls,
+> and it's only salt, and that's all, that's all.
+
 ## rhyme.knucklebones — Knucklebones
 - **tier:** common · **spoken:** ch01:between-3 · **names:** —
 - **use:** a Between with Hollis; a lay brothers' game; stakes in wicks.
