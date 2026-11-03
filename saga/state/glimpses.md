@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-30 · saying · A novice comes up the row with the afternoon pot and goes straight past the near cots without a glance, because the rule is older than he is: Feed the far end first. The near cots, who know the rule, wait.
 - 2026-10-30 · verse · Late, down at the far cots, a lay brother sits with the oldest of them and sings under his breath, the way you sing to a child: Sleep till the Small bell wakes you, sleep till the lamp burns low.
 - 2026-10-30 · house · Across the brazier, Hollis is working at a strap of the new cup with a borrowed awl and cursing it in a whisper, so as not to wake the lad, and every so often holding it to the light as if it might confess.
 - 2026-10-30 · ledger · From Wren's ledger, a line in the margin: Dogs on the row, 1. Lay brothers who have asked whether that is allowed, 3. Answers given, 0.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-02 · saying · Rae says the lay brothers' line, *Up is a prayer, down is a bill*, to any cart wheel that sticks, as if the wheel had done the Steps itself. Darrow has started saying it with her. The wheel, she claims, prefers him.
 - 2026-11-02 · ledger · Wren's ledger, road page: geese met, eleven; geese hostile, eleven; times Hollis has said *nearly there*, fourteen. Under it, smaller: the captain, in good spirits. Cause unknown. Watching.
 - 2026-11-02 · house · He sees Hollis palm the last heel of bread a breath before Hollis knows he has done it, and says nothing. Hollis finds this far more alarming than being caught.
+- 2026-11-02 · weather · Rain comes over the hills at dusk in a hurry and leaves the same way, and the drove road smells of wet wool and woodsmoke. Ash comes back out of it twice his size and very pleased with himself.
