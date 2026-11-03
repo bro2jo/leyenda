@@ -537,8 +537,11 @@ def main():
         check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and "Nothing kept yet" in page,
               "the empty shelf shows the tale in progress, its pieces told, and what the shelf is for", out[-300:])
         ward = page_of(tmp / "docs/darrow/wardrobe.html")
-        check('id="forge-data"' in ward and " disabled>" in ward and 'class="look-tile"' in ward and 'class="look-fig"' in page,
-              "the Wardrobe builds: the Forge's data, a locked piece, the lookbook, and his current look on his page")
+        check('id="forge-data"' in ward and 'class="pc locked"' in ward and 'class="pk-row"' in ward and 'class="look-tile"' in ward
+              and 'class="wear-strip' in page, "the Wardrobe builds: the Forge's data, its pickers, a locked piece, the lookbook, and his current look on his page")
+        coll = page_of(tmp / "docs/darrow/collection.html")
+        check('class="col-rank"' in coll and 'class="cset' in coll and 'href="wardrobe.html#piece-' in coll and "darrow/collection.html" in page,
+              "the Collection builds: his rank, the sets, every piece linked to its card in the Forge, and its chip on his page")
         code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import darrow as D; a = [{'id': 'wardens_eye', 'rank': 3}]; "
                          "print(len(D.wardrobe_earned(9, a, [])) < len(D.wardrobe_earned(25, a, [1, 2, 3, 4, 5, 6, 7])), "
                          "'expression.reading' in D.wardrobe_earned(1, a, []), 'expression.reading' in D.wardrobe_earned(30, [], []), "

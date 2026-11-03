@@ -817,6 +817,25 @@ def wardrobe_earned(level, arts, knots):
     return earned
 
 
+def wardrobe_when(cfg, earned, reached_on, art_on, knot_on):
+    """The chapter each earned piece opened in (darrow.json → wardrobe_opened, for the Wardrobe's 'opened in Chapter N'):
+    the week of the day its last sheet condition came true (the level reached, the Art's rank, the Knot tied), never a
+    date. A day before the Chronicle began is chapter 0, the Prologue. The page's own conditions are the site's to date."""
+    if not P["wardrobe"].exists():
+        return {}
+    out = {}
+    for cat in load_json(P["wardrobe"])["categories"]:
+        for o in cat["options"]:
+            pid, u = f'{cat["id"]}.{o["id"]}', o.get("unlock") or {}
+            if pid not in earned or not isinstance(u, dict):
+                continue
+            days = ([reached_on.get(u["level"])] if "level" in u else []) + ([knot_on.get(u["knot"])] if "knot" in u else []) \
+                + ([art_on.get((u["art"], u.get("rank", 1)))] if "art" in u else [])
+            if days and None not in days:
+                out[pid] = max(0, chapter_no(cfg, week_start(d(max(days)))))
+    return out
+
+
 def wardrobe_opened(old, new):
     """The menu names of the pieces the sheet opened since the saved sheet, leaving out any that still wait on the
     page (the site opens those); nothing on the first sync that carries a wardrobe at all."""
@@ -944,6 +963,16 @@ def compute(cfg, rules, asof=None, write=False):
         arts.append({"id": a["id"], "name": a["name"], "tree": a["tree"], "rank": 0 if sealed else rank,
                      "banked_rank": rank if sealed else 0, "practice": n, "next_at": nxt,
                      "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"]})
+    # the day each Art reached each rank (a sealed Art's from its Knot's day), and each Knot's: the Wardrobe dates its pieces by them
+    knot_on = {k["knot"]: k.get("date") for k in cfg["rehab"].get("knots", [])}
+    art_on, count = {}, defaultdict(int)
+    for date in sorted(x for x in facts if d(x) <= asof):
+        for t in facts[date]["tags"]:
+            count[t] += 1
+            if count[t] in thresholds:
+                for a in all_arts:
+                    if a["tag"] == t:
+                        art_on[(a["id"], thresholds.index(count[t]) + 1)] = max(date, knot_on.get(a.get("knot", 0)) or date)
 
     tether = tether_at(asof, facts, rules)
     try:  # the Tether only climbs: a stage the saved sheet already reached is held, in every view
@@ -976,7 +1005,8 @@ def compute(cfg, rules, asof=None, write=False):
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
         "tether": tether,
-        "wardrobe": wardrobe_earned(level, arts, knots),
+        "wardrobe": (earned := wardrobe_earned(level, arts, knots)),
+        "wardrobe_opened": wardrobe_when(cfg, earned, reached_on, art_on, knot_on),
         "works": {"finished": works["finished"], "tasks_done": works["tasks_done"], "late": works["late"]},
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
                         "tier_so_far": cur["tier"], "chapter": chapter_no(cfg, d(cur["week_start"]))},
