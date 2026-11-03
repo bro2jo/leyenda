@@ -54,6 +54,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | a new plan, PT note, program or nutrition guide | `/ingest` |
 | his sport set-up, a throwing clearance | `/sport` |
 | a picture from the Wardrobe's Forge with its `Look:` line | file it as a look: the picture in `saga/art/looks/`, its entry in `saga/state/looks.json` (`saga/art/README.md` → looks), then ship |
+| "switch his look to …", "have him wear …" | set `saga/state/looks.json → wearing` to that look's id (remove it to go back to the newest), then ship |
 
 Every log reply is Ledger first, Chronicle after: the format, the level-up block and the glimpse are in `.claude/skills/log/reply.md`. **He wants to discover the mechanics, not study them.** Never explain which deed feeds which stat, Art, Ember or the week's tier, or what is close to unlocking, unless he asks (`/sheet` is asking; the Wardrobe's greyed pieces name what opens them, at his request).
 

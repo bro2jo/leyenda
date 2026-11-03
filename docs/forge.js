@@ -28,7 +28,7 @@ var render = function(){
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
   $("forge-name").textContent = look ? look.name : "A new look";
-  $("forge-state").textContent = look ? "in the lookbook" : "not painted yet";
+  $("forge-state").textContent = look ? (look.worn ? "his look now" : "in the lookbook") : "not painted yet";
   $("forge-result").innerHTML = look ? "<b>Painted.</b> This look is in the lookbook."
     : "<b>Not painted yet.</b> The prompt below paints it.";
   Array.prototype.forEach.call(tiles, function(t){ t.setAttribute("aria-current", String(!!look && t.getAttribute("data-look") === look.id)); });

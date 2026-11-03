@@ -2452,7 +2452,8 @@ class Site:
         refs = list(w.get("references") or []) + [o["reference"] for c in w["categories"] for o in c["options"] if o.get("reference")]
         stems = {Path(str(r.get("image"))).stem for r in refs if str(r.get("image")).startswith("looks/")}
         path = STATE / "looks.json"
-        for i, lk in enumerate(load_json(path).get("looks", []) if path.exists() else []):
+        book = load_json(path) if path.exists() else {}
+        for i, lk in enumerate(book.get("looks", [])):
             lw = f"saga/state/looks.json: looks[{i}]"
             stems.add(Path(str(lk.get("image"))).stem)
             if any(not lk.get(k) for k in ("id", "name", "made", "image", "alt", "values")) or not isinstance(lk["values"], dict):
@@ -2468,6 +2469,14 @@ class Site:
                 if got:
                     self.looks.append({**lk, "_path": got[0], "_md": got[3], "_i": i})
         self.looks.sort(key=lambda x: (x["made"], x["_i"]), reverse=True)  # newest first; on a shared date, the later entry
+        wearing = book.get("wearing")  # the look he wears on his page, when he has chosen one; else the newest
+        if wearing:
+            worn = next((lk for lk in self.looks if lk["id"] == wearing), None)
+            if worn:
+                self.looks.remove(worn)
+                self.looks.insert(0, worn)
+            else:
+                problem(f"saga/state/looks.json: wearing names '{wearing}', which is not a look whose pieces are all open")
         self.stray_pictures("looks", stems, "a look in saga/state/looks.json or a reference in engine/wardrobe.json")
 
     def render_wardrobe(self):
@@ -2490,11 +2499,11 @@ class Site:
                  '<h1>The Wardrobe</h1><p class="sub">Looks he has earned. What he wears in the story is the story\'s; these are his own, and more opens as he grows.</p>'
                  f'<figure class="forge-stage" id="forge-stage">{stage}</figure>'
                  f'<p class="forge-cap"><b id="forge-name">{esc(cur["name"]) if cur else "A new look"}</b>'
-                 f'<span class="lbl" id="forge-state">{"in the lookbook" if cur else "not painted yet"}</span></p></section>')
+                 f'<span class="lbl" id="forge-state">{"his look now" if cur else "not painted yet"}</span></p></section>')
         tiles = "".join(f'<a class="look-tile" href="{rel}{lk["_path"]}" data-look="{esc(lk["id"])}"><img src="{rel}{lk["_md"]}" alt="" loading="lazy" decoding="async">'
                         f'<span>{esc(lk["name"])}</span></a>' for lk in self.looks)
         n = len(self.looks)
-        book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div><p class="hint">Tap a look to put it on in the Forge.</p>'
+        book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div><p class="hint">Tap a look to put it on in the Forge. The first is the one he wears on his page; to change it, tell Claude which.</p>'
                    if tiles else '<p class="empty">No look painted yet.</p>'))
         fields, n_open, n_all = [], 0, 0
         for c in w["categories"]:
@@ -2532,7 +2541,7 @@ class Site:
                 "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
                 "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
                 "looks": [{"id": lk["id"], "name": lk["name"], "alt": lk["alt"], "values": lk["values"], "details": lk.get("details") or "",
-                           "full": rel + lk["_path"]} for lk in self.looks],
+                           "full": rel + lk["_path"], "worn": lk is cur} for lk in self.looks],
                 "start": start, "template": "\n".join(w["prompt"])}
         blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
@@ -4048,7 +4057,7 @@ var render = function(){
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
   $("forge-name").textContent = look ? look.name : "A new look";
-  $("forge-state").textContent = look ? "in the lookbook" : "not painted yet";
+  $("forge-state").textContent = look ? (look.worn ? "his look now" : "in the lookbook") : "not painted yet";
   $("forge-result").innerHTML = look ? "<b>Painted.</b> This look is in the lookbook."
     : "<b>Not painted yet.</b> The prompt below paints it.";
   Array.prototype.forEach.call(tiles, function(t){ t.setAttribute("aria-current", String(!!look && t.getAttribute("data-look") === look.id)); });

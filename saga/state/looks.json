@@ -1,5 +1,5 @@
 {
-  "_about": "Darrow's finished looks, for the Wardrobe (darrow/wardrobe.html). Each: id, name, made (the date it was filed), image (under saga/art/, in looks/), alt (what the picture shows), values (one option id per category of engine/wardrobe.json) and details (the small touches typed in the Forge, or empty). A look shows once every piece it wears is open; the newest shown is his current look, at the head of his Reckoning. Filed from the Look line the Forge gives with the picture.",
+  "_about": "Darrow's finished looks, for the Wardrobe (darrow/wardrobe.html). Each: id, name, made (the date it was filed), image (under saga/art/, in looks/), alt (what the picture shows), values (one option id per category of engine/wardrobe.json) and details (the small touches typed in the Forge, or empty). A look shows once every piece it wears is open. The one he wears (at the head of his Reckoning, first in the lookbook) is the look named by \"wearing\" (a look id, set when he asks), or the newest when it is absent. Filed from the Look line the Forge gives with the picture.",
   "looks": [
     {
       "id": "the-drove-road",
