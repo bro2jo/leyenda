@@ -794,36 +794,39 @@ def rank_of(level, rules):
     return name
 
 
+WARDROBE_SHEET = ("level", "art", "knot")  # the unlock conditions the sheet decides; page and tether are the page's (the site's)
+
+
 def wardrobe_earned(level, arts, knots):
-    """The Wardrobe's options this sheet has opened (engine/wardrobe.json), as 'category.option': a level reached, an Art
-    at a rank (a sealed Art has none), a Knot tied. What is open from the start, or opened by a scene, is the site's."""
+    """The Wardrobe's options this sheet has opened (engine/wardrobe.json), as 'category.option': every sheet condition
+    of its unlock holds (a level reached, an Art at a rank, a sealed Art having none, a Knot tied). A piece that also
+    waits on the page (page, tether) is listed once the sheet's part holds; the site opens it when the page's does too.
+    What is open from the start, or opened by the page alone, is the site's."""
     if not P["wardrobe"].exists():
         return []
     rank = {a["id"]: a["rank"] for a in arts}
+    holds = {"level": lambda u: level >= u["level"], "art": lambda u: rank.get(u["art"], 0) >= u.get("rank", 1),
+             "knot": lambda u: u["knot"] in knots}
     earned = []
     for cat in load_json(P["wardrobe"])["categories"]:
         for o in cat["options"]:
             u = o.get("unlock") or {}
-            if (("level" in u and level >= u["level"]) or ("art" in u and rank.get(u["art"], 0) >= u.get("rank", 1))
-                    or ("knot" in u and u["knot"] in knots)):
+            conds = [k for k in WARDROBE_SHEET if k in u]
+            if conds and all(holds[k](u) for k in conds):
                 earned.append(f'{cat["id"]}.{o["id"]}')
     return earned
 
 
-def wardrobe_names(ids):
-    """The menu names of these pieces (one read of the catalogue, only when something opened)."""
-    if not ids:
-        return []
-    names = {f'{c["id"]}.{o["id"]}': o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]}
-    return [names.get(i, i) for i in ids]
-
-
-def wardrobe_new(old, new):
-    """What the Wardrobe opened since the saved sheet; nothing on the first sync that carries a wardrobe at all."""
+def wardrobe_opened(old, new):
+    """The menu names of the pieces the sheet opened since the saved sheet, leaving out any that still wait on the
+    page (the site opens those); nothing on the first sync that carries a wardrobe at all."""
     if "wardrobe" not in old:
         return []
-    had = set(old["wardrobe"])
-    return [x for x in new.get("wardrobe", []) if x not in had]
+    fresh = set(new.get("wardrobe", [])) - set(old["wardrobe"])
+    if not fresh:
+        return []
+    return [o["name"] for c in load_json(P["wardrobe"])["categories"] for o in c["options"]
+            if f'{c["id"]}.{o["id"]}' in fresh and not {"page", "tether"} & set(o.get("unlock") or {})]
 
 
 # ---------------------------------------------------------------- sync
@@ -1053,7 +1056,7 @@ def diff_sheets(old, new):
         nm = names[k - 1] if k <= len(names) else ""
         notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
                      + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
-    opened = wardrobe_names(wardrobe_new(old, new))
+    opened = wardrobe_opened(old, new)
     if opened:
         notes.append("WARDROBE: new to choose from: " + ", ".join(opened) + " (darrow/wardrobe.html)")
     ow, nw = old.get("works") or {}, new.get("works") or {}
@@ -1103,7 +1106,7 @@ def reckoning_line(old, new):
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("finished", 0) > ow.get("finished", 0):
         bits.append(f"Works {ow.get('finished', 0)} → {nw['finished']}")
-    opened = wardrobe_names(wardrobe_new(old, new))
+    opened = wardrobe_opened(old, new)
     if opened:
         bits.append("Wardrobe + " + ", ".join(opened))
     return "⟦ " + " · ".join(bits) + " ⟧" if bits else ""

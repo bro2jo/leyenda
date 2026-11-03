@@ -60,8 +60,8 @@ CHAR_ORDER = ("id", "name", "aliases", "epithet", "tier", "faction", "status", "
               "portrait_focus", "portrait_zoom", "portrait_label", "portraits_earlier", "first_seen", "last_seen", "last_seen_doing", "now", "story_so_far", "quote", "known_facts",
               "relationships", "reckoning", "appearances")
 WORLD_ORDER = ("_about", "book", "book_title", "chapter", "chapter_title", "chapter_file", "scenes", "location", "season",
-               "current_quest", "current_struggle", "last_beat", "companions", "choices", "inventory", "keepsakes", "tales", "recaps",
-               "projects", "last_updated")
+               "current_quest", "current_struggle", "last_beat", "companions", "choices", "inventory", "keepsakes", "tether", "tales",
+               "recaps", "projects", "last_updated")
 
 KEY_RE = re.compile(r"^ch(\d{2,}):(s(\d+)|interlude(?:-(\d+))?|between-(\d+)|climax|choice|([IVX]+))$")
 SCENE_HEAD_RE = re.compile(r"^###\s+Scene\s+(\d+)\s*[—–-]\s*(.+)$")
@@ -642,7 +642,8 @@ def tales_state(plan, tale_events=None):
 
 def project_world(events, plan, world, tale_events=()):
     """world.json from the events and the plan's position; approval, choices and projects stay as they are. The tales
-    (reader-safe: pieces told, done) and the keepsakes come from the tale events."""
+    (reader-safe: pieces told, done) and the keepsakes come from the tale events. tether: the Tether stages the page has
+    paid, in order, each {name, key} (the block whose record carries it), which the Wardrobe opens its pieces by."""
     files = chapter_files()
     pos = plan["position"]
     chapter = int(pos["chapter"])
@@ -655,7 +656,8 @@ def project_world(events, plan, world, tale_events=()):
         w["chapter_file"] = rel(files[chapter])
     scenes = []
     state = {"where": None, "season": None, "quest": None, "struggle": None, "last_beat": None, "book_title": None,
-             "inventory": list(world.get("inventory") or []), "recaps": {}, "present": {}, "notes": {}, "last_updated": None}
+             "inventory": list(world.get("inventory") or []), "recaps": {}, "present": {}, "notes": {}, "last_updated": None,
+             "tether": []}
     for ev in events:
         parsed = parse_key(ev.get("key", ""))
         if not parsed:
@@ -675,6 +677,8 @@ def project_world(events, plan, world, tale_events=()):
                     state["inventory"].append(x)
             for x in inv.get("remove") or []:
                 state["inventory"] = [i for i in state["inventory"] if i != x]
+        if ev.get("tether"):
+            state["tether"].append({"name": ev["tether"], "key": ev["key"]})
         if ev.get("recap") and ch in files:
             state["recaps"][files[ch].stem] = ev["recap"]
         for p in ev.get("people") or []:
@@ -717,6 +721,7 @@ def project_world(events, plan, world, tale_events=()):
     w["inventory"] = state["inventory"]
     tales = tales_state(plan, list(tale_events))
     w["keepsakes"] = [k for t in tales for k in t["keepsakes"]]
+    w["tether"] = state["tether"]
     w["tales"] = [{k: t[k] for k in ("id", "title", "of", "pieces", "told", "done", "rests", "file")} for t in tales]
     recaps = dict(world.get("recaps") or {})
     recaps.update(state["recaps"])

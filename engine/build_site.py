@@ -5,7 +5,8 @@ Reads (and nothing else):
   saga/chronicle/*.md                      the story, by chapter
   saga/characters/*.json                   the cast, as the page has shown it
   saga/state/world.json, places.json, factions.json, darrow.json, bearing.json, codex.md, codex_art.json, chapters.csv, rolls.csv,
-  looks.json                               (his finished looks, for the Wardrobe)
+  looks.json                               (his finished looks, for the Wardrobe; world.json → tether: the Tether stages
+                                           the page has paid, which open the Wardrobe's pieces for the two of them)
   engine/rules.json                        game data (knots, arts, ranks)
   engine/wardrobe.json                     the Wardrobe's pieces, what opens each, the references and the image prompt
   saga/art/                                images and songs the user supplies, published as files when places.json names one
@@ -2274,8 +2275,8 @@ class Site:
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
     def look_figure(self, rel):
-        """His current look (the newest in the Wardrobe) beside the head of his Reckoning: a tall frame in his rank's
-        metal that opens the Wardrobe. Empty while no look is filed."""
+        """The look he wears (looks.json → wearing, else the newest) beside the head of his Reckoning: a tall frame in his
+        rank's metal that opens the Wardrobe. Empty while no look is filed."""
         lk = self.looks[0] if self.looks else None
         if not lk:
             return ""
@@ -2404,10 +2405,12 @@ class Site:
         return {"label": r["label"], "href": got[0], "sm": got[2], "file": r["file"], "use": r["use"]}
 
     def load_wardrobe(self):
-        """engine/wardrobe.json (every piece and what opens it) and saga/state/looks.json (the finished looks). A piece is
-        open from the start, once the scene its page key names is on the page (the key must be one), or once darrow.json →
-        wardrobe says the sheet has earned it (a level, an Art's rank, a Knot); otherwise locked, with what opens it. A look
-        shows once every piece it wears is open, the newest first; its picture is published only then."""
+        """engine/wardrobe.json (every piece and what opens it) and saga/state/looks.json (the finished looks). A piece
+        opens once every condition of its unlock holds: the sheet's (a level, an Art's rank, a Knot: darrow.json → wardrobe)
+        and the page's (a scene its page key names, which must be on the page; a Tether stage the page has paid, world.json
+        → tether). Locked, it is greyed with what opens it, or left off the site entirely while it is hidden. A piece that
+        needs another (needs: {category: piece}) is usable only with it open, and a look must wear what its pieces need.
+        A look shows once every piece it wears is open, the newest first; its picture is published only then."""
         self.wardrobe, self.looks = None, []
         if not WARDROBE.exists():
             return
@@ -2417,6 +2420,12 @@ class Site:
                                                  f'{self.page_dir(c)}{c["slug"]}.html#{sc["anchor"]}') for c in self.chapters + self.tales for sc in c["scenes"]}
         knots = {k["n"]: k["name"] for k in self.rules.get("knots") or []}
         mid = lambda name: "the " + name[4:] if name.startswith("The ") else name  # "Opened by the Knot of Standing"
+        tether = list((self.rules.get("tether") or {}).get("names") or [])
+        paid = {}  # the Tether stages the page has paid (world.json → tether): stage → the scene that paid it, as a page key
+        for t in self.world.get("tether") or []:
+            m = re.match(r"^ch(\d+):(?:s(\d+)|(.+))$", str(t.get("key")))
+            if t.get("name") in tether and m:
+                paid.setdefault(tether.index(t["name"]) + 1, f"{m[1]}:{m[2] or m[3]}")
         earned, known = set(self.darrow.get("wardrobe") or []), set()
         for cat in w["categories"]:
             for o in cat["options"]:
@@ -2424,31 +2433,48 @@ class Site:
                 if oid in known or not o.get("name") or not o.get("prompt"):
                     problem(f"{where}: {oid} is listed twice, or has no name or prompt")
                 known.add(oid)
-                if (set(u) - {"level", "art", "rank", "knot", "page"} or len(set(u) & {"level", "art", "knot", "page"}) > 1
-                        or ("art" in u and u["art"] not in arts) or ("rank" in u and "art" not in u)
-                        or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1)) or ("level" in u and not isinstance(u["level"], int))):
-                    problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u} (one of level, art with rank, knot or page)")
+                if (set(u) - {"level", "art", "rank", "knot", "page", "tether"} or ("art" in u and u["art"] not in arts)
+                        or ("rank" in u and "art" not in u) or ("knot" in u and u["knot"] not in range(1, self.n_knots + 1))
+                        or ("level" in u and not isinstance(u["level"], int)) or ("tether" in u and u["tether"] not in range(1, len(tether) + 1))):
+                    problem(f"{where}: {oid} has an unlock the Wardrobe cannot read: {u} (any of level, art with rank, knot, tether, page)")
                 if "page" in u and u["page"] not in on_page:
                     problem(f"{where}: {oid} opens on {u['page']}, which is not a scene on the page (a piece the story has not shown stays out)")
-                o["_open"] = not u or "page" in u or oid in earned
-                what = (f'Level {u["level"]}' if "level" in u else mid(knots.get(u["knot"], "")) if "knot" in u
-                        else f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}' if "art" in u else "")
+                # open once every condition holds: the sheet's (darrow.json → wardrobe) and the page's (a scene shown, a Tether stage paid)
+                o["_open"] = (("page" not in u or u["page"] in on_page) and ("tether" not in u or u["tether"] in paid)
+                              and (not {"level", "art", "knot"} & set(u) or oid in earned))
+                parts = ([f'the Tether {roman(u["tether"])}'] if "tether" in u else []) + ([f'Level {u["level"]}'] if "level" in u else []) \
+                    + ([f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}'] if "art" in u else []) + ([mid(knots.get(u["knot"], ""))] if "knot" in u else [])
+                what = " and ".join(parts)
                 o["_lock"] = "" if o["_open"] else what  # the greyed menu entry: "Running · the Knot of the Road"
                 o["_from"] = ("There from the start" if not u else "From the story: " if "page" in u
-                              else ("Opened at " if "level" in u else "Opened by ") + what)
-                o["_story"] = on_page.get(u.get("page"))  # (scene, href) for a piece the story showed
+                              else ("Opened at " if parts[0].startswith("Level") else "Opened by ") + what + (": " if "tether" in u else ""))
+                o["_story"] = on_page.get(u["page"] if "page" in u else paid.get(u.get("tether")))  # (scene, href): the scene that showed it
                 ref = o.get("reference")
                 if ref and (not all(ref.get(k) for k in ("label", "image", "file", "use")) or not (ART / str(ref["image"])).is_file()):
                     problem(f"{where}: {oid}.reference needs label, image (a picture under saga/art/), file and use")
                 elif ref and o["_open"]:  # checked now, published only once the piece is open
                     o["_ref"] = self.reference(ref, f"{where}: {oid}.reference")
-            if not any(o["_open"] for o in cat["options"]):
-                problem(f"{where}: {cat['id']} has no piece open yet; give it one open from the start, so the Forge always has one to show")
+        pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
+        for cat in w["categories"]:  # needs: a piece that only makes sense with another (the stick under his arm needs the stick)
+            for o in cat["options"]:
+                oid, needs = f'{cat["id"]}.{o["id"]}', o.get("needs") or {}
+                if not isinstance(needs, dict) or any(c == cat["id"] or v not in pieces.get(c, {}) for c, v in needs.items()):
+                    problem(f"{where}: {oid} needs {needs}: a mapping of other categories to one piece of each")
+                    needs = {}
+                if not o.get("hidden") and any(pieces[c][v].get("hidden") for c, v in needs.items()):
+                    problem(f"{where}: {oid} needs a hidden piece, so its greyed entry would name it; hide it too, or need something else")
+                missing = [pieces[c][v]["name"] for c, v in needs.items() if not pieces[c][v]["_open"]]
+                o["_needs"] = needs
+                o["_usable"] = o["_open"] and not missing  # open, with everything it needs open too
+                if o["_open"] and missing:
+                    o["_lock"] = "needs " + ", ".join(missing)
+                o["_shown"] = o["_open"] or not o.get("hidden")  # a hidden piece is not on the site at all until it opens
+            if not any(o["_usable"] and not o["_needs"] for o in cat["options"]):
+                problem(f"{where}: {cat['id']} has no piece open that needs nothing; give it one open from the start, so the Forge always has one to show")
         if earned - known:
             problem(f"saga/state/darrow.json: wardrobe names {', '.join(sorted(earned - known))}, which {where} does not; run python3 engine/darrow.py sync")
         w["_refs"] = [r for r in (self.reference(r, f"{where}: references[{i}]") for i, r in enumerate(w.get("references") or [])) if r]
         self.wardrobe = w
-        pieces = {cat["id"]: {o["id"]: o for o in cat["options"]} for cat in w["categories"]}
         refs = list(w.get("references") or []) + [o["reference"] for c in w["categories"] for o in c["options"] if o.get("reference")]
         stems = {Path(str(r.get("image"))).stem for r in refs if str(r.get("image")).startswith("looks/")}
         path = STATE / "looks.json"
@@ -2460,8 +2486,12 @@ class Site:
                 problem(f"{lw}: a look needs id, name, made, image, alt and values (a mapping: category → piece id, from the Look line)")
                 continue
             bad = [f"{c}={v}" for c, v in lk["values"].items() if v not in pieces.get(c, {})] + [f"{c} missing" for c in pieces if c not in lk["values"]]
+            broke = [f"{c}={v} needs {nc}={nv}" for c, v in lk["values"].items() if not bad
+                     for nc, nv in pieces[c][v]["_needs"].items() if lk["values"].get(nc) != nv]
             if bad:
                 problem(f"{lw} ({lk['id']}): {', '.join(bad)}: one piece of {where} per category (a piece a look wears is never removed or renamed)")
+            elif broke:
+                problem(f"{lw} ({lk['id']}): {', '.join(broke)}")
             elif not (ART / lk["image"]).is_file():
                 problem(f"{lw} ({lk['id']}): saga/art/{lk['image']} does not exist")
             elif all(pieces[c][v]["_open"] for c, v in lk["values"].items()):
@@ -2488,7 +2518,7 @@ class Site:
             return
         rel, d = "../", self.darrow
         cur = self.looks[0] if self.looks else None
-        start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_open"]), "") for c in w["categories"]}
+        start = dict(cur["values"]) if cur else {c["id"]: next((o["id"] for o in c["options"] if o["_usable"] and not o["_needs"]), "") for c in w["categories"]}
         hide = "" if cur else " hidden"
         href = f' href="{rel}{cur["_path"]}"' if cur else ""  # no look yet: nothing to fetch
         img = f' src="{rel}{cur["_path"]}" alt="{esc(cur["alt"])}"' if cur else ' alt=""'  # the stage is large: the full picture, not a copy
@@ -2505,19 +2535,25 @@ class Site:
         n = len(self.looks)
         book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div><p class="hint">Tap a look to put it on in the Forge. The first is the one he wears on his page; to change it, tell Claude which.</p>'
                    if tiles else '<p class="empty">No look painted yet.</p>'))
-        fields, n_open, n_all = [], 0, 0
+        shown = {c["id"]: [o for o in c["options"] if o["_shown"]] for c in w["categories"]}
+        n_all = sum(len(v) for v in shown.values())
+        n_open = sum(o["_open"] for v in shown.values() for o in v)
+        n_hidden = sum(len(c["options"]) for c in w["categories"]) - n_all
+        fields = []
         for c in w["categories"]:
             opts = []
-            for o in c["options"]:
-                n_all += 1
-                n_open += o["_open"]
-                lock = "" if o["_open"] else f' · {esc(o["_lock"])}'
-                opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_open"] else " disabled"}>{esc(o["name"])}{lock}</option>')
+            for o in shown[c["id"]]:
+                lock = "" if o["_usable"] else f' · {esc(o["_lock"])}'
+                opts.append(f'<option value="{esc(o["id"])}"{" selected" if start.get(c["id"]) == o["id"] else ""}{"" if o["_usable"] else " disabled"}>{esc(o["name"])}{lock}</option>')
             fields.append(f'<div class="forge-field"><label for="forge-{esc(c["id"])}">{esc(c["label"])}</label>'
                           f'<select id="forge-{esc(c["id"])}" data-cat="{esc(c["id"])}">{"".join(opts)}</select>'
                           f'<span class="forge-src" data-from="{esc(c["id"])}"></span></div>')
+        secret = ("" if not n_hidden else "; one more stays hidden until it opens" if n_hidden == 1
+                  else f"; {n_hidden} more stay hidden until they open")
         forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
-                    f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it.</p><div class="forge-grid">{"".join(fields)}</div>'
+                    f'<div class="forge"><p class="hint">Choose from what he has earned. A greyed piece names what opens it{secret}.</p>'
+                    '<p class="forge-fresh" id="forge-fresh" hidden></p>'
+                    f'<div class="forge-grid">{"".join(fields)}</div>'
                     '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
                     'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></label>'
                     '<p class="forge-result" id="forge-result" aria-live="polite"></p></div>')
@@ -2535,8 +2571,9 @@ class Site:
                     '<div class="btn-row"><button class="btn ghost" type="button" id="forge-copy-line">Copy the Look line</button></div>'
                     '<noscript><p class="empty">The Forge needs JavaScript; the lookbook works without it.</p></noscript>')
         data = {"cats": [{"id": c["id"], "label": c["label"], "options": [
-                    {"id": o["id"], "prompt": o["prompt"], "open": o["_open"], "from": o["_from"],
-                     **({"story": o["_story"][0], "href": rel + o["_story"][1]} if o["_story"] else {})} for o in c["options"]]}
+                    {"id": o["id"], "name": o["name"], "prompt": o["prompt"], "open": o["_usable"], "from": o["_from"],
+                     **({"needs": o["_needs"]} if o["_needs"] else {}),
+                     **({"story": o["_story"][0], "href": rel + o["_story"][1]} if o["_story"] else {})} for o in shown[c["id"]]]}
                          for c in w["categories"]],
                 "refs": [{"file": r["file"], "use": r["use"]} for r in w["_refs"]],
                 "optRefs": {f'{c["id"]}.{o["id"]}': {"file": o["_ref"]["file"], "use": o["_ref"]["use"]} for c in w["categories"] for o in c["options"] if o.get("_ref")},
@@ -2774,7 +2811,8 @@ class Site:
         new_rank = any(r["from"] == d["level"] for r in self.rules["levels"]["ranks"])
         head = f'Level {d["level"]}' + (f' · {esc(d["rank"])}' if new_rank else "")
         line = ("A new rank. " if new_rank else "") + f'HP {d["hp_max"]} · Proficiency +{d["proficiency"]}'
-        pieces = [o["name"] for c in (self.wardrobe or {}).get("categories", []) for o in c["options"] if (o.get("unlock") or {}).get("level") == d["level"]]
+        pieces = [o["name"] for c in (self.wardrobe or {}).get("categories", []) for o in c["options"]
+                  if o["_open"] and (o.get("unlock") or {}).get("level") == d["level"]]
         news = f'<span class="m">New in the Wardrobe: {", ".join(esc(x) for x in pieces)}</span>' if pieces else ""
         href = f"{rel}darrow/wardrobe.html" if pieces else f"{rel}darrow/index.html#reckoning"
         return (f'<a class="lvl-news{self.metal(d["level"])}" href="{href}">{crest(d["level"])}'
@@ -3749,7 +3787,8 @@ ol.choice li s{color:var(--faint)}
 .forge select{appearance:none;-webkit-appearance:none;padding-right:30px;background:var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA65F' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center}
 .forge select option:disabled{color:var(--faint)}
 .forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
-.forge-result{font-size:.95rem;color:var(--dim)} .forge-result b{color:var(--brass);font-weight:600}
+.forge-result,.forge-fresh{font-size:.95rem;color:var(--dim)} .forge-result b,.forge-fresh b{color:var(--brass);font-weight:600}
+.forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
 .forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
 button.btn{font-size:1rem;cursor:pointer}
@@ -4029,19 +4068,42 @@ window.addEventListener("load", settle);
 
 FORGE_JS = r"""/* THE UNKNEELING — the Forge (darrow/wardrobe.html). Choose a look from the pieces he has earned, see it on the stage
    if it has been painted, and copy the prompt that paints it, with the Look line Claude files it by. Its data is the
-   JSON in #forge-data, written by the build; the choice is remembered in this browser only. */
+   JSON in #forge-data, written by the build; the choice, and which pieces this browser has already seen open, are
+   remembered in this browser only. A piece that needs another (the stick under his arm needs the stick) brings it when
+   chosen; a piece that no longer fits what was just chosen falls back to his own look's, or the first that fits. */
 (function(){
 "use strict";
 var dataEl = document.getElementById("forge-data");
 if (!dataEl) { return; }
-var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", state = {}, base;
+var D = JSON.parse(dataEl.textContent), SAVE = "unkneeling-forge", SEEN = "unkneeling-forge-seen", state = {}, base;
 var $ = function(id){ return document.getElementById(id); };
+var each = function(list, fn){ Array.prototype.forEach.call(list, fn); };
 var pieces = {};
 D.cats.forEach(function(c){ pieces[c.id] = {}; c.options.forEach(function(o){ pieces[c.id][o.id] = o; }); });
-var isOpen = function(cat, id){ return !!(pieces[cat][id] && pieces[cat][id].open); };
+var fits = function(cat, id){  /* open, and everything it needs is what is chosen now */
+  var o = pieces[cat][id];
+  return !!(o && o.open) && Object.keys(o.needs || {}).every(function(k){ return state[k] === o.needs[k]; });
+};
+var settle = function(fixed){  /* every other piece that no longer fits falls back */
+  for (var pass = 0; pass < 3; pass += 1) {
+    D.cats.forEach(function(c){
+      if (fixed[c.id] || fits(c.id, state[c.id])) { return; }
+      var back = fits(c.id, D.start[c.id]) ? D.start[c.id] : null;
+      c.options.forEach(function(o){ if (!back && fits(c.id, o.id)) { back = o.id; } });
+      state[c.id] = back || state[c.id];
+    });
+  }
+};
+var choose = function(cat, id){
+  var fixed = {}, needs = (pieces[cat][id] || {}).needs || {};
+  state[cat] = id; fixed[cat] = true;
+  Object.keys(needs).forEach(function(k){ state[k] = needs[k]; fixed[k] = true; });
+  settle(fixed);
+};
 var wear = function(v){
-  D.cats.forEach(function(c){ state[c.id] = isOpen(c.id, v[c.id]) ? v[c.id] : D.start[c.id]; });
+  D.cats.forEach(function(c){ state[c.id] = pieces[c.id][v[c.id]] ? v[c.id] : D.start[c.id]; });
   state.details = typeof v.details === "string" ? v.details : "";
+  settle({});
 };
 var norm = function(t){ return String(t || "").trim().replace(/\s+/g, " ").toLowerCase(); };
 var keyOf = function(values, details){ return D.cats.map(function(c){ return values[c.id]; }).join("|") + "|" + norm(details); };
@@ -4049,10 +4111,36 @@ base = keyOf(D.start, "");  /* his current look: a remembered choice holds only 
 var selects = document.querySelectorAll("select[data-cat]"), notes = $("forge-details");
 var tiles = document.querySelectorAll(".look-tile[data-look]");
 
+/* New since this browser last saw the Forge: marked in its menu and named above it (nothing on a first visit) */
+(function(){
+  var open = [], fresh = [];
+  D.cats.forEach(function(c){ c.options.forEach(function(o){ if (o.open) { open.push(c.id + "." + o.id); } }); });
+  try {
+    var seen = JSON.parse(localStorage.getItem(SEEN) || "null");
+    if (Array.isArray(seen)) { fresh = open.filter(function(k){ return seen.indexOf(k) < 0; }); }
+    localStorage.setItem(SEEN, JSON.stringify(open));
+  } catch (e) { return; }
+  if (!fresh.length) { return; }
+  fresh.forEach(function(k){
+    var cat = k.split(".")[0], id = k.slice(cat.length + 1), sel = document.querySelector('select[data-cat="' + cat + '"]');
+    each(sel ? sel.options : [], function(opt){ if (opt.value === id) { opt.textContent += " · new"; } });
+    var label = sel && sel.parentNode.querySelector("label");
+    if (label && !label.querySelector(".forge-new")) {
+      var tag = document.createElement("span"); tag.className = "forge-new"; tag.textContent = "New"; label.appendChild(tag);
+    }
+  });
+  var line = $("forge-fresh");
+  line.innerHTML = "<b>New since you last looked:</b> ";
+  line.appendChild(document.createTextNode(fresh.map(function(k){
+    var cat = k.split(".")[0]; return pieces[cat][k.slice(cat.length + 1)].name;
+  }).join(", ") + "."));
+  line.hidden = false;
+})();
+
 var render = function(){
   var key = keyOf(state, state.details), look = null;
   D.looks.forEach(function(l){ if (!look && keyOf(l.values, l.details) === key) { look = l; } });
-  Array.prototype.forEach.call(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
+  each(selects, function(s){ s.value = state[s.getAttribute("data-cat")]; });
   if (look) { $("forge-img").src = look.full; $("forge-img").alt = look.alt; $("forge-zoom").href = look.full; }
   $("forge-zoom").hidden = !look;
   $("forge-empty").hidden = !!look;
@@ -4060,21 +4148,18 @@ var render = function(){
   $("forge-state").textContent = look ? (look.worn ? "his look now" : "in the lookbook") : "not painted yet";
   $("forge-result").innerHTML = look ? "<b>Painted.</b> This look is in the lookbook."
     : "<b>Not painted yet.</b> The prompt below paints it.";
-  Array.prototype.forEach.call(tiles, function(t){ t.setAttribute("aria-current", String(!!look && t.getAttribute("data-look") === look.id)); });
-  var refs = D.refs.slice();
-  Array.prototype.forEach.call(document.querySelectorAll("[data-ref-for]"), function(card){
-    var on = state[card.getAttribute("data-ref-for").split(".")[0]] === card.getAttribute("data-ref-for").split(".")[1];
+  each(tiles, function(t){ t.setAttribute("aria-current", String(!!look && t.getAttribute("data-look") === look.id)); });
+  var refs = D.refs.slice(), n = 0;
+  each(document.querySelectorAll(".ref-card"), function(card){
+    var k = card.getAttribute("data-ref-for"), on = !k || state[k.split(".")[0]] === k.split(".")[1];
     card.hidden = !on;
-    if (on) { refs.push(D.optRefs[card.getAttribute("data-ref-for")]); }
+    if (on && k) { refs.push(D.optRefs[k]); }
+    if (on) { n += 1; card.querySelector(".ref-n").textContent = "Image " + n; }
   });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-from]"), function(el){
+  each(document.querySelectorAll("[data-from]"), function(el){
     var o = pieces[el.getAttribute("data-from")][state[el.getAttribute("data-from")]];
     el.textContent = o.from;
     if (o.href) { var a = document.createElement("a"); a.href = o.href; a.textContent = o.story; el.appendChild(a); }
-  });
-  var n = 0;
-  Array.prototype.forEach.call(document.querySelectorAll(".ref-card"), function(card){
-    if (!card.hidden) { n += 1; card.querySelector(".ref-n").textContent = "Image " + n; }
   });
   var design = D.cats.map(function(c){ return "- " + c.label + ": " + pieces[c.id][state[c.id]].prompt; }).join("\n");
   var listed = refs.map(function(r, i){ return "Image " + (i + 1) + " (" + r.file + "): " + r.use; }).join("\n");
@@ -4097,10 +4182,10 @@ var copy = function(text, btn, fallback){
 wear(D.start);
 try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved && saved.base === base) { wear(saved.state); } } catch (e) { /* start from his look */ }
 if (notes) { notes.value = state.details; notes.addEventListener("input", function(){ state.details = notes.value; render(); }); }
-Array.prototype.forEach.call(selects, function(s){
-  s.addEventListener("change", function(){ state[s.getAttribute("data-cat")] = s.value; render(); });
+each(selects, function(s){
+  s.addEventListener("change", function(){ choose(s.getAttribute("data-cat"), s.value); render(); });
 });
-Array.prototype.forEach.call(tiles, function(t){
+each(tiles, function(t){
   t.addEventListener("click", function(e){
     var look = D.looks.filter(function(l){ return l.id === t.getAttribute("data-look"); })[0];
     if (!look || e.metaKey || e.ctrlKey || e.shiftKey) { return; }

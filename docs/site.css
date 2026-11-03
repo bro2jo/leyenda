@@ -574,7 +574,8 @@ ol.choice li s{color:var(--faint)}
 .forge select{appearance:none;-webkit-appearance:none;padding-right:30px;background:var(--night) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA65F' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center}
 .forge select option:disabled{color:var(--faint)}
 .forge select:focus-visible,.forge textarea:focus-visible,.forge-prompt:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
-.forge-result{font-size:.95rem;color:var(--dim)} .forge-result b{color:var(--brass);font-weight:600}
+.forge-result,.forge-fresh{font-size:.95rem;color:var(--dim)} .forge-result b,.forge-fresh b{color:var(--brass);font-weight:600}
+.forge-new{margin-left:8px;padding:1px 6px;border-radius:3px;background:var(--brass);color:var(--night);font-size:.68rem;letter-spacing:.08em;vertical-align:1px}
 .forge-steps{margin:0;padding-left:1.3em;display:grid;gap:3px;color:var(--dim)}
 .forge-prompt{font-size:.85rem;line-height:1.5;color:var(--dim);height:13em;resize:vertical}
 button.btn{font-size:1rem;cursor:pointer}
