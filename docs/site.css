@@ -285,7 +285,8 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .art{display:grid;grid-template-columns:64px minmax(0,1fr);gap:3px 12px;align-items:start;border-left:2px solid var(--rule);padding-left:12px}
 .art-txt{display:grid;gap:3px;min-width:0}
 /* an Art's card picture (art_pic): a frame in its rank's metal with the rank's numeral on it, and more to the frame as the
-   rank climbs: studs at III, a second rule at IV, a glow at V. A dashed blank before its first rank; violet and greyed while sealed */
+   rank climbs: studs at III, a second rule at IV, a glow at V. A dashed blank before its first rank. Sealed: greyed out, a lock
+   where the numeral would be (violet is kept for a tier above gold, should one come) */
 .art-pic{position:relative;display:block;box-sizing:border-box;width:64px;aspect-ratio:1/1;margin-bottom:8px;padding:3px;border-radius:7px;
   background:linear-gradient(135deg,var(--metal-hi),var(--metal-dim) 45%,var(--metal) 70%,var(--metal-dim))}
 a.art-pic{cursor:zoom-in}
@@ -301,15 +302,16 @@ a.art-pic{cursor:zoom-in}
 .art-pic.r4,.art-pic.r5{outline:1px solid var(--metal);outline-offset:2px}
 .art-pic.r5{box-shadow:0 0 12px 1px color-mix(in srgb,var(--metal) 45%,transparent)}
 .art-pic.back{display:grid;place-items:center;margin-bottom:0;padding:0;border:1px dashed var(--rule);background:var(--plate)} .art-pic.back .tg{opacity:.3}
-.art.sealed .art-pic{background:var(--t4);outline:none;box-shadow:none} .art.sealed .art-pic::after{content:none}
-.art.sealed .art-pic.back{background:var(--plate);border-color:var(--t4)}
-.art.sealed .art-rank{background:var(--t4);color:var(--ink)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
+.art.sealed .art-pic{background:linear-gradient(135deg,#4A515C,var(--rule))}
+.art.sealed .art-pic.back{margin-bottom:8px;background:var(--plate);border-color:var(--rule)}
+.art.sealed .art-pic img,.art.sealed .art-pic .tg{filter:grayscale(1);opacity:.45}
+.art-rank.lock{display:grid;place-items:center;padding:0;background:var(--raw);border:1px solid var(--rule)}
 .art.on{border-left-color:var(--brass)}
-.art.sealed{border-left-color:var(--t4)}
+.art.sealed{border-left-color:var(--rule)} .art.sealed b{color:var(--dim)} .art .sealed-line{color:var(--faint)}
 .art-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
 .art .m{font-size:.86rem;color:var(--dim)}
 .art .e{font-size:.86rem;color:var(--faint);font-style:italic}
-.art.sealed .pip.on{background:var(--t4);border-color:var(--t4)}
+.art.sealed .pip.on{background:var(--faint);border-color:var(--faint)}
 
 /* knots */
 .rope{width:100%;height:auto;display:block}

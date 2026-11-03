@@ -705,7 +705,7 @@ TIER_SEAL = {"Triumph": "triumph", "Hard-won": "hardwon", "Costly": "costly", "S
 # The palette, as in CSS :root. The drawings below carry their colours in the SVG itself, so a page shows them right even while a
 # browser still holds an older stylesheet; the stylesheet only places them.
 PAL = {"brass": "#CFA65F", "brass_dim": "#8A7044", "ember": "#E2713B", "good": "#72B396", "warn": "#D9A441", "bad": "#D0634D",
-       "ink": "#E8E2D4", "faint": "#646D79", "raw": "#262D37", "plate": "#161B22", "t3": "#A86B3C", "t4": "#7A4D86",
+       "ink": "#E8E2D4", "dim": "#9AA2AE", "faint": "#646D79", "raw": "#262D37", "plate": "#161B22", "t3": "#A86B3C", "t4": "#7A4D86",
        "t4_text": "#A77FB5", "t5": "#4062A3", "t6": "#8BB2D3"}
 SVG_LABEL_FONT = "Alegreya Sans SC, Alegreya Sans, Segoe UI, sans-serif"
 SVG_DISPLAY_FONT = "Grenze Gotisch, Georgia, serif"
@@ -725,15 +725,22 @@ def svg_tree(tree, size=22):
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
 
 
+def svg_lock(size=10):
+    """A small padlock: a sealed Art's card carries it where the rank's numeral would be."""
+    return (f'<svg class="lk" viewBox="0 0 12 12" width="{size}" height="{size}" aria-hidden="true">'
+            f'<path d="M3.8 5.6 V4.1 a2.2 2.2 0 0 1 4.4 0 V5.6" fill="none" stroke="{PAL["dim"]}" stroke-width="1.4"/>'
+            f'<rect x="2.2" y="5.4" width="7.6" height="5.6" rx="1.1" fill="{PAL["dim"]}"/></svg>')
+
+
 def rank_ring(rank, n, frac=0.0, label="", size=32, sealed=False):
     """An Art's rank as a ring of n segments: the filled ones its rank, the next one filling with practice; the numeral inside.
-    Violet while the Art is sealed (its rank banked)."""
+    Grey while the Art is sealed (its rank banked)."""
     import math
     r, c = 14, 18
     circ = 2 * math.pi * r
     step, gap = circ / max(n, 1), 3.0
-    on = PAL["t4"] if sealed else PAL["brass"]
-    part = PAL["t4"] if sealed else PAL["brass_dim"]
+    on = PAL["faint"] if sealed else PAL["brass"]
+    part = PAL["faint"] if sealed else PAL["brass_dim"]
     segs = [f'<circle cx="{c}" cy="{c}" r="{r}" fill="none" stroke="{PAL["raw"]}" stroke-width="4"/>']
     for i in range(n):
         if i < rank:
@@ -745,7 +752,7 @@ def rank_ring(rank, n, frac=0.0, label="", size=32, sealed=False):
         segs.append(f'<circle cx="{c}" cy="{c}" r="{r}" fill="none" stroke="{col}"{op} stroke-width="4" stroke-dasharray="{L:.2f} {circ - L:.2f}" '
                     f'stroke-dashoffset="{-i * step:.2f}" transform="rotate(-90 {c} {c})"/>')
     num = (f'<text x="{c}" y="{c + 0.5}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="11" '
-           f'font-weight="700" fill="{PAL["t4_text"] if sealed else PAL["ink"]}">{roman(rank) if rank else "·"}</text>')
+           f'font-weight="700" fill="{PAL["dim"] if sealed else PAL["ink"]}">{roman(rank) if rank else "·"}</text>')
     return f'<svg class="rring" viewBox="0 0 36 36" width="{size}" height="{size}" role="img" aria-label="{esc(label or f"rank {rank} of {n}")}">{"".join(segs)}{num}</svg>'
 
 
@@ -859,7 +866,9 @@ def sigil(faction, mark, size=64, cls="", label=""):
 # The metal of each rank, in the order of rules.json → levels.ranks (CSS .metal-*): the crest, the portrait's frame, the
 # plate's rivets and Darrow's round picture on the Now page take it. A rank past the end of this list keeps the last metal.
 METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
-ART_METALS = ("iron", "bronze", "steel", "silver", "gold")  # an Art card's frame, by its rank I-V (rules.json → art_ranks); bronze, not brass, so rank II never reads as gold
+# An Art card's frame, by its rank I-V (rules.json → art_ranks); bronze, not brass, so rank II never reads as gold. A sealed
+# Art is grey. Violet is kept for a tier above gold (a legendary Art), should one come: nothing else on the Arts panel uses it.
+ART_METALS = ("iron", "bronze", "steel", "silver", "gold")
 
 
 def crest(level, big=False):
@@ -2332,7 +2341,7 @@ class Site:
                 nxt = art.get("next_at")
                 frac = (art["practice"] - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
                 ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}", sealed=bool(sealed))
-                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank else ""}">{self.art_pic(art, rank, tree, rel)}'
+                rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank and not sealed else ""}">{self.art_pic(art, rank, tree, rel, bool(sealed))}'
                             f'<div class="art-txt"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
                             f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></div></li>')
             tree_html.append(f'<div class="tree"><h3>{svg_tree(tree)}{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
@@ -2351,16 +2360,18 @@ class Site:
                       f'<ul class="chron">{"".join(chap_rows)}</ul>' if chap_rows else '<p class="empty">No chapter has closed yet.</p>'))
         return sheet
 
-    def art_pic(self, art, rank, tree, rel):
-        """An Art's card picture, saga/art/arts/<art id>.webp (or .png, .jpg), once the Art has a rank (greyed while it is
-        sealed), framed in the rank's metal (ART_METALS) with the rank's numeral on the frame; the frame gains studs at III,
-        a second rule at IV and a glow at V (CSS .art-pic.rN). Before its first rank, or until its picture is drawn, the
-        tree's glyph stands in its place: a dashed blank before the first rank, the ranked frame after."""
+    def art_pic(self, art, rank, tree, rel, sealed=False):
+        """An Art's card picture, saga/art/arts/<art id>.webp (or .png, .jpg), once the Art has a rank, framed in the rank's
+        metal (ART_METALS) with the rank's numeral on the frame; the frame gains studs at III, a second rule at IV and a glow
+        at V (CSS .art-pic.rN). While it is sealed the card is greyed out: a plain grey frame, the picture grey and dim, a lock
+        where the numeral would be. Before its first rank, or until its picture is drawn, the tree's glyph stands in its
+        place: a dashed blank before the first rank, the ranked frame after."""
+        lock = f'<span class="art-rank lock" aria-hidden="true">{svg_lock()}</span>' if sealed else ""
         if not rank:
-            return f'<span class="art-pic back">{svg_tree(tree, 28)}</span>'
+            return f'<span class="art-pic back">{svg_tree(tree, 28)}{lock}</span>'
         step = min(rank, len(ART_METALS))
-        cls = f"art-pic metal-{ART_METALS[step - 1]} r{step}"
-        tab = f'<span class="art-rank" aria-hidden="true">{roman(rank)}</span>'
+        cls = "art-pic" + ("" if sealed else f" metal-{ART_METALS[step - 1]} r{step}")
+        tab = lock or f'<span class="art-rank" aria-hidden="true">{roman(rank)}</span>'
         got = self.named_picture("arts", art["id"], art["name"])
         if not got:
             return f'<span class="{cls}"><span class="art-in">{svg_tree(tree, 28)}</span>{tab}</span>'
@@ -3587,7 +3598,8 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .art{display:grid;grid-template-columns:64px minmax(0,1fr);gap:3px 12px;align-items:start;border-left:2px solid var(--rule);padding-left:12px}
 .art-txt{display:grid;gap:3px;min-width:0}
 /* an Art's card picture (art_pic): a frame in its rank's metal with the rank's numeral on it, and more to the frame as the
-   rank climbs: studs at III, a second rule at IV, a glow at V. A dashed blank before its first rank; violet and greyed while sealed */
+   rank climbs: studs at III, a second rule at IV, a glow at V. A dashed blank before its first rank. Sealed: greyed out, a lock
+   where the numeral would be (violet is kept for a tier above gold, should one come) */
 .art-pic{position:relative;display:block;box-sizing:border-box;width:64px;aspect-ratio:1/1;margin-bottom:8px;padding:3px;border-radius:7px;
   background:linear-gradient(135deg,var(--metal-hi),var(--metal-dim) 45%,var(--metal) 70%,var(--metal-dim))}
 a.art-pic{cursor:zoom-in}
@@ -3603,15 +3615,16 @@ a.art-pic{cursor:zoom-in}
 .art-pic.r4,.art-pic.r5{outline:1px solid var(--metal);outline-offset:2px}
 .art-pic.r5{box-shadow:0 0 12px 1px color-mix(in srgb,var(--metal) 45%,transparent)}
 .art-pic.back{display:grid;place-items:center;margin-bottom:0;padding:0;border:1px dashed var(--rule);background:var(--plate)} .art-pic.back .tg{opacity:.3}
-.art.sealed .art-pic{background:var(--t4);outline:none;box-shadow:none} .art.sealed .art-pic::after{content:none}
-.art.sealed .art-pic.back{background:var(--plate);border-color:var(--t4)}
-.art.sealed .art-rank{background:var(--t4);color:var(--ink)} .art.sealed .art-pic img{filter:grayscale(1);opacity:.55}
+.art.sealed .art-pic{background:linear-gradient(135deg,#4A515C,var(--rule))}
+.art.sealed .art-pic.back{margin-bottom:8px;background:var(--plate);border-color:var(--rule)}
+.art.sealed .art-pic img,.art.sealed .art-pic .tg{filter:grayscale(1);opacity:.45}
+.art-rank.lock{display:grid;place-items:center;padding:0;background:var(--raw);border:1px solid var(--rule)}
 .art.on{border-left-color:var(--brass)}
-.art.sealed{border-left-color:var(--t4)}
+.art.sealed{border-left-color:var(--rule)} .art.sealed b{color:var(--dim)} .art .sealed-line{color:var(--faint)}
 .art-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
 .art .m{font-size:.86rem;color:var(--dim)}
 .art .e{font-size:.86rem;color:var(--faint);font-style:italic}
-.art.sealed .pip.on{background:var(--t4);border-color:var(--t4)}
+.art.sealed .pip.on{background:var(--faint);border-color:var(--faint)}
 
 /* knots */
 .rope{width:100%;height:auto;display:block}
