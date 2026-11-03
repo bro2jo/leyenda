@@ -56,7 +56,11 @@
             },
             null
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 3,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -483,29 +487,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 2,
-    "chapter": 5,
-    "scene": "2",
-    "opened": "2026-11-02",
-    "axis": "candor_guile",
-    "ask": "The reeve asks, through the bars, who rides on the Thorne cart. What does Darrow say?",
-    "options": [
-      "\"Darrow of Edgemoor. The one on your post.\"",
-      "\"Salt, a sick man and his nurse. Ask the carter.\"",
-      "Let Rae answer for her own cart."
-    ],
-    "bearing": [
-      {
-        "Candor": 1
-      },
-      {
-        "Guile": 1
-      },
-      null
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": []
   },

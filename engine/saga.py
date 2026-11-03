@@ -1852,6 +1852,8 @@ def validate_entry(entry, ledger, plan, bearing=None, world=None, pending=False,
     if eid in ids:
         probs.append(f"id {eid} already in the ledger")
     made = entry.get("made")
+    if isinstance(made, dict) and re.match(r"^s\d+$", str(made.get("scene", ""))):
+        made["scene"] = str(made["scene"])[1:]  # a scene is keyed by its number ("2"), as the page's blocks are; "s2" is the record key's spelling
     if not isinstance(made, dict) or not {"chapter", "scene", "date"} <= set(made):
         probs.append("made must be {chapter, scene, date}")
     elif ENTRY_ID_RE.match(eid) and int(ENTRY_ID_RE.match(eid).group(1)) != int(made["chapter"]):

@@ -12,7 +12,7 @@
 - **The tales:** Tale 1 — Quickstep (1 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** Writs on the posts with his name first and the Mender's under it; a frightened hamlet at the gate.
 - **Next:** The reeve wants an answer: who rides on the Thorne cart.
-- **Open choice (a small one):** The reeve asks, through the bars, who rides on the Thorne cart. What does Darrow say? 1. "Darrow of Edgemoor. The one on your post." / 2. "Salt, a sick man and his nurse. Ask the carter." / 3. Let Rae answer for her own cart.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 
