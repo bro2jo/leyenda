@@ -324,7 +324,7 @@ When the others had gone under their blankets, Rae got up to see to the oxen. On
 
 ### Between — From the Belly
 
-The cold had got into the knee while he lay still, as it did now when he lay still, and getting up off the ground took the wall, the stick and a word to the knee that his mother would not have liked. He went over to the oxen anyway.
+Darrow lay under his blanket after the reeve's lantern had gone, long enough for the cold to get into the knee, as it always did now when he lay still. Getting up off the ground took the wall, the stick and a word to the knee that his mother would not have liked. He went over to the oxen anyway.
 
 Rae had them on a short tie in the lee of the wall, out of the wind, and she was going over Hob by feel in the dark: the shoulders where the yoke sat, the dewlap, down each leg to the foot. She heard him coming the whole way and kept her back to him.
 
@@ -342,7 +342,7 @@ Rae had them on a short tie in the lee of the wall, out of the wind, and she was
 
 "I'm talking to him like a sergeant."
 
-"He likes that less." But she had bent to the near fore, and lifted it with her shoulder in against the leg, and was working at the cleft with the point of her knife, and her back had gone unsteady: she was trying not to laugh at a man telling an ox it had been patient.
+"He likes that less." But she had bent to Hob's near forefoot and lifted it with her shoulder against the leg, and was working at the split of the hoof with the point of her knife. Her back had gone unsteady. She was trying not to laugh at a man telling an ox it had been patient.
 
 A stone came out of the cleft and clicked off the wall. She set the foot down. Hob shifted, all of him at once, as oxen do, and leaned toward the warm of the ashes, and Rae said a word.
 
@@ -370,4 +370,4 @@ He tried it from the belly. It came out deeper and no more right, and Dun, who w
 
 "I'll keep it."
 
-He went back to his blanket saying it under his breath, and got it wrong all the way there. Behind him, into Hob's neck, where nobody was meant to hear it, Rae laughed again.
+He went back to his blanket saying it under his breath, a word for stand, and got it wrong all the way there. Behind him, into Hob's neck, where nobody was meant to hear it, Rae laughed again.
