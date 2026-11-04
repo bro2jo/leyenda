@@ -921,43 +921,253 @@ def route_legs(route, P):
     return legs
 
 
+# ------------------------------------------------------------ the map's terrain (drawn here, the same every build)
+# One 400x300 country: the sea and its coast in the west, the Greywater across the north, the Thornwild in the east,
+# the Wend from the forest to the sea, the Holloway down the middle. Only terrain: nothing here names a place, and a
+# feature the page has not shown stays unlabelled (the grey waste in the south-east). Colours are written on the
+# drawing itself, so it never depends on the stylesheet; the labels, the markers and the route keep their CSS classes.
+MAP_COAST = "M58 0 C48 40 70 70 56 110 C44 150 66 190 52 230 C42 260 62 280 54 300"
+MAP_WEND = [((57, 194), (72, 188), (86, 188), (98, 186)), ((98, 186), (130, 180), (160, 204), (196, 196)),
+            ((196, 196), (230, 188), (262, 200), (300, 190)), ((300, 190), (330, 182), (356, 190), (396, 176))]
+MAP_THORNWILD = [(316, 98), (328, 92), (344, 90), (360, 93), (376, 97), (394, 104), (406, 104), (406, 238), (388, 231),
+                 (372, 234), (356, 229), (340, 234), (326, 228), (318, 214), (313, 196), (316, 178), (311, 160), (314, 140), (311, 122)]
+MAP_WASTE = [(272, 220), (290, 214), (312, 222), (338, 236), (372, 240), (376, 262), (368, 282), (336, 278), (304, 286), (282, 276), (270, 252)]
+MAP_TARN = [(218, 150), (221, 143), (231, 140), (241, 141), (250, 145), (252, 151), (246, 156), (236, 159), (225, 158)]
+MAP_HOLLOWAY = "M214 118 C206 150 212 190 210 222 C209 240 213 250 214 258"
+MAP_STEPS = "M200 68 L212 74 L198 80 L212 86 L198 92 L212 98 L200 104 L214 110 L214 118"
+# the Greywater: (x, base y, half width, height), back row first
+MAP_PEAKS = [(128, 60, 12, 20), (152, 54, 12, 24), (176, 48, 11, 22), (228, 48, 12, 24), (254, 54, 12, 22), (278, 60, 11, 18),
+             (116, 72, 11, 17), (140, 70, 13, 25), (164, 64, 13, 30), (188, 58, 12, 26), (206, 56, 15, 34),
+             (232, 62, 13, 28), (258, 68, 13, 22), (282, 72, 10, 16)]
+MAP_HILLS = [(70, 112, 1.0), (84, 106, .8), (96, 116, 1.05), (64, 126, .85), (82, 124, .9), (106, 104, .75)]
+MAP_COPSES = [(98, 150, 6), (150, 254, 5), (254, 250, 5), (178, 118, 4), (126, 228, 4), (240, 104, 3)]
+MAP_TUFTS = (224, 112, 300, 160)
+
+
+def _rand(seed):
+    s = [seed % 2147483647 or 1]
+
+    def r():
+        s[0] = (s[0] * 48271) % 2147483647
+        return s[0] / 2147483647
+    return r
+
+
+def _inside(x, y, poly):
+    c, j = False, len(poly) - 1
+    for i in range(len(poly)):
+        (xi, yi), (xj, yj) = poly[i], poly[j]
+        if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+            c = not c
+        j = i
+    return c
+
+
+def _f(v):
+    return f"{v:.1f}".rstrip("0").rstrip(".") if abs(v - round(v)) > 1e-9 else str(int(round(v)))
+
+
+def _smooth(pts):
+    """A closed curve through the points (Catmull-Rom as cubic Béziers)."""
+    n = len(pts)
+    d = f"M{_f(pts[0][0])} {_f(pts[0][1])}"
+    for i in range(n):
+        p0, p1, p2, p3 = pts[(i - 1) % n], pts[i], pts[(i + 1) % n], pts[(i + 2) % n]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f" C{_f(c1[0])} {_f(c1[1])} {_f(c2[0])} {_f(c2[1])} {_f(p2[0])} {_f(p2[1])}"
+    return d + " Z"
+
+
+def _scallop(poly, step=6.5, bulge=2.4):
+    """A wood's edge: small outward arcs all round the polygon, like the crowns of its outer trees."""
+    pts = []
+    for i, a in enumerate(poly):
+        b = poly[(i + 1) % len(poly)]
+        k = max(1, round(((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** .5 / step))
+        pts += [(a[0] + (b[0] - a[0]) * j / k, a[1] + (b[1] - a[1]) * j / k) for j in range(k)]
+    d = f"M{_f(pts[0][0])} {_f(pts[0][1])}"
+    for i, a in enumerate(pts):
+        b = pts[(i + 1) % len(pts)]
+        mx, my, dx, dy = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2, b[0] - a[0], b[1] - a[1]
+        ln = (dx * dx + dy * dy) ** .5 or 1
+        nx, ny = dy / ln, -dx / ln
+        if _inside(mx + nx, my + ny, poly):
+            nx, ny = -nx, -ny
+        d += f" Q{_f(mx + nx * bulge * 2)} {_f(my + ny * bulge * 2)} {_f(b[0])} {_f(b[1])}"
+    return d + " Z"
+
+
+def _bez(seg, t):
+    (x0, y0), (x1, y1), (x2, y2), (x3, y3) = seg
+    u = 1 - t
+    return (u ** 3 * x0 + 3 * u * u * t * x1 + 3 * u * t * t * x2 + t ** 3 * x3, u ** 3 * y0 + 3 * u * u * t * y1 + 3 * u * t * t * y2 + t ** 3 * y3)
+
+
+MAP_WEND_PTS = [_bez(s, t / 12) for s in MAP_WEND for t in range(13)]
+
+
+def _near_wend(x, y, d):
+    return any((x - px) ** 2 + (y - py) ** 2 < d * d for px, py in MAP_WEND_PTS)
+
+
+def map_label_box(p):
+    """Roughly where a place's map label sits (x0, y0, x1, y1), so the trees and the tufts leave it a clearing."""
+    text = p.get("label") or p["name"]
+    kind = p.get("kind")
+    if kind in MAP_TERRAIN:
+        cw = 5.2 if kind in ("road", "stair", "river") else 7.4
+        w, x, y = len(text) * cw, p["x"], p["y"]
+        anchor = p.get("anchor", "middle")
+    else:
+        w, x = len(text) * 6.2, p["x"]
+        y = p["y"] + (14 if p.get("label_below") else -11 if kind in ("city", "house") else -8)
+        anchor = "end" if x > 330 else ("start" if x < 70 else "middle")
+    x0 = x - w / 2 if anchor == "middle" else (x - w if anchor == "end" else x)
+    return (x0 - 3, y - 11, x0 + w + 3, y + 4)
+
+
+def map_terrain(places):
+    """The country under the labels: land, sea, mountains, wood, water, roads, a frame. Deterministic."""
+    boxes = [map_label_box(p) for p in places if p.get("draw") is not False or p.get("kind") in MAP_TERRAIN]
+    clear = lambda x, y, pad=0: not any(b[0] - pad <= x <= b[2] + pad and b[1] - pad <= y <= b[3] + pad for b in boxes)
+    r = _rand(1117)
+    o = []
+    o.append('<defs>'
+             '<radialGradient id="mp-land" cx="52%" cy="46%" r="70%"><stop offset="0" stop-color="#1A2028"/><stop offset=".65" stop-color="#161B22"/><stop offset="1" stop-color="#101318"/></radialGradient>'
+             '<linearGradient id="mp-deep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0A1018"/><stop offset="1" stop-color="#122033"/></linearGradient>'
+             '<radialGradient id="mp-vig" cx="50%" cy="50%" r="75%"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></radialGradient>'
+             '<filter id="mp-grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/>'
+             '<feColorMatrix values="0 0 0 0 .9  0 0 0 0 .85  0 0 0 0 .75  0 0 0 .07 0"/></filter>'
+             '<g id="mp-oak"><circle r="4" fill="#1F2B26" stroke="#0B100E" stroke-width=".8"/>'
+             '<path d="M-3 -1 A3.1 3.1 0 0 1 1 -3" fill="none" stroke="#7E9B88" stroke-width=".8" stroke-linecap="round"/></g>'
+             '<g id="mp-oak-s"><circle r="3.3" fill="#1D2924" stroke="#0B100E" stroke-width=".8"/>'
+             '<path d="M-2.4 -.8 A2.5 2.5 0 0 1 .8 -2.4" fill="none" stroke="#7E9B88" stroke-width=".75" stroke-linecap="round"/></g>'
+             '<g id="mp-pine"><path d="M0 -5.6 L3.3 2.2 L-3.3 2.2 Z" fill="#1B2722" stroke="#0B100E" stroke-width=".8" stroke-linejoin="round"/>'
+             '<path d="M-.5 -3.9 L-1.9 -.6" stroke="#7E9B88" stroke-width=".7" stroke-linecap="round" opacity=".8"/></g>'
+             '<g id="mp-hill"><path d="M-6.5 0 C-4.4 -6 4.4 -6 6.5 0" fill="#181D24" stroke="#8A929E" stroke-width=".9" stroke-linecap="round"/>'
+             '<path d="M1.6 -3.6 L3.4 -.6 M3.4 -2.6 L4.9 -.4" stroke="#545D69" stroke-width=".6" stroke-linecap="round"/></g>'
+             '<g id="mp-tuft"><path d="M-1.7 0 L-2.6 -2.1 M0 0 V-2.8 M1.7 0 L2.6 -2.1" stroke="#535C68" stroke-width=".6" stroke-linecap="round"/></g>'
+             '<g id="mp-wave"><path d="M-6 0 q3 -2.4 6 0 t6 0" fill="none" stroke="#4A6FB0" stroke-width=".7" stroke-linecap="round"/></g>'
+             '</defs>')
+    # land and sea
+    o.append('<rect width="400" height="300" fill="url(#mp-land)"/>')
+    o.append(f'<path d="{MAP_COAST} L0 300 L0 0 Z" fill="url(#mp-deep)"/>')
+    for dx, op in ((-3.5, .5), (-7.5, .3), (-12.5, .15)):  # the water lines along the shore
+        o.append(f'<path d="{MAP_COAST}" transform="translate({dx} 0)" fill="none" stroke="#4062A3" stroke-width=".7" opacity="{op}"/>')
+    o.append(f'<path d="{MAP_COAST}" fill="none" stroke="#5A7FBF" stroke-width="1.3"/>')
+    for x, y in ((18, 40), (30, 92), (14, 146), (34, 176), (20, 222), (30, 268)):
+        o.append(f'<use href="#mp-wave" x="{x}" y="{y}" opacity=".55"/>')
+    # the moor above the tarn
+    tufts = []
+    for _ in range(70):
+        x, y = 70 + r() * 240, 84 + r() * 196
+        if (clear(x, y, 3) and not _inside(x, y, MAP_THORNWILD) and not _inside(x, y, MAP_WASTE) and not _near_wend(x, y, 6)
+                and abs(x - 211) > 8 and not (205 < x < 300 and 112 < y < 160)):
+            tufts.append(f'<use href="#mp-tuft" x="{_f(x)}" y="{_f(y)}" opacity=".7"/>')
+    for _ in range(26):
+        x, y = MAP_TUFTS[0] + r() * (MAP_TUFTS[2] - MAP_TUFTS[0]), MAP_TUFTS[1] + r() * (MAP_TUFTS[3] - MAP_TUFTS[1])
+        if clear(x, y, 2) and not _inside(x, y, MAP_TARN) and abs(x - 212) > 6:
+            tufts.append(f'<use href="#mp-tuft" x="{_f(x)}" y="{_f(y)}"/>')
+    o.append("".join(tufts))
+    # the grey waste: stippled, never named until the page names it
+    dots = []
+    for _ in range(420):
+        x, y = 266 + r() * 114, 210 + r() * 80
+        if _inside(x, y, MAP_WASTE) and clear(x, y):
+            dots.append(f"M{_f(x)} {_f(y)}h0")
+    o.append(f'<path d="{_smooth(MAP_WASTE)}" fill="#14171C" stroke="#4A5360" stroke-width=".6" stroke-dasharray="1.5 2.5"/>')
+    o.append(f'<path d="{"".join(dots)}" stroke="#7D8692" stroke-width="1.05" stroke-linecap="round" opacity=".55"/>')
+    # Edgemoor's hills
+    o.append("".join(f'<use href="#mp-hill" transform="translate({x} {y}) scale({s})"/>' for x, y, s in MAP_HILLS))
+    # the Greywater: shaded on the east faces, snow on the tops; foothills under it
+    pk = []
+    for x, by, w, h in MAP_PEAKS:
+        ax, ay = x + w * .08, by - h
+        lx, rx = x - w, x + w
+        pk.append(f'<path d="M{_f(lx)} {by} L{_f(ax)} {_f(ay)} L{_f(rx)} {by} Z" fill="#181D25"/>')
+        pk.append(f'<path d="M{_f(ax)} {_f(ay)} L{_f(rx)} {by} L{_f(x + w * .25)} {by} L{_f(x + w * .02)} {_f(by - h * .5)} Z" fill="#0F1318"/>')
+        hatch = "".join(f"M{_f(ax + (rx - ax) * t + 1)} {_f(ay + (by - ay) * t + .5)} L{_f(ax + (rx - ax) * t - w * .28)} {_f(ay + (by - ay) * t + h * .16)}" for t in (.45, .6, .75, .9))
+        pk.append(f'<path d="{hatch}" stroke="#3E4652" stroke-width=".55" stroke-linecap="round"/>')
+        sl = .3 if h > 20 else .24
+        snow = (f"M{_f(ax)} {_f(ay)} L{_f(ax + (rx - ax) * sl)} {_f(ay + h * sl)} L{_f(ax + (rx - ax) * sl * .45)} {_f(ay + h * sl * .7)} "
+                f"L{_f(ax)} {_f(ay + h * sl * 1.05)} L{_f(ax - (ax - lx) * sl * .5)} {_f(ay + h * sl * .75)} L{_f(ax - (ax - lx) * sl)} {_f(ay + h * sl)} Z")
+        pk.append(f'<path d="{snow}" fill="#C9CED6" opacity=".82"/>')
+        pk.append(f'<path d="M{_f(lx)} {by} L{_f(ax)} {_f(ay)} L{_f(rx)} {by}" fill="none" stroke="#A3ABB7" stroke-width=".95" stroke-linejoin="round" stroke-linecap="round"/>')
+    o.append("".join(pk))
+    o.append("".join(f'<use href="#mp-hill" transform="translate({x} {y}) scale({s})"/>' for x, y, s in
+                     ((112, 76, .6), (130, 75, .55), (150, 74, .62), (176, 69, .5), (226, 67, .5), (244, 72, .6), (268, 75, .55), (288, 75, .5))))
+    # the Thornwild: a scalloped edge, then the trees, back to front, with a clearing for its name and the river's course
+    o.append(f'<path d="{_scallop(MAP_THORNWILD)}" fill="#131B18" stroke="#4E6658" stroke-width=".8" stroke-linejoin="round"/>')
+    trees, y, row = [], 95.0, 0
+    while y < 238:
+        x = 306 + (row % 2) * 3.3
+        while x < 410:
+            jx, jy = x + (r() - .5) * 2.6, y + (r() - .5) * 2.2
+            if (all(_inside(jx + dx, jy + dy, MAP_THORNWILD) for dx, dy in ((-2.5, 0), (2.5, 0), (0, -3), (0, 3)))
+                    and not _near_wend(jx, jy, 5.6) and clear(jx, jy, 1.5)):
+                v = r()
+                trees.append((jy, jx, "pine" if v < .14 else "oak-s" if v < .45 else "oak"))
+            x += 6.6
+        y += 5.4
+        row += 1
+    for x, y, n in MAP_COPSES:  # small woods in the open country
+        for _ in range(n):
+            jx, jy = x + (r() - .5) * 12, y + (r() - .5) * 6
+            if clear(jx, jy, 2) and not _near_wend(jx, jy, 5):
+                trees.append((jy, jx, "pine" if r() < .3 else "oak-s"))
+    o.append("".join(f'<use href="#mp-{kind}" x="{_f(x)}" y="{_f(y)}"/>' for y, x, kind in sorted(trees)))
+    # the tarn at Coldmere and the Wend, wide at the sea and narrow in the wood
+    o.append(f'<path d="{_smooth(MAP_TARN)}" fill="#0E1726" stroke="#5A7FBF" stroke-width="1"/>')
+    o.append(f'<path d="{_smooth([(232 + (x - 235) * .7, 150 + (y - 150) * .62) for x, y in MAP_TARN])}" fill="none" stroke="#4062A3" stroke-width=".5" opacity=".5"/>')
+    whole = "M57 194" + "".join(f" C{a[0]} {a[1]} {b[0]} {b[1]} {c[0]} {c[1]}" for _, a, b, c in MAP_WEND)
+    o.append(f'<path d="{whole}" fill="none" stroke="#4062A3" stroke-width="4.2" stroke-linecap="round" opacity=".22"/>')
+    for seg, wd in zip(MAP_WEND, (2.9, 2.5, 2.1, 1.6)):
+        (x0, y0), a, b, c = seg
+        o.append(f'<path d="M{x0} {y0} C{a[0]} {a[1]} {b[0]} {b[1]} {c[0]} {c[1]}" fill="none" stroke="#5A7FBF" stroke-width="{wd}" stroke-linecap="round"/>')
+    o.append('<path d="M300 182 L300 198 M292 184 L292 196 M308 184 L308 196" stroke="#B4BBC6" stroke-width="1.3" stroke-linecap="round"/>')
+    # the Holloway and the Steps
+    o.append(f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#0E1116" stroke-width="2.6" stroke-linecap="round"/>'
+             f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#9A7D4C" stroke-width="1" stroke-dasharray="3 2.4" class="mp-road"/>')
+    o.append(f'<path d="{MAP_STEPS}" fill="none" stroke="#9AA2AE" stroke-width="1" stroke-linejoin="round" class="mp-steps"/>')
+    # grain and shade over the whole country
+    o.append('<rect width="400" height="300" filter="url(#mp-grain)"/><rect width="400" height="300" fill="url(#mp-vig)"/>')
+    return "".join(o)
+
+
+def map_frame():
+    """The border and the compass, drawn over everything but the labels."""
+    corners = "".join(f'<path d="M{x} {y - 3.2} L{x + 3.2} {y} L{x} {y + 3.2} L{x - 3.2} {y} Z" fill="#CFA65F"/>' for x, y in ((5, 5), (395, 5), (5, 295), (395, 295)))
+    rose = ('<g class="mp-compass" transform="translate(372 34)">'
+            '<circle r="10.5" fill="#12161C" fill-opacity=".7" stroke="#8A7044" stroke-width=".7"/><circle r="7.6" fill="none" stroke="#8A7044" stroke-width=".4"/>'
+            '<path d="M0 -14 L2.6 0 L0 14 L-2.6 0 Z M-14 0 L0 2.6 L14 0 L0 -2.6 Z" fill="#8A7044"/>'
+            '<path d="M0 -14 L2.6 0 L0 0 Z M14 0 L0 2.6 L0 0 Z M0 14 L-2.6 0 L0 0 Z M-14 0 L0 -2.6 L0 0 Z" fill="#CFA65F"/>'
+            '<path d="M-6 -6 L1 0 L-6 6 M6 -6 L-1 0 L6 6" fill="none" stroke="#8A7044" stroke-width=".6" opacity=".8" transform="rotate(0)"/>'
+            '<text y="-17" text-anchor="middle" fill="#CFA65F">N</text></g>')
+    return (f'<rect x="3" y="3" width="394" height="294" fill="none" stroke="#8A7044" stroke-width=".9"/>'
+            f'<rect x="6.5" y="6.5" width="387" height="287" fill="none" stroke="#8A7044" stroke-width=".35" opacity=".7"/>{corners}{rose}')
+
+
+def map_label(p, text, cls):
+    """A terrain label: straight, or bowed along a gentle arc when places.json gives it one ("arc": + bows up, - sags)."""
+    x, y, anchor = p["x"], p["y"], p.get("anchor", "middle")
+    arc = p.get("arc")
+    if not arc:
+        return f'<text x="{x}" y="{y}" text-anchor="{esc(anchor)}" class="{cls}">{text}</text>'
+    half = max(40, len(p.get("label") or p["name"]) * 5)
+    pid = f'mp-arc-{esc(p["id"])}'
+    return (f'<path id="{pid}" d="M{x - half} {y} Q{x} {y - 2 * arc} {x + half} {y}" fill="none"/>'
+            f'<text class="{cls}"><textPath href="#{pid}" startOffset="50%" text-anchor="middle">{text}</textPath></text>')
+
+
 def svg_map(places, route, current_id, rel):
-    """An original map of the story's country. Terrain is drawn here; places and the route come from places.json.
-    The route's last leg is the road he is on now (bright; the legs before it fainter) and Darrow stands at its end.
-    A place the page has named is a link to its Codex entry."""
+    """An original map of the story's country. Terrain is drawn here (map_terrain); places and the route come from
+    places.json. The route's last leg is the road he is on now (bright; the legs before it fainter) and Darrow stands at
+    its end. A place the page has named is a link to its Codex entry."""
     P = {p["id"]: p for p in places}
     cur = P.get(current_id)
     title = "Map of Darrow's country" + (f". Darrow: {cur.get('label') or cur['name']}" if cur else "")
-    out = [f'<svg class="map" viewBox="0 0 400 300" aria-labelledby="map-t"><title id="map-t">{esc(title)}</title>',
-           '<defs><pattern id="ash" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" class="mp-hatch"/></pattern>'
-           '<pattern id="wood" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M7 2 L11 10 L3 10 Z" class="mp-tree"/></pattern></defs>',
-           '<rect x="0" y="0" width="400" height="300" class="mp-bg"/>',
-           # the sea and the coast, west
-           '<path d="M0 0 L58 0 C48 40 70 70 56 110 C44 150 66 190 52 230 C42 260 62 280 54 300 L0 300 Z" class="mp-sea"/>',
-           '<path d="M10 52 q5 -3 10 0 t10 0 M18 128 q5 -3 10 0 t10 0 M8 176 q5 -3 10 0 t10 0 M14 262 q5 -3 10 0 t10 0" class="mp-wave"/>',
-           '<path d="M58 0 C48 40 70 70 56 110 C44 150 66 190 52 230 C42 260 62 280 54 300" class="mp-coast"/>',
-           # the peaks, north
-           '<path d="M120 62 L138 34 L152 56 L166 28 L182 54 L200 22 L218 54 L234 30 L250 58 L266 36 L280 62" class="mp-peaks"/>',
-           '<path d="M130 70 L146 50 L160 68 M236 68 L252 48 L268 68" class="mp-peaks2"/>',
-           # the Edgemoor hills, west
-           '<path d="M54 104 C62 92 76 92 84 104 M72 112 C80 100 94 100 102 112" class="mp-hills"/>',
-           # the Thornwild, east
-           '<path d="M318 96 C340 90 372 96 392 106 L396 232 C370 226 344 236 320 226 C312 190 310 140 318 96 Z" class="mp-wood"/>',
-           # a grey waste in the south-east: drawn as terrain, never labelled, until the page names it
-           '<path d="M272 218 C300 212 340 236 372 240 L368 282 C334 278 300 286 272 272 Z" class="mp-ash"/>',
-           # the Wend, from the Thornwild to the sea
-           '<path d="M57 194 C72 188 86 188 98 186 C130 180 160 204 196 196 C230 188 262 200 300 190 C330 182 356 190 396 176" class="mp-river"/>',
-           '<path d="M300 182 L300 198 M292 184 L292 196 M308 184 L308 196" class="mp-stones"/>',
-           # the tarn at Coldmere
-           '<path d="M218 150 C218 142 230 139 240 141 C250 143 253 151 246 156 C238 161 222 159 218 150 Z" class="mp-lake"/>',
-           # the Holloway
-           '<path d="M214 118 C206 150 212 190 210 222 C209 240 213 250 214 258" class="mp-road"/>',
-           # the Thousand Steps
-           '<path d="M200 68 L212 74 L198 80 L212 86 L198 92 L212 98 L200 104 L214 110 L214 118" class="mp-steps"/>',
-           # north
-           '<g class="mp-compass" transform="translate(376 30)"><path d="M0 -11 L3 0 L0 11 L-3 0 Z M-11 0 L0 3 L11 0 L0 -3 Z"/>'
-           '<text y="-14" text-anchor="middle">N</text></g>',
-           ]
+    out = [f'<svg class="map" viewBox="0 0 400 300" aria-labelledby="map-t"><title id="map-t">{esc(title)}</title>', map_terrain(places)]
 
     def linked(p, inner):
         if not p.get("on_page"):
@@ -969,29 +1179,35 @@ def svg_map(places, route, current_id, rel):
     for i, leg in enumerate(legs):
         if len(leg) > 1:
             d = " ".join(f"{'M' if j == 0 else 'L'}{x} {y}" for j, (x, y) in enumerate(leg))
-            out.append(f'<path d="{d}" class="mp-route{"" if i == len(legs) - 1 else " past"}"/>')
-    # region labels (map only)
+            out.append(f'<path d="{d}" class="mp-route{"" if i == len(legs) - 1 else " past"}" fill="none" stroke="#E2713B"/>')
+    out.append(map_frame())
+    # terrain labels, by kind: regions in spaced capitals, water in italic blue, roads in italic
     for p in places:
-        if p.get("kind") in MAP_TERRAIN:
-            cls = "mp-lbl region" + ("" if p.get("on_page") else " faint")
-            out.append(linked(p, f'<text x="{p["x"]}" y="{p["y"]}" text-anchor="{esc(p.get("anchor", "middle"))}" class="{cls}">{esc(p.get("label") or p["name"])}</text>'))
+        kind = p.get("kind")
+        if kind in MAP_TERRAIN:
+            style = "water" if kind == "river" else "way" if kind in ("road", "stair") else "region"
+            cls = f"mp-lbl {style}" + (" big" if p.get("big") else "") + ("" if p.get("on_page") else " faint")
+            out.append(linked(p, map_label(p, esc(p.get("label") or p["name"]), cls)))
     for p in places:
         if not map_point(p):
             continue
         x, y = p["x"], p["y"]
         here = p["id"] == current_id
+        kind = p.get("kind")
         cls = "mp-pt" + (" visited" if p.get("visited") else "") + (" current" if here else "") + ("" if p.get("on_page") else " faint")
         g = [f'<g class="{cls}">']
         if here:
-            g.append(f'<circle cx="{x}" cy="{y}" r="9" class="mp-ring"/>')
-        if p.get("kind") == "city":
-            g.append(f'<path d="M{x-5} {y+4} L{x-5} {y-3} L{x} {y-8} L{x+5} {y-3} L{x+5} {y+4} Z" class="mp-dot"/>')
-        elif p.get("kind") == "house":
-            g.append(f'<path d="M{x-5} {y+4} L{x-5} {y-2} L{x} {y-7} L{x+5} {y-2} L{x+5} {y+4} Z M{x} {y-11} L{x} {y-7}" class="mp-dot"/>')
+            g.append(f'<circle cx="{x}" cy="{y}" r="9" class="mp-ring" fill="none" stroke="#E2713B"/>')
+        if kind == "city":  # a walled town with a spire
+            g.append(f'<path d="M{x - 6} {y + 4} V{y - 2} h1.8 v-2 h1.4 v2 h1.6 L{x} {y - 11} L{x + 1.2} {y - 2} h1.6 v-2 h1.4 v2 h1.8 V{y + 4} Z" '
+                     f'class="mp-dot" fill="#7D8692" stroke="#0E1116" stroke-width=".8" stroke-linejoin="round"/>')
+        elif kind == "house":  # a hall with its bell tower
+            g.append(f'<path d="M{x - 6} {y + 4} V{y - 1} L{x - 2.5} {y - 4} L{x + 1} {y - 1} V{y + 4} Z M{x + 1} {y + 4} V{y - 5} L{x + 3} {y - 9} L{x + 5} {y - 5} V{y + 4} Z" '
+                     f'class="mp-dot" fill="#7D8692" stroke="#0E1116" stroke-width=".8" stroke-linejoin="round"/>')
         else:
-            g.append(f'<circle cx="{x}" cy="{y}" r="3.2" class="mp-dot"/>')
+            g.append(f'<circle cx="{x}" cy="{y}" r="3.2" class="mp-dot" fill="#7D8692" stroke="#0E1116" stroke-width="1.1"/>')
         anchor = "end" if x > 330 else ("start" if x < 70 else "middle")
-        dy = -11 if p.get("kind") in ("city", "house") else -8
+        dy = -11 if kind in ("city", "house") else -8
         dx = 0
         if p.get("label_below"):
             dy = 14
@@ -1003,7 +1219,8 @@ def svg_map(places, route, current_id, rel):
     # Darrow, at the end of the road so far, when he is on a road or in open country rather than at a place with a marker
     if legs and not map_point(cur):
         x, y = legs[-1][-1]
-        out.append(f'<g class="mp-here"><circle cx="{x}" cy="{y}" r="9" class="mp-ring"/><circle cx="{x}" cy="{y}" r="3.6" class="mp-dot"/></g>')
+        out.append(f'<g class="mp-here"><circle cx="{x}" cy="{y}" r="9" class="mp-ring" fill="none" stroke="#E2713B"/>'
+                   f'<circle cx="{x}" cy="{y}" r="3.6" class="mp-dot" fill="#E2713B" stroke="#161B22" stroke-width="1.2"/></g>')
     out.append("</svg>")
     return "".join(out)
 

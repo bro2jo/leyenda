@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints, and null starts a new leg (the legs before the last are drawn fainter); the map draws Darrow at the route's end, so extend it whenever he moves (the build refuses a route that does not end at his place when that place has a marker). Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). For a terrain label (a region, river, road or the like): arc (a number: it bows along a gentle curve, + up, - down) and big (true: the wide-spaced capitals of a broad country). route is a list of place ids or [x, y] waypoints, and null starts a new leg (the legs before the last are drawn fainter); the map draws Darrow at the route's end, so extend it whenever he moves (the build refuses a route that does not end at his place when that place has a marker). Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
   "places": [
     {
       "id": "saint-ysoldes",
@@ -150,7 +150,8 @@
       "description": "Darrow's country: he had the fastest feet in it, and its children count the lances in a rhyme. Its villages have bell-houses, from whose steps the Crown's heralds read that the Grace had left the knights of Harrow Ford, and its surgeons sent him north.",
       "image": "places/the-lowmarch.jpg",
       "image_alt": "A Lowmarch village on a wet afternoon: thatched timber cottages around a puddled green, flat fields of green and gold divided by hedgerows running to a low horizon under grey cloud. A grey stone bell-house with a bronze bell in its open belfry stands at the centre, and on its steps a herald reads from an unrolled parchment to villagers holding their hats, children sitting on a stone wall. In the foreground an ox-cart carrying hurt men wrapped in blankets rolls along the muddy road.",
-      "image_caption": "A bell-house in the Lowmarch: the herald on its steps, and a cart going by."
+      "image_caption": "A bell-house in the Lowmarch: the herald on its steps, and a cart going by.",
+      "big": true
     },
     {
       "id": "the-wend",
@@ -167,7 +168,8 @@
         "scene": "I"
       },
       "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It carried the Ninth downstream like driftwood.",
-      "label": "The Wend"
+      "label": "The Wend",
+      "arc": -3
     },
     {
       "id": "harrow-ford",
@@ -195,7 +197,7 @@
       "subtitle": "",
       "region": "the-thornwild",
       "kind": "forest",
-      "x": 352,
+      "x": 345,
       "y": 150,
       "on_page": true,
       "visited": false,
@@ -262,7 +264,7 @@
       "region": "greywater-peaks",
       "kind": "mountains",
       "x": 200,
-      "y": 14,
+      "y": 18,
       "on_page": true,
       "visited": false,
       "first_seen": {
@@ -270,7 +272,8 @@
         "scene": "II"
       },
       "description": "The mountains north of the Lowmarch into which the surgeons sent him; Saint Ysolde's stands above the cloud on a shoulder of them.",
-      "label": "The Greywater"
+      "label": "The Greywater",
+      "arc": 3
     }
   ],
   "route": [

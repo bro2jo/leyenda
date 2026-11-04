@@ -343,35 +343,23 @@ a.art-pic{cursor:zoom-in}
 .knot .m{font-size:.86rem;color:var(--dim)}
 
 /* map */
-.map{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:6px}
-.mp-bg{fill:var(--plate)}
-.mp-sea{fill:#131D29}
-.mp-wave{fill:none;stroke:var(--t5);stroke-width:.8;opacity:.45;stroke-linecap:round}
-.mp-coast{fill:none;stroke:var(--t5);stroke-width:1.2;opacity:.8}
-.mp-lake{fill:#131D29;stroke:var(--t5);stroke-width:1;opacity:.95}
-.mp-peaks{fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linejoin:round}
-.mp-peaks2{fill:none;stroke:var(--faint-stroke);stroke-width:1}
-.mp-hills{fill:none;stroke:var(--faint-stroke);stroke-width:1}
-.mp-wood{fill:url(#wood);stroke:var(--faint-stroke);stroke-width:.8}
-.mp-tree{fill:none;stroke:var(--faint-stroke);stroke-width:.8}
-.mp-ash{fill:url(#ash);stroke:var(--faint-stroke);stroke-width:.6;opacity:.8}
-.mp-hatch{stroke:var(--faint-stroke);stroke-width:.6}
-.mp-river{fill:none;stroke:var(--t5);stroke-width:2;stroke-linecap:round}
-.mp-stones{stroke:var(--dim);stroke-width:1.2}
-.mp-road{fill:none;stroke:var(--brass-dim);stroke-width:1;stroke-dasharray:3 3}
-.mp-steps{fill:none;stroke:var(--dim);stroke-width:1;stroke-linejoin:round}
-.mp-compass path{fill:var(--faint-stroke)}
-.mp-compass text{font-family:var(--label);font-size:9px;fill:var(--dim);font-weight:700}
+.map{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:6px;background:#101318}
+.mp-road{stroke:#9A7D4C}
 .mp-route{fill:none;stroke:var(--ember);stroke-width:1.8;stroke-dasharray:4 3;stroke-linecap:round;stroke-linejoin:round}
 .mp-route.past{stroke-width:1.4;opacity:.6}
-.mp-dot{fill:var(--faint);stroke:none}
+.mp-dot{fill:var(--faint);stroke:#0E1116}
 .mp-pt.visited .mp-dot{fill:var(--brass)}
 .mp-pt.current .mp-dot,.mp-here .mp-dot{fill:var(--ember);stroke:var(--plate);stroke-width:1.2}
 .mp-ring{fill:none;stroke:var(--ember);stroke-width:1.5;opacity:.8;transform-origin:center;transform-box:fill-box;animation:ring 2.4s ease-out infinite}
 @keyframes ring{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.25);opacity:0}}
-/* the halo is wide enough to knock the terrain out from under a name */
-.mp-lbl{font-family:var(--label);font-size:10.5px;fill:var(--ink);letter-spacing:.04em;paint-order:stroke;stroke:var(--plate);stroke-width:4.5px;stroke-linejoin:round}
-.mp-lbl.region{fill:var(--dim);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+.mp-compass text{font-family:var(--label);font-size:8.5px;font-weight:700}
+/* labels: the halo knocks the terrain out from under a name. Settlements in small capitals; regions in spaced capitals;
+   water in italic blue; roads and the stair in italic */
+.mp-lbl{font-family:var(--label);font-size:10.5px;fill:var(--ink);letter-spacing:.04em;paint-order:stroke;stroke:#191E26;stroke-opacity:.9;stroke-width:3.6px;stroke-linejoin:round}
+.mp-lbl.region{fill:#B3B9C3;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.mp-lbl.region.big{font-size:11px;letter-spacing:.34em;fill:#9AA2AE}
+.mp-lbl.water{font-family:var(--body);font-style:italic;fill:#8BB2D3;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.mp-lbl.way{font-family:var(--body);font-style:italic;fill:#C2A574;font-size:10px;letter-spacing:.03em}
 .mp-lbl.faint,.mp-pt.faint .mp-lbl{fill:var(--faint)}
 .mp-pt.current .mp-lbl{fill:var(--brass);font-weight:700;font-size:11px}
 .mp-a{cursor:pointer}
