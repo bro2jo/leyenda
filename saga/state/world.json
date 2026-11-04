@@ -74,7 +74,7 @@
     }
   ],
   "location": {
-    "place": "holloway",
+    "place": "drove-road",
     "detail": "the night camp in the lee of a thorn hedge on the drove road",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },

@@ -103,6 +103,10 @@ def main():
             shutil.copytree(ROOT / d, tmp / d, ignore=shutil.ignore_patterns("__pycache__", "*.tmp"))
         (tmp / "docs").mkdir()
         print(f"scratch copy at {tmp}")
+        # the scenes below put Darrow at Saint Ysolde's: the map's road goes there with him, as a session extends it
+        places = jload(tmp / "saga/state/places.json")
+        places["route"] = places.get("route", []) + ["saint-ysoldes"]
+        (tmp / "saga/state/places.json").write_text(json.dumps(places, indent=2, ensure_ascii=False) + "\n")
         saga, darrow = ["engine/saga.py"], ["engine/darrow.py"]
         plan = jload(tmp / "saga/state/_gm/plan.json")
         pos = plan["position"]

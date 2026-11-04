@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints. Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). route is a list of place ids or [x, y] waypoints, and null starts a new leg (the legs before the last are drawn fainter); the map draws Darrow at the route's end, so extend it whenever he moves (the build refuses a route that does not end at his place when that place has a marker). Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
   "places": [
     {
       "id": "saint-ysoldes",
@@ -29,15 +29,16 @@
       "subtitle": "",
       "region": "greywater-peaks",
       "kind": "stair",
-      "x": 207,
-      "y": 90,
+      "x": 220,
+      "y": 88,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "00",
         "scene": "II"
       },
-      "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind that comes round the shoulder of the mountain with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen."
+      "description": "The switchback stair cut into the cliff below Saint Ysolde's, with cloud on one side and a wind that comes round the shoulder of the mountain with a knife in it. Everyone says a thousand. Wren has counted eleven hundred and seventeen.",
+      "anchor": "start"
     },
     {
       "id": "lower-terrace",
@@ -85,15 +86,15 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "village",
-      "x": 228,
-      "y": 126,
+      "x": 215,
+      "y": 154,
       "on_page": true,
       "visited": false,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
       },
-      "description": "A place below the mountain with an inn, where the Confessors' list of the Faithless was read aloud; the news climbed to the House by carter, lay brother and kitchen.",
+      "description": "Rae Thorne's village, on the Holloway below the mountain, where the road dips to a tarn and the fog comes off the water. Its bell-house stands with its back to the tarn, and it has a mill, a fair and a rope rhyme of its own. Its inn, square and yellow at the water's edge, is the only one in Coldmere and the best on the Holloway, and Rae's uncle keeps it: everything that goes up or down the road goes through his taproom. There the Confessors' list of the Faithless was read aloud, and he filled the reader's cup between the names. A Lance's column coming up the road made camp on the green by the water.",
       "label_below": true,
       "image": "places/coldmere.jpg",
       "image_alt": "Coldmere at night in falling snow: a snow-roofed inn of stone and dark timber with a blank sign and warm-lit windows, a crowd standing still in the taproom behind the big window while a hooded figure in a grey cloak reads from a long paper. Grey horses stand tied at a rail. In the foreground an ox-cart loaded with sacks, a lantern hanging from it and its cloaked driver seen from behind, pulls away onto the dark road. Below, snowy roofs run down to a black, half-frozen lake under a wall of mountains and cloud.",
@@ -108,13 +109,29 @@
       "x": 204,
       "y": 236,
       "on_page": true,
-      "visited": false,
+      "visited": true,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
       },
-      "description": "The road below the Steps, a brown thread across a white field from the infirmary window. Six grey riders and a cart were on it, with a smudge of smoke above them.",
+      "description": "The road below the Steps, from the winch-house at their foot down past Coldmere and its tarn, and on to Calden. From the infirmary window it is a brown thread across a white field. Below the seventh milestone it runs deep between its banks, and at the Elbow it turns back on itself with room for one cart. Carters sing salt on it to their bells, no two to the same tune. Six grey riders and a cart came up it with a smudge of smoke above them; then a Lance's column under a banner that was not grey, and the Confessors' cart went down to meet it.",
       "anchor": "end"
+    },
+    {
+      "id": "drove-road",
+      "name": "The drove road",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "road",
+      "x": 262,
+      "y": 121,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "05",
+        "scene": "1"
+      },
+      "description": "A track between two walls that leaves the Holloway above Coldmere and runs north round the far side of the tarn, past a shepherds' fold on the north shore, then down off the moor's shoulder to a hamlet with a bell-post where the tracks cross, and on along the turnip country. Rae turned her cart onto it rather than drive into a Lance on the march. Every door on it opened to the carter, Wren counted, until the company was on her cart."
     },
     {
       "id": "the-lowmarch",
@@ -245,7 +262,7 @@
       "region": "greywater-peaks",
       "kind": "mountains",
       "x": 200,
-      "y": 30,
+      "y": 14,
       "on_page": true,
       "visited": false,
       "first_seen": {
@@ -259,27 +276,85 @@
   "route": [
     "harrow-ford",
     [
-      238,
+      272,
       194
     ],
     [
-      196,
-      196
+      246,
+      194
     ],
     [
-      160,
-      186
+      221,
+      193
     ],
     [
-      150,
-      160
+      210,
+      194
     ],
     [
-      208,
-      122
+      210,
+      170
+    ],
+    [
+      210,
+      143
+    ],
+    [
+      212,
+      130
     ],
     "winch-house",
-    "thousand-steps",
-    "saint-ysoldes"
+    [
+      207,
+      90
+    ],
+    "saint-ysoldes",
+    null,
+    "saint-ysoldes",
+    [
+      207,
+      90
+    ],
+    "winch-house",
+    [
+      212,
+      130
+    ],
+    [
+      210.5,
+      139
+    ],
+    [
+      218,
+      133
+    ],
+    [
+      228,
+      130
+    ],
+    [
+      240,
+      133
+    ],
+    [
+      252,
+      136
+    ],
+    [
+      262,
+      141
+    ],
+    [
+      268,
+      145
+    ],
+    [
+      276,
+      151
+    ],
+    [
+      282,
+      156
+    ]
   ]
 }

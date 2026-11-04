@@ -895,15 +895,46 @@ def crest(level, big=False):
             f'<text class="lv" x="43" y="{70 if size < 40 else 72}" text-anchor="middle" font-size="{size}">{lv}</text></svg>')
 
 
+# The kinds of place drawn as a label on the terrain, never as a marker.
+MAP_TERRAIN = ("region", "forest", "waste", "mountains", "river", "road", "hills", "stair")
+
+
+def map_point(p):
+    """True when a place is drawn as a marker on the map (a town, a house, a ford), not as a label on the terrain."""
+    return bool(p) and p.get("draw") is not False and p.get("kind") not in MAP_TERRAIN
+
+
+def route_legs(route, P):
+    """places.json → route as legs of (x, y): each entry a place id or an [x, y] waypoint; null ends a leg and starts the next."""
+    legs, leg = [], []
+    for r in route:
+        if r is None:
+            if leg:
+                legs.append(leg)
+            leg = []
+        elif isinstance(r, (list, tuple)) and len(r) == 2:
+            leg.append((r[0], r[1]))
+        elif isinstance(r, str) and r in P:
+            leg.append((P[r]["x"], P[r]["y"]))
+    if leg:
+        legs.append(leg)
+    return legs
+
+
 def svg_map(places, route, current_id, rel):
-    """An original map of the story's country. Regions are drawn here; points come from places.json."""
+    """An original map of the story's country. Terrain is drawn here; places and the route come from places.json.
+    The route's last leg is the road he is on now (bright; the legs before it fainter) and Darrow stands at its end.
+    A place the page has named is a link to its Codex entry."""
     P = {p["id"]: p for p in places}
-    out = ['<svg class="map" viewBox="0 0 400 300" role="img" aria-label="Map of Darrow\'s country">',
+    cur = P.get(current_id)
+    title = "Map of Darrow's country" + (f". Darrow: {cur.get('label') or cur['name']}" if cur else "")
+    out = [f'<svg class="map" viewBox="0 0 400 300" aria-labelledby="map-t"><title id="map-t">{esc(title)}</title>',
            '<defs><pattern id="ash" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" class="mp-hatch"/></pattern>'
            '<pattern id="wood" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M7 2 L11 10 L3 10 Z" class="mp-tree"/></pattern></defs>',
            '<rect x="0" y="0" width="400" height="300" class="mp-bg"/>',
            # the sea and the coast, west
            '<path d="M0 0 L58 0 C48 40 70 70 56 110 C44 150 66 190 52 230 C42 260 62 280 54 300 L0 300 Z" class="mp-sea"/>',
+           '<path d="M10 52 q5 -3 10 0 t10 0 M18 128 q5 -3 10 0 t10 0 M8 176 q5 -3 10 0 t10 0 M14 262 q5 -3 10 0 t10 0" class="mp-wave"/>',
            '<path d="M58 0 C48 40 70 70 56 110 C44 150 66 190 52 230 C42 260 62 280 54 300" class="mp-coast"/>',
            # the peaks, north
            '<path d="M120 62 L138 34 L152 56 L166 28 L182 54 L200 22 L218 54 L234 30 L250 58 L266 36 L280 62" class="mp-peaks"/>',
@@ -914,54 +945,65 @@ def svg_map(places, route, current_id, rel):
            '<path d="M318 96 C340 90 372 96 392 106 L396 232 C370 226 344 236 320 226 C312 190 310 140 318 96 Z" class="mp-wood"/>',
            # a grey waste in the south-east: drawn as terrain, never labelled, until the page names it
            '<path d="M272 218 C300 212 340 236 372 240 L368 282 C334 278 300 286 272 272 Z" class="mp-ash"/>',
-           # the Wend
-           '<path d="M98 186 C130 180 160 204 196 196 C230 188 262 200 300 190 C330 182 356 190 396 176" class="mp-river"/>',
+           # the Wend, from the Thornwild to the sea
+           '<path d="M57 194 C72 188 86 188 98 186 C130 180 160 204 196 196 C230 188 262 200 300 190 C330 182 356 190 396 176" class="mp-river"/>',
            '<path d="M300 182 L300 198 M292 184 L292 196 M308 184 L308 196" class="mp-stones"/>',
+           # the tarn at Coldmere
+           '<path d="M218 150 C218 142 230 139 240 141 C250 143 253 151 246 156 C238 161 222 159 218 150 Z" class="mp-lake"/>',
            # the Holloway
            '<path d="M214 118 C206 150 212 190 210 222 C209 240 213 250 214 258" class="mp-road"/>',
            # the Thousand Steps
            '<path d="M200 68 L212 74 L198 80 L212 86 L198 92 L212 98 L200 104 L214 110 L214 118" class="mp-steps"/>',
+           # north
+           '<g class="mp-compass" transform="translate(376 30)"><path d="M0 -11 L3 0 L0 11 L-3 0 Z M-11 0 L0 3 L11 0 L0 -3 Z"/>'
+           '<text y="-14" text-anchor="middle">N</text></g>',
            ]
-    # route traveled
-    pts = []
-    for r in route:
-        if isinstance(r, (list, tuple)) and len(r) == 2:
-            pts.append((r[0], r[1]))
-        elif r in P:
-            pts.append((P[r]["x"], P[r]["y"]))
-    if pts:
-        d = " ".join(f"{'M' if i == 0 else 'L'}{x} {y}" for i, (x, y) in enumerate(pts))
-        out.append(f'<path d="{d}" class="mp-route"/>')
+
+    def linked(p, inner):
+        if not p.get("on_page"):
+            return inner
+        return f'<a href="{rel}codex/index.html#place-{esc(p["id"])}" class="mp-a">{inner}</a>'
+
+    # the road so far, by legs: the one he is on is bright
+    legs = route_legs(route, P)
+    for i, leg in enumerate(legs):
+        if len(leg) > 1:
+            d = " ".join(f"{'M' if j == 0 else 'L'}{x} {y}" for j, (x, y) in enumerate(leg))
+            out.append(f'<path d="{d}" class="mp-route{"" if i == len(legs) - 1 else " past"}"/>')
     # region labels (map only)
     for p in places:
-        if p.get("kind") in ("region", "forest", "waste", "mountains", "river", "road", "hills", "stair"):
+        if p.get("kind") in MAP_TERRAIN:
             cls = "mp-lbl region" + ("" if p.get("on_page") else " faint")
-            out.append(f'<text x="{p["x"]}" y="{p["y"]}" text-anchor="{esc(p.get("anchor", "middle"))}" class="{cls}">{esc(p.get("label") or p["name"])}</text>')
+            out.append(linked(p, f'<text x="{p["x"]}" y="{p["y"]}" text-anchor="{esc(p.get("anchor", "middle"))}" class="{cls}">{esc(p.get("label") or p["name"])}</text>'))
     for p in places:
-        if p.get("draw") is False or p.get("kind") in ("region", "forest", "waste", "mountains", "river", "road", "hills", "stair"):
+        if not map_point(p):
             continue
         x, y = p["x"], p["y"]
-        cur = p["id"] == current_id
-        vis = p.get("visited")
-        cls = "mp-pt" + (" visited" if vis else "") + (" current" if cur else "") + ("" if p.get("on_page") else " faint")
-        out.append(f'<g class="{cls}">')
-        if cur:
-            out.append(f'<circle cx="{x}" cy="{y}" r="9" class="mp-ring"/>')
+        here = p["id"] == current_id
+        cls = "mp-pt" + (" visited" if p.get("visited") else "") + (" current" if here else "") + ("" if p.get("on_page") else " faint")
+        g = [f'<g class="{cls}">']
+        if here:
+            g.append(f'<circle cx="{x}" cy="{y}" r="9" class="mp-ring"/>')
         if p.get("kind") == "city":
-            out.append(f'<path d="M{x-5} {y+4} L{x-5} {y-3} L{x} {y-8} L{x+5} {y-3} L{x+5} {y+4} Z" class="mp-dot"/>')
+            g.append(f'<path d="M{x-5} {y+4} L{x-5} {y-3} L{x} {y-8} L{x+5} {y-3} L{x+5} {y+4} Z" class="mp-dot"/>')
         elif p.get("kind") == "house":
-            out.append(f'<path d="M{x-5} {y+4} L{x-5} {y-2} L{x} {y-7} L{x+5} {y-2} L{x+5} {y+4} Z M{x} {y-11} L{x} {y-7}" class="mp-dot"/>')
+            g.append(f'<path d="M{x-5} {y+4} L{x-5} {y-2} L{x} {y-7} L{x+5} {y-2} L{x+5} {y+4} Z M{x} {y-11} L{x} {y-7}" class="mp-dot"/>')
         else:
-            out.append(f'<circle cx="{x}" cy="{y}" r="3.2" class="mp-dot"/>')
+            g.append(f'<circle cx="{x}" cy="{y}" r="3.2" class="mp-dot"/>')
         anchor = "end" if x > 330 else ("start" if x < 70 else "middle")
         dy = -11 if p.get("kind") in ("city", "house") else -8
         dx = 0
         if p.get("label_below"):
             dy = 14
-        if cur:  # the current place sits clear of the terrain, to the right of its marker
+        if here:  # the current place sits clear of the terrain, to the right of its marker
             anchor, dx, dy = "start", 12, 4
-        out.append(f'<text x="{x + dx}" y="{y + dy}" text-anchor="{anchor}" class="mp-lbl">{esc(p.get("label") or p["name"])}</text>')
-        out.append("</g>")
+        g.append(f'<text x="{x + dx}" y="{y + dy}" text-anchor="{anchor}" class="mp-lbl">{esc(p.get("label") or p["name"])}</text>')
+        g.append("</g>")
+        out.append(linked(p, "".join(g)))
+    # Darrow, at the end of the road so far, when he is on a road or in open country rather than at a place with a marker
+    if legs and not map_point(cur):
+        x, y = legs[-1][-1]
+        out.append(f'<g class="mp-here"><circle cx="{x}" cy="{y}" r="9" class="mp-ring"/><circle cx="{x}" cy="{y}" r="3.6" class="mp-dot"/></g>')
     out.append("</svg>")
     return "".join(out)
 
@@ -1168,6 +1210,16 @@ class Site:
         self.current_place = loc.get("place") if isinstance(loc, dict) else None
         if self.current_place not in self.place_by_id:
             problem(f"world.json: location.place '{self.current_place}' is not in places.json")
+        for r in self.route:
+            ok = r is None or (isinstance(r, str) and r in self.place_by_id) or (
+                isinstance(r, list) and len(r) == 2 and all(isinstance(v, (int, float)) for v in r))
+            if not ok:
+                problem(f"places.json: route entry {json.dumps(r)} is not a place id, an [x, y] waypoint or null (a new leg)")
+        legs = route_legs(self.route, self.place_by_id)
+        cur = self.place_by_id.get(self.current_place)
+        if map_point(cur) and (not legs or legs[-1][-1] != (cur["x"], cur["y"])):
+            problem(f"places.json: the route ends at {list(legs[-1][-1]) if legs else 'nothing'} but Darrow is at {cur['id']}: "
+                    f"extend the route to where he is (the map draws him at its end)")
         if not (self.world.get("current_quest") or {}).get("on_the_page"):
             problem("world.json: current_quest.on_the_page is missing (the site shows only page-supported text)")
         for p in self.places:
@@ -3137,7 +3189,9 @@ class Site:
                 f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
         reck = sec("The Reckoning", "", card)
         map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel)
-                       + '<p class="legend"><span class="lg ember">●</span> Darrow <span class="lg brass">●</span> visited <span class="lg faint">●</span> not yet <span class="lg route">—</span> the road so far</p>')
+                       + '<p class="legend"><span><span class="lg ember">●</span> Darrow</span> <span><span class="lg brass">●</span> visited</span> <span><span class="lg faint">●</span> not yet</span> '
+                       '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"><path d="M1 3 H21"/></svg> the road so far</span></p>'
+                       '<p class="hint">Tap a name on the map to read about the place.</p>')
         dice = sec("The dice", "", self.dice_html(rel))
         body = self.level_news(rel) + self.wardrobe_news(rel) + plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")

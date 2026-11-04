@@ -338,8 +338,10 @@ a.art-pic{cursor:zoom-in}
 /* map */
 .map{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:6px}
 .mp-bg{fill:var(--plate)}
-.mp-sea{fill:#121a24}
+.mp-sea{fill:#131D29}
+.mp-wave{fill:none;stroke:var(--t5);stroke-width:.8;opacity:.45;stroke-linecap:round}
 .mp-coast{fill:none;stroke:var(--t5);stroke-width:1.2;opacity:.8}
+.mp-lake{fill:#131D29;stroke:var(--t5);stroke-width:1;opacity:.95}
 .mp-peaks{fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linejoin:round}
 .mp-peaks2{fill:none;stroke:var(--faint-stroke);stroke-width:1}
 .mp-hills{fill:none;stroke:var(--faint-stroke);stroke-width:1}
@@ -351,18 +353,28 @@ a.art-pic{cursor:zoom-in}
 .mp-stones{stroke:var(--dim);stroke-width:1.2}
 .mp-road{fill:none;stroke:var(--brass-dim);stroke-width:1;stroke-dasharray:3 3}
 .mp-steps{fill:none;stroke:var(--dim);stroke-width:1;stroke-linejoin:round}
-.mp-route{fill:none;stroke:var(--ember);stroke-width:1.6;stroke-dasharray:4 3;opacity:.9}
+.mp-compass path{fill:var(--faint-stroke)}
+.mp-compass text{font-family:var(--label);font-size:9px;fill:var(--dim);font-weight:700}
+.mp-route{fill:none;stroke:var(--ember);stroke-width:1.8;stroke-dasharray:4 3;stroke-linecap:round;stroke-linejoin:round}
+.mp-route.past{stroke-width:1.4;opacity:.6}
 .mp-dot{fill:var(--faint);stroke:none}
 .mp-pt.visited .mp-dot{fill:var(--brass)}
-.mp-pt.current .mp-dot{fill:var(--ember)}
+.mp-pt.current .mp-dot,.mp-here .mp-dot{fill:var(--ember);stroke:var(--plate);stroke-width:1.2}
 .mp-ring{fill:none;stroke:var(--ember);stroke-width:1.5;opacity:.8;transform-origin:center;transform-box:fill-box;animation:ring 2.4s ease-out infinite}
 @keyframes ring{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.25);opacity:0}}
-.mp-lbl{font-family:var(--label);font-size:9.5px;fill:var(--ink);letter-spacing:.04em;paint-order:stroke;stroke:var(--plate);stroke-width:3px;stroke-linejoin:round}
-.mp-lbl.region{fill:var(--dim);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+/* the halo is wide enough to knock the terrain out from under a name */
+.mp-lbl{font-family:var(--label);font-size:10.5px;fill:var(--ink);letter-spacing:.04em;paint-order:stroke;stroke:var(--plate);stroke-width:4.5px;stroke-linejoin:round}
+.mp-lbl.region{fill:var(--dim);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
 .mp-lbl.faint,.mp-pt.faint .mp-lbl{fill:var(--faint)}
-.mp-pt.current .mp-lbl{fill:var(--brass);font-weight:700;font-size:10.5px}
+.mp-pt.current .mp-lbl{fill:var(--brass);font-weight:700;font-size:11px}
+.mp-a{cursor:pointer}
+.mp-a:hover .mp-lbl,.mp-a:focus-visible .mp-lbl{fill:var(--brass)}
+.mp-a:focus-visible{outline:none}
+.mp-a:focus-visible .mp-lbl{text-decoration:underline}
 .legend{font-size:.82rem;color:var(--dim);display:flex;gap:6px 12px;flex-wrap:wrap}
-.lg.ember{color:var(--ember)} .lg.brass{color:var(--brass)} .lg.faint{color:var(--faint)} .lg.route{color:var(--ember);letter-spacing:-.1em}
+.legend>span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.lg.ember{color:var(--ember)} .lg.brass{color:var(--brass)} .lg.faint{color:var(--faint)}
+.lg-route path{stroke:var(--ember);stroke-width:2;stroke-dasharray:4 3;stroke-linecap:round}
 
 /* now page */
 .comps{display:grid;gap:10px}

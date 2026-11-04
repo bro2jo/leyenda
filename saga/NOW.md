@@ -4,7 +4,7 @@
 
 **BOOK II — THE HOUSE OF MENDERS · Chapter 5 — The Thornwild Woman's · the third day off the mountain, night**
 
-- **Where:** The Holloway, the road; the night camp in the lee of a thorn hedge on the drove road.
+- **Where:** The drove road; the night camp in the lee of a thorn hedge on the drove road.
 - **The quest:** *The Road.* The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.
 - **What Darrow is fighting right now:** The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.
 - **Just happened (Between):** *Salt Comes Down.* Rae told him she sang after the turnip field because it would be them that saw the knight last, and she does not like being last; then told him to sing the salt song right, or they would hear him in Coldmere.
