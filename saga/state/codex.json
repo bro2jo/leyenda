@@ -514,13 +514,6 @@
           ]
         },
         {
-          "name": "The drove road",
-          "text": "A walled track that leaves the Holloway above Coldmere and runs north round the far side of the tarn: the carter's road round a Lance on the march (Ch 5 Sc 1).",
-          "sources": [
-            "ch05:s1"
-          ]
-        },
-        {
           "name": "The bell-post writ",
           "text": "A Knight-Confessor's writ under blue wax, nailed at a drove-road hamlet: Darrow's name alone at the top, then the Mender Vorne as his harbourer, then the Ninth and the Sixth man by man (Ch 5 Sc 2).",
           "sources": [
@@ -532,6 +525,20 @@
           "text": "In a Thornwild grandmother's story, a country east of the Wend where grey people stand among the trees so still the birds sit on them; where the Hollowed go in the end, home, she called it (Ch 5 Sc 3).",
           "sources": [
             "ch05:s3"
+          ]
+        },
+        {
+          "name": "The drove road",
+          "text": "A walled track that leaves the Holloway above Coldmere and runs north round the far side of the tarn: the carter's road round a Lance on the march (Ch 5 Sc 1).",
+          "sources": [
+            "ch05:s1"
+          ]
+        },
+        {
+          "name": "The Holloway's Elbow",
+          "text": "The bend where the Holloway turns back on itself between high banks; by the carters' law nobody passes a cart there. Not to be confused with the Elbow of the Steps, the turn at the cloud line (Tale 2; Ch 5 Sc 1).",
+          "sources": [
+            "ch05:s1"
           ]
         }
       ],

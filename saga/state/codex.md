@@ -76,9 +76,10 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The bell tower** — Old Mercy's tower. Its door at the foot of the stair is the only way up to the bell; the stair narrows and turns halfway. On the eve the Captain set Hollis's chair in the door and his own on the turn, and Wren beside Sister Pell at the rope (Ch 4 Sc 7).
 - **Patience** — An old plain sword, the blade dull, that Maelis carried down the Thousand Steps wrapped in oilcloth that smelled of the undercroft, with one word cut in the steel near the hilt: Patience. Darrow laughed; he thought it was a joke, and she let him (Ch 4 Choice).
 - **Rung down** — The House's custom for a guest who leaves in peace: Old Mercy sounds as he goes down the Steps, and by the law a man the House has rung down may not lawfully climb them against it again. The Prior named it at the foot of the tower stair after the bell, with Sister Pell's hands too torn to ring (Ch 4 Climax).
-- **The drove road** — A walled track that leaves the Holloway above Coldmere and runs north round the far side of the tarn: the carter's road round a Lance on the march (Ch 5 Sc 1).
 - **The bell-post writ** — A Knight-Confessor's writ under blue wax, nailed at a drove-road hamlet: Darrow's name alone at the top, then the Mender Vorne as his harbourer, then the Ninth and the Sixth man by man (Ch 5 Sc 2).
 - **The grey country** — In a Thornwild grandmother's story, a country east of the Wend where grey people stand among the trees so still the birds sit on them; where the Hollowed go in the end, home, she called it (Ch 5 Sc 3).
+- **The drove road** — A walled track that leaves the Holloway above Coldmere and runs north round the far side of the tarn: the carter's road round a Lance on the march (Ch 5 Sc 1).
+- **The Holloway's Elbow** — The bend where the Holloway turns back on itself between high banks; by the carters' law nobody passes a cart there. Not to be confused with the Elbow of the Steps, the turn at the cloud line (Tale 2; Ch 5 Sc 1).
 
 ## Songs and verses
 
