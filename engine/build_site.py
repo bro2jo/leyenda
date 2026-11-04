@@ -1056,8 +1056,29 @@ def map_label_box(p):
     return (x0 - 3, y - 11, x0 + w + 3, y + 4)
 
 
+def map_roads():
+    """What is drawn over any base: the river road, the Holloway and its bridge, the Steps, the stones at Harrow Ford."""
+    rr = _curve_d(_open_curve(MAP_RIVER_ROAD))
+    return ('<path d="M298 99 v6 M297 108 v5 M316 98 v6 M317 107 v6" stroke="#B4BBC6" stroke-width="1.5" stroke-linecap="round"/>'
+            f'<path d="{rr}" fill="none" stroke="#7A6440" stroke-width=".8" stroke-dasharray="2 2.2" stroke-linecap="round"/>'
+            f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#0E1116" stroke-width="2.6" stroke-linecap="round"/>'
+            f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#9A7D4C" stroke-width="1" stroke-dasharray="3 2.4" class="mp-road"/>'
+            '<path d="M207 209 h8 M207 215 h8" stroke="#B4BBC6" stroke-width="1" stroke-linecap="round"/>'
+            f'<path d="{MAP_STEPS}" fill="none" stroke="#9AA2AE" stroke-width="1" stroke-linejoin="round" class="mp-steps"/>')
+
+
+def map_painted(href):
+    """A painted base (places.json → base_image): the picture fills the layout guide's frame, 450 x 300 from x = -25, so
+    the map's 400 x 300 shows its middle; a little shade sits it on the dark page; the roads go over it."""
+    return ('<defs><radialGradient id="mp-vig" cx="50%" cy="50%" r="75%"><stop offset=".55" stop-color="#000" stop-opacity="0"/>'
+            '<stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient></defs>'
+            f'<image href="{href}" x="-25" y="0" width="450" height="300" preserveAspectRatio="none"/>'
+            '<rect width="400" height="300" fill="#0F1217" opacity=".16"/><rect width="400" height="300" fill="url(#mp-vig)"/>'
+            + map_roads())
+
+
 def map_terrain(places):
-    """The country under the labels: land, sea, mountains, wood, water, roads, a frame. Deterministic."""
+    """The country under the labels, drawn: land, sea, mountains, wood, water, roads. Deterministic."""
     boxes = [map_label_box(p) for p in places if p.get("draw") is not False or p.get("kind") in MAP_TERRAIN]
     clear = lambda x, y, pad=0: not any(b[0] - pad <= x <= b[2] + pad and b[1] - pad <= y <= b[3] + pad for b in boxes)
     r = _rand(1117)
@@ -1154,15 +1175,8 @@ def map_terrain(places):
     n = len(MAP_WEND)
     for i, seg in enumerate(MAP_WEND):  # narrow at its source in the hills, wide where it leaves the map
         o.append(f'<path d="{_curve_d([seg])}" fill="none" stroke="#5A7FBF" stroke-width="{1.1 + 1.9 * i / (n - 1):.2f}" stroke-linecap="round"/>')
-    # Harrow Ford: standing stones on both banks
-    o.append('<path d="M298 99 v6 M297 108 v5 M316 98 v6 M317 107 v6" stroke="#B4BBC6" stroke-width="1.5" stroke-linecap="round"/>')
-    rr = _curve_d(_open_curve(MAP_RIVER_ROAD))
-    o.append(f'<path d="{rr}" fill="none" stroke="#7A6440" stroke-width=".8" stroke-dasharray="2 2.2" stroke-linecap="round"/>')
-    # the Holloway and the Steps
-    o.append(f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#0E1116" stroke-width="2.6" stroke-linecap="round"/>'
-             f'<path d="{MAP_HOLLOWAY}" fill="none" stroke="#9A7D4C" stroke-width="1" stroke-dasharray="3 2.4" class="mp-road"/>'
-             '<path d="M207 209 h8 M207 215 h8" stroke="#B4BBC6" stroke-width="1" stroke-linecap="round"/>')
-    o.append(f'<path d="{MAP_STEPS}" fill="none" stroke="#9AA2AE" stroke-width="1" stroke-linejoin="round" class="mp-steps"/>')
+    # Harrow Ford's stones, the river road, the Holloway and the Steps
+    o.append(map_roads())
     # grain and shade over the whole country
     o.append('<rect width="400" height="300" filter="url(#mp-grain)"/><rect width="400" height="300" fill="url(#mp-vig)"/>')
     return "".join(o)
@@ -1197,14 +1211,15 @@ def map_label(p, text, cls):
             f'<text class="{cls}"><textPath href="#{pid}" startOffset="50%" text-anchor="middle">{text}</textPath></text>')
 
 
-def svg_map(places, route, current_id, rel):
+def svg_map(places, route, current_id, rel, base=None):
     """An original map of the story's country. Terrain is drawn here (map_terrain); places and the route come from
     places.json. The route's last leg is the road he is on now (bright; the legs before it fainter) and Darrow stands at
     its end. A place the page has named is a link to its Codex entry."""
     P = {p["id"]: p for p in places}
     cur = P.get(current_id)
     title = "Map of Darrow's country" + (f". Darrow: {cur.get('label') or cur['name']}" if cur else "")
-    out = [f'<svg class="map" viewBox="0 0 400 300" aria-labelledby="map-t"><title id="map-t">{esc(title)}</title>', map_terrain(places)]
+    out = [f'<svg class="map" viewBox="0 0 400 300" aria-labelledby="map-t"><title id="map-t">{esc(title)}</title>',
+           map_painted(base) if base else map_terrain(places)]
 
     def linked(p, inner):
         if not p.get("on_page"):
@@ -1435,6 +1450,7 @@ class Site:
         self.places = pl["places"]
         self.place_by_id = {p["id"]: p for p in self.places}
         self.route = pl.get("route", [])
+        self.map_base = pl.get("base_image") or None  # {"image", "alt"}: a painted base under the map's names and roads
         self.factions = {f["id"]: f for f in load_json(STATE / "factions.json")["factions"]}
         self.chapters_csv = load_csv(STATE / "chapters.csv") if (STATE / "chapters.csv").exists() else []
         self.rolls = load_csv(STATE / "rolls.csv") if (STATE / "rolls.csv").exists() else []
@@ -3466,7 +3482,11 @@ class Site:
                 f'{self.knots_brief(rel)}'
                 f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
         reck = sec("The Reckoning", "", card)
-        map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel)
+        base = None
+        if self.map_base:
+            reg = self.register_image("places.json base_image", self.map_base.get("image"), self.map_base.get("alt"))
+            base = (rel + reg[0]) if reg else None
+        map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel, base)
                        + '<p class="legend"><span><span class="lg ember">●</span> Darrow</span> <span><span class="lg brass">●</span> visited</span> <span><span class="lg faint">●</span> not yet</span> '
                        '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"><path d="M1 3 H21"/></svg> the road so far</span></p>'
                        '<p class="hint">Tap a name on the map to read about the place.</p>')
