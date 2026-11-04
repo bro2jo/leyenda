@@ -122,7 +122,7 @@
 
 ### For the next visit (the one list)
 
-1. **Wed 11/4** (scheduled; 10/28's visit was cancelled: `pt_notes.md`, 2026-10-28, Cody's and Nick's entries). Keep a day between it and the nearest home session.
+1. **Tue 11/10, Nick** (the formal quad test; PT 12 on 11/4 answered items 3 and the squat video: `pt_notes.md`, 2026-11-04). Then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6).
 2. **Hamstring test, both sides.** The before-running gate needs ≥80%; pre-op was 70.6%. **Glute med/max too**, and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18). Unmeasured, these are the likeliest thing holding 11/17.
 3. **Reconfirm Nick's 10/28 words** (relayed): the plan's criteria and times govern, impact included; the drop vertical jump cleared on its criteria. Show where the impact ladder stands and the single-leg squat video. **And say that single-leg hops ran twice last week ahead of the ladder** (left and right 2 × 5 on 10/28, left 2 × 5 on 10/30; quiet, pain 0, clean mornings): ask whether single-leg pogos may come forward, or wait for rung 3 and the drop vertical jump as the plan orders.
 4. **Throwing:** are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee.)
@@ -153,6 +153,22 @@ Last week in one line: loaded days 2 of 2 (Wed A in the cancelled PT slot, Fri B
 - **Impact (§6, the ladder):** rung 1 is done (3 × 15 quiet, clean mornings); snap-downs ran 2 × 5 on 10/30. The plan's caps stand: **two exercises, 2–3 sets, 5–8 contacts a set**, each exercise one variable at a time. The single-leg hops (rung 5) wait for rung 3 and the drop vertical jump; they ran ahead twice last week.
 - **Throwing:** Tue, Thu, Sat, **never on a knee day or a PT day** (Add-On §3); on upper days after the bike, before lifting. The sport plan's week 4: around breaks, the dominant hammer begins; the month check is next Sunday.
 - **The week is judged by** (load rule 10): loaded days 3 · morning checks 7 · bike rides 3 (Mon, Thu, Sat) · upper 2 (Mon B, Thu A).
+
+### The calendar to Sat 12/5 (set Wed 11/4 from his appointment list)
+
+Visits: **surgeon Wed 11/4** · **PT (Nick) Tue 11/10** (the formal quad test) and **Thu 12/3** · **PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30**. Each week's doses still come from that Sunday's checkpoint; this sets only the days (`config.json → plan_changes`).
+
+| Week | Sun | Mon | Tue | Wed | Thu | Fri | Sat |
+|---|---|---|---|---|---|---|---|
+| 11/8 | **Session A** · weekly checks + squat test · checkpoint | Bike · **Upper B** · throwing | **PT, Nick** (quad test) | Bike · throwing | **PTA, Cody** | Bike · **Upper A** · throwing | **Session B** |
+| 11/15 · upper deload · week 13 | Rest · weekly checks + squat test · checkpoint | **PTA** | Bike · **Upper B** (deload) · throwing | Bike · throwing | **PTA** | Bike · **Upper A** (deload) · throwing | **Session A** |
+| 11/22 · upper Block 2 if earned | Rest · weekly checks · checkpoint | **PTA** | Bike · **Upper B** · throwing | **PTA** | Thanksgiving: bike · throwing (or a rest day swapped with Sunday) | **Session B** | Bike · **Upper A** · throwing |
+| 11/29 | Rest · weekly checks · checkpoint | **PTA** | Bike · **Upper B** · throwing | Bike · throwing | **PT, Nick** | Bike · **Upper A** · throwing | **Session A** |
+
+- **Loaded days are never back to back:** three a week, four in the week of 11/8 (the visits fall Tue and Thu, so two home sessions fit). From 11/15 the visits sit two or three days apart, which leaves room for **one home session a week**: A and B keep alternating, so each runs every other week, and the clinic's own work (knee extension, hamstring curl, squat, split squat) fills the weeks between. Every muscle still trains three times a week.
+- **Upper** stays at least 3 days apart: Mon 11/9 B → Fri 11/13 A → Tue 11/17 B → Fri 11/20 A → Tue 11/24 B → Sat 11/28 A → Tue 12/1 B → Fri 12/4 A. The week of 11/15 is Block 1's deload (Add-On rule 9: sets −30–40%, loads held); Block 2 from 11/22 if Block 1 ran 2 of 2 in at least two of its weeks (Add-On §4).
+- **Bike 3 and throwing 3 a week**, only on days without a loaded session. Sundays from 11/15 are the week's rest day (the checkpoint and the weekly checks only).
+- **Running is not in the calendar:** it waits for the surgeon's answer (11/4) and the plan's week 13. Once cleared, the walk-jog goes on loaded days, so the off days stay bike-only (the master plan: non-impact conditioning on off days) and runs never fall on consecutive days.
 
 ### Daily minimum and weekly checks
 

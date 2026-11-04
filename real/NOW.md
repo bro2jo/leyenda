@@ -7,6 +7,7 @@
 Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "this week"` (this week's days with Sunday's A and Friday's B doses), then `doc state 7` (upper). Rules: `real/plan/working_rules.md` (`doc rules "load rules"`); the add-on design: `doc addon 1` (rules), `doc addon 3` (sessions, throwing), `doc addon 4` (blocks). Where each fact lives: `real/README.md`. Nick (10/9): progression is up to the master plan, never push through pain; **Nick (10/28, reconfirmed at PT 12 on 11/4): the plan's timelines and criteria decide, impact included** (`pt_notes.md`). **PT 12 (11/4) outranks the State until the Sun 11/8 checkpoint folds it in.** Last week's review: `real/checkpoints/2026-11-01.md`.
 
 - **The week of 10/25 closed Hard-won (77):** loaded days 2 of 2 (Wed A in the cancelled PT slot, Fri B), both clean the next morning (trace, then none); upper 2 of 2 (Block 1's first week); bike 2 of 3; throwing 2 short sessions, both on knee days; neither knee session as written; impact past the ladder both days.
+- **The calendar to Sat 12/5 is set** (State §6, "The calendar"; `config.json → plan_changes`): loaded days never back to back; **week of 11/8:** Sun A · Mon Upper B · **Tue PT** · Wed bike + throwing · **Thu PTA** · Fri Upper A · **Sat B**; **from 11/15** two clinic visits and one home session a week (A and B alternating), upper twice on the days between, bike and throwing three times, Sunday rest. The week of 11/15 is the upper deload. Surgeon Wed 11/4.
 - **This week has three loaded days:** **Sun A** (today) · **Wed PT** · **Fri B**, a day clear on each side of the visit. **Mon Upper B (session 8) · Thu Upper A (session 9).** Bike Mon, Thu, Sat. **Throwing Tue, Thu, Sat**, never on a knee or PT day.
 - **Daily minimum (every day):** the morning check (swelling **grade**, extension side by side, pain, stiffness, catch, **wellness 1–5**) + creatine. Sundays: the weekly checks (photo + heel prop, SLR, flexion) and **the single-leg squat test** on the 24" seat, filmed (passed 11/1; it stays on Sundays, his call, until the left's ascent is smooth).
 - **Impact (State §6):** rung 1 done (pogos); snap-downs ran 2 × 5. **Sunday: snap-down 3 × 5 + low vertical jump and landing 2 × 5** (rung 3). **Friday: low jump 3 × 5 + snap-down 3 × 8, or the drop vertical jump check (8" box, 2 × 4, filmed) in the snap-down's place** if Sunday's landings were quiet and Monday clean. On clean mornings, repeated single-leg pogos land about 11/15, before the run gate. The plan's caps: two exercises, 2–3 sets, 5–8 contacts a set, each exercise one variable at a time. Single-leg hops wait for rung 5, after the drop vertical jump.
@@ -18,7 +19,7 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 - **Bike, legs only, easy, 30 min.** Intervals after two weeks of 30 with clean mornings and a PT OK (not asked 11/4: next visit).
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. **Fixes this week:** a shake or a 20 g yogurt by mid-afternoon every day; snack sticks two a day at most, fruit instead of the rest; one fish meal (canned salmon or tuna counts).
 
-## Last PT visit · **Wed 11/4, PT 12** (the note names no one; Nick consulted) · next: **next week** (day not set): the formal quad test
+## Last PT visit · **Wed 11/4, PT 12** (the note names no one; Nick consulted) · next: **Tue 11/10, Nick** (the formal quad test); then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
 
 PT 12 (`pt_notes.md`, 2026-11-04): pain 0, gait no deviations; no measurements. **Nick's 10/28 words reconfirmed** (the plan's timelines and criteria decide). **The single-leg squat video passed**; keep cleaning up the ascent. Keep progressing through the master plan at home; **single-leg knee-extension isometrics** (0° and 45°, 30 s) recommended. **Running: the PT reads his criteria as met and leaves the go to the surgeon, expected later today.** Quad test formally next week ("informally passed"). Hamstring and glute not tested.
 
@@ -38,7 +39,6 @@ For the next visit (State §5, carried): **hamstring test, both sides; glute med
 ## Open items
 
 - **Running: the surgeon's answer (expected 11/4).** Say what was said, and whether it's "start now" or "from week 13 (11/17)": the master plan's timeline says week 13, and the drop vertical jump (Fri) and single-leg pogos (the run gate's own item) haven't run yet.
-- **The next PT visit's day** (next week, the formal quad test).
 - **The CRV project:** task 2 (pictures) was due Saturday; say when it's done, or set it aside, or move it.
 - **Monday's M&M's (10/26):** the whole sharing-size packet was assumed (~1,350 kcal); say if it was less.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.

@@ -351,6 +351,300 @@
       ],
       "source": "his request Sat 10/31 for next week's schedule; PT moved to Wed 11/4 (pt_notes.md, 2026-10-28)",
       "why": "PT on Wed 11/4: the home knee sessions keep a day clear of it (Sun A, Fri B; Working Rules, program structure); Tue's knee slot becomes a throwing day; upper Mon B and Thu A (3 days apart); bike Mon, Thu, Sat; throwing Tue, Thu, Sat"
+    },
+    {
+      "date": "2026-11-09",
+      "add": [
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-10",
+      "drop": [
+        "knee"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-11",
+      "add": [
+        "cond"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-12",
+      "drop": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-13",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-14",
+      "drop": [
+        "cond",
+        "sport"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-15",
+      "drop": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-16",
+      "drop": [
+        "cond",
+        "upper"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-17",
+      "drop": [
+        "knee"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-18",
+      "add": [
+        "cond"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-19",
+      "drop": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-20",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-21",
+      "drop": [
+        "cond",
+        "sport"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-22",
+      "drop": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-23",
+      "drop": [
+        "cond",
+        "upper"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-24",
+      "drop": [
+        "knee"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-25",
+      "drop": [
+        "sport"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-26",
+      "drop": [
+        "upper"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-27",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-28",
+      "add": [
+        "upper"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-29",
+      "drop": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-30",
+      "drop": [
+        "cond",
+        "upper"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-12-01",
+      "drop": [
+        "knee"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-12-02",
+      "add": [
+        "cond"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-12-03",
+      "drop": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "add": [
+        "pt"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-12-04",
+      "drop": [
+        "pt"
+      ],
+      "add": [
+        "cond",
+        "upper",
+        "sport"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-12-05",
+      "drop": [
+        "cond",
+        "sport"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",

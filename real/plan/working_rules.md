@@ -117,7 +117,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 | Sat | — | Bike |
 
 - Every day: the daily minimum.
-- **Knee sessions alternate A → B → A** regardless of day. Three loaded days a week: two home sessions plus PT. If the PT visit moves, keep a day between it and the nearest home session where possible.
+- **Knee sessions alternate A → B → A** regardless of day. Three loaded days a week: two home sessions plus PT; with two clinic visits a week, the two visits plus one home session (the Recovery State's calendar). If the PT visit moves, keep a day between it and the nearest home session where possible.
 - **Upper sessions alternate A → B,** at least 2 days apart, because both cores train chest, back and shoulders.
 - This week's actual days are in the Recovery State §6–7.
 
