@@ -1164,7 +1164,7 @@ def tone_notes(slots, climax=None):
 
 # ---------------------------------------------------------------- the reread: length and the habits Book I leaned on
 HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many before it is named, what to try instead)
-    ("'the way …' comparisons", r"\bthe way\b", 2.0, 3, "keep the best one; make the others plain, or let an action carry the comparison"),
+    ("'the way …' comparisons", r"(?<!\bin )(?<!\ball )(?<!\bon )(?<!\bby )\bthe way\b(?! (?:back|home|out|down|up|through|across)\b)(?! (?:they|we|he|she|you|I) (?:had )?(?:come|came|gone|went)\b)", 2.0, 3, "keep the best one; make the others plain, or let an action carry the comparison"),
     ("negation beats (did not, said nothing, nobody…)", r"\b(?:did not|didn't|had not|was not|would not|could not|said nothing|nothing at all|nobody|no one)\b", 7.0, 5,
      "say what people did instead of what they did not; let someone answer whole"),
     ("'It was not … / not … either' pairs", r"\bIt was not an?\b[^.\n]{0,60}\.\s+It was not", 0.0, 1, "say the thing it was"),
@@ -1183,6 +1183,13 @@ def reread_notes(text, kind, prev_text=None):
     body = "\n".join(l for l in (text or "").splitlines() if not l.startswith(("`[", ">", "**What does")) and not re.match(r"^\d+\.\s", l))
     words = len(re.findall(r"[A-Za-z0-9'’-]+", body))
     out = [f"length: {words:,} words (information, never a target: does every paragraph earn its place, and is anything the scene needs missing?)"]
+    try:  # the wall, before the build finds it: the site refuses these words on any page
+        import build_site as _bs
+        for pat in (re.compile(r"\b(" + "|".join(_bs.FORBIDDEN) + r")\b", re.I), re.compile(r"\b(" + "|".join(_bs.FORBIDDEN_CS) + r")\b")):
+            for m in pat.finditer(text or ""):
+                out.append(f"WALL: '{m.group(1)}' is a real-world word the site refuses (…{(text or '')[max(0, m.start() - 30):m.end() + 30]}…): reword it")
+    except Exception:
+        pass
     per_k = max(words, 1) / 1000
     for label, pat, rate, floor, advice in HABITS:
         n = len(re.findall(pat, body))

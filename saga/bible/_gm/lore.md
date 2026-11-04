@@ -50,7 +50,7 @@ Three hundred years ago the king raised the Oathstones, and a thousand kneeling 
 The same king has reigned since the Quenching, and the realm has three ways of saying so: the pious say he is holy, the clerks say he is well advised, and the taprooms say nothing with great care. He has not been seen outside the Oathspire in nine years. In three hundred years the Vaelmark has fought nobody but the clans, a ford-war a generation and three in the last sixty, and the Lances have become the only thing a Lowmarch boy can imagine becoming. ⟪gm: T1, T2; three hundred years old because the Stone feeds him; Book VI.⟫
 
 ## age.hollowing — The Hollowing
-- **tier:** common · **spoken:** Prologue III (the far cots); ch02:s2 · **names:** —
+- **tier:** common · **spoken:** Prologue III (the far cots); ch02:s2; ch05:s3 · **names:** —
 - **use:** a family's shame; a novice's duty; a lamp.
 
 Within living memory the first knights came home gone behind the eyes: breathing, walking, doing what they were told, and nobody there. The heralds named it clan witchery and the name stuck. There are more every decade. Families keep them a season and then send them to a House of the Menders with a chit and a lamp, and do not visit. The far cots at Saint Ysolde's were an empty end of the hall in Maelis's first year there. ⟪gm: T4, the drained; never said before Book III.⟫

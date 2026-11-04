@@ -60,10 +60,11 @@
       "truth": "T4",
       "feeds": "T4",
       "status": "open",
-      "who_knows": "Darrow saw them; the red-handed woman made him look; the reader",
+      "who_knows": "Darrow saw the grey figures at the ford and has joined them, by himself, to the Hollowed knight walking east and Rae's grandmother's grey country; the reader; the company heard the story and saw the knight. Nobody has said what they are.",
       "note": "unexplained",
       "on_page": [
         "00:I",
+        "05:s3",
         "tale02:p2"
       ]
     },
@@ -150,7 +151,8 @@
       "on_page": [
         "00:III",
         "01:s1",
-        "03:s4"
+        "03:s4",
+        "05:s3"
       ]
     },
     {
@@ -245,6 +247,7 @@
         "05:s2",
         "05:between-3",
         "05:between-4",
+        "05:s3",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"

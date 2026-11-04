@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-3",
+    "scene": "3",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-3"
   },
-  "last_seen_doing": "Lay with her nose to the gap under the gate, listening to the track.",
-  "now": "On watch at the gate.",
+  "last_seen_doing": "Walked close to the cart all morning.",
+  "now": "Beside the cart on the drove road.",
   "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
   "quote": null,
   "known_facts": [
@@ -177,6 +177,10 @@
     {
       "chapter": "05",
       "scene": "between-3"
+    },
+    {
+      "chapter": "05",
+      "scene": "3"
     }
   ]
 }

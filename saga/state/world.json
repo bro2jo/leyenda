@@ -49,11 +49,19 @@
       "after": "2",
       "covers": [],
       "written": "2026-11-03"
+    },
+    {
+      "scene": 3,
+      "title": "East",
+      "covers": [
+        "2026-11-03"
+      ],
+      "written": "2026-11-03"
     }
   ],
   "location": {
     "place": "holloway",
-    "detail": "by the oxen on their short tie in the lee of the field wall past the drove-road hamlet",
+    "detail": "on the drove road above a turnip field, east of the hamlet",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -63,7 +71,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "He went back to his blanket saying the word under his breath and getting it wrong, and behind him, into Hob's neck, Rae laughed again.",
+  "last_beat": "They let the Hollowed knight walk east over the rise, and Wren, silent since she gave him water, licked her pencil and said she would count them.",
   "companions": {
     "maelis": {
       "approval": 34,

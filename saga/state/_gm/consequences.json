@@ -1366,12 +1366,13 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch05:between-2",
             "ch05:s2",
             "ch05:between-3",
-            "ch05:between-4"
+            "ch05:between-4",
+            "ch05:s3"
           ]
         }
       ]
@@ -1436,7 +1437,8 @@
           "at": "ch05:s3",
           "weight": "scene",
           "what": "They leave the field wall at grey light, before the hamlet's bell, by Maelis's word; Darrow rides the cart until noon (the leg has had two days of road). Open the next scene on it in a clause",
-          "status": "pending"
+          "status": "fired@ch05:s3",
+          "evidence": "They left the field wall at grey light, before the hamlet's bell had done more than clear its throat"
         },
         {
           "id": "c05.5b",
@@ -1446,10 +1448,11 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch05:between-3",
-            "ch05:between-4"
+            "ch05:between-4",
+            "ch05:s3"
           ]
         }
       ]
@@ -1472,9 +1475,10 @@
           "what": "Rae gave him her grandmother's Thornwild word for stand, said from the belly; he cannot make the catch in the middle of it yet, and practises it under his breath. Fire where he says it right at last, or uses it on an ox, a horse, or himself",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch05:between-4"
+            "ch05:between-4",
+            "ch05:s3"
           ]
         }
       ]

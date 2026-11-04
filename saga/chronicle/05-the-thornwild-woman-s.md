@@ -371,3 +371,84 @@ He tried it from the belly. It came out deeper and no more right, and Dun, who w
 "I'll keep it."
 
 He went back to his blanket saying it under his breath, a word for stand, and got it wrong all the way there. Behind him, into Hob's neck, where nobody was meant to hear it, Rae laughed again.
+
+### Scene 3 — East
+
+They left the field wall at grey light, before the hamlet's bell had done more than clear its throat, and Darrow rode the cart until noon because Maelis had said so. She had made the tailboard her bench and Hollis's boots her first patients, and spent the morning putting a new sole on one of them with a sail-needle and open contempt.
+
+The cold had got into Darrow in the night and stayed. It sat in his hands on the side-board and would not be rubbed out, and the sky had gone the hard pale blue that makes a cold day colder. Nobody sang to the oxen. Even Ash walked close.
+
+At noon the drove road came down off the moor and ran along the top of a turnip field, a long brown slope of it, the leaves gone to rags with the frost. Maelis looked at the sun and said, "Noon," and Darrow got down.
+
+Wren saw him first. "There's somebody in the field."
+
+A man was coming up the rows from the bottom of the slope. A knight: he had the shoulders for it, and mail under a Lance's surcoat with the colours faded past reading, and no helm, and no sword. He was walking east. Not toward them; across the slope at a slant, at the pace of a man following a plough, stepping over each row as it came. He did not look at the cart or the walls or the dog. The frost on the turnip leaves broke under his boots with a small, dry sound, and it was the only sound in the field.
+
+"Bells take it," Hollis said, very quietly, and then nothing.
+
+Darrow went down into the field. The furrows were frozen hard and uneven and the knee took them one at a time, complaining, but it took them, and he came across the knight's line ten paces ahead of him and stood in it.
+
+"Ser."
+
+The knight came on. Darrow had stood in front of men who were charging and not stepped aside; this one was not charging. He walked into Darrow's chest, gently, and stopped there because something was in the way, and stood. He was breathing slow and even. Darrow knew that breath. He had lain listening to it every night of the autumn from the far end of the hall.
+
+The eyes were open. Whatever was behind them was a long way back.
+
+"Ser. What Lance?"
+
+Nothing.
+
+"Who was your captain, lad?" Hollis, from the cart, in the voice that had carried over the Wend at the ford. It went down the field like a thrown stone. The knight's head did not move.
+
+"Turn round," Darrow said.
+
+The knight turned round and stood facing west, toward the cart and the moor and the way they had come.
+
+"Walk."
+
+He walked: three steps up the slope, four. On the fifth his feet began to slant, the way water slants on a tilted board, and by the seventh he was going east again across the rows, at the same pace, as if he had never been asked anything.
+
+"Stand," Darrow said, and the knight stood.
+
+Darrow went round to the front of him. He was younger than Darrow had thought: thirty, perhaps. His boots were worn through at the toes and his feet were bound in rags inside them. There was a healed nick on his jaw where a razor had slipped, not long ago.
+
+Wren came down the field with the water-skin. Nobody had asked her. She reached up, put the mouth of the skin to his lips with one hand and the other flat under his jaw, and said, "Drink," in a voice Darrow had never heard her use, flat and kind and without a number anywhere in it. The knight drank. She took the skin away before he could choke, as if she had done it a hundred times, and stepped back, and her face had gone white to the lips.
+
+"Where did you learn that?" Darrow said.
+
+"The far cots." Her eyes stayed on the skin. She walked back up to the cart with the skin held in both arms like a ledger.
+
+"We take him," Darrow said, up the slope. "As far as Coldmere. Somebody there will—"
+
+"Tie him to the cart," said Maelis, "and he'll lean east on the rope until it cuts him to the bone. I've had men like him on my cots for thirty years. When the novices aren't looking, every one of them is lying turned toward the east wall." She said it plainly. "Let him walk, Captain. There's nothing in him you can keep."
+
+Rae had come to the edge of the field with Hob's goad still in her hand. She was looking past the knight, east, to where the land went down in long brown steps toward a country none of them could see.
+
+"My grandmother had a story," she said. "East of the Wend there's a grey country, and people stand among the trees there, grey from the boots up, so still the birds sit on them. She told it to make me sit still on the cart." She watched the knight's back. "She said that's where they go, in the end. Home, she called it. I never believed a word of it."
+
+Darrow had seen them. Behind the clan carts at the ford, under the trees on the far bank: a line of grey figures in armour, so still they had not moved even when the river screamed. He had been looking at the spears, and then he had been under the water, and he had not thought about them since. He thought about them now.
+
+He stepped out of the knight's road. "Go on, then," he said.
+
+The knight went on, east, over the rows, at the pace of a man behind a plough. They watched him all the way to the top of the next rise, where he was a grey shape against the pale sky, and then not.
+
+Hollis spoke first. He had been silent since the field.
+
+"Somebody's been shaving him," he said. He was looking at the rise. "Somebody kept him a while. Shaved him, put rags in his boots. Somebody's mother." He looked away. "And he got up one morning and walked off east, and she's standing at a door somewhere with the razor."
+
+Nobody had anything to put after that. Darrow climbed back onto the cart, which he was allowed to do now that it was past noon and he did not want to.
+
+"How many of them come through?" he said. "Walking east. Does anybody count?"
+
+"More every year," said Maelis.
+
+"That isn't a count."
+
+"No."
+
+Wren had the ledger open on her knees, silent since the far cots. She licked the pencil.
+
+"I'll count them," she said.
+
+> ⟦ THE RECKONING ⟧
+> XP 2,888 → 2,943

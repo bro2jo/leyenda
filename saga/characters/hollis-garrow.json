@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-3",
+    "scene": "3",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-3"
   },
-  "last_seen_doing": "Divided the boy's bread with great care, Rae's share first, and praised her answer as the best lie he ever heard that wasn't one.",
-  "now": "Under his blanket by the field wall.",
+  "last_seen_doing": "Called to the Hollowed knight in his ford voice and got nothing; said somebody's mother had been shaving him.",
+  "now": "On the cart, out of jokes for the day.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -646,6 +646,12 @@
       "chapter": "05",
       "scene": "between-3",
       "evidence": "That,\" he said, \"was the best lie I ever heard that wasn't one."
+    },
+    {
+      "fact": "He saw that someone had been keeping the Hollowed knight, shaving him, and grieved it.",
+      "chapter": "05",
+      "scene": "3",
+      "evidence": "Somebody's been shaving him,"
     }
   ],
   "relationships": [
@@ -951,6 +957,10 @@
     {
       "chapter": "05",
       "scene": "between-3"
+    },
+    {
+      "chapter": "05",
+      "scene": "3"
     }
   ]
 }
