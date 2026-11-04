@@ -43,6 +43,9 @@ html.mast-away .mast{transform:translateY(-100%)}
 .brand:hover{text-decoration:none}
 .nav{display:flex;gap:4px 14px;flex-wrap:wrap}
 .nav a{font-family:var(--label);font-size:.85rem;letter-spacing:.08em;color:var(--dim);padding:4px 0;border-bottom:2px solid transparent}
+/* on a phone the six links keep to one line */
+@media (max-width:480px){.nav{gap:4px 10px}.nav a{font-size:.8rem;letter-spacing:.03em}}
+@media (max-width:370px){.nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{flex:none}}
 .nav a[aria-current=page]{color:var(--brass);border-bottom-color:var(--brass)}
 .progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:6;pointer-events:none}
 .progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass-dim),var(--ember))}
@@ -165,6 +168,10 @@ details[open]>summary::after{content:"\2212"}
 .chron li>a{display:grid;gap:2px}
 .chron li.now a b{color:var(--brass)}
 .chron .scenes{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:.92rem}
+.chron details.scn{border:0;padding:0}
+.chron details.scn>summary{justify-content:flex-start;gap:8px;font-family:var(--body);letter-spacing:0;font-size:inherit;color:inherit}
+.chron details.scn>summary::after{content:"";width:6px;height:6px;margin:0 0 3px 2px;align-self:center;border-right:1.5px solid var(--brass);border-bottom:1.5px solid var(--brass);transform:rotate(45deg)}
+.chron details.scn[open]>summary::after{content:"";transform:rotate(-135deg);margin:3px 0 0 2px}
 .chron .scenes a{color:var(--dim)}
 .chron .scenes li{display:block}
 .chron .scenes .state{margin-left:6px;vertical-align:1px}
@@ -178,7 +185,7 @@ details[open]>summary::after{content:"\2212"}
 .archive summary .state{margin-right:4px}
 .archive+.sub-h{margin-top:18px}
 .jump .chip{color:var(--brass);border-color:var(--brass-dim)}
-.archive summary .rn{font-family:var(--display);color:var(--brass);width:2.2em;flex:none;display:inline-block;font-size:1.3rem;line-height:1}
+.archive summary .rn{font-family:var(--display);color:var(--brass);min-width:1.7em;padding-right:.4em;flex:none;display:inline-block;font-size:1.2rem;line-height:1}
 .archive .dt-body{color:var(--dim);max-width:62ch;display:grid;gap:6px}
 .archive .dt-body p{line-height:1.5}
 .archive .m{font-size:.86rem;color:var(--faint)}

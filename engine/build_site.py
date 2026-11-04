@@ -2093,14 +2093,16 @@ class Site:
             count = "no scene yet" if ch["empty"] else (f'{n_sc} scene{"s" if n_sc != 1 else ""}' + (f' · {n_bt} between' if n_bt else "") + f' · about {ch["words"]:,} words')
             tier_row = next((r for r in self.chapters_csv if str(r.get("chapter")) == str(ch["number"])), None) if ch["number"] else None
             seal = (svg_seal(tier_row["tier"], 22) + " ") if tier_row and tier_row.get("tier") in TIER_SEAL else ""
+            line = f'<span class="m num">{seal}{count}{" · now" if now else ""}</span>'
+            fold = (f'<details class="scn"{" open" if now else ""}><summary>{line}</summary><ul class="scenes">{scenes}</ul></details>'
+                    if scenes else line)
             items.append(f'<li class="{"now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
-                         f'<span class="m num">{seal}{count}{" · now" if now else ""}</span>'
-                         f'<ul class="scenes">{scenes}</ul></li>')
+                         f'{fold}</li>')
         first = self.chapters[0] if self.chapters else None
         start = (f'<p class="m">Or <a href="{rel}chronicle/{first["slug"]}.html">start from the beginning</a>: '
                  f'{esc(first["label"] + " — " + first["title"])}.</p>') if first else ""
         body = (f'<section class="plate"><p class="lbl">The Chronicle</p><h1>Books, chapters and scenes</h1>'
-                f'<p class="dim">Read in order. The current chapter is marked in brass.</p>{self.continue_button(rel)}{start}</section>')
+                f'<p class="dim">Read in order. The current chapter is marked in brass; tap a chapter\'s line to see its scenes.</p>{self.continue_button(rel)}{start}</section>')
         n_num = sum(1 for c in self.chapters if c["number"])
         n_pro = len(self.chapters) - n_num
         count = (("a prologue and " if n_pro else "") + f"{n_num} chapter{'s' if n_num != 1 else ''}") if n_num else "a prologue"
@@ -2911,6 +2913,17 @@ class Site:
                 "looks": [{"id": lk["id"], "name": lk["name"], "alt": lk["alt"], "values": lk["values"], "details": lk.get("details") or "",
                            "full": rel + lk["_path"], "worn": lk is cur} for lk in self.looks],
                 "start": start, "company": COMPANY, "template": "\n".join(w["prompt"])}
+        for c in data["cats"]:  # the names and notes the Forge shows get the page's curly quotes; the prompt stays as written
+            for o in c["options"]:
+                for k in ("name", "tag"):
+                    if isinstance(o.get(k), str):
+                        o[k] = curl(o[k])[0]
+                if isinstance(o.get("why"), str):
+                    o["why"] = smart_quotes(o["why"])  # HTML: its links keep their straight attribute quotes
+        for lk in data["looks"]:
+            for k in ("name", "alt", "details"):
+                if isinstance(lk.get(k), str):
+                    lk[k] = curl(lk[k])[0]
         blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
                 f'<script src="{rel}forge.js?v={asset_v("forge")}" defer></script>')
@@ -3126,7 +3139,13 @@ class Site:
         ch, latest, after = self.latest_pieces()
         place = self.place_by_id.get(self.current_place, {})
         loc = w.get("location") or {}
-        where = place.get("name", "") + (f", {loc.get('detail')}" if isinstance(loc, dict) and loc.get("detail") else "")
+        detail = loc.get("detail") if isinstance(loc, dict) else ""
+        pname = place.get("name", "")
+        bare = re.sub(r"^the\s+", "", pname.lower())
+        if detail and bare and bare in detail.lower():  # the detail already names the place: say it once
+            where = detail[:1].upper() + detail[1:]
+        else:
+            where = pname + (f", {detail}" if detail else "")
         scene_row = ""
         if latest and after:  # the newest piece is a Between: the scene it follows gets its own row
             scene_row = (f'<dt>Latest scene</dt><dd><a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">'
@@ -3305,7 +3324,7 @@ class Site:
 
         def rows(items, start=1):
             return f'<ol class="archive" start="{start}">' + "".join(
-                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span><span class="rn">{roman(i)}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
+                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span><span class="rn num">{i}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
                 for i, it in enumerate(items, start)) + "</ol>"
 
         def add(title, sid, count, inner):
@@ -3436,7 +3455,7 @@ def scene_text(scene):
 
 
 def norm(s):
-    s = html.unescape(s)
+    s = html.unescape(s).translate(STRAIGHT)
     s = re.sub(r"[*_`#>\[\]()|]", " ", s)
     s = re.sub(r"\s+", " ", s).strip().lower()
     return s.strip(" .,;:!?\"'“”‘’—–-")
@@ -3613,6 +3632,71 @@ def run_checks(site, out_dir):
                 problem(f"{k}: broken anchor '{href}{frag}'")
 
 
+# ============================================================ typography
+# Curly quotes for the published pages: “ ” ‘ ’ in place of " and '. It runs after every check, on the finished HTML: text
+# only (never inside a tag, a script, a style or code), plus the link previews' text and the alt and title attributes.
+STRAIGHT = str.maketrans({"“": '"', "”": '"', "‘": "'", "’": "'"})
+QUOTE_SKIP = ("script", "style", "code", "pre", "textarea")
+QUOTE_INLINE = ("a", "i", "b", "em", "strong", "s", "span", "small", "sup", "sub", "abbr", "mark", "u", "q", "cite")
+QUOTE_ATTR_RE = re.compile(r'(\s(?:data-pv-[tsxz]|alt|title|aria-label)=")([^"]*)(")')
+
+
+def curl(text, prev=" "):
+    """(text with curly quotes, its last character). prev is the character before the text (a space at a block's start)."""
+    out = []
+    n = len(text)
+    for i, ch in enumerate(text):
+        nxt = text[i + 1] if i + 1 < n else ""
+        if ch == '"':
+            if prev.isspace() or prev in "([{“‘":
+                ch = "“"
+            elif prev in "—–-/":  # after a dash: opening only when a word follows at once
+                ch = "“" if nxt.isalnum() else "”"
+            else:
+                ch = "”"
+        elif ch == "'":
+            ch = "‘" if (prev.isspace() or prev in "([{“—–") and nxt.isalpha() else "’"
+        out.append(ch)
+        prev = ch
+    return "".join(out), prev
+
+
+def curl_attr(m):
+    v = curl(html.unescape(m.group(2)))[0]
+    return m.group(1) + html.escape(v, quote=True) + m.group(3)
+
+
+def smart_quotes(page):
+    if '"' not in page and "'" not in page and "&quot;" not in page and "&#x27;" not in page:
+        return page
+    parts = re.split(r"(<!--.*?-->|<[^>]+>)", page, flags=re.S)
+    out, skip, prev = [], 0, " "
+    for part in parts:
+        if not part:
+            continue
+        if part.startswith("<"):
+            m = re.match(r"<(/?)([a-zA-Z][a-zA-Z0-9-]*)", part)
+            if m:
+                tag = m.group(2).lower()
+                if tag in QUOTE_SKIP:
+                    skip += -1 if m.group(1) else (0 if part.endswith("/>") else 1)
+                    skip = max(skip, 0)
+                if tag not in QUOTE_INLINE:
+                    prev = " "
+                if not m.group(1) and not skip:
+                    part = QUOTE_ATTR_RE.sub(curl_attr, part)
+            out.append(part)
+            continue
+        if skip or ('"' not in part and "'" not in part and "&quot;" not in part and "&#x27;" not in part and "&#39;" not in part):
+            if not skip and part.strip():
+                prev = html.unescape(part)[-1]
+            out.append(part)
+            continue
+        txt, prev = curl(html.unescape(part), prev)
+        out.append(html.escape(txt, quote=False))
+    return "".join(out)
+
+
 # ============================================================ assets
 # The favicon: a brass-rimmed shield with a knot on its rope, in the site's colours. saga/art/site/ holds the same drawing
 # as favicon-32.png and, on a full dark square, apple-touch-icon.png (180 px); redraw both if this changes.
@@ -3628,6 +3712,9 @@ def main():
         site.build()
         tmp = Path(tempfile.mkdtemp(prefix="unkneeling-site-"))
         run_checks(site, tmp)
+        for k in site.pages:  # typography last, on pages that have passed every check
+            if k.endswith(".html"):
+                site.pages[k] = smart_quotes(site.pages[k])
     except Exception:
         if PROBLEMS:
             print(f"problems found before the build crashed ({len(PROBLEMS)}):", file=sys.stderr)

@@ -1,7 +1,7 @@
 {
   "_about": "Story state, reader-safe. Claude-owned. Update after every scene and climax. Never put real-world numbers here; GM-only state (plan, flags, factions, companions to come) lives in saga/state/_gm/plan.json and approval moves only through saga.py add. covers lists the days a scene drew on; whether a day is closed lives in the Ledger, not here. The site's Now page gives each field one job, so a fact belongs in one of them: last_beat is the latest scene or Between, current_quest.on_the_page the quest, current_struggle what he is fighting (a sentence or two), location.detail where he is (a phrase); a companion's line there is their character file's last_seen_doing. tether is projected from the records: the Tether stages the page has paid, each with the block that paid it (the Wardrobe opens its pieces for the two of them by it).",
   "book": 2,
-  "book_title": "The House of Menders",
+  "book_title": "The Tempering Road",
   "chapter": 5,
   "chapter_title": "The Thornwild Woman's",
   "chapter_file": "saga/chronicle/05-the-thornwild-woman-s.md",

@@ -188,6 +188,13 @@ def chapter_files():
     return out
 
 
+def book_title_case(title):
+    """'THE HOUSE OF MENDERS' (a Book heading) → 'The House of Menders'."""
+    small = {"a", "an", "and", "at", "by", "for", "in", "of", "on", "or", "the", "to", "under", "with"}
+    words = title.strip().split()
+    return " ".join(w.capitalize() if i == 0 or w.lower() not in small else w.lower() for i, w in enumerate(words))
+
+
 def chapter_titles(path):
     """(book_title or None, chapter_title or '') from a chapter file's front matter."""
     book, title = None, ""
@@ -668,6 +675,8 @@ def project_world(events, plan, world, tale_events=()):
                 continue  # another's eyes, often stepping back in time: Darrow's place and his last beat stay with his own blocks
             if ev.get(k):
                 state[k] = ev[k]
+                if k == "book_title":
+                    state["book_title_ch"] = ch
         inv = ev.get("inventory") or {}
         if isinstance(inv, dict):
             if inv.get("set") is not None:
@@ -695,8 +704,18 @@ def project_world(events, plan, world, tale_events=()):
             row["written"] = ev.get("written")
             scenes.append(row)
     w["scenes"] = scenes
-    if state["book_title"]:
+    # the Book's title: the last "# BOOK N — TITLE" heading in the chapter files up to this one, unless a record set
+    # one in that chapter or after it (an older record's title belongs to an earlier Book)
+    head_title, head_ch = None, -1
+    for c in sorted(files):
+        if c <= chapter:
+            bt = chapter_titles(files[c])[0]
+            if bt:
+                head_title, head_ch = book_title_case(bt), c
+    if state["book_title"] and state.get("book_title_ch", -1) >= head_ch:
         w["book_title"] = state["book_title"]
+    elif head_title:
+        w["book_title"] = head_title
     if state["where"]:
         loc = dict(world.get("location") or {})
         loc["place"] = state["where"].get("place")
