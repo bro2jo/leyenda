@@ -565,7 +565,7 @@ Then Hollis took a breath that went all the way down to his new boot-sole and ro
 
 "Mine," said Hollis. "Ask anybody on this road who got the cart singing."
 
-They had stopped for the night in the lee of a thorn hedge, the cart drawn across the wind and the oxen hobbled on the verge, and the fire was just big enough for five people and a dog to argue over. Ash had taken the warmest place at it, which was the boot Maelis had not finished.
+They had stopped for the night in the lee of a thorn hedge, the cart drawn across the wind and the oxen hobbled on the verge, and the fire was just big enough for five people and a dog to argue over. It was the first evening since the turnip field that anybody had argued about anything. Ash had taken the warmest place at it, which was the boot Maelis had not finished.
 
 "You roared," said Rae, from Hob's near hind foot. "That's different from singing."
 
@@ -583,9 +583,11 @@ They had stopped for the night in the lee of a thorn hedge, the cart drawn acros
 
 "There you are. Two oxen. Hardly an audience."
 
-Darrow leaned back on his elbow. "A week of boot-mending says I make her say it. Out loud, before this fire's down."
+Darrow leaned back on his elbow. Who had started it mattered a good deal less to him than that they were all arguing about it, and loudly, and he meant to keep them at it.
 
-Hollis spat in his palm and put it out across the flames, and Darrow did the same, and they shook over the fire like two men who had shaken over worse.
+"A week of boot-mending says I make her say it. Out loud, before this fire's down."
+
+Hollis spat in his palm and put it out across the flames, and Darrow did the same, and they shook over the fire like two men who had shaken on worse.
 
 "Her words, mind," said Hollis. "Out loud. A nod's not an admission. A hum's not an admission. That thing she does with one eyebrow is not an admission—"
 
@@ -635,12 +637,14 @@ Wren leaned across to him with her pencil behind her ear. "You won't get her by 
 
 "Against isn't the same as not on."
 
-Darrow looked at the sparks for a while. Then, cheerfully, at a jig's pace, he began to sing.
+Darrow looked at the sparks for a while, and made up his mind.
+
+`[FINESSE · DC 12]` d20 **14** +0 finesse = **14** — *Success*
+
+Then, cheerfully, at a jig's pace, he began to sing.
 
 > *Salt comes down and the letters go up,*
 > *stone after stone into Calden town—*
-
-`[FINESSE · DC 12]` d20 **14** +0 finesse = **14** — *Success*
 
 Rae's head came up off the hoof.
 
@@ -657,7 +661,7 @@ He went on.
 
 —and stopped, because everyone round the fire had stopped to listen.
 
-Wren's pencil was in the air. Maelis's needle was out of the boot. Hollis had a hand half raised, like a man about to object in court who has just found he has nothing to object with.
+Wren's pencil was in the air. Maelis's needle was out of the boot. Hollis had a hand half raised, like a man about to object in court who had just found he had nothing to object with.
 
 "That's not admitting," said Hollis, very fast. "That's mending. She's mending his song. Mender, tell her that's mending."
 
