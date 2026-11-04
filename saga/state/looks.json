@@ -54,6 +54,15 @@
       "alt": "Ser Darrow, full length, standing with both feet planted in a slow practice form, a plain wooden practice sword gripped in both hands and raised high over his right shoulder. He looks tired around the eyes but steady, with a few days' stubble; the grey wool blanket hangs from his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt with two small pouches, and tall worn boots.",
       "values": {"side": "none", "pose": "forms", "hand": "wooden-sword", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "weary", "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "pouches"},
       "details": ""
+    },
+    {
+      "id": "ready",
+      "name": "Ready",
+      "made": "2026-11-04",
+      "image": "looks/ready.webp",
+      "alt": "Ser Darrow, full length, seated in a plain wooden chair with one leg put out a little, his right fist raised and closed before him, the riders' signal for ready, his other hand on his knee; his eyes a little narrowed, reading the viewer, with a few days' stubble: the grey wool blanket round his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt with two small pouches, and tall worn boots.",
+      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "reading", "pose": "ready", "hand": "none", "feet": "worn", "extra": "pouches", "side": "none"},
+      "details": ""
     }
   ]
 }
