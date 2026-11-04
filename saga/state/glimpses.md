@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-31 · house · A novice has been set to scrub the refectory benches and is doing it in strict order, end to end, humming the same three notes under his breath until somebody throws a rag at him, after which he hums them more quietly.
 - 2026-10-31 · body · His breath comes back quicker than it used to; he notices it on the second landing, where he would once have stopped, and does not stop.
 - 2026-10-31 · overheard · From the refectory door, the cook, to the novice with the scrubbing brush: You've had the grain off them. — You said clean. — I said clean. I never said new.
 - 2026-10-31 · house · Brother Cobb sets the bread out on the long table a loaf at a time and squares each one to the edge, and when a novice nudges one crooked in passing he squares it again without looking up.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-03 · house · Wren has decided the Lowmarch's cows are friendlier than the mountain's goats, and is keeping evidence. So far the evidence is one cow, which has followed her the length of a hedge and has opinions about her pencil.
 - 2026-11-03 · verse · Hollis has taken to singing the oxen along with the Grey Mare of Edgemoor: *and she never once asked me the why or the where.* The oxen, Rae says, never have either, and do not need encouraging.
 - 2026-11-03 · overheard · Overheard at the cart's tail: Hollis telling Wren that the ox call is the first thing the captain has said since midsummer that an animal has taken seriously. Wren writes it down.
+- 2026-11-03 · house · Maelis has made the cart's tailboard a surgery and Hollis's boots her first patients. The boots, she says, will live. She is less sure about Hollis.

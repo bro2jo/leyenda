@@ -219,3 +219,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-03#5,2026-11-03,,snack,Bloom Pop prebiotic soda (12 oz can),1 can,20,0,5,0,0,0,3,90,0,0,0,0,0,0,0,0,library,library row (strawberry cream label 10/14); flavour not given
 2026-11-03#6,2026-11-03,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,library row (label 11/1)
 2026-11-03#7,2026-11-03,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,a second bar today; his usual Kirkland chewy bar
+2026-11-03#8,2026-11-03,,dinner,Grilled cheese sandwich on GF bread,"2 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",900,30,64,56,4,30,6,1600,240,800,3,50,4,0,1,0,estimate,"bread, cheese and butter amounts not given; typical GF bread ~80 kcal a slice: asked"
