@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 2963,
+  "xp": 2993,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -15,7 +15,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 55,
+      "temper": 56,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -35,7 +35,7 @@
       "raw": 11,
       "cap": 12,
       "mod": 0,
-      "temper": 37,
+      "temper": 38,
       "next_at": 50,
       "fell": 18,
       "banked": false

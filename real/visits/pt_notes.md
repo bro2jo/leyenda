@@ -537,3 +537,71 @@ Reading:
 - **The single-leg squat test** is the plan's own Phase 4 test with no further condition: it runs at home, filmed.
 - **Unchanged:** running needs week 13 (Tue 11/17) and the rehabilitation team's agreement; the hamstring and glute tests need the clinic's equipment; step-out throws, throwing on the move and marking (the Add-On §3, not the plan) and the items outside the plan (BFR, Spanish squat, seated rotational throws) still go to the PT.
 - **Reconfirm both points at the 11/4 visit**, as with every relayed instruction that changes a gate or a restriction.
+
+---
+
+## 2026-11-04 (POD 72) — Visit 12 — PT (the note names no one; Nick Immel consulted)
+
+The first visit since 10/17 (10/28 cancelled). Pasted by him the same day; the note's subjective line is cut off where he pasted it.
+
+### Progress note
+
+```text
+SUBJECTIVE: Pt states that he is doing very well. He feels
+
+Pain:
+Pain
+Pain Level: 0
+Pain Location: Knee - Left
+
+OBJECTIVE MEASURES WITH LEVEL OF FUNCTION:
+
+Gait
+Gait Observation: no deviations noted.
+
+TREATMENT:
+Therapeutic Exercise:
+1: LFUC 16 L5 x6' for LE function and endurance
+2: heel tap- 6in- 2x10 ea
+3: goblet squat- 45# 2x10
+4: 12in step up 10# 10x, +10x with GTB abd
+5: bulgarian split squat- 10x, +10x GTB TKE
+6: GJC side steps 5x ea
+7: retro walk GJC- 10x
+8: CKE(4/3) 35# 2x15,
+9: CKE L ecc- 20# 10x
+10: LFKF(7) single leg- 40# 2x10
+11: CKE iso- 0def 30" x1, 45deg 30" x1
+```
+
+### Patient's account of the same visit
+
+Relayed by him in the repo thread on Wed 2026-11-04, with the note. Patient-reported; carries PT priority.
+
+```text
+Instructed patient to continue progressing through master plan and weights at home.
+Especially recommended some iso work on the single leg extensions.
+
+Hamstring test was not done, but workouts were done and patient seems to be doing
+well with both legs.
+
+Single leg squat video was decent, passed but recommended to continue working on it
+to get it cleaner.
+
+Confirmed with Nick that the plans timelines and criteria decide.
+
+Running will be approved by my surgeon later today. His criteria passed to run now
+but wants to make sure surgeon is good with it.
+
+Quad test officially will be done next week, but all looks informally passed.
+
+Did not test more today.
+```
+
+Reading: pain 0, left knee; gait "no deviations noted". **No measurements taken** (no ROM, no strength test). Abbreviations, as on 10/15: LFUC 16 L5 = Life Fitness upright bike, seat 16, level 5, 6 min · heel tap from a 6" step, 2×10 each leg · goblet squat 45 lb 2×10 · step-up on 12" holding 10 lb ×10, then ×10 with a green Theraband (GTB) for abduction (band at the knees) · Bulgarian split squat (the RFESS) ×10, then ×10 with a GTB terminal-knee-extension band (load and sides not stated) · GJC = the banded walk (his 10/15 account): side steps 5 each way, retro walk ×10 · CKE(4/3) = the knee extension machine, settings 4/3: 35 lb 2×15 (sides not stated), then a left-only eccentric at 20 lb ×10 · LFKF(7) = Life Fitness knee flexion (hamstring curl), setting 7, single leg 40 lb 2×10 (sides not stated; his account: both legs did well) · **CKE iso = knee extension isometrics, 30 s at 0° (full extension) and 30 s at 45°**, once each ("0def" read as 0 deg); load not recorded.
+
+What it answers from the 11/4 list (State §5): **Nick's 10/28 words reconfirmed** (the plan's timelines and criteria decide) · **the single-leg squat video: passed**, keep cleaning it up · progression at home through the master plan continues (the impact ladder included). **New:** single-leg knee-extension isometrics recommended for home (the clinic's 0° and 45°, 30 s) · the PT reads his running criteria as met and leaves the go to the surgeon, today · the formal quad test is next week ("informally passed").
+
+Not answered or not done: **hamstring and glute tests** (not done: still unmeasured, both Phase 4 exit items) · step-out throws and the pivot foot · the written 10/17 note · bike intervals · BFR, Spanish squat, seated throws · the right knee's hyperextension · who treated 10/1 · the next visit's day.
+
+What it changes: the isometrics join the home knee work (with the knee extension, the PT's dose; load not given, so light). **Running is not changed by this note:** the PT says his criteria are met and defers to the surgeon; the master plan's own timeline puts running at week 13 (Tue 11/17), and Nick's words, reconfirmed today, keep the plan's times in charge. Whether the surgeon's approval means now or from 11/17 is the question for the surgeon's answer.
