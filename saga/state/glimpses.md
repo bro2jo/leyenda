@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-31 · saying · Told that tonight's pot is the same as last night's, one of the old men on the far cots says to the rafters, with great dignity: Kneel to that. Two cots down, somebody laughs and has to be thumped on the back.
 - 2026-10-31 · overheard · From the linen press, a lay brother counting sheets under his breath: …eleven, twelve, twelve, thirteen. No. One. And he starts again from the top, out of principle.
 - 2026-11-01 · body · The cold off the tarn finds every old break in him and, tonight, misses the knee. He notices the way you notice a dog that has stopped barking: late, and suspicious of his luck.
 - 2026-11-01 · weather · Fog comes off the tarn at dusk and settles on the drove road as if it has paid for the spot. Hollis tells it to move along. It does not.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-04 · weather · Frost silvers the cart's canvas at first light and is gone by the first milestone, as if it had only come to look.
 - 2026-11-04 · overheard · Over the morning fire, Maelis tells Hollis that if he calls the captain spry once more, she will find something wrong with him that needs a splint. Hollis says spry under his breath for the rest of the hour.
 - 2026-11-04 · house · Rae has taught Ash to stay off the cart, and Ash has taught Rae that he will lie under it instead, exactly where she puts her feet. Neither considers the matter closed.
+- 2026-11-04 · body · Evening finds him less worn than the road has any right to leave him. He sits with his feet to the coals and, for once, does not count the hours to sleep.
