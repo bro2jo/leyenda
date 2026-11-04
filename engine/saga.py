@@ -3950,7 +3950,66 @@ def gm_drift_notes(st):
             out.append(f"_gm/characters.md: {h} travels with him and has no **Now:** line for {tag}: the brief prints it into every scene, so write one")
         if cid in present and any(l.startswith("- **Book ") for l in lines) and not any(l.startswith(f"- **{tag}:**") for l in lines):
             out.append(f"_gm/characters.md: {h} travels with him and has no **{tag}:** line: write what this Book presses on them (the brief prints it into every block they are in)")
+    out += gm_size_notes(st, names, present)
     return out
+
+
+GM_NOTE_BUDGET, GM_LINE_BUDGET, GM_GROWN_MAX = 2800, 400, 8
+
+
+def gm_notes_printed(st, names=None, present=None):
+    """[(name, lines)] the brief would print at full depth for each person on the road, with everyone else on the road
+    in the room (the heaviest case): what `check` measures and `saga.py notes` shows."""
+    if names is None:
+        names, _ = people_index()
+    if present is None:
+        on = {cid for cid, v in (st.world.get("companions") or {}).items() if (v or {}).get("present")}
+        present = {c for c in names if c in on or c.split("-")[0] in on} | {"darrow"}
+    roster = sorted(present, key=lambda c: (c != "darrow", c))
+    book = int(st.plan["position"]["book"])
+    out = []
+    for cid in roster:
+        nm = (names.get(cid) or {}).get("name")
+        if not nm:
+            continue
+        comp = (st.world.get("companions") or {}).get(cid.split("-")[0])
+        band = regard_words(comp.get("approval", 0)).split()[0] if comp else None
+        others = [(names.get(o) or {}).get("name") for o in roster if o != cid]
+        out.append((nm, gm_character_lines(nm, others=[o for o in others if o], depth=True, book=book, regard=band)))
+    return out
+
+
+def gm_size_notes(st, names=None, present=None):
+    """The other half of growing the notes: keeping them short enough to read. Notes only, never a refusal."""
+    out = []
+    for nm, ls in gm_notes_printed(st, names, present):
+        if not any(l.startswith("Grown on the page:") for l in ls):
+            continue
+        size = sum(len(l) for l in ls)
+        if size > GM_NOTE_BUDGET:
+            out.append(f"_gm/characters.md: {nm}'s brief lines run {size} characters with the whole company in the room (aim ≤ {GM_NOTE_BUDGET}): prune (`saga.py notes`)")
+        for l in ls:
+            if len(l) > GM_LINE_BUDGET:
+                out.append(f"_gm/characters.md: {nm}: the {l.split(':')[0]} line runs {len(l)} characters (aim ≤ {GM_LINE_BUDGET}): say it shorter")
+        grown = next((l for l in ls if l.startswith("Grown on the page:")), "")
+        n = len([x for x in grown.split(":", 1)[1].split(";") if x.strip()]) if grown else 0
+        if n > GM_GROWN_MAX:
+            out.append(f"_gm/characters.md: {nm}: Grown on the page holds {n} things (aim ≤ {GM_GROWN_MAX}): fold what has settled into At ease or Under pressure, drop what is spent")
+    return out
+
+
+def cmd_notes(args):
+    """What the brief prints of each person on the road at full depth (everyone else in the room), with sizes: the
+    prune pass reads this. The hides never print; `_gm/characters.md` keeps the rest."""
+    st = State()
+    for nm, ls in gm_notes_printed(st):
+        if args.person and args.person.lower() not in nm.lower():
+            continue
+        print(f"· {nm} · {sum(len(l) for l in ls)} characters, {len(ls)} lines (aim ≤ {GM_NOTE_BUDGET}; a line ≤ {GM_LINE_BUDGET})")
+        for l in ls:
+            print(f"  [{len(l)}] {l}")
+    notes = gm_size_notes(st)
+    print("\n".join(notes) if notes else "within the aims")
 
 
 def cmd_check(args):
@@ -4550,15 +4609,25 @@ def cast_entries():
 GM_CORE_KEYS = ("Now", "Wants", "Fears", "Under pressure", "At ease", "Wrong, in character")
 GM_DEPTH_KEYS = ("Needs", "The lie", "Contradiction", "Grown on the page")
 GM_PRESENT_KEYS = ("Now", "Grown on the page")  # the present: never printed for a tale
-GM_ORDER = ("Now", "Book", "Wants", "Fears", "Needs", "The lie", "Contradiction", "Under pressure", "At ease", "Wrong, in character", "Grown on the page", "With")
+GM_ORDER = ("Now", "Book", "By regard", "Wants", "Fears", "Needs", "The lie", "Contradiction", "Under pressure", "At ease", "Wrong, in character", "Grown on the page", "With")
 
 
-def gm_character_lines(name, others=None, depth=False, past=False, book=None):
+def regard_band(text, regard):
+    """The segment of a **By regard:** line for today's band ("cold, wary: … · civil: … · warm: … · fond: … · devoted: …")."""
+    for seg in str(text or "").split(" · "):
+        labels, _, body = seg.partition(":")
+        if regard in [x.strip().lower() for x in re.split(r",| or ", labels)] and body.strip():
+            return body.strip()
+    return None
+
+
+def gm_character_lines(name, others=None, depth=False, past=False, book=None, regard=None):
     """The GM entry's drafting lines for a name, never the hides (those stay on demand in `_gm/characters.md`).
     Always: now, wants and fears, under pressure, at ease, wrong in character. With depth: needs, the lie, the
     contradiction, what the page has grown, the current Book's line (`book`), and the **With <name>:** lines for the
-    others in the room (`others`: their names). past=True (a tale): who they are, never their present (no Now, no Book
-    line, no Grown on the page, no With lines)."""
+    others in the room (`others`: their names). `regard` (the band word of today's approval: cold, wary, civil, warm,
+    fond, devoted) prints that band of their **By regard:** line, for everyone in the room. past=True (a tale): who
+    they are, never their present (no Now, no Book line, no regard, no Grown on the page, no With lines)."""
     path = ROOT / "saga/bible/_gm/characters.md"
     if not path.exists():
         return []
@@ -4577,6 +4646,11 @@ def gm_character_lines(name, others=None, depth=False, past=False, book=None):
         if not m:
             continue
         key, rest = m.group(1).strip(), m.group(2)
+        if key == "By regard":
+            band = regard_band(re.sub(r"[*][*]([^*]+)[*][*]", r"\1", rest), regard) if regard and not past else None
+            if band:
+                got.append((GM_ORDER.index("By regard"), len(got), f"By regard ({regard}): {band}"))
+            continue
         if key in GM_CORE_KEYS:
             slot = key
         elif depth and key in GM_DEPTH_KEYS:
@@ -4626,6 +4700,17 @@ def people_in(texts, names, by_word):
     return out
 
 
+def companion_prefs():
+    """{companion id: [poles]} from the plan (on the road) and companions_to_come: what moves their regard."""
+    try:
+        plan = load_json(P["plan"])
+    except (OSError, ValueError):
+        return {}
+    out = {k: v.get("prefers") or [] for k, v in (plan.get("companions_to_come") or {}).items()}
+    out.update({k: v.get("prefers") or [] for k, v in (plan.get("companions") or {}).items()})
+    return out
+
+
 def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2, others=None, depth=False, past=False, book=None):
     """One person for the brief: voice, the GM drafting lines (with depth: need, lie, contradiction, the Book's line,
     what the page has grown, how they stand with the others in the room), regard, now, their last facts, what they
@@ -4633,11 +4718,13 @@ def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2, others=None, dep
     name = c.get("name") or cid
     key = cid.split("-")[0]
     comp = (world.get("companions") or {}).get(key)
-    lines = [f"· {name}" + (f" ({regard_words(comp.get('approval', 0))}, approval {comp.get('approval')})" if comp else "") + (f" · status {c.get('status')}" if c.get("status") not in (None, "alive") else "")]
+    prefs = ((companion_prefs().get(key) or []) if comp else [])
+    lines = [f"· {name}" + (f" ({regard_words(comp.get('approval', 0))}, approval {comp.get('approval')}" + (f"; prefers {' and '.join(p.title() for p in prefs)}" if prefs else "") + ")" if comp else "") + (f" · status {c.get('status')}" if c.get("status") not in (None, "alive") else "")]
     ce = cast.get(name) or {}
     if ce.get("voice"):
         lines.append(f"  voice: {ce['voice']}")
-    for l in gm_character_lines(name, others=others, depth=depth, past=past, book=book):
+    band = regard_words(comp.get("approval", 0)).split()[0] if comp else None
+    for l in gm_character_lines(name, others=others, depth=depth, past=past, book=book, regard=band):
         lines.append(f"  {l}")
     if c.get("last_seen_doing"):
         lines.append(f"  last seen: {c['last_seen_doing']} ({(c.get('last_seen') or {}).get('scene')}, {(c.get('last_seen') or {}).get('place')})")
@@ -6386,6 +6473,7 @@ def main():
     s = sub.add_parser("songs", help="tracks made ahead for an Annals song or rhyme, waiting for the page"); s.add_argument("action", nargs="?", choices=["list", "add", "release"], default="list"); s.add_argument("id", nargs="?", help="add: the Annals id (song.… or rhyme.…)"); s.add_argument("file", nargs="?", help="add: the .mp3"); s.add_argument("--title", help="add: the title its player shows (default: the entry's name)"); s.add_argument("--name", help="add: the Codex entry's bold name (default: the Annals title)")
     s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--tale", action="store_true", help="the tale piece owed by a task reported"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
     s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan with a piece per task)"); s.add_argument("--force", action="store_true")
+    s = sub.add_parser("notes", help="what the brief prints of each person on the road at full depth, with sizes (the prune pass)"); s.add_argument("--person", help="a name or part of one")
     s = sub.add_parser("reread", help="the reread's notes for a block: length, habits, opening and closing lines (advice only)"); s.add_argument("key", nargs="?", help="ch05:s2, ch05:between-3, ch05:climax, tale03:p1 … (default: the last block of the current chapter)")
     s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
     s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--tale", type=int, help="one tale's pieces"); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
@@ -6404,7 +6492,7 @@ def main():
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
         "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names, "songs": cmd_songs,
-        "brief": cmd_brief, "record": cmd_record, "reread": cmd_reread, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
+        "brief": cmd_brief, "record": cmd_record, "reread": cmd_reread, "notes": cmd_notes, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
         "tale": cmd_tale,
     }[args.cmd](args)
 

@@ -76,7 +76,7 @@ python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide
 python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · odds --stat S [--prof --art ID] [--chapter N] [--dc N | --target P] · knot tie N --date D --evidence "…"
 python3 engine/darrow.py project open "Title" --tasks … | done TASK | show [--all] | drop --why "…"   (the week's work; `today` names its next task)
 python3 engine/saga.py now · brief [--date D | --between --with who | --climax | --choice | --chapter | --tale] · reread [KEY] · record '<json>' · choose --option K '<entry>'
-python3 engine/saga.py glimpse add --kind K "…" · history --person|--thread|--last · threads [--id N] · due [--later] · approval forecast · bearing show · arc ID · lore ID · check · project
+python3 engine/saga.py notes [--person P] (what the brief prints of each companion, with sizes) · glimpse add --kind K "…" · history --person|--thread|--last · threads [--id N] · due [--later] · approval forecast · bearing show · arc ID · lore ID · check · project
 python3 engine/saga.py tale bind <project id> [--tale tale.id] | list | next   (a project's tale; a task reported owes a piece)
 ```
 

@@ -663,10 +663,14 @@ def main():
                  "any(l.startswith('With Wren:') for l in full), any(l.startswith('With Hollis:') for l in full), any(l.startswith('Book I:') for l in full)); "
                  "print('LEAN', any(l.startswith('The lie:') for l in lean), any(l.startswith('With ') for l in lean)); "
                  "print('TALE', any(l.startswith(('Now:', 'Book ', 'With ', 'Grown')) for l in tale), any(l.startswith('Needs:') for l in tale)); "
-                 "print('HIDES', any('Hides' in l or 'Carries' in l or 'calling' in l.lower() for l in full))")
+                 "print('HIDES', any('Hides' in l or 'Carries' in l or 'calling' in l.lower() for l in full)); "
+                 "fond = saga.gm_character_lines('Rae Thorne', regard='fond'); cold = saga.gm_character_lines('Rae Thorne', regard='cold'); "
+                 "print('BAND', sum(l.startswith('By regard (fond)') for l in fond), sum(l.startswith('By regard (cold)') for l in cold), fond != cold, "
+                 "any(l.startswith('By regard') for l in saga.gm_character_lines('Rae Thorne', regard='fond', past=True))); "
+                 "print('SIZE', isinstance(saga.gm_size_notes(saga.State()), list))")
         code, out = run(["-c", probe], tmp)
-        check(code == 0 and "FULL True True True False False" in out and "LEAN False False" in out and "TALE False True" in out and "HIDES False" in out,
-              "the brief's depth lines: need, lie, the current Book only, With lines only for who is in the room; a tale gets no present; never the hides", out[-300:])
+        check(code == 0 and "FULL True True True False False" in out and "LEAN False False" in out and "TALE False True" in out and "HIDES False" in out and "BAND 1 1 True False" in out and "SIZE True" in out,
+              "the brief's depth lines: need, lie, the current Book only, With lines only for who is in the room, the regard band of today; a tale gets no present; never the hides; check measures their size", out[-300:])
         chap_pages = sorted((tmp / "docs/chronicle").glob("0[1-9]*.html"))
         dice_pages = [p_ for p_ in chap_pages if '<details class="dice">' in page_of(p_)]
         check(bool(dice_pages), "a check on the page is one line, its modifiers behind a tap (details.dice)", ", ".join(p_.name for p_ in chap_pages))
