@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "3",
+    "scene": "between-5",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-5"
   },
-  "last_seen_doing": "Called to the Hollowed knight in his ford voice and got nothing; said somebody's mother had been shaving him.",
-  "now": "On the cart, out of jokes for the day.",
+  "last_seen_doing": "Asked the carter to sing, then roared the salt song to the Sixth's marching tune.",
+  "now": "On the tailboard, singing the salt song wrong.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -652,6 +652,12 @@
       "chapter": "05",
       "scene": "3",
       "evidence": "Somebody's been shaving him,"
+    },
+    {
+      "fact": "He sings the carters' salt song to the tune of the Sixth's marching song.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "to the tune of the Sixth's marching song and in no key known to the Lowmarch"
     }
   ],
   "relationships": [
@@ -961,6 +967,10 @@
     {
       "chapter": "05",
       "scene": "3"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-5"
     }
   ]
 }

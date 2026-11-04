@@ -452,3 +452,111 @@ Wren had the ledger open on her knees, silent since the far cots. She licked the
 
 > ⟦ THE RECKONING ⟧
 > XP 2,888 → 2,943
+
+### Between — Whose Are You
+
+Nobody had said much since the turnip field. Hollis had stopped singing to the oxen. Wren sat in the back with the ledger shut on her knees and her chin in her scarf, and Maelis had found another boot to mend and was mending it at Wren rather than at the boot. By the middle of the afternoon Darrow had had enough of it.
+
+He got himself up onto the box beside Rae, which took a hand on the rail, a hand on her shoulder and an apology to Dun for the language.
+
+"What were you like at ten?" he said.
+
+She looked at him sidelong. "Before the cart, you mean?"
+
+"Before the cart."
+
+"There wasn't a before the cart. I learned to walk on the tailboard and to count off the manifests. My grandmother couldn't read a word and she read a manifest upside down quicker than the clerk read it right way up. I got my letters off salt." She thought about it. "At ten I was small, and loud, and I bit a drover's boy at the Coldmere fair for saying our oxen were thin."
+
+"Were they?"
+
+"No. That's why I bit him."
+
+He laughed, and Hob's ears went back and came forward again, and in the back of the cart something that might have been Wren made a noise into her scarf.
+
+"What did the children sing? At Coldmere."
+
+"Same as everywhere."
+
+"Nowhere's the same as everywhere. In Edgemoor we had a clapping one." He gave her the first of it, the way his mother had clapped it into his hands: "*Count the lances on the west bank, child, count them, one through nine.*"
+
+"Coldmere's is a rope one." She drove a while. "I'm not singing it."
+
+"You are."
+
+"I'm not." And then, a hundred yards on, to the oxen and not to him, in a voice he had not heard from her, high and quick and flat as a child's:
+
+> *Whose are you, whose are you,*
+> *which hearth and which door?*
+> *Which bell do you sleep by,*
+> *and who are you for?*
+
+"That's the turners," she said, in her own voice again. "Two of them turn the rope and sing that, and you're in the middle, and you've got to shout back your house and your hearth and your bell before the rope comes round. Then you jump the rest, and they turn faster."
+
+> *Mill bell, inn bell, bell on the tarn,*
+> *one for the fair and two for the barn,*
+> *three for the carter who's never in bed,*
+> *and out goes the one with the fog in her head!*
+
+"And if you trip, or you can't answer, you're out." She flicked the goad at nothing. "They ask it of anybody new at the trough. Whose are you."
+
+"What did you say?"
+
+"The cart's." She said it as she must have said it at nine, flat, daring anybody to laugh. "A girl in a mill-dust apron asked me, and I said the cart's, and she laughed and went home to her hearth and her door and her bell, and I went home to the cart."
+
+"Yours throws somebody out," Darrow said. "Ours only counts who doesn't come back."
+
+"Yours is sadder."
+
+"Ours is honest."
+
+"Ours is a skipping rhyme. It's not meant to be honest. It's meant to be fast."
+
+"Saint Ysolde's," said Wren, from the back.
+
+They both turned. She had her chin out of the scarf.
+
+"House, hearth and bell," she said. "Saint Ysolde's. The warming room. Old Mercy." She frowned at the ledger. "I don't know who I'm for. That's a hard last line to put to a child at a trough."
+
+"That's why you jump," said Rae. "You don't have to know. You have to get your feet off the ground."
+
+Wren thought about that, and something in her face came back from wherever the turnip field had sent it. "Captain," she said. "Whose are you?"
+
+He considered it. "The cart's," he said.
+
+"That one's taken," said Rae, without looking round.
+
+"What do carters sing, then," Darrow said, "when they're not stealing other people's answers?"
+
+"Salt." She said it as if it were obvious. "In fog, so you're heard before you're met. To the bell." She put her hand on the ox-bell at her belt and let it swing with the cart. "Every carter on the Holloway has it, and no two of them sing it to the same tune. The first line was a saying before anybody put a tune to it."
+
+"Sing it, carter," said Hollis from the tailboard. It was the first thing he had said in an hour.
+
+She did, low, to the bell, a tune that walked at an ox's pace and no faster:
+
+> *Salt goes up and the letters come down,*
+> *stone after stone out of Calden town,*
+> *and the road gives way to a cart with a bell,*
+> *and a cart with none has a tale to tell.*
+
+> *Salt goes up and the letters come down,*
+> *and the farms hear the bell before I come round,*
+> *and they come to the gate with their hands in their shawls,*
+> *and it's only salt, and that's all, that's all.*
+
+The last line she sang more quietly than the rest, and let the bell finish it.
+
+"Why do they come to the gate?" said Wren.
+
+"In a ford year they come out to see which cart it is." Rae looked at the road. "Salt, or the other."
+
+Nobody asked her what the other was. Darrow found he knew, and found he did not want to know how she knew.
+
+Then Hollis took a breath that went all the way down to his new boot-sole and roared, to the tune of the Sixth's marching song and in no key known to the Lowmarch, "*Salt goes up and the letters come down!*"
+
+"That's not the tune," said Rae.
+
+"Every carter has his own. You said."
+
+"You're not a carter."
+
+"I'm on your cart," said Hollis, and went into the second line, louder, and for the first time since the turnip field the oxen picked up their feet.

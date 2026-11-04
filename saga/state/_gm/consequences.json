@@ -1366,13 +1366,14 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch05:between-2",
             "ch05:s2",
             "ch05:between-3",
             "ch05:between-4",
-            "ch05:s3"
+            "ch05:s3",
+            "ch05:between-5"
           ]
         }
       ]
@@ -1448,11 +1449,12 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch05:between-3",
             "ch05:between-4",
-            "ch05:s3"
+            "ch05:s3",
+            "ch05:between-5"
           ]
         }
       ]
@@ -1475,10 +1477,41 @@
           "what": "Rae gave him her grandmother's Thornwild word for stand, said from the belly; he cannot make the catch in the middle of it yet, and practises it under his breath. Fire where he says it right at last, or uses it on an ox, a horse, or himself",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch05:between-4",
-            "ch05:s3"
+            "ch05:s3",
+            "ch05:between-5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c05.7",
+      "made": {
+        "chapter": 5,
+        "scene": "between-5",
+        "date": "2026-11-03"
+      },
+      "chose": "Climbed onto the box to lift the mood after the turnip field; asked Rae what she was like at ten and what Coldmere's children sang, gave her Edgemoor's clapping rhyme for hers, and got Wren talking again",
+      "now": {
+        "approval": {
+          "wren": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.7a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren answered the rope rhyme's house, hearth and bell for herself (Saint Ysolde's, the warming room, Old Mercy) and could not answer who she is for. Fire where she answers it, or someone answers it for her",
+          "fits": "present.wren",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-5"
           ]
         }
       ]

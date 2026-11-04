@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "3",
+    "scene": "between-5",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-5"
   },
-  "last_seen_doing": "Rode the cart until noon; went down into the turnip field and stood in a Hollowed knight's road, asked his Lance, turned him west and watched him drift back east; remembered the grey figures under the trees at the ford; let him go; asked whether anybody counts them.",
-  "now": "Back on the cart on the drove road, past noon, with a question: how many of them walk east, and does anybody count.",
+  "last_seen_doing": "Climbed onto the box to lift the mood; asked Rae what she was like at ten and what Coldmere's children sang; gave her Edgemoor's clapping rhyme; answered the rope rhyme with the cart's, and was told that one was taken.",
+  "now": "On the box beside Rae on the drove road, Hollis singing behind him.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1798,6 +1798,12 @@
       "evidence": "a line of grey figures in armour, so still they had not moved even when the river screamed"
     },
     {
+      "fact": "In Edgemoor the children clap the Lowmarch counting rhyme; his mother clapped it into his hands.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "In Edgemoor we had a clapping one."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2171,6 +2177,10 @@
     {
       "chapter": "05",
       "scene": "3"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-5"
     },
     {
       "chapter": "tale01",

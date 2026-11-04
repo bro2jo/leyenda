@@ -1,39 +1,4 @@
 {
   "_about": "GM. Tracks made ahead for an Annals song or rhyme the page has not sung. Each file waits in saga/state/_gm/songs/ until the Codex has an entry by `name` under Songs and verses and the chapters have sung every line it embeds; then `saga.py record` (or `songs release`) moves it to saga/art/songs/ and adds {name, audio, audio_title} to codex_art.json. Never edited by hand: `saga.py songs add`.",
-  "waiting": [
-    {
-      "lore": "song.salt",
-      "name": "Salt Goes Up",
-      "audio_title": "Only Salt",
-      "file": "only-salt.mp3",
-      "lines": [
-        "Salt goes up and the letters come down,",
-        "stone after stone out of Calden town,",
-        "and the road gives way to a cart with a bell,",
-        "and a cart with none has a tale to tell.",
-        "Salt goes up and the letters come down,",
-        "and the farms hear the bell before I come round,",
-        "and they come to the gate with their hands in their shawls,",
-        "and it's only salt, and that's all, that's all."
-      ],
-      "filed": "2026-11-03"
-    },
-    {
-      "lore": "rhyme.whose",
-      "name": "Whose Are You",
-      "audio_title": "Whose Are You",
-      "file": "whose-are-you.mp3",
-      "lines": [
-        "Whose are you, whose are you,",
-        "which hearth and which door?",
-        "Which bell do you sleep by,",
-        "and who are you for?",
-        "Mill bell, inn bell, bell on the tarn,",
-        "one for the fair and two for the barn,",
-        "three for the carter who's never in bed,",
-        "and out goes the one with the fog in her head!"
-      ],
-      "filed": "2026-11-03"
-    }
-  ]
+  "waiting": []
 }

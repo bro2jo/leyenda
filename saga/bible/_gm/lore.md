@@ -264,7 +264,7 @@ Every clan door burns a lamp from dusk to dawn, all year, and the Lowmarch calls
 # Songs, rhymes and sayings
 
 ## rhyme.counting — The Lowmarch counting rhyme
-- **tier:** common · **spoken:** Prologue (epigraph, first stanza) · **names:** —
+- **tier:** common · **spoken:** Prologue (epigraph, first stanza); ch05:between-5 · **names:** —
 - **use:** children at a gate; an epigraph; a sum that will not come out.
 
 A clapping rhyme for two, the sums never matching because the lances come home fewer, which children do not notice and their mothers do. ⟪gm: Book V adds a last verse about a knight who would not kneel (q5.rhyme); do not write it before.⟫
@@ -344,7 +344,7 @@ Said, not sung, by whoever rings the sanctuary bell at dusk, one line to each st
 > and the bell says so.
 
 ## song.salt — Salt Goes Up
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch05:between-5 · **names:** —
 - **use:** a carter in fog; a sunk stretch of the Holloway; a farm gate when a bell is heard; something hummed to oxen.
 
 The Holloway carters' song, sung in fog to the swing of the ox-bell so a cart is heard before it is met. Every carter has it and no two sing it to the same tune; the first line was a proverb before it was a song. The first verse is the road's law. The second is the one the farms on the road know: a gate hears every bell, and in a ford-war year it goes out to see which.
@@ -371,7 +371,7 @@ Five sheep's knuckles. Throw one up, sweep the rest, catch the one: ones, twos, 
 > and the bones go to him who can stand.
 
 ## rhyme.whose — Whose Are You
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** ch05:between-5 · **names:** —
 - **use:** children at a rope on a village green; a carter who knows the words before the children do; Coldmere.
 
 Coldmere's skipping rhyme, two to turn the rope and one to jump. The turners sing the first verse, and the jumper must shout back her house, her hearth and her bell before the rope comes round; then she jumps the second verse, faster each time, and whoever trips or cannot answer is out. It is the question Coldmere's children ask any stranger at the trough. Every carter's child on the Holloway knows the words from somebody else's green. ⟪gm: tale02 p2, the trough, where Rae answered "the cart's"; she starts the singing and denies it.⟫

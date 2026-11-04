@@ -35,17 +35,17 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "3",
+    "scene": "between-5",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-3"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-5"
   },
-  "last_seen_doing": "Told her grandmother's story of the grey country east of the Wend, where they go in the end; home, her grandmother called it.",
-  "now": "Driving the drove road east past the turnip field.",
+  "last_seen_doing": "Told him she learned her letters off salt manifests and bit a drover's boy at the Coldmere fair at ten; sang Coldmere's rope rhyme, Whose Are You, and the carters' song, Salt Goes Up, to the bell.",
+  "now": "Driving the drove road, the bell swinging at her belt.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
-    "text": "The first two names on that list rode up in my cart.",
-    "chapter": "01",
-    "scene": "4"
+    "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
+    "chapter": "05",
+    "scene": "between-5"
   },
   "known_facts": [
     {
@@ -629,6 +629,30 @@
       "evidence": "She said that's where they go, in the end. Home, she called it. I never believed a word of it."
     },
     {
+      "fact": "She learned to walk on the tailboard and got her letters off salt manifests.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "I got my letters off salt."
+    },
+    {
+      "fact": "At ten she bit a drover's boy at the Coldmere fair for saying her oxen were thin.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "I bit a drover's boy at the Coldmere fair for saying our oxen were thin."
+    },
+    {
+      "fact": "Asked at the trough whose she was, as a child, she answered: the cart's.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "A girl in a mill-dust apron asked me, and I said the cart's"
+    },
+    {
+      "fact": "Every Holloway carter sings the salt song in fog to the bell, and no two to the same tune.",
+      "chapter": "05",
+      "scene": "between-5",
+      "evidence": "Every carter on the Holloway has it, and no two of them sing it to the same tune."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -884,6 +908,10 @@
     {
       "chapter": "05",
       "scene": "3"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-5"
     },
     {
       "chapter": "tale02",

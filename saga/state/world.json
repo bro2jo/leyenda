@@ -57,11 +57,18 @@
         "2026-11-03"
       ],
       "written": "2026-11-03"
+    },
+    {
+      "scene": "between-5",
+      "title": "Whose Are You",
+      "after": "3",
+      "covers": [],
+      "written": "2026-11-03"
     }
   ],
   "location": {
     "place": "holloway",
-    "detail": "on the drove road above a turnip field, east of the hamlet",
+    "detail": "on the box of Rae's cart on the drove road, the afternoon after the turnip field",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -71,7 +78,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "They let the Hollowed knight walk east over the rise, and Wren, silent since she gave him water, licked her pencil and said she would count them.",
+  "last_beat": "Hollis roared the carters' song to the Sixth's marching tune, said he was on her cart when Rae told him he was no carter, and for the first time since the turnip field the oxen picked up their feet.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -84,7 +91,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 24,
+      "approval": 26,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
