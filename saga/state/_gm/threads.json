@@ -352,7 +352,7 @@
       "feeds": "T1, b1.5 (Marrant's method), b2.4",
       "status": "open",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
-      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out. 04:s2: his hand on Mirren's letter is the hand that addressed Aldric's three letters (T3: Vane's secretary); 'He writes all of them'",
+      "note": "The clerk in grey at the winch-house. Planted on the page at 04:s1 (Anselm's confession, recorded under the duplicate thread 22) and 04:s2 (his hand on Mirren's letter): two plants. Threads 21 and 22 were this one, recorded twice, and are closed.",
       "on_page": [
         "04:s2"
       ]
@@ -362,9 +362,9 @@
       "title": "The clerk in grey at the winch-house: an older man with a desk on two kegs who writes the Confessors' letters and never kneels at the dawn bell; he gave the almoner two slivers before the snow and called them the Spire's mercy for the wounded",
       "truth": "T1",
       "feeds": "T1, b1.5 (Marrant's method), b2.4",
-      "status": "open",
+      "status": "paid",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
-      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out",
+      "note": "Duplicate of thread 20 (the same clerk in grey), never planted; closed so the open list carries one thread for him.",
       "on_page": []
     },
     {
@@ -372,9 +372,9 @@
       "title": "The clerk in grey at the winch-house: an older man with a desk on two kegs who writes the Confessors' letters and never kneels at the dawn bell; he gave the almoner two slivers before the snow and called them the Spire's mercy for the wounded",
       "truth": "T1",
       "feeds": "T1, b1.5 (Marrant's method), b2.4",
-      "status": "open",
+      "status": "paid",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
-      "note": "04:s1 planted: 'I never saw him kneel.' The lie he told Anselm (a stone takes the fever through the floor, as at the Spire) is the truth turned inside out",
+      "note": "Duplicate of thread 20 (the same clerk in grey); its one plant (04:s1, Anselm's confession) belongs to thread 20's count. Closed so the open list carries one thread for him.",
       "on_page": [
         "04:s1"
       ]

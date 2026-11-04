@@ -25,7 +25,8 @@ Appearance and voice: `cast.md`.
 
 ### Maelis Vorne — the Mender
 Appearance and voice: `cast.md`.
-- Former field surgeon of three campaigns; now senior Mender at Saint Ysolde's. She performed the Binding and reads it each week with two fingers and her eyes shut (the Reading of the Knots).
+- Former field surgeon of three campaigns; senior Mender at Saint Ysolde's until the Third Knot. She performed the Binding and reads it each week with two fingers and her eyes shut (the Reading of the Knots).
+- **Now:** on the road with the company since the Steps (Book II), her surgeon's roll and the oilcloth sword on the cart; she reads the Knots wherever he is and gives the count. The writs now name her under him as the Mender Vorne who harbours him (ch5); she has told him not to stand in front of her about it.
 - **Rule of the saga:** Maelis never clears Darrow for anything the real-world plan has not cleared. Her verdicts track the PT's.
 - **Wants:** to see one Binding hold. **Fears:** the soft season.
 - **Under pressure:** she notices the body first: hands, gait, the knee before the face. She gets what she wants by withholding, a question for a question, until the other person says the true thing themselves; when that fails she gives a flat order and leaves the room. She never argues; she charges for it.
@@ -34,19 +35,20 @@ Appearance and voice: `cast.md`.
 
 ### Ser Hollis Garrow — the Old Captain
 Appearance and voice: `cast.md`.
-- Knight-Captain of the Sixth Lance. He will teach Darrow **the Seated Blade**, the art of fighting without footwork, from a chair across a practice ring; he learned it in his own chair, recently and badly. The Art is not named on the page until he teaches it there.
-- He also teaches throwing from a chair, the first lesson of winning sitting: **The Measured Hand** (a Sport Art, open now), then **Overwall**. Neither is named on the page until he teaches it (threads: Sport Arts).
+- Knight-Captain of the Sixth Lance. He taught Darrow **the Seated Blade**, the art of fighting without footwork, from a chair (named on the page in ch4, and held on the bell-tower stair in its climax); he learned it in his own chair, recently and badly.
+- He can also teach throwing, the first lesson of winning from where you are put: **The Measured Hand** (a Sport Art), then **Overwall**. Neither is named on the page yet; on the road, a camp or a cart-tail serves for the lesson (threads: Sport Arts).
+- **Now:** on the road since the Steps (Book II), on the carter's tailboard or a mule he curses, on the beech leg in the cup the farrier remade (ch4); third on the new writs. Funny on the page so far in Book II; he is owed a moment that is not a joke, and had one at the turnip field (ch5 sc3).
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
 - **Under pressure:** he notices rank and fear, who is frightened and who is in command. He pursues by insult, which is affection and instruction at once; when that fails he goes quiet, and his quiet is the thing to fear. He lies kindly to the weak and never to the strong.
 - **At ease:** loud, bawdy and competitive at anything with a stake; a storyteller who improves every story at each telling and is caught at it by Wren; he sings marching songs with the verses nobody should know. Sober, he is sharper and funnier and pretends he isn't; he teaches by bullying and is delighted when the student wins.
-- **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, its words known by heart, its seal never once looked at; since the Interlude it lies folded in the cup of the beech leg (T3: the seal is Vane's; b2.4 is where he finally looks). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
+- **Wants:** a drink; absolution; someone to have been worth it. **Carries:** the order to charge, the writ he broke with his thumb at the ford without looking at the seal, its words known by heart, its seal never once looked at; since the Interlude it lies folded in the cup of the beech leg; when the farrier's new cup went on (ch4) he moved the paper into it, off the page, so b2.4 still takes it "out of the leg" (T3: the seal is Vane's; b2.4 is where he finally looks). **Flag:** `hollis_truth`; `r.b4.hollis_lives` decides his last stand in Book IV.
 
 ### Wren Ashdown — the Runner
 Appearance and voice: `cast.md`.
-- Grew up in the House after her mother, a knight, was brought up the Steps Hollowed when Wren was nine. Runner, ledger-keeper and resident liar of Saint Ysolde's; counts everything (steps, 1,117; bells; cots; debts). In Book I she is Darrow's legs. Her ledgers supply chapter epigraphs.
+- Grew up in the House after her mother, a knight, was brought up the Steps Hollowed when Wren was nine. Runner, ledger-keeper and resident liar of Saint Ysolde's; counts everything (steps, 1,117; bells; cots; debts). In Book I she was Darrow's legs; in Book II she is off the mountain for the first time, counting a world, and since the turnip field (ch5 sc3) she keeps the count of the Hollowed who walk east. Her ledgers supply chapter epigraphs.
 - **Under pressure:** she notices counts and discrepancies, what has changed since she last looked. She pursues by talking faster and burying the ask in a number; when that fails she stops counting, and a silent Wren is a frightened one. She embellishes rather than lies, and will say so.
 - **At ease:** off the mountain for the first time in her life (Book II): everything is a number nobody has counted yet; questions come in torrents; she haggles for the joy of it, laughs at her own jokes first, and passes off wonder as statistics. She is twenty and sometimes acts it, which nobody on the mountain ever let her.
-- **Wants:** to know what happened to her mother. **Hides:** that she can read Warden script (T6). The page may catch her at it before then (q1.ledger, the Stonewright ruin at the end of Book II); the why, and her mother's name, stay for Book III.
+- **Wants:** to know what happened to her mother. **Hides:** that she can read Warden script (T6). The page has caught her once already (the lintel under the House, ch3 sc4, which she read half of aloud before Maelis finished it); the Stonewright ring at the end of Book II is the next; the why, and her mother's name, stay for Book III.
 - Her mother was **Dame Elspeth Ashdown**, a secret Ember initiate who refused to re-kneel, Hollowed on purpose by the Confessors; she died on the far cots four years ago. Neither the name, the Hollowing nor the death is on the page yet; the page has only "one of the far cots".
 
 ### Rae Thorne — the carter
@@ -73,7 +75,7 @@ Appearance and voice: `cast.md`. On the page since the Prologue (the last cart; 
 ### Ser Aldric Vane — the Knight-Confessor
 Appearance and voice: `cast.md`.
 - Darrow's sworn brother: squired together, knighted the same morning kneeling side by side; rode at Darrow's left hand at Harrow Ford. Now leads the Confessors, charged with bringing the Faithless of Harrow Ford to the Oathspire to kneel again. Devout, disciplined.
-- Writes Darrow letters that are genuinely loving: *"Come home, brother. Kneel, and be whole."* None has reached the page yet.
+- Writes Darrow letters that are genuinely loving: *"Come home, brother. Kneel, and be whole."* Three reached the page in Book I (q1.letters), the last ending *or I will come myself*; Darrow answered with the order of the ford in his own hand (`vane_answered`). In Book II his column came up the Holloway and Darrow knew him at its head by his seat (ch5 sc1); the column turns back at Coldmere on a summons. Darrow has told one person what he saw from the water, Rae (ch5 between-2), and not Hollis.
 - **Wants:** order; his sister Elinor safe; Darrow back. He is not a liar. He believes.
 - **Under pressure:** he notices form, who is kneeling correctly and who is not. He pursues by patience and sincerity, which is why he is believed; when that fails he leaves the one word unsaid and acts a heartbeat early.
 - **Hides:** he knew the Three Heartbeats were coming (T2) and turned his horse one beat early; the charge order bore his seal (T3). The page has Darrow *believing* the list was written in his hand; nothing has confirmed it. **Flag:** `vane_unbound` (Book VI).
@@ -109,9 +111,9 @@ Appearance and voice: `cast.md`.
 - **Under pressure:** he notices whether people are afraid, because he is. He pursues by offering the comfort he was taught, kneeling and mercy; when that fails he apologises and asks again, and shuts his eyes when told to.
 - On the page from the Ch 1 Interlude ("The Wax"; the cot next to Hollis's, the oath at every bell) and the first Between of Scene 2 ("The Grace forgives"); appearance and voice moved to `cast.md`.
 - **Standing:** he knelt anew before a Confessor's field-stone at the bell-house below the Steps on the road up (the heralds' mercy, taken early), so the Crown counts him sworn: he is not on the list, the warmth he says he feels is thin and real, and he is still tithed, which is why b1.2 can take him.
-- **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. Nothing of this reaches the page before then. The Chapter 1 interlude puts him on the page; his `cast.md` entry and `saga/characters/benedek-orrin.json` are written from that prose, and from nothing here.
+- **Fate:** found Hollowed at dawn in Chapter 2 (b1.2): breathing, empty, frost on his lips, a chip of black glass under his tongue. Flag `benedek_hollowed`. On the page since then: the Grey Cot, the flour, the stone under the row; when the company went down the Steps he stayed at the House, the night novice keeping his even bells. His `cast.md` entry and `saga/characters/benedek-orrin.json` are written from the prose, and from nothing here.
 
-### Confessor Ivo Marrant — the Hound of the Oath (Book I antagonist)
+### Confessor Ivo Marrant — the Hound of the Oath (Book I antagonist; Book II: on the road behind the writs)
 Appearance and voice: `cast.md` (moved there at the Ch 1 climax, 10/11, where he named himself at the bars).
 - Vane's lieutenant; led the grey cloaks up the Holloway and the Steps. 40s, bald, smiling, smells of the iron censer he carries. A zealot who enjoys his work, polite to the point of menace. Never touches a weapon in front of witnesses (the page has one gate's worth of this so far).
 - **Voice:** soft, courteous, every sentence a door he is holding open for you; uses first names uninvited; thanks people for their candour. *"Bells grow tired."* *"The Crown counts what it is owed."*
@@ -123,28 +125,28 @@ Appearance and voice: `cast.md` (moved there at the Ch 1 climax, 10/11, where he
 
 ### Brother Cobb — the farrier
 Appearance and voice: `cast.md`.
-- On the page from Ch 4 Between 4 (the forge). Twenty years burning lance brands onto Edgemoor greys at the fairs before he came up the mountain; the House's farrier since, who shoes nothing and makes everything else: the cage's pins, the clappers, the laths, and the legs. He made Hollis's beech leg in a week off a tracing on sacking because the Mender would not wait, and is remaking its cup to the stump.
+- On the page from Ch 4 Between 4 (the forge). Twenty years burning lance brands onto Edgemoor greys at the fairs before he came up the mountain; the House's farrier since, who shoes nothing and makes everything else: the cage's pins, the clappers, the laths, and the legs. He made Hollis's beech leg in a week off a tracing on sacking because the Mender would not wait, and remade its cup to the stump.
 - **Wants:** Hollis's cup to fit before the week is out; to be left in his own light. **Fears:** a thing he made breaking under somebody.
 - **Under pressure:** he notices what a thing is made of and where it will break. He pursues by not stopping work, so you wait or you leave; when that fails he puts the thing in your hands and sends you up the hall with it.
 - **Hides:** nothing worth the name. The half-ring of marks on his right hand is a dog's, and he will die calling it a burn.
-
-## Not yet on the page (full entries)
 
 ### Brother Anselm — the almoner
 - 40s, soft-spoken, beloved, keeps the stores and the letters, and the stores key, which also opens the undercroft's old stair door where the wine is laid down. Always tired. Has a sister in Calden he mentions too often.
 - **Voice:** apologetic and gentle, trails off mid-sentence, thanks people for things they have not done yet.
 - **Under pressure:** he notices who is owed a kindness he has not yet done. He pursues by apologising first and asking second; when that fails he trails off, and the thing he did not say is the thing he has done.
-- **Wants:** Mirren safe. **Hides:** the tithe-shard came up the Steps in his letter-satchel (b1.2 → b1.4); Marrant works him through Mirren. **Flags:** `anselm_suspected`, `anselm_spared` (feeds `r.finale.return`).
+- **Wants:** Mirren safe. **On the page since ch4:** he confessed the shard and the satchel; Marrant worked him through Mirren; he wrote the letter that fed Marrant false word (`anselm_double`), and stayed at the House with the stores key when the company went down. His vow to go down to Coldmere's bell lapsed with the Book (c04.7a). **Flags:** `anselm_suspected`, `anselm_double`, `anselm_spared` (feeds `r.finale.return`).
 
 ### Mirren — Anselm's sister
-- In Calden, in Marrant's keeping: the lever on the almoner. Present in Book I only as a letter, a lock of hair or a name said too often; never seen unless a road brings her. If she appears: thirties, quick, braver than her brother, angry at having been used.
+- In Calden, in Marrant's keeping: the lever on the almoner. On the page in Book I as a letter, a lock of hair and a name said too often; her brother's last letter asked where she is kept and what their mother called the brindle cat, and its answer has not come. Never seen in person unless a road brings her. If she appears: thirties, quick, braver than her brother, angry at having been used.
 - **Under pressure:** she notices who is being used, herself included. She pursues head-on, braver than her brother; when that fails she gets angry and says the true thing in front of the wrong people.
 
 ### Ash — the hound
 - A grey wolfhound bitch in the House kennels with a splinted hind leg, bad-tempered with everyone except Darrow, for no reason anyone can name. She heals alongside him. She does not fetch.
-- Appears in `q1.kennel` (why the hound picked Darrow) or, failing that, at the kennels in the transition (`t1`), one paragraph. `flags.ash_met`; her bond waits in `plan.json → companions_to_come.ash` until she is on the page. Not in `saga/NOW.md`, `world.json → companions` or any reader-safe file until then.
+- On the page since ch4 (the kennel; `flags.ash_met`); came down the Steps at his side on the drop side, and goes with the company on the road.
 - **Under pressure:** she notices who is hurt and who is pretending not to be. She pursues by lying down across the door; when that fails she bites. She does not fetch.
 - **At ease:** a dog on a road at last: she ranges ahead and comes back to report nothing, steals from carts, sleeps on the warmest person and growls at whoever moves, and has opinions about mules. She still does not fetch.
+
+## Not yet on the page (full entries)
 
 ### King Aurel the Evergreen
 - Reigning for 311 years; not seen in public for nine. Present as bells, writs and the weight of the Oathspire. When Darrow is weakest he dreams of a green-lit hall and the sound of very slow breathing.
@@ -169,9 +171,8 @@ Appearance and voice: `cast.md`.
 
 ## Identities the reader does not have yet
 - **The red-handed woman** is **Ilse of Corrach**. Her `saga/characters/` file and her `cast.md` entry carry no name until Darrow learns it on the page (Book III).
-- **The man leading the grey cloaks**, the one with the censer, is **Confessor Ivo Marrant**: named on the page at the Chapter 1 climax (10/11); reader-safe files use the name from there on. What stays hidden is what he wants (Maelis) and his plan (b1.2, b1.4, b1.5).
+- **What Marrant wants** with Maelis, beyond the name he called her at the gate (ch4), stays hidden; his Book I plan is spent on the page.
 - **The hand that wrote the list** is Aldric Vane's. Darrow believes it (Ch 1); the page has not confirmed it. Aldric's file states it as Darrow's belief, attributed as belief.
-- **Ash** the hound has not appeared in the prose: no file and no mention in `saga/NOW.md` until she does.
 - **Wren's mother** is Dame Elspeth Ashdown, one of the far cots. The page has the far cots and nothing about whose mother lay there.
 - **Rae Thorne's calling** (thread 18): a wick of the Lantern Market, posted to the House's carting, sent for what the Order carries up the mountain. The page has her tells and nothing else; reader-safe files call her the carter until Book III speaks it.
 
@@ -183,12 +184,12 @@ When a choice lands on a companion's pole and they witnessed it or learn of it, 
 | Maelis | **Candor**, **Sworn** | A surgeon who lies to a patient kills him, and she has kept one vow for thirty years under a burned name; she cannot respect a man who keeps none. |
 | Wren | **Guile**, **Unsworn** | The House's resident liar: a useful lie is how a girl with no rank keeps forty cots fed, and the oaths she has watched sworn are the ones that took her mother. |
 | Hollis | **Mercy**, **Hearth** | He has seen enough of the beaten and knows which side of the list he is on, and he spends himself for the men he knows by name, never for a banner. |
-| Rae (to come: `companions_to_come`, her regard banked until she arrives: q1.cart stage 3, Tether I or t1) | **Banner**, **Candor** | A carter carries for everyone on the road or for no one: she has hauled the far cots' families and the Confessors' oxen alike, and the only lie that ever cost her anything was read from a bell-house step by a herald. The one companion who pulls against Hollis's Hearth, so that choosing her costs him. |
+| Rae | **Banner**, **Candor** | A carter carries for everyone on the road or for no one: she has hauled the far cots' families and the Confessors' oxen alike, and the only lie that ever cost her anything was read from a bell-house step by a herald. The one companion who pulls against Hollis's Hearth, so that choosing her costs him. |
 
 | Ysra (to come: Book II) | **Sworn**, **Candor** | A duelist who wants an order she can respect: a man who keeps the oaths he made to men, and says plainly which ones. |
 | Ilse (to come: Book III) | **Flint**, **Banner** | A war-leader who has buried people for mercy's sake and fights for a whole people, not a friend. |
 
-Ysra, Ilse and Rae wait in `companions_to_come` with these `prefers` (so the ledger rules that read their approval are known terms); `saga.py plan companion arrive <id>` moves each to `world.json` the day they step beside him. Ash's bond is its own thing.
+Ysra and Ilse wait in `companions_to_come` with these `prefers` (so the ledger rules that read their approval are known terms); `saga.py plan companion arrive <id>` moves each to `world.json` the day they step beside him. Ash's bond is its own thing.
 
 **Approval with teeth (every companion, every Book).** `consequences.json → rules`: Maelis `r.t8.early` (≥ 70, and never before Book II), `r.b4.maelis_lets_him_teach` (≥ 65), `r.b5.permitted_early` (≥ 85), and the finale's `r.finale.return` (Maelis ≥ 65, Wren ≥ 50); Hollis `r.b1.seated_blade` (≥ 50), `r.b2.hollis_sober` (≥ 60), `r.b4.hollis_lives` (≥ 80 with `hollis_truth`); Wren `r.t1.wren_stays` (≤ −20: a cost on company), `r.b2.wren_reads` (≥ 40), `r.b3.wren_tells` (≥ 55), `r.b6.wren_count` (≥ 60); Rae `r.b2.rae_tells` (≥ 30), `r.rae.ledger` (≥ 40), `r.b5.rae_second` (≥ 50), `r.b6.rae_door` (≥ 40 with `rae_calling_known`), `r.rae.form`, `r.rae.parts` (≤ −25); Ysra `r.b3.ysra_turns` (≥ 30, spared); Ilse `r.b4.clans_ride` (≥ 40, told). Each decides the shape of a later scene, never a death except where the arc already says so. Rules read a companion still to come by the approval banked for them, so regard earned before they are on the road counts. Betweens raise a companion at most +6 a chapter while the regard is new, +4 from 40, +2 from 70, and may cost up to 6 at any standing (`saga.py add` caps it; design §9); regard moves only for who saw a thing or heard of it; an invitation let pass costs its person; a promise that lapses costs what its callback says (design §2, §5.6). The thresholds were retuned on 2026-10-18 from the measured income (`saga.py approval forecast`; design §2).
 

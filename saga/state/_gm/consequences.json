@@ -1363,19 +1363,11 @@
           "at": "later",
           "weight": "color",
           "what": "Darrow told Rae what he saw from the water at the ford (Aldric's horse already turned, one heartbeat early) and that he fears it was known; she said it is carried and she does not open what she carries; it is Hollis's to come to at the seal. Fire where she keeps it under pressure, or where Hollis learns it and finds she already had it",
-          "fits": "present.rae",
+          "fits": "present.rae && beats.b2_4.status == \"in_progress\"",
           "priority": 2,
           "status": "pending",
-          "offered": 7,
-          "offered_at": [
-            "ch05:between-2",
-            "ch05:s2",
-            "ch05:between-3",
-            "ch05:between-4",
-            "ch05:s3",
-            "ch05:between-5",
-            "ch05:s1"
-          ]
+          "offered": 0,
+          "offered_at": []
         }
       ]
     },
