@@ -64,11 +64,18 @@
       "after": "3",
       "covers": [],
       "written": "2026-11-03"
+    },
+    {
+      "scene": "between-6",
+      "title": "Salt Comes Down",
+      "after": "3",
+      "covers": [],
+      "written": "2026-11-03"
     }
   ],
   "location": {
     "place": "holloway",
-    "detail": "on the box of Rae's cart on the drove road, the afternoon after the turnip field",
+    "detail": "the night camp in the lee of a thorn hedge on the drove road",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -78,7 +85,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Hollis roared the carters' song to the Sixth's marching tune, said he was on her cart when Rae told him he was no carter, and for the first time since the turnip field the oxen picked up their feet.",
+  "last_beat": "Rae told him she sang after the turnip field because it would be them that saw the knight last, and she does not like being last; then told him to sing the salt song right, or they would hear him in Coldmere.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -91,7 +98,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 26,
+      "approval": 27,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },

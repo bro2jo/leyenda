@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-5",
+    "scene": "between-6",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
   },
-  "last_seen_doing": "Asked the carter to sing, then roared the salt song to the Sixth's marching tune.",
-  "now": "On the tailboard, singing the salt song wrong.",
+  "last_seen_doing": "Took the Captain's wager, nearly testified against himself, lost, and took up the boot and the needle.",
+  "now": "At the fire, mending boots under the Mender's eye and swearing at the stitches.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -658,6 +658,12 @@
       "chapter": "05",
       "scene": "between-5",
       "evidence": "to the tune of the Sixth's marching song and in no key known to the Lowmarch"
+    },
+    {
+      "fact": "He lost the wager and owes the company a week of boot-mending.",
+      "chapter": "05",
+      "scene": "between-6",
+      "evidence": "Ser H. Garrow: boots, one week."
     }
   ],
   "relationships": [
@@ -971,6 +977,10 @@
     {
       "chapter": "05",
       "scene": "between-5"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-6"
     }
   ]
 }

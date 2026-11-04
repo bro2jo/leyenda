@@ -1442,13 +1442,14 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch05:between-3",
             "ch05:between-4",
             "ch05:s3",
             "ch05:between-5",
-            "ch05:s1"
+            "ch05:s1",
+            "ch05:between-6"
           ]
         }
       ]
@@ -1471,12 +1472,13 @@
           "what": "Rae gave him her grandmother's Thornwild word for stand, said from the belly; he cannot make the catch in the middle of it yet, and practises it under his breath. Fire where he says it right at last, or uses it on an ox, a horse, or himself",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch05:between-4",
             "ch05:s3",
             "ch05:between-5",
-            "ch05:s1"
+            "ch05:s1",
+            "ch05:between-6"
           ]
         }
       ]
@@ -1504,10 +1506,50 @@
           "fits": "present.wren",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch05:between-5",
-            "ch05:s1"
+            "ch05:s1",
+            "ch05:between-6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c05.8",
+      "made": {
+        "chapter": 5,
+        "scene": "between-6",
+        "date": "2026-11-03"
+      },
+      "chose": "Bet Hollis a week of boot-mending he could make Rae admit she started the singing; won it by singing the salt song backwards on Wren's advice, and heard why she sang",
+      "now": {
+        "approval": {
+          "wren": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c05.8a",
+          "when": "next",
+          "at": "ch05:s4",
+          "weight": "color",
+          "what": "Hollis lost the wager: he mends the company's boots for a week, waxing every stitch under the Mender's eye, and complains about it",
+          "status": "pending"
+        },
+        {
+          "id": "c05.8b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow sang the carters' salt song backwards to win a bet; Rae says it will be all over the Holloway by spring. Fire where a carter, a taproom or Rae brings it back",
+          "fits": "present.rae",
+          "priority": 1,
+          "valid_until": "book2",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-6"
           ]
         }
       ]

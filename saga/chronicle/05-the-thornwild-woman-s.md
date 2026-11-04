@@ -560,3 +560,125 @@ Then Hollis took a breath that went all the way down to his new boot-sole and ro
 "You're not a carter."
 
 "I'm on your cart," said Hollis, and went into the second line, louder, and for the first time since the turnip field the oxen picked up their feet.
+
+### Between — Salt Comes Down
+
+"Mine," said Hollis. "Ask anybody on this road who got the cart singing."
+
+They had stopped for the night in the lee of a thorn hedge, the cart drawn across the wind and the oxen hobbled on the verge, and the fire was just big enough for five people and a dog to argue over. Ash had taken the warmest place at it, which was the boot Maelis had not finished.
+
+"You roared," said Rae, from Hob's near hind foot. "That's different from singing."
+
+"She started it," Darrow said.
+
+"You asked." She kept her eyes on the hoof. "Asking's starting."
+
+"I asked. You said you weren't singing it, and a hundred yards on you sang it. That's starting."
+
+"I sang it to the oxen."
+
+"Oxen don't count," said Hollis. "Wren. Do you count oxen?"
+
+"Two," said Wren.
+
+"There you are. Two oxen. Hardly an audience."
+
+Darrow leaned back on his elbow. "A week of boot-mending says I make her say it. Out loud, before this fire's down."
+
+Hollis spat in his palm and put it out across the flames, and Darrow did the same, and they shook over the fire like two men who had shaken over worse.
+
+"Her words, mind," said Hollis. "Out loud. A nod's not an admission. A hum's not an admission. That thing she does with one eyebrow is not an admission—"
+
+"I know what an admission is."
+
+"You've never made one in your life."
+
+"Whoever loses mends these." Maelis held up the boot she had taken back from under Ash. Half the sole was on. "I'll back you both."
+
+Wren already had the ledger open on her knee. "Four to one against the Captain," she said. "I've watched her not admit things since I could carry a slate. I'll take anybody's money. Not the dog's."
+
+"Don't take his money, Wren," said Rae.
+
+"I'm not. I'm taking Ser Hollis's."
+
+Darrow tried it straight first, because that was how he tried most things. "Did you start the singing?"
+
+"Aye," said Rae.
+
+The fire went still. Wren's pencil came up.
+
+"Aye, you asked me that already," Rae said, and went back to the hoof.
+
+Hollis slapped his good knee. Wren wrote something down and would not say what.
+
+So Darrow told it as a story instead, badly, on purpose, which had always worked on Hollis. "So there we were on the drove road," he said, "the whole cart sunk in gloom, and Ser Hollis Garrow, alone and unasked, rose up off the tailboard and burst into song—"
+
+"Unasked be damned, I asked her to sing first, and she sang the—" Hollis heard himself and stopped. "That's not evidence. I'm not her."
+
+"It's evidence," said Maelis.
+
+"It's not an admission."
+
+"No," Maelis agreed, and pulled a stitch tight. "It's worse. It's a witness."
+
+Rae let all of it go by. She had the stone out of Hob's hoof and was turning it over in her fingers as if it might be worth something, and Darrow understood that she could sit like that until the fire went out, and so could the oxen.
+
+Wren leaned across to him with her pencil behind her ear. "You won't get her by asking," she said, low and quick. "You get people by being wrong where they can't stand it. On the mountain you'd tell the Mender somebody else's bandage was good, and she'd talk for an hour."
+
+"That's true," said Maelis, without looking up. "It's also always a terrible bandage."
+
+"Don't teach him that, Wren," said Rae.
+
+"I'm not teaching him. I've got money on him."
+
+"You gave four to one against."
+
+"Against isn't the same as not on."
+
+Darrow looked at the sparks for a while. Then, cheerfully, at a jig's pace, he began to sing.
+
+> *Salt comes down and the letters go up,*
+> *stone after stone into Calden town—*
+
+`[FINESSE · DC 12]` d20 **14** +0 finesse = **14** — *Success*
+
+Rae's head came up off the hoof.
+
+"*—and the road gives way to a cart with a cup—*"
+
+"Up," she said.
+
+He went on.
+
+"Salt goes *up*." She put Hob's foot down. "You don't carry salt down a mountain. The House eats it, it doesn't dig it. And it's *out* of Calden, and it's a bell, not a cup, and you've got it at a jig, you'll have the oxen dancing off the road." And then, because he was still going and it was plainly more than a carter could bear, she sang it at him the right way, at the ox's pace, the first line whole and into the second—
+
+> *Salt goes up and the letters come down,*
+> *stone after stone out of—*
+
+—and stopped, because everyone round the fire had stopped to listen.
+
+Wren's pencil was in the air. Maelis's needle was out of the boot. Hollis had a hand half raised, like a man about to object in court who has just found he has nothing to object with.
+
+"That's not admitting," said Hollis, very fast. "That's mending. She's mending his song. Mender, tell her that's mending."
+
+Rae looked round at all of them. Then she laughed, out loud and all of it, and for once she left her hand in her lap.
+
+"Fine," she said. "I started it. Somebody had to, with the faces on this cart."
+
+Hollis put his head back and groaned at the stars. Then he held his hand out across the fire for the boot. "I've lost worse," he said. "I've lost a leg."
+
+Maelis gave it to him with the needle already threaded. "Wax the thread," she said. "Every stitch. I'll be looking."
+
+Wren turned the ledger to the firelight so they could all read the new line: *Times the carter has admitted a thing: 1.* Under it, smaller: *Ser H. Garrow: boots, one week.*
+
+Later, when Hollis had sworn at four stitches and Maelis had made him take out three, Rae came round the fire and sat down on Darrow's side of it, not close.
+
+"Backwards," she said. "Nobody's ever sung it backwards. Not even drunk." She thought about it. "It'll be all over the Holloway by spring."
+
+"You're welcome."
+
+"I didn't start it for them, if you want to know. Not only." She was looking east, past the hedge, to where the dark had come down over the turnip country. "That knight. Somebody's going to ask after him at a gate one day, and it'll be us that saw him last. I don't like being last." She turned the stone from Hob's hoof over once more and threw it into the dark. "So I sang."
+
+Darrow let the joke he had ready go into the fire.
+
+"Now sing it right," Rae said, "or they'll hear you in Coldmere."

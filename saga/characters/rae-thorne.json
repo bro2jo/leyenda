@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-5",
+    "scene": "between-6",
     "place": "holloway",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
   },
-  "last_seen_doing": "Told him she learned her letters off salt manifests and bit a drover's boy at the Coldmere fair at ten; sang Coldmere's rope rhyme, Whose Are You, and the carters' song, Salt Goes Up, to the bell.",
-  "now": "Driving the drove road, the bell swinging at her belt.",
+  "last_seen_doing": "Outwaited every question, then corrected the Captain's backwards salt song, laughed out loud and admitted she started the singing.",
+  "now": "At the fire on Darrow's side of it, the stone from Hob's hoof thrown into the dark.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -653,6 +653,18 @@
       "evidence": "Every carter on the Holloway has it, and no two of them sing it to the same tune."
     },
     {
+      "fact": "She admitted in front of the company that she started the singing.",
+      "chapter": "05",
+      "scene": "between-6",
+      "evidence": "I started it. Somebody had to, with the faces on this cart."
+    },
+    {
+      "fact": "She sang after the turnip field partly because they will be the last who saw the Hollowed knight, and she does not like being last.",
+      "chapter": "05",
+      "scene": "between-6",
+      "evidence": "it'll be us that saw him last. I don't like being last."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -912,6 +924,10 @@
     {
       "chapter": "05",
       "scene": "between-5"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-6"
     },
     {
       "chapter": "tale02",

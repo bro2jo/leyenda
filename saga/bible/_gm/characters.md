@@ -26,7 +26,7 @@ Appearance and voice: `cast.md`.
 - **Contradiction:** he would die for his people and decides for them without asking; a born commander only now learning to take an order he respects.
 - **Book I:** he learned to wait, to ask the men he leads, and to hold from a chair; he named himself at the bars, kept the House, and walked down the Steps on his own legs.
 - **Book II:** the old speed comes back with his legs: being first, deciding alone, chasing. The Book asks whether he holds or chases, and its choices tempt the old speed; which he takes is his, and a chase costs something he mends in the open. The pull is Aldric, gone north; the Needle is behind; the country is the company's, not his.
-- **Grown on the page:** gave Rae the road and owned the habit that lost him his horse; is learning a Thornwild word for stand and cannot yet say it.
+- **Grown on the page:** gave Rae the road and owned the habit that lost him his horse; is learning a Thornwild word for stand and cannot yet say it; won a wager off Hollis by singing the carters' song backwards on Wren's advice.
 - **With Rae:** the one person he waits on for a yes, and she on him; they trade one true thing at a time; he owes her bread, a road and a secret kept.
 - **With Hollis:** the old captain who calls him Captain and means it more each time. He has told Rae what he saw from the water and not Hollis, on purpose: the seal is Hollis's to come to (b2.4), and what he tells him then is his choice (`hollis_truth`).
 - **With Maelis:** his Mender and his count; he argues with her and obeys her, and is beginning to see that she guards more than a knee.
@@ -70,7 +70,7 @@ Appearance and voice: `cast.md`.
 - **Arc:** from not looking to looking (b2.4, the seal; whether he hears it sober is his regard's, `r.b2.hollis_sober`), and from drink to choosing where to spend himself (b4.4, a ford held from a chair so that others can cross; whether he lives through it is regard and the truth told, `r.b4.hollis_lives`).
 - **Book I:** he sobered by days, taught the Seated Blade from a chair, held the tower door, and called Darrow Captain and meant it.
 - **Book II:** the paper in the leg's cup is the Book's weight on him, and b2.4 is where he looks at it and asks what Darrow saw from the water. Until then he is the loudest man on the road.
-- **Grown on the page:** third on the writs and wounded by it; sings the carters' song to the Sixth's tune; divides bread like an inheritance; called Rae's answer at the gate the best lie that was not one; went quiet at the turnip field and grieved the knight's mother.
+- **Grown on the page:** third on the writs and wounded by it; sings the carters' song to the Sixth's tune; divides bread like an inheritance; called Rae's answer at the gate the best lie that was not one; went quiet at the turnip field and grieved the knight's mother; lost the boot-mending wager to the Captain and owes the company a week of it.
 - **With Darrow:** calls him Captain and lets the word carry it; wants him to be worth the river; bullies him into living.
 - **With Maelis:** bickering campaigners; he would sooner lose the other leg than tell her he trusts her, and trusts her with his life.
 - **With Wren:** the grandfather she did not ask for; he improves his stories and she catches him every time, and he likes being caught.
@@ -91,7 +91,7 @@ Appearance and voice: `cast.md`.
 - **Book I:** she ran for the bell, made him promise to tell her first, read half a lintel aloud before she caught herself, and counted him down the Steps.
 - **Book II:** the world off the mountain, all of it uncounted: wonder, and fear passed off as statistics. The count of the Hollowed walking east is the far cots coming back to her, kept in numbers so she need not say so. At the ring (b2.5) she reads again, openly if she trusts him enough, caught at it if not (`r.b2.wren_reads`).
 - **Grown on the page:** counts sheep by the field under protest; looked back at the House from below and did not count; watered a Hollowed knight the far-cots way and went white; answered the rope rhyme with the House, the warming room and Old Mercy, and cannot yet say who she is for.
-- **With Darrow:** he has kept a promise to her twice and she has it in the ledger; she likes him best when he is sly, and says so.
+- **With Darrow:** he has kept a promise to her twice and she has it in the ledger; she likes him best when he is sly, and had money on him when he won a wager on her advice.
 - **With Rae:** the friend she has never had: older, sure, unbothered. Rae teaches her the road and talks to her more easily than to anyone; Wren teases her about the Captain.
 - **With Hollis:** she catches every story he improves; the grandfather she argues with.
 - **With Maelis:** the Mender gives her work and never comfort, and they pull him opposite ways on every choice either cares about; Maelis finished the lintel Wren started under the House, and neither has asked the other how.
@@ -122,7 +122,7 @@ Appearance and voice: `cast.md`. On the page since the Prologue (the last cart; 
 - **Contradiction:** she keeps every face and claims she keeps nothing; the most capable person in the company and the last to say so.
 - **Book I:** she brought the list up in the dark, held the winter's stores and the second line, and saw a thing she carried up the mountain come down whole.
 - **Book II:** her own road and village, off her post by choice. The pressure is home: her uncle's questions and price, a carter's custom spent on the man she carries, the mill (b2.3), and what she carries for others (q2.lantern; whether she tells him first is her regard's, `r.b2.rae_tells`). Her growth: choosing out loud.
-- **Grown on the page:** laughs out loud now and covers it; bit a drover's boy at ten; got her letters off salt; answered the trough with the cart's; taught him her grandmother's word for stand; gave him the larger half of the bread.
+- **Grown on the page:** laughs out loud now, and let the whole company hear it at the wager; owned to starting the singing and said her fear aloud once; bit a drover's boy at ten; got her letters off salt; answered the trough with the cart's; taught him her grandmother's word for stand.
 - **With Darrow:** each waits for the other's yes; she trades him one true thing at a time, keeps what he told her of the ford unopened, and has begun to answer for him.
 - **With Wren:** she likes the girl and lets it show, which she does for almost nobody; she teaches her the road and lets her count. Wren wants the useful lie from him and Rae the plain truth, and they tease each other about it.
 - **With Hollis:** she lets him ride her tailboard and sing her song wrong; two people who know what a trade costs, and who pull opposite ways when Darrow chooses between his own few and the many on the road.
