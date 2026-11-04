@@ -56,7 +56,7 @@ The build's `wardrobe_clash` (in `engine/build_site.py`) decides; the Forge offe
 
 ## The prompt and the references
 
-`prompt` is written for OpenAI's image generation and joined line by line. The Forge fills `{references}` (Image 1, Image 2… in the order they are attached: `references`, then the chosen pieces' own), `{design}` (one line per category, from each piece's `prompt`) and `{details}` (the small touches). On a phone, Share sends the prompt and the reference pictures to ChatGPT together; the Look line comes back with the finished picture so Claude can file it.
+`prompt` is written for OpenAI's image generation and joined line by line. The Forge fills `{references}` (Image 1, Image 2… in the order they are attached: `references`, then the chosen pieces' own), `{design}` (one line per category, from each piece's `prompt`), `{details}` (the small touches) and `{screen}` (the background: chroma blue #0000FF, or chroma green #00FF00 when the design names anything blue, so the screen never eats the look). On a phone, Share sends the prompt and the reference pictures to ChatGPT together; the Look line comes back with the finished picture, and `python3 engine/looks.py add` files it: it keys out the screen and checks the pieces.
 
 ## Adding a piece
 

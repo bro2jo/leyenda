@@ -1,14 +1,13 @@
 {
-  "_about": "Darrow's finished looks, for the Wardrobe (darrow/wardrobe.html). Each: id, name, made (the date it was filed), image (under saga/art/, in looks/), alt (what the picture shows), values (one option id per category of engine/wardrobe.json) and details (the small touches typed in the Forge, or empty). A look shows once every piece it wears is open. The one he wears (at the head of his Reckoning, first in the lookbook) is the look named by \"wearing\" (a look id, set when he asks), or the newest when it is absent. Filed from the Look line the Forge gives with the picture.",
+  "_about": "Darrow's finished looks, for the Wardrobe (darrow/wardrobe.html). Each: id, name, made (the date it was filed), image (under saga/art/, in looks/), alt (what the picture shows), values (one option id per category of engine/wardrobe.json) and details (the small touches typed in the Forge, or empty). A look shows once every piece it wears is open. The one he wears (at the head of his Reckoning, first in the lookbook) is the look named by \"wearing\" (a look id, set when he asks), or the newest when it is absent. Filed by engine/looks.py from the picture and the Look line the Forge gives with it.",
   "looks": [
     {
       "id": "the-drove-road",
       "name": "The Drove Road",
       "made": "2026-11-02",
       "image": "looks/the-drove-road.webp",
-      "alt": "Ser Darrow, full length against a dark glow, laughing: a few days' stubble, the grey wool blanket round his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots.",
-      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "laughing",
-                 "pose": "square", "hand": "none", "feet": "worn", "extra": "none", "side": "none"},
+      "alt": "Ser Darrow, full length, standing square and laughing out loud, his hands loose at his sides: a few days' stubble, the grey wool blanket round his shoulders as a long hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots.",
+      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "laughing", "pose": "square", "hand": "none", "feet": "worn", "extra": "none", "side": "none"},
       "details": ""
     },
     {
@@ -17,8 +16,7 @@
       "made": "2026-11-02",
       "image": "looks/ash-at-his-heel.webp",
       "alt": "Ser Darrow, full length against a dark glow, walking with a calm half-smile, clean-shaven: an open-necked linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots, a plain walking stick in his left hand and the fingers of his right hand wrapped in linen; Ash, a grey wolfhound with a splinted hind leg, walks at his side.",
-      "values": {"build": "mending", "clothing": "linen", "cloak": "none", "hair": "tousled", "beard": "shaven", "expression": "patient",
-                 "pose": "walking", "hand": "stick", "feet": "worn", "extra": "wrapped", "side": "ash"},
+      "values": {"build": "mending", "clothing": "linen", "cloak": "none", "hair": "tousled", "beard": "shaven", "expression": "patient", "pose": "walking", "hand": "stick", "feet": "worn", "extra": "wrapped", "side": "ash"},
       "details": ""
     },
     {
@@ -27,8 +25,7 @@
       "made": "2026-11-02",
       "image": "looks/him-who-can-stand.webp",
       "alt": "Ser Darrow, full length, standing square with his arms folded, a dry, lopsided half-smile and a few days' stubble: the grey wool blanket round his shoulders as a long hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt with a small pouch spilling yellow knucklebones, and tall worn boots.",
-      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "wry",
-                 "pose": "folded", "hand": "none", "feet": "worn", "extra": "bones", "side": "none"},
+      "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "wry", "pose": "folded", "hand": "none", "feet": "worn", "extra": "bones", "side": "none"},
       "details": ""
     },
     {
@@ -37,8 +34,7 @@
       "made": "2026-11-02",
       "image": "looks/and-there-it-stayed.webp",
       "alt": "Ser Darrow and Rae Thorne, full length, sitting side by side on a low dry-stone wall, close together. He has a dry, lopsided smile and a few days' stubble, the grey wool blanket round his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots; she has honey-brown hair loose past her shoulders, a quiet smile, and a dark hooded cloak pinned with an iron clasp over a cream linen shirt, dark trousers and short boots, a small bell at her belt.",
-      "values": {"side": "rae", "pose": "rae-wall", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "wry",
-                 "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
+      "values": {"side": "rae", "pose": "rae-wall", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "wry", "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
       "details": ""
     },
     {
@@ -47,8 +43,7 @@
       "made": "2026-11-03",
       "image": "looks/the-cup-at-the-wall.webp",
       "alt": "Ser Darrow, full length, standing and holding out a steaming cup to Rae Thorne, who sits on a low dry-stone wall with her cloak pulled round her knees and smiles up at him. He has a calm, patient look and a few days' stubble, the grey wool blanket round his shoulders over a linen shirt with the sleeves rolled, brown trousers, a leather belt and tall worn boots; she has honey-brown hair and a dark hooded cloak pinned with an iron clasp, a small bell at her belt.",
-      "values": {"side": "rae", "pose": "rae-cup", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "patient",
-                 "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
+      "values": {"side": "rae", "pose": "rae-cup", "hand": "none", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "patient", "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "none"},
       "details": ""
     },
     {
@@ -57,8 +52,7 @@
       "made": "2026-11-03",
       "image": "looks/the-high-guard.webp",
       "alt": "Ser Darrow, full length, standing with both feet planted in a slow practice form, a plain wooden practice sword gripped in both hands and raised high over his right shoulder. He looks tired around the eyes but steady, with a few days' stubble; the grey wool blanket hangs from his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt with two small pouches, and tall worn boots.",
-      "values": {"side": "none", "pose": "forms", "hand": "wooden-sword", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "weary",
-                 "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "pouches"},
+      "values": {"side": "none", "pose": "forms", "hand": "wooden-sword", "build": "mending", "hair": "tousled", "beard": "stubble", "expression": "weary", "clothing": "linen", "cloak": "blanket", "feet": "worn", "extra": "pouches"},
       "details": ""
     }
   ]

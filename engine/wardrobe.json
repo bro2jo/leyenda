@@ -153,7 +153,7 @@
     {"label": "Full-body style", "image": "looks/reference-fullbody.jpg", "file": "darrow-fullbody.jpg", "use": "the full-body framing, scale and proportions, and the hand-painted brushwork. Its clothes, cloak and pose are replaced by the design."}
   ],
   "prompt": [
-    "A full-body character illustration for a fantasy lookbook: one man, Ser Darrow, isolated on a transparent background. If the design's At his side line names a companion, they are in the picture with him; otherwise he is alone.",
+    "A full-body character illustration for a fantasy lookbook: one man, Ser Darrow, on a solid {screen} background. If the design's At his side line names a companion, they are in the picture with him; otherwise he is alone.",
     "",
     "Reference images, attached in this order:",
     "{references}",
@@ -169,7 +169,7 @@
     "Painterly fantasy concept art in the hand-painted style of Image 2: visible, elegant brushwork; believable weathered medieval wool, linen, leather and steel with detailed stitching; soft, warm, natural light; grounded historical fantasy. Not a photograph, not a 3D render, not a cartoon.",
     "",
     "Composition and output:",
-    "Vertical 2:3 portrait (1024 x 1536) at the same scale and framing as Image 2: his whole figure, and his companion's if there is one, from the top of his head to his feet, with a comfortable margin on every side. Transparent background: a PNG with a real alpha channel, so everything around him is empty. No checkerboard pattern, no backdrop, no floor, no ground shadow, no frame, no text, no watermark; the only scenery is what the Pose line itself names (a stool, a post, a few steps). Only if a transparent background is truly impossible, use a plain, flat, very dark charcoal background instead.",
+    "Vertical 2:3 portrait (1024 x 1536) at the same scale and framing as Image 2: his whole figure, and his companion's if there is one, from the top of his head to his feet, with a comfortable margin on every side. Background: one solid, flat {screen} filling the whole frame behind him, edge to edge: no gradient, no texture, no glow, no vignette, nothing painted onto it. No backdrop, no floor, no ground shadow, no frame, no text, no watermark; the only scenery is what the Pose line itself names (a stool, a post, a few steps). Keep that colour off him: nothing he wears or holds is that colour, and it casts no light or reflection on him or anyone with him.",
     "",
     "Rules:",
     "- No other people and no animals beyond the companion the At his side line names.",

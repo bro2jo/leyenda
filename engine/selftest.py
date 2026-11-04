@@ -552,6 +552,18 @@ def main():
                          "'pose.running' in D.wardrobe_earned(30, a, [1, 2, 3]))"], tmp)
         check(code == 0 and out.strip().endswith("True True False False"),
               "the Wardrobe opens by level, Art rank and Knot: an Art's piece waits for its rank, a pose for its Knot", out[-300:])
+        from PIL import Image, ImageDraw
+        for name, bg in (("screen-test.png", (0, 0, 255)), ("dark-test.png", (29, 30, 34))):
+            pic = Image.new("RGB", (1024, 1536), bg)
+            ImageDraw.Draw(pic).rectangle((380, 300, 640, 1300), fill=(120, 80, 60))
+            pic.save(tmp / name)
+        code, out = run(["engine/looks.py", "check", "screen-test.png"], tmp)
+        check(code == 0 and "blue screen, keyed out" in out, "looks.py keys out a chroma screen", out[-300:])
+        code, out = run(["engine/looks.py", "check", "dark-test.png"], tmp, expect=1)
+        check("neither transparent nor a flat chroma screen" in out, "looks.py refuses a picture on a dark wash", out[-300:])
+        code, out = run(["engine/looks.py", "add", "screen-test.png", "Look: side=none pose=nope", "--name", "Test", "--alt", "a test"], tmp, expect=1)
+        check("does not match engine/wardrobe.json" in out and not (tmp / "saga/art/looks/test.webp").exists(),
+              "looks.py refuses a Look line the Wardrobe does not know, and files nothing", out[-300:])
         check(re.search(r'href="\.\./site\.css\?v=[0-9a-f]{10}"', page) is not None and re.search(r'src="\.\./site\.js\?v=[0-9a-f]{10}"', page) is not None,
               "pages link the stylesheet and the script by a version that changes with their content")
         check('class="rring"' in page and 'stroke="#262D37"' in page and 'class="tg"' in page and 'stroke="#CFA65F"' in page,

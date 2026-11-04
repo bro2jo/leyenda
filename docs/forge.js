@@ -142,7 +142,9 @@ var render = function(){
   refsNow = refs;
   var design = D.cats.map(function(c){ return "- " + c.label + ": " + pieces[c.id][state[c.id]].prompt; }).join("\n");
   var listed = refs.map(function(r, i){ return "Image " + (i + 1) + " (" + r.file + "): " + r.use; }).join("\n");
-  $("forge-prompt").value = D.template.split("{references}").join(listed).split("{design}").join(design)
+  /* the background: a chroma screen Claude keys out (engine/looks.py); green when the look wears blue, so the screen never eats it */
+  var screen = /blue/i.test(design) ? "chroma green (#00FF00)" : "chroma blue (#0000FF)";
+  $("forge-prompt").value = D.template.split("{references}").join(listed).split("{design}").join(design).split("{screen}").join(screen)
     .split("{details}").join(state.details.trim() || "none");
   $("forge-line").textContent = "Look: " + D.cats.map(function(c){ return c.id + "=" + state[c.id]; }).join(" ")
     + (state.details.trim() ? " · touches: " + state.details.trim() : "");
