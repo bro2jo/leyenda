@@ -1,5 +1,5 @@
 {
-  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), draw:false (no marker). For a terrain label (a region, river, road or the like): arc (a number: it bows along a gentle curve, + up, - down) and big (true: the wide-spaced capitals of a broad country). route is a list of place ids or [x, y] waypoints, and null starts a new leg (the legs before the last are drawn fainter); the map draws Darrow at the route's end, so extend it whenever he moves (the build refuses a route that does not end at his place when that place has a marker). Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
+  "_about": "Reader-facing places. Claude-owned. x/y are map coordinates in the site's 400x300 map; on_page means the name has appeared in saga/chronicle/. Descriptions must be supported by the chronicle. Map-only places (on_page false) show as names on the map and nothing else. Optional per place: label (map text, defaults to name), anchor (start|middle|end for region labels), label_below (true puts a marker's label under it), label_right (true puts it to the right), draw:false (no marker). For a terrain label (a region, river, road or the like): arc (a number: it bows along a gentle curve, + up, - down) big (true: the wide-spaced capitals of a broad country) and lines (2: the first word over the rest). route is a list of place ids or [x, y] waypoints, and null starts a new leg (the legs before the last are drawn fainter); the map draws Darrow at the route's end, so extend it whenever he moves (the build refuses a route that does not end at his place when that place has a marker). Optional picture (only for a place already on the page): image (a path under saga/art/, e.g. places/<id>.webp), image_alt (what it shows, for screen readers), image_caption, and image_focus (\"50% 50%\": the centre of the 16:9 crop); the site shows it in the codex entry, tap to enlarge. Optional aliases: other words the Chronicle uses for the place (\"the Steps\"); the story's first mention of any of them in a scene links to the place's Codex entry with a preview.",
   "places": [
     {
       "id": "saint-ysoldes",
@@ -106,15 +106,15 @@
       "subtitle": "the road",
       "region": "the-lowmarch",
       "kind": "road",
-      "x": 204,
-      "y": 236,
+      "x": 205,
+      "y": 186,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
       },
-      "description": "The road below the Steps, from the winch-house at their foot down past Coldmere and its tarn, and on to Calden. From the infirmary window it is a brown thread across a white field. Below the seventh milestone it runs deep between its banks, and at the Elbow it turns back on itself with room for one cart. Carters sing salt on it to their bells, no two to the same tune. Six grey riders and a cart came up it with a smudge of smoke above them; then a Lance's column under a banner that was not grey, and the Confessors' cart went down to meet it.",
+      "description": "The road below the Steps, from the winch-house at their foot down past Coldmere and its tarn to the Wend landing, and on to Calden. From the infirmary window it is a brown thread across a white field. Below the seventh milestone it runs deep between its banks, and at the Elbow it turns back on itself with room for one cart. Carters sing salt on it to their bells, no two to the same tune. Six grey riders and a cart came up it with a smudge of smoke above them; then a Lance's column under a banner that was not grey, and the Confessors' cart went down to meet it.",
       "anchor": "end"
     },
     {
@@ -134,13 +134,34 @@
       "description": "A track between two walls that leaves the Holloway above Coldmere and runs north round the far side of the tarn, past a shepherds' fold on the north shore, then down off the moor's shoulder to a hamlet with a bell-post where the tracks cross, and on along the turnip country. Rae turned her cart onto it rather than drive into a Lance on the march. Every door on it opened to the carter, Wren counted, until the company was on her cart."
     },
     {
+      "id": "wend-landing",
+      "name": "The Wend landing",
+      "label": "Wend landing",
+      "aliases": [
+        "the landing"
+      ],
+      "subtitle": "where the Holloway meets the river",
+      "region": "the-lowmarch",
+      "kind": "landing",
+      "x": 211,
+      "y": 212,
+      "label_below": true,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "00",
+        "scene": "II"
+      },
+      "description": "Where a barge on the Wend unloads for the carts on the Holloway, and where the price of salt is set. The salt-cart that took Darrow and Hollis on to the Steps left its load at the landing to make room for them, and Rae once carted a nailed crate off a barge there to the lower door at Calden: a day and a half on the road."
+    },
+    {
       "id": "the-lowmarch",
       "name": "The Lowmarch",
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "region",
-      "x": 124,
-      "y": 148,
+      "x": 142,
+      "y": 150,
       "on_page": true,
       "visited": true,
       "first_seen": {
@@ -159,17 +180,17 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "river",
-      "x": 150,
-      "y": 213,
+      "x": 140,
+      "y": 228,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "00",
         "scene": "I"
       },
-      "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It carried the Ninth downstream like driftwood.",
+      "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It runs past Harrow Ford at the edge of the Thornwild, and it carried the Ninth downstream like driftwood. Loads come off a barge on it at the Wend landing.",
       "label": "The Wend",
-      "arc": -3
+      "arc": -2
     },
     {
       "id": "harrow-ford",
@@ -177,8 +198,8 @@
       "subtitle": "",
       "region": "the-wend",
       "kind": "ford",
-      "x": 302,
-      "y": 190,
+      "x": 307,
+      "y": 104,
       "on_page": true,
       "visited": true,
       "first_seen": {
@@ -186,10 +207,10 @@
         "scene": "I"
       },
       "description": "A crossing of the Wend at the edge of the Thornwild, with standing stones on the far bank. Here, halfway across, the Grace went out of the Ninth, and Darrow's knee gave way with no blade near it.",
-      "label_below": true,
       "image": "places/harrow-ford.jpg",
       "image_alt": "Harrow Ford on a misty morning: a high, fast, mud-brown river churning white over stones. On the near bank, seen from behind, mounted knights in mail and helms hold long lances with sodden pennons, and beside them an ox-cart carries a great slab of black stone in an iron frame. Across the water, tall grey standing stones lean on a gravel shore where a ragged line of fighters with spears waits at the edge, ox-carts piled with bundles and old people behind them, a goat among them, under the dark old trees of a forest.",
-      "image_caption": "The Lances on the west bank, and the clans drawn up among the standing stones."
+      "image_caption": "The Lances on the west bank, and the clans drawn up among the standing stones.",
+      "label_right": true
     },
     {
       "id": "the-thornwild",
@@ -197,7 +218,7 @@
       "subtitle": "",
       "region": "the-thornwild",
       "kind": "forest",
-      "x": 345,
+      "x": 360,
       "y": 150,
       "on_page": true,
       "visited": false,
@@ -205,7 +226,8 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "The forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed."
+      "description": "The forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed.",
+      "lines": 2
     },
     {
       "id": "calden",
@@ -214,7 +236,7 @@
       "region": "the-lowmarch",
       "kind": "city",
       "x": 214,
-      "y": 258,
+      "y": 272,
       "on_page": true,
       "visited": false,
       "first_seen": {
@@ -230,7 +252,7 @@
       "region": "calden",
       "kind": "tower",
       "x": 214,
-      "y": 258,
+      "y": 272,
       "on_page": true,
       "visited": false,
       "draw": false,
@@ -279,32 +301,73 @@
   "route": [
     "harrow-ford",
     [
+      300,
+      106
+    ],
+    [
+      302,
+      126
+    ],
+    [
+      304,
+      150
+    ],
+    [
+      303,
+      172
+    ],
+    [
+      298,
+      190
+    ],
+    [
+      288,
+      200
+    ],
+    [
+      292,
+      206
+    ],
+    [
       272,
-      194
+      212
     ],
     [
-      246,
-      194
+      250,
+      208
     ],
     [
-      221,
-      193
+      230,
+      212
+    ],
+    "wend-landing",
+    [
+      210,
+      190
     ],
     [
       210,
-      194
+      166
     ],
     [
       210,
-      170
+      153
     ],
     [
-      210,
+      216,
+      147
+    ],
+    [
+      207,
       143
     ],
     [
+      211,
+      137
+    ],
+    [
       212,
-      130
+      128
     ],
     "winch-house",
     [
@@ -321,19 +384,19 @@
     "winch-house",
     [
       212,
-      130
+      128
     ],
     [
-      210.5,
-      139
+      211,
+      137
     ],
     [
       218,
-      133
+      132
     ],
     [
       228,
-      130
+      129
     ],
     [
       240,

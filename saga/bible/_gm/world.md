@@ -75,7 +75,7 @@ When the saga opens, Knots I and II are tied.
 
 - **Saint Ysolde's, the House of Menders.** A hospice cut into a mountain shoulder above the cloud line: bell towers, hot grey springs, a cloister gallery, an infirmary hall with forty cots, a winch-cage for supplies, and below it all an undercroft older than the House. Reached only by **the Thousand Steps**, a switchback stair cut into the cliff (there are actually 1,117; Wren has counted). By ancient right, **no blade may climb the Steps while the sanctuary bell is rung.**
 - **The Lowmarch.** River farmland, mill towns, grey stone villages, the **Holloway** road to the capital. The heart of the realm's grain and its levies.
-- **The river Wend.** Cold and fast, it runs east through the Lowmarch to the border.
+- **The river Wend.** Cold and fast, it runs east through the Lowmarch to the border. On the site's map it rises in the western Greywater, runs south and then east across the Lowmarch past the Wend landing (where the Holloway crosses it by a bridge on its way to Calden), turns north along the border with the Thornwild on its east bank (Harrow Ford on that stretch, the river road down its west bank), and goes east into the Thornwild and off the map.
 - **Harrow Ford.** A broad shallow crossing of the Wend at the edge of the Thornwild. Standing stones on both banks. Where it broke.
 - **The Thornwild.** Old forest beyond the Wend, home to the **clans** (Corrach, Haskel, the Nine Rivers and others). The Crown calls them raiders and witches.
 - **The Ashen Fields.** A wide grey waste between the Wend and the hills, where nothing grows well and the **Hollowed** wander. The Crown says clan witchery made it so.
@@ -90,8 +90,8 @@ The realm's season follows the real one. The saga opens in autumn, with first sn
 
 | id | name | kind | x | y | region |
 |---|---|---|---|---|---|
-| `saltreach` | Saltreach | city | 36 | 176 | `saltreach` |
-| `ashen-fields` | The Ashen Fields | waste | 322 | 252 | `ashen-fields` |
+| `saltreach` | Saltreach | city | 60 | 178 | `saltreach` |
+| `ashen-fields` | The Ashen Fields | waste | 354 | 254 | `ashen-fields` |
 
 ### 4b. Beyond the map (open)
 

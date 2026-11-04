@@ -357,6 +357,7 @@ a.art-pic{cursor:zoom-in}
    water in italic blue; roads and the stair in italic */
 .mp-lbl{font-family:var(--label);font-size:10.5px;fill:var(--ink);letter-spacing:.04em;paint-order:stroke;stroke:#191E26;stroke-opacity:.9;stroke-width:3.6px;stroke-linejoin:round}
 .mp-lbl.region{fill:#B3B9C3;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.mp-lbl .sm{font-size:8px;letter-spacing:.3em}
 .mp-lbl.region.big{font-size:11px;letter-spacing:.34em;fill:#9AA2AE}
 .mp-lbl.water{font-family:var(--body);font-style:italic;fill:#8BB2D3;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
 .mp-lbl.way{font-family:var(--body);font-style:italic;fill:#C2A574;font-size:10px;letter-spacing:.03em}
