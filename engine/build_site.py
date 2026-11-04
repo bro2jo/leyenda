@@ -3486,6 +3486,7 @@ class Site:
         if self.map_base:
             reg = self.register_image("places.json base_image", self.map_base.get("image"), self.map_base.get("alt"))
             base = (rel + reg[0]) if reg else None
+            self.thumb_missing.discard(Path(str(self.map_base.get("image"))).as_posix())  # the map always shows it whole
         map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel, base)
                        + '<p class="legend"><span><span class="lg ember">●</span> Darrow</span> <span><span class="lg brass">●</span> visited</span> <span><span class="lg faint">●</span> not yet</span> '
                        '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"><path d="M1 3 H21"/></svg> the road so far</span></p>'
