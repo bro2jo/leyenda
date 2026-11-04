@@ -222,3 +222,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-03#8,2026-11-03,,dinner,Grilled cheese sandwich on GF bread,"2 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",900,30,64,56,4,30,6,1600,240,800,3,50,4,0,1,0,estimate,"bread, cheese and butter amounts not given; typical GF bread ~80 kcal a slice: asked"
 2026-11-04#1,2026-11-04,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
 2026-11-04#2,2026-11-04,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola bar; his usual Kirkland chewy bar
+2026-11-04#3,2026-11-04,,snack,"LMNT Sparkling, Lemonade Salt (12 oz can)",1 can (12 fl oz),5,0,0.5,0,0,0,0,500,100,0,0,30,0,0,0,0,library,library row (label 11/1); flavour assumed lemonade salt
