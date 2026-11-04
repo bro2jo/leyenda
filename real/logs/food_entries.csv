@@ -224,3 +224,7 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-04#2,2026-11-04,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola bar; his usual Kirkland chewy bar
 2026-11-04#3,2026-11-04,,snack,"LMNT Sparkling, Lemonade Salt (12 oz can)",1 can (12 fl oz),5,0,0.5,0,0,0,0,500,100,0,0,30,0,0,0,0,library,library row (label 11/1); flavour assumed lemonade salt
 2026-11-04#4,2026-11-04,,snack,"Chobani 20g Protein Greek yogurt, cherry berry (lactose free)",1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,library row (label 10/29); flavour assumed
+2026-11-04#5,2026-11-04,,lunch,White basmati rice,~1.5 cups cooked (photo),300,6,65,0.6,1,0.2,0.1,200,80,20,0.6,30,1,0,0,0,photo,portion from the photo; salt assumed
+2026-11-04#6,2026-11-04,,lunch,Chicken pieces (breaded and seasoned),"~4 oz (photo, 5-6 pieces)",230,25,6,11,0,2.5,0.5,450,300,15,1,30,1.5,0,0.1,30,photo,kind and count not given: asked
+2026-11-04#7,2026-11-04,,lunch,"Roasted vegetables: Brussels sprouts, broccoli, carrot/sweet potato, red onion","~1.5 cups, roasted in ~1 tbsp oil (photo)",190,5,22,14,7,2,6,300,650,70,1.5,45,0.7,90,0,0,photo,mix and oil read from the photo
+2026-11-04#8,2026-11-04,,lunch,Yum yum sauce,~3 tbsp (photo),240,0.5,1.5,25.5,0,3.5,1.5,255,10,5,0.1,1,0,0,0.1,0,photo,amount from the photo; ~80 kcal a tbsp as 11/1
