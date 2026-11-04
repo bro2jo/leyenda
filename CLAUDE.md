@@ -53,6 +53,8 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | a question about the world, not the plot ("tell me about the Steps", "is there a song about…") | `/lore` |
 | a new plan, PT note, program or nutrition guide | `/ingest` |
 | his sport set-up, a throwing clearance | `/sport` |
+| a song he made (an MP3) for a song or rhyme the page has sung | file it in `saga/art/songs/` with its `codex_art.json` entry (`saga/art/README.md` → songs), then ship |
+| a song he made for one the page has not sung yet ("prep it ahead") | `python3 engine/saga.py songs add <lore id> <file> --title "…"`: it waits GM-side and goes live by itself once the page sings every line; then ship |
 | a picture from the Wardrobe's Forge with its `Look:` line | file it as a look: the picture in `saga/art/looks/`, its entry in `saga/state/looks.json` (`saga/art/README.md` → looks), then ship |
 | "switch his look to …", "have him wear …" | set `saga/state/looks.json → wearing` to that look's id (remove it to go back to the newest), then ship |
 

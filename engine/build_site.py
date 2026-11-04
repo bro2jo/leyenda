@@ -180,7 +180,12 @@ def mp3_lyrics(path):
     path = Path(path)
     if not any(path == a or a in path.parents for a in READ_ALLOW):
         raise SystemExit(f"build refuses to read {path}")
-    b = path.read_bytes()
+    return uslt_lines(path.read_bytes())
+
+
+def uslt_lines(b):
+    """The lyric lines in an MP3's bytes (ID3v2 USLT frames), or None. Shared with `saga.py songs`, which holds a
+    track waiting GM-side to the same check the build will make once it is released."""
     if b[:3] != b"ID3" or b[3] not in (3, 4):
         return None
     ver, flags = b[3], b[5]

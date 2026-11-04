@@ -30,3 +30,4 @@ A telling, not a scene. The Annals (`saga/bible/_gm/lore.md`) hold the realm's h
 
 ## 5. Afterwards
 - If the Chronicle later speaks the entry, that block's record marks it (`"lore": ["<id>"]` in `saga.py record`, which also takes the Codex's reader-safe line as a codex item). This skill never does that.
+- A song or rhyme he wants music for: give him the lyrics exactly as the entry has them (no `[Verse]` tags: Suno embeds the lyric box in the MP3 and the site holds every embedded line to the page) and a Suno style prompt. When he sends the MP3 for one the page has not sung, `python3 engine/saga.py songs add <id> <file> --title "…"` keeps it waiting GM-side; the record that sings its last line releases it to the Codex by itself.

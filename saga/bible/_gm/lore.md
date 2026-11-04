@@ -370,6 +370,22 @@ Five sheep's knuckles. Throw one up, sweep the rest, catch the one: ones, twos, 
 > four for the bell and five for the hand,
 > and the bones go to him who can stand.
 
+## rhyme.whose — Whose Are You
+- **tier:** common · **spoken:** — · **names:** —
+- **use:** children at a rope on a village green; a carter who knows the words before the children do; Coldmere.
+
+Coldmere's skipping rhyme, two to turn the rope and one to jump. The turners sing the first verse, and the jumper must shout back her house, her hearth and her bell before the rope comes round; then she jumps the second verse, faster each time, and whoever trips or cannot answer is out. It is the question Coldmere's children ask any stranger at the trough. Every carter's child on the Holloway knows the words from somebody else's green. ⟪gm: tale02 p2, the trough, where Rae answered "the cart's"; she starts the singing and denies it.⟫
+
+> Whose are you, whose are you,
+> which hearth and which door?
+> Which bell do you sleep by,
+> and who are you for?
+
+> Mill bell, inn bell, bell on the tarn,
+> one for the fair and two for the barn,
+> three for the carter who's never in bed,
+> and out goes the one with the fog in her head!
+
 ## saying.steps — Sayings of the Steps
 - **tier:** common · **spoken:** glimpse (the mountain keeps its own count) · **names:** —
 - **use:** lay brothers climbing; a glimpse; a shrug.

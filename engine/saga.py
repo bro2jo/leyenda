@@ -65,6 +65,11 @@ Commands (run from the repo root):
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
   lore | lore ID | lore grep WORD | lore pick saying|verse|maxim|rhyme [--all] | lore spoke ID --where chNN:sK
                                         the Annals (_gm/lore.md): the index, one entry, a search, a line for a glimpse, mark an entry spoken
+  songs | songs add LORE_ID FILE [--title T] [--name N] | songs release
+                                        tracks made ahead for an Annals song or rhyme the page has not sung: each waits under
+                                        saga/state/_gm/songs/ (songs.json) and goes live by itself (the file into saga/art/songs/,
+                                        its entry into codex_art.json) once the Codex has its entry under Songs and verses and the
+                                        chapters have sung every line it embeds; `record` releases, `check` notes, the brief lists
   names [--all]                         capitalised names in the current chapter (--all: every chapter) that no registry knows:
                                         codex, cast, places, factions, the Annals, the game's own words; `check` notes them too
   archive                               move spent entries older than two Books to consequences_archive.json
@@ -3259,6 +3264,180 @@ def cmd_lore(args):
     print("\n".join(e["lines"]).strip())
 
 
+# ---------------------------------------------------------------- songs waiting for the page
+SONGS_JSON = ROOT / "saga/state/_gm/songs.json"
+SONGS_WAIT = ROOT / "saga/state/_gm/songs"
+SONGS_ART = ROOT / "saga/art/songs"
+CODEX_ART = ROOT / "saga/state/codex_art.json"
+SONG_SECTION = "Songs and verses"
+SONG_KINDS = ("song.", "rhyme.")
+SONG_MAX_BYTES = 10 * 1024 * 1024  # the build's own limit
+
+
+def _site():
+    """The site builder's lyric reader and word matcher, so a track is held to exactly the check the build will make."""
+    import build_site
+    return build_site
+
+
+def load_songs():
+    if not SONGS_JSON.exists():
+        return {"_about": "GM. Tracks made ahead for an Annals song or rhyme the page has not sung. Each file waits in "
+                          "saga/state/_gm/songs/ until the Codex has an entry by `name` under Songs and verses and the chapters "
+                          "have sung every line it embeds; then `saga.py record` (or `songs release`) moves it to saga/art/songs/ "
+                          "and adds {name, audio, audio_title} to codex_art.json. Never edited by hand: `saga.py songs add`.",
+                "waiting": []}
+    return load_json(SONGS_JSON)
+
+
+def page_words():
+    """The chapters' words, as the build matches sung lines (saga/chronicle/*.md: the tales do not count)."""
+    B = _site()
+    return f" {B.words_of(chr(10).join(p.read_text(encoding='utf-8') for p in sorted(P['chronicle'].glob('*.md'))))} "
+
+
+def song_status(w, codex, page):
+    """(the Codex has its entry, the lyric lines the page has not sung yet, every lyric line)."""
+    B = _site()
+    on_codex = any(e.get("name") == w["name"] for s in codex.get("sections", []) if s.get("name") == SONG_SECTION
+                   for e in s.get("entries", []))
+    f = SONGS_WAIT / w["file"]
+    lines = (B.uslt_lines(f.read_bytes()) if f.is_file() else None) or []
+    unsung = [ln for ln in lines if B.words_of(ln) and f" {B.words_of(ln)} " not in page]
+    return on_codex, unsung, lines
+
+
+def release_songs():
+    """Release every waiting track the page has caught up with; returns a line for each released and each still short."""
+    data = load_songs()
+    if not data.get("waiting"):
+        return []
+    codex, page = R.load_codex(), page_words()
+    art = load_json(CODEX_ART) if CODEX_ART.exists() else {"entries": []}
+    out, keep, moved = [], [], False
+    for w in data["waiting"]:
+        on_codex, unsung, lines = song_status(w, codex, page)
+        if not on_codex:
+            keep.append(w)
+            continue
+        if unsung:
+            out.append(f"♪ {w['name']} waits: the page has sung {len(lines) - len(unsung)} of its {len(lines)} lines "
+                       f"(next unsung: {unsung[0][:60]!r})")
+            keep.append(w)
+            continue
+        dest = SONGS_ART / w["file"]
+        row = next((a for a in art.setdefault("entries", []) if a.get("name") == w["name"]), None)
+        if dest.exists() or (row and row.get("audio")):
+            out.append(f"♪ {w['name']} is ready but saga/art/songs/{w['file']} or its codex_art.json audio already exists; sort it out by hand")
+            keep.append(w)
+            continue
+        SONGS_ART.mkdir(parents=True, exist_ok=True)
+        (SONGS_WAIT / w["file"]).replace(dest)
+        if row is None:
+            row = {"name": w["name"]}
+            art["entries"].append(row)
+        row.update({"audio": f"songs/{w['file']}", "audio_title": w["audio_title"]})
+        moved = True
+        out.append(f"♪ {w['name']}: released to the site (saga/art/songs/{w['file']}, codex_art.json), as \"{w['audio_title']}\"")
+    if moved:
+        save_json(CODEX_ART, art)
+        data["waiting"] = keep
+        save_json(SONGS_JSON, data)
+    return out
+
+
+def songs_problems():
+    """`check`: the registry's own consistency, and any track the page has already caught up with."""
+    data = load_songs()
+    probs, notes = [], []
+    if not data.get("waiting"):
+        return probs, notes
+    entries, _ = lore_entries()
+    codex, page = R.load_codex(), page_words()
+    for w in data["waiting"]:
+        where = f"_gm/songs.json: {w.get('lore')}"
+        if w.get("lore") not in entries:
+            probs.append(f"{where} names no entry in the Annals")
+        if not (SONGS_WAIT / str(w.get("file"))).is_file():
+            probs.append(f"{where}: its file saga/state/_gm/songs/{w.get('file')} is missing")
+            continue
+        on_codex, unsung, _ = song_status(w, codex, page)
+        if on_codex and not unsung:
+            notes.append(f"♪ {w['name']} is ready for the site: `saga.py songs release`")
+    return probs, notes
+
+
+def songs_for_brief():
+    """One line for the brief: the tracks waiting for the page, so a scene that wants a song knows which have music."""
+    data = load_songs()
+    if not data.get("waiting"):
+        return []
+    entries, _ = lore_entries()
+    rows = " · ".join(f"{w['lore']} «{w['name']}» ({len(w.get('lines') or [])} lines; {((entries.get(w['lore']) or {}).get('use') or '').split(';')[0]})"
+                      for w in data["waiting"])
+    return [f"♪ tracks waiting for the page: {rows}. One goes live once the chapters sing every one of its lines as "
+            f"`saga.py lore <id>` has them and the record gives the Codex its entry under {SONG_SECTION} by that exact name "
+            f"(and `lore: [<id>]`). Seasoning, never forced: only where the scene wants the song; it may be sung across "
+            f"more than one block."]
+
+
+def cmd_songs(args):
+    data = load_songs()
+    if args.action == "release":
+        out = release_songs()
+        print("\n".join(out) if out else "nothing to release: no waiting track has its Codex entry yet")
+        return
+    if args.action == "add":
+        entries, _ = lore_entries()
+        e = entries.get(args.id or "")
+        if not e or not e["id"].startswith(SONG_KINDS):
+            die(f"songs add <lore id> <file>: the id must be a song or rhyme in the Annals ({', '.join(k for k in entries if k.startswith(SONG_KINDS))})")
+        src = Path(args.file or "")
+        if not src.is_file():
+            die(f"no file at {src}")
+        if src.suffix.lower() != ".mp3":
+            die("an .mp3, please: the engine holds a waiting track to the page by the lyrics an MP3 embeds")
+        if src.stat().st_size > SONG_MAX_BYTES:
+            die(f"{src.name} is over {SONG_MAX_BYTES // (1024 * 1024)} MB; the site will not take it")
+        B = _site()
+        lines = B.uslt_lines(src.read_bytes())
+        if not lines:
+            die(f"{src.name} carries no embedded lyrics, so the engine cannot tell when the page has sung it (Suno's MP3 carries them)")
+        verse = {B.words_of(l.lstrip("> ")) for l in e["lines"] if l.startswith(">")}
+        stray = [ln for ln in lines if B.words_of(ln) and B.words_of(ln) not in verse]
+        if stray:
+            die(f"{src.name} sings a line {e['id']} does not have: {stray[0]!r}; the page can only sing what the Annals hold, "
+                f"so fix the entry or the lyrics first")
+        name = args.name or e["title"]
+        title = args.title or name
+        file = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-") + ".mp3"
+        for w in data["waiting"]:
+            if w["lore"] == e["id"] or w["file"] == file:
+                die(f"a track already waits for {w['lore']} as {w['file']}")
+        if (SONGS_ART / file).exists():
+            die(f"saga/art/songs/{file} already exists")
+        art = load_json(CODEX_ART) if CODEX_ART.exists() else {"entries": []}
+        if any(a.get("name") == name and a.get("audio") for a in art.get("entries", [])):
+            die(f"codex_art.json already gives {name!r} a song")
+        SONGS_WAIT.mkdir(parents=True, exist_ok=True)
+        (SONGS_WAIT / file).write_bytes(src.read_bytes())
+        data["waiting"].append({"lore": e["id"], "name": name, "audio_title": title, "file": file, "lines": lines,
+                                "filed": today_local().isoformat()})
+        save_json(SONGS_JSON, data)
+        print(f"♪ {name} ({e['id']}) waits as saga/state/_gm/songs/{file}: {len(lines)} lines, all in the Annals")
+        for line_ in release_songs():
+            print(line_)
+        return
+    if not data.get("waiting"):
+        print("no tracks waiting for the page")
+        return
+    codex, page = R.load_codex(), page_words()
+    for w in data["waiting"]:
+        on_codex, unsung, lines = song_status(w, codex, page)
+        print(f"♪ {w['lore']} «{w['name']}» as \"{w['audio_title']}\" · saga/state/_gm/songs/{w['file']} · filed {w.get('filed', '?')}")
+        print(f"    Codex entry: {'yes' if on_codex else 'not yet'} · lines sung on the page: {len(lines) - len(unsung)} of {len(lines)}")
+
+
 # ---------------------------------------------------------------- names on the page
 NAME_STOP = set("""I Ser Dame Captain Mender Menders Sister Brother Mother Father Prior Saint Lord Lady King Queen Knight Knights
 Confessor Confessors Herald Heralds Grace Ember Reckoning Binding Knot Knots Art Arts Steps Stone Crown Hollowed Faithless
@@ -4255,6 +4434,9 @@ def cmd_check(args):
         if not isinstance(c.get("chapter"), int):
             probs.append(f"world.json choices[{i}] chapter must be an int")
 
+    sp, sn = songs_problems()
+    probs += sp
+    notes += sn
     for n in notes:
         print(f"note: {n}")
     if probs:
@@ -4828,6 +5010,7 @@ def cmd_brief(args):
         L += lore_lines
     else:
         L.append("lore: the plan names no entry; `saga.py lore grep <word>` for a place or custom the block touches, `lore pick saying` for a line in someone's mouth")
+    L += songs_for_brief()
     cbs = callbacks_for_brief(st, presence_ctx(set(ids) | set(here_ids), loc.get("place")))
     if cbs:
         section("MAY: callbacks waiting for a fit (one per block at most; record it in \"fired\" with the block's words that pay it)")
@@ -5252,6 +5435,8 @@ def cmd_record(args):
     changed = R.project_all(plan, write=True)
     print(f"{key} recorded: {btitle} · people {len(ordered.get('people') or [])} · facts {sum(len(p.get('facts') or []) for p in ordered.get('people') or [])} "
           f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])} · projections rebuilt: {', '.join(changed) or 'none'}")
+    for line_ in release_songs():  # a track made ahead goes live once the page has sung all of it
+        print(line_)
     r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "check"], cwd=ROOT, capture_output=True, text=True)
     sys.stdout.write(r.stdout + r.stderr)
     if r.returncode:
@@ -6063,6 +6248,7 @@ def main():
     s = sub.add_parser("arc"); s.add_argument("id")
     s = sub.add_parser("lore"); s.add_argument("what", nargs="?", help="an entry id, or grep | pick | spoke"); s.add_argument("arg", nargs="?"); s.add_argument("--where"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
+    s = sub.add_parser("songs", help="tracks made ahead for an Annals song or rhyme, waiting for the page"); s.add_argument("action", nargs="?", choices=["list", "add", "release"], default="list"); s.add_argument("id", nargs="?", help="add: the Annals id (song.… or rhyme.…)"); s.add_argument("file", nargs="?", help="add: the .mp3"); s.add_argument("--title", help="add: the title its player shows (default: the entry's name)"); s.add_argument("--name", help="add: the Codex entry's bold name (default: the Annals title)")
     s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--tale", action="store_true", help="the tale piece owed by a task reported"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
     s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan with a piece per task)"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("reread", help="the reread's notes for a block: length, habits, opening and closing lines (advice only)"); s.add_argument("key", nargs="?", help="ch05:s2, ch05:between-3, ch05:climax, tale03:p1 … (default: the last block of the current chapter)")
@@ -6082,7 +6268,7 @@ def main():
     {
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
-        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names,
+        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names, "songs": cmd_songs,
         "brief": cmd_brief, "record": cmd_record, "reread": cmd_reread, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
         "tale": cmd_tale,
     }[args.cmd](args)
