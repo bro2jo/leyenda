@@ -655,6 +655,18 @@ def main():
         check(code == 0 and "True" in out, "check reads the GM character notes for drift the page has overtaken (notes, never a refusal)", out[-300:])
         code, out = run(saga + ["arc", "book2.tone"], tmp)
         check(code == 0 and "register" in out.lower(), "the arc carries a Book's register (book2.tone)", out[-300:])
+        probe = ("import sys; sys.path.insert(0, 'engine'); import saga; "
+                 "full = saga.gm_character_lines('Rae Thorne', others=['Wren Ashdown'], depth=True, book=2); "
+                 "lean = saga.gm_character_lines('Rae Thorne'); "
+                 "tale = saga.gm_character_lines('Rae Thorne', others=['Wren Ashdown'], depth=True, past=True, book=2); "
+                 "print('FULL', any(l.startswith('The lie:') for l in full), any(l.startswith('Book II:') for l in full), "
+                 "any(l.startswith('With Wren:') for l in full), any(l.startswith('With Hollis:') for l in full), any(l.startswith('Book I:') for l in full)); "
+                 "print('LEAN', any(l.startswith('The lie:') for l in lean), any(l.startswith('With ') for l in lean)); "
+                 "print('TALE', any(l.startswith(('Now:', 'Book ', 'With ', 'Grown')) for l in tale), any(l.startswith('Needs:') for l in tale)); "
+                 "print('HIDES', any('Hides' in l or 'Carries' in l or 'calling' in l.lower() for l in full))")
+        code, out = run(["-c", probe], tmp)
+        check(code == 0 and "FULL True True True False False" in out and "LEAN False False" in out and "TALE False True" in out and "HIDES False" in out,
+              "the brief's depth lines: need, lie, the current Book only, With lines only for who is in the room; a tale gets no present; never the hides", out[-300:])
         chap_pages = sorted((tmp / "docs/chronicle").glob("0[1-9]*.html"))
         dice_pages = [p_ for p_ in chap_pages if '<details class="dice">' in page_of(p_)]
         check(bool(dice_pages), "a check on the page is one line, its modifiers behind a tap (details.dice)", ", ".join(p_.name for p_ in chap_pages))

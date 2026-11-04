@@ -3018,7 +3018,7 @@ def cmd_plan(args):
             print("still to come (rules read their banked approval; `plan companion arrive ID` the day they step on the road with him): "
                   + "; ".join(f"{k} ({short(str(v.get('note') or ''), 70)})" for k, v in tc.items()))
             print("  every road of the transition just written may have put someone on the road: arrive them now if it did (arc rae.road; Ash in t1)")
-        print(f"next: refresh the GM notes for Book {ROMAN[n]}: each companion's **Now:** line in `_gm/characters.md` (where they are and what they carry now; `check` notes a missing one), any line the last Book made untrue, and `saga.py arc book{n}.tone`; then `plan pace`, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
+        print(f"next: refresh the GM notes for Book {ROMAN[n]}: each companion's **Now:** and **Book {ROMAN[n]}:** lines in `_gm/characters.md` (where they are and what they carry now; what this Book presses on them; `check` notes a missing one), their **With** lines where the last Book changed how two of them stand, any line the last Book made untrue, and `saga.py arc book{n}.tone`; then `plan pace`, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
         return
     if a == "quest":
         q = plan.setdefault("quests", {}).setdefault(args.id, {"status": "available", "stage": 0, "priority": "optional"})
@@ -3948,6 +3948,8 @@ def gm_drift_notes(st):
                     out.append(f"_gm/characters.md: {h}: says {art.title()} is not named yet, but the page has named it")
         if cid in present and not any(l.startswith("- **Now:**") and tag in l for l in lines):
             out.append(f"_gm/characters.md: {h} travels with him and has no **Now:** line for {tag}: the brief prints it into every scene, so write one")
+        if cid in present and any(l.startswith("- **Book ") for l in lines) and not any(l.startswith(f"- **{tag}:**") for l in lines):
+            out.append(f"_gm/characters.md: {h} travels with him and has no **{tag}:** line: write what this Book presses on them (the brief prints it into every block they are in)")
     return out
 
 
@@ -4545,13 +4547,25 @@ def cast_entries():
     return out
 
 
-def gm_character_lines(name):
-    """The GM entry's drafting lines for a name: wants/fears/now/under pressure (never the hides: those stay on demand)."""
+GM_CORE_KEYS = ("Now", "Wants", "Fears", "Under pressure", "At ease", "Wrong, in character")
+GM_DEPTH_KEYS = ("Needs", "The lie", "Contradiction", "Grown on the page")
+GM_PRESENT_KEYS = ("Now", "Grown on the page")  # the present: never printed for a tale
+GM_ORDER = ("Now", "Book", "Wants", "Fears", "Needs", "The lie", "Contradiction", "Under pressure", "At ease", "Wrong, in character", "Grown on the page", "With")
+
+
+def gm_character_lines(name, others=None, depth=False, past=False, book=None):
+    """The GM entry's drafting lines for a name, never the hides (those stay on demand in `_gm/characters.md`).
+    Always: now, wants and fears, under pressure, at ease, wrong in character. With depth: needs, the lie, the
+    contradiction, what the page has grown, the current Book's line (`book`), and the **With <name>:** lines for the
+    others in the room (`others`: their names). past=True (a tale): who they are, never their present (no Now, no Book
+    line, no Grown on the page, no With lines)."""
     path = ROOT / "saga/bible/_gm/characters.md"
     if not path.exists():
         return []
-    lines, head, keep = [], None, False
+    got, head, keep = [], None, False
     want = norm_title(name)
+    book_key = f"Book {ROMAN[int(book)]}" if book else None
+    other_words = {w.lower() for o in (others or []) for w in re.findall(r"[A-Za-z]+", str(o))}
     for line in path.read_text(encoding="utf-8").splitlines():
         if line.startswith("### "):
             head = line[4:].split(" — ")[0].split(" (")[0].strip()
@@ -4559,12 +4573,28 @@ def gm_character_lines(name):
             continue
         if line.startswith("## "):
             keep = False
-        if keep and line.startswith(("- **Under pressure:**", "- **At ease:**", "- **Wrong, in character:**", "- **Wants:**", "- **Now:**", "- **Fears:**")):
-            l = line[2:].strip()
-            # only the tactic, the want, the fear and the now: what a person hides, carries or will do in a later Book stays on demand (`_gm/characters.md`)
-            l = re.split(r"\s*\*\*(?!Wants:|Fears:|Now:|Under pressure:|At ease:|Wrong, in character:)[A-Z][^*]{0,40}:\*\*", l)[0].strip()
-            lines.append(l)
-    return lines
+        m = re.match(r"- \*\*([^*]{1,40}?):\*\*\s*(.*)", line) if keep else None
+        if not m:
+            continue
+        key, rest = m.group(1).strip(), m.group(2)
+        if key in GM_CORE_KEYS:
+            slot = key
+        elif depth and key in GM_DEPTH_KEYS:
+            slot = key
+        elif depth and not past and book_key and key == book_key:
+            slot = "Book"
+        elif depth and not past and key.startswith("With ") and other_words and {w.lower() for w in re.findall(r"[A-Za-z]+", key[5:])} <= other_words:
+            slot = "With"
+        else:
+            continue
+        if past and slot in GM_PRESENT_KEYS:
+            continue
+        # a line ends at the first bold key that is not a drafting line (Hides, Carries, Flag…): that stays on demand
+        rest = re.split(r"\s*\*\*(?!Fears:)[A-Z][^*]{0,40}:\*\*", rest)[0].strip()
+        rest = re.sub(r"[*][*]([^*]+)[*][*]", r"\1", rest)
+        if rest:
+            got.append((GM_ORDER.index(slot), len(got), f"{key}: {rest}"))
+    return [l for _, _, l in sorted(got)]
 
 
 def people_index():
@@ -4596,8 +4626,10 @@ def people_in(texts, names, by_word):
     return out
 
 
-def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2):
-    """One person for the brief: voice, under pressure, regard, now, their last facts, what they know on the touched threads."""
+def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2, others=None, depth=False, past=False, book=None):
+    """One person for the brief: voice, the GM drafting lines (with depth: need, lie, contradiction, the Book's line,
+    what the page has grown, how they stand with the others in the room), regard, now, their last facts, what they
+    know on the touched threads."""
     name = c.get("name") or cid
     key = cid.split("-")[0]
     comp = (world.get("companions") or {}).get(key)
@@ -4605,7 +4637,7 @@ def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2):
     ce = cast.get(name) or {}
     if ce.get("voice"):
         lines.append(f"  voice: {ce['voice']}")
-    for l in gm_character_lines(name):
+    for l in gm_character_lines(name, others=others, depth=depth, past=past, book=book):
         lines.append(f"  {l}")
     if c.get("last_seen_doing"):
         lines.append(f"  last seen: {c['last_seen_doing']} ({(c.get('last_seen') or {}).get('scene')}, {(c.get('last_seen') or {}).get('place')})")
@@ -5059,6 +5091,7 @@ def cmd_brief(args):
     elif mode == "between" and args.with_:
         texts = [args.with_.replace(",", " ").replace("-", " ").title()]
     ids = people_in(texts, names, by_word)
+    focus = {"darrow"} | set(ids)  # the block's own people get the depth lines; the rest of the company prints as before
     comps = [cid for cid in names if cid.split("-")[0] in (world.get("companions") or {}) and (world["companions"][cid.split("-")[0]].get("present") is not False)]
     for cid in comps:
         if cid not in ids and (mode == "between" or mode == "climax"):
@@ -5067,10 +5100,14 @@ def cmd_brief(args):
         ids.remove("darrow")
     ids = ["darrow"] + ids
     thr_rows, n_open = threads_for_brief(ch)
-    for cid in ids[:6]:
-        L += person_brief(cid, names[cid], world, cast, thr_rows, facts_n=2)
+    shown = ids[:6]
+    for cid in shown:
+        others = [names[x].get("name") or x for x in shown if x != cid]
+        L += person_brief(cid, names[cid], world, cast, thr_rows, facts_n=2, others=others, depth=cid in focus, book=pos["book"])
     if len(ids) > 6:
         L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
+    L.append("each arrives with an agenda of their own for this block (what they want today, from whom), not only what they want in life: name it before writing and let it rub against Darrow's. "
+             "The lines above are material to choose from, never a list to show: a trait shown in every block becomes the whole person")
     section(f"MAY: threads ({n_open} open; `saga.py threads` for all)")
     for t in thr_rows:
         L.append(thread_line(t))
@@ -5520,7 +5557,28 @@ def cmd_record(args):
     if notes:
         print("reread notes (advice, never a refusal; `saga.py reread` again after a revision, `record --force` to re-record):")
         print("\n".join("  " + n for n in notes))
+    grow = grow_note(ordered)
+    if grow:
+        print(grow)
     print("next: `python3 engine/darrow.py ship -m \"…\"`")
+
+
+def grow_note(ev):
+    """One line after a record: the companions in the block whose GM notes keep a Grown on the page line, so a scene that
+    showed something new and lasting about them (a habit, a story from their past, a change in how two of them stand)
+    goes into the notes the brief prints, and they deepen instead of resetting. Advice, never a refusal."""
+    names, _ = people_index()
+    who = []
+    for p in ev.get("people") or []:
+        c = names.get(p.get("id")) or {}
+        nm = c.get("name")
+        if nm and any(l.startswith("Grown on the page:") for l in gm_character_lines(nm, depth=True)):
+            who.append(nm.split(" of ")[0].replace("Ser ", "").split()[0])
+    if not who:
+        return None
+    return (f"grow the notes: if this block showed something new and lasting about {', '.join(who[:-1]) + ' or ' + who[-1] if len(who) > 1 else who[0]} "
+            "(a habit, a story from their past, a change in how they stand with someone), add it to their **Grown on the page** or **With** line in "
+            "`_gm/characters.md`; if it made a line there untrue, fix that line")
 
 
 def cmd_reread(args):
@@ -6021,7 +6079,7 @@ def brief_tale(st, args):
     if who and who in names and who not in ids:
         ids.insert(0, who)
     for cid in ids[:6]:
-        L += person_brief(cid, names[cid], world, cast, None, facts_n=3)
+        L += person_brief(cid, names[cid], world, cast, None, facts_n=3, depth=True, past=True)
     if len(ids) > 6:
         L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
     L.append("a person without a file gets a base file first (saga/characters/README.md; status as the present knows it) and the record names them; the tale may leave people unnamed")
