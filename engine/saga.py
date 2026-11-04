@@ -3018,7 +3018,7 @@ def cmd_plan(args):
             print("still to come (rules read their banked approval; `plan companion arrive ID` the day they step on the road with him): "
                   + "; ".join(f"{k} ({short(str(v.get('note') or ''), 70)})" for k, v in tc.items()))
             print("  every road of the transition just written may have put someone on the road: arrive them now if it did (arc rae.road; Ash in t1)")
-        print(f"next: set world.json book to {n}, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
+        print(f"next: refresh the GM notes for Book {ROMAN[n]}: each companion's **Now:** line in `_gm/characters.md` (where they are and what they carry now; `check` notes a missing one), any line the last Book made untrue, and `saga.py arc book{n}.tone`; then `plan pace`, then `plan chapter open --number N '<json>'` (it files under route.book{n})")
         return
     if a == "quest":
         q = plan.setdefault("quests", {}).setdefault(args.id, {"status": "available", "stage": 0, "priority": "optional"})
@@ -3895,6 +3895,62 @@ def cmd_fmt(args):
     print("canonical")
 
 
+STALE_GM_RE = re.compile(r"not yet on the page|has not appeared in the prose|none has reached the page|no file and no mention|nothing of this reaches the page|is not named on the page until|not named on the page until", re.I)
+GM_TITLES_RE = re.compile(r"^(?:Ser|Sister|Brother|Mother|Confessor|King|Dame)\s+")
+
+
+def gm_drift_notes(st):
+    """Notes on the hand-written GM character notes that the page has overtaken. The projections rebuild themselves from
+    the records; `_gm/characters.md` does not, and the brief prints its Now / Wants / Under pressure / At ease lines into
+    every block, so a stale line misleads the writer. Notes only: the fix is a sentence in that file."""
+    path = ROOT / "saga/bible/_gm/characters.md"
+    if not path.exists():
+        return []
+    out, sections, group, head = [], {}, None, None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            group, head = line[3:].strip(), None
+            continue
+        if line.startswith("### "):
+            head = line[4:].split(" — ")[0].split(" (")[0].strip()
+            sections[head] = (group or "", [])
+            continue
+        if head:
+            sections[head][1].append(line)
+    names, _ = people_index()
+
+    def cid_for(h):
+        hn = norm_title(GM_TITLES_RE.sub("", h))
+        for cid, c in names.items():
+            nm = norm_title(GM_TITLES_RE.sub("", str(c.get("name") or "")))
+            if nm and (nm == hn or nm in hn or hn in nm):
+                return cid
+        return None
+
+    tag = f"Book {ROMAN[int(st.plan['position']['book'])]}"
+    present = {cid for cid, v in (st.world.get("companions") or {}).items() if (v or {}).get("present")}
+    present = {c for c in names if c in present or c.split("-")[0] in present} | {"darrow"}
+    spoken = {art_names()[a].lower() for a in arts_spoken()}
+    for h, (grp, lines) in sections.items():
+        cid = cid_for(h)
+        seen = bool(cid and (names.get(cid) or {}).get("first_seen"))
+        if grp.lower().startswith("not yet on the page") and seen:
+            out.append(f"_gm/characters.md: {h} is on the page but filed under 'Not yet on the page': move the entry up and bring it to the page's state")
+        if not grp.lower().startswith("on the page"):
+            continue
+        for ln in lines:
+            m = STALE_GM_RE.search(ln)
+            if m:
+                out.append(f"_gm/characters.md: {h}: '{m.group(0)}' (…{short(ln[max(0, m.start() - 50):m.end() + 30], 110)}): has the page overtaken it?")
+            low = ln.lower()
+            for art in spoken:
+                if art in low and re.search(r"not (?:yet )?named on the page|until (?:he|she|they) teach", low):
+                    out.append(f"_gm/characters.md: {h}: says {art.title()} is not named yet, but the page has named it")
+        if cid in present and not any(l.startswith("- **Now:**") and tag in l for l in lines):
+            out.append(f"_gm/characters.md: {h} travels with him and has no **Now:** line for {tag}: the brief prints it into every scene, so write one")
+    return out
+
+
 def cmd_check(args):
     probs, notes = [], []
     for k in STATE_FILES:
@@ -4314,6 +4370,14 @@ def cmd_check(args):
                 probs.append(f"callback {it.get('id')}: priority {it.get('priority')!r} is 1, 2 or 3")
             if int(it.get("offered") or 0) >= STALE_OFFERS:
                 notes.append(f"callback {it.get('id')} offered {it['offered']} times unfired ({', '.join(it.get('offered_at') or [])}): rewrite it or void it at the checkpoint")
+    notes += gm_drift_notes(st)
+    titles = {}
+    for t in R.load_threads().get("threads", []):
+        if t.get("status") == "open":
+            titles.setdefault(norm_title(t.get("title")), []).append(t.get("id"))
+    for ids_ in titles.values():
+        if len(ids_) > 1:
+            notes.append(f"threads {', '.join(str(i) for i in ids_)} are open with one title: keep one, close the rest with a note")
     later_n = sum(1 for e, it in pending_items(ledger) if it.get("at") == "later")
     if later_n > CALLBACK_CAP:
         notes.append(f"{later_n} callbacks waiting (cap {CALLBACK_CAP}): fire the ones that fit or void the stale ones at the checkpoint")
@@ -5315,6 +5379,9 @@ def cmd_record(args):
         if tu.get("new"):
             if not str(tu.get("title") or "").strip():
                 probs.append("a new thread needs a title")
+            dup = next((t for t in thr.get("threads", []) if norm_title(t.get("title")) == norm_title(tu.get("title"))), None)
+            if dup:
+                probs.append(f"gm.threads: thread {dup['id']} already has this title ({dup.get('status')}): touch it by its id instead of opening it again")
         elif tu.get("id") is None or int(tu["id"]) not in tids:
             probs.append(f"gm.threads: no thread {tu.get('id')!r}")
     if kind in ("scene", "interlude"):
@@ -6100,6 +6167,9 @@ def record_tale(args, ev, st, key, n, k):
         if tu.get("new"):
             if not str(tu.get("title") or "").strip():
                 probs.append("a new thread needs a title")
+            dup = next((t for t in thr.get("threads", []) if norm_title(t.get("title")) == norm_title(tu.get("title"))), None)
+            if dup:
+                probs.append(f"gm.threads: thread {dup['id']} already has this title ({dup.get('status')}): touch it by its id instead of opening it again")
         elif tu.get("id") is None or int(tu["id"]) not in tids:
             probs.append(f"gm.threads: no thread {tu.get('id')!r}")
     if probs:

@@ -651,6 +651,8 @@ def main():
         code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
                          "print(saga.tone_notes([{'n': 1, 'tone': 'warm'}, {'n': 2, 'tone': 'warm'}, {'n': 3, 'tone': ''}], {'tone': ''}))"], tmp)
         check(code == 0 and "no tone" in out and "climax has no tone" in out and "neighbouring" in out, "a week's tones draw notes, never a refusal", out[-400:])
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; print(isinstance(saga.gm_drift_notes(saga.State()), list))"], tmp)
+        check(code == 0 and "True" in out, "check reads the GM character notes for drift the page has overtaken (notes, never a refusal)", out[-300:])
         code, out = run(saga + ["arc", "book2.tone"], tmp)
         check(code == 0 and "register" in out.lower(), "the arc carries a Book's register (book2.tone)", out[-300:])
         chap_pages = sorted((tmp / "docs/chronicle").glob("0[1-9]*.html"))
