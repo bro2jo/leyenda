@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-31 · overheard · From the refectory door, the cook, to the novice with the scrubbing brush: You've had the grain off them. — You said clean. — I said clean. I never said new.
 - 2026-10-31 · house · Brother Cobb sets the bread out on the long table a loaf at a time and squares each one to the edge, and when a novice nudges one crooked in passing he squares it again without looking up.
 - 2026-10-31 · ledger · From Wren's ledger, the evening's line: Candles issued to the forge, 2. Candles asked for twice, 1, by Brother Cobb, who says the first was a poor candle and he knows a poor candle.
 - 2026-10-31 · saying · Told that tonight's pot is the same as last night's, one of the old men on the far cots says to the rafters, with great dignity: Kneel to that. Two cots down, somebody laughs and has to be thumped on the back.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-03 · overheard · Overheard at the cart's tail: Hollis telling Wren that the ox call is the first thing the captain has said since midsummer that an animal has taken seriously. Wren writes it down.
 - 2026-11-03 · house · Maelis has made the cart's tailboard a surgery and Hollis's boots her first patients. The boots, she says, will live. She is less sure about Hollis.
 - 2026-11-04 · ledger · Wren's ledger, Lowmarch page: hedges, more than anyone needs; gates, eleven, of which four open; songs Hollis knows with a goat in them, three, and he says there are more.
+- 2026-11-04 · weather · Frost silvers the cart's canvas at first light and is gone by the first milestone, as if it had only come to look.
