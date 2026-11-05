@@ -887,7 +887,7 @@ Rae looked from one of them to the other and went on up the passage to her uncle
 
 "Then teach me to throw like a man who isn't."
 
-Hollis turned his head at last, and Darrow watched him see exactly what this was.
+Hollis turned his head at last.
 
 "You're keeping me off the taps," Hollis said.
 
@@ -903,7 +903,7 @@ He threw from where he sat, a little lob with no more in it than a man tossing a
 
 "Like that," said Hollis.
 
-Darrow threw. It went the way his throws had always gone, flat and hard and early, because he had decided on the bucket before he had properly looked at it. The pebble hit the rim. The bucket rocked once on the lip, considered the matter, and went over into the well, and after a while there was a slap of water a long way down.
+Darrow threw. It went the way his throws had always gone, flat and hard and early. The pebble hit the rim. The bucket rocked once on the lip, considered the matter, and went over into the well, and after a while there was a slap of water a long way down.
 
 "That," said Hollis, "is the Ninth. Fetch it."
 
@@ -915,7 +915,7 @@ The second went short and plinked off the stones of the well-head. The third was
 
 Darrow stood still, which was harder than throwing, and weighed the next pebble, and did not throw it.
 
-Hollis had gone quiet on the block. It was not the quiet everyone in the Sixth had learned to be afraid of. He was looking at the taproom shutters, and the light coming out through the cracks in them.
+Hollis had gone quiet on the block. He was looking at the taproom shutters, and the light coming out through the cracks in them.
 
 "You know why I'm sat out here in the frost with you," he said, "instead of in there."
 
@@ -923,9 +923,9 @@ Hollis had gone quiet on the block. It was not the quiet everyone in the Sixth h
 
 "Because you asked. And because if I go through that door tonight I'll come out of it about the thaw." He rubbed his thigh above the cup. "I'll tell you a thing, Captain, and you'll not make a face about it. If you took us into the river again tomorrow, I'd come. Leg or no leg. I'd come in after you." He kept his eyes on the shutters. "I'm saying it now, sober, because I don't know that I'll be sober the day it's worth saying."
 
-Darrow did not make a face. It took most of what he had.
+Darrow did not make a face.
 
-"Throw your stone," said Hollis, in his own voice again. "You're letting the lantern go out with your mooning."
+"Throw your stone," said Hollis. "You're letting the lantern go out with your mooning."
 
 Darrow decided where it would go before it left his hand, and then let his arm be stupid.
 
@@ -961,11 +961,7 @@ Hollis looked at her for a while.
 
 Wren opened her mouth to argue, and looked at the bucket, and shut it again.
 
-"Anyway," she said, rather fast, "he can't have lessons. He's blue. Four days on the road in an infirmary shirt. I've counted his teeth going."
-
-"They haven't," said Darrow.
-
-"Eleven times. Twice on the fold wall." She took his arm. "There's a drover by the taproom fire with a coat he doesn't want, and he doesn't know he doesn't want it yet. I've been watching it an hour. Come on."
+"Anyway," she said, rather fast, "he can't have lessons. He's blue. Four days on the road in an infirmary shirt." She took his arm. "There's a drover by the taproom fire with a coat he doesn't want, and he doesn't know he doesn't want it yet. I've been watching it an hour. Come on."
 
 "I've no money."
 
@@ -975,7 +971,7 @@ Wren opened her mouth to argue, and looked at the bucket, and shut it again.
 
 "You're in the middle of a lesson. He's in the middle of a chill."
 
-Hollis looked from her to the bucket and back, and waved them off with the air of a man who had had the best of the evening and knew it. "Tomorrow," he called after them. "Over the wall."
+Hollis looked from her to the bucket and back, and waved them off. "Tomorrow," he called after them. "Over the wall."
 
 "Tonight," said Wren over her shoulder, "he's having a coat."
 
@@ -1007,13 +1003,13 @@ The drover looked at Darrow. Darrow, who had commanded sixty knights and been na
 
 They went at it. Darrow had watched quartermasters haggle with farriers and seen nothing like it: she counted the coat's faults aloud in a list that grew every time the drover named a price, she wept briefly for the brother, she named the cost of a good coat in Calden, which she had never seen, with total confidence. The drover came down a copper at a time and then stopped coming down at all, and sat with his arms folded over the coat, and over something else.
 
-There was a jersey under the coat. Darrow had seen it when the man leaned to the fire: new wool, cream, the cables still sharp, the kind of thing nobody knits in a week. And every time the drover moved, he pulled the old coat closed over it, so the room should not see.
+There was a jersey under the coat. Darrow had seen it when the man leaned to the fire: new wool, cream, the cables still sharp, the kind of thing nobody knits in a week. And every time the drover moved, he pulled the old coat closed over it.
 
 "Your wife made you a new one," Darrow said, from the doorway.
 
 The drover's head came round. So did several others.
 
-"You keep pulling the coat over it." Darrow nodded at the cream wool. "Somebody spent the winter on that. And you'd sooner sit in a hot taproom in a coat than go home and be seen to be wearing it."
+Darrow nodded at the cream wool. "Somebody spent the winter on that."
 
 There was a silence, and then the old man on the end of the settle laughed so hard he had to be thumped on the back.
 
@@ -1033,7 +1029,7 @@ Rae was at the end of the bar by her uncle, and she had watched the whole of it.
 
 "It worked," said Wren.
 
-"It didn't. He told the man the truth, and that's what worked." Rae looked at the coat, and then at Darrow in it, and something in her face eased that he had not known was tight. "It suits you. You look like somebody's."
+"It didn't. He told the man the truth, and that's what worked." Rae looked at the coat, and then at Darrow in it. "It suits you. You look like somebody's."
 
 At her elbow Hale had his book open, and turned a page.
 
@@ -1043,7 +1039,7 @@ Halfway up the loft ladder Darrow stopped. "Wren. Whose coin was that?"
 
 "Does he know he's bought me a coat?"
 
-"Not yet," said Wren, with enormous satisfaction.
+"Not yet," said Wren.
 
 ### Between — News from the Mountain
 
@@ -1075,7 +1071,7 @@ The three at the end of the row. Darrow found he had put both hands flat on the 
 
 "I knew a man like him."
 
-The carter looked at the coat and the stick and the face over them, and went back to his stew, and Darrow understood that whatever the carter knew he was going to keep it in the bowl.
+The carter looked at the coat and the stick and the face over them, and went back to his stew.
 
 "And the grey cloaks?" he said.
 
@@ -1092,8 +1088,6 @@ Darrow turned his cup round on the board. There was a cot at the far end of the 
 "There's a lad," he said. "On a grey cot at the far end. Sixth Lance."
 
 "The one they keep the bells for?" The carter nodded. "The novices take it in turns. Every bell of the night, one of them sits by him and says the words, so he doesn't miss one. Evens and odds. The lay brothers tell it at the winch-house like it's a wonder." He considered it. "I suppose it is."
-
-Hollis would want that. Hollis would want it more than anything else this carter had carried down the mountain, and would pretend he did not, and would have it out of Darrow word for word before morning.
 
 "The almoner," Darrow said, lower.
 
@@ -1113,10 +1107,10 @@ The carter looked at him for a long breath, at the coat and the stick and the in
 
 He took his bowl to the sink, and his coat off the hook, and went out through the yard to his cart, and the kitchen was quieter by one.
 
-Maelis sat with her hands round her cup. She looked, in the light from the fire, older than he had ever seen her look on the mountain, where there had always been a cot to go to or a dressing to change; and she let him see it, for once, and did not tell him to stop looking.
+Maelis sat with her hands round her cup. In the firelight she looked older than he had ever seen her look on the mountain.
 
 "Two sticks and a novice going backwards," she said. "That's my House."
 
 "Our House."
 
-"You've left it." But she said it without any edge. "They'll have that novice's knees before they have his. She'll go down those steps backwards every morning till the thaw, shouting." She finished the cup. "Go and tell Hollis about the lad. He'll pretend he's asleep. Tell him anyway."
+"You've left it." She turned the cup in her hands. "They'll have that novice's knees before they have his. She'll go down those steps backwards every morning till the thaw, shouting." She finished the cup. "Go and tell Hollis about the lad. He'll pretend he's asleep. Tell him anyway."

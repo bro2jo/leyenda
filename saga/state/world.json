@@ -107,7 +107,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Alone with him in the inn's kitchen Maelis let him see her tired, called the House hers and was told it was theirs, and sent him to tell Hollis about the lad: he would pretend he was asleep, and Darrow was to tell him anyway.",
+  "last_beat": "Alone with him in the inn's kitchen, older in the firelight than he had seen her on the mountain, Maelis called the House hers and was told it was theirs, and sent him to tell Hollis about the lad: he would pretend he was asleep, and Darrow was to tell him anyway.",
   "companions": {
     "maelis": {
       "approval": 36,
