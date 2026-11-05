@@ -212,18 +212,60 @@ def main():
             code, out = run(darrow + ["close", day], tmp, expect=1)
             check("already closed" in out, "a closed day is refused a second close")
 
+            # the brief's people: the turn is read before the plan, so the person it is built around leads with the depth lines;
+            # everyone the slot names prints (past the first six, the core lines), and the record skeleton carries them all
+            many = "Wren counts, Hollis sings, Maelis mends, Ash sleeps, Tobin is remembered and Aldric is far away (self-test)."
+            code, out = run(saga + ["plan", "slot", str(slot["n"]), f"plan={many}", "turn=Rae decides what the inn will do (self-test)."], tmp)
+            check(code == 0, "plan slot takes a new plan and turn for the open slot", out[-300:])
+            code, out = run(saga + ["brief"], tmp)
+            sec = out.split("== MAY: the people in the room")[1].split("\n== ")[0] if "== MAY: the people in the room" in out else ""
+            blocks = re.split(r"^· ", sec, flags=re.M)[1:]
+            heads = [b.splitlines()[0] for b in blocks]
+            depth_of = {b.splitlines()[0].split(" (")[0]: any(l.strip().startswith("The lie:") for l in b.splitlines()) for b in blocks}
+            skel = out.split("== RECORD")[1] if "== RECORD" in out else ""
+            check(len(heads) >= 8 and heads[0].startswith("Ser Darrow") and heads[1].startswith("Rae Thorne") and depth_of.get("Rae Thorne")
+                  and "more named" not in sec and all(f'"id": "{x}"' in skel for x in ("rae-thorne", "wren-ashdown", "tobin-marsh", "aldric-vane")),
+                  "the brief reads the turn first: its person leads with the depth lines, all eight named print, the skeleton carries them all",
+                  " | ".join(h[:30] for h in heads) + " || " + skel[:400])
+            probe = ("import sys, json, pathlib; sys.path.insert(0, 'engine'); import saga; "
+                     "pl = next(iter(saga.known_places().values()))['name']; anchor = saga.load_json('saga/characters/rae-thorne.json')['name'].split()[0]; "
+                     "f = pathlib.Path('saga/characters/selftest-keeper.json'); "
+                     "f.write_text(json.dumps({'id': 'selftest-keeper', 'name': 'Odo Selftest', 'aliases': [anchor + \"'s keeper\", 'the warden at ' + pl]}))\n"
+                     "try:\n"
+                     "    names, by_word = saga.people_index(); pin = lambda t: saga.people_in([t], names, by_word)\n"
+                     "    print('PLACE', 'selftest-keeper' in pin(anchor + ' waits at ' + pl + '.'))\n"
+                     "    print('ANCHORED', pin('the keeper looks at ' + anchor + '.')[:2] == ['selftest-keeper', 'rae-thorne'])\n"
+                     "    print('UNANCHORED', pin('the keeper looks up.') == [])\n"
+                     "    print('ROLE', pin('the warden at ' + pl + ' nods.') == ['selftest-keeper'])\n"
+                     "finally:\n"
+                     "    f.unlink()")
+            code, out = run(["-c", probe], tmp)
+            check(code == 0 and "PLACE False" in out and "ANCHORED True" in out and "UNANCHORED True" in out and "ROLE True" in out
+                  and not (tmp / "saga/characters/selftest-keeper.json").exists(),
+                  "an alias names a person by its role (anchored when it hangs on someone), never by a place or another person's name in it", out[-300:])
+
             # callbacks: one that fits Wren's company (worth a beat), one that waits for a companion still to come and lapses after this scene at a cost
             cb = {"id": f"c{ch:02d}.981", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Promised two things (self-test).", "now": {},
                   "due": [{"id": f"c{ch:02d}.981a", "when": "later", "weight": "color", "fits": "present.wren", "priority": 3, "what": "A thing owed in Wren's hearing (self-test)."},
                           {"id": f"c{ch:02d}.981b", "when": "later", "weight": "color", "fits": "present.ysra", "valid_until": key, "if_void": {"approval": {"wren": -2}}, "what": "A promise to keep by this scene (self-test)."}]}
             code, out = run(saga + ["add", json.dumps(cb)], tmp)
             check(code == 0 and "2 due item(s)" in out, "add takes a callback's fits, priority, valid_until and if_void", out[-300:])
+            stale_cb = {"id": f"c{ch:02d}.984", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Promised a thing that never found its moment (self-test).", "now": {},
+                        "due": [{"id": f"c{ch:02d}.984a", "when": "later", "weight": "color", "fits": "present.wren", "priority": 3, "what": "A thing passed by too often (self-test)."}]}
+            code, out = run(saga + ["add", json.dumps(stale_cb)], tmp)
+            mark = ("import sys; sys.path.insert(0, 'engine'); import saga; st = saga.State(); "
+                    f"it = next(it for e in st.ledger['entries'] for it in e.get('due', []) if it['id'] == 'c{ch:02d}.984a'); "
+                    f"it['offered'] = saga.STALE_OFFERS; it['offered_at'] = ['ch{ch:02d}:s0'] * saga.STALE_OFFERS; st.touch('ledger'); st.save(); print('marked')")
+            code2, out2 = run(["-c", mark], tmp)
+            check(code == 0 and code2 == 0 and "marked" in out2, "a callback can be added and brought to the stale threshold (self-test setup)", (out + out2)[-300:])
             bad_cb = {"id": f"c{ch:02d}.982", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "x", "now": {},
                       "due": [{"id": f"c{ch:02d}.982a", "when": "later", "weight": "color", "fits": "present.nobody_here", "what": "x"}]}
             code, out = run(saga + ["add", json.dumps(bad_cb)], tmp, expect=1)
             check("unknown term" in out, "a callback whose fits names nobody the registries know is refused")
             code, out1 = run(saga + ["brief", "--between", "--with", "wren-ashdown"], tmp)
             check(code == 0 and f"c{ch:02d}.981a" in out1 and f"c{ch:02d}.981b" not in out1 and "wait for other company" in out1, "the brief lists a callback where it fits and only counts the ones that wait for other company", out1[-300:])
+            check(f"· c{ch:02d}.984a" not in out1 and any(l.strip().startswith("(set aside") and f"c{ch:02d}.984a" in l for l in out1.splitlines()),
+                  "a stale callback is set aside in the brief: named once, never listed", out1[-400:])
             wren_before = jload(tmp / "saga/state/world.json")["companions"]["wren"]["approval"]
             # regard moves only for who saw it or heard of it; Betweens raise an old friend less than a new one
             pres = {"id": f"c{ch:02d}.983", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Said a kind thing of Maelis (self-test).", "now": {"approval": {"maelis": 1}}, "due": []}
@@ -311,6 +353,8 @@ def main():
             items = {it["id"]: it for e in ledger["entries"] for it in e["due"]}
             a_, b_ = items.get(f"c{ch:02d}.981a") or {}, items.get(f"c{ch:02d}.981b") or {}
             check(a_.get("offered") == 1 and a_.get("offered_at") == [key] and a_.get("status") == "pending", "a callback that fit the scene and was not paid counts one offer", json.dumps(a_)[:200])
+            c_ = items.get(f"c{ch:02d}.984a") or {}
+            check(c_.get("offered") == len(c_.get("offered_at") or []) > 0 and key not in (c_.get("offered_at") or []) and c_.get("status") == "pending", "a stale callback the brief set aside is not counted again by the record", json.dumps(c_)[:200])
             wren_after = jload(tmp / "saga/state/world.json")["companions"]["wren"]["approval"]
             auto = [e for e in ledger["entries"] if e.get("auto")]
             check(str(b_.get("status", "")).startswith("void:expired@") and wren_after == wren_before - 2 and auto and auto[-1]["now"]["approval"] == {"wren": -2},
