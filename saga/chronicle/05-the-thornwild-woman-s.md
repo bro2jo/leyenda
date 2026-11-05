@@ -1044,3 +1044,79 @@ Halfway up the loft ladder Darrow stopped. "Wren. Whose coin was that?"
 "Does he know he's bought me a coat?"
 
 "Not yet," said Wren, with enormous satisfaction.
+
+### Between — News from the Mountain
+
+"Two sticks or one?" Maelis was saying when Darrow came down into the kitchen. "And who had his elbow?"
+
+The carter at the end of the long table had a bowl of the stew she had condemned in front of him and the look of a man who had come in for his supper and been taken for questioning. He was lean and weathered, with one wandering eye and the road's mud to the knee, and he had plainly been answering her for some time.
+
+"Two," he said. "And nobody had his elbow, Mender. He'd not have it. There was a novice going down the steps backwards in front of him with her arms out, shouting at him the whole way."
+
+"Good," said Maelis. "That's the right way round."
+
+Darrow sat down at the table in his new coat. The kitchen was low and hot, with hams in the smoke under the beams and a girl scouring pots at the sink who did not look round, and through the wall came the taproom's noise and Hale's voice in the middle of it, easy, answering three people at once.
+
+"Who's going down backwards in front of whom?"
+
+Maelis did not look up from the carter. "He's come from the winch-house. One of your three came down the Steps to the first turn two days ago, on two sticks, and went back up again."
+
+The three at the end of the row. Darrow found he had put both hands flat on the table.
+
+"Which one?"
+
+"The old one," said the carter. "Grey in the beard. Says he'll go to the first turn every morning till he can go to the second, and the lay brothers at the foot have a book on what day he makes the bottom." He spooned up stew without enthusiasm. "I've a copper on the thaw."
+
+*On our own feet, when we've got them. Not before.* Darrow heard it in the old man's voice, at the end of the row, with his hand held out. He laughed, out loud, in the hot kitchen, and the girl at the sink looked round after all.
+
+"Put another copper on before it," he said. "He's a liar about his own speed. He always was."
+
+"You know him?"
+
+"I knew a man like him."
+
+The carter looked at the coat and the stick and the face over them, and went back to his stew, and Darrow understood that whatever the carter knew he was going to keep it in the bowl.
+
+"And the grey cloaks?" he said.
+
+"Gone off the terrace." The carter wiped his mouth. "The morning the banner came up the Holloway, their cart went down to meet it, and the four on the terrace struck their tents and went down after it, and the one at the winch-house took his stool out of the byre door and went with them. The House shut its gate behind the lot and rang the dusk bell same as any night." He shrugged. "Their paper's on every post from here to the landing now. Up there it's a thing a man read out once at the gate."
+
+"And the bell?"
+
+"Rings every dusk. The bell-sister rings it with her hands done up in linen and she'll let nobody else near the rope. Lay brothers say you can hear her swearing at it between the strokes, if the wind's right."
+
+Maelis made a short sound that in anybody else would have been a laugh. "That's her," she said. "That's Pell."
+
+Darrow turned his cup round on the board. There was a cot at the far end of the infirmary hall with a grey blanket on it, and a lad on it who had said his oath at every bell of the night until the fourth.
+
+"There's a lad," he said. "On a grey cot at the far end. Sixth Lance."
+
+"The one they keep the bells for?" The carter nodded. "The novices take it in turns. Every bell of the night, one of them sits by him and says the words, so he doesn't miss one. Evens and odds. The lay brothers tell it at the winch-house like it's a wonder." He considered it. "I suppose it is."
+
+Hollis would want that. Hollis would want it more than anything else this carter had carried down the mountain, and would pretend he did not, and would have it out of Darrow word for word before morning.
+
+"The almoner," Darrow said, lower.
+
+"Him." The carter set his spoon down. "Comes to the foot of the Steps every day the weather lets him, with the keys on a cord round his neck, and asks every cart that comes in if there's a letter from Calden."
+
+"And?"
+
+"Never is. He thanks you anyway." The carter shook his head. "Thanks you before you've said no. Thanks you for looking."
+
+Maelis had gone still at the other end of the bench. Darrow thought of a lock of dark hair inside a shirt, and a letter that asked what their mother had called the brindle cat, and the answer not come.
+
+"Next time you're at the foot of the Steps," he said, "tell the almoner the man from the end of the row asked after his sister. Tell him she's asked after on the road."
+
+The carter looked at him for a long breath, at the coat and the stick and the infirmary breeches under the coat, and the wandering eye seemed to look somewhere over Darrow's shoulder entirely.
+
+"The man from the end of the row," he said. "Aye. I'll tell him."
+
+He took his bowl to the sink, and his coat off the hook, and went out through the yard to his cart, and the kitchen was quieter by one.
+
+Maelis sat with her hands round her cup. She looked, in the light from the fire, older than he had ever seen her look on the mountain, where there had always been a cot to go to or a dressing to change; and she let him see it, for once, and did not tell him to stop looking.
+
+"Two sticks and a novice going backwards," she said. "That's my House."
+
+"Our House."
+
+"You've left it." But she said it without any edge. "They'll have that novice's knees before they have his. She'll go down those steps backwards every morning till the thaw, shouting." She finished the cup. "Go and tell Hollis about the lad. He'll pretend he's asleep. Tell him anyway."

@@ -1618,6 +1618,44 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c05.10",
+      "made": {
+        "chapter": 5,
+        "scene": "between-8",
+        "date": "2026-11-04"
+      },
+      "chose": "Sat down with Maelis and a carter fresh from the winch-house and asked after the House: the three at the end of the row, the bell, the lad on the grey cot, the almoner's letter; sent word up that the man from the end of the row asked after the almoner's sister",
+      "now": {
+        "approval": {
+          "maelis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.10a",
+          "when": "next",
+          "at": "ch05:s5",
+          "weight": "color",
+          "what": "Darrow carries the carter's news to Hollis: the novices keep the lad's bells at the Grey Cot, evens and odds",
+          "status": "pending"
+        },
+        {
+          "id": "c05.10b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The carter will tell the almoner at the foot of the Steps that the man from the end of the row asked after his sister. Fire where word comes back down the mountain, or a letter from Calden reaches the road",
+          "priority": 2,
+          "valid_until": "book2",
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:between-8"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

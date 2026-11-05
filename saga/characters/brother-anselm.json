@@ -307,6 +307,11 @@
     {
       "chapter": "04",
       "scene": "choice"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8",
+      "mention": true
     }
   ]
 }

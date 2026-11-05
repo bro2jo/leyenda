@@ -86,11 +86,18 @@
       "after": "4",
       "covers": [],
       "written": "2026-11-04"
+    },
+    {
+      "scene": "between-8",
+      "title": "News from the Mountain",
+      "after": "4",
+      "covers": [],
+      "written": "2026-11-04"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the inn on the tarn, halfway up the loft ladder",
+    "detail": "the kitchen of the inn on the tarn",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -100,10 +107,10 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Halfway up the loft ladder in his new coat Darrow asked whose coin had paid for it; Wren said Ser Hollis's, she had money on him, and that he did not know yet, with enormous satisfaction.",
+  "last_beat": "Alone with him in the inn's kitchen Maelis let him see her tired, called the House hers and was told it was theirs, and sent him to tell Hollis about the lad: he would pretend he was asleep, and Darrow was to tell him anyway.",
   "companions": {
     "maelis": {
-      "approval": 34,
+      "approval": 36,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },

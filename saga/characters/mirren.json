@@ -23,9 +23,9 @@
     "anchor": "chronicle/04-old-mercy.html#scene-1"
   },
   "last_seen": {
-    "chapter": "04",
-    "scene": "between-6",
-    "anchor": "chronicle/04-old-mercy.html#between-6"
+    "chapter": "05",
+    "scene": "between-8",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
   },
   "last_seen_doing": "",
   "now": "",
@@ -85,6 +85,11 @@
     {
       "chapter": "04",
       "scene": "between-6",
+      "mention": true
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8",
       "mention": true
     }
   ]

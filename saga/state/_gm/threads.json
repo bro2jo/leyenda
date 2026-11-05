@@ -125,9 +125,9 @@
       "title": "The List. Confessors on the Holloway: six men, a cart, a censer. Darrow first, Hollis second",
       "truth": null,
       "feeds": "Book I core 1",
-      "status": "open",
+      "status": "paid",
       "who_knows": "The whole House, kitchen included; the valley got the lie (c01.1) and Marrant climbed anyway (c01.1b fired); the reader. Nobody in grey knows Darrow's face: Marrant called for the Captain of the Ninth to the whole court",
-      "note": "**b1.1 done at the Ch 1 climax (10/11, Costly):** Marrant named at the bars; the far cots not read (\"The Crown has no quarrel with men who can't answer\"); Marrant plus four at the bars, the sixth below with Rae's cart; the Prior stalled at the wicket for the bell until Marrant made refusing a courier a breach of the law of guests; two grey cloaks through and a third holding it, a lay brother bloodied, Darrow's shoulder could not shut it (Might fail), the lay brothers', the gate-ward's and Rae's did; the two inside walked the wounded looking at faces and passed Darrow close enough to touch without knowing him; Old Mercy late (Pell's hands: b1.5's hinge planted a second time, and Marrant noticed: \"A fine bell. A little slow on the rope.\"); the Prior spoke the law of names (lore house.law_of_bells fully spoken); Marrant's eyes on Maelis (T8); camp on the lower terrace; the call to come down and kneel. Darrow's Insight succeeded (the timing was his: \"Wren. Now.\"), his Resolve failed (the flinch: Wren's hand on his sleeve, Hollis's sound in his beard, nobody else). **Choice answered 10/11: option 1, step forward** (c01.5, `named_himself`; candor +2 → Candor/Guile −1, even; Maelis +8, Wren −7, Hollis +3, Rae +2 banked; confessors −5): he crossed the court, called Marrant back from the head of the Steps by both names, gave his own and his rank, and killed the valley's story himself ('You've read to a full bed'); Marrant looked at his face (he has it now), called him Captain, and thanked the *Prior* for her candour (the arc's barb, aimed where the Downstream puts it); the Prior did not reproach Darrow and asked whether the shoulder was hurt (the Downstream's 'which is worse', shown); Wren: hidden for as long as it takes to count to eleven; Hollis: he saw the flinch at the name and nobody else did, then 'Captain', meant; Maelis approved in her coin, with her reason on the page (revised 10/11): 'Hidden, you were a lie they'd have found by the thaw. Named, you're a law they'll have to break where the valley can watch.' then 'That knee lies to me every morning. You didn't. Keep it that way.' (she knows naming points them at the knee, and judges the law safer than the lie); Darrow's own reasons are on the page too: every face in the House read for his, the lie already dead, the bell already rung and will read the knee tonight (ch02:s1: the Knots held; the real knee was clean the next morning). Due: c01.5c at ch02:s1 (the writ's demand personal, by rank), c01.5a at b1.5 (the Prior refuses for a named man), c01.5b in Book II (the Lowmarch heard; faithless +5). Earlier: the council (Sc 3), the lie to the valley (c01.1, guile +1; c01.1a fired Sc 4), Sc 4 (the bell held; the timing handed to Darrow; the grey cloaks in at the winch-house three bells early)",
+      "note": "Paid at 05:between-8: the List has become the writs on every post; up the mountain it was 'a thing a man read out once at the gate'.",
       "on_page": [
         "01:s1",
         "01:s3",
@@ -137,7 +137,8 @@
         "04:choice",
         "05:between-1",
         "05:s2",
-        "05:between-3"
+        "05:between-3",
+        "05:between-8"
       ]
     },
     {
@@ -176,7 +177,7 @@
       "feeds": "b1.2 (the Grey Cot), `flags.benedek_hollowed`",
       "status": "open",
       "who_knows": "The reader has his oath and his claim of warmth; Hollis's kind lie is known to Hollis and the reader, not to Benedek; that he knelt anew is on no page yet (GM). The House knows (02:climax) he said his oath at the first three bells of the night he was taken and not at the fourth",
-      "note": "on the page; Hollis lied to him kindly; Between 4: the Captain said the oath's words with him, lips only, no sound (c01.3: he expects it at the bells now; Hollis saw; c01.3a fired Sc 4). **Not named at the gate**: the page has not yet said so in his hearing; his relief is Ch 2 Sc 1 (the night of the gate), and the Grey Cot is Ch 2 Sc 2, the feast morning (b1.2) 03:s7: at the noon oath the lad's frost neither grew nor melted; Hollis carried his blanket to the stair head.",
+      "note": "05:between-8: the novices keep the lad's bells at the Grey Cot, evens and odds, a wonder at the winch-house; Darrow owes Hollis the telling (c05.10a).",
       "on_page": [
         "01:interlude",
         "01:between-1",
@@ -195,7 +196,8 @@
         "03:s7",
         "03:climax",
         "03:choice",
-        "04:s1"
+        "04:s1",
+        "05:between-8"
       ]
     },
     {
@@ -281,9 +283,9 @@
       "title": "Marrant at the gate. Confessor Ivo Marrant named at the bars; Marrant and four grey cloaks camped on the lower terrace, the sixth at the winch-house; he has noticed the bell is slow on the rope; his demand to the court: the Captain of the Ninth comes down and kneels and the rest of the paper goes back in his cloak; \"Bells grow tired\"; \"I'll wait. It's the thing I'm best at.\"",
       "truth": null,
       "feeds": "b1.2 (he names the Hollowing witchcraft and asks for the Mender by title), q1.letters stage 2 (he carries the second letter up), b1.5",
-      "status": "open",
+      "status": "paid",
       "who_knows": "The whole House heard it; the reader. Marrant has the Captain's voice and his face at the bars now (c01.5): the demand is personal. What he wants (Maelis) and his plan (b1.2 Benedek, b1.4 Anselm, b1.5 Old Mercy) are GM only; his look at Maelis is thread 7. The camp's measure (flour for six to the thaw and past it, out of Coldmere; the House's wood) is Rae's count, said to Darrow on the page (02:s4); a grey cloak keeps the winch-house byre door.",
-      "note": "the siege's first night; the kitchen's loaves and the feast's bread under his eyes are Ch 2's first world moves. 02:s4: the grey cloak on Rae's box got down for her without a word; the camp has flour to the thaw and past it; the first letter came up with Rae.",
+      "note": "Paid at 05:between-8: Marrant's camp is gone from the House; the cart went down to the column the morning it came up the Holloway, the four on the terrace and the one at the winch-house after it; the House rang dusk as ever. Marrant on the road is his own matter now (b2/b5).",
       "on_page": [
         "01:climax",
         "01:choice",
@@ -292,7 +294,8 @@
         "02:s6",
         "02:between-14",
         "03:s2",
-        "04:s7"
+        "04:s7",
+        "05:between-8"
       ]
     },
     {
