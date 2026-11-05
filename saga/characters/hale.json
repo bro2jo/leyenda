@@ -14,6 +14,9 @@
     "mark": "none"
   },
   "appearance": "A big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron, with a broad, open face of the kind a whole valley trusts with its news. He keeps a fat account book open on the end of his bar, a ribbon in it and a pencil in its spine.",
+  "portrait": "characters/hale.jpg",
+  "portrait_alt": "Portrait of Hale: a big, round-faced older man, bald on top with grey curls round the edges, smiling warmly, in a clean white apron over a dark waistcoat and a linen shirt, with a fire burning and pewter tankards on the shelves of the inn behind him.",
+  "portrait_focus": "50% 35%",
   "first_seen": {
     "chapter": "05",
     "scene": "4",

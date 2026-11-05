@@ -199,6 +199,17 @@
     640
    ]
   },
+  "characters/hale.jpg": {
+   "sha1": "235876dafb201bf9af9c4e90a3a03f9f7747cfa1",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "characters/hollis-garrow-book2.jpg": {
    "sha1": "74670ef2f52b59fd3fbd210570a7db0fd5ae99b5",
    "sm": [
