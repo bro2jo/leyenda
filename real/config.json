@@ -645,6 +645,22 @@
       ],
       "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
       "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+    },
+    {
+      "date": "2026-11-05",
+      "drop": [
+        "upper"
+      ],
+      "source": "his call Thu 11/5: tired and run-down",
+      "why": "Upper A (session 9) moves to Sat 11/7: two days before Monday's Upper B, the Add-On's minimum (rule 4), as on 10/31; today's bike and throwing are not moved (missed sessions are not repaid)"
+    },
+    {
+      "date": "2026-11-07",
+      "add": [
+        "upper"
+      ],
+      "source": "his call Thu 11/5: tired and run-down",
+      "why": "Upper A (session 9) from Thu 11/5; Saturday's optional power & mobility gives way; if still run-down Saturday, it is skipped and Monday's upper runs as planned"
     }
   ],
   "plan_changes_about": "A session a PT, surgeon or trainer moved or cancelled, by date: drop removes one planned code from that day (upperB, knee, cond, pt, sport, ...), add puts one in. A plan-directed change is never a miss. Log it the day the instruction comes (the /log and /ingest skills), with its source.",
