@@ -430,7 +430,19 @@
     "rae_calling_known": false,
     "rae_brief_known": false,
     "rae_recalled": false,
-    "hollis_given_sixth": false
+    "hollis_given_sixth": false,
+    "writ_burned": false,
+    "stones_sent": false,
+    "ford_witness": false,
+    "far_cot_kept": false,
+    "ledger_kept": false,
+    "tide_burned": false,
+    "sworn_taught": false,
+    "maelis_told_for": false,
+    "vane_parleyed": false,
+    "false_colours": false,
+    "frames_thrown": false,
+    "sworn_knelt": false
   },
   "factions": {
     "crown": -10,
