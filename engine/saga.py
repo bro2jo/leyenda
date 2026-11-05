@@ -61,7 +61,8 @@ Commands (run from the repo root):
                                         the Book's project quest: note a hand laid on it between stages; its trace lives in world.json → projects[]
   due --later                           callbacks: due items with when=later; each may carry fits (the rule grammar, with present.<id> and place.<id>),
                                         priority 1-3, valid_until (it lapses after that position, at its if_void cost); the brief lists the ones that
-                                        fit the block, most worth first; a record counts the ones it could have paid and did not (offered)
+                                        fit the block, most worth first; a record counts the ones it could have paid and did not (offered);
+                                        one offered 6 times unfired is set aside from the brief for the next chapter's plan to rewrite or void
   arc ID                                print one section of _gm/arc.md (<= 40 lines)
   lore | lore ID | lore grep WORD | lore pick saying|verse|maxim|rhyme [--all] | lore spoke ID --where chNN:sK
                                         the Annals (_gm/lore.md): the index, one entry, a search, a line for a glimpse, mark an entry spoken
@@ -4430,7 +4431,7 @@ def cmd_check(args):
             if it.get("priority") is not None and it["priority"] not in (1, 2, 3):
                 probs.append(f"callback {it.get('id')}: priority {it.get('priority')!r} is 1, 2 or 3")
             if int(it.get("offered") or 0) >= STALE_OFFERS:
-                notes.append(f"callback {it.get('id')} offered {it['offered']} times unfired ({', '.join(it.get('offered_at') or [])}): rewrite it or void it at the checkpoint")
+                notes.append(f"callback {it.get('id')} offered {it['offered']} times unfired ({', '.join(it.get('offered_at') or [])}): rewrite it or void it when the next chapter is planned (/chapter 2b)")
     notes += gm_drift_notes(st)
     titles = {}
     for t in R.load_threads().get("threads", []):
@@ -4672,31 +4673,66 @@ def gm_character_lines(name, others=None, depth=False, past=False, book=None, re
 
 
 def people_index():
-    """{id: file} and a name → id map from the character files (name, aliases, epithet words)."""
-    files, by_word = R.char_files(), {}
+    """{id: file} and a name → id map from the character files. Every word of a person's name counts, and every word of an
+    alias except a place's ("the innkeeper at Coldmere") or another person's own name ("Rae's uncle"): those words name the
+    place or the other person, and would call this one up whenever either is named. A name made only of place words keeps
+    them. Roles ("the farrier", "the uncle") are matched as phrases by `people_in`."""
     names = {}
-    for cid, p in files.items():
+    for cid, p in R.char_files().items():
         try:
-            c = load_json(p)
+            names[cid] = load_json(p)
         except (OSError, ValueError):
             continue
-        names[cid] = c
-        for s in [c.get("name")] + list(c.get("aliases") or []):
-            for w in re.findall(r"[A-Z][a-z]{2,}", str(s or "")):
-                if w in UP_SKIP:
-                    continue
-                by_word.setdefault(w, set()).add(cid)
+    caps = lambda s: re.findall(r"[A-Z][a-z]{2,}", str(s or ""))
+    place_words = {w for pl in known_places().values() for s in [pl.get("name")] + list(pl.get("aliases") or []) for w in caps(s)}
+    own = {cid: [w for w in caps(c.get("name")) if w not in UP_SKIP] for cid, c in names.items()}
+    by_word = {}
+    for cid, c in names.items():
+        others = {w for k, ws in own.items() if k != cid for w in ws}
+        words = [w for w in own[cid] if w not in place_words] or own[cid]
+        words += [w for a in c.get("aliases") or [] for w in caps(a) if w not in UP_SKIP and w not in place_words and w not in others]
+        for w in words:
+            by_word.setdefault(w, set()).add(cid)
     return names, by_word
 
 
+def role_phrases(names, texts):
+    """[(pattern, id)] for the aliases that name a person by a role rather than a name, longest first, so a longer phrase
+    claims its words before a shorter one inside it ("the almoner's sister" before "the almoner"): an alias that begins
+    with "the" ("the farrier", "the red-handed woman") as itself, and one that names them by someone else ("Rae's uncle")
+    as itself and, when the texts also name that someone, as "the uncle", "her uncle", "his uncle" or "their uncle"."""
+    joined = " ".join(str(t or "") for t in texts).replace("\u2019", "'")
+    out = []
+    for cid, c in names.items():
+        for a in [c.get("name")] + list(c.get("aliases") or []):
+            a = str(a or "").replace("\u2019", "'").strip()
+            if re.match(r"the\s", a, re.I):
+                out.append((len(a), r"\b" + re.escape(a) + r"\b", cid))
+            m = re.match(r"([A-Z][a-z]+)'s\s+(.+)$", a)
+            if m:
+                out.append((len(a), r"\b" + re.escape(a) + r"\b", cid))
+                if re.search(r"\b" + re.escape(m.group(1)) + r"\b", joined):
+                    out.append((len(m.group(2)) + 4, r"\b(?:the|her|his|their)\s+" + re.escape(m.group(2)) + r"\b", cid))
+    out.sort(key=lambda t: -t[0])
+    return [(pat, cid) for _, pat, cid in out]
+
+
 def people_in(texts, names, by_word):
-    """Character ids a text names (a word of their name or an alias), in order of first mention."""
+    """Character ids the texts name, text by text, in the order of first mention: a role an alias gives them
+    (`role_phrases`, its words then spent), or a word of their name or an alias (`people_index`)."""
+    roles = role_phrases(names, texts)
     out = []
     for text in texts:
-        for w in re.findall(r"[A-Z][a-z]{2,}", str(text or "")):
-            for cid in sorted(by_word.get(w, ())):
-                if cid not in out:
-                    out.append(cid)
+        text = str(text or "").replace("\u2019", "'")
+        hits = []
+        for pat, cid in roles:
+            hits += [(m.start(), cid) for m in re.finditer(pat, text, re.I)]
+            text = re.sub(pat, lambda m: " " * len(m.group(0)), text, flags=re.I)
+        for m in re.finditer(r"[A-Z][a-z]{2,}", text):
+            hits += [(m.start(), cid) for cid in sorted(by_word.get(m.group(0), ()))]
+        for _, cid in sorted(hits, key=lambda h: h[0]):
+            if cid not in out:
+                out.append(cid)
     return out
 
 
@@ -4800,8 +4836,9 @@ def lore_for_brief(texts, cap=3):
     return out
 
 
-CALLBACKS_SHOWN = 4  # the brief lists this many fitting callbacks; a record counts these as offered when they go unpaid
-STALE_OFFERS = 6  # offered this often and never fired: `now` and `check` name it for the checkpoint
+CALLBACKS_SHOWN = 4  # the brief lists this many fitting callbacks that are not stale; a record counts these as offered when they go unpaid
+STALE_OFFERS = 6  # offered this often and never fired: set aside from the brief (named once), named by `now` and `check`, for the next chapter's plan to rewrite or void
+PEOPLE_FULL = 6  # the brief gives this many of the people a block names their depth lines (Darrow and the turn's people always); the rest print their core lines
 
 
 def callbacks_fitting(st, ctx):
@@ -4819,18 +4856,30 @@ def callbacks_fitting(st, ctx):
     return [it for *_, it in fitting], waiting
 
 
-def callbacks_for_brief(st, ctx=None, cap=CALLBACKS_SHOWN):
-    """The callbacks that fit this block (`fits` against who is here and where), the most worth first, `cap` at most;
-    the rest are counted, never listed."""
+def callbacks_listed(st, ctx, cap=CALLBACKS_SHOWN):
+    """(listed, more, stale, waiting) for a block: the callbacks that fit it, the most worth first, split into the first `cap`
+    of those still fresh (the brief lists them; a record counts them offered when the block leaves them unpaid), the fresh
+    ones past the cap, the stale ones (offered STALE_OFFERS times and never fired: named once, never listed and no longer
+    counted, so they stop taking the room of the ones that may still land), and how many wait for other company or places."""
     fitting, waiting = callbacks_fitting(st, ctx)
+    fresh = [it for it in fitting if int(it.get("offered") or 0) < STALE_OFFERS]
+    stale = [it for it in fitting if int(it.get("offered") or 0) >= STALE_OFFERS]
+    return fresh[:cap], fresh[cap:], stale, waiting
+
+
+def callbacks_for_brief(st, ctx=None, cap=CALLBACKS_SHOWN):
+    """The brief's lines for `callbacks_listed`: each listed callback with its tags, then one line each for the rest."""
+    listed, more, stale, waiting = callbacks_listed(st, ctx, cap)
     out = []
-    for it in fitting[:cap]:
+    for it in listed:
         tags = [t for t in (f"priority {it['priority']}" if it.get("priority") else None,
                             f"offered {it['offered']}× unfired" if int(it.get("offered") or 0) >= 2 else None,
                             f"until {it['valid_until']}" if it.get("valid_until") else None) if t]
         out.append(f"· {it['id']}" + (f" ({' · '.join(tags)})" if tags else "") + f": {short(it.get('what'), 170)}")
-    if len(fitting) > cap:
-        out.append(f"  (+{len(fitting) - cap} more that fit here: `saga.py due --later`)")
+    if more:
+        out.append(f"  (+{len(more)} more that fit here: `saga.py due --later`)")
+    if stale:
+        out.append(f"  (set aside, offered {STALE_OFFERS}+ times and never fired: {', '.join(it['id'] for it in stale)}; the next chapter's plan rewrites or voids them)")
     if waiting:
         out.append(f"  (+{waiting} wait for other company or places: `saga.py due --later`)")
     return out
@@ -5170,29 +5219,31 @@ def cmd_brief(args):
     section("MAY: the people in the room (voice, tactic, regard, what they know)")
     texts = []
     if mode == "slot":
-        texts = [slot.get("plan"), slot.get("turn"), str((slot.get("invite") or {}).get("who") or "").replace("-", " ").title()]
+        texts = [slot.get("turn"), slot.get("plan"), str((slot.get("invite") or {}).get("who") or "").replace("-", " ").title()]
     elif mode == "climax":
         texts = [(plan["chapter"].get("climax") or {}).get("plan")]
     elif mode == "choice":
         texts = [plan["answered_choice"].get("text"), (plan["chapter"].get("climax") or {}).get("plan")]
     elif mode == "between" and args.with_:
         texts = [args.with_.replace(",", " ").replace("-", " ").title()]
-    ids = people_in(texts, names, by_word)
-    focus = {"darrow"} | set(ids)  # the block's own people get the depth lines; the rest of the company prints as before
+    # the people the block names, in the order of first mention with the turn read first, so the person the turn is built around
+    # leads. Every one of them prints: the depth lines for the first PEOPLE_FULL and for everyone the turn names, the core lines
+    # past them. The company the block does not name (a Between, a climax) fills what room is left, and is named past it.
+    named = [cid for cid in people_in(texts, names, by_word) if cid != "darrow"]
+    turn_ids = set(people_in([slot.get("turn")], names, by_word)) if mode == "slot" else set()
     comps = [cid for cid in names if cid.split("-")[0] in (world.get("companions") or {}) and (world["companions"][cid.split("-")[0]].get("present") is not False)]
-    for cid in comps:
-        if cid not in ids and (mode == "between" or mode == "climax"):
-            ids.append(cid)
-    if "darrow" in ids:
-        ids.remove("darrow")
-    ids = ["darrow"] + ids
+    company = [cid for cid in comps if cid not in named and cid != "darrow"] if mode in ("between", "climax") else []
+    named = ["darrow"] + named
+    full = set(named[:PEOPLE_FULL]) | turn_ids | {"darrow"}
+    room = max(0, PEOPLE_FULL - len(named))
+    shown = named + company[:room]
+    ids = named + company  # everyone here, for the callbacks' fit
     thr_rows, n_open = threads_for_brief(ch)
-    shown = ids[:6]
     for cid in shown:
         others = [names[x].get("name") or x for x in shown if x != cid]
-        L += person_brief(cid, names[cid], world, cast, thr_rows, facts_n=2, others=others, depth=cid in focus, book=pos["book"])
-    if len(ids) > 6:
-        L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
+        L += person_brief(cid, names[cid], world, cast, thr_rows, facts_n=2, others=others, depth=cid in full, book=pos["book"])
+    if company[room:]:
+        L.append("(the rest of the company, not named here: " + ", ".join(names[x].get("name") or x for x in company[room:]) + "; `saga.py history --person <id>`)")
     L.append("each arrives with an agenda of their own for this block (what they want today, from whom), not only what they want in life: name it before writing and let it rub against Darrow's. "
              "The lines above are material to choose from, never a list to show: a trait shown in every block becomes the whole person")
     section(f"MAY: threads ({n_open} open; `saga.py threads` for all)")
@@ -5238,7 +5289,7 @@ def cmd_brief(args):
     L.append("· names: only what the page has spoken, or what this record registers; unnamed novices, lay brothers and the kitchen are fine")
     L.append("· then the reread (style.md §4; `saga.py reread` prints the length and the habits), then `saga.py record` with the skeleton below, then `darrow.py ship`")
     section("RECORD (send this back, filled; drop what does not apply)")
-    present = [cid for cid in ids if cid != "darrow"][:4]
+    present = [cid for cid in shown if cid != "darrow" and (cid in named or mode == "climax")]  # everyone the block names; a climax, the company shown too
     L.append(json.dumps(record_skeleton(key, kind if mode != "slot" else "scene", today if mode == "slot" else None, ["darrow"] + present, loc.get("place")), ensure_ascii=False, indent=None))
     text = "\n".join(L)
     print(text)
@@ -5514,12 +5565,12 @@ def cmd_record(args):
             probs.append("no slot for this block: a scene's slot is the one whose day is its date (`--slot N` names it; `plan slot N day=…` moves one)")
     if probs:
         die("refusing the record (nothing written):\n  " + "\n  ".join(probs))
-    # the callbacks the brief would have listed for this block (they fit, the most worth first) and the block did not pay are
-    # counted as offered, so the checkpoint sees what keeps passing by
+    # the callbacks the brief would have listed for this block (they fit, the most worth first, none stale) and the block did not
+    # pay are counted as offered, so the checkpoint sees what keeps passing by
     rec_ctx = presence_ctx([p.get("id") for p in ev.get("people") or [] if not p.get("mention")],
                            (where or {}).get("place") or (world.get("location") or {}).get("place"))
     paid_ids = {f_["id"] for f_ in ev.get("fired") or []}
-    for it_ in callbacks_fitting(st, rec_ctx)[0][:CALLBACKS_SHOWN]:
+    for it_ in callbacks_listed(st, rec_ctx)[0]:
         if it_["id"] not in paid_ids and key not in (it_.get("offered_at") or []):
             it_["offered"] = int(it_.get("offered") or 0) + 1
             it_.setdefault("offered_at", []).append(key)
@@ -6168,7 +6219,7 @@ def brief_tale(st, args):
     for cid in ids[:6]:
         L += person_brief(cid, names[cid], world, cast, None, facts_n=3, depth=True, past=True)
     if len(ids) > 6:
-        L.append(f"(+{len(ids) - 6} more named: `saga.py history --person <id>`)")
+        L.append(f"(+{len(ids) - 6} more named: {', '.join(names[x].get('name') or x for x in ids[6:])}; `saga.py history --person <id>`)")
     L.append("a person without a file gets a base file first (saga/characters/README.md; status as the present knows it) and the record names them; the tale may leave people unnamed")
     thr = R.load_threads()
     tids = {int(x) for x in re.findall(r"thread (\d+)", " ".join(texts))}
