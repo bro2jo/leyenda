@@ -11,7 +11,7 @@
 - **Earlier today, in order:** *Since the Fair* (Scene): Darrow said aloud, to the dealer and to Rae, that he owes her the mare's keep since the fair and will stand the thaw's debt himself; Rae said she had not told… · *The Measured Hand* (Between): Halfway up the loft ladder in his new coat Darrow asked whose coin had paid for it; Wren said Ser Hollis's, she had money on him, and that he did not know yet.
 - **With him:** Maelis Vorne (At the kitchen table of the inn on the tarn with an empty cup.) · Ser Hollis Garrow (On the mounting block in the inn yard, sober, with tomorrow's lesson already named; since *The Measured Hand*) · Wren Ashdown (At the foot of the loft ladder, pleased with herself; since *The Measured Hand*) · Rae Thorne (At the end of the bar by her uncle; since *The Measured Hand*) · Ash (At the inn on the tarn with the company; since *Since the Fair*)
 - **Also here:** Hale (Had his book open at Rae's elbow while the coat was sold, and turned a page.)
-- **The tales:** Tale 1 — Quickstep (1 of 3 told) · Tale 2 — Road's the Road (told in full)
+- **The tales:** Tale 1 — Where Not to Stand (1 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** A Lowmarch where the Hollowed walk east, and writs on the posts.
 - **Next:** Morning at the inn on the tarn, and the summer's loads.
 - **Open choice:** none.

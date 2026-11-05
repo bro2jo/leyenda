@@ -658,6 +658,12 @@ def main():
         world = jload(tmp / "saga/state/world.json")
         check(world["keepsakes"][-1]["to"] == "darrow" and world["keepsakes"][-1].get("lesser") is None and next(t for t in world["tales"] if t["id"] == tid1)["done"] is True,
               "world.json carries the full keepsake and the tale's state")
+        led = jload(tmp / "saga/state/_gm/consequences.json")
+        check(sum(1 for e in led["entries"] if (e.get("made") or {}).get("scene") == f"tale:{tid1}:p3" and (e.get("due") or [{}])[0].get("when") == "later") == 1,
+              "the last piece writes its keepsake's one callback in the ledger")
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
+                         "print(all(t['fits'][0] <= t['n_pieces'] <= t['fits'][1] for t in saga.tale_plans().values()))"], tmp)
+        check(code == 0 and out.strip().endswith("True"), "every tale plan fits its own piece count (its `fits` range holds it)", out[-300:])
         code, out = run(saga + ["brief", "--between", "--with", "hollis-garrow"], tmp)
         check(code == 0 and "kept from the tales" in out and "Quickstep (darrow)" in out, "a block's brief lists the keepsake for an echo")
         code, out = run(darrow + ["recap"], tmp)
@@ -704,6 +710,35 @@ def main():
         check(code == 0, "a new project opens once the last is finished", out[-300:])
         code, out = run(darrow + ["project", "drop", "--why", "not this week"], tmp)
         check(code == 0 and "set aside" in out, "a project can be set aside")
+        # a work set aside past its day, its tale finished by the next: the pieces earned count, the lesser keepsake carries
+        code, out = run(darrow + ["project", "open", "Set aside late", "--tasks", "a", "b", "--date", early], tmp)
+        code, out = run(saga + ["tale", "bind", "set-aside-late", "--tale", "tale.two_boys", "--force"], tmp)
+        n3 = int((re.search(r"tale (\d+) bound", out) or re.search(r"(\d+)", "0")).group(1))
+        tid3 = f"tale{n3:02d}"
+        check(code == 0 and n3 > 0, "a third tale binds for the set-aside test", out[-300:])
+        code, out = run(darrow + ["project", "done", "1"], tmp)
+        code, out = run(darrow + ["project", "drop", "--why", "self-test: late"], tmp)
+        check(code == 0 and "past its due day" in out and "lesser keepsake" in out, "a work set aside past its day says its tale keeps the lesser keepsake", out[-300:])
+        code, out = run(saga + ["tale", "list"], tmp)
+        check(f"{tid3}" in out and "RESTS" in out, "the tale of a work set aside rests, and the list says how to resume it", out[-400:])
+        code, out = run(darrow + ["project", "open", "Finish it", "--tasks", "c", "d"], tmp)
+        code, out = run(saga + ["tale", "bind", "finish-it"], tmp, expect=None)
+        check("rests" in out and "--resume" in out, "a plain bind points at the resting tale first", out[-300:])
+        if code == 0:  # undo that plain bind: the resume is what is under test
+            pl = jload(tmp / "saga/state/_gm/plan.json")
+            gone = [b for b in pl["tales"] if b.get("project") == "finish-it"]
+            pl["tales"] = [b for b in pl["tales"] if b.get("project") != "finish-it"]
+            (tmp / "saga/state/_gm/plan.json").write_text(json.dumps(pl, ensure_ascii=False, indent=1), encoding="utf-8")
+            for b in gone:
+                (tmp / b["file"]).unlink(missing_ok=True)
+            run(saga + ["project"], tmp)
+        code, out = run(saga + ["tale", "bind", "finish-it", "--resume", tid3], tmp)
+        check(code == 0 and "resumed" in out and "1 more already earned" in out and "lesser keepsake" in out,
+              "--resume moves the tale to the next work, keeps the piece already earned, and carries the lateness", out[-400:])
+        code, out = run(saga + ["now"], tmp)
+        check(f"TALE OWED: {tid3} piece 1 of 3" in out and "the work it was resumed from" in out, "the piece earned before the drop is still owed, by the earlier work", out[-400:])
+        code, out = run(saga + ["brief", "--tale"], tmp)
+        check(code == 0 and "RESUMED" in out and "lesser keepsake" in out, "the resumed tale's brief names the resume and the carried lateness", out[-500:])
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes after the tales", out[-600:])
 

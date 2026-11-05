@@ -2438,9 +2438,11 @@ def project_line(data=None):
 def _project_line(p):
     done = sum(1 for t in p["tasks"] if t.get("done"))
     nxt = next((t for t in p["tasks"] if not t.get("done")), None)
-    due = f" · due {dow(d(p['due']))} {md(d(p['due']))}" if p.get("due") else ""
+    today = today_local(load_json(P["config"])).isoformat()
+    # past its due day and not finished: said once, as it is (the tale it pays for ends on the lesser keepsake now)
+    due = (f" · overdue since {dow(d(p['due']))} {md(d(p['due']))}" if p["due"] < today else f" · due {dow(d(p['due']))} {md(d(p['due']))}") if p.get("due") else ""
     resumes = (p.get("deferred") or {}).get("resumes")
-    if resumes and today_local(load_json(P["config"])).isoformat() < resumes:
+    if resumes and today < resumes:
         # set aside by his own call until a later week: named, never pressed as today's next task
         return f"Project: {p['title']} · {done}/{len(p['tasks'])} done · resting until the week of {md(d(resumes))}" + due
     return f"Project: {p['title']} · {done}/{len(p['tasks'])} done" + (f" · next: {nxt['n']}. {nxt['text']}" if nxt else "") + due
@@ -2519,6 +2521,16 @@ def project_problems(cfg):
     return probs
 
 
+def tale_carried_late(pid):
+    """Whether the tale this project pays for was resumed from a work set aside past its due day (saga.py tale bind --resume):
+    that lateness stays with the tale, whatever this project does."""
+    try:
+        plan = load_json(ROOT / "saga/state/_gm/plan.json")
+    except (OSError, ValueError):
+        return False
+    return any(b.get("project") == pid and b.get("carried_late") for b in plan.get("tales") or [])
+
+
 def cmd_project(args, cfg, rules):
     data = load_projects()
     today = today_local(cfg)
@@ -2584,6 +2596,13 @@ def cmd_project(args, cfg, rules):
         p.update({"status": "dropped", "dropped": when.isoformat(), "why": args.why.strip()})
         save_projects(data)
         print(f"project {p['id']} set aside: {p['title']} ({sum(1 for t in p['tasks'] if t.get('done'))}/{len(p['tasks'])} tasks were done)")
+        # its tale rests; a later work can finish it (`saga.py tale bind <project> --resume taleNN`), and a work set aside
+        # past its due day carries that lateness into the tale, so setting it aside never buys back the full keepsake
+        if p.get("due") and when.isoformat() > p["due"]:
+            print(f"  it was past its due day ({p['due']}): if a later work finishes its tale, the tale still ends on the lesser keepsake")
+        else:
+            print("  set aside within its week: a later work that finishes its tale in that work's own week still gives the full keepsake")
+        print("  its tale rests until then: `python3 engine/saga.py tale bind <the next project> --resume <tale>` (`saga.py tale list` names it)")
         # its tale, if one is bound, rests (told in part): the story's projections carry that, so they are rebuilt now
         r = subprocess.run([sys.executable, str(ROOT / "engine/saga.py"), "project"], cwd=ROOT, capture_output=True, text=True)
         if r.returncode:
@@ -2623,7 +2642,9 @@ def cmd_project(args, cfg, rules):
     print(f"task {t['n']}/{len(p['tasks'])} done: {t['text']} ({when.isoformat()})" + (f" · project {p['id']}" if len(live) > 1 else ""))
     if finished:
         print(f"project finished: {p['title']} · works {works_at(today, data)['finished']} in all (sync shows it; one Inspiration)"
-              + (f" · LATE: finished after its due day ({p['due']}); the tale ends on the lesser keepsake" if p.get("late") else f" · in its week (due {p.get('due')}): the full keepsake"))
+              + (f" · LATE: finished after its due day ({p['due']}); the tale ends on the lesser keepsake" if p.get("late")
+                 else f" · in its week (due {p.get('due')}), but its tale was resumed from a work set aside past its own day: the lesser keepsake" if tale_carried_late(p["id"])
+                 else f" · in its week (due {p.get('due')}): the full keepsake"))
     else:
         nxt = next((x for x in p["tasks"] if not x.get("done")), None)
         print(f"next task: {nxt['n']}. {nxt['text']}")

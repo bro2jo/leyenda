@@ -263,13 +263,13 @@
   "tales": [
     {
       "id": "tale01",
-      "title": "Quickstep",
+      "title": "Where Not to Stand",
       "of": "darrow",
       "pieces": 3,
       "told": 1,
       "done": false,
       "rests": false,
-      "file": "saga/chronicle/tales/01-quickstep.md"
+      "file": "saga/chronicle/tales/01-where-not-to-stand.md"
     },
     {
       "id": "tale02",

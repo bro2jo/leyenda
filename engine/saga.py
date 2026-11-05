@@ -1767,7 +1767,7 @@ def cmd_now(args):
     t_rows = tale_state(st)
     for t in t_rows:
         if t["owed"]:
-            lines.append(f"TALE OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`, written now")
+            lines.append(f"TALE OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} ({task_label(t, t['told'] + 1)} reported): `saga.py brief --tale`, written now")
     for pid, done in unbound_projects(t_rows):
         lines.append(f"TALE UNBOUND: project {pid} has {done} task(s) reported and no tale: `saga.py tale bind {pid}`, then its piece(s)")
     lines.append(bearing_line(bearing))
@@ -6035,7 +6035,7 @@ def cmd_choose(args):
 TALE_PLAN_HEAD_RE = re.compile(r"^##\s+(tale\.[a-z0-9_]+)\s*[—–-]\s*(.+?)\s*$")
 TALE_PIECE_HEAD_RE = re.compile(r"^###\s+piece\s+(\d+)\s*[—–-]\s*(.+?)\s*$", re.I)
 TALE_RECORD_KEYS = ("key", "tale", "piece", "kind", "title", "written", "where", "time", "last_beat", "people", "codex", "lore", "threads", "keepsake")
-TALE_FIELDS = ("of", "when", "pieces", "keepsake", "keepsake_late", "plants", "never")
+TALE_FIELDS = ("of", "when", "pieces", "keepsake", "keepsake_late", "plants", "never", "fits", "flex")
 
 
 def tale_plans():
@@ -6071,6 +6071,12 @@ def tale_plans():
             t["n_pieces"] = int(t["fields"].get("pieces") or len(t["pieces"]))
         except ValueError:
             t["n_pieces"] = len(t["pieces"])
+        # `fits: 2–4`: the task counts the plan can be told in (re-cut by its `flex` line); default exactly its pieces
+        lo = hi = t["n_pieces"]
+        m = re.match(r"^\s*(\d+)\s*(?:[–-]\s*(\d+))?", str(t["fields"].get("fits") or ""))
+        if m:
+            lo, hi = int(m.group(1)), int(m.group(2) or m.group(1))
+        t["fits"] = (min(lo, hi), max(lo, hi))
     return out
 
 
@@ -6085,12 +6091,19 @@ def tale_state(st):
     """One row per bound tale (records.tales_state) plus the project's side: tasks reported, its status, the pieces owed."""
     rows = R.tales_state(st.plan)
     projects = {p.get("id"): p for p in projects_data().get("projects", [])}
+    binds = {int(b.get("n", 0)): b for b in st.plan.get("tales") or []}
     for t in rows:
         pr = projects.get(t.get("project")) or {}
-        t["tasks_done"] = sum(1 for x in pr.get("tasks", []) if x.get("done"))
+        b = binds.get(int(t["n"])) or {}
+        # a tale resumed on a later work (`tale bind --resume`): the pieces the set-aside work paid count first
+        t["offset"] = int(b.get("offset") or 0)
+        t["tasks_done"] = t["offset"] + sum(1 for x in pr.get("tasks", []) if x.get("done"))
         t["project_status"] = pr.get("status")
         t["owed"] = max(0, min(t["tasks_done"], t["pieces"]) - t["told"])
-        t["due"], t["late"] = pr.get("due"), bool(pr.get("late"))
+        # late: this work finished after its due day, or the work it was resumed from was set aside past its own
+        t["carried_late"] = bool(b.get("carried_late"))
+        t["due"], t["late"] = pr.get("due"), bool(pr.get("late")) or t["carried_late"]
+        t["history"] = b.get("history") or []
     return rows
 
 
@@ -6105,9 +6118,20 @@ def unbound_projects(rows):
     return out
 
 
+def task_label(t, k):
+    """Which reported task owes piece k of a bound tale: a task of its project, or one of the work it was resumed from."""
+    off = int(t.get("offset") or 0)
+    if k <= off:
+        prev = (t.get("history") or [{}])[-1].get("project") or "the earlier work"
+        return f"task {k} of {prev} (the work it was resumed from)"
+    return f"task {k - off} of {t['project']}"
+
+
 def tale_line(t):
     state = "told in full" if t["done"] else f"{t['told']} of {t['pieces']} told" + (f" · OWED {t['owed']}" if t["owed"] else "")
-    pr = f"project {t['project']} ({t['project_status'] or 'missing'}, {t['tasks_done']} tasks reported)"
+    if t.get("rests"):
+        state += " · RESTS (its work was set aside: `tale bind <next project> --resume " + t["id"] + "` finishes it)"
+    pr = f"project {t['project']} ({t['project_status'] or 'missing'}, {t['tasks_done'] - t.get('offset', 0)} tasks reported)" + (f", resumed after {t['offset']} piece(s) paid by {', '.join(h.get('project', '?') for h in t.get('history') or [])}" if t.get("offset") else "")
     return f"{t['id']} · Tale {t['n']} — {t['title']} · of {t['of'] or '—'} · {pr} · {state} · {t['file']}"
 
 
@@ -6124,7 +6148,7 @@ def cmd_tale(args):
             for kp in t.get("keepsakes") or []:
                 print(f"    keepsake: {kp.get('name')} → {kp.get('to')}" + (" (the lesser one: the work came late)" if kp.get("lesser") else ""))
         free = [t for t in plans.values() if t["id"] not in bound]
-        print("plans in tales.md not yet bound: " + (", ".join(f"{t['id']} ({t['n_pieces']} pieces, of {t['fields'].get('of', '—')})" for t in free) or "none; plan one (design.md §12)"))
+        print("plans in tales.md not yet bound: " + (", ".join(f"{t['id']} ({t['n_pieces']} pieces" + (f", fits {t['fits'][0]}–{t['fits'][1]}" if t['fits'][0] != t['fits'][1] else "") + f", of {t['fields'].get('of', '—')})" for t in free) or "none; plan one (design.md §12)"))
         return
     if args.action == "next":
         owed = [t for t in rows if t["owed"]]
@@ -6132,7 +6156,7 @@ def cmd_tale(args):
             print("no piece owed: a tale pays one piece per task reported (`darrow.py project done TASK`)")
             return
         for t in owed:
-            print(f"OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`")
+            print(f"OWED: {t['id']} piece {t['told'] + 1} of {t['pieces']} ({task_label(t, t['told'] + 1)} reported): `saga.py brief --tale`")
         return
     # bind
     if not args.id:
@@ -6145,6 +6169,12 @@ def cmd_tale(args):
     if any(t.get("project") == pr["id"] for t in rows):
         die(f"project {pr['id']} is already bound: " + tale_line(next(t for t in rows if t.get("project") == pr["id"])))
     n_tasks = len(pr.get("tasks") or [])
+    if getattr(args, "resume", None):
+        return resume_tale(st, plan, plans, rows, pr, n_tasks, args)
+    resting = [t for t in rows if t.get("rests")]
+    if resting:
+        print("note: " + "; ".join(f"{t['id']} rests ({t['told']} of {t['pieces']} told)" for t in resting)
+              + f": `saga.py tale bind {pr['id']} --resume <tale>` finishes it with this work instead of starting a new tale")
     if args.tale:
         tp = plans.get(args.tale)
         if not tp:
@@ -6152,13 +6182,13 @@ def cmd_tale(args):
         if tp["id"] in bound and not args.force:
             die(f"{tp['id']} is already bound to another project (--force to tell it again as a new tale)")
     else:
-        tp = next((t for t in plans.values() if t["id"] not in bound and t["n_pieces"] == n_tasks), None)
+        tp = next((t for t in plans.values() if t["id"] not in bound and t["fits"][0] <= n_tasks <= t["fits"][1]), None)
         if not tp:
-            die(f"no unbound plan in {rel(P['tales_plan'])} has {n_tasks} pieces; plans: "
-                + (", ".join(f"{t['id']} ({t['n_pieces']})" for t in plans.values() if t["id"] not in bound) or "none")
-                + ". Fit one (a piece per task) or write a new one, then `tale bind` again, or name one with --tale")
-    if tp["n_pieces"] != n_tasks and not args.force:
-        die(f"{tp['id']} plans {tp['n_pieces']} pieces; the project has {n_tasks} tasks: a piece per task. Fit the plan in tales.md, pick another with --tale, or --force (the tale then has {n_tasks} pieces)")
+            die(f"no unbound plan in {rel(P['tales_plan'])} fits {n_tasks} pieces; plans: "
+                + (", ".join(f"{t['id']} ({t['fits'][0]}–{t['fits'][1]})" for t in plans.values() if t["id"] not in bound) or "none")
+                + ". Widen one's `fits` and `flex` (a piece per task) or write a new one, then `tale bind` again, or name one with --tale")
+    if not (tp["fits"][0] <= n_tasks <= tp["fits"][1]) and not args.force:
+        die(f"{tp['id']} fits {tp['fits'][0]}–{tp['fits'][1]} pieces; the project has {n_tasks} tasks: a piece per task. Widen its `fits` and `flex` in tales.md, pick another with --tale, or --force (the tale then has {n_tasks} pieces)")
     pieces = n_tasks
     n = max([int(b.get("n", 0)) for b in plan.get("tales") or []] + list(R.tale_files()) + [0]) + 1
     slug = re.sub(r"[^a-z0-9]+", "-", tp["title"].lower()).strip("-") or tp["id"].split(".")[-1]
@@ -6178,6 +6208,62 @@ def cmd_tale(args):
     R.project_all(plan, write=True)
     print(f"tale {n} bound: {tp['id']} — {tp['title']} ({pieces} pieces, of {tp['fields'].get('of') or '—'}) ↔ project {pr['id']} ({n_tasks} tasks) · {rel(path)} started")
     print("each task reported (`darrow.py project done TASK`) owes a piece: `saga.py brief --tale`, the piece written, `saga.py record`, `darrow.py ship`")
+
+
+def resume_tale(st, plan, plans, rows, pr, n_tasks, args):
+    """A resting tale (its work set aside) finished by a later work: the binding moves to the new project, the pieces told
+    stay told and count first (`offset`), and a work set aside past its due day carries its lateness (`carried_late`): the
+    tale then ends on the lesser keepsake whatever the new work does, so setting a work aside never buys back the full one."""
+    want = str(args.resume).strip()
+    m = re.match(r"^(?:tale)?0*(\d+)$", want)
+    b = next((x for x in plan.get("tales") or [] if (m and int(x.get("n", 0)) == int(m.group(1))) or x.get("tale") == want), None)
+    if b is None:
+        die(f"no bound tale {want!r} (`saga.py tale list`)")
+    t = next(x for x in rows if x["n"] == int(b["n"]))
+    if t["done"]:
+        die(f"{t['id']} is told in full")
+    if t["project_status"] != "dropped" and not args.force:
+        die(f"{t['id']} is not resting: its work {t['project']} is {t['project_status']}; only a tale whose work was set aside is resumed (`darrow.py project drop`), or --force")
+    old = next((p for p in projects_data().get("projects", []) if p.get("id") == b.get("project")), {})
+    # what the set-aside work earned counts first: its told pieces and any still owed (a task reported, its piece not yet written)
+    earned = min(t["tasks_done"], int(b.get("pieces") or 0))
+    new_pieces = earned + n_tasks
+    tp = plans.get(b.get("tale")) or {}
+    lo, hi = tp.get("fits") or (int(b.get("pieces") or 0),) * 2
+    if new_pieces != int(b.get("pieces") or 0) and not (lo <= new_pieces <= hi) and not args.force:
+        die(f"{t['id']}: {earned} piece(s) earned and {n_tasks} task(s) in {pr['id']} make {new_pieces} pieces; the tale was bound at {b.get('pieces')} "
+            f"and its plan fits {lo}–{hi}. Widen the plan's `fits` and `flex` in tales.md, or --force")
+    dropped_on, due = old.get("dropped"), old.get("due")
+    late_then = bool(b.get("carried_late")) or bool(dropped_on and due and dropped_on > due)
+    b.setdefault("history", []).append({"project": b.get("project"), "earned": earned, "told": t["told"], "dropped": dropped_on, "due": due, "late": late_then})
+    b.update({"project": pr["id"], "offset": earned, "pieces": new_pieces, "carried_late": late_then, "resumed": today_local().isoformat()})
+    st.touch("plan")
+    st.save()
+    R.project_all(plan, write=True)
+    print(f"{t['id']} resumed: {t['told']} of {new_pieces} pieces told" + (f" ({earned - t['told']} more already earned and owed now)" if earned > t["told"] else "")
+          + f"; project {pr['id']} ({n_tasks} tasks) pays pieces {earned + 1}–{new_pieces}"
+          + (" · the work it was resumed from was set aside past its due day: the tale ends on the lesser keepsake" if late_then
+             else f" · finished by {pr.get('due')} it ends on the full keepsake, after it on the lesser"))
+
+
+def keepsake_callback(st, t, ks, key):
+    """A tale told in full leaves its keepsake on someone's page, and the present should touch it once: one callback the
+    engine writes (design §12), fired where the keepsake comes back on the page, alluded to in a line and never retold.
+    Written once per tale: a re-recorded last piece finds it already there."""
+    if any((e.get("made") or {}).get("scene") == f"tale:{key}" for e in st.ledger.get("entries", [])):
+        return f"keepsake callback for {key}: already in the ledger"
+    to = str(ks.get("to") or "")
+    chapter = int(st.plan["chapter"].get("number") or st.plan["position"]["chapter"])
+    eid = next_entry_id(st.ledger, chapter)
+    item = {"id": eid + "a", "when": "later", "weight": "color", "priority": 2,
+            "what": f"The keepsake of Tale {t['n']}, kept by {to}, comes back once on the page: in a hand, a mouth or a habit, "
+                    f"alluded to in a line and never retold (style.md §2). Fire where it does"}
+    if to and to != "darrow":
+        item["fits"] = f"present.{to.replace('-', '_')}"
+    entry = {"id": eid, "made": {"chapter": chapter, "scene": f"tale:{key}", "date": today_local().isoformat()},
+             "chose": f"Tale {t['n']} was told in full and left its keepsake with {to}", "now": {}, "due": [item], "auto": True}
+    add_entry(st, entry, "", pending=True)
+    return f"keepsake callback {eid}a written: the present touches Tale {t['n']}'s keepsake once, where it fits"
 
 
 def brief_tale(st, args):
@@ -6202,7 +6288,10 @@ def brief_tale(st, args):
         L.append(f"== {title} ==")
 
     L.append(f"BRIEF · Tale {t['n']} — {t['title']} · piece {k} of {t['pieces']} · the past of {t['of'] or '—'}" + (f" · {f.get('when')}" if f.get("when") else ""))
-    L.append(f"THIS BLOCK: {key} · owed by task {k} of project {t['project']} ({t['tasks_done']} tasks reported, {t['told']} pieces told); it is written now, before anything else in the session")
+    L.append(f"THIS BLOCK: {key} · owed by {task_label(t, k)} ({t['tasks_done'] - t.get('offset', 0)} tasks reported, {t['told']} pieces told); it is written now, before anything else in the session")
+    if t.get("offset"):
+        L.append(f"RESUMED: {'piece 1 was' if t['offset'] == 1 else 'pieces 1–' + str(t['offset']) + ' were'} paid by an earlier work, set aside; this one pays {'piece ' + str(t['pieces']) if t['offset'] + 1 == t['pieces'] else 'pieces ' + str(t['offset'] + 1) + '–' + str(t['pieces'])}"
+                 + (" · that work was set aside past its due day, so this tale ends on the lesser keepsake whatever this one does" if t.get("carried_late") else ""))
     section("MUST: what this piece carries")
     for l in [l for l in tp.get("lines", []) if l.strip()]:
         L.append(f"the tale: {l.strip()}")
@@ -6212,9 +6301,15 @@ def brief_tale(st, args):
         L += ["  " + l.strip() for l in pp["lines"] if l.strip()]
     else:
         L.append(f"piece {k}: no plan in tales.md; state its want, its turn and its last image in a line before writing")
+    if t["pieces"] != tp.get("n_pieces", t["pieces"]):
+        L.append(f"RE-CUT: this tale is told in {t['pieces']} pieces and the plan has {tp.get('n_pieces')}: "
+                 + (f"its flex line: {f.get('flex')}" if f.get("flex") else "merge or split the plan's pieces to the count; each piece still a whole small story (a want, a turn, a last image)"))
+        L.append("the plan's pieces, for the re-cut: " + " · ".join(f"{kk}. {pp_['title']}" for kk, pp_ in sorted(tp.get("pieces", {}).items())))
     if k == t["pieces"]:
         if t.get("late"):
-            L.append(f"THE PROJECT CAME LATE (due {t.get('due')}; finished after it): THE LESSER KEEPSAKE, not the full one: "
+            why_late = ("THE LATENESS CARRIED: the work this tale was resumed from was set aside past its due day" if t.get("carried_late")
+                        else f"THE PROJECT CAME LATE (due {t.get('due')}; finished after it)")
+            L.append(f"{why_late}: THE LESSER KEEPSAKE, not the full one: "
                      f"{f.get('keepsake_late') or '<none planned: cut the full one down in tales.md: a smaller, plainer thing from this past>'}"
                      " · the piece ends on it in the page's words, smaller than the tale promised and never explained; the record carries \"keepsake\": {\"name\": …, \"text\": …, \"to\": …, \"mark\": <its drawing on the shelf: " + ", ".join(R.KEEPSAKE_MARKS) + ">} (the engine marks it lesser)")
             L.append(f"(the full keepsake, which this tale no longer gives: {f.get('keepsake')})")
@@ -6222,7 +6317,9 @@ def brief_tale(st, args):
             L.append(f"THE KEEPSAKE (this is the last piece; the project finished in its week): {f.get('keepsake') or '<none planned: an object, a name, a song or a saying from this past, to the tale\'s person>'}"
                      " · the piece ends on it in the page's words, and the record carries \"keepsake\": {\"name\": …, \"text\": <one line, the page's words>, \"to\": <character id>, \"mark\": <its drawing on the shelf: " + ", ".join(R.KEEPSAKE_MARKS) + ">}")
     else:
-        L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last" + (f" (due {t['due']}: finished in its week it is the full one, after it the lesser)" if t.get("due") else ""))
+        L.append(f"pieces left after this one: {t['pieces'] - k}; the keepsake waits for the last"
+                 + (" (the lesser one: the work it was resumed from was set aside past its due day)" if t.get("carried_late")
+                    else f" (due {t['due']}: finished in its week it is the full one, after it the lesser)" if t.get("due") else ""))
     if f.get("never"):
         L.append(f"NEVER (the present's secrets stay sealed): {f['never']}")
     if f.get("plants"):
@@ -6436,6 +6533,8 @@ def record_tale(args, ev, st, key, n, k):
     print(f"{key} recorded: {btitle} · people {len(ordered.get('people') or [])} · facts {sum(len(p.get('facts') or []) for p in ordered.get('people') or [])} "
           f"· codex {len(ordered.get('codex') or [])} · threads {len(ordered.get('threads') or [])}" + (f" · keepsake: {ks['name']} → {ks['to']}" + (" (the lesser one)" if ks.get("lesser") else "") if isinstance(ks, dict) else "")
           + f" · projections rebuilt: {', '.join(changed) or 'none'}")
+    if k >= t["pieces"] and isinstance(ks, dict):
+        print(keepsake_callback(st, t, ks, key))
     r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "check"], cwd=ROOT, capture_output=True, text=True)
     sys.stdout.write(r.stdout + r.stderr)
     if r.returncode:
@@ -6443,9 +6542,9 @@ def record_tale(args, ev, st, key, n, k):
     if k >= t["pieces"]:
         print(f"the tale is told in full; its keepsake goes on {ks['to']}'s page with the build. next: `python3 engine/darrow.py ship -m \"…\"`")
     elif t["tasks_done"] > k:
-        print(f"piece {k + 1} is owed too (task {k + 1} of {t['project']} is reported): `saga.py brief --tale` next, then `darrow.py ship`")
+        print(f"piece {k + 1} is owed too ({task_label(t, k + 1)} is reported): `saga.py brief --tale` next, then `darrow.py ship`")
     else:
-        print(f"piece {k + 1} waits for task {k + 1} of {t['project']}. next: `python3 engine/darrow.py ship -m \"…\"`")
+        print(f"piece {k + 1} waits for {task_label(t, k + 1)}. next: `python3 engine/darrow.py ship -m \"…\"`")
 
 
 def check_tales(st, probs, notes):
@@ -6474,7 +6573,7 @@ def check_tales(st, probs, notes):
         if t and t["told"] > t["pieces"]:
             probs.append(f"tale {n}: {t['told']} pieces told of {t['pieces']}")
         if t and t["owed"]:
-            notes.append(f"tale {n}: piece {t['told'] + 1} is owed (task {t['told'] + 1} of {t['project']} reported): `saga.py brief --tale`")
+            notes.append(f"tale {n}: piece {t['told'] + 1} is owed ({task_label(t, t['told'] + 1)} reported): `saga.py brief --tale`")
     seen = {}
     for ev in evs:
         key = ev.get("key")
@@ -6500,7 +6599,7 @@ def check_tales(st, probs, notes):
             probs.append(f"event {key}: tale {n} has no binding in the plan (`saga.py tale bind`)")
             continue
         if t["project_status"] is not None and k > t["tasks_done"]:
-            probs.append(f"event {key}: piece {k} told before task {k} of {t['project']} was reported")
+            probs.append(f"event {key}: piece {k} told before {task_label(t, k)} was reported")
         ks = ev.get("keepsake")
         if k == t["pieces"] and not isinstance(ks, dict):
             probs.append(f"event {key}: the last piece has no keepsake")
@@ -6557,7 +6656,7 @@ def main():
     s = sub.add_parser("names"); s.add_argument("--all", action="store_true", help="every chapter, not only the current one")
     s = sub.add_parser("songs", help="tracks made ahead for an Annals song or rhyme, waiting for the page"); s.add_argument("action", nargs="?", choices=["list", "add", "release"], default="list"); s.add_argument("id", nargs="?", help="add: the Annals id (song.… or rhyme.…)"); s.add_argument("file", nargs="?", help="add: the .mp3"); s.add_argument("--title", help="add: the title its player shows (default: the entry's name)"); s.add_argument("--name", help="add: the Codex entry's bold name (default: the Annals title)")
     s = sub.add_parser("brief"); s.add_argument("--date", help="the slot of that day (default: the next slot)"); s.add_argument("--between", action="store_true"); s.add_argument("--climax", action="store_true"); s.add_argument("--choice", action="store_true"); s.add_argument("--chapter", action="store_true", help="the next chapter's planning brief"); s.add_argument("--tale", action="store_true", help="the tale piece owed by a task reported"); s.add_argument("--with", dest="with_", help="between: who is in it (ids or names, comma-separated)"); s.add_argument("--size", action="store_true", help="print the brief's size")
-    s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan with a piece per task)"); s.add_argument("--force", action="store_true")
+    s = sub.add_parser("tale"); s.add_argument("action", choices=["bind", "list", "next"]); s.add_argument("id", nargs="?", help="bind: the live project's id"); s.add_argument("--tale", help="bind: a plan id in tales.md (default: the first unbound plan whose `fits` holds the task count)"); s.add_argument("--resume", help="bind: a resting tale (tale01, or 1) whose work was set aside, finished by this project's tasks"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("notes", help="what the brief prints of each person on the road at full depth, with sizes (the prune pass)"); s.add_argument("--person", help="a name or part of one")
     s = sub.add_parser("reread", help="the reread's notes for a block: length, habits, opening and closing lines (advice only)"); s.add_argument("key", nargs="?", help="ch05:s2, ch05:between-3, ch05:climax, tale03:p1 … (default: the last block of the current chapter)")
     s = sub.add_parser("record"); s.add_argument("json", help="the block's record (fields: saga.py -h, the records section)"); s.add_argument("--force", action="store_true", help="re-record a block already recorded"); s.add_argument("--slot", help="the slot the scene fills, when its date does not say"); s.add_argument("--allow-names", help="capitalised words in the block that are not names, comma-separated")
