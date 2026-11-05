@@ -86,12 +86,14 @@ def main():
         o = json.loads(out.strip().splitlines()[-1])
     except (ValueError, IndexError):
         o = None
+    # the live sheet may add its own (Ember Blazing: +1 to every check): the die's rule is checked at the total odds reports
+    total = (o or {}).get("mods")
     code2, brute = run(["-c", "import sys; sys.path.insert(0, 'engine'); import darrow; "
-                        "ns = [darrow.check_result(n, n + 4, 13) for n in range(1, 21)]; "
+                        f"ns = [darrow.check_result(n, n + {total!r}, 13) for n in range(1, 21)]; "
                         "print(sum(r in ('SUCCESS', 'CRITICAL SUCCESS') for r in ns) / 20, sum(r.startswith('PARTIAL') for r in ns) / 20)"], ROOT)
     bs, bp = (brute.split() + ["0", "0"])[:2]
     row = (o or {}).get("rows", {}).get("13") or {}
-    check(code == 0 and code2 == 0 and row and abs(row["success"] - float(bs)) < 1e-6 and abs(row["partial"] - float(bp)) < 1e-6 and abs(sum(row.values()) - 1) < 1e-6,
+    check(code == 0 and code2 == 0 and row and "+4 bonus" in (o or {}).get("mods_text", "") and abs(row["success"] - float(bs)) < 1e-6 and abs(row["partial"] - float(bp)) < 1e-6 and abs(sum(row.values()) - 1) < 1e-6,
           "odds match the die's own rule and sum to one", out[-300:] + " | " + brute[-200:])
     code, out = run(["engine/darrow.py", "odds", "--stat", "resolve", "--prof", "--target", "0.8", "--json"], ROOT)
     tdc = ((json.loads(out.strip().splitlines()[-1]) if code == 0 and out.strip() else {}) or {}).get("target_dc")
@@ -170,6 +172,9 @@ def main():
         bearing_move("banner", 2)  # to 0: lapsed
         b = jload(tmp / "saga/state/bearing.json")
         check(b["axes"]["hearth_banner"]["value"] == 0 and not any(t["pole"] == "Hearth" for t in b["titles"]), "back at 0 the lean lapses")
+        mf0 = jload(tmp / "saga/state/bearing.json")["axes"]["mercy_flint"]["value"]
+        if mf0:  # the live story may lean it already: start from even (Mercy counts down, Flint up)
+            bearing_move("mercy" if mf0 > 0 else "flint", abs(mf0))
         for pole in ("mercy", "mercy", "flint", "flint"):
             run(saga + ["bearing", pole, "3", "--why", "gm:self-test"], tmp)
         b = jload(tmp / "saga/state/bearing.json")
@@ -571,8 +576,9 @@ def main():
         code, out = run(saga + ["brief", "--between", "--with", "hollis-garrow"], tmp)
         people = out[out.index("== MAY: the people"):out.index("== MAY: threads")]
         dar_lines = people[people.index("· Ser Darrow"):].split("\n· ")[0]
-        check(code == 0 and "fact (p1)" not in dar_lines and "the past, from the tales (" in dar_lines and "kept from the tales" not in out,
-              "a block's brief keeps the present's facts and gives the tale one line; no keepsake yet", dar_lines[-500:])
+        kept = [k for k in jload(tmp / "saga/state/world.json").get("keepsakes") or [] if k.get("tale") == tid1]
+        check(code == 0 and "fact (p1)" not in dar_lines and "the past, from the tales (" in dar_lines and not kept,
+              "a block's brief keeps the present's facts and gives the tale one line; this tale has left no keepsake yet", dar_lines[-500:])
         dar = jload(tmp / "saga/characters/darrow.json")
         check(any(a.get("chapter") == tid1 and a.get("scene") == "p1" for a in dar["appearances"]) and dar["last_seen"]["chapter"] != tid1,
               "the tale adds an appearance and never moves last_seen")
