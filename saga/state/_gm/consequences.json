@@ -1239,8 +1239,8 @@
         },
         {
           "id": "c04.12b",
-          "when": "book2",
-          "at": "book2",
+          "when": "book2:beat2",
+          "at": "book2:beat2",
           "weight": "fate",
           "what": "The two last fingers of his right hand do not come back whole: the frost from the grate has left them slow and half-numb for good. Maelis tells him so plainly in Book II (a Reading, or the sewing after the weir), and the page keeps it from then on in every scene that needs a grip: the sword held differently, the glove, the cold first in those fingers. Never the knee, never healed, never a lecture. Fire where she tells him",
           "status": "pending"
