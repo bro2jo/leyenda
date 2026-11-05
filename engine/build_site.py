@@ -717,7 +717,7 @@ TIER_SEAL = {"Triumph": "triumph", "Hard-won": "hardwon", "Costly": "costly", "S
 # browser still holds an older stylesheet; the stylesheet only places them.
 PAL = {"brass": "#CFA65F", "brass_dim": "#8A7044", "ember": "#E2713B", "good": "#72B396", "warn": "#D9A441", "bad": "#D0634D",
        "ink": "#E8E2D4", "dim": "#9AA2AE", "faint": "#646D79", "raw": "#262D37", "plate": "#161B22", "t3": "#A86B3C", "t4": "#7A4D86",
-       "t4_text": "#A77FB5", "t5": "#4062A3", "t6": "#8BB2D3"}
+       "t4_text": "#A77FB5", "t5": "#4062A3", "t6": "#8BB2D3", "t2": "#D9AE5F", "night": "#0F1217", "leather": "#4A3826", "rule": "#2B323D"}
 SVG_LABEL_FONT = "Alegreya Sans SC, Alegreya Sans, Segoe UI, sans-serif"
 SVG_DISPLAY_FONT = "Grenze Gotisch, Georgia, serif"
 
@@ -767,22 +767,39 @@ def rank_ring(rank, n, frac=0.0, label="", size=32, sealed=False):
     return f'<svg class="rring" viewBox="0 0 36 36" width="{size}" height="{size}" role="img" aria-label="{esc(label or f"rank {rank} of {n}")}">{"".join(segs)}{num}</svg>'
 
 
-def svg_seal(tier, size=44):
-    """A chapter's tier as a wax seal: a sunburst (Triumph), a notched sword (Hard-won), a tipped balance (Costly), a cracked ring (Setback)."""
+SEAL_DEVICES = {
+    "triumph": '<circle cx="24" cy="24" r="4.5"/><path d="M24 8 L24 14 M24 34 L24 40 M8 24 L14 24 M34 24 L40 24 M12.7 12.7 L17 17 M31 31 L35.3 35.3 M35.3 12.7 L31 17 M17 31 L12.7 35.3"/>',
+    "hardwon": '<path d="M24 9 L24 31 M17 31 L31 31 M24 31 L24 38 M20.5 13.5 L24 9 L27.5 13.5 M24 20 L27 23"/>',
+    "costly": '<path d="M24 11 L24 37 M19 37 L29 37 M12 20 L36 16 M12 20 L8 29 L16 29 Z M36 16 L32 25 L40 25 Z"/>',
+    "setback": '<path d="M15 19 L24 29 L33 19"/><path d="M24 6 L22 11 L25.5 14.5"/>',
+    "whole": '<path d="M13 24 C13 15 35 15 35 24 C35 33 13 33 13 24 Z M8 24 H13 M35 24 H40"/>',
+}
+
+
+def _seal(kind, col, size, label, cls="", dashed=False):
+    """A wax seal: a plate disc with a coloured rim, a dotted inner ring and a device. dashed: the rim is broken, for a
+    seal not yet set (a chapter still running)."""
+    rim = ' stroke-dasharray="4 3"' if dashed else ""
+    return (f'<svg class="seal {kind}{(" " + cls) if cls else ""}" viewBox="0 0 48 48" width="{size}" height="{size}" role="img" aria-label="{esc(label)}">'
+            f'<circle cx="24" cy="24" r="21" fill="{PAL["plate"]}" stroke="{col}" stroke-width="2"{rim}/>'
+            f'<circle cx="24" cy="24" r="17.5" fill="none" stroke="{col}" stroke-opacity=".55" stroke-width="1" stroke-dasharray="2 2.5"/>'
+            f'<g fill="none" stroke="{col}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{SEAL_DEVICES[kind]}</g></svg>')
+
+
+def svg_seal(tier, size=44, open_=False):
+    """A chapter's tier as a wax seal: a sunburst (Triumph), a notched sword (Hard-won), a tipped balance (Costly), a cracked
+    ring (Setback). open_: the chapter is still running, so the rim is not yet closed."""
     kind = TIER_SEAL.get(tier)
     if not kind:
         return ""
-    dev = {
-        "triumph": '<circle cx="24" cy="24" r="4.5"/><path d="M24 8 L24 14 M24 34 L24 40 M8 24 L14 24 M34 24 L40 24 M12.7 12.7 L17 17 M31 31 L35.3 35.3 M35.3 12.7 L31 17 M17 31 L12.7 35.3"/>',
-        "hardwon": '<path d="M24 9 L24 31 M17 31 L31 31 M24 31 L24 38 M20.5 13.5 L24 9 L27.5 13.5 M24 20 L27 23"/>',
-        "costly": '<path d="M24 11 L24 37 M19 37 L29 37 M12 20 L36 16 M12 20 L8 29 L16 29 Z M36 16 L32 25 L40 25 Z"/>',
-        "setback": '<path d="M15 19 L24 29 L33 19"/><path d="M24 6 L22 11 L25.5 14.5"/>',
-    }[kind]
     col = PAL["ember"] if kind in ("costly", "setback") else PAL["brass"]
-    return (f'<svg class="seal {kind}" viewBox="0 0 48 48" width="{size}" height="{size}" role="img" aria-label="{esc(TIER_DONE.get(tier, tier))}">'
-            f'<circle cx="24" cy="24" r="21" fill="{PAL["plate"]}" stroke="{col}" stroke-width="2"/>'
-            f'<circle cx="24" cy="24" r="17.5" fill="none" stroke="{col}" stroke-opacity=".55" stroke-width="1" stroke-dasharray="2 2.5"/>'
-            f'<g fill="none" stroke="{col}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{dev}</g></svg>')
+    label = TIER_SO_FAR.get(tier, tier) if open_ else TIER_DONE.get(tier, tier)
+    return _seal(kind, col, size, label, "open" if open_ else "", dashed=open_)
+
+
+def seal_whole(size=28):
+    """The seal on a set of the Wardrobe once every piece of it is his: a knot in brass."""
+    return _seal("whole", PAL["brass"], size, "whole")
 
 
 def tally(n, size=18):
@@ -1300,6 +1317,141 @@ def rope_knots(tied, knots):
     return "".join(out)
 
 
+def medallion(name, score, mod=None, fell=None, size=56, tone=None, cls=""):
+    """An attribute as a medallion: the score on a plate disc inside a ring; the modifier under it. With the Knight Who
+    Fell's number, an arc round the ring runs the score's share of it, that number faint at the top right; once the score
+    has passed it the arc closes in ember (.hot). tone: borrowed (blue), earned (brass) or unlit (grey) for a Reckoning
+    read by the Eye; the colours are drawn in, as with every drawing here."""
+    import math
+    c, r = 32, 25
+    try:
+        s = int(score)
+    except (TypeError, ValueError):
+        s = None
+    f = as_int(fell) if fell is not None else None
+    hot = f is not None and s is not None and f > 0 and s >= f
+    ink = {"borrowed": PAL["t6"], "earned": PAL["brass"], "unlit": PAL["dim"]}.get(tone, PAL["ink"])
+    ring = {"borrowed": PAL["t5"], "unlit": PAL["faint"]}.get(tone, PAL["brass"])
+    parts = [f'<circle cx="{c}" cy="{c}" r="{r}" fill="{PAL["plate"]}" stroke="{PAL["raw"]}" stroke-width="5"/>']
+    if f and s is not None:
+        circ = 2 * math.pi * r
+        frac = min(s / f, 1.0)
+        L = circ * frac
+        parts.append(f'<circle cx="{c}" cy="{c}" r="{r}" fill="none" stroke="{PAL["ember"] if hot else PAL["brass_dim"]}" stroke-width="5" '
+                     f'stroke-linecap="{"butt" if frac >= 1 else "round"}" stroke-dasharray="{L:.2f} {circ:.2f}" transform="rotate(-90 {c} {c})"/>')
+    parts.append(f'<circle cx="{c}" cy="{c}" r="{r - 4.5}" fill="none" stroke="{ring}" stroke-width="1.2" stroke-opacity=".85"/>')
+    y = c + (1 if mod is None else -2.5)
+    parts.append(f'<text x="{c}" y="{y}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_DISPLAY_FONT}" '
+                 f'font-size="{22 if s is None or s < 100 else 17}" font-weight="700" fill="{ink}">{esc(score)}</text>')
+    if mod is not None:
+        parts.append(f'<text x="{c}" y="{c + 12.5}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="9" '
+                     f'font-weight="700" fill="{PAL["dim"]}">{mod:+d}</text>')
+    if f:
+        col = PAL["ember"] if hot else PAL["faint"]
+        parts.append(f'<circle cx="52.5" cy="11.5" r="8.5" fill="{PAL["night"]}" stroke="{col}" stroke-width="1"/>'
+                     f'<text x="52.5" y="12" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="8.5" '
+                     f'font-weight="700" fill="{col}">{f}</text>')
+    label = f"{name} {score}" + (f" ({mod:+d})" if mod is not None else "") + (f"; the Knight Who Fell: {f}" if f else "")
+    return (f'<svg class="medal{" hot" if hot else ""}{(" " + cls) if cls else ""}" viewBox="0 0 64 64" width="{size}" height="{size}" role="img" '
+            f'aria-label="{esc(label)}">{"".join(parts)}</svg>')
+
+
+FLAME_TONGUES = {"Guttering": 1, "Low": 1, "Steady": 2, "Bright": 3, "Blazing": 3}
+
+
+def flame(kind="ember", tier=None, size=28, label=""):
+    """A fire as a brazier: a bowl, and tongues of flame by its state. ember: warm, one tongue at Guttering or Low, two at
+    Steady, three at Bright, three and a brass halo at Blazing (.blazing); grace: three blue tongues, borrowed; none: the
+    coal alone, grey."""
+    kind = kind or "none"
+    n = 3 if kind == "grace" else 0 if kind == "none" else FLAME_TONGUES.get(str(tier), 2)
+    low = kind == "ember" and str(tier) in ("Guttering", "Low")
+    blazing = kind == "ember" and str(tier) == "Blazing"
+    outer = PAL["t5"] if kind == "grace" else PAL["ember"]
+    core = PAL["t6"] if kind == "grace" else PAL["t2"]
+    coal = PAL["t3"] if kind == "ember" else PAL["t5"] if kind == "grace" else PAL["faint"]
+    tongues = {1: [(14, 9 if low else 6)], 2: [(10.5, 8), (17.5, 6)], 3: [(8, 10), (14, 3), (20, 10)]}.get(n, [])
+    parts = []
+    if blazing:
+        parts.append(f'<circle cx="14" cy="13" r="12.5" fill="none" stroke="{PAL["brass"]}" stroke-opacity=".75" stroke-width="1"/>')
+    for x, tip in tongues:
+        parts.append(f'<path d="M{x} 19.5 C{x - 3.2} 15.5 {x - 1.4} 12.5 {x} {tip} C{x + 1.4} 12.5 {x + 3.2} 15.5 {x} 19.5 Z" fill="{outer}"/>')
+    if n >= 2:  # the bright core of the tallest tongue
+        x, tip = max(tongues, key=lambda t: -t[1])
+        parts.append(f'<path d="M{x} 19.5 C{x - 1.4} 17 {x - .7} 15 {x} {tip + 6} C{x + .7} 15 {x + 1.4} 17 {x} 19.5 Z" fill="{core}"/>')
+    parts.append(f'<path d="M4 19 Q14 26.5 24 19 Z" fill="{PAL["plate"]}" stroke="{coal}" stroke-width="1.4" stroke-linejoin="round"/>'
+                 f'<path d="M3 19 H25" stroke="{PAL["brass_dim"]}" stroke-width="1.2" stroke-linecap="round"/>')
+    aria = f'role="img" aria-label="{esc(label)}"' if label else 'aria-hidden="true"'
+    return f'<svg class="flame {kind}{" blazing" if blazing else ""}" viewBox="0 0 28 28" width="{size}" height="{size}" {aria}>{"".join(parts)}</svg>'
+
+
+def thread_track(stage, of, frac=0.0, names=()):
+    """The Tether as a finer thread under the Knot rope: a knot per stage, the reached ones lit and named, the next one's
+    length drawn by frac. Only reached stages are named; the rest keep their numerals."""
+    of, stage = max(as_int(of) or 1, 1), max(as_int(stage) or 0, 0)
+    frac = max(0.0, min(float(frac or 0.0), 1.0))
+    step = 380 / of
+    label = f"The Tether: stage {roman(stage)} of {roman(of)}" + (f", on the way to {roman(stage + 1)}" if stage < of else "")
+    out = [f'<svg class="thread" viewBox="0 0 400 36" role="img" aria-label="{esc(label)}">',
+           f'<path d="M10 14 H390" stroke="{PAL["leather"]}" stroke-width="1.6" fill="none"/>']
+    lit = 10 + (stage - 0.5) * step + (frac * step if stage < of else 0) if stage else 10
+    if lit > 10:
+        out.append(f'<path d="M10 14 H{lit:.1f}" stroke="{PAL["ember"]}" stroke-width="1.6" stroke-linecap="round" fill="none"/>')
+    for k in range(1, of + 1):
+        x = 10 + (k - 0.5) * step
+        on = k <= stage
+        out.append(f'<g class="th-knot{" on" if on else ""}"><path d="M{x - 6} 14 C{x - 6} 7 {x + 6} 7 {x + 6} 14 C{x + 6} 21 {x - 6} 21 {x - 6} 14" '
+                   f'fill="{PAL["ember"] if on else PAL["raw"]}" stroke="{PAL["t2"] if on else PAL["faint"]}" stroke-width="1.4"/>')
+        word = names[k - 1] if on and k - 1 < len(names) else roman(k)
+        out.append(f'<text x="{x}" y="32" text-anchor="middle" font-family="{SVG_LABEL_FONT}" font-size="{9 if on else 8}" letter-spacing=".06em" '
+                   f'fill="{PAL["ember"] if on else PAL["faint"]}">{esc(word)}</text></g>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+# Small line glyphs in the house style (a stroke of brass, round caps): the kinds of block in the story, the kinds of entry
+# in the Codex, the Wardrobe's categories, and a few marks for the sheet. Decorative: hidden from screen readers.
+GLYPHS = {
+    "quest": '<path d="M6 3 V21 M6 4.5 H18.5 L14.5 8.5 L18.5 12.5 H6"/>',
+    "swords": '<path d="M4 4 L20 20 M20 4 L4 20 M3.5 15.5 L8.5 20.5 M15.5 20.5 L20.5 15.5"/>',
+    "work": '<path d="M4 20 L11.5 12.5 M9.5 6.5 L13.5 2.5 L21.5 10.5 L17.5 14.5 Z"/>',
+    "hp": '<path d="M12 3 L20 6 V12 C20 17 16 20 12 21 C8 20 4 17 4 12 V6 Z"/><path d="M12 15.5 C12 15.5 8.5 13.5 8.5 11 C8.5 9.2 10.8 8.6 12 10.4 C13.2 8.6 15.5 9.2 15.5 11 C15.5 13.5 12 15.5 12 15.5 Z"/>',
+    "prof": '<path d="M12 3 L14.2 9.8 L21 12 L14.2 14.2 L12 21 L9.8 14.2 L3 12 L9.8 9.8 Z"/>',
+    "scene": '<path d="M4.5 4.5 H14 L19.5 10 V19.5 H4.5 Z M14 4.5 V10 H19.5 M7.5 13.5 H16.5 M7.5 16.5 H13"/>',
+    "between": '<circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/><path d="M10 12 H14"/>',
+    "interlude": '<path d="M14.5 3 A9 9 0 1 0 21 15.5 A7 7 0 0 1 14.5 3 Z"/>',
+    "climax": '<path d="M4.5 18.5 H19.5 M4.5 18.5 L3.5 8 L8.5 12 L12 4.5 L15.5 12 L20.5 8 L19.5 18.5"/>',
+    "choice": '<path d="M12 21 V12 M12 12 L5.5 5.5 M12 12 L18.5 5.5 M5.5 10 V5.5 H10 M18.5 10 V5.5 H14"/>',
+    "chosen": '<circle cx="12" cy="12" r="9"/><path d="M8 12.5 L11 15.5 L16.5 9"/>',
+    "place": '<path d="M6 21 V7 H8 V4 H10 V7 H14 V4 H16 V7 H18 V21 Z M10 21 V15 H14 V21"/>',
+    "faction": '<path d="M12 3 L20 6 V12 C20 17 16 20 12 21 C8 20 4 17 4 12 V6 Z M5 12 H19"/>',
+    "saying": '<path d="M7 10 C5.5 10 4.5 11 4.5 12.5 C4.5 14 5.5 15 7 15 C8.5 15 9.5 14 9.5 12.5 C9.5 9 7.5 7.5 6 7 M17 10 C15.5 10 14.5 11 14.5 12.5 C14.5 14 15.5 15 17 15 C18.5 15 19.5 14 19.5 12.5 C19.5 9 17.5 7.5 16 7"/>',
+    "thing": '<path d="M4 9 H20 V20 H4 Z M9 9 V6 H15 V9 M4 13 H20"/>',
+    "song": '<circle cx="7" cy="18" r="2.6"/><circle cx="17" cy="16" r="2.6"/><path d="M9.6 18 V6 L19.6 4 V16"/>',
+    "beast": '<circle cx="7" cy="9" r="1.8"/><circle cx="11" cy="6.5" r="1.8"/><circle cx="15.5" cy="7" r="1.8"/><circle cx="19" cy="10" r="1.8"/><path d="M13 11.5 C9.5 11.5 6.5 14 6.5 16.5 C6.5 18.5 8 19.5 10 18.8 C11 18.4 12 18 13 18 C14 18 15 18.4 16 18.8 C18 19.5 19.5 18.5 19.5 16.5 C19.5 14 16.5 11.5 13 11.5 Z"/>',
+    "build": '<circle cx="12" cy="5" r="2.5"/><path d="M12 8 V15 M6 10.5 L12 8 L18 10.5 M12 15 L8.5 21 M12 15 L15.5 21"/>',
+    "clothing": '<path d="M8 4 L3.5 7 L5.5 11 L8 10 V20 H16 V10 L18.5 11 L20.5 7 L16 4 C15 6 9 6 8 4 Z"/>',
+    "cloak": '<path d="M12 3 C8 5 5 10 4 20 H20 C19 10 16 5 12 3 Z M12 9 V20"/><circle cx="12" cy="6.5" r="1.2"/>',
+    "hair": '<path d="M4.5 8 H19.5 V11.5 H4.5 Z M6.5 11.5 V16.5 M9.5 11.5 V18 M12 11.5 V16.5 M14.5 11.5 V18 M17.5 11.5 V16.5"/>',
+    "beard": '<path d="M6 8 C6 15 8 19 12 20.5 C16 19 18 15 18 8 M9 12.5 C10 14.5 14 14.5 15 12.5"/>',
+    "expression": '<circle cx="12" cy="12" r="8.5"/><path d="M9 10 V10.8 M15 10 V10.8 M8.5 14.5 C10 16.5 14 16.5 15.5 14.5"/>',
+    "pose": '<circle cx="13" cy="4.5" r="2.3"/><path d="M12 7.5 L10 13 L6 15 M12 7.5 L17 10 L19 14 M10 13 L13 17 L10.5 21 M13 17 L16.5 21"/>',
+    "hand": '<path d="M8 12 V7 M11 12 V5 M14 12 V6 M17 12 V8 M8 12 C8 16 10 21 15 21 H17 C19 21 20 19 20 17 V12 M8 14 L5 11"/>',
+    "feet": '<path d="M7 3 H13 V14 C15 16 19 17 20 20 V21 H4 V18 L7 14 Z M13 14 H7"/>',
+    "extra": '<path d="M6 10 C6 8 8 7 12 7 C16 7 18 8 18 10 L19 19 C19 20.5 16 21 12 21 C8 21 5 20.5 5 19 Z M9 7 V4.5 H15 V7 M6 11.5 H18"/>',
+    "side": '<circle cx="8" cy="6" r="2.2"/><circle cx="16" cy="6" r="2.2"/><path d="M4 21 V14 C4 11 6 10 8 10 C10 10 12 11 12 14 V21 M12 21 V14 C12 11 14 10 16 10 C18 10 20 11 20 14 V21"/>',
+}
+
+
+def glyph(name, size=18, cls=""):
+    """One of GLYPHS at the given size; nothing for a name it does not know."""
+    body = GLYPHS.get(name)
+    if not body:
+        return ""
+    return (f'<svg class="ic ic-{esc(name)}{(" " + cls) if cls else ""}" viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="{PAL["brass"]}" '
+            f'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
+
+
 # ============================================================ components
 def chip(text, cls=""):
     return f'<span class="chip {cls}">{esc(text)}</span>'
@@ -1309,9 +1461,16 @@ def badge(text, cls="dim"):
     return f'<span class="state {cls}">{esc(text)}</span>'
 
 
-def bar(have, need, label, cls="", show=None, text=None, quiet=False):
+def chip_glyph(name, text, cls=""):
+    """A chip with one of the small glyphs before its words."""
+    return f'<span class="chip ic-chip {cls}">{glyph(name, 14)}{esc(text)}</span>'
+
+
+def bar(have, need, label, cls="", show=None, text=None, quiet=False, ticks=None, lead=""):
     """A progress bar. text: what screen readers hear instead of the numbers (used for approval, which is never shown as a number).
-    quiet: no visible label row (the line above the bar already names it); screen readers still hear the label."""
+    quiet: no visible label row (the line above the bar already names it); screen readers still hear the label.
+    ticks: an int divides the bar into that many segments; a list of fractions (0-1) marks each one (the Ember's tiers).
+    lead: a drawing (a flame, a glyph) set before the label."""
     need = max(need, 1)
     pct = max(0, min(100, 100.0 * have / need))
     txt = f'<span class="num">{show}</span>' if show is not None else ""
@@ -1319,8 +1478,13 @@ def bar(have, need, label, cls="", show=None, text=None, quiet=False):
         aria = f'role="img" aria-label="{esc(label)}: {esc(text)}"'
     else:
         aria = f'role="progressbar" aria-label="{esc(label)}" aria-valuemin="0" aria-valuemax="{need}" aria-valuenow="{have}"'
-    head = "" if quiet else f'<div class="bar-l"><span>{esc(label)}</span>{txt}</div>'
-    return f'<div class="bar-row">{head}<div class="bar {cls}" {aria}><i style="--w:{pct:.1f}%"></i></div></div>'
+    head = "" if quiet else f'<div class="bar-l"><span>{lead}{esc(label)}</span>{txt}</div>'
+    marks = ""
+    if isinstance(ticks, int) and ticks > 1:
+        marks = f'<span class="ticks" style="--n:{ticks}" aria-hidden="true"></span>'
+    elif ticks:
+        marks = "".join(f'<span class="tick" style="--x:{100.0 * min(max(float(t), 0.0), 1.0):.1f}%" aria-hidden="true"></span>' for t in ticks)
+    return f'<div class="bar-row">{head}<div class="bar {cls}" {aria}><i style="--w:{pct:.1f}%"></i>{marks}</div></div>'
 
 
 def pips(have, need, cls=""):
@@ -1335,9 +1499,10 @@ LEVEL_NEWS_DAYS = 3  # the Now page carries a level-up banner this many days aft
 FINE_PRINT = "Only what the story has shown so far."  # the one line that replaces a disclaimer on every section head
 
 
-def sec(title, label, inner, cls="", hid=""):
+def sec(title, label, inner, cls="", hid="", label_html=""):
+    """A section with its head: the title, and a label at the right (label is text; label_html may carry a drawing)."""
     hid = f' id="{hid}"' if hid else ""
-    lbl = f'<span class="lbl">{esc(label)}</span>' if label else ""
+    lbl = f'<span class="lbl">{label_html or esc(label)}</span>' if (label or label_html) else ""
     return f'<section class="sec {cls}"{hid}><div class="sec-h"><h2>{esc(title)}</h2>{lbl}</div>{inner}</section>'
 
 
@@ -2225,7 +2390,7 @@ class Site:
                 else:
                     out.append([(b[1], b[2])])
             elif kind == "choice-h":
-                out.append(f'<h3 class="choice-h">{esc(b[1])}</h3>')
+                out.append(f'<h3 class="choice-h">{glyph("choice", 20)}{esc(b[1])}</h3>')
             elif kind == "ol":
                 items, is_choice = b[1], b[2]
                 out.append(self.choice_list(items, self.choice_for(ch, scene["key"]) if is_choice else None, bool(is_choice)))
@@ -2263,18 +2428,30 @@ class Site:
                 f'{total_html}{res_html}{times}</summary><div class="dice-full">{"".join(rows)}</div></details>')
 
     @staticmethod
+    def scene_kind(s):
+        """The kind of block a scene is, for its glyph: scene, between, interlude, climax or choice."""
+        if s.get("between"):
+            return "between"
+        k = str(s.get("key", ""))
+        if k.startswith("interlude"):
+            return "interlude"
+        return k if k in ("climax", "choice") else "scene"
+
+    @staticmethod
     def choice_list(items, rec=None, is_choice=True):
         """A numbered list. For a choice with a recorded answer (rec): the option taken marked 'chosen' (and 'answered for
-        himself' when the Bearing answered), or, when he took none of them, his own answer after the list."""
+        himself' when the Bearing answered), or, when he took none of them, his own answer after the list. A choice is
+        framed as a decision (a brass bracket)."""
         taken = as_int(rec.get("option")) if rec else None
         free = (rec.get("text") or "").strip() if rec and taken is None else ""
-        mark = ' <span class="state good">chosen</span>' + (' <span class="state dim">answered for himself</span>' if rec and rec.get("by") == "bearing" else "")
+        mark = f' <span class="state good">{glyph("chosen", 13)}chosen</span>' + (' <span class="state dim">answered for himself</span>' if rec and rec.get("by") == "bearing" else "")
         lis = []
         for i, it in enumerate(items, 1):
             cls = ' class="taken"' if taken == i else ""
             lis.append(f"<li{cls}>{inline(it)}{mark if taken == i else ''}</li>")
         out = f'<ol class="{"choice" if is_choice else ""}">{"".join(lis)}</ol>'
-        return out + (f'<p class="chosen-free">{mark.strip()} {esc(free)}</p>' if free else "")
+        out += f'<p class="chosen-free">{mark.strip()} {esc(free)}</p>' if free else ""
+        return f'<div class="decision">{out}</div>' if is_choice else out
 
     def render_chapter(self, idx):
         ch = self.chapters[idx]
@@ -2300,7 +2477,7 @@ class Site:
         body = []
         for s in ch["scenes"]:
             seen = set()
-            lab = f'<span class="scene-n">{esc(s["label"])}</span>' if s["label"] else ""
+            lab = f'<span class="scene-n">{glyph(self.scene_kind(s), 16)}{esc(s["label"])}</span>' if s["label"] else ""
             title = esc(s["title"]) if s["title"] else ""
             cls = "scene between" if s.get("between") else "scene"
             body.append(f'<section class="{cls}" id="{s["anchor"]}"><h2 class="scene-h">{lab}{title}</h2>{self.render_blocks(ch, s, rel, seen)}</section>')
@@ -2361,7 +2538,7 @@ class Site:
                 items.append(f'<li class="book"><b>{esc(ch["book"])}</b></li>')
             now = ch["slug"] == cur_slug
             scenes = "".join(
-                f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a></li>'
+                f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{glyph(self.scene_kind(s), 14)}{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a></li>'
                 for s in ch["scenes"] if s["title"] or s["label"])
             n_bt = sum(1 for s in ch["scenes"] if s.get("between"))
             n_sc = len(ch["scenes"]) - n_bt
@@ -2371,7 +2548,7 @@ class Site:
             line = f'<span class="m num">{seal}{count}{" · now" if now else ""}</span>'
             fold = (f'<details class="scn"{" open" if now else ""}><summary>{line}</summary><ul class="scenes">{scenes}</ul></details>'
                     if scenes else line)
-            items.append(f'<li class="{"now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
+            items.append(f'<li class="ch{" now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
                          f'{fold}</li>')
         first = self.chapters[0] if self.chapters else None
         start = (f'<p class="m">Or <a href="{rel}chronicle/{first["slug"]}.html">start from the beginning</a>: '
@@ -2398,19 +2575,20 @@ class Site:
         kcls = {"grace": "borrowed", "ember": "earned", "none": "unlit"}.get(kind, "unlit")
         unread = '<span class="sealed-line">⟦ unread ⟧</span>'
         rows = []
+        lvl = rk.get("level")
         if eye >= 1:
-            lvl = rk.get("level")
             head = f'Level {lvl} · {esc(rk.get("rank"))}' if lvl is not None else esc(rk.get("rank") or "")
-            rows.append(f'<p class="rk-line">{head}</p>')
+            rows.append(f'<p class="rk-line rk-head">{crest(lvl if lvl is not None else "—")}<span>{head}</span></p>')
         else:
             rows.append(f'<p class="rk-line">{unread}</p>')
         if eye >= 2:
             at = rk.get("attributes") or {}
-            cells = "".join(f'<div class="rk-attr {kcls}"><span class="lbl">{k.capitalize()}</span><span class="v num">{at.get(k, "—")}</span></div>'
+            cells = "".join(f'<div class="rk-attr {kcls}">{medallion(k.capitalize(), at.get(k, "—"), None, None, 46, tone=kcls)}<span class="lbl">{k.capitalize()}</span></div>'
                             for k in ("might", "vigor", "finesse", "resolve"))
             rows.append(f'<div class="rk-attrs">{cells}</div>')
             fl = {"grace": "Grace", "ember": "Ember", "none": "Unlit"}[kind]
-            rows.append(f'<p class="rk-line {kcls}"><span class="lbl">{fl}</span> {esc(fire.get("state", ""))}' + (' <span class="chip blue">borrowed</span>' if kind == "grace" else "") + "</p>")
+            rows.append(f'<p class="rk-line {kcls}">{flame(kind if kind in ("grace", "ember") else "none", None, 24)}<span class="lbl">{fl}</span> {esc(fire.get("state", ""))}'
+                        + (' <span class="chip blue">borrowed</span>' if kind == "grace" else "") + "</p>")
         else:
             rows.append(f'<p class="rk-line"><span class="lbl">Might · Vigor · Finesse · Resolve</span> {unread}</p>')
             rows.append(f'<p class="rk-line"><span class="lbl">The fire</span> {unread}</p>')
@@ -2427,7 +2605,8 @@ class Site:
         ranks = " · ".join(r["name"] for r in self.rules["levels"]["ranks"][:3])
         note_ = (f'<p class="hint">Read with Warden\'s Eye {roman(eye)}. Stronger sight reads deeper. '
                  f'The ranks of the Ember run {esc(ranks)} and up; Oathsworn is borrowed strength.</p>')
-        return f'<div class="rk-card">{"".join(rows)}{note_}</div>'
+        framed = (" framed" + self.metal(lvl)) if eye >= 1 else ""
+        return f'<div class="rk-card{framed}">{"".join(rows)}{note_}</div>'
 
     # ---------------------------------------------------------------- characters
     @staticmethod
@@ -2476,15 +2655,33 @@ class Site:
         hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
         return f'<section class="plate{self.metal(level)}">{hero}{row}{foot}<p class="fine">{FINE_PRINT}</p></section>'
 
-    def darrow_standing(self):
-        """Where Darrow stands, at the foot of his plate: his rank and XP, the bar to the next level, Ember and Inspiration."""
+    def xp_bar(self):
+        """The bar to the next level, in ten segments; when the next level opens a rank, the label names it."""
         d = self.darrow
         xp_into = d["xp"] - d["xp_this_level"]
         xp_span = d["xp_next_level"] - d["xp_this_level"]
+        nxt = d["level"] + 1
+        rank = next((r["name"] for r in self.rules["levels"]["ranks"] if r["from"] == nxt), None)
+        label = f"XP toward Level {nxt}" + (f" · {rank}" if rank else "")
+        return bar(xp_into, xp_span, label, "", f"{xp_into:,} / {xp_span:,}", ticks=10)
+
+    def ember_bar(self, effect=False):
+        """The Ember's bar with a tick at each tier's foot and the brazier before its label; effect: the tier's effect under it."""
+        e = self.darrow["ember"]
+        tier = e.get("tier") or "unlit"
+        ticks = sorted(t["min"] / 100.0 for t in self.rules["ember"]["tiers"] if 0 < t.get("min", 0) < 100)
+        html = bar(e["value"] or 0, 100, f"Ember · {tier}", "ember", e["value"], ticks=ticks, lead=flame("ember", tier, 22))
+        if effect and e.get("effect"):
+            html += f'<p class="ember-effect">{esc(e["effect"])}</p>'
+        return html
+
+    def darrow_standing(self):
+        """Where Darrow stands, at the foot of his plate: his rank and XP, the bar to the next level, Ember and Inspiration."""
+        d = self.darrow
         return (f'<div class="stand"><p class="reck-line">{esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
-                f'{bar(xp_into, xp_span, "XP toward Level " + str(d["level"] + 1), "", f"{xp_into:,} / {xp_span:,}")}'
-                f'<div class="row2"><div>{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}</div>'
-                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div></div></div>')
+                f'{self.xp_bar()}'
+                f'<div class="row2"><div>{self.ember_bar(effect=True)}</div>'
+                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"], "spark")}</div></div></div>')
 
     def metal(self, level):
         """' metal-<name>', the class for the metal of the rank a level falls in (METALS); empty when no level is read."""
@@ -2591,12 +2788,26 @@ class Site:
         out.append(dict(key="appearances", title="Appearances", label=label, meta=esc(label), html=apps))
         return out
 
+    def read_level(self, c):
+        """A character's level as Darrow's Eye reads it: the number, '—' for one with no level of their own (borrowed
+        strength), or None while the page has not let the script read them (or the Eye is too weak, or they fell)."""
+        rk = c.get("reckoning")
+        if c["tier"] != "fallen" and isinstance(rk, dict) and not rk.get("unread") and self.eye >= 1:
+            return rk["level"] if rk.get("level") is not None else "—"
+        return None
+
+    def avatar_crest(self, c, rel, size, cls=""):
+        """A character's round picture (or their sigil) with their level crest pinned to its corner, when the Eye reads one:
+        the party's faces on the Now page and the roster."""
+        sg = c.get("sigil") or {}
+        pic = self.avatar(c, rel, size, cls) or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), size)
+        level = self.read_level(c)
+        cr = crest(level) if level is not None else ""
+        return f'<span class="ava">{pic}{cr}</span>'
+
     def render_character(self, c):
         rel = "../"
-        rk = c.get("reckoning")
-        level = None
-        if c["tier"] != "fallen" and isinstance(rk, dict) and not rk.get("unread") and self.eye >= 1:
-            level = rk["level"] if rk.get("level") is not None else "—"
+        level = self.read_level(c)
         body = self.identity_plate(c, rel, level) + "".join(sec(x["title"], x.get("label", ""), x["html"]) for x in self.character_sections(c, rel))
         ep = c.get("epithet", "")
         ep = ep[0].lower() + ep[1:] if ep[:2] in ("A ", "An", "Th") else ep
@@ -2614,8 +2825,9 @@ class Site:
         fname = f.get("name", "")
         named = re.sub(r"^the\s+", "", fname.lower()) in c.get("epithet", "").lower()
         chips = (badge(c["status"], STATUS_CLS.get(c["status"], "dim")) if c["status"] != "alive" else "") + ("" if named or not fname else chip(fname))
-        return (f'<a class="card" href="{rel}{self.char_href(c["id"])}" data-faction="{esc(c["faction"])}" data-status="{esc(c["status"])}">'
-                f'{self.avatar(c, rel, 56) or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 56)}<div class="card-body"><b>{esc(c["name"])}</b><span class="dim">{esc(c.get("epithet", ""))}</span>'
+        wm = sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 84, "wm") if sg.get("faction") else ""
+        return (f'<a class="card" href="{rel}{self.char_href(c["id"])}" data-faction="{esc(c["faction"])}" data-status="{esc(c["status"])}">{wm}'
+                f'{self.avatar_crest(c, rel, 56)}<div class="card-body"><b>{esc(c["name"])}</b><span class="dim">{esc(c.get("epithet", ""))}</span>'
                 + (f'<div class="chips">{chips}</div>' if chips else "") +
                 f'<span class="m">{seen_lbl}: {last}</span></div></a>')
 
@@ -2651,24 +2863,36 @@ class Site:
             have = x["temper"] - prev
             need = x["next_at"] - prev
             cap = f'<span class="s sealed-line">held by the Binding at {x["cap"]}</span>' if x.get("banked") else ""
-            tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}"><span class="v num">{x["score"]}<small>{x["mod"]:+d}</small></span>'
+            tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}">{medallion(k.capitalize(), x["score"], x["mod"], x["fell"], 60)}'
                          f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         wear = self.wearing_strip(rel)
-        chips = (f'<div class="chips">{chip("HP " + str(d["hp_max"]))}{chip("Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
+        chips = (f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
                  f'{self.works_chip()}{"" if wear else self.wardrobe_chip(rel)}{self.collection_chip(rel)}</div>')
-        inner = wear + chips + f'<div class="streaks">{"".join(tiles)}</div>'
+        stats = chips + f'<div class="streaks">{"".join(tiles)}</div>'
+        inner = f'<div class="screen">{self.wearing_figure(rel)}<div class="screen-stats">{wear}{stats}</div></div>' if wear else stats
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
     def wearing_strip(self, rel):
         """The look he wears (looks.json → wearing, else the newest) at the head of his Reckoning: a small picture and its
-        name in a strip framed in his rank's metal, opening the Wardrobe. Empty while no look is filed."""
+        name in a strip framed in his rank's metal, opening the Wardrobe. Empty while no look is filed. On a wide screen
+        the strip gives way to wearing_figure."""
         lk = self.looks[0] if self.looks else None
         if not lk:
             return ""
         return (f'<a class="wear-strip{self.metal(self.darrow["level"])}" href="{rel}darrow/wardrobe.html">'
                 f'<img src="{rel}{lk["_sm"]}" alt="{esc(lk["alt"])}" width="64" height="96" decoding="async">'
                 f'<span><span class="lbl">Wearing</span><b>{esc(lk["name"])}</b><span class="go">The Wardrobe →</span></span></a>')
+
+    def wearing_figure(self, rel):
+        """The look he wears standing full length beside his numbers (the character screen), on a screen wide enough for
+        both: the medium copy on the stage, framed in his rank's metal, its name under it, opening the Wardrobe."""
+        lk = self.looks[0] if self.looks else None
+        if not lk:
+            return ""
+        return (f'<a class="wear-fig{self.metal(self.darrow["level"])}" href="{rel}darrow/wardrobe.html">'
+                f'<span class="wear-stage"><img src="{rel}{lk["_md"]}" alt="{esc(lk["alt"])}" width="200" height="300" loading="lazy" decoding="async"></span>'
+                f'<span class="wear-cap"><span class="lbl">Wearing</span><b>{esc(lk["name"])}</b><span class="go">The Wardrobe →</span></span></a>')
 
     def darrow_panels(self, rel):
         """Darrow's sheet below the Reckoning, each section folded shut with a line of what it holds: (meta, title, html, id)."""
@@ -2747,6 +2971,22 @@ class Site:
             return ""
         return chip(f"The Tether {roman(t['stage'])} of {roman(t.get('of', 5))} · {t.get('name', '')}", "ember")
 
+    def tether_thread(self):
+        """The Tether as the finer thread under the rope, once tied: its stages, the reached ones named (rules.json →
+        tether.names, as far as the sheet has climbed), and how far along the next one is. Nothing before stage I."""
+        t = self.darrow.get("tether") or {}
+        stage = as_int(t.get("stage")) or 0
+        if not stage:
+            return ""
+        rules = self.rules.get("tether") or {}
+        stages, names = list(rules.get("stages") or []), list(rules.get("names") or [])
+        of = as_int(t.get("of")) or len(stages) or 5
+        days, nxt = as_int(t.get("days")) or 0, as_int(t.get("next_at"))
+        prev = stages[stage - 1] if stage - 1 < len(stages) else 0
+        frac = (days - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
+        line = f"The Tether · {roman(stage)} of {roman(of)} · {t.get('name', '')}"
+        return f'<div class="thread-row">{thread_track(stage, of, frac, names[:stage])}<p class="m">{esc(line)}</p></div>'
+
     def works_chip(self):
         """The works: how many he has finished, once there is one. The count is the sheet's; what they were is not the page's."""
         w = self.darrow.get("works") or {}
@@ -2764,7 +3004,7 @@ class Site:
                         f'<span class="m">{esc(k["proves"])}</span>{opens}</div>'
                         f'{badge("tied", "good") if on else badge("untied", "dim")}</li>')
         soft = '<p class="hint">The soft season: do not trust the quiet.</p>' if d.get("soft_season") else ""
-        return rope_knots(tied, knots) + f'<ul class="knots">{"".join(rows)}</ul>{soft}'
+        return rope_knots(tied, knots) + self.tether_thread() + f'<ul class="knots">{"".join(rows)}</ul>{soft}'
 
     def render_darrow(self):
         """Darrow's page: who he is, then the Reckoning, open; below them every other section folded shut (a link to one
@@ -3105,7 +3345,7 @@ class Site:
         def card(cid, o):  # a piece in a tray: its name, what it looks like, and the short reason it is his (or what opens it)
             desc = f'<span class="d">{esc(o["_desc"])}</span>' if o["_desc"] else ""
             return (f'<button type="button" class="pc{"" if o["_usable"] else " locked"}" role="radio" aria-checked="false" data-id="{esc(o["id"])}" id="piece-{esc(cid)}-{esc(o["id"])}"'
-                    f'{"" if o["_usable"] else ' aria-disabled="true"'}><b>{"" if o["_usable"] else lock}{esc(o["name"])}</b>{desc}'
+                    f'{"" if o["_usable"] else ' aria-disabled="true"'}><span class="pc-ic">{glyph(cid, 16)}</span><b>{"" if o["_usable"] else lock}{esc(o["name"])}</b>{desc}'
                     f'<span class="t">{new if o["_new"] else ""}{esc(o["_tag"])}</span></button>')
 
         def chip_(cid, o):  # a piece in a short category: its name, and what opens it while locked
@@ -3232,15 +3472,16 @@ class Site:
         ladder = "".join(f'<li class="{"on" if col["have"] >= r["at"] else ""}{" cur" if r["at"] == col["rank_at"] and not col["complete"] else ""}">'
                          f'<span class="num">{r["at"]}</span><b>{esc(r["name"])}</b></li>' for r in col["ranks"])
         ladder += f'<li class="{"on cur" if col["complete"] else ""}"><span class="num">all</span><b>{esc((w.get("collection") or {}).get("complete", ""))}</b></li>'
+        ladder = f'<ol class="col-ladder col-rail">{ladder}</ol>'
         plate = (f'<section class="plate col-plate{self.metal(d["level"])}"><p class="lbl"><a href="index.html">Ser Darrow of Edgemoor</a> · <a href="wardrobe.html">The Wardrobe</a></p>'
                  '<h1>The Collection</h1><p class="sub">Every piece he can wear, and where each one came from. More opens as he grows, and as the story shows him new things.</p>'
                  f'<div class="col-rank"><span class="lbl">His rank</span><b>{esc(col["rank"])}</b><span class="num col-count">{col["have"]} of {col["of"]} pieces</span></div>'
-                 f'{meter}<ol class="col-ladder">{ladder}</ol></section>')
+                 f'{meter}{ladder}</section>')
 
         def tile(cid, o):
             ch = (f' · in the Prologue' if o["_ch"] == 0 else f' · Chapter {o["_ch"]}') if o["_usable"] and o["_ch"] is not None else ""
             return (f'<li><a class="ctile{"" if o["_usable"] else " locked"}" href="wardrobe.html#piece-{esc(cid)}-{esc(o["id"])}">'
-                    f'<b>{"" if o["_usable"] else lock}{esc(o["name"])}</b>'
+                    f'<b>{glyph(cid, 14)}{"" if o["_usable"] else lock}{esc(o["name"])}</b>'
                     f'<span class="t">{new if o["_new"] else ""}{esc(o["_tag"])}{esc(ch)}</span></a></li>')
 
         sets, n_whole = [], 0
@@ -3249,8 +3490,9 @@ class Site:
             have = sum(o["_usable"] for _, o in mem)
             whole = bool(mem) and have == len(mem)
             n_whole += whole
+            seal = f'{seal_whole(30)}<span class="sr">whole</span>' if whole else ""
             sets.append(f'<div class="cset{" whole" if whole else ""}"><div class="cset-h"><b>{esc(s["name"])}</b>'
-                        f'<span class="num">{have} of {len(mem)}</span>{badge("whole", "good") if whole else ""}</div>'
+                        f'<span class="num">{have} of {len(mem)}</span>{seal}</div>'
                         f'<p class="m">{esc(s["about"])}</p>{pips(have, len(mem), "brass")}'
                         f'<ul class="ctiles sm">{"".join(tile(c, o) for c, o in mem)}</ul></div>')
         sets_html = sec("The sets", f"{n_whole} of {len(sets)} whole", f'<div class="csets">{"".join(sets)}</div>') if sets else ""
@@ -3266,7 +3508,7 @@ class Site:
                 inner = f'<ul class="ctiles">{"".join(tile(c["id"], o) for o in opts)}</ul>'
             if hid:
                 inner += f'<p class="hint col-hidden"><span class="glyph" aria-hidden="true">?</span> {hid} more {"stays" if hid == 1 else "stay"} hidden until {"it opens" if hid == 1 else "they open"}.</p>'
-            shelves.append(panel(c["label"], f'{have} of {len(c["options"])}', inner, f'shelf-{c["id"]}'))
+            shelves.append(panel(c["label"], f'{glyph(c["id"], 16)}{have} of {len(c["options"])}', inner, f'shelf-{c["id"]}'))
         body = plate + sets_html + sec("The shelves", f'{col["have"]} of {col["of"]}', f'<div class="panels">{"".join(shelves)}</div>'
                                        '<p class="hint">Tap a piece to see it in the Forge.</p>')
         self.pages["darrow/collection.html"] = shell("The Collection", body, rel, "Darrow", "collection-page", desc="Every piece of Darrow's Wardrobe, and where each came from.")
@@ -3406,7 +3648,7 @@ class Site:
         if nxt:
             line += f' · next, {esc(nxt["name"])}: {esc(nxt["proves"])}'
         soft = '<p class="hint">The soft season: do not trust the quiet.</p>' if d.get("soft_season") else ""
-        return f'<div class="knots-brief">{rope_knots(tied, knots)}<p class="m">{line}.</p>{soft}</div>'
+        return f'<div class="knots-brief">{rope_knots(tied, knots)}<p class="m">{line}.</p>{self.tether_thread()}{soft}</div>'
 
     def render_now(self):
         """What is going on now, in the order he would act on it: the chapter and the way back into it, an open choice,
@@ -3427,19 +3669,32 @@ class Site:
             where = pname + (f", {detail}" if detail else "")
         scene_row = ""
         if latest and after:  # the newest piece is a Between: the scene it follows gets its own row
-            scene_row = (f'<dt>Latest scene</dt><dd><a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">'
+            scene_row = (f'<dt>Latest scene</dt><dd><a href="{rel}chronicle/{ch["slug"]}.html#{latest["anchor"]}">{glyph(self.scene_kind(latest), 14)}'
                          f'{esc((latest["label"] + " — " if latest["label"] else "") + latest["title"])}</a></dd>')
         book_line = f"Book {roman(w.get('book', 1))} — {w['book_title']}" if w.get("book_title") else ""
         tier = (d.get("chapter_now") or {}).get("tier_so_far")
-        tier_chip = f'<div class="chips">{chip(TIER_SO_FAR[tier], TIER_CLS.get(tier, ""))}</div>' if tier in TIER_SO_FAR else ""
-        plate = (f'<section class="plate now-plate"><p class="lbl">{esc(book_line)}</p>'
+        tier_chip = (f'<div class="seal-row">{svg_seal(tier, 30, open_=True)}{chip(TIER_SO_FAR[tier], TIER_CLS.get(tier, ""))}</div>'
+                     if tier in TIER_SO_FAR else "")
+        backdrop = ""  # the place he is at, faint behind the plate, once its picture is on the page
+        if place.get("on_page") and place.get("image"):
+            reg = self.register_image(f"places.json {place.get('id')} image", place["image"], place.get("image_alt"))
+            m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(place.get("image_focus") or ""))
+            if reg:
+                backdrop = f' style="--bg:url({rel}{reg[3]});--focus:{m.group(1) + "% " + m.group(2) + "%" if m else "50% 50%"}"'
+        plate = (f'<section class="plate now-plate"{backdrop}><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>{tier_chip}'
                  f'<dl class="kv"><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd>{scene_row}</dl>'
                  f'<div class="beat"><span class="lbl">Just happened</span><p>{esc(w.get("last_beat", ""))}</p></div>{self.continue_button(rel)}</section>')
         q = w.get("current_quest") or {}
-        work = "".join(f'<h3 class="sub-h">Work in hand</h3><p class="prose">{esc(pr.get("name", ""))}, stage {pr.get("stage")} of {pr.get("of")}: {esc(pr.get("visible", ""))}</p>'
+        work = "".join(f'<div class="qrow"><span class="qic">{glyph("work", 18)}</span><div><span class="lbl">Work in hand</span>'
+                       f'<p class="prose">{esc(pr.get("name", ""))}, stage {pr.get("stage")} of {pr.get("of")}: {esc(pr.get("visible", ""))}</p>'
+                       f'{pips(as_int(pr.get("stage")) or 0, as_int(pr.get("of")) or 1, "brass") if as_int(pr.get("of")) else ""}</div></div>'
                        for pr in getattr(self, "projects", []) or [] if pr.get("status") == "live")
-        quest = sec("The quest", q.get("name", ""), f'<p class="prose">{esc(q.get("on_the_page", ""))}</p><h3 class="sub-h">What he is fighting</h3><p class="prose">{esc(w.get("current_struggle", ""))}</p>' + work)
+        qlog = (f'<div class="qlog"><div class="qhead">{glyph("quest", 22)}<b>{esc(q.get("name", ""))}</b></div>'
+                f'<p class="obj">{esc(q.get("on_the_page", ""))}</p>'
+                f'<div class="qrow"><span class="qic">{glyph("swords", 18)}</span><div><span class="lbl">What he is fighting</span>'
+                f'<p class="prose">{esc(w.get("current_struggle", ""))}</p></div></div>{work}</div>')
+        quest = sec("The quest", "", qlog)
         tales_html = ""
         if self.tales:
             items = []
@@ -3453,9 +3708,9 @@ class Site:
         oc = self.open_choice()
         open_html = answered_html = ""
         if oc:
-            open_html = sec(self.choice_title(oc["kind"], None, oc["scene"]["key"]), "waiting on Darrow",
+            open_html = sec(self.choice_title(oc["kind"], None, oc["scene"]["key"]), "",
                             self.choice_list(oc["items"]) + f'<p class="dim">From <a href="{rel}chronicle/{oc["chapter"]["slug"]}.html#{oc["scene"]["anchor"]}">{esc(oc["chapter"]["label"] + " — " + oc["scene"]["title"])}</a>.</p>',
-                            cls="choice-open")
+                            cls="choice-open", label_html=glyph("choice", 15) + " waiting on Darrow")
         else:
             lc = self.latest_choice()
             if lc:
@@ -3469,20 +3724,24 @@ class Site:
             if not cid:
                 continue
             c = self.chars[cid]
-            sg = c.get("sigil") or {}
             mood = approval_word(int(comp["approval"])) if "approval" in comp else "at his side"
-            comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{self.avatar(c, rel, 48, "sm") or sigil(self.factions.get(sg.get("faction"), {}), sg.get("mark"), 48)}'
-                         f'<div><div class="comp-top"><b>{esc(c["name"])}</b><span class="lbl">{mood_mark(mood)}{esc(mood)}</span></div><span class="m">{esc(c.get("last_seen_doing", ""))}</span></div></a>')
+            regard = (bar(int(comp["approval"]) + 100, 200, "Regard for Darrow", "approval", text=mood, quiet=True) if "approval" in comp else "")
+            comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{self.avatar_crest(c, rel, 48, "sm")}'
+                         f'<div><div class="comp-top"><b>{esc(c["name"])}</b><span class="lbl">{mood_mark(mood)}{esc(mood)}</span></div>'
+                         f'<span class="m">{esc(c.get("last_seen_doing", ""))}</span>{regard}</div></a>')
         companions = sec("With him", "", f'<div class="comps">{"".join(comps)}</div>' if comps else '<p class="empty">No one yet.</p>')
         a = d["attributes"]
-        rk = "".join(f'<div class="mini-attr"><span class="lbl">{k.capitalize()}</span><span class="v num">{a[k]["score"]}</span><span class="fell num">{a[k]["fell"]}</span></div>'
+        rk = "".join(f'<div class="mini-attr{" hot" if a[k]["score"] >= a[k]["fell"] else ""}">{medallion(k.capitalize(), a[k]["score"], a[k]["mod"], a[k]["fell"], 48)}'
+                     f'<span class="lbl">{k.capitalize()}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
         bchip = (self.bearing_chip() or "") + self.tether_chip() + self.works_chip()
-        card = (f'<div class="rk-mini"><div class="hero{self.metal(d["level"])}">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])} · HP {d["hp_max"]}</p>'
-                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"])}</div>'
+        card = (f'<div class="rk-mini"><div class="hero{self.metal(d["level"])}">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])}</p>'
+                f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}</div>'
+                f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"], "spark")}</div>'
                 + (f'<div class="chips">{bchip}</div>' if bchip else "") + '</div></div>'
+                f'{self.xp_bar()}'
                 f'<div class="mini-attrs">{rk}</div><p class="hint">The faint numbers are the ones he read behind his own.</p>'
-                f'{bar(d["ember"]["value"] or 0, 100, "Ember · " + str(d["ember"]["tier"] or "unlit"), "ember", d["ember"]["value"])}'
+                f'{self.ember_bar()}'
                 f'{self.knots_brief(rel)}'
                 f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
         reck = sec("The Reckoning", "", card)
@@ -3606,14 +3865,15 @@ class Site:
         rel = "../"
         secs, jumps = [], []
 
-        def rows(items, start=1):
+        def rows(items, start=1, kind=""):
+            ic = glyph(kind, 15, "rk-ic") if kind else ""
             return f'<ol class="archive" start="{start}">' + "".join(
-                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span><span class="rn num">{i}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
+                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span>{ic}<span class="rn num">{i}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
                 for i, it in enumerate(items, start)) + "</ol>"
 
-        def add(title, sid, count, inner):
-            secs.append(sec(title, str(count), inner, hid=sid))
-            jumps.append(f'<a class="chip" href="#{sid}">{esc(title)}</a>')
+        def add(title, sid, count, inner, kind="", label_html=""):
+            secs.append(sec(title, str(count), inner, hid=sid, label_html=label_html))
+            jumps.append(f'<a class="chip ic-chip" href="#{sid}">{glyph(kind, 13) if kind else ""}{esc(title)}</a>')
 
         been, named = [], []
         for p in self.places:
@@ -3628,32 +3888,35 @@ class Site:
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         inner = ""
         if been:
-            inner += f'<h3 class="sub-h">Where he has been <span class="num">· {len(been)}</span></h3>' + rows(been)
+            inner += f'<h3 class="sub-h">Where he has been <span class="num">· {len(been)}</span></h3>' + rows(been, kind="place")
         if named:
-            inner += f'<h3 class="sub-h">Named, not yet reached <span class="num">· {len(named)}</span></h3>' + rows(named, len(been) + 1)
+            inner += f'<h3 class="sub-h">Named, not yet reached <span class="num">· {len(named)}</span></h3>' + rows(named, len(been) + 1, kind="place")
         if offmap:
             inner += f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>'
-        add("Places", "places", len(been) + len(named), inner or '<p class="empty">Nothing yet.</p>')
+        n_places = len(been) + len(named)
+        found = (f'{pips(len(been), n_places, "brass")} <span class="num">{len(been)} of {n_places} reached</span>' if n_places else "")
+        add("Places", "places", n_places, inner or '<p class="empty">Nothing yet.</p>', kind="place", label_html=found)
         facs = []
         for f in self.factions.values():
             if not f.get("on_page"):
                 continue
             facs.append({"name": f["name"], "id": f"faction-{f['id']}", "tag": self.codex_thumb(f, rel),
                          "html": self.codex_figure(f, rel) + f'<div class="fac">{sigil(f, None, 44)}<p>{esc(f["description"])}</p></div>'})
-        add("Factions", "factions", len(facs), rows(facs))
+        add("Factions", "factions", len(facs), rows(facs, kind="faction"), kind="faction")
         sayings = [{"name": s["name"].strip('"“”'), "tag": "", "html": f"<p>{inline(s['text'])}</p>"} for s in self.codex.get("Sayings", [])]
-        add("Sayings", "sayings", len(sayings), rows(sayings))
+        add("Sayings", "sayings", len(sayings), rows(sayings, kind="saying"), kind="saying")
         things, beasts, extra = [], [], {}
         for key, bucket, e, anchor in self.codex_things():
             item = {"name": e["name"], "id": anchor, "tag": self.codex_thumb(e, rel),
                     "html": self.codex_figure(e, rel) + self.codex_song(e, rel) + f"<p>{inline(e['text'])}</p>"}
             (things if bucket == "things" else beasts if bucket == "beasts" else extra.setdefault(key, [])).append(item)
-        add("Things", "things", len(things), rows(things) if things else '<p class="empty">Nothing yet.</p>')
+        add("Things", "things", len(things), rows(things, kind="thing") if things else '<p class="empty">Nothing yet.</p>', kind="thing")
         if beasts:
-            add("Beasts and others", "beasts", len(beasts), rows(beasts))
+            add("Beasts and others", "beasts", len(beasts), rows(beasts, kind="beast"), kind="beast")
         for key, items in extra.items():
             if items:
-                add(key, "sec-" + slug(key), len(items), rows(items))
+                kind = "song" if "song" in key.lower() or "verse" in key.lower() else "scene"
+                add(key, "sec-" + slug(key), len(items), rows(items, kind=kind), kind=kind)
         jump = f'<nav class="jump chips" aria-label="Codex sections">{"".join(jumps)}</nav>'
         body = ('<section class="plate"><p class="lbl">The Codex</p><h1>Places, factions, sayings</h1><p class="dim">Only what the page has shown. '
                 f'Names on the map that the story has not reached yet are names and nothing more.</p>{jump}</section>' + "".join(secs))

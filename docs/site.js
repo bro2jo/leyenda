@@ -2,6 +2,20 @@
 (function(){
 "use strict";
 var root = document.documentElement;
+root.classList.add("js");
+/* the bars fill the first time they come into view (site.css: html.js .bar>i starts empty, .bar.in fills; still under
+   reduced motion). A browser without the observer, or no script at all, shows every bar full from the start. */
+var bars = document.querySelectorAll(".bar");
+if (bars.length) {
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {rootMargin: "0px 0px -6% 0px"});
+    bars.forEach(function(b){ io.observe(b); });
+  } else {
+    bars.forEach(function(b){ b.classList.add("in"); });
+  }
+}
 /* reading progress (chapter pages carry the bar) */
 var bar = document.querySelector(".progress>i");
 if (bar) {

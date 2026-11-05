@@ -134,6 +134,8 @@ button.chip[aria-pressed=true]{background:var(--brass);color:var(--night);border
 .bar-l{display:flex;justify-content:space-between;gap:8px;font-size:.9rem}
 .bar{height:10px;background:var(--raw);border-radius:2px;position:relative;overflow:hidden}
 .bar>i{position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,var(--brass-dim),var(--brass));transition:width .9s cubic-bezier(.2,.7,.2,1)}
+/* with the script, a bar fills the first time it comes into view (site.js adds .in) */
+html.js .bar>i{width:0} html.js .bar.in>i{width:var(--w)}
 .bar.ember>i{background:linear-gradient(90deg,#8E3B26,var(--ember))}
 .bar.approval>i{background:linear-gradient(90deg,var(--t3),var(--t2))}
 .bar.temper>i{background:linear-gradient(90deg,var(--t3),var(--t1))}
@@ -141,7 +143,19 @@ button.chip[aria-pressed=true]{background:var(--brass);color:var(--night);border
 .pip{width:10px;height:10px;transform:rotate(45deg);border:1px solid var(--brass-dim);background:transparent}
 .pip.on{background:var(--brass);border-color:var(--brass)}
 .pips.rank .pip{width:8px;height:8px}
+/* Inspiration as sparks: a four-point star, lit when held */
+.pips.spark .pip{width:13px;height:13px;transform:none;border:0;background:var(--brass-dim);opacity:.45;clip-path:polygon(50% 0,63% 37%,100% 50%,63% 63%,50% 100%,37% 63%,0 50%,37% 37%)}
+.pips.spark .pip.on{background:var(--brass);opacity:1}
 .insp{display:flex;gap:10px;align-items:center}
+/* a chip with a glyph before its words (HP, Proficiency) */
+.ic-chip{display:inline-flex;align-items:center;gap:5px} .ic-chip .ic{flex:none}
+/* a bar's segments (ticks: an int) or marks (a list of fractions), and a drawing before its label */
+.bar .ticks{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(100% / var(--n) - 1.5px),var(--night) calc(100% / var(--n) - 1.5px) calc(100% / var(--n)))}
+.bar .tick{position:absolute;top:-2px;bottom:-2px;left:var(--x);width:1.5px;background:var(--night);box-shadow:0 0 0 .5px rgba(207,166,95,.35);pointer-events:none}
+.bar-l>span:first-child{display:inline-flex;align-items:center;gap:6px}
+.bar-l .flame{flex:none}
+.ember-effect{font-size:.82rem;color:var(--dim);font-style:italic}
+.row2 .ember-effect{margin-top:4px}
 .row2{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end}
 @media (max-width:440px){.row2{grid-template-columns:minmax(0,1fr)}}
 
@@ -160,6 +174,13 @@ details[open]>summary::after{content:"\2212"}
 .chron li{display:grid;gap:2px;border-left:2px solid var(--rule);padding-left:12px}
 .chron li.now{border-left-color:var(--brass)}
 .chron li.book{border-left-color:transparent;padding-left:0}
+/* the chronicle's rail: a knot per chapter on the line, the current one in ember with a pulse */
+.chron li.ch{position:relative}
+.chron li.ch::before{content:"";position:absolute;left:-7px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--night);border:2px solid var(--brass-dim)}
+.chron li.now::before{background:var(--ember);border-color:var(--ember)}
+.chron li.now::after{content:"";position:absolute;left:-11px;top:2px;width:17px;height:17px;border-radius:50%;border:1.5px solid var(--ember);opacity:.8;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{transform:scale(.45);opacity:.9}100%{transform:scale(1.3);opacity:0}}
+.chron .scenes .ic{vertical-align:-3px;margin-right:5px;opacity:.8}
 .chron li.named{border-left-style:dotted}
 .chron li.book b{font-family:var(--label);letter-spacing:.1em;color:var(--brass);font-weight:700}
 .chron b{font-weight:700}
@@ -186,6 +207,9 @@ details[open]>summary::after{content:"\2212"}
 .archive+.sub-h{margin-top:18px}
 .jump .chip{color:var(--brass);border-color:var(--brass-dim)}
 .archive summary .rn{font-family:var(--display);color:var(--brass);min-width:1.7em;padding-right:.4em;flex:none;display:inline-block;font-size:1.2rem;line-height:1}
+.archive summary .rk-ic{flex:none;align-self:center;margin-right:8px;opacity:.6}
+.sec-h .lbl .pips{vertical-align:-1px;margin-right:4px}
+.jump .ic-chip .ic{opacity:.8}
 .archive .dt-body{color:var(--dim);max-width:62ch;display:grid;gap:6px}
 .archive .dt-body p{line-height:1.5}
 .archive .m{font-size:.86rem;color:var(--faint)}
@@ -235,11 +259,11 @@ dialog.zoom .x{position:fixed;top:10px;right:12px;width:40px;height:40px;border-
 .sealed-line{color:var(--t4-text);font-family:var(--label);letter-spacing:.06em}
 .sealed-box{border-color:var(--t4)}
 
-/* streak-style attribute tiles */
+/* attribute tiles: a medallion (the score, the modifier, and the Knight Who Fell's number as an arc round it), the temper bar under it */
 .streaks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.stk{display:grid;gap:4px;border-top:2px solid var(--rule);padding-top:8px;min-width:0}
-.stk .v{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;color:var(--ink)}
-.stk .v small{font-size:.9rem;color:var(--dim);margin-left:3px;font-family:var(--body)}
+.stk{display:grid;gap:4px;justify-items:center;text-align:center;border-top:2px solid var(--rule);padding-top:10px;min-width:0}
+.stk .medal{display:block;margin-bottom:2px}
+.stk .bar-row{width:100%}
 .stk .n{font-family:var(--label);font-size:.85rem;letter-spacing:.06em;color:var(--ink)}
 .stk .s{font-size:.76rem;color:var(--dim);line-height:1.3}
 .stk .s.faint{color:var(--faint)}
@@ -275,6 +299,26 @@ a.fac-sub{color:var(--dim);text-decoration:none} a.fac-sub:hover{color:var(--bra
 .wear-strip b{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;color:var(--brass)}
 .wear-strip .go{color:var(--dim);font-size:.9rem} .wear-strip:hover .go{color:var(--brass)}
 .reck .streaks{margin-top:6px}
+/* the character screen: on a wide enough screen the look he wears stands full length (wearing_figure) beside his numbers;
+   on a phone the strip above stays and the figure is not loaded */
+.screen{display:grid;gap:14px}
+.screen-stats{display:grid;gap:12px;min-width:0}
+.wear-fig{display:none;color:var(--ink);text-decoration:none}
+.wear-stage{display:block;aspect-ratio:2/3;border:1px solid var(--metal-dim);border-radius:6px;overflow:hidden;background:var(--stage);box-shadow:0 0 0 4px rgba(207,166,95,.06)}
+.wear-stage img{display:block;width:100%;height:100%;object-fit:contain}
+.wear-cap{display:grid;gap:2px;min-width:0}
+.wear-cap b{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;color:var(--brass)}
+.wear-cap .go{color:var(--dim);font-size:.9rem} .wear-fig:hover .go{color:var(--brass)} .wear-fig:hover{text-decoration:none}
+@media (min-width:560px){
+  .screen{grid-template-columns:minmax(150px,190px) minmax(0,1fr);align-items:start}
+  .screen .wear-strip{display:none}
+  .wear-fig{display:grid;gap:8px;align-content:start}
+  .screen .streaks{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* the Tether: the finer thread under the rope (thread_track) */
+.thread-row{display:grid;gap:4px}
+.thread{width:100%;height:auto;display:block}
+.thread-row .m{font-size:.86rem;color:var(--dim)}
 .panels{display:grid;gap:10px}
 .panels-h{margin-top:4px}
 .panels-h+.panel{margin-top:-2px}
@@ -373,6 +417,22 @@ a.art-pic{cursor:zoom-in}
 .lg-route path{stroke:var(--ember);stroke-width:2;stroke-dasharray:4 3;stroke-linecap:round}
 
 /* now page */
+/* the place he is at, faint behind the plate (when its picture is on the page), fading out toward the foot */
+.now-plate{position:relative;overflow:hidden}
+.now-plate::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background:var(--bg,none) var(--focus,50% 50%)/cover no-repeat;
+  -webkit-mask-image:linear-gradient(180deg,#000 15%,transparent 92%);mask-image:linear-gradient(180deg,#000 15%,transparent 92%)}
+.now-plate>*{position:relative}
+.now-plate .seal-row .chip{margin-left:-2px}
+/* the quest log: the quest's name under its pennant, the objective with a marker, what he fights, the work in hand */
+.qlog{display:grid;gap:12px;border:1px solid var(--rule);border-radius:6px;padding:12px 14px;background:var(--plate)}
+.qhead{display:flex;align-items:center;gap:10px}
+.qhead b{font-family:var(--display);font-weight:700;font-size:1.35rem;line-height:1.1;color:var(--brass)}
+.qlog .obj{position:relative;padding-left:18px;max-width:62ch;line-height:1.55}
+.qlog .obj::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;transform:rotate(45deg);background:var(--brass)}
+.qrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;border-top:1px dotted var(--rule);padding-top:10px}
+.qrow .qic{display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--rule);border-radius:50%;background:var(--night)}
+.qrow>div{display:grid;gap:3px;min-width:0}
+.qrow .pips{margin-top:3px}
 .comps{display:grid;gap:10px}
 .comp{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:10px}
 .comp:hover{text-decoration:none;border-color:var(--brass-dim)}
@@ -380,17 +440,26 @@ a.art-pic{cursor:zoom-in}
 .comp-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .comp .m{font-size:.88rem;color:var(--dim)}
 /* the level-up banner (level_news): the crest and the border in the rank's metal */
-.lvl-news{display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--metal);border-radius:6px;color:var(--ink);background:linear-gradient(90deg,rgba(226,113,59,.16),transparent 75%)}
+.lvl-news{display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--metal);border-radius:6px;color:var(--ink);background:linear-gradient(90deg,rgba(226,113,59,.16),transparent 75%);position:relative;overflow:hidden}
 .lvl-news:hover{text-decoration:none;border-color:var(--ember)}
 .lvl-news .crest{width:52px;flex:none}
 .lvl-news b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1.15}
 .lvl-news .m{display:block;color:var(--dim);font-size:.95rem}
+/* one shine across the banner when the page opens */
+.lvl-news::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-35%;width:26%;pointer-events:none;transform:skewX(-18deg);
+  background:linear-gradient(100deg,transparent,rgba(235,207,150,.22),transparent);animation:shine 1.6s ease-out .5s 1 both}
+@keyframes shine{0%{left:-35%}100%{left:125%}}
 .rk-mini{display:grid;gap:12px}
 .rk-mini .who h3{font-size:1.35rem}
+.rk-mini .who .chips{margin-top:2px}
 .mini-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.mini-attr{display:grid;gap:0;border-top:2px solid var(--rule);padding-top:6px}
-.mini-attr .v{font-family:var(--display);font-weight:700;font-size:1.8rem;line-height:1}
-.mini-attr .fell{font-size:.8rem;color:var(--faint)}
+.mini-attr{display:grid;gap:3px;justify-items:center;border-top:2px solid var(--rule);padding-top:8px}
+.mini-attr.hot{border-top-color:var(--ember)}
+.mini-attr .lbl{font-size:.74rem}
+/* a Blazing fire flickers, faintly */
+.flame{flex:none;vertical-align:middle}
+.flame.blazing{transform-origin:50% 75%;animation:flicker 1.9s ease-in-out infinite alternate}
+@keyframes flicker{0%{opacity:.84;transform:scale(.97)}100%{opacity:1;transform:scale(1)}}
 .rolls{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .roll{display:grid;gap:5px;border-bottom:1px dotted var(--rule);padding-bottom:8px}
 .roll-top{display:flex;align-items:center;gap:10px}
@@ -414,8 +483,14 @@ a.art-pic{cursor:zoom-in}
 .fgrp{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
 .filters .lbl{margin-right:2px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
-.card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:10px;border:1px solid var(--rule);border-radius:6px;color:var(--ink)}
+.card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:10px;border:1px solid var(--rule);border-radius:6px;color:var(--ink);position:relative;overflow:hidden}
 .card:hover{text-decoration:none;border-color:var(--brass-dim)}
+/* the faction's shield faint behind the card, and the level crest on the face (avatar_crest) when the Eye reads one */
+.card .wm{position:absolute;right:-14px;top:-8px;opacity:.07;pointer-events:none}
+.card>*{position:relative}
+.ava{position:relative;display:block;flex:none;width:max-content}
+.ava .crest{position:absolute;right:-7px;bottom:-7px;width:27px;height:auto;filter:drop-shadow(0 1px 3px rgba(0,0,0,.75))}
+.comp .bar-row{margin-top:6px} .comp .bar{height:5px}
 .card-body{display:grid;gap:4px;min-width:0}
 .card .m{font-size:.82rem;color:var(--faint)}
 .card[hidden]{display:none}
@@ -435,16 +510,24 @@ a.art-pic{cursor:zoom-in}
 .facts li{display:grid;gap:2px;font-size:.95rem;border-bottom:1px dotted var(--rule);padding-bottom:5px}
 .facts .src{font-size:.8rem;color:var(--faint)}
 .rk-card{border:1px solid var(--brass-dim);border-radius:6px;padding:12px 14px;display:grid;gap:8px;background:linear-gradient(180deg,rgba(207,166,95,.06),transparent)}
+/* a Reckoning the Eye has read: framed in the rank's metal, with the plate's rivets */
+.rk-card.framed{border-color:var(--metal-dim);padding:14px 16px;background:
+  radial-gradient(circle at 9px 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+  radial-gradient(circle at calc(100% - 9px) 9px,var(--metal-dim) 0 1.6px,transparent 2.2px),
+  radial-gradient(circle at 9px calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
+  radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),var(--metal-dim) 0 1.6px,transparent 2.2px),
+  linear-gradient(180deg,rgba(207,166,95,.06),transparent)}
 .rk-h{font-family:var(--label);letter-spacing:.12em;color:var(--brass);font-size:.9rem}
 .rk-line{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.rk-head{gap:10px} .rk-head .crest{width:34px;flex:none}
 .rk-line.borrowed{color:var(--t6)} .rk-line.earned{color:var(--ink)} .rk-line.unlit{color:var(--dim)}
 .rk-line.deeper{color:var(--t1);font-style:italic}
+.rk-line .flame{margin-right:2px}
 .rk-attrs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.rk-attr{display:grid;border-top:2px solid var(--rule);padding-top:6px}
-.rk-attr .v{font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1}
-.rk-attr.borrowed{border-top-color:var(--t5)} .rk-attr.borrowed .v{color:var(--t6)}
-.rk-attr.earned{border-top-color:var(--brass-dim)} .rk-attr.earned .v{color:var(--brass)}
-.rk-attr.unlit .v{color:var(--dim)}
+.rk-attr{display:grid;gap:3px;justify-items:center;border-top:2px solid var(--rule);padding-top:8px}
+.rk-attr .lbl{font-size:.74rem}
+.rk-attr.borrowed{border-top-color:var(--t5)}
+.rk-attr.earned{border-top-color:var(--brass-dim)}
 
 /* the reader */
 .reader{display:grid;gap:22px}
@@ -464,7 +547,8 @@ a.art-pic{cursor:zoom-in}
 .scene.between{margin-left:14px;padding-left:14px;border-left:2px solid var(--rule)}
 .scene.between .scene-h{font-size:1.15rem;border-bottom:0;padding-bottom:0}
 .scene.between .scene-n{color:var(--dim)}
-.scene-n{font-family:var(--label);font-size:.85rem;letter-spacing:.1em;color:var(--brass)}
+.scene-n{font-family:var(--label);font-size:.85rem;letter-spacing:.1em;color:var(--brass);display:inline-flex;align-items:center;gap:6px}
+.scene-n .ic{flex:none;opacity:.85}
 .reader h3{font-family:var(--display);font-weight:700;font-size:1.3rem}
 hr.break{border:0;border-top:1px solid var(--rule);width:40%;margin:4px auto}
 .ornament{text-align:center;color:var(--brass-dim);letter-spacing:.4em;font-size:.9rem}
@@ -489,7 +573,14 @@ details.roll-more>summary::after{margin-left:0}
 .insp-glyph{display:inline-block;width:32px;text-align:center;font-size:1.25rem;line-height:32px;color:var(--brass)}
 .dice-tag{font-family:var(--label);letter-spacing:.08em;font-size:.82rem;color:var(--brass);border:1px solid var(--brass-dim);border-radius:3px;padding:1px 7px;white-space:nowrap}
 .dice-body{font-variant-numeric:tabular-nums}
-.choice-h{font-family:var(--display);font-size:1.35rem;color:var(--brass)}
+.choice-h{font-family:var(--display);font-size:1.35rem;color:var(--brass);display:flex;align-items:center;gap:8px}
+.choice-h .ic{flex:none}
+/* a choice framed as a decision: a brass bracket down its left */
+.decision{position:relative;max-width:65ch;padding:4px 0 4px 14px;border-left:2px solid var(--brass-dim)}
+.decision::before,.decision::after{content:"";position:absolute;left:-2px;width:14px;border-top:2px solid var(--brass-dim)}
+.decision::before{top:0} .decision::after{bottom:0}
+.decision .chosen-free{margin-top:8px}
+.state .ic{vertical-align:-2px;margin-right:3px}
 ol.choice{margin:0;padding-left:1.4em;display:grid;gap:8px;max-width:65ch;font-size:17px;line-height:1.5}
 ol.choice li.taken{color:var(--ink)} ol.choice li.taken::marker{color:var(--good)}
 ol.choice li{color:var(--dim)}
@@ -575,6 +666,8 @@ ol.choice li s{color:var(--faint)}
   html,html:focus-within{scroll-behavior:auto}
   .rp-knot.on{animation:none}
   .mp-ring{animation:none;opacity:.6}
+  .flame.blazing,.lvl-news::after,.chron li.now::after,.col-rail li.cur::after{animation:none}
+  .lvl-news::after{display:none}
   .bar>i{transition:none}
   .mast,.panel>summary::after{transition:none}
 }
@@ -634,7 +727,11 @@ ol.choice li s{color:var(--faint)}
 .pk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 @media (min-width:600px){.pk-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pc{position:relative;display:grid;align-content:start;gap:4px;padding:9px 10px 10px;border:1px solid var(--raw);border-radius:6px;background:var(--night);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
-.pc b{font-size:.9rem;font-weight:600;line-height:1.25;padding-right:12px}
+.pc b{font-size:.9rem;font-weight:600;line-height:1.25;padding-right:20px}
+/* the category's glyph in the card's corner (under the check when chosen) */
+.pc-ic{position:absolute;top:8px;right:8px;line-height:0;opacity:.55}
+.pc[aria-checked=true] .pc-ic{display:none}
+.pc.locked .pc-ic{opacity:.3}
 .pc .d{font-size:.76rem;line-height:1.3;color:var(--dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pc .t,.ctile .t{font-family:var(--label);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.35;color:var(--brass);margin-top:2px}
 .pc:hover{border-color:var(--brass-dim)}
@@ -694,16 +791,24 @@ button.btn{font-size:1rem;cursor:pointer}
 .col-rank b{font-family:var(--display);font-size:2rem;line-height:1.1;color:var(--metal-hi,var(--brass))}
 .col-count{color:var(--dim);font-size:.95rem}
 .col-next{color:var(--dim);font-size:.95rem} .col-next b{color:var(--ink);font-weight:600}
-.col-ladder{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.col-ladder li{display:flex;align-items:baseline;gap:6px;padding:3px 9px;border:1px dashed var(--rule);border-radius:999px;font-size:.82rem;color:var(--faint)}
-.col-ladder li b{font-weight:600} .col-ladder .num{font-family:var(--label);font-size:.7rem;letter-spacing:.06em}
-.col-ladder li.on{border-style:solid;border-color:var(--brass-dim);color:var(--dim)} .col-ladder li.on b{color:var(--ink)}
-.col-ladder li.cur{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)} .col-ladder li.cur b{color:var(--brass)}
+/* the ranks as a rail: a knot per rank on a line, the reached ones brass, his own in ember with a pulse; down the page
+   on a phone, across it when there is room */
+.col-rail{list-style:none;margin:4px 0 0;padding:0 0 0 18px;display:grid;gap:8px;position:relative}
+.col-rail::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;border-left:2px solid var(--rule)}
+.col-rail li{position:relative;display:flex;align-items:baseline;gap:6px;font-size:.82rem;color:var(--faint)}
+.col-rail li::before{content:"";position:absolute;left:-18px;top:.35em;width:8px;height:8px;border-radius:50%;background:var(--night);border:2px solid var(--rule)}
+.col-rail li b{font-weight:600} .col-rail .num{font-family:var(--label);font-size:.7rem;letter-spacing:.06em;min-width:1.6em}
+.col-rail li.on{color:var(--dim)} .col-rail li.on b{color:var(--ink)} .col-rail li.on::before{background:var(--brass-dim);border-color:var(--brass)}
+.col-rail li.cur b{color:var(--brass)} .col-rail li.cur::before{background:var(--ember);border-color:var(--ember)}
+.col-rail li.cur::after{content:"";position:absolute;left:-22px;top:calc(.35em - 4px);width:17px;height:17px;border-radius:50%;border:1.5px solid var(--ember);opacity:.8;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@media (min-width:600px){.col-rail{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.col-rail::before{display:none}.col-rail li::after{content:"";position:absolute;left:-14px;top:calc(.35em + 10px);height:calc(100% + 8px - .35em);border-left:2px solid var(--rule)}.col-rail li:nth-child(5)::after,.col-rail li:last-child::after{display:none}.col-rail li.cur::after{content:"";left:-22px;top:calc(.35em - 4px);height:17px;border:1.5px solid var(--ember)}}
 .csets{display:grid;gap:10px}
 @media (min-width:640px){.csets{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .cset{display:grid;gap:6px;align-content:start;padding:12px;border:1px solid var(--rule);border-radius:6px;background:var(--plate);min-width:0}
 .cset.whole{border-color:var(--brass-dim)}
-.cset-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap} .cset-h b{font-family:var(--display);font-size:1.2rem;line-height:1.2;margin-right:auto}
+.cset-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap} .cset-h b{font-family:var(--display);font-size:1.2rem;line-height:1.2;margin-right:auto}
+.cset-h .seal{margin-left:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .cset-h .num{color:var(--dim);font-size:.85rem}
 .cset .m{margin:0;color:var(--dim);font-size:.9rem}
 .ctiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
@@ -711,6 +816,8 @@ button.btn{font-size:1rem;cursor:pointer}
 .ctile{display:grid;gap:2px;height:100%;padding:7px 9px;border:1px solid var(--raw);border-radius:6px;background:var(--night);color:var(--ink);min-width:0}
 .ctile:hover{text-decoration:none;border-color:var(--brass-dim)}
 .ctile b{font-size:.86rem;font-weight:600;line-height:1.25}
+.ctile b .ic{vertical-align:-3px;margin-right:5px;opacity:.7} .ctile.locked b .ic{opacity:.35}
+.panel>summary .meta .ic{vertical-align:-4px;margin-right:6px;opacity:.8}
 .ctiles.sm .ctile{padding:5px 8px} .ctiles.sm .ctile b{font-size:.8rem}
 .col-hidden{display:flex;align-items:center;gap:8px} .col-hidden .glyph{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border:1px dashed var(--faint);border-radius:50%;color:var(--faint);font-family:var(--display)}
 .collection-page .panel-body .pk-g{margin:6px 0 4px}
