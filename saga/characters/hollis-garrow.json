@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-8",
+    "scene": "between-7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-7"
   },
-  "last_seen_doing": "Let Wren take the Captain off in the middle of his lesson, and stayed in the yard.",
-  "now": "In the inn yard by the well.",
+  "last_seen_doing": "Saw that the lesson was the Captain keeping him off the taps and taught it anyway, from the mounting block; said, sober, that he would follow him into the river again; improved the last throw into the first for Wren and was caught; refused to teach her; let them go.",
+  "now": "On the mounting block in the inn yard, sober, with tomorrow's lesson already named.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -694,6 +694,12 @@
       "chapter": "05",
       "scene": "between-7",
       "evidence": "Tomorrow we go over the wall."
+    },
+    {
+      "fact": "He would not teach Wren to throw, saying she would count it instead of throwing it.",
+      "chapter": "05",
+      "scene": "between-7",
+      "evidence": "You'd count it instead of throwing it."
     }
   ],
   "relationships": [
@@ -1019,10 +1025,6 @@
     {
       "chapter": "05",
       "scene": "between-7"
-    },
-    {
-      "chapter": "05",
-      "scene": "between-8"
     }
   ]
 }

@@ -1572,10 +1572,11 @@
         "scene": "between-7",
         "date": "2026-11-04"
       },
-      "chose": "Found Hollis eyeing the taproom door and asked him for a throwing lesson at the well-bucket instead; learned the Measured Hand; heard him say, sober, that he would follow him into the river again",
+      "chose": "Found Hollis eyeing the taproom door and asked him for a throwing lesson at the well-bucket instead; learned the Measured Hand; heard him say, sober, that he would follow him into the river again; then let Wren buy him a drover's coat in the taproom with her winnings off Hollis, and closed the sale by telling the drover the truth",
       "now": {
         "approval": {
-          "hollis": 2
+          "hollis": 2,
+          "wren": 2
         }
       },
       "due": [
@@ -1604,25 +1605,9 @@
           "fits": "present.hollis && beats.b2_4.status == \"in_progress\"",
           "priority": 3,
           "status": "pending"
-        }
-      ]
-    },
-    {
-      "id": "c05.10",
-      "made": {
-        "chapter": 5,
-        "scene": "between-8",
-        "date": "2026-11-04"
-      },
-      "chose": "Let Wren buy him a drover's coat in the Coldmere taproom with her winnings off Hollis; stood as her simple brother, then closed the sale by telling the drover the truth about his new jersey",
-      "now": {
-        "approval": {
-          "wren": 2
-        }
-      },
-      "due": [
+        },
         {
-          "id": "c05.10a",
+          "id": "c05.9c",
           "when": "later",
           "at": "later",
           "weight": "color",

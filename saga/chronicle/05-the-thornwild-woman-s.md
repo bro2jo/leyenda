@@ -869,7 +869,7 @@ He laughed, because it was true and because she meant him to, and the dealer's l
 
 "Aye," said Rae. "Don't go saying it twice."
 
-### Between — The Well-Bucket
+### Between — The Measured Hand
 
 Hollis was in the passage when they came back from the dealer's, propped against the wall by the taproom door as if the wall had asked him to stay, with the noise and the fire-smell coming out round him.
 
@@ -935,13 +935,33 @@ The pebble went up into the lantern light, hung there for a heartbeat, and came 
 
 Hollis looked at the bucket. Then he slapped the mounting block with his open hand and roared, "*That*—" loud enough that a shutter banged open across the yard and banged shut again. "That's a Measured Hand. That's mine, that is. I taught that. Tomorrow we go over the wall. Overwall, they call it, you put it over a man's shield and into the back of his neck and he never—"
 
-"Tomorrow," said Wren, from the kitchen door, "he's not having. Tonight he's having a coat."
+"—never sees it coming," said Wren, from the kitchen door. "I know. I've been here since the bucket went in the well."
 
-### Between — A Coat for the Road
+She came across the yard with her scarf up to her nose and her ledger under her arm.
 
-"We're in the middle of a lesson," Hollis said.
+"First throw of the night," Hollis told her. "Straight in, soft as a kiss. I've never seen the like."
 
-"You're in the middle of a lesson." Wren came across the yard with her scarf up to her nose and her ledger under her arm. "He's in the middle of a chill. Four days on the road in an infirmary shirt. I've counted his teeth going."
+"Ninth throw," said Wren. "The first one's at the bottom of the well with the bucket. I heard it go."
+
+"The first one was a sighting shot."
+
+"It was a bucket." She turned to Darrow. "Throws: nine. Buckets in the well: one. Buckets fetched: one, with language." Then she looked at the taproom shutters, and back at Hollis on his block, and said in exactly the same voice, "Times Ser Hollis has gone through that door tonight: none."
+
+Hollis looked at her for a while.
+
+"Don't," he said.
+
+"I'm only counting." She did not write it down. "Teach me, then. The bucket."
+
+"No."
+
+"Why not?"
+
+"You'd count it instead of throwing it." Hollis picked a pebble out of the hat and turned it over in his fingers. "A throw's not a number, girl. You can't add it up and make it land. You decide, and you let go, and after that it's out of your hands. That's the part you'd never stand."
+
+Wren opened her mouth to argue, and looked at the bucket, and shut it again.
+
+"Anyway," she said, rather fast, "he can't have lessons. He's blue. Four days on the road in an infirmary shirt. I've counted his teeth going."
 
 "They haven't," said Darrow.
 
@@ -951,7 +971,13 @@ Hollis looked at the bucket. Then he slapped the mounting block with his open ha
 
 "I have."
 
-Hollis opened his mouth, and looked at the bucket, and shut it again, and waved them off with the air of a man who had had the best of the evening and knew it.
+"We're in the middle of a lesson," said Hollis.
+
+"You're in the middle of a lesson. He's in the middle of a chill."
+
+Hollis looked from her to the bucket and back, and waved them off with the air of a man who had had the best of the evening and knew it. "Tomorrow," he called after them. "Over the wall."
+
+"Tonight," said Wren over her shoulder, "he's having a coat."
 
 Wren put him in the taproom doorway, in the shadow where the passage came in, with his face to the jamb. "Stand there," she said. "Look ill. You're good at it." Then she went across the room and sat down opposite the drover without being asked, as she sat down at a ledger.
 

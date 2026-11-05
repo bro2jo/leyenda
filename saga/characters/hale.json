@@ -25,9 +25,9 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-8",
+    "scene": "between-7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-7"
   },
   "last_seen_doing": "Had his book open at Rae's elbow while the coat was sold, and turned a page.",
   "now": "At the end of his bar with the book open.",
@@ -82,7 +82,7 @@
     },
     {
       "chapter": "05",
-      "scene": "between-8"
+      "scene": "between-7"
     }
   ]
 }
