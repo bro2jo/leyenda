@@ -194,6 +194,7 @@ details[open]>summary::after{content:"\2212"}
 .chron details.scn>summary::after{content:"";width:6px;height:6px;margin:0 0 3px 2px;align-self:center;border-right:1.5px solid var(--brass);border-bottom:1.5px solid var(--brass);transform:rotate(45deg)}
 .chron details.scn[open]>summary::after{content:"";transform:rotate(-135deg);margin:3px 0 0 2px}
 .chron .scenes a{color:var(--dim)}
+.chron .scenes li>a{display:inline}
 .chron .scenes li{display:block}
 .chron .scenes .state{margin-left:6px;vertical-align:1px}
 
@@ -207,8 +208,6 @@ details[open]>summary::after{content:"\2212"}
 .archive+.sub-h{margin-top:18px}
 .jump .chip{color:var(--brass);border-color:var(--brass-dim)}
 .archive summary .rn{font-family:var(--display);color:var(--brass);min-width:1.7em;padding-right:.4em;flex:none;display:inline-block;font-size:1.2rem;line-height:1}
-.archive summary .rk-ic{flex:none;align-self:center;margin-right:8px;opacity:.6}
-.sec-h .lbl .pips{vertical-align:-1px;margin-right:4px}
 .jump .ic-chip .ic{opacity:.8}
 .archive .dt-body{color:var(--dim);max-width:62ch;display:grid;gap:6px}
 .archive .dt-body p{line-height:1.5}
@@ -519,7 +518,6 @@ a.art-pic{cursor:zoom-in}
   linear-gradient(180deg,rgba(207,166,95,.06),transparent)}
 .rk-h{font-family:var(--label);letter-spacing:.12em;color:var(--brass);font-size:.9rem}
 .rk-line{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.rk-head{gap:10px} .rk-head .crest{width:34px;flex:none}
 .rk-line.borrowed{color:var(--t6)} .rk-line.earned{color:var(--ink)} .rk-line.unlit{color:var(--dim)}
 .rk-line.deeper{color:var(--t1);font-style:italic}
 .rk-line .flame{margin-right:2px}
@@ -727,11 +725,7 @@ ol.choice li s{color:var(--faint)}
 .pk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 @media (min-width:600px){.pk-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .pc{position:relative;display:grid;align-content:start;gap:4px;padding:9px 10px 10px;border:1px solid var(--raw);border-radius:6px;background:var(--night);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
-.pc b{font-size:.9rem;font-weight:600;line-height:1.25;padding-right:20px}
-/* the category's glyph in the card's corner (under the check when chosen) */
-.pc-ic{position:absolute;top:8px;right:8px;line-height:0;opacity:.55}
-.pc[aria-checked=true] .pc-ic{display:none}
-.pc.locked .pc-ic{opacity:.3}
+.pc b{font-size:.9rem;font-weight:600;line-height:1.25;padding-right:12px}
 .pc .d{font-size:.76rem;line-height:1.3;color:var(--dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pc .t,.ctile .t{font-family:var(--label);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.35;color:var(--brass);margin-top:2px}
 .pc:hover{border-color:var(--brass-dim)}
@@ -801,7 +795,6 @@ button.btn{font-size:1rem;cursor:pointer}
 .col-rail li.on{color:var(--dim)} .col-rail li.on b{color:var(--ink)} .col-rail li.on::before{background:var(--brass-dim);border-color:var(--brass)}
 .col-rail li.cur b{color:var(--brass)} .col-rail li.cur::before{background:var(--ember);border-color:var(--ember)}
 .col-rail li.cur::after{content:"";position:absolute;left:-22px;top:calc(.35em - 4px);width:17px;height:17px;border-radius:50%;border:1.5px solid var(--ember);opacity:.8;animation:pulse 2.4s ease-out infinite;pointer-events:none}
-@media (min-width:600px){.col-rail{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.col-rail::before{display:none}.col-rail li::after{content:"";position:absolute;left:-14px;top:calc(.35em + 10px);height:calc(100% + 8px - .35em);border-left:2px solid var(--rule)}.col-rail li:nth-child(5)::after,.col-rail li:last-child::after{display:none}.col-rail li.cur::after{content:"";left:-22px;top:calc(.35em - 4px);height:17px;border:1.5px solid var(--ember)}}
 .csets{display:grid;gap:10px}
 @media (min-width:640px){.csets{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .cset{display:grid;gap:6px;align-content:start;padding:12px;border:1px solid var(--rule);border-radius:6px;background:var(--plate);min-width:0}

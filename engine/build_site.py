@@ -2578,7 +2578,7 @@ class Site:
         lvl = rk.get("level")
         if eye >= 1:
             head = f'Level {lvl} · {esc(rk.get("rank"))}' if lvl is not None else esc(rk.get("rank") or "")
-            rows.append(f'<p class="rk-line rk-head">{crest(lvl if lvl is not None else "—")}<span>{head}</span></p>')
+            rows.append(f'<p class="rk-line">{head}</p>')
         else:
             rows.append(f'<p class="rk-line">{unread}</p>')
         if eye >= 2:
@@ -2864,12 +2864,12 @@ class Site:
             need = x["next_at"] - prev
             cap = f'<span class="s sealed-line">held by the Binding at {x["cap"]}</span>' if x.get("banked") else ""
             tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}">{medallion(k.capitalize(), x["score"], x["mod"], x["fell"], 60)}'
-                         f'<span class="n">{k.capitalize()}</span><span class="s faint num">behind his own · {x["fell"]}</span>'
+                         f'<span class="n">{k.capitalize()}</span>'
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
         wear = self.wearing_strip(rel)
         chips = (f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
                  f'{self.works_chip()}{"" if wear else self.wardrobe_chip(rel)}{self.collection_chip(rel)}</div>')
-        stats = chips + f'<div class="streaks">{"".join(tiles)}</div>'
+        stats = chips + f'<div class="streaks">{"".join(tiles)}</div><p class="hint">The small number on each is who he was: the Knight Who Fell.</p>'
         inner = f'<div class="screen">{self.wearing_figure(rel)}<div class="screen-stats">{wear}{stats}</div></div>' if wear else stats
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
@@ -2971,9 +2971,10 @@ class Site:
             return ""
         return chip(f"The Tether {roman(t['stage'])} of {roman(t.get('of', 5))} · {t.get('name', '')}", "ember")
 
-    def tether_thread(self):
+    def tether_thread(self, line=True):
         """The Tether as the finer thread under the rope, once tied: its stages, the reached ones named (rules.json →
-        tether.names, as far as the sheet has climbed), and how far along the next one is. Nothing before stage I."""
+        tether.names, as far as the sheet has climbed), and how far along the next one is. Nothing before stage I.
+        line: the stage in words under it (left off where the chip beside it already says so)."""
         t = self.darrow.get("tether") or {}
         stage = as_int(t.get("stage")) or 0
         if not stage:
@@ -2984,8 +2985,8 @@ class Site:
         days, nxt = as_int(t.get("days")) or 0, as_int(t.get("next_at"))
         prev = stages[stage - 1] if stage - 1 < len(stages) else 0
         frac = (days - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
-        line = f"The Tether · {roman(stage)} of {roman(of)} · {t.get('name', '')}"
-        return f'<div class="thread-row">{thread_track(stage, of, frac, names[:stage])}<p class="m">{esc(line)}</p></div>'
+        words = f'<p class="m">{esc(f"The Tether · {roman(stage)} of {roman(of)} · {t.get("name", "")}")}</p>' if line else ""
+        return f'<div class="thread-row">{thread_track(stage, of, frac, names[:stage])}{words}</div>'
 
     def works_chip(self):
         """The works: how many he has finished, once there is one. The count is the sheet's; what they were is not the page's."""
@@ -3345,7 +3346,7 @@ class Site:
         def card(cid, o):  # a piece in a tray: its name, what it looks like, and the short reason it is his (or what opens it)
             desc = f'<span class="d">{esc(o["_desc"])}</span>' if o["_desc"] else ""
             return (f'<button type="button" class="pc{"" if o["_usable"] else " locked"}" role="radio" aria-checked="false" data-id="{esc(o["id"])}" id="piece-{esc(cid)}-{esc(o["id"])}"'
-                    f'{"" if o["_usable"] else ' aria-disabled="true"'}><span class="pc-ic">{glyph(cid, 16)}</span><b>{"" if o["_usable"] else lock}{esc(o["name"])}</b>{desc}'
+                    f'{"" if o["_usable"] else ' aria-disabled="true"'}><b>{"" if o["_usable"] else lock}{esc(o["name"])}</b>{desc}'
                     f'<span class="t">{new if o["_new"] else ""}{esc(o["_tag"])}</span></button>')
 
         def chip_(cid, o):  # a piece in a short category: its name, and what opens it while locked
@@ -3478,10 +3479,10 @@ class Site:
                  f'<div class="col-rank"><span class="lbl">His rank</span><b>{esc(col["rank"])}</b><span class="num col-count">{col["have"]} of {col["of"]} pieces</span></div>'
                  f'{meter}{ladder}</section>')
 
-        def tile(cid, o):
+        def tile(cid, o, ic=False):  # ic: the category's glyph before the name, where tiles of several categories sit together (a set)
             ch = (f' · in the Prologue' if o["_ch"] == 0 else f' · Chapter {o["_ch"]}') if o["_usable"] and o["_ch"] is not None else ""
             return (f'<li><a class="ctile{"" if o["_usable"] else " locked"}" href="wardrobe.html#piece-{esc(cid)}-{esc(o["id"])}">'
-                    f'<b>{glyph(cid, 14)}{"" if o["_usable"] else lock}{esc(o["name"])}</b>'
+                    f'<b>{glyph(cid, 14) if ic else ""}{"" if o["_usable"] else lock}{esc(o["name"])}</b>'
                     f'<span class="t">{new if o["_new"] else ""}{esc(o["_tag"])}{esc(ch)}</span></a></li>')
 
         sets, n_whole = [], 0
@@ -3494,7 +3495,7 @@ class Site:
             sets.append(f'<div class="cset{" whole" if whole else ""}"><div class="cset-h"><b>{esc(s["name"])}</b>'
                         f'<span class="num">{have} of {len(mem)}</span>{seal}</div>'
                         f'<p class="m">{esc(s["about"])}</p>{pips(have, len(mem), "brass")}'
-                        f'<ul class="ctiles sm">{"".join(tile(c, o) for c, o in mem)}</ul></div>')
+                        f'<ul class="ctiles sm">{"".join(tile(c, o, True) for c, o in mem)}</ul></div>')
         sets_html = sec("The sets", f"{n_whole} of {len(sets)} whole", f'<div class="csets">{"".join(sets)}</div>') if sets else ""
         shelves = []
         for c in w["categories"]:
@@ -3648,7 +3649,7 @@ class Site:
         if nxt:
             line += f' · next, {esc(nxt["name"])}: {esc(nxt["proves"])}'
         soft = '<p class="hint">The soft season: do not trust the quiet.</p>' if d.get("soft_season") else ""
-        return f'<div class="knots-brief">{rope_knots(tied, knots)}<p class="m">{line}.</p>{self.tether_thread()}{soft}</div>'
+        return f'<div class="knots-brief">{rope_knots(tied, knots)}<p class="m">{line}.</p>{self.tether_thread(line=False)}{soft}</div>'
 
     def render_now(self):
         """What is going on now, in the order he would act on it: the chapter and the way back into it, an open choice,
@@ -3675,13 +3676,7 @@ class Site:
         tier = (d.get("chapter_now") or {}).get("tier_so_far")
         tier_chip = (f'<div class="seal-row">{svg_seal(tier, 30, open_=True)}{chip(TIER_SO_FAR[tier], TIER_CLS.get(tier, ""))}</div>'
                      if tier in TIER_SO_FAR else "")
-        backdrop = ""  # the place he is at, faint behind the plate, once its picture is on the page
-        if place.get("on_page") and place.get("image"):
-            reg = self.register_image(f"places.json {place.get('id')} image", place["image"], place.get("image_alt"))
-            m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(place.get("image_focus") or ""))
-            if reg:
-                backdrop = f' style="--bg:url({rel}{reg[3]});--focus:{m.group(1) + "% " + m.group(2) + "%" if m else "50% 50%"}"'
-        plate = (f'<section class="plate now-plate"{backdrop}><p class="lbl">{esc(book_line)}</p>'
+        plate = (f'<section class="plate now-plate"{self.place_backdrop(place, rel)}><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>{tier_chip}'
                  f'<dl class="kv"><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd>{scene_row}</dl>'
                  f'<div class="beat"><span class="lbl">Just happened</span><p>{esc(w.get("last_beat", ""))}</p></div>{self.continue_button(rel)}</section>')
@@ -3757,6 +3752,18 @@ class Site:
         dice = sec("The dice", "", self.dice_html(rel))
         body = self.level_news(rel) + self.wardrobe_news(rel) + plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
+
+    def place_backdrop(self, place, rel):
+        """The style attribute that puts the place he is at faint behind the Now plate (site.css .now-plate::before): its
+        medium copy and its focus. Empty until the place and its picture are on the page."""
+        if not (place.get("on_page") and place.get("image")):
+            return ""
+        reg = self.register_image(f"places.json {place.get('id')} image", place["image"], place.get("image_alt"))
+        if not reg:
+            return ""
+        m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(place.get("image_focus") or ""))
+        focus = f"{m.group(1)}% {m.group(2)}%" if m else "50% 50%"
+        return f' style="--bg:url({rel}{reg[3]});--focus:{focus}"'
 
     def level_news(self, rel):
         """The level-up banner at the head of the Now page, for LEVEL_NEWS_DAYS after the level came: the crest in the
@@ -3865,10 +3872,9 @@ class Site:
         rel = "../"
         secs, jumps = [], []
 
-        def rows(items, start=1, kind=""):
-            ic = glyph(kind, 15, "rk-ic") if kind else ""
+        def rows(items, start=1):
             return f'<ol class="archive" start="{start}">' + "".join(
-                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span>{ic}<span class="rn num">{i}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
+                f'<li{(" id=" + chr(34) + it["id"] + chr(34)) if it.get("id") else ""}><details><summary><span><span class="rn num">{i}</span>{esc(it["name"])}</span>{it.get("tag", "")}</summary><div class="dt-body">{it["html"]}</div></details></li>'
                 for i, it in enumerate(items, start)) + "</ol>"
 
         def add(title, sid, count, inner, kind="", label_html=""):
@@ -3888,13 +3894,13 @@ class Site:
         offmap = [p["name"] for p in self.places if not p.get("on_page")]
         inner = ""
         if been:
-            inner += f'<h3 class="sub-h">Where he has been <span class="num">· {len(been)}</span></h3>' + rows(been, kind="place")
+            inner += f'<h3 class="sub-h">Where he has been <span class="num">· {len(been)}</span></h3>' + rows(been)
         if named:
-            inner += f'<h3 class="sub-h">Named, not yet reached <span class="num">· {len(named)}</span></h3>' + rows(named, len(been) + 1, kind="place")
+            inner += f'<h3 class="sub-h">Named, not yet reached <span class="num">· {len(named)}</span></h3>' + rows(named, len(been) + 1)
         if offmap:
             inner += f'<p class="dim">On the map but not yet in the story: {esc(", ".join(offmap))}.</p>'
         n_places = len(been) + len(named)
-        found = (f'{pips(len(been), n_places, "brass")} <span class="num">{len(been)} of {n_places} reached</span>' if n_places else "")
+        found = f'<span class="num">{len(been)} of {n_places} reached</span>' if n_places else ""
         add("Places", "places", n_places, inner or '<p class="empty">Nothing yet.</p>', kind="place", label_html=found)
         facs = []
         for f in self.factions.values():
@@ -3902,21 +3908,20 @@ class Site:
                 continue
             facs.append({"name": f["name"], "id": f"faction-{f['id']}", "tag": self.codex_thumb(f, rel),
                          "html": self.codex_figure(f, rel) + f'<div class="fac">{sigil(f, None, 44)}<p>{esc(f["description"])}</p></div>'})
-        add("Factions", "factions", len(facs), rows(facs, kind="faction"), kind="faction")
+        add("Factions", "factions", len(facs), rows(facs), kind="faction")
         sayings = [{"name": s["name"].strip('"“”'), "tag": "", "html": f"<p>{inline(s['text'])}</p>"} for s in self.codex.get("Sayings", [])]
-        add("Sayings", "sayings", len(sayings), rows(sayings, kind="saying"), kind="saying")
+        add("Sayings", "sayings", len(sayings), rows(sayings), kind="saying")
         things, beasts, extra = [], [], {}
         for key, bucket, e, anchor in self.codex_things():
             item = {"name": e["name"], "id": anchor, "tag": self.codex_thumb(e, rel),
                     "html": self.codex_figure(e, rel) + self.codex_song(e, rel) + f"<p>{inline(e['text'])}</p>"}
             (things if bucket == "things" else beasts if bucket == "beasts" else extra.setdefault(key, [])).append(item)
-        add("Things", "things", len(things), rows(things, kind="thing") if things else '<p class="empty">Nothing yet.</p>', kind="thing")
+        add("Things", "things", len(things), rows(things) if things else '<p class="empty">Nothing yet.</p>', kind="thing")
         if beasts:
-            add("Beasts and others", "beasts", len(beasts), rows(beasts, kind="beast"), kind="beast")
+            add("Beasts and others", "beasts", len(beasts), rows(beasts), kind="beast")
         for key, items in extra.items():
             if items:
-                kind = "song" if "song" in key.lower() or "verse" in key.lower() else "scene"
-                add(key, "sec-" + slug(key), len(items), rows(items, kind=kind), kind=kind)
+                add(key, "sec-" + slug(key), len(items), rows(items), kind="song" if "song" in key.lower() or "verse" in key.lower() else "scene")
         jump = f'<nav class="jump chips" aria-label="Codex sections">{"".join(jumps)}</nav>'
         body = ('<section class="plate"><p class="lbl">The Codex</p><h1>Places, factions, sayings</h1><p class="dim">Only what the page has shown. '
                 f'Names on the map that the story has not reached yet are names and nothing more.</p>{jump}</section>' + "".join(secs))
