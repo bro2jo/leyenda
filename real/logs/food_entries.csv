@@ -231,3 +231,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-04#10,2026-11-04,,dinner,"Fried chicken fingers, XL (takeout)",4 (photo; ~95 g each),960,80,48,52,2,10,2,2000,1000,60,3.6,100,3.6,0,0.4,80,photo,breaded and fried; size from the photo and his word XL; restaurant not given
 2026-11-04#11,2026-11-04,,dinner,"Fresh-cut fries, skin-on, seasoned (takeout)",~200 g (photo),500,6,65,25,6,4,1,500,1000,25,1.6,60,0.7,15,0,0,photo,portion from the photo
 2026-11-04#12,2026-11-04,,dinner,"Honey mustard dipping sauce, side cup",2 cups (assumed ~1.5 oz each),320,1,20,26,0,4,18,400,30,10,0.2,5,0.1,0,0,0,estimate,creamy restaurant honey mustard assumed (~110 kcal an oz); cup size not given: asked
+2026-11-04#13,2026-11-04,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,library row (label 11/1)
