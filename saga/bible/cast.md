@@ -65,3 +65,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 ## Mirren
 - **Appearance:** Brother Anselm's younger sister: the same brown skin as her brother and a great deal of dark curling hair, worn loose. Seen only in a thin torn shift, sitting against a bare stone wall, somewhere that is not comfortable. Her portrait (`saga/art/characters/mirren.jpg`) is canon for her face.
 - **Voice:** Not yet heard.
+
+## Hale
+- **Appearance:** Rae's uncle: a big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron; a broad, open, ruddy face of the kind a whole valley trusts with its news, and quick eyes that come back to a thing a beat longer than they need to. A fat account book lies open on the end of his bar, a ribbon in it and a pencil in its spine.
+- **Voice:** Warm and unhurried. He answers a full room by lifting a hand without looking, writes a thing down as he says it, and his questions come out sounding like kindnesses. *"We'll talk the summer's loads in the morning, Rae."*

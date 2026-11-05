@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-6",
-    "place": "drove-road",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
   },
-  "last_seen_doing": "Outwaited every question, then corrected the Captain's backwards salt song, laughed out loud and admitted she started the singing.",
-  "now": "At the fire on Darrow's side of it, the stone from Hob's hoof thrown into the dark.",
+  "last_seen_doing": "Brought the company into Coldmere by the back lane; was called by name in the taproom and the Thornwild woman's by the old men; took Darrow to the dealer's yard; answered plainly why she had paid the mare's keep.",
+  "now": "Home in Coldmere, with the summer's loads to talk over with her uncle in the morning.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -665,6 +665,30 @@
       "evidence": "it'll be us that saw him last. I don't like being last."
     },
     {
+      "fact": "Coldmere's old men call her the Thornwild woman's.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "The Thornwild woman's, home."
+    },
+    {
+      "fact": "She has paid Thistle's keep at the dealer's every week since the autumn fair, from before Darrow sent his name down.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Every week since the fair, regular as a bell."
+    },
+    {
+      "fact": "She paid it because the mare had the Ninth's brand and nobody to stand for her, and she said she would not have done it for an ox.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "She'd the Ninth's brand on her and nobody to stand for her"
+    },
+    {
+      "fact": "She did not tell him because she knew he would say it aloud.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "I know. That's why you didn't."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -928,6 +952,10 @@
     {
       "chapter": "05",
       "scene": "between-6"
+    },
+    {
+      "chapter": "05",
+      "scene": "4"
     },
     {
       "chapter": "tale02",

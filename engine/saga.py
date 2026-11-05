@@ -5493,7 +5493,7 @@ def cmd_record(args):
             probs.append('voided items are {"id": …, "why": …}')
     codex = R.load_codex()
     if args.force:
-        R.unapply_codex_key(codex, key)
+        R.unapply_codex_key(codex, key, R.old_codex_items(key))
     probs += R.apply_codex_items(codex, ev.get("codex"), key)
     gm = ev.pop("gm", None) or {}
     if gm and not isinstance(gm, dict):
@@ -6302,7 +6302,7 @@ def record_tale(args, ev, st, key, n, k):
             probs.append(f"lore: no entry {lid!r} in the Annals")
     codex = R.load_codex()
     if args.force:
-        R.unapply_codex_key(codex, key)
+        R.unapply_codex_key(codex, key, R.old_codex_items(key))
     probs += R.apply_codex_items(codex, ev.get("codex"), key)
     gm = ev.pop("gm", None) or {}
     if gm and not isinstance(gm, dict):

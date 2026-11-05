@@ -71,11 +71,19 @@
       "after": "3",
       "covers": [],
       "written": "2026-11-03"
+    },
+    {
+      "scene": 4,
+      "title": "Since the Fair",
+      "covers": [
+        "2026-11-04"
+      ],
+      "written": "2026-11-04"
     }
   ],
   "location": {
-    "place": "drove-road",
-    "detail": "the night camp in the lee of a thorn hedge on the drove road",
+    "place": "coldmere",
+    "detail": "the dealer's yard on the fair-ground, past the mill on the outflow",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -85,7 +93,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Rae told him she sang after the turnip field because it would be them that saw the knight last, and she does not like being last; then told him to sing the salt song right, or they would hear him in Coldmere.",
+  "last_beat": "Darrow said aloud, to the dealer and to Rae, that he owes her the mare's keep since the fair and will stand the thaw's debt himself; Rae said she had not told him because she knew he would, and told him not to go saying it twice.",
   "companions": {
     "maelis": {
       "approval": 34,
@@ -266,5 +274,5 @@
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last."
   },
-  "last_updated": "2026-11-03"
+  "last_updated": "2026-11-04"
 }

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-6",
-    "place": "drove-road",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
   },
-  "last_seen_doing": "Bet Hollis a week of boot-mending he could make Rae admit she started the singing; on Wren's advice sang the salt song backwards until Rae corrected it, and won.",
-  "now": "At the night camp on the drove road, a wager won, Rae beside him at the fire.",
+  "last_seen_doing": "Heard from a carter that the banner had turned north, felt the old speed pull him after it, and turned for Coldmere; went to the dealer's yard, stood Thistle on the ice with Rae's word for stand said right at last, learned Rae had paid the mare's keep since the fair, and said aloud that he owes it.",
+  "now": "In Coldmere for the night, the company in the inn's loft; Thistle is still the dealer's till the thaw, and he has owned her keep as a debt to Rae.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1810,6 +1810,24 @@
       "evidence": "Nobody's ever sung it backwards. Not even drunk."
     },
     {
+      "fact": "When the carter said the banner had gone north, he felt the old speed pull him after it, and turned for Coldmere instead.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "the old speed came up in him like warmth"
+    },
+    {
+      "fact": "He said Rae's grandmother's word for stand right at last, and Thistle stood for him on the dealer's ice.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "It came out right."
+    },
+    {
+      "fact": "Before the dealer and Rae, he said he owes Rae the mare's keep since the fair and will stand the dealer's debt at the thaw himself.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Every copper of this mare's keep since the fair, the carter paid, and I owe it to her."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2191,6 +2209,10 @@
     {
       "chapter": "05",
       "scene": "between-6"
+    },
+    {
+      "chapter": "05",
+      "scene": "4"
     },
     {
       "chapter": "tale01",

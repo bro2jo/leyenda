@@ -260,7 +260,7 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae knows the mare lives and where; Darrow knows it from her and that the dealer holds her on his name till the thaw (04:s2); he said her name, Thistle, to Rae (04:between-1). The Ninth's brand (a gate) is on the page from the farrier (04:between-4); that the mare carries it, and that Rae knew it on her, is not.",
+      "who_knows": "Rae; Darrow (he has seen her at the dealer's in Coldmere, 05:s4, and knows Rae has paid her keep since the fair); the dealer; the reader.",
       "note": "plant 04:between-4: the Ninth's brand named on the page (a gate, two posts and a bar) from the farrier's chalk board; the mare can be known by it later.",
       "on_page": [
         "00:I",
@@ -272,6 +272,7 @@
         "04:between-1",
         "04:between-4",
         "05:s1",
+        "05:s4",
         "tale01:p1"
       ]
     },

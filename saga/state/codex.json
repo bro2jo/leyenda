@@ -14,13 +14,13 @@
         },
         {
           "name": "Thistle",
-          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; whoever stands the dealer's debt at Coldmere can lead her off (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between).",
+          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). In Coldmere, on the dealer's ice, she stood for the Thornwild word for stand when Darrow said it right, and went through his shirt as she used to on campaign. The dealer said a captain's word bought her keep only till the thaw, and that the carter has paid it every week since the fair; Darrow owned that keep as his debt to Rae Thorne. She is the dealer's till the thaw (Ch 5 Sc 4).",
           "sources": [
             "import",
             "ch03:s5",
-            "ch04:between-1"
-          ],
-          "_rebuild": true
+            "ch04:between-1",
+            "ch05:s4"
+          ]
         },
         {
           "name": "The red-handed woman",
@@ -366,12 +366,11 @@
         },
         {
           "name": "The undercroft door",
-          "text": "A low iron-banded door with a lock the size of a fist, behind the linen press at the dark end of the infirmary hall's east wall: the stair down to the undercroft. Shut since before Wren could count; the key is the Prior's, handed from Prior to Prior and never turned. Cold all the way through (Ch 2 Sc 7). The masons found the stair behind it when they cut the House's footings, and built on it rather than through it. Mother Ione turned the key at dusk with both hands, the first of her line of Priors to do so, and the door swung out on a stair of cut stone older than the House; the cold came up it to the height of a man's knee (Ch 3 Sc 3). The masons found the stair behind it when they cut the House's footings, and built on it rather than through it. Mother Ione turned the key at dusk with both hands, the first of her line of Priors to do so, and the door swung out on a stair of cut stone older than the House; the cold came up it to the height of a man's knee (Ch 3 Sc 3).",
+          "text": "A low iron-banded door with a lock the size of a fist, behind the linen press at the dark end of the infirmary hall's east wall: the stair down to the undercroft. Shut since before Wren could count; the key is the Prior's, handed from Prior to Prior and never turned. Cold all the way through (Ch 2 Sc 7). The masons found the stair behind it when they cut the House's footings, and built on it rather than through it. Mother Ione turned the key at dusk with both hands, the first of her line of Priors to do so, and the door swung out on a stair of cut stone older than the House; the cold came up it to the height of a man's knee (Ch 3 Sc 3).",
           "sources": [
             "ch02:s7",
             "ch03:s3"
-          ],
-          "_rebuild": true
+          ]
         },
         {
           "name": "Nights without",

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-6",
-    "place": "drove-road",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
   },
-  "last_seen_doing": "Backed both sides of the wager, since the loser mends the boots; called Hollis's slip a witness; handed him the threaded needle.",
-  "now": "At the fire, overseeing Hollis's stitches.",
+  "last_seen_doing": "Watched every stitch Hollis put in; judged the inn's stew; turned Hollis from the taps to the ladder.",
+  "now": "In the inn's loft.",
   "story_so_far": "She took him down at her count and brought him up at it, knew the way east before he asked, laid her hand on a handleless door and said to leave it, and breathed the cold at the far wall as if it were air. She stopped his hand once; the second time she waited to see if he would go, and said up when the frost had stopped at his knuckles. It is the second time she has seen a hand go into one of those.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -571,6 +571,12 @@
       "chapter": "05",
       "scene": "between-6",
       "evidence": "\"Whoever loses mends these.\""
+    },
+    {
+      "fact": "She turned Hollis away from the inn's taps.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Maelis took his elbow and turned him to the ladder"
     }
   ],
   "relationships": [
@@ -827,6 +833,10 @@
     {
       "chapter": "05",
       "scene": "between-6"
+    },
+    {
+      "chapter": "05",
+      "scene": "4"
     }
   ]
 }

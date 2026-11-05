@@ -686,3 +686,173 @@ Later, when Hollis had sworn at four stitches and Maelis had made him take out t
 Darrow let the joke he had ready go into the fire.
 
 "Now sing it right," Rae said, "or they'll hear you in Coldmere."
+
+### Scene 4 — Since the Fair
+
+"A man," said Hollis, "should not be made to wax thread on a moving cart."
+
+He had a boot across his knee on the tailboard, Wren's this time, with the sail-needle and the lump of wax, and the Mender sat opposite him with nothing in her hands for the first morning since the Steps, watching every stitch go in.
+
+"Then don't move," said Maelis.
+
+"The cart moves."
+
+"Then wax faster."
+
+It was the fourth morning off the mountain, bright and hard, the drove road bending south again between its walls toward the tarn, and Darrow was walking at Hob's head because his legs had woken before he did and wanted the road. He felt good. He had nearly stopped being surprised by it.
+
+At noon a carter came up the lane toward them with an empty dray and a shaggy pony, and hailed Rae by her bell from a hundred yards off. They stopped nose to nose between the walls, as carters did, and talked about oxen and the price of salt at the landing for a stretch that Wren timed and Hollis tried to put to use.
+
+"You'll want boots mended," he told the carter. "I can see it in your face."
+
+"I'll want no such thing." The carter looked past him at Rae. "You'll not have heard. The banner's gone."
+
+Rae's hand went still on Dun's neck. "Gone where?"
+
+"North. Came up the Holloway to the crossroads by Coldmere, forty of them and the smoke-cart, and sat in the road an hour like they were waiting on somebody. Then a rider came up the Calden road with his horse lathered to the girth, and their captain read what he brought and turned the whole column round where it stood. North, the Calden way, cart and all. Two days since." He spat over the wall. "Nobody in Coldmere was sorry."
+
+"Their captain," Darrow said. "Did you see him?"
+
+The carter looked at him properly for the first time: the stick, the infirmary shirt, the face. Whatever he made of it, he kept. "Saw his back. Good seat on him."
+
+"He has," said Darrow. "He always had."
+
+He found he had turned to look north before he had decided anything at all. The lane ran away between its walls toward the high road, and somewhere up it, two days on, was the one face in the Lowmarch he had come down a mountain wanting to watch while it answered. Two days was nothing. Two days was a horse. His feet knew it before the rest of him did, and the old speed came up in him like warmth, and the stick felt light in his hand.
+
+Hollis had stopped waxing. Rae had not moved from the pony's head. Neither of them said a word, and that, more than anything, told him they had both seen it.
+
+"Then Coldmere's empty of him," Darrow said.
+
+"It is," said Rae.
+
+He took Hob's rope out of her hand. "Coldmere, then."
+
+---
+
+They came down to Coldmere at dusk, from the north, as she had said they would: over the shoulder of the last field with the tarn below them gone the colour of pewter and the mist lying on it, and the lamps coming out one by one round the green. The bell-house stood with its back to the water, the paper on its door showing pale. Darrow did not need to go and read it. Across the road from it the inn had its yellow door, the one he had watched across the tarn from the fold wall three nights ago, and a noise behind it like a full hall.
+
+Rae took the cart in by the back lane to the inn yard, and a boy came running out of a doorway with a lantern, and stopped, and yelled into the house behind him, "That's Thorne's cart in!"
+
+It went through the inn like a dropped pan. By the time the oxen were out of the yoke there were faces in the kitchen door, and in the passage beyond it the taproom door stood open on a fire and a crowd. Somebody young shouted, "Rae!" Somebody else banged a mug on a table. And from the settle by the hearth, where three old men sat with their sticks between their knees, the oldest of them lifted his cup to her and said, as if he had been saying it for fifty years, "The Thornwild woman's, home."
+
+Rae went past the door with her head down and her ears red, and the taproom laughed at her, which she plainly expected, and did not seem to mind.
+
+Darrow came behind her with his head down. He heard the old men going on as he passed.
+
+"—every dusk since the snow. You can hear her from the mill on a still night."
+
+"Old Mercy."
+
+"That's what they ring for. Somebody up there's being kept."
+
+"They say he come down."
+
+"Who says?"
+
+Then the passage turned and he lost the rest of it, and was glad of the dark in the passage for a reason that was nothing to do with writs.
+
+Her uncle was at the tap. He was a big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron; and he had, Darrow saw at once, a good face, the kind a whole valley trusts with its news. He came round the end of the bar and took Rae's face in both his hands, and she let him, for about a breath.
+
+"You're home," he said.
+
+"I'm home."
+
+"Hale," the room said, from three directions, wanting something, and he lifted a hand to all three without looking and went to the big book that lay open on the bar's end, a fat thing with a ribbon in it and a pencil in its spine. He wet his thumb and turned a leaf. "Thorne's cart, in," he said, writing. "Salt?"
+
+"Some."
+
+"And company." He looked up over the book at the company in the passage door: at Maelis, at Hollis on the beech leg, at Wren, at the dog. His eyes went over Darrow and on, and then came back to him for one beat longer, the way a man's eyes come back to a coin on the floor. Then he wrote something short. "Loft's dry," he said. "Nobody in it. Nobody will be, tonight." He shut the book on the ribbon. "We'll talk the summer's loads in the morning, Rae."
+
+"In the morning," said Rae.
+
+Darrow liked him at once. It was a moment before he remembered, on the fold wall, Rae looking across the water at that yellow door and saying *my uncle's got a good face*; and by then it was too late to stop liking him, and he went up the loft ladder turning it over.
+
+"Faces in the taproom," Wren reported from the top of it. "Nineteen. Faces that looked at the Captain: none. Faces that looked at Rae: all of them."
+
+"The stew's been on since the snow," said Maelis, who had stopped in the kitchen on the way. "I'd eat the bread."
+
+Hollis had stopped on the way too, at the taproom door, and stood looking at the taps a long moment before Maelis took his elbow and turned him to the ladder. "I said nothing," he complained, going up it.
+
+"You looked."
+
+---
+
+The dealer's yard was on the far side of the fair-ground, past the mill on the outflow, a byre and a frozen square of trodden earth under one lantern. Rae had her cloak on before Darrow asked. She had known he would.
+
+The dealer came out grumbling, a narrow man with a chin like a spade, and sent his lad in. The lad led the mare out into the lantern light, and Darrow's breath went.
+
+She was thinner, and long in the back as she had always been, and she came out short behind, putting her hind feet down as if the ground might not be there. There was a white scar along her near quarter he did not know. Under it was the Ninth's brand. The lantern swung on its hook as the lad passed it, and she saw the light jump across the ice, and her hind feet went from under her on the frozen ruts, and she flung up her head and began to go back, all of her at once, toward the lad and the wall.
+
+The dealer swore and grabbed for the rope. Darrow said the word.
+
+He said it from under his ribs, where Rae had put it in him the night of the reeve's lantern, and for once he did not think about the catch in the middle until it was out of him.
+
+`[RESOLVE · DC 12]` d20 **16** +0 resolve +1 Ember Blazing = **17** — *Success*
+
+It came out right. He heard it come out right, short and low with the catch where the catch belonged: Rae's word, and her grandmother's before her.
+
+Thistle stood.
+
+She stood with all four feet planted on the ice and her head high and her nostrils wide, and then her ears came round to him, both of them, and stayed. She looked at him for a long moment across the yard. Then she came, short-stepping and careful, until her nose was in the front of his shirt, and she blew into it, hard, twice, as she had blown into it every morning on campaign to see what he had in there.
+
+"I've nothing," he told her. His voice was not good. "I'm sorry. I've nothing at all."
+
+She didn't believe him. She went through the shirt anyway.
+
+Behind him he heard Rae let a breath out, slowly. "You've got it," she said. "The word."
+
+"I've got it."
+
+"She stands for you, then," said the dealer, sourly. "That's something. She'll stand for nobody else, and she'll not take my bridge forwards, and I've the bruises to prove it." He hung the rope on a nail. "I'll say to you what I said to the carter, Captain. A captain's word's worth her keep till the thaw, and not a day past it, and that's generous, with your name on every post from here to the landing."
+
+"You've been generous, then," Darrow said, with his hand on Thistle's neck. "Feeding her on my word."
+
+The dealer laughed. "On your word? Feed a horse on a captain's word and you'll have a hide on your wall by midwinter. Your word bought her the thaw, that's all. It's the carter's coin she's been eating." He jerked his chin at Rae. "Every week since the fair, regular as a bell."
+
+The yard was very quiet. Thistle went on looking for whatever he had in his shirt.
+
+"You talk like a taproom," Rae told the dealer.
+
+"Since the fair," Darrow said.
+
+He worked it out with his hand on the mare's warm neck. The fair was autumn. He had sent his name down from the mountain weeks after it. All the weeks between, while he had lain on a cot and not said her name, somebody had been coming to this yard with coin.
+
+"Before I'd sent my name down," he said. "Before I knew she was alive."
+
+"Before that."
+
+"Why?"
+
+Rae looked at the mare, not at him, and answered as plainly as she named a load.
+
+"She'd the Ninth's brand on her and nobody to stand for her," she said. "He'd have sold her on for a cart-horse to the first man with a stick, and she'd never have taken a bridge forwards again in her life. So I stood. I'd do it for an ox."
+
+"Would you?"
+
+She thought about it, honestly, because she was Rae.
+
+"No," she said.
+
+Darrow turned round to the dealer. "Then hear it said, so there's a witness to it. Every copper of this mare's keep since the fair, the carter paid, and I owe it to her. And whatever's owed you at the thaw, that's mine to stand, not hers."
+
+The dealer shrugged. "Say it to the bell-house, for all I care."
+
+"I'm saying it to you." He looked at Rae. "And to her."
+
+"I don't want a horse," Rae said.
+
+"You've kept one since the fair."
+
+That reached her. He saw it reach her, in the lantern light, the way a weight reaches a cart-bed: nothing on the outside, everything underneath. She put her hand out, and Thistle, who had found nothing in his shirt, turned and went through Rae's cloak instead.
+
+"You'd have heard at the thaw," Rae said. "Coin or she's sold. You'd have heard it then."
+
+"I'd sooner have heard it from you."
+
+"I know. That's why you didn't."
+
+He laughed, because it was true and because she meant him to, and the dealer's lad laughed too without knowing why, and the mare put her ears back at both of them.
+
+"Well," said Darrow. "It's said now."
+
+"Aye," said Rae. "Don't go saying it twice."

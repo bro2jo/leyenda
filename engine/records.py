@@ -447,15 +447,20 @@ def apply_codex_items(codex, items, key):
             continue
         found = next((e for e in sec["entries"] if e["name"].lower() == name.lower()), None)
         if found:
-            found["text"] = (found["text"].rstrip() + " " + text).strip()
-            found.setdefault("sources", []).append(key)
+            if text not in found["text"]:  # a re-record of the same words adds nothing
+                found["text"] = (found["text"].rstrip() + " " + text).strip()
+            if key not in found.setdefault("sources", []):
+                found["sources"].append(key)
         else:
             sec["entries"].append({"name": name, "text": text, "sources": [key]})
     return probs
 
 
-def unapply_codex_key(codex, key):
-    """Drop what one event added to the codex (before re-recording it): entries it created, text it appended."""
+def unapply_codex_key(codex, key, old_items=None):
+    """Drop what one event added to the codex (before re-recording it): entries it created, and the text it appended
+    (`old_items`: the codex items of the event as last recorded), so a re-record replaces its words instead of
+    adding them again."""
+    old_text = {str(it.get("name") or "").strip().lower(): str(it.get("text") or "").strip() for it in old_items or []}
     for sec in codex.get("sections", []):
         kept = []
         for e in sec.get("entries", []):
@@ -464,9 +469,26 @@ def unapply_codex_key(codex, key):
                 continue  # the entry was this event's alone
             if key in src:
                 e["sources"] = [s for s in src if s != key]
-                e["_rebuild"] = True  # its text carried a part from this event: a rebuild from the events restores it
+                t = old_text.get(e["name"].lower())
+                if t and t in e["text"]:
+                    e["text"] = re.sub(r"\s{2,}", " ", e["text"].replace(t, "")).strip()
+                    e.pop("_rebuild", None)
+                else:
+                    e["_rebuild"] = True  # the words it appended are unknown here: check the entry by hand
             kept.append(e)
         sec["entries"] = kept
+
+
+def old_codex_items(key):
+    """The codex items of the event recorded under `key` (a chapter block or a tale piece), before a re-record."""
+    m = re.match(r"(ch|tale)(\d+):", str(key or ""))
+    if not m:
+        return []
+    path = EVENTS_DIR / f"{m.group(1)}{int(m.group(2)):02d}.jsonl"
+    if not path.exists():
+        return []
+    ev = next((e for e in read_jsonl(path) if e.get("key") == key), None)
+    return (ev or {}).get("codex") or []
 
 
 # ---------------------------------------------------------------- projections

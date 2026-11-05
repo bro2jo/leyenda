@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-6",
-    "place": "drove-road",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-6"
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
   },
-  "last_seen_doing": "Kept the book on the wager and told the Captain how to win it.",
-  "now": "At the fire with the ledger, a new line in it.",
+  "last_seen_doing": "Timed the carters' talk; counted the taproom's faces.",
+  "now": "In the inn's loft with the ledger.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -667,6 +667,12 @@
       "chapter": "05",
       "scene": "between-6",
       "evidence": "You get people by being wrong where they can't stand it."
+    },
+    {
+      "fact": "She counted nineteen faces in the taproom, none looking at the Captain and all looking at Rae.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Faces that looked at Rae: all of them."
     }
   ],
   "relationships": [
@@ -928,6 +934,10 @@
     {
       "chapter": "05",
       "scene": "between-6"
+    },
+    {
+      "chapter": "05",
+      "scene": "4"
     }
   ]
 }

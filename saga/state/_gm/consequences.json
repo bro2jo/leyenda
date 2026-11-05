@@ -1442,14 +1442,15 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 6,
+          "offered": 7,
           "offered_at": [
             "ch05:between-3",
             "ch05:between-4",
             "ch05:s3",
             "ch05:between-5",
             "ch05:s1",
-            "ch05:between-6"
+            "ch05:between-6",
+            "ch05:s4"
           ]
         }
       ]
@@ -1471,7 +1472,7 @@
           "weight": "color",
           "what": "Rae gave him her grandmother's Thornwild word for stand, said from the belly; he cannot make the catch in the middle of it yet, and practises it under his breath. Fire where he says it right at last, or uses it on an ox, a horse, or himself",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch05:s4",
           "offered": 5,
           "offered_at": [
             "ch05:between-4",
@@ -1479,7 +1480,8 @@
             "ch05:between-5",
             "ch05:s1",
             "ch05:between-6"
-          ]
+          ],
+          "evidence": "It came out right."
         }
       ]
     },
@@ -1506,11 +1508,12 @@
           "fits": "present.wren",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch05:between-5",
             "ch05:s1",
-            "ch05:between-6"
+            "ch05:between-6",
+            "ch05:s4"
           ]
         }
       ]
@@ -1535,7 +1538,8 @@
           "at": "ch05:s4",
           "weight": "color",
           "what": "Hollis lost the wager: he mends the company's boots for a week, waxing every stitch under the Mender's eye, and complains about it",
-          "status": "pending"
+          "status": "fired@ch05:s4",
+          "evidence": "should not be made to wax thread on a moving cart"
         },
         {
           "id": "c05.8b",
@@ -1547,9 +1551,10 @@
           "priority": 1,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch05:between-6"
+            "ch05:between-6",
+            "ch05:s4"
           ]
         }
       ]

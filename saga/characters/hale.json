@@ -1,0 +1,81 @@
+{
+  "id": "hale",
+  "name": "Hale",
+  "aliases": [
+    "Rae's uncle",
+    "the innkeeper at Coldmere"
+  ],
+  "epithet": "Keeps the inn on the tarn at Coldmere",
+  "tier": "minor",
+  "faction": "crown",
+  "status": "alive",
+  "sigil": {
+    "faction": "crown",
+    "mark": "none"
+  },
+  "appearance": "A big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron, with a broad, open face of the kind a whole valley trusts with its news. He keeps a fat account book open on the end of his bar, a ribbon in it and a pencil in its spine.",
+  "first_seen": {
+    "chapter": "05",
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+  },
+  "last_seen": {
+    "chapter": "05",
+    "scene": "4",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+  },
+  "last_seen_doing": "Took Rae's face in his hands at the tap, wrote the cart and its company into his book, gave them the loft with nobody else in it, and set the summer's loads for the morning.",
+  "now": "At the tap of the inn on the tarn, his book shut on its ribbon.",
+  "story_so_far": "",
+  "quote": {
+    "text": "We'll talk the summer's loads in the morning, Rae.",
+    "chapter": "05",
+    "scene": "4"
+  },
+  "known_facts": [
+    {
+      "fact": "He keeps a fat account book open on the end of his bar and wrote the cart and its company into it.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Thorne's cart, in"
+    },
+    {
+      "fact": "He gave the company the inn's loft, with nobody else in it that night.",
+      "chapter": "05",
+      "scene": "4",
+      "evidence": "Nobody in it. Nobody will be, tonight."
+    }
+  ],
+  "relationships": [
+    {
+      "to": "rae-thorne",
+      "label": "her uncle",
+      "note": "He keeps the inn on the tarn; he paid for her cart and oxen once, and she has been paying him back by the load."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "none",
+      "state": "unlit"
+    },
+    "level": 4,
+    "rank": "Bound",
+    "attributes": {
+      "might": 10,
+      "vigor": 9,
+      "finesse": 11,
+      "resolve": 14
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "05",
+      "scene": "4"
+    }
+  ]
+}

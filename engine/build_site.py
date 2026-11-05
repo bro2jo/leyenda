@@ -3875,7 +3875,7 @@ def run_checks(site, out_dir):
                 problem(f"{k}: unrevealed name '{m.group(1)}' at …{txt[max(0, m.start() - 50):m.end() + 50]!r}")
     # engine keys rendered on the Now page (roll labels and notes) are lowercase slugs: check them case-insensitively
     if names:
-        low_re = re.compile(r"(" + "|".join(re.escape(n.lower()) for n in sorted(names, key=len, reverse=True)) + r")")
+        low_re = re.compile(r"\b(" + "|".join(re.escape(n.lower()) for n in sorted(names, key=len, reverse=True)) + r")\b")  # whole words: "grandmother" does not name a "Grand"
         for r in site.rolls:
             blob = (r.get("label", "") + " " + r.get("note", "")).lower()
             for m in low_re.finditer(blob):
