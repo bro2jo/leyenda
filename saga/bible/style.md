@@ -145,11 +145,11 @@ Show the check on its own line, before the outcome is narrated:
 ```
 `[MIGHT · DC 13]` d20 **14** +2 = **16** — *Success*
 ```
-- Rolls come only from `python3 engine/darrow.py roll` and are written exactly as returned. **No invented rolls. No rerolls** except on Inspiration: a climax check that fails outright is cast again on his Inspiration, and again, until it succeeds or he has none left (`rules.json → inspiration.auto_reroll_on_fail`); `--reroll` is the same spend by hand. `roll` prints the casts with an Inspiration line between them, and they go on the page **together, in order, as one block with nothing between the lines** (the site shows them as one check), then the prose tells what the dice decided; the Reckoning box shows the spend (`> Inspiration 4 → 2`):
+- Rolls come only from `python3 engine/darrow.py roll` and are written exactly as returned. **No invented rolls. No rerolls** except on Inspiration: a climax check that fails outright is cast again on his Inspiration, once (`rules.json → inspiration.auto_reroll_on_fail`); `--reroll` is the same spend by hand. **A second cast never comes clean:** its success is success at a cost (the engine prints it so), a second failure stands, and the first die's refusal leaves a mark in the prose (a bruise, a dropped stick, a word he cannot take back) even when the second cast saves the check. `roll` prints the casts with an Inspiration line between them, and they go on the page **together, in order, as one block with nothing between the lines** (the site shows them as one check), then the prose tells what the dice decided; the Reckoning box shows the spend (`> Inspiration 4 → 2`):
 ```
 `[VIGOR · DC 8]` d20 **2** +0 vigor +1 chapter 3 Hard-won = **3** — *Failure*
 `[INSPIRATION]` 4 → 3 · cast again
-`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Success*
+`[VIGOR · DC 8]` d20 **19** +0 vigor +1 chapter 3 Hard-won = **20** — *Partial: success at a cost*
 ```
 - Use rolls for moments with real stakes: 1–2 per daily scene at most (often zero), 2–4 in a chapter climax.
 - A failure is never a dead end. It's a complication, a cost, a different road.

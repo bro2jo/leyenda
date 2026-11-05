@@ -744,18 +744,7 @@
           "at": "book2:beat4",
           "weight": "scene",
           "what": "Hollis said Aye, maybe, when Darrow asked to be there when he looks at the seal on the writ from the ford. Fire where Hollis takes the writ out to look at last, honoured (Darrow beside him) or not (alone)",
-          "status": "pending",
-          "offered": 8,
-          "offered_at": [
-            "ch03:between-3",
-            "ch03:s3",
-            "ch03:s4",
-            "ch03:s7",
-            "ch03:climax",
-            "ch03:choice",
-            "ch04:s1",
-            "ch04:s2"
-          ]
+          "status": "pending"
         }
       ]
     },
@@ -1442,18 +1431,8 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 9,
-          "offered_at": [
-            "ch05:between-3",
-            "ch05:between-4",
-            "ch05:s3",
-            "ch05:between-5",
-            "ch05:s1",
-            "ch05:between-6",
-            "ch05:s4",
-            "ch05:between-7",
-            "ch05:between-8"
-          ]
+          "offered": 0,
+          "offered_at": []
         }
       ]
     },
@@ -1668,14 +1647,14 @@
     },
     {
       "id": "r.finale.take.tempting",
-      "if": "temptation.count >= 3 && (bearing.banner >= 4 || bearing.flint >= 4)",
-      "then": "Finale option 2 (take the Stone) is written as a true temptation; otherwise it is offered flat",
+      "if": "temptation.count >= 3 && (bearing.banner >= 4 || bearing.flint >= 4 || bearing.hearth >= 4)",
+      "then": "Finale option 2 (take the Stone) is written as a true temptation (the fast road offered for someone else's sake tempts a Hearth man too); otherwise it is offered flat",
       "where": "book6:climax"
     },
     {
       "id": "r.finale.return",
-      "if": "approval.maelis >= 65 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound)",
-      "then": "Finale option 3 (return the tithe) is offered",
+      "if": "approval.maelis >= 65 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound || flags.taught_openly)",
+      "then": "Finale option 3 (return the tithe) is offered: three roads into it (Books I, IV, V), never one late option alone",
       "where": "book6:climax"
     },
     {
@@ -1809,12 +1788,6 @@
       "evidence": {
         "ch04:s6": "\"That's the Seated Blade, Captain. Fight from where you're put.\""
       }
-    },
-    {
-      "id": "r.t1.wren_stays",
-      "if": "approval.wren <= -20",
-      "then": "Wren stays at the House when he goes down the Steps (a cost on company, never a death) and rejoins at the mill (b2.3)",
-      "where": "transition1"
     },
     {
       "id": "r.b2.hollis_sober",

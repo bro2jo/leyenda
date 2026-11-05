@@ -358,6 +358,7 @@
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
       "note": "The clerk in grey at the winch-house. Planted on the page at 04:s1 (Anselm's confession, recorded under the duplicate thread 22) and 04:s2 (his hand on Mirren's letter): two plants. Threads 21 and 22 were this one, recorded twice, and are closed.",
       "on_page": [
+        "04:s1",
         "04:s2"
       ]
     },
@@ -379,9 +380,7 @@
       "status": "paid",
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
       "note": "Duplicate of thread 20 (the same clerk in grey); its one plant (04:s1, Anselm's confession) belongs to thread 20's count. Closed so the open list carries one thread for him.",
-      "on_page": [
-        "04:s1"
-      ]
+      "on_page": []
     }
   ]
 }

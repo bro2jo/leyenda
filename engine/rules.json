@@ -233,7 +233,7 @@
     "triumph_inspiration": 1
   },
   "week_score": {
-    "_about": "0-100. Sets the chapter's outcome tier. Red-light days (plan says rest) are excused, not counted against. roll_mod rides every climax die; target_odds is the chance of a full success each climax check is set to have (the brief prints the DC that gives it, from his modifiers that week: darrow.py odds), so a strong week's checks are very likely and a thin week's are even, and the dice can still fail.",
+    "_about": "0-100. Sets the chapter's outcome tier. Red-light days (plan says rest) are excused, not counted against. roll_mod rides every climax die; target_odds is the chance of a full success each climax check is set to have (the brief prints the DC that gives it, from his modifiers that week: darrow.py odds), so a strong week's checks are very likely and a thin week's are even or worse (since 11/5: Hard-won 0.65, Costly 0.5, Setback 0.35, so a thin week can genuinely fail), and the dice can still fail.",
     "weights": {
       "floor": 20,
       "sessions": 25,
@@ -253,19 +253,19 @@
         "min": 70,
         "name": "Hard-won",
         "roll_mod": 1,
-        "target_odds": 0.7
+        "target_odds": 0.65
       },
       {
         "min": 50,
         "name": "Costly",
         "roll_mod": 0,
-        "target_odds": 0.6
+        "target_odds": 0.5
       },
       {
         "min": 0,
         "name": "Setback",
         "roll_mod": -2,
-        "target_odds": 0.5
+        "target_odds": 0.35
       }
     ]
   },
@@ -307,7 +307,7 @@
     ]
   },
   "inspiration": {
-    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), and every level gained from per_level_from on (per_level each). Spent by him: an option tagged *[Inspiration]* at a climax or a small choice (saga.py choose spends it; the default never carries one), or `darrow.py roll --reroll`. auto_reroll_on_fail: a climax check that fails outright is cast again on his Inspiration, and again, until it succeeds or he has none left (his standing rule, 10/27); the dice lines and the Inspiration lines between them go on the page as one block.",
+    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), and every level gained from per_level_from on (per_level each). Spent by him: an option tagged *[Inspiration]* at a climax or a small choice (saga.py choose spends it; the default never carries one), or `darrow.py roll --reroll`. auto_reroll_on_fail: a climax check that fails outright is cast again on his Inspiration once (his standing rule, 10/27; once only since 11/5): a second cast never comes clean (its success reads as a partial, success at a cost) and a second failure stands; the two dice lines and the Inspiration line between them go on the page as one block.",
     "cap": 4,
     "per_level": 1,
     "per_level_from": 5,

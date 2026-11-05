@@ -2214,6 +2214,11 @@ def cast(args, mods, label, note):
     nat = max(a, b) if args.adv else min(a, b) if args.dis else a
     total = nat + sum(m for _, m in mods)
     result = check_result(nat, total, args.dc)
+    # a second cast (an Inspiration reroll, automatic or paid) never comes clean: its success is success at a cost
+    # (rules.json -> inspiration: the die may say yes again, the price stays)
+    never_clean = label.endswith("#reroll") and result in ("SUCCESS", "CRITICAL SUCCESS")
+    if never_clean:
+        result = "PARTIAL (success at a cost)"
     mod_txt = " ".join(f"{m:+d} {n}" for n, m in mods)
     rows.append({"when": dt.datetime.now().isoformat(timespec="seconds"), "label": label, "stat": args.stat or "",
                  "dc": args.dc, "d20": a, "d20_b": b or "", "mode": mode, "mods": mod_txt, "total": total,
@@ -2223,7 +2228,7 @@ def cast(args, mods, label, note):
     pretty = {"CRITICAL SUCCESS": "Critical success", "CRITICAL FAILURE": "Critical failure", "SUCCESS": "Success",
               "PARTIAL (success at a cost)": "Partial: success at a cost", "FAILURE": "Failure"}[result]
     print(f"`[{(args.stat or 'flat').upper()} · DC {args.dc}]` d20 **{shown}** {mod_txt} = **{total}** — *{pretty}*")
-    print(f"(roll {label}: {result}; recorded in saga/state/rolls.csv)")
+    print(f"(roll {label}: {result}; recorded in saga/state/rolls.csv" + ("; a second cast never comes clean: the die said yes, the cost stays" if never_clean else "") + ")")
     return result
 
 
@@ -2255,20 +2260,21 @@ def cmd_roll(args, cfg, rules):
             insp -= 1
     mods = roll_mods(args, st, cfg, rules)
     result = cast(args, mods, label, note)
-    # a climax check that fails outright is cast again on his Inspiration, and again, until it succeeds or he has none left
-    # (rules.json -> inspiration.auto_reroll_on_fail); the dice lines and the Inspiration lines between them go on the page
-    # together, in order, as one block, and the Reckoning box shows the spend
+    # a climax check that fails outright is cast again on his Inspiration, once (rules.json -> inspiration.auto_reroll_on_fail):
+    # the second cast never comes clean (its success is success at a cost), and a second failure stands. The two dice
+    # lines and the Inspiration line between them go on the page together, in order, as one block; the Reckoning box
+    # shows the spend; the first die's refusal leaves a mark in the prose even when the second saves the check
     if args.chapter and not args.reroll and rules["inspiration"].get("auto_reroll_on_fail"):
-        lab = label
-        while (result in ("FAILURE", "CRITICAL FAILURE") and insp >= 1
-               and not any(r["label"] == lab + "#reroll" for r in read_csv("rolls"))):
+        lab = label + "#reroll"
+        if (result in ("FAILURE", "CRITICAL FAILURE") and insp >= 1
+                and not any(r["label"] == lab for r in read_csv("rolls"))):
             spend_inspiration(st, f"cast again on a failed climax check: {args.label}")
             print(f"`[INSPIRATION]` {insp} → {insp - 1} · cast again")
             insp -= 1
-            lab += "#reroll"
             result = cast(args, mods, lab, "Inspiration spent on a failed climax check")
-        if lab != label:
-            print("(every dice and Inspiration line above goes on the page, in order, as one block; the Reckoning box shows the spend)")
+            print("(both dice lines and the Inspiration line between them go on the page, in order, as one block; the Reckoning box "
+                  "shows the spend; the first die's refusal leaves a mark in the prose even if the second saved the check; a second "
+                  "failure stands: no third cast)")
 
 
 def cmd_inspire(args, cfg, rules):

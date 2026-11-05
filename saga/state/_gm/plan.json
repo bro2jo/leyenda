@@ -9,7 +9,7 @@
     "last_written": "ch05:s4",
     "rank_on_page": "Kindled"
   },
-  "book_question": "Who is hollowing the wounded, and can a knight who cannot stand protect anyone?",
+  "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
   "chapter": {
     "number": 5,
     "week_start": "2026-11-01",
@@ -204,15 +204,15 @@
     },
     "b1.2": {
       "title": "The Grey Cot",
-      "status": "in_progress"
+      "status": "done"
     },
     "b1.3": {
       "title": "The Undercroft",
-      "status": "in_progress"
+      "status": "done"
     },
     "b1.4": {
       "title": "The Almoner's Sister",
-      "status": "in_progress"
+      "status": "done"
     },
     "b1.5": {
       "title": "Old Mercy",
@@ -378,7 +378,7 @@
     "knows_wardens_exist": true,
     "ash_met": true,
     "anselm_suspected": true,
-    "anselm_spared": null,
+    "anselm_spared": true,
     "benedek_hollowed": true,
     "vane_unbound": null,
     "hollis_truth": null,
@@ -517,5 +517,9 @@
       "bound": "2026-10-29"
     }
   ],
-  "open_choice": null
+  "open_choice": null,
+  "saga": {
+    "finale_book": 6,
+    "chapters_per_book": 4
+  }
 }

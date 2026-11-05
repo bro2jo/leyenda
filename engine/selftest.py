@@ -281,7 +281,7 @@ def main():
             btw = {"id": f"c{ch:02d}.985", "made": {"chapter": ch, "scene": "between-77", "date": day}, "chose": "Won a game off Hollis (self-test).", "now": {"approval": {"hollis": 6}}, "due": []}
             code, out = run(saga + ["add", json.dumps(btw), "--witnessed", "hollis"], tmp)
             hol1 = jload(tmp / "saga/state/world.json")["companions"]["hollis"]["approval"]
-            want = max(0, min(6, (6 if hol0 < 40 else 4 if hol0 < 70 else 2) - so_far))
+            want = max(0, min(6, (6 if hol0 < 40 else 4 if hol0 < 50 else 2 if hol0 < 70 else 1) - so_far))  # the caps by standing (design §9, 2026-11-05)
             check(code == 0 and hol1 - hol0 == want, f"a Between raises a companion at regard {hol0} by what is left of its cap this chapter (+{want}; got {hol1 - hol0:+d})", out[-300:])
             code, out = run(saga + ["approval", "forecast"], tmp)
             check(code == 0 and "hollis" in out and "rule(s) met for free" in out, "approval forecast names every companion and a verdict", out[-300:])

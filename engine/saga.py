@@ -485,6 +485,7 @@ def promote_epithet(st, block_text, key):
 
 BEARING_MAX_MOVE = 4
 BETWEEN_APPROVAL_CAP = 6  # net approval Betweens may move one companion in one chapter (design §9)
+BETWEEN_BUDGET = 6  # Betweens a chapter carries before `check` and the brief say so: tissue with a budget (design §9)
 WHY_RE = re.compile(r"^(c\d{2}\.\d+|gm:.+)$")
 
 
@@ -1745,6 +1746,10 @@ def cmd_now(args):
     betweens = [x for x in st.world.get("scenes", []) if str(x.get("scene", "")).startswith("between-") and str(x.get("after", "")) == lw_key]
     if betweens:
         lines.append(f"Between pieces after the last scene: {len(betweens)} of 2 (" + ", ".join(str(x.get("scene")) for x in betweens) + ")")
+    try:
+        lines.append(between_budget_line(st))
+    except (OSError, ValueError, KeyError):
+        pass
     lines.append("Quests available: " + short(", ".join(avail) or "none", 160))
     dev = device_summary(plan)
     if dev:
@@ -2011,7 +2016,28 @@ def between_cap(approval):
     """How far Betweens may raise a companion's regard in a chapter, by standing: banter builds a new regard faster than
     it moves an old friend (design §9). A Between that lands badly may always cost the full cap."""
     a = int(approval or 0)
-    return BETWEEN_APPROVAL_CAP if a < 40 else 4 if a < 70 else 2
+    return BETWEEN_APPROVAL_CAP if a < 40 else 4 if a < 50 else 2 if a < 70 else 1
+
+
+def between_tally(st):
+    """(Betweens written in the current chapter, whether one of them has cost a companion regard this chapter): the
+    chapter's Between budget (design §9: about BETWEEN_BUDGET a chapter, each moving a debt, one a chapter landing badly)."""
+    ch = int(st.plan["position"]["chapter"])
+    n = sum(1 for e in R.load_events(ch) if e.get("kind") == "between")
+    cost = False
+    for e in st.ledger.get("entries", []):
+        made = e.get("made") or {}
+        if int(made.get("chapter", -1)) == ch and str(made.get("scene", "")).startswith("between"):
+            if any(int(v) < 0 for v in ((e.get("now") or {}).get("approval") or {}).values()):
+                cost = True
+                break
+    return n, cost
+
+
+def between_budget_line(st):
+    n, cost = between_tally(st)
+    over = f" (over the budget: the rest of the chapter is scenes)" if n > BETWEEN_BUDGET else ""
+    return f"Betweens this chapter: {n} of {BETWEEN_BUDGET}{over} · one has cost regard: {'yes' if cost else 'not yet (one a chapter lands badly, for a reason of the other person\'s own)'}"
 
 
 def add_entry(st, entry, witnessed_csv, pending=False, dry_run=False, learned=None):
@@ -4507,6 +4533,12 @@ def cmd_check(args):
 
     # the chapter file, the slots, world.json's scenes[] and the Ledger's closed days must tell one story
     reconcile_chapter(st, probs)
+    try:  # tissue with a budget (design §9): a note, never a refusal
+        n_btw, _ = between_tally(st)
+        if n_btw > BETWEEN_BUDGET:
+            notes.append(f"the chapter has {n_btw} Betweens (budget {BETWEEN_BUDGET}): the rest of the chapter is scenes; a Between that changes nothing is a glimpse")
+    except (OSError, ValueError, KeyError):
+        pass
 
     # the records: every event parses, keys are unique and name a block with the same title, every person has a file,
     # the current chapter's blocks are all recorded, the threads are well formed, and every projection is fresh
@@ -5056,6 +5088,8 @@ def cmd_brief(args):
         key, kind = f"{ch2(ch)}:between-{n_btw + 1}", "between"
         since = betweens_since_last_scene(st)
         L.append(f"THIS BLOCK: {key} · a Between ({len(since)} of 2 written since the last scene" + ("; a third is two lines and the moment passes" if len(since) >= 2 else "") + ")")
+        L.append(between_budget_line(st))
+        L.append("a Between that would change no understanding, relationship or obligation is a glimpse (a few lines in the reply, no block, no record); the one that lands badly this chapter costs regard through its entry, for a reason of the other person's own")
     elif mode == "climax":
         key, kind = f"{ch2(ch)}:climax", "climax"
         L.append(f"THIS BLOCK: {key} · the chapter's climax · stage {pos.get('stage')}" + ("" if pos.get("stage") in ("climax", "choice") else " (⚠ `plan set stage=climax` first: it pays the owed world moves and makes the climax-targeted items due)"))
