@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-10-31 · overheard · From the linen press, a lay brother counting sheets under his breath: …eleven, twelve, twelve, thirteen. No. One. And he starts again from the top, out of principle.
 - 2026-11-01 · body · The cold off the tarn finds every old break in him and, tonight, misses the knee. He notices the way you notice a dog that has stopped barking: late, and suspicious of his luck.
 - 2026-11-01 · weather · Fog comes off the tarn at dusk and settles on the drove road as if it has paid for the spot. Hollis tells it to move along. It does not.
 - 2026-11-01 · house · Wren has begun a tally of every dog in the Lowmarch, strictly for the ledger. Ash appears in it twice: once as hound, ours, and once, in smaller letters, as hound, thief of cheese.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-04 · overheard · Over the morning fire, Maelis tells Hollis that if he calls the captain spry once more, she will find something wrong with him that needs a splint. Hollis says spry under his breath for the rest of the hour.
 - 2026-11-04 · house · Rae has taught Ash to stay off the cart, and Ash has taught Rae that he will lie under it instead, exactly where she puts her feet. Neither considers the matter closed.
 - 2026-11-04 · body · Evening finds him less worn than the road has any right to leave him. He sits with his feet to the coals and, for once, does not count the hours to sleep.
+- 2026-11-05 · weather · A hard blue morning over the tarn, the first in days, cold enough that every breath hangs about as if waiting to be thanked. Wren counts them for a while, then gives it up.

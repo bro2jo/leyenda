@@ -232,3 +232,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-04#11,2026-11-04,,dinner,"Fresh-cut fries, skin-on, seasoned (takeout)",~200 g (photo),500,6,65,25,6,4,1,500,1000,25,1.6,60,0.7,15,0,0,photo,portion from the photo
 2026-11-04#12,2026-11-04,,dinner,"Honey mustard dipping sauce, side cup",2 cups (assumed ~1.5 oz each),320,1,20,26,0,4,18,400,30,10,0.2,5,0.1,0,0,0,estimate,creamy restaurant honey mustard assumed (~110 kcal an oz); cup size not given: asked
 2026-11-04#13,2026-11-04,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,library row (label 11/1)
+2026-11-05#1,2026-11-05,,breakfast,"Toasted Pumpkin Latte (smoked pumpkin latte, toasted marshmallow cold foam)","1 drink (assumed 16 oz, 2% milk)",350,11,52,11,0,7,48,200,450,350,0.3,40,1.4,1,2.5,0,estimate,"coffee-shop seasonal latte from the menu line he sent; size, milk and shop not given: asked"
+2026-11-05#2,2026-11-05,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
