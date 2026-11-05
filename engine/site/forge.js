@@ -72,6 +72,7 @@ var paint = function(pk){  /* one picker: what goes with the earlier steps, the 
   if ((el = pk.querySelector(".pk-tag"))) { el.textContent = o.tag; }
   if ((el = pk.querySelector(".pk-cnt"))) { el.textContent = open + " of " + shown + " open"; }
   if ((el = pk.querySelector(".pk-info"))) {
+    if (!pk.querySelector(".pk-tray")) { el.hidden = !peek[cat]; }  /* chips and who: the reason waits for a tap */
     el.innerHTML = q.why;
     el.classList.toggle("locked", !q.open);
     var t = pk.querySelector(".pk-tray");
@@ -114,9 +115,8 @@ var details = function(look){  /* under the stage: the pieces on it, each with t
   if (state.details.trim()) { rows.push('<li><span class="k">Small touches</span><span class="v"><b>' + esc(state.details.trim()) + '</b></span></li>'); }
   list.innerHTML = rows.join("");
   $("look-detail").hidden = false;
-  var btn = $("look-wear");
-  btn.hidden = !look || look.worn;
-  btn.setAttribute("data-name", look ? look.name : "");
+  $("look-wear-row").hidden = !look || look.worn;
+  $("look-wear").setAttribute("data-name", look ? look.name : "");
 };
 
 var render = function(){
@@ -210,7 +210,11 @@ if (canShare && $("forge-share")) {
 
 wear(D.start);
 try { var saved = JSON.parse(localStorage.getItem(SAVE) || "null"); if (saved && saved.base === base) { wear(saved.state); } } catch (e) { /* start from his look */ }
-if (notes) { notes.value = state.details; notes.addEventListener("input", function(){ state.details = notes.value; render(); }); }
+if (notes) {
+  notes.value = state.details;
+  if (state.details) { notes.closest("details").open = true; }
+  notes.addEventListener("input", function(){ state.details = notes.value; render(); });
+}
 document.addEventListener("click", function(e){
   var t = e.target.closest ? e.target : e.target.parentNode;
   var row = t.closest(".pk-row");
@@ -218,8 +222,15 @@ document.addEventListener("click", function(e){
   var b = t.closest(".pk [data-id]");
   if (b) {
     var cat = b.closest(".pk").getAttribute("data-cat"), id = b.getAttribute("data-id");
-    peek[cat] = id;
-    if (pieces[cat][id].open && state[cat] !== id) { choose(cat, id); } else { render(); }
+    if (pieces[cat][id].open && state[cat] !== id) { choose(cat, id); }
+    else { peek[cat] = peek[cat] === id ? null : id; render(); }  /* a second tap on the same piece puts its reason away */
+    return;
+  }
+  var more = t.closest("[data-more]");
+  if (more) {
+    var all = more.closest(".pk").classList.toggle("all");
+    more.setAttribute("aria-expanded", String(all));
+    more.lastChild.textContent = all ? "fewer" : more.getAttribute("data-more") + " more";
     return;
   }
   var g = t.closest("[data-goto]");
@@ -247,10 +258,11 @@ each(tiles, function(t){
   });
 });
 $("forge-copy").addEventListener("click", function(){
-  copy($("forge-prompt").value, $("forge-copy"), function(){ $("forge-prompt").focus(); $("forge-prompt").select(); });
+  copy($("forge-prompt").value, $("forge-copy"), function(){ $("forge-prompt").closest("details").open = true; $("forge-prompt").focus(); $("forge-prompt").select(); });
 });
 $("forge-copy-line").addEventListener("click", function(){
   copy($("forge-line").textContent, $("forge-copy-line"), function(){
+    $("forge-line").closest("details").open = true;
     var r = document.createRange(); r.selectNodeContents($("forge-line"));
     var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
   });

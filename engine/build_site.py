@@ -3081,18 +3081,18 @@ class Site:
                  f'<div class="forge-empty" id="forge-empty"{"" if not cur else " hidden"}><span class="glyph" aria-hidden="true">✧</span>'
                  '<b>Not painted yet</b><span>Every piece is chosen; the prompt below will paint it.</span></div>')
         plate = (f'<section class="plate wardrobe-plate{self.metal(d["level"])}"><p class="lbl"><a href="index.html">Ser Darrow of Edgemoor</a></p>'
-                 '<h1>The Wardrobe</h1><p class="sub">Looks he has earned. What he wears in the story is the story\'s; these are his own, and more opens as he grows.</p>'
+                 '<h1>The Wardrobe</h1><p class="sub">Looks he has earned; more opens as he grows.</p>'
                  f'<div class="chips"><a class="chip brass" href="collection.html">The Collection · {esc(col["rank"])} · {col["have"]} of {col["of"]}</a></div>'
                  f'<figure class="forge-stage" id="forge-stage">{stage}</figure>'
                  f'<p class="forge-cap"><b id="forge-name">{esc(cur["name"]) if cur else "A new look"}</b>'
                  f'<span class="lbl" id="forge-state">{"his look now" if cur else "not painted yet"}</span></p>'
-                 '<div class="look-detail" id="look-detail" hidden><p class="lbl">What he wears, and why it is his</p><ul class="look-pieces" id="look-pieces"></ul>'
-                 '<div class="btn-row"><button class="btn ghost" type="button" id="look-wear" hidden>Make this his look</button></div>'
-                 '<p class="hint" id="look-wear-hint" hidden>Copied. Send it to Claude, and this look goes on his page.</p></div></section>')
+                 '<details class="tip look-detail" id="look-detail" hidden><summary>What he wears, and why</summary><ul class="look-pieces" id="look-pieces"></ul></details>'
+                 '<div class="btn-row" id="look-wear-row" hidden><button class="btn ghost" type="button" id="look-wear">Make this his look</button></div>'
+                 '<p class="hint" id="look-wear-hint" hidden>Copied. Send it to Claude, and this look goes on his page.</p></section>')
         tiles = "".join(f'<a class="look-tile" href="{rel}{lk["_path"]}" data-look="{esc(lk["id"])}"><img src="{rel}{lk["_md"]}" alt="" loading="lazy" decoding="async">'
-                        f'<span>{esc(lk["name"])}</span></a>' for lk in self.looks)
+                        f'{"<i class=" + chr(34) + "look-worn" + chr(34) + ">His look</i>" if lk is cur else ""}<span>{esc(lk["name"])}</span></a>' for lk in self.looks)
         n = len(self.looks)
-        book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div><p class="hint">Tap a look to put it on the stage, with its pieces and why each is his. The first is the one he wears on his page.</p>'
+        book = sec("The lookbook", f'{n} look{"" if n == 1 else "s"}', (f'<div class="look-grid">{tiles}</div>'
                    if tiles else '<p class="empty">No look painted yet.</p>'))
         shown = {c["id"]: [o for o in c["options"] if o["_shown"]] for c in w["categories"]}
         n_all = sum(len(v) for v in shown.values())
@@ -3128,8 +3128,11 @@ class Site:
                 return (f'<div class="pk pk-who" data-cat="{esc(cid)}"><div class="who-grid" role="radiogroup" aria-label="{esc(label[cid])}">'
                         f'{"".join(who(o) for o in opts)}</div><div class="pk-info" aria-live="polite"></div></div>')
             if c.get("chips"):
+                n_locked = sum(not o["_usable"] for o in opts)
+                more = (f'<button type="button" class="pchip more" data-more="{n_locked}" aria-expanded="false">{lock}{n_locked} more</button>'
+                        if n_locked else "")
                 return (f'<div class="pk pk-chipset" data-cat="{esc(cid)}"><span class="pk-lbl" id="pk-l-{esc(cid)}">{esc(label[cid])}</span>'
-                        f'<div class="pk-chips" role="radiogroup" aria-labelledby="pk-l-{esc(cid)}">{"".join(chip_(cid, o) for o in opts)}</div>'
+                        f'<div class="pk-chips" role="radiogroup" aria-labelledby="pk-l-{esc(cid)}">{"".join(chip_(cid, o) for o in opts)}{more}</div>'
                         f'<div class="pk-info sm" aria-live="polite"></div></div>')
             if c.get("groups"):
                 inner = "".join(f'<p class="pk-g" data-g="{esc(g["id"])}">{esc(g["label"])}</p><div class="pk-grid" role="radiogroup" data-g="{esc(g["id"])}" '
@@ -3149,32 +3152,33 @@ class Site:
         secret = ("" if not n_hidden else " One more stays hidden until it opens." if n_hidden == 1
                   else f" {n_hidden} more stay hidden until they open.")
         fresh = [o["name"] for c in w["categories"] for o in shown[c["id"]] if o["_new"] and o["_usable"]]
-        fresh_html = (f'<p class="forge-fresh"><b>New this chapter:</b> {esc(" · ".join(fresh))}</p>' if fresh else "")
+        fresh_html = (f'<details class="tip"><summary>New this chapter · {len(fresh)}</summary><p class="hint">{esc(" · ".join(fresh))}</p></details>' if fresh else "")
         forge = sec("The Forge", f"{n_open} of {n_all} pieces open",
-                    f'<div class="forge"><p class="hint">Choose from what he has earned, a step at a time: each step offers only what goes with the steps before it. '
-                    f'Tap any piece, open or not, to see what it looks like and where it comes from.{secret}</p>'
-                    f'{fresh_html}{"".join(steps)}'
+                    f'<div class="forge"><div class="tips"><details class="tip"><summary>How it works</summary><p class="hint">Choose from what he has earned, a step at a time: '
+                    f'each step offers only what goes with the steps before it. Tap any piece, open or not, to see what it looks like and where it comes from.{secret}</p></details>'
+                    f'{fresh_html}</div>{"".join(steps)}'
                     '<p class="forge-fit" id="forge-fit" aria-live="polite" hidden></p>'
-                    '<label class="forge-notes"><span>Small touches <em>· optional</em></span><textarea id="forge-details" rows="2" '
-                    'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></label>'
+                    '<details class="tip forge-notes"><summary>Small touches · optional</summary><textarea id="forge-details" rows="2" aria-label="Small touches" '
+                    'placeholder="a scar on the brow, rain on the cloak, wind in his hair"></textarea></details>'
                     '<p class="forge-result" id="forge-result" aria-live="polite"></p></div>')
         cards = [self.ref_card(r, rel, n=i + 1) for i, r in enumerate(w["_refs"])]
         cards += [self.ref_card(o["_ref"], rel, f'{c["id"]}.{o["id"]}') for c in w["categories"] for o in c["options"] if o.get("_ref")]
-        paint = sec("Paint it", "", '<ol class="forge-steps">'
+        paint = sec("Paint it", "", '<details class="tip"><summary>How to paint it</summary><ol class="forge-steps">'
                     '<li id="forge-share-step" hidden>Tap <b>Share to ChatGPT</b> and choose ChatGPT: the references go with it, in order, and the prompt is copied too. '
                     'If it arrives without the words, paste them.</li>'
                     '<li class="forge-manual">Copy the prompt.</li><li class="forge-manual">Download the references and attach them to your ChatGPT message in order, Image 1 first.</li>'
                     '<li>Send it. If the background comes back as anything but one flat, bright colour behind him, reply: '
                     '<i>Put the picture on one solid, flat background of the colour the prompt names, edge to edge, and nothing else.</i></li>'
-                    '<li>Send the finished picture to Claude with the Look line: it goes into the lookbook for good.</li></ol>'
-                    '<textarea class="forge-prompt" id="forge-prompt" readonly rows="10" aria-label="The image prompt"></textarea>'
+                    '<li>Send the finished picture to Claude with the Look line: it goes into the lookbook for good.</li></ol></details>'
                     '<div class="btn-row"><button class="btn" type="button" id="forge-share" hidden>Share to ChatGPT</button>'
                     '<button class="btn" type="button" id="forge-copy">Copy prompt</button>'
                     '<a class="btn ghost" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT</a></div>'
                     '<p class="hint" id="forge-share-note" hidden></p>'
                     f'<div class="ref-grid">{"".join(cards)}</div>'
-                    '<p class="lbl">The Look line</p><code class="look-line" id="forge-line"></code>'
                     '<div class="btn-row"><button class="btn ghost" type="button" id="forge-copy-line">Copy the Look line</button></div>'
+                    '<details class="tip"><summary>See the prompt and the Look line</summary>'
+                    '<textarea class="forge-prompt" id="forge-prompt" readonly rows="10" aria-label="The image prompt"></textarea>'
+                    '<p class="lbl">The Look line</p><code class="look-line" id="forge-line"></code></details>'
                     '<noscript><p class="empty">The Forge needs JavaScript; the lookbook works without it.</p></noscript>')
         flat = [(c["id"], o) for c in w["categories"] for o in shown[c["id"]]]
         data = {"cats": [{"id": c["id"], "label": c["label"], "options": [

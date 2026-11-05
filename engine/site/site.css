@@ -587,6 +587,17 @@ ol.choice li s{color:var(--faint)}
 .forge-empty .glyph{font-size:2.6rem;line-height:1;color:var(--brass)} .forge-empty b{font-family:var(--display);font-size:1.6rem;color:var(--ink)}
 .forge-cap{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap}
 .forge-cap b{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+/* a fold on the Wardrobe: a quiet label that opens what it holds (the how-to, the lists, the prompt) */
+.wardrobe-page details.tip{border:0;padding:0}
+.wardrobe-page details.tip>summary{justify-content:flex-start;align-items:center;gap:6px;font-size:.82rem;color:var(--brass)}
+.wardrobe-page details.tip>summary::after{order:-1;font-family:var(--body);font-size:1rem;line-height:1}
+.wardrobe-page details.tip[open]>summary{margin-bottom:8px}
+.wardrobe-page details.tip .hint{margin:0}
+.tips{display:grid;gap:6px}
+.look-worn{position:absolute;top:8px;left:8px;padding:0 6px;border-radius:3px;background:var(--brass);color:var(--night);font-style:normal;font-family:var(--label);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.6}
+.look-tile{position:relative}
+.pk-chipset:not(.all) .pchip.locked{display:none}
+.pchip.more{border-style:dashed;color:var(--dim);background:transparent}
 .look-detail{display:grid;gap:8px}
 .look-pieces{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
 @media (min-width:560px){.look-pieces{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -645,6 +656,7 @@ i.new{display:inline-block;margin-right:6px;padding:0 5px;border-radius:3px;back
 .pk-info q{font-style:italic;font-size:.9rem;line-height:1.45;color:var(--ink);quotes:"\201C" "\201D"}
 .pk-info.sm{display:block;padding:6px 10px} .pk-info.sm .h,.pk-info.sm .n{display:none} .pk-info.sm .d,.pk-info.sm .r{font-size:.84rem}
 .pk-info.sm .r{margin-left:.3em}
+.wardrobe-page .pk-info[hidden]{display:none}  /* the reason under chips waits for a tap: .pk-info.sm's display must not show it */
 .pk-grid>.pk-info{grid-column:1/-1}
 .pk-chips{display:flex;flex-wrap:wrap;gap:6px}
 .pchip{display:inline-flex;align-items:center;padding:6px 11px;border:1px solid var(--raw);border-radius:999px;background:var(--night);color:var(--ink);font:inherit;font-size:.9rem;line-height:1.25;cursor:pointer}
