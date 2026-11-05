@@ -719,13 +719,17 @@ The carter looked at him properly for the first time: the stick, the infirmary s
 
 He found he had turned to look north before he had decided anything at all. The lane ran away between its walls toward the high road, and somewhere up it, two days on, was the one face in the Lowmarch he had come down a mountain wanting to watch while it answered. Two days was nothing. Two days was a horse. His feet knew it before the rest of him did, and the old speed came up in him like warmth, and the stick felt light in his hand.
 
-Hollis had stopped waxing. Rae had not moved from the pony's head. Neither of them said a word, and that, more than anything, told him they had both seen it.
+He knew the feeling. He had had it on the Holloway three days ago with the banner in front of him, and at a ford before that, with a line of spears: the thing he wanted in plain sight and his feet already deciding. It felt exactly like knowing. It always had.
+
+Hollis had stopped waxing. Rae had not moved from the pony's head. They were both watching him as you watch a man near an edge, and neither said a word, and that was how he knew they had seen it too. Nobody was going to stop him. That was the worst of it. They would let him go, and then they would come after him, all of them, cart and dog and Mender, up a road with his name nailed to every post on it.
 
 "Then Coldmere's empty of him," Darrow said.
 
 "It is," said Rae.
 
 He took Hob's rope out of her hand. "Coldmere, then."
+
+Behind him, very loudly, Hollis began to wax.
 
 ---
 
@@ -737,7 +741,7 @@ It went through the inn like a dropped pan. By the time the oxen were out of the
 
 Rae went past the door with her head down and her ears red, and the taproom laughed at her, which she plainly expected, and did not seem to mind.
 
-Darrow came behind her with his head down. He heard the old men going on as he passed.
+Darrow came behind her with his face to the wall side of the passage. He heard the old men going on as he passed.
 
 "—every dusk since the snow. You can hear her from the mill on a still night."
 
@@ -749,7 +753,7 @@ Darrow came behind her with his head down. He heard the old men going on as he p
 
 "Who says?"
 
-Then the passage turned and he lost the rest of it, and was glad of the dark in the passage for a reason that was nothing to do with writs.
+Then the passage turned and he lost the rest of it, and was glad of the dark there for a reason that was nothing to do with writs.
 
 Her uncle was at the tap. He was a big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron; and he had, Darrow saw at once, a good face, the kind a whole valley trusts with its news. He came round the end of the bar and took Rae's face in both his hands, and she let him, for about a breath.
 
@@ -767,17 +771,23 @@ Her uncle was at the tap. He was a big, easy man going soft at the middle, bald 
 
 Darrow liked him at once. It was a moment before he remembered, on the fold wall, Rae looking across the water at that yellow door and saying *my uncle's got a good face*; and by then it was too late to stop liking him, and he went up the loft ladder turning it over.
 
-"Faces in the taproom," Wren reported from the top of it. "Nineteen. Faces that looked at the Captain: none. Faces that looked at Rae: all of them."
+"Faces in the taproom," Wren reported from the top of the ladder. "Nineteen. Faces that looked at the Captain: none. Faces that looked at Rae: all of them."
 
 "The stew's been on since the snow," said Maelis, who had stopped in the kitchen on the way. "I'd eat the bread."
 
-Hollis had stopped on the way too, at the taproom door, and stood looking at the taps a long moment before Maelis took his elbow and turned him to the ladder. "I said nothing," he complained, going up it.
+Hollis had stopped on the way too, at the taproom door, and stood looking at the taps until Maelis took his elbow and turned him to the ladder. "I said nothing," he complained, going up it.
 
 "You looked."
 
 ---
 
-The dealer's yard was on the far side of the fair-ground, past the mill on the outflow, a byre and a frozen square of trodden earth under one lantern. Rae had her cloak on before Darrow asked. She had known he would.
+Rae had her cloak on before Darrow asked. She had known he would.
+
+The dealer's yard was on the far side of the fair-ground, past the mill on the outflow, and the way to it was a quarter-mile of frozen ruts under no moon, with the mill-race talking to itself in the dark. Darrow took it slower than he wanted to. The last time he had seen her she had been going down at the shoulder in the brown water of the Wend, with his feet coming out of the stirrups, and he had not looked back for her, because there had been a hand coming up out of the river and a boy under it. He had had the whole winter on a cot to think about that, and he had used it.
+
+Rae walked on his bad side and said nothing the whole way, which on her own ground was a thing he had stopped expecting of her.
+
+The yard was a byre and a square of trodden earth under one lantern.
 
 The dealer came out grumbling, a narrow man with a chin like a spade, and sent his lad in. The lad led the mare out into the lantern light, and Darrow's breath went.
 
@@ -793,7 +803,7 @@ It came out right. He heard it come out right, short and low with the catch wher
 
 Thistle stood.
 
-She stood with all four feet planted on the ice and her head high and her nostrils wide, and then her ears came round to him, both of them, and stayed. She looked at him for a long moment across the yard. Then she came, short-stepping and careful, until her nose was in the front of his shirt, and she blew into it, hard, twice, as she had blown into it every morning on campaign to see what he had in there.
+She stood with all four feet planted on the ice and her head high and her nostrils wide, and then her ears came round to him, both of them, and stayed. She looked at him across the yard. Then she came, short-stepping and careful, until her nose was in the front of his shirt, and she blew into it, hard, twice, as she had blown into it every morning on campaign to see what he had in there.
 
 "I've nothing," he told her. His voice was not good. "I'm sorry. I've nothing at all."
 
@@ -816,6 +826,8 @@ The yard was very quiet. Thistle went on looking for whatever he had in his shir
 "Since the fair," Darrow said.
 
 He worked it out with his hand on the mare's warm neck. The fair was autumn. He had sent his name down from the mountain weeks after it. All the weeks between, while he had lain on a cot and not said her name, somebody had been coming to this yard with coin.
+
+He had been proud of that word. He had sent it down the Steps as the one thing left that was his to give, a bad word but his own, and lain on the cot afterward thinking of her under it like a roof. It had never been a roof. It had been a carter, every week, in the cold, saying nothing to anybody.
 
 "Before I'd sent my name down," he said. "Before I knew she was alive."
 
