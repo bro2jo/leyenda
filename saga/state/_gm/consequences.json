@@ -1442,7 +1442,7 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 7,
+          "offered": 9,
           "offered_at": [
             "ch05:between-3",
             "ch05:between-4",
@@ -1450,7 +1450,9 @@
             "ch05:between-5",
             "ch05:s1",
             "ch05:between-6",
-            "ch05:s4"
+            "ch05:s4",
+            "ch05:between-7",
+            "ch05:between-8"
           ]
         }
       ]
@@ -1508,12 +1510,14 @@
           "fits": "present.wren",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 6,
           "offered_at": [
             "ch05:between-5",
             "ch05:s1",
             "ch05:between-6",
-            "ch05:s4"
+            "ch05:s4",
+            "ch05:between-7",
+            "ch05:between-8"
           ]
         }
       ]
@@ -1551,11 +1555,82 @@
           "priority": 1,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 2,
+          "offered": 4,
           "offered_at": [
             "ch05:between-6",
-            "ch05:s4"
+            "ch05:s4",
+            "ch05:between-7",
+            "ch05:between-8"
           ]
+        }
+      ]
+    },
+    {
+      "id": "c05.9",
+      "made": {
+        "chapter": 5,
+        "scene": "between-7",
+        "date": "2026-11-04"
+      },
+      "chose": "Found Hollis eyeing the taproom door and asked him for a throwing lesson at the well-bucket instead; learned the Measured Hand; heard him say, sober, that he would follow him into the river again",
+      "now": {
+        "approval": {
+          "hollis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.9a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Hollis promised the next lesson, over the wall (Overwall), 'tomorrow'. Fire where the second lesson comes: a yard, a wall, a camp",
+          "fits": "present.hollis",
+          "priority": 2,
+          "valid_until": "book2",
+          "status": "pending",
+          "offered": 2,
+          "offered_at": [
+            "ch05:between-7",
+            "ch05:between-8"
+          ]
+        },
+        {
+          "id": "c05.9b",
+          "when": "later",
+          "at": "later",
+          "weight": "scene",
+          "what": "At the Coldmere well Hollis told him, sober, that he would follow him into the river again, saying it then because he did not know he would be sober the day it was worth saying. Fire where it comes back when he looks at the seal",
+          "fits": "present.hollis && beats.b2_4.status == \"in_progress\"",
+          "priority": 3,
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "c05.10",
+      "made": {
+        "chapter": 5,
+        "scene": "between-8",
+        "date": "2026-11-04"
+      },
+      "chose": "Let Wren buy him a drover's coat in the Coldmere taproom with her winnings off Hollis; stood as her simple brother, then closed the sale by telling the drover the truth about his new jersey",
+      "now": {
+        "approval": {
+          "wren": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.10a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Hollis does not yet know his lost wager bought the Captain's drover's coat. Fire where he finds out",
+          "fits": "present.hollis",
+          "priority": 1,
+          "valid_until": "book2",
+          "status": "pending"
         }
       ]
     }

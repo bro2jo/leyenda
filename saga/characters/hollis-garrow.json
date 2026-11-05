@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "4",
+    "scene": "between-8",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
   },
-  "last_seen_doing": "Waxed thread and mended Wren's boot on the moving tailboard under the Mender's eye; offered to mend a passing carter's boots; looked a long moment at the inn's taps.",
-  "now": "Up the loft ladder at the inn, sober, complaining.",
+  "last_seen_doing": "Let Wren take the Captain off in the middle of his lesson, and stayed in the yard.",
+  "now": "In the inn yard by the well.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -670,6 +670,30 @@
       "chapter": "05",
       "scene": "4",
       "evidence": "should not be made to wax thread on a moving cart"
+    },
+    {
+      "fact": "He knew the lesson was Darrow keeping him off the taps, and taught it anyway.",
+      "chapter": "05",
+      "scene": "between-7",
+      "evidence": "You're keeping me off the taps"
+    },
+    {
+      "fact": "He learned to throw without footwork in his chair, and calls it the same lesson as winning from where you are put.",
+      "chapter": "05",
+      "scene": "between-7",
+      "evidence": "I learned it in a chair. It's the same lesson."
+    },
+    {
+      "fact": "He told Darrow, sober, that if he took them into the river again he would come in after him, and said it then because he did not know he would be sober the day it was worth saying.",
+      "chapter": "05",
+      "scene": "between-7",
+      "evidence": "I'm saying it now, sober, because I don't know that I'll be sober the day it's worth saying."
+    },
+    {
+      "fact": "He means to teach Overwall next: a throw over a man's shield.",
+      "chapter": "05",
+      "scene": "between-7",
+      "evidence": "Tomorrow we go over the wall."
     }
   ],
   "relationships": [
@@ -991,6 +1015,14 @@
     {
       "chapter": "05",
       "scene": "4"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-7"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8"
     }
   ]
 }

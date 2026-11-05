@@ -868,3 +868,153 @@ He laughed, because it was true and because she meant him to, and the dealer's l
 "Well," said Darrow. "It's said now."
 
 "Aye," said Rae. "Don't go saying it twice."
+
+### Between — The Well-Bucket
+
+Hollis was in the passage when they came back from the dealer's, propped against the wall by the taproom door as if the wall had asked him to stay, with the noise and the fire-smell coming out round him.
+
+"Evening, Captain," he said, without looking round. "I'm admiring the door."
+
+"It's a good door."
+
+"It's a fine door. Oak. You can hear everything through it." Somebody inside laughed, and a pot came down on a table, and Hollis's hand on the wall closed and opened.
+
+Rae looked from one of them to the other and went on up the passage to her uncle without a word.
+
+"I want to learn to throw," Darrow said.
+
+"You can throw. I've watched you throw. You throw like a man who's angry at the thing."
+
+"Then teach me to throw like a man who isn't."
+
+Hollis turned his head at last, and Darrow watched him see exactly what this was.
+
+"You're keeping me off the taps," Hollis said.
+
+"I'm asking for a lesson."
+
+"You're doing both, and you're bad at the first one." He pushed himself off the wall. "Fetch a lantern. And stones. Round ones, mind. I'll not teach on gravel."
+
+The well stood in the middle of the inn yard under a little peaked roof, with frost on the windlass and the bucket sitting on the lip on its coil of rope. Hollis lowered himself onto the mounting block by the stable door and put the beech leg out in front of him, and Darrow paced off ten steps from the well with the lantern on a nail behind him and a hatful of pebbles from the lane.
+
+"Any fool can throw hard," said Hollis. "The Sixth had a hundred men who could throw hard, and half of them hit their own horses. What I'm teaching you is the other thing." He picked a pebble out of the hat and weighed it. "You put a stone where you mean it, at the pace you mean it. Into a man's hand in the dark, so he catches it without a sound. On a shutter, so it taps and doesn't break. That's the Measured Hand. Old sergeants teach it to squires so they'll stop putting rocks through the chapel windows."
+
+He threw from where he sat, a little lob with no more in it than a man tossing a crust to a dog, and the pebble went up through the lantern light and came down into the bucket with a small dry chink.
+
+"Like that," said Hollis.
+
+Darrow threw. It went the way his throws had always gone, flat and hard and early, because he had decided on the bucket before he had properly looked at it. The pebble hit the rim. The bucket rocked once on the lip, considered the matter, and went over into the well, and after a while there was a slap of water a long way down.
+
+"That," said Hollis, "is the Ninth. Fetch it."
+
+Darrow wound the bucket up hand over hand, with the windlass shrieking and the rope cold enough to burn, while Hollis gave him a great deal of advice on the subject of wells.
+
+The second went short and plinked off the stones of the well-head. The third was polite, and fell in front of it.
+
+"Now you're being kind to it," said Hollis. "Don't be kind to a stone. And stop moving your feet. You're not going anywhere. You're where you are, and the bucket's where it is, and the only thing in this yard that needs to move is the stone." He looked down at his own leg, stuck out straight on the frozen cobbles. "I learned it in a chair. It's the same lesson. Win from where they put you."
+
+Darrow stood still, which was harder than throwing, and weighed the next pebble, and did not throw it.
+
+Hollis had gone quiet on the block. It was not the quiet everyone in the Sixth had learned to be afraid of. He was looking at the taproom shutters, and the light coming out through the cracks in them.
+
+"You know why I'm sat out here in the frost with you," he said, "instead of in there."
+
+"Because I asked."
+
+"Because you asked. And because if I go through that door tonight I'll come out of it about the thaw." He rubbed his thigh above the cup. "I'll tell you a thing, Captain, and you'll not make a face about it. If you took us into the river again tomorrow, I'd come. Leg or no leg. I'd come in after you." He kept his eyes on the shutters. "I'm saying it now, sober, because I don't know that I'll be sober the day it's worth saying."
+
+Darrow did not make a face. It took most of what he had.
+
+"Throw your stone," said Hollis, in his own voice again. "You're letting the lantern go out with your mooning."
+
+Darrow decided where it would go before it left his hand, and then let his arm be stupid.
+
+`[FINESSE · DC 12]` d20 **19** +0 finesse +2 The Measured Hand II +1 Ember Blazing = **22** — *Success*
+
+The pebble went up into the lantern light, hung there for a heartbeat, and came down into the bucket without touching the rim: not a chink, not a ring, a small wet sound, like a coin dropped into a purse that already had some in it.
+
+Hollis looked at the bucket. Then he slapped the mounting block with his open hand and roared, "*That*—" loud enough that a shutter banged open across the yard and banged shut again. "That's a Measured Hand. That's mine, that is. I taught that. Tomorrow we go over the wall. Overwall, they call it, you put it over a man's shield and into the back of his neck and he never—"
+
+"Tomorrow," said Wren, from the kitchen door, "he's not having. Tonight he's having a coat."
+
+### Between — A Coat for the Road
+
+"We're in the middle of a lesson," Hollis said.
+
+"You're in the middle of a lesson." Wren came across the yard with her scarf up to her nose and her ledger under her arm. "He's in the middle of a chill. Four days on the road in an infirmary shirt. I've counted his teeth going."
+
+"They haven't," said Darrow.
+
+"Eleven times. Twice on the fold wall." She took his arm. "There's a drover by the taproom fire with a coat he doesn't want, and he doesn't know he doesn't want it yet. I've been watching it an hour. Come on."
+
+"I've no money."
+
+"I have."
+
+Hollis opened his mouth, and looked at the bucket, and shut it again, and waved them off with the air of a man who had had the best of the evening and knew it.
+
+Wren put him in the taproom doorway, in the shadow where the passage came in, with his face to the jamb. "Stand there," she said. "Look ill. You're good at it." Then she went across the room and sat down opposite the drover without being asked, as she sat down at a ledger.
+
+He was a big man going red at the cheeks, with his boots to the fire and a coat over his shoulders that Darrow wanted at once: brown wool gone the colour of a ploughed field, long in the skirt, with a short cape across the shoulders for the rain to run off and horn buttons down the front. The room did not look at Darrow. He could feel it not looking at him, nineteen people's worth, and the old men on the settle not looking hardest of all.
+
+"That's a good coat," Wren told the drover. "Shame about the buttons."
+
+"What's wrong with the buttons?"
+
+"Five buttons. Three that match." She tilted her head at it. "And the left cuff's been turned. And the cape's been put back on with different thread, by somebody in a hurry."
+
+"It's not for sale."
+
+"Everything's for sale. That's the first thing I've learned off the mountain." She put a coin on the table. "That."
+
+The drover laughed at it. Wren put a second beside it and looked offended on its behalf. The drover stopped laughing, which Darrow could see she took as progress.
+
+"Who's it for?"
+
+"My brother." Wren nodded at the doorway without turning round. "There. He's simple, and the cold gets in at his ears."
+
+The drover looked at Darrow. Darrow, who had commanded sixty knights and been named on every bell-post on the Holloway, did his best to look like a man the cold got in at the ears.
+
+"He doesn't look simple."
+
+"That's the worst kind," said Wren.
+
+They went at it. Darrow had watched quartermasters haggle with farriers and seen nothing like it: she counted the coat's faults aloud in a list that grew every time the drover named a price, she wept briefly for the brother, she named the cost of a good coat in Calden, which she had never seen, with total confidence. The drover came down a copper at a time and then stopped coming down at all, and sat with his arms folded over the coat, and over something else.
+
+There was a jersey under the coat. Darrow had seen it when the man leaned to the fire: new wool, cream, the cables still sharp, the kind of thing nobody knits in a week. And every time the drover moved, he pulled the old coat closed over it, so the room should not see.
+
+"Your wife made you a new one," Darrow said, from the doorway.
+
+The drover's head came round. So did several others.
+
+"You keep pulling the coat over it." Darrow nodded at the cream wool. "Somebody spent the winter on that. And you'd sooner sit in a hot taproom in a coat than go home and be seen to be wearing it."
+
+There was a silence, and then the old man on the end of the settle laughed so hard he had to be thumped on the back.
+
+"She said," the drover told the table, with great dignity, "if I came home in this one again, she'd burn it on the step." He looked at Wren's coins. He looked at Darrow. Then he stood up, took the coat off his shoulders, and the jersey under it shone in the firelight like a sin confessed. "Three, and your brother's to stop looking at me."
+
+"Done," said Wren, before anybody could change a word of it, and counted three coins into his hand.
+
+The coat was heavy and smelled of sheep and woodsmoke and some other man's pipe, and it was warm from the fire all the way through. Darrow put it on in the passage, and the cape settled on his shoulders like a hand, and the cold that had been living in him since the Steps went and found somewhere else to live.
+
+"You were meant to be simple," said Wren.
+
+"I was. I said a simple thing."
+
+"I'd have had him down another copper. Two." But she was looking at the coat on him with her head on one side, the way she looked at a column that had come out right, and the corner of her mouth had got away from her.
+
+Rae was at the end of the bar by her uncle, and she had watched the whole of it. "Simple," she said to Wren as they passed.
+
+"It worked," said Wren.
+
+"It didn't. He told the man the truth, and that's what worked." Rae looked at the coat, and then at Darrow in it, and something in her face eased that he had not known was tight. "It suits you. You look like somebody's."
+
+At her elbow Hale had his book open, and turned a page.
+
+Halfway up the loft ladder Darrow stopped. "Wren. Whose coin was that?"
+
+"Ser Hollis's," said Wren. "I had money on you."
+
+"Does he know he's bought me a coat?"
+
+"Not yet," said Wren, with enormous satisfaction.

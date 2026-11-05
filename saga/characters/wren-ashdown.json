@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "4",
+    "scene": "between-8",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
   },
-  "last_seen_doing": "Timed the carters' talk; counted the taproom's faces.",
-  "now": "In the inn's loft with the ledger.",
+  "last_seen_doing": "Took the Captain off Hollis's lesson, told the drover he was her simple brother, haggled the coat down, and paid with her winnings off Hollis.",
+  "now": "At the foot of the loft ladder, pleased with herself.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -673,6 +673,18 @@
       "chapter": "05",
       "scene": "4",
       "evidence": "Faces that looked at Rae: all of them."
+    },
+    {
+      "fact": "She told the drover the Captain was her simple brother.",
+      "chapter": "05",
+      "scene": "between-8",
+      "evidence": "He's simple, and the cold gets in at his ears."
+    },
+    {
+      "fact": "She paid for the coat with the money she won on the boot-mending wager, and Hollis does not know.",
+      "chapter": "05",
+      "scene": "between-8",
+      "evidence": "I had money on you."
     }
   ],
   "relationships": [
@@ -938,6 +950,14 @@
     {
       "chapter": "05",
       "scene": "4"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-7"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8"
     }
   ]
 }

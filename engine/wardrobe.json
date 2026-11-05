@@ -18,6 +18,7 @@
     {"id": "clothing", "label": "Clothing", "options": [
       {"id": "linen", "name": "Linen shirt, sleeves rolled", "quote": "It's more than a shirt and a stick.", "prompt": "an open-necked linen shirt with the sleeves rolled, brown wool trousers and a plain leather belt", "unlock": {"page": "03:5"}},
       {"id": "ford", "name": "Mail over a gambeson, as at the Ford", "quote": "Frost bloomed on the rings of his mail, white feathers of it, in midsummer.", "prompt": "a knee-length shirt of riveted mail over a quilted gambeson, belted at the waist", "unlock": {"page": "00:I"}},
+      {"id": "drover", "name": "A drover's coat, caped at the shoulders", "quote": "the cape settled on his shoulders like a hand", "prompt": "a long brown wool drover's coat, the colour of a ploughed field, with a short cape across the shoulders and mismatched horn buttons down the front, over a plain linen shirt", "unlock": {"page": "05:between-8"}},
       {"id": "jerkin", "name": "Leather jerkin", "prompt": "a sleeveless brown leather jerkin, laced up the front, over a linen shirt and wool trousers", "unlock": {"level": 9}},
       {"id": "gambeson", "name": "Quilted gambeson", "prompt": "a quilted linen gambeson, padded and buttoned to the throat, over wool trousers", "unlock": {"level": 10}},
       {"id": "coat", "name": "Long riding coat", "prompt": "a long dark wool riding coat, split for the saddle, over a linen shirt", "unlock": {"level": 12}},
@@ -138,7 +139,7 @@
   ],
   "sets": [
     {"id": "ash", "name": "Ash's Company", "about": "Every piece that keeps the grey hound at his side.", "pieces": ["side.ash", "pose.hound", "pose.boot", "pose.left-hand", "pose.fifth-bone"]},
-    {"id": "page", "name": "Worn on the Page", "about": "What the story itself put on him, a scene at a time.", "pieces": ["clothing.ford", "clothing.linen", "cloak.blanket", "extra.bones", "extra.wrapped", "hand.stick", "hand.wooden-sword", "pose.ready", "pose.stick-arm"]},
+    {"id": "page", "name": "Worn on the Page", "about": "What the story itself put on him, a scene at a time.", "pieces": ["clothing.ford", "clothing.linen", "cloak.blanket", "extra.bones", "extra.wrapped", "hand.stick", "hand.wooden-sword", "pose.ready", "pose.stick-arm", "clothing.drover"]},
     {"id": "feet", "name": "On His Feet", "about": "A man walking, standing and climbing again.", "pieces": ["pose.walking", "pose.square", "pose.folded", "pose.post", "pose.stair", "pose.over-shoulder", "pose.forms"]},
     {"id": "road", "name": "The Open Road", "about": "The road at speed: running, leaping, over the walls.", "pieces": ["pose.running", "pose.leap", "pose.vault", "pose.long-throw"]},
     {"id": "field", "name": "Back in the Field", "about": "Fighting on his feet, and the face that goes with it.", "pieces": ["pose.turning", "pose.guard", "pose.battle", "pose.charge", "expression.grim", "expression.war-cry"]},

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "4",
+    "scene": "between-8",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
   },
-  "last_seen_doing": "Brought the company into Coldmere by the back lane; was called by name in the taproom and the Thornwild woman's by the old men; took Darrow to the dealer's yard; answered plainly why she had paid the mare's keep.",
-  "now": "Home in Coldmere, with the summer's loads to talk over with her uncle in the morning.",
+  "last_seen_doing": "Watched the haggle from the end of the bar; told Wren it was the truth that worked; told Darrow the coat suited him.",
+  "now": "At the end of the bar by her uncle.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -689,6 +689,12 @@
       "evidence": "I know. That's why you didn't."
     },
     {
+      "fact": "She told Darrow the coat suited him, and that he looked like somebody's in it.",
+      "chapter": "05",
+      "scene": "between-8",
+      "evidence": "It suits you. You look like somebody's."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -956,6 +962,14 @@
     {
       "chapter": "05",
       "scene": "4"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-7"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8"
     },
     {
       "chapter": "tale02",

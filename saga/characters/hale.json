@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "4",
+    "scene": "between-8",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-8"
   },
-  "last_seen_doing": "Took Rae's face in his hands at the tap, wrote the cart and its company into his book, gave them the loft with nobody else in it, and set the summer's loads for the morning.",
-  "now": "At the tap of the inn on the tarn, his book shut on its ribbon.",
+  "last_seen_doing": "Had his book open at Rae's elbow while the coat was sold, and turned a page.",
+  "now": "At the end of his bar with the book open.",
   "story_so_far": "",
   "quote": {
     "text": "We'll talk the summer's loads in the morning, Rae.",
@@ -79,6 +79,10 @@
     {
       "chapter": "05",
       "scene": "4"
+    },
+    {
+      "chapter": "05",
+      "scene": "between-8"
     }
   ]
 }
