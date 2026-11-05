@@ -1236,6 +1236,14 @@
             "ch04:between-9"
           ],
           "evidence": "Darrow had his hands in the upper pool to the wrist, as he had been told"
+        },
+        {
+          "id": "c04.12b",
+          "when": "book2",
+          "at": "book2",
+          "weight": "fate",
+          "what": "The two last fingers of his right hand do not come back whole: the frost from the grate has left them slow and half-numb for good. Maelis tells him so plainly in Book II (a Reading, or the sewing after the weir), and the page keeps it from then on in every scene that needs a grip: the sword held differently, the glove, the cold first in those fingers. Never the knee, never healed, never a lecture. Fire where she tells him",
+          "status": "pending"
         }
       ]
     },
@@ -1653,7 +1661,7 @@
     },
     {
       "id": "r.finale.return",
-      "if": "approval.maelis >= 65 && approval.wren >= 50 && (flags.anselm_spared || flags.vane_unbound || flags.taught_openly)",
+      "if": "approval.maelis >= 90 && approval.wren >= 65 && (flags.anselm_spared || flags.vane_unbound || flags.taught_openly)",
       "then": "Finale option 3 (return the tithe) is offered: three roads into it (Books I, IV, V), never one late option alone",
       "where": "book6:climax"
     },
@@ -1665,8 +1673,8 @@
     },
     {
       "id": "r.b4.hollis_lives",
-      "if": "approval.hollis >= 80 && flags.hollis_truth",
-      "then": "Hollis survives his last stand in Book IV",
+      "if": "approval.hollis >= 85 && flags.hollis_truth && flags.hollis_given_sixth",
+      "then": "Hollis survives his last stand in Book IV: the truth told him in Book II, the Sixth given him at the Gathering, and a regard a Book of conduct must keep earning",
       "where": "book4"
     },
     {
@@ -1755,7 +1763,7 @@
     },
     {
       "id": "r.rae.form",
-      "if": "tether.stage >= 5 && approval.rae >= 50",
+      "if": "tether.stage >= 5 && approval.rae >= 90",
       "then": "The epilogue's last image after the final kneel is the form they made: a vow with no knee bent (arc rae.tether stage 5, rae.road)",
       "where": "finale"
     },
@@ -1767,7 +1775,7 @@
     },
     {
       "id": "r.rae.ledger",
-      "if": "approval.rae >= 40",
+      "if": "approval.rae >= 55",
       "then": "The Confessor's seized ledger comes whole into Wren's hands, Rae's doing (b3.4); otherwise the page is half burned",
       "where": "book3:beat4"
     },
@@ -1833,19 +1841,19 @@
     },
     {
       "id": "r.b5.rae_second",
-      "if": "approval.rae >= 50",
+      "if": "approval.rae >= 80",
       "then": "The Second's carters have turned, and q5.second opens half won in the main road",
       "where": "book5:beat4"
     },
     {
       "id": "r.b6.wren_count",
-      "if": "approval.wren >= 60",
+      "if": "approval.wren >= 70",
       "then": "The last chapter's count is Wren's, said aloud to him",
       "where": "finale"
     },
     {
       "id": "r.b6.rae_door",
-      "if": "approval.rae >= 40 && flags.rae_calling_known",
+      "if": "approval.rae >= 85 && flags.rae_calling_known",
       "then": "the Spire's lower door opens to Rae's word (the Market's wick calls in six years on the north road); the Market's price falls on her debt, the cart and the oxen, and he pays it or lets her (rae.road, Book VI)",
       "where": "book6:beat1"
     }
