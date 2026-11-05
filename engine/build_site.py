@@ -939,11 +939,11 @@ MAP_STREAM = "M247 156 C252 168 244 182 251 196 C254 202 252 206 251 209"
 MAP_THORNWILD = [(320, 94), (336, 90), (354, 92), (372, 89), (392, 92), (408, 90), (408, 214), (392, 210), (374, 214),
                  (356, 209), (338, 214), (324, 208), (318, 192), (321, 176), (317, 160), (320, 144), (317, 126), (320, 110)]
 MAP_WASTE = [(324, 222), (344, 218), (366, 224), (388, 222), (392, 240), (390, 270), (384, 288), (356, 286), (336, 280), (320, 268), (316, 246)]
-MAP_TARN = [(218, 150), (221, 143), (231, 140), (241, 141), (250, 145), (252, 151), (246, 156), (236, 159), (225, 158)]
+MAP_TARN = [(213, 151), (216, 145), (222, 141), (232, 139), (244, 140), (252, 144), (254, 150), (251, 156), (243, 159), (230, 159), (220, 157)]
 # the Holloway: from the winch-house over the rise, down the Elbow (the hairpin above the tarn) past Coldmere to the Wend
 # landing, across the river, and on to Calden
-MAP_HOLLOWAY = ("M214 118 C212 126 211 132 211 137 C211 141 207 140 207 143 C207 146 216 144 216 147 C216 150 210 149 210 153 "
-                "C210 166 212 192 211 212 C210 230 213 252 214 272")
+MAP_HOLLOWAY = ("M214 118 C212 125 210 131 209 136 C208 140 203 140 203 143 C203 146 210 144 210 147 C210 150 206 150 206 153 "
+                "C206 158 207 164 208 172 C209 186 212 200 211 212 C210 230 213 252 214 272")
 MAP_STEPS = "M200 68 L212 74 L198 80 L212 86 L198 92 L212 98 L200 104 L214 110 L214 118"
 # the Greywater: (x, base y, half width, height), back row first
 MAP_PEAKS = [(128, 60, 12, 20), (152, 54, 12, 24), (176, 48, 11, 22), (228, 48, 12, 24), (254, 54, 12, 22), (278, 60, 11, 18),
@@ -951,7 +951,7 @@ MAP_PEAKS = [(128, 60, 12, 20), (152, 54, 12, 24), (176, 48, 11, 22), (228, 48, 
              (232, 62, 13, 28), (258, 68, 13, 22), (282, 72, 10, 16)]
 MAP_HILLS = [(70, 112, 1.0), (84, 106, .8), (96, 116, 1.05), (64, 126, .85), (82, 124, .9), (106, 104, .75)]
 MAP_COPSES = [(98, 150, 6), (150, 252, 5), (262, 246, 5), (178, 118, 4), (96, 262, 4), (244, 102, 3), (276, 182, 3)]
-MAP_TUFTS = (224, 112, 300, 160)
+MAP_TUFTS = (218, 96, 290, 134)  # the moor the drove road loops over, north and east of the tarn
 
 
 def _rand(seed):
@@ -1113,7 +1113,7 @@ def map_terrain(places):
     for _ in range(70):
         x, y = 70 + r() * 240, 84 + r() * 196
         if (clear(x, y, 3) and not _inside(x, y, MAP_THORNWILD) and not _inside(x, y, MAP_WASTE) and not _near_wend(x, y, 6)
-                and abs(x - 211) > 8 and not (205 < x < 300 and 112 < y < 160)):
+                and abs(x - 209) > 8 and not (MAP_TUFTS[0] < x < MAP_TUFTS[2] and MAP_TUFTS[1] < y < MAP_TUFTS[3]) and not _inside(x, y, MAP_TARN)):
             tufts.append(f'<use href="#mp-tuft" x="{_f(x)}" y="{_f(y)}" opacity=".7"/>')
     for _ in range(26):
         x, y = MAP_TUFTS[0] + r() * (MAP_TUFTS[2] - MAP_TUFTS[0]), MAP_TUFTS[1] + r() * (MAP_TUFTS[3] - MAP_TUFTS[1])

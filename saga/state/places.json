@@ -34,7 +34,7 @@
       "region": "greywater-peaks",
       "kind": "stair",
       "x": 220,
-      "y": 88,
+      "y": 84,
       "on_page": true,
       "visited": true,
       "first_seen": {
@@ -90,15 +90,15 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "village",
-      "x": 215,
-      "y": 154,
+      "x": 211,
+      "y": 158,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "01",
         "scene": "1"
       },
-      "description": "Rae Thorne's village, on the Holloway below the mountain, where the road dips to a tarn and the fog comes off the water. Its bell-house stands with its back to the tarn, and it has a mill, a fair and a rope rhyme of its own. Its inn, square and yellow at the water's edge, is the only one in Coldmere and the best on the Holloway, and Rae's uncle keeps it: everything that goes up or down the road goes through his taproom. There the Confessors' list of the Faithless was read aloud, and he filled the reader's cup between the names. A Lance's column coming up the road made camp on the green by the water.",
+      "description": "Rae Thorne's village, on the Holloway below the mountain, where the road dips to a tarn and the fog comes off the water. Its bell-house stands with its back to the tarn, and across the road from it the inn has its yellow door: the only inn in Coldmere and the best on the Holloway, kept by Rae's uncle Hale, who pours for everyone who goes up or down the road and writes their comings in a big book on the bar. There the Confessors' list of the Faithless was read aloud, and he filled the reader's cup between the names. It has a crossroads where the banner turned back for Calden, a mill on the tarn's outflow, and a fair-ground with a horse dealer's yard beyond it.",
       "label_below": true,
       "image": "places/coldmere.jpg",
       "image_alt": "Coldmere at night in falling snow: a snow-roofed inn of stone and dark timber with a blank sign and warm-lit windows, a crowd standing still in the taproom behind the big window while a hooded figure in a grey cloak reads from a long paper. Grey horses stand tied at a rail. In the foreground an ox-cart loaded with sacks, a lantern hanging from it and its cloaked driver seen from behind, pulls away onto the dark road. Below, snowy roofs run down to a black, half-frozen lake under a wall of mountains and cloud.",
@@ -127,15 +127,15 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "road",
-      "x": 262,
-      "y": 121,
+      "x": 250,
+      "y": 98,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "05",
         "scene": "1"
       },
-      "description": "A track between two walls that leaves the Holloway above Coldmere and runs north round the far side of the tarn, past a shepherds' fold on the north shore, then down off the moor's shoulder to a hamlet with a bell-post where the tracks cross, and on along the turnip country. Rae turned her cart onto it rather than drive into a Lance on the march. Every door on it opened to the carter, Wren counted, until the company was on her cart."
+      "description": "A track between two walls that leaves the Holloway above Coldmere and runs north round the far side of the tarn, past a shepherds' fold on the north shore, then down off the moor's shoulder to a hamlet with a bell-post where the tracks cross, and on along the turnip country, before it bends south again toward the tarn and comes down on Coldmere from the north. Rae turned her cart onto it rather than drive into a Lance on the march. Every door on it opened to the carter, Wren counted, until the company was on her cart."
     },
     {
       "id": "wend-landing",
@@ -164,7 +164,7 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "region",
-      "x": 142,
+      "x": 134,
       "y": 150,
       "on_page": true,
       "visited": true,
@@ -346,32 +346,36 @@
     ],
     "wend-landing",
     [
-      210,
-      190
+      211,
+      196
     ],
     [
-      210,
-      166
-    ],
-    [
-      210,
-      153
-    ],
-    [
-      216,
-      147
+      209,
+      180
     ],
     [
       207,
-      143
+      164
     ],
     [
-      211,
-      137
+      206,
+      153
+    ],
+    [
+      209,
+      146
+    ],
+    [
+      204,
+      142
+    ],
+    [
+      209,
+      136
     ],
     [
       212,
-      128
+      127
     ],
     "winch-house",
     [
@@ -388,59 +392,87 @@
     "winch-house",
     [
       212,
-      128
+      127
     ],
     [
-      211,
-      137
-    ],
-    [
-      218,
-      132
-    ],
-    [
-      228,
-      129
-    ],
-    [
-      240,
-      133
-    ],
-    [
-      252,
+      209,
       136
     ],
     [
-      262,
-      141
+      216,
+      132
     ],
     [
-      268,
-      145
+      227,
+      131
     ],
     [
-      276,
-      151
+      238,
+      135
     ],
     [
-      282,
-      156
+      248,
+      128
+    ],
+    [
+      256,
+      121
+    ],
+    [
+      263,
+      118
+    ],
+    [
+      272,
+      121
+    ],
+    [
+      281,
+      126
+    ],
+    [
+      280,
+      114
     ],
     [
       270,
-      150
+      106
     ],
     [
-      255,
+      256,
+      102
+    ],
+    [
+      242,
+      105
+    ],
+    [
+      230,
+      112
+    ],
+    [
+      220,
+      121
+    ],
+    [
+      212,
+      128
+    ],
+    [
+      209,
+      136
+    ],
+    [
+      204,
+      142
+    ],
+    [
+      209,
       146
     ],
     [
-      240,
-      145
-    ],
-    [
-      226,
-      148
+      206,
+      153
     ],
     "coldmere"
   ]

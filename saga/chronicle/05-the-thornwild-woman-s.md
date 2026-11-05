@@ -709,7 +709,7 @@ At noon a carter came up the lane toward them with an empty dray and a shaggy po
 
 Rae's hand went still on Dun's neck. "Gone where?"
 
-"North. Came up the Holloway to the crossroads by Coldmere, forty of them and the smoke-cart, and sat in the road an hour like they were waiting on somebody. Then a rider came up the Calden road with his horse lathered to the girth, and their captain read what he brought and turned the whole column round where it stood. North, the Calden way, cart and all. Two days since." He spat over the wall. "Nobody in Coldmere was sorry."
+"North. Came up the Holloway to the crossroads by Coldmere, forty of them and the smoke-cart, and sat in the road an hour like they were waiting on somebody. Then a rider came up the Calden road with his horse lathered to the girth, and their captain read what he brought and turned the whole column round where it stood. South, the Calden way, cart and all. Two days since." He spat over the wall. "Nobody in Coldmere was sorry."
 
 "Their captain," Darrow said. "Did you see him?"
 
@@ -717,7 +717,7 @@ The carter looked at him properly for the first time: the stick, the infirmary s
 
 "He has," said Darrow. "He always had."
 
-He found he had turned to look north before he had decided anything at all. The lane ran away between its walls toward the high road, and somewhere up it, two days on, was the one face in the Lowmarch he had come down a mountain wanting to watch while it answered. Two days was nothing. Two days was a horse. His feet knew it before the rest of him did, and the old speed came up in him like warmth, and the stick felt light in his hand.
+He found he had turned to look south before he had decided anything at all. The lane ran away between its walls toward the high road, and somewhere down it, two days on, was the one face in the Lowmarch he had come down a mountain wanting to watch while it answered. Two days was nothing. Two days was a horse. His feet knew it before the rest of him did, and the old speed came up in him like warmth, and the stick felt light in his hand.
 
 He knew the feeling. He had had it on the Holloway three days ago with the banner in front of him, and at a ford before that, with a line of spears: the thing he wanted in plain sight and his feet already deciding. It felt exactly like knowing. It always had.
 
