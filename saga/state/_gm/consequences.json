@@ -1439,10 +1439,11 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch05:s5",
-            "ch05:interlude"
+            "ch05:interlude",
+            "ch05:s4"
           ]
         }
       ]
@@ -1582,11 +1583,12 @@
           "priority": 2,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch05:between-7",
             "ch05:between-8",
-            "ch05:s5"
+            "ch05:s5",
+            "ch05:s4"
           ]
         },
         {
@@ -1645,12 +1647,13 @@
           "priority": 2,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch05:between-8",
             "ch05:between-7",
             "ch05:s5",
-            "ch05:interlude"
+            "ch05:interlude",
+            "ch05:s4"
           ]
         }
       ]

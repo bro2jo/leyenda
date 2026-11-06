@@ -259,7 +259,7 @@ The lantern came a while after: down the track from the hamlet, swinging, with t
 > ⟦ THE RECKONING ⟧
 > Level 7 → 8 · Kindled
 > Inspiration 1 → 2
-> XP 2,713 → 2,888
+> XP 2,793 → 2,888
 
 **What does Darrow say?**
 1. **"Darrow of Edgemoor. The one on your post."**
@@ -869,6 +869,10 @@ He laughed, because it was true and because she meant him to, and the dealer's l
 
 "Aye," said Rae. "Don't go saying it twice."
 
+> ⟦ THE RECKONING ⟧
+> XP 2,943 → 3,038
+> Ember Bright → Blazing
+
 ### Between — The Measured Hand
 
 Hollis was in the passage when they came back from the dealer's, propped against the wall by the taproom door as if the wall had asked him to stay, with the noise and the fire-smell coming out round him.
@@ -1300,6 +1304,10 @@ Hale came in from the yard, and took the book from the dresser where he had left
 "Tonight," he said, "when the house is abed. The summer's loads."
 
 "Tonight," said Rae.
+
+> ⟦ THE RECKONING ⟧
+> XP 3,038 → 3,063
+> Ember Blazing → Bright
 
 ### Interlude — The Summer's Loads
 
