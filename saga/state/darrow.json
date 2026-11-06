@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3083,
+  "xp": 3113,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -349,7 +349,7 @@
   "chapter_now": {
     "week_start": "2026-11-01",
     "through": "2026-11-06",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 5
   },
   "fell": {

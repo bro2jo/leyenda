@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-02 · overheard · At first light, through the hut wall: Hollis telling the kettle that it heard nothing last night, nothing about any goat. Darrow, up and laced before anyone asked, laughs before he can stop himself.
 - 2026-11-02 · saying · Rae says the lay brothers' line, *Up is a prayer, down is a bill*, to any cart wheel that sticks, as if the wheel had done the Steps itself. Darrow has started saying it with her. The wheel, she claims, prefers him.
 - 2026-11-02 · ledger · Wren's ledger, road page: geese met, eleven; geese hostile, eleven; times Hollis has said *nearly there*, fourteen. Under it, smaller: the captain, in good spirits. Cause unknown. Watching.
 - 2026-11-02 · house · He sees Hollis palm the last heel of bread a breath before Hollis knows he has done it, and says nothing. Hollis finds this far more alarming than being caught.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-05 · house · Ash has found the one warm stone in the whole of the Lowmarch and will not be talked off it: not by Rae, not by Hollis, not by a sausage held at a reasonable distance.
 - 2026-11-06 · saying · Rae answers most complaints the carters' way: *Road's the road.* Hollis has started saying it back to her about everything that is plainly her fault.
 - 2026-11-06 · body · The leg wakes before he does this morning and has nothing to say about it. He lies there a while, waiting for the usual argument, and it never comes.
+- 2026-11-06 · overheard · Overheard in the yard: Wren asking Maelis whether a man can be too cheerful, as a medical question. Maelis says yes, that it is catching, and that she has not caught it.
