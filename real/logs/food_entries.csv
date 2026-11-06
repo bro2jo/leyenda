@@ -243,3 +243,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-06#3,2026-11-06,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
 2026-11-06#4,2026-11-06,,breakfast,"Eggs, potatoes and peppers plate","1 plate (assumed ~3 eggs, ~1 cup potatoes, peppers, cooking fat)",600,24,42,36,5,10,4,600,900,100,3,55,2.3,80,3,90,estimate,kcal his estimate (~600); macros and micros for the parts he named
 2026-11-06#5,2026-11-06,,lunch,Grilled cheese sandwich on GF bread,"2 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",900,30,64,56,4,30,6,1600,240,800,3,50,4,0,1,0,estimate,as 11/3; GF assumed as before
+2026-11-06#6,2026-11-06,,snack,"Bacon, thick cut","1 slice, cooked",70,5,0.2,5.5,0,2,0,280,80,2,0.2,5,0.5,0,0.1,0,estimate,typical thick-cut slice
+2026-11-06#7,2026-11-06,,snack,Cheddar cheese slice,1 slice (~21 g),80,5,0.3,6.5,0,3.7,0.1,130,16,150,0.1,6,0.8,0,0.1,0,estimate,"typical pre-sliced cheddar, as 10/14"
