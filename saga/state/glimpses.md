@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-01 · weather · Fog comes off the tarn at dusk and settles on the drove road as if it has paid for the spot. Hollis tells it to move along. It does not.
 - 2026-11-01 · house · Wren has begun a tally of every dog in the Lowmarch, strictly for the ledger. Ash appears in it twice: once as hound, ours, and once, in smaller letters, as hound, thief of cheese.
 - 2026-11-02 · overheard · At first light, through the hut wall: Hollis telling the kettle that it heard nothing last night, nothing about any goat. Darrow, up and laced before anyone asked, laughs before he can stop himself.
 - 2026-11-02 · saying · Rae says the lay brothers' line, *Up is a prayer, down is a bill*, to any cart wheel that sticks, as if the wheel had done the Steps itself. Darrow has started saying it with her. The wheel, she claims, prefers him.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-04 · body · Evening finds him less worn than the road has any right to leave him. He sits with his feet to the coals and, for once, does not count the hours to sleep.
 - 2026-11-05 · weather · A hard blue morning over the tarn, the first in days, cold enough that every breath hangs about as if waiting to be thanked. Wren counts them for a while, then gives it up.
 - 2026-11-05 · house · Ash has found the one warm stone in the whole of the Lowmarch and will not be talked off it: not by Rae, not by Hollis, not by a sausage held at a reasonable distance.
+- 2026-11-06 · saying · Rae answers most complaints the carters' way: *Road's the road.* Hollis has started saying it back to her about everything that is plainly her fault.

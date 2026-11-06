@@ -238,3 +238,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-05#4,2026-11-05,,dinner,"Restaurant salad: romaine, red onion, radish, purple vegetable chips, shredded cheddar, bacon","1 entree bowl (photo; ~2 oz cheddar, ~4 strips bacon); dressing not seen",520,28,15,38,4,16,4,1150,600,480,2,40,3,15,0.5,20,photo,portions from the photo; no dressing logged: asked
 2026-11-05#5,2026-11-05,,dinner,"Honey mustard dipping sauce, side cup","2 cups (assumed ~1.5 oz each), on the salad",320,1,20,26,0,4,18,400,30,10,0.2,5,0.1,0,0,0,estimate,as 11/4: creamy restaurant honey mustard ~110 kcal an oz
 2026-11-05#6,2026-11-05,,snack,"Bacon, thick cut","2 slices, cooked",140,10,0.4,11,0,4,0,560,160,4,0.4,10,1,0,0.2,0,estimate,"typical thick-cut slice x2, as 11/1"
+2026-11-06#1,2026-11-06,,breakfast,"Bacon, thick cut","assumed 2 slices, cooked",140,10,0.4,11,0,4,0,560,160,4,0.4,10,1,0,0.2,0,estimate,count not given; his usual 2 thick-cut slices assumed
+2026-11-06#2,2026-11-06,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,library row (Cafe Latte label)
+2026-11-06#3,2026-11-06,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,he said chewy granola protein bar; his usual Kirkland chewy bar
