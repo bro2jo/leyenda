@@ -3497,7 +3497,7 @@ def cmd_songs(args):
 
 
 # ---------------------------------------------------------------- names on the page
-NAME_STOP = set("""I Ser Dame Captain Mender Menders Sister Brother Mother Father Prior Saint Lord Lady King Queen Knight Knights
+NAME_STOP = set("""I Ser Dame Captain Sergeant Mender Menders Sister Brother Mother Father Prior Saint Lord Lady King Queen Knight Knights
 Confessor Confessors Herald Heralds Grace Ember Reckoning Binding Knot Knots Art Arts Steps Stone Crown Hollowed Faithless
 Lance Lances Oathstone Oathstones Oathsworn Warden Wardens Emberwardens Vaelish Vaelmark First Second Third Fourth Fifth Sixth
 Seventh Eighth Ninth Tenth Eleventh Twelfth Book Chapter Scene Interlude Between Climax Choice Level Might Vigor Finesse Resolve""".split())

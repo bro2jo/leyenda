@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-7",
+    "scene": "interlude",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#interlude"
   },
-  "last_seen_doing": "Left Darrow and Hollis at the taproom door; later watched the haggle from the end of the bar, told Wren it was the truth that worked, and told Darrow the coat suited him.",
-  "now": "At the end of the bar by her uncle.",
+  "last_seen_doing": "Sat at her uncle's table after the inn had gone to bed and settled the summer's loads, reading his book upside down; did not tell him what the captain of the Ninth was worth; took a salt sack for the river mill and did not open it; mended Darrow's coat and kept it on her knees.",
+  "now": "In the inn's kitchen at night, the mended coat across her knees and the salt sack for the river mill at her feet.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -695,6 +695,36 @@
       "evidence": "It suits you. You look like somebody's."
     },
     {
+      "fact": "She kept the levy sergeant an hour at the oxen until he went away knowing nothing, with an opinion on yokes.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "By the third the sergeant had his buff coat off"
+    },
+    {
+      "fact": "She reads her uncle's book upside down and has every load before his finger reaches it.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "She had them all before his finger reached them."
+    },
+    {
+      "fact": "Asked what the captain of the Ninth is worth to the Holloway, she did not say what she thought.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "She did not say what she had thought"
+    },
+    {
+      "fact": "She carries a salt sack for the river mill for her uncle, as usual, and has never opened one.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "She did not open it. She never had."
+    },
+    {
+      "fact": "She mended the hay-fork hole in Darrow's coat and did not hang it back on its peg.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "did not get up to hang it back on its peg"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -966,6 +996,14 @@
     {
       "chapter": "05",
       "scene": "between-7"
+    },
+    {
+      "chapter": "05",
+      "scene": "5"
+    },
+    {
+      "chapter": "05",
+      "scene": "interlude"
     },
     {
       "chapter": "tale02",

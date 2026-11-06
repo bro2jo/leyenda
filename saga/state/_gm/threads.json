@@ -117,7 +117,8 @@
         "04:between-10",
         "04:climax",
         "04:choice",
-        "05:s2"
+        "05:s2",
+        "05:s5"
       ]
     },
     {
@@ -177,7 +178,7 @@
       "feeds": "b1.2 (the Grey Cot), `flags.benedek_hollowed`",
       "status": "open",
       "who_knows": "The reader has his oath and his claim of warmth; Hollis's kind lie is known to Hollis and the reader, not to Benedek; that he knelt anew is on no page yet (GM). The House knows (02:climax) he said his oath at the first three bells of the night he was taken and not at the fourth",
-      "note": "05:between-8: the novices keep the lad's bells at the Grey Cot, evens and odds, a wonder at the winch-house; Darrow owes Hollis the telling (c05.10a).",
+      "note": "05:s5: Hollis had the lad's news again in the hay, as the carter had it (c05.10a paid).",
       "on_page": [
         "01:interlude",
         "01:between-1",
@@ -197,7 +198,8 @@
         "03:climax",
         "03:choice",
         "04:s1",
-        "05:between-8"
+        "05:between-8",
+        "05:s5"
       ]
     },
     {
@@ -334,7 +336,9 @@
       "on_page": [
         "04:between-1",
         "05:between-1",
-        "05:between-2"
+        "05:between-2",
+        "05:s5",
+        "05:interlude"
       ]
     },
     {

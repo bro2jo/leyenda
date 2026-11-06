@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-7",
+    "scene": "interlude",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#interlude"
   },
-  "last_seen_doing": "Had his book open at Rae's elbow while the coat was sold, and turned a page.",
-  "now": "At the end of his bar with the book open.",
+  "last_seen_doing": "Read Rae the summer's loads from his book, wrote two lines under them, asked what the captain of the Ninth is worth to the Holloway, and gave her a salt sack for the river mill.",
+  "now": "Gone up to bed at the inn on the tarn, the book with him.",
   "story_so_far": "",
   "quote": {
     "text": "We'll talk the summer's loads in the morning, Rae.",
@@ -49,6 +49,42 @@
       "chapter": "05",
       "scene": "4",
       "evidence": "Nobody in it. Nobody will be, tonight."
+    },
+    {
+      "fact": "He covered for the man seen in his hay as a drover from the fair who drank his best and could not pay.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "I'm keeping him till he can."
+    },
+    {
+      "fact": "He told the sergeant he had never heard of the Mender Vorne, and looked at Rae.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "Never heard it, Sergeant. And I hear everything."
+    },
+    {
+      "fact": "He set the summer's loads with Rae for that night, when the house is abed.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "when the house is abed. The summer's loads."
+    },
+    {
+      "fact": "He wrote the day's two favours under Rae's summer's loads in his book.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "A sergeant, sent on."
+    },
+    {
+      "fact": "He asked Rae what the captain of the Ninth is worth to the Holloway.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "What's he worth, Rae? To the Holloway."
+    },
+    {
+      "fact": "He gave Rae a salt sack to carry to the river mill, as usual.",
+      "chapter": "05",
+      "scene": "interlude",
+      "evidence": "When you go by. As usual."
     }
   ],
   "relationships": [
@@ -88,6 +124,14 @@
       "chapter": "05",
       "scene": "between-8",
       "mention": true
+    },
+    {
+      "chapter": "05",
+      "scene": "5"
+    },
+    {
+      "chapter": "05",
+      "scene": "interlude"
     }
   ]
 }

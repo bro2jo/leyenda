@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3048,
+  "xp": 3053,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -52,9 +52,9 @@
     }
   },
   "ember": {
-    "value": 95,
-    "tier": "Blazing",
-    "effect": "+1 to every check"
+    "value": 92,
+    "tier": "Bright",
+    "effect": "+1 to Vigor checks"
   },
   "inspiration": 2,
   "inspiration_cap": 4,

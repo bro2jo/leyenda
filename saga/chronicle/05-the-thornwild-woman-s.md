@@ -709,7 +709,7 @@ At noon a carter came up the lane toward them with an empty dray and a shaggy po
 
 Rae's hand went still on Dun's neck. "Gone where?"
 
-"North. Came up the Holloway to the crossroads by Coldmere, forty of them and the smoke-cart, and sat in the road an hour like they were waiting on somebody. Then a rider came up the Calden road with his horse lathered to the girth, and their captain read what he brought and turned the whole column round where it stood. South, the Calden way, cart and all. Two days since." He spat over the wall. "Nobody in Coldmere was sorry."
+"Back the way they came. Up the Holloway to the crossroads by Coldmere, forty of them and the smoke-cart, and sat in the road an hour like they were waiting on somebody. Then a rider came up the Calden road with his horse lathered to the girth, and their captain read what he brought and turned the whole column round where it stood. South, the Calden way, cart and all. Two days since." He spat over the wall. "Nobody in Coldmere was sorry."
 
 "Their captain," Darrow said. "Did you see him?"
 
@@ -1114,3 +1114,241 @@ Maelis sat with her hands round her cup. In the firelight she looked older than 
 "Our House."
 
 "You've left it." She turned the cup in her hands. "They'll have that novice's knees before they have his. She'll go down those steps backwards every morning till the thaw, shouting." She finished the cup. "Go and tell Hollis about the lad. He'll pretend he's asleep. Tell him anyway."
+
+### Scene 5 — An Opinion on Yokes
+
+Hale had the book open on the kitchen table and his thumb wet for the first page of the summer's loads when the boy came in at the yard door with breath for one word.
+
+"Levy."
+
+Hale's thumb stopped. "How many?"
+
+"Sergeant and six. At the crossroads." The boy found a little more breath. "Asking at the mill."
+
+Rae was on her feet. The whole company was at the long table at breakfast, the fifth morning off the mountain, with the hard blue cold of the tarn at the window: Maelis at the fire with a cup, Wren with the ledger, Hollis with Wren's other boot across his knee, Darrow at the end of the bench in his drover's coat. Rae looked them over as she looked over a load before she roped it.
+
+"Mender," she said. "You're the cook."
+
+Maelis looked at the pot on the fire. "I've told this house what I think of its cook."
+
+"Then you know what not to do. Wren, behind the tap. You've the face for it."
+
+"What face?"
+
+"A face that's been behind a tap all its life."
+
+Wren thought about it and decided to be pleased.
+
+"Ser Hollis. The hay over the byre, with the Captain and the dog." Rae paused. "And don't talk."
+
+"I never talk," said Hollis.
+
+Nobody answered that.
+
+Darrow was on his feet. "If they're asking for a Mender—"
+
+"Then they'll find a cook," said Maelis, and took the inn's apron off its nail and tied it on.
+
+He looked at Rae. It was her village and her yard, and the levy would be her neighbours' sons; he knew every man who would be in that yard within the hour by the kind of man he was, and not one by his name. She was waiting for him.
+
+"Your yard," he said.
+
+"Up, then." She was already at the door.
+
+Hale shut the book on its ribbon. "Later, then," he said, pleasantly, to the room.
+
+---
+
+The hay loft over the byre was cold enough to see your breath and smelled of a summer nobody in it had seen. Darrow lay in the hay by the pitching door with his eye to a crack between two boards. The cold came up through the hay and found the knee, as it always did now when he lay still, and settled in. His fingers went next. Behind him the loft's back wall was the inn's kitchen chimney, broad old stones that had been warm since before he was born, and Ash had found them, and lay along them with the splinted leg out straight, and would not be moved: not by Hollis, not by Darrow, not by a crust held out at a reasonable distance.
+
+Hollis lay on his back in the hay with the beech leg sticking up like a felled branch, and sneezed.
+
+"Don't," said Darrow.
+
+"It's hay," said Hollis, at the pitch other men used to order a charge. "Hay makes a man sneeze. That's what it's for."
+
+Through the crack the yard was bright and empty, and then it was not. The sergeant came in at the gate first: a broad man in a buff coat with a voice like a gate shutting and a sergeant's stick under his arm. Behind him six boys of the levy carried their pikes the way they had carried hay-rakes a fortnight ago, and one of them had his collar turned up to his ears.
+
+Rae was at Hob's head in the middle of the yard with the yoke pin in her hand, frowning at it.
+
+The sergeant looked at the inn. He looked at the byre, for longer. Then he looked at Rae.
+
+"Faithless," he said. "And a woman Mender. Seen any?"
+
+"I've seen a deal of yoke pins want throwing on the fire," said Rae, and held it up. "Look at that. Worn to a needle. Who'd sell a woman a pin like that?"
+
+The sergeant did not want to look at it. Darrow watched him decide not to, and then look anyway, because it was a very bad pin.
+
+In the hay, Hollis had rolled onto his side and was looking at Darrow's coat.
+
+"That's a good coat."
+
+"Hush."
+
+"That's a very good coat," Hollis said, lower, which was to say at the pitch of a man calling a dog in out of a field. "Where'd you come by a coat like that?"
+
+"Wren."
+
+"Wren's not two coppers to rub—" He stopped. Darrow watched him count it, which took him longer than it would have taken Wren.
+
+"She had money on you," said Hollis.
+
+"She did."
+
+"My money."
+
+"Your money."
+
+Hollis drew a breath that began somewhere around the beech leg. Darrow put a hand over his mouth. Against the chimney Ash lifted her lip at both of them, and in the yard below the sergeant said, "What was that?"
+
+"Byre cat," said Rae, without turning round. "Now, a pin like this. You'd not let your own oxen pull on a pin like this."
+
+The sergeant admitted he would not.
+
+Through the chimney stones behind Ash came the kitchen, faint and clear, as if the stones had been built to carry it. Two of the levy had been sent in to look and had stayed to eat.
+
+"What's in it?"
+
+"Food," said Maelis's voice.
+
+"It's grey."
+
+"So is the weather. Eat it."
+
+A spoon. A silence. "Here. Have you seen a Mender come through? A woman, sharp-like, with hands like a priest's—"
+
+"I've seen a great many women," said Maelis's voice. "Most of them could cook. Eat that, and then the bread, and then go and stand in the yard with your friends."
+
+Darrow was up on his elbow before he had decided anything at all. A hand closed on his ankle, hard. Hollis did not say a word. He held on, and kept holding on, until Darrow lay down again in the hay, and then for some time after.
+
+---
+
+It was a long hour. The cold got into the knee and stayed there, and Darrow lay with his eye to the crack and watched Rae in her yard.
+
+She did not hurry. The sergeant tried to leave three times, and three times she found him something: the pin, then the bow of Dun's yoke, which she said was cut too straight and galled him, then the question of whether a man raised on hill oxen could tell a good bow from a bad one at all. By the third the sergeant had his buff coat off and was down on one knee by Dun's shoulder with his own hands on the wood, telling her how his father had steamed a bow over a kettle in a hill farm forty miles off, and how it ought to be done, and how nobody did it right any more. His six boys stood about the yard blowing on their fingers. Wren came out once with a tray of small beer for them and went back in with an empty tray and, Darrow had no doubt, every word.
+
+Hollis, beside him, had gone quiet. He lay on his back with his hands on his chest and looked up at the rafters.
+
+"Evens and odds," he said.
+
+Darrow turned his head.
+
+"You told me last night," said Hollis. "I was asleep."
+
+"You were."
+
+"Say it again. How the carter had it."
+
+So Darrow told it again, low, into the hay: that every bell of the night one of the novices sat by the grey cot and said the words, so that the lad did not miss one; that they took it in turns; that the lay brothers told it at the winch-house as if it were a wonder.
+
+Hollis lay and looked at the rafters for a while.
+
+"Good," he said, so low that Darrow barely heard him.
+
+Below them the byre door scraped. Hale's voice came in, easy, saying something about the stalls, and a boy's voice after it, and a ladder creaked. A hay-fork came up through the trap at the far end of the loft, and the boy after it as far as his shoulders: the one with his collar up. He began to work the fork through the hay, a yard at a time, toward the pitching door, with no great interest. The tines went into the hay a yard from Hollis's feet. Then a hand from his knee. Then they came down beside his face.
+
+`[RESOLVE · DC 13]` d20 **5** +0 resolve = **5** — *Failure*
+
+Darrow moved before he knew he meant to. He rolled across Hollis and the next thrust went into the hay where Hollis's head had been, and into the cape of the drover's coat, and stuck there; and the boy on the ladder, pulling it free, found himself looking at a fistful of brown wool and a boot.
+
+"There's a man up here!"
+
+Below, Hale did not even raise his voice. "That's a drover from the fair," he said. "Drank my best and can't pay for it. I'm keeping him till he can. Leave him, lad, or he'll be sick on your boots."
+
+The boy laughed, uncertain, and then properly, and went back down the ladder with the fork. The byre door scraped. Hale went out with him, talking about the weather, and did not look up at the loft.
+
+Darrow lay across Hollis with a hole in his new coat.
+
+"You're on my leg," said Hollis.
+
+"Which one?"
+
+"The one that minds."
+
+---
+
+The sergeant went at last, with his coat over his arm and his face red from the kettle-steam of his father's farm. At the gate he turned, and Hale was there, wiping his hands on his apron to see a guest off.
+
+"The Mender Vorne," the sergeant said. "On the writs. You'd know if she'd come through."
+
+"Vorne." Hale turned the name over as if he were looking for it in his book. "Never heard it, Sergeant. And I hear everything."
+
+Then he looked at Rae.
+
+It was a short look, pleasant, with nothing in it a sergeant would see. Rae was at Hob's head with the bad pin in her hand, and she did not look back. Darrow had seen that look on quartermasters, standing at a wagon tail, adding a line.
+
+The levy went out at the gate and down the road toward the mill, with the sergeant explaining yokes to the boy with his collar up.
+
+They came down when the road was empty. Wren met them in the kitchen door with the ledger open.
+
+"Questions asked," she said. "Twenty-two. About a woman Mender: nine. About the Faithless: four. About a captain: none. About the stew: six."
+
+"They had two bowls each," said Maelis, untying the apron.
+
+"My money," said Hollis to Wren.
+
+"Your boots," said Wren. "Six more days of them."
+
+Hale came in from the yard, and took the book from the dresser where he had left it, and tucked it under his arm. He smiled at all of them. Then he turned to Rae.
+
+"Tonight," he said, "when the house is abed. The summer's loads."
+
+"Tonight," said Rae.
+
+### Interlude — The Summer's Loads
+
+The inn had gone to bed. Rae sat across the kitchen table from her uncle with one lamp between them and the fire banked, and the book open on the board the right way up for him and the wrong way up for her, which had never once slowed her down.
+
+"Salt at the landing, the first week after the thaw," said Hale, running his finger down. "Four loads."
+
+"Five," said Rae. "You've the fifth on the next leaf, with the oil."
+
+He turned the leaf, and there it was, and he smiled at it as if it had done something clever. He read the summer to her a load at a time: salt and oil and flour and linen, the House's letters down and the House's wounded up, the wool clip in the dry week, a coffin for the mill. She had them all before his finger reached them. At the foot of each month he drew a line and wrote what she had paid in, and at the foot of the summer he drew two lines and wrote what was left owing on the cart and the oxen, and turned the book a little toward her so she could see it, which she already had.
+
+It was less than it had been in the spring. It was a good deal more than nothing.
+
+"You're a good carter," Hale said. "Your grandmother was the best I ever saw, and she couldn't write her name."
+
+Then he wet the pencil and wrote two more lines under the summer, small, in the same neat hand, and did not read them out.
+
+Rae read them upside down.
+
+*A sergeant, sent on.*
+
+*A drover, kept.*
+
+She said nothing. Hale shut the book on its ribbon and folded his hands on top of it.
+
+"Your captain," he said.
+
+"He's not mine."
+
+"The captain of the Ninth, then." He said it kindly. Everything he asked came out kindly. "Half the Holloway's heard of him since the bell, and the other half will by the thaw. There's men up and down this road would give a good deal to know where he sleeps of a night." He looked at her across the lamp. "What's he worth, Rae? To the Holloway."
+
+She thought of the loft over their heads, and Hollis snoring in it like a bad-tempered sea, and Wren talking numbers in her sleep, and the one who slept on his back with the stick where he could reach it.
+
+"There's men up and down this road would give a good deal to know where you keep the key to your strongbox," she said.
+
+Hale laughed, the warm laugh the whole valley knew. "Think on it," he said.
+
+"I have."
+
+She did not say what she had thought, and he did not ask her twice. He reached under the table and brought up a salt sack, half full, the neck tied with carter's twine, and stood it on the board between them.
+
+"For the river mill," he said. "When you go by. As usual."
+
+She lifted it. Salt, and under the salt, near the bottom, something flat and close-wrapped that sat a little differently in the sack's belly, the weight of a book of prayers or a packet of letters or a small blade in a case. She knew it the way she knew any load, by how it hung. She set it down by her feet. She did not open it. She never had.
+
+"Night, Rae." He took the book and the lamp's spill and went to the door, and turned there, big and soft in his shirtsleeves. "You're home," he said, and went up.
+
+She sat on in the dark with the fire's last red on the hearth.
+
+There had been one thing she wanted, once, and she had said it aloud on a mountain at first light: to carry a thing up those stairs and see it come down whole. She had seen it. He had walked down eleven hundred steps on his own legs with a stick and a dog and his face set, and she had been at the bottom with the cart. She had thought that when she had it she would put it down, as you put down a load at the end of the road, and feel the cart ride light behind the oxen.
+
+The drover's coat hung on the peg by the yard door, where he had left it to air. She could see the hole in the cape from where she sat: the fork's three tines through the brown wool, and the threads standing up round them.
+
+She got up and took it down. She found her needle in her own coat and her twine in her own pocket, and sat by the last of the fire with his coat across her knees, and mended it as she mended a sack, small and tight, so the rain would run off it and not in.
+
+When it was done she bit the twine and put the needle away, and sat with the coat across her knees, and did not get up to hang it back on its peg.
+
+The salt sack stood at her feet in the dark, tied, as it had come.

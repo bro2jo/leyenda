@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "4",
+    "scene": "5",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-4"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
   },
-  "last_seen_doing": "Came into the inn yard with the company.",
-  "now": "At the inn on the tarn with the company.",
+  "last_seen_doing": "Lay along the warm chimney stones in the hay loft and would not be moved; lifted her lip at Darrow and Hollis.",
+  "now": "At the inn on the tarn.",
   "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
   "quote": null,
   "known_facts": [
@@ -189,6 +189,10 @@
     {
       "chapter": "05",
       "scene": "4"
+    },
+    {
+      "chapter": "05",
+      "scene": "5"
     }
   ]
 }

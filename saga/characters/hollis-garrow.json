@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "between-7",
+    "scene": "5",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#between-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
   },
-  "last_seen_doing": "Saw that the lesson was the Captain keeping him off the taps and taught it anyway, from the mounting block; said, sober, that he would follow him into the river again; improved the last throw into the first for Wren and was caught; refused to teach her; let them go.",
-  "now": "On the mounting block in the inn yard, sober, with tomorrow's lesson already named.",
+  "last_seen_doing": "Hid in the hay; worked out that his lost wager had bought the Captain's coat; held Darrow by the ankle when the levy asked for a Mender; asked to hear the lad's news again.",
+  "now": "At the inn on the tarn, with six more days of boots owed.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -700,6 +700,24 @@
       "chapter": "05",
       "scene": "between-7",
       "evidence": "You'd count it instead of throwing it."
+    },
+    {
+      "fact": "He worked out that his lost wager had paid for the Captain's coat.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "She had money on you"
+    },
+    {
+      "fact": "He held Darrow by the ankle in the hay when the levy asked the cook for a Mender, and did not let go.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "A hand closed on his ankle, hard."
+    },
+    {
+      "fact": "He asked to hear the carter's news of the lad on the grey cot again, as the carter had it.",
+      "chapter": "05",
+      "scene": "5",
+      "evidence": "Say it again. How the carter had it."
     }
   ],
   "relationships": [
@@ -1025,6 +1043,15 @@
     {
       "chapter": "05",
       "scene": "between-7"
+    },
+    {
+      "chapter": "05",
+      "scene": "5"
+    },
+    {
+      "chapter": "05",
+      "scene": "interlude",
+      "mention": true
     }
   ]
 }
