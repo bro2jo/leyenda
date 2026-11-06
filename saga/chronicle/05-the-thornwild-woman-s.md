@@ -1149,7 +1149,7 @@ Darrow was on his feet. "If they're asking for a Mender—"
 
 "Then they'll find a cook," said Maelis, and took the inn's apron off its nail and tied it on.
 
-He looked at Rae. It was her village and her yard, and the levy would be her neighbours' sons; he knew every man who would be in that yard within the hour by the kind of man he was, and not one by his name. She was waiting for him.
+He looked at Rae. It was her village and her yard, and the levy would be her neighbours' sons. He could have told the kind of every man who would be in that yard within the hour, and not one of their names. She was waiting for him.
 
 "Your yard," he said.
 
@@ -1159,7 +1159,7 @@ Hale shut the book on its ribbon. "Later, then," he said, pleasantly, to the roo
 
 ---
 
-The hay loft over the byre was cold enough to see your breath and smelled of a summer nobody in it had seen. Darrow lay in the hay by the pitching door with his eye to a crack between two boards. The cold came up through the hay and found the knee, as it always did now when he lay still, and settled in. His fingers went next. Behind him the loft's back wall was the inn's kitchen chimney, broad old stones that had been warm since before he was born, and Ash had found them, and lay along them with the splinted leg out straight, and would not be moved: not by Hollis, not by Darrow, not by a crust held out at a reasonable distance.
+The hay loft over the byre was cold enough to see your breath and smelled of a summer nobody in it had seen. Darrow lay in the hay by the pitching door with his eye to a crack between two boards. The cold came up through the hay and found the knee first, and settled in. His fingers went next. Behind him the loft's back wall was the inn's kitchen chimney, broad old stones that had been warm since before he was born, and Ash had found them, and lay along them with the splinted leg out straight, and would not be moved: not by Hollis, not by Darrow, not by a crust held out at a reasonable distance.
 
 Hollis lay on his back in the hay with the beech leg sticking up like a felled branch, and sneezed.
 
@@ -1167,7 +1167,7 @@ Hollis lay on his back in the hay with the beech leg sticking up like a felled b
 
 "It's hay," said Hollis, at the pitch other men used to order a charge. "Hay makes a man sneeze. That's what it's for."
 
-Through the crack the yard was bright and empty, and then it was not. The sergeant came in at the gate first: a broad man in a buff coat with a voice like a gate shutting and a sergeant's stick under his arm. Behind him six boys of the levy carried their pikes the way they had carried hay-rakes a fortnight ago, and one of them had his collar turned up to his ears.
+Through the crack the yard was bright and empty, and then it was not. The sergeant came in at the gate first: a broad man in a buff coat with a voice like a barn door slammed and a sergeant's stick under his arm. Behind him six boys of the levy carried their pikes the way they had carried hay-rakes a fortnight ago, and one of them had his collar turned up to his ears.
 
 Rae was at Hob's head in the middle of the yard with the yoke pin in her hand, frowning at it.
 
@@ -1177,7 +1177,7 @@ The sergeant looked at the inn. He looked at the byre, for longer. Then he looke
 
 "I've seen a deal of yoke pins want throwing on the fire," said Rae, and held it up. "Look at that. Worn to a needle. Who'd sell a woman a pin like that?"
 
-The sergeant did not want to look at it. Darrow watched him decide not to, and then look anyway, because it was a very bad pin.
+Darrow watched the sergeant decide not to look at it, and then look anyway, because it was a very bad pin.
 
 In the hay, Hollis had rolled onto his side and was looking at Darrow's coat.
 
@@ -1219,13 +1219,17 @@ A spoon. A silence. "Here. Have you seen a Mender come through? A woman, sharp-l
 
 "I've seen a great many women," said Maelis's voice. "Most of them could cook. Eat that, and then the bread, and then go and stand in the yard with your friends."
 
-Darrow was up on his elbow before he had decided anything at all. A hand closed on his ankle, hard. Hollis did not say a word. He held on, and kept holding on, until Darrow lay down again in the hay, and then for some time after.
+Darrow was up on his elbow. A hand closed on his ankle, hard. Hollis did not say a word. He held on, and kept holding on, until Darrow lay down again in the hay, and then for some time after.
 
 ---
 
-It was a long hour. The cold got into the knee and stayed there, and Darrow lay with his eye to the crack and watched Rae in her yard.
+It was a long hour, and a cold one, and Darrow lay with his eye to the crack and watched Rae in her yard.
 
-She did not hurry. The sergeant tried to leave three times, and three times she found him something: the pin, then the bow of Dun's yoke, which she said was cut too straight and galled him, then the question of whether a man raised on hill oxen could tell a good bow from a bad one at all. By the third the sergeant had his buff coat off and was down on one knee by Dun's shoulder with his own hands on the wood, telling her how his father had steamed a bow over a kettle in a hill farm forty miles off, and how it ought to be done, and how nobody did it right any more. His six boys stood about the yard blowing on their fingers. Wren came out once with a tray of small beer for them and went back in with an empty tray and, Darrow had no doubt, every word.
+She did not hurry. The sergeant tried to leave three times, and three times she found him something: the pin, then the bow of Dun's yoke, which she said was cut too straight and galled him, then the question of whether a man raised on hill oxen could tell a good bow from a bad one at all. By the third the sergeant had his buff coat off and was down on one knee by Dun's shoulder with his own hands on the wood, telling her how his father had steamed a bow over a kettle in a hill farm forty miles off, and how it ought to be done, and how nobody did it right any more.
+
+"Show me," said Rae, and gave him the drawknife.
+
+He showed her. He showed her for a good while. His six boys stood about the yard blowing on their fingers. Wren came out once with a tray of small beer for them and went back in with an empty tray and, Darrow had no doubt, every word.
 
 Hollis, beside him, had gone quiet. He lay on his back with his hands on his chest and looked up at the rafters.
 
@@ -1249,7 +1253,7 @@ Below them the byre door scraped. Hale's voice came in, easy, saying something a
 
 `[RESOLVE · DC 13]` d20 **5** +0 resolve = **5** — *Failure*
 
-Darrow moved before he knew he meant to. He rolled across Hollis and the next thrust went into the hay where Hollis's head had been, and into the cape of the drover's coat, and stuck there; and the boy on the ladder, pulling it free, found himself looking at a fistful of brown wool and a boot.
+Darrow moved before he knew he meant to. He rolled across Hollis, and the next thrust went in past both their heads, through the cape of the drover's coat, and stuck there; and the boy on the ladder, pulling it free, found himself looking at a fistful of brown wool and a boot.
 
 "There's a man up here!"
 
@@ -1279,7 +1283,9 @@ It was a short look, pleasant, with nothing in it a sergeant would see. Rae was 
 
 The levy went out at the gate and down the road toward the mill, with the sergeant explaining yokes to the boy with his collar up.
 
-They came down when the road was empty. Wren met them in the kitchen door with the ledger open.
+They came down when the road was empty. Rae was in the yard, putting the pin she had called worn to a needle back into Dun's yoke, and she drove it home with the heel of her hand without looking at it.
+
+Wren met them in the kitchen door with the ledger open.
 
 "Questions asked," she said. "Twenty-two. About a woman Mender: nine. About the Faithless: four. About a captain: none. About the stew: six."
 
@@ -1298,6 +1304,8 @@ Hale came in from the yard, and took the book from the dresser where he had left
 ### Interlude — The Summer's Loads
 
 The inn had gone to bed. Rae sat across the kitchen table from her uncle with one lamp between them and the fire banked, and the book open on the board the right way up for him and the wrong way up for her, which had never once slowed her down.
+
+He had kept her the heel of the good loaf, as he had since she was small enough to sit on the board, and he pushed it across to her without a word before he opened anything.
 
 "Salt at the landing, the first week after the thaw," said Hale, running his finger down. "Four loads."
 
