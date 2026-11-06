@@ -49,6 +49,7 @@ Commands (run from the repo root):
   plan book open N                      enter Book N: position.book/beat, route.bookN, core beats and quests seeded from arc.md, Book N-1's planned beats folded,
                                         its unrun optional quests dropped; required ones are kept available and warned (re-skin on the road or drop by hand)
   plan quest ID k=v ... | plan beat ID status=... | plan flag [--new] k=v (true/false/null; --new to add a flag) | plan temptation add TEXT
+  plan tally [NAME [+N|-N] [--why TEXT]]    a count the GM keeps (held, chased: the Book II question, counted from Book III's reckoning); the brief and `now` print them, rules read `tally.<name>`
   plan companion arrive ID              move a companion from companions_to_come to world.json (keeps bond)
   plan set key=value                    stage=choice only follows climax; stage=climax pays off owed world moves;
                                         rank_on_page=<rank> once a scene has carried a rank crossing (`now` prints RANK OWED until then)
@@ -694,7 +695,7 @@ def pending_items(ledger):
 RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.USub, ast.Compare,
               ast.Attribute, ast.Name, ast.Constant, ast.Load,
               ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Eq, ast.NotEq)
-KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats", "present", "place")
+KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats", "present", "place", "tally")
 _CHAR_IDS = None
 
 
@@ -786,6 +787,8 @@ def term_lookup(parts, st):
         return parts[1] in f, (f.get(parts[1]) or 0)
     if root == "temptation" and parts[1:] == ["count"]:
         return True, len(plan.get("temptation", {}).get("planted", []))
+    if root == "tally" and len(parts) == 2:  # tally.held: a count the GM keeps through `plan tally` (design §2); a missing tally reads 0
+        return True, int((plan.get("tallies") or {}).get(parts[1]) or 0)
     if root == "quests" and len(parts) >= 3 and parts[-1] == "status":
         qid = ".".join(parts[1:-1])
         q = plan.get("quests", {})
@@ -1771,6 +1774,8 @@ def cmd_now(args):
     for pid, done in unbound_projects(t_rows):
         lines.append(f"TALE UNBOUND: project {pid} has {done} task(s) reported and no tale: `saga.py tale bind {pid}`, then its piece(s)")
     lines.append(bearing_line(bearing))
+    if plan.get("tallies"):
+        lines.append("Tallies: " + " · ".join(f"{k} {v}" for k, v in sorted(plan["tallies"].items())) + "  (`plan tally NAME +1 --why …` after a block that shows one)")
     ro = rank_owed(plan)
     if ro:
         lines.append(f"RANK OWED: {ro[0]} → {ro[1]}: one prose beat in the next scene, the script changing as he notices it (style.md §3); then `plan set rank_on_page={ro[1]}`")
@@ -3097,6 +3102,25 @@ def cmd_plan(args):
             print(f"flag {k}: {old} → {v}")
         st.touch("plan")
         st.save()
+        return
+    if a == "tally":
+        tallies = plan.setdefault("tallies", {})
+        if not args.name:
+            print("tallies: " + (" · ".join(f"{k} {v}" for k, v in sorted(tallies.items())) or "none") + "  (`plan tally NAME [+N|-N] [--why …]`; the rules read `tally.<name>`)")
+            for row in (plan.get("tallies_log") or [])[-6:]:
+                print(f"  {row.get('date')} {row.get('name')} {row.get('delta'):+d}: {row.get('why') or ''}")
+            return
+        name = str(args.name).strip().lower()
+        if not re.match(r"^[a-z][a-z0-9_]*$", name):
+            die(f"tally {name!r}: a lowercase word (held, chased)")
+        delta = int(str(args.delta or "+1").replace("+", ""))
+        old = int(tallies.get(name) or 0)
+        tallies[name] = old + delta
+        plan.setdefault("tallies_log", []).append({"date": today_local().isoformat(), "name": name, "delta": delta, "why": (args.why or "").strip(),
+                                                   "book": plan["position"]["book"], "chapter": plan["position"]["chapter"]})
+        st.touch("plan")
+        st.save()
+        print(f"tally {name}: {old} → {tallies[name]}" + (f" ({args.why.strip()})" if args.why else "") + " · the brief prints the tallies; rules read `tally." + name + "`")
         return
     if a == "temptation":
         t = plan.setdefault("temptation", {"planted": []})
@@ -5223,6 +5247,8 @@ def cmd_brief(args):
     kl2 = knee_line(rules)
     if kl2:
         L.append(f"the knee, on the page: {kl2}")
+        if plan.get("tallies"):
+            L.append("tallies: " + " · ".join(f"{k} {v}" for k, v in sorted(plan["tallies"].items())) + " (`plan tally held|chased +1 --why …`; never in prose)")
     if world.get("inventory"):
         L.append("in hand: " + "; ".join(world["inventory"]))
     kept = world.get("keepsakes") or []
@@ -6648,6 +6674,7 @@ def main():
     x = ps.add_parser("beat"); x.add_argument("id"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("flag"); x.add_argument("kv", nargs="+"); x.add_argument("--new", action="store_true", help="add a flag the plan does not have yet")
     x = ps.add_parser("temptation"); x.add_argument("sub", choices=["add"]); x.add_argument("text")
+    x = ps.add_parser("tally", help="a count the GM keeps (held, chased): `plan tally held +1 --why …`; no name lists them; rules read tally.<name>"); x.add_argument("name", nargs="?"); x.add_argument("delta", nargs="?", default="+1"); x.add_argument("--why")
     x = ps.add_parser("companion"); x.add_argument("sub", choices=["arrive"]); x.add_argument("id")
     x = ps.add_parser("set"); x.add_argument("kv", nargs="+")
     x = ps.add_parser("pace", help="the Knot's window for the current Book (GM: from the State's next gate), which the pace line reads"); x.add_argument("--earliest"); x.add_argument("--likely"); x.add_argument("--why")

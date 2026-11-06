@@ -442,7 +442,10 @@
     "vane_parleyed": false,
     "false_colours": false,
     "frames_thrown": false,
-    "sworn_knelt": false
+    "sworn_knelt": false,
+    "ford_owned": false,
+    "vow_hold": false,
+    "vow_broken": false
   },
   "factions": {
     "crown": -10,
@@ -534,5 +537,27 @@
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4
-  }
+  },
+  "tallies": {
+    "chased": 1,
+    "held": 1
+  },
+  "tallies_log": [
+    {
+      "date": "2026-11-05",
+      "name": "chased",
+      "delta": 1,
+      "why": "ch5 s1: two miles toward the north road without asking anyone, the habit that lost him the horse",
+      "book": 2,
+      "chapter": 5
+    },
+    {
+      "date": "2026-11-05",
+      "name": "held",
+      "delta": 1,
+      "why": "ch5 s1: gave Rae the road and owned the habit aloud",
+      "book": 2,
+      "chapter": 5
+    }
+  ]
 }

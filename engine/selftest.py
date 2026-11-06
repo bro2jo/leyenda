@@ -285,6 +285,17 @@ def main():
             check(code == 0 and hol1 - hol0 == want, f"a Between raises a companion at regard {hol0} by what is left of its cap this chapter (+{want}; got {hol1 - hol0:+d})", out[-300:])
             code, out = run(saga + ["approval", "forecast"], tmp)
             check(code == 0 and "hollis" in out and "rule(s) met for free" in out, "approval forecast names every companion and a verdict", out[-300:])
+            # a tally the GM keeps: counted, printed, read by the rule grammar
+            held0 = int((jload(tmp / "saga/state/_gm/plan.json").get("tallies") or {}).get("held") or 0)  # a live copy may carry a count
+            code, out = run(saga + ["plan", "tally", "held", "+1", "--why", "self-test: a hold"], tmp)
+            code2, out2 = run(saga + ["plan", "tally", "held", "+1"], tmp)
+            code3, out3 = run(saga + ["plan", "tally"], tmp)
+            check(code == 0 and code2 == 0 and f"held {held0 + 2}" in out3, "plan tally counts a hold twice and lists it", (out + out2 + out3)[-300:])
+            code, out = run(saga + ["now"], tmp)
+            check("Tallies: " in out and f"held {held0 + 2}" in out, "now prints the tallies", out[-300:])
+            code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; st = saga.State(); "
+                             f"print(saga.rule_state({{'id': 'r.x', 'if': 'tally.held >= {held0 + 2} && tally.nothing == 0', 'then': '', 'where': 'any'}}, st)[0])"], tmp)
+            check(code == 0 and out.strip().endswith("ARMED"), "a rule reads tally.<name>, and a missing tally reads 0", out[-200:])
 
             # the scene recorded: a refusal first, then the record, then the projections
             with open(chapter, "a", encoding="utf-8") as f:
