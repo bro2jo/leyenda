@@ -28,8 +28,8 @@ if (bar) {
 /* the masthead slides away while reading down and comes back on the way up (the progress bar stays). A jump to a
    heading on the page puts it away first and holds it there while the page moves, so the heading lands in sight;
    scroll-padding in site.css matches whichever way the masthead is. */
-var mast = document.querySelector(".mast"), holdUntil = 0;
-var mastAway = function(on){ root.classList.toggle("mast-away", on); };
+var mast = document.querySelector(".mast"), holdUntil = 0, tsClose = null;
+var mastAway = function(on){ root.classList.toggle("mast-away", on); if (on && tsClose) { tsClose(); } };
 if (mast) {
   var lastY = window.pageYOffset;
   var measure = function(){ root.style.setProperty("--mast-h", mast.offsetHeight + "px"); };
@@ -45,6 +45,53 @@ if (mast) {
   mast.addEventListener("focusin", function(){ mastAway(false); });
 }
 var hold = function(){ if (mast) { mastAway(true); holdUntil = Date.now() + 1000; } };
+/* text size (chapters and tales): the AA opens a panel with a smaller and a larger A, one step down and two up from the
+   default. It sets --rs on the reader (site.css scales the reader's text by it) and keeps the line at the top of the
+   screen where it was. Nothing is kept: a new page, or a refresh, starts at the default. */
+var ts = document.querySelector(".ts"), readers = document.querySelectorAll(".reader");
+if (ts && readers.length) {
+  var TS = [{rs: 0.89, name: "Small"}, {rs: 1, name: "Default"}, {rs: 1.125, name: "Large"}, {rs: 1.25, name: "Largest"}];
+  var tsAt = 1, tsBtn = ts.querySelector(".ts-btn"), tsPanel = ts.querySelector(".ts-panel");
+  var tsDown = ts.querySelector("[data-ts='-1']"), tsUp = ts.querySelector("[data-ts='1']");
+  var tsName = ts.querySelector(".ts-name"), tsSteps = ts.querySelector(".ts-steps");
+  TS.forEach(function(s, i){ var d = document.createElement("i"); d.style.width = d.style.height = (5 + 2 * i) + "px"; tsSteps.appendChild(d); });
+  var tsPaint = function(){
+    tsDown.setAttribute("aria-disabled", String(tsAt === 0));
+    tsUp.setAttribute("aria-disabled", String(tsAt === TS.length - 1));
+    tsName.textContent = TS[tsAt].name;
+    Array.prototype.forEach.call(tsSteps.children, function(d, i){ d.classList.toggle("on", i <= tsAt); });
+  };
+  var tsOpen = function(on){ tsPanel.hidden = !on; tsBtn.setAttribute("aria-expanded", String(on)); };
+  tsClose = function(){ tsOpen(false); };
+  /* the block at the top of the screen, below the masthead, and how far down it the screen's top edge falls */
+  var tsMark = function(){
+    var edge = mast ? Math.max(0, mast.getBoundingClientRect().bottom) : 0;
+    var els = document.querySelectorAll(".reader > :not(section), .reader section > *");
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.bottom > edge && r.height > 0) { return {el: els[i], frac: Math.min(1, Math.max(0, (edge - r.top) / r.height)), y: r.top + Math.max(0, edge - r.top)}; }
+    }
+    return null;
+  };
+  var tsSet = function(i){
+    if (i < 0 || i >= TS.length || i === tsAt) { return; }
+    var m = window.pageYOffset > 0 ? tsMark() : null;
+    tsAt = i;
+    Array.prototype.forEach.call(readers, function(r){ r.style.setProperty("--rs", String(TS[i].rs)); });
+    if (m) {
+      var r = m.el.getBoundingClientRect(), y = window.pageYOffset + r.top + m.frac * r.height - m.y;
+      holdUntil = Date.now() + 300;  /* the page moving under the reader is not the reader scrolling: the masthead stays */
+      window.scrollTo({top: Math.max(0, y), behavior: "instant"});
+    }
+    tsPaint();
+  };
+  tsBtn.addEventListener("click", function(){ tsOpen(tsPanel.hidden); });
+  tsDown.addEventListener("click", function(){ tsSet(tsAt - 1); });
+  tsUp.addEventListener("click", function(){ tsSet(tsAt + 1); });
+  document.addEventListener("click", function(e){ if (!tsPanel.hidden && !ts.contains(e.target)) { tsOpen(false); } });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !tsPanel.hidden) { tsOpen(false); tsBtn.focus(); } });
+  tsPaint();
+}
 /* a link to a place on this same page: the masthead goes first, then the browser jumps */
 document.addEventListener("click", function(e){
   var a = e.target.closest && e.target.closest("a[href*='#']");

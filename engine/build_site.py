@@ -1564,6 +1564,15 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 
 
 ASSET_V = {}
+# the reader's text size: a small AA in the masthead opens a panel with a smaller and a larger A (site.js fills the steps
+# and the name, and scales the reader's text; nothing is kept, a new page starts at the default)
+TEXT_SIZE = ('<div class="ts"><button class="ts-btn" type="button" aria-expanded="false" aria-controls="ts-panel" title="Text size">'
+             '<span aria-hidden="true"><span class="s">A</span><span class="b">A</span></span><span class="sr">Text size</span></button>'
+             '<div class="ts-panel" id="ts-panel" role="group" aria-label="Text size" hidden>'
+             '<div class="ts-head"><span class="lbl">Text size</span><span class="ts-name" aria-live="polite"></span></div>'
+             '<div class="ts-row"><button type="button" data-ts="-1" aria-label="Smaller text"><span aria-hidden="true">A</span></button>'
+             '<span class="ts-steps" aria-hidden="true"></span>'
+             '<button class="big" type="button" data-ts="1" aria-label="Larger text"><span aria-hidden="true">A</span></button></div></div></div>')
 
 
 def asset_v(name):
@@ -1577,7 +1586,11 @@ def asset_v(name):
 def shell(title, body, rel, current, cls="", desc=""):
     nav = "".join(f'<a href="{rel}{href}"{CUR if name == current else ""}>{name}</a>' for name, href in NAV)
     meta_desc = f'<meta name="description" content="{esc(desc)}">' if desc else ""
-    progress = '<div class="progress" aria-hidden="true"><i></i></div>\n' if "reader-page" in cls.split() else ""
+    reader = "reader-page" in cls.split()
+    progress = '<div class="progress" aria-hidden="true"><i></i></div>\n' if reader else ""
+    # a chapter or a tale: the text-size control in the masthead (site.js runs it; without the script it is not shown)
+    ts = TEXT_SIZE if reader else ""
+    ts_off = "<noscript><style>.ts{display:none}</style></noscript>\n" if reader else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -1591,10 +1604,10 @@ def shell(title, body, rel, current, cls="", desc=""):
 <link rel="apple-touch-icon" href="{rel}apple-touch-icon.png">
 {FONTS}
 <link rel="stylesheet" href="{rel}site.css?v={asset_v("css")}">
-</head>
+{ts_off}</head>
 <body class="{cls}">
 <a class="skip" href="#main">Skip to content</a>
-{progress}<header class="mast"><div class="wrap mast-in"><a class="brand" href="{rel}index.html">The Unkneeling</a><nav class="nav" aria-label="Site">{nav}</nav></div></header>
+{progress}<header class="mast"><div class="wrap mast-in"><a class="brand" href="{rel}index.html">The Unkneeling</a><nav class="nav" aria-label="Site">{nav}</nav>{ts}</div></header>
 <main id="main" class="wrap">
 {body}
 </main>
