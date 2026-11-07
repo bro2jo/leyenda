@@ -251,3 +251,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-06#11,2026-11-06,,snack,"Jackson's sweet potato chips, sea salt (avocado oil)",whole bag assumed (2.5 servings),380,3,41,23,6,2.5,8,380,685,61,1,40,0.5,5,0,0,label,"label photo, per-container column"
 2026-11-06#12,2026-11-06,,snack,Jack Link's Cold Crafted beef & mild cheddar (3 oz pack),1 package (85 g),300,20,1,24,0,10,0,1060,200,300,1.5,15,3,0,0.3,0,library,"library row (web, 11/6)"
 2026-11-06#13,2026-11-06,,snack,Snickers ice cream bar (2.8 fl oz),1 bar,240,4,23,15,1,9,20,70,150,80,0.3,20,0.6,0,0.1,0,library,"library row (wrapper + web, 11/6)"
+2026-11-06#14,2026-11-06,,dinner,Fig bar twin pack (Nature's Bakery style),1 package (57 g),210,2,39,6,3,0.5,20,70,190,26,1.1,15,0.3,0,0,0,label,label photo
