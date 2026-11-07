@@ -2488,12 +2488,24 @@ class Site:
             src = f'<figcaption>{src}{" " if src and cue else ""}{cue}</figcaption>' if src or cue else ""
             head.append(f'<figure class="epigraph"><blockquote>{lines}</blockquote>{src}</figure>')
         body = []
-        for s in ch["scenes"]:
+        # each block folds under its heading so a long chapter stays short: open are the newest block and the one before it on
+        # the current chapter (where Continue reading lands), the first block on any other; a link to one block opens that one
+        # and the one before it instead (site.js). A block with no heading never folds.
+        n = len(ch["scenes"])
+        is_cur = ch["slug"] == (self.current_chapter or {}).get("slug")
+        open_ix = {n - 1, n - 2} if is_cur else {0}
+        for i, s in enumerate(ch["scenes"]):
             seen = set()
             lab = f'<span class="scene-n">{glyph(self.scene_kind(s), 16)}{esc(s["label"])}</span>' if s["label"] else ""
             title = esc(s["title"]) if s["title"] else ""
             cls = "scene between" if s.get("between") else "scene"
-            body.append(f'<section class="{cls}" id="{s["anchor"]}"><h2 class="scene-h">{lab}{title}</h2>{self.render_blocks(ch, s, rel, seen)}</section>')
+            blocks = self.render_blocks(ch, s, rel, seen)
+            if lab or title:
+                inner = (f'<details class="fold"{" open" if i in open_ix else ""}><summary><h2 class="scene-h">{lab}{title}</h2></summary>'
+                         f'<div class="scene-body">{blocks}</div></details>')
+            else:
+                inner = f'<div class="scene-body">{blocks}</div>'
+            body.append(f'<section class="{cls}" id="{s["anchor"]}">{inner}</section>')
         cast = [c for c in self.chars.values() if any(str(a.get("chapter")) == ch["code"] and not a.get("mention") for a in c.get("appearances") or [])]
         cast_html = ""
         if cast:
@@ -2571,7 +2583,7 @@ class Site:
         n_num = sum(1 for c in self.chapters if c["number"])
         n_pro = len(self.chapters) - n_num
         count = (("a prologue and " if n_pro else "") + f"{n_num} chapter{'s' if n_num != 1 else ''}") if n_num else "a prologue"
-        body += sec("Timeline", count, f'<ul class="chron">{"".join(items)}</ul>')
+        body += sec("Timeline", count, f'<ul class="chron rail">{"".join(items)}</ul>')
         self.pages["chronicle/index.html"] = shell("Chronicle", body, rel, "Chronicle", desc="The Unkneeling, by book, chapter and scene.")
 
     # ---------------------------------------------------------------- reckoning blocks

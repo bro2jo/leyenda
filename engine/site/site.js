@@ -66,7 +66,7 @@ if (ts && readers.length) {
   /* the block at the top of the screen, below the masthead, and how far down it the screen's top edge falls */
   var tsMark = function(){
     var edge = mast ? Math.max(0, mast.getBoundingClientRect().bottom) : 0;
-    var els = document.querySelectorAll(".reader > :not(section), .reader section > *");
+    var els = document.querySelectorAll(".reader > :not(section), .reader section > :not(details):not(.scene-body), .reader .fold > summary, .reader .scene-body > *");
     for (var i = 0; i < els.length; i++) {
       var r = els[i].getBoundingClientRect();
       if (r.bottom > edge && r.height > 0) { return {el: els[i], frac: Math.min(1, Math.max(0, (edge - r.top) / r.height)), y: r.top + Math.max(0, edge - r.top)}; }
@@ -311,6 +311,16 @@ var openTarget = function(){
   hold();
   t.scrollIntoView({block: "start", behavior: "instant"});
 };
+/* a chapter's blocks fold (build_site.py opens the newest block and the one before it on the current chapter, the first on
+   any other): a page opened at one block opens that block and the one before it, and folds the rest */
+var foldTo = function(){
+  var id = decodeURIComponent(location.hash.slice(1)), t = id && document.getElementById(id);
+  var blocks = Array.prototype.slice.call(document.querySelectorAll(".reader > section.scene"));
+  var i = t && t.closest ? blocks.indexOf(t.closest(".reader > section.scene")) : -1;
+  if (i < 0) { return; }
+  blocks.forEach(function(b, k){ var d = b.querySelector(":scope > details.fold"); if (d) { d.open = k === i || k === i - 1; } });
+};
+foldTo();
 openTarget();
 window.addEventListener("hashchange", openTarget);
 /* the page may still grow or shrink once its fonts and pictures arrive: until the reader moves, land on the target again */
