@@ -163,7 +163,7 @@ Twelve by the old count, each sixty knights and sixty squires, numbered by prece
 Sworn kneeling on the left knee with both palms flat on an Oathstone: at knighting, before every battle at the lance's field-stone, and whenever the Crown bids. The words are short enough for a frightened boy: *Stone and Crown, knee and hand. What I am given I hold. What I hold I give.* The Grace comes up through the palms as warmth and settles in the chest, and old knights call it the Crown's hand on your back. A knight who cannot kneel cannot be sworn, which is why "stiff-kneed" is an insult. ⟪gm: the third line is a tithe-oath in truth (T1). Never gloss it.⟫
 
 ## realm.grace_talk — What is said of the Grace
-- **tier:** common · **spoken:** Prologue I, Ch 1 Between · **names:** —
+- **tier:** common · **spoken:** Prologue I, Ch 1 Between; ch05:s6 · **names:** —
 - **use:** barracks talk; a squire's questions; a superstition.
 
 That it is warm. That it makes a horse run on your legs. That a lance full of it can cross a river in flood laughing. That it is thinnest when you have not knelt in a season and thickest the morning after a field-stone. That frost on a sworn man's mail is the worst omen there is, and nobody will say why. That no one who has it has ever seen the script the Wardens were burned for. The Menders say only what Maelis says: it holds things up. ⟪gm: T1, T7.⟫
@@ -360,7 +360,7 @@ The Holloway carters' song, sung in fog to the swing of the ox-bell so a cart is
 > and it's only salt, and that's all, that's all.
 
 ## rhyme.knucklebones — Knucklebones
-- **tier:** common · **spoken:** ch01:between-3 · **names:** —
+- **tier:** common · **spoken:** ch01:between-3; ch05:s6 · **names:** —
 - **use:** a Between with Hollis; a lay brothers' game; stakes in wicks.
 
 Five sheep's knuckles. Throw one up, sweep the rest, catch the one: ones, twos, threes, fours, then "the stone", all five swept and the thrown bone caught on the back of the hand. A miss passes the bones. Stakes are wicks, chores, or a story told true. The rhyme is chanted by whoever is losing.

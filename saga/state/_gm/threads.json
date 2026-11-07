@@ -307,7 +307,7 @@
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
       "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has felt the same cold come up through the kennel grate into his fingers (04:s5) and has her word that it is not the weather's (04:between-10); 04:climax: Darrow saw that the Confessor's censer is the black of the sliver; the reader.",
-      "note": "touch 04:between-10: 'the cold that's in them isn't the weather's.'",
+      "note": "05:s6: frost white to the wrist on a knight who lifted a cart on the Grace; it went without melting; Maelis saw. Darrow's Eye failed the read.",
       "on_page": [
         "02:between-12",
         "02:s6",
@@ -322,7 +322,8 @@
         "04:s1",
         "04:s5",
         "04:between-10",
-        "04:climax"
+        "04:climax",
+        "05:s6"
       ]
     },
     {
@@ -348,9 +349,10 @@
       "feeds": "T7, b1.3 climax (the murals by tier)",
       "status": "open",
       "who_knows": "Darrow, Wren and Maelis saw it; the reader. Nobody has said what it means; Maelis knows (T7)",
-      "note": "03:s4 planted: 'The others held theirs. His went up.' Darrow tried the strokes beside the knight's head and got nothing; Wren did not read them.",
+      "note": "05:s6: the mural is the first option of the micro (tell him what he saw painted under the House); nothing said of it on the page yet.",
       "on_page": [
-        "03:s4"
+        "03:s4",
+        "05:s6"
       ]
     },
     {

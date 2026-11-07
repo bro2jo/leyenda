@@ -539,6 +539,20 @@
           "sources": [
             "ch05:s1"
           ]
+        },
+        {
+          "name": "The crossroads stone",
+          "text": "A field-stone at the crossroads above Coldmere, on the Holloway. Ser Oswin of the Fourth kneels at every stone the road gives him and asked Darrow to kneel beside him at this one at first light (Ch 5 Sc 6).",
+          "sources": [
+            "ch05:s6"
+          ]
+        },
+        {
+          "name": "Knucklebones night at Coldmere",
+          "text": "On the sixth night of the week the Coldmere taproom plays knucklebones at every table, the mill's men against the carters, for coppers and chores; a story told true is a stake too. Darrow threw the stone on his first cast against Ser Oswin, and the room sang the rhyme at him (Ch 5 Sc 6).",
+          "sources": [
+            "ch05:s6"
+          ]
         }
       ],
       "intro": ""

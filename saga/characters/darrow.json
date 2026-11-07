@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "5",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
   },
-  "last_seen_doing": "Gave Rae her yard and went up into the hay over the byre with Hollis and Ash; was held there by Hollis's hand when the levy asked the cook for a Mender; told Hollis the lad's news again; rolled across Hollis under a hay-fork and was seen; watched Hale look at Rae at the gate.",
-  "now": "In Coldmere, at the inn on the tarn, the levy gone down the road and a hay-fork's hole in his new coat.",
+  "last_seen_doing": "Found the fork-hole in his cape mended and let it be; beat a knight of the Fourth at knucklebones with the stone on his first cast; looked at the knight's frosted hands for the thing under them and found a whole man; was asked to kneel at the crossroads stone at first light.",
+  "now": "In the Coldmere taproom on knucklebones night, cold under his coat, with a warm knight's offer in front of him and the morning to answer it.",
   "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1864,6 +1864,24 @@
       "evidence": "Darrow had seen that look on quartermasters"
     },
     {
+      "fact": "He found the hay-fork hole in his coat mended, small and tight, and did not ask who had done it.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "He let it be, for now, and went in."
+    },
+    {
+      "fact": "He threw the stone at knucklebones on his first cast and won a story told true from Ser Oswin.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "The stone, clean, on the first cast."
+    },
+    {
+      "fact": "He looked at the knight's frosted hands for the thing under them, and the script showed him only a whole man with no lie in him.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "It showed him a man."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2266,6 +2284,10 @@
       "chapter": "05",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "05",
+      "scene": "6"
     },
     {
       "chapter": "tale01",

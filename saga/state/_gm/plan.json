@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 5,
     "beat": "b2.1",
-    "next_scene": 6,
+    "next_scene": 7,
     "stage": "scene",
-    "last_written": "ch05:interlude",
+    "last_written": "ch05:s6",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -142,8 +142,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch05:s6"
       },
       {
         "n": 7,
@@ -157,7 +157,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -503,9 +503,38 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 6,
+    "chapter": 5,
+    "scene": "6",
+    "opened": "2026-11-07",
+    "axis": "mercy_flint",
+    "ask": "The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do?",
+    "options": [
+      "Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.",
+      "Let him keep his comfort.",
+      "Buy him a drink and say nothing."
+    ],
+    "bearing": [
+      {
+        "Mercy": 1
+      },
+      {
+        "Flint": 1
+      },
+      null
+    ],
+    "default": 2
+  },
   "temptation": {
-    "planted": []
+    "planted": [
+      {
+        "text": "Ser Oswin of the Fourth at Coldmere (ch05:s6): kneels at every stone the road gives him; lifted a cart off a boy with hands that frosted white and cleared without melting; offered Darrow the crossroads stone at first light with a full heart",
+        "book": 2,
+        "chapter": 5,
+        "date": "2026-11-07"
+      }
+    ]
   },
   "invite_rules": {
     "rae": "tether.stage >= 1",

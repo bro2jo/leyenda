@@ -1,0 +1,99 @@
+{
+  "id": "oswin",
+  "name": "Ser Oswin",
+  "aliases": [
+    "Oswin",
+    "the knight of the Fourth"
+  ],
+  "epithet": "A knight of the Fourth Lance",
+  "tier": "minor",
+  "faction": "crown",
+  "status": "alive",
+  "sigil": {
+    "faction": "crown",
+    "mark": "stone"
+  },
+  "appearance": "A big, fair knight of the Fourth Lance, red to the cheekbones, with very blue eyes and big open hands; he wears the Fourth's green under a travelling cloak thrown back, sleeves rolled in a cold room, and warmth comes off him in lamplight as off a horse that has been ridden hard.",
+  "first_seen": {
+    "chapter": "05",
+    "scene": "6",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+  },
+  "last_seen": {
+    "chapter": "05",
+    "scene": "6",
+    "place": "coldmere",
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+  },
+  "last_seen_doing": "Knew Darrow's face from the bell-house door and sat down to play him rather than name him; lost at knucklebones and paid with the truest thing he knew; lifted a broken cart off a carter's boy alone; came back inside warmer, and asked Darrow to kneel beside him at the crossroads stone in the morning.",
+  "now": "In the Coldmere taproom, warm, his offer made; he means to kneel at the crossroads stone at first light.",
+  "story_so_far": "",
+  "quote": {
+    "text": "It's one knee. I'd kneel beside you. I'd be glad to.",
+    "chapter": "05",
+    "scene": "6"
+  },
+  "known_facts": [
+    {
+      "fact": "He knew Darrow's face from the writ on the bell-house door and said he would not give it to a herald, a grey cloak or his own captain.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "I know that face"
+    },
+    {
+      "fact": "He kneels at every stone the road gives him, every morning since midsummer, and says he has not been cold or tired since.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "Every day since midsummer."
+    },
+    {
+      "fact": "He lifted a loaded cart off a pinned boy by himself, and his hands came away white to the wrist with frost, which was less and then gone without melting.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "white to the wrists, rimed"
+    },
+    {
+      "fact": "He believes the Lances at the ford lost the Grace because they had not knelt enough.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "Then you'd not knelt enough"
+    },
+    {
+      "fact": "He asked Darrow to kneel beside him at the crossroads stone at first light and be what he was.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "It's one knee. I'd kneel beside you."
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "knew his face from the bell-house door",
+      "note": "Lost to him at knucklebones, kept his name from the heralds, and asked him to kneel beside him at the crossroads stone."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "grace",
+      "state": "full"
+    },
+    "level": null,
+    "rank": "Oathsworn",
+    "attributes": {
+      "might": 15,
+      "vigor": 15,
+      "finesse": 12,
+      "resolve": 10
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "05",
+      "scene": "6"
+    }
+  ]
+}

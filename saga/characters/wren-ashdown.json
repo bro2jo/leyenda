@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "5",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
   },
-  "last_seen_doing": "Served the levy small beer from behind the tap and kept every question in her ledger.",
-  "now": "In the inn's kitchen door with the ledger.",
+  "last_seen_doing": "Kept the book on the knucklebones at Hollis's table; wrote down the Captain's first-cast stone with her mouth open.",
+  "now": "At Hollis's table by the fire with the ledger.",
   "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -975,6 +975,10 @@
       "chapter": "05",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "05",
+      "scene": "6"
     }
   ]
 }

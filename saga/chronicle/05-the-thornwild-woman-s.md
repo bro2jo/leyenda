@@ -1368,3 +1368,124 @@ She got up and took it down. She found her needle in her own coat and her twine 
 When it was done she bit the twine and put the needle away, and sat with the coat across her knees, and did not get up to hang it back on its peg.
 
 The salt sack stood at her feet in the dark, tied, as it had come.
+
+### Scene 6 — Full of Grace
+
+The hole in the cape was gone.
+
+Darrow found it with his thumb in the taproom doorway, where the fork had gone through: a patch of stitches small and tight as a sack's seam, the twine waxed, the wool drawn together so that the rain would run off it. He had hung the coat on its peg last night with the three tines' worth of daylight in it. He looked down the room. Rae was at the end of the bar with her uncle, her back to the door.
+
+He let it be, for now, and went in.
+
+Coldmere played knucklebones on the sixth night of the week, and the taproom was full of it: bones rattling on every table, the mill's men against the carters, coppers and chores going back and forth, Hale at the tap with a hand lifted to three people at once. Hollis had a table by the fire and a stake in a game already, and Wren beside him with the ledger keeping the book on it, because nobody in Coldmere had thought to say she could not. Maelis sat at the end of the settle with a cup, where she could see the door.
+
+The fire was a good one. It did not reach him. He had been cold since the morning, the clean, patient kind that waited under the coat, and he sat down with his back to the hearth and let it do what it liked.
+
+The man at the next table was not cold.
+
+You could see it from across the room: a big fair knight in a travelling cloak thrown back off the green of the Fourth Lance, red to the cheekbones, sleeves rolled, warmth coming off him in the lamplight as off a horse that had been ridden hard. He had the bones, and two carters' coppers in front of him, and a laugh that Hollis turned his head at. He threw the stone, all five swept and the bone caught on the back of his hand, and the carters groaned, and he laughed again and gave one of them his copper back for the sake of it.
+
+Then he looked up, and saw Darrow, and the laugh stayed where it was and the eyes changed behind it.
+
+He looked at the stick against the table. He looked at the face above the coat. Then he got up with his cup and came over, and pulled out the stool across from Darrow as if they had an arrangement, and sat.
+
+"I know that face," he said, pleasantly, for Darrow alone. "It's on the bell-house door."
+
+Darrow kept his hands on the table.
+
+"I'm not a herald," said the knight. "And I'm not a grey cloak, and I was never anybody's man but my Lance's. Oswin, of the Fourth. We weren't at the ford." He put the bones down between them. "Play me. A story told true, to the loser."
+
+Hollis had got up from the fire with his stake abandoned and come to stand at Darrow's shoulder, which he did for very few men.
+
+"He'll play," said Hollis.
+
+So Darrow played.
+
+`[FINESSE · DC 11]` d20 **20** +0 finesse = **20** — *Critical success*
+
+He threw the first bone up, and the four on the board went into his palm as if they had been waiting for it, and the thrown one came down on the back of his hand and lay there still. The stone, clean, on the first cast. The nearest tables went quiet and then loud. Wren wrote something down with her mouth open.
+
+"One for the stone," said Hollis, who had money against him and was delighted, and the carters took it up, and the room:
+
+> *One for the stone and two for the crown,*
+> *three for the knight who won't come down,*
+> *four for the bell and five for the hand,*
+> *and the bones go to him who can stand.*
+
+Ser Oswin roared with the rest of them. He had lost, and he looked like a man who had never minded losing anything in his life, because there was always more where it came from.
+
+"A story told true," Darrow said.
+
+"You'll have it." The knight turned his cup round. "I'll tell you the truest thing I know. I kneel every morning. Every stone the road gives me: a bell-house, a field-stone, the crossroads up the hill. Not once a season, like the Lances on parade. Every day since midsummer." He opened his big hands on the table, palms up, like a man showing he had nothing in them. "It's thinnest when you've not knelt in a season, Captain. Everybody knows that. The morning after a stone it's thick as cream. So I never let it thin. And I've not been cold since the summer. I've not been tired. I rode from the landing today without getting down, and I could ride back."
+
+"The ford knelt that morning," said Hollis.
+
+It was the flat voice. Oswin looked up at him.
+
+"Both Lances. At the Sixth's stone and the Ninth's. I held the Sixth's banner for it. So we'd knelt."
+
+"Then you'd not knelt enough," said Oswin, gently, and it was plain he believed it with his whole heart, and plainer that he was sorry for them.
+
+Darrow found he had nothing to say to a man that warm.
+
+---
+
+The shout came from the yard, and the crack of wood under it.
+
+Oswin was through the door before the second shout. Darrow came after him with the stick and the knee complaining, into the yard's lantern light, and saw it all at once in the shape it made: a late cart in from the mill road, the near wheel off and the axle-end down on the cobbles, the bed canted, and under the bed a carter's boy flat on his back with his legs out and his face white, pinned at the hip by the rail.
+
+The carter was pulling at the bed with both hands and moving nothing.
+
+Oswin walked up to the cart, set his hands under the rail, and lifted it.
+
+He straightened his back, as a man straightens from a well, and the loaded bed came up with him, and up, until the wheel-end hung a foot clear of the stones and the carter stood with his hands still out and his mouth open. Rae was under it on her knees before anyone else had moved, and had the boy by the collar and the belt, and dragged him out across the cobbles like a sack, and sat back on her heels with him across her lap.
+
+"Clear," she said.
+
+Oswin set the cart down. The yard rang.
+
+He stood a moment with his hands held out in front of him, and laughed, and blew on them, and shook them as a man shakes off water. Under the lantern they were white: white to the wrists, rimed, as if he had plunged them into the tarn and drawn them out.
+
+"Cold hands," he said, to the yard, and laughed again. "It's the Lowmarch."
+
+Darrow looked at him. He looked as he had learned to look at the bars and in the court, for the thing under the thing, and the script came up pale behind his own palms and let him.
+
+`[RESOLVE · DC 14]` d20 **3** +0 resolve +4 Warden's Eye IV = **7** — *Failure*
+
+It showed him a man.
+
+That was all. A big, kind man with cold hands, as whole as a bell, with no lie in him anywhere, who had lifted a cart off a child because it needed lifting and would do it again. Whatever the frost was, whatever it did, it did it somewhere the script would not take Darrow tonight; and the honest wholeness of the man was worse than any lie he might have found, because he had wanted to find one.
+
+Maelis had the boy's hip between her hands on Rae's lap and was asking him to move his foot. Her eyes were on the knight's hands; and Darrow, who had learned on a mountain what it meant when the Mender went still, watched her watch the white on them, and watched her face do nothing at all.
+
+The frost did not run off Oswin's hands as frost does when a warm hand comes in from the cold. It was simply less, and then less, and then gone, and his hands were red and big and ordinary, and he was clapping the carter on the shoulder and telling him to get his wheel seen to.
+
+"Well?" Darrow said to Maelis, low.
+
+"The boy's hip is bruised and not broken. He'll walk by morning."
+
+"That's not what I asked."
+
+"It's what I'm telling you."
+
+---
+
+Inside, Oswin bought the round, the whole room's, and would not hear otherwise. He was warmer than before, if that were possible: his face was redder and his laugh came easier, and when he sat down again across from Darrow he brought the warmth with him and set it on the table between them like a third cup.
+
+Hollis had gone back to the fire. Darrow saw him there, with the bones in front of him and his hands flat on the table beside them, looking into the hearth.
+
+"Captain," said Oswin. He leaned in, and dropped his voice, and the kindness in it was the hardest thing Darrow had heard in a month. "I know what you are. I knew it from the door. I'll not say it to a herald, and I'll not say it to a grey cloak, and I'd not say it to my own captain if he asked, because I've seen what they do with it." He turned his cup. "But I've seen what you come to, as well. The Faithless. I passed one on the road above the turnip fields, walking east with nobody in him. That's the long road, Captain. That's where it ends."
+
+The cold sat in his chest and listened.
+
+"Come down to the crossroads stone with me at first light." Oswin's eyes were steady and very blue. "Kneel. One knee. Say the words; you know them better than I do. And be warm again. Be what you were." He smiled, and it was a good smile. "It's one knee. I'd kneel beside you. I'd be glad to."
+
+Across the room Rae had turned round at last, and was looking at the two of them from the end of the bar, with her uncle's book open at her elbow.
+
+> ⟦ THE RECKONING ⟧
+> XP 3,063 → 3,128
+
+**The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do?**
+1. **Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.**
+2. **Let him keep his comfort.**
+3. **Buy him a drink and say nothing.**

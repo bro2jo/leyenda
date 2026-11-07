@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "interlude",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#interlude"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
   },
-  "last_seen_doing": "Sat at her uncle's table after the inn had gone to bed and settled the summer's loads, reading his book upside down; did not tell him what the captain of the Ninth was worth; took a salt sack for the river mill and did not open it; mended Darrow's coat and kept it on her knees.",
-  "now": "In the inn's kitchen at night, the mended coat across her knees and the salt sack for the river mill at her feet.",
+  "last_seen_doing": "Was under the lifted cart on her knees before anyone else moved and dragged the carter's boy clear by collar and belt; watched Darrow and the knight from the end of the bar with her uncle's book open at her elbow.",
+  "now": "At the end of the bar in her uncle's taproom, watching Darrow and the knight.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -725,6 +725,12 @@
       "evidence": "did not get up to hang it back on its peg"
     },
     {
+      "fact": "She dragged the carter's boy out from under the lifted cart and called it clear.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "\"Clear,\" she said."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1004,6 +1010,10 @@
     {
       "chapter": "05",
       "scene": "interlude"
+    },
+    {
+      "chapter": "05",
+      "scene": "6"
     },
     {
       "chapter": "tale02",

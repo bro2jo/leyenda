@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "5",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
   },
-  "last_seen_doing": "Hid in the hay; worked out that his lost wager had bought the Captain's coat; held Darrow by the ankle when the levy asked for a Mender; asked to hear the lad's news again.",
-  "now": "At the inn on the tarn, with six more days of boots owed.",
+  "last_seen_doing": "Left his own game to stand at Darrow's shoulder; led the taproom in the knucklebones rhyme against him; told the knight that both Lances had knelt the morning of the ford; after the yard, sat by the fire with the bones untouched.",
+  "now": "By the taproom fire at Coldmere, the bones in front of him, looking into the hearth.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -718,6 +718,12 @@
       "chapter": "05",
       "scene": "5",
       "evidence": "Say it again. How the carter had it."
+    },
+    {
+      "fact": "He told Ser Oswin that both Lances knelt the morning of the ford, and that he held the Sixth's banner for it.",
+      "chapter": "05",
+      "scene": "6",
+      "evidence": "I held the Sixth's banner for it."
     }
   ],
   "relationships": [
@@ -1052,6 +1058,10 @@
       "chapter": "05",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "05",
+      "scene": "6"
     }
   ]
 }

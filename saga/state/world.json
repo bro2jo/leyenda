@@ -107,11 +107,19 @@
       "title": "The Summer's Loads",
       "covers": [],
       "written": "2026-11-05"
+    },
+    {
+      "scene": 6,
+      "title": "Full of Grace",
+      "covers": [
+        "2026-11-06"
+      ],
+      "written": "2026-11-07"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the kitchen of the inn on the tarn",
+    "detail": "the taproom of the inn on the tarn, knucklebones night",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -121,7 +129,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "After the levy had gone, Hale took his book from the dresser, smiled at them all, and told Rae: tonight, when the house is abed, the summer's loads. Tonight, said Rae.",
+  "last_beat": "Ser Oswin asked Darrow to come down to the crossroads stone with him at first light and kneel, one knee, and be warm again; across the room Rae had turned round at last, with her uncle's book open at her elbow.",
   "companions": {
     "maelis": {
       "approval": 36,
@@ -303,5 +311,5 @@
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last."
   },
-  "last_updated": "2026-11-05"
+  "last_updated": "2026-11-07"
 }

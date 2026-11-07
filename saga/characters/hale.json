@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "interlude",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#interlude"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
   },
-  "last_seen_doing": "Read Rae the summer's loads from his book, wrote two lines under them, asked what the captain of the Ninth is worth to the Holloway, and gave her a salt sack for the river mill.",
-  "now": "Gone up to bed at the inn on the tarn, the book with him.",
+  "last_seen_doing": "Kept the tap on knucklebones night with a hand lifted to three people at once; had his book open at Rae's elbow at the end.",
+  "now": "At the tap of his taproom, the book open at Rae's elbow.",
   "story_so_far": "",
   "quote": {
     "text": "We'll talk the summer's loads in the morning, Rae.",
@@ -132,6 +132,10 @@
     {
       "chapter": "05",
       "scene": "interlude"
+    },
+    {
+      "chapter": "05",
+      "scene": "6"
     }
   ]
 }

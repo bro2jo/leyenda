@@ -69,3 +69,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 ## Hale
 - **Appearance:** Rae's uncle: a big, easy man going soft at the middle, bald on top with grey curls round the edges, in a clean apron; a broad, open, ruddy face of the kind a whole valley trusts with its news, and quick eyes that come back to a thing a beat longer than they need to. A fat account book lies open on the end of his bar, a ribbon in it and a pencil in its spine.
 - **Voice:** Warm and unhurried. He answers a full room by lifting a hand without looking, writes a thing down as he says it, and his questions come out sounding like kindnesses. *"We'll talk the summer's loads in the morning, Rae."*
+
+## Ser Oswin
+- **Appearance:** A big, fair knight of the Fourth Lance, red to the cheekbones, with very blue eyes and big open hands; the Fourth's green under a travelling cloak thrown back, sleeves rolled in a cold room. Warmth comes off him in lamplight as off a horse that has been ridden hard; after he lifts something, his hands are white to the wrist, and then they are not.
+- **Voice:** Warm, easy and loud, a laugh that turns heads; he says the truest thing he knows as if it were a gift, believes every word of it, and is sorry for anyone who does not. Kind in the way that is hardest to answer. *"It's one knee. I'd kneel beside you. I'd be glad to."*
