@@ -5,11 +5,11 @@
   "name_at": 8,
   "axes": {
     "mercy_flint": {
-      "value": 1,
+      "value": 0,
       "left": "Mercy",
       "right": "Flint",
       "moved": {
-        "left": 0,
+        "left": 1,
         "right": 1
       },
       "rungs": {
@@ -202,6 +202,12 @@
       "why": "c05.2",
       "date": "2026-11-01",
       "axis": "candor_guile",
+      "delta": -1
+    },
+    {
+      "why": "c05.11",
+      "date": "2026-11-07",
+      "axis": "mercy_flint",
       "delta": -1
     }
   ],

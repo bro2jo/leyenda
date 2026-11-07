@@ -1660,6 +1660,48 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c05.11",
+      "made": {
+        "chapter": 5,
+        "scene": "6",
+        "date": "2026-11-07"
+      },
+      "chose": "His own answer: told Ser Oswin, in Hollis's words made his own, that he knelt the morning of the ford and the warmth went out of him halfway across the river; then bought him a drink",
+      "now": {
+        "bearing": {
+          "mercy": 1
+        },
+        "approval": {
+          "hollis": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.11a",
+          "when": "next",
+          "at": "ch05:s7",
+          "weight": "color",
+          "what": "Darrow answered Oswin with the ford in his own mouth (he knelt that morning, and the warmth went out of him halfway across) and bought him a drink; the next scene's first lines show what Oswin did with it at first light, and Darrow did not kneel",
+          "status": "pending"
+        },
+        {
+          "id": "c05.11b",
+          "when": "later",
+          "at": "later",
+          "weight": "scene",
+          "what": "Ser Oswin of the Fourth has Darrow's own word that he knelt the morning of the ford and the warmth went out of him halfway across the river. Fire where Oswin comes back, or where what he carries from the stones comes due",
+          "fits": "present.oswin",
+          "priority": 2,
+          "valid_until": "book3",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Let him keep his comfort.",
+        "Buy him a drink and say nothing."
+      ]
     }
   ],
   "rules": [

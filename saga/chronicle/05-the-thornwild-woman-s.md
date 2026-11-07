@@ -1487,7 +1487,7 @@ Across the room Rae had turned round at last, and was looking at the two of them
 > ⟦ THE RECKONING ⟧
 > XP 3,063 → 3,128
 
-**The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do?**
+**What does Darrow do?**
 1. **Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.**
 2. **Let him keep his comfort.**
 3. **Buy him a drink and say nothing.**

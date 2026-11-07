@@ -138,7 +138,11 @@
             },
             null
           ],
-          "default": 2
+          "default": 2,
+          "answer": {
+            "option": 1,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -503,29 +507,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 6,
-    "chapter": 5,
-    "scene": "6",
-    "opened": "2026-11-07",
-    "axis": "mercy_flint",
-    "ask": "The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do?",
-    "options": [
-      "Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.",
-      "Let him keep his comfort.",
-      "Buy him a drink and say nothing."
-    ],
-    "bearing": [
-      {
-        "Mercy": 1
-      },
-      {
-        "Flint": 1
-      },
-      null
-    ],
-    "default": 2
-  },
+  "open_micro": null,
   "temptation": {
     "planted": [
       {

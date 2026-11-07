@@ -137,7 +137,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 61,
+      "approval": 63,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
@@ -257,6 +257,16 @@
       "text": "Let Rae answer for her own cart.",
       "date": "2026-11-02",
       "ledger": "c05.4",
+      "by": "darrow"
+    },
+    {
+      "chapter": 5,
+      "scene": "6",
+      "kind": "micro",
+      "option": 1,
+      "text": "His own: tell him he knelt the morning of the ford and the warmth went out of him halfway across the river, and buy him a drink.",
+      "date": "2026-11-07",
+      "ledger": "c05.11",
       "by": "darrow"
     }
   ],

@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Where Not to Stand (1 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** A warm knight's kind offer, and the frost on his hands.
 - **Next:** First light at Coldmere, and the crossroads stone.
-- **Open choice (a small one):** The knight asks Darrow to kneel beside him at the crossroads stone in the morning. What does Darrow do? 1. Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him. / 2. Let him keep his comfort. / 3. Buy him a drink and say nothing.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 
