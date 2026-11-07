@@ -4,7 +4,7 @@
 Read-only on the repo: the live state is only checked; every mutation runs on a scratch copy of engine/, saga/ and
 real/ under a temporary directory (the engines find their root from their own file, so the copy's engine works on the
 copy). It adapts to wherever the story stands: it takes the current chapter's next open slot as "today" (DARROW_TODAY),
-the first due item, the first open thread and an armed rule from the live state, and skips the climax flow when the
+the first due item, the first open thread and an armed rule from the live state, and skips the climax flow when a choice or micro is open, or the
 live chapter has already passed it. It exercises the whole flow a session runs: the checks, the projections, the brief
 in every mode, a day closed and its scene recorded, a climax recorded and its choice carried across a chapter open, the
 answer and its Choice block, the vocabulary gate, a rule fired, a glimpse kept, and the works: a project opened, its
@@ -400,7 +400,7 @@ def main():
             plan = jload(tmp / "saga/state/_gm/plan.json")
             pos = plan["position"]
         has_climax = any(l.startswith("## Climax") for l in chapter.read_text(encoding="utf-8").splitlines())
-        if pos.get("stage") == "scene" and not has_climax and not plan.get("open_choice") and not plan.get("answered_choice"):
+        if pos.get("stage") == "scene" and not has_climax and not plan.get("open_choice") and not plan.get("answered_choice") and not plan.get("open_micro"):
             code, out = run(saga + ["plan", "set", "stage=climax"], tmp)
             check(code == 0, "plan set stage=climax")
             with open(chapter, "a", encoding="utf-8") as f:
@@ -485,7 +485,7 @@ def main():
             code, out = run(saga + ["brief", "--between", "--with", "hollis-garrow"], tmp)
             check(code == 0 and f"ch{ch + 1:02d}:between-" in out, "a Between's brief in the new chapter keys the new chapter")
         else:
-            skip("the climax flow: the live chapter has its climax, an open or answered choice, or is past the scene stage")
+            skip("the climax flow: the live chapter has its climax, an open or answered choice, an open micro, or is past the scene stage")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes at the end of the chapter flow", out[-900:])
         # Inspiration at the cap: a climax check that fails outright rerolls by itself; --paid casts again without a second spend
@@ -616,6 +616,7 @@ def main():
         for name, bg in (("screen-test.png", (0, 0, 255)), ("dark-test.png", (29, 30, 34))):
             pic = Image.new("RGB", (1024, 1536), bg)
             ImageDraw.Draw(pic).rectangle((380, 300, 640, 1300), fill=(120, 80, 60))
+            ImageDraw.Draw(pic).rectangle((800, 0, 880, 1535), fill=(110, 100, 90))  # a post running off the frame, as a pose may draw one
             pic.save(tmp / name)
         code, out = run(["engine/looks.py", "check", "screen-test.png"], tmp)
         check(code == 0 and "blue screen, keyed out" in out, "looks.py keys out a chroma screen", out[-300:])

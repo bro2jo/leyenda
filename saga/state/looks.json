@@ -63,6 +63,15 @@
       "alt": "Ser Darrow, full length, seated in a plain wooden chair with one leg put out a little, his right fist raised and closed before him, the riders' signal for ready, his other hand on his knee; his eyes a little narrowed, reading the viewer, with a few days' stubble: the grey wool blanket round his shoulders as a hooded cloak over a linen shirt with the sleeves rolled, brown trousers, a leather belt with two small pouches, and tall worn boots.",
       "values": {"build": "mending", "clothing": "linen", "cloak": "blanket", "hair": "tousled", "beard": "stubble", "expression": "reading", "pose": "ready", "hand": "none", "feet": "worn", "extra": "pouches", "side": "none"},
       "details": ""
+    },
+    {
+      "id": "like-somebody-s",
+      "name": "Like Somebody's",
+      "made": "2026-11-07",
+      "image": "looks/like-somebody-s.webp",
+      "alt": "Ser Darrow, full length, leaning one shoulder against a weathered timber post with his ankles crossed, calm and unhurried, with a few days' stubble: a heavy brown wool drover's coat, long in the skirt, with a short cape across the shoulders sewn on in a different thread and a small, tight mend in the cape, horn buttons down the front and a cuff turned, over a linen shirt and plain breeches; the fingers of his left hand wrapped in linen, and tall worn boots.",
+      "values": {"build": "mending", "clothing": "drover", "cloak": "none", "hair": "tousled", "beard": "stubble", "expression": "patient", "pose": "post", "hand": "none", "feet": "worn", "extra": "wrapped", "side": "none"},
+      "details": ""
     }
   ]
 }

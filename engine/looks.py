@@ -4,6 +4,7 @@
   python3 engine/looks.py add PICTURE "Look: side=… pose=… … · touches: …" --name "Title" --alt "what it shows" [--id ID]
   python3 engine/looks.py replace ID PICTURE [--alt "what the new one shows"]   a new picture for a look already filed
   python3 engine/looks.py check PICTURE [--preview DIR]                         the background and the cut-out, nothing filed
+  any of them: --drop X,Y clears one separate piece of the finished picture (a stray third boot), never one joined to him
 
 The picture: a chroma screen (the Forge asks for flat #0000FF blue, or #00FF00 green when the look wears blue) is keyed
 out; one with a real alpha channel is kept as it is. Either way it is cut to 2:3 at 1024x1536 and saved as WebP. Anything
@@ -21,7 +22,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 LOOKS = ROOT / "saga" / "state" / "looks.json"
@@ -29,6 +30,7 @@ PICTURES = ROOT / "saga" / "art" / "looks"
 WARDROBE = ROOT / "engine" / "wardrobe.json"
 SIZE = (1024, 1536)          # every look: 2:3
 LO, HI = 25, 170             # how far the screen's channel stands above the other two: at or below LO solid, at or above HI screen
+BAND = 24                    # the screen's tint is pulled back within 2*BAND px of the outline (painted haze at a post's foot reaches far)
 SOLID_FROM = 160             # this far from the screen colour (RGB distance), a pixel is solid whatever its hue (a navy cloak on blue)
 STAGE, CONTRAST = (33, 31, 33), {0: (0, 170, 255), 1: (220, 0, 200), 2: (255, 170, 0)}  # previews: the site's stage; a colour far from the screen
 
@@ -46,12 +48,14 @@ def background(rgba):
         return "alpha", None
     a = rgba[..., :3]
     edge = np.concatenate([a[:10].reshape(-1, 3), a[-10:].reshape(-1, 3), a[:, :10].reshape(-1, 3), a[:, -10:].reshape(-1, 3)])
-    med, spread = np.median(edge, axis=0), edge.std(axis=0).max()
+    med = np.median(edge, axis=0)
+    flat = (np.linalg.norm(edge - med, axis=1) < 40).mean()  # a post or a wall may run off the frame: most of the edge is enough
     dom = int(np.argmax(med))
     others = [med[i] for i in range(3) if i != dom]
-    if med[dom] >= 150 and max(others) <= 110 and spread <= 14:
+    if med[dom] >= 150 and max(others) <= 110 and flat >= 0.8:
         return "screen", dom
-    return None, f"the background is neither transparent nor a flat chroma screen (edge colour {med.round().astype(int).tolist()}, spread {spread:.0f})"
+    return None, (f"the background is neither transparent nor a flat chroma screen (edge colour {med.round().astype(int).tolist()}, "
+                  f"{100 * flat:.0f}% of the edge that colour)")
 
 
 def key(rgba, dom):
@@ -84,19 +88,24 @@ def key(rgba, dom):
     rgb[use5], rgb[use15] = col5[use5], col15[use15]
     alpha[soft & ~use5 & ~use15] = 0  # a wisp with nothing solid near it
     clear = Image.fromarray(((alpha < 0.05) * 255).astype(np.uint8))
-    for _ in range(12):  # about 24 px from the outline
+    for _ in range(BAND):  # BAND steps of 2 px out from the outline
         clear = clear.filter(ImageFilter.MaxFilter(5))
     band = (np.asarray(clear) > 0) & (alpha > 0)
     neutral = np.minimum((rgb[..., o1] + rgb[..., o2]) / 2 + 4, np.maximum(rgb[..., o1], rgb[..., o2]))
     rgb[..., dom] = np.where(band, np.minimum(rgb[..., dom], neutral), rgb[..., dom])
-    core = Image.fromarray(((alpha >= 0.9) * 255).astype(np.uint8))
-    for _ in range(4):  # a speck has no solid core 9 px across
-        core = core.filter(ImageFilter.MinFilter(3))
-    for _ in range(6):  # keep what lies within about 12 px of a core: thin wisps, a sword's tip
-        core = core.filter(ImageFilter.MaxFilter(5))
-    keep = np.asarray(core) > 0
-    alpha[~keep] = 0
+    alpha[~near_core(alpha >= 0.9)] = 0
     return np.dstack([rgb, alpha * 255])
+
+
+def near_core(solid):
+    """What lies within about 12 px of a solid core 9 px across: the figure with its thin wisps and a sword's tip, but
+    not a speck, nor the faint strokes left where a dropped piece stood."""
+    core = Image.fromarray((solid * 255).astype(np.uint8))
+    for _ in range(4):
+        core = core.filter(ImageFilter.MinFilter(3))
+    for _ in range(6):
+        core = core.filter(ImageFilter.MaxFilter(5))
+    return np.asarray(core) > 0
 
 
 def fit(rgba):
@@ -113,7 +122,31 @@ def fit(rgba):
     return im.convert("RGBa").resize(SIZE, Image.LANCZOS).convert("RGBA")
 
 
-def cut_out(path, preview=None):
+def drop(out, points):
+    """Clear each separate piece of the finished picture at an (x, y) point of the 1024x1536 result: something ChatGPT
+    drew that the look does not wear (a stray third boot). A piece joined to the figure is never cleared."""
+    arr = np.asarray(out).copy()
+    notes = []
+    for x, y in points:
+        solid = arr[..., 3] >= 160  # pieces are traced by their solid pixels: faint edges touch everything
+        if not (0 <= x < SIZE[0] and 0 <= y < SIZE[1]) or not solid[y, x]:
+            die(f"--drop {x},{y} is not on anything solid in the picture (see the previews; the picture is {SIZE[0]}x{SIZE[1]})")
+        m = Image.fromarray((solid * 255).astype(np.uint8)).copy()
+        ImageDraw.floodfill(m, (x, y), 128)
+        piece = np.asarray(m) == 128
+        share = piece.sum() / solid.sum()
+        if share > 0.15:
+            die(f"--drop {x},{y}: that piece is joined to the figure ({100 * share:.0f}% of everything drawn); nothing dropped")
+        rim = Image.fromarray((piece * 255).astype(np.uint8))
+        for _ in range(3):  # its own soft edge, a few pixels out, and never another piece's solid pixels
+            rim = rim.filter(ImageFilter.MaxFilter(3))
+        arr[(np.asarray(rim) > 0) & ~(solid & ~piece), 3] = 0
+        arr[~near_core(arr[..., 3] >= 230), 3] = 0  # the faint strokes it leaves behind
+        notes.append(f"dropped a separate piece of {int(piece.sum())} px at {x},{y}")
+    return Image.fromarray(arr, "RGBA"), notes
+
+
+def cut_out(path, preview=None, drops=()):
     """The picture as a finished look (an RGBA image at SIZE) and a line about what was done; refuses what it cannot cut."""
     try:
         rgba = np.asarray(Image.open(path).convert("RGBA")).astype(np.float32)
@@ -123,10 +156,13 @@ def cut_out(path, preview=None):
     if kind is None:
         die(f"{dom}. Ask for the picture on one solid, flat chroma blue (#0000FF), or green (#00FF00) when he wears blue.")
     out = fit(key(rgba, dom) if kind == "screen" else rgba)
+    out, dropped = drop(out, drops)
     o = np.asarray(out).astype(int)
     seen = "a real alpha channel, kept" if kind == "alpha" else f"a {('red', 'green', 'blue')[dom]} screen, keyed out"
     tinted = 0 if kind == "alpha" else int(((o[..., 3] > 0) & (o[..., dom] > np.maximum(*[o[..., i] for i in range(3) if i != dom]) + 12)).sum())
     note = f"{seen}; {100 * (o[..., 3] == 0).mean():.0f}% clear" + (f", {tinted} pixels still tinted by the screen" if kind == "screen" else "")
+    if dropped:
+        note += "; " + "; ".join(dropped)
     if preview:
         d = Path(preview)
         d.mkdir(parents=True, exist_ok=True)
@@ -205,7 +241,7 @@ def cmd_add(args):
     look_id = args.id or slug(args.name)
     if not look_id or any(lk["id"] == look_id for lk in book["looks"]):
         die(f"a look named '{look_id}' is already filed: give another --name or --id, or use replace")
-    img, note = cut_out(args.picture, args.preview)
+    img, note = cut_out(args.picture, args.preview, args.drop)
     book["looks"].append({"id": look_id, "name": args.name, "made": dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat(),
                           "image": save_picture(img, look_id), "alt": args.alt, "values": values, "details": touches})
     save_book(book)
@@ -217,7 +253,7 @@ def cmd_replace(args):
     lk = next((x for x in book["looks"] if x["id"] == args.id), None)
     if not lk:
         die(f"no look '{args.id}' in saga/state/looks.json ({', '.join(x['id'] for x in book['looks'])})")
-    img, note = cut_out(args.picture, args.preview)
+    img, note = cut_out(args.picture, args.preview, args.drop)
     lk["image"] = save_picture(img, lk["id"])
     if args.alt:
         lk["alt"] = args.alt
@@ -226,8 +262,16 @@ def cmd_replace(args):
 
 
 def cmd_check(args):
-    _, note = cut_out(args.picture, args.preview)
+    _, note = cut_out(args.picture, args.preview, args.drop)
     print(note)
+
+
+def point(text):
+    try:
+        x, y = (int(v) for v in text.split(","))
+    except ValueError:
+        raise argparse.ArgumentTypeError("a point is X,Y in the finished 1024x1536 picture, e.g. 630,1380")
+    return x, y
 
 
 def main():
@@ -240,14 +284,17 @@ def main():
     a.add_argument("--alt", required=True, help="what the picture shows, for readers who cannot see it")
     a.add_argument("--id", help="its id (default: from the name)")
     a.add_argument("--preview", help="a folder for the previews")
+    a.add_argument("--drop", type=point, action="append", default=[], help="X,Y: clear the separate piece there (a stray boot)")
     r = sub.add_parser("replace", help="a new picture for a look already filed")
     r.add_argument("id")
     r.add_argument("picture")
     r.add_argument("--alt", help="what the new picture shows (default: keep the old)")
     r.add_argument("--preview", help="a folder for the previews")
+    r.add_argument("--drop", type=point, action="append", default=[], help="X,Y: clear the separate piece there (a stray boot)")
     c = sub.add_parser("check", help="what the picture's background is, and the cut-out, nothing filed")
     c.add_argument("picture")
     c.add_argument("--preview", help="a folder for the previews")
+    c.add_argument("--drop", type=point, action="append", default=[], help="X,Y: clear the separate piece there (a stray boot)")
     args = p.parse_args()
     {"add": cmd_add, "replace": cmd_replace, "check": cmd_check}[args.cmd](args)
 
