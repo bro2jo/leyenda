@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-03 · house · Wren has decided the Lowmarch's cows are friendlier than the mountain's goats, and is keeping evidence. So far the evidence is one cow, which has followed her the length of a hedge and has opinions about her pencil.
 - 2026-11-03 · verse · Hollis has taken to singing the oxen along with the Grey Mare of Edgemoor: *and she never once asked me the why or the where.* The oxen, Rae says, never have either, and do not need encouraging.
 - 2026-11-03 · overheard · Overheard at the cart's tail: Hollis telling Wren that the ox call is the first thing the captain has said since midsummer that an animal has taken seriously. Wren writes it down.
 - 2026-11-03 · house · Maelis has made the cart's tailboard a surgery and Hollis's boots her first patients. The boots, she says, will live. She is less sure about Hollis.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-08 · ledger · Wren's tally for the morning, in the margin: frost on four panes of six, two kettles boiled, one argument about whose turn it was, won by nobody and still going.
 - 2026-11-08 · overheard · Overheard by the door: Hollis telling a carter that the secret of a long life is never to be the first one up. The carter asks how it's working. Hollis says he'll let him know.
 - 2026-11-08 · weather · The sky has cleared to the hard blue that means a colder night, and everyone in the yard is pretending to enjoy it. Wren has given up pretending and is wearing two cloaks.
+- 2026-11-08 · body · The frost has gone out of his fingers by mid-morning for the first time in days; the knee keeps its own counsel, and today its counsel is quiet.

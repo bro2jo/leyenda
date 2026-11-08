@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3278,
+  "xp": 3308,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -15,7 +15,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 56,
+      "temper": 58,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -35,7 +35,7 @@
       "raw": 11,
       "cap": 12,
       "mod": 0,
-      "temper": 38,
+      "temper": 39,
       "next_at": 50,
       "fell": 18,
       "banked": false
@@ -105,7 +105,7 @@
       "tree": "Footing",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 18,
+      "practice": 19,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -149,7 +149,7 @@
       "tree": "Footing",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 16,
+      "practice": 17,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Drive through a line; Might checks on foot gain +Rank."
@@ -182,7 +182,7 @@
       "tree": "Footing",
       "rank": 0,
       "banked_rank": 1,
-      "practice": 3,
+      "practice": 4,
       "next_at": 6,
       "sealed_until_knot": 5,
       "effect": "Leap gaps, walls and horses."
@@ -349,7 +349,7 @@
   "chapter_now": {
     "week_start": "2026-11-08",
     "through": "2026-11-08",
-    "tier_so_far": "Setback",
+    "tier_so_far": "Costly",
     "chapter": 6
   },
   "fell": {
