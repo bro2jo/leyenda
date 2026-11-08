@@ -34,13 +34,13 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "7",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
   },
-  "last_seen_doing": "Said nothing to the knight and put two fingers in the knee-print after; read the crossroads: forty horse turned south, one light horse shod for speed gone alone down the mill track; got the mill-cart's man talking; told Darrow to use his words again.",
-  "now": "At the inn on the tarn with a cup Hale poured before it was asked for.",
-  "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
+  "last_seen_doing": "Heard the Sixth's names read across the water with Garrow third and went for the gate; was held by Darrow and let himself be held; sat against the fold wall with his face in his hands; forgave Ash with the end of his bread.",
+  "now": "Riding the cart out of Coldmere before the dawn bell, Ash on his feet.",
+  "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
     "chapter": "02",
@@ -736,6 +736,18 @@
       "chapter": "05",
       "scene": "7",
       "evidence": "I'd as soon they were somebody's."
+    },
+    {
+      "fact": "He heard the Sixth's three names read from Coldmere's bell-house, Garrow the third, and went for the gate until Darrow held him.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "That's the Sixth's names in a herald's mouth in a sheep village, and me behind a wall."
+    },
+    {
+      "fact": "After the reading he sat against the fold wall with his face in his hands and said the Sixth's old words.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "Sixty and a mule"
     }
   ],
   "relationships": [
@@ -1078,6 +1090,10 @@
     {
       "chapter": "05",
       "scene": "7"
+    },
+    {
+      "chapter": "05",
+      "scene": "climax"
     }
   ]
 }

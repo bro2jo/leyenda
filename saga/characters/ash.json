@@ -35,13 +35,13 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "5",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-5"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
   },
-  "last_seen_doing": "Lay along the warm chimney stones in the hay loft and would not be moved; lifted her lip at Darrow and Hollis.",
-  "now": "At the inn on the tarn.",
-  "story_so_far": "A grey hound with a splinted leg who bit the Captain, slept across his boot, and came off the kennel bars to the name Ash. She lies across every door with somebody behind it, and does not fetch.",
+  "last_seen_doing": "Was lifted into the cart by Maelis; stood on the fold wall and barked at the two grey cloaks on the shore road, and was claimed as a mill carter's bitch in whelp; lay on Hollis's feet and was forgiven with bread.",
+  "now": "In the cart with the sacks on the road out of Coldmere.",
+  "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
     {
@@ -103,6 +103,12 @@
       "chapter": "04",
       "scene": "choice",
       "evidence": "at the edge where the drop was, so that she was between him and it, and nobody had told her to do that either."
+    },
+    {
+      "fact": "She stood on the fold wall and barked at the grey cloaks on the shore road, and the mill carter whose boy she had seen pulled from under the axle claimed her as his own bitch.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "That's my bitch, Ser. Leave her be."
     }
   ],
   "relationships": [
@@ -193,6 +199,10 @@
     {
       "chapter": "05",
       "scene": "5"
+    },
+    {
+      "chapter": "05",
+      "scene": "climax"
     }
   ]
 }

@@ -25,13 +25,13 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "7",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
   },
-  "last_seen_doing": "Poured for Darrow before it was asked; brought the word that a reader of writs comes at the noon bell tomorrow to read the list from his bell-house steps; named his price for not having seen them: the summer's loads driven and paid in with nothing off the cart and the oxen.",
-  "now": "At his kitchen table with the book open and Rae's pencil lying on the page.",
-  "story_so_far": "",
+  "last_seen_doing": "Stood in his kitchen door in the dark and watched his niece take the cart out without a lamp; told her the summer was written, signed or not, and the book open; warned Darrow to keep his way of looking off the reader; never saw them at noon.",
+  "now": "At his inn on the tarn with the book, the list read from his bell-house steps and his niece's cart gone before the bell.",
+  "story_so_far": "Rae's uncle keeps the inn on the tarn at Coldmere and a book on the end of his bar. He gave the company his loft, had never heard of the Mender Vorne when the levy asked, kept a man seen in his hay as a drover who could not pay, and named his price for not having seen them: the summer's loads. When his niece took the cart out before the bell he told her the summer was written, signed or not.",
   "quote": {
     "text": "We'll talk the summer's loads in the morning, Rae.",
     "chapter": "05",
@@ -97,6 +97,18 @@
       "chapter": "05",
       "scene": "7",
       "evidence": "The debt stands where it stands till the next year's book."
+    },
+    {
+      "fact": "He told Rae the summer was written against her whether she signed it or not.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "The summer's written. Signed or not."
+    },
+    {
+      "fact": "He warned Darrow to keep his way of looking at a man off the reader of writs.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "I'd keep it off the reader."
     }
   ],
   "relationships": [
@@ -152,6 +164,10 @@
     {
       "chapter": "05",
       "scene": "7"
+    },
+    {
+      "chapter": "05",
+      "scene": "climax"
     }
   ]
 }

@@ -2,132 +2,13 @@
   "_about": "Story state, reader-safe. Claude-owned. Update after every scene and climax. Never put real-world numbers here; GM-only state (plan, flags, factions, companions to come) lives in saga/state/_gm/plan.json and approval moves only through saga.py add. covers lists the days a scene drew on; whether a day is closed lives in the Ledger, not here. The site's Now page gives each field one job, so a fact belongs in one of them: last_beat is the latest scene or Between, current_quest.on_the_page the quest, current_struggle what he is fighting (a sentence or two), location.detail where he is (a phrase); a companion's line there is their character file's last_seen_doing. tether is projected from the records: the Tether stages the page has paid, each with the block that paid it (the Wardrobe opens its pieces for the two of them by it).",
   "book": 2,
   "book_title": "The Tempering Road",
-  "chapter": 5,
-  "chapter_title": "The Thornwild Woman's",
-  "chapter_file": "saga/chronicle/05-the-thornwild-woman-s.md",
-  "scenes": [
-    {
-      "scene": 1,
-      "title": "The Drove Road",
-      "covers": [
-        "2026-11-01"
-      ],
-      "written": "2026-11-03"
-    },
-    {
-      "scene": "between-1",
-      "title": "Across the Water",
-      "after": "1",
-      "covers": [],
-      "written": "2026-11-01"
-    },
-    {
-      "scene": "between-2",
-      "title": "The Better Seat",
-      "after": "1",
-      "covers": [],
-      "written": "2026-11-01"
-    },
-    {
-      "scene": 2,
-      "title": "Above Every Other",
-      "covers": [
-        "2026-11-02"
-      ],
-      "written": "2026-11-02"
-    },
-    {
-      "scene": "between-3",
-      "title": "A Load Named at a Gate",
-      "after": "2",
-      "covers": [],
-      "written": "2026-11-02"
-    },
-    {
-      "scene": "between-4",
-      "title": "From the Belly",
-      "after": "2",
-      "covers": [],
-      "written": "2026-11-03"
-    },
-    {
-      "scene": 3,
-      "title": "East",
-      "covers": [
-        "2026-11-03"
-      ],
-      "written": "2026-11-03"
-    },
-    {
-      "scene": "between-5",
-      "title": "Whose Are You",
-      "after": "3",
-      "covers": [],
-      "written": "2026-11-03"
-    },
-    {
-      "scene": "between-6",
-      "title": "Salt Comes Down",
-      "after": "3",
-      "covers": [],
-      "written": "2026-11-03"
-    },
-    {
-      "scene": 4,
-      "title": "Since the Fair",
-      "covers": [
-        "2026-11-04"
-      ],
-      "written": "2026-11-05"
-    },
-    {
-      "scene": "between-7",
-      "title": "The Measured Hand",
-      "after": "4",
-      "covers": [],
-      "written": "2026-11-04"
-    },
-    {
-      "scene": "between-8",
-      "title": "News from the Mountain",
-      "after": "4",
-      "covers": [],
-      "written": "2026-11-04"
-    },
-    {
-      "scene": 5,
-      "title": "An Opinion on Yokes",
-      "covers": [
-        "2026-11-05"
-      ],
-      "written": "2026-11-05"
-    },
-    {
-      "scene": "interlude",
-      "title": "The Summer's Loads",
-      "covers": [],
-      "written": "2026-11-05"
-    },
-    {
-      "scene": 6,
-      "title": "Full of Grace",
-      "covers": [
-        "2026-11-06"
-      ],
-      "written": "2026-11-07"
-    },
-    {
-      "scene": 7,
-      "title": "Whose Debt",
-      "covers": [
-        "2026-11-07"
-      ],
-      "written": "2026-11-07"
-    }
-  ],
+  "chapter": 6,
+  "chapter_title": "The Weir",
+  "chapter_file": "saga/chronicle/06-the-weir.md",
+  "scenes": [],
   "location": {
     "place": "coldmere",
-    "detail": "the inn yard at Coldmere, by the oxen",
+    "detail": "the fork where the shore road meets the drove road, an hour before Coldmere's dawn bell",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -137,7 +18,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Darrow gave Rae the deciding: whatever she said at the bell tomorrow, he would stand where she put him and not go into the road unless she sent him. She said that was a dear thing to give a carter, told him to go in, and that he would know at the bell.",
+  "last_beat": "At the fork before the dawn bell, with the river road east and the mill tracks north, Rae sat on the box with the goad across her knees and looked at Darrow and waited: this time it was his road.",
   "companions": {
     "maelis": {
       "approval": 38,
@@ -328,7 +209,8 @@
     "01-the-confessor-at-the-steps": "At Harrow Ford the Grace went out of the Ninth Lance in mid-river, and only a thread of it came back; Darrow's knee gave way with no blade near it, and forty-one of his sixty did not come home. Carried up the Thousand Steps to Saint Ysolde's, he chose Maelis Vorne's Binding over kneeling again at the Oathspire.",
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
-    "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last."
+    "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last.",
+    "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose."
   },
-  "last_updated": "2026-11-07"
+  "last_updated": "2026-11-08"
 }

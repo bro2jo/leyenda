@@ -82,6 +82,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The Holloway's Elbow** — The bend where the Holloway turns back on itself between high banks; by the carters' law nobody passes a cart there. Not to be confused with the Elbow of the Steps, the turn at the cloud line (Tale 2; Ch 5 Sc 1).
 - **The crossroads stone** — A field-stone at the crossroads above Coldmere, on the Holloway. Ser Oswin of the Fourth kneels at every stone the road gives him and asked Darrow to kneel beside him at this one at first light (Ch 5 Sc 6). Ser Oswin knelt at it at first light with Darrow and Hollis watching from the road, and the frost went off it under his palms and off the ground under his knee; Darrow did not kneel (Ch 5 Sc 7).
 - **Knucklebones night at Coldmere** — On the sixth night of the week the Coldmere taproom plays knucklebones at every table, the mill's men against the carters, for coppers and chores; a story told true is a stake too. Darrow threw the stone on his first cast against Ser Oswin, and the room sang the rhyme at him (Ch 5 Sc 6).
+- **The shepherds' fold on the tarn** — A stone hut and fold on the north shore of Coldmere's tarn, across the water from the bell-house. The company slept there their second night off the mountain, and hid there the day the list was read again at Coldmere, hearing the names come over the still water; a fire on that shore shows on the other (Ch 5 Sc 1, Climax).
 
 ## Songs and verses
 

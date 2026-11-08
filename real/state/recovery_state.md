@@ -1,10 +1,10 @@
-# ACL Recovery State — Sun 2026-10-18 (POD 55, post-op week 8) — revised Wed 10/21 (POD 58, week 9), Tue 10/27 (POD 64, week 10), Wed 10/28 (POD 65, week 10) and Sun 11/1 (POD 69, week 10)
+# ACL Recovery State — Sun 2026-10-18 (POD 55, post-op week 8) — revised Wed 10/21 (POD 58, week 9), Tue 10/27 (POD 64, week 10), Wed 10/28 (POD 65, week 10) Sun 11/1 (POD 69, week 10) and Sun 11/8 (POD 76, week 11)
 
 *The current program and where things stand, present tense only. Rules live in the Working Rules, the add-on design in the Add-On, the PT's words in `real/visits/pt_notes.md`; `real/README.md` says where each fact lives. Sections 2, 4 and 8 point to where that history lives in this repo.*
 
 - **Program set:** Sun 2026-10-18 checkpoint (written Sat 10/17 evening, on request; Sunday morning's checks folded in 10/18 AM: the heel prop becomes a weekly check). The Phase 3 → 4 gate is met (PT 11, 10/17); Phase 4 opened Tue 10/20 (Knot III) and Session A became the plan's Phase 4 Session A from that day.
 - **Revised in place Wed 10/21 (folded in here Thu 10/22, `/ingest`):** Sunday's Session B and Monday's Upper B recorded; Session A moved Tue → Wed and run as the master plan's Phase 4 A; **10/21 recalibration**: that session's loads became the Session A baselines (§6); PT asked for Friday. Later the same day, the **knee-session review** (redundant items cut, items with a reason kept, four oversights fixed: §6) and the **upper and add-on review** (§7); the Working Rules and the Add-On were re-issued (their revision histories, 10/21).
-- **Last reviewed:** Sun 2026-11-01 (the checkpoint for the week of 10/25, `real/checkpoints/2026-11-01.md`). Doses moved on their ladders; the week's days, the Sunday A and Friday B doses (§6), §7 and the PT list revised in place. Program unchanged.
+- **Last reviewed:** Sun 2026-11-08 (the checkpoint for the week of 11/1, `real/checkpoints/2026-11-08.md`). Program unchanged: the week's days (§6 "This week", from the calendar), §7 and the PT list revised in place; the back squat replaces the goblet squat in A; Session B's 11/6 doses stand for Sat 11/14 (it did not run). Last reviewed before: Sun 2026-11-01.
 - **Revised in place Wed 10/28 (from the dashboard's correction, `/ingest`):** Nick's 10/28 instruction (patient-reported, `pt_notes.md`): the plan's criteria and minimum times decide, impact included; the drop vertical jump cleared on its criteria. So: **impact prep onto the home program** (§6, from today's Session A) · **the single-leg squat test runs at home**, filmed, today and then Sundays until it passes · **the left knee extension off the 40 lb hold** (the plan's Phase 4 dose) · the drop vertical jump placed in the sequence · Tuesday's Upper B (Block 1, session 6) recorded with the next B's doses (§7). The Working Rules' clearance list corrected the same day.
 - **Reviewed again Sun 11/1, after the checkpoint (on request):** the Session A and B tables brought up to this week's doses (the skills read them); the hamstring curl paired with the knee extension in A and out of A's first cut (the hamstring gate, unmeasured, is the likeliest thing holding 11/17, and the curl was cut on both 10/28 and 10/30); both sessions paired to fit ~60 min; Friday's impact spelled out (two exercises, the drop jump's box and dose); the squat test's seat fixed at 24"; §7's throwing row and Copenhagen step corrected.
 - **Reviewed again Sun 11/1, after the rule change (on request):** Session A's doses had been set under the old one-change limits; re-checked against last week's logs and the master plan's one-variable-per-exercise rule: the goblet squat 50 / 50 / 52.5 (the barbell from the next A if the 52.5 set is clean), the left knee extension +1 plate (10/28 clean), the RFESS onto light DBs (its ladder's next; the tempo step dropped). Friday's curl takes its step if Sunday's is clean. The single-leg calf raise at bodyweight stands (about 160 lb on the left vs about 130 a leg two-legged with the 52.5s); the rest checked and unchanged.
@@ -134,25 +134,27 @@
 
 ## 6. Current program — Phase 4
 
-### This week (Sun 11/1 → Sat 11/7)
+### This week (Sun 11/8 → Sat 11/14)
 
-Last week in one line: loaded days 2 of 2 (Wed A in the cancelled PT slot, Fri B), both clean the next morning (trace, then none); upper 2 of 2 (Tue B, Sat A, Block 1's first week); bike 2 of 3; throwing 2 short sessions, both on knee days; impact ran past the ladder both days (`real/checkpoints/2026-11-01.md`). Nothing reverses: every session runs at its last clean dose with one change.
+Last week in one line: loaded days 2 of 3 (Sun A, Wed PT; Fri B not run, visitation hours), both clean the next morning (0, 0); upper 1 of 2 (Mon B; A lost to Saturday away); bike 1 of 3; throwing 0 of 3; every morning graded 0; the single-leg squat test passed 11/1 (`real/checkpoints/2026-11-08.md`). Nothing reverses.
 
 | Day | Plan |
 |---|---|
-| Sun 11/1 | ✓ 159.8 lb · **weekly checks** (photo + heel prop, SLR, flexion; the heel prop's 10 min can run in the morning, apart from the session) → **the single-leg squat test** on the 24" seat, filmed, fresh → **Session A**: bike 8 · ball toss 3 × 45 s · **impact: snap-down 3 × 5 + low vertical jump and landing 2 × 5** (rung 3, in the pogo's place; quiet landings, stop while mechanics are excellent) · goblet **50 / 50 / 52.5 × 10** (one DB step on every set; the top set takes the DBs' last step; clean → the barbell next A) · knee extension **40 + 1 plate × 3 × 12, the left solo both ways** (10/28's reps all clean, pain 0, a quiet morning; one plate, never more) · RFESS **light DBs (5s or 10s) × 3 × 8/side**, normal tempo, 3–4 reps left (the ladder's next: load) · **rate reps left on the goblet and the knee extension** · hamstring curl **70 × 3 × 10** each leg, **paired with the knee extension** (same cable, same strap) · heel raise **single-leg, left, bodyweight 3 × 12** (two-leg is at the DBs' top; the right mirrors) · step-up 18" 2 × 10/side · lateral heel tap 7.5" L 3 × 10 · full cooldown. **Short on time: drop the step-up → heel tap → calf raise; the curl stays** |
-| Mon 11/2 | Morning check → bike 30 → **Upper B, session 8** (§7: speed bench 70 × 5 × 3, incline 90 × 2 × 8–10, pulldown 100 × 4 × 6–8, DB row 30 × 3 × 8–10, DB press 25s × 3 × 8–10, Y-raise) → finisher with the Copenhagen 2 × 30 s |
-| Tue 11/3 | Morning check → **throwing** (the knee slot moved for Wednesday's PT; feet planted or slight pivots on the left; ~60 throws, the week's dial on count or intensity, not both) |
-| Wed 11/4 | **PT** (§5's list). No throwing |
-| Thu 11/5 | Morning check → bike 30 → throwing → **Upper A, session 9** (§7) → finisher |
-| Fri 11/6 | Morning check → **Session B**: bike 8 · ball toss 3 × 45 s · **impact, two exercises, one variable each from Sunday's:** low vertical jump and landing **3 × 5** + snap-down **3 × 8**; or, since Sunday's landings were good (11/1, filmed) and Monday's morning clean (0), **the drop vertical jump check in the snap-down's place** (off the 8" box, 2 × 4, filmed from the front; §6) · step-down L 6.5" **3 × 10** (hold; 7.5" once the hip stays level the whole set) · SL sit-to-stand 18" **3 × 12** (hold) · RDL **barbell 115 × 3 × 8** (the DBs stop at 52.5: §6, "Dumbbells at their top") · lateral lunge **lightest DB × 3 × 8** (the ladder's next; front of knee 0 on 10/30) · hamstring curl **+1 plate × 3 × 10** (Sunday's 70 × 3 × 10 ran clean, the last set ~2–3 left; Monday's morning clean); reps may drop to 8 at the new weight, then build · hip abduction **30 × 3 × 15** (the third set) · **barbell hip thrust, the bar alone (45 lb, pad on the hips), 3 × 10** (new: the SL bridge's next) · seated calf raise, left, lightest DB 3 × 12 · full cooldown. **Pairs:** step-down + seated calf (both left-only) · RDL + hip abduction · hip thrust + lateral lunge · the curl last. **Short on time: drop the curl first** (the RDL and the hip thrust carry the hamstrings that day) → lateral lunge |
-| Sat 11/7 | Morning check → bike 30 → throwing → **Saturday power & mobility, first run** (optional; §7) |
-| Sun 11/8 | Weekly checks + the single-leg squat test → checkpoint (the sport plan's month check) → Session A |
+| Sun 11/8 | Weigh-in · **weekly checks** (photo + heel prop, SLR, flexion) → **the single-leg squat test** on the 24" seat, filmed, fresh (passed 11/1; stays until the left's ascent is smooth) → checkpoint → **Session A**: bike 8 · ball toss 3 × 45 s · **impact: low vertical jump and landing 3 × 5 + the drop vertical jump check** (8" box, 2 × 4, filmed from the front; Sunday 11/1's landings were good and the morning clean, so rung 4 is open; if it isn't filmed, snap-down 3 × 8 in its place) · **barbell back squat to the 18" box, paused, empty bar × 3 × 8–10** (the DBs outgrown at 52.5 × 3 × 10) · knee extension **left 50 × 3 × 10 with a 3 s lowering** (building toward 3 × 12; right 50 × 3 × 12) + **the PT's isometrics, 0° and 45°, 30 s each leg, light** · hamstring curl **+1 plate × 3 × 10** each leg (reps may drop to 8) · RFESS **20s × 3 × 8/side** (15s had 4–5 left) · single-leg calf raise **+ one light DB, 3 × 12** · step-up 18" bodyweight 2 × 10/side · lateral heel tap **8"** L 3 × 10 · full cooldown |
+| Mon 11/9 | Morning check → bike 30 → **Upper B, session 9** (§7: speed bench 75 × 5 × 3, incline 90 × 2 × 8–10, pulldown 100 × 4 × 6–8, **DB row 35s** and **DB press 30s** × 3 × 8–10, Y-raise) → finisher with the Copenhagen → **throwing** (~60 throws, feet planted or slight pivots on the left; the week's dial on count or intensity, not both) |
+| Tue 11/10 | **PT, Nick** (the formal quad test; §5's list: the hamstring and glute tests first). No throwing |
+| Wed 11/11 | Morning check → bike 30 → throwing |
+| Thu 11/12 | **PTA, Cody** (the clinic's knee work). No throwing |
+| Fri 11/13 | Morning check → bike 30 → **Upper A, session 10** (§7) → finisher → throwing |
+| Sat 11/14 | Morning check → **Session B** (the 11/6 doses stand: bike 8 · ball toss 3 × 45 s · impact, two exercises, one variable each from Sunday's · step-down L 6.5" 3 × 10 · SL sit-to-stand 18" × 3 × 12 · **barbell RDL 115 × 3 × 8** · lateral lunge, lightest DB × 3 × 8/side · hamstring curl +1 plate × 3 × 10 · abduction 30 × 3 × 15 · **barbell hip thrust, bar alone 3 × 10** · left seated calf raise, lightest DB 3 × 12 · full cooldown) |
+| Sun 11/15 | Rest day: weekly checks + the single-leg squat test → checkpoint (upper deload week; week 13 begins Tue 11/17) |
 
-- **Loaded days: three** (Sun A, Wed PT, Fri B), a day clear on each side of the visit (`config.json → plan_changes` 11/3–11/6).
-- **Impact (§6, the ladder):** rung 1 is done (3 × 15 quiet, clean mornings); snap-downs ran 2 × 5 on 10/30. The plan's caps stand: **two exercises, 2–3 sets, 5–8 contacts a set**, each exercise one variable at a time. The single-leg hops (rung 5) wait for rung 3 and the drop vertical jump; they ran ahead twice last week.
-- **Throwing:** Tue, Thu, Sat, **never on a knee day or a PT day** (Add-On §3); on upper days after the bike, before lifting. The sport plan's week 4: around breaks, the dominant hammer begins; the month check is next Sunday.
-- **The week is judged by** (load rule 10): loaded days 3 · morning checks 7 · bike rides 3 (Mon, Thu, Sat) · upper 2 (Mon B, Thu A).
+- **Loaded days: four** (Sun A, Tue PT, Thu PTA, Sat B), never back to back (`config.json → plan_changes`, set 11/4).
+- **Impact (§6, the ladder):** rung 3 reached 11/1 (low jump 2 × 5, landings good, Monday clean): the drop vertical jump check is Sunday's; single-leg pogos 2 × 5 follow once it looks right. The plan's caps stand: **two exercises, 2–3 sets, 5–8 contacts a set**, one variable per exercise. A morning that isn't clean reverses the impact block first.
+- **Upper 2 (Mon B, Fri A), ≥3 days apart:** Block 1's third week. **Block 2 from 11/22 needs this week to be 2 of 2** (Add-On §4: two 2-of-2 weeks; 10/25 was one, 11/1 was 1 of 2); the week of 11/15 is the deload either way.
+- **Throwing: Mon, Wed, Fri, never on a loaded day** (Add-On §3); on upper days after the bike and the lifting. The sport plan's month check (week 4) is owed: his ratings and the seven questions.
+- **Bike 3** (Mon, Wed, Fri), legs only, easy, 30 min; intervals wait for a PT OK (ask 11/10).
+- **The week is judged by** (load rule 10): loaded days 4 · morning checks 7 · bike rides 3 · upper 2.
 
 ### The calendar to Sat 12/5 (set Wed 11/4 from his appointment list)
 
@@ -261,11 +263,11 @@ Full text: Working Rules, load rules 3–7.
 - Judged on the plan's checklist: knee tracks over the foot · pelvis stays controlled · no major trunk compensation · no obvious unloading of the surgical leg · smooth depth and tempo. **Pass = all 10 with every item.**
 - Logged as `sl_squat_reps` in `measurements.csv` (controlled reps out of 10, one row per side; method `home video`).
 
-### Session B — ran Fri 10/30, clean on 10/31; **next Fri 11/6** (~60 min)
+### Session B — ran Fri 10/30, clean on 10/31; not run Fri 11/6 (visitation hours), its doses stand; **next Sat 11/14** (~60 min)
 
 Baseline = 10/18, then 10/23, then 10/30 (each clean the next morning). One major variable at a time per exercise (the plan); any number of exercises progress the same day. Trimmed in the 10/21 review (below Session A).
 
-| # | Exercise | Last (Fri 10/30) | Next (Fri 11/6) | Ladder [plan Phase 4 target] |
+| # | Exercise | Last (Fri 10/30) | Next (Sat 11/14; set for 11/6, which did not run) | Ladder [plan Phase 4 target] |
 |---|---|---|---|---|
 | WU | Bike · BOSU SL balance + ball toss (L) · impact | Bike 8 (2.13 mi) · ball toss 3 × 45 s · pogos 3 × 15 · snap-down 2 × 5 · single-leg hops L 2 × 5 (ahead of the ladder) | Bike 8 · ball toss 3 × 45 s · **low vertical jump and landing 3 × 5 + snap-down 3 × 8**, or the **drop vertical jump check** (8" box, 2 × 4, filmed) in the snap-down's place (Sunday's landings good, Monday clean: on) | Ball toss + perturbation · impact per its ladder (above) |
 | 1 | Forward step-down, 6.5", **left only** — pair with 8 | L 3 × 10 (R too); challenging; the left's last half-inch less smooth | **L 6.5" 3 × 10** (hold); each set ends at the first hip drop | 7.5" → 8" once 3 × 10 is level [3 × 8–12] |
@@ -283,7 +285,9 @@ Baseline = 10/18, then 10/23, then 10/30 (each clean the next morning). One majo
 - **Minimum session:** warm-up + 1, 2, 3 + the 3-minute cooldown (90/90 hip lift and chin nods), ~30 min.
 - **Gap vs the plan's Phase 4 B:** it opens with a bilateral leg press, and there is no home equivalent, so bilateral knee-dominant lifting runs once a week (A's squat). Accepted for now.
 
-### Session A — Phase 4 (baseline Wed 10/21; ran Wed 10/28, clean on 10/29; **next Sun 11/1**, ~60 min plus the Sunday test)
+### Session A — Phase 4 (baseline Wed 10/21; ran Wed 10/28 and Sun 11/1, both clean the next morning; **next Sun 11/8**, ~60 min plus the Sunday test)
+
+*The 11/1 run and Sun 11/8's doses are in "This week" above; this table's Last/Next columns are the 10/28 → 11/1 pair, kept for the ladders. From 11/8 the goblet squat (1) is the barbell back squat to the same box.*
 
 The master plan's Phase 4 A (squat, knee extension, RFESS, hamstring curl, standing calf raise) plus the PT's step-up and heel tap.
 
@@ -341,9 +345,9 @@ Swelling **graded** and not up vs the previous morning · extension side by side
 
 | | |
 |---|---|
-| **Placement** | Upper on its own days, A → B alternating, ≥2 days apart, after the bike and any throwing. Last week: **Upper B Tue 10/27 (session 6) ✓ · Upper A Sat 10/31 (session 7) ✓** (planned Thu, too tired; his call). This week: **Upper B Mon 11/2 (session 8)** → **Upper A Thu 11/5 (session 9)**, the Mon/Thu rhythm. Saturday: bike, throwing, the optional power & mobility |
+| **Placement** | Upper on its own days, A → B alternating, ≥2 days apart, after the bike and any throwing. Last week: **Upper B Tue 10/27 (session 6) ✓ · Upper A Sat 10/31 (session 7) ✓** (planned Thu, too tired; his call). Week of 11/1: **Upper B Mon 11/2 (session 8) ✓ · Upper A not run** (moved Thu → Sat, then Saturday away): 1 of 2. This week: **Upper B Mon 11/9 (session 9)** → **Upper A Fri 11/13 (session 10)**. Saturday 11/14 is Session B's day |
 | **Time** | Upper days run ~45 min (warm-up ~5, core ~30–35, finisher ~8) plus the bike (24–30) and throwing (~15–30), so Thursday is ~90–95 min. Block 1 adds ~10 |
-| **Sessions run** | 7 since 9/20: A 10/9, B 10/12, A 10/17, B 10/19, A 10/22 (vacation gym, substitutes), **B 10/27 and A 10/31 (Block 1's first week: 2 of 2)**. Weeks of 10/11, 10/18 and 10/25: 2 of 2 |
+| **Sessions run** | 8 since 9/20: A 10/9, B 10/12, A 10/17, B 10/19, A 10/22 (vacation gym, substitutes), B 10/27 and A 10/31 (Block 1's first week: 2 of 2), **B 11/2 (session 8; A lost that week)**. Weeks of 10/11, 10/18 and 10/25: 2 of 2; week of 11/1: 1 of 2 |
 | **Block** | **Block 1 from Tue 10/27** (two 2-of-2 weeks): main lifts 4 × 6–8 at RPE 7–8, accessories 3 × 8–10, speed bench 5 × 3 at 45–55%, the incline down to 2 × 8–10. Loads start where Block 0 left them (the 10/19 Upper B doses; 10/22's machine numbers don't carry): the first sessions back will feel heavier than their numbers, which is not a reason to add |
 | **Unlocks** | Standing options and the chest pass: unlocked (session 3); the Pallof press runs standing (or half-kneeling, right knee down). **Saturday power & mobility:** not yet run (10/24 away; 10/31 carried Upper A); **first run Sat 11/7** (optional; seated throws still need the PT).** The suitcase carry replaces the accessory day's seated DB hold; the first one is judged by the next morning |
 | **Optional items** | Accessory day (no slot left this week) and the Saturday session. **They no longer depend on the daily minimum** (Add-On rule 1's penalty dropped 10/21): `config.json → optional_from` has the accessory day from 10/21 and power & mobility from 10/24 |

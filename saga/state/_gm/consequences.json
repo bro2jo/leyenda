@@ -1438,14 +1438,15 @@
           "weight": "color",
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
-          "status": "pending",
-          "offered": 5,
+          "status": "void:the drove-road hamlet is two days behind; if the reeve's eldest's reading comes back it comes as a world move, not a callback",
+          "offered": 6,
           "offered_at": [
             "ch05:s5",
             "ch05:interlude",
             "ch05:s4",
             "ch05:s6",
-            "ch05:s7"
+            "ch05:s7",
+            "ch05:climax"
           ]
         }
       ]
@@ -1547,7 +1548,7 @@
           "fits": "present.rae",
           "priority": 1,
           "valid_until": "book2",
-          "status": "pending",
+          "status": "void:a joke that fit the Coldmere taproom; the company has left the carters' road behind it",
           "offered": 6,
           "offered_at": [
             "ch05:between-6",

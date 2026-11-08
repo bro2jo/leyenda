@@ -33,13 +33,13 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "7",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
   },
-  "last_seen_doing": "Put a copper at Darrow's elbow, his share of what she won on his throw, without a word.",
-  "now": "In the taproom at Coldmere with the ledger.",
-  "story_so_far": "She went first with the lamp both times and counted the stair both ways. Over the inner door she read the old hand aloud before the Mender could, and stopped halfway, and has read nothing since. Her tally had the satchel coming up heavier than it went down; she found the kitchen's pry bar off its hook; she carried the lid of mortar up and set it down like an egg. She has the alcove, the bar and the hole under nothing in her ledger.",
+  "last_seen_doing": "Came out of the loft in the dark with the ledger buttoned inside her coat; stood at the fold wall for the reading; kept her pencil still on the road out.",
+  "now": "In the cart on the road out of Coldmere, the ledger buttoned inside her coat.",
+  "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -703,6 +703,12 @@
       "chapter": "05",
       "scene": "7",
       "evidence": "his share of whatever she had won on the stone"
+    },
+    {
+      "fact": "She left Coldmere with the ledger buttoned inside her coat and her pencil still.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "her pencil still"
     }
   ],
   "relationships": [
@@ -989,6 +995,10 @@
     {
       "chapter": "05",
       "scene": "7"
+    },
+    {
+      "chapter": "05",
+      "scene": "climax"
     }
   ]
 }

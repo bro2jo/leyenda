@@ -35,13 +35,13 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "7",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
   },
-  "last_seen_doing": "Told Oswin he knelt the morning of the ford and the warmth went out of him halfway across the river, and bought him a drink with Wren's copper; watched him rise from the crossroads stone at first light and did not kneel; read the column's tracks with Hollis and let the lone rider's track go unfollowed; refused Hale's price out loud; had it out with Rae in the yard and left the deciding with her.",
-  "now": "In the inn yard at Coldmere, his word given to Rae that he will stand where she puts him at the noon bell tomorrow.",
-  "story_so_far": "Down the undercroft stair at the Mender's count, on his own leg, he found a painted hall older than the House, a script he knows and cannot read, and a kneeling knight with the light running up out of him. He followed the frost to its source and broke the mortar off a hole under the row: a black sliver, the same glass as the chip from under the lad's tongue, carried up in the House's own satchel. His hand could not pull it; it is one piece with the rock. He held the cold until he knew that, and let go when Maelis said up, with the ends of his fingers white. He has sent his name down the Steps with Rae as surety for a lame grey mare.",
+  "last_seen_doing": "Left Hale's yard before light at Rae's word; read half of Hale at his door; heard his own name read across the tarn with his hands flat on the fold wall and did not go; held Hollis by the arm when the Sixth's names were read; watched a grey cloak question Rae across the water and stayed; left Coldmere before the dawn bell with the road his to choose.",
+  "now": "At the fork below Coldmere an hour before its dawn bell, the company and the cart behind him, the river road east and the mill tracks north, and the choosing his.",
+  "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -1912,6 +1912,24 @@
       "evidence": "He had decided for all of them, always, and called it command."
     },
     {
+      "fact": "He heard his own name read from Coldmere's bell-house across the tarn and did not step forward, his hands flat on the fold wall.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "He put both hands on the top of the fold wall, flat, and kept them there"
+    },
+    {
+      "fact": "He held Hollis by the arm when the Sixth's names were read, and Hollis let himself be held.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "Darrow caught him by the arm above the elbow and held"
+    },
+    {
+      "fact": "He watched a grey cloak question Rae across the water and could not hear a word of it, and stayed where his word had put him.",
+      "chapter": "05",
+      "scene": "climax",
+      "evidence": "His word to the woman across the water did what a hand had done in the hay."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2322,6 +2340,10 @@
     {
       "chapter": "05",
       "scene": "7"
+    },
+    {
+      "chapter": "05",
+      "scene": "climax"
     },
     {
       "chapter": "tale01",

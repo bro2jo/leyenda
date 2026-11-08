@@ -333,14 +333,15 @@
       "feeds": "q1.cart, q2.lantern, b3.4, q4.censer, q5.second, q6.market, r.b6.rae_door",
       "status": "open",
       "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; nobody at the House; the reader has her tells only (the bow off her box, the camp read by flour, the letter inside her shirt, name-the-load, the cold in her cart, one question a night)",
-      "note": "05:s7: Hale's price named on the page as an innkeeper's price (the summer's loads, nothing off the debt), the book turned round for Rae; Darrow refused; the deciding is Rae's for the climax. Nothing of the Market said.",
+      "note": "climax: Hale wrote the day's cost against Rae unsigned ('the book's open'); the company left before the bell; nothing of the Market said. The reader of writs and two grey cloaks asked Rae about Thorne's cart and went on to the mill.",
       "on_page": [
         "04:between-1",
         "05:between-1",
         "05:between-2",
         "05:s5",
         "05:interlude",
-        "05:s7"
+        "05:s7",
+        "05:climax"
       ]
     },
     {

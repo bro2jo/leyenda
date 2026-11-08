@@ -34,3 +34,6 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-11-06T00:53:51,ch05-s5-the-hay-fork,resolve,13,5,,,+0 resolve,5,FAILURE,Darrow holds still in the byre hay while a levy man works a fork through it below the loft
 2026-11-07T05:07:51,ch05-s6-knucklebones,finesse,11,20,,,+0 finesse,20,CRITICAL SUCCESS,Knucklebones in the Coldmere taproom against a knight of another Lance
 2026-11-07T05:07:51,ch05-s6-the-frost-going-in,resolve,14,3,,,+0 resolve +4 Warden's Eye IV,7,FAILURE,Warden's Eye on the knight's hands after he lifts the cart in the inn yard
+2026-11-08T12:42:18,ch05-the-uncles-face,resolve,16,6,,,+0 resolve +3 proficiency +4 Warden's Eye IV +1 chapter 5 Hard-won,14,PARTIAL (success at a cost),Warden's Eye on Hale at his door before dawn: what he will say when the reader asks at noon
+2026-11-08T12:42:19,ch05-his-name-across-the-water,resolve,9,7,,,+0 resolve +1 chapter 5 Hard-won,8,PARTIAL (success at a cost),The noon bell: his name read at Coldmere's bell-house and carried across the tarn; he stands at the fold wall and does not step forward
+2026-11-08T12:42:19,ch05-out-before-the-bell,finesse,9,11,,,+0 finesse +1 chapter 5 Hard-won,12,SUCCESS,"The cart, the mule, five people and a dog round the tarn and away before the dawn bell"
