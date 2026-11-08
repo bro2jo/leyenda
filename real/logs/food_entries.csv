@@ -265,3 +265,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-07#6,2026-11-07,,snack,Ice cream with peanut butter swirl and chocolate pieces,~1 cup (photo),340,6,38,18,1,10,30,120,250,180,0.5,30,0.8,0.5,0.3,0,photo,flavour and brand not given; portion from the photo
 2026-11-07#7,2026-11-07,,snack,Mountain Dew Baja Blast (12 oz can),1/4 can (~3 fl oz),43,0,11,0,0,0,11,14,0,0,0,0,0,0,0,0,label,label photo; a quarter of the can (caffeine ~15 mg)
 2026-11-07#8,2026-11-07,,snack,"Pumpkin pie, filling only (crust left)","1 slice (~1/8 of a 9-inch pie, photo)",190,4.5,27,7.5,2,3,20,180,250,100,1,18,0.5,2,0.5,0,photo,"a typical slice is ~320 kcal; the crust (~130) not eaten, his words"
+2026-11-07#9,2026-11-07,,dinner,Cheese and tomato chip dip with meat (Rotel-style),~3/4 cup (photo),360,18,12,26,1,13,5,1350,300,400,1.2,25,2.5,6,0.3,0,photo,"processed cheese, diced tomatoes and chiles, ground meat assumed; portion from the photo"
+2026-11-07#10,2026-11-07,,dinner,"Tortilla chips, corn",assumed ~1.5 oz,210,3,27,10,2,1.5,0.5,170,80,40,0.6,30,0.6,0,0,0,estimate,amount not given
+2026-11-07#11,2026-11-07,,dinner,Cheesy potatoes,"1 plate (~600 kcal, his estimate)",600,15,55,34,4,17,3.5,1100,890,310,1.4,48,2,14,0.3,0,estimate,his ~600 read as the potatoes alone: asked; macros scaled from the breakfast plate
