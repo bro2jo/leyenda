@@ -1669,13 +1669,13 @@ He had his shirtsleeves rolled and the book under his arm, and he had plainly be
 
 `[RESOLVE · DC 16]` d20 **6** +0 resolve +3 proficiency +4 Warden's Eye IV +1 chapter 5 Hard-won = **14** — *Partial: success at a cost*
 
-The script came up, and showed him half a man. Hale would not sell them to the reader at noon, not today and not for anything the reader had to offer; that much was plain, and it was for Rae and nothing to do with Darrow at all. What Darrow could not read, with the script pale behind his palms and his whole attention on the man's good face, was the book. Whatever was going into it, the face kept.
+The script came up and showed him half a man. Hale would not sell them to the reader at noon, not for anything the reader had to offer: that much was plain, and it was for Rae, and nothing to do with Darrow. The other half was the book. Whatever was going into it, the face kept.
 
 "You've a way of looking at a man, Captain," Hale said pleasantly. "I'd keep it off the reader. He'll have been told to notice it."
 
 Then, to Rae: "The summer's written. Signed or not. The book's open, girl."
 
-"Aye," said Rae. She put the goad to Hob's shoulder, and said the word from her belly, and the oxen leaned into the yoke, and the cart went out of her uncle's yard into the dark without a sound from its bell, and Hale stood in his door with the book under his arm and watched it go.
+Rae put the goad to Hob's shoulder, and said the word from her belly, and the oxen leaned into the yoke, and the cart went out of her uncle's yard into the dark without a sound from its bell, and Hale stood in his door with the book under his arm and watched it go.
 
 ---
 
@@ -1683,7 +1683,7 @@ They went round the tarn the way they had come in, by the drove road under its w
 
 "A fire on this shore shows on that one," said Maelis, before anyone could ask. "I remember."
 
-So they sat in the hut in the cold with the door open a hand's breadth, and watched the far shore come up out of the dark: the inn's roof, the bell-house with its back to the water, the green between them where a hundred people would stand at noon. Darrow had the cold in him from the night and the day before it; it sat in his chest where the knight's warmth had been across a table, and it had stopped arguing with him.
+So they sat in the hut in the cold with the door open a hand's breadth, and watched the far shore come up out of the dark: the inn's roof, the bell-house with its back to the water, the green between them where a hundred people would stand at noon. Darrow had the cold in him from the night and the day before it; it sat in his chest where the knight's warmth had been across a table, and he had stopped arguing with it.
 
 Rae came to the hut door at full light with her cloak on.
 
@@ -1691,13 +1691,13 @@ Rae came to the hut door at full light with her cloak on.
 
 Hollis's head came round. "You're what?"
 
-"A carter of Coldmere who isn't in the road when the list's read is a carter somebody asks about. My uncle's carting. Thorne's cart. They'd want to know where it was." She looked at Darrow and not at Hollis. "I'll stand with the village and hear it with them. They'll ask me whose cart's in my uncle's yard and I'll say mine, and they'll ask where it is and I'll say working. Both true." She pulled the hood up over the hair that had got out of it. "Then I'll walk back round. Don't light anything."
+"A carter of Coldmere who isn't in the road when the list's read is a carter somebody asks about, and then they ask about her cart." She looked at Darrow and not at Hollis. "I'll stand with the village and hear it with them. They'll ask me whose cart was in my uncle's yard and I'll say mine, and they'll ask where it is and I'll say working. Both true." She pulled the hood up over the hair that had got out of it. "Then I'll walk back round. Don't light anything."
 
 "Rae," Darrow said.
 
 She waited.
 
-He had the whole of it in his mouth: that she should not, that it was his name and his road and his risk, that a grey cloak with a list in his hand and a carter in front of him was not a thing he would stand across a lake and watch. He had said all of that yesterday in a yard, and lost, and given his word.
+He had the whole of it in his mouth: that she should not, that it was his name and his road and his risk, that a grey cloak with a list in his hand and a carter in front of him was not a thing he would stand across the water and watch. He had said all of that yesterday in a yard, and lost, and given his word.
 
 "Mind the ice on the shore road," he said.
 
@@ -1743,7 +1743,7 @@ He went at it as he went at everything, all at once and with his whole weight, t
 
 "No."
 
-They stood like that. Across the water the reader went on to names that were nobody's they knew, and the two grey cloaks on the steps looked out over the green, and the village stood in the road. After the first moment Hollis stopped pulling. He stood and shook, and let himself be held; and it was the thing Darrow had wanted to do himself, and here was the man he loved best in the world wanting it for him.
+They stood like that. Across the water the reader went on to names that were nobody's they knew, and the two grey cloaks on the steps looked out over the green, and the village stood in the road. After the first moment Hollis stopped pulling. He stood and shook, and let himself be held.
 
 Then he saw Rae.
 
@@ -1751,7 +1751,7 @@ She was at the edge of the green, by the inn's yard wall, with her hood up: a ca
 
 Darrow could see him speak. He could see Rae answer, once, short. He could see the grey cloak look toward the inn yard, and back at her, and say something else. It was a quarter-hour round the shore. His hands stayed on the wall.
 
-Nobody held him there. His word to the woman across the water did what a hand had done in the hay.
+Nobody held him there.
 
 The grey cloak turned away from her and went back up the steps.
 
@@ -1759,13 +1759,13 @@ The reader finished. The bell rang once more, flat, over the water, and the vill
 
 Hollis sat down on the ground against the fold wall with the beech leg out in front of him and his face in his hands.
 
-"Sixty and a mule," he said, into them.
+"Sixty at that stone," he said, into them. "And a mule."
 
 ---
 
 It was Ash who nearly undid it.
 
-They came in the afternoon, two of them, riding the shore road at the walk of men sent to look at something they do not expect to find: the two grey cloaks, with the reader's horse between them on a lead, going round the tarn toward the mill. The fold was two hundred yards up the slope from the road, grey stone against grey hillside, with the cart behind it and the oxen inside it and six people lying flat in the frozen grass along the wall.
+They came in the afternoon, two of them, riding the shore road at the walk of men sent to look at something they do not expect to find: the two grey cloaks, going round the tarn toward the mill. The fold was two hundred yards up the slope from the road, grey stone against grey hillside, with the cart behind it and the oxen inside it and four people lying flat in the frozen grass along the wall.
 
 Ash stood up on the wall and barked.
 
@@ -1777,7 +1777,7 @@ Darrow's hand found the stick in the grass. Hollis's found Darrow's wrist. Rae w
 
 "Hoy!" A shout from the road, from the other direction, and the rattle of a cart. A mill-cart, coming round from the village, a man walking at the horse's head, and Darrow knew the walk before the face: the carter whose boy had been under the axle. "That's my bitch, Ser. Leave her be. She's in whelp and foul with it, and she's got out again, and if you go up there she'll have the leg off your horse."
 
-The rider looked at the dog, and at the carter, and at the empty hillside behind the fold wall. He said something to the other, who laughed. Then he turned his horse's head back to the road, and the two of them rode on toward the mill with the reader's horse between them, and the mill-cart came on past the foot of the slope, and the carter kept his eyes on his horse the whole way.
+The rider looked at the dog, and at the carter, and at the empty hillside behind the fold wall. He said something to the other, who laughed. Then he turned his horse's head back to the road, and the two of them rode on toward the mill, and the mill-cart came on past the foot of the slope, and the carter kept his eyes on his horse the whole way.
 
 Ash got down off the wall and came and lay on Hollis's feet.
 
@@ -1787,15 +1787,15 @@ Ash got down off the wall and came and lay on Hollis's feet.
 
 Rae came back at dusk, round the long way, and sat down in the hut door and took the rag out of her bell.
 
-"They asked whose cart was in my uncle's yard," she said. "I said mine. They asked where it was. I said working; a carter's cart that's not working is a carter that's starving, and a grey cloak knows that much. They asked when I'd seen the captain of the Ninth. I said I'd carted for the House since the fair and I'd seen every man on that mountain that had a face, and if they wanted one in particular they'd want the list of the dead as well, for I'd carted that too." She looked at the dark water. "They've asked at the mill by now. We go before the bell."
+"They asked whose cart was in my uncle's yard," she said. "I said mine. They asked where it was. I said working; a carter's cart that's not working is a carter that's starving, and a grey cloak knows that much. They asked when I'd seen the captain of the Ninth. I said I'd carted for the House all summer, and a carter looks at loads, not faces." She looked at the dark water. "They've asked at the mill by now. We go before the bell."
 
 "And your uncle?" Darrow said.
 
 "Stood in his door and never saw me." She turned the rag over in her hands. "It's written, he said. Signed or not. He'll have written what today cost him as well, by now. He always does."
 
-"That's your summer."
+"That's your summer gone."
 
-"It's my book." She said it flat, and then, lower, not flat at all: "I've driven out of that yard a thousand times. I never once did it without his bell on me."
+"It's my book." She said it flat, and then, lower, not flat at all: "I've driven out of that yard a thousand times. Never once with my bell stopped."
 
 The dark came down over the tarn.
 
@@ -1803,11 +1803,11 @@ The dark came down over the tarn.
 
 `[FINESSE · DC 9]` d20 **11** +0 finesse +1 chapter 5 Hard-won = **12** — *Success*
 
-They went before the dawn bell, as she had said: the cart out of the lee of the wall without a lamp, the oxen leaning into the yoke at a word said from the belly, the mule on its short rope, Ash in with the sacks, Wren with her ledger buttoned inside her coat and her pencil still, Maelis walking at the tailboard with a hand on it, Hollis riding, Darrow at Hob's head with the stick, where he had walked the first morning off the mountain. The shore road was iron under the frost and the cart's wheels made no more noise on it than the oxen's feet. The far shore slept. The bell-house stood with its back to the water and the paper pale on its door, and above it the bell hung quiet, with an hour to go.
+They went before the dawn bell, as she had said: the cart out of the lee of the wall without a lamp, the oxen leaning into the yoke at a word said from the belly, the mule on its short rope, Ash in with the sacks, the rag back in the bell at Rae's belt, Wren with her ledger buttoned inside her coat and her pencil still, Maelis walking at the tailboard with a hand on it, Hollis riding, Darrow at Hob's head with the stick, where he had walked the first morning off the mountain. The shore road was iron under the frost and the cart's wheels made no more noise on it than the oxen's feet. The far shore slept. The bell-house stood with its back to the water and the paper pale on its door, and above it the bell hung quiet, with an hour to go.
 
 Where the shore road met the drove road, Rae stopped the oxen.
 
-The way forked there. Left, the drove road ran on east along the river, the way the levies had gone, driving the farms' cattle ahead of them and the farms' people after; it was the open road, and there were people on it who would be glad of a cart and a company that did not run. Right, the mill tracks went up north between their hedges into the hill country, quiet, empty, a road a carter could lose a cart on for a week, the safe way for five people and a dog that a herald had just read out to a village.
+The way forked there. Left, the drove road ran on east along the river, the way the levies had gone, driving the farms' cattle ahead of them and the farms' people after; it was the open road, and there were people on it who would be glad of a cart and a company that did not run. Right, the mill tracks went up north between their hedges into the hill country, quiet, empty, a road a carter could lose a cart on for a week, the safe way for five people and a dog, three of whom a herald had just read out to a village.
 
 Rae sat on the box with the goad across her knees and looked at Darrow, and waited. This time it was his road.
 

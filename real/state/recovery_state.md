@@ -33,7 +33,7 @@
 - **Calendar:**
   - Post-op week 8 ended Mon 10/19; **week 9 = Tue 10/20 – Mon 10/26: Phase 4; Knot III tied Tue 10/20 (POD 57).**
   - Phase 4 = weeks 9–12, through Mon 11/16 (POD 84). **That is also the end of the graft's weakest window (~weeks 6–12).**
-  - Running: earliest week 13 (Tue 11/17, POD 85), and only with its gate met and the rehab team's agreement.
+  - Running: earliest week 13 (Tue 11/17, POD 85), and only with its gate met. **The surgeon (11/4, patient-reported): wait for the timeline, the week of 11/15; ramp up to it; some form work allowed now** (`pt_notes.md`, 2026-11-04).
 - **Home equipment:**
   - Have: power rack and barbell with a cable system and ankle attachments; DBs **to 52.5 lb** (10/31: not buying heavier; past 52.5 a lift moves to the barbell, §6 "Dumbbells at their top"); benches including incline; bands; air bike; BOSU; boxes and steps (6.5", 7.5", 8", 12", 18"–24" seats); 10 lb weight for the heel prop; strap; 8 lb med ball.
   - Don't have: leg press, leg curl, or knee-extension machine; wobble board.
@@ -113,7 +113,7 @@
 | 10/17 | Copenhagen, both sides (short lever) |
 
 **Still through the PT / clinic:**
-- running (week 13 at the earliest, and the rehabilitation team agrees)
+- running: the surgeon's go is given for the week of 11/15 (11/4); what "form work" means before then, and whether the hamstring and glute tests come first
 - hamstring and glute strength tests (the clinic's equipment)
 - step-out throws, throwing on the move, marking
 - BFR, Spanish squat, seated rotational throws (not in the plan)
@@ -122,7 +122,7 @@
 
 ### For the next visit (the one list)
 
-1. **Tue 11/10, Nick** (the formal quad test; PT 12 on 11/4 answered items 3 and the squat video: `pt_notes.md`, 2026-11-04). Then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6).
+1. **Tue 11/10, Nick** (the formal quad test; PT 12 on 11/4 answered items 3 and the squat video: `pt_notes.md`, 2026-11-04). **And running:** the surgeon gave the week of 11/15 and some form work now (11/4): ask which form drills, at what level, and whether the hamstring and glute tests come before the first run. Then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6).
 2. **Hamstring test, both sides.** The before-running gate needs ≥80%; pre-op was 70.6%. **Glute med/max too**, and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18). Unmeasured, these are the likeliest thing holding 11/17.
 3. **Reconfirm Nick's 10/28 words** (relayed): the plan's criteria and times govern, impact included; the drop vertical jump cleared on its criteria. Show where the impact ladder stands and the single-leg squat video. **And say that single-leg hops ran twice last week ahead of the ladder** (left and right 2 × 5 on 10/28, left 2 × 5 on 10/30; quiet, pain 0, clean mornings): ask whether single-leg pogos may come forward, or wait for rung 3 and the drop vertical jump as the plan orders.
 4. **Throwing:** are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee.)
@@ -170,7 +170,7 @@ Visits: **surgeon Wed 11/4** · **PT (Nick) Tue 11/10** (the formal quad test) a
 - **Loaded days are never back to back:** three a week, four in the week of 11/8 (the visits fall Tue and Thu, so two home sessions fit). From 11/15 the visits sit two or three days apart, which leaves room for **one home session a week**: A and B keep alternating, so each runs every other week, and the clinic's own work (knee extension, hamstring curl, squat, split squat) fills the weeks between. Every muscle still trains three times a week.
 - **Upper** stays at least 3 days apart: Mon 11/9 B → Fri 11/13 A → Tue 11/17 B → Fri 11/20 A → Tue 11/24 B → Sat 11/28 A → Tue 12/1 B → Fri 12/4 A. The week of 11/15 is Block 1's deload (Add-On rule 9: sets −30–40%, loads held); Block 2 from 11/22 if Block 1 ran 2 of 2 in at least two of its weeks (Add-On §4).
 - **Bike 3 and throwing 3 a week**, only on days without a loaded session. Sundays from 11/15 are the week's rest day (the checkpoint and the weekly checks only).
-- **Running is not in the calendar:** it waits for the surgeon's answer (11/4) and the plan's week 13. Once cleared, the walk-jog goes on loaded days, so the off days stay bike-only (the master plan: non-impact conditioning on off days) and runs never fall on consecutive days.
+- **Running from the week of 11/15** (the surgeon, 11/4: the timeline decides; ramp up to it; some form work allowed now, its drills to be named on 11/10). The first walk-jog (the master plan's session 1) goes in once the Return-to-Run Gate's items are met (pogos repeated pain-free, the quad test 11/10). The walk-jog goes on loaded days, so the off days stay bike-only (the master plan: non-impact conditioning on off days) and runs never fall on consecutive days.
 
 ### Daily minimum and weekly checks
 

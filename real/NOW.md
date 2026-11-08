@@ -19,13 +19,13 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 
 ## Last PT visit · **Wed 11/4, PT 12** (the note names no one; Nick consulted) · next: **Tue 11/10, Nick** (the formal quad test); then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
 
-PT 12 (`pt_notes.md`, 2026-11-04): pain 0, gait no deviations; no measurements. **Nick's 10/28 words reconfirmed** (the plan's timelines and criteria decide). **The single-leg squat video passed**; keep cleaning up the ascent. Keep progressing through the master plan at home; **single-leg knee-extension isometrics at home** (0° and 45°, 30 s each). The PT reads the running criteria as met and **defers to the surgeon** (seen later that day; his answer is not recorded here yet).
+PT 12 (`pt_notes.md`, 2026-11-04): pain 0, gait no deviations; no measurements. **Nick's 10/28 words reconfirmed** (the plan's timelines and criteria decide). **The single-leg squat video passed**; keep cleaning up the ascent. Keep progressing through the master plan at home; **single-leg knee-extension isometrics at home** (0° and 45°, 30 s each). The PT reads the running criteria as met and **defers to the surgeon**. **The surgeon (11/4, relayed 11/8): wait for the timeline, the week of 11/15; ramp up to it; some form work allowed now.**
 
 For Tuesday (State §5): **the hamstring test, both sides, and glute med/max** (still unmeasured, both Phase 4 exit items) with the formal quad test · step-out throws and the pivot foot · bike intervals · the written 10/17 note · say that single-leg hops ran twice ahead of the ladder (10/28, 10/30) · if wanted: BFR, Spanish squat, seated throws · the right knee's hyperextension · who treated 10/1.
 
 ## Gate · Phase 3 → 4 **met (10/17); Knot III tied Tue 10/20** · next: Phase 4 exit (the plan's "Before Running" gate)
 
-- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ (0 every morning this week) · normal gait ✓ · quad LSI >80% ✓ (90.4%; the formal retest Tue 11/10) · **hamstring LSI ≥80% (unmeasured)** · **glute med/max ≥80% (unmeasured)** · 10 controlled single-leg squats ✓ (11/1, both sides) · impact prep in progress (rung 3 reached; the drop vertical jump check today) · landing mechanics: judged on the drop vertical jump · rehab team agrees: the PT yes, **the surgeon's word to record** · **minimum time: week 13, from Tue 11/17**. The two unmeasured tests are the likeliest thing between him and Knot IV.
+- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ (0 every morning this week) · normal gait ✓ · quad LSI >80% ✓ (90.4%; the formal retest Tue 11/10) · **hamstring LSI ≥80% (unmeasured)** · **glute med/max ≥80% (unmeasured)** · 10 controlled single-leg squats ✓ (11/1, both sides) · impact prep in progress (rung 3 reached; the drop vertical jump check today) · landing mechanics: judged on the drop vertical jump · rehab team agrees: the PT yes, the surgeon yes from the week of 11/15 · **minimum time: week 13, from Tue 11/17**. The two unmeasured tests are the likeliest thing between him and Knot IV.
 
 ## Flags and notes for the week
 
@@ -37,9 +37,9 @@ For Tuesday (State §5): **the hamstring test, both sides, and glute med/max** (
 
 ## Open items
 
-- **Running: the surgeon's answer (Wed 11/4).** Say what was said, and whether it's "start now" or "from week 13 (11/17)": the master plan's timeline says week 13 and the plan's times govern; it goes into `pt_notes.md`.
-- **The sport plan's month check:** ratings (1–5) and the seven review questions (`doc sport reviews`).
-- **The CRV project:** task 2 (pictures) is overdue since Sat 10/31; say when it's done, or set it aside, or move it.
+- **Running: from the week of 11/15** (the surgeon, 11/4: wait for the timeline, ramp up to it, some form work allowed now). Ask Nick on Tuesday what the form work is, and whether the hamstring and glute tests come before the first run.
+- **The sport plan's month check (end of week 4):** seven ratings 1–5 and seven questions, sent in chat 11/8; answers go in the checkpoint's Sport section.
+- **The CRV project:** task 2 (pictures) is overdue since Sat 10/31; planned for this week (he said 11/8).
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 
 <!-- engine:start -->

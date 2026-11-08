@@ -605,3 +605,20 @@ What it answers from the 11/4 list (State §5): **Nick's 10/28 words reconfirmed
 Not answered or not done: **hamstring and glute tests** (not done: still unmeasured, both Phase 4 exit items) · step-out throws and the pivot foot · the written 10/17 note · bike intervals · BFR, Spanish squat, seated throws · the right knee's hyperextension · who treated 10/1 · the next visit's day.
 
 What it changes: the isometrics join the home knee work (with the knee extension, the PT's dose; load not given, so light). **Running is not changed by this note:** the PT says his criteria are met and defers to the surgeon; the master plan's own timeline puts running at week 13 (Tue 11/17), and Nick's words, reconfirmed today, keep the plan's times in charge. Whether the surgeon's approval means now or from 11/17 is the question for the surgeon's answer.
+
+---
+
+## 2026-11-04 (POD 72) — Surgeon's answer on running — patient-reported (no visit note)
+
+Relayed by him in the repo thread on Sun 2026-11-08, at the checkpoint. The PT had left the running go to the surgeon the same day (Visit 12, above). Surgeon instruction outranks everything else in this project.
+
+```text
+Surgeon said to wait until the time line says to to them. Wants to wait until
+the week of the 15th, but ramp up to that, and can also do so form work.
+```
+
+Reading ("so form work" read as "some form work"): **running waits for the plan's timeline: the week of Sun 11/15 at the earliest**, which is the master plan's week 13 (Tue 11/17, POD 85). Until then, **ramp up to it**: the Phase 4 work toward the plan's Return-to-Run Gate keeps building (the impact ladder through repeated single-leg pogos, good landings; the formal quad test Tue 11/10). **Some running-form work is allowed before then**: which drills and at what level are not stated, so they are the question for Tue 11/10.
+
+What it changes: the first walk-jog session (the master plan's Return-to-Running Progression, session 1: walk 5 / jog 1 × 5) can go in the calendar from the week of 11/15, on a loaded day, with the gate's items met (ROM ✓, effusion ✓, quad LSI >80%: formal test 11/10, repeated single-leg pogos pain-free, good landing mechanics). Hamstring and glute ≥80% stay on the plan's Phase 4 exit list ("aim for") and unmeasured: ask Nick on 11/10 whether running waits on them.
+
+Open for 11/10: what "form work" means here (which drills, at what level, how often) · whether the hamstring and glute tests come before the first run.
