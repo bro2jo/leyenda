@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-03 · overheard · Overheard at the cart's tail: Hollis telling Wren that the ox call is the first thing the captain has said since midsummer that an animal has taken seriously. Wren writes it down.
 - 2026-11-03 · house · Maelis has made the cart's tailboard a surgery and Hollis's boots her first patients. The boots, she says, will live. She is less sure about Hollis.
 - 2026-11-04 · ledger · Wren's ledger, Lowmarch page: hedges, more than anyone needs; gates, eleven, of which four open; songs Hollis knows with a goat in them, three, and he says there are more.
 - 2026-11-04 · weather · Frost silvers the cart's canvas at first light and is gone by the first milestone, as if it had only come to look.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-08 · weather · The sky has cleared to the hard blue that means a colder night, and everyone in the yard is pretending to enjoy it. Wren has given up pretending and is wearing two cloaks.
 - 2026-11-08 · body · The frost has gone out of his fingers by mid-morning for the first time in days; the knee keeps its own counsel, and today its counsel is quiet.
 - 2026-11-08 · house · Hollis has found a chair in the sun and is defending it against all comers, including the sun, which keeps moving.
+- 2026-11-08 · overheard · Overheard from the stable: a boy asking Wren if she is a scribe, and Wren saying "Ledger-keeper" in a voice that makes the difference sound enormous.
