@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-02 · house · He sees Hollis palm the last heel of bread a breath before Hollis knows he has done it, and says nothing. Hollis finds this far more alarming than being caught.
 - 2026-11-02 · weather · Rain comes over the hills at dusk in a hurry and leaves the same way, and the drove road smells of wet wool and woodsmoke. Ash comes back out of it twice his size and very pleased with himself.
 - 2026-11-02 · overheard · From the far side of the fire, Maelis, to no one in particular: Ask me once more whether a thing is broken and I will break it, and then we will all know.
 - 2026-11-03 · body · The cold sits in his hands at first light and then lets go all at once, as if it has somewhere better to be. He flexes them out of old habit and finds, for once, nothing to report.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-06 · overheard · Overheard in the yard: Wren asking Maelis whether a man can be too cheerful, as a medical question. Maelis says yes, that it is catching, and that she has not caught it.
 - 2026-11-07 · weather · Wind off the tarn all morning, hard enough to take a hat. Hollis has lost his twice and found it once, and is not discussing the arithmetic.
 - 2026-11-08 · saying · "Call him what he does twice," the carters say, and that is how a man ends up named for a sneeze. Wren has started a list in the back of her ledger, and will not say whose.
+- 2026-11-08 · house · Maelis is rolling bandages nobody needs yet at the end of the long table, quick and neat as a card-sharp. When Darrow asks what they are for, she says "Optimism," and does not look up.
