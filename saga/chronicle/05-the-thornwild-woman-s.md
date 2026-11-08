@@ -1494,6 +1494,28 @@ Across the room Rae had turned round at last, and was looking at the two of them
 
 ### Scene 7 — Whose Debt
 
+"I knelt the morning of the ford," Darrow said.
+
+Oswin's cup stopped on its way to his mouth.
+
+"Both Lances did. Ser Hollis held the Sixth's banner for it, as he told you. I knelt at the Ninth's stone with sixty men at my back, and said the words, and got up as warm as you are now." Darrow kept his hands flat on the table. "And the warmth went out of me halfway across the river."
+
+For a while Oswin said nothing at all, which Darrow would not have thought him capable of. He looked at Darrow's hands on the table, and at his own, and at the fire.
+
+Wren reached across from Hollis's table and put a copper down at Darrow's elbow without a word: his share of whatever she had won on the stone. He turned it over once and held it up to Hale at the tap.
+
+"One for the Fourth," he said.
+
+Hale brought it himself. Oswin looked at the cup, and then at Darrow, and some of the light came back into his face, though not all of it.
+
+"That's a hard thing to be told over a cup," he said. "I'll think on it." He lifted the drink. "To the river, then."
+
+"To the river."
+
+They drank to it, which was all there was to do.
+
+---
+
 Oswin was at the stone before them.
 
 Darrow and Hollis came up the hill road to the crossroads in the grey before sunrise, the wind off the tarn at their backs hard enough to take a hat, and saw him from a hundred yards off: a big man down on one knee in the frost at the foot of the field-stone, bareheaded, both hands flat on the black of it, his horse standing saddled behind him with its reins on the ground. He did not look round. The wind took the words off him before they reached the road, but Darrow knew them. He had said them himself, on a morning in summer, with the river loud behind.
