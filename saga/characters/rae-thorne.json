@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "6",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
   },
-  "last_seen_doing": "Was under the lifted cart on her knees before anyone else moved and dragged the carter's boy clear by collar and belt; watched Darrow and the knight from the end of the bar with her uncle's book open at her elbow.",
-  "now": "At the end of the bar in her uncle's taproom, watching Darrow and the knight.",
+  "last_seen_doing": "Took up the pencil to sign the summer away and was stopped by Darrow's no; had it out with him in the yard; told him he would stand where she put him or be read in the road; asked whether he had ever let anybody pay for him; took the deciding when he gave it.",
+  "now": "At the oxen in the inn yard, the deciding hers; she will say at the bell.",
   "story_so_far": "She named the inspected cage light before it cleared the cloud, said what the almoner's satchel weighed both ways, and told Darrow of a grey mare at a dealer's on the Holloway that will not take a bridge forwards. On the gate wall she took her aye, plain, and gave him her midsummer crate in return. At first light she went down the Steps with his name for the mare.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -731,6 +731,24 @@
       "evidence": "\"Clear,\" she said."
     },
     {
+      "fact": "She meant to stand her uncle's price on her own debt and was stopped only by Darrow's no.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "Rae took the pencil out of the book's spine."
+    },
+    {
+      "fact": "She told Darrow nobody on her road had ever said what she would pay for, and he would not be the first.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "Nobody on this road has ever once said what I'd pay for."
+    },
+    {
+      "fact": "She holds the deciding of where he stands at the noon bell, and will tell him at the bell.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "You'll know at the bell."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1014,6 +1032,10 @@
     {
       "chapter": "05",
       "scene": "6"
+    },
+    {
+      "chapter": "05",
+      "scene": "7"
     },
     {
       "chapter": "tale02",

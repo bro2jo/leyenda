@@ -333,13 +333,14 @@
       "feeds": "q1.cart, q2.lantern, b3.4, q4.censer, q5.second, q6.market, r.b6.rae_door",
       "status": "open",
       "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; nobody at the House; the reader has her tells only (the bow off her box, the camp read by flour, the letter inside her shirt, name-the-load, the cold in her cart, one question a night)",
-      "note": "Plants on the page before the thread was opened, counted by eye: 02:s4, 02:interlude, 02:between-10, 02:between-11, 02:climax. Book I's plants are all on the page (the satchel's weights, the clerk's first climb, the second line). 04:between-1: the leash said as a family debt; 'nobody's hand on the rope but mine' is the want under the calling. Book II: off her post by her own choice (characters.md); the uncle's questions at Coldmere and a packet in salt for the river mill are the tells; the corner at q2.lantern, folded into b2.3's week. No reveal of the whole calling before Book III.",
+      "note": "05:s7: Hale's price named on the page as an innkeeper's price (the summer's loads, nothing off the debt), the book turned round for Rae; Darrow refused; the deciding is Rae's for the climax. Nothing of the Market said.",
       "on_page": [
         "04:between-1",
         "05:between-1",
         "05:between-2",
         "05:s5",
-        "05:interlude"
+        "05:interlude",
+        "05:s7"
       ]
     },
     {
@@ -387,6 +388,18 @@
       "who_knows": "Anselm (he saw him); Darrow, Hollis, Maelis, Wren and the Prior have it from Anselm's confession (04:s1); the reader. Marrant knows his own clerk. The clerk's name is not on the page",
       "note": "Duplicate of thread 20 (the same clerk in grey); its one plant (04:s1, Anselm's confession) belongs to thread 20's count. Closed so the open list carries one thread for him.",
       "on_page": []
+    },
+    {
+      "id": 23,
+      "title": "A rider in the Second's colours on a light horse shod for speed, alone, asking at the mill after a captain with a stick and a carter with oxen",
+      "truth": "T3",
+      "feeds": "b2.2",
+      "status": "open",
+      "who_knows": "Darrow and Hollis, from the miller's man (05:s7); the miller's man; the reader. Unnamed on the page; the company does not know who sent the rider or why alive.",
+      "note": "Planted 05:s7: one set of tracks left the column at the crossroads and went down the mill track alone; the miller's man said the rider had time. Pays at b2.2 (the weir).",
+      "on_page": [
+        "05:s7"
+      ]
     }
   ]
 }

@@ -175,7 +175,7 @@ That it is warm. That it makes a horse run on your legs. That a lance full of it
 Founded in the Quenching to hunt what was left of the Wardens and never disbanded: now the order that keeps the realm's oaths. Grey cloaks, a censer of iron on a chain whose smoke they call the Crown's breath, writs under seal, and a list. They read names at bell-houses and never draw steel before witnesses; the law is the blade, they say, and they have the law. A Knight-Confessor commands them from Calden. The Lowmarch fears them more than it fears the clans, and will not say so where the smoke can hear.
 
 ## realm.heralds — Heralds and bell-houses
-- **tier:** common · **spoken:** Prologue II · **names:** —
+- **tier:** common · **spoken:** Prologue II; ch05:s7 · **names:** —
 - **use:** how news moves; a proclamation's cadence.
 
 Every village has a bell-house with a field-stone chapel under it and a herald who keeps both. Proclamations are cried from its steps after the noon bell, and a thing cried at the bell is law in that village by dusk. News goes down the Holloway at the pace of a herald's horse and up it at the pace of a cart, which is why the mountain is always a day behind and a day wiser. A man named at the bell may answer at the bell, and some have.

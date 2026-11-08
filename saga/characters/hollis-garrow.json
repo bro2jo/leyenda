@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "6",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
   },
-  "last_seen_doing": "Left his own game to stand at Darrow's shoulder; led the taproom in the knucklebones rhyme against him; told the knight that both Lances had knelt the morning of the ford; after the yard, sat by the fire with the bones untouched.",
-  "now": "By the taproom fire at Coldmere, the bones in front of him, looking into the hearth.",
+  "last_seen_doing": "Said nothing to the knight and put two fingers in the knee-print after; read the crossroads: forty horse turned south, one light horse shod for speed gone alone down the mill track; got the mill-cart's man talking; told Darrow to use his words again.",
+  "now": "At the inn on the tarn with a cup Hale poured before it was asked for.",
   "story_so_far": "He had himself carried to the head of the stair both nights, the lad's blanket over his knees, and told the Captain to look at the wall. He saw the hand before the man when they came up, and called for fire in the voice that carries over rivers. He wants to know who is told.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -724,6 +724,18 @@
       "chapter": "05",
       "scene": "6",
       "evidence": "I held the Sixth's banner for it."
+    },
+    {
+      "fact": "He read a single light horse, narrow in the shoe and nailed close, that left the column at the crossroads and went down the mill track alone.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "Narrow in the shoe. Nailed close."
+    },
+    {
+      "fact": "He told Darrow to use his words about the ford again, since he would as soon they were somebody's.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "I'd as soon they were somebody's."
     }
   ],
   "relationships": [
@@ -1062,6 +1074,10 @@
     {
       "chapter": "05",
       "scene": "6"
+    },
+    {
+      "chapter": "05",
+      "scene": "7"
     }
   ]
 }

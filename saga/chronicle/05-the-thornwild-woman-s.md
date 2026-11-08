@@ -1491,3 +1491,134 @@ Across the room Rae had turned round at last, and was looking at the two of them
 1. **Tell him plainly what he saw painted under the House: a kneeling knight, and the light going up out of him.**
 2. **Let him keep his comfort.**
 3. **Buy him a drink and say nothing.**
+
+### Scene 7 — Whose Debt
+
+Oswin was at the stone before them.
+
+Darrow and Hollis came up the hill road to the crossroads in the grey before sunrise, the wind off the tarn at their backs hard enough to take a hat, and saw him from a hundred yards off: a big man down on one knee in the frost at the foot of the field-stone, bareheaded, both hands flat on the black of it, his horse standing saddled behind him with its reins on the ground. He did not look round. The wind took the words off him before they reached the road, but Darrow knew them. He had said them himself, on a morning in summer, with the river loud behind.
+
+They stopped where they were and let him finish.
+
+When he stood, the frost had gone off the stone under his palms in two hand-shaped patches, and off the ground in one the shape of a knee. He turned round rubbing his hands together, and saw them, and his face did the thing it did, which was light up.
+
+"Captain." He came over, leading the horse. "I lay awake on your river half the night." He said it as a man says he has been thinking of a friend's trouble. "I'll tell you what I came to. Your river was the river's fault, or the Confessors', or the Grace's own, I'll not pretend to know whose. But it was never the stone's. The stone's the one thing in all of it that does what it says." He put a hand out, and when Darrow took it, it was warm all the way through, as though the man had been holding it to a fire. "You'll not kneel this morning."
+
+"Not this morning."
+
+"No." Oswin smiled at him with great fondness, and no surprise. "Well. The stone's not going anywhere. That's the other thing about it." He swung up into the saddle, big and easy, and the horse danced under him in the cold. "I'll not say where I met you, nor to whom. You've my word on that, for what a sworn man's word is worth to you."
+
+"It's worth a good deal," Darrow said.
+
+"Then that's something." He touched his heels to the horse, and turned it, and went off down the Holloway toward the landing at a trot, with his cloak out behind him, and did not look back; and Darrow stood in the road and watched him go, with the cold in his chest where it had been since yesterday morning, and found that he minded.
+
+Hollis had not said a word to the knight. He said one now, to the road.
+
+"Full of Grace."
+
+"And empty of sense."
+
+"I didn't say that." Hollis bent, with a grunt, and put two fingers into the knee-shaped patch at the foot of the stone. He held them there a moment. Then he wiped them on his coat.
+
+---
+
+The crossroads was where the Holloway came up from the tarn and crossed the drove road, with the mill track going off downhill between hedges on the fourth side, and the whole of it was frozen mud, cut and recut. Hollis read it the way he had read the ground at a hundred camps, from the top down, one hand on his stick, and Darrow stood out of his light and let him.
+
+"Forty-odd horse. Came up from the tarn, here. Stood an hour, there, and the horses got bored and churned it." He moved along the verge. "Cart. Heavy, iron tyres, that's their smoke-cart. Then the whole lot turned, there, and went back down the way they'd come. South. Calden road." He grunted. "The carter had it right. Nobody turns a column in an hour for nothing."
+
+"And that?"
+
+Hollis looked where Darrow was pointing: a single line of hoofprints that left the churned place and did not turn south with the rest. It went across the crossroads at an angle and into the mouth of the mill track, between the hedges, and down.
+
+He went and crouched over it, which took him some time and some language, and looked at it for longer than he had looked at the forty.
+
+"Light horse," he said at last. "Narrow in the shoe. Nailed close. That's a horse shod to go fast and keep going, not to carry a man in mail. One rider." He looked down the mill track, where the hedges hid it. "Went off alone when the rest turned, and nobody went after."
+
+A mill-cart was coming up the track toward them with a load of sacks and a man walking at the horse's head. He gave Hollis good morning in the Lowmarch way, which was to complain about the wind, and Hollis gave it back, and in a minute they were two men talking about roads; and in two the miller's man was telling him, because Hollis had a way of being told things, about the rider who had come down to the mill two days back on a long-legged horse and asked, polite as a priest, whether a captain with a stick had passed that way, or a carter with a pair of oxen.
+
+"What colours?"
+
+"The Second's." The man shrugged. "I said no to both, and he thanked me, and watered the horse, and went on down the river road. Didn't look like a man in a hurry." He clicked to his horse. "Looked like a man with time."
+
+They watched the mill-cart go on over the crossroads and down toward the tarn.
+
+Darrow's feet had already turned him toward the mill track. He felt them do it: the old speed, coming up through the cold like a hand on his back, saying *down there, two days, a long-legged horse, you could know by noon*. He stood where he was and let the feeling go past him, the way he had let the sergeant's voice go past him through the chimney stones, and it cost him about what that had.
+
+"Captain," said Hollis. He had straightened up, and he was looking at the track and not at Darrow, which was a kindness. "You used my words last night. To the Fourth."
+
+"They were true."
+
+"They were mine." He turned his stick in the mud. "Use them again, if you like. I'd as soon they were somebody's."
+
+---
+
+Hale had the book open on the kitchen table when they came in, and a cup poured for each of them, and the fire built up, and all of that was the first thing Darrow noticed, because Hale had never once in six days poured anything for him before it was asked for.
+
+Rae was at the table already. Her face told him nothing, which with Rae told him a good deal.
+
+"Sit down, Captain," said Hale. "Ser Hollis. You'll have walked up to the crossroads. Cold up there." He turned a leaf. "A boy came in off the Holloway while you were gone. The herald's lad from the mill crossing, on a pony, going round every bell-house on the road with the same word in his mouth." He let them sit. "A reader of writs rides in tomorrow, at the noon bell. Two grey cloaks with him. He's to read the list again from my bell-house steps, where it was read first; the Crown has a fancy to hear it in every village twice." He smiled. "Your name's at the top of it, I'm told. Above every other."
+
+"I've read it," said Darrow.
+
+"So you have. And under it the Mender Vorne, that I've never heard of, and a captain of the Sixth third down, that's never set foot in my hay." Hale folded his hands on the book. "I'll tell you plainly how it stands, since you're a plain man, Captain, and I like you. Tomorrow at noon a man with the Crown's wax on him will stand on my steps and read your name to my village, and then he'll come in here, because they always do, and he'll ask me what I've seen. And I'll not have seen you. I'll not have seen her. The loft will have been empty since the fair." He turned the book round, gently, so that Rae could read it the right way up for once. "That's a dear thing not to have seen. I've written down what it costs."
+
+Rae read it. Her face did not change, and her hand on the table closed.
+
+"The summer," she said.
+
+"The summer. Every load from the thaw to the wool clip, driven and paid in, and nothing taken off the cart and the oxen for any of it. The debt stands where it stands till the next year's book." Hale said it as kindly as he had ever said anything. "It's not a hard price for what it buys. You know what it buys. You were here when the list was read."
+
+Rae took the pencil out of the book's spine. "Where do I—"
+
+"No," said Darrow.
+
+He had not meant to say it so loud. The kitchen girl at the sink turned round, and Hollis's cup stopped halfway to his mouth, and Rae's pencil stopped above the page.
+
+"No," he said again, lower. "Not for me. Put the book away, innkeeper. I'll be in the road at noon tomorrow when your man reads, and he can read it to my face, and that'll be the end of what it costs anybody."
+
+Hale looked at him with real regret, as a man looks at a good horse that has gone lame. "That'll be the end of you, Captain. And it'll not be the end of what it costs her."
+
+Rae put the pencil down on the open book, and got up, and went out into the yard.
+
+---
+
+She was at the oxen, as he had known she would be, with her back to the kitchen door and her hand on Hob's neck, and the wind off the tarn flattening her cloak against her. Darrow came across the cobbles with the stick, and stopped where she could not help but hear him, and did not go closer.
+
+"It's my debt," she said, before he could speak. "Not yours. You've nothing to say in it."
+
+"I've everything to say in it. It's my name on the paper."
+
+"And it's my name in the book." She turned round. "You stood in the hay yesterday with Ser Hollis's hand on your ankle and let me talk to that sergeant for an hour, and you were right to. You looked at me at the reeve's gate and let me answer, and you were right to. *Your yard,* you said. *Your road.*" Her voice had not risen; it had gone flat and quick, the manifest voice, every word a line on it. "Well, this is my yard, and my road, and my uncle, and my book, and you'll stand where I put you tomorrow the same as you did yesterday, or you'll stand in the road and be read, and they'll take the Mender off you where she stands, and the old man, and the girl, and my oxen under the lot of you. Which is it?"
+
+"You carried forty-one men's bundles down this road," Darrow said. "You told me. You're not carrying me."
+
+"I'm not carrying you. I'm paying for you. It's a different trade." She came a step toward him. "Nobody on this road has ever once said what I'd pay for. Not my uncle. Not the House. Not the Confessor when he cut my rope. And you'll not be the first, because you'll not be the first at anything on my road. That's the whole of what I've been telling you since the Holloway."
+
+"It's a summer," he said. "A whole summer's loads."
+
+"It's a summer. I've driven summers." She looked at him. "Have you ever in your life let anybody pay for you?"
+
+He thought about it, honestly, because she had.
+
+Sixty men had followed him into a river on his word, and nineteen had come out, and in all the time since, in the cot and the chair and on the Steps, he had not once let a soul decide what they would spend on him. He had decided for them. He had decided for all of them, always, and called it command. There was not a man of the Ninth living who had ever seen him do otherwise.
+
+"No," he said.
+
+"Then you've no practice at it. That's all it is." Rae turned back to the oxen. "Go in. It's cold."
+
+He did not go in. He stood on the cobbles with the stick, and the wind, and the knee telling him about the cold, and looked at the back of her head for a long moment.
+
+"It's yours, then," he said. "The deciding. Not the debt; I'll have words about the debt till the thaw. But whatever you say at that bell tomorrow, I'll stand where you put me. I'll not go into the road unless you send me. You have my word on it."
+
+Her hand stopped on Hob's neck.
+
+"That's a dear thing to give a carter," she said, without turning round.
+
+"I've nothing else that's mine."
+
+She was quiet for a while. Across the road the bell-house stood with its back to the tarn and the paper pale on its door, and above it the bell that would ring at noon tomorrow hung still in the wind.
+
+"Go in," Rae said again, and this time it was gentler. "You'll know at the bell."
+
+> ⟦ THE RECKONING ⟧
+> XP 3,128 → 3,163

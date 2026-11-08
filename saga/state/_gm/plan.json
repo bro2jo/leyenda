@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 5,
     "beat": "b2.1",
-    "next_scene": 7,
+    "next_scene": 8,
     "stage": "scene",
-    "last_written": "ch05:s6",
+    "last_written": "ch05:s7",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -161,8 +161,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch05:s7"
       },
       {
         "n": 8,
@@ -551,7 +551,7 @@
   },
   "tallies": {
     "chased": 1,
-    "held": 2
+    "held": 3
   },
   "tallies_log": [
     {
@@ -575,6 +575,14 @@
       "name": "held",
       "delta": 1,
       "why": "ch05:s5: stayed in the hay when the levy asked the cook for the Mender, Hollis's hand on his ankle",
+      "book": 2,
+      "chapter": 5
+    },
+    {
+      "date": "2026-11-07",
+      "name": "held",
+      "delta": 1,
+      "why": "ch05:s7: his feet turned to the mill track after the lone rider and he let it go; he gave Rae the deciding",
       "book": 2,
       "chapter": 5
     }

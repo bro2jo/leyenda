@@ -1439,12 +1439,13 @@
           "what": "The reeve's eldest, who reads and has wanted the bell-post since he was six, stayed at the gate a breath longer than his father and read Darrow's face against the post. Fire where word of the company's road reaches the Confessors or the levy, or where he turns up again",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch05:s5",
             "ch05:interlude",
             "ch05:s4",
-            "ch05:s6"
+            "ch05:s6",
+            "ch05:s7"
           ]
         }
       ]
@@ -1584,13 +1585,14 @@
           "priority": 2,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch05:between-7",
             "ch05:between-8",
             "ch05:s5",
             "ch05:s4",
-            "ch05:s6"
+            "ch05:s6",
+            "ch05:s7"
           ]
         },
         {
@@ -1684,7 +1686,8 @@
           "at": "ch05:s7",
           "weight": "color",
           "what": "Darrow answered Oswin with the ford in his own mouth (he knelt that morning, and the warmth went out of him halfway across) and bought him a drink; the next scene's first lines show what Oswin did with it at first light, and Darrow did not kneel",
-          "status": "pending"
+          "status": "fired@ch05:s7",
+          "evidence": "I lay awake on your river half the night."
         },
         {
           "id": "c05.11b",
@@ -1695,7 +1698,11 @@
           "fits": "present.oswin",
           "priority": 2,
           "valid_until": "book3",
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch05:s7"
+          ]
         }
       ],
       "declined": [

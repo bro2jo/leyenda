@@ -25,12 +25,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "6",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
   },
-  "last_seen_doing": "Kept the tap on knucklebones night with a hand lifted to three people at once; had his book open at Rae's elbow at the end.",
-  "now": "At the tap of his taproom, the book open at Rae's elbow.",
+  "last_seen_doing": "Poured for Darrow before it was asked; brought the word that a reader of writs comes at the noon bell tomorrow to read the list from his bell-house steps; named his price for not having seen them: the summer's loads driven and paid in with nothing off the cart and the oxen.",
+  "now": "At his kitchen table with the book open and Rae's pencil lying on the page.",
   "story_so_far": "",
   "quote": {
     "text": "We'll talk the summer's loads in the morning, Rae.",
@@ -85,6 +85,18 @@
       "chapter": "05",
       "scene": "interlude",
       "evidence": "When you go by. As usual."
+    },
+    {
+      "fact": "A reader of writs with two grey cloaks rides in at the noon bell tomorrow to read the list again from Coldmere's bell-house steps.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "A reader of writs rides in tomorrow, at the noon bell."
+    },
+    {
+      "fact": "His price for not having seen the company is Rae's whole summer of loads, driven and paid in, with nothing taken off the debt on the cart and the oxen.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "The debt stands where it stands till the next year's book."
     }
   ],
   "relationships": [
@@ -136,6 +148,10 @@
     {
       "chapter": "05",
       "scene": "6"
+    },
+    {
+      "chapter": "05",
+      "scene": "7"
     }
   ]
 }

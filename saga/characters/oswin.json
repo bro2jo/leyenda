@@ -22,12 +22,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "6",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-6"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#scene-7"
   },
-  "last_seen_doing": "Knew Darrow's face from the bell-house door and sat down to play him rather than name him; lost at knucklebones and paid with the truest thing he knew; lifted a broken cart off a carter's boy alone; came back inside warmer, and asked Darrow to kneel beside him at the crossroads stone in the morning.",
-  "now": "In the Coldmere taproom, warm, his offer made; he means to kneel at the crossroads stone at first light.",
+  "last_seen_doing": "Knelt at the crossroads stone at first light; told Darrow the river was never the stone's fault; gave his word not to say where he met him; rode off down the Holloway toward the landing.",
+  "now": "Gone down the Holloway toward the landing at a trot, his word given.",
   "story_so_far": "",
   "quote": {
     "text": "It's one knee. I'd kneel beside you. I'd be glad to.",
@@ -64,6 +64,18 @@
       "chapter": "05",
       "scene": "6",
       "evidence": "It's one knee. I'd kneel beside you."
+    },
+    {
+      "fact": "He knelt at the crossroads stone at first light, and the frost went off the stone under his palms and off the ground under his knee.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "off the ground in one the shape of a knee"
+    },
+    {
+      "fact": "He gave Darrow his word not to say where he met him, nor to whom.",
+      "chapter": "05",
+      "scene": "7",
+      "evidence": "I'll not say where I met you, nor to whom."
     }
   ],
   "relationships": [
@@ -94,6 +106,10 @@
     {
       "chapter": "05",
       "scene": "6"
+    },
+    {
+      "chapter": "05",
+      "scene": "7"
     }
   ]
 }

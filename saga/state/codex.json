@@ -542,9 +542,10 @@
         },
         {
           "name": "The crossroads stone",
-          "text": "A field-stone at the crossroads above Coldmere, on the Holloway. Ser Oswin of the Fourth kneels at every stone the road gives him and asked Darrow to kneel beside him at this one at first light (Ch 5 Sc 6).",
+          "text": "A field-stone at the crossroads above Coldmere, on the Holloway. Ser Oswin of the Fourth kneels at every stone the road gives him and asked Darrow to kneel beside him at this one at first light (Ch 5 Sc 6). Ser Oswin knelt at it at first light with Darrow and Hollis watching from the road, and the frost went off it under his palms and off the ground under his knee; Darrow did not kneel (Ch 5 Sc 7).",
           "sources": [
-            "ch05:s6"
+            "ch05:s6",
+            "ch05:s7"
           ]
         },
         {
