@@ -275,3 +275,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-08#5,2026-11-08,,lunch,Domino's GF small chicken bacon ranch pizza,assumed the whole small (6 slices),1230,54,102,66,3,24,9,2820,660,720,4.8,72,6,0,0.6,300,library,slice count not given; library row x6
 2026-11-08#6,2026-11-08,,lunch,"LMNT Sparkling, Lemonade Salt (12 oz can)",assumed 1 can (12 fl oz),5,0,0.5,0,0,0,0,500,100,0,0,30,0,0,0,0,library,can vs stick not given; his usual can
 2026-11-08#7,2026-11-08,,snack,"Bacon, thick cut","2 slices, cooked",140,10,0.4,11,0,4,0,560,160,4,0.4,10,1,0,0.2,0,estimate,"typical thick-cut slice x2, as 11/5"
+2026-11-08#8,2026-11-08,,dinner,"Salmon fillet, seasoned and pan-seared","assumed ~6 oz cooked (photo), ~1 tsp oil",390,37,1,25,0,4.5,0,400,620,25,0.6,50,0.7,0,11,3000,photo,Atlantic salmon assumed; seasoning sodium estimated
+2026-11-08#9,2026-11-08,,dinner,White basmati rice,~1.5 cups cooked (photo),300,6,65,0.6,1,0.2,0.1,200,80,20,0.6,30,1,0,0,0,photo,"portion from the photo; salt assumed, as 11/4"
+2026-11-08#10,2026-11-08,,dinner,"Sauteed mixed vegetables (zucchini, broccoli, carrot, red onion, pepper)","~1 cup (photo), ~1.5 tsp oil",110,2.5,11,7,3.5,1,5,150,450,40,0.8,30,0.4,60,0,50,photo,portion and oil from the photo
