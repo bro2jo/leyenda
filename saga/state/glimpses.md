@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-02 · overheard · From the far side of the fire, Maelis, to no one in particular: Ask me once more whether a thing is broken and I will break it, and then we will all know.
 - 2026-11-03 · body · The cold sits in his hands at first light and then lets go all at once, as if it has somewhere better to be. He flexes them out of old habit and finds, for once, nothing to report.
 - 2026-11-03 · house · Wren has decided the Lowmarch's cows are friendlier than the mountain's goats, and is keeping evidence. So far the evidence is one cow, which has followed her the length of a hedge and has opinions about her pencil.
 - 2026-11-03 · verse · Hollis has taken to singing the oxen along with the Grey Mare of Edgemoor: *and she never once asked me the why or the where.* The oxen, Rae says, never have either, and do not need encouraging.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-08 · saying · "Call him what he does twice," the carters say, and that is how a man ends up named for a sneeze. Wren has started a list in the back of her ledger, and will not say whose.
 - 2026-11-08 · house · Maelis is rolling bandages nobody needs yet at the end of the long table, quick and neat as a card-sharp. When Darrow asks what they are for, she says "Optimism," and does not look up.
 - 2026-11-08 · ledger · Wren's tally for the morning, in the margin: frost on four panes of six, two kettles boiled, one argument about whose turn it was, won by nobody and still going.
+- 2026-11-08 · overheard · Overheard by the door: Hollis telling a carter that the secret of a long life is never to be the first one up. The carter asks how it's working. Hollis says he'll let him know.
