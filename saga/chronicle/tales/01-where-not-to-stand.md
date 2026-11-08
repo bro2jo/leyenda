@@ -40,13 +40,13 @@ Darrow rode the bay out through it.
 
 The grey filly was in the thistles when he left, at the top of the far field where the ground went to stone and the mowing stopped, with her head down and one hind foot rested. She had stood there since she could stand. He had named her Thistle for it the spring before, on the grounds that a creature who picks a place to be let alone in should be called by it, and his father had let the name go by, which was how names were made in that house.
 
-She kept her head down. Her dam, the long grey mare under him, kept hers to the hill road, and he took the hint from both of them and kept his own the same way.
+She kept her head down. Her dam, the long grey mare under him, kept hers to the hill road, and he took the hint from both of them and kept his eyes on the road.
 
-He was sixteen. His father had come as far as the gate and stopped at it with his arms folded, as he had five years before when there was a bay on the other side of it.
+Darrow was sixteen. His father had come as far as the gate and stopped at it with his arms folded, as he had five years before when there was a bay on the other side of it.
 
 "She's yours," his father said. "The brand's mine. Anybody asks you, that's the order of it."
 
-It was the longest thing he had said about a horse all year. The boy carried it down the hill like a coin he meant to spend.
+It was the longest thing his father had said about a horse all year. The boy carried it down the hill like a coin he meant to spend.
 
 ---
 
@@ -55,7 +55,7 @@ He heard the muster before he saw it. The hill road came out of its last loop ab
 > *Billhook, billhook, who d'you serve?*
 > *The bell that rang and the man with the nerve.*
 
-The green was full of them: levy boys from the mills and farms with billhooks held every way a pole can be held, the bell-house clerk walking the line with a tally stick and losing count. Along the far wall a string of hill greys stood tied head to tail with breeders' marks on their shoulders, and men in dark coats went down the string looking at teeth and feet. The boy knew the mark on their coats before he could have said whose it was. He had watched it burned onto his father's greys at the autumn fair, the day they were sold: a gate, two posts and a bar, on the near quarter, where the lances put their own.
+The green was full of them: levy boys from the mills and farms with billhooks held every way a pole can be held, the bell-house clerk walking the line with a tally stick and losing count. Along the far wall a string of hill greys stood tied head to tail with breeders' marks on their shoulders, and men in dark coats went down the string looking at teeth and feet. The men had a mark on their coats that the boy knew. He had watched it burned onto his father's greys at the autumn fair, the day they were sold: a gate, two posts and a bar, on the near quarter, where the lances put their own.
 
 One of the men straightened from a hock and looked across the green at the grey coming onto it, and the look went down her from ear to heel and stayed.
 
@@ -73,9 +73,9 @@ Between the boy and the wall stood the levy. They had been told to make a line a
 
 The boy from Edgemoor got down. He put her head at his shoulder and his hand under her jaw and walked into the line.
 
-He watched their shoulders, not the steel. A shoulder tells you where a hook will be a breath before the hook knows, and he went where each one was about to leave: a half-step early, sideways and a little forward, into the gap, with the mare's long head following his hand as if the two of them had agreed it on the hill. The hooks went by behind her tail and in front of her nose. One boy came round late and hard, with the blade at the height of a horse's eye, and found the place empty, and nearly took his neighbour's ear.
+He watched their shoulders, not the steel. A shoulder tells you where a hook will be a breath before the hook knows, and he stepped into each place a hook was about to leave, a half-step early, sideways and a little forward, with the mare's long head following his hand as if the two of them had agreed it on the hill. The hooks went by behind her tail and in front of her nose. One boy came round late and hard, with the blade at the height of a horse's eye, and found the place empty, and nearly took his neighbour's ear.
 
-"Mind that," said the boy from Edgemoor, pleasantly, going past him.
+"Mind that," said the boy from Edgemoor, going past him.
 
 He came out on the far side with the mare's breath warm on his neck and every hair of her where it had been. The man in the dark coat was looking at him, and had been for some time.
 
@@ -85,7 +85,7 @@ A boy with a grey like that and the hill in his mouth was some house's son, and 
 
 "My own," the boy said.
 
-The sergeant looked at the mark on the mare's shoulder, which was a horse-breeder's and no lance's. "Your own has another man's brand on his horse."
+The sergeant looked at the mark on the mare's shoulder, which was a horse-breeder's and no lance's. "Then your own man rides with another man's brand on his horse."
 
 "That's the brand. The horse is mine. Anybody asks, that's the order of it."
 
@@ -97,7 +97,7 @@ The sergeant put his hands behind his back.
 
 "No, they won't, or no, you won't?"
 
-The boy looked past him at the lancers' own horses, picketed beyond the bell-house with a gate burned on every near quarter, and at the road going away toward Calden, and gave him the one answer he had come down the hill with.
+The boy looked past him at the lancers' own horses, picketed beyond the bell-house with a gate burned on every near quarter, and at the road going away toward Calden.
 
 "I've come down," he said.
 
@@ -109,7 +109,7 @@ The sergeant looked at him a while longer. Then he looked at the sky, which was 
 
 The Ninth went out of the green at dusk, mounted, with the bought greys on a string behind them and the boy behind that, and before the last of them was off the grass they had begun to sing, all sixty, loud and badly, a thing with a horse in it whose words he had yet to learn. The levy on the green sang back at them and lost. The light went off the hill first, as it does off hills, and the road went down into a dark the colour of the mare.
 
-He walked at her head with his hand under her jaw, and kept it there past the first stone, where he had leave, and past the second, which was his own.
+He walked at her head with his hand under her jaw, past the first stone, and the second, and on toward the fifth in the dark.
 
 ### Piece 3 — Once
 
@@ -129,7 +129,7 @@ The big man came as big men come, straight, with his weight already in the blow,
 
 The big man swung half round. Darrow had moved. He tapped him behind the other knee.
 
-It went on like that for as long as it took the rail to understand what it was watching and begin to laugh. The big man was quick for his size and strong past anything in the ring, and all of it arrived late, because every time he got where Darrow was, Darrow had gone, and had gone toward him and not away, so that he was forever turning to find a man already behind his turn. The third time he swung at nothing. Then he stood, blowing, with the thing having happened to him and no more sense in objecting to it.
+It went on like that for as long as it took the rail to understand what it was watching and begin to laugh. The big man was quick for his size and strong past anything in the ring, and all of it arrived late, because every time he got where Darrow was, Darrow had gone, and had gone toward him and not away, so that he was forever turning to find a man already behind his turn. The third time he swung at nothing. Then he stood still, blowing, and gave it up.
 
 Darrow stepped round in front of him, where a man ought to be, and lowered the sword. The big man looked down at him for a moment. Then he laughed, hugely, and put out a hand, and the rail roared.
 
@@ -141,12 +141,12 @@ Darrow heard it. He was walking back to the rail with the sword held out for the
 
 Nobody took it up. He learned why at the rail, where the sergeant stood with his arms folded and his good temper intact.
 
-"Once," said the sergeant, to the rail in front of him. "He did it once. Call him what he does twice."
+"One bout," said the sergeant, without looking round. "He did it once. Call him what he does twice."
 
 ---
 
-They rode out of the fair at dusk with the bought greys on a string behind them and the lance singing the thing with the horse in it, which Darrow had the words of now and sang.
+They rode out of the fair at dusk with the bought greys on a string behind them and the lance singing the thing with the horse in it, and Darrow knew the words now, and sang them.
 
-He rode a grey of his own. She was long in the back, with his father's mark on her shoulder and the Ninth's gate raw on her near quarter since noon, and she had come down the hill that week in his father's string and stood in the horse lines with her head down, to be let alone, as she had stood in the thistles. His father would take the Ninth's price for every grey in the string but her, and had said about that what he said about most things.
+He rode Thistle. She was long in the back, with his father's mark on her shoulder and the Ninth's gate raw on her near quarter since noon, and she had come down the hill that week in his father's string and stood in the horse lines with her head down, to be let alone, as she had stood in the thistles. His father sold the Ninth every grey in the string but her, and gave her to him, and said about that what he said about most things.
 
-The word stayed in the yard. He rode out of the fair with the Ninth on a grey of his own, and the only thing that followed him out of it was the singing.
+The word stayed in the yard. The only thing that followed him out of the fair was the singing.
