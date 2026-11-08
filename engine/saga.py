@@ -6038,8 +6038,12 @@ def cmd_choose(args):
         print((r.stdout or "").strip())
         subprocess.run([sys.executable, str(ROOT / "engine/darrow.py"), "sync"], cwd=ROOT, capture_output=True, text=True)  # the sheet shows the spend
     ordered = add_entry(st, entry, args.witnessed, args.pending, False, learned=args.learned)
-    row = {"chapter": int(made["chapter"]), "scene": str(made["scene"]), "kind": which, "option": int(opt), "text": args.text or opts[opt - 1],
+    if getattr(args, "own", False) and not args.text:
+        die("--own needs --text: his answer in his own words, as the page plays it")
+    row = {"chapter": int(made["chapter"]), "scene": str(made["scene"]), "kind": which, "option": None if getattr(args, "own", False) else int(opt), "text": args.text or opts[opt - 1],
            "date": today_local().isoformat(), "ledger": ordered["id"], "by": args.by}
+    if getattr(args, "own", False):
+        row["priced_as"] = int(opt)  # his own answer, priced as the nearest offered option; the page shows his words, not that option
     world.setdefault("choices", []).append(row)
     st.touch("world")
     if which == "micro":
@@ -6690,7 +6694,7 @@ def main():
     s = sub.add_parser("history"); s.add_argument("--person"); s.add_argument("--thread", type=int); s.add_argument("--place"); s.add_argument("--chapter", type=int); s.add_argument("--tale", type=int, help="one tale's pieces"); s.add_argument("--last", type=int); s.add_argument("--gm", action="store_true", help="with the GM notes")
     s = sub.add_parser("threads"); s.add_argument("--id"); s.add_argument("--all", action="store_true"); s.add_argument("--set", nargs="+", help="with --id: who_knows=… status=open|paid note=… title=… truth=… feeds=…"); s.add_argument("--new", help='{"title": …, "truth": "T1", "feeds": …, "who_knows": …, "note": …}')
     s = sub.add_parser("glimpse"); s.add_argument("action", choices=["add", "show"]); s.add_argument("text", nargs="?"); s.add_argument("--kind", choices=list(R.GLIMPSE_KINDS)); s.add_argument("--date"); s.add_argument("--n", type=int)
-    s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--witnessed"); s.add_argument("--learned", action="append", help="<companion>:<how they heard of it>, for one who was not there; repeatable"); s.add_argument("--pending", action="store_true")
+    s = sub.add_parser("choose"); s.add_argument("entry", nargs="?", help="the ledger entry JSON"); s.add_argument("--option", type=int); s.add_argument("--by", choices=["darrow", "bearing"], default="darrow"); s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--text", help="the option as the page has it (default: the option's text)"); s.add_argument("--own", action="store_true", help="his own answer or a combination: --option names the nearest offered option (it prices the entry), --text is his answer, and the page marks his words as chosen, not that option"); s.add_argument("--witnessed"); s.add_argument("--learned", action="append", help="<companion>:<how they heard of it>, for one who was not there; repeatable"); s.add_argument("--pending", action="store_true")
     args = ap.parse_args()
     if args.cmd == "route" and args.action == "decide" and not args.book:
         die("route decide needs --book N")

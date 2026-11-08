@@ -271,11 +271,12 @@
       "chapter": 5,
       "scene": "6",
       "kind": "micro",
-      "option": 1,
-      "text": "His own: tell him he knelt the morning of the ford and the warmth went out of him halfway across the river, and buy him a drink.",
+      "option": null,
+      "text": "His own: told him he knelt the morning of the ford and the warmth went out of him halfway across the river, and bought him a drink.",
       "date": "2026-11-07",
       "ledger": "c05.11",
-      "by": "darrow"
+      "by": "darrow",
+      "priced_as": 1
     }
   ],
   "inventory": [
