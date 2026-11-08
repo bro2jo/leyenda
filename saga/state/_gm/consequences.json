@@ -1709,6 +1709,23 @@
         "Let him keep his comfort.",
         "Buy him a drink and say nothing."
       ]
+    },
+    {
+      "id": "c05.12",
+      "made": {
+        "chapter": 5,
+        "scene": "7",
+        "date": "2026-11-08"
+      },
+      "chose": "His answer to the knight, as played on the page: Hollis's words about the ford in his own mouth, his own river told plainly instead of the House's painting, and a drink bought with Wren's copper",
+      "now": {
+        "approval": {
+          "hollis": 1,
+          "maelis": 2,
+          "rae": 1
+        }
+      },
+      "due": []
     }
   ],
   "rules": [
