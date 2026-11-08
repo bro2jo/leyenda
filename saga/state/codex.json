@@ -14,12 +14,13 @@
         },
         {
           "name": "Thistle",
-          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). In Coldmere, on the dealer's ice, she stood for the Thornwild word for stand when Darrow said it right, and went through his shirt as she used to on campaign. The dealer said a captain's word bought her keep only till the thaw, and that the carter has paid it every week since the fair; Darrow owned that keep as his debt to Rae Thorne. She is the dealer's till the thaw (Ch 5 Sc 4).",
+          "text": "Darrow's grey mare; went down in the Wend at Harrow Ford. Fate unknown (Prologue). Rae Thorne asked him whether he rode a grey at the ford, and did not say why (Ch 1 Sc 3). Asked why on the gate wall, she said carters look at horses (Ch 1 Between). On the cage head Rae Thorne told him of a grey mare at a dealer's on the Holloway, long in the back, come out of the Wend below the ford, short behind, who will not take a bridge forwards; she can be had for what the dealer owes at Coldmere (Ch 3 Sc 5). At the wicket at first light Darrow said her name to Rae Thorne, the first time he had said it since the river: she carried him into the Wend and never asked the why or the where, and he will not have her stand in a dealer's byre under anyone's word but his own. Rae went down the Steps saying she would tell her (Ch 4 Between). In Coldmere, on the dealer's ice, she stood for the Thornwild word for stand when Darrow said it right, and went through his shirt as she used to on campaign. The dealer said a captain's word bought her keep only till the thaw, and that the carter has paid it every week since the fair; Darrow owned that keep as his debt to Rae Thorne. She is the dealer's till the thaw (Ch 5 Sc 4). A grey filly out of the long grey mare of Darrow's father's, who stood in the thistles at the top of the far field to be let alone; Darrow named her for it the spring before he was sixteen, and his father let the name go by (Tale 1, Piece 2).",
           "sources": [
             "import",
             "ch03:s5",
             "ch04:between-1",
-            "ch05:s4"
+            "ch05:s4",
+            "tale01:p2"
           ]
         },
         {
@@ -621,6 +622,13 @@
           "text": "Two stories. The one the Sixth tells the Second: a baggage mule walked into a ford and stood over the Sixth's first captain when every grey had bolted, and the Sixth swore its greys would carry the mule's shoe for the one beast with sense. The one Hollis gave Darrow as the true part: the Second paid the brander at the fair the year the Sixth was raised, when the Sixth were farm sons on borrowed horses, so the Lowmarch would know them for mule-men, and the Sixth wore it through every ford after (Ch 4 Between).",
           "sources": [
             "ch04:between-7"
+          ]
+        },
+        {
+          "name": "The Lowmarch muster",
+          "text": "On a green below the Edgemoor hill road, where the Holloway goes through: levy boys with billhooks counted by the bell-house clerk, a string of hill greys for the lances to look over, and the lance's own horses picketed beyond the bell-house. At sixteen Darrow led his mare through the levy's line without a hook touching her, and the Ninth's sergeant let him walk her at the back of the string as far as the fifth milestone (Tale 1, Piece 2).",
+          "sources": [
+            "tale01:p2"
           ]
         }
       ],

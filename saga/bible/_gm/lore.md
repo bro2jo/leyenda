@@ -181,7 +181,7 @@ Founded in the Quenching to hunt what was left of the Wardens and never disbande
 Every village has a bell-house with a field-stone chapel under it and a herald who keeps both. Proclamations are cried from its steps after the noon bell, and a thing cried at the bell is law in that village by dusk. News goes down the Holloway at the pace of a herald's horse and up it at the pace of a cart, which is why the mountain is always a day behind and a day wiser. A man named at the bell may answer at the bell, and some have.
 
 ## realm.levies — The Lowmarch levies
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** tale01:p2 · **names:** —
 - **use:** boys with billhooks; a sergeant's voice; the levy's verse.
 
 When the bell-house rings the long peal, every mill and farm sends a man or a boy with a billhook, a sergeant counts them on the green, and they walk to wherever the Lances need bodies to hold a line the Lances have already won. They sing on the road, which is how you know a levy is coming before you see it.
@@ -210,7 +210,7 @@ The old road north from Calden to the Greywater landing, worn by three hundred y
 The last village below the mountain, on a tarn that never warms: an inn whose taproom hears everything the Holloway carries, a bell-house, a mill on the outflow, and a horse-fair in autumn that the Lowmarch rides to. Carts for the House stop there last, and the House's dead stop there first. Half the lay brothers were born within a mile of its bell.
 
 ## realm.edgemoor — Edgemoor and its greys
-- **tier:** common · **spoken:** Prologue I (Darrow of Edgemoor; the grey mare); tale01:p1 · **names:** —
+- **tier:** common · **spoken:** Prologue I (Darrow of Edgemoor; the grey mare); tale01:p1; tale01:p2 · **names:** —
 - **use:** Darrow's childhood; a horse's quality; a saying.
 
 Hill country west of the Lowmarch where the grass is thin and the horses are not: the Edgemoor grey, long-legged and sure on a slope, is the mount the Lances buy, and each lance brands its own. A horse-breeder's son from Edgemoor learns to ride before he can argue and to walk at a horse's head before that. Lowmarch saying: an Edgemoor horse and an Edgemoor man both go better uphill, and neither will tell you why they came down.

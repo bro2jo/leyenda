@@ -9,7 +9,7 @@
 - **What Darrow is fighting right now:** The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.
 - **With him:** Maelis Vorne (Walking at the tailboard up the mill tracks north.) · Ser Hollis Garrow (On the tailboard, going north up the mill tracks.) · Wren Ashdown (In the cart among the sacks, going north up the mill tracks.) · Rae Thorne (Driving the mill tracks north out of Coldmere at Darrow's word, her river road behind her, the rag still in her bell.) · Ash (In the cart with the sacks, going north.)
 - **Also here:** Hale (Stood in his kitchen door in the dark and watched his niece take the cart out without a lamp; told her the summer was written, signed or no…) · Ser Oswin (Heard Darrow's ford and said he would think on it, and drank to the river; knelt at the crossroads stone at first light; told Darrow the ri…)
-- **The tales:** Tale 1 — Where Not to Stand (1 of 3 told) · Tale 2 — Road's the Road (told in full)
+- **The tales:** Tale 1 — Where Not to Stand (2 of 3 told) · Tale 2 — Road's the Road (told in full)
 - **Against him:** One rider somewhere behind them, and a quiet road north into the hills.
 - **Next:** The first day on the mill tracks.
 - **Open choice:** none.

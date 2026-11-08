@@ -1952,6 +1952,36 @@
       "chapter": "tale01",
       "scene": "p1",
       "evidence": "as he said nothing about most things"
+    },
+    {
+      "fact": "At sixteen he rode the long grey mare down off the Edgemoor hills to a Lowmarch muster, with his father's brand on her and his father's word that the horse was his.",
+      "chapter": "tale01",
+      "scene": "p2",
+      "evidence": "\"She's yours,\" his father said. \"The brand's mine."
+    },
+    {
+      "fact": "He named the grey filly out of the mare Thistle, for standing in the thistles at the top of the far field to be let alone.",
+      "chapter": "tale01",
+      "scene": "p2",
+      "evidence": "He had named her Thistle for it the spring before"
+    },
+    {
+      "fact": "He led the mare through a line of forty levy boys and their billhooks by watching their shoulders rather than the steel, and came out with every hair of her untouched.",
+      "chapter": "tale01",
+      "scene": "p2",
+      "evidence": "He watched their shoulders, not the steel."
+    },
+    {
+      "fact": "Asked by the Ninth's sergeant whose son he was, he answered that he was his own.",
+      "chapter": "tale01",
+      "scene": "p2",
+      "evidence": "\"My own,\" the boy said."
+    },
+    {
+      "fact": "He went down the Holloway at dusk at the back of the Ninth's string, on his feet, with his hand under the mare's jaw.",
+      "chapter": "tale01",
+      "scene": "p2",
+      "evidence": "He walked at her head with his hand under her jaw"
     }
   ],
   "relationships": [
@@ -2358,6 +2388,10 @@
     {
       "chapter": "tale01",
       "scene": "p1"
+    },
+    {
+      "chapter": "tale01",
+      "scene": "p2"
     }
   ]
 }
