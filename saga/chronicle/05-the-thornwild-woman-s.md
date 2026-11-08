@@ -1502,7 +1502,7 @@ They stopped where they were and let him finish.
 
 When he stood, the frost had gone off the stone under his palms in two hand-shaped patches, and off the ground in one the shape of a knee. He turned round rubbing his hands together, and saw them, and his face did the thing it did, which was light up.
 
-"Captain." He came over, leading the horse. "I lay awake on your river half the night." He said it as a man says he has been thinking of a friend's trouble. "I'll tell you what I came to. Your river was the river's fault, or the Confessors', or the Grace's own, I'll not pretend to know whose. But it was never the stone's. The stone's the one thing in all of it that does what it says." He put a hand out, and when Darrow took it, it was warm all the way through, as though the man had been holding it to a fire. "You'll not kneel this morning."
+"Captain." He came over, leading the horse. "I lay awake on your river half the night. I'll tell you what I came to. Your river was the river's fault, or the Confessors', or the Grace's own, I'll not pretend to know whose. But it was never the stone's. The stone's the one thing in all of it that does what it says." He put a hand out, and when Darrow took it, it was warm all the way through, as though the man had been holding it to a fire. "You'll not kneel this morning."
 
 "Not this morning."
 
@@ -1512,7 +1512,7 @@ When he stood, the frost had gone off the stone under his palms in two hand-shap
 
 "Then that's something." He touched his heels to the horse, and turned it, and went off down the Holloway toward the landing at a trot, with his cloak out behind him, and did not look back; and Darrow stood in the road and watched him go, with the cold in his chest where it had been since yesterday morning, and found that he minded.
 
-Hollis had not said a word to the knight. He said one now, to the road.
+Hollis had not said a word to the knight. Now he said two.
 
 "Full of Grace."
 
@@ -1522,7 +1522,7 @@ Hollis had not said a word to the knight. He said one now, to the road.
 
 ---
 
-The crossroads was where the Holloway came up from the tarn and crossed the drove road, with the mill track going off downhill between hedges on the fourth side, and the whole of it was frozen mud, cut and recut. Hollis read it the way he had read the ground at a hundred camps, from the top down, one hand on his stick, and Darrow stood out of his light and let him.
+The crossroads was where the Holloway came up from the tarn and crossed the drove road, with the mill track going off downhill between hedges on the fourth side, and the whole of it was frozen mud, cut and recut. Hollis read it as he had read the ground at a hundred camps, from the top down, his weight on the beech leg, and Darrow stood out of his light and let him.
 
 "Forty-odd horse. Came up from the tarn, here. Stood an hour, there, and the horses got bored and churned it." He moved along the verge. "Cart. Heavy, iron tyres, that's their smoke-cart. Then the whole lot turned, there, and went back down the way they'd come. South. Calden road." He grunted. "The carter had it right. Nobody turns a column in an hour for nothing."
 
@@ -1542,17 +1542,17 @@ A mill-cart was coming up the track toward them with a load of sacks and a man w
 
 They watched the mill-cart go on over the crossroads and down toward the tarn.
 
-Darrow's feet had already turned him toward the mill track. He felt them do it: the old speed, coming up through the cold like a hand on his back, saying *down there, two days, a long-legged horse, you could know by noon*. He stood where he was and let the feeling go past him, the way he had let the sergeant's voice go past him through the chimney stones, and it cost him about what that had.
+Darrow's feet had already turned him toward the mill track. He felt them do it: the old speed, coming up through the cold like a hand on his back, saying *down there, two days, a long-legged horse, you could know by noon*. He stood where he was and let it go past him. Yesterday it had taken Hollis's hand on his ankle. This morning nobody held him.
 
-"Captain," said Hollis. He had straightened up, and he was looking at the track and not at Darrow, which was a kindness. "You used my words last night. To the Fourth."
+"Captain," said Hollis. He had straightened up, and he was looking at the track and not at Darrow. "You used my words last night. To the Fourth."
 
 "They were true."
 
-"They were mine." He turned his stick in the mud. "Use them again, if you like. I'd as soon they were somebody's."
+"They were mine." He turned the beech leg's toe in the mud. "Use them again, if you like. I'd as soon they were somebody's."
 
 ---
 
-Hale had the book open on the kitchen table when they came in, and a cup poured for each of them, and the fire built up, and all of that was the first thing Darrow noticed, because Hale had never once in six days poured anything for him before it was asked for.
+Hale had the book open on the kitchen table when they came in, and a cup poured for each of them, and the fire built up, and all of that was the first thing Darrow noticed, because Hale had not once since they came poured anything for him before it was asked for.
 
 Rae was at the table already. Her face told him nothing, which with Rae told him a good deal.
 
@@ -1590,7 +1590,7 @@ She was at the oxen, as he had known she would be, with her back to the kitchen 
 
 "And it's my name in the book." She turned round. "You stood in the hay yesterday with Ser Hollis's hand on your ankle and let me talk to that sergeant for an hour, and you were right to. You looked at me at the reeve's gate and let me answer, and you were right to. *Your yard,* you said. *Your road.*" Her voice had not risen; it had gone flat and quick, the manifest voice, every word a line on it. "Well, this is my yard, and my road, and my uncle, and my book, and you'll stand where I put you tomorrow the same as you did yesterday, or you'll stand in the road and be read, and they'll take the Mender off you where she stands, and the old man, and the girl, and my oxen under the lot of you. Which is it?"
 
-"You carried forty-one men's bundles down this road," Darrow said. "You told me. You're not carrying me."
+"You brought a mule up eleven hundred steps for Hollis and never said a word of it," Darrow said. "You've fed my mare since the fair. You're not carrying me as well."
 
 "I'm not carrying you. I'm paying for you. It's a different trade." She came a step toward him. "Nobody on this road has ever once said what I'd pay for. Not my uncle. Not the House. Not the Confessor when he cut my rope. And you'll not be the first, because you'll not be the first at anything on my road. That's the whole of what I've been telling you since the Holloway."
 
@@ -1600,13 +1600,13 @@ She was at the oxen, as he had known she would be, with her back to the kitchen 
 
 He thought about it, honestly, because she had.
 
-Sixty men had followed him into a river on his word, and nineteen had come out, and in all the time since, in the cot and the chair and on the Steps, he had not once let a soul decide what they would spend on him. He had decided for them. He had decided for all of them, always, and called it command. There was not a man of the Ninth living who had ever seen him do otherwise.
+Sixty men had followed him into a river on his word, and nineteen had come out, and in all the time since, in the cot and the chair and on the Steps, he had not once let a soul decide what they would spend on him. He had decided for them. He had decided for all of them, always, and called it command.
 
 "No," he said.
 
 "Then you've no practice at it. That's all it is." Rae turned back to the oxen. "Go in. It's cold."
 
-He did not go in. He stood on the cobbles with the stick, and the wind, and the knee telling him about the cold, and looked at the back of her head for a long moment.
+He did not go in. He stood on the cobbles with the stick, and the wind, and the knee telling him about the cold, and looked at the back of her head.
 
 "It's yours, then," he said. "The deciding. Not the debt; I'll have words about the debt till the thaw. But whatever you say at that bell tomorrow, I'll stand where you put me. I'll not go into the road unless you send me. You have my word on it."
 
@@ -1616,7 +1616,7 @@ Her hand stopped on Hob's neck.
 
 "I've nothing else that's mine."
 
-She was quiet for a while. Across the road the bell-house stood with its back to the tarn and the paper pale on its door, and above it the bell that would ring at noon tomorrow hung still in the wind.
+She was quiet for a while. Across the road the bell-house stood with its back to the tarn and the paper pale on its door, and above it the bell that would ring at noon tomorrow hung quiet in the wind.
 
 "Go in," Rae said again, and this time it was gentler. "You'll know at the bell."
 
