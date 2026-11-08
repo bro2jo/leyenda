@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/7 (repo, his call): the exercise log's `load or band` column split into `load`, `load_unit`, `band` and `height_in` (numbers, with the load conventions below); one exercise name per movement, set-ups and machine ids in `notes`; the morning readings are numbers (pain, extension and flexion in degrees, hours on feet), the catch `none` / `yes`, adjuncts one format
 - 11/1 (repo, his call): progression follows the master plan's own rule ("Progressive Overload Rules": one major variable at a time per exercise, loads +2.5–10%); the stricter limits this file had added are gone: one change per session made on the last set only, one new exercise per session, one new impact rung per session. Any number of exercises may progress in the same session
 - 10/30 (repo, his call): impact paces like the lifts (one change per exercise, one new exercise per session, inside the plan's caps); the dashboard's one-change-per-session limit for the whole impact block is gone (the master plan sets none)
 - 10/28 (repo, from the dashboard's correction): impact prep follows the plan's own start criteria (Phase 4: "when basic strength, control, and knee response permit"), not a PT start; "only when appropriately cleared" is the drop vertical jump's alone, and Nick cleared it on its criteria (10/28, patient-reported). The 10/9 reading had merged the two. Impact guards added (rule 5); the clearance list follows (Priority and clearance)
@@ -206,9 +207,9 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 | `light` | `green` / `yellow` / `red` (red = the plan says stop; the day is excused) |
 | `am_swelling` | **The grade only:** 0 (none) / trace / 1+ / 2+ / 3+ (blank = not reported) |
 | `am_trend` | Trend words vs the previous morning |
-| `am_pain`, `pain_session`, `pain_pm` | Pain readings |
-| `am_extension`, `flexion` | ROM self-checks (clinic numbers go to `measurements.csv`) |
-| `catch` | Kneecap catch present / absent |
+| `am_pain`, `pain_session`, `pain_pm` | Pain 0–10, **a number**: a range he gives is logged as its midpoint ("1–2" → 1.5), "fine" and "quiet" are 0; what he said beyond the number goes in `am_notes` |
+| `am_extension`, `flexion` | ROM self-checks **in degrees**. Extension: 0 = straight and symmetric with the right (a heel-prop or side-by-side check that passes), negative = short of straight ("−3"), positive = hyperextension. Flexion: a number only when he gives one or compares to the right's measured range; words alone ("good") go in `am_notes` and the cell stays blank. Clinic numbers also go to `measurements.csv` |
+| `catch` | Kneecap catch: `none` / `yes`; what it felt like goes in `am_notes` |
 | `wellness` | Morning wellness, 1 = poor, 5 = great |
 | `am_notes` | Stiffness and anything else from the morning check |
 | `floor_am`, `floor_pm` | Daily minimum: one `Y` per weighted heel-prop round |
@@ -218,8 +219,9 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 | `addon_session`, `addon_min`, `addon_rpe` | Add-on session (`upperA`, `upperB`, `accessory`, `power`, `arms`; join with `+`), minutes, session RPE |
 | `conditioning_type`, `conditioning_min` | Off-day bike (or other) and its minutes |
 | `sport_min` | Throwing and film minutes |
-| `hours_on_feet`, `gym_min_on_feet` | Time on feet |
-| `crutches`, `gait_notes`, `adjuncts`, `sleep_h` | — |
+| `hours_on_feet`, `gym_min_on_feet` | Time on feet, **a number** (an estimate from his words is fine: "about half the day" = 6, "all day" = 8; "a lot" with no anchor stays blank, the words in `am_notes`) |
+| `adjuncts` | Each item with its minutes, joined with `;`: `sauna 20 min; Game Ready 25 min; red light 20 min` |
+| `crutches`, `gait_notes`, `sleep_h` | — |
 | `together`, `closed` | The repo's bookkeeping (`CLAUDE.md`) |
 | `notes` | Only what doesn't fit a column, ≤2 sentences |
 
@@ -227,7 +229,10 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 - Body mass goes to `nutrition_log.csv` (`weight_lb`); measured numbers to `measurements.csv`, one row per side.
 - Decisions and instructions go in the State, NOW or PT Notes, not in `notes`.
 
-**exercise_log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold/duration, load or band, assist, notes.
+**exercise_log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold_or_duration, load, load_unit, band, height_in, assist, notes.
+- `exercise`: **one name per movement**, reused from the log (`python3 engine/darrow.py ex names`). The set-up, the machine or its id, a seat setting, the impact rung, a test's criteria and the content of an "as written" warm-up, finisher or cooldown go in `notes`, never in the name (`goblet squat` + `height_in` 18, not `goblet squat to 18 in box`). Every ride is `bike` (home: the air bike, State §1; the clinic's upright bike named in `notes`).
+- `load`: the working weight as **a number** (`50`, `52.5`), or one per set with `/` (`40/50/60`); `load_unit`: `lb` / `plates` (a machine stack counted in plates) / `level` (a bike's resistance); the engine refuses anything else. A dumbbell load is per dumbbell, a barbell's includes the bar, a landmine's is the plates on the bar (the bar in `notes`), a cable's or machine's is the stack number. **Blank = no external load** (bodyweight); a load he used but didn't give is `load not recorded` in `notes`. NMES and other settings go in `notes`.
+- `band`: the band's colour or kind (`red`, `red tube`, `teal`; `band` when he didn't say). `height_in`: the box, step or seat height in inches, one per set with `/` (`6/8`).
 - `session`: `home` / `PT` / `HEP` / `floor` for the knee · `conditioning` for off-day rides · `upperA` / `upperB` / `accessory` / `power` / `arms` for the add-on.
 - `block`: the slot type — `warmup`, `mobility`, `quad`, `knee`, `single-leg`, `posterior`, `hip`, `calf`, `balance`, `gait`, `test`, `manual`, `posture`, `cooldown`, `floor`, `conditioning`, `push`, `pull`, `finisher`.
 - `side`: `L` / `R` / `bil` (both legs) for leg exercises; blank for upper-body and conditioning rows.

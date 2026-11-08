@@ -97,7 +97,7 @@ def day_record(cfg, rules, facts, rows, day):
 
 
 DETAIL_COLS = {
-    "ex": ("session", "block", "exercise", "side", "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"),
+    "ex": ("session", "block", "exercise", "side", "sets", "reps", "hold_or_duration", "load", "load_unit", "band", "height_in", "assist", "notes"),
     "sport": ("session", "skill", "drill", "sets", "reps", "minutes", "rpe", "metric", "value", "notes"),
     "food": ("meal", "item", "qty", "kcal", "protein_g", "source"),
 }
@@ -1342,7 +1342,9 @@ noscript .scroll { margin-top: 10px; }
         if (x.side) parts.push(x.side);
         if (x.sets && x.reps) parts.push(x.sets + ' × ' + x.reps); else if (x.sets && x.sets !== '1') parts.push(x.sets + ' sets'); else if (x.reps) parts.push(x.reps + ' reps');
         if (x.hold_or_duration) parts.push(x.hold_or_duration);
-        if (x.load_or_band) parts.push(x.load_or_band);
+        if (x.load) parts.push(x.load + ' ' + (x.load_unit || ''));
+        if (x.band) parts.push('band: ' + x.band);
+        if (x.height_in) parts.push(x.height_in + ' in');
         if (x.assist) parts.push('assist: ' + x.assist);
         li.textContent = parts.join(' · ');
         if (x.notes) li.appendChild(el('small', '', x.notes));

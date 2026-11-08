@@ -1,475 +1,475 @@
-date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,load_or_band,assist,notes
-2026-09-10,2026-09-06,17,home,mobility,heel prop,L,,,10 min,,,
-2026-09-10,2026-09-06,17,home,quad,quad set + NMES,L,1,14,12 s,NMES,,"heel propped, 14 min total"
-2026-09-10,2026-09-06,17,home,mobility,heel slide,L,2,15,,,,
-2026-09-10,2026-09-06,17,home,quad,straight-leg raise,L,3,10,,,,no lag
-2026-09-10,2026-09-06,17,home,warmup,air bike,,1,,5 min,easy,,first full revolution
-2026-09-10,2026-09-06,17,home,knee,mini squat,bil,2,10,,,,
-2026-09-10,2026-09-06,17,home,posterior,standing hamstring curl,L,2,12,,,,
-2026-09-10,2026-09-06,17,home,calf,calf raise,bil,2,12,,,,
-2026-09-10,2026-09-06,17,home,single-leg,step-up,L,2,8,,,right-leg push-off,could not step up unassisted
-2026-09-10,2026-09-06,17,home,posterior,bridge,bil,2,12,,,,
-2026-09-10,2026-09-06,17,home,balance,single-leg balance,L,2,,20 s,,,
-2026-09-11,2026-09-06,18,PT,quad,long arc quad,L,1,20,2 s,,,
-2026-09-11,2026-09-06,18,PT,quad,quad set (towel under knee),L,1,20,,,,
-2026-09-11,2026-09-06,18,PT,quad,quad set (towel under heel),L,1,20,,,,
-2026-09-11,2026-09-06,18,PT,quad,straight-leg raise,L,2,10,,,,no lag per PT
-2026-09-11,2026-09-06,18,PT,mobility,heel slide,L,1,10,5 s,,,
-2026-09-11,2026-09-06,18,PT,knee,standing TKE,L,2,10,,teal band,,PT: increase resistance next
-2026-09-11,2026-09-06,18,PT,balance,single-leg stance,L,3,,10 s,,bil to 1 UE support,
-2026-09-11,2026-09-06,18,PT,warmup,upright bike,,1,,6 min,level 1,,
-2026-09-11,2026-09-06,18,PT,gait,standing weight shifts,bil,1,10,,,with crutches,"side/front, 10 each"
-2026-09-11,2026-09-06,18,PT,gait,single-crutch gait,,,,,,one crutch,in clinic; difficulty noted
-2026-09-12,2026-09-06,19,HEP,quad,quad set + NMES,L,1,14,10 s,NMES,,
-2026-09-12,2026-09-06,19,HEP,mobility,heel slide,L,3,10,,,,
-2026-09-12,2026-09-06,19,HEP,gait,crutch walking practice,,,,,,two crutches,
-2026-09-13,2026-09-13,20,home,quad,quad set + NMES (AM),L,1,10,10 s,NMES,,
-2026-09-13,2026-09-13,20,home,mobility,heel prop,L,,,5 min,,,
-2026-09-13,2026-09-13,20,home,mobility,heel slide,L,3,,30 s hold,,,plus a few easy reps
-2026-09-13,2026-09-13,20,home,mobility,hamstring stretch,L,2,,30 s,,,
-2026-09-13,2026-09-13,20,home,mobility,patellar glides,L,,,,,,med/lat easy; sup/inf limited
-2026-09-13,2026-09-13,20,home,warmup,air bike,,1,,5 min,easy,,
-2026-09-13,2026-09-13,20,home,knee,standing TKE,L,3,10,,band,,
-2026-09-13,2026-09-13,20,home,knee,mini squat,bil,2,10,,,,shallow/moderate depth; patellar sticking noted
-2026-09-13,2026-09-13,20,home,balance,single-leg balance,L,2,,20 s,,,
-2026-09-13,2026-09-13,20,home,single-leg,step-up,L,2,8,,,heavy,sets/reps assumed as planned
-2026-09-13,2026-09-13,20,home,posterior,standing hamstring curl,L,2,12,,,,
-2026-09-13,2026-09-13,20,home,posterior,bridge,bil,2,12,,,,
-2026-09-13,2026-09-13,20,home,calf,calf raise,bil,2,12,,,,left-biased
-2026-09-13,2026-09-13,20,home,hip,sidelying hip abduction,L,2,10,,,,
-2026-09-13,2026-09-13,20,home,hip,sidelying hip adduction,L,2,10,,,,
-2026-09-13,2026-09-13,20,home,hip,prone hip extension,L,2,10,,,,
-2026-09-13,2026-09-13,20,home,quad,straight-leg raise,L,2,10,,,,tiny visible L/R difference
-2026-09-13,2026-09-13,20,home,gait,one-crutch walking,,,,~50 m,,one crutch,
-2026-09-13,2026-09-13,20,home,gait,curved treadmill walk,,,,~2 min,,"rails, no crutches","est ~80% BW, not measurable; self-initiated"
-2026-09-14,2026-09-13,21,HEP,quad,quad set + NMES,L,1,14,10 s,NMES,,
-2026-09-15,2026-09-13,22,home,mobility,heel prop,L,,,5-10 min,,,
-2026-09-15,2026-09-13,22,home,mobility,heel slide,L,3,,30 s hold,,,plus 15 easy reps
-2026-09-15,2026-09-13,22,home,mobility,hamstring stretch,L,2,,30 s,,,
-2026-09-15,2026-09-13,22,home,mobility,standing knee flexion AROM,L,3,10,,,chair support,doubles as hamstring curl
-2026-09-15,2026-09-13,22,home,mobility,patellar glides,L,,,,,,more mobile than 9/13
-2026-09-15,2026-09-13,22,home,warmup,air bike,,1,,5.5 min,easy,,
-2026-09-15,2026-09-13,22,home,knee,standing TKE,L,3,10,,band,,
-2026-09-15,2026-09-13,22,home,quad,long arc quad,L,3,10,,,,~2/10 at donor site set 1; full extension
-2026-09-15,2026-09-13,22,home,knee,mini squat,bil,3,10,,,,more depth than before (unplanned variable)
-2026-09-15,2026-09-13,22,home,balance,single-leg balance,L,3,,20-30 s,,,
-2026-09-15,2026-09-13,22,home,single-leg,step-up,L,3,8,,6 in step,fingertip,mostly unassisted
-2026-09-15,2026-09-13,22,home,single-leg,step-up,R,3,8,,6 in step,,
-2026-09-15,2026-09-13,22,home,posterior,bridge,bil,3,12,,,,
-2026-09-15,2026-09-13,22,home,calf,calf raise,bil,3,12,,,,left-biased
-2026-09-15,2026-09-13,22,home,hip,sidelying hip abduction,L,2,10,,,,
-2026-09-15,2026-09-13,22,home,hip,sidelying hip adduction,L,2,10,,,,
-2026-09-15,2026-09-13,22,home,hip,prone hip extension,L,2,10,,heavy band (last set),,unplanned load variable
-2026-09-15,2026-09-13,22,home,quad,prone quad set + NMES,L,3,10,10 s,NMES 14,,
-2026-09-15,2026-09-13,22,home,quad,straight-leg raise,L,3,10,,,,
-2026-09-15,2026-09-13,22,home,gait,one-crutch walking,,,,~50 m bouts,,one crutch,
-2026-09-15,2026-09-13,22,home,gait,curved treadmill walk,,,,~2 min,,"rails, no crutches",
-2026-09-15,2026-09-13,22,home,gait,unassisted walking,,,,~10 m,,none,visible weight shift onto surgical leg; stopped
-2026-09-18,2026-09-13,25,floor,mobility,heel prop,L,,,5-10 min,,,
-2026-09-18,2026-09-13,25,floor,quad,quad set + NMES,L,1,,,NMES,,
-2026-09-18,2026-09-13,25,floor,mobility,heel slide,L,3,,30 s hold,,,plus a few easy reps
-2026-09-18,2026-09-13,25,floor,quad,straight-leg raise,L,2,10,,,,
-2026-09-18,2026-09-13,25,floor,mobility,patellar glides,L,,,,,,
-2026-09-18,2026-09-13,25,PT,warmup,upright bike,,1,,6-7 min,"seat 17, level 3",,
-2026-09-18,2026-09-13,25,PT,knee,sit-to-stand w/ TKE band,bil,2,12,,red tube,,24 in box
-2026-09-18,2026-09-13,25,PT,hip,lateral band walk,bil,2,,25 ft out/back,green tube above knees,none,unassisted
-2026-09-18,2026-09-13,25,PT,knee,standing TKE,L,2,15,,red band,,
-2026-09-18,2026-09-13,25,PT,single-leg,step-up w/ TKE band,L,2,12,,"6 in step, red tube",,
-2026-09-18,2026-09-13,25,PT,single-leg,forward step-down,L,2,12,,4 in step,,touch and return; user log says 2x10
-2026-09-18,2026-09-13,25,PT,single-leg,single-leg leg press,L,2,12,,40 lb (PT note),,"resolved 9/25: 40# per PT; patient-reported ""10 lb"" was a different number on the machine"
-2026-09-18,2026-09-13,25,PT,gait,one-crutch gait practice,,,,,,one crutch,PT: limp imperceptible
-2026-09-19,2026-09-13,26,HEP,mobility,heel prop,L,2,,,,,"two rounds, start and end"
-2026-09-19,2026-09-13,26,HEP,quad,quad set,L,1,10,10 s,,,no NMES; activation felt good
-2026-09-19,2026-09-13,26,HEP,mobility,heel slide,L,1,6,30 s,,,unassisted
-2026-09-19,2026-09-13,26,HEP,mobility,heel slide (towel-assisted),L,1,5,,towel,,for flexion
-2026-09-19,2026-09-13,26,HEP,quad,straight-leg raise,L,2,10,,,,good quad activation
-2026-09-19,2026-09-13,26,HEP,mobility,patellar glides,L,,,,,,
-2026-09-19,2026-09-13,26,HEP,quad,long arc quad,L,2,10,,,,
-2026-09-19,2026-09-13,26,HEP,quad,prone quad set,L,2,10,,,,no NMES
-2026-09-19,2026-09-13,26,HEP,knee,standing TKE,L,2,10,,red band,,
-2026-09-19,2026-09-13,26,HEP,hip,sidelying hip abduction,L,2,10,,,,logged as abduction; 'side-lying 2x10 each side' — adduction not specified
-2026-09-19,2026-09-13,26,HEP,hip,sidelying hip abduction,R,2,10,,,,
-2026-09-19,2026-09-13,26,HEP,hip,prone hip extension,L,2,10,,,,
-2026-09-19,2026-09-13,26,HEP,mobility,standing knee flexion AROM,L,2,10,,,chair support,
-2026-09-19,2026-09-13,26,HEP,balance,single-leg balance + ball toss,L,2,,30 s,,,
-2026-09-19,2026-09-13,26,HEP,gait,one-crutch walking practice,,,,,,one crutch,normal gait practice
-2026-09-19,2026-09-13,26,HEP,gait,crutch-free walking practice,,,,,,none,felt very good (self-report); PT instruction still two crutches / practice one
-2026-09-20,2026-09-20,27,home,mobility,heel prop,L,,,5-10 min,,,mild stretch behind knee only
-2026-09-20,2026-09-20,27,home,mobility,heel slide,L,3,,30 s hold,,,calf to thigh; no hard stop; no catch
-2026-09-20,2026-09-20,27,home,mobility,hamstring stretch,L,2,,30 s,,,
-2026-09-20,2026-09-20,27,home,mobility,patellar glides,L,,,,,,
-2026-09-20,2026-09-20,27,home,warmup,air bike,,1,,12 min,easy,,planned 7-8; knee looser as ride went on
-2026-09-20,2026-09-20,27,home,knee,sit-to-stand w/ TKE band,bil,2,12,,red band,,18 in seat (PT dose 24 in)
-2026-09-20,2026-09-20,27,home,single-leg,step-up w/ TKE band,L,2,12,,"red band; set 1 6 in, set 2 8 in",none,reps as planned (not stated); pain ~1; unassisted at both heights
-2026-09-20,2026-09-20,27,home,single-leg,step-up,R,2,10,,,,reps as planned (not stated)
-2026-09-20,2026-09-20,27,home,knee,standing TKE,L,2,15,,red band,,
-2026-09-20,2026-09-20,27,home,hip,lateral band walk,bil,2,,25 ft out/back,band above knees,,glutes; pain ~1
-2026-09-20,2026-09-20,27,home,posterior,bridge,bil,3,12,,,,very easy
-2026-09-20,2026-09-20,27,home,mobility,standing knee flexion AROM,L,3,10,,,chair support,
-2026-09-20,2026-09-20,27,home,calf,calf raise,bil,3,12,,,,left-biased
-2026-09-20,2026-09-20,27,home,hip,prone hip extension,L,2,10,,,,
-2026-09-20,2026-09-20,27,home,hip,sidelying hip abduction,L,2,10,,,,
-2026-09-20,2026-09-20,27,home,hip,sidelying hip adduction,L,2,10,,,,band added on one right-side exercise (unplanned)
-2026-09-20,2026-09-20,27,home,quad,prone quad set + NMES,L,,,,,,SKIPPED - NMES unavailable
-2026-09-20,2026-09-20,27,home,quad,straight-leg raise,L,3,10,,,,easy; no lag
-2026-09-20,2026-09-20,27,home,balance,single-leg balance + ball toss,L,2,,30 s,,,
-2026-09-20,2026-09-20,27,home,balance,single-leg balance on BOSU (soft side),L,1,,30 s,,wall,progression beyond written plan
-2026-09-20,2026-09-20,27,home,gait,unassisted walking practice,,,,,,none,one-crutch practice skipped
-2026-09-20,2026-09-20,27,home,gait,curved treadmill walk,,,,5 min,,none,no rails; planned 3 min w/ rails
-2026-09-22,2026-09-20,29,floor,mobility,heel prop,L,,,5 min,,,
-2026-09-22,2026-09-20,29,floor,quad,quad set + NMES,L,1,14,,NMES level 4,,same as usual
-2026-09-22,2026-09-20,29,floor,mobility,heel slide,L,3,,30 s,,,plus a few quick reps; flexion felt a little tighter
-2026-09-22,2026-09-20,29,floor,quad,straight-leg raise,L,2,10,,,,felt extension could be better
-2026-09-22,2026-09-20,29,home,warmup,air bike,,1,,12 min,easy,,
-2026-09-22,2026-09-20,29,home,knee,sit-to-stand w/ TKE band,bil,,,,,,done; dose not stated. Session ended here (time).
-2026-09-23,2026-09-20,30,floor,mobility,heel prop,L,,,10 min,,,resting extension full
-2026-09-23,2026-09-20,30,floor,quad,quad set + NMES,L,1,14,,NMES level 4,,good definition
-2026-09-23,2026-09-20,30,floor,mobility,heel slide,L,2,15,3 s hold,,,set 2 especially loose
-2026-09-23,2026-09-20,30,floor,mobility,hamstring stretch,L,2,,30 s,,,
-2026-09-23,2026-09-20,30,floor,mobility,calf stretch + patellar glides,L,,,,,,
-2026-09-23,2026-09-20,30,floor,quad,straight-leg raise,L,3,10,,,,best to date
-2026-09-23,2026-09-20,30,home,warmup,air bike,,1,,8 min,easy,,1.95 mi
-2026-09-23,2026-09-20,30,home,single-leg,step-up w/ TKE band,L,2,,,red band; 8 in,none,reps not stated; TKE squeeze at bottom; control good
-2026-09-23,2026-09-20,30,home,single-leg,forward step-down,L,2,8 / 10,,3.5 in box,,"BATCH. Set 1 very challenging, set 2 smoother. PT dose 4 in 2x12"
-2026-09-23,2026-09-20,30,home,knee,standing TKE,L,,,,,,SKIPPED - integrated into step-ups
-2026-09-23,2026-09-20,30,home,hip,lateral band walk,bil,2,,25 ft,,,
-2026-09-23,2026-09-20,30,home,posterior,bridge,bil,3,12,,,,
-2026-09-23,2026-09-20,30,home,mobility,standing knee flexion AROM,L,3,10,,,,"stretch behind knee, good"
-2026-09-23,2026-09-20,30,home,calf,calf raise,bil,3,12,,,,left-biased; upper calf fatigue
-2026-09-23,2026-09-20,30,home,hip,"hip series (prone ext, sidelying abd, sidelying add)",bil,2,10,,none,,"strict, no resistance"
-2026-09-23,2026-09-20,30,home,balance,single-leg balance + ball toss,L,3,,30 s,,,solid
-2026-09-23,2026-09-20,30,home,gait,curved treadmill walk,,,,2 min 36 s,,none,0.10 mi; crutch-free
-2026-09-23,2026-09-20,30,home,single-leg,single-leg leg press,L,,,,,,NOT DONE - no leg press at home; PT: BW/DB substitute OK
-2026-09-24,2026-09-20,31,floor,floor,daily floor as written,L,,,,,,Upper B not done
-2026-09-25,2026-09-20,32,PT,warmup,upright bike,,1,,6 min,"seat 16, level 3",,
-2026-09-25,2026-09-20,32,PT,single-leg,single-leg leg press,L,2,12,,45 lb (SCLP 5/5),,up from 40# on 9/18
-2026-09-25,2026-09-20,32,PT,posterior,leg curl machine,L,2,12,,47.5 lb (LFKF seat 7),,new PT item
-2026-09-25,2026-09-20,32,PT,knee,sit-to-stand w/ TKE band,bil,2,12,,red tube,,24 in box
-2026-09-25,2026-09-20,32,PT,single-leg,"medial step-down, eccentric lowering",L,2,12,,6 in step,,replaces forward 4 in
-2026-09-25,2026-09-20,32,PT,manual,manual flexion/extension stretching,L,,,,,,
-2026-09-26,2026-09-20,33,HEP,quad,straight-leg raise,L,,,,,,sets not stated; extremely easy
-2026-09-26,2026-09-20,33,HEP,mobility,heel slide,L,,,,,,sets not stated; extremely easy
-2026-09-26,2026-09-20,33,HEP,gait,crutch-free walking (everyday),,,,all day,,none,surgeon-cleared 9/25; felt fine; no swelling increase Sun AM
-2026-09-27,2026-09-27,34,home,gait,everyday walking/standing,,,,a lot (not quantified),,none,natural gait practice
-2026-09-28,2026-09-27,35,floor,mobility,heel prop,L,,,14 min,,,
-2026-09-28,2026-09-27,35,floor,quad,quad set + NMES,L,1,14,10 s,NMES level 4,,during heel prop
-2026-09-28,2026-09-27,35,floor,mobility,heel slide,L,1,10,,,,pain 0; heel near thigh; flexion felt close to R
-2026-09-28,2026-09-27,35,floor,mobility,patellar glides,L,,,,,,catch absent
-2026-09-28,2026-09-27,35,floor,posture,chin nod,,2,10,5 s,,,set 1 felt high back of neck; smaller/lighter nod set 2 -> front of neck (target)
-2026-09-28,2026-09-27,35,floor,posture,90/90 hip lift,,3,,5 breaths,,,
-2026-09-28,2026-09-27,35,floor,quad,straight-leg raise,L,1,10,,,,reduced to lag-check dose
-2026-09-28,2026-09-27,35,home,warmup,air bike (legs only),,1,,8 min,easy,,2.01 mi
-2026-09-28,2026-09-27,35,home,single-leg,single-leg sit-to-stand,L,2,8,,23 in box,R-foot assist,BATCH (new)
-2026-09-28,2026-09-27,35,home,single-leg,"medial step-down, eccentric",L,2,12,,6 in step,,BATCH (new at home). Final inch of lowering very challenging; felt good
-2026-09-28,2026-09-27,35,home,single-leg,step-up w/ TKE band,L,2,12,,red band; 8 in,none,felt easy; faster concentric + R knee drive to ~90 deg (unplanned speed variable)
-2026-09-28,2026-09-27,35,home,single-leg,step-up,R,2,10,,8 in,,
-2026-09-28,2026-09-27,35,home,knee,sit-to-stand w/ TKE band,bil,,,,,,SKIPPED - SL sit-to-stand done instead
-2026-09-28,2026-09-27,35,home,calf,"calf raise, L-biased",bil,3,12,,BW / 15 lb / 25 lb in L hand,,unplanned load progression sets 2-3; 25 lb about right; fatigue final reps
-2026-09-28,2026-09-27,35,home,knee,standing TKE,L,2,15,,red band,,set 2 farther from anchor (more tension); easy
-2026-09-28,2026-09-27,35,home,balance,single-leg balance + ball toss,L,3,,45 s,,,firm ground; wall throws
-2026-09-30,2026-09-27,37,floor,mobility,heel prop,L,,,7 min,,,with NMES
-2026-09-30,2026-09-27,37,floor,quad,quad set + NMES,L,1,14,10 s,NMES,,
-2026-09-30,2026-09-27,37,floor,mobility,heel slide,L,1,10,,,,slight tightness back of knee; easy
-2026-09-30,2026-09-27,37,floor,mobility,patellar glides,L,,,,,,normal
-2026-09-30,2026-09-27,37,floor,posture,chin nod (in 90/90 position),,1,10,5 s,,,90/90 hip lift not done as its own drill; setup corrected in thread
-2026-09-30,2026-09-27,37,floor,quad,straight-leg raise,L,1,10,,,,knee straight throughout
-2026-09-30,2026-09-27,37,home,warmup,bike,,1,,8 min,easy,,2.0 mi; knee looser after
-2026-09-30,2026-09-27,37,home,single-leg,"medial step-down, eccentric",L,2,12,,set 1 6 in; set 2 7 in,,height up set 2 (unplanned); no pain; no anterior symptoms; mechanics good
-2026-09-30,2026-09-27,37,home,single-leg,single-leg sit-to-stand,L,1,12,,24 in box,R-foot light assist,added to Session B (unplanned)
-2026-09-30,2026-09-27,37,home,posterior,single-leg bridge,L,2,8,,,,"BATCH (new). Hamstring; back-of-knee tension set 1, fine set 2"
-2026-09-30,2026-09-27,37,home,posterior,single-leg bridge,R,2,8,,,,
-2026-09-30,2026-09-27,37,home,posterior,Romanian deadlift (DB),bil,2,10,,set 1 15 lb DBs; set 2 25 lb DBs,,BATCH (new). Planned bodyweight; no knee pain
-2026-09-30,2026-09-27,37,home,posterior,standing hamstring curl,L,3,10,,band,,BATCH (load added)
-2026-09-30,2026-09-27,37,home,hip,lateral band walk,bil,2,,25 ft out/back,,,
-2026-09-30,2026-09-27,37,home,hip,sidelying hip abduction,L,2,12,,,,
-2026-09-30,2026-09-27,37,home,hip,sidelying hip adduction,L,2,12,,,,
-2026-09-30,2026-09-27,37,home,hip,prone hip extension,L,2,12,,,,
-2026-09-30,2026-09-27,37,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,all 3 sets on BOSU (planned set 3 only)
-2026-09-30,2026-09-27,37,home,gait,walking / gait practice,,,,,,none,"after recovery work; gait ""perfect"" (self); trainer agreed"
-2026-10-01,2026-09-27,38,PT,warmup,upright bike,,1,,6 min,"seat 16, level 3",,
-2026-10-01,2026-09-27,38,PT,knee,sit-to-stand w/ TKE band,bil,2,12,,red JC; 24 in box,,
-2026-10-01,2026-09-27,38,PT,knee,wall squat,bil,2,10,,,,new PT item; depth not recorded
-2026-10-01,2026-09-27,38,PT,single-leg,"heel tap, slow eccentric",L,2,10,,4 in step,,new PT item
-2026-10-01,2026-09-27,38,PT,mobility,step hamstring stretch,L,2,,30 s,,,new PT item
-2026-10-01,2026-09-27,38,PT,single-leg,forward step-down,L,2,10,,6 in step,,replaces medial 6 in (too easy per patient); still challenging
-2026-10-01,2026-09-27,38,PT,single-leg,single-leg leg press,L,2,10,,55 lb (SCLP 5/5),,up from 45# on 9/25
-2026-10-01,2026-09-27,38,PT,posterior,leg curl machine,L,2,12,,47.5 lb (LFKF seat 7),,unchanged
-2026-10-01,2026-09-27,38,PT,quad,isometric knee extension at 90 deg,L,10,1,10 s,not recorded,,new PT item; first loaded open-chain quad work; patient: hardest and favorite
-2026-10-01,2026-09-27,38,PT,mobility,weighted heel prop (extension stretch),L,1,,5 min,8 lb,,new PT item; ext 2 deg hyperext measured after
-2026-10-01,2026-09-27,38,PT,quad,straight-leg raise,L,1,10,,,,
-2026-10-03,2026-09-27,40,home,gait,walking/standing,,,,~3 h (est),,none,felt fine
-2026-10-04,2026-10-04,41,home,gait,everyday walking/standing,,,,~3 h,,none,nothing else done
-2026-10-05,2026-10-04,42,home,gait,everyday walking/standing,,,,about half the day,,none,Session A skipped
-2026-10-06,2026-10-04,43,floor,mobility,weighted heel prop,L,1,,7 min,10 lb,,no NMES; PT dose 8 lb; time of day not stated
-2026-10-06,2026-10-04,43,home,warmup,air bike (legs only),,1,,8 min,easy,,1.93 mi
-2026-10-06,2026-10-04,43,home,quad,straight-leg raise,L,1,10,,,,no lag
-2026-10-06,2026-10-04,43,home,knee,standing TKE,L,2,15,,band (color not stated),,full lockout
-2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,L,2,12,,18 in box,slight R-foot assist,BATCH: 24 -> 18 in in one step (planned 24 in)
-2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,R,2,12,,18 in box,,mirrored
-2026-10-06,2026-10-04,43,home,single-leg,"heel tap, slow eccentric",L,2,10,,5 in step,,BATCH: first at home; PT dose 4 in
-2026-10-06,2026-10-04,43,home,single-leg,step-up,L,3,10,,"8 in; set 1 15 lb DBs, sets 2-3 25 lb DBs; no band",,BATCH: DBs added and band off (planned bodyweight + red band)
-2026-10-06,2026-10-04,43,home,single-leg,step-up,R,3,10,,"8 in; set 1 15 lb DBs, sets 2-3 25 lb DBs",,mirrored
-2026-10-06,2026-10-04,43,home,single-leg,split squat,L,2,8,,bodyweight,unassisted,BATCH (new); planned hand support
-2026-10-06,2026-10-04,43,home,single-leg,split squat,R,2,8,,bodyweight,unassisted,
-2026-10-06,2026-10-04,43,home,knee,sit-to-stand w/ TKE band,bil,,,,,,SKIPPED
-2026-10-06,2026-10-04,43,home,knee,wall squat,bil,2,10,,,,BATCH: first at home; depth not recorded
-2026-10-06,2026-10-04,43,home,quad,isometric knee extension at 90 deg (strap),L,10,1,10 s,strap,,BATCH: first at home; maximal effort; no pain
-2026-10-06,2026-10-04,43,home,calf,"calf raise, L-biased",bil,3,12,,25 lb in L hand all sets,,BATCH (load on all sets)
-2026-10-06,2026-10-04,43,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,reported completed; dose as planned
-2026-10-07,2026-10-04,44,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,PT dose 8 lb
-2026-10-07,2026-10-04,44,floor,quad,quad set + NMES,L,1,14,10 s,NMES,,"~7 min; after the heel prop, not during"
-2026-10-07,2026-10-04,44,floor,mobility,heel slide,L,,,,,,dose not stated
-2026-10-08,2026-10-04,45,floor,mobility,heel slide,L,,,,,,AM before PT; dose not stated
-2026-10-08,2026-10-04,45,PT,warmup,upright bike,,1,,6 min,"seat 16, level 5",,up from level 3
-2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM (CLP),R,1,1,,14 plates,,PT functional strength test; plate weight not recorded
-2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM (CLP),L,1,1,,9 plates,,"L/R = 64%; whole-leg test, not the dynamometer"
-2026-10-08,2026-10-04,45,PT,single-leg,single-leg leg press (CLP seat 4),L,,,,6 plates,,sets/reps not recorded; left only
-2026-10-08,2026-10-04,45,PT,calf,standing double-leg heel raise,bil,2,15,,35 lb DBs,,new PT item
-2026-10-08,2026-10-04,45,PT,hip,standing bird dog,,2,15,,8 lb KB,,new PT item; standing (patient clarification); sides not recorded; no kneeling
-2026-10-08,2026-10-04,45,PT,single-leg,step-up w/ opposite knee drive,L,2,15,,12 in step,,new PT item; up from 8 in
-2026-10-08,2026-10-04,45,PT,hip,multi-hip abduction (CMH),bil,2,15,,4 plates,,new PT item; alternating sides
-2026-10-08,2026-10-04,45,PT,hip,multi-hip extension (CMH),bil,2,15,,4 plates,,new PT item; alternating sets
-2026-10-08,2026-10-04,45,PT,hip,"multi-hip flexion, knee straight (CMH)",bil,2,15,,4 plates,,new PT item; alternating sets
-2026-10-08,2026-10-04,45,PT,balance,"double-leg stance on wobble board, eyes closed",bil,1,,1 min each way,,,new PT item; wobble board per patient (10/11)
-2026-10-09,2026-10-04,46,conditioning,conditioning,air bike (legs only),,1,,15 min,easy,,3.47 mi; off-day conditioning (plan Phase 3)
-2026-10-09,2026-10-04,46,upperA,warmup,"upper warm-up (band pull-apart, thoracic extension)",,,,,,,as written; completed
-2026-10-09,2026-10-04,46,upperA,push,barbell bench press,,2,8,,105 lb,,felt pretty tough; Block 0 dose 3 x 8-10 @ RPE 6
-2026-10-09,2026-10-04,46,upperA,pull,one-arm cable lat pulldown,,2,8,,80 lb,,per side; cable (planned seated band pulldown)
-2026-10-09,2026-10-04,46,upperA,push,standing one-arm landmine press,,2,8,,25 lb + bar,,per side; standing (planned seated until upper session 3)
-2026-10-09,2026-10-04,46,upperA,pull,chest-supported DB row,,2,10,,15 lb DBs,,
-2026-10-09,2026-10-04,46,floor,mobility,weighted heel prop,L,1,,,,,done; time and weight not stated
-2026-10-11,2026-10-11,48,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-11,2026-10-11,48,home,warmup,air bike (legs only),,1,,8 min,easy,,2.06 mi
-2026-10-11,2026-10-11,48,home,single-leg,forward step-down,L,2,10,,6.5 in step,,first at home (PT dose 6 in); controlled (self)
-2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,L,2,12,,20 in box,none,first fully unassisted; box 20 in (planned 18 in); challenging
-2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,R,2,12,,20 in box,none,
-2026-10-11,2026-10-11,48,home,posterior,Romanian deadlift (DB),bil,3,10,,45 lb DBs,,up from 25 lb DBs 2x10 (9/30): +80% and a third set; felt easy
-2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,L,2,8,,bodyweight,,"NEW; short range; stepping left good, settled by the end"
-2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,R,2,8,,bodyweight,,short range
-2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,L,1,10,,20 lb,,ankle strap; replaces band curl
-2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,L,2,10,,30 lb,,
-2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,R,1,10,,20 lb,,ankle strap
-2026-10-11,2026-10-11,48,home,posterior,standing cable hamstring curl,R,2,10,,30 lb,,
-2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,L,3,8,,,,
-2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,R,3,8,,,,
-2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),L,2,10,,20 lb,,planned 2x15 light
-2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),R,2,10,,20 lb,,
-2026-10-11,2026-10-11,48,home,hip,standing bird dog,,2,10,,15 lb,,PT dose 8 lb 2x15
-2026-10-11,2026-10-11,48,home,balance,single-leg balance + ball toss on BOSU,L,,,45 s,,,sets not stated
-2026-10-11,2026-10-11,48,home,balance,"double-leg stance on wobble board, eyes closed",bil,,,,,,NOT DONE (no wobble board at home; home version set 10/12)
-2026-10-11,2026-10-11,48,home,cooldown,"posture cooldown (90/90, dead bug, hip flexor stretch, chin nods)",,,,,,,NOT DONE
-2026-10-12,2026-10-11,49,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-12,2026-10-11,49,conditioning,conditioning,air bike (legs only),,1,,18 min,easy,,distance not recorded; off-day conditioning (plan Phase 3)
-2026-10-12,2026-10-11,49,upperB,warmup,"upper warm-up (thoracic extension 45 s, doorway pec sequence 1 round)",,,,,,,as written; band pull-aparts added as an extra
-2026-10-12,2026-10-11,49,upperB,warmup,face pull with external rotation,,2,15,,50 lb,,"standing (planned seated, light, for upper sessions 1-2); a few reps left"
-2026-10-12,2026-10-11,49,upperB,push,incline barbell press,,3,5/8/5,,95 lb,,"last set ~2 RIR; first exposure, planned 3 x 8-10 at 3-4 RIR"
-2026-10-12,2026-10-11,49,upperB,pull,one-arm chin-grip cable pulldown,,3,8,,80 lb,,per side; one-arm in place of the planned two-arm
-2026-10-12,2026-10-11,49,upperB,pull,chest-supported DB row,,2,8,,15 lb DBs,,"C tri-set, 2 of 3 rounds"
-2026-10-12,2026-10-11,49,upperB,push,seated neutral-grip DB press,,2,8,,20 lb DBs,,"C tri-set, 2 of 3 rounds"
-2026-10-12,2026-10-11,49,upperB,pull,chest-supported DB reverse fly,,2,10,,5 lb DBs,,"C tri-set, 2 of 3 rounds; Y-raise in the plan from the next Upper B"
-2026-10-12,2026-10-11,49,upperB,finisher,"tissue & trunk finisher (tibialis raise, banded eversion, side plank from feet)",,,,,,,"as written, except the Copenhagen"
-2026-10-12,2026-10-11,49,upperB,finisher,"right-leg Copenhagen, short lever",R,,,,,,"NOT DONE: skipped, felt redundant after the side planks"
-2026-10-13,2026-10-11,50,home,warmup,air bike (legs only),,1,,8 min,easy,,2.07 mi
-2026-10-13,2026-10-11,50,home,single-leg,single-leg sit-to-stand,L,2,12,,18 in box,slight assist,planned 18 in unassisted; needed slight assistance; controlled eccentric
-2026-10-13,2026-10-11,50,home,single-leg,single-leg sit-to-stand,R,2,12,,18 in box,,"mirrored, unassisted"
-2026-10-13,2026-10-11,50,home,single-leg,step-up with opposite knee drive,L,2,15,,"18 in box, bodyweight",,"OFF-PLAN HEIGHT: planned 12 in (PT dose, first at home); last week 8 in with 25 lb DBs; felt good and easy"
-2026-10-13,2026-10-11,50,home,single-leg,step-up with opposite knee drive,R,2,15,,"18 in box, bodyweight",,mirrored
-2026-10-13,2026-10-11,50,home,quad,cable seated knee extension,L,2,15,,20 lb (lightest plate),,NEW. Set 1 90-45 deg as planned; OFF-PLAN RANGE: set 2 taken to full extension because it felt easy; very easy
-2026-10-13,2026-10-11,50,home,quad,isometric knee extension,L,10,1,10 s,fixed cable,,mid-range flexion (planned 90 deg); all 10 holds
-2026-10-13,2026-10-11,50,home,cooldown,"posture cooldown, short version (90/90 hip lift, chin nods)",,,,~3 min,,,as written for a short day
-2026-10-13,2026-10-11,50,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-14,2026-10-11,51,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-14,2026-10-11,51,home,push,push-up,bil,1,10,,bodyweight,,"unplanned extra, for fun"
-2026-10-15,2026-10-11,52,PT,warmup,upright bike,,1,,6 min,"seat 16, level 5",,LFUC; same as 10/8
-2026-10-15,2026-10-11,52,PT,quad,cable terminal knee extension (TKE),,2,10,,3.5 plates,,new PT item; CC(n); side not stated
-2026-10-15,2026-10-11,52,PT,quad,goblet squat,bil,2,10,,15 lb then 25 lb,,new PT item; one set at each weight
-2026-10-15,2026-10-11,52,PT,single-leg,heel tap,,2,10,,6 in step,,side not stated
-2026-10-15,2026-10-11,52,PT,single-leg,step-up w/ opposite knee drive,L,2,10,,12 in step,,PT cue: no push-off with the right leg; PT dose 12 in (home ran 18 in on 10/13)
-2026-10-15,2026-10-11,52,PT,single-leg,forward lunge,bil,2,10,,bodyweight,,new PT item; each side
-2026-10-15,2026-10-11,52,PT,gait,banded retro walk (GJC),,2,5,,,,"new PT item; back as far as the band allows, then slowly forward (patient)"
-2026-10-15,2026-10-11,52,PT,quad,knee extension machine (CKE 4/3),,2,10,,10 lb,,"new PT item; full range, both legs up; set 2 lowered with the left only, slow (patient)"
-2026-10-15,2026-10-11,52,PT,single-leg,single-leg leg press (SCLP 5/5),L,2,10,,70 lb,,selectorized; by weight (10/8 was plates)
-2026-10-15,2026-10-11,52,PT,posterior,single-leg knee flexion machine (LFKF 7),,2,10,,25 lb then 32.5 lb,,new PT item; side not stated
-2026-10-15,2026-10-11,52,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-17,2026-10-11,54,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,
-2026-10-17,2026-10-11,54,conditioning,conditioning,air bike (legs only),,1,,21 min,easy,,assault bike; off-day conditioning (plan Phase 3)
-2026-10-17,2026-10-11,54,PT,test,"isometric quad strength, torque monitor, peak",bil,2,,,,,"two rounds a side; R 70.4/77.2 lb, L 68.0/69.8 lb (measurements.csv, 2026-10-17_PT11)"
-2026-10-17,2026-10-11,54,upperA,warmup,"upper warm-up (thoracic extension 45 s, doorway pec sequence 1 round)",,,,,,,as written; arms-only air bike skipped (short on time)
-2026-10-17,2026-10-11,54,upperA,warmup,face pull with external rotation,,2,15,,50 lb,,standing
-2026-10-17,2026-10-11,54,upperA,push,seated med-ball chest pass,,4,3,,8 lb ball,,"first time; max intent, full reset each rep"
-2026-10-17,2026-10-11,54,upperA,push,barbell bench press,,3,8,,105 lb,,"felt pretty easy (10/9: 105 x 2 x 8 felt pretty tough); feet flat, no leg drive"
-2026-10-17,2026-10-11,54,upperA,pull,band-assisted pull-up,,3,5,,band,,"in place of the one-arm cable pulldown (assisted pull-ups allowed from session 3); challenging, good quality"
-2026-10-17,2026-10-11,54,upperA,push,standing one-arm landmine press,,3,8,,25 lb + bar,,"per side; definitely challenging, especially the left side; all reps done"
-2026-10-17,2026-10-11,54,upperA,pull,chest-supported DB row,,3,10,,15 lb DBs,,felt pretty easy
-2026-10-17,2026-10-11,54,upperA,finisher,"tissue & trunk finisher (tibialis raise 2 x 15, banded eversion 2 x 15 each ankle, side plank from the feet 2 x 20-30 s/side)",,,,,,,as written
-2026-10-17,2026-10-11,54,upperA,finisher,"Copenhagen plank, short lever",R,2,,20 s,,,as written
-2026-10-17,2026-10-11,54,upperA,finisher,"Copenhagen plank, short lever",L,2,,20 s,,,PT 11 (10/17): Copenhagen okay on both sides
-2026-10-18,2026-10-18,55,floor,mobility,weighted heel prop,L,1,,10 min,10 lb,,"weekly check (from 10/18), before the session"
-2026-10-18,2026-10-18,55,home,warmup,air bike (legs only),,1,,8 min,easy,,1.76 mi
-2026-10-18,2026-10-18,55,home,single-leg,forward step-down,L,3,10,,6.5 in step,,"third set as planned; challenging; slight hip drop at the bottom, so not fully clean: hold 3 x 10 until control is consistent"
-2026-10-18,2026-10-18,55,home,single-leg,forward step-down,R,3,10,,6.5 in step,,mirrored
-2026-10-18,2026-10-18,55,home,single-leg,single-leg sit-to-stand,L,3,12,,20 in box,,"planned 18 in x 2 x 12; 20 in used (equipment), so 3 x 12 at 20 in, the ladder step; unassisted, slightly shaky, smooth"
-2026-10-18,2026-10-18,55,home,single-leg,single-leg sit-to-stand,R,3,12,,20 in box,,"mirrored, unassisted"
-2026-10-18,2026-10-18,55,home,posterior,Romanian deadlift (DB),bil,3,10,,50 lb DBs,,"planned step from 45; sets 1-2 effort 7/10, ~4 reps left; clean form; hamstrings, no knee or back discomfort"
-2026-10-18,2026-10-18,55,home,hip,lateral lunge,L,3,8,,bodyweight,,third set as planned; OFF-PLAN RANGE: set 3 taken to near full range because it felt easy (planned the same short range)
-2026-10-18,2026-10-18,55,home,hip,lateral lunge,R,3,8,,bodyweight,,"set 3 near full range, as the left"
-2026-10-18,2026-10-18,55,home,posterior,standing cable hamstring curl,L,3,10,,40 / 50 / 60 lb,,"OFF-PLAN LOAD: planned 30 lb x 3; set 1 40 very easy, set 2 50, set 3 60 appropriately challenging; ankle strap"
-2026-10-18,2026-10-18,55,home,posterior,standing cable hamstring curl,R,3,10,,40 / 50 / 60 lb,,as the left; ankle strap
-2026-10-18,2026-10-18,55,home,posterior,single-leg bridge,L,3,10,,,,as planned (8 to 10 reps)
-2026-10-18,2026-10-18,55,home,posterior,single-leg bridge,R,3,10,,,,
-2026-10-18,2026-10-18,55,home,hip,standing cable hip 4-way (abd/add/ext/flex),,,,,,,NOT DONE (time); planned 20 lb x 2 x 15 each leg
-2026-10-18,2026-10-18,55,home,posterior,standing bird dog,,,,,,,NOT DONE (time); planned 15 lb x 2 x 15
-2026-10-18,2026-10-18,55,home,balance,SL balance + ball toss on BOSU; eyes-closed drill,,,,,,,NOT DONE (time); planned 3 x 45 s and 1 min eyes closed
-2026-10-18,2026-10-18,55,home,cooldown,"posture cooldown, short (chin nods only)",,,,,,,"90/90 hip lift, dead bug and hip flexor stretch not done (time); chin nod reps not stated"
-2026-10-19,2026-10-18,56,conditioning,conditioning,air bike (legs only),,1,,24 min,easy,,6.03 mi
-2026-10-19,2026-10-18,56,upperB,warmup,"upper warm-up (thoracic extension on roller, doorway pec sequence x1)",,,,,,,as written
-2026-10-19,2026-10-18,56,upperB,warmup,face pull with external rotation,,2,15,,50 lb,,standing
-2026-10-19,2026-10-18,56,upperB,push,incline barbell press,,3,10,,85 lb,,one step down from 95 (10/12); felt right; ~4-5 reps in reserve on set 1
-2026-10-19,2026-10-18,56,upperB,pull,one-arm chin-grip cable pulldown,,3,10,,80 lb,,per side; up from 8 reps (10/12)
-2026-10-19,2026-10-18,56,upperB,pull,one-arm DB row,,3,8,,25 lb DB,,"NEW; per side, both feet on the floor; about right, maybe a tad light"
-2026-10-19,2026-10-18,56,upperB,push,seated neutral-grip DB press,,3,8,,20 lb DBs,,"third round as planned; rested 60-90 s before; flat bench, no backrest; no rib flare or low-back arch"
-2026-10-19,2026-10-18,56,upperB,upper,prone incline Y-raise,,3,10,,5 lb DBs,,"replaces the reverse fly (Add-On, 10/12)"
-2026-10-19,2026-10-18,56,upperB,finisher,"tissue & trunk finisher (tibialis raise 2 x 15, banded eversion 2 x 15 each ankle, side plank from the feet 2 x 25 s/side)",,,,,,,as written
-2026-10-19,2026-10-18,56,upperB,finisher,"Copenhagen plank, short lever",R,2,,20 s,,,as written
-2026-10-19,2026-10-18,56,upperB,finisher,"Copenhagen plank, short lever",L,2,,20 s,,,PT 11 (10/17): both sides OK
-2026-10-21,2026-10-18,58,home,warmup,stationary bike (legs only),,1,,8 min,easy,,2.06 mi
-2026-10-21,2026-10-18,58,home,warmup,cable TKE,,2,10,,60 lb,,optional warm-up item; side not stated
-2026-10-21,2026-10-18,58,home,quad,goblet squat to 18 in box,bil,2,10,,40 lb DB,,"OFF-PLAN LOAD: planned 25 lb DB x 2 x 10 (PT dose, first at home); paused on the box every rep"
-2026-10-21,2026-10-18,58,home,quad,"cable seated knee extension, full range",L,2,12,,40 lb,both legs up,"OFF-PLAN LOAD: planned 20 lb; lifted with both legs, lowered with the left alone ~3 s; front-of-knee pain 0"
-2026-10-21,2026-10-18,58,home,quad,"cable seated knee extension, full range",R,2,12,,40 lb,,right alone both phases
-2026-10-21,2026-10-18,58,home,single-leg,rear-foot elevated split squat,L,2,8,,bodyweight,,NEW (first time); rear foot on a 7.5 in box (planned the 6.5 in step)
-2026-10-21,2026-10-18,58,home,single-leg,rear-foot elevated split squat,R,2,8,,bodyweight,,"as the left, 7.5 in box"
-2026-10-21,2026-10-18,58,home,posterior,standing cable hamstring curl,L,3,10,,60 / 60 / 70 lb,,"OFF-PLAN LOAD: planned 3 x 10 @ 50 lb; 60 easy on sets 1-2, 70 on set 3; ankle strap; superset with heel raise, ~60 s rest"
-2026-10-21,2026-10-18,58,home,posterior,standing cable hamstring curl,R,3,10,,60 / 60 / 70 lb,,as the left; ankle strap
-2026-10-21,2026-10-18,58,home,calf,standing heel raise,bil,3,15,,40 lb DBs (each hand),,OFF-PLAN LOAD: planned 35 lb DBs; all 3 sets done
-2026-10-21,2026-10-18,58,home,single-leg,"step-up with opposite knee drive, 18 in",L,2,15,,bodyweight,,as planned; no push-off from the trailing leg
-2026-10-21,2026-10-18,58,home,single-leg,"step-up with opposite knee drive, 18 in",R,2,15,,bodyweight,,as planned
-2026-10-21,2026-10-18,58,home,single-leg,"heel tap, slow lowering",L,2,10,,7.5 in box,,"planned 6.5 in forward; done on a 7.5 in box, lateral (sideways) variation"
-2026-10-21,2026-10-18,58,home,balance,SL balance + ball toss on BOSU,L,3,,45 s,,,"as planned, 30 s rest; the 1-min eyes-closed drill NOT DONE (time)"
-2026-10-21,2026-10-18,58,home,knee,"isometric knee extension 90 deg, strap",L,,,,,,NOT DONE (time); planned 10 x 10 s max effort
-2026-10-21,2026-10-18,58,home,cooldown,posture cooldown,,,,,,,NOT DONE (time)
-2026-10-22,2026-10-18,59,conditioning,conditioning,bike (legs only),,1,,27 min,easy,,vacation gym; distance not reported
-2026-10-22,2026-10-18,59,upperA,warmup,"upper warm-up (T-spine roller 45 s, doorway pec sequence x1)",,,,,,,as written
-2026-10-22,2026-10-18,59,upperA,warmup,face pull,,2,15,,32.5 lb (true stack),,"standing; vacation gym machine, not comparable to home (10/19: 50 lb)"
-2026-10-22,2026-10-18,59,upperA,push,seated med-ball chest pass,,,,,,,NOT DONE: no med ball at the vacation gym
-2026-10-22,2026-10-18,59,upperA,push,seated chest press machine,,3,10,,70 lb,,SUB for bench 110 x 3 x 8 (vacation gym); machine load not comparable
-2026-10-22,2026-10-18,59,upperA,pull,lat pulldown,,3,10,,50 lb,,SUB for band-assisted pull-up 3 x 6 (vacation gym); machine load not comparable
-2026-10-22,2026-10-18,59,upperA,push,standing DB neutral-grip press,,3,10,,22.5 / 25 / 25 lb DBs,,SUB for standing landmine press 25 + bar x 3 x 8/side (vacation gym)
-2026-10-22,2026-10-18,59,upperA,pull,diverging seated row machine,,3,10,,50 lb,,SUB for chest-supported DB row 20s x 3 x 10 (vacation gym); machine load not comparable
-2026-10-22,2026-10-18,59,upperA,finisher,seated tibialis raise,,,,,,,"done at home after the gym; dose not reported (plan 2 x 15, both ankles)"
-2026-10-22,2026-10-18,59,upperA,finisher,"Copenhagen, short lever, both sides",,,,,,,NOT DONE (planned 2 x 25 s/side)
-2026-10-22,2026-10-18,59,upperA,finisher,banded eversion and side plank,,,,,,,NOT DONE
-2026-10-23,2026-10-18,60,home,warmup,stationary bike (legs only),,1,,8 min,,,vacation gym
-2026-10-23,2026-10-18,60,home,balance,SL balance + ball toss on BOSU,L,3,,45 s,,,
-2026-10-23,2026-10-18,60,home,balance,"eyes-closed, both feet on the BOSU dome",,,,,,,NOT DONE: no safe rack or wall spot at the vacation gym
-2026-10-23,2026-10-18,60,home,single-leg,"forward step-down, ~6 in step",L,3,10,,,,left only; aerobic step; hip drop not reported
-2026-10-23,2026-10-18,60,home,single-leg,"SL sit-to-stand, standard bench (~17-18 in)",bil,2,12,,,,"each leg, unassisted; first time at bench height (home: 20 in)"
-2026-10-23,2026-10-18,60,home,posterior,DB RDL,,3,8,,55 lb DBs,,as planned (up from 50 x 3 x 10)
-2026-10-23,2026-10-18,60,home,single-leg,lateral lunge,bil,3,8,,,,sets 1-2 full range; set 3 shortened for mild discomfort (location and 0-10 not reported)
-2026-10-23,2026-10-18,60,home,posterior,single-leg hamstring curl machine (seated/lying),bil,3,10,,40 lb,,SUB for the cable curl (vacation gym); each leg; ~3-4 RIR; machine load not comparable to the cable (70)
-2026-10-23,2026-10-18,60,home,hip,seated hip abduction machine,bil,2,15,,85 lb,,SUB for the standing cable abduction 20 lb (vacation gym); both legs at once; not comparable
-2026-10-23,2026-10-18,60,home,calf,seated calf raise machine,L,3,12,,lightest setting,,NEW; left only; pad above the kneecap
-2026-10-23,2026-10-18,60,home,posterior,SL bridge,,,,,,,"NOT DONE: not reported (planned at home, 3 x 10 each side)"
-2026-10-23,2026-10-18,60,home,cooldown,"posture cooldown (90/90 hip lift, chin nods, breathing)",,,,,,,"NOT DONE: not reported (planned at home, ~6 min)"
-2026-10-23,2026-10-18,60,home,push,"chest press machine (extra, not in Session B)",,1,,,,,for good measure; load and reps not reported
-2026-10-27,2026-10-25,64,conditioning,conditioning,air bike (legs only),,1,,30 min,easy,,7.78 mi
-2026-10-27,2026-10-25,64,upperB,warmup,"upper warm-up (thoracic extension on roller, doorway pec sequence)",,,,,,,as written
-2026-10-27,2026-10-25,64,upperB,warmup,face pull with external rotation,,2,15,,50 lb,,
-2026-10-27,2026-10-25,64,upperB,push,speed bench,,1,13,,65 lb,,"Block 1, first session; bar did not slow by rep 13 (plan: sets of 3)"
-2026-10-27,2026-10-25,64,upperB,push,speed bench,,2,3,,85 lb,,bar did not slow; 3 sets run of the plan 5
-2026-10-27,2026-10-25,64,upperB,push,incline barbell press,,1,10,,85 lb,,alternated with the pulldown
-2026-10-27,2026-10-25,64,upperB,push,incline barbell press,,1,10,,90 lb,,up 5 lb on the second set
-2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,1,10,,80 lb,,per side (assumed)
-2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,1,8,,90 lb,,per side
-2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,2,8,,100 lb,,"per side (assumed, as the 90 set)"
-2026-10-27,2026-10-25,64,upperB,pull,one-arm DB row,,3,8,,25 lb DB,,"per side; way easy, not challenging"
-2026-10-27,2026-10-25,64,upperB,push,seated neutral-grip DB press,,3,8,,25 lb DBs,,up from 20s (10/19)
-2026-10-27,2026-10-25,64,upperB,upper,prone incline Y-raise,,3,10,,5 lb DBs,,
-2026-10-27,2026-10-25,64,upperB,finisher,tissue & trunk finisher incl. Copenhagen short lever 2 x 25 s/side,,,,,,,NOT DONE; the Copenhagen step (2 x 25 s) still owed
-2026-10-28,2026-10-25,65,home,test,single-leg squat test (plan Phase 4; 10 to ~60 deg),L,1,12,,bodyweight,,"FIRST TEST; first 4 clean and unassisted, the other 8 with very light assistance; box height not stated; pain 0"
-2026-10-28,2026-10-25,65,home,test,single-leg squat test (plan Phase 4; 10 to ~60 deg),R,1,12,,bodyweight,,all 12 clean and unassisted; pain 0
-2026-10-28,2026-10-25,65,home,warmup,stationary bike (legs only),,1,,8 min,easy,,"2.00 mi, flat"
-2026-10-28,2026-10-25,65,home,balance,SL balance + ball toss on BOSU,L,2,,45 s,,,as planned
-2026-10-28,2026-10-25,65,home,plyo,small double-leg pogo hops (impact rung 1),bil,2,15,,bodyweight,,"FIRST IMPACT. OFF-PLAN VOLUME: planned 2 x 5 (the plan: 5-8 contacts a set); felt very easy; in place, straight up and down; pain 0; landings quiet"
-2026-10-28,2026-10-25,65,home,plyo,single-leg pogo hops,L,2,5,,bodyweight,,"OFF-PLAN: not on the impact ladder (rung 1 is double-leg; single-leg pogos are the plan Phase 5 impact-tolerance item); extremely small, just off the ground, paused and reset between hops; pain 0"
-2026-10-28,2026-10-25,65,home,plyo,single-leg pogo hops,R,2,5,,bodyweight,,OFF-PLAN as the left; pain 0
-2026-10-28,2026-10-25,65,home,warmup,cable TKE,,2,10,,70 lb,,optional warm-up item; up from 60 (10/21); side not stated
-2026-10-28,2026-10-25,65,home,quad,goblet squat to 18 in box,bil,3,10,,45 / 45 / 50 lb DB,,"OFF-PLAN LOAD: planned 40 x 3 x 10 (the third set was the one change); 3 s descent, paused on the box, immediate drive up; pain 0"
-2026-10-28,2026-10-25,65,home,quad,"cable seated knee extension, full range",L,3,12,,40 lb,none,"off its hold (Nick 10/28): the third set as planned; CHANGE NOT PLANNED: lifted AND lowered with the left alone (planned: both legs up, left down over 3 s); 3 s lowering; pain 0"
-2026-10-28,2026-10-25,65,home,quad,"cable seated knee extension, full range",R,3,12,,40 lb,,right alone both phases; 3 s lowering; pain 0
-2026-10-28,2026-10-25,65,home,single-leg,rear-foot elevated split squat,L,3,8,,bodyweight,,as planned (third set added); rear foot on the 7.5 in box; both sides felt equally stable; pain 0
-2026-10-28,2026-10-25,65,home,single-leg,rear-foot elevated split squat,R,3,8,,bodyweight,,as the left
-2026-10-28,2026-10-25,65,home,posterior,standing cable hamstring curl,,,,,,,NOT DONE (time); planned 70 lb x 3 x 10 each leg
-2026-10-28,2026-10-25,65,home,calf,standing heel raise,,,,,,,NOT DONE (time); planned 40 lb DBs x 4 x 15
-2026-10-28,2026-10-25,65,home,single-leg,"step-up with opposite knee drive, 18 in",,,,,,,NOT DONE (time); planned bodyweight 2 x 10 each side
-2026-10-28,2026-10-25,65,home,single-leg,"heel tap, slow lowering",,,,,,,"NOT DONE (time); planned lateral, 7.5 in box, L 3 x 10"
-2026-10-28,2026-10-25,65,home,cooldown,posture cooldown,,,,,,,"SHORT (time): 90/90 hip lift 1 x 5 breaths (planned 3 x 5), dead bug 4/side (planned 2 x 8), chin nods 5 x 5 s (planned 2 x 10); hip flexor stretch skipped"
-2026-10-30,2026-10-25,67,home,warmup,"foam roll, back",,,,1-2 min,,,"before the bike; a bit looser, mostly the same"
-2026-10-30,2026-10-25,67,home,warmup,stationary bike (legs only),,1,,8 min,easy,,2.13 mi
-2026-10-30,2026-10-25,67,home,balance,SL balance + ball toss on BOSU,L,3,,45 s,,,pretty steady; no discomfort
-2026-10-30,2026-10-25,67,home,plyo,small double-leg pogo hops (impact rung 1),bil,3,15,,bodyweight,,OFF-PLAN VOLUME: planned 3 x 8 (the plan: 5-8 contacts a set); quiet and controlled; no discomfort
-2026-10-30,2026-10-25,67,home,plyo,single-leg pogo hops (impact rung 5),L,2,5,,bodyweight,,"OFF-PLAN: rung 5, ahead of the ladder (today: rungs 1-2), and a third impact exercise (the plan: 2); very small; left weak but stable; quiet, controlled, no discomfort"
-2026-10-30,2026-10-25,67,home,plyo,snap-down (impact rung 2),bil,2,5,,bodyweight,,"NEW, as planned; felt fine, no discomfort"
-2026-10-30,2026-10-25,67,home,single-leg,forward step-down,L,3,10,,6.5 in step,,as planned; challenging; the last half-inch of the left lowering less smooth; hip drop not reported; pain 0
-2026-10-30,2026-10-25,67,home,single-leg,forward step-down,R,3,10,,6.5 in step,,extra (the plan: left only)
-2026-10-30,2026-10-25,67,home,single-leg,single-leg sit-to-stand,L,3,12,,18 in seat,,as planned (up from 2 x 12); very tough but manageable; assistance not mentioned; pain 0
-2026-10-30,2026-10-25,67,home,single-leg,single-leg sit-to-stand,R,3,12,,18 in seat,,much better than the left
-2026-10-30,2026-10-25,67,home,posterior,Romanian deadlift (DB),bil,3,8,,52.5 lb DBs,,"planned 60 (from 55 on 10/23); effort 4/10, easy"
-2026-10-30,2026-10-25,67,home,hip,standing cable hip abduction,L,2,15,,30 lb,,"OFF-PLAN LOAD: planned 20 x 2 x 15 (last cable 20 x 2 x 10); load and reps up together; challenging, controlled, no leaning, no discomfort"
-2026-10-30,2026-10-25,67,home,hip,standing cable hip abduction,R,2,15,,30 lb,,as the left
-2026-10-30,2026-10-25,67,home,single-leg,lateral lunge,L,3,8,,bodyweight,,"as planned (full range, held); front of knee 0 (2-3 on 10/23)"
-2026-10-30,2026-10-25,67,home,single-leg,lateral lunge,R,3,8,,bodyweight,,as the left
-2026-10-30,2026-10-25,67,home,calf,standing heel raise,bil,3,12,,52.5 lb DBs (each hand),,"SUB for the seated calf raise, left (planned lightest DB x 3 x 12); load past A ladder (40s x 4 x 15 planned 10/28, not run)"
-2026-10-30,2026-10-25,67,home,posterior,standing cable hamstring curl,,,,,,,NOT DONE; planned 70 lb x 3 x 10 each leg
-2026-10-30,2026-10-25,67,home,posterior,single-leg bridge,,,,,,,NOT DONE; planned 3 x 10 each side
-2026-10-30,2026-10-25,67,home,calf,"seated calf raise, left",,,,,,,NOT DONE; replaced by the standing heel raise
-2026-10-30,2026-10-25,67,home,cooldown,posture cooldown,,,,,,,"full, as written: 90/90 hip lift 3 x 5 breaths, dead bug 2 x 8/side (low back flat), hip flexor stretch 45 s/side, chin nods 2 x 10 x 5 s; no discomfort"
-2026-10-31,2026-10-25,68,conditioning,conditioning,air bike (legs only),,1,,30 min,easy,,"6.83 mi, morning"
-2026-10-31,2026-10-25,68,upperA,push,barbell bench press,,1,6,,115 lb,,set 1 of 4; decently easy; planned 110 x 4 x 6-8 (the Add-On step is +5 lb: 115 is +10 from 105)
-2026-10-31,2026-10-25,68,upperA,push,barbell bench press,,3,7,,115 lb,,sets 2-4; reps held
-2026-10-31,2026-10-25,68,upperA,pull,band-assisted pull-up,,1,6,,same band,,"set 2 of 4 (sets 1, 3, 4: 5 reps)"
-2026-10-31,2026-10-25,68,upperA,pull,band-assisted pull-up,,3,5,,same band,,challenging; set 3 tough; set 4 completed. As planned (4 x 5-6)
-2026-10-31,2026-10-25,68,upperA,push,standing one-arm landmine press,,3,8,,25 lb + bar,,per side; challenging; as planned
-2026-10-31,2026-10-25,68,upperA,pull,chest-supported DB row,,2,10,,20 lb DBs,,still easy
-2026-10-31,2026-10-25,68,upperA,pull,chest-supported DB row,,1,10,,25 lb DBs,,third set up a DB step on the fly; more challenging
-2026-10-31,2026-10-25,68,upperA,finisher,"tissue & trunk finisher, partial",,,,,,,"Copenhagen short lever 2 x 25 s/side (the ladder step, done); seated tibialis raise done (reps not confirmed; target 2 x 15); banded eversion and side plank NOT DONE (time)"
-2026-11-01,2026-11-01,69,home,test,single-leg squat test (plan Phase 4; 10 to ~60 deg),L,1,12,,bodyweight,,"24 in seat, filmed; 12 of 12 clean on his read of the film; some extra rocking on the ascent; considered passed, not perfect yet"
-2026-11-01,2026-11-01,69,home,test,single-leg squat test (plan Phase 4; 10 to ~60 deg),R,1,12,,bodyweight,,"24 in seat, filmed; 12 of 12 clean"
-2026-11-01,2026-11-01,69,home,warmup,stationary bike (legs only),,1,,9 min,easy,,2.21 mi; the knee-day warm-up bike is capped at 8 min
-2026-11-01,2026-11-01,69,home,balance,SL balance + ball toss on BOSU,L,3,,45 s,,,as planned; all sets completed
-2026-11-01,2026-11-01,69,home,plyo,snap-down (impact rung 2),bil,3,5,,bodyweight,,as planned (up from 2 x 5); felt good
-2026-11-01,2026-11-01,69,home,plyo,low vertical jump and landing (impact rung 3),bil,2,5,,bodyweight,,"NEW, as planned (in the pogo's place); first set felt good; both sets completed; landing quality not stated"
-2026-11-01,2026-11-01,69,home,quad,goblet squat to 18 in box,bil,3,10,,52.5 lb DB,,"OFF-PLAN LOAD: planned 50 / 50 / 52.5 (one DB step a set); 52.5 on all three, so sets 1-2 went two DB steps up from 45; ~5-6 reps in reserve"
-2026-11-01,2026-11-01,69,home,calf,single-leg standing calf raise,L,3,12,,bodyweight,,"NEW (single-leg), as planned"
-2026-11-01,2026-11-01,69,home,calf,single-leg standing calf raise,R,3,12,,bodyweight,,mirrors the left
-2026-11-01,2026-11-01,69,home,quad,"cable seated knee extension, full range",L,3,8,,50 lb,none,"the +1 plate as planned (40 to 50), left alone both ways; CHANGE NOT PLANNED: 8 reps (planned 12) with a 5-7 s lowering (planned 3 s)"
-2026-11-01,2026-11-01,69,home,quad,"cable seated knee extension, full range",R,3,12,,50 lb,,+1 plate (40 to 50); right alone both phases
-2026-11-01,2026-11-01,69,home,posterior,standing cable hamstring curl,,3,10,,70 lb,,as planned (up from 60 / 60 / 70 on 10/21); sides not stated (planned each leg); the cable pair took longer than expected
-2026-11-01,2026-11-01,69,home,single-leg,rear-foot elevated split squat,L,3,8,,5 / 15 / 15 lb DBs (each hand),,"OFF-PLAN LOAD: planned light DBs, 5s or 10s; rear foot on the 7.5 in box; stable; ~4-5 reps in reserve; challenging; leg fatigued afterward"
-2026-11-01,2026-11-01,69,home,single-leg,rear-foot elevated split squat,R,3,8,,5 / 15 / 15 lb DBs (each hand),,as the left; stable
-2026-11-01,2026-11-01,69,home,single-leg,"step-up with opposite knee drive, 18 in",,,,,,,NOT DONE (leg fatigue after the knee extension and RFESS; the plan's first cut); planned bodyweight 2 x 10 each side
-2026-11-01,2026-11-01,69,home,single-leg,"heel tap, slow lowering",L,3,10,,7.5 in box,,"lateral, as planned; felt good afterward"
-2026-11-01,2026-11-01,69,home,single-leg,"heel tap, slow lowering",R,3,10,,7.5 in box,,EXTRA: the plan has the heel tap left only
-2026-11-01,2026-11-01,69,home,cooldown,posture cooldown,,,,,,,"full, as written: 90/90 hip lift 3 x 5 breaths, dead bug 2 x 8/side, supine hip flexor 45 s/side, chin nods 2 x 10 x 5 s"
-2026-11-02,2026-11-01,70,conditioning,conditioning,air bike (legs only),,1,,30 min,easy,,7.65 mi
-2026-11-02,2026-11-01,70,upperB,warmup,"upper warm-up (thoracic extension on roller, doorway pec sequence)",,,,,,,"as written: thoracic extension 45 s, pec sequence completed"
-2026-11-02,2026-11-01,70,upperB,warmup,face pull with external rotation,,2,15,,50 lb,,as written
-2026-11-02,2026-11-01,70,upperB,push,speed bench,,5,3,,75 lb,,"planned 70; 75 on all five sets, still inside the block's 45-55%; very light, the first set fast"
-2026-11-02,2026-11-01,70,upperB,push,incline barbell press,,2,8,,90 lb,,as planned (90 x 2 x 8-10); ~3 reps in reserve; alternated with the pulldown
-2026-11-02,2026-11-01,70,upperB,pull,one-arm chin-grip cable pulldown,,4,8,,100 lb,,per side; as planned (100 x 4 x 6-8); ~2 reps in reserve
-2026-11-02,2026-11-01,70,upperB,pull,one-arm DB row,,3,10,,30 lb DB,,"per side; as planned (one DB step up from 25); still too easy: ~5-10 in reserve, the last round 1-2 fewer"
-2026-11-02,2026-11-01,70,upperB,push,seated neutral-grip DB press,,3,10,,25 lb DBs,,"as planned (reps up from 8 to 10); too easy: ~5 in reserve, the last round 1-2 fewer"
-2026-11-02,2026-11-01,70,upperB,pull,prone incline Y-raise,,3,10,,5 lb DBs,,as written; still challenging
-2026-11-02,2026-11-01,70,upperB,finisher,tissue & trunk finisher incl. Copenhagen short lever 2 x 30 s/side,,,,,,,"all four as written: seated tibialis raise 2 x 15, banded eversion 2 x 15 per ankle, side plank from the feet 2 x 20-30 s/side, Copenhagen short lever 2 x 30 s/side (up from 25 s after a clean morning)"
-2026-11-02,2026-11-01,70,upperB,push,cable chest fly,,2,,,30 / 50 lb per hand,,"EXTRA (not in the plan): 30 x 12, then 50 x 10"
-2026-11-04,2026-11-01,72,PT,warmup,upright bike,,1,,6 min,level 5,,LFUC seat 16
-2026-11-04,2026-11-01,72,PT,single-leg,heel tap,,2,10,,6 in step,,each leg
-2026-11-04,2026-11-01,72,PT,quad,goblet squat,bil,2,10,,45 lb,,
-2026-11-04,2026-11-01,72,PT,single-leg,"step-up, 12 in",,2,10,,10 lb,,"10x, then 10x with a green band at the knees (abduction); sides not stated"
-2026-11-04,2026-11-01,72,PT,single-leg,rear-foot elevated split squat,,2,10,,,,"10x, then 10x with a green band TKE; load and sides not stated"
-2026-11-04,2026-11-01,72,PT,gait,banded side steps (GJC),,1,5,,,,5 each way; each way
-2026-11-04,2026-11-01,72,PT,gait,banded retro walk (GJC),,1,10,,,,
-2026-11-04,2026-11-01,72,PT,quad,knee extension machine (CKE 4/3),,2,15,,35 lb,,sides not stated
-2026-11-04,2026-11-01,72,PT,quad,"knee extension machine, left eccentric (CKE 4/3)",L,1,10,,20 lb,,
-2026-11-04,2026-11-01,72,PT,posterior,single-leg knee flexion machine (LFKF 7),,2,10,,40 lb,,sides not stated; both legs did well (his account)
-2026-11-04,2026-11-01,72,PT,quad,knee extension isometric (CKE),,2,,30 s,,,"one hold at 0 deg, one at 45 deg; load and side not recorded; PT recommends single-leg iso work at home"
+date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,load,load_unit,band,height_in,assist,notes
+2026-09-10,2026-09-06,17,home,mobility,heel prop,L,,,10 min,,,,,,
+2026-09-10,2026-09-06,17,home,quad,quad set + NMES,L,1,14,12 s,,,,,,"heel propped, 14 min total"
+2026-09-10,2026-09-06,17,home,mobility,heel slide,L,2,15,,,,,,,
+2026-09-10,2026-09-06,17,home,quad,straight-leg raise,L,3,10,,,,,,,no lag
+2026-09-10,2026-09-06,17,home,warmup,bike,,1,,5 min,,,,,,first full revolution; easy
+2026-09-10,2026-09-06,17,home,knee,mini squat,bil,2,10,,,,,,,
+2026-09-10,2026-09-06,17,home,posterior,standing hamstring curl,L,2,12,,,,,,,
+2026-09-10,2026-09-06,17,home,calf,standing calf raise,bil,2,12,,,,,,,
+2026-09-10,2026-09-06,17,home,single-leg,step-up,L,2,8,,,,,,right-leg push-off,could not step up unassisted
+2026-09-10,2026-09-06,17,home,posterior,bridge,bil,2,12,,,,,,,
+2026-09-10,2026-09-06,17,home,balance,single-leg balance,L,2,,20 s,,,,,,
+2026-09-11,2026-09-06,18,PT,quad,long arc quad,L,1,20,2 s,,,,,,
+2026-09-11,2026-09-06,18,PT,quad,quad set (towel under knee),L,1,20,,,,,,,
+2026-09-11,2026-09-06,18,PT,quad,quad set (towel under heel),L,1,20,,,,,,,
+2026-09-11,2026-09-06,18,PT,quad,straight-leg raise,L,2,10,,,,,,,no lag per PT
+2026-09-11,2026-09-06,18,PT,mobility,heel slide,L,1,10,5 s,,,,,,
+2026-09-11,2026-09-06,18,PT,knee,standing TKE,L,2,10,,,,teal,,,PT: increase resistance next
+2026-09-11,2026-09-06,18,PT,balance,single-leg balance,L,3,,10 s,,,,,bil to 1 UE support,
+2026-09-11,2026-09-06,18,PT,warmup,bike,,1,,6 min,1,level,,,,clinic upright bike
+2026-09-11,2026-09-06,18,PT,gait,standing weight shifts,bil,1,10,,,,,,with crutches,"side/front, 10 each"
+2026-09-11,2026-09-06,18,PT,gait,one-crutch walking,,,,,,,,,one crutch,in clinic; difficulty noted
+2026-09-12,2026-09-06,19,HEP,quad,quad set + NMES,L,1,14,10 s,,,,,,
+2026-09-12,2026-09-06,19,HEP,mobility,heel slide,L,3,10,,,,,,,
+2026-09-12,2026-09-06,19,HEP,gait,two-crutch walking,,,,,,,,,two crutches,
+2026-09-13,2026-09-13,20,home,quad,quad set + NMES,L,1,10,10 s,,,,,,AM
+2026-09-13,2026-09-13,20,home,mobility,heel prop,L,,,5 min,,,,,,
+2026-09-13,2026-09-13,20,home,mobility,heel slide,L,3,,30 s hold,,,,,,plus a few easy reps
+2026-09-13,2026-09-13,20,home,mobility,hamstring stretch,L,2,,30 s,,,,,,
+2026-09-13,2026-09-13,20,home,mobility,patellar glides,L,,,,,,,,,med/lat easy; sup/inf limited
+2026-09-13,2026-09-13,20,home,warmup,bike,,1,,5 min,,,,,,easy
+2026-09-13,2026-09-13,20,home,knee,standing TKE,L,3,10,,,,band,,,
+2026-09-13,2026-09-13,20,home,knee,mini squat,bil,2,10,,,,,,,shallow/moderate depth; patellar sticking noted
+2026-09-13,2026-09-13,20,home,balance,single-leg balance,L,2,,20 s,,,,,,
+2026-09-13,2026-09-13,20,home,single-leg,step-up,L,2,8,,,,,,heavy,sets/reps assumed as planned
+2026-09-13,2026-09-13,20,home,posterior,standing hamstring curl,L,2,12,,,,,,,
+2026-09-13,2026-09-13,20,home,posterior,bridge,bil,2,12,,,,,,,
+2026-09-13,2026-09-13,20,home,calf,standing calf raise,bil,2,12,,,,,,,left-biased
+2026-09-13,2026-09-13,20,home,hip,sidelying hip abduction,L,2,10,,,,,,,
+2026-09-13,2026-09-13,20,home,hip,sidelying hip adduction,L,2,10,,,,,,,
+2026-09-13,2026-09-13,20,home,hip,prone hip extension,L,2,10,,,,,,,
+2026-09-13,2026-09-13,20,home,quad,straight-leg raise,L,2,10,,,,,,,tiny visible L/R difference
+2026-09-13,2026-09-13,20,home,gait,one-crutch walking,,,,~50 m,,,,,one crutch,
+2026-09-13,2026-09-13,20,home,gait,curved treadmill walk,,,,~2 min,,,,,"rails, no crutches","est ~80% BW, not measurable; self-initiated"
+2026-09-14,2026-09-13,21,HEP,quad,quad set + NMES,L,1,14,10 s,,,,,,
+2026-09-15,2026-09-13,22,home,mobility,heel prop,L,,,5-10 min,,,,,,
+2026-09-15,2026-09-13,22,home,mobility,heel slide,L,3,,30 s hold,,,,,,plus 15 easy reps
+2026-09-15,2026-09-13,22,home,mobility,hamstring stretch,L,2,,30 s,,,,,,
+2026-09-15,2026-09-13,22,home,mobility,standing knee flexion AROM,L,3,10,,,,,,chair support,doubles as hamstring curl
+2026-09-15,2026-09-13,22,home,mobility,patellar glides,L,,,,,,,,,more mobile than 9/13
+2026-09-15,2026-09-13,22,home,warmup,bike,,1,,5.5 min,,,,,,easy
+2026-09-15,2026-09-13,22,home,knee,standing TKE,L,3,10,,,,band,,,
+2026-09-15,2026-09-13,22,home,quad,long arc quad,L,3,10,,,,,,,~2/10 at donor site set 1; full extension
+2026-09-15,2026-09-13,22,home,knee,mini squat,bil,3,10,,,,,,,more depth than before (unplanned variable)
+2026-09-15,2026-09-13,22,home,balance,single-leg balance,L,3,,20-30 s,,,,,,
+2026-09-15,2026-09-13,22,home,single-leg,step-up,L,3,8,,,,,6,fingertip,mostly unassisted
+2026-09-15,2026-09-13,22,home,single-leg,step-up,R,3,8,,,,,6,,
+2026-09-15,2026-09-13,22,home,posterior,bridge,bil,3,12,,,,,,,
+2026-09-15,2026-09-13,22,home,calf,standing calf raise,bil,3,12,,,,,,,left-biased
+2026-09-15,2026-09-13,22,home,hip,sidelying hip abduction,L,2,10,,,,,,,
+2026-09-15,2026-09-13,22,home,hip,sidelying hip adduction,L,2,10,,,,,,,
+2026-09-15,2026-09-13,22,home,hip,prone hip extension,L,2,10,,,,heavy,,,unplanned load variable; band on the last set only
+2026-09-15,2026-09-13,22,home,quad,prone quad set + NMES,L,3,10,10 s,,,,,,NMES 14
+2026-09-15,2026-09-13,22,home,quad,straight-leg raise,L,3,10,,,,,,,
+2026-09-15,2026-09-13,22,home,gait,one-crutch walking,,,,~50 m bouts,,,,,one crutch,
+2026-09-15,2026-09-13,22,home,gait,curved treadmill walk,,,,~2 min,,,,,"rails, no crutches",
+2026-09-15,2026-09-13,22,home,gait,crutch-free walking,,,,~10 m,,,,,none,visible weight shift onto surgical leg; stopped
+2026-09-18,2026-09-13,25,floor,mobility,heel prop,L,,,5-10 min,,,,,,
+2026-09-18,2026-09-13,25,floor,quad,quad set + NMES,L,1,,,,,,,,
+2026-09-18,2026-09-13,25,floor,mobility,heel slide,L,3,,30 s hold,,,,,,plus a few easy reps
+2026-09-18,2026-09-13,25,floor,quad,straight-leg raise,L,2,10,,,,,,,
+2026-09-18,2026-09-13,25,floor,mobility,patellar glides,L,,,,,,,,,
+2026-09-18,2026-09-13,25,PT,warmup,bike,,1,,6-7 min,3,level,,,,clinic upright bike; seat 17
+2026-09-18,2026-09-13,25,PT,knee,sit-to-stand with TKE band,bil,2,12,,,,red tube,24,,
+2026-09-18,2026-09-13,25,PT,hip,lateral band walk,bil,2,,25 ft out/back,,,green tube,,none,unassisted; band above the knees
+2026-09-18,2026-09-13,25,PT,knee,standing TKE,L,2,15,,,,red,,,
+2026-09-18,2026-09-13,25,PT,single-leg,step-up with TKE band,L,2,12,,,,red tube,6,,
+2026-09-18,2026-09-13,25,PT,single-leg,forward step-down,L,2,12,,,,,4,,touch and return; user log says 2x10
+2026-09-18,2026-09-13,25,PT,single-leg,single-leg leg press,L,2,12,,40,lb,,,,"resolved 9/25: 40# per PT; patient-reported ""10 lb"" was a different number on the machine"
+2026-09-18,2026-09-13,25,PT,gait,one-crutch walking,,,,,,,,,one crutch,PT: limp imperceptible
+2026-09-19,2026-09-13,26,HEP,mobility,heel prop,L,2,,,,,,,,"two rounds, start and end"
+2026-09-19,2026-09-13,26,HEP,quad,quad set,L,1,10,10 s,,,,,,no NMES; activation felt good
+2026-09-19,2026-09-13,26,HEP,mobility,heel slide,L,1,6,30 s,,,,,,unassisted
+2026-09-19,2026-09-13,26,HEP,mobility,heel slide,L,1,5,,,,,,towel,for flexion
+2026-09-19,2026-09-13,26,HEP,quad,straight-leg raise,L,2,10,,,,,,,good quad activation
+2026-09-19,2026-09-13,26,HEP,mobility,patellar glides,L,,,,,,,,,
+2026-09-19,2026-09-13,26,HEP,quad,long arc quad,L,2,10,,,,,,,
+2026-09-19,2026-09-13,26,HEP,quad,prone quad set,L,2,10,,,,,,,no NMES
+2026-09-19,2026-09-13,26,HEP,knee,standing TKE,L,2,10,,,,red,,,
+2026-09-19,2026-09-13,26,HEP,hip,sidelying hip abduction,L,2,10,,,,,,,logged as abduction; 'side-lying 2x10 each side' — adduction not specified
+2026-09-19,2026-09-13,26,HEP,hip,sidelying hip abduction,R,2,10,,,,,,,
+2026-09-19,2026-09-13,26,HEP,hip,prone hip extension,L,2,10,,,,,,,
+2026-09-19,2026-09-13,26,HEP,mobility,standing knee flexion AROM,L,2,10,,,,,,chair support,
+2026-09-19,2026-09-13,26,HEP,balance,single-leg balance + ball toss,L,2,,30 s,,,,,,
+2026-09-19,2026-09-13,26,HEP,gait,one-crutch walking,,,,,,,,,one crutch,normal gait practice
+2026-09-19,2026-09-13,26,HEP,gait,crutch-free walking,,,,,,,,,none,felt very good (self-report); PT instruction still two crutches / practice one
+2026-09-20,2026-09-20,27,home,mobility,heel prop,L,,,5-10 min,,,,,,mild stretch behind knee only
+2026-09-20,2026-09-20,27,home,mobility,heel slide,L,3,,30 s hold,,,,,,calf to thigh; no hard stop; no catch
+2026-09-20,2026-09-20,27,home,mobility,hamstring stretch,L,2,,30 s,,,,,,
+2026-09-20,2026-09-20,27,home,mobility,patellar glides,L,,,,,,,,,
+2026-09-20,2026-09-20,27,home,warmup,bike,,1,,12 min,,,,,,planned 7-8; knee looser as ride went on; easy
+2026-09-20,2026-09-20,27,home,knee,sit-to-stand with TKE band,bil,2,12,,,,red,18,,PT dose 24 in
+2026-09-20,2026-09-20,27,home,single-leg,step-up with TKE band,L,2,12,,,,red,6/8,none,reps as planned (not stated); pain ~1; unassisted at both heights
+2026-09-20,2026-09-20,27,home,single-leg,step-up,R,2,10,,,,,,,reps as planned (not stated)
+2026-09-20,2026-09-20,27,home,knee,standing TKE,L,2,15,,,,red,,,
+2026-09-20,2026-09-20,27,home,hip,lateral band walk,bil,2,,25 ft out/back,,,band,,,glutes; pain ~1; band above the knees
+2026-09-20,2026-09-20,27,home,posterior,bridge,bil,3,12,,,,,,,very easy
+2026-09-20,2026-09-20,27,home,mobility,standing knee flexion AROM,L,3,10,,,,,,chair support,
+2026-09-20,2026-09-20,27,home,calf,standing calf raise,bil,3,12,,,,,,,left-biased
+2026-09-20,2026-09-20,27,home,hip,prone hip extension,L,2,10,,,,,,,
+2026-09-20,2026-09-20,27,home,hip,sidelying hip abduction,L,2,10,,,,,,,
+2026-09-20,2026-09-20,27,home,hip,sidelying hip adduction,L,2,10,,,,,,,band added on one right-side exercise (unplanned)
+2026-09-20,2026-09-20,27,home,quad,prone quad set + NMES,L,,,,,,,,,NOT DONE (NMES unavailable)
+2026-09-20,2026-09-20,27,home,quad,straight-leg raise,L,3,10,,,,,,,easy; no lag
+2026-09-20,2026-09-20,27,home,balance,single-leg balance + ball toss,L,2,,30 s,,,,,,
+2026-09-20,2026-09-20,27,home,balance,single-leg balance on BOSU,L,1,,30 s,,,,,wall,progression beyond written plan; soft side
+2026-09-20,2026-09-20,27,home,gait,crutch-free walking,,,,,,,,,none,one-crutch practice skipped
+2026-09-20,2026-09-20,27,home,gait,curved treadmill walk,,,,5 min,,,,,none,no rails; planned 3 min w/ rails
+2026-09-22,2026-09-20,29,floor,mobility,heel prop,L,,,5 min,,,,,,
+2026-09-22,2026-09-20,29,floor,quad,quad set + NMES,L,1,14,,,,,,,same as usual; NMES level 4
+2026-09-22,2026-09-20,29,floor,mobility,heel slide,L,3,,30 s,,,,,,plus a few quick reps; flexion felt a little tighter
+2026-09-22,2026-09-20,29,floor,quad,straight-leg raise,L,2,10,,,,,,,felt extension could be better
+2026-09-22,2026-09-20,29,home,warmup,bike,,1,,12 min,,,,,,easy
+2026-09-22,2026-09-20,29,home,knee,sit-to-stand with TKE band,bil,,,,,,,,,done; dose not stated. Session ended here (time).
+2026-09-23,2026-09-20,30,floor,mobility,heel prop,L,,,10 min,,,,,,resting extension full
+2026-09-23,2026-09-20,30,floor,quad,quad set + NMES,L,1,14,,,,,,,good definition; NMES level 4
+2026-09-23,2026-09-20,30,floor,mobility,heel slide,L,2,15,3 s hold,,,,,,set 2 especially loose
+2026-09-23,2026-09-20,30,floor,mobility,hamstring stretch,L,2,,30 s,,,,,,
+2026-09-23,2026-09-20,30,floor,mobility,calf stretch + patellar glides,L,,,,,,,,,
+2026-09-23,2026-09-20,30,floor,quad,straight-leg raise,L,3,10,,,,,,,best to date
+2026-09-23,2026-09-20,30,home,warmup,bike,,1,,8 min,,,,,,1.95 mi; easy
+2026-09-23,2026-09-20,30,home,single-leg,step-up with TKE band,L,2,,,,,red,8,none,reps not stated; TKE squeeze at bottom; control good
+2026-09-23,2026-09-20,30,home,single-leg,forward step-down,L,2,8/10,,,,,3.5,,"BATCH. Set 1 very challenging, set 2 smoother. PT dose 4 in 2x12"
+2026-09-23,2026-09-20,30,home,knee,standing TKE,L,,,,,,,,,NOT DONE (integrated into the step-ups)
+2026-09-23,2026-09-20,30,home,hip,lateral band walk,bil,2,,25 ft,,,,,,
+2026-09-23,2026-09-20,30,home,posterior,bridge,bil,3,12,,,,,,,
+2026-09-23,2026-09-20,30,home,mobility,standing knee flexion AROM,L,3,10,,,,,,,"stretch behind knee, good"
+2026-09-23,2026-09-20,30,home,calf,standing calf raise,bil,3,12,,,,,,,left-biased; upper calf fatigue
+2026-09-23,2026-09-20,30,home,hip,"hip series (prone ext, sidelying abd, sidelying add)",bil,2,10,,,,,,,"strict, no resistance"
+2026-09-23,2026-09-20,30,home,balance,single-leg balance + ball toss,L,3,,30 s,,,,,,solid
+2026-09-23,2026-09-20,30,home,gait,curved treadmill walk,,,,2 min 36 s,,,,,none,0.10 mi; crutch-free
+2026-09-23,2026-09-20,30,home,single-leg,single-leg leg press,L,,,,,,,,,NOT DONE - no leg press at home; PT: BW/DB substitute OK
+2026-09-24,2026-09-20,31,floor,floor,daily floor as written,L,,,,,,,,,Upper B not done
+2026-09-25,2026-09-20,32,PT,warmup,bike,,1,,6 min,3,level,,,,clinic upright bike; seat 16
+2026-09-25,2026-09-20,32,PT,single-leg,single-leg leg press,L,2,12,,45,lb,,,,up from 40# on 9/18; SCLP 5/5
+2026-09-25,2026-09-20,32,PT,posterior,leg curl machine,L,2,12,,47.5,lb,,,,"new PT item; LFKF, seat 7"
+2026-09-25,2026-09-20,32,PT,knee,sit-to-stand with TKE band,bil,2,12,,,,red tube,24,,
+2026-09-25,2026-09-20,32,PT,single-leg,"medial step-down, eccentric lowering",L,2,12,,,,,6,,replaces forward 4 in
+2026-09-25,2026-09-20,32,PT,manual,manual flexion/extension stretching,L,,,,,,,,,
+2026-09-26,2026-09-20,33,HEP,quad,straight-leg raise,L,,,,,,,,,sets not stated; extremely easy
+2026-09-26,2026-09-20,33,HEP,mobility,heel slide,L,,,,,,,,,sets not stated; extremely easy
+2026-09-26,2026-09-20,33,HEP,gait,crutch-free walking,,,,all day,,,,,none,surgeon-cleared 9/25; felt fine; no swelling increase Sun AM; everyday
+2026-09-27,2026-09-27,34,home,gait,everyday walking/standing,,,,a lot (not quantified),,,,,none,natural gait practice
+2026-09-28,2026-09-27,35,floor,mobility,heel prop,L,,,14 min,,,,,,
+2026-09-28,2026-09-27,35,floor,quad,quad set + NMES,L,1,14,10 s,,,,,,during heel prop; NMES level 4
+2026-09-28,2026-09-27,35,floor,mobility,heel slide,L,1,10,,,,,,,pain 0; heel near thigh; flexion felt close to R
+2026-09-28,2026-09-27,35,floor,mobility,patellar glides,L,,,,,,,,,catch absent
+2026-09-28,2026-09-27,35,floor,posture,chin nod,,2,10,5 s,,,,,,set 1 felt high back of neck; smaller/lighter nod set 2 -> front of neck (target)
+2026-09-28,2026-09-27,35,floor,posture,90/90 hip lift,,3,,5 breaths,,,,,,
+2026-09-28,2026-09-27,35,floor,quad,straight-leg raise,L,1,10,,,,,,,reduced to lag-check dose
+2026-09-28,2026-09-27,35,home,warmup,bike,,1,,8 min,,,,,,2.01 mi; legs only; easy
+2026-09-28,2026-09-27,35,home,single-leg,single-leg sit-to-stand,L,2,8,,,,,23,R-foot assist,BATCH (new)
+2026-09-28,2026-09-27,35,home,single-leg,"medial step-down, eccentric lowering",L,2,12,,,,,6,,BATCH (new at home). Final inch of lowering very challenging; felt good
+2026-09-28,2026-09-27,35,home,single-leg,step-up with TKE band,L,2,12,,,,red,8,none,felt easy; faster concentric + R knee drive to ~90 deg (unplanned speed variable)
+2026-09-28,2026-09-27,35,home,single-leg,step-up,R,2,10,,,,,8,,
+2026-09-28,2026-09-27,35,home,knee,sit-to-stand with TKE band,bil,,,,,,,,,NOT DONE (single-leg sit-to-stand done instead)
+2026-09-28,2026-09-27,35,home,calf,standing calf raise,bil,3,12,,0/15/25,lb,,,,unplanned load progression sets 2-3; 25 lb about right; fatigue final reps; left-biased; a DB in the left hand
+2026-09-28,2026-09-27,35,home,knee,standing TKE,L,2,15,,,,red,,,set 2 farther from anchor (more tension); easy
+2026-09-28,2026-09-27,35,home,balance,single-leg balance + ball toss,L,3,,45 s,,,,,,firm ground; wall throws
+2026-09-30,2026-09-27,37,floor,mobility,heel prop,L,,,7 min,,,,,,with NMES
+2026-09-30,2026-09-27,37,floor,quad,quad set + NMES,L,1,14,10 s,,,,,,
+2026-09-30,2026-09-27,37,floor,mobility,heel slide,L,1,10,,,,,,,slight tightness back of knee; easy
+2026-09-30,2026-09-27,37,floor,mobility,patellar glides,L,,,,,,,,,normal
+2026-09-30,2026-09-27,37,floor,posture,chin nod (in 90/90 position),,1,10,5 s,,,,,,90/90 hip lift not done as its own drill; setup corrected in thread
+2026-09-30,2026-09-27,37,floor,quad,straight-leg raise,L,1,10,,,,,,,knee straight throughout
+2026-09-30,2026-09-27,37,home,warmup,bike,,1,,8 min,,,,,,2.0 mi; knee looser after; easy
+2026-09-30,2026-09-27,37,home,single-leg,"medial step-down, eccentric lowering",L,2,12,,,,,6/7,,height up set 2 (unplanned); no pain; no anterior symptoms; mechanics good
+2026-09-30,2026-09-27,37,home,single-leg,single-leg sit-to-stand,L,1,12,,,,,24,R-foot light assist,added to Session B (unplanned)
+2026-09-30,2026-09-27,37,home,posterior,single-leg bridge,L,2,8,,,,,,,"BATCH (new). Hamstring; back-of-knee tension set 1, fine set 2"
+2026-09-30,2026-09-27,37,home,posterior,single-leg bridge,R,2,8,,,,,,,
+2026-09-30,2026-09-27,37,home,posterior,Romanian deadlift (DB),bil,2,10,,15/25,lb,,,,BATCH (new). Planned bodyweight; no knee pain
+2026-09-30,2026-09-27,37,home,posterior,standing hamstring curl,L,3,10,,,,band,,,BATCH (load added)
+2026-09-30,2026-09-27,37,home,hip,lateral band walk,bil,2,,25 ft out/back,,,,,,
+2026-09-30,2026-09-27,37,home,hip,sidelying hip abduction,L,2,12,,,,,,,
+2026-09-30,2026-09-27,37,home,hip,sidelying hip adduction,L,2,12,,,,,,,
+2026-09-30,2026-09-27,37,home,hip,prone hip extension,L,2,12,,,,,,,
+2026-09-30,2026-09-27,37,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,all 3 sets on BOSU (planned set 3 only)
+2026-09-30,2026-09-27,37,home,gait,crutch-free walking,,,,,,,,,none,"after recovery work; gait ""perfect"" (self); trainer agreed"
+2026-10-01,2026-09-27,38,PT,warmup,bike,,1,,6 min,3,level,,,,clinic upright bike; seat 16
+2026-10-01,2026-09-27,38,PT,knee,sit-to-stand with TKE band,bil,2,12,,,,red JC,24,,
+2026-10-01,2026-09-27,38,PT,knee,wall squat,bil,2,10,,,,,,,new PT item; depth not recorded
+2026-10-01,2026-09-27,38,PT,single-leg,"heel tap, slow lowering",L,2,10,,,,,4,,new PT item
+2026-10-01,2026-09-27,38,PT,mobility,step hamstring stretch,L,2,,30 s,,,,,,new PT item
+2026-10-01,2026-09-27,38,PT,single-leg,forward step-down,L,2,10,,,,,6,,replaces medial 6 in (too easy per patient); still challenging
+2026-10-01,2026-09-27,38,PT,single-leg,single-leg leg press,L,2,10,,55,lb,,,,up from 45# on 9/25; SCLP 5/5
+2026-10-01,2026-09-27,38,PT,posterior,leg curl machine,L,2,12,,47.5,lb,,,,"unchanged; LFKF, seat 7"
+2026-10-01,2026-09-27,38,PT,quad,isometric knee extension,L,10,1,10 s,,,,,,new PT item; first loaded open-chain quad work; patient: hardest and favorite; at 90 deg; load not recorded
+2026-10-01,2026-09-27,38,PT,mobility,weighted heel prop,L,1,,5 min,8,lb,,,,new PT item; ext 2 deg hyperext measured after
+2026-10-01,2026-09-27,38,PT,quad,straight-leg raise,L,1,10,,,,,,,
+2026-10-03,2026-09-27,40,home,gait,everyday walking/standing,,,,~3 h (est),,,,,none,felt fine
+2026-10-04,2026-10-04,41,home,gait,everyday walking/standing,,,,~3 h,,,,,none,nothing else done
+2026-10-05,2026-10-04,42,home,gait,everyday walking/standing,,,,about half the day,,,,,none,Session A skipped
+2026-10-06,2026-10-04,43,floor,mobility,weighted heel prop,L,1,,7 min,10,lb,,,,no NMES; PT dose 8 lb; time of day not stated
+2026-10-06,2026-10-04,43,home,warmup,bike,,1,,8 min,,,,,,1.93 mi; legs only; easy
+2026-10-06,2026-10-04,43,home,quad,straight-leg raise,L,1,10,,,,,,,no lag
+2026-10-06,2026-10-04,43,home,knee,standing TKE,L,2,15,,,,band,,,full lockout
+2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,L,2,12,,,,,18,slight R-foot assist,BATCH: 24 -> 18 in in one step (planned 24 in)
+2026-10-06,2026-10-04,43,home,single-leg,single-leg sit-to-stand,R,2,12,,,,,18,,mirrored
+2026-10-06,2026-10-04,43,home,single-leg,"heel tap, slow lowering",L,2,10,,,,,5,,BATCH: first at home; PT dose 4 in
+2026-10-06,2026-10-04,43,home,single-leg,step-up,L,3,10,,15/25/25,lb,,8,,BATCH: DBs added and band off (planned bodyweight + red band); DBs; no band
+2026-10-06,2026-10-04,43,home,single-leg,step-up,R,3,10,,15/25/25,lb,,8,,mirrored; DBs
+2026-10-06,2026-10-04,43,home,single-leg,split squat,L,2,8,,,,,,unassisted,BATCH (new); planned hand support
+2026-10-06,2026-10-04,43,home,single-leg,split squat,R,2,8,,,,,,unassisted,
+2026-10-06,2026-10-04,43,home,knee,sit-to-stand with TKE band,bil,,,,,,,,,NOT DONE
+2026-10-06,2026-10-04,43,home,knee,wall squat,bil,2,10,,,,,,,BATCH: first at home; depth not recorded
+2026-10-06,2026-10-04,43,home,quad,isometric knee extension,L,10,1,10 s,,,,,,"BATCH: first at home; maximal effort; no pain; at 90 deg, strap; strap"
+2026-10-06,2026-10-04,43,home,calf,standing calf raise,bil,3,12,,25,lb,,,,BATCH (load on all sets); left-biased; a DB in the left hand
+2026-10-06,2026-10-04,43,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,reported completed; dose as planned
+2026-10-07,2026-10-04,44,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,PT dose 8 lb
+2026-10-07,2026-10-04,44,floor,quad,quad set + NMES,L,1,14,10 s,,,,,,"~7 min; after the heel prop, not during"
+2026-10-07,2026-10-04,44,floor,mobility,heel slide,L,,,,,,,,,dose not stated
+2026-10-08,2026-10-04,45,floor,mobility,heel slide,L,,,,,,,,,AM before PT; dose not stated
+2026-10-08,2026-10-04,45,PT,warmup,bike,,1,,6 min,5,level,,,,up from level 3; clinic upright bike; seat 16
+2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM,R,1,1,,14,plates,,,,PT functional strength test; plate weight not recorded; CLP
+2026-10-08,2026-10-04,45,PT,test,single-leg leg press 1RM,L,1,1,,9,plates,,,,"L/R = 64%; whole-leg test, not the dynamometer; CLP"
+2026-10-08,2026-10-04,45,PT,single-leg,single-leg leg press,L,,,,6,plates,,,,"sets/reps not recorded; left only; CLP, seat 4"
+2026-10-08,2026-10-04,45,PT,calf,standing calf raise,bil,2,15,,35,lb,,,,new PT item
+2026-10-08,2026-10-04,45,PT,hip,standing bird dog,,2,15,,8,lb,,,,new PT item; standing (patient clarification); sides not recorded; no kneeling; KB
+2026-10-08,2026-10-04,45,PT,single-leg,step-up with opposite knee drive,L,2,15,,,,,12,,new PT item; up from 8 in
+2026-10-08,2026-10-04,45,PT,hip,multi-hip abduction,bil,2,15,,4,plates,,,,new PT item; alternating sides; CMH
+2026-10-08,2026-10-04,45,PT,hip,multi-hip extension,bil,2,15,,4,plates,,,,new PT item; alternating sets; CMH
+2026-10-08,2026-10-04,45,PT,hip,"multi-hip flexion, knee straight",bil,2,15,,4,plates,,,,new PT item; alternating sets; CMH
+2026-10-08,2026-10-04,45,PT,balance,"double-leg stance on wobble board, eyes closed",bil,1,,1 min each way,,,,,,new PT item; wobble board per patient (10/11)
+2026-10-09,2026-10-04,46,conditioning,conditioning,bike,,1,,15 min,,,,,,3.47 mi; off-day conditioning (plan Phase 3); legs only; easy
+2026-10-09,2026-10-04,46,upperA,warmup,upper warm-up,,,,,,,,,,"as written; completed; band pull-apart, thoracic extension"
+2026-10-09,2026-10-04,46,upperA,push,barbell bench press,,2,8,,105,lb,,,,felt pretty tough; Block 0 dose 3 x 8-10 @ RPE 6
+2026-10-09,2026-10-04,46,upperA,pull,one-arm cable lat pulldown,,2,8,,80,lb,,,,per side; cable (planned seated band pulldown)
+2026-10-09,2026-10-04,46,upperA,push,standing one-arm landmine press,,2,8,,25,lb,,,,per side; standing (planned seated until upper session 3); plus the bar
+2026-10-09,2026-10-04,46,upperA,pull,chest-supported DB row,,2,10,,15,lb,,,,
+2026-10-09,2026-10-04,46,floor,mobility,weighted heel prop,L,1,,,,,,,,done; time and weight not stated
+2026-10-11,2026-10-11,48,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-11,2026-10-11,48,home,warmup,bike,,1,,8 min,,,,,,2.06 mi; legs only; easy
+2026-10-11,2026-10-11,48,home,single-leg,forward step-down,L,2,10,,,,,6.5,,first at home (PT dose 6 in); controlled (self)
+2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,L,2,12,,,,,20,none,first fully unassisted; box 20 in (planned 18 in); challenging
+2026-10-11,2026-10-11,48,home,single-leg,single-leg sit-to-stand,R,2,12,,,,,20,none,
+2026-10-11,2026-10-11,48,home,posterior,Romanian deadlift (DB),bil,3,10,,45,lb,,,,up from 25 lb DBs 2x10 (9/30): +80% and a third set; felt easy
+2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,L,2,8,,,,,,,"NEW; short range; stepping left good, settled by the end"
+2026-10-11,2026-10-11,48,home,single-leg,lateral lunge,R,2,8,,,,,,,short range
+2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl,L,1,10,,20,lb,,,,ankle strap; replaces band curl; cable
+2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl,L,2,10,,30,lb,,,,cable
+2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl,R,1,10,,20,lb,,,,ankle strap; cable
+2026-10-11,2026-10-11,48,home,posterior,standing hamstring curl,R,2,10,,30,lb,,,,cable
+2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,L,3,8,,,,,,,
+2026-10-11,2026-10-11,48,home,posterior,single-leg bridge,R,3,8,,,,,,,
+2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),L,2,10,,20,lb,,,,planned 2x15 light
+2026-10-11,2026-10-11,48,home,hip,standing cable hip 4-way (abd/add/ext/flex),R,2,10,,20,lb,,,,
+2026-10-11,2026-10-11,48,home,hip,standing bird dog,,2,10,,15,lb,,,,PT dose 8 lb 2x15
+2026-10-11,2026-10-11,48,home,balance,single-leg balance + ball toss on BOSU,L,,,45 s,,,,,,sets not stated
+2026-10-11,2026-10-11,48,home,balance,"double-leg stance on wobble board, eyes closed",bil,,,,,,,,,NOT DONE (no wobble board at home; home version set 10/12)
+2026-10-11,2026-10-11,48,home,cooldown,posture cooldown,,,,,,,,,,"NOT DONE (planned: 90/90 hip lift, dead bug, hip flexor stretch, chin nods)"
+2026-10-12,2026-10-11,49,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-12,2026-10-11,49,conditioning,conditioning,bike,,1,,18 min,,,,,,distance not recorded; off-day conditioning (plan Phase 3); legs only; easy
+2026-10-12,2026-10-11,49,upperB,warmup,upper warm-up,,,,,,,,,,"as written; band pull-aparts added as an extra; thoracic extension 45 s, doorway pec sequence 1 round"
+2026-10-12,2026-10-11,49,upperB,warmup,face pull with external rotation,,2,15,,50,lb,,,,"standing (planned seated, light, for upper sessions 1-2); a few reps left"
+2026-10-12,2026-10-11,49,upperB,push,incline barbell press,,3,5/8/5,,95,lb,,,,"last set ~2 RIR; first exposure, planned 3 x 8-10 at 3-4 RIR"
+2026-10-12,2026-10-11,49,upperB,pull,one-arm chin-grip cable pulldown,,3,8,,80,lb,,,,per side; one-arm in place of the planned two-arm
+2026-10-12,2026-10-11,49,upperB,pull,chest-supported DB row,,2,8,,15,lb,,,,"C tri-set, 2 of 3 rounds"
+2026-10-12,2026-10-11,49,upperB,push,seated neutral-grip DB press,,2,8,,20,lb,,,,"C tri-set, 2 of 3 rounds"
+2026-10-12,2026-10-11,49,upperB,pull,chest-supported DB reverse fly,,2,10,,5,lb,,,,"C tri-set, 2 of 3 rounds; Y-raise in the plan from the next Upper B"
+2026-10-12,2026-10-11,49,upperB,finisher,tissue & trunk finisher,,,,,,,,,,"as written, except the Copenhagen; tibialis raise, banded eversion, side plank from the feet"
+2026-10-12,2026-10-11,49,upperB,finisher,"Copenhagen plank, short lever",R,,,,,,,,,"NOT DONE: skipped, felt redundant after the side planks"
+2026-10-13,2026-10-11,50,home,warmup,bike,,1,,8 min,,,,,,2.07 mi; legs only; easy
+2026-10-13,2026-10-11,50,home,single-leg,single-leg sit-to-stand,L,2,12,,,,,18,slight assist,planned 18 in unassisted; needed slight assistance; controlled eccentric
+2026-10-13,2026-10-11,50,home,single-leg,single-leg sit-to-stand,R,2,12,,,,,18,,"mirrored, unassisted"
+2026-10-13,2026-10-11,50,home,single-leg,step-up with opposite knee drive,L,2,15,,,,,18,,"OFF-PLAN HEIGHT: planned 12 in (PT dose, first at home); last week 8 in with 25 lb DBs; felt good and easy"
+2026-10-13,2026-10-11,50,home,single-leg,step-up with opposite knee drive,R,2,15,,,,,18,,mirrored
+2026-10-13,2026-10-11,50,home,quad,cable seated knee extension,L,2,15,,20,lb,,,,NEW. Set 1 90-45 deg as planned; OFF-PLAN RANGE: set 2 taken to full extension because it felt easy; very easy; the lightest plate
+2026-10-13,2026-10-11,50,home,quad,isometric knee extension,L,10,1,10 s,,,,,,mid-range flexion (planned 90 deg); all 10 holds; fixed cable
+2026-10-13,2026-10-11,50,home,cooldown,posture cooldown,,,,~3 min,,,,,,"as written for a short day; short version: 90/90 hip lift, chin nods"
+2026-10-13,2026-10-11,50,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-14,2026-10-11,51,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-14,2026-10-11,51,home,push,push-up,bil,1,10,,,,,,,"unplanned extra, for fun"
+2026-10-15,2026-10-11,52,PT,warmup,bike,,1,,6 min,5,level,,,,LFUC; same as 10/8; clinic upright bike; seat 16
+2026-10-15,2026-10-11,52,PT,quad,cable TKE,,2,10,,3.5,plates,,,,new PT item; CC(n); side not stated
+2026-10-15,2026-10-11,52,PT,quad,goblet squat,bil,2,10,,15/25,lb,,,,new PT item; one set at each weight
+2026-10-15,2026-10-11,52,PT,single-leg,heel tap,,2,10,,,,,6,,side not stated
+2026-10-15,2026-10-11,52,PT,single-leg,step-up with opposite knee drive,L,2,10,,,,,12,,PT cue: no push-off with the right leg; PT dose 12 in (home ran 18 in on 10/13)
+2026-10-15,2026-10-11,52,PT,single-leg,forward lunge,bil,2,10,,,,,,,new PT item; each side
+2026-10-15,2026-10-11,52,PT,gait,banded backward walk,,2,5,,,,,,,"new PT item; back as far as the band allows, then slowly forward (patient); GJC"
+2026-10-15,2026-10-11,52,PT,quad,knee extension machine,,2,10,,10,lb,,,,"new PT item; full range, both legs up; set 2 lowered with the left only, slow (patient); CKE 4/3"
+2026-10-15,2026-10-11,52,PT,single-leg,single-leg leg press,L,2,10,,70,lb,,,,selectorized; by weight (10/8 was plates); SCLP 5/5
+2026-10-15,2026-10-11,52,PT,posterior,single-leg leg curl machine,,2,10,,25/32.5,lb,,,,"new PT item; side not stated; LFKF, seat 7"
+2026-10-15,2026-10-11,52,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-17,2026-10-11,54,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,
+2026-10-17,2026-10-11,54,conditioning,conditioning,bike,,1,,21 min,,,,,,assault bike; off-day conditioning (plan Phase 3); legs only; easy
+2026-10-17,2026-10-11,54,PT,test,isometric quad strength test,bil,2,,,,,,,,"two rounds a side; R 70.4/77.2 lb, L 68.0/69.8 lb (measurements.csv, 2026-10-17_PT11); torque monitor, peak"
+2026-10-17,2026-10-11,54,upperA,warmup,upper warm-up,,,,,,,,,,"as written; arms-only air bike skipped (short on time); thoracic extension 45 s, doorway pec sequence 1 round"
+2026-10-17,2026-10-11,54,upperA,warmup,face pull with external rotation,,2,15,,50,lb,,,,standing
+2026-10-17,2026-10-11,54,upperA,push,seated med-ball chest pass,,4,3,,8,lb,,,,"first time; max intent, full reset each rep"
+2026-10-17,2026-10-11,54,upperA,push,barbell bench press,,3,8,,105,lb,,,,"felt pretty easy (10/9: 105 x 2 x 8 felt pretty tough); feet flat, no leg drive"
+2026-10-17,2026-10-11,54,upperA,pull,band-assisted pull-up,,3,5,,,,band,,,"in place of the one-arm cable pulldown (assisted pull-ups allowed from session 3); challenging, good quality"
+2026-10-17,2026-10-11,54,upperA,push,standing one-arm landmine press,,3,8,,25,lb,,,,"per side; definitely challenging, especially the left side; all reps done; plus the bar"
+2026-10-17,2026-10-11,54,upperA,pull,chest-supported DB row,,3,10,,15,lb,,,,felt pretty easy
+2026-10-17,2026-10-11,54,upperA,finisher,tissue & trunk finisher,,,,,,,,,,"as written; tibialis raise 2 x 15, banded eversion 2 x 15 each ankle, side plank from the feet 2 x 20-30 s/side"
+2026-10-17,2026-10-11,54,upperA,finisher,"Copenhagen plank, short lever",R,2,,20 s,,,,,,as written
+2026-10-17,2026-10-11,54,upperA,finisher,"Copenhagen plank, short lever",L,2,,20 s,,,,,,PT 11 (10/17): Copenhagen okay on both sides
+2026-10-18,2026-10-18,55,floor,mobility,weighted heel prop,L,1,,10 min,10,lb,,,,"weekly check (from 10/18), before the session"
+2026-10-18,2026-10-18,55,home,warmup,bike,,1,,8 min,,,,,,1.76 mi; legs only; easy
+2026-10-18,2026-10-18,55,home,single-leg,forward step-down,L,3,10,,,,,6.5,,"third set as planned; challenging; slight hip drop at the bottom, so not fully clean: hold 3 x 10 until control is consistent"
+2026-10-18,2026-10-18,55,home,single-leg,forward step-down,R,3,10,,,,,6.5,,mirrored
+2026-10-18,2026-10-18,55,home,single-leg,single-leg sit-to-stand,L,3,12,,,,,20,,"planned 18 in x 2 x 12; 20 in used (equipment), so 3 x 12 at 20 in, the ladder step; unassisted, slightly shaky, smooth"
+2026-10-18,2026-10-18,55,home,single-leg,single-leg sit-to-stand,R,3,12,,,,,20,,"mirrored, unassisted"
+2026-10-18,2026-10-18,55,home,posterior,Romanian deadlift (DB),bil,3,10,,50,lb,,,,"planned step from 45; sets 1-2 effort 7/10, ~4 reps left; clean form; hamstrings, no knee or back discomfort"
+2026-10-18,2026-10-18,55,home,hip,lateral lunge,L,3,8,,,,,,,third set as planned; OFF-PLAN RANGE: set 3 taken to near full range because it felt easy (planned the same short range)
+2026-10-18,2026-10-18,55,home,hip,lateral lunge,R,3,8,,,,,,,"set 3 near full range, as the left"
+2026-10-18,2026-10-18,55,home,posterior,standing hamstring curl,L,3,10,,40/50/60,lb,,,,"OFF-PLAN LOAD: planned 30 lb x 3; set 1 40 very easy, set 2 50, set 3 60 appropriately challenging; ankle strap; cable"
+2026-10-18,2026-10-18,55,home,posterior,standing hamstring curl,R,3,10,,40/50/60,lb,,,,as the left; ankle strap; cable
+2026-10-18,2026-10-18,55,home,posterior,single-leg bridge,L,3,10,,,,,,,as planned (8 to 10 reps)
+2026-10-18,2026-10-18,55,home,posterior,single-leg bridge,R,3,10,,,,,,,
+2026-10-18,2026-10-18,55,home,hip,standing cable hip 4-way (abd/add/ext/flex),,,,,,,,,,NOT DONE (time); planned 20 lb x 2 x 15 each leg
+2026-10-18,2026-10-18,55,home,posterior,standing bird dog,,,,,,,,,,NOT DONE (time); planned 15 lb x 2 x 15
+2026-10-18,2026-10-18,55,home,balance,single-leg balance + ball toss on BOSU,,,,,,,,,,NOT DONE (time); planned 3 x 45 s and 1 min eyes closed
+2026-10-18,2026-10-18,55,home,cooldown,posture cooldown,,,,,,,,,,"90/90 hip lift, dead bug and hip flexor stretch not done (time); chin nod reps not stated; short: chin nods only"
+2026-10-19,2026-10-18,56,conditioning,conditioning,bike,,1,,24 min,,,,,,6.03 mi; legs only; easy
+2026-10-19,2026-10-18,56,upperB,warmup,upper warm-up,,,,,,,,,,"as written; thoracic extension on the roller, doorway pec sequence 1 round"
+2026-10-19,2026-10-18,56,upperB,warmup,face pull with external rotation,,2,15,,50,lb,,,,standing
+2026-10-19,2026-10-18,56,upperB,push,incline barbell press,,3,10,,85,lb,,,,one step down from 95 (10/12); felt right; ~4-5 reps in reserve on set 1
+2026-10-19,2026-10-18,56,upperB,pull,one-arm chin-grip cable pulldown,,3,10,,80,lb,,,,per side; up from 8 reps (10/12)
+2026-10-19,2026-10-18,56,upperB,pull,one-arm DB row,,3,8,,25,lb,,,,"NEW; per side, both feet on the floor; about right, maybe a tad light"
+2026-10-19,2026-10-18,56,upperB,push,seated neutral-grip DB press,,3,8,,20,lb,,,,"third round as planned; rested 60-90 s before; flat bench, no backrest; no rib flare or low-back arch"
+2026-10-19,2026-10-18,56,upperB,upper,prone incline Y-raise,,3,10,,5,lb,,,,"replaces the reverse fly (Add-On, 10/12)"
+2026-10-19,2026-10-18,56,upperB,finisher,tissue & trunk finisher,,,,,,,,,,"as written; tibialis raise 2 x 15, banded eversion 2 x 15 each ankle, side plank from the feet 2 x 25 s/side"
+2026-10-19,2026-10-18,56,upperB,finisher,"Copenhagen plank, short lever",R,2,,20 s,,,,,,as written
+2026-10-19,2026-10-18,56,upperB,finisher,"Copenhagen plank, short lever",L,2,,20 s,,,,,,PT 11 (10/17): both sides OK
+2026-10-21,2026-10-18,58,home,warmup,bike,,1,,8 min,,,,,,2.06 mi; legs only; easy
+2026-10-21,2026-10-18,58,home,warmup,cable TKE,,2,10,,60,lb,,,,optional warm-up item; side not stated
+2026-10-21,2026-10-18,58,home,quad,goblet squat,bil,2,10,,40,lb,,18,,"OFF-PLAN LOAD: planned 25 lb DB x 2 x 10 (PT dose, first at home); paused on the box every rep; to a box"
+2026-10-21,2026-10-18,58,home,quad,cable seated knee extension,L,2,12,,40,lb,,,both legs up,"OFF-PLAN LOAD: planned 20 lb; lifted with both legs, lowered with the left alone ~3 s; front-of-knee pain 0; full range"
+2026-10-21,2026-10-18,58,home,quad,cable seated knee extension,R,2,12,,40,lb,,,,right alone both phases; full range
+2026-10-21,2026-10-18,58,home,single-leg,rear-foot elevated split squat,L,2,8,,,,,,,NEW (first time); rear foot on a 7.5 in box (planned the 6.5 in step)
+2026-10-21,2026-10-18,58,home,single-leg,rear-foot elevated split squat,R,2,8,,,,,,,"as the left, 7.5 in box"
+2026-10-21,2026-10-18,58,home,posterior,standing hamstring curl,L,3,10,,60/60/70,lb,,,,"OFF-PLAN LOAD: planned 3 x 10 @ 50 lb; 60 easy on sets 1-2, 70 on set 3; ankle strap; superset with heel raise, ~60 s rest; cable"
+2026-10-21,2026-10-18,58,home,posterior,standing hamstring curl,R,3,10,,60/60/70,lb,,,,as the left; ankle strap; cable
+2026-10-21,2026-10-18,58,home,calf,standing calf raise,bil,3,15,,40,lb,,,,OFF-PLAN LOAD: planned 35 lb DBs; all 3 sets done
+2026-10-21,2026-10-18,58,home,single-leg,step-up with opposite knee drive,L,2,15,,,,,,,as planned; no push-off from the trailing leg
+2026-10-21,2026-10-18,58,home,single-leg,step-up with opposite knee drive,R,2,15,,,,,,,as planned
+2026-10-21,2026-10-18,58,home,single-leg,"heel tap, slow lowering",L,2,10,,,,,7.5,,"planned 6.5 in forward; done on a 7.5 in box, lateral (sideways) variation"
+2026-10-21,2026-10-18,58,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,"as planned, 30 s rest; the 1-min eyes-closed drill NOT DONE (time)"
+2026-10-21,2026-10-18,58,home,knee,isometric knee extension,L,,,,,,,,,"NOT DONE (time); planned 10 x 10 s max effort; at 90 deg, strap"
+2026-10-21,2026-10-18,58,home,cooldown,posture cooldown,,,,,,,,,,NOT DONE (time)
+2026-10-22,2026-10-18,59,conditioning,conditioning,bike,,1,,27 min,,,,,,vacation gym; distance not reported; legs only; easy
+2026-10-22,2026-10-18,59,upperA,warmup,upper warm-up,,,,,,,,,,"as written; thoracic extension on the roller 45 s, doorway pec sequence 1 round"
+2026-10-22,2026-10-18,59,upperA,warmup,face pull with external rotation,,2,15,,32.5,lb,,,,"standing; vacation gym machine, not comparable to home (10/19: 50 lb); true stack"
+2026-10-22,2026-10-18,59,upperA,push,seated med-ball chest pass,,,,,,,,,,NOT DONE: no med ball at the vacation gym
+2026-10-22,2026-10-18,59,upperA,push,chest press machine,,3,10,,70,lb,,,,SUB for bench 110 x 3 x 8 (vacation gym); machine load not comparable; seated
+2026-10-22,2026-10-18,59,upperA,pull,lat pulldown,,3,10,,50,lb,,,,SUB for band-assisted pull-up 3 x 6 (vacation gym); machine load not comparable
+2026-10-22,2026-10-18,59,upperA,push,standing DB neutral-grip press,,3,10,,22.5/25/25,lb,,,,SUB for standing landmine press 25 + bar x 3 x 8/side (vacation gym)
+2026-10-22,2026-10-18,59,upperA,pull,diverging seated row machine,,3,10,,50,lb,,,,SUB for chest-supported DB row 20s x 3 x 10 (vacation gym); machine load not comparable
+2026-10-22,2026-10-18,59,upperA,finisher,seated tibialis raise,,,,,,,,,,"done at home after the gym; dose not reported (plan 2 x 15, both ankles)"
+2026-10-22,2026-10-18,59,upperA,finisher,"Copenhagen plank, short lever",,,,,,,,,,NOT DONE (planned 2 x 25 s/side); both sides
+2026-10-22,2026-10-18,59,upperA,finisher,tissue & trunk finisher,,,,,,,,,,NOT DONE (planned: the banded eversion and the side plank; the tibialis raise was done at home and the Copenhagen has its own row)
+2026-10-23,2026-10-18,60,home,warmup,bike,,1,,8 min,,,,,,vacation gym; legs only
+2026-10-23,2026-10-18,60,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,
+2026-10-23,2026-10-18,60,home,balance,"double-leg stance on BOSU, eyes closed",,,,,,,,,,NOT DONE: no safe rack or wall spot at the vacation gym
+2026-10-23,2026-10-18,60,home,single-leg,forward step-down,L,3,10,,,,,6,,left only; aerobic step; hip drop not reported
+2026-10-23,2026-10-18,60,home,single-leg,single-leg sit-to-stand,bil,2,12,,,,,17.5,,"each leg, unassisted; first time at bench height (home: 20 in); standard bench, ~17-18 in"
+2026-10-23,2026-10-18,60,home,posterior,Romanian deadlift (DB),,3,8,,55,lb,,,,as planned (up from 50 x 3 x 10)
+2026-10-23,2026-10-18,60,home,single-leg,lateral lunge,bil,3,8,,,,,,,sets 1-2 full range; set 3 shortened for mild discomfort (location and 0-10 not reported)
+2026-10-23,2026-10-18,60,home,posterior,single-leg leg curl machine,bil,3,10,,40,lb,,,,SUB for the cable curl (vacation gym); each leg; ~3-4 RIR; machine load not comparable to the cable (70); vacation gym machine (seated/lying)
+2026-10-23,2026-10-18,60,home,hip,seated hip abduction machine,bil,2,15,,85,lb,,,,SUB for the standing cable abduction 20 lb (vacation gym); both legs at once; not comparable
+2026-10-23,2026-10-18,60,home,calf,seated calf raise,L,3,12,,,,,,,NEW; left only; pad above the kneecap; machine; lightest setting
+2026-10-23,2026-10-18,60,home,posterior,single-leg bridge,,,,,,,,,,"NOT DONE: not reported (planned at home, 3 x 10 each side)"
+2026-10-23,2026-10-18,60,home,cooldown,posture cooldown,,,,,,,,,,"NOT DONE: not reported (planned at home, ~6 min); 90/90 hip lift, chin nods, breathing"
+2026-10-23,2026-10-18,60,home,push,chest press machine,,1,,,,,,,,"for good measure; load and reps not reported; EXTRA, not in Session B"
+2026-10-27,2026-10-25,64,conditioning,conditioning,bike,,1,,30 min,,,,,,7.78 mi; legs only; easy
+2026-10-27,2026-10-25,64,upperB,warmup,upper warm-up,,,,,,,,,,"as written; thoracic extension on the roller, doorway pec sequence"
+2026-10-27,2026-10-25,64,upperB,warmup,face pull with external rotation,,2,15,,50,lb,,,,
+2026-10-27,2026-10-25,64,upperB,push,speed bench,,1,13,,65,lb,,,,"Block 1, first session; bar did not slow by rep 13 (plan: sets of 3)"
+2026-10-27,2026-10-25,64,upperB,push,speed bench,,2,3,,85,lb,,,,bar did not slow; 3 sets run of the plan 5
+2026-10-27,2026-10-25,64,upperB,push,incline barbell press,,1,10,,85,lb,,,,alternated with the pulldown
+2026-10-27,2026-10-25,64,upperB,push,incline barbell press,,1,10,,90,lb,,,,up 5 lb on the second set
+2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,1,10,,80,lb,,,,per side (assumed)
+2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,1,8,,90,lb,,,,per side
+2026-10-27,2026-10-25,64,upperB,pull,one-arm chin-grip cable pulldown,,2,8,,100,lb,,,,"per side (assumed, as the 90 set)"
+2026-10-27,2026-10-25,64,upperB,pull,one-arm DB row,,3,8,,25,lb,,,,"per side; way easy, not challenging"
+2026-10-27,2026-10-25,64,upperB,push,seated neutral-grip DB press,,3,8,,25,lb,,,,up from 20s (10/19)
+2026-10-27,2026-10-25,64,upperB,upper,prone incline Y-raise,,3,10,,5,lb,,,,
+2026-10-27,2026-10-25,64,upperB,finisher,tissue & trunk finisher,,,,,,,,,,NOT DONE; the Copenhagen step (2 x 25 s) still owed; incl. Copenhagen short lever 2 x 25 s/side
+2026-10-28,2026-10-25,65,home,test,single-leg squat test,L,1,12,,,,,,,"FIRST TEST; first 4 clean and unassisted, the other 8 with very light assistance; box height not stated; pain 0"
+2026-10-28,2026-10-25,65,home,test,single-leg squat test,R,1,12,,,,,,,all 12 clean and unassisted; pain 0
+2026-10-28,2026-10-25,65,home,warmup,bike,,1,,8 min,,,,,,"2.00 mi, flat; legs only; easy"
+2026-10-28,2026-10-25,65,home,balance,single-leg balance + ball toss on BOSU,L,2,,45 s,,,,,,as planned
+2026-10-28,2026-10-25,65,home,plyo,small double-leg pogo hops,bil,2,15,,,,,,,"FIRST IMPACT. OFF-PLAN VOLUME: planned 2 x 5 (the plan: 5-8 contacts a set); felt very easy; in place, straight up and down; pain 0; landings quiet; impact rung 1"
+2026-10-28,2026-10-25,65,home,plyo,single-leg pogo hops,L,2,5,,,,,,,"OFF-PLAN: not on the impact ladder (rung 1 is double-leg; single-leg pogos are the plan Phase 5 impact-tolerance item); extremely small, just off the ground, paused and reset between hops; pain 0"
+2026-10-28,2026-10-25,65,home,plyo,single-leg pogo hops,R,2,5,,,,,,,OFF-PLAN as the left; pain 0
+2026-10-28,2026-10-25,65,home,warmup,cable TKE,,2,10,,70,lb,,,,optional warm-up item; up from 60 (10/21); side not stated
+2026-10-28,2026-10-25,65,home,quad,goblet squat,bil,3,10,,45/45/50,lb,,18,,"OFF-PLAN LOAD: planned 40 x 3 x 10 (the third set was the one change); 3 s descent, paused on the box, immediate drive up; pain 0; to a box"
+2026-10-28,2026-10-25,65,home,quad,cable seated knee extension,L,3,12,,40,lb,,,none,"off its hold (Nick 10/28): the third set as planned; CHANGE NOT PLANNED: lifted AND lowered with the left alone (planned: both legs up, left down over 3 s); 3 s lowering; pain 0; full range"
+2026-10-28,2026-10-25,65,home,quad,cable seated knee extension,R,3,12,,40,lb,,,,right alone both phases; 3 s lowering; pain 0; full range
+2026-10-28,2026-10-25,65,home,single-leg,rear-foot elevated split squat,L,3,8,,,,,,,as planned (third set added); rear foot on the 7.5 in box; both sides felt equally stable; pain 0
+2026-10-28,2026-10-25,65,home,single-leg,rear-foot elevated split squat,R,3,8,,,,,,,as the left
+2026-10-28,2026-10-25,65,home,posterior,standing hamstring curl,,,,,,,,,,NOT DONE (time); planned 70 lb x 3 x 10 each leg; cable
+2026-10-28,2026-10-25,65,home,calf,standing calf raise,,,,,,,,,,NOT DONE (time); planned 40 lb DBs x 4 x 15
+2026-10-28,2026-10-25,65,home,single-leg,step-up with opposite knee drive,,,,,,,,,,NOT DONE (time); planned bodyweight 2 x 10 each side
+2026-10-28,2026-10-25,65,home,single-leg,"heel tap, slow lowering",,,,,,,,,,"NOT DONE (time); planned lateral, 7.5 in box, L 3 x 10"
+2026-10-28,2026-10-25,65,home,cooldown,posture cooldown,,,,,,,,,,"SHORT (time): 90/90 hip lift 1 x 5 breaths (planned 3 x 5), dead bug 4/side (planned 2 x 8), chin nods 5 x 5 s (planned 2 x 10); hip flexor stretch skipped"
+2026-10-30,2026-10-25,67,home,warmup,"foam roll, back",,,,1-2 min,,,,,,"before the bike; a bit looser, mostly the same"
+2026-10-30,2026-10-25,67,home,warmup,bike,,1,,8 min,,,,,,2.13 mi; legs only; easy
+2026-10-30,2026-10-25,67,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,pretty steady; no discomfort
+2026-10-30,2026-10-25,67,home,plyo,small double-leg pogo hops,bil,3,15,,,,,,,OFF-PLAN VOLUME: planned 3 x 8 (the plan: 5-8 contacts a set); quiet and controlled; no discomfort; impact rung 1
+2026-10-30,2026-10-25,67,home,plyo,single-leg pogo hops,L,2,5,,,,,,,"OFF-PLAN: rung 5, ahead of the ladder (today: rungs 1-2), and a third impact exercise (the plan: 2); very small; left weak but stable; quiet, controlled, no discomfort; impact rung 5"
+2026-10-30,2026-10-25,67,home,plyo,snap-down,bil,2,5,,,,,,,"NEW, as planned; felt fine, no discomfort; impact rung 2"
+2026-10-30,2026-10-25,67,home,single-leg,forward step-down,L,3,10,,,,,6.5,,as planned; challenging; the last half-inch of the left lowering less smooth; hip drop not reported; pain 0
+2026-10-30,2026-10-25,67,home,single-leg,forward step-down,R,3,10,,,,,6.5,,extra (the plan: left only)
+2026-10-30,2026-10-25,67,home,single-leg,single-leg sit-to-stand,L,3,12,,,,,18,,as planned (up from 2 x 12); very tough but manageable; assistance not mentioned; pain 0
+2026-10-30,2026-10-25,67,home,single-leg,single-leg sit-to-stand,R,3,12,,,,,18,,much better than the left
+2026-10-30,2026-10-25,67,home,posterior,Romanian deadlift (DB),bil,3,8,,52.5,lb,,,,"planned 60 (from 55 on 10/23); effort 4/10, easy"
+2026-10-30,2026-10-25,67,home,hip,standing cable hip abduction,L,2,15,,30,lb,,,,"OFF-PLAN LOAD: planned 20 x 2 x 15 (last cable 20 x 2 x 10); load and reps up together; challenging, controlled, no leaning, no discomfort"
+2026-10-30,2026-10-25,67,home,hip,standing cable hip abduction,R,2,15,,30,lb,,,,as the left
+2026-10-30,2026-10-25,67,home,single-leg,lateral lunge,L,3,8,,,,,,,"as planned (full range, held); front of knee 0 (2-3 on 10/23)"
+2026-10-30,2026-10-25,67,home,single-leg,lateral lunge,R,3,8,,,,,,,as the left
+2026-10-30,2026-10-25,67,home,calf,standing calf raise,bil,3,12,,52.5,lb,,,,"SUB for the seated calf raise, left (planned lightest DB x 3 x 12); load past A ladder (40s x 4 x 15 planned 10/28, not run)"
+2026-10-30,2026-10-25,67,home,posterior,standing hamstring curl,,,,,,,,,,NOT DONE; planned 70 lb x 3 x 10 each leg; cable
+2026-10-30,2026-10-25,67,home,posterior,single-leg bridge,,,,,,,,,,NOT DONE; planned 3 x 10 each side
+2026-10-30,2026-10-25,67,home,calf,seated calf raise,,,,,,,,,,NOT DONE; replaced by the standing heel raise
+2026-10-30,2026-10-25,67,home,cooldown,posture cooldown,,,,,,,,,,"full, as written: 90/90 hip lift 3 x 5 breaths, dead bug 2 x 8/side (low back flat), hip flexor stretch 45 s/side, chin nods 2 x 10 x 5 s; no discomfort"
+2026-10-31,2026-10-25,68,conditioning,conditioning,bike,,1,,30 min,,,,,,"6.83 mi, morning; legs only; easy"
+2026-10-31,2026-10-25,68,upperA,push,barbell bench press,,1,6,,115,lb,,,,set 1 of 4; decently easy; planned 110 x 4 x 6-8 (the Add-On step is +5 lb: 115 is +10 from 105)
+2026-10-31,2026-10-25,68,upperA,push,barbell bench press,,3,7,,115,lb,,,,sets 2-4; reps held
+2026-10-31,2026-10-25,68,upperA,pull,band-assisted pull-up,,1,6,,,,band,,,"set 2 of 4 (sets 1, 3, 4: 5 reps); the same band"
+2026-10-31,2026-10-25,68,upperA,pull,band-assisted pull-up,,3,5,,,,band,,,challenging; set 3 tough; set 4 completed. As planned (4 x 5-6); the same band
+2026-10-31,2026-10-25,68,upperA,push,standing one-arm landmine press,,3,8,,25,lb,,,,per side; challenging; as planned; plus the bar
+2026-10-31,2026-10-25,68,upperA,pull,chest-supported DB row,,2,10,,20,lb,,,,still easy
+2026-10-31,2026-10-25,68,upperA,pull,chest-supported DB row,,1,10,,25,lb,,,,third set up a DB step on the fly; more challenging
+2026-10-31,2026-10-25,68,upperA,finisher,tissue & trunk finisher,,,,,,,,,,"Copenhagen short lever 2 x 25 s/side (the ladder step, done); seated tibialis raise done (reps not confirmed; target 2 x 15); banded eversion and side plank NOT DONE (time); partial"
+2026-11-01,2026-11-01,69,home,test,single-leg squat test,L,1,12,,,,,,,"24 in seat, filmed; 12 of 12 clean on his read of the film; some extra rocking on the ascent; considered passed, not perfect yet"
+2026-11-01,2026-11-01,69,home,test,single-leg squat test,R,1,12,,,,,,,"24 in seat, filmed; 12 of 12 clean"
+2026-11-01,2026-11-01,69,home,warmup,bike,,1,,9 min,,,,,,2.21 mi; the knee-day warm-up bike is capped at 8 min; legs only; easy
+2026-11-01,2026-11-01,69,home,balance,single-leg balance + ball toss on BOSU,L,3,,45 s,,,,,,as planned; all sets completed
+2026-11-01,2026-11-01,69,home,plyo,snap-down,bil,3,5,,,,,,,as planned (up from 2 x 5); felt good; impact rung 2
+2026-11-01,2026-11-01,69,home,plyo,low vertical jump and landing,bil,2,5,,,,,,,"NEW, as planned (in the pogo's place); first set felt good; both sets completed; landings good on film (his read); impact rung 3"
+2026-11-01,2026-11-01,69,home,quad,goblet squat,bil,3,10,,52.5,lb,,18,,"OFF-PLAN LOAD: planned 50 / 50 / 52.5 (one DB step a set); 52.5 on all three, so sets 1-2 went two DB steps up from 45; ~5-6 reps in reserve; to a box"
+2026-11-01,2026-11-01,69,home,calf,single-leg standing calf raise,L,3,12,,,,,,,"NEW (single-leg), as planned"
+2026-11-01,2026-11-01,69,home,calf,single-leg standing calf raise,R,3,12,,,,,,,mirrors the left
+2026-11-01,2026-11-01,69,home,quad,cable seated knee extension,L,3,8,,50,lb,,,none,"the +1 plate as planned (40 to 50), left alone both ways; CHANGE NOT PLANNED: 12 too tough at 50, so 8 reps (planned 12) with a 5-7 s lowering (planned 3 s); full range"
+2026-11-01,2026-11-01,69,home,quad,cable seated knee extension,R,3,12,,50,lb,,,,+1 plate (40 to 50); right alone both phases; full range
+2026-11-01,2026-11-01,69,home,posterior,standing hamstring curl,,3,10,,70,lb,,,,as planned (up from 60 / 60 / 70 on 10/21); sides not stated (planned each leg); the cable pair took longer than expected; cable; last set ~2-3 reps left (RPE 7-8)
+2026-11-01,2026-11-01,69,home,single-leg,rear-foot elevated split squat,L,3,8,,5/15/15,lb,,,,"OFF-PLAN LOAD: planned light DBs, 5s or 10s; rear foot on the 7.5 in box; stable; ~4-5 reps in reserve; challenging; leg fatigued afterward"
+2026-11-01,2026-11-01,69,home,single-leg,rear-foot elevated split squat,R,3,8,,5/15/15,lb,,,,as the left; stable
+2026-11-01,2026-11-01,69,home,single-leg,step-up with opposite knee drive,,,,,,,,,,NOT DONE (leg fatigue after the knee extension and RFESS; the plan's first cut); planned bodyweight 2 x 10 each side
+2026-11-01,2026-11-01,69,home,single-leg,"heel tap, slow lowering",L,3,10,,,,,7.5,,"lateral, as planned; felt good afterward"
+2026-11-01,2026-11-01,69,home,single-leg,"heel tap, slow lowering",R,3,10,,,,,7.5,,EXTRA: the plan has the heel tap left only
+2026-11-01,2026-11-01,69,home,cooldown,posture cooldown,,,,,,,,,,"full, as written: 90/90 hip lift 3 x 5 breaths, dead bug 2 x 8/side, supine hip flexor 45 s/side, chin nods 2 x 10 x 5 s"
+2026-11-02,2026-11-01,70,conditioning,conditioning,bike,,1,,30 min,,,,,,7.65 mi; legs only; easy
+2026-11-02,2026-11-01,70,upperB,warmup,upper warm-up,,,,,,,,,,"as written: thoracic extension 45 s, pec sequence completed; thoracic extension on the roller, doorway pec sequence"
+2026-11-02,2026-11-01,70,upperB,warmup,face pull with external rotation,,2,15,,50,lb,,,,as written
+2026-11-02,2026-11-01,70,upperB,push,speed bench,,5,3,,75,lb,,,,"planned 70; 75 on all five sets, still inside the block's 45-55%; very light, the first set fast"
+2026-11-02,2026-11-01,70,upperB,push,incline barbell press,,2,8,,90,lb,,,,as planned (90 x 2 x 8-10); ~3 reps in reserve; alternated with the pulldown
+2026-11-02,2026-11-01,70,upperB,pull,one-arm chin-grip cable pulldown,,4,8,,100,lb,,,,per side; as planned (100 x 4 x 6-8); ~2 reps in reserve
+2026-11-02,2026-11-01,70,upperB,pull,one-arm DB row,,3,10,,30,lb,,,,"per side; as planned (one DB step up from 25); still too easy: ~5-10 in reserve, the last round 1-2 fewer"
+2026-11-02,2026-11-01,70,upperB,push,seated neutral-grip DB press,,3,10,,25,lb,,,,"as planned (reps up from 8 to 10); too easy: ~5 in reserve, the last round 1-2 fewer"
+2026-11-02,2026-11-01,70,upperB,pull,prone incline Y-raise,,3,10,,5,lb,,,,as written; still challenging
+2026-11-02,2026-11-01,70,upperB,finisher,tissue & trunk finisher,,,,,,,,,,"all four as written: seated tibialis raise 2 x 15, banded eversion 2 x 15 per ankle, side plank from the feet 2 x 20-30 s/side, Copenhagen short lever 2 x 30 s/side (up from 25 s after a clean morning); incl. Copenhagen short lever 2 x 30 s/side"
+2026-11-02,2026-11-01,70,upperB,push,cable chest fly,,2,,,30/50,lb,,,,"EXTRA (not in the plan): 30 x 12, then 50 x 10; per hand"
+2026-11-04,2026-11-01,72,PT,warmup,bike,,1,,6 min,5,level,,,,LFUC seat 16; clinic upright bike
+2026-11-04,2026-11-01,72,PT,single-leg,heel tap,,2,10,,,,,6,,each leg
+2026-11-04,2026-11-01,72,PT,quad,goblet squat,bil,2,10,,45,lb,,,,
+2026-11-04,2026-11-01,72,PT,single-leg,step-up,,2,10,,10,lb,,,,"10x, then 10x with a green band at the knees (abduction); sides not stated"
+2026-11-04,2026-11-01,72,PT,single-leg,rear-foot elevated split squat,,2,10,,,,,,,"10x, then 10x with a green band TKE; load and sides not stated"
+2026-11-04,2026-11-01,72,PT,gait,lateral band walk,,1,5,,,,,,,5 each way; GJC
+2026-11-04,2026-11-01,72,PT,gait,banded backward walk,,1,10,,,,,,,GJC
+2026-11-04,2026-11-01,72,PT,quad,knee extension machine,,2,15,,35,lb,,,,sides not stated; CKE 4/3
+2026-11-04,2026-11-01,72,PT,quad,knee extension machine,L,1,10,,20,lb,,,,left eccentric; CKE 4/3
+2026-11-04,2026-11-01,72,PT,posterior,single-leg leg curl machine,,2,10,,40,lb,,,,"sides not stated; both legs did well (his account); LFKF, seat 7"
+2026-11-04,2026-11-01,72,PT,quad,isometric knee extension,,2,,30 s,,,,,,"one hold at 0 deg, one at 45 deg; load and side not recorded; PT recommends single-leg iso work at home; CKE machine"

@@ -904,7 +904,13 @@
         "L",
         "R",
         "bil"
-      ]
+      ],
+      "load_unit": [
+        "lb",
+        "plates",
+        "level"
+      ],
+      "_load_unit": "the unit of `load`: lb (weights, a cable's or machine's stack number), plates (a machine's stack counted in plates), level (a bike's resistance). `load` itself is a number, or one per set (40/50/60); bands go in `band`, box and step heights in `height_in`"
     },
     "sport": {
       "session": [

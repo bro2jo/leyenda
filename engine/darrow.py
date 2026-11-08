@@ -20,7 +20,11 @@ Commands (run from the repo root):
                                add: an object or a list {date, time, meal, item, qty, kcal, protein_g, … every nutrient
                                column you can estimate, source (label|library|photo|estimate|library+estimate), notes};
                                refused for dates before config.json -> food_itemised_from. rm ID: DATE#N (from food list)
-  ex add 'JSON'                append exercise-log rows (list or object)
+  ex add 'JSON'                append exercise-log rows (list or object): {date, session, block, exercise, side, sets, reps,
+                               hold_or_duration, load (a number, or one per set 40/50/60), load_unit (lb|plates|level), band,
+                               height_in, assist, notes}; a DB load is per dumbbell, a barbell's includes the bar, a cable's or
+                               machine's is the stack number; blank load = no external load
+  ex names [TEXT]              every exercise name in the log with its rows and dates (reuse one: one name per movement)
   sport add 'JSON'             append sport-log rows
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
@@ -133,7 +137,7 @@ COLS = {
               "conditioning_type", "conditioning_min", "sport_min",
               "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "together", "closed", "notes"],
     "exercise": ["date", "dash_week_start", "pod", "session", "block", "exercise", "side",
-                 "sets", "reps", "hold_or_duration", "load_or_band", "assist", "notes"],
+                 "sets", "reps", "hold_or_duration", "load", "load_unit", "band", "height_in", "assist", "notes"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
               "metric", "value", "notes"],
     "measurements": ["date", "source", "metric", "side", "value", "unit", "method", "visit", "notes"],
@@ -147,6 +151,7 @@ ATTRS = ["might", "vigor", "finesse", "resolve"]
 VALID_SWELLING = re.compile(r"^(0|none|trace|1\+|2\+|3\+)$", re.I)
 YES = {"y", "yes", "true", "1", "done", "full"}
 NOT_DONE = re.compile(r"^\s*(not done|skipped)\b", re.I)  # exercise-log notes that mark a planned item as not done
+PER_SET_NUMBER = re.compile(r"^\d+(\.\d+)?(/\d+(\.\d+)?)*$")  # an exercise row's load or height: 50, 52.5, or one per set 40/50/60
 
 
 # ---------------------------------------------------------------- io helpers
@@ -2075,7 +2080,30 @@ def cmd_food(args, cfg, rules):
                 print(json.dumps({k: v for k, v in r.items() if v not in ("", None)}))
 
 
+def cmd_ex_names(args):
+    """Every exercise name the log holds, with its rows, dates and blocks: reuse one before coining another, so a lift
+    stays one series (`ex names curl` filters)."""
+    seen = {}
+    for r in read_csv("exercise"):
+        name = str(r.get("exercise") or "").strip()
+        if not name:
+            continue
+        s = seen.setdefault(name, {"n": 0, "first": r["date"], "last": r["date"], "blocks": set()})
+        s["n"] += 1
+        s["first"], s["last"] = min(s["first"], r["date"]), max(s["last"], r["date"])
+        s["blocks"].add(str(r.get("block") or ""))
+    q = (args.payload or "").strip().lower()
+    for name in sorted(seen, key=str.lower):
+        if q and q not in name.lower():
+            continue
+        s = seen[name]
+        when = s["first"][5:] if s["first"] == s["last"] else f"{s['first'][5:]} to {s['last'][5:]}"
+        print(f"{name}  ·  {s['n']} row{'s' if s['n'] != 1 else ''} · {when} · {'/'.join(sorted(b for b in s['blocks'] if b))}")
+
+
 def cmd_append(key, args, cfg):
+    if not args.payload:
+        sys.exit(f"{key}: nothing to add (pass the rows as JSON)")
     rows = read_csv(key)
     probs = []
     for i, item in enumerate(as_list(args.payload), 1):
@@ -2694,6 +2722,15 @@ def cmd_check(args, cfg, rules):
     for key in ("daily", "nutrition", "exercise", "sport"):  # the scoring vocabulary: a misspelt code never pays or costs silently
         for i, r in enumerate(read_csv(key), 2):
             problems += vocab_problems(cfg, key, r, f"{key}_log.csv line {i}")
+    for i, r in enumerate(read_csv("exercise"), 2):  # the load columns hold numbers, so a lift's progress can be read off them
+        where = f"exercise_log.csv line {i}"
+        load, unit, height = (str(r.get(k) or "").strip() for k in ("load", "load_unit", "height_in"))
+        if load and not PER_SET_NUMBER.match(load):
+            problems.append(f"{where}: load '{load}' is not a number, or one per set (40/50/60); a band goes in `band`, the implement in `notes`")
+        if bool(load) != bool(unit):
+            problems.append(f"{where}: load and load_unit go together (load '{load}', load_unit '{unit}')")
+        if height and not PER_SET_NUMBER.match(height):
+            problems.append(f"{where}: height_in '{height}' is not a number of inches, or one per set (6/8)")
     skills = cfg.get("sport", {}).get("skills") or []
     for i, r in enumerate(read_csv("sport"), 2):
         if skills and r.get("skill") not in skills:
@@ -2807,7 +2844,7 @@ def main():
     s = sub.add_parser("set"); s.add_argument("log", choices=["nutrition", "daily"]); s.add_argument("date"); s.add_argument("fields", nargs="+")
     s = sub.add_parser("close"); s.add_argument("date"); s.add_argument("--force", action="store_true", help="close the day even while an earlier week's chapter is unclosed")
     s = sub.add_parser("food"); s.add_argument("action", choices=["add", "list", "rm", "lib"]); s.add_argument("payload")
-    s = sub.add_parser("ex"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
+    s = sub.add_parser("ex"); s.add_argument("action", choices=["add", "names"]); s.add_argument("payload", nargs="?", default="", help="add: the rows as JSON; names: a word to filter by (optional)")
     s = sub.add_parser("sport"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
     s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, required=True)
     g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
@@ -2838,7 +2875,7 @@ def main():
         "food": cmd_food, "roll": cmd_roll, "odds": cmd_odds, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap, "project": cmd_project,
         "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc, "ship": cmd_ship,
-        "ex": lambda a, c, r: cmd_append("exercise", a, c),
+        "ex": lambda a, c, r: cmd_ex_names(a) if a.action == "names" else cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)
 
