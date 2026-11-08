@@ -4,11 +4,11 @@
     {
       "id": "sell-the-crv",
       "title": "Get the CRV ready to sell",
-      "status": "live",
+      "status": "done",
       "opened": "2026-10-14",
       "due": "2026-10-31",
-      "done": null,
-      "late": false,
+      "done": "2026-11-08",
+      "late": true,
       "tasks": [
         {
           "n": 1,
@@ -23,7 +23,7 @@
         {
           "n": 3,
           "text": "List it",
-          "done": null
+          "done": "2026-11-08"
         }
       ],
       "deferred": {

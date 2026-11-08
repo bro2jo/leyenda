@@ -177,6 +177,16 @@
   ],
   "keepsakes": [
     {
+      "name": "A name said once",
+      "text": "The word Quickstep, said of him once as a jeer by the youngest of the Ninth in a fair's yard; he walked on as though he had not heard it, and it stayed in the yard when the Ninth rode out.",
+      "to": "darrow",
+      "tale": "tale01",
+      "piece": "p3",
+      "tale_title": "Where Not to Stand",
+      "mark": "word",
+      "lesser": true
+    },
+    {
       "name": "The ox-bell",
       "text": "Her grandmother's plain dark ox-bell, warm from her hip, tied to Rae's own belt at the Coldmere bell-house.",
       "to": "rae-thorne",
@@ -198,8 +208,8 @@
       "title": "Where Not to Stand",
       "of": "darrow",
       "pieces": 3,
-      "told": 2,
-      "done": false,
+      "told": 3,
+      "done": true,
       "rests": false,
       "file": "saga/chronicle/tales/01-where-not-to-stand.md"
     },

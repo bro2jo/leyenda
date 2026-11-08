@@ -1978,10 +1978,40 @@
       "evidence": "\"My own,\" the boy said."
     },
     {
-      "fact": "He went down the Holloway at dusk at the back of the Ninth's string, on his feet, with his hand under the mare's jaw.",
+      "fact": "He went down the road toward Calden at dusk at the back of the Ninth's string, on his feet, with his hand under the mare's jaw.",
       "chapter": "tale01",
       "scene": "p2",
       "evidence": "He walked at her head with his hand under her jaw"
+    },
+    {
+      "fact": "The autumn he was first a knight of the Ninth, in the horse fair's ring, he turned a knight a head taller than anyone at the rail by stepping into the place the man had just left and tapping him behind the knee, until the man stood still and laughed.",
+      "chapter": "tale01",
+      "scene": "p3",
+      "evidence": "He went sideways and a little forward, into the place the big man had just left"
+    },
+    {
+      "fact": "The youngest of the Ninth's knights said the word Quickstep of him once, as a jeer, and he walked on to the rail without turning his head.",
+      "chapter": "tale01",
+      "scene": "p3",
+      "evidence": "he did not turn his head."
+    },
+    {
+      "fact": "The Ninth's sergeant said a man is called what he does twice, and nobody took the word up.",
+      "chapter": "tale01",
+      "scene": "p3",
+      "evidence": "Call him what he does twice."
+    },
+    {
+      "fact": "His father brought Thistle down to the horse fair in his string and would take the Ninth's price for every grey in it but her; the Ninth's gate went onto her near quarter at noon, and she was Darrow's from that day.",
+      "chapter": "tale01",
+      "scene": "p3",
+      "evidence": "would take the Ninth's price for every grey in the string but her"
+    },
+    {
+      "fact": "He rode out of the fair with the Ninth on a grey of his own, and the word stayed in the yard.",
+      "chapter": "tale01",
+      "scene": "p3",
+      "evidence": "The word stayed in the yard."
     }
   ],
   "relationships": [
@@ -2392,6 +2422,10 @@
     {
       "chapter": "tale01",
       "scene": "p2"
+    },
+    {
+      "chapter": "tale01",
+      "scene": "p3"
     }
   ]
 }

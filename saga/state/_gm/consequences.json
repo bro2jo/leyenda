@@ -1753,6 +1753,28 @@
       "declined": [
         "East by the river road, where the levies are driving the farms in front of them."
       ]
+    },
+    {
+      "id": "c06.1",
+      "made": {
+        "chapter": 6,
+        "scene": "tale:tale01:p3",
+        "date": "2026-11-08"
+      },
+      "chose": "Tale 1 was told in full and left its keepsake with darrow",
+      "now": {},
+      "due": [
+        {
+          "id": "c06.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
+          "priority": 2,
+          "status": "pending"
+        }
+      ],
+      "auto": true
     }
   ],
   "rules": [

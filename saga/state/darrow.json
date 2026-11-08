@@ -56,7 +56,7 @@
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
-  "inspiration": 3,
+  "inspiration": 4,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -342,9 +342,9 @@
     "hand.hammer": 4
   },
   "works": {
-    "finished": 1,
-    "tasks_done": 5,
-    "late": 0
+    "finished": 2,
+    "tasks_done": 6,
+    "late": 1
   },
   "chapter_now": {
     "week_start": "2026-11-08",

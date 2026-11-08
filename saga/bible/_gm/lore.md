@@ -443,7 +443,7 @@ Coldmere's skipping rhyme, two to turn the rope and one to jump. The turners sin
 - "If the Mender's smiling, somebody's dying." (unfair, and said daily)
 
 ## saying.bynames — How a man gets his name
-- **tier:** common · **spoken:** — · **names:** —
+- **tier:** common · **spoken:** tale01:p3 · **names:** —
 - **use:** a jibe that sticks; a writ's wording; the kitchen deciding what to call the Captain.
 
 A by-name is given, never taken: from an enemy's mouth, a clerk's writ, or a jibe at the table that nobody could stop using. The Lowmarch has a smaller word for a man who leans a way and a larger one for a man set in it, and it keeps a name of its own for the one who has gone both ways long enough to be known for that. A man who gives himself a name is laughed out of it within the week.
