@@ -1727,6 +1727,46 @@
         }
       },
       "due": []
+    },
+    {
+      "id": "c05.13",
+      "made": {
+        "chapter": 5,
+        "scene": "climax",
+        "date": "2026-11-08"
+      },
+      "chose": "Took the mill tracks north out of Coldmere, the quiet road for his own after a week of people, and left Rae's river road and the farms the levies were driving along it behind him",
+      "now": {
+        "approval": {
+          "hollis": 8,
+          "rae": -7,
+          "wren": 2
+        },
+        "bearing": {
+          "hearth": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c05.13a",
+          "when": "book2:beat3",
+          "at": "book2:beat3",
+          "weight": "route",
+          "what": "Downstream of the road north (b2.1): the company comes down on the Coldmere mill from above and holds the far end of the bridge; the mill-track inn is where q2.inn runs; Hollis's low-road arrival matters less (saga.py arc b2.1)",
+          "status": "pending"
+        },
+        {
+          "id": "c05.13b",
+          "when": "next",
+          "at": "ch06:s1",
+          "weight": "color",
+          "what": "Rae drives the mill tracks without a word about the road and without singing; the first voice he hears from her that day is to the oxen",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "East by the river road, where the levies are driving the farms in front of them."
+      ]
     }
   ],
   "rules": [

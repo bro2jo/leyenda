@@ -4,15 +4,15 @@
 
 **BOOK II — THE TEMPERING ROAD · Chapter 6 — The Weir**
 
-- **Where:** Coldmere; the fork where the shore road meets the drove road, an hour before Coldmere's dawn bell.
+- **Where:** Coldmere; the mouth of the mill tracks north of the fork, the hedges closing behind the cart.
 - **The quest:** *The Road.* The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.
 - **What Darrow is fighting right now:** The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.
-- **With him:** Maelis Vorne (Walking at the cart's tailboard out of Coldmere before the dawn bell.) · Ser Hollis Garrow (Riding the cart out of Coldmere before the dawn bell, Ash on his feet.) · Wren Ashdown (In the cart on the road out of Coldmere, the ledger buttoned inside her coat.) · Rae Thorne (On the box at the fork below Coldmere, the goad across her knees, waiting on Darrow's road.) · Ash (In the cart with the sacks on the road out of Coldmere.)
+- **With him:** Maelis Vorne (Walking at the tailboard up the mill tracks north.) · Ser Hollis Garrow (On the tailboard, going north up the mill tracks.) · Wren Ashdown (In the cart among the sacks, going north up the mill tracks.) · Rae Thorne (Driving the mill tracks north out of Coldmere at Darrow's word, her river road behind her, the rag still in her bell.) · Ash (In the cart with the sacks, going north.)
 - **Also here:** Hale (Stood in his kitchen door in the dark and watched his niece take the cart out without a lamp; told her the summer was written, signed or no…) · Ser Oswin (Heard Darrow's ford and said he would think on it, and drank to the river; knelt at the crossroads stone at first light; told Darrow the ri…)
 - **The tales:** Tale 1 — Where Not to Stand (1 of 3 told) · Tale 2 — Road's the Road (told in full)
-- **Against him:** The list read twice in the Lowmarch, and two roads out of Coldmere.
-- **Next:** The road he chooses at the fork.
-- **Open choice (the climax of Chapter 5):** What does Darrow do? 1. East by the river road, where the levies are driving the farms in front of them. / 2. North by the mill tracks, the safe road for his own.
+- **Against him:** One rider somewhere behind them, and a quiet road north into the hills.
+- **Next:** The first day on the mill tracks.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

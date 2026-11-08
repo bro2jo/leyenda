@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "climax",
+    "scene": "choice",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
   },
-  "last_seen_doing": "Was lifted into the cart by Maelis; stood on the fold wall and barked at the two grey cloaks on the shore road, and was claimed as a mill carter's bitch in whelp; lay on Hollis's feet and was forgiven with bread.",
-  "now": "In the cart with the sacks on the road out of Coldmere.",
+  "last_seen_doing": "Watched the river road from the sacks until the hedge took it.",
+  "now": "In the cart with the sacks, going north.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
@@ -109,6 +109,12 @@
       "chapter": "05",
       "scene": "climax",
       "evidence": "That's my bitch, Ser. Leave her be."
+    },
+    {
+      "fact": "She watched the river road from the cart until the hedge hid it.",
+      "chapter": "05",
+      "scene": "choice",
+      "evidence": "watched the river road until the hedge took it"
     }
   ],
   "relationships": [
@@ -203,6 +209,10 @@
     {
       "chapter": "05",
       "scene": "climax"
+    },
+    {
+      "chapter": "05",
+      "scene": "choice"
     }
   ]
 }

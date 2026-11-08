@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "climax",
+    "scene": "choice",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
   },
-  "last_seen_doing": "Heard the Sixth's names read across the water with Garrow third and went for the gate; was held by Darrow and let himself be held; sat against the fold wall with his face in his hands; forgave Ash with the end of his bread.",
-  "now": "Riding the cart out of Coldmere before the dawn bell, Ash on his feet.",
+  "last_seen_doing": "Approved the empty road from the tailboard, by insult.",
+  "now": "On the tailboard, going north up the mill tracks.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -748,6 +748,12 @@
       "chapter": "05",
       "scene": "climax",
       "evidence": "Sixty at that stone"
+    },
+    {
+      "fact": "He approved the road with nobody on it, and said the Captain could not pass a crowd without climbing into the middle of it.",
+      "chapter": "05",
+      "scene": "choice",
+      "evidence": "I was beginning to think the Captain couldn't pass a crowd without climbing into the middle of it."
     }
   ],
   "relationships": [
@@ -1094,6 +1100,10 @@
     {
       "chapter": "05",
       "scene": "climax"
+    },
+    {
+      "chapter": "05",
+      "scene": "choice"
     }
   ]
 }

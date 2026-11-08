@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "climax",
+    "scene": "choice",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
   },
-  "last_seen_doing": "Came out of the loft in the dark with the ledger buttoned inside her coat; stood at the fold wall for the reading; kept her pencil still on the road out.",
-  "now": "In the cart on the road out of Coldmere, the ledger buttoned inside her coat.",
+  "last_seen_doing": "Counted fourteen carts along the river road by the ruts and none up the tracks, and said which she would sooner count.",
+  "now": "In the cart among the sacks, going north up the mill tracks.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -709,6 +709,12 @@
       "chapter": "05",
       "scene": "climax",
       "evidence": "her pencil still"
+    },
+    {
+      "fact": "She counted fourteen carts along the river road since the frost, by the ruts, and none up the mill tracks.",
+      "chapter": "05",
+      "scene": "choice",
+      "evidence": "Fourteen carts along the river since the frost"
     }
   ],
   "relationships": [
@@ -999,6 +1005,10 @@
     {
       "chapter": "05",
       "scene": "climax"
+    },
+    {
+      "chapter": "05",
+      "scene": "choice"
     }
   ]
 }

@@ -1818,3 +1818,31 @@ Rae sat on the box with the goad across her knees and looked at Darrow, and wait
 **What does Darrow do?**
 1. **East by the river road, where the levies are driving the farms in front of them.** *(Rae approves.)*
 2. **North by the mill tracks, the safe road for his own.** *(Hollis approves.)*
+
+### Choice — The Quiet Road
+
+He looked east first, because that was where the people were.
+
+The river road ran off along the water into the grey, and it had been used since the frost: the ruts cut fresh and deep, the verge trodden flat where cattle had gone along it and people after them, a child's shoe in the ditch with the ice closed over it. Somewhere down that road the farms the levies had emptied were walking. Rae had said so on the fold wall. She was saying it again now with her face, which was turned that way too.
+
+Then he looked north, up between the hedges, where the mill tracks went into the hills and nothing had been along them since the frost but a fox.
+
+"I've seen a great many people this week," he said. "I'd like to look at a hedge."
+
+Nobody laughed. He said the rest of it plainly.
+
+"North. If there's folk on the river road glad of a cart, there's a herald's man on it too, and he has my name by heart now, and the Mender's, and Garrow's. We go where nobody's asking after us."
+
+"Well, thank the road for that," said Hollis, from the tailboard. "I was beginning to think the Captain couldn't pass a crowd without climbing into the middle of it."
+
+"Fourteen carts along the river since the frost," Wren said, from among the sacks. "By the ruts. None up the tracks. I know which I'd sooner count."
+
+Maelis said nothing at all, and shifted her roll to the other shoulder, which was the north one.
+
+Rae looked east a moment longer than the rest of them.
+
+"Aye," she said.
+
+She put the goad to Hob's shoulder and turned the team north, and the cart came round into the mouth of the tracks between the hedges, and the bell at her hip, stopped with its rag, swung and did not ring. Ash put her chin on the sacks and watched the river road until the hedge took it.
+
+Darrow walked at Hob's head, in his drover's coat, with the stick. Behind them the river road went east into the grey with its ruts and its one shoe, and nobody on it they could see, and ahead the tracks climbed into a country where the only sound was the frost going off the hedges as the sun got onto them.

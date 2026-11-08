@@ -33,11 +33,11 @@
       }
     },
     "hearth_banner": {
-      "value": -4,
+      "value": -6,
       "left": "Hearth",
       "right": "Banner",
       "moved": {
-        "left": 6,
+        "left": 8,
         "right": 2
       },
       "rungs": {
@@ -209,6 +209,12 @@
       "date": "2026-11-07",
       "axis": "mercy_flint",
       "delta": -1
+    },
+    {
+      "why": "c05.13",
+      "date": "2026-11-08",
+      "axis": "hearth_banner",
+      "delta": -2
     }
   ],
   "ladder": {

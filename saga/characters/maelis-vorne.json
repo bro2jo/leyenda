@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "climax",
+    "scene": "choice",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
   },
-  "last_seen_doing": "Said no fire on the north shore before anyone asked; heard her own name read to a village and stopped breathing for the length of it; walked at the tailboard out of Coldmere.",
-  "now": "Walking at the cart's tailboard out of Coldmere before the dawn bell.",
+  "last_seen_doing": "Said nothing and shifted her roll to the north shoulder.",
+  "now": "Walking at the tailboard up the mill tracks north.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -607,6 +607,12 @@
       "chapter": "05",
       "scene": "climax",
       "evidence": "she stopped breathing for the length of it, and then went on"
+    },
+    {
+      "fact": "She said nothing about the road and shifted her roll to the shoulder that faced north.",
+      "chapter": "05",
+      "scene": "choice",
+      "evidence": "shifted her roll to the other shoulder, which was the north one"
     }
   ],
   "relationships": [
@@ -888,6 +894,10 @@
     {
       "chapter": "05",
       "scene": "climax"
+    },
+    {
+      "chapter": "05",
+      "scene": "choice"
     }
   ]
 }

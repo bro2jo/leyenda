@@ -58,7 +58,7 @@
         "kind": "spine",
         "beat": "b2.2",
         "float": false,
-        "plan": "The road's people. East: the river road is full of the levy's leavings, farm families driven along it with their cattle ahead of them and their carts behind, and a family with a lame ox asks the company for the loan of Hob to the next ford. North: the mill tracks' inn, where a drover tells the taproom a rider on a long-legged horse stood a round and asked after a captain with a stick, and paid in good coin. Either way the company is spoken of by strangers for the first time as a thing on the road, and a stranger asks something of it. Ends on the small choice.",
+        "plan": "The road's people, on the mill tracks: the tracks' inn in the hill country, where a drover tells the taproom that a rider on a long-legged horse stood a round and asked after a captain with a stick, and paid in good coin. A family that fled a river farm up the side lanes rather than east with the levy is in the inn yard with a lame ox and asks the company for the loan of Hob to the next village. The company is spoken of by strangers for the first time as a thing on the road, and a stranger asks something of it. Ends on the small choice.",
         "turn": "Darrow finds the company has become a thing people on the road ask things of, and decides what it owes a stranger; the rider is confirmed as one who asks politely and pays well.",
         "tone": "warm, wary underneath",
         "micro": {
@@ -545,18 +545,7 @@
       "bound": "2026-10-29"
     }
   ],
-  "open_choice": {
-    "chapter": 5,
-    "scene": "climax",
-    "ask": "What does Darrow do?",
-    "options": [
-      "East by the river road, where the levies are driving the farms in front of them.",
-      "North by the mill tracks, the safe road for his own."
-    ],
-    "default": 2,
-    "opened": "2026-11-08",
-    "carries": 2
-  },
+  "open_choice": null,
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4

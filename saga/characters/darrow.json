@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "05",
-    "scene": "climax",
+    "scene": "choice",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#climax"
+    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
   },
-  "last_seen_doing": "Left Hale's yard before light at Rae's word; read half of Hale at his door; heard his own name read across the tarn with his hands flat on the fold wall and did not go; held Hollis by the arm when the Sixth's names were read; watched a grey cloak question Rae across the water and stayed; left Coldmere before the dawn bell with the road his to choose.",
-  "now": "At the fork below Coldmere an hour before its dawn bell, the company and the cart behind him, the river road east and the mill tracks north, and the choosing his.",
+  "last_seen_doing": "Looked east at the used river road and north at the empty tracks, said he had seen a great many people that week, and chose the mill tracks north for his own.",
+  "now": "Walking at Hob's head up the mill tracks north out of Coldmere, the river road and its people left behind him, the hills ahead.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1930,6 +1930,12 @@
       "evidence": "It was a quarter-hour round the shore. His hands stayed on the wall."
     },
     {
+      "fact": "He chose the mill tracks north out of Coldmere over the river road, where the farms the levies had emptied were walking.",
+      "chapter": "05",
+      "scene": "choice",
+      "evidence": "I've seen a great many people this week"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2344,6 +2350,10 @@
     {
       "chapter": "05",
       "scene": "climax"
+    },
+    {
+      "chapter": "05",
+      "scene": "choice"
     },
     {
       "chapter": "tale01",
