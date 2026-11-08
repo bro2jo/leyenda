@@ -1500,19 +1500,12 @@
           "when": "later",
           "at": "later",
           "weight": "color",
-          "what": "Wren answered the rope rhyme's house, hearth and bell for herself (Saint Ysolde's, the warming room, Old Mercy) and could not answer who she is for. Fire where she answers it, or someone answers it for her",
-          "fits": "present.wren",
-          "priority": 2,
+          "what": "Wren answered the rope rhyme's house, hearth and bell for herself (Saint Ysolde's, the warming room, Old Mercy) and could not answer who she is for. Fire where someone answers it for her, or she answers it herself: a camp with the company round her, the night before something, in the rowdy part before it goes quiet",
+          "fits": "present.wren && present.hollis",
+          "priority": 3,
           "status": "pending",
-          "offered": 6,
-          "offered_at": [
-            "ch05:between-5",
-            "ch05:s1",
-            "ch05:between-6",
-            "ch05:s4",
-            "ch05:between-7",
-            "ch05:between-8"
-          ]
+          "offered": 0,
+          "offered_at": []
         }
       ]
     },
@@ -1581,20 +1574,13 @@
           "when": "later",
           "at": "later",
           "weight": "color",
-          "what": "Hollis promised the next lesson, over the wall (Overwall), 'tomorrow'. Fire where the second lesson comes: a yard, a wall, a camp",
+          "what": "Hollis promised the next lesson, over the wall (Overwall), 'tomorrow' at the Coldmere well. Fire where the second lesson comes: a camp with a field wall, the first evening on the road north (ch6 slot 2 plans it)",
           "fits": "present.hollis",
-          "priority": 2,
+          "priority": 3,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 6,
-          "offered_at": [
-            "ch05:between-7",
-            "ch05:between-8",
-            "ch05:s5",
-            "ch05:s4",
-            "ch05:s6",
-            "ch05:s7"
-          ]
+          "offered": 0,
+          "offered_at": []
         },
         {
           "id": "c05.9b",
@@ -1651,7 +1637,7 @@
           "what": "The carter will tell the almoner at the foot of the Steps that the man from the end of the row asked after his sister. Fire where word comes back down the mountain, or a letter from Calden reaches the road",
           "priority": 2,
           "valid_until": "book2",
-          "status": "pending",
+          "status": "void:no fit on Book II's road: the carter's word to the almoner is GM knowledge, and news of the House reaching the road (Mirren's answer, a letter) is held by the arc's spare material for book2.tone, not by a callback",
           "offered": 6,
           "offered_at": [
             "ch05:between-8",
