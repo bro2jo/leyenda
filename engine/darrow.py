@@ -63,9 +63,14 @@ Commands (run from the repo root):
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv, one per side: {date (or pre-op), source, metric,
                                side, value, unit, method, visit, notes}; metrics from config.json -> measurement_metrics;
-                               a metric marked sided:false (a waist or chest girth) takes one row with side blank
+                               a metric marked sided:false (a waist or chest girth) takes one row with side blank;
+                               a performance test (config: standard) also takes "reps" (kept as reps=N), "bw_lb" (else the
+                               weigh-in on or up to 7 days before), and for a lift "load" + "reps" in place of value: the
+                               engine estimates the 1RM (Epley, 2-10 reps; 1 rep = a tested 1RM)
   measures [--metric M]        latest value per metric and side, with LSI and his target where one is set; --metric M: that metric's history
-  doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|ptnotes|index|now|checkpoint|PATH [SECTION ...]
+  standards                    his performance standards (real/plan/performance_standards.md) against his latest test of
+                               each: x bodyweight, solid / very good, the gap to the next, and the rehab phase each test opens in
+  doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|standards|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
   ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
@@ -107,6 +112,7 @@ P = {
     "working_rules": ROOT / "real/plan/working_rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
     "tape": ROOT / "real/plan/measurement_guide.md",
+    "standards": ROOT / "real/plan/performance_standards.md",
     "master": ROOT / "real/plan/rehab_master_plan.md",
     "offseason": ROOT / "real/plan/offseason_program_24_week.md",
     "index": ROOT / "real/README.md",
@@ -1411,6 +1417,9 @@ def mdate(s):
     return s if s == "pre-op" else md(d(s))
 
 
+FT_IN = {"broad_jump_in"}  # shown in feet and inches, as his table writes it
+
+
 def metric_specs(cfg):
     return {k: v for k, v in cfg.get("measurement_metrics", {}).items() if not k.startswith("_")}
 
@@ -1421,6 +1430,11 @@ def mval(metric, v, unit):
         return str(v)
     if unit == "deg":
         return f"{x:+g}°" if metric == "ext_deg" and x else f"{x:g}°"
+    if unit == "s":
+        return f"{x:.2f} s"
+    if metric in FT_IN and unit == "in":
+        ft, inch = divmod(x, 12)
+        return f"{int(ft)}'{inch:g}\""
     return f"{x:g} {unit}"
 
 
@@ -1469,6 +1483,9 @@ def metric_sided(spec):
 
 def target_text(spec):
     """'target 102–108 cm' from a metric's target {low, high, source} in config.json; '' without one. His own numbers, never a dose."""
+    st = spec.get("standard")
+    if st:
+        return f"solid {st['solid_text']} · very good {st['very_good_text']}"
     t = spec.get("target") or {}
     lo, hi = t.get("low"), t.get("high")
     if lo is None and hi is None:
@@ -1555,6 +1572,9 @@ def cmd_measure(args, cfg, rules):
             sys.exit(f"side must be L or R for {m} (one row per side)")
         if not metric_sided(specs[m]) and side:
             sys.exit(f"{m} has no side (config: sided false): leave side blank")
+        st = specs[m].get("standard")
+        if st:
+            item = test_row(m, specs[m], st, dict(item), cfg)
         if num(item.get("value")) is None:
             sys.exit(f"value must be a number, got '{item.get('value')}'")
         date = "pre-op" if str(item.get("date", "")).strip() == "pre-op" else d(item["date"]).isoformat()
@@ -1565,6 +1585,153 @@ def cmd_measure(args, cfg, rules):
     rows.sort(key=mkey)
     write_csv("measurements", rows)
     print(f"measurements: appended {added} row(s)")
+
+
+# ---------------------------------------------------------------- performance standards (occasional tests)
+TIERS = ("below solid", "solid", "very good")
+
+
+def weigh_in(day, within=7):
+    """(weight_lb, date) of the latest morning weigh-in on or up to `within` days before `day`; (None, None) without one."""
+    best = None
+    for r in read_csv("nutrition"):
+        w = num(r.get("weight_lb"))
+        if w is None or not r.get("date"):
+            continue
+        rd = d(r["date"])
+        if day - dt.timedelta(days=within) <= rd <= day and (best is None or rd > best[1]):
+            best = (w, rd)
+    return best or (None, None)
+
+
+def epley(load, reps):
+    return load * (1 + reps / 30)
+
+
+def test_row(m, spec, st, item, cfg):
+    """A performance test's row: the 1RM estimated from load x reps, the reps and the bodyweight kept in notes.
+    Never refuses a true number: a test outside the plan's phase or the standard's rep range is logged and flagged."""
+    notes = [str(item.get("notes", "")).strip()] if str(item.get("notes", "")).strip() else []
+    reps = item.get("reps")
+    if reps is not None and num(reps) is None:
+        sys.exit(f"reps must be a whole number, got '{reps}'")
+    reps = None if reps is None else int(num(reps))
+    if st.get("e1rm") and item.get("load") is not None:
+        load = num(item.get("load"))
+        if load is None or reps is None:
+            sys.exit(f"{m}: a lift's set needs load and reps (or a tested 1RM as value)")
+        if not 1 <= reps <= 10:
+            sys.exit(f"{m}: {reps} reps is outside 1-10; past 10 the estimate is unreliable. Give a set of 10 or fewer")
+        if reps == 1:
+            item["value"] = load
+            item["method"] = item.get("method") or "1RM"
+        else:
+            item["value"] = round(epley(load, reps), 1)
+            item["method"] = item.get("method") or "e1RM"
+            notes.insert(0, f"e1RM (Epley) from {load:g} lb x {reps}")
+        reps = None  # the set is in the note
+    if reps is not None:
+        notes.insert(0, f"reps={reps}")
+        rr = st.get("reps")
+        if rr and not rr[0] <= reps <= rr[1]:
+            print(f"note: {m} at {reps} reps is outside the standard's {rr[0]}-{rr[1]}: logged, and `standards` flags the comparison")
+    if st.get("basis") == "bw" and str(item.get("date", "")).strip() != "pre-op":
+        if item.get("bw_lb") is not None and num(item.get("bw_lb")) is not None:
+            notes.insert(0, f"bw={num(item['bw_lb']):g} (at the test)")
+        else:
+            w, wd = weigh_in(d(item["date"]))
+            if w is None:
+                print(f"note: no weigh-in on or within 7 days before {item['date']}: {m} is logged without x bodyweight "
+                      f"(add \"bw_lb\" if he weighed in at the test)")
+            else:
+                notes.insert(0, f"bw={w:g} (weigh-in {md(wd)})")
+    item["notes"] = "; ".join(notes)
+    phase = int(cfg.get("rehab", {}).get("current_phase") or 0)
+    if st.get("opens") and phase < st["opens"]:
+        print(f"note: {m} opens in rehab Phase {st['opens']} (he is in Phase {phase}): {st.get('opens_why', '')}. "
+              f"Logged as reported; the log skill's off-plan screen applies")
+    return item
+
+
+def note_num(notes, key):
+    mm = re.search(rf"\b{key}=([\d.]+)", notes or "")
+    return float(mm.group(1)) if mm else None
+
+
+def standard_tier(v, st):
+    hi = st.get("better", "higher") != "lower"
+
+    def meets(x, strict=False):
+        return (v > x if strict else v >= x) if hi else (v < x if strict else v <= x)
+    if meets(st["very_good"], st.get("very_good_strict")):
+        return 2
+    return 1 if meets(st["solid"]) else 0
+
+
+def gap_text(v, st, bw, unit):
+    """What separates v from the next tier, in the standard's own terms (and in lb for a bodyweight ratio)."""
+    t = standard_tier(v, st)
+    if t == 2:
+        return ""
+    nxt, name = (st["solid"], "solid") if t == 0 else (st["very_good"], "very good")
+    if st.get("better") == "lower":
+        if t == 1 and st.get("very_good_strict"):
+            return f"{name}: under {nxt:.2f} {unit}" + (f", {v - nxt:.2f} {unit} to cut" if v - nxt >= 0.005 else ", any cut")
+        return f"{name}: {nxt:.2f} {unit}, {v - nxt:.2f} {unit} to cut"
+    g = nxt - v
+    if st.get("basis") == "bw":
+        return f"{name}: {g:.2f}x BW to go" + (f" ({g * bw:.0f} lb at {bw:g})" if bw else "")
+    return f"{name}: {g:g} {unit} to go"
+
+
+def cmd_standards(args, cfg, rules):
+    specs = {m: s for m, s in metric_specs(cfg).items() if s.get("standard")}
+    if not specs:
+        sys.exit("no metric in config.json -> measurement_metrics has a standard")
+    rows_by = {}
+    for r in read_csv("measurements"):
+        if r.get("metric") in specs and r.get("date") != "pre-op":
+            rows_by.setdefault(r["metric"], []).append(r)
+    phase = int(cfg.get("rehab", {}).get("current_phase") or 0)
+    print(f"# Performance standards · his table (doc standards) · rehab Phase {phase}")
+    print("| Test | Latest | x BW | Solid | Very good | Where | Opens |")
+    print("|---|---|---|---|---|---|---|")
+    tested = 0
+    for m, spec in specs.items():
+        st, unit = spec["standard"], spec.get("unit", "")
+        opens = "open" if not st.get("opens") or phase >= st["opens"] else f"Phase {st['opens']}"
+        rs = sorted(rows_by.get(m, []), key=lambda r: r["date"])
+        name = metric_label(m, spec)
+        if not rs:
+            print(f"| {name} | not tested | | {st['solid_text']} | {st['very_good_text']} | | {opens} |")
+            continue
+        tested += 1
+        last = rs[-1]["date"]
+        cur = [r for r in rs if r["date"] == last]
+        latest, ratio, where = [], [], []
+        for r in sorted(cur, key=lambda r: r.get("side", "")):
+            v, sd = num(r.get("value")), (r.get("side") or "").strip()
+            pre = f"{sd} " if sd else ""
+            reps = note_num(r.get("notes"), "reps")
+            how = f", {r['method']}" if r.get("method") else ""
+            latest.append(f"{pre}{mval(m, v, r.get('unit') or unit)}" + (f" x {reps:g}" if reps else "") + how)
+            bw = note_num(r.get("notes"), "bw")
+            x = v
+            if st.get("basis") == "bw":
+                if not bw:
+                    ratio.append(f"{pre}no weigh-in")
+                    where.append(f"{pre}not comparable without bodyweight")
+                    continue
+                x = v / bw
+                ratio.append(f"{pre}{x:.2f}x")
+            rr = st.get("reps")
+            flag = " (reps outside the standard)" if rr and reps and not rr[0] <= reps <= rr[1] else ""
+            gp = gap_text(x, st, bw, unit)
+            where.append(f"{pre}**{TIERS[standard_tier(x, st)]}**{flag}" + (f" · {gp}" if gp else ""))
+        print(f"| {name} | {' · '.join(latest)} ({mdate(last)}) | {' · '.join(ratio)} | {st['solid_text']} | "
+              f"{st['very_good_text']} | {' · '.join(where)} | {opens} |")
+    print(f"\n{tested} of {len(specs)} tested. Tests are his own, occasional, never sessions or doses; "
+          f"each opens with the rehab phase shown (Working Rules -> measurements.csv).")
 
 
 # ---------------------------------------------------------------- weekly recap (the checkpoint's numbers)
@@ -1867,7 +2034,7 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 def doc_path(name):
     fixed = {"state": P["state"], "addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"],
              "now": P["real_now"], "offseason": P["offseason"], "index": P["index"], "ptnotes": P["ptnotes"],
-             "sport": P["sport_plan"], "sportguide": P["sport_guide"], "tape": P["tape"]}
+             "sport": P["sport_plan"], "sportguide": P["sport_guide"], "tape": P["tape"], "standards": P["standards"]}
     if name in fixed:
         return fixed[name]
     globs = {"checkpoint": (P["checkpoints"], "20*.md")}  # the newest week's review
@@ -1878,7 +2045,7 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, rules, addon, master, offseason, sport, sportguide, guide, tape, ptnotes, index, "
+        sys.exit(f"no document '{name}'. Use state, rules, addon, master, offseason, sport, sportguide, guide, tape, standards, ptnotes, index, "
                  f"now, checkpoint, or a path")
     return p
 
@@ -2905,6 +3072,7 @@ def main():
     s = sub.add_parser("recap"); s.add_argument("--date"); s.add_argument("--write", action="store_true"); s.add_argument("--force", action="store_true")
     s = sub.add_parser("measure"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
     s = sub.add_parser("measures"); s.add_argument("--metric")
+    sub.add_parser("standards")
     s = sub.add_parser("doc"); s.add_argument("name"); s.add_argument("section", nargs="*")
     sub.add_parser("check")
     s = sub.add_parser("ship"); s.add_argument("-m", "--message", required=True); s.add_argument("--no-push", action="store_true")
@@ -2914,7 +3082,7 @@ def main():
         "sync": cmd_sync, "today": cmd_today, "week": cmd_week, "sheet": cmd_sheet, "set": cmd_set, "close": cmd_close,
         "food": cmd_food, "roll": cmd_roll, "odds": cmd_odds, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap, "project": cmd_project,
-        "measure": cmd_measure, "measures": cmd_measures, "doc": cmd_doc, "ship": cmd_ship,
+        "measure": cmd_measure, "measures": cmd_measures, "standards": cmd_standards, "doc": cmd_doc, "ship": cmd_ship,
         "ex": lambda a, c, r: cmd_ex_names(a) if a.action == "names" else cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)

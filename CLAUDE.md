@@ -44,6 +44,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | "close day", or a new day's first log while yesterday has something logged and isn't closed | `/close`: close the day and write its scene (the brief, the scene, the record). A day with nothing logged is missed: no row, no scene. A log for a day already closed updates the Ledger only |
 | "PT moved my session", "visit cancelled", a session the plan moves or drops | `/log` → `real/config.json → plan_changes`: a plan-directed change is never a miss |
 | the week's work outside the knee ("sell the CRV: clean it, park it, list it"), a task of it done ("car's listed"), "what's left of the project", "drop it" | `/project`: the Ledger keeps the project (`darrow.py project`); each task reported pays a piece of a tale from the past, written in the same reply (`saga.py brief --tale`); the last piece leaves a keepsake |
+| a test against his performance standards ("14 pull-ups", "bench test 185 × 5") · "where am I on the standards" | `/log` → `measure add` (a test, never a session) · `darrow.py standards` (real only) |
 | "what's today" · "how's my week" · "sheet", "stats" | `/today` · `/week` (real only) · `/sheet` |
 | "trends", "streaks", "how am I trending", "what did I do this month", "month view" | real only: `python3 engine/report.py` (the page is built only when he asks; `ship` never runs it), then send him `real/trends.html` rendered (it is the page itself; nothing to summarise) |
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
@@ -71,8 +72,8 @@ The engines do all the arithmetic (above). Their help lists every command with i
 ```
 python3 engine/darrow.py sync | today | week | sheet | check | ship -m "…"
 python3 engine/darrow.py set daily|nutrition DATE k=v … · food add|ex add|sport add|measure add '<json>' · food list DATE · food lib TEXT
-python3 engine/darrow.py show daily|nutrition|food|ex|sport|measurements DATE · measures · recap --date D [--write]
-python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|ptnotes|index|now|checkpoint [section]
+python3 engine/darrow.py show daily|nutrition|food|ex|sport|measurements DATE · measures · standards · recap --date D [--write]
+python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|standards|ptnotes|index|now|checkpoint [section]
 python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · odds --stat S [--prof --art ID] [--chapter N] [--dc N | --target P] · knot tie N --date D --evidence "…"
 python3 engine/darrow.py project open "Title" --tasks … | done TASK | show [--all] | drop --why "…"   (the week's work; `today` names its next task)
 python3 engine/saga.py now · brief [--date D | --between --with who | --climax | --choice | --chapter | --tale] · reread [KEY] · record '<json>' · choose --option K '<entry>'

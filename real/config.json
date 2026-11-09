@@ -723,7 +723,7 @@
     }
   },
   "measurement_metrics": {
-    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement; a metric marked sided:false is measured once for the body and its row leaves side blank). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. target {low, high, source}: his own numbers for the look he wants, printed by `measures` and the trends page; a wish he set, never a dose or a gate (the plan's gates stay in rehab). The girths' landmarks and conditions are his guide, real/plan/measurement_guide.md (`doc tape`): first thing in the morning, tape snug, not compressing. Add a metric here before logging it.",
+    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement; a metric marked sided:false is measured once for the body and its row leaves side blank). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. target {low, high, source}: his own numbers for the look he wants, printed by `measures` and the trends page; a wish he set, never a dose or a gate (the plan's gates stay in rehab). The girths' landmarks and conditions are his guide, real/plan/measurement_guide.md (`doc tape`): first thing in the morning, tape snug, not compressing. standard {solid, very_good (the threshold numbers), solid_text, very_good_text (his table's words), better (higher/lower), basis (bw = x bodyweight, abs), reps [min, max], e1rm (a lift: load x reps -> Epley), opens (the rehab phase the test opens in), opens_why, source}: his performance standards (real/plan/performance_standards.md, `doc standards`), shown by `darrow.py standards`; occasional tests of his own, never sessions, doses or gates. Add a metric here before logging it.",
     "ext_deg": {
       "label": "extension",
       "unit": "deg",
@@ -884,6 +884,192 @@
         "low": 36,
         "high": 39,
         "source": "his own, 2026-11-09: the proportions he thinks would look athletic on his frame (6'0\", wrist 16 cm, ankle 20 cm); a look he wants, not the plan's"
+      },
+      "now": false
+    },
+    "pullup_reps": {
+      "label": "strict pull-ups",
+      "unit": "reps",
+      "about": "strict pull-ups, the most in one set: from a dead hang, chin over the bar, no kip; step down from the bar after, never a drop to the floor (a drop is a landing)",
+      "sided": false,
+      "standard": {
+        "solid": 12,
+        "solid_text": "12–15",
+        "very_good": 15,
+        "very_good_text": "15–20+",
+        "better": "higher",
+        "basis": "abs",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "weighted_pullup_lb": {
+      "label": "weighted pull-up",
+      "unit": "lb",
+      "about": "the load added (belt or vest) for a set of 3–5 strict pull-ups; reps logged with it; step down from the bar after",
+      "sided": false,
+      "standard": {
+        "solid": 45,
+        "solid_text": "+45 lb × 3–5",
+        "very_good": 70,
+        "very_good_text": "+70 lb × 3–5",
+        "better": "higher",
+        "basis": "abs",
+        "reps": [
+          3,
+          5
+        ],
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "bench_lb": {
+      "label": "bench press",
+      "unit": "lb",
+      "about": "bench press 1RM: a tested single, or estimated by the engine from a set of 2–10 taken close to failure (load + reps); bodyweight from the weigh-in",
+      "sided": false,
+      "standard": {
+        "solid": 1.25,
+        "solid_text": "1.25× BW",
+        "very_good": 1.4,
+        "very_good_text": "1.4–1.5× BW",
+        "better": "higher",
+        "basis": "bw",
+        "e1rm": true,
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "back_squat_lb": {
+      "label": "back squat",
+      "unit": "lb",
+      "about": "back squat 1RM: a tested single, or estimated from a set of 2–10 close to failure (load + reps); the depth in notes, the same each time",
+      "sided": false,
+      "standard": {
+        "solid": 1.6,
+        "solid_text": "1.6–1.8× BW",
+        "very_good": 2.0,
+        "very_good_text": "~2× BW",
+        "better": "higher",
+        "basis": "bw",
+        "e1rm": true,
+        "opens": 6,
+        "opens_why": "Add-On §8: the off-season testing battery (trap-bar 3RM, jumps, sprints) belongs to rehab Phase 6 onward; until then the master plan holds the main lifts at 60-85% of estimated 1RM, RPE 6-8",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "trap_bar_dl_lb": {
+      "label": "trap-bar deadlift",
+      "unit": "lb",
+      "about": "trap-bar deadlift 1RM: a tested single, or estimated from a set of 2–10 close to failure (load + reps); the handle height in notes",
+      "sided": false,
+      "standard": {
+        "solid": 1.8,
+        "solid_text": "1.8–2.0× BW",
+        "very_good": 2.25,
+        "very_good_text": "2.25×+ BW",
+        "better": "higher",
+        "basis": "bw",
+        "e1rm": true,
+        "opens": 6,
+        "opens_why": "Add-On §8: the off-season testing battery (trap-bar 3RM, jumps, sprints) belongs to rehab Phase 6 onward; until then the master plan holds the main lifts at 60-85% of estimated 1RM, RPE 6-8",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "bss_lb": {
+      "label": "Bulgarian split squat",
+      "unit": "lb",
+      "about": "Bulgarian split squat: the total load added (both dumbbells, or the bar) for a set of 6–8 on that leg; reps logged with it; one row per leg",
+      "lsi": "higher",
+      "standard": {
+        "solid": 0.75,
+        "solid_text": "~0.75× BW added load total × 6–8",
+        "very_good": 1.0,
+        "very_good_text": "~1× BW added load total × 6–8",
+        "better": "higher",
+        "basis": "bw",
+        "reps": [
+          6,
+          8
+        ],
+        "opens": 6,
+        "opens_why": "a heavy lower-body test, with the battery's trap-bar 3RM (Add-On §8: Phase 6 onward); the program's split squat runs at its written dose meanwhile",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "cmj_in": {
+      "label": "CMJ / vertical",
+      "unit": "in",
+      "about": "countermovement jump height, two feet, best of 3; method names how it was measured (a jump-and-reach wall, a mat, a phone app) and whether the arms swung: the methods give different numbers, keep one",
+      "sided": false,
+      "standard": {
+        "solid": 25,
+        "solid_text": "25–28\"",
+        "very_good": 30,
+        "very_good_text": "30\"+",
+        "better": "higher",
+        "basis": "abs",
+        "opens": 6,
+        "opens_why": "Add-On §8: the battery's jumps belong to rehab Phase 6 onward; the impact ladder governs jumping before",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "broad_jump_in": {
+      "label": "broad jump",
+      "unit": "in",
+      "about": "standing two-foot broad jump, the take-off line to the back of the nearest heel, the landing held; best of 3; logged in inches, shown in feet",
+      "sided": false,
+      "standard": {
+        "solid": 99,
+        "solid_text": "8'3–8'8\"",
+        "very_good": 108,
+        "very_good_text": "9'+",
+        "better": "higher",
+        "basis": "abs",
+        "opens": 6,
+        "opens_why": "Add-On §8: the battery's jumps belong to rehab Phase 6 onward; the impact ladder governs jumping before",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "sprint_10m_s": {
+      "label": "10 m sprint",
+      "unit": "s",
+      "about": "10 m from a standing start, best of 2–3; method names the timing (gates, a phone app, hand) and the start, the same each time; hand times read fast",
+      "sided": false,
+      "standard": {
+        "solid": 1.85,
+        "solid_text": "~1.75–1.85 s",
+        "very_good": 1.75,
+        "very_good_text": "~1.65–1.75 s",
+        "better": "lower",
+        "basis": "abs",
+        "opens": 7,
+        "opens_why": "Add-On §8: max-effort sprinting is rehab Phase 7–8 and the plan sets no gate for it: get one from the PT; the master plan: true maximal sprinting belongs later",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
+      },
+      "now": false
+    },
+    "sprint_20m_s": {
+      "label": "20 m sprint",
+      "unit": "s",
+      "about": "20 m from a standing start, best of 2–3; timing and start as the 10 m, the same each time",
+      "sided": false,
+      "standard": {
+        "solid": 3.15,
+        "solid_text": "~3.0–3.15 s",
+        "very_good": 3.0,
+        "very_good_text": "<3.0 s",
+        "better": "lower",
+        "basis": "abs",
+        "very_good_strict": true,
+        "opens": 7,
+        "opens_why": "Add-On §8: max-effort sprinting is rehab Phase 7–8 and the plan sets no gate for it: get one from the PT; the master plan: true maximal sprinting belongs later",
+        "source": "his table, 2026-11-09 (real/plan/performance_standards.md, doc standards)"
       },
       "now": false
     }

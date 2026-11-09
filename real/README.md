@@ -43,6 +43,7 @@ real/
 | `plan/ultimate_offseason_guide.md` | `sportguide` | The guide the sport plan runs on, as written (Oct 2026 → late spring 2027): the content of every session and week | **Reference:** never edited here; a new version replaces it whole, then `sport_plan.md` is reviewed against it | — | — |
 | `plan/nutrition_guide.md` | `guide` | Calories, protein, micronutrient reference values, the weight rule | **Reference:** never edited here; a new version replaces it whole | — | — |
 | `plan/measurement_guide.md` | `tape` | His body-measurement guide: the landmark and the conditions for each tape girth | **Reference:** never edited here; a new version replaces it whole | — | — |
+| `plan/performance_standards.md` | `standards` | His performance standards: ten tests, solid semi-pro and very good | **Reference:** never edited here; a new version replaces it whole | — | — |
 | `NOW.md` | `now` | What stands this week: plan in force, next PT visit, the gate, flags, open items; the engine's block of counts | Its top whenever something stands or changes; the block on every `sync` | Short pointers and what changed since the State | Doses and tables (→ State), history (→ checkpoints) |
 | `trends.html` | — | **The trends page**, one standalone file (open it on the phone): the streaks, the engine's week score by week, a calendar of the daily habits, sessions against the plan, the knee's mornings, weight, calories and protein, the latest measurements; a range control scopes every chart, and each chart has a table. Its Days view: the month as a grid of what each day carried (one colour and place per kind: knee, upper, conditioning, sport, PT, sauna, Game Ready, light therapy) and the selected day's card with everything logged (the habits, sessions with minutes and effort, exercises, throwing, food items, adjuncts, notes) | On request: `python3 engine/report.py` when he asks for the trends (`ship` does not run it; the footer says when it was built, and the next `ship` commits that build); never edited by hand | — | Anything typed in: it shows the logs only |
 | `config.json` | — | What the engine needs: nutrition targets, the weekly template the week is scored on, plan changes by date, daily-minimum rounds, phase and gates, sport stage | When a target, the template or a phase changes | Values with their `source` | Prose |
@@ -53,7 +54,7 @@ real/
 | `logs/exercise_log.csv` | `show ex` | One row per exercise instance | As he reports | Exercise (one name per movement: `ex names`), block, side, sets, reps, hold, load with its unit, band, height, assist | Set-ups, machine ids and doses in the exercise name (→ `notes`) |
 | `logs/nutrition_log.csv` · `food_entries.csv` · `food_library.csv` | `show nutrition` · `food list` · `food lib` | Day totals with weight and creatine · one row per food item · the food library | As he reports | — | — |
 | `logs/sport_log.csv` | `show sport` | One row per skill worked in a throwing or film session | As he reports | — | — |
-| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, the filmed home single-leg squat test, hop tests later; the tape girths, one row for a site without a side) | Each visit or test; the girths about every four weeks | The number, its source and method | Daily self-checks (→ daily log); his girth targets (→ `config.json → measurement_metrics`) |
+| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, the filmed home single-leg squat test, hop tests later; the tape girths, one row for a site without a side; his occasional performance tests) | Each visit or test; the girths about every four weeks | The number, its source and method | Daily self-checks (→ daily log); his girth targets (→ `config.json → measurement_metrics`) |
 | `state/archive/`, `logs/archive/` | — | History: each replaced State; the old dashboard's daily log as uploaded (column map: its README) | Never (path corrections aside) | History | Anything current |
 
 ---
@@ -64,6 +65,7 @@ real/
 |---|---|
 | What the PT or surgeon said | `pt_notes.md` (the State quotes the ones in force) |
 | What they measured | `measurements.csv` (`measures`); the words around it in `pt_notes.md` |
+| Performance standards and his test results | The table: `plan/performance_standards.md` (`doc standards`), the engine's copy in `config.json → measurement_metrics.<metric>.standard`; the results: `measurements.csv`; where he stands: `darrow.py standards` |
 | Body girths (tape) and the look he is after | `measurements.csv` (`measures`, `source=self`); the targets, his own numbers with their source, in `config.json → measurement_metrics.<metric>.target` |
 | Phase criteria, plan doses | Master plan |
 | Definitions, load and pain rules, clearance, the log columns | Working Rules |
