@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3373,
+  "xp": 3398,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -15,7 +15,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 58,
+      "temper": 60,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -72,7 +72,7 @@
       "tree": "Blade",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 8,
+      "practice": 9,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
@@ -349,7 +349,7 @@
   "chapter_now": {
     "week_start": "2026-11-08",
     "through": "2026-11-09",
-    "tier_so_far": "Costly",
+    "tier_so_far": "Hard-won",
     "chapter": 6
   },
   "fell": {
