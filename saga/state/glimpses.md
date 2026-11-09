@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-04 · ledger · Wren's ledger, Lowmarch page: hedges, more than anyone needs; gates, eleven, of which four open; songs Hollis knows with a goat in them, three, and he says there are more.
 - 2026-11-04 · weather · Frost silvers the cart's canvas at first light and is gone by the first milestone, as if it had only come to look.
 - 2026-11-04 · overheard · Over the morning fire, Maelis tells Hollis that if he calls the captain spry once more, she will find something wrong with him that needs a splint. Hollis says spry under his breath for the rest of the hour.
 - 2026-11-04 · house · Rae has taught Ash to stay off the cart, and Ash has taught Rae that he will lie under it instead, exactly where she puts her feet. Neither considers the matter closed.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-08 · house · Hollis has found a chair in the sun and is defending it against all comers, including the sun, which keeps moving.
 - 2026-11-08 · overheard · Overheard from the stable: a boy asking Wren if she is a scribe, and Wren saying "Ledger-keeper" in a voice that makes the difference sound enormous.
 - 2026-11-08 · verse · Someone downstairs has started "Sixty and a Mule" again, and the whole room comes in on the last line: "and the mule's at the inn and the captain is shot." Hollis sings the mule's part, which has no words, with feeling.
+- 2026-11-08 · ledger · Wren's tally for the evening: candles burned, three; verses of the mule song sung, eleven; verses anyone actually knew, four.
