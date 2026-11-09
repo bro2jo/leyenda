@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-05 · weather · A hard blue morning over the tarn, the first in days, cold enough that every breath hangs about as if waiting to be thanked. Wren counts them for a while, then gives it up.
 - 2026-11-05 · house · Ash has found the one warm stone in the whole of the Lowmarch and will not be talked off it: not by Rae, not by Hollis, not by a sausage held at a reasonable distance.
 - 2026-11-06 · saying · Rae answers most complaints the carters' way: *Road's the road.* Hollis has started saying it back to her about everything that is plainly her fault.
 - 2026-11-06 · body · The leg wakes before he does this morning and has nothing to say about it. He lies there a while, waiting for the usual argument, and it never comes.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-09 · overheard · Overheard over the cart's tail: Wren asking whether hedges this tall grow that way or whether somebody planned them, and Rae saying that up here, those are the same thing.
 - 2026-11-09 · body · Halfway up a long hill he stops minding that the cart is faster than he is. It simply is, the way the hill is. He will be at the top when he gets there.
 - 2026-11-09 · weather · Mist lies in the valley below the track this morning, flat as a pond, and the company walks along the top of it like people on a shelf. Hollis says it is the first time he has been above anything.
+- 2026-11-09 · saying · Hollis promises the mist will burn off by noon. Rae says "Kneel to that," the way the Lowmarch says it, which means yes, and also means she has heard him promise weather before.
