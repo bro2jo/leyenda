@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 6,
     "beat": "b2.1",
-    "next_scene": 1,
+    "next_scene": 2,
     "stage": "scene",
-    "last_written": "ch05:s7",
+    "last_written": "ch06:s1",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -27,8 +27,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s1"
       },
       {
         "n": 2,
@@ -49,7 +49,7 @@
           "if_ignored": "he lobs stones over the wall alone until the light goes, and says nothing about it",
           "why_now": "he said tomorrow, over the wall, at the well three days ago, and tonight's camp has a wall"
         },
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {

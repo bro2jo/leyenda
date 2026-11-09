@@ -33,13 +33,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "05",
-    "scene": "choice",
+    "chapter": "06",
+    "scene": "1",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
+    "anchor": "chronicle/06-the-weir.html#scene-1"
   },
-  "last_seen_doing": "Approved the empty road from the tailboard, by insult.",
-  "now": "On the tailboard, going north up the mill tracks.",
+  "last_seen_doing": "Took the frost drops on the tailboard, told Wren every mill track is the same track, and set the Captain's hand higher on the hilt: the bind is three fingers and a thumb, and two lost fingers are an argument finished.",
+  "now": "On the tailboard going up the mill tracks, with a lesson over a wall still owed from the Coldmere well.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -754,6 +754,18 @@
       "chapter": "05",
       "scene": "choice",
       "evidence": "I was beginning to think the Captain couldn't pass a crowd without climbing into the middle of it."
+    },
+    {
+      "fact": "He told Darrow the bind lives in the thumb and the first two fingers and that the Seated Blade never had a use for his little finger, and set his hand higher on the hilt.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "The bind's in the first two and the thumb."
+    },
+    {
+      "fact": "He said he had waited since he was thirty for a man with the right hand for the Seated Blade.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "I've been waiting to say that since I was thirty."
     }
   ],
   "relationships": [
@@ -1104,6 +1116,10 @@
     {
       "chapter": "05",
       "scene": "choice"
+    },
+    {
+      "chapter": "06",
+      "scene": "1"
     }
   ]
 }

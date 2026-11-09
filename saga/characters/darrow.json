@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "05",
-    "scene": "choice",
+    "chapter": "06",
+    "scene": "1",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
+    "anchor": "chronicle/06-the-weir.html#scene-1"
   },
-  "last_seen_doing": "Looked east at the used river road and north at the empty tracks, said he had seen a great many people that week, and chose the mill tracks north for his own.",
-  "now": "Walking at Hob's head up the mill tracks north out of Coldmere, the river road and its people left behind him, the hills ahead.",
+  "last_seen_doing": "Walked the mill tracks at Hob's head and left Rae her quiet; at the noon Reading was told his two last fingers are slow for good, found the grip left to him on the stick and the oilcloth sword, said he would sooner have the fingers and would take the stop, and walked on.",
+  "now": "Walking at Hob's head up the mill tracks past the noon ford, the stick high in a new grip of three fingers and a thumb, the hills ahead and one rider somewhere behind.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1936,6 +1936,36 @@
       "evidence": "I've seen a great many people this week"
     },
     {
+      "fact": "At the noon Reading on the mill tracks Maelis told him the two last fingers of his right hand have come back as far as they will, slow and half there, from the frost at the grate under the House.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "They've come back as far as they'll come. Slow, and half there."
+    },
+    {
+      "fact": "He found the grip left to him: the stick and the sword held high in the thumb and the first two fingers, the two slack ones laid along the wood.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "three fingers and a thumb"
+    },
+    {
+      "fact": "He said he would sooner have the fingers, and that he would take the stop.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "I'd sooner have the fingers."
+    },
+    {
+      "fact": "He told Maelis he would have taken the hard word about the knee instead, and she said he had been waiting for it since the river.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "I'd have taken that about the knee,"
+    },
+    {
+      "fact": "He said there is a grey in Coldmere he will want a rein for in the spring.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "There's a grey in Coldmere I'll want a rein for in the spring."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2414,6 +2444,10 @@
     {
       "chapter": "05",
       "scene": "choice"
+    },
+    {
+      "chapter": "06",
+      "scene": "1"
     },
     {
       "chapter": "tale01",

@@ -34,12 +34,12 @@
     "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
   "last_seen": {
-    "chapter": "05",
-    "scene": "choice",
+    "chapter": "06",
+    "scene": "1",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
+    "anchor": "chronicle/06-the-weir.html#scene-1"
   },
-  "last_seen_doing": "Watched the river road from the sacks until the hedge took it.",
+  "last_seen_doing": "Rode in the sacks, considered a fox and let him live, and took the one piece of sunlit bank at the ford.",
   "now": "In the cart with the sacks, going north.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
@@ -213,6 +213,10 @@
     {
       "chapter": "05",
       "scene": "choice"
+    },
+    {
+      "chapter": "06",
+      "scene": "1"
     }
   ]
 }

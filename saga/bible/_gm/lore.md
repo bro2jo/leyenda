@@ -422,7 +422,7 @@ Coldmere's skipping rhyme, two to turn the rope and one to jump. The turners sin
 - "Full of Grace and empty of sense." (of a young knight; the Sixth's whole opinion of the Second)
 
 ## maxim.menders — The Menders' maxims
-- **tier:** common · **spoken:** Prologue III, Ch 1 Sc 1 · **names:** —
+- **tier:** common · **spoken:** Prologue III, Ch 1 Sc 1; ch06:s1 · **names:** —
 - **use:** Maelis; a novice reciting; a line cut into the hall's lintel.
 
 - "Time makes it possible. Proof makes it permitted." (the first thing a novice learns and the last thing a Mender says; its origin is not asked ⟪gm: Warden⟫)

@@ -5,10 +5,19 @@
   "chapter": 6,
   "chapter_title": "The Weir",
   "chapter_file": "saga/chronicle/06-the-weir.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "Three Fingers and a Thumb",
+      "covers": [
+        "2026-11-08"
+      ],
+      "written": "2026-11-08"
+    }
+  ],
   "location": {
     "place": "coldmere",
-    "detail": "the mouth of the mill tracks north of the fork, the hedges closing behind the cart",
+    "detail": "the mill tracks north of Coldmere, past the noon ford and climbing into the hills",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -18,7 +27,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Rae put the goad to Hob's shoulder and turned the team north, and the bell at her hip, stopped with its rag, swung and did not ring.",
+  "last_beat": "Maelis watched him take the first hundred paces up from the ford with the stick high in the new grip and said good, and he carried the word up the track into the hills.",
   "companions": {
     "maelis": {
       "approval": 38,

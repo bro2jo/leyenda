@@ -210,15 +210,16 @@
       "truth": null,
       "feeds": "Seated Blade, Hollis's arc; q1.wager's bottle still unspoken",
       "status": "open",
-      "who_knows": "Hollis, Darrow, Wren, the kitchen; the reader. The drink: Hollis, Darrow, the reader.",
-      "note": "payoff 04:s6: the chair lesson taught in the cloister and the Seated Blade named; the bottle (q1.wager) still unspoken.",
+      "who_knows": "Hollis, Darrow, Wren, the kitchen; the reader. The drink: Hollis, Darrow, the reader. The new grip: the whole company (06:s1).",
+      "note": "06:s1: Hollis set the Captain's hand on the hilt: the Seated Blade's grip is three fingers and a thumb now, and he called the lost fingers an argument finished.",
       "on_page": [
         "01:interlude",
         "01:between-3",
         "02:s5",
         "02:between-11",
         "03:between-2",
-        "04:s6"
+        "04:s6",
+        "06:s1"
       ]
     },
     {
@@ -266,8 +267,8 @@
       "truth": null,
       "feeds": "q1.cart stage 2, rae.tether stage 3 (`thistle_found`)",
       "status": "open",
-      "who_knows": "Rae; Darrow (he has seen her at the dealer's in Coldmere, 05:s4, and knows Rae has paid her keep since the fair); the dealer; the reader.",
-      "note": "plant 04:between-4: the Ninth's brand named on the page (a gate, two posts and a bar) from the farrier's chalk board; the mare can be known by it later.",
+      "who_knows": "Rae; Darrow (he has seen her at the dealer's in Coldmere, 05:s4, and knows Rae has paid her keep since the fair); the dealer; the company heard him say he wants a rein for her in the spring (06:s1); the reader.",
+      "note": "06:s1: Darrow told Maelis there is a grey in Coldmere he will want a rein for in the spring; she said a rein is two fingers' work and a saddle is for the spring.",
       "on_page": [
         "00:I",
         "01:s3",
@@ -279,6 +280,7 @@
         "04:between-4",
         "05:s1",
         "05:s4",
+        "06:s1",
         "tale01:p1",
         "tale01:p2",
         "tale01:p3"

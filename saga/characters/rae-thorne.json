@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "05",
-    "scene": "choice",
+    "chapter": "06",
+    "scene": "1",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
+    "anchor": "chronicle/06-the-weir.html#scene-1"
   },
-  "last_seen_doing": "Looked east a moment longer than the rest, said aye, and turned the team north with her bell still stopped.",
-  "now": "Driving the mill tracks north out of Coldmere at Darrow's word, her river road behind her, the rag still in her bell.",
+  "last_seen_doing": "Drove the mill tracks all morning with the rag still in her bell and the box quiet, stopped and moved the oxen with her grandmother's word, and spoke to nobody else.",
+  "now": "Driving the mill tracks north past the ford, the rag still in her bell, her words for the oxen only.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
     "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
@@ -773,6 +773,12 @@
       "evidence": "Rae looked east a moment longer than the rest of them."
     },
     {
+      "fact": "On the first day up the mill tracks the first of her voice Darrow had was for the oxen at the noon ford, and she spoke to nobody else all day.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "the first of her voice Darrow had had all day, and it was for Hob and Dun and nobody else"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1068,6 +1074,10 @@
     {
       "chapter": "05",
       "scene": "choice"
+    },
+    {
+      "chapter": "06",
+      "scene": "1"
     },
     {
       "chapter": "tale02",

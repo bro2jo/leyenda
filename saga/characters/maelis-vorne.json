@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "05",
-    "scene": "choice",
+    "chapter": "06",
+    "scene": "1",
     "place": "coldmere",
-    "anchor": "chronicle/05-the-thornwild-woman-s.html#choice"
+    "anchor": "chronicle/06-the-weir.html#scene-1"
   },
-  "last_seen_doing": "Said nothing and shifted her roll to the north shoulder.",
-  "now": "Walking at the tailboard up the mill tracks north.",
+  "last_seen_doing": "Read the Knots at the noon halt a week after the Steps, then took his right hand and told him plainly what the frost had kept, unwrapped the sword for him to try the grip, and said good after a hundred paces.",
+  "now": "Walking behind the cart up the mill tracks with her roll on the north shoulder, the oilcloth sword back under the salt.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -613,6 +613,30 @@
       "chapter": "05",
       "scene": "choice",
       "evidence": "shifted her roll to the other shoulder, which was the north one"
+    },
+    {
+      "fact": "She read the Knots at the noon halt, a week after the Steps, and said the knee was walking and to walk it till she said.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "It's walking. Walk it. Till I say."
+    },
+    {
+      "fact": "She told him plainly that the frost had kept his two last fingers and would not dress it, because a Mender who lies to a patient buries him.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "A Mender who lies to a patient buries him."
+    },
+    {
+      "fact": "She said a rein is two fingers' work, and to ask her about a saddle in the spring and not before.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "Ask me about a saddle in the spring, and not before."
+    },
+    {
+      "fact": "She watched him take the first hundred paces from the ford in the new grip and said good.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "\"Good,\" she said then."
     }
   ],
   "relationships": [
@@ -898,6 +922,10 @@
     {
       "chapter": "05",
       "scene": "choice"
+    },
+    {
+      "chapter": "06",
+      "scene": "1"
     }
   ]
 }
