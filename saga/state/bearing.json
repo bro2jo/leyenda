@@ -19,11 +19,11 @@
       }
     },
     "candor_guile": {
-      "value": -4,
+      "value": -5,
       "left": "Candor",
       "right": "Guile",
       "moved": {
-        "left": 8,
+        "left": 9,
         "right": 4
       },
       "rungs": {
@@ -215,6 +215,12 @@
       "date": "2026-11-08",
       "axis": "hearth_banner",
       "delta": -2
+    },
+    {
+      "why": "c06.2",
+      "date": "2026-11-09",
+      "axis": "candor_guile",
+      "delta": -1
     }
   ],
   "ladder": {

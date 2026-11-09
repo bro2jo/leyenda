@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "between-1",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#between-1"
   },
-  "last_seen_doing": "Walked the mill tracks at Hob's head and left Rae her quiet; at the noon Reading was told his two last fingers are slow for good, found the grip left to him on the stick and the oilcloth sword, said he would sooner have the fingers and would take the stop, and walked on.",
-  "now": "Walking at Hob's head up the mill tracks past the noon ford, the stick high in a new grip of three fingers and a thumb, the hills ahead and one rider somewhere behind.",
+  "last_seen_doing": "Climbed onto the box and asked Rae straight out whether she was still angry about the river road; heard her answer, gave her the true reason he chose north, and took her term for the next fork.",
+  "now": "On the box beside Rae, climbing the mill tracks north, his word given to say why first at the next fork.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1966,6 +1966,18 @@
       "evidence": "There's a grey in Coldmere I'll want a rein for in the spring."
     },
     {
+      "fact": "He told Rae he chose the north road partly so the grey cloaks would not ask her about her cart again, having watched one question her across the water.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "I'd not have you asked again."
+    },
+    {
+      "fact": "He owned that he had decided for her at the fork without saying so, and agreed that at the next fork he will say why first.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "\"Next fork. Why first.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2448,6 +2460,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-1"
     },
     {
       "chapter": "tale01",

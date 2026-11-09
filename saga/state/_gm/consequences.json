@@ -1505,9 +1505,10 @@
           "fits": "present.wren && present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch06:s1"
+            "ch06:s1",
+            "ch06:between-1"
           ]
         }
       ]
@@ -1582,9 +1583,10 @@
           "priority": 3,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch06:s1"
+            "ch06:s1",
+            "ch06:between-1"
           ]
         },
         {
@@ -1778,13 +1780,47 @@
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch06:s1"
+            "ch06:s1",
+            "ch06:between-1"
           ]
         }
       ],
       "auto": true
+    },
+    {
+      "id": "c06.2",
+      "made": {
+        "chapter": 6,
+        "scene": "between-1",
+        "date": "2026-11-09"
+      },
+      "chose": "Climbed onto the box and asked Rae straight out whether she was still angry about the river road; heard her say she was glad at the fork and that was what she had been chewing on, and gave her his own true thing back: he chose north partly so the grey cloaks would not ask her again, and had said nothing of it; took her term: next fork, he says why first",
+      "now": {
+        "approval": {
+          "rae": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c06.2a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Darrow promised Rae on the box: at the next fork he says why first, out loud, before he takes a road, and she says aye or not. Fire where the company next chooses a road and he gives his reason first, or where he breaks it",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch06:between-1"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

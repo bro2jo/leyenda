@@ -35,17 +35,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "between-1",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#between-1"
   },
-  "last_seen_doing": "Drove the mill tracks all morning with the rag still in her bell and the box quiet, stopped and moved the oxen with her grandmother's word, and spoke to nobody else.",
-  "now": "Driving the mill tracks north past the ford, the rag still in her bell, her words for the oxen only.",
+  "last_seen_doing": "Told him she was still angry about the river road, some of her: she knows its farms and drove past them with her bell stopped; then told him the part she had chewed on since the fork, that she had been glad when he chose north for his own.",
+  "now": "Driving the mill tracks north with Darrow beside her on the box, the rag still in her bell, her term set for the next fork.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
-    "text": "That's why you jump. You don't have to know. You have to get your feet off the ground.",
-    "chapter": "05",
-    "scene": "between-5"
+    "text": "I gave you the road. I never gave you the carter.",
+    "chapter": "06",
+    "scene": "between-1"
   },
   "known_facts": [
     {
@@ -779,6 +779,30 @@
       "evidence": "the first of her voice Darrow had had all day, and it was for Hob and Dun and nobody else"
     },
     {
+      "fact": "She has carted salt to the farms down the river road since she could hold the lines, and said she drove past the end of it with her bell stopped, like a thief.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "I went by them like one."
+    },
+    {
+      "fact": "She told Darrow she was glad at the fork when he chose north for his own, against her carter's rule of carrying for everybody or nobody.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "\"I was glad,\" she said. \"At the fork. When you said north.\""
+    },
+    {
+      "fact": "She told him she had given him the road at the fork, never the carter.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "I never gave you the carter."
+    },
+    {
+      "fact": "She set him a term: at the next fork he says why first, out loud, and she says aye or not.",
+      "chapter": "06",
+      "scene": "between-1",
+      "evidence": "You say why first. Out loud. Then I'll say aye, or I won't."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1078,6 +1102,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-1"
     },
     {
       "chapter": "tale02",

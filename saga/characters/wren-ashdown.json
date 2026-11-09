@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "between-1",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#between-1"
   },
-  "last_seen_doing": "Counted four shut gates and a fox, asked how far the tracks go and got Hollis's answer, counted stones at the ford while pretending badly, and counted the Captain's working fingers at eight.",
-  "now": "In the cart among the sacks with the ledger open, the Captain's fingers counted.",
+  "last_seen_doing": "Slept in the sacks with the ledger under her cheek.",
+  "now": "Asleep in the cart among the sacks, the ledger for a pillow.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -1019,6 +1019,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-1"
     }
   ]
 }

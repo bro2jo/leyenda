@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "between-1",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#between-1"
   },
-  "last_seen_doing": "Took the frost drops on the tailboard, told Wren every mill track is the same track, and set the Captain's hand higher on the hilt: the bind is three fingers and a thumb, and two lost fingers are an argument finished.",
-  "now": "On the tailboard going up the mill tracks, with a lesson over a wall still owed from the Coldmere well.",
+  "last_seen_doing": "Sat on the tailboard with his eyes shut, heard all of it, and asked whether it was over so he could complain about the hedge down his collar.",
+  "now": "On the tailboard going north, complaining to a mule that agrees with him.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -1120,6 +1120,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-1"
     }
   ]
 }

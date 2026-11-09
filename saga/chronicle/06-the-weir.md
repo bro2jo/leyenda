@@ -137,3 +137,71 @@ He had had that word from her twice in a season now, and it weighed what it had 
 > ⟦ THE RECKONING ⟧
 > XP 3,258 → 3,353
 > Inspiration 3 → 4
+
+### Between — Not the Carter
+
+"Are you still angry about the river road?"
+
+He had got himself up onto the box to ask it, which took the rail, the new grip and longer than he liked, and he asked it before he had his breath back before he could think better of it. Rae moved along the board to give him the side away from the wheel. Behind them Wren had gone to sleep in the sacks with the ledger under her cheek, and Maelis walked a dozen yards back, where the hedges kept the talk. Hollis sat on the tailboard with his eyes shut, which proved nothing.
+
+"Aye," said Rae.
+
+She let it sit. Hob found a rut, and the cart rolled through it and out.
+
+He had sat out a reeve's lantern beside her. He could sit out this.
+
+"Some," she said, at the next gate. "Not all of me."
+
+"Which part?"
+
+"The part that knows that road." She tipped her head east, where there was only hedge. "I've carted salt to the farms down it since I could hold the lines. Their dogs know my bell. There's a boy on that road rides my tailboard from the mill to the bend every harvest and won't sit still on it, and that shoe in the ditch was his size." She looked at the oxen. "And I took my cart past the end of it with the bell stopped. A carter with no bell is a thief till she proves otherwise. I went by them like one."
+
+Darrow had his answer ready, and he gave it, because it was true.
+
+"There was a herald's man on that road with my name by heart, and the Mender's, and Hollis's. Your cart's the one a grey cloak crossed the green to ask you about. Every farm on that road would have had us in its yard by dark. They're safer for the cart that didn't come."
+
+"That's true," said Rae.
+
+He waited for the rest of it.
+
+"It's still a road I didn't drive." She shifted the lines in her hands. "That's not the part, though."
+
+"What's the part?"
+
+The cart went a long way up the track before she said it, and she said it with her eyes on the road.
+
+"I was glad," she said. "At the fork. When you said north." The bell at her hip swung on its rag and made no sound. "I've carried for everybody on this road since I could hold the lines. Everybody or nobody, that's the trade. You don't pick. And you said north, for your own, and I was glad of it, and I turned the oxen glad." She looked at him then. "That's what I've been chewing on since the fork. Not you."
+
+He had climbed up to take her anger off her. Anger would have been easy to carry. This was heavier, and it was hers, and he sat with it while the hedge went by.
+
+"One true thing," said Rae. "That was mine."
+
+He gave her his.
+
+"I chose north for the herald's man. Not only for him." He turned the stick over on his knees. "I watched that grey cloak walk across the green to you and say his piece, and watched you answer him, and I couldn't hear a word of it from the wall. I'd not have you asked again. So I picked the road with nobody on it to ask."
+
+"You chose it for me."
+
+"Some of it."
+
+"And said not a word of that at the fork."
+
+"You gave me the road."
+
+"I gave you the road." Rae shook the lines, and Hob leaned into the yoke. "I never gave you the carter."
+
+It went in where she had aimed it. She had told him in her uncle's yard, in other words, that on her road he would be first at nothing, and he had agreed and meant it. Then at the fork he had decided for her in his head and called it a choice of roads.
+
+"No," he said. "You didn't."
+
+"Next fork, then." Her eyes were back on the road. "You say why first. Out loud. Then I'll say aye, or I won't."
+
+"Next fork. Why first."
+
+"Aye."
+
+From the tailboard, with his eyes still shut, Hollis said, "Is that the end of it? Only there's been a drop of hedge working down my collar since the ford, and I've waited all day for somebody on this cart to be speaking so I could complain to them."
+
+"Complain to the mule," said Rae.
+
+"I did," said Hollis. "The mule agrees with me. Where's the joy in that?"

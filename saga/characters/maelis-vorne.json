@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "between-1",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#between-1"
   },
-  "last_seen_doing": "Read the Knots at the noon halt a week after the Steps, then took his right hand and told him plainly what the frost had kept, unwrapped the sword for him to try the grip, and said good after a hundred paces.",
-  "now": "Walking behind the cart up the mill tracks with her roll on the north shoulder, the oilcloth sword back under the salt.",
+  "last_seen_doing": "Walked a dozen yards behind the cart, out of earshot.",
+  "now": "Walking behind the cart up the mill tracks.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -926,6 +926,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-1"
     }
   ]
 }
