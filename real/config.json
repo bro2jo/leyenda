@@ -723,7 +723,7 @@
     }
   },
   "measurement_metrics": {
-    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement; a metric marked sided:false is measured once for the body and its row leaves side blank). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. target {low, high, source}: his own numbers for the look he wants, printed by `measures` and the trends page; a wish he set, never a dose or a gate (the plan's gates stay in rehab). Add a metric here before logging it.",
+    "_about": "Metrics allowed in real/logs/measurements.csv (one row per side per measurement; a metric marked sided:false is measured once for the body and its row leaves side blank). lsi: 'higher' = L/R x 100 on the same date and method (higher is better); 'lower' = R/L x 100 (timed tests). label: the short name in views; now: shown in real/NOW.md's latest-measured line. target {low, high, source}: his own numbers for the look he wants, printed by `measures` and the trends page; a wish he set, never a dose or a gate (the plan's gates stay in rehab). The girths' landmarks and conditions are his guide, real/plan/measurement_guide.md (`doc tape`): first thing in the morning, tape snug, not compressing. Add a metric here before logging it.",
     "ext_deg": {
       "label": "extension",
       "unit": "deg",
@@ -766,21 +766,21 @@
     "wrist_cm": {
       "label": "wrist",
       "unit": "cm",
-      "about": "wrist girth at its narrowest, just above the bony knobs; a frame measure, it does not change with training; either wrist, the same one each time; tape",
+      "about": "narrowest part of the wrist, just above the wrist bones; a frame measure, it does not change with training; either wrist, the same one each time; tape",
       "sided": false,
       "now": false
     },
     "ankle_cm": {
       "label": "ankle",
       "unit": "cm",
-      "about": "ankle girth at its narrowest, above the ankle bones; a frame measure like the wrist; either ankle, the same one each time; tape",
+      "about": "narrowest part of the ankle, just above the ankle bones; a frame measure like the wrist; either ankle, the same one each time; tape",
       "sided": false,
       "now": false
     },
     "neck_cm": {
       "label": "neck",
       "unit": "cm",
-      "about": "neck girth just below the Adam's apple, head level, relaxed; tape",
+      "about": "around the neck just below the Adam's apple, tape level, neck relaxed; tape",
       "sided": false,
       "target": {
         "low": 38,
@@ -792,7 +792,7 @@
     "shoulders_cm": {
       "label": "shoulders",
       "unit": "cm",
-      "about": "shoulder girth around the widest point of the shoulders and chest, arms hanging relaxed, tape level; tape",
+      "about": "full circumference around the widest part of the shoulders/delts and upper chest; tape",
       "sided": false,
       "target": {
         "low": 123,
@@ -804,7 +804,7 @@
     "chest_cm": {
       "label": "chest",
       "unit": "cm",
-      "about": "chest girth at nipple level, arms down, relaxed, at the end of a normal breath out; tape",
+      "about": "around the chest at nipple level, standing naturally, arms relaxed, chest unflexed; tape",
       "sided": false,
       "target": {
         "low": 102,
@@ -816,14 +816,14 @@
     "arm_cm": {
       "label": "upper arm",
       "unit": "cm",
-      "about": "upper arm girth halfway between the shoulder and the elbow, arm hanging relaxed; one row per side; tape",
+      "about": "widest part of the upper arm, arm hanging naturally, muscles relaxed; one row per side; tape",
       "lsi": "higher",
       "now": false
     },
     "arm_flexed_cm": {
       "label": "upper arm, flexed",
       "unit": "cm",
-      "about": "upper arm girth at the peak, flexed, at the same place as the relaxed one; one row per side; tape",
+      "about": "widest part of the upper arm with the biceps flexed, the tape not squeezed; one row per side; tape",
       "lsi": "higher",
       "target": {
         "low": 36,
@@ -832,10 +832,17 @@
       },
       "now": false
     },
+    "forearm_cm": {
+      "label": "forearm",
+      "unit": "cm",
+      "about": "widest part of the forearm, arm relaxed; one row per side; tape",
+      "lsi": "higher",
+      "now": false
+    },
     "waist_cm": {
       "label": "waist",
       "unit": "cm",
-      "about": "waist girth at the navel, relaxed, at the end of a normal breath out; the one girth he wants held while the rest grow; tape",
+      "about": "midpoint between the lowest rib and the top of the hip bone, standing relaxed, after a normal exhale, not sucked in or flexed; the one girth he wants held while the rest grow; tape",
       "sided": false,
       "target": {
         "low": 79,
@@ -847,7 +854,7 @@
     "hips_cm": {
       "label": "hips/glutes",
       "unit": "cm",
-      "about": "hip girth at the widest point of the glutes, feet together; tape",
+      "about": "widest part of the hips and buttocks, tape level; tape",
       "sided": false,
       "target": {
         "low": 100,
@@ -859,7 +866,7 @@
     "thigh_cm": {
       "label": "thigh",
       "unit": "cm",
-      "about": "thigh girth a fixed distance above the top of the kneecap (10 cm is the usual clinical mark; write the distance in notes the first time and keep it), standing, weight even, relaxed; both legs every time: the gap between them is the quad's bulk, the one girth the knee cares about; tape",
+      "about": "widest part of the upper thigh, standing relaxed, weight even; both legs every time: the gap between them is the quad's bulk (the clinic's atrophy mark above the kneecap, if he adds it, is its own metric); tape",
       "lsi": "higher",
       "target": {
         "low": 57,
@@ -871,7 +878,7 @@
     "calf_cm": {
       "label": "calf",
       "unit": "cm",
-      "about": "calf girth at its widest, standing, weight even; both legs every time; tape",
+      "about": "widest part of the calf, standing normally, calf relaxed; both legs every time; tape",
       "lsi": "higher",
       "target": {
         "low": 36,

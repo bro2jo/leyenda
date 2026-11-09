@@ -72,7 +72,7 @@ The engines do all the arithmetic (above). Their help lists every command with i
 python3 engine/darrow.py sync | today | week | sheet | check | ship -m "…"
 python3 engine/darrow.py set daily|nutrition DATE k=v … · food add|ex add|sport add|measure add '<json>' · food list DATE · food lib TEXT
 python3 engine/darrow.py show daily|nutrition|food|ex|sport|measurements DATE · measures · recap --date D [--write]
-python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint [section]
+python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|ptnotes|index|now|checkpoint [section]
 python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · odds --stat S [--prof --art ID] [--chapter N] [--dc N | --target P] · knot tie N --date D --evidence "…"
 python3 engine/darrow.py project open "Title" --tasks … | done TASK | show [--all] | drop --why "…"   (the week's work; `today` names its next task)
 python3 engine/saga.py now · brief [--date D | --between --with who | --climax | --choice | --chapter | --tale] · reread [KEY] · record '<json>' · choose --option K '<entry>'

@@ -65,7 +65,7 @@ Commands (run from the repo root):
                                side, value, unit, method, visit, notes}; metrics from config.json -> measurement_metrics;
                                a metric marked sided:false (a waist or chest girth) takes one row with side blank
   measures [--metric M]        latest value per metric and side, with LSI and his target where one is set; --metric M: that metric's history
-  doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint|PATH [SECTION ...]
+  doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
   ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
@@ -106,6 +106,7 @@ P = {
     "addon": ROOT / "real/plan/whole_athlete_addon.md",
     "working_rules": ROOT / "real/plan/working_rules.md",
     "guide": ROOT / "real/plan/nutrition_guide.md",
+    "tape": ROOT / "real/plan/measurement_guide.md",
     "master": ROOT / "real/plan/rehab_master_plan.md",
     "offseason": ROOT / "real/plan/offseason_program_24_week.md",
     "index": ROOT / "real/README.md",
@@ -1866,7 +1867,7 @@ HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 def doc_path(name):
     fixed = {"state": P["state"], "addon": P["addon"], "rules": P["working_rules"], "guide": P["guide"], "master": P["master"],
              "now": P["real_now"], "offseason": P["offseason"], "index": P["index"], "ptnotes": P["ptnotes"],
-             "sport": P["sport_plan"], "sportguide": P["sport_guide"]}
+             "sport": P["sport_plan"], "sportguide": P["sport_guide"], "tape": P["tape"]}
     if name in fixed:
         return fixed[name]
     globs = {"checkpoint": (P["checkpoints"], "20*.md")}  # the newest week's review
@@ -1877,7 +1878,7 @@ def doc_path(name):
         return found
     p = Path(name) if Path(name).is_absolute() else ROOT / name
     if not p.exists():
-        sys.exit(f"no document '{name}'. Use state, rules, addon, master, offseason, sport, sportguide, guide, ptnotes, index, "
+        sys.exit(f"no document '{name}'. Use state, rules, addon, master, offseason, sport, sportguide, guide, tape, ptnotes, index, "
                  f"now, checkpoint, or a path")
     return p
 

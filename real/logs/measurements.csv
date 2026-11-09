@@ -7,21 +7,21 @@ pre-op,clinic,quad_lb,L,58.9,lb,dynamometer,,
 pre-op,clinic,quad_lb,R,83.7,lb,dynamometer,,the strength target
 pre-op,clinic,ham_lb,L,55.8,lb,dynamometer,,
 pre-op,clinic,ham_lb,R,79,lb,dynamometer,,the strength target
-2026-08-12,self,wrist_cm,,16,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,ankle_cm,,20,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,neck_cm,,36,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,shoulders_cm,,114.5,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,chest_cm,,90,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,waist_cm,,80.5,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,hips_cm,,97,cm,tape,,"home tape, the first set; 12 days before surgery, 29 days after the injury"
-2026-08-12,self,thigh_cm,L,53.5,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides; distance above the kneecap not recorded"
-2026-08-12,self,thigh_cm,R,53.5,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides; distance above the kneecap not recorded"
-2026-08-12,self,calf_cm,L,34.5,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
-2026-08-12,self,calf_cm,R,34.5,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
-2026-08-12,self,arm_cm,L,31,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
-2026-08-12,self,arm_cm,R,31,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
-2026-08-12,self,arm_flexed_cm,L,32,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
-2026-08-12,self,arm_flexed_cm,R,32,cm,tape,,"home tape, the first set; 12 days before surgery; he reports left and right about equal, one value given for both sides"
+2026-08-12,self,wrist_cm,,16,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,ankle_cm,,20,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,neck_cm,,36,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,shoulders_cm,,114.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,chest_cm,,90,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,waist_cm,,80.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,hips_cm,,97,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury"
+2026-08-12,self,thigh_cm,L,53.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,thigh_cm,R,53.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,calf_cm,L,34.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,calf_cm,R,34.5,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,arm_cm,L,31,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,arm_cm,R,31,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,arm_flexed_cm,L,32,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
+2026-08-12,self,arm_flexed_cm,R,32,cm,tape,,"first thing in the morning; by his guide, real/plan/measurement_guide.md (doc tape); home tape, the first set; 12 days before surgery, 29 days after the injury; left and right reported equal, one value for both sides"
 2026-09-11,PT,ext_deg,L,2,deg,gonio,,
 2026-09-11,PT,flex_deg,L,130,deg,"gonio, active",,
 2026-09-11,PT,flex_deg,L,135,deg,"gonio, passive",,
