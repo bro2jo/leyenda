@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3353,
+  "xp": 3358,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -45,7 +45,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 48,
+      "temper": 49,
       "next_at": 64,
       "fell": 12,
       "banked": false
@@ -125,10 +125,10 @@
       "id": "menders_patience",
       "name": "The Mender's Patience",
       "tree": "Binding",
-      "rank": 3,
+      "rank": 4,
       "banked_rank": 0,
-      "practice": 29,
-      "next_at": 30,
+      "practice": 30,
+      "next_at": 50,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
     },
@@ -138,7 +138,7 @@
       "tree": "Insight",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 36,
+      "practice": 37,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
@@ -349,7 +349,7 @@
   "chapter_now": {
     "week_start": "2026-11-08",
     "through": "2026-11-09",
-    "tier_so_far": "Setback",
+    "tier_so_far": "Costly",
     "chapter": 6
   },
   "fell": {
