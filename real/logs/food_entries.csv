@@ -281,3 +281,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-08#11,2026-11-08,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy protein granola bar; matched to the library bar
 2026-11-08#12,2026-11-08,,snack,Good Foods organic avocado mash,1 cup (56 g),90,1,5,8,4,1,0,220,282,0,0.4,16,0.4,5,0,60,label,label photo 11/8 matches the library row
 2026-11-08#13,2026-11-08,,snack,Tortilla chips (assumed Siete grain free sea salt),assumed ~1.5 oz (~27 chips),195,1.5,25.5,10.5,4.5,1.5,0,210,75,15,0.75,22,0.2,0,0,0,library+estimate,brand and amount not given; library Siete row x1.5
+2026-11-08#14,2026-11-08,,snack,Large apple + organic peanut butter,1 large apple + ~3 tbsp,400,15,40,25,8,4,24,150,520,40,1.5,85,1.5,8,0,0,library,sent 6:08 am Mon; logged as Sunday evening snack
