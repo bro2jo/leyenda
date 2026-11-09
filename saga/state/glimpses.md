@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-06 · saying · Rae answers most complaints the carters' way: *Road's the road.* Hollis has started saying it back to her about everything that is plainly her fault.
 - 2026-11-06 · body · The leg wakes before he does this morning and has nothing to say about it. He lies there a while, waiting for the usual argument, and it never comes.
 - 2026-11-06 · overheard · Overheard in the yard: Wren asking Maelis whether a man can be too cheerful, as a medical question. Maelis says yes, that it is catching, and that she has not caught it.
 - 2026-11-07 · weather · Wind off the tarn all morning, hard enough to take a hat. Hollis has lost his twice and found it once, and is not discussing the arithmetic.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-09 · weather · Mist lies in the valley below the track this morning, flat as a pond, and the company walks along the top of it like people on a shelf. Hollis says it is the first time he has been above anything.
 - 2026-11-09 · saying · Hollis promises the mist will burn off by noon. Rae says "Kneel to that," the way the Lowmarch says it, which means yes, and also means she has heard him promise weather before.
 - 2026-11-09 · house · Maelis has claimed the cart's tail as her surgery and is sorting her kit by size, then by use, then by size again. Nobody asks which system won.
+- 2026-11-09 · ledger · Wren's tally for the morning's road: hedges, too many to count, which she has counted; gates, nine; farm dogs that barked at the cart, all of them.
