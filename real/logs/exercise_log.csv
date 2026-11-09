@@ -482,7 +482,7 @@ date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,
 2026-11-08,2026-11-08,76,home,quad,back squat,bil,3,10,,45/65/75,lb,,18,,"NEW on the barbell (the goblet outgrown at 52.5); paused, to the 18 in box; load includes the bar; OFF-PLAN LOAD: planned the empty bar x 3 x 8-10, then +5 lb steps; set 2 +20, set 3 +30; lots of reps in reserve on all sets"
 2026-11-08,2026-11-08,76,home,calf,single-leg standing calf raise,L,3,12,,5,lb,,,,+ one DB as planned (from bodyweight 11/1)
 2026-11-08,2026-11-08,76,home,calf,single-leg standing calf raise,R,3,12,,5,lb,,,,mirrors the left
-2026-11-08,2026-11-08,76,home,quad,cable seated knee extension,L,3,8,,50,lb,,,,"planned 3 x 10 with the 5-7 s lowering; held at 8 for front-of-knee discomfort (pain rule: hold, no progression); pain score not given; left alone both ways; full range"
+2026-11-08,2026-11-08,76,home,quad,cable seated knee extension,L,3,8,,50,lb,,,,"planned 3 x 10 with the 5-7 s lowering; held at 8, front-of-knee pain 2 (the pain rule's fine range: his call, not the rule); left alone both ways; full range"
 2026-11-08,2026-11-08,76,home,quad,cable seated knee extension,R,3,12,,50,lb,,,,as planned
 2026-11-08,2026-11-08,76,home,quad,isometric knee extension,L,3,,30 s,,,,,,"PT item (11/4: 0 and 45 deg, 30 s each leg, light): done at 90, 0 and 45 deg, one 30 s hold each; the 90 deg hold is extra (the State fallback angle); light, load not recorded"
 2026-11-08,2026-11-08,76,home,quad,isometric knee extension,R,,,,,,,,,"NOT DONE (time); planned 0 and 45 deg x 30 s, light"
@@ -492,3 +492,13 @@ date,dash_week_start,pod,session,block,exercise,side,sets,reps,hold_or_duration,
 2026-11-08,2026-11-08,76,home,single-leg,step-up with opposite knee drive,,,,,,,,,,"NOT DONE (time; the plan first cut); planned bodyweight 2 x 10 each side, 18 in"
 2026-11-08,2026-11-08,76,home,single-leg,"heel tap, slow lowering",L,3,10,,,,,7.5,,"lateral; planned 8 in, held at 7.5 (his call; a hold is in plan)"
 2026-11-08,2026-11-08,76,home,cooldown,posture cooldown,,,,,,,,,,"full, as written: 90/90 hip lift 3 x 5 breaths, dead bug 2 x 8/side, supine hip flexor 45 s/side (left hanging), chin nods 2 x 10 x 5 s"
+2026-11-09,2026-11-08,77,upperB,warmup,upper warm-up,,,,,,,,,,"as written: thoracic extension 45 s, pec sequence 1 round"
+2026-11-09,2026-11-08,77,upperB,warmup,face pull with external rotation,,2,15,,50,lb,,,,as written
+2026-11-09,2026-11-08,77,upperB,push,speed bench,,5,3,,75,lb,,,,"as planned (hold); bar fast throughout; felt too light, even for speed"
+2026-11-09,2026-11-08,77,upperB,push,incline barbell press,,2,8,,95,lb,,,,"planned 90 x 2 x 8-10 (reps first); +5 instead, the one variable; ~2-3 in reserve; the Add-On load trigger was met at 90 x 8 with ~3 left; alternated with the pulldown"
+2026-11-09,2026-11-08,77,upperB,pull,one-arm chin-grip cable pulldown,,4,6,,110,lb,,,,per side; +1 plate as planned (his call 11/8); 6 each side every set (set 2 reported as the same as the others); ~2 in reserve at the end
+2026-11-09,2026-11-08,77,upperB,pull,one-arm DB row,,3,10,,35,lb,,,,per side; as planned (one DB step); ~4-5 in reserve
+2026-11-09,2026-11-08,77,upperB,push,seated neutral-grip DB press,,3,10,,30,lb,,,,as planned (one DB step); last set ~1-2 in reserve
+2026-11-09,2026-11-08,77,upperB,pull,prone incline Y-raise,,3,10,,5,lb,,,,as written; still challenging
+2026-11-09,2026-11-08,77,upperB,finisher,tissue & trunk finisher,,,,,,,,,,"seated tibialis raise 2 x 15, banded eversion 2 x 15, side plank from the feet 2 x 20-30 s/side (holds not given) as written; Copenhagen short lever 2 x 30 s/side (planned 3 x 30: the third hold not done; the first two tough)"
+2026-11-09,2026-11-08,77,upperB,push,cable chest fly,,2,12,,30,lb,,,,EXTRA (not in the plan); stack number; no matching pull set
