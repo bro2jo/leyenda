@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-04 · body · Evening finds him less worn than the road has any right to leave him. He sits with his feet to the coals and, for once, does not count the hours to sleep.
 - 2026-11-05 · weather · A hard blue morning over the tarn, the first in days, cold enough that every breath hangs about as if waiting to be thanked. Wren counts them for a while, then gives it up.
 - 2026-11-05 · house · Ash has found the one warm stone in the whole of the Lowmarch and will not be talked off it: not by Rae, not by Hollis, not by a sausage held at a reasonable distance.
 - 2026-11-06 · saying · Rae answers most complaints the carters' way: *Road's the road.* Hollis has started saying it back to her about everything that is plainly her fault.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-08 · weather · By the time the fire is banked the frost is back on the inside of the window, drawing ferns nobody asked for. Outside the stars are out in their hundreds, and the cold is the honest kind.
 - 2026-11-09 · overheard · Overheard over the cart's tail: Wren asking whether hedges this tall grow that way or whether somebody planned them, and Rae saying that up here, those are the same thing.
 - 2026-11-09 · body · Halfway up a long hill he stops minding that the cart is faster than he is. It simply is, the way the hill is. He will be at the top when he gets there.
+- 2026-11-09 · weather · Mist lies in the valley below the track this morning, flat as a pond, and the company walks along the top of it like people on a shelf. Hollis says it is the first time he has been above anything.
