@@ -220,12 +220,16 @@ def measured(cfg):
         if not ms:
             continue
         rec = {"metric": m, "label": E.metric_label(m, spec), "unit": spec.get("unit", ""), "about": spec.get("about", ""),
-               "L": None, "R": None, "lsi": None, "history": []}
+               "L": None, "R": None, "V": None, "lsi": None, "target": E.target_text(spec), "history": []}
         for s in ("L", "R"):
             last = [g for g in ms if g[s] is not None]
             if last:
                 g = last[-1]
                 rec[s] = {"text": E.mval(m, g[s], g["unit"]), "date": E.mdate(g["date"]), "method": g["method"]}
+        vals = [g for g in ms if g.get("V") is not None]
+        if vals:
+            g = vals[-1]
+            rec["V"] = {"text": E.mval(m, g["V"], g["unit"]), "date": E.mdate(g["date"]), "method": g["method"]}
         paired = [g for g in ms if g["lsi"] is not None]
         if paired:
             rec["lsi"] = {"value": round(paired[-1]["lsi"], 1), "date": E.mdate(paired[-1]["date"])}
@@ -338,7 +342,11 @@ def measured_html(ms):
         lsi = m.get("lsi")
         lsi_td = (f'<td><b>{lsi["value"]:.1f}%</b><small>{esc(lsi["date"])}</small></td>' if lsi else '<td class="muted">—</td>')
         hist = " · ".join(f'{esc(h["date"])}: {esc(h["text"])}' for h in m["history"])
-        rows.append(f'<tr><th scope="row">{esc(m["label"])}<small>{esc(m["about"])}</small></th>{cell("L")}{cell("R")}{lsi_td}</tr>'
+        v = m.get("V")
+        sides = (f'<td colspan="2"><b>{esc(v["text"])}</b><small>{esc(v["date"])}{(" · " + esc(v["method"])) if v["method"] else ""}</small></td>'
+                 if v else cell("L") + cell("R"))
+        about = m["about"] + ((" · " + m["target"]) if m.get("target") else "")
+        rows.append(f'<tr><th scope="row">{esc(m["label"])}<small>{esc(about)}</small></th>{sides}{lsi_td}</tr>'
                     f'<tr class="hist"><td colspan="4"><span class="muted">{hist}</span></td></tr>')
     return ('<div class="scroll"><table class="measured"><thead><tr><th>Metric</th><th>Left</th><th>Right</th><th>LSI</th></tr></thead>'
             f'<tbody>{"".join(rows)}</tbody></table></div>')
@@ -788,7 +796,7 @@ noscript .scroll { margin-top: 10px; }
   </section>
 
   <section id="measured">
-    <div class="sec-h"><div class="eyebrow">Measured</div><h2>Latest clinic numbers</h2>
+    <div class="sec-h"><div class="eyebrow">Measured</div><h2>Latest measured numbers</h2>
       <p>The newest value per side, and the limb symmetry index (left as a share of right). The line under each metric is its history.</p></div>
     {{MEASURED}}
   </section>

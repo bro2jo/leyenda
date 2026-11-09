@@ -243,7 +243,9 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 **sport_log.csv** — one row per skill worked in a throwing or film session (the sport plan §9): `date, session, skill, drill, sets, reps, minutes, rpe, metric, value, notes`.
 - `drill` carries what was done with the stance and the place, and on pivot rows the foot the pivot turned on (`slight pivot, left foot`); pivot throws are counted as reps on pivot rows.
 
-**measurements.csv** — one row per measured number and side: `date` (ISO, or `pre-op`), `source` (PT, surgeon, clinic, self), `metric` (one of `config.json → measurement_metrics`), `side` (`L` / `R`), `value`, `unit`, `method` (goniometer, dynamometer, 1RM…), `visit` (its `pt_notes.md` entry, `YYYY-MM-DD_PTn`), `notes`. The engine computes LSI.
+**measurements.csv** — one row per measured number and side: `date` (ISO, or `pre-op`), `source` (PT, surgeon, clinic, self), `metric` (one of `config.json → measurement_metrics`), `side` (`L` / `R`; blank for a metric the config marks `sided: false`, a girth with no side), `value`, `unit`, `method` (goniometer, dynamometer, 1RM, tape…), `visit` (its `pt_notes.md` entry, `YYYY-MM-DD_PTn`), `notes`. The engine computes LSI.
+- **Girths (tape):** a morning before food, muscles relaxed unless the metric says flexed, the same tape and the same landmarks (each metric's `about` names them), two readings and their average; about every four weeks (a Sunday's checkpoint morning fits), never over a sore muscle. The thigh and the calf are measured on **both legs** every time, the thigh at one fixed distance above the kneecap written in `notes` the first time: the gap between the legs is the quad's bulk. A limb girth reported without its side is held and asked, never guessed.
+- **Girth targets** (`config.json → measurement_metrics.<metric>.target`) are his own numbers for the look he wants, with their `source`; `measures` prints them next to the latest value. They are not doses or gates: nothing in the program moves because of a girth.
 
 **Both logs:**
 - Give doses, loads, heights, minutes and RPE when reporting so the rows are complete.

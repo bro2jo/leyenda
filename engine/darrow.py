@@ -62,8 +62,9 @@ Commands (run from the repo root):
                                plan, measured, flags;
                                --write puts them in real/checkpoints/<the Sunday after>.md (creates the file from the template)
   measure add 'JSON'           append rows to real/logs/measurements.csv, one per side: {date (or pre-op), source, metric,
-                               side, value, unit, method, visit, notes}; metrics from config.json -> measurement_metrics
-  measures [--metric M]        latest value per metric and side, with LSI; --metric M: that metric's full history
+                               side, value, unit, method, visit, notes}; metrics from config.json -> measurement_metrics;
+                               a metric marked sided:false (a waist or chest girth) takes one row with side blank
+  measures [--metric M]        latest value per metric and side, with LSI and his target where one is set; --metric M: that metric's history
   doc state|rules|addon|master|offseason|sport|sportguide|guide|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
@@ -1430,10 +1431,12 @@ def measurement_sets(cfg):
         m = r.get("metric", "")
         g = groups.setdefault((r.get("date", ""), m, r.get("method", "")), {
             "date": r.get("date", ""), "metric": m, "method": r.get("method", ""), "source": r.get("source", ""),
-            "visit": r.get("visit", ""), "unit": r.get("unit") or specs.get(m, {}).get("unit", ""), "L": None, "R": None})
+            "visit": r.get("visit", ""), "unit": r.get("unit") or specs.get(m, {}).get("unit", ""), "L": None, "R": None, "V": None})
         side = str(r.get("side", "")).strip().upper()
         if side in ("L", "R"):
             g[side] = num(r.get("value"))
+        else:  # a metric with no side (sided: false): a girth of the waist, the chest, the neck
+            g["V"] = num(r.get("value"))
     out = sorted(groups.values(), key=mkey)
     for g in out:
         kind, left, right = specs.get(g["metric"], {}).get("lsi"), g["L"], g["R"]
@@ -1447,6 +1450,8 @@ def measurement_sets(cfg):
 
 def set_text(g):
     bits = [f"{s} {mval(g['metric'], g[s], g['unit'])}" for s in ("L", "R") if g[s] is not None]
+    if g.get("V") is not None:
+        bits.insert(0, mval(g["metric"], g["V"], g["unit"]))
     if g["lsi"] is not None:
         bits.append(f"LSI {g['lsi']:.1f}%")
     return " · ".join(bits)
@@ -1454,6 +1459,24 @@ def set_text(g):
 
 def metric_label(m, spec):
     return spec.get("label") or m.rsplit("_", 1)[0].replace("_", " ")
+
+
+def metric_sided(spec):
+    """False for a metric measured once for the body (sided: false in config): its row leaves side blank."""
+    return spec.get("sided", True) is not False
+
+
+def target_text(spec):
+    """'target 102–108 cm' from a metric's target {low, high, source} in config.json; '' without one. His own numbers, never a dose."""
+    t = spec.get("target") or {}
+    lo, hi = t.get("low"), t.get("high")
+    if lo is None and hi is None:
+        return ""
+    if lo is not None and hi is not None:
+        rng = f"{lo:g}" if lo == hi else f"{lo:g}–{hi:g}"
+    else:
+        rng = f"{(lo if lo is not None else hi):g}"
+    return f"target {rng} {spec.get('unit', '')}".strip()
 
 
 def latest_measured_line(cfg):
@@ -1475,6 +1498,11 @@ def latest_measured_line(cfg):
         elif lefts:
             g = lefts[-1]
             parts.append(f"{name} L {mval(m, g['L'], g['unit'])} ({mdate(g['date'])})")
+        else:
+            vals = [g for g in ms if g.get("V") is not None]
+            if vals:
+                g = vals[-1]
+                parts.append(f"{name} {mval(m, g['V'], g['unit'])} ({mdate(g['date'])})")
     return " · ".join(parts) or "nothing yet"
 
 
@@ -1487,7 +1515,8 @@ def cmd_measures(args, cfg, rules):
     if args.metric:
         if args.metric not in specs:
             sys.exit(f"unknown metric '{args.metric}'. Known: {', '.join(specs)}")
-        print(f"# {args.metric} ({specs[args.metric].get('unit', '')}): {specs[args.metric].get('about', '')}")
+        tt = target_text(specs[args.metric])
+        print(f"# {args.metric} ({specs[args.metric].get('unit', '')}): {specs[args.metric].get('about', '')}" + (f"  [{tt}]" if tt else ""))
         for g in (g for g in sets if g["metric"] == args.metric):
             print(f"{mdate(g['date']):<7} {g['source']:<8} {set_text(g)}" + (f"  [{g['method']}]" if g["method"] else "")
                   + (f"  ({g['visit']})" if g["visit"] else ""))
@@ -1500,10 +1529,15 @@ def cmd_measures(args, cfg, rules):
             if last:
                 g = last[-1]
                 bits.append(f"{s} {mval(m, g[s], g['unit'])} ({mdate(g['date'])}" + (f", {g['method']}" if g["method"] else "") + ")")
+        vals = [g for g in ms if g.get("V") is not None]
+        if vals:
+            g = vals[-1]
+            bits.append(f"{mval(m, g['V'], g['unit'])} ({mdate(g['date'])}" + (f", {g['method']}" if g["method"] else "") + ")")
         paired = [g for g in ms if g["lsi"] is not None]
         if paired:
             bits.append(f"LSI {paired[-1]['lsi']:.1f}% ({mdate(paired[-1]['date'])})")
-        print(f"{m:<20} " + (" · ".join(bits) or "not measured"))
+        tt = target_text(spec)
+        print(f"{m:<20} " + (" · ".join(bits) or "not measured") + (f" · {tt}" if tt else ""))
 
 
 def cmd_measure(args, cfg, rules):
@@ -1516,8 +1550,10 @@ def cmd_measure(args, cfg, rules):
         m, side = item.get("metric", ""), str(item.get("side", "")).strip().upper()
         if m not in specs:
             sys.exit(f"unknown metric '{m}'. Add it to config.json -> measurement_metrics first. Known: {', '.join(specs)}")
-        if side not in ("L", "R"):
-            sys.exit("side must be L or R (one row per side)")
+        if metric_sided(specs[m]) and side not in ("L", "R"):
+            sys.exit(f"side must be L or R for {m} (one row per side)")
+        if not metric_sided(specs[m]) and side:
+            sys.exit(f"{m} has no side (config: sided false): leave side blank")
         if num(item.get("value")) is None:
             sys.exit(f"value must be a number, got '{item.get('value')}'")
         date = "pre-op" if str(item.get("date", "")).strip() == "pre-op" else d(item["date"]).isoformat()
@@ -2745,8 +2781,11 @@ def cmd_check(args, cfg, rules):
                 problems.append(f"{where}: bad date '{r.get('date')}' (ISO date or 'pre-op')")
         if r.get("metric") not in specs:
             problems.append(f"{where}: metric '{r.get('metric')}' is not in config.json -> measurement_metrics")
-        if str(r.get("side", "")).strip().upper() not in ("L", "R"):
+        side = str(r.get("side", "")).strip().upper()
+        if metric_sided(specs.get(r.get("metric"), {})) and side not in ("L", "R"):
             problems.append(f"{where}: side '{r.get('side')}' must be L or R")
+        elif not metric_sided(specs.get(r.get("metric"), {})) and side:
+            problems.append(f"{where}: metric '{r.get('metric')}' has no side; leave it blank")
         if num(r.get("value")) is None:
             problems.append(f"{where}: value '{r.get('value')}' is not a number")
     for i, ch in enumerate(cfg.get("plan_changes", [])):

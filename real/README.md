@@ -52,7 +52,7 @@ real/
 | `logs/exercise_log.csv` | `show ex` | One row per exercise instance | As he reports | Exercise (one name per movement: `ex names`), block, side, sets, reps, hold, load with its unit, band, height, assist | Set-ups, machine ids and doses in the exercise name (→ `notes`) |
 | `logs/nutrition_log.csv` · `food_entries.csv` · `food_library.csv` | `show nutrition` · `food list` · `food lib` | Day totals with weight and creatine · one row per food item · the food library | As he reports | — | — |
 | `logs/sport_log.csv` | `show sport` | One row per skill worked in a throwing or film session | As he reports | — | — |
-| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, the filmed home single-leg squat test, hop tests later) | Each visit or test | The number, its source and method | Daily self-checks (→ daily log) |
+| `logs/measurements.csv` | `measures` | Every measured number, one row per side (goniometer, dynamometer, 1RM, the filmed home single-leg squat test, hop tests later; the tape girths, one row for a site without a side) | Each visit or test; the girths about every four weeks | The number, its source and method | Daily self-checks (→ daily log); his girth targets (→ `config.json → measurement_metrics`) |
 | `state/archive/`, `logs/archive/` | — | History: each replaced State; the old dashboard's daily log as uploaded (column map: its README) | Never (path corrections aside) | History | Anything current |
 
 ---
@@ -63,6 +63,7 @@ real/
 |---|---|
 | What the PT or surgeon said | `pt_notes.md` (the State quotes the ones in force) |
 | What they measured | `measurements.csv` (`measures`); the words around it in `pt_notes.md` |
+| Body girths (tape) and the look he is after | `measurements.csv` (`measures`, `source=self`); the targets, his own numbers with their source, in `config.json → measurement_metrics.<metric>.target` |
 | Phase criteria, plan doses | Master plan |
 | Definitions, load and pain rules, clearance, the log columns | Working Rules |
 | Phase and gate status | State §3 (NOW → Gate keeps it short) |
