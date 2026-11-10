@@ -35,17 +35,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-1",
+    "scene": "2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-1"
+    "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Told him she was still angry about the river road, some of her: she knows its farms and drove past them with her bell stopped; then told him the part she had chewed on since the fork, that she had been glad when he chose north for his own.",
-  "now": "Driving the mill tracks north with Darrow beside her on the box, the rag still in her bell, her term set for the next fork.",
+  "last_seen_doing": "Made the road lie: drove the loaded cart up a farm lane through the soft ground and back on the turf, then ran it lopsided through the spring-mud on a fresh line and away over the stones, so the dip shows two carts going two ways.",
+  "now": "At the camp wall on the mill tracks, the road behind them telling a lie she made.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
-    "text": "I gave you the road. I never gave you the carter.",
+    "text": "It's a road. Roads say what you tell them.",
     "chapter": "06",
-    "scene": "between-1"
+    "scene": "2"
   },
   "known_facts": [
     {
@@ -803,6 +803,18 @@
       "evidence": "You say why first. Out loud. Then I'll say aye, or I won't."
     },
     {
+      "fact": "She made the dip by the spring show two carts going two ways: one heavy up a farm lane, one light over the stones.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "A man reading that sees two carts come down off the hill and go two ways."
+    },
+    {
+      "fact": "She turned the sack so its knot was toward Darrow's hand without remark.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "\"Your end,\" she said, and turned it so the knot was toward him."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1106,6 +1118,10 @@
     {
       "chapter": "06",
       "scene": "between-1"
+    },
+    {
+      "chapter": "06",
+      "scene": "2"
     },
     {
       "chapter": "tale02",

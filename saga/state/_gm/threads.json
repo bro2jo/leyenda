@@ -257,6 +257,7 @@
         "05:s3",
         "05:between-5",
         "06:between-1",
+        "06:s2",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"
@@ -403,10 +404,11 @@
       "truth": "T3",
       "feeds": "b2.2",
       "status": "open",
-      "who_knows": "Darrow and Hollis, from the miller's man (05:s7); the miller's man; the reader. Unnamed on the page; the company does not know who sent the rider or why alive.",
-      "note": "Planted 05:s7: one set of tracks left the column at the crossroads and went down the mill track alone; the miller's man said the rider had time. Pays at b2.2 (the weir).",
+      "who_knows": "The whole company has seen the rider on the skyline a mile behind at dusk (06:s2); Darrow and Hollis tie it to the miller's man's rider (05:s7); the reader. Unnamed; nobody has seen a face; who sent the rider, or why alive, nobody knows.",
+      "note": "06:s2: second plant: one rider on a long-legged horse, a mile back on the skyline at dusk, stopping when they stop, walking a horse shod for speed.",
       "on_page": [
-        "05:s7"
+        "05:s7",
+        "06:s2"
       ]
     }
   ]

@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-1",
+    "scene": "2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-1"
+    "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Sat on the tailboard with his eyes shut, heard all of it, and asked whether it was over so he could complain about the hedge down his collar.",
-  "now": "On the tailboard going north, complaining to a mule that agrees with him.",
+  "last_seen_doing": "Named the rider the miller's man's long-legged horse, said one rider is worse than forty, and at the camp set his hat on the far side of the field wall.",
+  "now": "At the camp wall on the mill tracks, his hat on the far side of it in the frost.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
@@ -766,6 +766,18 @@
       "chapter": "06",
       "scene": "1",
       "evidence": "I've been waiting to say that since I was thirty."
+    },
+    {
+      "fact": "He said one rider is worse than forty, because one wants something particular.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "One wants something particular, or they'd have sent forty."
+    },
+    {
+      "fact": "At the camp he set his hat crown-down in the frost on the far side of the field wall and said that's a wall.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "\"That's a wall,\" said Hollis"
     }
   ],
   "relationships": [
@@ -1124,6 +1136,10 @@
     {
       "chapter": "06",
       "scene": "between-1"
+    },
+    {
+      "chapter": "06",
+      "scene": "2"
     }
   ]
 }

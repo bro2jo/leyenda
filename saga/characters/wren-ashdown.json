@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-1",
+    "scene": "2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-1"
+    "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Slept in the sacks with the ledger under her cheek.",
-  "now": "Asleep in the cart among the sacks, the ledger for a pillow.",
+  "last_seen_doing": "Counted one rider and no column, wrote Hollis's verdict in the ledger, and counted the road lie with deep respect.",
+  "now": "At the camp wall with the ledger, two carts on the road by their tracks and one in fact.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -721,6 +721,18 @@
       "chapter": "06",
       "scene": "1",
       "evidence": "Fingers that work: eight,"
+    },
+    {
+      "fact": "She wrote in her ledger that the riders behind them were one, which is worse than forty, according to Ser Hollis.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "which is worse than forty, according to Ser Hollis."
+    },
+    {
+      "fact": "She called Rae's road lie the best lie she had seen since she came off the mountain.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "That's the best lie I've seen since I came off the mountain"
     }
   ],
   "relationships": [
@@ -1023,6 +1035,10 @@
     {
       "chapter": "06",
       "scene": "between-1"
+    },
+    {
+      "chapter": "06",
+      "scene": "2"
     }
   ]
 }

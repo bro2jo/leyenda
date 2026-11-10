@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "1",
+    "scene": "2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-1"
+    "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Rode in the sacks, considered a fox and let him live, and took the one piece of sunlit bank at the ford.",
-  "now": "In the cart with the sacks, going north.",
+  "last_seen_doing": "Saw the rider first, from the sacks, with her hackles up and no sound.",
+  "now": "At the camp wall on the mill tracks.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
@@ -115,6 +115,12 @@
       "chapter": "05",
       "scene": "choice",
       "evidence": "watched the river road until the hedge took it"
+    },
+    {
+      "fact": "She saw the rider on the skyline first and made no sound.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "she made no sound at all"
     }
   ],
   "relationships": [
@@ -217,6 +223,10 @@
     {
       "chapter": "06",
       "scene": "1"
+    },
+    {
+      "chapter": "06",
+      "scene": "2"
     }
   ]
 }

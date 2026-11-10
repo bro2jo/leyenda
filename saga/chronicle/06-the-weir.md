@@ -205,3 +205,103 @@ From the tailboard, with his eyes still shut, Hollis said, "Is that the end of i
 "Complain to the mule," said Rae.
 
 "I did," said Hollis. "The mule agrees with me. Where's the joy in that?"
+
+### Scene 2 — Two Carts Out of One
+
+Ash saw it first. She stood up in the sacks with the splint braced against the salt and looked back down the track the way they had come, and the hair rose along her spine from her neck to her tail, and she made no sound at all.
+
+Darrow turned on the box.
+
+The mill tracks had climbed all afternoon and come out at dusk onto an open shoulder of hill, where the hedges gave out into stone walls and the sky had gone the colour of a cold kettle. Behind them the land went down in long folds toward Coldmere, and on the last fold, a mile back and high against what was left of the light, stood a rider. One. A light horse, long in the leg, its legs plain against the sky.
+
+"Stop them," Darrow said.
+
+Rae stopped the oxen with her word. On the skyline the rider stopped too. Darrow counted ten. Rae said the other word and the cart went on, and when he looked back the rider was moving again, at a walk, keeping the mile exactly, as if it had been measured out and paid for.
+
+"That's your long-legged horse," said Hollis from the tailboard, low. "The miller's man's."
+
+"Shod to go fast," said Darrow, "and walking. Nobody rides a horse like that to walk."
+
+Wren was awake and up on her knees in the sacks with her hair in her face, staring past the rider at the empty folds behind it. She stared a long time.
+
+"Riders: one," she said. "Column: none. No dust, no smoke-cart, no lances." She found the pencil behind her ear. "Is one better or worse?"
+
+"Worse," said Hollis. "Forty you hear coming, and forty want something simple. One wants something particular, or they'd have sent forty."
+
+"Riders behind us, one," said Wren, writing, "which is worse than forty, according to Ser Hollis."
+
+Maelis had come up level with the box. She looked at the skyline, and at the light going off it, and at the knee.
+
+"We'll want a wall tonight," she said, and dropped back.
+
+Darrow knew what the old speed wanted done about one rider on a hill. It was a mile off, and he had a stick and a cart and four people on it, and he let the thing want what it liked.
+
+---
+
+The track came down off the shoulder into a dip where a spring crossed it, and the ground there went soft and black under the frost. At the bottom of the dip a lane went off left between walls, up toward a farm with one window lit. The mill tracks went on straight ahead, up over a run of bare stone.
+
+Rae slowed the oxen. Darrow felt her not look at him.
+
+"That's a fork," he said.
+
+"It is."
+
+"Why first, then." He had the stick across his knees, and he put his hand flat on it. "The tracks go on to a mill, and a mill's a place with people in it who'll lie for a carter. The lane goes up to one farm and a dog, and the end of it. I'd keep the tracks."
+
+"Aye," said Rae. Then, after a moment: "He can have the lane, though."
+
+"Who can?"
+
+She was already getting down. "Everybody off."
+
+"I've only just got comfortable," said Hollis.
+
+"You've been comfortable since Coldmere. Off."
+
+They got off. Rae drove the cart up the lane into the soft ground, loaded, and the wheels went in to the felloes and came out black, and she kept the oxen at it all the way up to the farm gate, where the dog came to the bars and said a great deal. In the gateway she brought Hob and Dun round, slowly, with a hand on each nose, and drove back down on the turf of the verge, where the ground held and kept nothing.
+
+At the bottom she stopped by the spring.
+
+"Half the load to the near side. Pile it."
+
+Darrow took a sack. His hands were stupid with the cold, the two slack fingers stupidest, and the neck of the sack slid out of them. He tried again with three fingers and a thumb hooked into the knot, and it held, and he swung it up onto the near side of the bed.
+
+Rae was at the other end of the next one. "Your end," she said, and turned it so the knot was toward him.
+
+When half the load sat on the near side the cart leaned on its near wheel like a drunk on a friend. She took it through the black ground beside the spring on a fresh line, a hand's breadth off the first, so that the near wheel cut deep and the off wheel barely kissed the mud; and then up onto the stones of the mill tracks, where the wheels rang and left nothing behind them at all.
+
+"Load back. Even," she said, and they put it back.
+
+She looked down into the dip in the last of the light, and then she said it once, for all of them.
+
+"A man reading that sees two carts come down off the hill and go two ways. One's heavy and went up the lane, plain as a signpost. The other's lopsided and light and went over the stones, and the stones won't tell him anything." She took up the goad. "Which would you follow?"
+
+"The plain one," said Darrow.
+
+"Everybody does."
+
+Wren had her ledger open on the tailboard and was writing with her tongue between her teeth.
+
+"Carts on the road ahead of us, by their tracks: two," she said. "Carts on the road: one." She looked up. "I'm in it."
+
+"That's a lie," she added, with deep respect. "In mud. That's the best lie I've seen since I came off the mountain, and I've been travelling with Ser Hollis."
+
+"It's a road," said Rae. "Roads say what you tell them."
+
+"I've never once lied to you," said Hollis.
+
+"You told the miller's man it was a bear."
+
+"That was improving it."
+
+---
+
+They made camp past the stones, where the shoulder of the hill stood between them and the dip, in the lee of a field wall with its top grown over in moss gone stiff with frost. Rae said a small fire would not show from below, and Maelis looked at the hill and agreed, and Hollis said he would remember that on his deathbed too.
+
+Darrow looked back once before the wall took the view. The dip was dark, and the farm's window, and the folds beyond it. Nothing stood on the skyline. That was either good or the opposite, and there was no knowing which from here.
+
+When he turned round, Hollis was at the wall.
+
+He had come along the wall on the beech leg with his hat in his hand, and he stood looking at it, the height of it, the stones on its top, the frost, as he had looked at the well at Coldmere. Then he looked at the Captain. Then he reached over and set the hat down on the far side, crown down in the frost, where nobody on this side could see it.
+
+"That's a wall," said Hollis, as if a bet had been settled.

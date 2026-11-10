@@ -3,10 +3,10 @@
   "position": {
     "book": 2,
     "chapter": 6,
-    "beat": "b2.1",
-    "next_scene": 2,
+    "beat": "b2.2",
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch06:s1",
+    "last_written": "ch06:s2",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -49,8 +49,8 @@
           "if_ignored": "he lobs stones over the wall alone until the light goes, and says nothing about it",
           "why_now": "he said tomorrow, over the wall, at the well three days ago, and tonight's camp has a wall"
         },
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s2"
       },
       {
         "n": 3,
@@ -82,7 +82,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -232,7 +232,7 @@
     },
     "b2.2": {
       "title": "The Needle",
-      "status": "planned"
+      "status": "in_progress"
     },
     "b2.3": {
       "title": "The Mill at Coldmere",

@@ -1505,10 +1505,11 @@
           "fits": "present.wren && present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch06:s1",
-            "ch06:between-1"
+            "ch06:between-1",
+            "ch06:s2"
           ]
         }
       ]
@@ -1583,10 +1584,11 @@
           "priority": 3,
           "valid_until": "book2",
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch06:s1",
-            "ch06:between-1"
+            "ch06:between-1",
+            "ch06:s2"
           ]
         },
         {
@@ -1780,10 +1782,11 @@
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch06:s1",
-            "ch06:between-1"
+            "ch06:between-1",
+            "ch06:s2"
           ]
         }
       ],
@@ -1814,11 +1817,12 @@
           "what": "Darrow promised Rae on the box: at the next fork he says why first, out loud, before he takes a road, and she says aye or not. Fire where the company next chooses a road and he gives his reason first, or where he breaks it",
           "fits": "present.rae",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch06:s2",
           "offered": 1,
           "offered_at": [
             "ch06:between-1"
-          ]
+          ],
+          "evidence": "\"Why first, then.\""
         }
       ]
     }
