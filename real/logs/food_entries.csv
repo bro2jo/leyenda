@@ -289,3 +289,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-09#5,2026-11-09,,lunch,Smartfood white cheddar popcorn (single-serve bag),1 package,300,5,28,19,3,3.5,4,370,180,70,0.6,50,1,0,0,300,label,label photo 11/9
 2026-11-09#6,2026-11-09,,dinner,Perdue Simply Smart Organics GF breaded chicken tenders,"9 pieces (3 label servings, ~285 g)",630,39,51,30,0,6,3,1440,540,18,3,60,2.1,0,0,45,library,library row x3
 2026-11-09#7,2026-11-09,,dinner,Yum yum sauce,assumed ~3 tbsp,240,0.5,1.5,25.5,0,3.5,1.5,255,10,5,0.1,1,0,0,0.1,0,estimate,"amount not given; ~3 tbsp as 11/1 and 11/4, ~80 kcal a tbsp"
+2026-11-09#8,2026-11-09,,snack,Large apple + organic peanut butter,1 large apple + ~3 tbsp,400,15,40,25,8,4,24,150,520,40,1.5,85,1.5,8,0,0,library,his usual snack
+2026-11-09#9,2026-11-09,,snack,Cheddar cheese slice,1 slice (~21 g),80,5,0.3,6.5,0,3.7,0.1,130,16,150,0.1,6,0.8,0,0.1,0,estimate,"typical pre-sliced cheddar, as 11/6"
