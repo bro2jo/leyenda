@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-08 · saying · "Call him what he does twice," the carters say, and that is how a man ends up named for a sneeze. Wren has started a list in the back of her ledger, and will not say whose.
 - 2026-11-08 · house · Maelis is rolling bandages nobody needs yet at the end of the long table, quick and neat as a card-sharp. When Darrow asks what they are for, she says "Optimism," and does not look up.
 - 2026-11-08 · ledger · Wren's tally for the morning, in the margin: frost on four panes of six, two kettles boiled, one argument about whose turn it was, won by nobody and still going.
 - 2026-11-08 · overheard · Overheard by the door: Hollis telling a carter that the secret of a long life is never to be the first one up. The carter asks how it's working. Hollis says he'll let him know.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-09 · house · Wren has taken to counting the company's boots each night before she sleeps, lining them up by the fire like a small regiment. Darrow's are always at the end, toes out, ready.
 - 2026-11-09 · weather · The mist kept Hollis's promise for once and burned off by noon, leaving the hills washed and bright. He has mentioned this four times, and Rae has let him.
 - 2026-11-09 · overheard · Overheard at the night's fire: Hollis asking Rae how far they made today, and Rae answering in hills instead of miles. Hollis says that's cheating. Rae says it's the only honest way to count this country.
+- 2026-11-09 · house · Rae is mending a harness strap by firelight, the awl held in her teeth between stitches, talking around it as if that were a normal way to talk.
