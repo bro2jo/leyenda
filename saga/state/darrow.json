@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3398,
+  "xp": 3413,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -25,7 +25,7 @@
       "raw": 11,
       "cap": 14,
       "mod": 0,
-      "temper": 24,
+      "temper": 27,
       "next_at": 32,
       "fell": 15,
       "banked": false
@@ -116,7 +116,7 @@
       "tree": "Breath",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 8,
+      "practice": 9,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Recover once per fight; endure where others tire."
