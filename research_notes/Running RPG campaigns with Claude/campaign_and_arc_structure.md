@@ -416,7 +416,7 @@ By 2025–2026 there is a visible family of open-source "LLM as GM" projects, se
 - **Codified Foreshadowing-Payoff Text Generation** (arXiv 2601.07033, January 2026): see section 9. — [arXiv 2601.07033](https://arxiv.org/abs/2601.07033)
 
 **Practitioner reports on behaviour**
-- A 2026 Reddit comment: "Claude as a DM is surprisingly great. Infinite patience, never cancels, builds storylines on the fly", with the drawback that the AI is "a bit too nice" and lacks the chaos a human DM brings; another commenter advises an agent that can call skills for dice rolls and tables instead of a plain chat model. — [r/Solo_Roleplaying snapshot, April 2026](https://reddit.sentinel-team.org/posts/1slxp1y/snapshots/2026-04-17T16%3A51%3A33.828499Z)
+- A 2026 Reddit comment: "Claude as a DM is surprisingly great. Infinite patience, never cancels, builds storylines on the fly", with the drawback that the AI is "a bit too nice" and lacks the chaos a human DM brings; another commenter advises an agent that can call skills for dice rolls and tables instead of a plain chat model. (Single forum thread; anecdote, not evidence of typical behaviour.) — [subreddit snapshot, April 2026](https://reddit.sentinel-team.org/posts/1slxp1y/snapshots/2026-04-17T16%3A51%3A33.828499Z)
 - A community guide to solo tabletop play with AI recommends the model for NPC voices and co-GM help and treats general chat models as unsuited to being the whole GM. — [Statuo's guide](https://rentry.co/StatuoTTRPG)
 - A blog series pairs Mythic GME with ChatGPT so that Mythic supplies randomness and structure while the model narrates. — [Mythic GME with ChatGPT, part 1](https://garden-53r.pages.dev/garden/gme-gpt-pt1)
 
