@@ -295,4 +295,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-10#2,2026-11-10,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola protein bar
 2026-11-10#3,2026-11-10,,snack,Hershey's Kisses milk chocolate,1 piece,22,0.3,2.8,1.3,0.1,0.8,2.3,3,17,8,0.05,3,0.05,0,0,0,estimate,flavor not given; typical milk chocolate kiss
 2026-11-10#4,2026-11-10,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: normal chicken and spinach
-2026-11-10#5,2026-11-10,,dinner,Creamy tomato basil soup,"big bowl, assumed ~2 cups (photo)",300,6,36,14,4,6,24,1500,900,120,2,40,0.6,25,0.2,40,photo,brand not given; typical creamy tomato basil ~150 kcal and ~750 mg Na a cup; label asked for
+2026-11-10#5,2026-11-10,,dinner,Creamy tomato basil soup,~3.5 cups (his words: 3 or 4 cups),525,10.5,63,24.5,7,10.5,42,2625,1575,210,3.5,70,1,44,0.4,70,estimate,brand not given; typical creamy tomato basil ~150 kcal and ~750 mg Na a cup; label asked for
