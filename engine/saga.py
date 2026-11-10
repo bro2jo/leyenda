@@ -41,8 +41,8 @@ Commands (run from the repo root):
                                         so its default is its own; `saga.py choose` answers it (close is its bookkeeping half)
   plan chapter cutaway                  a week with nothing logged whose chapter was already planned: its slots cleared, world moves kept (one interlude, no climax)
   plan chapter template --week_start YYYY-MM-DD
-                                        print a canonical skeleton for the next chapter (7 dated slots, spine on Sunday and Saturday, two
-                                        float quest placeholders, each with an empty plan and turn, world_moves, climax); fill it in a scratch file
+                                        print a canonical skeleton for the next chapter (7 dated slots on the Book's next core beat, a quest
+                                        slot only where one is owed or the story runs ahead, each with an empty plan and turn, world_moves, climax); fill it in a scratch file
                                         and pass it to `plan chapter open` (it warns about slots whose turn is still empty)
   plan chapter open --number N 'JSON'   N must follow the current chapter (--force otherwise); refused while a micro is open; keeps climax.default; warns about the outgoing chapter's unwritten slots
                                         and carries its still-owed world moves to the front of the new chapter's world_moves
@@ -1179,6 +1179,10 @@ HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many befor
      "a catchphrase lands harder for being rare: once in a block, unless the scene is about it"),
     ("'as if' clauses", r"\bas if\b", 3.0, 3, "trust the action; one 'as if' a page is plenty"),
     ("'for once'", r"\bfor once\b", 0.0, 2, "it marks a change; a change marked twice is a habit"),
+    # the stock phrases (style.md, When stuck): their one home is here, so the guide and the reread cannot disagree
+    ("stock phrases (once a Book at most)", r"(?i)\ba testament to\b|\blittle did (?:he|she|they) know\b|\bin that moment\b|\ba dance of\b|\bthe weight of the world\b"
+     r"|\bbreath (?:he|she|they) (?:didn't|did not) know\b|\bsomething shifted\b|\bsteeled (?:himself|herself|themselves)\b|\beyes? (?:that )?sparkl", 0.0, 1,
+     "say the particular thing this moment has instead"),
 )
 
 
@@ -3033,6 +3037,12 @@ def cmd_plan(args):
             print(f"warning: arc.md has no `## b{n}.1 — …` heading; add it (or Edit core_beats) before `saga.py check`")
         for line_ in expire_callbacks(st, f"book{n}"):
             print(line_)
+        open_thr = [t for t in R.load_threads().get("threads", []) if t.get("status") == "open"]
+        book_chs = {int(c) for c in (plan.get("route", {}).get(f"book{cur}") or {}).get("chapters") or []}
+        quiet = [t for t in open_thr if thread_last_chapter(t) not in book_chs]
+        if open_thr:
+            print(f"threads: {len(open_thr)} open cross into Book {ROMAN[n]}" + (f"; {len(quiet)} were not on the page in Book {ROMAN[cur]} ({', '.join(str(t['id']) for t in quiet)})" if quiet else "")
+                  + ": give each a place in this Book's plan, or let the page release it and mark it paid (`saga.py threads`)")
         st.touch("plan")
         st.save()
         print(f"Book {ROMAN[n]} opened: position.book {cur} → {n}, beat b{n}.1 · route.book{n} {'seeded' if not r['chapters'] else 'kept'}"
@@ -4860,12 +4870,19 @@ def betweens_since_last_scene(st):
     return out
 
 
+def thread_last_chapter(t):
+    """The chapter a thread was last on the page in (-1: never), a tale's touch aside: how long it has been quiet."""
+    return max([int(k.split(":")[0]) for k in t.get("on_page") or [] if k.split(":")[0].isdigit()] or [-1])
+
+
 def threads_for_brief(ch, cap=6):
+    """The open threads a brief shows: this chapter's first, then the ones quiet longest (fewest plants first among
+    equals), so a thread the page stopped touching comes back up instead of sinking under the busy ones."""
     thr = R.load_threads()
     rows = [t for t in thr.get("threads", []) if t.get("status") == "open"]
     touched = [t for t in rows if any(k.startswith(f"{ch:02d}:") for k in t.get("on_page") or [])]
     rest = [t for t in rows if t not in touched]
-    rest.sort(key=lambda t: len(t.get("on_page") or []))
+    rest.sort(key=lambda t: (thread_last_chapter(t), len(t.get("on_page") or [])))
     return (touched + rest)[:cap], len(rows)
 
 
@@ -4971,7 +4988,7 @@ def odds_line(label, extra, dc=None):
     row = (o.get("rows") or {}).get(str(dc))
     if not row:
         return f"  {label} ({o['mods_text']} = {o['mods']:+d}): DC {dc} is outside the table (`darrow.py odds --dc {dc} …`)"
-    verb = "use DC" if dc == o.get("target_dc") and o.get("target") is not None else "DC"
+    verb = "DC" if dc != o.get("target_dc") or o.get("target") is None else "roll sets DC" if "--chapter" in extra else "use DC"
     return f"  {label} ({o['mods_text']} = {o['mods']:+d}): {verb} {dc} → success {row['success']:.0%} · partial {row['partial']:.0%} · fail {row['failure']:.0%}", o
 
 
@@ -4989,7 +5006,7 @@ def climax_odds_lines(ch, checks, rules, frozen):
         m = re.match(r"^\s*(insight|might|vigor|finesse|resolve)\b.*?DC\s*(\d+)", str(text), re.I)
         if m:
             planned.setdefault(m.group(1).lower(), []).append(int(m.group(2)))
-    out = [f"odds ({tier_name}: each check's DC is set so a full success has a {target:.0%} chance; the dice line keeps the tier's modifier; partial = within 3, success at a cost; the planned DCs are advisory):"]
+    out = [f"odds ({tier_name}: `roll --chapter` sets each check's DC itself, so a full success has a {target:.0%} chance: leave --dc out; the dice line keeps the tier's modifier; partial = within 3, success at a cost; the planned DCs are advisory):"]
     for kind, (stat, prof, art) in CHECK_KINDS.items():
         extra = ["--stat", stat, "--chapter", ch, "--target", target] + (["--prof"] if prof else []) + (["--art", art] if art else [])
         got = odds_line(kind, extra)
@@ -5020,7 +5037,7 @@ def format_lines(kind, slot=None):
                 "no Reckoning box, no choice list; it ends on a line that hands the moment back (a look, a bell, a door, a last word)"]
     if kind == "climax":
         return ["heading: `## Climax — Title`; as long as it needs, the space on the decision and its cost, never on everything the chapter touched",
-                "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … --dc … [--prof] [--art <id>] --chapter N`; each first line pasted as printed",
+                "2–4 dice at the moments of real stakes: `python3 engine/darrow.py roll chNN-<slug> --stat … [--prof] [--art <id>] --chapter N` (no --dc: the frozen tier sets it); each first line pasted as printed",
                 "ends on the choice, exactly: `**What does Darrow do?**` then `1. **…**` `2. **…**` `3. **…**`, a gate in brackets (`*[Resolve 10]*`, `*[Guile 1]*`, `*[Inspiration]*` for a bold way or a reroll that costs one), struck through if unmet, who approves in italics; the default never carries `*[Inspiration]*`",
                 "the Reckoning box before the choice if sync reported a change"]
     if kind == "choice":
@@ -5242,6 +5259,9 @@ def cmd_brief(args):
         L.append(f"last block: {last['key']} · {last.get('title')}" + (f" · {last.get('time')}" if last.get("time") else "") + (f" · covers {last.get('date')}" if last.get("date") else ""))
         if last.get("last_beat"):
             L.append(f"  its last beat: {short(last['last_beat'], 400)}")
+        asked = next((n.get("next_must_know") for n in R.load_notes() if n.get("key") == last["key"]), None)
+        if asked:
+            L.append(f"  what it asked this block to honour: {short(asked, 400)}")
     if world.get("season"):
         L.append(f"season: {world['season']}")
     kl2 = knee_line(rules)
@@ -5560,13 +5580,18 @@ def cmd_record(args):
     for n_ in name_notes:
         print(n_)
     thr = R.load_threads()
-    tids = {int(t["id"]) for t in thr.get("threads", [])}
+    tids = {int(t["id"]): t for t in thr.get("threads", [])}
+    own = next(iter(R.threads_on_page([{"key": ev.get("key", ""), "threads": [0]}]).get(0, [])), None)  # this block's key as the plant lists spell it
     for t in ev.get("threads") or []:
         tid = t.get("id") if isinstance(t, dict) else t
         if tid is None or int(tid) not in tids:
             probs.append(f"threads: no thread {tid!r} (`saga.py threads --new '<json>'` first, or name it in gm.threads with \"new\": true)")
         elif isinstance(t, dict) and t.get("how") not in (None, "plant", "touch", "payoff"):
             probs.append(f"threads: how {t.get('how')!r} is plant, touch or payoff")
+        elif isinstance(t, dict) and t.get("how") == "payoff" and tids[int(tid)].get("truth"):
+            before = [k for k in tids[int(tid)].get("on_page") or [] if k != own]
+            if len(before) < 2:
+                probs.append(f"threads: thread {tid} carries a truth and is on the page {len(before)} time(s) before this block: a truth is revealed only after two plants, so this block plants or touches it")
     entries, _ = lore_entries()
     for lid in ev.get("lore") or []:
         if lid not in entries:
@@ -6360,6 +6385,9 @@ def brief_tale(st, args):
     if told:
         for e in told:
             L.append(f"piece {R.parse_tale_key(e['key'])[1]} · {e.get('title')}: {short(e.get('last_beat'), 300)}")
+        asked = next((n.get("next_must_know") for n in R.load_tale_notes() if n.get("key") == told[-1]["key"]), None)
+        if asked:
+            L.append(f"  what the last piece asked this one to honour: {short(asked, 400)}")
     else:
         L.append("the tale opens here" + (f": {t['when']}" if t.get("when") else ""))
     who = t.get("of")

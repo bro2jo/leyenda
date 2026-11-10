@@ -505,7 +505,9 @@ def main():
             run(darrow + ["sync"], tmp)
             at_cap = int(jload(tmp / "saga/state/darrow.json").get("inspiration") or 0) >= 1
             chap = closed[-1].split(",")[0]
-            code, out = run(darrow + ["roll", "selftest-cap", "--stat", "might", "--dc", "40", "--dis", "--chapter", chap], tmp)
+            code, out = run(darrow + ["roll", "selftest-dc", "--stat", "might", "--dc", "40", "--chapter", chap], tmp, expect=1)
+            check("Leave --dc out" in out, "a climax check refuses a DC of the writer's: the frozen tier sets it", out[-300:])
+            code, out = run(darrow + ["roll", "selftest-cap", "--stat", "might", "--bonus", "-40", "--dis", "--chapter", chap], tmp)
             dice = [l for l in out.splitlines() if l.startswith("`[") and not l.startswith("`[INSPIRATION]")]  # the d20 lines only
             sp_after = len(sp_path.read_text(encoding="utf-8").splitlines())
             if not at_cap:
@@ -598,8 +600,8 @@ def main():
               "the trends page builds from the copy's logs", out[-300:])
         code, out = run(["engine/build_site.py"], tmp)
         page = page_of(tmp / "docs/darrow/index.html")
-        check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and "Nothing kept yet" in page,
-              "the empty shelf shows the tale in progress, its pieces told, and what the shelf is for", out[-300:])
+        check(code == 0 and 'class="slot pending"' in page and 'class="told"' in page and ("Nothing kept yet" in page or 'class="slot kept"' in page),
+              "the shelf shows the tale in progress and its pieces told, and what the shelf is for while it is empty", out[-300:])
         ward = page_of(tmp / "docs/darrow/wardrobe.html")
         check('id="forge-data"' in ward and 'class="pc locked"' in ward and 'class="pk-row"' in ward and 'class="look-tile"' in ward
               and 'class="wear-strip' in page, "the Wardrobe builds: the Forge's data, its pickers, a locked piece, the lookbook, and his current look on his page")
@@ -638,11 +640,16 @@ def main():
         dar = jload(tmp / "saga/characters/darrow.json")
         check(any(a.get("chapter") == tid1 and a.get("scene") == "p1" for a in dar["appearances"]) and dar["last_seen"]["chapter"] != tid1,
               "the tale adds an appearance and never moves last_seen")
+        # the cap is applied as the day's earnings and spends are counted, earnings first: a work finished on a day he
+        # already stood at the cap (what he holds plus what he spent that day) adds nothing, and sync says nothing of it
+        sheet0 = jload(tmp / "saga/state/darrow.json")
+        spent_today = sum(1 for l in (tmp / "saga/state/spends.csv").read_text(encoding="utf-8").splitlines() if l.startswith(f"{sheet0['asof']},inspiration"))
+        capped = int(sheet0["inspiration"]) + spent_today >= int(sheet0["inspiration_cap"])
         for task in ("2", "3"):
             code, out = run(darrow + ["project", "done", task], tmp)
         check(code == 0 and "project finished" in out and "in its week" in out, "the last task finishes the project, in its week", out[-300:])
         code, out = run(darrow + ["sync"], tmp)
-        check("WORK FINISHED:" in out and "INSPIRATION +1" in out, "sync reports the finished work and its Inspiration", out[-400:])
+        check("WORK FINISHED:" in out and (capped or "INSPIRATION +1" in out), "sync reports the finished work, and its Inspiration unless he stood at the cap", out[-400:])
         code, out = run(darrow + ["sheet"], tmp)
         check("WORKS ·" in out, "the sheet shows WORKS")
         with open(tale, "a", encoding="utf-8") as f:

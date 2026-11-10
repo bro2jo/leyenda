@@ -114,7 +114,7 @@ Book I found its voice and then leaned on it. These are its tells. `python3 engi
 
 *Where these come from, for the curious: McKee's and Story Grid's scene that turns, Swain's scene and sequel, Mamet's three questions, Bujold's most revealing thing, Abercrombie's eye, Le Guin's ear and her crowding and leaping, Kowal's nested questions, Sanderson's promises and proactive heroes, Failbetter's consequences that echo, and the tabletop habit of failing forward. The aims above are the House's own.*
 
-**Banned (or once a Book at most):** "a testament to", "little did he know", "in that moment", "a dance of", "the weight of the world", "he let out a breath he didn't know he was holding", "something shifted", "steeled himself", eyes that "sparkle", any sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
+**Stock phrases** ("a testament to", "something shifted" and their kin) are once a Book at most: `python3 engine/saga.py reread` holds the list and names any the block used. No sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
 
 ---
 
@@ -154,7 +154,7 @@ Show the check on its own line, before the outcome is narrated:
 ```
 - Use rolls for moments with real stakes: 1–2 per daily scene at most (often zero), 2–4 in a chapter climax.
 - A failure is never a dead end. It's a complication, a cost, a different road.
-- DCs: **the brief sets them.** At a climax, `saga.py brief --climax` prints, for each kind of check, his modifiers under the frozen tier and the DC at which a full success has the tier's chance (`rules.json → week_score.tiers[].target_odds`: a Triumph's checks are very likely, a Setback's are even); roll at that DC. The tier's roll modifier stays in the dice line; the DC is what answers it, so a strong week shows in the odds and the die can still fail. In a daily scene or a Between, `python3 engine/darrow.py odds --stat … [--prof --art …] --dc N` says what a DC means for him now; easy is about three in four, hard about one in two.
+- DCs: **at a climax the engine sets them.** `roll --chapter N` takes no `--dc`: it uses the DC at which a full success has the frozen tier's chance (`rules.json → week_score.tiers[].target_odds`, the one home of those numbers), and `saga.py brief --climax` prints that DC and its odds for each kind of check beforehand. The tier's roll modifier stays in the dice line; the DC is what answers it, so a strong week shows in the odds and the die can still fail. In a daily scene or a Between, `python3 engine/darrow.py odds --stat … [--prof --art …] --dc N` says what a DC means for him now; easy is about three in four, hard about one in two.
 
 ### The weekly climax (written at the Sunday checkpoint)
 - **As long as the decision and its cost need** (the space goes to the decision and what it costs, never to everything the chapter touched): the chapter's battle, confrontation or revelation. A climax carries its own beat; whatever else is owed and does not fit the moment waits for the next chapter's first scenes. Close the chapter with the week's tier (Triumph / Hard-won / Costly / Setback) setting the shape of the outcome, and the dice deciding the details.

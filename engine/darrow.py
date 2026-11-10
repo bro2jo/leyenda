@@ -28,8 +28,9 @@ Commands (run from the repo root):
   sport add 'JSON'             append sport-log rows
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
+                               a climax check (--chapter N) takes no --dc: the frozen tier sets it (rules.json -> week_score.tiers[].target_odds);
                                --reroll spends one Inspiration on a second cast (--paid: the *[Inspiration]* option that offered it already spent it);
-                               a climax check that fails outright is cast again on his Inspiration, again and again, until it succeeds or he has none
+                               a climax check that fails outright is cast again on his Inspiration, once; a second failure stands
                                (rules.json -> inspiration.auto_reroll_on_fail): every line it prints goes on the page, in order, as one block
   odds [--stat S] [--prof] [--art ID ...] [--chapter N | --tier] [--adv|--dis] [--bonus N] [--dc N | --target P] [--json]
                                what a DC means for him: the chance of a full success, a partial and an outright failure with the
@@ -74,7 +75,7 @@ Commands (run from the repo root):
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
   ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
-                               commit everything, push to main (pull --rebase and retry when the push is rejected; never
+                               the self-test when the engine's code or rules changed (engine/selftest.py), commit everything, push to main (pull --rebase and retry when the push is rejected; never
                                force), then push the session's own branch too when it isn't main. Stops at the first
                                failing step and says which. MESSAGE is reader-safe: he reads it (CLAUDE.md)
 """
@@ -2183,8 +2184,8 @@ def day_has_logs(date):
 
 
 def cmd_close(args, cfg, rules):
-    """The first half of the day-close procedure in one command (the /log skill, "Close day"): closed=Y -> sync ->
-    saga.py now -> saga.py plan next --date D --full. It refuses a day that has not happened, a missed day (nothing
+    """The first half of the day-close procedure in one command (the /close skill): closed=Y -> sync ->
+    saga.py brief --date D. It refuses a day that has not happened, a missed day (nothing
     logged: no row, no scene), a day already closed (it has its scene), and a day in a new week while an earlier
     week's chapter is still unclosed (the checkpoint comes first)."""
     day = d(args.date)
@@ -2400,6 +2401,24 @@ def check_odds(total_mod, dc, mode=""):
     return {k: v / len(nats) for k, v in out.items()}
 
 
+def nearest_dc(total_mod, target, mode=""):
+    """The DC whose chance of a full success lands nearest `target` with this modifier (ties go to the harder DC)."""
+    cands = {dc: check_odds(total_mod, dc, mode)["success"] for dc in range(5, 31)}
+    return min(cands, key=lambda dc: (abs(cands[dc] - target), -dc))
+
+
+def climax_dc(args, st, cfg, rules):
+    """The DC of a climax check (--chapter N): the one at which a full success has the frozen tier's chance
+    (rules.json -> week_score.tiers[].target_odds), from the modifiers the check carries before any --bonus or
+    --adv/--dis, which is the line the climax's brief prints. None when the tier names no chance."""
+    ch = next((r for r in read_csv("chapters") if r["chapter"] == str(args.chapter)), None)
+    target = next((t.get("target_odds") for t in rules.get("week_score", {}).get("tiers", []) if ch and t["name"] == ch["tier"]), None)
+    if target is None:
+        return None
+    plain = argparse.Namespace(**{**vars(args), "bonus": 0})
+    return nearest_dc(sum(m for _, m in roll_mods(plain, st, cfg, rules)), target)
+
+
 def cmd_odds(args, cfg, rules):
     """What a DC means for him now, or at a chapter's climax (--chapter N): the chance of a full success, a partial and
     an outright failure, with the modifiers `roll` would carry. --target P names the DC whose chance of a full success
@@ -2414,9 +2433,8 @@ def cmd_odds(args, cfg, rules):
     if args.target is not None:
         if not 0 < args.target < 1:
             sys.exit("--target is a probability between 0 and 1, e.g. 0.8")
-        cands = {dc: check_odds(total, dc, mode) for dc in range(5, 31)}
-        target_dc = min(cands, key=lambda dc: (abs(cands[dc]["success"] - args.target), -dc))
-        rows.setdefault(target_dc, cands[target_dc])
+        target_dc = nearest_dc(total, args.target, mode)
+        rows.setdefault(target_dc, check_odds(total, target_dc, mode))
     if args.json:
         print(json.dumps({"stat": args.stat or "flat", "mods": total, "mods_text": mod_txt, "mode": mode,
                           "rows": {str(dc): {k: round(v, 4) for k, v in r.items()} for dc, r in sorted(rows.items())},
@@ -2491,6 +2509,14 @@ def cmd_roll(args, cfg, rules):
             print(f"`[INSPIRATION]` {insp} → {insp - 1} · cast again")
             insp -= 1
     mods = roll_mods(args, st, cfg, rules)
+    # a climax check's DC is the tier's, never the writer's: the engine sets it, and refuses another
+    want = climax_dc(args, st, cfg, rules) if args.chapter else None
+    if want is not None and args.dc not in (None, want):
+        sys.exit(f"a climax check's DC is the frozen tier's: DC {want} for this check (rules.json -> week_score.tiers[].target_odds). "
+                 "Leave --dc out; roll sets it")
+    args.dc = want if want is not None else args.dc
+    if args.dc is None:
+        sys.exit("--dc N: what the check is against (only a climax check, --chapter N, sets its own)")
     result = cast(args, mods, label, note)
     # a climax check that fails outright is cast again on his Inspiration, once (rules.json -> inspiration.auto_reroll_on_fail):
     # the second cast never comes clean (its success is success at a cost), and a second failure stands. The two dice
@@ -2990,16 +3016,25 @@ def run(cmd, quiet=False):
 
 
 def cmd_ship(args, cfg, rules):
-    """check -> sync -> saga.py check -> picture copies -> build -> commit -> push to main. Every step must pass before the next runs, so
-    nothing broken is committed, and the push never forces: a rejected push pulls --rebase, rebuilds and tries again."""
+    """check -> sync -> saga.py check -> picture copies -> build -> (the self-test, when the engine changed) -> commit -> push to main.
+    Every step must pass before the next runs, so nothing broken is committed, and the push never forces: a rejected push
+    pulls --rebase, rebuilds and tries again."""
     py = sys.executable
     gates = [("logs", [py, "engine/darrow.py", "check"]), ("sync", [py, "engine/darrow.py", "sync"]),
              ("story", [py, "engine/saga.py", "check"]), ("thumbs", [py, "engine/thumbs.py"]), ("site", [py, "engine/build_site.py"])]
 
+    def engine_changed():
+        """Whether this commit changes the engine's code, its rules or the hooks: the self-test (half a minute, on a scratch copy)
+        runs then, never for a log."""
+        names = run(["git", "diff", "--name-only", "HEAD"], quiet=True)[1].splitlines() + run(["git", "ls-files", "--others", "--exclude-standard"], quiet=True)[1].splitlines()
+        return any((n.startswith("engine/") and n.endswith((".py", ".json", ".js", ".css"))) or n.startswith(".claude/hooks/") for n in names)
+
     def gate():
-        for name, cmd in gates:
+        for name, cmd in gates + ([("self-test", [py, "engine/selftest.py"])] if engine_changed() else []):
             print(f"── {name}: {' '.join(cmd[1:])}")
-            code, out = run(cmd)
+            code, out = run(cmd, quiet=name == "self-test")
+            if name == "self-test":
+                print("\n".join(out.splitlines()[-12:]) if code else "self-test passed")
             if code != 0 or (name == "logs" and out and out != "all logs look clean"):
                 sys.exit(f"ship stopped at {name}: fix the above, then ship again (nothing was committed)")
 
@@ -3053,7 +3088,7 @@ def main():
     s = sub.add_parser("food"); s.add_argument("action", choices=["add", "list", "rm", "lib"]); s.add_argument("payload")
     s = sub.add_parser("ex"); s.add_argument("action", choices=["add", "names"]); s.add_argument("payload", nargs="?", default="", help="add: the rows as JSON; names: a word to filter by (optional)")
     s = sub.add_parser("sport"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
-    s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, required=True)
+    s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, help="what the check is against; left out at a climax (--chapter N), where the frozen tier sets it")
     g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
     s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append", help="add an Art's rank by its rules.json id, e.g. --art wardens_eye for an Insight check")
     s.add_argument("--prof", action="store_true"); s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int)
