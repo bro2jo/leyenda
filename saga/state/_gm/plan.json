@@ -44,7 +44,7 @@
         "invite": {
           "who": "hollis",
           "kind": "diversion",
-          "status": "passed",
+          "status": "waiting",
           "want": "to teach the second throw he promised at Coldmere's well, while the Captain is cold and wants something to do with his hands",
           "if_ignored": "he lobs stones over the wall alone until the light goes, and says nothing about it",
           "why_now": "he said tomorrow, over the wall, at the well three days ago, and tonight's camp has a wall"

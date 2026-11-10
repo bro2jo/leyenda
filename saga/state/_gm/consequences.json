@@ -1841,6 +1841,21 @@
       },
       "due": [],
       "auto": true
+    },
+    {
+      "id": "c06.4",
+      "made": {
+        "chapter": 6,
+        "scene": "2",
+        "date": "2026-11-10"
+      },
+      "chose": "Correction: the revision of scenes 1 and 2 re-recorded them and passed Hollis's invitation before he had a close to answer it; the invitation is waiting again and the pass's cost is given back",
+      "now": {
+        "approval": {
+          "hollis": 1
+        }
+      },
+      "due": []
     }
   ],
   "rules": [
