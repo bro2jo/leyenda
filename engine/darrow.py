@@ -29,6 +29,7 @@ Commands (run from the repo root):
   roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
                                prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
                                a climax check (--chapter N) takes no --dc: the frozen tier sets it (rules.json -> week_score.tiers[].target_odds);
+                               a --reroll takes no --dc either: it keeps the first cast's (give it the first cast's --stat, --prof, --art and --chapter);
                                --reroll spends one Inspiration on a second cast (--paid: the *[Inspiration]* option that offered it already spent it);
                                a climax check that fails outright is cast again on his Inspiration, once; a second failure stands
                                (rules.json -> inspiration.auto_reroll_on_fail): every line it prints goes on the page, in order, as one block
@@ -2407,16 +2408,15 @@ def nearest_dc(total_mod, target, mode=""):
     return min(cands, key=lambda dc: (abs(cands[dc] - target), -dc))
 
 
-def climax_dc(args, st, cfg, rules):
+def climax_dc(chapter, mods, rules):
     """The DC of a climax check (--chapter N): the one at which a full success has the frozen tier's chance
-    (rules.json -> week_score.tiers[].target_odds), from the modifiers the check carries before any --bonus or
+    (rules.json -> week_score.tiers[].target_odds), from the check's modifiers (`roll_mods`) before any --bonus or
     --adv/--dis, which is the line the climax's brief prints. None when the tier names no chance."""
-    ch = next((r for r in read_csv("chapters") if r["chapter"] == str(args.chapter)), None)
+    ch = next((r for r in read_csv("chapters") if r["chapter"] == str(chapter)), None)
     target = next((t.get("target_odds") for t in rules.get("week_score", {}).get("tiers", []) if ch and t["name"] == ch["tier"]), None)
     if target is None:
         return None
-    plain = argparse.Namespace(**{**vars(args), "bonus": 0})
-    return nearest_dc(sum(m for _, m in roll_mods(plain, st, cfg, rules)), target)
+    return nearest_dc(sum(m for n, m in mods if n != "bonus"), target)
 
 
 def cmd_odds(args, cfg, rules):
@@ -2496,9 +2496,24 @@ def cmd_roll(args, cfg, rules):
     s = st["sheet"]
     note = args.note or ""
     insp = int(s["inspiration"])
+    mods = roll_mods(args, st, cfg, rules)
+    # the DC, settled before anything is spent: a reroll is the same check cast again, so it keeps the first cast's DC;
+    # a climax check's is the frozen tier's, never the writer's; any other check names its own
+    first = next((r for r in rows if r["label"] == args.label), None)
     if args.reroll:
-        if not any(r["label"] == args.label for r in rows):
+        if not first:
             sys.exit("nothing to reroll under that label")
+        want, why = int(first["dc"]), "a reroll keeps the first cast's DC"
+    elif args.chapter:
+        want, why = climax_dc(args.chapter, mods, rules), "a climax check's DC is the frozen tier's (rules.json -> week_score.tiers[].target_odds)"
+    else:
+        want, why = None, ""
+    if want is not None and args.dc not in (None, want):
+        sys.exit(f"{why}: DC {want} for this check. Leave --dc out; roll sets it")
+    args.dc = want if want is not None else args.dc
+    if args.dc is None:
+        sys.exit("--dc N: what the check is against (a reroll and a climax check, --chapter N, set their own)")
+    if args.reroll:
         if args.paid:  # an *[Inspiration]* option in the choice: saga.py choose spent it already
             note = (note + "; " if note else "") + "paid by the choice"
             print("`[INSPIRATION]` spent at the choice · cast again")
@@ -2508,15 +2523,6 @@ def cmd_roll(args, cfg, rules):
             spend_inspiration(st, f"reroll {args.label}")
             print(f"`[INSPIRATION]` {insp} → {insp - 1} · cast again")
             insp -= 1
-    mods = roll_mods(args, st, cfg, rules)
-    # a climax check's DC is the tier's, never the writer's: the engine sets it, and refuses another
-    want = climax_dc(args, st, cfg, rules) if args.chapter else None
-    if want is not None and args.dc not in (None, want):
-        sys.exit(f"a climax check's DC is the frozen tier's: DC {want} for this check (rules.json -> week_score.tiers[].target_odds). "
-                 "Leave --dc out; roll sets it")
-    args.dc = want if want is not None else args.dc
-    if args.dc is None:
-        sys.exit("--dc N: what the check is against (only a climax check, --chapter N, sets its own)")
     result = cast(args, mods, label, note)
     # a climax check that fails outright is cast again on his Inspiration, once (rules.json -> inspiration.auto_reroll_on_fail):
     # the second cast never comes clean (its success is success at a cost), and a second failure stands. The two dice
@@ -3024,9 +3030,12 @@ def cmd_ship(args, cfg, rules):
              ("story", [py, "engine/saga.py", "check"]), ("thumbs", [py, "engine/thumbs.py"]), ("site", [py, "engine/build_site.py"])]
 
     def engine_changed():
-        """Whether this commit changes the engine's code, its rules or the hooks: the self-test (half a minute, on a scratch copy)
-        runs then, never for a log."""
-        names = run(["git", "diff", "--name-only", "HEAD"], quiet=True)[1].splitlines() + run(["git", "ls-files", "--others", "--exclude-standard"], quiet=True)[1].splitlines()
+        """Whether what this ship pushes (against origin/main: committed or not) changes the engine's code, its rules or the
+        hooks: the self-test (half a minute, on a scratch copy) runs then, never for a log."""
+        code, diff = run(["git", "diff", "--name-only", "origin/main"], quiet=True)
+        if code != 0:  # no origin/main to compare with: what is not committed yet
+            diff = run(["git", "diff", "--name-only", "HEAD"], quiet=True)[1]
+        names = diff.splitlines() + run(["git", "ls-files", "--others", "--exclude-standard"], quiet=True)[1].splitlines()
         return any((n.startswith("engine/") and n.endswith((".py", ".json", ".js", ".css"))) or n.startswith(".claude/hooks/") for n in names)
 
     def gate():
@@ -3088,7 +3097,7 @@ def main():
     s = sub.add_parser("food"); s.add_argument("action", choices=["add", "list", "rm", "lib"]); s.add_argument("payload")
     s = sub.add_parser("ex"); s.add_argument("action", choices=["add", "names"]); s.add_argument("payload", nargs="?", default="", help="add: the rows as JSON; names: a word to filter by (optional)")
     s = sub.add_parser("sport"); s.add_argument("action", choices=["add"]); s.add_argument("payload")
-    s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, help="what the check is against; left out at a climax (--chapter N), where the frozen tier sets it")
+    s = sub.add_parser("roll"); s.add_argument("label"); s.add_argument("--stat", choices=ATTRS); s.add_argument("--dc", type=int, help="what the check is against; left out at a climax (--chapter N), where the frozen tier sets it, and on a --reroll, which keeps the first cast's")
     g = s.add_mutually_exclusive_group(); g.add_argument("--adv", action="store_true"); g.add_argument("--dis", action="store_true")
     s.add_argument("--bonus", type=int, default=0); s.add_argument("--art", action="append", help="add an Art's rank by its rules.json id, e.g. --art wardens_eye for an Insight check")
     s.add_argument("--prof", action="store_true"); s.add_argument("--tier", action="store_true"); s.add_argument("--chapter", type=int)

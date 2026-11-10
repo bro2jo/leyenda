@@ -5255,11 +5255,13 @@ def cmd_brief(args):
     places = known_places()
     pl = places.get(loc.get("place") or "", {})
     L.append(f"where he is: {pl.get('name') or loc.get('place')}" + (f", {pl['subtitle']}" if pl.get("subtitle") else "") + f"; {loc.get('detail')}")
+    if not last and ch > 0:  # a chapter's first block: the last block is the chapter before's (its climax or choice)
+        last = (R.load_events(ch - 1) or [None])[-1]
     if last:
         L.append(f"last block: {last['key']} · {last.get('title')}" + (f" · {last.get('time')}" if last.get("time") else "") + (f" · covers {last.get('date')}" if last.get("date") else ""))
         if last.get("last_beat"):
             L.append(f"  its last beat: {short(last['last_beat'], 400)}")
-        asked = next((n.get("next_must_know") for n in R.load_notes() if n.get("key") == last["key"]), None)
+        asked = next((n.get("next_must_know") for n in R.load_notes(R.parse_key(last["key"])[0]) if n.get("key") == last["key"]), None)
         if asked:
             L.append(f"  what it asked this block to honour: {short(asked, 400)}")
     if world.get("season"):
@@ -5581,17 +5583,24 @@ def cmd_record(args):
         print(n_)
     thr = R.load_threads()
     tids = {int(t["id"]): t for t in thr.get("threads", [])}
-    own = next(iter(R.threads_on_page([{"key": ev.get("key", ""), "threads": [0]}]).get(0, [])), None)  # this block's key as the plant lists spell it
     for t in ev.get("threads") or []:
         tid = t.get("id") if isinstance(t, dict) else t
         if tid is None or int(tid) not in tids:
             probs.append(f"threads: no thread {tid!r} (`saga.py threads --new '<json>'` first, or name it in gm.threads with \"new\": true)")
         elif isinstance(t, dict) and t.get("how") not in (None, "plant", "touch", "payoff"):
             probs.append(f"threads: how {t.get('how')!r} is plant, touch or payoff")
-        elif isinstance(t, dict) and t.get("how") == "payoff" and tids[int(tid)].get("truth"):
-            before = [k for k in tids[int(tid)].get("on_page") or [] if k != own]
-            if len(before) < 2:
-                probs.append(f"threads: thread {tid} carries a truth and is on the page {len(before)} time(s) before this block: a truth is revealed only after two plants, so this block plants or touches it")
+    # a truth is revealed only after two plants: a payoff, or a thread closed as paid, needs two blocks before this one
+    own = next(iter(R.threads_on_page([{"key": ev.get("key", ""), "threads": [0]}]).get(0, [])), None)  # this block's key as the plant lists spell it
+    paying = {int(t["id"]) for t in ev.get("threads") or [] if isinstance(t, dict) and t.get("how") == "payoff" and t.get("id") is not None}
+    paying |= {int(t["id"]) for t in ((ev.get("gm") or {}).get("threads") or []) if isinstance(t, dict) and not t.get("new") and t.get("status") == "paid" and t.get("id") is not None}
+    for tid in sorted(paying):
+        t = tids.get(tid)
+        if not t or not t.get("truth") or t.get("status") == "paid":
+            continue
+        onp = t.get("on_page") or []
+        before = onp[:onp.index(own)] if own in onp else onp  # story order: a re-recorded block counts only what came before it
+        if len(before) < 2:
+            probs.append(f"threads: thread {tid} carries a truth and is on the page {len(before)} time(s) before this block: a truth is revealed only after two plants, so this block plants or touches it")
     entries, _ = lore_entries()
     for lid in ev.get("lore") or []:
         if lid not in entries:

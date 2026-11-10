@@ -333,8 +333,22 @@ def main():
                 code, out = run(saga + ["record", json.dumps(wrong, ensure_ascii=False)], tmp, expect=1)
                 check("not a verbatim excerpt" in out, "a fired item with words the block does not carry is refused", out[-300:])
                 good["fired"] = [{"id": due_id, "evidence": "wrote the number down twice"}]
+            # a truth is revealed only after two plants: a payoff, or a thread closed as paid, on one planted less is refused
+            thin = next((t for t in jload(tmp / "saga/state/_gm/threads.json")["threads"]
+                         if t.get("status") == "open" and t.get("truth") and len(t.get("on_page") or []) < 2), None)
+            if thin is None:
+                skip("the two-plants gate: no open thread with a truth and fewer than two plants in the copy")
+            else:
+                for how, extra in (("payoff", {"threads": [{"id": thin["id"], "how": "payoff"}]}),
+                                   ("paid", {"threads": [{"id": thin["id"], "how": "touch"}], "gm": {"note": "x", "threads": [{"id": thin["id"], "status": "paid"}]}})):
+                    code, out = run(saga + ["record", json.dumps({**good, **extra}, ensure_ascii=False)], tmp, expect=1)
+                    check("a truth is revealed only after two plants" in out, f"record refuses a reveal ({how}) on a thread planted fewer than twice", out[-300:])
+            good["gm"]["next_must_know"] = "The letter stays sealed until morning."
             code, out = run(saga + ["record", json.dumps(good, ensure_ascii=False)], tmp)
             check(code == 0 and "recorded" in out and "ok:" in out, "record accepts the scene and check passes afterwards", out[-900:])
+            code, out = run(saga + ["brief", "--between", "--with", "rae-thorne"], tmp)
+            check("what it asked this block to honour: The letter stays sealed until morning." in out,
+                  "the next brief carries what the last block asked it to honour", out[-300:])
             did_scene = code == 0
             world = jload(tmp / "saga/state/world.json")
             check(world["scenes"][-1]["scene"] == next_scene and world["location"]["detail"] == "the gate wall at dusk", "world.json follows the record (the scene, the location)")
@@ -525,9 +539,12 @@ def main():
             skip("the cap's auto-reroll: no closed chapter in the copy")
         sp_n = len(sp_path.read_text(encoding="utf-8").splitlines())
         run(darrow + ["roll", "selftest-paid", "--stat", "might", "--dc", "12"], tmp)
-        code, out = run(darrow + ["roll", "selftest-paid", "--stat", "might", "--dc", "12", "--reroll", "--paid"], tmp)
+        code, out = run(darrow + ["roll", "selftest-paid", "--stat", "might", "--dc", "15", "--reroll"], tmp, expect=1)
+        check("keeps the first cast's DC" in out and len(sp_path.read_text(encoding="utf-8").splitlines()) == sp_n,
+              "a reroll at another DC is refused before any Inspiration is spent", out[-300:])
+        code, out = run(darrow + ["roll", "selftest-paid", "--stat", "might", "--reroll", "--paid"], tmp)
         sp_after = len(sp_path.read_text(encoding="utf-8").splitlines())
-        check(code == 0 and "#reroll" in out and sp_after == sp_n, "--reroll --paid casts again without a second spend", out[-300:])
+        check(code == 0 and "#reroll" in out and "DC 12]" in out and sp_after == sp_n, "--reroll --paid casts again at the first cast's DC without a second spend", out[-300:])
 
         # the works and the tales: a project, its tale, a task reported, the piece written and recorded, the keepsake, the site
         for q in [q for q in jload(tmp / "real/projects.json").get("projects", []) if q.get("status") == "live"]:  # every live project in the copy is set aside first
@@ -595,6 +612,10 @@ def main():
         check(code == 0 and f"{tid1}:p1 recorded" in out and "ok:" in out, "the piece is recorded and check passes", out[-600:])
         code, out = run(saga + ["record", json.dumps({**piece, "key": f"{tid1}:p2"}, ensure_ascii=False)], tmp, expect=1)
         check("no piece 2" in out or "not owed yet" in out, "a piece ahead of its task is refused")
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
+                         "print(any('stock phrases' in l for l in saga.reread_notes('Something shifted in him.', 'scene')), "
+                         "any('stock phrases' in l for l in saga.reread_notes('He shifted the pack.', 'scene')))"], tmp)
+        check(code == 0 and out.strip().endswith("True False"), "the reread names a stock phrase, and only a stock phrase", out[-300:])
         code, out = run(["engine/report.py"], tmp)
         check(code == 0 and (tmp / "real/trends.html").exists() and "trends:" in out and "<title>The Ledger</title>" in (tmp / "real/trends.html").read_text(encoding="utf-8"),
               "the trends page builds from the copy's logs", out[-300:])
