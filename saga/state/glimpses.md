@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-08 · body · The frost has gone out of his fingers by mid-morning for the first time in days; the knee keeps its own counsel, and today its counsel is quiet.
 - 2026-11-08 · house · Hollis has found a chair in the sun and is defending it against all comers, including the sun, which keeps moving.
 - 2026-11-08 · overheard · Overheard from the stable: a boy asking Wren if she is a scribe, and Wren saying "Ledger-keeper" in a voice that makes the difference sound enormous.
 - 2026-11-08 · verse · Someone downstairs has started "Sixty and a Mule" again, and the whole room comes in on the last line: "and the mule's at the inn and the captain is shot." Hollis sings the mule's part, which has no words, with feeling.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-10 · body · He wakes with the fire's warmth still in his coat and, for a moment, no idea which hill he is on. It is a good moment. He lets it run before he gets up.
 - 2026-11-10 · weather · Frost on the cart's cover this morning, thin as paper and gone before the kettle boils. The hills ahead are the colour of old pewter, and Rae says that is a good colour for a road.
 - 2026-11-10 · overheard · Overheard from the cart: Wren asking Maelis what the oldest thing she has ever stitched was. Maelis says "Hollis," and does not elaborate.
+- 2026-11-10 · house · Hollis has taken a turn driving the cart, with enormous dignity and no skill. Rae walks alongside, pretending not to correct him every forty yards.
