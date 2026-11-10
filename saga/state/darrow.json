@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3458,
+  "xp": 3463,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -45,7 +45,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 49,
+      "temper": 50,
       "next_at": 64,
       "fell": 12,
       "banked": false
@@ -127,7 +127,7 @@
       "tree": "Binding",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 30,
+      "practice": 31,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -138,7 +138,7 @@
       "tree": "Insight",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 37,
+      "practice": 38,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."

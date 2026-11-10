@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-08 · overheard · Overheard by the door: Hollis telling a carter that the secret of a long life is never to be the first one up. The carter asks how it's working. Hollis says he'll let him know.
 - 2026-11-08 · weather · The sky has cleared to the hard blue that means a colder night, and everyone in the yard is pretending to enjoy it. Wren has given up pretending and is wearing two cloaks.
 - 2026-11-08 · body · The frost has gone out of his fingers by mid-morning for the first time in days; the knee keeps its own counsel, and today its counsel is quiet.
 - 2026-11-08 · house · Hollis has found a chair in the sun and is defending it against all comers, including the sun, which keeps moving.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-09 · house · Rae is mending a harness strap by firelight, the awl held in her teeth between stitches, talking around it as if that were a normal way to talk.
 - 2026-11-09 · ledger · Wren's tally for the day: hills, eleven by Rae's count and seven by Hollis's. The difference is entered in the margin under disputed.
 - 2026-11-10 · body · He wakes with the fire's warmth still in his coat and, for a moment, no idea which hill he is on. It is a good moment. He lets it run before he gets up.
+- 2026-11-10 · weather · Frost on the cart's cover this morning, thin as paper and gone before the kettle boils. The hills ahead are the colour of old pewter, and Rae says that is a good colour for a road.
