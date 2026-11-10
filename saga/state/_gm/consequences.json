@@ -1825,6 +1825,22 @@
           "evidence": "\"Why first, then.\""
         }
       ]
+    },
+    {
+      "id": "c06.3",
+      "made": {
+        "chapter": 6,
+        "scene": "auto:invite-2",
+        "date": "2026-11-09"
+      },
+      "chose": "Let hollis's diversion pass: to teach the second throw he promised at Coldmere's well, while the Captain is…",
+      "now": {
+        "approval": {
+          "hollis": -1
+        }
+      },
+      "due": [],
+      "auto": true
     }
   ],
   "rules": [

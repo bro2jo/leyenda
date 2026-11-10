@@ -39,8 +39,8 @@
     "place": "coldmere",
     "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Saw the rider on the skyline a mile behind, read a horse shod for speed held to a walk, said why first at the fork and kept the mill tracks, and hooked sacks with three fingers and a thumb for Rae's road lie.",
-  "now": "At a camp in the lee of a field wall on the mill tracks, with one rider somewhere behind and Hollis's hat on the far side of the wall.",
+  "last_seen_doing": "Saw the rider on the skyline a mile behind and tested it by stopping, said why first at the fork and kept the mill tracks, then kept lookout on the stones and counted the quarter hour a walking horse takes to cover a mile while Rae laid the road lie.",
+  "now": "At a camp in the lee of a field wall on the mill tracks; nothing came over the shoulder behind them, and nothing stands on the skyline.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -1936,6 +1936,12 @@
       "evidence": "I've seen a great many people this week"
     },
     {
+      "fact": "All morning on the mill tracks he worked the last two fingers of his right hand and hid it in his coat, hoping to have them back before the noon Reading.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "He had until noon."
+    },
+    {
       "fact": "At the noon Reading on the mill tracks Maelis told him the two last fingers of his right hand have come back as far as they will, slow and half there, from the frost at the grate under the House.",
       "chapter": "06",
       "scene": "1",
@@ -1988,6 +1994,12 @@
       "chapter": "06",
       "scene": "2",
       "evidence": "Shod to go fast,"
+    },
+    {
+      "fact": "He kept lookout on the stones while Rae laid the road lie, counting the quarter hour a walking horse takes to cover a mile, and nothing came over the shoulder.",
+      "chapter": "06",
+      "scene": "2",
+      "evidence": "A mile at a walk was a quarter of an hour."
     },
     {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",

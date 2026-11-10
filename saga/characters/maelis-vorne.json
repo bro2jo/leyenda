@@ -39,7 +39,7 @@
     "place": "coldmere",
     "anchor": "chronicle/06-the-weir.html#scene-2"
   },
-  "last_seen_doing": "Looked at the rider, the light and the knee, and said they would want a wall tonight; agreed a small fire would not show.",
+  "last_seen_doing": "Looked at the rider, the light and the knee, said they would want a wall tonight, and agreed a small fire would not show.",
   "now": "At the camp wall on the mill tracks.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
@@ -621,6 +621,12 @@
       "evidence": "It's walking. Walk it. Till I say."
     },
     {
+      "fact": "She had seen him hide his hand in his coat at the third gate and let him all morning, then told him he would do better hiding a limp.",
+      "chapter": "06",
+      "scene": "1",
+      "evidence": "You'd do better hiding a limp,"
+    },
+    {
       "fact": "She told him plainly that the frost had kept his two last fingers and would not dress it, because a Mender who lies to a patient buries him.",
       "chapter": "06",
       "scene": "1",
@@ -633,10 +639,10 @@
       "evidence": "Ask me about a saddle in the spring, and not before."
     },
     {
-      "fact": "She watched him take the first hundred paces from the ford in the new grip and said good.",
+      "fact": "She watched him cross the slab at the ford in the new grip and said good.",
       "chapter": "06",
       "scene": "1",
-      "evidence": "\"Good,\" she said then."
+      "evidence": "\"Good,\" said Maelis."
     }
   ],
   "relationships": [

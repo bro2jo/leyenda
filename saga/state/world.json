@@ -12,7 +12,7 @@
       "covers": [
         "2026-11-08"
       ],
-      "written": "2026-11-08"
+      "written": "2026-11-09"
     },
     {
       "scene": "between-1",
@@ -42,7 +42,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "At the camp wall Hollis set his hat down crown-first in the frost on the far side, where nobody could see it, looked at the Captain, and said that's a wall, as if a bet had been settled.",
+  "last_beat": "Darrow had counted the quarter hour on the stones and well past it and nothing came over the shoulder; at the camp wall nothing stood on the skyline, which was either good or the opposite.",
   "companions": {
     "maelis": {
       "approval": 38,
@@ -50,7 +50,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 72,
+      "approval": 71,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
