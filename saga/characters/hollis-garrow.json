@@ -34,17 +34,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "2",
+    "scene": "between-2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-2"
+    "anchor": "chronicle/06-the-weir.html#between-2"
   },
-  "last_seen_doing": "Named the rider the miller's man's long-legged horse, said one rider is worse than forty, and at the camp set his hat on the far side of the field wall.",
-  "now": "At the camp wall on the mill tracks, his hat on the far side of it in the frost.",
+  "last_seen_doing": "Kept his word from the Coldmere well: taught the Captain the throw over the wall by the sound of where each stone landed, named it Overwall, and claimed the right to tell it clean.",
+  "now": "At the camp wall after dark with a lap full of stones and a story he means to improve.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
-    "text": "Out loud, Captain. Since I swore it. I told him to get some sleep.",
-    "chapter": "02",
-    "scene": "2"
+    "text": "I'm right about most things. Nobody pays me for it.",
+    "chapter": "06",
+    "scene": "between-2"
   },
   "known_facts": [
     {
@@ -778,6 +778,24 @@
       "chapter": "06",
       "scene": "2",
       "evidence": "\"That's a wall,\" said Hollis"
+    },
+    {
+      "fact": "He taught Overwall by ear, calling each stone by where it landed on the far side of the wall: grass, wall, short, hat.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "Forty years of hearing where things land, Captain."
+    },
+    {
+      "fact": "He named the throw Overwall: over what is in your way and down on what is behind it.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "That's Overwall,"
+    },
+    {
+      "fact": "He said he would tell it clean in every taproom from there to the landing.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "I'll be telling it clean, mind."
     }
   ],
   "relationships": [
@@ -1140,6 +1158,10 @@
     {
       "chapter": "06",
       "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-2"
     }
   ]
 }

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "2",
+    "scene": "between-2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-2"
+    "anchor": "chronicle/06-the-weir.html#between-2"
   },
-  "last_seen_doing": "Saw the rider on the skyline a mile behind and tested it by stopping, said why first at the fork and kept the mill tracks, then kept lookout on the stones and counted the quarter hour a walking horse takes to cover a mile while Rae laid the road lie.",
-  "now": "At a camp in the lee of a field wall on the mill tracks; nothing came over the shoulder behind them, and nothing stands on the skyline.",
+  "last_seen_doing": "Took Hollis's second lesson at the camp wall: threw at a hat he could not see, put the fourth stone in, and a fifth in off the top of the wall; told Hollis he had been right about the fingers.",
+  "now": "At the camp wall on the mill tracks after dark, two stones in Hollis's hat on the far side.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2002,6 +2002,24 @@
       "evidence": "A mile at a walk was a quarter of an hour."
     },
     {
+      "fact": "At the camp wall he learned Overwall from Hollis, throwing at the place a stone has to come down on the far side of a wall, and put the fourth stone into a hat he could not see.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "There was a small sound, like a coin dropped into a purse."
+    },
+    {
+      "fact": "He told Hollis he had been right about the fingers: the stone went off cleaner without them.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "You were right about the fingers."
+    },
+    {
+      "fact": "His second stone in the dark went in off the top of the wall.",
+      "chapter": "06",
+      "scene": "between-2",
+      "evidence": "\"In off the wall,\" said Hollis."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2492,6 +2510,10 @@
     {
       "chapter": "06",
       "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-2"
     },
     {
       "chapter": "tale01",

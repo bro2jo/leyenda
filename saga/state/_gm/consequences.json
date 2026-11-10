@@ -1583,13 +1583,14 @@
           "fits": "present.hollis",
           "priority": 3,
           "valid_until": "book2",
-          "status": "pending",
+          "status": "fired@ch06:between-2",
           "offered": 3,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
             "ch06:s2"
-          ]
+          ],
+          "evidence": "\"That's Overwall,\" said Hollis. \"Over what's in your way and down on what's behind it.\""
         },
         {
           "id": "c05.9b",
@@ -1782,11 +1783,12 @@
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
-            "ch06:s2"
+            "ch06:s2",
+            "ch06:between-2"
           ]
         }
       ],
@@ -1850,6 +1852,21 @@
         "date": "2026-11-10"
       },
       "chose": "Correction: the revision of scenes 1 and 2 re-recorded them and passed Hollis's invitation before he had a close to answer it; the invitation is waiting again and the pass's cost is given back",
+      "now": {
+        "approval": {
+          "hollis": 1
+        }
+      },
+      "due": []
+    },
+    {
+      "id": "c06.5",
+      "made": {
+        "chapter": 6,
+        "scene": "between-2",
+        "date": "2026-11-10"
+      },
+      "chose": "Took Hollis up on the second lesson at the camp wall: Overwall, stones thrown at a hat he could not see, the fourth one in, a second in off the wall; told Hollis he was right about the fingers, and let him have the right to tell it clean",
       "now": {
         "approval": {
           "hollis": 1

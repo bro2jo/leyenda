@@ -212,7 +212,7 @@
       "feeds": "Seated Blade, Hollis's arc; q1.wager's bottle still unspoken",
       "status": "open",
       "who_knows": "Hollis, Darrow, Wren, the kitchen; the reader. The drink: Hollis, Darrow, the reader. The new grip: the whole company (06:s1).",
-      "note": "06:s1: Hollis set the Captain's hand on the hilt: the Seated Blade's grip is three fingers and a thumb now, and he called the lost fingers an argument finished.",
+      "note": "06:between-2: Hollis taught Overwall at the camp wall by ear, named it, and claimed the right to tell it clean; Darrow told him he was right about the fingers.",
       "on_page": [
         "01:interlude",
         "01:between-3",
@@ -220,7 +220,8 @@
         "02:between-11",
         "03:between-2",
         "04:s6",
-        "06:s1"
+        "06:s1",
+        "06:between-2"
       ]
     },
     {

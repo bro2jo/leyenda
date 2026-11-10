@@ -285,3 +285,69 @@ Hollis came along the wall on the beech leg with his hat in his hand and looked 
 Darrow went to the end of the wall and looked back the way they had come. The dip was dark, and the farm's window, and the folds beyond it. He had counted to the end of the quarter hour on the stones and well past it, and nothing had come over the shoulder. Nothing stood on the skyline now.
 
 That was either good or the opposite, and there was no knowing which from here.
+
+### Between — Over the Wall
+
+"You've been not looking at these since the fire was lit," said Hollis, and rattled the stones in his lap. "Come and not look at them from here."
+
+Darrow came. Hollis sat with his back to the wall and the beech leg out along the frost, and handed a stone up to him without looking, as a man hands up a cup.
+
+"You saw me put the hat over," said Hollis. "Where is it?"
+
+"Two paces out from the third stone with moss on it."
+
+"Then that's where you throw. Not at the wall. Not at the hat. You can't see the hat. You throw at the place the stone has to come down, and you let the wall be the wall."
+
+Darrow stood at the wall with his feet planted. The far side was already dark. Somewhere back over the shoulder a rider who could not see them either was likely doing the same sum.
+
+The stone sat in three fingers and a thumb, and the other two lay along it and did nothing.
+
+"Let go with the first two," said Hollis. "The others never did anything but hold on too long."
+
+He threw. It went up into the last of the light and over, and came down a long way off in the field beyond with a rattle.
+
+"Grass," said Hollis. "Long. You threw at the hat you wanted, not the one you've got. Again."
+
+The second clacked off the top stones and came back to his own feet.
+
+"Wall. That one was frightened of the wall."
+
+The third went over and landed with a soft sound just past it.
+
+"Short. Better. You've stopped being proud of your arm."
+
+His hands were stupid with the cold, the right one worst. He blew on it, and took the fourth stone, and stopped looking at the wall. He looked at the place two paces out from the third mossy stone, which he could not see, and let the first two fingers open, and let the others do nothing at all.
+
+There was no clack and no rattle. There was a small sound, like a coin dropped into a purse.
+
+"Hat," said Hollis.
+
+"You can't know that."
+
+"Forty years of hearing where things land, Captain."
+
+Darrow leaned on the wall and looked over. In the crown of the hat, pale on the dark felt, sat his stone.
+
+"That's Overwall," said Hollis. "Over what's in your way and down on what's behind it."
+
+"You were right about the fingers." Darrow turned his hand over in the firelight. "It went off cleaner without them."
+
+"I'm right about most things. Nobody pays me for it." Hollis rattled the stones and held one up. "Again. Once is luck."
+
+`[FINESSE · DC 13]` d20 **7** +0 finesse +3 proficiency +1 Overwall I = **11** — *Partial: success at a cost*
+
+This one he let go too late, and he knew it as it left him. It clacked on the top of the wall, hung there long enough for him to swear, and dropped off the far side with the same small sound as before.
+
+"In off the wall," said Hollis.
+
+"It's in."
+
+"In the Sixth, in off the wall is a bad throw that got lucky."
+
+"And in the Ninth?"
+
+"The Ninth never threw anything. It charged it." Hollis put the rest of the stones back in his lap and folded his hands over them, enormously content. "I'll be telling it clean, mind. Two in the hat, in the dark, the second cleaner than the first. Every taproom from here to the landing."
+
+"That's not what happened."
+
+"It is now."
