@@ -291,3 +291,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-09#7,2026-11-09,,dinner,Yum yum sauce,assumed ~3 tbsp,240,0.5,1.5,25.5,0,3.5,1.5,255,10,5,0.1,1,0,0,0.1,0,estimate,"amount not given; ~3 tbsp as 11/1 and 11/4, ~80 kcal a tbsp"
 2026-11-09#8,2026-11-09,,snack,Large apple + organic peanut butter,1 large apple + ~3 tbsp,400,15,40,25,8,4,24,150,520,40,1.5,85,1.5,8,0,0,library,his usual snack
 2026-11-09#9,2026-11-09,,snack,Cheddar cheese slice,1 slice (~21 g),80,5,0.3,6.5,0,3.7,0.1,130,16,150,0.1,6,0.8,0,0.1,0,estimate,"typical pre-sliced cheddar, as 11/6"
+2026-11-10#1,2026-11-10,,breakfast,Premier Protein shake,"1 bottle (11 fl oz), Cafe Latte",160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,cafe latte
+2026-11-10#2,2026-11-10,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola protein bar
