@@ -673,3 +673,25 @@ Reading:
 What it answers from the list (State §5): **the hamstring test** (done, 100%) · **running form work** (slow form work approved; the drills not named) · **the elliptical** (new). Not done or not reported: **the formal quad test** · **glute med/max** · the drop-jump film and single-leg pogos · four loaded days this week · bike intervals · graft-site pain after impact days · the knee extension's one-plate cap after 11/16 · the walk-jog's symptom rule · step-out throws and the pivot foot · the 10/17 written note · BFR, Spanish squat, seated throws · who treated 10/1. **New items (in-plan as PT items):** the single-leg RDL and the single-leg trunk rotation with a tidal tank (no tidal tank at home: a DB or a med ball is the likely substitute; ask) · the calf raise with the forefoot raised.
 
 What it changes: the hamstring line of the Phase 4 exit is met · the elliptical joins conditioning (State §6) · form work waits only for its drills to be named · nothing in this week's calendar moves. No Knot: the gate still needs repeated single-leg pogos, the landing read, the rehab team's go for the run itself (the surgeon: the week of 11/15) and week 13 (Tue 11/17).
+
+---
+
+## 2026-11-10 (POD 78) — Visit 13, the rest of Nick's words — patient-reported
+
+Relayed by him in the repo thread the same evening, after the note above, in answer to what else Nick said. Patient-reported; carries PT priority.
+
+```text
+Nick mentioned to continue progressing through the master plan, said some impact
+is okay, drop jump video looked good, and can do more bike internal things and ramp
+up that intensity if plan calls for it.
+
+Monday swelling was normal and not hugely bad.
+```
+
+Reading ("bike internal" read as "bike interval"):
+- **The drop vertical jump film (Sun 11/8, 8" box, 2 × 4) looked good:** the before-running gate's "good landing mechanics" is **met** on the PT's read, and rung 4 of the impact ladder is passed, which is what rung 5 (single-leg pogos) waited on (State §6).
+- **Some impact is okay; keep progressing through the master plan:** the plan's impact sequence and its caps go on as written.
+- **Bike intervals: OK, and ramp up the intensity as the plan calls for.** That is the PT OK in the Add-On §5's interval gate; the other two parts (two weeks of 30-minute rides, 30 since 10/27; clean mornings after them) are met, so the off-season Phase 1 engine's intervals start: 3 × 4 min at RPE 7–8 with 3 min easy between, building to 4 × 4, once a week.
+- **Monday's trace (11/9):** his words, "normal and not hugely bad"; whether that is Nick's read or his own is not stated. It was gone on Tuesday's morning (0). The plan's own response to a slightly-up morning stands: the next impact session holds its dose (Working Rules, load rule 6), with no step back (both conditions in the 11/9 flag met: the mornings settled and Nick read the film as good).
+
+Still open for Thursday: which running-form drills · when the formal quad test runs · the glute test · what to hold for the tidal-tank items · from 11/15 the impact ladder gets one home session a week, so whether impact can run at or after the clinic visits too.
