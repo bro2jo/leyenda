@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-08 · overheard · Overheard from the stable: a boy asking Wren if she is a scribe, and Wren saying "Ledger-keeper" in a voice that makes the difference sound enormous.
 - 2026-11-08 · verse · Someone downstairs has started "Sixty and a Mule" again, and the whole room comes in on the last line: "and the mule's at the inn and the captain is shot." Hollis sings the mule's part, which has no words, with feeling.
 - 2026-11-08 · ledger · Wren's tally for the evening: candles burned, three; verses of the mule song sung, eleven; verses anyone actually knew, four.
 - 2026-11-08 · weather · By the time the fire is banked the frost is back on the inside of the window, drawing ferns nobody asked for. Outside the stars are out in their hundreds, and the cold is the honest kind.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-10 · overheard · Overheard from the cart: Wren asking Maelis what the oldest thing she has ever stitched was. Maelis says "Hollis," and does not elaborate.
 - 2026-11-10 · house · Hollis has taken a turn driving the cart, with enormous dignity and no skill. Rae walks alongside, pretending not to correct him every forty yards.
 - 2026-11-10 · ledger · Wren's tally for the afternoon: hills, four (agreed); stiles, two; times Hollis has asked whether they are nearly there, nine, and a tenth while she was writing it down.
+- 2026-11-10 · verse · Rae is teaching Wren the counting rhyme by the fire: "Count the bells in the bell-house, child, count them, dawn to dark." Wren has questions about the arithmetic, and Rae says that is not what it is for.

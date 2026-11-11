@@ -296,3 +296,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-10#3,2026-11-10,,snack,Hershey's Kisses milk chocolate,1 piece,22,0.3,2.8,1.3,0.1,0.8,2.3,3,17,8,0.05,3,0.05,0,0,0,estimate,flavor not given; typical milk chocolate kiss
 2026-11-10#4,2026-11-10,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: normal chicken and spinach
 2026-11-10#5,2026-11-10,,dinner,Creamy tomato basil soup,~3.5 cups (his words: 3 or 4 cups),525,10.5,63,24.5,7,10.5,42,2625,1575,210,3.5,70,1,44,0.4,70,estimate,brand not given; typical creamy tomato basil ~150 kcal and ~750 mg Na a cup; label asked for
+2026-11-10#6,2026-11-10,,dinner,Grilled cheese sandwich on GF bread,"3 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",1350,45,96,84,6,45,9,2400,360,1200,4.5,75,6,0,1.5,0,estimate,"as 11/3 and 11/6, x1.5 for three"
