@@ -13,19 +13,19 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 - **Session A today (State §6, "This week"):** impact **low vertical jump 3 × 5 + the drop vertical jump check** (8" box, 2 × 4, filmed from the front, and the side if a second phone is there; rung 4 opened by 11/1's good landings and a clean morning; Nick reads the film Tuesday) · **the barbell back squat replaces the goblet squat**: to the 18" box, paused, empty bar first (the DBs outgrown at 52.5) · knee extension left 50 × 3 × 10 toward 3 × 12, the slow lowering unchanged + **the PT's isometrics (0° and 45°, 30 s each leg, light)** · curl +1 plate · RFESS 20s · single-leg calf raise + one DB · step-up · heel tap 8". One variable per exercise; any number of exercises may move. **Written doses only today: the quad test is 48 h away.** Expect ~95 min with the test and checks; the step-up and heel tap are the cut order's first two.
 - **Session B Sat 11/14:** the 11/6 doses stand (barbell RDL 115 × 3 × 8; the hip thrust with the bar alone; the lateral lunge with the lightest DB; the curl +1 plate; abduction 30 × 3 × 15; the left seated calf raise), impact per Sunday's result.
 - **Dumbbells stop at 52.5 lb** (10/31): past it a lift moves to the barbell.
-- **The hamstring curl is protected** (11/1): paired with the knee extension in A and never A's first cut; the hamstring gate is unmeasured.
-- **Bike, legs only, easy, 30 min.** Intervals after two weeks of 30 with clean mornings and a PT OK (ask Tue 11/10).
+- **The hamstring curl is protected** (11/1): paired with the knee extension in A and never A's first cut. The hamstring gate is met (11/10, 100%), but the right is 18% below its pre-op number: the mirrored curl keeps progressing on its own terms.
+- **Bike, legs only, easy, 30 min**, or **the elliptical (approved 11/10)**: the first one part of a ride and easy, judged by the next morning (State §6, Conditioning). Bike intervals after two weeks of 30 with clean mornings and a PT OK (not asked 11/10; ask Thursday).
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. **Protein is fixed** (160 avg, 5 of 7 days; keep the mid-afternoon shake or yogurt). **Fixes this week:** one fat-to-carb swap a day (rice, potatoes, oats or fruit in place of the second cheese, bacon or sauce); **the fish meal** (canned salmon or tuna counts).
 
-## Last PT visit · **Wed 11/4, PT 12** (the note names no one; Nick consulted) · next: **Tue 11/10, Nick** (the formal quad test); then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
+## Last PT visit · **Tue 11/10, PT 13, Nick** · next: **Thu 11/12, Cody**; then Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
 
-PT 12 (`pt_notes.md`, 2026-11-04): pain 0, gait no deviations; no measurements. **Nick's 10/28 words reconfirmed** (the plan's timelines and criteria decide). **The single-leg squat video passed**; keep cleaning up the ascent. Keep progressing through the master plan at home; **single-leg knee-extension isometrics at home** (0° and 45°, 30 s each). The PT reads the running criteria as met and **defers to the surgeon**. **The surgeon (11/4, relayed 11/8): wait for the timeline, the week of 11/15; ramp up to it; some form work allowed now.**
+PT 13 (`pt_notes.md`, 2026-11-10; it outranks the State until the checkpoint folds it in): **hamstring 65 vs 65 lb, LSI 100%** (the gate's ≥80% met; 82% against the right's pre-op 79, the right 18% below its own) · **flexion 149°** · **extension matches the right, normal** · **the quad was not tested** (90.4% from 10/17 stands) · **approved: the elliptical, and slow form work for running** · keep using the master plan and progressing. With the surgeon's 11/4 answer: form work and the elliptical now, the first walk-jog from the week of 11/15. Clinic work: Bulgarian split squat 10s, single-leg RDL and single-leg trunk rotation with tidal tanks (new), leg curl 45 single leg, leg press 6 plates single leg, multi-hip 62.5–75, calf raise with the forefoot raised.
 
-For Tuesday (State §5): **the hamstring test, both sides, and glute med/max** (still unmeasured, both Phase 4 exit items) with the formal quad test · step-out throws and the pivot foot · bike intervals · the written 10/17 note · say that single-leg hops ran twice ahead of the ladder (10/28, 10/30) · if wanted: BFR, Spanish squat, seated throws · the right knee's hyperextension · who treated 10/1. **Added 11/8 (§5, items 8–13):** four loaded days this week vs the plan's 2–3 · the test's conditions (A 48 h before; device and angle as 10/17; a Nm/kg number) · the drop-jump film and whether single-leg pogos start Saturday · graft-site pain after impact days · the knee extension's one-plate cap after 11/16 · the walk–jog's symptom rule.
+For Thursday, Cody (State §5): **which running-form drills, how often, which days** · **when the formal quad test runs** · **the glute med/max test** · what to hold at home for the tidal-tank items · the drop-jump film (11/8) and whether single-leg pogos start Saturday · Monday's trace swelling (back to 0 Tuesday) · bike intervals · four loaded days this week vs the plan's 2–3 · graft-site pain after impact days · the knee extension's one-plate cap after 11/16 · the walk–jog's symptom rule · step-out throws and the pivot foot · the 10/17 written note · if wanted: BFR, Spanish squat, seated throws.
 
 ## Gate · Phase 3 → 4 **met (10/17); Knot III tied Tue 10/20** · next: Phase 4 exit (the plan's "Before Running" gate)
 
-- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ (0 every morning this week) · normal gait ✓ · quad LSI >80% ✓ (90.4%; the formal retest Tue 11/10) · **hamstring LSI ≥80% (unmeasured)** · **glute med/max ≥80% (unmeasured)** · 10 controlled single-leg squats ✓ (11/1, both sides) · impact prep in progress (rung 3 reached; the drop vertical jump check today) · landing mechanics: judged on the drop vertical jump · rehab team agrees: the PT yes, the surgeon yes from the week of 11/15 · **minimum time: week 13, from Tue 11/17**. The two unmeasured tests are the likeliest thing between him and Knot IV.
+- **Phase 4 exit:** full extension ✓ · flexion ≥95% ✓ · no or trace effusion ✓ (0 every morning this week) · normal gait ✓ · quad LSI >80% ✓ (90.4%, 10/17; not retested 11/10) · **hamstring LSI ≥80% ✓ (100%, 11/10)** · **glute med/max ≥80% (unmeasured)** · 10 controlled single-leg squats ✓ (11/1, both sides) · impact prep in progress (rung 3 reached; the drop vertical jump check today) · landing mechanics: judged on the drop vertical jump · rehab team agrees: the surgeon yes from the week of 11/15; Nick (11/10) the elliptical and slow form work now · **minimum time: week 13, from Tue 11/17**. Left between him and Knot IV: repeated single-leg pogos, the landing read, and the week; the glute test is the last unmeasured exit item.
 
 ## Flags and notes for the week
 
@@ -38,7 +38,7 @@ For Tuesday (State §5): **the hamstring test, both sides, and glute med/max** (
 
 ## Open items
 
-- **Running: from the week of 11/15** (the surgeon, 11/4: wait for the timeline, ramp up to it, some form work allowed now). Ask Nick on Tuesday what the form work is, and whether the hamstring and glute tests come before the first run.
+- **Running: from the week of 11/15** (the surgeon, 11/4). **Slow form work approved now (Nick 11/10)**: which drills, how often and on which days are for Cody Thursday; tell me what Nick showed you, if anything.
 - **The sport plan's month check (end of week 4):** seven ratings 1–5 and seven questions, sent in chat 11/8; answers go in the checkpoint's Sport section.
 - **The CRV project:** task 2 (pictures) is overdue since Sat 10/31; planned for this week (he said 11/8).
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
@@ -53,7 +53,7 @@ _Engine block, regenerated by `sync` · as of Tue 2026-11-10 · POD 78 · post-o
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Sun 11/8 | knee | 3,650 | 174 | 162.2 | ✔ | ✔✔ | ✔ | A |  |  |  |  |  |
 | Mon 11/9 | cond, upper, sport | 3,040 | 164 | 162.4 | ✔ | ✔✔ | ✔ |  |  | upperB | 30m |  |  |
-| Tue 11/10 | pt | 3,247 | 166 |  | ✔ | ✔✔ | ✔ |  |  |  |  |  |  |
+| Tue 11/10 | pt | 3,247 | 166 |  | ✔ | ✔✔ | ✔ |  | ✔ |  |  |  |  |
 | Wed 11/11 | sport, cond | | | | | | | | | | | | |
 | Thu 11/12 | pt | | | | | | | | | | | | |
 | Fri 11/13 | cond, upper, sport | | | | | | | | | | | | |
@@ -62,9 +62,9 @@ _Engine block, regenerated by `sync` · as of Tue 2026-11-10 · POD 78 · post-o
 **Nutrition:** avg 3,312 kcal (target 3,000) · avg 168 g protein (target 150-160) · at kcal target 3/3 days · at protein target 3/3 days
 **Weigh-ins:** 2/3 · avg 162.3 lb · last week 160.9 (6 readings) · +1.4 lb
 **Morning swelling grades:** Sun 0 · Mon trace · Tue 0
-**Sessions (through Tue):** knee 1/1 · cond 1/1 · upper 1/1 · sport 0/1 · floor full 3/3 · graded morning checks 3/3
+**Sessions (through Tue):** knee 1/1 · cond 1/1 · upper 1/1 · sport 0/1 · pt 1/1 · floor full 3/3 · graded morning checks 3/3
 
-**Latest measured:** extension L +2° (10/8) · flexion L 146° (10/8) · quad LSI 90.4% (10/17) · hamstring LSI 70.6% (pre-op) · SL leg press LSI 64.3% (10/8) · SL squat L 10 reps (11/8)
+**Latest measured:** extension L +2° (10/8) · flexion L 149° (11/10) · quad LSI 90.4% (10/17) · hamstring LSI 100.0% (11/10) · SL leg press LSI 64.3% (10/8) · SL squat L 10 reps (11/8)
 
 **Project:** none open (`darrow.py project open "Title" --tasks …` starts the week's)
 <!-- engine:end -->

@@ -23,12 +23,13 @@
 - **PT:** Cleveland Clinic Rehabilitation & Sports Therapy.
   - Nick Immel PT oversees (treated 10/8; ran the quad test 10/17, his account). Cody Rardon PTA treats (10/15). Who treated 10/1: not recorded.
   - Weekly; the last three visits were Thursdays (10/1, 10/8, 10/15), the quad test Sat 10/17.
-  - **Next visit: Wed 11/4** (Wed 10/28's was cancelled).
+  - **Last visit: Tue 11/10, PT 13 (Nick).** Next: Cody Thu 11/12; the calendar to 12/5 is in §6.
   - **Nick (10/9): progression is up to the master plan; his approval isn't needed; don't push through pain. Nick (10/28): the plan's criteria and minimum times decide, impact included; the drop vertical jump is cleared once its criteria are met.**
 - **Strength references:**
   - Right pre-op: quad 83.7 lb, hamstring 79 lb, extension 0° AROM, flexion 144°.
   - Left pre-op: quad 58.9 lb (LSI 70.4%), hamstring 55.8 lb (LSI 70.6%), extension −1°, flexion 144°.
-  - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83.4%. The right is 7.8% below its own pre-op number. Hamstrings not yet tested.
+  - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83.4%. The right is 7.8% below its own pre-op number.
+  - **PT 13 (11/10), hamstring on the dynamometer:** R 65 lb, L 65 lb, **LSI 100%**; vs the right's pre-op 79 lb, 82%. The right is 18% below its own pre-op number (the left +16% on its 55.8). Flexion L 149°.
 - **Body mass:** **starting weight 154.0 lb, Mon 9/28, 8:30 am fasted** (the nutrition guide's start; pre-injury 164, goal lean ~170; the guide's steps 154 → 160 → 164 → ~170). Weekly averages since: 155.2 (wk of 9/27, 2 readings) · 156.1 (10/4, 3) · 157.2 (10/11, 7) · 157.6 (10/18, 2) · 160.3 (10/25, 3 so far, salt-heavy days). 158.4 lb, Sun 10/18 morning, is the first Sunday-morning reading; the 10/11 reading (159.8) was a 5:30 PM weight, so readings are mornings from there. Weigh in Sunday mornings; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein; the Add-On's 1.6–2.0 g/kg is 115–145 g).
 - **Calendar:**
   - Post-op week 8 ended Mon 10/19; **week 9 = Tue 10/20 – Mon 10/26: Phase 4; Knot III tied Tue 10/20 (POD 57).**
@@ -66,17 +67,17 @@
 
 | Criterion | Status | Evidence / next step |
 |---|---|---|
-| Full extension | **Met** | Photo 10/18; 2° hyperext at the clinic |
-| Flexion ≥95% of the right | **Met** | 146° vs 144° |
+| Full extension | **Met** | Photo 10/18; 2° hyperext at the clinic; **Nick 11/10: matches the right, normal** |
+| Flexion ≥95% of the right | **Met** | **149° (11/10)** vs the right's 144° |
 | No or trace effusion | **Met** | Trace every graded morning; none on 10/22 |
 | Normal gait | **Met** | — |
-| Quad LSI >80% | **Met on 10/17** | 90.4%, or 83.4% vs the pre-op right. Retest ~week 12 (plan: every 3–5 weeks) |
-| Hamstring LSI ≥80% | **Unmeasured** | Pre-op 70.6%. Ask for the test at the next visit |
-| Glute med/max ≥80% | **Unmeasured** | Pre-op hip 5/5 was a manual test, not a symmetry number. Slight left hip drop at the bottom of the 6.5" step-down (10/18). Ask at the next visit |
+| Quad LSI >80% | **Met on 10/17** | 90.4%, or 83.4% vs the pre-op right. **Not retested 11/10** (planned); the date is the question for Thursday |
+| Hamstring LSI ≥80% | **Met Tue 11/10** | **65 vs 65 lb, 100%** (dynamometer, PT 13); 82% vs the right's pre-op 79 lb. Pre-op 70.6% |
+| Glute med/max ≥80% | **Unmeasured** | Pre-op hip 5/5 was a manual test, not a symmetry number. Slight left hip drop at the bottom of the 6.5" step-down (10/18). Not tested 11/10 (the multi-hip ran equal loads both sides, a treatment, not a test). Ask Thursday |
 | 10 controlled single-leg squats to ~60° | **Passed Sun 11/1** (left 12 of 12 clean on his read of the film, some rocking on the ascent; right 12 of 12); first test 10/28: left 4 | At home, filmed, judged on the plan's checklist (§6); stays on Sundays (his call) until the left's ascent is smooth; the PT sees the video 11/4. Single-leg control is the soft spot (§9, item 6) |
-| Pain-free low-level impact prep | **Started Wed 10/28** | At home, the plan's sequence from small double-leg pogos (§6); Nick 10/28 |
-| Good landing mechanics | Not yet | Judged on the low vertical jump and landing, then the drop vertical jump (§6; cleared by Nick 10/28 once the rungs before it are clean) |
-| Rehabilitation team agrees | — | — |
+| Pain-free low-level impact prep | **Started Wed 10/28** | At home, the plan's sequence from small double-leg pogos (§6); Nick 10/28. Rung 4 (the drop vertical jump) ran Sun 11/8; repeated single-leg pogos (rung 5) not yet |
+| Good landing mechanics | Not yet | Judged on the low vertical jump and landing, then the drop vertical jump (§6; cleared by Nick 10/28 once the rungs before it are clean). Filmed 11/8; the film's read not reported |
+| Rehabilitation team agrees | **Partly** | The surgeon (11/4): running from the week of 11/15, ramping up, some form work now. Nick (11/10): **the elliptical and slow form work for running approved**; the walk-jog itself not named |
 | Minimum time | Week 13+ (from Tue 11/17) | — |
 
 **Phase 4 work:** heavier strength (main lifts toward RPE 7–8, 60–85% of estimated 1RM), single-leg mechanics, and early impact prep on the plan's own start criteria ("when basic strength, control, and knee response permit"): small double-leg pogos → snap-downs → low jump and landing → the drop vertical jump (§6). The plan's first rung, leg-press or shuttle jumps, has no home equipment.
@@ -91,6 +92,7 @@
 
 ## 5. PT and surgeon instructions in force
 
+- **Nick 11/10 (PT 13, `pt_notes.md`):** **the elliptical machine and slow form work for running are approved** · keep using the master plan and progressing. Read with the surgeon's 11/4 answer: form work at slow speed and the elliptical now; the first walk-jog from the week of 11/15 with the gate's other items. The form drills and their dose are not named (ask Thursday). Hamstring 65/65 lb (100%); flexion 149°; extension normal; the quad not tested.
 - **Nick 10/28 (patient-reported, no visit):** the master plan is good; go with it, as long as the criteria and the times match the plan. **The drop vertical jump is cleared** if the plan asks for it and the other criteria to unlock it are met. Read as: the plan's criteria and minimum times decide when something starts, impact included; where the plan waits for a criterion or a week, the wait stands. Reconfirm at 11/4.
 - **Cody 10/28 (patient-reported):** this week's visit cancelled; keep progressing and get further into it.
 - **Nick 10/17 (patient-reported):** step-downs passed · **Copenhagen on both sides OK** (read as the short-lever version done 10/17; the long lever isn't covered) · hamstrings not tested ("should be about the same").
@@ -111,10 +113,12 @@
 | 10/8 | 12" step-up with opposite knee drive · standing heel raise 35# DBs · standing bird dog 8# · multi-hip abduction / extension / flexion · eyes-closed double-leg stance on a wobble board · bike level 5 |
 | 10/15 | Cable TKE 3.5 plates · goblet squat 15 → 25 lb · heel tap 6" · forward lunge 2 × 10/side · banded backward walk 2 × 5 · knee extension full range, two up / left down, 10 lb · single-leg leg curl 25 → 32.5 lb · SL leg press 70 lb |
 | 10/17 | Copenhagen, both sides (short lever) |
+| 11/4 | Single-leg knee-extension isometrics, 0° and 45°, 30 s (home: Session A) |
+| 11/10 | Single-leg RDL holding a tidal tank · single-leg-stance trunk rotation with a tidal tank · calf raise with the forefoot on a plate · **the elliptical** · **slow running-form work** (drills not named) |
 
 **Still through the PT / clinic:**
-- running: the surgeon's go is given for the week of 11/15 (11/4); what "form work" means before then, and whether the hamstring and glute tests come first
-- hamstring and glute strength tests (the clinic's equipment)
+- running: the surgeon's go is given for the week of 11/15 (11/4); slow form work and the elliptical approved now (Nick 11/10); **which form drills, how often, and on which days** are not named
+- the glute strength test and the formal quad retest (the clinic's equipment); the hamstring test is done (11/10, 100%)
 - step-out throws, throwing on the move, marking
 - BFR, Spanish squat, seated rotational throws (not in the plan)
 
@@ -122,8 +126,8 @@
 
 ### For the next visit (the one list)
 
-1. **Tue 11/10, Nick** (the formal quad test; PT 12 on 11/4 answered items 3 and the squat video: `pt_notes.md`, 2026-11-04). **And running:** the surgeon gave the week of 11/15 and some form work now (11/4): ask which form drills, at what level, and whether the hamstring and glute tests come before the first run. Then Cody Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6).
-2. **Hamstring test, both sides.** The before-running gate needs ≥80%; pre-op was 70.6%. **Glute med/max too**, and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18). Unmeasured, these are the likeliest thing holding 11/17.
+1. **Thu 11/12, Cody** (PT 13 on 11/10 answered the hamstring test, 100%, and gave the elliptical and slow running-form work: `pt_notes.md`, 2026-11-10). Then Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6). **Running form work:** which drills, how many, how often, on which days (knee days or off days). **The formal quad test:** when (planned 11/10, not done). **The tidal-tank items** at home: what to hold instead (a DB, the med ball).
+2. **Glute med/max test** (the last unmeasured Phase 4 exit item), and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18).
 3. **Reconfirm Nick's 10/28 words** (relayed): the plan's criteria and times govern, impact included; the drop vertical jump cleared on its criteria. Show where the impact ladder stands and the single-leg squat video. **And say that single-leg hops ran twice last week ahead of the ladder** (left and right 2 × 5 on 10/28, left 2 × 5 on 10/30; quiet, pain 0, clean mornings): ask whether single-leg pogos may come forward, or wait for rung 3 and the drop vertical jump as the plan orders.
 4. **Throwing:** are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee.)
 5. The written note from 10/17 (device, knee angle), so the numbers are on record.
@@ -336,6 +340,7 @@ His question: were the 76–110-minute sessions carrying redundant work? Checked
 
 ### Conditioning
 
+- **Elliptical: approved (Nick 11/10).** It is one of the plan's conditioning options (Phase 3: bike / elliptical / pool; easy, off days, inside the 30). On-feet and new, so its first time is judged by the next morning like any new item: proposed, part of a ride (e.g., 10 min elliptical + 20 bike), easy, then minutes built the way the bike's were (+3 a ride). Conditioning, not a loaded day.
 - Bike easy, legs only, on off days. **Ladder:** 15 (10/9) → 18 (10/12) → 21 (10/17) → 24 (10/19 ✓) → 27 (10/22) → **30 (reached Tue 10/27; every ride since)**. Missed rides aren't made up.
 - **Bike intervals** (Add-On §5): after two weeks of 30 min with clean mornings and a PT OK: 3 × 4 → 4 × 4 min at RPE 7–8. The rides have been 30 since 10/27, but only one a week the last two weeks; ask Nick Tue 11/10; earliest the week of 11/15. Wednesday is their natural day (24 h clear of a loaded day on either side).
 

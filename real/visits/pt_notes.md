@@ -622,3 +622,54 @@ Reading ("so form work" read as "some form work"): **running waits for the plan'
 What it changes: the first walk-jog session (the master plan's Return-to-Running Progression, session 1: walk 5 / jog 1 × 5) can go in the calendar from the week of 11/15, on a loaded day, with the gate's items met (ROM ✓, effusion ✓, quad LSI >80%: formal test 11/10, repeated single-leg pogos pain-free, good landing mechanics). Hamstring and glute ≥80% stay on the plan's Phase 4 exit list ("aim for") and unmeasured: ask Nick on 11/10 whether running waits on them.
 
 Open for 11/10: what "form work" means here (which drills, at what level, how often) · whether the hamstring and glute tests come before the first run.
+
+---
+
+## 2026-11-10 (POD 78) — Visit 13 — PT, Nick Immel
+
+Week 12. Relayed by him in the repo thread the same evening, in his words with the note's measurements and treatment list. The formal quad test planned for this visit did not happen.
+
+### Progress note
+
+```text
+Visit with Nick pt today.
+
+L Knee Flexion: 149 Degrees
+Dynamometer Strength
+Right Hamstring Strength (lbs): 65
+Left Hamstring Strength (lbs): 65
+Extension matches right and is normal.
+Quad not tested today.
+Patient is approved for elliptical machine and slow form work for running.
+
+Did both sides and both legs with the below (where applicable).
+TREATMENT:
+Therapeutic Exercise:
+1: LFUC 16 L5 x6' for LE function and endurance
+2: Bulgarian split squats 2-10# 2x10 B
+3: SL RDL with light blue tidal tank 2x10 B
+4: SL trunck rotation with big tidal tank 2x10 B
+5: CKF 45# SL 2x10 B
+6: CLP(5) SL 6pl 2x10 B
+7: CMH 62.5x10 B, 75#x10 B
+8: CMH 62.5# 2x10 B
+9: Calf raises with 5# 2x12 (add a plate under foot)
+
+Encouraged patient to continue using the master plan and progressing.
+```
+
+### Patient's account of the same visit
+
+The message above is his account and the note together; nothing else relayed yet.
+
+Reading:
+- **Hamstring, dynamometer: R 65 lb, L 65 lb, LSI 100%.** The before-running gate asks ≥80%: **met**. Pre-op was L 55.8 / R 79 (70.6%). The left is up 16%; **the right is down 18% from its own pre-op number**, so against the right's pre-op 79 the left stands at 82%: still over 80, and the same pattern as the quad (the right 7.8% below its pre-op), which flatters the symmetry. Whether it's the same device and position as pre-op: not stated.
+- **Flexion L 149°** (10/8: 146; the right's pre-op 144): met. **Extension:** matches the right, normal (no number): met.
+- **Quad not tested.** The 10/17 number (90.4%) stays the measured value; the formal retest's date is not given.
+- **Approved: the elliptical, and slow form work for running.** This is the PT's side of the surgeon's 11/4 answer ("wait for the week of the 15th, ramp up to it, some form work now"). Read together: **form work at slow speed and the elliptical now; the first walk-jog from the week of 11/15**, with the gate's remaining items. Which form drills, and how often: not stated (the question for Thursday).
+- **"Continue using the master plan and progressing"**: Nick's 10/9, 10/28 and 11/4 words, a fourth time.
+- Abbreviations: LFUC 16 L5 = Life Fitness upright bike, seat 16, level 5, 6 min · Bulgarian split squat with a 10 lb DB in each hand ("2-10#"), 2 × 10 each leg · SL RDL holding the light blue tidal tank (a water-filled bag) · single-leg-stance trunk rotation with the big tidal tank · CKF = the knee-flexion (leg curl) machine, 45 lb single leg (11/4: 40) · CLP(5) = the leg press, seat 5, single leg, 6 plates · CMH = the multi-hip, two lines, directions not stated (10/8 ran abduction, extension and flexion) · calf raises holding 5 lb with a plate under the forefoot for range. "B" = both legs.
+
+What it answers from the list (State §5): **the hamstring test** (done, 100%) · **running form work** (slow form work approved; the drills not named) · **the elliptical** (new). Not done or not reported: **the formal quad test** · **glute med/max** · the drop-jump film and single-leg pogos · four loaded days this week · bike intervals · graft-site pain after impact days · the knee extension's one-plate cap after 11/16 · the walk-jog's symptom rule · step-out throws and the pivot foot · the 10/17 written note · BFR, Spanish squat, seated throws · who treated 10/1. **New items (in-plan as PT items):** the single-leg RDL and the single-leg trunk rotation with a tidal tank (no tidal tank at home: a DB or a med ball is the likely substitute; ask) · the calf raise with the forefoot raised.
+
+What it changes: the hamstring line of the Phase 4 exit is met · the elliptical joins conditioning (State §6) · form work waits only for its drills to be named · nothing in this week's calendar moves. No Knot: the gate still needs repeated single-leg pogos, the landing read, the rehab team's go for the run itself (the surgeon: the week of 11/15) and week 13 (Tue 11/17).

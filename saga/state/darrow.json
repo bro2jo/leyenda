@@ -4,7 +4,7 @@
   "level": 8,
   "rank": "Kindled",
   "level_reached": "2026-11-02",
-  "xp": 3508,
+  "xp": 3538,
   "xp_this_level": 2800,
   "xp_next_level": 3600,
   "proficiency": 3,
@@ -15,7 +15,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 60,
+      "temper": 61,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -35,7 +35,7 @@
       "raw": 11,
       "cap": 12,
       "mod": 0,
-      "temper": 39,
+      "temper": 40,
       "next_at": 50,
       "fell": 18,
       "banked": false
@@ -105,7 +105,7 @@
       "tree": "Footing",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 19,
+      "practice": 20,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
