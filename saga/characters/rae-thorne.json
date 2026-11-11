@@ -35,17 +35,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "3",
+    "scene": "between-3",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-3"
+    "anchor": "chronicle/06-the-weir.html#between-3"
   },
-  "last_seen_doing": "Turned the drover's talk with a carter's answer about salt and flour; in the yard looked at the boy's feet before anything else, read the ox's hock, and told Darrow Hob was hers to lend and the day was his.",
-  "now": "In the inn yard with her hand on Hob's neck, the day hers to lend him and his to decide.",
+  "last_seen_doing": "Decided out loud: Hob goes over the hill with the river family's cart, the company with it at his pace, first light; answered Hollis; then took the rag out of her bell.",
+  "now": "At her cart in the inn yard with the rag in her pocket and her bell ringing again.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
-    "text": "It's a road. Roads say what you tell them.",
+    "text": "A carter carries for anybody. And she lets the road hear her doing it.",
     "chapter": "06",
-    "scene": "2"
+    "scene": "between-3"
   },
   "known_facts": [
     {
@@ -821,6 +821,24 @@
       "evidence": "\"Hob's mine to lend,\" said Rae."
     },
     {
+      "fact": "She decided out loud to lend Hob and walk the river family over the hill at the lame ox's pace, the company with them, at first light.",
+      "chapter": "06",
+      "scene": "between-3",
+      "evidence": "Hob goes over the hill. The cart goes with him, and we go with the cart, at his pace."
+    },
+    {
+      "fact": "She said she drove past the river family's road with her bell stopped and would not drive past them twice.",
+      "chapter": "06",
+      "scene": "between-3",
+      "evidence": "I'll not drive past them twice."
+    },
+    {
+      "fact": "She took the rag out of her bell, and it rang for the first time since Coldmere.",
+      "chapter": "06",
+      "scene": "between-3",
+      "evidence": "for the first time since Coldmere"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1132,6 +1150,10 @@
     {
       "chapter": "06",
       "scene": "3"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-3"
     },
     {
       "chapter": "tale02",

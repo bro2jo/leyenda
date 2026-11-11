@@ -416,3 +416,57 @@ The man stood in the lantern light with his cap in his hands and waited, as peop
 1. **Give them the day: the company walks at their pace to the next safe place.**
 2. **Give them bread and a word on the road ahead, and keep the company's own pace.**
 3. **Ask Rae what the road's custom is, and do that.**
+
+### Between — The Rag
+
+"It's your ox," Darrow said.
+
+Rae looked round from Hob's neck.
+
+"I could argue it either way and win both times," he said, "and that's no way to decide anything. It's your ox and your road. Whatever you say, the company stands behind it. All of us."
+
+The yard heard that. Hollis heard it, and shut his mouth on whatever he had been about to say. The man with the cap looked from the Captain to the carter, as though he had been told the wrong one was in charge.
+
+"You'll not take it back at the first hill," said Rae.
+
+"No."
+
+She looked at him a moment longer. Then she looked at the boy on the mounting block with the Mender's linen on his foot, and at the grandmother on the bedding, and she said it out loud, to all of them, so that nobody would have to guess.
+
+"Hob goes over the hill. The cart goes with him, and we go with the cart, at his pace." She turned to the man. "First light. Not before. The lame one walks behind, unladen, and if he lies down I'll not be the one to tell your wife."
+
+The man began to thank her. She told him to thank the ox.
+
+"Rae," said Hollis. He said it gently, which in Hollis was the warning. "There's a rider behind us who's asked the road how far the Captain walks in a day. And tomorrow the answer's half."
+
+"I know it."
+
+"Then you know what you're spending."
+
+"A day," said Rae. "He's had three days of us already, and all he's done is look." She put her hand flat on Hob's shoulder. "These have got a grandmother on the bedding and a boy in one boot. I drove past their road with my bell stopped. I'll not drive past them twice."
+
+Hollis turned to Darrow.
+
+"You heard her," said Darrow.
+
+Hollis looked at him for a long breath, at the Captain who had once decided everything for sixty men before they had their boots on, and something in his face gave up the argument and was not sorry to.
+
+"Then somebody find that lad a boot," he said, "before the Mender's linen goes through on the stones." He sat down on the edge of the trough with a grunt, worked at the strap of his pack, and brought out a boot. A right boot, big as a bucket, the leather still good. "Carried it down a mountain. Never knew why." He held it out to the boy. "Stuff it with straw. Your foot'll grow into it by about the time I grow back into mine."
+
+The boy took it in both arms, as though it might be taken back.
+
+---
+
+Rae stayed out with the oxen when the others went in. Darrow found her at the cart in the dark of the yard, with her back to the inn's light and her hands at her belt.
+
+She was working at the knot that held the rag in the bell.
+
+He thought of the shoulder of the hill behind them, and of a rider a mile back on a still night, and how far a bell carries over frost. He had said whatever she decided. He kept his hands on the stick.
+
+The knot came loose. She pulled the rag out and put it in her pocket, and turned toward him, and the bell at her hip rang once in the cold, plain and dark, for the first time since Coldmere.
+
+"You said whatever I decided," said Rae.
+
+"I did."
+
+"Then that's decided too." She let the bell hang. "A carter carries for anybody. And she lets the road hear her doing it."

@@ -1505,12 +1505,13 @@
           "fits": "present.wren && present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
             "ch06:s2",
-            "ch06:s3"
+            "ch06:s3",
+            "ch06:between-3"
           ]
         }
       ]
@@ -1784,13 +1785,14 @@
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
             "ch06:s2",
             "ch06:between-2",
-            "ch06:s3"
+            "ch06:s3",
+            "ch06:between-3"
           ]
         }
       ],
@@ -1872,6 +1874,53 @@
       "now": {
         "approval": {
           "hollis": 1
+        }
+      },
+      "due": []
+    },
+    {
+      "id": "c06.6",
+      "made": {
+        "chapter": 6,
+        "scene": "3",
+        "date": "2026-11-11"
+      },
+      "chose": "His own answer to the river family: torn, he gave the decision to Rae, whose ox it was, and promised the company would back whatever she decided; she lent Hob and gave them the day",
+      "now": {
+        "approval": {
+          "rae": 4,
+          "hollis": -2
+        },
+        "bearing": {
+          "banner": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c06.6a",
+          "when": "next",
+          "at": "ch06:s4",
+          "weight": "scene",
+          "what": "The next scene opens on his answer, played in the Between that followed it: he gave Rae the call, she lent Hob and took the river family over the hill at the lame ox pace with her bell ringing again, and the company lost the day",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Give them the day: the company walks at their pace to the next safe place.",
+        "Give them bread and a word on the road ahead, and keep the company's own pace."
+      ]
+    },
+    {
+      "id": "c06.7",
+      "made": {
+        "chapter": 6,
+        "scene": "between-3",
+        "date": "2026-11-11"
+      },
+      "chose": "Gave Rae the call on the river family in front of the company, backed her against Hollis when she lent Hob and the day, and kept his hands on the stick when she took the rag out of her bell",
+      "now": {
+        "approval": {
+          "rae": 2
         }
       },
       "due": []

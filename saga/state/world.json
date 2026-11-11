@@ -43,11 +43,18 @@
         "2026-11-10"
       ],
       "written": "2026-11-10"
+    },
+    {
+      "scene": "between-3",
+      "title": "The Rag",
+      "after": "3",
+      "covers": [],
+      "written": "2026-11-10"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the yard of the inn at the top of the mill tracks, in the hill country north of Coldmere",
+    "detail": "the yard of the inn at the top of the mill tracks, after dark",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -57,7 +64,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "In the inn yard a family off the river farms asked for the loan of Hob to the village over the hill; Rae said Hob was hers to lend and the day was his, and the man waited with his cap in his hands for the cart to make up its mind.",
+  "last_beat": "Rae took the rag out of her bell in the dark yard and it rang for the first time since Coldmere; she told Darrow that was decided too: a carter carries for anybody, and lets the road hear her doing it.",
   "companions": {
     "maelis": {
       "approval": 38,
@@ -65,7 +72,7 @@
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 73,
+      "approval": 71,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
@@ -75,7 +82,7 @@
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
     "rae": {
-      "approval": 30,
+      "approval": 36,
       "present": true,
       "note": "the carter of the last cart; came up the Steps with his letter in her shirt and calls him Darrow, not Ser, not Captain; her stake sits beside his on NOBODY in the kitchen's book, and he owes her an aye; goes down to her oxen at the winch-house and comes up when she is owing"
     },
@@ -207,6 +214,17 @@
       "date": "2026-11-08",
       "ledger": "c05.13",
       "by": "darrow"
+    },
+    {
+      "chapter": 6,
+      "scene": "3",
+      "kind": "micro",
+      "option": null,
+      "text": "His own: told Rae it was her ox and her call, and the company would stand behind whatever she decided",
+      "date": "2026-11-10",
+      "ledger": "c06.6",
+      "by": "darrow",
+      "priced_as": 3
     }
   ],
   "inventory": [
