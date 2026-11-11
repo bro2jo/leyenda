@@ -1505,11 +1505,12 @@
           "fits": "present.wren && present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 3,
+          "offered": 4,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
-            "ch06:s2"
+            "ch06:s2",
+            "ch06:s3"
           ]
         }
       ]
@@ -1783,12 +1784,13 @@
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
           "status": "pending",
-          "offered": 4,
+          "offered": 5,
           "offered_at": [
             "ch06:s1",
             "ch06:between-1",
             "ch06:s2",
-            "ch06:between-2"
+            "ch06:between-2",
+            "ch06:s3"
           ]
         }
       ],

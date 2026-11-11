@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-2",
+    "scene": "3",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-2"
+    "anchor": "chronicle/06-the-weir.html#scene-3"
   },
-  "last_seen_doing": "Kept his word from the Coldmere well: taught the Captain the throw over the wall by the sound of where each stone landed, named it Overwall, and claimed the right to tell it clean.",
-  "now": "At the camp wall after dark with a lap full of stones and a story he means to improve.",
+  "last_seen_doing": "Reminded the yard there was a rider behind them who wanted to know how far the Captain walks in a day.",
+  "now": "In the inn yard on the beech leg.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -1162,6 +1162,10 @@
     {
       "chapter": "06",
       "scene": "between-2"
+    },
+    {
+      "chapter": "06",
+      "scene": "3"
     }
   ]
 }

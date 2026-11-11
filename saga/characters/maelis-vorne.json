@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "2",
+    "scene": "3",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-2"
+    "anchor": "chronicle/06-the-weir.html#scene-3"
   },
-  "last_seen_doing": "Looked at the rider, the light and the knee, said they would want a wall tonight, and agreed a small fire would not show.",
-  "now": "At the camp wall on the mill tracks.",
+  "last_seen_doing": "Took the sacking off the boy's bare foot and wrapped it again properly, without a word.",
+  "now": "In the inn yard by the mounting block with the river family's boy.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -643,6 +643,12 @@
       "chapter": "06",
       "scene": "1",
       "evidence": "\"Good,\" said Maelis."
+    },
+    {
+      "fact": "She unwrapped the river family boy's bare foot and wrapped it again properly without a word to anyone.",
+      "chapter": "06",
+      "scene": "3",
+      "evidence": "began to wrap it again, properly, without a word to anyone"
     }
   ],
   "relationships": [
@@ -940,6 +946,10 @@
     {
       "chapter": "06",
       "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "3"
     }
   ]
 }

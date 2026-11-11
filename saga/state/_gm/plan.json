@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 6,
     "beat": "b2.2",
-    "next_scene": 3,
+    "next_scene": 4,
     "stage": "scene",
-    "last_written": "ch06:s2",
+    "last_written": "ch06:s3",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -82,8 +82,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s3"
       },
       {
         "n": 4,
@@ -97,7 +97,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -508,7 +508,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 3,
+    "chapter": 6,
+    "scene": "3",
+    "opened": "2026-11-10",
+    "axis": "hearth_banner",
+    "ask": "A family driven off their farm asks the company for help on the road, which will cost it a day with a rider behind it. What does Darrow do?",
+    "options": [
+      "Give them the day: the company walks at their pace to the next safe place.",
+      "Give them bread and a word on the road ahead, and keep the company's own pace.",
+      "Ask Rae what the road's custom is, and do that."
+    ],
+    "bearing": [
+      {
+        "Banner": 1
+      },
+      {
+        "Hearth": 1
+      },
+      null
+    ],
+    "default": 2
+  },
   "temptation": {
     "planted": [
       {

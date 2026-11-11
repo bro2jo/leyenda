@@ -35,11 +35,19 @@
       "after": "2",
       "covers": [],
       "written": "2026-11-09"
+    },
+    {
+      "scene": 3,
+      "title": "A Captain With a Stick",
+      "covers": [
+        "2026-11-10"
+      ],
+      "written": "2026-11-10"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the camp wall on the mill tracks, after dark",
+    "detail": "the yard of the inn at the top of the mill tracks, in the hill country north of Coldmere",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -49,7 +57,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "Hollis said he would be telling it clean, two in the hat in the dark and the second cleaner than the first; Darrow said that was not what happened, and Hollis said it is now.",
+  "last_beat": "In the inn yard a family off the river farms asked for the loan of Hob to the village over the hill; Rae said Hob was hers to lend and the day was his, and the man waited with his cap in his hands for the cart to make up its mind.",
   "companions": {
     "maelis": {
       "approval": 38,
@@ -263,5 +271,5 @@
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last.",
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose."
   },
-  "last_updated": "2026-11-09"
+  "last_updated": "2026-11-10"
 }

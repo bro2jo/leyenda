@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "2",
+    "scene": "3",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-2"
+    "anchor": "chronicle/06-the-weir.html#scene-3"
   },
-  "last_seen_doing": "Made the road lie: drove the loaded cart up a farm lane through the soft ground and back on the turf, then ran it lopsided through the spring-mud on a fresh line and away over the stones, so the dip shows two carts going two ways.",
-  "now": "At the camp wall on the mill tracks, the road behind them telling a lie she made.",
+  "last_seen_doing": "Turned the drover's talk with a carter's answer about salt and flour; in the yard looked at the boy's feet before anything else, read the ox's hock, and told Darrow Hob was hers to lend and the day was his.",
+  "now": "In the inn yard with her hand on Hob's neck, the day hers to lend him and his to decide.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
     "text": "It's a road. Roads say what you tell them.",
@@ -809,6 +809,18 @@
       "evidence": "A man reading that dip sees two carts come down off the hill and go two ways."
     },
     {
+      "fact": "She told the drover her cart came down the mountain with salt on it and would go back up with flour, and the room let the rider go.",
+      "chapter": "06",
+      "scene": "3",
+      "evidence": "My cart came down that mountain with salt on it"
+    },
+    {
+      "fact": "She told Darrow the near ox was hers to lend and the day it would cost was his to decide.",
+      "chapter": "06",
+      "scene": "3",
+      "evidence": "\"Hob's mine to lend,\" said Rae."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1116,6 +1128,10 @@
     {
       "chapter": "06",
       "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "3"
     },
     {
       "chapter": "tale02",

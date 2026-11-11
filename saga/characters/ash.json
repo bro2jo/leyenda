@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "2",
+    "scene": "3",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-2"
+    "anchor": "chronicle/06-the-weir.html#scene-3"
   },
-  "last_seen_doing": "Saw the rider first, from the sacks, with her hackles up and no sound.",
-  "now": "At the camp wall on the mill tracks.",
+  "last_seen_doing": "Came out to the yard with the company.",
+  "now": "In the inn yard.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
@@ -227,6 +227,10 @@
     {
       "chapter": "06",
       "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "3"
     }
   ]
 }

@@ -351,3 +351,68 @@ This one he let go too late, and he knew it as it left him. It clacked on the to
 "That's not what happened."
 
 "It is now."
+
+### Scene 3 — A Captain With a Stick
+
+"A rider on a long-legged horse," the drover was saying, "asking after a captain with a stick."
+
+Darrow was in the taproom door with the stick in his hand.
+
+Nobody had looked round yet. The inn at the top of the mill tracks had one room for everything, low and brown with smoke, and a dozen hill people sat along its benches with their boots to the fire and their eyes on the drover, because the drover had the floor and knew it. Darrow leaned the stick in the corner behind the door, among the coats and the crooks, and walked to the end of the nearest bench without it. The knee took the room and said nothing about it. It was the slowest he had ever crossed a room, and not one head turned.
+
+"Three nights back, at the landing," said the drover. He was a big man with a dog asleep under his chair. "Stood the whole room a round and drank water himself. Good coin, too, none of it clipped. Asked after this captain, and a carter with two oxen, and a woman Mender, one after the other, like a man reading off a list."
+
+"What did he want with them?" somebody asked.
+
+"Didn't say." The drover drank. "Asked how far a man with a stick walks in a day. That's what I can't get past. Not where he'd gone. How far he walks."
+
+Under the table Darrow's right hand had closed on nothing. The last two fingers came last, as they did now.
+
+Rae had come in behind him with her hood still up. She sat down on the drover's bench as though she had been coming to sit there all evening.
+
+"And what did you tell him?"
+
+"Told him I'd never seen a captain in my life, nor wanted to." The drover looked at her properly. "You're Thorne's. The bell-cart."
+
+"I'm Thorne's."
+
+"They're saying at the landing your cart came down that mountain with the captain on it."
+
+"My cart came down that mountain with salt on it," said Rae, "and it'll go back up with flour. Ask the reeve at the hamlet what's on my cart. He asked me at his gate, and I told him."
+
+The drover laughed, and the room laughed with him, and somebody asked about the price of wool, and the rider went out of the talk the way weather does. Darrow sat with his back to the wall and his hand open on his knee and did not look at the corner behind the door until it was time to go out to the cart.
+
+---
+
+The family was in the yard.
+
+A farm cart stood by the trough with its bedding roped on top and a grandmother sitting on the bedding, wrapped to the eyes. Three children were being kept still beside it. Their ox stood with one hind foot held off the ground, the hock swollen hot under the lantern, and the man of them stood at its head with his cap in both hands, waiting for somebody to come out.
+
+Darrow had seen bedding roped on carts like that once before, across a river, and he had looked at the spears instead.
+
+Rae looked at the ox. Then she looked at the children's feet, and Darrow watched her do it. The middle one, a boy who would not keep still even now, wore one boot. His other foot was wrapped in sacking and tied round the ankle with twine.
+
+She said nothing about the foot. She went to the ox and ran her hand down the leg to the hock, and the ox flinched, and she took the hand away.
+
+"Done till spring," she said.
+
+"I know it." The man turned his cap round. "We'd not ask. Only it's the Thorne cart, and the road says the Thorne cart carries for anybody." He looked past her, at the company coming out of the inn door: the old knight on the beech leg, the girl with the ledger, the small grey woman with the roll on her shoulder, and Darrow last, with the stick. "And they're saying there's a captain goes with it now, who stood at a gate up the mountain and wouldn't kneel."
+
+Nobody in the yard said anything to that.
+
+"We came off the river farms when the levy came," the man said. "Up the side lanes, not east with the rest. My wife's people are in the village over the hill. If we could have the loan of your near ox as far as there, we'd walk him back to you ourselves by tomorrow night."
+
+Maelis had the boy up on the mounting block and the sacking off his foot. She looked at it in the lantern light and began to wrap it again, properly, without a word to anyone.
+
+"Hob's mine to lend," said Rae. She put her hand on Hob's neck, and then she looked at Darrow. "The day's yours."
+
+"At a lame ox's pace," said Wren, very quietly, "the village is tomorrow noon. At ours, it's tonight."
+
+"With a rider somewhere behind us," said Hollis, "who wants to know how far you walk in a day."
+
+The man stood in the lantern light with his cap in his hands and waited, as people on a road wait for a cart to make up its mind.
+
+**What does Darrow do?**
+1. **Give them the day: the company walks at their pace to the next safe place.**
+2. **Give them bread and a word on the road ahead, and keep the company's own pace.**
+3. **Ask Rae what the road's custom is, and do that.**
