@@ -58,6 +58,32 @@
           "done": "2026-10-29"
         }
       ]
+    },
+    {
+      "id": "home-gym",
+      "title": "Clean up the home gym",
+      "status": "live",
+      "opened": "2026-11-10",
+      "due": "2026-11-28",
+      "done": null,
+      "late": false,
+      "tasks": [
+        {
+          "n": 1,
+          "text": "Vacuum the gym (by Sat Nov 14)",
+          "done": null
+        },
+        {
+          "n": 2,
+          "text": "Clean up the net area (by Sat Nov 21)",
+          "done": null
+        },
+        {
+          "n": 3,
+          "text": "Organize and spot-clean for the overall look (by Sat Nov 28)",
+          "done": null
+        }
+      ]
     }
   ]
 }

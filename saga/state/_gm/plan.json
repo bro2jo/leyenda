@@ -547,6 +547,16 @@
       "file": "saga/chronicle/tales/02-road-s-the-road.md",
       "title": "Road's the Road",
       "bound": "2026-10-29"
+    },
+    {
+      "n": 3,
+      "tale": "tale.two_boys",
+      "project": "home-gym",
+      "of": "darrow",
+      "pieces": 3,
+      "file": "saga/chronicle/tales/03-two-boys-holding-horses.md",
+      "title": "Two Boys Holding Horses",
+      "bound": "2026-11-10"
     }
   ],
   "open_choice": null,

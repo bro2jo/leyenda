@@ -11,7 +11,7 @@
 - **Earlier today, in order:** *A Captain With a Stick* (Scene): In the inn yard a family off the river farms asked for the loan of Hob to the village over the hill; Rae said Hob was hers to lend and the day was his, and the…
 - **With him:** Maelis Vorne (Gone in from the inn yard.) · Ser Hollis Garrow (Gone in from the inn yard, one boot lighter.) · Wren Ashdown (Gone in from the inn yard.) · Rae Thorne (At her cart in the inn yard with the rag in her pocket and her bell ringing again.) · Ash (In the inn yard; since *A Captain With a Stick*)
 - **Also here:** Hale (Stood in his kitchen door in the dark and watched his niece take the cart out without a lamp; told her the summer was written, signed or no…) · Ser Oswin (Heard Darrow's ford and said he would think on it, and drank to the river; knelt at the crossroads stone at first light; told Darrow the ri…)
-- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full)
+- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (0 of 3 told)
 - **Against him:** One rider who has asked the road how far a man with a stick walks in a day, and a bell that rings again.
 - **Next:** Over the hill at a lame ox's pace with the river family.
 - **Open choice:** none.

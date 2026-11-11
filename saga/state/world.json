@@ -279,6 +279,16 @@
       "done": true,
       "rests": false,
       "file": "saga/chronicle/tales/02-road-s-the-road.md"
+    },
+    {
+      "id": "tale03",
+      "title": "Two Boys Holding Horses",
+      "of": "darrow",
+      "pieces": 3,
+      "told": 0,
+      "done": false,
+      "rests": false,
+      "file": "saga/chronicle/tales/03-two-boys-holding-horses.md"
     }
   ],
   "recaps": {
