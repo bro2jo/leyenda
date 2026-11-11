@@ -100,7 +100,14 @@
         "tone": "eerie",
         "micro": null,
         "challenge": null,
-        "invite": null,
+        "invite": {
+          "who": "rae",
+          "kind": "problem",
+          "want": "to tell him what the salt sack under the load is for and whose line it goes down, before they come down to the mill where it goes",
+          "why_now": "the mill at the end of the tracks is a day or two off and the sack goes there; she tells a hard thing before he finds it, and she gave him the call at the inn",
+          "if_ignored": "she tells him anyway on the box next morning, in four sentences, before the mill comes in sight, and does not answer the question that comes after",
+          "status": "waiting"
+        },
         "status": "next",
         "wrote": null
       },
@@ -143,12 +150,19 @@
         "kind": "spine",
         "beat": "b2.2",
         "float": false,
-        "plan": "The night before the weir. The company reads the ground by lantern: a frozen weir below a mill, the water loud under the ice, one dry stone in the middle where a man can stand square and nobody can come at him from more than one side. Hollis drills him there in the dark, the Seated Blade from his feet: the stance that refuses to move (Stillwater), the sword in the new grip. Rae draws the cart up on the bank where it will do most good and says why. Wren keeps a book on the morning that nobody will bet against. It is rowdy and warm because it has to be, and then it is quiet. Callback c05.7a fits the rowdy part: someone answers for Wren who she is for, in passing, the way the company says true things.",
+        "plan": "The night before the weir. The company reads the ground by lantern: a frozen weir below a mill, the water loud under the ice, one dry stone in the middle where a man can stand square and nobody can come at him from more than one side. Hollis drills him there in the dark, the Seated Blade from his feet: the stance that refuses to move (Stillwater), the sword in the new grip. Rae draws the cart up on the bank where it will do most good and says why. Wren keeps a book on the morning that nobody will bet against. It is rowdy and warm because it has to be, and then it is quiet. Callback c05.7a fits the rowdy part: someone answers for Wren who she is for, in passing, the way the company says true things. Set-up for b2.3 (arc pacing, Book II under a fast gate; shape only, no plot of its own): the weir lies below the river mill at the end of the mill tracks; the mill's lamps are lit above, and on the far bank the first carts off the river farms have come up to its bridge, drawn up wrong, carts behind and everyone looking back. After dark Rae takes her salt sack in to the mill (the drop) and comes back with what the drop held for him, if anything, unopened till after the weir.",
         "turn": "Darrow chooses his ground: the one stone on the weir where footwork is worth nothing and standing is worth everything, and the company arranges itself around that choice.",
         "tone": "rowdy, then quiet",
         "micro": null,
         "challenge": null,
-        "invite": null,
+        "invite": {
+          "who": "wren",
+          "kind": "favour",
+          "want": "to be told first what he means to do on the ice in the morning, before he does it, as he promised her on the mountain",
+          "why_now": "it is the night before he goes out onto the weir alone, and he has told her first twice; she wants the third before the morning, not after",
+          "if_ignored": "she keeps the book on the morning all night and enters nothing in his column",
+          "status": "waiting"
+        },
         "status": "planned",
         "wrote": null
       },
@@ -158,7 +172,7 @@
         "kind": "spine",
         "beat": "b2.2",
         "float": false,
-        "plan": "First light at the weir. She comes alone, on foot, the horse left on the bank, and stops at the ice's edge: courteous, clipped, deadly literal. She asks her question before any blade is drawn: why will he not kneel. He answers, or does not; she tests him once, a single pass on the ice that he survives by refusing to move, and steps back to think about it, which is the strangest thing anyone there has seen a fighter do. She says she has orders to take him alive and does not know why, and that she will take him at the next bell whether he has answered or not. The fight itself waits for the bell: the climax.",
+        "plan": "First light at the weir. She comes alone, on foot, the horse left on the bank, and stops at the ice's edge: courteous, clipped, deadly literal. She asks her question before any blade is drawn: why will he not kneel. He answers, or does not; she tests him once, a single pass on the ice that he survives by refusing to move, and steps back to think about it, which is the strangest thing anyone there has seen a fighter do. She says she has orders to take him alive and does not know why, and that she will take him at the next bell whether he has answered or not. The fight itself waits for the bell: the climax. From the stone at first light the mill bridge above is in sight, with more carts on its far bank than last night (b2.3's set-up, one line).",
         "turn": "Darrow meets the hunter face to face and learns she does not know why he is wanted alive; she learns there is a man her footwork has no answer for.",
         "tone": "taut, curious, nearly funny",
         "micro": null,
@@ -232,7 +246,7 @@
     },
     "b2.1": {
       "title": "The Lowmarch in Fear",
-      "status": "in_progress"
+      "status": "done"
     },
     "b2.2": {
       "title": "The Needle",
@@ -340,9 +354,10 @@
       "gate": "beats.b1_1.status == \"done\""
     },
     "q2.inn": {
-      "status": "available",
+      "status": "dropped",
       "stage": 0,
-      "priority": "optional"
+      "priority": "optional",
+      "why": "its temptation was told at Coldmere: Ser Oswin at the crossroads stone (ch05:s6, recorded)"
     },
     "q2.needle": {
       "status": "available",
@@ -377,8 +392,8 @@
       "transition_chapter": null,
       "knot_window": {
         "earliest": "2026-11-17",
-        "likely": "2026-12-01",
-        "why": "the Before Running gate: week 13 at the earliest (Tue 11/17); the single-leg squat test, the impact ladder, the hamstring and glute tests and the quad retest still to pass, then the team's agreement"
+        "likely": "2026-11-17",
+        "why": "the Before Running gate: week 13 from Tue 11/17; surgeon and PT both release running the week of 11/15; hamstring met 11/10 and the landings read good; the glute test and the team's agreement still to come"
       }
     }
   },

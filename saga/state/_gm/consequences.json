@@ -1504,7 +1504,7 @@
           "what": "Wren answered the rope rhyme's house, hearth and bell for herself (Saint Ysolde's, the warming room, Old Mercy) and could not answer who she is for. Fire where someone answers it for her, or she answers it herself: a camp with the company round her, the night before something, in the rowdy part before it goes quiet",
           "fits": "present.wren && present.hollis",
           "priority": 3,
-          "status": "pending",
+          "status": "void:rewritten as c06.8a with a fit the coming scenes can meet",
           "offered": 5,
           "offered_at": [
             "ch06:s1",
@@ -1784,7 +1784,7 @@
           "weight": "color",
           "what": "The keepsake of Tale 1, kept by darrow, comes back once on the page: in a hand, a mouth or a habit, alluded to in a line and never retold (style.md §2). Fire where it does",
           "priority": 2,
-          "status": "pending",
+          "status": "void:rewritten as c06.8b, fitted to the mill scenes",
           "offered": 6,
           "offered_at": [
             "ch06:s1",
@@ -1924,6 +1924,38 @@
         }
       },
       "due": []
+    },
+    {
+      "id": "c06.8",
+      "made": {
+        "chapter": 6,
+        "scene": "3",
+        "date": "2026-11-11"
+      },
+      "chose": "GM: two callbacks rewritten with fits the coming scenes can meet (the plan tightened for the fast gate)",
+      "now": {},
+      "due": [
+        {
+          "id": "c06.8a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren answered the rope rhyme with the House, the warming room and Old Mercy and could not say who she is for. Fire where someone answers it for her, or she answers it herself: the night before the weir, in the rowdy part before it goes quiet (ch6 slot 6), or a Between with her",
+          "fits": "present.wren && present.hollis",
+          "priority": 3,
+          "status": "pending"
+        },
+        {
+          "id": "c06.8b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The keepsake of Tale 1, a name said once, comes back in a habit: when a stranger on the road names him, he does not turn his head. Alluded to in a line, never retold; fire in the mill scenes",
+          "fits": "beats.b2_3.status == \"in_progress\"",
+          "priority": 2,
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
