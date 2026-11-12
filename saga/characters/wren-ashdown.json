@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-3",
+    "scene": "4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-3"
+    "anchor": "chronicle/06-the-weir.html#scene-4"
   },
-  "last_seen_doing": "Heard the decision in the yard.",
-  "now": "Gone in from the inn yard.",
+  "last_seen_doing": "Stopped counting while the Captain was out on the meadow; when he came back she said he had told her first twice, and once he had not.",
+  "now": "In the cart with the ledger open on a page she did not write on.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -733,6 +733,12 @@
       "chapter": "06",
       "scene": "2",
       "evidence": "That's the best lie I've seen since I came off the mountain"
+    },
+    {
+      "fact": "When he went out onto the meadow without a word she stopped counting, and after said he had told her first twice and once had not.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "Times he hasn't: one."
     }
   ],
   "relationships": [
@@ -1047,6 +1053,10 @@
     {
       "chapter": "06",
       "scene": "between-3"
+    },
+    {
+      "chapter": "06",
+      "scene": "4"
     }
   ]
 }

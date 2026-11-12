@@ -409,12 +409,13 @@
       "truth": "T3",
       "feeds": "b2.2",
       "status": "open",
-      "who_knows": "The whole company has seen the rider on the skyline a mile behind at dusk (06:s2); Darrow and Hollis tie it to the miller's man's rider (05:s7); the reader. Unnamed; nobody has seen a face; who sent the rider, or why alive, nobody knows.",
-      "note": "06:s3: a drover at the hill inn met the rider at the landing three nights back: stood a round, drank water, asked off a list (captain, carter, Mender), and asked how far a man with a stick walks in a day.",
+      "who_knows": "The whole company has seen the rider plainly: a slight woman on a long-legged horse who sits like a duelist and does not close (06:s4); Darrow and Hollis tie her to the miller's man's rider (05:s7); the reader. Unnamed; who sent her, or why alive, nobody knows.",
+      "note": "06:s4: the rider seen plainly at noon across a frozen water-meadow: a woman, six buttons, hands that never moved; she looked at Darrow alone and rode off at a walk.",
       "on_page": [
         "05:s7",
         "06:s2",
-        "06:s3"
+        "06:s3",
+        "06:s4"
       ]
     }
   ]

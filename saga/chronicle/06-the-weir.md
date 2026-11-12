@@ -470,3 +470,51 @@ The knot came loose. She pulled the rag out and put it in her pocket, and turned
 "I did."
 
 "Then that's decided too." She let the bell hang. "A carter carries for anybody. And she lets the road hear her doing it."
+
+### Scene 4 — Six Buttons
+
+The bell rang all morning, and every time it rang Darrow looked back.
+
+They had gone over the hill at first light at the lame ox's pace: Hob in the river family's traces with the grandmother up on the bedding, Rae's cart behind on Dun and the mule, who had opinions about it, and the lame ox last of all, unladen, its hock bound. The boy walked at Hob's head in Hollis's right boot stuffed with straw, fell over in it twice, and refused to ride. Rae had the rag in her pocket. At every jolt the bell at her hip went out over the frost and away down the valley, and Darrow looked back down the track at the sound of it and saw empty road.
+
+The rider was not behind them.
+
+At noon the track ran beside a water-meadow, flat and white, its grass stiff with frost, a frozen ditch down the middle of it like a seam. On the far side, at the edge of a stand of bare alders, a horse stood with its rider on it.
+
+They were close enough to count the buttons on the coat. Darrow counted them: six, dark, down the front of a coat cut close for riding. The horse was long in the leg and stood without shifting a hoof. The rider sat it the same way, slight and upright, hood back, hands quiet on the reins. A woman, with her hair cut short as a page's.
+
+She was looking at him. Not at the cart, or the family, or the bell. At him.
+
+Rae stopped the oxen. She needed no telling.
+
+Darrow was already off the track.
+
+He had not decided it. He was walking out onto the meadow with the stick, toward her, over the frozen tussocks, before anyone had said a word. The cold had been in him since morning, in his hands and his chest, and it went out of him now, and he knew that warmth. The last time he had felt it there had been a horse under him and a river in front.
+
+Twenty paces out, the ground told him what he was doing.
+
+The meadow was flat as a table from his feet to the alders, and the ditch ran across it between him and her, frozen over and deep enough to take a man to the knee. A man on foot crossing it with a stick would be in the open the whole way, and would come to the ditch, and have to go down into it and up the other side with his eyes on his feet. She had put her horse where every step he took toward her was a step onto her ground. She sat where she was. She had no need to move.
+
+He stopped.
+
+He planted the stick in the frost beside his right foot and took it high, three fingers and a thumb, and stood square, and let her look. If she wanted him, she could get down off that horse and cross the ditch herself.
+
+She looked a long time. The wind came across the meadow and found his collar, and behind him the mule said something about it. Her hands stayed quiet on the reins.
+
+Then she turned the long-legged horse, unhurried, and walked it into the alders, and the meadow was empty, and he was a man standing in the middle of it with a stick.
+
+He walked back. It was further than it had been going out.
+
+"That's a duelist," said Hollis, low, when he reached the track. "Did you see her hands? Never moved. A duelist doesn't move her hands till it's worth her while."
+
+"She could have closed with us any time since the shoulder," said Maelis. "A hunter who could have closed and didn't is waiting for something." She looked at the meadow, then at him, and let the twenty paces go unsaid, which was worse than saying them.
+
+Wren was in the cart with the ledger shut on her knees. Darrow went to the tailboard.
+
+"I should have told you first," he said.
+
+Her face had gone the colour of the frost. She opened the ledger and found the page with her thumb, and did not write.
+
+"Times the Captain has told me first: two," she said. "Times he hasn't: one."
+
+Rae said the word and the oxen leaned into the yoke, and the bell began again. In the sacks Ash stood with her forefeet on the tailboard and looked at the alders, and went on looking after the alders were gone.

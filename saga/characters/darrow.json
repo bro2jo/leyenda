@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-3",
+    "scene": "4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-3"
+    "anchor": "chronicle/06-the-weir.html#scene-4"
   },
-  "last_seen_doing": "Told Rae it was her ox and her road and the company would stand behind whatever she decided; backed her against Hollis; kept his hands on the stick when she took the rag out of her bell, knowing how far a bell carries over frost.",
-  "now": "In the inn yard after dark, the company bound to walk the river family over the hill at first light at a lame ox's pace.",
+  "last_seen_doing": "Went out across the frozen meadow toward the rider before anyone spoke, read twenty paces out that every step was onto her ground, stopped and stood square and let her look until she rode away; came back and told Wren he should have told her first.",
+  "now": "Walking on with the river family's cart and his own at a lame ox's pace, the rider seen and gone into the alders.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2050,6 +2050,24 @@
       "evidence": "He kept his hands on the stick."
     },
     {
+      "fact": "When the rider showed at the edge of the alders across a frozen water-meadow, he went out toward her across the meadow before anyone had said a word.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "He had not decided it."
+    },
+    {
+      "fact": "Twenty paces out he read that every step toward her was onto her ground, stopped, and stood square with the stick and let her look.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "If she wanted him, she could get down off that horse and cross the ditch herself."
+    },
+    {
+      "fact": "He told Wren he should have told her first.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "\"I should have told you first,\" he said."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2552,6 +2570,10 @@
     {
       "chapter": "06",
       "scene": "between-3"
+    },
+    {
+      "chapter": "06",
+      "scene": "4"
     },
     {
       "chapter": "tale01",

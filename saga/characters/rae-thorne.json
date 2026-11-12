@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-3",
+    "scene": "4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-3"
+    "anchor": "chronicle/06-the-weir.html#scene-4"
   },
-  "last_seen_doing": "Decided out loud: Hob goes over the hill with the river family's cart, the company with it at his pace, first light; answered Hollis; then took the rag out of her bell.",
-  "now": "At her cart in the inn yard with the rag in her pocket and her bell ringing again.",
+  "last_seen_doing": "Drove at the lame ox's pace with the bell ringing, stopped the oxen when the rider showed, and moved them on after.",
+  "now": "Driving on over the hill with the river family, her bell ringing.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
     "text": "A carter carries for anybody. And she lets the road hear her doing it.",
@@ -839,6 +839,12 @@
       "evidence": "for the first time since Coldmere"
     },
     {
+      "fact": "She drove the river family over the hill at the lame ox's pace with her bell ringing again.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "At every jolt the bell at her hip went out over the frost"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1154,6 +1160,10 @@
     {
       "chapter": "06",
       "scene": "between-3"
+    },
+    {
+      "chapter": "06",
+      "scene": "4"
     },
     {
       "chapter": "tale02",

@@ -1902,7 +1902,8 @@
           "at": "ch06:s4",
           "weight": "scene",
           "what": "The next scene opens on his answer, played in the Between that followed it: he gave Rae the call, she lent Hob and took the river family over the hill at the lame ox pace with her bell ringing again, and the company lost the day",
-          "status": "pending"
+          "status": "fired@ch06:s4",
+          "evidence": "They had gone over the hill at first light at the lame ox's pace"
         }
       ],
       "declined": [
@@ -1943,7 +1944,11 @@
           "what": "Wren answered the rope rhyme with the House, the warming room and Old Mercy and could not say who she is for. Fire where someone answers it for her, or she answers it herself: the night before the weir, in the rowdy part before it goes quiet (ch6 slot 6), or a Between with her",
           "fits": "present.wren && present.hollis",
           "priority": 3,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch06:s4"
+          ]
         },
         {
           "id": "c06.8b",

@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 6,
     "beat": "b2.2",
-    "next_scene": 4,
+    "next_scene": 5,
     "stage": "scene",
-    "last_written": "ch06:s3",
+    "last_written": "ch06:s4",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -108,8 +108,8 @@
           "if_ignored": "she tells him anyway on the box next morning, in four sentences, before the mill comes in sight, and does not answer the question that comes after",
           "status": "waiting"
         },
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s4"
       },
       {
         "n": 5,
@@ -141,7 +141,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -159,7 +159,7 @@
           "who": "wren",
           "kind": "favour",
           "want": "to be told first what he means to do on the ice in the morning, before he does it, as he promised her on the mountain",
-          "why_now": "it is the night before he goes out onto the weir alone, and he has told her first twice; she wants the third before the morning, not after",
+          "why_now": "it is the night before he goes out onto the weir alone, and at the water-meadow he went out toward the rider without a word to her: told first twice, not once; she wants the third before the morning, not after",
           "if_ignored": "she keeps the book on the morning all night and enters nothing in his column",
           "status": "waiting"
         },
@@ -581,7 +581,7 @@
   },
   "tallies": {
     "chased": 1,
-    "held": 4
+    "held": 5
   },
   "tallies_log": [
     {
@@ -623,6 +623,14 @@
       "why": "ch05:climax: his name read across the tarn, hands flat on the fold wall; held Hollis; watched Rae questioned and stayed",
       "book": 2,
       "chapter": 5
+    },
+    {
+      "date": "2026-11-11",
+      "name": "held",
+      "delta": 1,
+      "why": "ch06:s4: went twenty paces onto the meadow toward the rider, read her ground, stopped and stood square",
+      "book": 2,
+      "chapter": 6
     }
   ]
 }

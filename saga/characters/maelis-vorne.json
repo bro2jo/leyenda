@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-3",
+    "scene": "4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-3"
+    "anchor": "chronicle/06-the-weir.html#scene-4"
   },
-  "last_seen_doing": "Had wrapped the boy's foot in her linen.",
-  "now": "Gone in from the inn yard.",
+  "last_seen_doing": "Said a hunter who could have closed and did not is waiting for something, and let his twenty paces go unsaid.",
+  "now": "Walking with the carts at the lame ox's pace.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -649,6 +649,12 @@
       "chapter": "06",
       "scene": "3",
       "evidence": "began to wrap it again, properly, without a word to anyone"
+    },
+    {
+      "fact": "She said a hunter who could have closed with them and did not is waiting for something.",
+      "chapter": "06",
+      "scene": "4",
+      "evidence": "A hunter who could have closed and didn't is waiting for something."
     }
   ],
   "relationships": [
@@ -954,6 +960,10 @@
     {
       "chapter": "06",
       "scene": "between-3"
+    },
+    {
+      "chapter": "06",
+      "scene": "4"
     }
   ]
 }
