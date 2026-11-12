@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-09 · body · Halfway up a long hill he stops minding that the cart is faster than he is. It simply is, the way the hill is. He will be at the top when he gets there.
 - 2026-11-09 · weather · Mist lies in the valley below the track this morning, flat as a pond, and the company walks along the top of it like people on a shelf. Hollis says it is the first time he has been above anything.
 - 2026-11-09 · saying · Hollis promises the mist will burn off by noon. Rae says "Kneel to that," the way the Lowmarch says it, which means yes, and also means she has heard him promise weather before.
 - 2026-11-09 · house · Maelis has claimed the cart's tail as her surgery and is sorting her kit by size, then by use, then by size again. Nobody asks which system won.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-11 · house · Wren is mending the binding of her ledger by the fire with thread borrowed from Maelis, who would like it back and has said so twice.
 - 2026-11-12 · weather · Hard frost overnight. The cart's wheels squeal in the ruts all the first mile, and Hollis says that makes two of them complaining about the morning.
 - 2026-11-12 · overheard · Overheard while the kettle heats: Rae telling Wren the trick to a cold morning is to be busy before it notices you. Wren asks if that is a proverb. Rae says it is now.
+- 2026-11-12 · house · Maelis has made a rule: whoever complains about the cold carries the water. Hollis has carried it twice before noon and is asking for a recount.

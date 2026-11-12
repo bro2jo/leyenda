@@ -301,3 +301,9 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-11#2,2026-11-11,,breakfast,Premier Protein shake,"1 bottle (11 fl oz), Cafe Latte",160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,cafe latte
 2026-11-11#3,2026-11-11,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: usual chicken and spinach meal
 2026-11-11#4,2026-11-11,,dinner,Grilled cheese sandwich on GF bread,"2 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",900,30,64,56,4,30,6,1600,240,800,3,50,4,0,1,0,estimate,his words: two toasted cheese; as 11/3 and 11/6
+2026-11-12#1,2026-11-12,,breakfast,Premier Protein shake,"1 bottle (11 fl oz), Cafe Latte",160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,cafe latte
+2026-11-12#2,2026-11-12,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy protein granola
+2026-11-12#3,2026-11-12,,lunch,"Chick-fil-A Grilled Nuggets, 12 ct",12 nuggets (142 g),200,38,2,4.5,0,1,1,660,450,15,0.8,45,1.5,0,0.2,40,library,app screenshot 11/12 confirms 38 g protein
+2026-11-12#4,2026-11-12,,lunch,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,app screenshot 11/12
+2026-11-12#5,2026-11-12,,lunch,"Chick-fil-A Sauce, dipping packet","2 packets (6 ordered, 4 not eaten)",280,0,12,26,0,4,12,340,20,10,0,2,0,0,0,0,library,library row x2
+2026-11-12#6,2026-11-12,,lunch,"Chick-fil-A Chocolate Milkshake (no whipped cream, no cherry)",1 shake,535,12,91,16,1,10,88,340,700,400,1.5,50,1.5,1,1.5,50,library+estimate,"app 535 kcal, 12 g protein without whipped cream; library row less the whipped cream (fat, sat fat, sugar estimated)"
