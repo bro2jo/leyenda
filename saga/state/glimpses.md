@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-08 · weather · By the time the fire is banked the frost is back on the inside of the window, drawing ferns nobody asked for. Outside the stars are out in their hundreds, and the cold is the honest kind.
 - 2026-11-09 · overheard · Overheard over the cart's tail: Wren asking whether hedges this tall grow that way or whether somebody planned them, and Rae saying that up here, those are the same thing.
 - 2026-11-09 · body · Halfway up a long hill he stops minding that the cart is faster than he is. It simply is, the way the hill is. He will be at the top when he gets there.
 - 2026-11-09 · weather · Mist lies in the valley below the track this morning, flat as a pond, and the company walks along the top of it like people on a shelf. Hollis says it is the first time he has been above anything.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-10 · verse · Rae is teaching Wren the counting rhyme by the fire: "Count the bells in the bell-house, child, count them, dawn to dark." Wren has questions about the arithmetic, and Rae says that is not what it is for.
 - 2026-11-11 · body · The cold this morning gets into everyone but him, or so he tells Maelis. She gives him the look she keeps for a wound that says it is fine.
 - 2026-11-11 · house · Wren is mending the binding of her ledger by the fire with thread borrowed from Maelis, who would like it back and has said so twice.
+- 2026-11-12 · weather · Hard frost overnight. The cart's wheels squeal in the ruts all the first mile, and Hollis says that makes two of them complaining about the morning.
