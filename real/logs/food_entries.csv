@@ -300,3 +300,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-11#1,2026-11-11,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar
 2026-11-11#2,2026-11-11,,breakfast,Premier Protein shake,"1 bottle (11 fl oz), Cafe Latte",160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,cafe latte
 2026-11-11#3,2026-11-11,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: usual chicken and spinach meal
+2026-11-11#4,2026-11-11,,dinner,Grilled cheese sandwich on GF bread,"2 sandwiches (assumed 2 slices GF bread, ~2 oz cheese and ~1/2 tbsp butter each)",900,30,64,56,4,30,6,1600,240,800,3,50,4,0,1,0,estimate,his words: two toasted cheese; as 11/3 and 11/6
