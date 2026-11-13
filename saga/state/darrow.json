@@ -1,21 +1,21 @@
 {
   "asof": "2026-11-12",
   "name": "Ser Darrow of Edgemoor",
-  "level": 8,
+  "level": 9,
   "rank": "Kindled",
-  "level_reached": "2026-11-02",
-  "xp": 3593,
-  "xp_this_level": 2800,
-  "xp_next_level": 3600,
-  "proficiency": 3,
-  "hp_max": 54,
+  "level_reached": "2026-11-12",
+  "xp": 3623,
+  "xp_this_level": 3600,
+  "xp_next_level": 4500,
+  "proficiency": 4,
+  "hp_max": 58,
   "attributes": {
     "might": {
       "score": 13,
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 61,
+      "temper": 62,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -35,7 +35,7 @@
       "raw": 11,
       "cap": 12,
       "mod": 0,
-      "temper": 40,
+      "temper": 41,
       "next_at": 50,
       "fell": 18,
       "banked": false
@@ -105,7 +105,7 @@
       "tree": "Footing",
       "rank": 3,
       "banked_rank": 0,
-      "practice": 20,
+      "practice": 21,
       "next_at": 30,
       "sealed_until_knot": null,
       "effect": "Advantage to keep footing; cannot be knocked down while braced."
@@ -320,6 +320,8 @@
     "with": "rae-thorne"
   },
   "wardrobe": {
+    "clothing.jerkin": 6,
+    "cloak.moss": 6,
     "expression.patient": 3,
     "expression.reading": 2,
     "pose.walking": 0,
@@ -339,7 +341,8 @@
     "pose.slow-dance": 3,
     "pose.kiss": 3,
     "hand.staff": 3,
-    "hand.hammer": 4
+    "hand.hammer": 4,
+    "extra.satchel": 6
   },
   "works": {
     "finished": 2,
@@ -349,7 +352,7 @@
   "chapter_now": {
     "week_start": "2026-11-08",
     "through": "2026-11-12",
-    "tier_so_far": "Hard-won",
+    "tier_so_far": "Triumph",
     "chapter": 6
   },
   "fell": {

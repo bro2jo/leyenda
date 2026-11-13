@@ -695,3 +695,46 @@ Reading ("bike internal" read as "bike interval"):
 - **Monday's trace (11/9):** his words, "normal and not hugely bad"; whether that is Nick's read or his own is not stated. It was gone on Tuesday's morning (0). The plan's own response to a slightly-up morning stands: the next impact session holds its dose (Working Rules, load rule 6), with no step back (both conditions in the 11/9 flag met: the mornings settled and Nick read the film as good).
 
 Still open for Thursday: which running-form drills · when the formal quad test runs · the glute test · what to hold for the tidal-tank items · from 11/15 the impact ladder gets one home session a week, so whether impact can run at or after the clinic visits too.
+
+---
+
+## 2026-11-12 (POD 80) — Visit 14 — PTA (the note names no one; Cody on the calendar)
+
+Pasted by him the same evening.
+
+### Progress note
+
+```text
+SUBJECTIVE: Pt states that he is doing very well. Feels like he is making good progress with strength and motion.
+
+Pain:
+Pain
+Pain Level: 0
+Pain Location: Knee - Left
+
+OBJECTIVE MEASURES WITH LEVEL OF FUNCTION:
+
+Gait
+Gait Observation: no deviations noted.
+
+TREATMENT:
+Therapeutic Exercise:
+1: LFUC 16 L5 x6' for LE function and endurance
+2: Bulgarian split squats 2-10# 2x10 B
+3: blue tidal tank around the world- 10 CW/CCW each leg
+4: SL RDL with light blue tidal tank 2x10 B
+5: continuous tension lunge- front foot on 4in box- 2x10 ea
+6: heel tap 6in- 2x10 ea
+7: LFKF(7) single leg 55# 2x10
+8: CKE(4/3) 35# 2x10
+9: CLP(5) single leg- 6pl 2x10 ea
+10: CLP calf press- 6pl 2x10 single leg
+```
+
+### Patient's account of the same visit
+
+None relayed yet.
+
+Reading: pain 0, left knee; gait no deviations; **no measurements** (no quad test, no glute test). Abbreviations as on 11/4 and 11/10: LFUC 16 L5 = upright bike, seat 16, level 5, 6 min · Bulgarian split squat with a 10 lb DB in each hand, 2 × 10 each leg · **tidal tank "around the world"**: single-leg stance, passing the blue tidal tank around the body, 10 clockwise and 10 counter-clockwise on each leg (new) · single-leg RDL holding the light blue tidal tank, 2 × 10 each · **continuous-tension lunge, front foot on a 4" box**, 2 × 10 each (new; read as split-squat reps without locking out at the top) · forward heel tap from 6", 2 × 10 each · LFKF(7) = the leg curl machine, setting 7, single leg 55 lb 2 × 10 (11/4: 40; 11/10's knee-flexion machine: 45) · CKE(4/3) = the knee extension machine, 35 lb 2 × 10 (sides not stated) · CLP(5) = the leg press, seat 5, single leg, 6 plates, 2 × 10 each · **single-leg calf press on the leg press, 6 plates, 2 × 10** (new).
+
+What it answers from the list (State §5): nothing in the note. Whether he asked Cody about the form drills, the quad test's date, the glute test, the tidal-tank substitute or impact on the clinic days is not relayed. What it changes: nothing in the program; three new PT items (the around-the-world, the continuous-tension lunge, the single-leg calf press) are in-plan as PT items.

@@ -23,7 +23,7 @@
 - **PT:** Cleveland Clinic Rehabilitation & Sports Therapy.
   - Nick Immel PT oversees (treated 10/8; ran the quad test 10/17, his account). Cody Rardon PTA treats (10/15). Who treated 10/1: not recorded.
   - Weekly; the last three visits were Thursdays (10/1, 10/8, 10/15), the quad test Sat 10/17.
-  - **Last visit: Tue 11/10, PT 13 (Nick).** Next: Cody Thu 11/12; the calendar to 12/5 is in §6.
+  - **Last visit: Thu 11/12, PT 14 (PTA; Cody on the calendar).** Next: Cody Mon 11/16; the calendar to 12/5 is in §6.
   - **Nick (10/9): progression is up to the master plan; his approval isn't needed; don't push through pain. Nick (10/28): the plan's criteria and minimum times decide, impact included; the drop vertical jump is cleared once its criteria are met.**
 - **Strength references:**
   - Right pre-op: quad 83.7 lb, hamstring 79 lb, extension 0° AROM, flexion 144°.
@@ -114,6 +114,7 @@
 | 10/15 | Cable TKE 3.5 plates · goblet squat 15 → 25 lb · heel tap 6" · forward lunge 2 × 10/side · banded backward walk 2 × 5 · knee extension full range, two up / left down, 10 lb · single-leg leg curl 25 → 32.5 lb · SL leg press 70 lb |
 | 10/17 | Copenhagen, both sides (short lever) |
 | 11/4 | Single-leg knee-extension isometrics, 0° and 45°, 30 s (home: Session A) |
+| 11/12 | Tidal tank "around the world" on one leg · continuous-tension lunge, front foot on a 4" box · single-leg calf press on the leg press |
 | 11/10 | Single-leg RDL holding a tidal tank · single-leg-stance trunk rotation with a tidal tank · calf raise with the forefoot on a plate · **the elliptical** · **slow running-form work** (drills not named) |
 
 **Still through the PT / clinic:**
@@ -126,7 +127,7 @@
 
 ### For the next visit (the one list)
 
-1. **Thu 11/12, Cody** (PT 13 on 11/10 answered the hamstring test, 100%, and gave the elliptical and slow running-form work: `pt_notes.md`, 2026-11-10). Then Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6). **Running form work:** which drills, how many, how often, on which days (knee days or off days). **The formal quad test:** when (planned 11/10, not done). **The tidal-tank items** at home: what to hold instead (a DB, the med ball). **Impact on the clinic days:** from 11/15 there is one home knee session a week, so the impact ladder (single-leg pogos, which the run gate needs) moves once a week; can it also run at or after a clinic visit?
+1. **Mon 11/16, Cody** (PT 14 on 11/12 answered nothing on this list in its note: `pt_notes.md`, 2026-11-12; PT 13 on 11/10 answered the hamstring test, 100%, and gave the elliptical and slow running-form work: `pt_notes.md`, 2026-11-10). Then Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3 (the calendar, §6). **Running form work:** which drills, how many, how often, on which days (knee days or off days). **The formal quad test:** when (planned 11/10, not done). **The tidal-tank items** at home: what to hold instead (a DB, the med ball). **Impact on the clinic days:** from 11/15 there is one home knee session a week, so the impact ladder (single-leg pogos, which the run gate needs) moves once a week; can it also run at or after a clinic visit?
 2. **Glute med/max test** (the last unmeasured Phase 4 exit item), and mention the slight left hip drop at the bottom of the 6.5" step-down (10/18).
 3. **Reconfirm Nick's 10/28 words** (relayed): the plan's criteria and times govern, impact included; the drop vertical jump cleared on its criteria. Show where the impact ladder stands and the single-leg squat video. **And say that single-leg hops ran twice last week ahead of the ladder** (left and right 2 × 5 on 10/28, left 2 × 5 on 10/30; quiet, pain 0, clean mornings): ask whether single-leg pogos may come forward, or wait for rung 3 and the drop vertical jump as the plan orders.
 4. **Throwing:** are step-out throws OK yet, and does the pivot foot matter? (Right-handed, so the conventional pivot is the left foot: the surgical knee.)
