@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-09 · saying · Hollis promises the mist will burn off by noon. Rae says "Kneel to that," the way the Lowmarch says it, which means yes, and also means she has heard him promise weather before.
 - 2026-11-09 · house · Maelis has claimed the cart's tail as her surgery and is sorting her kit by size, then by use, then by size again. Nobody asks which system won.
 - 2026-11-09 · ledger · Wren's tally for the morning's road: hedges, too many to count, which she has counted; gates, nine; farm dogs that barked at the cart, all of them.
 - 2026-11-09 · house · Wren has taken to counting the company's boots each night before she sleeps, lining them up by the fire like a small regiment. Darrow's are always at the end, toes out, ready.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-12 · overheard · Overheard while the kettle heats: Rae telling Wren the trick to a cold morning is to be busy before it notices you. Wren asks if that is a proverb. Rae says it is now.
 - 2026-11-12 · house · Maelis has made a rule: whoever complains about the cold carries the water. Hollis has carried it twice before noon and is asking for a recount.
 - 2026-11-12 · ledger · Wren's tally for the day's water: Hollis, four buckets; everyone else, one between them. She has underlined the four.
+- 2026-11-12 · saying · A farm boy gallops a borrowed pony past the cart, standing in the stirrups. Hollis gives him the old soldiers' verdict, "Full of Grace and empty of sense," then admits he was worse at that age.
