@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-4",
+    "scene": "5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-4"
+    "anchor": "chronicle/06-the-weir.html#scene-5"
   },
-  "last_seen_doing": "Sat down beside Rae on the cart shaft; heard what the salt sack is and where it goes; asked whether his name was in it; let the question she would not answer wait; told her that on the meadow he had wanted the rider to be Aldric.",
-  "now": "On the shaft of Rae's cart after dark past the river family's village, knowing what the sack is and not yet what she carried up the mountain.",
+  "last_seen_doing": "Found an unsigned summons nailed under his writ on a bell-post, read the hand and found it meant exactly what it said, took it down and kept it; at the fire let the company argue it to the end before he spoke.",
+  "now": "At a camp a day short of the mill with the summons inside his coat, his answer not yet given.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2080,6 +2080,24 @@
       "evidence": "For twenty paces I thought it might be him."
     },
     {
+      "fact": "An unsigned summons under the forms was nailed below his writ on a bell-post, calling the captain of the Ninth who walks with a stick to the weir below the mill at first light on the second morning, alone, to answer a question.",
+      "chapter": "06",
+      "scene": "5",
+      "evidence": "Come to the weir below the mill at the end of these tracks"
+    },
+    {
+      "fact": "He read the hand with the script and found no lie in it and no more in it than it said.",
+      "chapter": "06",
+      "scene": "5",
+      "evidence": "There was no lie in it, and no more in it than it said"
+    },
+    {
+      "fact": "At the fire he let all four of the company have the argument out to the end before he spoke, and told them every one of them was right.",
+      "chapter": "06",
+      "scene": "5",
+      "evidence": "Every one of you's right."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2590,6 +2608,10 @@
     {
       "chapter": "06",
       "scene": "between-4"
+    },
+    {
+      "chapter": "06",
+      "scene": "5"
     },
     {
       "chapter": "tale01",

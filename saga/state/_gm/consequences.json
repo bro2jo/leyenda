@@ -1945,9 +1945,10 @@
           "fits": "present.wren && present.hollis",
           "priority": 3,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch06:s4"
+            "ch06:s4",
+            "ch06:s5"
           ]
         },
         {

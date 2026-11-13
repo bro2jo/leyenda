@@ -227,6 +227,12 @@ Cold, fast and brown in rain, running east out of the Greywater through the Lowm
 
 Knights who came home with the Grace gone and themselves gone after it: breathing, obeying, nobody in. The heralds say the clans do it with witchery out of the grey country east of the Wend, and that a lamp keeps it off, which is why the Lowmarch burns lamps in autumn and the clans are said to burn them all year. Families send theirs to the Menders with a chit and do not come back for the lamp. ⟪gm: T4.⟫
 
+## realm.forms — The forms of a knight's meeting
+- **tier:** common · **spoken:** ch06:s5 · **names:** —
+- **use:** a summons between knights; Hollis on what a Lance owes another; a duel that is not a brawl.
+
+When one knight would meet another and not as enemies in the field, he sends word under the forms: the hour, the place, and that each comes alone. The one who sends names the ground; the one who comes picks his own place upon it. A question is asked before any blade is drawn, and nobody on the bank lays a hand on either until it is answered or refused. A knight who breaks the forms is forsworn in every Lance's mouth, whatever the Crown says of him; a knight who refuses them is only careful, and the Lances have a word for that too.
+
 ## realm.writs — Writs and seals
 - **tier:** common · **spoken:** Prologue I, Ch 1 Interlude · **names:** —
 - **use:** a paper that is law; how a soldier carries one.

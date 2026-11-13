@@ -572,3 +572,62 @@ Rae was quiet a moment.
 "No. She sits a horse nearly as well. Nobody sits one better than him."
 
 "Then that's one each," said Rae, and pushed the sack under the cart with her heel, out of the frost, where it would keep till the mill.
+
+### Scene 5 — Under the Forms
+
+His name was nailed to the bell-post twice.
+
+The first was the Crown's: the writ under its blob of blue wax, the same one they had read at the hamlet a week ago, his name alone at the top in letters a size bigger than the rest. The second paper was nailed under it. It was small and square and very white, and someone had driven a nail into each of its corners, the four of them exactly the same distance in from the edge.
+
+*To the captain of the Ninth Lance, who walks with a stick.*
+
+*Under the forms. Come to the weir below the mill at the end of these tracks, at first light on the second morning after this is nailed, which is to say not tomorrow. Come alone. I will be alone. There is a question. It will take less time to ask than this has taken to write.*
+
+There was no name under it.
+
+"Four nails," said Wren, who had read it over his shoulder. "Spaced to the hair. She measured." Her voice had gone careful. "Nobody measures nails."
+
+Darrow looked at the hand, because the hand was what there was to look at. Every letter stood upright and cut clean, a stroke and then a stop, nothing joined to the next; there was no flourish anywhere, and no blot. Whoever wrote it had written it standing, and taken her time, and crossed nothing out.
+
+`[RESOLVE · DC 13]` d20 **6** +0 resolve +4 proficiency +4 Warden's Eye IV = **14** — *Success*
+
+The script came up faintly behind his palms and read the paper as it read a face. There was no lie in it, and no more in it than it said, and it said exactly what it meant: the weir, the hour, alone, a question. It was the most frightening letter he had ever been sent.
+
+He took it down, nail by nail, and put it inside his coat.
+
+---
+
+They had it out at the fire that night under the lee of a wall, loud, all of them at once, louder than the company had argued since the mountain.
+
+"It's under the forms," said Hollis. "You go. That's all there is to it." He said it to the fire and then, because that was cowardly, to Darrow. "When a knight sends word under the forms, the one who sends names the ground and the one who comes picks where on it he stands. A question's asked before any blade's drawn, and nobody on the bank lifts a hand while it's being answered. She's offered you that. A writ wouldn't. A Confessor wouldn't. You don't spit on it."
+
+"You don't walk into it either," said Wren. "We've got a night and a day. We could be two valleys off by her first light, and she'd be stood on a weir with her question and nobody to ask it of." She had the ledger open on her knee and had written nothing in it. "That's not cowardly. That's arithmetic."
+
+"She found us beside a meadow when she was meant to be behind us," said Rae. "She'll find us two valleys off." She was mending a strap by the fire with the awl, and kept her eyes on it. "I'm at the mill tomorrow night with the sack. I'll read that weir before anybody stands on it. Ice, stones, where the water's under. Then you decide."
+
+"And his hands?" said Maelis.
+
+They all looked at her.
+
+"Four days," she said. "He's had that grip four days. You don't take a new grip onto ice against a woman who measures her nails." She looked at Darrow across the fire. "I'm not telling you not to go. I'm telling you what you'd be going with."
+
+Darrow sat with the paper against his ribs.
+
+A year ago he would have stood up halfway through Hollis and said what the Ninth would do, and the Ninth would have done it before Wren had her ledger open. He had decided things for sixty men before they had their boots on. Tonight he had let all four of them have it out, all the way to the end, and he found he wanted to hear the end.
+
+"She wants a question answered," he said. "Hollis wants me to answer it the way it was asked. Wren wants us gone before it can be. Rae wants to see the ground. Maelis wants me to know what I've got." He turned the stick across his knees. "Every one of you's right."
+
+"That's no use to anybody," said Hollis.
+
+"No," said Darrow. "It isn't."
+
+Over by the wall Ash lifted her head off Wren's boots and looked at the dark, toward the mill, and put it down again.
+
+> ⟦ THE RECKONING ⟧
+> Level 8 → 9 · Kindled
+> XP 3,353 → 3,643
+
+**What does Darrow do?**
+1. **Answer by the forms: go to the weir at the hour named, alone, and let the company watch from the bank.**
+2. **Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes.**
+3. **Send Wren with his answer and a question of his own: who sent her, and why alive.**

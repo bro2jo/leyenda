@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "4",
+    "scene": "5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-4"
+    "anchor": "chronicle/06-the-weir.html#scene-5"
   },
-  "last_seen_doing": "Named the rider a duelist by her hands, which never moved.",
-  "now": "On Rae's cart going on at the lame ox's pace.",
+  "last_seen_doing": "Argued for the forms and told the company what they are.",
+  "now": "At the fire, for the forms.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -808,6 +808,12 @@
       "chapter": "06",
       "scene": "4",
       "evidence": "A duelist doesn't move her hands till it's worth her while."
+    },
+    {
+      "fact": "He said that under the forms the one who sends names the ground and the one who comes picks where on it he stands, and nobody on the bank lifts a hand while the question is answered.",
+      "chapter": "06",
+      "scene": "5",
+      "evidence": "the one who sends names the ground and the one who comes picks where on it he stands"
     }
   ],
   "relationships": [
@@ -1186,6 +1192,10 @@
     {
       "chapter": "06",
       "scene": "4"
+    },
+    {
+      "chapter": "06",
+      "scene": "5"
     }
   ]
 }

@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 6,
     "beat": "b2.2",
-    "next_scene": 5,
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch06:s4",
+    "last_written": "ch06:s5",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -141,8 +141,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s5"
       },
       {
         "n": 6,
@@ -163,7 +163,7 @@
           "if_ignored": "she keeps the book on the morning all night and enters nothing in his column",
           "status": "waiting"
         },
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -527,7 +527,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 5,
+    "chapter": 6,
+    "scene": "5",
+    "opened": "2026-11-12",
+    "axis": "sworn_unsworn",
+    "ask": "An unsigned summons asks the captain of the Ninth to the weir at first light, alone, under the forms. What does Darrow do?",
+    "options": [
+      "Answer by the forms: go to the weir at the hour named, alone, and let the company watch from the bank.",
+      "Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes.",
+      "Send Wren with his answer and a question of his own: who sent her, and why alive."
+    ],
+    "bearing": [
+      {
+        "Sworn": 1
+      },
+      {
+        "Unsworn": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": [
       {
