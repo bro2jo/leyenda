@@ -1985,7 +1985,7 @@
           "at": "ch06:s5",
           "weight": "scene",
           "what": "Downstream of `rae_market_told` (b2.2): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.2`); fire where it is honoured, void with a reason if the story made it moot",
-          "status": "pending"
+          "status": "void:honoured in ch06:between-4 itself; what follows from it runs in the drop at the mill (ch6 slot 6) and the calling in Book III (rae.road), not in slot 5"
         }
       ]
     }
