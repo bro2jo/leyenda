@@ -106,7 +106,7 @@
           "want": "to tell him what the salt sack under the load is for and whose line it goes down, before they come down to the mill where it goes",
           "why_now": "the mill at the end of the tracks is a day or two off and the sack goes there; she tells a hard thing before he finds it, and she gave him the call at the inn",
           "if_ignored": "she tells him anyway on the box next morning, in four sentences, before the mill comes in sight, and does not answer the question that comes after",
-          "status": "waiting"
+          "status": "taken"
         },
         "status": "written",
         "wrote": "ch06:s4"
@@ -420,7 +420,7 @@
     "vane_spared": false,
     "first_kneel_private": false,
     "thistle_found": false,
-    "rae_market_told": null,
+    "rae_market_told": true,
     "rae_vow": false,
     "hollis_told_shard": true,
     "stair_watched": false,

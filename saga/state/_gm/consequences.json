@@ -1961,6 +1961,33 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c06.9",
+      "made": {
+        "chapter": 6,
+        "scene": "between-4",
+        "date": "2026-11-13"
+      },
+      "chose": "Sat down beside Rae on the cart shaft when she made room; heard from her, before the mill, what the salt sack is and whose line it goes down, asked whether his name was in it, let the right question wait when she would not answer it tonight, and gave her his own true thing: on the meadow he had wanted the rider to be Aldric",
+      "now": {
+        "bearing": {
+          "candor": 1
+        },
+        "flags": {
+          "rae_market_told": true
+        }
+      },
+      "due": [
+        {
+          "id": "c06.9a",
+          "when": "next",
+          "at": "ch06:s5",
+          "weight": "scene",
+          "what": "Downstream of `rae_market_told` (b2.2): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.2`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
@@ -2124,7 +2151,13 @@
       "id": "r.b2.rae_tells",
       "if": "approval.rae >= 30",
       "then": "Rae tells him she carries for the Lantern Market before the river mill (q2.lantern; sets rae_market_told true by her choice); otherwise he finds the oilcloth under the salt",
-      "where": "book2"
+      "where": "book2",
+      "fired": [
+        "ch06:between-4"
+      ],
+      "evidence": {
+        "ch06:between-4": "Down the road, to people on the coast who pay for what the road knows."
+      }
     },
     {
       "id": "r.b3.ysra_turns",

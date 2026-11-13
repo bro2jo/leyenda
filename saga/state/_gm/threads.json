@@ -345,8 +345,8 @@
       "truth": "A wick carries, never keeps; she keeps the mare, the aye, the letter and him. The corner shows at q2.lantern, the calling at b3.4, the recall in Book IV, the price in Book VI (rae.road, _gm/characters.md, _gm/world.md 5a).",
       "feeds": "q1.cart, q2.lantern, b3.4, q4.censer, q5.second, q6.market, r.b6.rae_door",
       "status": "open",
-      "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; nobody at the House; the reader has her tells only (the bow off her box, the camp read by flour, the letter inside her shirt, name-the-load, the cold in her cart, one question a night)",
-      "note": "climax: Hale wrote the day's cost against Rae unsigned ('the book's open'); the company left before the bell; nothing of the Market said. The reader of writs and two grey cloaks asked Rae about Thorne's cart and went on to the mill.",
+      "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; Darrow now knows the corner (06:between-4): the sack goes to the mill and down the road to people on the coast who pay for what the road knows, and she carried for them up the mountain; nobody else in the company; the reader.",
+      "note": "06:between-4: the corner told before the mill, by her choice; the right question (what she carried up the mountain) left for some night with nobody on the hill behind them.",
       "on_page": [
         "04:between-1",
         "05:between-1",
@@ -354,7 +354,8 @@
         "05:s5",
         "05:interlude",
         "05:s7",
-        "05:climax"
+        "05:climax",
+        "06:between-4"
       ]
     },
     {

@@ -518,3 +518,57 @@ Her face had gone the colour of the frost. She opened the ledger and found the p
 "Times the Captain has told me first: two," she said. "Times he hasn't: one."
 
 Rae said the word and the oxen leaned into the yoke, and the bell began again. In the sacks Ash stood with her forefeet on the tailboard and looked at the alders, and went on looking after the alders were gone.
+
+### Between — The Wrong Question
+
+"It's salt," said Rae, before he had sat down. "Mostly."
+
+He sat down anyway, on the shaft beside her, with the stick across his knees. They had left the river family at a door in the village behind them, the grandmother still talking, and Hob was back in his own traces and had said nothing about any of it. The others were at the fire under the barn wall. Out here there was only the cart, and the frost, and the sack at her feet.
+
+"It goes to the mill at the end of these tracks," she said. "It always goes there. Somebody at the mill takes it in, and gives me back a sack of flour that weighs a hair more or a hair less than flour, and I carry that where it's going."
+
+"Where's it going?"
+
+"Down the road, to people on the coast who pay for what the road knows. Who's on it, and which way, and what's on their carts." She did not look at him. "There's a lamp for every road, they say down there. I carry for the one on this road."
+
+He turned that over and found the sharp edge of it at once, as he always found the edge of a thing first.
+
+"Is my name in that sack?"
+
+"I don't know," said Rae. "I've never opened it. I've never opened one."
+
+"That's not an answer."
+
+"It's the only one I have." She put her heel on the sack's neck, as though it might go somewhere. "And it's the wrong question."
+
+"What's the right one?"
+
+She looked at him then.
+
+"What I was carrying for them up your mountain."
+
+The fire cracked over by the wall. Hollis said something there and Wren laughed at it.
+
+"Ask it, then," said Darrow.
+
+"Not tonight." She held his eye. "I meant to tell you this before the mill, and I have. That other's a longer road, and I'll drive it when I can drive it right. Ask me some night when there's nobody on the hill behind us."
+
+He could have pressed. He knew how. He had pressed men for less in tents with the rain coming in, and had the answer by the second candle. He sat with his hands on the stick and did not.
+
+"You'd have found it anyway," said Rae. "Wren weighs sacks for the joy of it."
+
+"Wren weighs everything."
+
+"That's one," she said. "One true thing. That's mine."
+
+So he gave her his.
+
+"On the meadow," he said. "For twenty paces I thought it might be him. On that horse. I wanted it to be him so badly I'd have crossed the ditch on my knees to see his face."
+
+Rae was quiet a moment.
+
+"It wasn't."
+
+"No. She sits a horse nearly as well. Nobody sits one better than him."
+
+"Then that's one each," said Rae, and pushed the sack under the cart with her heel, out of the frost, where it would keep till the mill.

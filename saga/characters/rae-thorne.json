@@ -35,17 +35,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "4",
+    "scene": "between-4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-4"
+    "anchor": "chronicle/06-the-weir.html#between-4"
   },
-  "last_seen_doing": "Drove at the lame ox's pace with the bell ringing, stopped the oxen when the rider showed, and moved them on after.",
-  "now": "Driving on over the hill with the river family, her bell ringing.",
+  "last_seen_doing": "Told Darrow before the mill that the salt sack goes to the mill at the end of the tracks and down the road to people on the coast who pay for what the road knows; said she has never opened one; named the right question, what she carried for them up his mountain, and said not tonight.",
+  "now": "On her cart's shaft after dark with the salt sack under the cart, to keep till the mill.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
-    "text": "A carter carries for anybody. And she lets the road hear her doing it.",
+    "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
     "chapter": "06",
-    "scene": "between-3"
+    "scene": "between-4"
   },
   "known_facts": [
     {
@@ -845,6 +845,24 @@
       "evidence": "At every jolt the bell at her hip went out over the frost"
     },
     {
+      "fact": "She told Darrow the salt sack goes to the mill at the end of the mill tracks and on down the road to people on the coast who pay for what the road knows.",
+      "chapter": "06",
+      "scene": "between-4",
+      "evidence": "Down the road, to people on the coast who pay for what the road knows."
+    },
+    {
+      "fact": "She said she has never opened a sack she carried for them.",
+      "chapter": "06",
+      "scene": "between-4",
+      "evidence": "I've never opened one."
+    },
+    {
+      "fact": "She said the right question was what she carried for them up his mountain, and would not answer it that night.",
+      "chapter": "06",
+      "scene": "between-4",
+      "evidence": "What I was carrying for them up your mountain."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1164,6 +1182,10 @@
     {
       "chapter": "06",
       "scene": "4"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-4"
     },
     {
       "chapter": "tale02",

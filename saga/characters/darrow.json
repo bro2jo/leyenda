@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "4",
+    "scene": "between-4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-4"
+    "anchor": "chronicle/06-the-weir.html#between-4"
   },
-  "last_seen_doing": "Went out across the frozen meadow toward the rider before anyone spoke, read twenty paces out that every step was onto her ground, stopped and stood square and let her look until she rode away; came back and told Wren he should have told her first.",
-  "now": "Walking on with the river family's cart and his own at a lame ox's pace, the rider seen and gone into the alders.",
+  "last_seen_doing": "Sat down beside Rae on the cart shaft; heard what the salt sack is and where it goes; asked whether his name was in it; let the question she would not answer wait; told her that on the meadow he had wanted the rider to be Aldric.",
+  "now": "On the shaft of Rae's cart after dark past the river family's village, knowing what the sack is and not yet what she carried up the mountain.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2068,6 +2068,18 @@
       "evidence": "\"I should have told you first,\" he said."
     },
     {
+      "fact": "He asked Rae whether his name was in the sack, and when she would not answer the question she called the right one, he did not press her.",
+      "chapter": "06",
+      "scene": "between-4",
+      "evidence": "\"Is my name in that sack?\""
+    },
+    {
+      "fact": "He told Rae that for twenty paces on the meadow he had wanted the rider to be Aldric.",
+      "chapter": "06",
+      "scene": "between-4",
+      "evidence": "For twenty paces I thought it might be him."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2574,6 +2586,10 @@
     {
       "chapter": "06",
       "scene": "4"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-4"
     },
     {
       "chapter": "tale01",
