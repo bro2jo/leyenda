@@ -309,3 +309,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-12#6,2026-11-12,,lunch,"Chick-fil-A Chocolate Milkshake (no whipped cream, no cherry)",1 shake,535,12,91,16,1,10,88,340,700,400,1.5,50,1.5,1,1.5,50,library+estimate,"app 535 kcal, 12 g protein without whipped cream; library row less the whipped cream (fat, sat fat, sugar estimated)"
 2026-11-12#7,2026-11-12,,snack,Nacho cheese sauce,assumed ~3 tbsp (his words: a little),120,3,6,9,0,4,1.5,600,60,90,0.1,5,0.4,0,0,0,estimate,brand not given; typical jarred nacho cheese
 2026-11-12#8,2026-11-12,,snack,"Tortilla chips, corn",assumed ~1.5 oz,210,3,27,10,2,1.5,0.5,170,80,40,0.6,30,0.6,0,0,0,estimate,amount not given; as 11/7
+2026-11-12#9,2026-11-12,,dinner,Perdue Simply Smart Organics GF breaded chicken tenders,4 pieces (~127 g),280,17,23,13,0,2.7,1.3,640,240,8,1.3,27,0.9,0,0,20,library,library per piece x4
+2026-11-12#10,2026-11-12,,dinner,"Chick-fil-A Sauce, dipping packet",assumed 1 packet (1 oz),140,0,6,13,0,2,6,170,10,5,0,1,0,0,0,0,library,amount not given; one of the lunch packets assumed
+2026-11-12#11,2026-11-12,,dinner,Cooked mixed vegetable blend,assumed ~1 cup,80,3,12,2.5,4,0.5,4,100,300,40,0.8,25,0.4,40,0,30,estimate,blend and amount not given; a little cooking fat assumed
