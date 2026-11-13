@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-09 · house · Wren has taken to counting the company's boots each night before she sleeps, lining them up by the fire like a small regiment. Darrow's are always at the end, toes out, ready.
 - 2026-11-09 · weather · The mist kept Hollis's promise for once and burned off by noon, leaving the hills washed and bright. He has mentioned this four times, and Rae has let him.
 - 2026-11-09 · overheard · Overheard at the night's fire: Hollis asking Rae how far they made today, and Rae answering in hills instead of miles. Hollis says that's cheating. Rae says it's the only honest way to count this country.
 - 2026-11-09 · house · Rae is mending a harness strap by firelight, the awl held in her teeth between stitches, talking around it as if that were a normal way to talk.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-12 · saying · A farm boy gallops a borrowed pony past the cart, standing in the stirrups. Hollis gives him the old soldiers' verdict, "Full of Grace and empty of sense," then admits he was worse at that age.
 - 2026-11-12 · weather · The cold has come down early tonight, the kind that makes a fire worth sitting close to. Darrow sits closest, and for once no one makes him move.
 - 2026-11-12 · overheard · Overheard at the fire: Wren asking Maelis whether she ever sleeps. Maelis says she did once, in the spring of a bad year, and did not care for it.
+- 2026-11-13 · house · Ash has taken to walking at Darrow's pace instead of the cart's, and looking back at the others now and then as if they are the slow ones.
