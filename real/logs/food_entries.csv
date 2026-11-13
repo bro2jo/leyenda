@@ -307,3 +307,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-12#4,2026-11-12,,lunch,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,app screenshot 11/12
 2026-11-12#5,2026-11-12,,lunch,"Chick-fil-A Sauce, dipping packet","2 packets (6 ordered, 4 not eaten)",280,0,12,26,0,4,12,340,20,10,0,2,0,0,0,0,library,library row x2
 2026-11-12#6,2026-11-12,,lunch,"Chick-fil-A Chocolate Milkshake (no whipped cream, no cherry)",1 shake,535,12,91,16,1,10,88,340,700,400,1.5,50,1.5,1,1.5,50,library+estimate,"app 535 kcal, 12 g protein without whipped cream; library row less the whipped cream (fat, sat fat, sugar estimated)"
+2026-11-12#7,2026-11-12,,snack,Nacho cheese sauce,assumed ~3 tbsp (his words: a little),120,3,6,9,0,4,1.5,600,60,90,0.1,5,0.4,0,0,0,estimate,brand not given; typical jarred nacho cheese
+2026-11-12#8,2026-11-12,,snack,"Tortilla chips, corn",assumed ~1.5 oz,210,3,27,10,2,1.5,0.5,170,80,40,0.6,30,0.6,0,0,0,estimate,amount not given; as 11/7
