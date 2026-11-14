@@ -37,8 +37,8 @@
     "place": "coldmere",
     "anchor": "chronicle/06-the-weir.html#scene-5"
   },
-  "last_seen_doing": "Saw the nails were measured, and argued for running tonight while there is a night and a day's start.",
-  "now": "At the fire with the ledger open and nothing written in it.",
+  "last_seen_doing": "Saw the nails were measured; argued for running while there were two nights and a day, then for getting to the weir first, then offered to carry his answer herself and ask who sent the rider and why she let him walk off the meadow.",
+  "now": "At the fire, counting on her fingers.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -744,7 +744,13 @@
       "fact": "She noticed the summons's four nails were spaced to the hair, and argued for being two valleys off by first light.",
       "chapter": "06",
       "scene": "5",
-      "evidence": "That's not cowardly. That's arithmetic."
+      "evidence": "That isn't running. That's arithmetic."
+    },
+    {
+      "fact": "She offered to carry his answer to the weir herself and ask the rider who sent her and why she let him walk off the meadow.",
+      "chapter": "06",
+      "scene": "5",
+      "evidence": "who sent her, and why she let you walk off that meadow"
     }
   ],
   "relationships": [

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "5",
+    "scene": "4",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-5"
+    "anchor": "chronicle/06-the-weir.html#scene-4"
   },
-  "last_seen_doing": "Lifted her head off Wren's boots toward the mill and put it down again.",
-  "now": "Lying on Wren's boots at the fire.",
+  "last_seen_doing": "Stood with her forefeet on the tailboard looking at the alders where the rider had gone.",
+  "now": "In the sacks, watching the alders behind them.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
@@ -235,10 +235,6 @@
     {
       "chapter": "06",
       "scene": "4"
-    },
-    {
-      "chapter": "06",
-      "scene": "5"
     }
   ]
 }

@@ -575,9 +575,9 @@ Rae was quiet a moment.
 
 ### Scene 5 — Under the Forms
 
-His name was nailed to the bell-post twice.
+He had been nailed to the bell-post twice.
 
-The first was the Crown's: the writ under its blob of blue wax, the same one they had read at the hamlet a week ago, his name alone at the top in letters a size bigger than the rest. The second paper was nailed under it. It was small and square and very white, and someone had driven a nail into each of its corners, the four of them exactly the same distance in from the edge.
+The post stood by itself at a fork in the mill tracks, a day short of the mill, with nothing near it but a frozen trough and the wind. The first paper was the Crown's: another copy of the writ they had read at the hamlet a week ago, under its blob of blue wax, his name alone at the top in letters a size bigger than the rest. The second was nailed under it. It was small and square and very white, and someone had driven a nail into each of its corners, the four of them exactly the same distance in from the edge.
 
 *To the captain of the Ninth Lance, who walks with a stick.*
 
@@ -587,7 +587,7 @@ There was no name under it.
 
 "Four nails," said Wren, who had read it over his shoulder. "Spaced to the hair. She measured." Her voice had gone careful. "Nobody measures nails."
 
-Darrow looked at the hand, because the hand was what there was to look at. Every letter stood upright and cut clean, a stroke and then a stop, nothing joined to the next; there was no flourish anywhere, and no blot. Whoever wrote it had written it standing, and taken her time, and crossed nothing out.
+Darrow looked at the writing, because the writing was what there was to look at. Every letter stood upright and cut clean, a stroke and then a stop, nothing joined to the next; there was no flourish anywhere, and no blot. Whoever wrote it had written it standing, and taken her time, and crossed nothing out.
 
 `[RESOLVE · DC 13]` d20 **6** +0 resolve +4 proficiency +4 Warden's Eye IV = **14** — *Success*
 
@@ -597,31 +597,37 @@ He took it down, nail by nail, and put it inside his coat.
 
 ---
 
-They had it out at the fire that night under the lee of a wall, loud, all of them at once, louder than the company had argued since the mountain.
+They argued it at the fire that night in the lee of a wall, all of them at once, the loudest the company had been since the road began.
 
 "It's under the forms," said Hollis. "You go. That's all there is to it." He said it to the fire and then, because that was cowardly, to Darrow. "When a knight sends word under the forms, the one who sends names the ground and the one who comes picks where on it he stands. A question's asked before any blade's drawn, and nobody on the bank lifts a hand while it's being answered. She's offered you that. A writ wouldn't. A Confessor wouldn't. You don't spit on it."
 
-"You don't walk into it either," said Wren. "We've got a night and a day. We could be two valleys off by her first light, and she'd be stood on a weir with her question and nobody to ask it of." She had the ledger open on her knee and had written nothing in it. "That's not cowardly. That's arithmetic."
+"You don't walk into it either," said Wren. "We've two nights and a day. We could be two valleys off by her first light, and she'd be stood on a weir with her question and nobody to ask it of." She was counting it off on her fingers, which she never needed to do. "That isn't running. That's arithmetic."
 
 "She found us beside a meadow when she was meant to be behind us," said Rae. "She'll find us two valleys off." She was mending a strap by the fire with the awl, and kept her eyes on it. "I'm at the mill tomorrow night with the sack. I'll read that weir before anybody stands on it. Ice, stones, where the water's under. Then you decide."
+
+"Then we get there first," said Wren, who was never beaten for long. "We walk tonight, all five of us, and we're stood on her weir a day before she is. She named the ground. She never said we couldn't be standing on it."
+
+"That's spitting on it with your boots on," said Hollis.
 
 "And his hands?" said Maelis.
 
 They all looked at her.
 
-"Four days," she said. "He's had that grip four days. You don't take a new grip onto ice against a woman who measures her nails." She looked at Darrow across the fire. "I'm not telling you not to go. I'm telling you what you'd be going with."
+"Four days," she said. "He's had that grip four days. You don't take a new grip onto ice against a woman who spaces her nails to the hair." She looked at Darrow across the fire. "I'm not telling you not to go. I'm telling you what you'd be going with. If it's a question she wants answered, it can be answered by another mouth."
+
+"Mine," said Wren at once. "She'll not waste a blade on a girl with a ledger. I'll take her your answer, and ask her two things back: who sent her, and why she let you walk off that meadow."
 
 Darrow sat with the paper against his ribs.
 
-A year ago he would have stood up halfway through Hollis and said what the Ninth would do, and the Ninth would have done it before Wren had her ledger open. He had decided things for sixty men before they had their boots on. Tonight he had let all four of them have it out, all the way to the end, and he found he wanted to hear the end.
+A year ago he would have stood up halfway through Hollis and said what the Ninth would do, and the Ninth would have been saddled before Wren had her ledger open. Tonight he let all four of them run it to the end, and found he wanted to hear how it came out.
 
-"She wants a question answered," he said. "Hollis wants me to answer it the way it was asked. Wren wants us gone before it can be. Rae wants to see the ground. Maelis wants me to know what I've got." He turned the stick across his knees. "Every one of you's right."
+"She wants a question answered," he said. He turned the stick across his knees. "Every one of you's right."
 
 "That's no use to anybody," said Hollis.
 
 "No," said Darrow. "It isn't."
 
-Over by the wall Ash lifted her head off Wren's boots and looked at the dark, toward the mill, and put it down again.
+Rae bit her thread off short and put the awl away. "Tomorrow night, then," she said. "I'll tell you what the water's doing." Nobody argued with that, and nobody slept for a long time.
 
 > ⟦ THE RECKONING ⟧
 > Level 8 → 9 · Kindled

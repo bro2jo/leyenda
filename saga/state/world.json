@@ -72,7 +72,7 @@
       "covers": [
         "2026-11-12"
       ],
-      "written": "2026-11-12"
+      "written": "2026-11-13"
     }
   ],
   "location": {
@@ -87,7 +87,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "At the fire the company had it out over the summons, each with a point; Darrow let all four finish, said every one of them was right, and Hollis said that was no use to anybody.",
+  "last_beat": "At the fire the company argued the summons out, each with a way to answer it; Darrow said every one of them was right, Hollis said that was no use to anybody, and Rae said she would tell him tomorrow night what the water was doing.",
   "companions": {
     "maelis": {
       "approval": 40,
@@ -332,5 +332,5 @@
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last.",
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose."
   },
-  "last_updated": "2026-11-12"
+  "last_updated": "2026-11-13"
 }
