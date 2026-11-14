@@ -4,7 +4,7 @@
   "level": 9,
   "rank": "Kindled",
   "level_reached": "2026-11-12",
-  "xp": 3703,
+  "xp": 3708,
   "xp_this_level": 3600,
   "xp_next_level": 4500,
   "proficiency": 4,
@@ -45,7 +45,7 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 52,
+      "temper": 53,
       "next_at": 64,
       "fell": 12,
       "banked": false
@@ -127,7 +127,7 @@
       "tree": "Binding",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 33,
+      "practice": 34,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation."
@@ -138,7 +138,7 @@
       "tree": "Insight",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 40,
+      "practice": 41,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight."
@@ -310,13 +310,13 @@
     }
   ],
   "tether": {
-    "days": 3,
-    "stage": 1,
+    "days": 4,
+    "stage": 2,
     "of": 5,
-    "name": "a name",
-    "next_at": 4,
+    "name": "a hand",
+    "next_at": 10,
     "first": "2026-10-11",
-    "last": "2026-10-31",
+    "last": "2026-11-13",
     "with": "rae-thorne"
   },
   "wardrobe": {
@@ -352,7 +352,7 @@
   "chapter_now": {
     "week_start": "2026-11-08",
     "through": "2026-11-14",
-    "tier_so_far": "Costly",
+    "tier_so_far": "Hard-won",
     "chapter": 6
   },
   "fell": {

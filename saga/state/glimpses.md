@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-09 · house · Rae is mending a harness strap by firelight, the awl held in her teeth between stitches, talking around it as if that were a normal way to talk.
 - 2026-11-09 · ledger · Wren's tally for the day: hills, eleven by Rae's count and seven by Hollis's. The difference is entered in the margin under disputed.
 - 2026-11-10 · body · He wakes with the fire's warmth still in his coat and, for a moment, no idea which hill he is on. It is a good moment. He lets it run before he gets up.
 - 2026-11-10 · weather · Frost on the cart's cover this morning, thin as paper and gone before the kettle boils. The hills ahead are the colour of old pewter, and Rae says that is a good colour for a road.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-13 · house · Ash has taken to walking at Darrow's pace instead of the cart's, and looking back at the others now and then as if they are the slow ones.
 - 2026-11-13 · ledger · Wren's tally for the week, inside the back cover: fires lit, six; fires Hollis says he lit, nine.
 - 2026-11-14 · overheard · Overheard late last night: Hollis asking Maelis whether she has ever lost a patient to boredom. Maelis says not yet, and looks at him.
+- 2026-11-14 · house · Rae has taken to leaving the warm side of the fire for whoever comes in last, and pretending it is an accident. It is usually Darrow.
