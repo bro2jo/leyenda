@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "6",
+    "scene": "between-5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-6"
+    "anchor": "chronicle/06-the-weir.html#between-5"
   },
-  "last_seen_doing": "Counted the hours to first light and said once more that she would have had them there since breakfast; kept a book on the morning that nobody would bet against; heard Hollis say she was for them and wrote something she kept to herself. Counted the carts at the far bridge under her breath and stopped at seven; still up on the cart's tail counting the hours when the others slept.",
-  "now": "Awake on the cart's tail with the book on the morning, counting the hours to first light.",
+  "last_seen_doing": "Asked to be told first before the morning, wrote it in his column as the third time, and said aloud that she is frightened of having to keep a column for him, then covered it with a count.",
+  "now": "Sitting up on the cart's tail in the dark with the book shut in both hands.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -763,6 +763,18 @@
       "chapter": "06",
       "scene": "6",
       "evidence": "and wrote something in the book, and kept it to herself."
+    },
+    {
+      "fact": "She keeps a count of how often he has told her first: three times now, against once he did not.",
+      "chapter": "06",
+      "scene": "between-5",
+      "evidence": "Told first. Three."
+    },
+    {
+      "fact": "She said she is frightened of having to make a column for him among the ones that go, and that the fear has no number.",
+      "chapter": "06",
+      "scene": "between-5",
+      "evidence": "I don't want to have to make one for you. That's all. I'm frightened of that, and it hasn't got a number."
     }
   ],
   "relationships": [
@@ -1089,6 +1101,10 @@
     {
       "chapter": "06",
       "scene": "6"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-5"
     }
   ]
 }

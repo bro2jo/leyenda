@@ -727,3 +727,45 @@ Later, when the others were down under the cart and every lantern was out but Wr
 "Six," said Wren from the cart's tail, to nobody.
 
 He knew where he would stand. He did not know what she would ask.
+
+### Between — His Column
+
+"Now or after," said Wren, before he had reached the cart. "After doesn't count."
+
+She was on the cart's tail with the book open on her knee and the last lantern beside her, turned down to a bead. Ash lay across her feet. His name was at the top of the open page, and the column under it was empty.
+
+He sat down beside her on the tail, which took a while and a hand on the wheel, and she let it take the while without helping him, which he liked her for.
+
+"Two and one," she said. "Told me first, twice. Didn't, once. I'm not having it go two and two in front of a mill." She licked the pencil. "So. What are you going to do out there?"
+
+"Stand on a stone."
+
+"Hollis knows that. The oxen know that." The pencil stayed where it was. "First means first, Captain. Something nobody's heard."
+
+He looked across the dark to where the keeper's stone was. He could only hear it now, the water going round it on both sides.
+
+"I'm going to stand still and let her come," he said, "and she's going to be quicker than anything I've ever stood in front of, and I'm going to be frightened the whole time." He heard it come out, and left it there. "That's the first time I've said that part. To anyone."
+
+Wren's pencil stopped.
+
+Then it moved. He watched her write it, small, in the column under his name: *Told first. Three.* She drew a line under it, the way she closed a day.
+
+"You could have sent me," she said, to the book. "I offered."
+
+"I know."
+
+"I'd have done it well."
+
+"I know that too. I wasn't sending you out on that ice to carry my question." He turned the stick across his knees. "Your turn. First goes both ways, I've decided. I'm the captain."
+
+"You're not my captain. Technically." But she shut the book on the pencil to keep the place, and held it in both hands, and for a while she was quiet, which in Wren was a long way from nothing.
+
+"I count the ones that go," she said at last. "On the mountain it was the far cots, every morning, the same number breathing. On the road it's the ones walking east. I've a column for every one of them." She kept her eyes on the book. "I don't want to have to make one for you. That's all. I'm frightened of that, and it hasn't got a number."
+
+Then, quickly, before he could answer: "Five hours and a half. Near enough. Odds on the Captain still the best in the book."
+
+"Nobody'll take the other side."
+
+"I won't either," said Wren. "Go and sleep. You've a stone to stand on."
+
+He went. When he looked back from under the cart she had turned the lantern down to nothing, and was sitting in the dark with the book shut in both hands.

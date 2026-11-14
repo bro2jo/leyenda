@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "6",
+    "scene": "between-5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-6"
+    "anchor": "chronicle/06-the-weir.html#between-5"
   },
-  "last_seen_doing": "Walked the weir's glazed top with the stick by lantern, chose the keeper's stone halfway across, stood it against Hollis's goad, and put the miller's letter inside his coat unopened.",
-  "now": "On the near bank of the weir below the mill on the night before first light, with the summons and an unopened letter inside his coat. He has chosen the keeper's stone to stand on.",
+  "last_seen_doing": "Went to Wren on the cart's tail and told her first what nobody had heard: he will stand still and let the rider come, and be frightened the whole time; asked her for hers.",
+  "now": "Under Rae's cart on the near bank, five hours and a half from first light.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2122,6 +2122,18 @@
       "evidence": "She's bringing one question. I'm not taking two out there."
     },
     {
+      "fact": "He told Wren, first of anyone, that he will be frightened the whole time on the stone.",
+      "chapter": "06",
+      "scene": "between-5",
+      "evidence": "and I'm going to be frightened the whole time"
+    },
+    {
+      "fact": "He said he would not send Wren out onto the ice to carry his question.",
+      "chapter": "06",
+      "scene": "between-5",
+      "evidence": "I wasn't sending you out on that ice to carry my question."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2640,6 +2652,10 @@
     {
       "chapter": "06",
       "scene": "6"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-5"
     },
     {
       "chapter": "tale01",

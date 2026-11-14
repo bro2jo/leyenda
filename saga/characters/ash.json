@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "6",
+    "scene": "between-5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-6"
+    "anchor": "chronicle/06-the-weir.html#between-5"
   },
-  "last_seen_doing": "Tried to follow Darrow out along the weir and was sat on by Wren.",
-  "now": "At the weir with the company.",
+  "last_seen_doing": "Lay across Wren's feet on the cart's tail.",
+  "now": "Across Wren's feet.",
   "story_so_far": "Ash came down the Steps at the Captain's side and walked the drove road close to the cart. She found the one warm stone in the Lowmarch and would not be moved, lifted her lip at two men whispering in hay, and stood on a fold wall to bark at the grey cloaks on the shore road, and a carter claimed her as his own.",
   "quote": null,
   "known_facts": [
@@ -239,6 +239,10 @@
     {
       "chapter": "06",
       "scene": "6"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-5"
     }
   ]
 }

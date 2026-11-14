@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "6",
+    "scene": "between-5",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-6"
+    "anchor": "chronicle/06-the-weir.html#between-5"
   },
-  "last_seen_doing": "Won the argument and kept a black temper about it; crossed the glazed weir on his backside with the goad and the Captain's sword, tested him on the stone, and told him to stop asking the wrist and let her come to the post; told Wren she has been for the company since the mountain; had his knife half out when Rae came back unheard.",
-  "now": "Three stones out on the weir's top with the goad, then down under the cart for the night.",
+  "last_seen_doing": "Asleep under the cart.",
+  "now": "Asleep under Rae's cart on the near bank.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -1212,6 +1212,10 @@
     {
       "chapter": "06",
       "scene": "6"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-5"
     }
   ]
 }

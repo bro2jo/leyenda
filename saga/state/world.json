@@ -81,11 +81,18 @@
         "2026-11-13"
       ],
       "written": "2026-11-13"
+    },
+    {
+      "scene": "between-5",
+      "title": "His Column",
+      "after": "6",
+      "covers": [],
+      "written": "2026-11-14"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the near bank of the weir below the river mill, at the end of the mill tracks",
+    "detail": "the near bank of the weir below the river mill, under Rae's cart",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -95,7 +102,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "With every lantern out but Wren's, he sat on the bank and looked at the keeper's stone; Wren said six to nobody. He knew where he would stand. He did not know what she would ask.",
+  "last_beat": "When he looked back from under the cart she had turned the lantern down to nothing, and was sitting in the dark with the book shut in both hands.",
   "companions": {
     "maelis": {
       "approval": 40,
@@ -108,7 +115,7 @@
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 29,
+      "approval": 32,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
@@ -340,5 +347,5 @@
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last.",
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose."
   },
-  "last_updated": "2026-11-13"
+  "last_updated": "2026-11-14"
 }

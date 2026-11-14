@@ -2024,6 +2024,36 @@
         "Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes.",
         "Send Wren with his answer and a question of his own: who sent her, and why alive."
       ]
+    },
+    {
+      "id": "c06.11",
+      "made": {
+        "chapter": 6,
+        "scene": "between-5",
+        "date": "2026-11-14"
+      },
+      "chose": "Went to Wren on the cart's tail the night before the weir and told her first what nobody had heard: he will stand still and let the rider come, and be frightened the whole time; she wrote it as the third time told first, and when he asked her turn she said aloud she is frightened of having to keep a column for him, then covered it with a count",
+      "now": {
+        "approval": {
+          "wren": 3
+        }
+      },
+      "due": [
+        {
+          "id": "c06.11a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "The night before the weir Wren said a frightened thing aloud to him with no number on it (she does not want to make a column for him) and covered it with a count after. Fire when she is frightened again and he is beside her: she says it plainer, or he answers the thing she covered",
+          "fits": "present.wren",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch06:between-5"
+          ]
+        }
+      ]
     }
   ],
   "rules": [
