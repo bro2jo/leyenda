@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "5",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-5"
+    "anchor": "chronicle/06-the-weir.html#scene-6"
   },
-  "last_seen_doing": "Saw the nails were measured; argued for running while there were two nights and a day, then for getting to the weir first, then offered to carry his answer herself and ask who sent the rider and why she let him walk off the meadow.",
-  "now": "At the fire, counting on her fingers.",
+  "last_seen_doing": "Counted the hours to first light and said once more that she would have had them there since breakfast; kept a book on the morning that nobody would bet against; heard Hollis say she was for them and wrote something she kept to herself.",
+  "now": "On the bank with the book on the morning, counting the hours to first light.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -751,6 +751,18 @@
       "chapter": "06",
       "scene": "5",
       "evidence": "who sent her, and why she let you walk off that meadow"
+    },
+    {
+      "fact": "She kept a book on the Captain standing at the bell, and nobody would take the other side.",
+      "chapter": "06",
+      "scene": "6",
+      "evidence": "A book nobody will bet against isn't a book"
+    },
+    {
+      "fact": "When Hollis said she had been for them since the mountain she let it stand and wrote something she kept to herself.",
+      "chapter": "06",
+      "scene": "6",
+      "evidence": "and wrote something in the book, and kept it to herself."
     }
   ],
   "relationships": [
@@ -1073,6 +1085,10 @@
     {
       "chapter": "06",
       "scene": "5"
+    },
+    {
+      "chapter": "06",
+      "scene": "6"
     }
   ]
 }

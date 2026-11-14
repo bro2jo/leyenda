@@ -47,12 +47,13 @@
       "feeds": "T5",
       "status": "open",
       "who_knows": "Darrow suspects they were fleeing; Hollis heard it and dismissed it; the reader",
-      "note": "Darrow suspects they were fleeing. **Revised 10/11 (editorial pass):** after Hollis said mount up, Darrow chose the line over the carts himself (\"a question for whoever had put the wax on Hollis's paper\"); he carries that, not the heralds' sin. Never a confession to anyone yet; T5 stays Book III",
+      "note": "06:s6: at the river mill's bridge the first carts off the river farms, drawn up wrong: old people and children at the front, carts behind like a wall, the men looking back the way they came. Shape only.",
       "on_page": [
         "00:I",
         "00:II",
         "01:between-2",
-        "06:s3"
+        "06:s3",
+        "06:s6"
       ]
     },
     {
@@ -346,7 +347,7 @@
       "feeds": "q1.cart, q2.lantern, b3.4, q4.censer, q5.second, q6.market, r.b6.rae_door",
       "status": "open",
       "who_knows": "Rae; her uncle Hale, the lamp at Coldmere; Darrow now knows the corner (06:between-4): the sack goes to the mill and down the road to people on the coast who pay for what the road knows, and she carried for them up the mountain; nobody else in the company; the reader.",
-      "note": "06:between-4: the corner told before the mill, by her choice; the right question (what she carried up the mountain) left for some night with nobody on the hill behind them.",
+      "note": "06:s6: the drop at the river mill: Rae took the salt sack in after dark and came back with flour and a sealed letter for Darrow; he keeps it unopened till after the weir.",
       "on_page": [
         "04:between-1",
         "05:between-1",
@@ -355,7 +356,8 @@
         "05:interlude",
         "05:s7",
         "05:climax",
-        "06:between-4"
+        "06:between-4",
+        "06:s6"
       ]
     },
     {

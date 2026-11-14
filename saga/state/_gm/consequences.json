@@ -1944,12 +1944,13 @@
           "what": "Wren answered the rope rhyme with the House, the warming room and Old Mercy and could not say who she is for. Fire where someone answers it for her, or she answers it herself: the night before the weir, in the rowdy part before it goes quiet (ch6 slot 6), or a Between with her",
           "fits": "present.wren && present.hollis",
           "priority": 3,
-          "status": "pending",
+          "status": "fired@ch06:s6",
           "offered": 2,
           "offered_at": [
             "ch06:s4",
             "ch06:s5"
-          ]
+          ],
+          "evidence": "You've been for us since the mountain, girl. Anybody could see it but you."
         },
         {
           "id": "c06.8b",
@@ -2015,7 +2016,8 @@
           "at": "ch06:s6",
           "weight": "scene",
           "what": "Open the night before the weir on his answer in a clause: he has said he will go alone by the forms; Hollis has his way and takes no pleasure in it, Wren has lost the argument and says so with arithmetic, and the company's work that night is making alone as safe as it can be made from the bank",
-          "status": "pending"
+          "status": "fired@ch06:s6",
+          "evidence": "He had said he would go alone, and so by dusk all five of them were down at the weir with every lantern the cart owned, making alone as safe as it could be made from the bank."
         }
       ],
       "declined": [

@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "5",
+    "scene": "6",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-5"
+    "anchor": "chronicle/06-the-weir.html#scene-6"
   },
-  "last_seen_doing": "Argued for the forms, told the company what they are, and called Wren's plan to get to the weir first spitting on them.",
-  "now": "At the fire, for the forms.",
+  "last_seen_doing": "Won the argument and kept a black temper about it; crossed the glazed weir on his backside with the ox-goad and tested the Captain on the stone, then told him to stop asking the wrist and be a post with a sword in it; told Wren she has been for the company since the mountain.",
+  "now": "Three stones out on the weir's top with the goad, then down under the cart for the night.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -814,6 +814,18 @@
       "chapter": "06",
       "scene": "5",
       "evidence": "the one who sends names the ground and the one who comes picks where on it he stands"
+    },
+    {
+      "fact": "He told Darrow to fight on the stone as he had from a chair: a post with a sword in it, letting her come to the post.",
+      "chapter": "06",
+      "scene": "6",
+      "evidence": "You're a post with a sword in it. Let her come to the post."
+    },
+    {
+      "fact": "He told Wren she has been for the company since the mountain, and that anybody could see it but her.",
+      "chapter": "06",
+      "scene": "6",
+      "evidence": "You've been for us since the mountain, girl. Anybody could see it but you."
     }
   ],
   "relationships": [
@@ -1196,6 +1208,10 @@
     {
       "chapter": "06",
       "scene": "5"
+    },
+    {
+      "chapter": "06",
+      "scene": "6"
     }
   ]
 }

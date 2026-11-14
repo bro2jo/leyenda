@@ -181,6 +181,11 @@
       "chapter": "05",
       "scene": "between-2",
       "mention": true
+    },
+    {
+      "chapter": "06",
+      "scene": "6",
+      "mention": true
     }
   ]
 }

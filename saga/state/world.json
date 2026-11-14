@@ -73,11 +73,19 @@
         "2026-11-12"
       ],
       "written": "2026-11-13"
+    },
+    {
+      "scene": 6,
+      "title": "The Dry Stone",
+      "covers": [
+        "2026-11-13"
+      ],
+      "written": "2026-11-13"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "a camp under a wall on the mill tracks, a day short of the mill",
+    "detail": "the near bank of the weir below the river mill, at the end of the mill tracks",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -87,7 +95,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "At the fire the company argued the summons out, each with a way to answer it; Darrow said every one of them was right, Hollis said that was no use to anybody, and Rae said she would tell him tomorrow night what the water was doing.",
+  "last_beat": "With every lantern out but one, he sat on the bank and looked at the keeper's stone. He knew where he would stand. He did not know what she would ask.",
   "companions": {
     "maelis": {
       "approval": 40,
