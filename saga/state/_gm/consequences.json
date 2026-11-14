@@ -1989,6 +1989,39 @@
           "status": "void:honoured in ch06:between-4 itself; what follows from it runs in the drop at the mill (ch6 slot 6) and the calling in Book III (rae.road), not in slot 5"
         }
       ]
+    },
+    {
+      "id": "c06.10",
+      "made": {
+        "chapter": 6,
+        "scene": "5",
+        "date": "2026-11-12"
+      },
+      "chose": "Answered the unsigned summons by the forms: he goes to the weir at the hour named, alone, and the company watches from the bank",
+      "now": {
+        "approval": {
+          "hollis": 2,
+          "wren": -2,
+          "maelis": 2
+        },
+        "bearing": {
+          "sworn": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c06.10a",
+          "when": "next",
+          "at": "ch06:s6",
+          "weight": "scene",
+          "what": "Open the night before the weir on his answer in a clause: he has said he will go alone by the forms; Hollis has his way and takes no pleasure in it, Wren has lost the argument and says so with arithmetic, and the company's work that night is making alone as safe as it can be made from the bank",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes.",
+        "Send Wren with his answer and a question of his own: who sent her, and why alive."
+      ]
     }
   ],
   "rules": [

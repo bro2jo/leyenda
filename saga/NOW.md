@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (0 of 3 told)
 - **Against him:** A duelist who has sent for him under the forms, to the weir below the mill, alone, at first light on the second morning.
 - **Next:** His answer to the summons.
-- **Open choice (a small one):** An unsigned summons asks the captain of the Ninth to the weir at first light, alone, under the forms. What does Darrow do? 1. Answer by the forms: go to the weir at the hour named, alone, and let the company watch from the bank. / 2. Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes. / 3. Send Wren with his answer and a question of his own: who sent her, and why alive.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

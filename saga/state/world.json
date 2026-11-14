@@ -90,17 +90,17 @@
   "last_beat": "At the fire the company had it out over the summons, each with a point; Darrow let all four finish, said every one of them was right, and Hollis said that was no use to anybody.",
   "companions": {
     "maelis": {
-      "approval": 38,
+      "approval": 40,
       "present": true,
       "note": "has told him what she dared, and not where she learned it; the Confessor's eyes found her at the gate; she approved his name at the bars in her own coin"
     },
     "hollis": {
-      "approval": 71,
+      "approval": 73,
       "present": true,
       "note": "second on the list, read at the bars; dry, and has told Darrow so; saw him move at his name, and called him Captain when he gave it"
     },
     "wren": {
-      "approval": 31,
+      "approval": 29,
       "present": true,
       "note": "afraid; hides it with numbers; ran for the bell on his word; made him promise to tell her first next time"
     },
@@ -248,6 +248,16 @@
       "ledger": "c06.6",
       "by": "darrow",
       "priced_as": 3
+    },
+    {
+      "chapter": 6,
+      "scene": "5",
+      "kind": "micro",
+      "option": 1,
+      "text": "Answer by the forms: go to the weir at the hour named, alone, and let the company watch from the bank.",
+      "date": "2026-11-13",
+      "ledger": "c06.10",
+      "by": "darrow"
     }
   ],
   "inventory": [
