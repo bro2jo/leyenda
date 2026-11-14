@@ -650,17 +650,17 @@ Hollis had won the argument and been in a black temper ever since, which was how
 
 Rae walked the near bank with a lantern held low, and Darrow walked it with her, because she had said she would tell him what the water was doing and he wanted to be told.
 
-"Thin," she said of the millpond above the weir, where the ice was black and something moved under it. "Worse," she said of the fall below. Then she held the lantern out along the top of the weir. It was a road of dressed stones a stride wide, bank to bank, the miller's own way across in summer, and the spray off the fall had glazed every stone of it like a plate.
+"Thin," she said of the millpond above the weir, where the ice was black and something moved under it. "Worse," she said of the fall below. Then she held the lantern out along the top of the weir. It was a road of dressed stones a stride wide, bank to bank, the miller's own way across in summer, and the spray off the fall had glazed every stone of it to a shine.
 
 Every stone but one.
 
-He saw it before she said it, because he always saw the shape of a thing first. Halfway across, the run of shining stones broke on a single dull one. It stood a hand higher than the rest, square, broad as a cart's tailboard.
+He saw it before she said it. Halfway across, the run of shining stones broke on a single dull one. It stood a hand higher than the rest, square, broad as a cart's tailboard.
 
 "Keeper's stone," said Rae. "They stand a man on it to work the sluice. The spray doesn't reach."
 
 He went out along the top with the stick, a stone at a time, Rae's lantern behind him and the glaze under his boots like a wet plate. Ash tried to follow him and Wren sat on her. Twice the stick skated and he had to stop and set it again, and the cold went for the two slow fingers first, as it always would now. Then he stepped up onto the keeper's stone, and it was dry, and rough, and it held him like a floor.
 
-He stood square and looked at it from there. Upstream, black ice over moving water: anyone who tried it would try it once. Downstream, the fall. Behind him the top ran back to the company's bank, and in front it ran on to the far one, glazed every step. Whoever came to him would come along that, one way, on ice, with nowhere to put a foot but where the last foot had been. All the fine stepping in the Lowmarch would be worth nothing out here. Standing would be worth everything.
+He stood square and looked at it from there. Upstream, black ice over moving water: anyone who tried it would try it once. Downstream, the fall. Behind him the top ran back to the company's bank, and in front it ran on to the far one, glazed every step. Whoever came to him would come along that in single file, on ice, with nowhere to put a foot but where the last foot had been. All the fine stepping in the Lowmarch would be worth nothing out here. Standing would be worth everything.
 
 "This one," he said, and the river took it. He struck the stone with the end of the stick, and on the bank Rae nodded once and went to her oxen.
 
@@ -672,13 +672,9 @@ She brought the cart down to the near end of the weir and turned it across, broa
 
 Hollis came out to him on his backside. It was the only way a man with a beech leg could cross glazed stone, and he did it a stone at a time with the goad across his knees, swearing at each stone by name, until he sat three stones off with the beech leg stuck out over the fall.
 
-"If you go in," said Darrow, "I'm not allowed to lift a hand. It's the forms."
-
-"The forms start at first light. Till then you'll bloody well lift both."
-
 "If either of you goes in," Maelis called from the bank, "I'll mend whichever one floats."
 
-"She'll come along that," said Hollis, and jerked his head at the glazed stones. "She'll come at you from everywhere a body can come from on a plank, which is two places, and she'll make it feel like six. Stand."
+"She'll come along that," said Hollis, and jerked his head at the glazed stones running on to the far bank. "On a plank there's two ways at a man, front and back, and Rae's oxen have took the back. She'll make the front feel like six. Stand."
 
 Darrow stood. Hollis put the goad into him.
 
@@ -688,13 +684,13 @@ It was a good shove, low and sudden, all of Hollis behind it, and it should have
 
 "Now the sword," said Hollis.
 
-Rae had brought it out from under the salt. He drew it and took it up high in the new grip, three fingers and a thumb, and at once the old hand wanted what it had always wanted, to flick the point out and round and in. The point went out, and stopped short where the wrist stopped, and hung there.
+Hollis had brought it out across his knees with the goad, still in its oilcloth, and passed it up hilt first. Darrow took it up high in the new grip, three fingers and a thumb, and at once the old hand wanted what it had always wanted, to flick the point out and round and in. The point went out, and stopped short where the wrist stopped, and hung there.
 
-"Aye," said Hollis, watching it. "That." It was all the kindness he spent on it. "So stop asking the wrist. You're not fencing her. You've done this sat in a chair. Do it stood up and call the stone your chair. You're a post with a sword in it. Let her come to the post."
+"Aye," said Hollis, watching it. "That." It was all the kindness he spent on it. "So stop asking the wrist. You're not fencing her. You learned this sat in a chair, and a post is only a chair stood up. Let her come to the post."
 
 On the bank, Wren had opened a book on the morning.
 
-"Captain on his stone at the bell, evens!" she shouted over the water. "Evens! Nobody? Two to one. Three. I'm giving it away out here."
+"Captain on his stone at first light, evens!" she shouted over the water. "Evens! Nobody? Two to one. Three. I'm giving it away out here."
 
 Nobody would take the other side. Maelis shook her head. Rae said she only bet on oxen. Hollis said he would sooner bet against the river.
 
@@ -704,15 +700,15 @@ Nobody would take the other side. Maelis shook her head. Rae said she only bet o
 
 He said it the way he said everything, to annoy her, and went straight back to the goad. Wren opened her mouth to tell him he was wrong, technically, and shut it again, and wrote something in the book, and kept it to herself.
 
-"Ten hours," she said a while after, and the laughing stopped the way it does, all at once, as if somebody had shut a door on it.
+"Ten hours," she said a while after, and the laughing stopped the way it does, all at once, as if somebody had shut a door on it. They came in off the weir, Hollis the way he had gone out, on his backside.
 
 Rae shouldered the salt sack and went up the bank to the mill.
 
-Darrow watched her lantern climb. The mill stood over the weir on the near bank with lamps lit in three windows, and above it a bridge crossed to the far side; and on the far side, coming up to the bridge out of the dark, there were carts. Six of them. Seven. He saw the shape before he saw the parts, as he always did, and the shape was wrong. The old people and the children were at the front by the bridge, and the carts were drawn up behind them across the road like a wall, and every man standing by the carts had his back to the bridge and was looking the way they had come.
+Darrow watched her lantern climb. The mill stood over the weir on the near bank with lamps lit in three windows, and upstream of it a bridge crossed to the far side; and on the far side, coming up to the bridge out of the dark, there were carts. Six of them. Seven. He saw the shape before he saw the parts, as he always did, and the shape was wrong. The old people and the children were at the front by the bridge, and the carts were drawn up behind them across the road like a wall, and every man standing by the carts had his back to the bridge and was looking the way they had come.
 
-Everyone on the near bank saw it, and let it be.
+Wren counted them under her breath and stopped at seven, and nobody asked her to go on.
 
-Rae came down again with a sack of flour on her shoulder and a letter in her hand.
+The river brought Rae back down unheard. One moment there was only the dark at the top of the bank, and the next she was among them with a sack of flour on her shoulder and a letter in her hand, and Hollis had his knife half out before he saw who it was.
 
 "Miller had this for you," she said. "Your name's on it. Not mine to carry."
 
@@ -726,6 +722,8 @@ He turned it over once and put it inside his coat with the other one, unopened.
 
 Rae looked at him a moment and said "Aye," which covered it.
 
-Later, when the others were down under the cart and every lantern was out but one, he sat on the bank with the stick across his knees and looked at the keeper's stone. He could only just see it: one square of dark among the glazed ones, halfway across, with the water loud on both sides of it.
+Later, when the others were down under the cart and every lantern was out but Wren's, he sat on the bank with the stick across his knees and looked at the keeper's stone. He could only just see it: one square of dark among the glazed ones, halfway across, with the water loud on both sides of it.
+
+"Six," said Wren from the cart's tail, to nobody.
 
 He knew where he would stand. He did not know what she would ask.

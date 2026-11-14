@@ -95,7 +95,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "With every lantern out but one, he sat on the bank and looked at the keeper's stone. He knew where he would stand. He did not know what she would ask.",
+  "last_beat": "With every lantern out but Wren's, he sat on the bank and looked at the keeper's stone; Wren said six to nobody. He knew where he would stand. He did not know what she would ask.",
   "companions": {
     "maelis": {
       "approval": 40,
