@@ -585,6 +585,8 @@ The post stood by itself at a fork in the mill tracks, a day short of the mill, 
 
 There was no name under it.
 
+*Under the forms.* It was the oldest courtesy knights kept between them, for two who might have to kill each other: a meeting, not a fight, until it was one.
+
 "Four nails," said Wren, who had read it over his shoulder. "Spaced to the hair. She measured." Her voice had gone careful. "Nobody measures nails."
 
 Darrow looked at the writing, because the writing was what there was to look at. Every letter stood upright and cut clean, a stroke and then a stop, nothing joined to the next; there was no flourish anywhere, and no blot. Whoever wrote it had written it standing, and taken her time, and crossed nothing out.
@@ -640,7 +642,7 @@ Rae bit her thread off short and put the awl away. "Tomorrow night, then," she s
 
 ### Scene 6 — The Dry Stone
 
-He had said he would go alone, and so by dusk all five of them were down at the weir with every lantern the cart owned, making alone as safe as it could be made from the bank.
+He had said he would go alone, and so by dusk all five of them were on the bank beside the weir with every lantern the cart owned, making alone as safe as it could be made from there.
 
 The river was the trouble. It came down to the weir under a lid of ice and went over it and under it and through it, and the noise filled the valley wall to wall. Anyone at all could have walked up behind any of them in boots, and nobody would have turned round.
 
@@ -664,13 +666,15 @@ He stood square and looked at it from there. Upstream, black ice over moving wat
 
 "This one," he said, and the river took it. He struck the stone with the end of the stick, and on the bank Rae nodded once and went to her oxen.
 
-She brought the cart down to the near end of the weir and turned it across, broadside, wheels chocked, Hob and Dun standing in the traces where the stones met the bank. Anyone coming along the top behind him would have to come through Hob first.
+She brought the cart down to the near end of the weir and turned it across, broadside, wheels chocked, Hob and Dun standing in the traces where the stones met the bank. Anyone coming along the top behind him would have to come through Hob first. The forms let his people watch from the bank. They did not let them help.
 
-"Under the forms nobody on the bank lifts a hand," said Hollis.
+"That's lifting a hand," said Hollis.
 
-"Nobody is," said Rae. "My oxen are standing. Oxen are allowed to stand."
+"Nobody's lifting anything," said Rae. "My oxen are standing. Oxen are allowed to stand."
 
 Hollis came out to him on his backside. It was the only way a man with a beech leg could cross glazed stone, and he did it a stone at a time with the goad across his knees, swearing at each stone by name, until he sat three stones off with the beech leg stuck out over the fall.
+
+"The forms start at first light," he said, before Darrow could say it. "Till then I'll lift what I like."
 
 "If either of you goes in," Maelis called from the bank, "I'll mend whichever one floats."
 

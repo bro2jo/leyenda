@@ -2048,9 +2048,11 @@
           "fits": "present.wren",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 3,
           "offered_at": [
-            "ch06:between-5"
+            "ch06:between-5",
+            "ch06:s5",
+            "ch06:s6"
           ]
         }
       ]
