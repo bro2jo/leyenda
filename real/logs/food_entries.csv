@@ -329,3 +329,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-14#9,2026-11-14,,snack,"Cinemark movie popcorn, large tub",half the tub (butter not given),550,7.5,55,35,10,17,0.5,700,200,10,1.5,75,2,0,0,0,estimate,"half of a typical large theater tub (~1,100 kcal); butter asked"
 2026-11-14#10,2026-11-14,,snack,"Coca-Cola, fountain",half a large (assumed ~16 oz of drink),190,0,52,0,0,0,52,15,5,5,0,0,0,0,0,0,estimate,half a large theater Coke with ice
 2026-11-15#1,2026-11-15,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola 10 g protein
+2026-11-15#2,2026-11-15,,snack,"Monster cookie (oat, peanut butter, M&Ms; flourless GF)",1 cookie (assumed ~70 g),340,7,40,17,2.5,6,26,200,180,30,1.5,40,1,0,0.1,30,estimate,"his words: monster cookie; size not given, assumed ~70 g"
+2026-11-15#3,2026-11-15,,snack,"Coffee, black",1 cup (assumed 12 oz),5,0.4,0,0,0,0,0,7,170,7,0,10,0,0,0,0,estimate,his words: coffee black
