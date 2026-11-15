@@ -141,6 +141,7 @@
 11. **Front-of-knee (graft-site) pain:** record it separately in the morning check after impact days? What next-day response means hold, and what means a rung back.
 12. **The left knee extension's one-plate cap:** tied to the graft's window through ~11/16; does it lift after that, or stay until he says?
 13. **Running, once the gate is passed:** what symptom rule governs each walk–jog step (published protocols give almost none). Bike intervals too (§6: 30-minute rides since 10/27).
+14. **Kneeling on the left (added 11/15):** he half-knelt on the left on heavy padding for a cable lift on Sun 11/15, pain 0. The Add-On keeps kneeling on the harvest site out until the PT's OK (rule 3; §8 puts padded kneeling tolerance with Phase 6). Is padded half-kneeling on the left OK now?
 
 ---
 
