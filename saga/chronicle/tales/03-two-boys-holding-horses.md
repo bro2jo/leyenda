@@ -8,27 +8,29 @@
 
 The horse Darrow had been given to hold was too big for him, and it knew.
 
-It was a knight's horse, a black with one white sock and a chest like a barrel lid, and it stood in Calden's muster yard among two hundred others with its head up over Darrow's, looking at the town as if it were thinking of buying it. Darrow could not see over its neck. He could see under it: white cobbles, the legs of a great many horses, and the legs of a great many boys like him, holding them.
+It was a knight's warhorse, a black with one white sock, and it held its head so high above his that all he could see of Calden was what showed under its neck: white cobbles, the legs of other horses, and the legs of other boys holding them.
 
-He was fourteen, and he had come down out of the Edgemoor hills behind his father's string to be looked at. Not by the town. Calden was all white stone on a white rock above the river road, so white and so high that it seemed to have been built for somebody else to look at, with the Spire standing up black out of the middle of it like a nail driven into a loaf. He wanted the knights to look at him. They were going up the hall steps at the yard's end in twos and threes, mail and good cloth and a lance's mark on every coat, and not one of them had looked at a horse-holder since the world began.
+The muster yard lay at the foot of the Spire. At one end, stone steps went up to a hall, and the knights were climbing them in twos and threes, in mail and good cloth, each with his lance's badge on his coat. At the other end stood the gate to the river road. All down the middle of the yard, between the two, boys stood in a line holding the knights' horses, and Darrow was one of them.
 
-"Hold what you're given," his father had said, "and don't let it eat anything," and gone off with the string.
+He was fourteen, and he had come down out of the Edgemoor hills behind his father's string to be looked at. Not by the town, though the town was worth looking at: white stone on a white rock, with the Spire standing up black out of the middle of it like a nail driven into a loaf. He wanted a knight to look at him the way the lancers looked at a good horse. Not one of them had looked at a horse-holder all morning.
 
-The string was sold now. Down the row Darrow could see three of his father's greys among the lances' own, with the brands burned onto their near quarters that morning and still raw: a tower, a tower, and a mule's shoe. The nearer tower-grey was a four-year-old he had walked at a lead since it was a foal, all legs and nerves, who disliked loud noises, men in a hurry and the new pain on its quarter, in about that order. A page smaller than Darrow had it, and was holding it like a bucket.
+"Hold what you're given," his father had said, "and don't let it eat anything," and gone off to be paid.
 
-The boy at Darrow's left had a tower-grey of his own, an old campaigner who was asleep on his feet, and held it like a horse. He was a year or two older and a head taller, with black hair cut by somebody who cared, and he stood easy, the way a boy stands who has been in yards like this since he could walk. He had looked at Darrow's black, and at Darrow's hands on its reins, and said nothing about either, which was the first good manners Darrow had met in Calden.
+Two places down the line stood the last grey of the string, sold that morning: a young gelding, all legs and nerves, that Darrow had walked on a lead since the day it was foaled. Its new owner's badge, a tower, had been burned onto its hip an hour before, and it kept turning its head to look at the place. A page smaller than Darrow had its reins and was holding them at arm's length.
 
-Then noon came down from the Spire.
+The boy on Darrow's other side held a bay mare who had gone to sleep standing up. He was a year or two older than Darrow and a head taller, dark-haired, with a small tower stitched on his sleeve, and he stood easy, with the mare's reins loose in one hand. He had looked at Darrow's black, and at Darrow's hands on its reins, and said nothing about either. It was the first good manners Darrow had met in Calden.
 
-Calden rang its hours on a hundred bells, and they did not ring together. The peal began at the gate and rolled up through the town to the Spire and back down again, louder at every street, until the yard stood in the middle of it like a stone in a river. The black put its ears back and endured it. The old campaigner did not wake. The four-year-old with the tower on its quarter went straight up out of the page's hands, came down running, and went for the end of the yard, where the hall steps were, and the knights on them.
+Then the noon bells began.
 
-"Hold this," said Darrow, and put the black's reins into the hand of the boy beside him, who already had a horse and now had two, and ran.
+Calden had a hundred of them. They started at the gate and rolled up through the streets to the Spire and back down again, louder at every turn, until the yard was full of the noise. The black laid its ears flat and stood it. The bay mare slept on. The grey went straight up on its hind legs, tore the reins out of the page's hands, and bolted up the yard toward the hall steps, where the knights were.
 
-He did not run at the grey. A boy raised among horses never stands in front of one that is going somewhere. He ran across its line and up alongside it, at the shoulder, where a running horse cannot properly see a boy and cannot do much about one, and he reached up through the noise and got the cheek-strap and turned the grey's head in toward himself, hard, as his father had shown him with a lead rope when he was seven. A horse goes where its head goes. The head came round, and the grey came round after it in a long skidding curve on the cobbles, with Darrow running inside the curve and talking to it the whole way, nonsense, in the voice his father kept for foals; and three strides short of the steps it stopped, blowing, with its nose against his chest and its whole skin shivering under the tower.
+"Hold this," Darrow said. He pushed the black's reins into the tall boy's free hand, so that the boy had two horses, and ran.
 
-The bells went on overhead without remark. On the steps a knight with a tower on his coat came down two at a time.
+He did not run at the grey. Nobody raised among horses gets in front of one that is running. He cut across its path and came up beside it, level with its shoulder, where it could not see him well. He jumped, caught the strap at the side of its face, and hauled its head round toward him. A horse goes where its head goes. The grey's body swung round after its head in a long skidding circle on the cobbles, with Darrow running on the inside of the circle and talking to it all the way, the nonsense his father talked to foals. Three strides short of the steps it stopped, blowing, with its nose pressed into his chest and its skin shivering.
 
-He was a big man with a red face that got redder as he came, and he was not looking at the grey. He was looking at the length of the yard behind it, every lance at the muster along it, and every one of them had just watched his new horse go up at the noon peal and come down the yard like a cow off a cart.
+The bells rang on overhead.
+
+A knight came down the steps two at a time. He was a big man with a red face, and he wore the same tower on his coat as the grey wore on its hip. Every knight on those steps had just watched his new horse bolt across the muster, and his face said so.
 
 "Who laid hands on my horse?"
 
@@ -38,11 +40,11 @@ He was a big man with a red face that got redder as he came, and he was not look
 
 "The man's who sold him to you." It was out before Darrow could stop it. "He's been yours since this morning, ser. He's been mine since he was foaled. He doesn't like bells."
 
-The knight's hand came up with the crop in it. Darrow could have been somewhere else before it came down, and he stayed where he was, because a boy who has just caught a lance's horse in front of the whole muster does not run from a lance's knight. He had time to think that it was a stupid reason.
+The knight raised his riding crop. Darrow could easily have ducked out from under it. He stayed where he was, because a boy who has just caught a lance's horse in front of the whole muster does not run from a lance's knight. He had time to think that it was a stupid reason.
 
-"Ser." It was the boy with the two horses, who had brought them both down the yard at a walk, the black on one side and the old campaigner on the other, as if he did this every day. He bowed as far as a boy can bow holding two horses. "Forgive me. My father's on the steps with the captain. From up there, ser, I think all anyone saw was a grey that stops very well." He looked at the grey, which had its nose on Darrow's chest. "It would be a pity to show them anything else."
+"Ser." The tall boy had come up the yard behind him at a walk, leading the black on one side and the sleepy bay on the other, as if he did this every day. He bowed, as far as a boy can bow with a horse on each hand. "Forgive me. My father's on the steps with your captain." He tipped his head toward the top of the steps, where two older men with the tower on their coats stood talking, half turned away. "From up there, ser, all anyone saw was a grey that stops very well. It would be a pity to give them anything else to talk about."
 
-The knight looked at him. Then up at the steps, where two older men in tower coats stood talking with their backs to the yard, or seemed to. Then at the grey. The crop came down slowly to his side.
+The knight looked at the boy, then up at the steps, then at the grey with its nose in Darrow's coat. Slowly the crop came down.
 
 "Vane's boy," he said.
 
@@ -52,42 +54,44 @@ The knight looked at him. Then up at the steps, where two older men in tower coa
 
 "Yes, ser. I'll tell him you said so."
 
-He said it so gravely that the knight let out one bark of a laugh against his will. He took the grey's reins out of Darrow's hand without looking at Darrow, and led it away up the yard, talking to it in the voice of a man who had meant all this from the start.
+He said it so gravely that the knight barked out a laugh before he could stop it. He took the grey's reins out of Darrow's hand without a word to Darrow and led it away, muttering to it like a man who had planned all of this.
 
-The knights went in. Not one of them looked down the steps at the boy who had stopped the horse, or the boy who had stopped the knight, and the hall doors shut on the last of them, and the peal came back down to the gate and stopped.
+The knights went into the hall, and the doors shut behind the last of them. Not one had looked back at the boy who caught the horse, or at the boy who calmed the knight. The bells rolled back down to the gate and stopped.
 
-"You talked him out of it," said Darrow.
+"You talked him out of hitting me," said Darrow.
 
-"You'd have let him." The boy gave him back the black's reins. "I watched you decide."
+"You were going to let him." The boy gave him back the black's reins. "I watched you decide to."
 
 "He'd have missed."
 
-"I know. That's why I came. A man who misses a breeder's boy in front of the whole muster has to do something about it after." He said it the way a man explains a buckle. "Better he never swings."
+"I know. That's why I came. If a knight swings at a breeder's boy in front of the whole muster and misses, he has to do something worse afterwards to make up for it." He said it plainly. "Better he never swings."
 
-Darrow looked at him properly then: at the hands, which had brought two horses down a yard full of bells as if they were asleep, and at the face, which was grave and had a laugh somewhere behind it, waiting for leave.
+Darrow looked at him properly then. None of the knights had looked at him all morning. This boy had been watching the whole time.
 
 "How did you know what to say to him?"
 
-"You say what he'd want to have done," said the boy, "and you leave out what he did. How did you know where to stand?"
+"You say what he'd want to have done," said the boy, "and you leave out what he did. How did you know where to run?"
 
-"You don't stand. You go where the horse isn't looking."
+"You don't run at it. You run where it isn't looking."
 
-The boy thought about that as seriously as if there would be questions on it after. "Aldric," he said.
+The boy thought about that as seriously as if there would be questions on it later. "Aldric," he said.
 
 "Darrow. Edgemoor."
 
-"I know. The greys." Aldric looked past him to the yard's far gate, where a column was forming to ride out, and its captain at the head of it lifted his hand, open, and carried it out and away from his body, unhurried. The riders behind him opened on that side like a door, and a cart coming in at the gate went through a horse's length of room.
+"I know. The greys."
 
-"What's that one?"
+Down at the gate end of the yard, a column of knights was forming up to ride out two by two, and a hay cart was trying to come in through the same gate. The captain at the head of the column raised his hand, open, and moved it slowly out to his side. All down the column the riders eased their horses over that way together, and the cart rolled in through the gap they had left.
 
-Aldric showed him: the hand open, the fingers together, out and away, as a man shows a guest to the better chair. "Ride wide. Give the flank room. My father's lance taught me that before I could sit a horse, and my father says no captain born likes to give it."
+"What was that?" said Darrow.
+
+Aldric showed him. He held up his hand flat, fingers together, and moved it out to the side, slow and level. "Ride wide," he said. "It means give the flank room: move over and leave a space. My father's lance taught me that before I could sit a horse. My father says no captain born likes giving it."
 
 "Why not?"
 
-"He won't tell me. He says I'll know the first time I give it." Aldric grinned, all at once, the laugh let out at last. "Go on."
+"He won't tell me. He says I'll know the first time I give it." Aldric grinned, all at once. "Go on. You try."
 
-Darrow did it.
+Darrow tried. His hand went out fast and flapped at the end.
 
-"You're shooing geese. Slower. It isn't *go away*. It's *there's room*."
+"You're shooing geese," said Aldric. "Slower. It doesn't mean *go away*. It means *there's room*."
 
-Darrow did it slower, with the black's reins in his other hand and the bells done and every knight in Calden indoors; and Aldric Vane, who had the better manners, stepped one pace aside to give him the room.
+Darrow did it again, slowly, the way the captain had, with the black's reins in his other hand. Aldric took one solemn step to the side, as if he were the whole column making way for the cart, and the sleepy bay shuffled over after him. Then the two of them stood in the middle of Calden's yard and laughed, holding other men's horses.
