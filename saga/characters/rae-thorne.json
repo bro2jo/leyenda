@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "7",
+    "scene": "between-6",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-7"
+    "anchor": "chronicle/06-the-weir.html#between-6"
   },
-  "last_seen_doing": "Kept her oxen standing across the near end of the weir.",
-  "now": "On the near bank with her cart chocked across the end of the weir.",
+  "last_seen_doing": "On the box with the reins slack, watching the far bank.",
+  "now": "On the cart's box on the near bank.",
   "story_so_far": "Rae drove the company down her own road to her own village, answered a reeve's lantern for her cart, taught Darrow her grandmother's word for stand, and was found out at the dealer's: she had paid his mare's keep since the fair and said nothing. Home at her uncle's inn she settled the summer's loads, talked a levy sergeant through an hour of oxen, and when her uncle named his price for not having seen them she took the company out of his yard before the bell instead, and stood with her village to hear the list read with the summer written against her unsigned.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1226,6 +1226,10 @@
     {
       "chapter": "06",
       "scene": "7"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-6"
     },
     {
       "chapter": "tale02",

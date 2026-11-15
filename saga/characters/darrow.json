@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "7",
+    "scene": "between-6",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-7"
+    "anchor": "chronicle/06-the-weir.html#between-6"
   },
-  "last_seen_doing": "Met the rider under the forms on the keeper's stone: read her by the script, answered her question as far as was his to give, and held her single pass without moving his feet; learned she has orders to take him alive and was not told why.",
-  "now": "On the keeper's stone at first light, the cape of his coat cut at the shoulder, with until the mill's noon bell to answer why he will not kneel. The rider waits on the far bank.",
+  "last_seen_doing": "Came in off the weir to wait for the bell, turned down the lie Wren had written him, laughing, and took her count: nobody on the near bank has ever asked him to kneel.",
+  "now": "On the near bank at Rae's cart, waiting for the mill's noon bell, with Wren's count in his head.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2158,6 +2158,18 @@
       "evidence": "I have orders to bring you in alive, Captain. I was not told why."
     },
     {
+      "fact": "He would not read Wren's written lie to the rider under the forms, though he called it the best anybody had ever written him.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "It's the best one anybody's ever written me. I'm not reading it."
+    },
+    {
+      "fact": "He told Wren he is frightened too.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "\"So am I,\" said Darrow."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2684,6 +2696,10 @@
     {
       "chapter": "06",
       "scene": "7"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-6"
     },
     {
       "chapter": "tale01",

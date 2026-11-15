@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "7",
+    "scene": "between-6",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#scene-7"
+    "anchor": "chronicle/06-the-weir.html#between-6"
   },
-  "last_seen_doing": "Watched from the near bank with the book shut in both hands, and counted the hours to the noon bell.",
-  "now": "On the near bank behind Rae's cart, counting to noon.",
+  "last_seen_doing": "Wrote him a lie to read to the rider and let it go when he would not; then counted for him the four who have asked him to kneel and the company, who never have; said plainly that she was frightened.",
+  "now": "On the cart's tail with the book, counting to the noon bell.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -781,6 +781,24 @@
       "chapter": "06",
       "scene": "7",
       "evidence": "Five hours and a quarter"
+    },
+    {
+      "fact": "She counted four who have asked him to kneel: the Confessor at the Steps, the Crown on a bell-post, Ser Oswin with his stone, and the rider.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "The Confessor at the Steps. The Crown, on a bell-post. Ser Oswin, with his stone. Her, this morning. Four."
+    },
+    {
+      "fact": "She pointed out that nobody on the near bank has ever asked him to kneel, and keeps it in his column.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "Asked him to kneel: none."
+    },
+    {
+      "fact": "She said plainly that she was frightened, and put no number on it.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "and stopped there, and counted nothing after it"
     }
   ],
   "relationships": [
@@ -1115,6 +1133,10 @@
     {
       "chapter": "06",
       "scene": "7"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-6"
     }
   ]
 }

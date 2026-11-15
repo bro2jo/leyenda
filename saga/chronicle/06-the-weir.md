@@ -851,3 +851,45 @@ She walked back off the glaze without looking at her feet and up the far bank to
 "Five hours and a quarter," said Wren, on the near bank, and for once everybody let her count.
 
 Darrow stood on the stone. The cold had gone out of the two slow fingers and into the rest of the hand. He had until the bell to find out why he would not kneel, and to say it to a woman who would take him anyway.
+
+### Between — Who Hasn't Asked
+
+He came in off the weir a stone at a time, because there were three hours to the bell, and a man could not stand on a keeper's stone for three hours and then fight on it. On the far bank the rider sat beside her horse with her back straight and her hands on her knees, like somebody in the front row of a chapel.
+
+Wren was on the cart's tail with the book open and the pencil going.
+
+"I'm writing you an answer," she said, before he could ask. "Don't look. It's not finished."
+
+He looked. It was half a page in her small hand, with crossings-out.
+
+"It's a good one," said Wren. "It's got the Crown in it, and a vow you made your mother, and a bit about the ford that'd make Hollis cry. She'll believe every word. I've been lying for the House for years, Captain, and I'm better at it than she is with that sword." She held the pencil out to him like the last offer in a haggle. "Read it to her at the bell, and she'll go home thinking about it, and nobody has to stand on a stone."
+
+"Under the forms," said Darrow.
+
+"The forms say a question before a blade. They don't say a true answer." She considered. "Technically."
+
+He laughed. It came out of him before he could stop it, the old laugh that carried the length of a hall, and on the far bank the rider turned her head to look.
+
+"It's a good lie," he said. "It's the best one anybody's ever written me. I'm not reading it."
+
+She shut the book on it without a word of argument, and that was how he knew she had known before she wrote the first line.
+
+"Then I've got another," she said. "Not a lie. A count."
+
+"Go on."
+
+"She asked why you won't kneel, and you told her everyone who's asked wants something for it." She tapped the pencil on the shut book. "So I counted who's asked. The Confessor at the Steps. The Crown, on a bell-post. Ser Oswin, with his stone. Her, this morning. Four." She turned the pencil round. "Now count who hasn't."
+
+He looked down the bank. Hollis was at the oxen's heads, telling Hob something filthy in a low voice. Maelis had her roll open on the cart and was laying out needle and thread in a row, in case. Rae sat on the box with the reins slack, watching the far bank.
+
+"Four," said Wren. "Five, with the dog. Nobody on this side of the river has ever asked you to kneel, Captain. Not once. I'd have it written down if they had." She shrugged, as if it were only a sum. "I don't know what that's the answer to. But it's a number, and it's yours."
+
+He stood a while with it.
+
+Then Wren said, to the far bank and not to him, "I'm frightened," and stopped there, and counted nothing after it.
+
+"So am I," said Darrow.
+
+"I know. You told me first." She opened the book to his column and turned it so he could see: *Told first. Three.* Under it, in the same small hand, was a new line he had not seen in the night. *Asked him to kneel: none.*
+
+"Two hours and three-quarters," said Wren, and went back to counting.

@@ -2047,16 +2047,32 @@
           "what": "The night before the weir Wren said a frightened thing aloud to him with no number on it (she does not want to make a column for him) and covered it with a count after. Fire when she is frightened again and he is beside her: she says it plainer, or he answers the thing she covered",
           "fits": "present.wren",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch06:between-6",
           "offered": 4,
           "offered_at": [
             "ch06:between-5",
             "ch06:s5",
             "ch06:s6",
             "ch06:s7"
-          ]
+          ],
+          "evidence": "and stopped there, and counted nothing after it"
         }
       ]
+    },
+    {
+      "id": "c06.12",
+      "made": {
+        "chapter": 6,
+        "scene": "between-6",
+        "date": "2026-11-15"
+      },
+      "chose": "Came off the stone in the wait for the noon bell and went to Wren; turned down the lie she had written him to read under the forms, laughing, and took her count instead: four have asked him to kneel, and nobody on the near bank ever has; she said plainly she was frightened, and he said so was he",
+      "now": {
+        "approval": {
+          "wren": 3
+        }
+      },
+      "due": []
     }
   ],
   "rules": [
