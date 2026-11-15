@@ -328,3 +328,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-14#8,2026-11-14,,snack,Large apple + organic peanut butter,1 large apple + ~3 tbsp,400,15,40,25,8,4,24,150,520,40,1.5,85,1.5,8,0,0,library,his usual snack
 2026-11-14#9,2026-11-14,,snack,"Cinemark movie popcorn, large tub",half the tub (butter not given),550,7.5,55,35,10,17,0.5,700,200,10,1.5,75,2,0,0,0,estimate,"half of a typical large theater tub (~1,100 kcal); butter asked"
 2026-11-14#10,2026-11-14,,snack,"Coca-Cola, fountain",half a large (assumed ~16 oz of drink),190,0,52,0,0,0,52,15,5,5,0,0,0,0,0,0,estimate,half a large theater Coke with ice
+2026-11-15#1,2026-11-15,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola 10 g protein
