@@ -364,6 +364,17 @@
     640
    ]
   },
+  "characters/ysra-tal.jpg": {
+   "sha1": "602c5ac70a414c87f76d9d28c6836b27ab3d841b",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "codex/thistle.jpg": {
    "sha1": "fe5e019db4772144381497f4daa55846d49df3a7",
    "sm": [
