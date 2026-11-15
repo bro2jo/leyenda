@@ -34,7 +34,7 @@ THE BINDING · Knots tied III of VII · the soft season (do not trust the quiet)
 THE TETHER · II of V · a hand
 WORKS · 2 finished
 ARTS · The Seated Blade II · Stillwater Stance III · The Long Breath II · The Mender's Patience IV · Warden's Eye IV · Groundbreaker III · The Measured Hand II · Overwall I · The Far Cast I
-SEALED (practice banked) · Thunderstep (Knot V)
+SEALED (practice banked) · The Long Road (Knot IV) · Thunderstep (Knot V) · The Turning Blade (Knot VI)
 ```
 
 **Chapter 7, so far (on what's logged):** Hard-won
