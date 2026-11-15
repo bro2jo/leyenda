@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-12 · house · Maelis has made a rule: whoever complains about the cold carries the water. Hollis has carried it twice before noon and is asking for a recount.
 - 2026-11-12 · ledger · Wren's tally for the day's water: Hollis, four buckets; everyone else, one between them. She has underlined the four.
 - 2026-11-12 · saying · A farm boy gallops a borrowed pony past the cart, standing in the stirrups. Hollis gives him the old soldiers' verdict, "Full of Grace and empty of sense," then admits he was worse at that age.
 - 2026-11-12 · weather · The cold has come down early tonight, the kind that makes a fire worth sitting close to. Darrow sits closest, and for once no one makes him move.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-15 · house · Wren has taken to trimming her quills against the cart's iron rim. Hollis says that is how a wheel goes bad. She says that is nonsense, and keeps doing it.
 - 2026-11-15 · body · He splits kindling for Maelis's fire and the axe comes down heavier than he swung it; the round falls in two at one stroke. He stands there afterward, looking at his hands.
 - 2026-11-15 · verse · Someone at the tail of the cart is singing The Grey Mare of Edgemoor and has the second line wrong, and the whole company sings it back to him, correct and louder: by the Wend and the Holloway, by the bell and the star.
+- 2026-11-15 · ledger · A new column in Wren's ledger, ruled in red: things Hollis says, by how often. "Bells take it" leads by a distance. "I was never wrong about rain" is gaining.
