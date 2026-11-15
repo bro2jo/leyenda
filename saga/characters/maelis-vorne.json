@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-5",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-5"
+    "anchor": "chronicle/06-the-weir.html#scene-7"
   },
-  "last_seen_doing": "Asleep under the cart.",
-  "now": "Asleep under Rae's cart on the near bank.",
+  "last_seen_doing": "Watched from the near bank.",
+  "now": "On the near bank behind Rae's cart.",
   "story_so_far": "Maelis came off the mountain a field surgeon again, mended boots with contempt, set the leg in the cart until noon, and found her own name on the writs as the captain's harbourer. She played the inn's cook for the levy, watched a warm knight's frosted hands go white and then clear and said nothing, and heard the Mender Vorne read to a village from across the tarn without a word.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -988,6 +988,10 @@
     {
       "chapter": "06",
       "scene": "between-5"
+    },
+    {
+      "chapter": "06",
+      "scene": "7"
     }
   ]
 }

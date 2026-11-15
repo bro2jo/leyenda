@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-5",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-5"
+    "anchor": "chronicle/06-the-weir.html#scene-7"
   },
-  "last_seen_doing": "Asked to be told first before the morning, wrote it in his column as the third time, and said aloud that she is frightened of having to keep a column for him, then covered it with a count.",
-  "now": "Sitting up on the cart's tail in the dark with the book shut in both hands.",
+  "last_seen_doing": "Watched from the near bank with the book shut in both hands, and counted the hours to the noon bell.",
+  "now": "On the near bank behind Rae's cart, counting to noon.",
   "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -775,6 +775,12 @@
       "chapter": "06",
       "scene": "between-5",
       "evidence": "I don't want to have to make one for you. That's all. I'm frightened of that, and it hasn't got a number."
+    },
+    {
+      "fact": "She counted five hours and a quarter from first light to the mill's noon bell.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "Five hours and a quarter"
     }
   ],
   "relationships": [
@@ -1105,6 +1111,10 @@
     {
       "chapter": "06",
       "scene": "between-5"
+    },
+    {
+      "chapter": "06",
+      "scene": "7"
     }
   ]
 }

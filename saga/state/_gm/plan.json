@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 6,
     "beat": "b2.2",
-    "next_scene": 7,
+    "next_scene": 8,
     "stage": "scene",
-    "last_written": "ch06:s6",
+    "last_written": "ch06:s7",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -182,8 +182,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:s7"
       },
       {
         "n": 8,
@@ -197,7 +197,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       }
     ],
@@ -585,7 +585,7 @@
   },
   "tallies": {
     "chased": 1,
-    "held": 5
+    "held": 6
   },
   "tallies_log": [
     {
@@ -633,6 +633,14 @@
       "name": "held",
       "delta": 1,
       "why": "ch06:s4: went twenty paces onto the meadow toward the rider, read her ground, stopped and stood square",
+      "book": 2,
+      "chapter": 6
+    },
+    {
+      "date": "2026-11-14",
+      "name": "held",
+      "delta": 1,
+      "why": "ch06:s7: stood on the keeper's stone through the rider's pass instead of answering her footwork",
       "book": 2,
       "chapter": 6
     }

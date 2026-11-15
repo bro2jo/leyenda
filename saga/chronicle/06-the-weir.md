@@ -773,3 +773,81 @@ Then, quickly, before he could answer: "Five hours and a half. Near enough. Odds
 "I won't either," said Wren. "Go and sleep. You've a stone to stand on."
 
 He went. When he looked back from under the cart she had turned the lantern down to nothing, and was sitting in the dark with the book shut in both hands.
+
+### Scene 7 — One Question
+
+She came at first light, on foot, along the far bank, and she stepped onto the end of the weir as if somebody had laid the ice down for her.
+
+The long-legged horse stood where she had left it at the top of the far bank, untied. Darrow had been on the keeper's stone since before the light, long enough for the cold to find the two slow fingers and settle in them. He looked back once. Wren had the book shut in both hands, and Hollis had his own jammed in his armpits where anybody could see them.
+
+Up at the mill a bell rang the millers in, flat and cracked, and stopped.
+
+She stopped where the bank ended and the glaze began. Close to, she was smaller than she had looked on the meadow, and neater: the six buttons, the cropped hair, gloves of thin dark leather that fit like skin. Her sword hung at her hip, and her hands were nowhere near it.
+
+The script came up behind his palms unasked, faint in the grey light, and read her as it read faces. One line of it burned brighter than the rest.
+
+> *Finesse 19*
+
+He had been eighteen at the ford, on his best morning. She had one more than he had ever had, and she had walked across a frozen river to bring it to him.
+
+"Captain," she said. "Of the Ninth Lance. Who walks with a stick."
+
+"That's me."
+
+"I am alone. You are alone." She looked past him to the cart turned across the near end, the two oxen standing in the traces. "Your people are on the bank, and their hands are where I can see them. There is an ox across the top of the weir."
+
+"She's standing," said Darrow. "Oxen are allowed to stand."
+
+She considered this for longer than it deserved. "That is correct," she said.
+
+Upstream, past the mill, the bridge had come out of the dark. There were more carts on its far side than there had been at midnight, a dozen now, drawn up the same wrong way, everyone looking back.
+
+"Your name," said Darrow.
+
+"My name is not the question. The forms allow one." She took her gloves off, finger by finger, and tucked them in her belt, as if the question were a thing to be handled bare. "Why will you not kneel?"
+
+He had spent half the night wondering what she would ask. He had not once thought it would be that.
+
+"Bad knee," he said.
+
+"I have watched you get down from a cart," she said. "You could kneel. It would take you some time, and you would need the stick to get up again. That is why you would find it hard. It is not why you will not."
+
+Behind him Hollis made the noise of a man swallowing a laugh nobody had given him leave for.
+
+The joke had failed, so Darrow gave her the straight answer, as much of it as was his to give.
+
+"Because everyone who's asked me to wants something for it," he said, "and not one of them will tell me what."
+
+She looked at him for a long moment with her head a little on one side.
+
+"That is an answer to why not yet," she said. "It is not an answer to why not." And she drew.
+
+She came along the glaze the way Hollis had said she would, and made the front feel like six: a step that was not a step, a shoulder going left while she went right, the point of her sword in three places at once and none of them where he was looking.
+
+He let all of it go by. He stood on the keeper's stone like a post somebody had driven in, the sword high in three fingers and a thumb, and let her come to the post.
+
+`[MIGHT · DC 16]` d20 **11/6 (adv)** +1 might +4 proficiency +2 The Seated Blade II = **18** — *Success*
+
+Her point came in low and fast at the place where the old Darrow would have stepped, and found it empty, because he had stayed where he was. It came again high, at his sword hand, at the slow side, as if she had known; his blade went out to meet it and stopped where the wrist stopped, and that was far enough. Steel rang once. Then she was three stones back on the glaze, and he had not seen her go, and there was a cold line across the cape of his coat at the shoulder where she had opened the wool to show him she could.
+
+His feet were where he had put them.
+
+She stood on the glaze with her point down and her head on one side, and thought about it.
+
+Nobody on that bank had ever seen a fighter do it. You thought before, or after, or you were dead. She stood three stones off in the grey light and thought, the way a clerk thinks about a sum that will not come out, and the river went on under them both.
+
+"You do not move," she said at last.
+
+"No."
+
+"Everyone moves." She said it like a fact she had leaned on for a long time. "I have orders to bring you in alive, Captain. I was not told why. Until this morning I did not mind." She sheathed the sword cleanly, without looking. "I will take you at the next bell, whether you have answered me or not. The mill rings again at noon, for the millers' bread. I asked."
+
+"And if I answer before then?"
+
+"Then I will have an answer, and I will still take you at the bell. The one does not change the other." She drew her gloves on again, finger by finger. "But I would like to have it."
+
+She walked back off the glaze without looking at her feet and up the far bank to the long-legged horse, and sat down on a stone beside it with her back very straight, facing the weir, to wait for noon.
+
+"Five hours and a quarter," said Wren, on the near bank, and for once everybody let her count.
+
+Darrow stood on the stone. The cold had gone out of the two slow fingers and into the rest of the hand. He had until the bell to find out why he would not kneel, and to say it to a woman who would take him anyway.

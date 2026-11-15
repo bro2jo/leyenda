@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-5",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-5"
+    "anchor": "chronicle/06-the-weir.html#scene-7"
   },
-  "last_seen_doing": "Asleep under the cart.",
-  "now": "Asleep under Rae's cart on the near bank.",
+  "last_seen_doing": "Watched from the near bank with his hands in his armpits where she could see them, and swallowed a laugh at the Captain's joke.",
+  "now": "On the near bank behind Rae's cart.",
   "story_so_far": "Hollis rode the carter's tailboard off the mountain, third on the new writs and wounded by it, sang the carters' song to the Sixth's tune, grieved a stranger's mother at a turnip field, and lost a week of boot-mending on a wager. He taught Darrow to throw at a well-bucket instead of going through a taproom door, and told him sober that he would follow him into the river again. When the Sixth's names were read across the water he went for the gate, and Darrow held him.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -1216,6 +1216,10 @@
     {
       "chapter": "06",
       "scene": "between-5"
+    },
+    {
+      "chapter": "06",
+      "scene": "7"
     }
   ]
 }

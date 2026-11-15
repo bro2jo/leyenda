@@ -89,6 +89,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The inn at the top of the mill tracks** — A hill inn where the mill tracks come up into the hill country: one low room for everything, brown with smoke, with hill people along the benches and a yard with a trough and a mounting block. A drover told its taproom of a rider on a long-legged horse who stood the room at the landing a round, drank water, and asked how far a man with a stick walks in a day (Ch 6 Sc 3).
 - **The summons under the forms** — A small square paper nailed below Darrow's writ on a bell-post at a fork of the mill tracks, a nail in each corner spaced to the hair, in an upright hand with every letter cut like a stroke and no name under it: the captain of the Ninth who walks with a stick to come to the weir below the mill at the end of the tracks, at first light on the second morning, alone, under the forms, to answer a question (Ch 6 Sc 5).
 - **The keeper's stone** — A square stone set a hand higher than the rest halfway across the top of the weir below the river mill, where a man stands to work the sluice; the spray off the fall glazes every other stone of the weir and does not reach it (Ch 6 Sc 6).
+- **The mill bell** — The river mill's bell above the weir, flat and cracked: it rings the millers in at first light and again at noon for their bread (Ch 6 Sc 7).
 
 ## Songs and verses
 

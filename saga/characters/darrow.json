@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-5",
+    "scene": "7",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-5"
+    "anchor": "chronicle/06-the-weir.html#scene-7"
   },
-  "last_seen_doing": "Went to Wren on the cart's tail and told her first what nobody had heard: he will stand still and let the rider come, and be frightened the whole time; asked her for hers.",
-  "now": "Under Rae's cart on the near bank, five hours and a half from first light.",
+  "last_seen_doing": "Met the rider under the forms on the keeper's stone: read her by the script, answered her question as far as was his to give, and held her single pass without moving his feet; learned she has orders to take him alive and was not told why.",
+  "now": "On the keeper's stone at first light, the cape of his coat cut at the shoulder, with until the mill's noon bell to answer why he will not kneel. The rider waits on the far bank.",
   "story_so_far": "Down off the mountain on his own legs, Darrow walked the drove road to Coldmere with four companions, a cart and a dog, turned away from the banner he had come down to face, and found his mare alive at a dealer's and the carter paying her keep. In Coldmere he hid in hay while Rae talked a levy sergeant out of his questions, beat a warm knight of the Fourth at knucklebones and refused his stone, and gave Rae the deciding of what she would pay for him. He heard his own name read across the tarn and did not step forward. At the fork out of Coldmere the road is his to choose.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2134,6 +2134,30 @@
       "evidence": "I wasn't sending you out on that ice to carry my question."
     },
     {
+      "fact": "The script showed him the rider's Finesse at nineteen, one more than his own at the ford on his best morning.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "She had one more than he had ever had"
+    },
+    {
+      "fact": "He told the rider he will not kneel because everyone who has asked wants something for it and will not say what; she called it an answer to why not yet.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "Because everyone who's asked me to wants something for it"
+    },
+    {
+      "fact": "He held her single pass on the stone without moving his feet; her point cut the cape of his coat at the shoulder.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "there was a cold line across the cape of his coat at the shoulder where she had opened the wool to show him she could"
+    },
+    {
+      "fact": "He learned that the rider has orders to bring him in alive and was not told why.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "I have orders to bring you in alive, Captain. I was not told why."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2656,6 +2680,10 @@
     {
       "chapter": "06",
       "scene": "between-5"
+    },
+    {
+      "chapter": "06",
+      "scene": "7"
     },
     {
       "chapter": "tale01",
