@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-10 · overheard · Overheard from the cart: Wren asking Maelis what the oldest thing she has ever stitched was. Maelis says "Hollis," and does not elaborate.
 - 2026-11-10 · house · Hollis has taken a turn driving the cart, with enormous dignity and no skill. Rae walks alongside, pretending not to correct him every forty yards.
 - 2026-11-10 · ledger · Wren's tally for the afternoon: hills, four (agreed); stiles, two; times Hollis has asked whether they are nearly there, nine, and a tenth while she was writing it down.
 - 2026-11-10 · verse · Rae is teaching Wren the counting rhyme by the fire: "Count the bells in the bell-house, child, count them, dawn to dark." Wren has questions about the arithmetic, and Rae says that is not what it is for.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-14 · saying · Hollis drops the kettle lid in the ashes and says "Bells take it" with real feeling. Wren writes it down, for the collection.
 - 2026-11-14 · overheard · Overheard as the fire burns down: Wren asking Rae whether she ever gets tired of roads. Rae says only the straight ones.
 - 2026-11-15 · ledger · Wren's tally for the week, ruled off and underlined: hills crossed, thirty-one by Rae's count; buckets carried by Hollis, eleven; songs sung badly, all of them.
+- 2026-11-15 · body · Frost on the tailboard at first light. He bends the knee under the blanket and it comes up all the way without a word of complaint; he lies there a minute longer anyway, because for once he can.
