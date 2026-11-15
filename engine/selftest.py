@@ -247,7 +247,7 @@ def main():
             # callbacks: one that fits Wren's company (worth a beat), one that waits for a companion still to come and lapses after this scene at a cost
             cb = {"id": f"c{ch:02d}.981", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Promised two things (self-test).", "now": {},
                   "due": [{"id": f"c{ch:02d}.981a", "when": "later", "weight": "color", "fits": "present.wren", "priority": 3, "what": "A thing owed in Wren's hearing (self-test)."},
-                          {"id": f"c{ch:02d}.981b", "when": "later", "weight": "color", "fits": "present.ysra", "valid_until": key, "if_void": {"approval": {"wren": -2}}, "what": "A promise to keep by this scene (self-test)."}]}
+                          {"id": f"c{ch:02d}.981b", "when": "later", "weight": "color", "fits": "present.ilse", "valid_until": key, "if_void": {"approval": {"wren": -2}}, "what": "A promise to keep by this scene (self-test)."}]}
             code, out = run(saga + ["add", json.dumps(cb)], tmp)
             check(code == 0 and "2 due item(s)" in out, "add takes a callback's fits, priority, valid_until and if_void", out[-300:])
             stale_cb = {"id": f"c{ch:02d}.984", "made": {"chapter": ch, "scene": "s0", "date": day}, "chose": "Promised a thing that never found its moment (self-test).", "now": {},

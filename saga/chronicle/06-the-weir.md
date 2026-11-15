@@ -728,7 +728,7 @@ Rae looked at him a moment and said "Aye," which covered it.
 
 Later, when the others were down under the cart and every lantern was out but Wren's, he sat on the bank with the stick across his knees and looked at the keeper's stone. He could only just see it: one square of dark among the glazed ones, halfway across, with the water loud on both sides of it.
 
-"Six," said Wren from the cart's tail, to nobody.
+"Six hours," said Wren from the cart's tail, to nobody.
 
 He knew where he would stand. He did not know what she would ask.
 
@@ -788,11 +788,11 @@ The script came up behind his palms unasked, faint in the grey light, and read h
 
 > *Finesse 19*
 
-He had been eighteen at the ford, on his best morning. She had one more than he had ever had, and she had walked across a frozen river to bring it to him.
+It was one more than the script had ever given him, even at the ford, on his best morning, and she had walked across a frozen river to bring it to him.
 
-"Captain," she said. "Of the Ninth Lance. Who walks with a stick."
+"Captain," she said, pitched to carry over the fall, and the near bank had it as plainly as he did. "Of the Ninth Lance. Who walks with a stick."
 
-"That's me."
+"That's me," he called back.
 
 "I am alone. You are alone." She looked past him to the cart turned across the near end, the two oxen standing in the traces. "Your people are on the bank, and their hands are where I can see them. There is an ox across the top of the weir."
 
@@ -824,7 +824,7 @@ She looked at him for a long moment with her head a little on one side.
 
 She came along the glaze the way Hollis had said she would, and made the front feel like six: a step that was not a step, a shoulder going left while she went right, the point of her sword in three places at once and none of them where he was looking.
 
-He let all of it go by. He stood on the keeper's stone like a post somebody had driven in, the sword high in three fingers and a thumb, and let her come to the post.
+He let all of it go by. He stood on the keeper's stone as he had stood for Hollis's goad, the sword high in three fingers and a thumb, and let her come to the post.
 
 `[MIGHT · DC 16]` d20 **11/6 (adv)** +1 might +4 proficiency +2 The Seated Blade II = **18** — *Success*
 
@@ -880,6 +880,8 @@ She shut the book on it without a word of argument, and that was how he knew she
 
 "She asked why you won't kneel, and you told her everyone who's asked wants something for it." She tapped the pencil on the shut book. "So I counted who's asked. The Confessor at the Steps. The Crown, on a bell-post. Ser Oswin, with his stone. Her, this morning. Four." She turned the pencil round. "Now count who hasn't."
 
+There had been a fifth, once, in a letter: *Come home, brother.* He had answered that one himself, in ink.
+
 He looked down the bank. Hollis was at the oxen's heads, telling Hob something filthy in a low voice. Maelis had her roll open on the cart and was laying out needle and thread in a row, in case. Rae sat on the box with the reins slack, watching the far bank.
 
 "Four," said Wren. "Five, with the dog. Nobody on this side of the river has ever asked you to kneel, Captain. Not once. I'd have it written down if they had." She shrugged, as if it were only a sum. "I don't know what that's the answer to. But it's a number, and it's yours."
@@ -908,7 +910,7 @@ She had been wrong once on this road, and she had written it down. At the spring
 
 After that she had stopped following them and gone round ahead, and watched.
 
-The carter did a thing first and explained it after, if at all. The old soldier on the beech leg talked filth to an ox and kept his eyes on the trees throughout; last night she had watched him come out across the glazed weir on his backside to put a stick into his captain, and had thought better of him. The surgeon looked at hands before faces, which was where Ysra looked. The girl with the ledger counted everything. Ysra had counted the girl counting, eleven times in one afternoon, and had felt something close to fellowship. The dog had three good legs and made no sound at all. She did not trust anything that did not bark.
+The carter did a thing first and explained it after, if at all. The old soldier on the beech leg talked to an ox as if it owed him money, and kept his eyes on the trees while he did it; last night she had watched him come out across the glazed weir on his backside to put a stick into his captain, and had thought better of him. The surgeon looked at hands before faces, which was where Ysra looked. The girl with the ledger counted everything. Ysra had counted the girl counting, eleven times in one afternoon, and had felt something close to fellowship. The dog had three good legs and made no sound at all. She did not trust anything that did not bark.
 
 And the captain stopped.
 
@@ -928,7 +930,7 @@ The mill rang for bread, flat and cracked, and on the far bank she stood up.
 
 So did four riders in dark coats, new since first light. They came down out of the alders to the water's edge behind her and stopped exactly where the forms stopped them, and sat their horses, and watched. Her men, come to carry whatever she took.
 
-Darrow was on the keeper's stone before the bell had finished. He had walked out again with the stick a quarter hour early, a stone at a time, so that she would find him standing.
+Darrow was already on the keeper's stone. He had walked out again with the stick a quarter hour before the bell, a stone at a time, so that she would find him standing.
 
 She came onto the glaze and stopped three stones off, and took her gloves off finger by finger.
 
@@ -948,7 +950,7 @@ It was not her blade. It was her shoulder, low, into his ribs, the whole slight 
 
 For the first time since the meadow he moved. The stick went out from under his hand and skated away across the ice, over the lip of the fall, and was gone. On the bank somebody shouted his name. He felt the river under the glaze, very close, very loud, and the old body said *go with it, step, step and turn and you have her*, and he did not. He dropped his weight instead and found the edge of the keeper's stone with his heel, and came back onto it the way a man comes back onto a horse he has nearly come off; and while he did it her point went in along his sword arm from the wrist almost to the elbow, quick and shallow and very neat, because a man climbing back onto a stone has no arm to spare.
 
-Then he was square again, without the stick, and the blood was running warm into the cuff of his glove, and he was still on the stone.
+Then he was square again, without the stick, and the blood was running warm over his wrist into his hand, and he was still on the stone.
 
 She stepped back. One stone. Two. Three. Her point dropped, and she stood on the glaze with her weight on her back foot and waited for him, the way a door stands open.
 
@@ -982,13 +984,13 @@ She said it as a fact about him: a careless man, a river, a Lance that did as it
 
 *Everyone knew.*
 
-The river was loud under the ice. The near bank was too far off to hear it over the water. Only he had. He stood on the stone with his own blood running off the blade, and from somewhere very far back a voice he had ridden knee to knee with since they were squires said *Ride wide today*, and almost said more.
+The river was loud under the ice, and she had said it low, breathing round the shoulder. Nobody on the near bank could have heard her over the water. Only he had. He stood on the stone with his own blood running off the blade, and from somewhere very far back a voice he had ridden knee to knee with since they were squires said *Ride wide today*, and almost said more.
 
 "Who's everyone?" he said.
 
 "The Second." She looked up at him, puzzled now, for the first time since the meadow. "Everyone in the Second knew. Why?"
 
-Any answer he had was too big to give a woman lying on the ice. Behind him, on the near bank, Maelis had her roll open on the cart's tail and her needle threaded; Wren had both hands over her mouth; Hollis was on his feet at the oxen's heads with his fists at his sides because the forms said so; and Rae sat the box with the reins in her lap, watching the four men across the water, who were watching her. The woman at his feet had seen every one of them. She had his face, and the girl's, and the cart's tracks on every road since the spring. And upstream of the mill the bridge was full of carts drawn up the wrong way, and nobody had yet asked them what they were running from.
+Any answer he had was too big to give a woman lying on the ice. He looked back once. On the near bank, Maelis had her roll open on the cart's tail and her needle threaded; Wren had both hands over her mouth; Hollis was on his feet at the oxen's heads with his fists at his sides because the forms said so; and Rae sat the box with the reins in her lap, watching the four men across the water, who were watching her. The woman at his feet had seen every one of them. She had his face, and the girl's, and the cart's tracks on every road since the spring. And upstream of the mill the bridge was full of carts drawn up the wrong way, and nobody had yet asked them what they were running from.
 
 She lay on the ice and waited for him to decide what she was.
 

@@ -835,12 +835,22 @@ def mood_mark(word, size=16):
             f'{halo}<ellipse cx="10" cy="16" rx="7" ry="2.6" fill="{PAL[MOOD_COAL.get(w, "faint")]}"/>{tongues}{crack}</svg>')
 
 
-def d20_glyph(nat, result="", size=32):
-    """A twenty-sided die with the number it showed; coloured by the outcome, lit for a natural twenty or one."""
+def kept_die(nat, mode=""):
+    """The face a roll kept: "1/15" with advantage keeps 15, with disadvantage 1; a single die is itself."""
     try:
-        n = int(str(nat).split("/")[0])
+        faces = [int(x) for x in str(nat).split("/") if str(x).strip()]
     except (TypeError, ValueError):
-        n = None
+        return None
+    if not faces:
+        return None
+    m = str(mode or "").lower()
+    return max(faces) if "adv" in m else min(faces) if "dis" in m else faces[0]
+
+
+def d20_glyph(nat, result="", size=32):
+    """A twenty-sided die with the number it showed (the kept one, when two were cast); coloured by the outcome, lit for a
+    natural twenty or one."""
+    n = nat if isinstance(nat, int) else kept_die(nat)
     res = str(result or "").lower()
     col = PAL["good"] if "success" in res else PAL["warn"] if "partial" in res else PAL["bad"] if "fail" in res else PAL["brass_dim"]
     crit = n in (20, 1)
@@ -2426,7 +2436,8 @@ class Site:
             m_res = re.search(r"\*?((?:Critical )?(?:[Ss]uccess|[Ff]ailure)|Partial[^*—]*)\*?", body)
             m_tot = re.search(r"=\s*\*{0,2}(-?\d+)\*{0,2}", body)
             res = m_res.group(1).strip() if m_res else ""
-            die = d20_glyph(m_nat.group(1), res) if m_nat else ""
+            mode_ = "adv" if re.search(r"\(adv", body) else "dis" if re.search(r"\(dis", body) else ""
+            die = d20_glyph(kept_die(m_nat.group(1) + (f"/{m_nat.group(2)}" if m_nat.group(2) else ""), mode_), res) if m_nat else ""
             rows.append(f'<div class="dice-row">{die}<span class="dice-body">{inline(body)}</span></div>')
             last, casts = (tag, die, m_tot.group(1) if m_tot else "", res), casts + 1
         if last is None:  # only an Inspiration line: nothing to sum up
@@ -2478,8 +2489,8 @@ class Site:
         tier_row = next((r for r in self.chapters_csv if str(r.get("chapter")) == str(ch["number"])), None) if ch["number"] else None
         if tier_row and tier_row.get("tier") in TIER_SEAL:
             head.append(f'<div class="seal-row">{svg_seal(tier_row["tier"], 44)}<span class="lbl">{esc(TIER_DONE.get(tier_row["tier"], tier_row["tier"]))}</span></div>')
-        recap = (self.world.get("recaps") or {}).get(ch["slug"])
-        if recap:  # the reader's reminder, under the title and before the chapter's own first words
+        recap = (self.world.get("recaps") or {}).get(prev_ch["slug"]) if prev_ch else None  # a recap is written at its chapter's climax
+        if recap:  # the reader's reminder of the chapter before, under the title and before this chapter's own first words
             head.append(f'<aside class="previously"><span class="lbl">Previously</span><p>{esc(recap)}</p></aside>')
         if ch["epigraph"]:
             lines = "".join(f"<p>{inline(x)}</p>" for x in ch["epigraph"]["lines"])
@@ -3656,9 +3667,9 @@ class Site:
                 d20 = c.get("d20", "") + (f"/{c['d20_b']}" if c.get("d20_b") else "")
                 cres = c.get("result", "")
                 sup = " superseded" if i < len(casts) - 1 else ""
-                lines.append(f'<li class="roll-cast{sup}">{d20_glyph(c.get("d20"), cres, 26)}<span class="roll-math num">d20 <b>{esc(d20)}</b> {esc(c.get("mods", ""))} = <b>{esc(c.get("total"))}</b></span>'
+                lines.append(f'<li class="roll-cast{sup}">{d20_glyph(kept_die(d20, c.get("mode")), cres, 26)}<span class="roll-math num">d20 <b>{esc(d20)}</b> {esc(c.get("mods", ""))} = <b>{esc(c.get("total"))}</b></span>'
                              f'<span class="roll-res">{esc(cres.title())}</span></li>')
-            rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(last.get("d20"), res)}<span class="dice-tag">{esc(first.get("stat", "").upper() or "FLAT")} · DC {esc(first.get("dc"))}</span>{times}'
+            rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(kept_die(last.get("d20", "") + (f"/{last['d20_b']}" if last.get("d20_b") else ""), last.get("mode")), res)}<span class="dice-tag">{esc(first.get("stat", "").upper() or "FLAT")} · DC {esc(first.get("dc"))}</span>{times}'
                         f'{badge(res.title(), cls)}</div>'
                         f'<details class="roll-more"><summary>the roll</summary><ul class="roll-casts">{"".join(lines)}</ul></details>'
                         + (f'<p class="roll-where">{where}</p>' if where else "") + '</li>')

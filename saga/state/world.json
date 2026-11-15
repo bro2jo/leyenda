@@ -7,17 +7,17 @@
   "chapter_file": "saga/chronicle/07-the-far-bank.md",
   "scenes": [],
   "location": {
-    "place": "coldmere",
+    "place": "river-mill",
     "detail": "the keeper's stone on the weir below the river mill, the rider down on the ice before him",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
-  "season": "clear cold after the first snow, on the road below the mountain",
+  "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
   "current_quest": {
     "name": "The Road",
-    "on_the_page": "The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.",
+    "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
+  "current_struggle": "The weir: the rider down on the ice at his feet, her four riders held on the far bank only by the forms, his stick gone over the fall and his sword arm cut, and what she is to be is his to decide.",
   "last_beat": "She lay on the ice with her hand to her shoulder, her four riders held on the far bank by the forms, and waited for him to decide what she was.",
   "companions": {
     "maelis": {
@@ -193,6 +193,8 @@
   ],
   "inventory": [
     "infirmary shirt and breeches",
+    "the summons under the forms, taken down nail by nail, inside his coat",
+    "a sealed letter with his name on it, from the miller, unopened, inside his coat",
     "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder"
   ],
   "keepsakes": [

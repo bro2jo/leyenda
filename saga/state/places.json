@@ -138,6 +138,26 @@
       "description": "A track between two walls that leaves the Holloway above Coldmere and runs north round the far side of the tarn, past a shepherds' fold on the north shore, then down off the moor's shoulder to a hamlet with a bell-post where the tracks cross, and on along the turnip country, before it bends south again toward the tarn and comes down on Coldmere from the north. Rae turned her cart onto it rather than drive into a Lance on the march. Every door on it opened to the carter, Wren counted, until the company was on her cart."
     },
     {
+      "id": "river-mill",
+      "name": "The river mill",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "mill",
+      "x": 160,
+      "y": 112,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "05",
+        "scene": "interlude"
+      },
+      "description": "The mill at the end of the mill tracks, in the hill country north of Coldmere, where Hale sends his salt by Rae's cart, as usual. Lamps burn in its windows, and its bell, flat and cracked, rings the millers in at first light and again at noon for their bread. Below it the river comes down under a lid of ice to a weir: a road of dressed stones a stride wide, bank to bank, glazed by the spray, all but the keeper's stone halfway across. Upstream a bridge crosses to the far bank, where carts came up out of the dark and drew up the wrong way, everyone looking back.",
+      "aliases": [
+        "the river mill",
+        "the weir"
+      ]
+    },
+    {
       "id": "wend-landing",
       "name": "The Wend landing",
       "label": "Wend landing",
@@ -474,6 +494,27 @@
       206,
       153
     ],
-    "coldmere"
+    "coldmere",
+    [
+      206,
+      149
+    ],
+    [
+      199,
+      140
+    ],
+    [
+      190,
+      131
+    ],
+    [
+      180,
+      123
+    ],
+    [
+      170,
+      117
+    ],
+    "river-mill"
   ]
 }

@@ -17,20 +17,31 @@
   "appearance": "Slight and very upright, her hair cropped short as a page's, in a dark coat cut close for riding with six dark buttons down its front and gloves of thin dark leather that fit like skin. She sits a long-legged horse without shifting, keeps her hands quiet, and moves on ice as if it had been laid down for her.",
   "first_seen": {
     "chapter": "06",
-    "scene": "interlude",
+    "scene": "2",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#interlude"
+    "anchor": "chronicle/06-the-weir.html#scene-2"
   },
   "last_seen": {
     "chapter": "06",
     "scene": "climax",
-    "place": "coldmere",
+    "place": "river-mill",
     "anchor": "chronicle/06-the-weir.html#climax"
   },
   "last_seen_doing": "Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and waited for him to chase, then came in and ran onto his point; told him, as a fact about him, what she had been told about the ford.",
   "now": "Down on the ice between the second and third stones with a wound high in her left shoulder, her sword against the lip of the fall, her four riders held on the far bank by the forms.",
   "story_so_far": "Sent from Calden to bring in the captain of the Ninth alive and not told why, Ysra Tal lost a day to the carter's lying road, watched the company from a distance, and summoned him under the forms to the weir. Her one question was why he would not kneel. At the noon bell her footwork found a man who would not move, and she went down on the ice with his point in her shoulder, wanting a reason for the first time.",
+  "quote": {
+    "text": "You did not move.",
+    "chapter": "06",
+    "scene": "climax"
+  },
   "known_facts": [
+    {
+      "fact": "She told Darrow she has orders to bring him in alive and was not told why, and that she will take him at the mill's noon bell whether he has answered her or not.",
+      "chapter": "06",
+      "scene": "7",
+      "evidence": "I have orders to bring you in alive, Captain. I was not told why."
+    },
     {
       "fact": "She came from Calden on an order to bring in the captain of the Ninth Lance alive, with no reason given.",
       "chapter": "06",
@@ -111,6 +122,27 @@
     "deeper": []
   },
   "appearances": [
+    {
+      "chapter": "06",
+      "scene": "2"
+    },
+    {
+      "chapter": "06",
+      "scene": "4"
+    },
+    {
+      "chapter": "06",
+      "scene": "5",
+      "mention": true
+    },
+    {
+      "chapter": "06",
+      "scene": "7"
+    },
+    {
+      "chapter": "06",
+      "scene": "between-6"
+    },
     {
       "chapter": "06",
       "scene": "interlude"

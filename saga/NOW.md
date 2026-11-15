@@ -4,14 +4,14 @@
 
 **BOOK II — THE TEMPERING ROAD · Chapter 7 — The Far Bank**
 
-- **Where:** Coldmere; the keeper's stone on the weir below the river mill, the rider down on the ice before him.
-- **The quest:** *The Road.* The Captain of the Ninth has gone down the Thousand Steps on his own legs, having asked the Confessor on the lower terrace to keep his name first on the writ, so the hunt follows him down the Holloway and not the House. With him on the carter's cart go Hollis on a mule, Maelis with her count and a sword called Patience, Wren with her ledger, and the grey hound; behind them the banner that is not grey is coming up the road, and the Confessor has gone down to meet it.
-- **What Darrow is fighting right now:** The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.
+- **Where:** The river mill; the keeper's stone on the weir below the river mill, the rider down on the ice before him.
+- **The quest:** *The Road.* North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.
+- **What Darrow is fighting right now:** The weir: the rider down on the ice at his feet, her four riders held on the far bank only by the forms, his stick gone over the fall and his sword arm cut, and what she is to be is his to decide.
 - **With him:** Maelis Vorne (On the near bank at the cart's tail, her needle threaded.) · Ser Hollis Garrow (On the near bank at the oxen's heads.) · Wren Ashdown (On the near bank behind the cart.) · Rae Thorne (On the cart's box on the near bank.) · Ash (Across Wren's feet.)
-- **Also here:** Hale (Stood in his kitchen door in the dark and watched his niece take the cart out without a lamp; told her the summer was written, signed or no…) · Ser Oswin (Heard Darrow's ford and said he would think on it, and drank to the river; knelt at the crossroads stone at first light; told Darrow the ri…) · Ysra Tal (Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and wai…)
+- **Also here:** Ysra Tal (Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and wai…)
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (0 of 3 told)
-- **Against him:** The rider, who will take him at the mill's noon bell whether he has answered her question or not.
-- **Next:** The noon bell.
+- **Against him:** The rider's four men on the far bank, held there only while the forms hold, and whoever sent her for him alive.
+- **Next:** His answer: what he does with the rider on the ice.
 - **Open choice (the climax of Chapter 6):** What does Darrow do? 1. Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off. / 2. Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head. / 3. Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*

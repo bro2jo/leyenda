@@ -673,7 +673,10 @@ def knot_line(plan):
     if tied < need:
         return None
     road = (plan.get("route", {}).get(f"book{book}") or {}).get("road")
-    left = [k for k, v in plan.get("core_beats", {}).items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned"]
+    # a beat this chapter's own slots carry lands here (in its week, or as the climax its last slot leads into), written yet or not:
+    # it is not left for a later chapter, so the line says the same on Thursday as at Saturday's close, and a missed day does not move it
+    here = {s.get("beat") for s in (plan.get("chapter") or {}).get("slots", []) if s.get("kind") == "spine" and s.get("beat")}
+    left = [k for k, v in plan.get("core_beats", {}).items() if re.match(rf"^b{book}\.\d+$", k) and v.get("status") == "planned" and k not in here]
     more = (len(left) + 1) // 2  # each chapter after this one lands at most two beats: one in its week, one as its climax
     when = ("at this chapter's climax (its beat folds into the transition)" if not left else
             f"in {more} chapter{'s' if more > 1 else ''} after this one: {len(left)} core beat{'s are' if len(left) > 1 else ' is'} still unwritten "
@@ -5503,6 +5506,9 @@ def cmd_record(args):
     prev_choice = kind == "choice" and int(ac.get("chapter", -1)) == ch  # a climax's Choice block belongs to its own chapter, even once the next is open
     if ch != int(pos["chapter"]) and not args.force and not prev_choice:
         die(f"{key} is chapter {ch}; the plan is on chapter {pos['chapter']} (--force re-records an older block)")
+    # an older chapter's block re-recorded: the plan has moved on, so the block is revised in the records only (no slot is
+    # written, no callback counted as offered or lapsed, no invitation passed); what it already paid stays paid
+    older = bool(args.force) and ch < int(pos["chapter"]) and not prev_choice
     files = R.chapter_files()
     path = files.get(ch)
     if not path:
@@ -5653,7 +5659,8 @@ def cmd_record(args):
                 probs.append(f"gm.threads: thread {dup['id']} already has this title ({dup.get('status')}): touch it by its id instead of opening it again")
         elif tu.get("id") is None or int(tu["id"]) not in tids:
             probs.append(f"gm.threads: no thread {tu.get('id')!r}")
-    if kind in ("scene", "interlude"):
+    s = None
+    if kind in ("scene", "interlude") and not older:
         s = find_slot_for(plan, ev, kind, args.slot)
         if s is None:
             probs.append("no slot for this block: a scene's slot is the one whose day is its date (`--slot N` names it; `plan slot N day=…` moves one)")
@@ -5664,7 +5671,7 @@ def cmd_record(args):
     rec_ctx = presence_ctx([p.get("id") for p in ev.get("people") or [] if not p.get("mention")],
                            (where or {}).get("place") or (world.get("location") or {}).get("place"))
     paid_ids = {f_["id"] for f_ in ev.get("fired") or []}
-    for it_ in callbacks_listed(st, rec_ctx)[0]:
+    for it_ in ([] if older else callbacks_listed(st, rec_ctx)[0]):
         if it_["id"] not in paid_ids and key not in (it_.get("offered_at") or []):
             it_["offered"] = int(it_.get("offered") or 0) + 1
             it_.setdefault("offered_at", []).append(key)
@@ -5672,7 +5679,9 @@ def cmd_record(args):
     # ---- the plan moves
     today = today_local().isoformat()
     wrote = f"{ch2(ch)}:{'s' + sk if kind == 'scene' else sk}"
-    if kind in ("scene", "interlude"):
+    if older:
+        print(f"{key}: an older chapter's block, revised in the records only (the plan is on chapter {pos['chapter']} and does not move)")
+    if kind in ("scene", "interlude") and not older:
         if s.get("status") == "written" and s.get("wrote") == wrote:
             print(f"slot {s['n']} already written as {wrote}")
         else:
@@ -5720,7 +5729,7 @@ def cmd_record(args):
             else:
                 for line_ in pass_invite(st, s_inv, where_inv):
                     print(line_)
-    if kind in ("scene", "interlude", "climax"):  # an invitation offered at the last close and not answered by this one has passed, at its cost
+    if kind in ("scene", "interlude", "climax") and not older:  # an invitation offered at the last close and not answered by this one has passed, at its cost
         for s_ in plan["chapter"].get("slots", []):
             if (s_.get("invite") or {}).get("status") == "waiting" and s_.get("status") == "written" and not (kind != "climax" and s_.get("n") == s.get("n")):
                 for line_ in pass_invite(st, s_, where_inv):
@@ -5736,16 +5745,24 @@ def cmd_record(args):
                     st.touch("ledger")
                 print(f"{did} already fired at {where_} (kept)")
                 continue
+        if args.force and str(did).startswith("r."):  # a rule already honoured here is not honoured twice
+            r_ = next((x for x in st.ledger.get("rules", []) if x.get("id") == did), None)
+            if r_ and where_ in (r_.get("fired") or []):
+                print(f"{did} already honoured at {where_} (kept)")
+                continue
         print(fire_item(st, did, where_, evd))
     for v in ev.get("voided") or []:
+        if args.force and str((find_due(st.ledger, v["id"])[1] or {}).get("status", "")).startswith("void"):
+            print(f"{v['id']} already void (kept)")
+            continue
         print(void_item(st, v["id"], v["why"]))
     for lid in ev.get("lore") or []:
         old, new = lore_spoke(lid, wrote)
         print(f"{lid} spoken: {old or '—'} → {new}")
-    if ev.get("rank"):
+    if ev.get("rank") and not older:
         pos["rank_on_page"] = ev["rank"]
         print(f"rank on the page: {ev['rank']}")
-    for line_ in expire_callbacks(st, wrote if WHERE_RE.match(wrote) else ch2(ch)):  # a promise past its day lapses here, at its cost
+    for line_ in ([] if older else expire_callbacks(st, wrote if WHERE_RE.match(wrote) else ch2(ch))):  # a promise past its day lapses here, at its cost
         print(line_)
     # ---- the records
     ev.update({"chapter": ch, "scene": sk, "kind": kind})

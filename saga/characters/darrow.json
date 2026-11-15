@@ -14,7 +14,7 @@
     "faction": "ninth-lance",
     "mark": "knot"
   },
-  "appearance": "Thirty-two, tall and rangy, with short dark hair that won't lie flat, a few days of dark stubble and grey-green eyes in a lean, weathered face. His nose was broken once and set a little crooked, with a faint scar across the bridge; his smile comes out dry and lopsided, and his laugh carries the length of a hall. At Saint Ysolde's he wears a plain linen infirmary shirt, often with a grey wool blanket round his shoulders, and gets up the way he does everything now: the good leg first, then the bad one, then the slow transfer, as if crossing a frozen pond. Since the Steps he walks the road at the ox's head when the Mender allows it and rides the cart when she says so, and he keeps the borrowed stick though he no longer needs it to stand.",
+  "appearance": "Thirty-two, tall and rangy, with short dark hair that won't lie flat, a few days of dark stubble and grey-green eyes in a lean, weathered face. His nose was broken once and set a little crooked, with a faint scar across the bridge; his smile comes out dry and lopsided, and his laugh carries the length of a hall. On the road he wears a drover's coat of brown wool, caped at the shoulders, the cape mended by Rae and cut again at the weir, and walks at the ox's head on his own legs. Since the frost left the last two fingers of his right hand slow, he holds a stick or a sword high, in the thumb and the first two fingers; the borrowed stick he carried down the Steps went over the fall at the weir.",
   "portrait": "characters/darrow-book2.jpg",
   "portrait_alt": "Portrait of Ser Darrow in Book II: laughing as he walks a snowy road beside an ox, one hand on its wooden yoke and a walking stick in the other, a grey wool blanket worn round his shoulders like a cloak over a linen shirt, a great snow-covered mountain behind.",
   "portrait_focus": "52% 22%",
@@ -36,7 +36,7 @@
   "last_seen": {
     "chapter": "06",
     "scene": "climax",
-    "place": "coldmere",
+    "place": "river-mill",
     "anchor": "chronicle/06-the-weir.html#climax"
   },
   "last_seen_doing": "Answered her question under the forms, was moved off the dry stone once and lost the stick over the fall, climbed back with his sword arm cut, refused the ground she gave him, and held while she ran onto his point; heard from her that everyone in the Second knew the Grace would be thin that morning.",
@@ -2137,7 +2137,7 @@
       "fact": "The script showed him the rider's Finesse at nineteen, one more than his own at the ford on his best morning.",
       "chapter": "06",
       "scene": "7",
-      "evidence": "She had one more than he had ever had"
+      "evidence": "It was one more than the script had ever given him"
     },
     {
       "fact": "He told the rider he will not kneel because everyone who has asked wants something for it and will not say what; she called it an answer to why not yet.",
@@ -2168,6 +2168,12 @@
       "chapter": "06",
       "scene": "between-6",
       "evidence": "\"So am I,\" said Darrow."
+    },
+    {
+      "fact": "He did not count Aldric's letter among those who have asked him to kneel: he had answered that one himself.",
+      "chapter": "06",
+      "scene": "between-6",
+      "evidence": "He had answered that one himself, in ink."
     },
     {
       "fact": "He told her he will stand until someone on his own side of the river, who has never asked, asks him to kneel.",
