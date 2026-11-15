@@ -23,6 +23,17 @@
     640
    ]
   },
+  "arts/hammerfall.webp": {
+   "sha1": "718f7f073fb98567199d42f167382a7805bb6850",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/long_breath.webp": {
    "sha1": "f211d56cf25c5b34c6899f88b3ca5d6f72c218de",
    "sm": [
