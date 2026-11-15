@@ -321,3 +321,10 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-14#2,2026-11-14,,breakfast,"Donut hole, glazed",1 (assumed ~15 g),70,1,9,3.5,0.2,1.5,4.5,50,15,5,0.4,2,0.1,0,0,0,estimate,type not given; typical glazed donut hole
 2026-11-13#7,2026-11-13,,snack,"Movie theater popcorn, large, with butter topping","1 large (theater size), all of it; assumed ~3 tbsp butter topping",1400,15,110,104,20,50,1,1450,400,20,3,150,4,0,0,0,estimate,"reported 11/14 after the day closed; his words: had butter, ate it all; typical large ~1,100 kcal plus ~300 kcal topping"
 2026-11-14#3,2026-11-14,,breakfast,Black coffee,1 cup (assumed ~16 oz),5,0.6,0,0.1,0,0,0,10,230,5,0,14,0,0,0,0,estimate,his words: just black coffee
+2026-11-14#4,2026-11-14,,lunch,"Costco hot roasted chicken wings (ready-to-eat, deli rack)",6 whole wings (assumed ~100 kcal each),600,54,2,42,0,12,0.5,1500,450,30,2.4,48,4,0,0.6,180,estimate,no label given; typical seasoned roasted whole wing
+2026-11-14#5,2026-11-14,,lunch,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,1800,library,
+2026-11-14#6,2026-11-14,,lunch,"Chick-fil-A Sauce, dipping packet",2 packets,280,0,12,26,0,4,12,340,20,10,0,2,0,0,0,0,library,library row x2
+2026-11-14#7,2026-11-14,,lunch,Domino's GF small chicken bacon ranch pizza,2 slices (Friday's leftovers),410,18,34,22,1,8,3,940,220,240,1.6,24,2,0,0.2,100,library,library row x2
+2026-11-14#8,2026-11-14,,snack,Large apple + organic peanut butter,1 large apple + ~3 tbsp,400,15,40,25,8,4,24,150,520,40,1.5,85,1.5,8,0,0,library,his usual snack
+2026-11-14#9,2026-11-14,,snack,"Cinemark movie popcorn, large tub",half the tub (butter not given),550,7.5,55,35,10,17,0.5,700,200,10,1.5,75,2,0,0,0,estimate,"half of a typical large theater tub (~1,100 kcal); butter asked"
+2026-11-14#10,2026-11-14,,snack,"Coca-Cola, fountain",half a large (assumed ~16 oz of drink),190,0,52,0,0,0,52,15,5,5,0,0,0,0,0,0,estimate,half a large theater Coke with ice
