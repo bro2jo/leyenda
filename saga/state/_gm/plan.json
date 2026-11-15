@@ -2,226 +2,214 @@
   "_about": "GM plan and position. Never rendered. Prose for beats, quests and roads lives in saga/bible/_gm/arc.md (saga.py arc <id>); this file holds state. Edit through saga.py plan where a command exists; otherwise with Edit, keeping the canonical format (saga.py fmt).",
   "position": {
     "book": 2,
-    "chapter": 6,
-    "beat": "b2.2",
-    "next_scene": 8,
-    "stage": "climax",
+    "chapter": 7,
+    "beat": "b2.3",
+    "next_scene": 1,
+    "stage": "scene",
     "last_written": "ch06:interlude",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
   "chapter": {
-    "number": 6,
-    "week_start": "2026-11-08",
-    "question": "Who is the one rider on the long-legged horse, and can a man who cannot run hold a frozen weir against the finest footwork in the Lowmarch?",
+    "number": 7,
+    "week_start": "2026-11-15",
+    "question": "Can a company that will not run hold the crossing the ford was lost at, and what does the truth of that river cost the people who finally read it?",
     "slots": [
       {
         "n": 1,
-        "day": "2026-11-08",
+        "day": "2026-11-15",
         "kind": "spine",
-        "beat": "b2.1",
+        "beat": "b2.3",
         "float": false,
-        "plan": "The first day on the road out of Coldmere (whichever road he chose at the fork; if the choice is still open, the scene stays on the first miles that both roads share, the dawn bell behind them over the water). At the noon halt Maelis reads the Knots, a week since the last Reading, with the company a little way off and pretending not to listen; then she takes his right hand and tells him plainly that the two last fingers will not come back whole: the frost from the kennel grate has left them slow and half-numb for good, a different grip on a sword from now on (ledger c04.12b, a fate: never the knee, never mended, never a lecture). He tries the grip on the stick, then on the oilcloth sword, and says what he thinks of it; Hollis, who fights from a chair, has an opinion. The road goes on.",
-        "turn": "Darrow learns what the frost took for good and finds the grip that is left to him; the company learns he can be told a hard thing and keep walking.",
-        "tone": "bittersweet",
+        "plan": "The afternoon of the weir. Open on his answer to the weir choice (or, if it is still open at the close, keep her fate to Monday's opening by the default rule). Maelis sews the sword arm on the cart's tail, brisk and dry (the Hard-won needle; the two fingers stay as they are, never healed), and the company's verdict on a man who won by not moving is wry and loud. The stick comes back: Ash, who does not fetch, goes down the bank below the fall and brings it up in her teeth, once; or Rae cuts him one from the millrace hazel. Then the bridge: upstream, the far-bank carts start to cross in a hurry, the millers come down from the mill, and a miller names the captain of the Ninth (c06.8b: he does not turn his head). Rae reads the line before he says it: carts behind, children shushed, everyone looking back, the shape of the clan line at the ford (thread 3). At dusk something moves at the field's edge across the river, slow, many, and nobody says the word (T4 plant).",
+        "turn": "Darrow sees the ford's shape drawn up on the far bank and, for once, is on the right side of a bridge to do something about it; the company decides with him that nobody sleeps.",
+        "tone": "wry, then dread",
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch06:s1"
+        "status": "next",
+        "wrote": null
       },
       {
         "n": 2,
-        "day": "2026-11-09",
+        "day": "2026-11-16",
         "kind": "spine",
-        "beat": "b2.2",
+        "beat": "b2.3",
         "float": false,
-        "plan": "A rider on a long-legged horse on the skyline behind them at dusk, alone, not closing (thread 23: the horse shod for speed). Rae makes the road lie: she shifts the load and runs the cart twice over the soft ground at a crossing so that two carts' tracks go out of one, one set away up a side lane, then takes the real road; Wren counts the lie and approves of it. At the camp Hollis keeps his word from the Coldmere well: the second lesson, over the wall (Overwall), stones lobbed over the field wall into a hat on the far side, where the wall gives the mark no cover (callback c05.9a fires here). Darrow is cold and his hands are stupid and he puts the fourth stone in the hat.",
-        "turn": "The company learns it is hunted by one rider, not a column, and that a carter can make a road lie; Darrow learns the throw that goes over what stands between him and the mark.",
-        "tone": "tense, then comic",
-        "micro": null,
-        "challenge": null,
-        "invite": {
-          "who": "hollis",
-          "kind": "diversion",
-          "status": "taken",
-          "want": "to teach the second throw he promised at Coldmere's well, while the Captain is cold and wants something to do with his hands",
-          "if_ignored": "he lobs stones over the wall alone until the light goes, and says nothing about it",
-          "why_now": "he said tomorrow, over the wall, at the well three days ago, and tonight's camp has a wall"
+        "plan": "The bridge held, the mirror of Harrow Ford, and this time he holds: the carts cross under the mill's lamps through the night while what came through the fields reaches the far end. Darrow stands the bridge as he stood the stone, sewn arm and all; Rae's cart is the barricade and she reads the line before he says it (rae.road). What holds in every tier is shown here: every cart crosses, and the mill burns (the fixed loss: how it goes up is the scene's; its price comes at Sunday's climax by the tier). The warmth comes the same night: the millers' bread at the burned mill, forty strangers and five of the company round one fire. The millers speak of an older ring of standing stone in the frozen marsh up the north road, which the mill-folk do not go near. Ends on b2.3's beat choice: the millers.",
+        "turn": "Darrow holds a crossing he could not hold at the ford, and is left at a burned mill with forty people who now look to him: he must decide what they are to him.",
+        "tone": "action, then warm",
+        "micro": {
+          "beat": true,
+          "ask": "Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them?",
+          "options": [
+            "Keep them: the company goes on forty larger, at a cart's pace.",
+            "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.",
+            "Leave them at the mill with the company and go after what came through the fields: follow its trail back west at first light, with Ash and nobody else."
+          ],
+          "bearing": [
+            {
+              "hearth": 2
+            },
+            {
+              "banner": 2
+            },
+            {
+              "unsworn": 2
+            }
+          ],
+          "default": 1
         },
-        "status": "written",
-        "wrote": "ch06:s2"
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 3,
-        "day": "2026-11-10",
+        "day": "2026-11-17",
         "kind": "spine",
-        "beat": "b2.2",
+        "beat": "b2.4",
         "float": false,
-        "plan": "The road's people, on the mill tracks: the tracks' inn in the hill country, where a drover tells the taproom that a rider on a long-legged horse stood a round and asked after a captain with a stick, and paid in good coin. A family that fled a river farm up the side lanes rather than east with the levy is in the inn yard with a lame ox and asks the company for the loan of Hob to the next village. The company is spoken of by strangers for the first time as a thing on the road, and a stranger asks something of it. Ends on the small choice.",
-        "turn": "Darrow finds the company has become a thing people on the road ask things of, and decides what it owes a stranger; the rider is confirmed as one who asks politely and pays well.",
-        "tone": "warm, wary underneath",
-        "micro": {
-          "axis": "hearth_banner",
-          "ask": "A family driven off their farm asks the company for help on the road, which will cost it a day with a rider behind it. What does Darrow do?",
-          "options": [
-            "Give them the day: the company walks at their pace to the next safe place.",
-            "Give them bread and a word on the road ahead, and keep the company's own pace.",
-            "Ask Rae what the road's custom is, and do that."
-          ],
-          "bearing": [
-            {
-              "Banner": 1
-            },
-            {
-              "Hearth": 1
-            },
-            null
-          ],
-          "default": 2,
-          "answer": {
-            "option": 3,
-            "by": "darrow"
-          }
-        },
+        "plan": "Hollis takes the paper out of the leg's cup at last, at the burned mill, and looks at the wax: the seal (thread 1 and thread 2 pay off here; the T3 reveal is on the page with its plants). The order to charge, into a river the Second had been told to hold. He reads it once and puts it away and says nothing that matters all day, which is the thing to fear. Callback c05.9b may fire here or on Friday (the well, sober).",
+        "turn": "Hollis, who carried the order unread for a year, reads it; the company learns the old captain's quiet is worse than his noise.",
+        "tone": "grief and anger, plain and short",
+        "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch06:s3"
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 4,
-        "day": "2026-11-11",
-        "kind": "spine",
-        "beat": "b2.2",
-        "float": false,
-        "plan": "The rider is seen plainly for the first time: a woman, slight, on the far side of a frozen water-meadow at noon, sitting a long-legged horse as still as a post, close enough to count the buttons on her coat and not closing. She watches the company a long while. Darrow's first move is the old one: toward her, across the meadow, alone, before anyone has said a word; whether he goes on is his, on the page, and what it costs him with the company follows from it. The company says its piece: Hollis names what she is by how she sits ('that's a duelist; look at her hands'); Maelis says the obvious thing, that a hunter who could have closed and did not is waiting for something; Rae keeps the oxen standing; Wren stops counting, which is how the company knows she is frightened; Ash will not stop looking at where the rider was. The rider rides off at a walk. A tally moment: held or chased by what he does, never scripted (plan tally at the record).",
-        "turn": "The company knows the hunter is one woman who could have closed and chose not to; Darrow's instinct goes to her first, and the page shows whether he follows it and what that costs.",
-        "tone": "eerie",
-        "micro": null,
-        "challenge": null,
-        "invite": {
-          "who": "rae",
-          "kind": "problem",
-          "want": "to tell him what the salt sack under the load is for and whose line it goes down, before they come down to the mill where it goes",
-          "why_now": "the mill at the end of the tracks is a day or two off and the sack goes there; she tells a hard thing before he finds it, and she gave him the call at the inn",
-          "if_ignored": "she tells him anyway on the box next morning, in four sentences, before the mill comes in sight, and does not answer the question that comes after",
-          "status": "taken"
-        },
-        "status": "written",
-        "wrote": "ch06:s4"
-      },
-      {
-        "n": 5,
-        "day": "2026-11-12",
-        "kind": "spine",
-        "beat": "b2.2",
-        "float": false,
-        "plan": "Her word arrives: a message left where the company must find it (nailed under the writ on a bell-post, or carried by a mill child paid a copper), exact to the point of comedy: the captain of the Ninth is to come to the weir below the mill at first light, alone, under the forms of a knight's meeting, to answer a question; no name signed; the hand a duelist's, every letter cut like a stroke. The company has it out over the fire, loudly, each with a point: Hollis for the forms, Wren for running tonight, Rae for reading the ground first, Maelis for his hands. Ends on the small choice.",
-        "turn": "Darrow is asked for by the forms, by name and alone, and chooses how a man who swears to no stone answers a knight's summons.",
-        "tone": "tense",
+        "day": "2026-11-18",
+        "kind": "quest",
+        "quest": "rae.tether",
+        "stage": 2,
+        "float": true,
+        "plan": "The Tether, stage 2 (a hand), re-skinned to the road: the cart's tail at dusk, away from the mill's smoke. Her palms: the rope-burn ridges, the crooked thumb; the cage, her father, the splice that went quiet before it went. A rope is softest where it is worn smooth, she says, which is the only thing she and Maelis have ever agreed on without knowing it. Then her question, a carter's, after the weir: why he does not take the fast road down and kneel and have it all back, when she would, if anyone offered it to carters. Ends on the micro. Closes with the Reckoning box line for the Tether.",
+        "turn": "Rae shows him a hurt she has never shown anyone and asks him the question nobody on his bank has asked; he must answer her, not a hunter.",
+        "tone": "warm, then honest",
         "micro": {
-          "axis": "sworn_unsworn",
-          "ask": "An unsigned summons asks the captain of the Ninth to the weir at first light, alone, under the forms. What does Darrow do?",
+          "axis": "candor_guile",
+          "ask": "Why not the fast road, then? Down, kneel, have it back. What does Darrow say?",
           "options": [
-            "Answer by the forms: go to the weir at the hour named, alone, and let the company watch from the bank.",
-            "Owe the forms nothing: take the company to the weir in strength tonight and hold the narrow place before she comes.",
-            "Send Wren with his answer and a question of his own: who sent her, and why alive."
+            "\"Because it wasn't mine. This is.\"",
+            "\"Because they'd hang me at the bottom of the Steps before I reached a stone.\"",
+            "Say nothing; show her the knee."
           ],
           "bearing": [
             {
-              "Sworn": 1
+              "candor": 1
             },
             {
-              "Unsworn": 1
+              "guile": 1
             },
             null
           ],
-          "default": 1,
-          "answer": {
-            "option": 1,
-            "by": "darrow"
-          }
+          "default": 1
         },
         "challenge": null,
         "invite": null,
-        "status": "written",
-        "wrote": "ch06:s5"
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 5,
+        "day": "2026-11-19",
+        "kind": "spine",
+        "beat": "b2.4",
+        "float": false,
+        "plan": "Hollis carries the read seal a day. The company goes round him rough and warm and talking, not silent: Maelis with work, Wren with a story he can correct, Rae with the oxen, each in their own way, and he lets them. He does not drink, or he does, and the page shows which. By evening he has the question ready and has not asked it. Callback c05.2a may fire (Rae has known since the inn what Darrow saw; she does not open what she carries). Under shape B (the Knot not tied by tonight's close), Friday is re-planned at this close.",
+        "turn": "The company holds Hollis up without being asked to; Darrow sees the question coming and knows he will have to choose how much of the ford to give him.",
+        "tone": "rough and warm, waiting",
+        "micro": null,
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 6,
-        "day": "2026-11-13",
+        "day": "2026-11-20",
         "kind": "spine",
-        "beat": "b2.2",
+        "beat": "b2.4",
         "float": false,
-        "plan": "The night before the weir. The company reads the ground by lantern: a frozen weir below a mill, the water loud under the ice, one dry stone in the middle where a man can stand square and nobody can come at him from more than one side. Hollis drills him there in the dark, the Seated Blade from his feet: the stance that refuses to move (Stillwater), the sword in the new grip. Rae draws the cart up on the bank where it will do most good and says why. Wren keeps a book on the morning that nobody will bet against. It is rowdy and warm because it has to be, and then it is quiet. Callback c05.7a fits the rowdy part: someone answers for Wren who she is for, in passing, the way the company says true things. Set-up for b2.3 (arc pacing, Book II under a fast gate; shape only, no plot of its own): the weir lies below the river mill at the end of the mill tracks; the mill's lamps are lit above, and on the far bank the first carts off the river farms have come up to its bridge, drawn up wrong, carts behind and everyone looking back. After dark Rae takes her salt sack in to the mill (the drop) and comes back with what the drop held for him, if anything, unopened till after the weir.",
-        "turn": "Darrow chooses his ground: the one stone on the weir where footwork is worth nothing and standing is worth everything, and the company arranges itself around that choice.",
-        "tone": "rowdy, then quiet",
-        "micro": null,
-        "challenge": null,
-        "invite": {
-          "who": "wren",
-          "kind": "favour",
-          "want": "to be told first what he means to do on the ice in the morning, before he does it, as he promised her on the mountain",
-          "why_now": "it is the night before he goes out onto the weir alone, and at the water-meadow he went out toward the rider without a word to her: told first twice, not once; she wants the third before the morning, not after",
-          "if_ignored": "she keeps the book on the morning all night and enters nothing in his column",
-          "status": "taken"
+        "plan": "Hollis asks, sober (r.b2.hollis_sober is armed): what did the Captain see from the water? Darrow has the three heartbeats, the Second dry on its bank, the horse already turned, and since the weir what the rider said: everyone in the Second knew. Ends on b2.4's beat choice, never Saturday.",
+        "turn": "The one man who was under the order asks for the truth of it, and Darrow must decide how much of the ford a friend can carry.",
+        "tone": "tense, quiet",
+        "micro": {
+          "beat": true,
+          "ask": "Hollis asks what the Captain saw from the water. What does Darrow tell him?",
+          "options": [
+            "All of it, at once, before Hollis has finished asking: the three heartbeats, the Second dry on its bank, the horse already turned when the order came.",
+            "The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.",
+            "All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again."
+          ],
+          "bearing": [
+            {
+              "candor": 3
+            },
+            {
+              "guile": 2
+            },
+            {
+              "unsworn": 2
+            }
+          ],
+          "default": 1
         },
-        "status": "written",
-        "wrote": "ch06:s6"
+        "challenge": null,
+        "invite": null,
+        "status": "planned",
+        "wrote": null
       },
       {
         "n": 7,
-        "day": "2026-11-14",
+        "day": "2026-11-21",
         "kind": "spine",
-        "beat": "b2.2",
+        "beat": "b2.5",
         "float": false,
-        "plan": "First light at the weir. She comes alone, on foot, the horse left on the bank, and stops at the ice's edge: courteous, clipped, deadly literal. She asks her question before any blade is drawn: why will he not kneel. He answers, or does not; she tests him once, a single pass on the ice that he survives by refusing to move, and steps back to think about it, which is the strangest thing anyone there has seen a fighter do. She says she has orders to take him alive and does not know why, and that she will take him at the next bell whether he has answered or not. The fight itself waits for the bell: the climax. From the stone at first light the mill bridge above is in sight, with more carts on its far bank than last night (b2.3's set-up, one line).",
-        "turn": "Darrow meets the hunter face to face and learns she does not know why he is wanted alive; she learns there is a man her footwork has no answer for.",
-        "tone": "taut, curious, nearly funny",
+        "plan": "The road north to the ring the millers spoke of, a lead-in with no choice: the frozen marsh, the cold, the company smaller in the open. On the road Darrow opens the miller's letter at last, the one in the hand that was not Aldric's: Aldric does not sleep (q2.lantern's letter; its answer waits for another week). By dusk the ring is in sight across the reeds, older than Calden. Under shape B this day is re-planned at Thursday's close.",
+        "turn": "Darrow learns from the letter that the man he wants to face is not sleeping either, and walks toward an old ring he means to read.",
+        "tone": "wonder, uneasy",
         "micro": null,
         "challenge": null,
-        "invite": null,
-        "status": "written",
-        "wrote": "ch06:s7"
-      },
-      {
-        "n": 8,
-        "day": null,
-        "kind": "interlude",
-        "pov": "ysra-tal",
-        "float": false,
-        "plan": "The hunt from her side, written on the Wednesday or Thursday close: an order to take a man alive with no reason given, and her literal obedience to it; the two carts' tracks out of one, read on the soft ground and believed, and the day lost to the wrong lane; what she is right about (a man who will not be moved has no answer in footwork, and she has never met one); her exactness, funny without her knowing it; the company watched from a distance, each of them weighed. Never why he is wanted alive; nothing of the Spire. Her name is hers in her own head: the interlude may speak it (the reader learns it; the company has only 'the rider'), and the base file takes it from this block. Base file ysra-tal.json and a cast.md entry before the record.",
-        "turn": "The Needle, who has never disobeyed an order or needed a reason, finds herself wanting one.",
-        "tone": "exact, cold, nearly comic",
-        "micro": null,
-        "challenge": null,
-        "invite": null,
-        "status": "written",
-        "wrote": "ch06:interlude"
+        "invite": {
+          "kind": "favour",
+          "who": "wren-ashdown",
+          "want": "to see the script on his palms when it comes, what it looks like, and to be told first what it says at the ring",
+          "why_now": "tomorrow he means to read an old ring in the marsh, and she has watched the script come up on his hands all week without once being shown it",
+          "if_ignored": "she goes to the ring without asking, and keeps to the back with a lamp",
+          "status": "waiting"
+        },
+        "status": "planned",
+        "wrote": null
       }
     ],
     "world_moves": [
-      "the reader of writs and his two grey cloaks asked at Coldmere's mill after Thorne's cart and rode on south without it",
-      "a levy column drove three farms' cattle and their people east along the river road ahead of it",
-      "the first hard frost set the river's weir and shallows in ice, so a cart could cross where there was no bridge"
+      "In the night the far-bank carts cross on their own, the millers bar the mill and light every lamp, and by morning the fields across the river are full of slow shapes standing at the edge of the light.",
+      "Riders in dark coats watch the mill bridge from the far ridge for an hour, then turn back south.",
+      "A Confessor's rider comes up the mill tracks with a new writ, and the bell-post at the fork carries a third paper."
     ],
     "climax": {
-      "plan": "The Weir (arc b2.2). At the bell she comes onto the ice, and the fight is a duel that is almost a conversation: the finest footwork in the Lowmarch against a man standing square on one dry stone who will not be moved and will not kneel (Stillwater Stance, Might). He cannot match her and does not try. By tier: Triumph, he holds until she tires and talks, and she leaves him standing and tells her men he was not there; Hard-won, he holds, Maelis sews him afterward, and she takes a wound she did not expect from a man who did not move; Costly, he holds, but Wren is taken for an hour on the bank and talks her way out, and the hunter now knows the girl's face; Setback, he holds only because Ash takes her blade hand, and she withdraws with the dog's blood on her and a grudge. In every tier she is down on the ice at the end, by his holding or Ash's teeth, and in every tier she says the thing she was told and should not have said: that the Second was told to hold the west bank that morning, and everyone knew the Grace would be thin. Then the choice, with her on the ice.",
-      "tone": "action, then still",
+      "plan": "Shape A (the Knot tied by Thu 11/19's close): The Stonewright Ruin (arc b2.5). A ring of broken Oathstone in a frozen marsh, older than Calden, by lamplight. Darrow reads what the Reckoning lets him; Wren finishes the line he cannot and does not say how (the first time her reading is on the page: openly if r.b2.wren_reads arms, caught at it if not). The script says what the stones are for (T1 and T2 confirmed). Maelis says, \"Yes,\" and nothing else. The week's two beat outcomes land here by the tier beside the ring's (the bridge's price, Hollis's hour). Then the choice; once he answers, the crossing (t2) is its Choice block, and Book III opens with Ch 8. Shape B (not tied by then): b2.4's choice becomes this climax (Friday re-planned at Thursday's close), and b2.5 and the crossing are Ch 8's.",
+      "tone": "wonder first, then dread; the Book's one long silence",
       "checks": [
-        "might (Stillwater Stance: the stone, the stance, refusing to be moved while the best footwork he has ever seen looks for the way round)",
-        "resolve (the forms: not chasing her when she gives ground, the one thing that would lose him the stone)",
-        "insight (Warden's Eye: reading her orders in her face, and whether she knows why he is wanted alive)"
+        "resolve (Warden's Eye: reading the ring by lamplight, as far as the Reckoning lets him)",
+        "resolve (letting Wren finish the line without asking how)",
+        "vigor (the marsh at night: the cold, the lamps lit and kept)"
       ],
       "options": [
-        "Spare her where she lies: have Maelis bind what the ice or Ash has done, and let her men carry her off.",
-        "Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head.",
-        "Let her up with a message for the man who sent her, in Darrow's own words, the ford as he saw it from the water, and watch her walk to her horse."
+        "Tell the company, all of it, at the ring, with Maelis's one word behind him.",
+        "Carry it alone until he knows what to do with it.",
+        "Tell them, and send it: the stones' words in his own hand down the Holloway by the Market's line, to every bell-house that will read it, before the Confessors can answer."
       ],
       "default": 1
     },
-    "previous_devices": []
+    "previous_devices": [
+      "invite"
+    ]
   },
   "core_beats": {
     "b1.1": {
@@ -258,7 +246,7 @@
     },
     "b2.3": {
       "title": "The Mill at Coldmere",
-      "status": "planned"
+      "status": "in_progress"
     },
     "b2.4": {
       "title": "Hollis's Writ",
@@ -389,7 +377,8 @@
     "book2": {
       "chapters": [
         5,
-        6
+        6,
+        7
       ],
       "road": null,
       "override": null,
