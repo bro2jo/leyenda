@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-12 · weather · The cold has come down early tonight, the kind that makes a fire worth sitting close to. Darrow sits closest, and for once no one makes him move.
 - 2026-11-12 · overheard · Overheard at the fire: Wren asking Maelis whether she ever sleeps. Maelis says she did once, in the spring of a bad year, and did not care for it.
 - 2026-11-13 · house · Ash has taken to walking at Darrow's pace instead of the cart's, and looking back at the others now and then as if they are the slow ones.
 - 2026-11-13 · ledger · Wren's tally for the week, inside the back cover: fires lit, six; fires Hollis says he lit, nine.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-15 · ledger · A new column in Wren's ledger, ruled in red: things Hollis says, by how often. "Bells take it" leads by a distance. "I was never wrong about rain" is gaining.
 - 2026-11-15 · weather · Rain by dark after all, fine and sideways. Nobody tells Hollis. He finds out for himself, standing in it, and is unbearable for the rest of the evening.
 - 2026-11-15 · saying · The dog will not lie down by the fire for anyone, and Hollis calls it stiff-kneed, the old Lancers' word: proud, and unable to kneel. Darrow laughs before he can help it.
+- 2026-11-15 · overheard · Overheard after the fire is banked: Wren, half asleep under the cart, counting something in a whisper, losing her place at forty, and patiently starting again.
