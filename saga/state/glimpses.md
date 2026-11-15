@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-12 · weather · Hard frost overnight. The cart's wheels squeal in the ruts all the first mile, and Hollis says that makes two of them complaining about the morning.
 - 2026-11-12 · overheard · Overheard while the kettle heats: Rae telling Wren the trick to a cold morning is to be busy before it notices you. Wren asks if that is a proverb. Rae says it is now.
 - 2026-11-12 · house · Maelis has made a rule: whoever complains about the cold carries the water. Hollis has carried it twice before noon and is asking for a recount.
 - 2026-11-12 · ledger · Wren's tally for the day's water: Hollis, four buckets; everyone else, one between them. She has underlined the four.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-15 · saying · "Bells take it," Hollis says when the pot lid bites his fingers, and then says it twice more, slower, for the pleasure of the sound.
 - 2026-11-15 · overheard · Overheard by the cart: Rae telling a carter the dog is not for sale, and then, after a thoughtful pause, asking what he'd offer.
 - 2026-11-15 · house · Wren has taken to trimming her quills against the cart's iron rim. Hollis says that is how a wheel goes bad. She says that is nonsense, and keeps doing it.
+- 2026-11-15 · body · He splits kindling for Maelis's fire and the axe comes down heavier than he swung it; the round falls in two at one stroke. He stands there afterward, looking at his hands.
