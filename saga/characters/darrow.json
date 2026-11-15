@@ -2288,6 +2288,30 @@
       "chapter": "tale01",
       "scene": "p3",
       "evidence": "The word stayed in the yard."
+    },
+    {
+      "fact": "At fourteen he came down from the Edgemoor hills behind his father's string to the lances' muster in Calden, wanting the knights to look at him, and was given a knight's horse to hold.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "He was fourteen, and he had come down out of the Edgemoor hills behind his father's string to be looked at."
+    },
+    {
+      "fact": "When the noon peal set one of his father's greys bolting down the muster yard, he ran alongside it at the shoulder and turned its head until it stopped short of the hall steps.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "A horse goes where its head goes."
+    },
+    {
+      "fact": "When the grey's new owner lifted a crop to him, he stood where he was rather than run from a lance's knight.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "He had time to think that it was a stupid reason."
+    },
+    {
+      "fact": "Not one of the knights looked at him; Aldric Vane did, and showed him the lance signal for ride wide.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "Ride wide. Give the flank room."
     }
   ],
   "relationships": [
@@ -2762,6 +2786,10 @@
     {
       "chapter": "tale01",
       "scene": "p3"
+    },
+    {
+      "chapter": "tale03",
+      "scene": "p1"
     }
   ]
 }

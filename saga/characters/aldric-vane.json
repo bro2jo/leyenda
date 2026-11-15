@@ -107,6 +107,24 @@
       "chapter": "03",
       "scene": "2",
       "evidence": "I know you. So I know what I am asking."
+    },
+    {
+      "fact": "As a boy at Calden's muster he talked a knight with a tower on his coat out of striking Darrow, by telling him that from the steps all anyone saw was a grey that stops very well.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "From up there, ser, I think all anyone saw was a grey that stops very well."
+    },
+    {
+      "fact": "He said the way to turn a man's temper is to say what he would want to have done and leave out what he did.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "You say what he'd want to have done"
+    },
+    {
+      "fact": "He learned the ride-wide signal from his father's lance before he could sit a horse; his father told him no captain born likes to give it, and that he would know why the first time he gave it.",
+      "chapter": "tale03",
+      "scene": "p1",
+      "evidence": "He says I'll know the first time I give it."
     }
   ],
   "relationships": [
@@ -191,6 +209,10 @@
       "chapter": "06",
       "scene": "climax",
       "mention": true
+    },
+    {
+      "chapter": "tale03",
+      "scene": "p1"
     }
   ]
 }

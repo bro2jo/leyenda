@@ -9,7 +9,7 @@
 - **What Darrow is fighting right now:** The weir: the rider down on the ice at his feet, her four riders held on the far bank only by the forms, his stick gone over the fall and his sword arm cut, and what she is to be is his to decide.
 - **With him:** Maelis Vorne (On the near bank at the cart's tail, her needle threaded.) · Ser Hollis Garrow (On the near bank at the oxen's heads.) · Wren Ashdown (On the near bank behind the cart.) · Rae Thorne (On the cart's box on the near bank.) · Ash (Across Wren's feet.)
 - **Also here:** Ysra Tal (Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and wai…)
-- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (0 of 3 told)
+- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (1 of 3 told)
 - **Against him:** The rider's four men on the far bank, held there only while the forms hold, and whoever sent her for him alive.
 - **Next:** His answer: what he does with the rider on the ice.
 - **Open choice (the climax of Chapter 6):** What does Darrow do? 1. Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off. / 2. Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head. / 3. Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse.
