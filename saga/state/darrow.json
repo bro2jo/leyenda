@@ -56,7 +56,7 @@
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
-  "inspiration": 4,
+  "inspiration": 3,
   "inspiration_cap": 4,
   "knots_tied": [
     1,

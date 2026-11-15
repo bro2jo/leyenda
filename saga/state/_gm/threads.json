@@ -8,7 +8,7 @@
       "feeds": "T3",
       "status": "open",
       "who_knows": "Darrow; the reader; Rae (from Darrow on the fold wall, 05:between-2: Ride wide, the horse already turned one heartbeat early, his fear it was known; she keeps it). Hollis does not: it is his to come to at the seal. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
-      "note": "touched 03:s3 (the letter to Aldric). 04:s2 (T3 plant): the direction on Aldric's three letters and Mirren's letter are in one clerk's hand, the clerk at the winch-house who never kneels: Vane's household and the Confessors write with one hand. Darrow has joined the two letters; he has not said Vane's name over it",
+      "note": "ch06:climax (T2/T3 plant): the rider, told when given him, says the Second was told to hold the west bank that morning and everyone in the Second knew the Grace would be thin; Darrow heard Ride wide today again. Only he heard it.",
       "on_page": [
         "00:I",
         "00:III",
@@ -19,7 +19,9 @@
         "03:s3",
         "04:s2",
         "05:s1",
-        "05:between-2"
+        "05:between-2",
+        "06:interlude",
+        "06:climax"
       ]
     },
     {
@@ -54,7 +56,8 @@
         "01:between-2",
         "06:s3",
         "06:s6",
-        "06:s7"
+        "06:s7",
+        "06:climax"
       ]
     },
     {

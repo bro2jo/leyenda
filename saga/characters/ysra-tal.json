@@ -1,0 +1,123 @@
+{
+  "id": "ysra-tal",
+  "name": "Ysra Tal",
+  "aliases": [
+    "Ysra",
+    "the Needle",
+    "the rider"
+  ],
+  "epithet": "the Needle",
+  "tier": "major",
+  "faction": "crown",
+  "status": "alive",
+  "sigil": {
+    "faction": "crown",
+    "mark": "needle"
+  },
+  "appearance": "Slight and very upright, her hair cropped short as a page's, in a dark coat cut close for riding with six dark buttons down its front and gloves of thin dark leather that fit like skin. She sits a long-legged horse without shifting, keeps her hands quiet, and moves on ice as if it had been laid down for her.",
+  "first_seen": {
+    "chapter": "06",
+    "scene": "interlude",
+    "place": "coldmere",
+    "anchor": "chronicle/06-the-weir.html#interlude"
+  },
+  "last_seen": {
+    "chapter": "06",
+    "scene": "climax",
+    "place": "coldmere",
+    "anchor": "chronicle/06-the-weir.html#climax"
+  },
+  "last_seen_doing": "Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and waited for him to chase, then came in and ran onto his point; told him, as a fact about him, what she had been told about the ford.",
+  "now": "Down on the ice between the second and third stones with a wound high in her left shoulder, her sword against the lip of the fall, her four riders held on the far bank by the forms.",
+  "story_so_far": "Sent from Calden to bring in the captain of the Ninth alive and not told why, Ysra Tal lost a day to the carter's lying road, watched the company from a distance, and summoned him under the forms to the weir. Her one question was why he would not kneel. At the noon bell her footwork found a man who would not move, and she went down on the ice with his point in her shoulder, wanting a reason for the first time.",
+  "known_facts": [
+    {
+      "fact": "She came from Calden on an order to bring in the captain of the Ninth Lance alive, with no reason given.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "She had read it twice, which was once more than an order needed"
+    },
+    {
+      "fact": "In Calden they call her the Needle.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "In Calden they called her the Needle."
+    },
+    {
+      "fact": "She read the carter's two carts out of one at the spring, believed it, and lost a day to the wrong lane.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "She had taken the lane."
+    },
+    {
+      "fact": "She keeps a small book for the things she has been wrong about.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "She kept a small book for the things she had been wrong about."
+    },
+    {
+      "fact": "She had never met a man who would not move.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "She had never in her life met one who would not."
+    },
+    {
+      "fact": "She found she wanted to know why she had been sent for him alive.",
+      "chapter": "06",
+      "scene": "interlude",
+      "evidence": "She found that she wanted to know why she had been sent for him alive."
+    },
+    {
+      "fact": "She took a wound in the left shoulder from a man who did not move, and was astonished by it.",
+      "chapter": "06",
+      "scene": "climax",
+      "evidence": "a wound from a man who had not moved"
+    },
+    {
+      "fact": "She was told, when given him, that the captain of the Ninth took his Lance into the Wend on a morning when everyone knew the Grace would be thin, and that the Second was told to hold the west bank.",
+      "chapter": "06",
+      "scene": "climax",
+      "evidence": "That the Second was told to hold the west bank, and held it."
+    },
+    {
+      "fact": "She did not know what she had told him.",
+      "chapter": "06",
+      "scene": "climax",
+      "evidence": "She had no idea what she had said."
+    }
+  ],
+  "relationships": [
+    {
+      "to": "darrow",
+      "label": "sent to bring him in alive",
+      "note": "Summoned him under the forms to the weir below the mill, asked why he will not kneel, and found a man who would not move."
+    }
+  ],
+  "reckoning": {
+    "unread": false,
+    "fire": {
+      "kind": "grace",
+      "state": "full"
+    },
+    "level": null,
+    "rank": "Oathsworn",
+    "attributes": {
+      "might": 12,
+      "vigor": 14,
+      "finesse": 19,
+      "resolve": 13
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "06",
+      "scene": "interlude"
+    },
+    {
+      "chapter": "06",
+      "scene": "climax"
+    }
+  ]
+}

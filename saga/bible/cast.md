@@ -73,3 +73,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 ## Ser Oswin
 - **Appearance:** A big, fair knight of the Fourth Lance, red to the cheekbones, with very blue eyes and big open hands; the Fourth's green under a travelling cloak thrown back, sleeves rolled in a cold room. Warmth comes off him in lamplight as off a horse that has been ridden hard; after he lifts something, his hands are white to the wrist, and then they are not.
 - **Voice:** Warm, easy and loud, a laugh that turns heads; he says the truest thing he knows as if it were a gift, believes every word of it, and is sorry for anyone who does not. Kind in the way that is hardest to answer. *"It's one knee. I'd kneel beside you. I'd be glad to."*
+
+## Ysra Tal
+- **Appearance:** Slight and very upright, hair cropped short as a page's; a dark coat cut close for riding with six dark buttons down the front; gloves of thin dark leather that fit like skin, taken off finger by finger. She sits a long-legged horse without shifting a hoof, keeps her hands quiet, and moves on glazed stone as if it had been laid down for her.
+- **Voice:** Courteous, clipped and deadly literal: she answers exactly what was asked and considers a joke for longer than it deserves. Funny without knowing it. *"My name is not the question. The forms allow one."*

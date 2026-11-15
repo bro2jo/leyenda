@@ -5,8 +5,8 @@
     "chapter": 6,
     "beat": "b2.2",
     "next_scene": 8,
-    "stage": "scene",
-    "last_written": "ch06:s7",
+    "stage": "climax",
+    "last_written": "ch06:interlude",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -197,8 +197,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch06:interlude"
       }
     ],
     "world_moves": [
@@ -578,7 +578,19 @@
       "bound": "2026-11-10"
     }
   ],
-  "open_choice": null,
+  "open_choice": {
+    "chapter": 6,
+    "scene": "climax",
+    "ask": "What does Darrow do?",
+    "options": [
+      "Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.",
+      "Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head.",
+      "Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse."
+    ],
+    "default": 1,
+    "opened": "2026-11-15",
+    "carries": 2
+  },
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4

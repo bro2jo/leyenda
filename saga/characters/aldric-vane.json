@@ -186,6 +186,11 @@
       "chapter": "06",
       "scene": "6",
       "mention": true
+    },
+    {
+      "chapter": "06",
+      "scene": "climax",
+      "mention": true
     }
   ]
 }

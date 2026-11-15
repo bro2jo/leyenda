@@ -893,3 +893,109 @@ Then Wren said, to the far bank and not to him, "I'm frightened," and stopped th
 "I know. You told me first." She opened the book to his column and turned it so he could see: *Told first. Three.* Under it, in the same small hand, was a new line he had not seen in the night. *Asked him to kneel: none.*
 
 "Two hours and three-quarters," said Wren, and went back to counting.
+
+### Interlude — No Thread
+
+Ysra Tal had never in her life needed a reason, and she did not see why she should start on a frozen riverbank in the Lowmarch with two hours to wait.
+
+The order had come to her in Calden, folded once, in a neat upright clerk's hand with a long tail to its y. *The captain of the Ninth Lance, alive.* Under it, nothing. She had read it twice, which was once more than an order needed, and gone to saddle the horse. An order that gave its reason was written for someone who had to be persuaded. She came persuaded. That was what she was for.
+
+In Calden they called her the Needle. She had always thought it a careless name. A needle was a sharp thing with a hole in it for thread, and nobody had ever handed her any thread; she went where she was put and came out the other side, and the cloth closed up behind her. She had liked that. It was clean.
+
+*Alive*, she had decided on the road north, meant whole. The order did not say whole. But a man brought in alive with a piece missing was an argument waiting to happen, and she left nothing behind her that could argue.
+
+She had been wrong once on this road, and she had written it down. At the spring below the hill she had read the soft black ground and believed it: two carts out of one, a heavy one up the lane to the farm with the dog, and a light one, lopsided, onto the stones, where the stones said nothing. She had taken the lane. A man who wanted to hide would hide at a farm. She had lost the rest of that night and most of the next day to the farm, its dog and every lane behind it before she went back to the stones and understood that the carter had made the road lie. She kept a small book for the things she had been wrong about. It had four entries in eleven years. The carter was the fifth.
+
+After that she had stopped following them and gone round ahead, and watched.
+
+The carter did a thing first and explained it after, if at all. The old soldier on the beech leg talked filth to an ox and kept his eyes on the trees throughout; last night she had watched him come out across the glazed weir on his backside to put a stick into his captain, and had thought better of him. The surgeon looked at hands before faces, which was where Ysra looked. The girl with the ledger counted everything. Ysra had counted the girl counting, eleven times in one afternoon, and had felt something close to fellowship. The dog had three good legs and made no sound at all. She did not trust anything that did not bark.
+
+And the captain stopped.
+
+That was the thing. On the water-meadow he had come twenty paces out across her ground, which was what everyone did, and then he had read it and stopped and stood, which was what nobody did. This morning her point had gone where he would step, and he had stayed where he was. Everyone moved. Footwork was only the art of being somewhere else before the other man had finished arriving, and it needed the other man to arrive. She had never in her life met one who would not.
+
+An hour ago he had laughed, at something the girl said, loud enough to carry over the water. She had begun to write in the small book that men who were to be taken at noon did not laugh. Then she had crossed it out, because it had not been true, and sat looking at the line through it. She did not cross things out.
+
+She found that she wanted to know why she had been sent for him alive.
+
+She turned the wanting over the way she turned a blade come back from the smith not quite as it went, looking for the flaw, and found none. It was only there, like a stone in a boot. A needle with no thread was a sharp thing, and she had never minded being only a sharp thing. She opened the book again and wrote, under the carter: *I would like to know why.* Then she sat with the book open on her knee, uncertain for the first time in eleven years whether a thing belonged in it.
+
+Up at the mill a boy came out onto the gallery and squinted at the sun for the time, and went back in.
+
+## Climax — The Post
+
+The mill rang for bread, flat and cracked, and on the far bank she stood up.
+
+So did four riders in dark coats, new since first light. They came down out of the alders to the water's edge behind her and stopped exactly where the forms stopped them, and sat their horses, and watched. Her men, come to carry whatever she took.
+
+Darrow was on the keeper's stone before the bell had finished. He had walked out again with the stick a quarter hour early, a stone at a time, so that she would find him standing.
+
+She came onto the glaze and stopped three stones off, and took her gloves off finger by finger.
+
+"You said you would like an answer," said Darrow. "Here it is. Four people have asked me to kneel, and every one of them wanted something for it." He kept his eyes on her. He knew what was on the bank behind him. "Nobody on that side of the river has ever asked me. Not once. I'll stand till one of them does."
+
+She considered it. It took her longer than the joke had.
+
+"That is an answer," she said. "I have nowhere to put it." And she drew.
+
+She came the way she had come at first light, and made the front feel like six, and this time the seventh was real.
+
+`[MIGHT · DC 17]` d20 **1** +1 might +4 proficiency +3 Stillwater Stance III +1 chapter 6 Hard-won = **10** — *Critical failure*
+`[INSPIRATION]` 4 → 3 · cast again
+`[MIGHT · DC 17]` d20 **11** +1 might +4 proficiency +3 Stillwater Stance III +1 chapter 6 Hard-won = **20** — *Partial: success at a cost*
+
+It was not her blade. It was her shoulder, low, into his ribs, the whole slight weight of her behind it at the one moment his eyes were on her point, and his heel went off the dry stone onto the glaze.
+
+For the first time since the meadow he moved. The stick went out from under his hand and skated away across the ice, over the lip of the fall, and was gone. On the bank somebody shouted his name. He felt the river under the glaze, very close, very loud, and the old body said *go with it, step, step and turn and you have her*, and he did not. He dropped his weight instead and found the edge of the keeper's stone with his heel, and came back onto it the way a man comes back onto a horse he has nearly come off; and while he did it her point went in along his sword arm from the wrist almost to the elbow, quick and shallow and very neat, because a man climbing back onto a stone has no arm to spare.
+
+Then he was square again, without the stick, and the blood was running warm into the cuff of his glove, and he was still on the stone.
+
+She stepped back. One stone. Two. Three. Her point dropped, and she stood on the glaze with her weight on her back foot and waited for him, the way a door stands open.
+
+It was the oldest invitation there was. A man bleeding, without his stick, with the one who cut him giving ground in front of him: everything in him that had ever been first into the water wanted to go and finish it.
+
+`[RESOLVE · DC 9]` d20 **20** +0 resolve +1 chapter 6 Hard-won = **21** — *Critical success*
+
+He stayed where he was, and lifted the sword back up into the new grip, three fingers and a thumb, and the blood ran down the blade's flat. "No," he said, quite pleasantly. "You come to the post."
+
+He saw her understand it. He saw her look at the three glazed stones between them, and at the dry one under his feet, and at the man on it, who would stand there bleeding until noon became evening, and would not come one step for her. She had built the morning on everyone moving. She had nothing in her for a man who stayed.
+
+So she came, because she had to, fast and beautiful, a feint high and the real line low, and every part of it was perfect except that it needed him to be somewhere else. He was where he had been. His point went out and stopped where his wrist stopped, and that was where she arrived.
+
+It took her high in the left shoulder. He felt it go in, and felt her own speed drive it, and saw in her face the purest astonishment he had ever seen on anybody: a wound from a man who had not moved. Her feet went on the glaze. She went down hard on her side on the ice between the third stone and the second, and her sword went skittering away toward the fall and stopped against the lip, and she lay there with her hand pressed to her shoulder, looking up at him.
+
+On the far bank the four riders had their hands on their reins and stayed where they were. The forms held them.
+
+"You did not move," she said. It sounded like a complaint.
+
+The script came up over his palms, unasked, faint against the bright noon, and read her face.
+
+`[RESOLVE · DC 17]` d20 **14** +0 resolve +4 proficiency +4 Warden's Eye IV +1 chapter 6 Hard-won = **23** — *Success*
+
+There was no lie anywhere in it. There was pain, and a sort of anger at herself, and under both a question that was new since the morning.
+
+"Who sent you for me?" he said.
+
+"That is not mine to give." She was breathing carefully around the shoulder. Then, because she was exact, and he had answered her, and she plainly thought it was owed: "I can tell you what I was told, when I was given you. That the captain of the Ninth took his Lance into the Wend on a morning when everyone knew the Grace would be thin. That the Second was told to hold the west bank, and held it."
+
+She said it as a fact about him: a careless man, a river, a Lance that did as it was told. She had no idea what she had said. He could see it.
+
+*Everyone knew.*
+
+The river was loud under the ice. The near bank was too far off to hear it over the water. Only he had. He stood on the stone with his own blood running off the blade, and from somewhere very far back a voice he had ridden knee to knee with since they were squires said *Ride wide today*, and almost said more.
+
+"Who's everyone?" he said.
+
+"The Second." She looked up at him, puzzled now, for the first time since the meadow. "Everyone in the Second knew. Why?"
+
+Any answer he had was too big to give a woman lying on the ice. Behind him, on the near bank, Maelis had her roll open on the cart's tail and her needle threaded; Wren had both hands over her mouth; Hollis was on his feet at the oxen's heads with his fists at his sides because the forms said so; and Rae sat the box with the reins in her lap, watching the four men across the water, who were watching her. The woman at his feet had seen every one of them. She had his face, and the girl's, and the cart's tracks on every road since the spring. And upstream of the mill the bridge was full of carts drawn up the wrong way, and nobody had yet asked them what they were running from.
+
+She lay on the ice and waited for him to decide what she was.
+
+> ⟦ THE RECKONING ⟧
+> Inspiration 4 → 3
+
+**What does Darrow do?**
+1. **Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.** *Hollis would. Rae would say nothing, which is how she says no.*
+2. **Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head.** *Wren would. Maelis will not mend what he breaks on purpose, and will say so. Hollis would not.*
+3. **Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse.** *Maelis and Rae would. Wren would not: a message tells them which road, and what he knows.*

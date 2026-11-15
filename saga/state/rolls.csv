@@ -41,3 +41,7 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-11-13T01:49:45,ch06-s5-the-hand,resolve,13,6,,,+0 resolve +4 proficiency +4 Warden's Eye IV,14,SUCCESS,
 2026-11-14T02:21:31,ch06-s6-the-stone,might,14,1,15,adv,+1 might +4 proficiency +3 Stillwater Stance III,23,SUCCESS,"Hollis's goad on the dry stone, the night before the weir"
 2026-11-15T03:18:37,ch06-s7-the-pass,might,16,11,6,adv,+1 might +4 proficiency +2 The Seated Blade II,18,SUCCESS,her single pass at first light; braced on the keeper's stone
+2026-11-15T14:29:06,ch06-the-stone-at-noon,might,17,1,,,+1 might +4 proficiency +3 Stillwater Stance III +1 chapter 6 Hard-won,10,CRITICAL FAILURE,the noon bell: refusing to be moved on the keeper's stone
+2026-11-15T14:29:06,ch06-the-stone-at-noon#reroll,might,17,11,,,+1 might +4 proficiency +3 Stillwater Stance III +1 chapter 6 Hard-won,20,PARTIAL (success at a cost),Inspiration spent on a failed climax check
+2026-11-15T14:29:06,ch06-the-ground-she-gives,resolve,9,20,,,+0 resolve +1 chapter 6 Hard-won,21,CRITICAL SUCCESS,the forms: not chasing her when she gives ground
+2026-11-15T14:29:06,ch06-her-orders,resolve,17,14,,,+0 resolve +4 proficiency +4 Warden's Eye IV +1 chapter 6 Hard-won,23,SUCCESS,Warden's Eye: reading her orders and whether she knows why

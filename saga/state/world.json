@@ -103,11 +103,23 @@
       "after": "7",
       "covers": [],
       "written": "2026-11-15"
+    },
+    {
+      "scene": "interlude",
+      "title": "No Thread",
+      "covers": [],
+      "written": "2026-11-15"
+    },
+    {
+      "scene": "climax",
+      "title": "The Post",
+      "covers": [],
+      "written": "2026-11-15"
     }
   ],
   "location": {
     "place": "coldmere",
-    "detail": "the near bank of the weir below the river mill, at Rae's cart",
+    "detail": "the keeper's stone on the weir below the river mill, the rider down on the ice before him",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "clear cold after the first snow, on the road below the mountain",
@@ -117,7 +129,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The road: the company on the Holloway at the foot of the Steps, the banner that is not grey coming up behind, the Confessor gone down ahead to meet it with the Captain's name asked for and nothing of what he saw.",
-  "last_beat": "She showed him his column: Told first. Three. Under it, a new line: Asked him to kneel: none. Then she went back to counting the time to the bell.",
+  "last_beat": "She lay on the ice with her hand to her shoulder, her four riders held on the far bank by the forms, and waited for him to decide what she was.",
   "companions": {
     "maelis": {
       "approval": 40,
@@ -292,7 +304,6 @@
   ],
   "inventory": [
     "infirmary shirt and breeches",
-    "the borrowed stick, used on the Steps and kept",
     "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder"
   ],
   "keepsakes": [
@@ -360,7 +371,8 @@
     "02-the-grey-cot": "The House was frightened, the Confessor had given it a word, and a lad lay Hollowed in the Grey Cot with frost on his mouth; Darrow, with Wren for his legs, went looking for whoever had passed in the night, and found that nobody had.",
     "03-the-undercroft": "Under the House, in a hall older than it, Darrow found what makes the stone grow frost: a black sliver shut in the wall beneath the row with a lid of new mortar, carried up the Steps in the House's own letter-satchel. It would not come out of the rock; the cold whitened his fingers before he let it go on the Mender's word, and it stays. Now the whole House has seen them come up, and he must decide who is told.",
     "04-old-mercy": "Old Mercy: the rope cut, the stair held from a chair, the bell rung on the last of the light, and the Thousand Steps walked down at last.",
-    "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose."
+    "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose.",
+    "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his."
   },
   "last_updated": "2026-11-15"
 }

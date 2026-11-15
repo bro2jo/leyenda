@@ -33,13 +33,13 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "between-6",
+    "scene": "climax",
     "place": "coldmere",
-    "anchor": "chronicle/06-the-weir.html#between-6"
+    "anchor": "chronicle/06-the-weir.html#climax"
   },
-  "last_seen_doing": "Wrote him a lie to read to the rider and let it go when he would not; then counted for him the four who have asked him to kneel and the company, who never have; said plainly that she was frightened.",
-  "now": "On the cart's tail with the book, counting to the noon bell.",
-  "story_so_far": "Wren came off the mountain for the first time in her life and counted everything, looked back at the House once without counting, watered a Hollowed knight the far-cots way and went white, and answered a skipping rhyme with the House, the warming room and Old Mercy. She kept the book on every wager, haggled a drover's coat for the Captain with her winnings off Hollis, and served a levy their small beer with every question in her ledger.",
+  "last_seen_doing": "Shouted his name when he went off the stone, and watched the rest with both hands over her mouth.",
+  "now": "On the near bank behind the cart.",
+  "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -1137,6 +1137,10 @@
     {
       "chapter": "06",
       "scene": "between-6"
+    },
+    {
+      "chapter": "06",
+      "scene": "climax"
     }
   ]
 }
