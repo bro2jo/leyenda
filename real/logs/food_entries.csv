@@ -333,3 +333,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-15#3,2026-11-15,,snack,"Coffee, black",1 cup (assumed 12 oz),5,0.4,0,0,0,0,0,7,170,7,0,10,0,0,0,0,estimate,his words: coffee black
 2026-11-15#4,2026-11-15,,lunch,"Costco chicken wings (Kirkland), plain/seasoned, no sauce","6 pieces (assumed drumettes and flats, ~170 g edible)",490,45,0,33,0,9,0,450,300,25,1.9,30,3,0,0.3,150,estimate,"his words: 6 Costco chicken wing pieces; roasted wing meat+skin values; sauce not mentioned, none assumed"
 2026-11-15#5,2026-11-15,,lunch,Root beer,1 glass (assumed 12 oz),160,0,42,0,0,0,42,50,5,10,0.2,2,0,0,0,0,estimate,his words: glass of root beer
+2026-11-15#6,2026-11-15,,lunch,Mott's organic no sugar added applesauce cup,1 cup (3.9 oz / 111 g),50,0,13,0,1,0,11,0,90,5,0.1,3,0,15,0,0,library,his words: that apple sauce as well; library row (10/30)
