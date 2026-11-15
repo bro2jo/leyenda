@@ -37,5 +37,5 @@ ARTS · The Seated Blade II · Hammerfall I · Stillwater Stance III · The Long
 SEALED (practice banked) · The Long Road (Knot IV) · Thunderstep (Knot V) · The Turning Blade (Knot VI)
 ```
 
-**Chapter 7, so far (on what's logged):** Hard-won
+**Chapter 7, so far (on what's logged):** Triumph
 <!-- engine:end -->
