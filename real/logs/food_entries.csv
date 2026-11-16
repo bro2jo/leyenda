@@ -344,3 +344,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-15#14,2026-11-15,,snack,Tortilla chips with melted cheddar,~6 chips (~18 g) + assumed ~1 oz cheddar,205,8,11.5,14,1,6,0.2,250,60,220,0.3,20,1.2,0,0.3,40,estimate,his words: about 6 tortilla chips with cheddar cheese melted; cheese amount assumed
 2026-11-15#15,2026-11-15,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,"his words: chobani Greek yogurt 20g protein; flavour not given, library row (cherry berry label)"
 2026-11-15#16,2026-11-15,,snack,Kirkland Signature wildflower honey,assumed 1 tbsp (21 g),60,0,17,0,0,0,17,0,11,1,0.1,0.4,0,0.1,0,0,estimate,his words: added Kirkland wild flower honey; amount not given
+2026-11-15#17,2026-11-15,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,his words: two vitamin gummies (logged late); library row (label 11/1)
