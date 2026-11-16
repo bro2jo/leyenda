@@ -11,7 +11,7 @@
 - **Earlier today, in order:** *The Right Side of the Bridge* (Scene): At the far edge of the field across the river, shapes stood at the edge of the trees and began, slowly, to walk out; nobody said what they were, and Wren count…
 - **With him:** Maelis Vorne (At the bridge, counting how long he stands; since *The Right Side of the Bridge*) · Ser Hollis Garrow (At the bridge, freeing locked carts with a pole and a great deal of language; since *The Right Side of the Bridge*) · Wren Ashdown (At the bridge with the ledger, counting carts and the shapes across the field; since *The Right Side of the Bridge*) · Rae Thorne (Walking back toward the bridge with the lamp, at his pace.) · Ash (Across Darrow's boots at the near end of the bridge; since *The Right Side of the Bridge*)
 - **Also here:** Ysra Tal (Got up off the ice on her own, took up her sword, said his message back to him word for word, named him Plainspoken, and rode into the alde…)
-- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (1 of 3 told)
+- **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (2 of 3 told)
 - **Against him:** Whatever stands at the edge of the trees across the river, behind the carts.
 - **Next:** The night on the bridge, one cart at a time.
 - **Open choice:** none.

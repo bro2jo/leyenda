@@ -125,6 +125,24 @@
       "chapter": "tale03",
       "scene": "p1",
       "evidence": "He says I'll know the first time I give it."
+    },
+    {
+      "fact": "Three lengths clear with nothing between him and the finish, he turned his horse back for Darrow in the cut.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "He watched him sit up, gather the bay, and turn her round."
+    },
+    {
+      "fact": "He would not count a race won by another rider's fall: it would have been beating a horse with nobody on it.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "I'd have beaten a horse with nobody on it."
+    },
+    {
+      "fact": "He told Darrow he owed him a race, and that Darrow would owe him the copper when he won it.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "And you'll owe me the copper when I win it."
     }
   ],
   "relationships": [
@@ -213,6 +231,10 @@
     {
       "chapter": "tale03",
       "scene": "p1"
+    },
+    {
+      "chapter": "tale03",
+      "scene": "p2"
     }
   ]
 }

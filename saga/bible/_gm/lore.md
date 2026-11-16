@@ -145,7 +145,7 @@ At the far end of the kennel yard, under the cloister wall, a forge that shoes n
 The mark of the Vael, the lowland people who came up the river valleys with oxen and bells before anyone wrote anything down. Vaelish is the tongue of the Lowmarch and the court; the Greywater speaks it slower and the fog coast faster. The realm's parts, as a child recites them: the Lowmarch, which is grain, mills, levies and the Holloway; the Marches, hill country toward the coast, sheep and quarries; the Greywater, the peaks and the Houses; the coast, fog, salt and smugglers; and beyond the Wend the Thornwild, which is not the realm's and knows it.
 
 ## realm.calden — Calden and the Spire
-- **tier:** common · **spoken:** Prologue II, Ch 1; tale03:p1 · **names:** First Stone
+- **tier:** common · **spoken:** Prologue II, Ch 1; tale03:p1; tale03:p2 · **names:** First Stone
 - **use:** a herald's pride; what every knight remembers of being sworn.
 
 White stone on a white rock above the river road, and a hundred bells that ring the hours in a peal that rolls from the gate to the Spire and back. At its centre the Oathspire, black glass and iron, raised in the Quenching's year; the First Stone sits at the top of it, and every Oathstone in the realm answers to the First. Knights are sworn there once, climbing the Spire's stair on their knees, and most of them are glad never to see it again.

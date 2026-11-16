@@ -2354,6 +2354,30 @@
       "chapter": "tale03",
       "scene": "p1",
       "evidence": "This boy had been watching the whole time."
+    },
+    {
+      "fact": "The spring after the muster he raced Aldric Vane through the water-meadows below Calden for a copper, wanting to beat him at something.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "He wanted to beat Aldric at something."
+    },
+    {
+      "fact": "At the turn he dropped off his father's grey, ran it round the thorn tree at its head and vaulted back on at a gallop, drawing level.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "vaulted back up on the far side with the grey already galloping"
+    },
+    {
+      "fact": "Coming back over the drainage cut his grey's hind feet went from under it on the soft ground, and he went into the water.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "landed flat on his back in a hand's depth of cold water"
+    },
+    {
+      "fact": "When Aldric turned back for him instead of riding on to win, he decided to trust him.",
+      "chapter": "tale03",
+      "scene": "p2",
+      "evidence": "decided that he would trust this one"
     }
   ],
   "relationships": [
@@ -2844,6 +2868,10 @@
     {
       "chapter": "tale03",
       "scene": "p1"
+    },
+    {
+      "chapter": "tale03",
+      "scene": "p2"
     }
   ]
 }

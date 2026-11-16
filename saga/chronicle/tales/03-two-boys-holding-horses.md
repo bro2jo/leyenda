@@ -95,3 +95,61 @@ Darrow tried. His hand went out fast and flapped at the end.
 "You're shooing geese," said Aldric. "Slower. It doesn't mean *go away*. It means *there's room*."
 
 Darrow did it again, slowly, the way the captain had, with the black's reins in his other hand. Aldric took one solemn step to the side, as if he were the whole column making way for the cart, and the sleepy bay shuffled over after him. Then the two of them stood in the middle of Calden's yard and laughed, holding other men's horses.
+
+### Piece 2 — The Better Seat
+
+The next spring his father brought the string down to Calden again, and Aldric Vane was waiting at the yard gate as if they had arranged it.
+
+They had not arranged it. Darrow had thought about it all winter anyway.
+
+He wanted to beat Aldric at something. One thing would do. Aldric had the better seat: the grooms said so, the knights said so, and Darrow's father, who praised nothing, had watched Aldric ride once across the muster yard and said, "That boy sits a horse like he was poured into it." Darrow could catch any horse in Calden on foot. He could not sit one like that if he lived to be a hundred.
+
+So on the third evening, when the knights were in the hall and the boys were let go, he said it.
+
+"Race you."
+
+Below the town, where the river road ran along the bank, there were water-meadows, flat and green and wet. The longest of them ran from a stand of willows by the road to a lone thorn tree at its far end, and halfway between the two a drainage cut crossed it: a ditch a horse could clear in one stride, with soft black ground on both sides where the river came up through the grass.
+
+"To the thorn and back," said Darrow. "Over the cut both ways. A copper says I'm back at the willows first."
+
+"I haven't got a copper," said Aldric. "Squires don't carry money."
+
+"Then you'll owe me one."
+
+Aldric laughed. "A copper, then."
+
+Darrow had one of his father's greys under him, a four-year-old his father meant to sell to the lances in the autumn: the fastest thing in the string and the least sensible. Aldric had his father's old bay mare, the one that slept standing up in yards. She woke for exactly one thing, which was being in front.
+
+Up on its rock, Calden's bells began the evening peal, gate to Spire. They went on the first stroke.
+
+Aldric's seat told on the straight. The bay went out low and level, and Aldric sat so still on her that she seemed to be running by herself, and by the cut she was two lengths clear. She took it like a step. The grey took it in a scramble that nearly put Darrow over its ears.
+
+But a horse loses ground at a turn. Its rider has to slow it, swing it round and get it going again. Darrow did not slow. Ten strides short of the thorn he kicked his feet free of the stirrups, dropped off the grey at a run with the rein in his fist, ran it round the tree on the inside at its head, the way he had run a thousand greys round a paddock at home, and vaulted back up on the far side with the grey already galloping. When he looked up, Aldric was beside him, and Aldric's mouth was open.
+
+They came back down the meadow neck and neck, toward the cut.
+
+The ground before it was black and soft. The bay took off first, cleanly. The grey took off a stride later from the same black ground, and its hind feet went out from under it. Darrow went over its shoulder and into the cut, and landed flat on his back in a hand's depth of cold water, and lay there looking up at the sky while the grey scrambled out the far side without him, unhurt and astonished.
+
+It could as easily have been the bay. Her feet had gone into the same ground a breath earlier, and held.
+
+From the bottom of the cut Darrow could see Aldric three lengths clear, with nothing between him and the willows. He watched him sit up, gather the bay, and turn her round.
+
+Aldric rode back to the edge of the cut and looked down at him.
+
+"Are you whole?"
+
+"Go on," said Darrow, from the water. "You've won."
+
+"I haven't won anything. You fell."
+
+"It's the same copper."
+
+"It isn't." Aldric got down and held out his hand, and Darrow took it and came up out of the cut streaming. "If I'd ridden on, I'd have beaten a horse with nobody on it. That's not a race. That's a walk."
+
+"Then you owe me a race."
+
+"I owe you a race," said Aldric. "And you'll owe me the copper when I win it."
+
+All the way to the thorn, Darrow had been sure that Aldric Vane would take a win any way it came, because Darrow would have. He stood in the meadow with cold water running out of his boots and looked at him, and saw he had been wrong, and decided that he would trust this one.
+
+They caught the grey, which was grazing on the far side of the cut as if it had never met him, and rode back to the willows at a walk, side by side, so close that their knees knocked, the bay already half asleep again and the grey still offended. Halfway there Darrow said one word to him. Aldric heard it, and nodded once, and neither of them needed another the rest of the way.
