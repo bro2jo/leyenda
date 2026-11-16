@@ -348,3 +348,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-16#1,2026-11-16,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola 10g protein
 2026-11-16#2,2026-11-16,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,his words: cafe latte protein drink
 2026-11-16#3,2026-11-16,,breakfast,"mte Everyday wellness blend stick, lemon lime",1 stick (7 g),10,0,6,0,4,0,0,60,,,,,,,,,label,"his label numbers 11/16: 10 kcal, 2 g net carbs, 4 g fiber (chicory root), 0 sugar (stevia), 60 mg sodium; protein and fat 0 by the calories; other micros not given"
+2026-11-16#4,2026-11-16,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: my chicken and spinach for lunch
