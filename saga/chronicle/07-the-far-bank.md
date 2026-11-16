@@ -97,3 +97,59 @@ It was hard to see, and then it was not. Shapes were standing at the edge of the
 Nobody on the near bank said what they were.
 
 Beside him, under her breath, Wren had begun to count them. She lost her place at forty, and started again at one.
+
+### Between — Name the Load
+
+Rae was standing at the near end of the bridge with a lamp, where the carts came off the span one at a time, and she was looking at every one of them the way other people read a letter.
+
+Darrow came up beside her on the stick. He had been sewn, praised and sat down for most of the afternoon, and he had a thing to ask her and no good way in.
+
+"I was going to walk up the line," he said. "See what's come over."
+
+Rae nodded, her eyes on the next cart.
+
+"You know carts."
+
+"I do."
+
+"So you could come. If you wanted. Tell me what I'm looking at." He heard how it sounded as it came out, and so, plainly, did she.
+
+Rae looked at the next cart coming off the bridge, and at the field across the river going dark, and then at him. "That's two things you've asked me," she said, "and you've only said one of them." She kept the lamp, since he had the stick in one hand and Maelis's stitches in the other. "Aye. To the end of the lamps and back. And you'll name the loads."
+
+The carts that had crossed were drawn up along the mill road, one behind another, with their families sitting on them or standing by the wheels. Rae walked slowly, at his pace, and did not seem to be doing it on purpose.
+
+"That one," she said, at the first. It had a tarp roped over it, and it sat low at the tail with the shafts riding up. "What's on it?"
+
+He looked at how it sat, the way she did. Heavy at the back. Something square and tall under the tarp, and out of the back of it a long smooth beam of pale wood, worn darker where hands had held it for years.
+
+`[RESOLVE · DC 12]` d20 **11** +0 resolve = **11** — *Partial: success at a cost*
+
+"A loom," he said. "In pieces."
+
+"It is." Rae lifted the lamp. "How'd you know?"
+
+"How it sits."
+
+"You saw the beam sticking out the back."
+
+"I saw the beam sticking out the back."
+
+From under the front of the tarp a very old voice said, "And me. You missed me." A white head came out from between the loom's legs, looked Darrow up and down, and went back in.
+
+Rae laughed. It came out of her loud, before she could stop it, and she put the back of her wrist to her mouth and failed to put it back. "You'd charge a woman for her loom," she said, "and let her mother ride over free."
+
+"I'd have charged them both."
+
+"You'd have missed her." She was still laughing. "I'm telling Hollis."
+
+"You're not."
+
+"I'm telling Wren, then. She'll want it for the book."
+
+They named the rest of the line that way, Rae fast and right, Darrow slow and right about half the time, and for every one he missed she told him why: a cart with bedding on it sits soft and rocks when you lean on the wheel, iron sits dead and doesn't, and a family that packed in a hurry ropes everything twice. At the end of the line the lamps stopped. Past it was the road north, and nothing on it.
+
+Rae stopped there and held the lamp a little way out into the dark, as if to see how far it reached.
+
+"That was a walk, Captain," she said. "In case you were wondering. I'd have said if it wasn't."
+
+She turned back toward the bridge and the lamps, and waited for him to come level before she walked on.

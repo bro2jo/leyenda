@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "1",
+    "scene": "between-1",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-1"
+    "anchor": "chronicle/07-the-far-bank.html#between-1"
   },
-  "last_seen_doing": "Sat for Maelis's needle, took the stick back from Ash, saw the far-bank line drawn up the way the clan line stood at Harrow Ford, said why first, and asked for the bridge kept open all night, one cart at a time.",
-  "now": "At the near end of the mill bridge at dusk on the stick, his arm sewn and bandaged, the carts crossing one at a time under lamps and shapes moving at the far edge of the field.",
+  "last_seen_doing": "Asked Rae, badly, to walk up the line of crossed carts with him; named the loads with her and named the loom but missed the old woman riding under it.",
+  "now": "Walking back toward the bridge lamps beside Rae on the stick.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2248,6 +2248,12 @@
       "evidence": "So: we keep this bridge open tonight."
     },
     {
+      "fact": "On the night of the bridge he asked Rae to walk up the line of carts with him, without quite saying that was what he was asking.",
+      "chapter": "07",
+      "scene": "between-1",
+      "evidence": "So you could come. If you wanted. Tell me what I'm looking at."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2818,6 +2824,10 @@
     {
       "chapter": "07",
       "scene": "1"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-1"
     },
     {
       "chapter": "tale01",

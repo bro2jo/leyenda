@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "1",
+    "scene": "between-1",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-1"
+    "anchor": "chronicle/07-the-far-bank.html#between-1"
   },
-  "last_seen_doing": "Read the far-bank line before he could and said it was people with something behind them; said aye to keeping the bridge open.",
-  "now": "At the bridge, the carts coming over one at a time.",
+  "last_seen_doing": "Heard what he was asking, said aye to the end of the lamps and back, made it a game of naming the loads, laughed out loud at his loom, and told him it had been a walk.",
+  "now": "Walking back toward the bridge with the lamp, at his pace.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -899,6 +899,24 @@
       "evidence": "That's people with something behind them."
     },
     {
+      "fact": "She told him he had asked her two things and said only one of them.",
+      "chapter": "07",
+      "scene": "between-1",
+      "evidence": "That's two things you've asked me"
+    },
+    {
+      "fact": "She laughed out loud when he named a loom and missed the old woman riding under it, and said she would tell Wren for the book.",
+      "chapter": "07",
+      "scene": "between-1",
+      "evidence": "I'm telling Wren, then. She'll want it for the book."
+    },
+    {
+      "fact": "At the end of the lamps she told him it had been a walk, and that she would have said if it wasn't.",
+      "chapter": "07",
+      "scene": "between-1",
+      "evidence": "That was a walk, Captain"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1254,6 +1272,10 @@
     {
       "chapter": "07",
       "scene": "1"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-1"
     },
     {
       "chapter": "tale02",

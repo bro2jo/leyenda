@@ -2125,6 +2125,32 @@
         "Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.",
         "Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head."
       ]
+    },
+    {
+      "id": "c07.1",
+      "made": {
+        "chapter": 7,
+        "scene": "between-1",
+        "date": "2026-11-15"
+      },
+      "chose": "Asked Rae, badly, to walk up the line of carts with him on the night of the bridge; she said he had asked two things and said one, made it a game of naming the loads, laughed out loud when he named the loom and missed the old woman riding under it, and told him at the end of the lamps that it had been a walk",
+      "now": {
+        "approval": {
+          "rae": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c07.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae has told Wren how the Captain named the loom and missed the old woman riding under it; it comes back once, as a jibe in Wren's mouth or Rae's",
+          "fits": "present.rae && present.wren",
+          "priority": 1,
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
