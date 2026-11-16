@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Answered her question under the forms, was moved off the dry stone once and lost the stick over the fall, climbed back with his sword arm cut, refused the ground she gave him, and held while she ran onto his point; heard from her that everyone in the Second knew the Grace would be thin that morning.",
-  "now": "On the keeper's stone at noon without his stick, his sword arm cut from wrist nearly to elbow, with the rider down on the ice in front of him and her four riders on the far bank.",
+  "last_seen_doing": "Let the rider up and sent the man who sent her a message in his own words, leaving out the road, what she had told him and most of what he knew; came in off the weir on Hollis's goad and told the company only that he had been looking.",
+  "now": "At the cart's tail on the near bank, his sword arm cut and bleeding, Maelis's needle threaded and her hand out for the arm.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2212,6 +2212,24 @@
       "evidence": "said *Ride wide today*, and almost said more"
     },
     {
+      "fact": "He let the rider up and sent the man who sent her a message: that he was in the water at the Wend, that from the water you can see the whole of the west bank and he saw it, and that he will ask the rest to his face.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "From the water you can see the whole of the west bank, and I saw it."
+    },
+    {
+      "fact": "Knowing Wren's mind on messages, he left the road, what the rider had told him and most of what he knew out of it.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "So he took out the road. He took out what the rider had given him."
+    },
+    {
+      "fact": "Asked by Wren what he had been looking at, he said later.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "and I was looking. That I'll ask him the rest to his face"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2774,6 +2792,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     },
     {
       "chapter": "tale01",

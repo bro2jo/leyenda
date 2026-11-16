@@ -7,7 +7,7 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Darrow; the reader; Rae (from Darrow on the fold wall, 05:between-2: Ride wide, the horse already turned one heartbeat early, his fear it was known; she keeps it). Hollis does not: it is his to come to at the seal. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
+      "who_knows": "Darrow; the reader; Rae (from Darrow on the fold wall, 05:between-2: Ride wide, the horse already turned one heartbeat early, his fear it was known; she keeps it). Hollis does not: it is his to come to at the seal (he heard at the weir only that the Captain was looking). Wren knows only that he saw something from the water he will not yet tell her. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand; the sender of the rider will have, by her mouth, that Darrow was in the water and saw the whole of the west bank, and will ask the rest to his face. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
       "note": "ch06:climax (T2/T3 plant): the rider, told when given him, says the Second was told to hold the west bank that morning and everyone in the Second knew the Grace would be thin; Darrow heard Ride wide today again. Only he heard it.",
       "on_page": [
         "00:I",
@@ -22,6 +22,7 @@
         "05:between-2",
         "06:interlude",
         "06:climax",
+        "06:choice",
         "tale03:p1"
       ]
     },
@@ -424,7 +425,8 @@
         "06:s2",
         "06:s3",
         "06:s4",
-        "06:s5"
+        "06:s5",
+        "06:choice"
       ]
     }
   ]

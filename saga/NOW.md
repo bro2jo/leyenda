@@ -4,15 +4,15 @@
 
 **BOOK II — THE TEMPERING ROAD · Chapter 7 — The Far Bank**
 
-- **Where:** The river mill; the keeper's stone on the weir below the river mill, the rider down on the ice before him.
+- **Where:** The river mill; the cart's tail on the near bank of the weir below the river mill.
 - **The quest:** *The Road.* North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.
 - **What Darrow is fighting right now:** The weir: the rider down on the ice at his feet, her four riders held on the far bank only by the forms, his stick gone over the fall and his sword arm cut, and what she is to be is his to decide.
-- **With him:** Maelis Vorne (On the near bank at the cart's tail, her needle threaded.) · Ser Hollis Garrow (On the near bank at the oxen's heads.) · Wren Ashdown (On the near bank behind the cart.) · Rae Thorne (On the cart's box on the near bank.) · Ash (Across Wren's feet.)
-- **Also here:** Ysra Tal (Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and wai…)
+- **With him:** Maelis Vorne (At the cart's tail, the needle threaded, her hand out for his arm.) · Ser Hollis Garrow (At the cart on the near bank.) · Wren Ashdown (At the cart with the ledger shut on the pencil.) · Rae Thorne (At the cart on the near bank.) · Ash (Across Wren's feet.)
+- **Also here:** Ysra Tal (Got up off the ice on her own, took up her sword, said his message back to him word for word, named him Plainspoken, and rode into the alde…)
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (1 of 3 told)
-- **Against him:** The rider's four men on the far bank, held there only while the forms hold, and whoever sent her for him alive.
-- **Next:** His answer: what he does with the rider on the ice.
-- **Open choice (the climax of Chapter 6):** What does Darrow do? 1. Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off. / 2. Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head. / 3. Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse.
+- **Against him:** The man who sent the rider, who will have Darrow's message word for word; and upstream at the mill bridge, carts drawn up the wrong way.
+- **Next:** Maelis's needle on the cart's tail.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

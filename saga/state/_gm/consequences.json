@@ -1960,7 +1960,11 @@
           "what": "The keepsake of Tale 1, a name said once, comes back in a habit: when a stranger on the road names him, he does not turn his head. Alluded to in a line, never retold; fire in the mill scenes",
           "fits": "beats.b2_3.status == \"in_progress\"",
           "priority": 2,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch06:choice"
+          ]
         }
       ]
     },
@@ -2073,6 +2077,53 @@
         }
       },
       "due": []
+    },
+    {
+      "id": "c06.13",
+      "made": {
+        "chapter": 6,
+        "scene": "climax",
+        "date": "2026-11-15"
+      },
+      "chose": "His own answer, nearest the third: let the rider up and sent the man who sent her a message in his own words, enough of the ford as he saw it from the water that the sender will know he knows, and nothing of the road the company takes or how much he has (he kept back what Wren feared a message would give away). Then watched her walk to her horse.",
+      "now": {
+        "approval": {
+          "maelis": 5,
+          "rae": 5,
+          "wren": -7
+        },
+        "bearing": {
+          "candor": 2
+        },
+        "flags": {
+          "ysra_spared": true,
+          "vane_messaged": true
+        }
+      },
+      "due": [
+        {
+          "id": "c06.13a",
+          "when": "next",
+          "at": "ch07:s1",
+          "weight": "scene",
+          "what": "Downstream of `ysra_spared` (b2.3): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.3`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "fired@ch06:choice",
+          "evidence": "the girl behind them with the ledger"
+        },
+        {
+          "id": "c06.13b",
+          "when": "next",
+          "at": "ch07:s1",
+          "weight": "scene",
+          "what": "Downstream of `vane_messaged` (b2.3): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.3`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "fired@ch06:choice",
+          "evidence": "She said it back to him word for word"
+        }
+      ],
+      "declined": [
+        "Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.",
+        "Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head."
+      ]
     }
   ],
   "rules": [

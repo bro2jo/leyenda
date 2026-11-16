@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Shouted his name when he went off the stone, and watched the rest with both hands over her mouth.",
-  "now": "On the near bank behind the cart.",
+  "last_seen_doing": "Asked what he had been looking at, was told later, and wrote Told first: her in his column; half pleased that he kept the road out of it.",
+  "now": "At the cart with the ledger shut on the pencil.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -799,6 +799,18 @@
       "chapter": "06",
       "scene": "between-6",
       "evidence": "and stopped there, and counted nothing after it"
+    },
+    {
+      "fact": "She wrote in his column that he had told the rider first, something he has not told her.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "Told first: her."
+    },
+    {
+      "fact": "She saw him keep the road out of his message, and said half of her was pleased and she was writing down the other half.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "Half of me's pleased with you. I'm writing down the other half."
     }
   ],
   "relationships": [
@@ -1141,6 +1153,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     }
   ]
 }

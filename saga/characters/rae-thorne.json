@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Sat the box with the reins in her lap, watching the four riders across the water, who watched her.",
-  "now": "On the cart's box on the near bank.",
+  "last_seen_doing": "Did not ask what he had seen, having had it from him on the fold wall, and called his message a carter's message.",
+  "now": "At the cart on the near bank.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -887,6 +887,12 @@
       "evidence": "Your name's on it. Not mine to carry."
     },
     {
+      "fact": "She called his message a carter's message: everybody knows there is something in the sack, and nobody knows the road.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "That's a carter's message"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1234,6 +1240,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     },
     {
       "chapter": "tale02",

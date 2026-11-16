@@ -1001,3 +1001,69 @@ She lay on the ice and waited for him to decide what she was.
 1. **Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.** *Hollis would. Rae would say nothing, which is how she says no.*
 2. **Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head.** *Wren would. Maelis will not mend what he breaks on purpose, and will say so. Hollis would not.*
 3. **Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse.** *Maelis and Rae would. Wren would not: a message tells them which road, and what he knows.*
+
+### Choice — Word for Word
+
+"Get up," said Darrow.
+
+She looked up at him from the ice as if he had said it in a language she had read about and never heard spoken.
+
+"You have a sword," she said. "I have a shoulder. The forms are finished. Nobody on either bank would say a word."
+
+"I know. Get up anyway. You've a horse up there, and four men who've been sitting very still for a long time." He lowered his point until it rested on the stone at his feet. "And you're going to carry something for me."
+
+She got up on her own, as he had known she would: one hand flat on the glaze, then a knee, then her feet, slowly, with the left arm held tight against her side and nothing in her face about what it cost. She stepped along the glaze to the lip of the fall, bent, picked up her sword one-handed, and sheathed it without looking.
+
+"I am not a herald," she said.
+
+"No. You're the one he'll believe."
+
+He had the whole of it in his mouth: the west bank in the spray, the horse already turned, the three heartbeats, and the thing she had told him on the ice without knowing what it was. It was far too much to send. He knew what Wren would say about a message: it tells them which road you're on, and how much you know. So he took out the road. He took out what the rider had given him. He took out most of the rest. What was left was small enough for one person to carry.
+
+"Tell the man who sent you this," he said. "I was in the water at the Wend. From the water you can see the whole of the west bank, and I saw it." He let that stand. "The rest I'll ask him myself. To his face."
+
+She said it back to him word for word, in the voice she had used for the forms: the water, the west bank, he saw it, to his face. She had every word.
+
+"That is all?"
+
+"That's all."
+
+"It tells him nothing."
+
+"It tells him I was looking."
+
+She considered that the way she had considered the ox. Something crossed her face that the script could not read, and then she was only very still. "You left out what I told you," she said.
+
+"That was yours, not his."
+
+She drew her gloves on, finger by finger, the left one slower than the right.
+
+"Plainspoken," she said, as if she were writing it in a book. "That is what I will call you when I tell him. You said exactly what you meant, and not one word over."
+
+She walked off the glaze without looking at her feet. At the far bank her four riders came down to the water, and she waved them back with her good hand, climbed the bank alone, and mounted one-handed. It was the only clumsy thing he ever saw her do. At the top she looked back once: not at him, but past him to the near bank, at the cart and the oxen and the girl behind them with the ledger, the way a clerk looks at a page to fix it in her head. Then the alders had her, and the four riders after her, and the far bank was empty.
+
+Darrow stood on the keeper's stone with no stick and a bloody sword and looked at the three glazed stones between him and the near bank.
+
+Something scraped behind him. Hollis was coming out along the top of the weir on his backside, a stone at a time, with Rae's ox-goad across his knees.
+
+"The forms are done," Hollis said, before Darrow could open his mouth. "I'll lift what I like." He held the goad up, butt first. "Lean on that, Captain. You've lost one stick today."
+
+Darrow came in on the goad, a stone at a time, with Hollis shuffling behind him and swearing at each stone by name.
+
+At the cart, Wren had the ledger open and her pencil still.
+
+"What did you tell her?"
+
+"That I was in the water at the Wend," said Darrow, "and I was looking. That I'll ask him the rest to his face."
+
+"Looking at what?"
+
+"Later."
+
+Rae did not ask. She had had it from him on the fold wall at Coldmere and kept it, and she only nodded, once. "That's a carter's message," she said. "Everybody knows there's something in the sack, and nobody knows the road."
+
+Wren looked at him a long moment. Then she wrote in his column, small, and turned the book so he could see it: *Told first: her.*
+
+"You told a woman who came to take you something you haven't told me," she said. "That's a count, Captain, whatever you meant by it." She shut the book on the pencil. "You kept the road out of it. I saw you thinking about it. Half of me's pleased with you. I'm writing down the other half."
+
+"Good," said Maelis, which from her was a speech. She had the needle threaded and her hand held out. "Sit. Arm."

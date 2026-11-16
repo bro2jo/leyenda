@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Waited on the near bank with her roll open and her needle threaded.",
-  "now": "On the near bank at the cart's tail, her needle threaded.",
+  "last_seen_doing": "Said good, which from her was a speech, and held out her hand for his arm with the needle threaded.",
+  "now": "At the cart's tail, the needle threaded, her hand out for his arm.",
   "story_so_far": "Maelis told him plainly what the frost had kept of his hand, warned the company what he would be taking onto the ice, and said a question could be answered by another mouth. At noon she waited on the bank with her needle threaded.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -667,6 +667,12 @@
       "chapter": "06",
       "scene": "5",
       "evidence": "it can be answered by another mouth"
+    },
+    {
+      "fact": "When he came in she said good, which from her was a speech, and held out her hand for the cut arm.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "which from her was a speech"
     }
   ],
   "relationships": [
@@ -1000,6 +1006,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     }
   ]
 }

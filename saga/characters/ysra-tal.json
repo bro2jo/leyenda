@@ -26,17 +26,17 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Came onto the glaze at the noon bell, heard his answer and had nowhere to put it, moved him once and cut his sword arm, gave ground and waited for him to chase, then came in and ran onto his point; told him, as a fact about him, what she had been told about the ford.",
-  "now": "Down on the ice between the second and third stones with a wound high in her left shoulder, her sword against the lip of the fall, her four riders held on the far bank by the forms.",
+  "last_seen_doing": "Got up off the ice on her own, took up her sword, said his message back to him word for word, named him Plainspoken, and rode into the alders with her four riders after one look at the girl with the ledger.",
+  "now": "Gone into the alders on the far bank with her four riders, wounded high in the left shoulder, carrying his message word for word.",
   "story_so_far": "Sent from Calden to bring in the captain of the Ninth alive and not told why, Ysra Tal lost a day to the carter's lying road, watched the company from a distance, and summoned him under the forms to the weir. Her one question was why he would not kneel. At the noon bell her footwork found a man who would not move, and she went down on the ice with his point in her shoulder, wanting a reason for the first time.",
   "quote": {
-    "text": "You did not move.",
+    "text": "That is what I will call you when I tell him.",
     "chapter": "06",
-    "scene": "climax"
+    "scene": "choice"
   },
   "known_facts": [
     {
@@ -98,6 +98,24 @@
       "chapter": "06",
       "scene": "climax",
       "evidence": "She had no idea what she had said."
+    },
+    {
+      "fact": "She noticed that his message left out what she had told him on the ice.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "You left out what I told you"
+    },
+    {
+      "fact": "She said she would call him Plainspoken when she told the man who sent her: he said exactly what he meant, and not one word over.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "You said exactly what you meant, and not one word over."
+    },
+    {
+      "fact": "From the top of the far bank she looked back once at the girl with the ledger, the way a clerk fixes a page in her head.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "the way a clerk looks at a page to fix it in her head"
     }
   ],
   "relationships": [
@@ -153,6 +171,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     }
   ]
 }

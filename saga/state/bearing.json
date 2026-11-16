@@ -19,16 +19,16 @@
       }
     },
     "candor_guile": {
-      "value": -6,
+      "value": -8,
       "left": "Candor",
       "right": "Guile",
       "moved": {
-        "left": 10,
+        "left": 12,
         "right": 4
       },
       "rungs": {
         "lean": "Candor",
-        "named": null,
+        "named": "Candor",
         "mixed": false
       }
     },
@@ -83,7 +83,7 @@
     "hearth_banner.mixed": "the Steward",
     "sworn_unsworn.mixed": "the Freesworn"
   },
-  "epithet": "the Kinsman",
+  "epithet": "Plainspoken",
   "leans": [
     "Candor",
     "Hearth",
@@ -239,6 +239,12 @@
       "date": "2026-11-13",
       "axis": "sworn_unsworn",
       "delta": -1
+    },
+    {
+      "why": "c06.13",
+      "date": "2026-11-15",
+      "axis": "candor_guile",
+      "delta": -2
     }
   ],
   "ladder": {
@@ -259,9 +265,9 @@
   "titles": [
     {
       "axis": "candor_guile",
-      "rung": "lean",
+      "rung": "named",
       "pole": "Candor",
-      "name": "the Blunt"
+      "name": "Plainspoken"
     },
     {
       "axis": "hearth_banner",
@@ -276,6 +282,6 @@
       "name": "the Dutiful"
     }
   ],
-  "epithet_next": "the Kinsman",
-  "epithet_since": "ch02:choice"
+  "epithet_next": "Plainspoken",
+  "epithet_since": "ch06:choice"
 }

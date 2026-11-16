@@ -399,7 +399,7 @@
     "benedek_hollowed": true,
     "vane_unbound": null,
     "hollis_truth": null,
-    "ysra_spared": null,
+    "ysra_spared": true,
     "named_himself": true,
     "marrant_offer": false,
     "shard_found": true,
@@ -426,7 +426,7 @@
     "anselm_double": true,
     "bell_rung_for_marrant": false,
     "road_east": false,
-    "vane_messaged": false,
+    "vane_messaged": true,
     "millers_sent": false,
     "stones_told": false,
     "sword_yielded": false,
@@ -567,19 +567,7 @@
       "bound": "2026-11-10"
     }
   ],
-  "open_choice": {
-    "chapter": 6,
-    "scene": "climax",
-    "ask": "What does Darrow do?",
-    "options": [
-      "Spare her where she lies: have Maelis bind what the ice and the post have done, and let her men carry her off.",
-      "Break her blade hand on the ice and leave her for her men, and take the north road tonight while the hunt has no head.",
-      "Let her up with a message for the man who sent her, in Darrow's own words: the ford as he saw it from the water. Then watch her walk to her horse."
-    ],
-    "default": 1,
-    "opened": "2026-11-15",
-    "carries": 2
-  },
+  "open_choice": null,
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4

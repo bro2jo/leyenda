@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "06",
-    "scene": "climax",
+    "scene": "choice",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#climax"
+    "anchor": "chronicle/06-the-weir.html#choice"
   },
-  "last_seen_doing": "Stood at the oxen's heads with his fists at his sides because the forms said so.",
-  "now": "On the near bank at the oxen's heads.",
+  "last_seen_doing": "Came out along the weir on his backside once the forms were done and gave Darrow Rae's ox-goad to lean on.",
+  "now": "At the cart on the near bank.",
   "story_so_far": "Hollis moved the Captain's grip up the hilt and told him two lost fingers were an argument already over, gave a river boy the boot he carried down the mountain, and argued for answering the summons by the forms. He won, sulked about it, crossed the glazed weir on his backside to test his captain on the stone, told Wren she was for them, and kept his hands at his sides at noon because the forms said so.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -826,6 +826,12 @@
       "chapter": "06",
       "scene": "6",
       "evidence": "You've been for us since the mountain, girl. Anybody could see it but you."
+    },
+    {
+      "fact": "Once the forms were done he came out on the weir with the ox-goad for the Captain to lean on.",
+      "chapter": "06",
+      "scene": "choice",
+      "evidence": "Lean on that, Captain. You've lost one stick today."
     }
   ],
   "relationships": [
@@ -1228,6 +1234,10 @@
     {
       "chapter": "06",
       "scene": "climax"
+    },
+    {
+      "chapter": "06",
+      "scene": "choice"
     }
   ]
 }
