@@ -1006,19 +1006,19 @@ She lay on the ice and waited for him to decide what she was.
 
 "Get up," said Darrow.
 
-She looked up at him from the ice as if he had said it in a language she had read about and never heard spoken.
+She stared up at him from the ice. It was plainly the last thing she had expected him to say.
 
-"You have a sword," she said. "I have a shoulder. The forms are finished. Nobody on either bank would say a word."
+"You have a sword in your hand," she said, "and I have your point's hole in my shoulder. The forms are finished. Nobody on either bank would say a word if you used it."
 
 "I know. Get up anyway. You've a horse up there, and four men who've been sitting very still for a long time." He lowered his point until it rested on the stone at his feet. "And you're going to carry something for me."
 
-She got up on her own, as he had known she would: one hand flat on the glaze, then a knee, then her feet, slowly, with the left arm held tight against her side and nothing in her face about what it cost. She stepped along the glaze to the lip of the fall, bent, picked up her sword one-handed, and sheathed it without looking.
+She got up on her own, as he had known she would: one hand flat on the glaze, then a knee, then her feet, slowly, with the left arm held tight against her side and nothing in her face about what it cost. Her sword had skidded to the downstream edge of the weir, where the water went over. She stepped along the glaze to it, bent, picked it up one-handed, and sheathed it without looking.
 
 "I am not a herald," she said.
 
 "No. You're the one he'll believe."
 
-He had the whole of it in his mouth: the west bank in the spray, the horse already turned, the three heartbeats, and the thing she had told him on the ice without knowing what it was. It was far too much to send. He knew what Wren would say about a message: it tells them which road you're on, and how much you know. So he took out the road. He took out what the rider had given him. He took out most of the rest. What was left was small enough for one person to carry.
+He could have sent her home with all of it: the west bank in the spray, the horse already turned, the three heartbeats, and the thing she had told him on the ice without knowing what it was. It was far too much. He knew what Wren would say about any message: it tells them which road you're on, and how much you know. So he would not say where the company was going. He would not hand back what the rider had told him. He would send one true thing, and keep the rest.
 
 "Tell the man who sent you this," he said. "I was in the water at the Wend. From the water you can see the whole of the west bank, and I saw it." He let that stand. "The rest I'll ask him myself. To his face."
 
@@ -1032,7 +1032,7 @@ She said it back to him word for word, in the voice she had used for the forms: 
 
 "It tells him I was looking."
 
-She considered that the way she had considered the ox. Something crossed her face that the script could not read, and then she was only very still. "You left out what I told you," she said.
+She considered it, as she had considered the ox that morning, for longer than it seemed to deserve. Something crossed her face that the script could not read, and then she was only very still. "You left out what I told you," she said.
 
 "That was yours, not his."
 
@@ -1040,7 +1040,7 @@ She drew her gloves on, finger by finger, the left one slower than the right.
 
 "Plainspoken," she said, as if she were writing it in a book. "That is what I will call you when I tell him. You said exactly what you meant, and not one word over."
 
-She walked off the glaze without looking at her feet. At the far bank her four riders came down to the water, and she waved them back with her good hand, climbed the bank alone, and mounted one-handed. It was the only clumsy thing he ever saw her do. At the top she looked back once: not at him, but past him to the near bank, at the cart and the oxen and the girl behind them with the ledger, the way a clerk looks at a page to fix it in her head. Then the alders had her, and the four riders after her, and the far bank was empty.
+She walked off the glaze without looking at her feet. At the far bank her four riders came down to the water, and she waved them back with her good hand, climbed the bank alone, and mounted one-handed. It was the only clumsy thing he had seen her do. At the top she looked back once: not at him, but past him to the near bank, at the cart and the oxen and the girl behind them with the ledger, the way a clerk looks at a page to fix it in her head. Then the alders had her, and the four riders after her, and the far bank was empty.
 
 Darrow stood on the keeper's stone with no stick and a bloody sword and looked at the three glazed stones between him and the near bank.
 
@@ -1064,6 +1064,6 @@ Rae did not ask. She had had it from him on the fold wall at Coldmere and kept i
 
 Wren looked at him a long moment. Then she wrote in his column, small, and turned the book so he could see it: *Told first: her.*
 
-"You told a woman who came to take you something you haven't told me," she said. "That's a count, Captain, whatever you meant by it." She shut the book on the pencil. "You kept the road out of it. I saw you thinking about it. Half of me's pleased with you. I'm writing down the other half."
+"She came here to take you," she said, "and you told her something you haven't told me. That goes in the column, Captain, whatever you meant by it." She shut the book on the pencil. "You kept the road out of it. I saw you thinking about it. Half of me's pleased with you. I'm writing down the other half."
 
 "Good," said Maelis, which from her was a speech. She had the needle threaded and her hand held out. "Sit. Arm."

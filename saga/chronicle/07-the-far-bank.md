@@ -26,7 +26,7 @@ She sewed the way she did everything, quickly and without comment. The cut ran f
 
 "I didn't think it had."
 
-"You hoped it had. I watched you look." She began to roll the bandage onto his forearm. "There. Now you can hold a sword badly in two places."
+"You hoped it had. I watched you look." She began to roll the bandage onto his forearm. "There. Now you've two reasons to hold a sword badly."
 
 Wren sat at the far end of the tailboard with the ledger open, writing, and she kept her eyes on the page.
 
@@ -44,15 +44,15 @@ Darrow picked it up in his left hand, since the right was Maelis's for the momen
 
 That was when the shouting started upstream.
 
-The bridge crossed the river above the mill: one span of old timber, wide enough for one cart, with the mill's own toll-board nailed at the near end. On the far side the carts that had been drawn up there since the middle of the night had started to cross all at once. Two had come onto it at once and jammed at the near end, by the toll-board, wheel locked in wheel, and a third was pushing up behind them. Down from the mill, white to the elbows with flour, came the millers, half a dozen of them, and in front a broad man with a voice made for shouting over a millrace.
+The bridge crossed the river a little way upstream of the mill: one span of old timber, wide enough for one cart, with the mill's toll-board nailed to a post at the near end. The carts that had stood on the far bank since the middle of the night had all started across at once. At the near end, where the bridge came down onto the bank, the first two had come off side by side and locked wheels against the toll-board post, and the rest were jammed up behind them on the span, the old timber creaking under all of them. Down from the mill, white to the elbows with flour, came the millers, half a dozen of them, and in front a broad man with a voice made for shouting over a millrace.
 
 "One at a time!" he was bawling. "The board says one at a time! You'll have my bridge in the river!"
 
-Darrow went up the bank toward him on the stick, and the company came with him, because it did now without being asked.
+Darrow went along the bank toward him on the stick, and the company came with him, because it did now without being asked.
 
 The miller saw him coming and stopped shouting at the carts. He looked at the stick, and the bandage, and the coat with the cut in its cape.
 
-"You're the captain of the Ninth," he said. "The one off the post."
+"You're the captain of the Ninth," he said. "The one on the bell-post."
 
 Darrow did not turn his head. He had learned that once, young, at a rail, and he had kept it. He was looking at the far bank.
 
@@ -68,7 +68,7 @@ The carts were drawn up across the far bank behind the people, like a wall. In f
 
 He had seen people stood that way once before. He had been in the water at Harrow Ford with a lance in his hand, and on the far bank the carts had been behind and the children in front and the men looking back into the trees, and he had been on the wrong side of them. Somewhere under the noise of this river a woman with red hands said, *Look. Remember it.*
 
-For once, he was on the right side of a bridge.
+This time he was on the near bank with a bridge in front of him, and he could bring them over instead of riding at them.
 
 "Why first," he said, and he felt Rae turn to look at him. He said it to all of them, the miller too. "I've seen a line stood like that once. I was on the wrong side of it, and I've been sorry every day since. I'd like to be on the right side of one, once. So: we keep this bridge open tonight. One cart at a time, as your board says, and every one of them over before morning."
 
@@ -92,7 +92,7 @@ The light went off the field slowly, the way it does in frost. The mill rang for
 
 At the far edge of the field across the river, where the open ground met the trees, something moved.
 
-It was hard to see, and then it was not. Shapes were standing at the edge of the trees in a long uneven row, many of them, upright, still. While he watched, one of them took a step out into the field, slowly, as if it had forgotten how and was remembering. Then another did.
+It was hard to see, and then it was not. Shapes were standing at the edge of the trees in a long uneven row, many of them, grey in the last of the light, upright and very still. While he watched, one of them took a step out into the field, slowly, as if it had forgotten how and was remembering. Then another did.
 
 Nobody on the near bank said what they were.
 
