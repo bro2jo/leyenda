@@ -351,3 +351,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-16#4,2026-11-16,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: my chicken and spinach for lunch
 2026-11-16#5,2026-11-16,,snack,"Smoked cheddar, thick slice",1 thick slice (assumed ~1.5 oz / 42 g),170,10.5,0.5,14,0,8,0,270,35,300,0.1,12,1.5,0,0.4,40,library,his words: thick slice of smoked cheddar cheese; as 11/15
 2026-11-16#6,2026-11-16,,dinner,Kirkland Signature supreme cauliflower crust pizza,"6 slices (3/4 pizza, 3 label servings of 1/4 pizza / 138 g)",930,42,93,45,3,24,12,2700,873,1059,3,75,4.8,15,0,150,label,"label photo 11/16 x3; his words: 6 pieces, 4 slices is half; Mg, zinc, vit C, omega-3 estimated"
+2026-11-16#7,2026-11-16,,dinner,Root beer,1 glass (assumed 12 oz),160,0,42,0,0,0,42,50,5,10,0.2,2,0,0,0,0,estimate,his words: a glass of root beer; as 11/15
