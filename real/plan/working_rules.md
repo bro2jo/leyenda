@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/16 (repo, his call; Phase 5 from PT 15): the checks simplified. The morning check is five questions (swelling grade, pain and where, extension vs the right, wellness, anything new); the Sunday checks keep the weigh-in and the single-leg squat test while the State keeps it; the heel prop and photo, the SLR lag and the flexion heel slide are retired and come back when a morning shows a problem; the check-in set adds the run
 - 11/7 (repo, his call): the exercise log's `load or band` column split into `load`, `load_unit`, `band` and `height_in` (numbers, with the load conventions below); one exercise name per movement, set-ups and machine ids in `notes`; the morning readings are numbers (pain, extension and flexion in degrees, hours on feet), the catch `none` / `yes`, adjuncts one format
 - 11/1 (repo, his call): progression follows the master plan's own rule ("Progressive Overload Rules": one major variable at a time per exercise, loads +2.5–10%); the stricter limits this file had added are gone: one change per session made on the last set only, one new exercise per session, one new impact rung per session. Any number of exercises may progress in the same session
 - 10/30 (repo, his call): impact paces like the lifts (one change per exercise, one new exercise per session, inside the plan's caps); the dashboard's one-change-per-session limit for the whole impact block is gone (the master plan sets none)
@@ -37,7 +38,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   **Grade it every morning.** "Quiet," "same," "no additional," and "great" are trends, not grades; they go in the trend column, not instead of the grade.
 - **Extension target:** as close as possible to the right knee, measured the same way (plan principle 1). The right knee's passive hyperextension on a heel prop is the target until the clinic measures it. Home checks:
   - a side-by-side look every morning
-  - a **weekly side-view photo**: both legs on the heel prop, same setup
+  - a side-view photo, both legs on the heel prop, same setup, when a morning says the left isn't matching (weekly until 11/16)
 
   A photo can't see 2–3°. Goniometer readings live in the Recovery State §4.
 - **Clean morning:** the verdict on the previous day's load; the home version of the plan's "returns to baseline by the following morning". All of these must hold:
@@ -60,7 +61,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   - Progressions of plan exercises along the plan's own variables (load, reps, sets, range, speed, holds) are in-plan.
   - **Out-of-plan** = modalities or exercises the plan doesn't contain. These go to the PT first.
   - **Later-phase items** stay behind the plan's criteria (load rule 9).
-- **Daily minimum:** the morning check plus one weighted heel prop a day, at the dose in the Recovery State §6, until the side-view photo shows the left as straight as the right. After that the heel prop is a weekly check, and the daily minimum is the morning check alone.
+- **Daily minimum:** the morning check (Check-in question set). The weighted heel prop was part of it until the photo showed the left as straight as the right (10/18), then a Sunday check until 11/16; it returns daily, at the dose in the Recovery State §6, if a morning shows the left short of the right.
 - **Minimum session:** the version of each session marked in the Recovery State §6. Below it, the day is partial, not loaded.
 - **Week:** Sunday through Saturday, identified by its Sunday date (`dash_week_start`).
 - **Post-op week:** counted from surgery (Mon 2026-08-24). Week n = POD 7n−6 to 7n, Tuesday → Monday (`postop_week`). Example: POD 43 = 6 weeks + 1 day = the first day of post-op week 7.
@@ -124,7 +125,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
 **Daily minimum and checks:**
 - Daily: see Definitions.
-- **Weekly (Sunday morning):** SLR lag (one rep) · flexion (one heel slide vs the right) · extension photo · body mass · the heel prop, once it has become weekly.
+- **Weekly (Sunday morning):** body mass · the single-leg squat test, filmed, while the Recovery State keeps it. The SLR lag, the flexion heel slide, the extension photo and the heel prop are retired (11/16); each returns when a morning shows its problem (the quad not firing, flexion down, extension short of the right).
 - **Optional extras:** Game Ready after big sessions · step hamstring stretch · TKE in the warm-up.
 - **Not part of the program:** NMES, quad sets, heel slides, SLR, and patellar glides. The plan uses them for poor activation and early ROM, both resolved before Phase 3. They return only if a red-light morning brings back an extension or activation problem.
 
@@ -168,21 +169,22 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 - **Extension → PT** before the next session if the left looks visibly bent next to the right, or a hard block appears at the end of the stretch.
 - **Back-of-knee tightness** that becomes calf pain or calf swelling → surgical team.
 
-## Check-in question set (Phases 3–4)
+## Check-in question set (Phases 3–5)
 
-- **Morning:** **swelling grade** (none / trace / 1+ — ask for the grade, not a trend) and vs yesterday · extension side by side · pain · stiffness · catch present / absent · wellness 1–5 · planned hours on feet.
+- **Morning (five questions):** **swelling grade** (none / trace / 1+ — the grade, not a trend) · **pain 0–10**, and where if not 0 (the front of the knee matters most the morning after a run or jumps) · **extension: matches the right?** (side by side) · **wellness 1–5** · **anything new?** (a catch, stiffness, giving way; details only if yes, and a "no" logs the catch as none). Hours on feet are logged when he gives them, not asked.
+- **After a run (Phase 5):** which walk-jog session · walk and jog minutes × rounds, as run · surface · pain during and after (front of the knee especially) · anything off in the stride · minutes and RPE.
 - **After a knee session:** which session (A or B) · doses, including anything changed on the fly · **impact: rung, sets × contacts, landings quiet or not** · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
 - **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · anything about the setup the knee noticed.
 - **After a throwing session:** throws by type · stance (feet planted / slight pivots) · **pivot foot** · minutes and session RPE · anything the knee, elbow or shoulder noticed.
 - **Off day:** bike minutes and distance · rest, or what the accessory day included.
-- **Weekly (Sunday morning):** body mass · extension photo (with the heel prop once it's weekly) · SLR lag (one rep) · flexion vs the right.
+- **Weekly (Sunday morning):** body mass · the single-leg squat test, filmed, while the Recovery State keeps it.
 - **Every PT visit:** any numbers taken (goniometer, dynamometer, 1RM) · anything said verbally · who treated.
 
 ## Weekly checkpoint (every Sunday)
 
 1. **PT day:** the note goes into `pt_notes.md` word for word the same day, with his account after it. Verbal instructions he relays are appended as patient-reported.
 2. **Saturday:** daily minimum + bike; the day's log as usual.
-3. **Sunday morning, before the loading session:** log the morning reading (graded), weigh in, take the extension photo, do the SLR lag and flexion checks, then say **"checkpoint"** (`/checkpoint`). It:
+3. **Sunday morning, before the loading session:** log the morning check, weigh in, run the single-leg squat test if the Recovery State still keeps it, then say **"checkpoint"** (`/checkpoint`). It:
    - writes the week's review in `real/checkpoints/<Sunday>.md`
    - reviews the Recovery State: a new `recovery_state.md` when the program changed (the old one to `real/state/archive/`), otherwise its "Last reviewed" line and whatever status moved
    - updates `real/NOW.md` for the new week

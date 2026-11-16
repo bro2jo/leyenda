@@ -461,15 +461,14 @@
     {
       "date": "2026-11-19",
       "drop": [
-        "cond",
         "upper",
         "sport"
       ],
       "add": [
         "pt"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the walk-jog: PT 15, 2026-11-16 (pt_notes.md), his OK 11/16",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/16: cond stays, as the first walk-jog after the clinic (running goes on loaded days, never consecutive days)"
     },
     {
       "date": "2026-11-20",
@@ -671,7 +670,7 @@
   },
   "food_itemised_from": "2026-10-08",
   "daily_minimum": {
-    "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day). rounds 0 = the heel prop is a weekly check (Sundays, logged as floor_am=Y that day) and the daily minimum is the graded morning check.",
+    "_about": "Weighted heel-prop rounds that make a full daily minimum (the floor) from a date on; fewer rounds score half. Log each round as floor_am / floor_pm = Y (floor_am for a single round, any time of day). rounds 0 = the daily minimum is the graded morning check; the heel prop was a Sunday check from 10/18 and is retired from 11/16 (Working Rules), logged as floor_am=Y only when one is done.",
     "rounds": [
       {
         "from": "2026-07-22",
