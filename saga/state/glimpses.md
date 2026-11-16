@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-13 · ledger · Wren's tally for the week, inside the back cover: fires lit, six; fires Hollis says he lit, nine.
 - 2026-11-14 · overheard · Overheard late last night: Hollis asking Maelis whether she has ever lost a patient to boredom. Maelis says not yet, and looks at him.
 - 2026-11-14 · house · Rae has taken to leaving the warm side of the fire for whoever comes in last, and pretending it is an accident. It is usually Darrow.
 - 2026-11-14 · saying · Hollis drops the kettle lid in the ashes and says "Bells take it" with real feeling. Wren writes it down, for the collection.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-15 · overheard · Overheard after the fire is banked: Wren, half asleep under the cart, counting something in a whisper, losing her place at forty, and patiently starting again.
 - 2026-11-15 · house · Last thing at night, Rae checks the dog's paws one by one for burrs, telling it a long, unhurried story about nothing at all. The dog listens to every word.
 - 2026-11-15 · body · He gets up from the fire without a hand on anything, and only knows he did it because Maelis, across the coals, has stopped watching him do it.
+- 2026-11-16 · weather · A hard frost overnight, the kind that rings underfoot. By mid-morning the road steams wherever the sun touches it, and the dog trots along it sneezing at every patch.

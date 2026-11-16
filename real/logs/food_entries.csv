@@ -345,3 +345,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-15#15,2026-11-15,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,"his words: chobani Greek yogurt 20g protein; flavour not given, library row (cherry berry label)"
 2026-11-15#16,2026-11-15,,snack,Kirkland Signature wildflower honey,assumed 1 tbsp (21 g),60,0,17,0,0,0,17,0,11,1,0.1,0.4,0,0.1,0,0,estimate,his words: added Kirkland wild flower honey; amount not given
 2026-11-15#17,2026-11-15,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,his words: two vitamin gummies (logged late); library row (label 11/1)
+2026-11-16#1,2026-11-16,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola 10g protein
+2026-11-16#2,2026-11-16,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,his words: cafe latte protein drink
+2026-11-16#3,2026-11-16,,breakfast,LMNT electrolyte drink mix,1 stick,10,0,2,0,0,0,0,1000,200,0,0,60,0,0,0,0,library,his words: one of those mte packets; read as an LMNT stick

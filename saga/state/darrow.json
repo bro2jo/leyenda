@@ -1,10 +1,10 @@
 {
-  "asof": "2026-11-15",
+  "asof": "2026-11-16",
   "name": "Ser Darrow of Edgemoor",
   "level": 9,
   "rank": "Kindled",
   "level_reached": "2026-11-12",
-  "xp": 3878,
+  "xp": 3888,
   "xp_this_level": 3600,
   "xp_next_level": 4500,
   "proficiency": 4,
@@ -351,8 +351,8 @@
   },
   "chapter_now": {
     "week_start": "2026-11-15",
-    "through": "2026-11-15",
-    "tier_so_far": "Triumph",
+    "through": "2026-11-16",
+    "tier_so_far": "Costly",
     "chapter": 7
   },
   "fell": {
