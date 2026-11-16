@@ -1960,11 +1960,12 @@
           "what": "The keepsake of Tale 1, a name said once, comes back in a habit: when a stranger on the road names him, he does not turn his head. Alluded to in a line, never retold; fire in the mill scenes",
           "fits": "beats.b2_3.status == \"in_progress\"",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch07:s1",
           "offered": 1,
           "offered_at": [
             "ch06:choice"
-          ]
+          ],
+          "evidence": "Darrow did not turn his head. He had learned that once, young, at a rail, and he had kept it."
         }
       ]
     },

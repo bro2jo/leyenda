@@ -32,13 +32,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "06",
-    "scene": "choice",
+    "chapter": "07",
+    "scene": "1",
     "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#choice"
+    "anchor": "chronicle/07-the-far-bank.html#scene-1"
   },
-  "last_seen_doing": "Asked what he had been looking at, was told later, and wrote Told first: her in his column; half pleased that he kept the road out of it.",
-  "now": "At the cart with the ledger shut on the pencil.",
+  "last_seen_doing": "Kept her eyes on the ledger, forgot to be cross when the dog fetched, took the count of the carts, and began counting the shapes at the field's edge.",
+  "now": "At the bridge with the ledger, counting carts and the shapes across the field.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -811,6 +811,12 @@
       "chapter": "06",
       "scene": "choice",
       "evidence": "Half of me's pleased with you. I'm writing down the other half."
+    },
+    {
+      "fact": "At dusk she counted the shapes at the edge of the trees across the river under her breath, lost her place at forty and started again.",
+      "chapter": "07",
+      "scene": "1",
+      "evidence": "She lost her place at forty, and started again at one."
     }
   ],
   "relationships": [
@@ -1157,6 +1163,10 @@
     {
       "chapter": "06",
       "scene": "choice"
+    },
+    {
+      "chapter": "07",
+      "scene": "1"
     }
   ]
 }

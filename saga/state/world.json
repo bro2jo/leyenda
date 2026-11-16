@@ -5,10 +5,19 @@
   "chapter": 7,
   "chapter_title": "The Far Bank",
   "chapter_file": "saga/chronicle/07-the-far-bank.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "The Right Side of the Bridge",
+      "covers": [
+        "2026-11-15"
+      ],
+      "written": "2026-11-15"
+    }
+  ],
   "location": {
     "place": "river-mill",
-    "detail": "the cart's tail on the near bank of the weir below the river mill",
+    "detail": "the near end of the mill bridge at dusk, under the mill's lamps",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -17,8 +26,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The weir: the rider down on the ice at his feet, her four riders held on the far bank only by the forms, his stick gone over the fall and his sword arm cut, and what she is to be is his to decide.",
-  "last_beat": "Wren wrote Told first: her in his column; Maelis said good, which from her was a speech, and held out her hand for his arm.",
+  "current_struggle": "The mill bridge: carts from the far bank crossing one at a time under the mill's lamps through the night, and at the edge of the field behind them, shapes that have begun to walk out of the trees.",
+  "last_beat": "At the far edge of the field across the river, shapes stood at the edge of the trees and began, slowly, to walk out; nobody said what they were, and Wren counted them, lost her place at forty, and started again at one.",
   "companions": {
     "maelis": {
       "approval": 45,
@@ -206,7 +215,8 @@
     "infirmary shirt and breeches",
     "the summons under the forms, taken down nail by nail, inside his coat",
     "a sealed letter with his name on it, from the miller, unopened, inside his coat",
-    "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder"
+    "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder",
+    "the borrowed stick, used on the Steps and kept"
   ],
   "keepsakes": [
     {

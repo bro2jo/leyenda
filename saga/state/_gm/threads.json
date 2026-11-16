@@ -59,7 +59,8 @@
         "06:s3",
         "06:s6",
         "06:s7",
-        "06:climax"
+        "06:climax",
+        "07:s1"
       ]
     },
     {
@@ -73,6 +74,7 @@
       "on_page": [
         "00:I",
         "05:s3",
+        "07:s1",
         "tale02:p2"
       ]
     },
@@ -85,7 +87,8 @@
       "who_knows": "Darrow; the reader. He does not know her name",
       "note": "he doesn't know her name",
       "on_page": [
-        "00:I"
+        "00:I",
+        "07:s1"
       ]
     },
     {
