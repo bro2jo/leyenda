@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-14 · saying · Hollis drops the kettle lid in the ashes and says "Bells take it" with real feeling. Wren writes it down, for the collection.
 - 2026-11-14 · overheard · Overheard as the fire burns down: Wren asking Rae whether she ever gets tired of roads. Rae says only the straight ones.
 - 2026-11-15 · ledger · Wren's tally for the week, ruled off and underlined: hills crossed, thirty-one by Rae's count; buckets carried by Hollis, eleven; songs sung badly, all of them.
 - 2026-11-15 · body · Frost on the tailboard at first light. He bends the knee under the blanket and it comes up all the way without a word of complaint; he lies there a minute longer anyway, because for once he can.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-16 · weather · A hard frost overnight, the kind that rings underfoot. By mid-morning the road steams wherever the sun touches it, and the dog trots along it sneezing at every patch.
 - 2026-11-16 · overheard · Overheard at the water butt: Hollis telling Wren that frost is good for the soul. Wren asks him to show her where it says so. He cannot, and says so twice.
 - 2026-11-16 · saying · Hollis barks his shin on the cart step and says "Stone and Crown" like a curse. Rae, passing, says it back to him like a vow, and he has no answer for that at all.
+- 2026-11-16 · house · Maelis lays her kit out on the only flat stone in sight, in rows so straight that Wren, watching, quietly starts ruling her columns to the same spacing.
