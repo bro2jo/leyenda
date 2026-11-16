@@ -691,9 +691,9 @@
     ]
   },
   "rehab": {
-    "current_phase": 4,
-    "phase_entered": "2026-10-20",
-    "next_gate": "Phase 4 exit -> Phase 5 (Before Running; master plan): full extension, >=95% flexion, no/trace effusion, quad LSI >80% (90.4% on 10/17), hamstring LSI >=80% (met 11/10: 65 vs 65 lb, 100%, PT 13), glute ~>=80% symmetry, 10 controlled single-leg squats to ~60 deg (home test, filmed, from 10/28), pain-free low-level impact prep (home, the plan's Phase 4 sequence from 10/28; the drop vertical jump cleared by Nick 10/28 once the rungs before it are clean), good landings (met 11/10: Nick read the 11/8 drop vertical jump film as good), rehab team agrees (the PT, yes, PT 12 11/4: running criteria read as met; the surgeon, yes from the week of 11/15, ramping up to it, some form work allowed now (11/4, relayed 11/8); Nick 11/10, PT 13: the elliptical and slow form work for running approved; the formal quad retest not done 11/10). Earliest by calendar: week 13, Tue 11/17 (Knot IV).",
+    "current_phase": 5,
+    "phase_entered": "2026-11-16",
+    "next_gate": "Phase 5 exit -> Phase 6 (master plan, Phase 5 Exit Criteria; Knot V: Before Higher Plyometrics/Agility): running progression well tolerated, no pain or effusion after running, full ROM maintained, quad LSI ~>=85% (90.4% on 10/17; retest date open), basic hop/landing work tolerated, good single-leg control. Phase 5 entered Mon 11/16 (Knot IV: the surgeon and the PT cleared the running gate, PT 15); running from week 13 (Tue 11/17), the master plan's return-to-running progression (session 1: walk 5 / jog 1 x 5) and running rules; short decels and box drop-downs added by the PT 11/16.",
     "knots": [
       {
         "knot": 1,
@@ -712,6 +712,12 @@
         "name": "Standing",
         "date": "2026-10-20",
         "evidence": "Phase 3 -> 4 (Before Phase 4 checklist, master plan) met: quad LSI 90.4% (PT 11, 10/17, torque monitor), step-downs watched and passed (PT 11), full/symmetric ROM (2 deg hyperext AROM 10/8; flexion 146 vs 144; first side-view photo clean 10/18), normal gait (Nick 10/8; PT 10), trace or no effusion every graded morning 10/6-10/20, no pain flare; Nick 10/9: progression follows the master plan, no PT approval needed; earliest by the plan's calendar: week 9, Tue 10/20 (POD 57)"
+      },
+      {
+        "knot": 4,
+        "name": "the Road",
+        "date": "2026-11-16",
+        "evidence": "Before Running gate cleared by the surgeon and the PT (PT 15, 2026-11-16, pt_notes.md: 'Running gate is now cleared according to surgeon and PT approval'); met before it: full extension and flexion 149 (11/10), quad LSI 90.4% (10/17), hamstring LSI 100% (11/10), 10 controlled single-leg squats (11/1, 11/8), good landings (Nick 11/10), pogos run under the clinic's eye (assisted, 3 x 8, 11/16)"
       }
     ],
     "knot_gates": {

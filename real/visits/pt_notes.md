@@ -738,3 +738,41 @@ None relayed yet.
 Reading: pain 0, left knee; gait no deviations; **no measurements** (no quad test, no glute test). Abbreviations as on 11/4 and 11/10: LFUC 16 L5 = upright bike, seat 16, level 5, 6 min · Bulgarian split squat with a 10 lb DB in each hand, 2 × 10 each leg · **tidal tank "around the world"**: single-leg stance, passing the blue tidal tank around the body, 10 clockwise and 10 counter-clockwise on each leg (new) · single-leg RDL holding the light blue tidal tank, 2 × 10 each · **continuous-tension lunge, front foot on a 4" box**, 2 × 10 each (new; read as split-squat reps without locking out at the top) · forward heel tap from 6", 2 × 10 each · LFKF(7) = the leg curl machine, setting 7, single leg 55 lb 2 × 10 (11/4: 40; 11/10's knee-flexion machine: 45) · CKE(4/3) = the knee extension machine, 35 lb 2 × 10 (sides not stated) · CLP(5) = the leg press, seat 5, single leg, 6 plates, 2 × 10 each · **single-leg calf press on the leg press, 6 plates, 2 × 10** (new).
 
 What it answers from the list (State §5): nothing in the note. Whether he asked Cody about the form drills, the quad test's date, the glute test, the tidal-tank substitute or impact on the clinic days is not relayed. What it changes: nothing in the program; three new PT items (the around-the-world, the continuous-tension lunge, the single-leg calf press) are in-plan as PT items.
+
+---
+
+## 2026-11-16 (POD 84) — Visit 15 — PTA (the note names no one; Cody on the calendar)
+
+Pasted by him the same day.
+
+### Progress note
+
+```text
+TREATMENT: 
+Therapeutic Exercise: 
+1: LFUC 16 L5 x6' for LE function and endurance
+2: Side to Side / Monster walks 25ft <> x2 each
+3: Sprinter knee drive w/ grn band at feet 2x8 B
+4: Shuttle kick backs 3c 2x12 B
+5: GJC resisted runs 50ft <> x3 laps
+6: Two point start Left LE in front sink and drive x8 total
+7: 12" drop decel 2x8
+8: GJC asisted POGO hops 3x8 B
+9: CKE 2/4 sub-max isometric left 2x10 w/ 5" ct
+10: SCLP 4/5 SL left 80# 2x12
+
+Running gate is now cleared according to surgeon and PT approval. Recommended patient to continue with master plan and can also work on short decels, focusing on stopping and dropping hips and increasing confidence there. As well as box drop downs and other things in master plan.
+```
+
+### Patient's account of the same visit
+
+None beyond the paste. The closing paragraph is in the clinician's third person ("Recommended patient…"), so it is read as the note's plan; either way it carries PT priority.
+
+Reading:
+- **The running gate is cleared: the surgeon and the PT agree.** This is the Before Running gate's last item ("rehabilitation team agrees"), and the clinic's clearance settles the two items still open on its own judgment: pogos ran under the clinic's eye (assisted, 3 × 8), and the glute test was not reported (the clearance stands without it; the PT outranks the State). **Knot IV tied Mon 11/16.** Phase 5 (Return to Running) opens; the master plan's minimum time is week 13 (from Tue 11/17), so the home walk-jog starts from Tuesday on, on the plan's running rules.
+- **New instructions:** continue the master plan (its Phase 5: the return-to-running progression, session 1 walk 5 / jog 1 × 5, and its running rules) · **short decelerations, "stopping and dropping hips", for confidence** (the master plan's deceleration progression, Level 1: easy run → stop over 4–5 steps; the plan lists it with Phase 6, so this brings it forward on the PT's word) · **box drop-downs** (step off a box, land and stick: the plan's landing work, "small box step-off"; the clinic ran a 12" drop decel 2 × 8 today) · "other things in the master plan".
+- Abbreviations: LFUC 16 L5 = the upright bike, seat 16, level 5, 6 min · side-to-side and monster walks, 25 ft and back × 2 each (band walks) · sprinter knee drive with a green band at the feet, 2 × 8 each leg · Shuttle kickbacks, 3 cords, 2 × 12 each leg · GJC resisted runs, 50 ft and back × 3 laps (GJC not decoded: a cord or harness system that resisted the runs and assisted the pogos) · two-point start, left foot in front, sink and drive × 8 · 12" drop decel 2 × 8 · GJC-assisted pogo hops 3 × 8, "B" (whether one leg at a time or both together is not stated) · CKE 2/4 = the knee extension machine, settings 2/4, sub-max isometric, left, 2 × 10 with 5-second holds · SCLP 4/5 = read as the leg press, settings 4/5, single leg, left, 80 lb 2 × 12. "B" = both legs.
+
+What it answers from the list (State §5): **item 0, the go for the first walk-jog: yes** (the surgeon and the PT) · pogos under their eye: run, assisted · **the glute test: not reported** · item 1, the running-form drills: not named, but the clinic's own running work today (knee drive, resisted runs, the two-point start) shows the kind. Not answered: the walk-jog's symptom rule (item 13; the master plan's running rules govern meanwhile: no increased swelling, no meaningful pain increase, no loss of extension, no next-day deterioration, normal mechanics) · what "pain-free" means (item 10) · Sunday 11/15's box jumps and drills · padded kneeling on the left (item 14) · the formal quad test's date.
+
+What it changes: the Before Running gate is passed (Knot IV) and Phase 5 opens · short decels and box drop-downs join the home program as PT items · today's clinic session included running and landings, so **Tuesday's morning judges it** before any home impact or running.

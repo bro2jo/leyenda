@@ -2,7 +2,7 @@
 
 *Real numbers only. Nothing from the story appears on this page. Claude keeps the top section to what stands until something changes: the plan in force, the next PT visit, the gate, flags, open items. The engine owns every count and date in the block at the bottom, regenerated on every `sync`. Map of every file: `real/README.md`. History: `real/checkpoints/`. PT notes: `real/visits/pt_notes.md`. Measurements: `python3 engine/darrow.py measures`.*
 
-## Plan in force · **Phase 4 (entered Tue 10/20, Knot III)** · State Sun 10/18, revised in place through Sun 11/15
+## Plan in force · **Phase 5 (entered Mon 11/16, Knot IV)** · State Sun 10/18, revised in place through Sun 11/15 · **PT 15 (Mon 11/16) outranks the State until the checkpoint folds it in**
 
 Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "this week"` (the week's days with Saturday's A doses), then `doc state 7` (upper). Rules: `real/plan/working_rules.md` (`doc rules "load rules"`); the add-on design: `doc addon 1` (rules), `doc addon 3` (sessions). The week's review: `real/checkpoints/2026-11-15.md`.
 
@@ -10,19 +10,22 @@ Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "th
 - **This week (week 13 from Tue 11/17), three loaded days, never back to back:** **Mon PTA** · **Thu PTA** · **Sat Session B** (B, not A: the sessions alternate regardless of day, A ran 11/1 and 11/8, B last 10/30; corrected 11/15. Single-leg pogos 2 × 5 in the drop jump's place if the mornings are clean; the barbell RDL 105 (the DBs' total; corrected 11/15), the hip thrust with the bar, the seated calf raise, the lateral lunge with a DB; the PT's isometrics added). **Session A follows Fri 11/27** (the back squat holds 11/8's sets; the knee extension builds reps at 50). Sunday is the rest day.
 - **Upper deload: Tue Upper A, Fri Upper B** (A is next: the upper sessions alternate regardless of day and B ran 11/2 and 11/9; corrected 11/15), loads held, sets −30–40%. **Time:** each upper day ~100 min; Saturday's B ~90. **Block 1 repeats from 11/22** (one 2-of-2 week of the two it needs). On upper days: bike 30 → a short throw → the lifting → finisher.
 - **Throwing Tue, Wed, Fri**, never on a loaded day; Wednesday is the long session. **Bike** Tue, Wed, Fri; **Wednesday's ride carries the first intervals** (3 × 4 min at RPE 7–8, 3 min easy between). The elliptical may stand in for an easy ride.
-- **Running:** timing agreed (the surgeon: the week of 11/15; Nick: slow form work now). **The first walk-jog goes in once the Before Running gate's last items are met:** the glute test, single-leg pogos repeated pain-free, and the clinic's go. Ask Cody Monday to run the glute test and watch pogos, so the walk-jog can go in this week.
+- **Running: cleared Mon 11/16** (PT 15: "Running gate is now cleared according to surgeon and PT approval"; Knot IV). From week 13 (Tue 11/17): the master plan's return-to-running progression, **session 1: walk 5 / jog 1 × 5**, on its running rules (not on consecutive days, non-impact conditioning on off days, duration before pace, never two variables at once, no progress after a flare; the next morning judges each run). **New PT items: short decels ("stopping and dropping hips", for confidence) and box drop-downs.** Where the first walk-jog and these go this week: proposed 11/16, waiting for his OK. **Tuesday's morning judges today's clinic session first** (resisted runs, a 12" drop decel 2 × 8, assisted pogos 3 × 8).
 - **Daily minimum (every day):** the morning check (swelling **grade**, extension side by side, pain, stiffness, catch, **wellness 1–5**) + creatine. Sundays: the weekly checks and the single-leg squat test, filmed.
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. **The week averaged 3,305:** land near 3,000 this week before the target itself moves (the weight rule below). **Fixes:** fruit and potatoes or rice as the side instead of fries, popcorn or a second cheese (carbs, potassium, vit C up; sodium and fat down in one move); **the fish meal** (canned salmon or tuna counts, and it helps vit D).
 
-## Last PT visit · **Thu 11/12, PT 14** (PTA) · before it **Tue 11/10, PT 13, Nick** · next: **Mon 11/16, Cody**; then Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
+## Last PT visit · **Mon 11/16, PT 15** (PTA) · before it **Thu 11/12, PT 14** · next: **Thu 11/19, Cody**; then Mon 11/23, Wed 11/25, Mon 11/30; Nick Thu 12/3
+
+**PT 15 (`pt_notes.md`, 2026-11-16): the running gate cleared, the surgeon and the PT** · continue the master plan · **short decels and box drop-downs** added · the clinic ran band walks, sprinter knee drives, Shuttle kickbacks, resisted runs 3 laps, a two-point start × 8, a 12" drop decel 2 × 8, assisted pogos 3 × 8, a left sub-max isometric and the single-leg leg press 80 × 2 × 12. No measurements; the glute test not reported.
 
 PT 13 (`pt_notes.md`, 2026-11-10): **hamstring 65 vs 65 lb, LSI 100%** · **flexion 149°** · **extension normal** · the quad not tested (90.4% from 10/17 stands) · **approved: the elliptical, and slow form work for running**. PT 14 (11/12): pain 0, gait normal, no measurements; three new clinic items (tidal-tank "around the world", continuous-tension lunge off a 4" box, single-leg calf press).
 
-For Monday, Cody (State §5, item 0 first): **the glute med/max test** · **single-leg pogos under their eye** · **the go and the day for the first walk-jog**, with its symptom rule · **which running-form drills, how often, which days** (tell them Sunday 11/15's session: marches, skips, A-runs low, a low lateral shuffle, and box jumps 2 × 6; ask which of these "slow form work" covers, and whether box jumps are allowed yet; and whether padded half-kneeling on the left is OK now, State §5 item 14) · if the pogos are clean, **whether Thursday's repeat completes the gate** (and what "pain-free" means: during, after, or the next morning). The rest of §5's list can wait for Thursday.
+For Thursday, Cody (Monday answered the walk-jog's go; State §5's list otherwise stands): **the walk-jog's symptom rule** (what next-day response means hold or step back) · **the short decels and box drop-downs at home: what box height, how many, on which days** · **were Monday's pogos one leg at a time?** · **Sunday 11/15's session** (marches, skips, A-runs low, a low lateral shuffle, box jumps 2 × 6 off a 6" box): which drills are fine now, and are box jumps allowed yet · **padded half-kneeling on the left** (State §5 item 14) · the glute test and the formal quad test: when.
 
-## Gate · Phase 3 → 4 **met (10/17); Knot III tied Tue 10/20** · next: Phase 4 exit (the plan's "Before Running" gate)
+## Gate · Before Running **cleared Mon 11/16 by the surgeon and the PT; Knot IV tied** · next: Phase 5 exit (Knot V, the plan's "Before Higher Plyometrics/Agility")
 
-- **Phase 4 exit:** full extension ✓ (11/10) · flexion ≥95% ✓ (149°) · no or trace effusion ✓ · normal gait ✓ · quad LSI >80% ✓ (90.4%, 10/17) · **hamstring LSI ≥80% ✓ (100%, 11/10)** · 10 controlled single-leg squats ✓ · good landing mechanics ✓ (11/10) · **glute med/max: unmeasured** · **pain-free single-leg pogos: not yet run** · rehab team agrees: the timing yes (surgeon and PT) · minimum time: week 13, from Tue 11/17. **Left between him and Knot IV: the glute test, repeated pain-free pogos, and the clinic's go.**
+- **Phase 4 exit, as it stood at the clearance:** full extension ✓ · flexion ✓ (149°) · no or trace effusion ✓ · normal gait ✓ · quad LSI ✓ (90.4%, 10/17) · hamstring LSI ✓ (100%, 11/10) · 10 controlled single-leg squats ✓ · good landings ✓ (11/10) · pogos under the clinic's eye (assisted, 3 × 8, 11/16) · **rehab team agrees ✓ (11/16)**. The glute test was never run; the clearance stands without it (the PT outranks the State).
+- **Phase 5 exit (master plan):** running progression well tolerated · no pain or effusion after running · full ROM maintained · quad LSI ~≥85% (90.4% on 10/17; retest date open) · basic hop and landing work tolerated · good single-leg control.
 
 ## Flags and notes for the week
 
@@ -34,20 +37,20 @@ For Monday, Cody (State §5, item 0 first): **the glute med/max test** · **sing
 
 ## Open items
 
-- **Running:** the first walk-jog once the gate's last items are met (Monday's visit decides how soon); slow form work's drills to be named.
+- **Running:** cleared 11/16. This week's placement of the first walk-jog, the short decels and the box drop-downs waits for his OK (proposed 11/16); the State's §3 and §6 take Phase 5 at the checkpoint or on his OK.
 - **The sport plan's month check (end of week 4):** seven ratings 1–5 and seven questions; answers go in a checkpoint's Sport section.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 - **Tape girths:** next set about four weeks after 11/9, by his guide (`doc tape`), the thigh and the calf on both legs.
 
 <!-- engine:start -->
-_Engine block, regenerated by `sync` · as of Mon 2026-11-16 · POD 84 · post-op week 12 · Phase 4_
+_Engine block, regenerated by `sync` · as of Mon 2026-11-16 · POD 84 · post-op week 12 · Phase 5_
 
 ### This week (Sun 11/15 – Sat 11/21)
 
 | Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Sun 11/15 | floor | 3,153 | 158 | 163.4 | ✔ | ✔✔ | ✔ |  |  | power |  |  |  |
-| Mon 11/16 | pt | 360 | 40 | 163.6 |  |  |  |  |  |  |  |  |  |
+| Mon 11/16 | pt | 360 | 40 | 163.6 |  |  |  |  | ✔ |  |  |  |  |
 | Tue 11/17 | cond, upper, sport | | | | | | | | | | | | |
 | Wed 11/18 | sport, cond | | | | | | | | | | | | |
 | Thu 11/19 | pt | | | | | | | | | | | | |
@@ -57,7 +60,7 @@ _Engine block, regenerated by `sync` · as of Mon 2026-11-16 · POD 84 · post-o
 **Nutrition:** avg 1,756 kcal (target 3,000) · avg 99 g protein (target 150-160) · at kcal target 1/2 days · at protein target 1/2 days
 **Weigh-ins:** 2/3 · avg 163.5 lb · last week 162.7 (5 readings) · +0.8 lb
 **Morning swelling grades:** Sun 0
-**Sessions (through Mon):** none planned yet · floor full 1/2 · graded morning checks 1/2
+**Sessions (through Mon):** pt 1/1 · floor full 1/2 · graded morning checks 1/2
 
 **Latest measured:** extension L +2° (10/8) · flexion L 149° (11/10) · quad LSI 90.4% (10/17) · hamstring LSI 100.0% (11/10) · SL leg press LSI 64.3% (10/8) · SL squat L 10 reps (11/8)
 

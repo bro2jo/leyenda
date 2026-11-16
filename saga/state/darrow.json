@@ -4,7 +4,7 @@
   "level": 9,
   "rank": "Kindled",
   "level_reached": "2026-11-12",
-  "xp": 3888,
+  "xp": 3918,
   "xp_this_level": 3600,
   "xp_next_level": 4500,
   "proficiency": 4,
@@ -15,7 +15,7 @@
       "raw": 13,
       "cap": null,
       "mod": 1,
-      "temper": 63,
+      "temper": 64,
       "next_at": 75,
       "fell": 15,
       "banked": false
@@ -23,7 +23,7 @@
     "vigor": {
       "score": 11,
       "raw": 11,
-      "cap": 14,
+      "cap": 18,
       "mod": 0,
       "temper": 27,
       "next_at": 32,
@@ -33,9 +33,9 @@
     "finesse": {
       "score": 11,
       "raw": 11,
-      "cap": 12,
+      "cap": 14,
       "mod": 0,
-      "temper": 42,
+      "temper": 43,
       "next_at": 50,
       "fell": 18,
       "banked": false
@@ -61,9 +61,10 @@
   "knots_tied": [
     1,
     2,
-    3
+    3,
+    4
   ],
-  "knots_count": 3,
+  "knots_count": 4,
   "soft_season": true,
   "arts": [
     {
@@ -169,11 +170,11 @@
       "id": "long_road",
       "name": "The Long Road",
       "tree": "Breath",
-      "rank": 0,
-      "banked_rank": 1,
-      "practice": 1,
+      "rank": 1,
+      "banked_rank": 0,
+      "practice": 2,
       "next_at": 6,
-      "sealed_until_knot": 4,
+      "sealed_until_knot": null,
       "effect": "Travel and pursue without exhaustion."
     },
     {
@@ -181,9 +182,9 @@
       "name": "Thunderstep",
       "tree": "Footing",
       "rank": 0,
-      "banked_rank": 1,
-      "practice": 5,
-      "next_at": 6,
+      "banked_rank": 2,
+      "practice": 6,
+      "next_at": 15,
       "sealed_until_knot": 5,
       "effect": "Leap gaps, walls and horses."
     },
@@ -203,9 +204,9 @@
       "name": "Anchor",
       "tree": "Footing",
       "rank": 0,
-      "banked_rank": 0,
-      "practice": 0,
-      "next_at": 1,
+      "banked_rank": 1,
+      "practice": 1,
+      "next_at": 6,
       "sealed_until_knot": 5,
       "effect": "Stop dead at full speed; break a charge."
     },
@@ -331,6 +332,7 @@
     "pose.stair": 3,
     "pose.over-shoulder": 3,
     "pose.forms": 3,
+    "pose.running": 7,
     "pose.hound": 3,
     "pose.rae-walk": 0,
     "pose.rae-cup": 3,
