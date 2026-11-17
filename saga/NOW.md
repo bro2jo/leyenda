@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (2 of 3 told)
 - **Against him:** The line on the mill bridge, held staring by the burning mill for as long as it burns.
 - **Next:** His answer: what the forty millers are to him.
-- **Open choice (a small one):** Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them? 1. Keep them: the company goes on forty larger, at a cart's pace. / 2. Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road. / 3. Leave them at the mill with the company and go after what came through the fields: follow its trail back west at first light, with Ash and nobody else.
+- **Open choice (a small one):** Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them? 1. Keep them: the company goes on forty larger, at a cart's pace. / 2. Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road. / 3. Leave them at the mill with the company and follow the walkers' trail back west at first light, with Ash and nobody else, to find where four hundred of them came from.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 
