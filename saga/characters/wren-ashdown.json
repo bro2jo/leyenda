@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "1",
+    "scene": "2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-1"
+    "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Kept her eyes on the ledger, forgot to be cross when the dog fetched, took the count of the carts, and began counting the shapes at the field's edge.",
-  "now": "At the bridge with the ledger, counting carts and the shapes across the field.",
+  "last_seen_doing": "Counted the carts over all night and stopped saying the other number; closed the day with every cart over, and jibed at his half-named loads.",
+  "now": "At the fire with the ledger, every cart counted over.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -817,6 +817,12 @@
       "chapter": "07",
       "scene": "1",
       "evidence": "She lost her place at forty, and started again at one."
+    },
+    {
+      "fact": "She counted every cart over the bridge and none lost, and added that he had named half the loads right and missed one grandmother.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "Grandmothers missed: one."
     }
   ],
   "relationships": [
@@ -1167,6 +1173,10 @@
     {
       "chapter": "07",
       "scene": "1"
+    },
+    {
+      "chapter": "07",
+      "scene": "2"
     }
   ]
 }

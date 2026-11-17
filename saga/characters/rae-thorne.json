@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-1",
+    "scene": "2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-1"
+    "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Heard what he was asking, said aye to the end of the lamps and back, made it a game of naming the loads, laughed out loud at his loom, and told him it had been a walk.",
-  "now": "Walking back toward the bridge with the lamp, at his pace.",
+  "last_seen_doing": "Read that the shapes would reach the bridge before the last cart was off it, turned her cart broadside across the near end behind him, opened the gap to let him back, and warned him what forty people would cost the road.",
+  "now": "At the fire by the burned mill, her cart still across the end of the bridge with Hob and Dun standing.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -917,6 +917,18 @@
       "evidence": "That was a walk, Captain"
     },
     {
+      "fact": "She read the field before he said it and put her cart broadside across the near end of the bridge, Hob and Dun standing.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "I'll want my cart across the end of the bridge when it is."
+    },
+    {
+      "fact": "She told him forty is a long line: it leaves tracks and lamps at night, somebody has to feed it, and it will be her cart.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "Forty's a long line"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1276,6 +1288,10 @@
     {
       "chapter": "07",
       "scene": "between-1"
+    },
+    {
+      "chapter": "07",
+      "scene": "2"
     },
     {
       "chapter": "tale02",

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-1",
+    "scene": "2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-1"
+    "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Asked Rae, badly, to walk up the line of crossed carts with him; named the loads with her and named the loom but missed the old woman riding under it.",
-  "now": "Walking back toward the bridge lamps beside Rae on the stick.",
+  "last_seen_doing": "Walked out onto the mill bridge in front of Rae's cart and held the line of shapes with his stick barred crosswise while the last cart got over; sat the night at the burned mill with forty millers looking to him.",
+  "now": "At the fire by the burned mill on the near bank, black with smoke, his stitches held, forty millers looking to him for what comes next.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2254,6 +2254,18 @@
       "evidence": "So you could come. If you wanted. Tell me what I'm looking at."
     },
     {
+      "fact": "He stood on the span of the mill bridge with Rae's cart across the end at his back and held the line of shapes with the stick barred crosswise until they stopped.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "He took the stick in both hands and held it crosswise, like a bar across a door"
+    },
+    {
+      "fact": "Every cart from the far bank crossed the mill bridge in the night, and none was lost.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "Carts lost: none."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2852,6 +2864,10 @@
     {
       "chapter": "07",
       "scene": "between-1"
+    },
+    {
+      "chapter": "07",
+      "scene": "2"
     },
     {
       "chapter": "tale01",

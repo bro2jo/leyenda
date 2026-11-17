@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "1",
+    "scene": "2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-1"
+    "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Sewed his sword arm on the cart's tail and told him the two fingers are as they were.",
-  "now": "At the bridge, counting how long he stands.",
+  "last_seen_doing": "Gave him back the stick she had taken to make him sit, when he went out onto the bridge.",
+  "now": "At the fire by the burned mill.",
   "story_so_far": "Maelis told him plainly what the frost had kept of his hand, warned the company what he would be taking onto the ice, and said a question could be answered by another mouth. At noon she waited on the bank with her needle threaded.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -679,6 +679,12 @@
       "chapter": "07",
       "scene": "1",
       "evidence": "The arm will mend,\" she said. \"Those won't."
+    },
+    {
+      "fact": "When he went out onto the bridge she handed back the stick she had taken off him to make him sit.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "which she had taken off him an hour ago to make him sit down"
     }
   ],
   "relationships": [
@@ -1020,6 +1026,10 @@
     {
       "chapter": "07",
       "scene": "1"
+    },
+    {
+      "chapter": "07",
+      "scene": "2"
     }
   ]
 }

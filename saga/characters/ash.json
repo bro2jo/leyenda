@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "1",
+    "scene": "2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-1"
+    "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Went down below the fall into the broken ice and brought Darrow's stick up in her teeth, once.",
-  "now": "Across Darrow's boots at the near end of the bridge.",
+  "last_seen_doing": "Sat the night at the fire with the company.",
+  "now": "At the fire by the burned mill.",
   "story_so_far": "Ash saw the rider on the skyline first and made no sound, watched the alders long after the meadow was empty, and tried to follow Darrow out onto the weir until Wren sat on her.",
   "quote": null,
   "known_facts": [
@@ -253,6 +253,10 @@
     {
       "chapter": "07",
       "scene": "1"
+    },
+    {
+      "chapter": "07",
+      "scene": "2"
     }
   ]
 }

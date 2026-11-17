@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 7,
     "beat": "b2.3",
-    "next_scene": 2,
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch07:s1",
+    "last_written": "ch07:s2",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -62,8 +62,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:s2"
       },
       {
         "n": 3,
@@ -77,7 +77,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -520,7 +520,31 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 2,
+    "chapter": 7,
+    "scene": "2",
+    "opened": "2026-11-16",
+    "beat": true,
+    "ask": "Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them?",
+    "options": [
+      "Keep them: the company goes on forty larger, at a cart's pace.",
+      "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.",
+      "Leave them at the mill with the company and go after what came through the fields: follow its trail back west at first light, with Ash and nobody else."
+    ],
+    "bearing": [
+      {
+        "hearth": 2
+      },
+      {
+        "banner": 2
+      },
+      {
+        "unsworn": 2
+      }
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": [
       {
@@ -574,7 +598,7 @@
   },
   "tallies": {
     "chased": 1,
-    "held": 6
+    "held": 7
   },
   "tallies_log": [
     {
@@ -632,6 +656,14 @@
       "why": "ch06:s7: stood on the keeper's stone through the rider's pass instead of answering her footwork",
       "book": 2,
       "chapter": 6
+    },
+    {
+      "date": "2026-11-16",
+      "name": "held",
+      "delta": 1,
+      "why": "ch07:s2: stood the mill bridge with the stick barred while the last cart crossed",
+      "book": 2,
+      "chapter": 7
     }
   ]
 }

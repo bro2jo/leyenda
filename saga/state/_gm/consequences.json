@@ -1751,7 +1751,8 @@
           "at": "book2:beat3",
           "weight": "route",
           "what": "Downstream of the road north (b2.1): the company comes down on the Coldmere mill from above and holds the far end of the bridge; the mill-track inn is where q2.inn runs; Hollis's low-road arrival matters less (saga.py arc b2.1)",
-          "status": "pending"
+          "status": "fired@ch07:s2",
+          "evidence": "He was on the span with a wall at his back, and in front of him there was nothing but old timber, lamplight, and the far end."
         },
         {
           "id": "c05.13b",
@@ -2148,7 +2149,8 @@
           "what": "Rae has told Wren how the Captain named the loom and missed the old woman riding under it; it comes back once, as a jibe in Wren's mouth or Rae's",
           "fits": "present.rae && present.wren",
           "priority": 1,
-          "status": "pending"
+          "status": "fired@ch07:s2",
+          "evidence": "Grandmothers missed: one."
         }
       ]
     }

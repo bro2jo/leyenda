@@ -20,11 +20,19 @@
       "after": "1",
       "covers": [],
       "written": "2026-11-15"
+    },
+    {
+      "scene": 2,
+      "title": "The Biggest Lamp in the Hills",
+      "covers": [
+        "2026-11-16"
+      ],
+      "written": "2026-11-16"
     }
   ],
   "location": {
     "place": "river-mill",
-    "detail": "the mill road at the end of the lamps, the crossed carts drawn up along it",
+    "detail": "the fire at the burned mill on the near bank, the bridge barred by Rae's cart",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -33,8 +41,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The mill bridge: carts from the far bank crossing one at a time under the mill's lamps through the night, and at the edge of the field behind them, shapes that have begun to walk out of the trees.",
-  "last_beat": "At the end of the lamps Rae told him that had been a walk, in case he was wondering, and waited for him to come level before she walked back toward the bridge.",
+  "current_struggle": "The millers: forty people black with smoke at their burned mill, looking to him, the bridge barred behind them and the line of shapes standing on its far end in the firelight.",
+  "last_beat": "Forty millers black with smoke sat round their burning mill looking at him; across the river the line of shapes still stood on the bridge in the firelight, facing west.",
   "companions": {
     "maelis": {
       "approval": 45,
@@ -293,5 +301,5 @@
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose.",
     "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his."
   },
-  "last_updated": "2026-11-15"
+  "last_updated": "2026-11-16"
 }

@@ -91,6 +91,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The keeper's stone** — A square stone set a hand higher than the rest halfway across the top of the weir below the river mill, where a man stands to work the sluice; the spray off the fall glazes every other stone of the weir and does not reach it (Ch 6 Sc 6).
 - **The mill bell** — The river mill's bell above the weir, flat and cracked: it rings the millers in at first light and again at noon for their bread (Ch 6 Sc 7).
 - **The mill bridge** — One span of old timber across the river above the river mill, wide enough for one cart, with the mill's toll-board nailed at the near end: no cart to cross after the dusk bell, ahead of the miller's, or that the bridge will not bear (Ch 7 epigraph; Sc 1).
+- **The ring in the marsh** — An old ring of standing stones in the frozen marsh up the north road from the river mill, older than Calden, they say; frozen half the year, the stones standing up out of the ice. Mill-folk do not go near it, and never have (Ch 7 Sc 2).
 
 ## Songs and verses
 

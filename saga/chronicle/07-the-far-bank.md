@@ -153,3 +153,86 @@ Rae stopped there and held the lamp a little way out into the dark, as if to see
 "That was a walk, Captain," she said. "In case you were wondering. I'd have said if it wasn't."
 
 She turned back toward the bridge and the lamps, and waited for him to come level before she walked on.
+
+### Scene 2 — The Biggest Lamp in the Hills
+
+The stars came out thick over the river, and the carts came over the bridge one at a time, and Wren counted both.
+
+"Carts over: nine," she said, a little before midnight. "Carts to come: six." She had stopped saying the other number an hour ago, when it got too big to be any use; now she only looked across the river each time she wrote, and wrote faster.
+
+The shapes had come out of the trees on the far side, the west side, and they were crossing the field toward the bridge. They came at a walk, all of them at the same walk, like men following a path nobody else could see, and they kept that pace the whole way. Every time Darrow looked, they were nearer, and every time a cart came off the near end of the bridge, there was one cart fewer between them and the water.
+
+Rae was standing at the toll-board with the lamp. She watched the field for the space of two carts, and then she said it.
+
+"They'll be at the far end before the last cart's off this one." Her eyes stayed on the field. "I'll want my cart across the end of the bridge when it is. Hob and Dun standing."
+
+"And somebody on the bridge in front of it," said Darrow.
+
+"I didn't say that."
+
+"I know. I did."
+
+Maelis looked at him, and at the field, and at the stitches on his arm. Then she held out the stick, which she had taken off him an hour ago to make him sit down, and he took it.
+
+---
+
+The last cart was a two-wheeled thing with a man between the shafts instead of an ox, and his wife pushing at the tail, and three children on top of the load, and when it came onto the span Darrow walked out onto the bridge to meet it.
+
+The bridge was a stride and a half wide, rail to rail. He stood with his back to the near bank and let the cart come past him, so close the wheel brushed his coat; and when it was by him, Rae said the word to Hob and Dun, and the oxen backed her cart round broadside across the near end of the bridge, behind him, and stood. The last cart was over. He was on the span with a wall at his back, and in front of him there was nothing but old timber, lamplight, and the far end.
+
+The first of them came onto the bridge.
+
+He was a man, or had been. He wore mail under a surcoat whose colours had washed out past reading, and there was frost in his beard, though he had walked all night. He came along the span at the same walk he had crossed the field with, and his eyes were open, and there was nobody behind them. Behind him came another, and another, single file, because the bridge would take no more than that.
+
+Darrow set his feet. He took the stick in both hands and held it crosswise, like a bar across a door, and the first man walked into it.
+
+`[MIGHT · DC 16]` d20 **10** +1 might +4 proficiency +3 Stillwater Stance III = **18** — *Success*
+
+The man had nothing to strike with. He only pushed, steadily, and cold came off him like the cold off a cellar door; and behind him the next one pushed into his back, and the next into his. Darrow stood. His feet were where he had put them, and the cart was at his back, and the stitches in his arm pulled and held.
+
+The line on the bridge stopped. Every man in it stood where he was, pressed against the back of the man in front, as patient as cattle at a gate.
+
+On the near bank, the miller had been watching.
+
+"They say a lamp keeps them off," he said, to nobody in particular. "My grandfather built that mill."
+
+He took the lamp off the hook at the mill door and went inside with it, and came out without it.
+
+The fire went up through the mill floor by floor, faster than Darrow would have believed a building could burn, and the flour in the air inside went with a sound like a great breath let out. Light came across the river, yellow and enormous. It lit the bridge rail by rail. It lit the field behind the line, and the trees behind the field, and the faces of the men on the span, and there was fire in their eyes now and still nobody behind it.
+
+They came no further. Whether it was the fire, or the cart, or the man with the stick, or something in them that nobody on the near bank could see, the line on the bridge stood still in the light, and stayed so.
+
+"Back, Hob," said Rae, quite quietly. The ox took one step back. A gap opened between the cart's tail and the rail, just wide enough. Darrow went back through it a step at a time, the stick still crosswise in front of him, and Hob stepped up again behind him and closed it.
+
+---
+
+They sat round the mill until morning, because there was nothing else to sit round.
+
+There were forty of the millers, give or take the children, and five of the company, and the dog, and every one of them was black to the eyes with smoke. Somebody had carried bread out of the bakehouse before the roof went, and it went round the circle in pieces, hand to hand, and nobody asked whose it was. A miller's boy started a song about a heron that could not swim and was shouted down, and started it again. The miller sat with his back to his mill and watched it burn for a long time, and his wife sat beside him with her hand on his knee.
+
+Wren had the ledger open on her lap.
+
+"Carts over," she said. "All of them. Carts lost: none." She wrote it and drew a line under it, the way she closed a day. Then, because Rae was sitting beside her: "Loads the Captain named right last night: half. Grandmothers missed: one."
+
+Hollis laughed so hard he had to be thumped on the back.
+
+An old woman of the mill's, wrapped in two shawls, had been looking at Darrow across the fire since the bread went round. When it came to her she broke it and passed it on and said, "You'll be going up the north road, then."
+
+"I don't know where we're going yet."
+
+"There's nothing up the north road but the marsh," she said, "and the old ring of stones in it. Older than Calden, they say. Frozen half the year, and the stones stand up out of the ice." She drew the shawls closer. "Mill-folk don't go near it. Never have."
+
+Nobody asked her why. The fire cracked.
+
+He looked round the circle. Forty people with their mill burning behind them, black to the eyes, with nowhere to go back to, and every one of them, he found, looking at him.
+
+Rae had seen it too. "Forty's a long line," she said, low, for him. "A line that long leaves tracks, and lamps at night, and somebody has to feed it. And it'll be my cart."
+
+"There's the House up the Holloway," said Hollis. "If they'll still open the gate." He did not sound as if he liked it either.
+
+Across the river, at the far end of the bridge, the line of them still stood in the firelight, facing west, the way they had come.
+
+**What does Darrow do?**
+1. **Keep them: the company goes on forty larger, at a cart's pace.**
+2. **Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.**
+3. **Leave them at the mill with the company and go after what came through the fields: follow its trail back west at first light, with Ash and nobody else.**
