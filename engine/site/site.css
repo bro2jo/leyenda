@@ -20,6 +20,8 @@ html.mast-away{scroll-padding-top:16px}
 body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,svg{max-width:100%}
 .wrap{max-width:640px;margin:0 auto;padding-inline:16px}
+/* a chapter or a tale reads in a narrower column, about seventy characters a line on a wide screen (a phone is narrower already) */
+.reader-page .wrap{max-width:34rem}
 main.wrap{padding-block:20px 56px;display:grid;gap:30px}
 h1,h2,h3,h4{margin:0;text-wrap:balance;overflow-wrap:break-word}
 p{margin:0}
@@ -216,7 +218,12 @@ details[open]>summary::after{content:"\2212"}
 @keyframes pulse{0%{transform:scale(.45);opacity:.9}100%{transform:scale(1.3);opacity:0}}
 .chron .scenes .ic{vertical-align:-3px;margin-right:5px;opacity:.8}
 .chron li.named{border-left-style:dotted}
-.chron li.book b{font-family:var(--label);letter-spacing:.1em;color:var(--brass);font-weight:700}
+.chron li.book b{font-family:var(--label);letter-spacing:.1em;color:var(--book,var(--brass));font-weight:700}
+/* a Book's colour (--book, build_site.py BOOK_TINTS) runs down its stretch of the rail and rings its chapters' knots */
+.chron.rail>li.ch{border-left-color:color-mix(in srgb,var(--book,var(--rule)) 55%,var(--rule))}
+.chron li.ch:not(.now)::before{border-color:var(--book,var(--brass-dim))}
+/* his answer to a scene's choice, under the scene */
+.chron .chose{display:block;font-size:.84rem;color:var(--dim);padding:0 0 5px 20px;line-height:1.35} .chron .chose .ic{vertical-align:-2px;margin-right:5px} .chron .m .ic-choice{vertical-align:-2px;margin-right:3px}
 .chron b{font-weight:700}
 .chron .m{font-size:.86rem;color:var(--dim)}
 .chron a{color:var(--ink)} .chron a b{color:var(--ink)}
@@ -422,7 +429,7 @@ a.art-pic{cursor:zoom-in}
 /* map */
 .map{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:6px;background:#101318}
 .mp-road{stroke:#9A7D4C}
-.mp-route{fill:none;stroke:var(--ember);stroke-width:1.8;stroke-dasharray:4 3;stroke-linecap:round;stroke-linejoin:round}
+.mp-route{fill:none;stroke:var(--book,var(--ember));stroke-width:1.8;stroke-dasharray:4 3;stroke-linecap:round;stroke-linejoin:round}
 .mp-route.past{stroke-width:1.4;opacity:.6}
 .mp-dot{fill:var(--faint);stroke:#0E1116}
 .mp-pt.visited .mp-dot{fill:var(--brass)}
@@ -449,10 +456,12 @@ a.art-pic{cursor:zoom-in}
 .legend{font-size:.82rem;color:var(--dim);display:flex;gap:6px 12px;flex-wrap:wrap}
 .legend>span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .lg.ember{color:var(--ember)} .lg.brass{color:var(--brass)} .lg.faint{color:var(--faint)}
-.lg-route path{stroke:var(--ember);stroke-width:2;stroke-dasharray:4 3;stroke-linecap:round}
+.lg-route path{stroke:var(--book,var(--ember));stroke-width:2;stroke-dasharray:4 3;stroke-linecap:round}
 
 /* now page */
-/* the place he is at, faint behind the plate (when its picture is on the page), fading out toward the foot */
+/* the place he is at (or the country it lies in), faint behind the plate once its picture is on the page, fading out toward
+   the foot; the Book's line in the Book's colour */
+.now-plate>.lbl:first-child{color:var(--book,var(--dim))}
 .now-plate{position:relative;overflow:hidden}
 .now-plate::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background:var(--bg,none) var(--focus,50% 50%)/cover no-repeat;
   -webkit-mask-image:linear-gradient(180deg,#000 15%,transparent 92%);mask-image:linear-gradient(180deg,#000 15%,transparent 92%)}
@@ -583,7 +592,9 @@ details.fold>.scene-body{padding-top:18px}
 .scene.between details.fold>summary{border-bottom:0;padding-bottom:0}
 .previously{color:var(--dim);background:var(--plate);border:1px solid var(--rule);border-radius:6px;padding:10px 14px;max-width:65ch;display:grid;gap:2px}
 .reader .previously p{font-size:calc(.95rem*var(--rs,1));line-height:1.5}
-.book-line{font-family:var(--label);letter-spacing:.14em;color:var(--brass);font-size:calc(.9rem*var(--rs,1))}
+.book-line{font-family:var(--label);letter-spacing:.14em;color:var(--book,var(--brass));font-size:calc(.9rem*var(--rs,1))}
+/* a chapter opens under a short bar of its Book's colour */
+.ch-title::before{content:"";width:48px;height:3px;border-radius:2px;background:var(--book,var(--brass));margin-bottom:8px}
 .ch-title{font-family:var(--display);font-weight:700;font-size:calc(2.1rem*var(--rs,1));line-height:1.1;display:grid;gap:4px}
 .ch-title .lbl{font-size:calc(.85rem*var(--rs,1))}
 .epigraph{margin:0;padding:0 0 4px}

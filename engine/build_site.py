@@ -64,6 +64,12 @@ Conventions the parser and the checks rely on:
               days, the next Knot, the Collection's ladder, a roll's arithmetic) wait in a shut ask() fold, so opening
               one is the asking. The Now page puts the story first (the chapter, the map, the quest, the company) and
               the game after (the news, the Reckoning, the dice).
+  Books       a Book's colour (BOOK_TINTS, one per Book in order, picked when it opens) tints its chapters' head, its
+              stretch of the Chronicle's rail and its road on the map (a leg of the route is a Book's road); a chapter
+              without a Book line belongs to the Book before it. The Chronicle's rail marks each scene whose choice he
+              answered, with his answer under it (world.json → choices).
+  Sharing     every page says what a shared link shows (og:title, og:description, og:image at SITE_URL): a character's
+              portrait on their page, the painted map everywhere else; a chapter's description is its opening line.
   GM wall     world.json must not carry chapter_plan, core_beats, flags, factions or current_quest.summary;
               those live under saga/state/_gm/. Every sentence in a _gm/*.md file is blocked from the site
               unless the chronicle, engine/rules.json or the Bearing's pole words / current epithet already carry it.
@@ -911,6 +917,28 @@ METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
 # An Art card's frame, by its rank I-V (rules.json → art_ranks); bronze, not brass, so rank II never reads as gold. A sealed
 # Art is grey. Violet is kept for a tier above gold (a legendary Art), should one come: nothing else on the Arts panel uses it.
 ART_METALS = ("iron", "bronze", "steel", "silver", "gold")
+# A colour for each Book, in order, once it opens (frost for the House, copper for the road): its chapters' head, its
+# stretch of the Chronicle's rail and its road on the map take it (CSS --book). A Book without one yet keeps the brass;
+# a new Book gets its colour here when it opens, light enough to read on the night ground and clear of ember and brass.
+BOOK_TINTS = ("#A8B8CC", "#D08C60")
+SITE_URL = "https://bro2jo.github.io/leyenda/"  # where docs/ is served: a shared link's picture needs the whole address
+
+
+def book_no(book):
+    """The number in a chapter's Book line ("BOOK II — …"), or None."""
+    m = re.match(r"Book ([IVXLCDM]+)\b", book or "", re.I)
+    return next((n for n in range(1, 100) if roman(n) == m.group(1).upper()), None) if m else None
+
+
+def book_colour(n):
+    """Book n's colour (BOOK_TINTS), or '' while it has none of its own."""
+    n = as_int(n) or 0
+    return BOOK_TINTS[n - 1] if 0 < n <= len(BOOK_TINTS) else ""
+
+
+def book_tint(n):
+    """' style="--book:#…"' for Book n, or ''."""
+    return f' style="--book:{book_colour(n)}"' if book_colour(n) else ""
 
 
 def crest(level):
@@ -1242,10 +1270,10 @@ def map_label(p, text, cls):
             f'<text class="{cls}"><textPath href="#{pid}" startOffset="50%" text-anchor="middle">{text}</textPath></text>')
 
 
-def svg_map(places, route, current_id, rel, base=None):
+def svg_map(places, route, current_id, rel, base=None, tints=()):
     """An original map of the story's country. Terrain is drawn here (map_terrain); places and the route come from
     places.json. The route's last leg is the road he is on now (bright; the legs before it fainter) and Darrow stands at
-    its end. A place the page has named is a link to its Codex entry."""
+    its end; tints: a colour per leg (its Book's), ember without one. A place the page has named is a link to its Codex entry."""
     P = {p["id"]: p for p in places}
     cur = P.get(current_id)
     title = "Map of Darrow's country" + (f". Darrow: {cur.get('label') or cur['name']}" if cur else "")
@@ -1262,7 +1290,9 @@ def svg_map(places, route, current_id, rel, base=None):
     for i, leg in enumerate(legs):
         if len(leg) > 1:
             d = " ".join(f"{'M' if j == 0 else 'L'}{x} {y}" for j, (x, y) in enumerate(leg))
-            out.append(f'<path d="{d}" class="mp-route{"" if i == len(legs) - 1 else " past"}" fill="none" stroke="#E2713B"/>')
+            tint = tints[i] if i < len(tints) and tints[i] else ""
+            out.append(f'<path d="{d}" class="mp-route{"" if i == len(legs) - 1 else " past"}" fill="none" stroke="{tint or "#E2713B"}"'
+                       + (f' style="--book:{tint}"' if tint else "") + "/>")
     out.append(map_frame())
     # terrain labels, by kind: regions in spaced capitals, water in italic blue, roads in italic
     for p in places:
@@ -1520,7 +1550,7 @@ BEARING_LABEL = "who his choices are making him"  # the site's own label for the
 
 
 LEVEL_NEWS_DAYS = 3  # the Now page carries a level-up banner this many days after the level came (darrow.json → level_reached)
-FINE_PRINT = "Only what the story has shown so far."  # the one line that replaces a disclaimer on every section head
+FINE_PRINT = "Only what the story has shown so far, through {}."  # the one line that replaces a disclaimer on every section head
 
 
 def sec(title, label, inner, cls="", hid="", label_html=""):
@@ -1616,9 +1646,14 @@ def asset_v(name):
     return ASSET_V[name]
 
 
-def shell(title, body, rel, current, cls="", desc=""):
+def shell(title, body, rel, current, cls="", desc="", image="", card="summary_large_image"):
+    """A whole page. image: the picture a shared link shows (a path under the site; Site.page gives the painted map when
+    the page has none of its own), with the title and desc beside it."""
     nav = "".join(f'<a href="{rel}{href}"{CUR if name == current else ""}>{name}</a>' for name, href in NAV)
-    meta_desc = f'<meta name="description" content="{esc(desc)}">' if desc else ""
+    meta_desc = f'<meta name="description" content="{esc(desc)}">\n<meta property="og:description" content="{esc(desc)}">\n' if desc else ""
+    meta_desc += f'<meta property="og:title" content="{esc(title)} · The Unkneeling">\n<meta property="og:type" content="website">'
+    if image:
+        meta_desc += f'\n<meta property="og:image" content="{SITE_URL}{esc(image)}">\n<meta name="twitter:card" content="{card}">'
     reader = "reader-page" in cls.split()
     progress = '<div class="progress" aria-hidden="true"><i></i></div>\n' if reader else ""
     # a chapter or a tale: the text-size control in the masthead (site.js runs it; without the script it is not shown)
@@ -1666,6 +1701,9 @@ class Site:
         self.chapters_csv = load_csv(STATE / "chapters.csv") if (STATE / "chapters.csv").exists() else []
         self.rolls = load_csv(STATE / "rolls.csv") if (STATE / "rolls.csv").exists() else []
         self.chapters = [parse_chapter(p) for p in sorted(CHRON.glob("*.md"))]
+        book = None
+        for ch in self.chapters:  # a chapter without a Book line of its own belongs to the Book before it
+            book = ch["book_n"] = book_no(ch["book"]) or book
         cur = Path(str(self.world.get("chapter_file") or "")).name
         for c in self.chapters:
             if c["empty"] and c["file"] != cur:
@@ -1760,6 +1798,21 @@ class Site:
         v = f"?v={file_sha1(src)[:10]}"
         sm, md = self.thumb(src, rel_src, "sm") or path, self.thumb(src, rel_src, "md") or path
         return path + v, image_size(src), sm + v, md + v
+
+    def map_picture(self):
+        """The painted map's published path (places.json → base_image), or None: it lies under the map, and it is what a
+        shared link shows. Registered once; the map always shows it whole, so it needs no small copies."""
+        if not hasattr(self, "_map_picture"):
+            mb = self.map_base or {}
+            reg = self.register_image("places.json base_image", mb.get("image"), mb.get("alt")) if mb else None
+            if reg:
+                self.thumb_missing.discard(Path(str(mb.get("image"))).as_posix())
+            self._map_picture = reg[0] if reg else None
+        return self._map_picture
+
+    def page(self, path, title, body, rel, current, cls="", desc="", image=None):
+        """Put a page in the site. image: its own picture for a shared link (a character's portrait); the painted map without one."""
+        self.pages[path] = shell(title, body, rel, current, cls, desc, image or self.map_picture() or "", "summary" if image else "summary_large_image")
 
     def load_thumbs(self):
         """saga/art/thumbs/manifest.json (engine/thumbs.py writes it): {"images": {source path under saga/art/: {sha1, sm, md}}}."""
@@ -2217,6 +2270,17 @@ class Site:
                 return c
         return None
 
+    def choice_answer(self, ch, s):
+        """His recorded answer to a scene's choice, in a line for the Chronicle's rail: the option he took, or his own
+        words, cut short. '' when the scene has no answered choice."""
+        rec = self.choice_for(ch, s["key"])
+        items = next((b[1] for b in s["blocks"] if b[0] == "ol" and b[2]), None)
+        if not rec or not items:
+            return ""
+        taken = as_int(rec.get("option"))
+        text = items[taken - 1] if taken and taken <= len(items) else rec.get("text") or ""
+        return excerpt(re.sub(r"\*\[[^\]]*\]\*", "", text), 110)
+
     @staticmethod
     def choice_title(block_kind, rec=None, scene_key=None):
         """'The choice' for the chapter's climax (the climax/choice scene keys, whatever the heading word says, or a recorded
@@ -2551,9 +2615,10 @@ class Site:
         nav += f'<a href="{rel}chronicle/{prev_ch["slug"]}.html"><span class="lbl">Previous</span>{esc(prev_ch["label"] + " — " + prev_ch["title"])}</a>' if prev_ch else '<span></span>'
         nav += f'<a class="next" href="{rel}chronicle/{next_ch["slug"]}.html"><span class="lbl">Next</span>{esc(next_ch["label"] + " — " + next_ch["title"])}</a>' if next_ch else f'<a class="next" href="{rel}index.html"><span class="lbl">The story continues</span>Back to Now</a>'
         nav += "</nav>"
-        page = f'<article class="reader">{"".join(head)}{"".join(body)}</article>{cast_html}{nav}'
-        self.pages[f"chronicle/{ch['slug']}.html"] = shell(f"{ch['label']} — {ch['title']}", page, rel, "Chronicle", "reader-page",
-                                                           desc=f"{ch['label']} of The Unkneeling: {ch['title']}.")
+        page = f'<article class="reader"{book_tint(ch["book_n"])}>{"".join(head)}{"".join(body)}</article>{cast_html}{nav}'
+        opening = excerpt(next((b[1] for sc in ch["scenes"] for b in sc["blocks"] if b[0] == "p"), ""), 140)
+        self.page(f"chronicle/{ch['slug']}.html", f"{ch['label']} — {ch['title']}", page, rel, "Chronicle", "reader-page",
+                                                           desc=f"{ch['label']} of The Unkneeling: {ch['title']}. {opening}".strip())
 
     @property
     def current_chapter(self):
@@ -2596,20 +2661,24 @@ class Site:
         for ch in self.chapters:
             if ch["book"] and ch["book"] != book_shown:
                 book_shown = ch["book"]
-                items.append(f'<li class="book"><b>{esc(ch["book"])}</b></li>')
+                items.append(f'<li class="book"{book_tint(ch["book_n"])}><b>{esc(ch["book"])}</b></li>')
             now = ch["slug"] == cur_slug
+            chose = {s["key"]: self.choice_answer(ch, s) for s in ch["scenes"]}
+            n_chose = sum(1 for v in chose.values() if v)
             scenes = "".join(
-                f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{glyph(self.scene_kind(s), 14)}{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a></li>'
+                f'<li><a href="{rel}chronicle/{ch["slug"]}.html#{s["anchor"]}">{glyph(self.scene_kind(s), 14)}{esc((s["label"] + " — " if s["label"] else "") + s["title"])}</a>'
+                + (f'<span class="chose">{glyph("choice", 13)}{esc(chose[s["key"]])}</span>' if chose[s["key"]] else "") + "</li>"
                 for s in ch["scenes"] if s["title"] or s["label"])
             n_bt = sum(1 for s in ch["scenes"] if s.get("between"))
             n_sc = len(ch["scenes"]) - n_bt
             count = "no scene yet" if ch["empty"] else (f'{n_sc} scene{"s" if n_sc != 1 else ""}' + (f' · {n_bt} between' if n_bt else "") + f' · about {ch["words"]:,} words')
             tier_row = next((r for r in self.chapters_csv if str(r.get("chapter")) == str(ch["number"])), None) if ch["number"] else None
             seal = (svg_seal(tier_row["tier"], 22) + " ") if tier_row and tier_row.get("tier") in TIER_SEAL else ""
-            line = f'<span class="m num">{seal}{count}{" · now" if now else ""}</span>'
+            forks = f' · {glyph("choice", 13)}{n_chose} chosen' if n_chose else ""
+            line = f'<span class="m num">{seal}{count}{forks}{" · now" if now else ""}</span>'
             fold = (f'<details class="scn"{" open" if now else ""}><summary>{line}</summary><ul class="scenes">{scenes}</ul></details>'
                     if scenes else line)
-            items.append(f'<li class="ch{" now" if now else ""}"><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
+            items.append(f'<li class="ch{" now" if now else ""}"{book_tint(ch["book_n"])}><a class="ch-link" href="{rel}chronicle/{ch["slug"]}.html"><b>{esc(ch["label"])} — {esc(ch["title"])}</b></a>'
                          f'{fold}</li>')
         first = self.chapters[0] if self.chapters else None
         start = (f'<p class="m">Or <a href="{rel}chronicle/{first["slug"]}.html">start from the beginning</a>: '
@@ -2620,7 +2689,7 @@ class Site:
         n_pro = len(self.chapters) - n_num
         count = (("a prologue and " if n_pro else "") + f"{n_num} chapter{'s' if n_num != 1 else ''}") if n_num else "a prologue"
         body += sec("Timeline", count, f'<ul class="chron rail">{"".join(items)}</ul>')
-        self.pages["chronicle/index.html"] = shell("Chronicle", body, rel, "Chronicle", desc="The Unkneeling, by book, chapter and scene.")
+        self.page("chronicle/index.html", "Chronicle", body, rel, "Chronicle", desc="The Unkneeling, by book, chapter and scene.")
 
     # ---------------------------------------------------------------- reckoning blocks
     def reckoning_of(self, c, rel):
@@ -2713,8 +2782,9 @@ class Site:
         who = (f'<div class="who"><h1>{esc(c["name"])}</h1>{sub}'
                + (f'<div class="chips">{"".join(chips)}</div>' if chips else "") + '</div>')
         fig = self.portrait_figure(c, rel, "" if c["tier"] == "fallen" else cr)
+        through = (self.current_chapter or {}).get("label") or "the Prologue"
         hero = f'<div class="hero with-portrait">{fig}{who}</div>' if fig else f'<div class="hero">{cr}{who}</div>'
-        return f'<section class="plate{self.metal(level)}">{hero}{row}{foot}<p class="fine">{FINE_PRINT}</p></section>'
+        return f'<section class="plate{self.metal(level)}">{hero}{row}{foot}<p class="fine">{esc(FINE_PRINT.format(through))}</p></section>'
 
     def xp_bar(self):
         """The bar to the next level, in ten segments; when the next level opens a rank, the label names it."""
@@ -2857,7 +2927,7 @@ class Site:
             meta = (f"{n_kept} kept" if n_kept else "nothing yet") + (f" · {n_pending} to come" if n_pending else "")
             out.append(dict(key="keepsakes", title="What he keeps" if c["id"] == "darrow" else "Keepsakes", meta=meta, html=shelf))
         label, apps = self.appearances_html(c, rel)
-        out.append(dict(key="appearances", title="Appearances", label=label, meta=esc(label), html=apps))
+        out.append(dict(key="appearances", title="Appearances", label=label, meta=esc(label), html=details("Scene by scene", apps), panel_html=apps))
         return out
 
     def read_level(self, c):
@@ -2883,8 +2953,8 @@ class Site:
         body = self.identity_plate(c, rel, level) + "".join(sec(x["title"], x.get("label", ""), x["html"]) for x in self.character_sections(c, rel))
         ep = c.get("epithet", "")
         ep = ep[0].lower() + ep[1:] if ep[:2] in ("A ", "An", "Th") else ep
-        self.pages[f"characters/{c['id']}.html"] = shell(c["name"], body, rel, "Characters", "char-page",
-                                                        desc=f"{c['name']}, as the Chronicle has shown: {ep}.")
+        self.page(f"characters/{c['id']}.html", c["name"], body, rel, "Characters", "char-page",
+                                                        desc=f"{c['name']}, as the Chronicle has shown: {ep}.", image=c.get("_portrait_path"))
 
     def card(self, c, rel):
         """A roster card: the status only when it is not 'alive', the faction only when the epithet does not already name it."""
@@ -2919,7 +2989,7 @@ class Site:
         body += sec("Roster", f"{len(living)}", '<div class="grid">' + "".join(self.card(c, rel) for c in living) + "</div>")
         if fallen:
             body += sec("The fallen", f"{len(fallen)}", '<div class="grid memorial">' + "".join(self.card(c, rel) for c in fallen) + "</div>", cls="memorial-sec")
-        self.pages["characters/index.html"] = shell("Characters", body, rel, "Characters", desc="The cast of The Unkneeling, as the Chronicle has shown them.")
+        self.page("characters/index.html", "Characters", body, rel, "Characters", desc="The cast of The Unkneeling, as the Chronicle has shown them.")
 
     # ---------------------------------------------------------------- darrow
     def darrow_reckoning(self, rel):
@@ -3103,7 +3173,7 @@ class Site:
         binding = sec("The Binding", f"Knots tied {roman(d['knots_count'])} of {roman(self.n_knots)}", self.knots_html(d, rel), hid="binding")
         body = (self.identity_plate(c, rel, d["level"]) + self.darrow_reckoning(rel) + binding
                 + f'<div class="panels"><p class="lbl panels-h">The sheet</p>{sheet}<p class="lbl panels-h">On the page</p>{story}</div>')
-        self.pages["darrow/index.html"] = shell("Ser Darrow of Edgemoor", body, rel, "Darrow", "char-page darrow-page", desc="Darrow's page and his full Reckoning.")
+        self.page("darrow/index.html", "Ser Darrow of Edgemoor", body, rel, "Darrow", "char-page darrow-page", desc="Darrow's page and his full Reckoning.")
 
     # ---------------------------------------------------------------- the wardrobe
     def wardrobe_chip(self, rel):
@@ -3527,7 +3597,7 @@ class Site:
         blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
         body = (plate + book + forge + paint + f'<script type="application/json" id="forge-data">{blob}</script>'
                 f'<script src="{rel}forge.js?v={asset_v("forge")}" defer></script>')
-        self.pages["darrow/wardrobe.html"] = shell("The Wardrobe", body, rel, "Darrow", "wardrobe-page", desc="Darrow's looks, and the Forge that paints new ones.")
+        self.page("darrow/wardrobe.html", "The Wardrobe", body, rel, "Darrow", "wardrobe-page", desc="Darrow's looks, and the Forge that paints new ones.")
 
     def render_collection(self):
         """The Collection (darrow/collection.html): every piece of the Wardrobe and where it came from. His rank (the count
@@ -3591,7 +3661,7 @@ class Site:
             shelves.append(panel(c["label"], f'{glyph(c["id"], 16)}{have} of {len(c["options"])}', inner, f'shelf-{c["id"]}'))
         body = plate + sets_html + sec("The shelves", f'{col["have"]} of {col["of"]}', f'<div class="panels">{"".join(shelves)}</div>'
                                        '<p class="hint">Tap a piece to see it in the Forge.</p>')
-        self.pages["darrow/collection.html"] = shell("The Collection", body, rel, "Darrow", "collection-page", desc="Every piece of Darrow's Wardrobe, and where each came from.")
+        self.page("darrow/collection.html", "The Collection", body, rel, "Darrow", "collection-page", desc="Every piece of Darrow's Wardrobe, and where each came from.")
 
     @staticmethod
     def ref_card(r, rel, for_piece="", n=0):
@@ -3754,7 +3824,7 @@ class Site:
         tier = (d.get("chapter_now") or {}).get("tier_so_far")
         tier_chip = (f'<div class="seal-row">{svg_seal(tier, 30, open_=True)}{chip(TIER_SO_FAR[tier], TIER_CLS.get(tier, ""))}</div>'
                      if tier in TIER_SO_FAR else "")
-        plate = (f'<section class="plate now-plate"{self.place_backdrop(place, rel)}><p class="lbl">{esc(book_line)}</p>'
+        plate = (f'<section class="plate now-plate"{self.place_backdrop(place, rel, book_colour(w.get("book")))}><p class="lbl">{esc(book_line)}</p>'
                  f'<h1>{esc("Chapter " + str(w.get("chapter")) + " — " + w.get("chapter_title", ""))}</h1>{tier_chip}'
                  f'<dl class="kv"><dt>Where</dt><dd>{esc(where)}</dd><dt>Season</dt><dd>{esc(w.get("season", ""))}</dd>{scene_row}</dl>'
                  f'<div class="beat"><span class="lbl">Just happened</span><p>{esc(w.get("last_beat", ""))}</p></div>{self.continue_button(rel)}</section>')
@@ -3820,32 +3890,31 @@ class Site:
                 + ask("The numbers", self.standing_numbers() + [f'Next, {esc(nk["name"])}: {esc(nk["proves"])}' if nk else ""])
                 + f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
         reck = sec("The Reckoning", "", card)
-        base = None
-        if self.map_base:
-            reg = self.register_image("places.json base_image", self.map_base.get("image"), self.map_base.get("alt"))
-            base = (rel + reg[0]) if reg else None
-            self.thumb_missing.discard(Path(str(self.map_base.get("image"))).as_posix())  # the map always shows it whole
-        map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel, base)
+        base = self.map_picture()
+        book = as_int(w.get("book")) or 1
+        legs = sum(r is None for r in self.route) + 1  # a leg is a Book's road: the last is this Book's, the ones before it the Books before
+        tints = [book_colour(b) for b in range(book - legs + 1, book + 1)]
+        map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel, rel + base if base else None, tints)
                        + '<p class="legend"><span><span class="lg ember">●</span> Darrow</span> <span><span class="lg brass">●</span> visited</span> <span><span class="lg faint">●</span> not yet</span> '
-                       '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"><path d="M1 3 H21"/></svg> the road so far</span></p>'
+                       '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"' + book_tint(book) + '><path d="M1 3 H21"/></svg> the road so far</span></p>'
                        + map_places(self.places, self.route, self.current_place, rel))
         dice = sec("The dice", "", self.dice_html(rel))
         story = plate + open_html + map_html + quest + companions + answered_html + tales_html  # the story first
         game = self.level_news(rel) + self.wardrobe_news(rel) + reck + dice  # then the game's news and numbers
         body = story + game
-        self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
+        self.page("index.html", "Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
 
-    def place_backdrop(self, place, rel):
-        """The style attribute that puts the place he is at faint behind the Now plate (site.css .now-plate::before): its
-        medium copy and its focus. Empty until the place and its picture are on the page."""
-        if not (place.get("on_page") and place.get("image")):
-            return ""
-        reg = self.register_image(f"places.json {place.get('id')} image", place["image"], place.get("image_alt"))
-        if not reg:
-            return ""
-        m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(place.get("image_focus") or ""))
-        focus = f"{m.group(1)}% {m.group(2)}%" if m else "50% 50%"
-        return f' style="--bg:url({rel}{reg[3]});--focus:{focus}"'
+    def place_backdrop(self, place, rel, tint=""):
+        """The Now plate's style attribute: the place he is at, faint behind the plate (site.css .now-plate::before), its
+        medium copy and its focus, or the country it lies in (its region) while the place has no picture of its own; and
+        the Book's colour (--book). A picture shows only once its place is on the page."""
+        style = [f"--book:{tint}"] if tint else []
+        src = next((p for p in (place, self.place_by_id.get(place.get("region"), {})) if p.get("on_page") and p.get("image")), None)
+        reg = self.register_image(f"places.json {src.get('id')} image", src["image"], src.get("image_alt")) if src else None
+        if reg:
+            m = re.fullmatch(r"\s*(\d{1,3})%\s+(\d{1,3})%\s*", str(src.get("image_focus") or ""))
+            style += [f"--bg:url({rel}{reg[3]})", "--focus:" + (f"{m.group(1)}% {m.group(2)}%" if m else "50% 50%")]
+        return f' style="{";".join(style)}"' if style else ""
 
     def level_news(self, rel):
         """The level-up banner at the head of the Now page, for LEVEL_NEWS_DAYS after the level came: the crest in the
@@ -3914,7 +3983,7 @@ class Site:
         nav += f'<a class="next" href="{rel}tales/{next_t["slug"]}.html"><span class="lbl">Next</span>{esc(next_t["label"] + " — " + next_t["title"])}</a>' if next_t else f'<a class="next" href="{rel}tales/index.html"><span class="lbl">The tales</span>All the tales</a>'
         nav += "</nav>"
         page = f'<article class="reader">{"".join(head)}{"".join(body)}</article>{keep_html}{cast_html}{nav}'
-        self.pages[f"tales/{t['slug']}.html"] = shell(f"{t['label']} — {t['title']}", page, rel, "Tales", "reader-page",
+        self.page(f"tales/{t['slug']}.html", f"{t['label']} — {t['title']}", page, rel, "Tales", "reader-page",
                                                       desc=f"{t['label']} of The Unkneeling: {t['title']}.")
 
     def render_tales_index(self):
@@ -3933,7 +4002,7 @@ class Site:
                 'and what it leaves behind goes to the one who keeps it.</p></section>')
         body += sec("Told so far", (f"{len(self.tales)} tale{'s' if len(self.tales) != 1 else ''}" + (f" · {n_done} in full" if n_done else "")) if self.tales else "",
                     f'<ul class="chron">{"".join(items)}</ul>' if items else '<p class="empty">No tale has begun yet.</p>')
-        self.pages["tales/index.html"] = shell("Tales", body, rel, "Tales", desc="The tales of The Unkneeling: the past, a piece at a time.")
+        self.page("tales/index.html", "Tales", body, rel, "Tales", desc="The tales of The Unkneeling: the past, a piece at a time.")
 
     # ---------------------------------------------------------------- codex
     def project_html(self, place_id):
@@ -4007,7 +4076,7 @@ class Site:
         jump = f'<nav class="jump chips" aria-label="Codex sections">{"".join(jumps)}</nav>'
         body = ('<section class="plate"><p class="lbl">The Codex</p><h1>Places, factions, sayings</h1><p class="dim">Only what the page has shown. '
                 f'Names on the map that the story has not reached yet are names and nothing more.</p>{jump}</section>' + "".join(secs))
-        self.pages["codex/index.html"] = shell("Codex", body, rel, "Codex", desc="Places, factions and sayings of The Unkneeling.")
+        self.page("codex/index.html", "Codex", body, rel, "Codex", desc="Places, factions and sayings of The Unkneeling.")
 
     # ---------------------------------------------------------------- run
     def build(self):
