@@ -42,7 +42,7 @@ python3 game/tools/file_art.py sound  battle_won FILE                    # by it
 
 A picture's name is who it shows: `pikeman`, `swordsman`, `crossbowman`, `skirmisher`, `shieldbearer`, `bannerman`, `captain`, or `hollis`, `ash`, `wren` for the company's clash figures. A sound's name is one of the names in the page's "Sounds to make" table; the tool refuses any other. Then build, run both tests, publish, and ship. The page marks what is made and what is still to make by itself.
 
-Made so far: the pikeman (figure and token), and the sound `battle_won`.
+Made so far: the pikeman and the swordsman (figure and token each), and the sounds `battle_won` and `run_won`.
 
 ## The game in one page
 

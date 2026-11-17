@@ -106,7 +106,7 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     ok(await p.evaluate(() => window.__LH.assets.sfx.battle_won === 'sfx/battle_won.mp3'), 'the build knows the battle-won sound is made');
     const dur = await p.evaluate(() => new Promise(res => { const a = new Audio('sfx/battle_won.mp3'); a.oncanplaythrough = () => res(a.duration); a.onerror = () => res(-1); setTimeout(() => res(-2), 4000); })); ok(dur > 1 && dur < 2.5, 'and the file loads and is about a second and a half long (' + dur + ')');
     await p.click('[data-hear="battle_won"]'); ok(await p.evaluate(() => window.__LH.played.battle_won === 1), 'pressing Hear plays the real file, not the tone');
-    ok(await p.$$eval('#sfx-table .made', e => e.length) === 1 && (await p.textContent('[data-who="pikeman"]')).includes('figure and token made') && (await p.textContent('[data-who="captain"]')).includes('to make'), 'the lists mark what is made and what is still to make');
+    ok(await p.$$eval('#sfx-table .made', e => e.length) === await p.evaluate(() => Object.keys(window.__LH.assets.sfx).length) && (await p.textContent('[data-who="pikeman"]')).includes('figure and token made') && (await p.textContent('[data-who="captain"]')).includes('to make'), 'the lists mark what is made and what is still to make');
     await p.click(tile(2, 4)); await p.click(tile(2, 2)); await p.click(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(600);
     { // a card he cannot afford is refused, with its own sound
       const j = await p.evaluate(() => { const g = window.__LH.G, K = g.clash; window.__en = K.en; K.en = 0; return K.hand.findIndex(id => window.__LH.LH.C[id].c > 0); }); const n = (await st(p)).clash.hand.length;
