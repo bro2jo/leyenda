@@ -443,12 +443,10 @@
         "knee"
       ],
       "add": [
-        "cond",
-        "upper",
-        "sport"
+        "cond"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the trainer, Tue 11/17 (patient-reported): real/visits/2026-11-17_trainer_instruction.md",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/17 (the trainer): aerobic only today, so Upper A and the short throw dropped (a plan change, never a miss)"
     },
     {
       "date": "2026-11-18",

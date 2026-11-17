@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/17 (repo, his call): the exercise log gains `hr_avg`, the average heart rate in bpm when he gives it
 - 11/16 (repo, his call; Phase 5 from PT 15): the checks simplified. The morning check is five questions (swelling grade, pain and where, extension vs the right, wellness, anything new); the Sunday checks keep the weigh-in and the single-leg squat test while the State keeps it; the heel prop and photo, the SLR lag and the flexion heel slide are retired and come back when a morning shows a problem; the check-in set adds the run
 - 11/7 (repo, his call): the exercise log's `load or band` column split into `load`, `load_unit`, `band` and `height_in` (numbers, with the load conventions below); one exercise name per movement, set-ups and machine ids in `notes`; the morning readings are numbers (pain, extension and flexion in degrees, hours on feet), the catch `none` / `yes`, adjuncts one format
 - 11/1 (repo, his call): progression follows the master plan's own rule ("Progressive Overload Rules": one major variable at a time per exercise, loads +2.5–10%); the stricter limits this file had added are gone: one change per session made on the last set only, one new exercise per session, one new impact rung per session. Any number of exercises may progress in the same session
@@ -231,10 +232,11 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 - Body mass goes to `nutrition_log.csv` (`weight_lb`); measured numbers to `measurements.csv`, one row per side.
 - Decisions and instructions go in the State, NOW or PT Notes, not in `notes`.
 
-**exercise_log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold_or_duration, load, load_unit, band, height_in, assist, notes.
+**exercise_log.csv** — one row per exercise instance: date, dash_week_start, pod, session, block, exercise, side, sets, reps, hold_or_duration, load, load_unit, band, height_in, assist, notes, hr_avg.
 - `exercise`: **one name per movement**, reused from the log (`python3 engine/darrow.py ex names`). The set-up, the machine or its id, a seat setting, the impact rung, a test's criteria and the content of an "as written" warm-up, finisher or cooldown go in `notes`, never in the name (`goblet squat` + `height_in` 18, not `goblet squat to 18 in box`). Every ride is `bike` (home: the air bike, State §1; the clinic's upright bike named in `notes`).
 - `load`: the working weight as **a number** (`50`, `52.5`), or one per set with `/` (`40/50/60`); `load_unit`: `lb` / `plates` (a machine stack counted in plates) / `level` (a bike's resistance); the engine refuses anything else. A dumbbell load is per dumbbell, a barbell's includes the bar, a landmine's is the plates on the bar (the bar in `notes`), a cable's or machine's is the stack number. **Blank = no external load** (bodyweight); a load he used but didn't give is `load not recorded` in `notes`. NMES and other settings go in `notes`.
 - `band`: the band's colour or kind (`red`, `red tube`, `teal`; `band` when he didn't say). `height_in`: the box, step or seat height in inches, one per set with `/` (`6/8`).
+- `hr_avg`: the session's or the ride's average heart rate in whole bpm, from his watch or the machine, when he gives it (blank otherwise; never estimated). A ride's distance stays in `notes` (`10.58 mi`).
 - `session`: `home` / `PT` / `HEP` / `floor` for the knee · `conditioning` for off-day rides · `upperA` / `upperB` / `accessory` / `power` / `arms` for the add-on.
 - `block`: the slot type — `warmup`, `mobility`, `quad`, `knee`, `single-leg`, `posterior`, `hip`, `calf`, `balance`, `gait`, `test`, `manual`, `posture`, `cooldown`, `floor`, `conditioning`, `push`, `pull`, `finisher`.
 - `side`: `L` / `R` / `bil` (both legs) for leg exercises; blank for upper-body and conditioning rows.
