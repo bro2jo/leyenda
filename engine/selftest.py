@@ -71,7 +71,8 @@ def main():
     if live_stage == "scene" and any(s.get("status") in ("planned", "next") for s in live_plan["chapter"].get("slots", [])):
         modes.insert(0, ([], 36000))
     if live_stage in ("scene", "climax"):
-        modes.append((["--climax"], 40000))
+        # 42,000 (40,000 until 11/17): a Book's transition folds into its chapter's climax, so that brief carries it too
+        modes.append((["--climax"], 42000))
     for mode, budget in modes:
         code, out = run(["engine/saga.py", "brief"] + mode + ["--size"], ROOT)
         marker = "== TEMPLATE" if mode == ["--chapter"] else "== RECORD"

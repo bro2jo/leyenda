@@ -22,7 +22,8 @@ Commands (run from the repo root):
                                refused for dates before config.json -> food_itemised_from. rm ID: DATE#N (from food list)
   ex add 'JSON'                append exercise-log rows (list or object): {date, session, block, exercise, side, sets, reps,
                                hold_or_duration, load (a number, or one per set 40/50/60), load_unit (lb|plates|level), band,
-                               height_in, assist, notes}; a DB load is per dumbbell, a barbell's includes the bar, a cable's or
+                               height_in, assist, notes, hr_avg (the average heart rate in whole bpm, when he gives it)}; a DB
+                               load is per dumbbell, a barbell's includes the bar, a cable's or
                                machine's is the stack number; blank load = no external load
   ex names [TEXT]              every exercise name in the log with its rows and dates (reuse one: one name per movement)
   sport add 'JSON'             append sport-log rows
@@ -147,7 +148,7 @@ COLS = {
               "conditioning_type", "conditioning_min", "sport_min",
               "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "together", "closed", "notes"],
     "exercise": ["date", "dash_week_start", "pod", "session", "block", "exercise", "side",
-                 "sets", "reps", "hold_or_duration", "load", "load_unit", "band", "height_in", "assist", "notes"],
+                 "sets", "reps", "hold_or_duration", "load", "load_unit", "band", "height_in", "assist", "notes", "hr_avg"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
               "metric", "value", "notes"],
     "measurements": ["date", "source", "metric", "side", "value", "unit", "method", "visit", "notes"],
@@ -550,6 +551,10 @@ def deeds_for_day(date, f, cfg, rules):
     if f["cond_min"] >= c["min_minutes"]:
         start = (rules.get("overshoot") or {}).get("from")
         cap_min = (cfg.get("conditioning") or {}).get("cap_min")
+        # a ride a PT, surgeon or trainer prescribed longer than the usual ceiling (plan_changes -> cond_min) pays to its own length
+        prescribed = max([num(ch.get("cond_min")) or 0 for ch in cfg.get("plan_changes", []) if ch.get("date") == date] or [0])
+        if cap_min and prescribed > cap_min:
+            cap_min = prescribed
         paid_min = min(f["cond_min"], cap_min) if (start and cap_min and date >= start) else f["cond_min"]
         xp = min(c["xp_cap"], int(round(paid_min * c["xp_per_min"])))
         tv = min(c["temper_cap"], int(paid_min // 10))
@@ -2960,13 +2965,15 @@ def cmd_check(args, cfg, rules):
             problems += vocab_problems(cfg, key, r, f"{key}_log.csv line {i}")
     for i, r in enumerate(read_csv("exercise"), 2):  # the load columns hold numbers, so a lift's progress can be read off them
         where = f"exercise_log.csv line {i}"
-        load, unit, height = (str(r.get(k) or "").strip() for k in ("load", "load_unit", "height_in"))
+        load, unit, height, hr = (str(r.get(k) or "").strip() for k in ("load", "load_unit", "height_in", "hr_avg"))
         if load and not PER_SET_NUMBER.match(load):
             problems.append(f"{where}: load '{load}' is not a number, or one per set (40/50/60); a band goes in `band`, the implement in `notes`")
         if bool(load) != bool(unit):
             problems.append(f"{where}: load and load_unit go together (load '{load}', load_unit '{unit}')")
         if height and not PER_SET_NUMBER.match(height):
             problems.append(f"{where}: height_in '{height}' is not a number of inches, or one per set (6/8)")
+        if hr and not (hr.isdigit() and 30 <= int(hr) <= 230):
+            problems.append(f"{where}: hr_avg '{hr}' is not an average heart rate in whole bpm (30-230)")
     skills = cfg.get("sport", {}).get("skills") or []
     for i, r in enumerate(read_csv("sport"), 2):
         if skills and r.get("skill") not in skills:
