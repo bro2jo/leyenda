@@ -2973,11 +2973,23 @@ class Site:
                 + (f'<div class="chips">{chips}</div>' if chips else "") +
                 f'<span class="m">{seen_lbl}: {last}</span></div></a>')
 
+    def company(self):
+        """Who is with him now, as the page last left them: (character, their world.json → companions entry) for each
+        companion not marked away, in the world file's order."""
+        out = []
+        for key, comp in (self.world.get("companions") or {}).items():
+            cid = next((c for c in self.chars if c.split("-")[0] == key), None)
+            if cid and isinstance(comp, dict) and comp.get("present") is not False:
+                out.append((self.chars[cid], comp))
+        return out
+
     def render_roster(self):
+        """The cast: who is with him now first, then everyone else the page has shown, then the fallen."""
         rel = "../"
         order = {"major": 0, "minor": 1, "fallen": 2}
         chars = sorted(self.chars.values(), key=lambda c: (order.get(c["tier"], 3), c["id"] != "darrow", c["name"]))
-        living = [c for c in chars if c["tier"] != "fallen"]
+        with_him = [c for c, _ in self.company()]
+        living = [c for c in chars if c["tier"] != "fallen" and c not in with_him]
         fallen = [c for c in chars if c["tier"] == "fallen"]
         facs = sorted({c["faction"] for c in chars})
         stats = sorted({c["status"] for c in chars})
@@ -2986,6 +2998,8 @@ class Site:
             + '</span><span class="fgrp"><span class="lbl">Status</span>' + "".join(f'<button type="button" class="chip" data-filter="status" data-value="{esc(s)}">{esc(s)}</button>' for s in stats)
             + '</span><span class="fgrp"><button type="button" class="chip brass" data-filter="all">all</button></span></div>')
         body = f'<section class="plate"><p class="lbl">The cast</p><h1>Characters</h1><p class="dim">Everyone the page has shown or named. Nothing here runs ahead of the story.</p>{filters}</section>'
+        if with_him:
+            body += sec("With him now", f"{len(with_him)}", '<div class="grid">' + "".join(self.card(c, rel) for c in with_him) + "</div>")
         body += sec("Roster", f"{len(living)}", '<div class="grid">' + "".join(self.card(c, rel) for c in living) + "</div>")
         if fallen:
             body += sec("The fallen", f"{len(fallen)}", '<div class="grid memorial">' + "".join(self.card(c, rel) for c in fallen) + "</div>", cls="memorial-sec")
@@ -3860,13 +3874,8 @@ class Site:
                 answered_html = sec(self.choice_title(lc["kind"], lc["rec"], lc["scene"]["key"]), "answered",
                                     self.choice_list(lc["items"], lc["rec"]) + f'<p class="dim">From <a href="{rel}chronicle/{lc["chapter"]["slug"]}.html#{lc["scene"]["anchor"]}">{esc(lc["chapter"]["label"] + " — " + lc["scene"]["title"])}</a>.</p>')
         comps = []
-        for key, comp in (w.get("companions") or {}).items():
-            if not isinstance(comp, dict) or comp.get("present") is False:
-                continue
-            cid = next((c for c in self.chars if c.split("-")[0] == key), None)
-            if not cid:
-                continue
-            c = self.chars[cid]
+        for c, comp in self.company():
+            cid = c["id"]
             mood = approval_word(int(comp["approval"])) if "approval" in comp else "at his side"
             regard = (bar(int(comp["approval"]) + 100, 200, "Regard for Darrow", "approval", text=mood, quiet=True) if "approval" in comp else "")
             comps.append(f'<a class="comp" href="{rel}{self.char_href(cid)}">{self.avatar_crest(c, rel, 48, "sm")}'
