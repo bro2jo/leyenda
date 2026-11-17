@@ -178,14 +178,18 @@ def main():
         for pole in ("mercy", "mercy", "flint", "flint"):
             run(saga + ["bearing", pole, "3", "--why", "gm:self-test"], tmp)
         b = jload(tmp / "saga/state/bearing.json")
-        # mixed outranks a lean, so a mixed name is next in line (another axis may hold a mixed title of its own in a live copy)
+        # mixed outranks a lean, so a mixed name is next in line (another axis may hold a mixed title of its own in a live
+        # copy); an epithet the live story has already given on a named pole outranks it and stays (the epithet is sticky)
         mixed_names = {t["name"] for t in b["titles"] if t["rung"] == "mixed"}
-        check(b["axes"]["mercy_flint"]["value"] == 0 and any(t["rung"] == "mixed" and t["axis"] == "mercy_flint" for t in b["titles"]) and b["epithet_next"] in mixed_names,
+        named_held = any(t["rung"] == "named" and t["name"] == b.get("epithet") for t in b["titles"])
+        check(b["axes"]["mercy_flint"]["value"] == 0 and any(t["rung"] == "mixed" and t["axis"] == "mercy_flint" for t in b["titles"])
+              and (b["epithet_next"] == b.get("epithet") if named_held else b["epithet_next"] in mixed_names),
               "six each way inside the lean is a mixed name, next in line", json.dumps(b.get("titles")) + f" next {b.get('epithet_next')}")
         code, out = run(saga + ["check"], tmp)
         check(code == 0, "check passes with the ladder's titles", out[-400:])
         code, out = run(saga + ["bearing", "show"], tmp)
-        check(code == 0 and "titles held:" in out and "next in line" in out, "bearing show prints the titles and the epithet next in line", out[-300:])
+        check(code == 0 and "titles held:" in out and ("nothing pending" if b["epithet_next"] == b.get("epithet") else "next in line") in out,
+              "bearing show prints the titles and the epithet next in line", out[-300:])
 
         # a rule fired has state (the first armed rule the digest shows)
         code, out = run(saga + ["now"], tmp)
@@ -426,6 +430,12 @@ def main():
             bad_default = dict(climax, choice={**climax["choice"], "default": 2})
             code, out = run(saga + ["record", json.dumps(bad_default, ensure_ascii=False)], tmp, expect=1)
             check("Inspiration" in out, "a climax whose default costs Inspiration is refused", out[-300:])
+            b = jload(tmp / "saga/state/bearing.json")
+            held = next((t for t in b["titles"] if t["name"] == b.get("epithet")), None)
+            if b.get("epithet_next") == b.get("epithet") and held:  # nothing pending in the live copy: let the held title lapse (its axis back to even) so another is next
+                ax = b["axes"][held["axis"]]
+                if ax["value"]:
+                    bearing_move((ax["left"] if ax["value"] > 0 else ax["right"]).lower(), abs(ax["value"]))
             ep0 = jload(tmp / "saga/state/bearing.json").get("epithet")
             code, out = run(saga + ["record", json.dumps(climax, ensure_ascii=False)], tmp)
             check(code == 0 and "climax choice open" in out, "the climax is recorded and its choice opened", out[-600:])
