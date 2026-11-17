@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-15 · body · Frost on the tailboard at first light. He bends the knee under the blanket and it comes up all the way without a word of complaint; he lies there a minute longer anyway, because for once he can.
 - 2026-11-15 · weather · Wind round to the west by midday, and the sky the colour of an old spoon. Hollis sniffs it and declares rain by dark, with the confidence of a man who has been wrong about rain all his life.
 - 2026-11-15 · house · Maelis rolls clean bandages by the fire, counting under her breath, and slaps Hollis's hand away from the honey pot without once looking up.
 - 2026-11-15 · saying · "Bells take it," Hollis says when the pot lid bites his fingers, and then says it twice more, slower, for the pleasure of the sound.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-16 · house · Maelis lays her kit out on the only flat stone in sight, in rows so straight that Wren, watching, quietly starts ruling her columns to the same spacing.
 - 2026-11-16 · ledger · A fresh page in Wren's ledger: miles to the next anything, unknown. The dog's opinion of geese, poor. Hollis's opinion of the ledger, worse, and entered at his own request.
 - 2026-11-16 · weather · Clear and cold after sundown, the stars thick as spilled salt. Rae names three of them wrong on purpose, to see who is listening. Wren is, and corrects all three.
+- 2026-11-16 · body · He lies down under the cart without arranging the leg first, the way he has every night for months, and only notices afterward, in the dark, that he forgot to.
