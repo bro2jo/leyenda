@@ -6,12 +6,12 @@
 
 - **Where:** The river mill; the fire at the burned mill on the near bank, the bridge barred by Rae's cart.
 - **The quest:** *The Road.* North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.
-- **What Darrow is fighting right now:** The millers: forty people black with smoke at their burned mill, looking to him, the bridge barred behind them and the line of shapes standing on its far end in the firelight.
-- **Just happened (Scene):** *The Biggest Lamp in the Hills.* Forty millers black with smoke sat round their burning mill looking at him; across the river the line of shapes still stood on the bridge in the firelight, facing west.
+- **What Darrow is fighting right now:** The millers: forty people black with smoke at their burned mill, looking to him, with Rae's cart barring the near end of the bridge and the line of shapes standing on the span against it in the firelight.
+- **Just happened (Scene):** *The Biggest Lamp in the Hills.* Forty from the mill, black with smoke, sat round their burning mill looking at him; on the bridge the line of shapes still stood pressed up against Rae's cart in the firelight, waiting for something to tell them to move.
 - **With him:** Maelis Vorne (At the fire by the burned mill.) · Ser Hollis Garrow (At the fire by the burned mill.) · Wren Ashdown (At the fire with the ledger, every cart counted over.) · Rae Thorne (At the fire by the burned mill, her cart still across the end of the bridge with Hob and Dun standing.) · Ash (At the fire by the burned mill.)
 - **Also here:** Ysra Tal (Got up off the ice on her own, took up her sword, said his message back to him word for word, named him Plainspoken, and rode into the alde…)
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (2 of 3 told)
-- **Against him:** The line of shapes standing still on the far end of the mill bridge in the firelight.
+- **Against him:** The line of shapes standing still on the mill bridge, pressed up against Rae's cart.
 - **Next:** His answer: what the forty millers are to him.
 - **Open choice (a small one):** Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them? 1. Keep them: the company goes on forty larger, at a cart's pace. / 2. Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road. / 3. Leave them at the mill with the company and go after what came through the fields: follow its trail back west at first light, with Ash and nobody else.
 

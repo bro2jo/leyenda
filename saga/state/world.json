@@ -41,8 +41,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The millers: forty people black with smoke at their burned mill, looking to him, the bridge barred behind them and the line of shapes standing on its far end in the firelight.",
-  "last_beat": "Forty millers black with smoke sat round their burning mill looking at him; across the river the line of shapes still stood on the bridge in the firelight, facing west.",
+  "current_struggle": "The millers: forty people black with smoke at their burned mill, looking to him, with Rae's cart barring the near end of the bridge and the line of shapes standing on the span against it in the firelight.",
+  "last_beat": "Forty from the mill, black with smoke, sat round their burning mill looking at him; on the bridge the line of shapes still stood pressed up against Rae's cart in the firelight, waiting for something to tell them to move.",
   "companions": {
     "maelis": {
       "approval": 45,
