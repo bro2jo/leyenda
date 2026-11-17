@@ -37,7 +37,7 @@
     "place": "river-mill",
     "anchor": "chronicle/07-the-far-bank.html#scene-2"
   },
-  "last_seen_doing": "Counted the carts over all night and stopped saying the other number; closed the day with every cart over, and jibed at his half-named loads.",
+  "last_seen_doing": "Counted the carts over, swung lamps over his shoulder on a hay-fork and counted the breaths each one lasted, and closed the day with every cart over.",
   "now": "At the fire with the ledger, every cart counted over.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
@@ -823,6 +823,12 @@
       "chapter": "07",
       "scene": "2",
       "evidence": "Grandmothers missed: one."
+    },
+    {
+      "fact": "She counted how long each lamp held the line on the bridge: eleven breaths, nine, seven, each shorter than the last.",
+      "chapter": "07",
+      "scene": "2",
+      "evidence": "Every one's shorter than the last, and we've four lamps left."
     }
   ],
   "relationships": [

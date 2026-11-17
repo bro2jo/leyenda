@@ -547,7 +547,7 @@ Ysra Tal finds him on a frozen weir. He cannot match her footwork and does not t
 
 ## b2.3 — The Mill at Coldmere
 Refugees at a mill bridge over a Wend tributary, drawn up the same wrong way as the clans at the ford: carts behind, children shushed, everyone looking back. Something is coming through the fields. Darrow holds the bridge so they can cross: the mirror of Harrow Ford, and this time he holds. Rae's cart is the barricade, and she reads the line before he says it (`rae.road`). On the low road Hollis rides in at the worst moment and holds the far end from the saddle. **Plants:** T5 (the shape of the line); the thing in the fields is Hollowed, many of them (T4). Threads 3, 11 (he says Tobin's name here if ever).
-**Fixed loss (every tier; `## fates`):** the mill burns. Planted: the mill tracks (b2.1, slot 7) and q2.lantern's river mill.
+**Fixed loss (every tier; `## fates`):** the mill burns. Planted: the mill tracks (b2.1, slot 7) and q2.lantern's river mill. **On the page (ch07:s2, rewritten 11/17 on the tentative rule in `world.md` → The Hollowed):** a Tide in the dark comes for people and takes hold; lamps hold it for breaths and gutter; the millers fire their own mill as the one flame big enough, and it holds the Tide on the bridge until dawn, when they become walkers again and drift on east along the far bank (Tuesday opens on that, in a clause).
 - *Triumph:* every cart crosses, the bridge comes down on his word and the mill goes up behind it; the millers follow him with their stores.
 - *Hard-won:* every cart crosses; the bridge is held past dark, Darrow is carried off it, and the mill and the stores burn.
 - *Costly:* every cart crosses; mill and stores burn, and the millers have nowhere to go but with him.
