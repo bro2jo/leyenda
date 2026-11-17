@@ -3,7 +3,8 @@
 'use strict';
 var W=6,H=7,HAND_CAP=8,MAX_HP=58,HELD_MAX=2,MIN_DECK=10;
 /* Balance knobs, in one place. */
-var T={scaleHp:.15,scaleAtk:1,rest:6,mend:15,mendCost:3,removeCost:2,honeCost:3,spoilFoe:2,spoilBoss:4,market:5,foeAtk:1,ansD:0,capHolds:3,pressUp:4,pressBreath:1,rally:2,woodBlock:4,woodCover:3,tend:5};
+/* atkBy, hpBy: how much harder the foes of the second and third battle are than the first. */
+var T={atkBy:[0,1,1],hpBy:[0,.1,.2],rest:8,par:10,maxTurns:30,mend:15,mendCost:3,removeCost:2,honeCost:3,spoilFoe:1,spoilBoss:4,spoilOwn:1,market:5,foeAtk:-2,ansD:2,capHolds:3,pressUp:4,pressBreath:1,rally:2,woodBlock:4,woodCover:3,tend:5,tends:3,capPatience:8,levelAtk:1,levelHp:.1,throws:1};
 /* What the game takes from the sheet as it stands. The Tether's stage sets what Rae's hand gives. */
 var SHEET={hp:58,tether:2};
 var TREE={blade:'Blade',foot:'Footing',cast:'Cast',breath:'Breath',bind:'Binding',eye:'Insight'};
@@ -19,7 +20,7 @@ var FOES={
   P:{n:'Pikeman',key:'pikeman',t:'foot',hp:26,mov:2,rng:1,atk:9,ans:[{b:6,d:9},{b:0,d:12}]},
   S:{n:'Swordsman',key:'swordsman',t:'blade',hp:24,mov:3,rng:1,atk:8,ans:[{b:0,d:10},{b:4,d:8}]},
   X:{n:'Crossbowman',key:'crossbowman',t:'cast',hp:20,mov:2,rng:2,atk:7,barbed:1,ans:[{b:0,d:9},{b:3,d:7}]},
-  K:{n:'Skirmisher',key:'skirmisher',t:'blade',hp:18,mov:4,rng:1,atk:7,ans:[{b:0,d:5,n:2},{b:0,d:4,n:3}]},
+  K:{n:'Skirmisher',key:'skirmisher',t:'blade',hp:20,mov:4,rng:1,atk:8,ans:[{b:0,d:5,n:2},{b:0,d:4,n:3}]},
   B:{n:'Shieldbearer',key:'shieldbearer',t:'foot',hp:28,mov:2,rng:1,atk:8,tough:2,ans:[{b:6,d:8},{b:3,d:10}]},
   F:{n:'Bannerman',key:'bannerman',t:'cast',hp:22,mov:2,rng:1,atk:5,rally:1,ans:[{b:4,d:5},{b:6,d:4}]},
   C:{n:'Captain',key:'captain',t:'blade',hp:44,mov:2,rng:1,atk:12,boss:1,enrage:3,ans:[{b:8,d:12},{b:0,d:16}]}
@@ -79,7 +80,7 @@ var C={
   lH2:{n:"Hollis's Shoulder",r:'risen',t:'foot',k:'Skill',c:0,lent:1,blk:9,art:'hollis'},
   lA2:{n:'Ash at Heel',r:'risen',t:'foot',k:'Attack',c:0,lent:1,dmg:7,art:'ash'},
   lW2:{n:"Wren's Count",r:'risen',t:'eye',k:'Skill',c:0,lent:1,open:1,draw:1,art:'wren'},
-  lD2:{n:"Captain's Word",r:'risen',t:'eye',k:'Skill',c:0,lent:1,en:2,art:'darrow'},
+  lD2:{n:"Captain's Word",r:'risen',t:'eye',k:'Skill',c:0,lent:1,en:1,draw:1,art:'darrow'},
   lR:{n:"Rae's Hand",t:'bind',k:'Skill',c:0,lent:1,heal:2*SHEET.tether,art:'rae'},
   lR2:{n:"Rae's Hand",r:'risen',t:'bind',k:'Skill',c:0,lent:1,heal:2*SHEET.tether+3,cleanse:1,art:'rae'}
 };
@@ -95,24 +96,24 @@ function sg(n){return n>0?1:n<0?-1:0}
 /* ---------- a run, a battle ---------- */
 function newRun(opts){
   opts=opts||{};
-  var G={seed:(opts.seed===undefined?Date.now():opts.seed)|0,opts:{rounds:opts.rounds||1},run:{n:1,deck:(opts.deck||BASE_DECK).slice(),hp:MAX_HP,insp:3,spoils:0,felled:0,won:0,renown:0}};
+  var G={seed:(opts.seed===undefined?Date.now():opts.seed)|0,opts:{rounds:opts.rounds||1,level:opts.level|0},run:{n:1,deck:(opts.deck||BASE_DECK).slice(),hp:MAX_HP,insp:3,spoils:0,felled:0,won:0,quick:0,renown:0}};
   startBattle(G);return G;
 }
 function unit(G,o){o.max=o.hp;o.guard=0;o.bank=0;o.fights=0;o.ai=0;o.st={blockStart:0,atkUp:0,drawUp:0};if(o.deck)o.dk={draw:shuf(G,o.deck),disc:[],gone:[]};return o}
 function startBattle(G){
-  var k=G.run.n-1,M=MAPS[k];
+  var k=G.run.n-1,M=MAPS[k],lv=G.opts.level;   /* level: -1 gentle, 0 standard, 1 hard */
   G.map=M;G.turn=1;G.phase='player';G.clash=null;G.over=null;G.camp=null;G.ei=0;
   G.log=[[k===0?'Their captain holds the far bank. Bring him down.':k===1?'The road runs into the trees, and they are waiting in them.':'One bridge, one ford, and a banner on the far side.']];
   G.u=[
-    unit(G,{id:'D',n:'Darrow',side:0,t:'blade',hp:MAX_HP,mov:3,rng:2,br:3,hn:5,rip:6,img:'darrow',lend:'lD',deck:G.run.deck.slice()}),
+    unit(G,{id:'D',n:'Darrow',side:0,t:'blade',hp:MAX_HP,mov:3,rng:1,far:1,throws:T.throws,br:3,hn:5,rip:6,img:'darrow',lend:'lD',deck:G.run.deck.slice()}),
     unit(G,{id:'H',n:'Hollis',side:0,t:'blade',hp:40,mov:2,rng:1,br:2,hn:3,rip:6,img:'hollis',lend:'lH',deck:['hew','hew','fast','fast','bellow']}),
     unit(G,{id:'A',n:'Ash',side:0,t:'foot',hp:30,mov:4,rng:1,br:2,hn:3,rip:4,img:'ash',lend:'lA',deck:['legs','legs','worry','worry','slip']}),
     unit(G,{id:'W',n:'Wren',side:0,t:'cast',hp:26,mov:3,rng:2,br:2,hn:3,rip:3,img:'wren',lend:'lW',deck:['stone','stone','count','count','duck']}),
     /* Rae, the carter. She does not fight: she tends whoever is beside her, and lends a hand to a fighter beside her. */
-    unit(G,{id:'R',n:'Rae',side:0,t:'foot',hp:28,mov:3,rng:0,br:0,hn:0,rip:0,img:'rae',lend:'lR',tend:T.tend})];
+    unit(G,{id:'R',n:'Rae',side:0,t:'foot',hp:28,mov:3,rng:0,br:0,hn:0,rip:0,img:'rae',lend:'lR',tend:T.tend,tends:T.tends})];
   G.u.forEach(function(u){u.x=M.pos[u.id][0];u.y=M.pos[u.id][1]});
   M.foes.forEach(function(f){var b=FOES[f[0]],o={id:f[0],side:1,x:f[1],y:f[2]};for(var key in b)o[key]=b[key];
-    o.hp=Math.round(b.hp*(1+T.scaleHp*k));o.atk=b.atk+T.scaleAtk*k+T.foeAtk;o.ans=b.ans.map(function(a){return {b:a.b||0,d:a.d+T.scaleAtk*k+T.ansD,n:a.n||1}});G.u.push(unit(G,o))});
+    o.hp=Math.round(b.hp*(1+T.hpBy[k]+T.levelHp*lv));o.atk=Math.max(1,b.atk+T.atkBy[k]+T.foeAtk+T.levelAtk*lv);o.ans=b.ans.map(function(a){var n=a.n||1;return {b:a.b||0,d:Math.max(1,a.d+T.atkBy[k]+T.levelAtk*lv+(n>1?0:T.ansD)),n:n}});   /* a flurry is not made heavier blow by blow */G.u.push(unit(G,o))});
   G.u[0].hp=Math.max(1,Math.min(MAX_HP,G.run.hp));
 }
 
@@ -146,25 +147,30 @@ function dangerSet(G){
 function move(G,u,x,y){
   if(!live(G)||!canAct(u)||u.moved||(x===u.x&&y===u.y))return false;
   if(reach(G,u)[x+','+y]===undefined)return false;
-  u.x=x;u.y=y;u.moved=true;if(u.attacked)u.free=false;return true;
+  u.from=u.attacked?null:[u.x,u.y];u.x=x;u.y=y;u.moved=true;if(u.attacked)u.free=false;return true;
 }
-function hold(G,u){if(!live(G)||!canAct(u)||u.attacked)return false;u.attacked=true;u.moved=true;u.free=false;u.guard+=4;return true}
-function tendTargets(G,u){if(!live(G)||!canAct(u)||u.attacked||!u.tend)return [];return matesUp(G).filter(function(o){return o!==u&&dist(o,u)===1&&(o.hp<o.max||wounds(o)>0)})}
+/* Nothing is hidden on the map, so a move can be taken back until that fighter does something else. */
+function canUnmove(G,u){return live(G)&&u.side===0&&u.hp>0&&u.moved&&!u.attacked&&!!u.from&&!at(G,u.from[0],u.from[1])}
+function unmove(G,u){if(!canUnmove(G,u))return false;u.x=u.from[0];u.y=u.from[1];u.from=null;u.moved=false;return true}
+function hold(G,u){if(!live(G)||!canAct(u)||u.attacked)return false;u.attacked=true;u.moved=true;u.free=false;u.from=null;u.guard+=4;return true}
+function tendTargets(G,u){if(!live(G)||!canAct(u)||u.attacked||!u.tend||u.tends<1)return [];return matesUp(G).filter(function(o){return o!==u&&dist(o,u)===1&&(o.hp<o.max||wounds(o)>0)})}
 function tend(G,u,t){
   if(tendTargets(G,u).indexOf(t)<0)return null;
   var h=Math.min(u.tend,t.max-t.hp),w=false;t.hp+=h;
   if(t.dk){var p=t.dk.disc.indexOf('wound')>=0?t.dk.disc:(t.dk.draw.indexOf('wound')>=0?t.dk.draw:null);if(p){p.splice(p.indexOf('wound'),1);w=true}}
-  u.attacked=true;u.moved=true;u.free=false;u.fights++;
+  u.attacked=true;u.moved=true;u.free=false;u.from=null;u.fights++;u.tends--;
   G.log=[[u.n+' tends '+t.n+': '+h+' mended'+(w?', a Wound set aside':'')+'.','good']];
   return {heal:h,wound:w};
 }
-function targets(G,u){if(!live(G)||!canAct(u)||u.attacked)return [];return G.u.filter(function(d){return d.side===1&&d.hp>0&&inRange(u,d)})}
+/* A fight can be started within reach; Darrow, a few times a battle, can open one from two tiles with a throw. */
+function canEngage(u,d){var k=dist(u,d);return k>=1&&k<=(u.throws>0?2:u.rng)}
+function targets(G,u){if(!live(G)||!canAct(u)||u.attacked)return [];return G.u.filter(function(d){return d.side===1&&d.hp>0&&canEngage(u,d)})}
 
 /* ---------- what makes a foe's blow bigger ---------- */
 function rallied(G,e){return G.u.some(function(o){return o.side===1&&o.hp>0&&o.rally&&o!==e})}
 function enraged(e){return !!e.enrage&&e.hp>0&&e.hp*2<=e.max}
 function bonus(G,e){return (rallied(G,e)?T.rally:0)+(enraged(e)?e.enrage:0)}
-function holding(G,e){if(!e.boss||!T.capHolds||foesUp(G).length<=2)return false;var b=99;matesUp(G).forEach(function(o){var k=dist(o,e);if(k<b)b=k});return b>T.capHolds}
+function holding(G,e){if(!e.boss||!T.capHolds||foesUp(G).length<=2||G.turn>=T.capPatience)return false;var b=99;matesUp(G).forEach(function(o){var k=dist(o,e);if(k<b)b=k});return b>T.capHolds}
 function fell(G,f,fx){if(f.side!==1||f.paid)return;f.paid=true;var n=f.boss?T.spoilBoss:T.spoilFoe;G.run.spoils+=n;G.run.felled++;if(fx)fx.push({k:'spoils',n:n})}
 function wounds(u){if(!u.dk)return 0;var n=0;['draw','disc'].forEach(function(p){u.dk[p].forEach(function(id){if(id==='wound')n++})});return n}
 
@@ -174,8 +180,8 @@ function preview(G,a,d){
   var base=d.ans[d.ai%d.ans.length],p={tri:tri(a,d),wood:ter(G,d.x,d.y)==='w',mark:!!d.marked,open:!!d.fought,far:dist(a,d)===2,can:inRange(d,a)};
   p.ans={b:base.b,d:base.d+bonus(G,d),n:base.n};
   p.lend=G.u.filter(function(o){return o.side===0&&o.hp>0&&o!==a&&(dist(o,a)===1||inRange(o,d))});
-  p.en=Math.max(1,a.br+(p.tri<0?-1:0)+(p.mark?1:0)+a.bank);p.chips=[];
-  if(p.tri>0)p.chips.push([TREE[a.t]+' beats '+TREE[d.t]+': land a hit and he is Broken','up']);
+  p.en=Math.max(1,a.br+(p.tri<0?-1:0)+(p.mark?1:0)+a.bank-(p.far?(a.far||0):0));p.chips=[];
+  if(p.tri>0)p.chips.push([TREE[a.t]+' beats '+TREE[d.t]+': land a hit and his answer is halved','up']);
   if(p.tri<0)p.chips.push([TREE[d.t]+' beats '+TREE[a.t]+': 1 less breath','dn']);
   p.lend.forEach(function(o){p.chips.push([o.n+' is with you: a card lent'+(o.fights>=2?', risen':''),'up'])});
   if(a.bank)p.chips.push(['Held breath: +'+a.bank,'up']);
@@ -186,7 +192,7 @@ function preview(G,a,d){
   if(d.barbed&&p.can)p.chips.push(['Barbed: a blow that lands leaves a Wound','dn']);
   if(rallied(G,d))p.chips.push(['Rallied by the banner: +'+T.rally,'dn']);
   if(enraged(d))p.chips.push(['Enraged: +'+d.enrage,'dn']);
-  if(p.far)p.chips.push(['From two tiles: thrown cards only','']);
+  if(p.far)p.chips.push(['From two tiles: thrown cards only'+(a.far?', '+a.far+' less breath. Uses his throw for this battle':''),a.far?'dn':'']);
   if(p.can&&p.ans.d*p.ans.n>=a.hp)p.chips.push(['This could put '+a.n+' down','dn']);
   p.txt=p.can?'He '+ansText(p.ans)+'.':'He cannot reach to answer.';
   p.worst=p.can?Math.max(0,a.hp-p.ans.d*p.ans.n):a.hp;p.cards=a.hn+a.st.drawUp+p.lend.length;
@@ -197,7 +203,7 @@ function preview(G,a,d){
 function draw(G,u,n){var K=G.clash,got=0;while(n-->0&&K.hand.length<HAND_CAP){if(!u.dk.draw.length){if(!u.dk.disc.length)break;u.dk.draw=shuf(G,u.dk.disc);u.dk.disc=[]}K.hand.push(u.dk.draw.pop());got++}return got}
 function engage(G,a,d){
   if(targets(G,a).indexOf(d)<0)return null;
-  var p=preview(G,a,d),base=d.ans[d.ai%d.ans.length];d.ai++;d.marked=false;a.bank=0;
+  var p=preview(G,a,d),base=d.ans[d.ai%d.ans.length];d.ai++;d.marked=false;a.bank=0;a.from=null;if(p.far&&a.far&&a.throws>0)a.throws--;
   var K=G.clash={a:a,d:d,p:p,round:1,en:p.en,block:a.st.blockStart,intent:{b:base.b,d:base.d,n:base.n},fb:base.b+(p.wood?T.woodBlock:0),open:p.open,far:p.far,canBreak:p.tri>0,halved:false,broken:false,push:false,pin:false,again:false,
     hand:[],phase:'play',redrawn:false,dealt:0,taken:0,played:0,lines:[]};
   draw(G,a,a.hn+a.st.drawUp);p.lend.forEach(function(o){if(K.hand.length<HAND_CAP)K.hand.push(o.lend+(o.fights>=2?'2':''))});
@@ -257,7 +263,7 @@ function play(G,i){
   if(c.draw){fx.push({k:'draw',n:draw(G,a,(c.drawOpen&&K.open)?c.drawOpen:c.draw)})}
   if(c.again){K.again=true;fx.push({k:'status',who:'a',t:'Move again'})}
   if(!c.lent)(c.ex?a.dk.gone:a.dk.disc).push(id);
-  if(d.hp<=0){fx.push({k:'down',who:'d'});fell(G,d,fx);if(c.spoilKill){G.run.spoils+=c.spoilKill;fx.push({k:'spoils',n:c.spoilKill})}settle(G,'won')}
+  if(d.hp<=0){fx.push({k:'down',who:'d'});fell(G,d,fx);if(a.id==='D'&&T.spoilOwn){G.run.spoils+=T.spoilOwn;fx.push({k:'spoils',n:T.spoilOwn,own:1})}if(c.spoilKill){G.run.spoils+=c.spoilKill;fx.push({k:'spoils',n:c.spoilKill})}settle(G,'won')}
   return fx;
 }
 function redraw(G){
@@ -268,8 +274,8 @@ function redraw(G){
 }
 /* What he will do when the hand ends, as it stands right now. */
 function intent(G){
-  var K=G.clash;if(K.broken)return {none:'broken'};if(!K.p.can)return {none:'reach'};
-  var d=K.intent.d+bonus(G,K.d);return {d:K.halved?Math.ceil(d/2):d,n:K.intent.n,halved:K.halved,up:bonus(G,K.d)};
+  var K=G.clash;if(!K.p.can)return {none:'reach'};
+  var d=K.intent.d+bonus(G,K.d);if(K.broken)d=Math.ceil(d/2);if(K.halved)d=Math.ceil(d/2);return {d:d,n:K.intent.n,halved:K.halved||K.broken,broken:K.broken,up:bonus(G,K.d)};
 }
 function nextIntent(G){var K=G.clash,d=K.d,nx=d.ans[d.ai%d.ans.length];return {b:nx.b,d:nx.d+T.pressUp*K.round+bonus(G,d),n:nx.n}}
 function endHand(G){
@@ -288,7 +294,7 @@ function endHand(G){
 function pressOn(G){
   var K=G.clash;if(!K||K.phase!=='choice')return false;var a=K.a,d=K.d,nx=d.ans[d.ai%d.ans.length];
   d.ai++;K.round++;K.block=a.st.blockStart;K.intent={b:nx.b,d:nx.d+T.pressUp*(K.round-1),n:nx.n};K.fb=K.intent.b+(K.p.wood?T.woodBlock:0);
-  K.en=Math.max(1,a.br+(K.p.tri<0?-1:0)-T.pressBreath*(K.round-1));K.halved=false;K.broken=false;K.canBreak=false;K.redrawn=false;K.phase='play';
+  K.en=Math.max(1,a.br+(K.p.tri<0?-1:0)-(K.far?(a.far||0):0)-T.pressBreath*(K.round-1));K.halved=false;K.broken=false;K.canBreak=false;K.redrawn=false;K.phase='play';
   draw(G,a,a.hn+a.st.drawUp);return true;
 }
 function leave(G){var K=G.clash;if(!K||K.phase!=='choice')return false;settle(G,'after');return true}
@@ -351,19 +357,21 @@ function enemyStep(G){
   while(G.ei<G.u.length&&!G.over){var e=G.u[G.ei++];if(e.side!==1||e.hp<=0)continue;var ev=actFoe(G,e);if(ev)return ev}
   var heals=[];
   if(!G.log.length)G.log.push(['They hold where they stand.','dimm']);
-  G.u.forEach(function(u){u.moved=false;u.attacked=false;u.free=false;u.fought=false;u.more=false;
+  G.u.forEach(function(u){u.moved=false;u.attacked=false;u.free=false;u.fought=false;u.more=false;u.from=null;
     if(u.side===0)u.guard=0});
   G.turn++;G.phase='player';
+  /* a battle cannot be drawn out for ever: by nightfall the far bank is still theirs */
+  if(!G.over&&G.turn>T.maxTurns){G.over={lost:1,night:1,t:'Night falls',s:'The far bank is still theirs when the light goes. The company draws off, and the run ends here.'};G.run.renown=renown(G)}
   return {k:'turn',heals:heals};
 }
 
 /* ---------- winning, losing, the camp between battles ---------- */
-function renown(G){return G.run.spoils+6*G.run.won+2*(G.over&&G.over.done?matesUp(G).length-1:0)+Math.floor(G.u[0].hp/8)}
+function renown(G){return G.run.spoils+6*G.run.won+G.run.quick+2*(G.over&&G.over.done?matesUp(G).length-1:0)+Math.floor(G.u[0].hp/8)}
 function check(G){
   if(G.over)return;var cap=G.u.filter(function(u){return u.boss})[0];
   if(G.u[0].hp<=0){G.over={lost:1,t:'The line is broken',s:'Darrow is carried back from the water. The run ends here.'};G.run.renown=renown(G)}
   else if(cap.hp<=0){
-    fell(G,cap);G.run.won++;
+    fell(G,cap);G.run.won++;G.run.quick+=Math.max(0,T.par-G.turn);
     if(G.run.n<MAPS.length){G.over={win:1};G.camp={market:shuf(G,POOL).slice(0,T.market),bought:[]}}
     else{G.over={done:1,t:'The road is held',s:'Three crossings, three captains. Nothing from the run goes on the sheet.'};G.run.renown=renown(G)}
   }
@@ -387,8 +395,9 @@ function effects(G,u){
     if(u.bank)out.push(E('held','Held breath '+u.bank,u.bank+' more breath in '+u.n+"'s next clash.",'good',u.bank));
     var w=wounds(u);if(w)out.push(E('wound',w+(w>1?' Wounds':' Wound'),'Dead cards in the deck until the battle ends. A Clean Bandage or The Mender\'s Patience sets one aside.','bad',w));
     for(var s in u.st)if(u.st[s])out.push(E('stance',STANCE[s][0],STANCE[s][1].replace('%n',u.st[s]),'good',u.st[s]));
-    if(u.tend)out.push(E('tend','Tends','Rae does not fight. On her turn she mends a friend beside her for '+u.tend+' and sets aside a Wound. A fighter beside her is lent her hand.','good'));
+    if(u.tend)out.push(u.tends>0?E('tend','Tends ×'+u.tends,'Rae does not fight. On her turn she mends a friend beside her for '+u.tend+' and sets aside a Wound, '+u.tends+' more time'+(u.tends>1?'s':'')+' this battle. A fighter beside her is lent her hand.','good',u.tends):E('tend','Cart is bare','Rae has nothing left to tend with this battle. A fighter beside her is still lent her hand.','plain',0));
     if(u.fights>=2)out.push(E('risen','Risen','The card '+u.n+' lends has risen.','good'));
+    if(u.throws>0)out.push(E('throw','A throw in hand'+(u.throws>1?' ×'+u.throws:''),'Once this battle '+u.n+' can open a fight from two tiles: thrown cards only, one less breath, and most foes cannot answer.','good',u.throws));
     if(u.attacked&&u.free)out.push(E('again','May still move','The Long Road: one more move this turn.','good'));
     if(t==='w')out.push(E('cover','In the wood','Blows on their turn deal '+T.woodCover+' less here.','good'));
   }else{
@@ -400,7 +409,7 @@ function effects(G,u){
     if(u.rally)out.push(E('banner','Banner','While he stands, every other foe strikes '+T.rally+' harder.','bad'));
     if(rallied(G,u))out.push(E('rallied','Rallied +'+T.rally,'The banner is up: he strikes '+T.rally+' harder.','bad',T.rally));
     if(u.enrage)out.push(enraged(u)?E('enraged','Enraged +'+u.enrage,'At half health or less he strikes '+u.enrage+' harder.','bad',u.enrage):E('temper','Will enrage','At half health he will strike '+u.enrage+' harder.','plain'));
-    if(holding(G,u))out.push(E('holds','Holds his ground','He will not come forward until someone is within '+T.capHolds+' tiles or his men are thinned.','plain'));
+    if(holding(G,u))out.push(E('holds','Holds his ground','He will not come forward until someone is within '+T.capHolds+' tiles, his men are thinned, or turn '+T.capPatience+' comes.','plain'));
     if(u.ans.some(function(a){return a.n>1}))out.push(E('flurry','Flurry','His answer is several small blows. Block soaks each one.','plain'));
     if(t==='w')out.push(E('cover','In the wood','He starts a clash with '+T.woodBlock+' block.','bad'));
   }
@@ -411,14 +420,14 @@ function clashEffects(G){
   if(K.block)A.push(E('block','Block '+K.block,'Soaks his answer. What is left stays on '+a.n+' as guard.','good',K.block));
   for(var s in a.st)if(a.st[s])A.push(E('stance',STANCE[s][0],STANCE[s][1].replace('%n',a.st[s]),'good',a.st[s]));
   if(K.again)A.push(E('again','Moves again','After this clash '+a.n+' may move once more.','good'));
-  if(K.far)A.push(E('far','Two tiles off','Only thrown cards reach him from here.','plain'));
+  if(K.far)A.push(E('far','Two tiles off','Only thrown cards reach him from here'+(a.far?', and '+a.n+' has '+a.far+' less breath for it':'')+'.','plain'));
   if(K.p.tri<0)A.push(E('down','Outmatched',TREE[d.t]+' beats '+TREE[a.t]+': 1 less breath.','bad'));
   var w=K.hand.filter(function(x){return x==='wound'}).length;if(w)A.push(E('wound',w+(w>1?' Wounds':' Wound')+' in hand','Dead cards. Gone after the battle.','bad',w));
   if(K.fb)D.push(E('block','Block '+K.fb,'Soaks your hits before they reach him. Overwall goes over it.','bad',K.fb));
   if(K.open)D.push(E('open','Open','Your next hit lands for half again.','good'));
-  if(K.broken)D.push(E('broken','Broken','He cannot answer this hand.','good'));
-  else if(K.canBreak&&K.p.can)D.push(E('edge','Can be Broken',TREE[a.t]+' beats '+TREE[d.t]+'. Land one hit and he cannot answer.','good'));
-  if(K.halved&&!K.broken)D.push(E('halved','Answer halved','His blow lands for half.','good'));
+  if(K.broken)D.push(E('broken','Broken','His answer this hand is halved.','good'));
+  else if(K.canBreak&&K.p.can)D.push(E('edge','Can be Broken',TREE[a.t]+' beats '+TREE[d.t]+'. Land one hit and his answer is halved.','good'));
+  if(K.halved)D.push(E('halved','Shaken','Bellow: his blow lands for half'+(K.broken?' again':'')+'.','good'));
   if(K.pin)D.push(E('pinned','Pinned','He will not move on his next turn.','good'));
   if(K.push)D.push(E('pushed','Driven back','He gives a tile when the clash ends, if there is room.','good'));
   if(d.marked)D.push(E('marked','Marked','The next friend to fight him has 1 more breath.','good'));
@@ -463,7 +472,7 @@ function cardText(id,K){
 
 root.LH={T:T,SHEET:SHEET,W:W,H:H,MAPS:MAPS,FOES:FOES,TREE:TREE,BEAT:BEAT,C:C,POOL:POOL,STANCE:STANCE,BASE_DECK:BASE_DECK,HAND_CAP:HAND_CAP,MAX_HP:MAX_HP,HELD_MAX:HELD_MAX,MIN_DECK:MIN_DECK,
   newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
-  move:move,hold:hold,tendTargets:tendTargets,tend:tend,targets:targets,preview:preview,engage:engage,hitList:hitList,cardDmg:cardDmg,playable:playable,play:play,redraw:redraw,intent:intent,nextIntent:nextIntent,ansText:ansText,
+  move:move,canUnmove:canUnmove,unmove:unmove,hold:hold,canEngage:canEngage,tendTargets:tendTargets,tend:tend,targets:targets,preview:preview,engage:engage,hitList:hitList,cardDmg:cardDmg,playable:playable,play:play,redraw:redraw,intent:intent,nextIntent:nextIntent,ansText:ansText,
   endHand:endHand,pressOn:pressOn,leave:leave,closeClash:closeClash,endTurn:endTurn,enemyStep:enemyStep,rallied:rallied,enraged:enraged,holding:holding,wounds:wounds,
   inCamp:inCamp,campBuy:campBuy,campMend:campMend,campRemove:campRemove,campHone:campHone,nextBattle:nextBattle,renown:renown,effects:effects,clashEffects:clashEffects,cardText:cardText};
 })(typeof module!=='undefined'&&module.exports?module.exports:window);

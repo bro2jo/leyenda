@@ -7,16 +7,17 @@ var AS=window.LH_ASSETS||{art:[],fig:[],tok:[],sfx:{}};
 function has(list,name){return !!name&&list.indexOf(name)>=0}
 var root=document.getElementById('game');if(!root)return;
 var FAST=!!window.LH_FAST,REDUCED=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-var prefs={rounds:1,quick:false,sound:false,deck:'sheet'};
-try{var sv=JSON.parse(localStorage.getItem('lh-prefs')||'{}');if(sv.rounds===3)prefs.rounds=3;if(sv.quick)prefs.quick=true;if(sv.sound)prefs.sound=true;if(sv.deck==='all')prefs.deck='all'}catch(e){}
+var prefs={rounds:1,quick:false,sound:false,deck:'sheet',level:0};
+try{var sv=JSON.parse(localStorage.getItem('lh-prefs')||'{}');if(sv.rounds===3)prefs.rounds=3;if(sv.quick)prefs.quick=true;if(sv.sound)prefs.sound=true;if(sv.deck==='all')prefs.deck='all';if(sv.level===1||sv.level===-1)prefs.level=sv.level}catch(e){}
 function savePrefs(){try{localStorage.setItem('lh-prefs',JSON.stringify(prefs))}catch(e){}}
 function best(v){var b=0;try{b=+localStorage.getItem('lh-best')||0;if(v>b){localStorage.setItem('lh-best',String(v));}}catch(e){}return Math.max(b,v||0)}
-var G,UI={sel:null,fc:null,look:null,danger:false,card:-1,fx:null,buy:null,leave:false,ended:false},busy=false;
+var runId=0,G,UI={sel:null,fc:null,look:null,danger:false,card:-1,fx:null,buy:null,leave:false,ended:false},busy=false;
 function lock(v){busy=v;root.setAttribute('data-busy',v?'1':'0')}
 function ms(n){return FAST?0:Math.round(n*(prefs.quick?.45:1))}
 function wait(n){n=ms(n);return n?new Promise(function(r){setTimeout(r,n)}):Promise.resolve()}
 function anim(el,frames,dur,opts){dur=ms(dur);if(!dur||REDUCED||!el||!el.animate)return Promise.resolve();
   try{var o={duration:dur,easing:'cubic-bezier(.2,.7,.3,1)'};if(opts)for(var k in opts)o[k]=opts[k];return el.animate(frames,o).finished.catch(function(){})}catch(e){return Promise.resolve()}}
+function still(el){if(el&&el.getAnimations)el.getAnimations().forEach(function(a){try{a.cancel()}catch(e){}})}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
 function $(id){return document.getElementById(id)}
 
@@ -92,8 +93,8 @@ var IC={
   x:'M3 4.400L4.400 3 8 6.600 11.600 3 13 4.400 9.400 8l3.600 3.600-1.400 1.400L8 9.400 4.400 13 3 11.600 6.600 8z',half:'M8 1a7 7 0 100 14V1z',dots:'M3.500 6a2 2 0 110 4 2 2 0 010-4zm9 0a2 2 0 110 4 2 2 0 010-4z',
   sword:'M14.600 1.400l-4.200.700-6 6 3.500 3.500 6-6zM3.300 9.200l3.500 3.500-1 1-1.200-1.200-2 2-1.100-1.100 2-2-1.200-1.200z',deck:'M2 4h9v11H2zM5 1h9v11h-2V3H5z',coin:'M8 2a6 6 0 100 12A6 6 0 008 2zm-.800 2.500h1.600v7H7.200z'
 };
-var FXI={guard:'shield',block:'shield',held:'breath',wound:'drop',stance:'pillar',risen:'star',again:'arrowR',cover:'tree',cart:'wheel',pinned:'pin',marked:'target',open:'crack',tough:'square',barbed:'barb',banner:'flag',rallied:'flag',enraged:'flame',temper:'flame',holds:'square',flurry:'bars',far:'dots',down:'arrowD',broken:'x',edge:'arrowU',halved:'half',pushed:'arrowL'};
-var FXORDER=['wound','pinned','marked','open','enraged','rallied','banner','tough','barbed','held','stance','risen','again','flurry','holds','temper','cover','cart'];
+var FXI={throw:'arrowU',guard:'shield',block:'shield',held:'breath',wound:'drop',stance:'pillar',risen:'star',again:'arrowR',cover:'tree',cart:'wheel',pinned:'pin',marked:'target',open:'crack',tough:'square',barbed:'barb',banner:'flag',rallied:'flag',enraged:'flame',temper:'flame',holds:'square',flurry:'bars',far:'dots',down:'arrowD',broken:'x',edge:'arrowU',halved:'half',pushed:'arrowL'};
+var FXORDER=['wound','throw','pinned','marked','open','enraged','rallied','banner','tough','barbed','held','stance','risen','again','flurry','holds','temper','cover','cart'];
 function svg(name){return '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="'+IC[name]+'"/></svg>'}
 function fxIcon(id){return svg(FXI[id]||'square')}
 function fxChips(list,side){return '<div class="fxs">'+list.map(function(e,i){return '<button type="button" class="fx tone-'+e.tone+'" data-fx="'+side+':'+i+'" title="'+esc(e.text)+'">'+fxIcon(e.id)+'<span>'+e.label+'</span></button>'}).join('')+'</div>'}
@@ -114,9 +115,9 @@ function pulse(el,cls){if(!el||FAST)return;el.classList.remove(cls);void el.offs
 
 /* ---------- screens ---------- */
 root.innerHTML='<div class="scr map" id="scr-map"><div class="scr-top"><b id="m-name"></b><span class="num" id="m-top"></span></div>'+
-  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
+  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
   '<div class="scr camp" id="scr-camp" hidden></div><div class="scr clash" id="scr-clash" hidden></div><div class="banner" id="banner" hidden></div>';
-var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
+var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
 var $stage,$me,$foe,$intent,$cfx,$vs,$tell,$hand,$choice,$tray,$piles,$ctop;
 function show(which){$map.hidden=which!=='map';$camp.hidden=which!=='camp';$clash.hidden=which!=='clash'}
 
@@ -132,24 +133,40 @@ function unitInfo(u){
   if(fx.length){h+=fxChips(fx,'m');if(UI.fx!==null&&fx[UI.fx])h+='<span class="fxtext"><b>'+fx[UI.fx].label+'.</b> '+fx[UI.fx].text+'</span>';else h+='<span class="fxtext dimm">Tap an effect to read it.</span>'}
   return h;
 }
+var boardKey='',unitEls={};
+function buildBoard(){
+  var h='';
+  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y);h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'"></button>'}
+  $board.innerHTML=h;$units.innerHTML='';unitEls={};
+}
+var GROUND={'~':'deep water','w':'wood','f':'ford','b':'bridge','d':'road','.':'open ground'};
+function syncUnits(acting){
+  var s=UI.sel,seen={};
+  G.u.forEach(function(u){
+    var el=unitEls[u.id];
+    if(u.hp<=0){if(el){el.classList.add('gone');(function(e){setTimeout(function(){e.remove()},FAST?0:320)})(el);delete unitEls[u.id]}return}
+    if(!el){el=unitEls[u.id]=document.createElement('span');el.className='unit';el.setAttribute('data-u',u.id);
+      el.innerHTML='<span class="tok">'+face(u)+'</span><span class="tree '+u.t+'"></span><span class="fxrow"></span><span class="badge num" hidden></span><span class="hpb'+(u.side?' foe':'')+'"><i></i></span>';$units.appendChild(el)}
+    el.style.left=(u.x/LH.W*100)+'%';el.style.top=(u.y/LH.H*100)+'%';
+    el.firstChild.className='tok'+(u.side?' foe':'')+(u.boss?' boss':'')+(u===s?' sel':'')+(u.id===acting?' acting':'')+(u===UI.look?' look':'')+(u.side===0&&!LH.canAct(u)?' spent':'')+(u.side&&has(AS.tok,u.key)?' has':'');
+    var ic=tokenIcons(LH.effects(G,u)),row=el.children[2];if(row.getAttribute('data-h')!==ic){row.innerHTML=ic;row.setAttribute('data-h',ic)}
+    var bd=el.children[3];bd.hidden=!u.guard;if(u.guard)bd.textContent=u.guard;el.classList.toggle('guarded',!!u.guard);
+    el.children[4].firstChild.style.width=(100*u.hp/u.max)+'%';
+  });
+}
 function renderMap(acting){
+  var key=G.run.n+'|'+G.map.name+'|'+runId;if(key!==boardKey){boardKey=key;buildBoard()}
   var s=UI.sel,can=s&&LH.canAct(s)&&!busy,r=(can&&!s.moved&&!UI.fc)?LH.reach(G,s):{},z=UI.danger?LH.dangerSet(G):{},tg=(can&&!UI.fc)?LH.targets(G,s):[],tt=(can&&!UI.fc)?LH.tendTargets(G,s):[],h='';
-  $mname.textContent=G.map.name;$mtop.innerHTML='Battle '+G.run.n+' of 3 · turn '+G.turn+' · <span class="spoil">'+svg('coin')+G.run.spoils+'</span>';
-  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){
-    var c=LH.ter(G,x,y),u=LH.at(G,x,y),k=x+','+y,cls='tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='c'?' c':c==='b'?' b':'');
-    if(z[k])cls+=' dz';
-    if(!u&&r[k]!==undefined)cls+=' reach';
-    if(u&&tg.indexOf(u)>=0)cls+=' hit';
-    if(u&&tt.indexOf(u)>=0)cls+=' mend';
-    h+='<button type="button" class="'+cls+'" data-x="'+x+'" data-y="'+y+'" aria-label="'+(u?u.n+', '+u.hp+' of '+u.max:(c==='~'?'deep water':c==='w'?'wood':c==='f'?'ford':c==='b'?'bridge':c==='c'?'the cart':'open ground'))+'">';
-    if(u)h+='<span class="tok'+(u.side?' foe':'')+(u.boss?' boss':'')+(u===s?' sel':'')+(u.id===acting?' acting':'')+(u===UI.look?' look':'')+(u.side===0&&!LH.canAct(u)?' spent':'')+(u.side&&has(AS.tok,u.key)?' has':'')+'">'+face(u)+'</span><span class="tree '+u.t+'"></span>'+tokenIcons(LH.effects(G,u))+(u.guard?'<span class="badge num">'+u.guard+'</span>':'')+'<span class="hpb'+(u.side?' foe':'')+'"><i style="width:'+(100*u.hp/u.max)+'%"></i></span>';
-    h+='</button>';
-  }
-  $board.innerHTML=h;
+  $mname.textContent=G.map.name;$mtop.innerHTML='Battle '+G.run.n+' of 3 · turn '+G.turn+(G.turn>T.maxTurns-8?' of '+T.maxTurns:'')+' · <span class="spoil">'+svg('coin')+G.run.spoils+'</span>';
+  var tiles=$board.children;
+  for(var i=0;i<tiles.length;i++){var t=tiles[i],x=+t.getAttribute('data-x'),y=+t.getAttribute('data-y'),k=x+','+y,u=LH.at(G,x,y),c=t.getAttribute('data-t');
+    t.classList.toggle('dz',!!z[k]);t.classList.toggle('reach',!u&&r[k]!==undefined);t.classList.toggle('hit',!!u&&tg.indexOf(u)>=0);t.classList.toggle('mend',!!u&&tt.indexOf(u)>=0);
+    t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:GROUND[c])}
+  syncUnits(acting);
   h='<div class="legend"><span class="dot foot"></span>Footing beats <span class="dot blade"></span>Blade beats <span class="dot cast"></span>Cast beats Footing. <button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
   if(G.over&&!G.over.win){
     if(!UI.ended){UI.ended=true;sfx(G.over.done?'run_won':'run_lost')}
-    h+=logBox(G.log)+'<div class="end"><b>'+G.over.t+'</b><span>'+G.over.s+'</span><span class="renown">Renown <b class="num">'+G.run.renown+'</b> · best <span class="num">'+best(G.run.renown)+'</span></span><span class="legend">Spoils kept, 6 for each battle won, 2 for each friend standing at the end, and a little for health.</span><button class="act primary wide" type="button" data-a="again"><b>A new run</b><small>From the first crossing</small></button></div>';
+    h+=logBox(G.log)+'<div class="end"><b>'+G.over.t+'</b><span>'+G.over.s+'</span><span class="renown">Renown <b class="num">'+G.run.renown+'</b> · best <span class="num">'+best(G.run.renown)+'</span></span><span class="legend">Spoils kept, 6 for each battle won, 1 for each turn under '+T.par+' in a battle won, 2 for each friend standing at the end, and a little for health.</span><button class="act primary wide" type="button" data-a="again"><b>A new run</b><small>From the first crossing</small></button></div>';
   }else if(UI.fc){
     var a=UI.fc.a,d=UI.fc.d,p=LH.preview(G,a,d);
     h+='<div class="panel"><span class="lbl">Before you commit</span><b>'+a.n+' on '+LH.nm(d)+' · '+d.hp+' HP</b>'+
@@ -158,15 +175,15 @@ function renderMap(acting){
       (p.lend.length?'<div class="lenders">'+p.lend.map(function(o){return '<span><img src="'+A+o.img+'.webp" alt="">'+o.n+'</span>'}).join('')+'</div>':'')+chipRow(p.chips)+'</div>'+
       '<div class="acts"><button class="act primary" type="button" data-a="go"><b>Engage</b><small>Play the hand</small></button><button class="act" type="button" data-a="no"><b>Hold</b><small>Think again</small></button></div>';
   }else{
-    var info='<span>Tap one of the company. Tap a foe to size him up.</span>';
-    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s);else if(UI.look)info=unitInfo(UI.look);
-    h+=logBox(G.log)+'<div class="panel">'+info+'</div>';
-    h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>They move</small></button></div>';
+    var info='<span>Tap one of the company. Tap a foe to size him up.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
+    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
+    h+=logBox(G.log)+'<div class="panel info">'+info+'</div>';
+    h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
   }
   $rest.innerHTML=h;
 }
 function tileXY(x,y){return [(x+.5)/LH.W*100,(y+.45)/LH.H*100]}
-function flashTile(x,y){if(FAST)return;var t=$board.querySelector('[data-x="'+x+'"][data-y="'+y+'"]');if(t)pulse(t,'flash')}
+function flashTile(x,y){if(FAST)return;var u=LH.at(G,x,y);if(u&&unitEls[u.id])pulse(unitEls[u.id],'flash')}
 function tapTile(x,y){
   if(busy||G.over||G.clash||G.phase!=='player')return;
   var u=LH.at(G,x,y),s=UI.sel;UI.fx=null;
@@ -245,7 +262,7 @@ function paintVs(){
 function paintIntent(){
   var K=G.clash;if(K.phase!=='play'){$intent.hidden=true;return}$intent.hidden=false;
   var it=LH.intent(G);$intent.className='intent'+(it.none?' none':'')+(it.halved?' halved':'')+(it.up?' up':'');
-  $intent.innerHTML=it.none==='broken'?'<b>Broken</b><small>no answer</small>':it.none==='reach'?'<b>Out of reach</b><small>no answer</small>':svg('sword')+'<b class="num">'+it.d+(it.n>1?'<i>×'+it.n+'</i>':'')+'</b><small>his answer</small>';
+  $intent.innerHTML=it.none?'<b>Out of reach</b><small>no answer</small>':svg('sword')+'<b class="num">'+it.d+(it.n>1?'<i>×'+it.n+'</i>':'')+'</b><small>'+(it.broken?'Broken: halved':it.halved?'halved':'his answer')+'</small>';
 }
 function paintTop(){var K=G.clash;$ctop.textContent=G.opts.rounds>1?'Round '+K.round+' of '+G.opts.rounds:K.a.n+' on '+LH.nm(K.d)}
 function paintTray(){
@@ -271,18 +288,33 @@ function fan(){
   var pad=12,Wd=$hand.clientWidth-pad*2,cw=cards[0].offsetWidth||104,step=n>1?Math.min(cw*.86,(Wd-cw)/(n-1)):0,x0=pad+(Wd-(cw+step*(n-1)))/2;
   for(var i=0;i<n;i++){var o=i-(n-1)/2,el=cards[i];el.style.setProperty('--x',(x0+step*i)+'px');el.style.setProperty('--r',(o*3)+'deg');el.style.setProperty('--y',(o*o*2)+'px');el.style.zIndex=i+1}
 }
-function deal(n){
-  var cards=$hand.children,start=Math.max(0,cards.length-n);
-  for(var i=start;i<cards.length;i++){(function(el,k){var fin=getComputedStyle(el).transform;
+function deal(els){
+  els.forEach(function(el,k){var fin=getComputedStyle(el).transform;
     anim(el,[{transform:'translate(-40px,150px) scale(.35)',opacity:0},{transform:fin==='none'?'translate(0,0)':fin,opacity:1}],300,{delay:ms(k*70),fill:'backwards'});
-    if(!FAST)setTimeout(function(){sfx('card_deal')},ms(k*70))})(cards[i],i-start)}
+    if(!FAST)setTimeout(function(){sfx('card_deal')},ms(k*70))});
 }
-function paintHand(fresh){
+function cardEl(id){var t=document.createElement('div');t.innerHTML=cardHTML(id,{cls:'hcard',attrs:' data-id="'+id+'" tabindex="0" role="button"',K:G.clash});return t.firstChild}
+/* bring the cards on screen into line with the hand: keep what is still held, drop what is gone, make only what is new */
+function syncHand(){
+  var K=G.clash,want=K.hand,have=Array.prototype.slice.call($hand.children),p=0,fresh=[],j,k;
+  for(j=0;j<want.length;j++){
+    var q=-1,el;for(k=p;k<have.length;k++)if(have[k].getAttribute('data-id')===want[j]){q=k;break}
+    if(q>=0){for(k=p;k<q;k++)have[k].remove();el=have[q];p=q+1}
+    else{el=cardEl(want[j]);$hand.insertBefore(el,have[p]||null);fresh.push(el)}
+    var why=LH.playable(G,j),c=C[want[j]],txt=LH.cardText(want[j],K),sm=el.lastChild;
+    el.setAttribute('data-i',j);el.classList.toggle('cant',!!why);el.classList.toggle('sel',j===UI.card);el.classList.remove('drag');el.style.transform='';
+    el.setAttribute('aria-label',c.n+(c.dead?'':', '+c.c+' breath'));if(sm.innerHTML!==txt)sm.innerHTML=txt;
+  }
+  for(k=p;k<have.length;k++)have[k].remove();
+  fan();return fresh;
+}
+function paintHand(redeal){
   var K=G.clash,play=K.phase==='play';$hand.hidden=!play;$choice.hidden=K.phase!=='choice';
   if(K.phase==='choice'){var ni=LH.nextIntent(G);
     $choice.innerHTML='<p>Round '+K.round+' of '+G.opts.rounds+' is done. '+K.a.n+' has '+K.a.hp+' HP.</p><div class="acts"><button class="act primary" type="button" data-a="press"><b>Press on</b><small>He will '+LH.ansText(ni)+'. '+T.pressBreath*K.round+' less breath.</small></button><button class="act" type="button" data-a="leave"><b>Break off</b><small>Back to the line</small></button></div>'}
-  $hand.innerHTML=play?K.hand.map(function(id,i){var why=LH.playable(G,i);return cardHTML(id,{cls:'hcard'+(why?' cant':'')+(i===UI.card?' sel':''),attrs:' data-i="'+i+'" tabindex="0" role="button" aria-label="'+esc(C[id].n)+(C[id].dead?'':', '+C[id].c+' breath')+'"',K:K})}).join(''):'';
-  if(play){fan();if(fresh)deal(fresh)}
+  if(!play){$hand.innerHTML='';return}
+  if(redeal)$hand.innerHTML='';
+  deal(syncHand());
 }
 function paintAll(fresh){paintTop();paintVs();paintIntent();paintTray();paintHand(fresh);if(UI.card>=0&&G.clash.hand[UI.card])tellCard(UI.card);else tell('')}
 function selectCard(i){UI.card=i;for(var k=0;k<$hand.children.length;k++)$hand.children[k].classList.toggle('sel',k===i);if(i>=0){sfx('card_lift');tellCard(i)}else tell('')}
@@ -297,7 +329,7 @@ async function showFx(fx){
     else if(f.k==='block'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'blk');sfx('block_gain');paintVs();pulse($vs.querySelector('.sh'),'pop');await wait(240)}
     else if(f.k==='heal'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'heal');sfx('heal');paintVs();await wait(240)}
     else if(f.k==='breath'){p=sideXY('a');floatAt($cfx,p[0],p[1]+18,'+'+f.n+' breath','info');sfx('breath_gain');paintTray();pulse($('c-orb'),'pop');await wait(220)}
-    else if(f.k==='draw'){if(f.n){paintHand(f.n);await wait(260)}}
+    else if(f.k==='draw'){if(f.n){paintHand();await wait(260)}}
     else if(f.k==='status'){p=sideXY(f.who);floatAt($cfx,p[0],p[1]-16,f.t,'info');sfx(STAT_SFX[f.t]||'status_good');paintVs();paintIntent();await wait(260)}
     else if(f.k==='stance'){p=sideXY('a');floatAt($cfx,p[0],p[1]-16,f.t,'info');sfx('stance');paintVs();await wait(300)}
     else if(f.k==='friend'){p=sideXY('a');floatAt($cfx,p[0]-8,p[1]+20,LH.byId(G,f.id).n+' +'+f.n+' guard','info');sfx('block_gain');await wait(240)}
@@ -314,20 +346,20 @@ async function startClash(a,d){
   UI.sel=UI.fc=UI.look=null;UI.card=-1;UI.fx=null;sfx('clash_start');
   $banner.innerHTML='<b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
   await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],620);
-  buildClash();show('clash');$banner.hidden=true;paintAll(G.clash.hand.length);
+  buildClash();show('clash');$banner.hidden=true;paintAll(true);
   await wait(300+70*G.clash.hand.length);lock(false);
 }
 async function doPlay(i){
   var K=G.clash;if(busy||!K||K.phase!=='play')return;
   var el=$hand.children[i],why=LH.playable(G,i);
-  if(why){if(el){el.style.transform='';el.classList.remove('drag');pulse(el,'nudge')}sfx('card_cant');UI.card=i;selectCard(i);return}
+  if(why){if(el){el.style.transform='';el.classList.remove('drag');pulse(el,'nudge')}sfx('card_cant');selectCard(i);return}
   lock(true);
   var c=C[K.hand[i]],r=el.getBoundingClientRect(),host=$clash.getBoundingClientRect(),tg=(c.dmg||c.assist||c.open||c.halve||c.mark||c.pin?$foe:$me).getBoundingClientRect();
-  var ghost=el.cloneNode(true);ghost.className=ghost.className.replace('hcard','').replace('sel','').replace('drag','')+' ghost';ghost.removeAttribute('style');
-  ghost.style.left=(r.left-host.left)+'px';ghost.style.top=(r.top-host.top)+'px';ghost.style.width=r.width+'px';ghost.style.height=r.height+'px';
+  var w=el.offsetWidth,hh=el.offsetHeight,k0=r.width/w,ghost=el.cloneNode(true);ghost.className=ghost.className.replace(/\b(hcard|sel|drag|cant|nudge)\b/g,'')+' ghost';ghost.removeAttribute('style');ghost.removeAttribute('tabindex');
+  ghost.style.left=(r.left-host.left+(r.width-w)/2)+'px';ghost.style.top=(r.top-host.top+(r.height-hh)/2)+'px';ghost.style.width=w+'px';ghost.style.height=hh+'px';ghost.style.transform='scale('+k0+')';
   var dx=(tg.left+tg.width/2)-(r.left+r.width/2),dy=(tg.top+tg.height/2)-(r.top+r.height/2);
-  var fx=LH.play(G,i);UI.card=-1;$clash.appendChild(ghost);paintHand();paintTray();tell('<b>'+c.n+'</b>');sfx(c.k==='Attack'?'card_attack':'card_skill');
-  await anim(ghost,[{transform:'translate(0,0) scale(1)',opacity:1},{transform:'translate('+dx+'px,'+dy+'px) scale(.85)',opacity:1,offset:.7},{transform:'translate('+dx+'px,'+dy+'px) scale(.4)',opacity:0}],400);
+  var fx=LH.play(G,i);UI.card=-1;$clash.appendChild(ghost);el.remove();paintHand();paintTray();tell('<b>'+c.n+'</b>');sfx(c.k==='Attack'?'card_attack':'card_skill');
+  await anim(ghost,[{transform:'translate(0,0) scale('+k0+')',opacity:1},{transform:'translate('+dx+'px,'+dy+'px) scale(.8)',opacity:1,offset:.72},{transform:'translate('+dx+'px,'+dy+'px) scale(.4)',opacity:0}],400,{fill:'forwards'});
   ghost.remove();
   await showFx(fx||[]);
   if(G.clash&&G.clash.phase==='won'){paintVs();paintIntent();paintTray();await wait(420);await endClash();lock(false);return}
@@ -335,9 +367,9 @@ async function doPlay(i){
 }
 async function doEnd(){
   var K=G.clash;if(busy||!K||K.phase!=='play')return;lock(true);UI.card=-1;sfx('end_hand');
-  await anim($hand,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(36px)'}],200);
-  var fx=LH.endHand(G),ev=fx[0],p=sideXY('a'),q=sideXY('d');paintHand();paintTray();tell('');
-  if(ev.none){floatAt($cfx,q[0],q[1]-10,ev.none==='broken'?'Broken':'Out of reach','info');await wait(520)}
+  await anim($hand,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(36px)'}],200,{fill:'forwards'});
+  var fx=LH.endHand(G),ev=fx[0],p=sideXY('a'),q=sideXY('d');paintHand();still($hand);paintTray();tell('');
+  if(ev.none){floatAt($cfx,q[0],q[1]-10,'Out of reach','info');await wait(520)}
   else{pulse($intent,'pop');sfx('foe_windup');await anim($foe,[{transform:'translateX(0)'},{transform:'translateX(-40px)'},{transform:'translateX(0)'}],300);
     if(ev.n>0){floatAt($cfx,p[0],p[1],'-'+ev.n,'dmg');pulse($me,'hit');sfx('hurt')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
     paintVs();await wait(620)}
@@ -346,14 +378,14 @@ async function doEnd(){
   if(K.phase==='choice'){paintTop();paintHand();tell('<b>He has answered.</b> Press on for another round, or break off with what you have.');lock(false);return}
   await wait(380);await endClash();lock(false);
 }
-function doRedraw(){var K=G.clash;if(busy||!K)return;if(LH.redraw(G)){UI.card=-1;paintAll(K.hand.length);tell('<b>Inspiration spent.</b> A new hand.')}}
-function doPress(){if(busy||!G.clash)return;if(LH.pressOn(G)){sfx('press_on');UI.card=-1;paintAll(G.clash.hand.length)}}
+function doRedraw(){var K=G.clash;if(busy||!K)return;if(LH.redraw(G)){UI.card=-1;paintAll(true);tell('<b>Inspiration spent.</b> A new hand.')}}
+function doPress(){if(busy||!G.clash)return;if(LH.pressOn(G)){sfx('press_on');UI.card=-1;paintAll(true)}}
 async function doLeave(){if(busy||!G.clash)return;lock(true);if(LH.leave(G))await endClash();lock(false)}
 async function endClash(){
   var a=G.clash.a;
-  await anim($clash,[{opacity:1},{opacity:0}],200);
+  await anim($clash,[{opacity:1},{opacity:0}],200,{fill:'forwards'});
   LH.closeClash(G);$clash.innerHTML='';UI.card=-1;UI.fx=null;UI.sel=(!G.over&&LH.canAct(a))?a:null;
-  var was=busy;busy=false;show('map');afterMapChange();busy=was;
+  var was=busy;busy=false;show('map');still($clash);afterMapChange();busy=was;
   await anim(G.over&&G.over.win?$camp:$map,[{opacity:0},{opacity:1}],200);
 }
 function showPile(which){
@@ -382,7 +414,7 @@ function cardDown(e){
 function cardKey(e){if(e.key!=='Enter'&&e.key!==' ')return;var el=e.target.closest('.hcard');if(!el||busy)return;e.preventDefault();var i=+el.getAttribute('data-i');if(UI.card===i)doPlay(i);else selectCard(i)}
 
 /* ---------- buttons ---------- */
-function newRun(){G=LH.newRun({rounds:prefs.rounds,seed:window.LH_SEED,deck:prefs.deck==='all'?LH.BASE_DECK.concat(LH.POOL):undefined});UI={sel:null,fc:null,look:null,danger:UI.danger,card:-1,fx:null,buy:null,leave:false,ended:false};show('map');renderMap()}
+function newRun(){runId++;G=LH.newRun({rounds:prefs.rounds,level:prefs.level,seed:window.LH_SEED,deck:prefs.deck==='all'?LH.BASE_DECK.concat(LH.POOL):undefined});UI={sel:null,fc:null,look:null,danger:UI.danger,card:-1,fx:null,buy:null,leave:false,ended:false};show('map');renderMap()}
 root.addEventListener('click',function(e){
   if($piles&&!$piles.hidden&&e.target.closest('#c-piles')){$piles.hidden=true;return}
   var f=e.target.closest('[data-fx]');
@@ -406,6 +438,7 @@ root.addEventListener('click',function(e){
   }
   if(a==='go'&&UI.fc)return startClash(UI.fc.a,UI.fc.d);
   if(a==='no'){UI.fc=null;sfx('ui_tap');return renderMap()}
+  if(a==='unmove'&&UI.sel){if(LH.unmove(G,UI.sel))sfx('unit_move');return renderMap()}
   if(a==='wait'&&UI.sel){LH.hold(G,UI.sel);UI.sel=null;sfx('block_gain');return renderMap()}
   if(a==='end')return runEnemy();
   if(a==='endhand')return doEnd();if(a==='redraw')return doRedraw();if(a==='press')return doPress();if(a==='leave')return doLeave();
@@ -416,6 +449,7 @@ window.addEventListener('resize',function(){if(G&&G.clash&&$hand&&!$hand.hidden)
 /* playtest settings, outside the screen */
 function paintPrefs(){var b=document.querySelectorAll('[data-pref]');for(var i=0;i<b.length;i++){var kv=b[i].getAttribute('data-pref').split('=');b[i].setAttribute('aria-pressed',String(String(prefs[kv[0]])===kv[1]))}}
 document.addEventListener('click',function(e){
+  if(e.target.closest('[data-newrun]')){if(!busy)newRun();return}
   var hb=e.target.closest('[data-hear]');if(hb){hear(hb.getAttribute('data-hear'));return}
   var cp=e.target.closest('[data-copy]');if(cp){var src=$(cp.getAttribute('data-copy')),txt=src?src.textContent:'';
     var doneCopy=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy'},1200)},sel=function(){var r=document.createRange();r.selectNodeContents(src);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent='Selected: copy it'};
@@ -423,8 +457,9 @@ document.addEventListener('click',function(e){
   var b=e.target.closest('[data-pref]');if(!b)return;var kv=b.getAttribute('data-pref').split('=');
   if(kv[0]==='rounds'){prefs.rounds=+kv[1];if(G)G.opts.rounds=prefs.rounds}else if(kv[0]==='quick')prefs.quick=kv[1]==='true';
   else if(kv[0]==='sound'){prefs.sound=kv[1]==='true';if(prefs.sound)hear('your_turn')}
-  else if(kv[0]==='deck'){prefs.deck=kv[1];savePrefs();paintPrefs();if(!busy)newRun();return}
+  else if(kv[0]==='deck'||kv[0]==='level'){if(busy)return;if(kv[0]==='deck')prefs.deck=kv[1];else prefs.level=+kv[1];savePrefs();paintPrefs();newRun();return}
   savePrefs();paintPrefs()});
+(function(){var l=AS.art.map(function(n){return A+n+'.webp'}).concat(AS.fig.map(function(n){return A+'fig-'+n+'.webp'}),AS.tok.map(function(n){return A+'tok-'+n+'.webp'}));window.__pre=l.map(function(u){var im=new Image();im.src=u;return im})})();
 paintPrefs();lock(false);newRun();
 window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,heard:heard,played:played,assets:AS,SFX:SFX};
 

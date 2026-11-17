@@ -192,7 +192,7 @@ td:first-child{font-weight:700;color:var(--brass-hi)}
 .handwrap{position:relative}
 .hand{position:relative;height:200px;touch-action:none}
 .hcard{position:absolute;left:0;bottom:8px;width:104px;height:156px;overflow:hidden;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;
-  transform:translate(var(--x,0px),var(--y,0px)) rotate(var(--r,0deg));transform-origin:50% 100%;transition:transform .14s ease,box-shadow .14s ease;
+  transform:translate(var(--x,0px),var(--y,0px)) rotate(var(--r,0deg));transform-origin:50% 100%;transition:transform .2s ease,box-shadow .14s ease,filter .14s ease;
   box-shadow:0 0 0 1px var(--good),0 3px 8px rgba(0,0,0,.65);font-size:14px;gap:1px}
 .hcard small{font-size:.74em;line-height:1.18}
 .hcard small em{font-style:normal;color:var(--good);font-weight:700}
@@ -201,7 +201,8 @@ td:first-child{font-weight:700;color:var(--brass-hi)}
 .hcard.sel{height:auto;min-height:156px;transform:translate(var(--x,0px),-12px) scale(1.16);z-index:40!important;box-shadow:0 0 0 2px var(--brass-hi),0 10px 20px rgba(0,0,0,.75)}
 .hcard.cant.sel{filter:saturate(.6) brightness(.85)}
 .hcard.drag{transition:none;z-index:60!important;cursor:grabbing}
-.hcard.nudge{animation:shake .3s}
+.hcard.nudge{animation:nudge .3s}
+@keyframes nudge{0%,100%{translate:0 0}20%{translate:-7px 0}40%{translate:6px 0}60%{translate:-4px 0}80%{translate:3px 0}}
 .hcard:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .ghost{position:absolute;z-index:70;pointer-events:none;margin:0;transition:none;transform:none;bottom:auto}
 .choice{display:grid;gap:8px;min-height:200px;align-content:center}
@@ -302,3 +303,16 @@ code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em
 .fig img.cut.noflip{transform:none}
 .made{font-family:var(--label);font-size:.72rem;letter-spacing:.06em;color:var(--night);background:var(--good);border-radius:3px;padding:0 6px;white-space:nowrap}
 .todo{font-family:var(--label);font-size:.72rem;letter-spacing:.06em;color:var(--dim);border:1px solid var(--rule);border-radius:3px;padding:0 6px;white-space:nowrap}
+
+/* ---- nothing rebuilt: units in their own layer, sliding; heights held so the hand does not jump ---- */
+.units{position:absolute;inset:0;pointer-events:none;z-index:2}
+.unit{position:absolute;width:16.6667%;height:14.2857%;display:grid;place-items:center;transition:left .26s ease,top .26s ease,opacity .3s ease}
+.unit.gone{opacity:0}
+.unit .tok{width:76%}
+.unit .fxrow{right:1px} .unit.guarded .fxrow{right:18px}
+.unit.flash .tok{animation:flash .35s}
+.vs .fxs{min-height:3.3em;align-content:flex-start}
+.tell{min-height:4.5em}
+.panel.info{min-height:5.6em;align-content:start}
+.panel.info .linkbtn{justify-self:start}
+@media (prefers-reduced-motion:reduce){.unit{transition:none}.unit.flash .tok{animation:none}}

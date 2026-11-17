@@ -1,8 +1,8 @@
 <div class="wrap">
   <header class="top">
-    <p class="lbl">The Unkneeling · a side game · playtest build two</p>
+    <p class="lbl">The Unkneeling · a side game · playtest build four</p>
     <h1>The Line and the Hand</h1>
-    <p class="lede">Move the company on the map, pick a fight, and play it as a hand of cards. Three grounds, seven kinds of foe, Wounds, stances, spoils, and a camp between battles. Rae is with the company now: she does not fight, she tends. The game lives in the repo under <code>game/</code>, and the first of your own pictures and sounds are in.</p>
+    <p class="lede">Move the company on the map, pick a fight, and play it as a hand of cards. This build is the result of a long round of testing: the cards no longer flash, tokens slide instead of jumping, and several rules changed because a test player that looks ahead found ways to win without really playing. What changed and why is listed below the game.</p>
   </header>
 
   <section class="block">
@@ -12,12 +12,12 @@
         <section>
           <h3>How to play</h3>
           <ol>
-            <li><b>On the map,</b> tap one of the company, then a lit tile to move. Tap anyone to see what is in force on them; tap an effect to read it.</li>
-            <li><b>To fight,</b> tap a foe ringed in red, read the forecast, and engage.</li>
+            <li><b>On the map,</b> tap one of the company, then a lit tile to move. A move can be taken back until that fighter does something else. Tap anyone to see what is in force on them; tap an effect to read it.</li>
+            <li><b>To fight,</b> tap a foe ringed in red, read the forecast, and engage. Once a battle Darrow can open from two tiles with a throw: thrown cards only, one less breath, and most foes cannot answer.</li>
             <li><b>Rae</b> does not fight. Select her and tap a hurt friend beside her, ringed in green, to mend them and set aside a Wound. A fighter with Rae beside them is lent her hand.</li>
             <li><b>At the table,</b> tap a card to read it and tap again to play, or drag it up onto the field. His answer and its number sit above his head.</li>
             <li><b>End the hand</b> and he answers once. Block you kept becomes guard; breath you kept is held.</li>
-            <li><b>Bring down the captain</b> to win the battle. Every man felled pays spoils.</li>
+            <li><b>Bring down the captain</b> to win the battle, before night falls on turn 30. Every man felled pays a spoil, and one more if Darrow's own hand felled him.</li>
             <li><b>At camp,</b> spend spoils on cards, mending, honing or leaving a card behind. What you do not spend counts toward your Renown.</li>
           </ol>
         </section>
@@ -26,15 +26,17 @@
           <div class="setrow"><span class="lbl">A clash lasts</span><span class="seg"><button type="button" data-pref="rounds=1">One hand</button><button type="button" data-pref="rounds=3">Up to three rounds</button></span></div>
           <div class="setrow"><span class="lbl">Animation</span><span class="seg"><button type="button" data-pref="quick=false">Full</button><button type="button" data-pref="quick=true">Quick</button></span></div>
           <div class="setrow"><span class="lbl">Sound</span><span class="seg"><button type="button" data-pref="sound=false">Off</button><button type="button" data-pref="sound=true">On</button></span></div>
+          <div class="setrow"><span class="lbl">Difficulty</span><span class="seg"><button type="button" data-pref="level=-1">Gentle</button><button type="button" data-pref="level=0">Standard</button><button type="button" data-pref="level=1">Hard</button></span></div>
           <div class="setrow"><span class="lbl">Darrow's deck</span><span class="seg"><button type="button" data-pref="deck=sheet">The sheet</button><button type="button" data-pref="deck=all">Plus every camp card</button></span></div>
-          <p class="small">With sound on, a sound you have made plays as itself and the rest play a stand-in tone, so you can hear where each will fall. Changing the deck starts a new run; the full deck is for trying cards, not for a fair game.</p>
+          <p class="small">With sound on, a sound you have made plays as itself and the rest play a stand-in tone, so you can hear where each will fall. Changing the difficulty or the deck starts a new run; the full deck is for trying cards, not for a fair game.</p>
+          <div class="setrow"><button type="button" class="mini2" data-newrun>Start a new run</button></div>
         </section>
         <section>
           <h3>What the icons mean</h3>
           <dl class="words">
             <dt>Guard, Block</dt><dd>Soaks damage. Guard that holds a blow whole strikes back.</dd>
             <dt>Open</dt><dd>The next hit lands for half again.</dd>
-            <dt>Broken</dt><dd>He cannot answer this hand.</dd>
+            <dt>Broken</dt><dd>His answer this hand is halved. Start the fight against the tree yours beats and land one hit.</dd>
             <dt>Pinned, Marked</dt><dd>He will not move next turn. The next friend has one more breath.</dd>
             <dt>Tough</dt><dd>Each hit on him deals less. Big blows beat small ones.</dd>
             <dt>Barbed</dt><dd>His blow, if it lands, leaves a Wound: a dead card until the battle ends.</dd>
@@ -42,11 +44,27 @@
             <dt>Will enrage</dt><dd>At half health the captain strikes harder.</dd>
             <dt>Flurry</dt><dd>His answer is several small blows.</dd>
             <dt>Stance</dt><dd>A card that stays in force for the rest of the battle.</dd>
+            <dt>A throw in hand</dt><dd>Darrow can still open one fight from two tiles this battle.</dd>
             <dt>Tends</dt><dd>Rae mends a friend beside her instead of fighting.</dd>
           </dl>
         </section>
       </div>
     </div>
+  </section>
+
+  <section class="block">
+    <h2>What testing changed</h2>
+    <ol class="new-list">
+      <li><b>The cards flashed because they were being rebuilt.</b> Playing one card threw away the rest of the hand and made it again, twice, pictures and all. Every tap on the map did the same to all the tokens. Now a card or token is made once and kept: the hand closes up when a card leaves, and tokens slide to their new tile.</li>
+      <li><b>Darrow's throw from two tiles was the best way to win, by a long way.</b> With it the look-ahead player won 93 runs in 100; without it, 54. It let him fight all battle with nobody able to answer, and his sword cards went unplayed. He now has one opening throw a battle.</li>
+      <li><b>Broken halves an answer instead of cancelling it.</b> Before, the foe could not answer in three hands out of four, so block hardly mattered.</li>
+      <li><b>The danger moved to where you can do something about it.</b> Foes hit 2 softer on their own turn and 2 harder in their answer, which a block card can stop.</li>
+      <li><b>The third battle is less of a cliff.</b> Its foes no longer get a second step up in strength on top of the banner and the captain's temper.</li>
+      <li><b>Rae tends three times a battle.</b> Unlimited, the right play was to stall and heal to full before every captain.</li>
+      <li><b>A battle ends at nightfall on turn 30,</b> and the captain stops waiting on turn 8. Without these a fight could be drawn out for ever by running away.</li>
+      <li><b>Spoils are scarcer, with two reasons to earn them well.</b> A foe felled by Darrow's own hand pays one more, and each turn under 10 in a battle won is worth a point of Renown.</li>
+      <li><b>Smaller things.</b> A move can be taken back. End the turn says how many of yours can still act. There is a difficulty setting and a button to start a new run. A refused card shakes in place instead of jumping to the corner.</li>
+    </ol>
   </section>
 
   <section class="block">
@@ -111,22 +129,21 @@ Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his w
   <section class="block">
     <h2>What to watch for while you play</h2>
     <ol class="ask">
-      <li><b>Do the foes change what you do?</b> You should want Overwall or one big blow for the shieldbearer, block for the skirmisher's flurry, and the bannerman dead first.</li>
-      <li><b>Is the camp a real choice?</b> If you always buy the same card, or never mend, or never leave a card behind, tell me which.</li>
-      <li><b>Do spoils pull against safety?</b> Going for the captain early wins faster and pays less.</li>
-      <li><b>Can you read the board at a glance?</b> Three icons a token is the limit; say if you wanted one that was not shown.</li>
-      <li><b>Is Rae worth guarding?</b> She mends and lends, and she is the easiest of you to hurt. If you leave her at the back every time, she needs more reason to come forward.</li>
-      <li><b>Is one hand still enough?</b> Try a battle with three rounds.</li>
+      <li><b>Do you fight with Darrow, or hide him?</b> The best test player still leans on the companions and keeps him back, because losing him ends the run. If you find yourself doing the same, his cards need to be worth the risk.</li>
+      <li><b>Do you block?</b> His answer now lands in about half of all hands. If you never play a block card, or always do, the numbers are off.</li>
+      <li><b>Is Standard too hard on a first run?</b> Careless play wins about one run in three. Try Gentle first if it stings.</li>
+      <li><b>Is the camp a real choice?</b> Spoils are tight now: a card or a mend, rarely both.</li>
+      <li><b>Does anything still flash, jump or stutter?</b> Say where, and whether it is the map or the card table.</li>
     </ol>
   </section>
 
   <section class="block">
     <h2>How it was tested</h2>
     <div class="two">
-      <section><h3>The rules, apart from the screen</h3><p>571 rule checks, including one for every card that it does what its text says. 4,000 random games with every card, health total and effect accounted for after each move. None stalled.</p></section>
-      <section><h3>The screen</h3><p>107 browser checks at phone, small-phone and desktop sizes: tap, drag, keyboard, the camp, effect icons, Rae's tending, your pikeman and your sound, and whole runs played through the real buttons.</p></section>
-      <section><h3>Balance</h3><p>A bot that plays sensibly wins about four runs in five with one hand, now that Rae tends. One that only chases the captain wins a little over half. Careful play beating a rush is what I wanted, but it may now be too gentle: say if it is.</p></section>
-      <section><h3>Not tested</h3><p>A real finger on a real phone, and whether it is fun. That part is yours.</p></section>
+      <section><h3>The rules, apart from the screen</h3><p>601 rule checks, including one for every card that it does what its text says. 4,000 random games with every card, health total and effect accounted for after each move.</p></section>
+      <section><h3>The screen</h3><p>116 browser checks at phone, small-phone and desktop sizes, and 24 whole runs through the real buttons. A separate count confirms that a tap on the map or a card played rebuilds nothing on screen.</p></section>
+      <section><h3>Three test players</h3><p>One looks ahead: it tries each fight on a copy of the game, plays the hand out several ways and keeps the best. It wins 91 runs in 100 on Standard. One plays sensibly but carelessly and wins 35. One only chases the captain and wins 15.</p></section>
+      <section><h3>What they cannot tell you</h3><p>Whether it is fun, and how it feels under a real thumb. A person will play Darrow more boldly than the careful player does, and that is the run I most want to hear about.</p></section>
     </div>
   </section>
 

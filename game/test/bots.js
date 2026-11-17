@@ -28,8 +28,8 @@ function camp(G, st, kind) { let n = 0; const D = G.u[0];
     if (kind === 'fair' && G.run.spoils >= LH.T.honeCost && LH.campHone(G, 'strike')) { st.hones++; continue; }
     break; }
   LH.nextBattle(G); }
-function run(seed, rounds, kind) {
-  const G = LH.newRun({ seed, rounds }), st = { hands: 0, played: {}, dAns: 0, dEnemy: 0, fell: 0, wounds: 0, bought: [], mends: 0, hones: 0, spoils: 0, turns: [0, 0, 0, 0] }; let guard = 0;
+function run(seed, rounds, kind, deck) {
+  const G = LH.newRun({ seed, rounds, deck }), st = { hands: 0, played: {}, dAns: 0, dEnemy: 0, fell: 0, wounds: 0, bought: [], mends: 0, hones: 0, spoils: 0, turns: [0, 0, 0, 0] }; let guard = 0;
   while (guard++ < 5000) {
     if (G.over) { st.turns[G.run.n] = G.turn; if (G.over.win) { camp(G, st, kind); continue; } break; }
     if (G.phase === 'enemy') { const ev = LH.enemyStep(G); if (ev && ev.k === 'foe') { if (ev.target === 'D') st.dEnemy += ev.dmg; if (ev.targetDown) st.fell++; if (ev.wound) st.wounds++; } continue; }
@@ -49,7 +49,7 @@ function run(seed, rounds, kind) {
         Object.keys(r).forEach(k => { const p = k.split(','), px = +p[0], py = +p[1];
           const adj = mates.filter(m => m !== u && Math.abs(m.x - px) + Math.abs(m.y - py) === 1).length;
           const risk = dz[k] ? (u.id === 'W' || u.id === 'A' ? 14 : u.hp < 25 ? 16 : 4) : 0;
-          if (!u.attacked) foes.forEach(f => { const d = Math.abs(f.x - px) + Math.abs(f.y - py); if (d < 1 || d > u.rng) return;
+          if (!u.attacked) foes.forEach(f => { const d = Math.abs(f.x - px) + Math.abs(f.y - py); if (d < 1 || d > (u.throws > 0 ? 2 : u.rng)) return;
             const t = LH.tri(u, f), canAns = d <= f.rng, a0 = f.ans[f.ai % f.ans.length], ans = a0.d * a0.n; let s = 20 + t * 28 + adj * 6 - risk + (f.fought ? 14 : 0) + (f.hp <= 12 ? 18 : 0) + (f.rally ? 16 : 0) - (f.tough ? 6 : 0) - (canAns && t <= 0 ? ans * (u.hp < ans + 8 ? 4 : .9) : 0);
             if (kind === 'rush') s += f.boss ? 200 : 0; else s += f.boss ? (foes.length <= 2 ? 30 : 4) : 0;
             if (s > bs) { bs = s; best = { px, py, f }; } });
@@ -65,8 +65,8 @@ function run(seed, rounds, kind) {
   st.spoils = G.run.spoils; st.renown = G.run.renown;
   return { out: G.over ? (G.over.done ? 'won' : 'lost') : 'stalled', at: G.run.n, st, G };
 }
-function measure(rounds, kind, N) { let won = 0, lostAt = [0, 0, 0, 0], stalled = 0, hands = 0, dAns = 0, dEn = 0, fell = 0, wounds = 0, ren = 0, bought = 0, t = [0, 0, 0, 0], tn = [0, 0, 0, 0]; const played = {};
-  for (let s = 1; s <= N; s++) { const r = run(s * 31 + 5, rounds, kind); if (r.out === 'won') won++; else if (r.out === 'lost') lostAt[r.at]++; else stalled++; hands += r.st.hands; dAns += r.st.dAns; dEn += r.st.dEnemy; fell += r.st.fell; wounds += r.st.wounds; ren += r.st.renown || 0; bought += r.st.bought.length;
+function measure(rounds, kind, N, deck) { let won = 0, lostAt = [0, 0, 0, 0], stalled = 0, hands = 0, dAns = 0, dEn = 0, fell = 0, wounds = 0, ren = 0, bought = 0, t = [0, 0, 0, 0], tn = [0, 0, 0, 0]; const played = {};
+  for (let s = 1; s <= N; s++) { const r = run(s * 31 + 5, rounds, kind, deck); if (r.out === 'won') won++; else if (r.out === 'lost') lostAt[r.at]++; else stalled++; hands += r.st.hands; dAns += r.st.dAns; dEn += r.st.dEnemy; fell += r.st.fell; wounds += r.st.wounds; ren += r.st.renown || 0; bought += r.st.bought.length;
     Object.keys(r.st.played).forEach(k => played[k] = (played[k] || 0) + r.st.played[k]); for (let b = 1; b <= 3; b++) if (r.st.turns[b]) { t[b] += r.st.turns[b]; tn[b]++; } }
   return { won: Math.round(100 * won / N), lostAt: lostAt.slice(1), stalled, handsPerRun: +(hands / N).toFixed(1), darrowFromAnswers: +(dAns / N).toFixed(0), darrowFromEnemyTurn: +(dEn / N).toFixed(0), companionsFell: +(fell / N).toFixed(1), wounds: +(wounds / N).toFixed(1), renown: +(ren / N).toFixed(0), bought: +(bought / N).toFixed(1), turnsPerBattle: [1, 2, 3].map(b => tn[b] ? +(t[b] / tn[b]).toFixed(1) : 0), played }; }
 module.exports = { run, measure, cardScore };

@@ -62,18 +62,20 @@ console.log('2. damage: Open, block, Tough, many blows, leftovers');
 { const G = duel('D', 'S', { hp: 40 }); const S = U(G, 'S'); const K = rig(G, 'D', 'S', ['finish', 'finish'], { en: 9, fb: 0 }); K.canBreak = false; LH.play(G, 0); eq(40 - S.hp, 5, 'Finish It deals 5 to a healthy foe'); S.hp = 20; LH.play(G, 0); eq(S.hp, 8, 'and 12 at half health'); }
 { const G = duel('D', 'S', { keep: ['P'] }); const S = U(G, 'S'), P = place(G, 'P', 3, 5); S.hp = 4; P.hp = 9; const sp = G.run.spoils;
   const K = rig(G, 'D', 'S', ['follow'], { en: 9, fb: 0 }); const fx = LH.play(G, 0); const cr = fx.filter(f => f.k === 'carry')[0];
-  ok(S.hp === 0 && cr && cr.id === 'P' && cr.n === 7 && P.hp === 2, 'Follow Through: 11 on a foe with 4 left sends 7 into the man beside him'); eq(G.run.spoils - sp, T.spoilFoe, 'felling him pays spoils'); }
-{ const G = duel('D', 'S', { keep: ['P'] }); const S = U(G, 'S'), P = place(G, 'P', 3, 5); S.hp = 4; P.hp = 5; const sp = G.run.spoils; rig(G, 'D', 'S', ['follow'], { en: 9, fb: 0 }); LH.play(G, 0); ok(P.hp === 0, 'the leftover can fell the second man'); eq(G.run.spoils - sp, 2 * T.spoilFoe, 'and both pay'); }
+  ok(S.hp === 0 && cr && cr.id === 'P' && cr.n === 7 && P.hp === 2, 'Follow Through: 11 on a foe with 4 left sends 7 into the man beside him'); eq(G.run.spoils - sp, T.spoilFoe + T.spoilOwn, 'felling him pays spoils, and one more for Darrow\'s own hand'); }
+{ const G = duel('D', 'S', { keep: ['P'] }); const S = U(G, 'S'), P = place(G, 'P', 3, 5); S.hp = 4; P.hp = 5; const sp = G.run.spoils; rig(G, 'D', 'S', ['follow'], { en: 9, fb: 0 }); LH.play(G, 0); ok(P.hp === 0, 'the leftover can fell the second man'); eq(G.run.spoils - sp, 2 * T.spoilFoe + T.spoilOwn, 'and both pay'); }
 { const G = duel('D', 'S', { hp: 99, keep: ['H', 'W'] }); place(G, 'H', 1, 4); place(G, 'W', 3, 4); const K = rig(G, 'D', 'S', ['callco'], { en: 9, fb: 0 }); K.canBreak = false; K.hand = ['callco'];
   const fx = LH.play(G, 0); eq(99 - U(G, 'S').hp, 8, 'Call the Company: two friends, 4 each'); eq(fx.filter(f => f.k === 'dmg').map(f => f.by), ['Hollis', 'Wren'], 'and each blow is named'); }
-{ const G = duel('D', 'S'); U(G, 'S').hp = 3; const sp = G.run.spoils; rig(G, 'D', 'S', ['strip'], { en: 9, fb: 0 }); LH.play(G, 0); eq(G.run.spoils - sp, T.spoilFoe + 2, 'Strip the Fallen pays 2 more when it fells him'); }
+{ const G = duel('D', 'S'); U(G, 'S').hp = 3; const sp = G.run.spoils; rig(G, 'D', 'S', ['strip'], { en: 9, fb: 0 }); LH.play(G, 0); eq(G.run.spoils - sp, T.spoilFoe + T.spoilOwn + 2, 'Strip the Fallen pays 2 more when it fells him'); }
+{ const G = duel('H', 'S'); U(G, 'S').hp = 3; rig(G, 'H', 'S', ['hew'], { en: 9, fb: 0 }); LH.play(G, 0); eq(G.run.spoils, T.spoilFoe, 'a foe felled by a companion pays the plain amount'); }
 { const G = duel('D', 'S'); U(G, 'S').hp = 5; const K = rig(G, 'D', 'S', ['strike', 'guard'], { en: 9, fb: 0 }); const fx = LH.play(G, 0);
   ok(fx.some(f => f.k === 'down') && K.phase === 'won', 'a killing card ends the clash as won'); ok(LH.play(G, 0) === null, 'no card can be played after it is won'); ok(LH.closeClash(G) && !G.clash, 'a won clash closes'); }
 
 console.log('3. the triangle: Break and its limits');
 { const G = duel('W', 'P', { hp: 99 }); const K = rig(G, 'W', 'P', ['stone', 'stone'], { en: 9, fb: 20 }); ok(K.canBreak, 'Wren has the edge on the Pikeman');
   LH.play(G, 0); ok(!K.broken, 'a fully blocked hit does not Break'); K.fb = 0; LH.play(G, 0); ok(K.broken, 'a hit that lands Breaks');
-  const W = U(G, 'W'), hp = W.hp, fx = LH.endHand(G); eq(fx[0], { k: 'answer', none: 'broken' }, 'a Broken foe gives no answer'); eq(W.hp, hp, 'and deals nothing'); }
+  const W = U(G, 'W'), hp = W.hp, full = K.intent.d; eq(LH.intent(G).d, Math.ceil(full / 2), 'a Broken foe answers for half'); ok(LH.clashEffects(G).d.some(e => e.id === 'broken'), 'and Broken shows');
+  K.halved = true; eq(LH.intent(G).d, Math.ceil(Math.ceil(full / 2) / 2), 'Bellow halves it again'); K.halved = false; const fx = LH.endHand(G); eq([fx[0].n, hp - W.hp], [Math.ceil(full / 2), Math.ceil(full / 2)], 'and the halved blow lands'); }
 { const G = duel('D', 'P'); const K = rig(G, 'D', 'P'); ok(!K.canBreak, 'Darrow has no edge on the Pikeman'); eq(K.en, 2, 'fighting the tree that beats you costs a breath'); }
 { const G = duel('D', 'X'); const K = rig(G, 'D', 'X'); ok(K.canBreak && K.en === 3, 'Blade beats Cast: edge, full breath'); }
 
@@ -82,12 +84,14 @@ console.log('4. reach: fighting from two tiles');
   ok(LH.playable(G, 0) !== '' && LH.playable(G, 2) !== '', 'melee cards are refused'); ok(!LH.playable(G, 1) && !LH.playable(G, 3) && !LH.playable(G, 4), 'thrown cards and skills are allowed');
   ok(LH.play(G, 0) === null && K.hand.length === 5 && K.en === 9, 'a refused card changes nothing');
   const hp = U(G, 'D').hp, fx = LH.endHand(G); eq(fx[0], { k: 'answer', none: 'reach' }, 'no answer out of reach'); eq(U(G, 'D').hp, hp, 'no damage out of reach'); }
-{ const G = duel('D', 'X', { far: true }); const K = rig(G, 'D', 'X'); ok(K.far && K.p.can, 'a crossbow answers at two tiles'); }
+{ const G = duel('D', 'X', { far: true }); const K = rig(G, 'D', 'X'); ok(K.far && K.p.can, 'a crossbow answers at two tiles'); eq(K.en, 2, 'throwing from two tiles costs Darrow a breath'); }
+{ const G = duel('D', 'P', { far: true }); eq(LH.preview(G, U(G, 'D'), U(G, 'P')).en, 1, 'and against the tree that beats him he has one breath left'); const G2 = duel('W', 'P', { far: true }); eq(LH.preview(G2, U(G2, 'W'), U(G2, 'P')).en, 2, 'Wren throws from two tiles at no cost: it is how she fights'); }
+{ const G = duel('D', 'S', { far: true, hp: 99 }); const D = U(G, 'D'); eq(D.throws, T.throws, 'Darrow has ' + T.throws + ' opening throw a battle'); ok(LH.effects(G, D).some(e => e.id === 'throw'), 'and it shows'); rig(G, 'D', 'S'); done(G); D.attacked = false; eq([D.throws, LH.targets(G, D).length], [0, 0], 'once it is used he must close to fight'); place(G, 'S', 2, 5); eq(LH.targets(G, D).length, 1, 'hand to hand, as before'); }
 
 console.log('5. guard, striking back, held breath');
 { const G = duel('D', 'S', { hp: 60 }); const S = U(G, 'S'), D = U(G, 'D'); const K = rig(G, 'D', 'S', ['still', 'still', 'guard'], { en: 3, fb: 0 }); LH.play(G, 0); LH.play(G, 0); eq(K.block, 22, 'two Stillwaters stack to 22');
-  LH.endHand(G); eq([K.taken, D.guard, D.bank], [0, 12, 1], 'an answer of 10 leaves 12 guard, 1 breath held'); LH.closeClash(G);
-  ok(LH.effects(G, D).some(e => e.id === 'guard' && e.n === 12) && LH.effects(G, D).some(e => e.id === 'held'), 'guard and held breath show as effects');
+  const ans = K.intent.d; LH.endHand(G); eq([K.taken, D.guard, D.bank], [0, 22 - ans, 1], 'his answer of ' + ans + ' leaves ' + (22 - ans) + ' guard, 1 breath held'); LH.closeClash(G);
+  ok(LH.effects(G, D).some(e => e.id === 'guard' && e.n === 22 - ans) && LH.effects(G, D).some(e => e.id === 'held'), 'guard and held breath show as effects');
   LH.endTurn(G); const ev = LH.enemyStep(G); eq([ev.target, ev.dmg, ev.held, ev.rip], ['D', 0, true, 6], 'guard holds the blow and Darrow strikes back for 6'); eq(S.hp, 54, 'the foe took the answer');
   while (LH.enemyStep(G)) { } eq([D.guard, D.bank], [0, 1], 'guard is gone at the start of your turn; held breath waits');
   const K2 = rig(G, 'D', 'S'); eq([K2.en, D.bank], [4, 0], 'held breath is added, and spent'); }
@@ -155,6 +159,20 @@ console.log('9b. Rae, who tends');
   R.fights = 2; D.attacked = false; D.hp = 30; K = rig(G, 'D', 'S'); ok(K.hand.indexOf('lR2') >= 0 && LH.effects(G, R).some(e => e.id === 'risen'), 'after she has tended twice her hand has risen'); }
 { const G = duel('R', 'S', { keep: ['D'] }); place(G, 'D', 5, 6); const R = U(G, 'R'); R.guard = 50; LH.endTurn(G); const ev = LH.enemyStep(G); eq([ev.target, ev.held, ev.rip], ['R', true, 0], 'a foe can strike her, and she does not strike back'); R.guard = 0; R.hp = 2; while (LH.enemyStep(G)) { } LH.endTurn(G); LH.enemyStep(G); ok(R.hp === 0 && !G.over, 'if she falls back the run goes on'); }
 
+{ const G = fresh(); isolate(G, ['D', 'R', 'H']); const D = place(G, 'D', 2, 4), R = place(G, 'R', 2, 5); eq(R.tends, T.tends, 'she can tend ' + T.tends + ' times a battle');
+  for (let i = 0; i < T.tends; i++) { D.hp = 20; R.attacked = false; ok(!!LH.tend(G, R, D), 'tend ' + (i + 1)); } D.hp = 20; R.attacked = false; eq(LH.tendTargets(G, R).length, 0, 'then the cart is bare'); ok(LH.effects(G, R).some(e => e.label === 'Cart is bare'), 'and it says so');
+  G.run.n = 1; eq(U(battle(2), 'R').tends, T.tends, 'a new battle fills it again'); }
+
+console.log('9c. taking a move back, the captain\'s patience, difficulty');
+{ const G = fresh(), D = U(G, 'D'); ok(!LH.canUnmove(G, D), 'nothing to take back before a move'); LH.move(G, D, 3, 4); ok(LH.canUnmove(G, D) && LH.unmove(G, D), 'a move can be taken back'); eq([D.x, D.y, D.moved], [2, 4, false], 'he is where he was and may move again');
+  LH.move(G, D, 3, 4); LH.move(G, U(G, 'A'), 2, 4); ok(!LH.canUnmove(G, D) && !LH.unmove(G, D), 'unless someone now stands there'); LH.unmove(G, U(G, 'A')); LH.hold(G, D); ok(!LH.canUnmove(G, D), 'or he has done something since'); }
+{ const G = duel('D', 'S', { hp: 99, far: true }); const D = U(G, 'D'); LH.move(G, D, 2, 5); rig(G, 'D', 'S'); done(G); ok(!LH.canUnmove(G, D), 'a fight cannot be walked back'); }
+{ const G = fresh(); place(G, 'D', 5, 6); place(G, 'H', 4, 6); place(G, 'A', 5, 5); place(G, 'W', 3, 6); place(G, 'R', 4, 5); const Cp = U(G, 'C'); ok(LH.holding(G, Cp), 'the captain holds early on'); G.turn = T.capPatience; ok(!LH.holding(G, Cp), 'and comes forward when turn ' + T.capPatience + ' arrives'); }
+{ const g0 = LH.newRun({ seed: 5 }), g1 = LH.newRun({ seed: 5, level: 1 }), gm = LH.newRun({ seed: 5, level: -1 }), P = g => U(g, 'P'); ok(P(g1).atk === P(g0).atk + T.levelAtk && P(gm).atk === P(g0).atk - T.levelAtk && P(g1).hp > P(g0).hp && P(gm).hp < P(g0).hp, 'Hard and Gentle move the foes\' strength up and down');
+  eq(P(g1).ans[0].d - P(g0).ans[0].d, T.levelAtk, 'answers included'); }
+
+{ const G = fresh(); isolate(G, ['D']); place(G, 'D', 5, 6); G.turn = T.maxTurns; LH.endTurn(G); while (LH.enemyStep(G)) { } ok(G.over && G.over.lost && G.over.night, 'a battle not won by turn ' + T.maxTurns + ' is lost at nightfall'); }
+
 console.log('10. a clash of several rounds');
 { const G = duel('D', 'X', { rounds: 3, hp: 99 }); const D = U(G, 'D'); let K = rig(G, 'D', 'X', ['strike', 'guard'], { en: 3, fb: 0 }); LH.play(G, 0); ok(K.broken, 'Break in round one'); LH.play(G, 0); LH.endHand(G); eq(K.phase, 'choice', 'after his answer you choose');
   ok(LH.closeClash(G) === false, 'the clash cannot be closed mid-choice'); const ni = LH.nextIntent(G); ok(LH.pressOn(G), 'press on');
@@ -164,8 +182,8 @@ console.log('10. a clash of several rounds');
 
 console.log('11. what the foes bring');
 { const G = battle(2); isolate(G, ['D', 'K']); place(G, 'D', 2, 4); place(G, 'K', 2, 5); const D = U(G, 'D'); const K = rig(G, 'D', 'K', ['guard'], { en: 9 }); K.canBreak = false; const it = LH.intent(G);
-  eq([it.d, it.n], [5 + T.scaleAtk, 2], 'the Skirmisher answers with two small blows'); ok(LH.clashEffects(G).d.some(e => e.id === 'flurry'), 'and Flurry shows'); LH.play(G, 0); const hp = D.hp; LH.endHand(G);
-  eq(hp - D.hp, 2 * (5 + T.scaleAtk) - 6, 'block soaks across both blows'); }
+  eq([it.d, it.n], [5 + T.atkBy[1], 2], 'the Skirmisher answers with two small blows'); ok(LH.clashEffects(G).d.some(e => e.id === 'flurry'), 'and Flurry shows'); LH.play(G, 0); const hp = D.hp; LH.endHand(G);
+  eq(hp - D.hp, 2 * (5 + T.atkBy[1]) - 6, 'block soaks across both blows'); }
 { const G = battle(3); const P = U(G, 'P'), F = U(G, 'F'); ok(LH.rallied(G, P) && !LH.rallied(G, F), 'the banner rallies the others, not its bearer'); ok(LH.effects(G, P).some(e => e.id === 'rallied') && LH.effects(G, F).some(e => e.id === 'banner'), 'both show');
   isolate(G, ['D', 'P', 'F']); place(G, 'D', 2, 4); place(G, 'P', 2, 5); place(G, 'F', 5, 6); let K = rig(G, 'D', 'P'); const base = P.ans[0].d; eq(LH.intent(G).d, base + T.rally, 'a rallied answer is 2 harder'); eq(K.p.ans.d, base + T.rally, 'and the forecast said so');
   F.hp = 0; eq(LH.intent(G).d, base, 'the moment the banner falls, it is not'); done(G); }
@@ -181,8 +199,8 @@ console.log('11. what the foes bring');
 
 console.log('12. spoils and the camp');
 { const G = duel('D', 'C', { keep: ['S'] }); const D = U(G, 'D'); D.hp = 31; place(G, 'S', 3, 4).hp = 1; U(G, 'C').hp = 3;
-  rig(G, 'D', 'S', ['strike'], { en: 9, fb: 0 }); LH.play(G, 0); LH.closeClash(G); eq(G.run.spoils, T.spoilFoe, 'felling a man pays ' + T.spoilFoe);
-  rig(G, 'D', 'C', ['strike'], { en: 9, fb: 0 }); LH.play(G, 0); LH.closeClash(G); ok(G.over && G.over.win && LH.inCamp(G), 'the captain down wins the battle and opens the camp'); eq(G.run.spoils, T.spoilFoe + T.spoilBoss, 'the captain pays ' + T.spoilBoss);
+  rig(G, 'D', 'S', ['strike'], { en: 9, fb: 0 }); LH.play(G, 0); LH.closeClash(G); eq(G.run.spoils, T.spoilFoe + T.spoilOwn, 'felling a man by his own hand pays ' + (T.spoilFoe + T.spoilOwn));
+  rig(G, 'D', 'C', ['strike'], { en: 9, fb: 0 }); LH.play(G, 0); LH.closeClash(G); ok(G.over && G.over.win && LH.inCamp(G), 'the captain down wins the battle and opens the camp'); eq(G.run.spoils, T.spoilFoe + T.spoilBoss + 2 * T.spoilOwn, 'the captain pays ' + T.spoilBoss + ', and one more for his own hand');
   eq(G.camp.market.length, T.market, 'the camp lays out ' + T.market + ' cards'); ok(new Set(G.camp.market).size === T.market && G.camp.market.every(id => C[id].p > 0), 'all different, all priced');
   ok(!LH.endTurn(G) && !LH.move(G, D, 3, 4), 'nothing moves after the battle');
   G.run.spoils = 20; const pick = G.camp.market[0], price = C[pick].p; ok(LH.campBuy(G, pick), 'a card can be bought'); eq([G.run.spoils, G.run.deck.length], [20 - price, 17], 'for its price, into the deck'); ok(!LH.campBuy(G, pick), 'each card once');
@@ -193,10 +211,10 @@ console.log('12. spoils and the camp');
   const sp = G.run.spoils; ok(LH.nextBattle(G), 'march on'); eq([G.run.n, G.map.name, G.run.hp], [2, 'The Wood Road', 46 + T.rest], 'battle two on the Wood Road, health carried plus a night of rest');
   const D2 = U(G, 'D'); ok(D2.deck.indexOf(pick) >= 0 && D2.deck.indexOf('strike2') >= 0 && D2.deck.length === 16, 'the deck is the one he left camp with'); eq(G.run.spoils, sp, 'unspent spoils are kept');
   eq(U(G, 'H').hp, 40, 'the company is whole again'); eq(D2.st.atkUp + D2.st.blockStart + D2.st.drawUp, 0, 'stances do not carry between battles'); ok(G.u.some(u => u.id === 'K') && G.u.some(u => u.id === 'B'), 'new foes are on the field');
-  eq(U(G, 'B').hp, Math.round(28 * (1 + T.scaleHp)), 'and later battles are harder'); }
+  eq(U(G, 'B').hp, Math.round(28 * (1 + T.hpBy[1])), 'and later battles are harder'); }
 { const G = fresh(); G.run.deck = G.run.deck.slice(0, LH.MIN_DECK); G.over = { win: 1 }; G.camp = { market: [], bought: [] }; G.run.spoils = 9; ok(!LH.campRemove(G, 'strike'), 'the deck cannot be thinned below ' + LH.MIN_DECK); }
 { const G = battle(3); isolate(G, ['D', 'C']); place(G, 'D', 2, 4); place(G, 'C', 2, 5).hp = 1; G.run.won = 2; G.run.spoils = 5; rig(G, 'D', 'C', ['strike'], { en: 9, fb: 0 }); LH.play(G, 0); LH.closeClash(G);
-  ok(G.over && G.over.done, 'the third captain ends the run'); ok(!LH.nextBattle(G) && !LH.inCamp(G), 'there is no fourth battle'); eq(G.run.renown, 5 + T.spoilBoss + 18 + 0 + Math.floor(U(G, 'D').hp / 8), 'renown counts spoils kept, battles won, friends standing and health'); }
+  ok(G.over && G.over.done, 'the third captain ends the run'); ok(!LH.nextBattle(G) && !LH.inCamp(G), 'there is no fourth battle'); eq(G.run.renown, 5 + T.spoilBoss + T.spoilOwn + 18 + (T.par - 1) + 0 + Math.floor(U(G, 'D').hp / 8), 'renown counts spoils kept, battles won, a quick finish, friends standing and health'); }
 { const G = duel('D', 'C'); const D = U(G, 'D'); D.hp = 4; rig(G, 'D', 'C', ['guard'], { en: 0 }); const fx = LH.endHand(G); ok(fx.some(f => f.k === 'down' && f.who === 'a'), 'Darrow can fall to an answer'); LH.closeClash(G); ok(G.over && G.over.lost && G.run.renown >= 0, 'and that loses the run'); }
 { const G = duel('D', 'C'); U(G, 'D').guard = 99; U(G, 'C').hp = 5; LH.endTurn(G); const ev = LH.enemyStep(G); ok(ev.foeDown && G.over && G.over.win && G.run.spoils === T.spoilBoss, 'a captain felled by an answering blow also wins, and pays'); }
 { const G = duel('W', 'S', { keep: ['D'] }); place(G, 'D', 5, 6); U(G, 'W').hp = 2; LH.endTurn(G); const ev = LH.enemyStep(G); ok(ev.targetDown && U(G, 'W').hp === 0 && !G.over, 'a companion falls back without ending the run'); ok(LH.at(G, 2, 4) === null, 'and leaves the tile'); }
@@ -233,7 +251,7 @@ function invariants(G, tag) {
 }
 function rnd(st) { st.s = (st.s * 1664525 + 1013904223) >>> 0; return st.s / 4294967296; }
 function fuzzOne(seed, rounds, skill) {
-  const G = LH.newRun({ seed, rounds, deck: skill ? LH.BASE_DECK.concat(LH.POOL) : undefined }), st = { s: seed * 2654435761 >>> 0 }, pick = a => a[Math.floor(rnd(st) * a.length)];
+  const G = LH.newRun({ seed, rounds, deck: skill ? LH.BASE_DECK.concat(LH.POOL, ['strike2', 'guard2']) : undefined }), st = { s: seed * 2654435761 >>> 0 }, pick = a => a[Math.floor(rnd(st) * a.length)];
   let steps = 0, outcome = 'stalled'; const seen = {};
   while (steps++ < 8000) {
     invariants(G, 'seed ' + seed + ' step ' + steps);
@@ -253,7 +271,7 @@ function fuzzOne(seed, rounds, skill) {
     G.u.forEach(u => { if (!LH.canAct(u)) return; LH.targets(G, u).forEach(d => fights.push(() => LH.engage(G, u, d)));
       if (!u.moved) Object.keys(LH.reach(G, u)).forEach(k => { const p = k.split(','); if (+p[0] !== u.x || +p[1] !== u.y) acts.push(() => LH.move(G, u, +p[0], +p[1])); });
       LH.tendTargets(G, u).forEach(t => acts.push(() => !!LH.tend(G, u, t)));
-      if (!u.attacked) acts.push(() => LH.hold(G, u)); });
+      if (!u.attacked) acts.push(() => LH.hold(G, u)); if (LH.canUnmove(G, u)) acts.push(() => LH.unmove(G, u)); });
     if (skill && fights.length && rnd(st) < .7) { if (!pick(fights)()) throw new Error('listed fight refused'); continue; }
     const all = acts.concat(fights);
     if (!all.length || rnd(st) < .18) { if (!LH.endTurn(G)) throw new Error('endTurn refused'); } else if (!pick(all)()) throw new Error('listed action refused');
@@ -271,9 +289,9 @@ console.log('14. fuzz: random legal play with invariants checked after every act
 console.log('15. bots: is it winnable, is it losable, does anything stall');
 { const { measure } = require('./bots.js');
   [[1, 'fair'], [1, 'rush'], [3, 'fair'], [3, 'rush']].forEach(([rounds, kind]) => { const m = measure(rounds, kind, 300), name = kind + ', ' + (rounds === 1 ? 'one hand' : 'three rounds');
-    ok(m.stalled === 0, name + ': no run stalls'); ok(m.won >= 10 && m.won <= 95, name + ': winnable and losable (' + m.won + '%)');
+    ok(m.stalled === 0, name + ': no run stalls'); ok(kind === 'rush' ? m.won <= 60 : (m.won >= 10 && m.won <= 95), name + (kind === 'rush' ? ': rushing the captain is not the way to win (' : ': winnable and losable (') + m.won + '%)');
     console.log('   ' + name + ': won ' + m.won + '% · lost in battle 1/2/3: ' + m.lostAt.join('/') + ' · turns a battle ' + m.turnsPerBattle.join('/') + ' · hands a run ' + m.handsPerRun + ' · cards bought ' + m.bought + ' · wounds ' + m.wounds + ' · renown ' + m.renown);
-    if (kind === 'fair' && rounds === 1) { const never = Object.keys(C).filter(id => !C[id].dead && !m.played[id] && !/2$/.test(id)); ok(never.length === 0, 'the sensible bot finds a use for every card' + (never.length ? ': never ' + never.join(', ') : '')); } }); }
+    }); const all = measure(1, 'fair', 150, LH.BASE_DECK.concat(LH.POOL)), never = Object.keys(C).filter(id => !C[id].dead && !all.played[id] && !/2$/.test(id)); ok(never.length === 0, 'given every camp card, the sensible bot finds a use for each' + (never.length ? ': never ' + never.join(', ') : '')); }
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

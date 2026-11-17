@@ -18,7 +18,7 @@ const inFrame = (p, sels) => p.evaluate(sels => { const g = document.getElementB
 /* put the captain one blow from defeat beside Darrow, then beat him through the real buttons */
 async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__LH.G, D = g.u[0], C = g.u.filter(u => u.boss)[0]; g.u.forEach(u => { if (u.side === 1 && !u.boss) u.hp = 0; }); C.x = D.x; C.y = D.y - 1; C.hp = 1; C.ans = [{ b: 0, d: 1, n: 1 }]; D.attacked = false; D.moved = false; });
   const pos = await p.evaluate(() => { const g = window.__LH.G; return [g.u[0].x, g.u[0].y]; });
-  await tap(tile(pos[0], pos[1])); if (!(await p.$(tile(pos[0], pos[1]) + ' .tok.sel'))) await tap(tile(pos[0], pos[1])); await tap(tile(pos[0], pos[1] - 1)); await tap(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(400);
+  await tap(tile(pos[0], pos[1])); if (!(await p.$(G + '.unit[data-u="D"] .tok.sel'))) await tap(tile(pos[0], pos[1])); await tap(tile(pos[0], pos[1] - 1)); await tap(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(400);
   for (let n = 0; n < 12; n++) { const s = await st(p); if (!s.clash) break; const i = await p.evaluate(() => { const g = window.__LH.G, LH = window.__LH.LH; return g.clash.hand.findIndex((id, i) => !LH.playable(g, i) && LH.C[id].dmg); });
     if (i < 0) { await tap(G + '[data-a="endhand"]'); await idle(p); await p.evaluate(() => { const g = window.__LH.G; g.u[0].attacked = false; }); const q = await p.evaluate(() => { const g = window.__LH.G, C = g.u.filter(u => u.boss)[0]; return [g.u[0].x, g.u[0].y, C.x, C.y]; }); await tap(tile(q[0], q[1])); await tap(tile(q[2], q[3])); await tap(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(300); continue; }
     await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(150); await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); await idle(p); }
@@ -35,17 +35,22 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     ok(await p.$$eval(G + '.tile', t => t.length) === 42, 'the map has 42 tiles'); ok((await p.textContent(G + '#m-name')) === 'The Two Fords', 'the ground is named');
     ok(await p.evaluate(() => Array.from(document.images).every(i => i.naturalWidth > 0)), 'every picture loads');
     ok(!(await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth)), 'no sideways scroll at 400 wide');
-    ok(await p.$$eval(tile(3, 1) + ' .fi', e => e.length) >= 1 && await p.$$eval(tile(2, 0) + ' .fi', e => e.length) >= 1, 'tokens carry icons for what is in force (the bolt, the captain)');
-    ok(await p.$$eval(tile(2, 2) + ' .tok.foe.has img', e => e.length === 1 && e[0].naturalWidth > 0), 'the pikeman wears his own picture on the map');
-    ok(await p.$$eval(tile(4, 6) + ' .tok img', e => e.length === 1 && e[0].getAttribute('src').includes('rae')), 'Rae is on the field');
+    ok(await p.$$eval(G + '.unit[data-u="X"] .fi', e => e.length) >= 1 && await p.$$eval(G + '.unit[data-u="C"] .fi', e => e.length) >= 1, 'tokens carry icons for what is in force (the bolt, the captain)');
+    ok(await p.$$eval(G + '.unit[data-u="P"] .tok.foe.has img', e => e.length === 1 && e[0].naturalWidth > 0), 'the pikeman wears his own picture on the map');
+    ok(await p.$$eval(G + '.unit[data-u="R"] .tok img', e => e.length === 1 && e[0].getAttribute('src').includes('rae')), 'Rae is on the field');
     { // Rae tends: put her beside a hurt Darrow, select her, tap him
       const hp0 = await p.evaluate(() => { const g = window.__LH.G, D = g.u[0], R = window.__LH.LH.byId(g, 'R'); D.hp = 30; R.x = D.x + 1; R.y = D.y; return D.hp; });
       await tap(tile(3, 4)); ok(await p.$$eval(G + '.tile.mend', t => t.length) === 1 && (await p.textContent(G + '#m-rest')).includes('does not fight'), 'selecting Rae rings the friend she can tend');
-      await tap(tile(2, 4)); const hp1 = await p.evaluate(() => window.__LH.G.u[0].hp); ok(hp1 === hp0 + await p.evaluate(() => window.__LH.LH.T.tend), 'tapping him mends him'); ok(await p.$eval(tile(3, 4) + ' .tok', e => e.classList.contains('spent')), 'and that is her turn');
+      await tap(tile(2, 4)); const hp1 = await p.evaluate(() => window.__LH.G.u[0].hp); ok(hp1 === hp0 + await p.evaluate(() => window.__LH.LH.T.tend), 'tapping him mends him'); ok(await p.$eval(G + '.unit[data-u="R"] .tok', e => e.classList.contains('spent')), 'and that is her turn');
       await p.evaluate(() => { const g = window.__LH.G, R = window.__LH.LH.byId(g, 'R'); g.u[0].hp = 58; R.x = 4; R.y = 6; R.attacked = false; R.moved = false; }); await tap(tile(0, 6)); }
     await tap(tile(3, 1)); ok((await p.textContent(G + '#m-rest')).includes('Crossbowman') && await p.$$eval(G + '#m-rest .fx', e => e.length) >= 1, 'tapping a foe lists his effects as chips');
     await tap(G + '#m-rest .fx'); ok((await p.textContent(G + '#m-rest .fxtext')).includes('Wound'), 'tapping an effect explains it'); await p.locator('#game').screenshot({ path: shots + '1-inspect.png' });
-    await tap(tile(2, 4)); ok(await p.$$eval(G + '.tile.reach', t => t.length) > 3, 'tapping Darrow lights where he can go'); ok(await p.$$eval(G + '.tile.hit', t => t.length) === 1, 'the pikeman two tiles off is ringed');
+    await p.evaluate(() => { window.__made = 0; window.__mo = new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { if (n.nodeType === 1 && (n.matches('.unit,.tok,.hcard:not(.ghost)') || n.querySelector('.unit,.tok,.hcard:not(.ghost)'))) window.__made++; }))); window.__mo.observe(document.getElementById('game'), { childList: true, subtree: true }); window.__D = document.querySelector('#game .unit[data-u="D"]'); });
+    await tap(tile(2, 4)); ok(await p.$$eval(G + '.tile.reach', t => t.length) > 3, 'tapping Darrow lights where he can go');
+    const left0 = await p.$eval(G + '.unit[data-u="D"]', e => e.getBoundingClientRect().left); await tap(tile(3, 4)); await p.waitForTimeout(120);
+    const mid = await p.$eval(G + '.unit[data-u="D"]', e => e.getBoundingClientRect().left); await p.waitForTimeout(400); const left1 = await p.$eval(G + '.unit[data-u="D"]', e => e.getBoundingClientRect().left);
+    ok(mid > left0 + 2 && mid < left1 - 2, 'a moved token slides to its new tile'); ok(await p.evaluate(() => window.__D === document.querySelector('#game .unit[data-u="D"]') && window.__made === 0), 'and no token is rebuilt by tapping or moving');
+    ok(!!(await p.$(G + '[data-a="unmove"]')), 'a move just made can be taken back'); await tap(G + '[data-a="unmove"]'); ok(await p.evaluate(() => { const D = window.__LH.G.u[0]; return D.x === 2 && D.y === 4 && !D.moved; }), 'and he is where he was'); await p.waitForTimeout(350); ok(await p.$$eval(G + '.tile.hit', t => t.length) === 1, 'the pikeman two tiles off is ringed');
     await tap(tile(2, 2)); ok(!!(await p.$(G + '[data-a="go"]')) && (await p.textContent(G + '#m-rest')).includes('cannot be hurt'), 'the forecast opens and says he cannot answer from two tiles');
     await tap(G + '[data-a="go"]'); await p.waitForTimeout(250); ok(await p.isVisible(G + '#banner'), 'the banner announces the clash');
     await idle(p); await p.waitForTimeout(500);
@@ -64,10 +69,13 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     await p.tap(G + `.hcard[data-i="${idx}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(250);
     ok(await p.$eval(G + `.hcard[data-i="${idx}"]`, e => e.classList.contains('sel')), 'first tap lifts the card'); ok((await p.textContent(G + '#c-tell')).includes(cardName), 'and shows its text below the field');
     ok(await inView(p, G + '.hcard.sel'), 'the lifted card stays on screen'); ok(await p.evaluate(() => document.querySelector('#game .hcard.sel').getBoundingClientRect().top >= document.getElementById('c-tell').getBoundingClientRect().bottom - 2), 'and does not cover the line that explains it');
+    const lifted = await p.$eval(G + '.hcard.sel', e => { const r = e.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2, r.width]; }); await p.evaluate(() => { window.__made = 0; });
     await p.evaluate(() => { window.__floats = 0; new MutationObserver(m => m.forEach(r => r.addedNodes.forEach(n => { if (n.classList && n.classList.contains('float')) window.__floats++; }))).observe(document.getElementById('game'), { childList: true, subtree: true }); });
-    await p.tap(G + `.hcard[data-i="${idx}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(160); ok(!!(await p.$(G + '.ghost')), 'second tap sends the card flying');
+    const gh = await p.evaluate(() => { const e = document.querySelector('#game .hcard.sel'), a = e.getBoundingClientRect(), o = { bubbles: true, clientX: a.left + 10, clientY: a.top + 10, pointerId: 1, button: 0 };
+      e.dispatchEvent(new PointerEvent('pointerdown', o)); window.dispatchEvent(new PointerEvent('pointerup', o)); const g = document.querySelector('#game .ghost'); if (!g) return null; const r = g.getBoundingClientRect(); return [r.left - a.left, r.top - a.top, r.width - a.width, r.height - a.height].map(Math.abs); });
+    ok(gh && gh.every(v => v < 2), 'the card takes off from exactly where it was, at the size it was'); await p.waitForTimeout(120); ok(!!(await p.$(G + '.ghost')), 'second tap sends the card flying');
     await idle(p); s = await st(p);
-    ok(s.clash.hand.length === before.clash.hand.length - 1, 'the card has left the hand'); ok(s.clash.dhp < before.clash.dhp || s.clash.fb < before.clash.fb, 'and its damage landed'); ok(await p.evaluate(() => window.__floats) >= 1, 'with a number floating off him'); ok(!(await p.$(G + '.ghost')), 'the flying card is cleaned up');
+    ok(s.clash.hand.length === before.clash.hand.length - 1, 'the card has left the hand'); ok(s.clash.dhp < before.clash.dhp || s.clash.fb < before.clash.fb, 'and its damage landed'); ok(await p.evaluate(() => window.__floats) >= 1, 'with a number floating off him'); ok(!(await p.$(G + '.ghost')), 'the flying card is cleaned up'); ok(await p.evaluate(() => window.__made === 0), 'and the cards left in hand were not rebuilt');
     await tap(G + '[data-a="pile-draw"]'); ok(await p.isVisible(G + '#c-piles'), 'the draw pile opens'); await tap(G + '#c-piles'); ok(!(await p.isVisible(G + '#c-piles')), 'and closes');
     await tap(G + '[data-a="endhand"]'); await idle(p); await p.waitForTimeout(300);
     ok(await p.isVisible(G + '#scr-map') && !(await p.isVisible(G + '#scr-clash')), 'ending the hand returns to the map'); ok((await p.textContent(G + '.log')).includes('dealt'), 'the map log sums up the clash'); s = await st(p); ok(!s.clash && s.D.attacked, 'Darrow has fought');
@@ -110,7 +118,8 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     await p.click(tile(2, 4)); await p.click(tile(2, 2)); await p.click(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(600);
     { // a card he cannot afford is refused, with its own sound
       const j = await p.evaluate(() => { const g = window.__LH.G, K = g.clash; window.__en = K.en; K.en = 0; return K.hand.findIndex(id => window.__LH.LH.C[id].c > 0); }); const n = (await st(p)).clash.hand.length;
-      await p.click(G + `.hcard[data-i="${j}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(150); await p.click(G + `.hcard[data-i="${j}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(350);
+      await p.click(G + `.hcard[data-i="${j}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(260); const at0 = await p.$eval(G + `.hcard[data-i="${j}"]`, e => e.getBoundingClientRect().left);
+      await p.click(G + `.hcard[data-i="${j}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(90); const at1 = await p.$eval(G + `.hcard[data-i="${j}"]`, e => e.getBoundingClientRect().left); ok(Math.abs(at1 - at0) < 12, 'a refused card shakes where it stands (' + Math.round(at1 - at0) + 'px)'); await p.waitForTimeout(300);
       ok((await st(p)).clash.hand.length === n && await p.evaluate(() => window.__LH.heard.card_cant > 0), 'a card he cannot afford is refused, and says so'); ok((await p.textContent(G + '#c-tell')).includes('Needs'), 'with the reason');
       await p.evaluate(() => { window.__LH.G.clash.en = window.__en; }); await p.click(G + '#c-stage'); Object.assign(heardAll, await p.evaluate(() => window.__LH.heard)); }
     let s = await st(p); const idx = await p.evaluate(() => { const g = window.__LH.G, LH = window.__LH.LH; return g.clash.hand.findIndex((id, i) => !LH.playable(g, i)); });
@@ -125,6 +134,8 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
       await p.focus(G + `.hcard[data-i="${k}"]`); await p.keyboard.press('Enter'); await idle(p); s2 = await st(p); ok(JSON.stringify(s2.clash) !== JSON.stringify(s.clash), 'Enter again plays it'); }
     s = await st(p); await p.click(G + '[data-a="redraw"]'); await p.waitForTimeout(700); s2 = await st(p); ok(s2.insp === s.insp - 1 && s2.clash.hand.length >= 5, 'New hand spends an Inspiration and deals five'); ok(await p.$eval(G + '[data-a="redraw"]', e => e.disabled), 'and can be used once a clash');
     await p.click(G + '[data-a="endhand"]'); await idle(p);
+    await p.click('[data-pref="level=1"]'); const hard = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); await p.click('[data-pref="level=0"]'); const std = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); ok(hard === std + 1, 'the difficulty setting starts a new run with stronger foes');
+    await p.click(tile(2, 4)); await p.click(tile(3, 4)); await p.click('[data-newrun]'); ok(await p.evaluate(() => window.__LH.G.u[0].x === 2 && window.__LH.G.turn === 1), 'Start a new run does so');
     await p.click('[data-pref="deck=all"]'); s = await st(p); ok(s.deck === 37 && s.turn === 1, 'the try-everything deck starts a new run with 37 cards'); await p.click('[data-pref="deck=sheet"]'); ok((await st(p)).deck === 16, 'and the sheet deck puts it back');
     ok(errs.length === 0, 'no errors on the desktop: ' + errs.join(' | ')); await ctx.close();
   }
@@ -168,15 +179,15 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
             if (camps % 3 === 0 && q('[data-a="leavemode"]:not([disabled])')) { await click('[data-a="leavemode"]'); await click('.decklist .dk'); }
             await click('[data-a="march"]'); if (H.G.over || q('#scr-map').hidden) throw new Error('march did not start the next battle'); continue; }
           for (const u of G.u.filter(u => u.side === 0)) { let n = 0;
-            if (u.tend) { if (!LH.canAct(u)) continue; if (!q(`.tile[data-x="${u.x}"][data-y="${u.y}"] .tok.sel`)) await tap(u.x, u.y); const tt = LH.tendTargets(H.G, u);
+            if (u.tend) { if (!LH.canAct(u)) continue; if (!q(`.unit[data-u="${u.id}"] .tok.sel`)) await tap(u.x, u.y); const tt = LH.tendTargets(H.G, u);
               if (tt.length) { const hp = tt[0].hp, w = LH.wounds(tt[0]); await tap(tt[0].x, tt[0].y); tends++; if (tt[0].hp === hp && LH.wounds(tt[0]) === w) throw new Error('tend did nothing'); } else if (q('[data-a="wait"]:not([disabled])')) await click('[data-a="wait"]'); continue; }
             while (!H.G.over && LH.canAct(u) && n++ < 4) {
-              if (!q(`.tile[data-x="${u.x}"][data-y="${u.y}"] .tok.sel`)) await tap(u.x, u.y);
+              if (!q(`.unit[data-u="${u.id}"] .tok.sel`)) await tap(u.x, u.y);
               if (n === 1 && q('#m-rest [data-fx]')) { await click('#m-rest [data-fx]'); fxTaps++; if (!q('#m-rest .fxtext')) throw new Error('effect text missing'); }
               let ts = LH.targets(H.G, u);
               if (!ts.length && !u.moved) { const r = LH.reach(H.G, u), foes = LH.foesUp(H.G); let best = null, bd = 99;
                 Object.keys(r).forEach(k => { const pp = k.split(','); foes.forEach(f => { const d = Math.abs(f.x - pp[0]) + Math.abs(f.y - pp[1]) + (f.boss ? 0 : .5); if (d >= 1 && d < bd) { bd = d; best = pp; } }); });
-                if (best && (+best[0] !== u.x || +best[1] !== u.y)) { await tap(+best[0], +best[1]); if (LH.canAct(u) && !q(`.tile[data-x="${u.x}"][data-y="${u.y}"] .tok.sel`)) await tap(u.x, u.y); }
+                if (best && (+best[0] !== u.x || +best[1] !== u.y)) { await tap(+best[0], +best[1]); if (LH.canAct(u) && !q(`.unit[data-u="${u.id}"] .tok.sel`)) await tap(u.x, u.y); }
                 ts = LH.targets(H.G, u); }
               if (!ts.length || u.attacked) { if (!u.attacked && q('[data-a="wait"]:not([disabled])') && (u.id.charCodeAt(0) + G.turn) % 3 === 0) await click('[data-a="wait"]'); break; }
               ts.sort((a, b) => (b.boss ? 1 : 0) - (a.boss ? 1 : 0)); await tap(ts[0].x, ts[0].y); if (!q('[data-a="go"]')) throw new Error('no forecast'); await click('[data-a="go"]'); clashes++;
