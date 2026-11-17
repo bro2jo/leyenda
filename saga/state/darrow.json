@@ -1,5 +1,5 @@
 {
-  "asof": "2026-11-16",
+  "asof": "2026-11-17",
   "name": "Ser Darrow of Edgemoor",
   "level": 9,
   "rank": "Kindled",
@@ -65,7 +65,7 @@
     4
   ],
   "knots_count": 4,
-  "soft_season": true,
+  "soft_season": false,
   "arts": [
     {
       "id": "seated_blade",
@@ -353,8 +353,8 @@
   },
   "chapter_now": {
     "week_start": "2026-11-15",
-    "through": "2026-11-16",
-    "tier_so_far": "Triumph",
+    "through": "2026-11-17",
+    "tier_so_far": "Costly",
     "chapter": 7
   },
   "fell": {

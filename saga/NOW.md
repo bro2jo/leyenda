@@ -31,12 +31,12 @@ VIGOR    11 (+0)   the Knight Who Fell: 15
 FINESSE  11 (+0)   the Knight Who Fell: 18
 RESOLVE  11 (+0)   the Knight Who Fell: 12
 
-THE BINDING · Knots tied IV of VII · the soft season (do not trust the quiet)
+THE BINDING · Knots tied IV of VII
 THE TETHER · II of V · a hand
 WORKS · 2 finished
 ARTS · The Seated Blade II · Hammerfall I · Stillwater Stance III · The Long Breath II · The Mender's Patience IV · Warden's Eye IV · Groundbreaker III · The Long Road I · The Measured Hand II · Overwall I · The Far Cast I
 SEALED (practice banked) · Thunderstep (Knot V) · Anchor (Knot V) · The Turning Blade (Knot VI)
 ```
 
-**Chapter 7, so far (on what's logged):** Triumph
+**Chapter 7, so far (on what's logged):** Costly
 <!-- engine:end -->
