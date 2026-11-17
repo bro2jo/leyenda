@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/17 (repo, his call): **the morning check is the swelling grade alone**; pain, extension, wellness and anything new move to the Sunday check. On the mornings that judge or precede a run or a home knee session he still looks, and reports pain or extension only when off (the master plan's running rules: no meaningful pain increase, no loss of extension). A clean morning is swelling same or down with nothing reported worse; the pre-session check reads the same way
 - 11/17 (repo, his call): the exercise log gains `hr_avg`, the average heart rate in bpm when he gives it
 - 11/16 (repo, his call; Phase 5 from PT 15): the checks simplified. The morning check is five questions (swelling grade, pain and where, extension vs the right, wellness, anything new); the Sunday checks keep the weigh-in and the single-leg squat test while the State keeps it; the heel prop and photo, the SLR lag and the flexion heel slide are retired and come back when a morning shows a problem; the check-in set adds the run
 - 11/7 (repo, his call): the exercise log's `load or band` column split into `load`, `load_unit`, `band` and `height_in` (numbers, with the load conventions below); one exercise name per movement, set-ups and machine ids in `notes`; the morning readings are numbers (pain, extension and flexion in degrees, hours on feet), the catch `none` / `yes`, adjuncts one format
@@ -38,16 +39,13 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
   **Grade it every morning.** "Quiet," "same," "no additional," and "great" are trends, not grades; they go in the trend column, not instead of the grade.
 - **Extension target:** as close as possible to the right knee, measured the same way (plan principle 1). The right knee's passive hyperextension on a heel prop is the target until the clinic measures it. Home checks:
-  - a side-by-side look every morning
+  - a side-by-side look on the mornings that judge or precede a run or a home knee session (reported only when the left isn't matching), and every Sunday as part of the full check
   - a side-view photo, both legs on the heel prop, same setup, when a morning says the left isn't matching (weekly until 11/16)
 
   A photo can't see 2–3°. Goniometer readings live in the Recovery State §4.
 - **Clean morning:** the verdict on the previous day's load; the home version of the plan's "returns to baseline by the following morning". All of these must hold:
-  - swelling same or down vs the previous morning
-  - extension unchanged
-  - pain ≤2
-  - no new stiffness
-  - no hard or painful patellar sticking
+  - swelling same or down vs the previous morning (graded every morning)
+  - nothing reported worse: extension unchanged, pain ≤2, no new stiffness, no hard or painful patellar sticking. From 11/17 these are reported by exception: on a morning that judges a run or a home knee session he looks, and says so only when one is off; a swelling-only report on such a morning means he looked and nothing was worse (logged blank, never as 0)
 - **Painless kneecap catch:** normal per PT as long as there is no hard or painful sticking. It does not fail the pre-session check or a clean morning. Logged present / absent.
 - **Loaded day:** a home strength session (Session A or B, run at least to its minimum version) or a PT visit. These are not loaded days:
   - daily-minimum-only days
@@ -69,7 +67,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
 ## Load rules
 
-1. **Pre-session check gates every loading session:** swelling graded and not up vs the previous morning · extension side by side · pain ≤2 · no hard or painful sticking. If it fails: last clean doses, 2 sets, no changes, or daily minimum only.
+1. **Pre-session check gates every home loading session and run:** swelling graded and not up vs the previous morning · and nothing reported off (extension side by side, pain ≤2, no hard or painful sticking: he looks, and reports them only when off). If it fails: last clean doses, 2 sets, no changes, or daily minimum only.
 2. **No back-to-back loaded days by design.** A forced back-to-back (a PT reschedule) is acceptable. Don't schedule one on purpose.
 3. **Progression is response-driven, inside the master plan.**
    - Sources: PT 9/20 and 9/30; surgeon 9/25 ("ramp up strength while the knee stays quiet"); Nick 10/8 and 10/9 ("up to the master plan, no approval needed, don't push through pain").
@@ -126,7 +124,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
 **Daily minimum and checks:**
 - Daily: see Definitions.
-- **Weekly (Sunday morning):** body mass · the single-leg squat test, filmed, while the Recovery State keeps it. The SLR lag, the flexion heel slide, the extension photo and the heel prop are retired (11/16); each returns when a morning shows its problem (the quad not firing, flexion down, extension short of the right).
+- **Weekly (Sunday morning):** **the full morning check** (swelling grade, pain and where, extension vs the right, wellness 1–5, anything new) · body mass · the single-leg squat test, filmed, while the Recovery State keeps it. The SLR lag, the flexion heel slide, the extension photo and the heel prop are retired (11/16); each returns when a morning shows its problem (the quad not firing, flexion down, extension short of the right).
 - **Optional extras:** Game Ready after big sessions · step hamstring stretch · TKE in the warm-up.
 - **Not part of the program:** NMES, quad sets, heel slides, SLR, and patellar glides. The plan uses them for poor activation and early ROM, both resolved before Phase 3. They return only if a red-light morning brings back an extension or activation problem.
 
@@ -172,20 +170,20 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 
 ## Check-in question set (Phases 3–5)
 
-- **Morning (five questions):** **swelling grade** (none / trace / 1+ — the grade, not a trend) · **pain 0–10**, and where if not 0 (the front of the knee matters most the morning after a run or jumps) · **extension: matches the right?** (side by side) · **wellness 1–5** · **anything new?** (a catch, stiffness, giving way; details only if yes, and a "no" logs the catch as none). Hours on feet are logged when he gives them, not asked.
+- **Morning (from 11/17): the swelling grade** (none / trace / 1+ — the grade, not a trend). Nothing else is asked. On a morning that judges or precedes a run or a home knee session he also looks at pain and extension, and reports them only when off (pain over 2 and where, the left short of the right). Red flags any time, as always. Hours on feet are logged when he gives them.
 - **After a run (Phase 5):** which walk-jog session · walk and jog minutes × rounds, as run · surface · pain during and after (front of the knee especially) · anything off in the stride · minutes and RPE.
 - **After a knee session:** which session (A or B) · doses, including anything changed on the fly · **impact: rung, sets × contacts, landings quiet or not** · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
 - **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · anything about the setup the knee noticed.
 - **After a throwing session:** throws by type · stance (feet planted / slight pivots) · **pivot foot** · minutes and session RPE · anything the knee, elbow or shoulder noticed.
 - **Off day:** bike minutes and distance · rest, or what the accessory day included.
-- **Weekly (Sunday morning):** body mass · the single-leg squat test, filmed, while the Recovery State keeps it.
+- **Weekly (Sunday morning):** **the full morning check:** swelling grade · **pain 0–10**, and where if not 0 · **extension: matches the right?** · **wellness 1–5** · **anything new?** (a catch, stiffness, giving way; a "no" logs the catch as none) · body mass · the single-leg squat test, filmed, while the Recovery State keeps it.
 - **Every PT visit:** any numbers taken (goniometer, dynamometer, 1RM) · anything said verbally · who treated.
 
 ## Weekly checkpoint (every Sunday)
 
 1. **PT day:** the note goes into `pt_notes.md` word for word the same day, with his account after it. Verbal instructions he relays are appended as patient-reported.
 2. **Saturday:** daily minimum + bike; the day's log as usual.
-3. **Sunday morning, before the loading session:** log the morning check, weigh in, run the single-leg squat test if the Recovery State still keeps it, then say **"checkpoint"** (`/checkpoint`). It:
+3. **Sunday morning, before the loading session:** log the full Sunday check (all five), weigh in, run the single-leg squat test if the Recovery State still keeps it, then say **"checkpoint"** (`/checkpoint`). It:
    - writes the week's review in `real/checkpoints/<Sunday>.md`
    - reviews the Recovery State: a new `recovery_state.md` when the program changed (the old one to `real/state/archive/`), otherwise its "Last reviewed" line and whatever status moved
    - updates `real/NOW.md` for the new week
