@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "2",
+    "scene": "between-2",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-2"
+    "anchor": "chronicle/07-the-far-bank.html#between-2"
   },
-  "last_seen_doing": "Counted the carts over, swung lamps over his shoulder on a hay-fork and counted the breaths each one lasted, and closed the day with every cart over.",
-  "now": "At the fire with the ledger, every cart counted over.",
+  "last_seen_doing": "Offered to come, was given the morning count of the forty instead, wrote Told first. Four. in his column, and opened a new one for him.",
+  "now": "At the fire with the ledger, his new column open.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -829,6 +829,18 @@
       "chapter": "07",
       "scene": "2",
       "evidence": "Every one's shorter than the last, and we've four lamps left."
+    },
+    {
+      "fact": "She wrote that he had told the four of them first.",
+      "chapter": "07",
+      "scene": "between-2",
+      "evidence": "Told first. Four."
+    },
+    {
+      "fact": "She opened a column for him with nothing under his name, and said if he is not back in three days she will close it herself.",
+      "chapter": "07",
+      "scene": "between-2",
+      "evidence": "Three days,\" said Wren. \"Then I close it myself."
     }
   ],
   "relationships": [
@@ -1183,6 +1195,10 @@
     {
       "chapter": "07",
       "scene": "2"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-2"
     }
   ]
 }

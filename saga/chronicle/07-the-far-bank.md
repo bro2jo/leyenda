@@ -312,3 +312,79 @@ On the bridge, the line of them stood pressed up against Rae's cart with their f
 1. **Keep them: the company goes on forty larger, at a cart's pace.**
 2. **Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.**
 3. **Leave them at the mill with the company and follow the walkers' trail west at first light, with Ash and nobody else: two nights out and back by the third day, to see what lies along it.**
+
+### Between — Why First
+
+By the small hours the mill had burned down to its second floor, and most of the millers had gone to sleep where they sat, in heaps, with the children in the middle. The company sat apart at the end of the fire nearest the bridge, because none of them would turn their backs on it.
+
+Darrow waited until Hollis had finished telling Wren what the Sixth would have done with a bridge like that. It was mostly lies, and she was writing down which parts.
+
+"Why first," he said.
+
+They all looked at him. Rae turned her head last.
+
+"I'm going west on that trail at first light. Two nights out, back by the third day. Ash comes. Nobody else." He let it stand a moment, as he had let the message stand on the weir. "Now the why."
+
+"Go on," said Maelis, in the voice that meant she was already charging for it.
+
+"Those forty need people who can keep them alive. Somebody who knows a road." He looked at Rae. "Somebody who can keep a line moving and stop it running when it's frightened." Hollis. "Somebody who counts heads every morning and notices when one's missing." Wren. "And somebody who can tell frostbite from a burn in the dark." Maelis. "That's you four. It isn't me. You saw me tonight. I'm good on a bridge for as long as the bridge holds still. On a road, at a cart's pace, with forty people and their children, I'm a man with a stick at the back."
+
+Hollis opened his mouth.
+
+"Let me finish. Then you can call me what you like." Darrow turned his hands over in the firelight. The knuckles were still white. "They'll come again tomorrow night, and the night after, wherever we are. A lamp buys eleven breaths. A mill buys one night, and we haven't got a mill for every night. Somebody has to go and look at where they come from, by daylight, while they only walk, and see if there's anything there that stops them. I can do that. I can walk a road, and Ash can smell one. It's the most use I can be to forty people, and it's the one thing I can do for them that you four can't."
+
+There was a third reason, and he kept it behind his teeth. The rider had gone into the alders on that side of the river with his message in her mouth, and at the end of whatever road she rode was the man who had sent her. He would keep his eyes open on the trail. That was all. He told himself that was all.
+
+"Do you know what a captain who walks off is?" said Hollis.
+
+"Tell me."
+
+"A man walking." Hollis said it flat, with none of the usual music in it.
+
+"Then the forty will need a captain," said Darrow. "You've had sixty in the dark before."
+
+Hollis looked at him for a long moment. "You'd put me over millers."
+
+"Over people who just burned their own mill for strangers. I'd put them up against the Sixth."
+
+"The Sixth would've drowned the mill and burned the river." But something had gone out of his shoulders. "I'll teach them to march. They'll hate me for it."
+
+"They'll be alive to."
+
+"Aye, well." Hollis looked at the fire. Then he made himself look back. "Two nights, Captain. I'm not saying it twice."
+
+Maelis had been watching his hands the whole time.
+
+"And if you find where they come from," she said. "What then? You'll stop four hundred with a stick?"
+
+"I'll come back and tell you what I saw, and you'll tell me what it means. You're the one who knows what frost does."
+
+She took that without a word for longer than he liked. Then she named her price. "Two nights, not three. Your hands inside your coat whenever they're off that stick. A fire you can feed till dawn, both nights, or you find a tree and sit in it. And when you come back, you sit down and I look at you before you say a word to anyone."
+
+"Done."
+
+She got up and went to the cart without another word, and came back with her roll, and began, without asking him, to put things into his pack.
+
+Rae had not said anything. He waited, and she let him.
+
+"You haven't said," he said at last.
+
+"You said why first."
+
+"I did."
+
+"Out loud. Before." She looked at the bridge, and past it, at the dark where the trail ran into the trees. "Then there's nothing for me to say aye or no to. You didn't ask me anything." She got up to see to the oxen. On her way past him she said, as if it were nothing, "North side of the trail for your fires. The wind's been from the south since the weir. It'll carry your smoke off the road."
+
+That left Wren. She had the ledger open and the pencil moving, and for once she did not seem to be counting anything.
+
+"I'd come," she said. "I'd be useful. I could count them on the trail and tell you which way more of them go."
+
+"Who counts the forty, then? Every morning. The same number breathing."
+
+She looked up. "That's a dirty trick, Captain. That's my own column you're using on me."
+
+"It is."
+
+She held his eyes a moment longer, then bent to the book. He watched her write *Told first. Four.* under the old line, and draw a line under that. Then she turned to a clean page, wrote his name at the top of it and nothing underneath, and turned the book round so he could see.
+
+"Three days," said Wren. "Then I close it myself."

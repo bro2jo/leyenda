@@ -2178,7 +2178,7 @@
           "when": "next",
           "at": "ch07:s3",
           "weight": "scene",
-          "what": "The next scene opens on his answer, played at the fire at first light, his own words on the page: why first, to all four; the forty need you; put distance between them and the walkers; I go west two nights to learn how they are stopped; I will catch you up. He asks nobody to come. Each of the four answers in voice (Maelis and Hollis against, Wren for the road and against the alone, Rae says what she says).",
+          "what": "The next scene opens at first light on his leaving, in a clause: his answer was said and answered at the fire in between-2 (Hollis has the forty, Maelis packed his bag, Rae named the north side for his fires, Wren opened his column); the company and the forty start north and he goes west with Ash.",
           "status": "pending"
         },
         {
@@ -2189,12 +2189,63 @@
           "what": "He kept the fork promise: why first, out loud, before he went. Rae weighs that against being left with forty mouths and her cart; her answer is her own and may be an act, not a word.",
           "fits": "present.rae",
           "priority": 3,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch07:between-2"
+          ]
         }
       ],
       "declined": [
         "Keep them: the company goes on forty larger, at a cart's pace.",
         "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road."
+      ]
+    },
+    {
+      "id": "c07.3",
+      "made": {
+        "chapter": 7,
+        "scene": "between-2",
+        "date": "2026-11-17"
+      },
+      "chose": "At the fire in the small hours he said why first, out loud, to all four: the forty need them, and he is no use on a road at a cart's pace; he goes west two nights to see what stops the walkers. He gave Hollis the forty, gave Maelis the meaning of whatever he finds, gave Wren the count of the forty, and asked Rae nothing. Hollis took the forty; Maelis named her price and packed his bag; Rae told him which side of the trail to make his fires; Wren wrote Told first. Four. and opened a column for him",
+      "now": {
+        "approval": {
+          "hollis": 2,
+          "maelis": 1,
+          "wren": 2,
+          "rae": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c07.3a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren opened a column for him at the fire with his name at the top and nothing under it, and said she would close it herself if he was not back in three days; it is closed, in front of him, when he walks back in",
+          "fits": "present.wren",
+          "priority": 3,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch07:between-2"
+          ]
+        },
+        {
+          "id": "c07.3b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Maelis's price: when he comes back he sits down and she looks at him before he says a word to anyone; she holds him to it",
+          "fits": "present.maelis",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch07:between-2"
+          ]
+        }
       ]
     }
   ],
