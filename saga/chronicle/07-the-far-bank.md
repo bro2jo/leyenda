@@ -158,9 +158,15 @@ She turned back toward the bridge and the lamps, and waited for him to come leve
 
 "Carts over: nine," said Wren, a little before midnight. "Carts to come: six."
 
-She was counting the field across the river too, under her breath. She had stopped saying that number aloud an hour ago, when it got too big to be any use.
+Behind her the mill stood over the river with a lamp in every window, four floors of it, and its great wheel still turning in the dark because nobody had thought to stop it. Every farm in the hill country brought its grain to that wheel. The miller had told Darrow so twice since dusk, the way a man tells you the name of his child.
 
-The shapes had come out of the trees on the far side, the west side, and they were crossing the field toward the bridge. They came at a walk, all of them at the same walk, like men following a path nobody else could see. They never hurried, and that was the worst of it, because they never stopped either. Every time Darrow looked, they were nearer. Every time a cart came off the near end of the bridge, there was one cart fewer between them and the water.
+Wren was counting the field across the river too, under her breath. She had stopped saying that number aloud when it passed four hundred.
+
+The shapes had come out of the trees on the far side, the west side, and they were crossing the field toward the bridge. They came at a walk, all of them at the same walk, like men following a path nobody else could see. They never hurried, and that was the worst of it, because they never stopped either, and they never went round anything. There had been a hedge across the middle of the field at dusk. There was a gap in it now as wide as the line, trodden flat.
+
+"They came through our yard like that," said a man off one of the carts, at Darrow's elbow. He had a child asleep on his shoulder and he did not raise his voice. "Through the yard and through the barn. They don't pull a thing down. They just keep walking into it till it isn't there." He looked at the bridge, and at the forty mill-folk and the families from the carts standing on the near bank behind it. "My brother stood in the barn door to stop them."
+
+He did not say what had happened to his brother, and Darrow did not ask. Every time he looked, they were nearer. Every time a cart came off the near end of the bridge, there was one cart fewer between them and the water.
 
 Rae was standing at the toll-board with the lamp, her own cart drawn up beside her with Hob and Dun in the traces. She watched the field for the space of two carts, and then she said it.
 
@@ -198,6 +204,8 @@ The wheel came up out of the gap with a crack, and the cart rolled.
 
 Twenty paces. He picked up the stick and walked behind the cart, backward, the whole way to the near end, watching them come.
 
+Somebody had left a broken-wheeled cart at the far end of the bridge, half across the road. The front of the line reached it and did not go round. The first men walked into it and stopped, and the men behind walked into them, and for a moment the whole line bunched there like water behind a log. Then the cart began to move. It slid sideways, groaning, and went over on its side, and they walked across it. He heard the boards go, one after another, under their feet.
+
 The bridge was barely wider than a cart. He stood against the rail and let the man drag it past him and off, and as soon as it was clear, Rae drove her own cart up behind him and turned it across the end of the bridge, rail to rail, and Hob and Dun stood still in the traces. Now he was on the span with a wall at his back, and in front of him there was nothing but old timber, lamplight, and the far end.
 
 The first of them came onto the bridge.
@@ -216,7 +224,9 @@ He could hold one man. He found he could hold three. But they kept coming onto t
 
 "Stand, Hob," said Rae, at the ox's head. "Stand."
 
-Somewhere to his left, the bridge rail cracked.
+Somewhere to his left, the bridge rail cracked, and went. Two of the men in the line were pushed out through the gap by the weight behind them and dropped into the river. They did not cry out or put up their hands. The black water took them, and the men behind stepped up into their places.
+
+That was what was coming for the near bank. It was not a blow he had to stop, or a sword. It was that weight, and it would go through him, and the cart, and the oxen, and then it would walk up the bank into forty mill-folk and every child off the carts, and keep walking.
 
 On the near bank, the miller had been watching all of it, with his wife beside him.
 
@@ -226,7 +236,7 @@ On the near bank, the miller had been watching all of it, with his wife beside h
 
 "My grandfather built that mill."
 
-"I know who built it." She reached up and took the lamp down off the hook by the mill door, and put it in his hand.
+"I know who built it. I know what it grinds, and who'll go short this winter without it, and that we'll never see the money to build another." She looked at the bridge, where the stick was bending. "And I know what a mill is worth with nobody left alive to bring it grain." She reached up and took the lamp down off the hook by the mill door, and put it in his hand.
 
 The miller looked at his mill, and then at the bridge, and the man on it. "Then they can have the biggest lamp in the hills," he said, and went in through the door with the lamp, and came out without it.
 
