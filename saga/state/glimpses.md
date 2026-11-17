@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-15 · saying · "Bells take it," Hollis says when the pot lid bites his fingers, and then says it twice more, slower, for the pleasure of the sound.
 - 2026-11-15 · overheard · Overheard by the cart: Rae telling a carter the dog is not for sale, and then, after a thoughtful pause, asking what he'd offer.
 - 2026-11-15 · house · Wren has taken to trimming her quills against the cart's iron rim. Hollis says that is how a wheel goes bad. She says that is nonsense, and keeps doing it.
 - 2026-11-15 · body · He splits kindling for Maelis's fire and the axe comes down heavier than he swung it; the round falls in two at one stroke. He stands there afterward, looking at his hands.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-16 · body · He lies down under the cart without arranging the leg first, the way he has every night for months, and only notices afterward, in the dark, that he forgot to.
 - 2026-11-17 · weather · Grey first light, no wind, and the smell of wet char lying low over everything like a second mist. Even the dog walks round it.
 - 2026-11-17 · overheard · Overheard among the children by the burned wall: a new game, in which one of them holds the bridge and all the rest are the river. The river is not allowed to win. They are very strict about it.
+- 2026-11-17 · saying · Someone at the mill tells Wren the mountain saying, count the Steps and the Steps count you, meaning it kindly. Wren hates it. She says thank you, and writes down his name.
