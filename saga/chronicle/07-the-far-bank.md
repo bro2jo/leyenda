@@ -296,7 +296,7 @@ Nobody asked her why. The fire cracked.
 
 "West," said the man with the child. "That's all anybody knows. They come out of the west with the dark."
 
-The line had trodden a swathe through the field as wide as a road, and in the firelight it ran straight back into the trees. Darrow found he was looking along it. A road that wide came from somewhere, and by day there would be nothing on it to stop a man walking up it to see.
+The line had trodden a swathe through the field as wide as a road, and in the firelight it ran straight back into the trees. Darrow found he was looking along it. A road that wide came from somewhere, and by day there would be nothing on it to stop a man walking up it to see. He would not find where it began in a day, or in three. But a man could go two nights up it and be back by the third day, and know what lay along it.
 
 "No," said Maelis, across the fire, to nothing he had said yet.
 
@@ -311,4 +311,4 @@ On the bridge, the line of them stood pressed up against Rae's cart with their f
 **What does Darrow do?**
 1. **Keep them: the company goes on forty larger, at a cart's pace.**
 2. **Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.**
-3. **Leave them at the mill with the company and follow the walkers' trail back west at first light, with Ash and nobody else, to find where four hundred of them came from.**
+3. **Leave them at the mill with the company and follow the walkers' trail west at first light, with Ash and nobody else: two nights out and back by the third day, to see what lies along it.**

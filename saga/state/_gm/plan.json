@@ -45,7 +45,7 @@
           "options": [
             "Keep them: the company goes on forty larger, at a cart's pace.",
             "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.",
-            "Leave them at the mill with the company and follow the walkers' trail back west at first light, with Ash and nobody else, to find where four hundred of them came from."
+            "Leave them at the mill with the company and follow the walkers' trail west at first light, with Ash and nobody else: two nights out and back by the third day, to see what lies along it."
           ],
           "bearing": [
             {
@@ -58,7 +58,11 @@
               "unsworn": 2
             }
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 3,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -69,11 +73,11 @@
         "n": 3,
         "day": "2026-11-17",
         "kind": "spine",
-        "beat": "b2.4",
+        "beat": "b2.3",
         "float": false,
-        "plan": "Opens at first light at the burned mill, on his answer to the millers in a clause, and on the dawn: with the light the line on the bridge are walkers again and drift off east along the far bank; Rae takes her cart off the bridge; Maelis answers the woman's wrist (the tier is Sunday's: here only 'it is warmer than it was'). Then the slot's own matter: Hollis takes the paper out of the leg's cup at last, at the burned mill, and looks at the wax: the seal (thread 1 and thread 2 pay off here; the T3 reveal is on the page with its plants). The order to charge, into a river the Second had been told to hold. He reads it once and puts it away and says nothing that matters all day, which is the thing to fear. Callback c05.9b is not for this slot: its fit needs b2.4 under way, which this slot's own record makes true, so the brief offers it from Wednesday; fire it Thursday or Friday (the well, sober).",
-        "turn": "Hollis, who carried the order unread for a year, reads it; the company learns the old captain's quiet is worse than his noise.",
-        "tone": "grief and anger, plain and short",
+        "plan": "Opens at first light at the burned mill on his answer, played (c07.2a): why first, to all four, in his own words; each answers in voice. The dawn: with the light the line on the bridge are walkers again and drift off east along the far bank; Maelis on the woman's wrist (only 'warmer than it was': the tier is Sunday's). The company and the forty start north at a cart's pace at his charge; he goes west with Ash on the trodden road. Day one in summary: the road four hundred made, what they walked through and over, nothing living on it, cold that stays in the ground. Dusk: he builds his fire where he can feed it all night. The first night by the rule in world.md: stragglers still on the trail come to the fire's edge and stand; the fire must not sink; Ash. Ends on a lamp coming up the road from the east: Rae, who was not asked, with wood on her back, Hob and Dun left with Wren. She says it once.",
+        "turn": "Darrow, alone by his own choice, learns what one night costs on this road, and that the carter he did not ask has decided for herself.",
+        "tone": "eerie, then tense; a warm last line",
         "micro": null,
         "challenge": null,
         "invite": null,
@@ -87,7 +91,7 @@
         "quest": "rae.tether",
         "stage": 2,
         "float": true,
-        "plan": "The Tether, stage 2 (a hand), re-skinned to the road: the cart's tail at dusk, away from the mill's smoke. Her palms: the rope-burn ridges, the crooked thumb; the cage, her father, the splice that went quiet before it went. A rope is softest where it is worn smooth, she says, which is the only thing she and Maelis have ever agreed on without knowing it. Then her question, a carter's, after the weir: why he does not take the fast road down and kneel and have it all back, when she would, if anyone offered it to carters. Ends on the micro. Closes with the Reckoning box line for the Tether.",
+        "plan": "The second day and night west, the two of them and the dog. By day, in summary: the far point of this trip, a roadside field-stone with frost on it in full sun, the walkers' swathe thinning and braiding beyond it (T1 plant; nothing he can use yet, and he says so); they turn back with half a day in hand. The second night's fire: the Tether, stage 2 (a hand), re-skinned to the trail: her palms by firelight, the rope-burn ridges, the crooked thumb; the cage, her father, the splice that went quiet before it went. A rope is softest where it is worn smooth, she says, which is the only thing she and Maelis have ever agreed on without knowing it. Then her question, a carter's, after the weir: why he does not take the fast road down and kneel and have it all back, when she would, if anyone offered it to carters. Ends on the micro. Closes with the Reckoning box line for the Tether.",
         "turn": "Rae shows him a hurt she has never shown anyone and asks him the question nobody on his bank has asked; he must answer her, not a hunter.",
         "tone": "warm, then honest",
         "micro": {
@@ -120,9 +124,9 @@
         "kind": "spine",
         "beat": "b2.4",
         "float": false,
-        "plan": "Hollis carries the read seal a day. The company goes round him rough and warm and talking, not silent: Maelis with work, Wren with a story he can correct, Rae with the oxen, each in their own way, and he lets them. He does not drink, or he does, and the page shows which. By evening he has the question ready and has not asked it. Callback c05.2a may fire (Rae has known since the inn what Darrow saw; she does not open what she carries). Shape A is confirmed: Knot IV tied Mon 11/16 (PT 15), inside the window, so nothing is re-planned at this close; the week runs as planned and Book II crosses at Sunday's climax.",
-        "turn": "The company holds Hollis up without being asked to; Darrow sees the question coming and knows he will have to choose how much of the ford to give him.",
-        "tone": "rough and warm, waiting",
+        "plan": "The third day: back past the burned mill by noon (empty, the bridge clear) and up the north road on the column's tracks, which Rae reads aloud with some bitterness (her warning come true: a line of forty leaves a road a child could follow). They catch the column by dusk. What he missed: Hollis has looked at the seal (the interlude) and gone quiet, which is the thing to fear; the company has been going round him rough and warm and talking, each in their own way, and the millers have learned to leave him be. The price of leaving, in voice: Maelis charges for it; Wren's column; Hollis says what a captain who walks off is, once. By night Hollis has the question ready and has not asked it. Callback c05.2a may fire. Shape A is confirmed (Knot IV tied Mon 11/16): nothing is re-planned at this close.",
+        "turn": "Darrow comes back to a company that held without him and an old captain whose quiet began while he was gone; he sees the question coming and knows he will have to choose how much of the ford to give him.",
+        "tone": "rough and warm, uneasy",
         "micro": null,
         "challenge": null,
         "invite": null,
@@ -170,7 +174,7 @@
         "kind": "spine",
         "beat": "b2.5",
         "float": false,
-        "plan": "The road north to the ring the millers spoke of, a lead-in with no choice: the frozen marsh, the cold, the company smaller in the open. On the road Darrow opens the miller's letter at last, the one in the hand that was not Aldric's: Aldric does not sleep (q2.lantern's letter; its answer waits for another week). By dusk the ring is in sight across the reeds, older than Calden. Shape A confirmed (Knot IV tied Mon 11/16): this day stands as planned.",
+        "plan": "The road north to the ring the millers spoke of, with the forty in the column (kept by default, c07.2), a lead-in with no choice: the frozen marsh, the cold, the company smaller in the open. On the road Darrow opens the miller's letter at last, the one in the hand that was not Aldric's: Aldric does not sleep (q2.lantern's letter; its answer waits for another week). By dusk the ring is in sight across the reeds, older than Calden. Shape A confirmed (Knot IV tied Mon 11/16): this day stands as planned.",
         "turn": "Darrow learns from the letter that the man he wants to face is not sleeping either, and walks toward an old ring he means to read.",
         "tone": "wonder, uneasy",
         "micro": null,
@@ -183,6 +187,21 @@
           "if_ignored": "she goes to the ring without asking, and keeps to the back with a lamp",
           "status": "waiting"
         },
+        "status": "planned",
+        "wrote": null
+      },
+      {
+        "n": 8,
+        "day": null,
+        "kind": "interlude",
+        "pov": "hollis-garrow",
+        "float": false,
+        "plan": "Written at the Tuesday or Wednesday close, set on the company's first night north with the forty and the Captain gone west: Hollis takes the paper out of the leg's cup at last and looks at the wax: the seal (threads 1 and 2 pay off here; the T3 reveal is on the page with its plants, in his own head and alone, which is b2.4's Setback circumstance by the choice c07.2). The order to charge, into a river the Second had been told to hold. He reads it once and puts it away, sober. Callback c05.9b (the well, sober) may fire here. The reader knows what the Captain does not yet know Hollis knows.",
+        "turn": "Hollis, who carried the order unread for a year, reads it alone, with nobody to be loud at.",
+        "tone": "grief and anger, plain and short",
+        "micro": null,
+        "challenge": null,
+        "invite": null,
         "status": "planned",
         "wrote": null
       }
@@ -520,31 +539,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 2,
-    "chapter": 7,
-    "scene": "2",
-    "opened": "2026-11-16",
-    "beat": true,
-    "ask": "Forty millers at a burned mill, with the bridge behind them. What does Darrow do with them?",
-    "options": [
-      "Keep them: the company goes on forty larger, at a cart's pace.",
-      "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road.",
-      "Leave them at the mill with the company and follow the walkers' trail back west at first light, with Ash and nobody else, to find where four hundred of them came from."
-    ],
-    "bearing": [
-      {
-        "hearth": 2
-      },
-      {
-        "banner": 2
-      },
-      {
-        "unsworn": 2
-      }
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": [
       {
@@ -597,7 +592,7 @@
     "chapters_per_book": 4
   },
   "tallies": {
-    "chased": 1,
+    "chased": 2,
     "held": 7
   },
   "tallies_log": [
@@ -662,6 +657,14 @@
       "name": "held",
       "delta": 1,
       "why": "ch07:s2: stood the mill bridge with the stick barred while the last cart crossed",
+      "book": 2,
+      "chapter": 7
+    },
+    {
+      "date": "2026-11-16",
+      "name": "chased",
+      "delta": 1,
+      "why": "c07.2: went west alone on the walkers' trail, two nights",
       "book": 2,
       "chapter": 7
     }

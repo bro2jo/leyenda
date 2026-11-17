@@ -47,12 +47,12 @@
       }
     },
     "sworn_unsworn": {
-      "value": -5,
+      "value": -3,
       "left": "Sworn",
       "right": "Unsworn",
       "moved": {
         "left": 5,
-        "right": 0
+        "right": 2
       },
       "rungs": {
         "lean": "Sworn",
@@ -245,6 +245,12 @@
       "date": "2026-11-15",
       "axis": "candor_guile",
       "delta": -2
+    },
+    {
+      "why": "c07.2",
+      "date": "2026-11-16",
+      "axis": "sworn_unsworn",
+      "delta": 2
     }
   ],
   "ladder": {

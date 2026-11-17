@@ -2153,6 +2153,49 @@
           "evidence": "Grandmothers missed: one."
         }
       ]
+    },
+    {
+      "id": "c07.2",
+      "made": {
+        "chapter": 7,
+        "scene": "2",
+        "date": "2026-11-17"
+      },
+      "chose": "His own answer, nearest the third: said why first to all four at the fire, charged the company with the forty millers and with putting distance between them and the walkers, and went west on the trodden trail at first light with Ash, two nights out, to learn how the walkers can be stopped; promised to catch the company up; invited nobody, Rae included.",
+      "now": {
+        "approval": {
+          "maelis": -7,
+          "hollis": -5,
+          "wren": 2
+        },
+        "bearing": {
+          "unsworn": 2
+        }
+      },
+      "due": [
+        {
+          "id": "c07.2a",
+          "when": "next",
+          "at": "ch07:s3",
+          "weight": "scene",
+          "what": "The next scene opens on his answer, played at the fire at first light, his own words on the page: why first, to all four; the forty need you; put distance between them and the walkers; I go west two nights to learn how they are stopped; I will catch you up. He asks nobody to come. Each of the four answers in voice (Maelis and Hollis against, Wren for the road and against the alone, Rae says what she says).",
+          "status": "pending"
+        },
+        {
+          "id": "c07.2b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "He kept the fork promise: why first, out loud, before he went. Rae weighs that against being left with forty mouths and her cart; her answer is her own and may be an act, not a word.",
+          "fits": "present.rae",
+          "priority": 3,
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "Keep them: the company goes on forty larger, at a cart's pace.",
+        "Send them up the Holloway to Saint Ysolde's with the House's name and Rae's word for the road."
+      ]
     }
   ],
   "rules": [
