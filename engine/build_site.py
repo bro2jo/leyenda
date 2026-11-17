@@ -60,6 +60,10 @@ Conventions the parser and the checks rely on:
               Rendered in words only: "even" / "leans X" / "named X", a marker on a bar, the current epithet as a
               chip. The pole words are always allowed on the site; the current epithet only once the chronicle has
               spoken it (the build fails otherwise); the names table is never rendered and never allow-listed.
+  Numbers     the sheet shows where he stands in metal, arcs, bars and words; its figures (XP, Ember, temper, an Art's
+              days, the next Knot, the Collection's ladder, a roll's arithmetic) wait in a shut ask() fold, so opening
+              one is the asking. The Now page puts the story first (the chapter, the map, the quest, the company) and
+              the game after (the news, the Reckoning, the dice).
   GM wall     world.json must not carry chapter_plan, core_beats, flags, factions or current_quest.summary;
               those live under saga/state/_gm/. Every sentence in a _gm/*.md file is blocked from the site
               unless the chronicle, engine/rules.json or the Bearing's pole words / current epithet already carry it.
@@ -897,8 +901,8 @@ def sigil(faction, mark, size=64, cls="", label=""):
     return (f'<svg class="sigil {cls}" width="{size}" height="{int(size * 1.16)}" viewBox="0 0 100 116" {aria}>'
             '<path d="M50 3 L95 14 V56 C95 84 75 102 50 113 C25 102 5 84 5 56 V14 Z" class="sg-shield"/>'
             '<path d="M50 9 L89 18.5 V56 C89 80 72 96 50 106 C28 96 11 80 11 56 V18.5 Z" class="sg-inner"/>'
-            '<path d="M14 64 L86 64" class="sg-s"/>'
-            + svg_device(f.get("device"), f.get("numeral", "")) + svg_mark(mark) + "</svg>")
+            '<path d="M14 64 L86 64" class="sg-s"/>'  # the numeral only where it can be read
+            + svg_device(f.get("device"), f.get("numeral", "") if size >= 40 else "") + svg_mark(mark) + "</svg>")
 
 
 # The metal of each rank, in the order of rules.json → levels.ranks (CSS .metal-*): the crest, the portrait's frame, the
@@ -909,17 +913,17 @@ METALS = ("iron", "brass", "steel", "silver", "ember", "gold", "white-gold")
 ART_METALS = ("iron", "bronze", "steel", "silver", "gold")
 
 
-def crest(level, big=False):
+def crest(level):
+    """The level on a shield in the rank's metal: the number alone (a word at this size could not be read; the label says it)."""
     lv = esc(level)
-    size = 30 if (isinstance(level, int) and level >= 10) else 36
+    size = 36 if (isinstance(level, int) and level >= 10) else 42
     if level in ("?", "—"):
-        size = 40
+        size = 44
     label = "Level unread" if level == "?" else ("No level of his own: borrowed strength" if level == "—" else f"Level {lv}")
     return (f'<svg class="crest{" unread" if level == "?" else " borrowed" if level == "—" else ""}" viewBox="0 0 86 100" aria-label="{label}" role="img">'
             '<path d="M43 3 L82 13 V48 C82 73 65 88 43 97 C21 88 4 73 4 48 V13 Z" class="cr-shield"/>'
             '<path d="M43 9 L76 17.5 V48 C76 69 61.5 82 43 90 C24.5 82 10 69 10 48 V17.5 Z" class="cr-inner"/>'
-            f'<text class="lvl" x="43" y="31" text-anchor="middle" font-size="9">LEVEL</text>'
-            f'<text class="lv" x="43" y="{70 if size < 40 else 72}" text-anchor="middle" font-size="{size}">{lv}</text></svg>')
+            f'<text class="lv" x="43" y="50" text-anchor="middle" dominant-baseline="central" font-size="{size}">{lv}</text></svg>')
 
 
 # The kinds of place drawn as a label on the terrain, never as a marker.
@@ -1274,7 +1278,7 @@ def svg_map(places, route, current_id, rel, base=None):
         here = p["id"] == current_id
         kind = p.get("kind")
         cls = "mp-pt" + (" visited" if p.get("visited") else "") + (" current" if here else "") + ("" if p.get("on_page") else " faint")
-        g = [f'<g class="{cls}">']
+        g = [f'<g class="{cls}"><circle cx="{x}" cy="{y}" r="13" class="mp-hit"/>']  # a thumb's target round the marker
         if here:
             g.append(f'<circle cx="{x}" cy="{y}" r="9" class="mp-ring" fill="none" stroke="#E2713B"/>')
         if kind == "city":  # a walled town with a spire
@@ -1307,6 +1311,17 @@ def svg_map(places, route, current_id, rel, base=None):
                    f'<circle cx="{x}" cy="{y}" r="3.6" class="mp-dot" fill="#E2713B" stroke="#161B22" stroke-width="1.2"/></g>')
     out.append("</svg>")
     return "".join(out)
+
+
+def map_places(places, route, current_id, rel):
+    """The places he has been, as links under the map (a thumb's target where the map's labels are small, and the map in
+    words): in the order the road first reached them, then the rest he has crossed; where he is now in ember."""
+    order = list(dict.fromkeys(r for r in route if isinstance(r, str)))
+    been = sorted((p for p in places if p.get("visited") and p.get("on_page")),
+                  key=lambda p: order.index(p["id"]) if p["id"] in order else len(order))
+    links = "".join(f'<a class="chip{" ember" if p["id"] == current_id else ""}" href="{rel}codex/index.html#place-{esc(p["id"])}">'
+                    f'{esc(p.get("label") or p["name"])}</a>' for p in been)
+    return f'<p class="lbl">Where he has been</p><div class="chips map-places">{links}</div>' if links else ""
 
 
 def rope_knots(tied, knots):
@@ -1354,12 +1369,12 @@ def medallion(name, score, mod=None, fell=None, size=56, tone=None, cls=""):
     parts.append(f'<text x="{c}" y="{y}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_DISPLAY_FONT}" '
                  f'font-size="{22 if s is None or s < 100 else 17}" font-weight="700" fill="{ink}">{esc(score)}</text>')
     if mod is not None:
-        parts.append(f'<text x="{c}" y="{c + 12.5}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="9" '
+        parts.append(f'<text x="{c}" y="{c + 13.5}" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="11" '
                      f'font-weight="700" fill="{PAL["dim"]}">{mod:+d}</text>')
     if f:
         col = PAL["ember"] if hot else PAL["faint"]
-        parts.append(f'<circle cx="52.5" cy="11.5" r="8.5" fill="{PAL["night"]}" stroke="{col}" stroke-width="1"/>'
-                     f'<text x="52.5" y="12" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="8.5" '
+        parts.append(f'<circle cx="53" cy="11" r="10.5" fill="{PAL["night"]}" stroke="{col}" stroke-width="1"/>'
+                     f'<text x="53" y="11.5" text-anchor="middle" dominant-baseline="central" font-family="{SVG_LABEL_FONT}" font-size="11.5" '
                      f'font-weight="700" fill="{col}">{f}</text>')
     label = f"{name} {score}" + (f" ({mod:+d})" if mod is not None else "") + (f"; the Knight Who Fell: {f}" if f else "")
     return (f'<svg class="medal{" hot" if hot else ""}{(" " + cls) if cls else ""}" viewBox="0 0 64 64" width="{size}" height="{size}" role="img" '
@@ -1476,19 +1491,18 @@ def chip_glyph(name, text, cls=""):
     return f'<span class="chip ic-chip {cls}">{glyph(name, 14)}{esc(text)}</span>'
 
 
-def bar(have, need, label, cls="", show=None, text=None, quiet=False, ticks=None, lead=""):
-    """A progress bar. text: what screen readers hear instead of the numbers (used for approval, which is never shown as a number).
-    quiet: no visible label row (the line above the bar already names it); screen readers still hear the label.
-    ticks: an int divides the bar into that many segments; a list of fractions (0-1) marks each one (the Ember's tiers).
-    lead: a drawing (a flame, a glyph) set before the label."""
+def bar(have, need, label, cls="", text=None, quiet=False, ticks=None, lead=""):
+    """A progress bar, drawn without its figures (they live in an ask() fold). text: what screen readers hear instead of
+    the numbers (used for approval, which is never shown as a number). quiet: no visible label row (the line above the
+    bar already names it); screen readers still hear the label. ticks: an int divides the bar into that many segments; a
+    list of fractions (0-1) marks each one (the Ember's tiers). lead: a drawing (a flame, a glyph) set before the label."""
     need = max(need, 1)
     pct = max(0, min(100, 100.0 * have / need))
-    txt = f'<span class="num">{show}</span>' if show is not None else ""
     if text is not None:
         aria = f'role="img" aria-label="{esc(label)}: {esc(text)}"'
     else:
         aria = f'role="progressbar" aria-label="{esc(label)}" aria-valuemin="0" aria-valuemax="{need}" aria-valuenow="{have}"'
-    head = "" if quiet else f'<div class="bar-l"><span>{lead}{esc(label)}</span>{txt}</div>'
+    head = "" if quiet else f'<div class="bar-l"><span>{lead}{esc(label)}</span></div>'
     marks = ""
     if isinstance(ticks, int) and ticks > 1:
         marks = f'<span class="ticks" style="--n:{ticks}" aria-hidden="true"></span>'
@@ -1525,6 +1539,15 @@ def panel(title, meta, inner, pid=""):
 
 def details(summary, inner, open_=False):
     return f'<details{" open" if open_ else ""}><summary>{esc(summary)}</summary><div class="dt-body">{inner}</div></details>'
+
+
+def ask(summary, inner):
+    """A small fold kept shut: the arithmetic behind a roll, a bar, a rank. The sheet shows what changed in metal, arcs
+    and words; opening this is the asking (he discovers the mechanics rather than studying them). inner: html, or a list
+    of short html lines (empty ones dropped). Nothing when there is nothing inside."""
+    if isinstance(inner, list):
+        inner = "".join(f"<p>{x}</p>" for x in inner if x)
+    return f'<details class="ask"><summary>{esc(summary)}</summary>{inner}</details>' if inner else ""
 
 
 STATUS_CLS = {"alive": "good", "fallen": "bad", "hollowed": "sealed", "missing": "warn", "unknown": "dim"}
@@ -1967,13 +1990,15 @@ class Site:
 
     def avatar(self, c, rel, size, cls=""):
         """A round portrait in place of a sigil (roster cards, the Now page); empty when the character has none. With a
-        portrait_zoom it is a circle zoomed in on the face (the medium copy, so the zoom stays sharp)."""
+        portrait_zoom it is a circle zoomed in on the face: the small copy where it stays sharp at the screen's density,
+        the medium one where it would not (the browser picks, from the drawn width: the circle times the zoom)."""
         if not c or not c.get("_portrait_path"):
             return ""
         k = f'avatar{(" " + cls) if cls else ""}'
         if c.get("_portrait_face"):
-            return (f'<span class="{k} zoomed"><img src="{rel}{c["_portrait_md"]}" alt="" width="{size}" height="{size}" '
-                    f'style="{c["_portrait_face"]}" decoding="async"></span>')
+            z = float(c.get("portrait_zoom") or 1)
+            return (f'<span class="{k} zoomed"><img src="{rel}{c["_portrait_sm"]}" srcset="{rel}{c["_portrait_sm"]} 256w, {rel}{c["_portrait_md"]} 640w" '
+                    f'sizes="{round(size * z)}px" alt="" width="{size}" height="{size}" style="{c["_portrait_face"]}" decoding="async"></span>')
         return (f'<img class="{k}" src="{rel}{c["_portrait_sm"]}" alt="" '
                 f'width="{size}" height="{size}"{c.get("_portrait_focus", "")} decoding="async">')
 
@@ -2004,7 +2029,7 @@ class Site:
             return ""
         href = rel + s["path"]
         return (f'<figure class="codex-song"><figcaption>♪ {esc(s["title"])}</figcaption>'
-                f'<audio controls preload="metadata" src="{href}"><a href="{href}">Listen</a></audio></figure>')
+                f'<audio controls preload="none" src="{href}"><a href="{href}">Listen</a></audio></figure>')  # fetched on play, not on open
 
     def song_button(self, s, rel, compact=False):
         """The small play button in the story: a link to the song that site.js plays in place (without it, the link
@@ -2699,22 +2724,33 @@ class Site:
         nxt = d["level"] + 1
         rank = next((r["name"] for r in self.rules["levels"]["ranks"] if r["from"] == nxt), None)
         label = f"XP toward Level {nxt}" + (f" · {rank}" if rank else "")
-        return bar(xp_into, xp_span, label, "", f"{xp_into:,} / {xp_span:,}", ticks=10)
+        return bar(xp_into, xp_span, label, "", ticks=10)
 
     def ember_bar(self, effect=False):
         """The Ember's bar with a tick at each tier's foot and the brazier before its label; effect: the tier's effect under it."""
         e = self.darrow["ember"]
         tier = e.get("tier") or "unlit"
         ticks = sorted(t["min"] / 100.0 for t in self.rules["ember"]["tiers"] if 0 < t.get("min", 0) < 100)
-        html = bar(e["value"] or 0, 100, f"Ember · {tier}", "ember", e["value"], ticks=ticks, lead=flame("ember", tier, 22))
+        html = bar(e["value"] or 0, 100, f"Ember · {tier}", "ember", ticks=ticks, lead=flame("ember", tier, 22))
         if effect and e.get("effect"):
             html += f'<p class="ember-effect">{esc(e["effect"])}</p>'
         return html
 
-    def darrow_standing(self):
-        """Where Darrow stands, at the foot of his plate: his rank and XP, the bar to the next level, Ember and Inspiration."""
+    def standing_numbers(self):
+        """The figures behind the XP and Ember bars, for an ask() fold."""
         d = self.darrow
-        return (f'<div class="stand"><p class="reck-line">{esc(d["rank"])} · <span class="num">XP {d["xp"]:,}</span></p>'
+        into, span = d["xp"] - d["xp_this_level"], d["xp_next_level"] - d["xp_this_level"]
+        return [f'XP {d["xp"]:,} · {into:,} of {span:,} toward Level {d["level"] + 1}', f'Ember {d["ember"]["value"] or 0} of 100']
+
+    def next_knot(self):
+        """The first Knot not yet tied (rules.json → knots), or None."""
+        tied = set(self.darrow.get("knots_tied") or [])
+        return next((k for k in self.rules.get("knots") or [] if k["n"] not in tied), None)
+
+    def darrow_standing(self):
+        """Where Darrow stands, at the foot of his plate: his rank, the bar to the next level, Ember and Inspiration."""
+        d = self.darrow
+        return (f'<div class="stand"><p class="reck-line">{esc(d["rank"])}</p>'
                 f'{self.xp_bar()}'
                 f'<div class="row2"><div>{self.ember_bar(effect=True)}</div>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"], "spark")}</div></div></div>')
@@ -2888,24 +2924,27 @@ class Site:
     # ---------------------------------------------------------------- darrow
     def darrow_reckoning(self, rel):
         """The Reckoning under Darrow's plate, always open: the look he wears (a strip that opens the Wardrobe), his chips,
-        and the four attributes. His level, XP, Ember and Inspiration are on the plate above it (darrow_standing)."""
+        and the four attributes. His level, XP, Ember and Inspiration are on the plate above it (darrow_standing); the figures
+        behind every bar wait in one fold under the attributes."""
         d, rules = self.darrow, self.rules
         a = d["attributes"]
-        tiles = []
+        tiles, numbers = [], self.standing_numbers()
         for k in ("might", "vigor", "finesse", "resolve"):
             x = a[k]
             spec = rules["attributes"][k]
             prev = spec["divisor"] * (x["raw"] - spec["base"]) ** 2
             have = x["temper"] - prev
             need = x["next_at"] - prev
-            cap = f'<span class="s sealed-line">held by the Binding at {x["cap"]}</span>' if x.get("banked") else ""
+            cap = '<span class="s sealed-line">held by the Binding</span>' if x.get("banked") else ""
             tiles.append(f'<div class="stk{" hot" if x["score"] >= x["fell"] else ""}">{medallion(k.capitalize(), x["score"], x["mod"], x["fell"], 60)}'
                          f'<span class="n">{k.capitalize()}</span>'
-                         f'{bar(have, need, k.capitalize() + " temper", "temper")}<span class="s">temper {x["temper"]} · next at {x["next_at"]}</span>{cap}</div>')
+                         f'{bar(have, need, k.capitalize() + " temper", "temper")}{cap}</div>')
+            numbers.append(f'{k.capitalize()}: temper {x["temper"]} · next at {x["next_at"]}' + (f' · held at {x["cap"]}' if x.get("banked") else ""))
         wear = self.wearing_strip(rel)
         chips = (f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
                  f'{self.works_chip()}{"" if wear else self.wardrobe_chip(rel)}{self.collection_chip(rel)}</div>')
-        stats = chips + f'<div class="streaks">{"".join(tiles)}</div><p class="hint">The small number on each is who he was: the Knight Who Fell.</p>'
+        stats = (chips + f'<div class="streaks">{"".join(tiles)}</div><p class="hint">The small number on each is who he was: the Knight Who Fell.</p>'
+                 + ask("The numbers", numbers))
         inner = f'<div class="screen">{self.wearing_figure(rel)}<div class="screen-stats">{wear}{stats}</div></div>' if wear else stats
         return sec("The Reckoning", "", f'<div class="reck">{inner}</div>', cls="reck-sec", hid="reckoning")
 
@@ -2940,7 +2979,7 @@ class Site:
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
         self.stray_pictures("arts", {a["id"] for a in d["arts"]}, "the id of an Art in engine/rules.json")
-        tree_html, n_learned, n_sealed = [], 0, 0
+        tree_html, n_learned, n_sealed, numbers = [], 0, 0, []
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
             rows = []
             for art in trees[tree]:
@@ -2949,9 +2988,11 @@ class Site:
                 n_sealed += bool(sealed)
                 n_learned += bool(not sealed and art["rank"] > 0)
                 if sealed:
-                    st = f'<span class="sealed-line">sealed until Knot {roman(sealed)}</span>' + (f' <span class="dim num">· {art["practice"]} days banked</span>' if art["practice"] else "")
+                    st = f'<span class="sealed-line">sealed until Knot {roman(sealed)}</span>'
+                    numbers.append(f'{esc(art["name"])}: {art["practice"]} day{"" if art["practice"] == 1 else "s"} banked' if art["practice"] else "")
                 elif art["rank"] > 0:
-                    st = f'<span class="brass">rank {roman(art["rank"])}</span>' + (f' <span class="dim num">· next at {art["next_at"]} days ({art["practice"]} so far)</span>' if art.get("next_at") else "")
+                    st = f'<span class="brass">rank {roman(art["rank"])}</span>'
+                    numbers.append(f'{esc(art["name"])}: {art["practice"]} day{"" if art["practice"] == 1 else "s"}' + (f' · next rank at {art["next_at"]}' if art.get("next_at") else ""))
                 else:
                     st = '<span class="dim">not yet learned</span>'
                 prev = thresholds[rank - 1] if rank else 0
@@ -2969,7 +3010,7 @@ class Site:
             ch = titles.get(r["chapter"])
             t = f'<a href="{rel}chronicle/{ch["slug"]}.html">{esc(ch["label"])} — {esc(ch["title"])}</a>' if ch else f"Chapter {esc(r['chapter'])}"
             chap_rows.append(f'<li class="sealed-row">{svg_seal(r["tier"], 28)}<div><b>{t}</b><span class="m">{esc(TIER_DONE.get(r["tier"], r["tier"]))}</span></div></li>')
-        sheet = [("arts", "Arts", f"{n_learned} learned · {n_sealed} sealed", "".join(tree_html))]
+        sheet = [("arts", "Arts", f"{n_learned} learned · {n_sealed} sealed", "".join(tree_html) + ask("The numbers", numbers))]
         if self.bearing:
             sheet.append(("bearing", "Bearing", esc(self.bearing_summary()),
                           f'<p class="hint">{esc(BEARING_LABEL[:1].upper() + BEARING_LABEL[1:])}.</p>' + self.bearing_html()))
@@ -3031,17 +3072,20 @@ class Site:
         return f'<span class="chip brass works-chip">Works · {n} finished {tally(n, 13)}</span>' if n else ""
 
     def knots_html(self, d, rel):
+        """The Binding: the rope, the Tether, the tied Knots in full; the ones still to tie wait in a fold."""
         tied = set(d.get("knots_tied") or [])
         knots = self.rules.get("knots") or []
-        rows = []
+        rows = {True: [], False: []}
         for k in knots:
             on = k["n"] in tied
             opens = f'<span class="m faint">opens Book {roman(k["opens"])}</span>' if on else ""
-            rows.append(f'<li class="knot{" on" if on else ""}"><span class="rn">{roman(k["n"])}</span><div><b>{esc(k["name"])}</b>'
-                        f'<span class="m">{esc(k["proves"])}</span>{opens}</div>'
-                        f'{badge("tied", "good") if on else badge("untied", "dim")}</li>')
+            rows[on].append(f'<li class="knot{" on" if on else ""}"><span class="rn">{roman(k["n"])}</span><div><b>{esc(k["name"])}</b>'
+                            f'<span class="m">{esc(k["proves"])}</span>{opens}</div>'
+                            f'{badge("tied", "good") if on else badge("untied", "dim")}</li>')
         soft = '<p class="hint">The soft season: do not trust the quiet.</p>' if d.get("soft_season") else ""
-        return rope_knots(tied, knots) + self.tether_thread() + f'<ul class="knots">{"".join(rows)}</ul>{soft}'
+        untied = f'<ul class="knots">{"".join(rows[False])}</ul>' if rows[False] else ""
+        return (rope_knots(tied, knots) + self.tether_thread() + f'<ul class="knots">{"".join(rows[True])}</ul>'
+                + ask("Still to tie", untied) + soft)
 
     def render_darrow(self):
         """Darrow's page: who he is, then the Reckoning, open; below them every other section folded shut (a link to one
@@ -3487,7 +3531,7 @@ class Site:
 
     def render_collection(self):
         """The Collection (darrow/collection.html): every piece of the Wardrobe and where it came from. His rank (the count
-        of pieces he can wear against engine/wardrobe.json → collection.ranks) with the bar to the next and the ladder; the
+        of pieces he can wear against engine/wardrobe.json → collection.ranks) with the bar to the next, the ladder folded; the
         sets, each with its pieces and a seal once whole; then a shelf per category, every piece on it with its reason and
         the chapter it opened in, the locked ones greyed with what opens them, the hidden ones only counted. A piece opens
         its card in the Forge (wardrobe.html#piece-<category>-<piece>)."""
@@ -3502,14 +3546,13 @@ class Site:
         if col["complete"]:
             meter = '<p class="col-next">Every piece in the Wardrobe is his.</p>'
         elif nxt:
-            meter = (bar(col["have"] - col["rank_at"], nxt["at"] - col["rank_at"], "Toward " + nxt["name"], "brass", show=f'{col["have"]} of {nxt["at"]}')
-                     + f'<p class="col-next">Next: <b>{esc(nxt["name"])}</b> at {nxt["at"]} pieces.</p>')
+            meter = bar(col["have"] - col["rank_at"], nxt["at"] - col["rank_at"], "Toward the next rank", "brass")
         else:
             meter = f'<p class="col-next">Every rank reached. {col["of"] - col["have"]} pieces still to open.</p>'
         ladder = "".join(f'<li class="{"on" if col["have"] >= r["at"] else ""}{" cur" if r["at"] == col["rank_at"] and not col["complete"] else ""}">'
                          f'<span class="num">{r["at"]}</span><b>{esc(r["name"])}</b></li>' for r in col["ranks"])
         ladder += f'<li class="{"on cur" if col["complete"] else ""}"><span class="num">all</span><b>{esc((w.get("collection") or {}).get("complete", ""))}</b></li>'
-        ladder = f'<ol class="col-ladder col-rail">{ladder}</ol>'
+        ladder = ask("The ranks", f'<ol class="col-ladder col-rail">{ladder}</ol>')
         plate = (f'<section class="plate col-plate{self.metal(d["level"])}"><p class="lbl"><a href="index.html">Ser Darrow of Edgemoor</a> · <a href="wardrobe.html">The Wardrobe</a></p>'
                  '<h1>The Collection</h1><p class="sub">Every piece he can wear, and where each one came from. More opens as he grows, and as the story shows him new things.</p>'
                  f'<div class="col-rank"><span class="lbl">His rank</span><b>{esc(col["rank"])}</b><span class="num col-count">{col["have"]} of {col["of"]} pieces</span></div>'
@@ -3671,25 +3714,24 @@ class Site:
                              f'<span class="roll-res">{esc(cres.title())}</span></li>')
             rows.append(f'<li class="roll"><div class="roll-top">{d20_glyph(kept_die(last.get("d20", "") + (f"/{last['d20_b']}" if last.get("d20_b") else ""), last.get("mode")), res)}<span class="dice-tag">{esc(first.get("stat", "").upper() or "FLAT")} · DC {esc(first.get("dc"))}</span>{times}'
                         f'{badge(res.title(), cls)}</div>'
-                        f'<details class="roll-more"><summary>the roll</summary><ul class="roll-casts">{"".join(lines)}</ul></details>'
+                        + ask("the roll", f'<ul class="roll-casts">{"".join(lines)}</ul>')
                         + (f'<p class="roll-where">{where}</p>' if where else "") + '</li>')
         return f'<ul class="rolls">{"".join(rows)}</ul>'
 
     def knots_brief(self, rel):
-        """The Knots on the Now page: the rope, how many are tied and the next one; the full list lives on Darrow's page."""
+        """The Knots on the Now page: the rope and how many are tied (the next one waits in the card's fold); the full
+        list lives on Darrow's page."""
         d = self.darrow
         tied = set(d.get("knots_tied") or [])
         knots = self.rules.get("knots") or []
-        nxt = next((k for k in knots if k["n"] not in tied), None)
         line = f'Knots tied {roman(len(tied))} of {roman(self.n_knots)}'
-        if nxt:
-            line += f' · next, {esc(nxt["name"])}: {esc(nxt["proves"])}'
         soft = '<p class="hint">The soft season: do not trust the quiet.</p>' if d.get("soft_season") else ""
         return f'<div class="knots-brief">{rope_knots(tied, knots)}<p class="m">{line}.</p>{self.tether_thread(line=False)}{soft}</div>'
 
     def render_now(self):
-        """What is going on now, in the order he would act on it: the chapter and the way back into it, an open choice,
-        the quest, who is with him, his Reckoning, the map, the last answered choice, the latest dice. Each world.json field
+        """What is going on now, the story before the game: the chapter and the way back into it, an open choice, the map,
+        the quest, who is with him, the last answered choice, the tales; then the level and Wardrobe news, his Reckoning
+        and the latest dice. Each world.json field
         has one job here: last_beat the latest scene, current_quest.on_the_page the quest, current_struggle what he fights,
         and a companion's line is their last_seen_doing (their page carries the rest)."""
         rel = ""
@@ -3762,10 +3804,11 @@ class Site:
                          f'<span class="m">{esc(c.get("last_seen_doing", ""))}</span>{regard}</div></a>')
         companions = sec("With him", "", f'<div class="comps">{"".join(comps)}</div>' if comps else '<p class="empty">No one yet.</p>')
         a = d["attributes"]
-        rk = "".join(f'<div class="mini-attr{" hot" if a[k]["score"] >= a[k]["fell"] else ""}">{medallion(k.capitalize(), a[k]["score"], a[k]["mod"], a[k]["fell"], 48)}'
+        rk = "".join(f'<div class="mini-attr{" hot" if a[k]["score"] >= a[k]["fell"] else ""}">{medallion(k.capitalize(), a[k]["score"], a[k]["mod"], a[k]["fell"], 56)}'
                      f'<span class="lbl">{k.capitalize()}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
         bchip = (self.bearing_chip() or "") + self.tether_chip() + self.works_chip()
+        nk = self.next_knot()
         card = (f'<div class="rk-mini"><div class="hero{self.metal(d["level"])}">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])}</p>'
                 f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}</div>'
                 f'<div class="insp"><span class="lbl">Inspiration</span>{pips(d["inspiration"], d["inspiration_cap"], "spark")}</div>'
@@ -3774,7 +3817,8 @@ class Site:
                 f'<div class="mini-attrs">{rk}</div><p class="hint">The faint numbers are the ones he read behind his own.</p>'
                 f'{self.ember_bar()}'
                 f'{self.knots_brief(rel)}'
-                f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
+                + ask("The numbers", self.standing_numbers() + [f'Next, {esc(nk["name"])}: {esc(nk["proves"])}' if nk else ""])
+                + f'<p class="links"><a href="{rel}darrow/index.html#reckoning">The full Reckoning</a> · <a href="{rel}darrow/index.html#binding">All the Knots</a></p></div>')
         reck = sec("The Reckoning", "", card)
         base = None
         if self.map_base:
@@ -3784,9 +3828,11 @@ class Site:
         map_html = sec("The map", "", svg_map(self.places, self.route, self.current_place, rel, base)
                        + '<p class="legend"><span><span class="lg ember">●</span> Darrow</span> <span><span class="lg brass">●</span> visited</span> <span><span class="lg faint">●</span> not yet</span> '
                        '<span><svg class="lg-route" width="22" height="6" aria-hidden="true"><path d="M1 3 H21"/></svg> the road so far</span></p>'
-                       '<p class="hint">Tap a name on the map to read about the place.</p>')
+                       + map_places(self.places, self.route, self.current_place, rel))
         dice = sec("The dice", "", self.dice_html(rel))
-        body = self.level_news(rel) + self.wardrobe_news(rel) + plate + open_html + quest + companions + reck + tales_html + map_html + answered_html + dice
+        story = plate + open_html + map_html + quest + companions + answered_html + tales_html  # the story first
+        game = self.level_news(rel) + self.wardrobe_news(rel) + reck + dice  # then the game's news and numbers
+        body = story + game
         self.pages["index.html"] = shell("Now", body, rel, "Now", "now-page", desc="What is going on now in The Unkneeling.")
 
     def place_backdrop(self, place, rel):
