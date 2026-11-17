@@ -4,3 +4,5 @@ __pycache__/
 # personal Claude Code files, never shared
 CLAUDE.local.md
 .claude/settings.local.json
+# the side game, built: python3 game/build.py makes it again
+game/dist/

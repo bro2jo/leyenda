@@ -1,0 +1,236 @@
+<div class="wrap">
+  <header class="top">
+    <p class="lbl">The Unkneeling · a side game · playtest build two</p>
+    <h1>The Line and the Hand</h1>
+    <p class="lede">Move the company on the map, pick a fight, and play it as a hand of cards. Three grounds, seven kinds of foe, Wounds, stances, spoils, and a camp between battles. Rae is with the company now: she does not fight, she tends. The game lives in the repo under <code>game/</code>, and the first of your own pictures and sounds are in.</p>
+  </header>
+
+  <section class="block">
+    <div class="bench">
+      <div class="phone" id="game" aria-label="The Line and the Hand, playable"></div>
+      <div class="notes">
+        <section>
+          <h3>How to play</h3>
+          <ol>
+            <li><b>On the map,</b> tap one of the company, then a lit tile to move. Tap anyone to see what is in force on them; tap an effect to read it.</li>
+            <li><b>To fight,</b> tap a foe ringed in red, read the forecast, and engage.</li>
+            <li><b>Rae</b> does not fight. Select her and tap a hurt friend beside her, ringed in green, to mend them and set aside a Wound. A fighter with Rae beside them is lent her hand.</li>
+            <li><b>At the table,</b> tap a card to read it and tap again to play, or drag it up onto the field. His answer and its number sit above his head.</li>
+            <li><b>End the hand</b> and he answers once. Block you kept becomes guard; breath you kept is held.</li>
+            <li><b>Bring down the captain</b> to win the battle. Every man felled pays spoils.</li>
+            <li><b>At camp,</b> spend spoils on cards, mending, honing or leaving a card behind. What you do not spend counts toward your Renown.</li>
+          </ol>
+        </section>
+        <section>
+          <h3>Playtest settings</h3>
+          <div class="setrow"><span class="lbl">A clash lasts</span><span class="seg"><button type="button" data-pref="rounds=1">One hand</button><button type="button" data-pref="rounds=3">Up to three rounds</button></span></div>
+          <div class="setrow"><span class="lbl">Animation</span><span class="seg"><button type="button" data-pref="quick=false">Full</button><button type="button" data-pref="quick=true">Quick</button></span></div>
+          <div class="setrow"><span class="lbl">Sound</span><span class="seg"><button type="button" data-pref="sound=false">Off</button><button type="button" data-pref="sound=true">On</button></span></div>
+          <div class="setrow"><span class="lbl">Darrow's deck</span><span class="seg"><button type="button" data-pref="deck=sheet">The sheet</button><button type="button" data-pref="deck=all">Plus every camp card</button></span></div>
+          <p class="small">With sound on, a sound you have made plays as itself and the rest play a stand-in tone, so you can hear where each will fall. Changing the deck starts a new run; the full deck is for trying cards, not for a fair game.</p>
+        </section>
+        <section>
+          <h3>What the icons mean</h3>
+          <dl class="words">
+            <dt>Guard, Block</dt><dd>Soaks damage. Guard that holds a blow whole strikes back.</dd>
+            <dt>Open</dt><dd>The next hit lands for half again.</dd>
+            <dt>Broken</dt><dd>He cannot answer this hand.</dd>
+            <dt>Pinned, Marked</dt><dd>He will not move next turn. The next friend has one more breath.</dd>
+            <dt>Tough</dt><dd>Each hit on him deals less. Big blows beat small ones.</dd>
+            <dt>Barbed</dt><dd>His blow, if it lands, leaves a Wound: a dead card until the battle ends.</dd>
+            <dt>Banner, Rallied</dt><dd>While the bannerman stands, the others strike harder.</dd>
+            <dt>Will enrage</dt><dd>At half health the captain strikes harder.</dd>
+            <dt>Flurry</dt><dd>His answer is several small blows.</dd>
+            <dt>Stance</dt><dd>A card that stays in force for the rest of the battle.</dd>
+            <dt>Tends</dt><dd>Rae mends a friend beside her instead of fighting.</dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>What is new, and where it came from</h2>
+    <ol class="new-list">
+      <li><b>A camp between battles.</b> Five cards on offer, one of each, bought with spoils. From Dominion, where a shared supply of limited piles is bought from each turn and the cards join your deck.</li>
+      <li><b>Leaving a card behind.</b> Dominion calls it trashing and Slay the Spire sells it at the merchant: a smaller deck draws its best cards more often.</li>
+      <li><b>Spoils against Renown.</b> In Dominion the cards that score do nothing in play, so every purchase is a choice between a stronger deck and a higher score. Here, spoils you keep are your score.</li>
+      <li><b>Wounds.</b> Dominion's Curses and the Spire's status cards: dead cards an enemy puts in your deck. The crossbowman's bolt does it.</li>
+      <li><b>Stances.</b> The Spire's Power cards: played once, in force until the fight ends.</li>
+      <li><b>Foes with one habit each.</b> Tough is Runeterra's keyword for taking less from every blow. The banner, the flurry and the captain's temper each ask for a different answer.</li>
+      <li><b>Three grounds.</b> Two fords, a road through a wood, and a bridge. Fire Emblem's lesson: the same units play differently when the ground changes.</li>
+      <li><b>Leftover damage and friends who strike.</b> Follow Through is Runeterra's Overwhelm turned sideways. Call the Company pays you for standing the company around one man.</li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>The camp's cards</h2>
+    <p class="small">Twenty-one cards the camp can offer, with their prices, then the two honed cards and the Wound. None of these is an Art: those only come from the sheet.</p>
+    <div class="gallery" id="market-gallery"></div>
+  </section>
+
+  <section class="block">
+    <h2>Sounds to make</h2>
+    <p class="small"><span id="sfx-count"></span> sounds, <span id="sfx-made"></span> made so far. Each row is one file. Send one with its name from the list and it is filed as <code>game/sfx/&lt;name&gt;</code>; the game already calls every one at the right moment and plays a stand-in tone until the real file exists. Keep them short and dry, with no music bed, so they stack when several fire together.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>File name</th><th>When it plays</th><th>What to record</th><th>Length</th><th>Stand-in</th></tr></thead>
+        <tbody id="sfx-table"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Foe pictures to make</h2>
+    <p class="small">Two pictures for each foe: a full figure for the clash, cut out the same way as your Wardrobe looks, and a square portrait for the map token. Attach one of Darrow's looks as the style reference so they match him. The style and background lines are taken from your Wardrobe prompt. These are a hired road company in faded red, not anyone from the Chronicle.</p>
+    <div class="prompts">
+      <div class="prompt"><div class="ph"><h3>Shared: put this after every figure prompt</h3><button type="button" class="mini2" data-copy="p-style">Copy</button></div>
+<pre id="p-style">Style: painterly fantasy concept art in the hand-painted style of the attached reference image: visible, elegant brushwork; believable weathered medieval wool, linen, leather and steel with detailed stitching; soft, warm, natural light; grounded historical fantasy. Not a photograph, not a 3D render, not a cartoon.
+
+Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his whole figure from the top of his head to his feet with a comfortable margin on every side. He is turned three-quarters toward the left edge of the picture, as if facing an opponent who stands just out of frame on the left. Background: one solid, flat chroma blue (#0000FF) filling the whole frame edge to edge: no gradient, no texture, no glow, no vignette. No floor, no ground shadow, no frame, no text, no watermark. Nothing he wears or holds is blue, and the blue casts no light or reflection on him.</pre></div>
+      <div class="prompt"><div class="ph"><h3>Shared: the map token</h3><button type="button" class="mini2" data-copy="p-token">Copy</button></div>
+<pre id="p-token">The same man as in the attached figure, as a square 1:1 portrait (1024 x 1024): head and shoulders, turned a little toward the left, the face in the middle of the frame with room all round it for a circular crop. Plain dark slate-grey background, no text, no frame. Same painterly style, same clothes and gear, same light.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="pikeman">Pikeman</h3><button type="button" class="mini2" data-copy="p-P">Copy</button></div>
+<pre id="p-P">A full-body character illustration of a hired pikeman. A lean, long-armed man in his thirties with a narrow, watchful face. He wears a dented kettle helm, a quilted linen gambeson and a faded madder-red tabard belted over it, patched hose and worn ankle boots. Both hands grip a long ash pike held low and level, its point toward the left, his front foot planted and his weight sunk behind it: a man braced to receive a charge.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="swordsman">Swordsman</h3><button type="button" class="mini2" data-copy="p-S">Copy</button></div>
+<pre id="p-S">A full-body character illustration of a hired swordsman. A wiry, quick-looking man in his late twenties with cropped dark hair and an old scar on his chin, bare-headed. He wears a short mail shirt under a brown leather jack trimmed in faded madder red, a sword belt, and soft boots. An arming sword in his right hand is held out in a middle guard toward the left, his left hand open and low for balance, knees bent, ready to step in.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="crossbowman">Crossbowman</h3><button type="button" class="mini2" data-copy="p-X">Copy</button></div>
+<pre id="p-X">A full-body character illustration of a hired crossbowman. A stocky man in his forties with a weathered, squinting face. He wears a padded coif under a brown wool hood, a thick quilted jack, a faded madder-red sash across his chest, and a quiver of barbed bolts at his hip. A heavy wooden crossbow is raised to his shoulder and aimed toward the left, his cheek against the stock, one eye closed.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="skirmisher">Skirmisher</h3><button type="button" class="mini2" data-copy="p-K">Copy</button></div>
+<pre id="p-K">A full-body character illustration of a hired skirmisher. A slight, light-footed young man of about twenty with a sharp grin and wind-tangled fair hair. He wears a short undyed wool tunic, a faded madder-red scarf knotted at his neck, bare forearms, and soft leather shoes. A short blade in each hand, held low and wide, his weight on the balls of his feet in the middle of a quick step toward the left.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="shieldbearer">Shieldbearer</h3><button type="button" class="mini2" data-copy="p-B">Copy</button></div>
+<pre id="p-B">A full-body character illustration of a hired shieldbearer. A broad, heavy-shouldered man in his thirties with a thick neck and a flat, patient face. He wears a nasal helm and a long mail hauberk to the knee over padded cloth. A tall kite shield, its face painted in chipped, faded madder red with no device, is held across his body toward the left so that it covers him from chin to shin; a short iron mace hangs low in his right hand behind it.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="bannerman">Bannerman</h3><button type="button" class="mini2" data-copy="p-F">Copy</button></div>
+<pre id="p-F">A full-body character illustration of a company's bannerman. A tall, straight-backed man of about fifty with a grey moustache and a lined, proud face. He wears a brimmed iron hat, a plain steel breastplate over a long faded madder-red coat, and tall boots. Both hands grip a long pole planted beside his foot, flying a plain swallow-tailed banner of the same faded red with no device and no lettering. His head is turned toward the left and his mouth is open in a shout.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="captain">Captain</h3><button type="button" class="mini2" data-copy="p-C">Copy</button></div>
+<pre id="p-C">A full-body character illustration of the captain of a hired company. A big, heavy-browed man in his forties with a broken nose and a short iron-grey beard, bare-headed. He wears a scarred plate cuirass and pauldrons over mail, heavy gauntlets, and a faded madder-red cloak thrown back from one shoulder. A long war sword is held in both hands, point low and toward the left, his chin down, glaring from under his brows.</pre></div>
+    </div>
+    <p class="small">The same recipe gives Hollis, Ash and Wren their clash figures: describe each as their portrait shows them, facing right instead of left. Rae needs none: she is never in a clash.</p>
+  </section>
+
+  <section class="block">
+    <h2>What to watch for while you play</h2>
+    <ol class="ask">
+      <li><b>Do the foes change what you do?</b> You should want Overwall or one big blow for the shieldbearer, block for the skirmisher's flurry, and the bannerman dead first.</li>
+      <li><b>Is the camp a real choice?</b> If you always buy the same card, or never mend, or never leave a card behind, tell me which.</li>
+      <li><b>Do spoils pull against safety?</b> Going for the captain early wins faster and pays less.</li>
+      <li><b>Can you read the board at a glance?</b> Three icons a token is the limit; say if you wanted one that was not shown.</li>
+      <li><b>Is Rae worth guarding?</b> She mends and lends, and she is the easiest of you to hurt. If you leave her at the back every time, she needs more reason to come forward.</li>
+      <li><b>Is one hand still enough?</b> Try a battle with three rounds.</li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>How it was tested</h2>
+    <div class="two">
+      <section><h3>The rules, apart from the screen</h3><p>571 rule checks, including one for every card that it does what its text says. 4,000 random games with every card, health total and effect accounted for after each move. None stalled.</p></section>
+      <section><h3>The screen</h3><p>107 browser checks at phone, small-phone and desktop sizes: tap, drag, keyboard, the camp, effect icons, Rae's tending, your pikeman and your sound, and whole runs played through the real buttons.</p></section>
+      <section><h3>Balance</h3><p>A bot that plays sensibly wins about four runs in five with one hand, now that Rae tends. One that only chases the captain wins a little over half. Careful play beating a rush is what I wanted, but it may now be too gentle: say if it is.</p></section>
+      <section><h3>Not tested</h3><p>A real finger on a real phone, and whether it is fun. That part is yours.</p></section>
+    </div>
+  </section>
+
+  <details class="more">
+    <summary>Earlier design notes, research and the art list</summary>
+    <div class="inner">
+  <section class="block">
+    <h2>What the reading changed</h2>
+    <p class="small">Each row is a rule now in the game above, the game it came from, and what that game does.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>In the game now</th><th>From</th><th>What the original does</th></tr></thead>
+        <tbody>
+          <tr><td>Break</td><td>Fire Emblem Engage</td><td>A unit with weapon-triangle advantage that starts the fight and deals damage leaves its foe unable to counterattack. Older entries gave plus or minus to hit and one point of might instead.</td></tr>
+          <tr><td>Striking back when guard holds</td><td>Fire Emblem</td><td>A unit that is attacked counterattacks if its weapon reaches. Whether it can is shown in the forecast.</td></tr>
+          <tr><td>Friends who could strike him also lend</td><td>Fire Emblem: Three Houses</td><td>Linked Attacks: allies who could attack the same target from where they stand add bonuses, and their portraits appear on the forecast. The bonus grows with support rank.</td></tr>
+          <tr><td>Forecast with the order and the worst case</td><td>Fire Emblem</td><td>Later forecasts show calculated damage and the health each side could be left on. Engage adds arrows for the order of blows and a red mark beside a value that could mean defeat.</td></tr>
+          <tr><td>Wood and fords cost two steps; the cart mends</td><td>Fire Emblem</td><td>Forests slow movement and give cover. Forts protect one unit and heal it a little at the start of each turn.</td></tr>
+          <tr><td>Their reach, on a toggle</td><td>Fire Emblem</td><td>The series lets you light every tile the enemy can attack next turn.</td></tr>
+          <tr><td>Exact numbers on his answer</td><td>Slay the Spire</td><td>Intents first shipped as icons without numbers. Playtests showed exact damage was more engaging and opened up more strategy, so the numbers went in.</td></tr>
+          <tr><td>Open means half again</td><td>Slay the Spire</td><td>Vulnerable raises damage taken by 50 percent. Block is normally lost at the end of the turn; carrying it over as guard is this game's own change.</td></tr>
+          <tr><td>Three battles, health carried, one of three cards or a mend</td><td>Slay the Spire, Hearthstone</td><td>After a fight you may take one of three cards, or none; campfires heal or upgrade. Hearthstone's Dungeon Run starts from ten cards and offers three bundles after each of eight bosses.</td></tr>
+          <tr><td>Held breath</td><td>Legends of Runeterra</td><td>Up to three unspent mana is banked at the end of a round as spell mana.</td></tr>
+          <tr><td>Lent cards that rise</td><td>Legends of Runeterra</td><td>Champion cards level up when their condition is met, and every copy of the card becomes the stronger version.</td></tr>
+          <tr><td>A man down, act again</td><td>Persona 5</td><td>Striking a weakness knocks the enemy down and gives that character another turn. With every enemy down the party attacks together.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Others who mixed a map with cards</h2>
+    <div class="two">
+      <section><h3>Fights in Tight Spaces</h3><p>One fighter on a small grid against several. The cards are the moves themselves, including stepping and shoving, and enemies show what they will do next so you can push one into another's line of fire.</p></section>
+      <section><h3>Card Hunter</h3><p>A party of three on a board. Each character's deck of 36 comes from their class and what they carry, and you play one card at a time to move or strike.</p></section>
+      <section><h3>Metal Gear Acid</h3><p>Any card can be spent for its effect or simply to move. A card's cost is time: the more you spend, the longer until that character acts again.</p></section>
+      <section><h3>Gloomhaven</h3><p>Two cards a turn, the top half of one and the bottom of the other. No dice; a small deck of modifiers does that job.</p></section>
+    </div>
+    <p class="small">All four make the cards the moves. This design keeps movement free, the Fire Emblem way, and uses cards only for the blow, which is why a clash can be a single hand. Card Hunter's idea that the deck is what the character carries is the same as the deck being the sheet.</p>
+  </section>
+
+  <section class="block">
+    <h2>The deck as it stands</h2>
+    <p class="small">Darrow's deck is the sheet: one card for each Art, its rank on the card, plus plain Strikes and Guards. The last row is what the company lends, plays, and offers between battles. Ten of his thirteen cards already have a picture.</p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section class="block">
+    <h2>The rest of the design</h2>
+    <div class="two">
+      <section>
+        <h3>The company</h3>
+        <p>Each companion has a small deck of their own and plays a hand of three on two breath. Hollis hits hard and moves little. Ash is fast and pins a man in place. Wren reaches two tiles and marks a foe so the next friend has more breath against him.</p>
+      </section>
+      <section>
+        <h3>A run</h3>
+        <p>Three battles, each a little harder. Darrow's health carries from one to the next; the company returns whole. After a win, take one of three cards for the rest of the run, mend, or take nothing so the deck stays lean. Inspiration is three for the whole run.</p>
+      </section>
+      <section>
+        <h3>What the sheet does</h3>
+        <dl class="kv">
+          <dt>Arts</dt><dd>The cards. A new rank is a better card.</dd>
+          <dt>Knots</dt><dd>How far he moves, and which cards are still sealed.</dd>
+          <dt>HP, Might</dt><dd>How long he stands and how hard the plain cards hit.</dd>
+          <dt>Ember</dt><dd>His breath each clash.</dd>
+          <dt>Inspiration</dt><dd>A new hand.</dd>
+          <dt>Regard</dt><dd>Works as a support rank: how good a companion's lent card is.</dd>
+        </dl>
+      </section>
+      <section>
+        <h3>Nothing is kept</h3>
+        <p>A run lends cards and ends. An Art, a rank or a point of Might only ever comes from the Ledger. The figure in the clash is a look from the Wardrobe, so what he wears there could be what stands on the field.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Art list</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Piece</th><th>Shape</th><th>You have</th><th>Still to make</th></tr></thead>
+        <tbody>
+          <tr><td>Card art</td><td>Square. Shown cropped to 4:3</td><td>10 of Darrow's 13 cards, and one sealed Art</td><td>Strike, Guard, The Long Road, and ten companion cards</td></tr>
+          <tr><td>Map tokens</td><td>Square portrait, shown round</td><td>The whole company</td><td>One for each kind of foe</td></tr>
+          <tr><td>Clash figures</td><td>2:3, cut out, full length</td><td>Darrow, in eight looks</td><td>Hollis, Ash, Wren, and each kind of foe</td></tr>
+          <tr><td>Map ground</td><td>Square tiles, or one painted map a battle</td><td>None. Drawn in code here</td><td>Grass, wood, water, ford, road, cart</td></tr>
+          <tr><td>Clash backdrops</td><td>16:9</td><td>None. A flat sky and field here</td><td>One for each kind of ground</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" aria-label="Sources">
+    <h3>Pages read for this version</h3>
+    <ul class="sources">
+      <li>Fire Emblem Wiki: <a href="https://fireemblemwiki.org/wiki/Weapon_triangle">Weapon triangle</a>, <a href="https://fireemblemwiki.org/wiki/Break">Break</a>, <a href="https://fireemblemwiki.org/wiki/Support">Support</a>, <a href="https://fireemblemwiki.org/wiki/Combat_forecast">Combat forecast</a>, <a href="https://fireemblemwiki.org/wiki/Counterattack">Counterattack</a>, <a href="https://fireemblemwiki.org/wiki/Terrain">Terrain</a></li>
+      <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Fire_Emblem">Fire Emblem</a>, <a href="https://en.wikipedia.org/wiki/Slay_the_Spire">Slay the Spire</a>, <a href="https://en.wikipedia.org/wiki/Legends_of_Runeterra">Legends of Runeterra</a>, <a href="https://en.wikipedia.org/wiki/Persona_5">Persona 5</a></li>
+      <li>Slay the Spire Wiki: <a href="https://slaythespire.wiki.gg/wiki/Intent">Intent</a>, <a href="https://slaythespire.wiki.gg/wiki/Block">Block</a>, <a href="https://slaythespire.wiki.gg/wiki/Vulnerable">Vulnerable</a></li>
+      <li>Hearthstone Wiki: <a href="https://hearthstone.wiki.gg/wiki/Dungeon_Run">Dungeon Run</a></li>
+      <li>League of Legends Wiki: <a href="https://wiki.leagueoflegends.com/en-us/LoR:Champion">Champion (Legends of Runeterra)</a></li>
+      <li>Wikipedia, for the hybrids: <a href="https://en.wikipedia.org/wiki/Fights_in_Tight_Spaces">Fights in Tight Spaces</a>, <a href="https://en.wikipedia.org/wiki/Card_Hunter">Card Hunter</a>, <a href="https://en.wikipedia.org/wiki/Metal_Gear_Acid">Metal Gear Acid</a>, <a href="https://en.wikipedia.org/wiki/Gloomhaven">Gloomhaven</a></li>
+    </ul>
+  </section>
+    </div>
+  </details>
+  <p class="small">Every foe, map and number of play is a placeholder made for the mock. The sheet, the Arts and the pictures are Darrow's. Nothing here is kept on the sheet.</p>
+</div>
