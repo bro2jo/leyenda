@@ -19,7 +19,7 @@ It is laid **over** the rules and the screen and changes neither: `src/engine.js
 | `src/campaign.js` | The campaign's rules, no screen: its cards (an Art at each rank), its foes and ordeals, how a mission's board is built, the objective check, the fire's pack and the difficulty step, and the wording (a river "pulls", Ysra Tal is "she", cover is whatever the place has). |
 | `src/missions.js` | The missions: map, who is there and what each can do, the deck, the aim, the lines before and after. **Reader-safe:** every name, place and quoted line is on the page already. |
 | `src/campaign_ui.js`, `src/campaign.css`, `src/campaign.html` | The title, the mission list, the place cards, the fire, the telling afterwards, the objective under the board, the grounds on the board and behind a clash, the page with its settings and picture prompts. |
-| `build_campaign.py` | Builds `dist/campaign/campaign.html` with its pictures beside it. Faces and places come from the site's small copies; a foe with no picture gets a drawn token, and the page lists those. The sergeant and the two levy boys wear the swordsman's and the pikeman's pictures (`ALIAS`) until their own are filed. |
+| `build_campaign.py` | Builds `dist/campaign/campaign.html` with its pictures beside it. Faces and places come from the site's small copies; a foe with no picture gets a drawn token, and the page lists those. The sergeant wears the captain's picture, the boy with the horn the pitchfork boy's and the Confessor's men a grey cloak's (`ALIAS`; the page says so beside each) until their own are filed. |
 | `test/campaign.test.js`, `test/campaign.ui.test.js` | Every mission is well formed and a simple player can finish it; the fire, the difficulty step and the wording; the real page in a browser, the prologue played through by taps, and the fire bought from and put back to. |
 
 ```
@@ -103,7 +103,7 @@ A picture's name is who it shows: `pikeman`, `swordsman`, `crossbowman`, `skirmi
 
 A figure is one picture: the build cuts its map token from its head (`build.py → head`), and a token filed by hand outranks that. After filing, `python3 game/tools/prompts.py` drops the picture from the list of what is still to make.
 
-Made so far: the pikeman and the swordsman (figure and token each), the captain, a grey cloak and the rider in a dark coat (figure), the cards Strike, Guard, Thrown Stone, Hew, Stand Fast, The Count and Blood Up, the sounds `battle_won` and `run_won`, and both music tracks.
+Made so far: every picture in `art/figures/`, `art/tokens/` and `art/cards/` (`python3 game/tools/prompts.py` names them and lists what is left), the sounds `battle_won` and `run_won`, and both music tracks.
 
 ## The game in one page
 

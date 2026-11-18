@@ -570,5 +570,5 @@ var gi=document.querySelectorAll('[data-ic]');for(var gk=0;gk<gi.length;gk++)gi[
 var mu=document.querySelectorAll('[data-music]');for(var mk2=0;mk2<mu.length;mk2++){var mok=AS.music&&AS.music[mu[mk2].getAttribute('data-music')];mu[mk2].insertAdjacentHTML('afterend',' <span class="'+(mok?'made':'todo')+'">'+(mok?'made':'to make')+'</span>')}
 var sc=$('sfx-count');if(sc)sc.textContent=SFX.length;
 var sm=$('sfx-made');if(sm)sm.textContent=Object.keys(AS.sfx).length;
-var who=document.querySelectorAll('[data-who]');for(var wi=0;wi<who.length;wi++){var wk=who[wi].getAttribute('data-who'),f1=has(AS.fig,wk),t1=has(AS.tok,wk);who[wi].insertAdjacentHTML('beforeend',' <span class="'+(f1&&t1?'made':'todo')+'">'+(f1&&t1?'figure and token made':f1?'figure made, token to make':t1?'token made, figure to make':'to make')+'</span>')}
+var who=document.querySelectorAll('[data-who]');for(var wi=0;wi<who.length;wi++){var wk=who[wi].getAttribute('data-who'),f1=has(AS.fig,wk),t1=has(AS.tok,wk);var l1=(AS.lent||{})[wk];who[wi].insertAdjacentHTML('beforeend',' <span class="'+(f1&&t1&&!l1?'made':'todo')+'">'+(l1?'to make · wears the '+l1+' picture for now':f1&&t1?'figure and token made':f1?'figure made, token to make':t1?'token made, figure to make':'to make')+'</span>')}
 })();

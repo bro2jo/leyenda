@@ -42,10 +42,15 @@ def head(src, size=256, bg=(38, 40, 48)):
     """A map token cut from a clash figure: the head and shoulders, on plain dark grey. A token filed by hand outranks it."""
     f = Image.open(src).convert("RGBA")
     a = f.split()[3].point(lambda v: 255 if v > 40 else 0)
-    _, y0, _, y1 = a.getbbox()
-    band = a.crop((0, y0, f.width, y0 + int((y1 - y0) * .07))).getbbox()  # the top of the figure is its head
-    side = int(max((y1 - y0) * .27, min((band[2] - band[0]) * 2.1, (y1 - y0) * .33)))  # a wide hat does not push the face away
-    left, top = int((band[0] + band[2]) / 2 - side / 2), int(y0 - side * .10)
+    x0, y0, x1, y1 = a.getbbox()
+    if x1 - x0 > (y1 - y0) * .9:  # on four legs: the head is at the end it faces (a foe faces left), wherever it carries it
+        side = int((y1 - y0) * .62)
+        end = a.crop((x0, y0, x0 + side, y1)).getbbox()
+        left, top = x0 - int(side * .06), y0 + int((end[1] + end[3]) / 2 + (y1 - y0) * .08 - side / 2)
+    else:
+        band = a.crop((0, y0, f.width, y0 + int((y1 - y0) * .07))).getbbox()  # the top of the figure is its head
+        side = int(max((y1 - y0) * .27, min((band[2] - band[0]) * 2.1, (y1 - y0) * .33)))  # a wide hat does not push the face away
+        left, top = int((band[0] + band[2]) / 2 - side / 2), int(y0 - side * .10)
     cut = Image.new("RGBA", (side, side), (0, 0, 0, 0))
     cut.paste(f, (-left, -top))
     out = Image.new("RGBA", (side, side), bg + (255,))

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """THE LINE AND THE HAND: files a picture or a sound he made for the side game, under its proper name.
 
-  python3 game/tools/file_art.py figure NAME PICTURE [--preview DIR]   a full figure for the clash: the chroma screen is keyed out
-                                                                       the way the Wardrobe does it (engine/looks.py), cut to 2:3
+  python3 game/tools/file_art.py figure NAME PICTURE [--preview DIR] [--scale S]
+                                                                       a full figure for the clash: the chroma screen is keyed out
+                                                                       the way the Wardrobe does it (engine/looks.py), cut to 2:3,
+                                                                       and stood on the ground (--scale 0.75 for a dog beside men)
   python3 game/tools/file_art.py token  NAME PICTURE                   a square portrait for the map token
   python3 game/tools/file_art.py card   NAME PICTURE                   a card's picture, cut to 4:3; NAME is the card's id
   python3 game/tools/file_art.py sound  NAME FILE                      a sound, by its name in the game's list (game/README.md)
@@ -40,12 +42,29 @@ def sounds():
     return re.findall(r"^\s*\['([a-z_]+)','", (GAME / "src" / "ui.js").read_text(encoding="utf-8"), re.M)
 
 
+FEET = .96  # where a figure's feet stand in its 2:3 frame, as the men's do: the clash lines every figure up by its frame
+
+
+def ground(img, scale=1.0):
+    """Stands a cut-out on the ground line, at its size beside a man: a dog painted in the middle of the frame would hang in the air."""
+    box = img.split()[3].point(lambda v: 255 if v > 40 else 0).getbbox()
+    if not box or (scale == 1.0 and box[3] >= img.height * (FEET - .04)):
+        return img
+    cut = img.crop(box)
+    if scale != 1.0:
+        cut = cut.resize((max(1, int(cut.width * scale)), max(1, int(cut.height * scale))), Image.LANCZOS)
+    out = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    out.paste(cut, ((img.width - cut.width) // 2, int(img.height * FEET) - cut.height))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("kind", choices=["figure", "token", "card", "sound", "music"])
     ap.add_argument("name")
     ap.add_argument("file")
     ap.add_argument("--preview", help="for a figure: a folder for two previews of the cut-out")
+    ap.add_argument("--scale", type=float, default=1.0, help="for a figure: its size beside a man's (a dog is about 0.75); it is stood on the ground either way")
     a = ap.parse_args()
     src = Path(a.file)
     if not src.is_file():
@@ -67,7 +86,7 @@ def main():
         print(f"filed {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
         return
     if a.kind == "card":  # a card's picture: 4:3, named by the card's id (the word on the prompt)
-        if not re.fullmatch(r"[a-z][a-z0-9_]*", a.name):
+        if not re.fullmatch(r"[a-z][A-Za-z0-9_]*", a.name):
             die(f"'{a.name}' is not a card's id")
         im = Image.open(src).convert("RGB")
         w, h = im.size
@@ -83,6 +102,7 @@ def main():
     if a.kind == "figure":
         import looks  # the Wardrobe's own cut-out: one way of keying a screen in this repo
         img, note = looks.cut_out(src, a.preview)
+        img = ground(img, a.scale)
         out = GAME / "art" / "figures" / (a.name + ".webp")
         img.save(out, "WEBP", quality=90, method=6)
         print(f"filed {out.relative_to(ROOT)} (1024x1536; {note})")

@@ -32,7 +32,7 @@ ART.update({f"place-{p}": f"places/{p}.md.webp" for p in ["harrow-ford", "saint-
 TOKENS = {"ysra-tal": C + "ysra-tal.sm.webp", "hollis-foe": C + "hollis-garrow.sm.webp", "greycloak": "factions/confessors.sm.webp"}
 EMBLEM = {"greycloak"}  # not a face, only a badge: the head of the man's own figure outranks it
 # men who wear one of the game's own pictures until theirs is made (figure and token)
-ALIAS = {"pitchfork": "pikeman", "hornboy": "pikeman", "sergeant": "swordsman"}
+ALIAS = {"hornboy": "pitchfork", "sergeant": "captain", "guest": "greycloak"}
 # everything else on the board that has no picture yet: name, what it is, a letter, a colour
 DRAWN = [("wend", "The Wend in spate", "W", "#244860"), ("hall", "The length of the hall", "H", "#4A3F33"), ("question", "The hall's question", "?", "#5A4A6A"),
          ("sliver", "The black glass", "*", "#0B0D11"), ("guest", "The Confessor's men", "G", "#4E5560"), ("steps", "A stretch of the Steps", "S", "#55585E"),
@@ -65,13 +65,19 @@ def main():
         shutil.rmtree(DIST)
     for d in ("art", "sfx", "music"):
         (DIST / d).mkdir(parents=True, exist_ok=True)
-    assets = {"art": [], "fig": [], "tok": [], "sfx": {}, "music": {}, "drawn": [], "cardart": {}}
+    assets = {"art": [], "fig": [], "tok": [], "sfx": {}, "music": {}, "drawn": [], "cardart": {}, "lent": {}}
     for name, rel in sorted(ART.items()):
         if (THUMBS / rel).is_file():
             shutil.copyfile(THUMBS / rel, DIST / "art" / f"{name}.webp")
             assets["art"].append(name)
     made = {f.stem: f for f in (GAME / "art" / "tokens").glob("*.webp")}
     figs = {f.stem: f for f in (GAME / "art" / "figures").glob("*.webp")}
+    for key, src in ALIAS.items():  # lent pictures: a real one replaces it by being filed under the man's own name
+        if key not in figs and src in figs:
+            figs[key] = figs[src]
+            assets["lent"][key] = src
+            if key not in made and src in made:
+                made[key] = made[src]
     for key, f in sorted(figs.items()):  # a figure with no token of its own: one is cut from its head
         if key not in made and (key not in TOKENS or key in EMBLEM):
             head(f).save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86, method=6)
@@ -90,12 +96,6 @@ def main():
         if key == "brother":  # a friend's face is asked for by name, not as a token
             im.save(DIST / "art" / "brother.webp", "WEBP", quality=86)
             assets["art"].append("brother")
-    for key, src in ALIAS.items():  # lent pictures: filed under the campaign's name, so a real one replaces it by being filed
-        if key not in made and src in made:
-            made[key] = made[src]
-    for key, src in ALIAS.items():
-        if key not in figs and src in figs:
-            figs[key] = figs[src]
     for key, f in made.items():
         Image.open(f).convert("RGB").resize((256, 256), Image.LANCZOS).save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86, method=6)
         assets["tok"].append(key)
