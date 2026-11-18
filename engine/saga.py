@@ -55,6 +55,11 @@ Commands (run from the repo root):
                                         rank_on_page=<rank> once a scene has carried a rank crossing (`now` prints RANK OWED until then)
   challenge N success|fail|show|void    a slot's challenge (design §5.6): move a counter after each roll; it resolves when progress or strain fills
   invite N take|pass|show               a slot's invitation: taken when he answers in voice (a Between), passed at the next close if he has not
+  counsel [show] | ask [--which micro|climax] [--road K] [--past chNN:sK] | give --option K [--truth TEXT] | drop [--why TEXT]
+                                        Morning's Counsel (design §5.7): a choice slept on. `ask` when he says he will sleep on it (once a chapter;
+                                        refused while the Art is unlearned or the page has not named it); `give` with his next morning check whose
+                                        night counts (the Ledger's sleep_min against its target: yes or no, never the number): the road that hides
+                                        the most, with one true thing about it from rank III; it writes the due item that puts it on the page
   plan invite_rule WHO EXPR             a person's standing condition for coming to Darrow at all (rae: tether.stage >= 1); `check` refuses an invite while it is not met
   plan quest ID gate='beats.b1_1.status == "done"'   a quest's gate in the rule grammar (a beat id with its dot as an underscore; also quests.ID.status, flags.x, approval.x, tether.stage):
                                         `check` refuses a planned slot of the quest while it is not met; `plan next` prints it
@@ -1042,7 +1047,7 @@ def colour_for(day):
     except Exception:
         fuel_ok = False
     STATUS_KEYS = ("am_swelling", "am_pain", "am_extension", "floor_am", "floor_pm", "knee_session", "knee_min", "pt", "addon_session",
-                   "addon_min", "conditioning_type", "conditioning_min", "sport_min", "light", "sleep_h", "hours_on_feet")
+                   "addon_min", "conditioning_type", "conditioning_min", "sport_min", "light", "sleep_min", "hours_on_feet")
     closed = any(yes(r.get("closed")) for r in rows)
     data_rows = [r for r in rows if any(str(r.get(k) or "").strip() for k in STATUS_KEYS)]
     if not data_rows:
@@ -1774,6 +1779,7 @@ def cmd_now(args):
     else:
         lines.append("Micro: none open")
     lines += open_choice_lines(plan)
+    lines += counsel_lines(plan)
     t_rows = tale_state(st)
     for t in t_rows:
         if t["owed"]:
@@ -5232,7 +5238,7 @@ def cmd_brief(args):
     om = plan.get("open_micro")
     if om and mode in ("slot", "climax"):
         L.append(f"OPEN small choice from scene {om.get('scene')} ({om.get('ask')}): if still unanswered, Darrow answers for himself with its default, option {om.get('default')} (`saga.py choose --by bearing '<entry>'`), said in one Ledger line, and the consequence opens this block in a clause")
-    for l in open_choice_lines(plan):
+    for l in open_choice_lines(plan) + counsel_lines(plan):
         L.append(l)
     for e in [e for e in ledger.get("entries", []) if e.get("declined")][-2:]:
         L.append(f"declined lately ({e['id']}, {short(e.get('chose'), 60)}): " + " / ".join(short(x, 70) for x in e["declined"]) + " · a line may notice the road not taken, never explain it")
@@ -6108,9 +6114,221 @@ def cmd_choose(args):
         plan["answered_choice"] = {"chapter": int(oc.get("chapter", chapter)), "ask": oc.get("ask"), "option": int(opt), "text": row["text"], "by": args.by, "ledger": ordered["id"]}
         print(f"climax choice of chapter {oc.get('chapter')} answered: option {opt} by {args.by}; write its `### Choice — Title` block in that chapter's file "
               f"(the brief: `saga.py brief --choice`), then `saga.py record` it")
+    pend = (plan.get("counsel") or {}).get("pending")
+    if pend and pend.get("which") == which:
+        plan["counsel"]["pending"] = None
+        print("the counsel he asked for lapses unspent: the choice was answered before its night came")
     st.touch("plan")
     st.save()
     R.project_all(plan, write=True)
+
+# ---------------------------------------------------------------- Morning's Counsel: a choice slept on (design.md §5.7)
+COUNSEL_ART = "morning_counsel"
+COUNSEL_DEPTHS = {"which": "which road hides the most, and nothing of what", "truth": "one true thing about the road that hides the most",
+                  "chosen": "one true thing about the road he names (or, if he names none, the road that hides the most)"}
+
+
+def counsel_art():
+    """Morning's Counsel as the sheet has it: {rank, tier, name}; rank 0 while unlearned or the sheet cannot be read."""
+    try:
+        a = next((x for x in load_json(P["sheet"]).get("arts", []) if x.get("id") == COUNSEL_ART), None) or {}
+    except (OSError, ValueError, json.JSONDecodeError):
+        a = {}
+    return {"rank": int(a.get("rank") or 0), "tier": int(a.get("tier") or (1 if a.get("rank") else 0)), "name": a.get("name") or "Morning's Counsel"}
+
+
+def counsel_depth(rank):
+    return "chosen" if rank >= 5 else "truth" if rank >= 3 else "which"
+
+
+def counsel_per_chapter(tier):
+    return 2 if tier >= 3 else 1  # the Art's third line: twice a chapter
+
+
+def counsel_night(asked, logged_at_ask):
+    """The first night at the line since he asked, as the Ledger has it: a daily row with sleep_min at the target or
+    within the near band (real/config.json -> sleep_targets, engine/rules.json -> daily.sleep_near), dated after the
+    ask, or on the ask's own day when that morning's night was not logged yet. (date, minutes) or None. The one
+    place the story reads a real number, and only as yes or no: the minutes never reach a page."""
+    try:
+        target = (load_json(P["config"]).get("sleep_targets") or {}).get("min_per_night")
+        near = ((load_json(P["rules"]).get("daily") or {}).get("sleep_near") or {}).get("threshold", 1)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+    if not target:
+        return None
+    for r in sorted(read_csv(P["daily"]), key=lambda x: x.get("date") or ""):
+        day, raw = str(r.get("date") or ""), str(r.get("sleep_min") or "").strip()
+        if not raw.isdigit() or day < asked or (day == asked and logged_at_ask):
+            continue
+        if int(raw) / target >= near:
+            return day, int(raw)
+    return None
+
+
+def counsel_target(plan, pend):
+    """The open choice a pending counsel is about, or None once it has been answered (or was never a choice: a scene past)."""
+    if pend.get("which") == "micro":
+        om = plan.get("open_micro")
+        return om if om and str(om.get("scene")) == str(pend.get("scene")) and int(om.get("chapter", -1)) == int(pend.get("choice_chapter", -2)) else None
+    if pend.get("which") == "climax":
+        oc = plan.get("open_choice")
+        return oc if oc and int(oc.get("chapter", -1)) == int(pend.get("choice_chapter", -2)) else None
+    return None
+
+
+def counsel_lines(plan):
+    """What `now` and the brief say of a counsel asked and not yet given."""
+    c = plan.get("counsel") or {}
+    pend, out = c.get("pending"), []
+    if pend:
+        what = f"the scene {pend.get('past')}" if pend.get("which") == "past" else f"the open {pend.get('which')} choice"
+        out.append(f"COUNSEL ASKED {pend.get('asked')} on {what}: it comes with his first morning check after a night at the line "
+                   f"(`saga.py counsel give …`), before any close in that reply answers the choice by its default")
+    for g in c.get("given", [])[-2:]:
+        if g.get("option") and counsel_target(plan, g):
+            out.append(f"COUNSEL GIVEN on road {g['option']} of the open {g.get('which')} choice"
+                       + (f": {short(g.get('truth'), 110)}" if g.get("truth") else ": it hides the most") + " · if he takes it, its entry must cost what the counsel said")
+    return out
+
+
+def cmd_counsel(args):
+    st = State()
+    plan = st.plan
+    c = plan.setdefault("counsel", {"pending": None, "given": []})
+    art = counsel_art()
+    chapter = int(plan["chapter"].get("number"))
+    used = [g for g in c.get("given", []) if int(g.get("chapter", -1)) == chapter]
+    allowed = counsel_per_chapter(art["tier"])
+    om, oc = plan.get("open_micro"), plan.get("open_choice")
+    if args.action == "show":
+        named = COUNSEL_ART in arts_spoken()
+        print(f"{art['name']}: rank {art['rank']}" + (f" (tier {art['tier']})" if art["tier"] > 1 else "") + (" · not learned yet" if not art["rank"] else f" · he wakes knowing {COUNSEL_DEPTHS[counsel_depth(art['rank'])]}")
+              + ("" if named or not art["rank"] else " · ⚠ the page has not named it yet (the Reckoning box of the scene after its first night does)"))
+        print(f"this chapter: {len(used)} of {allowed} used" + (f" · a scene already past may be slept on too (`ask --past chNN:sK`)" if art["tier"] >= 2 else ""))
+        print("open: " + (" · ".join(x for x in [om and f"small choice (scene {om.get('scene')})", oc and f"climax choice (chapter {oc.get('chapter')})"] if x) or "no choice"))
+        for l in counsel_lines(plan) or ["no counsel asked"]:
+            print(l)
+        for g in c.get("given", [])[-3:]:
+            print(f"given ch{int(g['chapter']):02d} ({g.get('which')}, night {g.get('night')}): road {g.get('option')}"
+                  + (f": {short(g.get('truth'), 120)}" if g.get("truth") else " hides the most") + f" · ledger {g.get('due')}")
+        return
+    if args.action == "drop":
+        if not c.get("pending"):
+            die("no counsel is asked")
+        c["pending"] = None
+        st.touch("plan"); st.save()
+        print("counsel dropped: nothing spent" + (f" ({args.why})" if args.why else ""))
+        return
+    if args.action == "ask":
+        if not art["rank"]:
+            die(f"{art['name']} is not learned yet: nothing to sleep on a choice with")
+        if COUNSEL_ART not in arts_spoken():
+            die(f"the page has not named {art['name']} yet: it is his to use once a scene's Reckoning box has named it (the gate every Art keeps, design §5.6)")
+        if c.get("pending"):
+            die("a counsel is already asked: " + counsel_lines(plan)[0])
+        if len(used) >= allowed:
+            die(f"{art['name']} has been used {len(used)} of {allowed} this chapter: it comes back with the next one (say so in-world: the night gives him nothing more this week)")
+        if args.past:
+            if art["tier"] < 2:
+                die(f"sleeping on a scene already past is the Art's second line: it opens when {art['name']} turns over, not before")
+            if not WHERE_RE.match(args.past) or not args.past.startswith("ch"):
+                die("--past names a block on the page: chNN:sK, chNN:climax, chNN:between-K")
+            which, target, scene, cch = "past", None, None, chapter
+        else:
+            which = args.which or ("micro" if om else "climax" if oc else None)
+            target = om if which == "micro" else oc if which == "climax" else None
+            if not target:
+                die("no choice is open to sleep on" + (" (a scene already past: `counsel ask --past chNN:sK`)" if art["tier"] >= 2 else ""))
+            scene, cch = (str(om.get("scene")), int(om.get("chapter", chapter))) if which == "micro" else ("climax", int(oc.get("chapter", chapter)))
+        if args.road is not None:
+            if counsel_depth(art["rank"]) != "chosen":
+                die(f"naming the road is rank V's: at rank {art['rank']} the night chooses which road it speaks of")
+            if which == "past" or args.road not in range(1, len(target.get("options") or []) + 1):
+                die("--road K names one of the open choice's options")
+        today = today_local().isoformat()
+        logged = any(r.get("date") == today and str(r.get("sleep_min") or "").strip() for r in read_csv(P["daily"]))
+        c["pending"] = {"which": which, "scene": scene, "choice_chapter": cch, "past": args.past, "ask": (target or {}).get("ask"),
+                        "asked": today, "logged_at_ask": logged, "road": args.road}
+        st.touch("plan"); st.save()
+        print(f"counsel asked ({which}{', road ' + str(args.road) if args.road else ''}): he takes it to bed. Say so in one in-world line; nothing is spent yet.")
+        print("it comes with his first morning check after a night at the line: `saga.py counsel give --option K"
+              + (" --truth \"…\"`" if counsel_depth(art["rank"]) != "which" else "`") + f" · he wakes knowing {COUNSEL_DEPTHS[counsel_depth(art['rank'])]}")
+        if which != "past":
+            print("the choice keeps its own clock: if the close in that reply would answer it by its default, give the counsel first and let him answer before the scene is written; "
+                  "answered before the night, the asking lapses unspent")
+        return
+    # give
+    pend = c.get("pending")
+    if not pend:
+        die("no counsel is asked (`saga.py counsel ask` when he says he will sleep on it)")
+    target = counsel_target(plan, pend) if pend["which"] != "past" else None
+    if pend["which"] != "past" and not target:
+        c["pending"] = None
+        st.touch("plan"); st.save()
+        die("the choice was answered before the night came: the asking lapses, nothing spent")
+    if not art["rank"]:
+        die(f"{art['name']} is not on the sheet")
+    night = counsel_night(pend["asked"], pend.get("logged_at_ask"))
+    if not night:
+        die(f"no night at the line is logged since he asked ({pend['asked']}): the counsel waits for one, nothing spent. "
+            "Never say why in story voice: a thin night is only a morning with no answer in it yet")
+    depth = counsel_depth(art["rank"])
+    opts = (target or {}).get("options") or []
+    if pend["which"] == "past":
+        if args.option is not None or not args.truth:
+            die("a scene slept on gives one true thing he missed in it: --truth \"…\" and no --option")
+        opt = None
+    else:
+        if args.option not in range(1, len(opts) + 1):
+            die(f"--option K: the road the counsel is about, one of: " + " / ".join(f"{i}. {short(o, 60)}" for i, o in enumerate(opts, 1)))
+        opt = int(args.option)
+        if pend.get("road") and opt != int(pend["road"]):
+            die(f"he named road {pend['road']}: the counsel speaks of that one")
+        if depth == "which" and args.truth:
+            die(f"at rank {art['rank']} he wakes knowing only which road hides the most: no --truth (it opens at rank III)")
+        if depth != "which" and not args.truth:
+            die(f"at rank {art['rank']} he wakes with one true thing about that road: --truth \"…\" (what the page has already shown him, sorted: a cost, or who is not telling it straight; never an outcome, never a die)")
+    stray = sorted(set(unknown_names_in(args.truth) if args.truth else []) - {x.strip() for x in (args.allow_names or "").split(",")})
+    if stray:
+        die("the truth names what the page has not spoken: " + ", ".join(stray) + " · a counsel is his own mind sorting what he has "
+            "already seen, never a name or a plan from behind the page (`--allow-names A,B` for a word that is not a name)")
+    road = f"“{short(re.sub(r'[*_]', '', opts[opt - 1]), 90)}”" if opt else None
+    if pend["which"] == "past":
+        what = f"He slept on {pend['past']} and woke knowing what he missed in it: {args.truth} · the next block opens on his waking with it, in a line"
+        when = "next"
+    elif depth == "which":
+        what = f"He slept on the choice and woke sure of one thing only: {road} hides more than it shows. Nothing of what."
+        when = None
+    else:
+        what = f"He slept on the choice and woke knowing one true thing about {road}: {args.truth}"
+        when = None
+    if when is None:
+        if pend["which"] == "micro":
+            when, what = "next", what + " · the next scene opens on his waking with it, in a line (the choice still open)"
+        else:
+            when, what = f"{ch2(int(pend['choice_chapter']))}:climax", what + " · it goes on the page in the `### Choice` block, never in a scene before it"
+    eid = next_entry_id(st.ledger, chapter)
+    entry = {"id": eid, "made": {"chapter": chapter, "scene": "auto:counsel", "date": today_local().isoformat()},
+             "chose": f"Slept on it ({art['name']}): {short(pend.get('ask') or pend.get('past'), 90)}", "now": {},
+             "due": [{"id": eid + "a", "when": when, "weight": "color", "what": what}], "auto": True}
+    # the counsel's own state first, so the one save inside add_entry writes the ledger and the plan together
+    c.setdefault("given", []).append({"chapter": chapter, "which": pend["which"], "scene": pend.get("scene"), "choice_chapter": pend.get("choice_chapter"),
+                                      "past": pend.get("past"), "asked": pend["asked"], "night": night[0], "option": opt, "depth": depth,
+                                      "truth": args.truth, "ledger": eid, "due": eid + "a", "rank": art["rank"]})
+    c["pending"] = None
+    st.touch("plan")
+    add_entry(st, entry, "", pending=True, dry_run=False)
+    st.save()
+    R.project_all(plan, write=True)
+    print(f"counsel given ({eid}a, {len(used) + 1} of {allowed} this chapter): {what}")
+    print("in this reply: a waking beat of two to four lines in story voice, in the glimpse's place (never the night's length, never why it came); "
+          "on the page: the block the due item names carries it, and its record fires it with the block's own words")
+    print(f"the dice: {art['name']} {ROMAN[art['rank']]} may ride ONE check to read a person or a lie in that block (`darrow.py roll … --art {COUNSEL_ART}`), beside Warden's Eye; nowhere else")
+    if opt:
+        print(f"keep it true: if he takes road {opt}, its ledger entry must cost what the counsel said (`now` and the brief say so while the choice is open)")
+
+
 
 # ---------------------------------------------------------------- the tales: the past, a piece per task of a work (design.md §12)
 TALE_PLAN_HEAD_RE = re.compile(r"^##\s+(tale\.[a-z0-9_]+)\s*[—–-]\s*(.+?)\s*$")
@@ -6713,6 +6931,10 @@ def main():
     s = sub.add_parser("approval"); s.add_argument("sub", nargs="?", choices=["forecast"], default="forecast")
     s = sub.add_parser("challenge"); s.add_argument("n"); s.add_argument("action", choices=["success", "fail", "show", "void"]); s.add_argument("--why")
     s = sub.add_parser("invite"); s.add_argument("n"); s.add_argument("action", choices=["take", "pass", "show"])
+    s = sub.add_parser("counsel"); s.add_argument("action", nargs="?", choices=["show", "ask", "give", "drop"], default="show")
+    s.add_argument("--which", choices=["micro", "climax"]); s.add_argument("--past", help="a block already on the page (the Art's second line)")
+    s.add_argument("--road", type=int, help="ask: the road he names (rank V)"); s.add_argument("--option", type=int, help="give: the road the counsel is about")
+    s.add_argument("--truth", help="give: the one true thing, in the page's words"); s.add_argument("--allow-names"); s.add_argument("--why")
     s = sub.add_parser("project"); s.add_argument("id", nargs="?", help="a project quest id (show|work), or nothing: rebuild the projections"); s.add_argument("action", nargs="?", choices=["show", "work"]); s.add_argument("--where"); s.add_argument("--what"); s.add_argument("--dry", action="store_true", help="list the projections that would change, write nothing")
     s = sub.add_parser("fire"); s.add_argument("id"); s.add_argument("--where", required=True); s.add_argument("--evidence", help="the block's own words that pay it (verbatim); the record carries it by itself")
     s = sub.add_parser("void"); s.add_argument("id"); s.add_argument("--why", required=True)
@@ -6760,7 +6982,7 @@ def main():
     {
         "now": cmd_now, "due": cmd_due, "check": cmd_check, "fmt": cmd_fmt, "archive": cmd_archive,
         "add": cmd_add, "fire": cmd_fire, "void": cmd_void, "bearing": cmd_bearing, "route": cmd_route,
-        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names, "songs": cmd_songs,
+        "plan": cmd_plan, "challenge": cmd_challenge, "invite": cmd_invite, "counsel": cmd_counsel, "project": cmd_project_quest, "arc": lambda a: print_arc(a.id), "lore": cmd_lore, "names": cmd_names, "songs": cmd_songs,
         "brief": cmd_brief, "record": cmd_record, "reread": cmd_reread, "notes": cmd_notes, "history": cmd_history, "threads": cmd_threads, "glimpse": cmd_glimpse, "choose": cmd_choose, "approval": cmd_approval,
         "tale": cmd_tale,
     }[args.cmd](args)

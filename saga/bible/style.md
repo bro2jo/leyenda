@@ -18,6 +18,7 @@ The real world drives the story's **outcomes**; it never appears in the story's 
 |---|---|
 | Fuel / Ember (nutrition) | warmth vs. cold in Darrow's body; color in his face; how fast cuts close; whether he lasts through a long scene; how far the cold gets in when Ember is low |
 | Floor minimum, morning checks | quiet discipline: the dawn vigil, the Mender's forms, Warden's Eye; Darrow catching his own lies |
+| A night's sleep at the line | Morning's Counsel: a morning he rises clear, a thing that has sorted itself overnight; when he has slept on a choice, what he wakes knowing. Never a count of hours, never a short night remarked on: a thin night is simply not on the page |
 | Knee sessions | Maelis working the Binding: "the forms," slow and exacting, never named as exercises; the leg answering, or not |
 | PT visit | the Reading of the Knots (Maelis's weekly examination) |
 | Upper-body work | the Seated Blade; grip, shoulders, a sword that feels lighter |

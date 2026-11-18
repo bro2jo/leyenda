@@ -55,6 +55,7 @@ You don't need commands; anything that looks like a log gets logged. Commands ex
 | knee sessions, PT | **Might**, **Finesse**, *Stillwater Stance* |
 | upper body / accessory / power | **Might**, *The Seated Blade*, *Iron Grip*, *Hammerfall* |
 | conditioning | **Vigor**, *The Long Breath* |
+| a night's sleep at your target (logged with the morning check) | *Morning's Counsel*: a story choice you can sleep on |
 | sport skills | **Finesse**, **Vigor**, and sport **Arts** you define |
 | a full week | the chapter's tier: **Triumph · Hard-won · Costly · Setback** sets how the climax goes |
 | a real rehab gate passed (PT-cleared) | a **Knot** of the Binding ties, and a new Book of the saga opens |

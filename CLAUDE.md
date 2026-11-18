@@ -39,7 +39,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 
 | He says something like… | You do |
 |---|---|
-| food, a meal, a photo of a label or plate · a morning check · "heel prop done" · a session, PT visit, upper, bike · a weigh-in, creatine · a throwing or film session | `/log` |
+| food, a meal, a photo of a label or plate · a morning check (the swelling grade and last night's sleep in minutes) · "heel prop done" · a session, PT visit, upper, bike · a weigh-in, creatine · a throwing or film session | `/log` |
 | "dinner with Rae", date night, any time together on purpose | `/log` → `together=Y`; that is the whole record, nothing else is logged or asked |
 | "close day", or a new day's first log while yesterday has something logged and isn't closed | `/close`: close the day and write its scene (the brief, the scene, the record). A day with nothing logged is missed: no row, no scene. A log for a day already closed updates the Ledger only |
 | "PT moved my session", "visit cancelled", a session the plan moves or drops | `/log` → `real/config.json → plan_changes`: a plan-directed change is never a miss |
@@ -50,6 +50,7 @@ The user is Darrow. He logs here from his phone and computer. He wants two separ
 | "where's Darrow", "what's happening in the story" | `/saga` (story only) |
 | "checkpoint", the first message on a Sunday, or a new week's first message while last week's chapter is unclosed | `/checkpoint` (anything in the message dated last week is logged first; a week with nothing logged is still a chapter), then `/chapter` plans the next one, in the same session or a fresh one |
 | an answer to an open story choice ("2", "open it", "go the long way") | `/choose` |
+| "sleep on it", "I'll decide in the morning", while a choice is open | `/choose` → Sleeping on it (`saga.py counsel ask`); the counsel comes with his next morning check whose night counts |
 | a Darrow action that answers no open choice ("RP: Darrow asks Hollis…", "/play …"), or his answer in voice to an invitation | `/play`: a Between |
 | a question about the world, not the plot ("tell me about the Steps", "is there a song about…") | `/lore` |
 | a new plan, PT note, program or nutrition guide | `/ingest` |
@@ -78,6 +79,7 @@ python3 engine/darrow.py doc state|rules|addon|master|offseason|sport|sportguide
 python3 engine/darrow.py close DATE (it prints the brief) · chapter-close --date <Saturday> · roll … --chapter N · odds --stat S [--prof --art ID] [--chapter N] [--dc N | --target P] · knot tie N --date D --evidence "…"
 python3 engine/darrow.py project open "Title" --tasks … | done TASK | show [--all] | drop --why "…"   (the week's work; `today` names its next task)
 python3 engine/saga.py now · brief [--date D | --between --with who | --climax | --choice | --chapter | --tale] · reread [KEY] · record '<json>' · choose --option K '<entry>'
+python3 engine/saga.py counsel [ask | give --option K [--truth "…"] | drop]   (a choice slept on: asked, then given with the morning check after a night that counts)
 python3 engine/saga.py notes [--person P] (what the brief prints of each companion, with sizes) · glimpse add --kind K "…" · history --person|--thread|--last · threads [--id N] · due [--later] · approval forecast · bearing show · arc ID · lore ID · check · project
 python3 engine/saga.py tale bind <project id> [--tale tale.id] | list | next   (a project's tale; a task reported owes a piece)
 ```

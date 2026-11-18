@@ -53,6 +53,7 @@
       {"id": "weary", "name": "Tired but standing", "prompt": "tired around the eyes, but steady and unafraid"},
       {"id": "patient", "name": "Patient calm", "prompt": "calm and unhurried, the look of a man who will wait as long as it takes", "unlock": {"art": "menders_patience", "rank": 3}},
       {"id": "reading", "name": "Reading you", "prompt": "eyes a little narrowed, reading the viewer the way he would read a line of riders", "unlock": {"art": "wardens_eye", "rank": 3}},
+      {"id": "slept-on-it", "name": "Slept on it", "prompt": "clear-eyed and settled, the look of a man who took a hard question to bed and woke with his mind made up", "unlock": {"art": "morning_counsel", "rank": 3}},
       {"id": "grim", "name": "Grim resolve", "prompt": "jaw set, grim and resolved", "unlock": {"level": 14}, "mood": "fierce"},
       {"id": "war-cry", "name": "War cry", "prompt": "shouting a war cry, teeth bared", "unlock": {"level": 19}, "mood": "battle"},
       {"id": "unbowed", "name": "Unbowed", "prompt": "chin up, unafraid, with a quiet, fierce pride", "unlock": {"level": 25}},

@@ -76,7 +76,14 @@
       "practice": 9,
       "next_at": 15,
       "sealed_until_knot": null,
-      "effect": "Fight at full Might from a fixed position; no penalty for being unable to move."
+      "effect": "Fight at full Might from a fixed position; no penalty for being unable to move.",
+      "mastery": 2,
+      "tier": 1,
+      "tier_rank": 2,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "iron_grip",
@@ -87,7 +94,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Cannot be disarmed; advantage to bind and hold a blade."
+      "effect": "Cannot be disarmed; advantage to bind and hold a blade.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "hammerfall",
@@ -98,7 +112,14 @@
       "practice": 1,
       "next_at": 6,
       "sealed_until_knot": null,
-      "effect": "One blow per fight that staggers whatever it lands on."
+      "effect": "One blow per fight that staggers whatever it lands on.",
+      "mastery": 1,
+      "tier": 1,
+      "tier_rank": 1,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "stillwater",
@@ -109,7 +130,14 @@
       "practice": 21,
       "next_at": 30,
       "sealed_until_knot": null,
-      "effect": "Advantage to keep footing; cannot be knocked down while braced."
+      "effect": "Advantage to keep footing; cannot be knocked down while braced.",
+      "mastery": 3,
+      "tier": 1,
+      "tier_rank": 3,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "long_breath",
@@ -120,7 +148,14 @@
       "practice": 11,
       "next_at": 15,
       "sealed_until_knot": null,
-      "effect": "Recover once per fight; endure where others tire."
+      "effect": "Recover once per fight; endure where others tire.",
+      "mastery": 2,
+      "tier": 1,
+      "tier_rank": 2,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "menders_patience",
@@ -131,7 +166,14 @@
       "practice": 38,
       "next_at": 50,
       "sealed_until_knot": null,
-      "effect": "+Rank to Resolve checks against fear, haste and temptation."
+      "effect": "+Rank to Resolve checks against fear, haste and temptation.",
+      "mastery": 4,
+      "tier": 1,
+      "tier_rank": 4,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "wardens_eye",
@@ -142,7 +184,32 @@
       "practice": 45,
       "next_at": 50,
       "sealed_until_knot": null,
-      "effect": "Read a weakness or a lie; +Rank to Insight."
+      "effect": "Read a weakness or a lie; +Rank to Insight.",
+      "mastery": 4,
+      "tier": 1,
+      "tier_rank": 4,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
+    },
+    {
+      "id": "morning_counsel",
+      "name": "Morning's Counsel",
+      "tree": "Insight",
+      "rank": 0,
+      "banked_rank": 0,
+      "practice": 0,
+      "next_at": 1,
+      "sealed_until_knot": null,
+      "effect": "A question he takes to bed is clearer by morning. Once a chapter he may sleep on an open choice and wake knowing which road hides the most; from rank III, one true thing about that road; at rank V, about the road he names. +Rank to one check to read a person or a lie in the block that carries the counsel.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "groundbreaker",
@@ -153,7 +220,14 @@
       "practice": 17,
       "next_at": 30,
       "sealed_until_knot": null,
-      "effect": "Drive through a line; Might checks on foot gain +Rank."
+      "effect": "Drive through a line; Might checks on foot gain +Rank.",
+      "mastery": 3,
+      "tier": 1,
+      "tier_rank": 3,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "soft_landing",
@@ -164,7 +238,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Take falls and drops without harm."
+      "effect": "Take falls and drops without harm.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "long_road",
@@ -175,7 +256,14 @@
       "practice": 2,
       "next_at": 6,
       "sealed_until_knot": null,
-      "effect": "Travel and pursue without exhaustion."
+      "effect": "Travel and pursue without exhaustion.",
+      "mastery": 1,
+      "tier": 1,
+      "tier_rank": 1,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "thunderstep",
@@ -186,7 +274,14 @@
       "practice": 6,
       "next_at": 15,
       "sealed_until_knot": 5,
-      "effect": "Leap gaps, walls and horses."
+      "effect": "Leap gaps, walls and horses.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "hawks_stoop",
@@ -197,7 +292,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": 5,
-      "effect": "Close any distance before a bow can be drawn twice."
+      "effect": "Close any distance before a bow can be drawn twice.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "anchor",
@@ -208,7 +310,14 @@
       "practice": 1,
       "next_at": 6,
       "sealed_until_knot": 5,
-      "effect": "Stop dead at full speed; break a charge."
+      "effect": "Stop dead at full speed; break a charge.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "turning_blade",
@@ -219,7 +328,14 @@
       "practice": 1,
       "next_at": 6,
       "sealed_until_knot": 6,
-      "effect": "Turn at speed and strike from the turn."
+      "effect": "Turn at speed and strike from the turn.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "quickening",
@@ -230,7 +346,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": 6,
-      "effect": "Act before the enemy finishes deciding."
+      "effect": "Act before the enemy finishes deciding.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "measured_hand",
@@ -241,7 +364,14 @@
       "practice": 7,
       "next_at": 15,
       "sealed_until_knot": null,
-      "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing."
+      "effect": "Whatever he throws lands where he means it to, at the pace he means: a blade into a friend's palm, a stone that only taps the shutter. Advantage to place a thrown thing.",
+      "mastery": 2,
+      "tier": 1,
+      "tier_rank": 2,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "wicket_gate",
@@ -252,7 +382,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Thread a thrown or passed thing past a man standing in its way; a guard in the line stops it only if he wins a contest for it."
+      "effect": "Thread a thrown or passed thing past a man standing in its way; a guard in the line stops it only if he wins a contest for it.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "liars_shoulder",
@@ -263,7 +400,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Sell a false intention with the body. Once per scene, a foe who reads him commits the wrong way: advantage on the next check against that foe."
+      "effect": "Sell a false intention with the body. Once per scene, a foe who reads him commits the wrong way: advantage on the next check against that foe.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "overwall",
@@ -274,7 +418,14 @@
       "practice": 5,
       "next_at": 6,
       "sealed_until_knot": null,
-      "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover."
+      "effect": "Throw over a shield, a wall or a crowd and drop it into the space behind; what stands between him and the mark gives it no cover.",
+      "mastery": 1,
+      "tier": 1,
+      "tier_rank": 1,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "far_cast",
@@ -285,7 +436,14 @@
       "practice": 1,
       "next_at": 6,
       "sealed_until_knot": null,
-      "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be."
+      "effect": "A long throw a running ally can take: the rope across the river, the sword across the hall, landing where the runner will be.",
+      "mastery": 1,
+      "tier": 1,
+      "tier_rank": 1,
+      "tier_name": "in the hand",
+      "tier_short": "Hand",
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "tell_reading",
@@ -296,7 +454,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Watch a foe's hips and hands and know his next move before he makes it. Once per scene, ask what an opponent means to do."
+      "effect": "Watch a foe's hips and hands and know his next move before he makes it. Once per scene, ask what an opponent means to do.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     },
     {
       "id": "shadow_step",
@@ -307,7 +472,14 @@
       "practice": 0,
       "next_at": 1,
       "sealed_until_knot": null,
-      "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
+      "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step.",
+      "mastery": 0,
+      "tier": 0,
+      "tier_rank": 0,
+      "tier_name": null,
+      "tier_short": null,
+      "deeper": [],
+      "tier_line_owed": false
     }
   ],
   "tether": {

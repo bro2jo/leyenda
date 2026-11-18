@@ -30,6 +30,11 @@
     "shake_is_target": false,
     "source": "nutrition_guide.md; shake dropped as a target 10/8"
   },
+  "sleep_targets": {
+    "_about": "His own targets, set 11/18: minutes asleep a night and across the week (Sun-Sat, each night logged on the day he woke). The plan's line is 8-9 h a night (whole_athlete_addon.md section 9; offseason_program_24_week.md section 13): 480 is its lower bound. The engine reads these; what a night or a week pays is engine/rules.json.",
+    "min_per_night": 480,
+    "min_per_week": 3360
+  },
   "nutrition_reference": {
     "_about": "Daily reference values for the weekly recap, from nutrition_guide.md 'Micronutrient Reference' (added 2026-10-08): standard adult-male DRI / FDA DV. Not targets; judged week to week at the checkpoint. min = at least, max = at most; show = how the recap prints it.",
     "fiber_g": {

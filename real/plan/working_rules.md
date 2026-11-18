@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/18 (repo, his call): **sleep joins the morning check**: from 11/19 the check is the swelling grade and last night's minutes of sleep together; a morning with the grade and no minutes is not a check yet. The log column is `sleep_min` (it was `sleep_h`, never used). His targets, 480 minutes a night and 3,360 a week, live in `config.json → sleep_targets`
 - 11/17 (repo, his call): **the morning check is the swelling grade alone**; pain, extension, wellness and anything new move to the Sunday check. On the mornings that judge or precede a run or a home knee session he still looks, and reports pain or extension only when off (the master plan's running rules: no meaningful pain increase, no loss of extension). A clean morning is swelling same or down with nothing reported worse; the pre-session check reads the same way
 - 11/17 (repo, his call): the exercise log gains `hr_avg`, the average heart rate in bpm when he gives it
 - 11/16 (repo, his call; Phase 5 from PT 15): the checks simplified. The morning check is five questions (swelling grade, pain and where, extension vs the right, wellness, anything new); the Sunday checks keep the weigh-in and the single-leg squat test while the State keeps it; the heel prop and photo, the SLR lag and the flexion heel slide are retired and come back when a morning shows a problem; the check-in set adds the run
@@ -60,7 +61,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   - Progressions of plan exercises along the plan's own variables (load, reps, sets, range, speed, holds) are in-plan.
   - **Out-of-plan** = modalities or exercises the plan doesn't contain. These go to the PT first.
   - **Later-phase items** stay behind the plan's criteria (load rule 9).
-- **Daily minimum:** the morning check (Check-in question set). The weighted heel prop was part of it until the photo showed the left as straight as the right (10/18), then a Sunday check until 11/16; it returns daily, at the dose in the Recovery State §6, if a morning shows the left short of the right.
+- **Daily minimum:** the morning check (Check-in question set): the swelling grade and last night's minutes of sleep. The weighted heel prop was part of it until the photo showed the left as straight as the right (10/18), then a Sunday check until 11/16; it returns daily, at the dose in the Recovery State §6, if a morning shows the left short of the right.
 - **Minimum session:** the version of each session marked in the Recovery State §6. Below it, the day is partial, not loaded.
 - **Week:** Sunday through Saturday, identified by its Sunday date (`dash_week_start`).
 - **Post-op week:** counted from surgery (Mon 2026-08-24). Week n = POD 7n−6 to 7n, Tuesday → Monday (`postop_week`). Example: POD 43 = 6 weeks + 1 day = the first day of post-op week 7.
@@ -170,7 +171,7 @@ Fever · calf pain or calf swelling · wound drainage or spreading redness · ra
 
 ## Check-in question set (Phases 3–5)
 
-- **Morning (from 11/17): the swelling grade** (none / trace / 1+ — the grade, not a trend). Nothing else is asked. On a morning that judges or precedes a run or a home knee session he also looks at pain and extension, and reports them only when off (pain over 2 and where, the left short of the right). Red flags any time, as always. Hours on feet are logged when he gives them.
+- **Morning: the swelling grade** (none / trace / 1+ — the grade, not a trend; from 11/17) **and last night's sleep in minutes** (from 11/19; from his watch, or his own estimate: "7h40" is 460). Both make the check; nothing else is asked. On a morning that judges or precedes a run or a home knee session he also looks at pain and extension, and reports them only when off (pain over 2 and where, the left short of the right). Red flags any time, as always. Hours on feet are logged when he gives them.
 - **After a run (Phase 5):** which walk-jog session · walk and jog minutes × rounds, as run · surface · pain during and after (front of the knee especially) · anything off in the stride · minutes and RPE.
 - **After a knee session:** which session (A or B) · doses, including anything changed on the fly · **impact: rung, sets × contacts, landings quiet or not** · pain during (front of knee especially) and after · **control on the single-leg items** (knee over the foot, hip level, slow lowering) · fullness stable or building · gait after · posture cooldown done · **minutes and RPE**.
 - **After an upper session:** loads, sets and reps · **minutes and session RPE** · warm-up and finisher done · anything about the setup the knee noticed.
@@ -222,7 +223,8 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 | `sport_min` | Throwing and film minutes |
 | `hours_on_feet`, `gym_min_on_feet` | Time on feet, **a number** (an estimate from his words is fine: "about half the day" = 6, "all day" = 8; "a lot" with no anchor stays blank, the words in `am_notes`) |
 | `adjuncts` | Each item with its minutes, joined with `;`: `sauna 20 min; Game Ready 25 min; red light 20 min` |
-| `crutches`, `gait_notes`, `sleep_h` | — |
+| `crutches`, `gait_notes` | — |
+| `sleep_min` | Last night's sleep in **whole minutes**, logged on the day he woke (a night is one number; naps are not added). Part of the morning check from 11/19. Blank = not reported, never estimated for him. The targets it is read against: `config.json → sleep_targets` (480 a night, 3,360 a week, Sun–Sat); the plan's own line is 8–9 h (Add-On §9) |
 | `together`, `closed` | The repo's bookkeeping (`CLAUDE.md`) |
 | `notes` | Only what doesn't fit a column, ≤2 sentences |
 

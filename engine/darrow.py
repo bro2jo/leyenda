@@ -11,7 +11,7 @@ Commands (run from the repo root):
   week [--date D]              real-side view of the week (Sun-Sat) containing D
   sheet                        saga-side character sheet (no real numbers)
   set nutrition|daily DATE k=v ...   upsert fields on a day's row (notes+=text appends; an unknown column is refused).
-                               e.g. set daily D am_swelling=trace am_pain=0 floor_am=Y knee_session=A knee_as_planned=Y;
+                               e.g. set daily D am_swelling=trace sleep_min=460 am_pain=0 floor_am=Y knee_session=A knee_as_planned=Y;
                                set daily D together=Y (time together on purpose: the Tether's practice; sync reports
                                TETHER TIED / DRAWN); set nutrition D weight_lb=156.2 creatine=Y "notes+=shake missed"
   close DATE [--force]         close a day in one step: closed=Y, sync, then saga.py brief --date DATE (what the day's scene must carry);
@@ -146,7 +146,7 @@ COLS = {
               "floor_am", "floor_pm", "knee_session", "knee_min", "knee_rpe", "knee_as_planned",
               "pain_session", "pain_pm", "pt", "addon_session", "addon_min", "addon_rpe",
               "conditioning_type", "conditioning_min", "sport_min",
-              "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_h", "together", "closed", "notes"],
+              "hours_on_feet", "gym_min_on_feet", "crutches", "gait_notes", "adjuncts", "sleep_min", "together", "closed", "notes"],
     "exercise": ["date", "dash_week_start", "pod", "session", "block", "exercise", "side",
                  "sets", "reps", "hold_or_duration", "load", "load_unit", "band", "height_in", "assist", "notes", "hr_avg"],
     "sport": ["date", "session", "skill", "drill", "sets", "reps", "minutes", "rpe",
@@ -161,6 +161,7 @@ DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 ATTRS = ["might", "vigor", "finesse", "resolve"]
 VALID_SWELLING = re.compile(r"^(0|none|trace|1\+|2\+|3\+)$", re.I)
 YES = {"y", "yes", "true", "1", "done", "full"}
+SLEEP_MIN_BOUNDS = (60, 960)  # a night's sleep_min: whole minutes; under an hour reads as hours typed by mistake
 NOT_DONE = re.compile(r"^\s*(not done|skipped)\b", re.I)  # exercise-log notes that mark a planned item as not done
 PER_SET_NUMBER = re.compile(r"^\d+(\.\d+)?(/\d+(\.\d+)?)*$")  # an exercise row's load or height: 50, 52.5, or one per set 40/50/60
 
@@ -329,7 +330,7 @@ def gather(cfg, rules, nutrition=None):
         "addons": set(), "cond_min": 0.0, "cond_type": "", "sport": 0, "sport_skills": set(), "sport_sessions": set(),
         "light": "", "closed": False, "logged": False, "tags": set(), "knee_partial": False,
         "together": False, "pt_missed": False, "knee_unpaid": "", "addons_unpaid": set(),
-        "knee_tags": set(), "other_tags": set(),
+        "knee_tags": set(), "other_tags": set(), "sleep_min": None, "graded": False,
     })
     for r in (nutrition if nutrition is not None else read_csv("nutrition")):
         if not r.get("date"):
@@ -352,8 +353,10 @@ def gather(cfg, rules, nutrition=None):
         if any(str(v or "").strip() for k, v in r.items() if k not in quiet_cols):
             f["logged"] = True
         rounds = int(yes(r.get("floor_am"))) + int(yes(r.get("floor_pm")))
+        f["sleep_min"] = sleep_minutes(r.get("sleep_min"))
         if VALID_SWELLING.match(str(r.get("am_swelling", "")).strip()):
-            f["check"] = True
+            f["graded"] = True  # the grade is in; from morning_check.needs_sleep_from the check also needs last night's minutes
+            f["check"] = not check_needs_sleep(rules, r["date"]) or f["sleep_min"] is not None
         need = floor_rounds(cfg, r["date"])
         if need == 0:
             # the heel prop is a weekly check now (Working Rules): the daily minimum is the graded morning check,
@@ -449,7 +452,61 @@ def gather(cfg, rules, nutrition=None):
             f["tags"].add("floor")
         if f["check"]:
             f["tags"].add("check")
+        if sleep_standing(f["sleep_min"], cfg, rules) in ("hit", "near"):
+            f["tags"].add("sleep")  # a night at the line or close to it: a day of practice for the Art sleep feeds
     return facts
+
+
+def sleep_minutes(v):
+    """A daily row's sleep_min as whole minutes, or None when blank or not a count of minutes (`check` names a bad one)."""
+    s = str(v or "").strip()
+    return int(s) if re.fullmatch(r"\d{1,4}", s) and SLEEP_MIN_BOUNDS[0] <= int(s) <= SLEEP_MIN_BOUNDS[1] else None
+
+
+def sleep_problem(v):
+    """Why a sleep_min value is refused, or None: minutes asleep as a whole number ("7h40" is 460), never hours."""
+    s = str(v or "").strip()
+    if not s or sleep_minutes(s) is not None:
+        return None
+    lo, hi = SLEEP_MIN_BOUNDS
+    return (f"sleep_min '{s}' is not a whole number of minutes between {lo} and {hi} "
+            f"(7 h 40 min is 460; a number under {lo} reads as hours)")
+
+
+def check_needs_sleep(rules, date):
+    """True from rules.json -> daily.morning_check.needs_sleep_from on: the morning check is the swelling grade and
+    last night's minutes of sleep together. Earlier mornings keep the check they were paid for the grade alone."""
+    start = (rules["daily"].get("morning_check") or {}).get("needs_sleep_from")
+    return bool(start) and str(date) >= start
+
+
+def sleep_standing(minutes, cfg, rules):
+    """A night against the Ledger's target (config.json -> sleep_targets.min_per_night): 'hit' at the target, 'near'
+    within rules.json -> daily.sleep_near.threshold of it (it still counts), 'short' below, None when not logged or
+    while no target is set. More than the target is the target: nothing pays past it."""
+    target = (cfg.get("sleep_targets") or {}).get("min_per_night")
+    if minutes is None or not target:
+        return None
+    r = minutes / target
+    near = (rules["daily"].get("sleep_near") or {}).get("threshold", 1)
+    return "hit" if r >= 1 else "near" if r >= near else "short"
+
+
+def week_sleep(ws, upto, facts, cfg, rules):
+    """The week's nights (each logged on the day he woke, ws..upto): minutes in all, nights logged, nights at the target
+    and close to it, the week's target (config.json -> sleep_targets.min_per_week) and whether the total reached it."""
+    days = [ws + dt.timedelta(i) for i in range(7) if ws + dt.timedelta(i) <= upto]
+    mins = [(facts.get(day.isoformat()) or {}).get("sleep_min") for day in days]
+    logged = [m for m in mins if m is not None]
+    stand = [sleep_standing(m, cfg, rules) for m in logged]
+    target = (cfg.get("sleep_targets") or {}).get("min_per_week")
+    return {"total": sum(logged), "nights": len(logged), "hit": stand.count("hit"), "near": stand.count("near"),
+            "target": target, "met": bool(target) and sum(logged) >= target, "by_day": dict(zip(days, mins))}
+
+
+def hm(minutes):
+    """Minutes as hours and minutes: 460 -> 7h40."""
+    return f"{int(minutes) // 60}h{int(minutes) % 60:02d}"
 
 
 def mark_overshoot(facts, cfg, rules):
@@ -581,6 +638,11 @@ def deeds_for_day(date, f, cfg, rules):
             add("protein_hit")
         elif r >= R["protein_near"]["threshold"]:
             add("protein_near")
+    st_ = sleep_standing(f.get("sleep_min"), cfg, rules)
+    if st_ == "hit":
+        add("sleep_hit", note=hm(f["sleep_min"]))
+    elif st_ == "near":
+        add("sleep_near", note=hm(f["sleep_min"]))
     if f["closed"] and f["logged"]:  # a day holding only `together` earns nothing: the Tether is never scored
         add("day_closed")
     return out
@@ -796,6 +858,28 @@ def tether_at(asof, facts, rules):
             "with": t.get("with")}
 
 
+def art_ladder(rules):
+    """(ladder, per): every practice threshold an Art climbs, tier after tier (rules.json -> art_tiers.ladder; the first
+    tier is art_ranks), and the ranks in a tier. An Art past its first tier keeps rank V for the dice and climbs on."""
+    first = list(rules["art_ranks"])
+    tiers = (rules.get("art_tiers") or {}).get("ladder") or [first]
+    return [t for tier in tiers for t in tier], len(first)
+
+
+def art_label(a):
+    """An Art's standing as the sheet writes it: 'III' in the first tier, 'Blood II' past it; '' while unlearned."""
+    if not a.get("rank"):
+        return ""
+    if a.get("tier", 1) > 1 and a.get("tier_short"):
+        return f"{a['tier_short']} {roman(a['tier_rank'])}"
+    return roman(a["rank"])
+
+
+def art_steps(a):
+    """Every step an Art has climbed (a sheet saved before the tiers has only its rank)."""
+    return a.get("mastery", a.get("rank", 0)) if a else 0
+
+
 def tier_of(value, tiers):
     return next(t for t in tiers if value >= t["min"])
 
@@ -832,7 +916,7 @@ def wardrobe_earned(level, arts, knots):
     What is open from the start, or opened by the page alone, is the site's."""
     if not P["wardrobe"].exists():
         return []
-    rank = {a["id"]: a["rank"] for a in arts}
+    rank = {a["id"]: art_steps(a) for a in arts}  # every step of the ladder: rank 6 is the second tier's first rank
     holds = {"level": lambda u: level >= u["level"], "art": lambda u: rank.get(u["art"], 0) >= u.get("rank", 1),
              "knot": lambda u: u["knot"] in knots}
     earned = []
@@ -916,6 +1000,10 @@ def compute(cfg, rules, asof=None, write=False):
                 wadd(Wk["scouted"]["label"], Wk["scouted"]["xp"])
             if sc["planned"] and all(sc["done"].get(k, 0) >= v for k, v in sc["planned"].items()):
                 wadd(Wk["all_sessions"]["label"], Wk["all_sessions"]["xp"], Wk["all_sessions"]["temper"])
+            sl = week_sleep(ws, ws + dt.timedelta(6), facts, cfg, rules)
+            if sl["met"] and Wk.get("sleep_week"):  # the week's nights sum to its target: a long night may cover a short one
+                wadd(Wk["sleep_week"]["label"], Wk["sleep_week"]["xp"], Wk["sleep_week"].get("temper"),
+                     note=f"{sl['total']:,} of {sl['target']:,} min over {sl['nights']} nights")
             bonus = Wk["tier_bonus"].get(tier, 0)
             if bonus and ws >= d(cfg["chronicle_start"]):
                 wadd(f"Chapter tier: {tier}", bonus,
@@ -954,6 +1042,55 @@ def compute(cfg, rules, asof=None, write=False):
             reached_on[L] = date
         lv = max(lv, reached)
 
+    # arts: practice is the count of days a tag was logged; the ladder runs through every tier (art_ladder)
+    practice = defaultdict(int)
+    for date, f in facts.items():
+        if d(date) <= asof:
+            for t in f["tags"]:
+                practice[t] += 1
+    ladder, per = art_ladder(rules)
+    tier_names = (rules.get("art_tiers") or {}).get("names") or []
+    tier_short = (rules.get("art_tiers") or {}).get("short") or []
+    arts = []
+    all_arts = list(rules["arts"]) + [
+        {**a, "tag": "sport:" + a["skill"]} for a in rules.get("sport_arts", {}).get("arts", [])]
+    for a in all_arts:
+        n = practice.get(a["tag"], 0)
+        steps = sum(1 for t in ladder if n >= t)  # every rank of every tier reached: 0..len(ladder)
+        sealed = n_knots < a.get("knot", 0)
+        nxt = next((t for t in ladder if n < t), None)
+        tier = 0 if not steps or sealed else (steps - 1) // per + 1
+        lines = a.get("tiers") or {}
+        arts.append({"id": a["id"], "name": a["name"], "tree": a["tree"], "rank": 0 if sealed else min(steps, per),
+                     "banked_rank": min(steps, per) if sealed else 0, "practice": n, "next_at": nxt,
+                     "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"],
+                     # the tiers past rank V: `rank` stays the dice's number (never past V); `mastery` counts every step
+                     "mastery": 0 if sealed else steps, "tier": tier, "tier_rank": steps - (tier - 1) * per if tier else 0,
+                     "tier_name": tier_names[tier - 1] if 0 < tier <= len(tier_names) else None,
+                     "tier_short": tier_short[tier - 1] if 0 < tier <= len(tier_short) else None,
+                     "deeper": [lines[str(k)] for k in range(2, tier + 1) if lines.get(str(k))],
+                     "tier_line_owed": tier >= 2 and not lines.get(str(tier))})
+    # the day each Art reached each step of the ladder (a sealed Art's from its Knot's day), and each Knot's: the Wardrobe
+    # dates its pieces by them, and an Art turning into a new tier brings Inspiration that day
+    knot_on = {k["knot"]: k.get("date") for k in cfg["rehab"].get("knots", [])}
+    art_on, count, by_tag = {}, defaultdict(int), defaultdict(list)
+    for a in all_arts:
+        by_tag[a["tag"]].append(a)
+    for date in sorted(x for x in facts if d(x) <= asof):
+        for t in facts[date]["tags"]:
+            count[t] += 1
+            if count[t] in ladder:
+                for a in by_tag[t]:
+                    art_on[(a["id"], ladder.index(count[t]) + 1)] = max(date, knot_on.get(a.get("knot", 0)) or date)
+    per_turn = (rules.get("art_tiers") or {}).get("inspiration_on_turn", 0)
+    if per_turn:
+        for a in all_arts:
+            if n_knots >= a.get("knot", 0):  # a sealed Art turns nothing until its Knot ties
+                for k in range(1, len(ladder) // per):
+                    when = art_on.get((a["id"], k * per + 1))
+                    if when:
+                        insp_events.append((when, +per_turn, f"{a['name']}: {tier_names[k] if k < len(tier_names) else 'a new tier'}"))
+
     # inspiration: chronological earn/spend, capped
     per_level = rules["inspiration"].get("per_level", 0)
     if per_level:
@@ -971,36 +1108,6 @@ def compute(cfg, rules, asof=None, write=False):
     cap = rules["inspiration"]["cap"]
     for _, delta, _ in sorted(insp_events, key=lambda e: (e[0], -e[1])):
         insp = max(0, min(cap, insp + delta))
-
-    # arts
-    practice = defaultdict(int)
-    for date, f in facts.items():
-        if d(date) <= asof:
-            for t in f["tags"]:
-                practice[t] += 1
-    thresholds = rules["art_ranks"]
-    arts = []
-    all_arts = list(rules["arts"]) + [
-        {**a, "tag": "sport:" + a["skill"]} for a in rules.get("sport_arts", {}).get("arts", [])]
-    for a in all_arts:
-        n = practice.get(a["tag"], 0)
-        rank = sum(1 for t in thresholds if n >= t)
-        sealed = n_knots < a.get("knot", 0)
-        nxt = next((t for t in thresholds if n < t), None)
-        arts.append({"id": a["id"], "name": a["name"], "tree": a["tree"], "rank": 0 if sealed else rank,
-                     "banked_rank": rank if sealed else 0, "practice": n, "next_at": nxt,
-                     "sealed_until_knot": a.get("knot", 0) if sealed else None, "effect": a["effect"]})
-    # the day each Art reached each rank (a sealed Art's from its Knot's day), and each Knot's: the Wardrobe dates its pieces by them
-    knot_on = {k["knot"]: k.get("date") for k in cfg["rehab"].get("knots", [])}
-    art_on, count, by_tag = {}, defaultdict(int), defaultdict(list)
-    for a in all_arts:
-        by_tag[a["tag"]].append(a)
-    for date in sorted(x for x in facts if d(x) <= asof):
-        for t in facts[date]["tags"]:
-            count[t] += 1
-            if count[t] in thresholds:
-                for a in by_tag[t]:
-                    art_on[(a["id"], thresholds.index(count[t]) + 1)] = max(date, knot_on.get(a.get("knot", 0)) or date)
 
     tether = tether_at(asof, facts, rules)
     try:  # the Tether only climbs: a stage the saved sheet already reached is held, in every view
@@ -1060,6 +1167,10 @@ def cmd_sync(args, cfg, rules):
           f"Ember {s['ember']['value']} {s['ember']['tier']} | Inspiration {s['inspiration']}")
     for n in st.get("tier_notes", []):
         print("  note: " + n)
+    for a in s["arts"]:  # said at every sync until it is written: a tier's line is authored when the Art gets there
+        if a.get("tier_line_owed"):
+            print(f"  note: {a['name']} is {a['tier_name']} and its line for that tier is not written (engine/rules.json -> arts[].tiers "
+                  f"{{\"{a['tier']}\": …}}; propose it to him), nor its Wardrobe piece (engine/wardrobe.md)")
     if old:
         notes = diff_sheets(old, s)
         if notes:
@@ -1095,10 +1206,14 @@ def diff_sheets(old, new):
     oa = {a["id"]: a for a in old.get("arts", [])}
     for a in new["arts"]:
         prev = oa.get(a["id"], {})
-        if a["rank"] > prev.get("rank", 0):
-            was = prev.get("rank", 0)
-            notes.append(f"ART LEARNED: {a['name']} {roman(a['rank'])}" if was == 0
-                         else f"ART RANKED UP: {a['name']} {roman(was)} -> {roman(a['rank'])}")
+        if art_steps(a) > art_steps(prev):
+            notes.append(f"ART LEARNED: {a['name']} {art_label(a)}" if art_steps(prev) == 0
+                         else f"ART RANKED UP: {a['name']} {art_label(prev)} -> {art_label(a)}")
+            if a.get("tier", 1) > max(prev.get("tier", 1), 1):
+                line = a["deeper"][-1] if a.get("deeper") and not a.get("tier_line_owed") else None
+                notes.append(f"ART TURNED: {a['name']} is now {a.get('tier_name')}: " + (f"its new line: {line}" if line else
+                             "its new line is NOT WRITTEN yet (engine/rules.json -> arts[].tiers; propose it to him), "
+                             "and neither is its Wardrobe piece (engine/wardrobe.md)") + " · the dice keep rank V")
     if new["inspiration"] > old.get("inspiration", 0):
         notes.append(f"INSPIRATION +{new['inspiration'] - old.get('inspiration', 0)} (now {new['inspiration']})")
     if new["knots_count"] > old.get("knots_count", 0):
@@ -1146,9 +1261,9 @@ def reckoning_line(old, new):
             bits.append(f"{a.capitalize()} {o} → {n}")
     oa = {a["id"]: a for a in old.get("arts", [])}
     for a in new["arts"]:
-        was = oa.get(a["id"], {}).get("rank", 0)
-        if a["rank"] > was:
-            bits.append(f"{a['name']} {roman(was) if was else 'new'} → {roman(a['rank'])}")
+        was = oa.get(a["id"], {})
+        if art_steps(a) > art_steps(was):
+            bits.append(f"{a['name']} {art_label(was) or 'new'} → {art_label(a)}")
     oe = (old.get("ember") or {}).get("tier")
     if oe and new["ember"]["tier"] != oe:
         bits.append(f"Ember {oe} → {new['ember']['tier']}")
@@ -1221,8 +1336,8 @@ def grades_line(ws, upto, rows):
 def real_week_table(st, cfg, rules, ws, summary=True):
     facts = st["facts"]
     t = cfg["nutrition_targets"]
-    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Sleep | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     kc, pr = [], []
     for i in range(7):
         day = ws + dt.timedelta(i)
@@ -1230,7 +1345,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         plan = ", ".join(planned_for(cfg, day)) or "floor"
         label = f"{dow(day)} {md(day)}"
         if not f:
-            lines.append(f"| {label} | {plan} |" + " |" * 12)
+            lines.append(f"| {label} | {plan} |" + " |" * 13)
             continue
         if f["kcal"] is not None:
             kc.append(f["kcal"])
@@ -1240,7 +1355,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         lines.append("| " + " | ".join([
             label + (" 🔴" if f["light"] == "red" else " 🟡" if f["light"] == "yellow" else ""), plan,
             fmt(f["kcal"]), fmt(f["protein"]), fmt(f["weight"], 1) if f["weight"] else "",
-            "✔" if f["creatine"] else "", flo, "✔" if f["check"] else "",
+            "✔" if f["creatine"] else "", hm(f["sleep_min"]) if f.get("sleep_min") is not None else "", flo, "✔" if f["check"] else "",
             f["knee"] or "", "✔" if f["pt"] else "", "+".join(sorted(f["addons"])),
             f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or ""), "✔" if f["together"] else ""]) + " |")
     upto = min(ws + dt.timedelta(6), st["asof"])
@@ -1256,6 +1371,13 @@ def real_week_table(st, cfg, rules, ws, summary=True):
                    f"at kcal target {hit_k}/{len(kc)} days · at protein target {hit_p}/{len(pr)} days")
     out.append("**Weigh-ins:** " + weight_line(weight_compare(facts, ws, upto), t["weighins_per_week"]))
     out.append("**Morning swelling grades:** " + grades_line(ws, upto, daily_rows()))
+    sl = week_sleep(ws, upto, facts, cfg, rules)
+    if sl["nights"] or sl["target"]:
+        tn = (cfg.get("sleep_targets") or {}).get("min_per_night")
+        out.append("**Sleep:** " + (f"{sl['total']:,} min" + (f" of the week's {sl['target']:,}" if sl["target"] else "")
+                                    + f" · avg {hm(sl['total'] / sl['nights'])} over {sl['nights']} night{'s' if sl['nights'] != 1 else ''}"
+                                    + (f" (target {hm(tn)})" if tn else "") + f" · at target {sl['hit']} · close {sl['near']}"
+                                    if sl["nights"] else "no night logged yet" + (f" · the week's target {sl['target']:,} min" if sl["target"] else "")))
     if sc:
         pl, dn = sc["planned"], sc["done"]
         sess = " · ".join(f"{k} {dn.get(k, 0)}/{v}" for k, v in pl.items())
@@ -1291,6 +1413,8 @@ def cmd_today(args, cfg, rules):
             done.append("red light")
         if f["check"]:
             done.append("morning check")
+        if f.get("sleep_min") is not None:
+            done.append(f"sleep {hm(f['sleep_min'])}")
         if f["floor"]:
             done.append(f"floor ({f['floor']})")
         if f["knee"]:
@@ -1317,7 +1441,10 @@ def cmd_today(args, cfg, rules):
             done.append("day closed")
         print("Logged: " + (", ".join(done) if done else "nothing yet"))
         need = floor_rounds(cfg, day.isoformat())
-        missing = [x for x, ok in [("morning check (grade swelling)", f["check"]),
+        needs_sleep = check_needs_sleep(rules, day.isoformat())
+        check_ask = ("morning check: last night's minutes of sleep" if f["graded"] and needs_sleep and not f["check"]
+                     else "morning check (swelling grade, minutes slept)" if needs_sleep else "morning check (grade swelling)")
+        missing = [x for x, ok in [(check_ask, f["check"]),
                                    ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full" or need == 0)]
                    if not ok]
         missing += unlogged_sessions(cfg, day, f) + ([] if f["creatine"] else ["creatine"])
@@ -1325,7 +1452,7 @@ def cmd_today(args, cfg, rules):
             print(("Not logged" if f["closed"] else "Still open") + ": " + ", ".join(missing))
     else:
         print("Logged: nothing yet. Still open: " + ", ".join(
-            ["morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"]))
+            ["morning check (swelling grade, minutes slept)" if check_needs_sleep(rules, day.isoformat()) else "morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"]))
     print(project_line())
 
 
@@ -1368,7 +1495,7 @@ def sheet_text(s):
         lines.append(f"WORKS · {w['finished']} finished")
     learned = [x for x in s["arts"] if x["rank"] > 0]
     sealed = [x for x in s["arts"] if x["sealed_until_knot"] and x["practice"] > 0]
-    lines.append("ARTS · " + (" · ".join(f"{x['name']} {roman(x['rank'])}" for x in learned) or "none yet"))
+    lines.append("ARTS · " + (" · ".join(f"{x['name']}{':' if x.get('tier', 1) > 1 else ''} {art_label(x)}" for x in learned) or "none yet"))
     if sealed:
         lines.append("SEALED (practice banked) · " + " · ".join(f"{x['name']} (Knot {roman(x['sealed_until_knot'])})" for x in sealed))
     return "\n".join(lines)
@@ -1866,6 +1993,17 @@ def recap_text(st, cfg, rules, ws):
     else:
         out.append(f"Guide's rule: not yet; it needs two weeks of ≥{need} readings (this week {len(wc['cur'])}, last week {len(wc['prev'])}).")
 
+    # sleep
+    sl = week_sleep(ws, upto, facts, cfg, rules)
+    tn = (cfg.get("sleep_targets") or {}).get("min_per_night")
+    if sl["nights"]:
+        out += ["", f"**Sleep** · {sl['total']:,} min" + (f" of the week's {sl['target']:,}" if sl["target"] else "")
+                + f" · avg {hm(sl['total'] / sl['nights'])} over {sl['nights']} night{'s' if sl['nights'] != 1 else ''}"
+                + (f" (target {hm(tn)})" if tn else "") + f" · at target {sl['hit']} · close {sl['near']}",
+                "Nights: " + " · ".join(f"{dow(x)} {hm(m)}" for x, m in sl["by_day"].items() if m is not None)]
+    elif tn:
+        out += ["", f"**Sleep** · no night logged (target {hm(tn)} a night, {sl['target']:,} min a week)"]
+
     # rehab
     rows = daily_rows()
     out += ["", "**Rehab**"]
@@ -2165,6 +2303,8 @@ def upsert_row(key, date, kv, cfg):
         else:
             row[k] = v
     probs = vocab_problems(cfg, key, row, f"{key} {date}")
+    if key == "daily" and sleep_problem(row.get("sleep_min")):
+        probs.append(f"{key} {date}: " + sleep_problem(row.get("sleep_min")))
     if probs:
         sys.exit("refused, nothing written:\n  " + "\n  ".join(probs))
     rows.sort(key=lambda r: r.get("date", ""))
@@ -2960,6 +3100,8 @@ def cmd_check(args, cfg, rules):
         s = str(r.get("am_swelling", "")).strip()
         if s and not VALID_SWELLING.match(s):
             problems.append(f"daily_log {r['date']}: am_swelling '{s}' is not a grade (0/trace/1+/2+/3+); no check credit")
+        if sleep_problem(r.get("sleep_min")):
+            problems.append(f"daily_log {r['date']}: " + sleep_problem(r.get("sleep_min")))
     for key in ("daily", "nutrition", "exercise", "sport"):  # the scoring vocabulary: a misspelt code never pays or costs silently
         for i, r in enumerate(read_csv(key), 2):
             problems += vocab_problems(cfg, key, r, f"{key}_log.csv line {i}")

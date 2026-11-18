@@ -27,9 +27,9 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **Might** | strength of arm and body | the real side's leg work, upper-body, accessory and power work |
 | **Vigor** | endurance, breath, staying power | conditioning minutes, sport sessions (one per session a day, never per skill) |
 | **Finesse** | footwork, balance, speed, timing | the real side's leg work (control), sport skills, later agility work |
-| **Resolve** | discipline, patience, honesty with oneself | the daily minimum in full (one weighted heel-prop round from 10/9), graded morning checks, running a knee session as prescribed (the plan's doses, nothing past them) |
+| **Resolve** | discipline, patience, honesty with oneself | the daily minimum in full (one weighted heel-prop round from 10/9), graded morning checks (from 11/19 the check is the grade and last night's sleep together), running a knee session as prescribed (the plan's doses, nothing past them) |
 | **Ember** (0–100) | the inner fire: warmth, healing, staying power | rolling 7-day fuel score from logged nutrition (calories and protein vs. target); a day counts once it is closed, so Ember does not dip at breakfast and climb back by dinner, and a climax's dice read the Ember its week ended on |
-| **Inspiration** (max 4) | moments of clarity, his to spend: an option tagged `*[Inspiration]*` at a climax or a small choice (a bold way, or the reroll of a check that failed) costs one and is open only while he holds one; a climax check that fails outright is cast again once on his Inspiration, and a second cast never comes clean: its success is success at a cost | a week with the floor minimum every day; a Triumph week; every level from 5 on; a work finished |
+| **Inspiration** (max 4) | moments of clarity, his to spend: an option tagged `*[Inspiration]*` at a climax or a small choice (a bold way, or the reroll of a check that failed) costs one and is open only while he holds one; a climax check that fails outright is cast again once on his Inspiration, and a second cast never comes clean: its success is success at a cost | a week with the floor minimum every day; a Triumph week; every level from 5 on; a work finished; an Art turning into a new tier |
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
 | **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs, and a corrected day never takes one back |
@@ -73,6 +73,7 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Long Breath** | Breath | conditioning ≥10 min | now |
 | **The Mender's Patience** | Binding | the daily minimum in full | now |
 | **Warden's Eye** | Insight | graded morning checks | now |
+| **Morning's Counsel** | Insight | nights of sleep at his target or close to it | now |
 | **Groundbreaker** | Footing | lower-body sessions | Knot III |
 | **Soft Landing** | Footing | landing drills | Knot III |
 | **The Long Road** | Breath | running | Knot IV |
@@ -90,6 +91,12 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Shadow-Step** | Cast | defensive footwork | Knot III |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
+
+**Past rank V: the tiers.** An Art at rank V has not finished: it turns over and climbs again, five ranks to a tier. *In the hand* is the first tier (the ranks above); *in the blood* the second, a rank every 20 days of practice (70 to 150); *in the bone* the third, a rank every 30 (180 to 300). The sheet writes it `Warden's Eye: Blood II`. **The dice never read past rank V**: a higher tier adds no number to a check. What a turn brings is width: a new line on the Art (`rules.json → arts[].tiers`, written with him when the Art gets there; `sync` says when one is owed), 1 Inspiration that day, and a Wardrobe piece. The ladder is `rules.json → art_tiers` and can grow a tier for a sequel.
+
+**Sleep** is a deed like the others: last night's minutes are part of the morning check, a night at his target pays XP (close to it, half; nothing past it), a week whose nights sum to the week's target pays a bonus, and each night at the line or close is a day of practice for Morning's Counsel. It is never part of the chapter tier, and a short night costs nothing.
+
+**Morning's Counsel** is the one Art he *asks* for: once a chapter he may sleep on an open choice ("sleep on it") and wake knowing which road hides the most; from rank III one true thing about that road; at rank V about the road he names. The counsel comes with the next morning check whose night counts, opens the next scene (or stands in the Choice block), and its rank may ride one check to read a person or a lie in that block. In the blood, he may also sleep on a scene already past; in the bone, twice a chapter. The procedure: `/choose` → Sleeping on it; the design: `_gm/design.md` §5.7.
 
 ---
 

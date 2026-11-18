@@ -126,6 +126,49 @@ def main():
         code, out = run(darrow + ["ex", "add", json.dumps([{"date": day0, "session": "Upper B", "block": "push", "exercise": "x"}])], tmp, expect=1)
         check("refused" in out, "ex add refuses a misspelt session")
 
+        # sleep: minutes only, the night's and the week's awards, the morning check that needs it, the Art it feeds, and
+        # the Arts' tiers. A week far ahead of the logs is written, read and taken out again, so nothing later sees it.
+        code, out = run(darrow + ["set", "daily", day0, "sleep_min=7.5"], tmp, expect=1)
+        check("refused" in out and "minutes" in out, "set daily refuses a night given in hours, writing nothing")
+        rules_t, cfg_t = jload(tmp / "engine/rules.json"), jload(tmp / "real/config.json")
+        night, week_t = cfg_t["sleep_targets"]["min_per_night"], cfg_t["sleep_targets"]["min_per_week"]
+        near_min = int(-(-night * rules_t["daily"]["sleep_near"]["threshold"] // 1))  # the fewest minutes that still count
+        sun = dt.date(2031, 1, 5)
+        mins = [night, near_min, near_min - 1, week_t - 4 * night - 2 * near_min + 1, night, night, night]  # one long night covers the short one
+        for i, m in enumerate(mins):
+            run(darrow + ["set", "daily", (sun + dt.timedelta(i)).isoformat(), "am_swelling=0", f"sleep_min={m}"], tmp)
+        run(darrow + ["set", "daily", (sun + dt.timedelta(7)).isoformat(), "am_swelling=0"], tmp)  # a grade with no minutes
+        ENV["DARROW_TODAY"] = (sun + dt.timedelta(7)).isoformat()
+        code, out = run(darrow + ["sync"], tmp)
+        with open(tmp / "engine/deeds.csv", newline="", encoding="utf-8") as fh:
+            deeds = [row for row in __import__("csv").reader(fh) if row and row[0].startswith("2031-01")]
+        labels = [x[2] for x in deeds]
+        D_ = rules_t["daily"]
+        check(code == 0 and labels.count(D_["sleep_hit"]["label"]) == 5 and labels.count(D_["sleep_near"]["label"]) == 1,
+              "a night at the target pays, one close to it pays its half, one under the line and the minutes past the target pay nothing", str(labels))
+        check(rules_t["weekly"]["sleep_week"]["label"] in labels, "the week's nights summing to its target pay the week's bonus (a long night covers a short one)", str(labels))
+        check(labels.count(D_["morning_check"]["label"]) == 7 and not any(x[0] == (sun + dt.timedelta(7)).isoformat() and x[2] == D_["morning_check"]["label"] for x in deeds),
+              "from its date on, a swelling grade without last night's minutes is not a morning check", str(labels))
+        art = next((a for a in jload(tmp / "saga/state/darrow.json")["arts"] if a["id"] == "morning_counsel"), {})
+        check(art.get("practice") == 6 and art.get("rank") == 2 and art.get("tier") == 1, "six nights at the line or close are six days of practice for the Art sleep feeds", json.dumps(art))
+        code, out = run(saga + ["counsel"], tmp)
+        check(code == 0 and "0 of 1 used" in out, "counsel show reads the Art from the sheet", out[-300:])
+        code, out = run(saga + ["counsel", "ask"], tmp, expect=1)
+        check("page has not named" in out or "no choice is open" in out or "already asked" in out, "counsel ask is refused while the page has not named the Art or nothing is open", out[-300:])
+        probe = ("import sys, json; sys.path.insert(0, 'engine'); import darrow as D; rules = D.load_json(D.P['rules']); L, per = D.art_ladder(rules); "
+                 "print(json.dumps({'ladder': L, 'per': per, 'label': D.art_label({'rank': 5, 'tier': 2, 'tier_short': 'Blood', 'tier_rank': 2}), "
+                 "'first': D.art_label({'rank': 3, 'tier': 1, 'tier_rank': 3}), 'steps': D.art_steps({'rank': 4})}))")
+        r = subprocess.run([PY, "-c", probe], cwd=tmp, capture_output=True, text=True, env=ENV)
+        pr = json.loads(r.stdout or "{}")
+        check(pr.get("ladder") == sorted(set(pr.get("ladder") or [0, 0])) and len(pr.get("ladder") or []) % (pr.get("per") or 1) == 0 and pr.get("ladder", [])[:pr.get("per", 0)] == rules_t["art_ranks"]
+              and pr.get("label") == "Blood II" and pr.get("first") == "III" and pr.get("steps") == 4,
+              "the Arts' ladder climbs tier after tier from art_ranks, and a tier past the first is named on the sheet", r.stdout[-300:] + r.stderr[-300:])
+        rows_ = (tmp / "real/logs/daily_log.csv").read_text(encoding="utf-8").splitlines()
+        (tmp / "real/logs/daily_log.csv").write_text("\n".join(l for l in rows_ if not l.startswith("2031-01")) + "\n", encoding="utf-8")
+        ENV.pop("DARROW_TODAY", None)
+        code, out = run(darrow + ["sync"], tmp)
+        check(code == 0 and not any(l.startswith("2031") for l in (tmp / "engine/deeds.csv").read_text(encoding="utf-8").splitlines()), "the test week is taken out again", out[-200:])
+
         # a glimpse
         last_kind = next((l.split(" · ")[1] for l in reversed((tmp / "saga/state/glimpses.md").read_text(encoding="utf-8").splitlines()) if l.startswith("- ")), "weather")
         code, out = run(saga + ["glimpse", "add", "--kind", last_kind, "a test glimpse"], tmp, expect=1)

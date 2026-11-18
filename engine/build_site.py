@@ -753,6 +753,14 @@ def svg_lock(size=10):
             f'<rect x="2.2" y="5.4" width="7.6" height="5.6" rx="1.1" fill="{PAL["dim"]}"/></svg>')
 
 
+def art_step_label(rules, step):
+    """A step of an Art's ladder in words: 'III' in the first tier, 'in the blood II' past it (rules.json → art_tiers)."""
+    per = len(rules.get("art_ranks") or [1, 6, 15, 30, 50])
+    names = (rules.get("art_tiers") or {}).get("names") or []
+    tier = (max(step, 1) - 1) // per
+    return roman(step) if tier == 0 or tier >= len(names) else f"{names[tier]} {roman(step - tier * per)}"
+
+
 def rank_ring(rank, n, frac=0.0, label="", size=32, sealed=False):
     """An Art's rank as a ring of n segments: the filled ones its rank, the next one filling with practice; the numeral inside.
     Grey while the Art is sealed (its rank banked)."""
@@ -3062,6 +3070,9 @@ class Site:
         order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Cast"]
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
+        # past rank V an Art turns into a new tier and climbs again (rules.json → art_tiers): the card keeps rank V's frame,
+        # its line names the tier, and the ring counts the tier's own ranks
+        ladder = [t for tier in ((rules.get("art_tiers") or {}).get("ladder") or [thresholds]) for t in tier]
         self.stray_pictures("arts", {a["id"] for a in d["arts"]}, "the id of an Art in engine/rules.json")
         tree_html, n_learned, n_sealed, numbers = [], 0, 0, []
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
@@ -3074,18 +3085,25 @@ class Site:
                 if sealed:
                     st = f'<span class="sealed-line">sealed until Knot {roman(sealed)}</span>'
                     numbers.append(f'{esc(art["name"])}: {art["practice"]} day{"" if art["practice"] == 1 else "s"} banked' if art["practice"] else "")
+                elif art["rank"] > 0 and (art.get("tier") or 1) > 1 and art.get("tier_name"):
+                    st = f'<span class="brass">{esc(art["tier_name"])} · rank {roman(art.get("tier_rank") or 1)}</span>'
+                    numbers.append(f'{esc(art["name"])}: {art["practice"]} days' + (f' · next rank at {art["next_at"]}' if art.get("next_at") else ""))
                 elif art["rank"] > 0:
                     st = f'<span class="brass">rank {roman(art["rank"])}</span>'
                     numbers.append(f'{esc(art["name"])}: {art["practice"]} day{"" if art["practice"] == 1 else "s"}' + (f' · next rank at {art["next_at"]}' if art.get("next_at") else ""))
                 else:
                     st = '<span class="dim">not yet learned</span>'
-                prev = thresholds[rank - 1] if rank else 0
+                tiered = not sealed and (art.get("tier") or 1) > 1
+                steps = art.get("mastery") or rank if tiered else rank  # every step of the ladder he has climbed
+                prev = ladder[steps - 1] if 0 < steps <= len(ladder) else 0
                 nxt = art.get("next_at")
                 frac = (art["practice"] - prev) / (nxt - prev) if nxt and nxt > prev else 0.0
-                ring = rank_ring(rank, n_pips, frac, label=f"{art['name']}: rank {rank} of {n_pips}", sealed=bool(sealed))
+                ring_rank = (art.get("tier_rank") or 1) if tiered else rank
+                ring = rank_ring(ring_rank, n_pips, frac, sealed=bool(sealed),
+                                 label=f"{art['name']}: rank {ring_rank} of {n_pips}" + (f", {art.get('tier_name')}" if tiered else ""))
                 rows.append(f'<li class="art{" sealed" if sealed else ""}{" on" if rank and not sealed else ""}">{self.art_pic(art, rank, tree, rel, bool(sealed))}'
                             f'<div class="art-txt"><div class="art-top"><b>{esc(art["name"])}</b>{ring}</div>'
-                            f'<span class="m">{st}</span><span class="e">{esc(art["effect"])}</span></div></li>')
+                            f'<span class="m">{st}</span><span class="e">{esc(" ".join([art["effect"]] + list(art.get("deeper") or [])))}</span></div></li>')
             tree_html.append(f'<div class="tree"><h3>{svg_tree(tree)}{esc(tree)}</h3><ul class="arts">{"".join(rows)}</ul></div>')
         chap_rows = []
         titles = {str(ch["number"]): ch for ch in self.chapters}
@@ -3255,7 +3273,7 @@ class Site:
                 o["_open"] = (("page" not in u or u["page"] in on_page) and ("tether" not in u or u["tether"] in paid)
                               and (not {"level", "art", "knot"} & set(u) or oid in earned))
                 parts = ([f'the Tether {roman(u["tether"])}'] if "tether" in u else []) + ([f'Level {u["level"]}'] if "level" in u else []) \
-                    + ([f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}'] if "art" in u else []) + ([mid(knots.get(u["knot"], ""))] if "knot" in u else [])
+                    + ([f'{mid(arts.get(u["art"], ""))} {art_step_label(self.rules, u.get("rank", 1))}'] if "art" in u else []) + ([mid(knots.get(u["knot"], ""))] if "knot" in u else [])
                 o["_lock"] = " and ".join(parts)  # what opens it: "the Knot of the Road"
         # the steps: the Forge's order, each earlier choice ruling which later pieces fit (who is in the picture first)
         cats = {c["id"]: c for c in w["categories"]}
@@ -3399,7 +3417,7 @@ class Site:
                         problem(f"{where}: {oid}.quote is not in {story} as written: {q!r}")
                         q = None
                 conds = ([("tether", f'the Tether {roman(u["tether"])}')] if "tether" in u else []) + ([("level", f'Level {u["level"]}')] if "level" in u else []) \
-                    + ([("art", f'{mid(arts.get(u["art"], ""))} {roman(u.get("rank", 1))}')] if "art" in u else []) + ([("knot", mid(knots.get(u["knot"], "")))] if "knot" in u else [])
+                    + ([("art", f'{mid(arts.get(u["art"], ""))} {art_step_label(self.rules, u.get("rank", 1))}')] if "art" in u else []) + ([("knot", mid(knots.get(u["knot"], "")))] if "knot" in u else [])
                 bare = " + ".join(re.sub(r"^the ", "", n) for _, n in conds)
                 named = " and ".join(f"<b>{esc(n)}</b>" for _, n in conds)
                 why_knot = f' — {esc(proves.get(u["knot"], ""))}' if "knot" in u and proves.get(u["knot"]) else ""

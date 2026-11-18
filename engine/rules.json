@@ -98,7 +98,9 @@
       "temper": {
         "resolve": 1
       },
-      "label": "Morning knee check, swelling graded"
+      "label": "Morning knee check, swelling graded",
+      "needs_sleep_from": "2026-11-19",
+      "_about": "From needs_sleep_from on, the morning check is the swelling grade and last night's minutes of sleep together (his rule, 11/18): a grade without the minutes is not a check yet. Earlier mornings keep what they were paid for the grade alone, so nothing the page has shown changes."
     },
     "knee_session": {
       "xp": 30,
@@ -197,6 +199,18 @@
       "temper": {},
       "label": "Protein within 10% of target"
     },
+    "sleep_hit": {
+      "xp": 10,
+      "temper": {},
+      "label": "Sleep target reached"
+    },
+    "sleep_near": {
+      "xp": 5,
+      "threshold": 0.9375,
+      "temper": {},
+      "label": "Sleep within 30 min of target",
+      "_about": "The night's target is the Ledger's (real/config.json -> sleep_targets.min_per_night, 480). threshold is the share of it that still counts, like kcal_near: 0.9375 of 480 is 450 minutes. A night at the target or close to it is one day of practice for the Art sleep feeds (tag `sleep`); more than the target pays nothing more."
+    },
     "day_closed": {
       "xp": 5,
       "temper": {},
@@ -223,6 +237,11 @@
         "resolve": 1
       },
       "label": "Every planned session done"
+    },
+    "sleep_week": {
+      "xp": 40,
+      "label": "The week's sleep at target",
+      "_about": "The week's nights (Sun-Sat, each logged on the day he woke) sum to real/config.json -> sleep_targets.min_per_week. A sum, so a long night may cover a short one; no close band; never part of the week score or the chapter tier."
     },
     "tier_bonus": {
       "Triumph": 60,
@@ -307,7 +326,7 @@
     ]
   },
   "inspiration": {
-    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), and every level gained from per_level_from on (per_level each). Spent by him: an option tagged *[Inspiration]* at a climax or a small choice (saga.py choose spends it; the default never carries one), or `darrow.py roll --reroll`. auto_reroll_on_fail: a climax check that fails outright is cast again on his Inspiration once (his standing rule, 10/27; once only since 11/5): a second cast never comes clean (its success reads as a partial, success at a cost) and a second failure stands; the two dice lines and the Inspiration line between them go on the page as one block.",
+    "_about": "Cap on held Inspiration. Earned by a week with the daily minimum every day (weekly.floor_7_of_7), a Triumph week (weekly.triumph_inspiration), every level gained from per_level_from on (per_level each), and an Art turning into a new tier (art_tiers.inspiration_on_turn). Spent by him: an option tagged *[Inspiration]* at a climax or a small choice (saga.py choose spends it; the default never carries one), or `darrow.py roll --reroll`. auto_reroll_on_fail: a climax check that fails outright is cast again on his Inspiration once (his standing rule, 10/27; once only since 11/5): a second cast never comes clean (its success reads as a partial, success at a cost) and a second failure stands; the two dice lines and the Inspiration line between them go on the page as one block.",
     "cap": 4,
     "per_level": 1,
     "per_level_from": 5,
@@ -420,6 +439,18 @@
       "tag": "check",
       "knot": 0,
       "effect": "Read a weakness or a lie; +Rank to Insight."
+    },
+    {
+      "id": "morning_counsel",
+      "name": "Morning's Counsel",
+      "tree": "Insight",
+      "tag": "sleep",
+      "knot": 0,
+      "effect": "A question he takes to bed is clearer by morning. Once a chapter he may sleep on an open choice and wake knowing which road hides the most; from rank III, one true thing about that road; at rank V, about the road he names. +Rank to one check to read a person or a lie in the block that carries the counsel.",
+      "tiers": {
+        "2": "It also works on a scene already past: he may sleep on something he saw and wake knowing what he missed.",
+        "3": "Twice a chapter."
+      }
     },
     {
       "id": "groundbreaker",
@@ -554,6 +585,43 @@
     30,
     50
   ],
+  "art_tiers": {
+    "_about": "Past rank V an Art turns over into a new tier and climbs again. `ladder` is the days of practice for every rank of every tier (the first tier is art_ranks; a rank every 20 days in the second, every 30 in the third; add a tier here for a sequel). The dice never read past rank V: a higher tier adds no number to a check. What a turn brings: inspiration_on_turn Inspiration that day (capped like the rest), a new line on the Art (arts[].tiers: {\"2\": …, \"3\": …}, written when the Art gets there; sync says when one is owed) and a Wardrobe piece (an unlock's `rank` counts every step: 6 is the second tier's first rank, 11 the third's).",
+    "names": [
+      "in the hand",
+      "in the blood",
+      "in the bone"
+    ],
+    "short": [
+      "Hand",
+      "Blood",
+      "Bone"
+    ],
+    "ladder": [
+      [
+        1,
+        6,
+        15,
+        30,
+        50
+      ],
+      [
+        70,
+        90,
+        110,
+        130,
+        150
+      ],
+      [
+        180,
+        210,
+        240,
+        270,
+        300
+      ]
+    ],
+    "inspiration_on_turn": 1
+  },
   "knots": [
     {
       "n": 1,

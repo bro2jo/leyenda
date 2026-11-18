@@ -24,7 +24,7 @@ A category may also carry `chips: true` (a short list: a row of chips instead of
 | `unlock` | Opens when | Decided by |
 |---|---|---|
 | `{"level": N}` | he reaches level N | the engine (`darrow.py sync`) |
-| `{"art": id, "rank": R}` | that Art reaches rank R (a sealed Art never) | the engine |
+| `{"art": id, "rank": R}` | that Art reaches rank R (a sealed Art never). R counts every step of the Art's ladder, so a tier past rank V is a higher number: 6 is *in the blood* I, 11 *in the bone* I (`rules.json → art_tiers`); the site words it by its tier. An Art turning into a new tier is owed a piece (`sync` says so until it has one) | the engine |
 | `{"knot": N}` | Knot N is tied | the engine |
 | `{"tether": N}` | the Tether's stage N is paid on the page (reached, and its scene written) | the site (`world.json → tether`) |
 | `{"page": "NN:key"}` | that scene is on the page: a chapter's code and scene key (`"04:5"`, `"04:between-9"`) or a tale piece (`"tale01:p1"`) | the site |

@@ -88,7 +88,7 @@ def day_record(cfg, rules, facts, rows, day):
     rec["wellness"] = E.num(r.get("wellness"))
     rec["sport_min"] = E.num(r.get("sport_min"))
     for k in ("am_extension", "flexion", "pain_session", "pain_pm", "am_notes", "notes", "hours_on_feet", "crutches",
-              "gait_notes", "adjuncts", "sleep_h", "knee_min", "knee_rpe", "addon_min", "addon_rpe", "knee_as_planned"):
+              "gait_notes", "adjuncts", "sleep_min", "knee_min", "knee_rpe", "addon_min", "addon_rpe", "knee_as_planned"):
         rec[k] = str(r.get(k, "")).strip()  # his words, for the day's card
     rec["adjunct_list"] = [a.strip() for a in re.split(r";", rec["adjuncts"]) if a.strip()]  # sauna, Game Ready, laser, ...
     rec["sport_sessions"] = sorted(f["sport_sessions"]) if f else []
@@ -1388,7 +1388,7 @@ noscript .scroll { margin-top: 10px; }
     var feet = []; if (r.hours_on_feet) feet.push('on feet: ' + r.hours_on_feet); if (r.crutches) feet.push('crutches: ' + r.crutches); if (r.gait_notes) feet.push('gait: ' + r.gait_notes);
     line('On feet', feet.join(' · '));
     line('Adjuncts', r.adjuncts);
-    if (r.sleep_h) line('Sleep', r.sleep_h + ' h');
+    if (r.sleep_min) line('Sleep', Math.floor(r.sleep_min / 60) + ' h ' + String(r.sleep_min % 60).padStart(2, '0') + ' min');
     if (dt.measured.length) line('Measured', dt.measured.join(' · '));
     if (dt.tasks.length) line('Project', dt.tasks.map(function (t) { return t.project + ' · ' + t.task; }).join(' · '));
     if (r.missed.length) line(r.date === ASOF && OPEN ? 'Still open' : 'Not done', r.missed.join(', '));

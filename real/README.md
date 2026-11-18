@@ -71,7 +71,8 @@ real/
 | Phase criteria, plan doses | Master plan |
 | Definitions, load and pain rules, clearance, the log columns | Working Rules |
 | Phase and gate status | State §3 (NOW → Gate keeps it short) |
-| Daily readings: swelling grade and trend, pain, extension, flexion, catch, wellness | `daily_log.csv` |
+| Daily readings: swelling grade and trend, pain, extension, flexion, catch, wellness, last night's sleep in minutes | `daily_log.csv` |
+| Sleep targets (a night, a week) | His own numbers, in `config.json → sleep_targets`; the plan's line (8–9 h): Add-On §9 |
 | Body mass | `nutrition_log.csv` (the baseline: State §1) |
 | PT-introduced items, the next-visit list, PT booking | State §1 and §5 (NOW adds only what came in since) |
 | Weekly rhythm | Structure → Working Rules; this week's days → State §6; what the engine scores → `config.json → weekly_template` and `plan_changes` |
@@ -109,4 +110,4 @@ real/
 - **A new file** gets a row here. **A renamed or moved file** gets a line in `CHANGELOG.md`, and every reference follows it (`grep -rn '<old name>' --exclude-dir=docs .`).
 - **Archives are history:** never current, never edited beyond correcting a path.
 
-**Habits that keep it clean:** end every session report with minutes and RPE · one swelling grade every morning, plus stiffness, catch and wellness · decisions go to NOW and the State, never into a log's `notes`.
+**Habits that keep it clean:** end every session report with minutes and RPE · one swelling grade and last night's minutes of sleep every morning (stiffness, catch and wellness on Sundays) · decisions go to NOW and the State, never into a log's `notes`.
