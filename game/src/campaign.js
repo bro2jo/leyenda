@@ -107,14 +107,14 @@ var FD={
   doorman:{n:'Man at the Wicket',key:'greycloak',t:'blade',hp:24,mov:0,rng:1,atk:5,tough:1,ans:[{b:4,d:7},{b:0,d:9}]},
   seeker:{n:'Grey Cloak',key:'greycloak',t:'blade',hp:20,mov:0,rng:0,atk:1,scripted:1,ans:[{b:0,d:1}]},
   question:{n:'The Question',key:'question',t:'foot',hp:25,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:10},{b:4,d:12}]},
-  sliver:{n:'The Black Glass',key:'sliver',t:'foot',hp:30,mov:0,rng:1,atk:1,ordeal:1,tough:99,ans:[{b:0,d:11},{b:0,d:14},{b:0,d:17}]},
+  sliver:{n:'The Black Glass',key:'sliver',t:'foot',hp:30,mov:0,rng:1,atk:1,ordeal:1,tough:99,fixed:1,ans:[{b:0,d:14},{b:0,d:19},{b:0,d:25}]},   /* the cold climbs: its order is the scene's */
   spar:{n:'Hollis',key:'hollis-foe',t:'blade',hp:46,mov:0,rng:1,atk:8,proper:1,ans:[{b:6,d:12},{b:0,d:16},{b:9,d:11}]},
   guest:{n:"Confessor's Man",key:'guest',t:'blade',hp:18,mov:2,rng:1,atk:5,ans:[{b:3,d:7},{b:0,d:9}]},
   bigman:{n:'Big Man',key:'guest',t:'blade',hp:40,mov:2,rng:1,atk:11,tough:1,ans:[{b:5,d:14},{b:0,d:18}]},
-  last:{n:'The Last Hundred',key:'steps',t:'foot',hp:22,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:11},{b:0,d:13}]},
-  reach:{n:'The Long Reach',key:'steps',t:'foot',hp:28,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:13},{b:0,d:15}]},
-  elbow:{n:'The Elbow',key:'steps',t:'foot',hp:24,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:4,d:14},{b:0,d:16}]},
-  shins:{n:'The Shins',key:'steps',t:'foot',hp:20,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:12},{b:0,d:12}]},
+  last:{n:'The Last Hundred',key:'steps',t:'foot',hp:22,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:13},{b:0,d:15}]},
+  reach:{n:'The Long Reach',key:'steps',t:'foot',hp:28,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:15},{b:0,d:17}]},
+  elbow:{n:'The Elbow',key:'steps',t:'foot',hp:24,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:4,d:16},{b:0,d:18}]},
+  shins:{n:'The Shins',key:'steps',t:'foot',hp:20,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:14},{b:0,d:15}]},
   /* for the fights told larger than the page tells them */
   pike:{n:'Levy Pike',key:'pikeman',t:'foot',hp:20,mov:2,rng:1,atk:6,ans:[{b:5,d:8},{b:0,d:11}]},
   pitch:{n:'Boy with a Pitchfork',key:'pitchfork',t:'cast',hp:16,mov:2,rng:2,atk:6,ans:[{b:0,d:7},{b:0,d:9}]},          /* reaches two tiles; Cast, so Hollis is his answer */
@@ -207,10 +207,11 @@ function start(id,opts){
   /* the marker captain: off the board, on nobody's side */
   var z=U(G,'Z');z.side=2;z.x=-9;z.y=-9;
   /* the foes, with the mission's own numbers */
-  var gone=[];
+  var gone=[],vr=lcg((G.seed|0)^0x2f1d);
   (M.foes||[]).forEach(function(f,i){var u=U(G,f.k+'_'+i),d=FD[f.k];u.type=f.k;u.hp=u.max=d.hp;u.atk=d.atk;u.ans=d.ans.map(function(x){return {b:x.b||0,d:x.d,n:x.n||1}});
     for(var k in f)if(k!=='k'&&k!=='at'&&k!=='tpl')u[k]=f[k];if(f.hp)u.max=f.hp;
     if(lvl&&!d.scripted){u.ans.forEach(function(x){x.d=Math.max(1,x.d+(x.n>1?1:2)*lvl)});if(!d.ordeal){u.atk=Math.max(1,u.atk+2*lvl);u.hp=u.max=Math.max(1,Math.round(u.max*(1+.1*lvl)))}}
+    if(M.vary!==0&&!d.scripted){if(!d.fixed)u.ai=vr(u.ans.length);u.ans.forEach(function(x){x.d=Math.max(1,x.d+vr(3)-1)})}
     var far=!!M.world&&f.at&&f.at[1]>6;if(f.tpl||far){G.tpl[f.k]=clone(u);gone.push(u);if(far)G.cs.ahead.push({k:f.k,x:f.at[0],Y:f.at[1]})}});
   /* the company: who is here, and what each can do in this chapter */
   var tplR=clone(U(G,'R')),tplW=clone(U(G,'W'));
@@ -303,7 +304,7 @@ LH.endTurn=function(G){
 };
 LH.enemyStep=function(G){
   var e=O.enemyStep(G);
-  if(e&&G.ms){if(e.k==='turn'){G.u.forEach(function(u){if(u._r!==undefined){u.rng=u._r;delete u._r}});if(!G.over)ev(G,'turn',G.turn);rest(G)}after(G)}
+  if(e&&G.ms){if(e.k!=='turn'&&e.target)ev(G,'struck',e);if(e.k==='turn'){G.u.forEach(function(u){if(u._r!==undefined){u.rng=u._r;delete u._r}});if(!G.over)ev(G,'turn',G.turn);rest(G)}after(G)}
   return e;
 };
 
