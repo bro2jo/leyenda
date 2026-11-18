@@ -97,6 +97,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     ok(await p.evaluate(()=>__LH.LH.nm(__LH.G.u.filter(function(u){return u.boss})[0])==='the Captain')&&await p.locator('#m-rest .cp-quit[data-cp="quitroad"]').count()===1,'the game\'s own words stand, and there is a way back to the menu');
     await p.evaluate(()=>{var G=__LH.G;G.u[0].hp=0;G.over={lost:1,t:'The line is broken',s:''};G.run.renown=7;__CP.sweep()});await p.waitForTimeout(80);
     ok(await p.evaluate(()=>__CP.P.road&&__CP.P.road.best===7&&__CP.P.road.runs===1),'a run\'s Renown is kept as his best');
+    await p.click('#m-rest .cp-quit');ok(await p.evaluate(()=>__CP.scr==='road'&&/Leave\?/.test(document.querySelector('#m-rest .cp-quit').textContent)),'leaving asks first');
     await p.click('#m-rest .cp-quit');ok(await p.evaluate(()=>__CP.scr==='title'&&document.getElementById('game').getAttribute('data-cp')==='1'&&CP.road===null)&&/Best Renown 7/.test(await p.locator('.cp-tile[data-cp="road"]').innerText()),'leaving the road comes back to the menu, which remembers it');
     await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(100);ok(await p.evaluate(()=>__LH.G.ms==='c6'&&__LH.LH.nm(__LH.G.u.filter(function(u){return u.type==='ysra'})[0])==='Ysra Tal'),'and a mission after the road is a mission again');
     await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);

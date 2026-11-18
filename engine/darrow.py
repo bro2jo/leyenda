@@ -3171,7 +3171,7 @@ def run(cmd, quiet=False):
 
 
 def cmd_ship(args, cfg, rules):
-    """check -> sync -> saga.py check -> picture copies -> build -> (the self-test, when the engine changed) -> commit -> push to main.
+    """check -> sync -> saga.py check -> picture copies -> (the side game's page, when the game changed) -> build -> (the self-test, when the engine changed) -> commit -> push to main.
     Every step must pass before the next runs, so nothing broken is committed, and the push never forces: a rejected push
     pulls --rebase, rebuilds and tries again."""
     py = sys.executable
@@ -3187,8 +3187,18 @@ def cmd_ship(args, cfg, rules):
         names = diff.splitlines() + run(["git", "ls-files", "--others", "--exclude-standard"], quiet=True)[1].splitlines()
         return any((n.startswith("engine/") and n.endswith((".py", ".json", ".js", ".css"))) or n.startswith(".claude/hooks/") for n in names)
 
+    def game_changed():
+        """Whether what this ship pushes changes the side game or the small pictures it borrows: its page at /play/ is
+        rebuilt then (game/build.py writes game/play/, which the site build serves), never for a log."""
+        code, diff = run(["git", "diff", "--name-only", "origin/main"], quiet=True)
+        if code != 0:
+            diff = run(["git", "diff", "--name-only", "HEAD"], quiet=True)[1]
+        names = diff.splitlines() + run(["git", "ls-files", "--others", "--exclude-standard"], quiet=True)[1].splitlines()
+        return any((n.startswith("game/") and not n.startswith(("game/play/", "game/dist/", "game/test/"))) or n.startswith("saga/art/thumbs/") for n in names)
+
     def gate():
-        for name, cmd in gates + ([("self-test", [py, "engine/selftest.py"])] if engine_changed() else []):
+        steps = gates[:-1] + ([("game", [py, "game/build.py"])] if game_changed() else []) + gates[-1:]
+        for name, cmd in steps + ([("self-test", [py, "engine/selftest.py"])] if engine_changed() else []):
             print(f"── {name}: {' '.join(cmd[1:])}")
             code, out = run(cmd, quiet=name == "self-test")
             if name == "self-test":

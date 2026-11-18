@@ -4199,6 +4199,64 @@ def text_of(h):
 
 GM_DIRS = [SAGA / "bible" / "_gm", SAGA / "state" / "_gm"]
 
+# The side game as an app (The Line and the Hand): game/build.py writes game/play/ (its one page, its pictures, its icon,
+# what a phone needs to keep it), kept in git; this build serves it at /play/ with the game's music and sounds beside it.
+# Nothing on the Chronicle's pages links to it. It is not built from saga/, so its page goes through the same two walls
+# as every page here (the real-world terms, the GM blocklist) before docs/ is replaced.
+PLAY = ROOT / "game" / "play"
+
+
+def add_play(site):
+    if not (PLAY / "index.html").is_file():
+        return
+    for f in sorted(PLAY.rglob("*")):
+        if f.is_file():
+            site.assets["play/" + f.relative_to(PLAY).as_posix()] = f
+    for kind in ("sfx", "music"):
+        for f in sorted((ROOT / "game" / kind).glob("*.*")):
+            site.assets[f"play/{kind}/{f.name}"] = f
+
+
+def play_text():
+    """What the game's page says, for the walls: every line a player can read is a string in its script, so the strings are
+    its text (the code around them is not: a helper called rep is not a word on the page). Comments are left out."""
+    f = PLAY / "index.html"
+    if not f.is_file():
+        return ""
+    out = []
+    for js in re.findall(r"<script[^>]*>(.*?)</script>", f.read_text(encoding="utf-8"), flags=re.S):
+        i, n, mode, buf = 0, len(js), "", []
+        while i < n:
+            c = js[i]
+            if mode in ("'", '"'):
+                if c == "\\" and i + 1 < n:
+                    buf.append({"n": " ", "t": " "}.get(js[i + 1], js[i + 1]))
+                    i += 2
+                    continue
+                if c == mode or c == "\n":
+                    out.append("".join(buf))
+                    mode, buf = "", []
+                else:
+                    buf.append(c)
+            elif mode == "/*":
+                if js.startswith("*/", i):
+                    mode = ""
+                    i += 1
+            elif mode == "//":
+                if c == "\n":
+                    mode = ""
+            elif c in "'\"":
+                mode = c
+            elif js.startswith("/*", i):
+                mode = "/*"
+                i += 1
+            elif js.startswith("//", i):
+                mode = "//"
+                i += 1
+            i += 1
+    s = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), "\n".join(out))
+    return re.sub(r"[ \t]+", " ", html.unescape(re.sub(r"</?[a-zA-Z][^>]*>", " ", s))).strip()
+
 
 def gm_strings(obj, out=None):
     """Every string value in a JSON structure (the GM records), one per line."""
@@ -4260,7 +4318,8 @@ def run_checks(site, out_dir):
     # 1. real-world terms, whole words, in every generated file (pages, css, js)
     pat = re.compile(r"\b(" + "|".join(FORBIDDEN) + r")\b", re.I)
     pat_cs = re.compile(r"\b(" + "|".join(FORBIDDEN_CS) + r")\b")
-    for k, v in site.pages.items():
+    game = play_text()
+    for k, v in list(site.pages.items()) + ([("play/index.html", game)] if game else []):
         for m in pat.finditer(v):
             problem(f"{k}: real-world term '{m.group(1)}' at …{v[max(0, m.start() - 40):m.end() + 40]!r}")
         for m in pat_cs.finditer(v):
@@ -4315,7 +4374,7 @@ def run_checks(site, out_dir):
     sentences, names = gm_blocklists(chron_text, allowed, extra_gm, "\n".join(allowed_text))
     note(f"GM blocklist: {len(sentences)} sentences, {len(names)} unrevealed names (not printed)")
     name_re = re.compile(r"\b(" + "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True)) + r")\b") if names else None
-    for k, txt in all_text.items():
+    for k, txt in list(all_text.items()) + ([("play/index.html", game)] if game else []):
         t_norm = norm(txt)
         for s in sentences:
             if s in t_norm:
@@ -4440,6 +4499,7 @@ def main():
     try:
         site = Site()
         site.build()
+        add_play(site)
         tmp = Path(tempfile.mkdtemp(prefix="unkneeling-site-"))
         run_checks(site, tmp)
         for k in site.pages:  # typography last, on pages that have passed every check
@@ -4470,10 +4530,10 @@ def main():
     shutil.copytree(tmp, DOCS)
     shutil.rmtree(tmp, ignore_errors=True)
     n_pages = sum(1 for k in site.pages if k.endswith(".html"))
-    n_songs = sum(1 for k in site.assets if Path(k).suffix.lower() in AUDIO_TYPES)
-    n_img = sum(1 for k in site.assets if Path(k).suffix.lower() in IMAGE_TYPES and not k.startswith("art/thumbs/") and "/" in k)
+    n_songs = sum(1 for k in site.assets if Path(k).suffix.lower() in AUDIO_TYPES and not k.startswith("play/"))
+    n_img = sum(1 for k in site.assets if Path(k).suffix.lower() in IMAGE_TYPES and not k.startswith(("art/thumbs/", "play/")) and "/" in k)
     print(f"site built: {n_pages} pages, {len(site.chars)} characters, {len(site.chapters)} chapters, {len(site.tales)} tale{'' if len(site.tales) == 1 else 's'}, {n_img} image{'' if n_img == 1 else 's'}"
-          + (f", {n_songs} song{'' if n_songs == 1 else 's'}" if n_songs else "") + " → docs/" + (
+          + (f", {n_songs} song{'' if n_songs == 1 else 's'}" if n_songs else "") + (" · the game at /play/" if "play/index.html" in site.assets else "") + " → docs/" + (
         f"  (with {len(PROBLEMS)} problem(s), forced)" if PROBLEMS else "  · all checks passed"))
     if site.thumb_missing:
         print(f"note: {len(site.thumb_missing)} picture(s) have no current small copies, so the site loads them at full size: "

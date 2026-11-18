@@ -12,16 +12,19 @@ mission puts on the board, the places for the title cards. A foe or an ordeal wi
 page lists those as pictures still to make; a figure filed in game/art/figures/ under the same name replaces the drawn one
 (its token is cut from the figure's head; a token filed in game/art/tokens/ outranks that).
 """
+import hashlib
 import json
 import shutil
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 from build import HEAD, SITE_ART, THUMBS, head
 
 GAME = Path(__file__).resolve().parent
 SRC, DIST = GAME / "src", GAME / "dist" / "campaign"
+PLAY = GAME / "play"  # the game as an app, kept in git: the site build serves it at /play/
+PLAY_URL = "https://bro2jo.github.io/leyenda/play/"
 C = "characters/"
 ART = dict(SITE_ART)  # the Arts, the company in Book II, the high guard
 ART.update({"darrow0": C + "darrow.sm.webp", "darrow1": C + "darrow.sm.webp", "hollis0": C + "hollis-garrow.sm.webp", "hollis1": C + "hollis-garrow.sm.webp",
@@ -58,6 +61,121 @@ def square(src, size=256):
     w, h = im.size
     s = min(w, h)
     return im.crop(((w - s) // 2, max(0, (h - s) // 4), (w - s) // 2 + s, max(0, (h - s) // 4) + s)).resize((size, size), Image.LANCZOS)
+
+
+PLAY_HEAD = """<!doctype html>
+<html lang="en" class="app">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>The Line and the Hand</title>
+<meta name="description" content="The Chronicle, played: a map to hold, and every fight a hand of cards. A side game of The Unkneeling.">
+<meta name="theme-color" content="#0B0E13">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Line and Hand">
+<meta property="og:title" content="The Line and the Hand">
+<meta property="og:description" content="The Chronicle, played: a map to hold, and every fight a hand of cards.">
+<meta property="og:image" content="{url}icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&display=swap">
+"""
+SW = """/* THE LINE AND THE HAND: the page kept for when there is no signal. Written by game/build_campaign.py; do not edit. */
+var V='lh-__V__',CORE=__CORE__;
+self.addEventListener('install',function(e){e.waitUntil(caches.open(V).then(function(c){return c.addAll(CORE)}).then(function(){return self.skipWaiting()}))});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(ks){return Promise.all(ks.map(function(k){return k.indexOf('lh-')===0&&k!==V?caches.delete(k):null}))}).then(function(){return self.clients.claim()}))});
+/* the music is large: fetched whole in the background once the page is up, so the first visit is not held by it */
+self.addEventListener('message',function(e){var w=e.data&&e.data.warm;if(!w||!w.length)return;
+  e.waitUntil(caches.open(V).then(function(c){return Promise.all(w.map(function(u){return c.match(u).then(function(hit){return hit||fetch(u).then(function(r){if(r.ok&&r.status===200)return c.put(u,r)})}).catch(function(){})}))}))});
+/* a player asks for a sound in pieces: a kept file is cut to the piece asked for */
+function piece(req,res){var h=req.headers.get('range'),m=h&&/bytes=(\\d+)-(\\d*)/.exec(h);if(!m)return res;
+  return res.arrayBuffer().then(function(b){var s=+m[1],t=m[2]?Math.min(+m[2],b.byteLength-1):b.byteLength-1;
+    return new Response(b.slice(s,t+1),{status:206,statusText:'Partial Content',headers:{'Content-Type':res.headers.get('Content-Type')||'audio/mpeg','Content-Range':'bytes '+s+'-'+t+'/'+b.byteLength,'Content-Length':String(t-s+1),'Accept-Ranges':'bytes'}})})}
+self.addEventListener('fetch',function(e){var q=e.request,u=new URL(q.url);if(q.method!=='GET')return;
+  if(u.origin!==location.origin){ /* the lettering: kept as it comes, refreshed when there is signal */
+    if(!/fonts\\.(googleapis|gstatic)\\.com$/.test(u.hostname))return;
+    e.respondWith(caches.open(V).then(function(c){return c.match(q).then(function(hit){var net=fetch(q).then(function(r){c.put(q,r.clone());return r}).catch(function(){return hit});return hit||net})}));return}
+  if(q.mode==='navigate'){ /* the page itself: the newest when there is signal, the kept one when there is not */
+    e.respondWith(fetch(q).then(function(r){if(r.ok){var k=r.clone();caches.open(V).then(function(c){c.put('./',k)})}return r}).catch(function(){return caches.match('./',{cacheName:V})}));return}
+  e.respondWith(caches.open(V).then(function(c){return c.match(u.pathname,{ignoreSearch:true}).then(function(hit){
+    if(hit)return piece(q,hit);
+    if(q.headers.get('range'))return fetch(q);
+    return fetch(q).then(function(r){if(r.ok&&r.status===200)c.put(u.pathname,r.clone());return r})})}));
+});
+"""
+
+
+def icon(size, pad=0.0):
+    """The game's own icon: him in the high guard, head and blade, lit from behind on the night. With no pad it wears a brass
+    ring; padded (a phone cuts its own shape out of the middle) his edges fade into the dark and there is no ring."""
+    S = 1024
+    im = Image.new("RGB", (S, S), "#0B0E13")
+    d = ImageDraw.Draw(im)
+    for r in range(int(S * .62), 0, -6):  # a warm light behind him
+        k = (1 - r / (S * .62)) ** 1.4
+        d.ellipse([S / 2 - r, S * .42 - r, S / 2 + r, S * .42 + r], fill=(int(11 + 62 * k), int(14 + 50 * k), int(19 + 26 * k)))
+    src = THUMBS / "looks" / "the-high-guard.md.webp"
+    if src.is_file():
+        f = Image.open(src).convert("RGBA")
+        w = f.width
+        cut = f.crop((int(w * .22), 0, int(w * .92), int(w * .70)))  # head, shoulders and the raised blade: a square
+        side = int(S * (1 - 2 * pad))
+        cut = cut.resize((side, side), Image.LANCZOS)
+        if pad:  # the cut edges melt away
+            fade = Image.new("L", (side, side), 255)
+            fd = ImageDraw.Draw(fade)
+            n = int(side * .14)
+            for i in range(n):
+                v = int(255 * i / n)
+                fd.line([(i, 0), (i, side)], fill=v)
+                fd.line([(side - 1 - i, 0), (side - 1 - i, side)], fill=v)
+            cut.putalpha(ImageChops.multiply(cut.split()[3], fade))
+        im.paste(cut, ((S - side) // 2, S - side), cut)
+    if not pad:
+        e = int(S * .03)
+        d.ellipse([e, e, S - e, S - e], outline="#CFA65F", width=int(S * .024))
+    return im.resize((size, size), Image.LANCZOS)
+
+
+def play(assets, src):
+    """The game as an app, at /play/ on the site: the game alone on the page, the whole screen of a phone, on the home screen
+    if he puts it there, playable without signal. game/play/ is kept in git (the site build copies it to docs/play/ and
+    lays the music and the sounds beside it: engine/build_site.py); game/dist/play/ is the same with them, to open and test."""
+    if PLAY.exists():
+        shutil.rmtree(PLAY)
+    shutil.copytree(DIST / "art", PLAY / "art")
+    for size, name, pad in ((192, "icon-192.png", 0), (512, "icon-512.png", 0), (512, "icon-maskable.png", .1), (180, "apple-touch-icon.png", .04)):
+        icon(size, pad).save(PLAY / name, "PNG", optimize=True)
+    (PLAY / "manifest.webmanifest").write_text(json.dumps({
+        "name": "The Line and the Hand", "short_name": "Line & Hand", "description": "The Chronicle, played: a map to hold, and every fight a hand of cards.",
+        "start_url": "./", "scope": "./", "display": "standalone", "display_override": ["fullscreen", "standalone"], "orientation": "portrait",
+        "background_color": "#0B0E13", "theme_color": "#0B0E13", "categories": ["games"],
+        "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+                  {"src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}]}, indent=1) + "\n", encoding="utf-8")
+    warm = sorted(assets["music"].values())
+    page = (PLAY_HEAD.replace("{url}", PLAY_URL) + "<style>\n" + src("style.css") + src("campaign.css") + src("play.css") + "</style>\n</head>\n<body>\n"
+            + '<div class="phone" id="game" aria-label="The Line and the Hand"></div>\n<noscript class="app-no">The Line and the Hand is a game: it needs JavaScript to run.</noscript>\n'
+            + "<script>window.LH_ASSETS=" + json.dumps(assets, separators=(",", ":")) + ";window.LH_WARM=" + json.dumps(warm) + "</script>\n"
+            + "".join("<script>\n" + src(n) + "</script>\n" for n in ("app.js", "engine.js", "campaign.js", "missions.js", "ui.js", "campaign_ui.js")) + "</body>\n</html>\n")
+    (PLAY / "index.html").write_text(page, encoding="utf-8")
+    core = ["./", "manifest.webmanifest"] + sorted(str(p.relative_to(PLAY)) for p in PLAY.rglob("*") if p.is_file() and p.name != "index.html" and p.suffix != ".webmanifest") + sorted(assets["sfx"].values())
+    stamp = hashlib.sha1()
+    for p in sorted(PLAY.rglob("*")) + sorted((GAME / "sfx").glob("*.*")) + sorted((GAME / "music").glob("*.*")):
+        if p.is_file():
+            stamp.update(p.name.encode() + hashlib.sha1(p.read_bytes()).digest())
+    (PLAY / "sw.js").write_text(SW.replace("__V__", stamp.hexdigest()[:12]).replace("__CORE__", json.dumps(core, separators=(",", ":"))), encoding="utf-8")
+    full = GAME / "dist" / "play"
+    if full.exists():
+        shutil.rmtree(full)
+    shutil.copytree(PLAY, full)
+    for kind in ("sfx", "music"):
+        shutil.copytree(DIST / kind, full / kind)
+    print(f"built game/play/ ({len(page) // 1024} KB page, {sum(1 for _ in (PLAY / 'art').glob('*'))} pictures, kept in git for the site's /play/) and game/dist/play/ with its sounds")
 
 
 def main():
@@ -120,6 +238,7 @@ def main():
     (DIST / "campaign.html").write_text(page, encoding="utf-8")
     files = sorted(str(p.relative_to(DIST)) for d in ("art", "sfx", "music") for p in (DIST / d).glob("*"))
     (DIST / "files.json").write_text(json.dumps(files, indent=1), encoding="utf-8")
+    play(assets, src)
     print(f"built game/dist/campaign/campaign.html ({len(page) // 1024} KB) · {len(assets['art'])} site pictures, {len(assets['tok'])} tokens "
           f"({len(assets['drawn'])} drawn for now), {len(assets['sfx'])} sounds, {len(assets['music'])} music tracks")
 

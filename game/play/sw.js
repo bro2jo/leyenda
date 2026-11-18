@@ -1,0 +1,22 @@
+/* THE LINE AND THE HAND: the page kept for when there is no signal. Written by game/build_campaign.py; do not edit. */
+var V='lh-6cef580ee1f4',CORE=["./","manifest.webmanifest","apple-touch-icon.png","art/aldric.webp","art/ash.webp","art/ash1.webp","art/brother.webp","art/c-b_guard.webp","art/c-b_strike.webp","art/c-bandage.webp","art/c-callco.webp","art/c-closeup.webp","art/c-count.webp","art/c-fast.webp","art/c-hew.webp","art/c-hewT.webp","art/c-readline.webp","art/c-secondwind.webp","art/c-stone.webp","art/darrow.webp","art/darrow0.webp","art/darrow1.webp","art/far_cast.webp","art/fig-captain.webp","art/fig-darkcoat.webp","art/fig-greycloak.webp","art/fig-guest.webp","art/fig-hornboy.webp","art/fig-lymer.webp","art/fig-pikeman.webp","art/fig-pitchfork.webp","art/fig-sergeant.webp","art/fig-swordsman.webp","art/fig-walker.webp","art/groundbreaker.webp","art/hammerfall.webp","art/high-guard.webp","art/hollis.webp","art/hollis0.webp","art/hollis1.webp","art/long_breath.webp","art/maelis.webp","art/maelis1.webp","art/measured_hand.webp","art/menders_patience.webp","art/overwall.webp","art/pell.webp","art/place-coldmere.webp","art/place-harrow-ford.webp","art/place-saint-ysoldes.webp","art/place-the-lowmarch.webp","art/place-winch-house.webp","art/rae.webp","art/rae1.webp","art/seated_blade.webp","art/stillwater.webp","art/thunderstep.webp","art/tok-brother.webp","art/tok-captain.webp","art/tok-darkcoat.webp","art/tok-greycloak.webp","art/tok-guest.webp","art/tok-hall.webp","art/tok-hollis-foe.webp","art/tok-hornboy.webp","art/tok-lymer.webp","art/tok-pikeman.webp","art/tok-pitchfork.webp","art/tok-question.webp","art/tok-rider.webp","art/tok-sergeant.webp","art/tok-sliver.webp","art/tok-steps.webp","art/tok-swordsman.webp","art/tok-walker.webp","art/tok-wend.webp","art/tok-ysra-tal.webp","art/wardens_eye.webp","art/wren.webp","art/wren1.webp","icon-192.png","icon-512.png","icon-maskable.png","sfx/battle_won.mp3","sfx/run_won.mp3"];
+self.addEventListener('install',function(e){e.waitUntil(caches.open(V).then(function(c){return c.addAll(CORE)}).then(function(){return self.skipWaiting()}))});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(ks){return Promise.all(ks.map(function(k){return k.indexOf('lh-')===0&&k!==V?caches.delete(k):null}))}).then(function(){return self.clients.claim()}))});
+/* the music is large: fetched whole in the background once the page is up, so the first visit is not held by it */
+self.addEventListener('message',function(e){var w=e.data&&e.data.warm;if(!w||!w.length)return;
+  e.waitUntil(caches.open(V).then(function(c){return Promise.all(w.map(function(u){return c.match(u).then(function(hit){return hit||fetch(u).then(function(r){if(r.ok&&r.status===200)return c.put(u,r)})}).catch(function(){})}))}))});
+/* a player asks for a sound in pieces: a kept file is cut to the piece asked for */
+function piece(req,res){var h=req.headers.get('range'),m=h&&/bytes=(\d+)-(\d*)/.exec(h);if(!m)return res;
+  return res.arrayBuffer().then(function(b){var s=+m[1],t=m[2]?Math.min(+m[2],b.byteLength-1):b.byteLength-1;
+    return new Response(b.slice(s,t+1),{status:206,statusText:'Partial Content',headers:{'Content-Type':res.headers.get('Content-Type')||'audio/mpeg','Content-Range':'bytes '+s+'-'+t+'/'+b.byteLength,'Content-Length':String(t-s+1),'Accept-Ranges':'bytes'}})})}
+self.addEventListener('fetch',function(e){var q=e.request,u=new URL(q.url);if(q.method!=='GET')return;
+  if(u.origin!==location.origin){ /* the lettering: kept as it comes, refreshed when there is signal */
+    if(!/fonts\.(googleapis|gstatic)\.com$/.test(u.hostname))return;
+    e.respondWith(caches.open(V).then(function(c){return c.match(q).then(function(hit){var net=fetch(q).then(function(r){c.put(q,r.clone());return r}).catch(function(){return hit});return hit||net})}));return}
+  if(q.mode==='navigate'){ /* the page itself: the newest when there is signal, the kept one when there is not */
+    e.respondWith(fetch(q).then(function(r){if(r.ok){var k=r.clone();caches.open(V).then(function(c){c.put('./',k)})}return r}).catch(function(){return caches.match('./',{cacheName:V})}));return}
+  e.respondWith(caches.open(V).then(function(c){return c.match(u.pathname,{ignoreSearch:true}).then(function(hit){
+    if(hit)return piece(q,hit);
+    if(q.headers.get('range'))return fetch(q);
+    return fetch(q).then(function(r){if(r.ok&&r.status===200)c.put(u.pathname,r.clone());return r})})}));
+});

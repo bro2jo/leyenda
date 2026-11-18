@@ -4,7 +4,9 @@ A side game, and one game: **the campaign**. Darrow and the company move on a sm
 
 **It is not the Chronicle.** Nothing here is canon, nothing here reads `real/`, and nothing here writes to `saga/`. On the road the foes are a hired company made up for the game. Nothing won here goes on the sheet: an Art, a rank or a point of Might only ever comes from the Ledger.
 
-Published (private) at https://claude.ai/artifact/QwnxGFmj8i8erJ24qwTWrP. To update it, build, then publish `game/dist/campaign/campaign.html` to that URL with the files listed in `game/dist/campaign/files.json`.
+**Played at https://bro2jo.github.io/leyenda/play/** (public, on the Chronicle's site, linked from none of its pages): the game alone, the whole screen of a phone, on the home screen if he puts it there, playable without signal. See "The game as an app" below.
+
+The page with the notes, the cards, the sounds and the picture prompts is published (private) at https://claude.ai/artifact/QwnxGFmj8i8erJ24qwTWrP. To update it, build, then publish `game/dist/campaign/campaign.html` to that URL with the files listed in `game/dist/campaign/files.json`.
 
 **There was a second page once**: the playtest page, where the rules and the screen were found before there was a campaign. It is retired. Everything it could do is in the game now (Settings has a Playtest section; the game's page carries the sound list, the cards, the icons and every picture prompt). Its page survives only as `test/bench.html`, the bare page the screen's own tests run on: nobody plays it and it is never published.
 
@@ -77,7 +79,8 @@ Pictures of Darrow, the company and the Arts are not copied here: the build take
 ## Build, play, test
 
 ```
-python3 game/build.py                 # the game (dist/campaign/) and the bench (dist/bench/)
+python3 game/build.py                 # the game (dist/campaign/), the app (play/ and dist/play/) and the bench (dist/bench/)
+node game/test/play.ui.test.js        # the app on phone screens: fills the screen, no button out of reach, opens with no signal
 node game/test/engine.test.js         # the rules: every card does what it says, 4,000 random games, the bots
 node game/test/ui.test.js             # the screen: needs the build first, and Playwright
 node game/test/playtest.js            # a look-ahead player plays 300 runs and reports how hands and battles went
@@ -88,6 +91,19 @@ node game/test/flicker.js             # after a build: what a tap or a card play
 ```
 
 Open `game/dist/campaign/campaign.html` in a browser to play the build. Settings, inside the game, has the Playtest section: every mission open, every card at the fire, ten stars, a rank for each fighter, the road with every camp card or with clashes of three rounds.
+
+## The game as an app
+
+`build_campaign.py → play()` writes the same game a second way: **`game/play/`**, one page with nothing on it but the game, kept in git. `engine/build_site.py` copies it to the site's `/play/` and lays `music/` and `sfx/` beside it, and passes every line a player can read through the site's two walls first (real-world terms, the GM blocklist); `ship` runs `game/build.py` whenever anything under `game/` changed. `game/dist/play/` is the same thing with its sounds, to open and test.
+
+| File | What it is |
+|---|---|
+| `src/play.css` | The phone's layout, only on that page (`html.app`): the game is the whole screen, the page never scrolls, the notch and the home bar are left clear. The board is always whole and what he can do stays at the bottom; in a clash the stage gives way on a short phone and the hand and tray stay put; a mission's card, the telling afterwards and the road's camp keep their main button under the thumb. Music, sound and the way out are three round buttons at the top right. The mission's rule folds to a line and a tap opens it. |
+| `src/app.js` | What a phone needs and the game does not know: keeps the page for when there is no signal (registers `sw.js`), offers the home screen or the full screen from the menu (`window.__APP`), keeps the screen awake, stops the long-press menu and the two-finger zoom. |
+| `play/manifest.webmanifest`, `play/icon-*.png`, `play/apple-touch-icon.png` | Written by the build: standalone, upright, its own icon (him in the high guard). |
+| `play/sw.js` | Written by the build, stamped with what it holds: the page newest-first, pictures and sounds from the kept copy, the music fetched in the background and served in the pieces a player asks for. |
+
+On an iPhone, full screen means the home screen (Safari → Share → Add to Home Screen): the menu says so and shows the steps. The home-screen copy keeps its own progress, apart from Safari's. On Android the menu offers the phone's own install, or plain full screen. Leaving a mission takes two taps everywhere now: the first asks.
 
 ## When he sends a picture or a sound
 

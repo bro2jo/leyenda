@@ -79,6 +79,20 @@ function tile(a,icon,name,small,cls,off){return '<button type="button" class="cp
 function roadOpen(){return all()||!!P.done.c5}
 function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
     l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
+function arm(b){b.classList.add('sure');b._t=b.textContent;b.textContent='Leave? Tap again';setTimeout(function(){b.classList.remove('sure');if(b._t)b.textContent=b._t},3000)}
+/* on a phone, as an app (src/app.js, only on the page at /play/): the menu offers the home screen or the full screen
+   until it has one, and a sheet says how where the phone will not do it for him */
+function appOffer(){var o=window.__APP&&window.__APP.offer();return o?'<div class="cp-acts app-offer">'+btn('app:'+o.k,o.t,o.s)+'</div>':''}
+function appSheet(){
+  scr='app';var ios=window.__APP&&window.__APP.ios,sh='<span class="glyph"><svg viewBox="0 0 24 24"><path d="M12 15V3M8 7l4-4 4 4M5 11v9h14v-9"/></svg></span>';
+  show('<div class="cp-menu app-sheet"><span class="cp-lbl">On his phone</span><h2>The whole screen</h2>'+
+    '<p>From the home screen it opens like any app: no browser bars, its own icon, and it plays without signal.</p><ol>'+
+    (ios?'<li>In <b>Safari</b>, tap <b>Share</b> '+sh+' in the bar.</li><li>Choose <b>Add to Home Screen</b>, then <b>Add</b>.</li>'
+        :'<li>Open the browser\'s <b>menu</b> (the three dots).</li><li>Choose <b>Add to Home screen</b> or <b>Install app</b>.</li>')+
+    '<li>Open it from the new icon, and from the icon from then on.</li></ol>'+
+    (ios?'<p class="cp-note">On an iPhone the icon keeps its own progress, apart from Safari\'s: add it first, then play.</p>':'')+
+    '<div class="cp-acts">'+btn('title','Back to the menu','')+'</div></div>','scroll');
+}
 function title(){
   scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{},sus=suspended(),dn=dueAll();
   show('<div class="cp-menu"><span class="cp-lbl">The Unkneeling</span><h2>The Line and the Hand</h2>'+
@@ -91,7 +105,7 @@ function title(){
       tile('cards:title',X.svg('deck'),'The cards',f[0]+' of '+f[1]+' found')+
       tile('company',X.svg('heart'),'The company',dn?dn+(dn>1?' ranks':' rank')+' to give':met().length?met().length+' beside him so far':'Nobody yet',dn?'hot':'')+
       tile('settings',X.svg('pillar'),'Settings',['Gentle','Standard','Hard'][(P.level||0)+1]+(X.prefs.music?' · music':'')+(X.prefs.sound?' · sound':''))+
-    '</div>'+(P.all||P.bonus||P.shelfAll||P.roadAll?'<p class="cp-note">Playtest switches are on (Settings).</p>':'')+'<p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
+    '</div>'+appOffer()+(P.all||P.bonus||P.shelfAll||P.roadAll?'<p class="cp-note">Playtest switches are on (Settings).</p>':'')+'<p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
 }
 /* the journey: the missions as a road, a spur for each fight told larger than the page */
 function list(){
@@ -277,6 +291,7 @@ function outro(){
 }
 function end(){scr='end';show('<div class="cp-title"><span class="cp-lbl">Book II · The Tempering Road</span><h2>'+CP.END.t+'</h2><p class="cp-sub">'+CP.END.s+'</p><div class="cp-acts">'+btn('list','Missions','','primary')+'</div></div>')}
 root.addEventListener('click',function(e){
+  var fold=e.target.closest('.cp-obj,.cp-hint'),in0=e.target.closest('[data-cp]');if(fold&&(!in0||in0===root)){fold.classList.toggle('open');return} /* on a phone the rule is folded to a line (play.css): a tap opens it */
   var b=e.target.closest('[data-cp]');if(!b||b.disabled||b===root)return;var a=b.getAttribute('data-cp'),k=a.split(':');
   if(k[0]==='title')title();else if(k[0]==='list')list();else if(k[0]==='intro')intro(k[1]);else if(k[0]==='go')begin(k[1]);else if(k[0]==='end')end();
   else if(k[0]==='fire'){pick=null;fire(k.slice(1).join(':')||'title')}
@@ -284,6 +299,7 @@ root.addEventListener('click',function(e){
   else if(k[0]==='pick'){pick=pick===k[1]?null:k[1];fire()}
   else if(k[0]==='take'){if(pick&&P.pack.length<CP.PACK&&cost(pick)<=purse()&&P.pack.indexOf(pick)<0&&shelf().indexOf(pick)>=0){P.pack.push(pick);pick=null;save()}fire()}
   else if(k[0]==='drop'){var di=P.pack.indexOf(k[1]);if(di>=0){P.pack.splice(di,1);save()}fire()}
+  else if((k[0]==='quit'||k[0]==='quitroad')&&!b.classList.contains('sure')){arm(b)} /* leaving takes two taps: the first asks */
   else if(k[0]==='quit'){if(!X.busy){bank(X.G);forgetBoard();list()}}
   else if(k[0]==='resume')resume();
   else if(k[0]==='grow')grow(k[1],scr==='outro'?'list':'company');
@@ -291,6 +307,7 @@ root.addEventListener('click',function(e){
   else if(k[0]==='company')company();else if(k[0]==='settings'){sure=false;settings()}
   else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
   else if(k[0]==='road')road();else if(k[0]==='quitroad')leaveRoad();
+  else if(k[0]==='app'){if(window.__APP&&window.__APP.take(k[1])==='steps')appSheet();else title()}
   else if(k[0]==='pt'){if(k[1]==='all')P.all=k[2]==='1';else if(k[1]==='shelf'){P.shelfAll=k[2]==='1';trimPack()}else if(k[1]==='deck')P.roadAll=k[2]==='1';else if(k[1]==='stars')P.bonus=(P.bonus||0)+10;
     else if(k[1]==='marks')Object.keys(WHO).forEach(function(id){var g=gr(id),nx=CP.LEVELS[CP.levelOf(g.m)];if(nx)g.m=nx});save();syncGrow();settings()}
 });
@@ -335,6 +352,7 @@ function paintLevel(){var b=document.querySelectorAll('[data-cplevel]');for(var 
 document.addEventListener('click',function(e){var b=e.target.closest('[data-cplevel]');if(!b)return;P.level=+b.getAttribute('data-cplevel');save();paintLevel()});
 paintLevel();
 trimPack();syncGrow();
+document.addEventListener('lh-app',function(){if(scr==='title')title()});
 window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}};
 title();
 })();

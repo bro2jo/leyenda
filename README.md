@@ -72,6 +72,7 @@ Real effort sets the **tone** of each day's scene and the **outcome** of each we
 `docs/` is a reader-facing site: what's going on now (with a map), the Chronicle by book, chapter and scene, a character sheet for everyone on the page, Darrow's full Reckoning, and a Codex. Claude rebuilds it (`python3 engine/build_site.py`) whenever a scene is written, and the build refuses to run if anything real-world or unrevealed would leak onto it.
 
 - **Locally:** `python3 -m http.server -d docs 8000`, then open http://localhost:8000/ (or open `docs/index.html` straight from the folder).
+- **The side game:** `game/` is played on a phone at the site's `/play/` (https://bro2jo.github.io/leyenda/play/); nothing on the Chronicle's pages links to it. `game/README.md` has the rest.
 - **GitHub Pages:** in the repo, Settings → Pages → Source "Deploy from a branch" → branch `main`, folder `/docs`. The site is public even from a private repo, which is why it shows story only.
 
 ## What's where
