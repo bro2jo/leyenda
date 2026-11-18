@@ -63,11 +63,11 @@ Pictures for the campaign are filed like the game's, under the names on the camp
 | `src/ui.js` | The screen and the sound: the map, the card table, the camp, the animations, the curtains between scenes, the music. It only shows and paces what the engine decides. The list of sounds (`SFX`) and the one set of drawn icons (`IC`) are here. |
 | `src/style.css` | The look. |
 | `test/bench.html` | The bare page the screen's tests run on (once the playtest page; it still carries the early design notes and the research that shaped the rules). |
-| `art/figures/`, `art/tokens/` | Pictures made for the game alone: a cut-out full figure for the clash and a square portrait for the map, one of each for a foe. |
+| `art/figures/`, `art/tokens/` | Pictures made for the game alone: a cut-out full figure for the clash and a square portrait for the map, one figure for a foe (its token is cut from it unless one is filed). `art/cards/`: a card's own picture, by the card's id. |
 | `sfx/` | Sounds made for the game, one file a sound, named as the list names it. |
 | `music/` | Background music: `map` plays under the map and the camp, `clash` at the card table. |
 | `tools/file_art.py` | Files a picture (a clash figure, a map token, a card's picture), a sound or a music track under its proper name. |
-| `tools/prompts.py`, `art/PROMPTS.md` | Every picture the game still wants, as a prompt that stands by itself, in order of how much he will notice it. The table is in the script; it writes the file and the prompts section of the game's page, and refuses a prompt over 120 words or one that uses a word an image model may not know. |
+| `tools/prompts.py`, `art/PROMPTS.md` | Every picture the game still wants, as a prompt that stands by itself, in order of how much he will notice it. The table is in the script; it writes the file and the prompts section of the game's page, and refuses a prompt over 150 words or one that uses a word an image model may not know. |
 | `art/cards/` | Pictures for cards, 4:3, one a card, named by the card's id. |
 | `build.py` | Puts it together into `dist/` (not kept in git). |
 | `test/` | `engine.test.js` (the rules), `ui.test.js` (the real page in a browser), `flicker.js` (counts what is rebuilt on screen: it should be nothing), `playtest.js` (a test player that looks ahead, and its report), `worth.js` (what each camp card is worth to that player, on every core), `try.js` (one balance setting, one line), `bots.js` and `sweep.js` (balance). |
@@ -93,7 +93,7 @@ Open `game/dist/campaign/campaign.html` in a browser to play the build. Settings
 
 ```
 python3 game/tools/file_art.py figure pikeman  PICTURE [--preview DIR]   # chroma screen keyed out the Wardrobe's way, 2:3
-python3 game/tools/file_art.py token  pikeman  PICTURE                   # square, for the map
+python3 game/tools/file_art.py token  pikeman  PICTURE                   # square, for the map: only for what has no figure, or to outrank the head the build cuts from one
 python3 game/tools/file_art.py card   b_strike PICTURE                   # a card's picture, cut to 4:3; every rank and combo of the card wears it
 python3 game/tools/file_art.py sound  battle_won FILE                    # by its name in the game's list
 python3 game/tools/file_art.py music  map FILE                           # map (the map and the camp) or clash (the card table)
@@ -101,7 +101,9 @@ python3 game/tools/file_art.py music  map FILE                           # map (
 
 A picture's name is who it shows: `pikeman`, `swordsman`, `crossbowman`, `skirmisher`, `shieldbearer`, `bannerman`, `captain`, or `hollis`, `ash`, `wren` for the company's clash figures. A sound's name is one of the names in the page's "Sounds to make" table; the tool refuses any other. Then build, run both tests, publish, and ship. The page marks what is made and what is still to make by itself.
 
-Made so far: the pikeman and the swordsman (figure and token each), the sounds `battle_won` and `run_won`, and both music tracks.
+A figure is one picture: the build cuts its map token from its head (`build.py → head`), and a token filed by hand outranks that. After filing, `python3 game/tools/prompts.py` drops the picture from the list of what is still to make.
+
+Made so far: the pikeman and the swordsman (figure and token each), the captain and a grey cloak (figure), the cards Strike, Guard and Thrown Stone, the sounds `battle_won` and `run_won`, and both music tracks.
 
 ## The game in one page
 

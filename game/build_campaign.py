@@ -9,7 +9,8 @@ It is the same game (src/engine.js, src/ui.js and src/style.css, untouched) with
 
 Pictures come from the small copies the site keeps (saga/art/thumbs/): the company as they looked in each Book, the people a
 mission puts on the board, the places for the title cards. A foe or an ordeal with no picture gets a plain drawn token, and the
-page lists those as pictures still to make; a token filed in game/art/tokens/ under the same name replaces the drawn one.
+page lists those as pictures still to make; a figure filed in game/art/figures/ under the same name replaces the drawn one
+(its token is cut from the figure's head; a token filed in game/art/tokens/ outranks that).
 """
 import json
 import shutil
@@ -17,7 +18,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from build import HEAD, SITE_ART, THUMBS
+from build import HEAD, SITE_ART, THUMBS, head
 
 GAME = Path(__file__).resolve().parent
 SRC, DIST = GAME / "src", GAME / "dist" / "campaign"
@@ -29,6 +30,7 @@ ART.update({"darrow0": C + "darrow.sm.webp", "darrow1": C + "darrow.sm.webp", "h
 ART.update({f"place-{p}": f"places/{p}.md.webp" for p in ["harrow-ford", "saint-ysoldes", "winch-house", "coldmere", "the-lowmarch"]})
 # a foe's token from a face the Chronicle already has
 TOKENS = {"ysra-tal": C + "ysra-tal.sm.webp", "hollis-foe": C + "hollis-garrow.sm.webp", "greycloak": "factions/confessors.sm.webp"}
+EMBLEM = {"greycloak"}  # not a face, only a badge: the head of the man's own figure outranks it
 # men who wear one of the game's own pictures until theirs is made (figure and token)
 ALIAS = {"pitchfork": "pikeman", "hornboy": "pikeman", "sergeant": "swordsman"}
 # everything else on the board that has no picture yet: name, what it is, a letter, a colour
@@ -69,12 +71,17 @@ def main():
             shutil.copyfile(THUMBS / rel, DIST / "art" / f"{name}.webp")
             assets["art"].append(name)
     made = {f.stem: f for f in (GAME / "art" / "tokens").glob("*.webp")}
+    figs = {f.stem: f for f in (GAME / "art" / "figures").glob("*.webp")}
+    for key, f in sorted(figs.items()):  # a figure with no token of its own: one is cut from its head
+        if key not in made and (key not in TOKENS or key in EMBLEM):
+            head(f).save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86, method=6)
+            assets["tok"].append(key)
     for key, rel in TOKENS.items():
-        if key not in made and (THUMBS / rel).is_file():
+        if key not in made and not (key in figs and key in EMBLEM) and (THUMBS / rel).is_file():
             square(THUMBS / rel).save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86)
             assets["tok"].append(key)
     for key, what, letter, colour in DRAWN:
-        if key in made:
+        if key in made or key in figs:
             continue
         im = disc(letter, colour)
         im.save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86)
@@ -86,7 +93,6 @@ def main():
     for key, src in ALIAS.items():  # lent pictures: filed under the campaign's name, so a real one replaces it by being filed
         if key not in made and src in made:
             made[key] = made[src]
-    figs = {f.stem: f for f in (GAME / "art" / "figures").glob("*.webp")}
     for key, src in ALIAS.items():
         if key not in figs and src in figs:
             figs[key] = figs[src]

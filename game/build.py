@@ -38,6 +38,21 @@ HEAD = """<title>The Line and the Hand</title>
 """
 
 
+def head(src, size=256, bg=(38, 40, 48)):
+    """A map token cut from a clash figure: the head and shoulders, on plain dark grey. A token filed by hand outranks it."""
+    f = Image.open(src).convert("RGBA")
+    a = f.split()[3].point(lambda v: 255 if v > 40 else 0)
+    _, y0, _, y1 = a.getbbox()
+    band = a.crop((0, y0, f.width, y0 + int((y1 - y0) * .07))).getbbox()  # the top of the figure is its head
+    side = int(max((y1 - y0) * .27, (band[2] - band[0]) * 2.1))
+    left, top = int((band[0] + band[2]) / 2 - side / 2), int(y0 - side * .10)
+    cut = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    cut.paste(f, (-left, -top))
+    out = Image.new("RGBA", (side, side), bg + (255,))
+    out.alpha_composite(cut)
+    return out.convert("RGB").resize((size, size), Image.LANCZOS)
+
+
 def main():
     if DIST.exists():
         for old in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")) + list((DIST / "music").glob("*")):
@@ -56,6 +71,10 @@ def main():
     for f in sorted((GAME / "art" / "tokens").glob("*.webp")):
         Image.open(f).convert("RGB").resize((256, 256), Image.LANCZOS).save(DIST / "art" / f"tok-{f.stem}.webp", "WEBP", quality=86, method=6)
         assets["tok"].append(f.stem)
+    for f in sorted((GAME / "art" / "figures").glob("*.webp")):  # a figure with no token of its own: one is cut from its head
+        if f.stem not in assets["tok"]:
+            head(f).save(DIST / "art" / f"tok-{f.stem}.webp", "WEBP", quality=86, method=6)
+            assets["tok"].append(f.stem)
     for f in sorted((GAME / "sfx").glob("*.*")):
         shutil.copyfile(f, DIST / "sfx" / f.name)
         assets["sfx"][f.stem] = f"sfx/{f.name}"

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""THE LINE AND THE HAND: every picture the game still wants, as a prompt that stands by itself.
+"""THE LINE AND THE HAND: every picture the game still wants, as a prompt that stands by itself. A picture that is filed
+(game/art/figures/, tokens/, cards/) leaves the list by itself the next time this runs.
 
   python3 game/tools/prompts.py        writes game/art/PROMPTS.md and the prompts section of game/src/campaign.html
 
-One table, three kinds of picture: a full figure for the clash (2:3, on a blue screen, cut out by file_art.py), a square token
-for the map, and a card picture (4:3). Each prompt is whole: subject, then style, then format, so it can be pasted as it is.
-Rules it holds itself to (and checks): under 120 words; plain words an image model knows (no gambeson, no lymer); one
+One table, three kinds of picture: a full figure for the clash (2:3, on a blue screen, cut out by file_art.py; the build cuts
+its map token from its head), a square token for what is seen only on the map, and a card picture (4:3). Each prompt is whole: subject, then style, then format, so it can be pasted as it is.
+Rules it holds itself to (and checks): under 150 words; plain words an image model knows (no gambeson, no lymer); one
 subject; say which way it faces; nothing vague. A foe faces left, a friend faces right. Attach one of Darrow's looks as the
 style reference; for anyone the Chronicle already has a face for, attach that portrait as well and the prompt says so."""
 import html
@@ -14,14 +15,21 @@ import sys
 from pathlib import Path
 
 GAME = Path(__file__).resolve().parent.parent
-STYLE = "Painterly fantasy concept art, visible brushwork, muted earthy colours, soft daylight, realistic proportions. Not a photo, not 3D, not a cartoon. Match the painting style of the attached image."
+# The house wording, taken from the prompt that made the Chronicle's own portraits, so the game's pictures sit beside them:
+# the kind of picture first, then the subject, then these style words, then what to keep out, then the format.
+LOOK = "Painterly semi-realistic video game character art, visible brushwork, grounded dark fantasy, muted medieval palette, realistic skin texture, natural asymmetry, soft daylight."
+ART = "Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette."  # the same, where no face is the subject; the light is the subject's own
+KEEP_OUT = "No caricature, no glamour styling, no exaggerated beauty, no flashy armor. Not a photo or 3D render."
+REF = "Match the painting style of the attached image."
+STYLE = f"{LOOK} {KEEP_OUT} {REF}"
+LEAD = {"figure": "Fantasy RPG character art, full-body figure:", "animal": "Fantasy RPG creature art, full body:", "card": "Fantasy RPG card illustration, a close view of one clear action:",
+        "scene": "Fantasy RPG environment art:", "solo": "Fantasy RPG character portrait, tight shoulders-up headshot:"}
+FACE = "A distinct, individual face, plain rather than handsome."
 def fig(face, what="figure"):
-    return (f"Vertical 2:3 image. One {what} only, whole body with a small margin all round, turned three-quarters toward the {face} side of the image. "
+    return (f"Vertical 2:3 image. One {what} only, whole body with a margin all round, turned three-quarters toward the {face} side of the image. "
             "Background: flat pure blue (#0000FF) filling the whole image, like a blue screen. No ground, no shadow, no text. Nothing blue on the " + what + ".")
-TOKEN = ("Square 1:1 portrait of the same character as in the attached image: head and shoulders, turned slightly to the left, face in the centre with space all round "
-         "for a circular crop. Plain dark grey background. Same clothes, same painting style, same light. No text, no border.")
-SCENE = "Square 1:1 image, the subject in the centre with space all round for a circular crop. " + STYLE.replace(" Match the painting style of the attached image.", "") + " No people in close-up, no text, no border."
-CARD = "Card illustration, 4:3 landscape. A close view of one clear action. " + STYLE.replace(" Match the painting style of the attached image.", "") + " No text, no border, no frame."
+SCENE = ART + " Square 1:1 image, the subject in the centre with space all round for a circular crop. No people in close-up, no text, no border."
+CARD = "Softly blurred background. " + ART + " Not a photo or 3D render. 4:3 landscape. No text, no border, no frame."
 SAME = "The same person as in the attached portrait: same face, hair, age and clothes. "
 
 # name, title, group, facing, subject, note (where the look comes from)
@@ -34,10 +42,10 @@ FIGURES = [
  ("guest", "A Confessor's man", "The campaign's own", "left", "A hard-faced man of thirty with cropped hair and a thick neck, in a dark grey wool coat and leather gloves. He holds a heavy wooden club low in one hand and stands square, watching.", "Mine: the page says only that they are the Confessor's men."),
  ("darkcoat", "A rider in a dark coat", "The campaign's own", "left", "A lean man standing on foot in a long charcoal-black riding coat, tall boots, gloves and a wide-brimmed hat. One hand is raised as if holding a horse's rein; the other rests on the handle of a sheathed sword.", "The page says only: four riders in dark coats."),
  ("walker", "A walker", "The campaign's own", "left", "A gaunt man walking forward with empty hands and blank eyes that look at nothing. He wears chainmail under a sleeveless cloth tunic so faded that its colours cannot be made out. White frost in his beard and hair, pale grey skin.", "From the page: mail under a surcoat whose colours had washed out, frost in his beard."),
- ("ysra-tal", "Ysra Tal", "The campaign's own", "left", SAME + "A full-body figure standing balanced with a drawn sword held low in one hand.", "Attach her portrait from the site as well."),
- ("hollis", "Hollis", "Beside him", "right", SAME + "A full-body figure standing ready with a sword in his hand.", "Attach his portrait from the site as well."),
- ("ash", "Ash", "Beside him", "right", "The same dog as in the attached picture: same coat, same size, same markings. A full-body figure, standing alert with her head up and ears forward.", "Attach her picture from the site as well."),
- ("wren", "Wren", "Beside him", "right", SAME + "A full-body figure with a small round stone in her raised hand, ready to throw.", "Attach her portrait from the site as well."),
+ ("ysra-tal", "Ysra Tal", "The campaign's own", "left", SAME + "She stands balanced with a drawn sword held low in one hand.", "Attach her portrait from the site as well."),
+ ("hollis", "Hollis", "Beside him", "right", SAME + "He stands ready with a sword in his hand.", "Attach his portrait from the site as well."),
+ ("ash", "Ash", "Beside him", "right", "The same dog as in the attached picture: same coat, same size, same markings. She stands alert with her head up and ears forward.", "Attach her picture from the site as well."),
+ ("wren", "Wren", "Beside him", "right", SAME + "She has a small round stone in her raised hand, ready to throw.", "Attach her portrait from the site as well."),
  ("pikeman", "Pikeman", "The road's hired company (made up for the game)", "left", "A lean, long-armed man in his thirties with a narrow watchful face. Wide-brimmed iron helmet, padded quilted jacket, a faded brick-red sash. He holds a long wooden pike in both hands, levelled forward.", ""),
  ("swordsman", "Swordsman", "The road's hired company (made up for the game)", "left", "A wiry man in his late twenties with cropped dark hair and an old scar on his chin, bare-headed. A short chainmail shirt under a faded brick-red sleeveless tunic. He holds a straight one-handed sword low and forward.", ""),
  ("crossbowman", "Crossbowman", "The road's hired company (made up for the game)", "left", "A stocky soldier in his forties with a weathered, squinting face. Brown wool hood, thick padded jacket, a faded brick-red sash across his chest. He holds a loaded wooden crossbow at his hip, aimed forward, with a leather case of bolts at his belt.", ""),
@@ -85,7 +93,8 @@ PEOPLE = [
  ("rider", "An outrider", "A cavalry scout in a short dark green riding jacket over chainmail and an open iron helmet, with an alert, weathered face."),
  ("brother", "A lay brother", "A sturdy man of fifty with short grey hair and a kind, tired face, in a plain undyed wool robe."),
 ]
-SOLO = "Square 1:1 portrait: head and shoulders, turned slightly to the left, face in the centre with space all round for a circular crop. Plain dark grey background. " + STYLE + " No text, no border."
+SOLO = (FACE + " Softly blurred background. " + f"{LOOK} {KEEP_OUT}" + " Eye-level centered square headshot, shoulders visible, turned slightly to the left, "
+        "space all round the head for a circular crop. No text, no border.")
 # how much he will notice each one: where it is seen and how often, counted from the missions and the decks. Highest first.
 IMPACT = {
  "card:b_strike": (100, "22 copies across the company's decks: the card drawn most often in the whole game"),
@@ -113,27 +122,33 @@ IMPACT = {
  "tok:rider": (40, "Seen only on the map, in one mission"), "tok:brother": (39, "Seen only on the map, in one mission"),
  "who:pikeman": (4, "Made already"), "who:swordsman": (3, "Made already"),
 }
+LIMIT = 150  # the prompt this wording comes from ran to 330 words and held; the first 150 are what every generator reads
 BANNED = ["gambeson", "kettle", "madder", "hauberk", "cuirass", "coif", "lymer", "surcoat", "buff coat", "jack ", "nasal helm", "spate", "levy"]
 
 def figure_prompt(r):
     what = "animal" if r[0] in ("lymer", "ash") else "figure"
-    return f"{r[4]} {STYLE} {fig(r[3], what)}"
+    face = "" if what == "animal" or r[4].startswith(SAME) else FACE + " "
+    style = f"{ART} Soft daylight. Not a photo or 3D render. {REF}" if what == "animal" else STYLE
+    return f"{LEAD[what]} {r[4]} {face}{style} {fig(r[3], what)}"
 def words(t):
     return len(re.findall(r"\S+", t))
 KIND = {"who": "Figure", "tok": "Token", "card": "Card"}
-def items():
+FOLDER = {"who": "figures", "tok": "tokens", "card": "cards"}
+def made(kind, name):
+    return (GAME / "art" / FOLDER[kind] / (name + ".webp")).is_file()
+def items(everything=False):
     out = [("who", r[0], r[1], figure_prompt(r), r[5]) for r in FIGURES]
-    out += [("tok", o[0], o[1], f"{o[2]} {SCENE}", "") for o in ORDEALS] + [("tok", q[0], q[1], f"{q[2]} {SOLO}", "") for q in PEOPLE]
-    out += [("card", c[0], f"{c[1]} ({c[2]})", f"{c[3]} {CARD}", "") for c in CARDS]
+    out += [("tok", o[0], o[1], f"{LEAD['scene']} {o[2]} {SCENE}", "") for o in ORDEALS] + [("tok", q[0], q[1], f"{LEAD['solo']} {q[2]} {SOLO}", "") for q in PEOPLE]
+    out += [("card", c[0], f"{c[1]} ({c[2]})", f"{LEAD['card']} {c[3]} {CARD}", "") for c in CARDS]
     def score(it):
         return IMPACT.get(it[0] + ":" + it[1], (30, "Only when it is bought at the fire"))
     out.sort(key=lambda it: -score(it)[0])
-    return [it + (score(it)[1],) for it in out]
+    return [it + (score(it)[1],) for it in out if everything or not made(it[0], it[1])]
 def check():
     bad = []
-    allp = [(it[1], it[3]) for it in items()] + [("token", TOKEN)]
+    allp = [(it[1], it[3]) for it in items(True)]
     for name, p in allp:
-        if words(p) > 120:
+        if words(p) > LIMIT:
             bad.append(f"{name}: {words(p)} words")
         for b in BANNED:
             if b in p.lower():
@@ -144,26 +159,34 @@ def check():
 
 def main():
     allp, its = check(), items()
+    done = [it for it in items(True) if made(it[0], it[1])]
+    was = "Made already: " + ", ".join(f"{it[2]} ({KIND[it[0]].lower()})" for it in done) + "." if done else ""
     md = ["# The Line and the Hand: pictures to make, most noticed first", "",
           "Every prompt here is whole: paste it as it is, and attach one of Darrow's looks as the style reference. Start at the top: they are in order of how much he will notice each one.",
-          "Send a picture back with its name and kind, and it is filed with `python3 game/tools/file_art.py figure|token|card NAME FILE`.", "",
-          "## After any figure: its map token. Attach the finished figure and paste this", "", "```", TOKEN, "```", ""]
-    h = ['    <div class="prompts">',
-         f'      <div class="prompt"><div class="ph"><h3>After any figure: its map token <code>token NAME</code></h3><button type="button" class="mini2" data-copy="pp-token">Copy</button></div>\n<pre id="pp-token">{html.escape(TOKEN)}</pre><p class="small">Attach the finished figure and paste this to get the round token for the map.</p></div>',
-         '    </div>', '    <ol class="prompts ranked">']
+          "Send a picture back with its name and kind, and it is filed with `python3 game/tools/file_art.py figure|token|card NAME FILE`.",
+          "A figure is one picture: its map token is cut from its head when the game is built.", "", was, ""]
+    h = [f'    <p class="small" id="cp-made">{html.escape(was)}</p>', '    <ol class="prompts ranked">']
     for n, (kind, name, title, prompt, note, why) in enumerate(its, 1):
         pid = f"pp-{kind}-{name}"
         h.append(f'      <li class="prompt"><div class="ph"><h3 data-{kind}="{name}"><span class="rk-n">{n}</span> <span class="kind k-{kind}">{KIND[kind]}</span> {html.escape(title)} <code>{name}</code></h3><button type="button" class="mini2" data-copy="{pid}">Copy</button></div>\n'
                  f'<p class="small why">{html.escape(why)}.</p>\n<pre id="{pid}">{html.escape(prompt)}</pre>' + (f'<p class="small">{html.escape(note)}</p>' if note else "") + "</li>")
         md.extend([f"## {n}. {KIND[kind]}: {title} (`{dict(who='figure', tok='token', card='card')[kind]} {name}`)", "", f"{why}.", "", "```", prompt, "```"] + ([f"_{note}_"] if note else []) + [""])
     h.append("    </ol>")
+    md.extend(["## How every prompt is built (for a new one)", "",
+               "The wording follows the prompt that made the Chronicle's own portraits, so the game's pictures sit beside them. In this order:", "",
+               "1. **The kind of picture first.** " + " · ".join(f"`{v}`" for v in LEAD.values()),
+               "2. **The subject, in plain words.** Age, build, face, clothes with their colours, what is in the hands, the pose. Only what a picture can show; one choice, never \"either… or\".",
+               f"3. **The look.** `{LOOK}` Where no face is the subject (a card, a place, an animal): `{ART}`",
+               f"4. **Kept out.** `{KEEP_OUT}`",
+               f"5. **The format.** A figure: `{fig('left')}` A card: `4:3 landscape. Softly blurred background. No text, no border, no frame.` A portrait for the map: `{SOLO.split(KEEP_OUT + ' ')[1]}`",
+               "", f"A figure also says `{FACE}` and `{REF}` Foes face left, friends face right. No prompt runs over {LIMIT} words.", ""])
     (GAME / "art" / "PROMPTS.md").write_text("\n".join(md), encoding="utf-8")
     page = GAME / "src" / "campaign.html"
     t = page.read_text(encoding="utf-8")
     a, b = t.index("<!-- prompts:start -->"), t.index("<!-- prompts:end -->")
     page.write_text(t[:a] + "<!-- prompts:start -->\n" + "\n".join(h) + "\n    " + t[b:], encoding="utf-8")
     n = [words(p) for _, p in allp]
-    print(f"prompts: {len(its)} pictures in order ({sum(1 for i in its if i[0] == 'who')} figures, {sum(1 for i in its if i[0] == 'tok')} tokens, {sum(1 for i in its if i[0] == 'card')} cards) · longest {max(n)} words, average {sum(n) // len(n)}")
+    print(f"prompts: {len(done)} made, {len(its)} still to make, in order ({sum(1 for i in its if i[0] == 'who')} figures, {sum(1 for i in its if i[0] == 'tok')} tokens, {sum(1 for i in its if i[0] == 'card')} cards) · longest {max(n)} words, average {sum(n) // len(n)}")
 
 if __name__ == "__main__":
     main()
