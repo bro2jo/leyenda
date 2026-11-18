@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-15 · verse · Someone at the tail of the cart is singing The Grey Mare of Edgemoor and has the second line wrong, and the whole company sings it back to him, correct and louder: by the Wend and the Holloway, by the bell and the star.
 - 2026-11-15 · ledger · A new column in Wren's ledger, ruled in red: things Hollis says, by how often. "Bells take it" leads by a distance. "I was never wrong about rain" is gaining.
 - 2026-11-15 · weather · Rain by dark after all, fine and sideways. Nobody tells Hollis. He finds out for himself, standing in it, and is unbearable for the rest of the evening.
 - 2026-11-15 · saying · The dog will not lie down by the fire for anyone, and Hollis calls it stiff-kneed, the old Lancers' word: proud, and unable to kneel. Darrow laughs before he can help it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-17 · weather · Clear and hard-cold after the night's smoke. The river runs loud under the bridge, and the frost is off the planking by mid-morning, one board at a time.
 - 2026-11-17 · house · Maelis has found real salt somewhere in the mill's ruin and keeps it in her own pocket. The porridge is better for it, and everyone says so, twice, in case she is counting.
 - 2026-11-17 · ledger · Wren's ledger, the mill page: mouths, forty at the last count. Bowls, thirty-one. Offers of help Maelis has refused, a column of its own, nearly all of them Hollis's.
+- 2026-11-18 · body · He stamps the cold out of his feet at first light, left, right, left, and only halfway through notices there is no order to it any more, no leg that has to go first.
