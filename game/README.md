@@ -103,7 +103,7 @@ A picture's name is who it shows: `pikeman`, `swordsman`, `crossbowman`, `skirmi
 
 A figure is one picture: the build cuts its map token from its head (`build.py → head`), and a token filed by hand outranks that. After filing, `python3 game/tools/prompts.py` drops the picture from the list of what is still to make.
 
-Made so far: the pikeman and the swordsman (figure and token each), the captain and a grey cloak (figure), the cards Strike, Guard and Thrown Stone, the sounds `battle_won` and `run_won`, and both music tracks.
+Made so far: the pikeman and the swordsman (figure and token each), the captain, a grey cloak and the rider in a dark coat (figure), the cards Strike, Guard, Thrown Stone, Hew, Stand Fast, The Count and Blood Up, the sounds `battle_won` and `run_won`, and both music tracks.
 
 ## The game in one page
 

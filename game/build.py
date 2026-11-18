@@ -44,7 +44,7 @@ def head(src, size=256, bg=(38, 40, 48)):
     a = f.split()[3].point(lambda v: 255 if v > 40 else 0)
     _, y0, _, y1 = a.getbbox()
     band = a.crop((0, y0, f.width, y0 + int((y1 - y0) * .07))).getbbox()  # the top of the figure is its head
-    side = int(max((y1 - y0) * .27, (band[2] - band[0]) * 2.1))
+    side = int(max((y1 - y0) * .27, min((band[2] - band[0]) * 2.1, (y1 - y0) * .33)))  # a wide hat does not push the face away
     left, top = int((band[0] + band[2]) / 2 - side / 2), int(y0 - side * .10)
     cut = Image.new("RGBA", (side, side), (0, 0, 0, 0))
     cut.paste(f, (-left, -top))
