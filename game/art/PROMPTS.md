@@ -4,7 +4,7 @@ Every prompt here is whole: paste it as it is, and attach one of Darrow's looks 
 Send a picture back with its name and kind, and it is filed with `python3 game/tools/file_art.py figure|token|card NAME FILE`.
 A figure is one picture: its map token is cut from its head when the game is built.
 
-Made already: Strike (everyone) (card), Guard (everyone) (card), Captain (figure), A grey cloak (figure), Thrown Stone (Wren) (card), Hew (Hollis) (card), Stand Fast (Hollis) (card), The Count (Wren) (card), A rider in a dark coat (figure), The Wend in spate (token), A walker (figure), The lymer (figure), The black glass (token), The boy with the pitchfork (figure), Pikeman (figure), Swordsman (figure).
+Made already: Strike (everyone) (card), Guard (everyone) (card), Captain (figure), A grey cloak (figure), Thrown Stone (Wren) (card), Hew (Hollis) (card), Stand Fast (Hollis) (card), The Count (Wren) (card), A rider in a dark coat (figure), The Wend in spate (token), A walker (figure), The lymer (figure), The black glass (token), The boy with the pitchfork (figure), Clean Bandage (the fire) (card), Close Up (the fire) (card), Read the Line (the fire) (card), Call the Company (the fire) (card), Second Wind (the fire) (card), Pikeman (figure), Swordsman (figure).
 
 ## 1. Figure: Hollis (`figure hollis`)
 
@@ -181,47 +181,7 @@ Seen only on the map, in one mission.
 Fantasy RPG character portrait, tight shoulders-up headshot: A sturdy man of fifty with short grey hair and a kind, tired face, in a plain undyed wool robe. A distinct, individual face, plain rather than handsome. Softly blurred background. Painterly semi-realistic video game character art, visible brushwork, grounded dark fantasy, muted medieval palette, realistic skin texture, natural asymmetry, soft daylight. No caricature, no glamour styling, no exaggerated beauty, no flashy armor. Not a photo or 3D render. Eye-level centered square headshot, shoulders visible, turned slightly to the left, space all round the head for a circular crop. No text, no border.
 ```
 
-## 22. Card: Clean Bandage (the fire) (`card bandage`)
-
-Only when it is bought at the fire.
-
-```
-Fantasy RPG card illustration, a close view of one clear action: Two hands wrapping a strip of clean white linen round a forearm. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
-```
-
-## 23. Card: Close Up (the fire) (`card closeup`)
-
-Only when it is bought at the fire.
-
-```
-Fantasy RPG card illustration, a close view of one clear action: Three people standing shoulder to shoulder with wooden shields touching, seen from behind. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
-```
-
-## 24. Card: Read the Line (the fire) (`card readline`)
-
-Only when it is bought at the fire.
-
-```
-Fantasy RPG card illustration, a close view of one clear action: A pair of narrowed eyes under a hood, watching a row of distant soldiers on a hillside. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
-```
-
-## 25. Card: Call the Company (the fire) (`card callco`)
-
-Only when it is bought at the fire.
-
-```
-Fantasy RPG card illustration, a close view of one clear action: A raised arm waving forward, with several figures running up behind it across open ground. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
-```
-
-## 26. Card: Second Wind (the fire) (`card secondwind`)
-
-Only when it is bought at the fire.
-
-```
-Fantasy RPG card illustration, a close view of one clear action: A tired man straightening up and taking a deep breath, cold mist coming from his mouth, morning light on his face. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
-```
-
-## 27. Card: Second Cut (the fire) (`card twice`)
+## 22. Card: Second Cut (the fire) (`card twice`)
 
 Only when it is bought at the fire.
 
@@ -229,7 +189,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A sword caught at two moments of one fast double cut, drawn as two blurred blades crossing. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 28. Card: Pinning Throw (the fire) (`card pinshot`)
+## 23. Card: Pinning Throw (the fire) (`card pinshot`)
 
 Only when it is bought at the fire.
 
@@ -237,7 +197,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A short spear stuck through the hem of a running man's cloak, pinning it to the ground. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 29. Card: Finish It (the fire) (`card finish`)
+## 24. Card: Finish It (the fire) (`card finish`)
 
 Only when it is bought at the fire.
 
@@ -245,7 +205,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A sword point held steady a hand's width from the chest of a man who has dropped to one knee. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 30. Card: Follow Through (the fire) (`card follow`)
+## 25. Card: Follow Through (the fire) (`card follow`)
 
 Only when it is bought at the fire.
 
@@ -253,7 +213,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A long sweeping sword cut passing one soldier and reaching toward a second standing beside him. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 31. Card: Dig In (the fire) (`card digin`)
+## 26. Card: Dig In (the fire) (`card digin`)
 
 Only when it is bought at the fire.
 
@@ -261,7 +221,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A boot heel pressed hard into muddy ground behind a wooden shield planted upright in the earth. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 32. Card: Blood Up (the fire) (`card bloodup`)
+## 27. Card: Blood Up (the fire) (`card bloodup`)
 
 Only when it is bought at the fire.
 
@@ -269,7 +229,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A clenched fist tight round a sword handle, knuckles white, a red scarf tied at the wrist. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 33. Card: Steady Hand (the fire) (`card steady`)
+## 28. Card: Steady Hand (the fire) (`card steady`)
 
 Only when it is bought at the fire.
 
@@ -277,7 +237,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: An open hand held out flat and perfectly still above a small candle flame. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 34. Card: Strip the Fallen (the fire) (`card strip`)
+## 29. Card: Strip the Fallen (the fire) (`card strip`)
 
 Only when it is bought at the fire.
 
@@ -285,7 +245,7 @@ Only when it is bought at the fire.
 Fantasy RPG card illustration, a close view of one clear action: A hand pulling a leather coin purse from the belt of a fallen soldier lying on the grass. Softly blurred background. Painterly semi-realistic video game art, visible brushwork, grounded dark fantasy, muted medieval palette. Not a photo or 3D render. 4:3 landscape. No text, no border, no frame.
 ```
 
-## 35. Card: Spoils of the Road (the fire) (`card spoils`)
+## 30. Card: Spoils of the Road (the fire) (`card spoils`)
 
 Only when it is bought at the fire.
 
