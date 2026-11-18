@@ -1,0 +1,50 @@
+<div class="wrap">
+  <header class="top">
+    <p class="lbl">The Unkneeling · a side game · the campaign, first build</p>
+    <h1>The Line and the Hand</h1>
+    <p class="lede">The Chronicle, played. Eleven missions, from the morning at Harrow Ford to the night on the mill bridge, each one a thing the page has shown him do. He starts with the Grace in him and loses it; after that his reach on the board follows the Knots, and his cards carry the rank each Art had in that chapter.</p>
+  </header>
+
+  <section class="block">
+    <div class="bench">
+      <div class="phone" id="game" aria-label="The Line and the Hand, the campaign, playable"></div>
+      <div class="notes">
+        <section>
+          <h3>How it differs from a run</h3>
+          <ol>
+            <li><b>Every mission has its own aim,</b> written under the board: reach a tile, hold for so many turns, walk a stretch, stay on a stone. There is no captain to bring down and no camp.</li>
+            <li><b>He fights from where he is put.</b> In the House of Menders he moves one step or none. A lit ring marks where someone has to get to; a green one, what must be kept.</li>
+            <li><b>Not every opponent is a man.</b> A river, a stair or the cold is fought as a clash: what you deal is ground covered, and its answer is what it costs him.</li>
+            <li><b>The deck is the chapter's.</b> No spoils, no buying. Whoever stands beside him lends a card.</li>
+            <li><b>Three stars a mission:</b> one for finishing it, two for doing it the way the page did.</li>
+          </ol>
+        </section>
+        <section>
+          <h3>Playtest</h3>
+          <p class="small">Missions open in order. Add <code>?all</code> to the address to open every one. Progress is kept in this browser only.</p>
+          <div class="acts"><button type="button" class="act plain" id="cp-reset"><b>Forget my progress</b><small>Start from the ford again</small></button></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>The missions</h2>
+    <p class="small">Each is one scene of the Chronicle, and is added only after its chapter has closed. Nothing here feeds back into the story.</p>
+    <ol class="cp-list" id="cp-missions"></ol>
+  </section>
+
+  <section class="block">
+    <h2>Pictures still to make</h2>
+    <p class="small">These stand in the game as plain tokens until a picture is filed for them. Faces the Chronicle already has (the company, Ysra Tal, Sister Pell, Aldric) are taken from the site's own copies.</p>
+    <div class="todo-grid" id="cp-todo"></div>
+  </section>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var CP=window.CP,ol=document.getElementById('cp-missions'),td=document.getElementById('cp-todo'),AS=window.LH_ASSETS||{};
+  if(ol)ol.innerHTML=CP.ORDER.map(function(id){var M=CP.MS[id];return '<li><b>'+M.n+'</b> · '+M.place+'. <span class="small">'+M.ch+' · '+M.level+'</span></li>'}).join('');
+  if(td)td.innerHTML=(AS.drawn||[]).map(function(d){return '<div><b>'+d[1]+'</b>'+d[0]+'</div>'}).join('');
+  var r=document.getElementById('cp-reset');if(r)r.addEventListener('click',function(){if(window.__CP)window.__CP.reset()});
+});
+</script>

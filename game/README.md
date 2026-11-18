@@ -6,6 +6,30 @@ A side game. Darrow and the company move on a small map; each fight is played as
 
 Published (private) at https://claude.ai/artifact/JGWHh6XqNT5NNVPtSgBzgQ. To update it, build, then publish `game/dist/line-and-hand.html` to that URL with the files listed in `game/dist/files.json`.
 
+## The campaign
+
+A second page, built from the same game: **the Chronicle, played.** Eleven missions, from the morning at Harrow Ford to the night on the mill bridge, each one a scene the page has shown. The prologue is the tutorial: he has the Grace and the sealed Arts for one hand, and loses them. After that his reach on the board follows the Knots the page has tied (a step, or none, in the House of Menders), and his cards carry the rank each Art had in that chapter.
+
+It is laid **over** the game and changes none of it: `src/engine.js`, `src/ui.js`, `src/style.css`, `src/page.html` and `build.py` do not know it exists, so the playtest page is exactly what it was. The campaign wraps the functions the rules export, builds each mission's board on a normal battle, and decides for itself when a mission is won or lost.
+
+| Path | What it is |
+|---|---|
+| `src/campaign.js` | The campaign's rules, no screen: its cards (an Art at each rank), its foes and ordeals, how a mission's board is built, the objective check, and the wording (a river "pulls", Ysra Tal is "she"). |
+| `src/missions.js` | The missions: map, who is there and what each can do, the deck, the aim, the lines before and after. **Reader-safe:** every name, place and quoted line is on the page already. |
+| `src/campaign_ui.js`, `src/campaign.css`, `src/campaign.html` | The title, the mission list, the place cards, the telling afterwards, the objective under the board, the grounds. |
+| `build_campaign.py` | Builds `dist/campaign/campaign.html` with its pictures beside it. Faces and places come from the site's small copies; a foe with no picture gets a drawn token, and the page lists those. |
+| `test/campaign.test.js`, `test/campaign.ui.test.js` | Every mission is well formed and a simple player can finish it; the real page in a browser, and the prologue played through by taps. |
+
+```
+python3 game/build_campaign.py        # -> game/dist/campaign/campaign.html
+node game/test/campaign.test.js -v    # the missions' rules, and how a simple player fares in each
+node game/test/campaign.ui.test.js    # the page in a browser (after the build)
+```
+
+**Its rules with the story.** The campaign retells; it never tells. It reads nothing from `real/` and writes nothing to `saga/`; a mission's outcome changes nothing anywhere, and one that goes wrong is played again. A mission is written only after its chapter is closed, from the chapter's own prose, never from `_gm/`: nothing the page has not spoken. Where the page shows no blow (the ford, the hall, the Steps, the road above Coldmere) the mission has none either: the river, the stair and the cold are fought as clashes instead. To add one after a chapter closes: a `CP.add({...})` in `missions.js`, any new foe in `campaign.js`, then both campaign tests.
+
+**Still to do:** the three tales as side missions; clash figures and tokens for the grey cloaks, the Confessor's men, the walkers and Ysra Tal; the balance, which so far only a test player has felt.
+
 ## Where things are
 
 | Path | What it is |
