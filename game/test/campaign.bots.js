@@ -33,7 +33,11 @@ function hand(G,opt){
   while(K&&K.phase==='choice'&&guard++<5){if(opt.press&&opt.press(G,K)){LH.pressOn(G);hand(G,opt);return}else LH.leave(G);K=G.clash}
   if(G.clash)LH.closeClash(G);
 }
-function fight(G,u,opt){if(!u||u.hp<=0||G.over)return false;var t=LH.targets(G,u);if(!t.length)return false;t.sort(function(a,b){return a.hp-b.hp});if(!LH.engage(G,u,t[0]))return false;hand(G,opt);return true}
+/* how good a card is, roughly: what it does for the breath it costs. Used to deal a fighter the best or the worst of the pile. */
+function worth(id){var c=LH.C[id];if(!c||c.dead)return -5;var v=(c.dmg||0)*(c.hits||1)+(c.blk||0)+(c.heal||0)+3*(c.draw||0)+4*(c.en||0)+(c.halve?6:0)+(c.open?3:0)+(c.pin?2:0)+(c.stance?6:0);return v/Math.max(.6,c.c||0)}
+/* luck, held to one side: before a fight the pile is put in order, so that hand after hand comes up the best it could, or the worst */
+function rig(u){if(!MODE.luck||!u.dk)return;var cyc=/cycle/.test(MODE.luck),all=cyc?u.dk.draw.slice():u.dk.draw.concat(u.dk.disc);if(!cyc)u.dk.disc=[];all.sort(function(a,b){return worth(a)-worth(b)});if(/worst/.test(MODE.luck))all.reverse();u.dk.draw=all}
+function fight(G,u,opt){if(!u||u.hp<=0||G.over)return false;var t=LH.targets(G,u);if(!t.length)return false;rig(u);t.sort(function(a,b){return a.hp-b.hp});if(!LH.engage(G,u,t[0]))return false;hand(G,opt);return true}
 function tendD(G,id,min){var m=U(G,id),D=G.u[0];if(!m||G.over)return;var t=LH.tendTargets(G,m);if(t.indexOf(D)>=0&&D.max-D.hp>=(min||5))LH.tend(G,m,D)}
 function endTurn(G){if(G.over)return;if(!LH.endTurn(G))return;var n=0;while(LH.enemyStep(G)&&n++<200){}}
 function nearestFoe(G,u){var f=CP.api.foes(G).filter(function(e){return !e.scripted});f.sort(function(a,b){return CP.api.dist(a,u)-CP.api.dist(b,u)});return f[0]}
@@ -63,5 +67,5 @@ function run(id,seed,plan){
   while(!G.over&&n++<40){(plan||PLAN[id])(G);endTurn(G)}
   return G;
 }
-var MODE={stat:null,rand:null};
-module.exports={MODE:MODE,LH:LH,CP:CP,U:U,bfs:bfs,go:go,hand:hand,fight:fight,tendD:tendD,endTurn:endTurn,nearestFoe:nearestFoe,battle:battle,PLAN:PLAN,run:run};
+var MODE={stat:null,rand:null,luck:null};
+module.exports={worth:worth,MODE:MODE,LH:LH,CP:CP,U:U,bfs:bfs,go:go,hand:hand,fight:fight,tendD:tendD,endTurn:endTurn,nearestFoe:nearestFoe,battle:battle,PLAN:PLAN,run:run};

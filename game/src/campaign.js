@@ -77,6 +77,7 @@ function markUp(G,K){var a=K.a,e=earnOf(G).marks;if(GROW[a.id])e[a.id]=(e[a.id]|
 
 /* ---------- something on the map besides foes: a thing to reach. What it gives is a card, a breath of luck, or a moment's rest. ---------- */
 function findAt(G,u){var S=G.cs;if(!S||!S.finds||u.side!==0)return;S.finds.forEach(function(f){if(f.got||f.x!==u.x||f.y!==u.y)return;f.got=1;S.found=(S.found||0)+1;
+  if(f.pool&&f.pool.length){var pk=f.pool[lcg((G.seed|0)^(f.wx*7919+f.wy*104729+0x51ed))(f.pool.length)];for(var pkk in pk)f[pkk]=pk[pkk]}
   var D=G.u[0],t=(f.to==='self'&&u.dk)?u:D,msg=f.t||'';
   if(f.card&&C[f.card]&&t.dk){t.deck.push(f.card);t.dk.draw.push(f.card);msg+=' '+C[f.card].n+' goes to the top of '+(t===D?'his':t.n+'\'s')+' pile.'}
   if(f.heal){u.hp=Math.min(u.max,u.hp+f.heal);msg+=' '+u.n+' is the better for it by '+f.heal+'.'}
@@ -133,7 +134,7 @@ var FD={
 FOES.Z=FD.Z;
 
 /* ---------- the fire: camp cards he may carry into the larger fights, paid for in stars ---------- */
-var PACK=3,SHOP=LH.POOL.filter(function(id){return !C[id].spoil&&!C[id].spoilKill});
+var DEEP=3,PACK=3,SHOP=LH.POOL.filter(function(id){return !C[id].spoil&&!C[id].spoilKill});
 
 /* ---------- small tools ---------- */
 function lcg(seed){var s=(seed|0)||1;return function(n){s=(Math.imul(s,1664525)+1013904223)|0;return ((s>>>8)%n+n)%n}}
@@ -219,10 +220,13 @@ function start(id,opts){
   (M.party.more||[]).forEach(function(p){var u=clone(p.from==='R'?tplR:tplW);u.id=p.id;u.fights=0;u.guard=0;u.bank=0;dress(G,u,p);G.u.splice(G.u.indexOf(z),0,u)});
   G.u=G.u.filter(function(u){return gone.indexOf(u)<0});
   if(!M.party.D.hp)G.u[0].hp=G.u[0].max;
+  /* a deeper deck: three more of his plain cards (never an Art), so the draw matters and a good card in the hand is luck worth having */
+  var D0=G.u[0];if(M.deep!==0&&D0.deck&&D0.deck.length>=9){var cnt={},pl,add=[];D0.deck.forEach(function(c){if(!C[c].r&&!C[c].ex&&!C[c].lent&&!C[c].dead)cnt[c]=(cnt[c]||0)+1});
+    pl=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]||(a<b?-1:1)}).slice(0,2);for(var di=0;pl.length&&di<DEEP;di++)add.push(pl[di%pl.length]);if(add.length)setDeck(G,D0,D0.deck.concat(add),M.party.D.first)}
   /* what he bought at the fire goes with him into the fights told larger than the page, and nowhere else */
   if(pack.length)setDeck(G,G.u[0],G.u[0].deck.concat(pack),M.party.D.first);
   growAll(G,opts.grow||CP.grow,opts.bond||CP.bond);
-  (M.finds||[]).concat((M.world&&M.world.finds)||[]).forEach(function(f){var o=clone(f);o.x=f.at[0];o.y=f.at[1];o.got=0;G.cs.finds.push(o)});
+  (M.finds||[]).concat((M.world&&M.world.finds)||[]).forEach(function(f){var o=clone(f);o.x=o.wx=f.at[0];o.y=o.wy=f.at[1];o.got=0;G.cs.finds.push(o)});
   G.log=[[M.open||'','',1]];CUR=G;
   if(M.on&&M.on.start)M.on.start(G,G.cs,api);
   rest(G);relog(G);return G;
@@ -364,7 +368,7 @@ function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={DEEP:DEEP,pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},

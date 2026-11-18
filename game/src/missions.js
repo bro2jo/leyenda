@@ -22,7 +22,7 @@ CP.add({id:'p0',book:'Prologue',ch:'The Three Heartbeats',n:'The Grace',place:'H
   objective:function(G,S){return S.frost?'Halfway across, the warmth goes out of him.':S.grace?'Clear the ford. With the Grace in him the river is a road.':'Walk to the Ninth\'s field-stone and kneel.'},
   open:'The Wend is running high for midsummer, brown with three days of rain.',
   map:{name:'Harrow Ford',theme:'ford',rows:['.w..w.','......','~~~f~~','~~~f~~','......','...d..','...d..']},
-  rounds:2,vary:0,pro:'it',say:[[/Darrow falls back\./g,'He goes under.'],[/^wound$/g,'frost'],[/\bstrikes\b/g,'pulls'],[/\bstrike\b/g,'pull'],[/A Wound cannot be played\. It is gone after the battle\./g,'There is nothing in it. The warmth is gone.'],[/\banswer\b/g,'pull']],
+  rounds:2,vary:0,deep:0,pro:'it',say:[[/Darrow falls back\./g,'He goes under.'],[/^wound$/g,'frost'],[/\bstrikes\b/g,'pulls'],[/\bstrike\b/g,'pull'],[/A Wound cannot be played\. It is gone after the battle\./g,'There is nothing in it. The warmth is gone.'],[/\banswer\b/g,'pull']],
   party:{D:{at:[3,6],t:'blade',mov:1,hp:58,br:3,hn:5,throws:0,far:0,img:'darrow0',
       deck:deck(rep('g_thunder',2),rep('g_turning',2),rep('g_stoop',2),rep('g_anchor',2),rep('g_quick',2)),first:['g_thunder','g_anchor','g_turning','g_quick','g_stoop','g_thunder','g_turning']},
     H:{at:[5,6],still:1,deck:null,img:'hollis0',lend:'lH'},
@@ -259,7 +259,7 @@ CP.add({id:'c4c',book:'Book I · The House of Menders',ch:'Chapter 4 · Old Merc
   open:'He keeps his left hand on the cliff. The stone is cold and wet and he does not care.',
   map:{name:'The Thousand Steps',theme:'steps',rows:['..d..~','~~d~~~','..d...','......','~~~~d~','....d.','......']},
   world:{rows:['..d..~','~~d~~~','..d...','......','~~~~d~','....d.','......','~d~~~~','.d....','......','~~~d~~','...d..','......','~~~~d~','....d.','......','~~d~~~','..d...','~d~~~~','.d....','.d.dd.'],
-    finds:[{at:[0,6],n:'A ledge out of the wind',t:'A place to stand a moment.',heal:5},{at:[5,15],n:'Out of the cloud',t:'The morning is under them.',card:'secondwind'}]},
+    finds:[{at:[0,6],n:'A ledge out of the wind',t:'A place to stand a moment.',pool:[{heal:4},{heal:8},{insp:1},{card:'c_brace'}]},{at:[5,15],n:'Out of the cloud',t:'The morning is under them.',pool:[{card:'secondwind'},{card:'c_breath2'},{card:'readline'},{heal:6}]}]},
   pro:'it',down:'is walked',say:[[/\bstrikes\b/g,'tells'],[/\bstrike\b/g,'tell'],[/\b(his|its) answer/g,'the stair']],insp:1,
   party:{D:{at:[2,0],t:'foot',mov:2,hp:42,br:3,hn:5,throws:0,far:0,img:'darrow1',deck:deck(rep('c_step',4),rep('c_brace',2),['c_still3','c_breath2','c_mend3','c_ground3','c_eye3'])},
     W:{at:[3,0],rng:0,deck:null,img:'wren1',lend:'lW'},
@@ -267,7 +267,7 @@ CP.add({id:'c4c',book:'Book I · The House of Menders',ch:'Chapter 4 · Old Merc
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis1',mov:2,tend:5,tends:3,lend:'c_now',at:[1,0]}]},
   foes:[{k:'last',at:[2,1]},{k:'reach',at:[1,7]},{k:'elbow',at:[4,13]},{k:'shins',at:[1,18]}],
   on:{
-    start:function(G,S,a){a.hint(G,'Each stretch is taken like a fight: Steps to walk it, a Brace when the leg tells. The stair goes on below the board: bring everyone down and the view follows. A lit diamond is something worth reaching.')},
+    start:function(G,S,a){a.hint(G,'Each stretch is taken like a fight: Steps to walk it, a Brace when the leg tells. The stair goes on below the board: bring everyone down and the view follows. A lit diamond is something worth reaching, though not the same thing twice.')},
     clashEnd:function(G,S,a,K){if(K.d.hp>0)return;var t=K.d.type;
       a.log(G,t==='last'?'Somewhere in the second hundred the knee stops deciding each step, and only takes them.':t==='reach'?'Behind him Hollis curses the mule at the Long Reach, for its ears.':t==='elbow'?'And at the Elbow, for its opinions. They come out of the cloud into the morning.':'"Eleven hundred and fifteen. Eleven hundred and sixteen."','good')}
   },
@@ -334,7 +334,7 @@ CP.add({id:'c5b',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thorn
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,6]}]},
   foes:[{k:'sergeant',at:[2,0]},{k:'horn',at:[3,0]},{k:'pike',at:[1,2]},{k:'pike',at:[3,2]},{k:'pitch',at:[5,1]}],
   rally:['The horn','The horn is blowing'],
-  finds:[{at:[0,2],n:'The tailboard of the cart',t:'Something of the carter\'s, kept for a bad day.',card:'bandage'}],
+  finds:[{at:[0,2],n:'The tailboard of the cart',t:'Something of the carter\'s, kept for a bad day.',pool:[{card:'bandage'},{card:'secondwind'},{card:'stitch'},{card:'hewT'},{insp:1}]}],
   on:{start:function(G,S,a){a.hint(G,'Footing beats Blade, Blade beats Cast, Cast beats Footing. While the boy with the horn stands, the others strike harder. The pitchfork reaches two tiles: Hollis is the one for him.')}},
   goal:function(G,S,a){return !a.foe(G,'sergeant')},
   win:{t:'The boys remember somewhere else to be',s:'Six pikes go out of the yard a good deal faster than they came in.'},
@@ -360,7 +360,7 @@ CP.add({id:'c5c',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thorn
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,5]}]},
   foes:[{k:'lister',at:[2,0]},{k:'cloak',at:[3,0]},{k:'lymer',at:[1,1]},{k:'cloak',at:[4,1]},{k:'cloak',at:[5,0],tpl:1}],
   rally:['The list','A name is being read'],
-  finds:[{at:[5,2],n:'That stone',t:'From up here the whole slope can be read.',card:'readline'}],
+  finds:[{at:[5,2],n:'That stone',t:'From up here the whole slope can be read.',pool:[{card:'readline'},{card:'pinshot'},{card:'bellow'},{card:'closeup'},{heal:6}]}],
   on:{start:function(G,S,a){S.wave=3+Math.abs(G.seed|0)%2;a.hint(G,'The wall is cover: whoever stands in it takes less on their turn, and they must come to it. The one with the list makes the others strike harder. The lymer is quick and bites more than once. There are more on the shore road.')},
     turn:function(G,S,a,t){if(t!==S.wave)return;var xs=[0,5,1,4,2,3].filter(function(x){return !LH.at(G,x,0)}),n=0;if(Math.abs(G.seed|0)%3===0)xs.reverse();
       xs.slice(0,2).forEach(function(x){if(a.spawn(G,'cloak',x,0))n++});if(n)a.log(G,(n>1?'Two more grey cloaks come':'Another grey cloak comes')+' up from the shore road.','hurt')}},
@@ -421,7 +421,7 @@ CP.add({id:'c6b',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir'
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:6,tends:3,lend:'c_now',at:[2,5]}]},
   foes:[{k:'darkcoat',at:[0,0]},{k:'darklead',at:[2,0]},{k:'darkmail',at:[3,0]},{k:'darkcoat',at:[5,0]}],
   rally:['The word','The word is given'],
-  finds:[{at:[4,4],n:'His stick, on the ice',t:'Whoever reaches it sends it skating back to him.',card:'c_bar'}],
+  finds:[{at:[4,4],n:'His stick, on the ice',t:'Whoever reaches it sends it skating back to him.',pool:[{card:'c_bar'},{card:'c_bar'},{card:'c_stick'},{card:'c_still3'}]}],
   marks:function(){return [[2,3,'keep']]},
   on:{start:function(G,S,a){G.u[0].hp=40;a.hint(G,'The ice costs two steps. Maelis can reach him in one move, and Wren\'s stones carry two tiles. The first rider gives the word: while he sits his horse the others strike harder. One wears mail, and small blows glance off it.')}},
   goal:function(G,S,a){return !a.foes(G).length},

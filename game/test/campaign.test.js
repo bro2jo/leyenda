@@ -77,8 +77,19 @@ CP.ORDER.forEach(function(id){
   Object.keys(CP.BONDS).forEach(function(n){ok(page.indexOf(CP.BONDS[n][0])>=0,'the words by the fire for '+n+' are on the page as written')});
   /* things to reach */
   var F=CP.start('c6b',{seed:1}),FA=U(F,'A'),f0=F.cs.finds[0],n0=F.u[0].deck.length;FA.x=f0.x;FA.y=f0.y-1;F.u.forEach(function(u){if(u!==FA&&u.x===FA.x&&u.y===FA.y)u.y=6});
-  ok(CP.goals(F).some(function(m){return m[2]==='find'})&&LH.move(F,FA,f0.x,f0.y)&&f0.got===1&&F.cs.found===1&&F.u[0].deck.length===n0+1&&F.u[0].dk.draw[F.u[0].dk.draw.length-1]==='c_bar'&&!CP.goals(F).some(function(m){return m[2]==='find'}),'a friend who reaches his stick sends it to the top of his pile, once');
+  ok(CP.goals(F).some(function(m){return m[2]==='find'})&&LH.move(F,FA,f0.x,f0.y)&&f0.got===1&&F.cs.found===1&&F.u[0].deck.length===n0+1&&['c_bar','c_stick','c_still3'].indexOf(F.u[0].dk.draw[F.u[0].dk.draw.length-1])>=0&&!CP.goals(F).some(function(m){return m[2]==='find'}),'a friend who reaches his stick sends it to the top of his pile, once');
   ['c5b','c5c','c6b','c4c'].forEach(function(id){var g=CP.start(id,{seed:1});ok(g.cs.finds.length>=1&&g.cs.finds.every(function(f){return LH.ok(g,f.x,Math.min(6,f.y))||f.y>6}),id+' has something to reach, on ground that can be stood on')});
+  /* a find is a gamble: what it holds is drawn from its pool, and is not the same every time */
+  ['c5b','c5c','c6b'].forEach(function(id){var seen={};for(var sd=1;sd<=40;sd++){var g=CP.start(id,{seed:sd*53}),f=g.cs.finds[0],u=g.u.filter(function(x){return x.side===0&&x.hp>0&&x.id!=='D'&&!x.still&&x.mov>=2})[0];
+      var nb=[[1,0],[-1,0],[0,1],[0,-1]].map(function(d){return [f.x+d[0],f.y+d[1]]}).filter(function(q){return LH.ok(g,q[0],q[1])})[0];g.u.forEach(function(x){if(x!==u&&x.side!==2&&((x.x===nb[0]&&x.y===nb[1])||(x.x===f.x&&x.y===f.y))){x.x=0;x.y=0}});
+      u.x=nb[0];u.y=nb[1];u.moved=false;u.attacked=false;u.mov=3;LH.move(g,u,f.x,f.y);var fa=g.cs.finds[0];if(fa.got)seen[fa.card||(fa.heal?'rest':fa.insp?'luck':'?')]=1}
+    ok(Object.keys(seen).length>=3&&!seen['?'],id+': what its find holds is one of several things ('+Object.keys(seen).join(', ')+')')});
+  /* a deeper deck: three more plain cards, never an Art, so that the draw matters */
+  CP.ORDER.forEach(function(id){var M=CP.MS[id],base=(M.party.D.deck||[]),D=CP.start(id,{seed:1,pack:[]}).u[0],dk=D.deck||[];if(M.deep===0||base.length<9){ok(dk.length===base.length,id+': a short or scripted deck is left as it is');return}
+    var extra=dk.slice(base.length);ok(dk.length===base.length+CP.DEEP&&extra.every(function(c){return !C[c].r&&!C[c].ex&&base.indexOf(c)>=0}),id+': his deck is three plain cards deeper ('+extra.join(', ')+')')});
+  /* and luck is worth having: held to the bad side hand after hand, the planned player does worse than held to the good side */
+  var lw=0,uw=0,MD=require('./campaign.bots.js').MODE;['c4a','c6','c5c'].forEach(function(id){for(var sd=1;sd<=25;sd++){MD.luck='best-cycle';if(run(id,sd*37+11).cs.result==='won')lw++;MD.luck='worst-cycle';if(run(id,sd*37+11).cs.result==='won')uw++}});MD.luck=null;
+  console.log('luck held to one side, three missions: '+lw+'/75 won with the best of the pile each hand, '+uw+'/75 with the worst');ok(lw>uw+5,'bad draws time after time lose more often than good ones ('+uw+' against '+lw+')');
   /* the long stair */
   var L=CP.start('c4c',{seed:1}),Wd=CP.MS.c4c.world;ok(Wd.rows.length===21&&Wd.rows.every(function(r){return r.length===6})&&L.cs.ahead.length===3&&CP.api.foes(L).length===1,'the Steps are three boards long, and only what is in view is on the board');
   L.u.forEach(function(u){if(u.side===1)u.hp=0});L.u.forEach(function(u,i){if(u.side===0){u.x=i%6;u.y=u.id==='D'?5:3}});var k=CP.march(L);
