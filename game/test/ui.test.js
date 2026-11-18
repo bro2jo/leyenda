@@ -1,6 +1,7 @@
 /* Screen tests: the real page in a browser, with real animations for the hand-played parts and a fast mode for whole runs. */
 const { chromium } = require('playwright');
 const fs = require('fs');
+const LH = require('../src/engine.js').LH;
 const dir = __dirname + '/../dist/';   // python3 game/build.py first
 const page0 = fs.readFileSync(dir + 'line-and-hand.html', 'utf8');
 function wrap(name, pre) { fs.writeFileSync(dir + name, '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0;font:14px system-ui}</style>' + pre + '</head><body>' + page0 + '</body></html>'); return 'file://' + dir + name; }
@@ -16,12 +17,12 @@ const st = p => p.evaluate(() => { const g = window.__LH.G, K = g.clash; return 
 async function inView(p, sel) { return p.$$eval(sel, els => els.every(el => { const r = el.getBoundingClientRect(); return r.left >= -1 && r.right <= window.innerWidth + 1; })); }
 const inFrame = (p, sels) => p.evaluate(sels => { const g = document.getElementById('game').getBoundingClientRect(); return sels.every(s => Array.from(document.querySelectorAll(s)).every(e => { const r = e.getBoundingClientRect(); return r.width === 0 || (r.left >= g.left - .5 && r.right <= g.right + .5); })); }, sels);
 /* put the captain one blow from defeat beside Darrow, then beat him through the real buttons */
-async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__LH.G, D = g.u[0], C = g.u.filter(u => u.boss)[0]; g.u.forEach(u => { if (u.side === 1 && !u.boss) u.hp = 0; }); C.x = D.x; C.y = D.y - 1; C.hp = 1; C.ans = [{ b: 0, d: 1, n: 1 }]; D.attacked = false; D.moved = false; });
+async function winBattle(p, tap, during) { await p.evaluate(() => { const g = window.__LH.G, D = g.u[0], C = g.u.filter(u => u.boss)[0]; g.u.forEach(u => { if (u.side === 1 && !u.boss) u.hp = 0; }); C.x = D.x; C.y = D.y - 1; C.hp = 1; C.ans = [{ b: 0, d: 1, n: 1 }]; D.attacked = false; D.moved = false; });
   const pos = await p.evaluate(() => { const g = window.__LH.G; return [g.u[0].x, g.u[0].y]; });
   await tap(tile(pos[0], pos[1])); if (!(await p.$(G + '.unit[data-u="D"] .tok.sel'))) await tap(tile(pos[0], pos[1])); await tap(tile(pos[0], pos[1] - 1)); await tap(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(400);
   for (let n = 0; n < 12; n++) { const s = await st(p); if (!s.clash) break; const i = await p.evaluate(() => { const g = window.__LH.G, LH = window.__LH.LH; return g.clash.hand.findIndex((id, i) => !LH.playable(g, i) && LH.C[id].dmg); });
     if (i < 0) { await tap(G + '[data-a="endhand"]'); await idle(p); await p.evaluate(() => { const g = window.__LH.G; g.u[0].attacked = false; }); const q = await p.evaluate(() => { const g = window.__LH.G, C = g.u.filter(u => u.boss)[0]; return [g.u[0].x, g.u[0].y, C.x, C.y]; }); await tap(tile(q[0], q[1])); await tap(tile(q[2], q[3])); await tap(G + '[data-a="go"]'); await idle(p); await p.waitForTimeout(300); continue; }
-    await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(150); await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); await idle(p); }
+    await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); await p.waitForTimeout(150); await p.tap(G + `.hcard[data-i="${i}"]`, { position: { x: 14, y: 40 } }); if (during) await during(); await idle(p); }
   await idle(p); await p.waitForTimeout(400); }
 
 (async () => {
@@ -55,6 +56,7 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     await tap(G + '[data-a="go"]'); await p.waitForTimeout(250); ok(await p.isVisible(G + '#banner'), 'the banner announces the clash');
     await idle(p); await p.waitForTimeout(500);
     ok(await p.isVisible(G + '#scr-clash') && !(await p.isVisible(G + '#scr-map')), 'the screen is now the card table');
+    { const m = await p.evaluate(() => window.__LH.music); ok(m.started && m.want === 'clash' && m.playing === 'clash', 'the music has started with the first tap and is the card table\'s'); }
     let s = await st(p); const n0 = s.clash.hand.length;
     ok(await p.$$eval(G + '.hcard', c => c.length) === n0 && n0 >= 5, 'the hand is dealt: ' + n0 + ' cards');
     const xs = await p.$$eval(G + '.hcard', c => c.map(e => Math.round(e.getBoundingClientRect().left))); ok(xs.every((x, i) => i === 0 || x > xs[i - 1]), 'the hand is fanned left to right'); ok(await inView(p, G + '.hcard'), 'every card is on screen');
@@ -81,23 +83,35 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     ok(await p.isVisible(G + '#scr-map') && !(await p.isVisible(G + '#scr-clash')), 'ending the hand returns to the map'); ok((await p.textContent(G + '.log')).includes('dealt'), 'the map log sums up the clash'); s = await st(p); ok(!s.clash && s.D.attacked, 'Darrow has fought');
     const heard = await p.evaluate(() => window.__LH.heard); ['unit_select', 'forecast_open', 'clash_start', 'card_deal', 'card_lift', 'card_attack', 'end_hand', 'ui_tap'].forEach(n => ok(heard[n] > 0, 'the sound hook fires: ' + n));
     await tap(G + '[data-a="dz"]'); ok(await p.$$eval(G + '.tile.dz', t => t.length) > 5, 'their reach can be shown'); await tap(G + '[data-a="dz"]');
+    { // falling back through a friend, walked tile by tile; then put everyone back
+      const keep = await p.evaluate(() => { const g = window.__LH.G, k = g.u.map(u => [u.x, u.y, u.moved, u.attacked, u.hp]), by = id => g.u.filter(u => u.id === id)[0]; g.u.forEach(u => { if (u.side) u.hp = 0; }); by('C').hp = 9; by('C').x = 5; by('C').y = 0;
+        g.u.forEach((u, i) => { if (u.side === 0) { u.x = i; u.y = 6; u.moved = false; u.attacked = false; } }); by('D').x = 2; by('D').y = 3; by('H').x = 2; by('H').y = 4; return k; });
+      await tap(tile(5, 2)); await tap(tile(2, 3)); ok(await p.$$eval(G + '.tile.back', t => t.length === 1 && t[0].getAttribute('data-x') === '2' && t[0].getAttribute('data-y') === '5'), 'with Hollis behind him, the tile beyond is offered and marked');
+      ok((await p.textContent(G + '.panel.info')).includes('fall back through Hollis'), 'and the panel says so');
+      await tap(tile(2, 5)); ok(await p.$$eval(G + '.unit.walk', e => e.length) === 1, 'the move is walked, not jumped'); await p.waitForTimeout(700);
+      ok(await p.evaluate(() => { const D = window.__LH.G.u[0]; return D.x === 2 && D.y === 5 && D.moved; }) && await p.$$eval(G + '.unit.walk', e => e.length) === 0, 'he ends on the tile behind his friend');
+      await tap(G + '[data-a="unmove"]'); ok(await p.evaluate(() => window.__LH.G.u[0].y === 3), 'and it can be taken back');
+      await p.evaluate(k => { const g = window.__LH.G; g.u.forEach((u, i) => { u.x = k[i][0]; u.y = k[i][1]; u.moved = k[i][2]; u.attacked = k[i][3]; u.hp = k[i][4]; }); }, keep); await tap(tile(5, 2)); await tap(tile(5, 2)); await p.waitForTimeout(400); }
+    { ok(await p.getAttribute(G + '[data-toggle="music"]', 'aria-pressed') === 'true' && (await p.textContent(G + '[data-toggle="music"]')).includes('on'), 'a music switch sits under the game');
+      await tap(G + '[data-toggle="music"]'); ok(await p.evaluate(() => !window.__LH.prefs.music && window.__LH.music.playing === null), 'it turns the music off'); await tap(G + '[data-toggle="music"]'); ok(await p.evaluate(() => window.__LH.music.playing === 'map'), 'and on again, the map\'s track'); }
     await tap(G + '[data-a="end"]'); await p.waitForTimeout(500); ok(await p.getAttribute('#game', 'data-busy') === '1', 'the enemy turn is shown step by step'); await idle(p); s = await st(p); ok(s.turn === 2 && s.phase === 'player', 'then it is turn two');
     await p.locator('#game').screenshot({ path: shots + '3-turn-two.png' });
     // win the battle and visit the camp
-    await winBattle(p, tap); s = await st(p);
-    ok(s.over && s.over.win && await p.isVisible(G + '#scr-camp'), 'felling the captain opens the camp'); ok(s.spoils >= 4, 'with spoils in hand: ' + s.spoils);
+    await winBattle(p, tap, async () => { await p.waitForSelector(G + '.banner.cur-win', { state: 'visible', timeout: 8000 }); ok(true, 'a curtain crosses the screen when the crossing is won'); }); s = await st(p);
+    ok(s.over && s.over.win && await p.isVisible(G + '#scr-camp'), 'felling the captain opens the camp');
+    ok((await p.textContent(G + '#camp-sp b')) === String(s.spoils) && await p.isVisible(G + '.camphero') && await p.$$eval(G + '.cfaces img', e => e.length) === 5, 'the camp shows the purse and the company round the fire'); ok(s.spoils >= 4, 'with spoils in hand: ' + s.spoils);
     ok(await p.$$eval(G + '[data-buy]', e => e.length) === 5, 'five cards are on offer'); ok(await inFrame(p, [G + '#scr-camp *']), 'the camp fits inside the frame');
     await p.evaluate(() => { window.__LH.G.run.spoils = 14; }); await tap(G + '[data-buy]'); ok(!!(await p.$(G + '[data-a="buy"]')), 'tapping a card shows it and its price'); await p.locator('#game').screenshot({ path: shots + '4-camp.png' });
-    const d0 = (await st(p)).deck; await tap(G + '[data-a="buy"]'); s = await st(p); ok(s.deck === d0 + 1 && s.spoils < 14 && await p.$$eval(G + '[data-buy]', e => e.length) === 4, 'buying adds the card, costs spoils, and takes it off the blanket');
+    const d0 = (await st(p)).deck; await tap(G + '[data-a="buy"]'); ok(await p.$$eval(G + '#camp-sp .spend', e => e.length) === 1, 'spoils leaving the purse are shown'); s = await st(p); ok((await p.textContent(G + '#camp-sp b')) === String(s.spoils), 'and the purse is right afterwards'); ok(s.deck === d0 + 1 && s.spoils < 14 && await p.$$eval(G + '[data-buy]', e => e.length) === 4, 'buying adds the card, costs spoils, and takes it off the blanket');
     await tap(G + '[data-a="hone-strike"]'); ok(await p.evaluate(() => window.__LH.G.run.deck.indexOf('strike2') >= 0), 'a Strike can be honed');
     await tap(G + '[data-a="leavemode"]'); await tap(G + '.decklist .dk'); ok((await st(p)).deck === d0, 'a card can be left behind');
     const hp0 = (await st(p)).D.hp; if (await p.$(G + '[data-a="mend"]:not([disabled])')) { await tap(G + '[data-a="mend"]'); ok((await st(p)).D.hp >= hp0, 'mending works'); }
-    await tap(G + '[data-a="march"]'); s = await st(p); ok(s.n === 2 && s.map === 'The Wood Road' && await p.isVisible(G + '#scr-map'), 'marching on opens the Wood Road'); ok(await p.$$eval(G + '.tok.foe', e => e.length) === 5, 'with five foes on it');
+    await tap(G + '[data-a="march"]'); ok(await p.isVisible(G + '.banner.cur-march') && (await p.textContent(G + '.banner.cur-march')).includes('The Wood Road'), 'marching on is announced by a curtain'); await idle(p); s = await st(p); ok(s.n === 2 && s.map === 'The Wood Road' && await p.isVisible(G + '#scr-map'), 'marching on opens the Wood Road'); ok(await p.$$eval(G + '.tok.foe', e => e.length) === 5, 'with five foes on it');
     await p.locator('#game').screenshot({ path: shots + '5-wood-road.png' });
-    await winBattle(p, tap); await tap(G + '[data-a="march"]'); s = await st(p); ok(s.n === 3 && s.map === 'The Bridge', 'then the Bridge'); ok(await p.$$eval(G + '.tile.b', e => e.length) === 1, 'which has a bridge'); await p.locator('#game').screenshot({ path: shots + '6-bridge.png' });
+    await winBattle(p, tap); await tap(G + '[data-a="march"]'); await idle(p); s = await st(p); ok(s.n === 3 && s.map === 'The Bridge', 'then the Bridge'); ok(await p.$$eval(G + '.tile.b', e => e.length) === 1, 'which has a bridge'); await p.locator('#game').screenshot({ path: shots + '6-bridge.png' });
     await winBattle(p, tap); s = await st(p); ok(s.over && s.over.done && (await p.textContent(G + '#m-rest')).includes('Renown'), 'the third captain ends the run with a Renown score'); await p.locator('#game').screenshot({ path: shots + '7-run-won.png' });
     Object.assign(heardAll, await p.evaluate(() => window.__LH.heard));
-    await tap(G + '[data-a="again"]'); s = await st(p); ok(s.n === 1 && s.spoils === 0 && s.deck === 16, 'a new run starts clean');
+    await tap(G + '[data-a="again"]'); await idle(p); s = await st(p); ok(s.n === 1 && s.spoils === 0 && s.deck === 16, 'a new run starts clean');
     ok(errs.length === 0, 'no errors on the phone: ' + errs.join(' | ')); await ctx.close();
   }
 
@@ -108,7 +122,7 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
     ok(!(await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth)), 'no sideways scroll on a desktop');
     const nS = await p.evaluate(() => window.__LH.SFX.length); ok(await p.$$eval('#sfx-table tr', r => r.length) === nS && nS >= 30, 'the sound list shows all ' + nS + ' sounds');
     ok(await p.$$eval('#sfx-table [data-hear]', r => r.length) === nS, 'each with a stand-in to hear'); await p.click('#sfx-table [data-hear]');
-    ok(await p.$$eval('#market-gallery .card', r => r.length) === 24, 'the camp gallery shows 21 cards, two honed and the Wound'); ok(await p.$$eval('.prompt pre', r => r.length) === 9 && await p.$$eval('[data-copy]', r => r.length) === 9, 'nine prompts, each with a copy button');
+    ok(await p.$$eval('#market-gallery .card', r => r.length) === LH.POOL.length + 3, 'the camp gallery shows every camp card, two honed and the Wound'); ok(await p.$$eval('.prompt pre', r => r.length) === 9 && await p.$$eval('[data-copy]', r => r.length) === 9, 'nine prompts, each with a copy button');
     ok((await p.textContent('#p-C')).includes('captain') && (await p.textContent('#p-style')).includes('#0000FF'), 'the prompts carry the foe and the chroma screen');
     await p.click('[data-pref="sound=true"]'); ok(await p.getAttribute('[data-pref="sound=true"]', 'aria-pressed') === 'true', 'sound can be switched on');
     ok(await p.evaluate(() => window.__LH.assets.sfx.battle_won === 'sfx/battle_won.mp3'), 'the build knows the battle-won sound is made');
@@ -134,9 +148,9 @@ async function winBattle(p, tap) { await p.evaluate(() => { const g = window.__L
       await p.focus(G + `.hcard[data-i="${k}"]`); await p.keyboard.press('Enter'); await idle(p); s2 = await st(p); ok(JSON.stringify(s2.clash) !== JSON.stringify(s.clash), 'Enter again plays it'); }
     s = await st(p); await p.click(G + '[data-a="redraw"]'); await p.waitForTimeout(700); s2 = await st(p); ok(s2.insp === s.insp - 1 && s2.clash.hand.length >= 5, 'New hand spends an Inspiration and deals five'); ok(await p.$eval(G + '[data-a="redraw"]', e => e.disabled), 'and can be used once a clash');
     await p.click(G + '[data-a="endhand"]'); await idle(p);
-    await p.click('[data-pref="level=1"]'); const hard = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); await p.click('[data-pref="level=0"]'); const std = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); ok(hard === std + 1, 'the difficulty setting starts a new run with stronger foes');
+    await p.click('[data-pref="level=1"]'); const hard = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); await p.click('[data-pref="level=0"]'); const std = await p.evaluate(() => window.__LH.LH.byId(window.__LH.G, 'P').atk); ok(hard === std + LH.T.levelAtk, 'the difficulty setting starts a new run with stronger foes');
     await p.click(tile(2, 4)); await p.click(tile(3, 4)); await p.click('[data-newrun]'); ok(await p.evaluate(() => window.__LH.G.u[0].x === 2 && window.__LH.G.turn === 1), 'Start a new run does so');
-    await p.click('[data-pref="deck=all"]'); s = await st(p); ok(s.deck === 37 && s.turn === 1, 'the try-everything deck starts a new run with 37 cards'); await p.click('[data-pref="deck=sheet"]'); ok((await st(p)).deck === 16, 'and the sheet deck puts it back');
+    await p.click('[data-pref="deck=all"]'); s = await st(p); ok(s.deck === 16 + LH.POOL.length && s.turn === 1, 'the try-everything deck starts a new run with every camp card in it'); await p.click('[data-pref="deck=sheet"]'); ok((await st(p)).deck === 16, 'and the sheet deck puts it back');
     ok(errs.length === 0, 'no errors on the desktop: ' + errs.join(' | ')); await ctx.close();
   }
 

@@ -1,6 +1,6 @@
 /* Bots for measuring balance. rush: go for the captain. fair: a sensible player who fights what is in front of him. */
 const LH = require('../src/engine.js').LH, C = LH.C;
-const WANT = ['bloodup', 'steady', 'secondwind', 'digin', 'follow', 'finish', 'hew', 'twice', 'callco', 'closeup', 'bellow', 'legs', 'pinshot', 'stitch', 'bandage', 'readline', 'strip', 'worry', 'stone', 'count', 'spoils'];
+const WANT = ['bloodup', 'steady', 'digin', 'secondwind', 'hewT', 'follow', 'finish', 'twice', 'closeup', 'pinshot', 'callco', 'strip', 'readline', 'bellow', 'stitch', 'bandage', 'legs', 'spoils'];
 function cardScore(G, K, id) { const c = C[id]; let s = 0;
   const it = LH.intent(G), need = it.none ? 0 : Math.max(0, it.d * it.n - K.block), wantBreak = K.canBreak && !K.broken && K.p.can;
   if (c.stance) s += 70; if (c.en || c.draw) s += 60; if (c.spoil) s += 30; if (c.open && !K.open) s += 45;

@@ -4,7 +4,7 @@
 var W=6,H=7,HAND_CAP=8,MAX_HP=58,HELD_MAX=2,MIN_DECK=10;
 /* Balance knobs, in one place. */
 /* atkBy, hpBy: how much harder the foes of the second and third battle are than the first. */
-var T={atkBy:[0,1,1],hpBy:[0,.1,.2],rest:8,par:10,maxTurns:30,mend:15,mendCost:3,removeCost:2,honeCost:3,spoilFoe:1,spoilBoss:4,spoilOwn:1,market:5,foeAtk:-2,ansD:2,capHolds:3,pressUp:4,pressBreath:1,rally:2,woodBlock:4,woodCover:3,tend:5,tends:3,capPatience:8,levelAtk:1,levelHp:.1,throws:1};
+var T={atkBy:[0,1,1],hpBy:[0,.1,.2],rest:8,par:10,maxTurns:30,mend:15,mendCost:3,removeCost:2,honeCost:3,spoilFoe:1,spoilBoss:4,spoilOwn:1,market:5,foeAtk:-2,ansD:2,capHolds:3,pressUp:2,pressBreath:1,rally:2,woodBlock:4,woodCover:3,tend:5,tends:3,capPatience:8,levelAtk:2,levelHp:.1,throws:1,ownHeal:0,armor:0,fallBack:1};
 /* What the game takes from the sheet as it stands. The Tether's stage sets what Rae's hand gives. */
 var SHEET={hp:58,tether:2};
 var TREE={blade:'Blade',foot:'Footing',cast:'Cast',breath:'Breath',bind:'Binding',eye:'Insight'};
@@ -36,7 +36,7 @@ var C={
   strike2:{n:'Strike',r:'honed',t:'blade',k:'Attack',c:1,m:1,dmg:10},
   guard2:{n:'Guard',r:'honed',t:'foot',k:'Skill',c:1,blk:9},
   seated:{n:'The Seated Blade',r:'II',t:'blade',k:'Attack',c:1,m:1,dmg:6,dmgStood:10,art:'seated_blade'},
-  hammer:{n:'Hammerfall',r:'I',t:'blade',k:'Attack',c:2,m:1,ex:1,dmg:12,pin:1,art:'hammerfall'},
+  hammer:{n:'Hammerfall',r:'I',t:'blade',k:'Attack',c:2,m:1,ex:1,dmg:14,pin:1,halve:1,art:'hammerfall'},
   still:{n:'Stillwater Stance',r:'III',t:'foot',k:'Skill',c:1,blk:11,art:'stillwater'},
   breath:{n:'The Long Breath',r:'II',t:'breath',k:'Skill',c:0,ex:1,en:2,art:'long_breath'},
   mender:{n:"The Mender's Patience",r:'IV',t:'bind',k:'Skill',c:1,ex:1,heal:8,cleanse:1,art:'menders_patience'},
@@ -47,29 +47,30 @@ var C={
   over:{n:'Overwall',r:'I',t:'cast',k:'Attack',c:1,dmg:6,pierce:1,art:'overwall'},
   far:{n:'The Far Cast',r:'I',t:'cast',k:'Attack',c:1,dmg:6,art:'far_cast'},
   /* the company's own decks, and what the camp sells */
-  hew:{n:'Hew',t:'blade',k:'Attack',c:1,m:1,dmg:8,p:3},
+  hew:{n:'Hew',t:'blade',k:'Attack',c:1,m:1,dmg:8},
+  hewT:{n:"Hollis's Hew",t:'blade',k:'Attack',c:1,m:1,dmg:10,p:3,art:'hollis'},
   fast:{n:'Stand Fast',t:'foot',k:'Skill',c:1,blk:8},
   bellow:{n:'Bellow',t:'eye',k:'Skill',c:0,halve:1,p:3},
   legs:{n:'Take the Legs',t:'foot',k:'Attack',c:1,m:1,dmg:6,pin:1,p:3},
-  worry:{n:'Worry',t:'foot',k:'Attack',c:1,m:1,dmg:4,open:1,p:2},
+  worry:{n:'Worry',t:'foot',k:'Attack',c:1,m:1,dmg:4,open:1},
   slip:{n:'Slip Away',t:'foot',k:'Skill',c:0,blk:4},
-  stone:{n:'Thrown Stone',t:'cast',k:'Attack',c:1,dmg:5,p:2},
-  count:{n:'The Count',t:'eye',k:'Skill',c:0,mark:1,p:2},
+  stone:{n:'Thrown Stone',t:'cast',k:'Attack',c:1,dmg:5},
+  count:{n:'The Count',t:'eye',k:'Skill',c:0,mark:1},
   duck:{n:'Duck',t:'foot',k:'Skill',c:0,blk:5},
-  stitch:{n:"Maelis's Stitch",t:'bind',k:'Skill',c:1,ex:1,heal:6,p:3,art:'maelis'},
-  twice:{n:'Second Cut',t:'blade',k:'Attack',c:1,m:1,dmg:4,hits:2,p:3},
-  finish:{n:'Finish It',t:'blade',k:'Attack',c:1,m:1,dmg:5,dmgLow:12,p:4},
-  follow:{n:'Follow Through',t:'blade',k:'Attack',c:2,m:1,dmg:11,carry:1,p:4},
-  closeup:{n:'Close Up',t:'foot',k:'Skill',c:1,blk:5,guardFriends:4,p:3},
-  callco:{n:'Call the Company',t:'eye',k:'Attack',c:1,assist:4,p:4},
-  strip:{n:'Strip the Fallen',t:'blade',k:'Attack',c:1,m:1,dmg:6,spoilKill:2,p:3},
+  stitch:{n:"Maelis's Stitch",t:'bind',k:'Skill',c:0,ex:1,heal:10,p:3,art:'maelis'},
+  twice:{n:'Second Cut',t:'blade',k:'Attack',c:1,m:1,dmg:5,hits:2,p:3},
+  finish:{n:'Finish It',t:'blade',k:'Attack',c:1,m:1,dmg:6,dmgLow:14,p:3},
+  follow:{n:'Follow Through',t:'blade',k:'Attack',c:1,m:1,dmg:9,carry:1,p:4},
+  closeup:{n:'Close Up',t:'foot',k:'Skill',c:1,blk:8,guardFriends:5,p:3},
+  callco:{n:'Call the Company',t:'eye',k:'Attack',c:1,dmg:4,assist:5,p:4},
+  strip:{n:'Strip the Fallen',t:'blade',k:'Attack',c:1,m:1,dmg:8,spoilKill:2,p:3},
   spoils:{n:'Spoils of the Road',t:'breath',k:'Skill',c:0,ex:1,spoil:2,p:3},
   secondwind:{n:'Second Wind',t:'breath',k:'Skill',c:0,en:1,draw:1,p:4},
-  readline:{n:'Read the Line',t:'eye',k:'Skill',c:0,draw:1,drawOpen:2,p:2},
-  bandage:{n:'Clean Bandage',t:'bind',k:'Skill',c:1,cleanse:1,heal:4,p:2},
-  pinshot:{n:'Pinning Throw',t:'cast',k:'Attack',c:1,dmg:3,pin:1,p:3},
-  digin:{n:'Dig In',t:'foot',k:'Stance',c:1,ex:1,stance:'blockStart',sv:3,p:4},
-  bloodup:{n:'Blood Up',t:'blade',k:'Stance',c:2,ex:1,stance:'atkUp',sv:2,p:5},
+  readline:{n:'Read the Line',t:'eye',k:'Skill',c:0,open:1,draw:1,p:3},
+  bandage:{n:'Clean Bandage',t:'bind',k:'Skill',c:0,cleanse:1,heal:4,p:2},
+  pinshot:{n:'Pinning Throw',t:'cast',k:'Attack',c:1,dmg:6,pin:1,p:3},
+  digin:{n:'Dig In',t:'foot',k:'Stance',c:1,ex:1,stance:'blockStart',sv:4,p:4},
+  bloodup:{n:'Blood Up',t:'blade',k:'Stance',c:1,ex:1,stance:'atkUp',sv:2,p:5},
   steady:{n:'Steady Hand',t:'eye',k:'Stance',c:1,ex:1,stance:'drawUp',sv:1,p:5},
   wound:{n:'Wound',t:'bind',k:'Wound',c:0,dead:1},
   /* lent by a friend placed to help */
@@ -131,12 +132,29 @@ function canAct(u){return u.side===0&&u.hp>0&&!(u.attacked&&!u.free)}
 function live(G){return !G.over&&!G.clash&&G.phase==='player'}
 function foesUp(G){return G.u.filter(function(o){return o.side===1&&o.hp>0})}
 function matesUp(G){return G.u.filter(function(o){return o.side===0&&o.hp>0})}
-function reach(G,u){
-  var seen={},q=[[u.x,u.y,0]];seen[u.x+','+u.y]=0;
-  while(q.length){q.sort(function(a,b){return a[2]-b[2]});var c=q.shift();
-    [[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){var x=c[0]+d[0],y=c[1]+d[1],k=x+','+y;if(!ok(G,x,y)||at(G,x,y))return;var n=c[2]+cost(G,x,y);if(n>u.mov||(seen[k]!==undefined&&seen[k]<=n))return;seen[k]=n;q.push([x,y,n])})}
-  return seen;
+/* Falling back: one of the company with a friend right behind him can step through that friend to the open tile beyond.
+   Straight back only, one friend only, and it is the whole move: a way out of a corner, not a way round the line. */
+function fallBack(G,u){
+  if(u.side!==0||!T.fallBack)return null;var f=at(G,u.x,u.y+1);
+  if(!f||f.side!==0||!ok(G,u.x,u.y+2)||at(G,u.x,u.y+2))return null;return [u.x,u.y+2];
 }
+/* Every tile a unit can end on, with what it costs and the tile it is entered from. */
+function paths(G,u){
+  var seen={},prev={},q=[[u.x,u.y,0]];seen[u.x+','+u.y]=0;
+  while(q.length){q.sort(function(a,b){return a[2]-b[2]});var c=q.shift();
+    [[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){var x=c[0]+d[0],y=c[1]+d[1],k=x+','+y;if(!ok(G,x,y)||at(G,x,y))return;var n=c[2]+cost(G,x,y);if(n>u.mov||(seen[k]!==undefined&&seen[k]<=n))return;seen[k]=n;prev[k]=c[0]+','+c[1];q.push([x,y,n])})}
+  var fb=fallBack(G,u);if(fb&&seen[fb[0]+','+fb[1]]===undefined){seen[fb[0]+','+fb[1]]=u.mov;prev[fb[0]+','+fb[1]]='back'}
+  return {seen:seen,prev:prev};
+}
+function reach(G,u){return paths(G,u).seen}
+/* The tiles walked, in order, from where he stands to a tile he can reach: for showing the move, step by step. */
+function path(G,u,x,y){
+  var P=paths(G,u),k=x+','+y,out=[],o=u.x+','+u.y,n=0;if(P.seen[k]===undefined||k===o)return [];
+  if(P.prev[k]==='back')return [[u.x,u.y+1],[x,y]];
+  while(k!==o&&n++<99){var p=k.split(',');out.unshift([+p[0],+p[1]]);k=P.prev[k]}
+  return out;
+}
+function fellBack(G,u,x,y){return paths(G,u).prev[x+','+y]==='back'}
 function dangerSet(G){
   var z={};
   foesUp(G).forEach(function(e){var r=(e.pinned||holding(G,e))?{}:reach(G,e);r[e.x+','+e.y]=0;
@@ -204,7 +222,7 @@ function draw(G,u,n){var K=G.clash,got=0;while(n-->0&&K.hand.length<HAND_CAP){if
 function engage(G,a,d){
   if(targets(G,a).indexOf(d)<0)return null;
   var p=preview(G,a,d),base=d.ans[d.ai%d.ans.length];d.ai++;d.marked=false;a.bank=0;a.from=null;if(p.far&&a.far&&a.throws>0)a.throws--;
-  var K=G.clash={a:a,d:d,p:p,round:1,en:p.en,block:a.st.blockStart,intent:{b:base.b,d:base.d,n:base.n},fb:base.b+(p.wood?T.woodBlock:0),open:p.open,far:p.far,canBreak:p.tri>0,halved:false,broken:false,push:false,pin:false,again:false,
+  var K=G.clash={a:a,d:d,p:p,round:1,en:p.en,block:a.st.blockStart+(a.id==='D'?T.armor:0),intent:{b:base.b,d:base.d,n:base.n},fb:base.b+(p.wood?T.woodBlock:0),open:p.open,far:p.far,canBreak:p.tri>0,halved:false,broken:false,push:false,pin:false,again:false,
     hand:[],phase:'play',redrawn:false,dealt:0,taken:0,played:0,lines:[]};
   draw(G,a,a.hn+a.st.drawUp);p.lend.forEach(function(o){if(K.hand.length<HAND_CAP)K.hand.push(o.lend+(o.fights>=2?'2':''))});
   return K;
@@ -263,7 +281,7 @@ function play(G,i){
   if(c.draw){fx.push({k:'draw',n:draw(G,a,(c.drawOpen&&K.open)?c.drawOpen:c.draw)})}
   if(c.again){K.again=true;fx.push({k:'status',who:'a',t:'Move again'})}
   if(!c.lent)(c.ex?a.dk.gone:a.dk.disc).push(id);
-  if(d.hp<=0){fx.push({k:'down',who:'d'});fell(G,d,fx);if(a.id==='D'&&T.spoilOwn){G.run.spoils+=T.spoilOwn;fx.push({k:'spoils',n:T.spoilOwn,own:1})}if(c.spoilKill){G.run.spoils+=c.spoilKill;fx.push({k:'spoils',n:c.spoilKill})}settle(G,'won')}
+  if(d.hp<=0){fx.push({k:'down',who:'d'});fell(G,d,fx);if(a.id==='D'&&T.spoilOwn){G.run.spoils+=T.spoilOwn;fx.push({k:'spoils',n:T.spoilOwn,own:1})}if(a.id==='D'&&T.ownHeal&&a.hp<a.max){var oh=Math.min(T.ownHeal,a.max-a.hp);a.hp+=oh;fx.push({k:'heal',n:oh})}if(c.spoilKill){G.run.spoils+=c.spoilKill;fx.push({k:'spoils',n:c.spoilKill})}settle(G,'won')}
   return fx;
 }
 function redraw(G){
@@ -293,7 +311,7 @@ function endHand(G){
 }
 function pressOn(G){
   var K=G.clash;if(!K||K.phase!=='choice')return false;var a=K.a,d=K.d,nx=d.ans[d.ai%d.ans.length];
-  d.ai++;K.round++;K.block=a.st.blockStart;K.intent={b:nx.b,d:nx.d+T.pressUp*(K.round-1),n:nx.n};K.fb=K.intent.b+(K.p.wood?T.woodBlock:0);
+  d.ai++;K.round++;K.block=a.st.blockStart+(a.id==='D'?T.armor:0);K.intent={b:nx.b,d:nx.d+T.pressUp*(K.round-1),n:nx.n};K.fb=K.intent.b+(K.p.wood?T.woodBlock:0);
   K.en=Math.max(1,a.br+(K.p.tri<0?-1:0)-(K.far?(a.far||0):0)-T.pressBreath*(K.round-1));K.halved=false;K.broken=false;K.canBreak=false;K.redrawn=false;K.phase='play';
   draw(G,a,a.hn+a.st.drawUp);return true;
 }
@@ -336,7 +354,7 @@ function actFoe(G,e){
   else if(!foes.some(function(o){return inRange(e,o)})){
     var r=reach(G,e),pd=walkDist(G,foes),best=null,bs=1e9;
     Object.keys(r).forEach(function(k){var p=k.split(','),n=near(+p[0],+p[1]),sc=(n>=1&&n<=e.rng)?(-100-n+r[k]*.1):((pd[k]===undefined?99:pd[k])*10+r[k]*.1);if(sc<bs){bs=sc;best=p}});
-    if(best){e.x=+best[0];e.y=+best[1];ev.to=[e.x,e.y]}
+    if(best){ev.path=path(G,e,+best[0],+best[1]);e.x=+best[0];e.y=+best[1];ev.to=[e.x,e.y]}
   }
   var inr=foes.filter(function(o){return inRange(e,o)}).sort(function(a,b){return a.hp-b.hp});
   if(inr.length){
@@ -471,7 +489,7 @@ function cardText(id,K){
 }
 
 root.LH={T:T,SHEET:SHEET,W:W,H:H,MAPS:MAPS,FOES:FOES,TREE:TREE,BEAT:BEAT,C:C,POOL:POOL,STANCE:STANCE,BASE_DECK:BASE_DECK,HAND_CAP:HAND_CAP,MAX_HP:MAX_HP,HELD_MAX:HELD_MAX,MIN_DECK:MIN_DECK,
-  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
+  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,path:path,fallBack:fallBack,fellBack:fellBack,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
   move:move,canUnmove:canUnmove,unmove:unmove,hold:hold,canEngage:canEngage,tendTargets:tendTargets,tend:tend,targets:targets,preview:preview,engage:engage,hitList:hitList,cardDmg:cardDmg,playable:playable,play:play,redraw:redraw,intent:intent,nextIntent:nextIntent,ansText:ansText,
   endHand:endHand,pressOn:pressOn,leave:leave,closeClash:closeClash,endTurn:endTurn,enemyStep:enemyStep,rallied:rallied,enraged:enraged,holding:holding,wounds:wounds,
   inCamp:inCamp,campBuy:campBuy,campMend:campMend,campRemove:campRemove,campHone:campHone,nextBattle:nextBattle,renown:renown,effects:effects,clashEffects:clashEffects,cardText:cardText};

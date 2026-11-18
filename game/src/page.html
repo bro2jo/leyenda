@@ -1,8 +1,8 @@
 <div class="wrap">
   <header class="top">
-    <p class="lbl">The Unkneeling · a side game · playtest build four</p>
+    <p class="lbl">The Unkneeling · a side game · playtest build five</p>
     <h1>The Line and the Hand</h1>
-    <p class="lede">Move the company on the map, pick a fight, and play it as a hand of cards. This build is the result of a long round of testing: the cards no longer flash, tokens slide instead of jumping, and several rules changed because a test player that looks ahead found ways to win without really playing. What changed and why is listed below the game.</p>
+    <p class="lede">Move the company on the map, pick a fight, and play it as a hand of cards. This build is about how it looks, sounds and moves: one set of drawn icons, a proper card frame, the ground behind each fight, moves walked tile by tile, a curtain between scenes, a camp that shows your purse, and music under it all. One new rule: a fighter can fall back through the friend behind him.</p>
   </header>
 
   <section class="block">
@@ -12,7 +12,7 @@
         <section>
           <h3>How to play</h3>
           <ol>
-            <li><b>On the map,</b> tap one of the company, then a lit tile to move. A move can be taken back until that fighter does something else. Tap anyone to see what is in force on them; tap an effect to read it.</li>
+            <li><b>On the map,</b> tap one of the company, then a lit tile to move. A move can be taken back until that fighter does something else. A fighter with a friend right behind him can fall back through that friend to the tile beyond, marked with an arrow: it is his whole move. Tap anyone to see what is in force on them; tap an effect to read it.</li>
             <li><b>To fight,</b> tap a foe ringed in red, read the forecast, and engage. Once a battle Darrow can open from two tiles with a throw: thrown cards only, one less breath, and most foes cannot answer.</li>
             <li><b>Rae</b> does not fight. Select her and tap a hurt friend beside her, ringed in green, to mend them and set aside a Wound. A fighter with Rae beside them is lent her hand.</li>
             <li><b>At the table,</b> tap a card to read it and tap again to play, or drag it up onto the field. His answer and its number sit above his head.</li>
@@ -26,30 +26,46 @@
           <div class="setrow"><span class="lbl">A clash lasts</span><span class="seg"><button type="button" data-pref="rounds=1">One hand</button><button type="button" data-pref="rounds=3">Up to three rounds</button></span></div>
           <div class="setrow"><span class="lbl">Animation</span><span class="seg"><button type="button" data-pref="quick=false">Full</button><button type="button" data-pref="quick=true">Quick</button></span></div>
           <div class="setrow"><span class="lbl">Sound</span><span class="seg"><button type="button" data-pref="sound=false">Off</button><button type="button" data-pref="sound=true">On</button></span></div>
+          <div class="setrow"><span class="lbl">Music</span><span class="seg"><button type="button" data-pref="music=false">Off</button><button type="button" data-pref="music=true">On</button></span></div>
           <div class="setrow"><span class="lbl">Difficulty</span><span class="seg"><button type="button" data-pref="level=-1">Gentle</button><button type="button" data-pref="level=0">Standard</button><button type="button" data-pref="level=1">Hard</button></span></div>
           <div class="setrow"><span class="lbl">Darrow's deck</span><span class="seg"><button type="button" data-pref="deck=sheet">The sheet</button><button type="button" data-pref="deck=all">Plus every camp card</button></span></div>
-          <p class="small">With sound on, a sound you have made plays as itself and the rest play a stand-in tone, so you can hear where each will fall. Changing the difficulty or the deck starts a new run; the full deck is for trying cards, not for a fair game.</p>
+          <p class="small">Music starts on your first tap in the game: one track under the map and the camp, another at the card table. The two switches under the game do the same as these. With sound on, a sound you have made plays as itself and the rest play a stand-in tone, so you can hear where each will fall. Changing the difficulty or the deck starts a new run; the full deck is for trying cards, not for a fair game.</p>
           <div class="setrow"><button type="button" class="mini2" data-newrun>Start a new run</button></div>
         </section>
         <section>
           <h3>What the icons mean</h3>
           <dl class="words">
-            <dt>Guard, Block</dt><dd>Soaks damage. Guard that holds a blow whole strikes back.</dd>
-            <dt>Open</dt><dd>The next hit lands for half again.</dd>
-            <dt>Broken</dt><dd>His answer this hand is halved. Start the fight against the tree yours beats and land one hit.</dd>
-            <dt>Pinned, Marked</dt><dd>He will not move next turn. The next friend has one more breath.</dd>
-            <dt>Tough</dt><dd>Each hit on him deals less. Big blows beat small ones.</dd>
-            <dt>Barbed</dt><dd>His blow, if it lands, leaves a Wound: a dead card until the battle ends.</dd>
-            <dt>Banner, Rallied</dt><dd>While the bannerman stands, the others strike harder.</dd>
-            <dt>Will enrage</dt><dd>At half health the captain strikes harder.</dd>
-            <dt>Flurry</dt><dd>His answer is several small blows.</dd>
-            <dt>Stance</dt><dd>A card that stays in force for the rest of the battle.</dd>
-            <dt>A throw in hand</dt><dd>Darrow can still open one fight from two tiles this battle.</dd>
-            <dt>Tends</dt><dd>Rae mends a friend beside her instead of fighting.</dd>
+            <dt data-ic="shield">Guard, Block</dt><dd>Soaks damage. Guard that holds a blow whole strikes back.</dd>
+            <dt data-ic="crack">Open</dt><dd>The next hit lands for half again.</dd>
+            <dt data-ic="x">Broken</dt><dd>His answer this hand is halved. Start the fight against the tree yours beats and land one hit.</dd>
+            <dt data-ic="pin">Pinned, Marked</dt><dd>He will not move next turn. The next friend has one more breath.</dd>
+            <dt data-ic="square">Tough</dt><dd>Each hit on him deals less. Big blows beat small ones.</dd>
+            <dt data-ic="barb">Barbed</dt><dd>His blow, if it lands, leaves a Wound: a dead card until the battle ends.</dd>
+            <dt data-ic="flag">Banner, Rallied</dt><dd>While the bannerman stands, the others strike harder.</dd>
+            <dt data-ic="flame">Will enrage</dt><dd>At half health the captain strikes harder.</dd>
+            <dt data-ic="bars">Flurry</dt><dd>His answer is several small blows.</dd>
+            <dt data-ic="pillar">Stance</dt><dd>A card that stays in force for the rest of the battle.</dd>
+            <dt data-ic="throw">A throw in hand</dt><dd>Darrow can still open one fight from two tiles this battle.</dd>
+            <dt data-ic="heart">Tends</dt><dd>Rae mends a friend beside her instead of fighting.</dd>
           </dl>
         </section>
       </div>
     </div>
+  </section>
+
+  <section class="block">
+    <h2>New in this build</h2>
+    <ol class="new-list">
+      <li><b>Falling back through a friend.</b> A fighter with a friend right behind him can step through to the open tile beyond. Straight back only, through one friend only, and it is his whole move, so it gets a hurt man out of a ford or off the bridge without opening a way round the line. The foes cannot do it. Measured: on Standard the careful test player wins 93 runs in 100 with the rule and 93 without. On Hard it was worth about 8, so Hard's foes now strike 2 harder than Standard's, not 1, which puts Hard at 77.</li>
+      <li><b>Moves are walked.</b> Yours and theirs go tile by tile along the path, with a little dust, instead of sliding straight across.</li>
+      <li><b>A curtain between scenes.</b> It crosses the screen with the name of what comes next: the next ground, the camp after a win, the end of a run. The meeting before a clash shows both faces.</li>
+      <li><b>The camp shows what you have.</b> The purse, Darrow's health and what a night's rest gives, and your Renown as it stands, which falls as you spend. Every price is on its button, red when you cannot pay; spoils leaving the purse are shown. The next ground is drawn small beside March on.</li>
+      <li><b>Music.</b> Your two tracks are in: one under the map and the camp, one at the card table, fading across when the scene changes.</li>
+      <li><b>One look.</b> Every icon is drawn in the same hand, and each tree has its own shape as well as its colour: a shield for Footing, a sword for Blade, an arc for Cast. Cards have a frame, a breath gem and a tree gem. Each fight has the ground it is fought on behind it. Blows leave a cut; heavy ones shake the field.</li>
+      <li><b>The camp's cards are stronger, and fewer.</b> In the last round of testing no camp card was clearly worth buying. Eighteen are left, most of them improved. Measured on Hard over 150 runs a card, the plain deck with no camp at all won 81 runs in 100; one copy of Dig In or Blood Up added 7 or 8, most of the others a little or nothing. Cards that pay spoils or mend cannot show their worth in that test, which has no camp to spend in.</li>
+      <li><b>Hammerfall has a reason to exist.</b> It deals 14, pins him, and halves his answer for the hand.</li>
+      <li><b>Pressing on costs less.</b> In a clash of several rounds he now strikes 2 harder each round you press, not 4. Over 60 runs that moved the careful test player from 58 runs won in 100 to 62, which is inside the noise: in that mode the losses come on the third ground, from the wear of two battles, more than from this cost.</li>
+    </ol>
   </section>
 
   <section class="block">
@@ -83,13 +99,14 @@
 
   <section class="block">
     <h2>The camp's cards</h2>
-    <p class="small">Twenty-one cards the camp can offer, with their prices, then the two honed cards and the Wound. None of these is an Art: those only come from the sheet.</p>
+    <p class="small">Eighteen cards the camp can offer, with their prices, then the two honed cards and the Wound. None of these is an Art: those only come from the sheet.</p>
     <div class="gallery" id="market-gallery"></div>
   </section>
 
   <section class="block">
     <h2>Sounds to make</h2>
     <p class="small"><span id="sfx-count"></span> sounds, <span id="sfx-made"></span> made so far. Each row is one file. Send one with its name from the list and it is filed as <code>game/sfx/&lt;name&gt;</code>; the game already calls every one at the right moment and plays a stand-in tone until the real file exists. Keep them short and dry, with no music bed, so they stack when several fire together.</p>
+    <p class="small">Music is two files, filed the same way with <code>music</code> in place of <code>sound</code>: <code data-music="map">map</code> plays under the map and the camp, <code data-music="clash">clash</code> at the card table.</p>
     <div class="scroll">
       <table>
         <thead><tr><th>File name</th><th>When it plays</th><th>What to record</th><th>Length</th><th>Stand-in</th></tr></thead>
@@ -131,7 +148,7 @@ Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his w
     <ol class="ask">
       <li><b>Do you fight with Darrow, or hide him?</b> The best test player still leans on the companions and keeps him back, because losing him ends the run. If you find yourself doing the same, his cards need to be worth the risk.</li>
       <li><b>Do you block?</b> His answer now lands in about half of all hands. If you never play a block card, or always do, the numbers are off.</li>
-      <li><b>Is Standard too hard on a first run?</b> Careless play wins about one run in three. Try Gentle first if it stings.</li>
+      <li><b>Is Standard too hard on a first run?</b> Careless play wins about two runs in five. Try Gentle first if it stings.</li>
       <li><b>Is the camp a real choice?</b> Spoils are tight now: a card or a mend, rarely both.</li>
       <li><b>Does anything still flash, jump or stutter?</b> Say where, and whether it is the map or the card table.</li>
     </ol>
@@ -140,9 +157,9 @@ Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his w
   <section class="block">
     <h2>How it was tested</h2>
     <div class="two">
-      <section><h3>The rules, apart from the screen</h3><p>601 rule checks, including one for every card that it does what its text says. 4,000 random games with every card, health total and effect accounted for after each move.</p></section>
-      <section><h3>The screen</h3><p>116 browser checks at phone, small-phone and desktop sizes, and 24 whole runs through the real buttons. A separate count confirms that a tap on the map or a card played rebuilds nothing on screen.</p></section>
-      <section><h3>Three test players</h3><p>One looks ahead: it tries each fight on a copy of the game, plays the hand out several ways and keeps the best. It wins 91 runs in 100 on Standard. One plays sensibly but carelessly and wins 35. One only chases the captain and wins 15.</p></section>
+      <section><h3>The rules, apart from the screen</h3><p>629 rule checks, including one for every card that it does what its text says. 4,000 random games with every card, health total and effect accounted for after each move.</p></section>
+      <section><h3>The screen</h3><p>130 browser checks at phone, small-phone and desktop sizes, and 24 whole runs through the real buttons. A separate count confirms that a tap on the map or a card played rebuilds nothing on screen.</p></section>
+      <section><h3>Three test players</h3><p>One looks ahead: it tries each fight on a copy of the game, plays the hand out several ways and keeps the best. It wins 93 runs in 100 on Standard and 77 on Hard. One plays sensibly but carelessly and wins 40. One only chases the captain and wins 35.</p></section>
       <section><h3>What they cannot tell you</h3><p>Whether it is fun, and how it feels under a real thumb. A person will play Darrow more boldly than the careful player does, and that is the run I most want to hear about.</p></section>
     </div>
   </section>

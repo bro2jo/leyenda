@@ -7,7 +7,7 @@ var AS=window.LH_ASSETS||{art:[],fig:[],tok:[],sfx:{}};
 function has(list,name){return !!name&&list.indexOf(name)>=0}
 var root=document.getElementById('game');if(!root)return;
 var FAST=!!window.LH_FAST,REDUCED=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-var prefs={rounds:1,quick:false,sound:false,deck:'sheet',level:0};
+var prefs={rounds:1,quick:false,sound:false,music:true,deck:'sheet',level:0};
 try{var sv=JSON.parse(localStorage.getItem('lh-prefs')||'{}');if(sv.rounds===3)prefs.rounds=3;if(sv.quick)prefs.quick=true;if(sv.sound)prefs.sound=true;if(sv.deck==='all')prefs.deck='all';if(sv.level===1||sv.level===-1)prefs.level=sv.level}catch(e){}
 function savePrefs(){try{localStorage.setItem('lh-prefs',JSON.stringify(prefs))}catch(e){}}
 function best(v){var b=0;try{b=+localStorage.getItem('lh-best')||0;if(v>b){localStorage.setItem('lh-best',String(v));}}catch(e){}return Math.max(b,v||0)}
@@ -81,30 +81,68 @@ function hear(name){
 }
 function sfx(name){heard[name]=(heard[name]||0)+1;if(prefs.sound)hear(name)}
 
+/* ---------- music: one track under the map and the camp, one under the clash. It starts on the first tap in the game. ---------- */
+var MUS={},MVOL=.3,musWant='map',musStarted=false;
+function musEl(k){if(!AS.music||!AS.music[k])return null;if(!MUS[k]){var a=new Audio(AS.music[k]);a.loop=true;a.volume=0;a.preload='none';MUS[k]=a}return MUS[k]}
+function fadeTo(a,to,then){clearInterval(a._f);if(FAST){a.volume=to;if(then)then();return}
+  a._f=setInterval(function(){var up=to>a.volume,v=a.volume+(up?.03:-.03);if(up?v>=to:v<=to){a.volume=to;clearInterval(a._f);if(then)then()}else a.volume=v},50)}
+function musNow(){return !FAST&&prefs.music&&musStarted&&!document.hidden&&AS.music&&AS.music[musWant]?musWant:null}
+function music(which){if(which)musWant=which;var on=musNow();
+  ['map','clash'].forEach(function(k){var a=k===on||MUS[k]?musEl(k):null;if(!a)return;
+    if(k===on){var pr=a.play();if(pr&&pr.catch)pr.catch(function(){});fadeTo(a,MVOL)}else if(!a.paused)(function(el){fadeTo(el,0,function(){el.pause()})})(a)})}
+document.addEventListener('visibilitychange',function(){music()});
+
 /* ---------- small drawings ---------- */
 var IC={
-  shield:'M8 1l6 2v4.6c0 3.4-2.5 5.9-6 7.4-3.5-1.5-6-4-6-7.4V3z',drop:'M8 1.5c2.6 3.4 4.5 5.8 4.5 8.2a4.5 4.5 0 01-9 0C3.5 7.300 5.4 4.9 8 1.5z',
-  breath:'M8 2a6 6 0 100 12A6 6 0 008 2zm0 3a3 3 0 110 6 3 3 0 010-6z',pillar:'M3 2h10v2h-2v8h2v2H3v-2h2V4H3z',
-  star:'M8 1l2.1 4.5 4.9.6-3.6 3.4.9 4.9L8 12l-4.3 2.4.9-4.9L1 6.1l4.9-.6z',arrowR:'M2 7h8V4l4 4-4 4V9H2z',arrowL:'M14 7H6V4L2 8l4 4V9h8z',arrowU:'M7 14V6H4l4-4 4 4H9v8z',arrowD:'M7 2v8H4l4 4 4-4H9V2z',
-  tree:'M8 1l5 8H9.5v5h-3V9H3z',wheel:'M8 1a7 7 0 100 14A7 7 0 008 1zm0 2.500a4.5 4.5 0 110 9 4.5 4.5 0 010-9zM7.2 4h1.6v8H7.2zM4 7.2h8v1.6H4z',
-  pin:'M5 1h6v2l-1.5 1v4L12 10v2H9v3H7v-3H4v-2l2.5-2V4L5 3z',target:'M8 1a7 7 0 100 14A7 7 0 008 1zm0 2a5 5 0 110 10A5 5 0 018 3zm0 3a2 2 0 100 4 2 2 0 000-4z',
-  crack:'M8 1l6 2v4.6c0 3.4-2.5 5.9-6 7.4-3.5-1.5-6-4-6-7.4V3zM8.600 3.5L6.5 7.5h2L7 12l3.2-5.4H8.3z',square:'M2.500 2.500h11v11h-11z',barb:'M2 14L9 7H5l9-5-5 9V7z',flag:'M3 1h2v14H3zM6 2h8l-2.500 3L14 8H6z',
-  flame:'M8 1c1 3 4 4.500 4 8a4 4 0 01-8 0c0-1.600.8-2.800 1.600-3.600C6 6.800 6.700 8 7.400 8 7.600 5.500 7 3.300 8 1z',bars:'M2 3h12v2H2zM2 7h12v2H2zM2 11h12v2H2z',
-  x:'M3 4.400L4.400 3 8 6.600 11.600 3 13 4.400 9.400 8l3.600 3.600-1.400 1.400L8 9.400 4.400 13 3 11.600 6.600 8z',half:'M8 1a7 7 0 100 14V1z',dots:'M3.500 6a2 2 0 110 4 2 2 0 010-4zm9 0a2 2 0 110 4 2 2 0 010-4z',
-  sword:'M14.600 1.400l-4.200.700-6 6 3.500 3.500 6-6zM3.300 9.200l3.500 3.500-1 1-1.200-1.200-2 2-1.100-1.100 2-2-1.200-1.200z',deck:'M2 4h9v11H2zM5 1h9v11h-2V3H5z',coin:'M8 2a6 6 0 100 12A6 6 0 008 2zm-.800 2.500h1.600v7H7.200z'
+  sword:'<path d="M12 2.500v13M7.500 15.500h9M12 15.500V21"/>',
+  cast:'<path d="M4 20C4 11 11 4.500 20 4.500M16.500 1.500l3.500 3-3.500 3"/>',
+  swords:'<path d="M5 5l11 11M19 5L8 16M5 9V5h4M15 5h4v4M4 17l3 3M20 17l-3 3M6 14l4 4M18 14l-4 4"/>',
+  shield:'<path d="M12 3l7 3v5c0 5-3.500 8-7 10-3.500-2-7-5-7-10V6z"/>',
+  crack:'<path d="M12 3l7 3v5c0 5-3.500 8-7 10-3.500-2-7-5-7-10V6z"/><path d="M13 7l-3 5h4l-3 5"/>',
+  coin:'<circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.500 10h3.500a1.500 1.500 0 010 3h-2a1.500 1.500 0 000 3H15"/>',
+  deck:'<rect x="4" y="7" width="12" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>',
+  drop:'<path d="M12 3c3 4 6 7 6 11a6 6 0 01-12 0c0-4 3-7 6-11z"/>',
+  breath:'<path d="M3 9h10a3 3 0 10-3-3M3 15h14a3 3 0 11-3 3M3 12h6"/>',
+  pillar:'<path d="M5 21h14M8 21V9M16 21V9M5 9h14M7 5h10v4H7z"/>',
+  star:'<path d="M12 3l2.700 5.600 6.200.800-4.500 4.300 1.100 6.100L12 16.900 6.500 19.800l1.100-6.100L3.100 9.400l6.200-.800z"/>',
+  arrowR:'<path d="M5 12h14M13 6l6 6-6 6"/>',arrowL:'<path d="M19 12H5M11 6l-6 6 6 6"/>',arrowU:'<path d="M12 19V5M6 11l6-6 6 6"/>',arrowD:'<path d="M12 5v14M6 13l6 6 6-6"/>',
+  throw:'<path d="M4 20L18 6M11 6h7v7"/><path d="M4 14v6h6" opacity=".6"/>',
+  tree:'<path d="M12 3l6 8h-3l4 6H5l4-6H6zM12 17v4"/>',
+  pin:'<circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 13a7 7 0 0014 0M8 11h8"/>',
+  target:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',
+  square:'<rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1"/>',
+  barb:'<path d="M4 20L18 6M11 6h7v7M4 20l1-5M4 20l5-1"/>',
+  flag:'<path d="M6 21V4M6 4h11l-2.500 4L17 12H6"/>',
+  flame:'<path d="M12 3c1 4 5 5.500 5 10a5 5 0 01-10 0c0-2 1-3.500 2-4.500 0 2 1 3 2 3 .500-3-.500-6 1-8.500z"/>',
+  bars:'<path d="M5 19l6-14M10 19l6-14M15 19l4-9"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  half:'<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 000 16z" fill="currentColor"/>',
+  dots:'<circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M9 12h1M12 12h1M15 12h.500"/>',
+  hourglass:'<path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/>',
+  undo:'<path d="M4 9h10a5 5 0 010 10H9M4 9l4-4M4 9l4 4"/>',
+  heart:'<path d="M12 20s-7-4.500-7-10a4 4 0 017-2.500A4 4 0 0119 10c0 5.500-7 10-7 10z"/>',
+  tent:'<path d="M3 20L12 4l9 16zM12 4v16M9 20l3-5 3 5"/>',
+  eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  cart:'<circle cx="7" cy="18" r="3"/><circle cx="17" cy="18" r="3"/><path d="M3 6h18v8H3zM3 10h18"/>',
+  whet:'<path d="M12 3v5M12 16v5M3 12h5M16 12h5M6.500 6.500l2 2M15.500 15.500l2 2M17.500 6.500l-2 2M8.500 15.500l-2 2"/>',
+  road:'<path d="M9 3L5 21M15 3l4 18M12 5v2M12 11v2M12 17v2"/>',
+  note:'<path d="M9 18V6l10-2v12"/><circle cx="6.500" cy="18" r="2.500"/><circle cx="16.500" cy="16" r="2.500"/>',
+  speaker:'<path d="M4 10v4h3l5 4V6L7 10zM16 9.500a3.500 3.500 0 010 5M18.500 7a7 7 0 010 10"/>',
+  moon:'<path d="M19 14.500A8 8 0 019.500 5 7 7 0 1019 14.500z"/>'
 };
-var FXI={throw:'arrowU',guard:'shield',block:'shield',held:'breath',wound:'drop',stance:'pillar',risen:'star',again:'arrowR',cover:'tree',cart:'wheel',pinned:'pin',marked:'target',open:'crack',tough:'square',barbed:'barb',banner:'flag',rallied:'flag',enraged:'flame',temper:'flame',holds:'square',flurry:'bars',far:'dots',down:'arrowD',broken:'x',edge:'arrowU',halved:'half',pushed:'arrowL'};
-var FXORDER=['wound','throw','pinned','marked','open','enraged','rallied','banner','tough','barbed','held','stance','risen','again','flurry','holds','temper','cover','cart'];
-function svg(name){return '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="'+IC[name]+'"/></svg>'}
+var FXI={throw:'throw',guard:'shield',block:'shield',held:'breath',wound:'drop',stance:'pillar',risen:'star',again:'arrowR',cover:'tree',tend:'heart',pinned:'pin',marked:'target',open:'crack',tough:'square',barbed:'barb',banner:'flag',rallied:'flag',enraged:'flame',temper:'flame',holds:'hourglass',flurry:'bars',far:'dots',down:'arrowD',broken:'x',edge:'arrowU',halved:'half',pushed:'arrowL'};
+var TREEI={blade:'sword',foot:'shield',cast:'cast',breath:'breath',bind:'heart',eye:'eye'};
+var FXORDER=['wound','throw','pinned','marked','open','enraged','rallied','banner','tough','barbed','held','stance','risen','again','tend','flurry','holds','temper','cover'];
+function svg(name,cls){return '<svg class="ic'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" aria-hidden="true">'+(IC[name]||IC.square)+'</svg>'}
 function fxIcon(id){return svg(FXI[id]||'square')}
 function fxChips(list,side){return '<div class="fxs">'+list.map(function(e,i){return '<button type="button" class="fx tone-'+e.tone+'" data-fx="'+side+':'+i+'" title="'+esc(e.text)+'">'+fxIcon(e.id)+'<span>'+e.label+'</span></button>'}).join('')+'</div>'}
 function bar(v,m,c){return '<div class="bar '+(c||'')+'"><i style="width:'+Math.max(0,100*v/m)+'%"></i></div>'}
 function pips(n,max,c){var h='';for(var i=0;i<max;i++)h+='<span class="pip '+(c||'')+(i<n?' on':'')+'"></span>';return h}
 function logBox(l){return '<div class="log" aria-live="polite">'+l.slice(-5).map(function(x){return '<div class="'+(x[1]||'')+'">'+x[0]+'</div>'}).join('')+'</div>'}
 function chipRow(c){return c.length?'<div class="chips">'+c.map(function(x){return '<span class="chip '+x[1]+'">'+x[0]+'</span>'}).join('')+'</div>':''}
-function cardHTML(id,o){o=o||{};var c=C[id],tag=o.tag||'div';
-  return '<'+tag+' class="card t-'+c.t+' k-'+c.k.toLowerCase()+' '+(o.cls||'')+'"'+(tag==='button'?' type="button"':'')+(o.attrs||'')+'>'+(c.dead?'':'<span class="cost num">'+c.c+'</span>')+(o.price?'<span class="price num">'+svg('coin')+c.p+'</span>':'')+
-    (has(AS.art,c.art)?'<span class="art"><img src="'+A+c.art+'.webp" alt="" draggable="false"></span>':'<span class="art ph"><span>'+(c.dead?'wound':'art to make')+'</span></span>')+
+function cardHTML(id,o){o=o||{};var c=C[id],tag=o.tag||'div',pr=o.price?'<span class="price num">'+svg('coin')+c.p+'</span>':'';
+  return '<'+tag+' class="card t-'+c.t+' k-'+c.k.toLowerCase()+' '+(o.cls||'')+'"'+(tag==='button'?' type="button"':'')+(o.attrs||'')+'>'+(c.dead?'':'<span class="cost num">'+c.c+'</span>')+
+    '<span class="gem">'+svg(c.dead?'drop':TREEI[c.t])+'</span>'+(has(AS.art,c.art)?'<span class="art"><img src="'+A+c.art+'.webp" alt="" draggable="false">'+pr+'</span>':'<span class="art ph"><span>'+(c.dead?'wound':'art to make')+'</span>'+pr+'</span>')+
     '<b>'+c.n+'</b><span class="rk">'+(c.r?c.r+' · ':'')+(c.lent?'lent · ':'')+c.k+' · '+TREE[c.t]+'</span><small>'+LH.cardText(id,o.K)+'</small></'+tag+'>'}
 function floatAt(layer,x,y,text,cls){
   if(FAST||!layer)return;var el=document.createElement('span');el.className='float '+(cls||'');el.textContent=text;el.style.left=x+'%';el.style.top=y+'%';layer.appendChild(el);
@@ -113,13 +151,20 @@ function floatAt(layer,x,y,text,cls){
 }
 function pulse(el,cls){if(!el||FAST)return;el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)}
 
+/* ---------- every action button carries its icon; added in one place, whenever a button appears ---------- */
+var ACTI={go:'swords',no:'undo',wait:'shield',end:'hourglass',again:'flag',buy:'coin',mend:'heart',leavemode:'x','hone-strike':'whet','hone-guard':'whet',march:'road',press:'swords',leave:'undo',back:'arrowR'};
+function decorate(){var l=root.querySelectorAll('.act[data-a]:not(.deco)');for(var i=0;i<l.length;i++){var n=ACTI[l[i].getAttribute('data-a')];l[i].classList.add('deco');if(n)l[i].insertAdjacentHTML('afterbegin','<span class="bi">'+svg(n)+'</span>');else l[i].classList.add('plain')}}
+if(window.MutationObserver)new MutationObserver(decorate).observe(root,{childList:true,subtree:true});
+
 /* ---------- screens ---------- */
 root.innerHTML='<div class="scr map" id="scr-map"><div class="scr-top"><b id="m-name"></b><span class="num" id="m-top"></span></div>'+
   '<div class="boardwrap"><div class="board" id="m-board"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
-  '<div class="scr camp" id="scr-camp" hidden></div><div class="scr clash" id="scr-clash" hidden></div><div class="banner" id="banner" hidden></div>';
+  '<div class="scr camp" id="scr-camp" hidden></div><div class="scr clash" id="scr-clash" hidden></div>'+
+  '<div class="foot"><button type="button" class="tgl" data-toggle="music"></button><button type="button" class="tgl" data-toggle="sound"></button></div><div class="banner" id="banner" hidden></div>';
+root.addEventListener('pointerdown',function(){if(!musStarted){musStarted=true;music()}},true);
 var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
 var $stage,$me,$foe,$intent,$cfx,$vs,$tell,$hand,$choice,$tray,$piles,$ctop;
-function show(which){$map.hidden=which!=='map';$camp.hidden=which!=='camp';$clash.hidden=which!=='clash'}
+function show(which){$map.hidden=which!=='map';$camp.hidden=which!=='camp';$clash.hidden=which!=='clash';music(which==='clash'?'clash':'map')}
 
 /* ---------- the map ---------- */
 function face(u){if(u.side===0)return '<img src="'+A+u.img+'.webp" alt="">';return has(AS.tok,u.key)?'<img src="'+A+'tok-'+u.key+'.webp" alt="">':(u.id==='J'?'K':u.id)}
@@ -137,7 +182,18 @@ var boardKey='',unitEls={};
 function buildBoard(){
   var h='';
   for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y);h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'"></button>'}
-  $board.innerHTML=h;$units.innerHTML='';unitEls={};
+  $board.innerHTML=h;$units.innerHTML='';unitEls={};walkers={};
+}
+/* a move is walked, tile by tile; the rules have already moved him, this only shows it */
+var walkers={};
+function setPos(el,x,y){el.style.left=(x/LH.W*100)+'%';el.style.top=(y/LH.H*100)+'%'}
+function dust(x,y){var el=document.createElement('span');el.className='dust';el.style.left=((x+.5)/LH.W*100)+'%';el.style.top=((y+.82)/LH.H*100)+'%';$mfx.appendChild(el);setTimeout(function(){el.remove()},400)}
+async function walk(u,path){
+  var el=unitEls[u.id];if(FAST||REDUCED||!el||!path||!path.length)return;
+  var tk={},step=ms(Math.max(95,Math.min(150,440/path.length))),fx=el._x,fy=el._y,i;walkers[u.id]=tk;el.classList.add('walk');el.style.transitionDuration=step+'ms';
+  for(i=0;i<path.length;i++){if(fx!==undefined)dust(fx,fy);fx=path[i][0];fy=path[i][1];setPos(el,fx,fy);
+    await new Promise(function(r){setTimeout(r,step)});if(walkers[u.id]!==tk)return}
+  delete walkers[u.id];el.classList.remove('walk');el.style.transitionDuration='';setPos(el,u.x,u.y);el._x=u.x;el._y=u.y;
 }
 var GROUND={'~':'deep water','w':'wood','f':'ford','b':'bridge','d':'road','.':'open ground'};
 function syncUnits(acting){
@@ -146,8 +202,8 @@ function syncUnits(acting){
     var el=unitEls[u.id];
     if(u.hp<=0){if(el){el.classList.add('gone');(function(e){setTimeout(function(){e.remove()},FAST?0:320)})(el);delete unitEls[u.id]}return}
     if(!el){el=unitEls[u.id]=document.createElement('span');el.className='unit';el.setAttribute('data-u',u.id);
-      el.innerHTML='<span class="tok">'+face(u)+'</span><span class="tree '+u.t+'"></span><span class="fxrow"></span><span class="badge num" hidden></span><span class="hpb'+(u.side?' foe':'')+'"><i></i></span>';$units.appendChild(el)}
-    el.style.left=(u.x/LH.W*100)+'%';el.style.top=(u.y/LH.H*100)+'%';
+      el.innerHTML='<span class="tok">'+face(u)+'</span><span class="tree '+u.t+'">'+svg(TREEI[u.t])+'</span><span class="fxrow"></span><span class="badge num" hidden></span><span class="hpb'+(u.side?' foe':'')+'"><i></i></span>';$units.appendChild(el)}
+    if(!walkers[u.id]){setPos(el,u.x,u.y);el._x=u.x;el._y=u.y}
     el.firstChild.className='tok'+(u.side?' foe':'')+(u.boss?' boss':'')+(u===s?' sel':'')+(u.id===acting?' acting':'')+(u===UI.look?' look':'')+(u.side===0&&!LH.canAct(u)?' spent':'')+(u.side&&has(AS.tok,u.key)?' has':'');
     var ic=tokenIcons(LH.effects(G,u)),row=el.children[2];if(row.getAttribute('data-h')!==ic){row.innerHTML=ic;row.setAttribute('data-h',ic)}
     var bd=el.children[3];bd.hidden=!u.guard;if(u.guard)bd.textContent=u.guard;el.classList.toggle('guarded',!!u.guard);
@@ -156,15 +212,15 @@ function syncUnits(acting){
 }
 function renderMap(acting){
   var key=G.run.n+'|'+G.map.name+'|'+runId;if(key!==boardKey){boardKey=key;buildBoard()}
-  var s=UI.sel,can=s&&LH.canAct(s)&&!busy,r=(can&&!s.moved&&!UI.fc)?LH.reach(G,s):{},z=UI.danger?LH.dangerSet(G):{},tg=(can&&!UI.fc)?LH.targets(G,s):[],tt=(can&&!UI.fc)?LH.tendTargets(G,s):[],h='';
+  var s=UI.sel,can=s&&LH.canAct(s)&&!busy,r=(can&&!s.moved&&!UI.fc)?LH.reach(G,s):{},fb=(can&&!s.moved&&!UI.fc)?LH.fallBack(G,s):null,fbk=fb&&LH.fellBack(G,s,fb[0],fb[1])?fb[0]+','+fb[1]:'',z=UI.danger?LH.dangerSet(G):{},tg=(can&&!UI.fc)?LH.targets(G,s):[],tt=(can&&!UI.fc)?LH.tendTargets(G,s):[],h='';
   $mname.textContent=G.map.name;$mtop.innerHTML='Battle '+G.run.n+' of 3 · turn '+G.turn+(G.turn>T.maxTurns-8?' of '+T.maxTurns:'')+' · <span class="spoil">'+svg('coin')+G.run.spoils+'</span>';
   var tiles=$board.children;
   for(var i=0;i<tiles.length;i++){var t=tiles[i],x=+t.getAttribute('data-x'),y=+t.getAttribute('data-y'),k=x+','+y,u=LH.at(G,x,y),c=t.getAttribute('data-t');
-    t.classList.toggle('dz',!!z[k]);t.classList.toggle('reach',!u&&r[k]!==undefined);t.classList.toggle('hit',!!u&&tg.indexOf(u)>=0);t.classList.toggle('mend',!!u&&tt.indexOf(u)>=0);
+    t.classList.toggle('dz',!!z[k]);t.classList.toggle('reach',!u&&r[k]!==undefined);t.classList.toggle('back',!u&&k===fbk);t.classList.toggle('hit',!!u&&tg.indexOf(u)>=0);t.classList.toggle('mend',!!u&&tt.indexOf(u)>=0);
     t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:GROUND[c])}
   syncUnits(acting);
-  h='<div class="legend"><span class="dot foot"></span>Footing beats <span class="dot blade"></span>Blade beats <span class="dot cast"></span>Cast beats Footing. <button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
-  if(G.over&&!G.over.win){
+  h='<div class="legend tri"><span class="trio" title="Footing beats Blade, Blade beats Cast, Cast beats Footing"><span class="tg foot">'+svg('shield')+'Footing</span>'+svg('arrowR')+'<span class="tg blade">'+svg('sword')+'Blade</span>'+svg('arrowR')+'<span class="tg cast">'+svg('cast')+'Cast</span>'+svg('arrowR')+'<span class="tg foot">'+svg('shield')+'</span></span><button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
+  if(G.over&&!G.over.win&&(UI.ended||!busy)){
     if(!UI.ended){UI.ended=true;sfx(G.over.done?'run_won':'run_lost')}
     h+=logBox(G.log)+'<div class="end"><b>'+G.over.t+'</b><span>'+G.over.s+'</span><span class="renown">Renown <b class="num">'+G.run.renown+'</b> · best <span class="num">'+best(G.run.renown)+'</span></span><span class="legend">Spoils kept, 6 for each battle won, 1 for each turn under '+T.par+' in a battle won, 2 for each friend standing at the end, and a little for health.</span><button class="act primary wide" type="button" data-a="again"><b>A new run</b><small>From the first crossing</small></button></div>';
   }else if(UI.fc){
@@ -176,12 +232,14 @@ function renderMap(acting){
       '<div class="acts"><button class="act primary" type="button" data-a="go"><b>Engage</b><small>Play the hand</small></button><button class="act" type="button" data-a="no"><b>Hold</b><small>Think again</small></button></div>';
   }else{
     var info='<span>Tap one of the company. Tap a foe to size him up.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
-    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
+    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
     h+=logBox(G.log)+'<div class="panel info">'+info+'</div>';
     h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
   }
   $rest.innerHTML=h;
 }
+async function turnBanner(text,cls){if(FAST)return;var el=document.createElement('div');el.className='tbanner '+(cls||'');el.textContent=text;$units.parentNode.appendChild(el);
+  await anim(el,[{opacity:0,transform:'translateX(-30%)'},{opacity:1,transform:'translateX(0)',offset:.25},{opacity:1,transform:'translateX(0)',offset:.75},{opacity:0,transform:'translateX(30%)'}],cls?640:560);el.remove()}
 function tileXY(x,y){return [(x+.5)/LH.W*100,(y+.45)/LH.H*100]}
 function flashTile(x,y){if(FAST)return;var u=LH.at(G,x,y);if(u&&unitEls[u.id])pulse(unitEls[u.id],'flash')}
 function tapTile(x,y){
@@ -191,16 +249,17 @@ function tapTile(x,y){
   if(u&&u.side===0&&s&&s.tend&&LH.tendTargets(G,s).indexOf(u)>=0){var r=LH.tend(G,s,u),p=tileXY(u.x,u.y);UI.sel=null;UI.look=null;renderMap();floatAt($mfx,p[0],p[1],'+'+r.heal,'heal');if(r.wound)floatAt($mfx,p[0],p[1]-7,'Wound set aside','heal');sfx('heal');return}
   if(u&&u.side===0){UI.look=null;UI.sel=LH.canAct(u)?(s===u?null:u):null;if(!UI.sel&&!LH.canAct(u))UI.look=u;sfx('unit_select');return renderMap()}
   if(u){if(s&&LH.targets(G,s).indexOf(u)>=0){UI.fc={a:s,d:u};UI.look=null;sfx('forecast_open')}else{UI.look=UI.look===u?null:u;UI.sel=null;sfx('ui_tap')}return renderMap()}
-  if(s&&LH.move(G,s,x,y)){sfx('unit_move');if(!LH.canAct(s))UI.sel=null}else{UI.sel=null;UI.look=null}
+  var pth=s?LH.path(G,s,x,y):[];
+  if(s&&LH.move(G,s,x,y)){sfx('unit_move');walk(s,pth);if(!LH.canAct(s))UI.sel=null}else{UI.sel=null;UI.look=null}
   renderMap();
 }
 async function runEnemy(){
-  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=null;UI.fx=null;sfx('enemy_turn');renderMap();await wait(320);
+  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=null;UI.fx=null;sfx('enemy_turn');renderMap();await turnBanner('Their turn','foe');
   var ev;
   while((ev=LH.enemyStep(G))){
     if(ev.k==='turn'){renderMap();continue}
-    renderMap(ev.id);
-    if(ev.to[0]!==ev.from[0]||ev.to[1]!==ev.from[1]){sfx('unit_move');await wait(300)}
+    var wk=ev.path&&ev.path.length?walk(LH.byId(G,ev.id),ev.path):null;renderMap(ev.id);
+    if(wk){sfx('unit_move');await wk;await wait(90)}
     if(ev.target){
       var t=LH.byId(G,ev.target),p=tileXY(t.x,t.y),e=LH.byId(G,ev.id),q=tileXY(e.x,e.y);
       floatAt($mfx,p[0],p[1],ev.dmg?'-'+ev.dmg:'Held',ev.dmg?'dmg':'blk');sfx(ev.dmg?'hurt':'guard_hold');if(ev.dmg)flashTile(t.x,t.y);
@@ -210,27 +269,54 @@ async function runEnemy(){
       await wait(560);
     }else await wait(ev.pinned||ev.holds?180:120);
   }
-  lock(false);afterMapChange();if(!G.over)sfx('your_turn');
+  lock(false);await afterMapChange();if(!G.over){sfx('your_turn');turnBanner('Your turn')}
+}
+/* ---------- from one scene to the next: a curtain crosses the screen with the name of what comes, and the screen changes behind it ---------- */
+var CURI={march:'road',win:'flag',lost:'x',night:'moon',done:'star'};
+function quiet(fn){var w=busy;busy=false;try{fn()}finally{busy=w}}
+async function curtain(kind,title,sub,swap){
+  if(FAST||REDUCED){quiet(swap);return}
+  var was=busy;lock(true);
+  $banner.className='banner cur cur-'+kind;$banner.innerHTML='<span class="cur-rule a"></span><span class="cur-ring">'+svg(CURI[kind]||'flag')+'</span><b>'+title+'</b>'+(sub?'<i>'+sub+'</i>':'')+'<span class="cur-rule b"></span>';$banner.hidden=false;
+  await anim($banner,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],340,{easing:'cubic-bezier(.7,0,.3,1)'});
+  quiet(swap);await wait(kind==='march'?780:1050);
+  await anim($banner,[{clipPath:'inset(0 0 0 0)'},{clipPath:'inset(0 0 0 100%)'}],340,{easing:'cubic-bezier(.7,0,.3,1)',fill:'forwards'});
+  $banner.hidden=true;still($banner);$banner.className='banner';lock(was);
 }
 /* after anything on the map that might have ended the battle */
-function afterMapChange(){if(G.over&&G.over.win){sfx('battle_won');UI.buy=null;UI.leave=false;show('camp');renderCamp()}else renderMap()}
+function afterMapChange(){
+  if(G.over&&G.over.win){
+    if(!$camp.hidden){renderCamp();return Promise.resolve()}
+    sfx('battle_won');UI.buy=null;UI.leave=false;
+    return curtain('win','The crossing is won',G.map.name+' · '+G.run.spoils+' spoils in the purse',function(){show('camp');renderCamp()})}
+  if(G.over&&!UI.ended){UI.ended=true;sfx(G.over.done?'run_won':'run_lost');
+    return curtain(G.over.done?'done':G.over.night?'night':'lost',G.over.t,G.over.done?'Three crossings, three captains':'The run ends here',function(){show('map');renderMap()})}
+  renderMap();return Promise.resolve();
+}
 
 /* ---------- the camp between battles ---------- */
+function miniMap(m){var h='<span class="mm" aria-hidden="true">';m.rows.forEach(function(r){for(var i=0;i<r.length;i++){var c=r.charAt(i);h+='<i class="'+(c==='w'?'w':c==='~'?'r':c==='f'?'f':c==='d'?'d':c==='b'?'b':'g')+'"></i>'}});return h+'</span>'}
 function renderCamp(){
-  var D=G.u[0],m=G.camp.market,nx=LH.MAPS[G.run.n],sp=G.run.spoils,deck={},h;
+  var D=G.u[0],m=G.camp.market,nx=LH.MAPS[G.run.n],sp=G.run.spoils,deck={},h,co=G.u.filter(function(u){return u.side===0});
   G.run.deck.forEach(function(id){var n=C[id].n+(C[id].r==='honed'?' (honed)':'');deck[n]=deck[n]||{n:0,id:id};deck[n].n++});
-  h='<div class="scr-top"><b>Camp</b><span class="num">After battle '+G.run.n+' of 3 · <span class="spoil">'+svg('coin')+sp+'</span></span></div>'+
-    '<div class="panel"><span class="who"><b>Darrow</b><span class="num">'+D.hp+' / '+D.max+' · a night\'s rest gives '+T.rest+'</span></span>'+bar(D.hp,D.max,'me')+'</div>'+
-    '<span class="lbl">The company offers · one of each</span><div class="hand3">'+m.map(function(id){return cardHTML(id,{tag:'button',price:1,cls:(UI.buy===id?'pick':'')+(C[id].p>sp?' poor':''),attrs:' data-buy="'+id+'"'})}).join('')+(m.length?'':'<span class="legend">Nothing left on the blanket.</span>')+'</div>';
-  if(UI.buy&&m.indexOf(UI.buy)>=0){var c=C[UI.buy];h+='<div class="panel"><span><b>'+c.n+'</b> <span class="lbl">'+c.c+' breath · '+c.k+' · '+TREE[c.t]+'</span></span><span>'+LH.cardText(UI.buy)+'</span></div><div class="acts"><button class="act primary wide" type="button" data-a="buy"'+(c.p>sp?' disabled':'')+'><b>Take it for '+c.p+' spoils</b><small>'+(c.p>sp?'You have '+sp:'It joins the deck for the rest of the run')+'</small></button></div>'}
-  h+='<div class="acts"><button class="act" type="button" data-a="mend"'+(sp<T.mendCost||D.hp>=D.max?' disabled':'')+'><b>Mend · '+T.mendCost+'</b><small>Darrow gets '+T.mend+' back</small></button>'+
-    '<button class="act'+(UI.leave?' on':'')+'" type="button" data-a="leavemode"'+(sp<T.removeCost||G.run.deck.length<=LH.MIN_DECK?' disabled':'')+'><b>Leave one behind · '+T.removeCost+'</b><small>'+(UI.leave?'Now tap a card below':'A leaner deck draws its best cards more often')+'</small></button>'+
-    '<button class="act" type="button" data-a="hone-strike"'+(sp<T.honeCost||G.run.deck.indexOf('strike')<0?' disabled':'')+'><b>Hone a Strike · '+T.honeCost+'</b><small>7 becomes 10</small></button>'+
-    '<button class="act" type="button" data-a="hone-guard"'+(sp<T.honeCost||G.run.deck.indexOf('guard')<0?' disabled':'')+'><b>Hone a Guard · '+T.honeCost+'</b><small>6 becomes 9</small></button></div>';
-  h+='<span class="lbl">The deck · '+G.run.deck.length+' cards</span><div class="decklist'+(UI.leave?' leaving':'')+'">'+Object.keys(deck).sort().map(function(n){return '<button type="button" class="dk" data-leave="'+deck[n].id+'"'+(UI.leave?'':' disabled')+'>'+n+(deck[n].n>1?' ×'+deck[n].n:'')+'</button>'}).join('')+'</div>';
-  h+='<div class="acts"><button class="act primary wide" type="button" data-a="march"><b>March on</b><small>'+nx.name+'. Spoils you keep count toward Renown.</small></button></div>';
+  h='<div class="scr-top"><b>Camp</b><span class="num">After battle '+G.run.n+' of 3</span></div>'+
+    '<div class="camphero"><span class="glow"></span><span class="cfaces">'+co.map(function(u,i){return '<img class="'+(i===Math.floor(co.length/2)?'gap':'')+'" src="'+A+u.img+'.webp" alt="'+esc(u.n)+'">'}).join('')+'</span></div>'+
+    '<div class="stats"><div class="stat gold" id="camp-sp"><span class="si">'+svg('coin')+'</span><b class="num">'+sp+'</b><small>spoils to spend</small></div>'+
+      '<div class="stat"><span class="si">'+svg('heart')+'</span><b class="num">'+D.hp+'<i>/'+D.max+'</i></b><small>Darrow · +'+Math.min(T.rest,D.max-D.hp)+' at dawn</small>'+bar(D.hp,D.max,'me')+'</div>'+
+      '<div class="stat"><span class="si">'+svg('star')+'</span><b class="num">'+LH.renown(G)+'</b><small>renown so far</small></div></div>'+
+    '<span class="lbl sec">'+svg('cart')+'The company offers · one of each</span><div class="hand3">'+m.map(function(id){return cardHTML(id,{tag:'button',price:1,cls:(UI.buy===id?'pick':'')+(C[id].p>sp?' poor':''),attrs:' data-buy="'+id+'"'})}).join('')+(m.length?'':'<span class="legend">Nothing left on the blanket.</span>')+'</div>';
+  if(UI.buy&&m.indexOf(UI.buy)>=0){var c=C[UI.buy];h+='<div class="panel"><span><b>'+c.n+'</b> <span class="lbl">'+c.c+' breath · '+c.k+' · '+TREE[c.t]+'</span></span><span>'+LH.cardText(UI.buy)+'</span></div><div class="acts"><button class="act primary wide" type="button" data-a="buy"'+(c.p>sp?' disabled':'')+'><b>Take it for '+c.p+' spoils</b><small>'+(c.p>sp?'You have '+sp:'Leaves '+(sp-c.p)+'. It joins the deck for the rest of the run')+'</small></button></div>'}
+  h+='<span class="lbl sec">'+svg('whet')+'Mend, hone, travel light</span><div class="acts"><button class="act" type="button" data-a="mend"'+(sp<T.mendCost||D.hp>=D.max?' disabled':'')+'><b>Mend'+price(T.mendCost,sp)+'</b><small>Darrow gets '+T.mend+' back</small></button>'+
+    '<button class="act'+(UI.leave?' on':'')+'" type="button" data-a="leavemode"'+(sp<T.removeCost||G.run.deck.length<=LH.MIN_DECK?' disabled':'')+'><b>Leave one'+price(T.removeCost,sp)+'</b><small>'+(UI.leave?'Now tap a card below':'A leaner deck draws its best more often')+'</small></button>'+
+    '<button class="act" type="button" data-a="hone-strike"'+(sp<T.honeCost||G.run.deck.indexOf('strike')<0?' disabled':'')+'><b>Hone a Strike'+price(T.honeCost,sp)+'</b><small>7 becomes 10</small></button>'+
+    '<button class="act" type="button" data-a="hone-guard"'+(sp<T.honeCost||G.run.deck.indexOf('guard')<0?' disabled':'')+'><b>Hone a Guard'+price(T.honeCost,sp)+'</b><small>6 becomes 9</small></button></div>';
+  h+='<span class="lbl sec">'+svg('deck')+'The deck · '+G.run.deck.length+' cards</span><div class="decklist'+(UI.leave?' leaving':'')+'">'+Object.keys(deck).sort().map(function(n){return '<button type="button" class="dk" data-leave="'+deck[n].id+'"'+(UI.leave?'':' disabled')+'>'+n+(deck[n].n>1?' ×'+deck[n].n:'')+'</button>'}).join('')+'</div>';
+  h+='<div class="marchrow">'+miniMap(nx)+'<button class="act primary" type="button" data-a="march"><b>March on</b><small>'+nx.name+'. Spoils you keep count toward Renown.</small></button></div>';
   $camp.innerHTML=h;
 }
+function price(n,have){return ' <span class="pr num'+(n>have?' short':'')+'">'+svg('coin')+n+'</span>'}
+/* spoils leaving the purse: the number jumps and the cost floats off it */
+function spent(n){var el=$('camp-sp');if(!el||FAST||n<=0)return;pulse(el,'pop');var f=document.createElement('span');f.className='spend num';f.textContent='-'+n;el.appendChild(f);setTimeout(function(){f.remove()},800)}
 
 /* ---------- the clash ---------- */
 function figure(u){
@@ -243,9 +329,9 @@ function figure(u){
 function buildClash(){
   var K=G.clash;
   $clash.innerHTML='<div class="scr-top"><b>The Clash</b><span id="c-top"></span></div>'+
-    '<div class="stage" id="c-stage"><div class="side me" id="c-me">'+figure(K.a)+'</div><div class="side foe" id="c-foe">'+figure(K.d)+'</div><div class="intent" id="c-intent"></div>'+
+    '<div class="stage g-'+({w:'wood',f:'ford',b:'bridge',d:'road'}[LH.ter(G,K.d.x,K.d.y)]||'grass')+'" id="c-stage"><div class="side me" id="c-me">'+figure(K.a)+'</div><div class="side foe" id="c-foe">'+figure(K.d)+'</div><div class="intent" id="c-intent"></div>'+
     (K.p.lend.length?'<div class="linked">'+K.p.lend.map(function(o){return '<img src="'+A+o.img+'.webp" alt="'+o.n+' is with you">'}).join('')+'</div>':'')+
-    '<div class="fxl" id="c-fx"></div><span class="phtag bd">backdrop 16:9</span></div>'+
+    '<div class="fxl" id="c-fx"></div></div>'+
     '<div class="vs" id="c-vs"></div><div class="tell" id="c-tell" aria-live="polite"></div>'+
     '<div class="handwrap"><div class="hand" id="c-hand"></div><div class="choice" id="c-choice" hidden></div></div>'+
     '<div class="tray" id="c-tray"></div><div class="pilelist" id="c-piles" hidden></div>';
@@ -253,7 +339,7 @@ function buildClash(){
   $hand.addEventListener('pointerdown',cardDown);$hand.addEventListener('keydown',cardKey);
   $stage.addEventListener('click',function(){if(!busy&&UI.card>=0)selectCard(-1)});
 }
-function shield(n){return '<span class="sh'+(n?'':' zero')+'" title="Block">'+svg('shield')+'<i class="num">'+n+'</i></span>'}
+function shield(n){return '<span class="sh'+(n?'':' zero')+'" title="Block">'+svg('shield','solid')+'<i class="num">'+n+'</i></span>'}
 function paintVs(){
   var K=G.clash,a=K.a,d=K.d,fx=LH.clashEffects(G);
   $vs.innerHTML='<div><span class="who"><b>'+a.n+'</b><span class="num">'+a.hp+' / '+a.max+'</span></span><div class="hpline">'+shield(K.block)+bar(a.hp,a.max,'me')+'</div>'+fxChips(fx.a.filter(function(e){return e.id!=='block'}),'a')+'</div>'+
@@ -319,11 +405,13 @@ function paintHand(redeal){
 function paintAll(fresh){paintTop();paintVs();paintIntent();paintTray();paintHand(fresh);if(UI.card>=0&&G.clash.hand[UI.card])tellCard(UI.card);else tell('')}
 function selectCard(i){UI.card=i;for(var k=0;k<$hand.children.length;k++)$hand.children[k].classList.toggle('sel',k===i);if(i>=0){sfx('card_lift');tellCard(i)}else tell('')}
 function sideXY(who){return who==='a'?[22,42]:[76,46]}
+function slash(who,heavy){if(FAST||REDUCED)return;var p=sideXY(who),el=document.createElement('span');el.className='slash'+(who==='a'?' flip':'')+(heavy?' heavy':'');el.style.left=p[0]+'%';el.style.top=(p[1]+8)+'%';el.innerHTML='<svg viewBox="0 0 100 100"><path d="M14 84Q70 70 88 14"/></svg>';$cfx.appendChild(el);setTimeout(function(){el.remove()},ms(420))}
+function shake(heavy){anim($stage,[{transform:'translate(0,0)'},{transform:'translate('+(heavy?5:3)+'px,-2px)'},{transform:'translate(-'+(heavy?4:2)+'px,1px)'},{transform:'translate(0,0)'}],heavy?220:160)}
 var STAT_SFX={Broken:'break',Enraged:'enrage'};
 async function showFx(fx){
   for(var j=0;j<fx.length;j++){var f=fx[j],p;
     if(f.k==='dmg'){if(!f.by)anim($me,[{transform:'translateX(0)'},{transform:'translateX(34px)'},{transform:'translateX(0)'}],260);await wait(110);
-      p=sideXY('d');if(f.n>0){floatAt($cfx,p[0],p[1],'-'+f.n,'dmg'+(f.crit?' crit':''));pulse($foe,'hit');sfx(f.n>=8||f.crit?'hit_heavy':'hit_light')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
+      p=sideXY('d');if(f.n>0){slash('d',f.n>=8||f.crit);if(f.n>=8||f.crit)shake(true);floatAt($cfx,p[0],p[1],'-'+f.n,'dmg'+(f.crit?' crit':''));pulse($foe,'hit');sfx(f.n>=8||f.crit?'hit_heavy':'hit_light')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
       if(f.by)floatAt($cfx,p[0],p[1]-20,f.by,'info');
       paintVs();paintIntent();await wait(330)}
     else if(f.k==='block'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'blk');sfx('block_gain');paintVs();pulse($vs.querySelector('.sh'),'pop');await wait(240)}
@@ -344,9 +432,10 @@ async function startClash(a,d){
   if(busy)return;lock(true);
   if(!LH.engage(G,a,d)){lock(false);return renderMap()}
   UI.sel=UI.fc=UI.look=null;UI.card=-1;UI.fx=null;sfx('clash_start');
-  $banner.innerHTML='<b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
+  $banner.className='banner vsb';$banner.innerHTML='<span class="duo"><span class="tok">'+face(a)+'</span>'+svg('swords')+'<span class="tok foe'+(has(AS.tok,d.key)?' has':'')+'">'+face(d)+'</span></span><b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
   await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],620);
   buildClash();show('clash');$banner.hidden=true;paintAll(true);
+  anim($me,[{transform:'translateX(-70px)',opacity:0},{transform:'translateX(0)',opacity:1}],320);anim($foe,[{transform:'translateX(70px)',opacity:0},{transform:'translateX(0)',opacity:1}],320);
   await wait(300+70*G.clash.hand.length);lock(false);
 }
 async function doPlay(i){
@@ -371,7 +460,7 @@ async function doEnd(){
   var fx=LH.endHand(G),ev=fx[0],p=sideXY('a'),q=sideXY('d');paintHand();still($hand);paintTray();tell('');
   if(ev.none){floatAt($cfx,q[0],q[1]-10,'Out of reach','info');await wait(520)}
   else{pulse($intent,'pop');sfx('foe_windup');await anim($foe,[{transform:'translateX(0)'},{transform:'translateX(-40px)'},{transform:'translateX(0)'}],300);
-    if(ev.n>0){floatAt($cfx,p[0],p[1],'-'+ev.n,'dmg');pulse($me,'hit');sfx('hurt')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
+    if(ev.n>0){slash('a',ev.n>=8);shake(ev.n>=8);floatAt($cfx,p[0],p[1],'-'+ev.n,'dmg');pulse($me,'hit');sfx('hurt')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
     paintVs();await wait(620)}
   if(fx.length>1)await showFx(fx.slice(1));
   paintVs();paintIntent();
@@ -385,8 +474,9 @@ async function endClash(){
   var a=G.clash.a;
   await anim($clash,[{opacity:1},{opacity:0}],200,{fill:'forwards'});
   LH.closeClash(G);$clash.innerHTML='';UI.card=-1;UI.fx=null;UI.sel=(!G.over&&LH.canAct(a))?a:null;
-  var was=busy;busy=false;show('map');still($clash);afterMapChange();busy=was;
-  await anim(G.over&&G.over.win?$camp:$map,[{opacity:0},{opacity:1}],200);
+  show('map');still($clash);
+  if(G.over){renderMap();await afterMapChange()}
+  else{quiet(renderMap);await anim($map,[{opacity:0},{opacity:1}],200)}
 }
 function showPile(which){
   var K=G.clash,a=K.a,list=which==='draw'?a.dk.draw:a.dk.disc;
@@ -422,19 +512,19 @@ root.addEventListener('click',function(e){
     if(kv[0]==='m'){UI.fx=UI.fx===i?null:i;return renderMap()}
     if(G.clash){var list=LH.clashEffects(G)[kv[0]].filter(function(x){return x.id!=='block'});if(list[i]){UI.card=-1;for(var k=0;k<$hand.children.length;k++)$hand.children[k].classList.remove('sel');tell('<b>'+list[i].label+'.</b> '+list[i].text)}}return}
   var bu=e.target.closest('[data-buy]');if(bu&&!busy&&LH.inCamp(G)){UI.buy=UI.buy===bu.getAttribute('data-buy')?null:bu.getAttribute('data-buy');UI.leave=false;sfx('card_lift');return renderCamp()}
-  var lv=e.target.closest('[data-leave]');if(lv&&!lv.disabled&&UI.leave&&LH.inCamp(G)){if(LH.campRemove(G,lv.getAttribute('data-leave')))sfx('camp_leave');UI.leave=false;return renderCamp()}
+  var lv=e.target.closest('[data-leave]');if(lv&&!lv.disabled&&UI.leave&&LH.inCamp(G)){var h0=G.run.spoils;if(LH.campRemove(G,lv.getAttribute('data-leave')))sfx('camp_leave');UI.leave=false;renderCamp();return spent(h0-G.run.spoils)}
   var t=e.target.closest('[data-x]');if(t)return tapTile(+t.getAttribute('data-x'),+t.getAttribute('data-y'));
   var b=e.target.closest('button[data-a]');if(!b||b.disabled)return;var a=b.getAttribute('data-a');
   if(a==='dz'){UI.danger=!UI.danger;sfx('ui_tap');return renderMap()}
   if(busy)return;
-  if(a==='again'){sfx('ui_tap');return newRun()}
-  if(LH.inCamp(G)){
+  if(a==='again'){sfx('ui_tap');return curtain('march',LH.MAPS[0].name,'Battle 1 of 3',newRun)}
+  if(LH.inCamp(G)){var had=G.run.spoils;
     if(a==='buy'&&UI.buy){if(LH.campBuy(G,UI.buy))sfx('camp_buy');UI.buy=null}
     else if(a==='mend'){if(LH.campMend(G))sfx('heal')}
     else if(a==='leavemode'){UI.leave=!UI.leave;UI.buy=null;sfx('ui_tap')}
     else if(a==='hone-strike'||a==='hone-guard'){if(LH.campHone(G,a.slice(5)))sfx('camp_hone')}
-    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=null;UI.fx=null;UI.ended=false;sfx('your_turn');show('map');return renderMap()}}
-    return renderCamp();
+    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=null;UI.fx=null;UI.ended=false;sfx('your_turn');curtain('march',G.map.name,'Battle '+G.run.n+' of 3',function(){show('map');renderMap()});return}}
+    renderCamp();return spent(had-G.run.spoils);
   }
   if(a==='go'&&UI.fc)return startClash(UI.fc.a,UI.fc.d);
   if(a==='no'){UI.fc=null;sfx('ui_tap');return renderMap()}
@@ -447,9 +537,11 @@ root.addEventListener('click',function(e){
 window.addEventListener('resize',function(){if(G&&G.clash&&$hand&&!$hand.hidden)fan()});
 
 /* playtest settings, outside the screen */
-function paintPrefs(){var b=document.querySelectorAll('[data-pref]');for(var i=0;i<b.length;i++){var kv=b[i].getAttribute('data-pref').split('=');b[i].setAttribute('aria-pressed',String(String(prefs[kv[0]])===kv[1]))}}
+function paintPrefs(){var b=document.querySelectorAll('[data-pref]');for(var i=0;i<b.length;i++){var kv=b[i].getAttribute('data-pref').split('=');b[i].setAttribute('aria-pressed',String(String(prefs[kv[0]])===kv[1]))}
+  var tg=document.querySelectorAll('[data-toggle]');for(i=0;i<tg.length;i++){var k=tg[i].getAttribute('data-toggle'),none=k==='music'&&!(AS.music&&AS.music.map);tg[i].setAttribute('aria-pressed',String(!!prefs[k]&&!none));tg[i].disabled=none;tg[i].innerHTML=svg(k==='music'?'note':'speaker')+'<span>'+(k==='music'?'Music ':'Sound ')+(none?'to come':prefs[k]?'on':'off')+'</span>'}}
 document.addEventListener('click',function(e){
   if(e.target.closest('[data-newrun]')){if(!busy)newRun();return}
+  var tg=e.target.closest('[data-toggle]');if(tg){var tk=tg.getAttribute('data-toggle');prefs[tk]=!prefs[tk];if(tk==='sound'&&prefs.sound)hear('ui_tap');musStarted=true;savePrefs();paintPrefs();music();return}
   var hb=e.target.closest('[data-hear]');if(hb){hear(hb.getAttribute('data-hear'));return}
   var cp=e.target.closest('[data-copy]');if(cp){var src=$(cp.getAttribute('data-copy')),txt=src?src.textContent:'';
     var doneCopy=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy'},1200)},sel=function(){var r=document.createRange();r.selectNodeContents(src);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent='Selected: copy it'};
@@ -457,11 +549,12 @@ document.addEventListener('click',function(e){
   var b=e.target.closest('[data-pref]');if(!b)return;var kv=b.getAttribute('data-pref').split('=');
   if(kv[0]==='rounds'){prefs.rounds=+kv[1];if(G)G.opts.rounds=prefs.rounds}else if(kv[0]==='quick')prefs.quick=kv[1]==='true';
   else if(kv[0]==='sound'){prefs.sound=kv[1]==='true';if(prefs.sound)hear('your_turn')}
+  else if(kv[0]==='music'){prefs.music=kv[1]==='true';musStarted=true}
   else if(kv[0]==='deck'||kv[0]==='level'){if(busy)return;if(kv[0]==='deck')prefs.deck=kv[1];else prefs.level=+kv[1];savePrefs();paintPrefs();newRun();return}
-  savePrefs();paintPrefs()});
+  savePrefs();paintPrefs();music()});
 (function(){var l=AS.art.map(function(n){return A+n+'.webp'}).concat(AS.fig.map(function(n){return A+'fig-'+n+'.webp'}),AS.tok.map(function(n){return A+'tok-'+n+'.webp'}));window.__pre=l.map(function(u){var im=new Image();im.src=u;return im})})();
 paintPrefs();lock(false);newRun();
-window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,heard:heard,played:played,assets:AS,SFX:SFX};
+window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
 
 /* ---------- lists the page shows: the deck, the camp's cards, the sounds ---------- */
 var gal=$('gallery');
@@ -470,6 +563,8 @@ if(gal){var g='';LH.BASE_DECK.filter(function(id,i,a){return a.indexOf(id)===i})
   ['lH','lH2','lA','lW','lR','lR2'].forEach(function(id){g+=cardHTML(id)});gal.innerHTML=g}
 var mk=$('market-gallery');if(mk)mk.innerHTML=LH.POOL.map(function(id){return cardHTML(id,{price:1})}).join('')+cardHTML('strike2')+cardHTML('guard2')+cardHTML('wound');
 var st=$('sfx-table');if(st)st.innerHTML=SFX.map(function(s){return '<tr><td><code>'+s[0]+'</code>'+(AS.sfx[s[0]]?' <span class="made">made</span>':'')+'</td><td>'+s[1]+'</td><td>'+s[2]+'</td><td class="num">'+s[3]+' s</td><td><button type="button" class="mini2" data-hear="'+s[0]+'">Hear</button></td></tr>'}).join('');
+var gi=document.querySelectorAll('[data-ic]');for(var gk=0;gk<gi.length;gk++)gi[gk].insertAdjacentHTML('afterbegin',svg(gi[gk].getAttribute('data-ic')));
+var mu=document.querySelectorAll('[data-music]');for(var mk2=0;mk2<mu.length;mk2++){var mok=AS.music&&AS.music[mu[mk2].getAttribute('data-music')];mu[mk2].insertAdjacentHTML('afterend',' <span class="'+(mok?'made':'todo')+'">'+(mok?'made':'to make')+'</span>')}
 var sc=$('sfx-count');if(sc)sc.textContent=SFX.length;
 var sm=$('sfx-made');if(sm)sm.textContent=Object.keys(AS.sfx).length;
 var who=document.querySelectorAll('[data-who]');for(var wi=0;wi<who.length;wi++){var wk=who[wi].getAttribute('data-who'),f1=has(AS.fig,wk),t1=has(AS.tok,wk);who[wi].insertAdjacentHTML('beforeend',' <span class="'+(f1&&t1?'made':'todo')+'">'+(f1&&t1?'figure and token made':f1?'figure made, token to make':t1?'token made, figure to make':'to make')+'</span>')}

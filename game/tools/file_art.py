@@ -5,9 +5,10 @@
                                                                        the way the Wardrobe does it (engine/looks.py), cut to 2:3
   python3 game/tools/file_art.py token  NAME PICTURE                   a square portrait for the map token
   python3 game/tools/file_art.py sound  NAME FILE                      a sound, by its name in the game's list (game/README.md)
+  python3 game/tools/file_art.py music  NAME FILE                      background music: NAME is map (the map and the camp) or clash
 
 NAME for a picture is who it shows (pikeman, swordsman, crossbowman, skirmisher, shieldbearer, bannerman, captain, or one of
-the company: hollis, ash, wren, rae). Pictures land in game/art/figures/ and game/art/tokens/ as WebP, sounds in game/sfx/.
+the company: hollis, ash, wren, rae). Pictures land in game/art/figures/ and game/art/tokens/ as WebP, sounds in game/sfx/, music in game/music/.
 Then: python3 game/build.py, and the game shows or plays them. The foes are not the Chronicle's: nothing here goes in saga/art/.
 """
 import argparse
@@ -23,6 +24,7 @@ GAME = ROOT / "game"
 sys.path.insert(0, str(ROOT / "engine"))
 WHO = ["pikeman", "swordsman", "crossbowman", "skirmisher", "shieldbearer", "bannerman", "captain", "hollis", "ash", "wren", "rae"]
 SOUND_EXT = [".mp3", ".ogg", ".m4a", ".wav", ".opus"]
+MUSIC = ["map", "clash"]
 
 
 def die(msg):
@@ -35,7 +37,7 @@ def sounds():
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("kind", choices=["figure", "token", "sound"])
+    ap.add_argument("kind", choices=["figure", "token", "sound", "music"])
     ap.add_argument("name")
     ap.add_argument("file")
     ap.add_argument("--preview", help="for a figure: a folder for two previews of the cut-out")
@@ -43,16 +45,18 @@ def main():
     src = Path(a.file)
     if not src.is_file():
         die(f"no such file: {src}")
-    if a.kind == "sound":
-        names = sounds()
+    if a.kind in ("sound", "music"):
+        names = sounds() if a.kind == "sound" else MUSIC
+        folder = GAME / ("sfx" if a.kind == "sound" else "music")
         if a.name not in names:
-            die(f"'{a.name}' is not a sound the game plays. The list: {', '.join(names)}")
+            die(f"'{a.name}' is not a {a.kind} name the game plays. The list: {', '.join(names)}")
         if src.suffix.lower() not in SOUND_EXT:
             die(f"a sound is one of {', '.join(SOUND_EXT)}")
-        out = GAME / "sfx" / (a.name + src.suffix.lower())
+        folder.mkdir(exist_ok=True)
+        out = folder / (a.name + src.suffix.lower())
         if src.resolve() != out.resolve():
             shutil.copyfile(src, out)
-        for old in (GAME / "sfx").glob(a.name + ".*"):  # one file a sound: an earlier take in another format goes
+        for old in folder.glob(a.name + ".*"):  # one file a sound: an earlier take in another format goes
             if old.resolve() != out.resolve():
                 old.unlink()
         print(f"filed {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")

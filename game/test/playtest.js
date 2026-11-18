@@ -94,7 +94,7 @@ function turn(G, st) {
     const tt = LH.tendTargets(G, R).sort((a, b) => (b.max - b.hp + LH.wounds(b) * 6) - (a.max - a.hp + LH.wounds(a) * 6));
     if (tt.length && (tt[0].max - tt[0].hp >= T.tend || LH.wounds(tt[0]))) { LH.tend(G, R, tt[0]); st.s.tends++; } else LH.hold(G, R); }
 }
-const WANT = ['bloodup', 'steady', 'digin', 'secondwind', 'follow', 'finish', 'hew', 'twice', 'bellow', 'callco', 'closeup', 'legs', 'stitch', 'pinshot', 'bandage', 'readline', 'strip', 'worry', 'stone', 'count', 'spoils'];
+const WANT = ['bloodup', 'steady', 'digin', 'secondwind', 'hewT', 'follow', 'finish', 'twice', 'closeup', 'pinshot', 'callco', 'strip', 'readline', 'bellow', 'stitch', 'bandage', 'legs', 'spoils'];
 function camp(G, st, policy) { const D = G.u[0]; let n = 0;
   while (n++ < 20) { if (policy === 'none') break;
     if (D.hp <= 34 && LH.campMend(G)) { st.s.mends++; continue; }

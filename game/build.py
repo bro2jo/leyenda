@@ -35,11 +35,12 @@ HEAD = """<title>The Line and the Hand</title>
 
 def main():
     if DIST.exists():
-        for old in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")):
+        for old in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")) + list((DIST / "music").glob("*")):
             old.unlink()
     (DIST / "art").mkdir(parents=True, exist_ok=True)
     (DIST / "sfx").mkdir(parents=True, exist_ok=True)
-    assets = {"art": [], "fig": [], "tok": [], "sfx": {}}
+    (DIST / "music").mkdir(parents=True, exist_ok=True)
+    assets = {"art": [], "fig": [], "tok": [], "sfx": {}, "music": {}}
     for name, rel in sorted(SITE_ART.items()):
         if (THUMBS / rel).is_file():
             shutil.copyfile(THUMBS / rel, DIST / "art" / f"{name}.webp")
@@ -53,14 +54,17 @@ def main():
     for f in sorted((GAME / "sfx").glob("*.*")):
         shutil.copyfile(f, DIST / "sfx" / f.name)
         assets["sfx"][f.stem] = f"sfx/{f.name}"
+    for f in sorted((GAME / "music").glob("*.*")):  # background music: one track for the map and camp, one for the clash
+        shutil.copyfile(f, DIST / "music" / f.name)
+        assets["music"][f.stem] = f"music/{f.name}"
     page = (HEAD + "<style>\n" + (SRC / "style.css").read_text(encoding="utf-8") + "</style>\n\n" + (SRC / "page.html").read_text(encoding="utf-8")
             + "\n<script>window.LH_ASSETS=" + json.dumps(assets, separators=(",", ":")) + "</script>\n"
             + "<script>\n" + (SRC / "engine.js").read_text(encoding="utf-8") + "</script>\n<script>\n" + (SRC / "ui.js").read_text(encoding="utf-8") + "</script>\n")
     (DIST / "line-and-hand.html").write_text(page, encoding="utf-8")
-    files = sorted(str(p.relative_to(DIST)) for p in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")))
+    files = sorted(str(p.relative_to(DIST)) for p in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")) + list((DIST / "music").glob("*")))
     (DIST / "files.json").write_text(json.dumps(files, indent=1), encoding="utf-8")
     print(f"built game/dist/line-and-hand.html ({len(page) // 1024} KB) · {len(assets['art'])} site pictures, {len(assets['fig'])} figures, "
-          f"{len(assets['tok'])} tokens, {len(assets['sfx'])} sounds")
+          f"{len(assets['tok'])} tokens, {len(assets['sfx'])} sounds, {len(assets['music'])} music tracks")
 
 
 if __name__ == "__main__":
