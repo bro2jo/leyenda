@@ -80,6 +80,32 @@ CP.ORDER.forEach(function(id){
   /* doing nothing must not win, where there is a way to lose */
   if(M.lose){var I=run(id,5,function(){});ok(!I.over||I.cs.result!=='won'||id==='c4b'||id==='c7','standing still does not win: '+(I.cs.result||'still going'))}
 });
+/* the fire: what he buys with stars goes into the fights told larger than the page, and nowhere else */
+(function(){if(only)return;var C=LH.C,T=CP.ORDER.filter(function(id){return !!CP.MS[id].tall});
+  ok(CP.PACK===3&&CP.SHOP.length>=12&&CP.SHOP.every(function(id){return C[id]&&C[id].p>0&&!C[id].spoil&&!C[id].spoilKill}),'the fire offers camp cards, and none that only pay spoils');
+  ok(T.length===3,'three fights are told larger than the page');
+  T.forEach(function(id){var base=CP.start(id,{seed:1}).u[0].deck.length,G=CP.start(id,{seed:1,pack:['digin','bloodup','callco','twice','spoils']}),D=G.u[0];
+    ok(D.deck.length===base+3&&D.deck.indexOf('digin')>=0&&D.deck.indexOf('bloodup')>=0&&D.deck.indexOf('callco')>=0&&D.deck.indexOf('twice')<0,id+': the pack goes in, three cards and no more');
+    ok(D.dk.draw.length===D.deck.length,id+': and is shuffled into the pile');
+    var kinds={},trees={};G.u.forEach(function(u){if(u.side===1&&u.hp>0){kinds[u.type]=1;trees[u.t]=1}});
+    ok(Object.keys(kinds).length>=3&&Object.keys(trees).length>=2,id+': more than one kind of foe, of more than one tree ('+Object.keys(kinds).join(', ')+')');
+    ok(G.u.some(function(u){return u.side===1&&u.rally}),id+': one of them makes the others strike harder');
+    ok(D.deck.indexOf('c_far1')>=0,id+': he has the Far Cast, learned under the House')});
+  CP.ORDER.filter(function(id){return !CP.MS[id].tall}).forEach(function(id){var a=CP.start(id,{seed:1}).u[0].deck||[],b=CP.start(id,{seed:1,pack:['digin','bloodup']}).u[0].deck||[];ok(a.join()===b.join(),id+': the page\'s own scene keeps the page\'s deck')});
+  /* difficulty: one step on what a foe deals and how long a man stands; the length of an ordeal is the page's */
+  var n0=CP.start('c5b',{seed:1}),h1=CP.start('c5b',{seed:1,level:1}),g1=CP.start('c5b',{seed:1,level:-1}),s0=n0.u.filter(function(u){return u.type==='sergeant'})[0],s1=h1.u.filter(function(u){return u.type==='sergeant'})[0],sg=g1.u.filter(function(u){return u.type==='sergeant'})[0];
+  ok(s1.atk===s0.atk+2&&s1.max>s0.max&&s1.ans[0].d===s0.ans[0].d+2,'Hard: a foe strikes 2 harder and stands longer');ok(sg.atk===s0.atk-2&&sg.max<s0.max&&sg.ans[0].d===s0.ans[0].d-2,'Gentle: the other way');
+  var o0=CP.start('p1',{seed:1}),o1=CP.start('p1',{seed:1,level:1}),a0=o0.u.filter(function(u){return u.ordeal})[0],a1=o1.u.filter(function(u){return u.ordeal})[0];
+  ok(a1.max===a0.max&&a1.ans[0].d===a0.ans[0].d+2,'an ordeal is no longer on Hard, only harder on him');
+  CP.ORDER.forEach(function(id){var G=CP.start(id,{seed:1,level:-1});ok(G.u.every(function(u){return u.side!==1||(u.atk>=0&&u.ans.every(function(x){return x.d>=1}))}),id+': Gentle never takes a blow below 1')});
+  /* words */
+  ok(CP.say(CP.start('p1',{seed:1}),'Their turn')==='Time passes'&&CP.say(CP.start('c5b',{seed:1}),'Their turn')==='Their turn','against a hall, time passes; against men, it is their turn');
+  ok(CP.say(CP.start('c5b',{seed:1}),'Banner')==='The horn'&&CP.say(CP.start('c5c',{seed:1}),'The banner is up: he strikes 2 harder.').indexOf('A name is being read')===0,'what rallies them is named for the mission');
+  /* a full pack should help in the hardest of them */
+  var w0=0,w1=0,N=30;for(var sd=1;sd<=N;sd++){var A=CP.start('c5b',{seed:sd*13+5}),n=0;while(!A.over&&n++<40){PLAN.c5b(A);endTurn(A)}if(A.cs.result==='won')w0++;
+    var B=CP.start('c5b',{seed:sd*13+5,pack:['hewT','follow','closeup']});n=0;while(!B.over&&n++<40){PLAN.c5b(B);endTurn(B)}if(B.cs.result==='won')w1++}
+  console.log('the yard, simple player: '+w0+'/'+N+' with the page\'s deck, '+w1+'/'+N+' with Hollis\'s Hew, Follow Through and Close Up in the pack');ok(w1>=w0,'a pack from the fire does not make the yard harder ('+w0+' -> '+w1+')');
+})();
 /* someone a mission holds to his place has no move at all: not even the step back through a friend that the game allows */
 CP.ORDER.forEach(function(id){if(only&&only!==id)return;var G=CP.start(id,{seed:2});G.u.forEach(function(u){if(u.side===0&&u.hp>0&&!(u.mov>0))ok(Object.keys(LH.reach(G,u)).length===1,id+': '+u.n+' cannot move, and has nowhere to move to')})});
 console.log(fails?fails+' of '+checks+' checks failed':'all '+checks+' checks passed');process.exit(fails?1:0);

@@ -22,7 +22,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent.parent
 GAME = ROOT / "game"
 sys.path.insert(0, str(ROOT / "engine"))
-WHO = ["pikeman", "swordsman", "crossbowman", "skirmisher", "shieldbearer", "bannerman", "captain", "hollis", "ash", "wren", "rae"]
+WHO = ["pikeman", "swordsman", "crossbowman", "skirmisher", "shieldbearer", "bannerman", "captain", "hollis", "ash", "wren", "rae",
+       # the campaign's own (game/build_campaign.py)
+       "sergeant", "pitchfork", "hornboy", "greycloak", "lymer", "guest", "darkcoat", "rider", "walker", "brother", "ysra-tal"]
 SOUND_EXT = [".mp3", ".ogg", ".m4a", ".wav", ".opus"]
 MUSIC = ["map", "clash"]
 

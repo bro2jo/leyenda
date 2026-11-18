@@ -73,7 +73,13 @@ var FD={
   shins:{n:'The Shins',key:'steps',t:'foot',hp:20,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:12},{b:0,d:12}]},
   /* for the fights told larger than the page tells them */
   pike:{n:'Levy Pike',key:'pikeman',t:'foot',hp:20,mov:2,rng:1,atk:6,ans:[{b:5,d:8},{b:0,d:11}]},
-  sergeant:{n:'Levy Sergeant',key:'swordsman',t:'blade',hp:38,mov:2,rng:1,atk:9,enrage:3,ans:[{b:6,d:11},{b:0,d:14}]},
+  pitch:{n:'Boy with a Pitchfork',key:'pitchfork',t:'cast',hp:16,mov:2,rng:2,atk:6,ans:[{b:0,d:7},{b:0,d:9}]},          /* reaches two tiles; Cast, so Hollis is his answer */
+  horn:{n:'Boy with the Horn',key:'hornboy',t:'foot',hp:16,mov:2,rng:1,atk:4,rally:1,ans:[{b:3,d:5},{b:4,d:4}]},      /* while he stands, the others strike harder */
+  lymer:{n:'Lymer',key:'lymer',t:'cast',hp:18,mov:4,rng:1,atk:7,ans:[{b:0,d:4,n:2},{b:0,d:3,n:3}]},                 /* the grey cloaks' hound: quick, and it bites more than once */
+  lister:{n:'Grey Cloak with the List',key:'greycloak',t:'blade',hp:28,mov:2,rng:1,atk:8,rally:1,ans:[{b:4,d:9},{b:0,d:11}]},
+  darkmail:{n:'Dark Coat in Mail',key:'darkcoat',t:'foot',hp:34,mov:3,rng:1,atk:10,tough:2,ans:[{b:5,d:10},{b:0,d:13}]},
+  darklead:{n:'First Rider',key:'darkcoat',t:'blade',hp:34,mov:4,rng:1,atk:11,rally:1,enrage:3,ans:[{b:0,d:12},{b:6,d:10}]},
+  sergeant:{n:'Levy Sergeant',key:'sergeant',t:'blade',hp:38,mov:2,rng:1,atk:9,enrage:3,ans:[{b:6,d:11},{b:0,d:14}]},
   cloak:{n:'Grey Cloak',key:'greycloak',t:'blade',hp:34,mov:3,rng:1,atk:11,ans:[{b:0,d:13},{b:5,d:11}]},
   darkcoat:{n:'Dark Coat',key:'darkcoat',t:'blade',hp:32,mov:4,rng:1,atk:11,ans:[{b:0,d:8,n:2},{b:0,d:6,n:3}]},
   rider:{n:'Outrider',key:'rider',t:'blade',hp:30,mov:0,rng:0,atk:1,scripted:1,ans:[{b:0,d:1}]},
@@ -81,6 +87,9 @@ var FD={
   walker:{n:'Walker',key:'walker',t:'foot',hp:22,mov:1,rng:1,atk:7,barbed:1,ans:[{b:0,d:12},{b:0,d:15}]}
 };
 FOES.Z=FD.Z;
+
+/* ---------- the fire: camp cards he may carry into the larger fights, paid for in stars ---------- */
+var PACK=3,SHOP=LH.POOL.filter(function(id){return !C[id].spoil&&!C[id].spoilKill});
 
 /* ---------- small tools ---------- */
 function lcg(seed){var s=(seed|0)||1;return function(n){s=(Math.imul(s,1664525)+1013904223)|0;return ((s>>>8)%n+n)%n}}
@@ -121,17 +130,19 @@ function dress(G,u,p){
 }
 function start(id,opts){
   var M=MS[id];if(!M)throw new Error('no such mission: '+id);opts=opts||{};
+  var lvl=opts.level!==undefined?opts.level:(CP.level||0),pack=M.tall?(opts.pack||CP.pack||[]).filter(function(c){return SHOP.indexOf(c)>=0}).slice(0,PACK):[];
   var pos={},keys=[],fl=[['Z',0,0]];['D','H','A','W','R'].forEach(function(k){pos[k]=(M.party[k]&&M.party[k].at)||[0,0]});
   (M.foes||[]).forEach(function(f,i){var key=f.k+'_'+i;FOES[key]=FD[f.k];keys.push(key);fl.push([key,f.at?f.at[0]:0,f.at?f.at[1]:0])});
   var keep=LH.MAPS[0],G;LH.MAPS[0]={name:M.map.name,rows:M.map.rows,pos:pos,foes:fl};
   try{G=O.newRun({seed:opts.seed,rounds:M.rounds||1,level:0,deck:['c_brace']})}finally{LH.MAPS[0]=keep;keys.forEach(function(k){delete FOES[k]})}
-  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
+  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null,level:lvl,pack:pack};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
   /* the marker captain: off the board, on nobody's side */
   var z=U(G,'Z');z.side=2;z.x=-9;z.y=-9;
   /* the foes, with the mission's own numbers */
   var gone=[];
   (M.foes||[]).forEach(function(f,i){var u=U(G,f.k+'_'+i),d=FD[f.k];u.type=f.k;u.hp=u.max=d.hp;u.atk=d.atk;u.ans=d.ans.map(function(x){return {b:x.b||0,d:x.d,n:x.n||1}});
     for(var k in f)if(k!=='k'&&k!=='at'&&k!=='tpl')u[k]=f[k];if(f.hp)u.max=f.hp;
+    if(lvl&&!d.scripted){u.ans.forEach(function(x){x.d=Math.max(1,x.d+(x.n>1?1:2)*lvl)});if(!d.ordeal){u.atk=Math.max(1,u.atk+2*lvl);u.hp=u.max=Math.max(1,Math.round(u.max*(1+.1*lvl)))}}
     if(f.tpl){G.tpl[f.k]=clone(u);gone.push(u)}});
   /* the company: who is here, and what each can do in this chapter */
   var tplR=clone(U(G,'R')),tplW=clone(U(G,'W'));
@@ -139,6 +150,8 @@ function start(id,opts){
   (M.party.more||[]).forEach(function(p){var u=clone(p.from==='R'?tplR:tplW);u.id=p.id;u.fights=0;u.guard=0;u.bank=0;dress(G,u,p);G.u.splice(G.u.indexOf(z),0,u)});
   G.u=G.u.filter(function(u){return gone.indexOf(u)<0});
   if(!M.party.D.hp)G.u[0].hp=G.u[0].max;
+  /* what he bought at the fire goes with him into the fights told larger than the page, and nowhere else */
+  if(pack.length)setDeck(G,G.u[0],G.u[0].deck.concat(pack),M.party.D.first);
   G.log=[[M.open||'','',1]];CUR=G;
   if(M.on&&M.on.start)M.on.start(G,G.cs,api);
   rest(G);relog(G);return G;
@@ -157,6 +170,9 @@ function rules(M){
   var cv=COVER[M.map.theme];if(cv)r.push([/\b([Ii])n the wood\b/g,function(m,i){return (i==='I'?cv.charAt(0).toUpperCase():cv.charAt(0))+cv.slice(1)}]);
   (PRO[M.pro]||[]).forEach(function(p){r.push(p)});
   (M.say||[]).forEach(function(p){r.push(p)});
+  r.push([/^Their turn(\.?)$/,function(m,d){return (M.their||(M.pro==='it'?'Time passes':'Their turn'))+d}]);
+  if(M.pro==='it')r.push([/^They move$/,'Nothing here waits for him']);
+  if(M.rally)r.push([/\bThe banner is up\b/g,M.rally[1]],[/^Banner$/,M.rally[0]]);
   r.push([/A man down\. /g,''],[/ is down\./g,' '+(M.down||'gives way')+'.'],[/They hold where they stand\./g,M.idle||''],[/The run ends here\.?/g,''],[/Three crossings, three captains/g,'']);
   r.push([/\bwill (strike|brace|pull|wear|press|tell|climb)s\b/g,'will $1']);
   return RULES[M.id]=r;
@@ -193,7 +209,8 @@ function rest(G){G.u.forEach(function(u){if(u.still&&u.side===0){u.attacked=true
 function after(G){CUR=G;relog(G);check(G)}
 
 /* ---------- the wrapped moves. Each does what the engine does, then lets the mission look at the board. ---------- */
-LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,opts)}return O.newRun(opts)};
+/* the game's own settings (its difficulty, its try-everything deck) are for a run of the game: a mission takes only the seed */
+LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,{seed:opts&&opts.seed})}return O.newRun(opts)};
 LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){ev(G,'moved',u);after(G)}return r};
 LH.hold=function(G,u){var r=O.hold(G,u);if(r&&G.ms){ev(G,'held',u);after(G)}return r};
 LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms)after(G);return r};
@@ -215,7 +232,7 @@ LH.enemyStep=function(G){
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={pending:null,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={pending:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},

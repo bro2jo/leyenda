@@ -48,7 +48,7 @@
 .cp-h,.cp-hint{color:var(--ink);font-size:.86rem;border-left:2px solid var(--brass);padding-left:8px}
 .cp-hint{background:rgba(15,18,23,.6);padding:6px 8px;border-radius:0 6px 6px 0;line-height:1.3}
 .cp-quit{justify-self:center;font-size:.8rem;opacity:.7}
-#game[data-cp] .end,#game[data-cp] [data-a="again"],#game[data-cp] .unit[data-u="Z"],#game[data-cp] .legend.tri .trio{display:none}
+#game[data-cp] .end,#game[data-cp] [data-a="again"],#game[data-cp] .unit[data-u="Z"],#game[data-cp]:not([data-co]) .legend.tri .trio{display:none}
 #game[data-cp] .tile[data-mark]::before{content:"";position:absolute;inset:3px;border-radius:6px;z-index:0;pointer-events:none}
 #game[data-cp] .tile[data-mark="go"]::before{box-shadow:inset 0 0 0 2px var(--brass-hi),0 0 12px rgba(235,207,150,.6);animation:breathe 1.5s ease-in-out infinite}
 #game[data-cp] .tile[data-mark="keep"]::before{box-shadow:inset 0 0 0 2px var(--good)}
@@ -74,6 +74,20 @@
 .todo-grid b{display:block;color:var(--brass-hi)}
 #game[data-th="yard"] .tile{background-color:#4B4336;background-image:radial-gradient(circle at 30% 30%,rgba(0,0,0,.14) 0 12%,transparent 13%),radial-gradient(circle at 70% 70%,rgba(0,0,0,.12) 0 10%,transparent 11%);background-size:100% 100%}
 #game[data-th="yard"] .tile.w{background-color:#B59A52;background-image:repeating-linear-gradient(100deg,rgba(0,0,0,.16) 0 2px,transparent 2px 7px);background-size:100% 100%}
+/* ---- the fire: the game's camp, kept small ---- */
+.cp-topacts{display:flex;gap:6px}
+.cp-dim{color:var(--dim);font-size:.86rem}
+.cp-row.tall .cp-n{border:1px solid var(--brass-dim);border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font-size:1.1rem}
+.cp.fire .hand3{gap:6px}
+.cp.fire .card{font-size:14px;text-align:left}
+.cp.fire .card.owned{box-shadow:0 0 0 1px var(--brass)}
+.card .price.star{color:var(--brass-hi);gap:2px;padding:0 6px}
+.card.poor .price.star{color:#FF9478}
+.cp-pick{gap:7px}
+.cp-pick .act{margin-top:2px}
+.cp-gain{color:var(--brass-hi)!important;font-size:.9rem!important}
+.cp .stat .si{font-size:13px;color:var(--brass)}
+.cp .lbl.sec{margin-top:6px}
 /* ---- the ground behind a clash, by the mission it is fought in (the game's own are the three grounds of a run) ---- */
 #game[data-th="hall"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232E3138'/%3E%3Cstop offset='1' stop-color='%233A3D45'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2344474D'/%3E%3Cstop offset='1' stop-color='%232B2D32'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%23F4C56A' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23F4C56A' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg fill='%2314161B'%3E%3Cpath d='M118 116V58q0-26 26-26t26 26v58z'/%3E%3Cpath d='M190 116V58q0-26 26-26t26 26v58z'/%3E%3C/g%3E%3Cg fill='%23F4C56A'%3E%3Cpath d='M180 70c2 4 4 6 4 10a4 4 0 01-8 0c0-4 2-6 4-10z'/%3E%3C/g%3E%3Crect x='178' y='84' width='4' height='14' fill='%23C9B38A'/%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}
 #game[data-th="under"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231E2430'/%3E%3Cstop offset='1' stop-color='%232A3242'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232F3540'/%3E%3Cstop offset='1' stop-color='%231B1F27'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%238BB2D3' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%238BB2D3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg opacity='.5'%3E%3Cpath d='M96 20h168v70H96z' fill='%233A4A63'/%3E%3Cpath d='M96 20h168v70H96z' fill='none' stroke='%238A7044' stroke-width='2'/%3E%3Ccircle cx='150' cy='52' r='12' fill='%237B5A8A'/%3E%3Cpath d='M190 78l14-34 14 34z' fill='%238A7044'/%3E%3Cpath d='M228 40h20v38h-20z' fill='%234E6B58'/%3E%3C/g%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}

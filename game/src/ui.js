@@ -239,7 +239,7 @@ function renderMap(acting){
   $rest.innerHTML=h;
 }
 async function turnBanner(text,cls){if(FAST)return;var el=document.createElement('div');el.className='tbanner '+(cls||'');el.textContent=text;$units.parentNode.appendChild(el);
-  await anim(el,[{opacity:0,transform:'translateX(-30%)'},{opacity:1,transform:'translateX(0)',offset:.25},{opacity:1,transform:'translateX(0)',offset:.75},{opacity:0,transform:'translateX(30%)'}],cls?640:560);el.remove()}
+  await anim(el,[{opacity:0,transform:'translateX(-30%)'},{opacity:1,transform:'translateX(0)',offset:.25},{opacity:1,transform:'translateX(0)',offset:.75},{opacity:0,transform:'translateX(30%)'}],cls?560:500);el.remove()}
 function tileXY(x,y){return [(x+.5)/LH.W*100,(y+.45)/LH.H*100]}
 function flashTile(x,y){if(FAST)return;var u=LH.at(G,x,y);if(u&&unitEls[u.id])pulse(unitEls[u.id],'flash')}
 function tapTile(x,y){
@@ -276,11 +276,14 @@ var CURI={march:'road',win:'flag',lost:'x',night:'moon',done:'star'};
 function quiet(fn){var w=busy;busy=false;try{fn()}finally{busy=w}}
 async function curtain(kind,title,sub,swap){
   if(FAST||REDUCED){quiet(swap);return}
-  var was=busy;lock(true);
+  var was=busy,skip=null,ease='cubic-bezier(.7,0,.3,1)';lock(true);
   $banner.className='banner cur cur-'+kind;$banner.innerHTML='<span class="cur-rule a"></span><span class="cur-ring">'+svg(CURI[kind]||'flag')+'</span><b>'+title+'</b>'+(sub?'<i>'+sub+'</i>':'')+'<span class="cur-rule b"></span>';$banner.hidden=false;
-  await anim($banner,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],340,{easing:'cubic-bezier(.7,0,.3,1)'});
-  quiet(swap);await wait(kind==='march'?780:1050);
-  await anim($banner,[{clipPath:'inset(0 0 0 0)'},{clipPath:'inset(0 0 0 100%)'}],340,{easing:'cubic-bezier(.7,0,.3,1)',fill:'forwards'});
+  await anim($banner,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],300,{easing:ease});
+  quiet(swap);
+  /* it holds long enough to be read, and a tap sends it on */
+  await new Promise(function(r){var t=setTimeout(r,ms(kind==='march'?560:800));skip=function(){clearTimeout(t);r()};setTimeout(function(){$banner.onclick=skip},ms(140))});
+  $banner.onclick=null;
+  await anim($banner,[{clipPath:'inset(0 0 0 0)'},{clipPath:'inset(0 0 0 100%)'}],300,{easing:ease,fill:'forwards'});
   $banner.hidden=true;still($banner);$banner.className='banner';lock(was);
 }
 /* after anything on the map that might have ended the battle */
@@ -413,7 +416,7 @@ async function showFx(fx){
     if(f.k==='dmg'){if(!f.by)anim($me,[{transform:'translateX(0)'},{transform:'translateX(34px)'},{transform:'translateX(0)'}],260);await wait(110);
       p=sideXY('d');if(f.n>0){slash('d',f.n>=8||f.crit);if(f.n>=8||f.crit)shake(true);floatAt($cfx,p[0],p[1],'-'+f.n,'dmg'+(f.crit?' crit':''));pulse($foe,'hit');sfx(f.n>=8||f.crit?'hit_heavy':'hit_light')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
       if(f.by)floatAt($cfx,p[0],p[1]-20,f.by,'info');
-      paintVs();paintIntent();await wait(330)}
+      paintVs();paintIntent();await wait(270)}
     else if(f.k==='block'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'blk');sfx('block_gain');paintVs();pulse($vs.querySelector('.sh'),'pop');await wait(240)}
     else if(f.k==='heal'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'heal');sfx('heal');paintVs();await wait(240)}
     else if(f.k==='breath'){p=sideXY('a');floatAt($cfx,p[0],p[1]+18,'+'+f.n+' breath','info');sfx('breath_gain');paintTray();pulse($('c-orb'),'pop');await wait(220)}
@@ -425,7 +428,7 @@ async function showFx(fx){
     else if(f.k==='spoils'){p=sideXY('d');floatAt($cfx,50,30,'+'+f.n+' spoils','gold');sfx('spoils');await wait(260)}
     else if(f.k==='carry'){floatAt($cfx,88,30,'-'+f.n+' beside him','dmg');sfx('hit_heavy');if(f.down)sfx('foe_down');await wait(320)}
     else if(f.k==='wound'){p=sideXY('a');floatAt($cfx,p[0],p[1]-18,'Wound','bad');sfx('wound');paintVs();await wait(300)}
-    else if(f.k==='down'){(f.who==='d'?$foe:$me).classList.add('fallen');sfx(f.who==='d'?'foe_down':'friend_down');await wait(520)}
+    else if(f.k==='down'){(f.who==='d'?$foe:$me).classList.add('fallen');sfx(f.who==='d'?'foe_down':'friend_down');await wait(440)}
   }
 }
 async function startClash(a,d){
@@ -433,10 +436,10 @@ async function startClash(a,d){
   if(!LH.engage(G,a,d)){lock(false);return renderMap()}
   UI.sel=UI.fc=UI.look=null;UI.card=-1;UI.fx=null;sfx('clash_start');
   $banner.className='banner vsb';$banner.innerHTML='<span class="duo"><span class="tok">'+face(a)+'</span>'+svg('swords')+'<span class="tok foe'+(has(AS.tok,d.key)?' has':'')+'">'+face(d)+'</span></span><b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
-  await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],620);
+  await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],560);
   buildClash();show('clash');$banner.hidden=true;paintAll(true);
   anim($me,[{transform:'translateX(-70px)',opacity:0},{transform:'translateX(0)',opacity:1}],320);anim($foe,[{transform:'translateX(70px)',opacity:0},{transform:'translateX(0)',opacity:1}],320);
-  await wait(300+70*G.clash.hand.length);lock(false);
+  await wait(220+55*G.clash.hand.length);lock(false);
 }
 async function doPlay(i){
   var K=G.clash;if(busy||!K||K.phase!=='play')return;
@@ -448,10 +451,10 @@ async function doPlay(i){
   ghost.style.left=(r.left-host.left+(r.width-w)/2)+'px';ghost.style.top=(r.top-host.top+(r.height-hh)/2)+'px';ghost.style.width=w+'px';ghost.style.height=hh+'px';ghost.style.transform='scale('+k0+')';
   var dx=(tg.left+tg.width/2)-(r.left+r.width/2),dy=(tg.top+tg.height/2)-(r.top+r.height/2);
   var fx=LH.play(G,i);UI.card=-1;$clash.appendChild(ghost);el.remove();paintHand();paintTray();tell('<b>'+c.n+'</b>');sfx(c.k==='Attack'?'card_attack':'card_skill');
-  await anim(ghost,[{transform:'translate(0,0) scale('+k0+')',opacity:1},{transform:'translate('+dx+'px,'+dy+'px) scale(.8)',opacity:1,offset:.72},{transform:'translate('+dx+'px,'+dy+'px) scale(.4)',opacity:0}],400,{fill:'forwards'});
+  await anim(ghost,[{transform:'translate(0,0) scale('+k0+')',opacity:1},{transform:'translate('+dx+'px,'+dy+'px) scale(.8)',opacity:1,offset:.72},{transform:'translate('+dx+'px,'+dy+'px) scale(.4)',opacity:0}],340,{fill:'forwards'});
   ghost.remove();
   await showFx(fx||[]);
-  if(G.clash&&G.clash.phase==='won'){paintVs();paintIntent();paintTray();await wait(420);await endClash();lock(false);return}
+  if(G.clash&&G.clash.phase==='won'){paintVs();paintIntent();paintTray();await wait(300);await endClash();lock(false);return}
   paintAll();lock(false);
 }
 async function doEnd(){
@@ -459,13 +462,13 @@ async function doEnd(){
   await anim($hand,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(36px)'}],200,{fill:'forwards'});
   var fx=LH.endHand(G),ev=fx[0],p=sideXY('a'),q=sideXY('d');paintHand();still($hand);paintTray();tell('');
   if(ev.none){floatAt($cfx,q[0],q[1]-10,'Out of reach','info');await wait(520)}
-  else{pulse($intent,'pop');sfx('foe_windup');await anim($foe,[{transform:'translateX(0)'},{transform:'translateX(-40px)'},{transform:'translateX(0)'}],300);
+  else{pulse($intent,'pop');sfx('foe_windup');await anim($foe,[{transform:'translateX(0)'},{transform:'translateX(-40px)'},{transform:'translateX(0)'}],260);
     if(ev.n>0){slash('a',ev.n>=8);shake(ev.n>=8);floatAt($cfx,p[0],p[1],'-'+ev.n,'dmg');pulse($me,'hit');sfx('hurt')}else{floatAt($cfx,p[0],p[1],'Blocked','blk');sfx('hit_blocked')}
-    paintVs();await wait(620)}
+    paintVs();await wait(400)}
   if(fx.length>1)await showFx(fx.slice(1));
   paintVs();paintIntent();
   if(K.phase==='choice'){paintTop();paintHand();tell('<b>He has answered.</b> Press on for another round, or break off with what you have.');lock(false);return}
-  await wait(380);await endClash();lock(false);
+  await wait(200);await endClash();lock(false);
 }
 function doRedraw(){var K=G.clash;if(busy||!K)return;if(LH.redraw(G)){UI.card=-1;paintAll(true);tell('<b>Inspiration spent.</b> A new hand.')}}
 function doPress(){if(busy||!G.clash)return;if(LH.pressOn(G)){sfx('press_on');UI.card=-1;paintAll(true)}}
@@ -554,7 +557,7 @@ document.addEventListener('click',function(e){
   savePrefs();paintPrefs();music()});
 (function(){var l=AS.art.map(function(n){return A+n+'.webp'}).concat(AS.fig.map(function(n){return A+'fig-'+n+'.webp'}),AS.tok.map(function(n){return A+'tok-'+n+'.webp'}));window.__pre=l.map(function(u){var im=new Image();im.src=u;return im})})();
 paintPrefs();lock(false);newRun();
-window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
+window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,curtain:curtain,cardHTML:cardHTML,svg:svg,heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
 
 /* ---------- lists the page shows: the deck, the camp's cards, the sounds ---------- */
 var gal=$('gallery');

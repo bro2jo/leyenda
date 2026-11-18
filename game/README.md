@@ -16,11 +16,11 @@ It is laid **over** the game and changes none of it: `src/engine.js`, `src/ui.js
 
 | Path | What it is |
 |---|---|
-| `src/campaign.js` | The campaign's rules, no screen: its cards (an Art at each rank), its foes and ordeals, how a mission's board is built, the objective check, and the wording (a river "pulls", Ysra Tal is "she"). |
+| `src/campaign.js` | The campaign's rules, no screen: its cards (an Art at each rank), its foes and ordeals, how a mission's board is built, the objective check, the fire's pack and the difficulty step, and the wording (a river "pulls", Ysra Tal is "she", cover is whatever the place has). |
 | `src/missions.js` | The missions: map, who is there and what each can do, the deck, the aim, the lines before and after. **Reader-safe:** every name, place and quoted line is on the page already. |
-| `src/campaign_ui.js`, `src/campaign.css`, `src/campaign.html` | The title, the mission list, the place cards, the telling afterwards, the objective under the board, the grounds. |
-| `build_campaign.py` | Builds `dist/campaign/campaign.html` with its pictures beside it. Faces and places come from the site's small copies; a foe with no picture gets a drawn token, and the page lists those. |
-| `test/campaign.test.js`, `test/campaign.ui.test.js` | Every mission is well formed and a simple player can finish it; the real page in a browser, and the prologue played through by taps. |
+| `src/campaign_ui.js`, `src/campaign.css`, `src/campaign.html` | The title, the mission list, the place cards, the fire, the telling afterwards, the objective under the board, the grounds on the board and behind a clash, the page with its settings and picture prompts. |
+| `build_campaign.py` | Builds `dist/campaign/campaign.html` with its pictures beside it. Faces and places come from the site's small copies; a foe with no picture gets a drawn token, and the page lists those. The sergeant and the two levy boys wear the swordsman's and the pikeman's pictures (`ALIAS`) until their own are filed. |
+| `test/campaign.test.js`, `test/campaign.ui.test.js` | Every mission is well formed and a simple player can finish it; the fire, the difficulty step and the wording; the real page in a browser, the prologue played through by taps, and the fire bought from and put back to. |
 
 ```
 python3 game/build_campaign.py        # -> game/dist/campaign/campaign.html
@@ -30,7 +30,16 @@ node game/test/campaign.ui.test.js    # the page in a browser (after the build)
 
 **Its rules with the story.** The campaign retells; it never tells. It reads nothing from `real/` and writes nothing to `saga/`; a mission's outcome changes nothing anywhere, and one that goes wrong is played again. A mission is written only after its chapter is closed, from the chapter's own prose, never from `_gm/`: nothing the page has not spoken. **People, places and things stay canon; the fights need not** (his word, 2026-11-18). Most missions play a scene as the page tells it, and where that scene has no blow (the ford, the hall, the Steps, the road above Coldmere) the river, the stair or the cold is fought as a clash. A mission marked `tall` is a full company battle the page does not have (the levy in the inn yard, the grey cloaks at the fold, the dark riders at the weir): it uses only people and places the page has shown, says on its card that the page tells it otherwise, and says in its last line how the page has it. To add one after a chapter closes: a `CP.add({...})` in `missions.js`, any new foe in `campaign.js`, then both campaign tests.
 
-**Still to do:** the three tales as side missions; clash figures and tokens for the grey cloaks, the Confessor's men, the walkers and Ysra Tal; the balance, which so far only a test player has felt.
+**What it takes from the game.** It reaches into the game's screen for three things and no more, all on `window.__LH`: the curtain (a mission begins behind it, and the telling comes up under it), the card drawing, and the icons. Nothing the playtest page does depends on the campaign.
+
+- **The fire.** Every star is a star to spend. A camp card costs twice its price in spoils; up to three make the pack, and a card can be put back for its stars. The pack goes into Darrow's deck in the missions marked `tall` and nowhere else, so the page's own scenes keep the page's deck. Cards that only pay spoils are not offered (`CP.SHOP`).
+- **The three larger fights have more than one kind of man,** all from things the page has: the levy's horn and the pitchfork in the yard, the grey cloaks' lymer and the list at the fold, a rider who gives the word and one in mail at the weir. One in each makes the others strike harder (`rally`), named for the mission (`M.rally`).
+- **Difficulty** is the campaign's own switch on its page (`data-cplevel`, kept with the progress): a step either way on what a foe deals and how long a man stands. An ordeal's length is the page's and does not change. The game's own difficulty switch would start a run of the game, so the campaign page does not carry it.
+- **Decks.** The Far Cast, learned in Chapter 3, is in his deck from the road on. Hammerfall and the Long Road are not: the page has not named them.
+
+Pictures for the campaign are filed like the game's, under the names on the campaign page: `sergeant`, `pitchfork`, `hornboy`, `greycloak`, `lymer`, `guest`, `darkcoat`, `rider`, `walker`, `brother`, `ysra-tal`.
+
+**Still to do:** the three tales as side missions; the pictures above; progress that follows him from the phone to the computer (it is kept in one browser); the balance, which so far only a test player has felt (it finishes the yard 20 times in 30 with the page's deck, 23 with a pack).
 
 ## Where things are
 
@@ -83,6 +92,7 @@ Made so far: the pikeman and the swordsman (figure and token each), the sounds `
 - **A clash.** One hand, played on that fighter's breath; then the foe answers once. Start a fight against the tree yours beats, land a hit, and he is Broken: his answer is halved. From two tiles Darrow throws on one less breath, and most foes cannot answer at all. Friends placed to help lend a card. Block left over stays as guard through the enemy's turn, and guard that holds a blow strikes back.
 - **The foes.** Each has one habit: the pikeman braces, the shieldbearer is Tough, the skirmisher answers in a flurry, the crossbowman's bolt leaves a Wound, the bannerman makes the others strike harder, the captain enrages at half health and holds his ground until someone comes near.
 - **The clock.** The captain holds his ground until someone comes near, his men are thinned, or turn 8. A battle not won by turn 30 is lost at nightfall.
+- **Between scenes.** A curtain crosses the screen with the name of what comes; a tap sends it on. Measured at full speed: about 1.2 s from Engage to a hand you can play, 0.9 s a card, 1.6 s for his answer and the way back to the map, 1.3 s to the next ground; Quick halves all of it.
 - **The camp.** Every man felled pays a spoil, one more if Darrow's own hand felled him. Between battles: five cards on offer from a pool of eighteen, one of each; mend; hone a Strike or a Guard; leave a card behind. Spoils kept count toward Renown, as does each turn under 10 in a battle won.
 
 ## Balance, as last measured

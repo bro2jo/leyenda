@@ -29,10 +29,13 @@ ART.update({"darrow0": C + "darrow.sm.webp", "darrow1": C + "darrow.sm.webp", "h
 ART.update({f"place-{p}": f"places/{p}.md.webp" for p in ["harrow-ford", "saint-ysoldes", "winch-house", "coldmere", "the-lowmarch"]})
 # a foe's token from a face the Chronicle already has
 TOKENS = {"ysra-tal": C + "ysra-tal.sm.webp", "hollis-foe": C + "hollis-garrow.sm.webp", "greycloak": "factions/confessors.sm.webp"}
+# men who wear one of the game's own pictures until theirs is made (figure and token)
+ALIAS = {"pitchfork": "pikeman", "hornboy": "pikeman", "sergeant": "swordsman"}
 # everything else on the board that has no picture yet: name, what it is, a letter, a colour
 DRAWN = [("wend", "The Wend in spate", "W", "#244860"), ("hall", "The length of the hall", "H", "#4A3F33"), ("question", "The hall's question", "?", "#5A4A6A"),
          ("sliver", "The black glass", "*", "#0B0D11"), ("guest", "The Confessor's men", "G", "#4E5560"), ("steps", "A stretch of the Steps", "S", "#55585E"),
-         ("rider", "An outrider of the Second", "II", "#3D4E6B"), ("walker", "A walker, frost in his beard", "~", "#6F7F8C"), ("darkcoat", "A rider in a dark coat", "D", "#23262E"), ("brother", "A lay brother", "B", "#6B5A3C")]
+         ("rider", "An outrider of the Second", "II", "#3D4E6B"), ("walker", "A walker, frost in his beard", "~", "#6F7F8C"), ("darkcoat", "A rider in a dark coat", "D", "#23262E"), ("brother", "A lay brother", "B", "#6B5A3C"),
+         ("lymer", "The grey cloaks' lymer, on its long leash", "L", "#5B4A3A")]
 
 
 def disc(letter, colour, size=256):
@@ -80,12 +83,19 @@ def main():
         if key == "brother":  # a friend's face is asked for by name, not as a token
             im.save(DIST / "art" / "brother.webp", "WEBP", quality=86)
             assets["art"].append("brother")
+    for key, src in ALIAS.items():  # lent pictures: filed under the campaign's name, so a real one replaces it by being filed
+        if key not in made and src in made:
+            made[key] = made[src]
+    figs = {f.stem: f for f in (GAME / "art" / "figures").glob("*.webp")}
+    for key, src in ALIAS.items():
+        if key not in figs and src in figs:
+            figs[key] = figs[src]
     for key, f in made.items():
         Image.open(f).convert("RGB").resize((256, 256), Image.LANCZOS).save(DIST / "art" / f"tok-{key}.webp", "WEBP", quality=86, method=6)
         assets["tok"].append(key)
-    for f in sorted((GAME / "art" / "figures").glob("*.webp")):
-        Image.open(f).convert("RGBA").resize((512, 768), Image.LANCZOS).save(DIST / "art" / f"fig-{f.stem}.webp", "WEBP", quality=86, method=6)
-        assets["fig"].append(f.stem)
+    for key, f in sorted(figs.items()):
+        Image.open(f).convert("RGBA").resize((512, 768), Image.LANCZOS).save(DIST / "art" / f"fig-{key}.webp", "WEBP", quality=86, method=6)
+        assets["fig"].append(key)
     for kind in ("sfx", "music"):
         for f in sorted((GAME / kind).glob("*.*")):
             shutil.copyfile(f, DIST / kind / f.name)

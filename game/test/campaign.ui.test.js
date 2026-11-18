@@ -49,6 +49,31 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
         await p.click('#game [data-a="endhand"]');await p.waitForTimeout(250);}
       await p.evaluate(()=>{});
     }
+    /* the fire: stars are spent on a pack for the larger fights, and can be had back */
+    await p.evaluate(()=>{var P=__CP.P;P.done={};['p0','p1','c1','c2','c3','c4a','c4b','c4c','c5'].forEach(function(k){P.done[k]={stars:2}});P.pack.length=0;__CP.title()});
+    ok(await p.evaluate(()=>__CP.purse()===18),'eighteen stars earned are eighteen to spend');
+    await p.click('.cp.on [data-cp="fire:title"]');ok(await p.evaluate(()=>__CP.scr==='fire')&&await p.locator('.cp.fire .camphero').count()===1,'the fire opens from the title');
+    ok(await p.locator('.cp.fire [data-cp^="pick:"]').count()===await p.evaluate(()=>CP.SHOP.length),'every card the company can spare is laid out');
+    await p.click('.cp.fire [data-cp="pick:digin"]');ok((await p.locator('.cp-pick').innerText()).indexOf('Take it for 8 stars')>=0,'a card is read before it is taken, with its price in stars');
+    await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='digin'&&__CP.purse()===10&&JSON.parse(localStorage.getItem('lh-campaign')).pack.join()==='digin'),'taking it spends the stars and is kept');
+    ok((await p.locator('#cp-purse b').innerText())==='10','the purse on the screen is right');
+    await p.click('.cp.fire [data-cp="pick:bloodup"]');await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.length===2&&__CP.purse()===0),'a second card, and the purse is empty');
+    await p.click('.cp.fire [data-cp="pick:hewT"]');ok(await p.locator('.cp.fire [data-cp="take"][disabled]').count()===1,'with no stars left the next cannot be taken');
+    await p.click('.cp.fire [data-cp="drop:bloodup"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='digin'&&__CP.purse()===10),'a card put back gives its stars back');
+    ok(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'the fire fits at '+vp.width);
+    await p.evaluate(()=>{__CP.intro('c5b')});ok((await p.locator('.cp-card').innerText()).indexOf('Dig In')>=0&&await p.locator('.cp.on [data-cp="fire:intro:c5b"]').count()===1,'a larger fight\'s card says what he carries, with a way to the fire');
+    await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>{var G=__LH.G;return G.ms==='c5b'&&G.u[0].deck.indexOf('digin')>=0&&G.cs.pack.join()==='digin'}),'and it is in his deck when the yard begins');
+    ok(await p.evaluate(()=>document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display!=='none'),'where the company fights, the triangle is drawn under the board');
+    await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>{var G=__LH.G;return G.u[0].deck.indexOf('digin')<0&&!document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display==='none'}),'the page\'s own scene keeps the page\'s deck, and has no triangle to draw');
+    ok(await p.evaluate(()=>{var y=__LH.G.u.filter(function(u){return u.type==='ysra'})[0];return y&&y.img==='tok-ysra-tal'}),'Ysra Tal stands in the clash with the face the Chronicle has for her');
+    /* difficulty is the campaign's own switch, and the game's other switches work here */
+    ok(await p.locator('[data-cplevel]').count()===3&&await p.getAttribute('[data-cplevel="0"]','aria-pressed')==='true','a difficulty switch on the page, Standard to begin');
+    await p.click('[data-cplevel="1"]');await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>__LH.G.cs.level===1&&__CP.P.level===1&&__LH.G.ms==='c5b'),'Hard applies from the next mission begun, and does not start a run of the game');
+    await p.click('[data-cplevel="0"]');await p.click('[data-pref="quick=true"]');ok(await p.evaluate(()=>__LH.prefs.quick===true&&__LH.G.ms==='c5b'),'quick animation can be set without leaving the mission');await p.click('[data-pref="quick=false"]');
+    ok(await p.locator('.prompt pre').count()>=9&&await p.locator('[data-copy]').count()>=9,'the page has prompts for the pictures still to make');
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

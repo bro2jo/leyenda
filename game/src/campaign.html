@@ -1,6 +1,6 @@
 <div class="wrap">
   <header class="top">
-    <p class="lbl">The Unkneeling · a side game · the campaign, first build</p>
+    <p class="lbl">The Unkneeling · a side game · the campaign, second build</p>
     <h1>The Line and the Hand</h1>
     <p class="lede">The Chronicle, played. Fourteen missions, from the morning at Harrow Ford to the night on the mill bridge. The people, the places and the things are the page's own. Most missions are a scene as the page tells it; three are fights told larger than the page tells them, and each of those says so. He starts with the Grace in him and loses it; after that his reach on the board follows the Knots, and his cards carry the rank each Art had in that chapter.</p>
   </header>
@@ -12,16 +12,21 @@
         <section>
           <h3>How it differs from a run</h3>
           <ol>
-            <li><b>Every mission has its own aim,</b> written under the board: reach a tile, hold for so many turns, walk a stretch, stay on a stone. There is no captain to bring down and no camp.</li>
+            <li><b>Every mission has its own aim,</b> written under the board: reach a tile, hold for so many turns, walk a stretch, stay on a stone. There is no captain to bring down.</li>
             <li><b>He fights from where he is put.</b> In the House of Menders he moves one step or none. A lit ring marks where someone has to get to; a green one, what must be kept.</li>
             <li><b>Not every opponent is a man.</b> A river, a stair or the cold is fought as a clash: what you deal is ground covered, and its answer is what it costs him.</li>
-            <li><b>The deck is the chapter's.</b> No spoils, no buying. Whoever stands beside him lends a card.</li>
+            <li><b>The deck is the chapter's.</b> Whoever stands beside him lends a card. In the page's own scenes nothing else goes in.</li>
+            <li><b>The fire.</b> Every star is a star to spend. At the fire it buys camp cards, up to three, and that pack goes with him into the three fights told larger than the page. A card can be put back for its stars at any time.</li>
             <li><b>Three stars a mission:</b> one for finishing it, two for doing it the way the page did.</li>
           </ol>
         </section>
         <section>
           <h3>Playtest</h3>
-          <p class="small">Missions open in order. Add <code>?all</code> to the address to open every one. Progress is kept in this browser only.</p>
+          <div class="setrow"><span class="lbl">Difficulty</span><span class="seg"><button type="button" data-cplevel="-1">Gentle</button><button type="button" data-cplevel="0">Standard</button><button type="button" data-cplevel="1">Hard</button></span></div>
+          <div class="setrow"><span class="lbl">Animation</span><span class="seg"><button type="button" data-pref="quick=false">Full</button><button type="button" data-pref="quick=true">Quick</button></span></div>
+          <div class="setrow"><span class="lbl">Music</span><span class="seg"><button type="button" data-pref="music=false">Off</button><button type="button" data-pref="music=true">On</button></span></div>
+          <div class="setrow"><span class="lbl">Sound</span><span class="seg"><button type="button" data-pref="sound=false">Off</button><button type="button" data-pref="sound=true">On</button></span></div>
+          <p class="small">Difficulty moves what a foe deals and how long a man stands, from the next mission you begin; the length of a hall or a stair is the page's and does not change. A curtain between scenes goes on at a tap. Missions open in order. Add <code>?all</code> to the address to open every one. Progress is kept in this browser only.</p>
           <div class="acts"><button type="button" class="act plain" id="cp-reset"><b>Forget my progress</b><small>Start from the ford again</small></button></div>
         </section>
       </div>
@@ -35,7 +40,34 @@
   </section>
 
   <section class="block">
-    <h2>Pictures still to make</h2>
+    <h2>Pictures to make, with prompts</h2>
+    <p class="small">For each: a full figure for the clash and a square portrait for the map, filed with <code>game/tools/file_art.py figure|token NAME FILE</code> under the name shown. Words in quotes are the page's; the rest is only enough to get a first picture, and yours to change. Until theirs are made, the sergeant wears the swordsman's picture and the two boys the pikeman's.</p>
+    <div class="prompts">
+      <div class="prompt"><div class="ph"><h3>Shared: put this after every figure prompt</h3><button type="button" class="mini2" data-copy="p-style">Copy</button></div>
+<pre id="p-style">Style: painterly fantasy concept art in the hand-painted style of the attached reference image: visible, elegant brushwork; believable weathered medieval wool, linen, leather and steel with detailed stitching; soft, warm, natural light; grounded historical fantasy. Not a photograph, not a 3D render, not a cartoon.
+
+Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his whole figure from the top of his head to his feet with a comfortable margin on every side. He is turned three-quarters toward the left edge of the picture, as if facing an opponent who stands just out of frame on the left. Background: one solid, flat chroma blue (#0000FF) filling the whole frame edge to edge: no gradient, no texture, no glow, no vignette. No floor, no ground shadow, no frame, no text, no watermark. Nothing he wears or holds is blue, and the blue casts no light or reflection on him.</pre></div>
+      <div class="prompt"><div class="ph"><h3>Shared: the map token</h3><button type="button" class="mini2" data-copy="p-token">Copy</button></div>
+<pre id="p-token">The same man as in the attached figure, as a square 1:1 portrait (1024 x 1024): head and shoulders, turned a little toward the left, the face in the middle of the frame with room all round it for a circular crop. Plain dark slate-grey background, no text, no frame. Same painterly style, same clothes and gear, same light.</pre></div>
+      <div class="prompt"><div class="ph"><h3>The levy sergeant <code>sergeant</code></h3><button type="button" class="mini2" data-copy="pc-sergeant">Copy</button></div>
+<pre id="pc-sergeant">A full-body character illustration of a levy sergeant. As the page has him: "a broad man in a buff coat with a voice like a barn door slammed and a sergeant's stick under his arm." He holds the stick, not a sword.</pre></div>
+      <div class="prompt"><div class="ph"><h3>The boy with the pitchfork <code>pitchfork</code></h3><button type="button" class="mini2" data-copy="pc-pitchfork">Copy</button></div>
+<pre id="pc-pitchfork">A full-body character illustration of a levy boy of sixteen or so, one of the boys with borrowed pikes, who has brought a hay pitchfork instead and holds it out in front of him with both hands, unsure of it.</pre></div>
+      <div class="prompt"><div class="ph"><h3>The boy with the horn <code>hornboy</code></h3><button type="button" class="mini2" data-copy="pc-hornboy">Copy</button></div>
+<pre id="pc-hornboy">A full-body character illustration of a levy boy of fifteen or so with a muster horn on a cord round his neck, a borrowed pike too long for him in one hand and the horn half raised in the other.</pre></div>
+      <div class="prompt"><div class="ph"><h3>A grey cloak <code>greycloak</code></h3><button type="button" class="mini2" data-copy="pc-greycloak">Copy</button></div>
+<pre id="pc-greycloak">A full-body character illustration of one of the Confessor's men: a plain, patient man in a long grey cloak, a list of names folded in his belt. The page gives him the cloak and the walk of a man "walking a market looking for one stall"; nothing else.</pre></div>
+      <div class="prompt"><div class="ph"><h3>The lymer <code>lymer</code></h3><button type="button" class="mini2" data-copy="pc-lymer">Copy</button></div>
+<pre id="pc-lymer">A full-body illustration of a tracking hound on a long leash, the leash running out of the frame to the left. As the page has it: "a heavy, low-built hound, loose in the skin, with a nose like a spade and ears to its jaw, the kind of dog a man keeps for following another man who has gone."</pre></div>
+      <div class="prompt"><div class="ph"><h3>A rider in a dark coat <code>darkcoat</code></h3><button type="button" class="mini2" data-copy="pc-darkcoat">Copy</button></div>
+<pre id="pc-darkcoat">A full-body character illustration of a rider on foot beside where his horse would be, in a long dark riding coat, gloved, one hand as if on a rein. The page says only "four riders in dark coats, new since first light."</pre></div>
+      <div class="prompt"><div class="ph"><h3>A walker <code>walker</code></h3><button type="button" class="mini2" data-copy="pc-walker">Copy</button></div>
+<pre id="pc-walker">A full-body character illustration of a man walking with his eyes on nothing. As the page has him: "He wore mail under a surcoat whose colours had washed out past reading, and there was frost in his beard." Empty hands.</pre></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Standing in as plain tokens for now</h2>
     <p class="small">These stand in the game as plain tokens until a picture is filed for them. Faces the Chronicle already has (the company, Ysra Tal, Sister Pell, Aldric) are taken from the site's own copies.</p>
     <div class="todo-grid" id="cp-todo"></div>
   </section>
