@@ -8,6 +8,8 @@ Published (private) at https://claude.ai/artifact/JGWHh6XqNT5NNVPtSgBzgQ. To upd
 
 ## The campaign
 
+Published (private) at https://claude.ai/artifact/QwnxGFmj8i8erJ24qwTWrP, apart from the playtest page. To update it, build, then publish `game/dist/campaign/campaign.html` to that URL with the files listed in `game/dist/campaign/files.json`.
+
 A second page, built from the same game: **the Chronicle, played.** Eleven missions, from the morning at Harrow Ford to the night on the mill bridge, each one a scene the page has shown. The prologue is the tutorial: he has the Grace and the sealed Arts for one hand, and loses them. After that his reach on the board follows the Knots the page has tied (a step, or none, in the House of Menders), and his cards carry the rank each Art had in that chapter.
 
 It is laid **over** the game and changes none of it: `src/engine.js`, `src/ui.js`, `src/style.css`, `src/page.html` and `build.py` do not know it exists, so the playtest page is exactly what it was. The campaign wraps the functions the rules export, builds each mission's board on a normal battle, and decides for itself when a mission is won or lost.
