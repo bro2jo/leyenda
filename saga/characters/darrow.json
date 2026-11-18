@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-2",
+    "scene": "3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-2"
+    "anchor": "chronicle/07-the-far-bank.html#scene-3"
   },
-  "last_seen_doing": "Said why first, out loud, to all four: the forty need them, he is no use on a road at a cart's pace, and he will go west two nights by daylight to see what stops the walkers; gave each of them a charge and asked nobody to come.",
-  "now": "At the fire in the small hours with his pack being filled, going west on the trail at first light with Ash.",
+  "last_seen_doing": "Saw the line on the bridge become walkers at first light and the column off north, walked the walkers' road west all day with Ash, made his fire on the north side of the trail, slept when he should not have and woke with one of them holding his boot.",
+  "now": "At his fire on the north side of the trail with his hands and his numb right foot inside his coat, five stragglers standing at the edge of the light, and Rae just come in with wood.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2296,6 +2296,24 @@
       "evidence": "Then the forty will need a captain"
     },
     {
+      "fact": "He followed the walkers' trodden road west all day; it went straight through a fold, a hayrick and a cottage, and nothing lived along it.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "Nothing lived on that road."
+    },
+    {
+      "fact": "He made his camp on the north side of the trail, as Rae had said.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "He made his camp on the north side of the trail, as Rae had said"
+    },
+    {
+      "fact": "In the middle of the first night he fell asleep by the fire, and woke when Ash bit his sleeve to find one of the stragglers holding his boot, his foot gone numb with cold.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "He did not know he had slept until Ash bit him."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2902,6 +2920,10 @@
     {
       "chapter": "07",
       "scene": "between-2"
+    },
+    {
+      "chapter": "07",
+      "scene": "3"
     },
     {
       "chapter": "tale01",

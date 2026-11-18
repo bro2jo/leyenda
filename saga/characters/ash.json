@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "2",
+    "scene": "3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-2"
+    "anchor": "chronicle/07-the-far-bank.html#scene-3"
   },
-  "last_seen_doing": "Sat the night at the fire with the company.",
-  "now": "At the fire by the burned mill.",
+  "last_seen_doing": "Kept to his heel all day on the walkers' road, and bit his sleeve to wake him when the fire sank and one of them took his boot.",
+  "now": "Lying across Darrow at the fire.",
   "story_so_far": "Ash saw the rider on the skyline first and made no sound, watched the alders long after the meadow was empty, and tried to follow Darrow out onto the weir until Wren sat on her.",
   "quote": null,
   "known_facts": [
@@ -127,6 +127,12 @@
       "chapter": "07",
       "scene": "1",
       "evidence": "That dog doesn't fetch"
+    },
+    {
+      "fact": "When he slept and the fire sank, Ash bit his sleeve and woke him.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "She had him by the sleeve, hard, growling through it"
     }
   ],
   "relationships": [
@@ -257,6 +263,10 @@
     {
       "chapter": "07",
       "scene": "2"
+    },
+    {
+      "chapter": "07",
+      "scene": "3"
     }
   ]
 }

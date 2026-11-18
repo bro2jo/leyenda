@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-2",
+    "scene": "3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-2"
+    "anchor": "chronicle/07-the-far-bank.html#scene-3"
   },
-  "last_seen_doing": "Said there was nothing to say aye or no to since he had asked her nothing, and told him in passing to make his fires on the north side of the trail.",
-  "now": "Seeing to Hob and Dun at the cart by the bridge.",
+  "last_seen_doing": "Nodded him off at dawn like any carter going the other way; came up the walkers' road after dark with a lamp held high and a load of wood on her back, unasked, and fed his fire.",
+  "now": "At his fire on the walkers' trail, her wood on the ground beside it.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -935,6 +935,12 @@
       "evidence": "North side of the trail for your fires."
     },
     {
+      "fact": "Unasked, she followed him west on the walkers' road and came into his firelight in the night with a lamp and a load of wood, past the stragglers, who stood staring at her lamp.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "You told me why,\" said Rae. \"You never told me not to."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1302,6 +1308,10 @@
     {
       "chapter": "07",
       "scene": "between-2"
+    },
+    {
+      "chapter": "07",
+      "scene": "3"
     },
     {
       "chapter": "tale02",

@@ -35,11 +35,19 @@
       "after": "2",
       "covers": [],
       "written": "2026-11-17"
+    },
+    {
+      "scene": 3,
+      "title": "The North Side of the Trail",
+      "covers": [
+        "2026-11-17"
+      ],
+      "written": "2026-11-17"
     }
   ],
   "location": {
     "place": "river-mill",
-    "detail": "the company's end of the fire at the burned mill, nearest the bridge",
+    "detail": "a camp on the north side of the walkers' trodden road, a day's walk west of the river mill",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -48,8 +56,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "The millers: forty people at their burned mill looking to him, and on the bridge the line of walkers held staring by the fire until daylight.",
-  "last_beat": "Wren wrote Told first. Four. in his column, then opened a clean page with his name at the top and nothing under it: three days, then she closes it herself.",
+  "current_struggle": "Two nights west on the walkers' road: the first night's fire, five stragglers standing at its edge, and the hours to dawn.",
+  "last_beat": "Rae came into the firelight with a lamp and a load of wood on her back, put three branches on his fire, and said: You told me why. You never told me not to.",
   "companions": {
     "maelis": {
       "approval": 39,

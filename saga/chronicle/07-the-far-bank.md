@@ -388,3 +388,69 @@ She looked up. "That's a dirty trick, Captain. That's my own column you're using
 She held his eyes a moment longer, then bent to the book. He watched her write *Told first. Four.* under the old line, and draw a line under that. Then she turned to a clean page, wrote his name at the top of it and nothing underneath, and turned the book round so he could see.
 
 "Three days," said Wren. "Then I close it myself."
+
+### Scene 3 — The North Side of the Trail
+
+At first light the line on the bridge were walkers again.
+
+Darrow watched it happen from the fire. Nobody gave an order. The sun came over the hills behind the mill, and the first man on the span turned from Rae's cart as if he had remembered an errand, and walked away down the far bank, downstream, at the same walk as the night before. The next one went after him, and the next, and in a while the whole line was walking away along the river in the cold light, and the bridge was empty, and the field behind it was empty, except for the road they had made through it.
+
+Maelis had the woman's wrist out of her coat. "Warmer than it was," she said, and that was all she would say.
+
+The rest had been said at the fire in the night, and nobody said it again. Hollis got the forty on their feet by shouting at them, and they hated it, and they went. Wren stood at the head of the column with the ledger open and counted them past her, one by one, children included, and wrote the number down. Maelis put the pack on his back herself and pulled the straps tight enough to make a point. Rae was at Hob's head with her eyes on the road north. She nodded to him once, the way she would to any carter going the other way.
+
+He crossed the bridge with Ash and did not look back until he was in the field, and when he did, the column was already small.
+
+---
+
+The road the walkers had made ran straight west across the field, through the hedge, and into the trees, and it did not bend for anything.
+
+It went through a sheep-fold and left the hurdles flat. It went through a hayrick, and there was hay scattered for a hundred yards beyond it. It went up to a cottage and through the gate, and through the garden, and the cottage door hung by one hinge, and the back door was gone altogether. Nobody was in the cottage. He did not go in to make sure.
+
+Nothing lived on that road. There were no birds in the trees along it, and no crows in the fields, and once, when Ash put her nose into a rabbit hole at the edge of the trodden ground, she took it out again at once and came back to his heel and stayed there. In the deep prints where the ground was soft, there was frost at noon, in full sun, that had not been there at dawn.
+
+He walked all day. The knee carried him and complained about it, and by the middle of the afternoon he had stopped listening to either of them. He had a stick and a pack and a dog, and the road went on.
+
+An hour before dusk he stopped and started gathering wood.
+
+He made his camp on the north side of the trail, as Rae had said, with a bank of earth at his back and the trodden road twenty paces off. He gathered wood until the light went: deadfall, broken branches, a fence rail the walkers had knocked flat. One arm was still Maelis's, and the pile took him longer than it should have. He looked at it when it was done and told himself it would see him to dawn.
+
+He lit the fire as the sun went down, and sat with his back to the bank, and put his hands inside his coat, as he had promised.
+
+---
+
+The first one came a little after full dark.
+
+It came along the trodden road from the east, from behind him, one of the stragglers that had fallen out of the line somewhere, and it turned off the road toward his fire, as the one at the bridge had turned toward the woman. Ash's hackles went up along her whole spine. Darrow got up onto one knee, the good one, with the stick across his body.
+
+At the edge of the firelight it stopped, and stood, and looked at the fire.
+
+He had seen it at the bridge, and still it was another thing to see it alone. It was a woman. She had been a knight; she wore mail and a cloak that had once been good. She stood with the fire in her eyes and nobody behind them, as still as a post, a dozen paces from him, and stayed there.
+
+Another came out of the dark while he watched her. Then another. By the middle of the night there were five of them standing in a half-ring at the edge of the light, and the cold that came off them lay on the back of his neck like a wet hand, and the fire, which had been big enough, did not look big enough any more.
+
+He fed it. He fed it and watched the pile go down.
+
+`[VIGOR · DC 13]` d20 **6** +0 vigor +1 Ember Bright = **7** — *Failure*
+
+He did not know he had slept until Ash bit him.
+
+She had him by the sleeve, hard, growling through it, and he came awake all at once with the fire sunk to a red bed and a cold on his right foot like a pail of snow water. One of them had him by the boot. It was kneeling at the edge of the embers with both hands closed round his ankle, and it was not pulling. It was only holding on. The cold came through the leather as if the leather were not there.
+
+He threw the whole of what was left of the pile onto the fire with his free hand.
+
+It caught slowly, and then all at once, and the light came up, and the head turned to it. The hands opened. It got up off its knees and stood back with the others, staring, and he dragged his foot in against the bank. He could not feel it. He put it inside his coat with his hands and sat there holding it, and Ash lay down across him and growled at the dark.
+
+The pile was gone. He had a fire that would last him an hour, perhaps two, and dawn was a great deal further away than that.
+
+He was trying to decide whether the stick would burn when Ash stopped growling.
+
+She lifted her head and looked east, down the trodden road, and her tail moved once.
+
+There was a lamp on the road. It was coming up from the east the way he had come, held up high, and the five at the edge of his firelight turned their heads to it all together and stood looking at it. It came on, steadily, past the first of them and the second, close enough to touch, and none of them moved while the flame was in their eyes. Under the lamp there was somebody with a great load of wood on their back, roped on, and they were walking at a slow team's pace, as if there were all the time in the world.
+
+Rae came into the firelight, swung the wood off her back onto the ground, and put three branches on the fire without being asked. It went up yellow, and the five stood and stared at it.
+
+She looked at him, at the hands in his coat, at the foot.
+
+"You told me why," said Rae. "You never told me not to."

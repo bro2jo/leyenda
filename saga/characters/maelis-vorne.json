@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-2",
+    "scene": "3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-2"
+    "anchor": "chronicle/07-the-far-bank.html#scene-3"
   },
-  "last_seen_doing": "Asked what he would do if he found where they came from, named her price, and packed his bag without being asked.",
-  "now": "At the fire, packing his pack from her roll.",
+  "last_seen_doing": "Said the frost-held woman's wrist was warmer than it was, and strapped his pack on tight.",
+  "now": "Going north with the company and the forty.",
   "story_so_far": "Maelis told him plainly what the frost had kept of his hand, warned the company what he would be taking onto the ice, and said a question could be answered by another mouth. At noon she waited on the bank with her needle threaded.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -697,6 +697,12 @@
       "chapter": "07",
       "scene": "between-2",
       "evidence": "And when you come back, you sit down and I look at you before you say a word to anyone."
+    },
+    {
+      "fact": "At first light she said the woman's frost-held wrist was warmer than it was, and would say no more.",
+      "chapter": "07",
+      "scene": "3",
+      "evidence": "Warmer than it was,\" she said, and that was all she would say."
     }
   ],
   "relationships": [
@@ -1046,6 +1052,10 @@
     {
       "chapter": "07",
       "scene": "between-2"
+    },
+    {
+      "chapter": "07",
+      "scene": "3"
     }
   ]
 }

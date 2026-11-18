@@ -2179,7 +2179,8 @@
           "at": "ch07:s3",
           "weight": "scene",
           "what": "The next scene opens at first light on his leaving, in a clause: his answer was said and answered at the fire in between-2 (Hollis has the forty, Maelis packed his bag, Rae named the north side for his fires, Wren opened his column); the company and the forty start north and he goes west with Ash.",
-          "status": "pending"
+          "status": "fired@ch07:s3",
+          "evidence": "The rest had been said at the fire in the night, and nobody said it again."
         },
         {
           "id": "c07.2b",
@@ -2189,11 +2190,12 @@
           "what": "He kept the fork promise: why first, out loud, before he went. Rae weighs that against being left with forty mouths and her cart; her answer is her own and may be an act, not a word.",
           "fits": "present.rae",
           "priority": 3,
-          "status": "pending",
+          "status": "fired@ch07:s3",
           "offered": 1,
           "offered_at": [
             "ch07:between-2"
-          ]
+          ],
+          "evidence": "You told me why,\" said Rae. \"You never told me not to."
         }
       ],
       "declined": [
@@ -2227,9 +2229,10 @@
           "fits": "present.wren",
           "priority": 3,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch07:between-2"
+            "ch07:between-2",
+            "ch07:s3"
           ]
         },
         {
@@ -2241,9 +2244,10 @@
           "fits": "present.maelis",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch07:between-2"
+            "ch07:between-2",
+            "ch07:s3"
           ]
         }
       ]

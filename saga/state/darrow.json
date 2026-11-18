@@ -4,7 +4,7 @@
   "level": 9,
   "rank": "Kindled",
   "level_reached": "2026-11-12",
-  "xp": 4003,
+  "xp": 4008,
   "xp_this_level": 3600,
   "xp_next_level": 4500,
   "proficiency": 4,
@@ -52,7 +52,7 @@
     }
   },
   "ember": {
-    "value": 89,
+    "value": 87,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },

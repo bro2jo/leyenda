@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 7,
     "beat": "b2.3",
-    "next_scene": 3,
+    "next_scene": 4,
     "stage": "scene",
-    "last_written": "ch07:s2",
+    "last_written": "ch07:s3",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -81,8 +81,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:s3"
       },
       {
         "n": 4,
@@ -115,7 +115,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
