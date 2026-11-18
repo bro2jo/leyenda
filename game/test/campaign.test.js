@@ -115,4 +115,41 @@ CP.ORDER.forEach(function(id){
 })();
 /* someone a mission holds to his place has no move at all: not even the step back through a friend that the game allows */
 CP.ORDER.forEach(function(id){if(only&&only!==id)return;var G=CP.start(id,{seed:2});G.u.forEach(function(u){if(u.side===0&&u.hp>0&&!(u.mov>0))ok(Object.keys(LH.reach(G,u)).length===1,id+': '+u.n+' cannot move, and has nowhere to move to')})});
+/* the Binding: every Step swells the knee, a week or the Mender's hand brings it down, a fourth floods it, and six weeks is all there is */
+if(!only||only==='p1')(function(){
+  var G=CP.start('p1',{seed:5}),D=G.u[0],S=G.cs,h1=CP.api.foe(G,'hall1'),M=U(G,'M');
+  ok(S.sw===0&&/Week 1 of 6 · swelling 0 of 3/.test(CP.top(G)),'the Binding opens on week one, the knee quiet');
+  LH.move(G,D,2,5);LH.move(G,M,3,5);var K=LH.engage(G,D,h1);h1.hp=h1.max=999;K.hand=['c_step','c_step','c_step','c_step'];K.en=9;
+  var hp0=D.hp,i,played=0;for(i=0;i<3;i++){var ix=K.hand.indexOf('c_step');if(ix>=0&&LH.play(G,ix))played++}
+  ok(played===3&&S.sw===3&&!S.flood,'three Steps swell it to three, and it holds');
+  ok(LH.clashEffects(G).a.some(function(e){return /Swelling 3 of 3/.test(e.label)&&e.tone==='bad'}),'the hand shows the swelling where the cards are played');
+  var fx=LH.play(G,K.hand.indexOf('c_step'));
+  ok(!!fx&&S.flood===1&&S.sw===2&&S.bed===G.turn+1&&D.hp===hp0-4&&fx.some(function(e){return e.t==='Flooded'}),'a fourth floods it: four off him, and next week is spent on his back');
+  LH.endHand(G);if(G.clash)LH.closeClash(G);var sw=S.sw;endTurn(G);
+  ok(S.sw===sw-1,'a new week takes one down');
+  ok(D.attacked&&D.moved&&!LH.canAct(D),'the week after a flood he can do nothing');
+  D.hp=D.max-6;var s2=S.sw;LH.tend(G,M,D);ok(S.sw===s2-1,'the Mender\'s hand takes one down as well');
+  var L=CP.start('p1',{seed:5}),n=0;while(!L.over&&!L.cs.result&&n++<12)endTurn(L);
+  ok(L.cs.result==='lost'&&L.cs.why==='late'&&L.turn===7,'six weeks with the hall unwalked, and she shuts the box');
+})();
+/* the Wicket: shut it by cards before those beside him are all put down, and have the bell rung before the two inside reach the stair */
+if(!only||only==='c1')(function(){
+  var G=CP.start('c1',{seed:5}),S=G.cs,A=CP.api;
+  ok(['B','L','R'].every(function(id){return A.dist(U(G,id),G.u[0])===1}),'three of the House start with a shoulder beside his');
+  ok(G.u.filter(function(u){return u.type==='seeker'}).every(function(u){return Math.abs(u.x-1)+Math.abs(u.y-6)>=5}),'the two inside start at least five paces from the stair');
+  endTurn(G);ok(U(G,'B').hp<=0&&U(G,'L').hp>0&&S.fell===1&&!S.through,'a turn with the wicket open, and the Gate-ward goes down under the next of them');
+  endTurn(G);endTurn(G);ok(U(G,'L').hp<=0&&U(G,'R').hp<=0&&!S.through&&!S.result,'then the lay brother, then Rae');
+  endTurn(G);ok(S.through===1&&S.result==='lost'&&S.why==='through','with nobody left beside him the next is through, and it is lost');
+  var H=CP.start('c1',{seed:5}),W=U(H,'W'),d=CP.api.foe(H,'doorman'),n=0;
+  d.hp=1;var K=LH.engage(H,H.u[0],d);K.hand=['c_shoulder','c_shoulder','c_brace','c_brace'];LH.play(H,0);if(H.clash)LH.closeClash(H);
+  ok(H.cs.shut===1&&!CP.api.foe(H,'doorman')&&!H.cs.result,'the third man put back out shuts the wicket, and the bell is still to ring');
+  while(!H.cs.result&&n++<8){if(!W.still)go(H,W,5,6);endTurn(H)}
+  ok(H.cs.result==='won'&&H.cs.rung===H.cs.pull+(H.cs.rung-H.cs.pull)&&H.cs.pull===2&&U(H,'B').hp>0,'two turns after Wren is at the tower door Old Mercy rings, and with the wicket shut it is won');
+  var N=CP.start('c1',{seed:5});CP.api.foe(N,'doorman').hp=1;LH.engage(N,N.u[0],CP.api.foe(N,'doorman'));N.clash.hand=['c_shoulder','c_brace','c_brace','c_brace'];LH.play(N,0);if(N.clash)LH.closeClash(N);
+  n=0;while(!N.cs.result&&n++<12)endTurn(N);
+  ok(N.cs.result==='lost'&&N.cs.why==='names','if Wren never runs, the two inside reach the stair and a name is taken');
+  /* it is the cards that decide it: a careful hand against a careless one */
+  function rate(careless){var w=0,i,s;for(i=1;i<=60;i++){s=i*7919+13;B.MODE.rand=careless?(function(seed){var q=seed|0;return function(){q=(Math.imul(q,1664525)+1013904223)|0;return ((q>>>8)&0xffffff)/0x1000000}})(s):null;if(run('c1',i*37+11).cs.result==='won')w++}B.MODE.rand=null;return w}
+  var good=rate(false),bad=rate(true);ok(good>=48&&bad<=20,'played with care it is won most times ('+good+'/60), played carelessly seldom ('+bad+'/60)');
+})();
 console.log(fails?fails+' of '+checks+' checks failed':'all '+checks+' checks passed');process.exit(fails?1:0);

@@ -12,6 +12,8 @@ var LH=(typeof window!=='undefined'&&window.LH)||require('./engine.js').LH;
 function rep(id,n){var a=[];while(n-->0)a.push(id);return a}
 function deck(){var a=[];for(var i=0;i<arguments.length;i++)a=a.concat(arguments[i]);return a}
 var STILL={still:1,deck:null};
+function a_tends(G){var m=CP.api.U(G,'M');return m?m.tends:0}
+function LH_at(G,x,y){for(var i=0;i<G.u.length;i++){var u=G.u[i];if(u.hp>0&&u.x===x&&u.y===y)return u}return null}
 
 /* ================= PROLOGUE: THE THREE HEARTBEATS ================= */
 CP.add({id:'p0',book:'Prologue',ch:'The Three Heartbeats',n:'The Grace',place:'Harrow Ford, on the Wend',when:'Midsummer. The river in spate.',art:'harrow-ford',
@@ -56,74 +58,108 @@ function frost(G,S,a,K){
   a.hint(G,'Tobin Marsh has gone under his horse. Every instinct he owns says: turn.');
 }
 
-CP.add({id:'p1',book:'Prologue',ch:'The Three Heartbeats',n:'The Binding',place:"Saint Ysolde's, the House of Menders",when:'Six weeks on his back, and after.',art:'saint-ysoldes',
+/* Six weeks, and a knee that floods if he asks too much of it: every Step swells it, a week or the Mender's hand brings it down.
+   Too slow and the weeks run out; too fast and he spends one on his back. */
+var WEEKS=6,FLOOD=3;
+CP.add({id:'p1',book:'Prologue',ch:'The Three Heartbeats',n:'The Binding',place:"Saint Ysolde's, the House of Menders",when:'Six weeks on his back.',art:'saint-ysoldes',
   level:'Level 1 · Bound',quote:'"It isn\'t broken. It\'s undone."',
   intro:['They carried him up the Thousand Steps on a litter, with a girl counting every one aloud. There are eleven hundred and seventeen.',
-    'Maelis Vorne will not touch the knee for six weeks. The leg straightens first. Strength before the Binding, because a Binding takes the measure of whatever you tie it to.',
-    'So he learns to walk the length of the hall with a stick. Then without one. Hollis watches from the next cot and offers commentary.'],
-  objective:'Walk the length of the hall: first with the stick, then without it.',
+    'Maelis Vorne will not touch the knee for six weeks. "You don\'t bind a river in flood. The swelling comes down first. The leg straightens first. Strength before the Binding, because a Binding takes the measure of whatever you tie it to."',
+    'So he learns to walk the length of the hall with a stick, then without one: six weeks to do it in, on a knee that floods if he asks too much of it. Hollis watches from the next cot and offers commentary.'],
+  objective:function(G,S,a){return (a.foe(G,'hall1')?'Walk the length of the hall with the stick, then without it,':'Now without the stick,')+' before the six weeks are out. Do not let the knee flood.'},
+  top:function(G){return 'Week '+Math.min(G.turn,WEEKS)+' of '+WEEKS+' · swelling '+(G.cs.sw||0)+' of '+FLOOD},
   open:'The infirmary hall is dark except for her candle and the long double row of cots.',
   map:{name:'The Infirmary Hall',theme:'hall',rows:['~~..~~','~~..~~','~~..~~','~~..~~','~~..~~','~~..~~','~...~~']},
   pro:'it',down:'is walked',say:[[/\bstrikes\b/g,'tells'],[/\bstrike\b/g,'tell'],[/\b(his|its) answer/g,'the leg']],
-  party:{D:{at:[2,6],t:'foot',mov:1,hp:22,br:2,hn:4,throws:0,far:0,img:'darrow1',deck:deck(rep('c_step',4),rep('c_brace',3))},
+  party:{D:{at:[2,6],t:'foot',mov:1,hp:24,br:2,hn:4,throws:0,far:0,img:'darrow1',deck:deck(rep('c_step',5),rep('c_brace',3))},
     H:{at:[1,6],still:1,deck:null,img:'hollis1',lend:'lH'},
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis1',mov:2,tend:4,tends:3,lend:'c_now',at:[3,6]}]},
-  foes:[{k:'hall1',at:[2,4]},{k:'hall2',at:[2,2]}],
+  foes:[{k:'hall1',at:[2,4]},{k:'hall2',at:[2,3]}],
+  chips:function(G,S){var n=S.sw||0;return [['a','wound','Swelling '+n+' of '+FLOOD,'Each Step swells the knee by one. A new week takes one down, and so does the Mender\'s hand. One more than '+FLOOD+' floods it: he loses a week.',n>=FLOOD?'bad':'plain',n]]},
   on:{
-    start:function(G,S,a){a.hint(G,'One step, then the hall. Maelis beside him lends a card; tap her, then him, and she tends him.')},
-    clashEnd:function(G,S,a,K){if(K.d.hp<=0&&K.d.type==='hall1'){a.log(G,'He leaves the stick against the last cot.','good');a.hint(G,'Now without it. Brace when the leg tells on him; a Step only when he can afford one.')}},
-    turn:function(G,S,a,t){if(t===3)a.log(G,'From the next cot Hollis, still mostly drunk, offers commentary.','dimm')}
+    start:function(G,S,a){S.sw=0;a.hint(G,'Each Step swells the knee by one. A new week takes one down, and so does the Mender\'s hand: tap her, then him. Past '+FLOOD+' it floods, and he loses a week. Maelis beside him lends a card.')},
+    play:function(G,S,a,id){var c=LH.C[id]||{};if((c.base||id)!=='c_step')return;S.sw=(S.sw||0)+1;
+      if(S.sw>FLOOD){var D=G.u[0];S.sw=2;S.flood=(S.flood||0)+1;S.bed=G.turn+1;D.hp=Math.max(1,D.hp-4);
+        a.log(G,'The knee floods. "You don\'t bind a river in flood," says Maelis.','hurt');return [{k:'status',who:'a',t:'Flooded'}]}},
+    tended:function(G,S,a,u,t){if(t&&t.id==='D'&&S.sw>0){S.sw--;a.log(G,'Her two first fingers on the joint. The swelling comes down a little.','good')}},
+    clashEnd:function(G,S,a,K){if(K.d.hp<=0&&K.d.type==='hall1'){a.log(G,'He leaves the stick against the last cot.','good');a.hint(G,'Now without it. The leg tells harder here: Brace when it does, and mind the swelling.')}},
+    turn:function(G,S,a,t){var D=G.u[0];S.sw=Math.max(0,(S.sw||0)-1);
+      if(S.bed===t&&D.hp>0){D.attacked=true;D.moved=true;D.free=false;a.log(G,'A week on his back with his heel on a rolled blanket, letting the weight of the leg pull it straight.','hurt')}
+      if(t===3)a.log(G,'From the next cot Hollis, still mostly drunk, offers commentary.','dimm')}
   },
+  fail:function(G,S){return G.turn>WEEKS?'late':''},
   goal:function(G,S,a){return !a.foe(G,'hall1')&&!a.foe(G,'hall2')},
   win:{t:'The length of the hall',s:'With a stick, then without one.'},
-  lose:{any:{t:'Not today',s:'Some days he does the dull things and nothing happens. He does them again the next day anyway.'}},
-  stars:function(G,S){var D=G.u[0];return [['Walked the hall',true],['With half his strength left',D.hp*2>=D.max],['Without the Mender\'s hands more than twice',(a_tends(G))>=1]]},
+  lose:{late:{t:'"Bring me a weak leg"',s:'"and I\'ll give you a weak knee." She shuts the box, and waits for the leg to come straight.'},
+    any:{t:'Not today',s:'Some days he does the dull things and nothing happens. He does them again the next day anyway.'}},
+  stars:function(G,S){return [['Walked the hall',true],['The knee never flooded',!S.flood],['With a week to spare',G.turn<WEEKS]]},
   outro:['On the last night Maelis sits down on the end of his cot with a wooden box on her knees. Inside, on black cloth: a curved needle, and a spool that glows the deep orange of a coal when you blow on it.',
     '"It\'ll be exactly as strong as you make it, and not one hair stronger."',
     '"Do it," he says. The emberthread goes in like warmth poured into a cold cup. "Time makes it possible. Proof makes it permitted."'],
   read:'Prologue, III. The Binding'});
-function a_tends(G){var m=CP.api.U(G,'M');return m?m.tends:0}
 
 /* ================= BOOK I: THE HOUSE OF MENDERS ================= */
+/* Two things, and both must be done. The wicket: he shuts it with his hand of cards, and every turn it stands open another grey
+   cloak puts down one of those lending him a shoulder; with nobody left beside him, the next is through. The bell: Wren runs for
+   the tower, and the two already inside walk for the stair; only Old Mercy stops them. */
+var PULLS=2,STAIR=[[0,6],[1,6]];
 CP.add({id:'c1',book:'Book I · The House of Menders',ch:'Chapter 1 · The Confessor at the Steps',n:'The Wicket',place:"The gate of Saint Ysolde's",when:'Dusk. Snow in the court.',art:'saint-ysoldes',
   level:'Level 4 · Bound',quote:'"Wren. Now."',
-  intro:['Six grey cloaks have climbed the Steps with a list. Confessor Ivo Marrant reads it at the bars, and the first name on it is Darrow\'s.',
-    'While Old Mercy rings, no blade passes the gate and no name under it is taken down against its will. But the bell has not rung, and the wicket has just gone back on its hinges.',
-    'Two of them are inside, walking toward the wounded the way men walk a market looking for one stall. He cannot cross the court ahead of them. Wren can reach the tower.'],
-  objective:function(G,S,a){var w=a.U(G,'W');return 'Get Wren to the tower door before a grey cloak reaches the wounded.'+(S.shut?' The wicket is shut.':' Shut the wicket on the third man if you can.')},
+  intro:['Five grey cloaks have come to the bars with a list. Confessor Ivo Marrant reads it there, and the first name on it is Darrow\'s.',
+    'While Old Mercy rings, no blade passes the gate and no name under it is taken down against its will. But the bell has not rung, and the wicket has just gone back on its hinges with a third man\'s shoulder in the gap.',
+    'Two are inside already, walking toward the wounded the way men walk a market looking for one stall. He puts his shoulder to the wicket, and there are shoulders beside his. Wren can reach the tower.'],
+  objective:function(G,S,a){var n=beside(G,a).length;
+    return (S.shut?'The wicket is shut. ':'Shut the wicket on the third man. '+(n?n+' beside him to be put down first.':'Nobody is beside him: the next grey cloak is through.')+' ')+
+      (S.rung?'Old Mercy is ringing.':S.pull?'Pell has the rope: hold on.':'Get Wren to the tower door before the two inside reach the stair.')},
+  top:function(G){var S=G.cs;return 'Turn '+G.turn+' · '+(S.rung?'the bell rings':S.pull?'the rope is in Pell\'s hands':'the bell has not rung')},
   open:'Two grey cloaks put their shoulders to the wicket, and it goes back on its hinges.',
-  map:{name:'The Court at Dusk',theme:'court',rows:['~~~f~~','......','......','......','.wwwww','......','d~...b']},
+  map:{name:'The Court at Dusk',theme:'court',rows:['~~~f~~','......','......','......','..ww..','......','dd...b']},
   down:'is put back out',idle:'',insp:1,
   party:{D:{at:[3,1],t:'foot',mov:1,hp:30,br:2,hn:4,throws:0,far:0,img:'darrow1',deck:deck(rep('c_shoulder',3),rep('c_brace',2),['c_still2','c_mend1','c_eye2','c_breath1'])},
-    W:{at:[2,1],img:'wren1'},
-    R:{at:[4,2],mov:2,tend:0,tends:0,img:'rae1',lend:'c_raesh'},
+    W:{at:[2,2],rng:0,deck:null,img:'wren1'},
+    R:{at:[2,1],mov:2,tend:0,tends:0,img:'rae1',lend:'c_raesh'},
     more:[{id:'B',from:'W',n:'Gate-ward',img:'brother',t:'foot',hp:20,mov:2,rng:0,deck:null,lend:'c_bro',at:[4,1]},
-      {id:'L',from:'W',n:'Lay Brother',img:'brother',t:'foot',hp:20,mov:2,rng:0,deck:null,lend:'c_bro',at:[1,3]}]},
-  foes:[{k:'doorman',at:[3,0]},{k:'seeker',at:[2,3]},{k:'seeker',at:[1,2]},{k:'seeker',at:[5,0],tpl:1}],
-  marks:function(){return [[5,6,'go'],[0,6,'keep']]},
+      {id:'L',from:'W',n:'Lay Brother',img:'brother',t:'foot',hp:20,mov:2,rng:0,deck:null,lend:'c_bro',at:[3,2]}]},
+  foes:[{k:'doorman',at:[3,0]},{k:'seeker',at:[1,1]},{k:'seeker',at:[4,2]}],
+  marks:function(G,S){var m=STAIR.map(function(q){return [q[0],q[1],'keep']});if(!S.pull)m.push([5,6,'go']);return m},
   on:{
-    start:function(G,S,a){var sets=[[[2,3],[1,2]],[[2,3],[0,2]],[[2,2],[1,2]],[[0,2],[3,3]],[[3,2],[1,2]]],pick=sets[Math.abs(G.seed|0)%sets.length],i=0;
-      G.u.forEach(function(u){if(u.type==='seeker'&&u.hp>0&&pick[i]){var q=pick[i++];if(!LH.at(G,q[0],q[1])){u.x=q[0];u.y=q[1]}}});
-      a.hint(G,'Wren runs for the bell: tap her, then a tile. The grey cloaks walk two paces a turn, round anyone in their way; with no way round, they put him aside. There is one way onto the gatehouse stair. Shut the wicket, or a third comes in.')},
-    clashEnd:function(G,S,a,K){if(K.d.type==='doorman'&&K.d.hp<=0){S.shut=1;a.log(G,'The wicket shuts on the third man\'s arm, and the arm goes back out.','good')}},
+    start:function(G,S,a){var sets=[[[1,1],[4,2]],[[0,1],[5,2]],[[1,1],[5,1]],[[0,1],[4,3]],[[1,1],[4,3]]],pick=sets[Math.abs(G.seed|0)%sets.length],i=0;
+      G.u.forEach(function(u){if(u.type==='seeker'&&u.hp>0&&pick[i]){var q=pick[i++];if(!LH.at(G,q[0],q[1])||LH.at(G,q[0],q[1])===u){u.x=q[0];u.y=q[1]}}});
+      a.hint(G,'Put the Third Man back out and the wicket shuts. Whoever stands beside him lends a shoulder to his hand; each turn the wicket stands open, another grey cloak puts one of them down. Wren runs for the tower door: tap her, then a tile. The bell rings two turns after she is there.')},
+    clashEnd:function(G,S,a,K){if(K.d.type==='doorman'&&K.d.hp<=0){S.shut=G.turn;a.log(G,'The wicket shuts on the third man\'s arm, the arm goes back out, and the bar goes across.','good')}},
     turn:function(G,S,a,t){
-      if(t===3&&!S.shut&&a.foe(G,'doorman')){var sp=[[3,1],[2,1],[4,1],[3,2]].filter(function(q){return !LH.at(G,q[0],q[1])})[0];if(sp&&a.spawn(G,'seeker',sp[0],sp[1]))a.log(G,'The wicket is still open. A third grey cloak comes through it.','hurt')}
+      var W=a.U(G,'W');
+      /* the wicket: another shoulder in the gap, and one of the House goes down under it */
+      if(!S.shut&&a.foe(G,'doorman')){var by=beside(G,a),b=by[0];
+        if(b){b.hp=0;S.fell=(S.fell||0)+1;a.log(G,'Another grey cloak puts his shoulder in. '+b.n+' goes down under him, with a sound like a dropped sack.','hurt')}
+        else{S.through=1;a.log(G,'Nobody is beside him. A fourth grey cloak is through the wicket, and running.','hurt')}}
+      /* the bell */
+      if(!S.rung&&a.up(W)&&a.on(W,5,6)){S.pull=(S.pull||0)+1;
+        if(S.pull===1){W.still=1;W.mov=0;a.log(G,'Wren is through the tower door. Up the stair, Sister Pell has Old Mercy\'s rope in her hands.','good')}
+        if(S.pull>=PULLS){S.rung=G.turn;a.log(G,'Old Mercy rings. The two grey cloaks stop where they stand, a pace short of the first of the wounded.','good')}}
+      if(S.rung)return;
+      /* the two inside: a pace a turn, unhurried; whoever is in the way is put aside, and it costs them the pace */
       G.u.filter(function(u){return u.type==='seeker'&&u.hp>0}).forEach(function(u){
-        for(var n=0;n<2;n++){if(a.on(u,0,6))break;if(a.stepToward(G,u,0,6))continue;
-          /* no way round: he puts aside whoever is nearest the stair */
-          var b=G.u.filter(function(o){return o.side===0&&o.hp>0&&a.dist(o,u)===1}).sort(function(x,y){return (x.x+(6-x.y))-(y.x+(6-y.y))})[0];
-          if(b){b.hp=Math.max(0,b.hp-6);a.log(G,b.hp>0?'A grey cloak puts '+b.n+' aside, not gently.':b.n+' is put out of the way.','hurt');if(b.id==='D'&&b.hp<=0)G.over={lost:1,t:'',s:''}}break}
-        if(Math.abs(u.x-0)+Math.abs(u.y-6)<=1)S.near=1})}
+        if(onStair(u))return;
+        var goals=STAIR.slice().sort(function(p,q){return (Math.abs(u.x-p[0])+Math.abs(u.y-p[1]))-(Math.abs(u.x-q[0])+Math.abs(u.y-q[1]))});
+        if(a.stepToward(G,u,goals[0][0],goals[0][1])||a.stepToward(G,u,goals[1][0],goals[1][1]))return;
+        var o=G.u.filter(function(m){return m.side===0&&m.hp>0&&m.id!=='D'&&a.dist(m,u)===1}).sort(function(x,y){return (x.x+(6-x.y))-(y.x+(6-y.y))})[0];
+        if(o){o.hp=Math.max(0,o.hp-6);a.log(G,o.hp>0?'A grey cloak puts '+o.n+' aside, not gently.':o.n+' is put out of the way.','hurt');if(o.hp<=0)S.fell=(S.fell||0)+1}})}
   },
-  fail:function(G,S,a){return G.u.some(function(u){return u.type==='seeker'&&u.hp>0&&a.on(u,0,6)})?'names':''},
-  goal:function(G,S,a){return a.on(a.U(G,'W'),5,6)&&a.up(a.U(G,'W'))},
+  fail:function(G,S,a){return S.through?'through':!S.rung&&G.u.some(function(u){return u.type==='seeker'&&u.hp>0&&onStair(u)})?'names':''},
+  goal:function(G,S){return !!S.rung&&!!S.shut},
   win:{t:'Old Mercy rings',s:'Late and dragging, as if the rope had argued with the hands that found it.'},
-  lose:{names:{t:'A name is taken',s:'They reach the gatehouse stair before the bell has a voice.'},any:{t:'The leg will not push again',s:'Deep in the knee, along the line of the thread, something says one thing, quite clearly.'}},
-  stars:function(G,S){return [['The bell is rung',true],['The wicket shut on the third man',!!S.shut],['No grey cloak within a pace of the wounded',!S.near]]},
+  lose:{names:{t:'A name is taken',s:'They reach the gatehouse stair before the bell has a voice.'},
+    through:{t:'The wicket stands open',s:'They come through it low and fast, one and then the other, the way men come through a door they have practised.'},
+    any:{t:'The leg will not push again',s:'Deep in the knee, along the line of the thread, something says one thing, quite clearly.'}},
+  stars:function(G,S){var D=G.u[0];return [['The wicket shut and the bell rung',true],['No more than one of the House put down',(S.fell||0)<=1],['With half his strength left',D.hp*2>=D.max]]},
   outro:['On the second stroke the two grey cloaks stop where they stand, a pace short of the first of the wounded. Nobody has touched them.',
     '"The bell is rung, Confessor," says Mother Ione. "While it rings, no blade climbs the Steps and no blade passes this gate."',
     '"You keep a fine bell," says Marrant. "A little slow on the rope."'],
   read:'Chapter 1, the climax'});
+function onStair(u){return STAIR.some(function(q){return u.x===q[0]&&u.y===q[1]})}
+/* who is lending him a shoulder at the wicket, in the order they go down: the Gate-ward, the lay brother, then Rae */
+function beside(G,a){var D=G.u[0];return ['B','L','R'].map(function(id){return a.U(G,id)}).filter(function(u){return u&&u.hp>0&&a.dist(u,D)===1})}
 
 CP.add({id:'c2',book:'Book I · The House of Menders',ch:'Chapter 2 · The Grey Cot',n:'The Fourth Bell',place:"The infirmary hall, Saint Ysolde's",when:'After the night bell. No wind.',art:'saint-ysoldes',
   level:'Level 6 · Kindled',quote:'"Neither does the cold."',
@@ -281,48 +317,12 @@ CP.add({id:'c4c',book:'Book I · The House of Menders',ch:'Chapter 4 · Old Merc
   read:'Chapter 4, the descent'});
 
 /* ================= BOOK II: THE TEMPERING ROAD ================= */
-CP.add({id:'c5',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thornwild Woman\'s',n:'Your Road',place:'The Holloway, above Coldmere',when:'Low sun on their helms.',art:'coldmere',
-  level:'Level 8 · Kindled',quote:'"Outriders have eyes."',
-  intro:['The road comes over a rise, and there it is: riders two and two, the banner dark on a pale field, the Confessor\'s cart in the middle. At the head, a rider who has the better seat, and has always had it.',
-    'Rae has the oxen turned before he has properly looked. There is a track he had not seen at all: a drove road between two walls, running north round the far side of the water.',
-    'He stands in the middle of the Holloway. The one man who can tell him what the west bank meant is a mile off, riding toward him.'],
-  objective:function(G,S,a){var n=a.mates(G).filter(function(u){return LHter(G,u)!=='w'}).length;return 'Get everyone between the drove road\'s walls before the outriders come down the road. '+(n?n+' still in the open.':'')},
-  top:function(G){return 'Turn '+G.turn+(G.turn<3?' · the column is a mile off':' · outriders on the road')},
-  open:'"Forty-four," says Wren. "Forty-six. Their cart. His cart."',
-  map:{name:'The Rise above Coldmere',theme:'road',rows:['..d...','..d...','..d..w','..d.ww','..d.ww','..d.ww','..d...']},
-  idle:'',insp:0,
-  marks:function(G){var m=[];G.map.rows.forEach(function(r,y){for(var x=0;x<r.length;x++)if(r.charAt(x)==='w'&&!LH_at(G,x,y))m.push([x,y,'go'])});return m},
-  party:{D:{at:[2,3],t:'foot',mov:2,hp:50,br:3,hn:5,throws:0,far:0,rng:0,img:'darrow',deck:null},
-    R:{at:[2,4],mov:2,tend:0,tends:0,img:'rae'},
-    W:{at:[1,4],rng:0,deck:null,img:'wren'},
-    A:{at:[3,6],mov:3,rng:0,deck:null,img:'ash'},
-    more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:0,tends:0,at:[3,5]}]},
-  foes:[{k:'rider',at:[0,0],tpl:1}],
-  on:{
-    start:function(G,S,a){a.hint(G,'Walled tiles hide whoever stands in them, and cost two steps to enter. The deepest fill first: nobody passes through a friend, except straight back.')},
-    moved:function(G,S,a,u){if(u.id==='D'&&u.y<3&&!S.habit){S.habit=1;a.log(G,'"I\'d decided," he says. "Before any of you said a word. It\'s a habit."','dimm')}},
-    turn:function(G,S,a,t){
-      G.u.filter(function(u){return u.type==='rider'&&u.hp>0}).forEach(function(r){var ny=r.y+2;if(ny>6){r.hp=0;return}var w=LH_at(G,2,ny)||LH_at(G,2,ny-1);if(w&&w.side===0){S.seen=1}r.y=ny});
-      if(t===3||t===4||t===5)a.spawn(G,'rider',2,0);
-      if(t===3)a.log(G,'Two riders come off the head of the column at a trot.','hurt');
-      G.u.filter(function(u){return u.type==='rider'&&u.hp>0}).forEach(function(r){a.mates(G).forEach(function(m){if(LHter(G,m)!=='w'&&a.dist(r,m)<=2)S.seen=1})})}
-  },
-  fail:function(G,S){return S.seen?'seen':G.turn>=9?'late':''},
-  goal:function(G,S,a){return a.mates(G).every(function(u){return LHter(G,u)==='w'})},
-  win:{t:'"Your road."',s:'The cart comes off the Holloway onto a track he had not seen at all.'},
-  lose:{seen:{t:'An outrider pulls up',s:'And looks, and puts two fingers in his mouth. That is a Lance on the march.'},late:{t:'The column is on the rise',s:'Forty men ride on up to the winch-house, and take the cart on the way.'}},
-  stars:function(G,S){return [['Off the Holloway',true],['Before the outriders are on the road',G.turn<=3],['He never walked toward the banner',!S.habit]]},
-  outro:['"That\'s Aldric," he says. "I know who it is," says Rae, and does not stop.',
-    'She stands at Dun\'s head, looking at him, and it takes him a moment to see what she is waiting for. Nobody on the Holloway ever needed his leave for a thing she did. She is waiting for it now.',
-    '"Your road," says Darrow. "Aye. Get on the tailboard. You\'ve had your stone."'],
-  read:'Chapter 5, the first scene on the road'});
-function LHter(G,u){return G.map.rows[u.y].charAt(u.x)}
-function LH_at(G,x,y){for(var i=0;i<G.u.length;i++){var u=G.u[i];if(u.hp>0&&u.x===x&&u.y===y)return u}return null}
 
 CP.add({id:'c5b',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thornwild Woman\'s',n:'The Yard at Coldmere',place:'The inn yard, Coldmere',when:'A sergeant and six, come to search.',art:'coldmere',
   level:'Level 8 · Kindled',quote:'"Fight from where you\'re put."',
   tall:'The page tells this one without a blow: a pitchfork goes through the hay, and Hale talks the boy away. Here it comes to pikes.',
-  intro:['A levy sergeant and his pike boys have come to search the inn. They are boys with borrowed pikes, and a man who has been told there is a reward. One boy has the horn they were mustered with; one has brought a pitchfork instead.',
+  intro:['On the Holloway a column came over the rise, riders two and two, the banner dark on a pale field. Rae had the oxen onto a drove road he had not seen at all before he had properly looked. "Your road," said Darrow. It brought them down to Coldmere.',
+    'A levy sergeant and his pike boys have come to search the inn. They are boys with borrowed pikes, and a man who has been told there is a reward. One boy has the horn they were mustered with; one has brought a pitchfork instead.',
     'The company is in the yard with the cart. He walks with a stick now, two steps at a time; Hollis has the beech leg; Ash goes on three legs and a splint.',
     'Put the sergeant down, and the boys will remember somewhere else to be.'],
   objective:'Bring the sergeant down. The company fights with him now: each has a hand of their own.',

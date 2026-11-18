@@ -27,7 +27,7 @@ GAME = ROOT / "game"
 sys.path.insert(0, str(ROOT / "engine"))
 WHO = ["pikeman", "swordsman", "crossbowman", "skirmisher", "shieldbearer", "bannerman", "captain", "hollis", "ash", "wren", "rae",
        # the campaign's own (game/build_campaign.py)
-       "sergeant", "pitchfork", "hornboy", "greycloak", "lymer", "guest", "darkcoat", "rider", "walker", "brother", "ysra-tal", "maelis",
+       "sergeant", "pitchfork", "hornboy", "greycloak", "lymer", "guest", "darkcoat", "walker", "brother", "ysra-tal", "maelis",
        # what is not a man: a token only
        "wend", "hall", "question", "sliver", "steps"]
 SOUND_EXT = [".mp3", ".ogg", ".m4a", ".wav", ".opus"]

@@ -122,9 +122,9 @@ var CT={turn:'Plant the left foot and turn on it, fast and low, the way he has t
 var FD={
   Z:{n:'',key:'zz',t:'foot',hp:1,mov:0,rng:0,atk:0,boss:1,ans:[{b:0,d:0}]},   /* never seen: the engine wants a captain on every board */
   wend:{n:'The Wend',key:'wend',t:'cast',hp:90,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:6},{b:0,d:8}]},
-  hall1:{n:'The Length of the Hall',key:'hall',t:'foot',hp:14,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:5},{b:0,d:6}]},
-  hall2:{n:'Without the Stick',key:'hall',bare:1,t:'foot',hp:18,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:7},{b:0,d:6}]},
-  doorman:{n:'Man at the Wicket',key:'greycloak',t:'blade',hp:24,mov:0,rng:1,atk:5,tough:1,ans:[{b:4,d:7},{b:0,d:9}]},
+  hall1:{n:'The Length of the Hall',key:'hall',t:'foot',hp:20,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:6},{b:0,d:8}]},
+  hall2:{n:'Without the Stick',key:'hall',bare:1,t:'foot',hp:26,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:8},{b:0,d:10}]},
+  doorman:{n:'Third Man',key:'greycloak',t:'blade',hp:34,mov:0,rng:1,atk:5,tough:1,ans:[{b:4,d:7},{b:0,d:9}]},   /* his shoulder in the gap: the wicket shuts when he is put back out */
   seeker:{n:'Grey Cloak',key:'greycloak',t:'blade',hp:20,mov:0,rng:0,atk:1,scripted:1,ans:[{b:0,d:1}]},
   question:{n:'The Question',key:'question',t:'foot',hp:25,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:10},{b:4,d:12}]},
   sliver:{n:'The Black Glass',key:'sliver',t:'foot',hp:30,mov:0,rng:1,atk:1,ordeal:1,tough:99,fixed:1,ans:[{b:0,d:14},{b:0,d:19},{b:0,d:25}]},   /* the cold climbs: its order is the scene's */
@@ -146,7 +146,6 @@ var FD={
   sergeant:{n:'Levy Sergeant',key:'sergeant',t:'blade',hp:38,mov:2,rng:1,atk:9,enrage:3,ans:[{b:6,d:11},{b:0,d:14}]},
   cloak:{n:'Grey Cloak',key:'greycloak',t:'blade',hp:34,mov:3,rng:1,atk:11,ans:[{b:0,d:13},{b:5,d:11}]},
   darkcoat:{n:'Dark Coat',key:'darkcoat',t:'blade',hp:32,mov:4,rng:1,atk:11,ans:[{b:0,d:8,n:2},{b:0,d:6,n:3}]},
-  rider:{n:'Outrider',key:'rider',t:'blade',hp:30,mov:0,rng:0,atk:1,scripted:1,ans:[{b:0,d:1}]},
   ysra:{n:'Ysra Tal',key:'ysra-tal',t:'blade',hp:72,mov:3,rng:1,atk:13,proper:1,ans:[{b:0,d:7,n:3},{b:8,d:18},{b:0,d:22}]},
   walker:{n:'Walker',key:'walker',t:'foot',hp:22,mov:1,rng:1,atk:7,barbed:1,ans:[{b:0,d:12},{b:0,d:15}]}
 };
@@ -284,7 +283,9 @@ LH.playable=function(G,i){return say(G,O.playable(G,i))};
 LH.preview=function(G,a,d){var p=O.preview(G,a,d);if(G.ms){p.txt=say(G,p.txt);p.chips=p.chips.map(function(c){return [say(G,c[0]),c[1]]})}return p};
 function sayFx(G,l){return l.map(function(e){e.label=say(G,e.label);e.text=say(G,e.text);return e})}
 LH.effects=function(G,u){if(u.side===2)return [];var l=O.effects(G,u);return G.ms?sayFx(G,l):l};
-LH.clashEffects=function(G){var f=O.clashEffects(G);if(G.ms){f.a=sayFx(G,f.a);f.d=sayFx(G,f.d)}return f};
+/* a mission's own state, shown where a hand is played: [side a|d, icon, label, what it means, tone, number] */
+LH.clashEffects=function(G){var f=O.clashEffects(G);if(G.ms){f.a=sayFx(G,f.a);f.d=sayFx(G,f.d);var M=MS[G.ms];
+  if(M.chips)M.chips(G,G.cs,api).forEach(function(c){f[c[0]].unshift({id:c[1],label:c[2],text:c[3],tone:c[4]||'plain',n:c[5]===undefined?null:c[5]})})}return f};
 
 /* ---------- winning and losing: the mission's own ---------- */
 function ev(G,name,a,b){var M=MS[G.ms];if(M.on&&M.on[name])return M.on[name](G,G.cs,api,a,b)}
@@ -318,7 +319,7 @@ LH.newRun=function(opts){
   return O.newRun(opts)};
 LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){findAt(G,u);ev(G,'moved',u);after(G)}return r};
 LH.hold=function(G,u){var r=O.hold(G,u);if(r&&G.ms){ev(G,'held',u);after(G)}return r};
-LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms)after(G);return r};
+LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms){ev(G,'tended',u,t);after(G)}return r};
 LH.engage=function(G,a,d){if(!G.ms){var K0=O.engage(G,a,d);if(K0&&CP.road)bondUp(G,K0);return K0}CUR=G;ev(G,'before',a,d);var K=O.engage(G,a,d);if(K){G.cs.clashes++;bondUp(G,K);K.p.txt=say(G,K.p.txt);tipsFor(G,K);ev(G,'engage',K)}return K};
 LH.play=function(G,i){
   var K=G.clash,on=!!K&&(!!G.ms||!!CP.road),id=on?K.hand[i]:null,tw=on?eff(K,id):id,sw=on&&tw!==id&&!O.playable(G,i);
@@ -391,7 +392,7 @@ function news(id){
   return out;
 }
 /* ---------- the fire's shelf fills as he goes: each mission told leaves one card the company can spare, and stars open the last two ---------- */
-var GIFT={p0:'bandage',p1:'stitch',c1:'closeup',c2:'readline',c3:'bellow',c4a:'hewT',c4b:'callco',c4c:'secondwind',c5:'legs',c5b:'twice',c5c:'pinshot',c6:'finish',c6b:'follow',c7:'digin'},STARGIFT=[[24,'bloodup'],[32,'steady']];
+var GIFT={p0:'bandage',p1:'stitch',c1:'closeup',c2:'readline',c3:'bellow',c4a:'hewT',c4b:'callco',c4c:'secondwind',c5b:'twice',c5c:'pinshot',c6:'finish',c6b:'follow',c7:'digin'},STARGIFT=[[12,'legs'],[22,'bloodup'],[30,'steady']];
 function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done[id]){stars+=done[id].stars||0;if(GIFT[id]&&SHOP.indexOf(GIFT[id])>=0)out.push(GIFT[id])}});
   STARGIFT.forEach(function(g){if(stars>=g[0]&&SHOP.indexOf(g[1])>=0)out.push(g[1])});return out}
 

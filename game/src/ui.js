@@ -7,8 +7,8 @@ var AS=window.LH_ASSETS||{art:[],fig:[],tok:[],sfx:{}};
 function has(list,name){return !!name&&list.indexOf(name)>=0}
 var root=document.getElementById('game');if(!root)return;
 var FAST=!!window.LH_FAST,REDUCED=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-var prefs={rounds:1,quick:false,sound:false,music:true,deck:'sheet',level:0};
-try{var sv=JSON.parse(localStorage.getItem('lh-prefs')||'{}');if(sv.rounds===3)prefs.rounds=3;if(sv.quick)prefs.quick=true;if(sv.sound)prefs.sound=true;if(sv.deck==='all')prefs.deck='all';if(sv.level===1||sv.level===-1)prefs.level=sv.level}catch(e){}
+var prefs={rounds:1,quick:false,sound:false,music:true,buzz:true,deck:'sheet',level:0};
+try{var sv=JSON.parse(localStorage.getItem('lh-prefs')||'{}');if(sv.rounds===3)prefs.rounds=3;if(sv.quick)prefs.quick=true;if(sv.sound)prefs.sound=true;if(sv.buzz===false)prefs.buzz=false;if(sv.deck==='all')prefs.deck='all';if(sv.level===1||sv.level===-1)prefs.level=sv.level}catch(e){}
 function savePrefs(){try{localStorage.setItem('lh-prefs',JSON.stringify(prefs))}catch(e){}}
 function best(v){var b=0;try{b=+localStorage.getItem('lh-best')||0;if(v>b){localStorage.setItem('lh-best',String(v));}}catch(e){}return Math.max(b,v||0)}
 var runId=0,G,UI={sel:null,fc:null,look:null,danger:false,card:-1,fx:null,buy:null,leave:false,ended:false},busy=false;
@@ -411,6 +411,9 @@ function sideXY(who){return who==='a'?[22,42]:[76,46]}
 function slash(who,heavy){if(FAST||REDUCED)return;var p=sideXY(who),el=document.createElement('span');el.className='slash'+(who==='a'?' flip':'')+(heavy?' heavy':'');el.style.left=p[0]+'%';el.style.top=(p[1]+8)+'%';el.innerHTML='<svg viewBox="0 0 100 100"><path d="M14 84Q70 70 88 14"/></svg>';$cfx.appendChild(el);setTimeout(function(){el.remove()},ms(420))}
 function shake(heavy){anim($stage,[{transform:'translate(0,0)'},{transform:'translate('+(heavy?5:3)+'px,-2px)'},{transform:'translate(-'+(heavy?4:2)+'px,1px)'},{transform:'translate(0,0)'}],heavy?220:160)}
 var STAT_SFX={Broken:'break',Enraged:'enrage'};
+/* a short buzz in the hand when a foe breaks, where the phone can (Android's browsers; an iPhone's has no way to) */
+var buzzed=0;function canBuzz(){return typeof navigator!=='undefined'&&typeof navigator.vibrate==='function'}
+function buzz(ms){if(!prefs.buzz||!canBuzz())return;buzzed++;try{navigator.vibrate(ms)}catch(e){}}
 async function showFx(fx){
   for(var j=0;j<fx.length;j++){var f=fx[j],p;
     if(f.k==='dmg'){if(!f.by)anim($me,[{transform:'translateX(0)'},{transform:'translateX(34px)'},{transform:'translateX(0)'}],260);await wait(110);
@@ -421,7 +424,7 @@ async function showFx(fx){
     else if(f.k==='heal'){p=sideXY('a');floatAt($cfx,p[0],p[1],'+'+f.n,'heal');sfx('heal');paintVs();await wait(240)}
     else if(f.k==='breath'){p=sideXY('a');floatAt($cfx,p[0],p[1]+18,'+'+f.n+' breath','info');sfx('breath_gain');paintTray();pulse($('c-orb'),'pop');await wait(220)}
     else if(f.k==='draw'){if(f.n){paintHand();await wait(260)}}
-    else if(f.k==='status'){p=sideXY(f.who);floatAt($cfx,p[0],p[1]-16,f.t,'info');sfx(STAT_SFX[f.t]||'status_good');paintVs();paintIntent();await wait(260)}
+    else if(f.k==='status'){p=sideXY(f.who);floatAt($cfx,p[0],p[1]-16,f.t,'info');sfx(STAT_SFX[f.t]||'status_good');if(f.t==='Broken'&&f.who==='d')buzz(45);paintVs();paintIntent();await wait(260)}
     else if(f.k==='stance'){p=sideXY('a');floatAt($cfx,p[0],p[1]-16,f.t,'info');sfx('stance');paintVs();await wait(300)}
     else if(f.k==='friend'){p=sideXY('a');floatAt($cfx,p[0]-8,p[1]+20,LH.byId(G,f.id).n+' +'+f.n+' guard','info');sfx('block_gain');await wait(240)}
     else if(f.k==='cleanse'){p=sideXY('a');floatAt($cfx,p[0],p[1]-16,'Wound set aside','heal');sfx('heal');paintVs();paintHand();await wait(240)}
@@ -553,11 +556,12 @@ document.addEventListener('click',function(e){
   if(kv[0]==='rounds'){prefs.rounds=+kv[1];if(G)G.opts.rounds=prefs.rounds}else if(kv[0]==='quick')prefs.quick=kv[1]==='true';
   else if(kv[0]==='sound'){prefs.sound=kv[1]==='true';if(prefs.sound)hear('your_turn')}
   else if(kv[0]==='music'){prefs.music=kv[1]==='true';musStarted=true}
+  else if(kv[0]==='buzz'){prefs.buzz=kv[1]==='true';if(prefs.buzz)buzz(40)}
   else if(kv[0]==='deck'||kv[0]==='level'){if(busy)return;if(kv[0]==='deck')prefs.deck=kv[1];else prefs.level=+kv[1];savePrefs();paintPrefs();newRun();return}
   savePrefs();paintPrefs();music()});
 (function(){var l=AS.art.map(function(n){return A+n+'.webp'}).concat(AS.fig.map(function(n){return A+'fig-'+n+'.webp'}),AS.tok.map(function(n){return A+'tok-'+n+'.webp'}));window.__pre=l.map(function(u){var im=new Image();im.src=u;return im})})();
 paintPrefs();lock(false);newRun();
-window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,curtain:curtain,cardHTML:cardHTML,svg:svg,after:function(){return afterMapChange()},heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
+window.__LH={canBuzz:canBuzz,get buzzed(){return buzzed},LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,curtain:curtain,cardHTML:cardHTML,svg:svg,after:function(){return afterMapChange()},heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
 
 /* ---------- lists the page shows: the deck, the camp's cards, the sounds ---------- */
 var gal=$('gallery');

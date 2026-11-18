@@ -16,7 +16,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     const at=' at '+vp.width+'×'+vp.height;
     const c=await b.newContext({viewport:vp,isMobile:true,hasTouch:true});const p=await c.newPage();const errs=[];
     p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error'&&!/net::|Failed to load|fonts\./.test(m.text()))errs.push(m.text())});
-    await p.addInitScript(()=>{window.LH_FAST=true});
+    await p.addInitScript(()=>{window.LH_FAST=true;window.__buzz=[];try{Object.defineProperty(Navigator.prototype,'vibrate',{configurable:true,value:function(ms){window.__buzz.push(ms);return true}})}catch(e){}});
     await p.goto(URL);await p.waitForTimeout(500);
     const still=()=>p.evaluate(()=>{var e=document.documentElement,g=document.getElementById('game').getBoundingClientRect();return e.scrollHeight<=innerHeight+1&&e.scrollWidth<=innerWidth+1&&Math.abs(g.height-innerHeight)<=1&&g.width<=innerWidth+1});
     ok(await p.evaluate(()=>__CP.scr==='title'&&document.documentElement.classList.contains('app')),'it opens on the menu, as the app'+at);
@@ -48,6 +48,18 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     ok(await p.evaluate(()=>{var s=document.getElementById('scr-clash');return s.scrollHeight<=s.clientHeight+1})&&await still(),'and nothing there needs scrolling'+at);
     await p.tap('#scr-clash .hcard');await p.waitForTimeout(150);
     ok(await inView(p,'#c-tray button')&&(await p.locator('#c-tell').innerText()).length>10,'a card read still leaves the tray in reach'+at);
+    /* a foe breaks: one short buzz in the hand, and none with it turned off */
+    {await p.waitForFunction(()=>!__LH.busy,null,{timeout:3000}).catch(()=>{});
+     const id=await p.evaluate(()=>{var G=__LH.G,K=G.clash,L=__LH.LH,C=L.C;K.canBreak=true;K.broken=false;K.fb=0;K.d.hp=K.d.max=60;K.en=9;window.__buzz.length=0;
+       var i=-1;K.hand.forEach(function(c,j){if(i<0&&C[c]&&C[c].dmg&&!L.playable(G,j))i=j});return i<0?null:K.hand[i]});
+     for(let n=0;id&&n<2;n++){if(await p.evaluate(()=>__LH.G.clash.broken))break;const at2=await p.evaluate(id=>{var e=document.querySelector('#scr-clash .hcard[data-id="'+id+'"]'),r=e.getBoundingClientRect(),x,y;   /* a point of the card that is really on top: in a fanned hand most of it is under a neighbour */
+         for(y=r.top+6;y<r.bottom-4;y+=8)for(x=r.left+4;x<r.right-4;x+=6){var top=document.elementFromPoint(x,y);if(top&&e.contains(top))return [x,y]}return null},id);
+       if(!at2)break;await p.touchscreen.tap(at2[0],at2[1]);await p.waitForTimeout(150);await p.waitForFunction(()=>!__LH.busy,null,{timeout:3000}).catch(()=>{})}
+     await p.waitForFunction(()=>window.__buzz.length>0,null,{timeout:1500}).catch(()=>{});
+     ok(!id||await p.evaluate(()=>__LH.G.clash&&__LH.G.clash.broken&&window.__buzz.length===1&&window.__buzz[0]>=20&&window.__buzz[0]<=80),'when the foe breaks the phone gives one short buzz'+at);
+     await p.evaluate(()=>{__CP.settings()});ok(await p.locator('.cp.on [data-pref="buzz=false"]').count()===1,'and Settings can turn it off');
+     await p.tap('.cp.on [data-pref="buzz=false"]');ok(await p.evaluate(()=>__LH.prefs.buzz===false&&JSON.parse(localStorage.getItem('lh-prefs')).buzz===false),'which is kept');
+     await p.evaluate(()=>{__LH.prefs.buzz=true})}
     ok(errs.length===0,'no errors'+at+(errs.length?': '+errs[0]:''));
     await c.close();
   }

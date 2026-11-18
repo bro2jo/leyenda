@@ -50,10 +50,10 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
       await p.evaluate(()=>{});
     }
     /* the fire: stars are spent on a pack for the larger fights, and can be had back */
-    await p.evaluate(()=>{var P=__CP.P;P.done={};['p0','p1','c1','c2','c3','c4a','c4b','c4c','c5'].forEach(function(k){P.done[k]={stars:2}});P.pack.length=0;__CP.title()});
+    await p.evaluate(()=>{var P=__CP.P;P.done={};['p0','p1','c1','c2','c3','c4a','c4b','c4c','c5b'].forEach(function(k){P.done[k]={stars:2}});P.pack.length=0;__CP.title()});
     ok(await p.evaluate(()=>__CP.purse()===18),'eighteen stars earned are eighteen to spend');
     await p.click('.cp.on [data-cp="fire:title"]');ok(await p.evaluate(()=>__CP.scr==='fire')&&await p.locator('.cp.fire .camphero').count()===1,'the fire opens from the title');
-    ok(await p.locator('.cp.fire [data-cp^="pick:"]').count()===9&&await p.evaluate(()=>__CP.shelf().length===9&&__CP.shelf().indexOf('digin')<0),'nine missions told have left nine cards at the fire, and no more');
+    ok(await p.locator('.cp.fire [data-cp^="pick:"]').count()===10&&await p.evaluate(()=>__CP.shelf().length===10&&__CP.shelf().indexOf('legs')>=0&&__CP.shelf().indexOf('digin')<0&&__CP.shelf().indexOf('bloodup')<0),'nine missions told have left nine cards at the fire, eighteen stars one more, and no others');
     await p.click('.cp.fire [data-cp="pick:callco"]');ok((await p.locator('.cp-pick').innerText()).indexOf('Take it for 8 stars')>=0,'a card is read before it is taken, with its price in stars');
     await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='callco'&&__CP.purse()===10&&JSON.parse(localStorage.getItem('lh-campaign')).pack.join()==='callco'),'taking it spends the stars and is kept');
     ok((await p.locator('#cp-purse b').innerText())==='10','the purse on the screen is right');
@@ -84,7 +84,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.evaluate(()=>{__CP.P.pack.length=0;__CP.P.pack.push('callco')});
     /* the main menu, and everywhere it leads */
     await p.evaluate(()=>{__CP.title()});ok(await p.locator('.cp-menu .cp-tile').count()===6&&await p.locator('.cp-menu [data-cp^="intro:"]').count()===1,'the menu offers the next mission and six places to go');
-    ok(/9 of 14 told/.test(await p.locator('.cp-tile[data-cp="list"]').innerText())&&/found/.test(await p.locator('.cp-tile[data-cp="cards:title"]').innerText()),'each tile says where things stand');
+    ok(/9 of 13 told/.test(await p.locator('.cp-tile[data-cp="list"]').innerText())&&/found/.test(await p.locator('.cp-tile[data-cp="cards:title"]').innerText()),'each tile says where things stand');
     await p.click('.cp-tile[data-cp="list"]');ok(await p.locator('.cp-road .cp-row.next').count()===1&&await p.locator('.cp-road .cp-row.tall').count()===3&&await p.locator('.cp-road .cp-row.done').count()===9,'the journey is a road: what is told, what is next, a spur for each larger fight');
     await p.evaluate(()=>{__CP.company()});ok(await p.locator('.cp-who').count()>=6&&/Lends/.test(await p.locator('.cp.on').innerText())&&/First beside him in/.test(await p.locator('.cp.on').innerText()),'the company lists everyone who has stood beside him and what each lends');
     await p.evaluate(()=>{__CP.settings()});ok(await p.locator('.cp.on [data-cplevel]').count()===3&&await p.locator('.cp.on [data-pref^="music"]').count()===2,'settings are inside the game');
@@ -160,7 +160,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     {const pr=await p.evaluate(()=>[].map.call(document.querySelectorAll('.prompt pre'),function(e){return e.textContent}));
      {const fs=require('fs'),has=(k,n)=>fs.existsSync(path.resolve(__dirname,'../art/'+k+'/'+n+'.webp')),dir=k=>fs.readdirSync(path.resolve(__dirname,'../art/'+k)).filter(f=>/\.webp$/.test(f)).length;
      const L=await p.evaluate(()=>['who','tok','card'].map(k=>[].map.call(document.querySelectorAll('h3[data-'+k+']'),e=>e.getAttribute('data-'+k))));
-     ok(L[0].length===19-dir('figures')&&L[0].every(n=>!has('figures',n))&&L[1].length>=5&&L[1].every(n=>!has('tokens',n))&&L[2].length>=25-dir('cards')&&L[2].every(n=>!has('cards',n)),'a prompt for every figure, every token of what is only seen on the map, and every card still wanting a picture, and none for one that is filed');}
+     ok(L[0].length===19-dir('figures')&&L[0].every(n=>!has('figures',n))&&L[1].length>=1&&L[1].every(n=>!has('tokens',n))&&L[2].length>=25-dir('cards')&&L[2].every(n=>!has('cards',n)),'a prompt for every figure, every token of what is only seen on the map, and every card still wanting a picture, and none for one that is filed');}
      ok(await p.evaluate(()=>{var l=document.querySelectorAll('ol.ranked>li h3');return l[0].getAttribute('data-who')==='hollis'&&!document.querySelector('h3[data-who="pikeman"],h3[data-who="captain"],h3[data-card="b_strike"]')&&[].every.call(document.querySelectorAll('ol.ranked>li .why'),function(e){return e.textContent.length>8})}),'they are in order, the most noticed first, each with its reason, and what is made has left the list');
      ok(pr.every(function(t){return t.split(/\s+/).length<=150&&/^Fantasy RPG /.test(t)&&/Painterly semi-realistic/.test(t)}),'every prompt is whole and short: the kind of picture first, its own style and format, 150 words at most');
      ok(pr.every(function(t){return !/gambeson|kettle|madder|hauberk|cuirass|coif|lymer|surcoat|buff coat/i.test(t)}),'and in plain words an image model knows');

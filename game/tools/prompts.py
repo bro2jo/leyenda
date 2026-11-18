@@ -90,7 +90,6 @@ CARDS = [
 ]
 # people seen only on the map: they never stand in a clash, so a token is the whole of it
 PEOPLE = [
- ("rider", "An outrider", "A cavalry scout in a short dark green riding jacket over chainmail and an open iron helmet, with an alert, weathered face."),
  ("brother", "A lay brother", "A sturdy man of fifty with short grey hair and a kind, tired face, in a plain undyed wool robe."),
 ]
 SOLO = (FACE + " Softly blurred background. " + f"{LOOK} {KEEP_OUT}" + " Eye-level centered square headshot, shoulders visible, turned slightly to the left, "
@@ -119,7 +118,7 @@ IMPACT = {
  "who:walker": (58, "Both walkers on the mill bridge"), "who:lymer": (56, "One fight at the fold, but there is nothing else like it on the board"),
  "tok:question": (54, "One mission"), "tok:sliver": (53, "One mission"),
  "who:sergeant": (50, "One mission, and the captain's picture stands in for now"), "who:pitchfork": (49, "One mission"), "who:hornboy": (48, "One mission, and the pitchfork boy's picture stands in for now"),
- "tok:rider": (40, "Seen only on the map, in one mission"), "tok:brother": (39, "Seen only on the map, in one mission"),
+ "tok:brother": (39, "Seen only on the map, in one mission"),
  "who:pikeman": (4, "Made already"), "who:swordsman": (3, "Made already"),
 }
 LIMIT = 150  # the prompt this wording comes from ran to 330 words and held; the first 150 are what every generator reads

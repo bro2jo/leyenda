@@ -18,12 +18,12 @@ function hand(G,opt){
     var it=LH.intent(G),inc=it.none?0:it.d*it.n,best=-1,bv=-1;
     if(opt.stat||opt.rand){var can=[];K.hand.forEach(function(id,i){if(!LH.playable(G,i))can.push(i)});if(opt.stat){opt.stat.decisions++;opt.stat.options+=can.length}
       if(opt.rand){if(!can.length||opt.rand()<.2)break;LH.play(G,can[Math.floor(opt.rand()*can.length)]);if(opt.stat)opt.stat.played++;K=G.clash;if(!K||K.phase!=='play')break;continue}}
-    K.hand.forEach(function(id,i){if(LH.playable(G,i))return;var c=LH.C[CP.eff?CP.eff(K,id):id],v=0;
+    K.hand.forEach(function(id,i){if(LH.playable(G,i))return;if(opt.veto&&opt.veto(id,K))return;var c=LH.C[CP.eff?CP.eff(K,id):id],v=0;
       if(id==='turn')v=100;
       if(c.en||c.draw)v=Math.max(v,50);
       if(c.blk&&inc>K.block)v=Math.max(v,30+Math.min(c.blk,inc-K.block)+(c.halve?3:0));
       if(c.halve&&inc>K.block)v=Math.max(v,28);
-      if(c.dmg){var h=LH.hitList(K,c).reduce(function(a,b){return a+b},0);if(h>0)v=Math.max(v,(opt.blockFirst&&inc>K.block?5:20)+h/Math.max(1,c.c))}
+      if(c.dmg){var h=LH.hitList(K,c).reduce(function(a,b){return a+b},0);if(h>0)v=Math.max(v,(opt.hitFirst&&opt.hitFirst(K)?40:opt.blockFirst&&inc>K.block?5:20)+h/Math.max(1,c.c))}
       if(c.heal&&K.a.hp<K.a.max-c.heal)v=Math.max(v,25);
       if(c.open||c.mark||c.pin)v=Math.max(v,10);
       if(v>bv){bv=v;best=i}});
@@ -48,8 +48,14 @@ function battle(G){var D=G.u[0];CP.api.mates(G).forEach(function(u){if(G.over||u
   var f=nearestFoe(G,u);if(!f)return;if(u.mov>0&&!LH.targets(G,u).length)go(G,u,f.x,f.y,true);fight(G,u,{blockFirst:u.hp<u.max*.4})})}
 var PLAN={c5b:battle,c5c:battle,c6b:battle,
   p0:function(G){var D=G.u[0];if(!G.cs.grace)go(G,D,3,5);if(G.cs.grace){go(G,D,3,4);fight(G,D,{press:function(){return true}})}},
-  p1:function(G){var D=G.u[0],f=nearestFoe(G,D);if(f)go(G,D,f.x,f.y,true);go(G,U(G,'M'),D.x+1,D.y);tendD(G,'M',4);fight(G,D,{blockFirst:D.hp<12})},
-  c1:function(G){go(G,U(G,'W'),5,6);var D=G.u[0];go(G,U(G,'L'),0,5);go(G,U(G,'R'),0,4);go(G,U(G,'B'),0,3);fight(G,D,{blockFirst:D.hp<14})},
+  /* the Binding: Steps while the knee will take one, the Mender's hand when it is swollen or he is hurt */
+  p1:function(G){var D=G.u[0],S=G.cs,f=nearestFoe(G,D),M=U(G,'M');if(f)go(G,D,f.x,f.y,true);go(G,M,D.x,D.y,true);
+    if(M&&LH.tendTargets(G,M).indexOf(D)>=0&&(S.sw>=2||D.max-D.hp>=8))LH.tend(G,M,D);
+    fight(G,D,{blockFirst:D.hp<12,hitFirst:function(K){return K.a.hp>10},veto:function(id){return ((LH.C[id]||{}).base||id)==='c_step'&&(G.cs.sw||0)>=3}})},
+  /* the Wicket: Wren runs, the Gate-ward lends his shoulder at the wicket until it is shut, the others hold the stair */
+  c1:function(G){var S=G.cs,D=G.u[0],W=U(G,'W'),V=process.env.C1||'a',door=CP.api.foe(G,'doorman');if(W&&!W.still)go(G,W,5,6);
+    if(V==='c')['B','L','R'].forEach(function(id,i){go(G,U(G,id),i,5)});   /* a bad plan, to measure against: everyone leaves him at the wicket */
+    if(door&&LH.targets(G,D).indexOf(door)>=0){rig(D);if(LH.engage(G,D,door))hand(G,{blockFirst:D.hp<12,hitFirst:function(K){return K.a.hp>14}})}},
   c2:function(G){go(G,U(G,'W'),4,0);fight(G,G.u[0],{})},
   c3:function(G){var D=G.u[0];go(G,D,2,2);go(G,U(G,'W'),3,2);go(G,U(G,'M'),2,3);fight(G,D,{blockFirst:true,press:function(G,K){return K.a.hp>20}})},
   c4a:function(G){fight(G,G.u[0],{blockFirst:G.u[0].hp<16})},
@@ -58,8 +64,6 @@ var PLAN={c5b:battle,c5c:battle,c6b:battle,
     if(!f){var bx=-1;for(var x=0;x<6;x++)if(bx<0&&LH.ok(G,x,6)&&!LH.at(G,x,6))bx=x;/* nothing in the way: everyone down, the rearmost first, and the view follows */
       CP.api.mates(G).slice().sort(function(a,b){return b.y-a.y}).forEach(function(u){go(G,u,bx<0?u.x:bx,6)});return}
     go(G,D,f.x,f.y,true);['M','W','A'].forEach(function(id){var u=U(G,id);if(u)go(G,u,D.x,D.y,true)});tendD(G,'M',5);fight(G,D,{blockFirst:D.hp<16})},
-  c5:function(G){var T={1:[['R',3,3],['M',4,5],['D',3,4],['A',4,6]],2:[['D',4,4],['R',4,3],['W',3,4],['M',5,5]],3:[['D',5,4],['R',5,3],['W',4,3],['A',4,5]]}[G.turn]||[];
-    T.forEach(function(m){LH.move(G,U(G,m[0]),m[1],m[2])})},
   c6:function(G){var D=G.u[0];tendD(G,'M');if(!fight(G,D,{blockFirst:D.hp<24}))if(LH.canAct(D)&&!D.attacked)LH.hold(G,D)},
   c7:function(G){var D=G.u[0];tendD(G,'M',8);fight(G,D,{blockFirst:D.hp<24})}
 };

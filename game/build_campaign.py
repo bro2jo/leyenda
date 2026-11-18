@@ -39,7 +39,7 @@ ALIAS = {"hornboy": "pitchfork", "sergeant": "captain", "guest": "greycloak"}
 # everything else on the board that has no picture yet: name, what it is, a letter, a colour
 DRAWN = [("wend", "The Wend in spate", "W", "#244860"), ("hall", "The length of the hall", "H", "#4A3F33"), ("question", "The hall's question", "?", "#5A4A6A"),
          ("sliver", "The black glass", "*", "#0B0D11"), ("guest", "The Confessor's men", "G", "#4E5560"), ("steps", "A stretch of the Steps", "S", "#55585E"),
-         ("rider", "An outrider of the Second", "II", "#3D4E6B"), ("walker", "A walker, frost in his beard", "~", "#6F7F8C"), ("darkcoat", "A rider in a dark coat", "D", "#23262E"), ("brother", "A lay brother", "B", "#6B5A3C"),
+         ("walker", "A walker, frost in his beard", "~", "#6F7F8C"), ("darkcoat", "A rider in a dark coat", "D", "#23262E"), ("brother", "A lay brother", "B", "#6B5A3C"),
          ("lymer", "The grey cloaks' lymer, on its long leash", "L", "#5B4A3A")]
 
 

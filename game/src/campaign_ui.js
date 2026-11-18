@@ -24,7 +24,7 @@ function show(html,cls){layer.className='cp on '+(cls||'');layer.innerHTML=html;
 function hide(){layer.className='cp';layer.innerHTML=''}
 /* ---------- stars are what he has to spend at the fire: a camp card costs twice its price in spoils ---------- */
 var TALL=CP.ORDER.filter(function(id){return !!CP.MS[id].tall});
-function starsAll(){var n=P.bonus||0;for(var k in P.done)n+=P.done[k].stars||0;return n}
+function starsAll(){var n=P.bonus||0;CP.ORDER.forEach(function(k){if(P.done[k])n+=P.done[k].stars||0});return n}   /* only missions there are: a retired one's stars are not spent */
 function cost(id){return LH.C[id].p*2}
 function shelf(){return P.shelfAll?CP.SHOP.slice():CP.shelf(P.done)}
 function trimPack(){var sh=shelf();P.pack=P.pack.filter(function(id){return sh.indexOf(id)>=0})}
@@ -76,7 +76,7 @@ function btn(a,label,small,cls){return '<button type="button" class="act '+(cls|
 /* ---------- title, missions, the place card, the telling after ---------- */
 /* ---------- the main menu: where he is, and everywhere he can go from here ---------- */
 function tile(a,icon,name,small,cls,off){return '<button type="button" class="cp-tile '+(cls||'')+'" data-cp="'+a+'"'+(off?' disabled':'')+'><span class="ti">'+icon+'</span><b>'+name+'</b><small>'+small+'</small></button>'}
-function roadOpen(){return all()||!!P.done.c5}
+function roadOpen(){return all()||!!P.done.c4c}   /* he is on the road once the Steps are behind him */
 function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
     l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
 function arm(b){b.classList.add('sure');b._t=b.textContent;b.textContent='Leave? Tap again';setTimeout(function(){b.classList.remove('sure');if(b._t)b.textContent=b._t},3000)}
@@ -94,7 +94,7 @@ function appSheet(){
     '<div class="cp-acts">'+btn('title','Back to the menu','')+'</div></div>','scroll');
 }
 function title(){
-  scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{},sus=suspended(),dn=dueAll();
+  scr='title';var nx=nextId(),n=CP.ORDER.filter(function(k){return P.done[k]}).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{},sus=suspended(),dn=dueAll();
   show('<div class="cp-menu"><span class="cp-lbl">The Unkneeling</span><h2>The Line and the Hand</h2>'+
     '<div class="cp-crest"><img src="'+A+'high-guard.webp" alt=""></div>'+
     '<div class="cp-acts">'+(sus?btn('resume','Pick it up again',(sus.ms&&CP.MS[sus.ms]?CP.MS[sus.ms].n:'The road')+' · turn '+sus.g.turn,'primary'):'')+(M?btn('intro:'+nx,n?'Go on':'Begin',M.book+' · '+M.n,sus?'':'primary'):btn('list','Every mission is told',CP.END.t,sus?'':'primary'))+'</div>'+
@@ -140,6 +140,7 @@ function settings(){
     '<div class="cp-set"><span class="lbl">Animation</span>'+seg([pref('quick',false,'Full'),pref('quick',true,'Quick')])+'<span class="cp-dim">Quick halves every wait. A curtain goes on at a tap either way.</span></div>'+
     '<div class="cp-set"><span class="lbl">Music</span>'+seg([pref('music',false,'Off'),pref('music',true,'On')])+'</div>'+
     '<div class="cp-set"><span class="lbl">Sound</span>'+seg([pref('sound',false,'Off'),pref('sound',true,'On')])+'</div>'+
+    '<div class="cp-set"><span class="lbl">Vibration</span>'+(X.canBuzz()?seg([pref('buzz',false,'Off'),pref('buzz',true,'On')])+'<span class="cp-dim">A short buzz when a foe breaks.</span>':'<span class="cp-dim">A short buzz when a foe breaks, on phones whose browser can. This one cannot (an iPhone\'s has no way to).</span>')+'</div>'+
     '<div class="cp-set"><span class="lbl">Playtest</span>'+
       seg(['<button type="button" data-cp="pt:all:0" aria-pressed="'+!P.all+'">Missions in order</button>','<button type="button" data-cp="pt:all:1" aria-pressed="'+!!P.all+'">Every mission open</button>'])+
       seg(['<button type="button" data-cp="pt:shelf:0" aria-pressed="'+!P.shelfAll+'">The fire as earned</button>','<button type="button" data-cp="pt:shelf:1" aria-pressed="'+!!P.shelfAll+'">Every card at the fire</button>'])+
