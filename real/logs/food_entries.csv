@@ -367,3 +367,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-18#2,2026-11-18,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,his words: Cafe latte protein
 2026-11-18#3,2026-11-18,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy protein granola bar
 2026-11-18#4,2026-11-18,,breakfast,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,his words: two vitamin gummies
+2026-11-18#5,2026-11-18,,snack,"Honey Stinger Energy Waffle, Honey (contains wheat)",1 waffle (30 g),140,2,19,6,0,3,9,80,40,0,0.6,5,0.2,0,0,0,label,"label photo 11/18; Mg and zinc estimated; the classic waffle (wheat flour), not the GF one"
