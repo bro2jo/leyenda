@@ -2,7 +2,7 @@
    flashes: its picture has to be decoded again. Run after a build: node game/test/flicker.js */
 const { chromium } = require('playwright');
 const fs = require('fs');
-const dir = __dirname + '/../dist/';
+const dir = __dirname + '/../dist/bench/';
 (async () => {
   fs.writeFileSync(dir + '_probe.html', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>window.LH_SEED=11</script></head><body>' + fs.readFileSync(dir + 'line-and-hand.html', 'utf8') + '</body></html>');
   const b = await chromium.launch(), p = await (await b.newContext({ viewport: { width: 400, height: 860 }, hasTouch: true })).newPage();

@@ -109,7 +109,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.click('[data-cplevel="1"]');await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
     ok(await p.evaluate(()=>__LH.G.cs.level===1&&__CP.P.level===1&&__LH.G.ms==='c5b'),'Hard applies from the next mission begun, and does not start a run of the game');
     await p.click('[data-cplevel="0"]');await p.click('[data-pref="quick=true"]');ok(await p.evaluate(()=>__LH.prefs.quick===true&&__LH.G.ms==='c5b'),'quick animation can be set without leaving the mission');await p.click('[data-pref="quick=false"]');
-    ok(await p.locator('.prompt pre').count()>=9&&await p.locator('[data-copy]').count()>=9,'the page has prompts for the pictures still to make');
+    ok(await p.locator('.prompt pre').count()>=16&&await p.locator('[data-copy]').count()>=16,'the page has prompts for the pictures still to make');
     /* growing by cards: marks are banked, a rank is his to place, and it is in the hand next time */
     await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
     await p.evaluate(()=>{var G=__LH.G;G.earn={marks:{H:4,W:1},bond:{Hollis:3,Maelis:1}};__CP.bank(G);__CP.company()});
@@ -144,6 +144,18 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
      ok(await p.evaluate(d=>{var G=__LH.G,D=G.u[0];return __CP.scr==='play'&&G!==window.__old&&G.ms==='c5b'&&D.x===d[0]&&D.y===d[1]&&D.moved&&G.turn===d[2]&&document.getElementById('game').getAttribute('data-th')==='yard'&&!!document.querySelector('#m-rest .cp-obj')},d),'and the board is as he left it: where he stood, his move spent, the aim under the board');
      ok(await p.evaluate(()=>{var G=__LH.G,W=G.u.filter(function(u){return u.id==='W'})[0];var r=__LH.LH.reach(G,W);var k=Object.keys(r).filter(function(q){return q!==W.x+','+W.y})[0].split(',');return __LH.LH.move(G,W,+k[0],+k[1])&&__LH.LH.endTurn(G)}),'and it plays on');
      await p.evaluate(()=>{__CP.forgetBoard()})}
+    /* playtest switches, in Settings: everything the old playtest page could do, inside the game */
+    await p.evaluate(()=>{__CP.reset();__CP.settings()});
+    ok(await p.locator('.cp.on [data-cp^="pt:"]').count()===8&&await p.locator('.cp.on [data-pref^="rounds"]').count()===2,'Settings has a Playtest section');
+    await p.evaluate(()=>{__CP.list()});const locked0=await p.locator('.cp-row.locked').count();await p.evaluate(()=>{__CP.settings()});
+    await p.click('.cp.on [data-cp="pt:all:1"]');await p.evaluate(()=>{__CP.list()});ok(locked0>0&&await p.locator('.cp-row.locked').count()===0,'every mission can be opened');
+    await p.evaluate(()=>{__CP.title()});ok(await p.evaluate(()=>!document.querySelector('.cp-tile[data-cp="road"]').disabled)&&/Playtest switches are on/.test(await p.locator('.cp-menu').innerText()),'which opens the road too, and the menu says the switches are on');
+    await p.evaluate(()=>{__CP.settings()});await p.click('.cp.on [data-cp="pt:stars"]');await p.click('.cp.on [data-cp="pt:shelf:1"]');await p.click('.cp.on [data-cp="pt:marks"]');
+    ok(await p.evaluate(()=>__CP.purse()===10&&__CP.shelf().length===CP.SHOP.length&&__CP.due('H')===1&&__CP.due('W')===1),'ten stars, every card at the fire, a rank for each fighter');
+    await p.click('.cp.on [data-cp="pt:deck:1"]');await p.click('.cp.on [data-pref="rounds=3"]');ok(await p.evaluate(()=>__CP.roadDeck().length>=10+CP.SHOP.length&&__LH.prefs.rounds===3),'the road can be taken with every camp card, and with clashes of three rounds');
+    await p.click('.cp.on [data-pref="rounds=1"]');await p.evaluate(()=>{__CP.reset()});ok(await p.evaluate(()=>__CP.purse()===0&&!__CP.P.all&&!__CP.P.roadAll),'forgetting progress turns the switches off');
+    /* what the old page showed and the game's page now shows */
+    ok(await p.locator('#sfx-table tr').count()>=30&&await p.locator('#market-gallery .card').count()>=18&&await p.locator('.words dt').count()>=10&&await p.locator('[data-who]').count()===7,'the page lists the sounds to make, the cards, what the icons mean, and the road\'s seven foes');
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

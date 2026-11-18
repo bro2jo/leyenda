@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""THE LINE AND THE HAND: builds the side game into game/dist/ (one page, its pictures and sounds beside it).
+"""THE LINE AND THE HAND: one build.
 
   python3 game/build.py
 
-The page is game/src/ put together: style.css, page.html, engine.js (the rules, no screen) and ui.js (the screen).
+It builds two things. The game is the campaign (game/build_campaign.py -> game/dist/campaign/campaign.html): that is what is
+played and published. The bench (game/dist/bench/line-and-hand.html) is the rules and the screen on a bare page, with no
+campaign over them: nobody plays it; the screen's own tests (test/ui.test.js, test/flicker.js) run on it. Its page is
+test/bench.html, which was the playtest page while the game was being found.
+
+The bench is game/src/ put together: style.css, test/bench.html, engine.js (the rules, no screen) and ui.js (the screen).
 Pictures of Darrow, the company and the Arts are the small copies the site already keeps (saga/art/thumbs/); pictures and
 sounds made for the game alone are in game/art/ and game/sfx/ (filed by game/tools/file_art.py). The page is told what
 exists (window.LH_ASSETS), so a missing picture shows its placeholder and a missing sound plays its stand-in tone.
-game/dist/ is not kept in git: build it, then open game/dist/line-and-hand.html, or publish it.
+game/dist/ is not kept in git.
 """
 import json
 import shutil
@@ -17,7 +22,7 @@ from PIL import Image
 
 GAME = Path(__file__).resolve().parent
 ROOT = GAME.parent
-SRC, DIST = GAME / "src", GAME / "dist"
+SRC, DIST = GAME / "src", GAME / "dist" / "bench"
 THUMBS = ROOT / "saga" / "art" / "thumbs"
 # what the game calls a picture -> the site's small copy of it
 SITE_ART = {a: f"arts/{a}.sm.webp" for a in ["seated_blade", "hammerfall", "stillwater", "long_breath", "menders_patience", "wardens_eye",
@@ -57,15 +62,17 @@ def main():
     for f in sorted((GAME / "music").glob("*.*")):  # background music: one track for the map and camp, one for the clash
         shutil.copyfile(f, DIST / "music" / f.name)
         assets["music"][f.stem] = f"music/{f.name}"
-    page = (HEAD + "<style>\n" + (SRC / "style.css").read_text(encoding="utf-8") + "</style>\n\n" + (SRC / "page.html").read_text(encoding="utf-8")
+    page = (HEAD + "<style>\n" + (SRC / "style.css").read_text(encoding="utf-8") + "</style>\n\n" + (GAME / "test" / "bench.html").read_text(encoding="utf-8")
             + "\n<script>window.LH_ASSETS=" + json.dumps(assets, separators=(",", ":")) + "</script>\n"
             + "<script>\n" + (SRC / "engine.js").read_text(encoding="utf-8") + "</script>\n<script>\n" + (SRC / "ui.js").read_text(encoding="utf-8") + "</script>\n")
     (DIST / "line-and-hand.html").write_text(page, encoding="utf-8")
     files = sorted(str(p.relative_to(DIST)) for p in list((DIST / "art").glob("*")) + list((DIST / "sfx").glob("*")) + list((DIST / "music").glob("*")))
     (DIST / "files.json").write_text(json.dumps(files, indent=1), encoding="utf-8")
-    print(f"built game/dist/line-and-hand.html ({len(page) // 1024} KB) · {len(assets['art'])} site pictures, {len(assets['fig'])} figures, "
+    print(f"built the bench, game/dist/bench/line-and-hand.html ({len(page) // 1024} KB) · {len(assets['art'])} site pictures, {len(assets['fig'])} figures, "
           f"{len(assets['tok'])} tokens, {len(assets['sfx'])} sounds, {len(assets['music'])} music tracks")
 
 
 if __name__ == "__main__":
     main()
+    import build_campaign  # the game itself
+    build_campaign.main()

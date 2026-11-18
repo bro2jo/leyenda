@@ -1,6 +1,6 @@
 <div class="wrap">
   <header class="top">
-    <p class="lbl">The Unkneeling · a side game · the campaign, eighth build</p>
+    <p class="lbl">The Unkneeling · a side game · the campaign, ninth build</p>
     <h1>The Line and the Hand</h1>
     <p class="lede">The Chronicle, played. Fourteen missions, from the morning at Harrow Ford to the night on the mill bridge. The people, the places and the things are the page's own. Most missions are a scene as the page tells it; three are fights told larger than the page tells them, and each of those says so. He starts with the Grace in him and loses it; after that his reach on the board follows the Knots, and his cards carry the rank each Art had in that chapter.</p>
   </header>
@@ -35,12 +35,29 @@
           </ol>
         </section>
         <section>
+          <h3>What the icons mean</h3>
+          <dl class="words">
+            <dt data-ic="shield">Guard, Block</dt><dd>Soaks damage. Guard that holds a blow whole strikes back.</dd>
+            <dt data-ic="crack">Open</dt><dd>The next hit lands for half again.</dd>
+            <dt data-ic="x">Broken</dt><dd>His answer this hand is halved. Start the fight against the tree yours beats and land one hit.</dd>
+            <dt data-ic="pin">Pinned, Marked</dt><dd>He will not move next turn. The next friend has one more breath.</dd>
+            <dt data-ic="square">Tough</dt><dd>Each hit on him deals less. Big blows beat small ones.</dd>
+            <dt data-ic="barb">Barbed</dt><dd>His blow, if it lands, leaves a Wound: a dead card until the battle ends.</dd>
+            <dt data-ic="flag">Banner, Rallied</dt><dd>While the bannerman stands, the others strike harder.</dd>
+            <dt data-ic="flame">Will enrage</dt><dd>At half health the captain strikes harder.</dd>
+            <dt data-ic="bars">Flurry</dt><dd>His answer is several small blows.</dd>
+            <dt data-ic="pillar">Stance</dt><dd>A card that stays in force for the rest of the battle.</dd>
+            <dt data-ic="throw">A throw in hand</dt><dd>Darrow can still open one fight from two tiles this battle.</dd>
+            <dt data-ic="heart">Tends</dt><dd>Rae mends a friend beside her instead of fighting.</dd>
+          </dl>
+        </section>
+        <section>
           <h3>Playtest</h3>
           <div class="setrow"><span class="lbl">Difficulty</span><span class="seg"><button type="button" data-cplevel="-1">Gentle</button><button type="button" data-cplevel="0">Standard</button><button type="button" data-cplevel="1">Hard</button></span></div>
           <div class="setrow"><span class="lbl">Animation</span><span class="seg"><button type="button" data-pref="quick=false">Full</button><button type="button" data-pref="quick=true">Quick</button></span></div>
           <div class="setrow"><span class="lbl">Music</span><span class="seg"><button type="button" data-pref="music=false">Off</button><button type="button" data-pref="music=true">On</button></span></div>
           <div class="setrow"><span class="lbl">Sound</span><span class="seg"><button type="button" data-pref="sound=false">Off</button><button type="button" data-pref="sound=true">On</button></span></div>
-          <p class="small">Difficulty moves what a foe deals and how long a man stands, from the next mission you begin; the length of a hall or a stair is the page's and does not change. A curtain between scenes goes on at a tap. Missions open in order. Add <code>?all</code> to the address to open every one. Progress is kept in this browser only.</p>
+          <p class="small">Difficulty moves what a foe deals and how long a man stands, from the next mission you begin; the length of a hall or a stair is the page's and does not change. A curtain between scenes goes on at a tap. Missions open in order. Settings, inside the game, has a Playtest section: open every mission, give yourself stars or ranks, and take the road with every camp card. Progress is kept in this browser only.</p>
           <div class="acts"><button type="button" class="act plain" id="cp-reset"><b>Forget my progress</b><small>Start from the ford again</small></button></div>
         </section>
       </div>
@@ -54,8 +71,26 @@
   </section>
 
   <section class="block">
+    <h2>The cards of the fire and the road's camp</h2>
+    <p class="small">Eighteen cards the camp can offer, with their prices, then the two honed cards and the Wound. None of these is an Art: those only come from the sheet.</p>
+    <div class="gallery" id="market-gallery"></div>
+  </section>
+
+  <section class="block">
+    <h2>Sounds to make</h2>
+    <p class="small"><span id="sfx-count"></span> sounds, <span id="sfx-made"></span> made so far. Each row is one file. Send one with its name from the list and it is filed as <code>game/sfx/&lt;name&gt;</code>; the game already calls every one at the right moment and plays a stand-in tone until the real file exists. Keep them short and dry, with no music bed, so they stack when several fire together.</p>
+    <p class="small">Music is two files, filed the same way with <code>music</code> in place of <code>sound</code>: <code data-music="map">map</code> plays under the map and the camp, <code data-music="clash">clash</code> at the card table.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>File name</th><th>When it plays</th><th>What to record</th><th>Length</th><th>Stand-in</th></tr></thead>
+        <tbody id="sfx-table"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
     <h2>Pictures to make, with prompts</h2>
-    <p class="small">For each: a full figure for the clash and a square portrait for the map, filed with <code>game/tools/file_art.py figure|token NAME FILE</code> under the name shown. Words in quotes are the page's; the rest is only enough to get a first picture, and yours to change. Until theirs are made, the sergeant wears the swordsman's picture and the two boys the pikeman's.</p>
+    <p class="small">For each: a full figure for the clash and a square portrait for the map, filed with <code>game/tools/file_art.py figure|token NAME FILE</code> under the name shown. Words in quotes are the page's; the rest is only enough to get a first picture, and yours to change. Until theirs are made, the sergeant wears the swordsman's picture and the two boys the pikeman's. The last seven are the hired company met on the road: made up for the game, nobody from the Chronicle.</p>
     <div class="prompts">
       <div class="prompt"><div class="ph"><h3>Shared: put this after every figure prompt</h3><button type="button" class="mini2" data-copy="p-style">Copy</button></div>
 <pre id="p-style">Style: painterly fantasy concept art in the hand-painted style of the attached reference image: visible, elegant brushwork; believable weathered medieval wool, linen, leather and steel with detailed stitching; soft, warm, natural light; grounded historical fantasy. Not a photograph, not a 3D render, not a cartoon.
@@ -77,6 +112,21 @@ Composition and output: vertical 2:3 portrait (1024 x 1536). One man only, his w
 <pre id="pc-darkcoat">A full-body character illustration of a rider on foot beside where his horse would be, in a long dark riding coat, gloved, one hand as if on a rein. The page says only "four riders in dark coats, new since first light."</pre></div>
       <div class="prompt"><div class="ph"><h3>A walker <code>walker</code></h3><button type="button" class="mini2" data-copy="pc-walker">Copy</button></div>
 <pre id="pc-walker">A full-body character illustration of a man walking with his eyes on nothing. As the page has him: "He wore mail under a surcoat whose colours had washed out past reading, and there was frost in his beard." Empty hands.</pre></div>
+      <!-- the road's own foes: a hired company made up for the game, nobody from the Chronicle -->
+      <div class="prompt"><div class="ph"><h3 data-who="pikeman">Pikeman</h3><button type="button" class="mini2" data-copy="p-P">Copy</button></div>
+<pre id="p-P">A full-body character illustration of a hired pikeman. A lean, long-armed man in his thirties with a narrow, watchful face. He wears a dented kettle helm, a quilted linen gambeson and a faded madder-red tabard belted over it, patched hose and worn ankle boots. Both hands grip a long ash pike held low and level, its point toward the left, his front foot planted and his weight sunk behind it: a man braced to receive a charge.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="swordsman">Swordsman</h3><button type="button" class="mini2" data-copy="p-S">Copy</button></div>
+<pre id="p-S">A full-body character illustration of a hired swordsman. A wiry, quick-looking man in his late twenties with cropped dark hair and an old scar on his chin, bare-headed. He wears a short mail shirt under a brown leather jack trimmed in faded madder red, a sword belt, and soft boots. An arming sword in his right hand is held out in a middle guard toward the left, his left hand open and low for balance, knees bent, ready to step in.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="crossbowman">Crossbowman</h3><button type="button" class="mini2" data-copy="p-X">Copy</button></div>
+<pre id="p-X">A full-body character illustration of a hired crossbowman. A stocky man in his forties with a weathered, squinting face. He wears a padded coif under a brown wool hood, a thick quilted jack, a faded madder-red sash across his chest, and a quiver of barbed bolts at his hip. A heavy wooden crossbow is raised to his shoulder and aimed toward the left, his cheek against the stock, one eye closed.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="skirmisher">Skirmisher</h3><button type="button" class="mini2" data-copy="p-K">Copy</button></div>
+<pre id="p-K">A full-body character illustration of a hired skirmisher. A slight, light-footed young man of about twenty with a sharp grin and wind-tangled fair hair. He wears a short undyed wool tunic, a faded madder-red scarf knotted at his neck, bare forearms, and soft leather shoes. A short blade in each hand, held low and wide, his weight on the balls of his feet in the middle of a quick step toward the left.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="shieldbearer">Shieldbearer</h3><button type="button" class="mini2" data-copy="p-B">Copy</button></div>
+<pre id="p-B">A full-body character illustration of a hired shieldbearer. A broad, heavy-shouldered man in his thirties with a thick neck and a flat, patient face. He wears a nasal helm and a long mail hauberk to the knee over padded cloth. A tall kite shield, its face painted in chipped, faded madder red with no device, is held across his body toward the left so that it covers him from chin to shin; a short iron mace hangs low in his right hand behind it.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="bannerman">Bannerman</h3><button type="button" class="mini2" data-copy="p-F">Copy</button></div>
+<pre id="p-F">A full-body character illustration of a company's bannerman. A tall, straight-backed man of about fifty with a grey moustache and a lined, proud face. He wears a brimmed iron hat, a plain steel breastplate over a long faded madder-red coat, and tall boots. Both hands grip a long pole planted beside his foot, flying a plain swallow-tailed banner of the same faded red with no device and no lettering. His head is turned toward the left and his mouth is open in a shout.</pre></div>
+      <div class="prompt"><div class="ph"><h3 data-who="captain">Captain</h3><button type="button" class="mini2" data-copy="p-C">Copy</button></div>
+<pre id="p-C">A full-body character illustration of the captain of a hired company. A big, heavy-browed man in his forties with a broken nose and a short iron-grey beard, bare-headed. He wears a scarred plate cuirass and pauldrons over mail, heavy gauntlets, and a faded madder-red cloak thrown back from one shoulder. A long war sword is held in both hands, point low and toward the left, his chin down, glaring from under his brows.</pre></div>
     </div>
   </section>
 

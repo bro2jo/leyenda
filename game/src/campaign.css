@@ -149,6 +149,8 @@
 .cp-who i{font-style:italic;color:var(--faint)}
 .cp-set{display:grid;gap:5px;justify-items:start;border-bottom:1px solid var(--rule);padding-bottom:10px}
 .cp-set .act{width:100%;justify-items:start;text-align:left}
+.cp-set .seg{flex-wrap:wrap} .cp-set .seg button{font-size:.84rem;padding:4px 9px}
+.cp-acts2{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%}
 .cp-set .act.warn{border-color:var(--bad)} .cp-set .act.warn b{color:#FF9478}
 /* ---- growing by cards, bonds, things to reach, the long stair ---- */
 #game[data-cp] .tile[data-mark="find"]::before{inset:30%;border-radius:2px;rotate:45deg;background:var(--brass-hi);box-shadow:0 0 0 2px var(--night),0 0 12px rgba(235,207,150,.8);animation:breathe 1.5s ease-in-out infinite}

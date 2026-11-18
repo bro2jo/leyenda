@@ -13,16 +13,18 @@ function save(){try{localStorage.setItem('lh-campaign',JSON.stringify(P))}catch(
 var layer=document.createElement('div');layer.className='cp';root.appendChild(layer);root.setAttribute('data-cp','1');
 var kick=document.createElement('button');kick.type='button';kick.hidden=true;kick.setAttribute('data-newrun','');document.body.appendChild(kick);
 var scr='title',shown=false,ALL=!!window.LH_ALL||/[?&]all\b/.test(location.search);
-function open(i){return ALL||i===0||!!P.done[CP.ORDER[i-1]]}
+/* playtest switches (Settings): every mission open, stars to try the fire with. They are kept with the progress and say so on the menu. */
+function all(){return ALL||!!P.all}
+function open(i){return all()||i===0||!!P.done[CP.ORDER[i-1]]}
 function nextId(){for(var i=0;i<CP.ORDER.length;i++)if(!P.done[CP.ORDER[i]])return CP.ORDER[i];return null}
 function starRow(n,of){var h='<span class="cp-stars" aria-label="'+n+' of '+of+'">';for(var i=0;i<of;i++)h+='<i class="'+(i<n?'on':'')+'">★</i>';return h+'</span>'}
 function show(html,cls){layer.className='cp on '+(cls||'');layer.innerHTML=html;layer.scrollTop=0;if(typeof toastOff==='function'&&tbox)toastOff()}
 function hide(){layer.className='cp';layer.innerHTML=''}
 /* ---------- stars are what he has to spend at the fire: a camp card costs twice its price in spoils ---------- */
 var TALL=CP.ORDER.filter(function(id){return !!CP.MS[id].tall});
-function starsAll(){var n=0;for(var k in P.done)n+=P.done[k].stars||0;return n}
+function starsAll(){var n=P.bonus||0;for(var k in P.done)n+=P.done[k].stars||0;return n}
 function cost(id){return LH.C[id].p*2}
-function shelf(){return CP.shelf(P.done)}
+function shelf(){return P.shelfAll?CP.SHOP.slice():CP.shelf(P.done)}
 function trimPack(){var sh=shelf();P.pack=P.pack.filter(function(id){return sh.indexOf(id)>=0})}
 function findsAll(){var n=0;for(var k in P.finds)n+=P.finds[k]||0;return n}
 function purse(){return starsAll()+findsAll()-P.pack.reduce(function(n,id){return n+cost(id)},0)}
@@ -72,7 +74,7 @@ function btn(a,label,small,cls){return '<button type="button" class="act '+(cls|
 /* ---------- title, missions, the place card, the telling after ---------- */
 /* ---------- the main menu: where he is, and everywhere he can go from here ---------- */
 function tile(a,icon,name,small,cls,off){return '<button type="button" class="cp-tile '+(cls||'')+'" data-cp="'+a+'"'+(off?' disabled':'')+'><span class="ti">'+icon+'</span><b>'+name+'</b><small>'+small+'</small></button>'}
-function roadOpen(){return ALL||!!P.done.c5}
+function roadOpen(){return all()||!!P.done.c5}
 function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
     l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
 function title(){
@@ -87,7 +89,7 @@ function title(){
       tile('cards:title',X.svg('deck'),'The cards',f[0]+' of '+f[1]+' found')+
       tile('company',X.svg('heart'),'The company',dn?dn+(dn>1?' ranks':' rank')+' to give':met().length?met().length+' beside him so far':'Nobody yet',dn?'hot':'')+
       tile('settings',X.svg('pillar'),'Settings',['Gentle','Standard','Hard'][(P.level||0)+1]+(X.prefs.music?' · music':'')+(X.prefs.sound?' · sound':''))+
-    '</div><p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
+    '</div>'+(P.all||P.bonus||P.shelfAll||P.roadAll?'<p class="cp-note">Playtest switches are on (Settings).</p>':'')+'<p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
 }
 /* the journey: the missions as a road, a spur for each fight told larger than the page */
 function list(){
@@ -122,10 +124,17 @@ function settings(){
     '<div class="cp-set"><span class="lbl">Animation</span>'+seg([pref('quick',false,'Full'),pref('quick',true,'Quick')])+'<span class="cp-dim">Quick halves every wait. A curtain goes on at a tap either way.</span></div>'+
     '<div class="cp-set"><span class="lbl">Music</span>'+seg([pref('music',false,'Off'),pref('music',true,'On')])+'</div>'+
     '<div class="cp-set"><span class="lbl">Sound</span>'+seg([pref('sound',false,'Off'),pref('sound',true,'On')])+'</div>'+
+    '<div class="cp-set"><span class="lbl">Playtest</span>'+
+      seg(['<button type="button" data-cp="pt:all:0" aria-pressed="'+!P.all+'">Missions in order</button>','<button type="button" data-cp="pt:all:1" aria-pressed="'+!!P.all+'">Every mission open</button>'])+
+      seg(['<button type="button" data-cp="pt:shelf:0" aria-pressed="'+!P.shelfAll+'">The fire as earned</button>','<button type="button" data-cp="pt:shelf:1" aria-pressed="'+!!P.shelfAll+'">Every card at the fire</button>'])+
+      seg(['<button type="button" data-cp="pt:deck:0" aria-pressed="'+!P.roadAll+'">The road with his deck</button>','<button type="button" data-cp="pt:deck:1" aria-pressed="'+!!P.roadAll+'">With every camp card</button>'])+
+      seg([pref('rounds',1,'A clash on the road: one hand'),pref('rounds',3,'Up to three rounds')])+
+      '<span class="cp-acts2"><button type="button" class="act" data-cp="pt:stars"><b>Ten stars</b><small>'+(P.bonus?P.bonus+' given so far':'To try the fire with')+'</small></button><button type="button" class="act" data-cp="pt:marks"><b>A rank for each fighter</b><small>Marks to the next rank, for Hollis, Ash and Wren</small></button></span>'+
+      '<span class="cp-dim">For trying things. Every mission open also opens the road. None of it is fair play; Forget my progress turns it all off.</span></div>'+
     '<div class="cp-set"><span class="lbl">Progress</span><button type="button" class="act'+(sure?' warn':'')+'" data-cp="forget"><b>'+(sure?'Tap again to forget everything':'Forget my progress')+'</b><small>'+(sure?'Stars, cards, the pack and the rules he has met':'Start from the ford again')+'</small></button><span class="cp-dim">Kept in this browser only.</span></div>');
 }
 /* the road: three crossings of the game itself, with the deck he has in the campaign and the pack from the fire */
-function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(P.pack)}
+function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(P.pack,P.roadAll?CP.SHOP.filter(function(c){return P.pack.indexOf(c)<0}):[])}
 var roadSaved=false;
 function road(){
   if(X.busy||!roadOpen())return;
@@ -278,8 +287,10 @@ root.addEventListener('click',function(e){
   else if(k[0]==='grow')grow(k[1],scr==='outro'?'list':'company');
   else if(k[0]==='rank'){if(due(k[1])>0&&CP.GROW[k[1]].indexOf(k[2])>=0&&CP.rankOf(gr(k[1]).picks,k[2])<3){gr(k[1]).picks.push(k[2]);save();syncGrow()}grow(k[1])}
   else if(k[0]==='company')company();else if(k[0]==='settings'){sure=false;settings()}
-  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
+  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
   else if(k[0]==='road')road();else if(k[0]==='quitroad')leaveRoad();
+  else if(k[0]==='pt'){if(k[1]==='all')P.all=k[2]==='1';else if(k[1]==='shelf'){P.shelfAll=k[2]==='1';trimPack()}else if(k[1]==='deck')P.roadAll=k[2]==='1';else if(k[1]==='stars')P.bonus=(P.bonus||0)+10;
+    else if(k[1]==='marks')Object.keys(WHO).forEach(function(id){var g=gr(id),nx=CP.LEVELS[CP.levelOf(g.m)];if(nx)g.m=nx});save();syncGrow();settings()}
 });
 var FAST=!!window.LH_FAST;
 /* the mission is over: the telling comes up. Where the game draws its curtain across the screen, the telling is laid under it
@@ -322,6 +333,6 @@ function paintLevel(){var b=document.querySelectorAll('[data-cplevel]');for(var 
 document.addEventListener('click',function(e){var b=e.target.closest('[data-cplevel]');if(!b)return;P.level=+b.getAttribute('data-cplevel');save();paintLevel()});
 paintLevel();
 trimPack();syncGrow();
-window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;forgetBoard();syncGrow();save();title()}};
+window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}};
 title();
 })();

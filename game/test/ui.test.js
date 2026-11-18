@@ -2,7 +2,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const LH = require('../src/engine.js').LH;
-const dir = __dirname + '/../dist/';   // python3 game/build.py first
+const dir = __dirname + '/../dist/bench/';   // python3 game/build.py first
 const page0 = fs.readFileSync(dir + 'line-and-hand.html', 'utf8');
 function wrap(name, pre) { fs.writeFileSync(dir + name, '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0;font:14px system-ui}</style>' + pre + '</head><body>' + page0 + '</body></html>'); return 'file://' + dir + name; }
 const SLOW = wrap('_slow.html', '<script>window.LH_SEED=11</script>');
