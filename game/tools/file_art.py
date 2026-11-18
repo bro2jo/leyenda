@@ -4,6 +4,7 @@
   python3 game/tools/file_art.py figure NAME PICTURE [--preview DIR]   a full figure for the clash: the chroma screen is keyed out
                                                                        the way the Wardrobe does it (engine/looks.py), cut to 2:3
   python3 game/tools/file_art.py token  NAME PICTURE                   a square portrait for the map token
+  python3 game/tools/file_art.py card   NAME PICTURE                   a card's picture, cut to 4:3; NAME is the card's id
   python3 game/tools/file_art.py sound  NAME FILE                      a sound, by its name in the game's list (game/README.md)
   python3 game/tools/file_art.py music  NAME FILE                      background music: NAME is map (the map and the camp) or clash
 
@@ -24,7 +25,9 @@ GAME = ROOT / "game"
 sys.path.insert(0, str(ROOT / "engine"))
 WHO = ["pikeman", "swordsman", "crossbowman", "skirmisher", "shieldbearer", "bannerman", "captain", "hollis", "ash", "wren", "rae",
        # the campaign's own (game/build_campaign.py)
-       "sergeant", "pitchfork", "hornboy", "greycloak", "lymer", "guest", "darkcoat", "rider", "walker", "brother", "ysra-tal"]
+       "sergeant", "pitchfork", "hornboy", "greycloak", "lymer", "guest", "darkcoat", "rider", "walker", "brother", "ysra-tal", "maelis",
+       # what is not a man: a token only
+       "wend", "hall", "question", "sliver", "steps"]
 SOUND_EXT = [".mp3", ".ogg", ".m4a", ".wav", ".opus"]
 MUSIC = ["map", "clash"]
 
@@ -39,7 +42,7 @@ def sounds():
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("kind", choices=["figure", "token", "sound", "music"])
+    ap.add_argument("kind", choices=["figure", "token", "card", "sound", "music"])
     ap.add_argument("name")
     ap.add_argument("file")
     ap.add_argument("--preview", help="for a figure: a folder for two previews of the cut-out")
@@ -62,6 +65,18 @@ def main():
             if old.resolve() != out.resolve():
                 old.unlink()
         print(f"filed {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
+        return
+    if a.kind == "card":  # a card's picture: 4:3, named by the card's id (the word on the prompt)
+        if not re.fullmatch(r"[a-z][a-z0-9_]*", a.name):
+            die(f"'{a.name}' is not a card's id")
+        im = Image.open(src).convert("RGB")
+        w, h = im.size
+        cw, ch = (w, w * 3 // 4) if w * 3 <= h * 4 else (h * 4 // 3, h)
+        im = im.crop(((w - cw) // 2, (h - ch) // 2, (w - cw) // 2 + cw, (h - ch) // 2 + ch)).resize((640, 480), Image.LANCZOS)
+        (GAME / "art" / "cards").mkdir(exist_ok=True)
+        out = GAME / "art" / "cards" / (a.name + ".webp")
+        im.save(out, "WEBP", quality=86, method=6)
+        print(f"filed {out.relative_to(ROOT)} (640x480)")
         return
     if a.name not in WHO:
         die(f"'{a.name}' is not one of: {', '.join(WHO)}")

@@ -155,7 +155,13 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.click('.cp.on [data-cp="pt:deck:1"]');await p.click('.cp.on [data-pref="rounds=3"]');ok(await p.evaluate(()=>__CP.roadDeck().length>=10+CP.SHOP.length&&__LH.prefs.rounds===3),'the road can be taken with every camp card, and with clashes of three rounds');
     await p.click('.cp.on [data-pref="rounds=1"]');await p.evaluate(()=>{__CP.reset()});ok(await p.evaluate(()=>__CP.purse()===0&&!__CP.P.all&&!__CP.P.roadAll),'forgetting progress turns the switches off');
     /* what the old page showed and the game's page now shows */
-    ok(await p.locator('#sfx-table tr').count()>=30&&await p.locator('#market-gallery .card').count()>=18&&await p.locator('.words dt').count()>=10&&await p.locator('[data-who]').count()===7,'the page lists the sounds to make, the cards, what the icons mean, and the road\'s seven foes');
+    ok(await p.locator('#sfx-table tr').count()>=30&&await p.locator('#market-gallery .card').count()>=18&&await p.locator('.words dt').count()>=10,'the page lists the sounds to make, the cards and what the icons mean');
+    {const pr=await p.evaluate(()=>[].map.call(document.querySelectorAll('.prompt pre'),function(e){return e.textContent}));
+     ok(await p.locator('[data-who]').count()===19&&await p.locator('[data-tok]').count()===7&&await p.locator('[data-card]').count()>=24,'a prompt for every figure, every token of what is only seen on the map, and every card still wanting a picture');
+     ok(await p.evaluate(()=>{var l=document.querySelectorAll('ol.ranked>li h3');return l[0].getAttribute('data-card')==='b_strike'&&l[l.length-1].getAttribute('data-who')==='swordsman'&&[].every.call(document.querySelectorAll('ol.ranked>li .why'),function(e){return e.textContent.length>8})}),'they are in order, the most noticed first and what is already made last, each with its reason');
+     ok(pr.every(function(t){return t.split(/\s+/).length<=125&&/Painterly|Square 1:1 portrait/.test(t)}),'every prompt is whole and short: its own style and format, under 125 words');
+     ok(pr.every(function(t){return !/gambeson|kettle|madder|hauberk|cuirass|coif|lymer|surcoat|buff coat/i.test(t)}),'and in plain words an image model knows');
+     ok(await p.locator('h3[data-who="pikeman"] .made').count()===1&&await p.locator('h3[data-who="crossbowman"] .todo').count()===1,'what is made is marked, and what is not')}
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

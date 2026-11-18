@@ -6,6 +6,8 @@
 var LH=window.LH,CP=window.CP,X=window.__LH,root=document.getElementById('game');if(!root||!CP||!X)return;
 var A='art/',AS=window.LH_ASSETS||{art:[]};
 function has(n){return AS.art.indexOf(n)>=0}
+/* a card whose picture has been made wears it, at every rank and as its combo */
+(function(){var ca=AS.cardart||{},C=LH.C,id;for(id in C){var b=C[id].base||id;if(ca[b])C[id].art=ca[b]}})();
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function $(id){return document.getElementById(id)}
 var P={};try{P=JSON.parse(localStorage.getItem('lh-campaign')||'{}')||{}}catch(e){}P.done=P.done||{};P.pack=(P.pack||[]).filter(function(id){return CP.SHOP.indexOf(id)>=0});P.level=P.level||0;P.tips=P.tips||{};P.grow=P.grow||{};P.bond=P.bond||{};P.finds=P.finds||{};

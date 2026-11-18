@@ -63,7 +63,7 @@ def main():
         shutil.rmtree(DIST)
     for d in ("art", "sfx", "music"):
         (DIST / d).mkdir(parents=True, exist_ok=True)
-    assets = {"art": [], "fig": [], "tok": [], "sfx": {}, "music": {}, "drawn": []}
+    assets = {"art": [], "fig": [], "tok": [], "sfx": {}, "music": {}, "drawn": [], "cardart": {}}
     for name, rel in sorted(ART.items()):
         if (THUMBS / rel).is_file():
             shutil.copyfile(THUMBS / rel, DIST / "art" / f"{name}.webp")
@@ -96,6 +96,10 @@ def main():
     for key, f in sorted(figs.items()):
         Image.open(f).convert("RGBA").resize((512, 768), Image.LANCZOS).save(DIST / "art" / f"fig-{key}.webp", "WEBP", quality=86, method=6)
         assets["fig"].append(key)
+    for f in sorted((GAME / "art" / "cards").glob("*.webp")):  # a card's own picture, by the card's id
+        shutil.copyfile(f, DIST / "art" / f"c-{f.stem}.webp")
+        assets["art"].append(f"c-{f.stem}")
+        assets["cardart"][f.stem] = f"c-{f.stem}"
     for kind in ("sfx", "music"):
         for f in sorted((GAME / kind).glob("*.*")):
             shutil.copyfile(f, DIST / kind / f.name)
