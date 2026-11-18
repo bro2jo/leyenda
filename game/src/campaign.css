@@ -88,6 +88,35 @@
 .cp-gain{color:var(--brass-hi)!important;font-size:.9rem!important}
 .cp .stat .si{font-size:13px;color:var(--brass)}
 .cp .lbl.sec{margin-top:6px}
+/* ---- what is new, said aloud: the place card's list, the words over the board, the cards he has found ---- */
+.cp-news{display:grid;gap:6px;background:linear-gradient(180deg,#2A2416,#1C1910);border:1px solid var(--brass-dim);border-radius:8px;padding:9px 10px}
+.cp-news ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.9rem;line-height:1.3}
+.cp-news li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:8px;align-items:center}
+.nf{width:26px;height:26px;border-radius:50%;object-fit:cover;border:1.5px solid var(--brass);display:grid;place-items:center;background:var(--night);color:var(--brass);font-size:13px}
+.nf.foe{border-color:var(--bad);color:#FF9478}
+.nf.nc{border-radius:5px;height:30px;border:1px solid var(--tc,var(--rule));border-top:3px solid var(--tc,var(--rule));color:var(--tc,var(--brass))}
+.nc.t-blade{--tc:var(--t-blade)} .nc.t-foot{--tc:var(--t-foot)} .nc.t-cast{--tc:var(--t-cast)} .nc.t-breath{--tc:var(--t-breath)} .nc.t-bind{--tc:var(--t-bind)} .nc.t-eye{--tc:var(--t-eye)}
+.cp-toasts{position:absolute;left:12px;right:12px;top:60px;z-index:66;display:grid;pointer-events:none}
+.cp-toast{pointer-events:auto;cursor:pointer;display:flex;align-items:center;gap:8px;text-align:left;width:100%;font:inherit;color:var(--ink);font-size:.92rem;line-height:1.3;
+  background:linear-gradient(180deg,#2B2415,#1A160E);border:1px solid var(--brass);border-radius:10px;padding:9px 12px;box-shadow:0 8px 22px rgba(0,0,0,.65),0 0 0 1px var(--night);animation:toastin .26s cubic-bezier(.2,.7,.3,1)}
+.cp-toast img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--brass);margin-right:-12px;flex:none}
+.cp-toast img:last-of-type{margin-right:0}
+.cp-toast b{color:var(--brass-hi)}
+.cp-toast.k-good{border-color:var(--good)} .cp-toast.k-hurt{border-color:var(--bad)}
+.cp-toast.k-tip{background:linear-gradient(180deg,#1B2633,#121A24);border-color:var(--t-breath)} .cp-toast.k-tip b{color:#CFE4F4}
+.cp-toast.out{opacity:0;transform:translateY(-6px);transition:opacity .22s,transform .22s}
+@keyframes toastin{from{opacity:0;transform:translateY(10px) scale(.97)}}
+.cp-reward{display:grid;gap:6px;border:1px solid var(--brass);border-radius:8px;padding:9px 10px;background:linear-gradient(180deg,rgba(207,166,95,.16),rgba(207,166,95,.04))}
+.cp .card.fresh{box-shadow:0 0 0 1px var(--brass-hi),0 0 16px rgba(235,207,150,.35);animation:toastin .4s .1s both}
+.cp .card{font-size:14px;text-align:left}
+.card.back{min-height:128px;place-items:center;align-content:center;text-align:center;border-style:dashed;border-top-style:dashed;border-color:var(--rule);background:repeating-linear-gradient(45deg,#161B22 0 8px,#12161C 8px 16px);cursor:default}
+.card.back .q{font-family:var(--display);font-size:2rem;color:var(--faint);line-height:1}
+.card.back small{color:var(--faint)}
+.cp.album .card.sealed b{text-decoration:none}
+.cp-tips{display:grid;gap:4px 0;margin:0;font-size:.9rem}
+.cp-tips dt{color:#CFE4F4;font-weight:700}
+.cp-tips dd{margin:0 0 4px;color:var(--dim)}
+@media (prefers-reduced-motion:reduce){.cp-toast,.cp .card.fresh{animation:none}}
 /* ---- the ground behind a clash, by the mission it is fought in (the game's own are the three grounds of a run) ---- */
 #game[data-th="hall"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232E3138'/%3E%3Cstop offset='1' stop-color='%233A3D45'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2344474D'/%3E%3Cstop offset='1' stop-color='%232B2D32'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%23F4C56A' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23F4C56A' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg fill='%2314161B'%3E%3Cpath d='M118 116V58q0-26 26-26t26 26v58z'/%3E%3Cpath d='M190 116V58q0-26 26-26t26 26v58z'/%3E%3C/g%3E%3Cg fill='%23F4C56A'%3E%3Cpath d='M180 70c2 4 4 6 4 10a4 4 0 01-8 0c0-4 2-6 4-10z'/%3E%3C/g%3E%3Crect x='178' y='84' width='4' height='14' fill='%23C9B38A'/%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}
 #game[data-th="under"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231E2430'/%3E%3Cstop offset='1' stop-color='%232A3242'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232F3540'/%3E%3Cstop offset='1' stop-color='%231B1F27'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%238BB2D3' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%238BB2D3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg opacity='.5'%3E%3Cpath d='M96 20h168v70H96z' fill='%233A4A63'/%3E%3Cpath d='M96 20h168v70H96z' fill='none' stroke='%238A7044' stroke-width='2'/%3E%3Ccircle cx='150' cy='52' r='12' fill='%237B5A8A'/%3E%3Cpath d='M190 78l14-34 14 34z' fill='%238A7044'/%3E%3Cpath d='M228 40h20v38h-20z' fill='%234E6B58'/%3E%3C/g%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}

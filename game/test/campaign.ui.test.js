@@ -53,17 +53,35 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.evaluate(()=>{var P=__CP.P;P.done={};['p0','p1','c1','c2','c3','c4a','c4b','c4c','c5'].forEach(function(k){P.done[k]={stars:2}});P.pack.length=0;__CP.title()});
     ok(await p.evaluate(()=>__CP.purse()===18),'eighteen stars earned are eighteen to spend');
     await p.click('.cp.on [data-cp="fire:title"]');ok(await p.evaluate(()=>__CP.scr==='fire')&&await p.locator('.cp.fire .camphero').count()===1,'the fire opens from the title');
-    ok(await p.locator('.cp.fire [data-cp^="pick:"]').count()===await p.evaluate(()=>CP.SHOP.length),'every card the company can spare is laid out');
-    await p.click('.cp.fire [data-cp="pick:digin"]');ok((await p.locator('.cp-pick').innerText()).indexOf('Take it for 8 stars')>=0,'a card is read before it is taken, with its price in stars');
-    await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='digin'&&__CP.purse()===10&&JSON.parse(localStorage.getItem('lh-campaign')).pack.join()==='digin'),'taking it spends the stars and is kept');
+    ok(await p.locator('.cp.fire [data-cp^="pick:"]').count()===9&&await p.evaluate(()=>__CP.shelf().length===9&&__CP.shelf().indexOf('digin')<0),'nine missions told have left nine cards at the fire, and no more');
+    await p.click('.cp.fire [data-cp="pick:callco"]');ok((await p.locator('.cp-pick').innerText()).indexOf('Take it for 8 stars')>=0,'a card is read before it is taken, with its price in stars');
+    await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='callco'&&__CP.purse()===10&&JSON.parse(localStorage.getItem('lh-campaign')).pack.join()==='callco'),'taking it spends the stars and is kept');
     ok((await p.locator('#cp-purse b').innerText())==='10','the purse on the screen is right');
-    await p.click('.cp.fire [data-cp="pick:bloodup"]');await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.length===2&&__CP.purse()===0),'a second card, and the purse is empty');
-    await p.click('.cp.fire [data-cp="pick:hewT"]');ok(await p.locator('.cp.fire [data-cp="take"][disabled]').count()===1,'with no stars left the next cannot be taken');
-    await p.click('.cp.fire [data-cp="drop:bloodup"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='digin'&&__CP.purse()===10),'a card put back gives its stars back');
+    await p.click('.cp.fire [data-cp="pick:secondwind"]');await p.click('.cp.fire [data-cp="take"]');ok(await p.evaluate(()=>__CP.P.pack.length===2&&__CP.purse()===2),'a second card, and two stars are left');
+    await p.click('.cp.fire [data-cp="pick:hewT"]');ok(await p.locator('.cp.fire [data-cp="take"][disabled]').count()===1,'with too few stars left the next cannot be taken');
+    await p.click('.cp.fire [data-cp="drop:secondwind"]');ok(await p.evaluate(()=>__CP.P.pack.join()==='callco'&&__CP.purse()===10),'a card put back gives its stars back');
     ok(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'the fire fits at '+vp.width);
-    await p.evaluate(()=>{__CP.intro('c5b')});ok((await p.locator('.cp-card').innerText()).indexOf('Dig In')>=0&&await p.locator('.cp.on [data-cp="fire:intro:c5b"]').count()===1,'a larger fight\'s card says what he carries, with a way to the fire');
+    await p.evaluate(()=>{__CP.intro('c5b')});ok((await p.locator('.cp-card').innerText()).indexOf('Call the Company')>=0&&await p.locator('.cp.on [data-cp="fire:intro:c5b"]').count()===1,'a larger fight\'s card says what he carries, with a way to the fire');
     await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
-    ok(await p.evaluate(()=>{var G=__LH.G;return G.ms==='c5b'&&G.u[0].deck.indexOf('digin')>=0&&G.cs.pack.join()==='digin'}),'and it is in his deck when the yard begins');
+    ok(await p.evaluate(()=>{var G=__LH.G;return G.ms==='c5b'&&G.u[0].deck.indexOf('callco')>=0&&G.cs.pack.join()==='callco'}),'and it is in his deck when the yard begins');
+    /* he is told what is happening: on the place card, over the board, and afterwards */
+    await p.evaluate(()=>{__CP.intro('c5b')});{const t=await p.locator('.cp-news').innerText();ok(/Ash fights beside him now/.test(t)&&/The Far Cast/.test(t)&&/Boy with the Horn: makes the others strike harder/.test(t)&&/two tiles/.test(t),'the place card says who is new beside him, what he has learned, what he meets')}
+    ok(await p.evaluate(()=>{__CP.intro('p0');return document.querySelectorAll('.cp-news').length===0}),'the first mission has nothing new to announce');
+    await p.evaluate(()=>{__CP.said.length=0;delete __CP.P.done.c4b;__CP.begin('c4b')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>__CP.said.some(function(t){return /^Hollis is with him\.$/.test(t)})&&__CP.said.some(function(t){return /^New in his hand: /.test(t)})),'a mission begun for the first time says who is with him and what is new in his hand');
+    await p.evaluate(()=>{__CP.P.done.c4b={stars:2};__CP.said.length=0;__CP.P.tips={};__CP.begin('c5b')});await p.waitForTimeout(100);
+    {const d=await p.evaluate(()=>{var u=__LH.G.u[0];return [u.x,u.y]});await tap(d[0],d[1]);await p.evaluate(()=>{var G=__LH.G,f=G.u.filter(function(u){return u.type==='sergeant'})[0],D=G.u[0];G.u.forEach(function(u){if(u!==f&&u.x===D.x&&u.y===D.y-1)u.x=5});f.x=D.x;f.y=D.y-1});
+     await tap(d[0],d[1]-1);await p.click('#game [data-a="go"]');await p.waitForTimeout(350);
+     ok(await p.evaluate(()=>!!__CP.P.tips.brk&&!!__CP.P.tips.enrage&&__CP.said.some(function(t){return /halved/.test(t)})),'a rule is said the first time it matters (Broken, the sergeant at half health)');
+     await p.evaluate(()=>{__CP.said.length=0});await p.click('#game [data-a="endhand"]');await p.waitForTimeout(300);await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+     const d2=await p.evaluate(()=>{var G=__LH.G,f=G.u.filter(function(u){return u.type==='sergeant'})[0],D=G.u[0];G.u.forEach(function(u){if(u!==f&&u.x===D.x&&u.y===D.y-1)u.x=5});f.x=D.x;f.y=D.y-1;return [D.x,D.y]});await tap(d2[0],d2[1]);if(!(await p.$('#game .tok.sel')))await tap(d2[0],d2[1]);await tap(d2[0],d2[1]-1);await p.click('#game [data-a="go"]');await p.waitForTimeout(350);
+     ok(await p.evaluate(()=>!__CP.said.some(function(t){return /halved/.test(t)})),'and only that once')}
+    /* the cards: found so far, and what is still to find */
+    await p.evaluate(()=>{__CP.cards('title')});ok(await p.evaluate(()=>__CP.scr==='cards')&&await p.locator('.cp.album .card.back').count()===await p.evaluate(()=>CP.SHOP.length-__CP.shelf().length),'the cards screen shows what is found and a place for each still to find');
+    ok(/Sealed since the ford/.test(await p.locator('.cp.album').innerText())&&await p.locator('.cp.album .cp-tips dt').count()>=2,'the Grace\'s cards are kept as sealed, and the rules he has met are written down');
+    ok(await p.evaluate(()=>{var f=__CP.found();return f[0]>20&&f[0]<f[1]}),'the count of cards found is short of the whole');
+    ok(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'the cards fit at '+vp.width);
+    await p.evaluate(()=>{__CP.P.pack.length=0;__CP.P.pack.push('callco')});
     ok(await p.evaluate(()=>document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display!=='none'),'where the company fights, the triangle is drawn under the board');
     await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(100);
     ok(await p.evaluate(()=>{var G=__LH.G;return G.u[0].deck.indexOf('digin')<0&&!document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display==='none'}),'the page\'s own scene keeps the page\'s deck, and has no triangle to draw');

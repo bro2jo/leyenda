@@ -102,7 +102,31 @@ function mates(G){return G.u.filter(function(o){return o.side===0&&o.hp>0})}
 function foe(G,type){return G.u.filter(function(o){return o.side===1&&o.type===type&&o.hp>0})[0]||null}
 function on(u,x,y){return !!u&&u.x===x&&u.y===y}
 function dist(a,b){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y)}
-function log(G,t,c){G.log.push([t,c||'',1]);if(G.log.length>6)G.log.splice(0,G.log.length-6)}
+function log(G,t,c){G.log.push([t,c||'',1]);if(G.log.length>6)G.log.splice(0,G.log.length-6);if(c==='good'||c==='hurt')toast(G,t,c)}
+/* said aloud over the board: a beat of the story as it happens, someone new beside him */
+function toast(G,t,kind,img){if(G.cs&&G.cs.toasts)G.cs.toasts.push({t:t,k:kind||'',img:img||''})}
+/* a rule, the first time it matters. The screen shows each once, ever, and keeps them to read again. */
+var TIPS={
+  brk:['Broken','His tree beats theirs. Land one hit and the answer this hand is halved.'],
+  lent:['A lent card','Whoever stands beside him lends a card. It costs nothing, and it is gone when the fight ends.'],
+  far:['From two tiles','Only thrown cards reach from here, on one less breath. Most foes cannot answer at all.'],
+  guard:['Guard','Block he did not need stays as guard through their turn. Guard that holds a blow whole strikes back.'],
+  held:['Held breath','Breath he did not spend is held, up to 2, for his next hand.'],
+  wound:['A Wound','A dead card in the hand until the battle ends. The Mender\'s Patience, or a tending hand, sets one aside.'],
+  tough:['Tough','Every blow on this one lands for less. One big blow beats two small ones.'],
+  flurry:['Several blows','The answer comes as several small blows. Block soaks each in turn.'],
+  rally:['The others strike harder','While this one stands, every other foe strikes harder. Send this one off first.'],
+  enrage:['Half health','At half health this one strikes harder. Finish it quickly, or block.'],
+  ordeal:['Not a man','A river, a stair, the cold: what he deals is ground covered, and its answer is what it costs him.'],
+  rounds:['Press on, or break off','After the answer he may press on for another round, a little dearer each time, or break off with what he has.'],
+  cover:['Cover','Whoever stands in cover takes less on their turn, and a foe in cover starts with block.'],
+  rise:['Risen','After two fights a friend\'s lent card comes back stronger.']
+};
+function tip(G,id){if(G.cs&&G.cs.tips&&TIPS[id]&&G.cs.tips.indexOf(id)<0)G.cs.tips.push(id)}
+function tipsFor(G,K){
+  var d=K.d;if(K.canBreak)tip(G,'brk');if(K.p&&K.p.lend&&K.p.lend.length){tip(G,'lent');if(K.hand.some(function(c){return C[c]&&C[c].r==='risen'}))tip(G,'rise')}if(K.p&&K.p.far)tip(G,'far');if(K.p&&K.p.wood)tip(G,'cover');
+  if(d.ordeal)tip(G,'ordeal');else{if(d.tough)tip(G,'tough');if(d.ans.some(function(x){return x.n>1}))tip(G,'flurry');if(d.rally)tip(G,'rally');if(d.enrage)tip(G,'enrage')}
+}
 function hint(G,t){G.cs.hint=t||''}
 /* a pile set by hand: these ids are drawn first, in this order; the rest of the deck is shuffled under them */
 function stack(G,u,ids){var rest=u.deck.slice(),rn=lcg(G.seed^0x5bd1);ids.forEach(function(id){var j=rest.indexOf(id);if(j>=0)rest.splice(j,1)});u.dk={draw:shuffle(rest,rn).concat(ids.slice().reverse()),disc:[],gone:[]}}
@@ -117,7 +141,7 @@ function stepToward(G,u,gx,gy){
 function spawn(G,type,x,y,over){
   if(!G.tpl[type]||LH.at(G,x,y))return null;var o=clone(G.tpl[type]);G.cs.n=(G.cs.n||0)+1;o.id=type+'_s'+G.cs.n;o.x=x;o.y=y;o.hp=o.max;if(over)for(var k in over)o[k]=over[k];G.u.push(o);return o;
 }
-var api={U:U,up:up,foes:foes,mates:mates,foe:foe,on:on,dist:dist,log:log,hint:hint,stack:stack,stepToward:stepToward,spawn:spawn};
+var api={U:U,up:up,foes:foes,mates:mates,foe:foe,on:on,dist:dist,log:log,hint:hint,toast:toast,tip:tip,stack:stack,stepToward:stepToward,spawn:spawn};
 
 /* ---------- a mission's board, built on a normal battle ---------- */
 function setDeck(G,u,deck,first){u.deck=deck.slice();if(first)stack(G,u,first);else u.dk={draw:shuffle(u.deck,lcg(G.seed^(u.id.charCodeAt(0)*7919))),disc:[],gone:[]}}
@@ -135,7 +159,7 @@ function start(id,opts){
   (M.foes||[]).forEach(function(f,i){var key=f.k+'_'+i;FOES[key]=FD[f.k];keys.push(key);fl.push([key,f.at?f.at[0]:0,f.at?f.at[1]:0])});
   var keep=LH.MAPS[0],G;LH.MAPS[0]={name:M.map.name,rows:M.map.rows,pos:pos,foes:fl};
   try{G=O.newRun({seed:opts.seed,rounds:M.rounds||1,level:0,deck:['c_brace']})}finally{LH.MAPS[0]=keep;keys.forEach(function(k){delete FOES[k]})}
-  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null,level:lvl,pack:pack};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
+  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null,level:lvl,pack:pack,toasts:[],tips:[]};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
   /* the marker captain: off the board, on nobody's side */
   var z=U(G,'Z');z.side=2;z.x=-9;z.y=-9;
   /* the foes, with the mission's own numbers */
@@ -214,11 +238,11 @@ LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return
 LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){ev(G,'moved',u);after(G)}return r};
 LH.hold=function(G,u){var r=O.hold(G,u);if(r&&G.ms){ev(G,'held',u);after(G)}return r};
 LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms)after(G);return r};
-LH.engage=function(G,a,d){if(!G.ms)return O.engage(G,a,d);CUR=G;ev(G,'before',a,d);var K=O.engage(G,a,d);if(K){G.cs.clashes++;K.p.txt=say(G,K.p.txt);ev(G,'engage',K)}return K};
+LH.engage=function(G,a,d){if(!G.ms)return O.engage(G,a,d);CUR=G;ev(G,'before',a,d);var K=O.engage(G,a,d);if(K){G.cs.clashes++;K.p.txt=say(G,K.p.txt);tipsFor(G,K);ev(G,'engage',K)}return K};
 LH.play=function(G,i){var id=G.ms&&G.clash?G.clash.hand[i]:null,fx=O.play(G,i);if(fx&&G.ms){var x=ev(G,'play',id,fx);if(x)x.forEach(function(e){fx.push(e)})}return fx};
-LH.endHand=function(G){if(G.ms&&G.clash&&G.clash.phase==='play')ev(G,'ending',G.clash);var K=G.clash,fx=O.endHand(G);if(fx&&G.ms){if(fx[0]&&fx[0].n)G.cs.hurt+=fx[0].n;ev(G,'ended',K,fx)}return fx};
+LH.endHand=function(G){if(G.ms&&G.clash&&G.clash.phase==='play')ev(G,'ending',G.clash);var K=G.clash,fx=O.endHand(G);if(fx&&G.ms){if(fx[0]&&fx[0].n)G.cs.hurt+=fx[0].n;if(fx.some(function(e){return e.k==='wound'}))tip(G,'wound');if(K&&K.phase==='choice')tip(G,'rounds');ev(G,'ended',K,fx)}return fx};
 LH.pressOn=function(G){var r=O.pressOn(G);if(r&&G.ms)ev(G,'round',G.clash);return r};
-LH.closeClash=function(G){var K=G.clash,r=O.closeClash(G);if(r&&G.ms){ev(G,'clashEnd',K);after(G)}return r};
+LH.closeClash=function(G){var K=G.clash,r=O.closeClash(G);if(r&&G.ms){if(K.a.hp>0&&K.a.guard>0)tip(G,'guard');if(K.a.hp>0&&K.a.bank>0)tip(G,'held');ev(G,'clashEnd',K);after(G)}return r};
 LH.endTurn=function(G){
   if(G.ms&&!G.over&&!G.clash&&G.phase==='player'){ev(G,'night');after(G);if(G.over)return false;
     foes(G).forEach(function(e){if(e.ordeal){e._r=e.rng;e.rng=0}})}   /* an ordeal answers in the clash and nowhere else */
@@ -230,9 +254,63 @@ LH.enemyStep=function(G){
   return e;
 };
 
+/* ---------- what is new in a mission: worked out from the missions themselves, so it cannot drift from them ---------- */
+var PROF={};
+function rk(id){return Math.max(0,ROM.indexOf(C[id].r||''))}
+function profile(id){
+  if(PROF[id])return PROF[id];var keep=CUR,G=start(id,{seed:1,level:0,pack:[]});CUR=keep;
+  var D=G.u[0],M=MS[id],p={all:{},here:{},fights:{},tends:{},lends:{},img:{},cards:{},foes:{},mov:D.mov,br:D.br,hn:D.hn,hp:D.max,rounds:M.rounds||1,insp:M.insp||0,thr:(D.throws>0&&D.far)?1:0,tall:!!M.tall};
+  G.u.forEach(function(u){
+    if(u.side===0&&u.id!=='D'&&u.hp>0){p.all[u.n]=1;p.img[u.n]=u.img;if(u.lend)p.lends[u.n]=u.lend;if(!u.still){p.here[u.n]=1;if(u.deck&&u.deck.length)p.fights[u.n]=1;if(u.tend&&u.tends>0)p.tends[u.n]=1}}
+    if(u.side===1&&u.hp>0&&u.n&&!p.foes[u.type])p.foes[u.type]=u});
+  for(var t in G.tpl)if(!p.foes[t])p.foes[t]=G.tpl[t];
+  (D.deck||[]).forEach(function(c){p.cards[C[c].n]=c});
+  return PROF[id]=p;
+}
+function habit(u){
+  if(u.ordeal)return 'not a man: what he deals is ground covered, and its answer is what it costs him';
+  var h=[];if(u.rng>1)h.push('reaches two tiles');if(u.tough)h.push('takes less from every blow');if(u.ans&&u.ans.some(function(x){return x.n>1}))h.push('answers with several small blows');
+  if(u.barbed)h.push('leaves a Wound where a blow lands');if(u.rally)h.push('makes the others strike harder');if(u.enrage)h.push('strikes harder at half health');if(u.scripted)h.push('does not fight: walks for what was sent for');
+  return h.join(', ');
+}
+function news(id){
+  var i=ORDER.indexOf(id),out=[];if(i<=0)return out;
+  var P=profile(id),prev=profile(ORDER[i-1]),S={all:{},here:{},fights:{},tends:{},cards:{},foes:{},rounds:1,insp:0,thr:0,tall:0,ordeal:0},n,j;
+  for(j=0;j<i;j++){var q=profile(ORDER[j]);['all','here','fights','tends','foes'].forEach(function(k){for(var x in q[k])S[k][x]=1});
+    for(n in q.cards)S.cards[n]=Math.max(S.cards[n]||0,rk(q.cards[n])+1);for(n in q.foes)if(q.foes[n].ordeal)S.ordeal=1;
+    S.rounds=Math.max(S.rounds,q.rounds);S.insp=Math.max(S.insp,q.insp);S.thr=Math.max(S.thr,q.thr);S.tall=Math.max(S.tall,q.tall?1:0)}
+  /* who is beside him */
+  for(n in P.here){var f=P.fights[n],t=P.tends[n];
+    if(!S.here[n])out.push({k:'join',who:n,img:P.img[n],t:n+(S.all[n]?' stands with him now.':' is with him here for the first time.')+(f?' '+n+' fights with a hand of cards: tap to choose who goes in.':t?' '+n+' tends: tap, then a hurt friend alongside.':'')});
+    else if(f&&!S.fights[n])out.push({k:'join',who:n,img:P.img[n],t:n+' fights beside him now, with a hand of cards.'});
+    else if(t&&!S.tends[n])out.push({k:'join',who:n,img:P.img[n],t:n+' can tend now: tap, then a hurt friend alongside.'})}
+  /* what he carries */
+  var lost=0;for(n in prev.cards)if(!P.cards[n]&&C[prev.cards[n]].r==='the Grace')lost++;
+  if(lost)out.push({k:'lost',t:'The Grace is gone, and the Arts that stood on it are sealed.'});
+  for(n in P.cards){var c=P.cards[n],r=rk(c);
+    if(!S.cards[n])out.push({k:'card',id:c,t:(C[c].r?'A new Art: ':'A new card: ')+n+(C[c].r?' '+C[c].r:'')+'.'});
+    else if(r+1>S.cards[n])out.push({k:'card',id:c,t:n+' has risen to '+C[c].r+'.'})}
+  /* his body */
+  var b=[];if(P.mov!==prev.mov)b.push(P.mov===0?'he cannot move':'he moves '+P.mov+(P.mov===1?' step':' steps')+' a turn');
+  if(P.hp!==prev.hp&&P.hp>0&&prev.hp>0)b.push('health '+P.hp+' (it was '+prev.hp+')');if(P.br!==prev.br&&P.br>0&&prev.br>0)b.push(P.br+' breath a hand (it was '+prev.br+')');if(P.hn!==prev.hn&&P.hn>0&&prev.hn>0)b.push('a hand of '+P.hn);
+  if(b.length){var bs=b.join(', ');out.push({k:'body',t:bs.charAt(0).toUpperCase()+bs.slice(1)+'.'})}
+  /* rules that begin here */
+  if(P.rounds>1&&S.rounds<2)out.push({k:'rule',t:TIPS.rounds[1]});
+  if(P.insp&&!S.insp)out.push({k:'rule',t:'Inspiration: once a fight he may throw in the hand for a new one.'});
+  if(P.thr&&!S.thr)out.push({k:'rule',t:'Once a battle he can open a fight from two tiles, with a thrown card.'});
+  if(P.tall&&!S.tall)out.push({k:'rule',t:'A fight told larger than the page: the pack from the fire goes with him.'});
+  /* what he meets */
+  for(n in P.foes){var u=P.foes[n],h=habit(u);if(S.foes[n]||!h)continue;if(u.ordeal&&S.ordeal){continue}out.push({k:'foe',key:u.key,t:u.n+': '+h+'.'})}
+  return out;
+}
+/* ---------- the fire's shelf fills as he goes: each mission told leaves one card the company can spare, and stars open the last two ---------- */
+var GIFT={p0:'bandage',p1:'stitch',c1:'closeup',c2:'readline',c3:'bellow',c4a:'hewT',c4b:'callco',c4c:'secondwind',c5:'legs',c5b:'twice',c5c:'pinshot',c6:'finish',c6b:'follow',c7:'digin'},STARGIFT=[[24,'bloodup'],[32,'steady']];
+function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done[id]){stars+=done[id].stars||0;if(GIFT[id]&&SHOP.indexOf(GIFT[id])>=0)out.push(GIFT[id])}});
+  STARGIFT.forEach(function(g){if(stars>=g[0]&&SHOP.indexOf(g[1])>=0)out.push(g[1])});return out}
+
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={pending:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={pending:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},

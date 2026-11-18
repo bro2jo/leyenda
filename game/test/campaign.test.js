@@ -98,6 +98,15 @@ CP.ORDER.forEach(function(id){
   var o0=CP.start('p1',{seed:1}),o1=CP.start('p1',{seed:1,level:1}),a0=o0.u.filter(function(u){return u.ordeal})[0],a1=o1.u.filter(function(u){return u.ordeal})[0];
   ok(a1.max===a0.max&&a1.ans[0].d===a0.ans[0].d+2,'an ordeal is no longer on Hard, only harder on him');
   CP.ORDER.forEach(function(id){var G=CP.start(id,{seed:1,level:-1});ok(G.u.every(function(u){return u.side!==1||(u.atk>=0&&u.ans.every(function(x){return x.d>=1}))}),id+': Gentle never takes a blow below 1')});
+  /* what he is told: every mission's news reads clean, the shelf fills one card a mission, the story's beats are said aloud */
+  CP.ORDER.forEach(function(id,i){var l=CP.news(id);ok(l.every(function(x){return x.t&&!/undefined|NaN|\bthe The\b/.test(x.t)})&&(i>0||!l.length),id+': its news reads clean ('+l.length+' lines)')});
+  ok(CP.news('c5b').some(function(x){return x.k==='join'&&x.who==='Ash'})&&CP.news('c4b').some(function(x){return x.k==='join'&&/Hollis stands with him now/.test(x.t)}),'someone new beside him is announced, and someone who was only watching before is said to stand with him now');
+  ok(CP.news('p1').some(function(x){return x.k==='lost'})&&CP.news('c2').some(function(x){return x.k==='card'&&/risen to/.test(x.t)}),'the Grace lost and an Art risen are both news');
+  var gifts=Object.keys(CP.GIFT).map(function(k){return CP.GIFT[k]});ok(Object.keys(CP.GIFT).length===CP.ORDER.length&&gifts.every(function(c,j){return CP.SHOP.indexOf(c)>=0&&gifts.indexOf(c)===j})&&gifts.length+CP.STARGIFT.length===CP.SHOP.length,'each mission leaves one card at the fire, none twice, and stars open the rest');
+  var dn={};ok(CP.shelf(dn).length===0,'the shelf is empty before the first mission');CP.ORDER.forEach(function(id){dn[id]={stars:3}});ok(CP.shelf(dn).length===CP.SHOP.length,'and full when every mission is told with every star');
+  var W=CP.start('c1',{seed:1});W.cs.toasts.length=0;CP.api.log(W,'The wicket shuts.','good');CP.api.log(W,'A quiet line.','dimm');ok(W.cs.toasts.length===1&&W.cs.toasts[0].t==='The wicket shuts.','a beat of the story is said aloud; a quiet line is only logged');
+  var E=CP.start('c5b',{seed:1}),ED=E.u[0],ES=E.u.filter(function(u){return u.type==='sergeant'})[0];ES.x=ED.x;ES.y=ED.y-1;E.u.forEach(function(u){if(u!==ES&&u.x===ES.x&&u.y===ES.y)u.x=5});LH.engage(E,ED,ES);
+  ok(E.cs.tips.indexOf('brk')>=0&&E.cs.tips.indexOf('enrage')>=0&&E.cs.tips.indexOf('ordeal')<0,'a fight notes the rules that matter in it, each once');
   /* words */
   ok(CP.say(CP.start('p1',{seed:1}),'Their turn')==='Time passes'&&CP.say(CP.start('c5b',{seed:1}),'Their turn')==='Their turn','against a hall, time passes; against men, it is their turn');
   ok(CP.say(CP.start('c5b',{seed:1}),'Banner')==='The horn'&&CP.say(CP.start('c5c',{seed:1}),'The banner is up: he strikes 2 harder.').indexOf('A name is being read')===0,'what rallies them is named for the mission');
