@@ -31,21 +31,67 @@ function btnLink(a,label){return '<button type="button" class="linkbtn" data-cp=
 function btn(a,label,small,cls){return '<button type="button" class="act '+(cls||'')+'" data-cp="'+a+'"><b>'+label+'</b>'+(small?'<small>'+small+'</small>':'')+'</button>'}
 
 /* ---------- title, missions, the place card, the telling after ---------- */
+/* ---------- the main menu: where he is, and everywhere he can go from here ---------- */
+function tile(a,icon,name,small,cls,off){return '<button type="button" class="cp-tile '+(cls||'')+'" data-cp="'+a+'"'+(off?' disabled':'')+'><span class="ti">'+icon+'</span><b>'+name+'</b><small>'+small+'</small></button>'}
+function roadOpen(){return ALL||!!P.done.c5}
+function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
+    l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
 function title(){
-  scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null;
-  show('<div class="cp-title"><span class="cp-lbl">The Unkneeling</span><h2>The Line and the Hand</h2><p class="cp-sub">The campaign: the Chronicle, played from where he was put.</p>'+
+  scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{};
+  show('<div class="cp-menu"><span class="cp-lbl">The Unkneeling</span><h2>The Line and the Hand</h2>'+
     '<div class="cp-crest"><img src="'+A+'high-guard.webp" alt=""></div>'+
-    '<div class="cp-acts">'+(M?btn('intro:'+nx,n?'Go on':'Begin',M.book+' · '+M.n,'primary'):btn('list','Every mission is told',CP.END.t,'primary'))+btn('list','Missions',n+' of '+CP.ORDER.length+' told')+btn('fire:title','The fire',purse()+' stars to spend')+btn('cards:title','The cards',found()[0]+' of '+found()[1]+' found')+'</div>'+
-    '<p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>');
+    '<div class="cp-acts">'+(M?btn('intro:'+nx,n?'Go on':'Begin',M.book+' · '+M.n,'primary'):btn('list','Every mission is told',CP.END.t,'primary'))+'</div>'+
+    '<div class="cp-tiles">'+
+      tile('list',X.svg('road'),'The journey',n+' of '+CP.ORDER.length+' told · ★ '+starsAll())+
+      tile('road',X.svg('swords'),'The road',roadOpen()?(R.best?'Best Renown '+R.best:'Three crossings, his own deck'):'Opens when he is on the road','',!roadOpen())+
+      tile('fire:title',X.svg('tent'),'The fire',purse()+' stars to spend')+
+      tile('cards:title',X.svg('deck'),'The cards',f[0]+' of '+f[1]+' found')+
+      tile('company',X.svg('heart'),'The company',met().length?met().length+' beside him so far':'Nobody yet')+
+      tile('settings',X.svg('pillar'),'Settings',['Gentle','Standard','Hard'][(P.level||0)+1]+(X.prefs.music?' · music':'')+(X.prefs.sound?' · sound':''))+
+    '</div><p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
 }
+/* the journey: the missions as a road, a spur for each fight told larger than the page */
 function list(){
-  scr='list';var h='<div class="cp-top"><b>Missions</b><span class="cp-topacts">'+btn('fire:list','The fire ★ '+purse(),'','mini')+btn('title','Back','','mini')+'</span></div>',book='';
-  CP.ORDER.forEach(function(id,i){var M=CP.MS[id],d=P.done[id];
+  scr='list';var h='<div class="cp-top"><b>The journey</b><span class="cp-topacts">'+btn('fire:list','The fire ★ '+purse(),'','mini')+btn('title','Menu','','mini')+'</span></div><div class="cp-road">',book='',nx=nextId();
+  CP.ORDER.forEach(function(id,i){var M=CP.MS[id],d=P.done[id],op=open(i);
     if(M.book!==book){book=M.book;h+='<span class="cp-book">'+esc(book)+'</span>'}
-    h+='<button type="button" class="cp-row'+(open(i)?'':' locked')+(d?' done':'')+(M.tall?' tall':'')+'" data-cp="intro:'+id+'"'+(open(i)?'':' disabled')+'><span class="cp-n">'+(i+1)+'</span><span class="cp-rt"><b>'+esc(M.n)+'</b><small>'+esc(open(i)?M.place:'Not yet')+'</small></span>'+(d?starRow(d.stars,3):'')+'</button>'});
-  h+='<div class="cp-end"><b>'+CP.END.t+'</b><span>'+CP.END.s+'</span></div>';
+    h+='<button type="button" class="cp-row'+(op?'':' locked')+(d?' done':'')+(M.tall?' tall':'')+(id===nx?' next':'')+'" data-cp="intro:'+id+'"'+(op?'':' disabled')+'><span class="cp-n">'+(d?'★':i+1)+'</span><span class="cp-rt"><b>'+esc(M.n)+'</b><small>'+esc(op?(M.tall?'Told larger than the page · ':'')+M.place:'Not yet')+'</small></span>'+(d?starRow(d.stars,3):id===nx?'<span class="cp-next">Next</span>':'')+'</button>'});
+  h+='</div><div class="cp-end"><b>'+CP.END.t+'</b><span>'+CP.END.s+'</span></div>';
   show(h,'scroll');
 }
+/* the company: everyone who has stood beside him so far, and what each brings */
+function company(){
+  scr='company';var l=met(),C=LH.C,last=null;CP.ORDER.forEach(function(id,i){if(open(i))last=id});var p=CP.profile(last),M=CP.MS[last];
+  var h='<div class="cp-top"><b>The company</b>'+btn('title','Menu','','mini')+'</div>'+
+    '<div class="cp-who me"><img src="'+A+(has('darrow')?'darrow':'darrow1')+'.webp" alt=""><span><b>Ser Darrow</b><small>'+esc(M.level)+'</small><span class="cp-dim">Health '+p.hp+' · '+p.br+' breath · a hand of '+p.hn+' · '+(p.mov?'moves '+p.mov:'held to his place')+' <i>(as of '+esc(M.n)+')</i></span></span></div>';
+  h+=l.length?l.map(function(o){var role=[];if(o.fights)role.push('fights with a hand of cards');if(o.tends)role.push('tends');if(!o.fights&&!o.tends)role.push('stands by');
+    return '<div class="cp-who"><img src="'+A+(o.img&&has(o.img)?o.img:'brother')+'.webp" alt=""><span><b>'+esc(o.n)+'</b><small>'+esc(role.join(' · '))+'</small><span class="cp-dim">'+(o.lend&&C[o.lend]?'Lends '+esc(C[o.lend].n)+': '+LH.cardText(o.lend).replace(/<[^>]+>/g,''):'')+' <i>First beside him in '+esc(CP.MS[o.first].n)+'.</i></span></span></div>'}).join(''):'<span class="cp-dim">Nobody has stood beside him yet.</span>';
+  show(h,'scroll');
+}
+/* settings, inside the game */
+var sure=false;
+function settings(){
+  scr='settings';function seg(l){return '<span class="seg">'+l.join('')+'</span>'}
+  function pref(k,v,t){return '<button type="button" data-pref="'+k+'='+v+'" aria-pressed="'+(String(X.prefs[k])===String(v))+'">'+t+'</button>'}
+  function lev(v,t){return '<button type="button" data-cplevel="'+v+'" aria-pressed="'+((P.level||0)===v)+'">'+t+'</button>'}
+  show('<div class="cp-top"><b>Settings</b>'+btn('title','Menu','','mini')+'</div>'+
+    '<div class="cp-set"><span class="lbl">Difficulty</span>'+seg([lev(-1,'Gentle'),lev(0,'Standard'),lev(1,'Hard')])+'<span class="cp-dim">What a foe deals and how long a man stands, from the next mission begun. The road uses it too.</span></div>'+
+    '<div class="cp-set"><span class="lbl">Animation</span>'+seg([pref('quick',false,'Full'),pref('quick',true,'Quick')])+'<span class="cp-dim">Quick halves every wait. A curtain goes on at a tap either way.</span></div>'+
+    '<div class="cp-set"><span class="lbl">Music</span>'+seg([pref('music',false,'Off'),pref('music',true,'On')])+'</div>'+
+    '<div class="cp-set"><span class="lbl">Sound</span>'+seg([pref('sound',false,'Off'),pref('sound',true,'On')])+'</div>'+
+    '<div class="cp-set"><span class="lbl">Progress</span><button type="button" class="act'+(sure?' warn':'')+'" data-cp="forget"><b>'+(sure?'Tap again to forget everything':'Forget my progress')+'</b><small>'+(sure?'Stars, cards, the pack and the rules he has met':'Start from the ford again')+'</small></button><span class="cp-dim">Kept in this browser only.</span></div>');
+}
+/* the road: three crossings of the game itself, with the deck he has in the campaign and the pack from the fire */
+function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(P.pack)}
+var roadSaved=false;
+function road(){
+  if(X.busy||!roadOpen())return;
+  X.curtain('march','The road','Three crossings, three captains',function(){
+    CP.pending=null;CP.road=roadDeck();X.prefs.level=P.level||0;root.removeAttribute('data-cp');root.removeAttribute('data-th');root.removeAttribute('data-co');
+    kick.click();scr='road';shown=true;roadSaved=false;hide();sweep();
+  });
+}
+function leaveRoad(){if(X.busy)return;CP.road=null;root.setAttribute('data-cp','1');title()}
 function intro(id){
   scr='intro';var M=CP.MS[id];
   show('<div class="cp-card">'+(has('place-'+M.art)?'<div class="cp-pic"><img src="'+A+'place-'+M.art+'.webp" alt=""></div>':'')+
@@ -178,6 +224,9 @@ root.addEventListener('click',function(e){
   else if(k[0]==='take'){if(pick&&P.pack.length<CP.PACK&&cost(pick)<=purse()&&P.pack.indexOf(pick)<0&&shelf().indexOf(pick)>=0){P.pack.push(pick);pick=null;save()}fire()}
   else if(k[0]==='drop'){var di=P.pack.indexOf(k[1]);if(di>=0){P.pack.splice(di,1);save()}fire()}
   else if(k[0]==='quit'){if(!X.busy)list()}
+  else if(k[0]==='company')company();else if(k[0]==='settings'){sure=false;settings()}
+  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.road=null;save();title()}else{sure=true;settings()}}
+  else if(k[0]==='road')road();else if(k[0]==='quitroad')leaveRoad();
 });
 var FAST=!!window.LH_FAST;
 /* the mission is over: the telling comes up. Where the game draws its curtain across the screen, the telling is laid under it
@@ -189,7 +238,12 @@ function underCurtain(){var G=X.G,bn=$('banner');if(scr==='play'&&G&&G.ms&&G.ove
 function objHTML(G){var h=G.cs.hint;return '<span class="cp-o"><b>'+esc(CP.objective(G))+'</b></span>'+(h?'<span class="cp-h">'+esc(h)+'</span>':'')}
 var pend=false;
 function sweep(){
-  pend=false;var G=X.G;if(!G||!G.ms||scr!=='play')return;underCurtain();
+  pend=false;var G=X.G;
+  if(G&&scr==='road'){var host=G.over&&G.over.win?$('scr-camp'):$('m-rest');
+    if(host&&!host.querySelector('.cp-quit')){var qb=document.createElement('button');qb.type='button';qb.className='linkbtn cp-quit';qb.setAttribute('data-cp','quitroad');qb.textContent='Back to the menu';host.appendChild(qb)}
+    if(G.over&&!G.over.win&&!roadSaved){roadSaved=true;var R=P.road||{best:0,runs:0,won:0};R.runs++;if(G.over.done)R.won++;R.best=Math.max(R.best||0,G.run.renown||0);P.road=R;save()}
+    if(!G.over)roadSaved=false;return}
+  if(!G||!G.ms||scr!=='play')return;underCurtain();
   drain();
   var top=$('m-top'),t=CP.top(G);if(top&&top.textContent!==t)top.textContent=t;
   var rest=$('m-rest'),map=$('scr-map');
@@ -214,6 +268,6 @@ function paintLevel(){var b=document.querySelectorAll('[data-cplevel]');for(var 
 document.addEventListener('click',function(e){var b=e.target.closest('[data-cplevel]');if(!b)return;P.level=+b.getAttribute('data-cplevel');save();paintLevel()});
 paintLevel();
 trimPack();
-window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};save();title()}};
+window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};save();title()}};
 title();
 })();

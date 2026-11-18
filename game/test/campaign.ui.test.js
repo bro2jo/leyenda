@@ -82,6 +82,24 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     ok(await p.evaluate(()=>{var f=__CP.found();return f[0]>20&&f[0]<f[1]}),'the count of cards found is short of the whole');
     ok(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'the cards fit at '+vp.width);
     await p.evaluate(()=>{__CP.P.pack.length=0;__CP.P.pack.push('callco')});
+    /* the main menu, and everywhere it leads */
+    await p.evaluate(()=>{__CP.title()});ok(await p.locator('.cp-menu .cp-tile').count()===6&&await p.locator('.cp-menu [data-cp^="intro:"]').count()===1,'the menu offers the next mission and six places to go');
+    ok(/9 of 14 told/.test(await p.locator('.cp-tile[data-cp="list"]').innerText())&&/found/.test(await p.locator('.cp-tile[data-cp="cards:title"]').innerText()),'each tile says where things stand');
+    await p.click('.cp-tile[data-cp="list"]');ok(await p.locator('.cp-road .cp-row.next').count()===1&&await p.locator('.cp-road .cp-row.tall').count()===3&&await p.locator('.cp-road .cp-row.done').count()===9,'the journey is a road: what is told, what is next, a spur for each larger fight');
+    await p.evaluate(()=>{__CP.company()});ok(await p.locator('.cp-who').count()>=6&&/Lends/.test(await p.locator('.cp.on').innerText())&&/First beside him in/.test(await p.locator('.cp.on').innerText()),'the company lists everyone who has stood beside him and what each lends');
+    await p.evaluate(()=>{__CP.settings()});ok(await p.locator('.cp.on [data-cplevel]').count()===3&&await p.locator('.cp.on [data-pref^="music"]').count()===2,'settings are inside the game');
+    await p.click('.cp.on [data-cplevel="1"]');ok(await p.evaluate(()=>__CP.P.level===1)&&await p.getAttribute('.cp.on [data-cplevel="1"]','aria-pressed')==='true','difficulty set from the menu');await p.click('.cp.on [data-cplevel="0"]');
+    await p.click('.cp.on [data-cp="forget"]');ok(await p.evaluate(()=>Object.keys(__CP.P.done).length===9),'forgetting progress asks twice');await p.evaluate(()=>{__CP.title()});
+    /* the road: the game itself, with his deck and the pack */
+    ok(await p.evaluate(()=>!document.querySelector('.cp-tile[data-cp="road"]').disabled),'the road is open once he is on the road');
+    await p.click('.cp-tile[data-cp="road"]');await p.waitForTimeout(150);
+    ok(await p.evaluate(()=>{var G=__LH.G,g=document.getElementById('game');return __CP.scr==='road'&&!G.ms&&G.map.name==='The Two Fords'&&G.run.deck.indexOf('c_stick')>=0&&G.run.deck.indexOf('callco')>=0&&!g.hasAttribute('data-cp')&&!g.hasAttribute('data-th')}),'it is a run of the game, on the game\'s first ground, with his campaign deck and the pack');
+    ok(await p.evaluate(()=>__LH.LH.nm(__LH.G.u.filter(function(u){return u.boss})[0])==='the Captain')&&await p.locator('#m-rest .cp-quit[data-cp="quitroad"]').count()===1,'the game\'s own words stand, and there is a way back to the menu');
+    await p.evaluate(()=>{var G=__LH.G;G.u[0].hp=0;G.over={lost:1,t:'The line is broken',s:''};G.run.renown=7;__CP.sweep()});await p.waitForTimeout(80);
+    ok(await p.evaluate(()=>__CP.P.road&&__CP.P.road.best===7&&__CP.P.road.runs===1),'a run\'s Renown is kept as his best');
+    await p.click('#m-rest .cp-quit');ok(await p.evaluate(()=>__CP.scr==='title'&&document.getElementById('game').getAttribute('data-cp')==='1'&&CP.road===null)&&/Best Renown 7/.test(await p.locator('.cp-tile[data-cp="road"]').innerText()),'leaving the road comes back to the menu, which remembers it');
+    await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(100);ok(await p.evaluate(()=>__LH.G.ms==='c6'&&__LH.LH.nm(__LH.G.u.filter(function(u){return u.type==='ysra'})[0])==='Ysra Tal'),'and a mission after the road is a mission again');
+    await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
     ok(await p.evaluate(()=>document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display!=='none'),'where the company fights, the triangle is drawn under the board');
     await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(100);
     ok(await p.evaluate(()=>{var G=__LH.G;return G.u[0].deck.indexOf('digin')<0&&!document.getElementById('game').hasAttribute('data-co')&&getComputedStyle(document.querySelector('#m-rest .trio')).display==='none'}),'the page\'s own scene keeps the page\'s deck, and has no triangle to draw');

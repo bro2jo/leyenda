@@ -234,7 +234,10 @@ function after(G){CUR=G;relog(G);check(G)}
 
 /* ---------- the wrapped moves. Each does what the engine does, then lets the mission look at the board. ---------- */
 /* the game's own settings (its difficulty, its try-everything deck) are for a run of the game: a mission takes only the seed */
-LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,{seed:opts&&opts.seed})}return O.newRun(opts)};
+LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,{seed:opts&&opts.seed})}
+  /* the road: a run of the game itself, with the deck he has in the campaign and the pack from the fire */
+  if(CP.road){var o={};for(var k in opts)o[k]=opts[k];o.deck=CP.road.slice();CUR=null;return O.newRun(o)}
+  return O.newRun(opts)};
 LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){ev(G,'moved',u);after(G)}return r};
 LH.hold=function(G,u){var r=O.hold(G,u);if(r&&G.ms){ev(G,'held',u);after(G)}return r};
 LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms)after(G);return r};
@@ -310,7 +313,7 @@ function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={pending:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={pending:null,road:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},
