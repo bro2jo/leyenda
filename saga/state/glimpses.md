@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-15 · body · He gets up from the fire without a hand on anything, and only knows he did it because Maelis, across the coals, has stopped watching him do it.
 - 2026-11-16 · weather · A hard frost overnight, the kind that rings underfoot. By mid-morning the road steams wherever the sun touches it, and the dog trots along it sneezing at every patch.
 - 2026-11-16 · overheard · Overheard at the water butt: Hollis telling Wren that frost is good for the soul. Wren asks him to show her where it says so. He cannot, and says so twice.
 - 2026-11-16 · saying · Hollis barks his shin on the cart step and says "Stone and Crown" like a curse. Rae, passing, says it back to him like a vow, and he has no answer for that at all.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-18 · overheard · Overheard at the roadside fire: Rae telling the dog it has done very well today, in a voice she uses for no one else, and then warning it not to let that go to its head.
 - 2026-11-18 · saying · Rae gives him the carters' rule for a byname as they walk: call him what he does twice. Then she watches him sidelong for the next mile, plainly counting.
 - 2026-11-18 · body · A stile at midday. He goes over it the old way, hand on the post, one leg and then the other, and is down on the far side before he remembers that this used to be a decision.
+- 2026-11-18 · weather · All afternoon the frost keeps to the shadow side of the hedges, so the road is two roads, one soft and one iron. The dog takes the soft one, every time, without discussion.
