@@ -2251,6 +2251,44 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c07.4",
+      "made": {
+        "chapter": 7,
+        "scene": "between-3",
+        "date": "2026-11-17"
+      },
+      "chose": "At the fire on the first night west, struck dumb by Rae and her wood, he joked that he could not tell which he was gladder to see; asked where Hob and Dun were (with Wren); saw what leaving them cost her, dropped the joke and told her plainly he was glad it was her. She said Aye, told him to sleep, and he let her keep the fire.",
+      "now": {
+        "approval": {
+          "rae": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c07.4a",
+          "when": "next",
+          "at": "ch07:s4",
+          "weight": "color",
+          "what": "He slept the back half of the first night while Rae kept the fire on her oak, her boots drying toe to the heat and Ash across her feet; the next scene opens on that, the stragglers gone with the dark, his foot back but tender",
+          "status": "pending"
+        },
+        {
+          "id": "c07.4b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "He never said which he was gladder to see, her or the wood; it comes back once, in her mouth or his, when it can be said straight or as a joke that is not one",
+          "fits": "present.rae",
+          "priority": 2,
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch07:between-3"
+          ]
+        }
+      ]
     }
   ],
   "rules": [

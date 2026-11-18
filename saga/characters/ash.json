@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "3",
+    "scene": "between-3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-3"
+    "anchor": "chronicle/07-the-far-bank.html#between-3"
   },
-  "last_seen_doing": "Kept to his heel all day on the walkers' road, and bit his sleeve to wake him when the fire sank and one of them took his boot.",
-  "now": "Lying across Darrow at the fire.",
+  "last_seen_doing": "Got up off Darrow and lay down across Rae's feet.",
+  "now": "Lying across Rae's feet at the fire.",
   "story_so_far": "Ash saw the rider on the skyline first and made no sound, watched the alders long after the meadow was empty, and tried to follow Darrow out onto the weir until Wren sat on her.",
   "quote": null,
   "known_facts": [
@@ -133,6 +133,12 @@
       "chapter": "07",
       "scene": "3",
       "evidence": "She had him by the sleeve, hard, growling through it"
+    },
+    {
+      "fact": "When Rae came, Ash left Darrow and lay down across her feet, the warmest thing at the fire.",
+      "chapter": "07",
+      "scene": "between-3",
+      "evidence": "Ash, at least, had no trouble deciding."
     }
   ],
   "relationships": [
@@ -267,6 +273,10 @@
     {
       "chapter": "07",
       "scene": "3"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-3"
     }
   ]
 }

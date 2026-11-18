@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "3",
+    "scene": "between-3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-3"
+    "anchor": "chronicle/07-the-far-bank.html#between-3"
   },
-  "last_seen_doing": "Nodded him off at dawn like any carter going the other way; came up the walkers' road after dark with a lamp held high and a load of wood on her back, unasked, and fed his fire.",
-  "now": "At his fire on the walkers' trail, her wood on the ground beside it.",
+  "last_seen_doing": "Untied her wood, set her lamp high on the bank to hold the stragglers' eyes, said Hob and Dun were with Wren, answered his gladness with Aye, and sent him to sleep while she kept the fire.",
+  "now": "Keeping his fire on the walkers' trail in her stockinged feet, her boots drying at the heat, her lamp on the bank above.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -941,6 +941,18 @@
       "evidence": "You told me why,\" said Rae. \"You never told me not to."
     },
     {
+      "fact": "To carry wood west after him, she gave Hob and Dun into Wren's keeping on the north road and told Wren their names twice.",
+      "chapter": "07",
+      "scene": "between-3",
+      "evidence": "\"I told her their names twice. Hob stops if you say it like you mean it.\""
+    },
+    {
+      "fact": "She set her lamp up high on the bank so its flame looked down the trodden road, and the stragglers turned to it and stayed turned.",
+      "chapter": "07",
+      "scene": "between-3",
+      "evidence": "where its flame looked straight down the trodden road"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1312,6 +1324,10 @@
     {
       "chapter": "07",
       "scene": "3"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-3"
     },
     {
       "chapter": "tale02",

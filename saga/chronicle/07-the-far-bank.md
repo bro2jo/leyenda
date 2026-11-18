@@ -454,3 +454,49 @@ Rae came into the firelight, swung the wood off her back onto the ground, and pu
 She looked at him, at the hands in his coat, at the foot.
 
 "You told me why," said Rae. "You never told me not to."
+
+### Between — Which of Them
+
+For a while Darrow said nothing at all, which had not happened to him since he was about four.
+
+He looked at Rae. He looked at the wood. It was a great deal of wood: split logs and long dead branches, roped in a bundle that had stood as high as her head, more than he had gathered in an hour of dusk with one arm. He looked at Rae again. Something was coming up in his chest the way the fire had come up, slowly and then all at once, and he could not have said which of the two it was for.
+
+"Well?" said Rae.
+
+"I'm trying to work out," he said, "whether I'm gladder to see you or the wood."
+
+"The wood." She was untying the rope. "Say the wood. It's the one that gets you to morning."
+
+"It's very good wood."
+
+"It's oak, a year down. It burns slow." She set the lamp on the bank behind them, up high, where its flame looked straight down the trodden road, and the five at the edge of the light turned their heads to it and stayed turned. Then she sat down on the other side of the fire and began on her boots.
+
+He watched her for a moment, and his foot began to come back to him in needles, and he found the next question waiting.
+
+"Where are Hob and Dun?"
+
+"With Wren."
+
+"Wren." He thought about it. "Wren's never driven anything bigger than a sum."
+
+"She can count to two. That's all a team is." Rae got the first boot off and turned it upside down, and a stone fell out. "I told her their names twice. Hob stops if you say it like you mean it."
+
+She said it to the boot. He had never once seen her more than a shout from those two oxen, not on the river road, not at the weir with the water coming over, and she had left them on a north road with a girl who counted things for comfort, to carry a day's wood west on her back after a man who had told her why and nothing else.
+
+The joke he had ready went somewhere and did not come back.
+
+"Rae," he said. "I'm glad it's you."
+
+She put the boot down beside the fire, toe to the heat, where it would dry.
+
+"Aye," said Rae.
+
+Then: "Sleep. I'll keep it."
+
+"I slept once tonight already. You saw what it got me."
+
+"You slept on a pile cut by one arm for half a night." She nodded at her own, without looking at it. "That's cut by two, for a whole one. Sleep."
+
+He meant to argue. He had the first of it ready, about whose road this was, and he looked across the fire at her with her stockinged feet to the warmth and her coat pulled up round her ears, and the five standing out there staring at her lamp like men at a shrine, and he lay down instead with his hands in his coat and his foot full of needles, and let her keep it.
+
+Ash got up off him, turned round twice, and lay down across Rae's feet, which were the warmest thing at the fire now. Ash, at least, had no trouble deciding.

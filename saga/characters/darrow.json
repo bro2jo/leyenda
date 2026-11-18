@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "3",
+    "scene": "between-3",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-3"
+    "anchor": "chronicle/07-the-far-bank.html#between-3"
   },
-  "last_seen_doing": "Saw the line on the bridge become walkers at first light and the column off north, walked the walkers' road west all day with Ash, made his fire on the north side of the trail, slept when he should not have and woke with one of them holding his boot.",
-  "now": "At his fire on the north side of the trail with his hands and his numb right foot inside his coat, five stragglers standing at the edge of the light, and Rae just come in with wood.",
+  "last_seen_doing": "Was struck dumb by Rae and her wood, joked he could not tell which he was gladder to see, asked after Hob and Dun, dropped the joke and told her he was glad it was her, then slept and let her keep the fire.",
+  "now": "Asleep at his fire on the north side of the trail with his hands in his coat and his right foot coming back in needles, Rae keeping the fire.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2314,6 +2314,18 @@
       "evidence": "He did not know he had slept until Ash bit him."
     },
     {
+      "fact": "He told Rae plainly that he was glad it was her who had come.",
+      "chapter": "07",
+      "scene": "between-3",
+      "evidence": "\"Rae,\" he said. \"I'm glad it's you.\""
+    },
+    {
+      "fact": "He meant to argue with her about the watch and lay down instead and let her keep the fire.",
+      "chapter": "07",
+      "scene": "between-3",
+      "evidence": "he lay down instead with his hands in his coat and his foot full of needles, and let her keep it."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2924,6 +2936,10 @@
     {
       "chapter": "07",
       "scene": "3"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-3"
     },
     {
       "chapter": "tale01",
