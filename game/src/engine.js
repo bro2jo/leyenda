@@ -156,9 +156,10 @@ function path(G,u,x,y){
   return out;
 }
 function fellBack(G,u,x,y){return paths(G,u).prev[x+','+y]==='back'}
-function dangerSet(G){
+/* Every tile the foes can strike next turn; with `only`, the tiles that one foe can. */
+function dangerSet(G,only){
   var z={};
-  foesUp(G).forEach(function(e){var r=(e.pinned||holding(G,e))?{}:reach(G,e);r[e.x+','+e.y]=0;
+  foesUp(G).forEach(function(e){if(only&&e!==only)return;var r=(e.pinned||holding(G,e))?{}:reach(G,e);r[e.x+','+e.y]=0;
     Object.keys(r).forEach(function(k){var p=k.split(','),px=+p[0],py=+p[1];
       for(var dx=-e.rng;dx<=e.rng;dx++)for(var dy=-e.rng;dy<=e.rng;dy++){var m=Math.abs(dx)+Math.abs(dy);if(m>=1&&m<=e.rng&&ok(G,px+dx,py+dy))z[(px+dx)+','+(py+dy)]=1}})});
   return z;

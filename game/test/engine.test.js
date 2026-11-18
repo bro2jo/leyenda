@@ -194,6 +194,7 @@ console.log('9d. falling back through a friend, and the steps of a move');
 { const G = fresh(); isolate(G, ['D', 'S']); place(G, 'D', 2, 6); const S = place(G, 'S', 2, 1); LH.endTurn(G); let ev, moved = null; while ((ev = LH.enemyStep(G))) if (ev.id === 'S' && ev.path) moved = ev;
   ok(moved && moved.path.length >= 1 && moved.path[moved.path.length - 1][0] === S.x && moved.path[moved.path.length - 1][1] === S.y, 'a foe\'s move comes with its steps'); }
 
+{ const G = fresh(); const all = Object.keys(LH.dangerSet(G)).length, P = U(G, 'P'), one = LH.dangerSet(G, P); ok(Object.keys(one).length > 0 && Object.keys(one).length < all && Object.keys(one).every(k => LH.dangerSet(G)[k]), 'one foe\'s reach is part of everyone\'s, and smaller'); }
 console.log('10. a clash of several rounds');
 { const G = duel('D', 'X', { rounds: 3, hp: 99 }); const D = U(G, 'D'); let K = rig(G, 'D', 'X', ['strike', 'guard'], { en: 3, fb: 0 }); LH.play(G, 0); ok(K.broken, 'Break in round one'); LH.play(G, 0); LH.endHand(G); eq(K.phase, 'choice', 'after his answer you choose');
   ok(LH.closeClash(G) === false, 'the clash cannot be closed mid-choice'); const ni = LH.nextIntent(G); ok(LH.pressOn(G), 'press on');

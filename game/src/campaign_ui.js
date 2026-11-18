@@ -8,7 +8,7 @@ var A='art/',AS=window.LH_ASSETS||{art:[]};
 function has(n){return AS.art.indexOf(n)>=0}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function $(id){return document.getElementById(id)}
-var P={};try{P=JSON.parse(localStorage.getItem('lh-campaign')||'{}')||{}}catch(e){}P.done=P.done||{};P.pack=(P.pack||[]).filter(function(id){return CP.SHOP.indexOf(id)>=0});P.level=P.level||0;P.tips=P.tips||{};
+var P={};try{P=JSON.parse(localStorage.getItem('lh-campaign')||'{}')||{}}catch(e){}P.done=P.done||{};P.pack=(P.pack||[]).filter(function(id){return CP.SHOP.indexOf(id)>=0});P.level=P.level||0;P.tips=P.tips||{};P.grow=P.grow||{};P.bond=P.bond||{};P.finds=P.finds||{};
 function save(){try{localStorage.setItem('lh-campaign',JSON.stringify(P))}catch(e){}}
 var layer=document.createElement('div');layer.className='cp';root.appendChild(layer);root.setAttribute('data-cp','1');
 var kick=document.createElement('button');kick.type='button';kick.hidden=true;kick.setAttribute('data-newrun','');document.body.appendChild(kick);
@@ -24,7 +24,46 @@ function starsAll(){var n=0;for(var k in P.done)n+=P.done[k].stars||0;return n}
 function cost(id){return LH.C[id].p*2}
 function shelf(){return CP.shelf(P.done)}
 function trimPack(){var sh=shelf();P.pack=P.pack.filter(function(id){return sh.indexOf(id)>=0})}
-function purse(){return starsAll()-P.pack.reduce(function(n,id){return n+cost(id)},0)}
+function findsAll(){var n=0;for(var k in P.finds)n+=P.finds[k]||0;return n}
+function purse(){return starsAll()+findsAll()-P.pack.reduce(function(n,id){return n+cost(id)},0)}
+/* ---------- growing by cards: marks earned in fights are banked here, and each rank they buy is his to place ---------- */
+var WHO={H:'Hollis',A:'Ash',W:'Wren'},WIMG={H:'hollis',A:'ash',W:'wren'};
+function gr(id){return P.grow[id]||(P.grow[id]={m:0,picks:[]})}
+function due(id){return Math.max(0,CP.levelOf(gr(id).m)-gr(id).picks.length)}
+function dueAll(){return Object.keys(WHO).reduce(function(n,id){return n+due(id)},0)}
+function syncGrow(){var g={};Object.keys(WHO).forEach(function(id){g[id]=gr(id).picks.slice()});CP.grow=g;CP.bond=P.bond}
+/* take what a board has earned: marks for those who fought, a fight nearer a bond for whoever stood beside him */
+function bank(G){var e=G&&G.earn,out={marks:{},bonds:[]},k;if(!e)return out;
+  for(k in e.marks)if(WHO[k]&&e.marks[k]){gr(k).m+=e.marks[k];out.marks[k]=e.marks[k]}
+  for(k in e.bond)if(CP.BONDS[k]&&e.bond[k]){var was=P.bond[k]||0,now=was+e.bond[k];P.bond[k]=now;if((was<CP.BOND1&&now>=CP.BOND1)||(was<CP.BOND2&&now>=CP.BOND2))out.bonds.push(k)}
+  G.earn={marks:{},bond:{}};save();syncGrow();return out}
+var growBack='company';
+function grow(id,back){
+  if(back)growBack=back;scr='grow';var g=gr(id),C=LH.C,n=due(id),nextAt=CP.LEVELS[g.picks.length+n];
+  var h='<div class="cp-top"><b>'+WHO[id]+'</b>'+btn(growBack,'Back','','mini')+'</div>'+
+    '<div class="cp-who me"><img src="'+A+WIMG[id]+'.webp" alt=""><span><b>'+(n?'A rank to give':'Nothing to give yet')+'</b><small>'+g.m+' marks'+(nextAt?' · the next at '+nextAt:' · every card at its third')+'</small><span class="cp-dim">A mark for every fight '+WHO[id]+' takes, another for a foe sent off. Each rank raises every copy of one card, for good.</span></span></div>'+
+    '<span class="lbl sec">'+X.svg('deck')+(n?'Choose the card to raise':'The hand as it stands')+'</span><div class="hand3">'+CP.GROW[id].map(function(c){var r=CP.rankOf(g.picks,c),cur=r>1?c+'_'+r:c,nx=r<3?c+'_'+(r+1):null;
+      return '<div class="cp-up"><div class="cp-upc">'+X.cardHTML(nx&&n?nx:cur,{tag:nx&&n?'button':'div',cls:nx&&n?'fresh':'',attrs:nx&&n?' data-cp="rank:'+id+':'+c+'"':''})+'</div><small>'+(nx?(n?'Now '+(r>1?['','I','II','III'][r]:'I')+': '+LH.cardText(cur).replace(/<[^>]+>/g,''):'Rank '+['','I','II','III'][r]):'Third rank: as far as it goes')+'</small></div>'}).join('')+'</div>';
+  show(h,'scroll fire');
+}
+/* ---------- a board set down and picked up again: saved whenever it is his move, kept in this browser ---------- */
+var SKEY='lh-suspend',stimer=null,slast='';
+function suspended(){try{var d=JSON.parse(localStorage.getItem(SKEY)||'null');return d&&d.g&&d.g.u?d:null}catch(e){return null}}
+function forgetBoard(){slast='';clearTimeout(stimer);try{localStorage.removeItem(SKEY)}catch(e){}}
+function keepBoard(){var G=X.G;if(!G||X.busy||G.clash||(scr!=='play'&&scr!=='road')||(scr==='play'&&(!G.ms||G.over)))return;
+  if(G.phase!=='player'||(G.over&&!G.over.win))return;
+  try{var j=JSON.stringify({v:1,ms:G.ms||null,road:scr==='road'?CP.road:null,th:root.getAttribute('data-th')||'',co:root.hasAttribute('data-co'),g:G});if(j===slast)return;slast=j;localStorage.setItem(SKEY,j)}catch(e){}}
+function keepSoon(){clearTimeout(stimer);stimer=setTimeout(keepBoard,500)}
+function resume(){
+  var d=suspended();if(!d||X.busy)return;var name=d.ms&&CP.MS[d.ms]?CP.MS[d.ms].n:'The road';if(d.ms&&!CP.MS[d.ms]){forgetBoard();return title()}
+  X.curtain('march',esc(name),'Picked up where he left it',function(){
+    CP.resumeG=d.g;CP.pending=null;CP.road=d.ms?null:(d.road||roadDeck());
+    if(d.ms){root.setAttribute('data-cp','1');root.setAttribute('data-th',d.th||'');if(d.co)root.setAttribute('data-co','1');else root.removeAttribute('data-co')}
+    else{root.removeAttribute('data-cp');root.removeAttribute('data-th');root.removeAttribute('data-co')}
+    kick.click();scr=d.ms?'play':'road';shown=!d.ms;roadSaved=false;hide();toastOff();sweep();
+    var G=X.G;if(!d.ms&&G.over&&G.over.win)setTimeout(function w(){if(X.busy)return setTimeout(w,120);X.after()},60);
+  });
+}
 function names(l){return l.map(function(id){return LH.C[id].n}).join(', ')}
 function starCard(id,cls,act){return X.cardHTML(id,{tag:'button',price:1,cls:cls,attrs:' data-cp="'+act+':'+id+'"'}).replace(/<span class="price num">.*?<\/span>/,'<span class="price num star">★ '+cost(id)+'</span>')}
 function btnLink(a,label){return '<button type="button" class="linkbtn" data-cp="'+a+'">'+label+'</button>'}
@@ -37,16 +76,16 @@ function roadOpen(){return ALL||!!P.done.c5}
 function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
     l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
 function title(){
-  scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{};
+  scr='title';var nx=nextId(),n=Object.keys(P.done).length,M=nx?CP.MS[nx]:null,f=found(),R=P.road||{},sus=suspended(),dn=dueAll();
   show('<div class="cp-menu"><span class="cp-lbl">The Unkneeling</span><h2>The Line and the Hand</h2>'+
     '<div class="cp-crest"><img src="'+A+'high-guard.webp" alt=""></div>'+
-    '<div class="cp-acts">'+(M?btn('intro:'+nx,n?'Go on':'Begin',M.book+' · '+M.n,'primary'):btn('list','Every mission is told',CP.END.t,'primary'))+'</div>'+
+    '<div class="cp-acts">'+(sus?btn('resume','Pick it up again',(sus.ms&&CP.MS[sus.ms]?CP.MS[sus.ms].n:'The road')+' · turn '+sus.g.turn,'primary'):'')+(M?btn('intro:'+nx,n?'Go on':'Begin',M.book+' · '+M.n,sus?'':'primary'):btn('list','Every mission is told',CP.END.t,sus?'':'primary'))+'</div>'+
     '<div class="cp-tiles">'+
       tile('list',X.svg('road'),'The journey',n+' of '+CP.ORDER.length+' told · ★ '+starsAll())+
       tile('road',X.svg('swords'),'The road',roadOpen()?(R.best?'Best Renown '+R.best:'Three crossings, his own deck'):'Opens when he is on the road','',!roadOpen())+
       tile('fire:title',X.svg('tent'),'The fire',purse()+' stars to spend')+
       tile('cards:title',X.svg('deck'),'The cards',f[0]+' of '+f[1]+' found')+
-      tile('company',X.svg('heart'),'The company',met().length?met().length+' beside him so far':'Nobody yet')+
+      tile('company',X.svg('heart'),'The company',dn?dn+(dn>1?' ranks':' rank')+' to give':met().length?met().length+' beside him so far':'Nobody yet',dn?'hot':'')+
       tile('settings',X.svg('pillar'),'Settings',['Gentle','Standard','Hard'][(P.level||0)+1]+(X.prefs.music?' · music':'')+(X.prefs.sound?' · sound':''))+
     '</div><p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
 }
@@ -55,7 +94,7 @@ function list(){
   scr='list';var h='<div class="cp-top"><b>The journey</b><span class="cp-topacts">'+btn('fire:list','The fire ★ '+purse(),'','mini')+btn('title','Menu','','mini')+'</span></div><div class="cp-road">',book='',nx=nextId();
   CP.ORDER.forEach(function(id,i){var M=CP.MS[id],d=P.done[id],op=open(i);
     if(M.book!==book){book=M.book;h+='<span class="cp-book">'+esc(book)+'</span>'}
-    h+='<button type="button" class="cp-row'+(op?'':' locked')+(d?' done':'')+(M.tall?' tall':'')+(id===nx?' next':'')+'" data-cp="intro:'+id+'"'+(op?'':' disabled')+'><span class="cp-n">'+(d?'★':i+1)+'</span><span class="cp-rt"><b>'+esc(M.n)+'</b><small>'+esc(op?(M.tall?'Told larger than the page · ':'')+M.place:'Not yet')+'</small></span>'+(d?starRow(d.stars,3):id===nx?'<span class="cp-next">Next</span>':'')+'</button>'});
+    h+='<button type="button" class="cp-row'+(op?'':' locked')+(d?' done':'')+(M.tall?' tall':'')+(id===nx?' next':'')+'" data-cp="intro:'+id+'"'+(op?'':' disabled')+'><span class="cp-n">'+(d?'★':i+1)+'</span><span class="cp-rt"><b>'+esc(M.n)+'</b><small>'+esc(op?(M.tall?'Told larger than the page · ':'')+M.place:'Not yet')+'</small></span>'+(d?starRow(d.stars,3)+(P.finds[id]?'<span class="cp-fd" title="found on the ground">◆</span>':''):id===nx?'<span class="cp-next">Next</span>':'')+'</button>'});
   h+='</div><div class="cp-end"><b>'+CP.END.t+'</b><span>'+CP.END.s+'</span></div>';
   show(h,'scroll');
 }
@@ -65,7 +104,11 @@ function company(){
   var h='<div class="cp-top"><b>The company</b>'+btn('title','Menu','','mini')+'</div>'+
     '<div class="cp-who me"><img src="'+A+(has('darrow')?'darrow':'darrow1')+'.webp" alt=""><span><b>Ser Darrow</b><small>'+esc(M.level)+'</small><span class="cp-dim">Health '+p.hp+' · '+p.br+' breath · a hand of '+p.hn+' · '+(p.mov?'moves '+p.mov:'held to his place')+' <i>(as of '+esc(M.n)+')</i></span></span></div>';
   h+=l.length?l.map(function(o){var role=[];if(o.fights)role.push('fights with a hand of cards');if(o.tends)role.push('tends');if(!o.fights&&!o.tends)role.push('stands by');
-    return '<div class="cp-who"><img src="'+A+(o.img&&has(o.img)?o.img:'brother')+'.webp" alt=""><span><b>'+esc(o.n)+'</b><small>'+esc(role.join(' · '))+'</small><span class="cp-dim">'+(o.lend&&C[o.lend]?'Lends '+esc(C[o.lend].n)+': '+LH.cardText(o.lend).replace(/<[^>]+>/g,''):'')+' <i>First beside him in '+esc(CP.MS[o.first].n)+'.</i></span></span></div>'}).join(''):'<span class="cp-dim">Nobody has stood beside him yet.</span>';
+    var gid=null,k;for(k in WHO)if(WHO[k]===o.n)gid=k;var b=P.bond[o.n]||0,B=CP.BONDS[o.n],extra='';
+    if(gid&&o.fights){var g=gr(gid),nd=due(gid),na=CP.LEVELS[g.picks.length+nd];extra+='<span class="cp-meter"><i style="width:'+Math.min(100,na?100*g.m/na:100)+'%"></i></span><span class="cp-dim">'+g.m+' marks'+(na?' of '+na:'')+' · '+CP.GROW[gid].map(function(c){return C[c].n+' '+['','I','II','III'][CP.rankOf(g.picks,c)]}).join(', ')+'</span>'+
+      (nd?'<button type="button" class="act primary" data-cp="grow:'+gid+'"><b>'+nd+(nd>1?' ranks':' rank')+' to give</b><small>Choose the card to raise</small></button>':'<button type="button" class="linkbtn" data-cp="grow:'+gid+'">See the hand</button>')}
+    if(B)extra+='<span class="cp-dim">'+(b>=CP.BOND2?'Bond, twice over: the lent card comes risen, and he starts with block beside '+esc(o.n)+'.':b>=CP.BOND1?'Bond: the lent card comes already risen. '+(CP.BOND2-b)+' more fights together for the second.':'Fights together: '+b+' of '+CP.BOND1+' for a bond.')+'</span>'+(b>=CP.BOND1?'<span class="cp-words">'+esc(B[0])+' <i>'+esc(B[1])+'</i></span>':'');
+    return '<div class="cp-who"><img src="'+A+(o.img&&has(o.img)?o.img:'brother')+'.webp" alt=""><span><b>'+esc(o.n)+'</b><small>'+esc(role.join(' · '))+'</small><span class="cp-dim">'+(o.lend&&C[o.lend]?'Lends '+esc(C[o.lend].n)+': '+LH.cardText(o.lend).replace(/<[^>]+>/g,''):'')+' <i>First beside him in '+esc(CP.MS[o.first].n)+'.</i></span>'+extra+'</span></div>'}).join(''):'<span class="cp-dim">Nobody has stood beside him yet.</span>';
   show(h,'scroll');
 }
 /* settings, inside the game */
@@ -91,7 +134,7 @@ function road(){
     kick.click();scr='road';shown=true;roadSaved=false;hide();sweep();
   });
 }
-function leaveRoad(){if(X.busy)return;CP.road=null;root.setAttribute('data-cp','1');title()}
+function leaveRoad(){if(X.busy)return;bank(X.G);forgetBoard();CP.road=null;root.setAttribute('data-cp','1');title()}
 function intro(id){
   scr='intro';var M=CP.MS[id];
   show('<div class="cp-card">'+(has('place-'+M.art)?'<div class="cp-pic"><img src="'+A+'place-'+M.art+'.webp" alt=""></div>':'')+
@@ -201,18 +244,23 @@ function begin(id){
 function outro(){
   var G=X.G,S=G.cs,M=CP.MS[G.ms],id=G.ms,won=S.result==='won',n=S.stars.filter(function(s){return s[1]}).length,i=CP.ORDER.indexOf(id),nx=CP.ORDER[i+1];
   var was=P.done[id]?P.done[id].stars:0,gain=won?Math.max(0,n-was):0;
-  var before=shelf();
+  var before=shelf(),got=bank(G),fnd=S.found||0,fmax=(S.finds||[]).length,fgain=0;forgetBoard();
+  if(won&&fnd>(P.finds[id]||0)){fgain=fnd-(P.finds[id]||0);P.finds[id]=fnd}
+  var rows=Object.keys(S.tally||{}).map(function(nm){var t=S.tally[nm];return '<li><b>'+esc(nm)+'</b><span>'+t.f+(t.f===1?' fight':' fights')+' · '+t.d+' dealt'+(t.k?' · '+t.k+' sent off':'')+'</span></li>'}).join('');
+  var grew=Object.keys(got.marks).map(function(k){return WHO[k]+' +'+got.marks[k]+(due(k)?' (a rank to give)':'')}).join(' · ');
+  var result='<div class="cp-result"><span class="cp-lbl">How it went · turn '+G.turn+'</span>'+(rows?'<ul>'+rows+'</ul>':'')+(grew?'<span class="cp-dim">Marks: '+esc(grew)+'</span>':'')+(fmax?'<span class="cp-dim">◆ Found on the ground: '+fnd+' of '+fmax+(fgain?' · '+fgain+' more for the fire':'')+'</span>':'')+
+    got.bonds.map(function(nm){return '<span class="cp-words"><b>A bond with '+esc(nm)+'.</b> '+esc(CP.BONDS[nm][0])+' <i>'+esc(CP.BONDS[nm][1])+'</i></span>'}).join('')+'</div>';
   if(won){P.done[id]={stars:Math.max(was,n)};save()}
   var fresh=shelf().filter(function(c){return before.indexOf(c)<0});
   scr='outro';
   show('<div class="cp-card '+(won?'won':'lost')+'"><span class="cp-lbl">'+esc(M.n)+'</span><h2>'+esc(G.over.t)+'</h2><p class="cp-where"><span>'+esc(G.over.s||'')+'</span></p>'+
     (won?M.outro.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+
       '<ul class="cp-starlist">'+S.stars.map(function(s){return '<li class="'+(s[1]?'on':'')+'"><i>★</i>'+esc(s[0])+'</li>'}).join('')+'</ul>'+
-      '<p class="cp-read">As the page has it: '+esc(M.read)+'.</p>'+
+      '<p class="cp-read">As the page has it: '+esc(M.read)+'.</p>'+result+
       '<p class="cp-gain">'+(gain?'★ '+gain+' more for the fire. ':'')+purse()+' stars to spend.</p>'+
       (fresh.length?'<div class="cp-reward"><span class="cp-lbl">The company can spare '+(fresh.length>1?'these':'this')+' now</span><div class="hand3">'+fresh.map(function(c){return X.cardHTML(c,{cls:'fresh'})}).join('')+'</div><span class="cp-dim">At the fire, for stars: it goes with him into the larger fights.</span></div>':'')
-     :'<p>'+esc(M.objective&&typeof M.objective==='string'?M.objective:CP.objective(G))+'</p>')+
-    '<div class="cp-acts">'+(won?(nx?btn('intro:'+nx,'Onward',CP.MS[nx].n,'primary'):btn('end',CP.END.t,'','primary')):btn('go:'+id,'Again','From the start','primary'))+(won?btn('go:'+id,'Play it again',''):'')+(won?btn('fire:list','The fire',purse()+' stars to spend'):'')+btn('list','Missions','')+'</div></div>','scroll');
+     :'<p>'+esc(M.objective&&typeof M.objective==='string'?M.objective:CP.objective(G))+'</p>'+result)+
+    '<div class="cp-acts">'+(won?(nx?btn('intro:'+nx,'Onward',CP.MS[nx].n,'primary'):btn('end',CP.END.t,'','primary')):btn('go:'+id,'Again','From the start','primary'))+(won?btn('go:'+id,'Play it again',''):'')+(dueAll()?btn('company','The company',dueAll()+(dueAll()>1?' ranks':' rank')+' to give'):'')+(won?btn('fire:list','The fire',purse()+' stars to spend'):'')+btn('list','Missions','')+'</div></div>','scroll');
 }
 function end(){scr='end';show('<div class="cp-title"><span class="cp-lbl">Book II · The Tempering Road</span><h2>'+CP.END.t+'</h2><p class="cp-sub">'+CP.END.s+'</p><div class="cp-acts">'+btn('list','Missions','','primary')+'</div></div>')}
 root.addEventListener('click',function(e){
@@ -223,9 +271,12 @@ root.addEventListener('click',function(e){
   else if(k[0]==='pick'){pick=pick===k[1]?null:k[1];fire()}
   else if(k[0]==='take'){if(pick&&P.pack.length<CP.PACK&&cost(pick)<=purse()&&P.pack.indexOf(pick)<0&&shelf().indexOf(pick)>=0){P.pack.push(pick);pick=null;save()}fire()}
   else if(k[0]==='drop'){var di=P.pack.indexOf(k[1]);if(di>=0){P.pack.splice(di,1);save()}fire()}
-  else if(k[0]==='quit'){if(!X.busy)list()}
+  else if(k[0]==='quit'){if(!X.busy){bank(X.G);forgetBoard();list()}}
+  else if(k[0]==='resume')resume();
+  else if(k[0]==='grow')grow(k[1],scr==='outro'?'list':'company');
+  else if(k[0]==='rank'){if(due(k[1])>0&&CP.GROW[k[1]].indexOf(k[2])>=0&&CP.rankOf(gr(k[1]).picks,k[2])<3){gr(k[1]).picks.push(k[2]);save();syncGrow()}grow(k[1])}
   else if(k[0]==='company')company();else if(k[0]==='settings'){sure=false;settings()}
-  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.road=null;save();title()}else{sure=true;settings()}}
+  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
   else if(k[0]==='road')road();else if(k[0]==='quitroad')leaveRoad();
 });
 var FAST=!!window.LH_FAST;
@@ -241,10 +292,11 @@ function sweep(){
   pend=false;var G=X.G;
   if(G&&scr==='road'){var host=G.over&&G.over.win?$('scr-camp'):$('m-rest');
     if(host&&!host.querySelector('.cp-quit')){var qb=document.createElement('button');qb.type='button';qb.className='linkbtn cp-quit';qb.setAttribute('data-cp','quitroad');qb.textContent='Back to the menu';host.appendChild(qb)}
-    if(G.over&&!G.over.win&&!roadSaved){roadSaved=true;var R=P.road||{best:0,runs:0,won:0};R.runs++;if(G.over.done)R.won++;R.best=Math.max(R.best||0,G.run.renown||0);P.road=R;save()}
-    if(!G.over)roadSaved=false;return}
+    if(G.over&&!G.over.win&&!roadSaved){roadSaved=true;bank(G);forgetBoard();var R=P.road||{best:0,runs:0,won:0};R.runs++;if(G.over.done)R.won++;R.best=Math.max(R.best||0,G.run.renown||0);P.road=R;save()}
+    if(G.over&&G.over.win)bank(G);if(!G.over)roadSaved=false;keepSoon();return}
   if(!G||!G.ms||scr!=='play')return;underCurtain();
-  drain();
+  drain();keepSoon();
+  if(G.cs.scrolled){var kk=G.cs.scrolled;G.cs.scrolled=0;if(!FAST)['m-board','m-units'].forEach(function(i2){var e2=$(i2);if(e2&&e2.animate)e2.animate([{transform:'translateY('+(kk/7*100)+'%)'},{transform:'translateY(0)'}],{duration:X.prefs.quick?220:480,easing:'cubic-bezier(.2,.7,.3,1)'})});toast({k:'say',t:'The view follows them down.'})}
   var top=$('m-top'),t=CP.top(G);if(top&&top.textContent!==t)top.textContent=t;
   var rest=$('m-rest'),map=$('scr-map');
   if(rest&&map&&!map.hidden){var o=rest.querySelector('.cp-obj'),h=objHTML(G);if(!o){o=document.createElement('div');o.className='cp-obj';rest.insertBefore(o,rest.firstChild)}if(o._h!==h){o.innerHTML=h;o._h=h}
@@ -267,7 +319,7 @@ new MutationObserver(later).observe(root,{childList:true,subtree:true,characterD
 function paintLevel(){var b=document.querySelectorAll('[data-cplevel]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(+b[i].getAttribute('data-cplevel')===(P.level||0)))}
 document.addEventListener('click',function(e){var b=e.target.closest('[data-cplevel]');if(!b)return;P.level=+b.getAttribute('data-cplevel');save();paintLevel()});
 paintLevel();
-trimPack();
-window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};save();title()}};
+trimPack();syncGrow();
+window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;forgetBoard();syncGrow();save();title()}};
 title();
 })();

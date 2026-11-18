@@ -212,7 +212,7 @@ function syncUnits(acting){
 }
 function renderMap(acting){
   var key=G.run.n+'|'+G.map.name+'|'+runId;if(key!==boardKey){boardKey=key;buildBoard()}
-  var s=UI.sel,can=s&&LH.canAct(s)&&!busy,r=(can&&!s.moved&&!UI.fc)?LH.reach(G,s):{},fb=(can&&!s.moved&&!UI.fc)?LH.fallBack(G,s):null,fbk=fb&&LH.fellBack(G,s,fb[0],fb[1])?fb[0]+','+fb[1]:'',z=UI.danger?LH.dangerSet(G):{},tg=(can&&!UI.fc)?LH.targets(G,s):[],tt=(can&&!UI.fc)?LH.tendTargets(G,s):[],h='';
+  var s=UI.sel,can=s&&LH.canAct(s)&&!busy,r=(can&&!s.moved&&!UI.fc)?LH.reach(G,s):{},fb=(can&&!s.moved&&!UI.fc)?LH.fallBack(G,s):null,fbk=fb&&LH.fellBack(G,s,fb[0],fb[1])?fb[0]+','+fb[1]:'',z=UI.danger?LH.dangerSet(G):(UI.look&&UI.look.side===1&&UI.look.hp>0?LH.dangerSet(G,UI.look):{}),tg=(can&&!UI.fc)?LH.targets(G,s):[],tt=(can&&!UI.fc)?LH.tendTargets(G,s):[],h='';
   $mname.textContent=G.map.name;$mtop.innerHTML='Battle '+G.run.n+' of 3 · turn '+G.turn+(G.turn>T.maxTurns-8?' of '+T.maxTurns:'')+' · <span class="spoil">'+svg('coin')+G.run.spoils+'</span>';
   var tiles=$board.children;
   for(var i=0;i<tiles.length;i++){var t=tiles[i],x=+t.getAttribute('data-x'),y=+t.getAttribute('data-y'),k=x+','+y,u=LH.at(G,x,y),c=t.getAttribute('data-t');
@@ -231,7 +231,7 @@ function renderMap(acting){
       (p.lend.length?'<div class="lenders">'+p.lend.map(function(o){return '<span><img src="'+A+o.img+'.webp" alt="">'+o.n+'</span>'}).join('')+'</div>':'')+chipRow(p.chips)+'</div>'+
       '<div class="acts"><button class="act primary" type="button" data-a="go"><b>Engage</b><small>Play the hand</small></button><button class="act" type="button" data-a="no"><b>Hold</b><small>Think again</small></button></div>';
   }else{
-    var info='<span>Tap one of the company. Tap a foe to size him up.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
+    var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
     if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
     h+=logBox(G.log)+'<div class="panel info">'+info+'</div>';
     h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
@@ -557,7 +557,7 @@ document.addEventListener('click',function(e){
   savePrefs();paintPrefs();music()});
 (function(){var l=AS.art.map(function(n){return A+n+'.webp'}).concat(AS.fig.map(function(n){return A+'fig-'+n+'.webp'}),AS.tok.map(function(n){return A+'tok-'+n+'.webp'}));window.__pre=l.map(function(u){var im=new Image();im.src=u;return im})})();
 paintPrefs();lock(false);newRun();
-window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,curtain:curtain,cardHTML:cardHTML,svg:svg,heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
+window.__LH={LH:LH,get G(){return G},get busy(){return busy},prefs:prefs,curtain:curtain,cardHTML:cardHTML,svg:svg,after:function(){return afterMapChange()},heard:heard,played:played,assets:AS,SFX:SFX,get music(){return {want:musWant,playing:musNow(),started:musStarted}}};
 
 /* ---------- lists the page shows: the deck, the camp's cards, the sounds ---------- */
 var gal=$('gallery');

@@ -7,7 +7,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
   for(const vp of [{width:390,height:844},{width:1200,height:900}]){
     const p=await b.newPage({viewport:vp});const errs=[];
     p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error'&&!/net::|Failed to load/.test(m.text()))errs.push(m.text())});
-    await p.addInitScript(()=>{window.LH_FAST=true;try{localStorage.removeItem('lh-campaign')}catch(e){}});
+    await p.addInitScript(()=>{window.LH_FAST=true;try{localStorage.removeItem('lh-campaign');localStorage.removeItem('lh-suspend')}catch(e){}});
     await p.goto('file://'+path.resolve(__dirname,'../dist/campaign/campaign.html'));await p.waitForTimeout(250);
     const tap=async(x,y)=>{await p.click(`#m-board .tile[data-x="${x}"][data-y="${y}"]`,{force:true});await p.waitForTimeout(60)};
     ok(await p.evaluate(()=>__CP.scr==='title'),'opens on the title');
@@ -110,6 +110,40 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     ok(await p.evaluate(()=>__LH.G.cs.level===1&&__CP.P.level===1&&__LH.G.ms==='c5b'),'Hard applies from the next mission begun, and does not start a run of the game');
     await p.click('[data-cplevel="0"]');await p.click('[data-pref="quick=true"]');ok(await p.evaluate(()=>__LH.prefs.quick===true&&__LH.G.ms==='c5b'),'quick animation can be set without leaving the mission');await p.click('[data-pref="quick=false"]');
     ok(await p.locator('.prompt pre').count()>=9&&await p.locator('[data-copy]').count()>=9,'the page has prompts for the pictures still to make');
+    /* growing by cards: marks are banked, a rank is his to place, and it is in the hand next time */
+    await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+    await p.evaluate(()=>{var G=__LH.G;G.earn={marks:{H:4,W:1},bond:{Hollis:3,Maelis:1}};__CP.bank(G);__CP.company()});
+    ok(await p.evaluate(()=>__CP.due('H')===1&&__CP.due('W')===0&&__CP.P.bond.Hollis===3)&&await p.locator('.cp.on [data-cp="grow:H"].act').count()===1,'four marks are a rank for Hollis to give, and the company screen says so');
+    ok(/in the middle of a lesson/.test(await p.locator('.cp.on').innerText())&&/Fights together: 1 of 3/.test(await p.locator('.cp.on').innerText()),'three fights together are a bond, with its words from the page; one is a start');
+    await p.click('.cp.on [data-cp="grow:H"].act');ok(await p.locator('.cp.on [data-cp^="rank:H:"]').count()===3,'the choice is among the cards of Hollis\'s own hand');
+    await p.click('.cp.on [data-cp="rank:H:hew"]');ok(await p.evaluate(()=>__CP.P.grow.H.picks.join()==='hew'&&__CP.due('H')===0&&CP.grow.H.join()==='hew')&&await p.locator('.cp.on [data-cp^="rank:"]').count()===0,'one card is raised, and the rank is spent');
+    await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>{var G=__LH.G,H=G.u.filter(function(u){return u.id==='H'})[0];return H.deck.filter(function(c){return c==='hew_2'}).length===2&&H.fights>=2}),'next time both his Hews are second rank, and his lent card comes risen for the bond');
+    /* something to reach, and one foe's reach alone */
+    ok(await p.locator('#m-board .tile[data-mark="find"]').count()===1,'the yard has something to reach, marked on the board');
+    {const f=await p.evaluate(()=>{var G=__LH.G,u=G.u.filter(function(x){return x.type==='pitch'})[0];return [u.x,u.y]});await tap(5,3);await tap(f[0],f[1]);
+     const one=await p.locator('#m-board .tile.dz').count();await p.click('#game [data-a="dz"]');const all=await p.locator('#m-board .tile.dz').count();await p.click('#game [data-a="dz"]');ok(one>0&&one<all,'tapping one foe shows where he alone can strike ('+one+' tiles of '+all+')')}
+    /* how it went: the telling ends with the fight's own account */
+    await p.evaluate(()=>{var G=__LH.G,D=G.u[0],f=G.u.filter(function(u){return u.type==='sergeant'})[0];G.u.forEach(function(u){if(u.side===1&&u!==f)u.hp=0;if(u!==f&&u!==D&&u.x===D.x&&u.y===D.y-1)u.x=5});f.x=D.x;f.y=D.y-1;f.hp=1;D.moved=false;D.attacked=false});
+    {const d=await p.evaluate(()=>{var u=__LH.G.u[0];return [u.x,u.y]});await tap(5,3);await tap(d[0],d[1]);if(!(await p.$('#game .tok.sel')))await tap(d[0],d[1]);await tap(d[0],d[1]-1);await p.click('#game [data-a="go"]');await p.waitForTimeout(200);
+     await p.evaluate(()=>{var K=__LH.G.clash;K.hand=['c_stick'];K.fb=0;K.en=3});const c=p.locator('#c-hand .hcard').first();await p.evaluate(()=>{__LH.LH.play(__LH.G,0);__LH.LH.closeClash(__LH.G);__LH.after()});
+     await p.waitForFunction(()=>__CP.scr==='outro',null,{timeout:8000}).catch(()=>{});
+     ok(await p.evaluate(()=>__CP.scr==='outro')&&/How it went/.test(await p.locator('.cp-result').innerText())&&/Darrow/.test(await p.locator('.cp-result').innerText())&&/Found on the ground: 0 of 1/.test(await p.locator('.cp-result').innerText()),'the telling ends with how it went: who fought, what was found')}
+    /* the long stair: the view follows the company down */
+    await p.evaluate(()=>{__CP.begin('c4c')});await p.waitForTimeout(100);
+    ok(await p.evaluate(()=>{var G=__LH.G;G.u.forEach(function(u){if(u.side===1)u.hp=0});G.u.forEach(function(u,i){if(u.side===0&&u.id!=='D'){u.x=i%6;u.y=3}});var D=G.u[0];D.x=4;D.y=4;D.moved=false;return __LH.LH.move(G,D,4,5)&&G.cs.top===3})&&/step \d+ of 1117/.test(await p.locator('#m-top').innerText()),'on the Steps the board moves on when the company has come down, and the heading counts the steps');
+    await tap(5,0);await p.waitForTimeout(80);ok(await p.evaluate(()=>{var G=__LH.G,t=document.querySelector('#m-board .tile[data-x="1"][data-y="4"]');return G.map.rows[4]==='~d~~~~'&&t.getAttribute('data-t')==='d'&&!!document.querySelector('.unit[data-u^="reach"]')}),'and the ground and what stands on it are drawn anew');
+    /* set down and picked up again */
+    await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(100);
+    {const d=await p.evaluate(()=>{var G=__LH.G,D=G.u[0];__LH.LH.move(G,D,D.x,D.y-1);__CP.keepBoard();return [D.x,D.y,G.turn]});
+     ok(await p.evaluate(()=>{var s=__CP.suspended();return !!s&&s.ms==='c5b'&&s.g.u[0].moved===true}),'the board is kept whenever it is his move');
+     /* as if the page had been closed: the board in the game is thrown away, and only what was kept remains */
+     await p.evaluate(()=>{var G=__LH.G;window.__old=G;G.u[0].x=0;G.u[0].y=6;G.turn=99;__CP.title()});
+     ok(await p.evaluate(()=>__CP.scr==='title')&&await p.locator('.cp.on [data-cp="resume"]').count()===1&&/The Yard at Coldmere/.test(await p.locator('.cp.on [data-cp="resume"]').innerText()),'the menu offers to pick it up again, by name');
+     await p.click('.cp.on [data-cp="resume"]');await p.waitForTimeout(150);
+     ok(await p.evaluate(d=>{var G=__LH.G,D=G.u[0];return __CP.scr==='play'&&G!==window.__old&&G.ms==='c5b'&&D.x===d[0]&&D.y===d[1]&&D.moved&&G.turn===d[2]&&document.getElementById('game').getAttribute('data-th')==='yard'&&!!document.querySelector('#m-rest .cp-obj')},d),'and the board is as he left it: where he stood, his move spent, the aim under the board');
+     ok(await p.evaluate(()=>{var G=__LH.G,W=G.u.filter(function(u){return u.id==='W'})[0];var r=__LH.LH.reach(G,W);var k=Object.keys(r).filter(function(q){return q!==W.x+','+W.y})[0].split(',');return __LH.LH.move(G,W,+k[0],+k[1])&&__LH.LH.endTurn(G)}),'and it plays on');
+     await p.evaluate(()=>{__CP.forgetBoard()})}
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

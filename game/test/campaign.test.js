@@ -49,7 +49,10 @@ var PLAN={c5b:battle,c5c:battle,c6b:battle,
   c3:function(G){var D=G.u[0];go(G,D,2,2);go(G,U(G,'W'),3,2);go(G,U(G,'M'),2,3);fight(G,D,{blockFirst:true,press:function(G,K){return K.a.hp>20}})},
   c4a:function(G){fight(G,G.u[0],{blockFirst:G.u[0].hp<16})},
   c4b:function(G){fight(G,G.u[0],{blockFirst:G.u[0].hp<20});fight(G,U(G,'H'),{blockFirst:U(G,'H').hp<16})},
-  c4c:function(G){var D=G.u[0],f=nearestFoe(G,D);if(!f)return;go(G,D,f.x,f.y,true);['M','W','A'].forEach(function(id){var u=U(G,id);if(u)go(G,u,D.x,D.y,true)});tendD(G,'M',5);fight(G,D,{blockFirst:D.hp<16})},
+  c4c:function(G){var D=G.u[0],f=nearestFoe(G,D);
+    if(!f){var bx=-1;for(var x=0;x<6;x++)if(bx<0&&LH.ok(G,x,6)&&!LH.at(G,x,6))bx=x;/* nothing in the way: everyone down, the rearmost first, and the view follows */
+      CP.api.mates(G).slice().sort(function(a,b){return b.y-a.y}).forEach(function(u){go(G,u,bx<0?u.x:bx,6)});return}
+    go(G,D,f.x,f.y,true);['M','W','A'].forEach(function(id){var u=U(G,id);if(u)go(G,u,D.x,D.y,true)});tendD(G,'M',5);fight(G,D,{blockFirst:D.hp<16})},
   c5:function(G){var T={1:[['R',3,3],['M',4,5],['D',3,4],['A',4,6]],2:[['D',4,4],['R',4,3],['W',3,4],['M',5,5]],3:[['D',5,4],['R',5,3],['W',4,3],['A',4,5]]}[G.turn]||[];
     T.forEach(function(m){LH.move(G,U(G,m[0]),m[1],m[2])})},
   c6:function(G){var D=G.u[0];tendD(G,'M');if(!fight(G,D,{blockFirst:D.hp<24}))if(LH.canAct(D)&&!D.attacked)LH.hold(G,D)},
@@ -114,6 +117,35 @@ CP.ORDER.forEach(function(id){
   var w0=0,w1=0,N=30;for(var sd=1;sd<=N;sd++){var A=CP.start('c5b',{seed:sd*13+5}),n=0;while(!A.over&&n++<40){PLAN.c5b(A);endTurn(A)}if(A.cs.result==='won')w0++;
     var B=CP.start('c5b',{seed:sd*13+5,pack:['hewT','follow','closeup']});n=0;while(!B.over&&n++<40){PLAN.c5b(B);endTurn(B)}if(B.cs.result==='won')w1++}
   console.log('the yard, simple player: '+w0+'/'+N+' with the page\'s deck, '+w1+'/'+N+' with Hollis\'s Hew, Follow Through and Close Up in the pack');ok(w1>=w0,'a pack from the fire does not make the yard harder ('+w0+' -> '+w1+')');
+})();
+/* growing by cards, words between friends, things to reach, the long stair, and a board picked up again */
+(function(){if(only)return;var C=LH.C;
+  Object.keys(CP.GROW).forEach(function(id){CP.GROW[id].forEach(function(c){ok(C[c]&&C[c+'_2']&&C[c+'_3']&&C[c+'_2'].r==='II'&&C[c+'_3'].base===c&&LH.cardText(c+'_3')!==LH.cardText(c),id+': '+c+' has a second and a third rank that read differently')})});
+  ok(CP.levelOf(0)===0&&CP.levelOf(3)===1&&CP.levelOf(12)===3&&CP.levelOf(99)===CP.LEVELS.length&&CP.LEVELS.length===6,'marks buy up to six ranks: every card of a fighter\'s to its third');
+  var G=CP.start('c5b',{seed:1,grow:{H:['hew','hew','hew','fast'],W:['stone']}}),H=U(G,'H'),W=U(G,'W'),A=U(G,'A');
+  ok(H.deck.join()==='hew_3,hew_3,fast_2,fast_2,bellow'&&W.deck.filter(function(c){return c==='stone_2'}).length===2&&A.deck.indexOf('legs')>=0&&H.dk.draw.length===5,'a pick raises every copy of that card, never past the third rank, and only that fighter\'s');
+  var D=G.u[0],S=G.u.filter(function(u){return u.type==='pike'})[0];S.x=H.x;S.y=H.y-1;G.u.forEach(function(u){if(u!==S&&u.x===S.x&&u.y===S.y)u.x=5});S.hp=1;var K1=LH.engage(G,H,S);K1.hand=['hew_3'];K1.fb=0;LH.play(G,0);LH.closeClash(G);
+  ok(G.earn.marks.H===2&&G.cs.tally.Hollis&&G.cs.tally.Hollis.k===1,'a fight is a mark, a foe felled is another, and the mission keeps the tally');
+  var B=CP.start('c5b',{seed:2,bond:{Maelis:CP.BOND1,Hollis:CP.BOND2}}),BD=B.u[0],BS=B.u.filter(function(u){return u.type==='pike'})[0];BS.x=BD.x;BS.y=BD.y-1;B.u.forEach(function(u){if(u!==BS&&u!==BD&&u.x===BS.x&&u.y===BS.y)u.x=5});
+  CP.bond={Maelis:CP.BOND1,Hollis:CP.BOND2};var K=LH.engage(B,BD,BS);CP.bond={};
+  ok(K.hand.indexOf('c_now2')>=0&&K.block>=2&&B.earn.bond.Hollis===1&&B.earn.bond.Maelis===1,'a first bond brings the friend\'s lent card already risen, a second gives him block, and each fight together counts toward both');
+  /* the words are the page's own */
+  var fs=require('fs'),path=require('path'),dir=path.resolve(__dirname,'../../saga/chronicle'),page=fs.readdirSync(dir).filter(function(f){return /\.md$/.test(f)}).map(function(f){return fs.readFileSync(path.join(dir,f),'utf8')}).join(' ');
+  Object.keys(CP.BONDS).forEach(function(n){ok(page.indexOf(CP.BONDS[n][0])>=0,'the words by the fire for '+n+' are on the page as written')});
+  /* things to reach */
+  var F=CP.start('c6b',{seed:1}),FA=U(F,'A'),f0=F.cs.finds[0],n0=F.u[0].deck.length;FA.x=f0.x;FA.y=f0.y-1;F.u.forEach(function(u){if(u!==FA&&u.x===FA.x&&u.y===FA.y)u.y=6});
+  ok(CP.goals(F).some(function(m){return m[2]==='find'})&&LH.move(F,FA,f0.x,f0.y)&&f0.got===1&&F.cs.found===1&&F.u[0].deck.length===n0+1&&F.u[0].dk.draw[F.u[0].dk.draw.length-1]==='c_bar'&&!CP.goals(F).some(function(m){return m[2]==='find'}),'a friend who reaches his stick sends it to the top of his pile, once');
+  ['c5b','c5c','c6b','c4c'].forEach(function(id){var g=CP.start(id,{seed:1});ok(g.cs.finds.length>=1&&g.cs.finds.every(function(f){return LH.ok(g,f.x,Math.min(6,f.y))||f.y>6}),id+' has something to reach, on ground that can be stood on')});
+  /* the long stair */
+  var L=CP.start('c4c',{seed:1}),Wd=CP.MS.c4c.world;ok(Wd.rows.length===21&&Wd.rows.every(function(r){return r.length===6})&&L.cs.ahead.length===3&&CP.api.foes(L).length===1,'the Steps are three boards long, and only what is in view is on the board');
+  L.u.forEach(function(u){if(u.side===1)u.hp=0});L.u.forEach(function(u,i){if(u.side===0){u.x=i%6;u.y=u.id==='D'?5:3}});var k=CP.march(L);
+  ok(k===3&&L.cs.top===3&&L.map.rows.join()===Wd.rows.slice(3,10).join()&&L.u[0].y===2&&L.map.name.replace(/\u200b/g,'')==='The Thousand Steps'&&L.map.name!=='The Thousand Steps','the view follows the company down by as far as the rearmost has come');
+  ok(CP.api.foes(L).some(function(u){return u.type==='reach'&&u.y===4})&&L.cs.ahead.length===2&&L.cs.finds[0].y===3,'what was ahead comes onto the board where it stands, and what is to be found moves with the ground');
+  /* a board set down and picked up again plays on exactly as it would have */
+  ['c5b','c4c','c1'].forEach(function(id){var a=CP.start(id,{seed:9}),n=0;while(!a.over&&n++<3){PLAN[id](a);endTurn(a)}
+    var b=JSON.parse(JSON.stringify(a));CP.resumeG=b;var c=LH.newRun({});ok(c===b&&c.ms===id,'a saved board comes back through the same door');
+    n=0;while(!a.over&&n++<40){PLAN[id](a);endTurn(a)}n=0;while(!c.over&&n++<40){PLAN[id](c);endTurn(c)}
+    ok(a.over&&c.over&&a.cs.result===c.cs.result&&a.turn===c.turn&&a.u[0].hp===c.u[0].hp,id+': picked up again, it ends as it would have ('+a.cs.result+', turn '+a.turn+')')});
 })();
 /* someone a mission holds to his place has no move at all: not even the step back through a friend that the game allows */
 CP.ORDER.forEach(function(id){if(only&&only!==id)return;var G=CP.start(id,{seed:2});G.u.forEach(function(u){if(u.side===0&&u.hp>0&&!(u.mov>0))ok(Object.keys(LH.reach(G,u)).length===1,id+': '+u.n+' cannot move, and has nowhere to move to')})});

@@ -5,7 +5,7 @@
 (function(root,LH){
 'use strict';
 var C=LH.C,FOES=LH.FOES,O={},MS={},ORDER=[],CUR=null;
-['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable'].forEach(function(k){O[k]=LH[k]});
+['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable','nextBattle'].forEach(function(k){O[k]=LH[k]});
 
 /* ---------- cards the campaign adds. Arts carry the rank the page had given them by that chapter. ---------- */
 var ROM=['','I','II','III','IV','V'];
@@ -51,6 +51,50 @@ lend('c_lampw',{n:"Wren's Lamp",t:'eye',k:'Skill',draw:1,art:'wren1'},{draw:2});
 lend('c_ashdrop',{n:'Ash on the Drop Side',t:'foot',k:'Skill',blk:4,art:'ash1'},{blk:6});
 lend('c_lamp',{n:'The Lamp',t:'eye',k:'Skill',halve:1,pin:1,art:'wren'},{});
 lend('c_wide',{n:'"Ride Wide"',t:'eye',k:'Skill',blk:6,art:'aldric'},{});
+/* ---------- growing, by cards: a fighter's marks buy a rank for one of the cards in that fighter's own hand ---------- */
+function variant(id,rank,over){var c={},b=C[id],k;for(k in b)if(k!=='p')c[k]=b[k];for(k in over)c[k]=over[k];c.r=ROM[rank];c.base=id;add(id+'_'+rank,c)}
+variant('hew',2,{dmg:10});variant('hew',3,{dmg:12});variant('fast',2,{blk:10});variant('fast',3,{blk:12});variant('bellow',2,{draw:1});variant('bellow',3,{draw:1,blk:4});
+variant('legs',2,{dmg:8});variant('legs',3,{dmg:10});variant('worry',2,{dmg:6});variant('worry',3,{dmg:8});variant('slip',2,{blk:6});variant('slip',3,{blk:6,draw:1});
+variant('stone',2,{dmg:7});variant('stone',3,{dmg:9});variant('count',2,{open:1});variant('count',3,{open:1,draw:1});variant('duck',2,{blk:7});variant('duck',3,{blk:9});
+var GROW={H:['hew','fast','bellow'],A:['legs','worry','slip'],W:['stone','count','duck']},LEVELS=[3,7,12,18,25,33];
+/* words between friends: fights with someone beside him make a bond. At the first, that friend's lent card comes already risen; at the second, he starts with block when they stand with him. The words are the page's. */
+var BOND1=3,BOND2=8,BONDS={
+  Hollis:['"We\'re in the middle of a lesson," said Hollis.','Chapter 4'],
+  Wren:['"Technically he weighs about two of me," said Wren.','Chapter 6'],
+  Rae:['"Don\'t teach him that, Wren," said Rae.','Chapter 5'],
+  Maelis:['"And you\'ve walked to your stone," said Maelis.','Chapter 6'],
+  Ash:['Ash got there first and lay down across the sill, the way she lay across every door now that had somebody behind it.','Chapter 5']};
+function rankOf(picks,id){var n=1;(picks||[]).forEach(function(q){if(q===id)n++});return Math.min(3,n)}
+function grown(deck,picks){return deck.map(function(id){var b=(C[id]&&C[id].base)||id,r=rankOf(picks,b);return r>1&&C[b+'_'+r]?b+'_'+r:b})}
+function levelOf(marks){var n=0;LEVELS.forEach(function(t){if((marks||0)>=t)n++});return n}
+function growAll(G,grow,bond){grow=grow||{};bond=bond||{};G.u.forEach(function(u){if(u.side!==0)return;
+  if(GROW[u.id]&&u.deck&&grow[u.id]&&grow[u.id].length)setDeck(G,u,grown(u.deck,grow[u.id]));
+  if((bond[u.n]||0)>=BOND1)u.fights=Math.max(u.fights||0,2)})}
+function earnOf(G){return G.earn||(G.earn={marks:{},bond:{}})}
+function bondUp(G,K){if(K.a!==G.u[0])return;(K.p.lend||[]).forEach(function(o){if(!BONDS[o.n])return;var e=earnOf(G).bond;e[o.n]=(e[o.n]||0)+1;if(((CP.bond||{})[o.n]||0)>=BOND2)K.block+=2})}
+function markUp(G,K){var a=K.a,e=earnOf(G).marks;if(GROW[a.id])e[a.id]=(e[a.id]||0)+1+(K.d.hp<=0?1:0);
+  if(G.cs&&G.cs.tally){var t=G.cs.tally[a.n]||(G.cs.tally[a.n]={f:0,d:0,k:0});t.f++;t.d+=K.dealt||0;if(K.d.hp<=0)t.k++}}
+
+/* ---------- something on the map besides foes: a thing to reach. What it gives is a card, a breath of luck, or a moment's rest. ---------- */
+function findAt(G,u){var S=G.cs;if(!S||!S.finds||u.side!==0)return;S.finds.forEach(function(f){if(f.got||f.x!==u.x||f.y!==u.y)return;f.got=1;S.found=(S.found||0)+1;
+  var D=G.u[0],t=(f.to==='self'&&u.dk)?u:D,msg=f.t||'';
+  if(f.card&&C[f.card]&&t.dk){t.deck.push(f.card);t.dk.draw.push(f.card);msg+=' '+C[f.card].n+' goes to the top of '+(t===D?'his':t.n+'\'s')+' pile.'}
+  if(f.heal){u.hp=Math.min(u.max,u.hp+f.heal);msg+=' '+u.n+' is the better for it by '+f.heal+'.'}
+  if(f.insp){G.run.insp+=f.insp;msg+=' Inspiration, '+f.insp+' more.'}
+  log(G,(f.n?f.n+'. ':'')+msg.replace(/^ /,''),'good')})}
+
+/* ---------- a map longer than the board: the view follows the company, and nobody is left behind ---------- */
+function march(G){
+  var M=MS[G.ms],Wd=M&&M.world,S=G.cs;if(!Wd||G.clash||G.over||!S)return 0;var rest=Wd.rows.length-7-S.top;if(rest<=0)return 0;
+  var rear=7,lead=0;G.u.forEach(function(u){if(u.side===0&&u.hp>0&&!u.still){rear=Math.min(rear,u.y);lead=Math.max(lead,u.y)}});
+  var k=Math.min(rear,rest);if(k<1||lead<4)return 0;
+  S.top+=k;S.scrolls=(S.scrolls||0)+1;S.scrolled=k;G.map.rows=Wd.rows.slice(S.top,S.top+7);G.map.name=M.map.name+new Array(S.scrolls+1).join('​');
+  G.u=G.u.filter(function(u){if(u.side===2)return true;u.y-=k;u.from=null;return u.y>=0});
+  S.finds.forEach(function(f){f.y-=k});
+  S.ahead=S.ahead.filter(function(a){var y=a.Y-S.top;if(y<0||y>6)return y>6;spawn(G,a.k,a.x,y);return false});
+  return k;
+}
+
 /* words for cards whose effect is the story's, not a number */
 var CT={turn:'Plant the left foot and turn on it, fast and low, the way he has ten thousand times.',frost:'The warmth is gone.'};
 
@@ -159,7 +203,7 @@ function start(id,opts){
   (M.foes||[]).forEach(function(f,i){var key=f.k+'_'+i;FOES[key]=FD[f.k];keys.push(key);fl.push([key,f.at?f.at[0]:0,f.at?f.at[1]:0])});
   var keep=LH.MAPS[0],G;LH.MAPS[0]={name:M.map.name,rows:M.map.rows,pos:pos,foes:fl};
   try{G=O.newRun({seed:opts.seed,rounds:M.rounds||1,level:0,deck:['c_brace']})}finally{LH.MAPS[0]=keep;keys.forEach(function(k){delete FOES[k]})}
-  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null,level:lvl,pack:pack,toasts:[],tips:[]};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
+  G.ms=id;G.cs={hint:'',turnsHeld:0,clashes:0,hurt:0,result:null,level:lvl,pack:pack,toasts:[],tips:[],tally:{},finds:[],found:0,top:0,ahead:[]};G.earn={marks:{},bond:{}};G.tpl={};G.run.insp=M.insp||0;G.run.spoils=0;
   /* the marker captain: off the board, on nobody's side */
   var z=U(G,'Z');z.side=2;z.x=-9;z.y=-9;
   /* the foes, with the mission's own numbers */
@@ -167,7 +211,7 @@ function start(id,opts){
   (M.foes||[]).forEach(function(f,i){var u=U(G,f.k+'_'+i),d=FD[f.k];u.type=f.k;u.hp=u.max=d.hp;u.atk=d.atk;u.ans=d.ans.map(function(x){return {b:x.b||0,d:x.d,n:x.n||1}});
     for(var k in f)if(k!=='k'&&k!=='at'&&k!=='tpl')u[k]=f[k];if(f.hp)u.max=f.hp;
     if(lvl&&!d.scripted){u.ans.forEach(function(x){x.d=Math.max(1,x.d+(x.n>1?1:2)*lvl)});if(!d.ordeal){u.atk=Math.max(1,u.atk+2*lvl);u.hp=u.max=Math.max(1,Math.round(u.max*(1+.1*lvl)))}}
-    if(f.tpl){G.tpl[f.k]=clone(u);gone.push(u)}});
+    var far=!!M.world&&f.at&&f.at[1]>6;if(f.tpl||far){G.tpl[f.k]=clone(u);gone.push(u);if(far)G.cs.ahead.push({k:f.k,x:f.at[0],Y:f.at[1]})}});
   /* the company: who is here, and what each can do in this chapter */
   var tplR=clone(U(G,'R')),tplW=clone(U(G,'W'));
   ['D','H','A','W','R'].forEach(function(k){var u=U(G,k);if(!M.party[k]){if(k!=='D')gone.push(u);return}dress(G,u,M.party[k])});
@@ -176,6 +220,8 @@ function start(id,opts){
   if(!M.party.D.hp)G.u[0].hp=G.u[0].max;
   /* what he bought at the fire goes with him into the fights told larger than the page, and nowhere else */
   if(pack.length)setDeck(G,G.u[0],G.u[0].deck.concat(pack),M.party.D.first);
+  growAll(G,opts.grow||CP.grow,opts.bond||CP.bond);
+  (M.finds||[]).concat((M.world&&M.world.finds)||[]).forEach(function(f){var o=clone(f);o.x=f.at[0];o.y=f.at[1];o.got=0;G.cs.finds.push(o)});
   G.log=[[M.open||'','',1]];CUR=G;
   if(M.on&&M.on.start)M.on.start(G,G.cs,api);
   rest(G);relog(G);return G;
@@ -230,22 +276,26 @@ function check(G){
 }
 /* someone who is only there to be seen (a watcher on the bank, a man on his cot) never has a turn to take */
 function rest(G){G.u.forEach(function(u){if(u.still&&u.side===0){u.attacked=true;u.moved=true;u.free=false}})}
-function after(G){CUR=G;relog(G);check(G)}
+function after(G){CUR=G;march(G);relog(G);check(G)}
 
 /* ---------- the wrapped moves. Each does what the engine does, then lets the mission look at the board. ---------- */
 /* the game's own settings (its difficulty, its try-everything deck) are for a run of the game: a mission takes only the seed */
-LH.newRun=function(opts){if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,{seed:opts&&opts.seed})}
+LH.nextBattle=function(G){var r=O.nextBattle(G);if(r&&CP.road&&!G.ms)growAll(G,CP.grow,CP.bond);return r};
+LH.newRun=function(opts){
+  /* a board set down earlier and picked up again */
+  if(CP.resumeG){var g=CP.resumeG;CP.resumeG=null;CP.pending=null;CUR=g.ms?g:null;return g}
+  if(CP.pending){var id=CP.pending;CP.pending=null;return start(id,{seed:opts&&opts.seed})}
   /* the road: a run of the game itself, with the deck he has in the campaign and the pack from the fire */
-  if(CP.road){var o={};for(var k in opts)o[k]=opts[k];o.deck=CP.road.slice();CUR=null;return O.newRun(o)}
+  if(CP.road){var o={};for(var k in opts)o[k]=opts[k];o.deck=CP.road.slice();CUR=null;var R=O.newRun(o);growAll(R,CP.grow,CP.bond);return R}
   return O.newRun(opts)};
-LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){ev(G,'moved',u);after(G)}return r};
+LH.move=function(G,u,x,y){var r=O.move(G,u,x,y);if(r&&G.ms){findAt(G,u);ev(G,'moved',u);after(G)}return r};
 LH.hold=function(G,u){var r=O.hold(G,u);if(r&&G.ms){ev(G,'held',u);after(G)}return r};
 LH.tend=function(G,u,t){var r=O.tend(G,u,t);if(r&&G.ms)after(G);return r};
-LH.engage=function(G,a,d){if(!G.ms)return O.engage(G,a,d);CUR=G;ev(G,'before',a,d);var K=O.engage(G,a,d);if(K){G.cs.clashes++;K.p.txt=say(G,K.p.txt);tipsFor(G,K);ev(G,'engage',K)}return K};
+LH.engage=function(G,a,d){if(!G.ms){var K0=O.engage(G,a,d);if(K0&&CP.road)bondUp(G,K0);return K0}CUR=G;ev(G,'before',a,d);var K=O.engage(G,a,d);if(K){G.cs.clashes++;bondUp(G,K);K.p.txt=say(G,K.p.txt);tipsFor(G,K);ev(G,'engage',K)}return K};
 LH.play=function(G,i){var id=G.ms&&G.clash?G.clash.hand[i]:null,fx=O.play(G,i);if(fx&&G.ms){var x=ev(G,'play',id,fx);if(x)x.forEach(function(e){fx.push(e)})}return fx};
 LH.endHand=function(G){if(G.ms&&G.clash&&G.clash.phase==='play')ev(G,'ending',G.clash);var K=G.clash,fx=O.endHand(G);if(fx&&G.ms){if(fx[0]&&fx[0].n)G.cs.hurt+=fx[0].n;if(fx.some(function(e){return e.k==='wound'}))tip(G,'wound');if(K&&K.phase==='choice')tip(G,'rounds');ev(G,'ended',K,fx)}return fx};
 LH.pressOn=function(G){var r=O.pressOn(G);if(r&&G.ms)ev(G,'round',G.clash);return r};
-LH.closeClash=function(G){var K=G.clash,r=O.closeClash(G);if(r&&G.ms){if(K.a.hp>0&&K.a.guard>0)tip(G,'guard');if(K.a.hp>0&&K.a.bank>0)tip(G,'held');ev(G,'clashEnd',K);after(G)}return r};
+LH.closeClash=function(G){var K=G.clash,r=O.closeClash(G);if(r&&(G.ms||CP.road))markUp(G,K);if(r&&G.ms){if(K.a.hp>0&&K.a.guard>0)tip(G,'guard');if(K.a.hp>0&&K.a.bank>0)tip(G,'held');ev(G,'clashEnd',K);after(G)}return r};
 LH.endTurn=function(G){
   if(G.ms&&!G.over&&!G.clash&&G.phase==='player'){ev(G,'night');after(G);if(G.over)return false;
     foes(G).forEach(function(e){if(e.ordeal){e._r=e.rng;e.rng=0}})}   /* an ordeal answers in the clash and nowhere else */
@@ -261,7 +311,7 @@ LH.enemyStep=function(G){
 var PROF={};
 function rk(id){return Math.max(0,ROM.indexOf(C[id].r||''))}
 function profile(id){
-  if(PROF[id])return PROF[id];var keep=CUR,G=start(id,{seed:1,level:0,pack:[]});CUR=keep;
+  if(PROF[id])return PROF[id];var keep=CUR,G=start(id,{seed:1,level:0,pack:[],grow:{},bond:{}});CUR=keep;
   var D=G.u[0],M=MS[id],p={all:{},here:{},fights:{},tends:{},lends:{},img:{},cards:{},foes:{},mov:D.mov,br:D.br,hn:D.hn,hp:D.max,rounds:M.rounds||1,insp:M.insp||0,thr:(D.throws>0&&D.far)?1:0,tall:!!M.tall};
   G.u.forEach(function(u){
     if(u.side===0&&u.id!=='D'&&u.hp>0){p.all[u.n]=1;p.img[u.n]=u.img;if(u.lend)p.lends[u.n]=u.lend;if(!u.still){p.here[u.n]=1;if(u.deck&&u.deck.length)p.fights[u.n]=1;if(u.tend&&u.tends>0)p.tends[u.n]=1}}
@@ -313,12 +363,12 @@ function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={pending:null,road:null,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},
   top:function(G){var M=MS[G.ms];return M.top?M.top(G,G.cs,api):'Turn '+G.turn},
-  goals:function(G){var M=MS[G.ms];return M.marks?M.marks(G,G.cs,api):[]},
+  goals:function(G){var M=MS[G.ms],l=M.marks?M.marks(G,G.cs,api):[];(G.cs.finds||[]).forEach(function(f){if(!f.got&&f.y>=0&&f.y<7)l.push([f.x,f.y,'find'])});return l},
   progress:progress};
 root.CP=CP;
 })(typeof module!=='undefined'&&module.exports?module.exports:window,typeof module!=='undefined'&&module.exports?require('./engine.js').LH:window.LH);
