@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-15 · saying · The dog will not lie down by the fire for anyone, and Hollis calls it stiff-kneed, the old Lancers' word: proud, and unable to kneel. Darrow laughs before he can help it.
 - 2026-11-15 · overheard · Overheard after the fire is banked: Wren, half asleep under the cart, counting something in a whisper, losing her place at forty, and patiently starting again.
 - 2026-11-15 · house · Last thing at night, Rae checks the dog's paws one by one for burrs, telling it a long, unhurried story about nothing at all. The dog listens to every word.
 - 2026-11-15 · body · He gets up from the fire without a hand on anything, and only knows he did it because Maelis, across the coals, has stopped watching him do it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-18 · body · He stamps the cold out of his feet at first light, left, right, left, and only halfway through notices there is no order to it any more, no leg that has to go first.
 - 2026-11-18 · weather · A white sky, and a west wind carrying somebody else's woodsmoke from a long way off. The dog keeps lifting its nose to it and putting it down again, disappointed.
 - 2026-11-18 · house · Rae walks the last mile beside the cart instead of riding, and talks the whole way up the long rise. At the top he realises he has kept up his end of it without once stopping for breath.
+- 2026-11-18 · overheard · Overheard at the roadside fire: Rae telling the dog it has done very well today, in a voice she uses for no one else, and then warning it not to let that go to its head.
