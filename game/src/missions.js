@@ -1,6 +1,8 @@
 /* The Line and the Hand: the campaign's missions. One for each thing the Chronicle's page has shown him do with his body,
    in the order the page shows it. Reader-safe: every name, place and line here is on the page already (saga/chronicle/).
    A mission is added only after its chapter is closed. Words in double quotes inside the texts are the page's own.
+   People, places and things are the Chronicle's. The fights need not be: a mission marked `tall` tells a scene larger than the page
+   does (a search that comes to pikes, riders the forms do not hold), says so on its card, and says afterwards how the page has it.
 
    Map letters: . floor/ground  w cover (2 steps)  d road/steps  ~ wall or deep water  f ford/ice (2 steps)  b bridge/door
    Darrow's reach on the board follows the Knots the page has tied; his cards carry the rank each Art had in that chapter. */
@@ -301,6 +303,54 @@ CP.add({id:'c5',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thornw
 function LHter(G,u){return G.map.rows[u.y].charAt(u.x)}
 function LH_at(G,x,y){for(var i=0;i<G.u.length;i++){var u=G.u[i];if(u.hp>0&&u.x===x&&u.y===y)return u}return null}
 
+CP.add({id:'c5b',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thornwild Woman\'s',n:'The Yard at Coldmere',place:'The inn yard, Coldmere',when:'A sergeant and six, come to search.',art:'coldmere',
+  level:'Level 8 · Kindled',quote:'"Fight from where you\'re put."',
+  tall:'The page tells this one without a blow: a pitchfork goes through the hay, and Hale talks the boy away. Here it comes to pikes.',
+  intro:['A levy sergeant and his pike boys have come to search the inn. They are boys with borrowed pikes, and a man who has been told there is a reward.',
+    'The company is in the yard with the cart. He walks with a stick now, two steps at a time; Hollis has the beech leg; Ash goes on three legs and a splint.',
+    'Put the sergeant down, and the boys will remember somewhere else to be.'],
+  objective:'Bring the sergeant down. The company fights with him now: each has a hand of their own.',
+  open:'The sergeant looks at the cart, and at the old man on its tailboard, and stops smiling.',
+  map:{name:'The Inn Yard',theme:'yard',rows:['..d...','.wd.w.','..d...','w....w','..ww..','......','......']},
+  down:'is out of it',insp:1,
+  party:{D:{at:[2,5],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1'])},
+    H:{at:[3,5],mov:1,img:'hollis'},A:{at:[1,6],mov:2,hp:26,img:'ash'},W:{at:[4,6],img:'wren'},R:{at:[5,6],mov:2,tend:0,tends:0,img:'rae'},
+    more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,6]}]},
+  foes:[{k:'sergeant',at:[2,0]},{k:'pike',at:[3,0]},{k:'pike',at:[1,2]},{k:'pike',at:[3,2]},{k:'pike',at:[5,1]}],
+  on:{start:function(G,S,a){a.hint(G,'Footing beats Blade, Blade beats Cast, Cast beats Footing. A friend beside the one who fights lends a card. Maelis tends.')}},
+  goal:function(G,S,a){return !a.foe(G,'sergeant')},
+  win:{t:'The boys remember somewhere else to be',s:'Six pikes go out of the yard a good deal faster than they came in.'},
+  lose:{any:{t:'The yard is theirs',s:'There are a great many of them for one stick.'}},
+  stars:function(G,S,a){var D=G.u[0];return [['The sergeant is down',true],['Nobody of the company down',a.mates(G).length>=6],['With half his strength left',D.hp*2>=D.max]]},
+  outro:['The sergeant sits down in the mud of the yard with his hand to his ribs, and the boys look at him, and at the old man with one leg, and at the dog.',
+    'Hale stands in the kitchen door with the book under his arm, like a man who had expected it.',
+    'On the page it never came to this. A pitchfork went through the hay a hand from Hollis, and Hale talked the boy away.'],
+  read:'Chapter 5, the search of the inn (told there without a blow)'});
+
+CP.add({id:'c5c',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thornwild Woman\'s',n:'The Fold',place:'The shepherds\' fold, above the tarn',when:'Afternoon. Grey stone against grey hillside.',art:'coldmere',
+  level:'Level 8 · Kindled',quote:'"We were never here."',
+  tall:'On the page a mill carter bluffs the riders away, and nobody draws. Here they come up the slope.',
+  intro:['They have sat all day behind the fold wall with no fire, and heard their own names read across the water.',
+    'Two grey cloaks come riding the shore road at the walk of men sent to look at something they do not expect to find. Ash stands up on the wall on three legs and the splint, with every hair along her back on end, and barks.',
+    'The nearer rider pulls up his horse and looks up the slope.'],
+  objective:'Hold the fold. Send every grey cloak back down the slope.',
+  open:'Ash had been quiet since the loft, and nobody had ever had to tell her.',
+  map:{name:'The Fold',theme:'road',rows:['......','..d...','..d...','.wwww.','......','......','......']},
+  down:'goes back down the slope',insp:1,
+  party:{D:{at:[2,4],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1'])},
+    H:{at:[3,4],mov:1,img:'hollis'},A:{at:[1,4],mov:2,hp:26,img:'ash'},W:{at:[4,5],img:'wren'},
+    more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,5]}]},
+  foes:[{k:'cloak',at:[2,0]},{k:'cloak',at:[3,0]},{k:'cloak',at:[1,1]},{k:'cloak',at:[4,1]}],
+  on:{start:function(G,S,a){a.hint(G,'The wall is cover: whoever stands in it takes less on their turn, and they must come to it. Let them.')}},
+  goal:function(G,S,a){return !a.foes(G).length},
+  win:{t:'The fold is held',s:'And the cart is on the mill tracks before dawn.'},
+  lose:{any:{t:'They have a name off the list',s:'The first on it.'}},
+  stars:function(G,S,a){var D=G.u[0],A=a.U(G,'A');return [['Every grey cloak sent back',true],['Ash still on her three legs',a.up(A)],['With half his strength left',D.hp*2>=D.max]]},
+  outro:['Ash comes back along the wall with her splint clacking, and sits down on Darrow\'s boot, and looks at nobody.',
+    '"Sixty at that stone," says Hollis, getting his breath. "And a mule."',
+    'On the page nobody drew. A mill carter talked the riders round, and the company was gone before dawn.'],
+  read:'Chapter 5, the climax (told there without a blow)'});
+
 CP.add({id:'c6',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',n:'The Post',place:'The keeper\'s stone, on the weir',when:'The mill rings for bread. The glaze is on the stones.',art:'the-lowmarch',
   level:'Level 9 · Kindled',quote:'"You come to the post."',
   intro:['She has shadowed the cart since the mill tracks, and summoned him under the forms. He walked out a quarter hour before the bell, a stone at a time, so that she would find him standing.',
@@ -333,6 +383,31 @@ CP.add({id:'c6',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',
     'On the far bank the four riders have their hands on their reins and stay where they are. The forms hold them.',
     'She lies on the ice and waits for him to decide what she is.'],
   read:'Chapter 6, the climax'});
+
+CP.add({id:'c6b',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',n:'The Forms Break',place:'The weir, and the near bank',when:'Noon. Blood on the glaze.',art:'the-lowmarch',
+  level:'Level 9 · Kindled',quote:'"Technically…"',
+  tall:'On the page the forms hold the four riders where they sit. Here they do not.',
+  intro:['She lies on the ice with her hand pressed to her shoulder, and he stands on the keeper\'s stone with his own blood running off the blade, and no stick.',
+    'On the far bank the four riders in dark coats have their hands on their reins. They came to carry whatever she took.',
+    'He cannot leave the stone. The company can come to him.'],
+  objective:'He cannot move. Bring the company out onto the ice to him, and send the four riders back.',
+  open:'On the far bank a horse steps down onto the glaze.',
+  map:{name:'The Weir',theme:'weir',rows:['.w..w.','......','ffffff','ffdfff','ffffff','......','......']},
+  down:'goes back across the ice',insp:1,
+  party:{D:{at:[2,3],t:'foot',mov:0,hp:58,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_patience',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1','c_over1'])},
+    H:{at:[1,5],mov:1,img:'hollis'},A:{at:[3,5],mov:3,img:'ash'},W:{at:[4,5],img:'wren'},R:{at:[0,6],still:1,img:'rae'},
+    more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:6,tends:3,lend:'c_now',at:[2,5]}]},
+  foes:[{k:'darkcoat',at:[0,0]},{k:'darkcoat',at:[2,0]},{k:'darkcoat',at:[3,0]},{k:'darkcoat',at:[5,0]}],
+  marks:function(){return [[2,3,'keep']]},
+  on:{start:function(G,S,a){G.u[0].hp=40;a.hint(G,'The ice costs two steps. Maelis can reach him in one move, and Wren\'s stones carry two tiles.')}},
+  goal:function(G,S,a){return !a.foes(G).length},
+  win:{t:'The forms, such as they are',s:'Four riders go back the way they came, and one of them is leading her horse.'},
+  lose:{any:{t:'Off the stone',s:'Without the stick, and with the river very loud under the glaze.'}},
+  stars:function(G,S,a){var D=G.u[0];return [['The riders sent back',true],['Nobody of the company down',a.mates(G).length>=6],['He ended with more than he began',D.hp>=40]]},
+  outro:['Maelis has her roll open on the ice beside him and her needle threaded before the last of them is across.',
+    'Hollis stands at the oxen\'s heads with his fists at his sides, breathing like a bellows, and says a thing about the forms that Wren does not write down.',
+    'On the page the four of them stayed where they were. The forms held.'],
+  read:'Chapter 6, the climax (told there with the riders held)'});
 
 CP.add({id:'c7',book:'Book II · The Tempering Road',ch:'Chapter 7 · The Far Bank',n:'The Far Bank',place:'The mill bridge',when:'Night. The last cart is over.',art:'the-lowmarch',
   level:'Level 9 · Kindled',quote:'"Count it."',

@@ -71,6 +71,11 @@ var FD={
   reach:{n:'The Long Reach',key:'steps',t:'foot',hp:28,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:13},{b:0,d:15}]},
   elbow:{n:'The Elbow',key:'steps',t:'foot',hp:24,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:4,d:14},{b:0,d:16}]},
   shins:{n:'The Shins',key:'steps',t:'foot',hp:20,mov:0,rng:1,atk:1,ordeal:1,ans:[{b:0,d:12},{b:0,d:12}]},
+  /* for the fights told larger than the page tells them */
+  pike:{n:'Levy Pike',key:'pikeman',t:'foot',hp:20,mov:2,rng:1,atk:6,ans:[{b:5,d:8},{b:0,d:11}]},
+  sergeant:{n:'Levy Sergeant',key:'swordsman',t:'blade',hp:38,mov:2,rng:1,atk:9,enrage:3,ans:[{b:6,d:11},{b:0,d:14}]},
+  cloak:{n:'Grey Cloak',key:'greycloak',t:'blade',hp:34,mov:3,rng:1,atk:11,ans:[{b:0,d:13},{b:5,d:11}]},
+  darkcoat:{n:'Dark Coat',key:'darkcoat',t:'blade',hp:32,mov:4,rng:1,atk:11,ans:[{b:0,d:8,n:2},{b:0,d:6,n:3}]},
   rider:{n:'Outrider',key:'rider',t:'blade',hp:30,mov:0,rng:0,atk:1,scripted:1,ans:[{b:0,d:1}]},
   ysra:{n:'Ysra Tal',key:'ysra-tal',t:'blade',hp:72,mov:3,rng:1,atk:13,proper:1,ans:[{b:0,d:7,n:3},{b:8,d:18},{b:0,d:22}]},
   walker:{n:'Walker',key:'walker',t:'foot',hp:22,mov:1,rng:1,atk:7,barbed:1,ans:[{b:0,d:12},{b:0,d:15}]}

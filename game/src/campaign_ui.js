@@ -43,6 +43,7 @@ function intro(id){
     '<p class="cp-where">'+esc(M.place)+'<br><span>'+esc(M.when)+'</span></p>'+
     M.intro.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+
     '<p class="cp-quote">'+esc(M.quote)+'</p>'+
+    (M.tall?'<p class="cp-read">'+esc(M.tall)+'</p>':'')+
     '<div class="cp-brief"><span class="cp-lbl">Ser Darrow · '+esc(M.level)+'</span><span>'+esc(typeof M.objective==='function'?briefOf(id):M.objective)+'</span></div>'+
     '<div class="cp-acts">'+btn('go:'+id,'Begin','','primary')+btn('list','Missions','')+'</div></div>','scroll');
 }

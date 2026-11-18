@@ -37,7 +37,11 @@ function fight(G,u,opt){if(!u||u.hp<=0||G.over)return false;var t=LH.targets(G,u
 function tendD(G,id,min){var m=U(G,id),D=G.u[0];if(!m||G.over)return;var t=LH.tendTargets(G,m);if(t.indexOf(D)>=0&&D.max-D.hp>=(min||5))LH.tend(G,m,D)}
 function endTurn(G){if(G.over)return;if(!LH.endTurn(G))return;var n=0;while(LH.enemyStep(G)&&n++<200){}}
 function nearestFoe(G,u){var f=CP.api.foes(G).filter(function(e){return !e.scripted});f.sort(function(a,b){return CP.api.dist(a,u)-CP.api.dist(b,u)});return f[0]}
-var PLAN={
+/* a plain fight: everyone goes at the nearest foe, the Mender keeps by Darrow */
+function battle(G){var D=G.u[0];CP.api.mates(G).forEach(function(u){if(G.over||u.hp<=0||u.still)return;
+  if(u.tend){go(G,u,D.x,D.y,true);tendD(G,u.id,5);return}if(!u.dk)return;
+  var f=nearestFoe(G,u);if(!f)return;if(u.mov>0&&!LH.targets(G,u).length)go(G,u,f.x,f.y,true);fight(G,u,{blockFirst:u.hp<u.max*.4})})}
+var PLAN={c5b:battle,c5c:battle,c6b:battle,
   p0:function(G){var D=G.u[0];if(!G.cs.grace)go(G,D,3,5);if(G.cs.grace){go(G,D,3,4);fight(G,D,{press:function(){return true}})}},
   p1:function(G){var D=G.u[0],f=nearestFoe(G,D);if(f)go(G,D,f.x,f.y,true);go(G,U(G,'M'),D.x+1,D.y);tendD(G,'M',4);fight(G,D,{blockFirst:D.hp<12})},
   c1:function(G){go(G,U(G,'W'),5,6);var D=G.u[0];go(G,U(G,'R'),2,1);go(G,U(G,'L'),0,5);go(G,U(G,'B'),1,6);fight(G,D,{blockFirst:D.hp<14})},

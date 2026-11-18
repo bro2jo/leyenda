@@ -72,3 +72,5 @@
 .todo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .todo-grid div{background:var(--plate);border:1px solid var(--rule);border-radius:8px;padding:8px 10px;font-size:.9rem}
 .todo-grid b{display:block;color:var(--brass-hi)}
+#game[data-th="yard"] .tile{background-color:#4B4336;background-image:radial-gradient(circle at 30% 30%,rgba(0,0,0,.14) 0 12%,transparent 13%),radial-gradient(circle at 70% 70%,rgba(0,0,0,.12) 0 10%,transparent 11%);background-size:100% 100%}
+#game[data-th="yard"] .tile.w{background-color:#B59A52;background-image:repeating-linear-gradient(100deg,rgba(0,0,0,.16) 0 2px,transparent 2px 7px);background-size:100% 100%}
