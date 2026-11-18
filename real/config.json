@@ -454,8 +454,9 @@
       "add": [
         "cond"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+      "cond_min": 45,
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the trainer, Wed 11/18 (patient-reported): real/visits/2026-11-18_trainer_instruction.md",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/18 (the trainer): bike 45 min in zone 2 instead of the intervals; the throwing stands"
     },
     {
       "date": "2026-11-19",
