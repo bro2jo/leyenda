@@ -165,6 +165,24 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
      ok(pr.every(function(t){return t.split(/\s+/).length<=150&&/^Fantasy RPG /.test(t)&&/Painterly semi-realistic/.test(t)}),'every prompt is whole and short: the kind of picture first, its own style and format, 150 words at most');
      ok(pr.every(function(t){return !/gambeson|kettle|madder|hauberk|cuirass|coif|lymer|surcoat|buff coat/i.test(t)}),'and in plain words an image model knows');
      ok(await p.locator('h3[data-who="crossbowman"] .todo').count()===1&&/Made already: .*Captain/.test(await p.locator('#cp-made').innerText()),'what is still to make is marked, and what is made is named')}
+    /* the ground reads the same way everywhere: a wall stands up, deep ground falls away, cover and slow ground are marked, named tiles are captioned, and a tap says what a tile is */
+    await p.evaluate(()=>{__CP.P.all=1;__CP.begin('c1')});await p.waitForTimeout(150);
+    {const g=(x,y)=>p.evaluate(([x,y])=>document.querySelector(`#m-board .tile[data-x="${x}"][data-y="${y}"]`).getAttribute('data-g'),[x,y]);
+     ok(await g(0,0)==='wall'&&await g(3,0)==='door'&&await g(2,4)==='cover'&&await g(0,6)==='road'&&await g(5,6)==='door'&&await g(2,2)==='open','every tile of the court carries its kind');
+     ok(await p.evaluate(()=>{var w=document.querySelector('#m-board .tile[data-x="0"][data-y="0"]'),f=getComputedStyle(w,'::before');return f.content!=='none'&&parseFloat(f.height)>8&&document.querySelectorAll('#m-terr .sh').length===5}),'the gate wall shows its face, and throws a shadow on the court below it');
+     ok(await p.evaluate(()=>[].map.call(document.querySelectorAll('#m-terr .gl'),e=>e.textContent).sort().join()==='Stair,Stair,Tower,Wicket'),'the wicket, the stair and the tower door are written on the board');
+     ok(await p.evaluate(()=>document.querySelectorAll('#m-terr .gb:not(.n2)').length===2&&document.querySelectorAll('#m-terr .gb.n2').length===0),'the two drifts of snow wear the shield of cover');
+     ok(await p.evaluate(()=>{var a=getComputedStyle(document.querySelector('#m-board .tile[data-x="3"][data-y="0"]')).backgroundImage,b=getComputedStyle(document.querySelector('#m-board .tile[data-x="5"][data-y="6"]')).backgroundImage,c=getComputedStyle(document.querySelector('#m-board .tile[data-x="0"][data-y="6"]')).backgroundImage;return a!==b&&b!==c&&a!==c}),'and the three no longer look alike');
+     await tap(0,0);ok(/The wall\. No way through\./.test(await p.locator('#m-rest .panel.info').innerText())&&await p.locator('#m-board .tile.ask').count()===1,'a tap on the wall says it is a wall, and that there is no way through');
+     await tap(2,4);ok(/Drifted snow\. Cover: two steps to enter/.test(await p.locator('#m-rest .panel.info').innerText()),'a tap on the snow says it is cover, and what cover does');
+     await tap(2,4);ok(/Tap the ground to see what it is/.test(await p.locator('#m-rest .panel.info').innerText())&&await p.locator('#m-board .tile.ask').count()===0,'a second tap puts it away');
+     await tap(0,6);ok(/The gatehouse stair\. Where the wounded stand\./.test(await p.locator('#m-rest .panel.info').innerText()),'a named tile says what it is for');await tap(0,6);
+     await p.evaluate(()=>{__CP.begin('c6')});await p.waitForTimeout(150);
+     ok(await p.evaluate(()=>document.querySelectorAll('#m-terr .gb.n2').length===1&&document.querySelectorAll('#m-board .tile[data-g="slow"]').length===17),'a field of ice says once that it is slow going, not on every tile');
+     await p.evaluate(()=>{__CP.begin('c7')});await p.waitForTimeout(150);
+     ok(await p.evaluate(()=>document.querySelectorAll('#m-terr .rim').length>0&&document.querySelectorAll('#m-board .tile[data-g="deep"]').length>10&&!document.querySelector('#m-board .tile[data-g="wall"]')),'the river falls away from its banks');
+     await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(150);
+     ok(await p.evaluate(()=>{var h=document.querySelectorAll('#m-board .tile[data-g="cover"]');return h.length===6&&document.querySelectorAll('#m-terr .gb:not(.n2)').length===6&&!document.querySelector('#m-board .tile[data-g="wall"],#m-board .tile[data-g="deep"]')}),'hay is cover he can stand in, and the yard has nothing he cannot walk on')}
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

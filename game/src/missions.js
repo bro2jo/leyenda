@@ -31,6 +31,7 @@ CP.add({id:'p0',book:'Prologue',ch:'The Three Heartbeats',n:'The Grace',place:'H
     more:[{id:'V',from:'W',n:'Aldric',img:'aldric',t:'blade',hp:40,still:1,deck:null,lend:'c_wide',at:[2,6]}]},
   foes:[{k:'wend',at:[3,3]}],
   marks:function(G,S){return S.grace?[[3,3,'go']]:[[3,5,'go']]},
+  labels:[[3,5,'Stone','The Ninth\'s field-stone','Kneel here, and the Crown\'s hand is on his back.'],[3,3,'Ford']],
   on:{
     start:function(G,S,a){a.hint(G,'Tap Darrow. Then tap the field-stone, one step ahead.')},
     moved:function(G,S,a,u){if(u.id==='D'&&!S.grace&&a.on(u,3,5))grace(G,S,a,true)},
@@ -122,6 +123,7 @@ CP.add({id:'c1',book:'Book I · The House of Menders',ch:'Chapter 1 · The Confe
       {id:'L',from:'W',n:'Lay Brother',img:'brother',t:'foot',hp:20,mov:2,rng:0,deck:null,lend:'c_bro',at:[3,2]}]},
   foes:[{k:'doorman',at:[3,0]},{k:'seeker',at:[1,1]},{k:'seeker',at:[4,2]}],
   marks:function(G,S){var m=STAIR.map(function(q){return [q[0],q[1],'keep']});if(!S.pull)m.push([5,6,'go']);return m},
+  labels:[[3,0,'Wicket'],[0,6,'Stair'],[1,6,'Stair'],[5,6,'Tower']],
   on:{
     start:function(G,S,a){var sets=[[[1,1],[4,2]],[[0,1],[5,2]],[[1,1],[5,1]],[[0,1],[4,3]],[[1,1],[4,3]]],pick=sets[Math.abs(G.seed|0)%sets.length],i=0;
       G.u.forEach(function(u){if(u.type==='seeker'&&u.hp>0&&pick[i]){var q=pick[i++];if(!LH.at(G,q[0],q[1])||LH.at(G,q[0],q[1])===u){u.x=q[0];u.y=q[1]}}});
@@ -209,6 +211,7 @@ CP.add({id:'c3',book:'Book I · The House of Menders',ch:'Chapter 3 · The Under
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis1',mov:2,tend:5,tends:2,lend:'c_now',at:[2,6]}]},
   foes:[{k:'sliver',at:[2,1]}],
   marks:function(G,S){return S.clashes?[]:[[2,2,'go']]},
+  labels:[[2,2,'Alcove','The alcove','Where the black glass is set.']],
   on:{
     start:function(G,S,a){a.hint(G,'Three moves to the alcove. Bring Wren\'s lamp and the Mender with him: whoever stands beside him lends a card.')},
     engage:function(G,S,a){a.hint(G,'Pulling does nothing. Each round the cold climbs higher. Press on to hold; let go when he must.')},
@@ -266,6 +269,7 @@ CP.add({id:'c4b',book:'Book I · The House of Menders',ch:'Chapter 4 · Old Merc
     more:[{id:'P',from:'W',n:'Sister Pell',img:'pell',t:'eye',hp:14,still:1,deck:null,at:[1,2]}]},
   foes:[{k:'bigman',at:[3,4]},{k:'guest',at:[3,5]},{k:'guest',at:[3,6]}],
   marks:function(){return [[2,0,'go']]},
+  labels:[[2,0,'Bell']],
   on:{
     start:function(G,S,a){a.hint(G,'Tap a chair, then the man in front of it. The Bind halves his answer; a blow he does not land is a rung she climbs.')},
     struck:function(G,S,a,e){if(e.dmg>0)S.hit=1},
@@ -388,6 +392,7 @@ CP.add({id:'c6',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',still:1,at:[5,6]}]},
   foes:[{k:'ysra',at:[2,0]}],
   marks:function(){return [[2,3,'keep']]},
+  labels:[[2,3,'Stone']],
   on:{
     start:function(G,S,a){a.hint(G,'He does not have to chase her. Hold here for guard, and fight when she is beside him: the Seated Blade is for a man who has not moved.')},
     moved:function(G,S,a,u){if(u.id==='D'&&!a.on(u,2,3)){u.x=2;u.y=3;u.moved=false;u.from=null;S.stepped=1;a.log(G,'The old body says step, step and turn and you have her. He does not. "No. You come to the post."','good')}},
@@ -423,6 +428,7 @@ CP.add({id:'c6b',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir'
   rally:['The word','The word is given'],
   finds:[{at:[4,4],n:'His stick, on the ice',t:'Whoever reaches it sends it skating back to him.',pool:[{card:'c_bar'},{card:'c_bar'},{card:'c_stick'},{card:'c_still3'}]}],
   marks:function(){return [[2,3,'keep']]},
+  labels:[[2,3,'Stone']],
   on:{start:function(G,S,a){G.u[0].hp=40;a.hint(G,'The ice costs two steps. Maelis can reach him in one move, and Wren\'s stones carry two tiles. The first rider gives the word: while he sits his horse the others strike harder. One wears mail, and small blows glance off it.')}},
   goal:function(G,S,a){return !a.foes(G).length},
   win:{t:'The forms, such as they are',s:'Four riders go back the way they came, and one of them is leading her horse.'},

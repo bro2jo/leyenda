@@ -125,6 +125,13 @@ function at(G,x,y){for(var i=0;i<G.u.length;i++){var u=G.u[i];if(u.hp>0&&u.x===x
 function ter(G,x,y){return G.map.rows[y].charAt(x)}
 function ok(G,x,y){return x>=0&&y>=0&&x<W&&y<H&&ter(G,x,y)!=='~'}
 function cost(G,x,y){var c=ter(G,x,y);return c==='w'||c==='f'?2:1}
+/* What a tile is, for the eye and in words. Its kind decides how it is drawn: wall (stands up: no way through), deep (falls away:
+   no way through), cover, slow, door, road, open. A place may name its own (the campaign does) and caption a tile (labels). */
+var COVER_T='Cover: two steps to enter. One of yours here takes '+T.woodCover+' less from a blow on their turn; a foe here starts a clash with '+T.woodBlock+' block.';
+function ground(G,x,y){var c=ter(G,x,y);
+  return c==='w'?{k:'cover',n:'Wood',t:COVER_T}:c==='~'?{k:'deep',n:'Deep water',t:'No way through.'}:c==='f'?{k:'slow',n:'Ford',t:'Slow going: two steps to enter.'}:
+    c==='b'?{k:'road',n:'Bridge',t:'Open ground: the way over the water.'}:c==='d'?{k:'road',n:'Road',t:'Open ground.'}:{k:'open',n:'Open ground',t:'One step to enter.'}}
+function labels(G){return []}
 function dist(a,b){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y)}
 function inRange(a,d){var k=dist(a,d);return k>=1&&k<=a.rng}
 function tri(a,d){return BEAT[a.t]===d.t?1:(BEAT[d.t]===a.t?-1:0)}
@@ -491,7 +498,7 @@ function cardText(id,K){
 }
 
 root.LH={T:T,SHEET:SHEET,W:W,H:H,MAPS:MAPS,FOES:FOES,TREE:TREE,BEAT:BEAT,C:C,POOL:POOL,STANCE:STANCE,BASE_DECK:BASE_DECK,HAND_CAP:HAND_CAP,MAX_HP:MAX_HP,HELD_MAX:HELD_MAX,MIN_DECK:MIN_DECK,
-  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,path:path,fallBack:fallBack,fellBack:fellBack,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
+  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,ground:ground,labels:labels,COVER_T:COVER_T,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,path:path,fallBack:fallBack,fellBack:fellBack,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
   move:move,canUnmove:canUnmove,unmove:unmove,hold:hold,canEngage:canEngage,tendTargets:tendTargets,tend:tend,targets:targets,preview:preview,engage:engage,hitList:hitList,cardDmg:cardDmg,playable:playable,play:play,redraw:redraw,intent:intent,nextIntent:nextIntent,ansText:ansText,
   endHand:endHand,pressOn:pressOn,leave:leave,closeClash:closeClash,endTurn:endTurn,enemyStep:enemyStep,rallied:rallied,enraged:enraged,holding:holding,wounds:wounds,
   inCamp:inCamp,campBuy:campBuy,campMend:campMend,campRemove:campRemove,campHone:campHone,nextBattle:nextBattle,renown:renown,effects:effects,clashEffects:clashEffects,cardText:cardText};

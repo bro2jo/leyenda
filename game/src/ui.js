@@ -158,11 +158,11 @@ if(window.MutationObserver)new MutationObserver(decorate).observe(root,{childLis
 
 /* ---------- screens ---------- */
 root.innerHTML='<div class="scr map" id="scr-map"><div class="scr-top"><b id="m-name"></b><span class="num" id="m-top"></span></div>'+
-  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
+  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="terr" id="m-terr"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
   '<div class="scr camp" id="scr-camp" hidden></div><div class="scr clash" id="scr-clash" hidden></div>'+
   '<div class="foot"><button type="button" class="tgl" data-toggle="music"></button><button type="button" class="tgl" data-toggle="sound"></button></div><div class="banner" id="banner" hidden></div>';
 root.addEventListener('pointerdown',function(){if(!musStarted){musStarted=true;music()}},true);
-var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
+var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$terr=$('m-terr'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
 var $stage,$me,$foe,$intent,$cfx,$vs,$tell,$hand,$choice,$tray,$piles,$ctop;
 function show(which){$map.hidden=which!=='map';$camp.hidden=which!=='camp';$clash.hidden=which!=='clash';music(which==='clash'?'clash':'map')}
 
@@ -181,8 +181,19 @@ function unitInfo(u){
 var boardKey='',unitEls={};
 function buildBoard(){
   var h='';
-  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y);h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'"></button>'}
-  $board.innerHTML=h;$units.innerHTML='';unitEls={};walkers={};
+  /* each tile carries its kind (data-g), so one look means one thing on every map: a wall stands up (a face on its south side
+     unless the wall goes on, and a shadow on the ground below it), deep ground falls away (a rim where it meets the land),
+     cover wears a small shield, slow ground a 2, and a tile with a name has it written on it */
+  var t='',kind=function(x,y){return x<0||y<0||x>=LH.W||y>=LH.H?'':LH.ground(G,x,y).k},lb={};
+  LH.labels(G).forEach(function(l){lb[l[0]+','+l[1]]=l[2]});
+  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y),g=kind(x,y),st='left:'+(100*x/LH.W)+'%;top:'+(100*y/LH.H)+'%',in1='';
+    h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'" data-g="'+g+'"'+(g==='wall'&&kind(x,y+1)==='wall'?' data-s="1"':'')+'></button>';
+    if(g==='deep'){var rim=(kind(x,y-1)&&kind(x,y-1)!=='deep'?' n':'')+(kind(x,y+1)&&kind(x,y+1)!=='deep'?' s':'')+(kind(x-1,y)&&kind(x-1,y)!=='deep'?' w':'')+(kind(x+1,y)&&kind(x+1,y)!=='deep'?' e':'');if(rim)in1+='<i class="rim'+rim+'"></i>'}
+    else if(g!=='wall'){if(kind(x,y-1)==='wall')in1+='<i class="sh"></i>';
+      if(g==='cover')in1+='<i class="gb">'+svg('shield')+'</i>';else if(g==='slow'&&kind(x-1,y)!=='slow'&&kind(x,y-1)!=='slow')in1+='<i class="gb n2">2</i>'}   /* slow ground says so once, at the corner of each stretch */
+    if(lb[x+','+y])in1+='<i class="gl">'+lb[x+','+y]+'</i>';
+    if(in1)t+='<div class="tc" style="'+st+'">'+in1+'</div>'}
+  $board.innerHTML=h;$terr.innerHTML=t;$units.innerHTML='';unitEls={};walkers={};
 }
 /* a move is walked, tile by tile; the rules have already moved him, this only shows it */
 var walkers={};
@@ -217,7 +228,8 @@ function renderMap(acting){
   var tiles=$board.children;
   for(var i=0;i<tiles.length;i++){var t=tiles[i],x=+t.getAttribute('data-x'),y=+t.getAttribute('data-y'),k=x+','+y,u=LH.at(G,x,y),c=t.getAttribute('data-t');
     t.classList.toggle('dz',!!z[k]);t.classList.toggle('reach',!u&&r[k]!==undefined);t.classList.toggle('back',!u&&k===fbk);t.classList.toggle('hit',!!u&&tg.indexOf(u)>=0);t.classList.toggle('mend',!!u&&tt.indexOf(u)>=0);
-    t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:GROUND[c])}
+    t.classList.toggle('ask',!!UI.tile&&UI.tile[0]===x&&UI.tile[1]===y);
+    t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:LH.ground(G,x,y).n)}
   syncUnits(acting);
   h='<div class="legend tri"><span class="trio" title="Footing beats Blade, Blade beats Cast, Cast beats Footing"><span class="tg foot">'+svg('shield')+'Footing</span>'+svg('arrowR')+'<span class="tg blade">'+svg('sword')+'Blade</span>'+svg('arrowR')+'<span class="tg cast">'+svg('cast')+'Cast</span>'+svg('arrowR')+'<span class="tg foot">'+svg('shield')+'</span></span><button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
   if(G.over&&!G.over.win&&(UI.ended||!busy)){
@@ -231,9 +243,9 @@ function renderMap(acting){
       (p.lend.length?'<div class="lenders">'+p.lend.map(function(o){return '<span><img src="'+A+o.img+'.webp" alt="">'+o.n+'</span>'}).join('')+'</div>':'')+chipRow(p.chips)+'</div>'+
       '<div class="acts"><button class="act primary" type="button" data-a="go"><b>Engage</b><small>Play the hand</small></button><button class="act" type="button" data-a="no"><b>Hold</b><small>Think again</small></button></div>';
   }else{
-    var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
-    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
-    h+=logBox(G.log)+'<div class="panel info">'+info+'</div>';
+    var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike. Tap the ground to see what it is.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
+    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);else if(UI.tile){var gq=LH.ground(G,UI.tile[0],UI.tile[1]);info='<span><b>'+gq.n+'.</b> '+gq.t+'</span>'}
+    h+=UI.tile&&!s&&!UI.look?'<div class="panel info">'+info+'</div>'+logBox(G.log):logBox(G.log)+'<div class="panel info">'+info+'</div>';   /* a tile he asked about is answered first, where a short screen still shows it */
     h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
   }
   $rest.innerHTML=h;
@@ -244,17 +256,18 @@ function tileXY(x,y){return [(x+.5)/LH.W*100,(y+.45)/LH.H*100]}
 function flashTile(x,y){if(FAST)return;var u=LH.at(G,x,y);if(u&&unitEls[u.id])pulse(unitEls[u.id],'flash')}
 function tapTile(x,y){
   if(busy||G.over||G.clash||G.phase!=='player')return;
-  var u=LH.at(G,x,y),s=UI.sel;UI.fx=null;
+  var u=LH.at(G,x,y),s=UI.sel,was=UI.tile;UI.fx=null;UI.tile=null;
   if(UI.fc){UI.fc=null}
   if(u&&u.side===0&&s&&s.tend&&LH.tendTargets(G,s).indexOf(u)>=0){var r=LH.tend(G,s,u),p=tileXY(u.x,u.y);UI.sel=null;UI.look=null;renderMap();floatAt($mfx,p[0],p[1],'+'+r.heal,'heal');if(r.wound)floatAt($mfx,p[0],p[1]-7,'Wound set aside','heal');sfx('heal');return}
   if(u&&u.side===0){UI.look=null;UI.sel=LH.canAct(u)?(s===u?null:u):null;if(!UI.sel&&!LH.canAct(u))UI.look=u;sfx('unit_select');return renderMap()}
   if(u){if(s&&LH.targets(G,s).indexOf(u)>=0){UI.fc={a:s,d:u};UI.look=null;sfx('forecast_open')}else{UI.look=UI.look===u?null:u;UI.sel=null;sfx('ui_tap')}return renderMap()}
   var pth=s?LH.path(G,s,x,y):[];
-  if(s&&LH.move(G,s,x,y)){sfx('unit_move');walk(s,pth);if(!LH.canAct(s))UI.sel=null}else{UI.sel=null;UI.look=null}
+  if(s&&LH.move(G,s,x,y)){sfx('unit_move');walk(s,pth);if(!LH.canAct(s))UI.sel=null}
+  else{UI.sel=null;UI.look=null;if(!was||was[0]!==x||was[1]!==y){UI.tile=[x,y];sfx('ui_tap')}}   /* bare ground: say what it is; a second tap puts it away */
   renderMap();
 }
 async function runEnemy(){
-  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=null;UI.fx=null;sfx('enemy_turn');renderMap();await turnBanner('Their turn','foe');
+  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=UI.tile=null;UI.fx=null;sfx('enemy_turn');renderMap();await turnBanner('Their turn','foe');
   var ev;
   while((ev=LH.enemyStep(G))){
     if(ev.k==='turn'){renderMap();continue}
@@ -437,7 +450,7 @@ async function showFx(fx){
 async function startClash(a,d){
   if(busy)return;lock(true);
   if(!LH.engage(G,a,d)){lock(false);return renderMap()}
-  UI.sel=UI.fc=UI.look=null;UI.card=-1;UI.fx=null;sfx('clash_start');
+  UI.sel=UI.fc=UI.look=UI.tile=null;UI.card=-1;UI.fx=null;sfx('clash_start');
   $banner.className='banner vsb';$banner.innerHTML='<span class="duo"><span class="tok">'+face(a)+'</span>'+svg('swords')+'<span class="tok foe'+(has(AS.tok,d.key)?' has':'')+'">'+face(d)+'</span></span><b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
   await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],560);
   buildClash();show('clash');$banner.hidden=true;paintAll(true);
@@ -529,7 +542,7 @@ root.addEventListener('click',function(e){
     else if(a==='mend'){if(LH.campMend(G))sfx('heal')}
     else if(a==='leavemode'){UI.leave=!UI.leave;UI.buy=null;sfx('ui_tap')}
     else if(a==='hone-strike'||a==='hone-guard'){if(LH.campHone(G,a.slice(5)))sfx('camp_hone')}
-    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=null;UI.fx=null;UI.ended=false;sfx('your_turn');curtain('march',G.map.name,'Battle '+G.run.n+' of 3',function(){show('map');renderMap()});return}}
+    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=UI.tile=null;UI.fx=null;UI.ended=false;sfx('your_turn');curtain('march',G.map.name,'Battle '+G.run.n+' of 3',function(){show('map');renderMap()});return}}
     renderCamp();return spent(had-G.run.spoils);
   }
   if(a==='go'&&UI.fc)return startClash(UI.fc.a,UI.fc.d);

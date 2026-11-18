@@ -5,7 +5,7 @@
 (function(root,LH){
 'use strict';
 var C=LH.C,FOES=LH.FOES,O={},MS={},ORDER=[],CUR=null;
-['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable','nextBattle'].forEach(function(k){O[k]=LH[k]});
+['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable','nextBattle','ground','labels'].forEach(function(k){O[k]=LH[k]});
 
 /* ---------- cards the campaign adds. Arts carry the rank the page had given them by that chapter. ---------- */
 var ROM=['','I','II','III','IV','V'];
@@ -282,6 +282,24 @@ LH.cardText=function(id,K){if(CT[id])return CT[id];var c=C[id],cb=c&&!c.combo&&C
 LH.playable=function(G,i){return say(G,O.playable(G,i))};
 LH.preview=function(G,a,d){var p=O.preview(G,a,d);if(G.ms){p.txt=say(G,p.txt);p.chips=p.chips.map(function(c){return [say(G,c[0]),c[1]]})}return p};
 function sayFx(G,l){return l.map(function(e){e.label=say(G,e.label);e.text=say(G,e.text);return e})}
+/* ---------- the ground of each place: what each letter of its map is there. [kind, name, what it does (the engine's words if none)] ---------- */
+var NO='No way through.',SLOW='Slow going: two steps to enter.';
+var PLACE={
+  ford:{'~':['deep','The Wend in flood',NO],f:['slow','The ford',SLOW],w:['cover','Trees'],d:['road','The road']},
+  hall:{'~':['wall','The cots',NO],'.':['open','The hall floor']},
+  court:{'~':['wall','The wall',NO],w:['cover','Drifted snow'],f:['door','The wicket','A door for one man stooping. One step.'],d:['road','The gatehouse stair','Where the wounded stand.'],b:['door','The tower door','The way up to the bell.'],'.':['open','The court']},
+  under:{'~':['wall','Rock',NO],'.':['open','The undercroft floor']},
+  tower:{'~':['wall','The tower wall',NO],d:['road','The stair'],b:['door','The door above','The way up to the bell.'],'.':['open','A landing']},
+  steps:{'~':['deep','The drop',NO+' The cliff falls away into cloud.'],d:['road','The Steps'],w:['cover','Against the cliff'],'.':['open','A landing']},
+  yard:{w:['cover','Hay'],d:['road','The road'],'.':['open','The yard']},
+  road:{w:['cover','The fold wall'],d:['road','The track']},
+  weir:{f:['slow','Ice',SLOW],d:['road','The keeper\'s stone','Firm footing in the middle of the ice.'],w:['cover','Trees']},
+  bridge:{'~':['deep','The river',NO],b:['road','The bridge','The only way over.'],d:['road','The road']}};
+LH.ground=function(G,x,y){var g=O.ground(G,x,y);if(!G.ms)return g;var M=MS[G.ms],p=(PLACE[M.map.theme]||{})[LH.ter(G,x,y)];
+  if(p){g={k:p[0],n:p[1],t:p[2]||(p[0]==='cover'?LH.COVER_T:g.t)}}
+  var lb=LH.labels(G).filter(function(l){return l[0]===x&&l[1]===y})[0];if(lb&&lb[3])g={k:g.k,n:lb[3],t:lb[4]||g.t};return g};
+/* a caption on a tile that has a name: [x, y, caption, its name in full, what it is] */
+LH.labels=function(G){if(!G.ms)return [];var M=MS[G.ms],l=typeof M.labels==='function'?M.labels(G,G.cs,api):(M.labels||[]);return (G.cs.top&&M.world)?[]:l};
 LH.effects=function(G,u){if(u.side===2)return [];var l=O.effects(G,u);return G.ms?sayFx(G,l):l};
 /* a mission's own state, shown where a hand is played: [side a|d, icon, label, what it means, tone, number] */
 LH.clashEffects=function(G){var f=O.clashEffects(G);if(G.ms){f.a=sayFx(G,f.a);f.d=sayFx(G,f.d);var M=MS[G.ms];

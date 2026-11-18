@@ -520,3 +520,24 @@ code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em
 .tgl[aria-pressed="true"]{color:var(--brass-hi);border-color:var(--brass-dim)}
 .tgl:disabled{opacity:.5;cursor:default}
 @media (prefers-reduced-motion:reduce){.camphero .glow,.unit.walk .tok,.banner.cur b,.banner.cur i,.cur-ring,.cur-rule,.stat.pop b{animation:none}}
+
+/* ---- ground you can read: one look means one thing on every map. A wall stands up (a face on its south side, a shadow below
+   it); deep ground falls away (a rim where it meets the land); cover wears a small shield, slow ground a 2; a tile with a name
+   has it written on it; and a tap on bare ground says what it is. ---- */
+.terr{position:absolute;inset:0;pointer-events:none;z-index:1}
+.tc{position:absolute;width:16.667%;height:14.286%}
+.tc i{position:absolute;font-style:normal}
+.tc .sh{inset:0;background:linear-gradient(180deg,rgba(4,6,9,.6),rgba(4,6,9,.2) 24%,rgba(4,6,9,0) 46%)}
+.tc .rim{inset:0;--n:0 0 #0000;--s:0 0 #0000;--w:0 0 #0000;--e:0 0 #0000;box-shadow:var(--n),var(--s),var(--w),var(--e)}
+.tc .rim.n{--n:inset 0 9px 7px -4px rgba(3,6,10,.8)} .tc .rim.s{--s:inset 0 -5px 5px -3px rgba(3,6,10,.5)} .tc .rim.w{--w:inset 6px 0 6px -3px rgba(3,6,10,.6)} .tc .rim.e{--e:inset -6px 0 6px -3px rgba(3,6,10,.6)}
+.tc .gb{right:2px;bottom:2px;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:rgba(12,15,20,.85);border:1px solid var(--brass-dim);color:var(--brass-hi);font:700 9.5px/1 var(--label)}
+.tc .gb .ic{width:9px;height:9px;stroke-width:2.6}
+.tc .gb.n2{color:#CDE2F1;border-color:#5B7A91}
+.tc .gl{left:50%;top:1px;transform:translateX(-50%);padding:0 4px;border-radius:3px;background:rgba(12,15,20,.82);color:var(--brass-hi);font:700 8.5px/12px var(--label);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.tile[data-g="wall"],.tile[data-g="deep"]{cursor:default}
+.tile[data-g="wall"]{--wt:#23272E;--wf:#7C828C;background-color:var(--wt);background-image:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),inset 0 2px 0 rgba(255,255,255,.1)}
+.tile[data-g="wall"]::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;background-color:var(--wf);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 12' preserveAspectRatio='none'%3E%3Crect width='40' height='12' fill='none'/%3E%3Cpath d='M0 6h40M10 0v6M30 0v6M20 6v6M0 6' stroke='%23000' stroke-opacity='.38' stroke-width='1'/%3E%3C/svg%3E");background-size:100% 100%;box-shadow:inset 0 2px 0 rgba(255,255,255,.28),inset 0 -2px 0 rgba(0,0,0,.35)}
+.tile[data-g="wall"][data-s]::before{display:none}
+/* deep ground runs together: no grid between two tiles of it */
+.tile[data-g="deep"]{box-shadow:0 0 0 1px var(--dc,var(--water))}
+.tile.ask{box-shadow:inset 0 0 0 2px var(--ink)!important}

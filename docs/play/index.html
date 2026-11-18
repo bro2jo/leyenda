@@ -542,6 +542,27 @@ code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em
 .tgl[aria-pressed="true"]{color:var(--brass-hi);border-color:var(--brass-dim)}
 .tgl:disabled{opacity:.5;cursor:default}
 @media (prefers-reduced-motion:reduce){.camphero .glow,.unit.walk .tok,.banner.cur b,.banner.cur i,.cur-ring,.cur-rule,.stat.pop b{animation:none}}
+
+/* ---- ground you can read: one look means one thing on every map. A wall stands up (a face on its south side, a shadow below
+   it); deep ground falls away (a rim where it meets the land); cover wears a small shield, slow ground a 2; a tile with a name
+   has it written on it; and a tap on bare ground says what it is. ---- */
+.terr{position:absolute;inset:0;pointer-events:none;z-index:1}
+.tc{position:absolute;width:16.667%;height:14.286%}
+.tc i{position:absolute;font-style:normal}
+.tc .sh{inset:0;background:linear-gradient(180deg,rgba(4,6,9,.6),rgba(4,6,9,.2) 24%,rgba(4,6,9,0) 46%)}
+.tc .rim{inset:0;--n:0 0 #0000;--s:0 0 #0000;--w:0 0 #0000;--e:0 0 #0000;box-shadow:var(--n),var(--s),var(--w),var(--e)}
+.tc .rim.n{--n:inset 0 9px 7px -4px rgba(3,6,10,.8)} .tc .rim.s{--s:inset 0 -5px 5px -3px rgba(3,6,10,.5)} .tc .rim.w{--w:inset 6px 0 6px -3px rgba(3,6,10,.6)} .tc .rim.e{--e:inset -6px 0 6px -3px rgba(3,6,10,.6)}
+.tc .gb{right:2px;bottom:2px;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:rgba(12,15,20,.85);border:1px solid var(--brass-dim);color:var(--brass-hi);font:700 9.5px/1 var(--label)}
+.tc .gb .ic{width:9px;height:9px;stroke-width:2.6}
+.tc .gb.n2{color:#CDE2F1;border-color:#5B7A91}
+.tc .gl{left:50%;top:1px;transform:translateX(-50%);padding:0 4px;border-radius:3px;background:rgba(12,15,20,.82);color:var(--brass-hi);font:700 8.5px/12px var(--label);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.tile[data-g="wall"],.tile[data-g="deep"]{cursor:default}
+.tile[data-g="wall"]{--wt:#23272E;--wf:#7C828C;background-color:var(--wt);background-image:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),inset 0 2px 0 rgba(255,255,255,.1)}
+.tile[data-g="wall"]::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;background-color:var(--wf);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 12' preserveAspectRatio='none'%3E%3Crect width='40' height='12' fill='none'/%3E%3Cpath d='M0 6h40M10 0v6M30 0v6M20 6v6M0 6' stroke='%23000' stroke-opacity='.38' stroke-width='1'/%3E%3C/svg%3E");background-size:100% 100%;box-shadow:inset 0 2px 0 rgba(255,255,255,.28),inset 0 -2px 0 rgba(0,0,0,.35)}
+.tile[data-g="wall"][data-s]::before{display:none}
+/* deep ground runs together: no grid between two tiles of it */
+.tile[data-g="deep"]{box-shadow:0 0 0 1px var(--dc,var(--water))}
+.tile.ask{box-shadow:inset 0 0 0 2px var(--ink)!important}
 /* The campaign's own look: the layer over the board, the objective strip, and the grounds the story is set on. Loaded after style.css. */
 #game[data-cp]{min-height:640px}
 .cp{display:none}
@@ -718,6 +739,20 @@ ol.prompts.ranked{list-style:none;padding:0;margin:0}
 .kind{font-family:var(--label);font-size:.7rem;letter-spacing:.06em;border:1px solid var(--rule);border-radius:3px;padding:0 6px;color:var(--ink)}
 .kind.k-who{border-color:var(--t-blade);color:var(--t-blade)} .kind.k-tok{border-color:var(--t-foot);color:var(--t-foot)} .kind.k-card{border-color:var(--t-breath);color:var(--t-breath)}
 .prompt .why{color:var(--brass-hi)}
+/* ---- each place's ground, drawn so its kind is plain (the kinds themselves are in style.css: ground you can read) ---- */
+#game[data-th="court"] .tile[data-g="wall"],#game[data-th="tower"] .tile[data-g="wall"]{--wt:#24282F;--wf:#8A9099;background-color:var(--wt);background-image:none}
+#game[data-th="under"] .tile[data-g="wall"]{--wt:#0F1114;--wf:#4E545E;background-color:var(--wt);background-image:none}
+#game[data-th="hall"] .tile[data-g="wall"]{--wf:#3A2C1D;background-color:#8D9692;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Crect width='40' height='40' fill='%234A3A28'/%3E%3Crect x='3' y='3' width='34' height='34' rx='2' fill='%238D9692'/%3E%3Crect x='6' y='5' width='28' height='9' rx='3' fill='%23E4DDCB'/%3E%3Cpath d='M3 17h34' stroke='%236E7773' stroke-width='1.4'/%3E%3Cpath d='M3 24h34M3 31h34' stroke='%237C8581' stroke-width='.8' opacity='.7'/%3E%3C/svg%3E");background-size:100% 100%;box-shadow:inset 0 2px 0 rgba(255,255,255,.18)}
+#game[data-th="hall"] .tile[data-g="wall"]::before{height:18%}
+#game[data-th="court"] .tile[data-g="door"],#game[data-th="tower"] .tile[data-g="door"]{background-color:#5B6069;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Crect width='40' height='40' fill='%235B6069'/%3E%3Cpath d='M0 13h40M0 27h40M13 0v13M27 13v14M13 27v13' stroke='%233B3F47' stroke-width='1'/%3E%3Cpath d='M8 40V18a12 12 0 0 1 24 0v22z' fill='%236A4A28' stroke='%2323180C' stroke-width='2'/%3E%3Cpath d='M16 9v31M24 9v31' stroke='%233F2A14' stroke-width='1.2'/%3E%3Cpath d='M8 22h24M8 33h24' stroke='%232B2B2B' stroke-width='1.6'/%3E%3Ccircle cx='27.500' cy='27.500' r='2' fill='none' stroke='%23D8C389' stroke-width='1.4'/%3E%3C/svg%3E");background-size:100% 100%}
+#game[data-th="court"] .tile.f[data-g="door"]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Crect width='40' height='40' fill='%235B6069'/%3E%3Cpath d='M0 13h40M0 27h40M13 0v13M27 13v14M13 27v13' stroke='%233B3F47' stroke-width='1'/%3E%3Cpath d='M8 40V18a12 12 0 0 1 24 0v22z' fill='%2307090C' stroke='%2323180C' stroke-width='2'/%3E%3Cpath d='M8 40V18a12 12 0 0 1 7-10.900V40z' fill='%237A5630' stroke='%2323180C' stroke-width='1.4'/%3E%3Cpath d='M11.500 12v28' stroke='%233F2A14' stroke-width='1'/%3E%3Cpath d='M19 9.500v9M23 8.300v10.500M27 9.500v9' stroke='%238D929B' stroke-width='1.3'/%3E%3Cpath d='M16 19h15' stroke='%238D929B' stroke-width='1.3'/%3E%3C/svg%3E")}
+#game[data-th="court"] .tile.d{background-color:#737882;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Crect width='40' height='40' fill='%23737882'/%3E%3Cpath d='M0 10h40M0 20h40M0 30h40' stroke='%232F3339' stroke-width='2.4'/%3E%3Cpath d='M0 12h40M0 22h40M0 32h40M0 1h40' stroke='%23A9AEB8' stroke-width='1' opacity='.55'/%3E%3C/svg%3E");background-size:100% 100%}
+#game[data-th="court"] .tile.w{background-color:#5B6068;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Cellipse cx='20' cy='33' rx='17' ry='3.500' fill='%23000' opacity='.3'/%3E%3Cpath d='M3 32c1-8 7-13 13-11 3-6 12-7 16-1 3 1 5 6 5 12z' fill='%23DDE4EC'/%3E%3Cpath d='M3 32c1-8 7-13 13-11 3-6 12-7 16-1' fill='none' stroke='%23FFFFFF' stroke-width='1.600'/%3E%3Cpath d='M12 27c2-2 5-2 7-1M24 24c2-1 4-1 6 0' stroke='%23B4BECB' stroke-width='1.100' fill='none'/%3E%3C/svg%3E");background-size:100% 100%}
+#game[data-th="yard"] .tile.w{background-color:#4B4336;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Cpath d='M4 36l5-3M12 37l6-2M26 37l7-3M31 31l5-2' stroke='%23C8A64B' stroke-width='1.2' stroke-linecap='round' opacity='.75'/%3E%3Crect x='16' y='7' width='21' height='15' rx='2.500' fill='%23B8963F' stroke='%236E561F' stroke-width='1.3'/%3E%3Cpath d='M23 7v15M30 7v15' stroke='%236E561F' stroke-width='1.3'/%3E%3Cpath d='M18 11h17M18 15h17M18 19h17' stroke='%238E7430' stroke-width='.7' opacity='.7'/%3E%3Crect x='3' y='15' width='23' height='16' rx='2.500' fill='%23D2B157' stroke='%236E561F' stroke-width='1.3'/%3E%3Cpath d='M11 15v16M19 15v16' stroke='%236E561F' stroke-width='1.3'/%3E%3Cpath d='M5 19h19M5 23h19M5 27h19' stroke='%239A7E36' stroke-width='.7' opacity='.7'/%3E%3C/svg%3E");background-size:100% 100%}
+#game[data-th="road"] .tile.w{background-color:var(--grass);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' preserveAspectRatio='none'%3E%3Cpath d='M0 20h40v4H0z' fill='%23000' opacity='.32'/%3E%3Crect x='0' y='6' width='11' height='7' rx='2' fill='%238E8F86'/%3E%3Crect x='12' y='6' width='9' height='7' rx='2' fill='%237B7C73'/%3E%3Crect x='22' y='6' width='12' height='7' rx='2' fill='%2397988F'/%3E%3Crect x='35' y='6' width='5' height='7' rx='2' fill='%2384857C'/%3E%3Crect x='0' y='14' width='6' height='7' rx='2' fill='%237B7C73'/%3E%3Crect x='7' y='14' width='12' height='7' rx='2' fill='%23939489'/%3E%3Crect x='20' y='14' width='9' height='7' rx='2' fill='%2380817A'/%3E%3Crect x='30' y='14' width='10' height='7' rx='2' fill='%238C8D84'/%3E%3Cpath d='M0 6.500h40' stroke='%23C4C5BB' stroke-width='1' opacity='.6'/%3E%3C/svg%3E");background-size:100% 100%}
+
+#game[data-th="hall"] .tile[data-g="wall"]::before{background-image:none}
+#game[data-th="steps"] .tile[data-g="deep"]{--dc:#9AA6B3;background-color:#9AA6B3;background-image:radial-gradient(ellipse at 30% 35%,rgba(255,255,255,.75) 0 22%,transparent 46%),radial-gradient(ellipse at 72% 68%,rgba(255,255,255,.6) 0 20%,transparent 44%);background-size:100% 100%}
 /* ---- the ground behind a clash, by the mission it is fought in (the game's own are the three grounds of a run) ---- */
 #game[data-th="hall"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232E3138'/%3E%3Cstop offset='1' stop-color='%233A3D45'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2344474D'/%3E%3Cstop offset='1' stop-color='%232B2D32'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%23F4C56A' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23F4C56A' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg fill='%2314161B'%3E%3Cpath d='M118 116V58q0-26 26-26t26 26v58z'/%3E%3Cpath d='M190 116V58q0-26 26-26t26 26v58z'/%3E%3C/g%3E%3Cg fill='%23F4C56A'%3E%3Cpath d='M180 70c2 4 4 6 4 10a4 4 0 01-8 0c0-4 2-6 4-10z'/%3E%3C/g%3E%3Crect x='178' y='84' width='4' height='14' fill='%23C9B38A'/%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}
 #game[data-th="under"] .stage{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='w' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231E2430'/%3E%3Cstop offset='1' stop-color='%232A3242'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232F3540'/%3E%3Cstop offset='1' stop-color='%231B1F27'/%3E%3C/linearGradient%3E%3CradialGradient id='c' cx='.5' cy='.42' r='.5'%3E%3Cstop offset='0' stop-color='%238BB2D3' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%238BB2D3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='360' height='116' fill='url%28%23w%29'/%3E%3Cg fill='none' stroke='%230E1014' stroke-opacity='.35' stroke-width='1.5'%3E%3Cpath d='M0 30h360M0 60h360M0 90h360M40 0v30M130 0v30M220 0v30M310 0v30M85 30v30M175 30v30M265 30v30M40 60v30M130 60v30M220 60v30M310 60v30M85 90v26M175 90v26M265 90v26'/%3E%3C/g%3E%3Cg opacity='.5'%3E%3Cpath d='M96 20h168v70H96z' fill='%233A4A63'/%3E%3Cpath d='M96 20h168v70H96z' fill='none' stroke='%238A7044' stroke-width='2'/%3E%3Ccircle cx='150' cy='52' r='12' fill='%237B5A8A'/%3E%3Cpath d='M190 78l14-34 14 34z' fill='%238A7044'/%3E%3Cpath d='M228 40h20v38h-20z' fill='%234E6B58'/%3E%3C/g%3E%3Crect width='360' height='190' fill='url%28%23c%29'/%3E%3Crect y='116' width='360' height='74' fill='url%28%23f%29'/%3E%3Cg stroke='%230E1014' stroke-opacity='.4' stroke-width='1.5' fill='none'%3E%3Cpath d='M0 134h360M0 158h360M150 116l-30 74M210 116l30 74M90 116l-80 74M270 116l80 74M180 116v74'/%3E%3C/g%3E%3C/svg%3E")}
@@ -988,6 +1023,13 @@ function at(G,x,y){for(var i=0;i<G.u.length;i++){var u=G.u[i];if(u.hp>0&&u.x===x
 function ter(G,x,y){return G.map.rows[y].charAt(x)}
 function ok(G,x,y){return x>=0&&y>=0&&x<W&&y<H&&ter(G,x,y)!=='~'}
 function cost(G,x,y){var c=ter(G,x,y);return c==='w'||c==='f'?2:1}
+/* What a tile is, for the eye and in words. Its kind decides how it is drawn: wall (stands up: no way through), deep (falls away:
+   no way through), cover, slow, door, road, open. A place may name its own (the campaign does) and caption a tile (labels). */
+var COVER_T='Cover: two steps to enter. One of yours here takes '+T.woodCover+' less from a blow on their turn; a foe here starts a clash with '+T.woodBlock+' block.';
+function ground(G,x,y){var c=ter(G,x,y);
+  return c==='w'?{k:'cover',n:'Wood',t:COVER_T}:c==='~'?{k:'deep',n:'Deep water',t:'No way through.'}:c==='f'?{k:'slow',n:'Ford',t:'Slow going: two steps to enter.'}:
+    c==='b'?{k:'road',n:'Bridge',t:'Open ground: the way over the water.'}:c==='d'?{k:'road',n:'Road',t:'Open ground.'}:{k:'open',n:'Open ground',t:'One step to enter.'}}
+function labels(G){return []}
 function dist(a,b){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y)}
 function inRange(a,d){var k=dist(a,d);return k>=1&&k<=a.rng}
 function tri(a,d){return BEAT[a.t]===d.t?1:(BEAT[d.t]===a.t?-1:0)}
@@ -1354,7 +1396,7 @@ function cardText(id,K){
 }
 
 root.LH={T:T,SHEET:SHEET,W:W,H:H,MAPS:MAPS,FOES:FOES,TREE:TREE,BEAT:BEAT,C:C,POOL:POOL,STANCE:STANCE,BASE_DECK:BASE_DECK,HAND_CAP:HAND_CAP,MAX_HP:MAX_HP,HELD_MAX:HELD_MAX,MIN_DECK:MIN_DECK,
-  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,path:path,fallBack:fallBack,fellBack:fellBack,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
+  newRun:newRun,nm:nm,byId:byId,at:at,ter:ter,ok:ok,cost:cost,ground:ground,labels:labels,COVER_T:COVER_T,dist:dist,inRange:inRange,tri:tri,canAct:canAct,reach:reach,path:path,fallBack:fallBack,fellBack:fellBack,dangerSet:dangerSet,foesUp:foesUp,matesUp:matesUp,
   move:move,canUnmove:canUnmove,unmove:unmove,hold:hold,canEngage:canEngage,tendTargets:tendTargets,tend:tend,targets:targets,preview:preview,engage:engage,hitList:hitList,cardDmg:cardDmg,playable:playable,play:play,redraw:redraw,intent:intent,nextIntent:nextIntent,ansText:ansText,
   endHand:endHand,pressOn:pressOn,leave:leave,closeClash:closeClash,endTurn:endTurn,enemyStep:enemyStep,rallied:rallied,enraged:enraged,holding:holding,wounds:wounds,
   inCamp:inCamp,campBuy:campBuy,campMend:campMend,campRemove:campRemove,campHone:campHone,nextBattle:nextBattle,renown:renown,effects:effects,clashEffects:clashEffects,cardText:cardText};
@@ -1368,7 +1410,7 @@ root.LH={T:T,SHEET:SHEET,W:W,H:H,MAPS:MAPS,FOES:FOES,TREE:TREE,BEAT:BEAT,C:C,POO
 (function(root,LH){
 'use strict';
 var C=LH.C,FOES=LH.FOES,O={},MS={},ORDER=[],CUR=null;
-['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable','nextBattle'].forEach(function(k){O[k]=LH[k]});
+['newRun','move','unmove','hold','tend','engage','play','redraw','endHand','pressOn','leave','closeClash','endTurn','enemyStep','nm','preview','effects','clashEffects','cardText','ansText','playable','nextBattle','ground','labels'].forEach(function(k){O[k]=LH[k]});
 
 /* ---------- cards the campaign adds. Arts carry the rank the page had given them by that chapter. ---------- */
 var ROM=['','I','II','III','IV','V'];
@@ -1645,6 +1687,24 @@ LH.cardText=function(id,K){if(CT[id])return CT[id];var c=C[id],cb=c&&!c.combo&&C
 LH.playable=function(G,i){return say(G,O.playable(G,i))};
 LH.preview=function(G,a,d){var p=O.preview(G,a,d);if(G.ms){p.txt=say(G,p.txt);p.chips=p.chips.map(function(c){return [say(G,c[0]),c[1]]})}return p};
 function sayFx(G,l){return l.map(function(e){e.label=say(G,e.label);e.text=say(G,e.text);return e})}
+/* ---------- the ground of each place: what each letter of its map is there. [kind, name, what it does (the engine's words if none)] ---------- */
+var NO='No way through.',SLOW='Slow going: two steps to enter.';
+var PLACE={
+  ford:{'~':['deep','The Wend in flood',NO],f:['slow','The ford',SLOW],w:['cover','Trees'],d:['road','The road']},
+  hall:{'~':['wall','The cots',NO],'.':['open','The hall floor']},
+  court:{'~':['wall','The wall',NO],w:['cover','Drifted snow'],f:['door','The wicket','A door for one man stooping. One step.'],d:['road','The gatehouse stair','Where the wounded stand.'],b:['door','The tower door','The way up to the bell.'],'.':['open','The court']},
+  under:{'~':['wall','Rock',NO],'.':['open','The undercroft floor']},
+  tower:{'~':['wall','The tower wall',NO],d:['road','The stair'],b:['door','The door above','The way up to the bell.'],'.':['open','A landing']},
+  steps:{'~':['deep','The drop',NO+' The cliff falls away into cloud.'],d:['road','The Steps'],w:['cover','Against the cliff'],'.':['open','A landing']},
+  yard:{w:['cover','Hay'],d:['road','The road'],'.':['open','The yard']},
+  road:{w:['cover','The fold wall'],d:['road','The track']},
+  weir:{f:['slow','Ice',SLOW],d:['road','The keeper\'s stone','Firm footing in the middle of the ice.'],w:['cover','Trees']},
+  bridge:{'~':['deep','The river',NO],b:['road','The bridge','The only way over.'],d:['road','The road']}};
+LH.ground=function(G,x,y){var g=O.ground(G,x,y);if(!G.ms)return g;var M=MS[G.ms],p=(PLACE[M.map.theme]||{})[LH.ter(G,x,y)];
+  if(p){g={k:p[0],n:p[1],t:p[2]||(p[0]==='cover'?LH.COVER_T:g.t)}}
+  var lb=LH.labels(G).filter(function(l){return l[0]===x&&l[1]===y})[0];if(lb&&lb[3])g={k:g.k,n:lb[3],t:lb[4]||g.t};return g};
+/* a caption on a tile that has a name: [x, y, caption, its name in full, what it is] */
+LH.labels=function(G){if(!G.ms)return [];var M=MS[G.ms],l=typeof M.labels==='function'?M.labels(G,G.cs,api):(M.labels||[]);return (G.cs.top&&M.world)?[]:l};
 LH.effects=function(G,u){if(u.side===2)return [];var l=O.effects(G,u);return G.ms?sayFx(G,l):l};
 /* a mission's own state, shown where a hand is played: [side a|d, icon, label, what it means, tone, number] */
 LH.clashEffects=function(G){var f=O.clashEffects(G);if(G.ms){f.a=sayFx(G,f.a);f.d=sayFx(G,f.d);var M=MS[G.ms];
@@ -1805,6 +1865,7 @@ CP.add({id:'p0',book:'Prologue',ch:'The Three Heartbeats',n:'The Grace',place:'H
     more:[{id:'V',from:'W',n:'Aldric',img:'aldric',t:'blade',hp:40,still:1,deck:null,lend:'c_wide',at:[2,6]}]},
   foes:[{k:'wend',at:[3,3]}],
   marks:function(G,S){return S.grace?[[3,3,'go']]:[[3,5,'go']]},
+  labels:[[3,5,'Stone','The Ninth\'s field-stone','Kneel here, and the Crown\'s hand is on his back.'],[3,3,'Ford']],
   on:{
     start:function(G,S,a){a.hint(G,'Tap Darrow. Then tap the field-stone, one step ahead.')},
     moved:function(G,S,a,u){if(u.id==='D'&&!S.grace&&a.on(u,3,5))grace(G,S,a,true)},
@@ -1896,6 +1957,7 @@ CP.add({id:'c1',book:'Book I · The House of Menders',ch:'Chapter 1 · The Confe
       {id:'L',from:'W',n:'Lay Brother',img:'brother',t:'foot',hp:20,mov:2,rng:0,deck:null,lend:'c_bro',at:[3,2]}]},
   foes:[{k:'doorman',at:[3,0]},{k:'seeker',at:[1,1]},{k:'seeker',at:[4,2]}],
   marks:function(G,S){var m=STAIR.map(function(q){return [q[0],q[1],'keep']});if(!S.pull)m.push([5,6,'go']);return m},
+  labels:[[3,0,'Wicket'],[0,6,'Stair'],[1,6,'Stair'],[5,6,'Tower']],
   on:{
     start:function(G,S,a){var sets=[[[1,1],[4,2]],[[0,1],[5,2]],[[1,1],[5,1]],[[0,1],[4,3]],[[1,1],[4,3]]],pick=sets[Math.abs(G.seed|0)%sets.length],i=0;
       G.u.forEach(function(u){if(u.type==='seeker'&&u.hp>0&&pick[i]){var q=pick[i++];if(!LH.at(G,q[0],q[1])||LH.at(G,q[0],q[1])===u){u.x=q[0];u.y=q[1]}}});
@@ -1983,6 +2045,7 @@ CP.add({id:'c3',book:'Book I · The House of Menders',ch:'Chapter 3 · The Under
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis1',mov:2,tend:5,tends:2,lend:'c_now',at:[2,6]}]},
   foes:[{k:'sliver',at:[2,1]}],
   marks:function(G,S){return S.clashes?[]:[[2,2,'go']]},
+  labels:[[2,2,'Alcove','The alcove','Where the black glass is set.']],
   on:{
     start:function(G,S,a){a.hint(G,'Three moves to the alcove. Bring Wren\'s lamp and the Mender with him: whoever stands beside him lends a card.')},
     engage:function(G,S,a){a.hint(G,'Pulling does nothing. Each round the cold climbs higher. Press on to hold; let go when he must.')},
@@ -2040,6 +2103,7 @@ CP.add({id:'c4b',book:'Book I · The House of Menders',ch:'Chapter 4 · Old Merc
     more:[{id:'P',from:'W',n:'Sister Pell',img:'pell',t:'eye',hp:14,still:1,deck:null,at:[1,2]}]},
   foes:[{k:'bigman',at:[3,4]},{k:'guest',at:[3,5]},{k:'guest',at:[3,6]}],
   marks:function(){return [[2,0,'go']]},
+  labels:[[2,0,'Bell']],
   on:{
     start:function(G,S,a){a.hint(G,'Tap a chair, then the man in front of it. The Bind halves his answer; a blow he does not land is a rung she climbs.')},
     struck:function(G,S,a,e){if(e.dmg>0)S.hit=1},
@@ -2162,6 +2226,7 @@ CP.add({id:'c6',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',still:1,at:[5,6]}]},
   foes:[{k:'ysra',at:[2,0]}],
   marks:function(){return [[2,3,'keep']]},
+  labels:[[2,3,'Stone']],
   on:{
     start:function(G,S,a){a.hint(G,'He does not have to chase her. Hold here for guard, and fight when she is beside him: the Seated Blade is for a man who has not moved.')},
     moved:function(G,S,a,u){if(u.id==='D'&&!a.on(u,2,3)){u.x=2;u.y=3;u.moved=false;u.from=null;S.stepped=1;a.log(G,'The old body says step, step and turn and you have her. He does not. "No. You come to the post."','good')}},
@@ -2197,6 +2262,7 @@ CP.add({id:'c6b',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir'
   rally:['The word','The word is given'],
   finds:[{at:[4,4],n:'His stick, on the ice',t:'Whoever reaches it sends it skating back to him.',pool:[{card:'c_bar'},{card:'c_bar'},{card:'c_stick'},{card:'c_still3'}]}],
   marks:function(){return [[2,3,'keep']]},
+  labels:[[2,3,'Stone']],
   on:{start:function(G,S,a){G.u[0].hp=40;a.hint(G,'The ice costs two steps. Maelis can reach him in one move, and Wren\'s stones carry two tiles. The first rider gives the word: while he sits his horse the others strike harder. One wears mail, and small blows glance off it.')}},
   goal:function(G,S,a){return !a.foes(G).length},
   win:{t:'The forms, such as they are',s:'Four riders go back the way they came, and one of them is leading her horse.'},
@@ -2409,11 +2475,11 @@ if(window.MutationObserver)new MutationObserver(decorate).observe(root,{childLis
 
 /* ---------- screens ---------- */
 root.innerHTML='<div class="scr map" id="scr-map"><div class="scr-top"><b id="m-name"></b><span class="num" id="m-top"></span></div>'+
-  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
+  '<div class="boardwrap"><div class="board" id="m-board"></div><div class="terr" id="m-terr"></div><div class="units" id="m-units"></div><div class="fxl" id="m-fx"></div></div><div class="scr" id="m-rest"></div></div>'+
   '<div class="scr camp" id="scr-camp" hidden></div><div class="scr clash" id="scr-clash" hidden></div>'+
   '<div class="foot"><button type="button" class="tgl" data-toggle="music"></button><button type="button" class="tgl" data-toggle="sound"></button></div><div class="banner" id="banner" hidden></div>';
 root.addEventListener('pointerdown',function(){if(!musStarted){musStarted=true;music()}},true);
-var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
+var $map=$('scr-map'),$mname=$('m-name'),$mtop=$('m-top'),$board=$('m-board'),$units=$('m-units'),$terr=$('m-terr'),$mfx=$('m-fx'),$rest=$('m-rest'),$camp=$('scr-camp'),$clash=$('scr-clash'),$banner=$('banner');
 var $stage,$me,$foe,$intent,$cfx,$vs,$tell,$hand,$choice,$tray,$piles,$ctop;
 function show(which){$map.hidden=which!=='map';$camp.hidden=which!=='camp';$clash.hidden=which!=='clash';music(which==='clash'?'clash':'map')}
 
@@ -2432,8 +2498,19 @@ function unitInfo(u){
 var boardKey='',unitEls={};
 function buildBoard(){
   var h='';
-  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y);h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'"></button>'}
-  $board.innerHTML=h;$units.innerHTML='';unitEls={};walkers={};
+  /* each tile carries its kind (data-g), so one look means one thing on every map: a wall stands up (a face on its south side
+     unless the wall goes on, and a shadow on the ground below it), deep ground falls away (a rim where it meets the land),
+     cover wears a small shield, slow ground a 2, and a tile with a name has it written on it */
+  var t='',kind=function(x,y){return x<0||y<0||x>=LH.W||y>=LH.H?'':LH.ground(G,x,y).k},lb={};
+  LH.labels(G).forEach(function(l){lb[l[0]+','+l[1]]=l[2]});
+  for(var y=0;y<LH.H;y++)for(var x=0;x<LH.W;x++){var c=LH.ter(G,x,y),g=kind(x,y),st='left:'+(100*x/LH.W)+'%;top:'+(100*y/LH.H)+'%',in1='';
+    h+='<button type="button" class="tile'+(c==='w'?' w':c==='~'?' r':c==='f'?' f':c==='d'?' d':c==='b'?' b':'')+'" data-x="'+x+'" data-y="'+y+'" data-t="'+c+'" data-g="'+g+'"'+(g==='wall'&&kind(x,y+1)==='wall'?' data-s="1"':'')+'></button>';
+    if(g==='deep'){var rim=(kind(x,y-1)&&kind(x,y-1)!=='deep'?' n':'')+(kind(x,y+1)&&kind(x,y+1)!=='deep'?' s':'')+(kind(x-1,y)&&kind(x-1,y)!=='deep'?' w':'')+(kind(x+1,y)&&kind(x+1,y)!=='deep'?' e':'');if(rim)in1+='<i class="rim'+rim+'"></i>'}
+    else if(g!=='wall'){if(kind(x,y-1)==='wall')in1+='<i class="sh"></i>';
+      if(g==='cover')in1+='<i class="gb">'+svg('shield')+'</i>';else if(g==='slow'&&kind(x-1,y)!=='slow'&&kind(x,y-1)!=='slow')in1+='<i class="gb n2">2</i>'}   /* slow ground says so once, at the corner of each stretch */
+    if(lb[x+','+y])in1+='<i class="gl">'+lb[x+','+y]+'</i>';
+    if(in1)t+='<div class="tc" style="'+st+'">'+in1+'</div>'}
+  $board.innerHTML=h;$terr.innerHTML=t;$units.innerHTML='';unitEls={};walkers={};
 }
 /* a move is walked, tile by tile; the rules have already moved him, this only shows it */
 var walkers={};
@@ -2468,7 +2545,8 @@ function renderMap(acting){
   var tiles=$board.children;
   for(var i=0;i<tiles.length;i++){var t=tiles[i],x=+t.getAttribute('data-x'),y=+t.getAttribute('data-y'),k=x+','+y,u=LH.at(G,x,y),c=t.getAttribute('data-t');
     t.classList.toggle('dz',!!z[k]);t.classList.toggle('reach',!u&&r[k]!==undefined);t.classList.toggle('back',!u&&k===fbk);t.classList.toggle('hit',!!u&&tg.indexOf(u)>=0);t.classList.toggle('mend',!!u&&tt.indexOf(u)>=0);
-    t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:GROUND[c])}
+    t.classList.toggle('ask',!!UI.tile&&UI.tile[0]===x&&UI.tile[1]===y);
+    t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:LH.ground(G,x,y).n)}
   syncUnits(acting);
   h='<div class="legend tri"><span class="trio" title="Footing beats Blade, Blade beats Cast, Cast beats Footing"><span class="tg foot">'+svg('shield')+'Footing</span>'+svg('arrowR')+'<span class="tg blade">'+svg('sword')+'Blade</span>'+svg('arrowR')+'<span class="tg cast">'+svg('cast')+'Cast</span>'+svg('arrowR')+'<span class="tg foot">'+svg('shield')+'</span></span><button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
   if(G.over&&!G.over.win&&(UI.ended||!busy)){
@@ -2482,9 +2560,9 @@ function renderMap(acting){
       (p.lend.length?'<div class="lenders">'+p.lend.map(function(o){return '<span><img src="'+A+o.img+'.webp" alt="">'+o.n+'</span>'}).join('')+'</div>':'')+chipRow(p.chips)+'</div>'+
       '<div class="acts"><button class="act primary" type="button" data-a="go"><b>Engage</b><small>Play the hand</small></button><button class="act" type="button" data-a="no"><b>Hold</b><small>Think again</small></button></div>';
   }else{
-    var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
-    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);
-    h+=logBox(G.log)+'<div class="panel info">'+info+'</div>';
+    var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike. Tap the ground to see what it is.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
+    if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);else if(UI.tile){var gq=LH.ground(G,UI.tile[0],UI.tile[1]);info='<span><b>'+gq.n+'.</b> '+gq.t+'</span>'}
+    h+=UI.tile&&!s&&!UI.look?'<div class="panel info">'+info+'</div>'+logBox(G.log):logBox(G.log)+'<div class="panel info">'+info+'</div>';   /* a tile he asked about is answered first, where a short screen still shows it */
     h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
   }
   $rest.innerHTML=h;
@@ -2495,17 +2573,18 @@ function tileXY(x,y){return [(x+.5)/LH.W*100,(y+.45)/LH.H*100]}
 function flashTile(x,y){if(FAST)return;var u=LH.at(G,x,y);if(u&&unitEls[u.id])pulse(unitEls[u.id],'flash')}
 function tapTile(x,y){
   if(busy||G.over||G.clash||G.phase!=='player')return;
-  var u=LH.at(G,x,y),s=UI.sel;UI.fx=null;
+  var u=LH.at(G,x,y),s=UI.sel,was=UI.tile;UI.fx=null;UI.tile=null;
   if(UI.fc){UI.fc=null}
   if(u&&u.side===0&&s&&s.tend&&LH.tendTargets(G,s).indexOf(u)>=0){var r=LH.tend(G,s,u),p=tileXY(u.x,u.y);UI.sel=null;UI.look=null;renderMap();floatAt($mfx,p[0],p[1],'+'+r.heal,'heal');if(r.wound)floatAt($mfx,p[0],p[1]-7,'Wound set aside','heal');sfx('heal');return}
   if(u&&u.side===0){UI.look=null;UI.sel=LH.canAct(u)?(s===u?null:u):null;if(!UI.sel&&!LH.canAct(u))UI.look=u;sfx('unit_select');return renderMap()}
   if(u){if(s&&LH.targets(G,s).indexOf(u)>=0){UI.fc={a:s,d:u};UI.look=null;sfx('forecast_open')}else{UI.look=UI.look===u?null:u;UI.sel=null;sfx('ui_tap')}return renderMap()}
   var pth=s?LH.path(G,s,x,y):[];
-  if(s&&LH.move(G,s,x,y)){sfx('unit_move');walk(s,pth);if(!LH.canAct(s))UI.sel=null}else{UI.sel=null;UI.look=null}
+  if(s&&LH.move(G,s,x,y)){sfx('unit_move');walk(s,pth);if(!LH.canAct(s))UI.sel=null}
+  else{UI.sel=null;UI.look=null;if(!was||was[0]!==x||was[1]!==y){UI.tile=[x,y];sfx('ui_tap')}}   /* bare ground: say what it is; a second tap puts it away */
   renderMap();
 }
 async function runEnemy(){
-  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=null;UI.fx=null;sfx('enemy_turn');renderMap();await turnBanner('Their turn','foe');
+  if(busy||!LH.endTurn(G))return;lock(true);UI.sel=UI.fc=UI.look=UI.tile=null;UI.fx=null;sfx('enemy_turn');renderMap();await turnBanner('Their turn','foe');
   var ev;
   while((ev=LH.enemyStep(G))){
     if(ev.k==='turn'){renderMap();continue}
@@ -2688,7 +2767,7 @@ async function showFx(fx){
 async function startClash(a,d){
   if(busy)return;lock(true);
   if(!LH.engage(G,a,d)){lock(false);return renderMap()}
-  UI.sel=UI.fc=UI.look=null;UI.card=-1;UI.fx=null;sfx('clash_start');
+  UI.sel=UI.fc=UI.look=UI.tile=null;UI.card=-1;UI.fx=null;sfx('clash_start');
   $banner.className='banner vsb';$banner.innerHTML='<span class="duo"><span class="tok">'+face(a)+'</span>'+svg('swords')+'<span class="tok foe'+(has(AS.tok,d.key)?' has':'')+'">'+face(d)+'</span></span><b>'+a.n+'</b><i>ON</i><b>'+LH.nm(d)+'</b>';$banner.hidden=false;
   await anim($banner,[{opacity:0,transform:'scale(1.25)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:1,transform:'scale(1)',offset:.8},{opacity:0,transform:'scale(.97)'}],560);
   buildClash();show('clash');$banner.hidden=true;paintAll(true);
@@ -2780,7 +2859,7 @@ root.addEventListener('click',function(e){
     else if(a==='mend'){if(LH.campMend(G))sfx('heal')}
     else if(a==='leavemode'){UI.leave=!UI.leave;UI.buy=null;sfx('ui_tap')}
     else if(a==='hone-strike'||a==='hone-guard'){if(LH.campHone(G,a.slice(5)))sfx('camp_hone')}
-    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=null;UI.fx=null;UI.ended=false;sfx('your_turn');curtain('march',G.map.name,'Battle '+G.run.n+' of 3',function(){show('map');renderMap()});return}}
+    else if(a==='march'){if(LH.nextBattle(G)){UI.sel=UI.fc=UI.look=UI.tile=null;UI.fx=null;UI.ended=false;sfx('your_turn');curtain('march',G.map.name,'Battle '+G.run.n+' of 3',function(){show('map');renderMap()});return}}
     renderCamp();return spent(had-G.run.spoils);
   }
   if(a==='go'&&UI.fc)return startClash(UI.fc.a,UI.fc.d);
