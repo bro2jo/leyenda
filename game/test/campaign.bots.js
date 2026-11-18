@@ -13,11 +13,12 @@ function go(G,u,tx,ty,adj){
 /* play a hand: block what is coming if it would hurt, then hit, then whatever is free */
 function hand(G,opt){
   opt=opt||{};if(MODE.stat)opt.stat=MODE.stat;if(MODE.rand)opt.rand=MODE.rand;var K=G.clash,guard=0;
+  if(MODE.cards&&K)K.hand.forEach(function(id){tally(K.a,id,'seen')});
   while(K&&K.phase==='play'&&guard++<40){
     var it=LH.intent(G),inc=it.none?0:it.d*it.n,best=-1,bv=-1;
     if(opt.stat||opt.rand){var can=[];K.hand.forEach(function(id,i){if(!LH.playable(G,i))can.push(i)});if(opt.stat){opt.stat.decisions++;opt.stat.options+=can.length}
       if(opt.rand){if(!can.length||opt.rand()<.2)break;LH.play(G,can[Math.floor(opt.rand()*can.length)]);if(opt.stat)opt.stat.played++;K=G.clash;if(!K||K.phase!=='play')break;continue}}
-    K.hand.forEach(function(id,i){if(LH.playable(G,i))return;var c=LH.C[id],v=0;
+    K.hand.forEach(function(id,i){if(LH.playable(G,i))return;var c=LH.C[CP.eff?CP.eff(K,id):id],v=0;
       if(id==='turn')v=100;
       if(c.en||c.draw)v=Math.max(v,50);
       if(c.blk&&inc>K.block)v=Math.max(v,30+Math.min(c.blk,inc-K.block)+(c.halve?3:0));
@@ -26,7 +27,7 @@ function hand(G,opt){
       if(c.heal&&K.a.hp<K.a.max-c.heal)v=Math.max(v,25);
       if(c.open||c.mark||c.pin)v=Math.max(v,10);
       if(v>bv){bv=v;best=i}});
-    if(best<0||bv<=0)break;if(opt.stat)opt.stat.played++;LH.play(G,best);K=G.clash;if(!K||K.phase!=='play')break;
+    if(best<0||bv<=0)break;if(opt.stat)opt.stat.played++;if(MODE.cards){tally(K.a,K.hand[best],'played');if(CP.eff&&CP.eff(K,K.hand[best])!==K.hand[best])tally(K.a,K.hand[best],'combo')}LH.play(G,best);K=G.clash;if(!K||K.phase!=='play')break;
   }
   K=G.clash;if(K&&K.phase==='play')LH.endHand(G);
   K=G.clash;guard=0;
@@ -67,5 +68,6 @@ function run(id,seed,plan){
   while(!G.over&&n++<40){(plan||PLAN[id])(G);endTurn(G)}
   return G;
 }
-var MODE={stat:null,rand:null,luck:null};
+var MODE={stat:null,rand:null,luck:null,cards:null};
+function tally(u,id,k){var c=LH.C[id],b=(c&&c.base)||id,key=(u.id.length>1?'?':u.id)+' '+(c?c.n:id)+(c&&c.lent?' (lent)':''),t=MODE.cards[key]||(MODE.cards[key]={seen:0,played:0,combo:0,id:b});t[k]++}
 module.exports={worth:worth,MODE:MODE,LH:LH,CP:CP,U:U,bfs:bfs,go:go,hand:hand,fight:fight,tendD:tendD,endTurn:endTurn,nearestFoe:nearestFoe,battle:battle,PLAN:PLAN,run:run};
