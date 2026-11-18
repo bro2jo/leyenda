@@ -148,10 +148,13 @@ function start(id,opts){
 var PRO={she:[[/\bHe\b/g,'She'],[/\bhe\b/g,'she'],[/\bHis\b/g,'Her'],[/\bhis\b/g,'her'],[/\bhim\b/g,'her']],
   it:[[/\bHe\b/g,'It'],[/\bhe\b/g,'it'],[/\bHis\b/g,'Its'],[/\bhis\b/g,'its'],[/\bhim\b/g,'it'],[/ · strikes for \d+ on its turn\./g,'.']],
   they:[[/\bHe is\b/g,'They are'],[/\bHe has\b/g,'They have'],[/\bHe (strikes|braces|cannot|will)\b/g,'They $1'],[/\bHe\b/g,'They'],[/\bhe\b/g,'they'],[/\bHis\b/g,'Their'],[/\bhis\b/g,'their'],[/\bhim\b/g,'them']]};
+/* cover is whatever the place has: the engine calls it the wood */
+var COVER={yard:'in the hay',road:'behind the wall',court:'in the drifted snow',hall:'behind a cot',under:'behind a pillar',tower:'on the stair',steps:'against the cliff'};
 var RULES={};
 function rules(M){
   if(RULES[M.id])return RULES[M.id];var r=[];
   Object.keys(FD).forEach(function(k){var d=FD[k];if(d.n&&(d.proper||d.bare||/^The /.test(d.n))){var nm=d.n.replace(/^The /,'');r.push([new RegExp('\\b[Tt]he (The )?'+nm.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','g'),function(m){return (d.proper||d.bare?'':(m.charAt(0)==='T'?'The ':'the '))+nm}])}});
+  var cv=COVER[M.map.theme];if(cv)r.push([/\b([Ii])n the wood\b/g,function(m,i){return (i==='I'?cv.charAt(0).toUpperCase():cv.charAt(0))+cv.slice(1)}]);
   (PRO[M.pro]||[]).forEach(function(p){r.push(p)});
   (M.say||[]).forEach(function(p){r.push(p)});
   r.push([/A man down\. /g,''],[/ is down\./g,' '+(M.down||'gives way')+'.'],[/They hold where they stand\./g,M.idle||''],[/The run ends here\.?/g,''],[/Three crossings, three captains/g,'']);

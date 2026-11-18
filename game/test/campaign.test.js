@@ -80,4 +80,6 @@ CP.ORDER.forEach(function(id){
   /* doing nothing must not win, where there is a way to lose */
   if(M.lose){var I=run(id,5,function(){});ok(!I.over||I.cs.result!=='won'||id==='c4b'||id==='c7','standing still does not win: '+(I.cs.result||'still going'))}
 });
+/* someone a mission holds to his place has no move at all: not even the step back through a friend that the game allows */
+CP.ORDER.forEach(function(id){if(only&&only!==id)return;var G=CP.start(id,{seed:2});G.u.forEach(function(u){if(u.side===0&&u.hp>0&&!(u.mov>0))ok(Object.keys(LH.reach(G,u)).length===1,id+': '+u.n+' cannot move, and has nowhere to move to')})});
 console.log(fails?fails+' of '+checks+' checks failed':'all '+checks+' checks passed');process.exit(fails?1:0);

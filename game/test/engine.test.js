@@ -185,6 +185,7 @@ console.log('9d. falling back through a friend, and the steps of a move');
 { const G = fresh(); isolate(G, ['D', 'H', 'A']); const D = place(G, 'D', 0, 6); place(G, 'H', 1, 6); place(G, 'A', 0, 5); ok(!LH.fallBack(G, D) && LH.reach(G, D)['2,6'] === undefined, 'not sideways through a friend'); }
 { const G = fresh(); isolate(G, ['D', 'S']); const D = place(G, 'D', 2, 2); place(G, 'S', 2, 3); ok(!LH.fallBack(G, D) && LH.reach(G, D)['2,4'] === undefined, 'not through a foe'); }
 { const G = fresh(); isolate(G, ['D', 'H']); const D = place(G, 'D', 0, 1); place(G, 'H', 0, 2); ok(!LH.fallBack(G, D), 'not into deep water'); }
+{ const G = fresh(); isolate(G, ['D', 'H']); const D = place(G, 'D', 2, 3); place(G, 'H', 2, 4); D.mov = 0; ok(!LH.fallBack(G, D) && Object.keys(LH.reach(G, D)).length === 1 && !LH.move(G, D, 2, 5), 'a fighter who cannot move cannot fall back either'); }
 { const G = fresh(); isolate(G, ['D', 'H', 'S']); const D = place(G, 'D', 2, 3); place(G, 'H', 2, 4); place(G, 'S', 2, 5); ok(!LH.fallBack(G, D), 'not onto a tile someone stands on'); }
 { const G = fresh(); isolate(G, ['D', 'P', 'S']); place(G, 'D', 5, 6); const P = place(G, 'P', 2, 2); place(G, 'S', 2, 3); ok(!LH.fallBack(G, P) && LH.reach(G, P)['2,4'] === undefined, 'the foes do not fall back through each other'); }
 { let bad = 0, n = 0; [1, 2, 3].forEach(b => { const G = battle(b); G.u.forEach(u => { if (u.hp <= 0) return; const r = LH.reach(G, u); Object.keys(r).forEach(k => { const p = k.split(',').map(Number); if (p[0] === u.x && p[1] === u.y) return; n++;

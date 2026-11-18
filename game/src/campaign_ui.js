@@ -70,20 +70,24 @@ root.addEventListener('click',function(e){
   if(k[0]==='title')title();else if(k[0]==='list')list();else if(k[0]==='intro')intro(k[1]);else if(k[0]==='go')begin(k[1]);else if(k[0]==='end')end();
   else if(k[0]==='quit'){if(!X.busy)list()}
 });
-setInterval(function(){var G=X.G;if(scr==='play'&&G&&G.ms&&G.over&&!X.busy&&!shown){shown=true;setTimeout(outro,FAST?0:650)}},200);
 var FAST=!!window.LH_FAST;
+/* the mission is over: the telling comes up. Where the game draws its curtain across the screen, the telling is laid under it
+   once the curtain has closed, so the board is never seen bare between the two; with no curtain (animations off), it follows the board. */
+setInterval(function(){var G=X.G;if(scr==='play'&&G&&G.ms&&G.over&&!X.busy&&!shown){shown=true;setTimeout(outro,FAST?0:650)}},200);
+function underCurtain(){var G=X.G,bn=$('banner');if(scr==='play'&&G&&G.ms&&G.over&&!shown&&bn&&!bn.hidden&&/\bcur\b/.test(bn.className)){shown=true;setTimeout(outro,420)}}
 
 /* ---------- on the game's own screen: the objective, the marked tiles, and the words that fit this board ---------- */
 function objHTML(G){var h=G.cs.hint;return '<span class="cp-o"><b>'+esc(CP.objective(G))+'</b></span>'+(h?'<span class="cp-h">'+esc(h)+'</span>':'')}
 var pend=false;
 function sweep(){
-  pend=false;var G=X.G;if(!G||!G.ms||scr!=='play')return;
+  pend=false;var G=X.G;if(!G||!G.ms||scr!=='play')return;underCurtain();
   var top=$('m-top'),t=CP.top(G);if(top&&top.textContent!==t)top.textContent=t;
   var rest=$('m-rest'),map=$('scr-map');
   if(rest&&map&&!map.hidden){var o=rest.querySelector('.cp-obj'),h=objHTML(G);if(!o){o=document.createElement('div');o.className='cp-obj';rest.insertBefore(o,rest.firstChild)}if(o._h!==h){o.innerHTML=h;o._h=h}
     if(!rest.querySelector('.cp-quit')&&!G.over){var q=document.createElement('button');q.type='button';q.className='linkbtn cp-quit';q.setAttribute('data-cp','quit');q.textContent='Leave the mission';rest.appendChild(q)}}
   var clash=$('scr-clash');
-  if(clash&&!clash.hidden&&clash.children.length){var hh=clash.querySelector('.cp-hint'),tx=G.cs.hint||'';if(!hh){hh=document.createElement('div');hh.className='cp-hint';clash.insertBefore(hh,clash.children[1]||null)}if(hh.textContent!==tx)hh.textContent=tx;if(hh.hidden!==!tx)hh.hidden=!tx}
+  if(clash&&!clash.hidden&&clash.children.length){var hh=clash.querySelector('.cp-hint'),tx=G.cs.hint||'';if(!hh){hh=document.createElement('div');hh.className='cp-hint';clash.insertBefore(hh,clash.children[1]||null)}if(hh.textContent!==tx)hh.textContent=tx;if(hh.hidden!==!tx)hh.hidden=!tx;
+    var fg=clash.querySelector('#c-foe .fig');if(fg&&G.clash&&G.clash.d.ordeal&&!fg.classList.contains('ordeal'))fg.classList.add('ordeal')}
   var board=$('m-board'),marks={};CP.goals(G).forEach(function(m){marks[m[0]+','+m[1]]=m[2]});
   if(board)for(var i=0;i<board.children.length;i++){var tl=board.children[i],k=tl.getAttribute('data-x')+','+tl.getAttribute('data-y'),want=marks[k]||'';if((tl.getAttribute('data-mark')||'')!==want){if(want)tl.setAttribute('data-mark',want);else tl.removeAttribute('data-mark')}}
   /* the engine's sentences that reach the screen without passing through LH (the screen's own words) */

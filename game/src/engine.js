@@ -133,9 +133,10 @@ function live(G){return !G.over&&!G.clash&&G.phase==='player'}
 function foesUp(G){return G.u.filter(function(o){return o.side===1&&o.hp>0})}
 function matesUp(G){return G.u.filter(function(o){return o.side===0&&o.hp>0})}
 /* Falling back: one of the company with a friend right behind him can step through that friend to the open tile beyond.
-   Straight back only, one friend only, and it is the whole move: a way out of a corner, not a way round the line. */
+   Straight back only, one friend only, and it is the whole move: a way out of a corner, not a way round the line.
+   A fighter who cannot move at all (seated, held to his post) cannot fall back either. */
 function fallBack(G,u){
-  if(u.side!==0||!T.fallBack)return null;var f=at(G,u.x,u.y+1);
+  if(u.side!==0||!T.fallBack||!(u.mov>0))return null;var f=at(G,u.x,u.y+1);
   if(!f||f.side!==0||!ok(G,u.x,u.y+2)||at(G,u.x,u.y+2))return null;return [u.x,u.y+2];
 }
 /* Every tile a unit can end on, with what it costs and the tile it is entered from. */

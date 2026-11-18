@@ -327,7 +327,8 @@ code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em
 .log{border-left:2px solid var(--rule);padding-left:9px}
 .log:empty{border-left-color:transparent}
 .log div{opacity:.5} .log div:nth-last-child(2){opacity:.75} .log div:last-child{opacity:1}
-.scr-top>span{padding-right:2px;text-overflow:clip} .scr-top .spoil{overflow:visible;min-width:auto;color:var(--brass-hi);letter-spacing:0;font-family:var(--body)}
+.scr-top{flex-wrap:wrap;row-gap:2px}
+.scr-top>span{padding-right:2px;text-overflow:clip;margin-left:auto;max-width:100%} .scr-top .spoil{overflow:visible;min-width:auto;color:var(--brass-hi);letter-spacing:0;font-family:var(--body)}
 .spoil{gap:4px} .spoil .ic{width:13px;height:13px;color:var(--brass)}
 
 /* buttons: an icon, a name, a consequence */
