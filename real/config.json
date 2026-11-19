@@ -466,14 +466,13 @@
     {
       "date": "2026-11-19",
       "drop": [
-        "upper",
         "sport"
       ],
       "add": [
         "pt"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the walk-jog: PT 15, 2026-11-16 (pt_notes.md), his OK 11/16",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/16: cond stays, as the first walk-jog after the clinic (running goes on loaded days, never consecutive days)"
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the walk-jog: PT 15, 2026-11-16 (pt_notes.md), his OK 11/16; the abridged upper: the trainer, Thu 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/16: cond stays, as the first walk-jog after the clinic (running goes on loaded days, never consecutive days). From 11/19 (the trainer): upper stays, an abridged Upper A after the clinic"
     },
     {
       "date": "2026-11-20",
