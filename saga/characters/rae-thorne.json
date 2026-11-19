@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "4",
+    "scene": "between-4",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-4"
+    "anchor": "chronicle/07-the-far-bank.html#between-4"
   },
-  "last_seen_doing": "Kept his fire till dawn, walked the north side of the trail to the stone, named the half day in hand; at the second fire turned her palms up and told him of the cage, her father and the quiet splice, then asked him why not kneel.",
-  "now": "At the second fire with her splice half made across her knees, waiting for his answer.",
+  "last_seen_doing": "Called the Steps answer light, waited him out, asked after Maelis, then came round the fire, sat beside him and took his slow hand: let it grumble.",
+  "now": "Beside Darrow on his side of the fire, his right hand in both of hers.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -989,6 +989,24 @@
       "evidence": "If anyone offered it to carters, I'd be down before they'd finished asking. So why not you?"
     },
     {
+      "fact": "She told him to let his slow hand grumble: a rope that talks is a rope that's holding.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "\"Does it grumble?\" she said."
+    },
+    {
+      "fact": "She came round the fire to sit on his side of it for the first time, and took his right hand.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "She came round the fire, which she had not done before"
+    },
+    {
+      "fact": "She keeps what he told her of the rider, and from Wren that she was told first.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "\"Aye,\" said Rae, and kept the hand."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1368,6 +1386,10 @@
     {
       "chapter": "07",
       "scene": "4"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-4"
     },
     {
       "chapter": "tale02",

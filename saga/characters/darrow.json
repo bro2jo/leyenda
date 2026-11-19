@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "4",
+    "scene": "between-4",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-4"
+    "anchor": "chronicle/07-the-far-bank.html#between-4"
   },
-  "last_seen_doing": "Walked the walkers' road west to a crossroads field-stone white with frost at noon, where the road braids out into a dozen; said he did not know what it was worth and turned back with half a day in hand; at the second fire asked Rae what marked her hands.",
-  "now": "At the second fire on the way back east, with Rae's question in front of him: why not kneel at a stone and have it all back.",
+  "last_seen_doing": "Gave Rae the old answer about the Steps and owned it was not the reason; told her, first of anyone, what the rider said on the ice; laid out four acorns for the cold he has seen beside the stones; told her Maelis's two ways off the mountain; said it wasn't his, this is.",
+  "now": "At the second fire with Rae beside him holding his right hand.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2344,6 +2344,36 @@
       "evidence": "As far as he knew, Rae and Maelis had never said ten words to each other that were not about a load."
     },
     {
+      "fact": "He owned to Rae that being hanged at the bottom of the Steps was not why he will not kneel: he stood by the crossroads stone with nobody to stop him and did not go to it.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "That was the answer at the House. It was true there. It isn't the reason."
+    },
+    {
+      "fact": "He told Rae, before anyone else, that the rider on the ice said everyone in the Second knew the Grace would be thin that morning and the Second was told to hold the west bank.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "\"I've told nobody that,\" he said. \"Not Hollis. Not Maelis.\""
+    },
+    {
+      "fact": "He believes the cold he has seen in the lad in the Grey Cot, under the House's row, in Oswin's hands and on the crossroads stone has something to do with the stones, and he does not know what.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "But every one of them is cold, and every one of them has been at a stone."
+    },
+    {
+      "fact": "He will not kneel because the Grace was given and taken back, and what Maelis made of him was not given and cannot be taken back.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "\"It wasn't mine. This is.\""
+    },
+    {
+      "fact": "He asked Rae to keep from Wren that he had told her first.",
+      "chapter": "07",
+      "scene": "between-4",
+      "evidence": "\"Wren,\" said Darrow, \"is not to know.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2962,6 +2992,10 @@
     {
       "chapter": "07",
       "scene": "4"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-4"
     },
     {
       "chapter": "tale01",

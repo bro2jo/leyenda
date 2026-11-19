@@ -592,3 +592,77 @@ Nobody on his bank had asked him that. The ones who wanted him on his knees had 
 1. **"Because it wasn't mine. This is."**
 2. **"Because they'd hang me at the bottom of the Steps before I reached a stone."**
 3. **Say nothing; show her the knee.**
+
+### Between — Let It Talk
+
+He took his time answering.
+
+He had an answer ready. It had been true at the House, and it had always done. He looked at Rae's hands, open in her lap with the splice across them, and thought about how much of the rest a man could hand to someone in one night, and whether it was fair to hand it to her.
+
+He gave her the easy one first, out of habit.
+
+"They'd hang me at the bottom of the Steps before I got near a stone."
+
+Rae tucked a strand. "We're not at the Steps."
+
+"No."
+
+"There's one back at the crossroads." She kept her eyes on the rope. "Nobody near it but frost."
+
+"I know." He had known it since noon. He had stood at the edge of that bare ground with nobody to stop him and nobody to see, and the stone had been right there, and he had not taken one step toward it. "That was the answer at the House. It was true there. It isn't the reason."
+
+She waited. He found he would rather give her the true one.
+
+"You know what I saw at the ford," he said. "The horse already turned. Ride wide."
+
+"Aye."
+
+"On the ice at the weir, the rider told me something. She didn't know what it weighed. She was only being exact." He heard his voice go flat and careful, the voice he kept for dispatches. "She said everyone knew the Grace would be thin that morning. She said the Second was told to hold the west bank. Everyone in the Second knew."
+
+The splice had stopped in Rae's hands.
+
+"I've told nobody that," he said. "Not Hollis. Not Maelis."
+
+"You've told me."
+
+"I have."
+
+She looked at him across the fire for a long moment, as she had looked at the dozen roads at noon, measuring. Then she put the splice down.
+
+"Go on," she said. "There's more. You've the face for it."
+
+There was. He had never said it aloud, because said aloud it sounded like a man seeing shapes in smoke. He picked four acorns out of the leaves under the oak and set them on the flat stone by the fire, in a line, as he would have set out a field for a lance-captain.
+
+"The lad in the Grey Cot." The first acorn. "Frost in his mouth, and a bit of black glass under his tongue that stayed cold in Maelis's coat for days." The second. "The House: a stone in the wall under the row, and the far cots going cold above it for years." The third. "Oswin. Not cold since the summer, he said, and his hands like a well-chain in winter after he'd lifted that cart." The fourth, a little apart from the rest. "And today. Frost on a stone at noon, and every one of those roads running to it."
+
+He sat back.
+
+"I don't know what it is. I don't know what any of it has to do with the rest. But every one of them is cold, and every one of them has been at a stone." He looked along the line. "I knelt to the Grace every season from twenty on and never once asked what I was kneeling to. I'd like to know before I do it again."
+
+Rae was looking at the acorns, not at him. "And Maelis?"
+
+That was the last of it, and the plainest.
+
+"The night before she bound the knee, she sat on the end of my cot with the box shut and told me there were two ways off that mountain. The Crown's: go down, kneel, and the Grace carries the knee for years, and then one day it doesn't, and you fall down a stair and don't get up." He turned his right hand over on his knee, the two slow fingers and all. "And hers. No Grace in it. Nothing given. Nothing anyone can take back. I asked her could I kneel, after. She said not for a long time. Perhaps not ever. Put me on a stone, and what she made goes, and she doesn't make it twice."
+
+The fire had burned down a little. Neither of them fed it.
+
+"The Grace was given," he said. "And it was taken back, on a morning everyone knew. This is slow, and it's ugly, and it complains all day. But nobody gave it to me, so nobody can take it back." He found he had come to the end, and said the end plainly. "It wasn't mine. This is."
+
+Rae got up.
+
+She came round the fire, which she had not done before, and sat down on his side of it, close, on the bare ground beside him, and took his right hand in both of hers. Her palms were hard where the rope had been. She turned his hand up to the light, as she had turned her own, and looked at the two slow fingers as she looked at a load: what it would bear, and where it would give.
+
+"Does it grumble?" she said.
+
+"All day."
+
+"Good." She held on. "Let it."
+
+He understood her a beat late, as he understood most of what she said. A rope that talks is a rope that's holding.
+
+"You told me first," said Rae, after a while. "Wren'll want that written down."
+
+"Wren," said Darrow, "is not to know."
+
+"Aye," said Rae, and kept the hand.

@@ -19,11 +19,11 @@
       }
     },
     "candor_guile": {
-      "value": -8,
+      "value": -9,
       "left": "Candor",
       "right": "Guile",
       "moved": {
-        "left": 12,
+        "left": 13,
         "right": 4
       },
       "rungs": {
@@ -251,6 +251,12 @@
       "date": "2026-11-16",
       "axis": "sworn_unsworn",
       "delta": 2
+    },
+    {
+      "why": "c07.5",
+      "date": "2026-11-19",
+      "axis": "candor_guile",
+      "delta": -1
     }
   ],
   "ladder": {

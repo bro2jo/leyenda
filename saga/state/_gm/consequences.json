@@ -2284,11 +2284,76 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch07:between-3",
-            "ch07:s4"
+            "ch07:s4",
+            "ch07:between-4"
           ]
+        }
+      ]
+    },
+    {
+      "id": "c07.5",
+      "made": {
+        "chapter": 7,
+        "scene": "4",
+        "date": "2026-11-18"
+      },
+      "chose": "His own answer, nearest the first: at the second fire he gave Rae the old answer (they would hang him at the bottom of the Steps), owned it was not the reason with a stone back at the crossroads and nobody near it, and told her the rest, first of anyone: what the rider said on the ice (everyone in the Second knew the Grace would be thin; the Second was told to hold), the cold he has seen by the stones (the lad in the Grey Cot, the stone under the row, Oswin's hands, the frost at noon), and Maelis's two ways off the mountain: the Grace was given and taken back; what she made of him nobody can take back. He let her near.",
+      "now": {
+        "approval": {
+          "rae": 4
+        },
+        "bearing": {
+          "candor": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c07.5a",
+          "when": "next",
+          "at": "ch07:s5",
+          "weight": "scene",
+          "what": "His answer is played on the page at the second fire, in a Between, his words as he gave them: the hangmen line tried and owned as not the reason, the rider's words on the ice told to Rae first, the cold he has seen by the stones laid out as a line, Maelis's two ways; he lets her near.",
+          "status": "fired@ch07:between-4",
+          "evidence": "\"They'd hang me at the bottom of the Steps before I got near a stone.\""
+        },
+        {
+          "id": "c07.5b",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Rae is the only one he has told what the rider said on the ice; she keeps it, and it sits in her when Hollis is near and knows less than she does",
+          "fits": "present.rae && present.hollis",
+          "priority": 2,
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "\"Because they'd hang me at the bottom of the Steps before I reached a stone.\"",
+        "Say nothing; show her the knee."
+      ]
+    },
+    {
+      "id": "c07.6",
+      "made": {
+        "chapter": 7,
+        "scene": "between-4",
+        "date": "2026-11-18"
+      },
+      "chose": "Told Rae first, and asked that Wren not be told; Rae said Aye and kept his hand.",
+      "now": {},
+      "due": [
+        {
+          "id": "c07.6a",
+          "when": "later",
+          "at": "later",
+          "weight": "color",
+          "what": "Wren learns, some day, that Rae was told something first and she was not; she counts it, out loud, and Rae does not help him",
+          "fits": "present.wren && present.rae",
+          "priority": 1,
+          "status": "pending"
         }
       ]
     }

@@ -7,8 +7,8 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Darrow; the reader; Rae (from Darrow on the fold wall, 05:between-2: Ride wide, the horse already turned one heartbeat early, his fear it was known; she keeps it). Hollis does not: it is his to come to at the seal (he heard at the weir only that the Captain was looking). Wren knows only that he saw something from the water he will not yet tell her. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand; the sender of the rider will have, by her mouth, that Darrow was in the water and saw the whole of the west bank, and will ask the rest to his face. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
-      "note": "ch06:climax (T2/T3 plant): the rider, told when given him, says the Second was told to hold the west bank that morning and everyone in the Second knew the Grace would be thin; Darrow heard Ride wide today again. Only he heard it.",
+      "who_knows": "Darrow; the reader; Rae (05:between-2: Ride wide, the horse turned early, his fear it was known; and 07:between-4, first of anyone: the rider's words on the ice, everyone in the Second knew the Grace would be thin and the Second was told to hold; she keeps it, and from Wren). Hollis does not: it is his to come to at the seal. Wren knows only that he saw something from the water he will not yet tell her. Maelis knows only that he believes the Grace was taken. Marrant has read, and Aldric will read, Darrow's order of the ford in his own hand; the sender of the rider will have, by her mouth, that Darrow was in the water and saw the whole of the west bank, and will ask the rest to his face. 04:s2: the clerk's hand on Mirren's letter is the hand that addressed Aldric's letters; Rae has seen the hand elsewhere and will not say where.",
+      "note": "07:between-4: told Rae the rider's words; she keeps them.",
       "on_page": [
         "00:I",
         "00:III",
@@ -24,6 +24,7 @@
         "06:climax",
         "06:choice",
         "07:between-2",
+        "07:between-4",
         "tale03:p1"
       ]
     },
@@ -106,7 +107,8 @@
       "on_page": [
         "00:III",
         "01:s2",
-        "01:between-2"
+        "01:between-2",
+        "07:between-4"
       ]
     },
     {
@@ -281,6 +283,7 @@
         "07:s3",
         "07:between-3",
         "07:s4",
+        "07:between-4",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"
@@ -337,8 +340,8 @@
       "truth": "Oathstone: frost drawn out of a man too fast leaves a sliver of the stone it went to (arc b1.2, T1); the far cots, drained slowly over years, never had one",
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
-      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has seen the rest of the stone in the wall under the row, the censer's black, and (07:s4) with Rae a roadside field-stone white with frost at noon where the walkers' braided roads gather; the reader.",
-      "note": "07:s4: a crossroads field-stone with frost at noon; the walkers' roads braid west of it and run east from it as one; Ash would not go near it; his frost-kept fingers ached. Nothing he can use yet.",
+      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has seen the rest of the stone in the wall under the row, the censer's black, and (07:s4) a roadside field-stone white with frost at noon where the walkers' roads gather; (07:between-4) he has laid the four colds out for Rae as a line, the lad, the row, Oswin's hands, the stone at noon, and says he does not know what it is; Rae has it as his suspicion; the reader.",
+      "note": "07:between-4: the line of four acorns; suspicion only.",
       "on_page": [
         "02:between-12",
         "02:s6",
@@ -355,7 +358,8 @@
         "04:between-10",
         "04:climax",
         "05:s6",
-        "07:s4"
+        "07:s4",
+        "07:between-4"
       ]
     },
     {

@@ -35,11 +35,11 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "4",
+    "scene": "between-4",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-4"
+    "anchor": "chronicle/07-the-far-bank.html#between-4"
   },
-  "last_seen_doing": "Slept across Rae's feet, and would not go near the frosted stone.",
+  "last_seen_doing": "Lay by the fire.",
   "now": "At the second fire.",
   "story_so_far": "Ash saw the rider on the skyline first and made no sound, watched the alders long after the meadow was empty, and tried to follow Darrow out onto the weir until Wren sat on her.",
   "quote": null,
@@ -287,6 +287,10 @@
     {
       "chapter": "07",
       "scene": "4"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-4"
     }
   ]
 }

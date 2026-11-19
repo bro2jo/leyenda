@@ -175,6 +175,11 @@
     {
       "chapter": "06",
       "scene": "choice"
+    },
+    {
+      "chapter": "07",
+      "scene": "between-4",
+      "mention": true
     }
   ]
 }
