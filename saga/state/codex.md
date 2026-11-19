@@ -93,6 +93,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The mill bridge** — One span of old timber across the river above the river mill, wide enough for one cart, with the mill's toll-board nailed at the near end: no cart to cross after the dusk bell, ahead of the miller's, or that the bridge will not bear (Ch 7 epigraph; Sc 1).
 - **The ring in the marsh** — An old ring of standing stones in the frozen marsh up the north road from the river mill, older than Calden, they say; frozen half the year, the stones standing up out of the ice. Mill-folk do not go near it, and never have (Ch 7 Sc 2).
 - **The walkers in the dark** — What came out of the trees to the mill bridge, hundreds of them, in mail and washed-out surcoats with nobody behind the eyes. A man off the carts said that by day they only walk, and after dark they come for people and take hold; a wrist one of them held went white, with frost in the print of the hand. A lamp in the face holds one staring until the flame gutters out; they will not go into water; and when the millers fired their mill, every face on the bridge and in the field turned to it and stood (Ch 7 Sc 2).
+- **The frosted stone at the crossroads** — A roadside field-stone at a crossroads west of the river mill, white with frost at noon in full sun; the walkers' road runs up to it from the east as one road, and west of it comes apart into a dozen, braided (Ch 7 Sc 4).
 
 ## Songs and verses
 

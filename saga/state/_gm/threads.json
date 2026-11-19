@@ -280,6 +280,7 @@
         "07:between-1",
         "07:s3",
         "07:between-3",
+        "07:s4",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"
@@ -336,8 +337,8 @@
       "truth": "Oathstone: frost drawn out of a man too fast leaves a sliver of the stone it went to (arc b1.2, T1); the far cots, drained slowly over years, never had one",
       "feeds": "T1, b1.3 (the shard drawing on the wounded above)",
       "status": "open",
-      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has felt the same cold come up through the kennel grate into his fingers (04:s5) and has her word that it is not the weather's (04:between-10); 04:climax: Darrow saw that the Confessor's censer is the black of the sliver; the reader.",
-      "note": "05:s6: frost white to the wrist on a knight who lifted a cart on the Grace; it went without melting; Maelis saw. Darrow's Eye failed the read.",
+      "who_knows": "Maelis keeps the chip and suspects (T1); Darrow has seen the rest of the stone in the wall under the row, the censer's black, and (07:s4) with Rae a roadside field-stone white with frost at noon where the walkers' braided roads gather; the reader.",
+      "note": "07:s4: a crossroads field-stone with frost at noon; the walkers' roads braid west of it and run east from it as one; Ash would not go near it; his frost-kept fingers ached. Nothing he can use yet.",
       "on_page": [
         "02:between-12",
         "02:s6",
@@ -353,7 +354,8 @@
         "04:s5",
         "04:between-10",
         "04:climax",
-        "05:s6"
+        "05:s6",
+        "07:s4"
       ]
     },
     {

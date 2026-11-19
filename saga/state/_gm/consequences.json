@@ -2272,7 +2272,8 @@
           "at": "ch07:s4",
           "weight": "color",
           "what": "He slept the back half of the first night while Rae kept the fire on her oak, her boots drying toe to the heat and Ash across her feet; the next scene opens on that, the stragglers gone with the dark, his foot back but tender",
-          "status": "pending"
+          "status": "fired@ch07:s4",
+          "evidence": "Rae was where he had left her, on the far side of it, with her coat round her ears and her boots standing toe to the embers, dry."
         },
         {
           "id": "c07.4b",
@@ -2283,9 +2284,10 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch07:between-3"
+            "ch07:between-3",
+            "ch07:s4"
           ]
         }
       ]

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-3",
+    "scene": "4",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-3"
+    "anchor": "chronicle/07-the-far-bank.html#scene-4"
   },
-  "last_seen_doing": "Was struck dumb by Rae and her wood, joked he could not tell which he was gladder to see, asked after Hob and Dun, dropped the joke and told her he was glad it was her, then slept and let her keep the fire.",
-  "now": "Asleep at his fire on the north side of the trail with his hands in his coat and his right foot coming back in needles, Rae keeping the fire.",
+  "last_seen_doing": "Walked the walkers' road west to a crossroads field-stone white with frost at noon, where the road braids out into a dozen; said he did not know what it was worth and turned back with half a day in hand; at the second fire asked Rae what marked her hands.",
+  "now": "At the second fire on the way back east, with Rae's question in front of him: why not kneel at a stone and have it all back.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2326,6 +2326,24 @@
       "evidence": "he lay down instead with his hands in his coat and his foot full of needles, and let her keep it."
     },
     {
+      "fact": "At a crossroads west of the river mill he found a field-stone white with frost at noon in full sun, the walkers' road gathering to it out of a dozen braided roads, and told Rae he did not know what it was worth.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "I don't know what that's worth. I don't know if it's worth anything."
+    },
+    {
+      "fact": "He turned back at the stone with half a day in hand rather than take one of the braided roads.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "\"We turn,\" he said."
+    },
+    {
+      "fact": "He heard in Rae's saying about ropes what Maelis had told him of the thread in his knee.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "As far as he knew, Rae and Maelis had never said ten words to each other that were not about a load."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2940,6 +2958,10 @@
     {
       "chapter": "07",
       "scene": "between-3"
+    },
+    {
+      "chapter": "07",
+      "scene": "4"
     },
     {
       "chapter": "tale01",

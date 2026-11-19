@@ -500,3 +500,95 @@ Then: "Sleep. I'll keep it."
 He meant to argue. He had the first of it ready, about whose road this was, and he looked across the fire at her with her stockinged feet to the warmth and her coat pulled up round her ears, and the five standing out there staring at her lamp like men at a shrine, and he lay down instead with his hands in his coat and his foot full of needles, and let her keep it.
 
 Ash got up off him, turned round twice, and lay down across Rae's feet, which were the warmest thing at the fire now. Ash, at least, had no trouble deciding.
+
+### Scene 4 — Worn Smooth
+
+He woke with the sun on his face and his foot full of pins, and the fire still going.
+
+Rae was where he had left her, on the far side of it, with her coat round her ears and her boots standing toe to the embers, dry. Ash lay across her feet. Most of the oak was gone. Out at the edge of the light, where the five had stood, there was trodden frost and nobody.
+
+"They went at first light," Rae said. "East, down the road after the rest." She reached for her boots. "You snore."
+
+"I don't."
+
+"Only when you're warm."
+
+He put the foot down and stood on it. It held, and complained all the way up the shin, and he walked it twice round the fire until it gave up complaining.
+
+---
+
+They went on west. The trodden road ran on as it had the day before, straight through whatever stood in its way: a beck it had waded and come out of muddy, a sheepwalk, a long wall it had pushed over for twenty yards. Rae walked on the north side of it. He walked in it, because the going was flat, and Ash walked wherever he did.
+
+A little before noon the road came up a rise to a crossroads, and at the crossroads stood a field-stone.
+
+It was like every other he had seen: black Oathstone in an iron frame, set by the road for travellers to kneel at, the grass in front of it worn bare by years of knees. The sun was full on it. The iron of the frame was dry. And the black face of the stone was white with frost, thick as a winter morning, at noon.
+
+The trodden road ran up to the stone from the east, one road, the one they had come by. Beyond it the road came apart. West of the crossroads there were a dozen narrower roads going off into their own country, one up the hill, one along the beck, one over the fields toward a farm with no smoke, and between them a hundred thinner tracks, crossing and recrossing, braided like a river's mouth seen from a height. They had come here from everywhere. They had come to the stone, and from the stone they had gone on together.
+
+Ash would not go within ten yards of it. Darrow did not ask her to. He stood at the edge of the bare ground and looked at the frost on the black, and the two slow fingers of his right hand ached, the two the frost had kept.
+
+"Well?" said Rae.
+
+"I don't know." There was nothing to do but say it. "I came two days to find out how to stop them, and what I've found out is that they all came past a stone. I don't know what that's worth. I don't know if it's worth anything."
+
+"It's worth knowing."
+
+"It's not worth a day."
+
+"No," Rae agreed. She looked at the dozen roads, and then up at the sun, which had a long way still to go. "Half a day in hand, if we turn now."
+
+He looked at the roads too. Any one of them would tell him something by dusk. A year ago he would have been on one already, and been sorry by dark.
+
+"We turn," he said.
+
+---
+
+They made the second fire half a day back along the road, in a hollow on the north side of it with an oak over them, and this time he gathered with both hands and she let him. Nothing came to the edge of the light. Rae set the lamp on a root above them all the same, looking down the road.
+
+The rope she had carried the wood in had frayed through at one end. She sat with it across her knees, unlaid the strands with her fingers and began to splice it back, and in the firelight he saw her hands.
+
+He had seen them a hundred times on a goad, a rein, a yoke-pin, always closed on something. Open, they were another thing. Across both palms ran ridges, hard and pale and shiny, like the groove a rope wears into a post when it has run round it for years; and the left thumb was crooked at the joint, set wrong and left that way.
+
+He was learning to ask. "What did that?"
+
+She finished the tuck she was making. Then she put the rope down and turned both hands up to the fire, and held them there, so he could look.
+
+"The cage," she said. "At the foot of the Steps. My father built it for the House, rope and drum and all, and ran it. Six winters back, a splice let go with him in it."
+
+The fire cracked.
+
+"I had hold of the rope when it went. Not for long." She closed the left hand halfway, as far as the thumb would let it. "That's the turn it took, going through."
+
+He waited. He had learned that from her too.
+
+"A rope talks, under a load," Rae said. "It creaks in the drum. It ticks at the splices. That one had talked all summer, and he'd say, she's grumbling, she's fine. Then a week before, it went quiet." She was looking at her hands, not at him. "I heard it go quiet. I thought it had settled."
+
+She let that stand a moment.
+
+"Folk think a rope goes where it's frayed. It doesn't. Fray, you can see, so you mend it. A rope goes where it's worn smooth. It's softest there, and it looks the best of the whole length."
+
+He knew that. He had heard it, nearly word for word, from a woman with two fingers on his knee in a cold room at the top of the Steps: *softest just when it starts to feel good. The quiet is a liar.* As far as he knew, Rae and Maelis had never said ten words to each other that were not about a load. They had not needed to.
+
+She laid her hands in her lap, palms up still, and left them open.
+
+"I re-laid the rope after," she said. "Built the cage again. Ran it since." She picked up the splice. "That's the hands."
+
+He looked at his own. The script came up on the right palm, unasked, as it did when it liked, pale in the firelight. The fine line he had first seen at the House ran beside the others, and it was not as fine as it had been. It lay along them now the way a second rope lies beside the first, when it has begun to take some of the weight.
+
+He closed the hand. When he looked up she was watching him, with the splice half made across her knees.
+
+"Can I ask you a thing," said Rae, "after the weir?"
+
+"You've earned a few."
+
+"One." She tucked a strand. "There's a stone at every crossroads from here to Calden. I was under that cart at Coldmere when Oswin lifted it off the boy, one heave, and he'd not been cold since the summer. You've that hand, and that arm, and that foot, and the leg you had before the ford. Go down on one knee at a stone and you'd have it all back by morning." She looked up. "If anyone offered it to carters, I'd be down before they'd finished asking. So why not you?"
+
+Nobody on his bank had asked him that. The ones who wanted him on his knees had sent writs, and the ones who loved him had never asked, for fear of the answer. She asked it as she would ask what a load weighed, and she waited for the answer as she waited for everything.
+
+> ⟦ THE RECKONING ⟧
+> The Tether: **a hand**.
+
+**What does Darrow say?**
+1. **"Because it wasn't mine. This is."**
+2. **"Because they'd hang me at the bottom of the Steps before I reached a stone."**
+3. **Say nothing; show her the knee.**

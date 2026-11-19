@@ -50,11 +50,19 @@
       "after": "3",
       "covers": [],
       "written": "2026-11-17"
+    },
+    {
+      "scene": 4,
+      "title": "Worn Smooth",
+      "covers": [
+        "2026-11-18"
+      ],
+      "written": "2026-11-19"
     }
   ],
   "location": {
     "place": "river-mill",
-    "detail": "his camp on the north side of the walkers' trodden road, a day's walk west of the river mill, Rae's lamp on the bank above the fire",
+    "detail": "a hollow under an oak on the north side of the walkers' trodden road, about a day west of the river mill, on the way back",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -63,8 +71,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "Two nights west on the walkers' road: the first night's fire, five stragglers standing at its edge, and the hours to dawn.",
-  "last_beat": "He lay down with his hands in his coat and let her keep the fire; Ash got up off him and lay down across Rae's feet, which were the warmest thing at the fire now.",
+  "current_struggle": "Two nights west on the walkers' road: the second night's fire, on the way back, and Rae's question.",
+  "last_beat": "Rae showed him her palms and told him of the cage and her father's splice, then asked why he does not go down on one knee at a stone and have it all back, when she would if anyone offered it to carters.",
   "companions": {
     "maelis": {
       "approval": 39,
@@ -291,6 +299,10 @@
     {
       "name": "a name",
       "key": "ch02:s4"
+    },
+    {
+      "name": "a hand",
+      "key": "ch07:s4"
     }
   ],
   "tales": [
@@ -334,5 +346,5 @@
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose.",
     "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his."
   },
-  "last_updated": "2026-11-17"
+  "last_updated": "2026-11-19"
 }

@@ -4,9 +4,9 @@
     "book": 2,
     "chapter": 7,
     "beat": "b2.3",
-    "next_scene": 4,
+    "next_scene": 5,
     "stage": "scene",
-    "last_written": "ch07:s3",
+    "last_written": "ch07:s4",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -115,8 +115,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:s4"
       },
       {
         "n": 5,
@@ -130,7 +130,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -349,7 +349,7 @@
     },
     "rae.tether": {
       "status": "live",
-      "stage": 1,
+      "stage": 2,
       "priority": "floating",
       "standing": true,
       "stage_gates": {
@@ -539,7 +539,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 4,
+    "chapter": 7,
+    "scene": "4",
+    "opened": "2026-11-19",
+    "axis": "candor_guile",
+    "ask": "Why not the fast road, then? Down, kneel, have it back. What does Darrow say?",
+    "options": [
+      "\"Because it wasn't mine. This is.\"",
+      "\"Because they'd hang me at the bottom of the Steps before I reached a stone.\"",
+      "Say nothing; show her the knee."
+    ],
+    "bearing": [
+      {
+        "candor": 1
+      },
+      {
+        "guile": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": [
       {
@@ -593,7 +615,7 @@
   },
   "tallies": {
     "chased": 2,
-    "held": 7
+    "held": 8
   },
   "tallies_log": [
     {
@@ -665,6 +687,14 @@
       "name": "chased",
       "delta": 1,
       "why": "c07.2: went west alone on the walkers' trail, two nights",
+      "book": 2,
+      "chapter": 7
+    },
+    {
+      "date": "2026-11-19",
+      "name": "held",
+      "delta": 1,
+      "why": "turned back at the frosted stone with half a day in hand instead of taking one of the braided roads (ch07:s4)",
       "book": 2,
       "chapter": 7
     }

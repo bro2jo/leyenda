@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-3",
+    "scene": "4",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-3"
+    "anchor": "chronicle/07-the-far-bank.html#scene-4"
   },
-  "last_seen_doing": "Untied her wood, set her lamp high on the bank to hold the stragglers' eyes, said Hob and Dun were with Wren, answered his gladness with Aye, and sent him to sleep while she kept the fire.",
-  "now": "Keeping his fire on the walkers' trail in her stockinged feet, her boots drying at the heat, her lamp on the bank above.",
+  "last_seen_doing": "Kept his fire till dawn, walked the north side of the trail to the stone, named the half day in hand; at the second fire turned her palms up and told him of the cage, her father and the quiet splice, then asked him why not kneel.",
+  "now": "At the second fire with her splice half made across her knees, waiting for his answer.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -953,6 +953,42 @@
       "evidence": "where its flame looked straight down the trodden road"
     },
     {
+      "fact": "Her father built the winch-cage at the foot of the Steps for the House and ran it; six winters ago a splice let go with him in it.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "Six winters back, a splice let go with him in it."
+    },
+    {
+      "fact": "She had hold of the rope when it went; it left hard ridges across both palms and her left thumb crooked.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "\"I had hold of the rope when it went. Not for long.\""
+    },
+    {
+      "fact": "She heard the splice go quiet a week before it went and took it for settled.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "I heard it go quiet. I thought it had settled."
+    },
+    {
+      "fact": "She says a rope goes where it is worn smooth, not where it is frayed.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "A rope goes where it's worn smooth."
+    },
+    {
+      "fact": "She re-laid the rope and rebuilt the cage after, and has run it since.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "\"I re-laid the rope after,\" she said. \"Built the cage again. Ran it since.\""
+    },
+    {
+      "fact": "She asked him why he does not kneel at a stone and have it all back, when she would if anyone offered it to carters.",
+      "chapter": "07",
+      "scene": "4",
+      "evidence": "If anyone offered it to carters, I'd be down before they'd finished asking. So why not you?"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1328,6 +1364,10 @@
     {
       "chapter": "07",
       "scene": "between-3"
+    },
+    {
+      "chapter": "07",
+      "scene": "4"
     },
     {
       "chapter": "tale02",
