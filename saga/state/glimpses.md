@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-16 · body · He lies down under the cart without arranging the leg first, the way he has every night for months, and only notices afterward, in the dark, that he forgot to.
 - 2026-11-17 · weather · Grey first light, no wind, and the smell of wet char lying low over everything like a second mist. Even the dog walks round it.
 - 2026-11-17 · overheard · Overheard among the children by the burned wall: a new game, in which one of them holds the bridge and all the rest are the river. The river is not allowed to win. They are very strict about it.
 - 2026-11-17 · saying · Someone at the mill tells Wren the mountain saying, count the Steps and the Steps count you, meaning it kindly. Wren hates it. She says thank you, and writes down his name.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-19 · house · He wakes before Rae for once and lies still, letting the day's road lay itself out in his head one stretch at a time, so that by the time Ash stirs it is already decided.
 - 2026-11-19 · body · Off the cart's tail at the ford road, he drops the last foot to the frozen ground and lands without thinking about it: both feet, knees soft, no sound worth hearing. Rae, ahead, doesn't turn round. That is the point.
 - 2026-11-19 · weather · Noon sun, thin as watered milk, and for an hour it is almost warm. Ash finds the one patch of dry grass on the whole road and rolls in it as if it had been laid there for him.
+- 2026-11-19 · verse · Rae hums Salt Goes Up under her breath for a mile and a half, and only sings one line of it out loud, the last: and it's only salt, and that's all, that's all. Ash looks up at her anyway.
