@@ -5,6 +5,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 **This file holds no dates, doses, counts, or statuses.** Current facts live in the Recovery State; `real/README.md` says where each fact lives. This file changes only when a rule changes.
 
 **Revision history:**
+- 11/19 (repo, his call with the trainer; Phase 5): the weekly rhythm is high days and low days. High days hold the clinic visit or the home knee session, the walk-jog when one is due, and the upper session (the trainer moved the uppers onto the PT days); low days hold easy conditioning and the throwing. Runs go on high days only. Conditioning's text follows Phase 5
 - 11/18 (repo, his call): **sleep joins the morning check**: from 11/19 the check is the swelling grade and last night's minutes of sleep together; a morning with the grade and no minutes is not a check yet. The log column is `sleep_min` (it was `sleep_h`, never used). His targets, 480 minutes a night and 3,360 a week, live in `config.json → sleep_targets`
 - 11/17 (repo, his call): **the morning check is the swelling grade alone**; pain, extension, wellness and anything new move to the Sunday check. On the mornings that judge or precede a run or a home knee session he still looks, and reports pain or extension only when off (the master plan's running rules: no meaningful pain increase, no loss of extension). A clean morning is swelling same or down with nothing reported worse; the pre-session check reads the same way
 - 11/17 (repo, his call): the exercise log gains `hr_avg`, the average heart rate in bpm when he gives it
@@ -48,7 +49,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
   - swelling same or down vs the previous morning (graded every morning)
   - nothing reported worse: extension unchanged, pain ≤2, no new stiffness, no hard or painful patellar sticking. From 11/17 these are reported by exception: on a morning that judges a run or a home knee session he looks, and says so only when one is off; a swelling-only report on such a morning means he looked and nothing was worse (logged blank, never as 0)
 - **Painless kneecap catch:** normal per PT as long as there is no hard or painful sticking. It does not fail the pre-session check or a clean morning. Logged present / absent.
-- **Loaded day:** a home strength session (Session A or B, run at least to its minimum version) or a PT visit. These are not loaded days:
+- **Loaded day (a high day, from 11/19):** a home strength session (Session A or B, run at least to its minimum version) or a PT visit. A walk-jog (Phase 5) goes on a loaded day and never makes a new one by design. These are not loaded days:
   - daily-minimum-only days
   - partial sessions below the minimum
   - conditioning rides
@@ -107,20 +108,19 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 
 ## Program structure
 
-**Weekly rhythm (Sun → Sat):**
+**Weekly rhythm (from 11/19: high days and low days):**
 
-| Day | Knee | Around it |
-|---|---|---|
-| Sun | Knee session (next in the A/B rotation) | — |
-| Mon | — | Bike → upper (next in the A/B rotation) |
-| Tue or Wed | Knee session | — |
-| Thu | — | Bike → upper |
-| Fri | PT | — |
-| Sat | — | Bike |
+| Day | What it holds |
+|---|---|
+| **High day** | A clinic visit or the home knee session (the next in the A/B rotation) → the walk-jog when one is due (Phase 5) → the upper session (the next in the A/B rotation), capped (Recovery State §7) |
+| **Low day** | Easy conditioning (zone 2) · throwing |
+| **Rest day** | Sunday: the full check and the checkpoint |
 
 - Every day: the daily minimum.
-- **Knee sessions alternate A → B → A** regardless of day. Three loaded days a week: two home sessions plus PT; with two clinic visits a week, the two visits plus one home session (the Recovery State's calendar). If the PT visit moves, keep a day between it and the nearest home session where possible.
-- **Upper sessions alternate A → B,** at least 2 days apart, because both cores train chest, back and shoulders.
+- **High days are never back to back by design** (load rule 2): a low day or the rest day sits between two.
+- **Knee sessions alternate A → B → A** regardless of day. Knee strength stays 2–3 sessions a week through the running phase (the master plan): with two clinic visits a week, the two visits plus one home session (the Recovery State's calendar). If a visit moves, keep a day between it and the nearest home session where possible.
+- **Upper sessions alternate A → B** regardless of day, at least 2 days apart, because both train chest, back and shoulders. From 11/19 they sit on high days (the trainer; before that, on their own days); on the home knee session's day the upper session comes after the knee work.
+- **Runs** go on high days only and never on consecutive days (the master plan: non-impact conditioning on off days).
 - This week's actual days are in the Recovery State §6–7.
 
 **Daily minimum and checks:**
@@ -129,10 +129,10 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 - **Optional extras:** Game Ready after big sessions · step hamstring stretch · TKE in the warm-up.
 - **Not part of the program:** NMES, quad sets, heel slides, SLR, and patellar glides. The plan uses them for poor activation and early ROM, both resolved before Phase 3. They return only if a red-light morning brings back an extension or activation problem.
 
-**Conditioning** (plan Phase 3: low impact, 3–5 days a week, 15–30 min):
-- Bike, easy, legs only, on off days.
-- Build minutes first: +3 min per ride toward 30. The bike intervals that follow come from the off-season plan, not the rehab plan; their stages and gate are in the Add-On §5.
-- Not a loaded day. The knee-session warm-up bike stays ≤8 min. Hard intervals stay arms-only until the bike-interval gate in the Add-On §5.
+**Conditioning:**
+- Low days: easy, low-impact work (bike, elliptical; zone 2), at the minutes the Recovery State gives. Not a loaded day.
+- **Phase 5: the walk-jog progression is the running** and the hard conditioning; it sits on high days. Bike intervals and tempo work come from the off-season plan and wait for their stage (Add-On §5).
+- The knee-session warm-up bike stays ≤8 min.
 
 **Other structure rules:**
 - **PT items replace plan equivalents rather than stacking.** The current mapping is in the Recovery State §6.
@@ -140,7 +140,7 @@ How the rehab runs: definitions, load and pain rules, clearance, red flags, chec
 - **Depth rule:** a squat pattern goes no deeper than the deepest pattern that has already produced a clean morning, one step at a time.
 - **The plan's exercises are tools; the gates are the program.** Being handed a later-phase exercise doesn't change the phase. The response-based gates hold a phase open, not the calendar.
 - **Right leg** mirrors the left's single-leg strength work inside the knee sessions, so the right-side strength reference doesn't drift down and flatter the symmetry number.
-- **Throwing** (disc skills) runs on its own plan, `sport_plan.md`: three sessions a week plus film, on **days without a knee session** (Add-On §3; on an upper day after the bike and before lifting). It is an add-on session, not a loaded day. The knee's part is the footwork: feet planted or slight pivots on the planted foot (Cody 10/15, "within reason"); step-out throws, throwing on the move and marking wait for the PT's OK per drill. The pivot foot is logged every session. It never replaces the morning check.
+- **Throwing** (disc skills) runs on its own plan, `sport_plan.md`: three sessions a week plus film, on **low days**, never on a high day (Add-On §2–3). It is an add-on session, not a loaded day. The knee's part is the footwork: feet planted or slight pivots on the planted foot (Cody 10/15, "within reason"); step-out throws, throwing on the move and marking wait for the PT's OK per drill. The pivot foot is logged every session. It never replaces the morning check.
 
 ## Gait
 

@@ -17,6 +17,8 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 - 11/1 (repo): §7's tempo item follows the plan's one-variable rule per exercise; the "one exercise at a time" limit is gone
 - 10/28 (repo): §6's jump line excepts the rehab plan's own Phase 4 impact sequence, which runs inside the knee sessions from 10/28 (Nick 10/28: the plan's criteria and times govern; Recovery State §6)
 
+- 11/19 (repo, his call with the trainer): the upper sessions move onto the high days (the clinic days; optional on the home knee session's day) and merge with the trainer's exercises: the posture warm-up, two anchor lifts from the cores in §3, the trainer's block, the Copenhagen (Recovery State §7). Zone 2 and the throwing sit on the low days (§2). Rule 10's cut order follows the merged session. The trainer's exercises that load the left knee go to the PT first (§7), as any out-of-plan addition does
+
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
 
@@ -33,7 +35,7 @@ This file never changes a left-knee item. Anything here that touches the left kn
 3. **Seated or lying for the first two upper sessions.**
    - From the third session: pull-ups with a box (step on and off with hands on the bar; a drop is a landing), half-kneeling with the right knee down, standing landmine press, standing Pallof.
    - No kneeling of any kind on the left, which is the harvest site. On the chest-supported row, feet stay on the floor.
-4. **Upper sessions alternate A → B, at least 2 days apart.** A missed one isn't made up the next day; the next one runs on its normal day.
+4. **Upper sessions alternate A → B, at least 2 days apart.** A missed one isn't made up the next day; the next one runs on its normal day. From 11/19 they sit on the high days (section 2).
 5. **Gym minutes on feet are logged.** Loaded carries come in with Phase 4 (section 8): the suitcase carry on the accessory day. Its first exposure is judged by the next morning, like a knee change.
 6. **Upper body is not a knee variable.** If a morning after a knee day isn't clean, reverse the knee batch first. Check the upper setup (leg hanging, walking around) before cutting any lifting.
 7. **Upper body and the right leg progress on their own criteria** (section 4). A heavier bench is not a knee variable.
@@ -42,7 +44,7 @@ This file never changes a left-knee item. Anything here that touches the left kn
    - **Plan red light** (new swelling, extension loss, giving way): contact the PT first. Seated upper work is still available after that.
    - **Post-op red flags** (fever, calf pain or swelling, chest pain, shortness of breath, wound changes): no training of any kind; call the surgical team.
 9. **Three weeks up, one down** on upper volume. Deload = sets −30–40%, loads held.
-10. **Short on time — cut in this order:** the finisher, except the Copenhagen (the week's only adductor work, about 2 minutes) → the C pair → the whole upper core → the accessory day. Never the morning check, never the knee session's minimum.
+10. **Short on time — cut in this order** (the merged session, from 11/19): the finisher's ankle items → the power item → the trainer's block down to 2 sets → the anchors down to 3 sets → the whole upper session → the accessory day. The Copenhagen stays (the week's only adductor work, about 2 minutes). Never the morning check, the knee session's minimum, the clinic visit or a due walk-jog.
 
 ---
 
@@ -50,13 +52,11 @@ This file never changes a left-knee item. Anything here that touches the left kn
 
 | Day | Add-on |
 |---|---|
-| Mon | Bike → upper core (next in the A/B rotation) → finisher |
-| Thu | Bike → upper core → finisher |
-| The remaining off day | Rest by default: it's the week's only day without knee or upper work. The optional accessory day can go here |
-| Sat | Bike · power & mobility once unlocked (section 4) |
-| Any day without a knee session | Disc throwing (section 3). On upper days: after the bike, before lifting |
+| High days (the clinic days; the home knee session's day, optional) | The upper session, the next in the A/B rotation, after the clinic or the knee work and any walk-jog. Merged with the trainer's exercises and capped (Recovery State §7) |
+| Low days | Easy conditioning (zone 2) · disc throwing (section 3) |
+| Sunday | Rest by default. The optional accessory day or power & mobility can go on a low day |
 
-The knee rhythm is in the Working Rules. An upper day runs about 45 minutes (warm-up ~5, core ~30–35, finisher ~8) plus the bike and any throwing, so 90–95 minutes in all; Block 1 adds about 10.
+The knee rhythm is in the Working Rules. A merged upper session runs about 45 minutes (warm-up ~4, anchors ~15, the trainer's block ~18, the Copenhagen ~4). The Upper A and B cores in section 3 are the pool its anchors and accessories come from. (Until 11/19: Mon and Thu on their own days, bike → upper core → finisher, ~90–95 minutes with the bike and throwing.)
 
 ---
 
