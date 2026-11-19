@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-16 · overheard · Overheard at the water butt: Hollis telling Wren that frost is good for the soul. Wren asks him to show her where it says so. He cannot, and says so twice.
 - 2026-11-16 · saying · Hollis barks his shin on the cart step and says "Stone and Crown" like a curse. Rae, passing, says it back to him like a vow, and he has no answer for that at all.
 - 2026-11-16 · house · Maelis lays her kit out on the only flat stone in sight, in rows so straight that Wren, watching, quietly starts ruling her columns to the same spacing.
 - 2026-11-16 · ledger · A fresh page in Wren's ledger: miles to the next anything, unknown. The dog's opinion of geese, poor. Hollis's opinion of the ledger, worse, and entered at his own request.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-18 · body · A stile at midday. He goes over it the old way, hand on the post, one leg and then the other, and is down on the far side before he remembers that this used to be a decision.
 - 2026-11-18 · weather · All afternoon the frost keeps to the shadow side of the hedges, so the road is two roads, one soft and one iron. The dog takes the soft one, every time, without discussion.
 - 2026-11-18 · house · A burr came loose from the hem of Darrow’s coat. He set it on a stone by the fire, where it threw a shadow big enough for a whole thornbush.
+- 2026-11-18 · overheard · “He only snores when he’s warm,” Rae said. Ash, asleep across her feet, put in a long breath on his own behalf.
