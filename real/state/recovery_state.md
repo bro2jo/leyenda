@@ -145,6 +145,7 @@
 12. **The left knee extension's one-plate cap:** tied to the graft's window through ~11/16; does it lift after that, or stay until he says?
 13. **Running, once the gate is passed:** what symptom rule governs each walk–jog step (published protocols give almost none). Bike intervals too (§6: 30-minute rides since 10/27).
 14. **Kneeling on the left (added 11/15):** he half-knelt on the left on heavy padding for a cable lift on Sun 11/15, pain 0. The Add-On keeps kneeling on the harvest site out until the PT's OK (rule 3; §8 puts padded kneeling tolerance with Phase 6). Is padded half-kneeling on the left OK now?
+15. **The trainer's all-fours hold (added 11/19):** hands and knees, then the knees 2 inches off the floor, 3 × 20 s: a bent-knee hold the plan does not contain, and its start is on both knees. OK to do, and how to set it up? (He did an all-fours-into-squat on Sun 11/15, pain 0.) And, as the trainer's program brings more whole-body work: which kinds of exercise should come to the clinic first (kneeling, crawling, lunging, jumping, rotation on a planted foot).
 
 ---
 
