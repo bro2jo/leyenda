@@ -19,6 +19,8 @@ The **design** of everything around the knee: upper body, the right leg, conditi
 
 - 11/19 (repo, his call with the trainer): the upper sessions move onto the high days (the clinic days; optional on the home knee session's day) and merge with the trainer's exercises: the posture warm-up, two anchor lifts from the cores in §3, the trainer's block, the Copenhagen (Recovery State §7). Zone 2 and the throwing sit on the low days (§2). Rule 10's cut order follows the merged session. The trainer's exercises that load the left knee go to the PT first (§7), as any out-of-plan addition does
 
+- 11/19 (Cody, PT 16, patient-reported): kneeling on the left is cleared to comfort, never pushed: rule 3 and §6 follow; the trainer's all-fours hold and half-kneeling either side are in
+
 **Source priority:** latest PT/surgeon instruction → rehab plan → Recovery State → **this file** → logs.
 This file never changes a left-knee item. Anything here that touches the left knee and isn't in the rehab plan goes to the PT first (section 7).
 
@@ -34,7 +36,7 @@ This file never changes a left-knee item. Anything here that touches the left kn
 2. **Left leg up between upper sets: optional.** Heel on a bench, knee unsupported, quad relaxed. It was extra heel-prop time while extension was the priority; extension was restored on 10/18.
 3. **Seated or lying for the first two upper sessions.**
    - From the third session: pull-ups with a box (step on and off with hands on the bar; a drop is a landing), half-kneeling with the right knee down, standing landmine press, standing Pallof.
-   - No kneeling of any kind on the left, which is the harvest site. On the chest-supported row, feet stay on the floor.
+   - **Kneeling on the left (the harvest site): to comfort, padded, never pushed** (Cody 11/19, PT 16). Until 11/19: none at all. On the chest-supported row, feet stay on the floor.
 4. **Upper sessions alternate A → B, at least 2 days apart.** A missed one isn't made up the next day; the next one runs on its normal day. From 11/19 they sit on the high days (section 2).
 5. **Gym minutes on feet are logged.** Loaded carries come in with Phase 4 (section 8): the suitcase carry on the accessory day. Its first exposure is judged by the next morning, like a knee change.
 6. **Upper body is not a knee variable.** If a morning after a knee day isn't clean, reverse the knee batch first. Check the upper setup (leg hanging, walking around) before cutting any lifting.
@@ -213,7 +215,7 @@ Follows the off-season plan's upper sequence (its Phases 1–4). Calendar dates 
 ## 6. Out for now
 
 - Push press and standing landmine rotation (section 8). Carries came in with Phase 4 (rule 5)
-- Kneeling on the left, tall-kneeling, push-ups from the knees
+- Kneeling on the left past comfort (cleared to comfort, padded, Cody 11/19); push-ups from the knees
 - Pull-up drops or jumps down
 - Rower: deep flexion under a hard leg drive
 - Any jump, hop, run, sled, or sprint outside the rehab plan's own impact sequence (Phase 4, inside the knee sessions: Recovery State §6)

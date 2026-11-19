@@ -776,3 +776,43 @@ Reading:
 What it answers from the list (State §5): **item 0, the go for the first walk-jog: yes** (the surgeon and the PT) · single-leg pogos under their eye: run, assisted, 3 × 8 each leg · **the glute test: not reported** · item 1, the running-form drills: not named, but the clinic's own running work today (knee drive, resisted runs, the two-point start) shows the kind. Not answered: the walk-jog's symptom rule (item 13; the master plan's running rules govern meanwhile: no increased swelling, no meaningful pain increase, no loss of extension, no next-day deterioration, normal mechanics) · what "pain-free" means (item 10) · Sunday 11/15's box jumps and drills · padded kneeling on the left (item 14) · the formal quad test's date.
 
 What it changes: the Before Running gate is passed (Knot IV) and Phase 5 opens · short decels and box drop-downs join the home program as PT items · today's clinic session included running and landings, so **Tuesday's morning judges it** before any home impact or running.
+
+---
+
+## 2026-11-19 (POD 87) — Visit 16 — PTA, Cody (his account names him)
+
+Pasted by him the same day.
+
+### Progress note
+
+```text
+Gait Observation: Stiff landing LLE with jogging.
+
+TREATMENT: 
+Therapeutic Exercise: 
+1: LFUC 16 L5 x6' for LE function and endurance
+2: Side to Side / Monster walks 25ft <> x2 each
+3: Sprinter knee drive w/ grn band at feet 2x10 B
+4: Shuttle kick backs 3c 2x12 B
+5: light jog in clinic- 50ft<> x5 laps
+6: bulgarian split squat jump- 2x5
+7: 12" drop decel 2x10
+8: GJC asisted POGO hops SL 3x8 B
+9: GJC assisted pogo bil- 10x 10x no JC
+10: quiet jump to SL- 6in 2x5 ea
+```
+
+### Patient's account of the same visit
+
+- **Cody OK'd the trainer's all-fours hold and kneeling on the left: kneeling "just to my comfort, not pushing it."**
+- **The jogging at the clinic was the day's run** ("takes care of that for the day"): no home walk-jog today.
+
+Reading:
+- **Gait: "stiff landing" on the left with jogging.** The first running the clinic has watched since the gate was cleared (11/16). The master plan moves a running session on only when the running looks normal (Running Rules: "normal running mechanics"), so the walk-jog progression starts at **session 1 on Mon 11/23** and repeats it until the left lands softly. What to change (a cue, a drill, the surface, the cadence) is the question for Monday.
+- **Kneeling on the left: cleared to comfort (Cody, patient-reported).** The Add-On's "no kneeling on the left" (rule 3, §6) gives way to it: half-kneeling either side and the all-fours hold are in, padded and short of discomfort; kneeling is never pushed for range or load. Answers State §5 items 14 and 15.
+- **The clinic's impact moved on:** a Bulgarian split-squat jump 2 × 5 (sides not stated) · the 12" drop decel 2 × 10 (11/16: 2 × 8) · assisted single-leg pogos 3 × 8 each leg (held) · double-leg pogos 10 with the cord and **10 without** · **a quiet jump to a single-leg landing, 6", 2 × 5 each leg** (new). About 70 contacts across five exercises plus the jog: **Friday's morning judges it**, and Saturday's home impact block runs only on clean mornings since.
+- Abbreviations as on 11/16: LFUC 16 L5 = upright bike, seat 16, level 5, 6 min · band walks · sprinter knee drive, green band, 2 × 10 each leg (11/16: 2 × 8) · Shuttle kickbacks, 3 cords, 2 × 12 each leg · GJC = a cord or harness system (assisting the pogos) · "B" = both legs · "ea" = each leg.
+
+What it answers from the list (State §5): **items 14 and 15** (kneeling to comfort; the all-fours hold OK). Not answered: the walk-jog's symptom rule (item 13) · the home doses for the decels and drop-downs · the formal quad test's date · the glute test.
+
+What it changes: the walk-jog progression starts at session 1 on Mon 11/23 (today's run was the clinic's); kneeling on the left is in, to comfort; no measurements.
