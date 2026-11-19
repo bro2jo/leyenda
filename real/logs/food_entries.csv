@@ -374,3 +374,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-18#9,2026-11-18,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,Matched chewy granola bar to the previously logged Kirkland bar
 2026-11-18#10,2026-11-18,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,Flavor unreported; reused the cherry berry label as on 11/15
 2026-11-18#11,2026-11-18,,snack,Kirkland Signature wildflower honey,"a good few squirts (~2 tbsp / 42 g, his correction 11/19)",120,0,34,0,0,0,34,0,22,2,0.2,0.8,0,0.2,0,0,library,with the Chobani; library honey x2 (was logged as ~1 tbsp)
+2026-11-19#1,2026-11-19,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar
+2026-11-19#2,2026-11-19,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,his words: Cafe latte protein
