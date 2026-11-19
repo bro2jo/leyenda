@@ -1,5 +1,5 @@
 {
-  "asof": "2026-11-18",
+  "asof": "2026-11-19",
   "name": "Ser Darrow of Edgemoor",
   "level": 9,
   "rank": "Kindled",
@@ -52,7 +52,7 @@
     }
   },
   "ember": {
-    "value": 87,
+    "value": 88,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
@@ -525,8 +525,8 @@
   },
   "chapter_now": {
     "week_start": "2026-11-15",
-    "through": "2026-11-18",
-    "tier_so_far": "Triumph",
+    "through": "2026-11-19",
+    "tier_so_far": "Hard-won",
     "chapter": 7
   },
   "fell": {
