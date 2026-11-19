@@ -33,6 +33,14 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     ok(await inView(p,'#game>.foot .tgl')&&await inView(p,'#game .cp-quit'),'music, sound and the way out are at the top'+at);
     ok(await p.evaluate(()=>getComputedStyle(document.querySelector('#m-rest .cp-obj .cp-h')).webkitLineClamp==='1'),'the mission\'s rule is folded to a line');
     await p.tap('#m-rest .cp-obj');ok(await p.evaluate(()=>document.querySelector('#m-rest .cp-obj').classList.contains('open')),'a tap opens it');await p.tap('#m-rest .cp-obj');
+    /* a thumb's worth, and plain words */
+    ok(await p.evaluate(()=>[].every.call(document.querySelectorAll('#game>.foot .tgl,#game .cp-quit,#m-rest [data-a="dz"],#m-rest>.acts .act'),function(e){var r=e.getBoundingClientRect();return r.width>=34&&r.height>=34})),'nothing he taps on the map is smaller than a fingertip'+at);
+    ok(await p.evaluate(()=>{var r=document.getElementById('m-rest'),i=r.querySelector('.panel.info'),l=r.querySelector('.log');return !!i&&(!l||(i.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)>0)}),'who or what he tapped is told before what has happened');
+    {const q=await p.evaluate(()=>{var u=__LH.G.u.filter(u=>u.side===1&&u.hp>0&&u.key==='greycloak')[0];return [u.x,u.y]});
+     await p.tap(`#m-board .tile[data-x="${q[0]}"][data-y="${q[1]}"]`,{force:true});await p.waitForTimeout(120);
+     const tx=await p.locator('#m-rest .panel.info').innerText();ok(/on his turn\. Fought now, he /.test(tx)&&!/Next answer/.test(tx),'a foe tapped says what he does on his turn, and what he does if fought now');
+     await p.tap(`#m-board .tile[data-x="${q[0]}"][data-y="${q[1]}"]`,{force:true});await p.waitForTimeout(80)}
+    await p.tap('#m-rest [data-a="dz"]');ok(await p.evaluate(()=>document.querySelector('#m-rest [data-a="dz"]').getAttribute('aria-pressed')==='true'&&document.querySelectorAll('#m-board .tile.dz').length>3),'the reach switch is a button, and shows when it is on');await p.tap('#m-rest [data-a="dz"]');
     /* leaving takes two taps */
     await p.tap('#game .cp-quit');ok(await p.evaluate(()=>__CP.scr==='play'&&/Leave\?/.test(document.querySelector('#game .cp-quit').textContent)),'the first tap on the way out only asks');
     await p.tap('#game .cp-quit');await p.waitForTimeout(150);ok(await p.evaluate(()=>__CP.scr==='list'),'the second leaves');
@@ -73,6 +81,11 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
    await p2.addInitScript(()=>{window.LH_FAST=true;Object.defineProperty(Navigator.prototype,'standalone',{get:function(){return true}})});await p2.goto(URL);await p2.waitForTimeout(400);
    ok(await p2.locator('.cp.on .app-offer').count()===0&&await p2.evaluate(()=>document.documentElement.classList.contains('standalone')),'opened from the home screen it offers nothing: it is already there');
    await c2.close()}
+  /* held sideways there is no room: it asks to be turned upright, and says nothing of the kind when it is */
+  {const c=await b.newContext({viewport:{width:760,height:390},isMobile:true,hasTouch:true});const p=await c.newPage();await p.addInitScript(()=>{window.LH_FAST=true});await p.goto(URL);await p.waitForTimeout(300);
+   ok(await p.evaluate(()=>/upright/.test(getComputedStyle(document.body,'::after').content)),'held sideways it asks for the phone upright');
+   await p.setViewportSize({width:390,height:760});await p.waitForTimeout(100);
+   ok(await p.evaluate(()=>{var c=getComputedStyle(document.body,'::after').content;return c==='none'||c==='normal'}),'and upright it does not');await c.close()}
   /* what a phone needs to keep it: the manifest, the icons, and the page again with no signal */
   {const c=await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});const p=await c.newPage();await p.addInitScript(()=>{window.LH_FAST=true});
    await p.goto(URL);await p.waitForTimeout(400);

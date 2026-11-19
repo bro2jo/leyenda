@@ -105,7 +105,7 @@ Open `game/dist/campaign/campaign.html` in a browser to play the build. Settings
 | `play/manifest.webmanifest`, `play/icon-*.png`, `play/apple-touch-icon.png` | Written by the build: standalone, upright, its own icon (him in the high guard). |
 | `play/sw.js` | Written by the build, stamped with what it holds: the page newest-first, pictures and sounds from the kept copy, the music fetched in the background and served in the pieces a player asks for. |
 
-On an iPhone, full screen means the home screen (Safari → Share → Add to Home Screen): the menu says so and shows the steps. The home-screen copy keeps its own progress, apart from Safari's. On Android the menu offers the phone's own install, or plain full screen. Leaving a mission takes two taps everywhere now: the first asks. When a foe breaks the phone gives one short buzz (`ui.js → buzz`, Settings → Vibration; Android's browsers only, an iPhone's has no way to).
+On an iPhone, full screen means the home screen (Safari → Share → Add to Home Screen): the menu says so and shows the steps. The home-screen copy keeps its own progress, apart from Safari's. On Android the menu offers the phone's own install, or plain full screen. On the phone nothing he taps is under 34 px (the top buttons, the Settings switches, the links, the reach switch), a note over the board has one place per screen (`campaign_ui.js → pump`), and held sideways the page asks to be turned upright. Leaving a mission takes two taps everywhere now: the first asks. When a foe breaks the phone gives one short buzz (`ui.js → buzz`, Settings → Vibration; Android's browsers only, an iPhone's has no way to).
 
 ## When he sends a picture or a sound
 

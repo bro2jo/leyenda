@@ -74,3 +74,26 @@ html.app .cp-card>.cp-acts>.act:first-child:nth-last-child(4)~.act{grid-column:s
 html.app .cp-card>.cp-acts>.act:first-child:nth-last-child(n+3)~.act small{display:none}
 /* the road's camp: March on stays under the thumb while he shops */
 html.app #game>#scr-camp>.marchrow{position:sticky;bottom:0;z-index:3;margin-top:auto;padding-top:12px;background:linear-gradient(180deg,rgba(18,22,28,0),#12161C 30%)}
+/* ---- a thumb's worth: nothing he taps is smaller than a fingertip ---- */
+html.app .tgl,html.app #game .cp-quit{width:38px;height:38px;border-radius:19px}
+html.app #game>.foot{top:calc(7px + var(--st));gap:6px}
+html.app #game .cp-quit{top:calc(7px + var(--st));right:calc(100px + var(--sr))}
+html.app #game>.scr>.scr-top{padding-right:90px;min-height:42px}
+html.app #game>#scr-map>.scr-top,html.app #game>#scr-camp>.scr-top{padding-right:134px}
+html.app .cp-set .seg button{min-height:40px;padding:4px 14px}
+html.app .linkbtn{display:inline-flex;align-items:center;min-height:36px}
+html.app #game .cp-quit.sure{width:auto}
+/* what the foes can reach is a switch worth finding: a button, not a line of small print */
+html.app .legend.tri{flex-wrap:nowrap}
+html.app .legend.tri [data-a="dz"]{flex:none;gap:6px;min-height:34px;padding:0 11px;border:1px solid var(--rule);border-radius:17px;text-decoration:none;color:var(--ink);font-family:var(--label);font-size:.76rem;letter-spacing:.04em;background:rgba(15,18,23,.5);margin-left:auto}
+html.app .legend.tri [data-a="dz"] .ic{display:block;width:15px;height:15px}
+html.app .legend.tri [data-a="dz"] span{font-size:0}
+html.app .legend.tri [data-a="dz"] span::after{content:"Their reach";font-size:.76rem}
+html.app .trio{min-width:0;flex-wrap:wrap}
+/* what he tapped takes the room it needs and no more: on a short phone every line counts */
+html.app .panel.info{min-height:0}
+html.app .legend.tri [data-a="dz"][aria-pressed="true"]{border-color:var(--bad);color:#FFB4A0;background:#2A1512}
+/* held sideways there is no room for a board and a hand: ask for it upright */
+@media (orientation:landscape) and (max-height:520px){
+  html.app body::after{content:"Turn the phone upright to play.";position:fixed;inset:0;z-index:999;display:grid;place-content:center;padding:24px;text-align:center;background:#0B0E13;color:var(--brass-hi);font-family:var(--display);font-size:1.6rem}
+}

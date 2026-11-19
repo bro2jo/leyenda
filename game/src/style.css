@@ -541,3 +541,5 @@ code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em
 /* deep ground runs together: no grid between two tiles of it */
 .tile[data-g="deep"]{box-shadow:0 0 0 1px var(--dc,var(--water))}
 .tile.ask{box-shadow:inset 0 0 0 2px var(--ink)!important}
+/* the reach switch carries an eye; on the game's own page it stays a line of words */
+.legend.tri [data-a="dz"] .ic{display:none}

@@ -173,7 +173,7 @@ function unitInfo(u){
   var fx=LH.effects(G,u),h,an;
   if(u.tend)h='<b>'+u.n+'</b> · the carter · '+u.hp+' of '+u.max+' HP · '+(u.moved?'has moved':'moves '+u.mov)+' · does not fight. Tap a hurt friend beside her to tend them.';
   else if(u.side===0)h='<b>'+u.n+'</b> · '+TREE[u.t]+' · '+u.hp+' of '+u.max+' HP · '+(u.moved?'has moved':'moves '+u.mov)+' · hand of '+(u.hn+u.st.drawUp)+(u.rng>1?' · reaches 2':'');
-  else{an=u.ans[u.ai%u.ans.length];h='<b>'+u.n+'</b> · '+TREE[u.t]+' · '+u.hp+' of '+u.max+' HP · moves '+u.mov+(u.rng>1?' · reaches 2':'')+' · strikes for '+(u.atk+(LH.rallied(G,u)?T.rally:0)+(LH.enraged(u)?u.enrage:0))+' on his turn. Next answer: '+LH.ansText({b:an.b,d:an.d+(LH.rallied(G,u)?T.rally:0)+(LH.enraged(u)?u.enrage:0),n:an.n})+'.'}
+  else{an=u.ans[u.ai%u.ans.length];h='<b>'+u.n+'</b> · '+TREE[u.t]+' · '+u.hp+' of '+u.max+' HP · moves '+u.mov+(u.rng>1?' · reaches 2':'')+' · strikes for '+(u.atk+(LH.rallied(G,u)?T.rally:0)+(LH.enraged(u)?u.enrage:0))+' on his turn. Fought now, he '+LH.ansText({b:an.b,d:an.d+(LH.rallied(G,u)?T.rally:0)+(LH.enraged(u)?u.enrage:0),n:an.n})+'.'}
   h='<span>'+h+'</span>';
   if(fx.length){h+=fxChips(fx,'m');if(UI.fx!==null&&fx[UI.fx])h+='<span class="fxtext"><b>'+fx[UI.fx].label+'.</b> '+fx[UI.fx].text+'</span>';else h+='<span class="fxtext dimm">Tap an effect to read it.</span>'}
   return h;
@@ -231,7 +231,7 @@ function renderMap(acting){
     t.classList.toggle('ask',!!UI.tile&&UI.tile[0]===x&&UI.tile[1]===y);
     t.setAttribute('aria-label',u?u.n+', '+u.hp+' of '+u.max:LH.ground(G,x,y).n)}
   syncUnits(acting);
-  h='<div class="legend tri"><span class="trio" title="Footing beats Blade, Blade beats Cast, Cast beats Footing"><span class="tg foot">'+svg('shield')+'Footing</span>'+svg('arrowR')+'<span class="tg blade">'+svg('sword')+'Blade</span>'+svg('arrowR')+'<span class="tg cast">'+svg('cast')+'Cast</span>'+svg('arrowR')+'<span class="tg foot">'+svg('shield')+'</span></span><button class="linkbtn" type="button" data-a="dz">'+(UI.danger?'Hide their reach':'Show their reach')+'</button></div>';
+  h='<div class="legend tri"><span class="trio" title="Footing beats Blade, Blade beats Cast, Cast beats Footing"><span class="tg foot">'+svg('shield')+'Footing</span>'+svg('arrowR')+'<span class="tg blade">'+svg('sword')+'Blade</span>'+svg('arrowR')+'<span class="tg cast">'+svg('cast')+'Cast</span>'+svg('arrowR')+'<span class="tg foot">'+svg('shield')+'</span></span><button class="linkbtn" type="button" data-a="dz" aria-pressed="'+!!UI.danger+'">'+svg('eye')+'<span>'+(UI.danger?'Hide their reach':'Show their reach')+'</span></button></div>';
   if(G.over&&!G.over.win&&(UI.ended||!busy)){
     if(!UI.ended){UI.ended=true;sfx(G.over.done?'run_won':'run_lost')}
     h+=logBox(G.log)+'<div class="end"><b>'+G.over.t+'</b><span>'+G.over.s+'</span><span class="renown">Renown <b class="num">'+G.run.renown+'</b> · best <span class="num">'+best(G.run.renown)+'</span></span><span class="legend">Spoils kept, 6 for each battle won, 1 for each turn under '+T.par+' in a battle won, 2 for each friend standing at the end, and a little for health.</span><button class="act primary wide" type="button" data-a="again"><b>A new run</b><small>From the first crossing</small></button></div>';
@@ -245,7 +245,7 @@ function renderMap(acting){
   }else{
     var info='<span>Tap one of the company. Tap a foe to size him up and see where he can strike. Tap the ground to see what it is.</span>',left=G.phase==='player'?LH.matesUp(G).filter(function(o){return LH.canAct(o)&&!o.attacked}).length:0;
     if(G.phase==='enemy')info='<span>Their turn.</span>';else if(s)info=unitInfo(s)+(fbk?'<span class="fxtext">'+svg('arrowD')+' '+s.n+' can fall back through '+LH.at(G,s.x,s.y+1).n+' to the tile behind.</span>':'')+(LH.canUnmove(G,s)?'<button class="linkbtn" type="button" data-a="unmove">Take back the move</button>':'');else if(UI.look)info=unitInfo(UI.look);else if(UI.tile){var gq=LH.ground(G,UI.tile[0],UI.tile[1]);info='<span><b>'+gq.n+'.</b> '+gq.t+'</span>'}
-    h+=UI.tile&&!s&&!UI.look?'<div class="panel info">'+info+'</div>'+logBox(G.log):logBox(G.log)+'<div class="panel info">'+info+'</div>';   /* a tile he asked about is answered first, where a short screen still shows it */
+    h+='<div class="panel info">'+info+'</div>'+logBox(G.log);   /* who or what he tapped comes first, what has happened after it: a short screen shows the first whole */
     h+='<div class="acts"><button class="act" type="button" data-a="wait"'+(can&&!s.attacked?'':' disabled')+'><b>Hold here</b><small>4 guard, and done</small></button><button class="act primary" type="button" data-a="end"'+(busy?' disabled':'')+'><b>End the turn</b><small>'+(left?left+' of yours can still act':'They move')+'</small></button></div>';
   }
   $rest.innerHTML=h;

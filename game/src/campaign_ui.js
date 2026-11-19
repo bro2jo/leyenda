@@ -187,13 +187,22 @@ function newsHTML(id){var l=CP.news(id);if(!l.length)return '';
 var tq=[],tshow=null,said=[],tbox=document.createElement('div');tbox.className='cp-toasts';tbox.setAttribute('aria-live','polite');root.appendChild(tbox);
 function toast(o){said.push(o.t);if(FAST)return;tq.push(o)}
 function toastOff(){tq=[];if(tshow){tshow.remove();tshow=null}}
+/* a card picked up to read wants the line the note is sitting on */
+root.addEventListener('pointerdown',function(e){if(tshow&&tshow._tell&&e.target.closest&&e.target.closest('.hcard'))tshow._gone()},true);
 function pump(){
   if(tshow||!tq.length||scr!=='play')return;var bn=$('banner');if(bn&&!bn.hidden)return;
-  var o=tq.shift(),el=document.createElement('button'),hb=root.querySelector('#scr-clash .cp-hint'),an=($('scr-map')&&!$('scr-map').hidden?root.querySelector('.cp-obj'):(hb&&!hb.hidden?hb:$('c-tell')))||root,r=an.getBoundingClientRect(),rr=root.getBoundingClientRect();
+  /* where it sits: on the map over the mission's own box under the board; in a clash over the hint under the heading, or, where a
+     short phone has put the hint away, over the line that says how to play. Never over the heading, the board or the foe's blow. */
+  var o=tq.shift(),el=document.createElement('button'),rr=root.getBoundingClientRect(),map=$('scr-map'),top,onTell=false;
+  if(map&&!map.hidden)top=$('m-rest').getBoundingClientRect().top-rr.top;
+  else{var hd=root.querySelector('#scr-clash .scr-top'),tl=$('c-tell');
+    var hinted=!!(X.G&&X.G.cs&&X.G.cs.hint)&&!(document.documentElement.classList.contains('app')&&window.innerHeight<=700);   /* the hint may not be drawn yet: go by whether it will be */
+    if(hd&&hinted)top=hd.getBoundingClientRect().bottom-rr.top+6;
+    else if(tl){top=tl.getBoundingClientRect().top-rr.top;onTell=true}else top=60}
   el.type='button';el.className='cp-toast k-'+(o.k||'say');
   el.innerHTML=(o.imgs||[]).filter(has).slice(0,4).map(function(n){return '<img src="'+A+n+'.webp" alt="">'}).join('')+'<span>'+(o.h?'<b>'+esc(o.h)+'</b> ':'')+esc(o.t)+'</span>';
-  tbox.style.top=Math.max(8,r.top-rr.top)+'px';tbox.appendChild(el);tshow=el;
-  var gone=function(){if(tshow!==el)return;tshow=null;el.classList.add('out');setTimeout(function(){el.remove()},240)};
+  tbox.style.top=Math.max(8,top)+'px';tbox.appendChild(el);tshow=el;
+  var gone=function(){if(tshow!==el)return;tshow=null;el.classList.add('out');setTimeout(function(){el.remove()},240)};el._gone=gone;el._tell=onTell;
   el.addEventListener('click',gone);setTimeout(gone,o.life||Math.min(6000,1700+o.t.length*42));
 }
 function drain(){var G=X.G;if(!G||!G.ms||scr!=='play'||!G.cs||!G.cs.toasts)return;
@@ -276,7 +285,7 @@ function outro(){
   if(won&&fnd>(P.finds[id]||0)){fgain=fnd-(P.finds[id]||0);P.finds[id]=fnd}
   var rows=Object.keys(S.tally||{}).map(function(nm){var t=S.tally[nm];return '<li><b>'+esc(nm)+'</b><span>'+t.f+(t.f===1?' fight':' fights')+' · '+t.d+' dealt'+(t.k?' · '+t.k+' sent off':'')+'</span></li>'}).join('');
   var grew=Object.keys(got.marks).map(function(k){return WHO[k]+' +'+got.marks[k]+(due(k)?' (a rank to give)':'')}).join(' · ');
-  var result='<div class="cp-result"><span class="cp-lbl">How it went · turn '+G.turn+'</span>'+(rows?'<ul>'+rows+'</ul>':'')+(grew?'<span class="cp-dim">Marks: '+esc(grew)+'</span>':'')+(fmax?'<span class="cp-dim">◆ Found on the ground: '+fnd+' of '+fmax+(fgain?' · '+fgain+' more for the fire':'')+'</span>':'')+
+  var result='<div class="cp-result"><span class="cp-lbl">How it went · turn '+G.turn+'</span>'+(rows?'<ul>'+rows+'</ul>':'<span class="cp-dim">Nobody came to blows.</span>')+(grew?'<span class="cp-dim">Marks: '+esc(grew)+'</span>':'')+(fmax?'<span class="cp-dim">◆ Found on the ground: '+fnd+' of '+fmax+(fgain?' · '+fgain+' more for the fire':'')+'</span>':'')+
     got.bonds.map(function(nm){return '<span class="cp-words"><b>A bond with '+esc(nm)+'.</b> '+esc(CP.BONDS[nm][0])+' <i>'+esc(CP.BONDS[nm][1])+'</i></span>'}).join('')+'</div>';
   if(won){P.done[id]={stars:Math.max(was,n)};save()}
   var fresh=shelf().filter(function(c){return before.indexOf(c)<0});
