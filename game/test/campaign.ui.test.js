@@ -11,6 +11,13 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.goto('file://'+path.resolve(__dirname,'../dist/campaign/campaign.html'));await p.waitForTimeout(250);
     const tap=async(x,y)=>{await p.click(`#m-board .tile[data-x="${x}"][data-y="${y}"]`,{force:true});await p.waitForTimeout(60)};
     ok(await p.evaluate(()=>__CP.scr==='title'),'opens on the title');
+    /* a first visit has found nothing and met nobody, and says so */
+    {const cardsT=await p.locator('.cp-tile[data-cp="cards:title"] small').innerText(),coT=await p.locator('.cp-tile[data-cp="company"] small').innerText();
+     ok(/^\d+ to find$/.test(cardsT)&&await p.evaluate(()=>__CP.found()[0]===0),'before anything is played the cards are all still to find ('+cardsT+')');
+     ok(coT==='Met along the way'&&!/beside him/.test(coT),'and nobody is beside him yet ('+coT+')');
+     await p.evaluate(()=>{__CP.cards('title')});ok(/Begin the first mission/.test(await p.locator('.cp.on').innerText())&&await p.locator('.cp.album .card:not(.back)').count()===0,'the cards screen says how they are found, and shows none');
+     await p.evaluate(()=>{__CP.company()});ok(/Nobody has stood beside him yet/.test(await p.locator('.cp.on').innerText()),'the company screen lists nobody');
+     await p.evaluate(()=>{__CP.title()})}
     ok(await p.locator('.cp.on [data-cp="intro:p0"]').count()===1,'the first mission is offered');
     await p.click('[data-cp="list"]');
     ok(await p.locator('.cp-row').count()===await p.evaluate(()=>CP.ORDER.length),'every mission is listed');
@@ -20,6 +27,7 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
     await p.click('[data-cp="intro:p0"]');ok(await p.locator('.cp-card h2').innerText()==='The Grace','the place card names the mission');
     await p.click('[data-cp="go:p0"]');await p.waitForTimeout(120);
     ok(await p.evaluate(()=>__LH.G.ms==='p0'&&__CP.scr==='play'),'the mission starts');
+    ok(await p.evaluate(()=>!!__CP.P.begun.p0&&__CP.found()[0]>0&&JSON.parse(localStorage.getItem('lh-campaign')).begun.p0===1),'begun, its cards are found and its people met, and that is kept');
     ok(await p.locator('#m-rest .cp-obj').count()===1,'the objective is on the map screen');
     ok(await p.locator('#m-board .tile[data-mark="go"]').count()===1,'the field-stone is marked');
     ok(await p.evaluate(()=>getComputedStyle(document.querySelector('.unit[data-u="Z"]')).display==='none'),'the marker captain is not shown');

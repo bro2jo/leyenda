@@ -2945,7 +2945,7 @@ function has(n){return AS.art.indexOf(n)>=0}
 (function(){var ca=AS.cardart||{},C=LH.C,id;for(id in C){var b=C[id].base||id;if(ca[b])C[id].art=ca[b]}})();
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function $(id){return document.getElementById(id)}
-var P={};try{P=JSON.parse(localStorage.getItem('lh-campaign')||'{}')||{}}catch(e){}P.done=P.done||{};P.pack=(P.pack||[]).filter(function(id){return CP.SHOP.indexOf(id)>=0});P.level=P.level||0;P.tips=P.tips||{};P.grow=P.grow||{};P.bond=P.bond||{};P.finds=P.finds||{};
+var P={};try{P=JSON.parse(localStorage.getItem('lh-campaign')||'{}')||{}}catch(e){}P.done=P.done||{};P.pack=(P.pack||[]).filter(function(id){return CP.SHOP.indexOf(id)>=0});P.level=P.level||0;P.tips=P.tips||{};P.grow=P.grow||{};P.bond=P.bond||{};P.finds=P.finds||{};P.begun=P.begun||{};
 function save(){try{localStorage.setItem('lh-campaign',JSON.stringify(P))}catch(e){}}
 var layer=document.createElement('div');layer.className='cp';root.appendChild(layer);root.setAttribute('data-cp','1');
 var kick=document.createElement('button');kick.type='button';kick.hidden=true;kick.setAttribute('data-newrun','');document.body.appendChild(kick);
@@ -2953,6 +2953,8 @@ var scr='title',shown=false,ALL=!!window.LH_ALL||/[?&]all\b/.test(location.searc
 /* playtest switches (Settings): every mission open, stars to try the fire with. They are kept with the progress and say so on the menu. */
 function all(){return ALL||!!P.all}
 function open(i){return all()||i===0||!!P.done[CP.ORDER[i-1]]}
+/* a mission he has set foot in: its cards are found and its people met. Open is not enough (the first is open before anything is played) */
+function seen(i){var id=CP.ORDER[i];return all()||!!P.done[id]||!!P.begun[id]}
 function nextId(){for(var i=0;i<CP.ORDER.length;i++)if(!P.done[CP.ORDER[i]])return CP.ORDER[i];return null}
 function starRow(n,of){var h='<span class="cp-stars" aria-label="'+n+' of '+of+'">';for(var i=0;i<of;i++)h+='<i class="'+(i<n?'on':'')+'">★</i>';return h+'</span>'}
 function show(html,cls){layer.className='cp on '+(cls||'');layer.innerHTML=html;layer.scrollTop=0;if(typeof toastOff==='function'&&tbox)toastOff()}
@@ -3012,7 +3014,7 @@ function btn(a,label,small,cls){return '<button type="button" class="act '+(cls|
 /* ---------- the main menu: where he is, and everywhere he can go from here ---------- */
 function tile(a,icon,name,small,cls,off){return '<button type="button" class="cp-tile '+(cls||'')+'" data-cp="'+a+'"'+(off?' disabled':'')+'><span class="ti">'+icon+'</span><b>'+name+'</b><small>'+small+'</small></button>'}
 function roadOpen(){return all()||!!P.done.c4c}   /* he is on the road once the Steps are behind him */
-function met(){var seen={},l=[];CP.ORDER.forEach(function(id,i){if(!open(i))return;var p=CP.profile(id),n;for(n in p.all)if(!seen[n]){seen[n]=1;l.push({n:n,img:p.img[n],first:id})}
+function met(){var had={},l=[];CP.ORDER.forEach(function(id,i){if(!seen(i))return;var p=CP.profile(id),n;for(n in p.all)if(!had[n]){had[n]=1;l.push({n:n,img:p.img[n],first:id})}
     l.forEach(function(o){if(p.all[o.n]){if(p.fights[o.n])o.fights=1;if(p.tends[o.n])o.tends=1;if(p.lends[o.n])o.lend=p.lends[o.n];if(p.img[o.n])o.img=p.img[o.n]}})});return l}
 function arm(b){b.classList.add('sure');b._t=b.textContent;b.textContent='Leave? Tap again';setTimeout(function(){b.classList.remove('sure');if(b._t)b.textContent=b._t},3000)}
 /* on a phone, as an app (src/app.js, only on the page at /play/): the menu offers the home screen or the full screen
@@ -3037,8 +3039,8 @@ function title(){
       tile('list',X.svg('road'),'The journey',n+' of '+CP.ORDER.length+' told · ★ '+starsAll())+
       tile('road',X.svg('swords'),'The road',roadOpen()?(R.best?'Best Renown '+R.best:'Three crossings, his own deck'):'Opens when he is on the road','',!roadOpen())+
       tile('fire:title',X.svg('tent'),'The fire',purse()+' stars to spend')+
-      tile('cards:title',X.svg('deck'),'The cards',f[0]+' of '+f[1]+' found')+
-      tile('company',X.svg('heart'),'The company',dn?dn+(dn>1?' ranks':' rank')+' to give':met().length?met().length+' beside him so far':'Nobody yet',dn?'hot':'')+
+      tile('cards:title',X.svg('deck'),'The cards',f[0]?f[0]+' of '+f[1]+' found':f[1]+' to find')+
+      tile('company',X.svg('heart'),'The company',dn?dn+(dn>1?' ranks':' rank')+' to give':met().length?met().length+' beside him so far':'Met along the way',dn?'hot':'')+
       tile('settings',X.svg('pillar'),'Settings',['Gentle','Standard','Hard'][(P.level||0)+1]+(X.prefs.music?' · music':'')+(X.prefs.sound?' · sound':''))+
     '</div>'+appOffer()+(P.all||P.bonus||P.shelfAll||P.roadAll?'<p class="cp-note">Playtest switches are on (Settings).</p>':'')+'<p class="cp-note">Nothing here changes the story. A mission that goes wrong is only played again: the page has already happened.</p></div>','scroll');
 }
@@ -3153,7 +3155,7 @@ function hello(id){if(P.done[id])return;var l=CP.news(id),j=l.filter(function(x)
 var cardsBack='title';
 function album(){
   var C=LH.C,mine={},lent={},allMine={},allLent={};
-  CP.ORDER.forEach(function(id,i){var p=CP.profile(id),n;for(n in p.cards){allMine[n]=1;if(open(i))mine[n]=p.cards[n]}for(n in p.lends){var c=C[p.lends[n]];if(!c)continue;allLent[c.n]=1;if(open(i))lent[c.n]=p.lends[n]}});
+  CP.ORDER.forEach(function(id,i){var p=CP.profile(id),n;for(n in p.cards){allMine[n]=1;if(seen(i))mine[n]=p.cards[n]}for(n in p.lends){var c=C[p.lends[n]];if(!c)continue;allLent[c.n]=1;if(seen(i))lent[c.n]=p.lends[n]}});
   return {mine:mine,lent:lent,nMine:Object.keys(allMine).length,nLent:Object.keys(allLent).length,shelf:shelf()}}
 function found(){var a=album();return [Object.keys(a.mine).length+Object.keys(a.lent).length+a.shelf.length+Object.keys(P.tips).length,a.nMine+a.nLent+CP.SHOP.length+Object.keys(CP.TIPS).length]}
 function cards(back){
@@ -3167,9 +3169,9 @@ function cards(back){
     '<div class="stats"><div class="stat gold"><span class="si">'+X.svg('deck')+'</span><b class="num">'+f[0]+'<i>/'+f[1]+'</i></b><small>found so far</small></div>'+
       '<div class="stat"><span class="si">★</span><b class="num">'+starsAll()+'<i>/'+CP.ORDER.length*3+'</i></b><small>stars</small></div>'+
       '<div class="stat"><span class="si">'+X.svg('cart')+'</span><b class="num">'+sh.length+'<i>/'+CP.SHOP.length+'</i></b><small>at the fire</small></div></div>'+
-    '<span class="lbl sec">'+X.svg('sword')+'His own · '+Object.keys(a.mine).length+' of '+a.nMine+'</span>'+grid(own)+
+    '<span class="lbl sec">'+X.svg('sword')+'His own · '+Object.keys(a.mine).length+' of '+a.nMine+'</span>'+(own.length||grace.length?grid(own):'<span class="cp-dim">Begin the first mission and the cards he holds are written here.</span>')+
     (grace.length?'<span class="lbl sec">'+X.svg('x')+'Sealed since the ford</span>'+grid(grace,'sealed'):'')+
-    '<span class="lbl sec">'+X.svg('heart')+'Lent by those beside him · '+Object.keys(a.lent).length+' of '+a.nLent+'</span>'+grid(Object.keys(a.lent).map(function(k){return a.lent[k]}))+
+    '<span class="lbl sec">'+X.svg('heart')+'Lent by those beside him · '+Object.keys(a.lent).length+' of '+a.nLent+'</span>'+(Object.keys(a.lent).length?grid(Object.keys(a.lent).map(function(k){return a.lent[k]})):'<span class="cp-dim">Whoever stands beside him lends a card. Each is written here the first time.</span>')+
     (function(){var who=met().filter(function(o){return o.fights}),ids=[],k;who.forEach(function(o){for(k in WHO)if(WHO[k]===o.n)CP.grown(CP.KIT[k],gr(k).picks).forEach(function(c){if(ids.indexOf(c)<0&&!LH.C[c].basic)ids.push(c)})});
       return who.length?'<span class="lbl sec">'+X.svg('swords')+'The company\'s own · over the Strike and Guard everyone carries</span>'+grid(['b_strike','b_guard'].concat(ids)):''})()+
     '<span class="lbl sec">'+X.svg('cart')+'From the fire · '+sh.length+' of '+CP.SHOP.length+'</span><span class="cp-dim">Each mission told leaves one card the company can spare; stars open the last two.</span><div class="hand3">'+sh.map(function(id){return X.cardHTML(id,{cls:P.pack.indexOf(id)>=0?'owned':''})}).join('')+locked.join('')+'</div>'+
@@ -3205,6 +3207,7 @@ function begin(id){
   X.curtain('march',esc(M.n),esc(M.place),function(){
     CP.pending=id;CP.pack=P.pack.slice();CP.level=P.level||0;kick.click();
     var G=X.G;if(!G||G.ms!==id){CP.pending=null;return}
+    if(!P.begun[id]){P.begun[id]=1;save()}
     root.setAttribute('data-th',M.map.theme||'');
     /* the triangle is drawn under the board only where more than one of them fights */
     if(G.u.filter(function(u){return u.side===0&&u.hp>0&&!u.still&&u.deck&&u.deck.length}).length>1)root.setAttribute('data-co','1');else root.removeAttribute('data-co');
@@ -3250,7 +3253,7 @@ root.addEventListener('click',function(e){
   else if(k[0]==='grow')grow(k[1],scr==='outro'?'list':'company');
   else if(k[0]==='rank'){if(due(k[1])>0&&CP.GROW[k[1]].indexOf(k[2])>=0&&CP.rankOf(gr(k[1]).picks,k[2])<3){gr(k[1]).picks.push(k[2]);save();syncGrow()}grow(k[1])}
   else if(k[0]==='company')company();else if(k[0]==='settings'){sure=false;settings()}
-  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
+  else if(k[0]==='forget'){if(sure){sure=false;P.done={};P.begun={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}else{sure=true;settings()}}
   else if(k[0]==='road')road();else if(k[0]==='quitroad')leaveRoad();
   else if(k[0]==='app'){if(window.__APP&&window.__APP.take(k[1])==='steps')appSheet();else title()}
   else if(k[0]==='pt'){if(k[1]==='all')P.all=k[2]==='1';else if(k[1]==='shelf'){P.shelfAll=k[2]==='1';trimPack()}else if(k[1]==='deck')P.roadAll=k[2]==='1';else if(k[1]==='stars')P.bonus=(P.bonus||0)+10;
@@ -3298,7 +3301,7 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-cple
 paintLevel();
 trimPack();syncGrow();
 document.addEventListener('lh-app',function(){if(scr==='title')title()});
-window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}};
+window.__CP={get scr(){return scr},P:P,title:title,list:list,intro:intro,begin:begin,fire:fire,cards:cards,company:company,settings:settings,grow:grow,bank:bank,due:due,resume:resume,suspended:suspended,keepBoard:keepBoard,forgetBoard:forgetBoard,road:road,leaveRoad:leaveRoad,roadDeck:roadDeck,purse:purse,cost:cost,shelf:shelf,found:found,said:said,sweep:sweep,reset:function(){P.done={};P.begun={};P.pack=[];P.tips={};P.grow={};P.bond={};P.finds={};P.road=null;P.all=P.shelfAll=P.roadAll=false;P.bonus=0;forgetBoard();syncGrow();save();title()}};
 title();
 })();
 </script>
