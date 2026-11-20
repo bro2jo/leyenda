@@ -870,7 +870,7 @@ html.app .legend.tri [data-a="dz"][aria-pressed="true"]{border-color:var(--bad);
 <body>
 <div class="phone" id="game" aria-label="The Line and the Hand"></div>
 <noscript class="app-no">The Line and the Hand is a game: it needs JavaScript to run.</noscript>
-<script>window.LH_ASSETS={"art":["aldric","ash","ash1","darrow","darrow0","darrow1","far_cast","groundbreaker","hammerfall","high-guard","hollis","hollis0","hollis1","long_breath","long_road","maelis","maelis1","measured_hand","menders_patience","overwall","pell","place-coldmere","place-harrow-ford","place-saint-ysoldes","place-the-lowmarch","place-winch-house","rae","rae1","seated_blade","stillwater","thunderstep","wardens_eye","wren","wren1","brother","c-b_guard","c-b_strike","c-bandage","c-callco","c-closeup","c-count","c-fast","c-hew","c-hewT","c-readline","c-secondwind","c-stone"],"fig":["captain","darkcoat","greycloak","guest","hornboy","lymer","pikeman","pitchfork","sergeant","swordsman","walker"],"tok":["captain","darkcoat","greycloak","guest","hornboy","lymer","pitchfork","sergeant","walker","ysra-tal","hollis-foe","hall","question","steps","brother","swordsman","wend","pikeman","sliver"],"sfx":{"battle_won":"sfx/battle_won.mp3","run_won":"sfx/run_won.mp3"},"music":{"clash":"music/clash.mp3","map":"music/map.mp3"},"drawn":[["The length of the hall","hall"],["The hall's question","question"],["A stretch of the Steps","steps"],["A lay brother","brother"]],"cardart":{"b_guard":"c-b_guard","b_strike":"c-b_strike","bandage":"c-bandage","callco":"c-callco","closeup":"c-closeup","count":"c-count","fast":"c-fast","hew":"c-hew","hewT":"c-hewT","readline":"c-readline","secondwind":"c-secondwind","stone":"c-stone"},"lent":{"hornboy":"pitchfork","sergeant":"captain","guest":"greycloak"}};window.LH_WARM=["music/clash.mp3", "music/map.mp3"]</script>
+<script>window.LH_ASSETS={"art":["aldric","ash","ash1","darrow","darrow0","darrow1","far_cast","groundbreaker","hammerfall","high-guard","hollis","hollis0","hollis1","long_breath","long_road","maelis","maelis1","measured_hand","menders_patience","overwall","pell","place-coldmere","place-harrow-ford","place-saint-ysoldes","place-the-lowmarch","place-winch-house","rae","rae1","seated_blade","soft_landing","stillwater","thunderstep","turning_blade","wardens_eye","wren","wren1","brother","c-b_guard","c-b_strike","c-bandage","c-callco","c-closeup","c-count","c-fast","c-hew","c-hewT","c-readline","c-secondwind","c-stone"],"fig":["captain","darkcoat","greycloak","guest","hornboy","lymer","pikeman","pitchfork","sergeant","swordsman","walker"],"tok":["captain","darkcoat","greycloak","guest","hornboy","lymer","pitchfork","sergeant","walker","ysra-tal","hollis-foe","hall","question","steps","brother","swordsman","wend","pikeman","sliver"],"sfx":{"battle_won":"sfx/battle_won.mp3","run_won":"sfx/run_won.mp3"},"music":{"clash":"music/clash.mp3","map":"music/map.mp3"},"drawn":[["The length of the hall","hall"],["The hall's question","question"],["A stretch of the Steps","steps"],["A lay brother","brother"]],"cardart":{"b_guard":"c-b_guard","b_strike":"c-b_strike","bandage":"c-bandage","callco":"c-callco","closeup":"c-closeup","count":"c-count","fast":"c-fast","hew":"c-hew","hewT":"c-hewT","readline":"c-readline","secondwind":"c-secondwind","stone":"c-stone"},"lent":{"hornboy":"pitchfork","sergeant":"captain","guest":"greycloak"}};window.LH_WARM=["music/clash.mp3", "music/map.mp3"]</script>
 <script>
 /* THE LINE AND THE HAND as an app: what a phone needs and the game does not know about. It keeps the page for when there
    is no signal (sw.js), says whether it is on the home screen already, asks the phone to put it there or to go full screen,
@@ -965,7 +965,7 @@ var C={
   mender:{n:"The Mender's Patience",r:'IV',t:'bind',k:'Skill',c:1,ex:1,heal:8,cleanse:1,art:'menders_patience'},
   eye:{n:"Warden's Eye",r:'IV',t:'eye',k:'Skill',c:0,draw:2,art:'wardens_eye'},
   ground:{n:'Groundbreaker',r:'III',t:'foot',k:'Attack',c:2,m:1,dmg:10,push:1,art:'groundbreaker'},
-  road:{n:'The Long Road',r:'I',t:'breath',k:'Skill',c:0,draw:1,again:1},
+  road:{n:'The Long Road',r:'I',t:'breath',k:'Skill',c:0,draw:1,again:1,art:'long_road'},
   hand:{n:'The Measured Hand',r:'II',t:'cast',k:'Attack',c:0,dmg:4,art:'measured_hand'},
   over:{n:'Overwall',r:'I',t:'cast',k:'Attack',c:1,dmg:6,pierce:1,art:'overwall'},
   far:{n:'The Far Cast',r:'I',t:'cast',k:'Attack',c:1,dmg:6,art:'far_cast'},
@@ -1464,9 +1464,13 @@ ranks('c_far','far_cast','The Far Cast','cast','Attack',[{r:1,c:1,dmg:6}]);
 ranks('c_seated','seated_blade','The Seated Blade','blade','Attack',[{r:2,c:1,m:1,dmg:6,dmgStood:10}]);
 ranks('c_hand','measured_hand','The Measured Hand','cast','Attack',[{r:1,c:0,dmg:3},{r:2,c:0,dmg:4}]);
 ranks('c_over','overwall','Overwall','cast','Attack',[{r:1,c:1,dmg:6,pierce:1}]);
+/* the Arts that came later (the sheet, as of the week each mission retells): a fall taken without harm, one blow that staggers, the road */
+ranks('c_soft','soft_landing','Soft Landing','foot','Skill',[{r:1,c:0,blk:4}]);
+ranks('c_hammer','hammerfall','Hammerfall','blade','Attack',[{r:1,c:2,ex:1,m:1,dmg:10,halve:1}]);
+ranks('c_road','long_road','The Long Road','breath','Skill',[{r:1,c:0,draw:1,again:1}]);
 /* the Knight Who Fell, with the Grace in him: the Arts that are sealed now */
 add('g_thunder',{n:'Thunderstep',r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:12,art:'thunderstep'});
-add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'high-guard'});
+add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'turning_blade'});
 add('g_stoop',{n:"Hawk's Stoop",r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:10,pierce:1,art:'high-guard'});
 add('g_anchor',{n:'Anchor',r:'the Grace',t:'foot',k:'Skill',c:1,blk:14,art:'stillwater'});
 add('g_quick',{n:'The Quickening',r:'the Grace',t:'eye',k:'Skill',c:0,draw:2,en:1,art:'wardens_eye'});
@@ -2192,7 +2196,7 @@ CP.add({id:'c5b',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thorn
   open:'The sergeant looks at the cart, and at the old man on its tailboard, and stops smiling.',
   map:{name:'The Inn Yard',theme:'yard',rows:['..d...','.wd.w.','..d...','w....w','..ww..','......','......']},
   down:'is out of it',insp:1,
-  party:{D:{at:[2,5],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1','c_far1'])},
+  party:{D:{at:[2,5],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand2','c_over1','c_far1','c_soft1'])},
     H:{at:[3,5],mov:1,img:'hollis'},A:{at:[1,6],mov:2,hp:26,img:'ash'},W:{at:[4,6],img:'wren'},R:{at:[5,6],mov:2,tend:0,tends:0,img:'rae'},
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,6]}]},
   foes:[{k:'sergeant',at:[2,0]},{k:'horn',at:[3,0]},{k:'pike',at:[1,2]},{k:'pike',at:[3,2]},{k:'pitch',at:[5,1]}],
@@ -2218,7 +2222,7 @@ CP.add({id:'c5c',book:'Book II · The Tempering Road',ch:'Chapter 5 · The Thorn
   open:'Ash had been quiet since the loft, and nobody had ever had to tell her.',
   map:{name:'The Fold',theme:'road',rows:['......','..d...','..d...','.wwww.','......','......','......']},
   down:'goes back down the slope',insp:1,
-  party:{D:{at:[2,4],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1','c_far1'])},
+  party:{D:{at:[2,4],t:'foot',mov:2,hp:50,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_stick',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand2','c_over1','c_far1','c_soft1'])},
     H:{at:[3,4],mov:1,img:'hollis'},A:{at:[1,4],mov:2,hp:26,img:'ash'},W:{at:[4,5],img:'wren'},
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:5,tends:3,lend:'c_now',at:[2,5]}]},
   foes:[{k:'lister',at:[2,0]},{k:'cloak',at:[3,0]},{k:'lymer',at:[1,1]},{k:'cloak',at:[4,1]},{k:'cloak',at:[5,0],tpl:1}],
@@ -2246,7 +2250,7 @@ CP.add({id:'c6',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir',
   map:{name:'The Weir',theme:'weir',rows:['.w..w.','......','ffffff','ffdfff','ffffff','......','......']},
   pro:'she',down:'goes down hard on the ice, her hand pressed to her shoulder',insp:1,
   say:[[/is still finding (his|her) feet\./g,'stands on the glaze with her weight on her back foot, and waits, the way a door stands open.']],
-  party:{D:{at:[2,3],t:'foot',mov:2,hp:58,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_patience',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_breath2','c_mend3','c_eye4','c_ground3','c_hand1','c_over1','c_far1'])},
+  party:{D:{at:[2,3],t:'foot',mov:2,hp:58,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_patience',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_breath2','c_mend4','c_eye4','c_ground3','c_hand2','c_over1','c_far1','c_soft1'])},
     H:{at:[0,6],still:1,deck:null,img:'hollis'},R:{at:[1,6],still:1,img:'rae'},W:{at:[4,6],still:1,deck:null,img:'wren'},
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',still:1,at:[5,6]}]},
   foes:[{k:'ysra',at:[2,0]}],
@@ -2280,7 +2284,7 @@ CP.add({id:'c6b',book:'Book II · The Tempering Road',ch:'Chapter 6 · The Weir'
   open:'On the far bank a horse steps down onto the glaze.',
   map:{name:'The Weir',theme:'weir',rows:['.w..w.','......','ffffff','ffdfff','ffffff','......','......']},
   down:'goes back across the ice',insp:1,
-  party:{D:{at:[2,3],t:'foot',mov:0,hp:58,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_patience',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend3','c_eye4','c_hand1','c_over1','c_far1'])},
+  party:{D:{at:[2,3],t:'foot',mov:0,hp:58,br:3,hn:5,throws:1,far:1,img:'darrow',deck:deck(rep('c_patience',3),rep('c_guard',2),['c_still3','c_seated2','c_seated2','c_ground3','c_breath2','c_mend4','c_eye4','c_hand2','c_over1','c_far1','c_soft1'])},
     H:{at:[1,5],mov:1,img:'hollis'},A:{at:[3,5],mov:3,img:'ash'},W:{at:[4,5],img:'wren'},R:{at:[0,6],still:1,img:'rae'},
     more:[{id:'M',from:'R',n:'Maelis',role:'the Mender',img:'maelis',mov:2,tend:6,tends:3,lend:'c_now',at:[2,5]}]},
   foes:[{k:'darkcoat',at:[0,0]},{k:'darklead',at:[2,0]},{k:'darkmail',at:[3,0]},{k:'darkcoat',at:[5,0]}],
@@ -2309,7 +2313,7 @@ CP.add({id:'c7',book:'Book II · The Tempering Road',ch:'Chapter 7 · The Far Ba
   map:{name:'The Mill Bridge',theme:'bridge',rows:['~~b~~~','~~b~~~','~~b~~~','~.b.~~','..d...','......','......']},
   down:'lets go',idle:'The line stands, and stares.',insp:1,
   say:[[/\bWounds\b/g,'Colds'],[/\bWound\b/g,'Cold'],[/\bwound\b/g,'cold'],[/Barbed/g,'The cold'],[/A blow of his that gets through leaves a Cold in the deck\./g,'A hand of theirs that gets through leaves Cold in the deck: a dead card.'],[/is still finding his feet\./g,'stands and stares at the flame.']],
-  party:{D:{at:[2,3],t:'foot',mov:0,hp:58,br:3,hn:5,throws:0,far:0,img:'darrow',deck:deck(rep('c_bar',3),rep('c_stick',2),['c_still3','c_ground3','c_breath2','c_mend3','c_eye4','c_seated2','c_seated2'])},
+  party:{D:{at:[2,3],t:'foot',mov:0,hp:58,br:3,hn:5,throws:0,far:0,img:'darrow',deck:deck(rep('c_bar',3),rep('c_stick',2),['c_still3','c_ground3','c_breath2','c_mend4','c_eye4','c_seated2','c_seated2','c_soft1','c_hammer1','c_road1'])},
     W:{at:[1,3],still:1,deck:null,img:'wren',lend:'c_lamp'},
     R:{at:[3,3],still:1,img:'rae',lend:'lR'},
     H:{at:[4,5],still:1,deck:null,img:'hollis'},

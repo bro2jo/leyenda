@@ -42,7 +42,7 @@ var C={
   mender:{n:"The Mender's Patience",r:'IV',t:'bind',k:'Skill',c:1,ex:1,heal:8,cleanse:1,art:'menders_patience'},
   eye:{n:"Warden's Eye",r:'IV',t:'eye',k:'Skill',c:0,draw:2,art:'wardens_eye'},
   ground:{n:'Groundbreaker',r:'III',t:'foot',k:'Attack',c:2,m:1,dmg:10,push:1,art:'groundbreaker'},
-  road:{n:'The Long Road',r:'I',t:'breath',k:'Skill',c:0,draw:1,again:1},
+  road:{n:'The Long Road',r:'I',t:'breath',k:'Skill',c:0,draw:1,again:1,art:'long_road'},
   hand:{n:'The Measured Hand',r:'II',t:'cast',k:'Attack',c:0,dmg:4,art:'measured_hand'},
   over:{n:'Overwall',r:'I',t:'cast',k:'Attack',c:1,dmg:6,pierce:1,art:'overwall'},
   far:{n:'The Far Cast',r:'I',t:'cast',k:'Attack',c:1,dmg:6,art:'far_cast'},

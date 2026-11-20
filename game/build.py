@@ -26,7 +26,8 @@ SRC, DIST = GAME / "src", GAME / "dist" / "bench"
 THUMBS = ROOT / "saga" / "art" / "thumbs"
 # what the game calls a picture -> the site's small copy of it
 SITE_ART = {a: f"arts/{a}.sm.webp" for a in ["seated_blade", "hammerfall", "stillwater", "long_breath", "menders_patience", "wardens_eye",
-                                               "groundbreaker", "measured_hand", "overwall", "far_cast", "thunderstep", "long_road"]}
+                                               "groundbreaker", "measured_hand", "overwall", "far_cast", "thunderstep", "long_road",
+                                               "turning_blade", "soft_landing"]}
 SITE_ART.update({"darrow": "characters/darrow-book2.sm.webp", "hollis": "characters/hollis-garrow-book2.sm.webp", "ash": "characters/ash-book2.sm.webp",
                  "wren": "characters/wren-ashdown-book2.sm.webp", "rae": "characters/rae-thorne-book2.sm.webp", "maelis": "characters/maelis-vorne-book2.sm.webp",
                  "high-guard": "looks/the-high-guard.md.webp"})

@@ -34,9 +34,13 @@ ranks('c_far','far_cast','The Far Cast','cast','Attack',[{r:1,c:1,dmg:6}]);
 ranks('c_seated','seated_blade','The Seated Blade','blade','Attack',[{r:2,c:1,m:1,dmg:6,dmgStood:10}]);
 ranks('c_hand','measured_hand','The Measured Hand','cast','Attack',[{r:1,c:0,dmg:3},{r:2,c:0,dmg:4}]);
 ranks('c_over','overwall','Overwall','cast','Attack',[{r:1,c:1,dmg:6,pierce:1}]);
+/* the Arts that came later (the sheet, as of the week each mission retells): a fall taken without harm, one blow that staggers, the road */
+ranks('c_soft','soft_landing','Soft Landing','foot','Skill',[{r:1,c:0,blk:4}]);
+ranks('c_hammer','hammerfall','Hammerfall','blade','Attack',[{r:1,c:2,ex:1,m:1,dmg:10,halve:1}]);
+ranks('c_road','long_road','The Long Road','breath','Skill',[{r:1,c:0,draw:1,again:1}]);
 /* the Knight Who Fell, with the Grace in him: the Arts that are sealed now */
 add('g_thunder',{n:'Thunderstep',r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:12,art:'thunderstep'});
-add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'high-guard'});
+add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'turning_blade'});
 add('g_stoop',{n:"Hawk's Stoop",r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:10,pierce:1,art:'high-guard'});
 add('g_anchor',{n:'Anchor',r:'the Grace',t:'foot',k:'Skill',c:1,blk:14,art:'stillwater'});
 add('g_quick',{n:'The Quickening',r:'the Grace',t:'eye',k:'Skill',c:0,draw:2,en:1,art:'wardens_eye'});
