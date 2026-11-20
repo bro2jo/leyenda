@@ -675,7 +675,7 @@ They passed the mill a little after noon. It was a black shell standing in its o
 
 The column's road went north from the mill, and it was not hard to find.
 
-"Forty pair of feet," Rae said, before they had gone a hundred yards. She read it at a walk, without looking down. "Three carts. That one's mine. The near wheel wants grease, and Wren's let Dun take the rough side, which he'll make her pay for." She stepped over a dark patch at the road's edge. "They stopped here to eat and didn't bury it. Here's where a child sat down and wouldn't get up, and somebody carried it after." Further on she stopped over a pile of dung and put the toe of her boot to it. "That's not three days old. That's one." She looked north. "They've stopped somewhere, and not far."
+"Forty pair of feet," Rae said, before they had gone a hundred yards. She read it at a walk, without looking down. "Three carts. That one's mine. The near wheel wants grease, and Wren's let Dun take the rough side, which he'll make her pay for." She stepped over a dark patch at the road's edge. "They stopped here to eat and didn't bury it. Here's where a child sat down and wouldn't get up, and somebody carried it after." Further on she stopped over a pile of dung and put the toe of her boot to it. "That's not three days old. That's one. They've stopped somewhere, and not far."
 
 She looked up the road to the north, where it ran on plain as a painted line over the next rise and the one after.
 
@@ -757,7 +757,7 @@ Across the camp Rae was rubbing Hob's ears and not looking at them.
 
 On the first night north, with the Captain a day gone west and the carter gone after him, Ser Hollis Garrow had nobody to be loud at.
 
-He had been loud all day. He had shouted forty millers up a road they did not want, and the miller's wife had said she would marry him, and he had told her he was spoken for by a mule, and then he had been loud at the mule. At noon the carter had put her oxen's halters into Wren's hands, said their names to the girl twice, and walked off west with a lamp and a load of wood on her back, and he had let her go, because somebody ought to. Now the camp was down along a stream, the children asleep in the carts, Wren asleep on her ledger, Maelis asleep sitting up as she always slept, as if somebody might call her. The fire was his.
+He had been loud all day. He had shouted forty millers up a road they did not want, and the miller's wife had said she would marry him, and he had been loud at his mule for listening. At noon the carter had put her oxen's halters into Wren's hands, said their names to the girl twice, and walked off west with a lamp and a load of wood on her back, and he had let her go, because somebody ought to. Now the camp was down along a stream, the children asleep in the carts, Wren asleep on her ledger, Maelis asleep sitting up as she always slept, as if somebody might call her. The fire was his.
 
 He unbuckled the leg.
 

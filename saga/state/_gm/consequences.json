@@ -1364,9 +1364,10 @@
           "fits": "present.rae && beats.b2_4.status == \"in_progress\"",
           "priority": 2,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch07:interlude"
+            "ch07:interlude",
+            "ch07:s5"
           ]
         }
       ]
@@ -2365,7 +2366,11 @@
           "what": "Wren learns, some day, that Rae was told something first and she was not; she counts it, out loud, and Rae does not help him",
           "fits": "present.wren && present.rae",
           "priority": 1,
-          "status": "pending"
+          "status": "pending",
+          "offered": 1,
+          "offered_at": [
+            "ch07:s5"
+          ]
         }
       ]
     }
