@@ -389,3 +389,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-20#6,2026-11-20,,snack,"Smoked cheddar, thick slice",1 thick slice (assumed ~1.5 oz / 42 g),170,10.5,0.5,14,0,8,0,270,35,300,0.1,12,1.5,0,0.4,40,library,his words: a whole slice of thick smoky cheddar
 2026-11-20#7,2026-11-20,,snack,PopCorners Kettle Corn (3 oz bag),"most of the bag (assumed ~3/4, ~64 g, 2.25 servings)",300,4.5,48,10,0.75,0.75,6.75,255,68,7.5,0.5,34,0.7,0,0,0,label,label photo 11/20 (per-package column x0.75); his words: had most of these
 2026-11-20#8,2026-11-20,,snack,Trail bologna,"some slices (assumed ~4 slices, ~2 oz / 56 g)",160,11,1,13,0,5.5,0.5,750,150,10,1.2,10,2,0,0.3,50,estimate,his words: some slices of trail bologna; typical smoked beef trail bologna per 2 oz; brand and count not given
+2026-11-20#9,2026-11-20,,snack,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,his words: also had a poppi; flavour not given
