@@ -100,6 +100,17 @@
     640
    ]
   },
+  "arts/soft_landing.webp": {
+   "sha1": "923c15f1f707d88f7aadca972f3b7f72625dd1eb",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/stillwater.webp": {
    "sha1": "c47a6918207f2a49318f1cc0256e4da873c13b51",
    "sm": [
