@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-18 · house · Rae walks the last mile beside the cart instead of riding, and talks the whole way up the long rise. At the top he realises he has kept up his end of it without once stopping for breath.
 - 2026-11-18 · overheard · Overheard at the roadside fire: Rae telling the dog it has done very well today, in a voice she uses for no one else, and then warning it not to let that go to its head.
 - 2026-11-18 · saying · Rae gives him the carters' rule for a byname as they walk: call him what he does twice. Then she watches him sidelong for the next mile, plainly counting.
 - 2026-11-18 · body · A stile at midday. He goes over it the old way, hand on the post, one leg and then the other, and is down on the far side before he remembers that this used to be a decision.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-20 · saying · The wind gets under Wren's cloak at the morning fire, and she says the mountain keeps its own count, though there is no mountain in sight. Rae asks what it means. Nobody knows, Wren says; everybody says it.
 - 2026-11-20 · weather · Rain by midday, the soft kind that never quite decides to stop. By the fire the company's cloaks steam in a row, and Ash, lying across the end of the row, steams loudest.
 - 2026-11-20 · overheard · Overheard under the dripping eaves: Wren and Rae arguing, very politely, about whose turn it is to have been wrong about the rain.
+- 2026-11-20 · house · Maelis has the mending out by the fire: three cloaks, one glove, and a strap she says is past saving and is saving anyway, stitch by stitch, without looking up.
