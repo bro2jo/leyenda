@@ -484,8 +484,8 @@
         "cond",
         "sport"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the trainer, Thu 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/19 (the trainer): the uppers move onto the PT days, so Friday is a low day (bike and the short throw); Upper B goes to Mon 11/23"
+      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30; the trainer, Thu 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; the trainer, Fri 11/20: real/visits/2026-11-20_trainer_instruction.md",
+      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15. From 11/19 (the trainer): the uppers move onto the PT days, so Friday is a low day (bike and the short throw); Upper B goes to Mon 11/23. 11/20 (the trainer): the low day's conditioning is his aerobic power intervals (20-min warm-up, 3 x 3 min below threshold on a low-impact machine)"
     },
     {
       "date": "2026-11-21",
