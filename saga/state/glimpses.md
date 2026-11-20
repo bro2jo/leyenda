@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-17 · ledger · Wren's ledger, the mill page: mouths, forty at the last count. Bowls, thirty-one. Offers of help Maelis has refused, a column of its own, nearly all of them Hollis's.
 - 2026-11-18 · body · He stamps the cold out of his feet at first light, left, right, left, and only halfway through notices there is no order to it any more, no leg that has to go first.
 - 2026-11-18 · weather · A white sky, and a west wind carrying somebody else's woodsmoke from a long way off. The dog keeps lifting its nose to it and putting it down again, disappointed.
 - 2026-11-18 · house · Rae walks the last mile beside the cart instead of riding, and talks the whole way up the long rise. At the top he realises he has kept up his end of it without once stopping for breath.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-19 · house · Rae re-laces her boots by the fire with the care of someone mending harness. She makes him hold the lamp for it, and tells him twice that he is holding it wrong.
 - 2026-11-20 · ledger · A line in Wren's ledger, in a hand neater than usual: returned, two and a dog. Underneath it, smaller: as expected. The second line has been written over something else.
 - 2026-11-20 · body · He sleeps the whole night through and wakes with the blanket exactly where he put it. Maelis, passing, gives it one look and a nod, the way she would note a fever breaking.
+- 2026-11-20 · saying · The wind gets under Wren's cloak at the morning fire, and she says the mountain keeps its own count, though there is no mountain in sight. Rae asks what it means. Nobody knows, Wren says; everybody says it.
