@@ -134,6 +134,8 @@ def main():
         night, week_t = cfg_t["sleep_targets"]["min_per_night"], cfg_t["sleep_targets"]["min_per_week"]
         near_min = int(-(-night * rules_t["daily"]["sleep_near"]["threshold"] // 1))  # the fewest minutes that still count
         sun = dt.date(2031, 1, 5)
+        counsel = lambda: next((a for a in jload(tmp / "saga/state/darrow.json")["arts"] if a["id"] == "morning_counsel"), {})
+        nights0 = counsel().get("practice", 0)  # the live log's own nights at the line: the six below are counted on top of them
         mins = [night, near_min, near_min - 1, week_t - 4 * night - 2 * near_min + 1, night, night, night]  # one long night covers the short one
         for i, m in enumerate(mins):
             run(darrow + ["set", "daily", (sun + dt.timedelta(i)).isoformat(), "am_swelling=0", f"sleep_min={m}"], tmp)
@@ -149,8 +151,8 @@ def main():
         check(rules_t["weekly"]["sleep_week"]["label"] in labels, "the week's nights summing to its target pay the week's bonus (a long night covers a short one)", str(labels))
         check(labels.count(D_["morning_check"]["label"]) == 7 and not any(x[0] == (sun + dt.timedelta(7)).isoformat() and x[2] == D_["morning_check"]["label"] for x in deeds),
               "from its date on, a swelling grade without last night's minutes is not a morning check", str(labels))
-        art = next((a for a in jload(tmp / "saga/state/darrow.json")["arts"] if a["id"] == "morning_counsel"), {})
-        check(art.get("practice") == 6 and art.get("rank") == 2 and art.get("tier") == 1, "six nights at the line or close are six days of practice for the Art sleep feeds", json.dumps(art))
+        art = counsel()
+        check(art.get("practice") == nights0 + 6 and art.get("rank", 0) >= 2 and art.get("tier", 0) >= 1, "six nights at the line or close are six days of practice for the Art sleep feeds", json.dumps(art))
         code, out = run(saga + ["counsel"], tmp)
         check(code == 0 and "0 of 1 used" in out, "counsel show reads the Art from the sheet", out[-300:])
         code, out = run(saga + ["counsel", "ask"], tmp, expect=1)

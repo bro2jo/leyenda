@@ -1207,6 +1207,7 @@
         "reactive",
         "throw"
       ],
+      "_block": "the slot type; an impact or field drill takes the block of the master plan progression it belongs to, one block per movement: landing (land and stick), plyo (leave the ground or rebound), decel (a run brought to a stop), balance (a balance drill's own row). The definitions: working_rules.md -> Log files",
       "side": [
         "L",
         "R",

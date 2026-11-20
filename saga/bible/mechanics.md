@@ -69,15 +69,15 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Seated Blade** | Blade | upper-body sessions | now |
 | **Iron Grip** | Blade | accessory days | now |
 | **Hammerfall** | Blade | power & mobility (throws) | now |
-| **Stillwater Stance** | Footing | balance work / the real side's leg work | now |
+| **Stillwater Stance** | Footing | balance drills (a day one was logged; a leg session without one gives none) | now |
 | **The Long Breath** | Breath | conditioning ≥10 min | now |
 | **The Mender's Patience** | Binding | the daily minimum in full | now |
 | **Warden's Eye** | Insight | graded morning checks | now |
 | **Morning's Counsel** | Insight | nights of sleep at his target or close to it | now |
 | **Groundbreaker** | Footing | lower-body sessions | Knot III |
-| **Soft Landing** | Footing | landing drills | Knot III |
+| **Soft Landing** | Footing | landing drills (land and stick) | Knot III |
 | **The Long Road** | Breath | running | Knot IV |
-| **Thunderstep** | Footing | plyometrics | Knot V |
+| **Thunderstep** | Footing | plyometrics (jumps, hops, bounds) | Knot V |
 | **Hawk's Stoop** | Footing | sprinting | Knot V |
 | **Anchor** | Footing | deceleration | Knot V |
 | **The Turning Blade** | Blade | cutting | Knot VI |
@@ -86,9 +86,9 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **The Wicket Gate** | Cast | break throws | now |
 | **The Liar's Shoulder** | Cast | fakes and deception | now |
 | **Overwall** | Cast | overhead throws | now |
-| **Tell-Reading** | Cast | film and study of defense | now |
+| **Tell-Reading** | Insight | film and study of defense | now |
 | **The Far Cast** | Cast | long throws | now |
-| **The Shadow-Step** | Cast | defensive footwork | Knot III |
+| **The Shadow-Step** | Footing | defensive footwork | Knot III |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
 

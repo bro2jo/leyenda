@@ -239,6 +239,12 @@ Logs are written as he reports (`/log`) and read through the engine, never raw. 
 - `hr_avg`: the session's or the ride's average heart rate in whole bpm, from his watch or the machine, when he gives it (blank otherwise; never estimated). A ride's distance stays in `notes` (`10.58 mi`).
 - `session`: `home` / `PT` / `HEP` / `floor` for the knee · `conditioning` for off-day rides · `upperA` / `upperB` / `accessory` / `power` / `arms` for the add-on.
 - `block`: the slot type — `warmup`, `mobility`, `quad`, `knee`, `single-leg`, `posterior`, `hip`, `calf`, `balance`, `gait`, `test`, `manual`, `posture`, `cooldown`, `floor`, `conditioning`, `push`, `pull`, `finisher`.
+- **Impact and field drills take the block of the master plan progression they belong to, one block per movement** (the whole list: `real/config.json → vocabulary`; `ex names` shows what a drill was logged as before):
+  - `landing`: the point is to land and stick. The plan's Plyometric Level 1 (snap-down, double-leg landing, low double-leg pogo, box step-off or drop-down: the clinic's "drop decel") and any jump judged on its stuck landing (jump to single-leg landing).
+  - `plyo`: the point is to leave the ground or rebound. Levels 2–3: box jump, vertical jump, drop vertical jump, forward jump, line and cone hops, single-leg pogo, hops, bounds, split-squat jump.
+  - `decel`: the Deceleration Progression: a run brought to a stop (the short decel, the 3-step stop). Stepping off a box is `landing`, whatever it is called.
+  - `run`: the return-to-running sessions and running-form drills · `sprint`: the Sprint Progression · `agility`: Lateral Agility · `cut`: the Cutting Progression · `reactive`: Reactive Agility.
+  - `balance`: a balance drill only (single-leg stance, a wobble board, a ball toss on one leg). A knee session counts as balance work only on a day one of these rows is logged.
 - `side`: `L` / `R` / `bil` (both legs) for leg exercises; blank for upper-body and conditioning rows.
 - Single-leg work done on both legs gets one row per side (`L`, then `R`); `bil` is only for movements where both legs work together. Right-leg mirrored sets are their own rows with side `R`.
 - Add-on accessories are one "as written" row unless something changed.

@@ -359,7 +359,7 @@
     "_formula": "20 + 4*level + 2*(vigor - 10), minimum 10"
   },
   "tags": {
-    "_about": "Which real practice feeds which Art. Exercise-log 'block' and 'session' values map to tags here.",
+    "_about": "Which real practice feeds which Art. Exercise-log 'block' and 'session' values map to tags here. A block is the progression the drill belongs to, one per movement (real/plan/working_rules.md -> Log files): landing is land-and-stick, plyo is leaving the ground, and balance counts only from a balance drill's own row.",
     "block_tags": {
       "balance": "balance",
       "landing": "landing",
@@ -446,7 +446,7 @@
       "tree": "Insight",
       "tag": "sleep",
       "knot": 0,
-      "effect": "A question he takes to bed is clearer by morning. Once a chapter he may sleep on an open choice and wake knowing which road hides the most; from rank III, one true thing about that road; at rank V, about the road he names. +Rank to one check to read a person or a lie in the block that carries the counsel.",
+      "effect": "Once a chapter, sleep on an open choice and wake knowing which road hides the most. Rank III: one true thing about that road. Rank V: about the road he names. +Rank to one read of a person or a lie when the counsel comes.",
       "tiers": {
         "2": "It also works on a scene already past: he may sleep on something he saw and wake knowing what he missed.",
         "3": "Twice a chapter."
@@ -564,7 +564,7 @@
         "skill": "defense_iq",
         "id": "tell_reading",
         "name": "Tell-Reading",
-        "tree": "Cast",
+        "tree": "Insight",
         "knot": 2,
         "effect": "Watch a foe's hips and hands and know his next move before he makes it. Once per scene, ask what an opponent means to do."
       },
@@ -572,7 +572,7 @@
         "skill": "defense_footwork",
         "id": "shadow_step",
         "name": "The Shadow-Step",
-        "tree": "Cast",
+        "tree": "Footing",
         "knot": 3,
         "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
       }

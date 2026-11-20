@@ -441,9 +441,7 @@ def gather(cfg, rules, nutrition=None):
         if f["knee_unpaid"]:
             f["tags"] -= (f["knee_tags"] - f["other_tags"])
         if f["knee"] and not f["knee_unpaid"]:
-            f["tags"].add("lower")
-            if f["knee"].upper() in ("A", "B", "HOME"):
-                f["tags"].add("balance")
+            f["tags"].add("lower")  # balance practice is its own rows (block `balance`): a session without the drill gives none
         if f["cond_min"] >= rules["daily"]["conditioning"]["min_minutes"]:
             f["tags"].add("conditioning")
             if "run" in f["cond_type"] or "jog" in f["cond_type"]:
@@ -2456,7 +2454,15 @@ def cmd_append(key, args, cfg):
     if not args.payload:
         sys.exit(f"{key}: nothing to add (pass the rows as JSON)")
     rows = read_csv(key)
-    probs = []
+    probs, notes = [], []
+    # a movement that feeds an Art keeps one block (Working Rules -> Log files: landing / plyo / decel ...): a drill
+    # logged before under one Art's block and now under another's is said, never refused (the first tag may be the wrong one)
+    art_block = load_json(P["rules"])["tags"]["block_tags"] if key == "exercise" else {}
+    before = defaultdict(set)
+    for r in rows if art_block else []:
+        b = str(r.get("block") or "").strip().lower()
+        if b in art_block:
+            before[str(r.get("exercise") or "").strip().lower()].add(b)
     for i, item in enumerate(as_list(args.payload), 1):
         day = d(item["date"])
         unknown = [k for k in item if k not in COLS[key]]
@@ -2468,12 +2474,19 @@ def cmd_append(key, args, cfg):
             row["dash_week_start"] = row["dash_week_start"] or week_start(day).isoformat()
             row["pod"] = row["pod"] or str(pod(cfg, day))
         probs += vocab_problems(cfg, key, row, f"{key} row {i} ({row['date']})")
+        name, b = str(row.get("exercise") or "").strip().lower(), str(row.get("block") or "").strip().lower()
+        was = before.get(name) or set()
+        if b in art_block and was and art_block[b] not in {art_block[x] for x in was}:
+            notes.append(f"note: '{row['exercise']}' is block {b} here and was {'/'.join(sorted(was))} before: one block per movement "
+                         f"(doc rules \"Log files\"); if this row is the wrong one, it feeds the wrong Art")
         rows.append(row)
     if probs:
         sys.exit("refused, nothing written:\n  " + "\n  ".join(probs))
     rows.sort(key=lambda r: r.get("date", ""))
     write_csv(key, rows)
     print(f"{key}: appended {len(as_list(args.payload))} row(s)")
+    for n in dict.fromkeys(notes):
+        print(n)
 
 
 # ---------------------------------------------------------------- dice

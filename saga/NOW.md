@@ -36,7 +36,7 @@ THE BINDING · Knots tied IV of VII
 THE TETHER · II of V · a hand
 WORKS · 2 finished
 ARTS · The Seated Blade II · Hammerfall I · Stillwater Stance III · The Long Breath II · The Mender's Patience IV · Warden's Eye IV · Morning's Counsel I · Groundbreaker III · Soft Landing I · The Long Road I · The Measured Hand II · The Wicket Gate I · Overwall I · The Far Cast I
-SEALED (practice banked) · Thunderstep (Knot V) · Anchor (Knot V) · The Turning Blade (Knot VI)
+SEALED (practice banked) · Thunderstep (Knot V) · The Turning Blade (Knot VI)
 ```
 
 **Chapter 7, so far (on what's logged):** Triumph
