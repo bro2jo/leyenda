@@ -1364,8 +1364,10 @@
           "fits": "present.rae && beats.b2_4.status == \"in_progress\"",
           "priority": 2,
           "status": "pending",
-          "offered": 0,
-          "offered_at": []
+          "offered": 1,
+          "offered_at": [
+            "ch07:interlude"
+          ]
         }
       ]
     },
@@ -1602,7 +1604,8 @@
           "what": "At the Coldmere well Hollis told him, sober, that he would follow him into the river again, saying it then because he did not know he would be sober the day it was worth saying. Fire where it comes back when he looks at the seal",
           "fits": "present.hollis && beats.b2_4.status == \"in_progress\"",
           "priority": 3,
-          "status": "pending"
+          "status": "fired@ch07:interlude",
+          "evidence": "At the well in Coldmere he had told the Captain, sober, that if he took them into the river again he would come in after him."
         },
         {
           "id": "c05.9c",
@@ -2228,12 +2231,13 @@
           "what": "Wren opened a column for him at the fire with his name at the top and nothing under it, and said she would close it herself if he was not back in three days; it is closed, in front of him, when he walks back in",
           "fits": "present.wren",
           "priority": 3,
-          "status": "pending",
+          "status": "fired@ch07:s5",
           "offered": 2,
           "offered_at": [
             "ch07:between-2",
             "ch07:s3"
-          ]
+          ],
+          "evidence": "Then she turned back to a page near the front, found his column, and drew a line across the bottom of it, hard, the width of the page."
         },
         {
           "id": "c07.3b",
@@ -2243,12 +2247,13 @@
           "what": "Maelis's price: when he comes back he sits down and she looks at him before he says a word to anyone; she holds him to it",
           "fits": "present.maelis",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch07:s5",
           "offered": 2,
           "offered_at": [
             "ch07:between-2",
             "ch07:s3"
-          ]
+          ],
+          "evidence": "She looked at him before he had said a word to anyone."
         }
       ]
     },
@@ -2284,11 +2289,13 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 3,
+          "offered": 5,
           "offered_at": [
             "ch07:between-3",
             "ch07:s4",
-            "ch07:between-4"
+            "ch07:between-4",
+            "ch07:s5",
+            "ch07:interlude"
           ]
         }
       ]
@@ -2327,7 +2334,12 @@
           "what": "Rae is the only one he has told what the rider said on the ice; she keeps it, and it sits in her when Hollis is near and knows less than she does",
           "fits": "present.rae && present.hollis",
           "priority": 2,
-          "status": "pending"
+          "status": "pending",
+          "offered": 2,
+          "offered_at": [
+            "ch07:s5",
+            "ch07:interlude"
+          ]
         }
       ],
       "declined": [

@@ -65,11 +65,27 @@
       "after": "4",
       "covers": [],
       "written": "2026-11-19"
+    },
+    {
+      "scene": 5,
+      "title": "Back by the Third Day",
+      "covers": [
+        "2026-11-19"
+      ],
+      "written": "2026-11-19"
+    },
+    {
+      "scene": "interlude",
+      "title": "Second in Reserve",
+      "covers": [
+        "2026-11-19"
+      ],
+      "written": "2026-11-19"
     }
   ],
   "location": {
     "place": "river-mill",
-    "detail": "the second fire, in a hollow under an oak on the north side of the walkers' road, about a day west of the river mill",
+    "detail": "the column's camp where the north road dips to a stream, half a day north of the burned mill",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -78,8 +94,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "Two nights west on the walkers' road: the second night's fire, on the way back, and Rae's question.",
-  "last_beat": "Rae came round the fire, sat beside him and took his right hand; told to keep from Wren that he had told her first, she said Aye, and kept the hand.",
+  "current_struggle": "Back with the column: Hollis's quiet, and the question he has not asked.",
+  "last_beat": "Hollis, with a question plainly ready, said to the fire, Not tonight. Get some sleep, Captain.",
   "companions": {
     "maelis": {
       "approval": 39,

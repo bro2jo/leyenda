@@ -25,6 +25,7 @@
         "06:choice",
         "07:between-2",
         "07:between-4",
+        "07:interlude",
         "tale03:p1"
       ]
     },
@@ -34,8 +35,8 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Hollis knows where his own is and has never looked at its seal; the page has shown him look at a blue seal on Marrant's writ at the bars and watch the blue wax of Darrow's letters (02:s5, 03:s2), saying nothing; Darrow knows (03:between-3) Hollis kept the writ and has never looked at its seal, not where it is; the reader (the leg's cup, 01:interlude)",
-      "note": "active: paper in the cup of Hollis's wooden leg, seal unexamined; the writ at the bars wore blue wax the size of a child's palm (the first of the two wax plants q1.letters needs; his own still unlooked-at until b2.4)",
+      "who_knows": "Hollis has looked (07:interlude): blue wax, Vane's seal, on the order he carried; the reader. Darrow knows Hollis kept the writ unlooked-at, not that he has now looked.",
+      "note": "07:interlude: paid. The order back in the leg's cup, wax inward.",
       "on_page": [
         "00:I",
         "01:interlude",
@@ -43,7 +44,9 @@
         "02:s5",
         "03:s2",
         "03:between-3",
-        "05:between-2"
+        "05:between-2",
+        "07:s5",
+        "07:interlude"
       ]
     },
     {
@@ -284,6 +287,7 @@
         "07:between-3",
         "07:s4",
         "07:between-4",
+        "07:s5",
         "tale02:p1",
         "tale02:p2",
         "tale02:p3"

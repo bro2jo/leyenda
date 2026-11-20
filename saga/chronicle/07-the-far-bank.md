@@ -666,3 +666,125 @@ He understood her a beat late, as he understood most of what she said. A rope th
 "Wren," said Darrow, "is not to know."
 
 "Aye," said Rae, and kept the hand.
+
+### Scene 5 — Back by the Third Day
+
+Neither of them said anything about the hand in the morning. Rae walked on his right, where she had sat, and Ash ranged ahead along the trodden road and came back to report nothing, which was the best news there was.
+
+They passed the mill a little after noon. It was a black shell standing in its own ash, the wheel still on its axle and burned to the spokes, turning a little when the race pushed it. The bridge was clear from end to end. Rae stopped on the near bank where her cart had stood across the end of it, looked at the ruts it had left, and walked on.
+
+The column's road went north from the mill, and it was not hard to find.
+
+"Forty pair of feet," Rae said, before they had gone a hundred yards. She read it at a walk, without looking down. "Three carts. That one's mine. The near wheel wants grease, and Wren's let Dun take the rough side, which he'll make her pay for." She stepped over a dark patch at the road's edge. "They stopped here to eat and didn't bury it. Here's where a child sat down and wouldn't get up, and somebody carried it after." Further on she stopped over a pile of dung and put the toe of her boot to it. "That's not three days old. That's one." She looked north. "They've stopped somewhere, and not far."
+
+She looked up the road to the north, where it ran on plain as a painted line over the next rise and the one after.
+
+"A child could follow that," she said. "I said."
+
+"You said."
+
+"Aye." She left it there, which was worse than saying it twice.
+
+By the middle of the afternoon his legs were tired the old way, the same on both sides, as after a long day in the saddle. He had forgotten tired could feel like that.
+
+---
+
+They caught the column at dusk, where the north road dipped to a stream. The carts were drawn up along the bank, the fires were lit, and forty people were making more noise round them than forty people had any need to. The wind had dropped and the cold came straight down instead, still and blue, and every voice in the camp hung in front of its speaker in a small cloud.
+
+Wren saw them first. She was on the tail of Rae's cart with the ledger on her knees, and she stayed there. She looked at him, and at Rae, and at Rae's lamp. Then she turned back to a page near the front, found his column, and drew a line across the bottom of it, hard, the width of the page.
+
+"Back," she said. "Third day, by dusk. Column closed." She turned the book round so he could see it: his name at the top, her line, and under the line nothing at all. "I had the pencil out at noon. Technically, you had till dark."
+
+"Technically," said Darrow.
+
+"Also, I've been driving two oxen for three days who answer to one word, and I don't know the word." She jabbed the pencil at Rae. "You said say it like you mean it. I meant it so hard a miller's wife had to sit down."
+
+Rae went to Hob's head and laid her hand on his neck, and Hob, who had not stopped for anyone in three days, stopped chewing.
+
+Darrow got no further. Maelis was coming down the bank from the nearest fire with her roll on her shoulder, and she pointed at the cart-tail beside Wren with two fingers, the way she pointed a lay brother at a bucket.
+
+He sat.
+
+She looked at him before he had said a word to anyone. Hands first, out of his coat, both of them, the two slow fingers bent and straightened. Then his face. Then she crouched in the frost, took his right boot in both hands, and looked at it as if it had said something rude to her.
+
+"Off," she said.
+
+He took it off. Forty people watched the captain of the Ninth take his boot off on a cart-tail at dusk, and the miller's boy laughed until somebody cuffed him. The toes were whiter than the rest of the foot, and stayed whiter when she pressed them.
+
+"Feel that?"
+
+"Yes."
+
+"That?"
+
+"Less."
+
+She looked up. "One of them had you."
+
+"By the boot."
+
+"And you slept."
+
+He had not said so. He opened his mouth to.
+
+"He slept," said Rae, from Hob's head.
+
+Maelis set the foot down on her own knee, gently, and he saw that being gentle with it cost her something. "Every night from now till I say," she said, "you sit on this cart-tail, and I look at that foot before you look at anything else. That's what two nights cost." She stood up. "Boot on. Go and see Hollis."
+
+---
+
+Hollis was at the far fire, and the far fire had room round it.
+
+Darrow saw the room before he saw the man. The millers had made it as water makes room round a stone: nobody sat within two yards of him, and a child coming up the bank with a bowl set it down at his elbow and backed off as if from a strange dog. Hollis sat with the leg out to the heat and his hands on his knees. There was no cup in them. There was no song.
+
+"He shouted them up the road the first day," Wren said at Darrow's shoulder, low. "All day. He was wonderful. The miller's wife said she'd marry him, and he said he was spoken for by a mule." She turned the pencil over in her fingers. "Then the first night he stopped. We got as far as this stream, and he's not moved us off it since. He said the children's feet." She frowned at that, as at a sum that would not come out. "Maelis makes him eat. I tell him the count every hour, so he's got something to say no to." Her voice went small. "He says thank you, Captain. Hollis says thank you."
+
+Darrow knew Hollis's quiet. He had seen it at the bars over blue wax, and across the brazier, and in the hall the night the Sixth's names were read. This was another one, and new was worse.
+
+He went over. Hollis looked up at him, and for a moment the old face came, the one with an insult already on the way. It did not arrive.
+
+"A captain who walks off," Hollis said, "is a man with a sword out for a walk." He said it once, flat, like a line read off a list, and looked back at the fire. No *Grace-fed*, no story after it. "Sit down, Captain. You're in my light."
+
+Darrow sat.
+
+They sat a long time. Hollis had a question. Darrow could see it on him, in how he sat, like a man with something heavy in an inside pocket; he had carried one himself since the ford, and he knew the shape. Three heartbeats. A horse already turned. A rider's words on the ice. Whatever Hollis asked, he would have to choose how much of that river to hand a man at once, and he had no answer yet.
+
+Across the camp Rae was rubbing Hob's ears and not looking at them.
+
+"Not tonight," Hollis said at last, to the fire, as if Darrow had asked him something. "Get some sleep, Captain."
+
+### Interlude — Second in Reserve
+
+On the first night north, with the Captain a day gone west and the carter gone after him, Ser Hollis Garrow had nobody to be loud at.
+
+He had been loud all day. He had shouted forty millers up a road they did not want, and the miller's wife had said she would marry him, and he had told her he was spoken for by a mule, and then he had been loud at the mule. At noon the carter had put her oxen's halters into Wren's hands, said their names to the girl twice, and walked off west with a lamp and a load of wood on her back, and he had let her go, because somebody ought to. Now the camp was down along a stream, the children asleep in the carts, Wren asleep on her ledger, Maelis asleep sitting up as she always slept, as if somebody might call her. The fire was his.
+
+He unbuckled the leg.
+
+The paper was in the cup, where it had been since the House: folded small, soft at the folds, the wax turned inward against the wood. He had been going to look at it since midsummer. He had said so to himself at the House, and at the bars, and across the brazier, and at the well in Coldmere with the Captain throwing pebbles into a bucket. He had a drink's worth of reasons for not looking, and no drink. The millers had a jar in the third cart. He knew which cart. He had smelled it at noon.
+
+He unfolded the paper.
+
+He knew the words. *The Sixth and the Ninth to clear the ford. Second in reserve.* He read them anyway, once, to the bottom of the sheet, because he had promised himself once.
+
+Then the wax.
+
+He had broken it with his thumb on the west bank, with the river loud behind him, and it had held on to the paper in two halves, flaking at the edges. It was blue, the size of a child's palm. He fitted the halves together on his knee with a thumb that would not keep still, and turned it to the fire.
+
+He had seen that seal at the bars, on a Confessor's writ held up for the court to look at. He had seen it on the letters in the Captain's lap, and running blue into the brazier and curling black. He had looked away from it every time, because every time some part of him had known, and the rest was for clerks.
+
+Aldric Vane. The captain of the Second had sealed everything, all the years Hollis had known him: orders, passes, a note to a farrier. He had a good hand and good wax, and he liked them seen.
+
+*Second in reserve.*
+
+The Second had sat its horses on the west bank and stayed dry. The Sixth had gone in under Hollis, because the paper in Hollis's fist said so, and he had carried that paper up the bank himself, broken the seal without looking, and held it out to the Captain like a man handing over a cup. A Confessor had read the Sixth's names off a list at the House gate since. Hollis knew them without the list.
+
+He sat very still for a while. He knew what he wanted, and it was in the third cart.
+
+At the well in Coldmere he had told the Captain, sober, that if he took them into the river again he would come in after him. He had said it then because he did not know whether he would be sober on the day it was worth saying. Well. He was sober. And it had not been the Captain who sent them into the river. It had been the man on the bank with the better seat, who sealed everything, and liked his wax seen.
+
+He would still come. That was the thing he had not expected to find in himself, and it was there, as plain as the seal.
+
+He folded the paper along its old folds, wax inward, and put it back in the cup, and buckled the leg on. He did not go to the third cart. He sat until the fire was a red bed and the cold came down through the trees.
+
+In the morning he did not shout them up the road. He said the children's feet wanted a day, and nobody argued with him, and that was the worst of it.

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-4",
+    "scene": "5",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-4"
+    "anchor": "chronicle/07-the-far-bank.html#scene-5"
   },
-  "last_seen_doing": "Called the Steps answer light, waited him out, asked after Maelis, then came round the fire, sat beside him and took his slow hand: let it grumble.",
-  "now": "Beside Darrow on his side of the fire, his right hand in both of hers.",
+  "last_seen_doing": "Read the column's road aloud from the mill, bitter that a child could follow it; took Hob back with a hand on his neck; told Maelis he slept.",
+  "now": "At Hob's head in the column's camp.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1007,6 +1007,18 @@
       "evidence": "\"Aye,\" said Rae, and kept the hand."
     },
     {
+      "fact": "She read the column's road from the burned mill aloud, and said a child could follow it, as she had warned.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "\"A child could follow that,\" she said. \"I said.\""
+    },
+    {
+      "fact": "She told Maelis that Darrow had slept by the fire.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "\"He slept,\" said Rae, from Hob's head."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1390,6 +1402,15 @@
     {
       "chapter": "07",
       "scene": "between-4"
+    },
+    {
+      "chapter": "07",
+      "scene": "5"
+    },
+    {
+      "chapter": "07",
+      "scene": "interlude",
+      "mention": true
     },
     {
       "chapter": "tale02",

@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "3",
+    "scene": "5",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-3"
+    "anchor": "chronicle/07-the-far-bank.html#scene-5"
   },
-  "last_seen_doing": "Counted the forty past her one by one at the head of the column and wrote the number down.",
-  "now": "On the road north with the column and the ledger.",
+  "last_seen_doing": "Closed his column in front of him with a line across the page; complained she had driven Rae's oxen three days without knowing their word; told him how Hollis has been.",
+  "now": "On the tail of Rae's cart with the ledger, at the column's camp.",
   "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -841,6 +841,18 @@
       "chapter": "07",
       "scene": "between-2",
       "evidence": "Three days,\" said Wren. \"Then I close it myself."
+    },
+    {
+      "fact": "When he walked back in she drew a line across the bottom of his column and closed it, with nothing under his name.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "drew a line across the bottom of it, hard, the width of the page."
+    },
+    {
+      "fact": "She says Hollis shouted the forty up the road the first day, then stopped, has not moved them off the stream since, and says thank you.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "\"He says thank you, Captain. Hollis says thank you.\""
     }
   ],
   "relationships": [
@@ -1212,6 +1224,15 @@
     {
       "chapter": "07",
       "scene": "between-4",
+      "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "5"
+    },
+    {
+      "chapter": "07",
+      "scene": "interlude",
       "mention": true
     }
   ]

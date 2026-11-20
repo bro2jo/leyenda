@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "3",
+    "scene": "interlude",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-3"
+    "anchor": "chronicle/07-the-far-bank.html#interlude"
   },
-  "last_seen_doing": "Got the forty on their feet by shouting at them and took them north.",
-  "now": "Captain of the forty on the road north.",
+  "last_seen_doing": "Alone at the fire on the first night north, took the writ out of the leg's cup, read it once, fitted the broken blue wax together and knew the seal; put it back, sober, and did not go to the jar in the third cart.",
+  "now": "At the far fire in the column's camp by the stream, quiet, with a question he has not asked the Captain; he has looked at the seal.",
   "story_so_far": "Hollis moved the Captain's grip up the hilt and told him two lost fingers were an argument already over, gave a river boy the boot he carried down the mountain, and argued for answering the summons by the forms. He won, sulked about it, crossed the glazed weir on his backside to test his captain on the stone, told Wren she was for them, and kept his hands at his sides at noon because the forms said so.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -850,6 +850,48 @@
       "chapter": "07",
       "scene": "between-2",
       "evidence": "Two nights, Captain. I'm not saying it twice."
+    },
+    {
+      "fact": "He told Darrow, once and flat, that a captain who walks off is a man with a sword out for a walk.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "\"A captain who walks off,\" Hollis said, \"is a man with a sword out for a walk.\""
+    },
+    {
+      "fact": "Since the first night north he has stopped shouting, and the millers give him room.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "nobody sat within two yards of him"
+    },
+    {
+      "fact": "On the first night north he took the order out of the cup of his leg, read it once, and fitted the two halves of the blue wax together by the fire.",
+      "chapter": "07",
+      "scene": "interlude",
+      "evidence": "He fitted the halves together on his knee with a thumb that would not keep still, and turned it to the fire."
+    },
+    {
+      "fact": "The seal on the order that sent the Sixth and the Ninth into the ford was Aldric Vane's, captain of the Second, the same blue wax as the Confessor's writ at the bars and the Captain's letters.",
+      "chapter": "07",
+      "scene": "interlude",
+      "evidence": "Aldric Vane. The captain of the Second had sealed everything, all the years Hollis had known him"
+    },
+    {
+      "fact": "Knowing it, he found he would still follow the Captain into the river.",
+      "chapter": "07",
+      "scene": "interlude",
+      "evidence": "He would still come."
+    },
+    {
+      "fact": "He read it sober and did not go to the jar in the third cart.",
+      "chapter": "07",
+      "scene": "interlude",
+      "evidence": "He did not go to the third cart."
+    },
+    {
+      "fact": "The next morning he did not shout the forty up the road, and said the children's feet wanted a day.",
+      "chapter": "07",
+      "scene": "interlude",
+      "evidence": "He said the children's feet wanted a day, and nobody argued with him, and that was the worst of it."
     }
   ],
   "relationships": [
@@ -1277,6 +1319,14 @@
       "chapter": "07",
       "scene": "between-4",
       "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "5"
+    },
+    {
+      "chapter": "07",
+      "scene": "interlude"
     }
   ]
 }

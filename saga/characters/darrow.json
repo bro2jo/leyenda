@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "between-4",
+    "scene": "5",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#between-4"
+    "anchor": "chronicle/07-the-far-bank.html#scene-5"
   },
-  "last_seen_doing": "Gave Rae the old answer about the Steps and owned it was not the reason; told her, first of anyone, what the rider said on the ice; laid out four acorns for the cold he has seen beside the stones; told her Maelis's two ways off the mountain; said it wasn't his, this is.",
-  "now": "At the second fire with Rae beside him holding his right hand.",
+  "last_seen_doing": "Walked back past the burned mill with Rae and up the column's road; caught the column at dusk; sat for Maelis on the cart-tail and took his boot off before forty people; sat by Hollis, who had a question and did not ask it.",
+  "now": "At the column's camp by the stream, back by the third day as he said, with Hollis's unasked question in front of him.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2374,6 +2374,18 @@
       "evidence": "\"Wren,\" said Darrow, \"is not to know.\""
     },
     {
+      "fact": "He came back to the column on the third day by dusk, as he had promised.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "\"Back,\" she said. \"Third day, by dusk. Column closed.\""
+    },
+    {
+      "fact": "He saw that Hollis had a question for him, and knew he would have to choose how much of the ford to give him.",
+      "chapter": "07",
+      "scene": "5",
+      "evidence": "he would have to choose how much of that river to hand a man at once"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -2996,6 +3008,15 @@
     {
       "chapter": "07",
       "scene": "between-4"
+    },
+    {
+      "chapter": "07",
+      "scene": "5"
+    },
+    {
+      "chapter": "07",
+      "scene": "interlude",
+      "mention": true
     },
     {
       "chapter": "tale01",

@@ -3,10 +3,10 @@
   "position": {
     "book": 2,
     "chapter": 7,
-    "beat": "b2.3",
-    "next_scene": 5,
+    "beat": "b2.4",
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch07:s4",
+    "last_written": "ch07:interlude",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -134,8 +134,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:s5"
       },
       {
         "n": 6,
@@ -169,7 +169,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -206,8 +206,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:interlude"
       }
     ],
     "world_moves": [
@@ -273,7 +273,7 @@
     },
     "b2.4": {
       "title": "Hollis's Writ",
-      "status": "planned"
+      "status": "in_progress"
     },
     "b2.5": {
       "title": "The Stonewright Ruin",
