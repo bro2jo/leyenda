@@ -191,6 +191,9 @@ let fails=0,checks=0;function ok(c,m){checks++;if(!c){fails++;console.log('  FAI
      ok(await p.evaluate(()=>document.querySelectorAll('#m-terr .rim').length>0&&document.querySelectorAll('#m-board .tile[data-g="deep"]').length>10&&!document.querySelector('#m-board .tile[data-g="wall"]')),'the river falls away from its banks');
      await p.evaluate(()=>{__CP.begin('c5b')});await p.waitForTimeout(150);
      ok(await p.evaluate(()=>{var h=document.querySelectorAll('#m-board .tile[data-g="cover"]');return h.length===6&&document.querySelectorAll('#m-terr .gb:not(.n2)').length===6&&!document.querySelector('#m-board .tile[data-g="wall"],#m-board .tile[data-g="deep"]')}),'hay is cover he can stand in, and the yard has nothing he cannot walk on')}
+    /* the newest Arts go with him on the road, and are found there */
+    ok(await p.evaluate(()=>{var d=__CP.roadDeck();return d.indexOf('c_counsel1')>=0&&d.indexOf('c_gate1')>=0}),'Morning\'s Counsel and the Wicket Gate are in his deck on the road');
+    ok(await p.evaluate(()=>{__CP.cards('title');var t=document.querySelector('.cp.on').innerText;return /Morning's Counsel/.test(t)&&/The Wicket Gate/.test(t)}),'and among his own cards once the road is open');
     ok(errs.length===0,'no script errors at '+vp.width+': '+errs.slice(0,3).join(' | '));
     await p.close();
   }

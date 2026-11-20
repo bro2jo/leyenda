@@ -152,4 +152,18 @@ if(!only||only==='c1')(function(){
   function rate(careless){var w=0,i,s;for(i=1;i<=60;i++){s=i*7919+13;B.MODE.rand=careless?(function(seed){var q=seed|0;return function(){q=(Math.imul(q,1664525)+1013904223)|0;return ((q>>>8)&0xffffff)/0x1000000}})(s):null;if(run('c1',i*37+11).cs.result==='won')w++}B.MODE.rand=null;return w}
   var good=rate(false),bad=rate(true);ok(good>=48&&bad<=20,'played with care it is won most times ('+good+'/60), played carelessly seldom ('+bad+'/60)');
 })();
+/* Morning's Counsel: the rest of the hand set aside and a fresh one drawn, once a battle, lent cards kept, and the New hand still there */
+if(!only)(function(){
+  var G=CP.start('c6',{seed:4}),D=G.u[0],y=G.u.filter(function(u){return u.side===1&&u.hp>0})[0];D.x=y.x;D.y=y.y+1;
+  var K=LH.engage(G,D,y);if(!K){ok(false,'counsel: a clash to try it in');return}
+  K.hand=['c_counsel1','c_guard','c_guard','c_lampw'];if(!LH.C.c_lampw.lent){ok(false,'counsel: the lamp is a lent card');return}
+  var before=D.dk.disc.length,insp=G.run.insp,fx=LH.play(G,0);
+  ok(!!fx&&fx.some(function(e){return e.t==='Slept on it'}),'counsel: playing it says he slept on it');
+  ok(K.hand.indexOf('c_lampw')>=0&&K.hand.length===Math.min(LH.HAND_CAP,D.hn+D.st.drawUp+1),'counsel: a fresh hand of '+D.hn+', and the lent card stays ('+K.hand.join()+')');
+  ok(D.dk.gone.indexOf('c_counsel1')>=0&&D.dk.disc.length>=before,'counsel: it is gone for the battle, and the old hand is in the discard');
+  ok(G.run.insp===insp&&!K.redrawn,'counsel: it costs no Inspiration, and the New hand is still there to use');
+  ok(/Set the rest of this hand aside and draw a fresh one\. Once a battle\./.test(LH.cardText('c_counsel1')),'counsel: the card says what it does');
+  ok(/Deal 5\. Mark (him|her)/.test(LH.cardText('c_gate1'))&&LH.C.c_gate1.t==='cast'&&LH.C.c_counsel1.t==='eye','the Wicket Gate is Cast and marks him; Morning\'s Counsel is Insight');
+  ok(CP.NOW.join()==='c_counsel1,c_gate1'&&CP.ORDER.every(function(id){var d=CP.MS[id].party.D.deck||[];return d.indexOf('c_counsel1')<0&&d.indexOf('c_gate1')<0}),'the two Arts no retold day has yet are held for the road, and no mission carries them early');
+})();
 console.log(fails?fails+' of '+checks+' checks failed':'all '+checks+' checks passed');process.exit(fails?1:0);

@@ -870,7 +870,7 @@ html.app .legend.tri [data-a="dz"][aria-pressed="true"]{border-color:var(--bad);
 <body>
 <div class="phone" id="game" aria-label="The Line and the Hand"></div>
 <noscript class="app-no">The Line and the Hand is a game: it needs JavaScript to run.</noscript>
-<script>window.LH_ASSETS={"art":["aldric","ash","ash1","darrow","darrow0","darrow1","far_cast","groundbreaker","hammerfall","high-guard","hollis","hollis0","hollis1","long_breath","long_road","maelis","maelis1","measured_hand","menders_patience","overwall","pell","place-coldmere","place-harrow-ford","place-saint-ysoldes","place-the-lowmarch","place-winch-house","rae","rae1","seated_blade","soft_landing","stillwater","thunderstep","turning_blade","wardens_eye","wren","wren1","brother","c-b_guard","c-b_strike","c-bandage","c-callco","c-closeup","c-count","c-fast","c-hew","c-hewT","c-readline","c-secondwind","c-stone"],"fig":["captain","darkcoat","greycloak","guest","hornboy","lymer","pikeman","pitchfork","sergeant","swordsman","walker"],"tok":["captain","darkcoat","greycloak","guest","hornboy","lymer","pitchfork","sergeant","walker","ysra-tal","hollis-foe","hall","question","steps","brother","swordsman","wend","pikeman","sliver"],"sfx":{"battle_won":"sfx/battle_won.mp3","run_won":"sfx/run_won.mp3"},"music":{"clash":"music/clash.mp3","map":"music/map.mp3"},"drawn":[["The length of the hall","hall"],["The hall's question","question"],["A stretch of the Steps","steps"],["A lay brother","brother"]],"cardart":{"b_guard":"c-b_guard","b_strike":"c-b_strike","bandage":"c-bandage","callco":"c-callco","closeup":"c-closeup","count":"c-count","fast":"c-fast","hew":"c-hew","hewT":"c-hewT","readline":"c-readline","secondwind":"c-secondwind","stone":"c-stone"},"lent":{"hornboy":"pitchfork","sergeant":"captain","guest":"greycloak"}};window.LH_WARM=["music/clash.mp3", "music/map.mp3"]</script>
+<script>window.LH_ASSETS={"art":["aldric","ash","ash1","darrow","darrow0","darrow1","far_cast","groundbreaker","hammerfall","high-guard","hollis","hollis0","hollis1","long_breath","long_road","maelis","maelis1","measured_hand","menders_patience","morning_counsel","overwall","pell","place-coldmere","place-harrow-ford","place-saint-ysoldes","place-the-lowmarch","place-winch-house","rae","rae1","seated_blade","soft_landing","stillwater","thunderstep","turning_blade","wardens_eye","wicket_gate","wren","wren1","brother","c-b_guard","c-b_strike","c-bandage","c-callco","c-closeup","c-count","c-fast","c-hew","c-hewT","c-readline","c-secondwind","c-stone"],"fig":["captain","darkcoat","greycloak","guest","hornboy","lymer","pikeman","pitchfork","sergeant","swordsman","walker"],"tok":["captain","darkcoat","greycloak","guest","hornboy","lymer","pitchfork","sergeant","walker","ysra-tal","hollis-foe","hall","question","steps","brother","swordsman","wend","pikeman","sliver"],"sfx":{"battle_won":"sfx/battle_won.mp3","run_won":"sfx/run_won.mp3"},"music":{"clash":"music/clash.mp3","map":"music/map.mp3"},"drawn":[["The length of the hall","hall"],["The hall's question","question"],["A stretch of the Steps","steps"],["A lay brother","brother"]],"cardart":{"b_guard":"c-b_guard","b_strike":"c-b_strike","bandage":"c-bandage","callco":"c-callco","closeup":"c-closeup","count":"c-count","fast":"c-fast","hew":"c-hew","hewT":"c-hewT","readline":"c-readline","secondwind":"c-secondwind","stone":"c-stone"},"lent":{"hornboy":"pitchfork","sergeant":"captain","guest":"greycloak"}};window.LH_WARM=["music/clash.mp3", "music/map.mp3"]</script>
 <script>
 /* THE LINE AND THE HAND as an app: what a phone needs and the game does not know about. It keeps the page for when there
    is no signal (sw.js), says whether it is on the home screen already, asks the phone to put it there or to go full screen,
@@ -1210,6 +1210,9 @@ function play(G,i){
   if(c.en){K.en+=c.en;fx.push({k:'breath',n:c.en})}
   if(c.spoil){G.run.spoils+=c.spoil;fx.push({k:'spoils',n:c.spoil})}
   if(c.stance){a.st[c.stance]+=c.sv;if(c.stance==='blockStart'){K.block+=c.sv}fx.push({k:'stance',t:STANCE[c.stance][0]})}
+  /* slept on: the rest of the hand set aside and a fresh one drawn, lent cards kept (the New hand, without its Inspiration) */
+  if(c.counsel){var kp=[];K.hand.forEach(function(x){if(C[x].lent)kp.push(x);else a.dk.disc.push(x)});K.hand=[];fx.push({k:'status',who:'a',t:'Slept on it'});
+    fx.push({k:'draw',n:draw(G,a,a.hn+a.st.drawUp)});kp.forEach(function(x){if(K.hand.length<HAND_CAP)K.hand.push(x)})}
   if(c.draw){fx.push({k:'draw',n:draw(G,a,(c.drawOpen&&K.open)?c.drawOpen:c.draw)})}
   if(c.again){K.again=true;fx.push({k:'status',who:'a',t:'Move again'})}
   if(!c.lent)(c.ex?a.dk.gone:a.dk.disc).push(id);
@@ -1412,6 +1415,7 @@ function cardText(id,K){
   if(c.spoil)s.push('Gain '+c.spoil+' spoils.');
   if(c.spoilKill)s.push('If this fells him, gain '+c.spoilKill+' spoils.');
   if(c.stance)s.push('For the rest of the battle: '+STANCE[c.stance][1].replace('%n',c.sv).replace(/^(.)/,function(m){return m.toLowerCase()}));
+  if(c.counsel)s.push('Set the rest of this hand aside and draw a fresh one.');
   if(c.draw)s.push('Draw '+c.draw+(c.drawOpen?', or '+c.drawOpen+' if he is Open':'')+'.');
   if(c.again)s.push('Then move again.');
   if(c.halve)s.push('His answer is halved.');
@@ -1468,6 +1472,10 @@ ranks('c_over','overwall','Overwall','cast','Attack',[{r:1,c:1,dmg:6,pierce:1}])
 ranks('c_soft','soft_landing','Soft Landing','foot','Skill',[{r:1,c:0,blk:4}]);
 ranks('c_hammer','hammerfall','Hammerfall','blade','Attack',[{r:1,c:2,ex:1,m:1,dmg:10,halve:1}]);
 ranks('c_road','long_road','The Long Road','breath','Skill',[{r:1,c:0,draw:1,again:1}]);
+/* on his sheet, and in no day a mission has retold yet: they go with him on the road, and into the mission that first retells a day he had them */
+ranks('c_counsel','morning_counsel',"Morning's Counsel",'eye','Skill',[{r:1,c:0,ex:1,counsel:1}]);
+ranks('c_gate','wicket_gate','The Wicket Gate','cast','Attack',[{r:1,c:1,dmg:5,mark:1}]);
+var NOW=['c_counsel1','c_gate1'];
 /* the Knight Who Fell, with the Grace in him: the Arts that are sealed now */
 add('g_thunder',{n:'Thunderstep',r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:12,art:'thunderstep'});
 add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'turning_blade'});
@@ -1850,7 +1858,7 @@ function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={KIT:KIT,COMBO:COMBO,eff:eff,DEEP:DEEP,pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={NOW:NOW,KIT:KIT,COMBO:COMBO,eff:eff,DEEP:DEEP,pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},
@@ -3092,7 +3100,7 @@ function settings(){
     '<div class="cp-set"><span class="lbl">Progress</span><button type="button" class="act'+(sure?' warn':'')+'" data-cp="forget"><b>'+(sure?'Tap again to forget everything':'Forget my progress')+'</b><small>'+(sure?'Stars, cards, the pack and the rules he has met':'Start from the ford again')+'</small></button><span class="cp-dim">Kept in this browser only.</span></div>');
 }
 /* the road: three crossings of the game itself, with the deck he has in the campaign and the pack from the fire */
-function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(P.pack,P.roadAll?CP.SHOP.filter(function(c){return P.pack.indexOf(c)<0}):[])}
+function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(CP.NOW,P.pack,P.roadAll?CP.SHOP.filter(function(c){return P.pack.indexOf(c)<0}):[])}
 var roadSaved=false;
 function road(){
   if(X.busy||!roadOpen())return;
@@ -3160,6 +3168,7 @@ var cardsBack='title';
 function album(){
   var C=LH.C,mine={},lent={},allMine={},allLent={};
   CP.ORDER.forEach(function(id,i){var p=CP.profile(id),n;for(n in p.cards){allMine[n]=1;if(seen(i))mine[n]=p.cards[n]}for(n in p.lends){var c=C[p.lends[n]];if(!c)continue;allLent[c.n]=1;if(seen(i))lent[c.n]=p.lends[n]}});
+  CP.NOW.forEach(function(id){var n=C[id].n;allMine[n]=1;if(roadOpen()&&!mine[n])mine[n]=id});   /* the newest Arts are found on the road */
   return {mine:mine,lent:lent,nMine:Object.keys(allMine).length,nLent:Object.keys(allLent).length,shelf:shelf()}}
 function found(){var a=album();return [Object.keys(a.mine).length+Object.keys(a.lent).length+a.shelf.length+Object.keys(P.tips).length,a.nMine+a.nLent+CP.SHOP.length+Object.keys(CP.TIPS).length]}
 function cards(back){

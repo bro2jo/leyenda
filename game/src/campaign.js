@@ -38,6 +38,10 @@ ranks('c_over','overwall','Overwall','cast','Attack',[{r:1,c:1,dmg:6,pierce:1}])
 ranks('c_soft','soft_landing','Soft Landing','foot','Skill',[{r:1,c:0,blk:4}]);
 ranks('c_hammer','hammerfall','Hammerfall','blade','Attack',[{r:1,c:2,ex:1,m:1,dmg:10,halve:1}]);
 ranks('c_road','long_road','The Long Road','breath','Skill',[{r:1,c:0,draw:1,again:1}]);
+/* on his sheet, and in no day a mission has retold yet: they go with him on the road, and into the mission that first retells a day he had them */
+ranks('c_counsel','morning_counsel',"Morning's Counsel",'eye','Skill',[{r:1,c:0,ex:1,counsel:1}]);
+ranks('c_gate','wicket_gate','The Wicket Gate','cast','Attack',[{r:1,c:1,dmg:5,mark:1}]);
+var NOW=['c_counsel1','c_gate1'];
 /* the Knight Who Fell, with the Grace in him: the Arts that are sealed now */
 add('g_thunder',{n:'Thunderstep',r:'the Grace',t:'foot',k:'Attack',c:1,m:1,dmg:12,art:'thunderstep'});
 add('g_turning',{n:'The Turning Blade',r:'the Grace',t:'blade',k:'Attack',c:1,m:1,dmg:9,hits:2,art:'turning_blade'});
@@ -420,7 +424,7 @@ function shelf(done){var out=[],stars=0;ORDER.forEach(function(id){if(done&&done
 
 /* ---------- what the screen asks ---------- */
 function progress(){try{return JSON.parse(root.localStorage.getItem('lh-campaign')||'{}')}catch(e){return {}}}
-var CP={KIT:KIT,COMBO:COMBO,eff:eff,DEEP:DEEP,pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
+var CP={NOW:NOW,KIT:KIT,COMBO:COMBO,eff:eff,DEEP:DEEP,pending:null,road:null,resumeG:null,grow:{},bond:{},GROW:GROW,LEVELS:LEVELS,BONDS:BONDS,BOND1:BOND1,BOND2:BOND2,rankOf:rankOf,grown:grown,levelOf:levelOf,growAll:growAll,march:march,pack:[],level:0,PACK:PACK,SHOP:SHOP,TIPS:TIPS,GIFT:GIFT,STARGIFT:STARGIFT,shelf:shelf,news:news,profile:profile,habit:habit,MS:MS,ORDER:ORDER,FD:FD,api:api,start:start,say:say,check:check,
   add:function(M){MS[M.id]=M;ORDER.push(M.id)},
   mission:function(G){return G&&G.ms?MS[G.ms]:null},
   objective:function(G){var M=MS[G.ms];return typeof M.objective==='function'?M.objective(G,G.cs,api):M.objective},

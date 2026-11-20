@@ -153,7 +153,7 @@ function settings(){
     '<div class="cp-set"><span class="lbl">Progress</span><button type="button" class="act'+(sure?' warn':'')+'" data-cp="forget"><b>'+(sure?'Tap again to forget everything':'Forget my progress')+'</b><small>'+(sure?'Stars, cards, the pack and the rules he has met':'Start from the ford again')+'</small></button><span class="cp-dim">Kept in this browser only.</span></div>');
 }
 /* the road: three crossings of the game itself, with the deck he has in the campaign and the pack from the fire */
-function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(P.pack,P.roadAll?CP.SHOP.filter(function(c){return P.pack.indexOf(c)<0}):[])}
+function roadDeck(){var d=null;CP.ORDER.forEach(function(id,i){var k=CP.MS[id].party.D.deck;if(open(i)&&k&&k.length>=10)d=k});return (d||[]).concat(CP.NOW,P.pack,P.roadAll?CP.SHOP.filter(function(c){return P.pack.indexOf(c)<0}):[])}
 var roadSaved=false;
 function road(){
   if(X.busy||!roadOpen())return;
@@ -221,6 +221,7 @@ var cardsBack='title';
 function album(){
   var C=LH.C,mine={},lent={},allMine={},allLent={};
   CP.ORDER.forEach(function(id,i){var p=CP.profile(id),n;for(n in p.cards){allMine[n]=1;if(seen(i))mine[n]=p.cards[n]}for(n in p.lends){var c=C[p.lends[n]];if(!c)continue;allLent[c.n]=1;if(seen(i))lent[c.n]=p.lends[n]}});
+  CP.NOW.forEach(function(id){var n=C[id].n;allMine[n]=1;if(roadOpen()&&!mine[n])mine[n]=id});   /* the newest Arts are found on the road */
   return {mine:mine,lent:lent,nMine:Object.keys(allMine).length,nLent:Object.keys(allLent).length,shelf:shelf()}}
 function found(){var a=album();return [Object.keys(a.mine).length+Object.keys(a.lent).length+a.shelf.length+Object.keys(P.tips).length,a.nMine+a.nLent+CP.SHOP.length+Object.keys(CP.TIPS).length]}
 function cards(back){

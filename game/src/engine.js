@@ -287,6 +287,9 @@ function play(G,i){
   if(c.en){K.en+=c.en;fx.push({k:'breath',n:c.en})}
   if(c.spoil){G.run.spoils+=c.spoil;fx.push({k:'spoils',n:c.spoil})}
   if(c.stance){a.st[c.stance]+=c.sv;if(c.stance==='blockStart'){K.block+=c.sv}fx.push({k:'stance',t:STANCE[c.stance][0]})}
+  /* slept on: the rest of the hand set aside and a fresh one drawn, lent cards kept (the New hand, without its Inspiration) */
+  if(c.counsel){var kp=[];K.hand.forEach(function(x){if(C[x].lent)kp.push(x);else a.dk.disc.push(x)});K.hand=[];fx.push({k:'status',who:'a',t:'Slept on it'});
+    fx.push({k:'draw',n:draw(G,a,a.hn+a.st.drawUp)});kp.forEach(function(x){if(K.hand.length<HAND_CAP)K.hand.push(x)})}
   if(c.draw){fx.push({k:'draw',n:draw(G,a,(c.drawOpen&&K.open)?c.drawOpen:c.draw)})}
   if(c.again){K.again=true;fx.push({k:'status',who:'a',t:'Move again'})}
   if(!c.lent)(c.ex?a.dk.gone:a.dk.disc).push(id);
@@ -489,6 +492,7 @@ function cardText(id,K){
   if(c.spoil)s.push('Gain '+c.spoil+' spoils.');
   if(c.spoilKill)s.push('If this fells him, gain '+c.spoilKill+' spoils.');
   if(c.stance)s.push('For the rest of the battle: '+STANCE[c.stance][1].replace('%n',c.sv).replace(/^(.)/,function(m){return m.toLowerCase()}));
+  if(c.counsel)s.push('Set the rest of this hand aside and draw a fresh one.');
   if(c.draw)s.push('Draw '+c.draw+(c.drawOpen?', or '+c.drawOpen+' if he is Open':'')+'.');
   if(c.again)s.push('Then move again.');
   if(c.halve)s.push('His answer is halved.');
