@@ -669,19 +669,19 @@ He understood her a beat late, as he understood most of what she said. A rope th
 
 ### Scene 5 — Back by the Third Day
 
-Neither of them said anything about the hand in the morning. Rae walked on his right, where she had sat, and Ash ranged ahead along the trodden road and came back to report nothing, which was the best news there was.
+Neither of them said anything about the hand in the morning. Rae walked on his right, the side she had sat on at the fire, and Ash ranged ahead along the trodden road and came back to report nothing, which was the best news there was.
 
-They passed the mill a little after noon. It was a black shell standing in its own ash, the wheel still on its axle and burned to the spokes, turning a little when the race pushed it. The bridge was clear from end to end. Rae stopped on the near bank where her cart had stood across the end of it, looked at the ruts it had left, and walked on.
+They passed the mill a little after noon. It was a black shell standing in its own ash, the great wheel still on its axle and burned to the spokes, turning a little when the water pushed it. The bridge was clear from end to end. Rae stopped where her cart had stood across the end of the bridge, looked at the ruts it had left, and walked on.
 
 The column's road went north from the mill, and it was not hard to find.
 
-"Forty pair of feet," Rae said, before they had gone a hundred yards. She read it at a walk, without looking down. "Three carts. That one's mine. The near wheel wants grease, and Wren's let Dun take the rough side, which he'll make her pay for." She stepped over a dark patch at the road's edge. "They stopped here to eat and didn't bury it. Here's where a child sat down and wouldn't get up, and somebody carried it after." Further on she stopped over a pile of dung and put the toe of her boot to it. "That's not three days old. That's one. They've stopped somewhere, and not far."
+"Forty pair of feet," Rae said, before they had gone a hundred yards. She read it at a walk, without looking down. "Three carts. That one's mine: see the rut wander? Wheel wants grease. And Wren's let Dun take the rough side, which he'll make her pay for." She stepped over a dark patch at the road's edge. "They stopped here to eat and didn't bury their scraps. Here's where a child sat down and wouldn't get up, and somebody carried her after." Further on she stopped over a pile of dung and put the toe of her boot to it. "That's not three days old. That's one. They've stopped somewhere, and not far."
 
 She looked up the road to the north, where it ran on plain as a painted line over the next rise and the one after.
 
-"A child could follow that," she said. "I said."
+"A child could follow that," she said. "I said it would."
 
-"You said."
+"You did."
 
 "Aye." She left it there, which was worse than saying it twice.
 
@@ -693,13 +693,15 @@ They caught the column at dusk, where the north road dipped to a stream. The car
 
 Wren saw them first. She was on the tail of Rae's cart with the ledger on her knees, and she stayed there. She looked at him, and at Rae, and at Rae's lamp. Then she turned back to a page near the front, found his column, and drew a line across the bottom of it, hard, the width of the page.
 
-"Back," she said. "Third day, by dusk. Column closed." She turned the book round so he could see it: his name at the top, her line, and under the line nothing at all. "I had the pencil out at noon. Technically, you had till dark."
+"Back," she said. "Third day, by dusk. Closed." She turned the book round so he could see it: his name at the top, her line, and nothing written above it or below. "I had the pencil out at noon to close it the other way. Technically, you had till dark."
 
 "Technically," said Darrow.
 
-"Also, I've been driving two oxen for three days who answer to one word, and I don't know the word." She jabbed the pencil at Rae. "You said say it like you mean it. I meant it so hard a miller's wife had to sit down."
+"Also, I've been driving two oxen for three days who answer to one word, and it isn't the one you told me." She jabbed the pencil at Rae. "You said say it like you mean it. I meant it so hard a miller's wife had to sit down."
 
-Rae went to Hob's head and laid her hand on his neck, and Hob, who had not stopped for anyone in three days, stopped chewing.
+Rae went to Hob's head, laid her hand on his neck and said something to him too low to hear, and Hob swung his great head round and leaned it against her.
+
+"Oh, that's not fair," said Wren.
 
 Darrow got no further. Maelis was coming down the bank from the nearest fire with her roll on her shoulder, and she pointed at the cart-tail beside Wren with two fingers, the way she pointed a lay brother at a bucket.
 
@@ -725,11 +727,11 @@ She looked up. "One of them had you."
 
 "And you slept."
 
-He had not said so. He opened his mouth to.
+He had not said so. He opened his mouth to deny it.
 
 "He slept," said Rae, from Hob's head.
 
-Maelis set the foot down on her own knee, gently, and he saw that being gentle with it cost her something. "Every night from now till I say," she said, "you sit on this cart-tail, and I look at that foot before you look at anything else. That's what two nights cost." She stood up. "Boot on. Go and see Hollis."
+Maelis set the foot down on her own knee, gently, and he saw that she was angry, and that being gentle cost her. "Every night from now till I say," she said, "you sit on this cart-tail, and I look at that foot before you look at anything else. That's what two nights cost." She stood up. "Boot on. Go and see Hollis."
 
 ---
 
@@ -737,17 +739,17 @@ Hollis was at the far fire, and the far fire had room round it.
 
 Darrow saw the room before he saw the man. The millers had made it as water makes room round a stone: nobody sat within two yards of him, and a child coming up the bank with a bowl set it down at his elbow and backed off as if from a strange dog. Hollis sat with the leg out to the heat and his hands on his knees. There was no cup in them. There was no song.
 
-"He shouted them up the road the first day," Wren said at Darrow's shoulder, low. "All day. He was wonderful. The miller's wife said she'd marry him, and he said he was spoken for by a mule." She turned the pencil over in her fingers. "Then the first night he stopped. We got as far as this stream, and he's not moved us off it since. He said the children's feet." She frowned at that, as at a sum that would not come out. "Maelis makes him eat. I tell him the count every hour, so he's got something to say no to." Her voice went small. "He says thank you, Captain. Hollis says thank you."
+"He shouted them up the road the first day," Wren said at Darrow's shoulder, low. "All day. He was wonderful. The miller's wife said she'd marry him, and he said he was spoken for by a mule." She turned the pencil over in her fingers. "Then the first night he stopped. We got as far as this stream, and he's not moved us off it since. He said the children's feet." She frowned at that, as at a sum that would not come out. "Maelis makes him eat. I tell him the count every hour, so he'll argue with me. He doesn't." Her voice went small. "He says thank you, Captain. Hollis says thank you."
 
-Darrow knew Hollis's quiet. He had seen it at the bars over blue wax, and across the brazier, and in the hall the night the Sixth's names were read. This was another one, and new was worse.
+Darrow knew Hollis's quiet. He had seen it at the bars over blue wax, and across the brazier, and in the hall the night the Sixth's names were read. This was a different one, and that was worse.
 
 He went over. Hollis looked up at him, and for a moment the old face came, the one with an insult already on the way. It did not arrive.
 
-"A captain who walks off," Hollis said, "is a man with a sword out for a walk." He said it once, flat, like a line read off a list, and looked back at the fire. No *Grace-fed*, no story after it. "Sit down, Captain. You're in my light."
+"A captain who walks off," Hollis said, "is just a man with a sword, out for a walk." He said it once, flat, like a line read off a list, and looked back at the fire. No *Grace-fed ass*, no story after it. "Sit down, Captain. You're in my light."
 
 Darrow sat.
 
-They sat a long time. Hollis had a question. Darrow could see it on him, in how he sat, like a man with something heavy in an inside pocket; he had carried one himself since the ford, and he knew the shape. Three heartbeats. A horse already turned. A rider's words on the ice. Whatever Hollis asked, he would have to choose how much of that river to hand a man at once, and he had no answer yet.
+They sat a long time. Hollis had a question. Darrow could see it on him, in how he sat, like a man with something heavy in an inside pocket, and he could guess what it was about: there was only one thing Hollis had ever gone quiet over. Darrow had carried his own share of it since the ford. Three heartbeats. A horse already turned. A rider's words on the ice. When the question came, he would have to choose how much of that river to hand a man at once, and he had no answer yet.
 
 Across the camp Rae was rubbing Hob's ears and not looking at them.
 
@@ -761,7 +763,7 @@ He had been loud all day. He had shouted forty millers up a road they did not wa
 
 He unbuckled the leg.
 
-The paper was in the cup, where it had been since the House: folded small, soft at the folds, the wax turned inward against the wood. He had been going to look at it since midsummer. He had said so to himself at the House, and at the bars, and across the brazier, and at the well in Coldmere with the Captain throwing pebbles into a bucket. He had a drink's worth of reasons for not looking, and no drink. The millers had a jar in the third cart. He knew which cart. He had smelled it at noon.
+The paper was in the cup, where it had been since the House: folded small, soft at the folds, the wax turned inward against the wood. He had been going to look at it since midsummer. He had said so to himself at the House, and at the bars, and across the brazier, and at the well in Coldmere with the Captain throwing pebbles into a bucket. He had a drink's worth of reasons for not looking, and tonight no drink in him. The millers had a jar in the third cart. He knew which cart. He had smelled it at noon.
 
 He unfolded the paper.
 
