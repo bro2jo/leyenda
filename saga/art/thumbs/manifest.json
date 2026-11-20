@@ -57,7 +57,7 @@
    ]
   },
   "arts/measured_hand.webp": {
-   "sha1": "6483f06ce6b87155b8fe743528d876228ea742ee",
+   "sha1": "96e44a3a54d10b9cc0b2665c8c2ca615981a59a8",
    "sm": [
     256,
     256
@@ -135,6 +135,17 @@
   },
   "arts/thunderstep.webp": {
    "sha1": "6f3ded4a2f202809bc96af1627716b8e0f37baa0",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
+  "arts/turning_blade.webp": {
+   "sha1": "6483f06ce6b87155b8fe743528d876228ea742ee",
    "sm": [
     256,
     256
