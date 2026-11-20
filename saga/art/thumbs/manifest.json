@@ -45,6 +45,17 @@
     640
    ]
   },
+  "arts/long_road.webp": {
+   "sha1": "a5aca43b6ddc7fc297c7e8d28b1171f686184e21",
+   "sm": [
+    256,
+    256
+   ],
+   "md": [
+    640,
+    640
+   ]
+  },
   "arts/measured_hand.webp": {
    "sha1": "6483f06ce6b87155b8fe743528d876228ea742ee",
    "sm": [
