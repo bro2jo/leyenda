@@ -13,7 +13,7 @@
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (2 of 3 told)
 - **Against him:** Hollis's question, and how much of the ford a friend can carry.
 - **Next:** Darrow's answer to Hollis at the fire.
-- **Open choice (a small one):** Hollis asks what the Captain saw from the water. What does Darrow tell him? 1. All of it, at once, before Hollis has finished asking: the three heartbeats, the Second dry on its bank, the horse already turned when the order came. / 2. The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid. / 3. All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

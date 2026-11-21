@@ -547,35 +547,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 6,
-    "chapter": 7,
-    "scene": "6",
-    "opened": "2026-11-20",
-    "beat": true,
-    "ask": "Hollis asks what the Captain saw from the water. What does Darrow tell him?",
-    "options": [
-      "All of it, at once, before Hollis has finished asking: the three heartbeats, the Second dry on its bank, the horse already turned when the order came.",
-      "The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.",
-      "All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again."
-    ],
-    "bearing": [
-      {
-        "candor": 3
-      },
-      {
-        "guile": 2
-      },
-      {
-        "unsworn": 2
-      }
-    ],
-    "default": 1,
-    "answer": {
-      "option": 1,
-      "by": "darrow"
-    }
-  },
+  "open_micro": null,
   "temptation": {
     "planted": [
       {
