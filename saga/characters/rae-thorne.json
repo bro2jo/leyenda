@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "5",
+    "scene": "6",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-5"
+    "anchor": "chronicle/07-the-far-bank.html#scene-6"
   },
-  "last_seen_doing": "Read the column's road aloud from the mill, bitter that a child could follow it; took Hob back with a hand on his neck; told Maelis he slept.",
-  "now": "At Hob's head in the column's camp.",
+  "last_seen_doing": "Worked tallow into a halter with her eyes down while Hollis asked, and kept what Darrow had told her.",
+  "now": "At the fire, working a halter, keeping what she carries.",
   "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1019,6 +1019,12 @@
       "evidence": "\"He slept,\" said Rae, from Hob's head."
     },
     {
+      "fact": "While Hollis asked, she kept what Darrow had told her of the ford, unopened, as Hollis's to come to.",
+      "chapter": "07",
+      "scene": "6",
+      "evidence": "carrying it unopened, because it was Hollis's to come to and not hers to give."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1411,6 +1417,10 @@
       "chapter": "07",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "6"
     },
     {
       "chapter": "tale02",

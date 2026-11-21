@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "5",
+    "scene": "6",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-5"
+    "anchor": "chronicle/07-the-far-bank.html#scene-6"
   },
-  "last_seen_doing": "Walked back past the burned mill with Rae and up the column's road; caught the column at dusk; sat for Maelis on the cart-tail and took his boot off before forty people; sat by Hollis, who had a question and did not ask it.",
-  "now": "At the column's camp by the stream, back by the third day as he said, with Hollis's unasked question in front of him.",
+  "last_seen_doing": "Walked north all day in the rain with the cold in him; sat for Maelis; saw the order on Hollis's knee and knew the seal for Aldric's; was asked what he saw from the water.",
+  "now": "At the fire on the north road with Hollis's question in front of him and the order on Hollis's knee.",
   "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2386,6 +2386,12 @@
       "evidence": "he would have to choose how much of that river to hand a man at once"
     },
     {
+      "fact": "He saw that the order that sent the Sixth and the Ninth into the ford bore Aldric's blue seal.",
+      "chapter": "07",
+      "scene": "6",
+      "evidence": "the order that sent them into the water, sealed by the one man who was not going in."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3017,6 +3023,10 @@
       "chapter": "07",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "6"
     },
     {
       "chapter": "tale01",

@@ -26,6 +26,7 @@
         "07:between-2",
         "07:between-4",
         "07:interlude",
+        "07:s6",
         "tale03:p1"
       ]
     },
@@ -35,8 +36,8 @@
       "truth": "T3",
       "feeds": "T3",
       "status": "open",
-      "who_knows": "Hollis has looked (07:interlude): blue wax, Vane's seal, on the order he carried; the reader. Darrow knows Hollis kept the writ unlooked-at, not that he has now looked.",
-      "note": "07:interlude: paid. The order back in the leg's cup, wax inward.",
+      "who_knows": "Hollis has looked (07:interlude) and laid it before Darrow and the company (07:s6): blue wax, Vane's seal, on the order he carried; Darrow has now seen it; Rae, Wren, Maelis saw the paper on his knee; the reader.",
+      "note": "07:s6: shown at the fire.",
       "on_page": [
         "00:I",
         "01:interlude",
@@ -46,7 +47,8 @@
         "03:between-3",
         "05:between-2",
         "07:s5",
-        "07:interlude"
+        "07:interlude",
+        "07:s6"
       ]
     },
     {

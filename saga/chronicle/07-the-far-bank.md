@@ -790,3 +790,58 @@ He would still come. That was the thing he had not expected to find in himself, 
 He folded the paper along its old folds, wax inward, and put it back in the cup, and buckled the leg on. He did not go to the third cart. He sat until the fire was a red bed and the cold came down through the trees.
 
 In the morning he did not shout them up the road. He said the children's feet wanted a day, and nobody argued with him, and that was the worst of it.
+
+### Scene 6 — A Man Who Knows
+
+It rained all day.
+
+Hollis got them off the stream at first light without raising his voice. He said "Up," once, and forty people got up and nobody complained, which frightened Darrow more than any shouting would have. They went north in it with their hoods up and the carts bogging at every dip, and the rain came sideways off the hills and found every gap a cloak had. Wren kept the day's ledger with the book inside her coat, and at the midday halt she read it out to nobody: "Rain. All of it. Cloaks dried, four. Cloaks dried a second time, four. Patience: see previous entry."
+
+The cold got into Darrow by noon and stayed. It was not the walkers' cold, only the plain wet sort, in his hands and the back of his neck and somewhere under the breastbone, where no fire reached.
+
+The rain cleared after dark, all at once, and the stars came out washed. Every puddle on the road had one in it, and Ash walked through all of them on principle.
+
+He sat on the cart-tail, and Maelis looked at the foot. "Better," she said, which was the most she would give it. Then she went back to the mending by the fire: three cloaks, one glove, and a strap she had said was past saving and was saving anyway, stitch by stitch, without looking up.
+
+---
+
+Hollis came to the fire on the beech leg and sat down across it from Darrow, between Maelis and Wren, with his back to the third cart. He sat a while with his hands on his knees. Then he unbuckled the leg, laid it across his lap, and took a paper out of the cup.
+
+Nobody had to be told to be quiet. Wren's pencil stopped. Maelis's needle stopped halfway through the strap. Across the fire Rae, who had been rubbing tallow into a halter, kept her hands moving and her eyes down.
+
+Hollis unfolded the paper on his knee, wax up: two halves of blue wax, fitted together, turned to the fire.
+
+"You asked to be there when I looked," he said. "At the House. I said aye, maybe."
+
+"You did."
+
+"It was maybe. I looked on my own, the first night north, with you off west." He did not say it as an apology. "I wanted it the once with nobody watching."
+
+Darrow looked at the seal.
+
+He knew it before he had properly seen it. He had known that blue wax since they were squires; he had broken it on letters up a mountain and burned one in a brazier. Aldric's.
+
+The shape came before the parts, as it always did. *Ride wide today.* A horse already turned and climbing the west bank, one heartbeat before the river took the Ninth. A rider on the ice: *everyone in the Second knew.* And here on Hollis's knee was the last piece, the one he had never had: the order that sent them into the water, sealed by the one man who was not going in.
+
+The cold under his breastbone went down into his stomach and sat there.
+
+"I know whose it is," Hollis said. "I've known three days. I've known what it says for a year." He folded his big hands over the paper, not to hide it. "At the House I told you if I looked I'd know whose, and then I'd have to be a man who knows. Well. I'm a man who knows." He breathed out. "What I don't know is what you saw. I was in the water, Captain, but I was under it. You came up. You looked at the bank."
+
+He raised his eyes across the fire, and it was the face from the well at Coldmere: no insult on the way, nothing improved, nothing kind.
+
+"What did you see from the water?"
+
+Darrow opened his mouth, and Hollis lifted one hand off the paper.
+
+"And don't lie kind to me. I lie kind to the weak. I'm not weak tonight." He let the hand fall. "If I were, I'd be in that cart behind me."
+
+Nobody moved. The wet wood spat. Wren had stopped counting, and Darrow could not remember the last time he had heard her stop. Rae's hands went on working the tallow into the halter, slowly, and she did not look up. He knew without looking that she was keeping what he had told her on the fold wall and at the second fire, carrying it unopened, because it was Hollis's to come to and not hers to give.
+
+He had carried it so long it had worn smooth. The three heartbeats, and the Grace going out of the whole ford at once. The Second sitting its horses on the west bank, dry. Aldric's horse already turned when the order came. And since the weir, the rider's words.
+
+Hollis waited, with the paper on his knee and the leg across his lap and the third cart at his back.
+
+**What does Darrow tell him?**
+1. **All of it, at once, before Hollis has finished asking: the three heartbeats, the Second dry on its bank, the horse already turned when the order came.**
+2. **The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.**
+3. **All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again.**

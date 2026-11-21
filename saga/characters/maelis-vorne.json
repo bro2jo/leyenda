@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "5",
+    "scene": "6",
     "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-5"
+    "anchor": "chronicle/07-the-far-bank.html#scene-6"
   },
-  "last_seen_doing": "Pointed him onto the cart-tail and looked at him before he spoke to anyone; had his boot off and found the toes still white; set her price.",
-  "now": "At the column's camp, holding him to her price.",
+  "last_seen_doing": "Looked at his foot on the cart-tail and called it better; stopped her needle when Hollis took out the paper.",
+  "now": "At the fire with the mending in her lap, the needle stopped.",
   "story_so_far": "Maelis told him plainly what the frost had kept of his hand, warned the company what he would be taking onto the ice, and said a question could be answered by another mouth. At noon she waited on the bank with her needle threaded.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -715,6 +715,12 @@
       "chapter": "07",
       "scene": "5",
       "evidence": "The toes were whiter than the rest of the foot, and stayed whiter when she pressed them."
+    },
+    {
+      "fact": "She looked at his foot on the cart-tail at dusk and called it better.",
+      "chapter": "07",
+      "scene": "6",
+      "evidence": "\"Better,\" she said, which was the most she would give it."
     }
   ],
   "relationships": [
@@ -1087,6 +1093,10 @@
       "chapter": "07",
       "scene": "interlude",
       "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "6"
     }
   ]
 }

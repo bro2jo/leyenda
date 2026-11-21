@@ -744,7 +744,8 @@
           "at": "book2:beat4",
           "weight": "scene",
           "what": "Hollis said Aye, maybe, when Darrow asked to be there when he looks at the seal on the writ from the ford. Fire where Hollis takes the writ out to look at last, honoured (Darrow beside him) or not (alone)",
-          "status": "pending"
+          "status": "fired@ch07:s6",
+          "evidence": "\"You asked to be there when I looked,\" he said. \"At the House. I said aye, maybe.\""
         }
       ]
     },
@@ -1363,12 +1364,13 @@
           "what": "Darrow told Rae what he saw from the water at the ford (Aldric's horse already turned, one heartbeat early) and that he fears it was known; she said it is carried and she does not open what she carries; it is Hollis's to come to at the seal. Fire where she keeps it under pressure, or where Hollis learns it and finds she already had it",
           "fits": "present.rae && beats.b2_4.status == \"in_progress\"",
           "priority": 2,
-          "status": "pending",
+          "status": "fired@ch07:s6",
           "offered": 2,
           "offered_at": [
             "ch07:interlude",
             "ch07:s5"
-          ]
+          ],
+          "evidence": "carrying it unopened, because it was Hollis's to come to and not hers to give."
         }
       ]
     },
@@ -2290,13 +2292,14 @@
           "fits": "present.rae",
           "priority": 2,
           "status": "pending",
-          "offered": 5,
+          "offered": 6,
           "offered_at": [
             "ch07:between-3",
             "ch07:s4",
             "ch07:between-4",
             "ch07:s5",
-            "ch07:interlude"
+            "ch07:interlude",
+            "ch07:s6"
           ]
         }
       ]
@@ -2336,10 +2339,11 @@
           "fits": "present.rae && present.hollis",
           "priority": 2,
           "status": "pending",
-          "offered": 2,
+          "offered": 3,
           "offered_at": [
             "ch07:s5",
-            "ch07:interlude"
+            "ch07:interlude",
+            "ch07:s6"
           ]
         }
       ],
@@ -2367,9 +2371,10 @@
           "fits": "present.wren && present.rae",
           "priority": 1,
           "status": "pending",
-          "offered": 1,
+          "offered": 2,
           "offered_at": [
-            "ch07:s5"
+            "ch07:s5",
+            "ch07:s6"
           ]
         }
       ]
