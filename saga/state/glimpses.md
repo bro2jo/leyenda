@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-18 · body · A stile at midday. He goes over it the old way, hand on the post, one leg and then the other, and is down on the far side before he remembers that this used to be a decision.
 - 2026-11-18 · weather · All afternoon the frost keeps to the shadow side of the hedges, so the road is two roads, one soft and one iron. The dog takes the soft one, every time, without discussion.
 - 2026-11-18 · house · A burr came loose from the hem of Darrow’s coat. He set it on a stone by the fire, where it threw a shadow big enough for a whole thornbush.
 - 2026-11-18 · overheard · “He only snores when he’s warm,” Rae said. Ash, asleep across her feet, put in a long breath on his own behalf.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-20 · house · Maelis has the mending out by the fire: three cloaks, one glove, and a strap she says is past saving and is saving anyway, stitch by stitch, without looking up.
 - 2026-11-20 · ledger · Wren's ledger for the day: rain, all of it. Cloaks dried, four. Cloaks dried a second time, four. Patience: see previous entry.
 - 2026-11-20 · weather · The rain clears after dark and the stars come out washed. Every puddle on the road has one in it, and Ash, on principle, walks through all of them.
+- 2026-11-21 · body · His hands are steady on the buckles before the fire is even lit. He does every one up in the dark without once having to start over.
