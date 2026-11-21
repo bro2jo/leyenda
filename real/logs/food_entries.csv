@@ -390,3 +390,7 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-20#7,2026-11-20,,snack,PopCorners Kettle Corn (3 oz bag),"most of the bag (assumed ~3/4, ~64 g, 2.25 servings)",300,4.5,48,10,0.75,0.75,6.75,255,68,7.5,0.5,34,0.7,0,0,0,label,label photo 11/20 (per-package column x0.75); his words: had most of these
 2026-11-20#8,2026-11-20,,snack,Trail bologna,"some slices (assumed ~4 slices, ~2 oz / 56 g)",160,11,1,13,0,5.5,0.5,750,150,10,1.2,10,2,0,0.3,50,estimate,his words: some slices of trail bologna; typical smoked beef trail bologna per 2 oz; brand and count not given
 2026-11-20#9,2026-11-20,,snack,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,his words: also had a poppi; flavour not given
+2026-11-20#10,2026-11-20,,dinner,"Chick-fil-A Grilled Nuggets, 12 ct",12 nuggets (142 g),200,38,2,4.5,0,1,1,660,450,15,0.8,45,1.5,0,0.2,40,library,his words: 12 count grilled chicken from Chick-fil-A
+2026-11-20#11,2026-11-20,,dinner,"Chick-fil-A Waffle Potato Fries, large",1 large order,600,7,65,35,7,5,1,470,1200,20,1.8,70,0.8,10,0,0,library,his words: large fry
+2026-11-20#12,2026-11-20,,dinner,"Chick-fil-A Sauce, dipping packet",2 packets (2 oz),280,0,12,26,0,4,12,340,20,10,0,2,0,0,0,0,library,his words: two Chick-fil-A sauces; library x2
+2026-11-20#13,2026-11-20,,dinner,Chick-fil-A Chocolate Milkshake,1 shake,600,12,93,22,1,14,90,350,700,400,1.5,50,1.5,1,1.5,50,library,his words: a chocolate shake
