@@ -841,7 +841,7 @@ He had carried it so long it had worn smooth. The three heartbeats, and the Grac
 
 Hollis waited, with the paper on his knee and the leg across his lap and the third cart at his back.
 
-**What does Darrow tell him?**
+**What does Darrow say?**
 1. **All of it, at once, before Hollis has finished asking: the three heartbeats, the Second dry on its bank, the horse already turned when the order came.**
 2. **The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.**
 3. **All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again.**

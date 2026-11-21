@@ -2378,6 +2378,50 @@
           ]
         }
       ]
+    },
+    {
+      "id": "c07.7",
+      "made": {
+        "chapter": 7,
+        "scene": "6",
+        "date": "2026-11-20"
+      },
+      "chose": "Told Hollis all of it at once, before he had finished asking, at the fire before the company: the three heartbeats and the Grace going out of the whole ford, the Second dry on its bank, Aldric's horse already turned when the order came.",
+      "now": {
+        "approval": {
+          "maelis": 5,
+          "rae": 5,
+          "wren": -5
+        },
+        "bearing": {
+          "candor": 3
+        },
+        "flags": {
+          "hollis_truth": true
+        }
+      },
+      "due": [
+        {
+          "id": "c07.7a",
+          "when": "next",
+          "at": "ch07:s7",
+          "weight": "scene",
+          "what": "The next scene opens on his answer, played: all of it at once, before Hollis has finished asking (the three heartbeats, the Grace going out of the ford, the Second dry on its bank, Aldric's horse already turned when the order came, and the rider's words since the weir); Hollis hears it sober; he learns Rae has had the horse since the fold wall; the jar stays in the third cart, a cart's length behind him.",
+          "status": "pending"
+        },
+        {
+          "id": "c07.7b",
+          "when": "next",
+          "at": "ch07:s7",
+          "weight": "scene",
+          "what": "Downstream of `hollis_truth` (b2.4): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.4`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
+      ],
+      "declined": [
+        "The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.",
+        "All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again."
+      ]
     }
   ],
   "rules": [

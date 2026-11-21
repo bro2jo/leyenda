@@ -165,7 +165,11 @@
               "unsworn": 2
             }
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 1,
+            "by": "darrow"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -421,7 +425,7 @@
     "anselm_spared": true,
     "benedek_hollowed": true,
     "vane_unbound": null,
-    "hollis_truth": null,
+    "hollis_truth": true,
     "ysra_spared": true,
     "named_himself": true,
     "marrant_offer": false,
@@ -566,7 +570,11 @@
         "unsworn": 2
       }
     ],
-    "default": 1
+    "default": 1,
+    "answer": {
+      "option": 1,
+      "by": "darrow"
+    }
   },
   "temptation": {
     "planted": [
