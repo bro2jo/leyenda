@@ -945,13 +945,13 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "the captain on the next cot",
-      "note": "He brought Darrow the writ at Harrow Ford and told him to mount up, rode the next cart over on the road back, has had the next cot at Saint Ysolde's since, and now stands second on a list on which Wren, asked who was first, only looked at Darrow. For a fortnight he has thought of the Captain fighting from a chair, if somebody taught him to stop looking at the floor."
+      "label": "his Captain",
+      "note": "He brought Darrow the order at Harrow Ford and told him to mount up. At the Coldmere well he told him, sober, that he would follow him into the river again; he took the forty millers north when Darrow went west, and told him once what a captain who walks off is. At the fire he laid the order on his knee and asked what Darrow saw from the water, and heard all of it."
     },
     {
       "to": "wren-ashdown",
-      "label": "the girl with the ledger who brought word of the list",
-      "note": "She was the one who brought word of the grey cloaks and the censer on the Holloway, and who told him his name stood second on the list."
+      "label": "the girl who sat with him",
+      "note": "At the weir he told her she was for them. When he had heard the whole of the ford and asked for someone to sit with him who would not talk, she sat down next to him and talked, and he let her."
     },
     {
       "to": "benedek-orrin",
@@ -960,8 +960,13 @@
     },
     {
       "to": "rae-thorne",
-      "label": "the carter of the last cart",
-      "note": "He cursed her from her own cart on the last day of the road north, and she answered 'Aye' as if he had remarked on the weather; it was she who heard the list with his name second on it read out at Coldmere."
+      "label": "the carter whose cart he rides",
+      "note": "He cursed her from her own cart on the road north and she answered 'Aye'. When he saw she had carried part of the ford for the Captain, he called her a hard woman; she said she was a carter."
+    },
+    {
+      "to": "aldric-vane",
+      "label": "the captain of the Second",
+      "note": "His blue seal is on the order Hollis carried up the bank at the ford and broke with his thumb without looking. Hollis looked at last on the first night north of the mill."
     }
   ],
   "reckoning": {

@@ -2582,22 +2582,22 @@
     {
       "to": "maelis-vorne",
       "label": "his Mender",
-      "note": "She tied the Binding with a strand of his own sinew and emberthread, reads the Knots with two fingers and her eyes shut, has told him fifteen times he may not go down the Steps, and it is she who will make him be honest, later, about how much he loved the charge."
+      "note": "She tied the Binding with a strand of his own sinew and emberthread and reads the Knots with two fingers. On the road she sews what he cuts and charges him for what he risks: a seat on the cart-tail every night while she looks at his foot. At the ring, when he said the Grace was taken at the ford, she gave him one word, yes, and held his frozen hands inside her coat."
     },
     {
       "to": "hollis-garrow",
-      "label": "of the Sixth Lance, on the next cot",
-      "note": "He waved the writ at Darrow on the west bank and told him his head was not as fast as his feet; lost his right leg above the knee at the ford, cursed Darrow among many others on the carts north, and snores on his right at Saint Ysolde's, second on the list where Wren, asked who was first, only looked at Darrow. At the gate Hollis saw him move at his name, told him nobody else had, and called him Captain when he gave his name at the bars."
+      "label": "the old captain of the Sixth",
+      "note": "Hollis brought the order up the bank at the ford and lost his right leg in the water. On the road he calls Darrow Captain, moved his grip up the hilt and bullies him into living; at the fire north of the mill he asked, sober, what Darrow saw from the water, and Darrow told him all of it."
     },
     {
       "to": "wren-ashdown",
-      "label": "the girl with the ledger who counted him up the Steps",
-      "note": "She counted the steps aloud beside his litter and would not let him say she had missed one; it was she who brought word of the grey cloaks, and who looked at him when Hollis asked whose name was first. After he gave his name at the bars she made him count lamps while she told him how stupid it was, and wrote down his promise to tell her first next time."
+      "label": "the girl with the ledger, who keeps his columns",
+      "note": "She counted him up the Steps and has counted him since: how often he tells her first, who has asked him to kneel, whether he came back by the third day. At the ring she read aloud the one line the script would not give him, and he did not ask her how."
     },
     {
       "to": "aldric-vane",
       "label": "knighted the same morning",
-      "note": "Squires together, knighted the same morning; at the ford Aldric told him to ride wider and seemed about to say more, and Darrow saw his horse already turned on the west bank; Darrow believes it was Aldric's hand that wrote his name first on the Confessors' list."
+      "note": "Squires together, knighted the same morning; at the ford Aldric told him to ride wide and seemed about to say more, and Darrow saw his horse already turned on the west bank. The order that sent the Ninth into the water bore Aldric's blue seal. His sister writes that he does not sleep."
     },
     {
       "to": "tobin-marsh",
@@ -2611,8 +2611,23 @@
     },
     {
       "to": "rae-thorne",
-      "label": "the carter who drove him the last of the road",
-      "note": "She talked to her oxen and not to him, looked at his leg once like a cracked wheel, and said one thing to him all day; seven weeks after the Binding he knew her cart at the winch-house from the window, and Wren says it was she who heard the list read and climbed through the night to bring it up."
+      "label": "the carter",
+      "note": "She drove him the last of the road to the Steps and has driven the company since. She mended his coat unasked, followed him west on the walkers' road with a lamp and a day's wood, and showed him her hands by the second fire; she was the first person he told why he will not kneel."
+    },
+    {
+      "to": "ash",
+      "label": "the hound at his heel",
+      "note": "She bit him through the thumb in the kennel run and has slept across his boots since. Below the weir she brought his lost stick up out of the ice, and on the walkers' road she bit his sleeve to wake him when the fire sank."
+    },
+    {
+      "to": "ysra-tal",
+      "label": "the rider from Calden",
+      "note": "She summoned him to the weir under the forms and asked one question: why he would not kneel. She ran onto his point, told him on the ice that everyone in the Second knew, and carried his message away word for word."
+    },
+    {
+      "to": "elinor-vane",
+      "label": "Aldric's sister",
+      "note": "Her letter reached him by the miller at the river mill: her brother does not sleep, and she asks Darrow to tell her what he will not."
     }
   ],
   "appearances": [

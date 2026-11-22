@@ -928,7 +928,7 @@ ART_METALS = ("iron", "bronze", "steel", "silver", "gold")
 # A colour for each Book, in order, once it opens (frost for the House, copper for the road): its chapters' head, its
 # stretch of the Chronicle's rail and its road on the map take it (CSS --book). A Book without one yet keeps the brass;
 # a new Book gets its colour here when it opens, light enough to read on the night ground and clear of ember and brass.
-BOOK_TINTS = ("#A8B8CC", "#D08C60")
+BOOK_TINTS = ("#A8B8CC", "#D08C60", "#8FBFA6")
 SITE_URL = "https://bro2jo.github.io/leyenda/"  # where docs/ is served: a shared link's picture needs the whole address
 
 

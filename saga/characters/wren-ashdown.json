@@ -888,8 +888,8 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "the captain she counted up the Steps",
-      "note": "She counted the Steps aloud beside his litter the day he was carried up, keeps a tally of every time he has asked to go down them, and when Hollis asked who was first on the Confessors' list, she looked at Darrow instead of answering."
+      "label": "the Captain whose columns she keeps",
+      "note": "She counted the Steps aloud beside his litter and has kept his columns since: told first, asked to kneel, back by the third day. She counted for him that nobody on his own bank had ever asked him to kneel. At the ring she read the last line when the script failed him, and he let her be."
     },
     {
       "to": "maelis-vorne",
@@ -898,13 +898,13 @@
     },
     {
       "to": "hollis-garrow",
-      "label": "the second name on the list",
-      "note": "She was the one who told him he was second on the list the Confessors read out in Coldmere."
+      "label": "the old knight she sat with",
+      "note": "She caught him saying thank you when he went quiet on the north road, and told the Captain. When he asked for company that would not talk, she sat down beside him and talked."
     },
     {
       "to": "rae-thorne",
-      "label": "the carter whose news she ran down to the hall",
-      "note": "It was Rae who heard the list read at Coldmere and climbed through the night with it; Wren carried it the last of the way, from the winch-brothers and the kitchen to the infirmary hall."
+      "label": "the carter whose oxen she drove",
+      "note": "Rae left Hob and Dun in her keeping and told her their names twice; she drove them north for three days without finding the word they answer to. She counts that Rae has been told first twice."
     }
   ],
   "reckoning": {

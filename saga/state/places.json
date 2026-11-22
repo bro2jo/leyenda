@@ -143,19 +143,20 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "mill",
-      "x": 160,
-      "y": 112,
+      "x": 278,
+      "y": 108,
       "on_page": true,
       "visited": true,
       "first_seen": {
         "chapter": "05",
         "scene": "interlude"
       },
-      "description": "The mill at the end of the mill tracks, in the hill country north of Coldmere, where Hale sends his salt by Rae's cart, as usual. Lamps burn in its windows, and its bell, flat and cracked, rings the millers in at first light and again at noon for their bread. Below it the river comes down under a lid of ice to a weir: a road of dressed stones a stride wide, bank to bank, glazed by the spray, all but the keeper's stone halfway across. Upstream a bridge crosses to the far bank, where carts came up out of the dark and drew up the wrong way, everyone looking back.",
+      "description": "The mill at the end of the mill tracks, in the hill country north of Coldmere, where Hale sent his salt by Rae's cart. It burned on the night of the bridge: the miller fired it himself with the lamp from its door, as the biggest lamp in the hills, and it stands now a black shell in its own ash with the great wheel burned to the spokes. Below it the river comes down under a lid of ice to a weir: a road of dressed stones a stride wide, bank to bank, glazed by the spray, all but the keeper's stone halfway across. Upstream a bridge crosses to the far bank, the west side, where the carts came up out of the dark and the walkers after them. The granary across the yard still stands.",
       "aliases": [
         "the river mill",
         "the weir"
-      ]
+      ],
+      "label_below": true
     },
     {
       "id": "the-marsh",
@@ -163,8 +164,8 @@
       "subtitle": "",
       "region": "the-lowmarch",
       "kind": "marsh",
-      "x": 150,
-      "y": 84,
+      "x": 299,
+      "y": 69,
       "on_page": true,
       "visited": true,
       "first_seen": {
@@ -517,33 +518,45 @@
     ],
     "coldmere",
     [
-      206,
-      149
+      209,
+      146
     ],
     [
-      199,
-      140
+      213,
+      133
     ],
     [
-      190,
-      131
+      224,
+      120
     ],
     [
-      180,
-      123
+      238,
+      102
     ],
     [
-      170,
-      117
+      250,
+      90
+    ],
+    [
+      262,
+      89
+    ],
+    [
+      271,
+      96
     ],
     "river-mill",
     [
-      158,
-      104
+      286,
+      98
     ],
     [
-      154,
-      94
+      292,
+      86
+    ],
+    [
+      296,
+      76
     ],
     "the-marsh"
   ]

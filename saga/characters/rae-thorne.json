@@ -1094,18 +1094,18 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "the knight she drove to the foot of the Steps",
-      "note": "She looked at his leg once the way a carter looks at a cracked wheel, rang for the litter, and said one thing to him all day; seven weeks after the Binding he knew her cart from the infirmary window and had not forgotten it. When the grey cloaks came in, he told her from the gate wall to go while the road was open, and she let it shut. At the wicket her shoulder went in where his had given, and she watched him give his name at the bars."
+      "label": "the knight she followed west",
+      "note": "She drove him to the foot of the Steps, and off the mountain again when he could walk. She put her cart across the end of the mill bridge behind him, and walked a day west after him with a lamp and wood on her back, because he had told her why and never told her not to. At the second fire she showed him her hands; when he had told her why he will not kneel, she took his."
     },
     {
       "to": "hollis-garrow",
-      "label": "the old knight who cursed her from her own cart",
-      "note": "When he started on her past the second milestone she said 'Aye' as if he had remarked on the weather, and the cart went on."
+      "label": "the old knight who rides her cart",
+      "note": "He cursed her from her own cart on the road north and she said 'Aye'. When he saw she had carried part of what the Captain saw at the ford, she told him it had been his to come to, not hers to give, and he called her a hard woman."
     },
     {
       "to": "wren-ashdown",
-      "label": "the runner who carried her news into the hall",
-      "note": "Wren told the infirmary hall that Rae had heard the list read at Coldmere, driven through the dark ahead of the grey cloaks and climbed the Steps before the bell."
+      "label": "the girl she trusted with her oxen",
+      "note": "When Rae went west after Darrow she put Hob and Dun into Wren's keeping and told her their names twice. Wren counts that Rae has been told first twice."
     }
   ],
   "reckoning": {

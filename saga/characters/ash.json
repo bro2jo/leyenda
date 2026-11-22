@@ -150,8 +150,13 @@
   "relationships": [
     {
       "to": "darrow",
-      "label": "sleeps with her leg across his boot",
-      "note": "She bit him through the thumb in the kennel run, then lay down with her splinted leg across his boot and slept."
+      "label": "sleeps across his boots",
+      "note": "She bit him through the thumb in the kennel run, then lay down with her splinted leg across his boot and slept. She does not fetch, and fetched his stick out of the ice below the weir; when he slept by the first fire on the walkers' road, she bit his sleeve and woke him."
+    },
+    {
+      "to": "rae-thorne",
+      "label": "the warmest feet at the fire",
+      "note": "When Rae came to the fire on the walkers' road, Ash got up off Darrow and lay down across her feet."
     }
   ],
   "reckoning": {
