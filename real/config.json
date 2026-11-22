@@ -1095,9 +1095,9 @@
       "defense_iq",
       "defense_footwork"
     ],
-    "stage": "Phase 4: standing throws with the feet planted and slight pivots on the planted foot within reason (Cody 10/15), on any day without a knee session (on an upper day after the bike, before lifting); one dial a week, throw count or intensity, not both; game-range long throws (<=~80%) from the planted stance; defense Level 2a. Not yet, each with the PT's OK for that drill: step-out throws, throwing on the move, marking; max intent waits for Phase 5 (sport_plan.md section 3; whole_athlete_addon.md section 3)",
-    "stage_since": "2026-10-20",
-    "stage_evidence": "Knot III tied Tue 10/20 (Phase 4 entered; Before Phase 4 checklist met, PT 11 10/17); PT 10/15 (Cody): pivots okay within reason; the Add-On re-issued 10/21 and the Recovery State revised 10/21 (ingested 10/22) set the footwork limits: slight pivots yes, the step-out and throwing on the move only with the PT's OK per drill"
+    "stage": "Phase 5 (Knot IV): game-tempo pivots and shimmies in planned sequences, both directions, and max-intent long throws (up to 8-10 a session after a full warm-up and some game-range throws, one such session a week to start, dry ground); throwing after movement only what the running progression has cleared and the PT has OK'd per drill; defense Level 2a with a straight-line jog approach and a gradual stop; three sessions a week on the low days (never a high day, from 11/19). Still out: cuts, hard stops, lateral shuffles at speed, any reaction. Whether the pivot foot (left) matters is on the PT list (sport_plan.md section 3; State section 7)",
+    "stage_since": "2026-11-16",
+    "stage_evidence": "Knot IV tied Mon 11/16 (PT 15: the surgeon and the PT cleared the running gate); the State rewritten Thu 11/19 opens the Phase 5 throwing (section 7); the first session back, Wed 11/18, held the Phase 4 footwork"
   },
   "vocabulary": {
     "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
