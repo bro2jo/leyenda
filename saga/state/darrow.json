@@ -1,10 +1,10 @@
 {
-  "asof": "2026-11-21",
+  "asof": "2026-11-22",
   "name": "Ser Darrow of Edgemoor",
   "level": 9,
   "rank": "Kindled",
   "level_reached": "2026-11-12",
-  "xp": 4270,
+  "xp": 4405,
   "xp_this_level": 3600,
   "xp_next_level": 4500,
   "proficiency": 4,
@@ -45,18 +45,18 @@
       "raw": 11,
       "cap": null,
       "mod": 0,
-      "temper": 60,
+      "temper": 62,
       "next_at": 64,
       "fell": 12,
       "banked": false
     }
   },
   "ember": {
-    "value": 89,
+    "value": 87,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
-  "inspiration": 3,
+  "inspiration": 4,
   "inspiration_cap": 4,
   "knots_tied": [
     1,
@@ -524,10 +524,10 @@
     "late": 1
   },
   "chapter_now": {
-    "week_start": "2026-11-15",
-    "through": "2026-11-21",
-    "tier_so_far": "Triumph",
-    "chapter": 7
+    "week_start": "2026-11-22",
+    "through": "2026-11-22",
+    "tier_so_far": "Setback",
+    "chapter": 8
   },
   "fell": {
     "might": 15,
