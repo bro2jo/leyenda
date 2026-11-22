@@ -5,7 +5,7 @@
 - **Program set:** Thu 2026-11-19, a mid-week rewrite on his request, after **Knot IV (Mon 11/16: the surgeon and the PT cleared the running gate, PT 15)** and the trainer's new week (11/19). **Phase 5, Return to Running:** the walk-jog progression on the high days · the knee sessions at the master plan's running-phase doses · the upper sessions merged with the trainer's exercises and moved onto the high days · zone 2 and throwing on the low days.
 - **What this rewrite moved:** §1 (calendar, the trainer) · §3 (the Phase 5 exit is the gate) · §5 (PT 15; the trainer's part) · §6 (the week's shape, next week, the calendar, running, Session A's Phase 5 doses, conditioning) · §7 (placement, the merged upper sessions) · §9–10. The checks were simplified on 11/16 and 11/17 (Working Rules): the morning check is the swelling grade, the full check on Sundays.
 - **Supersedes:** `real/state/archive/recovery_state_2026-10-18.md` (Phase 4: its gate tables, its week-by-week revisions).
-- **Last reviewed:** Sun 11/22 checkpoint (`real/checkpoints/2026-11-22.md`): the program stands; §6's week corrected for what was not logged (Friday's knee session is B; Monday's upper is A); the sport stage is Phase 5 (§7).
+- **Last reviewed:** Sun 11/22 checkpoint (`real/checkpoints/2026-11-22.md`): the program stands; §6's week is his plan of 11/22 (the clinic days high with the uppers, zone 2 Tue and Thu, intervals Fri, Session B Sat, an hour's walk or ride Sun); Monday's upper is A (Thursday's was not logged); the sport stage is Phase 5 (§7).
 - **Next:** the Sun 11/29 checkpoint (the sport plan's month check is still owed).
 - **Source priority:** latest PT/surgeon instruction (`pt_notes.md`) → rehab master plan → this file and the Working Rules → Whole-Athlete Add-On → sport plan → logs → general ACL knowledge.
 
@@ -143,23 +143,26 @@
 - **Upper A and B alternate regardless of day, at least 2 days apart.** On the home knee session's day the upper session is optional and comes later in the day, after the knee work.
 - **A long high day is cut from the upper session first** (§7, the cut order); the clinic, the knee session's minimum and a due walk-jog are never the cut.
 
-### This week (Sun 11/22 → Sat 11/28) · Block 1 repeats · his plan of 11/19, corrected at the 11/22 checkpoint
+### This week (Sun 11/22 → Sat 11/28) · Block 1 repeats · his plan of Sun 11/22
 
-Last week in one line: high days 2 of 3 (Mon PT 15, Thu PT 16; Sat Session B not run, the third time since 10/30); mornings 0 all seven days; floor 7/7; the run was the clinic's jog Thu 11/19 (stiff landing on the left); upper 0 logged (Thu's merged A not logged); bike Tue 40 · Wed 45 · Sat the trainer's intervals (moved from Fri); throwing 1 of 2 (Wed); weight 163.1 avg, +0.4 (`real/checkpoints/2026-11-22.md`).
+Last week in one line: high days 2 of 3 (Mon PT 15, Thu PT 16; Sat Session B not run, the third time since 10/30); mornings 0 all seven days; floor 7/7; the run was the clinic's jog Thu 11/19 (stiff landing on the left); upper 0 logged (Thu's merged A not logged); conditioning 3 of 3, 100 min (Tue 40 · Wed 45 · Sat the trainer's intervals, 3 × 3 min on / 2 off, ~15 min, moved from Fri); throwing 1 of 2 (Wed); weight 163.1 avg, +0.4 (`real/checkpoints/2026-11-22.md`).
 
 | Day | Plan |
 |---|---|
-| Sun 11/22 | Rest · the full check, the weigh-in, the squat test → checkpoint |
-| Mon 11/23 | **High: PTA** → **walk-jog session 1** (walk 5 / jog 1 × 5), after the clinic and if the mornings since Friday are clean; the left's landing is the thing to watch (PT 16) → **Upper A** (§7, the merged session: A, because Thursday's A was not logged; if it ran, this is B) |
-| Tue 11/24 | Low: zone 2 on the bike (the trainer's dose) · throwing, short |
+| Sun 11/22 | **Low:** walking or the bike for an hour, with breath holds (his plan) · the full check, the weigh-in, the squat test → checkpoint |
+| Mon 11/23 | **High: PTA** → **walk-jog session 1** (walk 5 / jog 1 × 5), after the clinic and if the mornings since Friday are clean; the left's landing is the thing to watch (PT 16); if the clinic jogs him, that is the day's run → **Upper A** (§7, the merged session: A, because Thursday's A was not logged; if it ran, this is B) |
+| Tue 11/24 | **Low: zone 2, 50 min** · throwing, short (carried over from the earlier plan; his to cut) |
 | Wed 11/25 | **High: PTA** → **walk-jog session 2** (session 1 repeated in its dose), if Tuesday's morning was clean and Monday's landing looked normal → **Upper B** (§7) |
-| Thu 11/26 | Thanksgiving: rest (an easy ride or a throw is extra, never owed) |
-| Fri 11/27 | **High: Session B** (§6, its doses and the impact block: box drop-down 12" × 2 × 8, single-leg pogos, the short decels; ~95 min) — **B, not A:** B did not run on 11/21, and the sessions alternate regardless of day (Working Rules); A at its Phase 5 doses comes next → later in the day **Upper A, optional** (his call that day) |
-| Sat 11/28 | Low: zone 2 · throwing, the long session |
+| Thu 11/26 | **Low (Thanksgiving): zone 2, 50 min** |
+| Fri 11/27 | **Low: the trainer's aerobic power intervals, 4 × 3 min** (last week 3 × 3 on / 2 off) · throwing, the long session (moved from Saturday, now a high day; his to cut) |
+| Sat 11/28 | **High:** breath holds → **Session B** (§6, its doses and the impact block: box drop-down 12" × 2 × 8, single-leg pogos, the short decels; ~95 min) — **B, not A:** B has not run since 10/30, and the sessions alternate regardless of day (Working Rules); A at its Phase 5 doses comes next |
 
-- **Runs: two** (Mon, Wed), each waiting on a clean morning after the one before. No run with Friday's Session B (it carries the impact block).
-- **Throwing:** Tue short, Sat long, the Phase 5 throwing (§7; sport plan §3): the first session back (Wed 11/18) held the Phase 4 footwork, so the pivots and the max-intent throws may start this week, one dial at a time. Whether the pivot foot matters is still §5 item 4.
-- **The week is judged by:** high days 3 · morning grades 7 · conditioning 4 (two runs, two zone 2 rides) · upper 2 (Friday's is extra).
+- **High days: three** (Mon, Wed, Sat), never back to back; the uppers sit on the two clinic days (his plan: it keeps those days high and the others low).
+- **Runs: two** (Mon, Wed), each waiting on a clean morning after the one before. No run with Saturday's Session B (it carries the impact block).
+- **Conditioning on the low days:** Sun an hour's walk or ride · Tue and Thu zone 2, 50 min · Fri intervals 4 × 3 min. Friday's intervals come the day before Session B: if Saturday's morning is not clean, B's impact block waits.
+- **Breath holds (Sun, Sat):** his addition of 11/22; the dose is his (not written here yet).
+- **Throwing:** Tue short, Fri long, the Phase 5 throwing (§7; sport plan §3): the first session back (Wed 11/18) held the Phase 4 footwork, so the pivots and the max-intent throws may start this week, one dial at a time. Whether the pivot foot matters is still §5 item 4. Throwing was not in his plan of 11/22: both are carried over and are his to cut.
+- **The week is judged by:** high days 3 · morning grades 7 · conditioning 6 (two runs, the Sunday hour, two zone 2 rides, the intervals) · upper 2 · throwing 2.
 
 ### Next week (Sun 11/29 → Sat 12/5)
 
@@ -172,13 +175,13 @@ Visits: **PTA (Cody) Mon 11/23, Wed 11/25, Mon 11/30** · **PT (Nick) Thu 12/3**
 | Week | Sun | Mon | Tue | Wed | Thu | Fri | Sat |
 |---|---|---|---|---|---|---|---|
 | 11/15 · week 13 · Phase 5 from Mon | Rest · checkpoint | **PTA** (PT 15: running cleared) | Aerobic only (the trainer): bike 40 | Zone 2, bike 45 (the trainer) · throwing | **PTA** · walk-jog 1 · **Upper A** (merged) | Low: bike · throwing | **Session B** |
-| 11/22 · Block 1 repeats | Rest · full check + squat test · checkpoint | **PTA** · walk-jog · **Upper B** | Zone 2 · throwing | **PTA** · walk-jog · **Upper A** | Thanksgiving: rest | **Session A** (Phase 5 doses) · Upper B optional, later | Zone 2 · throwing |
-| 11/29 | Rest · full check + squat test · checkpoint | **PTA** · walk-jog · **upper** (next in the rotation) | Zone 2 · throwing | Zone 2 · throwing | **PT, Nick** · walk-jog · **upper** | Zone 2 · throwing | **Session B** |
+| 11/22 · Block 1 repeats · his plan of 11/22 | Walk or bike 60 with breath holds · full check + squat test · checkpoint | **PTA** · walk-jog · **Upper A** | Zone 2, 50 · throwing | **PTA** · walk-jog · **Upper B** | Zone 2, 50 | Intervals 4 × 3 min · throwing | Breath holds · **Session B** |
+| 11/29 | Rest · full check + squat test · checkpoint | **PTA** · walk-jog · **upper** (next in the rotation) | Zone 2 · throwing | Zone 2 · throwing | **PT, Nick** · walk-jog · **upper** | Zone 2 · throwing | **Session A** (after B on 11/28) |
 
-- **High days are never back to back.** The home knee session runs once a week while the visits run twice: B Sat 11/21 → A Fri 11/27 → B Sat 12/5 (A and B alternate regardless of day).
-- **Upper:** A Thu 11/19 → B Mon 11/23 → A Wed 11/25 → (B Fri 11/27, optional) → the next in the rotation Mon 11/30 and Thu 12/3. At least 2 days apart.
+- **High days are never back to back.** The home knee session runs once a week while the visits run twice: B Sat 11/28 (not run 11/21) → A Sat 12/5 (A and B alternate regardless of day).
+- **Upper:** A Mon 11/23 (Thu 11/19's was not logged) → B Wed 11/25 → the next in the rotation Mon 11/30 and Thu 12/3. At least 2 days apart; on the clinic days (his plan of 11/22).
 - **Runs** on the high days only, never on consecutive days; each waits on a clean morning.
-- **Low days:** zone 2 and the throwing. Sunday is the rest day.
+- **Low days:** zone 2 (or the trainer's intervals) and the throwing. Sunday: rest, or from 11/22 an easy hour's walk or ride.
 
 ### Daily minimum and weekly checks
 
@@ -292,7 +295,7 @@ Full text: Working Rules, load rules 3–7.
 - Judged on the plan's checklist: knee tracks over the foot · pelvis stays controlled · no major trunk compensation · no obvious unloading of the surgical leg · smooth depth and tempo. **Pass = all 10 with every item.**
 - Logged as `sl_squat_reps` in `measurements.csv` (controlled reps out of 10, one row per side; method `home video`).
 
-### Session B — ran Fri 10/30, clean on 10/31; not run Fri 11/6 (visitation hours), Sat 11/14 or Sat 11/21, its doses stand; **next Fri 11/27** (~95 min with the RDL's bar, the hip thrust, the seated calf, the curl, the isometrics and the short decels: measured, B ran 69 min on 10/30 without the curl and the bridge, A 86 and 85)
+### Session B — ran Fri 10/30, clean on 10/31; not run Fri 11/6 (visitation hours), Sat 11/14 or Sat 11/21, its doses stand; **next Sat 11/28** (~95 min with the RDL's bar, the hip thrust, the seated calf, the curl, the isometrics and the short decels: measured, B ran 69 min on 10/30 without the curl and the bridge, A 86 and 85)
 
 Baseline = 10/18, then 10/23, then 10/30 (each clean the next morning). One major variable at a time per exercise (the plan); any number of exercises progress the same day. Trimmed in the 10/21 review (below Session A).
 
@@ -376,7 +379,7 @@ Swelling **graded** and not up vs the previous morning · nothing reported off (
 
 | | |
 |---|---|
-| **Placement** | **From Thu 11/19 (the trainer): Upper A and B on the high days** (the clinic days; optional on the home knee session's day, later in the day), A → B alternating regardless of day, at least 2 days apart, after the clinic and any walk-jog. Thu 11/19's merged A was not logged, so: Mon 11/23 A → Wed 11/25 B → Fri 11/27 A (optional). History: the weeks of 10/11, 10/18 and 10/25 ran 2 of 2; 11/1 and 11/8 1 of 2 (A lost both); Tue 11/17's A dropped by the trainer |
+| **Placement** | **From Thu 11/19 (the trainer): Upper A and B on the high days** (the clinic days; optional on the home knee session's day, later in the day), A → B alternating regardless of day, at least 2 days apart, after the clinic and any walk-jog. Thu 11/19's merged A was not logged, so: Mon 11/23 A → Wed 11/25 B (his plan of 11/22: the uppers on the two clinic days). History: the weeks of 10/11, 10/18 and 10/25 ran 2 of 2; 11/1 and 11/8 1 of 2 (A lost both); Tue 11/17's A dropped by the trainer |
 | **Time** | **Capped at about 45 min on a high day** (the clinic ~60 and a walk-jog ~30 come first). Measured: Upper B's full core + finisher ran 65 and 73 min for ~20 sets (11/2, 11/9); the merged session is ~16 sets |
 | **Sessions run** | 8 since 9/20: A 10/9, B 10/12, A 10/17, B 10/19, A 10/22 (vacation gym, substitutes), B 10/27 and A 10/31 (Block 1's first week: 2 of 2), **B 11/2 (session 8; A lost that week)**, **B 11/9 (session 9: incline 95 × 2 × 8 instead of 90 for reps, pulldown 110 × 4 × 6, row 35s, press 30s, Copenhagen 2 × 30; 73 min; A lost that week)**. Weeks of 10/11, 10/18 and 10/25: 2 of 2; weeks of 11/1 and 11/8: 1 of 2 |
 | **Block** | **Block 1 repeats from Sun 11/22, on the anchor lifts** (below): main lifts 4 × 6–8 at RPE 7–8; the speed bench 5 × 3 at 45–55%; the incline 2 × 8–10. The week of 11/15 was its deload. A block advances on two weeks of 2 of 2 (Add-On §4); load goes up when every rep is clean with 2+ in reserve: +5 lb on the bar, one DB step, one cable plate |

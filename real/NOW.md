@@ -6,10 +6,10 @@
 
 Program: `real/state/recovery_state.md`: `python3 engine/darrow.py doc state "week's shape"`, `"this week"`, `"running"`, `"session a"` / `"session b"`, then `doc state 7` (the merged upper sessions). Rules: `real/plan/working_rules.md` (`doc rules "load rules"`, `"program structure"`); the add-on design: `doc addon 1`, `doc addon 2`. The week's review: `real/checkpoints/2026-11-22.md`. The Phase 4 State: `real/state/archive/recovery_state_2026-10-18.md`.
 
-- **The week of 11/15 closed:** high days 2 of 3 (Mon PT 15, Thu PT 16; **Sat Session B not run**, the third time since 10/30); mornings 0 all week; floor 7/7; 4 weigh-ins; the run was the clinic's jog Thu (stiff landing on the left); **upper 0 logged** (Thu's merged A); bike Tue 40 · Wed 45 · Sat the trainer's intervals (moved from Fri; logged as 3 min); throwing 1 of 2 (Wed).
+- **The week of 11/15 closed:** high days 2 of 3 (Mon PT 15, Thu PT 16; **Sat Session B not run**, the third time since 10/30); mornings 0 all week; floor 7/7; 4 weigh-ins; the run was the clinic's jog Thu (stiff landing on the left); **upper 0 logged** (Thu's merged A); conditioning 3 of 3, 100 min (Tue 40 · Wed 45 · Sat the trainer's intervals, ~15 min, moved from Fri); throwing 1 of 2 (Wed).
 - **The shape: high days and low days.** High = a clinic day or the home knee session's day: the clinic or the session → the walk-jog when due → the upper session (~45 min, merged with the trainer's exercises). Low = zone 2 on the bike and the throwing. Sunday rest. High days never back to back; runs on high days only.
-- **This week:** **Mon 11/23 high:** PTA → **walk-jog session 1** (walk 5 / jog 1 × 5; the left's landing is the thing to watch) → **Upper A** (A, because Thursday's was not logged) · **Tue low:** zone 2 · short throw · **Wed 11/25 high:** PTA → walk-jog session 2 (if Tuesday's morning is clean and Monday's landing looked normal) → **Upper B** · **Thu Thanksgiving:** rest · **Fri 11/27 high: Session B** (B, not A: B did not run on 11/21, and the sessions alternate regardless of day; its impact block: box drop-down 12" × 2 × 8, single-leg pogos, short decels), Upper A later optional · **Sat low:** zone 2 · the long throw.
-- **Low days: the trainer's conditioning and the throwing** (never on a high day): zone 2 (45 min now, building to 60) or his aerobic power intervals. The bike intervals are retired in Phase 5: the running is the hard conditioning. **Throwing is Phase 5 now** (game-tempo pivots, max-intent long throws, one dial a week); the first session back (Wed 11/18) held the Phase 4 footwork.
+- **This week (his plan of Sun 11/22):** **Sun low:** walking or the bike for an hour, with breath holds · **Mon 11/23 high:** PTA → **walk-jog session 1** (walk 5 / jog 1 × 5; the left's landing is the thing to watch) → **Upper A** (A, because Thursday's was not logged) · **Tue low:** zone 2, 50 min (+ short throw) · **Wed 11/25 high:** PTA → walk-jog session 2 (if Tuesday's morning is clean and Monday's landing looked normal) → **Upper B** · **Thu low:** zone 2, 50 min · **Fri low:** intervals 4 × 3 min (+ the long throw) · **Sat 11/28 high:** breath holds → **Session B** (B, not A: B has not run since 10/30, and the sessions alternate regardless of day; its impact block: box drop-down 12" × 2 × 8, single-leg pogos, short decels). The throws were not in his plan and are his to cut.
+- **Low days: the trainer's conditioning and the throwing** (never on a high day): zone 2 (50 min this week, building to 60) or his aerobic power intervals (4 × 3 min Fri). The bike intervals are retired in Phase 5: the running is the hard conditioning. **Throwing is Phase 5 now** (game-tempo pivots, max-intent long throws, one dial a week); the first session back (Wed 11/18) held the Phase 4 footwork.
 - **Running: cleared Mon 11/16** (PT 15; Knot IV). The master plan's ten walk-jog sessions (State §6, Running), on high days only, never on consecutive days; each moves on after a clean morning (no increased swelling, no meaningful pain increase, no loss of extension) **and normal-looking running**. Session 1 runs Mon 11/23 after the clinic and repeats until the left lands softly (PT 16).
 - **Daily minimum (every day): the swelling grade and last night's sleep in minutes** (the morning check) + creatine. **Sleep targets: 480 min a night, 3,360 a week.** On the morning after (or of) a run or a home knee session, also say if pain is up or extension is short. **Sundays, the full check:** swelling grade · pain and where · extension vs the right · wellness 1–5 · anything new · the weigh-in · the single-leg squat test, filmed.
 - **Nutrition:** 3,000 kcal · 150–160 g protein · carbs ~350–400 g · fat ~85–100 g · creatine daily. **Last week averaged 2,889** (3 of 7 days at target; protein fine but Saturday's 105). **Fixes:** a starch and a fruit with every main meal (rice, potatoes, bread; a banana, an orange): carbs, potassium and vit C up in one move; **the fish meal** (canned salmon or tuna counts).
@@ -32,14 +32,14 @@ For Monday, Cody (State §5): **the stiff landing on the left: what to change** 
 ## Flags and notes for the week
 
 - **Weight: +0.4 lb on the week** (163.1 avg on 4 mornings vs 162.7). The guide's rule over two weeks reads +0.35 lb/week, inside 0.25–0.75: **the target stays at 3,000**. No weight-loss flag.
-- **Session B has not run since 10/30** (not 11/6, 11/14 or 11/21), so the home impact block has not started; the clinic has carried the impact (PT 15, PT 16). Friday's high day is B. No lesson in it: the mornings, the floor and both clinic days held, and the week scored Triumph.
+- **Session B has not run since 10/30** (not 11/6, 11/14 or 11/21), so the home impact block has not started; the clinic has carried the impact (PT 15, PT 16). Saturday's high day is B. No lesson in it: the mornings, the floor and both clinic days held, and the week scored Triumph.
 - **The flags are the same family again:** carbs 248 (under all 7 days), fat 143, sat fat 50, sodium 4,292, sugar 112; fiber, potassium, magnesium, vit C and omega-3 low. Cheese slices most days, hot dogs, kielbasa, bologna, wings, pizza, the spicy-mayo bowls, the Friday drive-through and the chai lattes carry most of it; fruit and vegetables were an apple, a banana, applesauce and Saturday's raw plate.
-- **Not logged and asked:** Thursday's Upper A and Friday's short throw (if they ran, say so and they go in). Saturday's intervals are logged as 3 min: if it was 3 × 3, say so.
+- **Not logged and asked:** Thursday's Upper A and Friday's short throw (if they ran, say so and they go in). Saturday's intervals corrected 11/22: 3 × 3 min on / 2 off, ~15 min.
 - **The sport plan's month check (week 4) is still owed:** his 1–5 ratings and the seven review questions.
 
 ## Open items
 
-- **Running:** cleared 11/16; the home walk-jog starts Mon 11/23 (session 1), and the PT's decels and drop-downs ride in Friday's B (State §6). Open for the clinic: the stiff landing, the walk-jog's symptom rule, and the home doses for the decels and drop-downs.
+- **Running:** cleared 11/16; the home walk-jog starts Mon 11/23 (session 1), and the PT's decels and drop-downs ride in Saturday's B (State §6). Open for the clinic: the stiff landing, the walk-jog's symptom rule, and the home doses for the decels and drop-downs.
 - **The sport plan's month check (end of week 4):** seven ratings 1–5 and seven questions; answers go in a checkpoint's Sport section.
 - **For the sport plan:** how many discs you have (a solo long-throw test needs about 10), and your shoes for pivoting on grass and on the net's floor.
 - **Tape girths:** next set about four weeks after 11/9, by his guide (`doc tape`), the thigh and the calf on both legs.
@@ -51,18 +51,18 @@ _Engine block, regenerated by `sync` · as of Sun 2026-11-22 · POD 90 · post-o
 
 | Day | Plan | kcal | P (g) | Wt | Cr | Sleep | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Sun 11/22 | floor | | | | | | | | | | | | | |
+| Sun 11/22 | cond | | | | | | | | | | | | | |
 | Mon 11/23 | cond, upper, pt | | | | | | | | | | | | | |
 | Tue 11/24 | cond, sport | | | | | | | | | | | | | |
 | Wed 11/25 | pt, upper, cond | | | | | | | | | | | | | |
-| Thu 11/26 | floor | | | | | | | | | | | | | |
-| Fri 11/27 | knee | | | | | | | | | | | | | |
-| Sat 11/28 | cond, sport | | | | | | | | | | | | | |
+| Thu 11/26 | cond | | | | | | | | | | | | | |
+| Fri 11/27 | cond, sport | | | | | | | | | | | | | |
+| Sat 11/28 | knee | | | | | | | | | | | | | |
 
 **Weigh-ins:** 0/3 · last week 163.1 (4 readings)
 **Morning swelling grades:** none graded
 **Sleep:** no night logged yet · the week's target 3,360 min
-**Sessions (through Sun):** none planned yet · floor full 0/1 · graded morning checks 0/1
+**Sessions (through Sun):** cond 0/1 · floor full 0/1 · graded morning checks 0/1
 
 **Latest measured:** extension L +2° (10/8) · flexion L 149° (11/10) · quad LSI 90.4% (10/17) · hamstring LSI 100.0% (11/10) · SL leg press LSI 64.3% (10/8) · SL squat L 10 reps (11/8)
 

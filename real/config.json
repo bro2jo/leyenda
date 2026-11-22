@@ -504,16 +504,20 @@
       "drop": [
         "knee"
       ],
-      "source": "his appointment list, Wed 11/4: PT (Nick) Tue 11/10 and Thu 12/3; PTA (Cody) Thu 11/12, Mon 11/16, Thu 11/19, Mon 11/23, Wed 11/25, Mon 11/30",
-      "why": "the calendar to 12/5 (State §6): loaded days (clinic visits and home sessions) never back to back, A and B alternating; upper at least 2 days apart on days without a loaded session; bike and throwing on the days between; Sunday rest from 11/15"
+      "add": [
+        "cond"
+      ],
+      "cond_min": 60,
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "Low day: walking or the bike for an hour with breath holds (his plan); the Sunday check, the weigh-in and the squat test stay"
     },
     {
       "date": "2026-11-23",
       "add": [
         "pt"
       ],
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "High day: PTA, the walk-jog's next session (cond), Upper B"
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "High day: PTA, the walk-jog's session 1 after the clinic (cond; State §6, Running), Upper A"
     },
     {
       "date": "2026-11-24",
@@ -524,8 +528,9 @@
         "cond",
         "sport"
       ],
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "Low day: zone 2 and the short throw"
+      "cond_min": 50,
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "Low day: zone 2 for 50 min (his plan); the short throw carried over from the State's week"
     },
     {
       "date": "2026-11-25",
@@ -537,18 +542,18 @@
         "upper",
         "cond"
       ],
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "High day: PTA, the walk-jog's next session (cond), Upper A"
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "High day: PTA, the walk-jog's session 2 if Tuesday's morning is clean (cond), Upper B"
     },
     {
       "date": "2026-11-26",
       "drop": [
-        "cond",
         "upper",
         "sport"
       ],
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "Thanksgiving: rest; anything done is extra"
+      "cond_min": 50,
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "Low day (Thanksgiving): zone 2 for 50 min (his plan)"
     },
     {
       "date": "2026-11-27",
@@ -556,15 +561,23 @@
         "pt"
       ],
       "add": [
-        "knee"
+        "cond",
+        "sport"
       ],
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "High day: Session A at the Phase 5 doses; Upper B later is optional (added here if he runs it)"
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "Low day: the trainer's aerobic power intervals 4 x 3 min (his plan); the long throw moves here from Saturday, now a high day"
     },
     {
       "date": "2026-11-28",
-      "source": "the trainer's week, 11/19 (patient-reported): real/visits/2026-11-19_trainer_instruction.md; his plan of 11/19 (State §6); the visits from his appointment list, Wed 11/4",
-      "why": "Low day: zone 2 and the long throw (the template's cond and sport)"
+      "drop": [
+        "cond",
+        "sport"
+      ],
+      "add": [
+        "knee"
+      ],
+      "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
+      "why": "High day: breath holds, then the home knee session (Session B: B has not run since 10/30, and the sessions alternate regardless of day)"
     },
     {
       "date": "2026-11-29",
