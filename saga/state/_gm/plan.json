@@ -3,10 +3,10 @@
   "position": {
     "book": 2,
     "chapter": 7,
-    "beat": "b2.4",
-    "next_scene": 7,
+    "beat": "b2.5",
+    "next_scene": 8,
     "stage": "scene",
-    "last_written": "ch07:s6",
+    "last_written": "ch07:s7",
     "rank_on_page": "Kindled"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -195,8 +195,8 @@
           "if_ignored": "she goes to the ring without asking, and keeps to the back with a lamp",
           "status": "waiting"
         },
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch07:s7"
       },
       {
         "n": 8,
@@ -281,7 +281,7 @@
     },
     "b2.5": {
       "title": "The Stonewright Ruin",
-      "status": "planned"
+      "status": "in_progress"
     },
     "t2": {
       "title": "Book II transition",
@@ -433,7 +433,7 @@
     "wren_script_seen": false,
     "vane_answered": true,
     "sanctuary_writ": false,
-    "elinor_letter": false,
+    "elinor_letter": true,
     "ilse_named": false,
     "elspeth_named": false,
     "hollis_fell": false,

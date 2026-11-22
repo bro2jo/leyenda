@@ -77,3 +77,7 @@ Reader-safe. One entry per character the Chronicle has already put on the page: 
 ## Ysra Tal
 - **Appearance:** Slight and very upright, hair cropped short as a page's, dark eyes, and a thin, long-healed scar running up from her right brow; a dark coat cut close for riding with six dark buttons down the front; gloves of thin dark leather that fit like skin, taken off finger by finger. She sits a long-legged horse without shifting a hoof, keeps her hands quiet, and moves on glazed stone as if it had been laid down for her.
 - **Voice:** Courteous, clipped and deadly literal: she answers exactly what was asked and considers a joke for longer than it deserves. Funny without knowing it. *"My name is not the question. The forms allow one."*
+
+## Elinor Vane
+- **Appearance:** Not yet seen on the page. Aldric Vane's sister, known so far by her letter: a quick, slanting hand, impatient with its own lines.
+- **Voice:** On paper, plain and brave with words: short sentences that say the thing her brother will not.

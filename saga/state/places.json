@@ -158,6 +158,27 @@
       ]
     },
     {
+      "id": "the-marsh",
+      "name": "The marsh",
+      "subtitle": "",
+      "region": "the-lowmarch",
+      "kind": "marsh",
+      "x": 150,
+      "y": 84,
+      "on_page": true,
+      "visited": true,
+      "first_seen": {
+        "chapter": "07",
+        "scene": "2"
+      },
+      "description": "Flat, frozen country at the end of the north road from the river mill: reeds white to the tips standing up out of grey ice as far as the eye goes, the road crossing it on a causeway of old stones barely wider than a cart. Out on the ice stands an old ring of black stones, some taller than a man on a horse, some leaning, some sunk; older than Calden, the old woman at the mill said. Mill-folk don't go near it.",
+      "aliases": [
+        "the marsh",
+        "the ring",
+        "the old ring of stones"
+      ]
+    },
+    {
       "id": "wend-landing",
       "name": "The Wend landing",
       "label": "Wend landing",
@@ -515,6 +536,15 @@
       170,
       117
     ],
-    "river-mill"
+    "river-mill",
+    [
+      158,
+      104
+    ],
+    [
+      154,
+      94
+    ],
+    "the-marsh"
   ]
 }

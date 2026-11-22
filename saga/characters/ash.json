@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "6",
-    "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-6"
+    "scene": "7",
+    "place": "the-marsh",
+    "anchor": "chronicle/07-the-far-bank.html#scene-7"
   },
-  "last_seen_doing": "Walked through every puddle on the road on principle.",
-  "now": "In the camp on the north road.",
+  "last_seen_doing": "Stopped on the causeway with her nose up and showed him the ring.",
+  "now": "On the causeway at the marsh's edge.",
   "story_so_far": "Ash saw the rider on the skyline first and made no sound, watched the alders long after the meadow was empty, and tried to follow Darrow out onto the weir until Wren sat on her.",
   "quote": null,
   "known_facts": [
@@ -299,6 +299,10 @@
     {
       "chapter": "07",
       "scene": "6"
+    },
+    {
+      "chapter": "07",
+      "scene": "7"
     }
   ]
 }

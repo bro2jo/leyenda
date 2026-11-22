@@ -622,9 +622,10 @@
         },
         {
           "name": "The ring in the marsh",
-          "text": "An old ring of standing stones in the frozen marsh up the north road from the river mill, older than Calden, they say; frozen half the year, the stones standing up out of the ice. Mill-folk do not go near it, and never have (Ch 7 Sc 2).",
+          "text": "An old ring of standing stones in the frozen marsh up the north road from the river mill, older than Calden, they say; frozen half the year, the stones standing up out of the ice. Mill-folk do not go near it, and never have (Ch 7 Sc 2). A ring of black stones out on the frozen marsh at the end of the north road, some taller than a man on a horse, some leaning, some sunk; older than Calden, the old woman at the mill said, and mill-folk don't go near it (Ch 7 Sc 7).",
           "sources": [
-            "ch07:s2"
+            "ch07:s2",
+            "ch07:s7"
           ]
         },
         {

@@ -1,0 +1,79 @@
+{
+  "id": "elinor-vane",
+  "name": "Elinor Vane",
+  "aliases": [
+    "Elinor"
+  ],
+  "tier": "minor",
+  "faction": "crown",
+  "status": "alive",
+  "sigil": {
+    "faction": "crown",
+    "mark": "none"
+  },
+  "appearance": "Not yet seen on the page. Known by her hand: quick, slanting, impatient with its own lines. Aldric Vane's sister; at fourteen she told the chaplain at his knighting, to his face, that the sermon was too long.",
+  "first_seen": {
+    "chapter": "07",
+    "scene": "7",
+    "place": "the-marsh",
+    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+  },
+  "last_seen": {
+    "chapter": "07",
+    "scene": "7",
+    "place": "the-marsh",
+    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+  },
+  "last_seen_doing": "Wrote to Darrow by a road her brother does not know: Aldric does not sleep, and will not tell her what happened at the ford; she asks Darrow to.",
+  "now": "In Calden with her brother, as far as her letter says, waiting on an answer.",
+  "story_so_far": "Aldric Vane's sister. Her letter came to Darrow by the miller at the river mill and was opened on the north road: her brother does not sleep, and will not tell her what happened at the ford, and she asks Darrow to.",
+  "known_facts": [
+    {
+      "fact": "She wrote that Aldric does not sleep and will not tell her what happened at the ford, and asked Darrow to tell her what he will not.",
+      "chapter": "07",
+      "scene": "7",
+      "evidence": "*I am asking you to tell me what he will not, because I think it is the thing that keeps him up.*"
+    },
+    {
+      "fact": "At fourteen she told the chaplain at Aldric's and Darrow's knighting, to his face, that his sermon was too long.",
+      "chapter": "07",
+      "scene": "7",
+      "evidence": "who at fourteen had told the chaplain at their knighting, to his face, that his sermon was too long."
+    }
+  ],
+  "relationships": [
+    {
+      "to": "aldric-vane",
+      "label": "his sister",
+      "note": "She hears him on the stair at all hours, and he will not tell her what happened at the ford."
+    },
+    {
+      "to": "darrow",
+      "label": "her brother's sworn brother",
+      "note": "She wrote to him by a road her brother does not know, asking what Aldric will not tell her."
+    }
+  ],
+  "reckoning": {
+    "unread": true,
+    "fire": {
+      "kind": "none",
+      "state": "unlit"
+    },
+    "level": 1,
+    "rank": "Bound",
+    "attributes": {
+      "might": 8,
+      "vigor": 9,
+      "finesse": 11,
+      "resolve": 13
+    },
+    "arts": [],
+    "deeper": []
+  },
+  "appearances": [
+    {
+      "chapter": "07",
+      "scene": "7"
+    }
+  ]
+}

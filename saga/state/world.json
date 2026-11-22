@@ -89,11 +89,19 @@
         "2026-11-20"
       ],
       "written": "2026-11-20"
+    },
+    {
+      "scene": 7,
+      "title": "The Ring in the Reeds",
+      "covers": [
+        "2026-11-21"
+      ],
+      "written": "2026-11-22"
     }
   ],
   "location": {
-    "place": "river-mill",
-    "detail": "the column's camp on the north road, a wet day's march north of the stream",
+    "place": "the-marsh",
+    "detail": "on the causeway at the edge of the frozen marsh, the ring in sight across the reeds",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "hard frost in the hill country north of Coldmere, the millpond iced over and every stone of the weir glazed with spray",
@@ -102,8 +110,8 @@
     "on_the_page": "North out of Coldmere by the mill tracks on Rae's cart, the quiet road, chosen for his own: keep the company out of the writs' reach and the hunt's. A rider sent to bring the captain of the Ninth in alive, and not told why, has found him anyway, and at the river mill where Rae's salt goes a dozen carts stand drawn up the wrong way at the bridge, everyone looking back.",
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
-  "current_struggle": "Hollis's question: what the Captain saw from the water.",
-  "last_beat": "Hollis, sober, with the order and its blue seal on his knee and the third cart at his back, asked what the Captain saw from the water, and told him not to lie kind; he waited.",
+  "current_struggle": "The ring in the marsh, and what it says.",
+  "last_beat": "At dusk the ring stood out on the ice across the reeds; the millers stopped without being told, and Darrow, his palms prickling, meant to go out across the ice in daylight and read it.",
   "companions": {
     "maelis": {
       "approval": 44,
@@ -322,9 +330,10 @@
   "inventory": [
     "infirmary shirt and breeches",
     "the summons under the forms, taken down nail by nail, inside his coat",
-    "a sealed letter with his name on it, from the miller, unopened, inside his coat",
     "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder",
-    "the borrowed stick, used on the Steps and kept"
+    "the borrowed stick, used on the Steps and kept",
+    "Elinor's letter, from the miller, opened, inside his coat",
+    "Aldric's second letter, the small sheet (*Answer me, or I will come myself*), inside his coat"
   ],
   "keepsakes": [
     {
@@ -398,5 +407,5 @@
     "05-the-thornwild-woman-s": "The list is read again at Coldmere's bell, and the company hears it from across the water; the carter who brought him home pays for the hiding in her own book, and the road out is his to choose.",
     "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his."
   },
-  "last_updated": "2026-11-20"
+  "last_updated": "2026-11-22"
 }

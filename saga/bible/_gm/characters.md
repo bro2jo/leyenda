@@ -67,7 +67,7 @@ Appearance and voice: `cast.md`.
 Appearance and voice: `cast.md`.
 - Knight-Captain of the Sixth Lance. He taught Darrow **the Seated Blade**, the art of fighting without footwork, from a chair (named on the page in ch4, and held on the bell-tower stair in its climax); he learned it in his own chair, recently and badly.
 - He can also teach throwing, the first lesson of winning from where you are put: **The Measured Hand** (a Sport Art), then **Overwall**. He taught the Measured Hand at the Coldmere inn's well-bucket (ch5 between-7) and Overwall at the first camp wall on the mill tracks (ch6 between-2, c05.9a paid).
-- **Now:** on the road since the Steps (Book II), on the carter's tailboard or a mule he curses, on the beech leg in the cup the farrier remade (ch4); third on the new writs. Since ch7 interlude: has looked at the seal, alone and sober (Vane's), the paper back in the leg's cup; quiet since; got the forty up with one word (s6); laid the order on his knee at the fire and asked Darrow, sober, what he saw from the water, and was told all of it (s6, `hollis_truth`).
+- **Now:** on the road since the Steps (Book II), on the carter's tailboard or a mule he curses, on the beech leg (ch4); third on the new writs. Ch7: looked at the seal alone and sober (interlude); asked Darrow and was told all of it (s6–7, `hollis_truth`), sober, the jar left in the cart; read Aldric's second letter; the paper is in the leg again.
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
 - **Under pressure:** he notices rank and fear, who is frightened and who is in command. He pursues by insult, which is affection and instruction at once; when that fails he goes quiet, and his quiet is the thing to fear. He lies kindly to the weak and never to the strong.
 - **At ease:** loud, bawdy and competitive at anything with a stake; improves every story at each telling and is caught at it by Wren; sings the verses nobody should know. Sober he is sharper and funnier and pretends he isn't; he teaches by bullying and is delighted when the student wins.
@@ -254,16 +254,17 @@ Appearance and voice: `cast.md`. Named on the page in ch5 sc4; Rae spoke of him 
 - **At ease:** she has none at first, and that is the joke the company finds first: a literal honesty that is funny without meaning to be, an inability to let a bad stance pass uncorrected, a small real pleasure in a good opponent or a well-made thing.
 - **Now:** on the page from ch06 (named in the interlude, "the Needle" from Calden); spared on the weir (ch06 choice, `ysra_spared`, `vane_messaged`): got up on her own, carried his message word for word (in the water at the Wend, saw the whole of the west bank, the rest to his face), noticed he left out what she had told him, named him Plainspoken, looked once at Wren's face and rode into the alders with her four riders, wounded high in the left shoulder.
 
+### Elinor Vane — Aldric's sister
+- The person Aldric wants kept safe, and what the Crown holds over him. A letter from her is a Book II expandable. If she appears: late twenties, Aldric's face without the severity, braver with words than he is.
+- **Under pressure:** she notices what her brother is not saying. She pursues with words, which he cannot; when that fails she writes the letter anyway and sends it by the wrong hand.
+- **Now:** on the page by her letter (ch7 s7, opened on the north road): Aldric does not sleep and will not tell her the ford; she asks Darrow, by the Market's road. Unanswered (`elinor_letter`).
+
 ## Not yet on the page (full entries)
 
 ### King Aurel the Evergreen
 - Reigning for 311 years; not seen in public for nine. Present as bells, writs and the weight of the Oathspire. When Darrow is weakest he dreams of a green-lit hall and the sound of very slow breathing.
 - **Hides:** T1 and T2. He is three hundred years old because the Stones feed him. Never on the page in person before Book VI.
 - **Under pressure:** never on the page before Book VI; by then he notices nothing he is not fed, and pursues by the slowest means there are: a bell, a writ, a year.
-
-### Elinor Vane — Aldric's sister
-- The person Aldric wants kept safe, and what the Crown holds over him. A letter from her is a Book II expandable. If she appears: late twenties, Aldric's face without the severity, braver with words than he is.
-- **Under pressure:** she notices what her brother is not saying. She pursues with words, which he cannot; when that fails she writes the letter anyway and sends it by the wrong hand.
 
 ### Ilse of Corrach (Book III companion)
 - Thornwild war-leader, 40s; dragged a drowning Vaelmark captain out of the Wend at Harrow Ford for reasons she has not explained. **Voice:** slow, amused, says less than she knows. **Wants:** her people through the winter; someone from the Vaelmark to have *seen*. **Knows:** T4 and T5 (the grey figures under the trees were the Hollow Tide; Harrow Ford was no battle).

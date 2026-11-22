@@ -2338,12 +2338,13 @@
           "what": "Rae is the only one he has told what the rider said on the ice; she keeps it, and it sits in her when Hollis is near and knows less than she does",
           "fits": "present.rae && present.hollis",
           "priority": 2,
-          "status": "pending",
-          "offered": 3,
+          "status": "void:Hollis heard all of it at the fire (c07.7) and learned there that Rae had carried part of it; nothing is left for it to pay.",
+          "offered": 4,
           "offered_at": [
             "ch07:s5",
             "ch07:interlude",
-            "ch07:s6"
+            "ch07:s6",
+            "ch07:s7"
           ]
         }
       ],
@@ -2370,12 +2371,13 @@
           "what": "Wren learns, some day, that Rae was told something first and she was not; she counts it, out loud, and Rae does not help him",
           "fits": "present.wren && present.rae",
           "priority": 1,
-          "status": "pending",
+          "status": "fired@ch07:s7",
           "offered": 2,
           "offered_at": [
             "ch07:s5",
             "ch07:s6"
-          ]
+          ],
+          "evidence": "\"So that's twice she was told first.\""
         }
       ]
     },
@@ -2407,7 +2409,8 @@
           "at": "ch07:s7",
           "weight": "scene",
           "what": "The next scene opens on his answer, played: all of it at once, before Hollis has finished asking (the three heartbeats, the Grace going out of the ford, the Second dry on its bank, Aldric's horse already turned when the order came, and the rider's words since the weir); Hollis hears it sober; he learns Rae has had the horse since the fold wall; the jar stays in the third cart, a cart's length behind him.",
-          "status": "pending"
+          "status": "fired@ch07:s7",
+          "evidence": "\"I saw the Second dry,\" he said."
         },
         {
           "id": "c07.7b",
@@ -2415,12 +2418,37 @@
           "at": "ch07:s7",
           "weight": "scene",
           "what": "Downstream of `hollis_truth` (b2.4): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.4`); fire where it is honoured, void with a reason if the story made it moot",
-          "status": "pending"
+          "status": "fired@ch07:s7",
+          "evidence": "Five of them had it now, and a dog, and none of them would carry it alone."
         }
       ],
       "declined": [
         "The seal and the day, and not the heartbeat: spare him the one thing that cannot be unsaid.",
         "All of it, and then the paper out of his hand and into the fire, so nobody will ever read that seal against the Sixth's captain again."
+      ]
+    },
+    {
+      "id": "c07.8",
+      "made": {
+        "chapter": 7,
+        "scene": "7",
+        "date": "2026-11-21"
+      },
+      "chose": "Opened the miller's letter on the north road: Elinor's hand, Aldric does not sleep; folded it away, its answer to wait.",
+      "now": {
+        "flags": {
+          "elinor_letter": true
+        }
+      },
+      "due": [
+        {
+          "id": "c07.8a",
+          "when": "next",
+          "at": "ch07:s8",
+          "weight": "scene",
+          "what": "Downstream of `elinor_letter` (b2.5): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.5`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "pending"
+        }
       ]
     }
   ],
@@ -2579,7 +2607,13 @@
       "id": "r.b2.hollis_sober",
       "if": "approval.hollis >= 60",
       "then": "Hollis hears the writ's truth sober and asks for the second letter to read Aldric's hand himself (b2.4); otherwise the drunk hearing is available in any tier",
-      "where": "book2:beat4"
+      "where": "book2:beat4",
+      "fired": [
+        "ch07:s7"
+      ],
+      "evidence": {
+        "ch07:s7": "\"Have you still got his letter, Captain? The little one.\""
+      }
     },
     {
       "id": "r.b2.rae_tells",

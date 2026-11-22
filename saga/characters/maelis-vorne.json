@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "6",
-    "place": "river-mill",
-    "anchor": "chronicle/07-the-far-bank.html#scene-6"
+    "scene": "7",
+    "place": "the-marsh",
+    "anchor": "chronicle/07-the-far-bank.html#scene-7"
   },
-  "last_seen_doing": "Looked at his foot on the cart-tail and called it better; stopped her needle when Hollis took out the paper.",
-  "now": "At the fire with the mending in her lap, the needle stopped.",
+  "last_seen_doing": "Said, now it's said, and went on mending.",
+  "now": "With the column at the marsh's edge.",
   "story_so_far": "Maelis told him plainly what the frost had kept of his hand, warned the company what he would be taking onto the ice, and said a question could be answered by another mouth. At noon she waited on the bank with her needle threaded.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -721,6 +721,12 @@
       "chapter": "07",
       "scene": "6",
       "evidence": "\"Better,\" she said, which was the most she would give it."
+    },
+    {
+      "fact": "When it was all told she said only that now it was said.",
+      "chapter": "07",
+      "scene": "7",
+      "evidence": "\"Now it's said,\" she said, and that was all"
     }
   ],
   "relationships": [
@@ -1097,6 +1103,10 @@
     {
       "chapter": "07",
       "scene": "6"
+    },
+    {
+      "chapter": "07",
+      "scene": "7"
     }
   ]
 }
