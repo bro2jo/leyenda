@@ -401,3 +401,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-21#5,2026-11-21,,snack,Cheez-It Gluten Free Original,"2 servings (60 crackers, 60 g)",300,4,36,16,0,5,0,460,60,80,0.4,16,0.6,0,0,0,label,label photo 11/21 x2; Mg and zinc estimated
 2026-11-21#6,2026-11-21,,lunch,First Watch Power Breakfast Bowl,1 bowl,860,33,42,63,5,16,4,1340,900,250,5,120,4,40,2,80,web,First Watch menu screenshot 11/21; micros estimated
 2026-11-21#7,2026-11-21,,lunch,First Watch Million Dollar Bacon (4 slices),half the order (2 slices),125,3.5,11,7.5,0,2.5,10.5,190,55,2.5,0.15,4,0.3,0,0.05,0,web,First Watch menu screenshot 11/21 x0.5; his words: had half
+2026-11-21#8,2026-11-21,,dinner,"Vegetables, raw mixed (plate)","1 plate (assumed ~2 cups raw: carrots, broccoli, peppers, celery), no dip",60,3,12,0.5,4,0.1,6,80,500,60,0.8,25,0.4,80,0,0,estimate,"his words: a plate of veggies; kind, amount and any dip not given"
+2026-11-21#9,2026-11-21,,dinner,Gluten-free brownie,"2 brownies (assumed ~2-inch squares, ~50 g each)",400,5,56,18,2,6,40,220,160,20,1.6,40,0.8,0,0.2,0,estimate,his words: two gf brownies; size and brand not given

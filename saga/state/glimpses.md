@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-19 · body · Off the cart's tail at the ford road, he drops the last foot to the frozen ground and lands without thinking about it: both feet, knees soft, no sound worth hearing. Rae, ahead, doesn't turn round. That is the point.
 - 2026-11-19 · weather · Noon sun, thin as watered milk, and for an hour it is almost warm. Ash finds the one patch of dry grass on the whole road and rolls in it as if it had been laid there for him.
 - 2026-11-19 · verse · Rae hums Salt Goes Up under her breath for a mile and a half, and only sings one line of it out loud, the last: and it's only salt, and that's all, that's all. Ash looks up at her anyway.
 - 2026-11-19 · body · By evening his legs are tired the honest way, the old way, the ache the same on both sides, like after a long day in the saddle. He had forgotten that tired could be even.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-21 · overheard · Overheard at the head of the column: Wren asking Maelis how many miles a person can walk on porridge alone. All of them, Maelis says, if they stop asking.
 - 2026-11-21 · body · At the midday halt he realises he has been on his feet since first light and has not once looked round for something to lean on.
 - 2026-11-21 · house · Wren walks with her ledger open against the wind, writing one-handed, and walks into Rae twice. Both times she apologises to the ledger.
+- 2026-11-21 · weather · At dusk the cold comes in across flat ground with nothing to stop it, and the company walks a little closer together without anyone suggesting it.
