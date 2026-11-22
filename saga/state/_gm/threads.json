@@ -28,6 +28,7 @@
         "07:interlude",
         "07:s6",
         "07:s7",
+        "07:climax",
         "tale03:p1"
       ]
     },
@@ -115,7 +116,8 @@
         "00:III",
         "01:s2",
         "01:between-2",
-        "07:between-4"
+        "07:between-4",
+        "07:climax"
       ]
     },
     {
@@ -173,13 +175,14 @@
       "truth": "T6",
       "feeds": "T6",
       "status": "open",
-      "who_knows": "The page has only 'the far cots'; Wren, Maelis and the Prior know whose (GM); Darrow and the reader do not. 03:s4: Darrow and Maelis saw Wren read the old hand over the undercroft's inner door straight off and stop halfway; nobody has asked her how; Hollis and the Prior did not see it",
-      "note": "background. 03:s4 (T6 plant): Wren read 'What is given can be taken' over the inner door and stopped; Maelis finished it and told her not in the hall; Wren read none of the murals for him and shut her ledger on the line for the door",
+      "who_knows": "The page has only 'the far cots'; Wren, Maelis and the Prior know whose (GM); Darrow and the reader do not. 03:s4: Darrow and Maelis saw Wren read the old hand over the undercroft's inner door. 07:climax: the whole company saw Wren read the ring's last line, in an older hand than the script could give Darrow; nobody asked her how.",
+      "note": "07:climax: Wren reads, caught at it (r.b2.wren_reads unarmed).",
       "on_page": [
         "00:III",
         "01:s1",
         "03:s4",
-        "05:s3"
+        "05:s3",
+        "07:climax"
       ]
     },
     {
@@ -367,7 +370,8 @@
         "04:climax",
         "05:s6",
         "07:s4",
-        "07:between-4"
+        "07:between-4",
+        "07:climax"
       ]
     },
     {

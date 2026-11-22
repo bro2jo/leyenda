@@ -941,3 +941,132 @@ It stood out on the ice a long way off across the reeds: a circle of black stone
 The millers stopped where they were, all forty, without being told. Mill-folk didn't go near it. Never had.
 
 Darrow stood on the causeway with the stick in one hand and looked at the ring until the light went off the stones, and his palms prickled inside his coat, the way they did before the script came up. Tomorrow, in daylight, he would go out across the ice and read it, as far as the script would let him.
+
+## Climax — What the Stones Are For
+
+In the morning, before anyone went out on the ice, Maelis took the wrist of the woman from the bridge out of her coat for the last time.
+
+The woman had come north with the forty, and every night since the mill Maelis had held that wrist against her own skin and said nothing about it but *warmer*. Now she turned it over in the grey light and pressed the place where the four fingers and the thumb had been, and the woman flinched and said *ow*, loudly, and then laughed, because she had felt it.
+
+"Whole," said Maelis, and gave it back to her.
+
+A shepherd came along the causeway from the north while they were eating, driving six sheep and in no hurry, and stopped to look at forty people sitting on a road. He had come down the valley below the mill two days before. The carts that came over the bridge had reached the villages downriver, he said, and every window there had a lamp in it by dark, and everybody along the river knew why. Then he looked out at the ring, and spat, and took his sheep the long way round.
+
+The millers had their own flour on their own carts, out of the granary across the yard, which had stood when the mill went. They made bread at the marsh's edge, and kept their distance from the ring.
+
+---
+
+Darrow went out at mid-morning.
+
+He went carefully, with the stick ahead of him on the ice, because the ice was old and grey and dull and he did not trust it, and because a man who could walk all day on a road could still put himself on his back on ice in one stride. Maelis came behind him. Rae came with three lamps on a cord over her shoulder, unlit, because she could guess how long reading took. Hollis came on the beech leg with a spike he had driven into its foot at the fire the night before, because nobody was going to tell him he couldn't. Ash came because Darrow did.
+
+Wren had asked him, the night before, to see the script when it came, and to be told first what it said. He had not answered her. She came anyway, at the back, with a lamp she did not need yet, and kept her distance from the rest of them as if it were a rule.
+
+The ring was bigger close to. The stones stood in a circle a long stone's throw across, black and rough, rougher than the field-stones at the crossroads, and the ice ran in among them as smooth as a floor. Some were taller than a man on a horse. Two leaned on each other like old men. One lay on its face, half sunk, with the ice grown up round it.
+
+And every one of them was written on.
+
+He had thought, from the causeway, that the marks were weather. They were not. They ran round each stone in a single line at the height of a man's chest, cut deep and worn soft: angular strokes, and dots hung just above them, and here and there a long stroke that went back on itself like a hook. He had seen that hand every few days since the Steps, pale and gold, on the skin of his own palms, and only there. He had never once thought that anyone had cut it into stone.
+
+He stood in front of the first stone a long time without moving. Behind him the company waited.
+
+Then he took his hands out of his coat.
+
+---
+
+`[RESOLVE · DC 16]` d20 **4** +0 resolve +4 proficiency +4 Warden's Eye IV +3 chapter 7 Triumph = **15** — *Partial: success at a cost*
+
+It would not come for a glance. It came the way it always came, when it liked, and it liked a man to stand still with his hands bare in front of the line and wait. So he stood, and waited, and the script came up pale on his palms, and laid itself along the cut marks in the stone like a rubbing laid over a brass, and one stone at a time, the line gave him its words.
+
+*Here the stone is taught to drink.*
+
+He went on to the next. It took an hour.
+
+*Who kneels, gives.*
+
+The cold came into his hands while he waited, and stayed. He kept them out. The script would not come through a coat.
+
+*What is given goes up, stone to stone, to the First.*
+
+Noon went over. Rae folded her coat on the ice and sat on it with the lamps across her knees.
+
+*The First gives back a part, and the part is called grace.*
+
+He stopped there longer than he needed to.
+
+*What the First keeps, keeps the one who holds it.*
+
+The sun went low and red over the reeds, and the light went off the ice, and Rae lit the first lamp without being asked.
+
+---
+
+`[VIGOR · DC 10]` d20 **16** +1 vigor +3 chapter 7 Triumph +1 Ember Bright = **21** — *Success*
+
+The cold came down out of a clear sky the moment the sun was gone, and it came hard. Rae lit the second lamp off the first, and the third off the second, and set them on the ice at the feet of the stones, and the stones stood up black out of the light with their lines shining. Hollis drove his spike in and stood. Ash lay down against Darrow's legs. Darrow felt the cold go into his fingers and up his wrists, and kept his hands where they were, and read the sixth stone by lamplight.
+
+*When the one who holds it fails, the First draws all at once.*
+
+He read it twice.
+
+Then he was not on the ice any more. He was in the river, in the first heartbeat, with the warmth going thin in his chest like a lamp turned down. Second heartbeat: Thistle going down under him, and the whole Ninth sagging in the saddle at once, every man, like a rope cut. Third: gone. Out of all of them. Out of the whole ford, on both banks, from every man who had knelt that morning with his palm on a warm stone.
+
+Not lost. Called in. Drawn up through every stone in the land to the First at once, because somebody at the top of all those stones was failing that morning and needed feeding; and the men in the water had drowned for it, and the men on the bank, who had been told, had sat their horses and felt it go, and stayed dry.
+
+*Ride wide today.*
+
+He found that his hands had closed. He opened them again for the script.
+
+---
+
+There was one stone left, the one that lay on its face. Its line ran along the top of it, just clear of the ice, and the hand was different: older, closer, the strokes thinner. He sat down on the ice beside it on Rae's folded coat, the left leg out straight, because there was no other way to get low enough, and held his hands over it, and waited.
+
+The script came up, and laid itself along the first half of the line, and gave it to him.
+
+*This ring was raised to take what the—*
+
+And there it went thin, and stopped, where it came to the end of what it knew. He waited. Nothing came. The rest of the line lay under his hands in the lamplight, plain to see and nothing he could read.
+
+"—what the wardens build," said Wren.
+
+She was standing at the back with her lamp held up, where she had kept herself all day. She read it off the stone from there, in her quick flat ledger voice, the way she read anything, as if it were a sum: "*This ring was raised to take what the wardens build.*"
+
+Then she heard herself, and shut her mouth.
+
+Everyone was looking at her. Hollis had his mouth open. Rae had a lamp half lifted and had stopped with it there. Maelis had turned all the way round.
+
+`[RESOLVE · DC 8]` d20 **12** +0 resolve +3 chapter 7 Triumph = **15** — *Success*
+
+Darrow did not ask her how. He wanted to. He wanted it more than he had wanted to know anything since the river, and the question was in his mouth, and Wren's face in the lamplight said that if he asked it here, on the ice, in front of all of them, she would answer, because she always answered him; and it would cost her something she had been keeping a long time.
+
+He looked at her, and nodded once, as if she had told him a count, and looked back at the stone.
+
+Wren let out a breath, and lowered the lamp a little, and kept her eyes on it.
+
+---
+
+He got up off the ice. It took the stick, and Rae's arm, and longer than he liked.
+
+His hands had gone past cold into nothing. The two slow fingers of the right were dead white to the second joint again, and the third had gone with them, and he could not close either hand all the way. He looked at them in the lamplight. They might have been somebody else's.
+
+Then he looked at Maelis.
+
+"It was taken," he said. "At the ford. Not lost. Taken."
+
+He had said those words to her once before, on a cot in the House, when he had nothing to stand them on but a horse already turned. She had not answered him then.
+
+Maelis looked at him for a long moment, and at the ring behind him, and the lamps on the ice.
+
+"Yes," she said.
+
+Then she took both his hands and put them inside her own coat, under her arms, against her ribs, and held them there.
+
+Nobody said anything for a long time.
+
+The lamps burned on the ice. The cold ticked in the stones. Out on the causeway somebody among the millers had started a fire, small and orange and very far off, and somebody was singing at it, the heron song, badly, and stopped, and started again. Ash got up and turned round and lay down. Hollis stood on his spike with his weight on his good leg and his face turned to Darrow's, waiting, the way he had waited at the fire with the paper on his knee; he had heard one line of it, Wren's, and he could see on the Captain's face that it was the least of it. Rae held her lamp. Wren held hers, and looked at the ice. Maelis held his hands against her ribs, and he understood that she would say no more; that *yes* was all she would give him tonight, and that it had cost her more than anything she had said to him since the Steps.
+
+He stood in the ring with the company's lamps around him, and the whole of it in him: what the stones were for, what the Grace was, what the ford had been. Four people and a dog were looking at him in the lamplight, waiting to be told.
+
+**What does Darrow do?**
+1. **Tell the company, all of it, here at the ring, with Maelis's one word behind him.** *Maelis and Rae would. Wren would not: a truth everyone carries is a truth someone drops.*
+2. **Carry it alone until he knows what to do with it.** *Wren would. Maelis would not, and Rae would wait, which is worse.*
+3. **Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer.** *Rae would, and pay for it. Wren, Maelis and Hollis would not.*

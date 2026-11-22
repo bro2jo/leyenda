@@ -35,13 +35,13 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "7",
+    "scene": "climax",
     "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+    "anchor": "chronicle/07-the-far-bank.html#climax"
   },
-  "last_seen_doing": "Told Hollis she had carried the horse since the fold wall and the rider's words since the walkers' road, his to come to and not hers to give; would not help Darrow with Wren's count.",
-  "now": "With the column at the marsh's edge.",
-  "story_so_far": "Rae made the road lie with two carts out of one, took the call on a river family and carried them over the hill with her bell ringing, and told Darrow the sack's road before the mill. She read the weir for him, turned her cart broadside across its near end because oxen are allowed to stand, and brought him a sealed letter from the mill that was not hers to carry.",
+  "last_seen_doing": "Carried three lamps out to the ring and lit them one off another as the light went; folded her coat on the ice for him.",
+  "now": "In the ring by her lamps.",
+  "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
     "chapter": "06",
@@ -1031,6 +1031,12 @@
       "evidence": "\"It was yours to come to. Not mine to give.\""
     },
     {
+      "fact": "She carried the lamps out to the ring unlit and lit them at dusk without being asked.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "Rae lit the first lamp without being asked."
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1431,6 +1437,10 @@
     {
       "chapter": "07",
       "scene": "7"
+    },
+    {
+      "chapter": "07",
+      "scene": "climax"
     },
     {
       "chapter": "tale02",

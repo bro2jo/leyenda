@@ -5,7 +5,7 @@
     "chapter": 7,
     "beat": "b2.5",
     "next_scene": 8,
-    "stage": "scene",
+    "stage": "climax",
     "last_written": "ch07:s7",
     "rank_on_page": "Kindled"
   },
@@ -193,7 +193,7 @@
           "want": "to see the script on his palms when it comes, what it looks like, and to be told first what it says at the ring",
           "why_now": "tomorrow he means to read an old ring in the marsh, and she has watched the script come up on his hands all week without once being shown it",
           "if_ignored": "she goes to the ring without asking, and keeps to the back with a lamp",
-          "status": "waiting"
+          "status": "passed"
         },
         "status": "written",
         "wrote": "ch07:s7"
@@ -407,9 +407,9 @@
         6,
         7
       ],
-      "road": null,
+      "road": "main",
       "override": null,
-      "transition_chapter": null,
+      "transition_chapter": 7,
       "knot_window": {
         "earliest": "2026-11-17",
         "likely": "2026-11-17",
@@ -594,7 +594,19 @@
       "bound": "2026-11-10"
     }
   ],
-  "open_choice": null,
+  "open_choice": {
+    "chapter": 7,
+    "scene": "climax",
+    "ask": "What does Darrow do?",
+    "options": [
+      "Tell the company, all of it, here at the ring, with Maelis's one word behind him.",
+      "Carry it alone until he knows what to do with it.",
+      "Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer."
+    ],
+    "default": 1,
+    "opened": "2026-11-22",
+    "carries": 2
+  },
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4

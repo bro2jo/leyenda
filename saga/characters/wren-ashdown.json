@@ -33,13 +33,13 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "7",
+    "scene": "climax",
     "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+    "anchor": "chronicle/07-the-far-bank.html#climax"
   },
-  "last_seen_doing": "Counted aloud that Rae had been told first twice; sat with Hollis and talked; walked into Rae twice on the road writing one-handed and apologised to the ledger.",
-  "now": "With the column at the marsh's edge, the ledger open.",
-  "story_so_far": "Wren counted the Captain told-first twice and not-once, argued him away from the weir with arithmetic and lost, and kept a book on the morning that nobody would bet against. The night before, she told him she was frightened of keeping a column for him; the morning of it she offered him a lie, let it go, and counted for him that nobody on his own bank had ever asked him to kneel.",
+  "last_seen_doing": "Came to the ring unasked and kept to the back with a lamp all day; read the last line off the fallen stone aloud where the script failed him, then heard herself and shut her mouth.",
+  "now": "At the back of the ring with her lamp, looking at the ice.",
+  "story_so_far": "Wren counted the carts over the bridge, opened a column for the Captain and closed it in front of him when he came back on the third day, and drove Rae's oxen north without knowing their word. She counted aloud that Rae had been told first twice. At the ring, unasked, at the back with a lamp, she read the last line off the fallen stone, and nobody asked her how.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
     "chapter": "02",
@@ -871,6 +871,18 @@
       "chapter": "07",
       "scene": "7",
       "evidence": "Wren sat down next to him and talked. He let her."
+    },
+    {
+      "fact": "She read the last line of the fallen stone, in an older hand the script could not give Darrow: this ring was raised to take what the wardens build.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "\"*This ring was raised to take what the wardens build.*\""
+    },
+    {
+      "fact": "She came to the ring without being asked, and kept to the back with a lamp all day.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "She came anyway, at the back, with a lamp she did not need yet"
     }
   ],
   "relationships": [
@@ -1260,6 +1272,10 @@
     {
       "chapter": "07",
       "scene": "7"
+    },
+    {
+      "chapter": "07",
+      "scene": "climax"
     }
   ]
 }

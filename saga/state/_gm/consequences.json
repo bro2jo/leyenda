@@ -2447,9 +2447,25 @@
           "at": "ch07:s8",
           "weight": "scene",
           "what": "Downstream of `elinor_letter` (b2.5): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b2.5`); fire where it is honoured, void with a reason if the story made it moot",
-          "status": "pending"
+          "status": "void:Elinor's letter waits for its answer by plan (another week); the ring's Downstream concerns what the stones say, not the letter."
         }
       ]
+    },
+    {
+      "id": "c07.9",
+      "made": {
+        "chapter": 7,
+        "scene": "auto:invite-7",
+        "date": "2026-11-22"
+      },
+      "chose": "Let wren-ashdown's favour pass: to see the script on his palms when it comes, what it looks like, and to be tol…",
+      "now": {
+        "approval": {
+          "wren": -2
+        }
+      },
+      "due": [],
+      "auto": true
     }
   ],
   "rules": [

@@ -48,3 +48,6 @@ when,label,stat,dc,d20,d20_b,mode,mods,total,result,note
 2026-11-16T03:34:01,ch07-between-1-name-the-load,resolve,12,11,,,+0 resolve,11,PARTIAL (success at a cost),name-the-load with Rae along the carts coming off the mill bridge
 2026-11-17T01:27:08,ch07-s2-the-gap,might,16,10,,,+1 might +4 proficiency +3 Stillwater Stance III,18,SUCCESS,holding the gap by Rae's cart at the bridge's far end while the last carts go over
 2026-11-18T01:36:54,ch07-s3-the-fire,vigor,13,6,,,+0 vigor +1 Ember Bright,7,FAILURE,awake and feeding the fire alone through the first night on the trail
+2026-11-22T13:02:39,ch07-climax-read,resolve,16,4,,,+0 resolve +4 proficiency +4 Warden's Eye IV +3 chapter 7 Triumph,15,PARTIAL (success at a cost),
+2026-11-22T13:02:39,ch07-climax-lamps,vigor,10,16,,,+1 vigor +3 chapter 7 Triumph +1 Ember Bright,21,SUCCESS,
+2026-11-22T13:02:39,ch07-climax-wren,resolve,8,12,,,+0 resolve +3 chapter 7 Triumph,15,SUCCESS,

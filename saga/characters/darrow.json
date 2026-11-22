@@ -35,13 +35,13 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "7",
+    "scene": "climax",
     "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+    "anchor": "chronicle/07-the-far-bank.html#climax"
   },
-  "last_seen_doing": "Told Hollis all of it at once: the three heartbeats, the Second dry on its bank, Aldric's horse already turned before the Grace went, and the rider's words; gave Hollis the last of Aldric's letters to read; on the road north opened the miller's letter at last and found Elinor's hand; saw the ring at dusk.",
-  "now": "On the causeway at the edge of the frozen marsh with the company, the ring out on the ice in front of him; he means to read it in daylight.",
-  "story_so_far": "With the last two fingers of his right hand slow for good, Darrow took the mill tracks north, let Rae decide for a river family, broke his word to tell Wren first once and kept it after, and answered an unsigned summons by the forms. On the frozen weir below the mill he chose one dry stone and stood on it against the finest footwork he had ever seen: moved once, cut once, he lost his stick to the fall and would not follow her off the stone, and she ran onto his point. On the ice she told him something about the ford that she did not understand.",
+  "last_seen_doing": "Went out on the ice and read the ring stone by stone with his hands bare until dark; understood the ford; let Wren finish the last line without asking how; said to Maelis that the Grace was taken.",
+  "now": "Standing in the ring by lamplight with his frozen hands inside Maelis's coat and the whole of what the stones say in him, the company waiting to be told.",
+  "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
     "chapter": "00",
@@ -2422,6 +2422,30 @@
       "evidence": "had not once leaned on the stick"
     },
     {
+      "fact": "The script came up on his palms and read the ring's lines stone by stone, but only while he stood still with his hands bare in the cold.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "The script would not come through a coat."
+    },
+    {
+      "fact": "Reading the ring cost him his hands for the night: the two slow fingers of the right dead white again, the third with them.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "The two slow fingers of the right were dead white to the second joint again, and the third had gone with them"
+    },
+    {
+      "fact": "From the ring's words he understood that at the ford the Grace was not lost but called in, all at once, from every man who had knelt that morning.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "Not lost. Called in."
+    },
+    {
+      "fact": "He did not ask Wren how she could read the line he could not.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "Darrow did not ask her how."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3061,6 +3085,10 @@
     {
       "chapter": "07",
       "scene": "7"
+    },
+    {
+      "chapter": "07",
+      "scene": "climax"
     },
     {
       "chapter": "tale01",

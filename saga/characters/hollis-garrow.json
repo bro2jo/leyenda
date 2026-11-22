@@ -34,13 +34,13 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "7",
+    "scene": "climax",
     "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#scene-7"
+    "anchor": "chronicle/07-the-far-bank.html#climax"
   },
-  "last_seen_doing": "Heard all of it sober; said plainly he took the Sixth in with the order in his fist while Vane watched it work; learned Rae had carried part of it; asked for the last of Aldric's letters and read the hand beside the seal; put the order back in the leg and let Wren sit with him.",
-  "now": "With the column at the marsh's edge, sober, with the order back in the leg's cup.",
-  "story_so_far": "Hollis moved the Captain's grip up the hilt and told him two lost fingers were an argument already over, gave a river boy the boot he carried down the mountain, and argued for answering the summons by the forms. He won, sulked about it, crossed the glazed weir on his backside to test his captain on the stone, told Wren she was for them, and kept his hands at his sides at noon because the forms said so.",
+  "last_seen_doing": "Came out on the beech leg with a spike driven into its foot; stood through the cold and waited to be told.",
+  "now": "In the ring on his spiked leg, waiting for the Captain to tell him.",
+  "story_so_far": "Hollis captained the forty north while Darrow went west, and on the first night looked at last at the seal on the order he had carried since the ford. Quiet for days, he laid it on his knee at the fire and asked, sober, what the Captain saw from the water, and heard all of it with the jar in the third cart at his back. He read Aldric's last letter beside the seal, and crossed the ice to the ring on a spiked leg.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
     "chapter": "06",
@@ -934,6 +934,12 @@
       "chapter": "07",
       "scene": "7",
       "evidence": "\"You're a hard woman, Thorne.\""
+    },
+    {
+      "fact": "He drove a spike into the foot of his beech leg to cross the ice to the ring.",
+      "chapter": "07",
+      "scene": "climax",
+      "evidence": "a spike he had driven into its foot at the fire the night before"
     }
   ],
   "relationships": [
@@ -1377,6 +1383,10 @@
     {
       "chapter": "07",
       "scene": "7"
+    },
+    {
+      "chapter": "07",
+      "scene": "climax"
     }
   ]
 }
