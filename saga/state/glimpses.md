@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-19 · verse · Rae hums Salt Goes Up under her breath for a mile and a half, and only sings one line of it out loud, the last: and it's only salt, and that's all, that's all. Ash looks up at her anyway.
 - 2026-11-19 · body · By evening his legs are tired the honest way, the old way, the ache the same on both sides, like after a long day in the saddle. He had forgotten that tired could be even.
 - 2026-11-19 · weather · The wind drops at dusk and the cold comes straight down instead, still and blue. Their breath hangs in the air in front of them, and Ash snaps at his own.
 - 2026-11-19 · house · Rae re-laces her boots by the fire with the care of someone mending harness. She makes him hold the lamp for it, and tells him twice that he is holding it wrong.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-21 · house · Wren walks with her ledger open against the wind, writing one-handed, and walks into Rae twice. Both times she apologises to the ledger.
 - 2026-11-21 · weather · At dusk the cold comes in across flat ground with nothing to stop it, and the company walks a little closer together without anyone suggesting it.
 - 2026-11-22 · ledger · Wren's tally for the week, ruled off and underlined: nights under the cart, six. Times Rae was right about the weather: all of them, by Rae's count. By Wren's, four.
+- 2026-11-22 · body · His feet are cold through both boots, and for once that is the only thing about his legs he has to think about.
