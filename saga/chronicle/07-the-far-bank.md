@@ -942,6 +942,8 @@ Then Ash stopped on the causeway and stood with her nose up, and Darrow looked w
 
 It stood out on the ice a long way off across the reeds: a circle of black stones, some upright and taller than a man on a horse, some leaning, some down and half sunk, the last of the light lying along their tops and nowhere else. The ice ran right up to them and in among them, and nothing grew there, not even reeds. Whoever had raised it had been gone a long time. It stood in that marsh as if it had outlasted everyone who ever came to look at it, and was waiting, without much interest, for them to go too.
 
+Beyond the ring the reeds gave out at a long white road of ice, bank to bank: the Wend, the river of the ford, come north along the edge of the Lowmarch to meet them. Past it, black under the last of the light, stood the edge of the Thornwild.
+
 *There's nothing up the north road but the marsh,* the old woman at the mill had said, the night it burned, *and the old ring of stones in it. Older than Calden.* From here he believed her.
 
 The millers stopped where they were, all forty, without being told. Mill-folk didn't go near it. Never had.
@@ -956,7 +958,7 @@ The woman had come north with the forty, and every night since the mill Maelis h
 
 "Whole," said Maelis, and gave it back to her.
 
-A shepherd came along the causeway from the north while they were eating, driving six sheep and in no hurry, and stopped to look at forty people sitting on a road. He had come down the valley below the mill two days before. The carts that came over the bridge had reached the villages downriver, he said, and every window there had a lamp in it by dark, and everybody along the river knew why. Then he looked out at the ring, and spat, and took his sheep the long way round.
+A shepherd came up the causeway behind them while they were eating, driving six sheep and in no hurry, and stopped to look at forty people sitting on a road. He had come up through the valley below the mill two days before. The carts that came over the bridge had reached the villages downriver, he said, and every window there had a lamp in it by dark, and everybody along the river knew why. Then he looked out at the ring, and spat, and took his sheep the long way round.
 
 The millers had their own flour on their own carts, out of the granary across the yard, which had stood when the mill went. They made bread at the marsh's edge, and kept their distance from the ring.
 
@@ -982,7 +984,9 @@ Then he took his hands out of his coat.
 
 `[RESOLVE · DC 16]` d20 **4** +0 resolve +4 proficiency +4 Warden's Eye IV +3 chapter 7 Triumph = **15** — *Partial: success at a cost*
 
-It would not come for a glance. It came the way it always came, when it liked, and it liked a man to stand still with his hands bare in front of the line and wait. So he stood, and waited, and the script came up pale on his palms, and laid itself along the cut marks in the stone like a rubbing laid over a brass, and one stone at a time, the line gave him its words.
+It would not come for a glance. It came the way it always came, when it liked, and it liked a man to stand still with his hands bare in front of the line and wait. So he stood, and waited, and the script came up pale on his palms and settled into the cut marks on the stone like water finding a groove, and one stone at a time, the line gave him its words.
+
+He read them to himself. Nobody else could see the script. To the rest of them he was a man standing in the cold with his bare hands held out to a rock, for hours, saying nothing.
 
 *Here the stone is taught to drink.*
 
@@ -1068,9 +1072,9 @@ Then she took both his hands and put them inside her own coat, under her arms, a
 
 Nobody said anything for a long time.
 
-The lamps burned on the ice. The cold ticked in the stones. Out on the causeway somebody among the millers had started a fire, small and orange and very far off, and somebody was singing at it, the heron song, badly, and stopped, and started again. Ash got up and turned round and lay down. Hollis stood on his spike with his weight on his good leg and his face turned to Darrow's, waiting, the way he had waited at the fire with the paper on his knee; he had heard one line of it, Wren's, and he could see on the Captain's face that it was the least of it. Rae held her lamp. Wren held hers, and looked at the ice. Maelis held his hands against her ribs, and he understood that she would say no more; that *yes* was all she would give him tonight, and that it had cost her more than anything she had said to him since the Steps.
+The lamps burned on the ice. The cold ticked in the stones. Out past the ring the Wend lay white under the stars, and beyond it the forest was a darker dark. Out on the causeway somebody among the millers had started a fire, small and orange and very far off, and somebody was singing at it, the heron song, badly, and stopped, and started again. Ash got up and turned round and lay down. Hollis stood on his spike with his weight on his good leg and his face turned to Darrow's, waiting, the way he had waited at the fire with the paper on his knee; he had heard one line of it, Wren's, and he could see on the Captain's face that it was the least of it. Rae held her lamp. Wren held hers, and looked at the ice. Maelis held his hands against her ribs, and he understood that she would say no more; that *yes* was all she would give him tonight, and that it had cost her more than anything she had said to him since the Steps.
 
-He stood in the ring with the company's lamps around him, and the whole of it in him: what the stones were for, what the Grace was, what the ford had been. Four people and a dog were looking at him in the lamplight, waiting to be told.
+He stood in the ring with the company's lamps around him, and the whole of it in him: what the stones were for, what the Grace was, what the ford had been. Four people and a dog stood with him in the lamplight, waiting to be told.
 
 **What does Darrow do?**
 1. **Tell the company, all of it, here at the ring, with Maelis's one word behind him.** *Maelis and Rae would. Wren would not: a truth everyone carries is a truth someone drops.*
