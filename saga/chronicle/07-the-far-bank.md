@@ -866,17 +866,23 @@ The fire spat. Somewhere behind Hollis a child turned over in the third cart, th
 
 Nobody answered that. There was no answer to it.
 
-After a while Hollis lifted his head and looked across the fire, not at Darrow, at Rae.
+After a while Hollis lifted his head and looked round the fire, the way he looked down a line before a charge, to see who was frightened and who was not. Wren had her hand over her mouth. Maelis had her needle stopped in the strap. Rae's hands had gone on working the tallow into the halter the whole time, slow and even, and her face had not changed once.
 
-"You've had some of that."
+Hollis looked at her a while.
 
-Rae's hands stopped on the halter. "The horse, since the fold wall above Coldmere. The rider's words since the walkers' road." She met his eyes. "It was yours to come to. Not mine to give."
+"You've had some of that," he said.
 
-Hollis looked at her a long moment. Then something moved at the corner of his mouth, the first thing that had moved there in three days. "You're a hard woman, Thorne."
+Rae's hands stopped. She did not look at Darrow. "It was yours to come to," she said. "Not mine to give."
+
+That was all she would say. Darrow could see she would sit there and let Hollis think what he liked of her before she gave up one word more of what had been given to her to carry.
+
+"I told her," Darrow said. "The horse, on the fold wall above Coldmere. The rider's words, on the walkers' road. I told her because I couldn't yet tell you. That's mine, Hollis. Not hers."
+
+Hollis looked from one of them to the other. Then something moved at the corner of his mouth, the first thing that had moved there in three days. "You're a hard woman, Thorne," he said. "Sitting on that."
 
 "I'm a carter."
 
-"The walkers' road," said Wren. Her pencil had started again. "So that's twice she was told first." She wrote it down. "Rae, two. The rest of us—"
+"The fold wall," said Wren. Her pencil had started again. "And the walkers' road. So that's twice she was told first." She wrote it down. "Rae, two. The rest of us—"
 
 "Wren," said Darrow.
 
@@ -960,7 +966,7 @@ Darrow went out at mid-morning.
 
 He went carefully, with the stick ahead of him on the ice, because the ice was old and grey and dull and he did not trust it, and because a man who could walk all day on a road could still put himself on his back on ice in one stride. Maelis came behind him. Rae came with three lamps on a cord over her shoulder, unlit, because she could guess how long reading took. Hollis came on the beech leg with a spike he had driven into its foot at the fire the night before, because nobody was going to tell him he couldn't. Ash came because Darrow did.
 
-Wren had asked him, the night before, to see the script when it came, and to be told first what it said. He had not answered her. She came anyway, at the back, with a lamp she did not need yet, and kept her distance from the rest of them as if it were a rule.
+The night before, Wren had read him a line out of the ledger across the fire without looking up: *Script on the Captain's hands, seen this week: four. Shown to me: none.* Then she had shut the book and left the sum where he could see it. He had not answered it. She came anyway, at the back, with a lamp she did not need yet, and kept her distance from the rest of them as if it were a rule.
 
 The ring was bigger close to. The stones stood in a circle a long stone's throw across, black and rough, rougher than the field-stones at the crossroads, and the ice ran in among them as smooth as a floor. Some were taller than a man on a horse. Two leaned on each other like old men. One lay on its face, half sunk, with the ice grown up round it.
 
