@@ -848,7 +848,7 @@ Hollis waited, with the paper on his knee and the leg across his lap and the thi
 
 ### Scene 7 — The Ring in the Reeds
 
-Darrow answered before Hollis had his hand back on the paper.
+Darrow did not make him wait.
 
 "I saw the Second dry," he said.
 
@@ -860,7 +860,7 @@ Hollis had not moved.
 
 Then there was nothing left, and he stopped.
 
-The fire spat. Somewhere behind Hollis a child turned over in the third cart and the cart creaked, and Darrow saw him hear it, and stay where he was.
+The fire spat. Somewhere behind Hollis a child turned over in the third cart, the cart he had said he would be in if he were weak, and it creaked, and Darrow saw him hear it, and stay where he was.
 
 "The Sixth went in under me," Hollis said at last. His voice was very level. "I took them in. I had this in my fist." He looked down at the blue wax. "And he sat his horse on the bank and watched it work."
 
@@ -880,7 +880,9 @@ Hollis looked at her a long moment. Then something moved at the corner of his mo
 
 "Wren," said Darrow.
 
-"I'm only counting." She looked at Rae for help.
+"I'm only counting."
+
+Darrow looked at Rae for help.
 
 "Don't look at me," said Rae.
 
@@ -890,11 +892,11 @@ Hollis held out his hand across the fire, palm up.
 
 "Have you still got his letter, Captain? The little one."
 
-Darrow had. It had been inside his coat since the House, folded small against the summons: the second sheet, the faster hand, *Answer me, or I will come myself.* He gave it over. Hollis held it to the light beside the order on his knee, the two blue seals side by side, and read the one line twice, slowly, his lips moving, like a man reading a stranger's name off a stone.
+Darrow had. It had been inside his coat since the House, folded small against the summons: the last of the three letters Aldric had sent up the mountain, a small sheet in a faster hand. *Answer me, or I will come myself.* He gave it over. Hollis held it to the light beside the order on his knee, the two blue seals side by side, and read the one line twice, slowly, his lips moving, like a man reading a stranger's name off a stone.
 
 "He writes a good hand," he said. "Steady. That's a man who sleeps sound." He gave it back. "Keep it. You'll want it, the day you see his face."
 
-Then he folded the order along its old folds, wax inward, and put it in the cup and buckled on the leg.
+Then he folded the order along its old folds, wax inward, and put it in the cup of the leg and buckled the leg on.
 
 "I'm going to sit here a while," he said. "Somebody sit with me who isn't going to talk."
 
@@ -906,11 +908,11 @@ North of the stream the hills gave out, and the road went down onto flat ground 
 
 It was marsh, and it was frozen: reeds white to the tips, standing up out of grey ice as far as he could see, with the road running through them on a causeway of old stones barely wider than a cart. Out on the flat the company looked smaller than it had any right to: forty people and three carts and a dog, strung out under a sky with nothing in it, the only things moving in a whole country. Wren walked with her ledger open against the wind, writing one-handed, and walked into Rae twice. Both times she apologised to the ledger.
 
-At the midday halt Darrow found that he had been on his feet since first light and had not once looked round for something to lean on. He stood a moment with that. Then he took the miller's letter out of his coat.
+At the midday halt Darrow found that he had been on his feet since first light and had not once leaned on the stick, or looked round for anything else to lean on. He stood a moment with that. Then he took the miller's letter out of his coat.
 
-He had carried it unopened since the weir. Last night he had told Hollis everything he had; it seemed a poor day to go on carrying anything shut.
+Rae had brought it down from the mill the night before the weir, with a sack of flour on her shoulder: *Miller had this for you. Your name's on it.* It was folded small and soft at the corners, as if it had come a long way in somebody's coat, and the hand on the outside was not Aldric's. He had put it inside his coat unopened and told her he would read it after. After had kept moving off: the weir, the bridge, the walkers' road, Hollis's question. Last night he had told Hollis everything he had. It seemed a poor day to go on carrying anything shut.
 
-The hand on it was not Aldric's. He had known that much since the mill. Now, with the seal broken and the sheet open, he knew whose it was: quick, slanting, impatient with its own lines. Elinor's. Aldric's sister, who at fourteen had told the chaplain at their knighting, to his face, that his sermon was too long.
+He broke the seal, and knew the hand inside before he had read a line of it: quick, slanting, impatient with its own lines. Elinor's. Aldric's sister, who at fourteen had told the chaplain at their knighting, to his face, that his sermon was too long.
 
 *Darrow,*
 
@@ -924,7 +926,7 @@ The hand on it was not Aldric's. He had known that much since the mill. Now, wit
 
 He read it twice. *That's a man who sleeps sound,* Hollis had said last night, with the steady hand held to the fire. Darrow thought of Aldric on a stair in Calden in the small hours, with his steady hand and nothing written; and found that of all the things he had wished on Aldric in a year, this was not one of them, and he did not know what to do with that.
 
-He knew which road she meant, and who drove it. He folded the letter and put it back inside his coat, beside the other. Its answer could wait. It had waited this long.
+He knew which road she meant: Rae's salt sack, and the mill, and the people at the end of that road who paid for what it knew. He folded the letter and put it back inside his coat, beside Aldric's. Its answer could wait. It had waited this long.
 
 ---
 
@@ -934,8 +936,8 @@ Then Ash stopped on the causeway and stood with her nose up, and Darrow looked w
 
 It stood out on the ice a long way off across the reeds: a circle of black stones, some upright and taller than a man on a horse, some leaning, some down and half sunk, the last of the light lying along their tops and nowhere else. The ice ran right up to them and in among them, and nothing grew there, not even reeds. Whoever had raised it had been gone a long time. It stood in that marsh as if it had outlasted everyone who ever came to look at it, and was waiting, without much interest, for them to go too.
 
-*Older than Calden,* the old woman at the mill had said. From here he believed her.
+*There's nothing up the north road but the marsh,* the old woman at the mill had said, the night it burned, *and the old ring of stones in it. Older than Calden.* From here he believed her.
 
 The millers stopped where they were, all forty, without being told. Mill-folk didn't go near it. Never had.
 
-Darrow stood on the causeway with the stick in one hand and looked at the ring until the light went off the stones, and his palms prickled inside his coat, the way they did before the script came up. Tomorrow, in daylight, he would go out across the ice and read it.
+Darrow stood on the causeway with the stick in one hand and looked at the ring until the light went off the stones, and his palms prickled inside his coat, the way they did before the script came up. Tomorrow, in daylight, he would go out across the ice and read it, as far as the script would let him.
