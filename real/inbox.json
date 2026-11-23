@@ -6,7 +6,7 @@
       "kind": "sleep",
       "date": "2026-01-01",
       "field": "sleep_min",
-      "status": "pending",
+      "status": "dismissed",
       "received": "2026-11-23T23:00:16Z",
       "sessions": {
         "test-1": {
@@ -21,7 +21,9 @@
         }
       },
       "value": 433,
-      "updated": "2026-11-23T23:00:16Z"
+      "updated": "2026-11-23T23:00:16Z",
+      "resolved": "2026-11-23",
+      "why": "setup test"
     }
   ]
 }
