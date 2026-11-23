@@ -1085,7 +1085,7 @@ He stood in the ring with the company's lamps around him, and the whole of it in
 
 He told them there, where they stood.
 
-He did it plainly, as he had told Hollis about the water: in order, start to finish, and nothing left in his coat. What the six stones said, one by one, in the words they said it. What the seventh said, the half he had and the half Wren had given him. What it meant, which was the part the stones had not written down and he had read anyway, standing in the river again with his hands open: that the Grace was their own, taken up out of every man who knelt and handed back a little at a time, and that at the ford something at the top of all those stones had needed the whole of it at once, and taken it, and the Ninth and the Sixth had drowned for the difference.
+He did it plainly, as he had told Hollis about the water: in order, start to finish, and nothing left in his coat. What the six stones said, one by one, in the words they said it. What the seventh said, the half he had and the half Wren had given him. And what it meant, which the stones had not written down and he had understood anyway at the sixth of them: that the Grace was their own, taken up out of every man who knelt and handed back a little at a time, and that at the ford something at the top of all those stones had needed the whole of it at once, and taken it, and the Ninth and the Sixth had drowned for it.
 
 Maelis let go of his hands while he talked, and stayed where she was. She stood at his shoulder with her arms folded, and when he came to the end she was still there.
 
@@ -1095,9 +1095,9 @@ Nobody spoke for a moment.
 
 "Yes," said Maelis.
 
-Hollis stood on his spike in the lamplight with his weight on the good leg. Darrow watched it reach him: not the stones, not the First, but the thing under it that was his own.
+Hollis stood on his spike in the lamplight with his weight on the good leg. Darrow watched it reach him: not the stones, not the First, but the part that was his.
 
-"Orrin said his oath at every bell," Hollis said. "Every bell of the night, for a year. Said he could feel it warm in his chest." His voice stayed level, which was the worst of it. "He was giving it away. Every bell. And it was his to begin with."
+"Orrin said his oath at every bell," Hollis said. "My lad, in the Grey Cot. Every bell of the night. Said he could feel it warm in his chest." His voice stayed level, which was the worst of it. "He was giving it away. Every bell. And it was his to begin with."
 
 He looked at the stone with the sixth line, black in the lamplight, and then down at the beech leg, and Darrow knew what he was adding up: the river, and the leg, and a warmth he had knelt for every season of his life and called a gift.
 
@@ -1109,7 +1109,7 @@ Nobody touched him. He would not have wanted it.
 
 Wren had the ledger open and the pencil still. She had not written anything since the fallen stone.
 
-"That's five of us," she said. "And the dog." She was looking at the ledger. "Five people who know what the Crown would kill for, the night before we walk out of the Crown's country with it. A truth everybody carries is a truth somebody drops, Captain. You know that as well as I do." She shut the book. "I'm not saying you were wrong. I'm saying it's a number now, and it's bigger than one."
+"That's five of us," she said. "And the dog." She was looking at the ledger. "Five people who know what the Crown would kill for, out here, with nothing between us and the Crown but a marsh. A truth everybody carries is a truth somebody drops, Captain. You know that as well as I do." She shut the book. "I'm not saying you were wrong. I'm saying it's a number now, and it's bigger than one."
 
 "It was always bigger than one," said Darrow. "It just wasn't written down."
 
@@ -1133,11 +1133,17 @@ Maelis opened her eyes.
 
 He knew the word. He had waited a winter for it once already, in a warming room at the top of a mountain, and had not known where to put it then either.
 
-"On the flat," said Maelis, before he could do anything foolish with it. "Straight. Not fast. You stop the way I showed you, over steps, not on a heel. And if it says anything to you that it hasn't said walking, you walk." She stood up. "That's my count. Not the old one."
+"On the flat," said Maelis, before he could do anything foolish with it. "Straight. Not fast. You stop the way I showed you, over steps, not on a heel. And if it says anything to you that it hasn't said walking, you walk." She stood up. "That's my count. Not the one your legs keep."
 
 "I can run."
 
 "You can run on the flat, straight, not fast," said Maelis, "when I say so. I've said so. Don't make me sorry."
+
+He looked south along the causeway at the thread of smoke, and then east at the river, white from bank to bank, and the black trees on the far side of it.
+
+"Over," he said, to all of them. "They'll not follow us under those trees. And I want to see that river from the far side, once, with my eyes open."
+
+Nobody argued. Rae went to see to the oxen.
 
 ---
 
@@ -1163,7 +1169,7 @@ Maelis walked beside the cart. Ash went out ahead, nose down, and stopped, and l
 
 There were horses on the west bank.
 
-Four of them, and a fifth a little apart: a light horse, long in the leg, and on it a slight woman sitting very straight, with her left arm bound across her body. She must have come up along the river in the night, following the lamps. She kept off the ice. She sat her horse on the bank and watched him, as she had watched him from the far ditch at the meadow, with her whole attention and no hurry at all.
+Four of them, and a fifth a little apart: a light horse, long in the leg, and on it a slight woman sitting very straight, with her left arm bound across her body. The rider from the weir. She must have come up along the river in the night, following the lamps. She kept off the ice. She sat her horse on the bank and watched him, as she had watched him from the far ditch at the meadow, with her whole attention and no hurry at all.
 
 He looked at her across the snow. She inclined her head to him, once, exactly as far as courtesy required.
 
@@ -1201,7 +1207,7 @@ Behind them the cart came on across the white river at an ox's pace, with Rae at
 
 He waited for the cart at the edge of the ice. When it came up, Hollis handed him down his stick, and Rae looked at him once, the way she looked at a load that had come over a bad road and arrived whole. That was all, and it was plenty.
 
-Then they went up off the river of the ford together, all of them at once, and in under the trees.
+Then they went up off the river of the ford together, all of them at once, onto the far bank, where the trees began.
 
 ---
 

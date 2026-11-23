@@ -58,7 +58,7 @@ Rae looked at the trees. Her face did something Darrow could not read, and he ha
 
 "*Greth*," she said.
 
-She said it from the belly, low, like the word that stopped the oxen; and then she stopped, like someone who has set down a load and found it heavier than she reckoned.
+She said it from the belly, low, the way she spoke to the oxen, and then said nothing more, like someone who has set down a load and found it heavier than she reckoned.
 
 "What's that?" said Wren.
 
