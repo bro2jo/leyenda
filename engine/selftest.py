@@ -9,8 +9,9 @@ live chapter has already passed it. It exercises the whole flow a session runs: 
 in every mode, a day closed and its scene recorded, a climax recorded and its choice carried across a chapter open, the
 answer and its Choice block, the vocabulary gate, a rule fired, a glimpse kept, and the works: a project opened, its
 tale bound, a task reported, the pieces recorded (refused ahead of their task), the keepsake (the lesser one when the
-project came late), the site built with the tale. Exit 1 on the first failure, with the output that failed.
+project came late), the site built with the tale; the inbox (the ring's sleep filed, listed, confirmed, dismissed). Exit 1 on the first failure, with the output that failed.
 """
+import csv
 import datetime as dt
 import json
 import os
@@ -871,6 +872,51 @@ def main():
         chap_pages = sorted((tmp / "docs/chronicle").glob("0[1-9]*.html"))
         dice_pages = [p_ for p_ in chap_pages if '<details class="dice">' in page_of(p_)]
         check(bool(dice_pages), "a check on the page is one line, its modifiers behind a tap (details.dice)", ", ".join(p_.name for p_ in chap_pages))
+
+        print("the inbox (the ring's sleep, pending until he says so)")
+        (tmp / "real/inbox.json").unlink(missing_ok=True)
+        with open(tmp / "real/logs/daily_log.csv", encoding="utf-8", newline="") as f:
+            logged_night = next((r["date"] for r in reversed(list(csv.DictReader(f))) if (r.get("sleep_min") or "").strip()), None)
+        stage = lambda st, a, b, sec: {"stage": st, "start_time": a, "end_time": b, "duration_seconds": sec}
+        night = {"session_end_time": "2030-01-02T13:00:00Z", "duration_seconds": 28800, "metadata": {"id": "s-1", "data_origin": "com.ringconn.app"},
+                 "stages": [stage("4", "2030-01-02T05:00:00Z", "2030-01-02T07:00:00Z", 7200), stage("STAGE_TYPE_DEEP", "2030-01-02T07:00:00Z", "2030-01-02T08:30:00Z", 5400),
+                            stage("1", "2030-01-02T08:30:00Z", "2030-01-02T09:00:00Z", 1800), stage("rem", "2030-01-02T09:00:00Z", "2030-01-02T13:00:00Z", 14400)]}
+        nap = {"session_end_time": "2030-01-02T20:30:00Z", "duration_seconds": 1800, "stages": [], "metadata": {"id": "nap"}}
+        old = {"session_end_time": f"{logged_night}T12:00:00Z", "duration_seconds": 27000, "stages": [], "metadata": {"id": "old"}} if logged_night else None
+        payload = tmp / "payload.json"
+        payload.write_text(json.dumps({"timezone": "America/New_York", "sleep": [night, nap] + ([old] if old else [])}), encoding="utf-8")
+        code, out = run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        check(code == 0 and "pending: sleep-2030-01-02 = 450 min asleep" in out and "skipped: a nap" in out,
+              "a night files as pending on the day he woke, as minutes asleep (stages by number or name), a nap left out", out[-400:])
+        if old:
+            check(f"left alone: {logged_night} already holds" in out, "a night already in the log is left alone", out[-400:])
+        code, out = run(darrow + ["inbox"], tmp)
+        check(code == 0 and "INBOX: 1 pending" in out and "7h30" in out and "from RingConn" in out and "awake 30 min" in out, "inbox lists the pending night for the session to ask about", out[-400:])
+        code, out = run(darrow + ["today"], tmp)
+        check("Waiting for his OK: the ring's sleep for" in out, "today names the night waiting for his word", out[-300:])
+        run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        check(jload(tmp / "real/inbox.json")["items"][0]["value"] == 450, "a session sent twice counts once (by its Health Connect id)")
+        payload.write_text(json.dumps({"deleted": [{"type": "sleep", "id": "s-1"}]}), encoding="utf-8")
+        code, out = run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        check("removed: sleep-2030-01-02" in out and not any(i["status"] == "pending" for i in jload(tmp / "real/inbox.json")["items"]),
+              "a session deleted on the phone leaves the inbox", out[-300:])
+        payload.write_text(json.dumps({"sleep": [night]}), encoding="utf-8")
+        run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        code, out = run(darrow + ["show", "daily", "2030-01-02"], tmp)
+        check("sleep_min" not in out, "nothing is logged before he confirms", out[-300:])
+        code, out = run(darrow + ["inbox", "confirm", "2030-01-02", "455"], tmp)
+        code2, shown = run(darrow + ["show", "daily", "2030-01-02"], tmp)
+        check(code == 0 and "his number; the ring said 450" in out and "sleep_min: 455" in shown, "confirm writes sleep_min, his own number winning", out + shown[-200:])
+        code, out = run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        check("left alone: sleep-2030-01-02 is already logged" in out, "a confirmed night is never filed again", out[-300:])
+        payload.write_text(json.dumps({"sleep": [{"id": "s-2", "start": "2030-01-03T04:00:00Z", "end": "2030-01-03T12:00:00Z", "stages": {"LIGHT": 20000, "DEEP": 6000}}]}), encoding="utf-8")
+        run(darrow + ["inbox", "ingest", str(payload)], tmp)
+        code, out = run(darrow + ["inbox", "dismiss", "--why", "test"], tmp)
+        code2, shown = run(darrow + ["inbox", "--quiet"], tmp)
+        check(code == 0 and "dismissed: sleep-2030-01-03" in out and shown == "", "dismiss writes nothing, and a quiet inbox prints nothing", out + shown)
+        run(darrow + ["inbox", "confirm", "2030-01-03"], tmp, expect=1)
+        code, out = run(darrow + ["check"], tmp)
+        check(code == 0 and out.endswith("all logs look clean"), "the logs are clean after the inbox's round trip", out[-300:])
     finally:
         if keep:
             print(f"scratch copy kept at {tmp}")

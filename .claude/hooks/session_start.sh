@@ -1,6 +1,6 @@
 #!/bin/bash
 # SessionStart (startup, resume): CLAUDE.md's "Every session" routine, done before the first message.
-# Pulls main when the working tree is clean, syncs the engine, prints the day and the story digest.
+# Pulls main when the working tree is clean, syncs the engine, prints the day, anything pending in the inbox and the story digest.
 # Never fails the session: anything that goes wrong is printed for Claude to handle.
 set -uo pipefail
 cd "${CLAUDE_PROJECT_DIR:-$(dirname "$0")/../..}" || exit 0
@@ -20,6 +20,11 @@ echo; echo "### python3 engine/darrow.py sync"
 python3 engine/darrow.py sync 2>&1 | tail -20
 echo; echo "### python3 engine/darrow.py today"
 python3 engine/darrow.py today 2>&1 | head -25
+inbox=$(python3 engine/darrow.py inbox --quiet 2>&1)
+if [ -n "$inbox" ]; then
+  echo; echo "### python3 engine/darrow.py inbox (his ring's sleep, waiting for his word: ask him in the first reply)"
+  echo "$inbox"
+fi
 echo; echo "### python3 engine/saga.py now"
 python3 engine/saga.py now 2>&1 | head -40
 exit 0

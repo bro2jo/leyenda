@@ -76,6 +76,12 @@ Commands (run from the repo root):
   doc state|rules|addon|master|offseason|sport|sportguide|guide|tape|standards|ptnotes|index|now|checkpoint|PATH [SECTION ...]
                                one section of a document (number or title words); no SECTION: its outline
   check                        validate the logs
+  inbox [show [--quiet]] | inbox ingest FILE|- | inbox confirm [ID] [MINUTES] | inbox dismiss [ID] [--why TEXT]
+                               what a device sends (his ring's sleep, through Health Connect, relay/worker.js and
+                               .github/workflows/inbox.yml) waits in real/inbox.json as pending: a night is the day he woke,
+                               the minutes asleep (light, deep, REM), naps left out; a night already logged, confirmed or
+                               turned away is left alone. Nothing is a log until he says so: confirm writes sleep_min (his own
+                               number wins: confirm ID N), dismiss writes nothing. `today` and the session's start show it
   ship -m MESSAGE [--no-push]  the end of every change, in one step: check the logs, sync, saga.py check, build the site,
                                the self-test when the engine's code or rules changed (engine/selftest.py), commit everything, push to main (pull --rebase and retry when the push is rejected; never
                                force), then push the session's own branch too when it isn't main. Stops at the first
@@ -123,6 +129,7 @@ P = {
     "sport_guide": ROOT / "real/plan/ultimate_offseason_guide.md",
     "ptnotes": ROOT / "real/visits/pt_notes.md",
     "projects": ROOT / "real/projects.json",
+    "inbox": ROOT / "real/inbox.json",
     "deeds": ROOT / "engine/deeds.csv",
     "sheet": ROOT / "saga/state/darrow.json",
     "rolls": ROOT / "saga/state/rolls.csv",
@@ -1451,6 +1458,8 @@ def cmd_today(args, cfg, rules):
     else:
         print("Logged: nothing yet. Still open: " + ", ".join(
             ["morning check (swelling grade, minutes slept)" if check_needs_sleep(rules, day.isoformat()) else "morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"]))
+    for i in inbox_pending():
+        print(f"Waiting for his OK: the ring's sleep for {dow(d(i['date']))} {md(d(i['date']))}, {hm(i['value'])} ({i['value']} min) · `darrow.py inbox`")
     print(project_line())
 
 
@@ -3170,7 +3179,267 @@ def cmd_check(args, cfg, rules):
         if not ch.get("source"):
             problems.append(f"{where}: no source (who moved it, and where it is filed)")
     problems += project_problems(cfg)
+    problems += inbox_problems()
     print("\n".join(problems) if problems else "all logs look clean")
+
+
+# ---------------------------------------------------------------- inbox: what a device sends, pending until he says so
+# His ring's sleep reaches the repo by itself: RingConn -> Health Connect -> HC Webhook (his phone) -> the relay
+# (relay/worker.js) -> GitHub's repository_dispatch -> .github/workflows/inbox.yml -> `inbox ingest`. Nothing a device
+# sends is a log until he confirms it (golden rule 5): it waits in real/inbox.json as pending, `today` and the session's
+# start show it, and `inbox confirm` writes it (his own number, when he gives one, wins).
+INBOX_STATUSES = ("pending", "logged", "dismissed")
+# Health Connect's sleep stage types (SleepSessionRecord.STAGE_TYPE_*), by number and by name
+HC_STAGES = {"0": "UNKNOWN", "1": "AWAKE", "2": "SLEEPING", "3": "OUT_OF_BED", "4": "LIGHT", "5": "DEEP", "6": "REM", "7": "AWAKE_IN_BED"}
+ASLEEP_STAGES = {"SLEEPING", "LIGHT", "DEEP", "REM"}
+AWAKE_STAGES = {"AWAKE", "OUT_OF_BED", "AWAKE_IN_BED"}
+INBOX_KEEP_RESOLVED = 60  # resolved items kept (newest first) so a record sent twice never comes back as pending
+
+
+def load_inbox():
+    path = P["inbox"]
+    data = load_json(path) if path.exists() else {}
+    data.setdefault("_about", "What a device sends (the ring's sleep, through Health Connect and relay/worker.js), waiting "
+                              "for his word: pending until `darrow.py inbox confirm` logs it or `inbox dismiss` turns it away. "
+                              "Written by .github/workflows/inbox.yml and darrow.py inbox; never by hand.")
+    data.setdefault("items", [])
+    return data
+
+
+def save_inbox(data):
+    items = data["items"]
+    pending = [i for i in items if i.get("status") == "pending"]
+    resolved = sorted((i for i in items if i.get("status") != "pending"), key=lambda i: i.get("date", ""), reverse=True)
+    data["items"] = sorted(pending, key=lambda i: i.get("date", "")) + resolved[:INBOX_KEEP_RESOLVED]
+    save_json(P["inbox"], data)
+
+
+def _local_tz(cfg):
+    try:
+        from zoneinfo import ZoneInfo
+        return ZoneInfo(cfg.get("timezone", "America/New_York"))
+    except Exception:
+        return dt.timezone(dt.timedelta(hours=-5))
+
+
+def _instant(s):
+    """An ISO-8601 instant from Health Connect (…Z or …+05:30, any fraction of a second) as an aware datetime, or None."""
+    s = str(s or "").strip()
+    if not s:
+        return None
+    s = re.sub(r"(\.\d{6})\d+", r"\1", s.replace("Z", "+00:00"))
+    try:
+        t = dt.datetime.fromisoformat(s)
+    except ValueError:
+        return None
+    return t if t.tzinfo else t.replace(tzinfo=dt.timezone.utc)
+
+
+def _stage_name(stage):
+    s = re.sub(r"^(STAGE_TYPE_|SLEEP_STAGE_|STAGE_)", "", str(stage).strip().upper()).replace(" ", "_")
+    return HC_STAGES.get(s, "SLEEPING" if s == "ASLEEP" else s)
+
+
+def _sleep_session(s, tz):
+    """One Health Connect sleep session (HC Webhook's shape, or the relay's: stages summed by type) in his time zone:
+    {id, night, start, end, asleep_min, awake_min, in_bed_min, staged, origin, odd_stages}, or None when it has no end."""
+    meta = s.get("metadata") or {}
+    end = _instant(s.get("end") or s.get("session_end_time") or s.get("end_time"))
+    raw = s.get("stages") or {}
+    sums, starts = defaultdict(float), []
+    if isinstance(raw, list):
+        for st in raw:
+            sec = num(st.get("duration_seconds"))
+            a, b = _instant(st.get("start_time")), _instant(st.get("end_time"))
+            if sec is None and a and b:
+                sec = (b - a).total_seconds()
+            if a:
+                starts.append(a)
+            sums[_stage_name(st.get("stage"))] += sec or 0
+    else:
+        for k, v in raw.items():
+            sums[_stage_name(k)] += num(v) or 0
+    dur = num(s.get("duration_s") if s.get("duration_s") is not None else s.get("duration_seconds"))
+    start = _instant(s.get("start") or s.get("start_time")) or (min(starts) if starts else None) or (
+        end - dt.timedelta(seconds=dur) if end and dur else None)
+    if not end:
+        return None
+    start = start or end
+    in_bed = (end - start).total_seconds() or (dur or 0)
+    staged = any(v for v in sums.values())
+    asleep = sum(v for k, v in sums.items() if k in ASLEEP_STAGES) if staged else in_bed
+    awake = sum(v for k, v in sums.items() if k in AWAKE_STAGES)
+    a, b = start.astimezone(tz), end.astimezone(tz)
+    mid = a + (b - a) / 2
+    # a night belongs to the day he woke: the session's middle between 18:00 the evening before and 14:00 that day;
+    # a middle between 14:00 and 18:00 is a nap (Working Rules: naps are not added) and files nowhere
+    if 14 <= mid.hour < 18:
+        night = None
+    else:
+        night = (mid.date() + dt.timedelta(days=1) if mid.hour >= 18 else mid.date()).isoformat()
+    origin = meta.get("data_origin") or meta.get("dataOrigin") or s.get("origin") or ""
+    if isinstance(origin, dict):
+        origin = origin.get("packageName") or origin.get("package_name") or json.dumps(origin)
+    return {"id": str(meta.get("id") or s.get("id") or f"{end.isoformat()}"), "night": night,
+            "start": a.strftime("%Y-%m-%dT%H:%M"), "end": b.strftime("%Y-%m-%dT%H:%M"),
+            "asleep_min": round(asleep / 60), "awake_min": round(awake / 60), "in_bed_min": round(in_bed / 60),
+            "staged": staged, "origin": str(origin),
+            "odd_stages": sorted(k for k in sums if k not in ASLEEP_STAGES | AWAKE_STAGES | {"UNKNOWN"})}
+
+
+def _sleep_value(item):
+    return sum(s["asleep_min"] for s in item["sessions"].values())
+
+
+def inbox_ingest(payload, cfg, received=None):
+    """File one payload: each sleep session goes to the night it belongs to; a night already in daily_log.csv, or one he
+    has already confirmed or turned away, is left alone. `deleted` ids leave a pending night. Returns lines to print."""
+    tz, data, out = _local_tz(cfg), load_inbox(), []
+    received = received or dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    by_id = {i["id"]: i for i in data["items"]}
+    logged = {r["date"]: r.get("sleep_min") for r in read_csv("daily") if str(r.get("sleep_min") or "").strip()}
+    for s in payload.get("sleep") or []:
+        sess = _sleep_session(s, tz)
+        if not sess:
+            out.append("skipped: a sleep session without an end time")
+            continue
+        if not sess["night"]:
+            out.append(f"skipped: a nap ({sess['start'][11:]} -> {sess['end'][11:]} on {sess['end'][:10]}; naps are not added)")
+            continue
+        night = sess.pop("night")
+        iid = f"sleep-{night}"
+        item = by_id.get(iid)
+        if item and item.get("status") != "pending":
+            out.append(f"left alone: {iid} is already {item['status']}")
+            continue
+        if not item and night in logged:
+            out.append(f"left alone: {night} already holds sleep_min={logged[night]}")
+            continue
+        if not item:
+            item = by_id[iid] = {"id": iid, "kind": "sleep", "date": night, "field": "sleep_min", "status": "pending",
+                                 "received": received, "sessions": {}}
+            data["items"].append(item)
+        item["sessions"][sess.pop("id")] = sess
+        item["value"], item["updated"] = _sleep_value(item), received
+        out.append(f"pending: {iid} = {item['value']} min asleep")
+    for rid in payload.get("deleted") or []:
+        rid = str(rid.get("id") if isinstance(rid, dict) else rid)
+        for item in [i for i in data["items"] if i.get("status") == "pending" and rid in i.get("sessions", {})]:
+            del item["sessions"][rid]
+            if item["sessions"]:
+                item["value"] = _sleep_value(item)
+                out.append(f"pending: {item['id']} = {item['value']} min asleep (a session was deleted on the phone)")
+            else:
+                data["items"].remove(item)
+                out.append(f"removed: {item['id']} (its only session was deleted on the phone)")
+    save_inbox(data)
+    return out or ["nothing to file"]
+
+
+def inbox_pending():
+    return [i for i in load_inbox()["items"] if i.get("status") == "pending"]
+
+
+def _inbox_line(item, logged):
+    day = d(item["date"])
+    ss = sorted(item["sessions"].values(), key=lambda s: s["start"])
+    bed = sum(s["in_bed_min"] for s in ss)
+    awake = sum(s["awake_min"] for s in ss)
+    origin = next((s["origin"] for s in ss if s.get("origin")), "")
+    who = "RingConn" if "ringconn" in origin.lower() else (origin or "Health Connect")
+    bits = [f"{item['id']} · {dow(day)} {md(day)} · {item['value']} min asleep ({hm(item['value'])})",
+            f"{ss[0]['start'][11:]} -> {ss[-1]['end'][11:]}" + (f" in {len(ss)} pieces" if len(ss) > 1 else ""),
+            f"in bed {hm(bed)}, awake {awake} min" if any(s["staged"] for s in ss) else "no stages sent: the time in bed",
+            f"from {who}"]
+    odd = sorted({o for s in ss for o in s.get("odd_stages", [])})
+    if odd:
+        bits.append(f"stages not counted as sleep or awake: {', '.join(odd)}")
+    lo, hi = SLEEP_MIN_BOUNDS
+    if not lo <= item["value"] <= hi:
+        bits.append(f"outside the log's {lo}-{hi}: ask him for the number")
+    if logged.get(item["date"]):
+        bits.append(f"the log already holds {logged[item['date']]} for that day: confirming replaces it")
+    return " · ".join(bits)
+
+
+def inbox_lines():
+    """What the session's start and `today` print: nothing when nothing is pending."""
+    pending = inbox_pending()
+    if not pending:
+        return []
+    logged = {r["date"]: r.get("sleep_min") for r in read_csv("daily") if str(r.get("sleep_min") or "").strip()}
+    return ([f"INBOX: {len(pending)} pending from his ring: ask him before logging (yes: `darrow.py inbox confirm ID`; "
+             f"another number: `inbox confirm ID N`; no: `inbox dismiss ID`)"]
+            + ["- " + _inbox_line(i, logged) for i in pending])
+
+
+def _inbox_find(data, ref):
+    ref = str(ref or "").strip()
+    pend = [i for i in data["items"] if i.get("status") == "pending"]
+    if not ref:
+        if len(pend) == 1:
+            return pend[0]
+        sys.exit("which one? " + (", ".join(i["id"] for i in pend) or "nothing is pending"))
+    hit = next((i for i in data["items"] if ref in (i["id"], i.get("date"), f"sleep-{ref}")), None)
+    if not hit:
+        sys.exit(f"no inbox item '{ref}'. Pending: {', '.join(i['id'] for i in pend) or 'none'}")
+    return hit
+
+
+def cmd_inbox(args, cfg, rules):
+    if args.action in (None, "show"):
+        lines = inbox_lines()
+        if lines:
+            print("\n".join(lines))
+        elif not args.quiet:
+            print("INBOX: nothing pending")
+        return
+    if args.action == "ingest":
+        src = args.what or "-"
+        text = sys.stdin.read() if src == "-" else Path(src).read_text(encoding="utf-8")
+        try:
+            payload = json.loads(text or "{}")
+        except ValueError as e:
+            sys.exit(f"not JSON: {e}")
+        if isinstance(payload, str):  # a payload passed through as a JSON string
+            payload = json.loads(payload)
+        print("\n".join(inbox_ingest(payload or {}, cfg)))
+        return
+    data = load_inbox()
+    item = _inbox_find(data, args.what)
+    if item.get("status") != "pending":
+        sys.exit(f"{item['id']} is already {item['status']}")
+    today = today_local(cfg).isoformat()
+    if args.action == "confirm":
+        value = args.value if args.value is not None else item["value"]
+        if sleep_minutes(value) is None:
+            sys.exit(sleep_problem(value) or f"sleep_min '{value}' refused")
+        upsert_row("daily", item["date"], {item["field"]: ("set", str(value))}, cfg)
+        item.update({"status": "logged", "logged": int(value), "resolved": today})
+        print(f"logged: daily {item['date']} sleep_min={value}" + (f" (his number; the ring said {item['value']})" if int(value) != item["value"] else " (the ring's, confirmed)"))
+    else:
+        item.update({"status": "dismissed", "resolved": today, "why": args.why or ""})
+        print(f"dismissed: {item['id']} (nothing logged)")
+    save_inbox(data)
+
+
+def inbox_problems():
+    path = P["inbox"]
+    if not path.exists():
+        return []
+    try:
+        data = load_json(path)
+    except ValueError as e:
+        return [f"real/inbox.json: not JSON ({e})"]
+    probs = []
+    for n, i in enumerate(data.get("items") or []):
+        if i.get("status") not in INBOX_STATUSES:
+            probs.append(f"real/inbox.json items[{n}]: status '{i.get('status')}' is not one of {', '.join(INBOX_STATUSES)}")
+        try:
+            d(i.get("date", ""))
+        except Exception:
+            probs.append(f"real/inbox.json items[{n}]: bad date '{i.get('date')}'")
+    return probs
 
 
 # ---------------------------------------------------------------- ship: the end of every change
@@ -3291,6 +3560,10 @@ def main():
     sub.add_parser("standards")
     s = sub.add_parser("doc"); s.add_argument("name"); s.add_argument("section", nargs="*")
     sub.add_parser("check")
+    s = sub.add_parser("inbox"); s.add_argument("action", nargs="?", choices=["show", "ingest", "confirm", "dismiss"])
+    s.add_argument("what", nargs="?", help="ingest: a payload file (- for stdin); confirm/dismiss: the item's id or date (optional when one is pending)")
+    s.add_argument("value", nargs="?", type=int, help="confirm: his own number of minutes, when it differs from the ring's")
+    s.add_argument("--why", help="dismiss: why, in a few words"); s.add_argument("--quiet", action="store_true", help="show: print nothing when nothing is pending")
     s = sub.add_parser("ship"); s.add_argument("-m", "--message", required=True); s.add_argument("--no-push", action="store_true")
     args = ap.parse_args()
     cfg, rules = load_json(P["config"]), load_json(P["rules"])
@@ -3299,6 +3572,7 @@ def main():
         "food": cmd_food, "roll": cmd_roll, "odds": cmd_odds, "inspire": cmd_inspire, "chapter-close": cmd_chapter_close,
         "knot": cmd_knot, "check": cmd_check, "show": cmd_show, "recap": cmd_recap, "project": cmd_project,
         "measure": cmd_measure, "measures": cmd_measures, "standards": cmd_standards, "doc": cmd_doc, "ship": cmd_ship,
+        "inbox": cmd_inbox,
         "ex": lambda a, c, r: cmd_ex_names(a) if a.action == "names" else cmd_append("exercise", a, c),
         "sport": lambda a, c, r: cmd_append("sport", a, c),
     }[args.cmd](args, cfg, rules)

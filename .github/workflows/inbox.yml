@@ -1,0 +1,44 @@
+# The inbox: his ring's sleep, filed as pending in real/inbox.json until he confirms it in a session.
+# RingConn -> Health Connect -> HC Webhook (his phone) -> relay/worker.js -> repository_dispatch "health" -> here.
+# Run it by hand (Actions -> inbox -> Run workflow) with a payload to test the path from GitHub's side.
+name: inbox
+
+on:
+  repository_dispatch:
+    types: [health]
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: "A payload to file, as JSON (HC Webhook's shape or the relay's)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inbox
+  cancel-in-progress: false
+
+jobs:
+  file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: File the payload
+        run: |
+          jq '.client_payload // (.inputs.payload | fromjson)' "$GITHUB_EVENT_PATH" > "$RUNNER_TEMP/payload.json"
+          python3 engine/darrow.py inbox ingest "$RUNNER_TEMP/payload.json"
+      - name: Commit and push
+        run: |
+          git config user.name "ledger-inbox"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add real/inbox.json
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -q -m "inbox: sleep from the ring, waiting for his OK"
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

@@ -19,6 +19,7 @@ real/
   trends.html      the trends page (Trends and Days views), one standalone file for the phone, built from the logs by engine/report.py when he asks for it
   CHANGELOG.md     how real/ came to be laid out; old names → new
   config.json      the engine's settings: targets, the weekly template, plan changes, daily minimum, phase and gates, sport stage
+  inbox.json       what his ring sends (each night's sleep), pending until he confirms it (darrow.py inbox); filled by .github/workflows/inbox.yml
   projects.json    the works: the week's real goal outside the knee and its tasks (darrow.py project); finished and set-aside ones kept
   plan/            the documents: rules and designs this repo keeps, and reference documents it never edits
   state/           recovery_state.md, the current program; archive/ keeps the one each Sunday replaced
@@ -49,6 +50,7 @@ real/
 | `trends.html` | — | **The trends page**, one standalone file (open it on the phone): the streaks, the engine's week score by week, a calendar of the daily habits, sessions against the plan, the knee's mornings, weight, calories and protein, the latest measurements; a range control scopes every chart, and each chart has a table. Its Days view: the month as a grid of what each day carried (one colour and place per kind: knee, upper, conditioning, sport, PT, sauna, Game Ready, light therapy) and the selected day's card with everything logged (the habits, sessions with minutes and effort, exercises, throwing, food items, adjuncts, notes) | On request: `python3 engine/report.py` when he asks for the trends (`ship` does not run it; the footer says when it was built, and the next `ship` commits that build); never edited by hand | — | Anything typed in: it shows the logs only |
 | `config.json` | — | What the engine needs: nutrition targets, the weekly template the week is scored on, plan changes by date, daily-minimum rounds, phase and gates, sport stage | When a target, the template or a phase changes | Values with their `source` | Prose |
 | `projects.json` | `project show` | The works: one real goal at a time outside the knee, in 2–5 tasks, with the day each task was reported done; finished and set-aside projects kept, for the count | `darrow.py project open|done|drop` (`/project`) | The goal and its tasks in his words, the dates | Anything of the story: the tale a project pays for is the Chronicle's (`saga/chronicle/tales/`) |
+| `inbox.json` | `inbox` | What a device sends, waiting for his word: each night's sleep from the ring (RingConn → Health Connect → `relay/` → `.github/workflows/inbox.yml`), with its sessions, and whether he logged it, gave his own number, or turned it away | The workflow files a night as pending; `darrow.py inbox confirm` / `dismiss` resolves it; never by hand | Pending nights and the last 60 answered | A log: nothing here counts until it is confirmed into `daily_log.csv` |
 | `checkpoints/<Sunday>.md` | `checkpoint` (newest) | The week in review (Sun–Sat), named for the Sunday after it; its numbers block is the engine's | Written at the checkpoint; then an archive | The week's numbers and their meaning | The current program |
 | `visits/<date>_<who>_<kind>.md` | — | An instruction from anyone but the PT or surgeon (a trainer's), one file each | Once, the day it comes | What was said and what it changed | PT or surgeon notes (→ `pt_notes.md`) |
 | `logs/daily_log.csv` | `show daily` | One row per day: morning check, daily minimum, sessions with minutes and RPE, pain, time on feet | As he reports (`/log`) | The columns (Working Rules → Log files); `am_swelling` the grade only | Decisions, instructions, plans |
@@ -84,6 +86,7 @@ real/
 | Throwing: what's allowed now, the week's throwing days | Sport plan; what the knee allows and where throwing sits in the week: Add-On §3 (this week's days also in State §6) |
 | Nutrition targets | `config.json → nutrition_targets` (from the nutrition guide) |
 | The week's work (a goal outside the knee) and its tasks | `projects.json` (`project show`); only its count reaches the sheet |
+| The ring's sleep before he confirms it | `inbox.json` (`darrow.py inbox`); once confirmed, `daily_log.csv → sleep_min` |
 | Patterns and tendencies | State §9 |
 | The week in review | `checkpoints/<Sunday>.md` |
 | Exercise and day data | The logs |
