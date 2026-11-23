@@ -416,3 +416,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-23#2,2026-11-23,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar
 2026-11-23#3,2026-11-23,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,his words: chobani 20g protein yogurt
 2026-11-23#4,2026-11-23,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: my usual lunch
+2026-11-23#5,2026-11-23,,snack,SkinnyPop Sweet & Salty Kettle Corn (5.3 oz bag),"whole bag (150 g, ~5.4 servings)",750,5.4,102,37.5,10.7,2.7,43,590,188,0,1.6,107,2.1,0,0,0,label,label photo 11/23 x150/28; his words: ate the whole bag

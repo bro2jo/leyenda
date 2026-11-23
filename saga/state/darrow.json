@@ -4,7 +4,7 @@
   "level": 10,
   "rank": "Tempered",
   "level_reached": "2026-11-23",
-  "xp": 4508,
+  "xp": 4518,
   "xp_this_level": 4500,
   "xp_next_level": 5500,
   "proficiency": 4,
@@ -530,7 +530,7 @@
   "chapter_now": {
     "week_start": "2026-11-22",
     "through": "2026-11-23",
-    "tier_so_far": "Costly",
+    "tier_so_far": "Hard-won",
     "chapter": 8
   },
   "fell": {

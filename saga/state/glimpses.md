@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-20 · weather · Rain by midday, the soft kind that never quite decides to stop. By the fire the company's cloaks steam in a row, and Ash, lying across the end of the row, steams loudest.
 - 2026-11-20 · overheard · Overheard under the dripping eaves: Wren and Rae arguing, very politely, about whose turn it is to have been wrong about the rain.
 - 2026-11-20 · house · Maelis has the mending out by the fire: three cloaks, one glove, and a strap she says is past saving and is saving anyway, stitch by stitch, without looking up.
 - 2026-11-20 · ledger · Wren's ledger for the day: rain, all of it. Cloaks dried, four. Cloaks dried a second time, four. Patience: see previous entry.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-23 · house · Before anyone says a word at the fire, he has noticed which way the smoke leans and which of the company slept badly. He keeps both to himself and passes Wren the warmer cup.
 - 2026-11-23 · body · He comes down off a fallen trunk with the pack on his back and lands on the frozen ground without a sound and without a thought. Somebody behind him whistles, low, and pretends it was at a bird.
 - 2026-11-23 · weather · All afternoon snow slides off the high branches, one soft slab at a time. Every one makes Wren look up, and not one of them is ever where she looks.
+- 2026-11-23 · overheard · Overheard on the trail: Rae asking Wren whether the ledger has a column for trees. Wren says it did, for the first hour.
