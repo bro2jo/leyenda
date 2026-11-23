@@ -36,9 +36,9 @@
         "kind": "spine",
         "beat": "b3.1",
         "float": false,
-        "plan": "The first full day in the forest. The trees close; the stream is the road. A watch that does not show itself walks beside them: ski-tracks that stop, a second lamp-post with its lamp burning in daylight, bread left on a stump that Rae says is not for them (*tal*, a gift before an ask, named; they have left none). Wren keeps a column for lamps since there are no bells to count. At dusk Hollis hears singing a long way off, a tune he half knows, and will not say from where. Darrow wants to call out; Rae says a guest does not shout at a door he has not found.",
-        "turn": "Darrow, who finds a line and breaks it, has to walk a whole day beside a watch he cannot see and leave the first word to someone else.",
-        "tone": "eerie, then comic",
+        "plan": "The first full day up the stream. The trees close; a watch that does not show itself walks beside them (ski-tracks that stop; a second lamp-post, its lamp burning in daylight). On a stump under that lamp lies a round of bread on a cloth, left for whoever keeps that door. Ash eats it. Rae goes white: that was *tal*, a gift laid down before an ask, and the company has eaten somebody else's; she names the custom and says something goes down in its place before dark or they are thieves at a door. What goes on the stump is argued out loud by all five (each has something and a reason to keep it) and settled: the millers' last whole loaf, set down by Rae's hand. The rank beat (owed): at dusk by the watch-lamp the script comes up changed on his palms; Wren is beside him, and this time he turns his hands so she can see. Far off, singing: a tune Hollis half knows and will not say from where. In the morning the loaf is gone and one ski-track leads away from the stump.",
+        "turn": "The company breaks a law it did not know it was under and must mend it without a word from the people it has wronged; Darrow, who would have gone and found them, lets Rae set the price, and gives Wren the look at the script he owed her.",
+        "tone": "comic, then eerie",
         "micro": null,
         "challenge": null,
         "invite": null,
@@ -84,9 +84,9 @@
         "kind": "spine",
         "beat": "b3.1",
         "float": false,
-        "plan": "His answer played. The run ends inside the lamp line: the watch closes behind them with torches and long spears turned outward, not at them, and holds until the trees are quiet. Then the spears turn round. A dozen of the watch on skis, furred, laughing slowly at a Vaelmark captain out of breath with a walking stick; their leader asks one thing through Rae's few words: whose dog. Ash is looked at, fed and admired before anybody asks the company's names. Nobody says what was in the trees, and Rae does not ask: it is not named at night.",
-        "turn": "The company learns it ranks second to its own dog with the people who just saved it, and that those people have not decided to keep them; Darrow has to stand and be laughed at, and let it be funny.",
-        "tone": "wary and comic",
+        "plan": "His answer played. The run ends inside the lamp line: the watch closes behind them with torches and long spears turned outward, not at them, and holds until the trees are quiet. Then the spears turn round. A dozen of the watch on skis, furred, laughing slowly at a Vaelmark captain out of breath with a walking stick; their leader asks one thing through Rae's few words: whose dog. Ash is looked at, fed and admired before anybody asks the company's names. Nobody says what was in the trees, and Rae does not ask: it is not named at night. Then the leader's ruling, through Rae, without heat: the loaf was well done, the dog may stay, and at first light the Vaelmark walk back to the river.",
+        "turn": "The company learns it ranks second to its own dog with the people who just saved it, and that being saved is not being let in; Darrow has to stand and be laughed at, and then hear himself sent home.",
+        "tone": "wary and comic, then cold",
         "micro": null,
         "challenge": null,
         "invite": null,
@@ -100,9 +100,9 @@
         "quest": "q3.hunt",
         "stage": 1,
         "float": true,
-        "plan": "A day under guard toward the holdfast, on ski-tracks through old forest, the cart on the stream. What the watch lets them see and does not explain: every one of them wears a black chip at the throat (the chips, second plant); a burned place in a clearing, wide as a threshing floor, that they pass with their eyes down. Rae says her grandmother's name aloud to the watch-leader, with the word for whose child's child she is; the leader stops walking. It buys a hearing and nothing yet beyond it (`rae.road`). Thread 5: the leader has heard of a Vaelmark knight pulled out of the ford alive, and looks at Darrow's face a moment too long.",
-        "turn": "Rae spends the one coin she has carried all her life, in front of him, without asking him first, because it is hers to spend; he has to be the one who is carried by it.",
-        "tone": "eerie, then tender",
+        "plan": "First light: the watch forms up to walk them back to the ice. Rae steps in front of Hob and says her grandmother's name aloud to the watch-leader, with the word for whose child's child she is (`rae.road`). The leader stops. A runner goes ahead on skis, and the column turns the other way: toward the holdfast, under guard. It buys a hearing and nothing yet beyond it. On the day's road, what the watch lets them see and does not explain: every one of them wears a black chip at the throat (the chips, second plant); a burned place in a clearing, wide as a threshing floor, passed with eyes down. Thread 5: the leader has heard of a Vaelmark knight pulled alive out of the ford, and looks at Darrow's face a moment too long.",
+        "turn": "With the company an hour from being walked out of the forest, Rae spends the one coin she has carried all her life, in front of him, without asking him first, because it is hers to spend; he has to be the one who is carried by it.",
+        "tone": "tense, then tender; eerie on the road",
         "micro": null,
         "challenge": null,
         "invite": null,
@@ -148,8 +148,8 @@
         "kind": "spine",
         "beat": "b3.1",
         "float": false,
-        "plan": "The gift's answer, and the guest-fire outside the gate for the night: food carried out by children who want to touch the dog; the lamps lit along the wall at dusk one by one and counted aloud by the children, and by Wren; a ford-song sung on the wall that Hollis knows the other side of (grief, once, plain and short); Maelis asked to look at a clan child's hand and asked nothing else. Warm at a fire at last, with every eye on them. Late, word comes out from inside: tomorrow the gate opens to a guest, and a guest lays down his blade at the door.",
-        "turn": "Fed and warm for the first time since the river, Darrow learns the price of the roof a night before he is asked to pay it, and hears what each of his people would do.",
+        "plan": "The gift's answer, and the guest-fire outside the gate for the night: food carried out by children who want to touch the dog; the lamps lit along the wall at dusk one by one and counted aloud by the children, and by Wren; a ford-song sung on the wall that Hollis knows the other side of (grief, once, plain and short). A woman of the hold brings Maelis a child with a hand gone white to the wrist, three nights old, and Maelis does what she did for the woman from the bridge: skin to skin, and the one word, warmer; the mother stays at the Vaelmark's fire all night to watch her do it. Warm at a fire at last, with every eye on them. Late, word comes out from inside: tomorrow the gate opens to a guest, and a guest lays down his blade at the door.",
+        "turn": "Fed and warm for the first time since the river, the company earns its first trust by Maelis's hands, not Darrow's; he learns the price of the roof a night before he is asked to pay it, and hears what each of his people would do.",
         "tone": "warm, watched; grief once, plain and short",
         "micro": null,
         "challenge": null,
@@ -213,19 +213,19 @@
     },
     "b2.2": {
       "title": "The Needle",
-      "status": "in_progress"
+      "status": "done"
     },
     "b2.3": {
       "title": "The Mill at Coldmere",
-      "status": "in_progress"
+      "status": "done"
     },
     "b2.4": {
       "title": "Hollis's Writ",
-      "status": "in_progress"
+      "status": "done"
     },
     "b2.5": {
       "title": "The Stonewright Ruin",
-      "status": "in_progress"
+      "status": "done"
     },
     "t2": {
       "title": "Book II transition",
@@ -353,7 +353,7 @@
       "why": "Book II closed before it ran"
     },
     "q2.lantern": {
-      "status": "dropped",
+      "status": "done",
       "stage": 0,
       "priority": "optional",
       "why": "Book II closed before it ran"

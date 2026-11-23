@@ -234,7 +234,7 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It runs past Harrow Ford at the edge of the Thornwild, and it carried the Ninth downstream like driftwood. Loads come off a barge on it at the Wend landing.",
+      "description": "Cold and fast, brown with three days of rain off the hills at midsummer. It runs past Harrow Ford at the edge of the Thornwild, and it carried the Ninth downstream like driftwood. Loads come off a barge on it at the Wend landing. In deep winter it freezes bank to bank beside the marsh, under a skin of old snow, and there the company crossed it on the ice.",
       "label": "The Wend",
       "arc": -2
     },
@@ -272,7 +272,7 @@
         "chapter": "00",
         "scene": "I"
       },
-      "description": "The forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed.",
+      "description": "The forest beyond the far bank of the Wend, home of the clans. In the dark under its trees a line of grey, armored figures stood very still while the river screamed. Its trees are old, black and wider than a cart, and come right down to the river; there are no bells anywhere under them. At the tree line stands an iron lamp on a post, cold, with a scorched black chip tied below it on a thong: a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is. Her word for the country is *greth*, the grey country. In winter the frozen streams are its roads.",
       "lines": 2
     },
     {
@@ -560,16 +560,25 @@
     ],
     "the-marsh",
     [
-      305,
+      306,
       74
     ],
     [
-      313,
-      78
+      314,
+      80
     ],
     [
-      319,
-      84
+      323,
+      88
+    ],
+    null,
+    [
+      323,
+      88
+    ],
+    [
+      326,
+      85
     ]
   ]
 }

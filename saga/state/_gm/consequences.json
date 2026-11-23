@@ -2511,6 +2511,28 @@
         "Carry it alone until he knows what to do with it.",
         "Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer."
       ]
+    },
+    {
+      "id": "c08.1",
+      "made": {
+        "chapter": 8,
+        "scene": "1",
+        "date": "2026-11-22"
+      },
+      "chose": "Carried Elinor's letter over the river unanswered.",
+      "now": {},
+      "due": [
+        {
+          "id": "c08.1a",
+          "when": "later",
+          "at": "later",
+          "weight": "scene",
+          "what": "Elinor's letter is unanswered and asked for an answer by the road it came. When a way back over the river offers (a truce lamp, a trader, the rider), he decides: answer her honestly, answer as her brother would want to hear, or keep the letter (the lantern quest's small choice, candor/guile; default: as her brother would want)",
+          "fits": "present.ysra",
+          "priority": 3,
+          "status": "pending"
+        }
+      ]
     }
   ],
   "rules": [
