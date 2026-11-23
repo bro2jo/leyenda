@@ -414,3 +414,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-22#6,2026-11-22,,snack,Small apples + organic peanut butter,2 small apples (~150 g each) + ~3 tbsp peanut butter (assumed),440,13,51,24.5,10,4,34,150,620,38,1.2,95,1.5,14,0,0,estimate,his words 11/23: yesterday 2 small apples with organic peanut butter; PB amount assumed as his usual ~3 tbsp
 2026-11-23#1,2026-11-23,,breakfast,"Premier Protein shake, Cafe Latte",1 bottle (11 fl oz),160,30,5,3,1,1,1,220,260,650,1.8,85,2.8,23,6,0,library,his words: cafe latte protein
 2026-11-23#2,2026-11-23,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar
+2026-11-23#3,2026-11-23,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,his words: chobani 20g protein yogurt
+2026-11-23#4,2026-11-23,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: my usual lunch
