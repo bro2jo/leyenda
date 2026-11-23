@@ -263,6 +263,12 @@
       "date": "2026-11-20",
       "axis": "candor_guile",
       "delta": -1
+    },
+    {
+      "why": "c07.10",
+      "date": "2026-11-23",
+      "axis": "candor_guile",
+      "delta": 0
     }
   ],
   "ladder": {

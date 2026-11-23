@@ -25,13 +25,13 @@
     "anchor": "chronicle/06-the-weir.html#scene-2"
   },
   "last_seen": {
-    "chapter": "06",
+    "chapter": "07",
     "scene": "choice",
-    "place": "river-mill",
-    "anchor": "chronicle/06-the-weir.html#choice"
+    "place": "the-marsh",
+    "anchor": "chronicle/07-the-far-bank.html#choice"
   },
-  "last_seen_doing": "Got up off the ice on her own, took up her sword, said his message back to him word for word, named him Plainspoken, and rode into the alders with her four riders after one look at the girl with the ledger.",
-  "now": "Gone into the alders on the far bank with her four riders, wounded high in the left shoulder, carrying his message word for word.",
+  "last_seen_doing": "Came up the river in the night after the lamps with four riders, sat her horse on the west bank of the Wend, inclined her head to him once and did not follow onto the ice.",
+  "now": "On the west bank of the Wend by the marsh with four riders, watching.",
   "story_so_far": "Sent from Calden to bring in the captain of the Ninth alive and not told why, Ysra Tal lost a day to the carter's lying road, watched the company from a distance, and summoned him under the forms to the weir. Her one question was why he would not kneel. At the noon bell her footwork found a man who would not move, and she went down on the ice with his point in her shoulder, wanting a reason for the first time.",
   "quote": {
     "text": "That is what I will call you when I tell him.",
@@ -116,6 +116,12 @@
       "chapter": "06",
       "scene": "choice",
       "evidence": "the way a clerk looks at a page to fix it in her head"
+    },
+    {
+      "fact": "She watched him cross the Wend from the west bank and did not come onto the ice.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "She kept off the ice."
     }
   ],
   "relationships": [
@@ -180,6 +186,10 @@
       "chapter": "07",
       "scene": "between-4",
       "mention": true
+    },
+    {
+      "chapter": "07",
+      "scene": "choice"
     }
   ]
 }

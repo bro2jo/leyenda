@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "climax",
-    "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#climax"
+    "scene": "choice",
+    "place": "the-thornwild",
+    "anchor": "chronicle/07-the-far-bank.html#choice"
   },
-  "last_seen_doing": "Went out on the ice and read the ring stone by stone with his hands bare until dark; understood the ford; let Wren finish the last line without asking how; said to Maelis that the Grace was taken.",
-  "now": "Standing in the ring by lamplight with his frozen hands inside Maelis's coat and the whole of what the stones say in him, the company waiting to be told.",
+  "last_seen_doing": "Told the company all of it at the ring; at first light heard Maelis say Permitted; ran across the frozen Wend, straight and easy, and stopped short of the far bank to wait for the cart.",
+  "now": "On the far bank of the Wend at the edge of the Thornwild with the company, his stick back in his hand.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2452,6 +2452,24 @@
       "evidence": "Darrow did not ask her how."
     },
     {
+      "fact": "At the ring he told the company all of what the stones said and what it meant for the ford.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "He did it plainly, as he had told Hollis about the water"
+    },
+    {
+      "fact": "At first light Maelis read the knee and gave him leave to run: on the flat, straight, not fast.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"Permitted,\" she said."
+    },
+    {
+      "fact": "He ran across the frozen Wend, felt he could run on past the far bank and into the trees ahead of all of them, and stopped to wait for the cart instead.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "He stopped short of the far bank, at the edge of the ice"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3110,6 +3128,10 @@
     {
       "chapter": "07",
       "scene": "climax"
+    },
+    {
+      "chapter": "07",
+      "scene": "choice"
     },
     {
       "chapter": "tale01",

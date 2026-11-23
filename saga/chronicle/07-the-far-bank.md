@@ -1080,3 +1080,129 @@ He stood in the ring with the company's lamps around him, and the whole of it in
 1. **Tell the company, all of it, here at the ring, with Maelis's one word behind him.** *Maelis and Rae would. Wren would not: a truth everyone carries is a truth someone drops.*
 2. **Carry it alone until he knows what to do with it.** *Wren would. Maelis would not, and Rae would wait, which is worse.*
 3. **Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer.** *Rae would, and pay for it. Wren, Maelis and Hollis would not.*
+
+### Choice — Counting Breaths
+
+He told them there, where they stood.
+
+He did it plainly, as he had told Hollis about the water: in order, start to finish, and nothing left in his coat. What the six stones said, one by one, in the words they said it. What the seventh said, the half he had and the half Wren had given him. What it meant, which was the part the stones had not written down and he had read anyway, standing in the river again with his hands open: that the Grace was their own, taken up out of every man who knelt and handed back a little at a time, and that at the ford something at the top of all those stones had needed the whole of it at once, and taken it, and the Ninth and the Sixth had drowned for the difference.
+
+Maelis let go of his hands while he talked, and stayed where she was. She stood at his shoulder with her arms folded, and when he came to the end she was still there.
+
+Nobody spoke for a moment.
+
+"Is that true, Mender?" said Hollis.
+
+"Yes," said Maelis.
+
+Hollis stood on his spike in the lamplight with his weight on the good leg. Darrow watched it reach him: not the stones, not the First, but the thing under it that was his own.
+
+"Orrin said his oath at every bell," Hollis said. "Every bell of the night, for a year. Said he could feel it warm in his chest." His voice stayed level, which was the worst of it. "He was giving it away. Every bell. And it was his to begin with."
+
+He looked at the stone with the sixth line, black in the lamplight, and then down at the beech leg, and Darrow knew what he was adding up: the river, and the leg, and a warmth he had knelt for every season of his life and called a gift.
+
+"My own legs," said Hollis. "Lent back to me. At interest." He laughed once, short, a sound with no bottom in it. "And I thanked them."
+
+Nobody touched him. He would not have wanted it.
+
+"It's a toll road," said Rae. She was looking along the ring, stone to stone, as she would look down a road at its toll-posts. "Every stone on it. You pay going on and you pay coming off, and you never see the man at the gate." She set her lamp down on the ice. "My gran wouldn't kneel to a stone. Coldmere thought it was clan stubbornness." She was quiet a moment. "Aye. Well."
+
+Wren had the ledger open and the pencil still. She had not written anything since the fallen stone.
+
+"That's five of us," she said. "And the dog." She was looking at the ledger. "Five people who know what the Crown would kill for, the night before we walk out of the Crown's country with it. A truth everybody carries is a truth somebody drops, Captain. You know that as well as I do." She shut the book. "I'm not saying you were wrong. I'm saying it's a number now, and it's bigger than one."
+
+"It was always bigger than one," said Darrow. "It just wasn't written down."
+
+She looked at him then, for the first time since the fallen stone, and let that one go by, which from Wren was an argument kept for later.
+
+They walked back across the ice to the millers' fire with the lamps, all five of them and the dog, nobody in front.
+
+---
+
+Maelis read the knee at first light, at the edge of the causeway, with the millers' fire behind her and the cold coming up off the reeds.
+
+Two fingers, and her eyes shut. She took a long time. He did not ask her anything.
+
+Out on the causeway to the south, a mile off, smoke was going up into the still air: not a cookfire's smoke but a thin straight thread of it, the way a censer smokes, coming on at a walk.
+
+Nobody had to say what it was. The miller's wife put her hand on her husband's arm.
+
+Maelis opened her eyes.
+
+"Permitted," she said.
+
+He knew the word. He had waited a winter for it once already, in a warming room at the top of a mountain, and had not known where to put it then either.
+
+"On the flat," said Maelis, before he could do anything foolish with it. "Straight. Not fast. You stop the way I showed you, over steps, not on a heel. And if it says anything to you that it hasn't said walking, you walk." She stood up. "That's my count. Not the old one."
+
+"I can run."
+
+"You can run on the flat, straight, not fast," said Maelis, "when I say so. I've said so. Don't make me sorry."
+
+---
+
+The millers did not come.
+
+They had never meant to. Mill-folk didn't go near the ring and they would not go over the river into the trees, not for a captain, not for anybody; and the smoke on the causeway wanted the captain, not forty people with flour. The miller knew the reed paths, he said, round by the west, and the Confessors could have the causeway to themselves. He shook Darrow's hand with the hand that had carried the lamp into his own mill, and left the mill out of it, and so did Darrow.
+
+The woman from the bridge gave Maelis her wrist one more time, for no reason, and laughed when Maelis took it.
+
+"Tell them at the villages what you saw," said Darrow. "The bridge. All of it. Tell it right."
+
+"Oh, we'll tell it," said the miller's wife. "We'll not be able to stop."
+
+They went off west into the reeds in a long line, with their carts and their flour and their children, and the miller's boy at the back singing the heron song, wrong, until the reeds closed over it.
+
+---
+
+The Wend lay white from bank to bank under a skin of old snow, and past it the black edge of the forest stood and waited.
+
+Rae walked out onto the ice alone first, with the goad, and went a hundred paces and stamped and listened and came back. "It'll bear," she said. "It's borne worse than us." She took Hob's head and walked the cart out onto the river with Hollis on the tailboard and the oxen setting each foot down as if they had their own opinion about ice, which they did.
+
+Maelis walked beside the cart. Ash went out ahead, nose down, and stopped, and looked back.
+
+There were horses on the west bank.
+
+Four of them, and a fifth a little apart: a light horse, long in the leg, and on it a slight woman sitting very straight, with her left arm bound across her body. She must have come up along the river in the night, following the lamps. She kept off the ice. She sat her horse on the bank and watched him, as she had watched him from the far ditch at the meadow, with her whole attention and no hurry at all.
+
+He looked at her across the snow. She inclined her head to him, once, exactly as far as courtesy required.
+
+Then he turned his back on her and walked out onto the Wend after the cart.
+
+The snow on the ice was firm and dry and squeaked under his boots. The river of the ford was under him, cold and fast and unable to get at him, and ahead Ash had stopped again to look back, and the forest stood on the far bank, black and close and full of whatever it was full of.
+
+When he came up with the tailboard he held out the stick. Hollis took it, and looked at him, and at the stick, and at the far bank, and for once in his life kept every word of it to himself.
+
+Then Darrow ran.
+
+He had thought it would feel like the old speed. It did not. It felt like learning something with his whole body that his body had known once and put down: a stride, and the next, and the knee taking each one and handing it on. The snow squeaked. The cold went into his chest in great dry gulps. Ash came round at once and ran beside him with her ears flat, delighted, on three legs and the splint, and Wren came after them both with the ledger buttoned inside her coat and her scarf over her mouth, running hard to keep up, and counting.
+
+Not steps. Breaths.
+
+"Twenty," said Wren, behind him. "Twenty-one. You're breathing like a bellows. Twenty-two."
+
+He kept it easy. He went straight, as he had been told, along the white road of the river with the forest getting bigger in front of him and the cart falling behind, and somewhere about the fortieth breath he understood that he could keep going: past the far bank, up under the trees, ahead of all of them into a country he did not know, the way he had always gone, first.
+
+He slowed. Over four steps, then five, as Maelis had shown him, not on a heel. He stopped short of the far bank, at the edge of the ice, with his breath smoking in front of him and his heart going like a drum, and turned round.
+
+"Fifty-three," said Wren, arriving, bent over. "Fifty-four. Fifty-five, and that one was mine, I'm not counting it." She looked up at him with her face red over the scarf. "You stopped."
+
+"I did."
+
+"You were going to keep going."
+
+"I was."
+
+She straightened up and looked at him for a long moment, and then she unbuttoned her coat with cold fingers and took the ledger out and wrote something in it, and showed it to him.
+
+*Ran: once. Stopped: once.*
+
+Behind them the cart came on across the white river at an ox's pace, with Rae at Hob's head and Maelis at the tail and Hollis riding on it, holding the stick, and nobody hurrying. Far back on the west bank the five horses stood where they had stood. The thread of smoke on the causeway had stopped coming on.
+
+He waited for the cart at the edge of the ice. When it came up, Hollis handed him down his stick, and Rae looked at him once, the way she looked at a load that had come over a bad road and arrived whole. That was all, and it was plenty.
+
+Then they went up off the river of the ford together, all of them at once, and in under the trees.
+
+---
+
+*End of Book II · The Tempering Road*

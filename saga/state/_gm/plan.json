@@ -229,7 +229,7 @@
     },
     "t2": {
       "title": "Book II transition",
-      "status": "planned"
+      "status": "done"
     },
     "b3.1": {
       "title": "Across the Wend",
@@ -458,7 +458,7 @@
     "road_east": false,
     "vane_messaged": true,
     "millers_sent": false,
-    "stones_told": false,
+    "stones_told": true,
     "sword_yielded": false,
     "ilse_told": false,
     "word_carried": false,
@@ -597,26 +597,14 @@
       "bound": "2026-11-10"
     }
   ],
-  "open_choice": {
-    "chapter": 7,
-    "scene": "climax",
-    "ask": "What does Darrow do?",
-    "options": [
-      "Tell the company, all of it, here at the ring, with Maelis's one word behind him.",
-      "Carry it alone until he knows what to do with it.",
-      "Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer."
-    ],
-    "default": 1,
-    "opened": "2026-11-22",
-    "carries": 2
-  },
+  "open_choice": null,
   "saga": {
     "finale_book": 6,
     "chapters_per_book": 4
   },
   "tallies": {
     "chased": 2,
-    "held": 8
+    "held": 9
   },
   "tallies_log": [
     {
@@ -698,6 +686,14 @@
       "why": "turned back at the frosted stone with half a day in hand instead of taking one of the braided roads (ch07:s4)",
       "book": 2,
       "chapter": 7
+    },
+    {
+      "date": "2026-11-23",
+      "name": "held",
+      "delta": 1,
+      "why": "ran the Wend and stopped short of the far bank to wait for the cart instead of running on under the trees (ch07:choice)",
+      "book": 3,
+      "chapter": 8
     }
   ]
 }

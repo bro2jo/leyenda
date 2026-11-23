@@ -2466,6 +2466,51 @@
       },
       "due": [],
       "auto": true
+    },
+    {
+      "id": "c07.10",
+      "made": {
+        "chapter": 7,
+        "scene": "climax",
+        "date": "2026-11-22"
+      },
+      "chose": "Told the company all of it at the ring, by lamplight, with Maelis's one word behind him: what the stones are for, what the Grace is, what the ford was.",
+      "now": {
+        "approval": {
+          "maelis": 7,
+          "rae": 7,
+          "wren": -7
+        },
+        "bearing": {
+          "candor": 2
+        },
+        "flags": {
+          "stones_told": true
+        }
+      },
+      "due": [
+        {
+          "id": "c07.10a",
+          "when": "next",
+          "at": "ch08:s1",
+          "weight": "scene",
+          "what": "The Choice block plays his telling at the ring, then the crossing (t2.main): five people and a dog know what the Crown kills for, and Hollis knows what the Grace he lost was made of.",
+          "status": "fired@ch07:choice",
+          "evidence": "He told them there, where they stood."
+        },
+        {
+          "id": "c07.10b",
+          "when": "next",
+          "at": "ch08:s1",
+          "weight": "scene",
+          "what": "Downstream of `stones_told` (b3.1): open what follows the way the arc's Downstream line for this choice says (`saga.py arc b3.1`); fire where it is honoured, void with a reason if the story made it moot",
+          "status": "void:stones_told reads at the hearing by the fire later in this Book, not at the first door; the flag carries it there."
+        }
+      ],
+      "declined": [
+        "Carry it alone until he knows what to do with it.",
+        "Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer."
+      ]
     }
   ],
   "rules": [

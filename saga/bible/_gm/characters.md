@@ -14,7 +14,7 @@ Each entry's **Under pressure** line is the drafting note `style.md` §2 asks fo
 Appearance and voice: `cast.md`.
 - A horse-breeder's son from a minor house in the Edgemoor hills, raised to captain by talent rather than birth. Before Harrow Ford his men called him **Quickstep**: the fastest blade in the Lowmarch, and he fought from his feet, footwork, angles, turning a man before the man knew he had been turned. Proud of it, careless with it, fed by the Grace like everyone else.
 - Nineteen of his sixty came home. He remembers every name of the forty-one who did not, and says none aloud. When he finally says Tobin Marsh's name it should cost him.
-- **Now:** (Book III opens) at the ring in the marsh, the crossing ahead. Walks all day; the page has not yet had him run (Maelis's word comes at the crossing). Right hand: two fingers slow for good, a third white since the ring; the sword rides in oilcloth on the cart. Has read the ring (T1, T2); carries Elinor's letter unanswered beside Aldric's last.
+- **Now:** (Book III) over the Wend at the Thornwild's edge. Ran once, across the river ice on Maelis's Permitted (flat, straight, not fast), and stopped to wait for the cart. Right hand: two fingers slow for good, a third white since the ring; the sword rides in oilcloth on the cart. Read the ring (T1, T2) and told the company all of it (`stones_told`); carries Elinor's letter unanswered beside Aldric's last.
 - **Wants:** the old self back (the trap); under it, to be of use, not waited on, and to stand before Aldric and watch his face as he answers. **Fears:** being carried.
 - **Flaw:** he wants the old self back, and that wish is the trap. **Arc:** from wanting to be who he was to choosing who he is building; from fighting to get back to fighting to go forward.
 - **Signature:** in the Ninth, a raised fist with two fingers out meant "hold." He hated giving that signal.
@@ -40,7 +40,7 @@ Appearance and voice: `cast.md`.
 ### Maelis Vorne — the Mender
 Appearance and voice: `cast.md`.
 - Former field surgeon of three campaigns; senior Mender at Saint Ysolde's until the Third Knot. She performed the Binding and reads it each week with two fingers and her eyes shut (the Reading of the Knots).
-- **Now:** (Book III) with the company at the marsh, her surgeon's roll on the cart; reads the Knots wherever he is; named on the writs as his harbourer. Has him nightly on the cart-tail for the foot; said yes at the ring and no more.
+- **Now:** (Book III) over the Wend with the company, her surgeon's roll on the cart; said Permitted to running at the crossing; reads the Knots wherever he is; named on the writs as his harbourer. Has him nightly on the cart-tail for the foot; said yes at the ring and no more.
 - **Rule of the saga:** Maelis never clears Darrow for anything the real-world plan has not cleared. Her verdicts track the PT's.
 - **Wants:** to see one Binding hold. **Fears:** the soft season.
 - **Under pressure:** she notices the body first: hands, gait, the knee before the face. She withholds, a question for a question, until the other says the true thing; when that fails, a flat order and she leaves the room. She never argues; she charges for it.
@@ -67,7 +67,7 @@ Appearance and voice: `cast.md`.
 Appearance and voice: `cast.md`.
 - Knight-Captain of the Sixth Lance. He taught Darrow **the Seated Blade**, the art of fighting without footwork, from a chair (named on the page in ch4, and held on the bell-tower stair in its climax); he learned it in his own chair, recently and badly.
 - He can also teach throwing, the first lesson of winning from where you are put: **The Measured Hand** (a Sport Art), then **Overwall**. He taught the Measured Hand at the Coldmere inn's well-bucket (ch5 between-7) and Overwall at the first camp wall on the mill tracks (ch6 between-2, c05.9a paid).
-- **Now:** (Book III) with the company at the marsh, on the beech leg with a spike in its foot; third on the writs. Has looked at the seal (Vane's) and heard all of the ford, sober (`hollis_truth`); the paper is in the leg; the jar stayed in the millers' cart.
+- **Now:** (Book III) over the Wend on Rae's cart, the beech leg spiked; knows what his Grace was made of (Orrin's oaths); third on the writs. Has looked at the seal (Vane's) and heard all of the ford, sober (`hollis_truth`); the paper is in the leg; the jar stayed in the millers' cart.
 - Calls Darrow "Captain" to mock him, and later means it. Never "the boy".
 - **Under pressure:** he notices rank and fear, who is frightened and who is in command. He pursues by insult, which is affection and instruction at once; when that fails he goes quiet, and his quiet is the thing to fear. He lies kindly to the weak and never to the strong.
 - **At ease:** loud, bawdy and competitive at anything with a stake; improves every story at each telling and is caught at it by Wren; sings the verses nobody should know. Sober he is sharper and funnier and pretends he isn't; he teaches by bullying and is delighted when the student wins.
@@ -91,7 +91,7 @@ Appearance and voice: `cast.md`.
 
 ### Wren Ashdown — the Runner
 Appearance and voice: `cast.md`.
-- **Now:** (Book III) with the company at the marsh, keeping the road's ledger and the count of the walkers. Read the ring's last line before everyone and has said nothing of how; counts who is told first (Rae, twice).
+- **Now:** (Book III) over the Wend, keeping the road's ledger (Ran: once. Stopped: once.) and the count of the walkers. Read the ring's last line before everyone and has said nothing of how; counts who is told first (Rae, twice).
 - Grew up in the House after her mother, a knight, was brought up the Steps Hollowed when Wren was nine. Runner, ledger-keeper and resident liar of Saint Ysolde's; counts everything (steps, 1,117; bells; cots; debts). In Book I she was Darrow's legs; in Book II she is off the mountain for the first time, counting a world, and since the turnip field (ch5 sc3) she keeps the count of the Hollowed who walk east. Her ledgers supply chapter epigraphs.
 - **Under pressure:** she notices counts and what has changed since she last looked. She pursues by talking faster and burying the ask in a number; when that fails she stops counting, and a silent Wren is a frightened one. She embellishes rather than lies, and will say so.
 - **At ease:** everything off the mountain is a number nobody has counted yet; questions come in torrents; she haggles for the joy of it, laughs at her own jokes first, and passes off wonder as statistics. She is twenty and sometimes acts it, which nobody on the mountain let her.
@@ -116,7 +116,7 @@ Appearance and voice: `cast.md`.
 
 ### Rae Thorne — the carter
 Appearance and voice: `cast.md`. On the page since the Prologue (the last cart; revised 10/9) and named in Chapter 1 (Wren's news; the cart at the winch-house seen from the window). The love interest; the romance is **the Tether** (`design.md` §8).
-- **Now:** (Book III) with the company at the marsh, cart and team with her. Showed him her palms and the cage (Tether II); carried the horse and the rider's words and gave neither up. The summer's loads stand against her in her uncle's book.
+- **Now:** (Book III) over the Wend, cart and team with her; called the stones a toll road (her gran would not kneel to one). Showed him her palms and the cage (Tether II); carried the horse and the rider's words and gave neither up. The summer's loads stand against her in her uncle's book.
 - Twenty-seven or near it (the page's number: Prologue, `cast.md`), of Coldmere. She holds the House's carting: the last cart from the barge landing up the Holloway to the winch-house at the foot of the Steps, and the winch-cage itself, which her father built for the House and died on, six winters ago, when a rotten splice let go with him in it; she re-laid the rope, rebuilt the cage and has run it since. Up: salt, oil, flour, linen, letters, the wounded. Down: the House's letters, the effects of the dead, and the ones who walk down. She has brought a great many men to the foot of the Steps. She does not count them (Wren counts); she remembers faces, and which ones came down again.
 - The name is the village's word worn smooth: her grandmother was Thornwild-born, a clanswoman who came over the Wend with a Lowmarch drover, and Coldmere called the family "the Thornwild woman's" until it wore down to Thorne, and they kept it. Rae has a few dozen clan words from her, a knack with oxen that Coldmere calls witchy when it is angry with her, and her grandmother's stories of what walks out of the grey country east of the Wend, which she has never believed (T4). In Book III the words make her the company's bridge to the clans; at the mill (b2.3) she reads a cart line drawn up to flee the way Darrow read it at the ford, carts behind and everyone looking back (T5).
 - **The forty-one.** After the ford she carted the Ninth's dead's effects down the Holloway to the bell-house at Coldmere for the Crown's clerks: forty-one bundles, each with a tag in a clerk's hand. She never counted them; she remembers every tag. The hand on the tags was Vane's secretary's (the Second was the only lance whole enough to do the clerking), the hand that will address Mirren's letter in b1.4: she has seen it forty-one times. Payoffs: Tether IV (she can say the names; he asks her to stop), q5.tobin (she carted Tobin's bundle to his mother's inn).
@@ -227,7 +227,7 @@ Appearance and voice: `cast.md`.
 
 ### Ash — the hound
 - A grey wolfhound bitch in the House kennels with a splinted hind leg, bad-tempered with everyone except Darrow, for no reason anyone can name. She heals alongside him. She does not fetch.
-- **Now:** (Book III) with the company at the marsh, on three legs and the splint; would not go near the frosted stone, and found the ring first.
+- **Now:** (Book III) over the Wend, on three legs and the splint, ran the river beside him; would not go near the frosted stone, and found the ring first.
 - On the page since ch4 (the kennel; `flags.ash_met`); came down the Steps at his side on the drop side, and goes with the company on the road.
 - **Under pressure:** she notices who is hurt and who is pretending not to be. She pursues by lying down across the door; when that fails she bites. She does not fetch.
 - **At ease:** a dog on a road at last: she ranges ahead and comes back to report nothing, steals from carts, sleeps on the warmest person and growls at whoever moves, and has opinions about mules. She still does not fetch.

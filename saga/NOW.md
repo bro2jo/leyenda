@@ -4,14 +4,14 @@
 
 **BOOK III — THE RUNNING DARK · Chapter 8 — No Bells**
 
-- **Where:** The marsh; inside the ring of stones out on the ice, by lamplight.
-- **The quest:** *The Road.* North with the company and forty millers who burned their own mill to hold a bridge, to an old ring of stones in a frozen marsh. He wants the truth of the ford: the order that sent the Ninth and the Sixth into the water bore Aldric Vane's seal, and Hollis has now heard all of what the Captain saw from it. Behind them are the grey cloaks' writs and a hunt out of Calden. He has read what the stones are for; the price is in who hears it.
-- **What Darrow is fighting right now:** What the stones say, and who hears it.
-- **With him:** Maelis Vorne (In the ring, holding Darrow's frozen hands inside her coat.) · Ser Hollis Garrow (In the ring on his spiked leg, waiting for the Captain to tell him.) · Wren Ashdown (At the back of the ring with her lamp, looking at the ice.) · Rae Thorne (In the ring by her lamps.) · Ash (In the ring at Darrow's feet.)
+- **Where:** The Thornwild; the far bank of the Wend across from the marsh, at the edge of the trees.
+- **The quest:** *Over the River.* Over the frozen Wend and in under the trees of the Thornwild, the clans' country, with what the stones say and the grey cloaks' smoke behind him on the causeway. He wants a roof among people who have every reason to refuse him one, and the truth of the ford from the far side of it.
+- **What Darrow is fighting right now:** The forest across the river, and whatever it is full of.
+- **With him:** Maelis Vorne (On the far bank of the Wend with the cart.) · Ser Hollis Garrow (On the far bank of the Wend on Rae's cart.) · Wren Ashdown (On the far bank of the Wend, out of breath, the ledger back in her coat.) · Rae Thorne (On the far bank of the Wend at Hob's head.) · Ash (On the far bank of the Wend.)
 - **The tales:** Tale 1 — Where Not to Stand (told in full) · Tale 2 — Road's the Road (told in full) · Tale 3 — Two Boys Holding Horses (2 of 3 told)
-- **Against him:** What the ring has told him, and four people and a dog waiting to be told.
-- **Next:** What Darrow does with what the stones say.
-- **Open choice (the climax of Chapter 7):** What does Darrow do? 1. Tell the company, all of it, here at the ring, with Maelis's one word behind him. / 2. Carry it alone until he knows what to do with it. / 3. Tell them, and send it: the stones' words in his own hand down the Holloway by the salt-sack road, to every bell-house that will read it, before the Confessors can answer.
+- **Against him:** The Thornwild, and whatever is under its trees.
+- **Next:** In under the trees on the far side of the Wend.
+- **Open choice:** none.
 
 *The records behind this page: `saga.py history`, `saga.py threads` (GM), `saga.py brief` before writing. Open threads and the GM's plan live under `saga/state/_gm/` and never appear here.*
 

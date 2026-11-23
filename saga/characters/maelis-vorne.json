@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "climax",
-    "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#climax"
+    "scene": "choice",
+    "place": "the-thornwild",
+    "anchor": "chronicle/07-the-far-bank.html#choice"
   },
-  "last_seen_doing": "Gave the woman from the bridge her wrist back whole; followed him onto the ice; when he said the Grace was taken at the ford, said yes and nothing else, and held his hands in her coat.",
-  "now": "In the ring, holding Darrow's frozen hands inside her coat.",
+  "last_seen_doing": "Stood at his shoulder while he told it, said yes again to Hollis; at first light read the knee and said Permitted, with her terms.",
+  "now": "On the far bank of the Wend with the cart.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -739,6 +739,18 @@
       "chapter": "07",
       "scene": "climax",
       "evidence": "\"Yes,\" she said."
+    },
+    {
+      "fact": "Her leave to run: on the flat, straight, not fast, stopping over steps, and walking if the knee says anything new.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"On the flat,\" said Maelis, before he could do anything foolish with it. \"Straight. Not fast.\""
+    },
+    {
+      "fact": "Asked by Hollis whether what the stones said was true, she said yes.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"Is that true, Mender?\" said Hollis."
     }
   ],
   "relationships": [
@@ -1123,6 +1135,10 @@
     {
       "chapter": "07",
       "scene": "climax"
+    },
+    {
+      "chapter": "07",
+      "scene": "choice"
     }
   ]
 }

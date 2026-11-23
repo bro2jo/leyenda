@@ -267,7 +267,7 @@
       "x": 360,
       "y": 150,
       "on_page": true,
-      "visited": false,
+      "visited": true,
       "first_seen": {
         "chapter": "00",
         "scene": "I"
@@ -558,6 +558,18 @@
       296,
       76
     ],
-    "the-marsh"
+    "the-marsh",
+    [
+      305,
+      74
+    ],
+    [
+      313,
+      78
+    ],
+    [
+      319,
+      84
+    ]
   ]
 }

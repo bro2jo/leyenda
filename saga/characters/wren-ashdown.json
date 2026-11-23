@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "climax",
-    "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#climax"
+    "scene": "choice",
+    "place": "the-thornwild",
+    "anchor": "chronicle/07-the-far-bank.html#choice"
   },
-  "last_seen_doing": "Came to the ring unasked and kept to the back with a lamp all day; read the last line off the fallen stone aloud where the script failed him, then heard herself and shut her mouth.",
-  "now": "At the back of the ring with her lamp, looking at the ice.",
+  "last_seen_doing": "Said a truth everybody carries is a truth somebody drops; ran after Darrow across the river counting his breaths, and wrote down that he ran once and stopped once.",
+  "now": "On the far bank of the Wend, out of breath, the ledger back in her coat.",
   "story_so_far": "Wren counted the carts over the bridge, opened a column for the Captain and closed it in front of him when he came back on the third day, and drove Rae's oxen north without knowing their word. She counted aloud that Rae had been told first twice. At the ring, unasked, at the back with a lamp, she read the last line off the fallen stone, and nobody asked her how.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -883,6 +883,18 @@
       "chapter": "07",
       "scene": "climax",
       "evidence": "She came anyway, at the back, with a lamp she did not need yet"
+    },
+    {
+      "fact": "She said the company now knows what the Crown would kill for, and that a truth everybody carries is a truth somebody drops.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "A truth everybody carries is a truth somebody drops, Captain."
+    },
+    {
+      "fact": "She ran beside him across the Wend counting his breaths, and wrote that he ran once and stopped once.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "*Ran: once. Stopped: once.*"
     }
   ],
   "relationships": [
@@ -1276,6 +1288,10 @@
     {
       "chapter": "07",
       "scene": "climax"
+    },
+    {
+      "chapter": "07",
+      "scene": "choice"
     }
   ]
 }

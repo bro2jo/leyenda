@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "07",
-    "scene": "climax",
-    "place": "the-marsh",
-    "anchor": "chronicle/07-the-far-bank.html#climax"
+    "scene": "choice",
+    "place": "the-thornwild",
+    "anchor": "chronicle/07-the-far-bank.html#choice"
   },
-  "last_seen_doing": "Carried three lamps out to the ring and lit them one off another as the light went; folded her coat on the ice for him.",
-  "now": "In the ring by her lamps.",
+  "last_seen_doing": "Called the stones a toll road; walked the river ice alone first, said it would bear, and walked the cart across.",
+  "now": "On the far bank of the Wend at Hob's head.",
   "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1037,6 +1037,24 @@
       "evidence": "Rae lit the first lamp without being asked."
     },
     {
+      "fact": "She called the ring a toll road, every stone on it.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"It's a toll road,\" said Rae."
+    },
+    {
+      "fact": "Her grandmother would not kneel to a stone, which Coldmere put down to clan stubbornness.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"My gran wouldn't kneel to a stone. Coldmere thought it was clan stubbornness.\""
+    },
+    {
+      "fact": "She tested the river ice alone before she walked the cart out onto it.",
+      "chapter": "07",
+      "scene": "choice",
+      "evidence": "\"It'll bear,\" she said. \"It's borne worse than us.\""
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1441,6 +1459,10 @@
     {
       "chapter": "07",
       "scene": "climax"
+    },
+    {
+      "chapter": "07",
+      "scene": "choice"
     },
     {
       "chapter": "tale02",
