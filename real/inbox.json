@@ -1,0 +1,27 @@
+{
+  "_about": "What a device sends (the ring's sleep, through Health Connect and relay/worker.js), waiting for his word: pending until `darrow.py inbox confirm` logs it or `inbox dismiss` turns it away. Written by .github/workflows/inbox.yml and darrow.py inbox; never by hand.",
+  "items": [
+    {
+      "id": "sleep-2026-01-01",
+      "kind": "sleep",
+      "date": "2026-01-01",
+      "field": "sleep_min",
+      "status": "pending",
+      "received": "2026-11-23T23:00:16Z",
+      "sessions": {
+        "test-1": {
+          "start": "2025-12-31T23:40",
+          "end": "2026-01-01T07:30",
+          "asleep_min": 433,
+          "awake_min": 37,
+          "in_bed_min": 470,
+          "staged": true,
+          "origin": "",
+          "odd_stages": []
+        }
+      },
+      "value": 433,
+      "updated": "2026-11-23T23:00:16Z"
+    }
+  ]
+}
