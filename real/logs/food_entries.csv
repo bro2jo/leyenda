@@ -418,3 +418,5 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-23#4,2026-11-23,,lunch,"Chicken, rice, spinach, cheddar and spicy mayo bowl",1 bowl,1000,70,70,45,2,14,6,1350,1000,350,5.5,120,6,15,1,20,library,his words: my usual lunch
 2026-11-23#5,2026-11-23,,snack,SkinnyPop Sweet & Salty Kettle Corn (5.3 oz bag),"whole bag (150 g, ~5.4 servings)",750,5.4,102,37.5,10.7,2.7,43,590,188,0,1.6,107,2.1,0,0,0,label,label photo 11/23 x150/28; his words: ate the whole bag
 2026-11-23#6,2026-11-23,,snack,"Honey Stinger Energy Waffle, Salted Caramel (gluten-free)",1 waffle (30 g),130,1,19,6,0,3,9,160,30,0,0.1,4,0.1,0,0,0,label,label photo 11/23; Mg and zinc estimated
+2026-11-23#7,2026-11-23,,dinner,Seasoned ground beef,"photo: assumed ~6 oz cooked (170 g), 85/15, taco-style seasoning",410,42,2,25,0.5,9.5,0.5,600,550,30,4.5,36,10,1,0.2,60,photo,"dinner photo 11/23; amount, fat % and seasoning read from the photo"
+2026-11-23#8,2026-11-23,,dinner,Roasted sweet potato wedges,photo: assumed ~1 large sweet potato (~200 g cooked) + ~1 tbsp oil,300,3.5,41,14,6.5,1.5,13,200,950,76,1.4,54,0.6,39,0,0,photo,dinner photo 11/23; amount and oil assumed
