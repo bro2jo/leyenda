@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-20 · ledger · A line in Wren's ledger, in a hand neater than usual: returned, two and a dog. Underneath it, smaller: as expected. The second line has been written over something else.
 - 2026-11-20 · body · He sleeps the whole night through and wakes with the blanket exactly where he put it. Maelis, passing, gives it one look and a nod, the way she would note a fever breaking.
 - 2026-11-20 · saying · The wind gets under Wren's cloak at the morning fire, and she says the mountain keeps its own count, though there is no mountain in sight. Rae asks what it means. Nobody knows, Wren says; everybody says it.
 - 2026-11-20 · weather · Rain by midday, the soft kind that never quite decides to stop. By the fire the company's cloaks steam in a row, and Ash, lying across the end of the row, steams loudest.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-23 · weather · A grey, close morning, the kind where the fire smokes into your face whichever side of it you choose.
 - 2026-11-23 · overheard · Overheard at the fire: Maelis telling Wren that the second cup of anything is the one that counts. Wren writes it down as if it were law.
 - 2026-11-23 · verse · Rae teaches Ash the counting game from the Lowmarch, which Ash does not understand: three for the carter who's never in bed, and out goes the one with the fog in her head. Ash, counted out, lies down anyway.
+- 2026-11-23 · house · Before anyone says a word at the fire, he has noticed which way the smoke leans and which of the company slept badly. He keeps both to himself and passes Wren the warmer cup.

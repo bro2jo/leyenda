@@ -342,6 +342,8 @@ date,kind,deed,xp,might,vigor,finesse,resolve,note
 2026-11-22,daily,Calorie target reached,20,0,0,0,0,
 2026-11-22,daily,Sleep target reached,10,0,0,0,0,8h00
 2026-11-22,daily,Day closed,5,0,0,0,0,
+2026-11-23,daily,"Morning knee check, swelling graded",5,0,0,0,1,
+2026-11-23,daily,Sleep target reached,10,0,0,0,0,8h40
 2026-10-10,weekly,3+ weigh-ins this week,25,0,0,0,0,
 2026-10-17,weekly,3+ weigh-ins this week,25,0,0,0,0,
 2026-10-17,weekly,Chapter tier: Triumph,60,0,0,0,0,frozen by chapter-close (score 88)
