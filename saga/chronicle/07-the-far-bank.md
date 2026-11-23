@@ -968,7 +968,7 @@ Darrow went out at mid-morning.
 
 He went carefully, with the stick ahead of him on the ice, because the ice was old and grey and dull and he did not trust it, and because a man who could walk all day on a road could still put himself on his back on ice in one stride. Maelis came behind him. Rae came with three lamps on a cord over her shoulder, unlit, because she could guess how long reading took. Hollis came on the beech leg with a spike he had driven into its foot at the fire the night before, because nobody was going to tell him he couldn't. Ash came because Darrow did.
 
-The night before, Wren had read him a line out of the ledger across the fire without looking up: *Script on the Captain's hands, seen this week: four. Shown to me: none.* Then she had shut the book and left the sum where he could see it. He had not answered it. She came anyway, at the back, with a lamp she did not need yet, and kept her distance from the rest of them as if it were a rule.
+The night before, Wren had read him a line out of the ledger across the fire without looking up: *Times the Captain has read his own hands this week: four. Times he has told me what they said: none.* Then she had shut the book and left the sum where he could see it. He had not answered it. She came anyway, at the back, with a lamp she did not need yet, and kept her distance from the rest of them as if it were a rule.
 
 The ring was bigger close to. The stones stood in a circle a long stone's throw across, black and rough, rougher than the field-stones at the crossroads, and the ice ran in among them as smooth as a floor. Some were taller than a man on a horse. Two leaned on each other like old men. One lay on its face, half sunk, with the ice grown up round it.
 
@@ -1151,7 +1151,7 @@ The millers did not come.
 
 They had never meant to. Mill-folk didn't go near the ring and they would not go over the river into the trees, not for a captain, not for anybody; and the smoke on the causeway wanted the captain, not forty people with flour. The miller knew the reed paths, he said, round by the west, and the Confessors could have the causeway to themselves. He shook Darrow's hand with the hand that had carried the lamp into his own mill, and left the mill out of it, and so did Darrow.
 
-The woman from the bridge gave Maelis her wrist one more time, for no reason, and laughed when Maelis took it.
+The woman from the bridge gave Maelis her wrist one more time, for no reason, and laughed when Maelis took it. The miller's wife put a sack of their flour and three round loaves on the back of Rae's cart without asking anybody, and dared Rae with a look to take them off.
 
 "Tell them at the villages what you saw," said Darrow. "The bridge. All of it. Tell it right."
 
