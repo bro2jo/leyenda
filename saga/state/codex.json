@@ -648,6 +648,20 @@
           "sources": [
             "ch07:climax"
           ]
+        },
+        {
+          "name": "Greth",
+          "text": "Rae's grandmother's word, said from the belly: the grey country east of the river (Ch 8 Sc 1).",
+          "sources": [
+            "ch08:s1"
+          ]
+        },
+        {
+          "name": "The clans' lamps",
+          "text": "An iron lamp on a post at the edge of the Thornwild, shuttered on three sides and open to the river, with a scorched black chip tied below it on a thong; a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is (Ch 8 Sc 1).",
+          "sources": [
+            "ch08:s1"
+          ]
         }
       ],
       "intro": ""

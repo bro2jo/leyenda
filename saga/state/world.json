@@ -5,10 +5,19 @@
   "chapter": 8,
   "chapter_title": "No Bells",
   "chapter_file": "saga/chronicle/08-no-bells.md",
-  "scenes": [],
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "The Cold Lamp",
+      "covers": [
+        "2026-11-22"
+      ],
+      "written": "2026-11-23"
+    }
+  ],
   "location": {
     "place": "the-thornwild",
-    "detail": "the far bank of the Wend across from the marsh, at the edge of the trees",
+    "detail": "a frozen stream running up into the forest from the Wend, a little north of where the company crossed",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "deep winter at the Wend: snow over the river ice, and old forest beyond it",
@@ -18,7 +27,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "The forest across the river, and whatever it is full of.",
-  "last_beat": "He ran across the frozen Wend, stopped short of the far bank and waited for the cart; then they went up off the river of the ford together, all of them at once, and in under the trees.",
+  "last_beat": "Rae walked the cart up onto the frozen stream into the forest by her grandmother's way, and Darrow came last, with the cold lamp behind them and its black chip turning on its thong in no wind at all.",
   "companions": {
     "maelis": {
       "approval": 51,

@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-i"
   },
   "last_seen": {
-    "chapter": "07",
-    "scene": "choice",
+    "chapter": "08",
+    "scene": "1",
     "place": "the-thornwild",
-    "anchor": "chronicle/07-the-far-bank.html#choice"
+    "anchor": "chronicle/08-no-bells.html#scene-1"
   },
-  "last_seen_doing": "Told the company all of it at the ring; at first light heard Maelis say Permitted; ran across the frozen Wend, straight and easy, and stopped short of the far bank to wait for the cart.",
-  "now": "On the far bank of the Wend at the edge of the Thornwild with the company, his stick back in his hand.",
+  "last_seen_doing": "Looked back at the five horses on the far bank and the smoke over the reeds; knew the black chip on the lamp-post for the kind of thing he had seen under a lad's tongue; asked Rae which way, and followed.",
+  "now": "Going up a frozen stream into the Thornwild at the back of the company, with Wren.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2470,6 +2470,18 @@
       "evidence": "He stopped short of the far bank, at the edge of the ice"
     },
     {
+      "fact": "He put aside the urge to take the obvious line first and asked Rae which way to go.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "He looked at Rae instead."
+    },
+    {
+      "fact": "He saw that the black chip on the lamp-post was like the one taken from under the tongue of the lad in the Grey Cot, scorched.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "He had seen a thing like it once before, no bigger than a barleycorn"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3132,6 +3144,10 @@
     {
       "chapter": "07",
       "scene": "choice"
+    },
+    {
+      "chapter": "08",
+      "scene": "1"
     },
     {
       "chapter": "tale01",

@@ -95,6 +95,8 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The walkers in the dark** — What came out of the trees to the mill bridge, hundreds of them, in mail and washed-out surcoats with nobody behind the eyes. A man off the carts said that by day they only walk, and after dark they come for people and take hold; a wrist one of them held went white, with frost in the print of the hand. A lamp in the face holds one staring until the flame gutters out; they will not go into water; and when the millers fired their mill, every face on the bridge and in the field turned to it and stood (Ch 7 Sc 2).
 - **The frosted stone at the crossroads** — A roadside field-stone at a crossroads west of the river mill, white with frost at noon in full sun; the walkers' road runs up to it from the east as one road, and west of it comes apart into a dozen, braided (Ch 7 Sc 4).
 - **The First** — Named in the lines cut round the ring in the marsh: what is given at the stones goes up, stone to stone, to the First, which gives back a part, called grace; when the one who holds it fails, the First draws all at once (Ch 7 Climax).
+- **Greth** — Rae's grandmother's word, said from the belly: the grey country east of the river (Ch 8 Sc 1).
+- **The clans' lamps** — An iron lamp on a post at the edge of the Thornwild, shuttered on three sides and open to the river, with a scorched black chip tied below it on a thong; a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is (Ch 8 Sc 1).
 
 ## Songs and verses
 

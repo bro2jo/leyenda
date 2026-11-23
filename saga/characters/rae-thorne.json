@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "07",
-    "scene": "choice",
+    "chapter": "08",
+    "scene": "1",
     "place": "the-thornwild",
-    "anchor": "chronicle/07-the-far-bank.html#choice"
+    "anchor": "chronicle/08-no-bells.html#scene-1"
   },
-  "last_seen_doing": "Called the stones a toll road; walked the river ice alone first, said it would bear, and walked the cart across.",
-  "now": "On the far bank of the Wend at Hob's head.",
+  "last_seen_doing": "Stopped Wren touching what hung on the lamp; named the wood with her grandmother's word, greth; took the company in by her grandmother's way, up a frozen stream.",
+  "now": "Leading the cart up the frozen stream into the forest, by her grandmother's way.",
   "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1055,6 +1055,24 @@
       "evidence": "\"It'll bear,\" she said. \"It's borne worse than us.\""
     },
     {
+      "fact": "She told Wren you don't touch what's hung on a lamp, not here.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "\"You don't touch what's hung on a lamp,\" Rae said. \"Not here.\""
+    },
+    {
+      "fact": "Her grandmother's word for the country east of the river is greth, the grey country, and Rae said her gran would not have liked her saying it there.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "\"She'd not have liked me saying it here.\""
+    },
+    {
+      "fact": "Her grandmother came out of the forest by a frozen stream the year she came over, and Rae took the company in by it, knowing it only as her gran had told it.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "\"I know the way she told it.\""
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1463,6 +1481,10 @@
     {
       "chapter": "07",
       "scene": "choice"
+    },
+    {
+      "chapter": "08",
+      "scene": "1"
     },
     {
       "chapter": "tale02",

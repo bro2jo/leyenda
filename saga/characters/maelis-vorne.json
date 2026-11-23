@@ -34,13 +34,13 @@
     "anchor": "chronicle/00-prologue-the-three-heartbeats.html#part-ii"
   },
   "last_seen": {
-    "chapter": "07",
-    "scene": "choice",
+    "chapter": "08",
+    "scene": "1",
     "place": "the-thornwild",
-    "anchor": "chronicle/07-the-far-bank.html#choice"
+    "anchor": "chronicle/08-no-bells.html#scene-1"
   },
-  "last_seen_doing": "Stood at his shoulder while he told it, said yes again to Hollis; at first light read the knee and said Permitted, with her terms.",
-  "now": "On the far bank of the Wend with the cart.",
+  "last_seen_doing": "Looked at the black chip on the lamp-post with the face she has for a wound.",
+  "now": "Walking at the cart's tail up the frozen stream.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -751,6 +751,12 @@
       "chapter": "07",
       "scene": "choice",
       "evidence": "\"Is that true, Mender?\" said Hollis."
+    },
+    {
+      "fact": "She looked at the black chip the way she looks at a wound before she touches it.",
+      "chapter": "08",
+      "scene": "1",
+      "evidence": "her face had the look it got at a wound before she touched it."
     }
   ],
   "relationships": [
@@ -1139,6 +1145,10 @@
     {
       "chapter": "07",
       "scene": "choice"
+    },
+    {
+      "chapter": "08",
+      "scene": "1"
     }
   ]
 }

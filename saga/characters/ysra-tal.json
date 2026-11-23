@@ -190,6 +190,11 @@
     {
       "chapter": "07",
       "scene": "choice"
+    },
+    {
+      "chapter": "08",
+      "scene": "1",
+      "mention": true
     }
   ]
 }

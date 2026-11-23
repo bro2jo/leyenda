@@ -34,13 +34,13 @@
     "anchor": "chronicle/04-old-mercy.html#scene-5"
   },
   "last_seen": {
-    "chapter": "07",
-    "scene": "choice",
+    "chapter": "08",
+    "scene": "1",
     "place": "the-thornwild",
-    "anchor": "chronicle/07-the-far-bank.html#choice"
+    "anchor": "chronicle/08-no-bells.html#scene-1"
   },
-  "last_seen_doing": "Ran beside him across the river on three legs and the splint, delighted.",
-  "now": "On the far bank of the Wend.",
+  "last_seen_doing": "Stood at the forest's edge with her nose working and her tail going round, then ranged ahead.",
+  "now": "Ranging ahead up the frozen stream.",
   "story_so_far": "Ash brought Darrow's lost stick up from the ice below the weir, kept to his heel on the walkers' road, and bit his sleeve to wake him when a straggler took his boot. She would not go near the frosted stone at the crossroads, and found the ring in the marsh first.",
   "quote": null,
   "known_facts": [
@@ -316,6 +316,10 @@
     {
       "chapter": "07",
       "scene": "choice"
+    },
+    {
+      "chapter": "08",
+      "scene": "1"
     }
   ]
 }
