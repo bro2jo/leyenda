@@ -513,11 +513,14 @@
     },
     {
       "date": "2026-11-23",
+      "drop": [
+        "cond"
+      ],
       "add": [
         "pt"
       ],
       "source": "his plan for the week, Sun 11/22 (patient-reported, at the checkpoint): the two clinic days high with the uppers, zone 2 on Tue and Thu, intervals Fri, the home knee session Sat, an hour's walk or ride with breath holds Sun",
-      "why": "High day: PTA, the walk-jog's session 1 after the clinic (cond; State §6, Running), Upper A"
+      "why": "High day: PTA, the walk-jog's session 1 after the clinic (cond; State §6, Running), Upper A. 11/23 (PT 17): the clinic's cord run was the day's run (State §6: if the clinic jogs him, that is the day's run), so the home walk-jog comes off the day"
     },
     {
       "date": "2026-11-24",

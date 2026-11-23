@@ -816,3 +816,44 @@ Reading:
 What it answers from the list (State §5): **items 14 and 15** (kneeling to comfort; the all-fours hold OK). Not answered: the walk-jog's symptom rule (item 13) · the home doses for the decels and drop-downs · the formal quad test's date · the glute test.
 
 What it changes: the walk-jog progression starts at session 1 on Mon 11/23 (today's run was the clinic's); kneeling on the left is in, to comfort; no measurements.
+
+---
+
+## 2026-11-23 (POD 91) — Visit 17 — PTA (the note names no one; Cody on the calendar)
+
+Pasted by him the same day.
+
+### Progress note
+
+```text
+TREATMENT: 
+Therapeutic Exercise: 
+1: LFUC 16 L6 x6' for LE function and endurance
+2: Side to Side / Monster walks 25ft <> x2 each
+3: Sprinter knee drive w/ grn band at feet 2x10 B
+4: Shuttle kick backs 3c 2x12 B
+5: Force plates 12" landing x5
+6: Force plates Drop jump 12" x5
+7: GJC retro walks 50ft <> x2 laps
+8: GJC run x3 laps 50ft
+9: GJC assisted pogo jumps SL 3x8
+10: Big pogos 3x3
+11: SL drop from 6" box left 3x8
+12: CKE 3/3 15# bilateral concentric SL left eccentric 2x10
+```
+
+### Patient's account of the same visit
+
+None relayed yet.
+
+Reading:
+- **Force plates: a 12" landing × 5 and a 12" drop jump × 5.** The first force-plate work; the master plan's optional running criterion is >80% eccentric countermovement-jump impulse symmetry. **No numbers in the note**: if the clinic shared any (symmetry, impulse, peak force), they go to `measurements.csv`.
+- **The clinic's run (the cord system, 3 laps of 50 ft) is the day's run** (State §6, Mon 11/23: "if the clinic jogs him, that is the day's run"). The note has no gait line this time: whether the left's landing looked better than on 11/19 is not stated, so the walk-jog stays at session 1.
+- **New:** retro walks with the cord, 50 ft and back × 2 · **big pogos 3 × 3** (double-leg, higher amplitude) · **a single-leg drop from a 6" box, left, 3 × 8** · the knee extension machine (settings 3/3), 15 lb, up with both legs and down with the left alone, 2 × 10. The bike up a level (6).
+- **Held:** band walks · sprinter knee drives 2 × 10 · Shuttle kickbacks 2 × 12 · assisted single-leg pogos 3 × 8.
+- About 80 impact contacts across six exercises plus the run: **Tuesday's morning judges it.**
+- Abbreviations as on 11/16 and 11/19; CKE = the knee extension machine; "B" = both legs; GJC = a cord or harness system.
+
+What it answers from the list (State §5): nothing in the note. Not answered or not relayed: the stiff landing (what to change) · the walk-jog's symptom rule · the home doses for the decels and drop-downs · the trainer's exercises · the glute and quad tests.
+
+What it changes: the clinic's run is the day's run, the walk-jog holds at session 1; the force-plate numbers are asked for; no measurements.
