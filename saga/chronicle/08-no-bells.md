@@ -92,7 +92,7 @@ Darrow came last, with Wren, and Ash ranging ahead of everybody, and the cold la
 
 The stream ran up into the forest all day, and the forest closed over it.
 
-By noon the banks were higher than the cart and the trees met overhead, and the light came down through them the colour of weak tea. Nothing moved but the company. The snow on the ice took every sound and gave nothing back: not the oxen, not the wheels, not Hollis, who was swearing at the cold under his breath from the tailboard and could not hear himself do it.
+By noon the banks were higher than the cart and the trees met overhead, and the light came down through them the colour of weak ale. Nothing moved but the company. The snow on the ice took every sound and gave nothing back: not the oxen, not the wheels, not Hollis, who was swearing at the cold under his breath from the tailboard and could not hear himself do it.
 
 Twice they crossed ski-tracks. Two long grooves, side by side, came down the bank out of the trees, crossed the ice ahead of the cart and went up the other bank and away. The second time Darrow walked up to where they started, and they did not start anywhere. They began in the middle of the snow on the slope, as if whoever made them had dropped out of a tree onto his skis, and they ended in the middle of the snow on the other side the same way.
 
@@ -154,7 +154,7 @@ Nobody said anything for a little while. Then Hollis said, "That's a good loaf, 
 
 ---
 
-They made their fire at dusk in the lee of the bank, close enough to the lamp to see it and far enough not to seem to be watching it. Rae banked it with three turns of a stick, the same three as every night, and would not say where she had learned them. The warmth got into Darrow's bones and stayed there for once, all the way down, and he sat with his boots off and let it.
+They made their fire at dusk in the lee of the bank, close enough to the lamp to see it and far enough not to seem to be watching it. Rae banked it with three turns of a stick, the same three as every night, and would not say where she had learned them. Maelis had his right boot off before he sat down, as she had every night since the mill, and looked at the toes, and pressed them, and gave the foot back. "Pink," she said: the first good word she had given it. The warmth got into Darrow's bones and stayed there for once, all the way down, and he sat with his boots off and let it.
 
 Wren came and sat by him with the ledger on her knees.
 
@@ -162,13 +162,13 @@ She waited, which she had got better at. She had written her sum in that book th
 
 The script came up while he was looking at the fire.
 
-It came as it always came, pale, on both palms at once, and the same with his eyes shut; and it was not the same. The lines that had sat on his skin all autumn like frost on a window sat lower now and steadier, like something that had been through the fire and been plunged and come out harder. The word under his name had changed. He looked at it a long time.
+It came as it always came, pale, on both palms at once, and the same with his eyes shut, over the two slow fingers of the right and the third beside them that had come back to him since the ring; and it was not the same. The lines that had sat on his skin all autumn like frost on a window sat lower now and steadier, like iron that has been through the fire and the water and come out harder. The word under his name had changed. He looked at it a long time.
 
 Then he turned to Wren.
 
-"It's changed," he said. "Just now. The word under my name." He told her what it said, and what it had said before, and how it sat on his hands now, as near as he could put it. "You're the first. Nobody else has it."
+"It's changed," he said. "Just now. The word under my name. It's said *Kindled* since the House. Now it says *Tempered*." He told her how it sat on his hands, as near as he could put it. "You're the first. Nobody else has it."
 
-Wren looked at his hands, where there was nothing to see. Then she opened the ledger, found the line from the night before the ring, and under it, small, wrote *one*. Then she turned to his column, under *Told first. Four.*, and wrote *Five.*, and drew a line under it, the way she closed a day.
+Wren looked at his hands, where there was nothing to see. Then she opened the ledger to the line from the night before the ring, *Times he has told me what they said: none*, struck out *none*, and wrote *one*. Then she turned to his column, under *Told first. Four.*, and wrote *Five.*, and drew a line under it, the way she closed a day.
 
 "Thank you," she said, to the book.
 
