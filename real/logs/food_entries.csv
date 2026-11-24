@@ -421,3 +421,4 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-23#7,2026-11-23,,dinner,Seasoned ground beef,"photo: assumed ~6 oz cooked (170 g), 85/15, taco-style seasoning",410,42,2,25,0.5,9.5,0.5,600,550,30,4.5,36,10,1,0.2,60,photo,"dinner photo 11/23; amount, fat % and seasoning read from the photo"
 2026-11-23#8,2026-11-23,,dinner,Roasted sweet potato wedges,photo: assumed ~1 large sweet potato (~200 g cooked) + ~1 tbsp oil,300,3.5,41,14,6.5,1.5,13,200,950,76,1.4,54,0.6,39,0,0,photo,dinner photo 11/23; amount and oil assumed
 2026-11-23#9,2026-11-23,,snack,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,his words: a poppi
+2026-11-23#10,2026-11-23,,snack,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,his words: two vitamin gummies

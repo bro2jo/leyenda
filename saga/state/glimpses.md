@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-20 · weather · The rain clears after dark and the stars come out washed. Every puddle on the road has one in it, and Ash, on principle, walks through all of them.
 - 2026-11-21 · body · His hands are steady on the buckles before the fire is even lit. He does every one up in the dark without once having to start over.
 - 2026-11-21 · house · Rae braids her hair against the wind with the tie held in her teeth, and talks round it anyway. Nobody understands a word of it, and she knows it, and keeps going.
 - 2026-11-21 · weather · Sleet before dawn, then a hard blue sky. Every rope on the cart wears a skin of ice, and Hollis cracks each one with the back of his knife before anyone is allowed to touch it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-23 · house · Maelis cuts the last of the hard bread into exact quarters with her knife and hands them round without asking who wants one. Everybody does.
 - 2026-11-23 · ledger · Wren's ledger, under the day: trees, uncounted, on principle. Snow down the back of someone's collar, Hollis, twice, his own fault both times.
 - 2026-11-23 · body · Warmth gets into his bones by the fire and stays there for once, all the way down, and he sits with his boots off and lets it.
+- 2026-11-23 · saying · Rae, banking the fire, says what the carters say when a long day ends without trouble: call it a road, and go to sleep before it changes its mind.
