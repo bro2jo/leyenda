@@ -960,7 +960,7 @@ The pale script came up over his palms without being asked, there on the flags i
 
 Behind him Maelis had not moved. He could feel her there the way you feel a wall at your back in the dark.
 
-"You've seen it," she said. "Up."
+"You've seen it," she said. "That's enough."
 
 "Not yet."
 

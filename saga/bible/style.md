@@ -92,7 +92,7 @@ This section says what a good block does and the tools that usually get it there
 - Each option is right for someone and costly for someone; none is the obvious hero's answer, and the cost is visible before he picks. At least one option tempts who he used to be. What he chose comes back on the page later where the reader can see it: the ledger keeps the books, the prose shows the echo.
 
 ### Habits to watch
-Book I found its voice and then leaned on it. These are its tells. `python3 engine/saga.py reread` counts them in a block; the numbers are hints, not limits, and a scene that needs one keeps it.
+Book I found its voice and then leaned on it; Book II kept some of its tells and found its own. `python3 engine/saga.py reread` counts what it can in a block; the numbers are hints, not limits, and a scene that needs one keeps it.
 
 | Habit | Try instead |
 |---|---|
@@ -103,6 +103,11 @@ Book I found its voice and then leaned on it. These are its tells. `python3 engi
 | every scene opening on a bell, every scene closing on a small gesture | open mid-action or on a voice; close on a line, a laugh, a problem |
 | Darrow reading every room "like a ford" or "a line before a charge" | let him read it wrong sometimes, or in someone else's terms |
 | a beat that repeats, an opening that waits | the cut: the first paragraph, the last exchange, the beat said twice |
+| a clause after an action that explains it (*…, which meant*), a gloss on a line (*which from her was a speech*), a paragraph's last sentence summing it up | cut after the comma; cut the summary; trust the line (a gloss once a chapter) |
+| growth or the lesson narrated after the page showed it (*He was learning to ask*) | cut it: his next choice shows it |
+| a beat, a deduction or a memory told again in a later block (the ford, the seal) | a phrase that points at it; replay only what is new |
+| a person seen through one lens every time (Rae and loads, Wren and counts, Maelis and knees) | show them at ease, wanting something that is not their trade |
+| dialogue that opens on *That's…*, line after line | let the voice start the line: a name, a verb, the thing itself |
 
 ### When stuck (tools; use any or none)
 - What does the *other* person want right now, however small, and why now? The plan gives a scene its turn and never the other person's want, and that is the line most worth finding.
@@ -110,12 +115,13 @@ Book I found its voice and then leaned on it. These are its tells. `python3 engi
 - What is given whole and what in part, and whose last line is it?
 - What would make Hollis laugh here, Wren count, or Rae say a second sentence?
 - What is the most revealing thing that could happen to him in this room?
+- What are the two or three ways anyone would play this beat? Choose one on purpose, or find the truer, less likely thing this person would still do.
 
 **The sound test.** Read the scene back as if aloud, before the bookkeeping (§4). Where it hesitates, where it drags, where it rushes a moment that should cost, the rhythm is telling you what the sentences hide. Only short sentences go monotonous, and so do only long ones; the one duty of a sentence is to lead to the next. Then find the clusters: three similes in a paragraph, two maxims in a row, a silence doing the work a line should do. Keep the best one and let the sentences around it be plain.
 
-*Where these come from, for the curious: McKee's and Story Grid's scene that turns, Swain's scene and sequel, Mamet's three questions, Bujold's most revealing thing, Abercrombie's eye, Le Guin's ear and her crowding and leaping, Kowal's nested questions, Sanderson's promises and proactive heroes, Failbetter's consequences that echo, and the tabletop habit of failing forward. The aims above are the House's own.*
+*Where these come from, for the curious: McKee's and Story Grid's scene that turns, Swain's scene and sequel, Mamet's three questions, Bujold's most revealing thing, Abercrombie's eye, Le Guin's ear and her crowding and leaping, Kowal's nested questions, Sanderson's promises and proactive heroes, Failbetter's consequences that echo, and the tabletop habit of failing forward. The reader pass and the drift checks in §4 come from studies of how readers and professional editors respond to model-written fiction (Chakrabarty et al.'s tests of creative writing and their study of writers' edits; the research on transportation, suspense and reading on screens). The aims above are the House's own.*
 
-**Stock phrases** ("a testament to", "something shifted" and their kin) are once a Book at most: `python3 engine/saga.py reread` holds the list and names any the block used. No sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
+**Stock phrases** ("a testament to", "something shifted" and their kin, and a drafting model's own: *flickered*, *barely a whisper*, *a mix of X and Y*, *a sense of*, *unspoken*, *hung in the air*) are once a Book at most: `python3 engine/saga.py reread` holds the list and names any the block used. No sentence that tells the reader what to feel. No moralizing narrator. No "lesson" paragraphs.
 
 ---
 
@@ -210,17 +216,22 @@ Each chapter opens with 1–3 lines from an in-world document, in italics, with 
 
 ## 4. The reread (before anything goes on the page)
 
-Every scene, climax, Between and Choice block gets this once it is drafted and before its bookkeeping. The build checks structure; this checks meaning, and it takes two minutes. Nothing here is written down except what it changes.
+Every scene, climax, Between and Choice block gets this once it is drafted and before its bookkeeping. The build checks structure; this checks meaning. Nothing here is written down except what it changes.
 
+**Whoever drafted it will like it.** A model rates its own prose above what readers do, and a sense that a block "works" or "feels tense" proves nothing. Every finding below points at a line or a paragraph; a verdict that points at nothing is no finding.
+
+0. **The reader.** Read it as a stranger on a phone, a day since the last block. The first lines give where, when, who, what Darrow is after and why. Mark where that reader would skim, where they would be lost, where they would stop believing, and fix those first. For each person on the page, finish the sentence the reader will: *Hollis is clearly…*; if it is not what the block meant, the reader is right.
 1. **Canon.** What did this block make true that was not true before, and which sentence does it? Each such sentence is something seen, something someone reported, or something someone believes; the wording says which, and the records (`known_facts`, `codex.md`, `now`) say the same. A paraphrased secret is a spoiler the build cannot catch: if a sentence tells the reader a thing the page has not shown, it goes.
 2. **Who knows.** For each new fact: the reader, Darrow, which others? The thread's *who knows* (`saga.py threads --id N`) agrees, or the record's `gm.threads` updates it. Nobody acts on what they could not know.
 3. **Continuity.** Time of day and weather since the last block; where everyone is standing; what the knee has been allowed; the objects in hand. The Between before this scene, and the day's glimpses.
-4. **Debts.** The DUE NOW items the digest printed, the open choice, a promise made in a Between: honoured here, or still owed on purpose.
-5. **The turn.** The slot's `turn` happened on the page, and Darrow attempted something. If the block only explained, it is not done.
-6. **The sound.** §2's test: the clusters, the closing line, the thought verbs, and the habits to watch. `python3 engine/saga.py reread` prints the block's length (information, never a target), the habits it counts, and its opening and closing lines.
-7. **The cut.** Would the first paragraph go without loss? Then it goes, and the block opens inside the exchange. Does any line say what the block means? It goes, or it goes to the one person who would say it wrong.
-8. **The tactic.** Every line of dialogue does something to the person it is said to. A line that only informs is cut, or given a reason to be said now.
+4. **Debts.** The DUE NOW items the digest printed, the open choice, a promise made in a Between: honoured here, or still owed on purpose. What the last block ended on is answered early and with weight, never with something smaller than its hook.
+5. **The turn.** The slot's `turn` happened on the page, and Darrow attempted something. If the block only explained, it is not done. The words go to the turn and what it costs, not to the run-up; the pressure comes from his ways out closing, not from a bigger threat. Something is paid or lost on the page, and nobody changes more than the block has earned: a model's draft drifts warm, resolved and early.
+6. **The sound.** §2's test: the clusters, the closing line, the thought verbs, and the habits to watch. Strip the tags from one exchange of four lines or more: every speaker is still known by their words and by what they talk about. A joke that could be lifted into any other fantasy scene is not this person's. `python3 engine/saga.py reread` prints the block's length (information, never a target), the habits it counts, and its opening and closing lines.
+7. **The cut.** Would the first paragraph go without loss? Then it goes, and the block opens inside the exchange. Does any line say what the block means? It goes, or it goes to the one person who would say it wrong. So does a clause that explains the action before it, a paragraph's closing summary, growth narrated after it was shown, and a beat an earlier block already told.
+8. **The tactic.** Every line of dialogue does something to the person it is said to. A line that only informs is cut, or given a reason to be said now. At least one exchange means more than it says, and the narration does not explain the difference.
 9. **The register.** Did the block land in the tone it was planned for, or the one the moment wanted? Either can be right; when it changed, the record's `gm.note` says so, so the week's balance can be kept.
+
+**Revising.** Cut before you replace. A weak phrase is not mended by another stock one or by a flat paraphrase, and a detail added comes from the world, the brief or the page, never from stock imagery.
 
 Then the record: `python3 engine/saga.py record '<the brief's skeleton, filled>'` (it writes the event and the note, moves the plan, rebuilds the Now page, the character files, the world file and the Codex, and runs `check`), then `darrow.py ship`.
 

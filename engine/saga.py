@@ -1175,7 +1175,7 @@ def tone_notes(slots, climax=None):
     return notes
 
 
-# ---------------------------------------------------------------- the reread: length and the habits Book I leaned on
+# ---------------------------------------------------------------- the reread: length and the habits Books I and II leaned on, and a drafting model's own
 HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many before it is named, what to try instead)
     ("'the way …' comparisons", r"(?<!\bin )(?<!\ball )(?<!\bon )(?<!\bby )\bthe way\b(?! (?:back|home|out|down|up|through|across)\b)(?! (?:they|we|he|she|you|I) (?:had )?(?:come|came|gone|went)\b)", 2.0, 3, "keep the best one; make the others plain, or let an action carry the comparison"),
     ("negation beats (did not, said nothing, nobody…)", r"\b(?:did not|didn't|had not|was not|would not|could not|said nothing|nothing at all|nobody|no one)\b", 7.0, 5,
@@ -1187,9 +1187,18 @@ HABITS = (  # (label, pattern, allowed per 1,000 words, at least this many befor
      "a catchphrase lands harder for being rare: once in a block, unless the scene is about it"),
     ("'as if' clauses", r"\bas if\b", 3.0, 3, "trust the action; one 'as if' a page is plenty"),
     ("'for once'", r"\bfor once\b", 0.0, 2, "it marks a change; a change marked twice is a habit"),
+    ("growth narrated after the page showed it (was learning to, had learned that…)", r"\b(?:was|had been) learning (?:to|that)\b|\bhad learned (?:that|this|it) from\b|\b(?:He|She) understood (?:that|then|now|at last)\b", 0.0, 1,
+     "cut it: the reader saw it, and the next choice will show it again"),
+    ("glosses on a line (…, which from her was…)", r",? which (?:from|in|for) (?:him|her|them|Hollis|Rae|Maelis|Wren|Darrow|the Prior)\b", 0.0, 1,
+     "once a chapter at most: trust the line to carry itself"),
+    ("dialogue opening on 'That's…'", r"\"That's\b", 1.0, 3, "let the voice start the line: a name, a verb, the thing itself"),
+    ("'at once'", r"\bat once\b", 0.5, 3, "say what happened in its order; 'at once' twice in a block is a habit"),
     # the stock phrases (style.md, When stuck): their one home is here, so the guide and the reread cannot disagree
     ("stock phrases (once a Book at most)", r"(?i)\ba testament to\b|\blittle did (?:he|she|they) know\b|\bin that moment\b|\ba dance of\b|\bthe weight of the world\b"
-     r"|\bbreath (?:he|she|they) (?:didn't|did not) know\b|\bsomething shifted\b|\bsteeled (?:himself|herself|themselves)\b|\beyes? (?:that )?sparkl", 0.0, 1,
+     r"|\bbreath (?:he|she|they) (?:didn't|did not) know\b|\bsomething shifted\b|\bsteeled (?:himself|herself|themselves)\b|\beyes? (?:that )?sparkl"
+     # a drafting model's own (the Antislop and LAMP lists): rare in human prose, common in a model's
+     r"|\bflicker(?:ed|ing)\b|\bshimmer(?:ed|ing)\b|\bbarely (?:above )?a whisper\b|\beyes never leaving\b|\bheart hammer|\ba mix(?:ture)? of \w+ and\b"
+     r"|\ba sense of\b|\bunspoken\b|\bhung in the air\b|\bthe air (?:was )?thick\b|\bvoice (?:trembl|devoid)", 0.0, 1,
      "say the particular thing this moment has instead"),
 )
 

@@ -847,6 +847,12 @@ def main():
                          "print('|'.join(n))"], tmp)
         check(code == 0 and "negation beats" in out and "It was not" in out, "reread names the Book I habits it finds", out[-400:])
         code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
+                         "a = saga.reread_notes('He was learning to ask. The lamp flickered. ' * 2, 'scene'); "
+                         "b = saga.reread_notes('He asked her the way to the stream, and she told him. ' * 4, 'scene'); "
+                         "print(any('growth narrated' in l for l in a), any('stock phrases' in l for l in a), "
+                         "any('growth narrated' in l or 'stock phrases' in l for l in b))"], tmp)
+        check(code == 0 and out.strip().endswith("True True False"), "the reread names narrated growth and a model's stock phrase, and leaves plain prose alone", out[-300:])
+        code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; "
                          "print(saga.tone_notes([{'n': 1, 'tone': 'warm'}, {'n': 2, 'tone': 'warm'}, {'n': 3, 'tone': ''}], {'tone': ''}))"], tmp)
         check(code == 0 and "no tone" in out and "climax has no tone" in out and "neighbouring" in out, "a week's tones draw notes, never a refusal", out[-400:])
         code, out = run(["-c", "import sys; sys.path.insert(0, 'engine'); import saga; print(isinstance(saga.gm_drift_notes(saga.State()), list))"], tmp)
