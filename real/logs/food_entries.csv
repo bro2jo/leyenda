@@ -429,3 +429,6 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-24#5,2026-11-24,,snack,Chobani 20g Protein Greek yogurt,1 container (190 g),140,20,9,3,0.5,2,7,115,282,195,0.4,20,1,0,0,0,library,his words: chobani 20g protein yogurt
 2026-11-24#6,2026-11-24,,snack,Cheez-It Gluten Free Original,"2 servings (60 crackers, 60 g)",300,4,36,16,0,5,0,460,60,80,0.4,16,0.6,0,0,0,library,his words: two servings of cheez it gluten free; library row x2
 2026-11-24#7,2026-11-24,11:59,snack,"MadeGood Mornings soft baked oat bar, cinnamon bun (gluten-free)",1 bar (30 g),120,2,20,4,2,0.5,6,85,95,0,0.4,20,0.4,13.5,4,0,label,label photo 11/24; Mg and zinc estimated
+2026-11-24#8,2026-11-24,,lunch,Perdue Simply Smart Organics GF breaded chicken tenders,11 pieces (~348 g),770,47.7,62.3,36.7,0,7.3,3.7,1760,660,22,3.7,73,2.6,0,0,55,library,his words: 11 of those breaded gf chicken tenders; library row (3 pieces) x11/3
+2026-11-24#9,2026-11-24,,lunch,Yum yum sauce,assumed ~3 tbsp,240,0.5,1.5,25.5,0,3.5,1.5,255,10,5,0.1,1,0,0,0.1,0,estimate,"amount not given (tenders dipped); ~3 tbsp as 11/1, 11/4, 11/9, ~80 kcal a tbsp"
+2026-11-24#10,2026-11-24,,lunch,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,his words: a poppi
