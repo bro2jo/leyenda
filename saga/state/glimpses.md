@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-21 · overheard · Overheard at the head of the column: Wren asking Maelis how many miles a person can walk on porridge alone. All of them, Maelis says, if they stop asking.
 - 2026-11-21 · body · At the midday halt he realises he has been on his feet since first light and has not once looked round for something to lean on.
 - 2026-11-21 · house · Wren walks with her ledger open against the wind, writing one-handed, and walks into Rae twice. Both times she apologises to the ledger.
 - 2026-11-21 · weather · At dusk the cold comes in across flat ground with nothing to stop it, and the company walks a little closer together without anyone suggesting it.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-24 · weather · Clear cold under the trees, the kind that squeaks underfoot. Somewhere high up a branch lets go of its snow in one long, soft hush, and for a breath the whole wood listens to it land.
 - 2026-11-24 · saying · The carters had a rule for it, and the company keeps it without ever meaning to: call him what he does twice.
 - 2026-11-24 · overheard · Hollis, over the pot, to the snow in general: "I've been colder. I just can't remember when, and I'd like that noted."
+- 2026-11-24 · house · Ash has found the one patch of sun in the whole wood and lies across it like a dropped cloak, one ear turning after every sound and the rest of him declining to.
