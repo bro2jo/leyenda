@@ -21,4 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-23 · house · Maelis cuts the last of the hard bread into exact quarters with her knife and hands them round without asking who wants one. Everybody does.
 - 2026-11-23 · ledger · Wren's ledger, under the day: trees, uncounted, on principle. Snow down the back of someone's collar, Hollis, twice, his own fault both times.
 - 2026-11-23 · body · Warmth gets into his bones by the fire and stays there for once, all the way down, and he sits with his boots off and lets it.
-- 2026-11-23 · saying · Rae, banking the fire, says what the carters say when a long day ends without trouble: call it a road, and go to sleep before it changes its mind.
+- 2026-11-23 · house · Rae banks the fire for the night with three exact turns of a stick, the same three every night, and will not say where she learned it.
