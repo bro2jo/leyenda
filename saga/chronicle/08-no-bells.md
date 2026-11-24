@@ -114,8 +114,6 @@ By the time Wren said "Is that—" the loaf was gone, and Ash was standing on th
 
 Rae went white.
 
-Darrow had seen her face do a number of things in a month. He had not seen it do that.
-
 "That was *tal*," she said.
 
 "That was bread," said Hollis.

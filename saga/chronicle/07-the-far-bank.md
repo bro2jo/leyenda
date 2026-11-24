@@ -1018,9 +1018,9 @@ The cold came down out of a clear sky the moment the sun was gone, and it came h
 
 He read it twice.
 
-Then he was not on the ice any more. He was in the river, in the first heartbeat, with the warmth going thin in his chest like a lamp turned down. Second heartbeat: Thistle going down under him, and the whole Ninth sagging in the saddle at once, every man, like a rope cut. Third: gone. Out of all of them. Out of the whole ford, on both banks, from every man who had knelt that morning with his palm on a warm stone.
+Three heartbeats. Since the river he had thought of them as the time it took to lose a thing.
 
-Not lost. Called in. Drawn up through every stone in the land to the First at once, because somebody at the top of all those stones was failing that morning and needed feeding; and the men in the water had drowned for it, and the men on the bank, who had been told, had sat their horses and felt it go, and stayed dry.
+Not lost. Called in. Drawn up out of every man who had knelt that morning, on both banks, through every stone in the land to the First at once, because somebody at the top of all those stones was failing that morning and needed feeding; and the men in the water had drowned for it, and the men on the bank, who had been told, had sat their horses and felt it go, and stayed dry.
 
 *Ride wide today.*
 
@@ -1062,7 +1062,7 @@ Then he looked at Maelis.
 
 "It was taken," he said. "At the ford. Not lost. Taken."
 
-He had said those words to her once before, on a cot in the House, when he had nothing to stand them on but a horse already turned. She had not answered him then.
+He had said those words to her once before, at the linen press in the House, with nothing to stand them on but a horse already turned. She had given him a finding then, not a side.
 
 Maelis looked at him for a long moment, and at the ring behind him, and the lamps on the ice.
 
@@ -1072,9 +1072,9 @@ Then she took both his hands and put them inside her own coat, under her arms, a
 
 Nobody said anything for a long time.
 
-The lamps burned on the ice. The cold ticked in the stones. Out past the ring the Wend lay white under the stars, and beyond it the forest was a darker dark. Out on the causeway somebody among the millers had started a fire, small and orange and very far off, and somebody was singing at it, the heron song, badly, and stopped, and started again. Ash got up and turned round and lay down. Hollis stood on his spike with his weight on his good leg and his face turned to Darrow's, waiting, the way he had waited at the fire with the paper on his knee; he had heard one line of it, Wren's, and he could see on the Captain's face that it was the least of it. Rae held her lamp. Wren held hers, and looked at the ice. Maelis held his hands against her ribs, and he understood that she would say no more; that *yes* was all she would give him tonight, and that it had cost her more than anything she had said to him since the Steps.
+The lamps burned on the ice. The cold ticked in the stones. Out past the ring the Wend lay white under the stars, and beyond it the forest was a darker dark. Out on the causeway somebody among the millers had started a fire, small and orange and very far off, and somebody was singing at it, the heron song, badly, and stopped, and started again. Ash got up and turned round and lay down. Hollis stood on his spike with his face turned to Darrow's; he had heard one line of it, Wren's, and he could see on the Captain's face that it was the least of it. Rae held her lamp. Wren held hers, and looked at the ice. Maelis held his hands against her ribs.
 
-He stood in the ring with the company's lamps around him, and the whole of it in him: what the stones were for, what the Grace was, what the ford had been. Four people and a dog stood with him in the lamplight, waiting to be told.
+Four people and a dog stood with him in the lamplight, waiting to be told.
 
 **What does Darrow do?**
 1. **Tell the company, all of it, here at the ring, with Maelis's one word behind him.** *Maelis and Rae would. Wren would not: a truth everyone carries is a truth someone drops.*
@@ -1085,7 +1085,7 @@ He stood in the ring with the company's lamps around him, and the whole of it in
 
 He told them there, where they stood.
 
-He did it plainly, as he had told Hollis about the water: in order, start to finish, and nothing left in his coat. What the six stones said, one by one, in the words they said it. What the seventh said, the half he had and the half Wren had given him. And what it meant, which the stones had not written down and he had understood anyway at the sixth of them: that the Grace was their own, taken up out of every man who knelt and handed back a little at a time, and that at the ford something at the top of all those stones had needed the whole of it at once, and taken it, and the Ninth and the Sixth had drowned for it.
+He did it plainly, as he had told Hollis about the water: in order, start to finish, and nothing left in his coat. What the six stones said, one by one, in the words they said it. What the seventh said, the half he had and the half Wren had given him. And what it meant, which the stones had not written down and he had understood anyway at the sixth of them.
 
 Maelis let go of his hands while he talked, and stayed where she was. She stood at his shoulder with her arms folded, and when he came to the end she was still there.
 
