@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-21 · body · His hands are steady on the buckles before the fire is even lit. He does every one up in the dark without once having to start over.
 - 2026-11-21 · house · Rae braids her hair against the wind with the tie held in her teeth, and talks round it anyway. Nobody understands a word of it, and she knows it, and keeps going.
 - 2026-11-21 · weather · Sleet before dawn, then a hard blue sky. Every rope on the cart wears a skin of ice, and Hollis cracks each one with the back of his knife before anyone is allowed to touch it.
 - 2026-11-21 · overheard · Overheard at the head of the column: Wren asking Maelis how many miles a person can walk on porridge alone. All of them, Maelis says, if they stop asking.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-23 · ledger · Wren's ledger, under the day: trees, uncounted, on principle. Snow down the back of someone's collar, Hollis, twice, his own fault both times.
 - 2026-11-23 · body · Warmth gets into his bones by the fire and stays there for once, all the way down, and he sits with his boots off and lets it.
 - 2026-11-23 · house · Rae banks the fire for the night with three exact turns of a stick, the same three every night, and will not say where she learned it.
+- 2026-11-24 · weather · Clear cold under the trees, the kind that squeaks underfoot. Somewhere high up a branch lets go of its snow in one long, soft hush, and for a breath the whole wood listens to it land.
