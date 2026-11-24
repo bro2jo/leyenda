@@ -24,7 +24,8 @@ Input: $ARGUMENTS (plus any attached photo). Ledger first, Chronicle after. Clos
 ## 3. Food
 1. `python3 engine/darrow.py food lib "<words>"`: a library row's numbers × quantity. A row with blank fields: estimate the blanks, `source=library+estimate`, ask him **once** for the label; when he gives it, update `real/logs/food_library.csv`. Never invent label values.
 2. Otherwise estimate from the label, the photo, or typical values; fill every nutrient column you reasonably can; `source` = `label`, `library`, `photo` or `estimate`. State a guessed quantity ("assumed ~1.5 cups rice"); ask only if it could swing >200 kcal, and log your best estimate anyway.
-3. All items in one call: `python3 engine/darrow.py food add '[{…},{…}]'`. A new recurring item with label numbers goes in the library.
+3. **Gluten-free by default** (State §1 → Diet): a food that comes both ways (bread, buns, pizza, pasta, tortillas, cookies, crackers, a library match with both versions) is the gluten-free one unless he says otherwise; the assumption goes in `qty` or `notes` like any other. When he says something had gluten, log the version he ate and start its `notes` with `contains gluten (accidental)`; the reply lists the item and says nothing more about it.
+4. All items in one call: `python3 engine/darrow.py food add '[{…},{…}]'`. A new recurring item with label numbers goes in the library.
 
 ## 4. Status and sessions
 - `python3 engine/darrow.py set daily DATE key=value …` · `set nutrition DATE weight_lb=… creatine=Y` · `ex add '[…]'` · `sport add '[…]'`. What a day already holds: `show daily|nutrition|food|ex|sport DATE`. Never read a CSV raw.

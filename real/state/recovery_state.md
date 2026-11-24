@@ -29,6 +29,7 @@
   - **PT 11 (10/17), isometric quad peak on a torque monitor:** R 77.2 lb, L 69.8 lb (best of two rounds), **LSI 90.4%**; vs the right's pre-op 83.7 lb, 83.4%. The right is 7.8% below its own pre-op number.
   - **PT 13 (11/10), hamstring on the dynamometer:** R 65 lb, L 65 lb, **LSI 100%**; vs the right's pre-op 79 lb, 82%. The right is 18% below its own pre-op number (the left +16% on its 55.8). Flexion L 149°.
 - **Body mass:** **starting weight 154.0 lb, Mon 9/28, 8:30 am fasted** (the nutrition guide's start; pre-injury 164, goal lean ~170; the guide's steps 154 → 160 → 164 → ~170). Weekly averages since: 155.2 (wk of 9/27, 2 readings) · 156.1 (10/4, 3) · 157.2 (10/11, 7) · 157.6 (10/18, 2) · 160.3 (10/25, 3 so far, salt-heavy days). 158.4 lb, Sun 10/18 morning, is the first Sunday-morning reading; the 10/11 reading (159.8) was a 5:30 PM weight, so readings are mornings from there. Weigh in Sunday mornings; the weekly average is the trend. Nutrition targets: `real/config.json → nutrition_targets` (3,000 kcal, 150–160 g protein; the Add-On's 1.6–2.0 g/kg is 115–145 g).
+- **Diet:** gluten-free (his word, Mon 11/23); now and then gluten by accident. How a food log handles both: the log skill, step 3.
 - **Calendar:**
   - **Phase 5 = weeks 13–16+ (Return to Running). Knot IV tied Mon 11/16 (POD 84)**, the last day of week 12 and of the graft's weakest window (~weeks 6–12); week 13 began Tue 11/17.
   - Phase 4 ran Tue 10/20 – Mon 11/16 (Knot III to Knot IV).
