@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "1",
+    "scene": "2",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-1"
+    "anchor": "chronicle/08-no-bells.html#scene-2"
   },
-  "last_seen_doing": "Stopped Wren touching what hung on the lamp; named the wood with her grandmother's word, greth; took the company in by her grandmother's way, up a frozen stream.",
-  "now": "Leading the cart up the frozen stream into the forest, by her grandmother's way.",
+  "last_seen_doing": "Named tal when Ash ate the bread at the lamp; set down one of the millers' loaves on the red cloth, bread for bread; banked the fire with her three turns.",
+  "now": "At the camp by the lit lamp.",
   "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1073,6 +1073,24 @@
       "evidence": "\"I know the way she told it.\""
     },
     {
+      "fact": "Tal, her grandmother's word: a gift laid down at a door before you ask anything of the house, or the asking is an insult.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"It was a gift laid down before an ask.\""
+    },
+    {
+      "fact": "She paid back the eaten bread with one of the miller's wife's loaves, bread for bread, same size or bigger, as her grandmother taught her.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"Bread for bread,\" she said. \"Same size or bigger. That's what she taught me.\""
+    },
+    {
+      "fact": "She banks the fire with the same three turns of a stick every night and will not say where she learned them.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "Rae banked it with three turns of a stick, the same three as every night"
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1485,6 +1503,10 @@
     {
       "chapter": "08",
       "scene": "1"
+    },
+    {
+      "chapter": "08",
+      "scene": "2"
     },
     {
       "chapter": "tale02",

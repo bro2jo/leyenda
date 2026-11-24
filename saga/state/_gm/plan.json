@@ -4,10 +4,10 @@
     "book": 3,
     "chapter": 8,
     "beat": "b3.1",
-    "next_scene": 2,
+    "next_scene": 3,
     "stage": "scene",
-    "last_written": "ch08:s1",
-    "rank_on_page": "Kindled"
+    "last_written": "ch08:s2",
+    "rank_on_page": "Tempered"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
   "chapter": {
@@ -42,8 +42,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch08:s2"
       },
       {
         "n": 3,
@@ -75,7 +75,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -604,7 +604,7 @@
   },
   "tallies": {
     "chased": 2,
-    "held": 9
+    "held": 10
   },
   "tallies_log": [
     {
@@ -692,6 +692,14 @@
       "name": "held",
       "delta": 1,
       "why": "ran the Wend and stopped short of the far bank to wait for the cart instead of running on under the trees (ch07:choice)",
+      "book": 3,
+      "chapter": 8
+    },
+    {
+      "date": "2026-11-23",
+      "name": "held",
+      "delta": 1,
+      "why": "let Rae set the price for the eaten tal instead of following the ski-tracks to the watch (ch08:s2)",
       "book": 3,
       "chapter": 8
     }

@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "1",
+    "scene": "2",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-1"
+    "anchor": "chronicle/08-no-bells.html#scene-2"
   },
-  "last_seen_doing": "Noticed there were no bells; reached for the chip on the lamp-post and was stopped.",
-  "now": "Going up the frozen stream at the back with Darrow.",
+  "last_seen_doing": "Offered a pencil for the gift; sat by Darrow at the fire and was told first what the script said; wrote it in two places.",
+  "now": "At the camp by the lit lamp with the ledger.",
   "story_so_far": "Wren counted the carts over the bridge, opened a column for the Captain and closed it in front of him when he came back on the third day, and drove Rae's oxen north without knowing their word. She counted aloud that Rae had been told first twice. At the ring, unasked, at the back with a lamp, she read the last line off the fallen stone, and nobody asked her how.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -901,6 +901,12 @@
       "chapter": "08",
       "scene": "1",
       "evidence": "\"There's no bell,\" Wren said."
+    },
+    {
+      "fact": "When he told her first what the script said, she wrote one under her sum and Five under Told first.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "and wrote *Five.*, and drew a line under it"
     }
   ],
   "relationships": [
@@ -1302,6 +1308,10 @@
     {
       "chapter": "08",
       "scene": "1"
+    },
+    {
+      "chapter": "08",
+      "scene": "2"
     }
   ]
 }

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "1",
+    "scene": "2",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-1"
+    "anchor": "chronicle/08-no-bells.html#scene-2"
   },
-  "last_seen_doing": "Looked back at the five horses on the far bank and the smoke over the reeds; knew the black chip on the lamp-post for the kind of thing he had seen under a lad's tongue; asked Rae which way, and followed.",
-  "now": "Going up a frozen stream into the Thornwild at the back of the company, with Wren.",
+  "last_seen_doing": "Walked a day beside a watch he could not see; when Ash ate the bread left at a lit lamp, put down the urge to follow the ski-tracks and let Rae say what went down in its place; at dusk the script changed on his palms and he told Wren first.",
+  "now": "At the camp by the lit lamp, a day up the stream, the script on his hands changed.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2488,6 +2488,24 @@
       "evidence": "He had seen a thing like it once before, no bigger than a barleycorn"
     },
     {
+      "fact": "He wanted to follow the ski-tracks and apologise to the watch himself, and let Rae set the price instead.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"It's your gran's word,\" he said. \"You say what goes down.\""
+    },
+    {
+      "fact": "The word under his name on the script changed, and it sits lower and steadier on his palms, like something tempered.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "The word under his name had changed."
+    },
+    {
+      "fact": "He told Wren first what the script said, before anyone.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"You're the first. Nobody else has it.\""
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3154,6 +3172,10 @@
     {
       "chapter": "08",
       "scene": "1"
+    },
+    {
+      "chapter": "08",
+      "scene": "2"
     },
     {
       "chapter": "tale01",

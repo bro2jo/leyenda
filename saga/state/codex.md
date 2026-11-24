@@ -97,6 +97,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The First** — Named in the lines cut round the ring in the marsh: what is given at the stones goes up, stone to stone, to the First, which gives back a part, called grace; when the one who holds it fails, the First draws all at once (Ch 7 Climax).
 - **Greth** — Rae's grandmother's word, said from the belly: the grey country east of the river (Ch 8 Sc 1).
 - **The clans' lamps** — An iron lamp on a post at the edge of the Thornwild, shuttered on three sides and open to the river, with a scorched black chip tied below it on a thong; a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is (Ch 8 Sc 1).
+- **Tal** — Rae's grandmother's word: a gift laid down at a door before you ask anything of the house; without it the asking is an insult. Bread for bread, same size or bigger (Ch 8 Sc 2).
 
 ## Songs and verses
 

@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "1",
+    "scene": "2",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-1"
+    "anchor": "chronicle/08-no-bells.html#scene-2"
   },
-  "last_seen_doing": "Looked at the black chip on the lamp-post with the face she has for a wound.",
-  "now": "Walking at the cart's tail up the frozen stream.",
+  "last_seen_doing": "Would not give her salt, which is for wounds.",
+  "now": "At the camp by the lit lamp.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -757,6 +757,12 @@
       "chapter": "08",
       "scene": "1",
       "evidence": "her face had the look it got at a wound before she touched it."
+    },
+    {
+      "fact": "She would not give her salt as the gift; it is for wounds.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"Not my salt. That salt's for wounds.\""
     }
   ],
   "relationships": [
@@ -1149,6 +1155,10 @@
     {
       "chapter": "08",
       "scene": "1"
+    },
+    {
+      "chapter": "08",
+      "scene": "2"
     }
   ]
 }

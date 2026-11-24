@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "1",
+    "scene": "2",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-1"
+    "anchor": "chronicle/08-no-bells.html#scene-2"
   },
-  "last_seen_doing": "Asked whose door the lamp marked; swore at the stream's angle from the tailboard.",
-  "now": "On the tailboard of Rae's cart going up the frozen stream.",
+  "last_seen_doing": "Offered a knife and thought better of it; went still at singing in the trees, a tune he half knows, and would not say from where.",
+  "now": "At the camp by the lit lamp.",
   "story_so_far": "Hollis captained the forty north while Darrow went west, and on the first night looked at last at the seal on the order he had carried since the ford. Quiet for days, he laid it on his knee at the fire and asked, sober, what the Captain saw from the water, and heard all of it with the jar in the third cart at his back. He read Aldric's last letter beside the seal, and crossed the ice to the ring on a spiked leg.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -952,6 +952,12 @@
       "chapter": "07",
       "scene": "choice",
       "evidence": "for once in his life kept every word of it to himself"
+    },
+    {
+      "fact": "He half knows the tune sung in the trees at night, and would not say from where.",
+      "chapter": "08",
+      "scene": "2",
+      "evidence": "\"No,\" said Hollis. He put the cup down. \"Half of it.\""
     }
   ],
   "relationships": [
@@ -1412,6 +1418,10 @@
     {
       "chapter": "08",
       "scene": "1"
+    },
+    {
+      "chapter": "08",
+      "scene": "2"
     }
   ]
 }
