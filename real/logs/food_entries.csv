@@ -432,3 +432,9 @@ id,date,time,meal,item,qty,kcal,protein_g,carbs_g,fat_g,fiber_g,sat_fat_g,sugar_
 2026-11-24#8,2026-11-24,,lunch,Perdue Simply Smart Organics GF breaded chicken tenders,11 pieces (~348 g),770,47.7,62.3,36.7,0,7.3,3.7,1760,660,22,3.7,73,2.6,0,0,55,library,his words: 11 of those breaded gf chicken tenders; library row (3 pieces) x11/3
 2026-11-24#9,2026-11-24,,lunch,Yum yum sauce,assumed ~3 tbsp,240,0.5,1.5,25.5,0,3.5,1.5,255,10,5,0.1,1,0,0,0.1,0,estimate,"amount not given (tenders dipped); ~3 tbsp as 11/1, 11/4, 11/9, ~80 kcal a tbsp"
 2026-11-24#10,2026-11-24,,lunch,Poppi prebiotic soda,1 can (12 oz),25,0,6,0,2,0,5,10,20,0,0,0,0,0,0,0,library,his words: a poppi
+2026-11-24#11,2026-11-24,,dinner,"Grilled cheese sandwiches (gluten-free bread, cheddar, butter)","2 sandwiches: assumed 4 slices GF bread (~38 g each), ~3 oz cheese total, ~1 tbsp butter total",805,29,69,47.5,4,25,6,1335,235,640,2.5,64,3.3,0,0.7,50,estimate,"his words: two grilled cheese; bread, cheese and butter amounts assumed; GF bread assumed"
+2026-11-24#12,2026-11-24,,dinner,Tomato basil soup,"assumed ~1.5 cups, creamy style",270,6,30,14,3,8,18,1100,600,120,1.5,30,0.4,20,0.2,50,estimate,his words: tomato basil soup; brand and amount not given
+2026-11-24#13,2026-11-24,,snack,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar to finish the day
+2026-11-25#1,2026-11-25,,breakfast,Kirkland chewy protein bar,1 bar (40 g),190,10,16,11,6,3,6,125,150,40,1.4,35,0.8,0,0,0,library,his words: chewy granola bar
+2026-11-25#2,2026-11-25,,breakfast,"Honey Stinger Energy Waffle, Salted Caramel (gluten-free)",1 waffle (30 g),130,1,19,6,0,3,9,160,30,0,0.1,4,0.1,0,0,0,library,his words: honey stinger gf
+2026-11-25#3,2026-11-25,,breakfast,"Vitafusion Men's Multi gummies, berry",2 gummies,15,0,4,0,0,0,3,5,0,0,0,0,3.8,33,25,0,library,his words: two vitamins

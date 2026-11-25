@@ -1,10 +1,10 @@
 {
-  "asof": "2026-11-24",
+  "asof": "2026-11-25",
   "name": "Ser Darrow of Edgemoor",
   "level": 10,
   "rank": "Tempered",
   "level_reached": "2026-11-23",
-  "xp": 4578,
+  "xp": 4633,
   "xp_this_level": 4500,
   "xp_next_level": 5500,
   "proficiency": 4,
@@ -45,14 +45,14 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 65,
+      "temper": 66,
       "next_at": 100,
       "fell": 12,
       "banked": false
     }
   },
   "ember": {
-    "value": 86,
+    "value": 89,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
@@ -163,7 +163,7 @@
       "tree": "Binding",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 44,
+      "practice": 45,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation.",
@@ -181,7 +181,7 @@
       "tree": "Insight",
       "rank": 5,
       "banked_rank": 0,
-      "practice": 51,
+      "practice": 52,
       "next_at": 70,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight.",
@@ -529,8 +529,8 @@
   },
   "chapter_now": {
     "week_start": "2026-11-22",
-    "through": "2026-11-24",
-    "tier_so_far": "Hard-won",
+    "through": "2026-11-25",
+    "tier_so_far": "Costly",
     "chapter": 8
   },
   "fell": {

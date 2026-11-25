@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-21 · house · Wren walks with her ledger open against the wind, writing one-handed, and walks into Rae twice. Both times she apologises to the ledger.
 - 2026-11-21 · weather · At dusk the cold comes in across flat ground with nothing to stop it, and the company walks a little closer together without anyone suggesting it.
 - 2026-11-22 · ledger · Wren's tally for the week, ruled off and underlined: nights under the cart, six. Times Rae was right about the weather: all of them, by Rae's count. By Wren's, four.
 - 2026-11-22 · body · His feet are cold through both boots, and for once that is the only thing about his legs he has to think about.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-24 · overheard · Hollis, over the pot, to the snow in general: "I've been colder. I just can't remember when, and I'd like that noted."
 - 2026-11-24 · house · Ash has found the one patch of sun in the whole wood and lies across it like a dropped cloak, one ear turning after every sound and the rest of him declining to.
 - 2026-11-24 · ledger · Wren's ledger, under the day: bread, two loaves and a heel. Arguments over the heel, one, settled by Rae, who ate it.
+- 2026-11-25 · body · His hands are warm before the fire is, this morning, and he notices it the way a man notices a debt paid off: twice, to be sure.
