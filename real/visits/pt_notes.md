@@ -884,12 +884,12 @@ Therapeutic Exercise:
 
 ### Patient's account of the same visit
 
-None relayed yet.
+Added by him the same day, from the clinic's notes he had missed: **"also did 6 laps of about 50 meters jogging"** and **"bulgarian split squat jumps were 2 x 10"**.
 
 Reading:
+- **The jogging, 6 laps of about 50 m, is the day's run** (State §6: if the clinic jogs him, that is the day's run): the home walk-jog comes off the day and the progression holds at session 1.
 - **"Improvements in jumping and squatting symmetry with repetition and cues":** the force plates were used as live feedback (the graph) on squats 3 × 5, then a 12" drop × 5. The asymmetry they corrected is not quantified in the note; **no numbers**, so nothing goes to `measurements.csv` unless he has them.
 - **New at the clinic:** **box jumps, 12", 2 × 10** (the clinic now runs the exercise he tried at home on Sun 11/15) · **single-leg decel drops from 12", 2 × 5** (sides not stated; 11/23 ran the left from 6") · a TRX squat with the left driving the way up, × 10 · Bulgarian split-squat jumps (dose blank in the note). The bike to level 8.
-- **No run at the clinic today**, so the home walk-jog after the clinic stands on the plan (session 1: no home session has run yet).
 - About 60 impact contacts plus the jumps' blank dose: **Thursday's morning judges it.**
 - Abbreviations as before; BTB not decoded (a band). "B" = both legs.
 
