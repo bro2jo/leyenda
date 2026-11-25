@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "2",
+    "scene": "3",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-2"
+    "anchor": "chronicle/08-no-bells.html#scene-3"
   },
-  "last_seen_doing": "Walked a day beside a watch he could not see; when Ash ate the bread left at a lit lamp, put down the urge to follow the ski-tracks and let Rae say what went down in its place; at dusk the script changed on his palms and he told Wren first.",
-  "now": "At the camp by the lit lamp, a day up the stream, the script on his hands changed.",
+  "last_seen_doing": "Asked Rae how far to the horn and ran for the lamps on the stream ice, straight and not fast, and within two hundred strides was ahead of everyone.",
+  "now": "Running on the stream ice at dusk with a lamp and the stick, ahead of the whole company, the clans' lamps a mile off and the cart falling behind him.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2512,6 +2512,12 @@
       "evidence": "the third beside them that had come back to him since the ring"
     },
     {
+      "fact": "On the flat ice, running straight and not fast, he outran the whole company within two hundred strides.",
+      "chapter": "08",
+      "scene": "3",
+      "evidence": "Within another hundred the oxen's breathing had gone behind him, and then the bell."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3182,6 +3188,10 @@
     {
       "chapter": "08",
       "scene": "2"
+    },
+    {
+      "chapter": "08",
+      "scene": "3"
     },
     {
       "chapter": "tale01",

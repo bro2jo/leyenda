@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "2",
+    "scene": "3",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-2"
+    "anchor": "chronicle/08-no-bells.html#scene-3"
   },
-  "last_seen_doing": "Would not give her salt, which is for wounds; looked at his foot at the fire, as every night since the mill, and called it pink.",
-  "now": "At the camp by the lit lamp.",
+  "last_seen_doing": "Was hauled onto the tailboard by Hollis, roll and all; told Darrow, on the ice, straight.",
+  "now": "On the tailboard with Hollis as the cart runs.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -1165,6 +1165,10 @@
     {
       "chapter": "08",
       "scene": "2"
+    },
+    {
+      "chapter": "08",
+      "scene": "3"
     }
   ]
 }

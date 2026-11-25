@@ -186,3 +186,82 @@ In the morning the loaf on the stump was gone, and the red cloth with it. In the
 > Level 9 → 10 · Tempered
 > Ember: Steady → Bright
 > Rank: **Tempered**.
+
+### Scene 3 — Their Road
+
+"Another hour," said Rae, "and we'll see a door."
+
+She had said it at noon, and again in the middle of the afternoon, and both times her grandmother's stream had gone on climbing between its banks with no door on it and no lamp either, lit or cold. All the second day the ski-tracks had come and gone: down one bank, over the ice, up the other, and away. Now the light was going out of the trees, and the cold had been in Darrow's hands since morning and would not leave them. The two slow fingers of the right ached round the stick like a tooth.
+
+Hollis sat on the tailboard with his spiked leg out straight and a blanket round his shoulders, explaining his life to Dun.
+
+"I was a knight of the Sixth," he told the ox. "I had a horse. A good horse, that loved me and bit everybody else. Now I'm luggage. I'm luggage with opinions."
+
+"You and the flour weigh about the same," said Wren, from the back. "I watched Dun take the bank both ways. The flour complains less."
+
+"The flour hasn't been anywhere."
+
+"Lamps," said Wren.
+
+She had stopped. High on the ridge to the north, above the black tops of the trees, a light had come out on the skyline, and then another, and then a string of them, and they were moving: running along the crest eastward, low and swinging, carried by men he could not see, too fast for men on foot. Every one of them was going east, and in a hurry. Wren's lips were going. "Six. Seven. Nine, there's a gap, ten—"
+
+A horn sounded from somewhere ahead of them, beyond the bend: two notes, the second lower and longer, filling the whole cut of the valley; the valley kept it a while after it stopped.
+
+"That isn't a bell," said Wren.
+
+"No," said Rae.
+
+Then a voice came down through the trees on the right bank, close above them and out of sight, a man's voice, and it threw one word down at them, hard, twice. Skis hissed away through the snow, and it was gone.
+
+Darrow did not know the word. He knew the voice. Every lance had one man who could put the whole of a field into a single word, and you did not ask him what he meant; you did it.
+
+Rae had stopped with her hand on Hob's horn and her face turned up the bank. The bell at her hip hung still with the cart. She said the word back, under her breath, to be sure of it.
+
+"Run," she said, in plain Vaelish, to all of them. "It means run."
+
+"From what?" said Hollis.
+
+Ash had already turned round. She stood on the ice facing back the way they had come, down the long grey throat of the stream, and her lip was up off her teeth, and the growl came out of her low and steady, on and on, with no breath in it.
+
+A long way down the stream, snow came off a branch. Then off the next tree. Then the next, nearer, on both banks: soft falls, one after another, coming up the valley at a walk, the way snow comes down when something brushes every trunk it passes. The cold came up the ice ahead of it. Darrow felt it first in his right foot, through the boot, in the place where a pair of hands had held him by the ankle on the walkers' road; then it was in his chest.
+
+Rae looked down at the ice under her boots. Then up at the bank, at the last of the tracks going over.
+
+"They cross it," she said. "Every track since the river. Down, over, up the other side. Not one of them has walked on it." Her voice stayed level. The goad in her other hand had begun to shake, and she set its point on the ice to stop it. "She came out by the water. She never said what she came out ahead of."
+
+"Rae—"
+
+"It's their road. I brought you up their road." She had said it, once, and she was done with it. She pulled the cord of lamps off her shoulder and threw it to Wren. "Light them."
+
+"How far to the horn?" said Darrow.
+
+"A mile. Less." She was already at Hob's head with the goad.
+
+Wren knelt on the ice with the lamps and the flint and swore at both, better than he would have guessed she could. Maelis came round the tailboard, and Hollis put his arm down without a word and hauled her up beside him by the coat, surgeon's roll and all, and she let him. The first lamp caught. Wren lit the second off it and pushed it at Darrow, and hung the third on the cart's post, and Rae spoke to the oxen in a voice he had never heard her use, and they leaned into the yoke and the cart began to move, and then to move faster, the oxen's heavy trot that drummed on the ice, and the bell at Rae's hip started ringing at every jolt, and went on ringing.
+
+"On the ice," said Maelis to him, from the tailboard. "Straight."
+
+He ran.
+
+He had the stick in his left hand and the lamp in his right, in the thumb and two fingers, swinging, and the ice under him was flat and grey and went on ahead between its banks as straight as a ruled line. The legs knew it before he did. A stride, and the next, longer, the knee taking each one and handing it on; he was not going fast, he had been told not fast, and he did not need fast. Within a hundred strides he had passed Wren. Within another hundred the oxen's breathing had gone behind him, and then the bell.
+
+His legs were glad. They had waited all summer and all autumn to be glad, and they did not care what was in the trees. The rest of him was cold to the bone and had no opinion about gladness.
+
+"Go on!" Hollis's voice came after him, the whole length of the stream, the voice that had once carried over a river in flood. "Go on, Captain, you long-shanked Grace-fed bastard, go and bang on their door! You're the only one of us they'll open it for—"
+
+The rest of it went into the trees.
+
+Darrow looked back over his shoulder without breaking his stride.
+
+The cart was a long way behind now, further than he had thought: a dark block on the grey ice with one lamp swinging on its post, the oxen labouring, Rae running at Hob's head with her hand on his horn. Hollis and Maelis sat on the tailboard among the flour sacks, and Hollis had the lamp off its post and held it up behind them at arm's length, toward whatever was coming, the way a man holds up a torch to a dog. Wren was between the cart and him, running hard with her scarf over her mouth, her lamp jerking. Ash came up the ice to Darrow at full stretch on three legs and the splint, and turned, and went back to the cart, and turned, and came to him again, and could not be in both places and would not choose.
+
+Behind all of them, under the trees on both banks, the snow went on coming off the branches, one tree at a time, no faster than a walk, and no slower.
+
+Ahead, a mile off along the ice, the lamps had come down off the ridge. They stood in a line across the stream from bank to bank, low and steady, and there were men behind them.
+
+He was the fastest thing on the river. He had been the fastest thing on every river he had ever ridden into.
+
+**What does Darrow do?**
+1. **Drop back and run at the cart's tail, the last of them, beside Hollis.**
+2. **Run on for the lamps, and bring the watch back to them.**
+3. **Stop on the ice with the lamp and the stick, and let every one of them go past him first.**

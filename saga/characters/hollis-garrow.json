@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "2",
+    "scene": "3",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-2"
+    "anchor": "chronicle/08-no-bells.html#scene-3"
   },
-  "last_seen_doing": "Offered a knife and thought better of it; went still at singing in the trees, a tune he half knows, and would not say from where.",
-  "now": "At the camp by the lit lamp.",
+  "last_seen_doing": "Called himself luggage with opinions; hauled Maelis up onto the tailboard; held a lamp up behind the cart toward what was coming, and shouted at the Captain to run on and bang on the clans' door.",
+  "now": "On the tailboard among the flour sacks with Maelis, holding a lamp up behind the cart.",
   "story_so_far": "Hollis captained the forty north while Darrow went west, and on the first night looked at last at the seal on the order he had carried since the ford. Quiet for days, he laid it on his knee at the fire and asked, sober, what the Captain saw from the water, and heard all of it with the jar in the third cart at his back. He read Aldric's last letter beside the seal, and crossed the ice to the ring on a spiked leg.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -958,6 +958,12 @@
       "chapter": "08",
       "scene": "2",
       "evidence": "\"No,\" said Hollis. He put the cup down. \"Half of it.\""
+    },
+    {
+      "fact": "He shouted at Darrow to go on ahead to the clans' door, the only one of them they would open it for.",
+      "chapter": "08",
+      "scene": "3",
+      "evidence": "You're the only one of us they'll open it for—"
     }
   ],
   "relationships": [
@@ -1422,6 +1428,10 @@
     {
       "chapter": "08",
       "scene": "2"
+    },
+    {
+      "chapter": "08",
+      "scene": "3"
     }
   ]
 }

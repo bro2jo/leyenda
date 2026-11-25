@@ -21,11 +21,19 @@
         "2026-11-23"
       ],
       "written": "2026-11-23"
+    },
+    {
+      "scene": 3,
+      "title": "Their Road",
+      "covers": [
+        "2026-11-24"
+      ],
+      "written": "2026-11-25"
     }
   ],
   "location": {
     "place": "the-thornwild",
-    "detail": "a camp in the lee of the stream bank, within sight of a lit lamp-post, a day up the frozen stream",
+    "detail": "on the frozen stream at dusk, running for the clans' lamp line a mile ahead, out in front of the company",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "deep winter at the Wend: snow over the river ice, and old forest beyond it",
@@ -35,7 +43,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "A watch he cannot see, and a door he has wronged without knowing it.",
-  "last_beat": "In the morning the loaf on the stump was gone, and the red cloth with it; in the snow beside the stump there was one ski-track, coming and going.",
+  "last_beat": "Ahead of all of them on the ice, with the cart falling behind and the clans' lamps standing across the stream a mile off, he was the fastest thing on the river.",
   "companions": {
     "maelis": {
       "approval": 51,
@@ -267,7 +275,8 @@
     "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder",
     "the borrowed stick, used on the Steps and kept",
     "Elinor's letter, from the miller, opened, inside his coat",
-    "Aldric's last letter, the small sheet (*Answer me, or I will come myself*), inside his coat"
+    "Aldric's last letter, the small sheet (*Answer me, or I will come myself*), inside his coat",
+    "a lit lamp off Rae's cord, in his right hand"
   ],
   "keepsakes": [
     {
@@ -342,5 +351,5 @@
     "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his.",
     "07-the-far-bank": "At the ring in the frozen marsh Darrow read what the stones are for, Wren read the line he could not, and Maelis said yes."
   },
-  "last_updated": "2026-11-23"
+  "last_updated": "2026-11-25"
 }

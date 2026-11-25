@@ -4,9 +4,9 @@
     "book": 3,
     "chapter": 8,
     "beat": "b3.1",
-    "next_scene": 3,
+    "next_scene": 4,
     "stage": "scene",
-    "last_written": "ch08:s2",
+    "last_written": "ch08:s3",
     "rank_on_page": "Tempered"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -75,8 +75,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch08:s3"
       },
       {
         "n": 4,
@@ -90,7 +90,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -550,7 +550,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 3,
+    "chapter": 8,
+    "scene": "3",
+    "opened": "2026-11-25",
+    "axis": "hearth_banner",
+    "ask": "He is ahead of all of them on the ice, with the lamps a mile off and the cart falling behind. What does Darrow do?",
+    "options": [
+      "Drop back and run at the cart's tail, the last of them, beside Hollis.",
+      "Run on for the lamps and bring the watch back to them.",
+      "Stop on the ice with the lamp and the stick and let every one of them go past him first."
+    ],
+    "bearing": [
+      {
+        "hearth": 1
+      },
+      {
+        "banner": 1
+      },
+      null
+    ],
+    "default": 1
+  },
   "temptation": {
     "planted": [
       {

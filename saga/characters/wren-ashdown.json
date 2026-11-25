@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "2",
+    "scene": "3",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-2"
+    "anchor": "chronicle/08-no-bells.html#scene-3"
   },
-  "last_seen_doing": "Offered a pencil for the gift; sat by Darrow at the fire and was told first what the script said; wrote it in two places.",
-  "now": "At the camp by the lit lamp with the ledger.",
+  "last_seen_doing": "Counted the watch's lamps along the ridge; lit Rae's three lamps on the ice, swearing at the flint, gave Darrow one and hung one on the cart.",
+  "now": "Running on the ice between the cart and Darrow with a lamp.",
   "story_so_far": "Wren counted the carts over the bridge, opened a column for the Captain and closed it in front of him when he came back on the third day, and drove Rae's oxen north without knowing their word. She counted aloud that Rae had been told first twice. At the ring, unasked, at the back with a lamp, she read the last line off the fallen stone, and nobody asked her how.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -1312,6 +1312,10 @@
     {
       "chapter": "08",
       "scene": "2"
+    },
+    {
+      "chapter": "08",
+      "scene": "3"
     }
   ]
 }

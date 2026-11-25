@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "2",
+    "scene": "3",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-2"
+    "anchor": "chronicle/08-no-bells.html#scene-3"
   },
-  "last_seen_doing": "Ate the bread left on the stump at the lit lamp, and brought Darrow the cloth.",
-  "now": "At the camp by the lit lamp.",
+  "last_seen_doing": "Turned to face back down the stream and growled without stopping; ran back and forth between Darrow and the cart.",
+  "now": "Running between Darrow and the cart, unable to choose.",
   "story_so_far": "Ash brought Darrow's lost stick up from the ice below the weir, kept to his heel on the walkers' road, and bit his sleeve to wake him when a straggler took his boot. She would not go near the frosted stone at the crossroads, and found the ring in the marsh first.",
   "quote": null,
   "known_facts": [
@@ -330,6 +330,10 @@
     {
       "chapter": "08",
       "scene": "2"
+    },
+    {
+      "chapter": "08",
+      "scene": "3"
     }
   ]
 }

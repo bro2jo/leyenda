@@ -98,6 +98,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Greth** — Rae's grandmother's word, said from the belly: the grey country east of the river (Ch 8 Sc 1).
 - **The clans' lamps** — An iron lamp on a post at the edge of the Thornwild, shuttered on three sides and open to the river, with a scorched black chip tied below it on a thong; a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is (Ch 8 Sc 1).
 - **Tal** — Rae's grandmother's word: a gift laid down at a door before you ask anything of the house; without it the asking is an insult. Bread for bread, same size or bigger (Ch 8 Sc 2).
+- **The watch's horn** — Two notes, the second lower and longer, sounded at dusk from up the frozen stream in the Thornwild where the clans' lamps came down across the ice. Not a bell (Ch 8 Sc 3).
 
 ## Songs and verses
 
