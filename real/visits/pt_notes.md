@@ -857,3 +857,42 @@ Reading:
 What it answers from the list (State §5): nothing in the note. Not answered or not relayed: the stiff landing (what to change) · the walk-jog's symptom rule · the home doses for the decels and drop-downs · the trainer's exercises · the glute and quad tests.
 
 What it changes: the clinic's run is the day's run, the walk-jog holds at session 1; the force-plate numbers are asked for; no measurements.
+
+---
+
+## 2026-11-25 (POD 93) — Visit 18 — PTA (the note names no one; Cody on the calendar)
+
+Pasted by him the same day.
+
+### Progress note
+
+```text
+Patient demonstrated improvements in jumping and squatting symmetry with repetition and cues.
+
+TREATMENT: 
+Therapeutic Exercise: 
+1: LFUC 16 L8 x6' for LE function and endurance
+2: BTB Side to Side / Monster walks 25ft <> x2 each
+3: force plates squats- 3x5 (using feed back and graph to correct asymmetry)
+4: force plates 12in drop- x5
+5: 12in box jumps- 2x10
+6: 12in SL decel drops 2x5
+7: bulgarian split suqat jumps-
+8: TRX squat with L concentric- 10x
+9: Sprinter knee drive w/ grn band at feet 2x10 B
+```
+
+### Patient's account of the same visit
+
+None relayed yet.
+
+Reading:
+- **"Improvements in jumping and squatting symmetry with repetition and cues":** the force plates were used as live feedback (the graph) on squats 3 × 5, then a 12" drop × 5. The asymmetry they corrected is not quantified in the note; **no numbers**, so nothing goes to `measurements.csv` unless he has them.
+- **New at the clinic:** **box jumps, 12", 2 × 10** (the clinic now runs the exercise he tried at home on Sun 11/15) · **single-leg decel drops from 12", 2 × 5** (sides not stated; 11/23 ran the left from 6") · a TRX squat with the left driving the way up, × 10 · Bulgarian split-squat jumps (dose blank in the note). The bike to level 8.
+- **No run at the clinic today**, so the home walk-jog after the clinic stands on the plan (session 1: no home session has run yet).
+- About 60 impact contacts plus the jumps' blank dose: **Thursday's morning judges it.**
+- Abbreviations as before; BTB not decoded (a band). "B" = both legs.
+
+What it answers from the list (State §5): nothing directly; the box jumps now run at the clinic. Not answered or not relayed: the force-plate numbers · the stiff landing · the walk-jog's symptom rule · the home doses for the decels and drop-downs · the glute and quad tests.
+
+What it changes: nothing in the program; the clinic's impact steps up (12" box jumps, 12" single-leg drops); no measurements.

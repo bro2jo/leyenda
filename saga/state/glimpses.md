@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-22 · body · His feet are cold through both boots, and for once that is the only thing about his legs he has to think about.
 - 2026-11-23 · weather · A grey, close morning, the kind where the fire smokes into your face whichever side of it you choose.
 - 2026-11-23 · overheard · Overheard at the fire: Maelis telling Wren that the second cup of anything is the one that counts. Wren writes it down as if it were law.
 - 2026-11-23 · verse · Rae teaches Ash the counting game from the Lowmarch, which Ash does not understand: three for the carter who's never in bed, and out goes the one with the fog in her head. Ash, counted out, lies down anyway.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-25 · body · His hands are warm before the fire is, this morning, and he notices it the way a man notices a debt paid off: twice, to be sure.
 - 2026-11-25 · weather · Wind off the ice all morning, thin and steady, and every pine along the bank answering it in the same long note.
 - 2026-11-25 · house · From a distance the lamps looked all the same. Wren could tell which ones had glass by the steadiness of the flame.
+- 2026-11-25 · overheard · Overheard inside the lamp line: one of the watch telling another that the tall one runs like a man who has only lately been allowed to. The other says they all do, at first.
