@@ -21,4 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-26 · house · Maelis sits with her back to the wall and her bag on her knees and checks every vial in it by touch, without looking, the way other people say grace.
 - 2026-11-26 · ledger · Wren's ledger, under the night: spears, more than she could count in the dark. She has written that down too, and it annoys her.
 - 2026-11-26 · verse · Someone by the fire is humming it, half the words gone, the rest come back on their own: whose are you, whose are you, which hearth and which door?
-- 2026-11-26 · weather · Snow in the night, and none of it on the paths by morning: someone here sweeps before the light, every day, and no one has seen who.
+- 2026-11-26 · weather · Snow in the night, fine and dry, and by morning the paths between the doors are already swept and the brooms leaned back against the walls.
