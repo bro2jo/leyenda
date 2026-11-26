@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-23 · verse · Rae teaches Ash the counting game from the Lowmarch, which Ash does not understand: three for the carter who's never in bed, and out goes the one with the fog in her head. Ash, counted out, lies down anyway.
 - 2026-11-23 · house · Before anyone says a word at the fire, he has noticed which way the smoke leans and which of the company slept badly. He keeps both to himself and passes Wren the warmer cup.
 - 2026-11-23 · body · He comes down off a fallen trunk with the pack on his back and lands on the frozen ground without a sound and without a thought. Somebody behind him whistles, low, and pretends it was at a bird.
 - 2026-11-23 · weather · All afternoon snow slides off the high branches, one soft slab at a time. Every one makes Wren look up, and not one of them is ever where she looks.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-25 · overheard · Overheard inside the lamp line: one of the watch telling another that the tall one runs like a man who has only lately been allowed to. The other says they all do, at first.
 - 2026-11-26 · house · Maelis sits with her back to the wall and her bag on her knees and checks every vial in it by touch, without looking, the way other people say grace.
 - 2026-11-26 · ledger · Wren's ledger, under the night: spears, more than she could count in the dark. She has written that down too, and it annoys her.
+- 2026-11-26 · verse · Someone on the watch is singing it under their breath, a Vaelmark tune in the wrong country: whose are you, whose are you, which hearth and which door?
