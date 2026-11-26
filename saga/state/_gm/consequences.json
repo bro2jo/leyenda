@@ -2533,6 +2533,40 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "c08.2",
+      "made": {
+        "chapter": 8,
+        "scene": "3",
+        "date": "2026-11-25"
+      },
+      "chose": "Dropped back on the stream ice and ran at the cart's tail beside Hollis, the last of them, instead of running on for the lamps.",
+      "now": {
+        "approval": {
+          "hollis": 4,
+          "maelis": 1,
+          "rae": -2
+        },
+        "bearing": {
+          "hearth": 1
+        }
+      },
+      "due": [
+        {
+          "id": "c08.2a",
+          "when": "next",
+          "at": "ch08:s4",
+          "weight": "scene",
+          "what": "The next scene opens on his answer: he slowed over steps, turned, and ran the rest of the ice at the cart's tail beside Hollis and the lamp, the last of them.",
+          "status": "fired@ch08:s4",
+          "evidence": "he fell in beside it and ran there, at the back, the last of them"
+        }
+      ],
+      "declined": [
+        "Run on for the lamps and bring the watch back to them.",
+        "Stop on the ice with the lamp and the stick and let every one of them go past him first."
+      ]
     }
   ],
   "rules": [

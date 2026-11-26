@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "3",
+    "scene": "4",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-3"
+    "anchor": "chronicle/08-no-bells.html#scene-4"
   },
-  "last_seen_doing": "Turned to face back down the stream and growled without stopping; ran back and forth between Darrow and the cart.",
-  "now": "Running between Darrow and the cart, unable to choose.",
+  "last_seen_doing": "Was looked over, fed and admired by the watch, took their meat only from Darrow's left hand, and was named a watcher.",
+  "now": "Following the watch's leader across the ice for what else is in his pouch.",
   "story_so_far": "Ash brought Darrow's lost stick up from the ice below the weir, kept to his heel on the walkers' road, and bit his sleeve to wake him when a straggler took his boot. She would not go near the frosted stone at the crossroads, and found the ring in the marsh first.",
   "quote": null,
   "known_facts": [
@@ -151,6 +151,12 @@
       "chapter": "08",
       "scene": "2",
       "evidence": "with the red cloth in her mouth and crumbs in her beard"
+    },
+    {
+      "fact": "The clans' watch named her corr, a watcher.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "\"*Corr*,\" said Rae. \"The heron. They call a watcher that.\""
     }
   ],
   "relationships": [
@@ -334,6 +340,10 @@
     {
       "chapter": "08",
       "scene": "3"
+    },
+    {
+      "chapter": "08",
+      "scene": "4"
     }
   ]
 }

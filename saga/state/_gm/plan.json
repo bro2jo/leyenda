@@ -4,9 +4,9 @@
     "book": 3,
     "chapter": 8,
     "beat": "b3.1",
-    "next_scene": 4,
+    "next_scene": 5,
     "stage": "scene",
-    "last_written": "ch08:s3",
+    "last_written": "ch08:s4",
     "rank_on_page": "Tempered"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -71,7 +71,11 @@
             },
             null
           ],
-          "default": 1
+          "default": 1,
+          "answer": {
+            "option": 1,
+            "by": "bearing"
+          }
         },
         "challenge": null,
         "invite": null,
@@ -90,8 +94,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch08:s4"
       },
       {
         "n": 5,
@@ -106,7 +110,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -550,29 +554,7 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": {
-    "slot": 3,
-    "chapter": 8,
-    "scene": "3",
-    "opened": "2026-11-25",
-    "axis": "hearth_banner",
-    "ask": "He is ahead of all of them on the ice, with the lamps a mile off and the cart falling behind. What does Darrow do?",
-    "options": [
-      "Drop back and run at the cart's tail, the last of them, beside Hollis.",
-      "Run on for the lamps and bring the watch back to them.",
-      "Stop on the ice with the lamp and the stick and let every one of them go past him first."
-    ],
-    "bearing": [
-      {
-        "hearth": 1
-      },
-      {
-        "banner": 1
-      },
-      null
-    ],
-    "default": 1
-  },
+  "open_micro": null,
   "temptation": {
     "planted": [
       {
@@ -626,7 +608,7 @@
   },
   "tallies": {
     "chased": 2,
-    "held": 10
+    "held": 11
   },
   "tallies_log": [
     {
@@ -722,6 +704,14 @@
       "name": "held",
       "delta": 1,
       "why": "let Rae set the price for the eaten tal instead of following the ski-tracks to the watch (ch08:s2)",
+      "book": 3,
+      "chapter": 8
+    },
+    {
+      "date": "2026-11-26",
+      "name": "held",
+      "delta": 1,
+      "why": "08:s4 opening: dropped back to run at the cart's tail beside Hollis instead of running on for the lamps",
       "book": 3,
       "chapter": 8
     }

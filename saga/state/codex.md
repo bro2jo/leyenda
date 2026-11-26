@@ -99,6 +99,8 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The clans' lamps** — An iron lamp on a post at the edge of the Thornwild, shuttered on three sides and open to the river, with a scorched black chip tied below it on a thong; a lamp at every door, Rae's grandmother said, and a door is anywhere they say it is (Ch 8 Sc 1).
 - **Tal** — Rae's grandmother's word: a gift laid down at a door before you ask anything of the house; without it the asking is an insult. Bread for bread, same size or bigger (Ch 8 Sc 2).
 - **The watch's horn** — Two notes, the second lower and longer, sounded at dusk from up the frozen stream in the Thornwild where the clans' lamps came down across the ice. Not a bell (Ch 8 Sc 3).
+- **Corr** — The clans' word for the heron, and so for a watcher: what the watch at the lamp line called Ash, with a hand on her head, after she turned to the trees before anyone (Ch 8 Sc 4).
+- **The watch at the lamp line** — A dozen of the clans on skis, furred to the eyes, with a torch in one hand and a long spear in the other; at night they set a line of lamps across the frozen stream and hold it, spears turned outward, until the trees are quiet. Their leader carries the horn (Ch 8 Sc 4).
 
 ## Songs and verses
 

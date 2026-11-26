@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "3",
+    "scene": "4",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-3"
+    "anchor": "chronicle/08-no-bells.html#scene-4"
   },
-  "last_seen_doing": "Was hauled onto the tailboard by Hollis, roll and all; told Darrow, on the ice, straight.",
-  "now": "On the tailboard with Hollis as the cart runs.",
+  "last_seen_doing": "Got down and read the knee on the tailboard in front of the watch after the run.",
+  "now": "By the watch's fire inside the lamp line.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -769,6 +769,12 @@
       "chapter": "08",
       "scene": "2",
       "evidence": "\"Pink,\" she said: the first good word she had given it."
+    },
+    {
+      "fact": "After his run on the stream ice she read the knee and found it had held.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "\"It held,\" she said, and gave him back his leg."
     }
   ],
   "relationships": [
@@ -1169,6 +1175,10 @@
     {
       "chapter": "08",
       "scene": "3"
+    },
+    {
+      "chapter": "08",
+      "scene": "4"
     }
   ]
 }

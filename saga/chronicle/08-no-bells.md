@@ -265,3 +265,113 @@ He was the fastest thing on the river. He had been the fastest thing on every ri
 1. **Drop back and run at the cart's tail, the last of them, beside Hollis.**
 2. **Run on for the lamps, and bring the watch back to them.**
 3. **Stop on the ice with the lamp and the stick, and let every one of them go past him first.**
+
+### Scene 4 — Whose Dog
+
+He slowed over four steps on the stream ice, as Maelis had shown him at the river, and turned in the dusk, and stood there with the lamp and let the cart come to him.
+
+It came at its heavy trot with the bell going and Rae's hand on Hob's horn, and when the tailboard drew level he fell in beside it and ran there, at the back, the last of them, with Hollis's lamp held out past his shoulder toward the dark.
+
+"I told you to go on," said Hollis.
+
+"You did."
+
+"I'm senior on this cart."
+
+"You're luggage," said Darrow, "with opinions," and Hollis, who was not going to laugh, held the lamp higher.
+
+The mile went by at an ox's pace. Behind them the snow came off the branches tree by tree and kept its distance, neither nearer nor further. Ahead, the lamps grew.
+
+Then the lamps were on either side of them, iron posts driven into the snow of both banks and out across the ice, and there were people among them on skis, and the cart went through their line and the line closed behind it.
+
+They were a dozen, furred to the eyes, with a torch in one hand and a long spear in the other, and every spear was turned outward, down the stream, at the dark the company had come out of. Every eye went the same way. They stood in their line and held it, and the torches spat, and behind them on the ice the company stood and breathed.
+
+Down the stream the snow came off one more branch, just past the reach of the last lamp.
+
+Then the trees were still. The wind went over their tops, the same long note the pines had been giving it all day, and down at the bottom of the valley everything was quiet: a whole quiet, the kind there is when something has stopped to listen and then gone away.
+
+The watch held their line until the trees had been quiet long enough for one of them to say so, low, in their own tongue. Then every spear in the line came round, butt down on the ice, point up, and a dozen faces in fur looked at the Vaelmark.
+
+Darrow was bent over his stick with his breath going out of him in great white clouds. He had run a mile at the tail of an ox-cart, and the legs were pleased with themselves and the chest was not. He straightened up to be looked at.
+
+The nearest of the watch looked at him: at the stick, at the lamp, at the length of him. Then she put her spear-butt on the ice and leaned on it with both hands like an old man on a staff, and took two long careful strides on the spot, very upright, lifting her knees high, with her cheeks blown out.
+
+Somebody laughed. Then all of them did, slowly, a laugh with plenty of time in it, at a thing that would still be funny tomorrow.
+
+He knew that laugh. He had laughed it himself, at every new lance-boy who ever walked across a muster yard trying to look as if he did it every day.
+
+So he laughed back. It came up out of him from the bottom of his chest, the way it used to, loud enough to fill a hall, and it filled the valley; and the watch stopped to look at him, and then laughed harder.
+
+"Good," said Hollis, from the tailboard. "Now they think you're simple."
+
+Maelis had got down. She came to him through the laughing without a glance at any of it, sat him on the tailboard with one hand, and laid two fingers either side of the knee in front of a dozen strangers with spears.
+
+"Maelis."
+
+"Sit still." She shut her eyes. The watch, who had laughed at the run, watched a small grey woman read a knee by torchlight, and went quiet to see what she would find.
+
+"It held," she said, and gave him back his leg.
+
+The leader of the watch was the one with the horn on a strap across his chest: a broad man with frost in his grey beard and the hood of his furs pushed back, who had stood a little apart through all of it. He came over now, slow on his skis, and looked at the company one at a time, Hollis on the cart, Maelis, Wren with her lamp, Darrow with his stick, Rae at Hob's head, and past every one of them to Ash.
+
+Ash sat on the ice at Darrow's feet with her ears up and looked back at him.
+
+The leader pointed at her with his chin, said something short, and turned his hand over toward the company, palm up.
+
+Rae answered before anyone else could have. "He's asking whose dog."
+
+"Mine," said Darrow.
+
+"His," said Rae, to the leader, and pointed.
+
+The leader looked at Darrow then, for the first time with any interest: the look a man gives the fellow who comes attached to a good horse. Then he crouched on his skis in front of Ash and held out the back of his hand, and Ash considered it a while, and allowed it.
+
+After that she was the watch's whole business. They came round her on their skis and talked over her head: ran their hands down the long bones of her legs, bent to look at the pine laths and the linen of the splint, lifted her lip with one finger to see her teeth, which she let them do with the lip already halfway up on its own. One of them pulled a strip of dried meat out of a pouch and held it out to her. Ash looked at it, and then at Darrow.
+
+The leader said something, and the watch laughed again, and the meat came round the circle from hand to hand until it reached Darrow. He held it out in his left hand. Ash took it off his palm, all lip, without a tooth touching him.
+
+That pleased them more than anything else had. The leader stood up and said a word over her, twice, with his hand flat on her head.
+
+"*Corr*," said Rae. "The heron. They call a watcher that." She watched the leader's hand on the dog's head. "She turned to the trees before any of us. They'll have seen it from the ridge."
+
+"Twelve of them," said Wren, at his elbow, low. "Thirteen with the horn. And they named the dog." She had the lamp up and her eyes on the dark the spears had been pointing at. "What was it, Rae? In the trees."
+
+"Not at night," said Rae, without turning round. "You don't name it at night. Gran said."
+
+The nearest of the watch, who could not have understood a word of it, heard how it was said and nodded to Rae, once, as one grown woman nods to another across a room of children.
+
+Nobody asked anybody's name.
+
+The leader spoke to Rae last, in his own tongue, without heat and at length, the way a reeve reads out what the court has already decided. Rae listened with her whole face. Somewhere in the middle of it Darrow heard *tal*, and saw her catch it; the rest came with the man's hands. He pointed down the stream, and up at the black sky, and swept his arm out over the company toward the river they had crossed, and back again over Ash.
+
+"Near as I have it," said Rae, "the bread was well laid. At the second lamp. Bread for bread. They took it." She drew a breath. "He says the dog can stay."
+
+"Stay where?"
+
+"Here. With them. If she likes."
+
+Ash was leaning against the leader's leg with her eyes half shut while he dug his fingers into the hair of her neck.
+
+"And at first light," said Rae, "the Vaelmark walk back to the river."
+
+"Back down that?" said Darrow. The stream lay behind them in the dark, the whole long grey road of it.
+
+"By day," said Rae.
+
+"Tell him—" He stopped and found the words, the plain ones, the only kind he had anything to stand on now. "Tell him we didn't come over the river for a roof. Tell him we've something his people will want to hear, and it won't keep till the river."
+
+"I've seven words of theirs," said Rae. "That's none of them."
+
+So he said it himself. He turned to the leader and said it in plain Vaelish, all of it, standing up straight with the stick in his good hand: who they were, and that they had come over the ice on purpose, and that what he carried would not keep. He said it as well as he had ever said anything.
+
+The leader heard him out, every word, with his head on one side and the courtesy of a man listening to weather. When it was done he laughed, slowly and not unkindly, and put his big hand on Darrow's shoulder, and said the same short word he had said to Rae at the end of his ruling. Then he pointed down the stream, and went back to his men.
+
+Hollis let out his breath on the tailboard.
+
+"Second to the dog," he said. "I've served under worse."
+
+Darrow looked at Rae. "All of us? At first light?"
+
+Rae was looking at the watch's fire, where they were already banking it for the night, and at the old man with the horn, and at Ash going after him across the ice to see what else he had in his pouch.
+
+"He said the Vaelmark," she said. "That's us."

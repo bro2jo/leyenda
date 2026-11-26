@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "3",
+    "scene": "4",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-3"
+    "anchor": "chronicle/08-no-bells.html#scene-4"
   },
-  "last_seen_doing": "Asked Rae how far to the horn and ran for the lamps on the stream ice, straight and not fast, and within two hundred strides was ahead of everyone.",
-  "now": "Running on the stream ice at dusk with a lamp and the stick, ahead of the whole company, the clans' lamps a mile off and the cart falling behind him.",
+  "last_seen_doing": "Dropped back to run at the cart's tail beside Hollis; laughed back out loud when the watch laughed at his running; tried to make their leader hear him in plain Vaelish, was heard out, and was sent back to the river.",
+  "now": "Inside the clans' lamp line at nightfall, let in by nobody, to walk back down the stream to the river at first light.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2518,6 +2518,18 @@
       "evidence": "Within another hundred the oxen's breathing had gone behind him, and then the bell."
     },
     {
+      "fact": "When the watch laughed at his running, he laughed back, out loud.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "So he laughed back."
+    },
+    {
+      "fact": "He told the watch's leader in plain Vaelish who they were and that what they carried would not keep, and the leader understood none of it.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "So he said it himself."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3192,6 +3204,10 @@
     {
       "chapter": "08",
       "scene": "3"
+    },
+    {
+      "chapter": "08",
+      "scene": "4"
     },
     {
       "chapter": "tale01",

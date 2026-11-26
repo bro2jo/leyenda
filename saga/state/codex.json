@@ -676,6 +676,20 @@
           "sources": [
             "ch08:s3"
           ]
+        },
+        {
+          "name": "Corr",
+          "text": "The clans' word for the heron, and so for a watcher: what the watch at the lamp line called Ash, with a hand on her head, after she turned to the trees before anyone (Ch 8 Sc 4).",
+          "sources": [
+            "ch08:s4"
+          ]
+        },
+        {
+          "name": "The watch at the lamp line",
+          "text": "A dozen of the clans on skis, furred to the eyes, with a torch in one hand and a long spear in the other; at night they set a line of lamps across the frozen stream and hold it, spears turned outward, until the trees are quiet. Their leader carries the horn (Ch 8 Sc 4).",
+          "sources": [
+            "ch08:s4"
+          ]
         }
       ],
       "intro": ""

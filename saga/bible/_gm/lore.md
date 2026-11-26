@@ -256,7 +256,7 @@ Saltreach is a sea-town in a fog that never quite lifts, and in the fog is the L
 Named for rivers and holdfasts and called by given name and clan, Morna of this and Teague of that. Boar spears and long knives; carts and dogs; a lamp at every door; no kneeling to anything. They raid across the fords when the lowland granaries are full and the Lowmarch calls it a war. What the Lowmarch knows of them is red hands, witch-light and the ford-songs, and what the clans know of the Lowmarch is the Lances. ⟪gm: the red hands are those who have stood at the water against the Tide (T4). Clans: Corrach, Haskel, the Nine Rivers. The red-handed woman is unnamed until b3.2.⟫
 
 ## folk.words — A few clan words
-- **tier:** learned · **spoken:** ch08:s1 · **names:** —
+- **tier:** learned · **spoken:** ch08:s1; ch08:s4 · **names:** —
 - **use:** a carter's grandmother's words; a parley; a greeting done right.
 
 What a Lowmarch carter's grandmother might have kept: *brann*, the hearth-fire, and so a household; *corr*, the heron, and so a watcher; *tal*, a gift laid down before a request, without which the request is an insult; *greth*, the grey country east of the river; *haud*, hold, said with the open palm and never the fist; *ruadh*, red; and a name for the river that is not Wend and that they do not give to lowlanders. ⟪gm: Rae's grandmother; b3.1, a gift before the ask. Keep to these.⟫

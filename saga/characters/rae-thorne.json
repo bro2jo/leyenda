@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "3",
+    "scene": "4",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-3"
+    "anchor": "chronicle/08-no-bells.html#scene-4"
   },
-  "last_seen_doing": "Turned the watch's shouted word into Vaelish, run; read that every track crossed the stream and none walked it, said once that she had brought them up their road, and drove the oxen at a trot.",
-  "now": "Running at Hob's head with the cart at an ox-trot, a long way behind Darrow.",
+  "last_seen_doing": "Spoke for the company with her few clan words; gave the dog's new name; stopped Wren asking what was in the trees; carried the leader's ruling, and counted herself among the Vaelmark sent home.",
+  "now": "At the watch's fire inside the lamp line, to go back down the stream with the company at first light.",
   "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1103,6 +1103,24 @@
       "evidence": "\"It's their road. I brought you up their road.\""
     },
     {
+      "fact": "She has only a handful of words of the clans' tongue.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "\"I've seven words of theirs,\" said Rae."
+    },
+    {
+      "fact": "Her grandmother taught her that the thing in the trees is not named at night.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "\"You don't name it at night. Gran said.\""
+    },
+    {
+      "fact": "She counted herself among the Vaelmark the watch sent back to the river.",
+      "chapter": "08",
+      "scene": "4",
+      "evidence": "\"He said the Vaelmark,\" she said. \"That's us.\""
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1523,6 +1541,10 @@
     {
       "chapter": "08",
       "scene": "3"
+    },
+    {
+      "chapter": "08",
+      "scene": "4"
     },
     {
       "chapter": "tale02",
