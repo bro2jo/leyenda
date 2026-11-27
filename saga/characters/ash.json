@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "4",
+    "scene": "5",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-4"
+    "anchor": "chronicle/08-no-bells.html#scene-5"
   },
-  "last_seen_doing": "Was looked over, fed and admired by the watch, took their meat only from Darrow's left hand, and was named a watcher.",
-  "now": "Following the watch's leader across the ice for what else is in his pouch.",
+  "last_seen_doing": "Slept under the leader's furs; walked at the head with him and came back to Darrow every mile.",
+  "now": "With the column, between the leader and Darrow.",
   "story_so_far": "Ash brought Darrow's lost stick up from the ice below the weir, kept to his heel on the walkers' road, and bit his sleeve to wake him when a straggler took his boot. She would not go near the frosted stone at the crossroads, and found the ring in the marsh first.",
   "quote": null,
   "known_facts": [
@@ -344,6 +344,10 @@
     {
       "chapter": "08",
       "scene": "4"
+    },
+    {
+      "chapter": "08",
+      "scene": "5"
     }
   ]
 }

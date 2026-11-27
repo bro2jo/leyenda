@@ -375,3 +375,99 @@ Darrow looked at Rae. "All of us? At first light?"
 Rae was looking at the watch's fire, where they were already banking it for the night, and at the old man with the horn, and at Ash going after him across the ice to see what else he had in his pouch.
 
 "He said the Vaelmark," she said. "That's us."
+
+### Scene 5 — Oddny of Haskel
+
+"Ask him to take you," said Darrow.
+
+Rae was yoking the oxen in the first grey of the morning, by the watch's fire, with frost along Hob's back and her breath going up between his horns. Snow had come in the night, fine and dry, and the watch had already swept a path from the fire down to the stream ice with brooms they had brought for it, and leaned the brooms against a tree. The cold had got into Darrow in the night and stayed. His right foot ached in the boot where Maelis looked at it every evening, and the two slow fingers would not close on the stick until he had beaten them against his thigh.
+
+"Your gran was theirs," he said. "You've their words. Ask him to take you in, you and the cart, and send the rest of us down to the river. He'd do it for you."
+
+"Would he."
+
+"He might."
+
+She set the bow under Dun's neck and drove the pin home with the heel of her hand. "And Hob and Dun go in with me," she said, "and you go back down their road with a lamp and a stick."
+
+"I've walked worse roads."
+
+"Aye," said Rae, "you have," and went round to Hob's side for the other pin.
+
+The watch formed up on the swept path, a dozen on skis with their spears and their furs, and put the company in the middle of them. The leader stood at the head with the horn on its strap. Ash crawled out from under the leader's furs, where she had spent the night, yawning, and stood between him and Darrow on the trodden snow, and looked from one to the other, plainly hoping not to be asked.
+
+The leader pointed down the stream.
+
+"Forty years I've been thrown out of places," said Hollis, from the tailboard. "Alehouses. A brothel in Calden. A chapel, once, which wasn't my fault. Never a wood."
+
+Rae said the ox-word to Hob from the belly, and the oxen stood.
+
+She stepped out in front of them, onto the swept snow, so that the whole column had to stop or walk over her, and looked at the leader, and said a name.
+
+"Oddny of Haskel."
+
+She said it as she had said *greth* at the cold lamp, from low down, as if it had weight. The leader's head came round. All along the column the watch went still on their skis.
+
+Then she said her own name after it, the way the clans say a name, the old woman's first and hers hung on the end of it like a bell on a cord.
+
+"Rae. Of Oddny. Of Haskel."
+
+The leader said the grandmother's name back, slowly, to be sure he had it. He said something else, short, a question; Rae answered it with one word Darrow did not know, and the leader looked at her for a long moment, at her hands on the goad and her face under the hood.
+
+Darrow had his mouth open. He had been going to say: *don't*. He had been going to say that it was hers, whatever it was, her grandmother's and her own, and not to be spent on a Vaelmark captain, a one-legged old knight, a girl with a ledger and a dog. He looked at her back, straight and still in front of the oxen, and shut his mouth.
+
+The leader spoke to the nearest of the watch. The man turned on his skis without a word and went away up the stream ice, away from the river, fast, and was gone round the bend in a hiss of snow. The leader lifted his spear and swung its point round, slowly, from the river to the forest; and the watch turned with it, all of them, and the column turned, and Rae spoke to the oxen and walked them round in the swept snow until the cart faced the other way.
+
+The spears stayed up. The watch walked closer on either side than they had last night.
+
+"Rae," said Wren, very low. "Who's Oddny?"
+
+"My gran," said Rae, and walked on.
+
+---
+
+They walked all day, under guard, up the stream and then off it, along a track through the trees that the watch could see and nobody else could. Ash went at the head with the leader and his pouch, and came back every mile or so to make sure of Darrow, and went ahead again.
+
+When the sun got up into the tops of the trees the watch pushed back their furs, and Darrow saw what had been under them. Every one of them wore a black chip at the throat on a leather thong: glassy, no bigger than a thumbnail, the same as the one turning on the cold lamp at the river. The leader had two.
+
+Wren's lips were going. "Thirteen," she said, to the back of his coat. "Fourteen, counting his second. All of them."
+
+Maelis had seen them too. Her hand had gone to her coat, flat, over the place she kept a fold of linen, and stayed there for a mile.
+
+In the afternoon the track came out into a clearing, and the watch went round it.
+
+They went round it the long way, under the trees at its edge, every one of them with their eyes on the snow in front of their skis; and the company went round behind them, because there was nothing else to do. It was as wide as a threshing floor and black at the middle where the snow lay thin and grey, scoured by the wind, and there was a ring of charred stakes round it at the height of a man's chest. Where the wind had scoured deepest Darrow saw a crust of something in the ash that caught the light, and looked again, and it was mail: rings of it, a whole sleeve of rings, fused black into one piece. There was a smell to the place even in the frost, old and greasy and close, like a tallow-house in summer.
+
+Rae did not look at it either. Wren looked once, and stopped counting anything for the rest of the afternoon.
+
+At the halt the leader came back down the column on his skis and stopped beside Darrow, and looked at his face.
+
+It went on too long: not the look for a captain with a walking stick, or for the fellow who comes with a good dog, but the look of a man matching a face to a story he has been told. Then he lifted his hand, and closed it in the air at the height of a man's collar, and pulled: once, hard, backward, toward himself.
+
+Darrow felt it in his own neck: a hand in his collar, the shallows going by the wrong way, and a voice saying *look*.
+
+The leader watched him remember it. Then he opened his hand and went back up the column to his place.
+
+---
+
+The light went early under the trees. Darrow walked at Hob's head beside Rae, and for a long while neither of them said anything.
+
+She had taken her glove off that morning to work the yoke pins and never put it back, and the hand on the goad was red to the wrist with cold. He reached over and took the goad out of it. She let him.
+
+"You didn't ask me," he said.
+
+"No."
+
+"It was your gran's name."
+
+"It was mine," said Rae. "To spend."
+
+The track went on into the dark under the trees, and somewhere ahead, a long way off, there were lamps.
+
+"What did it cost?"
+
+"Ask me when I know." She put her cold hand inside her cloak.
+
+"I'd have walked back," said Darrow.
+
+"I know," said Rae. "That's why I didn't ask."

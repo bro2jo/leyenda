@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "4",
+    "scene": "5",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-4"
+    "anchor": "chronicle/08-no-bells.html#scene-5"
   },
-  "last_seen_doing": "Got down and read the knee on the tailboard in front of the watch after the run.",
-  "now": "By the watch's fire inside the lamp line.",
+  "last_seen_doing": "Saw the black chips at the watch's throats and kept her hand flat over the linen in her coat for a mile.",
+  "now": "Walking with the cart under guard.",
   "story_so_far": "Maelis set her price for his two nights west and kept the frost-held woman's wrist against her own skin every night until it came back whole. She made him sit on the cart-tail and looked at his foot before he spoke to anyone. At the ring, when he said the Grace was taken at the ford, she said yes, and held his frozen hands inside her coat.",
   "quote": {
     "text": "The slow way, Captain. Every time. Or I'll have Wren count your steps and read me the number at every bell.",
@@ -1179,6 +1179,10 @@
     {
       "chapter": "08",
       "scene": "4"
+    },
+    {
+      "chapter": "08",
+      "scene": "5"
     }
   ]
 }

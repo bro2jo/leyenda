@@ -37,11 +37,19 @@
         "2026-11-25"
       ],
       "written": "2026-11-26"
+    },
+    {
+      "scene": 5,
+      "title": "Oddny of Haskel",
+      "covers": [
+        "2026-11-26"
+      ],
+      "written": "2026-11-27"
     }
   ],
   "location": {
     "place": "the-thornwild",
-    "detail": "inside the clans' lamp line across the frozen stream, by the watch's fire",
+    "detail": "on a forest track toward the clans' holdfast at dusk, under the watch's guard, with lamps ahead",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "deep winter at the Wend: snow over the river ice, and old forest beyond it",
@@ -51,7 +59,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "A watch he cannot see, and a door he has wronged without knowing it.",
-  "last_beat": "The watch's leader ruled that the dog may stay and the Vaelmark walk back to the river at first light; asked if that meant all of them, Rae said: \"He said the Vaelmark. That's us.\"",
+  "last_beat": "Walking at Hob's head with her goad in his hand, he told Rae he would have walked back; she said, \"I know. That's why I didn't ask.\"",
   "companions": {
     "maelis": {
       "approval": 52,
@@ -293,8 +301,7 @@
     "a drover's coat, brown wool, caped at the shoulders, the fork-hole in the cape mended and a fresh cut across the cape at the shoulder",
     "the borrowed stick, used on the Steps and kept",
     "Elinor's letter, from the miller, opened, inside his coat",
-    "Aldric's last letter, the small sheet (*Answer me, or I will come myself*), inside his coat",
-    "a lit lamp off Rae's cord, in his right hand"
+    "Aldric's last letter, the small sheet (*Answer me, or I will come myself*), inside his coat"
   ],
   "keepsakes": [
     {

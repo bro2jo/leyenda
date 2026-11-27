@@ -34,12 +34,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "4",
+    "scene": "5",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-4"
+    "anchor": "chronicle/08-no-bells.html#scene-5"
   },
-  "last_seen_doing": "Rode the tailboard with the lamp held out behind; told Darrow the watch now thought him simple; took the ruling as second to the dog.",
-  "now": "On the tailboard by the watch's fire inside the lamp line.",
+  "last_seen_doing": "Rode the tailboard and said he had been thrown out of many places and never a wood.",
+  "now": "On the tailboard, under guard.",
   "story_so_far": "Hollis captained the forty north while Darrow went west, and on the first night looked at last at the seal on the order he had carried since the ford. Quiet for days, he laid it on his knee at the fire and asked, sober, what the Captain saw from the water, and heard all of it with the jar in the third cart at his back. He read Aldric's last letter beside the seal, and crossed the ice to the ring on a spiked leg.",
   "quote": {
     "text": "I'm right about most things. Nobody pays me for it.",
@@ -970,6 +970,12 @@
       "chapter": "08",
       "scene": "4",
       "evidence": "\"Second to the dog,\" he said. \"I've served under worse.\""
+    },
+    {
+      "fact": "He says he has been thrown out of alehouses, a brothel in Calden and once a chapel.",
+      "chapter": "08",
+      "scene": "5",
+      "evidence": "Alehouses. A brothel in Calden. A chapel, once, which wasn't my fault."
     }
   ],
   "relationships": [
@@ -1442,6 +1448,10 @@
     {
       "chapter": "08",
       "scene": "4"
+    },
+    {
+      "chapter": "08",
+      "scene": "5"
     }
   ]
 }

@@ -4,9 +4,9 @@
     "book": 3,
     "chapter": 8,
     "beat": "b3.1",
-    "next_scene": 5,
+    "next_scene": 6,
     "stage": "scene",
-    "last_written": "ch08:s4",
+    "last_written": "ch08:s5",
     "rank_on_page": "Tempered"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -110,8 +110,8 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch08:s5"
       },
       {
         "n": 6,
@@ -143,7 +143,7 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       },
       {
@@ -363,8 +363,8 @@
       "why": "Book II closed before it ran"
     },
     "q3.hunt": {
-      "status": "available",
-      "stage": 0,
+      "status": "live",
+      "stage": 1,
       "priority": "optional"
     },
     "q3.hearing": {
@@ -608,7 +608,7 @@
   },
   "tallies": {
     "chased": 2,
-    "held": 11
+    "held": 12
   },
   "tallies_log": [
     {
@@ -712,6 +712,14 @@
       "name": "held",
       "delta": 1,
       "why": "08:s4 opening: dropped back to run at the cart's tail beside Hollis instead of running on for the lamps",
+      "book": 3,
+      "chapter": 8
+    },
+    {
+      "date": "2026-11-27",
+      "name": "held",
+      "delta": 1,
+      "why": "08:s5: let Rae spend her grandmother's name for the company and shut his mouth, rather than refuse to be carried",
       "book": 3,
       "chapter": 8
     }

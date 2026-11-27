@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "4",
+    "scene": "5",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-4"
+    "anchor": "chronicle/08-no-bells.html#scene-5"
   },
-  "last_seen_doing": "Dropped back to run at the cart's tail beside Hollis; laughed back out loud when the watch laughed at his running; tried to make their leader hear him in plain Vaelish, was heard out, and was sent back to the river.",
-  "now": "Inside the clans' lamp line at nightfall, let in by nobody, to walk back down the stream to the river at first light.",
+  "last_seen_doing": "Asked Rae to have the watch take her in alone and send the rest back; let her spend her grandmother's name without stopping her; saw the chips at every throat and the burned clearing; was looked at too long by the leader; carried Rae's goad at dusk.",
+  "now": "Under the watch's guard on a forest track at dusk, beside Rae at Hob's head with her goad in his hand, with the lamps of a holdfast ahead.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2536,6 +2536,18 @@
       "evidence": "So he said it himself."
     },
     {
+      "fact": "He asked Rae to have the watch take her in alone and send the rest of them back to the river.",
+      "chapter": "08",
+      "scene": "5",
+      "evidence": "Ask him to take you in, you and the cart, and send the rest of us down to the river."
+    },
+    {
+      "fact": "The watch's leader looked at him a long time, then closed a hand in the air at the height of a man's collar and pulled, and Darrow remembered being hauled out of the ford.",
+      "chapter": "08",
+      "scene": "5",
+      "evidence": "closed it in the air at the height of a man's collar, and pulled"
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3214,6 +3226,10 @@
     {
       "chapter": "08",
       "scene": "4"
+    },
+    {
+      "chapter": "08",
+      "scene": "5"
     },
     {
       "chapter": "tale01",

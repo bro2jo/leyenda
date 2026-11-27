@@ -72,6 +72,13 @@
           "sources": [
             "ch04:between-4"
           ]
+        },
+        {
+          "name": "Oddny of Haskel",
+          "text": "Rae Thorne's grandmother, Thornwild-born, who came over the Wend behind a Lowmarch drover; Rae named herself to the clans' watch as hers, in the clans' way: Rae, of Oddny, of Haskel (Ch 8 Sc 5).",
+          "sources": [
+            "ch08:s5"
+          ]
         }
       ],
       "intro": ""
@@ -689,6 +696,20 @@
           "text": "A dozen of the clans on skis, furred to the eyes, with a torch in one hand and a long spear in the other; at night they set a line of lamps across the frozen stream and hold it, spears turned outward, until the trees are quiet. Their leader carries the horn (Ch 8 Sc 4).",
           "sources": [
             "ch08:s4"
+          ]
+        },
+        {
+          "name": "The chips at the throat",
+          "text": "Every one of the clans' watch wears a black glassy chip no bigger than a thumbnail on a thong at the throat, like the one on the cold lamp at the river; their leader wears two (Ch 8 Sc 5).",
+          "sources": [
+            "ch08:s5"
+          ]
+        },
+        {
+          "name": "The burned clearing",
+          "text": "A clearing in the Thornwild as wide as a threshing floor, black at the middle and ringed with charred stakes, with a sleeve of mail fused in the ash and a greasy smell the frost has not got out; the watch go round it the long way with their eyes down (Ch 8 Sc 5).",
+          "sources": [
+            "ch08:s5"
           ]
         }
       ],

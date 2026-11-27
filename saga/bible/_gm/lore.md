@@ -250,7 +250,7 @@ Saltreach is a sea-town in a fog that never quite lifts, and in the fog is the L
 # The Thornwild
 
 ## folk.clans — The clans
-- **tier:** common · **spoken:** Prologue I · **names:** Corrach, Haskel, Nine Rivers, Morna, Teague
+- **tier:** common · **spoken:** Prologue I; ch08:s5 · **names:** Corrach, Haskel, Nine Rivers, Morna, Teague
 - **use:** a Lowmarch slur; a clan custom done plainly.
 
 Named for rivers and holdfasts and called by given name and clan, Morna of this and Teague of that. Boar spears and long knives; carts and dogs; a lamp at every door; no kneeling to anything. They raid across the fords when the lowland granaries are full and the Lowmarch calls it a war. What the Lowmarch knows of them is red hands, witch-light and the ford-songs, and what the clans know of the Lowmarch is the Lances. ⟪gm: the red hands are those who have stood at the water against the Tide (T4). Clans: Corrach, Haskel, the Nine Rivers. The red-handed woman is unnamed until b3.2.⟫

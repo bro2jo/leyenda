@@ -12,6 +12,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **Brother Anselm** — The House's almoner: a soft, tired lay brother in his forties with ink on two fingers, who keeps the stores and takes the letters down to the carter each week. Before the snow a clerk in grey at the winch-house gave him two wrapped things and called them a mercy for the wounded, with his sister's letter under his hand; he set one under the row by the wine stair and could not set the other. Hollis brought him to the Captain at dawn (Ch 4 Sc 1).
 - **Mirren** — Brother Anselm's sister, the brave one of the two by his account: she went to the Spire at Calden to ask what had become of the brothers' letters from Coldmere, asked the wrong man before the wrong people, and is kept at Calden, comfortably, a clerk said twice. Her letters to her brother come up the cage in the clerk's hand with her private mark under them (Ch 4 Sc 1).
 - **Brother Cobb** — The House's farrier: a lay brother, short and wide, who shoes nothing and makes everything else at the forge under the cloister wall, from the cage's pins to the bell clappers to Hollis's beech leg. He held the branding iron at the fairs for twenty years before the mountain and keeps the lance brands chalked by his door. He has never been bitten by anything in his life; the half-ring of marks on his right hand is a burn (Ch 4 Between).
+- **Oddny of Haskel** — Rae Thorne's grandmother, Thornwild-born, who came over the Wend behind a Lowmarch drover; Rae named herself to the clans' watch as hers, in the clans' way: Rae, of Oddny, of Haskel (Ch 8 Sc 5).
 
 ## Places and things
 - **Field-stones** — slabs of black Oathstone in iron frames, one per lance, hauled on ox-carts; knights kneel and touch them before battle to be filled with Grace (Prologue).
@@ -101,6 +102,8 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The watch's horn** — Two notes, the second lower and longer, sounded at dusk from up the frozen stream in the Thornwild where the clans' lamps came down across the ice. Not a bell (Ch 8 Sc 3).
 - **Corr** — The clans' word for the heron, and so for a watcher: what the watch at the lamp line called Ash, with a hand on her head, after she turned to the trees before anyone (Ch 8 Sc 4).
 - **The watch at the lamp line** — A dozen of the clans on skis, furred to the eyes, with a torch in one hand and a long spear in the other; at night they set a line of lamps across the frozen stream and hold it, spears turned outward, until the trees are quiet. Their leader carries the horn (Ch 8 Sc 4).
+- **The chips at the throat** — Every one of the clans' watch wears a black glassy chip no bigger than a thumbnail on a thong at the throat, like the one on the cold lamp at the river; their leader wears two (Ch 8 Sc 5).
+- **The burned clearing** — A clearing in the Thornwild as wide as a threshing floor, black at the middle and ringed with charred stakes, with a sleeve of mail fused in the ash and a greasy smell the frost has not got out; the watch go round it the long way with their eyes down (Ch 8 Sc 5).
 
 ## Songs and verses
 
