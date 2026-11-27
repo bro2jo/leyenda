@@ -124,7 +124,7 @@ The tales (design.md §12): the past, told a piece at a time, paid for by the wo
 
 `if` grammar (ledger rules):
   operators  && || ! ( )  >= <= > < == !=   numbers  "strings"  true false
-  terms      approval.<id>  bearing.<pole>  flags.<name>  route.bookN  factions.<id>  tether.stage
+  terms      approval.<id>  bearing.<pole>  flags.<name>  route.bookN  factions.<id>  tether.stage  water.stage
              temptation.count  quests.<id>.status
   bearing.<pole> reads the axis value if the pole is the axis's right word, negated if left.
   Missing or null terms read as 0/false; comparisons between unlike types are false.
@@ -703,7 +703,7 @@ def pending_items(ledger):
 RULE_NODES = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.USub, ast.Compare,
               ast.Attribute, ast.Name, ast.Constant, ast.Load,
               ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Eq, ast.NotEq)
-KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "beats", "present", "place", "tally")
+KNOWN_ROOTS = ("approval", "bearing", "flags", "route", "factions", "temptation", "quests", "tether", "water", "beats", "present", "place", "tally")
 _CHAR_IDS = None
 
 
@@ -712,6 +712,25 @@ def char_ids():
     if _CHAR_IDS is None:
         _CHAR_IDS = set(R.char_files())
     return _CHAR_IDS
+
+
+def water_stage():
+    """The Water's stage from the engine's sheet (darrow.py owns it, from the Ledger's ladder; saga.py only reads it).
+    0 before its first stage, or while there is no such ladder."""
+    try:
+        w = load_json(P["sheet"]).get("water") or {}
+        return int(w.get("stage") or 0)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return 0
+
+
+def ladder_stage(q):
+    """The sheet's stage for a standing quest: the ladder it climbs by (`quests[id].ladder`: tether, the default, or water)."""
+    return water_stage() if (q or {}).get("ladder") == "water" else tether_stage()
+
+
+def ladder_name(q):
+    return "Water" if (q or {}).get("ladder") == "water" else "Tether"
 
 
 def tether_stage():
@@ -803,6 +822,8 @@ def term_lookup(parts, st):
         return qid in q, (q.get(qid, {}).get("status") or "")
     if root == "tether" and parts[1:] == ["stage"]:
         return True, tether_stage()
+    if root == "water" and parts[1:] == ["stage"]:
+        return True, water_stage()
     if root == "beats" and len(parts) == 3 and parts[-1] == "status":  # beats.b1_1.status (the beat id with its dot written as an underscore)
         bid = parts[1].replace("_", ".", 1)
         b = plan.get("core_beats", {})
@@ -967,7 +988,7 @@ def road_line(st):
 
 # ---------------------------------------------------------------- arc sections
 HEAD_RE = re.compile(r"^(#{1,4})\s+(.*?)\s*$")
-ID_RE = re.compile(r"^(b\d+\.\d+|q\d+\.[a-z0-9_]+|t\d+(\.(high|main|low))?|book\d+\.(?:question|tone)|rae\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
+ID_RE = re.compile(r"^(b\d+\.\d+|q\d+\.[a-z0-9_]+|t\d+(\.(high|main|low))?|book\d+\.(?:question|tone)|rae\.[a-z0-9_]+|darrow\.[a-z0-9_]+|pacing|truths|motifs|beliefs|temptation|flags)\b")
 
 
 def arc_sections():
@@ -1382,10 +1403,11 @@ def known_place_ids():
 
 
 def art_names():
-    """{art id: name} from engine/rules.json, the knightly Arts and the sport Arts alike."""
+    """{art id: name} from engine/rules.json: the knightly Arts, the sport Arts and the Water's alike."""
     rules = load_json(ROOT / "engine/rules.json")
     out = {a["id"]: a["name"] for a in rules.get("arts", [])}
     out.update({a["id"]: a["name"] for a in (rules.get("sport_arts") or {}).get("arts", [])})
+    out.update({a["id"]: a["name"] for a in (rules.get("swim_arts") or {}).get("arts", [])})
     return out
 
 
@@ -3558,7 +3580,7 @@ def registered_names():
             pass
     try:
         rules = json.loads(P["rules"].read_text(encoding="utf-8"))
-        for a in rules.get("arts", []) + rules.get("sport_arts", {}).get("arts", []):
+        for a in rules.get("arts", []) + rules.get("sport_arts", {}).get("arts", []) + rules.get("swim_arts", {}).get("arts", []):
             add(a.get("name")); add(a.get("tree"))
         for k in rules.get("knots", []):
             add(k.get("name"))
@@ -3568,6 +3590,9 @@ def registered_names():
             add(t.get("name"))
         for nm in rules.get("tether", {}).get("names", []):
             add(nm)
+        add(rules.get("water", {}).get("name"))
+        for st_ in rules.get("water", {}).get("stages", []):
+            add(st_.get("name"))
     except (OSError, ValueError):
         pass
     try:
@@ -4277,10 +4302,12 @@ def cmd_check(args):
             probs.append(f"slot {n} quest {s.get('quest')!r} not in quests")
         if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("standing") and s.get("status") in ("planned", "next"):
             need = int(s.get("stage") or 0)
-            have = tether_stage()
+            q_std = plan.get("quests", {}).get(s.get("quest"), {})
+            have = ladder_stage(q_std)
             if need > have:
-                probs.append(f"slot {n} plans {s.get('quest')} stage {need}, but the engine's Tether stands at {have}; a stage is written only once the Ledger has unlocked it")
-        if s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("standing") and s.get("status") in ("planned", "next"):
+                probs.append(f"slot {n} plans {s.get('quest')} stage {need}, but the engine's {ladder_name(q_std)} stands at {have}; a stage is written only once the Ledger has unlocked it")
+        if (s.get("kind") == "quest" and plan.get("quests", {}).get(s.get("quest"), {}).get("standing") and s.get("status") in ("planned", "next")
+                and plan.get("quests", {}).get(s.get("quest"), {}).get("ladder", "tether") == "tether"):
             with_ = "rae-thorne"
             her_place = character_place(with_)[0]
             if her_place and world.get("location", {}).get("place") and her_place != world["location"]["place"]:
@@ -4863,6 +4890,22 @@ def person_brief(cid, c, world, cast, thr_rows=None, facts_n=2, others=None, dep
     return lines
 
 
+def water_line(rules):
+    """What the page may let him do in water (rules.json -> water: `before` until the first stage, then the stage's
+    `allows`), once the sheet carries the ladder at all. It limits his skill, never the plot."""
+    try:
+        w = load_json(P["sheet"]).get("water")
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+    spec = rules.get("water") or {}
+    if w is None or not spec:
+        return None
+    stage = int(w.get("stage") or 0)
+    st_ = next((x for x in spec.get("stages", []) if int(x.get("n", 0)) == stage), None)
+    line = st_.get("allows") if st_ else spec.get("before")
+    return (f"the Water {ROMAN[stage]}: " if stage else "") + line + " (his skill, never the plot: deeper water is danger to him)" if line else None
+
+
 def knee_line(rules):
     try:
         sheet = load_json(P["sheet"])
@@ -5265,6 +5308,9 @@ def cmd_brief(args):
     ep = epithet_pending_line(bearing)
     if ep:
         L.append(ep + (" · THIS block is one: give it here, in someone's mouth" if mode in ("climax", "choice") else " · not in this block: a scene never gives the name"))
+    if mode == "slot" and slot.get("kind") == "quest" and (plan.get("quests", {}).get(str(slot.get("quest"))) or {}).get("ladder") == "water":
+        w = sheet.get("water") or {}
+        L.append(f"THE WATER stage {w.get('stage')} ({w.get('name')}): this scene pays stage {slot.get('stage')}; its box ends `> The Water: **<the stage's name>**.` (rules.json → water.stages); the first of them is the only place the page explains it")
     if mode == "slot" and slot.get("kind") == "quest" and str(slot.get("quest")) == "rae.tether":
         t = sheet.get("tether") or {}
         L.append(f"THE TETHER stage {t.get('stage')} ({t.get('name')}): this scene pays it; its box ends `> The Tether: **{t.get('name')}**.`; record \"tether\": \"{t.get('name')}\"")
@@ -5285,6 +5331,9 @@ def cmd_brief(args):
     if world.get("season"):
         L.append(f"season: {world['season']}")
     kl2 = knee_line(rules)
+    wl = water_line(rules)
+    if wl:
+        L.append(f"the water, on the page: {wl}")
     if kl2:
         L.append(f"the knee, on the page: {kl2}")
         if plan.get("tallies"):
@@ -5441,6 +5490,10 @@ def brief_chapter(st, L, args):
     rt = quests.get("rae.tether") or {}
     if int(t.get("stage") or 0) > int(rt.get("stage") or 0):
         L.append(f"THE TETHER: the sheet stands at stage {t.get('stage')} ({t.get('name')}) and the page at {rt.get('stage') or 0}: a quest slot carries stage {int(rt.get('stage') or 0) + 1} (the template puts it in slot 3)")
+    for wq, wv in quests.items():
+        if wv.get("standing") and wv.get("ladder") == "water" and water_stage() > int(wv.get("stage") or 0):
+            L.append(f"THE WATER: the sheet stands at stage {water_stage()} and the page at {wv.get('stage') or 0}: a quest slot carries {wq} stage {int(wv.get('stage') or 0) + 1} "
+                     f"(`saga.py plan slot N kind=quest quest={wq} stage={int(wv.get('stage') or 0) + 1} float=true`; `saga.py arc {wq}`)")
     L.append("the climax choice carries two scenes into this chapter if unanswered, then its default; slot 1 may be written while it is open")
     oc = plan.get("open_choice")
     if oc:

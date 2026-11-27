@@ -33,6 +33,7 @@ ARTS · Stillwater Stance II · The Mender's Patience I · Warden's Eye I
 | **HP** | how much punishment he can take in a fight | level and Vigor |
 | **The Knight Who Fell** | the faint shadow of who he was at Harrow Ford | fixed benchmarks; passing each one is a story moment |
 | **The Tether** | a second thread, read on his palms beside the first, drawn to Rae Thorne, the carter; five stages the page names one by one | days logged as time together on purpose (`daily_log.csv → together`); the stage only climbs, and a corrected day never takes one back |
+| **The Water** | what he can do where there is no floor under him; four stages the page names one by one (*the shallows · the crossing · the deep · the leap*) | the swim program's milestones (`real/swim.json`, `darrow.py swim`): a stage is reached when every milestone of it and of the stages before it is done; each stage brings 1 Inspiration and one scene |
 | **Works** | what he has finished with his hands outside the fight: a count on the sheet, and the tales it buys (the past, a piece at a time), each ending in a keepsake on someone's page | real goals outside the knee (`real/projects.json`, `darrow.py project`): a task reported pays a piece of a tale; a finished project counts as a work and brings 1 Inspiration; finished in the week it was planned (or by the day he set for it), the tale ends on its full keepsake, after it on the lesser one; a work set aside leaves its tale resting until a later work finishes it, and one set aside after its day still ends on the lesser; no XP, no temper |
 
 **Attribute growth:** each attribute = base + ⌊√(temper ÷ divisor)⌋. Growth is fast early and slower later, the way real strength returns.
@@ -89,6 +90,12 @@ Arts are earned by **practice**: the number of separate days a matching kind of 
 | **Tell-Reading** | Insight | film and study of defense | now |
 | **The Far Cast** | Cast | long throws | now |
 | **The Shadow-Step** | Footing | defensive footwork | Knot III |
+| **The Quiet Under** | Water | going under and breathing out (the pool, and the home routine) | its own first |
+| **Otter's Rest** | Water | floating, and back to standing | its own first |
+| **The Skyward Turn** | Water | rolling from front to back | its own first |
+| **Bank to Bank** | Water | swimming a distance | its own first |
+| **Swan's Feet** | Water | staying up without the floor | its own first |
+| **Kingfisher's Fall** | Water | deep-water entries | its own first, and Knot V |
 
 In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks, ways out of trouble. Use them. An Art at rank III should visibly change how a scene plays out.
 
@@ -103,6 +110,16 @@ In story, Arts are things Darrow can *do*: options in a fight, bonuses on checks
 ## The Tether
 
 A second thread, read on his palms beside the first. The real side drives it the way it drives Ember: the days logged as **time together on purpose** (`daily_log.csv → together=Y`, and nothing else about them is recorded or asked) are staged like an Art's ranks, at 1 / 4 / 10 / 20 / 35 days: *a name · a hand · a road · a door · a home*. It only climbs; a quiet month is a thread at rest, never a thread frayed. It buys no XP and no tier, and it never moves anyone's regard: Rae Thorne's approval is a story matter, moved by Darrow's choices like Maelis's or Wren's. What a stage buys is one scene: a planned moment between them, written when the stage is reached, wherever the road has them by then. The sheet shows the Tether from stage I, and the scene that pays a stage closes with its line in the Reckoning box.
+
+## The Water
+
+The swim program's ladder, read the way the Binding reads the knee: by real firsts, never by the calendar. The Ledger keeps twenty milestones in four stages (`real/swim.json`; the plan: `real/plan/swim_plan.md`); each is recorded the day it happens, with what was seen (`darrow.py swim pass`). A stage is reached when all of its milestones and all of the stages before it are done: *the shallows · the crossing · the deep · the leap*. The sheet shows the Water from stage I.
+
+- **What a first pays:** XP and a point of Resolve, on its day. **What a pool visit pays:** XP and Vigor, once a day, whatever its length. **The home routine:** a small daily award and a day of practice for the first Art. None of it is part of the chapter tier, and a week without the pool costs nothing.
+- **The Arts of the Water** rank by days of practice like every Art, but each stays sealed, its practice banked, until **its own first** is real: the Art of the crossing opens the day he first swims one. Kingfisher's Fall also waits for the Knot of Lightning.
+- **What a stage buys:** 1 Inspiration and one scene (`_gm/arc.md → darrow.water`), written when the stage is reached, wherever the road has him; its Reckoning box closes with `The Water: **<name>**.`
+- **On the page:** the brief prints what the stage lets him do in water (`rules.json → water`: `before`, then each stage's `allows`). It limits his skill, never the plot: water past what he has learned is danger to him.
+- **The real world outranks it** (golden rule 1): the master plan lists swimming "as cleared". Until the PT's word on the pool is recorded (`darrow.py swim cleared`), a pool visit and a milestone are kept in the Ledger and pay nothing, and the Water's Arts stay shut.
 
 ## The Wardrobe
 

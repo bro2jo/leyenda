@@ -1114,6 +1114,23 @@
     "stage_since": "2026-11-16",
     "stage_evidence": "Knot IV tied Mon 11/16 (PT 15: the surgeon and the PT cleared the running gate); the State rewritten Thu 11/19 opens the Phase 5 throwing (section 7); the first session back, Wed 11/18, held the Phase 4 footwork"
   },
+  "swim": {
+    "_about": "Set 11/27 with the learn-to-swim program (real/plan/swim_plan.md; his notes as written: real/plan/learn_to_swim_notes.md). skills = the only valid swim_log.csv 'skill' values; each feeds an Art of the Water (engine/rules.json -> swim_arts). home_skills = what a home-practice row may name: the home routine is breathing work, so it counts as breath and nothing else. The milestones, what is done and the PT's word on the pool: real/swim.json (`darrow.py swim`). Never in the weekly template: a pool visit is not part of the week's score.",
+    "skills": [
+      "breath",
+      "float",
+      "roll",
+      "stroke",
+      "tread",
+      "plunge"
+    ],
+    "_skills": "breath (going under, breathing out through the nose, coming up calm) · float (the back and front float, back to standing) · roll (front to back) · stroke (swimming a distance, with its breathing) · tread (staying up without the floor: sculling and the kick) · plunge (deep-water entries: feet first, the jump, the dive)",
+    "home_skills": [
+      "breath"
+    ],
+    "plan": "real/plan/swim_plan.md",
+    "notes": "real/plan/learn_to_swim_notes.md"
+  },
   "vocabulary": {
     "_about": "Allowed values of the log fields the engine scores or reads as a switch. `set`, `ex add`, `sport add` refuse anything else and `check` validates every row, so a misspelt code never silently changes XP or a tier (an unlisted word used to pay a full knee session). Case matters except where noted. Extend a list here when a new code is needed; free-text columns (notes, am_trend, am_notes, gait_notes, crutches, catch, conditioning_type, exercise, drill, metric) are not listed and not checked.",
     "daily": {
@@ -1245,6 +1262,13 @@
         "review"
       ],
       "_session": "case-insensitive: the engine reads a/b/c/film as A/B/C/FILM"
+    },
+    "swim": {
+      "session": [
+        "pool",
+        "home"
+      ],
+      "_session": "pool (a visit to the pool) or home (the daily home routine: breathing work only)"
     }
   }
 }

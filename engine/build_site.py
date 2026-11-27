@@ -733,7 +733,7 @@ SVG_DISPLAY_FONT = "Grenze Gotisch, Georgia, serif"
 
 
 def svg_tree(tree, size=22):
-    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a looped rope, an eye, a stone in flight."""
+    """A glyph per Art tree: a sword, two footprints, three breaths of wind, a looped rope, an eye, a stone in flight, a drop over a wave."""
     body = {
         "Blade": '<path d="M12 2.5 L14.2 6 L14.2 15.5 L9.8 15.5 L9.8 6 Z M6.5 15.8 L17.5 15.8 M12 16 L12 20.2"/><circle cx="12" cy="21.4" r="1.2"/>',
         "Footing": f'<g fill="{PAL["brass"]}" stroke="none"><ellipse cx="8" cy="13.2" rx="2.9" ry="3.6"/><ellipse cx="8" cy="19.6" rx="2.1" ry="1.9"/><ellipse cx="16" cy="5.7" rx="2.9" ry="3.6"/><ellipse cx="16" cy="12.1" rx="2.1" ry="1.9"/></g>',
@@ -741,6 +741,7 @@ def svg_tree(tree, size=22):
         "Binding": '<path d="M2 17 C6.5 17 7.5 5 12.5 5 C18.5 5 18.5 13.5 12.5 13.5 C8 13.5 9 17 22 17"/>',
         "Insight": '<path d="M3 12 C8 5 16 5 21 12 C16 19 8 19 3 12 Z"/><circle cx="12" cy="12" r="3"/>',
         "Cast": '<path d="M3 20.5 Q6.5 9.5 13 8.2" stroke-dasharray="2 2.6"/><circle cx="17" cy="8" r="3.4"/>',
+        "Water": '<path d="M12 2.8 C9.4 6.6 8 8.8 8 10.9 a4 4 0 0 0 8 0 C16 8.8 14.6 6.6 12 2.8 Z M3 19.6 q3 -2.8 6 0 t6 0 t6 0"/>',
     }.get(tree, '<circle cx="12" cy="12" r="7"/>')
     return (f'<svg class="tg" viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="{PAL["brass"]}" stroke-width="1.8" '
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
@@ -3033,7 +3034,7 @@ class Site:
                          f'{bar(have, need, k.capitalize() + " temper", "temper")}{cap}</div>')
             numbers.append(f'{k.capitalize()}: temper {x["temper"]} · next at {x["next_at"]}' + (f' · held at {x["cap"]}' if x.get("banked") else ""))
         wear = self.wearing_strip(rel)
-        chips = (f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}'
+        chips = (f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}{self.tether_chip()}{self.water_chip()}'
                  f'{self.works_chip()}{"" if wear else self.wardrobe_chip(rel)}{self.collection_chip(rel)}</div>')
         stats = (chips + f'<div class="streaks">{"".join(tiles)}</div><p class="hint">The small number on each is who he was: the Knight Who Fell.</p>'
                  + ask("The numbers", numbers))
@@ -3067,7 +3068,7 @@ class Site:
         trees = defaultdict(list)
         for art in d["arts"]:
             trees[art["tree"]].append(art)
-        order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Cast"]
+        order = ["Blade", "Footing", "Breath", "Binding", "Insight", "Cast", "Water"]
         thresholds = list(rules.get("art_ranks") or [1, 6, 15, 30, 50])
         n_pips = len(thresholds)
         # past rank V an Art turns into a new tier and climbs again (rules.json → art_tiers): the card keeps rank V's frame,
@@ -3078,12 +3079,14 @@ class Site:
         for tree in [x for x in order if x in trees] + sorted(x for x in trees if x not in order):
             rows = []
             for art in trees[tree]:
-                sealed = art.get("sealed_until_knot")
+                # shut by a Knot not yet tied, or (an Art of the Water) by its own first, not yet done
+                sealed = art.get("sealed_until_knot") or ("water" if art.get("sealed_by_water") else None)
                 rank = art["rank"] if not sealed else art.get("banked_rank", 0)
                 n_sealed += bool(sealed)
                 n_learned += bool(not sealed and art["rank"] > 0)
                 if sealed:
-                    st = f'<span class="sealed-line">sealed until Knot {roman(sealed)}</span>'
+                    st = ('<span class="sealed-line">sealed until the water opens it</span>' if sealed == "water"
+                          else f'<span class="sealed-line">sealed until Knot {roman(sealed)}</span>')
                     numbers.append(f'{esc(art["name"])}: {art["practice"]} day{"" if art["practice"] == 1 else "s"} banked' if art["practice"] else "")
                 elif art["rank"] > 0 and (art.get("tier") or 1) > 1 and art.get("tier_name"):
                     st = f'<span class="brass">{esc(art["tier_name"])} · rank {roman(art.get("tier_rank") or 1)}</span>'
@@ -3149,6 +3152,13 @@ class Site:
         if not t.get("stage"):
             return ""
         return chip(f"The Tether {roman(t['stage'])} of {roman(t.get('of', 5))} · {t.get('name', '')}", "ember")
+
+    def water_chip(self):
+        """The Water, once its first stage is reached: the stage and the page's word for it. Nothing before stage I."""
+        w = self.darrow.get("water") or {}
+        if not w.get("stage"):
+            return ""
+        return chip(f"The Water {roman(w['stage'])} of {roman(w.get('of', 4))} · {w.get('name', '')}", "blue")
 
     def tether_thread(self, line=True):
         """The Tether as the finer thread under the rope, once tied: its stages, the reached ones named (rules.json →
@@ -3238,7 +3248,7 @@ class Site:
         if not WARDROBE.exists():
             return
         w, where = load_json(WARDROBE), "engine/wardrobe.json"
-        arts = {a["id"]: a["name"] for a in self.rules["arts"] + self.rules.get("sport_arts", {}).get("arts", [])}
+        arts = {a["id"]: a["name"] for a in self.rules["arts"] + self.rules.get("sport_arts", {}).get("arts", []) + self.rules.get("swim_arts", {}).get("arts", [])}
         on_page = {f'{c["code"]}:{sc["key"]}': (f'{c["label"]} · {sc["label"]} — {sc["title"]}' if sc["label"] else f'{c["label"]} — {sc["title"]}',
                                                  f'{self.page_dir(c)}{c["slug"]}.html#{sc["anchor"]}') for c in self.chapters + self.tales for sc in c["scenes"]}
         knots = {k["n"]: k["name"] for k in self.rules.get("knots") or []}
@@ -3904,7 +3914,7 @@ class Site:
         rk = "".join(f'<div class="mini-attr{" hot" if a[k]["score"] >= a[k]["fell"] else ""}">{medallion(k.capitalize(), a[k]["score"], a[k]["mod"], a[k]["fell"], 56)}'
                      f'<span class="lbl">{k.capitalize()}</span></div>'
                      for k in ("might", "vigor", "finesse", "resolve"))
-        bchip = (self.bearing_chip() or "") + self.tether_chip() + self.works_chip()
+        bchip = (self.bearing_chip() or "") + self.tether_chip() + self.water_chip() + self.works_chip()
         nk = self.next_knot()
         card = (f'<div class="rk-mini"><div class="hero{self.metal(d["level"])}">{self.avatar(self.chars.get("darrow"), rel, 86, "big") or crest(d["level"])}<div class="who"><h3>{esc(d["name"])}</h3><p class="sub">Level {d["level"]} · {esc(d["rank"])}</p>'
                 f'<div class="chips">{chip_glyph("hp", "HP " + str(d["hp_max"]))}{chip_glyph("prof", "Proficiency +" + str(d["proficiency"]))}</div>'
@@ -4327,7 +4337,8 @@ def run_checks(site, out_dir):
     # 2. GM sentences and unrevealed names
     chron_text = "\n".join(read(p) for p in sorted(CHRON.glob("*.md")) + (sorted(TALES.glob("*.md")) if TALES.exists() else []))
     allowed = set()
-    all_arts = site.rules.get("arts", []) + site.rules.get("sport_arts", {}).get("arts", [])  # sport Arts are game rules too
+    all_arts = (site.rules.get("arts", []) + site.rules.get("sport_arts", {}).get("arts", [])  # sport Arts are game rules too,
+                + site.rules.get("swim_arts", {}).get("arts", []))                               # and the Water's
     for a in all_arts:
         allowed.update(re.findall(r"[A-Za-z']+", a["name"] + " " + a["tree"]))
     for k in site.rules.get("knots", []):
@@ -4339,6 +4350,9 @@ def run_checks(site, out_dir):
     for nm in (site.rules.get("tether") or {}).get("names", []):  # the Tether's stage words are game rules too
         allowed.update(re.findall(r"[A-Za-z']+", nm))
     allowed.add("Tether")
+    for st_ in (site.rules.get("water") or {}).get("stages", []):  # and the Water's
+        allowed.update(re.findall(r"[A-Za-z']+", st_.get("name", "")))
+    allowed.add("Water")
     for p in site.places:
         allowed.update(re.findall(r"[A-Za-z']+", p["name"] + " " + p.get("subtitle", "")))
     for f in site.factions.values():
@@ -4355,6 +4369,7 @@ def run_checks(site, out_dir):
     for t in site.rules["ember"]["tiers"]:
         allowed_text += [str(t.get("name", "")), str(t.get("effect", ""))]
     allowed_text += [str(nm) for nm in (site.rules.get("tether") or {}).get("names", [])]
+    allowed_text += [str(st_.get("name", "")) for st_ in (site.rules.get("water") or {}).get("stages", [])]
     if site.bearing:
         # only what the Bearing renders: the section's own label, the pole words always, the current epithet
         # (load_bearing has already required it to be on the page). The names table is never allow-listed:

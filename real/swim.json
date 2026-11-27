@@ -1,0 +1,151 @@
+{
+  "_about": "The learn-to-swim program's ladder (plan: real/plan/swim_plan.md; his notes as written: real/plan/learn_to_swim_notes.md). Four stages, twenty milestones, each in his tracker's own words. `judged` is how one is called done (proposed 11/27 from the notes' own targets and the Red Cross water-competency sequence; his or an instructor's to change). `done` is null until it happens, then {date, evidence, witness}: the day, what was seen (the seconds, the yards, the water's depth), who watched. `cleared` is the PT's word on the pool ({date, evidence}; the master plan lists swimming 'as cleared'): until it is recorded, what is logged in the pool is kept and pays nothing. Written only by `darrow.py swim pass|clear|cleared`; never by hand. Nothing here is a deadline.",
+  "starts": "2026-12-01",
+  "cleared": null,
+  "stages": [
+    {
+      "n": 1,
+      "title": "Underwater confidence",
+      "milestones": [
+        {
+          "id": "no_pinch",
+          "title": "Submerge my head without pinching my nose",
+          "judged": "head fully under in standing-depth water with both hands off the nose, three times in one visit",
+          "done": null
+        },
+        {
+          "id": "nose_exhale",
+          "title": "Exhale gently through my nose underwater",
+          "judged": "a slow, steady stream of bubbles through the nose for about five seconds, three times in one visit (no forceful humming)",
+          "done": null
+        },
+        {
+          "id": "calm_surface",
+          "title": "Resurface calmly",
+          "judged": "up from a full submersion with no gasp, no grab for the wall and no rush to wipe the face, three times in one visit",
+          "done": null
+        },
+        {
+          "id": "ears_under",
+          "title": "Feel comfortable with my ears underwater",
+          "judged": "ears under for about 30 seconds while breathing normally (a supported back float counts), and his own word that it felt fine",
+          "done": null
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Floating and swimming",
+      "milestones": [
+        {
+          "id": "float_assisted",
+          "title": "Float on my back with assistance",
+          "judged": "a back float held about 15 seconds with a hand under the shoulders, ears in the water",
+          "done": null
+        },
+        {
+          "id": "float_alone",
+          "title": "Float independently",
+          "judged": "a back float held about 15 seconds with no one touching him; a small kick or scull to keep the legs up counts (lean legs sink)",
+          "done": null
+        },
+        {
+          "id": "float_to_stand",
+          "title": "Recover from floating to standing",
+          "judged": "from a back float and from a front float, feet back under him and standing with no help, three times each",
+          "done": null
+        },
+        {
+          "id": "roll_over",
+          "title": "Roll from front to back",
+          "judged": "from a front float or glide, roll onto the back and breathe without touching the bottom, three times, unassisted",
+          "done": null
+        },
+        {
+          "id": "swim_10",
+          "title": "Swim 10 yards continuously",
+          "judged": "10 yards by any stroke without touching the bottom or the wall, in standing-depth water",
+          "done": null
+        },
+        {
+          "id": "swim_25",
+          "title": "Swim 25 yards continuously",
+          "judged": "one 25-yard length by any stroke without touching the bottom or the wall",
+          "done": null
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Deep-water readiness",
+      "milestones": [
+        {
+          "id": "tread_30",
+          "title": "Tread water for 30 seconds",
+          "judged": "head above the surface for 30 seconds with nothing touching the bottom or the wall (in standing depth with the feet up, or deep and supervised)",
+          "done": null
+        },
+        {
+          "id": "afloat_60",
+          "title": "Float or tread water for 1 minute",
+          "judged": "one minute afloat by floating, treading or both, nothing touching",
+          "done": null
+        },
+        {
+          "id": "afloat_120",
+          "title": "Float or tread water for 2 minutes",
+          "judged": "two minutes afloat by floating, treading or both, nothing touching",
+          "done": null
+        },
+        {
+          "id": "competency",
+          "title": "Pass a supervised water competency assessment",
+          "judged": "the Red Cross sequence in one go, supervised: into water over his head and back to the surface, float or tread for one minute, turn a full circle and find the exit, swim 25 yards to it, and get out without the ladder",
+          "done": null
+        },
+        {
+          "id": "deep_confident",
+          "title": "Swim in deep water with confidence",
+          "judged": "two visits in a row swimming in water over his head, supervised, each of which he rates calm (4 or 5 of 5)",
+          "done": null
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "title": "My ultimate goal",
+      "milestones": [
+        {
+          "id": "feet_first",
+          "title": "Perform a supervised feet-first deep-water entry",
+          "judged": "a step or a jump in, feet first, where the water is over his head, supervised",
+          "done": null
+        },
+        {
+          "id": "jump_no_pinch",
+          "title": "Jump into deep water without holding my nose",
+          "judged": "a jump into deep water with both hands away from the face",
+          "done": null
+        },
+        {
+          "id": "surface_to_wall",
+          "title": "Resurface and swim to the wall calmly",
+          "judged": "after a jump: up, a breath, and an unhurried swim to the wall, three times in one visit",
+          "done": null
+        },
+        {
+          "id": "dive",
+          "title": "Perform a safe headfirst dive with an instructor",
+          "judged": "a headfirst entry taught and watched by an instructor, in a designated diving area",
+          "done": null
+        },
+        {
+          "id": "enjoy_deep",
+          "title": "Enjoy deep-water swimming",
+          "judged": "his own word, after a visit in deep water he stayed in because he wanted to",
+          "done": null
+        }
+      ]
+    }
+  ]
+}
