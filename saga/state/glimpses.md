@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-23 · body · He comes down off a fallen trunk with the pack on his back and lands on the frozen ground without a sound and without a thought. Somebody behind him whistles, low, and pretends it was at a bird.
 - 2026-11-23 · weather · All afternoon snow slides off the high branches, one soft slab at a time. Every one makes Wren look up, and not one of them is ever where she looks.
 - 2026-11-23 · overheard · Overheard on the trail: Rae asking Wren whether the ledger has a column for trees. Wren says it did, for the first hour.
 - 2026-11-23 · house · Maelis cuts the last of the hard bread into exact quarters with her knife and hands them round without asking who wants one. Everybody does.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-26 · ledger · Wren's ledger, under the night: spears, more than she could count in the dark. She has written that down too, and it annoys her.
 - 2026-11-26 · verse · Someone by the fire is humming it, half the words gone, the rest come back on their own: whose are you, whose are you, which hearth and which door?
 - 2026-11-26 · weather · Snow in the night, fine and dry, and by morning the paths between the doors are already swept and the brooms leaned back against the walls.
+- 2026-11-26 · saying · Hollis, to nobody, a Lowmarch proverb he has clearly been saving: a writ is warm for a day. Then, after a while, that this side of the water it was never warm at all.
