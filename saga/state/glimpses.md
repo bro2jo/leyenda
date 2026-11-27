@@ -21,4 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-26 · ledger · Wren's ledger, under the night: spears, more than she could count in the dark. She has written that down too, and it annoys her.
 - 2026-11-26 · verse · Someone by the fire is humming it, half the words gone, the rest come back on their own: whose are you, whose are you, which hearth and which door?
 - 2026-11-26 · weather · Snow in the night, fine and dry, and by morning the paths between the doors are already swept and the brooms leaned back against the walls.
-- 2026-11-26 · saying · Hollis, to nobody, a Lowmarch proverb he has clearly been saving: a writ is warm for a day. Then, after a while, that this side of the water it was never warm at all.
+- 2026-11-26 · saying · An old Lowmarch saying, and it keeps coming to mind on this side of the water: a writ is warm for a day.
