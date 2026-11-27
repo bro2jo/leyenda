@@ -1,10 +1,10 @@
 {
-  "asof": "2026-11-26",
+  "asof": "2026-11-27",
   "name": "Ser Darrow of Edgemoor",
   "level": 10,
   "rank": "Tempered",
   "level_reached": "2026-11-23",
-  "xp": 4743,
+  "xp": 4793,
   "xp_this_level": 4500,
   "xp_next_level": 5500,
   "proficiency": 4,
@@ -45,14 +45,14 @@
       "raw": 12,
       "cap": null,
       "mod": 1,
-      "temper": 67,
+      "temper": 68,
       "next_at": 100,
       "fell": 12,
       "banked": false
     }
   },
   "ember": {
-    "value": 91,
+    "value": 94,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
@@ -163,7 +163,7 @@
       "tree": "Binding",
       "rank": 4,
       "banked_rank": 0,
-      "practice": 46,
+      "practice": 47,
       "next_at": 50,
       "sealed_until_knot": null,
       "effect": "+Rank to Resolve checks against fear, haste and temptation.",
@@ -181,7 +181,7 @@
       "tree": "Insight",
       "rank": 5,
       "banked_rank": 0,
-      "practice": 53,
+      "practice": 54,
       "next_at": 70,
       "sealed_until_knot": null,
       "effect": "Read a weakness or a lie; +Rank to Insight.",
@@ -199,7 +199,7 @@
       "tree": "Insight",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 6,
+      "practice": 7,
       "next_at": 15,
       "sealed_until_knot": null,
       "effect": "Once a chapter, sleep on an open choice and wake knowing which road hides the most. Rank III: one true thing about that road. Rank V: about the road he names. +Rank to one read of a person or a lie when the counsel comes.",
@@ -529,7 +529,7 @@
   },
   "chapter_now": {
     "week_start": "2026-11-22",
-    "through": "2026-11-26",
+    "through": "2026-11-27",
     "tier_so_far": "Hard-won",
     "chapter": 8
   },
