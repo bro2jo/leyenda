@@ -29,7 +29,7 @@ The story is kept the way the Ledger is kept: **records in, projections out.** O
 - **When a Book opens** (its first chapter is written): give it a colour, one more hex in `engine/build_site.py → BOOK_TINTS` (in Book order). You pick it: a tone that suits what the page has shown of the Book, light enough to read on the dark ground, and clear of ember, brass and the colours already taken. It tints the Book's chapters, its stretch of the Chronicle's rail and its road on the map; a Book without one keeps the brass.
 - Then `python3 engine/darrow.py ship -m "…"` (it runs `check`, builds the site, commits and pushes). Commit messages are reader-safe.
 
-Quality bar: a stranger should want the next chapter. Specific, funny where people are funny (out loud, often), frightening where it is dangerous, warm where it is warm, never preachy, and never one pitch for a whole week. Dice only from the engine. The story must never reward Darrow for recklessness with the Binding during the soft season.
+Quality bar: a stranger should want the next chapter. Specific, funny where people are funny (out loud, often), frightening where it is dangerous, warm where it is warm, hard where it is hard (it is written for grown readers: `style.md` §2, "The hard edge", where every hard detail serves its scene or goes), never preachy, and never one pitch for a whole week. Dice only from the engine. The story must never reward Darrow for recklessness with the Binding during the soft season.
 
 ## The site (`docs/`)
 
