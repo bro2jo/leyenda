@@ -651,7 +651,11 @@ The fire had burned down a little. Neither of them fed it.
 
 Rae got up.
 
-She came round the fire, which she had not done before, and sat down on his side of it, close, on the bare ground beside him, and took his right hand in both of hers. Her palms were hard where the rope had been. She turned his hand up to the light, as she had turned her own, and looked at the two slow fingers as she looked at a load: what it would bear, and where it would give.
+She came round the fire, which she had not done before, and sat down on his side of it, close, on the bare ground beside him, near enough that her hip was against his and the warmth of her came through two thicknesses of wool. She took his right hand in both of hers. Her palms were hard where the rope had been. She turned his hand up to the light, as she had turned her own, and looked at the two slow fingers: what they would bear, and where they would give.
+
+He was not looking at his hand. He was looking at her: at the hair coming loose from her hood and curling in the damp at her temple, the wind-burn high on her cheek, her mouth while she frowned at his fingers. She smelled of woodsmoke and ox and the tarred rope she had been splicing all evening. He had been cold since the mill, and he wanted, very simply, to put his face into the side of her neck and stay there.
+
+He had not wanted anything that simply in a long time. It frightened him more than the stone at the crossroads had.
 
 "Does it grumble?" she said.
 
@@ -659,13 +663,21 @@ She came round the fire, which she had not done before, and sat down on his side
 
 "Good." She held on. "Let it."
 
-He understood her a beat late, as he understood most of what she said. A rope that talks is a rope that's holding.
+He understood her a beat late. A rope that talks is a rope that's holding. Her thumb had begun to move across the back of his hand, slow, over the knuckles and back, and he doubted she knew she was doing it until he looked down at it and it stopped.
 
-"You told me first," said Rae, after a while. "Wren'll want that written down."
+She kept hold. She looked at him straight, as she looked at anyone who had asked her a plain question, and he watched her see exactly what was in his face, and decide not to pretend she hadn't.
+
+"I thought so," she said.
+
+"Did you."
+
+"A while now." Her thumb started again. "You told me first," she said, after a time. "Wren'll want that written down."
 
 "Wren," said Darrow, "is not to know."
 
-"Aye," said Rae, and kept the hand.
+"Aye," said Rae, and kept the hand. Her knee was against his, and she left it there. "Some things aren't for the book."
+
+They let the fire go. After a long while she leaned her head against his shoulder, and he felt her breathe out all the way down, the first time he had ever known her to.
 
 ### Scene 5 — Back by the Third Day
 
