@@ -34,6 +34,8 @@ Commands (run from the repo root):
   swim next                    the next pool session, built from the ladder: the visit's blocks in order, in each the first
                                milestone that is ready with its drills; a block whose milestones are done shrinks to a line.
                                Nothing in the program is on a calendar: checking a milestone off moves the session on
+  swim home                    the home routine for now, built the same way: the home drill of each ready milestone (up to
+                               three), then picturing it and a video (the day before a pool visit: read `swim next`)
   swim add 'JSON'              append swim-log rows (real/logs/swim_log.csv), one per skill worked: {date, session (pool|home),
                                skill (config.json -> swim.skills; a pool row may leave it blank: the warm-up; a home row is
                                breath), drill, sets, reps, minutes, rpe, metric, value, notes}. Its own log: a pool visit is
@@ -2974,7 +2976,7 @@ def swim_line(facts, ws, upto, bold=False, today=True):
     if ready:
         bits.append("ready to work on: " + "; ".join(m["title"] for m in ready[:4]) + (f" (+{len(ready) - 4} more)" if len(ready) > 4 else ""))
     bits.append(f"this week: pool {pool}" + (f" ({int(pool_min)} min)" if pool_min else "") + f" · home practice {home} of {HOME_DAYS_A_WEEK} days"
-                + ((" (today: done)" if (facts.get(upto.isoformat()) or {}).get("swim_home") else " (today: not yet)") if today else ""))
+                + ((" (today: done)" if (facts.get(upto.isoformat()) or {}).get("swim_home") else " (today: not yet; `swim home`)") if today else ""))
     if not swim_cleared_on():
         bits.append("the PT's word on the pool is not recorded: nothing in the pool pays until it is (`darrow.py swim cleared`)")
     return ("**Swim:** " if bold else "Swim: ") + " · ".join(bits)
@@ -3046,6 +3048,20 @@ def swim_session_lines(data):
     return out
 
 
+def swim_home_lines(data):
+    """The home routine for now, built like the pool session: the home drill of each ready milestone (real/swim.json ->
+    milestones[].home), up to home.drills_per_day in the ladder's order, then the lines that are always there."""
+    every = swim_milestones(data)
+    done_ids = {m["id"] for m in every if m.get("done")}
+    home = data.get("home") or {}
+    drills = [m for m in swim_ready(data, done_ids) if m.get("home")][: home.get("drills_per_day", 3)]
+    out = [f"Home routine · about 14 minutes, {HOME_DAYS_A_WEEK} days a week · log it as one row (`session=home`, `skill=breath`)"]
+    for k, m in enumerate(drills, 1):
+        out.append(f"{k}. For {m['title']}: {m['home']}")
+    out += [f"{k}. {line}" for k, line in enumerate(home.get("always", []), len(drills) + 1)]
+    return out
+
+
 def swim_block(data, asof):
     """The plan document's last section (real/plan/swim_plan.md), printed from the ladder on every sync: where he
     stands, the next pool session, and every milestone with its drills, so the document moves when a box is checked."""
@@ -3061,13 +3077,14 @@ def swim_block(data, asof):
         ms = st["milestones"]
         out.append(f"- Stage {st['n']}, {st['title']}: {sum(1 for m in ms if m['id'] in done_ids)}/{len(ms)} · his target: {st.get('target', '')} (a target, never a deadline)")
     out += ["", "### The next pool session", ""] + swim_session_lines(data)
+    out += ["", "### The home routine now", ""] + swim_home_lines(data)
     out += ["", "### The ladder: every milestone and the drills that lead to it"]
     for st in data["stages"]:
         out += ["", f"#### Stage {st['n']} — {st['title']}", ""]
         for m in st["milestones"]:
             out += swim_milestone_lines({**m, "stage": st["n"]}, by_id, done_ids, head="**") [:1]
             out[-1] = out[-1].replace(" · `", "** · `", 1)
-            out += swim_milestone_lines(m, by_id, done_ids)[1:] + [""]
+            out += swim_milestone_lines(m, by_id, done_ids)[1:] + ([f"- At home: {m['home']}"] if m.get("home") else []) + [""]
     return "\n".join(out).rstrip()
 
 
@@ -3151,8 +3168,12 @@ def cmd_swim(args, cfg, rules):
     if action == "next":
         print("\n".join(swim_session_lines(data)))
         return
+    if action == "home":
+        print("\n".join(swim_home_lines(data)))
+        return
     if action == "show" and args.what:
-        print("\n".join(swim_milestone_lines(find(args.what), by_id, done_ids)))
+        m = find(args.what)
+        print("\n".join(swim_milestone_lines(m, by_id, done_ids) + ([f"- At home: {m['home']}"] if m.get("home") else [])))
         return
     if action == "show":
         cl = data.get("cleared")
@@ -3954,7 +3975,7 @@ def main():
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
     s = sub.add_parser("project"); s.add_argument("action", choices=["open", "done", "show", "drop"]); s.add_argument("what", nargs="?", help="open: the title; done: the task's number or a few of its words")
     s.add_argument("--tasks", nargs="+", help="open: 2-5 tasks, each one thing he can report done"); s.add_argument("--id", help="open: the new project's short id; done/drop: which live project, when more than one is"); s.add_argument("--date"); s.add_argument("--due", help="open: the day it is due (default: the Saturday of the week it opens)"); s.add_argument("--why"); s.add_argument("--all", action="store_true")
-    s = sub.add_parser("swim"); s.add_argument("action", nargs="?", choices=["show", "next", "add", "pass", "clear", "cleared"])
+    s = sub.add_parser("swim"); s.add_argument("action", nargs="?", choices=["show", "next", "home", "add", "pass", "clear", "cleared"])
     s.add_argument("what", nargs="?", help="add: the rows as JSON; show/pass/clear: the milestone's id, or a few words of its title")
     s.add_argument("--date", help="pass/cleared: the day it happened (default: today)"); s.add_argument("--evidence", help="pass: what was seen; cleared: what the PT said")
     s.add_argument("--witness", help="pass: who watched"); s.add_argument("--why", help="clear: why it is taken back"); s.add_argument("--all", action="store_true", help="show: how each open milestone is judged")

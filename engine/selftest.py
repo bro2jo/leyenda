@@ -955,6 +955,9 @@ def main():
             code, out = run(darrow + ["swim", "next"], tmp)
             check(code == 0 and "work toward: Submerge my head without pinching my nose" in out and "Treading water · not yet" in out,
                   "the first session is built from what is ready; a block with nothing ready says what it waits for", out[-600:])
+            code, out = run(darrow + ["swim", "home"], tmp)
+            check(code == 0 and "1. For Submerge my head without pinching my nose: Shower" in out and "Picture it" in out,
+                  "the home routine is built from the milestones that are ready", out[-400:])
             run(darrow + ["swim", "pass", "no_pinch"], tmp, expect=1)
             run(darrow + ["swim", "pass", "no_pinch", "--date", ahead, "--evidence", "x"], tmp, expect=1)
             code, out = run(darrow + ["swim", "pass", "no_pinch", "--date", d0, "--evidence", "three, hands on thighs, chest-deep", "--witness", "a buddy"], tmp)

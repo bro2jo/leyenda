@@ -13,7 +13,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - every day: the daily-minimum and bike lines in `real/NOW.md` → Plan in force (`doc state "daily minimum"` for the full text);
    - an upper, accessory or power day: `doc addon 3` (sessions);
    - a sport day (template `sport`): this week's row of `doc sport "first 12 weeks"` (week 1 = Sun 10/11) and that week in the guide (`doc sportguide "week N"`), only as far as the current stage allows (`config.json → sport.stage`);
-   - a pool day (template `swim`, or he says he is going): `python3 engine/darrow.py swim next`, the session built from the milestones that are ready (the swim plan's rules for the knee and the deck: `doc swim 6`, `doc swim 7`); while the PT's word on the pool is not recorded, say so first, plainly;
+   - a pool day (template `swim`, or he says he is going): `python3 engine/darrow.py swim next`, the session built from the milestones that are ready (the swim plan's rules for the knee and the deck: `doc swim 6`, `doc swim 7`); on any day the routine is still open, its drills are `swim home`;
    - a PT day: the one question list, `doc state "next visit"` (State §5), plus anything `real/NOW.md` → Next PT visit adds since, and the newest PT Notes entry (`doc ptnotes <date>`) if the last visit changed anything.
    The newest PT Notes entry outranks the State until the checkpoint folds it in (`real/NOW.md` says when).
 3. Answer, real numbers only, compact enough for a phone:
@@ -21,7 +21,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - **Done so far** (from the engine).
    - **Still open**: the engine's `Still open` line, which already holds the day's planned sessions with plan changes applied (a red-light day owes none), in priority order: floor first, then the knee session, then add-ons. It means nothing is recorded yet, not that it wasn't done: if he says he did it, that's a `/log`. A partial session or a missed PT visit is recorded, so it isn't open. The optional add-ons (`optional this week`) are never on it: mention one only if he asks, and never before its `from` date.
    - **Nutrition:** kcal and protein to go, and one practical way to close the gap (based on what he usually eats).
-   - **Swim:** the engine's `Swim:` line once the program has begun: the home routine if it is still open today (never as a debt), and on a pool day the session from `swim next`, block by block, short enough to read at the pool's edge.
+   - **Swim:** the engine's `Swim:` line once the program has begun: the home routine if it is still open today (never as a debt; what to do: `swim home`), and on a pool day the session from `swim next`, block by block, short enough to read at the pool's edge.
    - **The project:** the engine's `Project:` line as a reminder of the next task of the week's work ("project: park the CRV"), never as a debt; none open: five words, no more. A task he reports done is `/project`.
    - **PT day:** list the questions to ask.
 4. No story content. If he wants the story, that's `/saga`.

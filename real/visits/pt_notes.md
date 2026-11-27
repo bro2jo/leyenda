@@ -896,3 +896,17 @@ Reading:
 What it answers from the list (State §5): nothing directly; the box jumps now run at the clinic. Not answered or not relayed: the force-plate numbers · the stiff landing · the walk-jog's symptom rule · the home doses for the decels and drop-downs · the glute and quad tests.
 
 What it changes: nothing in the program; the clinic's impact steps up (12" box jumps, 12" single-leg drops); no measurements.
+
+---
+
+## 2026-11-27 (POD 95) — Patient-reported verbal PT instruction: the pool (no visit)
+
+Relayed by him in the repo thread on Fri 2026-11-27, when the swim program was set up. Patient-reported, carries PT priority. When it was said, and by whom, was not given (one of the visits before; asked on 11/27 only whether the pool was cleared).
+
+```text
+THE POOL
+"My PT already said anything in water is okay."
+```
+
+Reading: **the pool is cleared**: water walking, floating, every kick (flutter, bicycle, the frog or whip kick, the eggbeater), push-offs, and entries into deep water. It answers the pool questions added to the next-visit list on 11/27 (State §5 item 17). Recorded in the engine as the pool's clearance (`real/swim.json → cleared`), so a visit and a milestone pay from today. Still the plan's, not the PT's: the deck (wet tile, a twist) and the first visits judged by the next morning like any new load (`doc swim 6`). Never a jump into water he can stand in: that is a landing on the pool's floor, and outside "in water".
+

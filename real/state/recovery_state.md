@@ -130,7 +130,7 @@
 14. **Kneeling on the left: answered Thu 11/19 (Cody):** OK to comfort, not pushed. Padded; never for range or load.
 15. **The trainer's all-fours hold: answered Thu 11/19 (Cody): OK.** Still open from it: which kinds of the trainer's exercises should come to the clinic first as his program grows (crawling, lunging, jumping, rotation on a planted foot).
 16. **The stiff landing on the left with jogging (PT 16, 11/19):** what to change (a cue, a drill, cadence, the surface), and what "normal" looks like before the walk-jog moves past session 1.
-17. **The pool** (the swim program, `doc swim 6`): is it cleared now (water walking, floating, a flutter kick)? which kicks are out, and what clears the frog kick and the eggbeater? pushing off the wall? stepping or jumping from the deck into deep water: when? does a pool day count as a loaded day, and where should it sit in the week? fins, ever? (Added 11/27.)
+17. **The pool: answered Fri 11/27 (relayed): "anything in water is okay"** (`pt_notes.md`, 2026-11-27). Every kick, push-offs and deep-water entries; the plan keeps its own care for the deck and the first visits (`doc swim 6`).
 
 ---
 
@@ -187,7 +187,7 @@ Visits: **PTA (Cody) Mon 11/23, Wed 11/25, Mon 11/30** · **PT (Nick) Thu 12/3**
 
 ### Swim program (added Fri 11/27; from December, once the PT has spoken)
 
-The plan: `real/plan/swim_plan.md` (`doc swim`); the ladder and the next session: `python3 engine/darrow.py swim`, `swim next`. One pool visit a week of 45 to 60 minutes on a **low day or Sunday, never a high day**, plus the home routine on about five days. **Status: not started.** It waits on the PT's word on the pool (the master plan: swimming "as cleared"; §5 item 17) and on the pool day, his to name; then the visit joins the weekly template as `swim` and this week's table carries it. The first three visits are a new load: the morning after each gets the usual check.
+The plan: `real/plan/swim_plan.md` (`doc swim`); the ladder and the next session: `python3 engine/darrow.py swim`, `swim next`. One pool visit a week of 45 to 60 minutes on a **low day or Sunday, never a high day**, plus the home routine on about five days. **Status: not started; the pool is cleared** (his PT, relayed 11/27: "anything in water is okay"; §5 item 17). It waits on the pool day, his to name; then the visit joins the weekly template as `swim` and this week's table carries it. The home routine: `swim home`. The first three visits are a new load: the morning after each gets the usual check.
 
 ### Daily minimum and weekly checks
 

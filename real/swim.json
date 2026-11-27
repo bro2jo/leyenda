@@ -1,7 +1,10 @@
 {
-  "_about": "The learn-to-swim program's ladder (the plan: real/plan/swim_plan.md, whose last section is printed from this file; his notes as written: real/plan/learn_to_swim_notes.md). Four stages, twenty milestones, each titled in his tracker's own words (stage 2 puts 'Recover from floating to standing' before 'Float independently': knowing how to stand up is what makes floating alone safe). skill = the session block it is worked in (config.json -> swim.skills). judged = how it is called done. needs = the milestones that come first: one is 'ready' when its needs are done, and the next pool session is built from what is ready, so the plan follows what he has done, never the calendar. work = the drills that lead to it, in order, each to be easy before the next. stuck = what to do when it stalls. knee = what the left knee asks. target = his own planning estimate for the stage: a target, never a deadline. done = null until it happens, then {date, evidence, witness}. cleared = the PT's word on the pool ({date, evidence}; the master plan lists swimming 'as cleared'): until it is recorded, what is logged in the pool is kept and pays nothing. session = the frame of a visit: the blocks in order, each with its usual minutes and what it shrinks to (`keep`) once its milestones are all done. The drills and the judging are general adult learn-to-swim practice, proposed 11/27: an instructor's word, or the PT's on the knee, outranks any line here. Written by `darrow.py swim pass|clear|cleared` (done, cleared); the rest is edited when the plan changes.",
+  "_about": "The learn-to-swim program's ladder (the plan: real/plan/swim_plan.md, whose last section is printed from this file; his notes as written: real/plan/learn_to_swim_notes.md). Four stages, twenty milestones, each titled in his tracker's own words (stage 2 puts 'Recover from floating to standing' before 'Float independently': knowing how to stand up is what makes floating alone safe). skill = the session block it is worked in (config.json -> swim.skills). judged = how it is called done. needs = the milestones that come first: one is 'ready' when its needs are done, and the next pool session is built from what is ready, so the plan follows what he has done, never the calendar. work = the drills that lead to it, in order, each to be easy before the next. stuck = what to do when it stalls. home = its drill for the home routine (dry land, the shower or the bath), used while it is ready. knee = what the left knee asks. target = his own planning estimate for the stage: a target, never a deadline. done = null until it happens, then {date, evidence, witness}. cleared = the PT's word on the pool ({date, evidence}; the master plan lists swimming 'as cleared'): until it is recorded, what is logged in the pool is kept and pays nothing. session = the frame of a visit: the blocks in order, each with its usual minutes and what it shrinks to (`keep`) once its milestones are all done. The drills and the judging are general adult learn-to-swim practice, proposed 11/27: an instructor's word, or the PT's on the knee, outranks any line here. Written by `darrow.py swim pass|clear|cleared` (done, cleared); the rest is edited when the plan changes.",
   "starts": "2026-12-01",
-  "cleared": null,
+  "cleared": {
+    "date": "2026-11-27",
+    "evidence": "His PT: anything in water is okay (relayed 11/27; pt_notes.md 2026-11-27): every kick, push-offs, deep-water entries"
+  },
   "session": {
     "length": "45 to 60 minutes, once a week, with a buddy who can swim and a lifeguard on duty",
     "blocks": [
@@ -79,6 +82,7 @@
             "All the way: hum, sink until the top of your head is wet, count 3, stand. Three in a row with your hands on your thighs is the milestone."
           ],
           "stuck": "Water up the nose means the breath out stopped or the chin tipped back: tuck the chin a little, hum louder, and come up before the air runs out, never after. A nose clip for a visit or two is a fair bridge for every other block; take it off for this one.",
+          "home": "Shower, 3 min: face straight into the spray with your hands at your sides, hum out through the nose while the water runs over your nose and mouth, then turn out of it and breathe in through the mouth. 8 to 10 rounds. Never pinch, never wipe.",
           "done": null
         },
         {
@@ -93,6 +97,7 @@
             "Bobs: under with bubbles, up for one easy breath in through the mouth, straight back under. 5 in a row, then 10. This rhythm is the one that will look after you in deep water."
           ],
           "stuck": "Running out of air in two seconds means you are blowing, not leaking. Add one second to the stream each visit. The shower is where this gets easy: the same hum with the spray on your face.",
+          "home": "The slow leak, 2 min, sitting: breathe in through the mouth, then let the air out through the nose as thin and even as you can, and time it. 6 rounds; add a second a week toward 8.",
           "done": null
         },
         {
@@ -109,6 +114,7 @@
             "Say one calm word out loud after each one before you do anything else. Three in a row is the milestone."
           ],
           "stuck": "Coming up with a gasp means you stayed down too long: cut the time under to a count of 2 and build back up. Coming up calm matters more than staying down long.",
+          "home": "Shower, 2 min: after each hum in the spray, turn out of it slowly, let the water run off your face, and only then breathe in. Hands down, no wiping.",
           "done": null
         },
         {
@@ -123,6 +129,7 @@
             "The same with the hand between your shoulder blades and your feet off the bottom. Work up to 30 seconds of ordinary breathing."
           ],
           "stuck": "If the feeling of water in your ears is the whole problem, wear earplugs and move on. A tight neck means you are holding your head up: let the water take its weight.",
+          "home": "Bath, 3 min (you are already at ease in the tub): lie back until both ears are under, eyes on the ceiling, and breathe normally. Work up to a minute at a time; sit up whenever you like.",
           "done": null
         }
       ]
@@ -144,6 +151,7 @@
             "Then the hand becomes two fingers, then hovers under you without touching. Ask not to be told when it lets go."
           ],
           "stuck": "Legs that drop are normal for lean, muscular legs: let them hang, or add a small slow kick from the hips. A float with the legs low and the face dry is a float. With no buddy that day, a noodle under your knees or a kickboard hugged to your chest stands in.",
+          "home": "Floor, 2 min: lie on your back in the float shape (arms wide, palms up, chin a little up, neck loose). Breathe in fully and feel your chest rise, let half of it out and feel yourself settle, fill again. That half-breath is what keeps you up in the water.",
           "done": null
         },
         {
@@ -160,6 +168,7 @@
             "Then let go: a front float from standing (arms forward, face in, count 3) and stand up out of it by yourself. Three each way is the milestone."
           ],
           "stuck": "Lifting the head first is what makes the feet miss the floor: knees in first, head last. Do it in water no deeper than your ribs until it is automatic. This is the skill that makes every float safe, so it comes before floating alone.",
+          "home": "Floor or bed, 2 min: rehearse the way up from a back float: knees to your chest, chin down, both hands scoop forward, roll up to sitting. 5 slow ones. Then face down: knees under you, hands press, head up last. 5 more.",
           "knee": "Both feet go down together and softly.",
           "done": null
         },
@@ -179,7 +188,8 @@
             "The front float too: face in, arms forward, legs long, 5 to 10 seconds, stand."
           ],
           "stuck": "Stiff is what sinks. Before each try, one long breath out through the nose with your face in, shoulders dropped. If the fear is of not being held, have your buddy stand an arm's length away with hands in the water, not on you.",
-          "knee": "Kick from the hips with long legs. No frog kick.",
+          "home": "Floor, 2 min: the float shape, then sweep your arms overhead and back to your sides and feel where your weight goes; finish with small sculling circles of the hands by your hips.",
+          "knee": "Kick small and from the hips.",
           "done": null
         },
         {
@@ -198,6 +208,7 @@
             "Back to front as well, so you can go under, look where you are going, and come back up for air."
           ],
           "stuck": "Lifting your head to breathe before the roll finishes sinks you: the head stays in line and the eyes follow the shoulder. Slow is fine, with bubbles all the way round.",
+          "home": "Bed or carpet, 2 min: log rolls from your front to your back, head kept in line with your shoulders, eyes following the shoulder, chin up last. 5 each way.",
           "done": null
         },
         {
@@ -217,7 +228,8 @@
             "Measure it: ask the lifeguard where 10 yards is (usually a little past the first flags)."
           ],
           "stuck": "Leave the front crawl's side breathing for later: it is the hardest thing in swimming and this milestone does not need it. Tiring in 5 yards means kicking from the knees or holding your breath: longer legs, steady bubbles.",
-          "knee": "Flutter kick only, in a straight line from the hip. No frog or whip kick and no fins until the PT says so. Push off the wall gently, with both feet.",
+          "home": "3 min: standing, the back stroke's arms 10 slow times (hands up your sides to the armpits, out wide, sweep down to your thighs, pause). Then face down on the bed with your legs off the edge from the hips, a small flutter kick from the hip with soft knees, 3 × 20 seconds.",
+          "knee": "Any kick (PT, 11/27: anything in water is okay). Start with the flutter: it is the easiest to learn and moves the knee in a straight line. Push off the wall gently, with both feet.",
           "done": null
         },
         {
@@ -236,7 +248,8 @@
             "Swim in the lane beside the wall, in water you can stand in the whole way if the pool has it."
           ],
           "stuck": "A stall around 15 yards is breath, not strength: make the first half deliberately lazy. If lifting your head sinks your legs, do the whole length on your back.",
-          "knee": "Flutter kick only until the PT clears another; easy push-offs.",
+          "home": "3 min: the same kick face down on the bed, 3 × 30 seconds, with the breathing you will use in the pool: hum out for a few kicks, turn your head, breathe in.",
+          "knee": "Any kick; easy push-offs.",
           "done": null
         }
       ]
@@ -261,7 +274,8 @@
             "Slow and wide beats fast and small: head tipped back a little, mouth just clear, lungs full."
           ],
           "stuck": "Sinking to the eyebrows means you are trying to hold too much of yourself out of the water: only your face needs to be dry. If the legs will not carry it yet, tread with a noodle under your arms and take it away a visit later.",
-          "knee": "The kick is the knee's question. Slow bicycle or flutter only, in a straight line. The frog kick and the eggbeater twist the knee: they wait for the PT's word.",
+          "home": "3 min: sculling standing up, palms down, thumbs tilting down on the way out and up on the way in, 3 × 30 seconds; then on your back on the floor, a slow bicycle with the legs, 3 × 20 seconds.",
+          "knee": "The kick is the knee's question. Any kick is cleared (PT, 11/27), but start with the slow bicycle and the flutter. The eggbeater and the frog kick twist the knee most: learn them small and slow once the rest is easy, and a morning with more swelling than usual drops them first.",
           "done": null
         },
         {
@@ -278,6 +292,7 @@
             "Do it once fresh and once near the end of the session, when you are a little tired."
           ],
           "stuck": "If the treading runs out first, let the back float carry most of the minute. This one is about staying up by any calm means.",
+          "home": "2 min by the clock, sitting still: breathe in for 2, out for 4. This is the pace that makes a minute afloat easy.",
           "done": null
         },
         {
@@ -294,6 +309,7 @@
             "Once it is easy in standing depth, do it within arm's reach of the wall where the water is over your head, supervised."
           ],
           "stuck": "A stall around 90 seconds is usually tight shoulders: drop them, widen the scull, and lean back onto the water a little.",
+          "home": "3 min: the 2-in, 4-out breathing by the clock, then picture two minutes afloat in the deep end: the circle, the exit, the wall.",
           "done": null
         },
         {
@@ -312,6 +328,7 @@
             "Chain them two at a time (the entry and the minute; the minute, the circle and the swim), then all five. Ask a lifeguard or an instructor to watch the whole sequence: many pools run it as their swim test."
           ],
           "stuck": "The part that fails is nearly always the minute afloat straight after the entry, because the entry spends your calm. Take three slow breaths on your back before you start counting.",
+          "home": "3 min: picture the five parts in order, as clearly as you can, twice (in, up, a minute afloat, the circle and the exit, the swim, out). Then 10 slow push-ups with your hands on the edge of a counter: getting out without the ladder is an arm press.",
           "knee": "The step in is a feet-first entry into deep water, so there is no landing. The climb out can put a knee on the deck: kneeling on the left is allowed to comfort and not pushed (PT 16), so lead with the right, or use the ladder until it is comfortable and finish that part later.",
           "done": null
         },
@@ -334,6 +351,7 @@
             "Rung 7, across the line: swim from where you can stand to where you cannot, and on to the far wall. Then start from the deep end. Two visits in a row of this, each rated calm, is the milestone."
           ],
           "stuck": "Stay on a rung for as many visits as it takes to be bored there: boredom is the signal to move up. If a rung sends your heart racing, drop back one, do that one well once, and end the block there. This block is never done without a lifeguard on duty and someone on the deck who knows what you are working on.",
+          "home": "2 min: picture the next rung of the deep-water ladder from start to finish, calm. Then one video of an adult swimming in deep water.",
           "done": null
         }
       ]
@@ -357,7 +375,8 @@
             "The step: stand at the edge with your toes over it, look at the far wall and not down, take one big step out and bring your feet together. Press your arms down through the water as you go under to stop the drop. Up, breathe, three breaths on your back, swim to the wall. One supervised step or jump is the milestone."
           ],
           "stuck": "If the drop is the fear, stay with the seated entry until it is dull. If the fear is of not coming up, do 5 deep-end bobs on the wall first: the water pushes you up every single time.",
-          "knee": "Deep water only, so the feet touch nothing. Never jump or step into water you can stand in: that is a landing on a hard floor, and the leg's landings are still being built. Ask the PT before the first jump from the deck; until then the slide in is the entry.",
+          "home": "2 min: picture the step in, twice: toes over the edge, eyes on the far wall, the hum starting, the step, the arms pressing down, coming up, three breaths on your back.",
+          "knee": "Deep water only, so the feet touch nothing. Never jump or step into water you can stand in: that is a landing on a hard floor, outside the PT's \"in water\". The push-off from the deck is a small jump, smaller than the clinic's box jumps.",
           "done": null
         },
         {
@@ -375,7 +394,8 @@
             "Steps in first, then a small two-foot jump out from the edge. Three good ones a visit is plenty."
           ],
           "stuck": "Water up the nose on the way in means the hum stopped or the chin lifted: chin level, eyes on the far wall, a louder hum. A nose clip is no failure, but this milestone is done without one.",
-          "knee": "A jump is a push-off from the deck: the PT's word first.",
+          "home": "Shower, 2 min: start the hum before your face goes into the spray and keep it going until you are out of it, with your hands crossed on your chest.",
+          "knee": "A small two-foot push-off from the deck into deep water only.",
           "done": null
         },
         {
@@ -392,6 +412,7 @@
             "Three in one visit, each unhurried, is the milestone."
           ],
           "stuck": "If you race for the wall, add a rule: 5 seconds of treading or back floating after every entry before you are allowed to swim.",
+          "home": "1 min, before bed: say the routine out loud (up, breathe, look, swim) and picture it three times.",
           "done": null
         },
         {
@@ -409,7 +430,8 @@
             "Your arms stay locked over your head until you have surfaced: the hands meet the water, not the head, and they steer you up."
           ],
           "stuck": "A belly flop means the head came up: chin to chest, eyes on your knees as you roll in. Stay with the sitting dive until it is clean. Nobody needs the standing dive on a schedule.",
-          "knee": "The kneeling dive puts a knee on the deck: use a mat and kneel on the right, or skip that rung with the instructor's agreement. A standing dive's push-off is a small jump: ask the PT, though by then it should be long cleared.",
+          "home": "2 min: one video of a sitting dive taught to an adult; picture your arms locked over your ears and the roll forward.",
+          "knee": "The kneeling dive puts a knee on the deck: use a mat and kneel on the right, or skip that rung with the instructor's agreement.",
           "done": null
         },
         {
@@ -429,5 +451,13 @@
         }
       ]
     }
-  ]
+  ],
+  "home": {
+    "about": "The home routine, about 14 minutes on five days a week (his notes). Built like the pool session: the home drill of each milestone that is ready (up to three, in the ladder's order), then the two lines that are always there. Nothing in it holds the breath.",
+    "drills_per_day": 3,
+    "always": [
+      "Picture it, 2 min: a calm float and a calm resurfacing, as clearly as you can (his notes).",
+      "One video, about 5 min, of what you are working on (the drills above); on the day before a pool visit, read the session instead (`swim next`)."
+    ]
+  }
 }
