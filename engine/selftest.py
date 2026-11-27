@@ -68,7 +68,9 @@ def main():
     check(code == 0 and "none" in out, "every projection is fresh against the records", out)
     live_plan = jload(ROOT / "saga/state/_gm/plan.json")
     live_stage = live_plan["position"].get("stage")
-    modes = [(["--between", "--with", "hollis-garrow"], 30000), (["--chapter"], 24000)]
+    # 31,000 (30,000 until 11/27): the companions' GM notes grew past it in ordinary upkeep (30,419 on main that day, before
+    # any engine change); `check` already asks for the prune (`saga.py notes`), and the limit goes back to 30,000 with it
+    modes = [(["--between", "--with", "hollis-garrow"], 31000), (["--chapter"], 24000)]
     if live_stage == "scene" and any(s.get("status") in ("planned", "next") for s in live_plan["chapter"].get("slots", [])):
         modes.insert(0, ([], 36000))
     if live_stage in ("scene", "climax"):
@@ -923,6 +925,66 @@ def main():
         run(darrow + ["inbox", "confirm", "2030-01-03"], tmp, expect=1)
         code, out = run(darrow + ["check"], tmp)
         check(code == 0 and out.endswith("all logs look clean"), "the logs are clean after the inbox's round trip", out[-300:])
+
+        print("the swim program (a ladder of milestones; the pool waits on the PT's word)")
+        ladder = tmp / "real/swim.json"
+        if not ladder.exists():
+            skip("no swim program in this repo")
+        else:
+            sw = jload(ladder)  # a clean ladder, whatever the live one holds
+            sw["cleared"] = None
+            for st_ in sw["stages"]:
+                for m_ in st_["milestones"]:
+                    m_["done"] = None
+            ladder.write_text(json.dumps(sw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            (tmp / "real/logs/swim_log.csv").write_text("date,session,skill,drill,sets,reps,minutes,rpe,metric,value,notes\n", encoding="utf-8")
+            d0 = ENV.get("DARROW_TODAY") or dt.date.today().isoformat()
+            ahead = (dt.date.fromisoformat(d0) + dt.timedelta(days=3)).isoformat()
+            art = lambda i: next(a for a in jload(tmp / "saga/state/darrow.json")["arts"] if a["id"] == i)
+            sport_before = run(darrow + ["today", "--date", d0], tmp)[1].count("sport x")
+            code, out = run(darrow + ["swim", "add", json.dumps([
+                {"date": d0, "session": "pool", "skill": "", "drill": "water walking", "minutes": 5},
+                {"date": d0, "session": "pool", "skill": "breath", "drill": "nose bubbles", "minutes": 10},
+                {"date": d0, "session": "pool", "skill": "float", "drill": "supported back float", "minutes": 15},
+                {"date": d0, "session": "home", "skill": "breath", "drill": "the hum in the shower", "minutes": 5}])], tmp)
+            check(code == 0 and "appended 4" in out, "a pool visit and the home routine go in their own log", out[-300:])
+            run(darrow + ["swim", "add", json.dumps({"date": d0, "session": "lake", "skill": "breath"})], tmp, expect=1)
+            code, out = run(darrow + ["today", "--date", d0], tmp)
+            check("pool visit 30 min" in out and "water practice" in out and out.count("sport x") == sport_before and "Swim: milestones 0 of 20" in out,
+                  "today shows the visit and the routine, and a pool day is never a sport session", out[-500:])
+            code, out = run(darrow + ["swim", "next"], tmp)
+            check(code == 0 and "work toward: Submerge my head without pinching my nose" in out and "Treading water · not yet" in out,
+                  "the first session is built from what is ready; a block with nothing ready says what it waits for", out[-600:])
+            run(darrow + ["swim", "pass", "no_pinch"], tmp, expect=1)
+            run(darrow + ["swim", "pass", "no_pinch", "--date", ahead, "--evidence", "x"], tmp, expect=1)
+            code, out = run(darrow + ["swim", "pass", "no_pinch", "--date", d0, "--evidence", "three, hands on thighs, chest-deep", "--witness", "a buddy"], tmp)
+            check(code == 0 and "1 of 20" in out and "Now ready: Resurface calmly" in out, "a milestone is recorded with its evidence and names what it makes ready", out[-300:])
+            run(darrow + ["sync"], tmp)
+            with open(tmp / "engine/deeds.csv", encoding="utf-8", newline="") as f:
+                mine = [r for r in csv.DictReader(f) if r["date"] == d0]
+            check(any(r["deed"] == "Pool visit (logged; not paid)" and r["xp"] == "0" for r in mine)
+                  and any(r["deed"] == "A swim milestone (logged; not paid)" for r in mine) and any(r["deed"] == "Water practice at home" and r["xp"] != "0" for r in mine),
+                  "before the PT's word the pool is kept and pays nothing; the home routine pays", str([r["deed"] for r in mine]))
+            check(art("quiet_under")["rank"] == 0 and art("quiet_under")["sealed_by_first"] and art("quiet_under")["practice"] >= 1,
+                  "the Art stays shut, its practice banked", str(art("quiet_under")))
+            run(darrow + ["swim", "cleared", "--date", d0, "--evidence", "the PT: the pool is fine, flutter kick only"], tmp)
+            code, out = run(darrow + ["sync"], tmp)
+            check("ART LEARNED: The Quiet Under" in out and art("quiet_under")["rank"] >= 1 and not art("quiet_under")["sealed_by_first"],
+                  "with the PT's word in, the visit and the milestone pay and the Art opens on its own first", out[-500:])
+            check(art("swans_feet")["rank"] == 0 and art("swans_feet")["sealed_by_first"] and art("swans_feet")["banked_rank"] >= 1,
+                  "the other Art waits for its own first, its practice banked", str(art("swans_feet")))
+            code, out = run(darrow + ["sheet"], tmp)
+            check("The Quiet Under I" in out and "Swan's Feet (its first)" in out, "the sheet lists the open Art and the banked one", out[-400:])
+            code, out = run(darrow + ["swim", "next"], tmp)
+            check("work toward: Exhale gently through my nose underwater" in out and "work toward: Submerge my head" not in out,
+                  "the next session moves on from a milestone checked off", out[-600:])
+            plan_page = page_of(tmp / "real/plan/swim_plan.md")
+            check("### The next pool session" in plan_page and "[x] Submerge my head without pinching my nose" in plan_page,
+                  "the plan's last section is printed from the ladder", plan_page[-300:])
+            code, out = run(darrow + ["swim", "clear", "no_pinch", "--why", "the test's own"], tmp)
+            check(code == 0 and "Taken back" in out, "a milestone recorded by mistake is taken back", out[-200:])
+            code, out = run(darrow + ["check"], tmp)
+            check(code == 0 and out.endswith("all logs look clean"), "the logs are clean after the swim round trip", out[-300:])
     finally:
         if keep:
             print(f"scratch copy kept at {tmp}")

@@ -27,50 +27,23 @@ Commands (run from the repo root):
                                machine's is the stack number; blank load = no external load
   ex names [TEXT]              every exercise name in the log with its rows and dates (reuse one: one name per movement)
   sport add 'JSON'             append sport-log rows
-  swim [show [--all]]          the swim program (real/swim.json; plan: `doc swim`): its four stages and twenty milestones, what is
-                               done (the day, the evidence), the next one and how it is judged (--all: every open one), the PT's
-                               word on the pool
+  swim [show [ID] [--all]]     the swim program (real/swim.json; plan: `doc swim`): its four stages and twenty milestones, what is
+                               done (the day, the evidence), what is ready and what each open one waits for, the PT's word on the
+                               pool; ID: one milestone in full (how it is judged, its drills, what to do when stuck, the knee's
+                               line); --all: every open one in full
+  swim next                    the next pool session, built from the ladder: the visit's blocks in order, in each the first
+                               milestone that is ready with its drills; a block whose milestones are done shrinks to a line.
+                               Nothing in the program is on a calendar: checking a milestone off moves the session on
   swim add 'JSON'              append swim-log rows (real/logs/swim_log.csv), one per skill worked: {date, session (pool|home),
                                skill (config.json -> swim.skills; a pool row may leave it blank: the warm-up; a home row is
-                               breath), drill, sets, reps, minutes, rpe, metric, value, notes}. A pool visit and the home
-                               routine are their own log: never a sport session, never part of the week's score
+                               breath), drill, sets, reps, minutes, rpe, metric, value, notes}. Its own log: a pool visit is
+                               never a sport session. In the week's plan it is the code `swim` (weekly_template, plan_changes)
   swim pass ID --evidence TEXT [--date D] [--witness WHO]   a milestone done (its id, or a few words of its title): the day it
-                               happened (never ahead), what was seen, who watched. `swim clear ID --why TEXT` takes one back
+                               happened (never ahead), what was seen, who watched; it says what that makes ready.
+                               `swim clear ID --why TEXT` takes one back
   swim cleared --evidence TEXT [--date D]   the PT's or surgeon's word on the pool (the master plan lists swimming "as
                                cleared"): until it is recorded, a pool visit and a milestone are kept and pay nothing, and the
-                               Water's Arts stay shut with their practice banked
-  roll LABEL --stat S --dc N [--adv|--dis] [--bonus N] [--prof] [--art ID ...] [--chapter N | --tier] [--reroll [--paid]]
-                               prints the chapter's dice line (paste line 1 as is); --art adds an Art's rank (Insight = --stat resolve --prof --art wardens_eye);
-                               a climax check (--chapter N) takes no --dc: the frozen tier sets it (rules.json -> week_score.tiers[].target_odds);
-                               a --reroll takes no --dc either: it keeps the first cast's (give it the first cast's --stat, --prof, --art and --chapter);
-                               --reroll spends one Inspiration on a second cast (--paid: the *[Inspiration]* option that offered it already spent it);
-                               a climax check that fails outright is cast again on his Inspiration, once; a second failure stands
-                               (rules.json -> inspiration.auto_reroll_on_fail): every line it prints goes on the page, in order, as one block
-  odds [--stat S] [--prof] [--art ID ...] [--chapter N | --tier] [--adv|--dis] [--bonus N] [--dc N | --target P] [--json]
-                               what a DC means for him: the chance of a full success, a partial and an outright failure with the
-                               modifiers roll would carry (DC 8-20, or one DC); --target P names the DC nearest that chance of a
-                               full success. The climax's brief prints it: the week's tier sets the DC (rules.json -> target_odds)
-  inspire --reason TEXT       spend one Inspiration on a bold option or a reroll (earned: a week with the daily minimum
-                               every day, a Triumph week, every level from 5 on)
-  chapter-close [--date D] [--partial-ok] [--force]   Sundays: freeze the week's score and tier as a chapter (pass last
-                               Saturday as D). Refuses while that Saturday looks unfinished (nothing logged, no food, or
-                               under 60% of the kcal target with no dinner) until he says that was all (--partial-ok).
-                               Without --date: the most recent completed, unclosed week; an in-progress week, or redoing
-                               a closed one, needs --force. The dice (--chapter N), the road and the XP bonus read the
-                               frozen tier from then on
-  knot tie N --date D --evidence TEXT   record a Knot of the Binding (a gate in config.json -> rehab.knot_gates passed
-                               with PT/surgeon clearance or measured criteria; never a future date); saga.py now then
-                               prints the KNOT line: when the Book's transition falls due
-  project open TITLE --tasks T1 T2 ... [--id slug] [--date D] [--due D]
-                               the week's work: one real goal outside the knee, in 2-5 tasks, one project live at a time
-                               (real/projects.json); `today` names its next task. Due the Saturday of the week it opens
-                               (--due moves it). `saga.py tale bind ID` binds the tale it tells
-  project done TASK [--date D] a task reported (its number, or a few of its words): the tale it is bound to owes a piece
-                               (`saga.py now` says so); the last task finishes the project: WORKS +1 on the sheet, +1 Inspiration.
-                               Finished after its due day, the project is late: its tale ends on the lesser keepsake
-  project show [--all] | project drop --why TEXT   the live projects (every project with --all); set one aside, no shame.
-                               Several may be live side by side, each with its own tale: `done` matches a task's words across
-                               them; a task's number, or `drop`, takes --id ID when more than one is live
+                               Arts they open stay shut with their practice banked
   show daily|nutrition|food|ex|sport|swim|measurements DATE [--session S]   one date's rows as key: value lines (non-empty fields only); never read the CSVs raw
   recap [--date D] [--write]   the weekly checkpoint numbers for the week containing D (default: the last completed week):
                                macros, micros vs reference, weight vs last week, loaded days -> next mornings, sessions vs
@@ -458,8 +431,8 @@ def gather(cfg, rules, nutrition=None):
                 f["tags"].add("sport:" + sk)
 
     # the swim program (real/logs/swim_log.csv): a pool visit or the home routine, one row per skill worked. Its own log,
-    # so a pool day never stands in for a throwing day; each skill's days are practice for its Art of the Water
-    swim_skills = set((cfg.get("swim") or {}).get("skills") or [])
+    # so a pool day never stands in for a throwing day; a skill's days are practice for the Art its tag feeds
+    swim_tags = rules["tags"].get("swim_tags") or {}
     for r in read_csv("swim"):
         if not r.get("date"):
             continue
@@ -472,8 +445,8 @@ def gather(cfg, rules, nutrition=None):
         elif sess == "home":
             f["swim_home"] = True
         sk = str(r.get("skill", "")).strip()
-        if sk in swim_skills:
-            f["tags"].add("swim:" + sk)
+        if sk in swim_tags:
+            f["tags"].add(swim_tags[sk])
 
     mark_overshoot(facts, cfg, rules)
 
@@ -728,7 +701,7 @@ def planned_for(cfg, day):
     return base
 
 
-PLAN_CODES = ("knee", "kneeA", "kneeB", "upper", "upperA", "upperB", "cond", "pt", "sport", "accessory", "power")
+PLAN_CODES = ("knee", "kneeA", "kneeB", "upper", "upperA", "upperB", "cond", "pt", "sport", "swim", "accessory", "power")
 
 
 def as_codes(v):
@@ -741,7 +714,7 @@ def as_codes(v):
 SESSION_NAMES = {"knee": "knee session", "kneeA": "knee Session A", "kneeB": "knee Session B",
                  "upper": "upper session (next of A/B)", "upperA": "Upper A",
                  "upperB": "Upper B", "cond": "conditioning", "pt": "PT visit", "sport": "sport session",
-                 "accessory": "accessory", "power": "power"}
+                 "swim": "pool visit", "accessory": "accessory", "power": "power"}
 
 
 def unlogged_sessions(cfg, day, f):
@@ -764,6 +737,8 @@ def unlogged_sessions(cfg, day, f):
             hit = f["cond_min"] > 0
         elif k == "sport":
             hit = bool(f["sport_sessions"])
+        elif k == "swim":
+            hit = bool(f.get("pool"))
         elif p == "upper":
             hit = any(a in ("upperA", "upperB") for a in f["addons"])
         else:
@@ -836,6 +811,8 @@ def week_score(ws, upto, facts, cfg, rules):
             done["cond"] += 1
         if f["sport"]:
             done["sport"] += 1
+        if f.get("pool"):
+            done["swim"] += 1
         if f["weight"]:
             weighins += 1
     for day in days:
@@ -941,14 +918,13 @@ def swim_unpaid(date):
     return f"before the PT's word on the pool ({cleared})" if str(date) < cleared else ""
 
 
-def water_at(asof, rules):
-    """The Water: the swim program's ladder as of a day (real/swim.json; rules.json -> water). passed: each milestone
-    done by then and its day. stage: the stages complete in order (a later stage never counts ahead of an earlier one),
-    each dated the day its last milestone fell. open: the PT's word on the pool is recorded by then; until it is the
-    sheet reads nothing of the water (stage 0, no firsts) and its Arts stay shut, their practice banked. deeds: one
-    award per milestone on its day. None while there is no program."""
-    data, spec = load_swim(), rules.get("water")
-    if not data or not spec:
+def swim_at(asof, rules):
+    """The swim program's ladder as of a day (real/swim.json). passed: each milestone done by then and its day.
+    stage_on: the day each stage was finished, in order (a later stage never counts ahead of an earlier one). open:
+    the PT's word on the pool is recorded by then; until it is, nothing done in the pool pays and the Arts it opens
+    stay shut, their practice banked. deeds: one award per milestone on its day. None while there is no program."""
+    data = load_swim()
+    if not data:
         return None
     cleared = swim_cleared_on()
     is_open = bool(cleared and d(cleared) <= asof)
@@ -960,8 +936,6 @@ def water_at(asof, rules):
         if not ids or any(i not in passed for i in ids):
             break
         stage_on.append(max([passed[i] for i in ids] + stage_on[-1:] + ([cleared] if cleared else [])))
-    names = [x["name"] for x in spec.get("stages", [])]
-    stage = len(stage_on) if is_open else 0
     deeds, rule = [], (rules.get("daily") or {}).get("water_first")
     for m in every if rule else []:
         if m["id"] not in passed:
@@ -970,32 +944,23 @@ def water_at(asof, rules):
         deeds.append({"date": passed[m["id"]], "kind": "daily", "deed": rule["label"] + (" (logged; not paid)" if why else ""),
                       "xp": 0 if why else rule.get("xp", 0), **{a: 0 if why else rule.get("temper", {}).get(a, 0) for a in ATTRS},
                       "note": m["title"] + (f" ({why})" if why else "")})
-    return {"open": is_open, "cleared_on": cleared, "passed": passed, "stage_on": stage_on if is_open else [], "deeds": deeds,
-            "stage": stage, "of": len(names), "name": names[stage - 1] if 0 < stage <= len(names) else None,
-            "firsts": len(passed) if is_open else 0, "firsts_of": len(every),
-            "next": next((m for m in every if m["id"] not in passed), None)}
+    return {"open": is_open, "cleared_on": cleared, "passed": passed, "stage_on": stage_on if is_open else [], "deeds": deeds}
 
 
-def art_seal(a, n_knots, water):
-    """Why an Art is shut, its practice banked: 'knot' (its Knot is not tied), 'water' (an Art of the Water whose own
-    first is not done, or the PT's word on the pool not recorded), or None when it is open."""
+def art_seal(a, n_knots, swim):
+    """Why an Art is shut, its practice banked: 'knot' (its Knot is not tied), 'first' (an Art that opens on a real
+    first, rules.json -> arts[].first: a swim milestone not done yet, or the PT's word on the pool not recorded), or
+    None when it is open."""
     if n_knots < a.get("knot", 0):
         return "knot"
-    if a.get("first") and not (water and water["open"] and a["first"] in water["passed"]):
-        return "water"
+    if a.get("first") and not (swim and swim["open"] and a["first"] in swim["passed"]):
+        return "first"
     return None
-
-
-def all_arts(rules):
-    """Every Art with the tag its practice is counted under: the leg's and the body's (arts), the sport's skills
-    (sport_arts, tag sport:<skill>) and the Water's (swim_arts, tag swim:<skill>)."""
-    return (list(rules["arts"]) + [{**a, "tag": "sport:" + a["skill"]} for a in rules.get("sport_arts", {}).get("arts", [])]
-            + [{**a, "tag": "swim:" + a["skill"]} for a in rules.get("swim_arts", {}).get("arts", [])])
 
 
 def sealed_note(a):
     """What a shut Art waits for, as the sheet writes it; '' when it is open."""
-    return (f"Knot {roman(a['sealed_until_knot'])}" if a.get("sealed_until_knot") else "the Water" if a.get("sealed_by_water") else "")
+    return f"Knot {roman(a['sealed_until_knot'])}" if a.get("sealed_until_knot") else "its first" if a.get("sealed_by_first") else ""
 
 
 def art_ladder(rules):
@@ -1108,9 +1073,9 @@ def compute(cfg, rules, asof=None, write=False):
     for date in sorted(facts):
         if d(date) <= asof:
             deeds += deeds_for_day(date, facts[date], cfg, rules)
-    water = water_at(asof, rules)  # the swim program's ladder: each milestone pays on its day
-    if water:
-        deeds += water["deeds"]
+    swim = swim_at(asof, rules)  # the swim program's ladder: each milestone pays on its day
+    if swim:
+        deeds += swim["deeds"]
 
     # weekly bonuses for completed weeks
     dates = sorted(d(x) for x in facts if d(x) <= asof)
@@ -1195,11 +1160,12 @@ def compute(cfg, rules, asof=None, write=False):
     tier_names = (rules.get("art_tiers") or {}).get("names") or []
     tier_short = (rules.get("art_tiers") or {}).get("short") or []
     arts = []
-    every_art = all_arts(rules)
+    every_art = list(rules["arts"]) + [
+        {**a, "tag": "sport:" + a["skill"]} for a in rules.get("sport_arts", {}).get("arts", [])]
     for a in every_art:
         n = practice.get(a["tag"], 0)
         steps = sum(1 for t in ladder if n >= t)  # every rank of every tier reached: 0..len(ladder)
-        why_shut = art_seal(a, n_knots, water)  # a Knot not tied, or (the Water's) its own first not done
+        why_shut = art_seal(a, n_knots, swim)  # a Knot not tied, or its own first not done
         sealed = bool(why_shut)
         nxt = next((t for t in ladder if n < t), None)
         tier = 0 if not steps or sealed else (steps - 1) // per + 1
@@ -1207,7 +1173,7 @@ def compute(cfg, rules, asof=None, write=False):
         arts.append({"id": a["id"], "name": a["name"], "tree": a["tree"], "rank": 0 if sealed else min(steps, per),
                      "banked_rank": min(steps, per) if sealed else 0, "practice": n, "next_at": nxt,
                      "sealed_until_knot": a.get("knot", 0) if why_shut == "knot" else None,
-                     "sealed_by_water": why_shut == "water", "effect": a["effect"],
+                     "sealed_by_first": why_shut == "first", "effect": a["effect"],
                      # the tiers past rank V: `rank` stays the dice's number (never past V); `mastery` counts every step
                      "mastery": 0 if sealed else steps, "tier": tier, "tier_rank": steps - (tier - 1) * per if tier else 0,
                      "tier_name": tier_names[tier - 1] if 0 < tier <= len(tier_names) else None,
@@ -1221,10 +1187,10 @@ def compute(cfg, rules, asof=None, write=False):
     for a in every_art:
         by_tag[a["tag"]].append(a)
 
-    def opened_on(a, date):  # a banked step is dated the day the Art opened: its Knot's day, or (the Water's) its first's
+    def opened_on(a, date):  # a banked step is dated the day the Art opened: its Knot's day, or its first's
         days = [date, knot_on.get(a.get("knot", 0)) or date]
-        if a.get("first") and water:
-            days += [water["passed"].get(a["first"]) or date, water["cleared_on"] or date]
+        if a.get("first") and swim:
+            days += [swim["passed"].get(a["first"]) or date, swim["cleared_on"] or date]
         return max(days)
 
     for date in sorted(x for x in facts if d(x) <= asof):
@@ -1236,7 +1202,7 @@ def compute(cfg, rules, asof=None, write=False):
     per_turn = (rules.get("art_tiers") or {}).get("inspiration_on_turn", 0)
     if per_turn:
         for a in every_art:
-            if not art_seal(a, n_knots, water):  # a sealed Art turns nothing until it opens
+            if not art_seal(a, n_knots, swim):  # a sealed Art turns nothing until it opens
                 for k in range(1, len(ladder) // per):
                     when = art_on.get((a["id"], k * per + 1))
                     if when:
@@ -1252,10 +1218,10 @@ def compute(cfg, rules, asof=None, write=False):
     if per_work:
         for when in works["finished_dates"]:
             insp_events.append((when, +per_work, "a work finished"))
-    per_stage = (rules.get("water") or {}).get("inspiration_per_stage", 0)
-    if water and per_stage:
-        for k, when in enumerate(water["stage_on"], 1):
-            insp_events.append((when, +per_stage, f"the Water, stage {k}"))
+    per_stage = (rules.get("swim") or {}).get("inspiration_per_stage", 0)
+    if swim and per_stage:  # a stage of the swim program finished
+        for k, when in enumerate(swim["stage_on"], 1):
+            insp_events.append((when, +per_stage, f"swim program, stage {k}"))
     for s in read_csv("spends"):
         if s.get("what") == "inspiration":
             insp_events.append((s["date"], -1, s.get("reason", "")))
@@ -1295,8 +1261,6 @@ def compute(cfg, rules, asof=None, write=False):
         "soft_season": 6 <= post_op_week(cfg, asof) <= 12,
         "arts": arts,
         "tether": tether,
-        # the Water: the stage and the count of firsts only (what they were stays in the Ledger); None without a program
-        "water": {k: water[k] for k in ("stage", "of", "name", "firsts", "firsts_of")} if water else None,
         "wardrobe": wardrobe_when(cfg, wardrobe_earned(level, arts, knots), reached_on, art_on, knot_on),
         "works": {"finished": works["finished"], "tasks_done": works["tasks_done"], "late": works["late"]},
         "chapter_now": {"week_start": cur["week_start"], "through": cur["through"],
@@ -1385,13 +1349,6 @@ def diff_sheets(old, new):
         nm = names[k - 1] if k <= len(names) else ""
         notes.append(f"TETHER {'TIED' if k == 1 else 'DRAWN'}: {roman(k)} of {roman(of)} · {nm}"
                      + (" (its scene waits for the next free quest slot)" if nt - ot > 1 else ""))
-    owa, nwa = old.get("water") or {}, new.get("water") or {}
-    if nwa.get("firsts", 0) > owa.get("firsts", 0):
-        notes.append(f"WATER: a first ({nwa['firsts']} of {nwa['firsts_of']})")
-    wnames = [x["name"] for x in (load_json(P["rules"]).get("water") or {}).get("stages", [])]
-    for k in range(owa.get("stage", 0) + 1, nwa.get("stage", 0) + 1):  # every stage reached is a scene of its own
-        notes.append(f"WATER {'OPENED' if k == 1 else 'DEEPER'}: {roman(k)} of {roman(nwa.get('of', 4))} · {wnames[k - 1] if k <= len(wnames) else ''}"
-                     " (its scene waits for a quest slot: `saga.py brief --chapter`)")
     opened = wardrobe_opened(old, new)
     if opened:
         notes.append("WARDROBE: new to choose from: " + ", ".join(opened) + " (darrow/wardrobe.html)")
@@ -1439,9 +1396,6 @@ def reckoning_line(old, new):
     if nt > ot:
         t = new.get("tether") or {}
         bits.append(f"The Tether: {t.get('name', '')}".rstrip(": ") + f" ({roman(nt)} of {roman(t.get('of', 5))})")
-    owa, nwa = old.get("water") or {}, new.get("water") or {}
-    if nwa.get("stage", 0) > owa.get("stage", 0):
-        bits.append(f"The Water: {nwa.get('name') or ''}".rstrip(": ") + f" ({roman(nwa['stage'])} of {roman(nwa.get('of', 4))})")
     ow, nw = old.get("works") or {}, new.get("works") or {}
     if nw.get("finished", 0) > ow.get("finished", 0):
         bits.append(f"Works {ow.get('finished', 0)} → {nw['finished']}")
@@ -1503,8 +1457,8 @@ def grades_line(ws, upto, rows):
 def real_week_table(st, cfg, rules, ws, summary=True):
     facts = st["facts"]
     t = cfg["nutrition_targets"]
-    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Sleep | Floor | Check | Knee | PT | Add-on | Cond | Sport | Together |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    lines = ["| Day | Plan | kcal | P (g) | Wt | Cr | Sleep | Floor | Check | Knee | PT | Add-on | Cond | Sport | Pool | Together |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     kc, pr = [], []
     for i in range(7):
         day = ws + dt.timedelta(i)
@@ -1512,7 +1466,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         plan = ", ".join(planned_for(cfg, day)) or "floor"
         label = f"{dow(day)} {md(day)}"
         if not f:
-            lines.append(f"| {label} | {plan} |" + " |" * 13)
+            lines.append(f"| {label} | {plan} |" + " |" * 14)
             continue
         if f["kcal"] is not None:
             kc.append(f["kcal"])
@@ -1524,7 +1478,8 @@ def real_week_table(st, cfg, rules, ws, summary=True):
             fmt(f["kcal"]), fmt(f["protein"]), fmt(f["weight"], 1) if f["weight"] else "",
             "✔" if f["creatine"] else "", hm(f["sleep_min"]) if f.get("sleep_min") is not None else "", flo, "✔" if f["check"] else "",
             f["knee"] or "", "✔" if f["pt"] else "", "+".join(sorted(f["addons"])),
-            f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or ""), "✔" if f["together"] else ""]) + " |")
+            f"{int(f['cond_min'])}m" if f["cond_min"] else "", str(f["sport"] or ""),
+            (f"{int(f['pool_min'])}m" if f["pool_min"] else "✔") if f.get("pool") else "", "✔" if f["together"] else ""]) + " |")
     upto = min(ws + dt.timedelta(6), st["asof"])
     sc = week_score(ws, upto, facts, cfg, rules)
     if not summary:
@@ -1551,7 +1506,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         out.append(f"**Sessions (through {dow(d(sc['through']))}):** {sess or 'none planned yet'} · "
                    f"floor full {sc['floor_full_days']}/{sc['days']} · graded morning checks "
                    f"{sum(1 for i in range(sc['days']) if facts.get((ws + dt.timedelta(i)).isoformat(), {}).get('check'))}/{sc['days']}")
-    sw = swim_line(facts, ws, upto, bold=True)
+    sw = swim_line(facts, ws, upto, bold=True, today=False)
     if sw:
         out.append(sw)
     return "\n".join(out)
@@ -1633,6 +1588,8 @@ def cmd_today(args, cfg, rules):
     sw = swim_line(st["facts"], week_start(day), day)
     if sw:
         print(sw)
+    if "swim" in planned_for(cfg, day) and not (f and f.get("pool")):
+        print("Pool day: the session is `darrow.py swim next`")
 
 
 def cmd_week(args, cfg, rules):
@@ -1669,9 +1626,6 @@ def sheet_text(s):
     t = s.get("tether")
     if t and t.get("stage"):  # shown only once it is tied; the stage names are the page's words, never the Ledger's
         lines.append(f"THE TETHER · {roman(t['stage'])} of {roman(t['of'])} · {t['name']}")
-    wa = s.get("water") or {}
-    if wa.get("stage"):  # shown from its first stage; the stage names are the page's words, never the Ledger's
-        lines.append(f"THE WATER · {roman(wa['stage'])} of {roman(wa['of'])} · {wa['name']}")
     w = s.get("works") or {}
     if w.get("finished"):  # the works: counts only; what they were stays in the Ledger
         lines.append(f"WORKS · {w['finished']} finished")
@@ -1716,6 +1670,8 @@ def write_dashboards(st, cfg, rules):
                   + "\n\n**Latest measured:** " + latest_measured_line(cfg)
                   + "\n\n" + "\n".join("**" + line.replace(": ", ":** ", 1) for line in project_lines()))
     replace_block(P["real_now"], real_block, "NOW — the Ledger")
+    if load_swim() and P["swim_plan"].exists():  # the swim plan's last section is printed from the ladder
+        replace_block(P["swim_plan"], swim_block(load_swim(), asof), "Swim plan")
     s = st["sheet"]
     saga_block = ("_Engine block, regenerated by `sync`._\n\n```\n" + sheet_text(s) + "\n```\n\n"
                   f"**Chapter {s['chapter_now']['chapter']}, so far (on what's logged):** {s['chapter_now']['tier_so_far']}")
@@ -2238,9 +2194,10 @@ def recap_text(st, cfg, rules, ws):
         "accessory": sum(1 for x in days if "accessory" in {tag.get(a) for a in fx(x).get("addons", ())}),
         "power": sum(1 for x in days if "power" in {tag.get(a) for a in fx(x).get("addons", ())}),
         "sport": sum(1 for x in days if fx(x).get("sport")),
+        "swim": sum(1 for x in days if fx(x).get("pool")),
     }
     names = {"knee": "knee sessions", "pt": "PT", "upper": "upper", "cond": "conditioning", "accessory": "accessory",
-             "power": "power", "sport": "sport sessions"}
+             "power": "power", "sport": "sport sessions", "swim": "pool visits"}
     parts = []
     for k, label in names.items():
         if k in pl:
@@ -2259,6 +2216,9 @@ def recap_text(st, cfg, rules, ws):
     out += ["", "**Measured this week:** " + ("; ".join(
         f"{mdate(g['date'])} {g['source']} {metric_label(g['metric'], specs.get(g['metric'], {}))} {set_text(g)}"
         for g in ms) or "nothing")]
+    sw = swim_line(facts, ws, upto, bold=True, today=False)
+    if sw:
+        out += ["", sw]
     out += ["", "**Works:** " + works_week_line(ws)[len("Works: "):]]
     out += ["", "**Flags:** " + (" · ".join(flags) or "none")]
     return "\n".join(out)
@@ -2292,6 +2252,10 @@ CHECKPOINT_SKELETON = """# Checkpoint — Sun {sun} · week Sun {ws} – Sat {we
 ## Sport
 
 <!-- Throwing sessions vs plan, the stage and any clearance, the week's question; every fourth week the month check (ratings, the seven review questions). -->
+
+## Swim
+
+<!-- The pool visit vs plan (the day, what was worked, the knee's next morning), home practice days of 5, each milestone done this week with what was seen, what stalled and the `stuck` line tried, the next visit's focus (`darrow.py swim next`); any word from the PT or an instructor. Omit the section before the program starts. -->
 
 ## PT and measurements
 
@@ -2973,10 +2937,21 @@ def cmd_knot(args, cfg, rules):
 
 
 # ---------------------------------------------------------------- the swim program (real/swim.json, real/logs/swim_log.csv)
-def swim_line(facts, ws, upto, bold=False):
-    """The program's line in `today`, `week` and NOW's block: the milestones done and the next, the week's pool visits
-    and home days, and the PT's word while it is missing. '' while there is no program or it has not begun
-    (nothing logged, nothing done, and its start day still ahead)."""
+# A ladder of milestones in four stages, each with what it needs first and the drills that lead to it. Nothing in it is
+# on a calendar: a milestone is "ready" when the ones it needs are done, and the next pool session is built from what is
+# ready, so checking one off moves the plan on by itself.
+HOME_DAYS_A_WEEK = 5  # the notes' home routine: 14 minutes, five days a week
+
+
+def swim_ready(data, done_ids):
+    """The open milestones he can work on now: every one whose `needs` are done, in the ladder's order."""
+    return [m for m in swim_milestones(data) if m["id"] not in done_ids and all(n in done_ids for n in m.get("needs", []))]
+
+
+def swim_line(facts, ws, upto, bold=False, today=True):
+    """The program's line in `today`, `week`, NOW's block and the recap: the milestones done, the stage he is in, what is
+    ready to work on, the week's pool visits and home days, and the PT's word while it is missing. '' while there is no
+    program or it has not begun (nothing logged, nothing done, and its start day still ahead)."""
     data = load_swim()
     if not data:
         return ""
@@ -2988,27 +2963,119 @@ def swim_line(facts, ws, upto, bold=False):
     if not begun and str(data.get("starts") or "9999") > upto.isoformat():
         return ""
     done_ids = {m["id"] for m in done}
-    nxt = next((m for m in every if m["id"] not in done_ids), None)
-    stage = next((st for st in data["stages"] if st["n"] == nxt["stage"]), None) if nxt else None
+    ready = swim_ready(data, done_ids)
+    stage = next((st for st in data["stages"] if any(m["id"] not in done_ids for m in st["milestones"])), None)
     new = [m["title"] for m in done if d(m["done"]["date"]) >= ws]
     bits = [f"milestones {len(done)} of {len(every)}"]
     if stage:
-        in_stage = sum(1 for m in stage["milestones"] if m["id"] in done_ids)
-        bits.append(f"stage {stage['n']} ({stage['title']}) {in_stage}/{len(stage['milestones'])}")
+        bits.append(f"stage {stage['n']} ({stage['title']}) {sum(1 for m in stage['milestones'] if m['id'] in done_ids)}/{len(stage['milestones'])}")
     if new:
-        bits.append("new this week: " + "; ".join(new))
-    if nxt:
-        bits.append(f"next: {nxt['title']}")
-    bits.append(f"this week: pool {pool}" + (f" ({int(pool_min)} min)" if pool_min else "") + f" · home practice {home} day{'s' if home != 1 else ''}")
+        bits.append("done this week: " + "; ".join(new))
+    if ready:
+        bits.append("ready to work on: " + "; ".join(m["title"] for m in ready[:4]) + (f" (+{len(ready) - 4} more)" if len(ready) > 4 else ""))
+    bits.append(f"this week: pool {pool}" + (f" ({int(pool_min)} min)" if pool_min else "") + f" · home practice {home} of {HOME_DAYS_A_WEEK} days"
+                + ((" (today: done)" if (facts.get(upto.isoformat()) or {}).get("swim_home") else " (today: not yet)") if today else ""))
     if not swim_cleared_on():
         bits.append("the PT's word on the pool is not recorded: nothing in the pool pays until it is (`darrow.py swim cleared`)")
     return ("**Swim:** " if bold else "Swim: ") + " · ".join(bits)
 
 
+def swim_milestone_lines(m, by_id, done_ids, head="", full=True):
+    """One milestone as text: its box and title (the day and the evidence once done; what it waits for while locked), then
+    how it is judged, the drills in order, what to do when stuck, and the knee's line."""
+    dn = m.get("done")
+    waits = [by_id[n]["title"] for n in m.get("needs", []) if n not in done_ids]
+    state = (f"done {dn['date']}: {dn['evidence']}" + (f" (watched by {dn['witness']})" if dn.get("witness") else "")) if dn \
+        else ("after: " + "; ".join(waits)) if waits else "ready"
+    out = [f"{head}[{'x' if dn else ' '}] {m['title']} · `{m['id']}` · {state}"]
+    if full:
+        out.append(f"- Judged: {m['judged']}.")
+        out += [f"- Work {k}. {w}" for k, w in enumerate(m.get("work", []), 1)]
+        out.append(f"- If stuck: {m['stuck']}")
+        if m.get("knee"):
+            out.append(f"- Knee: {m['knee']}")
+    return out
+
+
+def swim_session_lines(data):
+    """The next pool session, built from the ladder: the visit's blocks in order (real/swim.json -> session); in each,
+    the first milestone of its skills that is ready, with its drills; a block whose milestones are all done shrinks to
+    its `keep` line, and one that has nothing ready yet says what it waits for."""
+    every = swim_milestones(data)
+    by_id = {m["id"]: m for m in every}
+    done_ids = {m["id"] for m in every if m.get("done")}
+    ready = swim_ready(data, done_ids)
+    sess = data.get("session") or {}
+    out, total, tries = [f"Next pool session · {sess.get('length', '')}".rstrip(" ·")], 0, []
+    for n, b in enumerate(sess.get("blocks", []), 1):
+        mine = [m for m in every if m["skill"] in b.get("skills", [])]
+        if not b.get("skills"):
+            total += b["minutes"]
+            out.append(f"{n}. {b['title']} · {b['minutes']} min: {b['text']}")
+            continue
+        here = [m for m in ready if m["skill"] in b["skills"]]
+        if here:
+            total += b["minutes"]
+            focus = here[0]
+            tries += here
+            out.append(f"{n}. {b['title']} · {b['minutes']} min · work toward: {focus['title']}")
+            out += ["   " + x for x in swim_milestone_lines(focus, by_id, done_ids)[1:]]
+            if len(here) > 1:
+                out.append("   Also ready in this block: " + "; ".join(f"{m['title']} (`swim show {m['id']}`)" for m in here[1:]))
+        elif all(m["id"] in done_ids for m in mine):
+            total += 2
+            out.append(f"{n}. {b['title']} · 2 min, keeping it: {b['keep']}")
+        else:
+            unmet = lambda m: [x for x in m.get("needs", []) if x not in done_ids]
+
+            def still(m, seen=None):  # everything open that stands before it, however far back
+                seen = set() if seen is None else seen
+                for x in unmet(m):
+                    if x not in seen:
+                        seen.add(x)
+                        still(by_id[x], seen)
+                return seen
+
+            nearest = min((m for m in mine if m["id"] not in done_ids), key=lambda m: len(still(m)))  # the one closest to ready
+            out.append(f"{n}. {b['title']} · not yet: it opens after {'; '.join(by_id[x]['title'] for x in unmet(nearest))}")
+    out.append(f"About {total} minutes." + (" That is over the hour: shorten the blocks that are going well, or leave one for next week."
+                                            if total > 60 else " Spare minutes go to the block that makes you most nervous." if total < 45 else ""))
+    if tries:
+        out.append("Milestones you could check off this visit: " + "; ".join(m["title"] for m in tries) + ".")
+    out.append("Stop on a good one. A milestone is recorded the day it happens: tell me what you saw (how many, how long, how far) and who watched.")
+    return out
+
+
+def swim_block(data, asof):
+    """The plan document's last section (real/plan/swim_plan.md), printed from the ladder on every sync: where he
+    stands, the next pool session, and every milestone with its drills, so the document moves when a box is checked."""
+    every = swim_milestones(data)
+    by_id = {m["id"]: m for m in every}
+    done_ids = {m["id"] for m in every if m.get("done")}
+    cl = data.get("cleared")
+    out = [f"_Printed from `real/swim.json` by `sync` · as of {dow(asof)} {asof.isoformat()} · never edited by hand_", "",
+           "### Where you stand", "",
+           f"- **{len(done_ids)} of {len(every)} milestones.** The PT's word on the pool: "
+           + (f"{cl['date']}: {cl['evidence']}" if cl else "**not recorded yet** (ask before the first visit; until then the pool is logged and pays nothing).")]
+    for st in data["stages"]:
+        ms = st["milestones"]
+        out.append(f"- Stage {st['n']}, {st['title']}: {sum(1 for m in ms if m['id'] in done_ids)}/{len(ms)} · his target: {st.get('target', '')} (a target, never a deadline)")
+    out += ["", "### The next pool session", ""] + swim_session_lines(data)
+    out += ["", "### The ladder: every milestone and the drills that lead to it"]
+    for st in data["stages"]:
+        out += ["", f"#### Stage {st['n']} — {st['title']}", ""]
+        for m in st["milestones"]:
+            out += swim_milestone_lines({**m, "stage": st["n"]}, by_id, done_ids, head="**") [:1]
+            out[-1] = out[-1].replace(" · `", "** · `", 1)
+            out += swim_milestone_lines(m, by_id, done_ids)[1:] + [""]
+    return "\n".join(out).rstrip()
+
+
 def swim_problems(cfg, rules):
-    """real/swim.json and swim_log.csv against the program's own vocabulary: unique milestone ids, a done milestone with a
-    real day (never ahead of today) and its evidence, every Art's first a milestone that exists, every row's skill one of
-    config.json -> swim.skills (a pool row may leave it blank: a warm-up, a cool-down), a home row's one of home_skills."""
+    """real/swim.json and swim_log.csv against the program's own vocabulary: unique milestone ids, each with a skill the
+    config knows and `needs` that exist, a done milestone with a real day (never ahead of today) and its evidence, every
+    Art's `first` a milestone that exists, every row's skill one of config.json -> swim.skills (a pool row may leave it
+    blank: a warm-up, a cool-down), a home row's one of home_skills."""
     probs, data = [], load_swim()
     sw = cfg.get("swim") or {}
     skills, home = sw.get("skills") or [], sw.get("home_skills") or []
@@ -3020,14 +3087,23 @@ def swim_problems(cfg, rules):
             probs.append(f"{where}: skill '{sk}' is not one of {', '.join(skills)} (config.json -> swim.skills)")
         elif sess == "home" and sk not in home:
             probs.append(f"{where}: a home row's skill is one of {', '.join(home)} (config.json -> swim.home_skills): the rest is learned in the water")
+    firsts = [a for a in rules.get("arts", []) if a.get("first")]
+    probs += [f"rules.json tags.swim_tags: '{k}' is not a skill of config.json -> swim.skills" for k in (rules["tags"].get("swim_tags") or {}) if k not in skills]
     if data is None:
         if read_csv("swim"):
             probs.append("swim_log.csv has rows but real/swim.json (the program's ladder) is missing")
-        return probs
-    ids = [m["id"] for m in swim_milestones(data)]
+        return probs + [f"rules.json arts: {a['id']} opens on a milestone, but real/swim.json is missing" for a in firsts]
+    every = swim_milestones(data)
+    ids = [m["id"] for m in every]
     probs += [f"real/swim.json: milestone id '{i}' appears twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
+    for m in every:
+        if m.get("skill") not in skills:
+            probs.append(f"real/swim.json: milestone {m['id']} has skill '{m.get('skill')}', not one of config.json -> swim.skills")
+        probs += [f"real/swim.json: milestone {m['id']} needs '{n}', which is not a milestone" for n in m.get("needs", []) if n not in ids]
+    for b in (data.get("session") or {}).get("blocks", []):
+        probs += [f"real/swim.json: session block '{b.get('title')}' names skill '{k}', not one of config.json -> swim.skills" for k in b.get("skills", []) if k not in skills]
     today = today_local(cfg)
-    for what, rec in [(f"milestone {m['id']}", m.get("done")) for m in swim_milestones(data)] + [("cleared", data.get("cleared"))]:
+    for what, rec in [(f"milestone {m['id']}", m.get("done")) for m in every] + [("cleared", data.get("cleared"))]:
         if not rec:
             continue
         try:
@@ -3037,19 +3113,14 @@ def swim_problems(cfg, rules):
             probs.append(f"real/swim.json: {what} has a bad date '{rec.get('date')}'")
         if not str(rec.get("evidence") or "").strip():
             probs.append(f"real/swim.json: {what} has no evidence (what was seen, or who said it)")
-    for a in (rules.get("swim_arts") or {}).get("arts", []):
-        if a.get("skill") not in skills:
-            probs.append(f"rules.json swim_arts: {a.get('id')} reads skill '{a.get('skill')}', which is not in config.json -> swim.skills")
-        if a.get("first") and a["first"] not in ids:
-            probs.append(f"rules.json swim_arts: {a.get('id')} opens on '{a['first']}', which is not a milestone of real/swim.json")
-    if len((rules.get("water") or {}).get("stages", [])) != len(data.get("stages", [])):
-        probs.append("rules.json water.stages and real/swim.json stages differ in number: one name and one `allows` line per stage")
+    probs += [f"rules.json arts: {a['id']} opens on '{a['first']}', which is not a milestone of real/swim.json" for a in firsts if a["first"] not in ids]
     return probs
 
 
 def cmd_swim(args, cfg, rules):
-    """The swim program: `swim` (the ladder and where he stands), `swim add 'JSON'` (log rows), `swim pass ID` (a
-    milestone done, with its evidence), `swim clear ID` (taken back), `swim cleared` (the PT's word on the pool)."""
+    """The swim program: `swim` (the ladder and where he stands), `swim next` (the next pool session, built from what
+    is ready), `swim show ID` (one milestone in full), `swim add 'JSON'` (log rows), `swim pass ID` (a milestone done,
+    with its evidence), `swim clear ID` (taken back), `swim cleared` (the PT's word on the pool)."""
     action = args.action or "show"
     if action == "add":
         args.payload = args.what
@@ -3058,6 +3129,8 @@ def cmd_swim(args, cfg, rules):
     if not data:
         sys.exit("no swim program: real/swim.json is missing")
     every = swim_milestones(data)
+    by_id = {m["id"]: m for m in every}
+    done_ids = {m["id"] for m in every if m.get("done")}
     today = today_local(cfg)
 
     def day_of(flag):
@@ -3075,28 +3148,28 @@ def cmd_swim(args, cfg, rules):
             sys.exit((f"'{ref}' matches {len(hits)} milestones" if ref else "which milestone?") + "; ids: " + ", ".join(m["id"] for m in every))
         return next(m for st in data["stages"] for m in st["milestones"] if m["id"] == hits[0]["id"])
 
+    if action == "next":
+        print("\n".join(swim_session_lines(data)))
+        return
+    if action == "show" and args.what:
+        print("\n".join(swim_milestone_lines(find(args.what), by_id, done_ids)))
+        return
     if action == "show":
         cl = data.get("cleared")
-        print(f"# The swim program · {sum(1 for m in every if m.get('done'))} of {len(every)} milestones · plan: real/plan/swim_plan.md (`doc swim`)")
+        print(f"# The swim program · {len(done_ids)} of {len(every)} milestones · plan: real/plan/swim_plan.md (`doc swim`) · the next visit: `swim next`")
         print("The PT's word on the pool: " + (f"{cl['date']}: {cl['evidence']}" if cl else "not recorded yet (nothing in the pool pays until it is; `swim cleared --date D --evidence \"…\"`)"))
         for st in data["stages"]:
             ms = st["milestones"]
-            print(f"\nStage {st['n']} · {st['title']} · {sum(1 for m in ms if m.get('done'))}/{len(ms)}")
+            print(f"\nStage {st['n']} · {st['title']} · {sum(1 for m in ms if m.get('done'))}/{len(ms)} · target {st.get('target', '')}")
             for m in ms:
-                dn = m.get("done")
-                print(f"  [{'x' if dn else ' '}] {m['id']}: {m['title']}" + (f" · {dn['date']}: {dn['evidence']}" + (f" (watched by {dn['witness']})" if dn.get("witness") else "") if dn else ""))
-                if not dn and args.all:
-                    print(f"        judged: {m['judged']}")
-        nxt = next((m for m in every if not m.get("done")), None)
-        if nxt:
-            print(f"\nNext: {nxt['title']}\n  judged: {nxt['judged']}")
+                print("\n".join("  " + x for x in swim_milestone_lines(m, by_id, done_ids, full=bool(args.all and not m.get("done")))))
         return
     if action == "cleared":
         if not args.evidence:
             sys.exit("swim cleared needs --evidence: what the PT or surgeon said about the pool, and which kicks (the note goes in pt_notes.md too)")
         data["cleared"] = {"date": day_of("the PT's word is recorded the day it is given"), "evidence": args.evidence}
         save_swim(data)
-        print(f"The PT's word on the pool recorded for {data['cleared']['date']}. From that day a pool visit and a milestone pay, and the Water's Arts can open. Run sync.")
+        print(f"The PT's word on the pool recorded for {data['cleared']['date']}. From that day a pool visit and a milestone pay, and the Arts they open can open. Run sync.")
         return
     m = find(args.what)
     if action == "pass":
@@ -3107,8 +3180,12 @@ def cmd_swim(args, cfg, rules):
         m["done"] = {"date": day_of("a milestone is recorded the day it happens, never ahead of it"), "evidence": args.evidence,
                      **({"witness": args.witness} if args.witness else {})}
         save_swim(data)
-        left = [x for x in swim_milestones(data) if not x.get("done")]
-        print(f"Milestone done {m['done']['date']}: {m['title']}. {len(every) - len(left)} of {len(every)}" + (f"; next: {left[0]['title']}" if left else "; the ladder is climbed") + ". Run sync.")
+        now_done = done_ids | {m["id"]}
+        opened = [x["title"] for x in swim_ready(data, now_done) if m["id"] in x.get("needs", [])]
+        early = [by_id[n]["title"] for n in m.get("needs", []) if n not in now_done]
+        print(f"Milestone done {m['done']['date']}: {m['title']}. {len(now_done)} of {len(every)}."
+              + (f" Now ready: {'; '.join(opened)}." if opened else "") + (" The ladder is climbed." if len(now_done) == len(every) else "")
+              + (f" (Done ahead of {'; '.join(early)}: fine, the ladder is a guide.)" if early else "") + " Run sync; `swim next` is the next visit.")
     elif action == "clear":
         if not m.get("done"):
             sys.exit(f"{m['id']} is not recorded as done")
@@ -3877,8 +3954,8 @@ def main():
     s = sub.add_parser("knot"); s.add_argument("action", choices=["tie"]); s.add_argument("n", type=int); s.add_argument("--date", required=True); s.add_argument("--evidence", required=True)
     s = sub.add_parser("project"); s.add_argument("action", choices=["open", "done", "show", "drop"]); s.add_argument("what", nargs="?", help="open: the title; done: the task's number or a few of its words")
     s.add_argument("--tasks", nargs="+", help="open: 2-5 tasks, each one thing he can report done"); s.add_argument("--id", help="open: the new project's short id; done/drop: which live project, when more than one is"); s.add_argument("--date"); s.add_argument("--due", help="open: the day it is due (default: the Saturday of the week it opens)"); s.add_argument("--why"); s.add_argument("--all", action="store_true")
-    s = sub.add_parser("swim"); s.add_argument("action", nargs="?", choices=["show", "add", "pass", "clear", "cleared"])
-    s.add_argument("what", nargs="?", help="add: the rows as JSON; pass/clear: the milestone's id, or a few words of its title")
+    s = sub.add_parser("swim"); s.add_argument("action", nargs="?", choices=["show", "next", "add", "pass", "clear", "cleared"])
+    s.add_argument("what", nargs="?", help="add: the rows as JSON; show/pass/clear: the milestone's id, or a few words of its title")
     s.add_argument("--date", help="pass/cleared: the day it happened (default: today)"); s.add_argument("--evidence", help="pass: what was seen; cleared: what the PT said")
     s.add_argument("--witness", help="pass: who watched"); s.add_argument("--why", help="clear: why it is taken back"); s.add_argument("--all", action="store_true", help="show: how each open milestone is judged")
     s = sub.add_parser("show"); s.add_argument("log", choices=["daily", "nutrition", "food", "ex", "exercise", "sport", "swim", "measurements"]); s.add_argument("date"); s.add_argument("--session")

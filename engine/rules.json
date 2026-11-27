@@ -187,7 +187,7 @@
       "temper": {
         "resolve": 1
       },
-      "label": "A first in the water"
+      "label": "A swim milestone"
     },
     "weigh_in": {
       "xp": 10,
@@ -377,43 +377,15 @@
     "_about": "The works: real goals outside the knee, run in 2-5 tasks (real/projects.json, `darrow.py project`). No XP and no temper: the Reckoning is the leg's. A finished project counts in the sheet's WORKS and brings inspiration_per_finished Inspiration (capped like the rest); its tale (saga/bible/_gm/tales.md) pays a piece per task and a keepsake at the end. Only the counts reach the sheet and the site.",
     "inspiration_per_finished": 1
   },
-  "water": {
-    "_about": "The Water: the learn-to-swim program's ladder as the sheet reads it (real/swim.json: four stages of milestones; `darrow.py swim`). A stage is reached when every milestone of it and of the stages before it is done; it only ever climbs. Each stage brings inspiration_per_stage Inspiration (capped like the rest) and one planned scene (saga/bible/_gm/arc.md -> darrow.water). `allows` is what the page may let him do in water at that stage, in story terms (`before`: until the first stage); the brief prints the line that holds. It limits his skill, never the plot: water past what he has learned is danger to him, and the page may still put him in it. The sheet shows it from stage I. Nothing here reads until the PT's word on the pool is recorded (real/swim.json -> cleared).",
-    "name": "The Water",
-    "before": "has never been seen to swim: he keeps to bridges, stones and boats, and water over his chest is a danger to him",
-    "stages": [
-      {
-        "n": 1,
-        "name": "the shallows",
-        "proves": "he can put his head under and come up easy",
-        "allows": "goes under in water he can stand in and comes up calm, eyes open; he still does not swim, and water over his head is a danger to him"
-      },
-      {
-        "n": 2,
-        "name": "the crossing",
-        "proves": "the water will carry him",
-        "allows": "lies back on still water and lets it carry him, and swims a short reach of water he could stand in; nothing deep, nothing fast"
-      },
-      {
-        "n": 3,
-        "name": "the deep",
-        "proves": "he can stay up where there is no floor",
-        "allows": "swims and stays afloat in deep, slow water with someone watching; never alone in it, never in a spate"
-      },
-      {
-        "n": 4,
-        "name": "the leap",
-        "proves": "he can leave a height for deep water and come up swimming",
-        "allows": "leaps into deep water from a bank, a bridge or a rail, comes up and swims to the edge; headfirst only where the water is known to be deep"
-      }
-    ],
+  "swim": {
+    "_about": "The swim program (real/swim.json, real/logs/swim_log.csv, `darrow.py swim`; the plan: real/plan/swim_plan.md). What it pays: daily.pool_session, daily.water_practice and daily.water_first; a stage of the ladder finished (every milestone of it and of the stages before it) brings inspiration_per_stage Inspiration, capped like the rest. Its two Arts (arts[] with `first`) open on the day their own milestone is done and rank by practice (tags.swim_tags). Nothing of it is on the sheet but those Arts, and the story is not steered by it. Nothing done in the pool pays, and neither Art opens, until the PT's word on the pool is recorded (real/swim.json -> cleared).",
     "inspiration_per_stage": 1
   },
   "hp": {
     "_formula": "20 + 4*level + 2*(vigor - 10), minimum 10"
   },
   "tags": {
-    "_about": "Which real practice feeds which Art. Exercise-log 'block' and 'session' values map to tags here. A block is the progression the drill belongs to, one per movement (real/plan/working_rules.md -> Log files): landing is land-and-stick, plyo is leaving the ground, and balance counts only from a balance drill's own row.",
+    "_about": "Which real practice feeds which Art. Exercise-log 'block' and 'session' values map to tags here. A block is the progression the drill belongs to, one per movement (real/plan/working_rules.md -> Log files): landing is land-and-stick, plyo is leaving the ground, and balance counts only from a balance drill's own row. swim_tags: a swim_log.csv 'skill' (config.json -> swim.skills) to the tag it is practice for: breath work in the pool or at home, and everything else done in the water.",
     "block_tags": {
       "balance": "balance",
       "landing": "landing",
@@ -435,6 +407,14 @@
       "accessory": "accessory",
       "arms": "accessory",
       "power": "power"
+    },
+    "swim_tags": {
+      "breath": "breathwork",
+      "float": "afloat",
+      "roll": "afloat",
+      "stroke": "afloat",
+      "tread": "afloat",
+      "deep": "afloat"
     }
   },
   "arts": [
@@ -569,6 +549,24 @@
       "tag": "reactive",
       "knot": 6,
       "effect": "Act before the enemy finishes deciding."
+    },
+    {
+      "id": "quiet_under",
+      "name": "The Quiet Under",
+      "tree": "Water",
+      "tag": "breathwork",
+      "knot": 0,
+      "first": "no_pinch",
+      "effect": "Go unheard: the breath let out slow, the body still, no sound he did not choose to make. +Rank to pass unnoticed, to keep a hiding place, and to wait in silence for as long as it takes."
+    },
+    {
+      "id": "swans_feet",
+      "name": "Swan's Feet",
+      "tree": "Water",
+      "tag": "afloat",
+      "knot": 0,
+      "first": "float_alone",
+      "effect": "Calm above, working beneath. With his body at its limit (holding a door, carrying a man, deep in a fight) he can still do a second thing well: give an order, make a signal, tie a knot, strike a bargain. The strain costs that second thing nothing; +Rank to command under it."
     }
   ],
   "sport_arts": {
@@ -629,65 +627,6 @@
         "tree": "Footing",
         "knot": 3,
         "effect": "Mirror a foe and stay between him and what he wants: advantage to hold a doorway, cut off a flight, or shadow a duelist step for step."
-      }
-    ]
-  },
-  "swim_arts": {
-    "_about": "Set 11/27 with the swim program: maps a swim_log 'skill' (config.json -> swim.skills) to an Art of the Water tree. Practice is the days a skill was logged, in the pool or (breath only) at home. An Art opens on the day its own first is done (`first`: a milestone id of real/swim.json) and its Knot is tied; practice before that is banked, as with a Knot. knot = what the movement asks of the knee (plunge is a leap: Knot V).",
-    "arts": [
-      {
-        "skill": "breath",
-        "id": "quiet_under",
-        "name": "The Quiet Under",
-        "tree": "Water",
-        "knot": 0,
-        "first": "no_pinch",
-        "effect": "Go under and keep his head: the breath let out slow, eyes open, up again where he chose and without a sound. Advantage to pass unseen through water, and to stay calm wherever air is short."
-      },
-      {
-        "skill": "float",
-        "id": "otters_rest",
-        "name": "Otter's Rest",
-        "tree": "Water",
-        "knot": 0,
-        "first": "float_assisted",
-        "effect": "Lie back on still water and let it carry him. He can rest there as long as he needs, hands idle, and find his feet again when he likes."
-      },
-      {
-        "skill": "roll",
-        "id": "skyward_turn",
-        "name": "The Skyward Turn",
-        "tree": "Water",
-        "knot": 0,
-        "first": "roll_over",
-        "effect": "Once a scene, when the water is winning, turn his face to the air and breathe: a failing swim becomes a rest, and he may try again."
-      },
-      {
-        "skill": "stroke",
-        "id": "bank_to_bank",
-        "name": "Bank to Bank",
-        "tree": "Water",
-        "knot": 0,
-        "first": "swim_10",
-        "effect": "Cross water under his own power. A river is a road to him where it was a wall; a check to swim a crossing gains +Rank."
-      },
-      {
-        "skill": "tread",
-        "id": "swans_feet",
-        "name": "Swan's Feet",
-        "tree": "Water",
-        "knot": 0,
-        "first": "tread_30",
-        "effect": "Hold his place where there is no floor under him, head up and hands free: time to think, to take a rope, to wait out a searcher on the bank."
-      },
-      {
-        "skill": "plunge",
-        "id": "kingfishers_fall",
-        "name": "Kingfisher's Fall",
-        "tree": "Water",
-        "knot": 5,
-        "first": "feet_first",
-        "effect": "Leave a height for deep water and go in clean: a bank, a bridge, a wall, a ship's rail. He comes up where he meant to, already moving."
       }
     ]
   },

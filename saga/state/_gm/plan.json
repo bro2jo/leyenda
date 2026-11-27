@@ -381,16 +381,6 @@
       "status": "available",
       "stage": 0,
       "priority": "floating"
-    },
-    "darrow.water": {
-      "status": "available",
-      "stage": 0,
-      "priority": "floating",
-      "standing": true,
-      "ladder": "water",
-      "stage_gates": {
-        "4": "route.book3 != \"\""
-      }
     }
   },
   "route": {

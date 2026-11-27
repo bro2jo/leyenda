@@ -1115,16 +1115,16 @@
     "stage_evidence": "Knot IV tied Mon 11/16 (PT 15: the surgeon and the PT cleared the running gate); the State rewritten Thu 11/19 opens the Phase 5 throwing (section 7); the first session back, Wed 11/18, held the Phase 4 footwork"
   },
   "swim": {
-    "_about": "Set 11/27 with the learn-to-swim program (real/plan/swim_plan.md; his notes as written: real/plan/learn_to_swim_notes.md). skills = the only valid swim_log.csv 'skill' values; each feeds an Art of the Water (engine/rules.json -> swim_arts). home_skills = what a home-practice row may name: the home routine is breathing work, so it counts as breath and nothing else. The milestones, what is done and the PT's word on the pool: real/swim.json (`darrow.py swim`). Never in the weekly template: a pool visit is not part of the week's score.",
+    "_about": "Set 11/27 with the learn-to-swim program (real/plan/swim_plan.md; his notes as written: real/plan/learn_to_swim_notes.md). skills = the only valid swim_log.csv 'skill' values; each is practice for an Art (engine/rules.json -> tags.swim_tags). home_skills = what a home-practice row may name: the home routine is breathing work, so it counts as breath and nothing else. The milestones, what is done and the PT's word on the pool: real/swim.json (`darrow.py swim`). In the week's plan a pool visit is the code swim (weekly_template, plan_changes): it joins the template once the PT's word is in and he has named its day.",
     "skills": [
       "breath",
       "float",
       "roll",
       "stroke",
       "tread",
-      "plunge"
+      "deep"
     ],
-    "_skills": "breath (going under, breathing out through the nose, coming up calm) · float (the back and front float, back to standing) · roll (front to back) · stroke (swimming a distance, with its breathing) · tread (staying up without the floor: sculling and the kick) · plunge (deep-water entries: feet first, the jump, the dive)",
+    "_skills": "the blocks of a pool visit: breath (going under, breathing out through the nose, coming up calm) · float (the back and front float, back to standing) · roll (front to back) · stroke (swimming a distance) · tread (staying up without the floor: sculling and the kick) · deep (time in water over his head: the wall, letting go, entries, the dive)",
     "home_skills": [
       "breath"
     ],
