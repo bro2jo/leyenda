@@ -483,13 +483,13 @@
     }
   ],
   "tether": {
-    "days": 4,
+    "days": 6,
     "stage": 2,
     "of": 5,
     "name": "a hand",
     "next_at": 10,
     "first": "2026-10-11",
-    "last": "2026-11-14",
+    "last": "2026-11-26",
     "with": "rae-thorne"
   },
   "wardrobe": {
