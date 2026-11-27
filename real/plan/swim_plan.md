@@ -48,12 +48,13 @@ The default order, with his own targets. The session that is actually due is alw
 
 ## 5. The home routine
 
-About 14 minutes on five days a week, his notes' routine made to follow the ladder like the pool session does: **the home drill of each milestone that is ready** (up to three, on dry land, in the shower or in the bath), then two lines that are always there: picturing a calm float and a calm resurfacing, and a short video of what he is working on. The day before a pool visit, the video gives way to reading the session. The routine for now: `python3 engine/darrow.py swim home`, or §12 below.
+Five days a week, his notes' routine made to follow the ladder like the pool session does: **the drills of the milestones that are ready** (a drill several of them share is done once; up to three), then picturing a calm float and a calm resurfacing for two minutes. The day before a pool visit, read the session. The routine for now: `python3 engine/darrow.py swim home`, or §12 below. **The video is off for now** (his call, 11/27).
 
+- **Stage 1 at home is one drill in the bath: the calm float and the sink.** Lie back into a float with the ears under, a few slow breaths, then hum and let the whole face go under, a count longer each round. It trains going under without the hands, the slow nose exhale, coming up calm, ears in the water and the feel of the float at once, and it trains them face up, where water runs into the nose most easily. It is his own change of the notes' "reserve full submersion for the pool" (11/27): he is already at ease face under in the tub. No bath that day: the shower, face into the spray, humming.
+- Then the floor and the bed carry stage 2's shapes (the way up, the float's balance, the roll, the kick); stage 3 is sculling and breathing pace; stage 4 is picturing it.
 - On a short day, the first drill is the routine.
-- The shower and the bath carry stage 1 (the hum in the spray, ears under in the tub); the floor and the bed carry stage 2's shapes (the float, the way up, the roll, the kick); stage 3 is breathing pace and sculling; stage 4 is picturing it.
-- Logged as one row a day (`session=home`, `skill=breath`). It is practice, not a test: nothing is measured.
-- **His dry breath holds stay dry.** Nothing in this plan holds the breath: every drill is a breath *out*. See §7.
+- Logged as one row a day (`session=home`, `skill=breath`). It is practice, not a test: milestones are judged in the pool.
+- **Every second under is a breath out.** Nothing in this plan holds the breath, and the bath rounds stop the moment the air runs low, never after; light-headed means done for the day. His dry breath holds stay dry (§7).
 
 ## 6. The knee
 
@@ -146,12 +147,10 @@ Stop on a good one. A milestone is recorded the day it happens: tell me what you
 
 ### The home routine now
 
-Home routine · about 14 minutes, 5 days a week · log it as one row (`session=home`, `skill=breath`)
-1. For Submerge my head without pinching my nose: Shower, 3 min: face straight into the spray with your hands at your sides, hum out through the nose while the water runs over your nose and mouth, then turn out of it and breathe in through the mouth. 8 to 10 rounds. Never pinch, never wipe.
-2. For Exhale gently through my nose underwater: The slow leak, 2 min, sitting: breathe in through the mouth, then let the air out through the nose as thin and even as you can, and time it. 6 rounds; add a second a week toward 8.
-3. For Feel comfortable with my ears underwater: Bath, 3 min (you are already at ease in the tub): lie back until both ears are under, eyes on the ceiling, and breathe normally. Work up to a minute at a time; sit up whenever you like.
-4. Picture it, 2 min: a calm float and a calm resurfacing, as clearly as you can (his notes).
-5. One video, about 5 min, of what you are working on (the drills above); on the day before a pool visit, read the session instead (`swim next`).
+Home routine · about 8 minutes, 5 days a week · log it as one row (`session=home`, `skill=breath`)
+1. The calm float and the sink (bath), 6 min (toward: Submerge my head without pinching my nose; Exhale gently through my nose underwater; Feel comfortable with my ears underwater; Float on my back with assistance): Lie back in a full tub until your ears are under and the water takes the weight of your head: arms loose, hands resting on your belly, eyes on the ceiling. Take three slow breaths there, in fully so you feel your chest lift, then half out so you feel yourself settle. That is the float. Then start the hum and let your head sink until your nose and your whole face are under. Count 3, come up slowly, let the water run off, and only then breathe in. 6 to 8 rounds, a count longer each round, toward 6. Face up is where water runs into the nose most easily, which is why the hum starts before your nose goes under and keeps going until it is out. Every second under is a breath out, never a hold: stop the round the moment the air runs low, and stop for the day if you feel light-headed. No bath that day: the shower, face straight into the spray with your hands down, humming, for 3 minutes.
+2. Picture it, 2 min: a calm float and a calm resurfacing, as clearly as you can.
+The day before a pool visit, read the session (`swim next`).
 
 ### The ladder: every milestone and the drills that lead to it
 
@@ -164,7 +163,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Eyes in, goggles on: hum, lower until the goggles are under, look at your own hands for a slow count of 3, come up. 5 times.
 - Work 4. All the way: hum, sink until the top of your head is wet, count 3, stand. Three in a row with your hands on your thighs is the milestone.
 - If stuck: Water up the nose means the breath out stopped or the chin tipped back: tuck the chin a little, hum louder, and come up before the air runs out, never after. A nose clip for a visit or two is a fair bridge for every other block; take it off for this one.
-- At home: Shower, 3 min: face straight into the spray with your hands at your sides, hum out through the nose while the water runs over your nose and mouth, then turn out of it and breathe in through the mouth. 8 to 10 rounds. Never pinch, never wipe.
+- At home: The calm float and the sink (bath) (below)
 
 **[ ] Exhale gently through my nose underwater** · `nose_exhale` · ready
 - Judged: a slow, steady stream of bubbles through the nose for about five seconds, three times in one visit (no forceful humming).
@@ -172,7 +171,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. One long 'mmmm' under water on one breath. If the bubbles come out in a burst, you pushed: start again, quieter.
 - Work 3. Bobs: under with bubbles, up for one easy breath in through the mouth, straight back under. 5 in a row, then 10. This rhythm is the one that will look after you in deep water.
 - If stuck: Running out of air in two seconds means you are blowing, not leaking. Add one second to the stream each visit. The shower is where this gets easy: the same hum with the spray on your face.
-- At home: The slow leak, 2 min, sitting: breathe in through the mouth, then let the air out through the nose as thin and even as you can, and time it. 6 rounds; add a second a week toward 8.
+- At home: The calm float and the sink (bath) (below)
 
 **[ ] Resurface calmly** · `calm_surface` · after: Submerge my head without pinching my nose
 - Judged: up from a full submersion with no gasp, no grab for the wall and no rush to wipe the face, three times in one visit.
@@ -180,7 +179,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. Finish the breath out as your mouth clears the surface, so that the first thing you do in the air is breathe in.
 - Work 3. Say one calm word out loud after each one before you do anything else. Three in a row is the milestone.
 - If stuck: Coming up with a gasp means you stayed down too long: cut the time under to a count of 2 and build back up. Coming up calm matters more than staying down long.
-- At home: Shower, 2 min: after each hum in the spray, turn out of it slowly, let the water run off your face, and only then breathe in. Hands down, no wiping.
+- At home: The calm float and the sink (bath) (below)
 
 **[ ] Feel comfortable with my ears underwater** · `ears_under` · ready
 - Judged: ears under for about 30 seconds while breathing normally (a supported back float counts), and his own word that it felt fine.
@@ -188,7 +187,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. The cradle: your buddy stands behind you with a hand under the back of your head. Lean back until your ears are under, eyes on the ceiling, feet still on the bottom. 3 times, 10 seconds each.
 - Work 3. The same with the hand between your shoulder blades and your feet off the bottom. Work up to 30 seconds of ordinary breathing.
 - If stuck: If the feeling of water in your ears is the whole problem, wear earplugs and move on. A tight neck means you are holding your head up: let the water take its weight.
-- At home: Bath, 3 min (you are already at ease in the tub): lie back until both ears are under, eyes on the ceiling, and breathe normally. Work up to a minute at a time; sit up whenever you like.
+- At home: The calm float and the sink (bath) (below)
 
 
 #### Stage 2 — Floating and swimming
@@ -199,7 +198,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. Breathe low and slow. A full breath lifts you; let half of it out, feel yourself settle, fill again. 15 seconds with the hand there is the milestone.
 - Work 3. Then the hand becomes two fingers, then hovers under you without touching. Ask not to be told when it lets go.
 - If stuck: Legs that drop are normal for lean, muscular legs: let them hang, or add a small slow kick from the hips. A float with the legs low and the face dry is a float. With no buddy that day, a noodle under your knees or a kickboard hugged to your chest stands in.
-- At home: Floor, 2 min: lie on your back in the float shape (arms wide, palms up, chin a little up, neck loose). Breathe in fully and feel your chest rise, let half of it out and feel yourself settle, fill again. That half-breath is what keeps you up in the water.
+- At home: The calm float and the sink (bath) (below)
 
 **[ ] Recover from floating to standing** · `float_to_stand` · after: Submerge my head without pinching my nose
 - Judged: from a back float and from a front float, feet back under him and standing with no help, three times each.
@@ -208,7 +207,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Then let go: a front float from standing (arms forward, face in, count 3) and stand up out of it by yourself. Three each way is the milestone.
 - If stuck: Lifting the head first is what makes the feet miss the floor: knees in first, head last. Do it in water no deeper than your ribs until it is automatic. This is the skill that makes every float safe, so it comes before floating alone.
 - Knee: Both feet go down together and softly.
-- At home: Floor or bed, 2 min: rehearse the way up from a back float: knees to your chest, chin down, both hands scoop forward, roll up to sitting. 5 slow ones. Then face down: knees under you, hands press, head up last. 5 more.
+- At home: The way up from a float (floor) (below)
 
 **[ ] Float independently** · `float_alone` · after: Float on my back with assistance; Recover from floating to standing
 - Judged: a back float held about 15 seconds with no one touching him; a small kick or scull to keep the legs up counts (lean legs sink).
@@ -218,7 +217,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 4. The front float too: face in, arms forward, legs long, 5 to 10 seconds, stand.
 - If stuck: Stiff is what sinks. Before each try, one long breath out through the nose with your face in, shoulders dropped. If the fear is of not being held, have your buddy stand an arm's length away with hands in the water, not on you.
 - Knee: Kick small and from the hips.
-- At home: Floor, 2 min: the float shape, then sweep your arms overhead and back to your sides and feel where your weight goes; finish with small sculling circles of the hands by your hips.
+- At home: The float's balance (floor) (below)
 
 **[ ] Roll from front to back** · `roll_over` · after: Float independently; Resurface calmly
 - Judged: from a front float or glide, roll onto the back and breathe without touching the bottom, three times, unassisted.
@@ -227,7 +226,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Alone: a front glide off the wall, bubbles for 3, roll, breathe, float, stand. Three in a row without touching is the milestone.
 - Work 4. Back to front as well, so you can go under, look where you are going, and come back up for air.
 - If stuck: Lifting your head to breathe before the roll finishes sinks you: the head stays in line and the eyes follow the shoulder. Slow is fine, with bubbles all the way round.
-- At home: Bed or carpet, 2 min: log rolls from your front to your back, head kept in line with your shoulders, eyes following the shoulder, chin up last. 5 each way.
+- At home: The roll (bed or carpet) (below)
 
 **[ ] Swim 10 yards continuously** · `swim_10` · after: Recover from floating to standing; Exhale gently through my nose underwater
 - Judged: 10 yards by any stroke without touching the bottom or the wall, in standing-depth water.
@@ -238,7 +237,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 5. Measure it: ask the lifeguard where 10 yards is (usually a little past the first flags).
 - If stuck: Leave the front crawl's side breathing for later: it is the hardest thing in swimming and this milestone does not need it. Tiring in 5 yards means kicking from the knees or holding your breath: longer legs, steady bubbles.
 - Knee: Any kick (PT, 11/27: anything in water is okay). Start with the flutter: it is the easiest to learn and moves the knee in a straight line. Push off the wall gently, with both feet.
-- At home: 3 min: standing, the back stroke's arms 10 slow times (hands up your sides to the armpits, out wide, sweep down to your thighs, pause). Then face down on the bed with your legs off the edge from the hips, a small flutter kick from the hip with soft knees, 3 × 20 seconds.
+- At home: Arms and kick (standing, then the bed) (below)
 
 **[ ] Swim 25 yards continuously** · `swim_25` · after: Swim 10 yards continuously; Roll from front to back
 - Judged: one 25-yard length by any stroke without touching the bottom or the wall.
@@ -248,7 +247,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 4. Swim in the lane beside the wall, in water you can stand in the whole way if the pool has it.
 - If stuck: A stall around 15 yards is breath, not strength: make the first half deliberately lazy. If lifting your head sinks your legs, do the whole length on your back.
 - Knee: Any kick; easy push-offs.
-- At home: 3 min: the same kick face down on the bed, 3 × 30 seconds, with the breathing you will use in the pool: hum out for a few kicks, turn your head, breathe in.
+- At home: The kick with the breathing (bed) (below)
 
 
 #### Stage 3 — Deep-water readiness
@@ -261,7 +260,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 4. Slow and wide beats fast and small: head tipped back a little, mouth just clear, lungs full.
 - If stuck: Sinking to the eyebrows means you are trying to hold too much of yourself out of the water: only your face needs to be dry. If the legs will not carry it yet, tread with a noodle under your arms and take it away a visit later.
 - Knee: The kick is the knee's question. Any kick is cleared (PT, 11/27), but start with the slow bicycle and the flutter. The eggbeater and the frog kick twist the knee most: learn them small and slow once the rest is easy, and a morning with more swelling than usual drops them first.
-- At home: 3 min: sculling standing up, palms down, thumbs tilting down on the way out and up on the way in, 3 × 30 seconds; then on your back on the floor, a slow bicycle with the legs, 3 × 20 seconds.
+- At home: Sculling and the slow bicycle (below)
 
 **[ ] Float or tread water for 1 minute** · `afloat_60` · after: Tread water for 30 seconds
 - Judged: one minute afloat by floating, treading or both, nothing touching.
@@ -269,7 +268,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. Add 10 seconds a visit to whichever part is easier, and hold the other where it is.
 - Work 3. Do it once fresh and once near the end of the session, when you are a little tired.
 - If stuck: If the treading runs out first, let the back float carry most of the minute. This one is about staying up by any calm means.
-- At home: 2 min by the clock, sitting still: breathe in for 2, out for 4. This is the pace that makes a minute afloat easy.
+- At home: The pace of staying up (below)
 
 **[ ] Float or tread water for 2 minutes** · `afloat_120` · after: Float or tread water for 1 minute
 - Judged: two minutes afloat by floating, treading or both, nothing touching.
@@ -277,7 +276,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. Give yourself jobs while you are up there: turn a full circle, find the nearest exit, hold one hand out of the water for 5 seconds, say the alphabet.
 - Work 3. Once it is easy in standing depth, do it within arm's reach of the wall where the water is over your head, supervised.
 - If stuck: A stall around 90 seconds is usually tight shoulders: drop them, widen the scull, and lean back onto the water a little.
-- At home: 3 min: the 2-in, 4-out breathing by the clock, then picture two minutes afloat in the deep end: the circle, the exit, the wall.
+- At home: The pace of staying up (below)
 
 **[ ] Pass a supervised water competency assessment** · `competency` · after: Swim 25 yards continuously; Float or tread water for 1 minute; Perform a supervised feet-first deep-water entry
 - Judged: the Red Cross sequence in one go, supervised: into water over his head and back to the surface, float or tread for one minute, turn a full circle and find the exit, swim 25 yards to it, and get out without the ladder.
@@ -286,7 +285,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Chain them two at a time (the entry and the minute; the minute, the circle and the swim), then all five. Ask a lifeguard or an instructor to watch the whole sequence: many pools run it as their swim test.
 - If stuck: The part that fails is nearly always the minute afloat straight after the entry, because the entry spends your calm. Take three slow breaths on your back before you start counting.
 - Knee: The step in is a feet-first entry into deep water, so there is no landing. The climb out can put a knee on the deck: kneeling on the left is allowed to comfort and not pushed (PT 16), so lead with the right, or use the ladder until it is comfortable and finish that part later.
-- At home: 3 min: picture the five parts in order, as clearly as you can, twice (in, up, a minute afloat, the circle and the exit, the swim, out). Then 10 slow push-ups with your hands on the edge of a counter: getting out without the ladder is an arm press.
+- At home: The sequence, rehearsed (below)
 
 **[ ] Swim in deep water with confidence** · `deep_confident` · after: Float independently; Resurface calmly
 - Judged: two visits in a row swimming in water over his head, supervised, each of which he rates calm (4 or 5 of 5).
@@ -298,7 +297,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 6. Rung 6, along the wall (once you can stay afloat a minute): swim the deep half of a length in the lane beside the wall, your buddy walking the deck beside you.
 - Work 7. Rung 7, across the line: swim from where you can stand to where you cannot, and on to the far wall. Then start from the deep end. Two visits in a row of this, each rated calm, is the milestone.
 - If stuck: Stay on a rung for as many visits as it takes to be bored there: boredom is the signal to move up. If a rung sends your heart racing, drop back one, do that one well once, and end the block there. This block is never done without a lifeguard on duty and someone on the deck who knows what you are working on.
-- At home: 2 min: picture the next rung of the deep-water ladder from start to finish, calm. Then one video of an adult swimming in deep water.
+- At home: The next deep-water rung, pictured (below)
 
 
 #### Stage 4 — My ultimate goal
@@ -310,7 +309,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. The step: stand at the edge with your toes over it, look at the far wall and not down, take one big step out and bring your feet together. Press your arms down through the water as you go under to stop the drop. Up, breathe, three breaths on your back, swim to the wall. One supervised step or jump is the milestone.
 - If stuck: If the drop is the fear, stay with the seated entry until it is dull. If the fear is of not coming up, do 5 deep-end bobs on the wall first: the water pushes you up every single time.
 - Knee: Deep water only, so the feet touch nothing. Never jump or step into water you can stand in: that is a landing on a hard floor, outside the PT's "in water". The push-off from the deck is a small jump, smaller than the clinic's box jumps.
-- At home: 2 min: picture the step in, twice: toes over the edge, eyes on the far wall, the hum starting, the step, the arms pressing down, coming up, three breaths on your back.
+- At home: The step in, pictured (below)
 
 **[ ] Jump into deep water without holding my nose** · `jump_no_pinch` · after: Perform a supervised feet-first deep-water entry; Exhale gently through my nose underwater
 - Judged: a jump into deep water with both hands away from the face.
@@ -319,7 +318,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Steps in first, then a small two-foot jump out from the edge. Three good ones a visit is plenty.
 - If stuck: Water up the nose on the way in means the hum stopped or the chin lifted: chin level, eyes on the far wall, a louder hum. A nose clip is no failure, but this milestone is done without one.
 - Knee: A small two-foot push-off from the deck into deep water only.
-- At home: Shower, 2 min: start the hum before your face goes into the spray and keep it going until you are out of it, with your hands crossed on your chest.
+- At home: The hum before the face goes in (shower) (below)
 
 **[ ] Resurface and swim to the wall calmly** · `surface_to_wall` · after: Perform a supervised feet-first deep-water entry
 - Judged: after a jump: up, a breath, and an unhurried swim to the wall, three times in one visit.
@@ -327,7 +326,7 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 2. Go in further out each time: a foot from the wall, then a body length, then from the corner so that the swim back is 5 or 10 yards.
 - Work 3. Three in one visit, each unhurried, is the milestone.
 - If stuck: If you race for the wall, add a rule: 5 seconds of treading or back floating after every entry before you are allowed to swim.
-- At home: 1 min, before bed: say the routine out loud (up, breathe, look, swim) and picture it three times.
+- At home: Up, breathe, look, swim (below)
 
 **[ ] Perform a safe headfirst dive with an instructor** · `dive` · after: Pass a supervised water competency assessment; Resurface and swim to the wall calmly
 - Judged: a headfirst entry taught and watched by an instructor, in a designated diving area.
@@ -336,11 +335,28 @@ Home routine · about 14 minutes, 5 days a week · log it as one row (`session=h
 - Work 3. Your arms stay locked over your head until you have surfaced: the hands meet the water, not the head, and they steer you up.
 - If stuck: A belly flop means the head came up: chin to chest, eyes on your knees as you roll in. Stay with the sitting dive until it is clean. Nobody needs the standing dive on a schedule.
 - Knee: The kneeling dive puts a knee on the deck: use a mat and kneel on the right, or skip that rung with the instructor's agreement.
-- At home: 2 min: one video of a sitting dive taught to an adult; picture your arms locked over your ears and the roll forward.
+- At home: The sitting dive, pictured (below)
 
 **[ ] Enjoy deep-water swimming** · `enjoy_deep` · after: Swim in deep water with confidence
 - Judged: his own word, after a visit in deep water he stayed in because he wanted to.
 - Work 1. One visit with no drills: get in at the deep end, float, swim where you like, get out when you want.
 - Work 2. Notice what you choose to do when nothing is assigned. That is what the pool is for from now on.
 - If stuck: If it still feels like a test, it is not this milestone's day yet. Nothing about it can be forced.
+
+#### The home drills
+
+- **The calm float and the sink (bath)**, 6 min: Lie back in a full tub until your ears are under and the water takes the weight of your head: arms loose, hands resting on your belly, eyes on the ceiling. Take three slow breaths there, in fully so you feel your chest lift, then half out so you feel yourself settle. That is the float. Then start the hum and let your head sink until your nose and your whole face are under. Count 3, come up slowly, let the water run off, and only then breathe in. 6 to 8 rounds, a count longer each round, toward 6. Face up is where water runs into the nose most easily, which is why the hum starts before your nose goes under and keeps going until it is out. Every second under is a breath out, never a hold: stop the round the moment the air runs low, and stop for the day if you feel light-headed. No bath that day: the shower, face straight into the spray with your hands down, humming, for 3 minutes.
+- **The way up from a float (floor)**, 2 min: On your back on the floor or the bed: knees to your chest, chin down, both hands scoop forward, roll up to sitting. 5 slow ones. Then face down: knees under you, hands press, head up last. 5 more.
+- **The float's balance (floor)**, 2 min: Lie in the float shape (arms wide, palms up, chin a little up, neck loose). Sweep your arms overhead and back to your sides and feel where your weight goes; finish with small sculling circles of the hands by your hips. In the bath, the same shape after the float rounds.
+- **The roll (bed or carpet)**, 2 min: Log rolls from your front to your back, head kept in line with your shoulders, eyes following the shoulder, chin up last. 5 each way.
+- **Arms and kick (standing, then the bed)**, 3 min: Standing, the back stroke's arms 10 slow times (hands up your sides to the armpits, out wide, sweep down to your thighs, pause). Then face down on the bed with your legs off the edge from the hips, a small flutter kick from the hip with soft knees, 3 × 20 seconds.
+- **The kick with the breathing (bed)**, 3 min: Face down on the bed, the same small kick, 3 × 30 seconds, with the breathing you will use in the pool: hum out for a few kicks, turn your head, breathe in.
+- **Sculling and the slow bicycle**, 3 min: Standing, palms down, thumbs tilting down on the way out and up on the way in: 3 × 30 seconds. Then on your back on the floor, a slow bicycle with the legs, 3 × 20 seconds.
+- **The pace of staying up**, 2 min: Sitting still, by the clock: in for 2, out for 4. This is the pace that makes a minute afloat easy. Once a minute afloat is done, finish by picturing two minutes in the deep end: the circle, the exit, the wall.
+- **The sequence, rehearsed**, 3 min: Picture the five parts in order, as clearly as you can, twice: in, up, a minute afloat, the circle and the exit, the swim, out. Then 10 slow push-ups with your hands on the edge of a counter: getting out without the ladder is an arm press.
+- **The next deep-water rung, pictured**, 2 min: Picture the next rung of the deep-water ladder (`swim show deep_confident`) from start to finish, calm, twice.
+- **The step in, pictured**, 2 min: Picture the step in, twice: toes over the edge, eyes on the far wall, the hum starting, the step, the arms pressing down, coming up, three breaths on your back.
+- **The hum before the face goes in (shower)**, 2 min: Start the hum before your face goes into the spray and keep it going until you are out of it, with your hands crossed on your chest.
+- **Up, breathe, look, swim**, 1 min: Before bed, say the routine out loud (up, breathe, look, swim) and picture it three times.
+- **The sitting dive, pictured**, 2 min: Picture the sitting dive the instructor taught: arms locked over your ears, hands together, the roll forward, the hands steering you up.
 <!-- engine:end -->

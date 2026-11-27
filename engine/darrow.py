@@ -35,7 +35,7 @@ Commands (run from the repo root):
                                milestone that is ready with its drills; a block whose milestones are done shrinks to a line.
                                Nothing in the program is on a calendar: checking a milestone off moves the session on
   swim home                    the home routine for now, built the same way: the home drill of each ready milestone (up to
-                               three), then picturing it and a video (the day before a pool visit: read `swim next`)
+                               three; a drill several share counted once), then picturing it (the day before a pool visit: read `swim next`)
   swim add 'JSON'              append swim-log rows (real/logs/swim_log.csv), one per skill worked: {date, session (pool|home),
                                skill (config.json -> swim.skills; a pool row may leave it blank: the warm-up; a home row is
                                breath), drill, sets, reps, minutes, rpe, metric, value, notes}. Its own log: a pool visit is
@@ -3048,17 +3048,32 @@ def swim_session_lines(data):
     return out
 
 
+def swim_home_drill(data, m):
+    """A milestone's home drill (real/swim.json -> home.drills[milestone.home]), or None."""
+    return ((data.get("home") or {}).get("drills") or {}).get(m.get("home") or "")
+
+
 def swim_home_lines(data):
-    """The home routine for now, built like the pool session: the home drill of each ready milestone (real/swim.json ->
-    milestones[].home), up to home.drills_per_day in the ladder's order, then the lines that are always there."""
+    """The home routine for now, built like the pool session: the drills of the ready milestones (a drill several of them
+    share counted once, up to home.drills_per_day in the ladder's order), then the lines that are always there."""
     every = swim_milestones(data)
     done_ids = {m["id"] for m in every if m.get("done")}
     home = data.get("home") or {}
-    drills = [m for m in swim_ready(data, done_ids) if m.get("home")][: home.get("drills_per_day", 3)]
-    out = [f"Home routine · about 14 minutes, {HOME_DAYS_A_WEEK} days a week · log it as one row (`session=home`, `skill=breath`)"]
-    for k, m in enumerate(drills, 1):
-        out.append(f"{k}. For {m['title']}: {m['home']}")
-    out += [f"{k}. {line}" for k, line in enumerate(home.get("always", []), len(drills) + 1)]
+    picked = {}
+    for m in swim_ready(data, done_ids):
+        if swim_home_drill(data, m):
+            picked.setdefault(m["home"], []).append(m["title"])
+    picked = list(picked.items())[: home.get("drills_per_day", 3)]
+    always = home.get("always") or []
+    total = sum(home["drills"][k]["minutes"] for k, _ in picked) + sum(a.get("minutes", 0) for a in always)
+    out = [f"Home routine · about {total} minutes, {HOME_DAYS_A_WEEK} days a week · log it as one row (`session=home`, `skill=breath`)"]
+    for n, (k, titles) in enumerate(picked, 1):
+        dr = home["drills"][k]
+        out.append(f"{n}. {dr['title']}, {dr['minutes']} min (toward: {'; '.join(titles)}): {dr['text']}")
+    out += [f"{n}. {a['text'].split(':')[0]}, {a['minutes']} min:{a['text'].split(':', 1)[1]}" if ":" in a["text"] else f"{n}. {a['text']}"
+            for n, a in enumerate(always, len(picked) + 1)]
+    if home.get("before_pool"):
+        out.append(home["before_pool"])
     return out
 
 
@@ -3078,13 +3093,17 @@ def swim_block(data, asof):
         out.append(f"- Stage {st['n']}, {st['title']}: {sum(1 for m in ms if m['id'] in done_ids)}/{len(ms)} · his target: {st.get('target', '')} (a target, never a deadline)")
     out += ["", "### The next pool session", ""] + swim_session_lines(data)
     out += ["", "### The home routine now", ""] + swim_home_lines(data)
+    drills = (data.get("home") or {}).get("drills") or {}
     out += ["", "### The ladder: every milestone and the drills that lead to it"]
     for st in data["stages"]:
         out += ["", f"#### Stage {st['n']} — {st['title']}", ""]
         for m in st["milestones"]:
             out += swim_milestone_lines({**m, "stage": st["n"]}, by_id, done_ids, head="**") [:1]
             out[-1] = out[-1].replace(" · `", "** · `", 1)
-            out += swim_milestone_lines(m, by_id, done_ids)[1:] + ([f"- At home: {m['home']}"] if m.get("home") else []) + [""]
+            dr = swim_home_drill(data, m)
+            out += swim_milestone_lines(m, by_id, done_ids)[1:] + ([f"- At home: {dr['title']} (below)"] if dr else []) + [""]
+    if drills:
+        out += ["#### The home drills", ""] + [f"- **{dr['title']}**, {dr['minutes']} min: {dr['text']}" for dr in drills.values()]
     return "\n".join(out).rstrip()
 
 
@@ -3117,6 +3136,8 @@ def swim_problems(cfg, rules):
         if m.get("skill") not in skills:
             probs.append(f"real/swim.json: milestone {m['id']} has skill '{m.get('skill')}', not one of config.json -> swim.skills")
         probs += [f"real/swim.json: milestone {m['id']} needs '{n}', which is not a milestone" for n in m.get("needs", []) if n not in ids]
+        if m.get("home") and not swim_home_drill(data, m):
+            probs.append(f"real/swim.json: milestone {m['id']} names home drill '{m['home']}', which is not in home.drills")
     for b in (data.get("session") or {}).get("blocks", []):
         probs += [f"real/swim.json: session block '{b.get('title')}' names skill '{k}', not one of config.json -> swim.skills" for k in b.get("skills", []) if k not in skills]
     today = today_local(cfg)
@@ -3173,7 +3194,8 @@ def cmd_swim(args, cfg, rules):
         return
     if action == "show" and args.what:
         m = find(args.what)
-        print("\n".join(swim_milestone_lines(m, by_id, done_ids) + ([f"- At home: {m['home']}"] if m.get("home") else [])))
+        dr = swim_home_drill(data, m)
+        print("\n".join(swim_milestone_lines(m, by_id, done_ids) + ([f"- At home: {dr['title']}, {dr['minutes']} min: {dr['text']}"] if dr else [])))
         return
     if action == "show":
         cl = data.get("cleared")
