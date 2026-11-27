@@ -452,6 +452,13 @@ Thistle. At the House: Rae brings the mare to the foot of the Steps and climbs w
 What was in her cart on the road back from the ford: forty-one bundles and the tags, in a clerk's hand she has seen since. She can say them. He asks her to stop. She stops. Later, in the same scene or the next she is in, he asks her to go on, and she says them and does not count. (Tobin Marsh's name is hers to say here, reading the tag from memory; Darrow's own saying of it stays for Book V.) Hollis, before or after, plants the custom as a jibe: a knight weds kneeling, Captain; you'll die a bachelor.
 ### stage 5 — a home
 There is no form for it, so they make one (the Unkneeling's rite of q4.deserters, turned to this). Before the finale: a private vow with no knee bent, in a chapel or a barn, witnessed by Wren, who writes it down ("Oaths sworn standing: 1"), and by Maelis, who says Permitted to something that is not the knee; `rae_vow`. If `r.rae.form` arms, the public form is the epilogue's last image after the final kneel: he kneels once because he can, and stands up to her.
+### want (the hard edge, `style.md` §2)
+What is between them is between two adults, and from Book III the page says so. It runs under the stages, never ahead of them, and not in every scene she is in.
+- **Now (II paid, a hand):** the wanting is real on both sides and unspoken: in what he notices (her hair coming loose, the rope-hard palms, where she chooses to sit), in her sitting nearer than she needs to and not pretending she has missed what is in his face. She is plain about it a beat late and never coy; he jokes, and the joke stops.
+- **By III (a road):** said or done once, plainly, by whichever of them the scene makes braver. A first kiss belongs here or soon after, on her terms as much as his, and it costs something (who saw; what it changes on the road).
+- **IV (a door):** the night of the names. After he asks her to go on, they do not sleep apart; the page goes as far as the door and turns away. Lovers from here: ordinary, unhurried, known to the company without a word said (Hollis says several).
+- **V (a home):** the vow is made by two people who already share a blanket; nothing in it is chaste, and nothing explicit.
+- **Always:** never a reward for anything, never because an evening was logged, never ahead of the stage the engine has unlocked. A cold day cools him, not her. A quarrel does not stop it and it does not end a quarrel. Where it would not make the scene stronger, it is one line or none.
 ### compressed
 The stages never compress: each waits for its day.
 ### micro
