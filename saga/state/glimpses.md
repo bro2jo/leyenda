@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-24 · ledger · Wren's ledger, under the day: bread, two loaves and a heel. Arguments over the heel, one, settled by Rae, who ate it.
 - 2026-11-25 · body · His hands are warm before the fire is, this morning, and he notices it the way a man notices a debt paid off: twice, to be sure.
 - 2026-11-25 · weather · Wind off the ice all morning, thin and steady, and every pine along the bank answering it in the same long note.
 - 2026-11-25 · house · From a distance the lamps looked all the same. Wren could tell which ones had glass by the steadiness of the flame.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-27 · body · His feet are warm inside his boots for the first time in days, and he keeps them there, close to the coals, out of something like gratitude.
 - 2026-11-28 · ledger · Wren keeps a tally in the back of her book in a hand she thinks nobody reads, two columns headed owed and kept. Tonight she rules a fresh line under both and sits a while before writing anything on it.
 - 2026-11-28 · saying · Wend-cold, the old word for the worst of it. This side of the river nobody needs telling what it means; they only nod, and put another log on.
+- 2026-11-28 · weather · Morning comes in blue over new snow, every roof along the wall wearing a white cap a hand deep, and the smoke from each going straight up as a rule.
