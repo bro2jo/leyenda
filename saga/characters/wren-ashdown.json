@@ -33,12 +33,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "5",
+    "scene": "6",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-5"
+    "anchor": "chronicle/08-no-bells.html#scene-6"
   },
-  "last_seen_doing": "Asked who Oddny was; counted the chips, fourteen; looked once at the burned clearing and stopped counting.",
-  "now": "Walking with the cart under guard.",
+  "last_seen_doing": "Counted the children on the wall back, Vaelish against clan; hid her ledger in her coat; warned Darrow that the clans sing about the ford.",
+  "now": "At Darrow's elbow outside the holdfast gate.",
   "story_so_far": "Wren counted the carts over the bridge, opened a column for the Captain and closed it in front of him when he came back on the third day, and drove Rae's oxen north without knowing their word. She counted aloud that Rae had been told first twice. At the ring, unasked, at the back with a lamp, she read the last line off the fallen stone, and nobody asked her how.",
   "quote": {
     "text": "Next time you mean to be brave, tell me first. So I don't run.",
@@ -907,6 +907,12 @@
       "chapter": "08",
       "scene": "2",
       "evidence": "and wrote *Five.*, and drew a line under it"
+    },
+    {
+      "fact": "She warned Darrow that the clans sing about the ford, and Hollis knows half the song.",
+      "chapter": "08",
+      "scene": "6",
+      "evidence": "They sing about the ford. Hollis knows half the song."
     }
   ],
   "relationships": [
@@ -1324,6 +1330,10 @@
     {
       "chapter": "08",
       "scene": "5"
+    },
+    {
+      "chapter": "08",
+      "scene": "6"
     }
   ]
 }

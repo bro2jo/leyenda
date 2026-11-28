@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "5",
+    "scene": "6",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-5"
+    "anchor": "chronicle/08-no-bells.html#scene-6"
   },
-  "last_seen_doing": "Slept under the leader's furs; walked at the head with him and came back to Darrow every mile.",
-  "now": "With the column, between the leader and Darrow.",
+  "last_seen_doing": "Was counted twice by the children on the wall, once from each end.",
+  "now": "Outside the holdfast gate with the company.",
   "story_so_far": "Ash brought Darrow's lost stick up from the ice below the weir, kept to his heel on the walkers' road, and bit his sleeve to wake him when a straggler took his boot. She would not go near the frosted stone at the crossroads, and found the ring in the marsh first.",
   "quote": null,
   "known_facts": [
@@ -348,6 +348,10 @@
     {
       "chapter": "08",
       "scene": "5"
+    },
+    {
+      "chapter": "08",
+      "scene": "6"
     }
   ]
 }

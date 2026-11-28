@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "5",
+    "scene": "6",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-5"
+    "anchor": "chronicle/08-no-bells.html#scene-6"
   },
-  "last_seen_doing": "Stopped the column and said her grandmother's name to the watch's leader, and her own after it in the clans' way; the watch turned from the river toward the holdfast.",
-  "now": "At Hob's head on the track toward the holdfast, under guard; what spending her grandmother's name has cost her she does not yet know.",
+  "last_seen_doing": "Carried the elder's question; taught him to say tal from the belly; told him this gift was his to give.",
+  "now": "Outside the holdfast gate with the company, under the old woman's eye.",
   "story_so_far": "Rae named the loads with him up a line of carts, put her cart across the end of the mill bridge, and followed him west on the walkers' road unasked with a lamp and a day's wood, leaving her oxen with Wren. At the second fire she showed him her hands and told him of the cage, asked why he would not kneel, and heard the whole answer. She kept what he told her until it was Hollis's, and carried the lamps out to the ring.",
   "quote": {
     "text": "There's a lamp for every road, they say down there. I carry for the one on this road.",
@@ -1151,6 +1151,12 @@
       "evidence": "\"I know,\" said Rae. \"That's why I didn't ask.\""
     },
     {
+      "fact": "She holds that a gift is from the one who asks, and that her grandmother's name was hers.",
+      "chapter": "08",
+      "scene": "6",
+      "evidence": "\"I've given mine. This one's yours.\""
+    },
+    {
       "fact": "As a girl she rode the box of her grandmother's cart on the Holloway, and was let hold the lines on the straight.",
       "chapter": "tale02",
       "scene": "p1",
@@ -1579,6 +1585,10 @@
     {
       "chapter": "08",
       "scene": "5"
+    },
+    {
+      "chapter": "08",
+      "scene": "6"
     },
     {
       "chapter": "tale02",

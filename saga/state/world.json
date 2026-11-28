@@ -45,11 +45,19 @@
         "2026-11-26"
       ],
       "written": "2026-11-27"
+    },
+    {
+      "scene": 6,
+      "title": "A Gift Before the Ask",
+      "covers": [
+        "2026-11-27"
+      ],
+      "written": "2026-11-28"
     }
   ],
   "location": {
     "place": "the-thornwild",
-    "detail": "on a forest track toward the clans' holdfast at dusk, under the watch's guard, with lamps ahead",
+    "detail": "outside the gate of a clan holdfast at night, by a basket of coals under the gate lamp",
     "_about": "place is an id from saga/state/places.json; detail is a short phrase, where in the place he is (the site prints it after the place's name). Weather is season's, events are last_beat's"
   },
   "season": "deep winter at the Wend: snow over the river ice, and old forest beyond it",
@@ -59,7 +67,7 @@
     "_about": "on_the_page is what the site shows and must be supported by the chronicle; the GM's own summary lives in saga/state/_gm/plan.json (quest_summary). One job: the quest itself (who wants what, what stands in the way, the price), not the latest scene (last_beat) or what he is fighting (current_struggle)"
   },
   "current_struggle": "A watch he cannot see, and a door he has wronged without knowing it.",
-  "last_beat": "Walking at Hob's head with her goad in his hand, he told Rae he would have walked back; she said, \"I know. That's why I didn't ask.\"",
+  "last_beat": "Rae told him the gift was his to give; the old woman on her stool folded her hands and waited, with every face on the wall waiting with her.",
   "companions": {
     "maelis": {
       "approval": 52,
@@ -376,5 +384,5 @@
     "06-the-weir": "At the noon bell on the frozen weir, the rider's footwork met a man who would not move; she lies on the ice, and the choice is his.",
     "07-the-far-bank": "At the ring in the frozen marsh Darrow read what the stones are for, Wren read the line he could not, and Maelis said yes."
   },
-  "last_updated": "2026-11-27"
+  "last_updated": "2026-11-28"
 }

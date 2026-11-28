@@ -35,12 +35,12 @@
   },
   "last_seen": {
     "chapter": "08",
-    "scene": "5",
+    "scene": "6",
     "place": "the-thornwild",
-    "anchor": "chronicle/08-no-bells.html#scene-5"
+    "anchor": "chronicle/08-no-bells.html#scene-6"
   },
-  "last_seen_doing": "Asked Rae to have the watch take her in alone and send the rest back; let her spend her grandmother's name without stopping her; saw the chips at every throat and the burned clearing; was looked at too long by the leader; carried Rae's goad at dusk.",
-  "now": "Under the watch's guard on a forest track at dusk, beside Rae at Hob's head with her goad in his hand, with the lamps of a holdfast ahead.",
+  "last_seen_doing": "Said tal to the holdfast's elder, from the nose and then from the belly; took stock of the little the company had; remembered a clan boy he killed at another ford; asked Rae what her grandmother would have laid down.",
+  "now": "Outside the holdfast gate at night by the watch's coals, with the elder waiting for the gift that must come before the ask.",
   "story_so_far": "Darrow held the mill bridge with a stick crosswise until the miller's fire stopped the walkers, said why first, and went two nights west on their trodden road, where Rae came after him unasked. At a crossroads stone white with frost he turned back with half a day in hand, and at the second fire told Rae why he will not kneel. Back with the column he told Hollis all of what he saw from the water, opened Elinor's letter on the road north, and read the ring in the marsh by lamplight with his bare hands until he understood the ford.",
   "quote": {
     "text": "I was never much good at it anyway.",
@@ -2548,6 +2548,18 @@
       "evidence": "closed it in the air at the height of a man's collar, and pulled"
     },
     {
+      "fact": "Years ago, at another ford, he killed a clan boy with a boar spear and had to put a boot on his shoulder to work the lance free.",
+      "chapter": "08",
+      "scene": "6",
+      "evidence": "a boy with a boar spear too long for him had come at Thistle's chest out of the shallows"
+    },
+    {
+      "fact": "He believes the clans owe him nothing but a grave.",
+      "chapter": "08",
+      "scene": "6",
+      "evidence": "These people owed him nothing. A grave, perhaps."
+    },
+    {
       "fact": "As a boy of eleven he had walked at a horse's head since before he could argue, the way a horse-breeder's son is raised in the Edgemoor hills.",
       "chapter": "tale01",
       "scene": "p1",
@@ -3230,6 +3242,10 @@
     {
       "chapter": "08",
       "scene": "5"
+    },
+    {
+      "chapter": "08",
+      "scene": "6"
     },
     {
       "chapter": "tale01",

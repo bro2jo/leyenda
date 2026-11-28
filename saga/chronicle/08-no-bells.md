@@ -471,3 +471,74 @@ The track went on into the dark under the trees, and somewhere ahead, a long way
 "I'd have walked back," said Darrow.
 
 "I know," said Rae. "That's why I didn't ask."
+
+### Scene 6 — A Gift Before the Ask
+
+The holdfast stood in a clearing at the head of the valley, and it was full dark by the time the watch brought them to it.
+
+A wall of whole trunks, the bark still on them, set upright in the earth and sharpened at the top, higher than a mounted man; behind it, roofs under snow, and smoke going straight up into a sky that had held its snow all day and was letting it go now, slow and straight, with no wind anywhere to move it. Every door Darrow could see over the wall had a lamp beside it. The gate had one bigger than the rest, on a post of its own, and under it the gate stayed shut.
+
+There were children on the wall. They had climbed up on something behind it and hung there by their elbows along the top, a dozen heads in fur hoods, and they were counting the strangers aloud in their own tongue, pointing, one finger at a time.
+
+Wren stopped under the wall and looked up at them.
+
+"One," she said, and pointed at the nearest child. "Two. Three."
+
+The children stopped. Then they started again, louder, from the beginning, and Wren raised her voice and kept pace with them, and for as long as there were strangers left to count they counted each other across the top of the wall, Vaelish against clan, both sides getting faster. They counted Ash twice, once from each end. At Hollis on the tailboard the biggest of the children stopped, looked at him for a long moment, and held up one hand with one finger folded down.
+
+"The little bastard's counting me as half," said Hollis, delighted.
+
+"Technically," said Wren, "he's not wrong," and the children, who could not have understood a word of it, laughed at how she said it.
+
+The watch did not take them in. They stood the company in the trodden snow before the gate, under the big lamp, and somebody brought out an iron basket of coals on three legs and set it down among them, which was the first kindness anyone had shown them since the river that was not about the dog. Darrow put his boots close to it. His feet came back to him slowly, toes first, and he kept them there.
+
+The runner had come this way at first light with Rae's name, and the holdfast had had all day to think about it.
+
+The gate opened a little way, enough for one, and a young man came through it with an old woman on his back.
+
+She rode him the way a child rides a father, her arms round his neck and her legs in his hands, and he carried her without any sign that she weighed anything. He set her down on a stool by the coals and stood behind her. She was very old: a small face folded in on itself, and bright eyes in the folds, and a black chip at her throat like all the rest. She looked at Rae first, a long time. Then at the company, one by one, and last and longest at Darrow, a tall man with a stick and a lowland face, standing outside her gate in a drover's coat.
+
+She said something, and the watch laughed.
+
+"She asks what we bring," said Rae. "A gift comes before an ask. That's the law at a door." Rae did not take her eyes off the old woman. "I've asked. My gran's name was the asking. Now she wants to know what's laid down for it."
+
+He had heard Rae say it. He looked at the old woman and said the word himself.
+
+"*Tal*."
+
+The wall burst. The children fell about on top of it, and one of them nearly fell off, and the watch were bent over their spears; the old woman put her hand over her mouth, and her shoulders shook. Up on the wall a boy put his nose in the air and said it back through his nose, *taaal*, high and thin, and the rest took it up.
+
+"From the belly," said Rae, without turning. "You said it like a man asking for butter."
+
+He tried again, from low down, the way she said the ox-word. It came out better. The old woman took her hand from her mouth, nodded to him once, still smiling, and waited.
+
+So they took stock, low, round the coals, with the holdfast watching.
+
+They had very little. One sack of the millers' flour, and the heel of a loaf. Wren's ledger, which Wren put inside her coat before anyone could look at it. The sword in its oilcloth, on the cart; Darrow's eyes had gone to it before he knew they had, and Hollis saw them go.
+
+"Not the sword," Hollis said. "Not here. Not to them."
+
+Maelis untied a small bag from her roll and held it out on her palm without being asked. Salt. The salt that was for wounds.
+
+"They'll have wounds," she said.
+
+"Captain." Wren had come to his elbow, and she said it very quietly. "They sing about the ford. Hollis knows half the song. What do you think the other half's about?"
+
+Hollis had gone still on the tailboard, as he had at the fire on the stream, with his hands on his knees.
+
+Darrow looked up at the wall, at the children, and the old woman on her stool, and the young man who had carried her out.
+
+Twelve years in the Lances, and more than one of them spent crossing water at these people. There had been an autumn, years ago, at a ford whose name he had never troubled to learn: a boy with a boar spear too long for him had come at Thistle's chest out of the shallows, and looked surprised when the lance took him, and Darrow had had to put a boot on his shoulder to work the point free. He had not thought of that boy in years. He thought of him now, with the warmth of their coals coming up into his feet.
+
+These people owed him nothing. A grave, perhaps.
+
+He looked at Rae. "What would your gran have laid down?"
+
+"Whatever was hers," said Rae. "That's the whole of it. A gift's from the one who asks." She turned her head at last and looked at him. "I've given mine. This one's yours."
+
+The old woman on the stool folded her hands in her lap and waited, with every face on the wall waiting with her, and the snow coming down straight and slow on all of them.
+
+**What does Darrow do?**
+1. **Give his name and what he is, said plainly before they can find it out: the captain of the Ninth, from the ford.**
+2. **Have Rae lay down the company's stores, the flour and the salt, and keep his own name for another day.**
+3. **Give the stick.**

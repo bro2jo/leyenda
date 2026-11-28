@@ -4,9 +4,9 @@
     "book": 3,
     "chapter": 8,
     "beat": "b3.1",
-    "next_scene": 6,
+    "next_scene": 7,
     "stage": "scene",
-    "last_written": "ch08:s5",
+    "last_written": "ch08:s6",
     "rank_on_page": "Tempered"
   },
   "book_question": "What is the Grace, really? (Book II; Darrow fights on his feet but cannot run: every fight held, not chased)",
@@ -143,8 +143,8 @@
         },
         "challenge": null,
         "invite": null,
-        "status": "next",
-        "wrote": null
+        "status": "written",
+        "wrote": "ch08:s6"
       },
       {
         "n": 7,
@@ -158,7 +158,7 @@
         "micro": null,
         "challenge": null,
         "invite": null,
-        "status": "planned",
+        "status": "next",
         "wrote": null
       }
     ],
@@ -554,7 +554,29 @@
     }
   },
   "quest_summary": "Confessor Ivo Marrant is coming up the Holloway with five grey cloaks (six in all), a cart, a censer, and a writ naming the Faithless at Saint Ysolde's. Darrow's name is first; Hollis is second. Rae Thorne, the carter who heard the list read, is in the House; her cart and oxen wait at the winch-house below, where one of the six will stay; the rest camp on the lower terrace under the gate.",
-  "open_micro": null,
+  "open_micro": {
+    "slot": 6,
+    "chapter": 8,
+    "scene": "6",
+    "opened": "2026-11-28",
+    "axis": "candor_guile",
+    "ask": "A gift comes before an ask. What does Darrow give?",
+    "options": [
+      "His name and what he is, said plainly as the first gift: the captain of the Ninth, from the ford, before they can find it out.",
+      "The company's stores, the flour and the salt, laid down by the carter's hand, and his own name left for another day.",
+      "The stick."
+    ],
+    "bearing": [
+      {
+        "candor": 1
+      },
+      {
+        "guile": 1
+      },
+      null
+    ],
+    "default": 2
+  },
   "temptation": {
     "planted": [
       {

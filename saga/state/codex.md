@@ -104,6 +104,7 @@ Anything named in the Chronicle that isn't already in `bible/` goes here the fir
 - **The watch at the lamp line** — A dozen of the clans on skis, furred to the eyes, with a torch in one hand and a long spear in the other; at night they set a line of lamps across the frozen stream and hold it, spears turned outward, until the trees are quiet. Their leader carries the horn (Ch 8 Sc 4).
 - **The chips at the throat** — Every one of the clans' watch wears a black glassy chip no bigger than a thumbnail on a thong at the throat, like the one on the cold lamp at the river; their leader wears two (Ch 8 Sc 5).
 - **The burned clearing** — A clearing in the Thornwild as wide as a threshing floor, black at the middle and ringed with charred stakes, with a sleeve of mail fused in the ash and a greasy smell the frost has not got out; the watch go round it the long way with their eyes down (Ch 8 Sc 5).
+- **The holdfast at the valley's head** — A clan holdfast at the head of a valley in the Thornwild: a wall of whole trunks with the bark on, set upright and sharpened, higher than a mounted man; a lamp beside every door and a bigger one at the gate. Its old are carried out on the backs of the young (Ch 8 Sc 6).
 
 ## Songs and verses
 
