@@ -2,7 +2,6 @@
 
 One or two italic sentences close each log reply (rules: `.claude/skills/log/reply.md`, "The glimpse"). Texture only: no plot, no plants, no names the page has not spoken, nothing a later scene must honour. Newest last, one line each, `- YYYY-MM-DD · kind · text`; keep the last 20. The site never reads this file.
 
-- 2026-11-23 · ledger · Wren's ledger, under the day: trees, uncounted, on principle. Snow down the back of someone's collar, Hollis, twice, his own fault both times.
 - 2026-11-23 · body · Warmth gets into his bones by the fire and stays there for once, all the way down, and he sits with his boots off and lets it.
 - 2026-11-23 · house · Rae banks the fire for the night with three exact turns of a stick, the same three every night, and will not say where she learned it.
 - 2026-11-24 · weather · Clear cold under the trees, the kind that squeaks underfoot. Somewhere high up a branch lets go of its snow in one long, soft hush, and for a breath the whole wood listens to it land.
@@ -22,3 +21,4 @@ One or two italic sentences close each log reply (rules: `.claude/skills/log/rep
 - 2026-11-27 · body · Cold air in the lungs this morning and it doesn't catch. He breathes it all the way down, twice, just to see.
 - 2026-11-27 · overheard · Overheard at a doorway, a child to her mother, not quietly enough: the dog is the polite one.
 - 2026-11-27 · weather · The sky comes down low and white by midday and stays there, a sky with more snow in it and in no hurry at all to let it go.
+- 2026-11-27 · house · Hollis has a knife to a length of pale wood and is making, he says, a spoon. It has looked like a fish for an hour now, and nobody has told him.
