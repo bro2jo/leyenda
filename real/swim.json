@@ -1,6 +1,6 @@
 {
   "_about": "The learn-to-swim program's ladder (the plan: real/plan/swim_plan.md, whose last section is printed from this file; his notes as written: real/plan/learn_to_swim_notes.md). Four stages, twenty milestones, each titled in his tracker's own words (stage 2 puts 'Recover from floating to standing' before 'Float independently': knowing how to stand up is what makes floating alone safe). skill = the session block it is worked in (config.json -> swim.skills). judged = how it is called done. needs = the milestones that come first: one is 'ready' when its needs are done, and the next pool session is built from what is ready, so the plan follows what he has done, never the calendar. work = the drills that lead to it, in order, each to be easy before the next. stuck = what to do when it stalls. home = the id of its drill in home.drills (the bath, the shower, the floor or the bed), done while it is ready. knee = what the left knee asks. target = his own planning estimate for the stage: a target, never a deadline. done = null until it happens, then {date, evidence, witness}. cleared = the PT's word on the pool ({date, evidence}; the master plan lists swimming 'as cleared'): until it is recorded, what is logged in the pool is kept and pays nothing. session = the frame of a visit: the blocks in order, each with its usual minutes and what it shrinks to (`keep`) once its milestones are all done. The drills and the judging are general adult learn-to-swim practice, proposed 11/27: an instructor's word, or the PT's on the knee, outranks any line here. Written by `darrow.py swim pass|clear|cleared` (done, cleared); the rest is edited when the plan changes.",
-  "starts": "2026-12-01",
+  "starts": "2026-11-29",
   "cleared": {
     "date": "2026-11-27",
     "evidence": "His PT: anything in water is okay (relayed 11/27; pt_notes.md 2026-11-27): every kick, push-offs, deep-water entries"
@@ -453,7 +453,7 @@
     }
   ],
   "home": {
-    "about": "The home routine (his notes': five days a week). Built like the pool session: the drills of the milestones that are ready, a drill shared by several milestones counted once, up to drills_per_day in the ladder's order, then the lines that are always there. A milestone's `home` names its drill here. Nothing in it holds the breath. The video is off for now (his call, 11/27); the full face-up sink in the bath is his own change of the notes' 'reserve full submersion for the pool' (11/27): he is at ease face under in the tub.",
+    "about": "The home routine, home_per_week times a week (config.json -> swim; his call 11/28, where his notes said five days). Built like the pool session: the drills of the milestones that are ready, a drill shared by several milestones counted once, up to drills_per_day in the ladder's order, then the lines that are always there. A milestone's `home` names its drill here. Nothing in it holds the breath. The video is off for now (his call, 11/27); the full face-up sink in the bath is his own change of the notes' 'reserve full submersion for the pool' (11/27): he is at ease face under in the tub.",
     "drills_per_day": 3,
     "drills": {
       "bath_float": {

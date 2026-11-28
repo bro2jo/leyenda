@@ -21,7 +21,7 @@ allowed-tools: Bash(python3 engine/darrow.py *) Bash(git *) Read
    - **Done so far** (from the engine).
    - **Still open**: the engine's `Still open` line, which already holds the day's planned sessions with plan changes applied (a red-light day owes none), in priority order: floor first, then the knee session, then add-ons. It means nothing is recorded yet, not that it wasn't done: if he says he did it, that's a `/log`. A partial session or a missed PT visit is recorded, so it isn't open. The optional add-ons (`optional this week`) are never on it: mention one only if he asks, and never before its `from` date.
    - **Nutrition:** kcal and protein to go, and one practical way to close the gap (based on what he usually eats).
-   - **Swim:** the engine's `Swim:` line once the program has begun: the home routine if it is still open today (never as a debt; what to do: `swim home`), and on a pool day the session from `swim next`, block by block, short enough to read at the pool's edge.
+   - **Swim:** the engine's `Swim:` line once the program has begun: the home routine when the engine's Still open lists it (three times a week, like the morning check; what to do: `swim home`), and on a pool day the session from `swim next`, block by block, short enough to read at the pool's edge.
    - **The project:** the engine's `Project:` line as a reminder of the next task of the week's work ("project: park the CRV"), never as a debt; none open: five words, no more. A task he reports done is `/project`.
    - **PT day:** list the questions to ask.
 4. No story content. If he wants the story, that's `/saga`.

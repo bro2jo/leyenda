@@ -1128,6 +1128,8 @@
     "home_skills": [
       "breath"
     ],
+    "home_per_week": 3,
+    "_home_per_week": "the home routine's times a week (his call, Sat 11/28: 'a few times a week, not every day'; his notes said five). Like the morning check, `today` lists it under Still open until the week (Sun-Sat) has this many; it pays on that many days a week and nothing past them (golden rule 6). Never part of the week's score.",
     "plan": "real/plan/swim_plan.md",
     "notes": "real/plan/learn_to_swim_notes.md"
   },

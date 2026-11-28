@@ -933,6 +933,7 @@ def main():
         else:
             sw = jload(ladder)  # a clean ladder, whatever the live one holds
             sw["cleared"] = None
+            sw["starts"] = ENV.get("DARROW_TODAY") or dt.date.today().isoformat()
             for st_ in sw["stages"]:
                 for m_ in st_["milestones"]:
                     m_["done"] = None
@@ -941,7 +942,9 @@ def main():
             d0 = ENV.get("DARROW_TODAY") or dt.date.today().isoformat()
             ahead = (dt.date.fromisoformat(d0) + dt.timedelta(days=3)).isoformat()
             art = lambda i: next(a for a in jload(tmp / "saga/state/darrow.json")["arts"] if a["id"] == i)
-            sport_before = run(darrow + ["today", "--date", d0], tmp)[1].count("sport x")
+            code, out = run(darrow + ["today", "--date", d0], tmp)
+            check("swim home routine (0 of 3 this week" in out, "the home routine is a to-do in Still open, like the morning check", out[-400:])
+            sport_before = out.count("sport x")
             code, out = run(darrow + ["swim", "add", json.dumps([
                 {"date": d0, "session": "pool", "skill": "", "drill": "water walking", "minutes": 5},
                 {"date": d0, "session": "pool", "skill": "breath", "drill": "nose bubbles", "minutes": 10},
@@ -956,6 +959,7 @@ def main():
             check(code == 0 and "work toward: Submerge my head without pinching my nose" in out and "Treading water · not yet" in out,
                   "the first session is built from what is ready; a block with nothing ready says what it waits for", out[-600:])
             code, out = run(darrow + ["swim", "home"], tmp)
+            check("swim home routine" not in run(darrow + ["today", "--date", d0], tmp)[1], "logged, it leaves Still open")
             check(code == 0 and "1. The calm float and the sink (bath)" in out and out.count("The calm float and the sink") == 1 and "Picture it" in out,
                   "the home routine is built from the milestones that are ready, a shared drill counted once", out[-400:])
             run(darrow + ["swim", "pass", "no_pinch"], tmp, expect=1)

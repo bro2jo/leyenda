@@ -450,6 +450,12 @@ def gather(cfg, rules, nutrition=None):
         if sk in swim_tags:
             f["tags"].add(swim_tags[sk])
 
+    per_week, seen = home_per_week(cfg), defaultdict(int)
+    for date in sorted(x for x, f in facts.items() if f["swim_home"]):  # the week's first home_per_week pay; past them, kept at zero
+        ws_ = week_start(d(date)).isoformat()
+        seen[ws_] += 1
+        facts[date]["swim_home_paid"] = seen[ws_] <= per_week
+
     mark_overshoot(facts, cfg, rules)
 
     for date, f in facts.items():  # derived tags
@@ -646,7 +652,11 @@ def deeds_for_day(date, f, cfg, rules):
         else:
             add("pool_session", note=f"{int(f['pool_min'])} min" if f["pool_min"] else "")
     if f.get("swim_home") and R.get("water_practice"):
-        add("water_practice")
+        if f.get("swim_home_paid", True):
+            add("water_practice")
+        else:
+            out.append({"date": date, "kind": "daily", "deed": f"{R['water_practice']['label']} (logged; past the week's plan, not paid)",
+                        "xp": 0, **{a: 0 for a in ATTRS}, "note": f"the plan asks for {home_per_week(cfg)} a week"})
     if f["weight"]:
         add("weigh_in")
     if f["creatine"]:
@@ -1508,7 +1518,7 @@ def real_week_table(st, cfg, rules, ws, summary=True):
         out.append(f"**Sessions (through {dow(d(sc['through']))}):** {sess or 'none planned yet'} · "
                    f"floor full {sc['floor_full_days']}/{sc['days']} · graded morning checks "
                    f"{sum(1 for i in range(sc['days']) if facts.get((ws + dt.timedelta(i)).isoformat(), {}).get('check'))}/{sc['days']}")
-    sw = swim_line(facts, ws, upto, bold=True, today=False)
+    sw = swim_line(facts, ws, upto, bold=True, today=False, cfg=cfg)
     if sw:
         out.append(sw)
     return "\n".join(out)
@@ -1579,15 +1589,17 @@ def cmd_today(args, cfg, rules):
                                    ("daily minimum (weighted heel prop" + (f" x{need})" if need > 1 else ")"), f["floor"] == "full" or need == 0)]
                    if not ok]
         missing += unlogged_sessions(cfg, day, f) + ([] if f["creatine"] else ["creatine"])
+        due = swim_home_due(cfg, st["facts"], day)
+        missing += [due] if due else []
         if missing:
             print(("Not logged" if f["closed"] else "Still open") + ": " + ", ".join(missing))
     else:
         print("Logged: nothing yet. Still open: " + ", ".join(
-            ["morning check (swelling grade, minutes slept)" if check_needs_sleep(rules, day.isoformat()) else "morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"]))
+            ["morning check (swelling grade, minutes slept)" if check_needs_sleep(rules, day.isoformat()) else "morning check"] + (["daily minimum (weighted heel prop)"] if floor_rounds(cfg, day.isoformat()) else []) + unlogged_sessions(cfg, day, None) + ["creatine"] + [x for x in [swim_home_due(cfg, st["facts"], day)] if x]))
     for i in inbox_pending():
         print(f"Waiting for his OK: the ring's sleep for {dow(d(i['date']))} {md(d(i['date']))}, {hm(i['value'])} ({i['value']} min) · `darrow.py inbox`")
     print(project_line())
-    sw = swim_line(st["facts"], week_start(day), day)
+    sw = swim_line(st["facts"], week_start(day), day, cfg=cfg)
     if sw:
         print(sw)
     if "swim" in planned_for(cfg, day) and not (f and f.get("pool")):
@@ -2218,7 +2230,7 @@ def recap_text(st, cfg, rules, ws):
     out += ["", "**Measured this week:** " + ("; ".join(
         f"{mdate(g['date'])} {g['source']} {metric_label(g['metric'], specs.get(g['metric'], {}))} {set_text(g)}"
         for g in ms) or "nothing")]
-    sw = swim_line(facts, ws, upto, bold=True, today=False)
+    sw = swim_line(facts, ws, upto, bold=True, today=False, cfg=cfg)
     if sw:
         out += ["", sw]
     out += ["", "**Works:** " + works_week_line(ws)[len("Works: "):]]
@@ -2942,7 +2954,21 @@ def cmd_knot(args, cfg, rules):
 # A ladder of milestones in four stages, each with what it needs first and the drills that lead to it. Nothing in it is
 # on a calendar: a milestone is "ready" when the ones it needs are done, and the next pool session is built from what is
 # ready, so checking one off moves the plan on by itself.
-HOME_DAYS_A_WEEK = 5  # the notes' home routine: 14 minutes, five days a week
+def home_per_week(cfg):
+    """The home routine's times a week (config.json -> swim.home_per_week; his notes said five, he set three on 11/28)."""
+    return int((cfg.get("swim") or {}).get("home_per_week") or 3)
+
+
+def swim_home_due(cfg, facts, day):
+    """The home routine as a to-do, the way the morning check is one: '' once today's is logged, the week (Sun-Sat) has
+    its home_per_week, the program has not started, or the plan rests the day (red light); else the line for Still open."""
+    data = load_swim()
+    f = facts.get(day.isoformat()) or {}
+    if not data or str(data.get("starts") or "9999") > day.isoformat() or f.get("swim_home") or f.get("light") == "red":
+        return ""
+    ws, need = week_start(day), home_per_week(cfg)
+    have = sum(1 for i in range(7) if ws + dt.timedelta(i) <= day and (facts.get((ws + dt.timedelta(i)).isoformat()) or {}).get("swim_home"))
+    return "" if have >= need else f"swim home routine ({have} of {need} this week; `swim home`)"
 
 
 def swim_ready(data, done_ids):
@@ -2950,7 +2976,7 @@ def swim_ready(data, done_ids):
     return [m for m in swim_milestones(data) if m["id"] not in done_ids and all(n in done_ids for n in m.get("needs", []))]
 
 
-def swim_line(facts, ws, upto, bold=False, today=True):
+def swim_line(facts, ws, upto, bold=False, today=True, cfg=None):
     """The program's line in `today`, `week`, NOW's block and the recap: the milestones done, the stage he is in, what is
     ready to work on, the week's pool visits and home days, and the PT's word while it is missing. '' while there is no
     program or it has not begun (nothing logged, nothing done, and its start day still ahead)."""
@@ -2964,6 +2990,7 @@ def swim_line(facts, ws, upto, bold=False, today=True):
     begun = done or any(f.get("pool") or f.get("swim_home") for f in facts.values())
     if not begun and str(data.get("starts") or "9999") > upto.isoformat():
         return ""
+    need_home = home_per_week(cfg or load_json(P["config"]))
     done_ids = {m["id"] for m in done}
     ready = swim_ready(data, done_ids)
     stage = next((st for st in data["stages"] if any(m["id"] not in done_ids for m in st["milestones"])), None)
@@ -2975,8 +3002,7 @@ def swim_line(facts, ws, upto, bold=False, today=True):
         bits.append("done this week: " + "; ".join(new))
     if ready:
         bits.append("ready to work on: " + "; ".join(m["title"] for m in ready[:4]) + (f" (+{len(ready) - 4} more)" if len(ready) > 4 else ""))
-    bits.append(f"this week: pool {pool}" + (f" ({int(pool_min)} min)" if pool_min else "") + f" · home practice {home} of {HOME_DAYS_A_WEEK} days"
-                + ((" (today: done)" if (facts.get(upto.isoformat()) or {}).get("swim_home") else " (today: not yet; `swim home`)") if today else ""))
+    bits.append(f"this week: pool {pool}" + (f" ({int(pool_min)} min)" if pool_min else "") + f" · home routine {home} of {need_home}")
     if not swim_cleared_on():
         bits.append("the PT's word on the pool is not recorded: nothing in the pool pays until it is (`darrow.py swim cleared`)")
     return ("**Swim:** " if bold else "Swim: ") + " · ".join(bits)
@@ -3066,7 +3092,7 @@ def swim_home_lines(data):
     picked = list(picked.items())[: home.get("drills_per_day", 3)]
     always = home.get("always") or []
     total = sum(home["drills"][k]["minutes"] for k, _ in picked) + sum(a.get("minutes", 0) for a in always)
-    out = [f"Home routine · about {total} minutes, {HOME_DAYS_A_WEEK} days a week · log it as one row (`session=home`, `skill=breath`)"]
+    out = [f"Home routine · about {total} minutes, {home_per_week(load_json(P['config']))} times a week · log it as one row (`session=home`, `skill=breath`)"]
     for n, (k, titles) in enumerate(picked, 1):
         dr = home["drills"][k]
         out.append(f"{n}. {dr['title']}, {dr['minutes']} min (toward: {'; '.join(titles)}): {dr['text']}")

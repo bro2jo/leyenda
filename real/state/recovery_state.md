@@ -185,9 +185,9 @@ Visits: **PTA (Cody) Mon 11/23, Wed 11/25, Mon 11/30** · **PT (Nick) Thu 12/3**
 - **Runs** on the high days only, never on consecutive days; each waits on a clean morning.
 - **Low days:** zone 2 (or the trainer's intervals) and the throwing. Sunday: rest, or from 11/22 an easy hour's walk or ride.
 
-### Swim program (added Fri 11/27; from December, once the PT has spoken)
+### Swim program (added Fri 11/27; from Sun 11/29)
 
-The plan: `real/plan/swim_plan.md` (`doc swim`); the ladder and the next session: `python3 engine/darrow.py swim`, `swim next`. One pool visit a week of 45 to 60 minutes on a **low day or Sunday, never a high day**, plus the home routine on about five days. **Status: not started; the pool is cleared** (his PT, relayed 11/27: "anything in water is okay"; §5 item 17). It waits on the pool day, his to name; then the visit joins the weekly template as `swim` and this week's table carries it. The home routine: `swim home`. The first three visits are a new load: the morning after each gets the usual check.
+The plan: `real/plan/swim_plan.md` (`doc swim`); the ladder and the next session: `python3 engine/darrow.py swim`, `swim next`. One pool visit a week of 45 to 60 minutes on a **low day or Sunday, never a high day**, plus the home routine three times a week (Still open in `today` until the week has its three). **Status: not started; the pool is cleared** (his PT, relayed 11/27: "anything in water is okay"; §5 item 17). It waits on the pool day, his to name; then the visit joins the weekly template as `swim` and this week's table carries it. The home routine: `swim home`. The first three visits are a new load: the morning after each gets the usual check.
 
 ### Daily minimum and weekly checks
 

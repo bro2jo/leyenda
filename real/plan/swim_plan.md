@@ -1,4 +1,4 @@
-# Swim Plan — learning to swim, to comfortable in deep water · December 2026 → summer 2027
+# Swim Plan — learning to swim, to comfortable in deep water · from Sunday 29 November 2026 → summer 2027
 
 *This repo's own plan for the pool, built on his notes of Fri 11/27 (`real/plan/learn_to_swim_notes.md`, kept as written). Sections 1–11 are written by hand and change when the plan changes. The last section is printed from the ladder (`real/swim.json`) on every `sync`: where he stands, the next pool session, and every milestone with its drills. **Nothing here outranks the PT on the knee (§6) or an instructor on a drill.** The drills and estimates are general adult learn-to-swim practice: the lowest source, never a dose from the clinic.*
 
@@ -6,7 +6,7 @@
 
 - **The goal, in his notes' words:** to go into summer 2027 able to jump into a pool, keep his hands away from his nose, come back to the surface calmly and stay afloat without touching the bottom. Then, with an instructor, a headfirst dive.
 - **Where he starts:** he can put his whole head under water. He holds his nose to do it. Deep water frightens him. He has not floated or swum unaided.
-- **The shape of it:** one pool visit a week of 45 to 60 minutes with a buddy who can swim and a lifeguard on duty, and a short home routine on about five days a week. Twenty milestones in four stages; his targets for each stage are in §3.
+- **The shape of it:** one pool visit a week of 45 to 60 minutes with a buddy who can swim and a lifeguard on duty, and a short home routine three times a week. It starts **Sunday 11/29** (his call, 11/28). Twenty milestones in four stages; his targets for each stage are in §3.
 
 ## 2. How the plan moves
 
@@ -48,7 +48,7 @@ The default order, with his own targets. The session that is actually due is alw
 
 ## 5. The home routine
 
-Five days a week, his notes' routine made to follow the ladder like the pool session does: **the drills of the milestones that are ready** (a drill several of them share is done once; up to three), then picturing a calm float and a calm resurfacing for two minutes. The day before a pool visit, read the session. The routine for now: `python3 engine/darrow.py swim home`, or §12 below. **The video is off for now** (his call, 11/27).
+**Three times a week** (his call, 11/28; his notes said five), handled like the morning check: `today` lists it under *Still open* until the week (Sunday to Saturday) has its three, and a fourth is fine and pays nothing more. It is his notes' routine made to follow the ladder like the pool session does: **the drills of the milestones that are ready** (a drill several of them share is done once; up to three), then picturing a calm float and a calm resurfacing for two minutes. The day before a pool visit, read the session. The routine for now: `python3 engine/darrow.py swim home`, or §12 below. **The video is off for now** (his call, 11/27).
 
 - **Stage 1 at home is one drill in the bath: the calm float and the sink.** Lie back into a float with the ears under, a few slow breaths, then hum and let the whole face go under, a count longer each round. It trains going under without the hands, the slow nose exhale, coming up calm, ears in the water and the feel of the float at once, and it trains them face up, where water runs into the nose most easily. It is his own change of the notes' "reserve full submersion for the pool" (11/27): he is already at ease face under in the tub. No bath that day: the shower, face into the spray, humming.
 - Then the floor and the bed carry stage 2's shapes (the way up, the float's balance, the roll, the kick); stage 3 is sculling and breathing pace; stage 4 is picturing it.
@@ -147,7 +147,7 @@ Stop on a good one. A milestone is recorded the day it happens: tell me what you
 
 ### The home routine now
 
-Home routine · about 8 minutes, 5 days a week · log it as one row (`session=home`, `skill=breath`)
+Home routine · about 8 minutes, 3 times a week · log it as one row (`session=home`, `skill=breath`)
 1. The calm float and the sink (bath), 6 min (toward: Submerge my head without pinching my nose; Exhale gently through my nose underwater; Feel comfortable with my ears underwater; Float on my back with assistance): Lie back in a full tub until your ears are under and the water takes the weight of your head: arms loose, hands resting on your belly, eyes on the ceiling. Take three slow breaths there, in fully so you feel your chest lift, then half out so you feel yourself settle. That is the float. Then start the hum and let your head sink until your nose and your whole face are under. Count 3, come up slowly, let the water run off, and only then breathe in. 6 to 8 rounds, a count longer each round, toward 6. Face up is where water runs into the nose most easily, which is why the hum starts before your nose goes under and keeps going until it is out. Every second under is a breath out, never a hold: stop the round the moment the air runs low, and stop for the day if you feel light-headed. No bath that day: the shower, face straight into the spray with your hands down, humming, for 3 minutes.
 2. Picture it, 2 min: a calm float and a calm resurfacing, as clearly as you can.
 The day before a pool visit, read the session (`swim next`).

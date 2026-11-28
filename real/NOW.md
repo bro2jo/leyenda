@@ -43,7 +43,7 @@ For Monday 11/30, Cody (State §5): **the force-plate numbers from 11/23** (land
 
 ## Open items
 
-- **The swim program (set up Fri 11/27; starts in December):** the plan is `real/plan/swim_plan.md` (`doc swim`), the ladder `python3 engine/darrow.py swim`, the first session `swim next`. **The pool is cleared:** his PT said anything in water is okay (relayed 11/27, `pt_notes.md`; recorded in the engine). **It waits on the pool day** (a low day or Sunday, never a high day; his to name, then it joins the weekly template as `swim`). The home routine for now: `swim home`. Also open: which pool and its depths, the buddy, goggles and deck sandals, the first lesson (`doc swim 11`).
+- **The swim program (set up Fri 11/27; starts **Sun 11/29**):** the plan is `real/plan/swim_plan.md` (`doc swim`), the ladder `python3 engine/darrow.py swim`, the first session `swim next`. **The pool is cleared:** his PT said anything in water is okay (relayed 11/27, `pt_notes.md`; recorded in the engine). **It waits on the pool day** (a low day or Sunday, never a high day; his to name, then it joins the weekly template as `swim`). **The home routine: three times a week**, listed under Still open in `today` like the morning check until the week has its three (`swim home`). Also open: which pool and its depths, the buddy, goggles and deck sandals, the first lesson (`doc swim 11`).
 
 - **Running:** cleared 11/16; the home walk-jog starts Mon 11/23 (session 1), and the PT's decels and drop-downs ride in Saturday's B (State §6). Open for the clinic: the stiff landing, the walk-jog's symptom rule, and the home doses for the decels and drop-downs.
 - **The sport plan's month check (end of week 4):** seven ratings 1–5 and seven questions; answers go in a checkpoint's Sport section.
