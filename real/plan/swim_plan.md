@@ -108,7 +108,7 @@ A group adult learn-to-swim course (the Red Cross's, a Y's, a Masters club's) co
 ## 12. Where he stands, the next session and the ladder
 
 <!-- engine:start -->
-_Printed from `real/swim.json` by `sync` · as of Fri 2026-11-27 · never edited by hand_
+_Printed from `real/swim.json` by `sync` · as of Sat 2026-11-28 · never edited by hand_
 
 ### Where you stand
 

@@ -1,10 +1,10 @@
 {
-  "asof": "2026-11-27",
+  "asof": "2026-11-28",
   "name": "Ser Darrow of Edgemoor",
   "level": 10,
   "rank": "Tempered",
   "level_reached": "2026-11-23",
-  "xp": 4828,
+  "xp": 4840,
   "xp_this_level": 4500,
   "xp_next_level": 5500,
   "proficiency": 4,
@@ -25,7 +25,7 @@
       "raw": 12,
       "cap": 18,
       "mod": 1,
-      "temper": 37,
+      "temper": 39,
       "next_at": 50,
       "fell": 15,
       "banked": false
@@ -52,7 +52,7 @@
     }
   },
   "ember": {
-    "value": 94,
+    "value": 93,
     "tier": "Bright",
     "effect": "+1 to Vigor checks"
   },
@@ -149,7 +149,7 @@
       "tree": "Breath",
       "rank": 2,
       "banked_rank": 0,
-      "practice": 12,
+      "practice": 13,
       "next_at": 15,
       "sealed_until_knot": null,
       "sealed_by_first": false,
@@ -590,7 +590,7 @@
   },
   "chapter_now": {
     "week_start": "2026-11-22",
-    "through": "2026-11-27",
+    "through": "2026-11-28",
     "tier_so_far": "Hard-won",
     "chapter": 8
   },
